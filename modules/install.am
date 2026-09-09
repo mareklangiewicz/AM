@@ -10,7 +10,7 @@
 
 AMCLIPATH_ORIGIN="$AMCLIPATH"
 BINDIR="${XDG_BIN_HOME:-$HOME/.local/bin}"
-AMCATALOGUEICONS="${AMCATALOGUEICONS:-https://portable-linux-apps.github.io/icons}"
+AMCATALOGUEICONS="${AMCATALOGUEICONS:-https://raw.githubusercontent.com/Portable-Linux-Apps/Portable-Linux-Apps.github.io/main/icons}"
 
 ################################################################################################################################################################
 #				DOWNLOAD
@@ -361,6 +361,17 @@ _install_arg() {
 		_icon_theme_export_to_datadir 2>/dev/null
 	fi
 
+	# UPDATE MIME DATABASE
+	if command -v update-mime-database >/dev/null 2>&1 && command -v update-desktop-database >/dev/null 2>&1 && [ ! -f /var/lib/mime/mime.cache ] && [ ! -f /var/cache/desktop/desktop.cache ]; then
+		if [ "$AMCLI" = "appman" ]; then
+			mkdir -p "$DATADIR"/mime/packages && update-mime-database "$DATADIR"/mime
+			mkdir -p "$DATADIR"/applications && update-desktop-database "$DATADIR"/applications
+		else
+			$SUDOCMD mkdir -p /usr/local/share/mime/packages && $SUDOCMD update-mime-database /usr/local/share/mime
+			$SUDOCMD mkdir -p /usr/local/share/applications && $SUDOCMD update-desktop-database /usr/local/share/applications
+		fi
+	fi
+
 	# ENDING THE INSTALLATION
 	LASTDIR=$(ls -td "$APPSPATH"/* 2>/dev/null | head -1 | sed 's:.*/::')
 	[ -f "${LASTDIRPATH}"/AM-updater ] && sed -i "s#$ALT_GH#https://api.github.com#g" "${LASTDIRPATH}"/AM-updater 2>/dev/null
@@ -601,7 +612,7 @@ _levenshtein() {
 }
 
 _did_you_mean() {
-	local input="$1" only_flag="$2"
+	local input="${1,,}" only_flag="$2"
 	local names match="" match_flag="" input_len=${#input} first_char="${input:0:1}" best_dist=3 diff dist
 	local -a sub_names=() sub_flags=()
 	DID_YOU_MEAN=""
@@ -610,17 +621,18 @@ _did_you_mean() {
 	DID_YOU_MEAN_CANDIDATE_FLAGS=()
 
 	_did_you_mean_search() {
-		local list="$1"
+		local list="$1" name_orig
 		[ ! -f "$list" ] && return
 		[ "$best_dist" -eq 0 ] && return
 		names=$(grep "^◆ " "$list" | sed 's/^◆ //;s/ :.*$//')
-		while IFS= read -r name; do
-			[ -z "$name" ] && continue
-			[ "$name" = "$input" ] && [ -n "$2" ] && best_dist=0 && match=$name && match_flag="$2" && return
+		while IFS= read -r name_orig; do
+			[ -z "$name_orig" ] && continue
+			local name="${name_orig,,}"
+			[ "$name" = "$input" ] && [ -n "$2" ] && best_dist=0 && match=$name_orig && match_flag="$2" && return
 			if [ "$input_len" -ge 4 ]; then
 				case "$name" in
 					*"$input"*)
-						sub_names+=("$name")
+						sub_names+=("$name_orig")
 						sub_flags+=("$2")
 						continue
 						;;
@@ -633,7 +645,7 @@ _did_you_mean() {
 			dist=$(_levenshtein "$input" "$name")
 			if [ "$dist" -lt "$best_dist" ]; then
 				best_dist=$dist
-				match=$name
+				match=$name_orig
 				match_flag="$2"
 			fi
 		done <<< "$names"
@@ -1359,9 +1371,29 @@ case "$1" in
 				done
 			done
 			echo "$DIVIDING_LINE"
-		else		
+		else
 			# Reinstall applications with updated installation scripts
-			printf $"%b\n Checking for changes of the installation scripts in the online database...\n%b\n" "$DIVIDING_LINE" "$DIVIDING_LINE"
+			if [ -z "$2" ]; then
+				printf $"%b\n Checking for changes of the installation scripts in the online database...\n%b\n" "$DIVIDING_LINE" "$DIVIDING_LINE"
+			else
+				echo "$DIVIDING_LINE"
+				entries="$(echo "$@" | cut -f2- -d ' ' | tr ' ' '\n' | grep -v -- "--")"
+				_determine_args
+				for arg in $entries; do
+					if echo "$ARGPATHS" | grep -q "/$arg$"; then
+						argpath_items=$(echo "$ARGPATHS" | grep "/$arg$" | xargs)
+						for argpath in $argpath_items; do
+							if [ -f "$argpath"/AM-updater ]; then
+								mkdir -p "$argpath"/.am-installer
+								scriptname=$(ls "$argpath/.am-installer/" | head -1)
+								if [ -n "$scriptname" ] && grep -q "^◆ $scriptname :" "$AMDATADIR/$ARCH-apps"; then
+									printf "\nchange-me" >> "$argpath/.am-installer/$scriptname"
+								fi
+							fi
+						done
+					fi
+				done
+			fi
 			_determine_args
 			for arg in $ARGS; do
 				argpath_items=$(echo "$ARGPATHS" | grep "/$arg$" | xargs)
