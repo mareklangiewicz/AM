@@ -5,6 +5,21 @@ set -u
 APP=logseq-app-db-nightly
 SITE="logseq/logseq"
 
+# TODO: maybe send "logseq-app-db-nightly" upstream (ivan-hc/AM) as a PR.
+#   Kept fork-only so far. Blockers/caveats to resolve first:
+#   - Nightly/rolling tag: AM's conventions lean toward stable releases, and this one
+#     tracks a single reused "nightly" tag rather than versioned releases.
+#   - The published_at trick below is non-standard. It works, but it means ./version holds
+#     a TIMESTAMP, not a URL -- so AM's _use_verify() finds no "^http" line and reports
+#     "Checksum cannot be verified, missing download URL" on every update. It also makes
+#     the version= line unresolvable to read-only inspectors (amchk needs AMCHK_TRUST=1,
+#     because resolving it requires running the $release assignment). Upstreaming would
+#     probably want ./version to stay a URL with the change token kept elsewhere.
+#   - No aarch64 counterpart here either (the arm64 AppImage carries a nightly.YYYYMMDD
+#     suffix, so it would need its own matching logic).
+#   See programs/x86_64/logseq-app-og and programs/x86_64/appimageupdatetool for the
+#   sibling TODOs.
+
 # CREATE DIRECTORIES AND ADD REMOVER
 [ -n "$APP" ] && mkdir -p "/opt/$APP/tmp" "/opt/$APP/icons" && cd "/opt/$APP/tmp" || exit 1
 printf "#!/bin/sh\nset -e\nrm -f /usr/local/bin/$APP\nrm -R -f /opt/$APP" > ../remove

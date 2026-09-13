@@ -55,9 +55,38 @@ if [ -z "$APP" ]; then exit 1; fi
 version0=$(cat "/opt/$APP/version")
 version=$(curl -Ls https://api.github.com/repos/$SITE/releases | sed 's/[()",{} ]/\n/g' | grep -io 'https.*appimageupdatetool.*86_64.*mage$' | head -1)
 [ -n "$version" ] || { echo "Error getting link"; exit 1; }
+# MAREK-FORK PATCH: record the URL the self-update ACTUALLY used, not the scraped one.
+#
+# Root cause of the upstream bug this fixes:
+#   "appimageupdatetool -Or" self-updates via the zsync URL EMBEDDED in the AppImage
+#   (.upd_info section), which for this app points at the "continuous" tag. But the
+#   line above scrapes /releases and picks head -1, which is the dated tag (e.g.
+#   2.0.0-alpha-1-20251018). Writing that scraped URL into ./version makes AM's
+#   _use_verify() fetch the WRONG release's .zsync and compare it to a binary that
+#   came from "continuous" -> permanent "Checksum does not match" on every am -u.
+#   Both builds are the same commit but built separately, so they differ by ~4 KiB.
+#   Note "--force-latest" does NOT help here: /releases and /releases/latest both
+#   resolve to the dated tag, while the binary always comes from "continuous".
+#
+# Fix: ask the tool itself for the ZSync URL it assembled from the update info, and
+# strip the ".zsync" suffix to get the asset URL that ./version must record. Falls
+# back to the scraped $version if that output ever changes shape.
+#
+# TODO: maybe upstream this as a PR to ivan-hc/AM. The "-Or" + "echo $version > ./version"
+# pattern is AM's universal template (~2962 x86_64 scripts) and is harmless wherever an
+# app's embedded update info and its latest release agree; appimageupdatetool is a rare
+# case where they permanently disagree. Nearest existing report is ivan-hc/AM#2647
+# (Helium), closed as an upstream .zsync problem with --force-latest -- a different
+# cause, so this instance looks unreported.
 if command -v appimageupdatetool >/dev/null 2>&1; then
 	cd "/opt/$APP" || exit 1
-	appimageupdatetool -Or ./"$APP" && chmod a+x ./"$APP" && echo "$version" > ./version && exit 0
+	if appimageupdatetool -Or ./"$APP" && chmod a+x ./"$APP"; then
+		real_version=$(appimageupdatetool -d ./"$APP" 2>/dev/null | grep -o 'https://.*\.zsync$' | head -1)
+		real_version=${real_version%.zsync}
+		[ -n "$real_version" ] && version="$real_version"
+		echo "$version" > ./version
+		exit 0
+	fi
 fi
 if [ "$version" != "$version0" ]; then
 	mkdir "/opt/$APP/tmp" && cd "/opt/$APP/tmp" || exit 1

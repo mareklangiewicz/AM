@@ -5,6 +5,19 @@ set -u
 APP=logseq-app-og
 SITE="logseq/og"
 
+# TODO: maybe send "logseq-app-og" upstream (ivan-hc/AM) as a PR.
+#   Kept fork-only so far. Blockers/caveats to resolve first:
+#   - No aarch64 counterpart: logseq/og publishes an AppImage for x86_64 only; the arm64
+#     asset is a .zip of an unpacked Electron dir, a genuinely different install shape with
+#     no existing AM template. Upstream tends to expect both arches for a new app.
+#   - Niche: "og" is the frozen file-based Logseq, useful mainly to people staying off the
+#     DB rewrite -- arguably too narrow for the main database.
+#   - AM's checksum verification is a no-op here: logseq/og ships no .zsync/.sha256 sidecar,
+#     so _use_verify() finds no digest and prints the "cannot be verified" warning. Not a
+#     bug, but worth flagging in any PR so it is not mistaken for one.
+#   See programs/x86_64/logseq-app-db-nightly and programs/x86_64/appimageupdatetool for
+#   the sibling TODOs.
+
 # CREATE DIRECTORIES AND ADD REMOVER
 [ -n "$APP" ] && mkdir -p "/opt/$APP/tmp" "/opt/$APP/icons" && cd "/opt/$APP/tmp" || exit 1
 printf "#!/bin/sh\nset -e\nrm -f /usr/local/bin/$APP\nrm -R -f /opt/$APP" > ../remove
