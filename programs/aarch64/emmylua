@@ -1,0 +1,60 @@
+#!/bin/sh
+
+# AM INSTALL SCRIPT VERSION 3.5
+set -u
+APP=emmylua
+SITE="EmmyLuaLs/emmylua-analyzer-rust"
+# One release ships every tool under one tag; they install and update together, so they never mix versions.
+BINS="emmylua_ls emmylua_check emmylua_doc_cli luafmt"
+ASSET="linux-aarch64-glibc.2.17.tar.gz"
+
+# CREATE DIRECTORIES AND ADD REMOVER
+[ -n "$APP" ] && mkdir -p "/opt/$APP/tmp" "/opt/$APP/icons" && cd "/opt/$APP/tmp" || exit 1
+printf "#!/bin/sh\nset -e\nrm -f /usr/local/bin/emmylua_ls /usr/local/bin/emmylua_check /usr/local/bin/emmylua_doc_cli /usr/local/bin/luafmt\nrm -R -f /opt/$APP" > ../remove
+#printf '\n%s' "rm -f /usr/local/share/applications/$APP-AM.desktop" >> ../remove
+chmod a+x ../remove || exit 1
+
+# DOWNLOAD AND PREPARE THE APP, $version is also used for updates
+# $version is emmylua_ls's asset URL; its directory serves the other tools of the same release.
+version=$(curl -Ls https://api.github.com/repos/"$SITE"/releases/latest | sed 's/[()",{} ]/\n/g' | grep -oi "https.*/emmylua_ls-$ASSET$" | head -1)
+[ -n "$version" ] || { echo "Error getting link"; exit 1; }
+for bin in $BINS; do
+	wget "${version%/*}/$bin-$ASSET" && tar fx ./"$bin-$ASSET" && rm -f ./"$bin-$ASSET" || exit 1
+done
+cd ..
+mv ./tmp/* ./ || exit 1
+rm -R -f ./tmp || exit 1
+echo "$version" > ./version
+for bin in $BINS; do chmod a+x ./"$bin" || exit 1; done
+
+# LINK TO PATH
+for bin in $BINS; do ln -s "/opt/$APP/$bin" "/usr/local/bin/$bin"; done
+
+# SCRIPT TO UPDATE THE PROGRAM
+cat >> ./AM-updater << 'EOF'
+#!/bin/sh
+set -u
+APP=emmylua
+SITE="EmmyLuaLs/emmylua-analyzer-rust"
+BINS="emmylua_ls emmylua_check emmylua_doc_cli luafmt"
+ASSET="linux-aarch64-glibc.2.17.tar.gz"
+version0=$(cat "/opt/$APP/version")
+version=$(curl -Ls https://api.github.com/repos/"$SITE"/releases/latest | sed 's/[()",{} ]/\n/g' | grep -oi "https.*/emmylua_ls-$ASSET$" | head -1)
+[ -n "$version" ] || { echo "Error getting link"; exit 1; }
+if [ "$version" != "$version0" ]; then
+	mkdir "/opt/$APP/tmp" && cd "/opt/$APP/tmp" || exit 1
+	notify-send "A new version of $APP is available, please wait"
+	# every tool lands in tmp first, so a failed download leaves the installed set whole
+	for bin in $BINS; do
+		wget "${version%/*}/$bin-$ASSET" && tar fx ./"$bin-$ASSET" && rm -f ./"$bin-$ASSET" || exit 1
+	done
+	cd ..
+	for bin in $BINS; do chmod a+x ./tmp/"$bin" && mv -f ./tmp/"$bin" ./"$bin" || exit 1; done
+	echo "$version" > ./version
+	rm -R -f ./tmp ./*~
+	notify-send "$APP is updated!"
+else
+	echo "Update not needed!"
+fi
+EOF
+chmod a+x ./AM-updater || exit 1
