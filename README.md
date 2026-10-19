@@ -405,7 +405,7 @@ There are many discontinuous projects. Should this become one too, it will not b
 After installing AM, the following packages are a must have to make your life easier:
 
 ### *1) `appimageupdatetool`*
-[**appimageupdatetool**](https://github.com/pkgforge-dev/AppImageUpdate) (fork) is a tool to get delta updates of AppImages that support them, useful if you decide to install large AppImage packages (*see "[How to update all programs, for real!](https://github.com/ivan-hc/AM?tab=readme-ov-file#how-to-update-all-programs-for-real)"*)
+[**appimageupdatetool**](https://github.com/AppImageCommunity/AppImageUpdate) is a tool to get delta updates of AppImages that support them, useful if you decide to install large AppImage packages (*see "[How to update all programs, for real!](https://github.com/ivan-hc/AM?tab=readme-ov-file#how-to-update-all-programs-for-real)"*)
 ```
 am -i appimageupdatetool
 ```
