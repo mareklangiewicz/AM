@@ -313,6 +313,8 @@ _install_arg() {
 		wait
 		if [ -n "$GH_API_ALLOWED" ] && [ "$GH_API_ALLOWED" -le 10 ]; then
 			_alt_gh_on ./"$arg"
+			# MAREK-FORK: no proxy fallback (see ALT_GH in APP-MANAGER), so explain a failure up front
+			printf $" %b⚠️\033[0m Only %s GitHub API calls left: if the download fails, retry after the limit resets or set \"am apikey\".\n" "${Gold}" "$GH_API_ALLOWED" >&2
 		fi
 	fi
 
