@@ -2101,14 +2101,29 @@ _update_determine_apps_version_changes() {
 	fi
 }
 
-[ -z "$ALT_GH" ] && ALT_GH="https://api.gh.pkgforge.dev"
+# MAREK-FORK PATCH: never route GitHub API calls through a third-party proxy.
+#
+# Upstream defaults ALT_GH to "https://api.gh.pkgforge.dev" and rewrites scripts to
+# it: updaters when the API budget runs low, install scripts (run as root) at <=10
+# calls left, rollbacks every time, plus "am -t" previews. The proxy's answer then
+# picks the download URL, and _use_verify() fetches the digest from that same URL,
+# so "Checksum verified" cannot catch a bad answer. With "am apikey" the rewritten
+# curl also carries the token header there, and the budget probe is unauthenticated
+# (it reads the per-IP limit), so a token does not stop the reroute either.
+#
+# Here ALT_GH is pinned to GitHub itself, ignoring the environment, so every rewrite
+# below is an identity. With no budget left, GitHub-backed updates just fail and
+# retry on the next run. _alt_gh_off() also maps the old proxy host back, healing
+# scripts left rewritten by an interrupted run of upstream code.
+ALT_GH="https://api.github.com"
+ALT_GH_UPSTREAM_PROXY="https://api.gh.pkgforge.dev"
 
 _alt_gh_on() {
 	sed -i "s#https://api.github.com#$ALT_GH#g" "$@"
 }
 
 _alt_gh_off() {
-	sed -i "s#$ALT_GH#https://api.github.com#g" "$@"
+	sed -i "s#$ALT_GH_UPSTREAM_PROXY#https://api.github.com#g" "$@"
 }
 
 _update_determine_gh_apps_number() {
@@ -2125,6 +2140,11 @@ _update_determine_gh_apps_number() {
 	if [ -n "$GH_APPS_NUMBER" ]; then
 		GH_API_REMAINING=$(_use_online_reading_tool "https://api.github.com/rate_limit" | tr '{,' '\n' | grep -i remaining | tail -1 | grep -Eo "[0-9]*")
 		GH_API_ALLOWED=$((GH_API_REMAINING - GH_APPS_NUMBER))
+		# MAREK-FORK: there is no proxy fallback, so say when updates may fail;
+		# stderr, because _alt_gh_filter's stdout is eval'd by rollbacks
+		if [ "$GH_API_ALLOWED" -le 5 ]; then
+			printf $" %b⚠️\033[0m Only %s GitHub API calls left for %s apps: some may not update now, retry later or set \"am apikey\".\n" "${Gold}" "${GH_API_REMAINING:-0}" "$GH_APPS_NUMBER" >&2
+		fi
 	fi
 }
 
@@ -2132,6 +2152,8 @@ _alt_gh_filter() {
 	_update_determine_gh_apps_number
 	if [ "$GH_API_ALLOWED" -le 5 ]; then
 		sed "s#https://api.github.com#$ALT_GH#g" "$@"
+	else
+		cat "$@" # MAREK-FORK: upstream printed nothing here, emptying the rollback list
 	fi
 }
 
