@@ -1,34 +1,198 @@
-# Version catalog instead of one script per app
+# Release catalog instead of one script per app
 
-Notes from 2026-10-20. Direction only. Items under "Still open" are not chosen.
+Design notes, 2026-10-20. Not implemented. Counts are from `programs/x86_64`
+at `465988c5b` unless stated.
 
-## Direction
+## Goal
 
-The maintenance problem is inside AM. Most files in `programs/x86_64/` are the AppImage template with a different `version=$(curl … api.github.com … | sed | grep | head)` line. See `templates/AM-SAMPLE-AppImage` and `programs/x86_64/astra`. The rest of the script is directories, wget, optional archive extract, chmod, symlink, desktop and icon, and an `AM-updater` that repeats the same fetch.
+Every app is a shell script that `am -i` runs as root. Few users read them.
+The aim is that most GitHub-hosted apps install and update through one shared,
+audited installer that reads inert data, and that this works anonymously,
+with no token to configure.
 
-For a normal GitHub release, that per-app file should stop being a shell script. One shared installer takes parameters from a catalog. Adding an app is adding a row. The code to audit is the shared installer, plus the rows that are not the common case.
+The rate limit is the second reason. Anonymous REST is 60 requests per hour
+per IP, shared by everyone behind the same NAT or CGNAT, and every installed
+GitHub app costs one request on each `am -u`. Upstream works around it with a
+third-party proxy (`ALT_GH`) whose answer picks the download URL. `main-marek`
+removed that proxy (`a47ce8850`), so updates now fail when the budget runs
+out. Asking every user for `am apikey` works, but it is setup most users will
+not do.
 
-Apps that are not a single GitHub release asset stay as scripts. Examples already in the templates: portable2appimage, ghcr, multi-choice installers, LibreOffice. How large that set is has not been counted.
+## What the scripts actually contain
 
-## Why a catalog, not the pkgforge proxy
+- **Install bodies.** 8641 of 8899 scripts call `api.github.com`. Ignore the
+  `APP=`, `SITE=` and `version=` lines and the app name, and they fall into
+  314 distinct bodies. The top four (7798 scripts, 90%) are the same AppImage
+  template in different generations (script versions 3.5 and 3.6, with or
+  without the "extract any archive" block). The fifth (205 scripts) installs
+  a plain binary or archive with no launcher. Two installer kinds cover 93%.
+- **Release picking.** Splitting each first `version=` line into its pipeline
+  stages gives these classes:
 
-Upstream rewrites `api.github.com` to `https://api.gh.pkgforge.dev` when the REST budget is low (`ALT_GH` in `APP-MANAGER`, and the install path in `modules/install.am`). The proxy's JSON chooses the download URL. Checksums are taken from that URL, so a bad answer still verifies. With `am apikey`, the rewritten request can send the token to the proxy.
+  | Scripts | Endpoint | Stages besides `curl` and `sed` |
+  | ---: | --- | --- |
+  | 6978 | `/releases` | AppImage URL, not another arch, first |
+  | 276 | `/releases/latest` | AppImage URL, not another arch, first |
+  | 522 | `/releases` | any download URL, not another arch, first |
+  | ~760 | either | at least one app-specific pattern |
+  | 98 | other | other shapes |
 
-`main-marek` pins `ALT_GH` to `https://api.github.com` (`a47ce8850`, `db72e07ff`). Updates fail until the limit resets. Unauthenticated REST is 60 calls per hour per IP, and each installed GitHub app costs one call.
+  So 7254 scripts (84%) need nothing per app except the repo. The 522 need
+  care: "any asset" can pick a `.zsync`, `.sha256` or `.sig` sidecar.
+- **Quirks a generic rule must copy, or change on purpose.** `/releases`
+  returns the newest 30 releases by creation, prereleases included, and
+  `head -1` falls through to an older release when the newest one has no
+  match. The pipelines split the whole JSON with `sed`, so a matching URL in
+  a release *description* counts too. A rule that reads the structured asset
+  list is stricter than today, and that is an improvement.
 
-A workflow in this repo (a repo the user already trusts, because they already run its install scripts) calls the API, applies each app's asset rule, and publishes the chosen URLs. `am -i` and `am -u` download that file from raw GitHub or a release asset. Those downloads are not the REST core quota. The user's machine then wgets the asset from GitHub's CDN. No third-party API proxy.
+## Design
 
-A bad workflow or a bad row can still publish a bad URL. That is the same trust as today's scripts. It is not an outside proxy.
+Four pieces. Only the first two need human review.
+
+1. **Recipes** (committed, reviewed): `app<TAB>repo<TAB>convention[<TAB>pattern]`.
+   This is the trust decision for each app: which repo it comes from and how
+   to choose a file. A classifier generates the rows from the existing
+   scripts. A script whose line is exactly one of the conventions gets a row,
+   and nothing else does. So the first set needs no hand-writing, and a later
+   upstream change to a repo shows up as a one-line diff.
+2. **Conventions and installer kinds** (code, audited once):
+   - The conventions run only in CI, as the resolver.
+   - The installer kinds run on the client, as the generic installer.
+3. **Resolved catalog** (generated by CI, never edited): the newest few
+   matching releases for each recipe.
+4. **Per-app scripts** stay for everything without a recipe, unchanged. Old
+   installs keep their `AM-updater` until `am -u` takes them over.
+
+### Conventions
+
+A convention answers two questions: which release comes first, and which
+asset to take from it. Start with what the survey supports, and add a
+convention only when a count shows the scripts it would replace:
+
+- **Release order.**
+  - `newest`: by creation time, prereleases included. This is today's
+    `/releases` behavior.
+  - `latest`: the release the maintainer marked latest (`isLatest`). This is
+    today's `/releases/latest`.
+  - `stable` (newest, prereleases skipped) and `semver` (highest version
+    tag, so a backport published after a major release does not win) fix
+    real problems, but no script asks for them yet. Upstream `7b4f831e6`
+    (t3code, "skip preview releases") is the kind of row that would use
+    `stable`.
+- **Asset choice.**
+  - `appimage`: the name ends in `.AppImage`, and it names the target arch
+    or no arch at all.
+  - `pattern`: the recipe's own regular expression, for the app-specific
+    rows. Like `appimage`, it skips sidecar files.
+
+The arch is a parameter, not part of the convention. One recipe row can
+resolve for x86_64 and aarch64.
+
+### Resolved catalog
+
+One file per arch, gzip TSV, one row per app version:
+`app<TAB>tag<TAB>published<TAB>asset name<TAB>size<TAB>sha256`.
+
+- **No URL column.** The client builds
+  `https://github.com/<repo>/releases/download/<tag>/<asset name>` from the
+  repo in its own recipe, so a bad catalog row cannot point an app at a
+  different repo. The row also stays shorter.
+- **sha256 from GitHub.** Release assets now carry a `digest` in both REST
+  and GraphQL. In a 25-repo sample, 545 of 671 assets had one; older uploads
+  do not. When the digest is present, the client checks the downloaded bytes
+  against it. Today `_use_verify` reads its checksum from the same place that
+  chose the URL, so it cannot catch a bad URL.
+- **Several versions per app.** The lean is the newest 3 matches. Lag is
+  then harmless. If the installed tag is in the list and is not the first,
+  update. If it is first, nothing to do. If it is not in the list at all, it
+  is newer than the snapshot or unknown, so leave it alone instead of
+  "updating" to an older release. The same list gives rollback without an
+  API call.
+- **Size.** About 230 bytes per row before the URL is dropped. 8600 apps × 3
+  rows is roughly 6 MB raw, about 1.5 MB gzipped, per arch. The client
+  fetches it with `curl --etag-compare`, so an unchanged file costs nothing.
+
+### Client
+
+The generic installer is the AppImage template body (directories, `remove`,
+download, `chmod`, symlink, desktop file and icon), with `APP`, the URL and
+the kind as inputs. It parses the catalog with `awk -F '\t'`. There is no
+`jq` and no per-app code.
+
+`am -i` and `am -u` use it for any app that has a recipe and a catalog row.
+Otherwise they run the script as today. They fetch the catalog from a
+release asset or from raw GitHub, not from the REST API, so anonymous users
+spend no quota for catalog apps.
+
+## GitHub limits
+
+All from GitHub's REST and GraphQL rate-limit docs, read 2026-10-20.
+
+- **Who is counted.**
+  - Anonymous requests: 60 per hour per IP.
+  - A personal token: 5000 per hour per user. All of that user's tokens and
+    workflows share it.
+  - `GITHUB_TOKEN` inside Actions: 1000 per hour per repository. This holds
+    for both REST requests and GraphQL points.
+  - A GitHub App installation: 5000 to 12,500 per hour.
+- **What one request buys.**
+  - REST: one repo's release list per request.
+  - GraphQL: many repos per query. Cost is "connections needed / 100". In a
+    dry run, 100 repos × 5 releases × 50 assets cost 6 points, but GitHub
+    refused the real query ("Resource limits for this query exceeded").
+    25 repos per query ran, cost 2 points, and returned 1102 assets.
+- **Secondary limits.** At most 100 concurrent requests, 900 REST points per
+  minute and 2000 GraphQL points per minute. A sequential crawler stays far
+  below these.
+- **Conditional requests.** A `304` does not count, but only for
+  authenticated requests. It helps CI, not anonymous clients.
+
+### How often to refresh
+
+The x86_64 and aarch64 scripts reference 8292 unique API endpoints, about
+8300 repos. At 25 repos for 2 points per query, a full sweep is about 330
+queries and 670 points. That fits inside one hour of a single repository's
+`GITHUB_TOKEN`, with no secret to manage. Hourly is possible. Every 6 hours
+or daily leaves plenty of headroom, and the version list makes the lag
+harmless.
+
+### Splitting workflows or repos
+
+- **Several workflows in one repo** share that repo's `GITHUB_TOKEN` budget,
+  so splitting by app kind buys nothing.
+- **Separate repos** would each get their own 1000 per hour. That is not
+  needed when one sweep costs about 670. It also adds more places to trust
+  and maintain, and it looks like working around the limits.
+- **What is worth splitting is jobs, by privilege.** The resolver job reads
+  with `permissions: contents: read` and uploads the TSV as an artifact. A
+  second job, with write access, publishes that artifact without running
+  any repo-derived code.
+- **Inactivity.** Scheduled workflows in a public repo are disabled after 60
+  days without repository activity. The docs do not say what counts as
+  activity, so check that the publishing step counts, or keep a watchdog.
+
+## Not pursued
+
+- **Running each script's `version=` line in CI** and publishing its result.
+  This removes the quota problem with zero new schema. But clients still run
+  every per-app script, and CI would run repo-derived shell next to a token.
+  It fixes quota, not trust.
+- **Hand-writing rows for the long tail.** Recipes start as generated rows
+  for the conventions, and the long tail stays as scripts until a count shows
+  a new convention is worth it.
 
 ## Still open
 
-These are the current lean, written down so the next pass can drop them. None of them is a commitment.
-
-- **File format.** TSV is the lean: one app per line, TAB-separated, read with `awk -F '\t'`, no `jq`, and no `sed` JSON splitting on the client. JSONL is the alternative if a parser on the install path is acceptable. It diffs well and suits a Python generator. It is a worse fit for POSIX `sh`. Plain JSON is a poor client format for the same reason. Revisit before any file is generated.
-- **One file or two.** The lean is a small recipe catalog (name, kind, repo, how to pick the asset) reviewed by humans, and a resolved catalog (name, tag, url, size, published) rewritten by the workflow and only read by `am`. A single file that stores both the rule and the last resolved URL may be enough and easier to explain. Not settled.
-- **How an asset is chosen.** The lean copies today's filters: an include pattern and an exclude pattern, basic regular expressions, evaluated only on the runner. Named fields (`suffix=AppImage`, `arch=x86_64`) might cover the common rows with less regex. Not surveyed against the real scripts.
-- **Kinds.** `appimage`, `archive`, and `binary` are guesses from the templates. The shared installer should grow a kind only after a count of how many scripts that kind would replace.
-- **Stale or missing row.** The lean is: that one app falls back to a live API call, and the run does not use the proxy. Always trusting the snapshot, or refusing to update when it is old, are both plausible. Not chosen.
-- **Workflow budget.** One REST call per repo per scan, deduplicated. A maintainer PAT is 5000 requests per hour. `GITHUB_TOKEN` on Actions is 1000 per hour per repository. Daily and incremental is the lean. Schedule, token type, and what "unchanged" means are not designed.
-- **Integrity of the published file.** Signing or pinning a commit is optional extra trust. Not required to beat the proxy, and not decided.
-- **Where it lives.** This fork first. Whether any of it is offered upstream is a later question.
+- Recipe layout: one file with an `arches` column, or one file per arch
+  matching `programs/<arch>`.
+- Whether `newest` should keep today's "fall through to an older release"
+  behavior, and how many releases deep to look (GraphQL `first: N`).
+- How `am -u` takes over an installed app. Options: replace its
+  `AM-updater` with a call into the generic one, or just stop running the
+  file.
+- Release asset or orphan branch for the catalog, and whether to sign it.
+- Whether the 522 "any asset" scripts get their own convention after a
+  sidecar filter, or `pattern` rows.
+- What upstream would want. Upstream's template generator (`am -t`) could
+  emit a recipe row instead of a script for apps that fit a convention.
