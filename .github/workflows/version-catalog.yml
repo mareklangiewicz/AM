@@ -1,0 +1,44 @@
+name: "Version catalog"
+
+# First version: manual only (Actions tab, "Run workflow"). No schedule, no commits, no Pages.
+# Runs the same script you can run locally: tools/version-catalog/catalog.sh
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  catalog:
+    name: "Build versions.tsv"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v4
+
+      - name: "Run catalog.sh"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          sh tools/version-catalog/catalog.sh . "$RUNNER_TEMP/vc-cache" > versions.tsv
+
+      - name: "Summary"
+        run: |
+          {
+            echo "### versions.tsv"
+            echo
+            echo "Rows: $(grep -vc '^#' versions.tsv || true)"
+            for s in ok unknown error; do
+              echo "- $s: $(awk -F'\t' -v s="$s" '$7==s' versions.tsv | wc -l)"
+            done
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: "Upload artifact"
+        uses: actions/upload-artifact@v4
+        with:
+          name: versions-tsv
+          path: versions.tsv
