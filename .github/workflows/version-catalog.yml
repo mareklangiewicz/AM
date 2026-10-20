@@ -1,12 +1,13 @@
 name: "Version catalog"
 
-# First version: manual only (Actions tab, "Run workflow"). No schedule, no commits, no Pages.
+# First version: manual only (Actions tab, "Run workflow"). No schedule, no Pages.
+# Commits tools/version-catalog/versions.tsv back to the branch it ran on (only if changed).
 # Runs the same script you can run locally: tools/version-catalog/catalog.sh
 on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -24,21 +25,27 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          sh tools/version-catalog/catalog.sh . "$RUNNER_TEMP/vc-cache" > versions.tsv
+          sh tools/version-catalog/catalog.sh . "$RUNNER_TEMP/vc-cache" > tools/version-catalog/versions.tsv
 
       - name: "Summary"
         run: |
           {
             echo "### versions.tsv"
             echo
-            echo "Rows: $(grep -vc '^#' versions.tsv || true)"
+            echo "Rows: $(grep -vc '^#' tools/version-catalog/versions.tsv || true)"
             for s in ok unknown error; do
-              echo "- $s: $(awk -F'\t' -v s="$s" '$7==s' versions.tsv | wc -l)"
+              echo "- $s: $(awk -F'\t' -v s="$s" '$7==s' tools/version-catalog/versions.tsv | wc -l)"
             done
           } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: "Upload artifact"
-        uses: actions/upload-artifact@v4
-        with:
-          name: versions-tsv
-          path: versions.tsv
+      - name: "Commit versions.tsv"
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/version-catalog/versions.tsv
+          if git diff --cached --quiet; then
+            echo "versions.tsv unchanged, nothing to commit"
+          else
+            git commit -m "version-catalog: update versions.tsv"
+            git push
+          fi
