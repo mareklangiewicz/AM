@@ -74,19 +74,22 @@ Four pieces. Only the first two need human review.
 
 ### Prototype results
 
-Throwaway scripts on branch `proto/release-catalog` (`tools/proto-catalog/`):
-a classifier, a GraphQL resolver, and a shadow check that runs each
-script's own `version=` pipeline against a cached REST response and
-compares its pick with the resolver's.
+Throwaway scripts on branch `proto/release-catalog` (`tools/proto-catalog/`),
+in the languages the repo already uses: the classifier and the picker are
+`awk`, the resolver and the shadow check are POSIX `sh` with `gh` and `jq`.
+The shadow check runs each script's own `version=` pipeline against a
+cached REST response and compares its pick with the resolver's. An earlier
+Python version gave identical rows on the same data.
 
-- **Classifier.** It gives recipe rows to 7753 of 8899 x86_64 scripts and
-  1504 of the aarch64 ones:
+- **Classifier.** It gives recipe rows to 7230 of 8899 x86_64 scripts and
+  1267 of the aarch64 ones. The "any asset" scripts get no row (see
+  Decisions):
 
   | Convention | x86_64 | aarch64 |
   | --- | ---: | ---: |
   | `newest:appimage` | 6956 | 1071 |
   | `latest:appimage` | 274 | 196 |
-  | `newest:any` / `latest:any` | 523 | 237 |
+  | no row: "any asset" | 523 | 237 |
 
   42 x86_64 scripts have an installer and `AM-updater` whose `version=`
   lines differ, and get no row.
@@ -97,11 +100,13 @@ compares its pick with the resolver's.
   - 1 repo has 998 assets in one release, more than the 50 the query reads.
   - 1 matches nothing either way.
   - Before the name sort, 13 picks differed.
-- **`any` is not a convention.** Its picks were the same as today's, but
-  today's are wrong: 4 of 6 sampled aarch64 `any` scripts install a macOS
-  `.dmg`, and one x86_64 script installs an Android `.apk`. They "work"
-  only because `.AppImage` sorts first by name when one is present. Those
-  rows need a `pattern`, or a convention that rejects non-Linux formats.
+- **"any asset" is not a convention.** The resolver reproduced today's
+  picks, but today's picks are often wrong. They "work" only because
+  `.AppImage` sorts first by name when one is present. Over the full sweep,
+  of the 236 aarch64 scripts that resolved, about 136 install a file for
+  another OS: 125 a macOS `.dmg`, 8 an Android `.apk`, 3 a Windows `.exe`.
+  On x86_64 it is about 20 of 523. That is a bug in those scripts, to fix
+  separately from the catalog.
 - **Fall-through depth.** 175 of 186 sampled repos have their first match
   in the newest release, but 3 need more than 5 releases (one needs 28).
   The resolver reads 5 releases, then re-queries only repos with no match,
@@ -235,19 +240,33 @@ version list makes the lag harmless.
   for the conventions, and the long tail stays as scripts until a count shows
   a new convention is worth it.
 
+## Decisions
+
+Chosen for simplicity, and so the result has a chance upstream.
+
+- **No new language.** The CI side is `sh`, `awk`, `gh` and `jq`, all
+  already on GitHub runners. The client stays `sh` and `awk`, with no `jq`.
+- **A recipe row must reproduce today's pick.** So the "any asset" scripts
+  get no row and stay scripts, unchanged. No convention for them, and no
+  `pattern` rows yet.
+- **Anything the resolver cannot resolve stays a script.** This covers
+  repos with more than 50 assets in a release (nightly bundles), deleted
+  repos, and releases with no match. There are no special cases in the
+  query.
+- **`newest` keeps today's fall-through.** The resolver reads 5 releases,
+  then re-reads only the repos with no match, 30 deep (today's `/releases`
+  page size).
+- **The `.dmg`/`.apk` scripts are a separate bug.** Fixing them is not
+  catalog work. Each needs its own fix: a narrower pattern, or removing
+  the script for an arch that has no Linux build.
+
 ## Still open
 
 - Recipe layout: one file with an `arches` column, or one file per arch
   matching `programs/<arch>`.
-- Whether `newest` should keep today's "fall through to an older release"
-  behavior, and how many releases deep to look (GraphQL `first: N`).
 - How `am -u` takes over an installed app. Options: replace its
   `AM-updater` with a call into the generic one, or just stop running the
   file.
 - Release asset or orphan branch for the catalog, and whether to sign it.
-- What the "any asset" scripts become. The prototype shows that "any" with
-  a sidecar filter still picks `.dmg` and `.apk` files.
-- What to do with repos whose releases have more than 50 assets (nightly
-  bundles). Options: per-repo `first: 100`, or leave them as scripts.
 - What upstream would want. Upstream's template generator (`am -t`) could
   emit a recipe row instead of a script for apps that fit a convention.
