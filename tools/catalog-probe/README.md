@@ -11,3 +11,7 @@ This experiment runs only by explicit workflow_dispatch. Its job also checks the
 The Actions artifact contains public response bodies, quota response headers, statuses, and the fixed GraphQL query. No request authorization headers are written. Retention is seven days. Record the run URL, repository commit, selected measurements, and interpretation in docs/track/release-catalog/issues/02-workflow-token-probe.md before marking it resolved.
 
 Local checks: `sh -n tools/catalog-probe/probe.sh` and `shellcheck tools/catalog-probe/probe.sh`. Initial offline fixture checks also covered success with an empty-body 304, GraphQL errors, and HTTP 429 stopping without further requests. Offline results validate control flow, not real token permissions or quotas.
+
+## Read-only request inventory
+
+Run `sh tools/catalog-probe/inventory.sh OUTPUT_DIRECTORY` from the repository root. It scans x86_64 and aarch64 recipes as text and emits request occurrences, script comparison flags, and release URL candidates. It never runs recipes or expands shell variables. Candidate URLs include unverified/dead/template contexts and require review before collection; see docs/track/release-catalog/research/request-inventory-findings.md for measured scope and limitations. The output directory should be outside tracked source unless explicitly retaining a snapshot.

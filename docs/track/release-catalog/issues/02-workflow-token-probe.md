@@ -3,6 +3,7 @@
 Type: prototype
 Status: open
 Triage: ready-for-human
+Blocked by: 05
 
 ## Question
 
@@ -29,3 +30,5 @@ Marek authorized use of mareklangiewicz/AM. The inherited home AGENTS.md require
 Superseding diagnosis via gh: repository Actions permissions report enabled=false. Existing five workflows are individually active, but the repository-wide switch prevents execution. No Actions settings have been changed.
 
 Marek requires experimental workflows to run only by manual dispatch and wants to avoid triggering other workflows. Removed the push trigger and added a job-level event guard. Next: push the manual-only revision with approval; agree how to register it on default main, disable existing workflows while repository Actions is still off, and enable Actions only after verifying isolation. Do not dispatch an experiment without an explicit run instruction. No live quota measurements yet.
+
+2026-10-27 continuation: manual-only revision 4a2083e2a is pushed. gh confirms Actions remains off and there are no pending runs. Registration/isolation is tracked separately in [05](05-isolate-and-register-manual-probe.md); no dispatch or repository enablement has occurred.

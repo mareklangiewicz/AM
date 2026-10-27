@@ -17,7 +17,7 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 ## Fog
 
 - [02: measure workflow-token behavior](issues/02-workflow-token-probe.md): REST headers and conditional requests, bounded GraphQL batching, actual Actions quotas. Local probe is prepared; a remote run is pending.
-- [03: inventory request coverage](issues/03-inventory-release-requests.md): current fork's exact requests, shared upstreams, pagination, unsupported dependencies, and client helper availability.
+- [05: isolate and register manual probe](issues/05-isolate-and-register-manual-probe.md): local one-file default-branch registration commit prepared; approval needed for workflow isolation, pushes, and enabling Actions without dispatch.
 - [04: compare collection strategies](issues/04-compare-collection-strategies.md): whether REST snapshots, structured GraphQL observations, or a limited combination best balance compatibility, simplicity, payload size, and freshness.
 - Retention and Git growth; volatile response fields; large asset lists; removed upstream data; standalone updater migration; actual publishing privilege separation; eventual upstream preferences.
 
@@ -28,3 +28,5 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 2026-10-27: fc0e2be7d pushed to origin/main-marek with Marek's approval. Probe did not appear in run/check listings or the public workflow registry. [Ticket 02](issues/02-workflow-token-probe.md) is open with ready-for-human triage pending a signed-in Actions configuration check. No runtime quota measurements yet.
 
 2026-10-27 correction: gh works with keyring access outside the sandbox. It confirmed Actions is disabled repository-wide (enabled=false), while the five existing workflows are individually active. Marek requires manual-only experiments. Removed the probe push trigger and added a manual-event job guard; keep repository Actions disabled pending an approved isolation/registration plan. Earlier push-trigger and signed-in-browser suggestions are superseded.
+
+2026-10-27: [03 resolved](issues/03-inventory-release-requests.md), with [measured inventory](research/request-inventory-findings.md): 8,337 literal release URLs, 164 unresolved dynamic occurrences, 1,559 shared URLs across architectures. Daily polling averages 347.4 REST calls/hour before overhead, so a full hourly sweep is not required by the 24-hour target. Existing classifier counts reproduced. Prepared local one-file registration commit 43cceedf7 without checking out or merging main. [05](issues/05-isolate-and-register-manual-probe.md) records the proposed isolation/enablement plan; all Actions settings remain unchanged.
