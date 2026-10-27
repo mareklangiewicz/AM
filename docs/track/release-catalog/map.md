@@ -399,3 +399,10 @@ Read-only host inspection and [four-file payload/rollback plan](pilot/plan.md)
 are complete. Installed Obsidian is 1.14.4, so execution against retained 1.14.5
 metadata would change the app. Proposed first pilot is delivery only; host writes
 and actual app update are not performed. Payload syntax checks pass.
+
+
+2026-10-28: [32 open, ready-for-human: approved installed delivery](issues/32-installed-obsidian-delivery-pilot.md).
+Hash/syntax prechecks passed, but backup ownership preservation failed EPERM
+before any installed replacement. sudo requires interactive authentication.
+Partial backups are retained; checked delivery script is saved. Resume the same
+approved pilot after sudo authentication; no app/update operation has run.
