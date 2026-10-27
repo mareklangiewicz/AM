@@ -25,7 +25,7 @@ reviewed sources; no automatic discovery or identity lookup is introduced.
 
 A usable 200 requires complete measured transport evidence, exact length, release
 list/latest/tag object shape, positive release IDs, string tags, draft=false,
-measured published timestamps and an asset list with positive IDs/string names.
+parseable UTC publication timestamps and an asset list with positive IDs/string names.
 It preserves fields and order. A valid empty list replaces an older body. These
 checks supplement the accepted restricted-token visibility boundary; JSON shape
 cannot independently prove repository visibility or binary authenticity.
@@ -95,3 +95,10 @@ exact new pushed revision and existing approved manifest hash. Recheck workflow
 isolation and record the resulting candidate hashes; no retries or expanded source
 set. Remote delivery needs a separate writer implementation and operational design;
 this integration does not silently grant collection repository write permission.
+
+## Live verification
+
+[Run 40531417616 findings](../research/storage-integration-40531417616-findings.md)
+record successful candidate staging on Python 3.12.3/Linux and independent body/
+index/pinned-read verification. The workflow currently starts each run with no
+previous tree. Cross-run persistence and live conditionals are not wired yet.

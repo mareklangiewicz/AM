@@ -164,3 +164,15 @@ no day sample or wait is required. Further collection needs explicit instruction
 candidate artifact validation and local-only publication/pinned reads. 62 offline
 tests pass against saved measured evidence and synthetic transitions. Preparing
 one authorized six-source live validation with unchanged contents:read boundary.
+
+
+2026-10-27: [17 resolved](issues/17-integrate-observation-storage.md). Actual
+collector/storage staging implemented with pure transitions, closed-tree bounds,
+local atomic Git publication and pinned freshness reads. 62 offline tests pass.
+One authorized run 40531417616 (9679305de) succeeded on Python 3.12.3/Linux:
+six valid observations, 12 aliases, 4,893,975-byte candidate.
+[Persistent evidence and checks](research/storage-integration-40531417616-findings.md)
+include exact candidate files and a local publication bundle. Workflow remains
+contents:read and starts a fresh candidate per run. Next delivery seam is trusted
+prior-state loading plus a separate artifact-validating publisher; no remote
+catalog branch, schedule or installer change has occurred.
