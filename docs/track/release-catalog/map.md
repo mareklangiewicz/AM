@@ -176,3 +176,11 @@ include exact candidate files and a local publication bundle. Workflow remains
 contents:read and starts a fresh candidate per run. Next delivery seam is trusted
 prior-state loading plus a separate artifact-validating publisher; no remote
 catalog branch, schedule or installer change has occurred.
+
+
+2026-10-27: [18 claimed](issues/18-persist-and-publish-catalog.md). Implemented
+[exact-prior remote delivery](design/catalog-delivery.md) with contents:read
+collection and a separate artifact-recomputing contents:write/actions:read job.
+66 offline tests pass, including real prior ZIP replay and local bare-remote
+bootstrap/conditional repeat. Preparing bounded bootstrap and exact-parent repeat
+under Marek's existing push/workflow authorization; no schedule or app changes.

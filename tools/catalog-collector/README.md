@@ -143,3 +143,13 @@ docs/track/release-catalog/design/storage-collector-integration.md for format an
 transitions. artifact_io.py reads closed candidate directories; publication.py
 provides local-only atomic Git commits and pinned freshness-checked reads. Neither
 has a network/remote publication path. No installer calls these helpers.
+
+## Persistent delivery (ticket 18)
+
+The manual workflow now accepts previous_publication: an exact release-catalog
+commit, empty only for branch creation. It loads validated available observations
+into conditional planning and applies storage against that prior. A separate
+publisher job validates the same-run artifact and recomputes it before a normal
+fast-forward push to release-catalog. See docs/track/release-catalog/design/catalog-delivery.md
+for permissions, bounded ZIP/Git handling, conflict behavior and limits. No schedule
+or installed-app integration is enabled.

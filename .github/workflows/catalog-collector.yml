@@ -11,27 +11,38 @@ on:
         description: Separately reviewed exact manifest SHA256
         type: string
         required: true
+      previous_publication:
+        description: Exact release-catalog commit; empty only for first publication
+        type: string
+        required: false
+        default: ''
 permissions:
   contents: read
 concurrency:
   group: restricted-catalog-validation
   cancel-in-progress: false
+env:
+  CTX_REPOSITORY: ${{ github.repository }}
+  CTX_REPOSITORY_ID: ${{ github.repository_id }}
+  CTX_EVENT: ${{ github.event_name }}
+  CTX_REF: ${{ github.ref }}
+  CTX_SHA: ${{ github.sha }}
+  CTX_WORKFLOW_SHA: ${{ github.workflow_sha }}
+  CTX_RUN_ID: ${{ github.run_id }}
+  CTX_RUN_ATTEMPT: ${{ github.run_attempt }}
+  CTX_APPROVED_REVISION: ${{ inputs.approved_revision }}
+  CTX_MANIFEST_SHA256: ${{ inputs.manifest_sha256 }}
+  CTX_PREVIOUS_PUBLICATION: ${{ inputs.previous_publication }}
 jobs:
   collect:
     if: github.repository == 'mareklangiewicz/AM' && github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main-marek'
     runs-on: ubuntu-24.04
     timeout-minutes: 5
-    env:
-      CTX_REPOSITORY: ${{ github.repository }}
-      CTX_REPOSITORY_ID: ${{ github.repository_id }}
-      CTX_EVENT: ${{ github.event_name }}
-      CTX_REF: ${{ github.ref }}
-      CTX_SHA: ${{ github.sha }}
-      CTX_WORKFLOW_SHA: ${{ github.workflow_sha }}
-      CTX_RUN_ID: ${{ github.run_id }}
-      CTX_RUN_ATTEMPT: ${{ github.run_attempt }}
-      CTX_APPROVED_REVISION: ${{ inputs.approved_revision }}
-      CTX_MANIFEST_SHA256: ${{ inputs.manifest_sha256 }}
+    permissions:
+      contents: read
+    outputs:
+      artifact_id: ${{ steps.evidence.outputs.artifact-id }}
+      artifact_digest: ${{ steps.evidence.outputs.artifact-digest }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # existing reviewed pin
         with:
@@ -56,19 +67,61 @@ jobs:
           import os, pathlib, subprocess, sys
           sys.path.insert(0, 'tools/catalog-collector')
           from workflow_adapter import run
+          from delivery import fetch_prior
           context = {k[4:].lower(): v for k, v in os.environ.items() if k.startswith('CTX_')}
           raw = pathlib.Path('docs/track/release-catalog/design/staged-manifest.json').read_bytes()
           revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
           token = os.environ.pop('COLLECTOR_WORKFLOW_TOKEN').encode('ascii')
-          result = run(context, raw, revision, token, pathlib.Path(os.environ['RUNNER_TEMP']) / 'restricted-catalog')
+          prior = fetch_prior(context, token, pathlib.Path(os.environ['RUNNER_TEMP']) / 'catalog-prior')
+          result = run(context, raw, revision, token, pathlib.Path(os.environ['RUNNER_TEMP']) / 'restricted-catalog', previous_tree=prior)
           token = b''
           raise SystemExit(0 if result else 1)
           PY
       - name: Preserve bounded public transfer evidence
+        id: evidence
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # existing reviewed pin
         with:
           name: restricted-catalog-${{ github.run_id }}-${{ github.run_attempt }}
           path: ${{ runner.temp }}/restricted-catalog/
+          retention-days: 7
+          if-no-files-found: warn
+  publish:
+    needs: collect
+    if: github.repository == 'mareklangiewicz/AM' && github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main-marek'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Recompute and publish exact same-run catalog artifact
+        env:
+          PUBLISHER_WORKFLOW_TOKEN: ${{ github.token }}
+          ARTIFACT_ID: ${{ needs.collect.outputs.artifact_id }}
+          ARTIFACT_DIGEST: ${{ needs.collect.outputs.artifact_digest }}
+        run: |
+          python3 -B - <<'PYCODE'
+          import os, pathlib, subprocess, sys, json
+          sys.path.insert(0, 'tools/catalog-collector')
+          from delivery import publish
+          context = {k[4:].lower(): v for k, v in os.environ.items() if k.startswith('CTX_')}
+          raw = pathlib.Path('docs/track/release-catalog/design/staged-manifest.json').read_bytes()
+          revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+          token = os.environ.pop('PUBLISHER_WORKFLOW_TOKEN').encode('ascii')
+          result = publish(context, raw, revision, os.environ['ARTIFACT_ID'], os.environ['ARTIFACT_DIGEST'], token, pathlib.Path(os.environ['RUNNER_TEMP']) / 'catalog-publication')
+          token = b''
+          print(json.dumps(result))
+          PYCODE
+      - name: Preserve publication provenance
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: catalog-publication-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/catalog-publication/publication.json
           retention-days: 7
           if-no-files-found: warn
