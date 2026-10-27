@@ -1,7 +1,7 @@
 # Run and interpret the bounded REST churn experiment
 
 Type: task
-Status: open
+Status: resolved
 Triage: ready-for-human
 Blocked by: 04
 
@@ -35,3 +35,7 @@ Seven offline fixture tests cover three-round chaining/304 reuse and analysis, H
 2026-10-27: after Marek separately approved the push through 37bdb433c and one replacement dispatch, [baseline 40500475496 succeeded](../research/churn-baseline-40500475496-findings.md). All six responses were 200; body hashes and offline analysis validated. Exact bodies total 4,877,752 bytes, diagnostic projection 622,062; churn remains unmeasured. This complete run is the valid previous_run for a separately authorized churn-hour, targeted around 14:01 Europe/Warsaw today. No repeat or schedule authorized. Evidence preserved locally in tracked research files.
 
 2026-10-27: Marek instructed continuation at the hour sampling point. [Run 40508899451 succeeded](../research/churn-hour-40508899451-findings.md), 63m25.878s after baseline. All six conditional GETs returned 200; all raw bodies changed only in 198 download-count and two reaction-count paths. Ordered identities and projections stayed equal. Packed history grew 4,324 bytes exact / 458 bytes projection. Evidence preserved. Next separately authorized day observation should use previous_run=40508899451 around 2026-10-28 13:01 Europe/Warsaw. No schedule, next dispatch or push authorized.
+
+## Answer
+
+2026-10-27: Marek chose not to wait for the day interval and accepted proceeding provisionally with exact REST snapshots. The day sample is optional follow-up, not a blocker or scheduled work. Baseline/hour evidence meets the revised short-window measurement scope: six endpoints, all hashes preserved; HTTP 200 counter churn at all six; packed growth 4,324 bytes exact versus 458 projection; unchanged ordered identities/projections/filter results. This is insufficient for fleet/long-term storage forecasts. [07](07-storage-and-publication-design.md) continues storage/publication design. Earlier comments calling the day observation the required next step are superseded. No additional run authorized.

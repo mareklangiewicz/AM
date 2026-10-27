@@ -15,3 +15,7 @@ Provisional collection: reviewed request inventory, no installation-script execu
 First completion boundary: a bounded workflow-token probe, documented results and limitations, and a request inventory sufficient to choose the next prototype. Full collector, generic installer, mass updater migration, scheduled publication, and upstream PR are outside this experiment.
 
 See [earlier design](../../design/version-catalog.md) for prior GraphQL measurements and a different resolved-catalog architecture. Do not combine the earlier sweep's cost with full REST compatibility claims.
+
+## 2026-10-27 continuation
+
+After the bounded baseline/hour experiment, Marek accepted provisional exact REST snapshots and proceeding without waiting for a day observation. Day sampling is optional, not a blocker or scheduled work. Storage/publication design is recorded under design/storage-publication-v1.md; it remains a proposal pending offline verification. Full live collection, remote publication, installer integration and schedules remain outside the current authorized work.

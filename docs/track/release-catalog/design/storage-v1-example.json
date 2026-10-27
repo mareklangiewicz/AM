@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-10-27T13:04:53.343214+00:00",
+  "manifest_sha256": null,
+  "collector_revision": "37bdb433c5b557e73b83033774d5f230f0789fa6",
+  "run": {
+    "id": 40508899451,
+    "url": "https://github.com/mareklangiewicz/AM/actions/runs/40508899451"
+  },
+  "aliases": {
+    "https://api.github.com/repos/obsidianmd/obsidian-releases/releases": "d92c3c4967197d82f80e71136968483888912ce00376f5cba817553cf6495273"
+  },
+  "entries": {
+    "d92c3c4967197d82f80e71136968483888912ce00376f5cba817553cf6495273": {
+      "request": {
+        "url": "https://api.github.com/repos/obsidianmd/obsidian-releases/releases",
+        "api_version": "2022-11-28",
+        "accept": "application/vnd.github+json"
+      },
+      "request_id": "d92c3c4967197d82f80e71136968483888912ce00376f5cba817553cf6495273",
+      "availability": "available",
+      "observation": {
+        "body_path": "bodies/d92c3c4967197d82f80e71136968483888912ce00376f5cba817553cf6495273.json",
+        "sha256": "f191b31fb4212ecfd51fff20aaeda33bcca877f1c89415e826f47b9f6b7d9941",
+        "byte_length": 450991,
+        "received_at": "2026-10-27T13:04:49.446551+00:00",
+        "validated_at": "2026-10-27T13:04:49.446551+00:00",
+        "validation_status": 200,
+        "scope": "single-response",
+        "link": "<https://api.github.com/repositories/262342594/releases?page=2>; rel=\"next\", <https://api.github.com/repositories/262342594/releases?page=6>; rel=\"last\""
+      },
+      "validators": {
+        "etag": "\"7fce2a891390f7018d6cd44771026ef359ffd66444270f91fd06b4fb65db80d9\""
+      },
+      "latest_attempt": {
+        "at": "2026-10-27T13:04:49.446551+00:00",
+        "outcome": "success",
+        "http_status": 200,
+        "headers": {
+          "date": "Tue, 27 Oct 2026 13:04:49 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "etag": "\"7fce2a891390f7018d6cd44771026ef359ffd66444270f91fd06b4fb65db80d9\"",
+          "link": "<https://api.github.com/repositories/262342594/releases?page=2>; rel=\"next\", <https://api.github.com/repositories/262342594/releases?page=6>; rel=\"last\"",
+          "x-ratelimit-limit": "5000",
+          "x-ratelimit-remaining": "4999",
+          "x-ratelimit-reset": "1793109889",
+          "x-ratelimit-used": "1",
+          "x-ratelimit-resource": "core"
+        }
+      }
+    }
+  }
+}
