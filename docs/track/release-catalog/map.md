@@ -17,7 +17,7 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 ## Fog
 
 - [06 resolved](issues/06-manual-rest-churn-experiment.md): baseline/hour measurements support provisional REST-first work; day sampling is optional. Fleet storage remains unmeasured.
-- [08 resolved](issues/08-offline-storage-prototype.md): 64 offline replay checks support the bounded format/state/publication contract; [09 resolved](issues/09-review-offline-findings.md) records review refinements; [10 resolved](issues/10-offline-client-freshness.md) verifies bounded freshness/consent; [11 resolved](issues/11-review-client-and-collection-boundaries.md) accepts the initial policy/direction; [12](issues/12-offline-restricted-collector.md) is the offline implementation frontier.
+- [08 resolved](issues/08-offline-storage-prototype.md): 64 offline replay checks support the bounded format/state/publication contract; [09 resolved](issues/09-review-offline-findings.md) records review refinements; [10 resolved](issues/10-offline-client-freshness.md) verifies bounded freshness/consent; [11 resolved](issues/11-review-client-and-collection-boundaries.md) accepts the initial policy/direction; [12 resolved](issues/12-offline-restricted-collector.md) implements the offline core; [13](issues/13-prepare-adapter-and-enrollment-review.md) prepares adapter and identity-enrollment review.
 - [04 resolved](issues/04-compare-collection-strategies.md): REST-first experiment agreed; revisit the representation if churn/storage evidence or future consumer needs justify it.
 - Retention and Git growth; volatile response fields; large asset lists; removed upstream data; standalone updater migration; actual publishing privilege separation; eventual upstream preferences.
 
@@ -94,3 +94,12 @@ restricted workflow-token collector design before remote delivery. The
 injected transport/clock, own-repository identity exclusion and bounded collection.
 [12](issues/12-offline-restricted-collector.md) is ready for offline implementation.
 No network transport or workflow change has been implemented or dispatched.
+
+
+2026-10-27: with Marek's push-and-continue instruction, pushed the accepted design
+through f986e5c93, then resolved [12](issues/12-offline-restricted-collector.md).
+The injected collector core and synthetic replay are in tools/catalog-collector;
+17 focused tests and eight historical churn tests pass. [Findings](research/collector-offline-findings.md)
+record the event/deadline/identity/conditional boundaries and remaining adapter
+limits. No active workflow, live transport or installer was changed.
+[13](issues/13-prepare-adapter-and-enrollment-review.md) is the preparation frontier.

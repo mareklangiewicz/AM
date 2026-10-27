@@ -1,0 +1,390 @@
+{
+  "synthetic": true,
+  "network_transport_available": false,
+  "scenarios": {
+    "baseline": {
+      "run": {
+        "attempted": 6,
+        "completed": 6,
+        "not_attempted": [],
+        "stop_reason": null,
+        "all_attempted": true,
+        "complete": true,
+        "received_bytes": 24,
+        "elapsed_seconds": 6
+      },
+      "transport_calls": 6,
+      "attempts": [
+        {
+          "request_id": "ba0479a10f619311e88dbe0725a7fdd4b01d5ec6c849ec2f7b8928cd905ac5d5",
+          "descriptor": {
+            "url": "https://api.github.com/repos/fixture/app0/releases",
+            "api_version": "2022-11-28",
+            "accept": "application/vnd.github+json"
+          },
+          "repository_id": 100,
+          "request_started_at": "2026-10-27T15:00:00+00:00",
+          "response_completed_at": "2026-10-27T15:00:01+00:00",
+          "attempt_finished_at": "2026-10-27T15:00:01+00:00",
+          "status": 200,
+          "headers": {
+            "x-ratelimit-limit": "1000",
+            "x-ratelimit-remaining": "900",
+            "x-ratelimit-reset": "1793116800",
+            "etag": "fixture-v1"
+          },
+          "condition": {},
+          "outcome": "response",
+          "body_bytes": 4,
+          "body_sha256": "2f94202d54c40d31672f37d8ae33d957d6babb457cefa14565ee2713284b4280"
+        },
+        {
+          "request_id": "cebd0dbeedbe643147796eb56b97c692c3932e9cecbbddb4ebb9ee7d03130201",
+          "descriptor": {
+            "url": "https://api.github.com/repos/fixture/app1/releases",
+            "api_version": "2022-11-28",
+            "accept": "application/vnd.github+json"
+          },
+          "repository_id": 101,
+          "request_started_at": "2026-10-27T15:00:01+00:00",
+          "response_completed_at": "2026-10-27T15:00:02+00:00",
+          "attempt_finished_at": "2026-10-27T15:00:02+00:00",
+          "status": 200,
+          "headers": {
+            "x-ratelimit-limit": "1000",
+            "x-ratelimit-remaining": "900",
+            "x-ratelimit-reset": "1793116800",
+            "etag": "fixture-v1"
+          },
+          "condition": {},
+          "outcome": "response",
+          "body_bytes": 4,
+          "body_sha256": "2f94202d54c40d31672f37d8ae33d957d6babb457cefa14565ee2713284b4280"
+        },
+        {
+          "request_id": "b7260ba1e1fda841263759df32a500faa02320b0f98eb63495b8c7db7bc23c7c",
+          "descriptor": {
+            "url": "https://api.github.com/repos/fixture/app2/releases",
+            "api_version": "2022-11-28",
+            "accept": "application/vnd.github+json"
+          },
+          "repository_id": 102,
+          "request_started_at": "2026-10-27T15:00:02+00:00",
+          "response_completed_at": "2026-10-27T15:00:03+00:00",
+          "attempt_finished_at": "2026-10-27T15:00:03+00:00",
+          "status": 200,
+          "headers": {
+            "x-ratelimit-limit": "1000",
+            "x-ratelimit-remaining": "900",
+            "x-ratelimit-reset": "1793116800",
+            "etag": "fixture-v1"
+          },
+          "condition": {},
+          "outcome": "response",
+          "body_bytes": 4,
+          "body_sha256": "2f94202d54c40d31672f37d8ae33d957d6babb457cefa14565ee2713284b4280"
+        },
+        {
+          "request_id": "6a6c1f72c36a411fba3ee2ac37ec581b18863ea311190103086252b21a58bacc",
+          "descriptor": {
+            "url": "https://api.github.com/repos/fixture/app3/releases",
+            "api_version": "2022-11-28",
+            "accept": "application/vnd.github+json"
+          },
+          "repository_id": 103,
+          "request_started_at": "2026-10-27T15:00:03+00:00",
+          "response_completed_at": "2026-10-27T15:00:04+00:00",
+          "attempt_finished_at": "2026-10-27T15:00:04+00:00",
+          "status": 200,
+          "headers": {
+            "x-ratelimit-limit": "1000",
+            "x-ratelimit-remaining": "900",
+            "x-ratelimit-reset": "1793116800",
+            "etag": "fixture-v1"
+          },
+          "condition": {},
+          "outcome": "response",
+          "body_bytes": 4,
+          "body_sha256": "2f94202d54c40d31672f37d8ae33d957d6babb457cefa14565ee2713284b4280"
+        },
+        {
+          "request_id": "b7566ec10b8446f3eec326fcfbce0a002e98e148d4ed9c0d64a7a112226f4bb6",
+          "descriptor": {
+            "url": "https://api.github.com/repos/fixture/app4/releases",
+            "api_version": "2022-11-28",
+            "accept": "application/vnd.github+json"
+          },
+          "repository_id": 104,
+          "request_started_at": "2026-10-27T15:00:04+00:00",
+          "response_completed_at": "2026-10-27T15:00:05+00:00",
+          "attempt_finished_at": "2026-10-27T15:00:05+00:00",
+          "status": 200,
+          "headers": {
+            "x-ratelimit-limit": "1000",
+            "x-ratelimit-remaining": "900",
+            "x-ratelimit-reset": "1793116800",
+            "etag": "fixture-v1"
+          },
+          "condition": {},
+          "outcome": "response",
+          "body_bytes": 4,
+          "body_sha256": "2f94202d54c40d31672f37d8ae33d957d6babb457cefa14565ee2713284b4280"
+        },
+        {
+          "request_id": "d3f2e853bf9edc4d3b9ba36d07d1f730378a92dd9af744922e43519da1d926b5",
+          "descriptor": {
+            "url": "https://api.github.com/repos/fixture/app5/releases",
+            "api_version": "2022-11-28",
+            "accept": "application/vnd.github+json"
+          },
+          "repository_id": 105,
+          "request_started_at": "2026-10-27T15:00:05+00:00",
+          "response_completed_at": "2026-10-27T15:00:06+00:00",
+          "attempt_finished_at": "2026-10-27T15:00:06+00:00",
+          "status": 200,
+          "headers": {
+            "x-ratelimit-limit": "1000",
+            "x-ratelimit-remaining": "900",
+            "x-ratelimit-reset": "1793116800",
+            "etag": "fixture-v1"
+          },
+          "condition": {},
+          "outcome": "response",
+          "body_bytes": 4,
+          "body_sha256": "2f94202d54c40d31672f37d8ae33d957d6babb457cefa14565ee2713284b4280"
+        }
+      ]
+    },
+    "conditional": {
+      "run": {
+        "attempted": 6,
+        "completed": 6,
+        "not_attempted": [],
+        "stop_reason": null,
+        "all_attempted": true,
+        "complete": true,
+        "received_bytes": 0,
+        "elapsed_seconds": 0
+      },
+      "transport_calls": 6,
+      "attempts": [
+        {
+          "request_id": "ba0479a10f619311e88dbe0725a7fdd4b01d5ec6c849ec2f7b8928cd905ac5d5",
+          "descriptor": {
+            "url": "https://api.github.com/repos/fixture/app0/releases",
+            "api_version": "2022-11-28",
+            "accept": "application/vnd.github+json"
+          },
+          "repository_id": 100,
+          "request_started_at": "2026-10-27T15:01:00+00:00",
+          "response_completed_at": "2026-10-27T15:01:00+00:00",
+          "attempt_finished_at": "2026-10-27T15:01:00+00:00",
+          "status": 304,
+          "headers": {
+            "x-ratelimit-limit": "1000",
+            "x-ratelimit-remaining": "900",
+            "x-ratelimit-reset": "1793116800",
+            "etag": "fixture-v1"
+          },
+          "condition": {
+            "etag": "fixture-v1"
+          },
+          "outcome": "response",
+          "body_bytes": 0,
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "request_id": "cebd0dbeedbe643147796eb56b97c692c3932e9cecbbddb4ebb9ee7d03130201",
+          "descriptor": {
+            "url": "https://api.github.com/repos/fixture/app1/releases",
+            "api_version": "2022-11-28",
+            "accept": "application/vnd.github+json"
+          },
+          "repository_id": 101,
+          "request_started_at": "2026-10-27T15:01:00+00:00",
+          "response_completed_at": "2026-10-27T15:01:00+00:00",
+          "attempt_finished_at": "2026-10-27T15:01:00+00:00",
+          "status": 304,
+          "headers": {
+            "x-ratelimit-limit": "1000",
+            "x-ratelimit-remaining": "900",
+            "x-ratelimit-reset": "1793116800",
+            "etag": "fixture-v1"
+          },
+          "condition": {
+            "etag": "fixture-v1"
+          },
+          "outcome": "response",
+          "body_bytes": 0,
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "request_id": "b7260ba1e1fda841263759df32a500faa02320b0f98eb63495b8c7db7bc23c7c",
+          "descriptor": {
+            "url": "https://api.github.com/repos/fixture/app2/releases",
+            "api_version": "2022-11-28",
+            "accept": "application/vnd.github+json"
+          },
+          "repository_id": 102,
+          "request_started_at": "2026-10-27T15:01:00+00:00",
+          "response_completed_at": "2026-10-27T15:01:00+00:00",
+          "attempt_finished_at": "2026-10-27T15:01:00+00:00",
+          "status": 304,
+          "headers": {
+            "x-ratelimit-limit": "1000",
+            "x-ratelimit-remaining": "900",
+            "x-ratelimit-reset": "1793116800",
+            "etag": "fixture-v1"
+          },
+          "condition": {
+            "etag": "fixture-v1"
+          },
+          "outcome": "response",
+          "body_bytes": 0,
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "request_id": "6a6c1f72c36a411fba3ee2ac37ec581b18863ea311190103086252b21a58bacc",
+          "descriptor": {
+            "url": "https://api.github.com/repos/fixture/app3/releases",
+            "api_version": "2022-11-28",
+            "accept": "application/vnd.github+json"
+          },
+          "repository_id": 103,
+          "request_started_at": "2026-10-27T15:01:00+00:00",
+          "response_completed_at": "2026-10-27T15:01:00+00:00",
+          "attempt_finished_at": "2026-10-27T15:01:00+00:00",
+          "status": 304,
+          "headers": {
+            "x-ratelimit-limit": "1000",
+            "x-ratelimit-remaining": "900",
+            "x-ratelimit-reset": "1793116800",
+            "etag": "fixture-v1"
+          },
+          "condition": {
+            "etag": "fixture-v1"
+          },
+          "outcome": "response",
+          "body_bytes": 0,
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "request_id": "b7566ec10b8446f3eec326fcfbce0a002e98e148d4ed9c0d64a7a112226f4bb6",
+          "descriptor": {
+            "url": "https://api.github.com/repos/fixture/app4/releases",
+            "api_version": "2022-11-28",
+            "accept": "application/vnd.github+json"
+          },
+          "repository_id": 104,
+          "request_started_at": "2026-10-27T15:01:00+00:00",
+          "response_completed_at": "2026-10-27T15:01:00+00:00",
+          "attempt_finished_at": "2026-10-27T15:01:00+00:00",
+          "status": 304,
+          "headers": {
+            "x-ratelimit-limit": "1000",
+            "x-ratelimit-remaining": "900",
+            "x-ratelimit-reset": "1793116800",
+            "etag": "fixture-v1"
+          },
+          "condition": {
+            "etag": "fixture-v1"
+          },
+          "outcome": "response",
+          "body_bytes": 0,
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "request_id": "d3f2e853bf9edc4d3b9ba36d07d1f730378a92dd9af744922e43519da1d926b5",
+          "descriptor": {
+            "url": "https://api.github.com/repos/fixture/app5/releases",
+            "api_version": "2022-11-28",
+            "accept": "application/vnd.github+json"
+          },
+          "repository_id": 105,
+          "request_started_at": "2026-10-27T15:01:00+00:00",
+          "response_completed_at": "2026-10-27T15:01:00+00:00",
+          "attempt_finished_at": "2026-10-27T15:01:00+00:00",
+          "status": 304,
+          "headers": {
+            "x-ratelimit-limit": "1000",
+            "x-ratelimit-remaining": "900",
+            "x-ratelimit-reset": "1793116800",
+            "etag": "fixture-v1"
+          },
+          "condition": {
+            "etag": "fixture-v1"
+          },
+          "outcome": "response",
+          "body_bytes": 0,
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    "slow-stream": {
+      "run": {
+        "attempted": 2,
+        "completed": 0,
+        "not_attempted": [
+          "b7260ba1e1fda841263759df32a500faa02320b0f98eb63495b8c7db7bc23c7c",
+          "6a6c1f72c36a411fba3ee2ac37ec581b18863ea311190103086252b21a58bacc",
+          "b7566ec10b8446f3eec326fcfbce0a002e98e148d4ed9c0d64a7a112226f4bb6",
+          "d3f2e853bf9edc4d3b9ba36d07d1f730378a92dd9af744922e43519da1d926b5"
+        ],
+        "stop_reason": "consecutive_failures",
+        "all_attempted": false,
+        "complete": false,
+        "received_bytes": 10,
+        "elapsed_seconds": 60
+      },
+      "transport_calls": 2,
+      "attempts": [
+        {
+          "request_id": "ba0479a10f619311e88dbe0725a7fdd4b01d5ec6c849ec2f7b8928cd905ac5d5",
+          "descriptor": {
+            "url": "https://api.github.com/repos/fixture/app0/releases",
+            "api_version": "2022-11-28",
+            "accept": "application/vnd.github+json"
+          },
+          "repository_id": 100,
+          "request_started_at": "2026-10-27T15:00:00+00:00",
+          "response_completed_at": null,
+          "attempt_finished_at": "2026-10-27T15:00:30+00:00",
+          "status": 200,
+          "headers": {
+            "x-ratelimit-limit": "1000",
+            "x-ratelimit-remaining": "900",
+            "x-ratelimit-reset": "1793116800",
+            "etag": "fixture-v1"
+          },
+          "condition": {},
+          "outcome": "timeout",
+          "body_bytes": 0,
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "request_id": "cebd0dbeedbe643147796eb56b97c692c3932e9cecbbddb4ebb9ee7d03130201",
+          "descriptor": {
+            "url": "https://api.github.com/repos/fixture/app1/releases",
+            "api_version": "2022-11-28",
+            "accept": "application/vnd.github+json"
+          },
+          "repository_id": 101,
+          "request_started_at": "2026-10-27T15:00:30+00:00",
+          "response_completed_at": null,
+          "attempt_finished_at": "2026-10-27T15:01:00+00:00",
+          "status": 200,
+          "headers": {
+            "x-ratelimit-limit": "1000",
+            "x-ratelimit-remaining": "900",
+            "x-ratelimit-reset": "1793116800",
+            "etag": "fixture-v1"
+          },
+          "condition": {},
+          "outcome": "timeout",
+          "body_bytes": 0,
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    }
+  }
+}

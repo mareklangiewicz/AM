@@ -1,7 +1,7 @@
 # Implement the bounded collector contract offline
 
 Type: task
-Status: open
+Status: resolved
 Triage: ready-for-agent
 Blocked by: 11
 
@@ -39,3 +39,18 @@ workflow dispatch, remote publication, schedule or live identity enrollment.
 After resolution, review real manifest identity evidence and the proposed workflow
 adapter before requesting a separately authorized bounded live experiment. No day
 sample is required. Remote delivery stays deferred.
+
+
+## Answer — 2026-10-27
+
+Implemented the planner and injected collection loop in tools/catalog-collector,
+with a synthetic replay entry point and 17 passing focused offline tests. The
+existing eight churn tests also pass. [Findings](../research/collector-offline-findings.md)
+and [replay](../research/collector-offline-replay.json) record byte/timing semantics,
+identity/credential checks, conditional evidence, deadlines, bounds and stopping.
+
+No real transport, live CLI, workflow wiring or source enrollment was added.
+Arbitrary blocking transport cannot be preempted by event checks: a future adapter
+must enforce absolute IO deadlines itself. Current identity/token provenance and
+real reviewed repository IDs also require concrete adapter/manifest review.
+[13](13-prepare-adapter-and-enrollment-review.md) is the next preparation frontier.
