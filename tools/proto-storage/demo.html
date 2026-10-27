@@ -1,0 +1,40 @@
+<!doctype html><meta charset="utf-8"><title>Offline observation state prototype</title>
+<style>body{max-width:900px;margin:50px auto;padding:0 24px;font:17px/1.6 system-ui;color:#17332d;background:#fafbf8}button{padding:10px 14px;margin:5px;border:1px solid #b7c9bd;background:white;border-radius:6px;color:#17332d;cursor:pointer}button:hover{background:#dceee5}dl{display:grid;grid-template-columns:220px 1fr;background:#edf3ee;padding:24px;border-radius:10px}dt{font-weight:600}dd{margin:0}small{color:#53685d}nav button[aria-selected=true]{background:#c6e8d6}</style>
+<h1>Can old observations stay useful without looking fresh?</h1>
+<p>Throwaway ticket 08 model. Explore how successful checks, failures and removal affect one source. The Python replay beside this file verifies real saved bytes and local Git publication. This page illustrates the state rules in memory; it does not read Git or validate response bytes.</p>
+<dl id="state"></dl><p id="notice" role="status"></p>
+<h2>Try a response</h2><div id="actions"></div>
+<h2>Guided walkthroughs</h2><nav id="tabs"></nav><p id="description"></p><button id="next"></button>
+<p><small>Each action advances the illustrative clock one hour. Actual expiry boundaries and stale-data acceptance remain separate client design work. No release or asset selection happens here.</small></p>
+<script>
+const initial=()=>({hour:0,availability:'unknown',body:null,received:null,validated:null,validator:null,attempt:'None'});
+function apply(previous,action){
+ const s={...previous,hour:previous.hour+1,attempt:action};
+ if(action==='Reset')return initial();
+ if(previous.availability==='retired')return {...s,attempt:'Refused: source is retired'};
+ if(action==='Successful response'||action==='Empty release list')return {...s,availability:'available',body:action==='Empty release list'?'[]':'Saved exact response',received:s.hour,validated:s.hour,validator:'matching validator'};
+ if(action==='Conditional unchanged')return s.body&&s.validator?{...s,availability:'available',validated:s.hour}:{...s,attempt:'Refused: no matching prior body and condition'};
+ if(['Absent upstream','Redirect','Invalid response'].includes(action))s.availability='unavailable';
+ if(action==='Retire source')s.availability='retired';
+ return s;
+}
+let state=initial(),scenario=0,step=0;
+const actions=['Reset','Successful response','Conditional unchanged','Temporary failure','Absent upstream','Redirect','Invalid response','Empty release list','Retire source'];
+const scenarios=[
+ ['Freshness','A temporary error must not refresh old data. A valid unchanged response can refresh validation while preserving receipt time.',['Successful response','Temporary failure','Conditional unchanged']],
+ ['Persistent refusal','An absent source stays unavailable through a temporary failure. A valid response restores availability.',['Successful response','Absent upstream','Temporary failure','Successful response']],
+ ['No prior body','An unchanged response cannot create an observation. An empty successful list replaces previous data.',['Conditional unchanged','Successful response','Empty release list']],
+ ['Retirement','Retired sources retain history but refuse current reads. Re-enrollment needs a separate explicit policy.',['Successful response','Retire source','Conditional unchanged']]
+];
+function render(){
+ const fields={'Illustrative hour':state.hour,'Availability':state.availability,'Retained body':state.body??'None','Received at hour':state.received??'Unknown','Validated at hour':state.validated??'Unknown','Validator':state.validator??'None','Current read':state.availability==='available'?'Allowed subject to client freshness policy':'Refused','Latest attempt':state.attempt};
+ const panel=document.getElementById('state');panel.replaceChildren();for(const [k,v]of Object.entries(fields)){let dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=k;dd.textContent=v;panel.append(dt,dd)}
+ document.getElementById('notice').textContent='Retained data and availability are independent; publication time does not renew an observation.';
+ document.getElementById('description').textContent=scenarios[scenario][1];
+ let next=document.getElementById('next');next.textContent=step<scenarios[scenario][2].length?`${step+1}. ${scenarios[scenario][2][step]}`:'Restart walkthrough';
+ document.querySelectorAll('nav button').forEach((b,i)=>b.setAttribute('aria-selected',String(i===scenario)));
+}
+for(const action of actions){let b=document.createElement('button');b.textContent=action;b.onclick=()=>{state=apply(state,action);render()};document.getElementById('actions').append(b)}
+scenarios.forEach((s,i)=>{let b=document.createElement('button');b.textContent=s[0];b.onclick=()=>{scenario=i;step=0;state=initial();render()};document.getElementById('tabs').append(b)});
+document.getElementById('next').onclick=()=>{if(step===scenarios[scenario][2].length){step=0;state=initial()}else state=apply(state,scenarios[scenario][2][step++]);render()};render();
+</script>
