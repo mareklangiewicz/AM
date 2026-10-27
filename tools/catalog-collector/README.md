@@ -153,3 +153,19 @@ publisher job validates the same-run artifact and recomputes it before a normal
 fast-forward push to release-catalog. See docs/track/release-catalog/design/catalog-delivery.md
 for permissions, bounded ZIP/Git handling, conflict behavior and limits. No schedule
 or installed-app integration is enabled.
+
+## Read-only consumer (ticket 19)
+
+consumer.py returns one exact stored response for a reviewed URL, using either one
+ref resolution plus a pinned index/body pair or an explicit --commit. Example:
+
+```sh
+python3 -B tools/catalog-collector/consumer.py \
+  https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest \
+  --metadata /tmp/am-catalog-read.json | jq -r .tag_name
+```
+
+Only body bytes go to stdout. --accept-stale requires the full COMMIT REQUEST_ID
+BODY_SHA256 tuple from the stale refusal; it cannot bypass unavailable, future or
+integrity failures. There is no direct upstream fallback or installer side effect.
+See docs/track/release-catalog/design/catalog-consumer.md for scope and bounds.

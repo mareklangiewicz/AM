@@ -68,13 +68,10 @@ def validators(values):
     require(all(0 < len(v.encode()) <= 8192 for v in values.values()), 'invalid_validators')
 
 
-def validate(tree):
-    """Validate a closed immutable-byte tree, including every retained body."""
-    require(type(tree) is dict and all(type(k) is str and type(v) is bytes
-                                      for k, v in tree.items()), 'invalid_tree')
-    require('index.json' in tree and len(tree['index.json']) <= INDEX_CAP and
-            sum(map(len, tree.values())) <= TREE_CAP, 'tree_bound')
-    index = decode(tree['index.json'])
+def validate_index(index_raw):
+    """Validate all metadata without fetching bodies; lengths bound the closed tree."""
+    require(type(index_raw) is bytes and len(index_raw) <= INDEX_CAP, 'index_bound')
+    index = decode(index_raw)
     require(type(index) is dict and set(index) == {
         'schema_version', 'generated_at', 'manifest_json', 'manifest_sha256',
         'collector_revision', 'run', 'workflow_repository_id', 'aliases', 'entries'}, 'index_fields')
@@ -91,7 +88,7 @@ def validate(tree):
                 for v in index['run'].values()), 'invalid_run')
     require(type(index['entries']) is dict and type(index['aliases']) is dict, 'index_fields')
     active = {r.source.descriptor.request_id: r.source for r in plan.requests}
-    expected = {'index.json'}
+    declared_bytes = len(index_raw)
     for rid, entry in index['entries'].items():
         require(type(entry) is dict and set(entry) == {
             'descriptor', 'repository_id', 'availability', 'observation', 'validators', 'latest_attempt'},
@@ -141,15 +138,16 @@ def validate(tree):
                     'observation_chronology')
             require(latest is not None and timestamp(obs['validated_at']) <=
                     timestamp(latest['attempt_finished_at']), 'observation_attempt_chronology')
-            require(path in tree and type(obs['bytes']) is int and len(tree[path]) == obs['bytes']
-                    and digest(tree[path]) == obs['sha256'], 'body_integrity')
+            require(type(obs['bytes']) is int and 0 <= obs['bytes'] <= BODY_CAP and
+                    type(obs['sha256']) is str and re.fullmatch('[0-9a-f]{64}', obs['sha256']),
+                    'body_metadata')
+            declared_bytes += obs['bytes']
+            require(declared_bytes <= TREE_CAP, 'tree_bound')
             require(obs['link'] is None or type(obs['link']) is str and len(obs['link'].encode()) <= 8192,
                     'invalid_link')
             if latest['outcome'] in {'observed', 'validated'}:
                 require(obs['validated_at'] == latest['response_completed_at'] and
                         obs['validation_status'] == latest['status'], 'validation_provenance_conflict')
-            content(tree[path], entry['descriptor'])
-            expected.add(path)
         require(entry['availability'] != 'available' or obs is not None, 'missing_observation')
         require(obs is not None or entry['validators'] == {}, 'validator_without_body')
     require(set(active) <= set(index['entries']), 'missing_entry')
@@ -165,6 +163,24 @@ def validate(tree):
                 (alias not in wanted or wanted[alias] == target['request_id']), 'alias_state')
     require(all(index['aliases'].get(a) == {'request_id': rid, 'active': True}
                 for a, rid in wanted.items()), 'missing_alias')
+    return index
+
+
+def validate(tree):
+    """Validate a closed immutable-byte tree, including every retained body."""
+    require(type(tree) is dict and all(type(k) is str and type(v) is bytes
+                                      for k, v in tree.items()), 'invalid_tree')
+    require('index.json' in tree and sum(map(len, tree.values())) <= TREE_CAP, 'tree_bound')
+    index = validate_index(tree['index.json'])
+    expected = {'index.json'}
+    for entry in index['entries'].values():
+        obs = entry['observation']
+        if obs is not None:
+            path = obs['path']
+            require(path in tree and len(tree[path]) == obs['bytes'] and
+                    digest(tree[path]) == obs['sha256'], 'body_integrity')
+            content(tree[path], entry['descriptor'])
+            expected.add(path)
     require(set(tree) == expected, 'unexpected_file')
     return index
 

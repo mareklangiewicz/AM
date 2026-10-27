@@ -67,32 +67,8 @@ def blob(repo, commit, path, cap):
 def lookup_local(repo, alias, commit, *, now, stale_acceptance=None):
     require(type(commit) is str and re.fullmatch('[0-9a-f]{40}', commit), 'commit_pin_required')
     # Do not resolve a branch during either read: both objects use this full commit.
+    from reader import select, verify_body
     index_raw = blob(repo, commit, 'index.json', INDEX_CAP)
-    require(len(index_raw) <= INDEX_CAP, 'index_bound')
-    index = decode(index_raw)
-    require(index['schema_version'] == 1 and
-            digest(index['manifest_json'].encode()) == index['manifest_sha256'], 'invalid_index')
-    plan = load_manifest(index['manifest_json'].encode(), index['workflow_repository_id'])
-    require(timestamp(index['generated_at']) <= timestamp(now), 'future_publication')
-    target = index['aliases'].get(alias)
-    require(target is not None and target['active'] is True, 'alias_unavailable')
-    rid = target['request_id']; entry = index['entries'][rid]
-    source = next((r.source for r in plan.requests if r.source.descriptor.request_id == rid), None)
-    require(source is not None and alias in (source.descriptor.url, *source.aliases) and
-            Descriptor(**entry['descriptor']) == source.descriptor and
-            entry['repository_id'] == source.repository_id, 'lookup_identity')
-    require(entry['availability'] == 'available' and entry['observation'] is not None,
-            'observation_unavailable')
-    obs = entry['observation']
-    require(obs['path'] == f'bodies/{rid}.json' and obs['received_time_basis'] ==
-            obs['validation_time_basis'] == 'response-completed', 'invalid_observation')
-    require(timestamp(obs['received_at']) <= timestamp(obs['validated_at']) <=
-            timestamp(index['generated_at']) and obs['validation_status'] in {200, 304} and
-            obs['scope'] == 'single-response', 'observation_chronology')
-    age = (timestamp(now) - timestamp(obs['validated_at'])).total_seconds()
-    require(age >= 0, 'future_observation')
-    require(age <= 86400 or stale_acceptance == {
-        'commit': commit, 'request_id': rid, 'sha256': obs['sha256']}, 'stale_acceptance_required')
-    raw = blob(repo, commit, obs['path'], BODY_CAP)
-    require(len(raw) == obs['bytes'] and digest(raw) == obs['sha256'], 'body_integrity')
-    return raw, entry
+    entry, _ = select(index_raw, alias, commit, now=now, stale_acceptance=stale_acceptance)
+    raw = blob(repo, commit, entry['observation']['path'], BODY_CAP)
+    return verify_body(raw, entry), entry

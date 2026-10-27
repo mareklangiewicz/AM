@@ -196,3 +196,10 @@ preserve exact ZIPs, both published commits, permission/isolation checks and pub
 pinned index/body reads. 67 final offline tests pass, including post-run ZIP metadata
 allocation hardening. No schedule, retry, force push or app change. Next is a small
 read-only pinned consumer before any installed-updater migration.
+
+
+2026-10-27: [19 claimed](issues/19-read-only-pinned-consumer.md). Implemented
+[read-only selective consumer](design/catalog-consumer.md) with shared full index
+metadata/freshness validation, fixed public bounded transport, one ref resolution
+and only the pinned requested body. Preparing public-catalog-only smoke checks;
+no source collection, workflow change, publication or installer modification.
