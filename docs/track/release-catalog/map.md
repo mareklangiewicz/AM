@@ -17,7 +17,7 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 ## Fog
 
 - [06 resolved](issues/06-manual-rest-churn-experiment.md): baseline/hour measurements support provisional REST-first work; day sampling is optional. Fleet storage remains unmeasured.
-- [08 resolved](issues/08-offline-storage-prototype.md): 64 offline replay checks support the bounded format/state/publication contract; [09 resolved](issues/09-review-offline-findings.md) records review refinements; [10 resolved](issues/10-offline-client-freshness.md) verifies bounded freshness/consent; [11](issues/11-review-client-and-collection-boundaries.md) is the policy and collection-boundary review frontier.
+- [08 resolved](issues/08-offline-storage-prototype.md): 64 offline replay checks support the bounded format/state/publication contract; [09 resolved](issues/09-review-offline-findings.md) records review refinements; [10 resolved](issues/10-offline-client-freshness.md) verifies bounded freshness/consent; [11 resolved](issues/11-review-client-and-collection-boundaries.md) accepts the initial policy/direction; [12](issues/12-offline-restricted-collector.md) is the offline implementation frontier.
 - [04 resolved](issues/04-compare-collection-strategies.md): REST-first experiment agreed; revisit the representation if churn/storage evidence or future consumer needs justify it.
 - Retention and Git growth; volatile response fields; large asset lists; removed upstream data; standalone updater migration; actual publishing privilege separation; eventual upstream preferences.
 
@@ -85,3 +85,12 @@ recommendations, documented workflow-token isolation and a bounded six-attempt
 future-job envelope. The earlier anonymous-first recommendation was too strong;
 a restricted token excluding its own repository is a design option. Policy answers
 remain pending. Documentation research only; no new upstream API experiment.
+
+
+2026-10-27: [11 resolved](issues/11-review-client-and-collection-boundaries.md).
+Marek accepted both recommendations: initial freshness/consent contract and
+restricted workflow-token collector design before remote delivery. The
+[implementation design](design/restricted-collector-v1.md) defines pure planning,
+injected transport/clock, own-repository identity exclusion and bounded collection.
+[12](issues/12-offline-restricted-collector.md) is ready for offline implementation.
+No network transport or workflow change has been implemented or dispatched.

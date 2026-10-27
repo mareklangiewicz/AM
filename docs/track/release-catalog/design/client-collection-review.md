@@ -2,7 +2,7 @@
 
 2026-10-27. Ticket 11. Proposal only; no production schema adoption or operational
 authorization. This review follows the completed offline storage and freshness
-experiments. Decisions below remain pending Marek's answers.
+experiments. Marek accepted both recommendations on 2026-10-27. The accepted contract and next implementation boundary are specified in [restricted-collector-v1.md](restricted-collector-v1.md).
 
 ## Recommended decision 1: keep the demonstrated freshness contract
 
@@ -76,7 +76,7 @@ quota headers must not be interpreted as unlimited quota. Before dispatch, revie
 code must prove credential selection, repository-ID exclusion, output bounds and
 response timing offline. The envelope does not itself authorize any live run.
 
-## Design tree and pending frontier
+## Design tree and decision record
 
 1. Freshness contract: accept/revise inclusive 24 hours, no future-clock tolerance
    and commit/descriptor/digest-bound acceptance.
@@ -95,3 +95,13 @@ response timing offline. The envelope does not itself authorize any live run.
 Local evidence: research/probe-run-40496182929-findings.md,
 research/request-inventory-findings.md and research/freshness-prototype-findings.md.
 No new upstream API observation was made; web reads were documentation research.
+
+
+## Accepted answers — 2026-10-27
+
+Marek: “yes to both.” Retain the demonstrated freshness contract and design the
+restricted-token collector before remote delivery. This accepts design direction,
+not a live run, production schema version or installer migration. The next frontier
+is [12](../issues/12-offline-restricted-collector.md): implement the bounded planner
+and collection loop with injected offline transport/clock. Further policy disputes
+need not be invented before this specified work can proceed.

@@ -1,7 +1,7 @@
 # Review client policy and public-only collection boundary
 
 Type: grilling
-Status: claimed
+Status: resolved
 Triage: ready-for-human
 Blocked by: 10
 
@@ -49,3 +49,18 @@ Preserve documented 1,000/hour planning and measured 5,000/hour run evidence
 separately. Proposed first-job bounds are six attempts, serial, no retries/redirects,
 explicit time/byte/error limits. No dispatch or implementation is authorized by
 this proposal. Ticket remains claimed/ready-for-human pending policy answers.
+
+
+## Answer — 2026-10-27
+
+Marek explicitly answered “yes to both” review recommendations. The inclusive
+24-hour boundary, future-time refusal and commit/descriptor/digest-bound stale
+acceptance are accepted as the initial client contract. Design the restricted
+workflow-token collector excluding its own repository before remote delivery.
+
+The [bounded implementation design](../design/restricted-collector-v1.md) defines
+interfaces, credential provenance, immutable-ID enrollment, measured response times,
+serial request/deadline/byte/error limits and offline acceptance. [12](12-offline-restricted-collector.md)
+is ready for offline implementation. Missing real repository-ID evidence remains
+an explicit precondition for eventual live wiring, not an implicit extra request.
+No live collection, workflow dispatch, schedule or migration was authorized.
