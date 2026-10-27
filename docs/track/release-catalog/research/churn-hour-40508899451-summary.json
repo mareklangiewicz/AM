@@ -1,0 +1,438 @@
+{
+  "run_id": 40508899451,
+  "artifact_id": 12735613680,
+  "artifact_digest": "sha256:fb5e01cfdeda9907713ff744b4e325b519ed97d3ecbe0ab3fe1b7c506bc36b1a",
+  "archive_bytes": 632626,
+  "archive_sha256": "18a8d579f69f96e7a74d551dbd224877e6c7113ddb4efa476a4fe62689cc1a15",
+  "observation": {
+    "schema": 1,
+    "round": "hour",
+    "api_version": "2022-11-28",
+    "endpoints": {
+      "obsidian-list": "repos/obsidianmd/obsidian-releases/releases",
+      "obsidian-latest": "repos/obsidianmd/obsidian-releases/releases/latest",
+      "neovim-list": "repos/neovim/neovim/releases",
+      "neovim-latest": "repos/neovim/neovim/releases/latest",
+      "wezterm-list": "repositories/120568143/releases?per_page=100",
+      "sqlitebrowser-list": "repos/sqlitebrowser/sqlitebrowser/releases?per_page=100"
+    },
+    "source_revision": "37bdb433c5b557e73b83033774d5f230f0789fa6",
+    "complete": true,
+    "responses": {
+      "obsidian-list": {
+        "checked_at": "2026-10-27T13:04:49.446551+00:00",
+        "status": 200,
+        "headers": {
+          "date": "Tue, 27 Oct 2026 13:04:49 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "etag": "\"7fce2a891390f7018d6cd44771026ef359ffd66444270f91fd06b4fb65db80d9\"",
+          "link": "<https://api.github.com/repositories/262342594/releases?page=2>; rel=\"next\", <https://api.github.com/repositories/262342594/releases?page=6>; rel=\"last\"",
+          "x-ratelimit-limit": "5000",
+          "x-ratelimit-remaining": "4999",
+          "x-ratelimit-reset": "1793109889",
+          "x-ratelimit-used": "1",
+          "x-ratelimit-resource": "core"
+        },
+        "received_bytes": 450991,
+        "sha256": "f191b31fb4212ecfd51fff20aaeda33bcca877f1c89415e826f47b9f6b7d9941",
+        "body_bytes": 450991
+      },
+      "obsidian-latest": {
+        "checked_at": "2026-10-27T13:04:50.013593+00:00",
+        "status": 200,
+        "headers": {
+          "date": "Tue, 27 Oct 2026 13:04:50 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "etag": "\"ea5a749bd33771a22a4ebbf0d99a1c2072f96a6202f12e2510058b1dd62bba03\"",
+          "last-modified": "Thu, 22 Oct 2026 21:19:14 GMT",
+          "x-ratelimit-limit": "5000",
+          "x-ratelimit-remaining": "4995",
+          "x-ratelimit-reset": "1793109887",
+          "x-ratelimit-used": "5",
+          "x-ratelimit-resource": "core"
+        },
+        "received_bytes": 13889,
+        "sha256": "ed60a5c2202332f2439f6000d08d494a8bf3827c12d84db318a42db2868558ba",
+        "body_bytes": 13889
+      },
+      "neovim-list": {
+        "checked_at": "2026-10-27T13:04:50.170637+00:00",
+        "status": 200,
+        "headers": {
+          "date": "Tue, 27 Oct 2026 13:04:50 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "etag": "\"2c8d4ccddc1fb71a3f1575c0be6119034a6c0b4b102a91fa81e041e317c1539e\"",
+          "link": "<https://api.github.com/repositories/16408992/releases?page=2>; rel=\"next\", <https://api.github.com/repositories/16408992/releases?page=2>; rel=\"last\"",
+          "x-ratelimit-limit": "5000",
+          "x-ratelimit-remaining": "4998",
+          "x-ratelimit-reset": "1793109889",
+          "x-ratelimit-used": "2",
+          "x-ratelimit-resource": "core"
+        },
+        "received_bytes": 822241,
+        "sha256": "70b7160435615d65af81ea3dc1596cfb50d77f6574e61f4b0f31f1df7147e2b5",
+        "body_bytes": 822241
+      },
+      "neovim-latest": {
+        "checked_at": "2026-10-27T13:04:50.924948+00:00",
+        "status": 200,
+        "headers": {
+          "date": "Tue, 27 Oct 2026 13:04:51 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "etag": "\"3d1a65c939d2c72664251a59222716a9ea6528e2b87ab441f15c30368095a3ca\"",
+          "last-modified": "Fri, 09 Oct 2026 16:14:44 GMT",
+          "x-ratelimit-limit": "5000",
+          "x-ratelimit-remaining": "4994",
+          "x-ratelimit-reset": "1793109887",
+          "x-ratelimit-used": "6",
+          "x-ratelimit-resource": "core"
+        },
+        "received_bytes": 24510,
+        "sha256": "44b2d9a5c2749cbfd17add167f653bb9a065dafad393b7cd3b83b7e509e4993a",
+        "body_bytes": 24510
+      },
+      "wezterm-list": {
+        "checked_at": "2026-10-27T13:04:51.126041+00:00",
+        "status": 200,
+        "headers": {
+          "date": "Tue, 27 Oct 2026 13:04:52 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "etag": "\"cd3ef13226ad22faa0882934eb2e84e130e462158bb1ad25a05285f5f3a62a1a\"",
+          "x-ratelimit-limit": "5000",
+          "x-ratelimit-remaining": "4997",
+          "x-ratelimit-reset": "1793109889",
+          "x-ratelimit-used": "3",
+          "x-ratelimit-resource": "core"
+        },
+        "received_bytes": 2935204,
+        "sha256": "65058d942b0bdc10a86e0ed2800f246ea87de7b868833523a683c15d3fe2f976",
+        "body_bytes": 2935204
+      },
+      "sqlitebrowser-list": {
+        "checked_at": "2026-10-27T13:04:52.597884+00:00",
+        "status": 200,
+        "headers": {
+          "date": "Tue, 27 Oct 2026 13:04:53 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "etag": "\"766118162c1a78e05e0a12fb763b8d5017e58793bf53fa120e108334b4eb70d7\"",
+          "x-ratelimit-limit": "5000",
+          "x-ratelimit-remaining": "4996",
+          "x-ratelimit-reset": "1793109889",
+          "x-ratelimit-used": "4",
+          "x-ratelimit-resource": "core"
+        },
+        "received_bytes": 630919,
+        "sha256": "7e4bc329ec8d9c333157cb16074d636063dddd0ba6b8ea3055a267837e4d0dfd",
+        "body_bytes": 630919
+      }
+    },
+    "started_at": "2026-10-27T13:04:49.446419+00:00",
+    "seconds_since_baseline": 3805.878076,
+    "seconds_since_previous": 3805.878076,
+    "finished_at": "2026-10-27T13:04:53.343214+00:00"
+  },
+  "comparison": {
+    "rounds": [
+      "baseline",
+      "hour"
+    ],
+    "layouts": {
+      "exact": {
+        "observations": [
+          {
+            "round": "baseline",
+            "body_bytes": 4877752,
+            "body_gzip_bytes": 316693,
+            "cumulative_loose_object_bytes": 426596,
+            "index_bytes": 1111
+          },
+          {
+            "round": "hour",
+            "body_bytes": 4877754,
+            "body_gzip_bytes": 316704,
+            "cumulative_loose_object_bytes": 853112,
+            "index_bytes": 1181
+          }
+        ],
+        "pack_and_index_bytes": 336420
+      },
+      "projection": {
+        "observations": [
+          {
+            "round": "baseline",
+            "body_bytes": 622062,
+            "body_gzip_bytes": 53817,
+            "cumulative_loose_object_bytes": 71799,
+            "index_bytes": 1111
+          },
+          {
+            "round": "hour",
+            "body_bytes": 622062,
+            "body_gzip_bytes": 53817,
+            "cumulative_loose_object_bytes": 72652,
+            "index_bytes": 1181
+          }
+        ],
+        "pack_and_index_bytes": 58826
+      }
+    },
+    "changes": {
+      "hour": {
+        "obsidian-list": {
+          "body_changed": true,
+          "json_paths": [
+            "$[0][\"assets\"][0][\"download_count\"]",
+            "$[0][\"assets\"][1][\"download_count\"]",
+            "$[0][\"assets\"][2][\"download_count\"]",
+            "$[0][\"assets\"][3][\"download_count\"]",
+            "$[0][\"assets\"][4][\"download_count\"]",
+            "$[0][\"assets\"][5][\"download_count\"]",
+            "$[0][\"assets\"][6][\"download_count\"]",
+            "$[0][\"assets\"][7][\"download_count\"]",
+            "$[1][\"assets\"][3][\"download_count\"]",
+            "$[1][\"assets\"][4][\"download_count\"]",
+            "$[1][\"assets\"][5][\"download_count\"]",
+            "$[1][\"assets\"][6][\"download_count\"]",
+            "$[1][\"assets\"][7][\"download_count\"]",
+            "$[1][\"assets\"][8][\"download_count\"]",
+            "$[3][\"assets\"][0][\"download_count\"]",
+            "$[3][\"assets\"][3][\"download_count\"]",
+            "$[3][\"assets\"][4][\"download_count\"]",
+            "$[3][\"assets\"][6][\"download_count\"]",
+            "$[4][\"assets\"][6][\"download_count\"]",
+            "$[5][\"assets\"][0][\"download_count\"]",
+            "$[5][\"assets\"][6][\"download_count\"]",
+            "$[5][\"assets\"][7][\"download_count\"]",
+            "$[6][\"assets\"][0][\"download_count\"]",
+            "$[6][\"assets\"][1][\"download_count\"]",
+            "$[6][\"assets\"][2][\"download_count\"]",
+            "$[6][\"assets\"][8][\"download_count\"]",
+            "$[7][\"assets\"][4][\"download_count\"]",
+            "$[8][\"assets\"][5][\"download_count\"]",
+            "$[8][\"assets\"][6][\"download_count\"]",
+            "$[9][\"assets\"][2][\"download_count\"]",
+            "$[9][\"assets\"][8][\"download_count\"]",
+            "$[10][\"assets\"][7][\"download_count\"]",
+            "$[11][\"assets\"][0][\"download_count\"]",
+            "$[12][\"assets\"][3][\"download_count\"]",
+            "$[12][\"assets\"][8][\"download_count\"]",
+            "$[13][\"assets\"][1][\"download_count\"]",
+            "$[13][\"assets\"][2][\"download_count\"]",
+            "$[13][\"assets\"][3][\"download_count\"]",
+            "$[13][\"assets\"][8][\"download_count\"]",
+            "$[14][\"assets\"][1][\"download_count\"]",
+            "$[14][\"assets\"][8][\"download_count\"]",
+            "$[15][\"assets\"][7][\"download_count\"]",
+            "$[16][\"assets\"][3][\"download_count\"]",
+            "$[16][\"assets\"][4][\"download_count\"]",
+            "$[16][\"assets\"][6][\"download_count\"]",
+            "$[17][\"assets\"][0][\"download_count\"]",
+            "$[17][\"assets\"][1][\"download_count\"]",
+            "$[18][\"assets\"][0][\"download_count\"]",
+            "$[19][\"assets\"][0][\"download_count\"]",
+            "$[20][\"assets\"][5][\"download_count\"]",
+            "$[21][\"assets\"][5][\"download_count\"]",
+            "$[22][\"assets\"][6][\"download_count\"]",
+            "$[23][\"assets\"][5][\"download_count\"]",
+            "$[23][\"assets\"][6][\"download_count\"]",
+            "$[24][\"assets\"][1][\"download_count\"]",
+            "$[25][\"assets\"][0][\"download_count\"]",
+            "$[25][\"assets\"][1][\"download_count\"]",
+            "$[25][\"assets\"][7][\"download_count\"]",
+            "$[26][\"assets\"][2][\"download_count\"]",
+            "$[28][\"assets\"][6][\"download_count\"]"
+          ]
+        },
+        "obsidian-latest": {
+          "body_changed": true,
+          "json_paths": [
+            "$[\"assets\"][0][\"download_count\"]",
+            "$[\"assets\"][1][\"download_count\"]",
+            "$[\"assets\"][2][\"download_count\"]",
+            "$[\"assets\"][3][\"download_count\"]",
+            "$[\"assets\"][4][\"download_count\"]",
+            "$[\"assets\"][5][\"download_count\"]",
+            "$[\"assets\"][6][\"download_count\"]",
+            "$[\"assets\"][7][\"download_count\"]"
+          ]
+        },
+        "neovim-list": {
+          "body_changed": true,
+          "json_paths": [
+            "$[0][\"assets\"][2][\"download_count\"]",
+            "$[0][\"assets\"][3][\"download_count\"]",
+            "$[0][\"assets\"][4][\"download_count\"]",
+            "$[0][\"assets\"][5][\"download_count\"]",
+            "$[0][\"assets\"][6][\"download_count\"]",
+            "$[0][\"assets\"][7][\"download_count\"]",
+            "$[0][\"assets\"][10][\"download_count\"]",
+            "$[0][\"assets\"][11][\"download_count\"]",
+            "$[0][\"assets\"][12][\"download_count\"]",
+            "$[0][\"reactions\"][\"+1\"]",
+            "$[0][\"reactions\"][\"total_count\"]",
+            "$[1][\"assets\"][0][\"download_count\"]",
+            "$[1][\"assets\"][2][\"download_count\"]",
+            "$[1][\"assets\"][3][\"download_count\"]",
+            "$[1][\"assets\"][4][\"download_count\"]",
+            "$[1][\"assets\"][5][\"download_count\"]",
+            "$[1][\"assets\"][6][\"download_count\"]",
+            "$[1][\"assets\"][7][\"download_count\"]",
+            "$[1][\"assets\"][8][\"download_count\"]",
+            "$[1][\"assets\"][9][\"download_count\"]",
+            "$[1][\"assets\"][10][\"download_count\"]",
+            "$[1][\"assets\"][11][\"download_count\"]",
+            "$[2][\"assets\"][0][\"download_count\"]",
+            "$[2][\"assets\"][3][\"download_count\"]",
+            "$[2][\"assets\"][5][\"download_count\"]",
+            "$[2][\"assets\"][6][\"download_count\"]",
+            "$[2][\"assets\"][11][\"download_count\"]",
+            "$[3][\"assets\"][2][\"download_count\"]",
+            "$[3][\"assets\"][5][\"download_count\"]",
+            "$[3][\"assets\"][10][\"download_count\"]",
+            "$[3][\"assets\"][11][\"download_count\"]",
+            "$[4][\"assets\"][2][\"download_count\"]",
+            "$[4][\"assets\"][3][\"download_count\"]",
+            "$[4][\"assets\"][5][\"download_count\"]",
+            "$[4][\"assets\"][6][\"download_count\"]",
+            "$[4][\"assets\"][7][\"download_count\"]",
+            "$[4][\"assets\"][10][\"download_count\"]",
+            "$[4][\"assets\"][11][\"download_count\"]",
+            "$[5][\"assets\"][5][\"download_count\"]",
+            "$[5][\"assets\"][10][\"download_count\"]",
+            "$[6][\"assets\"][0][\"download_count\"]",
+            "$[6][\"assets\"][3][\"download_count\"]",
+            "$[6][\"assets\"][5][\"download_count\"]",
+            "$[6][\"assets\"][10][\"download_count\"]",
+            "$[8][\"assets\"][5][\"download_count\"]",
+            "$[9][\"assets\"][3][\"download_count\"]",
+            "$[9][\"assets\"][5][\"download_count\"]",
+            "$[9][\"assets\"][6][\"download_count\"]",
+            "$[10][\"assets\"][2][\"download_count\"]",
+            "$[10][\"assets\"][3][\"download_count\"]",
+            "$[10][\"assets\"][5][\"download_count\"]",
+            "$[10][\"assets\"][11][\"download_count\"]",
+            "$[11][\"assets\"][3][\"download_count\"]",
+            "$[11][\"assets\"][5][\"download_count\"]",
+            "$[11][\"assets\"][11][\"download_count\"]",
+            "$[12][\"assets\"][2][\"download_count\"]",
+            "$[12][\"assets\"][3][\"download_count\"]",
+            "$[12][\"assets\"][5][\"download_count\"]",
+            "$[12][\"assets\"][9][\"download_count\"]",
+            "$[13][\"assets\"][5][\"download_count\"]",
+            "$[14][\"assets\"][3][\"download_count\"]",
+            "$[14][\"assets\"][5][\"download_count\"]",
+            "$[16][\"assets\"][0][\"download_count\"]",
+            "$[16][\"assets\"][5][\"download_count\"]",
+            "$[17][\"assets\"][6][\"download_count\"]",
+            "$[17][\"assets\"][10][\"download_count\"]",
+            "$[17][\"assets\"][11][\"download_count\"]",
+            "$[17][\"assets\"][18][\"download_count\"]",
+            "$[18][\"assets\"][0][\"download_count\"]",
+            "$[19][\"assets\"][0][\"download_count\"]",
+            "$[20][\"assets\"][0][\"download_count\"]",
+            "$[20][\"assets\"][1][\"download_count\"]",
+            "$[21][\"assets\"][0][\"download_count\"]",
+            "$[21][\"assets\"][2][\"download_count\"]",
+            "$[22][\"assets\"][0][\"download_count\"]",
+            "$[22][\"assets\"][8][\"download_count\"]",
+            "$[26][\"assets\"][0][\"download_count\"]"
+          ]
+        },
+        "neovim-latest": {
+          "body_changed": true,
+          "json_paths": [
+            "$[\"assets\"][0][\"download_count\"]",
+            "$[\"assets\"][2][\"download_count\"]",
+            "$[\"assets\"][3][\"download_count\"]",
+            "$[\"assets\"][4][\"download_count\"]",
+            "$[\"assets\"][5][\"download_count\"]",
+            "$[\"assets\"][6][\"download_count\"]",
+            "$[\"assets\"][7][\"download_count\"]",
+            "$[\"assets\"][8][\"download_count\"]",
+            "$[\"assets\"][9][\"download_count\"]",
+            "$[\"assets\"][10][\"download_count\"]",
+            "$[\"assets\"][11][\"download_count\"]"
+          ]
+        },
+        "wezterm-list": {
+          "body_changed": true,
+          "json_paths": [
+            "$[0][\"assets\"][0][\"download_count\"]",
+            "$[0][\"assets\"][1][\"download_count\"]",
+            "$[0][\"assets\"][3][\"download_count\"]",
+            "$[0][\"assets\"][4][\"download_count\"]",
+            "$[0][\"assets\"][5][\"download_count\"]",
+            "$[0][\"assets\"][7][\"download_count\"]",
+            "$[0][\"assets\"][9][\"download_count\"]",
+            "$[0][\"assets\"][11][\"download_count\"]",
+            "$[0][\"assets\"][13][\"download_count\"]",
+            "$[0][\"assets\"][15][\"download_count\"]",
+            "$[0][\"assets\"][17][\"download_count\"]",
+            "$[0][\"assets\"][18][\"download_count\"]",
+            "$[0][\"assets\"][20][\"download_count\"]",
+            "$[0][\"assets\"][22][\"download_count\"]",
+            "$[0][\"assets\"][24][\"download_count\"]",
+            "$[0][\"assets\"][26][\"download_count\"]",
+            "$[0][\"assets\"][30][\"download_count\"]",
+            "$[0][\"assets\"][40][\"download_count\"]",
+            "$[0][\"assets\"][41][\"download_count\"]",
+            "$[0][\"assets\"][42][\"download_count\"]",
+            "$[0][\"assets\"][43][\"download_count\"]",
+            "$[63][\"assets\"][21][\"download_count\"]",
+            "$[63][\"assets\"][69][\"download_count\"]",
+            "$[63][\"assets\"][97][\"download_count\"]",
+            "$[63][\"assets\"][124][\"download_count\"]",
+            "$[63][\"assets\"][125][\"download_count\"]",
+            "$[63][\"assets\"][128][\"download_count\"]",
+            "$[63][\"assets\"][129][\"download_count\"]"
+          ]
+        },
+        "sqlitebrowser-list": {
+          "body_changed": true,
+          "json_paths": [
+            "$[0][\"assets\"][0][\"download_count\"]",
+            "$[0][\"assets\"][3][\"download_count\"]",
+            "$[0][\"assets\"][4][\"download_count\"]",
+            "$[0][\"assets\"][6][\"download_count\"]",
+            "$[0][\"assets\"][7][\"download_count\"]",
+            "$[0][\"assets\"][11][\"download_count\"]",
+            "$[2][\"assets\"][0][\"download_count\"]",
+            "$[2][\"assets\"][1][\"download_count\"]",
+            "$[2][\"assets\"][2][\"download_count\"]",
+            "$[2][\"assets\"][3][\"download_count\"]",
+            "$[2][\"assets\"][4][\"download_count\"]",
+            "$[2][\"assets\"][5][\"download_count\"]",
+            "$[2][\"assets\"][6][\"download_count\"]",
+            "$[2][\"assets\"][7][\"download_count\"]",
+            "$[2][\"assets\"][8][\"download_count\"]",
+            "$[7][\"assets\"][6][\"download_count\"]"
+          ]
+        }
+      }
+    },
+    "filter_diagnostics": {
+      "baseline": {
+        "obsidian-list": {
+          "exact": "https://github.com/obsidianmd/obsidian-releases/releases/download/v1.14.5/Obsidian-1.14.5.AppImage",
+          "projection": "https://github.com/obsidianmd/obsidian-releases/releases/download/v1.14.5/Obsidian-1.14.5.AppImage"
+        },
+        "wezterm-list": {
+          "exact": "https://github.com/wezterm/wezterm/releases/download/nightly/WezTerm-nightly-Ubuntu26.04.AppImage",
+          "projection": "https://github.com/wezterm/wezterm/releases/download/nightly/WezTerm-nightly-Ubuntu26.04.AppImage"
+        }
+      },
+      "hour": {
+        "obsidian-list": {
+          "exact": "https://github.com/obsidianmd/obsidian-releases/releases/download/v1.14.5/Obsidian-1.14.5.AppImage",
+          "projection": "https://github.com/obsidianmd/obsidian-releases/releases/download/v1.14.5/Obsidian-1.14.5.AppImage"
+        },
+        "wezterm-list": {
+          "exact": "https://github.com/wezterm/wezterm/releases/download/nightly/WezTerm-nightly-Ubuntu26.04.AppImage",
+          "projection": "https://github.com/wezterm/wezterm/releases/download/nightly/WezTerm-nightly-Ubuntu26.04.AppImage"
+        }
+      }
+    },
+    "git_version": "git version 2.55.0",
+    "limits": "Small sample; positional JSON paths do not identify semantic changes after reordering; no annual forecast."
+  }
+}
