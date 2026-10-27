@@ -1,7 +1,7 @@
 # Verify storage and publication semantics offline
 
 Type: prototype
-Status: open
+Status: resolved
 Triage: ready-for-agent
 Blocked by: 07
 
@@ -24,3 +24,19 @@ Use [v1 proposal](../design/storage-publication-v1.md), the complete baseline/ho
 ## Starting evidence
 
 Use research/churn-hour-40508899451-evidence.tar.gz, which contains baseline and hour rounds. The failed baseline is separate evidence and must not be passed off as complete. The illustrative JSON index is not a valid full publication fixture: its manifest hash and exact receipt/validation timestamps are intentionally incomplete.
+
+
+## Answer — 2026-10-27
+
+The offline prototype passed 64 acceptance replay checks across the complete
+baseline/hour evidence and synthetic failures. Exact bytes, retained freshness,
+availability, identity/path/schema validation, selective commit-pinned reads and
+stale-parent refusal behaved as proposed within the documented fixture limits.
+See [findings](../research/storage-prototype-findings.md) and
+[machine report](../research/storage-prototype-report.json).
+
+Primary source is captured on `proto/offline-storage-v1` under
+`tools/proto-storage/` (runner, README and shareable HTML walkthrough). Main keeps
+the findings and tracker decision only. This resolves the bounded experiment,
+not acceptance of a production schema. Follow-up [09](09-review-offline-findings.md)
+records the review frontier. No remote action was taken.

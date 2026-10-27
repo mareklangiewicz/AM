@@ -17,7 +17,7 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 ## Fog
 
 - [06 resolved](issues/06-manual-rest-churn-experiment.md): baseline/hour measurements support provisional REST-first work; day sampling is optional. Fleet storage remains unmeasured.
-- [08: offline storage prototype](issues/08-offline-storage-prototype.md): verify the proposed format, state transitions and commit-pinned reads without network or remote publication.
+- [08 resolved](issues/08-offline-storage-prototype.md): 64 offline replay checks support the bounded format/state/publication contract; [09](issues/09-review-offline-findings.md) reviews refinements and operational boundaries.
 - [04 resolved](issues/04-compare-collection-strategies.md): REST-first experiment agreed; revisit the representation if churn/storage evidence or future consumer needs justify it.
 - Retention and Git growth; volatile response fields; large asset lists; removed upstream data; standalone updater migration; actual publishing privilege separation; eventual upstream preferences.
 
@@ -50,3 +50,13 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 2026-10-27: [hour observation succeeded](research/churn-hour-40508899451-findings.md), run 40508899451, +63m26s. Six changed HTTP 200 bodies; differences were download/reaction counters only, with stable ordered identities and projections. Packed growth 4,324 bytes exact / 458 bytes projection in this short sample. Next is separately authorized day observation around 2026-10-28 13:01 Europe/Warsaw; no schedule.
 
 2026-10-27: Marek accepted moving ahead without waiting for the day sample. [06 resolved with revised scope](issues/06-manual-rest-churn-experiment.md); [07 design proposal](design/storage-publication-v1.md) records request identity, exact bodies, separate freshness/error state and atomic commit-pinned publication. [08](issues/08-offline-storage-prototype.md) is the next offline frontier. No live collection, branch publication, schedule or app integration enabled.
+
+
+2026-10-27: [08 resolved](issues/08-offline-storage-prototype.md).
+[Offline findings](research/storage-prototype-findings.md) and
+[machine report](research/storage-prototype-report.json) record 64 passing replay
+checks, exact-byte preservation, explicit timing/enrollment limitations and
+commit-pinned/stale-parent behavior. Full-repack growth was 5,071 bytes; incremental
+GC yielded a larger layout. Prototype source is captured separately on
+`proto/offline-storage-v1`; no production code is merged. [09](issues/09-review-offline-findings.md)
+is the review frontier. No HTTP, push, dispatch or app change.
