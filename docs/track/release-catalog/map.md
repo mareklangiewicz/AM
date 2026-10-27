@@ -17,7 +17,7 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 ## Fog
 
 - [06 resolved](issues/06-manual-rest-churn-experiment.md): baseline/hour measurements support provisional REST-first work; day sampling is optional. Fleet storage remains unmeasured.
-- [08 resolved](issues/08-offline-storage-prototype.md): 64 offline replay checks support the bounded format/state/publication contract; [09 resolved](issues/09-review-offline-findings.md) records review refinements; [10](issues/10-offline-client-freshness.md) is the next offline freshness frontier.
+- [08 resolved](issues/08-offline-storage-prototype.md): 64 offline replay checks support the bounded format/state/publication contract; [09 resolved](issues/09-review-offline-findings.md) records review refinements; [10 resolved](issues/10-offline-client-freshness.md) verifies bounded freshness/consent; [11](issues/11-review-client-and-collection-boundaries.md) is the policy and collection-boundary review frontier.
 - [04 resolved](issues/04-compare-collection-strategies.md): REST-first experiment agreed; revisit the representation if churn/storage evidence or future consumer needs justify it.
 - Retention and Git growth; volatile response fields; large asset lists; removed upstream data; standalone updater migration; actual publishing privilege separation; eventual upstream preferences.
 
@@ -68,3 +68,12 @@ provenance, public-only enrollment constraints, provisional offline limits and
 alias lifecycle gaps. [10](issues/10-offline-client-freshness.md) specifies an offline
 client freshness/lookup experiment. Production schema and remote operations remain
 unaccepted; no network action or push performed.
+
+
+2026-10-27: pushed main-marek through ce1d81537 with Marek's explicit approval,
+then completed [10](issues/10-offline-client-freshness.md) offline. [Findings](research/freshness-prototype-findings.md)
+and [report](research/freshness-prototype-report.json) record 54 outcomes covering
+freshness edges, consent binding, alias/re-enrollment, pinned reads and limits.
+Prototype source is 694613538 on proto/offline-freshness-v1, separate from main.
+No live experiment or integration ran. [11](issues/11-review-client-and-collection-boundaries.md)
+records the remaining review choices.
