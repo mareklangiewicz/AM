@@ -5,6 +5,18 @@ set -u
 APP=obsidian
 SITE="obsidianmd/obsidian-releases"
 
+# Explicit read-only catalog query; exit before any installer setup.
+# Remaining arguments are consumer.py options (--commit, --metadata, --accept-stale).
+if [ "${1-}" = --catalog-version ]; then
+	shift
+	catalog_consumer=$(CDPATH= cd -- "$(dirname -- "$0")/../../tools/catalog-collector" && pwd) || exit 1
+	catalog_body=$(python3 -B "$catalog_consumer/consumer.py" "https://api.github.com/repos/$SITE/releases" "$@") || exit 1
+	version=$(printf '%s\n' "$catalog_body" | sed 's/[()",{} ]/\n/g' | grep -oi "https.*mage$" | grep -vi "i386\|i686\|aarch64\|arm64\|armv7l" | head -1)
+	[ -n "$version" ] || { echo "Error getting link" >&2; exit 1; }
+	printf '%s\n' "$version"
+	exit 0
+fi
+
 # CREATE DIRECTORIES AND ADD REMOVER
 [ -n "$APP" ] && mkdir -p "/opt/$APP/tmp" "/opt/$APP/icons" && cd "/opt/$APP/tmp" || exit 1
 printf "#!/bin/sh\nset -e\nrm -f /usr/local/bin/$APP\nrm -R -f /opt/$APP" > ../remove

@@ -169,3 +169,24 @@ Only body bytes go to stdout. --accept-stale requires the full COMMIT REQUEST_ID
 BODY_SHA256 tuple from the stale refusal; it cannot bypass unavailable, future or
 integrity failures. There is no direct upstream fallback or installer side effect.
 See docs/track/release-catalog/design/catalog-consumer.md for scope and bounds.
+
+## Opt-in Obsidian filter (ticket 20)
+
+From a full repository checkout (Python 3.10+, curl and the script's existing
+sed/grep/head dependencies):
+
+```sh
+sh programs/x86_64/obsidian --catalog-version --metadata /tmp/obsidian-catalog.json
+# Optional: append --commit FULL_PUBLICATION_SHA to skip ref resolution.
+```
+
+This explicit mode prints the download URL selected by Obsidian's existing x86_64
+release-list filter, then exits before directory creation or installer setup.
+Remaining arguments go to consumer.py, including its exact --accept-stale tuple;
+refusal or no matching asset exits nonzero without a URL or upstream fallback.
+It requires the adjacent tools/catalog-collector checkout; a downloaded standalone
+app script does not carry the consumer. It does not install, download the selected
+asset, or migrate installed updaters. Running without --catalog-version retains
+the ordinary installer behavior. Metadata describes the verified input observation,
+not independent authenticity of the selected binary. The legacy text filter retains
+its existing release order and matching behavior, including matches in descriptions.

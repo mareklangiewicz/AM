@@ -213,3 +213,14 @@ Obsidian and pinned Neovim reads at d612ff34b: five catalog GETs, exact saved by
 and existing jq tag filters. Source 046d9ebd9; no upstream collection, workflow
 dispatch, new publication, schedule or app change. Next is a single explicit opt-in
 app/filter read path, without executing an installer or changing installed state.
+
+
+2026-10-27: [20 resolved](issues/20-obsidian-opt-in-filter.md). The x86_64 Obsidian
+script now exposes an explicit --catalog-version read-only path before installer
+setup, feeding verified consumer bytes to its existing release-list asset filter.
+76 collector/integration tests plus eight historical churn tests pass offline;
+shell syntax and diff checks pass. Verification uses retained measured bytes and
+injected consumer fetch/time plus a shell-command shim; no fresh HTTP or end-to-end
+live CLI claim. Full-checkout dependency and unchanged legacy filter limitations
+are documented. No installer execution, installed state change, updater migration,
+workflow dispatch, publication or push. Next adoption scope remains undecided.
