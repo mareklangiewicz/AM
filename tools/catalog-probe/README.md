@@ -6,7 +6,7 @@ The fixed workload is five requests when an ETag is returned: baseline rate limi
 
 The query requests pagination flags explicitly. These bound the experiment; it does not collect full history or prove equivalence to REST ordering/fields. REST and GraphQL consume distinct primary budgets, so compare their reported limits separately. Account for concurrent repository workflows and authoritative response headers before attributing every counter change to the probe.
 
-The fork's default branch is main, while development is main-marek. The scoped push trigger runs when this workflow or probe files are pushed to main-marek. A manual dispatch requires the workflow to exist on the default branch; it is not currently the run path. Documentation-only pushes do not trigger this probe. There is no schedule.
+This experiment runs only by explicit workflow_dispatch. Its job also checks the event name. Pushes, pull requests, and schedules do not run it. The fork's default branch is main, while development is main-marek; manual dispatch requires registering the workflow on the default branch first. Keep repository Actions disabled until existing workflows have been individually disabled and a deliberate probe registration/run plan is approved. Use gh CLI with keyring access to inspect settings.
 
 The Actions artifact contains public response bodies, quota response headers, statuses, and the fixed GraphQL query. No request authorization headers are written. Retention is seven days. Record the run URL, repository commit, selected measurements, and interpretation in docs/track/release-catalog/issues/02-workflow-token-probe.md before marking it resolved.
 

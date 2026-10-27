@@ -4,6 +4,8 @@ Status: exploratory, subject to evidence and revision.
 
 Investigate a shared catalog of observed upstream release metadata for AM, eliminating reliance on third-party API proxies. Keep version ordering and asset selection in consumers. Potential reuse by Portable Linux Apps is a motivation, not an integration commitment.
 
+Experiment control: experimental workflows run only by explicit manual dispatch. Isolate them from existing workflows before enabling repository Actions. Hourly collection describes a possible eventual solution, not the experiment trigger.
+
 Initial scope: public GitHub release endpoints, complete response fields and order where exact response snapshots are used, explicit source/query/pagination provenance, per-observation last checked time and error status. Unsupported endpoints are surfaced rather than silently replaced. A catalog observation describes what upstream reported, not independent software authenticity.
 
 Provisional client behavior: download a small index and needed response files from one publication commit, cache locally, require explicit acceptance beyond a roughly 24-hour freshness target, and offer explicit direct-GitHub checks for unavailable/unsupported data. Missing, invalid, or removed information skips the affected app by default; temporary failures retain previous observations without refreshing their age. More precise status rules need testing.

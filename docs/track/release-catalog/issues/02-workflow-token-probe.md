@@ -10,7 +10,7 @@ What quotas and conditional-request behavior does this fork's real GITHUB_TOKEN 
 
 ## Acceptance
 
-- Workflow has read-only contents permission, no publication, no schedule, and bounded fixed requests.
+- Workflow runs only by explicit manual dispatch, with a matching job event guard, read-only contents permission, no publication, and bounded fixed requests.
 - Record REST and GraphQL budgets separately; perform a conditional REST request only when an ETag exists.
 - Record HTTP status, response headers, GraphQL cost/errors, payload size, and pagination flags. Treat 200 instead of 304 as evidence requiring interpretation, not automatic success of conditional caching.
 - Preserve response evidence as a short-lived artifact and append the run URL and interpretation here.
@@ -22,8 +22,10 @@ What quotas and conditional-request behavior does this fork's real GITHUB_TOKEN 
 
 ## Comments
 
-Marek authorized use of mareklangiewicz/AM. The inherited home AGENTS.md requires asking before a push. Local gh auth status reports an invalid configured credential; connector reads remain available. Report push/authentication results accurately.
+Marek authorized use of mareklangiewicz/AM. The inherited home AGENTS.md requires asking before a push. An early sandboxed gh check incorrectly suggested invalid credentials. Superseded: gh works with the keyring outside the sandbox. Report push/authentication results accurately.
 
 2026-10-27, after push approval: pushed fc0e2be7d to origin/main-marek successfully. GitHub Actions run listing filtered to main-marek returned zero runs; this commit has no check runs. The public workflow listing reports five existing active workflows but does not list Catalog quota probe. The browser Actions URL returns a signed-out 404, so it does not establish the underlying repository setting. No real token quota or ETag measurements were obtained.
 
-Next action: inspect https://github.com/mareklangiewicz/AM/actions while signed in and verify repository Actions availability/policies. Do not assume workflow_dispatch can run from main-marek while the workflow is absent on the default main branch. Diagnose registration/settings before choosing a retrigger. The prepared workflow and successful push are preserved; neither app-management code nor repository Actions settings were changed.
+Superseding diagnosis via gh: repository Actions permissions report enabled=false. Existing five workflows are individually active, but the repository-wide switch prevents execution. No Actions settings have been changed.
+
+Marek requires experimental workflows to run only by manual dispatch and wants to avoid triggering other workflows. Removed the push trigger and added a job-level event guard. Next: push the manual-only revision with approval; agree how to register it on default main, disable existing workflows while repository Actions is still off, and enable Actions only after verifying isolation. Do not dispatch an experiment without an explicit run instruction. No live quota measurements yet.

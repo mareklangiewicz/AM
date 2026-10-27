@@ -2,11 +2,6 @@ name: Catalog quota probe
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main-marek]
-    paths:
-      - .github/workflows/catalog-quota-probe.yml
-      - tools/catalog-probe/**
 
 permissions:
   contents: read
@@ -17,7 +12,7 @@ concurrency:
 
 jobs:
   probe:
-    if: github.repository == 'mareklangiewicz/AM'
+    if: github.repository == 'mareklangiewicz/AM' && github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
