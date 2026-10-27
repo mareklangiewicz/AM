@@ -29,3 +29,5 @@ Seven offline fixture tests cover three-round chaining/304 reuse and analysis, H
 ## Comments
 
 2026-10-27: Marek authorized and completed the push through 6f9648bb2, then explicitly authorized one baseline dispatch. [Run 40499617203 findings and persistent evidence](../research/churn-baseline-40499617203-findings.md): four successful responses, then WezTerm HTTP 301; round stopped at five attempts, SQLite unqueried. complete=false; do not use this run to seed hour/day. No retry, replacement baseline or endpoint-policy change is authorized. Investigate the redirect boundary before proposing the next run.
+
+2026-10-27 follow-up: one separately agreed public read captured [WezTerm redirect evidence](../research/wezterm-redirect-investigation.md). Prepared the explicit repository-ID source from Location and bounded HTTP error evidence retention; redirects remain disabled. Eight offline tests pass, including the actual urllib HTTPError path. The target was not queried and no replacement run was dispatched. Awaiting push and separate replacement-baseline authorization.

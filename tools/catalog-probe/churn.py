@@ -19,13 +19,13 @@ ENDPOINTS = {
     "obsidian-latest": "repos/obsidianmd/obsidian-releases/releases/latest",
     "neovim-list": "repos/neovim/neovim/releases",
     "neovim-latest": "repos/neovim/neovim/releases/latest",
-    "wezterm-list": "repos/wez/wezterm/releases?per_page=100",
+    "wezterm-list": "repositories/120568143/releases?per_page=100",
     "sqlitebrowser-list": "repos/sqlitebrowser/sqlitebrowser/releases?per_page=100",
 }
 ROUNDS = ("baseline", "hour", "day")
 BODY_CAP = 10 * 1024 * 1024
 VERSION = "2022-11-28"
-HEADERS = {"date", "etag", "last-modified", "link", "retry-after", "content-type"}
+HEADERS = {"date", "etag", "last-modified", "link", "retry-after", "content-type", "location"}
 
 
 def encode(value):
@@ -147,6 +147,10 @@ def collect(output, round_name, previous=None, request=fetch):
             entry.update(status=status, headers=response_headers, received_bytes=len(body))
             if len(body) > BODY_CAP:
                 raise ValueError("body cap exceeded")
+            if status not in (200, 304):
+                error_path = current / (key + ".error.body")
+                error_path.write_bytes(body)
+                entry.update(error_body_file=error_path.name, error_body_sha256=digest(body))
             if status == 304:
                 if not old or not any(k in headers for k in ("If-None-Match", "If-Modified-Since")):
                     raise ValueError("304 without a validated conditional request")

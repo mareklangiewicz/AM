@@ -12,7 +12,11 @@ No workflow is added and unrelated workflow settings are unchanged.
 ## Bounds
 
 - Six fixed GET endpoints: Obsidian list/latest, Neovim list/latest,
-  WezTerm list?per_page=100 and sqlitebrowser list?per_page=100.
+  WezTerm repository-ID list?per_page=100 and sqlitebrowser list?per_page=100.
+  The WezTerm source is explicitly repositories/120568143/releases?per_page=100,
+  the Location observed in a separate public read on 2026-10-27; see
+  docs/track/release-catalog/research/wezterm-redirect-investigation.md.
+  The target has not yet been measured in a complete baseline.
 - At most six attempts per observation; no retries, redirects, extra pages,
   GraphQL or rate-limit endpoint requests. Requests are sequential.
 - Each body is limited to 10 MiB plus one detection byte; 60-second socket
@@ -29,6 +33,8 @@ No workflow is added and unrelated workflow settings are unchanged.
 - Conditional GET uses the preceding ETag, or Last-Modified if no ETag exists.
   A valid 304 reuses exact prior bytes; validators omitted from 304 headers
   carry forward. A 200 retains the new exact bytes, including whitespace.
+- HTTP failures retain the public response body within the 10 MiB cap, its hash,
+  and the Location response header; they still stop the round.
 - Saved metadata contains only selected public response headers, status,
   UTC check time, source revision and body SHA-256. Authorization is not saved.
 

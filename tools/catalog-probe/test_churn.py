@@ -1,4 +1,5 @@
 import importlib.util
+import io
 import json
 import os
 from pathlib import Path
@@ -103,6 +104,34 @@ class ChurnTests(unittest.TestCase):
         with self.assertRaises(RuntimeError):
             c.collect(output, "baseline", request=error)
         self.assertNotIn("fixture-secret", (output / "baseline/observation.json").read_text())
+
+    def test_http_redirect_evidence_without_following(self):
+        from email.message import Message
+        from unittest.mock import Mock
+        headers = Message()
+        destination = "https://api.github.com/repositories/120568143/releases?per_page=100"
+        headers["Location"] = destination
+        headers["Set-Cookie"] = "not-for-evidence"
+        body = b'{"message":"Moved Permanently"}'
+        error = c.urllib.error.HTTPError("https://api.github.com/old", 301,
+                                        "Moved", headers, io.BytesIO(body))
+        opener = Mock()
+        opener.open.side_effect = error
+        output = self.root / "redirect"
+        with patch.object(c.urllib.request, "build_opener", return_value=opener) as build:
+            with self.assertRaises(RuntimeError):
+                c.collect(output, "baseline", request=c.fetch)
+        self.assertIsInstance(build.call_args.args[0], c.NoRedirect)
+        self.assertIsNone(c.NoRedirect().redirect_request(None, None, None, None, None, None))
+        self.assertEqual(opener.open.call_count, 1)
+        meta = json.loads((output / "baseline/observation.json").read_text())
+        entry = meta["responses"]["obsidian-list"]
+        self.assertEqual(entry["status"], 301)
+        self.assertEqual(entry["headers"]["location"], destination)
+        self.assertNotIn("set-cookie", entry["headers"])
+        self.assertEqual((output / "baseline" / entry["error_body_file"]).read_bytes(), body)
+        self.assertEqual(entry["error_body_sha256"], c.digest(body))
+        self.assertFalse(meta["complete"])
 
 
 if __name__ == "__main__":
