@@ -77,3 +77,11 @@ freshness edges, consent binding, alias/re-enrollment, pinned reads and limits.
 Prototype source is 694613538 on proto/offline-freshness-v1, separate from main.
 No live experiment or integration ran. [11](issues/11-review-client-and-collection-boundaries.md)
 records the remaining review choices.
+
+
+2026-10-27: [11 claimed](issues/11-review-client-and-collection-boundaries.md).
+[Review proposal](design/client-collection-review.md) records freshness/consent
+recommendations, documented workflow-token isolation and a bounded six-attempt
+future-job envelope. The earlier anonymous-first recommendation was too strong;
+a restricted token excluding its own repository is a design option. Policy answers
+remain pending. Documentation research only; no new upstream API experiment.

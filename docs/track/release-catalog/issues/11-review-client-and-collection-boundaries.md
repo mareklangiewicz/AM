@@ -1,7 +1,7 @@
 # Review client policy and public-only collection boundary
 
 Type: grilling
-Status: open
+Status: claimed
 Triage: ready-for-human
 Blocked by: 10
 
@@ -33,3 +33,19 @@ storage and freshness experiments?
 Review and design only. No HTTP, Actions dispatch, schedule, installed-app change,
 client migration or remote publication is authorized by this ticket. Pushes must
 remain independent of experimental dispatch. No day observation is required.
+
+
+## Comments — 2026-10-27 review round 1
+
+Marek authorized continuing. Prepared a [concrete review proposal](../design/client-collection-review.md)
+with two pending decisions: retain the demonstrated freshness/consent contract,
+and design the restricted workflow-token collector before remote delivery.
+Official documentation supports a narrower credential boundary than the previous
+anonymous-first preference: workflow-token privileges are limited to the workflow
+repository, which must be excluded by stable ID and aliases. This is an inference,
+not a new live visibility test. No broader credential may enter collection.
+
+Preserve documented 1,000/hour planning and measured 5,000/hour run evidence
+separately. Proposed first-job bounds are six attempts, serial, no retries/redirects,
+explicit time/byte/error limits. No dispatch or implementation is authorized by
+this proposal. Ticket remains claimed/ready-for-human pending policy answers.

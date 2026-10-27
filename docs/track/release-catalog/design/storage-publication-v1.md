@@ -339,3 +339,14 @@ boundary is age <= 86,400 seconds fresh, greater age requiring explicit acceptan
 for that specific observation digest and publication commit. Refuse future-clock
 observations for now; do not silently clamp negative ages. These exact edges are
 prototype inputs, not accepted client UX. See [ticket 10](../issues/10-offline-client-freshness.md).
+
+
+## Subsequent credential-boundary review
+
+The anonymous-first preference above is superseded as a recommendation by the
+[pending ticket 11 proposal](client-collection-review.md). GitHub documents
+GITHUB_TOKEN repository isolation; excluding the workflow repository by stable
+identity and accepting no broader credential gives a narrower authenticated option
+for unrelated public release sources. This remains a design inference, not a live
+visibility proof, adopted production policy or experiment authorization. Anonymous
+quota must not be confused with token quota. Earlier evidence remains unchanged.
