@@ -1,7 +1,7 @@
 # Read-only commit-pinned catalog consumer
 
 Type: task
-Status: claimed
+Status: resolved
 Triage: ready-for-agent
 
 ## Scope and authorization
@@ -27,3 +27,13 @@ credential path is needed. Validate offline and against the existing public comm
   recheck freshness after IO and emit no partial body on refusal.
 - Focused fake-transport/process tests plus bounded public catalog verification;
   preserve exact source/publication provenance and evidence in the tracker.
+
+## Answer
+
+Implemented shared index/read policy, isolated bounded public transport and actual
+consumer API/CLI. 80 offline tests pass. Two live CLI lookups used five catalog
+GETs total at d612ff34b, returned exact saved Obsidian/Neovim body bytes and passed
+existing jq tag filters. [Findings and persistent evidence](../research/consumer-read-findings.md)
+record source/pin/hash/freshness provenance and independent artifact comparison.
+No source collection, workflow dispatch, publication, schedule or installed-app
+change. Next is one opt-in consumer/filter integration without installer execution.

@@ -203,3 +203,13 @@ read-only pinned consumer before any installed-updater migration.
 metadata/freshness validation, fixed public bounded transport, one ref resolution
 and only the pinned requested body. Preparing public-catalog-only smoke checks;
 no source collection, workflow change, publication or installer modification.
+
+
+2026-10-27: [19 resolved](issues/19-read-only-pinned-consumer.md). Read-only API/CLI
+now resolves once (or accepts a full pin), validates shared index metadata, checks
+freshness/consent before and after IO and returns one exact body. 80 offline tests
+pass. [Actual CLI evidence](research/consumer-read-findings.md) verifies default
+Obsidian and pinned Neovim reads at d612ff34b: five catalog GETs, exact saved bytes
+and existing jq tag filters. Source 046d9ebd9; no upstream collection, workflow
+dispatch, new publication, schedule or app change. Next is a single explicit opt-in
+app/filter read path, without executing an installer or changing installed state.

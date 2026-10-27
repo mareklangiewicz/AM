@@ -100,3 +100,10 @@ existing filter output, then record source and publication commits. No new sourc
 collection, publication or Actions dispatch is necessary. Existing installed
 updaters remain unchanged. Broader portability, caching/batching, persistent stale
 consent UI and app integration remain separate work.
+
+## Verified result
+
+[Consumer findings](../research/consumer-read-findings.md) record 80 passing offline
+tests and two successful actual CLI reads at d612ff34b, with exact byte comparison
+to saved publication evidence and jq filter compatibility. No collection or workflow
+dispatch was needed; no installed updater changed.
