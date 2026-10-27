@@ -133,3 +133,13 @@ folded HTTP header lines now refuse before Python's permissive header parser.
 Ticket 16 installs the separately approved workflow as
 .github/workflows/catalog-collector.yml. Each live dispatch still requires explicit
 authorization. The .proposed file remains the historical review artifact.
+
+## Observation storage integration (ticket 17)
+
+storage.py applies inert measured results to a bounded, validated byte tree. The
+manual workflow now exports candidate/index.json and candidate/bodies/ with
+storage-report.json beside the original response evidence. See
+docs/track/release-catalog/design/storage-collector-integration.md for format and
+transitions. artifact_io.py reads closed candidate directories; publication.py
+provides local-only atomic Git commits and pinned freshness-checked reads. Neither
+has a network/remote publication path. No installer calls these helpers.

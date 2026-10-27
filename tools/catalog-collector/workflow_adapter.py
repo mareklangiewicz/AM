@@ -1,34 +1,18 @@
-"""Inactive workflow proposal support. No command-line entry point or token lookup.
+"""Manual workflow collection and validated candidate staging. No command-line entry point or token lookup.
 
-Only the separately reviewed workflow artifact calls run(), supplying its step token.
+The reviewed manual workflow calls run(), supplying only its step token.
 """
 from datetime import datetime, timezone
 import hashlib
 import json
+import platform
 from pathlib import Path
 import re
 import time
 
-from collector import Descriptor, Source, collect, plan, require
+from collector import collect, require
+from manifest import load_manifest
 from supervised_transport import SupervisedTransport, Token
-
-
-def load_manifest(raw, workflow_identity):
-    require(type(raw) is bytes and len(raw) <= 64_000, 'invalid_manifest')
-    obj = json.loads(raw)
-    require(type(obj) is dict and obj.get('schema') == 1 and
-            type(obj.get('sources')) is list and len(obj['sources']) == 6, 'invalid_manifest')
-    sources = []
-    for row in obj['sources']:
-        require(type(row) is dict and type(row.get('repository_id')) is int and
-                row['repository_id'] > 0 and type(row.get('url')) is str and
-                type(row.get('identity_evidence')) is str, 'unenrolled_source')
-        desc = Descriptor(row['url'])
-        require(row.get('request_id') == desc.request_id, 'manifest_request_id_mismatch')
-        require(type(row.get('aliases')) is list, 'invalid_aliases')
-        sources.append(Source(desc, row['repository_id'], row['identity_evidence'],
-                              tuple(row['aliases'])))
-    return plan(tuple(sources), workflow_identity)
 
 
 def preflight(context, raw, actual_revision):
@@ -64,14 +48,36 @@ def run(context, raw, actual_revision, token, output):
                                workflow_identity=int(context['repository_id']))
     directory = Path(output)
     directory.mkdir(parents=True, exist_ok=False)
+    evidence = []
     for attempt in attempts:
-        body = attempt.pop('body')
-        attempt['body_bytes'] = len(body)
-        attempt['body_sha256'] = hashlib.sha256(body).hexdigest()
+        body = attempt['body']
+        evidence.append({**{k: v for k, v in attempt.items() if k != 'body'},
+                         'body_bytes': len(body), 'body_sha256': hashlib.sha256(body).hexdigest()})
         if attempt['outcome'] == 'response':
             (directory / (attempt['request_id'] + '.body')).write_bytes(body)
     (directory / 'report.json').write_text(json.dumps({
-        'context': context, 'run': report, 'attempts': attempts,
+        'context': context, 'run': report, 'attempts': evidence,
+        'runtime': {'python': platform.python_version(), 'system': platform.system()},
         'interpretation': 'Complete transfer is not release validation or publication approval.'
     }, indent=2) + '\n')
-    return report['complete'] and all(a['status'] == 200 for a in attempts)
+    from storage import apply
+    try:
+        tree, transitions = apply(None, raw, attempts, workflow_identity=int(context['repository_id']),
+            generated_at=Clock.utcnow().isoformat(), revision=actual_revision,
+            run={'id': context['run_id'], 'attempt': context['run_attempt']})
+    except (ValueError, TypeError, KeyError):
+        (directory / 'storage-report.json').write_text('{"outcome":"storage_refusal"}\n')
+        return False
+    candidate = directory / 'candidate'
+    candidate.mkdir()
+    for path, data in tree.items():
+        target = candidate / path
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(data)
+    (directory / 'storage-report.json').write_text(json.dumps({
+        'outcome': 'validated_candidate', 'transitions': transitions,
+        'files': {p: {'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()}
+                  for p, data in tree.items()}
+    }, indent=2) + '\n')
+    return (report['complete'] and all(a['status'] == 200 for a in attempts)
+            and all(t['outcome'] == 'observed' for t in transitions))

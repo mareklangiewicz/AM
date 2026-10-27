@@ -157,3 +157,10 @@ succeeded with six HTTP 200 complete transfers (4,877,758 bytes / 5.198 seconds)
 verify every body hash, six numeric routes, quota and timing. No retry, schedule,
 publication or app change. Storage/publication/client integration remain separate;
 no day sample or wait is required. Further collection needs explicit instruction.
+
+
+2026-10-27: [17 claimed](issues/17-integrate-observation-storage.md). Implemented
+[collector/storage integration](design/storage-collector-integration.md), closed
+candidate artifact validation and local-only publication/pinned reads. 62 offline
+tests pass against saved measured evidence and synthetic transitions. Preparing
+one authorized six-source live validation with unchanged contents:read boundary.
