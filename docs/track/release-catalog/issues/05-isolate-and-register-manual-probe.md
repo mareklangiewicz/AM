@@ -6,19 +6,22 @@ Triage: ready-for-human
 
 ## Question
 
-How can we make the approved experiment available without triggering unrelated workflows or merging 871 development commits into main?
+How can we enable the manual experiment without allowing unrelated workflows to run?
 
-## Prepared result
+## Registration resolved
 
-[Research and sources](../research/manual-registration-research.md). While keeping Actions disabled, prepared local branch experiment/catalog-probe-registration at commit 43cceedf77f4dc46e647569ca6e2f63f14737b8b, parent origin/main 10900b9fc60069dbd39d185e914d71006dac5eb0. Its only change adds a harmless manual-only registration stub at the real probe's workflow path. Default-ref dispatch merely prints instructions; an explicit --ref main-marek uses the actual experiment. The live checkout remains main-marek. No branch was pushed for registration.
+2026-10-27: Marek approved making main-marek the fork's default branch. Applied via gh repo edit and verified default_branch=main-marek. GitHub immediately registered Catalog quota probe (398162689), individually active. Repository Actions remains enabled=false; nothing was dispatched.
+
+The former one-file main registration proposal is superseded. Its local branch experiment/catalog-probe-registration at 43cceedf77f4dc46e647569ca6e2f63f14737b8b was never pushed and is not needed. Keep main unchanged. Historical [registration research](../research/manual-registration-research.md) remains useful for manual dispatch semantics, but its branch-topology assumptions no longer apply.
 
 ## Isolation plan requiring approval
 
-1. Keep repository Actions off. Snapshot and individually disable the five existing workflows; verify disabled_manually for every one. Stop if any transition cannot be verified.
-2. Push the single registration commit to default main using an ordinary fast-forward push. Stop if remote main moved; inspect and rebuild rather than force pushing. Also push the inventory/progress commit to main-marek when approved.
-3. Enable repository Actions only after isolation is verified. Recheck registry and ensure the probe is the only active workflow. If an unrelated workflow is active, turn repository Actions off and investigate. Check pending runs.
-4. Leave experiments unexecuted until Marek explicitly asks to run one. A future authorized run uses gh workflow run catalog-quota-probe.yml --repo mareklangiewicz/AM --ref main-marek.
+1. Keep repository Actions off. Snapshot and individually disable the five unrelated workflows; verify disabled_manually for every one. Stop if any transition cannot be verified.
+2. Enable repository Actions only after isolation is verified. Recheck registry and ensure the probe is the only active workflow. If an unrelated workflow is active, turn repository Actions off and investigate. Check pending runs.
+3. Leave experiments unexecuted until Marek explicitly asks to run one. A future authorized run uses gh workflow run catalog-quota-probe.yml --repo mareklangiewicz/AM --ref main-marek.
+
+Push pending inventory/progress commits only with approval under the inherited home AGENTS.md convention.
 
 ## Baseline
 
-2026-10-27: repository Actions enabled=false. Five individually active workflows: Auto-label AM or AppMan (329958059), Check archived and obsolete sources (329958061), Deploy Jekyll with GitHub Pages dependencies preinstalled (329958062), Language Manager (329958063), Sync Apps List (329958064). gh reported two historical runs, none pending. No Actions settings changed during preparation. Record state transitions and resulting refs here before resolving.
+2026-10-27: repository Actions enabled=false. Five individually active unrelated workflows: Auto-label AM or AppMan (329958059), Check archived and obsolete sources (329958061), Deploy Jekyll with GitHub Pages dependencies preinstalled (329958062), Language Manager (329958063), Sync Apps List (329958064). Probe: Catalog quota probe (398162689), individually active but prevented from running by repository disablement. gh previously reported two historical runs, none pending. The default-branch change is completed; no Actions enablement, individual workflow-state change, or dispatch has occurred. Record those transitions here before resolving.
