@@ -137,7 +137,8 @@ authorization. The .proposed file remains the historical review artifact.
 ## Observation storage integration (ticket 17)
 
 storage.py applies inert measured results to a bounded, validated byte tree. The
-manual workflow now exports candidate/index.json and candidate/bodies/ with
+manual workflow now exports candidate/index.json, derived candidate/lookup.tsv
+and candidate/bodies/ with
 storage-report.json beside the original response evidence. See
 docs/track/release-catalog/design/storage-collector-integration.md for format and
 transitions. artifact_io.py reads closed candidate directories; publication.py
@@ -154,7 +155,7 @@ fast-forward push to release-catalog. See docs/track/release-catalog/design/cata
 for permissions, bounded ZIP/Git handling, conflict behavior and limits. No schedule
 or installed-app integration is enabled.
 
-## Read-only consumer (ticket 19)
+## Read-only Python reference (ticket 19)
 
 consumer.py returns one exact stored response for a reviewed URL, using either one
 ref resolution plus a pinned index/body pair or an explicit --commit. Example:
@@ -170,23 +171,37 @@ BODY_SHA256 tuple from the stale refusal; it cannot bypass unavailable, future o
 integrity failures. There is no direct upstream fallback or installer side effect.
 See docs/track/release-catalog/design/catalog-consumer.md for scope and bounds.
 
-## Opt-in Obsidian filter (ticket 20)
+## Shared shell reader (tickets 23–24)
 
-From a full repository checkout (Python 3.10+, curl and the script's existing
-sed/grep/head dependencies):
+The installed-user path is `modules/catalog.am`, distributed through AM's normal
+shell module sync. It uses shell and existing utilities; neither Python nor jq
+is required by the reader or Obsidian recipe. Read-only invocation from a checkout:
 
 ```sh
-sh programs/x86_64/obsidian --catalog-version --metadata /tmp/obsidian-catalog.json
-# Optional: append --commit FULL_PUBLICATION_SHA to skip ref resolution.
+sh modules/catalog.am \
+  https://api.github.com/repos/obsidianmd/obsidian-releases/releases \
+  --commit FULL_PUBLICATION_SHA
 ```
 
-This explicit mode prints the download URL selected by Obsidian's existing x86_64
-release-list filter, then exits before directory creation or installer setup.
-Remaining arguments go to consumer.py, including its exact --accept-stale tuple;
-refusal or no matching asset exits nonzero without a URL or upstream fallback.
-It requires the adjacent tools/catalog-collector checkout; a downloaded standalone
-app script does not carry the consumer. It does not install, download the selected
-asset, or migrate installed updaters. Running without --catalog-version retains
-the ordinary installer behavior. Metadata describes the verified input observation,
-not independent authenticity of the selected binary. The legacy text filter retains
-its existing release order and matching behavior, including matches in descriptions.
+It emits exact original response JSON only after pinning, freshness and integrity
+checks. An unpinned call resolves one publication commit. Stale refusal prints the
+exact `--commit SHA --accept-stale SHA REQUEST_ID BODY_HASH` arguments to repeat.
+No stale flag overrides availability, integrity or future/unsupported timing.
+
+The fixed publication owner is upstream **ivan-hc/AM**. That owner has not yet
+adopted/published this format; local tests use retained data and controlled
+transports, and no live shell-read success is claimed. See the
+[implementation and public adoption plan](../../docs/track/release-catalog/design/shell-consumer.md).
+
+The ordinary Obsidian installer and newly generated updater now invoke the shared
+reader before app-state changes. The manager embeds its managed module location,
+and routes one marked updater in the foreground before legacy mutation. Existing
+installed updaters are unchanged until explicitly migrated. Binary URLs and the
+existing release-list selection filter are preserved; the appimageupdatetool
+alternate metadata path is removed for this recipe.
+
+The checkout-only `--catalog-version` mode from tickets 20–21 is retired. Its
+[historical evidence](../../docs/track/release-catalog/issues/21-obsidian-live-read.md)
+and the Python consumer remain references; that option is no longer accepted by
+the app script. Use the shared reader for a read-only query. Invoking the ordinary
+app script is an installer operation.

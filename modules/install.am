@@ -266,9 +266,15 @@ _install_arg() {
 		sed -i "s#/usr/local/bin#$BINDIR#g" ./"$arg"
 		sed -i "s#/usr/local/share/applications#$DATADIR/$LAUNCHERS_DIR#g" ./"$arg"
 		sed -i "s#/usr/local/share#$DATADIR#g" ./"$arg"
-		sed -i "s#/opt/#$APPSPATH/#g" ./"$arg"
-	else
+		sed -i '\|sh "/opt/am/modules/catalog.am"|! s#/opt/#'"$APPSPATH"'/#g' ./"$arg"
+	elif ! grep -qx '# AM-CATALOG-RECIPE 1' ./"$arg"; then
 		"$SUDOCMD" mkdir -p /usr/local/share/"$LAUNCHERS_DIR" /usr/local/bin
+	fi
+	# Embed the AM/AppMan-owned module location in both recipe and updater.
+	if grep -qx '# AM-CATALOG-RECIPE 1' ./"$arg"; then
+		[ -r "$MODULES_PATH/catalog.am" ] || { echo 'Missing catalog.am; synchronize AM modules.' >&2; exit 1; }
+		catalog_path=$(printf '%s' "$MODULES_PATH/catalog.am" | sed 's/[\\"`$]/\\&/g' | sed 's/[\\&|]/\\&/g')
+		sed -i "s|/opt/am/modules/catalog.am|$catalog_path|g" ./"$arg" || exit 1
 	fi
 	# Patch to apply to installation scripts
 	sed -i "s# https://api.github.com#$HeaderAuthWithGITPAT https://api.github.com#g" ./"$arg"
@@ -308,7 +314,7 @@ _install_arg() {
 	' ./"$arg"
 	fi
 	# Determine if the app is hosted on github
-	if grep -q "api.github.com" ./"$arg"; then
+	if ! grep -qx '# AM-CATALOG-RECIPE 1' ./"$arg" && grep -q "api.github.com" ./"$arg"; then
 		GH_API_ALLOWED=$(_use_online_reading_tool "https://api.github.com/rate_limit" | tr '{,' '\n' | grep -i remaining | tail -1 | grep -Eo "[0-9]*")
 		wait
 		if [ -n "$GH_API_ALLOWED" ] && [ "$GH_API_ALLOWED" -le 10 ]; then
@@ -318,11 +324,17 @@ _install_arg() {
 		fi
 	fi
 
-	# Set trap to cleanup on interruption (Ctrl+C, kill, hangup, quit)
-	trap _installation_cleanup INT TERM HUP QUIT
+	# Catalog refusal/interruption must not invoke an old app's remover.
+	if ! grep -qx '# AM-CATALOG-RECIPE 1' ./"$arg"; then
+		trap _installation_cleanup INT TERM HUP QUIT
+	fi
 
 	# INSTALL SCRIPT
-	_install_exec_installation_script || _install_script_retry
+	if grep -qx '# AM-CATALOG-RECIPE 1' ./"$arg"; then
+		_install_exec_installation_script || exit 1
+	else
+		_install_exec_installation_script || _install_script_retry
+	fi
 
 	$SUDOCMD rm -f "$AMCACHEDIR"/"$arg"
 
@@ -444,7 +456,7 @@ _install_local_script() {
 	arg=$(echo "$path2arg" | sed 's:.*/::')
 	mkdir -p "$AMCACHEDIR"/tmp && rm -f "$AMCACHEDIR"/tmp/* || return 1
 	cp "$path2arg" "$AMCACHEDIR"/tmp/"$arg" 2>/dev/null && cd "$AMCACHEDIR" && mv ./tmp/"$arg" ./"$arg" && rmdir ./tmp || return 1
-	if ! test -d "$APPSPATH"/"$arg"; then
+	if ! test -d "$APPSPATH"/"$arg" || [ "${catalog_incomplete-false}" = true ]; then
 		_install_arg
 	fi
 }
@@ -603,11 +615,14 @@ _prepare_arg() {
 }
 
 _check_and_install() {
-	[ -n "$BINDIR" ] && find "$BINDIR" -xtype l -name "$pure_arg" -delete 2>/dev/null
+	arg_script=$(_use_online_reading_tool "$APPSDB/$arg" 2>/dev/null)
+	if printf '%s\n' "$arg_script" | grep -q '^#!' &&
+		! printf '%s\n' "$arg_script" | grep -qx '# AM-CATALOG-RECIPE 1'; then
+		[ -n "$BINDIR" ] && find "$BINDIR" -xtype l -name "$pure_arg" -delete 2>/dev/null
+	fi
 	if test -f "$APPSPATH"/"$pure_arg"/remove || test -f "$APPSPATH"/"$pure_arg"/remove.old; then
 		echo $" ◆ \"$pure_arg\" is already installed!" | tr '[:lower:]' '[:upper:]'
 	else
-		arg_script=$(_use_online_reading_tool "$APPSDB/$arg" 2>/dev/null)
 		echo "$arg_script" | grep -q "^#" && _install_normally
 	fi
 }
@@ -1093,15 +1108,29 @@ case "$1" in
 			_prepare_arg
 			arg_script=$(_use_online_reading_tool "$APPSDB/$arg" 2>/dev/null)
 
-			# If the "tmp" directory is not removed, the installation failed, so remove the app
-			[ -d "$APPSPATH"/"$pure_arg"/tmp ] && [ ! -f "$AMCACHEDIR"/"$pure_arg" ] && $SUDOCMD "$APPSPATH"/"$pure_arg"/remove 2> /dev/null
-
-			# Test if a symlink is broken
-			[ -n "$BINDIR" ] && find "$BINDIR" -xtype l -name "$pure_arg" -delete 2>/dev/null
+			# Do not discard a previous attempt when no replacement recipe is available.
+			if [ -d "$APPSPATH/$pure_arg/tmp" ] && ! [[ $arg == */* && -f $arg ]] &&
+				! printf '%s\n' "$arg_script" | grep -q '^#!'; then
+				printf '%s\n' 'Installation recipe unavailable; incomplete app retained.' >&2
+				exit 1
+			fi
+			catalog_recipe=false
+			if printf '%s\n' "$arg_script" | grep -qx '# AM-CATALOG-RECIPE 1' ||
+				{ [[ $arg == */* && -f $arg ]] && grep -qx '# AM-CATALOG-RECIPE 1' "$arg"; }; then
+				catalog_recipe=true
+			fi
+			catalog_incomplete=false
+			if [ "$catalog_recipe" = true ]; then
+				# The reviewed recipe repairs an incomplete install only after preflight.
+				[ -d "$APPSPATH/$pure_arg/tmp" ] && catalog_incomplete=true
+			elif printf '%s\n' "$arg_script" | grep -q '^#!' || [[ $arg == */* && -f $arg ]]; then
+				[ -d "$APPSPATH/$pure_arg/tmp" ] && [ ! -f "$AMCACHEDIR/$pure_arg" ] && $SUDOCMD "$APPSPATH/$pure_arg/remove" 2>/dev/null
+				[ -n "$BINDIR" ] && find "$BINDIR" -xtype l -name "$pure_arg" -delete 2>/dev/null
+			fi
 			# Various cases that may occur during installation
-			if test -f "$APPSPATH"/"$pure_arg"/remove || test -f "$APPSPATH"/"$pure_arg"/remove.old; then
+			if { test -f "$APPSPATH/$pure_arg/remove" || test -f "$APPSPATH/$pure_arg/remove.old"; } && [ "$catalog_incomplete" != true ]; then
 				echo $" ◆ \"$pure_arg\" is already installed!" | tr '[:lower:]' '[:upper:]'
-			elif [ -n "$(PATH=/usr/local/bin command -v "$pure_arg" 2>/dev/null)" ] && [ "$AMCLI" = am ]; then
+			elif [ -n "$(PATH=/usr/local/bin command -v "$pure_arg" 2>/dev/null)" ] && [ "$AMCLI" = am ] && [ "$catalog_incomplete" != true ]; then
 				echo $" 💀 ERROR: \"$pure_arg\" command already exists!"
 			elif echo "$arg" | grep -q "/"; then
 				if test -f "$arg" 2> /dev/null; then

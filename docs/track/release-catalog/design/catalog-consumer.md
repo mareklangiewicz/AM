@@ -1,3 +1,6 @@
+> Installed-user adoption now uses the [shared shell reader](shell-consumer.md).
+> This Python consumer document remains reference/test evidence.
+
 # Read-only pinned catalog consumer
 
 Ticket 19, 2026-10-27. Implements the next public-read seam after the two successful

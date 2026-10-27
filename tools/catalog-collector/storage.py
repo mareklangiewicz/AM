@@ -173,6 +173,11 @@ def validate(tree):
     require('index.json' in tree and sum(map(len, tree.values())) <= TREE_CAP, 'tree_bound')
     index = validate_index(tree['index.json'])
     expected = {'index.json'}
+    # Old retained publications remain readable; new candidates always carry it.
+    if 'lookup.tsv' in tree:
+        from shell_lookup import render
+        require(tree['lookup.tsv'] == render(index, tree['index.json']), 'lookup_mismatch')
+        expected.add('lookup.tsv')
     for entry in index['entries'].values():
         obs = entry['observation']
         if obs is not None:
@@ -282,5 +287,7 @@ def apply(previous_tree, manifest_raw, attempts, *, workflow_identity, generated
         manifest_json=manifest_raw.decode('utf-8'), manifest_sha256=digest(manifest_raw),
         collector_revision=revision, run=run, workflow_repository_id=workflow_identity,
         aliases=aliases, entries=entries)) + b'\n'
+    from shell_lookup import render
+    tree['lookup.tsv'] = render(validate_index(tree['index.json']), tree['index.json'])
     validate(tree)
     return tree, report

@@ -134,6 +134,8 @@ _fit() {
 # Branch and modues source
 AMBRANCH=$(basename "$AMREPO")
 MODULES_SOURCE="$AMREPO/modules"
+# Distributed as an executable shell module for standalone app readers.
+CATALOG_MODULE="catalog.am"
 
 # ALTERNATE CURL AND WGET
 CURLCMD="curl"
@@ -1463,7 +1465,7 @@ _update_github_api_key_in_the_updater_files() {
 		for arg in $ARGS; do
 			argpath_items=$(echo "$ARGPATHS" | grep "/$arg$" | xargs)
 			for argpath in $argpath_items; do
-				if [ -f "$argpath"/AM-updater ] && grep -q "https://api.github.com" "$argpath"/AM-updater; then
+				if [ -f "$argpath"/AM-updater ] && ! grep -qx '# AM-CATALOG-UPDATER 1' "$argpath/AM-updater" && grep -q "https://api.github.com" "$argpath"/AM-updater; then
 					# Check if the file already contains a valid API key
 					if ! grep -qE "(gh[ps]_[a-zA-Z0-9]{36}|github_pat_[a-zA-Z0-9]{22}_[a-zA-Z0-9]{59})" "$argpath"/AM-updater; then
 						# Insert HeaderAuthWithGITPAT before the GitHub API URL
@@ -2130,7 +2132,7 @@ _update_determine_gh_apps_number() {
 	for arg in $ARGS; do
 		argpath_items=$(echo "$ARGPATHS" | grep "/$arg$" | xargs)
 		for argpath in $argpath_items; do
-			if [ -f "$argpath"/AM-updater ] && grep -q "api.github.com" "$argpath"/AM-updater; then
+			if [ -f "$argpath"/AM-updater ] && ! grep -qx '# AM-CATALOG-UPDATER 1' "$argpath/AM-updater" && grep -q "api.github.com" "$argpath"/AM-updater; then
 				[ -n "$GH_APPS" ] && GH_APPS=$(printf "%b\n%b\n" "$GH_APPS" "$arg") || GH_APPS="$arg"
 			fi
 		done
@@ -2158,6 +2160,10 @@ _alt_gh_filter() {
 }
 
 _update_run_updater() {
+	if grep -qx '# AM-CATALOG-UPDATER 1' "$argpath/AM-updater"; then
+		"$argpath/AM-updater"
+		return $?
+	fi
 	if [ -z "$WGETV" ]; then # Patch the AM-updater in case $WGETCMD is needed but missing
 		if grep -q "$WGETCMD " "$argpath"/AM-updater; then
 			if grep -q "$WGETPROGRESS" "$argpath"/AM-updater; then
@@ -2256,7 +2262,52 @@ _update_launchers() {
 	fi
 }
 
+# A bounded single-app route, before legacy cleanup, token edits or quota probes.
+# Existing installed updaters remain legacy until explicitly replaced.
+_catalog_update() {
+	shift
+	local candidate="" path app selected entry argpath arg pure_arg
+	local debug_update="${debug_update-}"
+	local -a catalog_args=()
+	for entry in "$@"; do
+		if [ "$entry" = --debug ]; then debug_update=1; else catalog_args+=("$entry"); fi
+	done
+	set -- "${catalog_args[@]}"
+	local launcher_only=true launcher=false
+	for entry in "$@"; do
+		case $entry in --launcher) launcher=true ;; *) launcher_only=false ;; esac
+	done
+	if [ "$launcher_only" = true ] && [ "$launcher" = true ]; then return 2; fi
+	if [ "${AMCLI-}" = am ]; then _detect_appman_apps; fi
+	for path in "$APPSPATH"/*/AM-updater "${APPMAN_APPSPATH:-/nonexistent}"/*/AM-updater; do
+		[ -f "$path" ] || continue
+		[ "$candidate" = "$path" ] && continue
+		grep -qx '# AM-CATALOG-UPDATER 1' "$path" || continue
+		app=${path%/AM-updater}; app=${app##*/}
+		selected=false
+		case ${1-} in ""|--*) selected=true ;; esac
+		for entry in "$@"; do [ "$entry" = "$app" ] && selected=true; done
+		[ "$selected" = true ] || continue
+		if [ -n "$candidate" ] || [ "${1-}" != "$app" ]; then
+			printf '%s\n' 'Catalog updates currently require one explicit app.' >&2
+			return 1
+		fi
+		candidate=$path
+	done
+	[ -n "$candidate" ] || return 2
+	shift
+	"$candidate" "$@" || return 1
+	argpath=${candidate%/AM-updater}; arg=${argpath##*/}; pure_arg=$arg
+	# Keep existing optional upstream binary-digest verification after preflight.
+	_use_verify || :
+	if grep -sq '^Checksum failure$' "$argpath/AM-VERIFIED"; then return 1; fi
+}
+
 _use_update() {
+	local catalog_status
+	_catalog_update "$@" && return 0
+	catalog_status=$?
+	[ "$catalog_status" -eq 2 ] || return "$catalog_status"
 	_online_check
 	_update_github_api_key_in_the_updater_files
 	_clean_all_tmp_directories_from_appspath >/dev/null
@@ -2540,6 +2591,7 @@ case "$1" in
 	'reinstall'|\
 	'sandbox'|'--sandbox'|'--disable-sandbox')
 		MODULE="install.am"
+		set -o pipefail # Preserve installer refusal through module color filtering.
 		_use_module "$@"
 		;;
 	'backup'|'-b'|\
@@ -2623,6 +2675,7 @@ case "$1" in
 		fi
 		;;
 	'update'|'upgrade'|'-u'|'-U')
+		set -o pipefail # Preserve visible updater refusal through color filtering.
 		if [ -n "$NO_COLOR" ]; then
 			_use_update "$@" | sed -e 's/\x1b\[[0-9;]*m//g'
 		elif [ -t 1 ]; then

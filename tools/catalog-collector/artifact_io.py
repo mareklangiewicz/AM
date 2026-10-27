@@ -19,9 +19,9 @@ def read_candidate(directory):
             require(relative == 'bodies', 'unexpected_directory')
             continue
         require(stat.S_ISREG(mode) and not mode & 0o111, 'invalid_candidate_mode')
-        require(relative == 'index.json' or re.fullmatch(r'bodies/[0-9a-f]{64}\.json', relative),
+        require(relative in {'index.json', 'lookup.tsv'} or re.fullmatch(r'bodies/[0-9a-f]{64}\.json', relative),
                 'unexpected_candidate_path')
-        cap = INDEX_CAP if relative == 'index.json' else BODY_CAP
+        cap = INDEX_CAP if relative in {'index.json', 'lookup.tsv'} else BODY_CAP
         size = path.stat().st_size
         total += size
         require(size <= cap and total <= TREE_CAP, 'candidate_bound')

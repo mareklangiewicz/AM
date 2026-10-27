@@ -13,11 +13,22 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
   consumer side, with no Python/jq/checkout runtime requirement. CI may retain
   Python. Target upstream AM-owned publication and original upstream binary URLs.
   See [accepted direction](spec.md#accepted-adoption-direction-2026-10-27).
-- **Next session: [23 open, ready-for-agent](issues/23-shell-consumer-and-small-recipe-migration.md).**
-  Implement one shared shell reader, minimal shell-readable publication metadata,
-  and one small app/generated-updater migration, preserving existing filters and
-  freshness/integrity/refusal checks. Audit/remove displaced client machinery.
+- **[23 resolved: shared shell implementation](issues/23-shell-consumer-and-small-recipe-migration.md).**
+  [Implementation and adoption boundary](design/shell-consumer.md): derived TSV,
+  one 96-line reader, ordinary Obsidian recipe/generated updater, and foreground
+  single-app refusal propagation. 89 offline tests pass. Upstream publication and
+  installed migration remain separate; no new open implementation ticket is implied.
   This supersedes ticket 22's Python zipapp/runtime-packaging recommendation.
+- [24 resolved: published shell roundtrip and module distribution](issues/24-shell-publication-roundtrip.md).
+  Real temporary bare-Git publication, conditional repeat, pinned reads across ref
+  movement and exact stale consent pass; actual module sync/cleanup preserves the
+  standalone updater's reader. The complete suite now passes 92 tests. Fixed stale
+  README instructions. Public validation/upstream acceptance remain separate.
+- [25 resolved: standards/spec review and integration fixes](issues/25-review-shell-adoption.md).
+  No documented standards breaches; four spec regressions fixed (retry, checksum
+  repair, install preflight mutation and launcher-only routing). Actual installation
+  dispatch is now covered. 100 tests pass; current net client source cost is +179.
+  This remains an offline fork slice, not proven upstream/live simplification.
 - [01: prior research reconciled](issues/01-reconcile-prior-work.md): retain useful measurements, but distinguish the earlier resolved catalog from the current observation catalog. The reported 825-point sweep is GraphQL evidence, not a REST response-catalog capacity measurement.
 - Working direction: collector preserves upstream metadata without ranking releases or selecting downloads; app scripts keep policy. Public upstream metadata is not independent binary authenticity.
 - Explore a dedicated AM publication branch, hourly collection, reviewed endpoint inventory, retained observations on temporary failures, per-observation checked times, explicit stale-data acceptance beyond 24 hours, and selective client downloads pinned to a publication commit.
@@ -267,3 +278,44 @@ quota/token logic. [Spec updated](spec.md#accepted-adoption-direction-2026-10-27
 ticket 22's Python packaging recommendation is explicitly superseded while its
 source findings and historical test evidence remain intact. Documentation only;
 no implementation, installed state, network experiment or workflow changes.
+
+
+2026-10-27: [23 resolved](issues/23-shell-consumer-and-small-recipe-migration.md).
+Implemented atomically derived shell lookup metadata and the shared POSIX-shell
+reader, with full pins, exact stale consent, measured freshness, bounded transfers
+and body integrity checks. Ordinary Obsidian recipe/generated updater retain their
+asset filter and upstream binary URL; removed the Python query branch and optional
+alternate updater bypass. AM embeds its managed helper path and routes a single
+marked updater in the foreground before legacy mutation; optional binary-digest
+verification remains afterward. 89 offline tests, syntax, reader ShellCheck and
+recipe warning-level ShellCheck pass. [Cost/caller audit and public validation plan](design/shell-consumer.md)
+record +139 net client lines, remaining legacy callers and GNU-tool scope. The
+fixed upstream AM publication is not yet adopted/live-validated. No installed
+state, collection, workflow, publication, schedule or push was changed.
+
+
+2026-10-27: [24 resolved](issues/24-shell-publication-roundtrip.md). Continued
+offline after Marek deferred the yadm/Git-metadata issue. Cross-boundary checks now
+exercise the actual bounded ZIP parser, publisher recomputation/local bare-remote
+push, commit-pinned shell reads during branch movement, conditional repeat and
+exact stale consent across publication commits. Actual module inventory/sync and
+obsolete cleanup replace/deliver the helper while preserving a generated updater.
+92 tests pass; README no longer advertises the retired query flag. No production
+code defect was exposed. No source collection, live publication/workflow, installed
+state or schedule changed. Git commit/push remain authorized but deferred pending
+writable metadata; all work is saved in this AM working tree.
+
+
+2026-10-27: [25 resolved](issues/25-review-shell-adoption.md). Separate standards
+and spec reviewers examined the complete uncommitted slice against 0a21fef3c,
+including new files. Four P2 spec findings exposed missing manager-entrypoint
+coverage despite the prior passing suites: failed-download retry deadlock,
+same-version checksum repair bypass, installation mutation before acceptance,
+and unrelated launcher refusal. Fixed and rechecked all four, including the
+unavailable replacement-recipe case and standard debug handling. Actual install.am
+dispatch/functions now run in temporary-root refusal and successful repair tests.
+100 final tests, syntax checks, reader/recipe lint and documentation/diff checks
+pass. Updated current cost to +179 net client lines; +139 and previous test counts
+above are historical. No live workflow/publication, source collection, installed
+migration or schedule occurred. Changes remain saved in the working tree while
+Marek handles Git metadata access.

@@ -1,7 +1,7 @@
 # Shell consumer and one simplifying recipe/updater migration
 
 Type: task
-Status: open
+Status: resolved
 Triage: ready-for-agent
 
 ## Accepted direction and next-session scope
@@ -100,3 +100,41 @@ throwaway prototype or Python packaging exercise.
 - [Consumer reference](../design/catalog-consumer.md) and
   [delivery](../design/catalog-delivery.md)
 - tools/catalog-collector, programs/x86_64/obsidian, APP-MANAGER and modules/install.am
+
+## Answer
+
+Implemented the bounded shell-first slice. See [implementation, format, dependency
+and caller audit, tests and public validation plan](../design/shell-consumer.md).
+`modules/catalog.am` reads the atomically derived lookup and one pinned original
+body; Obsidian's ordinary recipe and newly generated standalone updater use it
+with their unchanged asset filter. AM embeds its owned module path and runs one
+marked app in the foreground before legacy update mutations. Refusals propagate
+without fallback or success reporting; optional upstream binary-digest verification
+remains after successful managed update. Python query scaffolding and the updater's
+appimageupdatetool bypass are removed from this recipe.
+
+The fixed publication target is upstream ivan-hc/AM. It is not live validation or
+upstream acceptance: this reader requires that owner to publish the new format.
+No host installation/migration, workflow dispatch, publication, schedule or release
+collection occurred. Only temporary app roots and stubbed app operations ran.
+The first-app client diff is +139 net lines, including the 96-line shared reader;
+there is no claim of a net line-count reduction or broad portability proof.
+Remaining legacy proxy/quota/token callers are identified in the implementation
+record rather than removed speculatively.
+
+Validation: **89 collector/storage/delivery/consumer/recipe tests passed** on the
+final implementation; `bash -n` for APP-MANAGER/install.am and `sh -n` for the
+reader/recipe passed. ShellCheck passed for the reader and at warning severity
+for the recipe (its two existing informational findings are unchanged). Diff and
+new local documentation links were checked. No live API experiment was run;
+GitHub's public API documentation was consulted for the SHA response media type.
+
+## Review correction
+
+The initial passing suite missed manager-entrypoint recovery and preflight gaps.
+[Ticket 25](25-review-shell-adoption.md) records four independently reviewed spec
+findings and their fixes, including real installation-dispatch refusal/recovery
+checks. The initial +139 client-line measurement is historical: after fixes and
+preserving the manager's debug option, the current bounded slice is **+179 net
+client lines**. These changes do not prove the broader simplification goal or
+live/upstream readiness; those claims remain intentionally limited.

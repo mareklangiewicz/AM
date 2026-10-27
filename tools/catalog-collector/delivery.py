@@ -93,9 +93,9 @@ def read_git_tree(repo, commit):
         mode, kind, oid = metadata.split(b' ')
         path = name.decode('utf-8')
         require(mode == b'100644' and kind == b'blob' and
-                (path == 'index.json' or re.fullmatch(r'bodies/[0-9a-f]{64}\.json', path)),
+                (path in {'index.json', 'lookup.tsv'} or re.fullmatch(r'bodies/[0-9a-f]{64}\.json', path)),
                 'unsafe_publication_tree')
-        cap = INDEX_CAP if path == 'index.json' else BODY_CAP
+        cap = INDEX_CAP if path in {'index.json', 'lookup.tsv'} else BODY_CAP
         size = int(git(repo, 'cat-file', '-s', oid.decode()))
         total += size
         require(size <= cap and total <= TREE_CAP, 'publication_tree_bound')
@@ -148,10 +148,10 @@ def unpack_artifact(raw):
             mode = member.external_attr >> 16
             require(not stat.S_ISLNK(mode) and not mode & 0o111 and
                     (stat.S_IFMT(mode) in (0, stat.S_IFREG)), 'artifact_mode')
-            require(name in {'report.json', 'storage-report.json', 'candidate/index.json'} or
+            require(name in {'report.json', 'storage-report.json', 'candidate/index.json', 'candidate/lookup.tsv'} or
                     re.fullmatch(r'[0-9a-f]{64}\.body', name) or
                     re.fullmatch(r'candidate/bodies/[0-9a-f]{64}\.json', name), 'artifact_path')
-            cap = INDEX_CAP if name.endswith('index.json') else 1_000_000 if name.endswith('report.json') else BODY_CAP
+            cap = INDEX_CAP if name.endswith(('index.json', 'lookup.tsv')) else 1_000_000 if name.endswith('report.json') else BODY_CAP
             total += member.file_size
             require(member.file_size <= cap and total <= ZIP_CAP, 'artifact_member_bound')
             with archive.open(member) as stream:

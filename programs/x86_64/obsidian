@@ -1,20 +1,23 @@
 #!/bin/sh
 
 # AM INSTALL SCRIPT VERSION 3.5
-set -u
+set -eu
 APP=obsidian
 SITE="obsidianmd/obsidian-releases"
 
-# Explicit read-only catalog query; exit before any installer setup.
-# Remaining arguments are consumer.py options (--commit, --metadata, --accept-stale).
-if [ "${1-}" = --catalog-version ]; then
-	shift
-	catalog_consumer=$(CDPATH= cd -- "$(dirname -- "$0")/../../tools/catalog-collector" && pwd) || exit 1
-	catalog_body=$(python3 -B "$catalog_consumer/consumer.py" "https://api.github.com/repos/$SITE/releases" "$@") || exit 1
-	version=$(printf '%s\n' "$catalog_body" | sed 's/[()",{} ]/\n/g' | grep -oi "https.*mage$" | grep -vi "i386\|i686\|aarch64\|arm64\|armv7l" | head -1)
-	[ -n "$version" ] || { echo "Error getting link" >&2; exit 1; }
-	printf '%s\n' "$version"
-	exit 0
+# AM-CATALOG-RECIPE 1
+# Resolve and verify metadata before creating any installation state.
+catalog_body=$(sh "/opt/am/modules/catalog.am" "https://api.github.com/repos/$SITE/releases" "$@") || exit 1
+version=$(printf '%s\n' "$catalog_body" | sed 's/[()",{} ]/\n/g' | grep -oi "https.*mage$" | grep -vi "i386\|i686\|aarch64\|arm64\|armv7l" | head -1)
+[ -n "$version" ] || { echo "Error getting link" >&2; exit 1; }
+
+# Defer incomplete-install repair and launcher setup until metadata is accepted.
+if [ -d "/opt/$APP/tmp" ] && [ -f "/opt/$APP/remove" ]; then
+	sh "/opt/$APP/remove"
+fi
+mkdir -p /usr/local/bin /usr/local/share/applications
+if [ -L "/usr/local/bin/$APP" ] && [ ! -e "/usr/local/bin/$APP" ]; then
+	rm -f "/usr/local/bin/$APP"
 fi
 
 # CREATE DIRECTORIES AND ADD REMOVER
@@ -24,7 +27,6 @@ printf '\n%s' "rm -f /usr/local/share/applications/$APP-AM.desktop" >> ../remove
 chmod a+x ../remove || exit 1
 
 # DOWNLOAD AND PREPARE THE APP, $version is also used for updates
-version=$(curl -Ls https://api.github.com/repos/obsidianmd/obsidian-releases/releases | sed 's/[()",{} ]/\n/g' | grep -oi "https.*mage$" | grep -vi "i386\|i686\|aarch64\|arm64\|armv7l" | head -1)
 wget "$version" || exit 1
 # Keep this space in sync with other installation scripts
 # Use tar fx ./*tar* here for example in this line in case a compressed file is downloaded.
@@ -41,19 +43,18 @@ ln -s "/opt/$APP/$APP" "/usr/local/bin/$APP"
 # SCRIPT TO UPDATE THE PROGRAM
 cat >> ./AM-updater << 'EOF'
 #!/bin/sh
-set -u
+# AM-CATALOG-UPDATER 1
+set -eu
 APP=obsidian
 SITE="obsidianmd/obsidian-releases"
 version0=$(cat "/opt/$APP/version")
-version=$(curl -Ls https://api.github.com/repos/obsidianmd/obsidian-releases/releases | sed 's/[()",{} ]/\n/g' | grep -oi "https.*mage$" | grep -vi "i386\|i686\|aarch64\|arm64\|armv7l" | head -1)
-[ -n "$version" ] || { echo "Error getting link"; exit 1; }
-if command -v appimageupdatetool >/dev/null 2>&1; then
-	cd "/opt/$APP" || exit 1
-	appimageupdatetool -Or ./"$APP" && chmod a+x ./"$APP" && echo "$version" > ./version && exit 0
-fi
-if [ "$version" != "$version0" ]; then
+catalog_body=$(sh "/opt/am/modules/catalog.am" "https://api.github.com/repos/$SITE/releases" "$@") || exit 1
+version=$(printf '%s\n' "$catalog_body" | sed 's/[()",{} ]/\n/g' | grep -oi "https.*mage$" | grep -vi "i386\|i686\|aarch64\|arm64\|armv7l" | head -1)
+[ -n "$version" ] || { echo "Error getting link" >&2; exit 1; }
+if [ "$version" != "$version0" ] || grep -sq '^Checksum failure$' "/opt/$APP/AM-VERIFIED"; then
+	rm -R -f "/opt/$APP/tmp"
 	mkdir "/opt/$APP/tmp" && cd "/opt/$APP/tmp" || exit 1
-	notify-send "A new version of $APP is available, please wait"
+	notify-send "A new version of $APP is available, please wait" || :
 	wget "$version" || exit 1
 	# Use tar fx ./*tar* here for example in this line in case a compressed file is downloaded.
 	cd ..
@@ -61,7 +62,7 @@ if [ "$version" != "$version0" ]; then
 	chmod a+x ./"$APP" || exit 1
 	echo "$version" > ./version
 	rm -R -f ./*zs-old ./*.part ./tmp ./*~
-	notify-send "$APP is updated!"
+	notify-send "$APP is updated!" || :
 else
 	echo "Update not needed!"
 fi
