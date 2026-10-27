@@ -25,3 +25,7 @@ Ask before pushing AM commits. A push is not run authorization. Each observation
 ## Validation before live use
 
 Seven offline fixture tests cover three-round chaining/304 reuse and analysis, HTTP failures with no retry, oversize/invalid JSON/unconditional 304/quota stop, prior-body corruption blocking requests, counter projection differences, first/last and description-URL filters, and sanitized transport failures. YAML/manual-only guard assertions and ShellCheck for workflow shell steps pass. Real Actions artifact chaining and live endpoint behavior remain untested.
+
+## Comments
+
+2026-10-27: Marek authorized and completed the push through 6f9648bb2, then explicitly authorized one baseline dispatch. [Run 40499617203 findings and persistent evidence](../research/churn-baseline-40499617203-findings.md): four successful responses, then WezTerm HTTP 301; round stopped at five attempts, SQLite unqueried. complete=false; do not use this run to seed hour/day. No retry, replacement baseline or endpoint-policy change is authorized. Investigate the redirect boundary before proposing the next run.

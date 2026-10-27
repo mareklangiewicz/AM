@@ -1,0 +1,112 @@
+{
+  "run_id": 40499617203,
+  "artifact_id": 12732440434,
+  "artifact_digest": "sha256:c6a224b22eabbe1b74889fdde528cd87d605f808305b44c4edbc8836d0951c8b",
+  "archive_sha256": "ca1198d99353b54a4cfa766aa23b3b87f1314ad84a47e3f53a5d29c4ea3c003d",
+  "archive_bytes": 93622,
+  "observation": {
+    "schema": 1,
+    "round": "baseline",
+    "api_version": "2022-11-28",
+    "endpoints": {
+      "obsidian-list": "repos/obsidianmd/obsidian-releases/releases",
+      "obsidian-latest": "repos/obsidianmd/obsidian-releases/releases/latest",
+      "neovim-list": "repos/neovim/neovim/releases",
+      "neovim-latest": "repos/neovim/neovim/releases/latest",
+      "wezterm-list": "repos/wez/wezterm/releases?per_page=100",
+      "sqlitebrowser-list": "repos/sqlitebrowser/sqlitebrowser/releases?per_page=100"
+    },
+    "source_revision": "6f9648bb2800c57e8455c22542075851a0fecc27",
+    "complete": false,
+    "responses": {
+      "obsidian-list": {
+        "checked_at": "2026-10-27T11:54:22.610898+00:00",
+        "status": 200,
+        "headers": {
+          "date": "Tue, 27 Oct 2026 11:54:23 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "etag": "\"a6ec938e66767cf38911e502cbbfe57cab6086c6a3d384dc17739f263639cde4\"",
+          "link": "<https://api.github.com/repositories/262342594/releases?page=2>; rel=\"next\", <https://api.github.com/repositories/262342594/releases?page=6>; rel=\"last\"",
+          "x-ratelimit-limit": "5000",
+          "x-ratelimit-remaining": "4998",
+          "x-ratelimit-reset": "1793104010",
+          "x-ratelimit-used": "2",
+          "x-ratelimit-resource": "core"
+        },
+        "received_bytes": 450991,
+        "sha256": "d62b98428577097cfabe7078f1b17e5e1ab1e9a67db7d84dbb41edc355a04be8",
+        "body_bytes": 450991
+      },
+      "obsidian-latest": {
+        "checked_at": "2026-10-27T11:54:23.602355+00:00",
+        "status": 200,
+        "headers": {
+          "date": "Tue, 27 Oct 2026 11:54:23 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "etag": "\"495756b7314dfe7af118ab00e7092cffbba9c06fae22113bbdb43f658c8b1788\"",
+          "last-modified": "Thu, 22 Oct 2026 21:19:14 GMT",
+          "x-ratelimit-limit": "5000",
+          "x-ratelimit-remaining": "4999",
+          "x-ratelimit-reset": "1793105663",
+          "x-ratelimit-used": "1",
+          "x-ratelimit-resource": "core"
+        },
+        "received_bytes": 13889,
+        "sha256": "0a7af55355af3c79c24f8fa008811a739abdcf3f81d81cfaf29d20831959432f",
+        "body_bytes": 13889
+      },
+      "neovim-list": {
+        "checked_at": "2026-10-27T11:54:23.910258+00:00",
+        "status": 200,
+        "headers": {
+          "date": "Tue, 27 Oct 2026 11:54:24 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "etag": "\"9b231c36e89df2ed473fff539746a5a50b6a9d715c6fb1538684b4367d3a45d5\"",
+          "link": "<https://api.github.com/repositories/16408992/releases?page=2>; rel=\"next\", <https://api.github.com/repositories/16408992/releases?page=2>; rel=\"last\"",
+          "x-ratelimit-limit": "5000",
+          "x-ratelimit-remaining": "4997",
+          "x-ratelimit-reset": "1793104010",
+          "x-ratelimit-used": "3",
+          "x-ratelimit-resource": "core"
+        },
+        "received_bytes": 822241,
+        "sha256": "cdd4653ca648439f3239bab4b791dd3b2d40a78d86a2fcb1442ec2efadd6526d",
+        "body_bytes": 822241
+      },
+      "neovim-latest": {
+        "checked_at": "2026-10-27T11:54:25.142660+00:00",
+        "status": 200,
+        "headers": {
+          "date": "Tue, 27 Oct 2026 11:54:25 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "etag": "\"af3f67100e4f58cde6a5338695e8ee6e32516e1c35354477510a927a0895b471\"",
+          "last-modified": "Fri, 09 Oct 2026 16:14:44 GMT",
+          "x-ratelimit-limit": "5000",
+          "x-ratelimit-remaining": "4998",
+          "x-ratelimit-reset": "1793105663",
+          "x-ratelimit-used": "2",
+          "x-ratelimit-resource": "core"
+        },
+        "received_bytes": 24510,
+        "sha256": "94e327ba4b1dc96757236536d9502989c44d221022e63d6110d82dc0bb0ffb72",
+        "body_bytes": 24510
+      },
+      "wezterm-list": {
+        "checked_at": "2026-10-27T11:54:25.643684+00:00",
+        "status": 301,
+        "headers": {
+          "date": "Tue, 27 Oct 2026 11:54:25 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "x-ratelimit-limit": "5000",
+          "x-ratelimit-remaining": "4996",
+          "x-ratelimit-reset": "1793104010",
+          "x-ratelimit-used": "4",
+          "x-ratelimit-resource": "core"
+        },
+        "received_bytes": 220,
+        "error": "request, quota, size or validation failure; round stopped"
+      }
+    },
+    "started_at": "2026-10-27T11:54:22.610811+00:00"
+  }
+}
