@@ -1,0 +1,135 @@
+{
+  "source_revision": "86354b78b0ec00331ce43dfdef354349890e7e49",
+  "manifest_sha256": "1c550b882e9855a7a652e44516d88db95046641da92f4b6e34fd65b9a6da87b9",
+  "offline_tests_before_live": 66,
+  "offline_tests_after_zip_directory_hardening": 67,
+  "runs": [
+    {
+      "run_id": "40533557297",
+      "source_revision": "86354b78b0ec00331ce43dfdef354349890e7e49",
+      "commit": "efcaeb2f31a62dbae56d8f5be50cce76b2cfb4ef",
+      "parent": null,
+      "manifest_sha256": "1c550b882e9855a7a652e44516d88db95046641da92f4b6e34fd65b9a6da87b9",
+      "index_sha256": "01c0ed14025c0892e004b6d3888c9534d8d09bacae09fa79a7b4b7d6a9c927f4",
+      "tree_bytes": 4893979,
+      "runtime": {
+        "python": "3.12.3",
+        "system": "Linux"
+      },
+      "collection": {
+        "attempted": 6,
+        "completed": 6,
+        "not_attempted": [],
+        "stop_reason": null,
+        "all_attempted": true,
+        "complete": true,
+        "received_bytes": 4877759,
+        "elapsed_seconds": 6.436667284000002
+      },
+      "status_counts": {
+        "200": 6
+      },
+      "verified_aliases": 12,
+      "verified_files": 7,
+      "retained_304_observations": [],
+      "publication": {
+        "commit": "efcaeb2f31a62dbae56d8f5be50cce76b2cfb4ef",
+        "parent": null,
+        "ref": "refs/heads/release-catalog",
+        "source_revision": "86354b78b0ec00331ce43dfdef354349890e7e49",
+        "run_id": "40533557297",
+        "run_attempt": "1",
+        "artifact_id": "12746034439",
+        "artifact_digest": "03b7f4a01922f309d6d205aee7ca2ef2b1ef59ab038094e32d14a3b62711d506",
+        "index_sha256": "01c0ed14025c0892e004b6d3888c9534d8d09bacae09fa79a7b4b7d6a9c927f4",
+        "tree_bytes": 4893979
+      },
+      "fresh_reads_verified_at": "2026-10-27T15:47:22.424469+00:00",
+      "artifact_zip_sha256": "03b7f4a01922f309d6d205aee7ca2ef2b1ef59ab038094e32d14a3b62711d506",
+      "job_permissions": {
+        "collect": {
+          "contents": "read",
+          "metadata": "read"
+        },
+        "publish": {
+          "actions": "read",
+          "contents": "write",
+          "metadata": "read"
+        }
+      }
+    },
+    {
+      "run_id": "40533858562",
+      "source_revision": "86354b78b0ec00331ce43dfdef354349890e7e49",
+      "commit": "d612ff34b492b337fe51128f769ec9d262d0ee86",
+      "parent": "efcaeb2f31a62dbae56d8f5be50cce76b2cfb4ef",
+      "manifest_sha256": "1c550b882e9855a7a652e44516d88db95046641da92f4b6e34fd65b9a6da87b9",
+      "index_sha256": "ecfcb74f40ef064d6766ac54756ff6a246ef515c535399a02b64cfecb446671a",
+      "tree_bytes": 4893981,
+      "runtime": {
+        "python": "3.12.3",
+        "system": "Linux"
+      },
+      "collection": {
+        "attempted": 6,
+        "completed": 6,
+        "not_attempted": [],
+        "stop_reason": null,
+        "all_attempted": true,
+        "complete": true,
+        "received_bytes": 4877759,
+        "elapsed_seconds": 4.810573106
+      },
+      "status_counts": {
+        "200": 6
+      },
+      "verified_aliases": 12,
+      "verified_files": 7,
+      "retained_304_observations": [],
+      "publication": {
+        "commit": "d612ff34b492b337fe51128f769ec9d262d0ee86",
+        "parent": "efcaeb2f31a62dbae56d8f5be50cce76b2cfb4ef",
+        "ref": "refs/heads/release-catalog",
+        "source_revision": "86354b78b0ec00331ce43dfdef354349890e7e49",
+        "run_id": "40533858562",
+        "run_attempt": "1",
+        "artifact_id": "12746444623",
+        "artifact_digest": "46a16eabdcb11eb99e00fe492d7715c5698144d69805dc169e7650f1dbd65c32",
+        "index_sha256": "ecfcb74f40ef064d6766ac54756ff6a246ef515c535399a02b64cfecb446671a",
+        "tree_bytes": 4893981
+      },
+      "fresh_reads_verified_at": "2026-10-27T15:47:22.424469+00:00",
+      "artifact_zip_sha256": "46a16eabdcb11eb99e00fe492d7715c5698144d69805dc169e7650f1dbd65c32",
+      "job_permissions": {
+        "collect": {
+          "contents": "read",
+          "metadata": "read"
+        },
+        "publish": {
+          "actions": "read",
+          "contents": "write",
+          "metadata": "read"
+        }
+      },
+      "verified_prior_conditions_sent": 6,
+      "changed_body_digests": 4
+    }
+  ],
+  "public_raw_check": {
+    "commit": "d612ff34b492b337fe51128f769ec9d262d0ee86",
+    "index_url": "https://raw.githubusercontent.com/mareklangiewicz/AM/d612ff34b492b337fe51128f769ec9d262d0ee86/index.json",
+    "body_url": "https://raw.githubusercontent.com/mareklangiewicz/AM/d612ff34b492b337fe51128f769ec9d262d0ee86/bodies/e231a21aeb07b9ae96532cacc02f254a973568f387390194bdc2f548af8e6c22.json",
+    "index_sha256": "ecfcb74f40ef064d6766ac54756ff6a246ef515c535399a02b64cfecb446671a",
+    "body_sha256": "d2b6b10e92474429de90201f8fce32f503cb2097738a5a442e7524efe262886f",
+    "body_bytes": 13889,
+    "consumer_alias": "https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest",
+    "authenticated": false,
+    "redirects": false,
+    "retries": 0,
+    "outcome": "verified"
+  },
+  "archive": "catalog-delivery-40533557297-40533858562-evidence.tar.gz",
+  "archive_bytes": 1614964,
+  "archive_sha256": "f73c29f75e667b8ba1de0f6affdf1d539c13b9f5c6661adf291ac4263aeabf22",
+  "catalog_git_objects": "count: 18\nsize: 872\nin-pack: 0\npacks: 0\nsize-pack: 0\nprune-packable: 0\ngarbage: 0\nsize-garbage: 0"
+}

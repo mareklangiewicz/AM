@@ -108,3 +108,12 @@ Primary GitHub references: [artifact REST metadata/download semantics](https://d
 and [per-job GITHUB_TOKEN permissions](https://docs.github.com/en/actions/tutorials/authenticate-with-github_token).
 The application checks and restricted public-source inference are our design;
 these documents do not establish a completed adversarial or privilege audit.
+
+## Live result and final parser check
+
+[Delivery findings](../research/catalog-delivery-findings.md) record successful
+bootstrap and exact-prior repeat on Python 3.12.3, independent public pinned reads
+and actual per-job token permission logs. Both runs returned six 200s; prior
+validators were sent, but no live 304 occurred. Post-run central-directory count/
+size checks now precede ZipFile member allocation (ZIP64/multidisk refuse), verified
+offline against both actual artifact ZIPs and 67 tests; no extra dispatch was made.

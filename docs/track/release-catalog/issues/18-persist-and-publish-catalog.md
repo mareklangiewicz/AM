@@ -1,7 +1,7 @@
 # Persist prior state and publish the bounded catalog
 
 Type: task
-Status: claimed
+Status: resolved
 Triage: ready-for-agent
 
 ## Scope
@@ -24,3 +24,16 @@ Keep six enrolled endpoints, manual-only workflow, no schedules/installers.
 - Focused offline mutation/conflict/conditional tests, then approved bootstrap and
   one exact-prior repeat to validate persistence; record both run/commit pairs.
 - Independently read the published pinned index/bodies and verify freshness/hashes.
+
+## Answer
+
+Implemented exact-prior conditional planning and separate artifact-validating
+publisher to release-catalog. Bootstrap 40533557297 published efcaeb2f3; pinned
+repeat 40533858562 published its child d612ff34b. Both jobs succeeded in both runs
+with six HTTP 200 responses. All six repeat condition tuples match prior validators;
+no live 304 is claimed. Verified both public commit trees, 12 pinned aliases each,
+actual job permission logs and unauthenticated pinned index/selected body reads.
+[Findings and persistent exact evidence](../research/catalog-delivery-findings.md)
+include a two-commit Git bundle. 66 tests passed before live runs; final ZIP metadata
+allocation hardening passes 67 tests and both actual artifact replays. No schedule,
+force push, retry, source expansion or installed-app integration.

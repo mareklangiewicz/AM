@@ -56,6 +56,13 @@ class DeliveryContract(unittest.TestCase):
             z.writestr(info,b'/etc/passwd')
         with self.assertRaises(ValueError):unpack_artifact(stream.getvalue())
 
+    def test_directory_bound_applies_before_zip_member_allocation(self):
+        import struct
+        raw=struct.pack('<4s4H2IH',b'PK\x05\x06',0,0,101,101,0,0,0)
+        with patch('delivery.zipfile.ZipFile') as parser, self.assertRaises(ValueError):
+            unpack_artifact(raw)
+        parser.assert_not_called()
+
     def test_provenance_recomputation_and_mutations(self):
         files,tree=self.files()
         self.assertEqual(verify_artifact(files,self.context(),self.raw,REV,None),tree)

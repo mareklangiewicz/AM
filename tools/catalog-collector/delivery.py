@@ -12,6 +12,7 @@ from pathlib import Path
 import re
 import select
 import stat
+import struct
 import subprocess
 import tempfile
 import time
@@ -127,6 +128,15 @@ def fetch_prior(context, token, directory):
 def unpack_artifact(raw):
     """Bound ZIP members before reading; never extract paths or run files."""
     require(type(raw) is bytes and len(raw) <= ZIP_CAP, 'artifact_zip_bound')
+    # Bound central-directory allocation before ZipFile constructs member objects.
+    # ZIP64/multidisk envelopes are outside this deliberately small profile.
+    position = raw.rfind(b'PK\x05\x06', max(0, len(raw)-65557))
+    require(position >= 0 and len(raw)-position >= 22, 'artifact_zip_directory')
+    disk, start_disk, disk_count, count, directory_size, offset, comment = struct.unpack(
+        '<4H2IH', raw[position+4:position+22])
+    require(disk == start_disk == 0 and disk_count == count and count <= 100 and
+            directory_size <= 64_000 and offset+directory_size <= position and
+            position+22+comment == len(raw), 'artifact_zip_directory_bound')
     files, total = {}, 0
     with zipfile.ZipFile(io.BytesIO(raw)) as archive:
         infos = archive.infolist()

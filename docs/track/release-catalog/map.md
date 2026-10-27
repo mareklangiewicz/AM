@@ -184,3 +184,15 @@ collection and a separate artifact-recomputing contents:write/actions:read job.
 66 offline tests pass, including real prior ZIP replay and local bare-remote
 bootstrap/conditional repeat. Preparing bounded bootstrap and exact-parent repeat
 under Marek's existing push/workflow authorization; no schedule or app changes.
+
+
+2026-10-27: [18 resolved](issues/18-persist-and-publish-catalog.md). Exact-prior
+planning and a separate contents:write/actions:read publisher now deliver to
+release-catalog while collection remains contents:read (confirmed in actual logs).
+Bootstrap 40533557297 -> efcaeb2f3; exact-prior repeat 40533858562 -> d612ff34b.
+Both succeeded with six 200s; all repeat requests sent matching prior validators,
+without a live 304 claim. [Findings/evidence](research/catalog-delivery-findings.md)
+preserve exact ZIPs, both published commits, permission/isolation checks and public
+pinned index/body reads. 67 final offline tests pass, including post-run ZIP metadata
+allocation hardening. No schedule, retry, force push or app change. Next is a small
+read-only pinned consumer before any installed-updater migration.
