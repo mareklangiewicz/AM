@@ -1,8 +1,8 @@
 # Measure workflow-token release reads
 
 Type: prototype
-Status: claimed
-Triage: ready-for-agent
+Status: open
+Triage: ready-for-human
 
 ## Question
 
@@ -23,3 +23,7 @@ What quotas and conditional-request behavior does this fork's real GITHUB_TOKEN 
 ## Comments
 
 Marek authorized use of mareklangiewicz/AM. The inherited home AGENTS.md requires asking before a push. Local gh auth status reports an invalid configured credential; connector reads remain available. Report push/authentication results accurately.
+
+2026-10-27, after push approval: pushed fc0e2be7d to origin/main-marek successfully. GitHub Actions run listing filtered to main-marek returned zero runs; this commit has no check runs. The public workflow listing reports five existing active workflows but does not list Catalog quota probe. The browser Actions URL returns a signed-out 404, so it does not establish the underlying repository setting. No real token quota or ETag measurements were obtained.
+
+Next action: inspect https://github.com/mareklangiewicz/AM/actions while signed in and verify repository Actions availability/policies. Do not assume workflow_dispatch can run from main-marek while the workflow is absent on the default main branch. Diagnose registration/settings before choosing a retrigger. The prepared workflow and successful push are preserved; neither app-management code nor repository Actions settings were changed.
