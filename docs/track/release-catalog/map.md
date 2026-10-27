@@ -235,3 +235,13 @@ refused (its request count unmeasured), then approved network access succeeded.
 Evidence is retained alongside the ticket. No installer, asset download, workflow,
 collection, publication or installed state change. Ordinary update adoption remains
 a separate design decision.
+
+
+2026-10-27: [22 resolved](issues/22-update-adoption-proposal.md).
+[Update adoption proposal](design/obsidian-update-adoption.md) traces actual AM
+background/suppressed updater execution, early mutation, shell-only module sync and
+Obsidian's appimageupdatetool bypass. Recommends coherent consumer distribution,
+foreground single-app preflight and explicit supported-adapter enrollment with
+visible refusal/exact stale consent. Proposal only. Next bounded code step is
+local runtime packaging and offline verification; no installed migration, remote
+runtime delivery, ordinary update change or schedule is enabled.
