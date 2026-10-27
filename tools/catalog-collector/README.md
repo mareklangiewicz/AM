@@ -129,3 +129,7 @@ lookup. The exact candidate workflow is catalog-collector.yml.proposed beside th
 manifest, outside .github/workflows. See the tracked adapter-review-and-run-package.md
 research report for review, approval boundaries and 48 offline checks. Malformed or
 folded HTTP header lines now refuse before Python's permissive header parser.
+
+Ticket 16 installs the separately approved workflow as
+.github/workflows/catalog-collector.yml. Each live dispatch still requires explicit
+authorization. The .proposed file remains the historical review artifact.

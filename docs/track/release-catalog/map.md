@@ -141,3 +141,9 @@ records HTTP 200, public identity 19416551 and exact bounded response evidence.
 Filled the sixth numeric manifest row with that evidence; preserved aliases and
 new request identities. No release endpoint, workflow activation or dispatch.
 The inactive workflow and six-release baseline require separate approval.
+
+
+2026-10-27: [16 claimed](issues/16-first-supervised-live-validation.md). Marek
+explicitly approved pushing enrollment, installing/pushing the prepared manual-only
+workflow and one six-release adapter run. Current server settings retain the five
+unrelated workflows disabled; recheck exact revision/isolation before dispatch.
