@@ -17,7 +17,7 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 ## Fog
 
 - [06 resolved](issues/06-manual-rest-churn-experiment.md): baseline/hour measurements support provisional REST-first work; day sampling is optional. Fleet storage remains unmeasured.
-- [08 resolved](issues/08-offline-storage-prototype.md): 64 offline replay checks support the bounded format/state/publication contract; [09](issues/09-review-offline-findings.md) reviews refinements and operational boundaries.
+- [08 resolved](issues/08-offline-storage-prototype.md): 64 offline replay checks support the bounded format/state/publication contract; [09 resolved](issues/09-review-offline-findings.md) records review refinements; [10](issues/10-offline-client-freshness.md) is the next offline freshness frontier.
 - [04 resolved](issues/04-compare-collection-strategies.md): REST-first experiment agreed; revisit the representation if churn/storage evidence or future consumer needs justify it.
 - Retention and Git growth; volatile response fields; large asset lists; removed upstream data; standalone updater migration; actual publishing privilege separation; eventual upstream preferences.
 
@@ -60,3 +60,11 @@ commit-pinned/stale-parent behavior. Full-repack growth was 5,071 bytes; increme
 GC yielded a larger layout. Prototype source is captured separately on
 `proto/offline-storage-v1`; no production code is merged. [09](issues/09-review-offline-findings.md)
 is the review frontier. No HTTP, push, dispatch or app change.
+
+
+2026-10-27: [09 resolved](issues/09-review-offline-findings.md) after Marek authorized
+continuing the review. The proposal now records separate receipt/validation timing
+provenance, public-only enrollment constraints, provisional offline limits and
+alias lifecycle gaps. [10](issues/10-offline-client-freshness.md) specifies an offline
+client freshness/lookup experiment. Production schema and remote operations remain
+unaccepted; no network action or push performed.

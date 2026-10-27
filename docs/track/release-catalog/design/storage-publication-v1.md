@@ -253,3 +253,89 @@ Verify through the storage/publication interface:
 Review the resulting schema and state behavior before building remote publication
 or migrating any app. This proposal deliberately leaves long-term storage and
 hosting choices open rather than promoting exploratory arithmetic into policy.
+
+
+## 2026-10-27 offline review refinements
+
+The [ticket 08 findings](../research/storage-prototype-findings.md) support the
+bounded interface and transitions, not a production schema or operating cadence.
+Marek authorized continuing the review. The following are working proposals for
+further offline verification; they authorize no remote operation.
+
+### Receipt, validation and provenance
+
+A future adapter must record request start and response completion separately.
+For a complete valid 200, received_at and validated_at use response completion.
+For a legitimate 304, only validated_at advances. Preserve the original receipt
+and its provenance. Publication generated_at cannot substitute for either time.
+Validate request_started_at <= response_completed_at <= generated_at and reject
+out-of-order per-source results. A failed/partial response never advances either
+observation timestamp. Do not use server Date as the local completion clock.
+
+The saved baseline/hour rounds remain historical evidence with missing individual
+completion times. Their labelled round-completion upper bounds are fixture-only;
+production validation must refuse them as measured freshness. Prefer separate
+received_time_basis and validation_time_basis fields if timing provenance is
+retained: one field cannot describe a saved receipt followed by a newly measured
+304 correctly. This supersedes the prototype's single timing_basis field.
+
+Embed the reviewed manifest alongside its canonical SHA-256 in the next offline
+schema fixture. Keep collection-code revision, evidence/run provenance and the
+manifest revision distinct. The illustrative one-entry index remains illustrative.
+
+### Public-only enrollment boundary
+
+A manifest assertion is necessary but insufficient evidence of public visibility.
+Before any operational implementation, record an explicit public visibility check
+for each repository identity, its time and evidence, and exclude repositories
+where collection credentials can see privileged data. A public check alone cannot
+make later privileged collection safe: public repositories can become private.
+
+The preferred operational design to evaluate is anonymous public REST collection,
+with authenticated publication as a separate stage. Its usable quotas and delivery
+cost are unmeasured here; do not infer workflow-token quota applies anonymously.
+An alternative authenticated collector needs a demonstrated public-only credential
+and revalidation method before adoption. Neither approach is selected for a live
+run. This may reopen collection strategy; the offline fixture does not settle it.
+
+Reject drafts, unpublished/restricted observations, unreviewed hosts and descriptor
+changes before publication. Response shape checks alone do not prove public access.
+The six existing fixture enrollment assertions are experimental inputs only.
+
+### Proposed bounded next-experiment limits
+
+Keep the existing six descriptors; no discovery/enrollment expansion. For the next
+offline experiment, cap each body at 8,000,000 bytes, the index at 2,000,000 bytes,
+and the candidate tree at 50,000,000 bytes, including retained retired bodies.
+Reject the candidate atomically on any breach, preserving the previous publication.
+Use at most one supplied result per descriptor per batch; publication retries must
+not recollect. The offline runner has a network-request budget of zero.
+
+For a disposable local publication history, stop adding publications if pack plus
+index exceeds 128,000,000 bytes under the explicitly recorded packing method.
+Measure in a disposable copy before advancing the publication ref. Report ordinary
+GC and full-repack sizes separately; do not use favorable repacking as a retention
+guarantee. No history rewrite, force push or automatic threshold escalation.
+These are conservative experiment caps, not approved fleet or live-job budgets.
+Live request/time/error budgets need a separately reviewed collection design.
+
+### Alias lifecycle
+
+A reviewed alias remap creates or references the exact new descriptor identity;
+no validator crosses identities. Preserve the former descriptor as retired when
+removed from the manifest. Explicitly removed aliases need tombstones even if
+another alias keeps their old descriptor active: entry retirement alone cannot
+represent alias retirement. Model alias state separately in a later fixture.
+Re-enrollment requires an explicit reviewed event and starts without cache
+validators or current availability; historical bytes remain evidence until a
+valid new 200. A 304 cannot restore an unvalidated re-enrollment.
+
+### Next client question
+
+Proceed with an offline freshness/lookup prototype before defining remote delivery.
+Its decisions must preserve receipt and validation provenance and distinguish
+available-but-stale data from unavailable or retired data. The proposed initial
+boundary is age <= 86,400 seconds fresh, greater age requiring explicit acceptance
+for that specific observation digest and publication commit. Refuse future-clock
+observations for now; do not silently clamp negative ages. These exact edges are
+prototype inputs, not accepted client UX. See [ticket 10](../issues/10-offline-client-freshness.md).
