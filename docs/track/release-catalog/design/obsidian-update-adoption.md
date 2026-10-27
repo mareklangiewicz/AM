@@ -1,6 +1,15 @@
 # Proposed opt-in Obsidian update adoption
 
 Ticket 22. Proposal, not accepted policy or implemented update behavior.
+
+**Superseded adoption recommendation (2026-10-27):** Marek accepted a shared shell
+reader and shell-friendly published lookup metadata, no consumer Python runtime,
+and small simplifying recipe/generated-updater diffs. Do not implement the Python
+zipapp/local-runtime packaging or expand the checkout-only query mode described
+below. [Ticket 23](../issues/23-shell-consumer-and-small-recipe-migration.md) is the
+current next-session frontier; [the spec](../spec.md#accepted-adoption-direction-2026-10-27)
+records the accepted direction. The source observations below remain relevant and
+the original proposal is retained as historical evidence.
 Source inspected: 6177083f2 on main-marek. Tickets 20–21 established a working
 checkout-only read query; they did not provide consumer distribution or change
 ordinary updates. Keep catalog observations separate from app selection policy.

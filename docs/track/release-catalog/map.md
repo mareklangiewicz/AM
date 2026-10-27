@@ -8,6 +8,16 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 
 ## Decisions-so-far
 
+- **Current adoption direction (2026-10-27):** simplify total AM client logic;
+  remove independent proxy/source trust; use shell and existing utilities on the
+  consumer side, with no Python/jq/checkout runtime requirement. CI may retain
+  Python. Target upstream AM-owned publication and original upstream binary URLs.
+  See [accepted direction](spec.md#accepted-adoption-direction-2026-10-27).
+- **Next session: [23 open, ready-for-agent](issues/23-shell-consumer-and-small-recipe-migration.md).**
+  Implement one shared shell reader, minimal shell-readable publication metadata,
+  and one small app/generated-updater migration, preserving existing filters and
+  freshness/integrity/refusal checks. Audit/remove displaced client machinery.
+  This supersedes ticket 22's Python zipapp/runtime-packaging recommendation.
 - [01: prior research reconciled](issues/01-reconcile-prior-work.md): retain useful measurements, but distinguish the earlier resolved catalog from the current observation catalog. The reported 825-point sweep is GraphQL evidence, not a REST response-catalog capacity measurement.
 - Working direction: collector preserves upstream metadata without ranking releases or selecting downloads; app scripts keep policy. Public upstream metadata is not independent binary authenticity.
 - Explore a dedicated AM publication branch, hourly collection, reviewed endpoint inventory, retained observations on temporary failures, per-observation checked times, explicit stale-data acceptance beyond 24 hours, and selective client downloads pinned to a publication commit.
@@ -245,3 +255,15 @@ foreground single-app preflight and explicit supported-adapter enrollment with
 visible refusal/exact stale consent. Proposal only. Next bounded code step is
 local runtime packaging and offline verification; no installed migration, remote
 runtime delivery, ordinary update change or schedule is enabled.
+
+
+2026-10-27: Marek accepted a simplifying, shell-first adoption direction and deferred
+implementation to the next session. [23 opened](issues/23-shell-consumer-and-small-recipe-migration.md)
+as the unblocked frontier: shared shell reader and shell-friendly lookup metadata,
+small ordinary recipe/generated-updater read changes, original selection filters
+and upstream binary URLs, no new consumer language/service/trust operator. Preserve
+pinning/freshness/integrity checks centrally and remove only proven displaced proxy/
+quota/token logic. [Spec updated](spec.md#accepted-adoption-direction-2026-10-27);
+ticket 22's Python packaging recommendation is explicitly superseded while its
+source findings and historical test evidence remain intact. Documentation only;
+no implementation, installed state, network experiment or workflow changes.

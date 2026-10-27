@@ -19,3 +19,34 @@ See [earlier design](../../design/version-catalog.md) for prior GraphQL measurem
 ## 2026-10-27 continuation
 
 After the bounded baseline/hour experiment, Marek accepted provisional exact REST snapshots and proceeding without waiting for a day observation. Day sampling is optional, not a blocker or scheduled work. Storage/publication design is recorded under design/storage-publication-v1.md; it remains a proposal pending offline verification. Full live collection, remote publication, installer integration and schedules remain outside the current authorized work.
+
+## Accepted adoption direction (2026-10-27)
+
+Marek's current priority is to simplify AM and remove reliance on independently
+operated API proxies/sources. Keep app version/asset selection in existing filters;
+keep binaries at their original upstream download URLs. An upstream proposal should
+use an AM-owned catalog in AM's own repository, not require trust in this development
+fork or a new service. This preserves existing AM/GitHub trust; it does not make
+catalog metadata or body hashes independent proof of binary authenticity.
+
+Python can remain in CI collection/validation. Consumer/install/updater paths must
+stay shell-based with the existing supported utilities, without a new Python or jq
+runtime requirement, full-checkout dependency or separately distributed executable
+consumer service. Share a small shell reader; adapt CI-published lookup metadata to
+make safe shell consumption simple instead of porting the whole Python reader.
+Preserve exact response JSON for the existing app-specific filters.
+
+Commit pinning, measured freshness and exact stale acceptance, integrity checks
+and explicit refusal remain required. Keep them centralized rather than adding
+branches to every recipe. Recipe and generated-updater changes should be small
+read-call substitutions and make total client logic simpler; remove genuinely
+unused proxy rewriting/quota/token machinery as its callers migrate. Do not hide
+a larger client framework behind a superficially small diff or remove support
+still needed by other callers.
+
+The next-session frontier is [23: shared shell reader and one small recipe/updater
+migration](issues/23-shell-consumer-and-small-recipe-migration.md). Ticket 22's
+Python-runtime packaging recommendation is superseded. Its actual update-path
+findings and tickets 19–21's Python/opt-in evidence remain useful references.
+Implementation is deferred to the next session; this decision adds no installed
+migration, installer execution, schedule or automatic workflow authorization.
