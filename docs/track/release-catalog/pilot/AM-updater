@@ -1,0 +1,27 @@
+#!/bin/sh
+# AM-CATALOG-UPDATER 1
+set -eu
+APP=obsidian
+SITE="obsidianmd/obsidian-releases"
+# AM embeds its selected source here for standalone execution.
+AMREPO=${AMREPO-"https://raw.githubusercontent.com/mareklangiewicz/AM/main-marek"}
+export AMREPO
+version0=$(cat "/opt/$APP/version")
+catalog_body=$(sh "/opt/am/modules/catalog.am" "https://api.github.com/repos/$SITE/releases" "$@") || exit 1
+version=$(printf '%s\n' "$catalog_body" | sed 's/[()",{} ]/\n/g' | grep -oi "https.*mage$" | grep -vi "i386\|i686\|aarch64\|arm64\|armv7l" | head -1)
+[ -n "$version" ] || { echo "Error getting link" >&2; exit 1; }
+if [ "$version" != "$version0" ] || grep -sq '^Checksum failure$' "/opt/$APP/AM-VERIFIED"; then
+	rm -R -f "/opt/$APP/tmp"
+	mkdir "/opt/$APP/tmp" && cd "/opt/$APP/tmp" || exit 1
+	notify-send "A new version of $APP is available, please wait" || :
+	wget "$version" || exit 1
+	# Use tar fx ./*tar* here for example in this line in case a compressed file is downloaded.
+	cd ..
+	mv --backup=t ./tmp/*mage ./"$APP"
+	chmod a+x ./"$APP" || exit 1
+	echo "$version" > ./version
+	rm -R -f ./*zs-old ./*.part ./tmp ./*~
+	notify-send "$APP is updated!" || :
+else
+	echo "Update not needed!"
+fi

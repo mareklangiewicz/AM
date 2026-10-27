@@ -392,3 +392,10 @@ retained lookup/body bytes and the unchanged recipe filter URL. Initial sandbox
 DNS refusal and approved network run are separately retained in
 [findings/evidence](research/current-helper-public-read-findings.md).
 No publication, collection, workflow, schedule, binary download or app execution.
+
+
+2026-10-28: [31 resolved: installed pilot preparation](issues/31-prepare-installed-obsidian-pilot.md).
+Read-only host inspection and [four-file payload/rollback plan](pilot/plan.md)
+are complete. Installed Obsidian is 1.14.4, so execution against retained 1.14.5
+metadata would change the app. Proposed first pilot is delivery only; host writes
+and actual app update are not performed. Payload syntax checks pass.

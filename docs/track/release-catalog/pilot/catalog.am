@@ -1,0 +1,102 @@
+#!/bin/sh
+# AMCLI shared catalog reader v1. Executed with sh, never sources catalog data.
+# Usage: AMREPO=https://raw.githubusercontent.com/OWNER/REPO/BRANCH sh catalog.am ALIAS [--commit SHA] [--accept-stale SHA REQUEST HASH]
+set -eu
+LC_ALL=C
+export LC_ALL
+fail() { printf 'AM catalog: %s\n' "$*" >&2; exit 1; }
+[ "$#" -gt 0 ] || fail 'missing alias'
+alias=$1; shift
+pin=; consent=
+while [ "$#" -gt 0 ]; do
+    case $1 in
+        --commit) [ "$#" -ge 2 ] || fail 'missing commit'; pin=$2; shift 2 ;;
+        --accept-stale) [ "$#" -ge 4 ] || fail 'missing exact stale tuple'; consent="$2 $3 $4"; shift 4 ;;
+        *) fail 'unsupported option' ;;
+    esac
+done
+hex() { [ "${#1}" -eq "$2" ] && case $1 in *[!0-9a-f]*) return 1;; esac; }
+[ -z "$pin" ] || hex "$pin" 40 || fail 'full commit required'
+for tool in curl awk date sha256sum mktemp wc cat rm grep; do
+    command -v "$tool" >/dev/null 2>&1 || fail "missing tool: $tool"
+done
+# Use the selected AM source; unsupported/local sources have no remote fallback.
+source=${AMREPO-}
+case $source in *[!A-Za-z0-9_./:-]*) fail 'unsupported AMREPO characters' ;; esac
+printf '%s\n' "$source" | grep -Eq '^https://raw\.githubusercontent\.com/[A-Za-z0-9-]+/[A-Za-z0-9_.-]+/[A-Za-z0-9_./-]+$' || fail 'missing or unsupported AMREPO'
+repository=${source#https://raw.githubusercontent.com/}
+owner=${repository%%/*}; repository=${repository#*/}; repository=$owner/${repository%%/*}
+# GNU date's fractional UTC epoch preserves the inclusive 24-hour boundary.
+clock() { date -u +%s.%6N; }
+start=$(clock)
+printf '%s\n' "$start" | grep -Eq '^[0-9]{1,12}\.[0-9]{6}$' || fail 'GNU date required'
+umask 077
+scratch=$(mktemp -d) || fail 'temporary directory unavailable'
+trap 'rm -rf -- "$scratch"' EXIT
+trap 'exit 1' HUP INT TERM
+# No curl config, proxy, redirects, credentials, retries or upstream fallback.
+# File-size rlimit also bounds chunked/unknown-length transfers on disk.
+fetch() {
+    url=$1 cap=$2 out=$3 accept=$4
+    code=$(
+        ulimit -f "$(( (cap + 511) / 512 ))" || exit 1
+        curl -q --silent --show-error --fail --noproxy '*' --proto '=https' \
+            --max-redirs 0 --connect-timeout 10 --max-time 30 --max-filesize "$cap" \
+            -H 'Accept-Encoding: identity' -H "Accept: $accept" \
+            -H 'X-GitHub-Api-Version: 2022-11-28' \
+            --output "$out" --write-out '%{http_code}' "$url"
+    ) || fail 'catalog transfer refused'
+    [ "$code" = 200 ] && [ "$(wc -c < "$out")" -le "$cap" ] || fail 'catalog response refused'
+}
+# Resolve only the catalog owned by the configured AM repository.
+if [ -z "$pin" ]; then
+    fetch "https://api.github.com/repos/$repository/commits/heads/release-catalog" 128 "$scratch/ref" 'application/vnd.github.sha'
+    pin=$(cat "$scratch/ref")
+    hex "$pin" 40 || fail 'invalid publication ref'
+fi
+root="https://raw.githubusercontent.com/$repository/$pin"
+fetch "$root/lookup.tsv" 2000000 "$scratch/lookup" 'application/octet-stream'
+# Check framing, uniqueness and the selected record without interpreting fields as code.
+row=$(AM_CATALOG_ALIAS="$alias" awk -F '\t' '
+    BEGIN { wanted=ENVIRON["AM_CATALOG_ALIAS"] }
+    function hex(s,n) { return length(s)==n && s !~ /[^0-9a-f]/ }
+    function refuse() { bad=1; exit 1 }
+    function epoch(s) { return s ~ /^[0-9]+\.[0-9]+$/ && length(s)<=20 }
+    NR==1 { if (NF!=7 || $1!="AM-CATALOG" || $2!="1" || !epoch($3) ||
+                   !hex($4,40) || $5!~/^[1-9][0-9]*$/ || $6!~/^[1-9][0-9]*$/ || !hex($7,64)) refuse()
+            generated=$3; next }
+    { if (NF!=13 || seen[$1]++) refuse()
+      if ($1==wanted) {
+        if ($2!="1" || $3!="available" || !hex($4,64) || !hex($5,64) ||
+            $6!~/^[0-9]+$/ || $6+0>8000000 || !epoch($7) || !epoch($8) ||
+            $7+0>$8+0 || $8+0>generated+0 || $9!~/^https:\/\/api.github.com\/repositories\/[1-9][0-9]*\/releases/ ||
+            $10!="2022-11-28" || $11!="application/vnd.github+json" ||
+            $12!~/^[1-9][0-9]*$/ || $13!="single-response") refuse()
+        selected=generated " " $4 " " $5 " " $6 " " $8
+      }
+    }
+    END { if (!bad && selected!="") print selected; else exit 1 }
+' "$scratch/lookup") || fail 'alias unavailable or unsupported lookup'
+# Only validated numeric/hex fields are split; release JSON is never evaluated.
+read -r generated rid hash size validated <<EOF
+$row
+EOF
+last=$start
+fresh() {
+    now=$(clock)
+    result=$(awk -v now="$now" -v start="$start" -v prev="$last" -v gen="$generated" -v checked="$validated" '
+        BEGIN { if (now !~ /^[0-9]+\.[0-9]+$/ || now+0<prev+0 || gen+0>now+0 || checked+0>now+0 || now-start>90) print "invalid";
+                else if (now-checked>86400) print "stale"; else print "fresh" }')
+    last=$now
+    case $result in
+        invalid) fail 'future time, regressed clock or expired read' ;;
+        stale) [ "$consent" = "$pin $rid $hash" ] || fail "stale; retry with --commit $pin --accept-stale $pin $rid $hash" ;;
+    esac
+}
+fresh
+fetch "$root/bodies/$rid.json" "$size" "$scratch/body" 'application/octet-stream'
+[ "$(wc -c < "$scratch/body")" -eq "$size" ] || fail 'body length mismatch'
+actual=$(sha256sum "$scratch/body"); actual=${actual%% *}
+[ "$actual" = "$hash" ] || fail 'body hash mismatch'
+fresh
+cat "$scratch/body"
