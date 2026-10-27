@@ -1,0 +1,27 @@
+# Run and interpret the bounded REST churn experiment
+
+Type: task
+Status: open
+Triage: ready-for-human
+Blocked by: 04
+
+## Scope
+
+Marek agreed to REST-first comparison and preparation. [04](04-compare-collection-strategies.md) is resolved. Read [experiment instructions](../../../../tools/catalog-probe/CHURN.md) and [comparison](../research/collection-strategy-comparison.md).
+
+Prepared: six fixed endpoints; three manual observations around baseline, +1 hour and +24 hours; exact responses versus an offline stable-field diagnostic; per-body/round/time limits; no extra pagination or retries; preserved hashes, conditional state and actual timestamps; comparison in disposable local Git repos. The existing quota workflow adds three choices and remains manual-only. Repeat runs take a previous run ID and validate the complete prior evidence.
+
+## Authorization boundary
+
+Ask before pushing AM commits. A push is not run authorization. Each observation requires explicit instruction; no schedule or automated follow-up. Before dispatch verify sole active workflow and no pending runs. Unrelated workflows stay disabled. No app scripts or installed apps are changed.
+
+## Acceptance
+
+- Record each authorized run ID, source revision, actual interval, status and evidence hashes. Preserve evidence before seven-day artifact expiry.
+- Inspect changed paths against original release/asset order and descriptions; do not equate positional changes with counter churn. Report filter diagnostic mismatches and unsupported events identity.
+- Report body/gzip totals, changed-body frequency, loose objects and packed Git history for both layouts under identical index/timestamp policy.
+- Treat this as a short-window sample. Record limitations and decide whether to widen measurement or revise representation with Marek; do not claim a fleet/annual growth forecast.
+
+## Validation before live use
+
+Seven offline fixture tests cover three-round chaining/304 reuse and analysis, HTTP failures with no retry, oversize/invalid JSON/unconditional 304/quota stop, prior-body corruption blocking requests, counter projection differences, first/last and description-URL filters, and sanitized transport failures. YAML/manual-only guard assertions and ShellCheck for workflow shell steps pass. Real Actions artifact chaining and live endpoint behavior remain untested.

@@ -2,9 +2,21 @@ name: Catalog quota probe
 
 on:
   workflow_dispatch:
+    inputs:
+      experiment:
+        description: Explicitly authorized experiment (no automatic observations)
+        type: choice
+        options: [quota, churn-baseline, churn-hour, churn-day]
+        default: quota
+        required: true
+      previous_run:
+        description: Previous successful churn run ID (empty for baseline/quota)
+        type: string
+        required: false
 
 permissions:
   contents: read
+  actions: read
 
 concurrency:
   group: catalog-quota-probe-${{ github.ref }}
@@ -14,15 +26,56 @@ jobs:
   probe:
     if: github.repository == 'mareklangiewicz/AM' && github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+      - name: Validate manual observation inputs
+        env:
+          EXPERIMENT: ${{ inputs.experiment }}
+          PREVIOUS_RUN: ${{ inputs.previous_run }}
+        run: |
+          case "$EXPERIMENT" in
+            quota|churn-baseline) test -z "$PREVIOUS_RUN" ;;
+            churn-hour|churn-day)
+              case "$PREVIOUS_RUN" in ''|*[!0-9]*) exit 1 ;; esac
+              ;;
+            *) exit 1 ;;
+          esac
+      - name: Retrieve explicitly selected previous observation
+        if: inputs.experiment == 'churn-hour' || inputs.experiment == 'churn-day'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          PREVIOUS_RUN: ${{ inputs.previous_run }}
+        run: |
+          gh run view "$PREVIOUS_RUN" --json workflowName,event,conclusion,headBranch \
+            --jq 'select(.workflowName == "Catalog quota probe" and .event == "workflow_dispatch" and .conclusion == "success" and .headBranch == "main-marek") | .conclusion' > "$RUNNER_TEMP/previous-status"
+          test "$(cat "$RUNNER_TEMP/previous-status")" = success
+          gh run download "$PREVIOUS_RUN" --name "catalog-quota-probe-$PREVIOUS_RUN" --dir "$RUNNER_TEMP/previous-churn"
       - name: Probe REST and GraphQL with workflow token
+        if: inputs.experiment == 'quota'
         env:
           GH_TOKEN: ${{ github.token }}
         run: sh tools/catalog-probe/probe.sh "$RUNNER_TEMP/catalog-probe"
+      - name: Observe bounded REST churn with workflow token
+        if: startsWith(inputs.experiment, 'churn-')
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPERIMENT: ${{ inputs.experiment }}
+        run: |
+          round=${EXPERIMENT#churn-}
+          case "$round" in
+            baseline)
+              python3 tools/catalog-probe/churn.py collect "$round" "$RUNNER_TEMP/catalog-probe/observations"
+              ;;
+            hour|day)
+              python3 tools/catalog-probe/churn.py collect "$round" "$RUNNER_TEMP/catalog-probe/observations" --previous "$RUNNER_TEMP/previous-churn/observations"
+              ;;
+            *) exit 1 ;;
+          esac
+          python3 tools/catalog-probe/churn.py analyze "$RUNNER_TEMP/catalog-probe/observations" > "$RUNNER_TEMP/catalog-probe/comparison.json"
       - name: Preserve public response data and quota headers
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2

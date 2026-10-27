@@ -1,6 +1,6 @@
 # Collection strategy comparison — 2026-10-27
 
-Decision pending with Marek; this is research and a proposed experiment, not an accepted design or run authorization. Sources: [inventory](request-inventory-findings.md), [manual probe](probe-run-40496182929-findings.md), its preserved evidence archive, current recipes, and historical docs/design/version-catalog.md. No new upstream observations were collected.
+Marek accepted the REST-first experiment direction after this comparison. The proposal below preserves the discussion context; bounded implementation is documented in tools/catalog-probe/CHURN.md. No live run is authorized by that agreement. Sources: [inventory](request-inventory-findings.md), [manual probe](probe-run-40496182929-findings.md), its preserved evidence archive, current recipes, and historical docs/design/version-catalog.md. No new upstream observations were collected.
 
 ## Cost and coverage
 

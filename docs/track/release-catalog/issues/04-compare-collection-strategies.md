@@ -1,8 +1,8 @@
 # Choose the next collection prototype from evidence
 
 Type: grilling
-Status: claimed
-Triage: needs-info
+Status: resolved
+Triage: ready-for-agent
 Blocked by: 02, 03
 
 ## Question
@@ -20,3 +20,7 @@ Compare measured cost, coverage, ordering and selection compatibility, fields, a
 ## Comments
 
 2026-10-27: claimed; [comparison and proposed bounded experiment](../research/collection-strategy-comparison.md) prepared from saved evidence and official API references. Recommendation is REST-first churn measurement with an offline diagnostic projection. Representation and experiment scope await discussion with Marek; no additional dispatch, push, collector or client changes. Ticket remains unresolved.
+
+## Answer
+
+2026-10-27: Marek accepted the REST-first prototype and proposed six-endpoint, three-observation experiment. Keep exact response bodies; use the offline smaller-field projection diagnostically, not as a new consumer contract. Comparison is in the linked research report. Prepared the bounded collector, offline Git/storage analyzer, fixture tests, and manual workflow choices in tools/catalog-probe/CHURN.md. The explicit cap is 10 MiB/body, six attempts/round, no retries/redirects, ten-minute job timeout. Actual timing is recorded rather than assumed. No push or live observation was authorized or performed. Execution and result interpretation continue in [06](06-manual-rest-churn-experiment.md).

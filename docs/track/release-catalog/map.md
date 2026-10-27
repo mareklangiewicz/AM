@@ -16,9 +16,8 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 
 ## Fog
 
-- [02: measure workflow-token behavior](issues/02-workflow-token-probe.md): REST headers and conditional requests, bounded GraphQL batching, actual Actions quotas. Local probe is prepared; a remote run is pending.
-- [04: compare collection strategies](issues/04-compare-collection-strategies.md): prerequisites 02 and 03 are resolved; use measured quotas and inventory to choose the next bounded prototype.
-- [04: compare collection strategies](issues/04-compare-collection-strategies.md): whether REST snapshots, structured GraphQL observations, or a limited combination best balance compatibility, simplicity, payload size, and freshness.
+- [06: manual REST churn experiment](issues/06-manual-rest-churn-experiment.md): prepared and awaiting separately authorized observations; long-term quota behavior and fleet storage remain unmeasured.
+- [04 resolved](issues/04-compare-collection-strategies.md): REST-first experiment agreed; revisit the representation if churn/storage evidence or future consumer needs justify it.
 - Retention and Git growth; volatile response fields; large asset lists; removed upstream data; standalone updater migration; actual publishing privilege separation; eventual upstream preferences.
 
 ## Progress
@@ -38,3 +37,5 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 2026-10-27: [02 resolved](issues/02-workflow-token-probe.md). Authorized run 40496182929 succeeded: real token reads public upstreams, REST 304 did not increase usage, small GraphQL batch cost 1, and both budgets reported 5,000/hour for that run. Final /rate_limit GraphQL counters disagreed with direct GraphQL response evidence; recorded without speculating. [Findings and persistent evidence](research/probe-run-40496182929-findings.md). No extra run; unrelated workflows remain disabled. [04](issues/04-compare-collection-strategies.md) is now unblocked.
 
 2026-10-27: [04 claimed](issues/04-compare-collection-strategies.md); [strategy comparison](research/collection-strategy-comparison.md) records matched-coverage payload measurements, compatibility limits and a proposed three-observation manual REST churn experiment. Awaiting Marek's design decision; no run or push authorized.
+
+2026-10-27: [04 resolved](issues/04-compare-collection-strategies.md) after Marek accepted REST-first measurement. Prepared bounded collection, offline storage/Git/filter diagnostics and manual choices in the existing probe workflow; seven fixture tests and workflow shell/YAML checks pass. [06](issues/06-manual-rest-churn-experiment.md) tracks separately authorized observations and result interpretation. No push or experiment run.
