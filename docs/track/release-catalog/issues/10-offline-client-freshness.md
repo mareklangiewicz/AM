@@ -1,7 +1,7 @@
 # Prototype commit-pinned freshness and refusal offline
 
 Type: prototype
-Status: open
+Status: resolved
 Triage: ready-for-agent
 Blocked by: 09
 
@@ -50,3 +50,19 @@ a separate local branch and findings in this tracker. No day sample required.
 [Storage findings](../research/storage-prototype-findings.md), captured source
 commit bff0d5bf2 on proto/offline-storage-v1, and the
 [review refinements](../design/storage-publication-v1.md#2026-10-27-offline-review-refinements).
+
+
+## Answer — 2026-10-27
+
+Completed the bounded offline prototype. The runner recorded 54 outcomes (53
+successful checks/expected refusals and one historical timing demonstration).
+A shared pure core drives both the single-file walkthrough and local Git replay.
+See [findings](../research/freshness-prototype-findings.md) and
+[machine report](../research/freshness-prototype-report.json).
+
+Primary source: `694613538`, branch `proto/offline-freshness-v1`,
+`tools/proto-freshness/`. Main keeps findings only. Exact age/consent boundaries,
+separate timing provenance, alias removal/re-enrollment, pinned reads and caps
+behave as specified within the synthetic-fixture limits. Browser visual QA and
+production hardening are not claimed. [11](11-review-client-and-collection-boundaries.md)
+records remaining policy and operating-design choices. No live experiment ran.

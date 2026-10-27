@@ -1,0 +1,278 @@
+{
+  "question": "Can pinned lookup explain age and refuse unavailable data?",
+  "synthetic": true,
+  "checks": [
+    {
+      "name": "age 0",
+      "result": "passed"
+    },
+    {
+      "name": "age 86399",
+      "result": "passed"
+    },
+    {
+      "name": "age 86400",
+      "result": "passed"
+    },
+    {
+      "name": "age 86401",
+      "result": "passed"
+    },
+    {
+      "name": "explicit stale acceptance",
+      "result": "passed"
+    },
+    {
+      "name": "acceptance does not mutate times",
+      "result": "passed"
+    },
+    {
+      "name": "acceptance rejects other commit",
+      "result": "passed"
+    },
+    {
+      "name": "acceptance rejects other source",
+      "result": "passed"
+    },
+    {
+      "name": "acceptance rejects changed digest",
+      "result": "passed"
+    },
+    {
+      "name": "acceptance cannot override unknown",
+      "result": "refused",
+      "reason": "source unavailable"
+    },
+    {
+      "name": "acceptance cannot override unavailable",
+      "result": "refused",
+      "reason": "source unavailable"
+    },
+    {
+      "name": "acceptance cannot override retired",
+      "result": "refused",
+      "reason": "source unavailable"
+    },
+    {
+      "name": "removed alias refuses with active descriptor",
+      "result": "refused",
+      "reason": "alias absent or removed"
+    },
+    {
+      "name": "other alias keeps descriptor usable",
+      "result": "passed"
+    },
+    {
+      "name": "temporary error retains age",
+      "result": "passed"
+    },
+    {
+      "name": "304 preserves receipt, advances validation",
+      "result": "passed"
+    },
+    {
+      "name": "304 preserves separate receipt timing basis",
+      "result": "passed"
+    },
+    {
+      "name": "re-enrollment clears current state, retains history",
+      "result": "passed"
+    },
+    {
+      "name": "re-enrollment cannot reuse 304",
+      "result": "refused",
+      "reason": "304 requires current body and matching condition"
+    },
+    {
+      "name": "304 mismatched validator",
+      "result": "refused",
+      "reason": "304 requires current body and matching condition"
+    },
+    {
+      "name": "missing validation time",
+      "result": "refused",
+      "reason": "invalid timestamp"
+    },
+    {
+      "name": "malformed validation time",
+      "result": "refused",
+      "reason": "invalid timestamp"
+    },
+    {
+      "name": "invalid date validation time",
+      "result": "refused",
+      "reason": "invalid timestamp"
+    },
+    {
+      "name": "future validation time",
+      "result": "refused",
+      "reason": "observation chronology"
+    },
+    {
+      "name": "historical received_time_basis",
+      "result": "refused",
+      "reason": "historical timing is not measured freshness"
+    },
+    {
+      "name": "historical validation_time_basis",
+      "result": "refused",
+      "reason": "historical timing is not measured freshness"
+    },
+    {
+      "name": "historical saved timing demonstration",
+      "result": "historical only",
+      "received_time_basis": "saved-round-completion-upper-bound",
+      "current_lookup": "refused"
+    },
+    {
+      "name": "lookup schema",
+      "result": "refused",
+      "reason": "unsupported experimental schema"
+    },
+    {
+      "name": "lookup descriptor",
+      "result": "refused",
+      "reason": "descriptor identity"
+    },
+    {
+      "name": "lookup alias target",
+      "result": "refused",
+      "reason": "descriptor identity"
+    },
+    {
+      "name": "lookup manifest alias",
+      "result": "refused",
+      "reason": "alias identity"
+    },
+    {
+      "name": "lookup unsafe path",
+      "result": "refused",
+      "reason": "observation path/scope"
+    },
+    {
+      "name": "lookup digest",
+      "result": "refused",
+      "reason": "body integrity"
+    },
+    {
+      "name": "lookup byte count",
+      "result": "refused",
+      "reason": "body integrity"
+    },
+    {
+      "name": "lookup future publication",
+      "result": "refused",
+      "reason": "future publication"
+    },
+    {
+      "name": "ref moves to B",
+      "result": "passed"
+    },
+    {
+      "name": "pinned A stays stale after B",
+      "result": "passed"
+    },
+    {
+      "name": "A acceptance cannot authorize B when B later stale",
+      "result": "passed"
+    },
+    {
+      "name": "stale parent",
+      "result": "refused",
+      "reason": "stale parent"
+    },
+    {
+      "name": "missing pinned index never falls back to tip",
+      "result": "refused",
+      "reason": "Command failed: git -C /tmp/PROTOTYPE-freshness-pG1urf/publication show 74d2246064f88bc657e4b4415075cae7502d9427:index.json\nfatal: path 'index.json' exists on disk, but not in '74d2246064f88bc657e4b4415075cae7502d9427'\n"
+    },
+    {
+      "name": "missing pinned body rejects candidate",
+      "result": "refused",
+      "reason": "body"
+    },
+    {
+      "name": "missing pinned body never falls back",
+      "result": "refused",
+      "reason": "Command failed: git -C /tmp/PROTOTYPE-freshness-pG1urf/publication show a004d3316f68fe7a13a9e879921684a3828765ba:bodies/e3fc02d1ee4ec6c2bf628cbafcc1c785b6e755b6f0b00230a948f274ec8bbdf1.json\nfatal: path 'bodies/e3fc02d1ee4ec6c2bf628cbafcc1c785b6e755b6f0b00230a948f274ec8bbdf1.json' exists on disk, but not in 'a004d3316f68fe7a13a9e879921684a3828765ba'\n"
+    },
+    {
+      "name": "exact cap boundaries allowed",
+      "result": "passed"
+    },
+    {
+      "name": "cap sources plus one",
+      "result": "refused",
+      "reason": "limit: sources"
+    },
+    {
+      "name": "cap body plus one",
+      "result": "refused",
+      "reason": "limit: body"
+    },
+    {
+      "name": "cap index plus one",
+      "result": "refused",
+      "reason": "limit: index"
+    },
+    {
+      "name": "cap tree plus one",
+      "result": "refused",
+      "reason": "limit: tree"
+    },
+    {
+      "name": "cap pack plus one",
+      "result": "refused",
+      "reason": "limit: pack"
+    },
+    {
+      "name": "pack cap rejects publication before write",
+      "result": "refused",
+      "reason": "limit: pack"
+    },
+    {
+      "name": "source cap rejects publication",
+      "result": "refused",
+      "reason": "limit: sources"
+    },
+    {
+      "name": "body cap rejects publication",
+      "result": "refused",
+      "reason": "limit: body"
+    },
+    {
+      "name": "index cap rejects publication",
+      "result": "refused",
+      "reason": "limit: index"
+    },
+    {
+      "name": "injected tree cap rejects before publication",
+      "result": "refused",
+      "reason": "limit: tree"
+    },
+    {
+      "name": "all rejected publications preserve B",
+      "result": "passed"
+    }
+  ],
+  "commits": {
+    "a": "002990d1755375e6e27d705c50e2ee8aa26e40a5",
+    "b": "ffaba3d351a6082fb6b3238fb5b14960c01ae7d0",
+    "missing_index": "74d2246064f88bc657e4b4415075cae7502d9427",
+    "missing_body": "a004d3316f68fe7a13a9e879921684a3828765ba"
+  },
+  "pack_bytes": 3150,
+  "limits": {
+    "sources": 6,
+    "body": 8000000,
+    "index": 2000000,
+    "tree": 50000000,
+    "pack": 128000000
+  },
+  "notes": [
+    "Synthetic measured timestamps, not real endpoint completion evidence",
+    "No HTTP, remote or installer integration",
+    "Injected tree/pack boundary measurements are logic checks, not large-file measurements",
+    "Experimental schema 2 is a prototype marker, not production version adoption"
+  ]
+}
