@@ -1,0 +1,38 @@
+name: Catalog quota probe
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main-marek]
+    paths:
+      - .github/workflows/catalog-quota-probe.yml
+      - tools/catalog-probe/**
+
+permissions:
+  contents: read
+
+concurrency:
+  group: catalog-quota-probe-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    if: github.repository == 'mareklangiewicz/AM'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Probe REST and GraphQL with workflow token
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: sh tools/catalog-probe/probe.sh "$RUNNER_TEMP/catalog-probe"
+      - name: Preserve public response data and quota headers
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: catalog-quota-probe-${{ github.run_id }}
+          path: ${{ runner.temp }}/catalog-probe/
+          retention-days: 7
+          if-no-files-found: warn
