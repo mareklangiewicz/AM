@@ -1,7 +1,7 @@
 # Measure workflow-token release reads
 
 Type: prototype
-Status: open
+Status: resolved
 Triage: ready-for-agent
 Blocked by: 05
 
@@ -36,3 +36,11 @@ Marek requires experimental workflows to run only by manual dispatch and wants t
 2026-10-27: default branch changed to main-marek with Marek's approval. gh workflow list now shows Catalog quota probe (398162689). Registration is resolved without a stub. Repository Actions is still disabled; [05](05-isolate-and-register-manual-probe.md) now covers only remaining isolation/enablement. No quota probe has been dispatched.
 
 2026-10-27: [05 resolved](05-isolate-and-register-manual-probe.md). Actions is enabled with only the manual probe active, and no runs are pending. Waiting for explicit instruction to dispatch the bounded probe. Remote main-marek currently contains probe version 4a2083e2a; pending local documentation/inventory commits do not change the probe. Record the exact remote head SHA when dispatching.
+
+2026-10-27: Marek explicitly approved one manual run. Verified isolation and no pending runs, then dispatched once from main-marek SHA 4a2083e2a4ca921addfcfae2bacec59349f55b1c. Run: https://github.com/mareklangiewicz/AM/actions/runs/40496182929 . Observing this exact run; no automatic redispatch.
+
+## Answer
+
+[Run 40496182929](https://github.com/mareklangiewicz/AM/actions/runs/40496182929) succeeded in 12 seconds; exactly one manual dispatch, source SHA 4a2083e2a4ca921addfcfae2bacec59349f55b1c. [Detailed findings and preserved evidence](../research/probe-run-40496182929-findings.md). Real read-only workflow token could read public upstreams through REST and GraphQL. REST returned 200 then 304 with usage unchanged at 1. Two-repository GraphQL batch cost 1 point. Both response budgets reported limits of 5,000/hour for this run, above our conservative documentation baseline; do not generalize without evidence.
+
+GraphQL response headers/object reported used=1/remaining=4,999, but final /rate_limit reported GraphQL used=0 with a different reset. Preserve that discrepancy and use direct response evidence; do not claim the GraphQL query was free. No retries or extra dispatches investigated the cause. Long-term churn/304 frequency, storage, whole-inventory coverage, and recipe migration remain open. All five unrelated workflows remain disabled.

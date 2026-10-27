@@ -1,0 +1,116 @@
+{
+  "rate-before": {
+    "status": "200",
+    "bytes": 1232,
+    "sha256": "32b620480fe15e7f347409ba2d8a0a3359b7dd0587f891cc4aef4230946559a5",
+    "headers": {
+      "date": "Tue, 27 Oct 2026 11:26:49 GMT",
+      "x-ratelimit-limit": "5000",
+      "x-ratelimit-remaining": "5000",
+      "x-ratelimit-reset": "1793104009",
+      "x-ratelimit-used": "0",
+      "x-ratelimit-resource": "core"
+    },
+    "budgets": {
+      "core": {
+        "limit": 5000,
+        "used": 0,
+        "remaining": 5000,
+        "reset": 1793104009
+      },
+      "graphql": {
+        "limit": 5000,
+        "used": 0,
+        "remaining": 5000,
+        "reset": 1793104009
+      }
+    }
+  },
+  "rest-first": {
+    "status": "200",
+    "bytes": 450991,
+    "sha256": "cabf3060e3a22fb9edcae11f5f304206e41aa937df041ec5de0a4e967ae05bc7",
+    "headers": {
+      "date": "Tue, 27 Oct 2026 11:26:50 GMT",
+      "etag": "\"e9f8d8b6d6ff840ed6291bb7f2c37609eb632e1d274d6e1c676698dcc071c722\"",
+      "x-ratelimit-limit": "5000",
+      "x-ratelimit-remaining": "4999",
+      "x-ratelimit-reset": "1793104010",
+      "x-ratelimit-used": "1",
+      "x-ratelimit-resource": "core"
+    }
+  },
+  "rest-conditional": {
+    "status": "304",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "headers": {
+      "date": "Tue, 27 Oct 2026 11:26:51 GMT",
+      "etag": "\"e9f8d8b6d6ff840ed6291bb7f2c37609eb632e1d274d6e1c676698dcc071c722\"",
+      "x-ratelimit-limit": "5000",
+      "x-ratelimit-reset": "1793104010",
+      "x-ratelimit-resource": "core",
+      "x-ratelimit-remaining": "4999",
+      "x-ratelimit-used": "1"
+    }
+  },
+  "graphql": {
+    "status": "200",
+    "bytes": 26054,
+    "sha256": "5ae5f2ccb69618a428bb81a17070f3701d53190bb6dc3336c2000fed9bab5553",
+    "headers": {
+      "date": "Tue, 27 Oct 2026 11:26:52 GMT",
+      "x-ratelimit-limit": "5000",
+      "x-ratelimit-remaining": "4999",
+      "x-ratelimit-reset": "1793104011",
+      "x-ratelimit-resource": "graphql",
+      "x-ratelimit-used": "1"
+    },
+    "rateLimit": {
+      "cost": 1,
+      "remaining": 4999,
+      "resetAt": "2026-10-27T12:26:51Z"
+    },
+    "repositories": [
+      {
+        "name": "obsidianmd/obsidian-releases",
+        "releases": 5,
+        "more_releases": true,
+        "truncated_assets": []
+      },
+      {
+        "name": "neovim/neovim",
+        "releases": 5,
+        "more_releases": true,
+        "truncated_assets": []
+      }
+    ]
+  },
+  "rate-after": {
+    "status": "200",
+    "bytes": 1232,
+    "sha256": "b74fad3b655a95db24c45f1608304e5c8dc63b0bb13ccee51bb2f2d84edc0501",
+    "headers": {
+      "date": "Tue, 27 Oct 2026 11:26:52 GMT",
+      "x-ratelimit-limit": "5000",
+      "x-ratelimit-remaining": "4999",
+      "x-ratelimit-reset": "1793104010",
+      "x-ratelimit-used": "1",
+      "x-ratelimit-resource": "core"
+    },
+    "budgets": {
+      "core": {
+        "limit": 5000,
+        "used": 1,
+        "remaining": 4999,
+        "reset": 1793104010
+      },
+      "graphql": {
+        "limit": 5000,
+        "used": 0,
+        "remaining": 5000,
+        "reset": 1793104012
+      }
+    }
+  }
+}

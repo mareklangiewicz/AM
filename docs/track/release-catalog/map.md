@@ -17,7 +17,7 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 ## Fog
 
 - [02: measure workflow-token behavior](issues/02-workflow-token-probe.md): REST headers and conditional requests, bounded GraphQL batching, actual Actions quotas. Local probe is prepared; a remote run is pending.
-- [02: run the prepared manual probe](issues/02-workflow-token-probe.md): setup is complete; dispatch awaits explicit run instruction. [05](issues/05-isolate-and-register-manual-probe.md) records verified isolation and enablement.
+- [04: compare collection strategies](issues/04-compare-collection-strategies.md): prerequisites 02 and 03 are resolved; use measured quotas and inventory to choose the next bounded prototype.
 - [04: compare collection strategies](issues/04-compare-collection-strategies.md): whether REST snapshots, structured GraphQL observations, or a limited combination best balance compatibility, simplicity, payload size, and freshness.
 - Retention and Git growth; volatile response fields; large asset lists; removed upstream data; standalone updater migration; actual publishing privilege separation; eventual upstream preferences.
 
@@ -34,3 +34,5 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 2026-10-27: with Marek's explicit approval, changed fork default to main-marek via gh. GitHub immediately registered Catalog quota probe (398162689). This supersedes the main-branch stub plan; main was not modified. Actions remains disabled, and no experiment was dispatched. Updated [05](issues/05-isolate-and-register-manual-probe.md) with the remaining isolation/enablement steps.
 
 2026-10-27: [05 resolved](issues/05-isolate-and-register-manual-probe.md). Disabled all five unrelated workflows, verified isolation while Actions was off, then enabled Actions and verified the probe is the sole active workflow and there are no pending runs. No experiment dispatched. [02](issues/02-workflow-token-probe.md) is ready for an explicitly authorized manual run.
+
+2026-10-27: [02 resolved](issues/02-workflow-token-probe.md). Authorized run 40496182929 succeeded: real token reads public upstreams, REST 304 did not increase usage, small GraphQL batch cost 1, and both budgets reported 5,000/hour for that run. Final /rate_limit GraphQL counters disagreed with direct GraphQL response evidence; recorded without speculating. [Findings and persistent evidence](research/probe-run-40496182929-findings.md). No extra run; unrelated workflows remain disabled. [04](issues/04-compare-collection-strategies.md) is now unblocked.
