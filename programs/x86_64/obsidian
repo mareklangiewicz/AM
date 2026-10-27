@@ -4,6 +4,9 @@
 set -eu
 APP=obsidian
 SITE="obsidianmd/obsidian-releases"
+# AM embeds its selected source here for standalone execution.
+AMREPO=${AMREPO-}
+export AMREPO
 
 # AM-CATALOG-RECIPE 1
 # Resolve and verify metadata before creating any installation state.
@@ -47,6 +50,9 @@ cat >> ./AM-updater << 'EOF'
 set -eu
 APP=obsidian
 SITE="obsidianmd/obsidian-releases"
+# AM embeds its selected source here for standalone execution.
+AMREPO=${AMREPO-}
+export AMREPO
 version0=$(cat "/opt/$APP/version")
 catalog_body=$(sh "/opt/am/modules/catalog.am" "https://api.github.com/repos/$SITE/releases" "$@") || exit 1
 version=$(printf '%s\n' "$catalog_body" | sed 's/[()",{} ]/\n/g' | grep -oi "https.*mage$" | grep -vi "i386\|i686\|aarch64\|arm64\|armv7l" | head -1)

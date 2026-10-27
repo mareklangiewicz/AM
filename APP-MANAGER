@@ -2161,7 +2161,7 @@ _alt_gh_filter() {
 
 _update_run_updater() {
 	if grep -qx '# AM-CATALOG-UPDATER 1' "$argpath/AM-updater"; then
-		"$argpath/AM-updater"
+		AMREPO="$AMREPO" "$argpath/AM-updater"
 		return $?
 	fi
 	if [ -z "$WGETV" ]; then # Patch the AM-updater in case $WGETCMD is needed but missing
@@ -2296,7 +2296,7 @@ _catalog_update() {
 	done
 	[ -n "$candidate" ] || return 2
 	shift
-	"$candidate" "$@" || return 1
+	AMREPO="$AMREPO" "$candidate" "$@" || return 1
 	argpath=${candidate%/AM-updater}; arg=${argpath##*/}; pure_arg=$arg
 	# Keep existing optional upstream binary-digest verification after preflight.
 	_use_verify || :

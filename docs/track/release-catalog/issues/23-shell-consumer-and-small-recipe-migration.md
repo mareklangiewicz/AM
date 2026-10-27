@@ -1,5 +1,11 @@
 # Shell consumer and one simplifying recipe/updater migration
 
+> **2026-10-28 ownership correction:** [Ticket 29](29-respect-configured-catalog-repository.md) supersedes
+> this record's fixed-upstream ownership assumption. This fork's catalog follows
+> AMREPO and must not fall back to upstream AM. Upstream acceptance/publication
+> is not a prerequisite for this fork. Results and archived bytes below retain
+> their historical source/revision meaning; they do not define current policy.
+
 Type: task
 Status: resolved
 Triage: ready-for-agent
@@ -60,9 +66,10 @@ reference/test scaffolding, not the final installed consumer architecture.
 
 ## Trust and adoption criteria
 
-- Target upstream AM-owned publication in its own repository, rather than requiring
-  users to trust Marek's fork or an independently operated proxy/service. The current
-  fork publication is development evidence, not the intended upstream dependency.
+- **Corrected by ticket 29 (2026-10-28):** follow configured AMREPO. This fork
+  reads its own mareklangiewicz/AM publication; upstream installations would use
+  their own selected repository. Missing/unsupported source or catalog refuses
+  without switching to upstream AM. Upstream adoption is not a fork-use dependency.
 - Download binaries from original upstream URLs; do not introduce a binary mirror.
   Users still trust GitHub, AM maintainers and publication code. A same-repository
   catalog avoids an independent operator but does not eliminate metadata trust or
@@ -113,8 +120,10 @@ without fallback or success reporting; optional upstream binary-digest verificat
 remains after successful managed update. Python query scaffolding and the updater's
 appimageupdatetool bypass are removed from this recipe.
 
-The fixed publication target is upstream ivan-hc/AM. It is not live validation or
-upstream acceptance: this reader requires that owner to publish the new format.
+At the ticket-23 source revision the publication target was incorrectly fixed to
+upstream ivan-hc/AM. Ticket 29 corrects that defect; this fork uses AMREPO ownership
+and requires no upstream publication/acceptance. The implementation evidence below
+is historical.
 No host installation/migration, workflow dispatch, publication, schedule or release
 collection occurred. Only temporary app roots and stubbed app operations ran.
 The first-app client diff is +139 net lines, including the 96-line shared reader;

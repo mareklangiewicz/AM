@@ -11,29 +11,49 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 - **Current adoption direction (2026-10-27):** simplify total AM client logic;
   remove independent proxy/source trust; use shell and existing utilities on the
   consumer side, with no Python/jq/checkout runtime requirement. CI may retain
-  Python. Target upstream AM-owned publication and original upstream binary URLs.
+  Python. **Corrected 2026-10-28:** catalog ownership follows configured AMREPO;
+  our fork reads mareklangiewicz/AM, with no upstream-AM fallback or acceptance
+  prerequisite. Keep original app binary URLs. [29](issues/29-respect-configured-catalog-repository.md)
+  supersedes the fixed-upstream interpretation in historical entries below.
   See [accepted direction](spec.md#accepted-adoption-direction-2026-10-27).
+- **[29 resolved: configured catalog ownership](issues/29-respect-configured-catalog-repository.md).**
+  Reader, manager install/update handoff and generated standalone updater follow
+  AMREPO. Missing/unsupported sources and selected-catalog failures refuse without
+  upstream-AM fallback. 107 tests plus syntax/lint pass; current client delta is
+  +194 net lines. Historical fixed-upstream guidance and ticket 28's frontier are
+  superseded throughout the tracker; original evidence bytes are preserved.
 - **[23 resolved: shared shell implementation](issues/23-shell-consumer-and-small-recipe-migration.md).**
   [Implementation and adoption boundary](design/shell-consumer.md): derived TSV,
-  one 96-line reader, ordinary Obsidian recipe/generated updater, and foreground
-  single-app refusal propagation. 89 offline tests pass. Upstream publication and
-  installed migration remain separate; no new open implementation ticket is implied.
+  one shared reader (initially 96 lines), ordinary Obsidian recipe/generated updater, and foreground
+  single-app refusal propagation. Initial 89-test result is historical; current
+  ownership and validation are in ticket 29. Installed migration remains separate.
   This supersedes ticket 22's Python zipapp/runtime-packaging recommendation.
 - [24 resolved: published shell roundtrip and module distribution](issues/24-shell-publication-roundtrip.md).
   Real temporary bare-Git publication, conditional repeat, pinned reads across ref
   movement and exact stale consent pass; actual module sync/cleanup preserves the
-  standalone updater's reader. The complete suite now passes 92 tests. Fixed stale
-  README instructions. Public validation/upstream acceptance remain separate.
+  standalone updater's reader. That ticket passed 92 tests. Fixed stale
+  README instructions. Ticket 27 subsequently verified the bounded fork public
+  read. Upstream acceptance is not a fork-use prerequisite (ticket 29).
 - [25 resolved: standards/spec review and integration fixes](issues/25-review-shell-adoption.md).
   No documented standards breaches; four spec regressions fixed (retry, checksum
   repair, install preflight mutation and launcher-only routing). Actual installation
-  dispatch is now covered. 100 tests pass; current net client source cost is +179.
-  This remains an offline fork slice, not proven upstream/live simplification.
+  dispatch was covered by 100 tests; net client source cost then was +179.
+  These are historical ticket-25 results; tickets 27 and 29 add bounded public
+  fork-read evidence and correct repository ownership. Net simplification remains unproven.
 - [01: prior research reconciled](issues/01-reconcile-prior-work.md): retain useful measurements, but distinguish the earlier resolved catalog from the current observation catalog. The reported 825-point sweep is GraphQL evidence, not a REST response-catalog capacity measurement.
 - Working direction: collector preserves upstream metadata without ranking releases or selecting downloads; app scripts keep policy. Public upstream metadata is not independent binary authenticity.
 - Explore a dedicated AM publication branch, hourly collection, reviewed endpoint inventory, retained observations on temporary failures, per-observation checked times, explicit stale-data acceptance beyond 24 hours, and selective client downloads pinned to a publication commit.
 - Exact REST snapshots are the provisional direction after the baseline/hour sample. The day sample is optional; retain the six-endpoint, short-window limits on any storage conclusions. Reconsider representation with broader evidence or new consumer needs.
 - Catalog work does not execute the active app installer or installed updaters. Existing app management behavior remains unchanged during experiments.
+
+## Current continuation boundary
+
+Use AMREPO-owned fork catalog and managed helper/source delivery (ticket 29).
+The retained public candidate is a0fdd1255; its observation times are unchanged,
+so freshness/explicit stale consent still apply. No installed updater migration,
+new collection, workflow or schedule has run in this repair. Upstream submission
+is optional future work; ticket 28's upstream-first recommendation is superseded.
+Historical entries below describe what happened, not current runtime policy.
 
 ## Fog
 
@@ -352,3 +372,14 @@ prior planning preserves all six bodies/validator tuples and existing context
 refusals. Upstream publisher/provenance and sustained freshness must precede
 ordinary recipe activation. No guard changes, workflow, collection, publication,
 upstream submission or installed operation.
+
+
+2026-10-28: [29 resolved: respect configured catalog repository](issues/29-respect-configured-catalog-repository.md).
+Marek corrected the upstream-only interpretation: our fork follows AMREPO and
+must not silently read upstream AM. Actual source-selection regression reproduced
+the defect before repair. Reader validation, persistent standalone source embedding
+and explicit managed update handoff now pass 107 tests, syntax and lint. Current
+spec/map/design/README and all affected tickets/historical plans identify this
+correction; ticket 28's upstream-first recommendation is withdrawn. Historical
+archives/JSON retain their original bytes/source revisions. No live requests,
+collection, workflow, publication, app execution, installed migration or schedule.

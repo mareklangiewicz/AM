@@ -1,5 +1,11 @@
 # Fork shell publication and pinned public read succeeded
 
+> **2026-10-28 ownership correction:** [Ticket 29](../issues/29-respect-configured-catalog-repository.md) supersedes
+> this record's fixed-upstream ownership assumption. This fork's catalog follows
+> AMREPO and must not fall back to upstream AM. Upstream acceptance/publication
+> is not a prerequisite for this fork. Results and archived bytes below retain
+> their historical source/revision meaning; they do not define current policy.
+
 Ticket [27](../issues/27-publish-fork-shell-validation.md), 2026-10-27.
 Marek explicitly approved the [ticket-26 candidate and action](fork-shell-validation-plan.md).
 

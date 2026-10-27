@@ -6,7 +6,7 @@ import re
 import subprocess
 import unittest
 
-from test_shell_consumer import ShellFixture, ROOT, HELPER, PIN, ALIAS
+from test_shell_consumer import ShellFixture, ROOT, HELPER, PIN, ALIAS, SOURCE
 
 APP = ROOT / 'programs/x86_64/obsidian'
 
@@ -182,7 +182,7 @@ AMCLI_ONLINE_CONTENT=$(cat "$MANAGER_SOURCE")
 _sync_modules
 ''')
         env={**self.env(),'SOURCE_MODULES':str(ROOT/'modules'),'MANAGER_SOURCE':str(ROOT/'APP-MANAGER'),
-             'MODULES_SOURCE':'https://raw.githubusercontent.com/ivan-hc/AM/main/modules',
+             'MODULES_SOURCE':SOURCE+'/modules',
              'MODULES_PATH':str(module_dir),'DIVIDING_LINE':''}
         def synchronize():
             result=subprocess.run(['/bin/bash',str(harness)],cwd=self.path,env=env,capture_output=True)
@@ -256,7 +256,7 @@ _use_update "$@"
             self.assertIn(b'launcher-ok',result.stdout)
             self.assertEqual(self.snapshot(),before)
 
-    def run_manager_install(self, *, missing_helper=False, local_script=False, source_unavailable=False):
+    def run_manager_install(self, *, missing_helper=False, local_script=False, source_unavailable=False, amrepo=SOURCE):
         """Execute real install dispatch/functions with only external AM services stubbed."""
         module_dir=self.root/'opt/am/modules';module_dir.mkdir(parents=True,exist_ok=True)
         helper=module_dir/'catalog.am'
@@ -290,10 +290,11 @@ p=pathlib.Path(os.environ['FIXTURE'])
 with (p/'privileged-calls').open('a') as f: f.write(repr(sys.argv[1:])+'\\n')
 for arg in sys.argv[1:]:
     if arg.startswith('/'): assert arg.startswith(str(p)+'/'), arg
-sys.exit(subprocess.run(sys.argv[1:]).returncode)
+env=dict(os.environ);env.pop('AMREPO',None) # sudo normally drops this variable
+sys.exit(subprocess.run(sys.argv[1:],env=env).returncode)
 ''')
         self.stage()
-        env={**self.env(),'CLI':'am','AMCLI':'am','ARCH':'x86_64','REALDIR':str(self.path),
+        env={**self.env(),'AMREPO':amrepo,'CLI':'am','AMCLI':'am','ARCH':'x86_64','REALDIR':str(self.path),
              'APPSPATH':str(self.root/'opt'),'APPSDB':'https://fixture.invalid/programs',
              'XDG_BIN_HOME':str(self.root/'usr/local/bin'),'DATADIR':str(self.root/'usr/local/share'),
              'LAUNCHERS_DIR':'applications','MODULES_PATH':str(module_dir),'AMCACHEDIR':str(cache),
@@ -304,6 +305,58 @@ sys.exit(subprocess.run(sys.argv[1:]).returncode)
         if local_script:
             local=self.path/'obsidian';local.write_text(recipe_source.read_text());target=str(local)
         return subprocess.run(['/bin/bash',str(harness),'-i',target],cwd=self.path,env=env,capture_output=True)
+
+    def test_actual_install_embeds_selected_source_for_standalone_updater(self):
+        source='https://raw.githubusercontent.com/another-owner/extra.apps/feature/catalog'
+        result=self.run_manager_install(amrepo=source)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertTrue(all('/another-owner/extra.apps/' in c[-1] for c in self.calls()))
+        updater=self.app/'AM-updater'
+        self.assertIn('AMREPO=${AMREPO-"'+source+'"}',updater.read_text())
+        # Run outside the manager with no AMREPO environment; installation persists it.
+        env=self.env();env.pop('AMREPO')
+        result=self.run_script(updater,env=env)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertIn(b'Update not needed!',result.stdout)
+        self.assertTrue(all('/another-owner/extra.apps/' in c[-1] for c in self.calls()))
+        # Explicit empty configuration refuses, rather than choosing the embedded source.
+        before=self.snapshot()
+        result=self.run_script(updater,env={**env,'AMREPO':''})
+        self.assertNotEqual(result.returncode,0)
+        self.assertEqual(self.snapshot(),before)
+        self.assertEqual(self.calls(),[])
+
+    def test_manager_update_passes_current_nonexported_source_to_installed_updater(self):
+        result=self.run_manager_install()
+        self.assertEqual(result.returncode,0,result.stderr)
+        manager=(ROOT/'APP-MANAGER').read_text()
+        route=manager[manager.index('_catalog_update() {'):manager.index('\n_use_update() {')]
+        harness=self.path/'source-update'
+        current='https://raw.githubusercontent.com/selected-owner/selected.repo/main'
+        data=self.path/'manager-data';data.mkdir(exist_ok=True)
+        (data/'newrepo-on').write_text(current+'\n')
+        check=manager[manager.index('_am_newrepo_check() {'):manager.index('\n_am_newrepo_check "$@"')]
+        default=next(line for line in manager.splitlines() if line.startswith('AMREPO='))
+        harness.write_text(default+'\n'+check+'\n_am_newrepo_check "$@"\n_use_verify() { :; }\n'+route+'\n_catalog_update "$@"\n')
+        env={**self.env(),'APPSPATH':str(self.root/'opt'),'APPMAN_APPSPATH':str(self.path/'absent'),
+             'AMDATADIR':str(data),'AMPATH':str(self.root/'opt/am'),'ARCH':'x86_64'}
+        env.pop('AMREPO')
+        self.stage()
+        result=subprocess.run(['/bin/bash',str(harness),'-u','obsidian','--commit',PIN],env=env,capture_output=True)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertTrue(all('/selected-owner/selected.repo/' in c[-1] for c in self.calls()))
+        self.assertEqual(len(self.calls()),2)
+
+    def test_source_embedding_treats_shell_metacharacters_as_data(self):
+        # Exercise the real install patch with an intentionally unsupported source:
+        # it must not execute interpolation while preparing the recipe or updater.
+        source='https://raw.githubusercontent.com/owner/repo/$(touch INJECTED) `touch INJECTED` "$x" & |'
+        result=self.run_manager_install(amrepo=source)
+        self.assertNotEqual(result.returncode,0)
+        self.assertIn(b'AMREPO',result.stderr)
+        self.assertFalse((self.path/'INJECTED').exists())
+        self.assertFalse(self.app.exists())
+        self.assertEqual(self.calls(),[])
 
     def test_actual_install_dispatch_keeps_incomplete_app_and_launcher_on_refusal(self):
         (self.app/'tmp').mkdir(parents=True)

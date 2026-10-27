@@ -1,5 +1,11 @@
 # Prepared fork shell publication validation
 
+> **2026-10-28 ownership correction:** [Ticket 29](../issues/29-respect-configured-catalog-repository.md) supersedes
+> this record's fixed-upstream ownership assumption. This fork's catalog follows
+> AMREPO and must not fall back to upstream AM. Upstream acceptance/publication
+> is not a prerequisite for this fork. Results and archived bytes below retain
+> their historical source/revision meaning; they do not define current policy.
+
 Ticket [26](../issues/26-prepare-fork-shell-validation.md), 2026-10-27.
 Preparation complete; **no remote publication or live shell read performed**.
 

@@ -1,4 +1,12 @@
-# Upstream adoption boundary after fork validation
+# Historical upstream adoption assessment (superseded)
+
+> **2026-10-28 ownership correction:** [Ticket 29](../issues/29-respect-configured-catalog-repository.md) supersedes
+> this record's fixed-upstream ownership assumption. This fork's catalog follows
+> AMREPO and must not fall back to upstream AM. Upstream acceptance/publication
+> is not a prerequisite for this fork. Results and archived bytes below retain
+> their historical source/revision meaning; they do not define current policy.
+> The upstream-first rollout recommendation below is withdrawn as the current
+> continuation plan. It describes optional future upstream adaptation only.
 
 Ticket [28](../issues/28-upstream-adoption-readiness.md).
 Source audited: `b6892ff2f3f8e89a23415e5188bc26bceb67469a`.

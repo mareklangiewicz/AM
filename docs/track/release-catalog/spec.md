@@ -20,14 +20,39 @@ See [earlier design](../../design/version-catalog.md) for prior GraphQL measurem
 
 After the bounded baseline/hour experiment, Marek accepted provisional exact REST snapshots and proceeding without waiting for a day observation. Day sampling is optional, not a blocker or scheduled work. Storage/publication design is recorded under design/storage-publication-v1.md; it remains a proposal pending offline verification. Full live collection, remote publication, installer integration and schedules remain outside the current authorized work.
 
+## Current repository ownership (2026-10-28; authoritative correction)
+
+Catalog reads follow the configured **AMREPO**, exactly as this fork's package
+source does. The variable is AMREPO (not APREPO); this fork defaults to
+`https://raw.githubusercontent.com/mareklangiewicz/AM/main-marek`. Its catalog is
+in **mareklangiewicz/AM**, on release-catalog. An upstream AM installation would
+use its own configured repository. This fork must never silently read or fall
+back to ivan-hc/AM's catalog. Upstream acceptance/publication is not a prerequisite
+for using our fork, including its additional packages.
+
+The shared reader takes the selected raw-GitHub source through AMREPO, validates
+it, and derives the owner/repository centrally. Manager installation embeds that
+source in the recipe/generated updater for standalone execution; managed updates
+pass the manager's current AMREPO. An explicitly set empty source, missing source
+in an unprepared script, unsupported/local source, or missing catalog refuses
+without a different repository fallback. Pinning, exact stale consent, measured
+freshness, integrity and original app binary URLs remain unchanged.
+
+[29: implementation and tracker reconciliation](issues/29-respect-configured-catalog-repository.md)
+supersedes the fixed-upstream ownership assumption in tickets 23–28, their linked
+records, and the ownership wording in the historical accepted direction below.
+The fork publisher's fixed allowlist is correct and stays unchanged. Upstream
+portability/submission is optional later work, not the current continuation task.
+No new workflow dispatch, collection, schedule or host app execution is implied.
+
 ## Accepted adoption direction (2026-10-27)
 
 Marek's current priority is to simplify AM and remove reliance on independently
 operated API proxies/sources. Keep app version/asset selection in existing filters;
-keep binaries at their original upstream download URLs. An upstream proposal should
-use an AM-owned catalog in AM's own repository, not require trust in this development
-fork or a new service. This preserves existing AM/GitHub trust; it does not make
-catalog metadata or body hashes independent proof of binary authenticity.
+keep binaries at their original upstream download URLs. For any future upstream
+proposal, its installation should use its own configured repository. The original interpretation that our fork must also use upstream AM
+is superseded by the current ownership correction above. This preserves existing
+AM/GitHub trust; it does not make catalog metadata or body hashes independent proof of binary authenticity.
 
 Python can remain in CI collection/validation. Consumer/install/updater paths must
 stay shell-based with the existing supported utilities, without a new Python or jq
@@ -44,9 +69,10 @@ unused proxy rewriting/quota/token machinery as its callers migrate. Do not hide
 a larger client framework behind a superficially small diff or remove support
 still needed by other callers.
 
-The next-session frontier is [23: shared shell reader and one small recipe/updater
+Historical next-session frontier was [23: shared shell reader and one small recipe/updater
 migration](issues/23-shell-consumer-and-small-recipe-migration.md). Ticket 22's
 Python-runtime packaging recommendation is superseded. Its actual update-path
 findings and tickets 19–21's Python/opt-in evidence remain useful references.
-Implementation is deferred to the next session; this decision adds no installed
-migration, installer execution, schedule or automatic workflow authorization.
+That implementation and its ownership correction are now resolved in tickets 23–29;
+this historical decision adds no installed migration, installer execution, schedule
+or automatic workflow authorization.

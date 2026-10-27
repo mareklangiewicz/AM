@@ -171,13 +171,14 @@ BODY_SHA256 tuple from the stale refusal; it cannot bypass unavailable, future o
 integrity failures. There is no direct upstream fallback or installer side effect.
 See docs/track/release-catalog/design/catalog-consumer.md for scope and bounds.
 
-## Shared shell reader (tickets 23–24)
+## Shared shell reader (tickets 23–29)
 
 The installed-user path is `modules/catalog.am`, distributed through AM's normal
 shell module sync. It uses shell and existing utilities; neither Python nor jq
 is required by the reader or Obsidian recipe. Read-only invocation from a checkout:
 
 ```sh
+AMREPO=https://raw.githubusercontent.com/mareklangiewicz/AM/main-marek \
 sh modules/catalog.am \
   https://api.github.com/repos/obsidianmd/obsidian-releases/releases \
   --commit FULL_PUBLICATION_SHA
@@ -188,12 +189,16 @@ checks. An unpinned call resolves one publication commit. Stale refusal prints t
 exact `--commit SHA --accept-stale SHA REQUEST_ID BODY_HASH` arguments to repeat.
 No stale flag overrides availability, integrity or future/unsupported timing.
 
-The fixed publication owner is upstream **ivan-hc/AM**. That owner has not yet
-adopted/published this format. A separately approved development-fork publication
-and explicit-pin shell read succeeded with real HTTP and exact retained bytes;
-see the [fork validation evidence](../../docs/track/release-catalog/research/fork-shell-public-read-findings.md).
-The installed upstream owner remains unchanged. See the
-[implementation and public adoption plan](../../docs/track/release-catalog/design/shell-consumer.md).
+The publication repository follows the selected **AMREPO**, just like the AM
+package source. Our fork reads mareklangiewicz/AM, with no upstream-AM fallback.
+Missing/empty, unsupported-host/local and malformed sources refuse before network
+IO. The manager embeds the selected source in generated standalone updaters and
+passes its current AMREPO explicitly during managed updates. An unprepared recipe
+requires AMREPO in its environment. Upstream acceptance is not a fork dependency.
+The [historical fork validation](../../docs/track/release-catalog/research/fork-shell-public-read-findings.md)
+used a modified reader copy because of the now-fixed ownership defect; current
+source-selection regression checks use the unmodified helper. See the
+[implementation and ownership correction](../../docs/track/release-catalog/design/shell-consumer.md).
 
 The ordinary Obsidian installer and newly generated updater now invoke the shared
 reader before app-state changes. The manager embeds its managed module location,

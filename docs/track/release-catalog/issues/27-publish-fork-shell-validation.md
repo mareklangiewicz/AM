@@ -1,5 +1,11 @@
 # Publish and publicly read the prepared fork shell candidate
 
+> **2026-10-28 ownership correction:** [Ticket 29](29-respect-configured-catalog-repository.md) supersedes
+> this record's fixed-upstream ownership assumption. This fork's catalog follows
+> AMREPO and must not fall back to upstream AM. Upstream acceptance/publication
+> is not a prerequisite for this fork. Results and archived bytes below retain
+> their historical source/revision meaning; they do not define current policy.
+
 Type: task
 Status: resolved
 Triage: ready-for-agent
@@ -22,5 +28,6 @@ body bytes, exit 0, empty stderr, normal freshness and the identical retained
 Obsidian filter URL. Lookup/body hashes and bytes match the candidate.
 
 [Findings and persistent evidence](../research/fork-shell-public-read-findings.md).
-Production owner remains ivan-hc/AM. No workflow, new source collection, binary
+At that revision, production ownership was still incorrectly fixed to ivan-hc/AM
+(corrected by ticket 29). No workflow, new source collection, binary
 download, app execution, migration, schedule or source branch push.

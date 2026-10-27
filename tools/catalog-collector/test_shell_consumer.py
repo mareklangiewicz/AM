@@ -17,6 +17,7 @@ from test_storage import GEN
 ROOT = Path(__file__).resolve().parents[2]
 HELPER = ROOT / 'modules/catalog.am'
 PIN = 'b' * 40
+SOURCE = 'https://raw.githubusercontent.com/mareklangiewicz/AM/main-marek'
 ALIAS = 'https://api.github.com/repos/obsidianmd/obsidian-releases/releases'
 
 
@@ -42,9 +43,12 @@ class ShellFixture(unittest.TestCase):
 p=pathlib.Path(os.environ['FIXTURE'])
 a=sys.argv[1:]; url=a[-1]
 with (p/'calls').open('a') as f: f.write(json.dumps(a)+'\\n')
-if '/commits/' in url: raw=('b'*40+'\\n').encode()
+repository='/'.join(os.environ['AMREPO'].split('/')[3:5])
+if '/commits/' in url:
+    assert url=='https://api.github.com/repos/'+repository+'/commits/heads/release-catalog',url
+    raw=('b'*40+'\\n').encode()
 else:
-    assert '/ivan-hc/AM/'+'b'*40+'/' in url, url
+    assert url.startswith('https://raw.githubusercontent.com/'+repository+'/'+'b'*40+'/'),url
     name=url.split('/'+'b'*40+'/',1)[1]
     raw=(p/'tree'/name).read_bytes()
 (p/'last-url').write_text(url)
@@ -62,7 +66,7 @@ t=json.loads(p.read_text()); print(t.pop(0) if len(t)>1 else t[0]); p.write_text
         p.chmod(0o755)
 
     def env(self):
-        return {**os.environ, 'FIXTURE': str(self.path), 'PATH': str(self.bin)+':/usr/bin:/bin'}
+        return {**os.environ, 'AMREPO': SOURCE, 'FIXTURE': str(self.path), 'PATH': str(self.bin)+':/usr/bin:/bin'}
 
     def stage(self):
         for name, raw in self.tree.items():
@@ -91,8 +95,48 @@ class ShellConsumer(ShellFixture):
             self.assertEqual(result.returncode,0,result.stderr)
             self.assertEqual(result.stdout,self.body)
             self.assertEqual(len(self.calls()),2)
-            self.assertTrue(all('/ivan-hc/AM/'+PIN+'/' in c[-1] for c in self.calls()))
+            self.assertTrue(all('/mareklangiewicz/AM/'+PIN+'/' in c[-1] for c in self.calls()))
             self.assertTrue(all(c[0]=='-q' and '--max-filesize' in c and '-L' not in c for c in self.calls()))
+
+    def test_configured_fork_is_used_for_ref_and_both_pinned_reads(self):
+        # Regression: AM's configured repository must own every catalog request.
+        r=self.invoke(args=[], env={**self.env(), 'AMREPO':
+                      'https://raw.githubusercontent.com/mareklangiewicz/AM/main-marek'})
+        self.assertEqual(r.returncode,0,r.stderr)
+        self.assertEqual(len(self.calls()),3)
+        self.assertEqual(self.calls()[0][-1],
+                         'https://api.github.com/repos/mareklangiewicz/AM/commits/heads/release-catalog')
+        self.assertTrue(all('/mareklangiewicz/AM/'+PIN+'/' in c[-1] for c in self.calls()[1:]))
+
+    def test_selected_repository_and_branch_variants_never_fall_back(self):
+        for source in (SOURCE, 'https://raw.githubusercontent.com/another-owner/extra.apps/feature/catalog'):
+            for args in ([], ['--commit',PIN]):
+                r=self.invoke(args=args,env={**self.env(),'AMREPO':source})
+                self.assertEqual(r.returncode,0,r.stderr)
+                repository='/'.join(source.split('/')[3:5])
+                self.assertTrue(all('/'+repository+'/' in c[-1] for c in self.calls()))
+                self.assertFalse(any('/ivan-hc/AM/' in c[-1] for c in self.calls()))
+
+    def test_missing_invalid_and_local_source_refuse_before_network(self):
+        for source in (None, '', 'file:///tmp/AM', 'https://example.com/owner/AM/main',
+                       'https://raw.githubusercontent.com/owner/AM',
+                       'https://raw.githubusercontent.com/owner/AM/main?other=repo',
+                       'https://raw.githubusercontent.com/owner/AM/main\nhttps://raw.githubusercontent.com/ivan-hc/AM/main'):
+            env=self.env()
+            if source is None: env.pop('AMREPO')
+            else: env['AMREPO']=source
+            r=self.invoke(env=env)
+            self.assertNotEqual(r.returncode,0)
+            self.assertIn(b'AMREPO',r.stderr)
+            self.assertEqual(r.stdout,b'')
+            self.assertEqual(self.calls(),[])
+
+    def test_selected_catalog_transfer_refusal_never_tries_upstream(self):
+        r=self.invoke(env={**self.env(),'HTTP_STATUS':'404'})
+        self.assertNotEqual(r.returncode,0)
+        self.assertEqual(r.stdout,b'')
+        self.assertEqual(len(self.calls()),1)
+        self.assertIn('/mareklangiewicz/AM/'+PIN+'/',self.calls()[0][-1])
 
     def test_resolve_once(self):
         result=self.invoke(args=[])

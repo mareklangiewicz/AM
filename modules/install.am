@@ -275,6 +275,9 @@ _install_arg() {
 		[ -r "$MODULES_PATH/catalog.am" ] || { echo 'Missing catalog.am; synchronize AM modules.' >&2; exit 1; }
 		catalog_path=$(printf '%s' "$MODULES_PATH/catalog.am" | sed 's/[\\"`$]/\\&/g' | sed 's/[\\&|]/\\&/g')
 		sed -i "s|/opt/am/modules/catalog.am|$catalog_path|g" ./"$arg" || exit 1
+		# Persist the selected source in the recipe and heredoc-generated updater.
+		catalog_source=$(printf '%s' "$AMREPO" | sed 's/[\\"`$]/\\&/g' | sed 's/[\\&|]/\\&/g')
+		sed -i 's|^AMREPO=${AMREPO-}$|AMREPO=${AMREPO-"'"$catalog_source"'"}|g' ./"$arg" || exit 1
 	fi
 	# Patch to apply to installation scripts
 	sed -i "s# https://api.github.com#$HeaderAuthWithGITPAT https://api.github.com#g" ./"$arg"

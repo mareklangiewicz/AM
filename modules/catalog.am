@@ -1,6 +1,6 @@
 #!/bin/sh
 # AMCLI shared catalog reader v1. Executed with sh, never sources catalog data.
-# Usage: sh catalog.am ALIAS [--commit SHA] [--accept-stale SHA REQUEST HASH]
+# Usage: AMREPO=https://raw.githubusercontent.com/OWNER/REPO/BRANCH sh catalog.am ALIAS [--commit SHA] [--accept-stale SHA REQUEST HASH]
 set -eu
 LC_ALL=C
 export LC_ALL
@@ -20,6 +20,12 @@ hex() { [ "${#1}" -eq "$2" ] && case $1 in *[!0-9a-f]*) return 1;; esac; }
 for tool in curl awk date sha256sum mktemp wc cat rm grep; do
     command -v "$tool" >/dev/null 2>&1 || fail "missing tool: $tool"
 done
+# Use the selected AM source; unsupported/local sources have no remote fallback.
+source=${AMREPO-}
+case $source in *[!A-Za-z0-9_./:-]*) fail 'unsupported AMREPO characters' ;; esac
+printf '%s\n' "$source" | grep -Eq '^https://raw\.githubusercontent\.com/[A-Za-z0-9-]+/[A-Za-z0-9_.-]+/[A-Za-z0-9_./-]+$' || fail 'missing or unsupported AMREPO'
+repository=${source#https://raw.githubusercontent.com/}
+owner=${repository%%/*}; repository=${repository#*/}; repository=$owner/${repository%%/*}
 # GNU date's fractional UTC epoch preserves the inclusive 24-hour boundary.
 clock() { date -u +%s.%6N; }
 start=$(clock)
@@ -42,13 +48,13 @@ fetch() {
     ) || fail 'catalog transfer refused'
     [ "$code" = 200 ] && [ "$(wc -c < "$out")" -le "$cap" ] || fail 'catalog response refused'
 }
-# Target is AM-owned publication. The development fork is deliberately not a default.
+# Resolve only the catalog owned by the configured AM repository.
 if [ -z "$pin" ]; then
-    fetch 'https://api.github.com/repos/ivan-hc/AM/commits/heads/release-catalog' 128 "$scratch/ref" 'application/vnd.github.sha'
+    fetch "https://api.github.com/repos/$repository/commits/heads/release-catalog" 128 "$scratch/ref" 'application/vnd.github.sha'
     pin=$(cat "$scratch/ref")
     hex "$pin" 40 || fail 'invalid publication ref'
 fi
-root="https://raw.githubusercontent.com/ivan-hc/AM/$pin"
+root="https://raw.githubusercontent.com/$repository/$pin"
 fetch "$root/lookup.tsv" 2000000 "$scratch/lookup" 'application/octet-stream'
 # Check framing, uniqueness and the selected record without interpreting fields as code.
 row=$(AM_CATALOG_ALIAS="$alias" awk -F '\t' '

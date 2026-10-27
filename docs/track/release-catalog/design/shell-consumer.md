@@ -1,6 +1,7 @@
 # Shared shell consumer: implemented slice
 
-Ticket [23](../issues/23-shell-consumer-and-small-recipe-migration.md).
+Tickets [23](../issues/23-shell-consumer-and-small-recipe-migration.md) and
+[29: corrected repository ownership](../issues/29-respect-configured-catalog-repository.md).
 The Python consumer remains a reference/test oracle. Installed Obsidian recipes
 and their newly generated updaters execute `modules/catalog.am` with `sh`.
 Nothing was installed or migrated on the host during this work.
@@ -41,12 +42,21 @@ Date/awk/mktemp/wc/rm are existing manager utilities. No Python, jq, checkout,
 standalone runtime package or runtime download hook is added. Missing tools or
 unsupported date output refuse visibly. BSD/BusyBox portability is not claimed.
 
-The fixed publication owner is **ivan-hc/AM**, not Marek's development fork.
-One optional unauthenticated GitHub commit read resolves `heads/release-catalog`
-using the [documented SHA media type](https://docs.github.com/en/rest/commits/commits#get-a-commit).
-An explicit full commit skips resolution. The lookup and selected body then use
-only that full commit on raw.githubusercontent.com. There is no proxy, token,
-redirect, retry, alternate publication owner or source-API fallback. Curl ignores
+Catalog ownership follows **AMREPO**, the selected AM package source. This fork's
+source is `https://raw.githubusercontent.com/mareklangiewicz/AM/main-marek`, so its
+catalog reads use mareklangiewicz/AM. The reader requires that environment value,
+validates the supported raw-GitHub owner/repository/branch form and derives the
+repository centrally. Missing/empty, malformed/multiline, other-host and local
+file sources refuse before any network request. There is no default upstream
+owner, alternate-repository fallback or source-API fallback. The source branch
+selects the repository; the catalog ref stays release-catalog, independently of
+source branch (including source branch names containing slashes).
+
+One optional unauthenticated GitHub commit read resolves heads/release-catalog
+in that selected repository using the documented SHA media type. An explicit full
+commit skips resolution. Lookup and body use only that full commit in the same
+repository on raw.githubusercontent.com. There is no proxy, token, redirect or retry.
+Curl ignores
 its config and proxy settings; reads have size and time limits, with a temporary
 file-size rlimit as an additional disk bound. At most three catalog GETs, each
 limited to 30 seconds, may occur; the reader refuses elapsed reads beyond 90
@@ -68,6 +78,14 @@ absolute location in both recipe and generated updater, including AppMan and
 system-package module locations. Shell metacharacters are escaped when embedding
 the path; it is never reconstructed from a checkout or bootstrapped by an updater.
 A missing helper requires normal module synchronization and refuses execution.
+Installation also embeds the selected AMREPO value in both recipe and generated
+updater, escaped as literal shell data, for standalone execution without the
+manager or inherited environment. The source is exported to the shared helper.
+Managed updates explicitly pass the manager's current AMREPO, even if it is not
+exported, overriding the installation-time default. An explicit empty value
+refuses rather than selecting a fallback. An unprepared recipe needs AMREPO set;
+it has no hardcoded repository. Existing installed scripts are not rewritten by
+this source change; migration remains separate.
 System launcher-directory creation and broken-link repair are deferred into the
 recipe after preflight. The installation dispatcher preserves incomplete app state
 when its replacement recipe is unavailable; it does not run the previous remover
@@ -105,12 +123,13 @@ run that manager check. No claim of zero additional binary-source reads is made.
 
 ## Cost and displaced machinery
 
-Compared with source `0a21fef3c`: the shared reader is **96 lines**, manager changes
-are **+53 net lines**, installation module changes **+29**, and Obsidian **+1**:
-**+179 net client source lines** for this first app after the
+Compared with source `0a21fef3c`: the shared reader is **102 lines**, manager changes
+are **+53 net lines**, installation module changes **+32**, and Obsidian **+7**:
+**+194 net client source lines** for this first app after the ownership correction and
 [ticket-25 integration fixes](../issues/25-review-shell-adoption.md). The initial
 ticket-23 slice was +139; review added 40 lines to preserve recovery and preflight
-semantics at real manager entrypoints. The CI-only TSV generator is
+semantics at real manager entrypoints. Ticket 29 adds 15 lines for validated source
+selection and persistent configuration handoff. These counts do not prove simplification. The CI-only TSV generator is
 33 lines, plus small validation/path-allowlist changes. This slice removes the
 consumer language/checkout requirement and centralizes safeguards; it does not
 claim a net source-line reduction from migrating only one app. The retained Python
@@ -166,22 +185,18 @@ incomplete-install repair. The first passing suites did not establish these
 properties; their counts above remain historical evidence. The final reviewed suite passes
 **100 tests**, with the syntax and ShellCheck checks above repeated successfully.
 
-At completion of ticket 25 there was no live shell publication/read result. Upstream has not accepted this
-format, and the fixed upstream reader will refuse until an AM-owned publication
-provides it. No workflow was changed or run, no upstream collection was performed,
-no schedule enabled, and no host app installer/updater or installed migration ran.
+The initial tickets 23–25 had no live shell publication/read result and incorrectly
+required an upstream-owned catalog even for this fork. That ownership assumption
+is superseded by ticket 29. Ticket 27's retained candidate and successful public
+read are fork delivery evidence. Our fork does not require upstream acceptance.
+No host app installer/updater or installed migration ran in this work.
 
-Before any public adoption: review the upstream AM-owned publication source and
-permissions, publish one recomputed retained candidate through an explicitly
-approved publication action (no fresh collection required), and record its full
-commit. Then authorize **two public catalog GETs** for one explicit pin: lookup
-and the Obsidian body, with no binary download or installer. Compare returned
-bytes/hash/filter to the retained candidate. A separately authorized ref smoke
-can add exactly one SHA-resolution GET. Recheck workflow isolation before any
-fork workflow validation; its ownership remains development evidence, not the
-installed reader's trust target. Installed-state migration remains a separate
-user action after public validation and upstream acceptance.
-
+Further public checks use the actual configured repository and unmodified reader,
+with a concrete full publication pin and measured freshness or explicitly approved
+exact stale consent. They do not require another publication, source collection
+or binary download merely to validate source selection. Recheck workflow isolation
+before any separately approved workflow validation. Sustained freshness and any
+installed migration remain explicit operational steps, without an implied schedule.
 
 ## Subsequent bounded fork validation (ticket 27)
 
@@ -190,7 +205,24 @@ now verifies one retained-data format-only child, a0fdd1255, and an explicit-pin
 shell read through an archived fork-only reader copy. Exactly two real HTTP 200
 catalog GETs returned the candidate lookup/body bytes and unchanged filter URL,
 with normal measured freshness, exit 0 and empty stderr. Only the two literal
-owner strings differ in that test copy; production remains fixed to ivan-hc/AM.
+owner strings differed in that historical test copy; the production reader at
+that revision was incorrectly fixed to ivan-hc/AM. Ticket 29 removes that defect
+and makes a fork-only modified copy unnecessary.
 This supersedes the earlier absence of a live shell result for the development
-fork only. Upstream publication/adoption, unpinned resolution and installed
-migration remain unverified. No workflow, collection, schedule or app execution.
+fork only. Historical upstream adoption limitations are not fork-use blockers.
+Live unpinned resolution and installed migration remain unverified. No workflow, collection, schedule or app execution.
+
+
+## Configured-source regression verification (ticket 29)
+
+The final current suite passes **107 tests**. The pre-fix ownership regression
+failed on the actual upstream-AM request despite a fork AMREPO; it now passes.
+Actual installation dispatch clears AMREPO across the privilege wrapper and uses
+the embedded source. The generated standalone updater works with no inherited
+AMREPO. The actual newrepo-selection function supplies a changed, nonexported
+source to managed execution. Missing/empty/unsupported/local/multiline sources
+and selected-catalog HTTP failure never try a fallback repository. Syntax and
+reader/recipe lint pass. Full [findings](../research/catalog-source-correction-findings.md)
+and [tracker correction](../issues/29-respect-configured-catalog-repository.md)
+record what supersedes the historical fixed-upstream claims. No new live read
+was performed by this repair.

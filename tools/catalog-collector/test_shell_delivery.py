@@ -28,10 +28,10 @@ a=sys.argv[1:]; url=a[-1]
 with (p/'calls').open('a') as f: f.write(json.dumps(a)+'\\n')
 def git(*args):
     return subprocess.run(['/usr/bin/git','--git-dir='+str(repo),*args],check=True,capture_output=True).stdout
-if url=='https://api.github.com/repos/ivan-hc/AM/commits/heads/release-catalog':
+if url=='https://api.github.com/repos/mareklangiewicz/AM/commits/heads/release-catalog':
     raw=git('rev-parse','refs/heads/release-catalog')
 else:
-    match=re.fullmatch(r'https://raw.githubusercontent.com/ivan-hc/AM/([0-9a-f]{40})/(lookup\\.tsv|bodies/[0-9a-f]{64}\\.json)',url)
+    match=re.fullmatch(r'https://raw.githubusercontent.com/mareklangiewicz/AM/([0-9a-f]{40})/(lookup\\.tsv|bodies/[0-9a-f]{64}\\.json)',url)
     assert match, url
     commit, name=match.groups(); raw=git('show',commit+':'+name)
     # Move the branch after its first pinned metadata read, before body fetch.
