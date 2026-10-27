@@ -17,7 +17,7 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 ## Fog
 
 - [06 resolved](issues/06-manual-rest-churn-experiment.md): baseline/hour measurements support provisional REST-first work; day sampling is optional. Fleet storage remains unmeasured.
-- [08 resolved](issues/08-offline-storage-prototype.md): 64 offline replay checks support the bounded format/state/publication contract; [09 resolved](issues/09-review-offline-findings.md) records review refinements; [10 resolved](issues/10-offline-client-freshness.md) verifies bounded freshness/consent; [11 resolved](issues/11-review-client-and-collection-boundaries.md) accepts the initial policy/direction; [12 resolved](issues/12-offline-restricted-collector.md) implements the offline core; [13 resolved](issues/13-prepare-adapter-and-enrollment-review.md) prepares that review; [14 resolved](issues/14-offline-supervised-transport.md) implements the adapter offline; [15 resolved](issues/15-review-adapter-and-stage-manifest.md) stages the inactive run package; one-read SQLite enrollment needs explicit authorization.
+- [08 resolved](issues/08-offline-storage-prototype.md): 64 offline replay checks support the bounded format/state/publication contract; [09 resolved](issues/09-review-offline-findings.md) records review refinements; [10 resolved](issues/10-offline-client-freshness.md) verifies bounded freshness/consent; [11 resolved](issues/11-review-client-and-collection-boundaries.md) accepts the initial policy/direction; [12 resolved](issues/12-offline-restricted-collector.md) implements the offline core; [13 resolved](issues/13-prepare-adapter-and-enrollment-review.md) prepares that review; [14 resolved](issues/14-offline-supervised-transport.md) implements the adapter offline; [15 resolved](issues/15-review-adapter-and-stage-manifest.md) staged the reviewed run package; [16 resolved](issues/16-first-supervised-live-validation.md) validates its first live six-route baseline after approved SQLite enrollment.
 - [04 resolved](issues/04-compare-collection-strategies.md): REST-first experiment agreed; revisit the representation if churn/storage evidence or future consumer needs justify it.
 - Retention and Git growth; volatile response fields; large asset lists; removed upstream data; standalone updater migration; actual publishing privilege separation; eventual upstream preferences.
 
@@ -147,3 +147,13 @@ The inactive workflow and six-release baseline require separate approval.
 explicitly approved pushing enrollment, installing/pushing the prepared manual-only
 workflow and one six-release adapter run. Current server settings retain the five
 unrelated workflows disabled; recheck exact revision/isolation before dispatch.
+
+
+2026-10-27: [16 resolved](issues/16-first-supervised-live-validation.md). Approved
+manual workflow installed/pushed at 79159ba68; historical probe disabled so only
+the collector is active. Exactly one authorized dispatch, run 40529551070,
+succeeded with six HTTP 200 complete transfers (4,877,758 bytes / 5.198 seconds).
+[Findings, machine checks and persistent exact evidence](research/supervised-baseline-40529551070-findings.md)
+verify every body hash, six numeric routes, quota and timing. No retry, schedule,
+publication or app change. Storage/publication/client integration remain separate;
+no day sample or wait is required. Further collection needs explicit instruction.

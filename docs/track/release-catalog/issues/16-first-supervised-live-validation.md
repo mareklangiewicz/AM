@@ -1,7 +1,7 @@
 # First supervised adapter live validation
 
 Type: task
-Status: claimed
+Status: resolved
 Triage: ready-for-agent
 
 ## Authorization and bounds
@@ -29,3 +29,13 @@ No upstream release endpoint was read by these control-plane checks.
 - Retain bounded public evidence, inspect all attempted/not-attempted endpoints,
   route statuses, quota and timing; distinguish transfer from release validation.
 - Record failure without automatically retrying; no further dispatch is authorized.
+
+## Answer
+
+Installed/pushed approved source/workflow revision 79159ba68f4f4c50bcf050e2e6c908af3a799fd0.
+Verified sole-active-collector isolation and dispatched exactly once. Run
+[40529551070](https://github.com/mareklangiewicz/AM/actions/runs/40529551070)
+succeeded: six complete HTTP 200 responses, 4,877,758 bytes, 5.198 seconds.
+[Findings and persistent evidence](../research/supervised-baseline-40529551070-findings.md)
+record exact provenance, hashes, quota evidence, offline structure checks and limits.
+No retry, follow-up collection, publication or client integration occurred.

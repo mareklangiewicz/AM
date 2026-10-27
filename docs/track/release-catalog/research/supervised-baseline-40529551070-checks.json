@@ -1,0 +1,95 @@
+{
+  "run_id": 40529551070,
+  "run_attempt": 1,
+  "source_revision": "79159ba68f4f4c50bcf050e2e6c908af3a799fd0",
+  "manifest_sha256": "1c550b882e9855a7a652e44516d88db95046641da92f4b6e34fd65b9a6da87b9",
+  "run": {
+    "attempted": 6,
+    "completed": 6,
+    "not_attempted": [],
+    "stop_reason": null,
+    "all_attempted": true,
+    "complete": true,
+    "received_bytes": 4877758,
+    "elapsed_seconds": 5.19837244
+  },
+  "checks": [
+    {
+      "name": "obsidian-list",
+      "url": "https://api.github.com/repositories/262342594/releases",
+      "status": 200,
+      "body_bytes": 450991,
+      "body_sha256": "ae7aaa989993841d2c2e2321535aefecd460e91cd3673d95c328f12d40967aad",
+      "release_count": 30,
+      "elapsed_seconds": 0.724093,
+      "quota_remaining": "4999"
+    },
+    {
+      "name": "obsidian-latest",
+      "url": "https://api.github.com/repositories/262342594/releases/latest",
+      "status": 200,
+      "body_bytes": 13889,
+      "body_sha256": "72bd3c60a79250b991082f43d14fbf5ce7fc498667d6496e4680e1d3897c9c04",
+      "release_count": 1,
+      "elapsed_seconds": 0.558413,
+      "quota_remaining": "4999"
+    },
+    {
+      "name": "neovim-list",
+      "url": "https://api.github.com/repositories/16408992/releases",
+      "status": 200,
+      "body_bytes": 822243,
+      "body_sha256": "3f048102637beb11f9aa384547465e686ce2bc636e1a9536e00ee3fa10acba7b",
+      "release_count": 30,
+      "elapsed_seconds": 0.933579,
+      "quota_remaining": "4998"
+    },
+    {
+      "name": "neovim-latest",
+      "url": "https://api.github.com/repositories/16408992/releases/latest",
+      "status": 200,
+      "body_bytes": 24511,
+      "body_sha256": "ab34abbc7c760d9c3b70296f7a987a9305ead424dcccc0bce372e68783154409",
+      "release_count": 1,
+      "elapsed_seconds": 0.436083,
+      "quota_remaining": "4998"
+    },
+    {
+      "name": "wezterm-list",
+      "url": "https://api.github.com/repositories/120568143/releases?per_page=100",
+      "status": 200,
+      "body_bytes": 2935205,
+      "body_sha256": "9c0ae52d48d76baab38a529687cd54150b42d2c719969d8ba702355bc4dcb5f3",
+      "release_count": 64,
+      "elapsed_seconds": 1.822155,
+      "quota_remaining": "4997"
+    },
+    {
+      "name": "sqlitebrowser-list",
+      "url": "https://api.github.com/repositories/19416551/releases?per_page=100",
+      "status": 200,
+      "body_bytes": 630919,
+      "body_sha256": "5d2cdc9bca0b723466c5f27de361da1b90a8bbbf314b590f637855f9acdc21b6",
+      "release_count": 42,
+      "elapsed_seconds": 0.722503,
+      "quota_remaining": "4996"
+    }
+  ],
+  "verified": [
+    "six exact manifest descriptors in order",
+    "all complete HTTP 200 without conditional headers",
+    "body byte lengths and SHA256 hashes",
+    "content lengths and bounded sequential timestamps",
+    "JSON list/latest-object shapes and release identity fields",
+    "own repository excluded",
+    "only collector workflow active"
+  ],
+  "limitations": [
+    "no full release-content or binary authenticity validation",
+    "no publication/storage/client integration",
+    "not a capacity or adversarial audit",
+    "runner Python version was not recorded"
+  ],
+  "evidence_archive": "supervised-baseline-40529551070-evidence.tar.gz",
+  "evidence_archive_sha256": "037f19a159d8788fcb95c4d6a8fe182ee44d3c452412bb3da826e3b94ba45dd9"
+}
