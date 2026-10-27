@@ -383,3 +383,12 @@ spec/map/design/README and all affected tickets/historical plans identify this
 correction; ticket 28's upstream-first recommendation is withdrawn. Historical
 archives/JSON retain their original bytes/source revisions. No live requests,
 collection, workflow, publication, app execution, installed migration or schedule.
+
+
+2026-10-28: [30 resolved: current helper public read](issues/30-current-helper-public-read.md).
+Unmodified 3a843e656 helper with explicit fork AMREPO and a0fdd1255 pin made two
+HTTP 200 GETs, passed real freshness without stale consent, and returned exact
+retained lookup/body bytes and the unchanged recipe filter URL. Initial sandbox
+DNS refusal and approved network run are separately retained in
+[findings/evidence](research/current-helper-public-read-findings.md).
+No publication, collection, workflow, schedule, binary download or app execution.
