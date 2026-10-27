@@ -224,3 +224,14 @@ injected consumer fetch/time plus a shell-command shim; no fresh HTTP or end-to-
 live CLI claim. Full-checkout dependency and unchanged legacy filter limitations
 are documented. No installer execution, installed state change, updater migration,
 workflow dispatch, publication or push. Next adoption scope remains undecided.
+
+
+2026-10-27: [21 resolved](issues/21-obsidian-live-read.md). Actual Obsidian
+--catalog-version with explicit d612ff34b pin succeeded end to end at c9f74c7df,
+without injection/shim. Two GETs on the successful invocation, fresh observation,
+empty stderr, URL equal to both existing filters on retained publication bytes;
+body/index hashes match retained ticket 18 artifact. Initial sandbox attempt
+refused (its request count unmeasured), then approved network access succeeded.
+Evidence is retained alongside the ticket. No installer, asset download, workflow,
+collection, publication or installed state change. Ordinary update adoption remains
+a separate design decision.
