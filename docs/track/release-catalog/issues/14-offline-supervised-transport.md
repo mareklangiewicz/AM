@@ -1,7 +1,7 @@
 # Implement and check the supervised adapter offline
 
 Type: task
-Status: open
+Status: resolved
 Triage: ready-for-agent
 Blocked by: 13
 
@@ -42,3 +42,23 @@ credentials, package installation or installed-app changes.
 No live enrollment or six-release run follows automatically. Review the implemented
 adapter and exact code/manifest/workflow revision before asking for separate live
 validation. The one missing-ID metadata request remains unperformed.
+
+
+## Answer — 2026-10-27
+
+Implemented tools/catalog-collector/supervised_transport.py behind the existing
+collector API. It enforces numeric fetches, approved revision checks, one worker
+per planned descriptor, protected bootstrap IPC, actual conditional evidence,
+bounded pre-parser input and parent-enforced absolute process deadlines.
+
+[Findings](../research/supervised-adapter-findings.md) and
+[checks](../research/supervised-adapter-checks.json) record 44 passing offline tests:
+19 adapter, 17 collector and eight churn. Tests use fake sockets and real local
+processes/pipes, with no outbound or loopback HTTP and no actual token. Cleanup,
+trickle traffic, handshake/header timing, strict chunk framing and parser close
+compatibility were exercised. No active workflow or live CLI was added.
+
+Real TLS/GitHub behavior, trusted workflow provenance and missing source enrollment
+remain unverified. [15](15-review-adapter-and-stage-manifest.md) reviews the concrete
+implementation and stages the real manifest prerequisites before any separately
+authorized identity read or six-release baseline. Neither run is authorized here.

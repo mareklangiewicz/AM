@@ -17,7 +17,7 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 ## Fog
 
 - [06 resolved](issues/06-manual-rest-churn-experiment.md): baseline/hour measurements support provisional REST-first work; day sampling is optional. Fleet storage remains unmeasured.
-- [08 resolved](issues/08-offline-storage-prototype.md): 64 offline replay checks support the bounded format/state/publication contract; [09 resolved](issues/09-review-offline-findings.md) records review refinements; [10 resolved](issues/10-offline-client-freshness.md) verifies bounded freshness/consent; [11 resolved](issues/11-review-client-and-collection-boundaries.md) accepts the initial policy/direction; [12 resolved](issues/12-offline-restricted-collector.md) implements the offline core; [13 resolved](issues/13-prepare-adapter-and-enrollment-review.md) prepares that review; [14](issues/14-offline-supervised-transport.md) is the supervised adapter implementation frontier.
+- [08 resolved](issues/08-offline-storage-prototype.md): 64 offline replay checks support the bounded format/state/publication contract; [09 resolved](issues/09-review-offline-findings.md) records review refinements; [10 resolved](issues/10-offline-client-freshness.md) verifies bounded freshness/consent; [11 resolved](issues/11-review-client-and-collection-boundaries.md) accepts the initial policy/direction; [12 resolved](issues/12-offline-restricted-collector.md) implements the offline core; [13 resolved](issues/13-prepare-adapter-and-enrollment-review.md) prepares that review; [14 resolved](issues/14-offline-supervised-transport.md) implements the adapter offline; [15](issues/15-review-adapter-and-stage-manifest.md) is the concrete review/manifest frontier.
 - [04 resolved](issues/04-compare-collection-strategies.md): REST-first experiment agreed; revisit the representation if churn/storage evidence or future consumer needs justify it.
 - Retention and Git growth; volatile response fields; large asset lists; removed upstream data; standalone updater migration; actual publishing privilege separation; eventual upstream preferences.
 
@@ -113,3 +113,13 @@ numeric-only operational fetch descriptors. Proposed identity enrollment is one
 separately authorized metadata GET, with any later six-release baseline separate.
 No requests or workflow changes were made. [14](issues/14-offline-supervised-transport.md)
 is the next offline implementation frontier.
+
+
+2026-10-27: [14 resolved](issues/14-offline-supervised-transport.md). Supervised
+numeric-ID adapter implemented with private IPC, genuine Connected event,
+bounded HTTP parsing and parent kill/reap deadlines. [Findings](research/supervised-adapter-findings.md)
+and [checks](research/supervised-adapter-checks.json) record 44 passing offline
+tests using fake sockets/local worker processes only. Active workflows are unchanged,
+SQLite identity is still missing and no live CLI or run was added.
+[15](issues/15-review-adapter-and-stage-manifest.md) prepares the concrete review,
+incomplete manifest and inactive workflow proposal.

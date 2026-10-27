@@ -1,7 +1,7 @@
 # Restricted-token collector core (offline implementation)
 
 Ticket 12; design: `docs/track/release-catalog/design/restricted-collector-v1.md`.
-This module has no network transport, workflow adapter, live CLI or environment
+The collector.py core has no network transport, workflow adapter, live CLI or environment
 credential lookup. The historical quota/churn probe and workflow remain separate.
 
 From the repository root (Python 3.10+):
@@ -69,3 +69,53 @@ plan. Not-attempted request IDs and total received bytes are explicit in reports
 Index/tree/history caps belong to storage/publication and are not falsely rechecked
 here on nonexistent publication trees. A future adapter and real reviewed identity
 manifest require separate review; nothing here dispatches a live experiment.
+
+## Supervised adapter (ticket 14)
+
+`supervised_transport.py` targets POSIX/Linux pipes and implements the reviewed numeric-ID-only operational
+profile. It is an importable API, with no public live command or workflow wiring.
+The older `replay.py` remains synthetic and does not invoke the real connector.
+
+Construct `SupervisedTransport` with the validated plan, trusted workflow ID and
+matching approved/current full source revision. Pass an explicitly constructed
+opaque `Token` to `collect`. These supplied values still require a trusted future
+workflow adapter; matching strings and a Token object alone cannot establish their
+provenance. This transport is scoped to one run: each planned request may start
+once, at most six workers total. Aliases never become fetch targets and a changed
+numeric URL still changes request ID and invalidates old state.
+
+A fresh isolated Python worker gets one bounded bootstrap over private stdin.
+Its argv/environment never contain the token; only LANG is inherited, Python uses
+-I/-S, unneeded descriptors close, stderr is discarded and no debug/request trace
+is enabled. No proxy/netrc/gh/config identity discovery or default credential path
+exists. The child explicitly connects DNS/TCP/TLS, emits Connected after handshake,
+then sends one direct HTTPS GET with identity content encoding and actual approved
+conditional headers. System CA verification and api.github.com hostname checks stay
+enabled. No redirect/retry path exists.
+
+The parent uses nonblocking bounded IPC and select with absolute connect/request/
+batch deadlines, kills/reaps on timeout or cancellation, and requires clean worker
+exit before exposing End. Cleanup has a one-second reap bound after kill; it does
+not extend allowed network time. A blocking DNS/socket worker and a trickling pipe
+cannot indefinitely stall the parent. OS process scheduling/reaping remains an
+operating-system assumption, not a hard real-time promise.
+
+Before HTTP header parsing, the limited socket reader bounds total wire headers
+at 64,000 bytes and individual lines at 8,192. Retained public values keep the core
+bounds. Body chunks are <=8,192; body cap is 8,000,000 with one possible consumed
+rejection sentinel. IPC lengths are rejected before payload allocation. Core
+received-byte metrics count forwarded body events, not that private overflow
+sentinel or HTTP framing bytes. HTTPResponse handles transfer decoding; JSON bytes
+remain exact. Duplicate Content-Length, TE+CL ambiguity, compression, malformed
+chunk delimiters, chunk extensions and nonempty trailers refuse. This strict
+profile can refuse otherwise legal HTTP responses; record and review such a refusal
+rather than broadening it implicitly. Cumulative chunk framing has its own 64,000
+byte cap, in addition to the initial header budget.
+
+Tests add real local subprocess/pipe timeout, trickle, cancellation and cleanup
+checks, plus fake socket parsing and core integration. They never connect outbound
+or to a loopback HTTP server; any production socket creation in the parent tests is
+blocked, and the internal bootstrap test supplies an invalid config before connect.
+No real token is used. Parser compatibility has been exercised on the recorded local
+Python version, not every Python 3.10+ release. Real TLS/DNS, GitHub route behavior,
+workflow context provenance and the missing SQLite ID still need separate review.
