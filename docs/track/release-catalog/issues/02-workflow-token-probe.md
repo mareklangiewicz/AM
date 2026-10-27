@@ -2,7 +2,7 @@
 
 Type: prototype
 Status: open
-Triage: ready-for-human
+Triage: ready-for-agent
 Blocked by: 05
 
 ## Question
@@ -34,3 +34,5 @@ Marek requires experimental workflows to run only by manual dispatch and wants t
 2026-10-27 continuation: manual-only revision 4a2083e2a is pushed. gh confirms Actions remains off and there are no pending runs. Registration/isolation is tracked separately in [05](05-isolate-and-register-manual-probe.md); no dispatch or repository enablement has occurred.
 
 2026-10-27: default branch changed to main-marek with Marek's approval. gh workflow list now shows Catalog quota probe (398162689). Registration is resolved without a stub. Repository Actions is still disabled; [05](05-isolate-and-register-manual-probe.md) now covers only remaining isolation/enablement. No quota probe has been dispatched.
+
+2026-10-27: [05 resolved](05-isolate-and-register-manual-probe.md). Actions is enabled with only the manual probe active, and no runs are pending. Waiting for explicit instruction to dispatch the bounded probe. Remote main-marek currently contains probe version 4a2083e2a; pending local documentation/inventory commits do not change the probe. Record the exact remote head SHA when dispatching.

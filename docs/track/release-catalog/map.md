@@ -17,7 +17,7 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 ## Fog
 
 - [02: measure workflow-token behavior](issues/02-workflow-token-probe.md): REST headers and conditional requests, bounded GraphQL batching, actual Actions quotas. Local probe is prepared; a remote run is pending.
-- [05: isolate and enable manual probe](issues/05-isolate-and-register-manual-probe.md): registration resolved by making main-marek default; unrelated workflow isolation and Actions enablement remain pending approval.
+- [02: run the prepared manual probe](issues/02-workflow-token-probe.md): setup is complete; dispatch awaits explicit run instruction. [05](issues/05-isolate-and-register-manual-probe.md) records verified isolation and enablement.
 - [04: compare collection strategies](issues/04-compare-collection-strategies.md): whether REST snapshots, structured GraphQL observations, or a limited combination best balance compatibility, simplicity, payload size, and freshness.
 - Retention and Git growth; volatile response fields; large asset lists; removed upstream data; standalone updater migration; actual publishing privilege separation; eventual upstream preferences.
 
@@ -32,3 +32,5 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 2026-10-27: [03 resolved](issues/03-inventory-release-requests.md), with [measured inventory](research/request-inventory-findings.md): 8,337 literal release URLs, 164 unresolved dynamic occurrences, 1,559 shared URLs across architectures. Daily polling averages 347.4 REST calls/hour before overhead, so a full hourly sweep is not required by the 24-hour target. Existing classifier counts reproduced. Prepared local one-file registration commit 43cceedf7 without checking out or merging main. [05](issues/05-isolate-and-register-manual-probe.md) records the proposed isolation/enablement plan; all Actions settings remain unchanged.
 
 2026-10-27: with Marek's explicit approval, changed fork default to main-marek via gh. GitHub immediately registered Catalog quota probe (398162689). This supersedes the main-branch stub plan; main was not modified. Actions remains disabled, and no experiment was dispatched. Updated [05](issues/05-isolate-and-register-manual-probe.md) with the remaining isolation/enablement steps.
+
+2026-10-27: [05 resolved](issues/05-isolate-and-register-manual-probe.md). Disabled all five unrelated workflows, verified isolation while Actions was off, then enabled Actions and verified the probe is the sole active workflow and there are no pending runs. No experiment dispatched. [02](issues/02-workflow-token-probe.md) is ready for an explicitly authorized manual run.
