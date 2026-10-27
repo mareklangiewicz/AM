@@ -319,3 +319,14 @@ pass. Updated current cost to +179 net client lines; +139 and previous test coun
 above are historical. No live workflow/publication, source collection, installed
 migration or schedule occurred. Changes remain saved in the working tree while
 Marek handles Git metadata access.
+
+
+2026-10-27: [26 resolved: prepare bounded fork shell validation](issues/26-prepare-fork-shell-validation.md).
+[Concrete candidate and approval plan](research/fork-shell-validation-plan.md)
+preserves the current fork publication's index/bodies/times and adds only derived
+lookup.tsv. Exact child `a0fdd125558c4629a07c7edd0d7f6f7f96b1dcc1` is bundled;
+parent was confirmed read-only as `d612ff34b492b337fe51128f769ec9d262d0ee86`.
+Local bundle/hash/body/filter checks and temporary bare-Git push pass. An explicit
+fork-only reader copy keeps the installed upstream trust target unchanged.
+No remote publication/live shell read, collection, workflow, schedule or app
+operation; the proposed publication and two-GET pinned read await approval.
