@@ -1,7 +1,7 @@
 # Prepare real-transport and identity-enrollment review
 
 Type: task
-Status: open
+Status: resolved
 Triage: ready-for-agent
 Blocked by: 12
 
@@ -29,3 +29,26 @@ without running it or changing the active workflow.
 
 No live HTTP, Actions dispatch, source enrollment, schedule or installed-app change
 is authorized by this preparation ticket. No day observation is required.
+
+
+## Answer — 2026-10-27
+
+Prepared the [transport/enrollment review package](../design/transport-enrollment-review.md)
+and [hashed saved-evidence audit](../research/saved-identity-audit.json). Three
+historical source IDs are supported by recorded Link/redirect/numeric request
+evidence; SQLite Browser is missing and AM's current ID must come from trusted
+workflow context. Proposed enrollment is one explicit unauthenticated metadata
+GET, separate from a later proposed six-release baseline. No request was made.
+
+The review exposed name-reassignment drift in a static name-to-ID manifest.
+Propose numeric-ID fetch descriptors only in the operational adapter, with names
+as reviewed aliases and new request IDs/validators for changed fetch URLs. Exact
+numeric latest routes remain candidates requiring explicit bounded validation.
+
+The proposed supervised HTTP worker supplies a genuine connection event and lets
+the parent terminate blocked DNS/TLS/body IO at absolute deadlines. Its wire/frame
+bounds, credential path, actual condition evidence, fixed errors and workflow
+context/revision checks are specified, not implemented or proven by this review.
+The active workflow was inspected and remains unchanged. [14](14-offline-supervised-transport.md)
+defines the next offline implementation frontier. Real source enrollment, workflow
+wiring, dispatch, storage integration and publication remain separate work.

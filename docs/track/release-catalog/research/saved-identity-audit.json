@@ -1,0 +1,163 @@
+{
+  "scope": "saved evidence only; no API requests",
+  "archive": "churn-hour-40508899451-evidence.tar.gz",
+  "archive_sha256": "18a8d579f69f96e7a74d551dbd224877e6c7113ddb4efa476a4fe62689cc1a15",
+  "observations": [
+    {
+      "round": "baseline",
+      "member": "churn-hour-40508899451/observations/baseline/observation.json",
+      "member_sha256": "acc06358d2e37b11bb63559af0d953c3fbe425ff83b311a5b4f58e987d2c6b1a",
+      "sources": [
+        {
+          "source": "obsidian-list",
+          "descriptor_path": "repos/obsidianmd/obsidian-releases/releases",
+          "status": 200,
+          "link_repository_ids": [
+            262342594
+          ],
+          "request_repository_id": null
+        },
+        {
+          "source": "obsidian-latest",
+          "descriptor_path": "repos/obsidianmd/obsidian-releases/releases/latest",
+          "status": 200,
+          "link_repository_ids": [],
+          "request_repository_id": null
+        },
+        {
+          "source": "neovim-list",
+          "descriptor_path": "repos/neovim/neovim/releases",
+          "status": 200,
+          "link_repository_ids": [
+            16408992
+          ],
+          "request_repository_id": null
+        },
+        {
+          "source": "neovim-latest",
+          "descriptor_path": "repos/neovim/neovim/releases/latest",
+          "status": 200,
+          "link_repository_ids": [],
+          "request_repository_id": null
+        },
+        {
+          "source": "wezterm-list",
+          "descriptor_path": "repositories/120568143/releases?per_page=100",
+          "status": 200,
+          "link_repository_ids": [],
+          "request_repository_id": 120568143
+        },
+        {
+          "source": "sqlitebrowser-list",
+          "descriptor_path": "repos/sqlitebrowser/sqlitebrowser/releases?per_page=100",
+          "status": 200,
+          "link_repository_ids": [],
+          "request_repository_id": null
+        }
+      ]
+    },
+    {
+      "round": "hour",
+      "member": "churn-hour-40508899451/observations/hour/observation.json",
+      "member_sha256": "8536487a896532c591d9d6393f6584957d0729796d18963b4e3ba1bad5121457",
+      "sources": [
+        {
+          "source": "obsidian-list",
+          "descriptor_path": "repos/obsidianmd/obsidian-releases/releases",
+          "status": 200,
+          "link_repository_ids": [
+            262342594
+          ],
+          "request_repository_id": null
+        },
+        {
+          "source": "obsidian-latest",
+          "descriptor_path": "repos/obsidianmd/obsidian-releases/releases/latest",
+          "status": 200,
+          "link_repository_ids": [],
+          "request_repository_id": null
+        },
+        {
+          "source": "neovim-list",
+          "descriptor_path": "repos/neovim/neovim/releases",
+          "status": 200,
+          "link_repository_ids": [
+            16408992
+          ],
+          "request_repository_id": null
+        },
+        {
+          "source": "neovim-latest",
+          "descriptor_path": "repos/neovim/neovim/releases/latest",
+          "status": 200,
+          "link_repository_ids": [],
+          "request_repository_id": null
+        },
+        {
+          "source": "wezterm-list",
+          "descriptor_path": "repositories/120568143/releases?per_page=100",
+          "status": 200,
+          "link_repository_ids": [],
+          "request_repository_id": 120568143
+        },
+        {
+          "source": "sqlitebrowser-list",
+          "descriptor_path": "repos/sqlitebrowser/sqlitebrowser/releases?per_page=100",
+          "status": 200,
+          "link_repository_ids": [],
+          "request_repository_id": null
+        }
+      ]
+    }
+  ],
+  "sqlite_body_scan": [
+    {
+      "member": "churn-hour-40508899451/observations/baseline/sqlitebrowser-list.json",
+      "sha256": "7e31e14138d97f816b73275764ec7329f3c0b3d6dcfbb495629d3f0cce7c62dc",
+      "repository_id_route_matches": []
+    },
+    {
+      "member": "churn-hour-40508899451/observations/hour/sqlitebrowser-list.json",
+      "sha256": "7e4bc329ec8d9c333157cb16074d636063dddd0ba6b8ea3055a267837e4d0dfd",
+      "repository_id_route_matches": []
+    }
+  ],
+  "mapping": [
+    {
+      "name": "obsidianmd/obsidian-releases",
+      "repository_id": 262342594,
+      "basis": "both complete list-response Link headers; latest shares exact reviewed owner/name",
+      "current_identity_verified": false
+    },
+    {
+      "name": "neovim/neovim",
+      "repository_id": 16408992,
+      "basis": "both complete list-response Link headers; latest shares exact reviewed owner/name",
+      "current_identity_verified": false
+    },
+    {
+      "name_alias": "wez/wezterm",
+      "repository_id": 120568143,
+      "basis": "separate saved 301 Location plus both complete numeric-ID list requests",
+      "current_identity_verified": false
+    },
+    {
+      "name": "sqlitebrowser/sqlitebrowser",
+      "repository_id": null,
+      "basis": "no repository-ID evidence in the saved sample",
+      "current_identity_verified": false
+    }
+  ],
+  "redirect_evidence": {
+    "file": "20261027-wezterm-redirect.headers",
+    "sha256": "44c729e6f4924da025468f72c55c30c7b000fe98b8696839275cc3d05a0ff50d",
+    "location": [
+      "location: https://api.github.com/repositories/120568143/releases?per_page=100"
+    ]
+  },
+  "workflow_identity": {
+    "repository": "mareklangiewicz/AM",
+    "repository_id": null,
+    "future_source": "trusted github.repository_id workflow context; no metadata GET needed"
+  }
+}
