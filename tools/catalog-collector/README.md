@@ -189,8 +189,10 @@ exact `--commit SHA --accept-stale SHA REQUEST_ID BODY_HASH` arguments to repeat
 No stale flag overrides availability, integrity or future/unsupported timing.
 
 The fixed publication owner is upstream **ivan-hc/AM**. That owner has not yet
-adopted/published this format; local tests use retained data and controlled
-transports, and no live shell-read success is claimed. See the
+adopted/published this format. A separately approved development-fork publication
+and explicit-pin shell read succeeded with real HTTP and exact retained bytes;
+see the [fork validation evidence](../../docs/track/release-catalog/research/fork-shell-public-read-findings.md).
+The installed upstream owner remains unchanged. See the
 [implementation and public adoption plan](../../docs/track/release-catalog/design/shell-consumer.md).
 
 The ordinary Obsidian installer and newly generated updater now invoke the shared

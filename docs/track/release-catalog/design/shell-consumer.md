@@ -166,7 +166,7 @@ incomplete-install repair. The first passing suites did not establish these
 properties; their counts above remain historical evidence. The final reviewed suite passes
 **100 tests**, with the syntax and ShellCheck checks above repeated successfully.
 
-There is no live shell publication/read result. Upstream has not accepted this
+At completion of ticket 25 there was no live shell publication/read result. Upstream has not accepted this
 format, and the fixed upstream reader will refuse until an AM-owned publication
 provides it. No workflow was changed or run, no upstream collection was performed,
 no schedule enabled, and no host app installer/updater or installed migration ran.
@@ -181,3 +181,16 @@ can add exactly one SHA-resolution GET. Recheck workflow isolation before any
 fork workflow validation; its ownership remains development evidence, not the
 installed reader's trust target. Installed-state migration remains a separate
 user action after public validation and upstream acceptance.
+
+
+## Subsequent bounded fork validation (ticket 27)
+
+[Approved fork publication/public read](../research/fork-shell-public-read-findings.md)
+now verifies one retained-data format-only child, a0fdd1255, and an explicit-pin
+shell read through an archived fork-only reader copy. Exactly two real HTTP 200
+catalog GETs returned the candidate lookup/body bytes and unchanged filter URL,
+with normal measured freshness, exit 0 and empty stderr. Only the two literal
+owner strings differ in that test copy; production remains fixed to ivan-hc/AM.
+This supersedes the earlier absence of a live shell result for the development
+fork only. Upstream publication/adoption, unpinned resolution and installed
+migration remain unverified. No workflow, collection, schedule or app execution.

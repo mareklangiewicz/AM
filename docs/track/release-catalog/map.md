@@ -330,3 +330,14 @@ Local bundle/hash/body/filter checks and temporary bare-Git push pass. An explic
 fork-only reader copy keeps the installed upstream trust target unchanged.
 No remote publication/live shell read, collection, workflow, schedule or app
 operation; the proposed publication and two-GET pinned read await approval.
+
+
+2026-10-27: [27 resolved: fork publication and public shell read](issues/27-publish-fork-shell-validation.md).
+[Real HTTP findings and evidence](research/fork-shell-public-read-findings.md):
+with Marek's explicit approval, published exact prepared child a0fdd1255 atop
+confirmed d612ff34b, then the fork-only reader made exactly two pinned catalog
+GETs (both 200), returned exact retained bytes and the identical Obsidian URL,
+exit 0 and empty stderr. No clock/response substitution or stale override.
+The installed upstream owner is unchanged; upstream acceptance and installed
+migration remain separate. No source branch push, collection, workflow, schedule
+or host app operation.
