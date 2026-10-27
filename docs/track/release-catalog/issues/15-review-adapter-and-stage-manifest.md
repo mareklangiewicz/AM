@@ -1,7 +1,7 @@
 # Review the implemented adapter and stage manifest prerequisites
 
 Type: task
-Status: open
+Status: resolved
 Triage: ready-for-agent
 Blocked by: 14
 
@@ -36,3 +36,14 @@ Offline preparation and review only. No API/loopback HTTP, actual credentials,
 identity enrollment, workflow activation, Actions dispatch, schedule, installed-app
 change or remote publication. The previous experiments remain separate historical
 evidence. Public hosting and storage/client integration remain separate work.
+
+## Answer
+
+Reviewed the concrete adapter and fixed malformed-header acceptance before HTTP
+parsing. Staged the exact six-row incomplete manifest and inactive workflow with
+tested context/revision/hash preflight. [Review and run package](../research/adapter-review-and-run-package.md)
+records 48 passing offline tests, compatibility limits and distinct enrollment
+versus baseline proposals. SQLite remains unenrolled; loading refuses before any
+worker/token creation. No active workflow, API request, push or dispatch occurred.
+The next live boundary is the separately authorized one-read enrollment proposal,
+not another preparation ticket or an automatically authorized collection.

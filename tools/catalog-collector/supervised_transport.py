@@ -215,6 +215,7 @@ class _BoundedReader:
     def __init__(self, stream):
         self.stream, self.headers, self.header_bytes, self.framing_bytes = stream, True, 0, 0
         self.last_header_line = None
+        self.expect_status = True
         self.chunked, self.chunk_remaining, self.delimiter = False, None, False
 
     def readline(self, size=-1):
@@ -226,6 +227,16 @@ class _BoundedReader:
         require(not line or line.endswith(b'\r\n'), 'unsupported_framing')
         if self.headers:
             self.header_bytes += len(line)
+            if self.expect_status:
+                require(line.startswith(b'HTTP/'), 'unsupported_framing')
+                self.expect_status = False
+            elif line == b'\r\n':
+                self.expect_status = True  # another status line only for interim responses
+            else:
+                # email.parser otherwise silently ignores malformed fields or folds
+                # them into another value, potentially hiding framing headers.
+                require(re.fullmatch(rb"[!#$%&'*+.^_`|~0-9A-Za-z-]+:[^\r\n]*\r\n", line),
+                        'unsupported_framing')
             self.last_header_line = line
         else:
             self.framing_bytes += len(line)

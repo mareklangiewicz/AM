@@ -17,7 +17,7 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 ## Fog
 
 - [06 resolved](issues/06-manual-rest-churn-experiment.md): baseline/hour measurements support provisional REST-first work; day sampling is optional. Fleet storage remains unmeasured.
-- [08 resolved](issues/08-offline-storage-prototype.md): 64 offline replay checks support the bounded format/state/publication contract; [09 resolved](issues/09-review-offline-findings.md) records review refinements; [10 resolved](issues/10-offline-client-freshness.md) verifies bounded freshness/consent; [11 resolved](issues/11-review-client-and-collection-boundaries.md) accepts the initial policy/direction; [12 resolved](issues/12-offline-restricted-collector.md) implements the offline core; [13 resolved](issues/13-prepare-adapter-and-enrollment-review.md) prepares that review; [14 resolved](issues/14-offline-supervised-transport.md) implements the adapter offline; [15](issues/15-review-adapter-and-stage-manifest.md) is the concrete review/manifest frontier.
+- [08 resolved](issues/08-offline-storage-prototype.md): 64 offline replay checks support the bounded format/state/publication contract; [09 resolved](issues/09-review-offline-findings.md) records review refinements; [10 resolved](issues/10-offline-client-freshness.md) verifies bounded freshness/consent; [11 resolved](issues/11-review-client-and-collection-boundaries.md) accepts the initial policy/direction; [12 resolved](issues/12-offline-restricted-collector.md) implements the offline core; [13 resolved](issues/13-prepare-adapter-and-enrollment-review.md) prepares that review; [14 resolved](issues/14-offline-supervised-transport.md) implements the adapter offline; [15 resolved](issues/15-review-adapter-and-stage-manifest.md) stages the inactive run package; one-read SQLite enrollment needs explicit authorization.
 - [04 resolved](issues/04-compare-collection-strategies.md): REST-first experiment agreed; revisit the representation if churn/storage evidence or future consumer needs justify it.
 - Retention and Git growth; volatile response fields; large asset lists; removed upstream data; standalone updater migration; actual publishing privilege separation; eventual upstream preferences.
 
@@ -123,3 +123,13 @@ tests using fake sockets/local worker processes only. Active workflows are uncha
 SQLite identity is still missing and no live CLI or run was added.
 [15](issues/15-review-adapter-and-stage-manifest.md) prepares the concrete review,
 incomplete manifest and inactive workflow proposal.
+
+
+2026-10-27: [15 resolved](issues/15-review-adapter-and-stage-manifest.md).
+[Concrete adapter review/run package](research/adapter-review-and-run-package.md)
+records a malformed-header framing fix, the six-row incomplete numeric manifest,
+and an inactive workflow proposal with tested context/revision/hash checks.
+48 offline tests pass on Python 3.14.4/Linux; YAML/embedded Python checks pass.
+SQLite enrollment still refuses before workers. No API request, active workflow
+change, push or dispatch. Next is separately authorized one-read enrollment, then
+review of the runnable manifest and exact pushed revision before any baseline.

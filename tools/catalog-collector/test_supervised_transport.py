@@ -294,6 +294,17 @@ class AdapterContract(unittest.TestCase):
             with self.subTest(length=len(data)),self.assertRaises((Refusal,http.client.HTTPException)):
                 self.run_worker(data)
 
+    def test_malformed_headers_cannot_hide_framing(self):
+        for fields in (b'Ignored line\r\nContent-Length: 10\r\n',
+                       b'Content-Length : 10\r\n', b' Content-Length: 10\r\n',
+                       b'X: value\r\n folded\r\n'):
+            with self.subTest(fields=fields), self.assertRaises(Refusal):
+                self.run_worker(b'HTTP/1.1 200 OK\r\n' + fields + b'\r\nx')
+        _, events = self.run_worker(
+            b'HTTP/1.1 100 Continue\r\nX: interim\r\n\r\n'
+            b'HTTP/1.1 200 OK\r\nContent-Length: 2\r\n\r\n[]')
+        self.assertEqual(events[-1], (b'E', b''))
+
     def test_body_cap_exact_and_overflow(self):
         _,events=self.run_worker(b'HTTP/1.1 200 OK\r\nContent-Length: 8000000\r\n\r\n'+b'x'*BODY_CAP)
         self.assertEqual(sum(len(p) for k,p in events if k==b'B'),BODY_CAP)

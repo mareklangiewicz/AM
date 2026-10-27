@@ -119,3 +119,13 @@ blocked, and the internal bootstrap test supplies an invalid config before conne
 No real token is used. Parser compatibility has been exercised on the recorded local
 Python version, not every Python 3.10+ release. Real TLS/DNS, GitHub route behavior,
 workflow context provenance and the missing SQLite ID still need separate review.
+
+## Inactive run package (ticket 15)
+
+The staged manifest in docs/track/release-catalog/design/staged-manifest.json is
+intentionally incomplete: SQLite Browser's identity is null. workflow_adapter.py
+refuses it before transport/token creation. This helper has no CLI or ambient token
+lookup. The exact candidate workflow is catalog-collector.yml.proposed beside the
+manifest, outside .github/workflows. See the tracked adapter-review-and-run-package.md
+research report for review, approval boundaries and 48 offline checks. Malformed or
+folded HTTP header lines now refuse before Python's permissive header parser.
