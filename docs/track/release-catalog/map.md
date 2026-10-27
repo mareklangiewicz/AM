@@ -341,3 +341,14 @@ exit 0 and empty stderr. No clock/response substitution or stale override.
 The installed upstream owner is unchanged; upstream acceptance and installed
 migration remain separate. No source branch push, collection, workflow, schedule
 or host app operation.
+
+
+2026-10-28: source/evidence through b6892ff2f pushed to origin/main-marek.
+[28 resolved: upstream adoption readiness](issues/28-upstream-adoption-readiness.md).
+[Concrete boundary audit and rollout order](design/upstream-adoption-readiness.md)
+records fork-specific collector/publisher/artifact guards and Python reference
+identity; the shell production owner is already upstream. Offline exact-child
+prior planning preserves all six bodies/validator tuples and existing context
+refusals. Upstream publisher/provenance and sustained freshness must precede
+ordinary recipe activation. No guard changes, workflow, collection, publication,
+upstream submission or installed operation.
