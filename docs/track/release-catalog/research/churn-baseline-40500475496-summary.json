@@ -1,0 +1,178 @@
+{
+  "run_id": 40500475496,
+  "artifact_id": 12733090330,
+  "artifact_digest": "sha256:6e94383ecf605712ebe6be97e85eaf13da9a7bfed82f4366785ef46dc4241866",
+  "archive_sha256": "7d8de7ff6260d65af7ed914bf1136717b8b7fbf83a3bc87725c74fdecbcd8d52",
+  "archive_bytes": 316425,
+  "observation": {
+    "schema": 1,
+    "round": "baseline",
+    "api_version": "2022-11-28",
+    "endpoints": {
+      "obsidian-list": "repos/obsidianmd/obsidian-releases/releases",
+      "obsidian-latest": "repos/obsidianmd/obsidian-releases/releases/latest",
+      "neovim-list": "repos/neovim/neovim/releases",
+      "neovim-latest": "repos/neovim/neovim/releases/latest",
+      "wezterm-list": "repositories/120568143/releases?per_page=100",
+      "sqlitebrowser-list": "repos/sqlitebrowser/sqlitebrowser/releases?per_page=100"
+    },
+    "source_revision": "37bdb433c5b557e73b83033774d5f230f0789fa6",
+    "complete": true,
+    "responses": {
+      "obsidian-list": {
+        "checked_at": "2026-10-27T12:01:23.568435+00:00",
+        "status": 200,
+        "headers": {
+          "date": "Tue, 27 Oct 2026 12:01:24 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "etag": "\"8024e6119473f50585cc90f57102837d0b36280cc0892846d0017fbc7b99aed7\"",
+          "link": "<https://api.github.com/repositories/262342594/releases?page=2>; rel=\"next\", <https://api.github.com/repositories/262342594/releases?page=6>; rel=\"last\"",
+          "x-ratelimit-limit": "5000",
+          "x-ratelimit-remaining": "4995",
+          "x-ratelimit-reset": "1793104010",
+          "x-ratelimit-used": "5",
+          "x-ratelimit-resource": "core"
+        },
+        "received_bytes": 450991,
+        "sha256": "d89a55163a2db9b2aee9e9c77178f864c68188bb48c536618778f0bb1e4b3574",
+        "body_bytes": 450991
+      },
+      "obsidian-latest": {
+        "checked_at": "2026-10-27T12:01:24.284892+00:00",
+        "status": 200,
+        "headers": {
+          "date": "Tue, 27 Oct 2026 12:01:24 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "etag": "\"757ce927668806a15f905b12c7ed6f40c6b44c23e853cc17bef63764779fc1ae\"",
+          "last-modified": "Thu, 22 Oct 2026 21:19:14 GMT",
+          "x-ratelimit-limit": "5000",
+          "x-ratelimit-remaining": "4997",
+          "x-ratelimit-reset": "1793105663",
+          "x-ratelimit-used": "3",
+          "x-ratelimit-resource": "core"
+        },
+        "received_bytes": 13889,
+        "sha256": "22be5c2ea999d8f2e4dd146261a9c008b0e482ebb6b5adbf8f1e322da9fa6735",
+        "body_bytes": 13889
+      },
+      "neovim-list": {
+        "checked_at": "2026-10-27T12:01:24.489134+00:00",
+        "status": 200,
+        "headers": {
+          "date": "Tue, 27 Oct 2026 12:01:25 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "etag": "\"83372213bde0357b781a6e942aafb07ef47535ae24166fac98de0fe1efd18f43\"",
+          "link": "<https://api.github.com/repositories/16408992/releases?page=2>; rel=\"next\", <https://api.github.com/repositories/16408992/releases?page=2>; rel=\"last\"",
+          "x-ratelimit-limit": "5000",
+          "x-ratelimit-remaining": "4994",
+          "x-ratelimit-reset": "1793104010",
+          "x-ratelimit-used": "6",
+          "x-ratelimit-resource": "core"
+        },
+        "received_bytes": 822241,
+        "sha256": "55f234329f6f5d7f19536536d7813a9d2ba747d85408dcbb08e37fc31dc49b84",
+        "body_bytes": 822241
+      },
+      "neovim-latest": {
+        "checked_at": "2026-10-27T12:01:25.383266+00:00",
+        "status": 200,
+        "headers": {
+          "date": "Tue, 27 Oct 2026 12:01:25 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "etag": "\"00d0d21b57b08053dd16ab20734e363963f35a7127a195801247a7118b4982f9\"",
+          "last-modified": "Fri, 09 Oct 2026 16:14:44 GMT",
+          "x-ratelimit-limit": "5000",
+          "x-ratelimit-remaining": "4996",
+          "x-ratelimit-reset": "1793105663",
+          "x-ratelimit-used": "4",
+          "x-ratelimit-resource": "core"
+        },
+        "received_bytes": 24510,
+        "sha256": "d1fcdadf1f1b384af59b6643b0346e25b32b182d747f98a29adcf47e0b8fd395",
+        "body_bytes": 24510
+      },
+      "wezterm-list": {
+        "checked_at": "2026-10-27T12:01:25.690293+00:00",
+        "status": 200,
+        "headers": {
+          "date": "Tue, 27 Oct 2026 12:01:27 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "etag": "\"1f81c66dcd8bab672addddc4567838a160d32bee1873e2013882a398b4eb958d\"",
+          "x-ratelimit-limit": "5000",
+          "x-ratelimit-remaining": "4993",
+          "x-ratelimit-reset": "1793104010",
+          "x-ratelimit-used": "7",
+          "x-ratelimit-resource": "core"
+        },
+        "received_bytes": 2935202,
+        "sha256": "7d5f09e27048f2f10e96d7138fea51b5ece407aa3c70b67abed63b23c4299b29",
+        "body_bytes": 2935202
+      },
+      "sqlitebrowser-list": {
+        "checked_at": "2026-10-27T12:01:27.505035+00:00",
+        "status": 200,
+        "headers": {
+          "date": "Tue, 27 Oct 2026 12:01:28 GMT",
+          "content-type": "application/json; charset=utf-8",
+          "etag": "\"4754b211d555b9e2a2ffc8be76122bde6baf8b4401634cf848003bfbe3582eff\"",
+          "x-ratelimit-limit": "5000",
+          "x-ratelimit-remaining": "4992",
+          "x-ratelimit-reset": "1793104010",
+          "x-ratelimit-used": "8",
+          "x-ratelimit-resource": "core"
+        },
+        "received_bytes": 630919,
+        "sha256": "7e31e14138d97f816b73275764ec7329f3c0b3d6dcfbb495629d3f0cce7c62dc",
+        "body_bytes": 630919
+      }
+    },
+    "started_at": "2026-10-27T12:01:23.568343+00:00",
+    "finished_at": "2026-10-27T12:01:28.351063+00:00"
+  },
+  "comparison": {
+    "rounds": [
+      "baseline"
+    ],
+    "layouts": {
+      "exact": {
+        "observations": [
+          {
+            "round": "baseline",
+            "body_bytes": 4877752,
+            "body_gzip_bytes": 316693,
+            "cumulative_loose_object_bytes": 426596,
+            "index_bytes": 1111
+          }
+        ],
+        "pack_and_index_bytes": 332096
+      },
+      "projection": {
+        "observations": [
+          {
+            "round": "baseline",
+            "body_bytes": 622062,
+            "body_gzip_bytes": 53817,
+            "cumulative_loose_object_bytes": 71799,
+            "index_bytes": 1111
+          }
+        ],
+        "pack_and_index_bytes": 58368
+      }
+    },
+    "changes": {},
+    "filter_diagnostics": {
+      "baseline": {
+        "obsidian-list": {
+          "exact": "https://github.com/obsidianmd/obsidian-releases/releases/download/v1.14.5/Obsidian-1.14.5.AppImage",
+          "projection": "https://github.com/obsidianmd/obsidian-releases/releases/download/v1.14.5/Obsidian-1.14.5.AppImage"
+        },
+        "wezterm-list": {
+          "exact": "https://github.com/wezterm/wezterm/releases/download/nightly/WezTerm-nightly-Ubuntu26.04.AppImage",
+          "projection": "https://github.com/wezterm/wezterm/releases/download/nightly/WezTerm-nightly-Ubuntu26.04.AppImage"
+        }
+      }
+    },
+    "git_version": "git version 2.56.0",
+    "limits": "Small sample; positional JSON paths do not identify semantic changes after reordering; no annual forecast."
+  }
+}
