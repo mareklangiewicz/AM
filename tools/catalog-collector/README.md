@@ -122,9 +122,9 @@ workflow context provenance and the missing SQLite ID still need separate review
 
 ## Inactive run package (ticket 15)
 
-The staged manifest in docs/track/release-catalog/design/staged-manifest.json is
-intentionally incomplete: SQLite Browser's identity is null. workflow_adapter.py
-refuses it before transport/token creation. This helper has no CLI or ambient token
+The staged manifest in docs/track/release-catalog/design/staged-manifest.json now
+contains reviewed SQLite Browser identity 19416551. workflow_adapter.py still
+refuses any missing identity before transport/token creation. This helper has no CLI or ambient token
 lookup. The exact candidate workflow is catalog-collector.yml.proposed beside the
 manifest, outside .github/workflows. See the tracked adapter-review-and-run-package.md
 research report for review, approval boundaries and 48 offline checks. Malformed or

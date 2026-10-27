@@ -103,3 +103,12 @@ Marek's approval under ~/AGENTS.md. The later six-release adapter baseline needs
 separate reviewed runnable manifest, exact pushed workflow/source revision,
 server-side isolation verification and explicit dispatch authorization. There is
 no 24-hour wait or day observation prerequisite.
+
+## Subsequent authorized enrollment
+
+The separately approved one-read enrollment succeeded; see
+[SQLite enrollment findings](sqlite-enrollment-findings.md). The manifest's null
+SQLite row and the original incomplete hash above describe the state at ticket 15
+completion. The enrolled manifest now records reviewed ID 19416551 and its new
+hash in those findings. 49 offline tests pass after enrollment. This does not
+authorize workflow activation or the six-release baseline.

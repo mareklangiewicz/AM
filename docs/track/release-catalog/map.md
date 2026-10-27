@@ -133,3 +133,11 @@ and an inactive workflow proposal with tested context/revision/hash checks.
 SQLite enrollment still refuses before workers. No API request, active workflow
 change, push or dispatch. Next is separately authorized one-read enrollment, then
 review of the runnable manifest and exact pushed revision before any baseline.
+
+
+2026-10-27: with explicit user approval, pushed f8182c6e9 and performed exactly
+one unauthenticated SQLite Browser metadata GET. [Reviewed enrollment](research/sqlite-enrollment-findings.md)
+records HTTP 200, public identity 19416551 and exact bounded response evidence.
+Filled the sixth numeric manifest row with that evidence; preserved aliases and
+new request identities. No release endpoint, workflow activation or dispatch.
+The inactive workflow and six-release baseline require separate approval.

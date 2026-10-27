@@ -22,6 +22,9 @@ class WorkflowPreparation(unittest.TestCase):
             row.update(repository_id=999, url='https://api.github.com/repositories/999/releases?per_page=100',
                        identity_evidence='docs/track/release-catalog/research/fixture.md#synthetic')
             row['request_id'] = Descriptor(row['url']).request_id
+        else:
+            row = obj['sources'][-1]
+            row.update(repository_id=None, url=None, identity_evidence=None, request_id=None)
         return json.dumps(obj).encode()
 
     def context(self, raw):
@@ -45,6 +48,13 @@ class WorkflowPreparation(unittest.TestCase):
                             for r in value.requests))
         self.assertIn('https://api.github.com/repos/wez/wezterm/releases?per_page=100',
                       value.requests[4].source.aliases)
+
+    def test_reviewed_real_manifest_is_ready_for_offline_preflight(self):
+        raw = MANIFEST.read_bytes()
+        value = preflight(self.context(raw), raw, REV)
+        self.assertEqual(value.requests[-1].source.repository_id, 19416551)
+        self.assertEqual(len(value.requests), 6)
+        self.assertTrue(all(not r.condition for r in value.requests))
 
     def test_context_revision_hash_and_own_repository_refusals(self):
         raw = self.raw(True)
