@@ -1,0 +1,147 @@
+{
+  "backup": "/opt/am/catalog-pilot-backups/20261027T235924594413Z",
+  "old": {
+    "APP-MANAGER": {
+      "sha256": "bb32c8ea853b06660f2d50cd9300f241a6403b08088cd6c80dc1fc952a0800f9",
+      "mode": 509,
+      "uid": 1000,
+      "gid": 1000,
+      "symlink": null
+    },
+    "install.am": {
+      "sha256": "695bbefd85e62cf7a9a0755fc88350c7255b239b56e01a786ee55080007b6796",
+      "mode": 493,
+      "uid": 1000,
+      "gid": 0,
+      "symlink": null
+    },
+    "catalog.am": null,
+    "AM-updater": {
+      "sha256": "aa94662966dcd31ff09dbda5ece63f2f55a8c3edc3326d8bb43a0aff5dc9d969",
+      "mode": 493,
+      "uid": 1000,
+      "gid": 1000,
+      "symlink": null
+    }
+  },
+  "targets": {
+    "APP-MANAGER": "/opt/am/APP-MANAGER",
+    "install.am": "/opt/am/modules/install.am",
+    "catalog.am": "/opt/am/modules/catalog.am",
+    "AM-updater": "/opt/obsidian/AM-updater"
+  },
+  "payload": {
+    "source_commit": "80bddc039e4aec0eb8b22ba4c8f73e31a958214f",
+    "AMREPO": "https://raw.githubusercontent.com/mareklangiewicz/AM/main-marek",
+    "files": {
+      "AM-updater": {
+        "bytes": 1188,
+        "sha256": "200a290b75c9dd66694bdd40a3076fde16cccd029f5a1ac3b9366054ff6b9b29"
+      },
+      "catalog.am": {
+        "bytes": 5237,
+        "sha256": "b827f9febc90a45012f540926674f8f4210e3e1f3626cb30050b4422092be6fc"
+      },
+      "APP-MANAGER": {
+        "bytes": 123418,
+        "sha256": "732d260de627d3546d590f3083a330c2e1b31d2811479e0cbfd1461b8cfb3cd3"
+      },
+      "install.am": {
+        "bytes": 60079,
+        "sha256": "570f7bc072917665551dcb45bd504fb4e28380117c9c165c043b9f0920271336"
+      }
+    }
+  },
+  "unchanged_before": {
+    "/opt/obsidian/obsidian": {
+      "sha256": "6362ddbeeeebb7bbccb48fae009572cf2284ef92f5c919c1332aba48de6ffeaa",
+      "mode": 509,
+      "uid": 1000,
+      "gid": 1000,
+      "symlink": null
+    },
+    "/opt/obsidian/version": {
+      "sha256": "8318ae383cf75a90dbb710380d80b70ca49bf069a46488a98da586785e53f6a1",
+      "mode": 420,
+      "uid": 1000,
+      "gid": 0,
+      "symlink": null
+    },
+    "/usr/local/bin/obsidian": {
+      "sha256": "6362ddbeeeebb7bbccb48fae009572cf2284ef92f5c919c1332aba48de6ffeaa",
+      "mode": 511,
+      "uid": 0,
+      "gid": 0,
+      "symlink": "/opt/obsidian/obsidian"
+    },
+    "/usr/local/share/applications/obsidian-AM.desktop": {
+      "sha256": "55917268f0f931ddd4dbb1a5d1e2967adb7064ea2e96cf4a183ae6ee4ba5bc7a",
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "symlink": null
+    }
+  },
+  "status": "delivered",
+  "installed": {
+    "APP-MANAGER": {
+      "sha256": "732d260de627d3546d590f3083a330c2e1b31d2811479e0cbfd1461b8cfb3cd3",
+      "mode": 509,
+      "uid": 1000,
+      "gid": 1000,
+      "symlink": null
+    },
+    "install.am": {
+      "sha256": "570f7bc072917665551dcb45bd504fb4e28380117c9c165c043b9f0920271336",
+      "mode": 493,
+      "uid": 1000,
+      "gid": 0,
+      "symlink": null
+    },
+    "catalog.am": {
+      "sha256": "b827f9febc90a45012f540926674f8f4210e3e1f3626cb30050b4422092be6fc",
+      "mode": 420,
+      "uid": 1000,
+      "gid": 1000,
+      "symlink": null
+    },
+    "AM-updater": {
+      "sha256": "200a290b75c9dd66694bdd40a3076fde16cccd029f5a1ac3b9366054ff6b9b29",
+      "mode": 493,
+      "uid": 1000,
+      "gid": 1000,
+      "symlink": null
+    }
+  },
+  "unchanged_after": {
+    "/opt/obsidian/obsidian": {
+      "sha256": "6362ddbeeeebb7bbccb48fae009572cf2284ef92f5c919c1332aba48de6ffeaa",
+      "mode": 509,
+      "uid": 1000,
+      "gid": 1000,
+      "symlink": null
+    },
+    "/opt/obsidian/version": {
+      "sha256": "8318ae383cf75a90dbb710380d80b70ca49bf069a46488a98da586785e53f6a1",
+      "mode": 420,
+      "uid": 1000,
+      "gid": 0,
+      "symlink": null
+    },
+    "/usr/local/bin/obsidian": {
+      "sha256": "6362ddbeeeebb7bbccb48fae009572cf2284ef92f5c919c1332aba48de6ffeaa",
+      "mode": 511,
+      "uid": 0,
+      "gid": 0,
+      "symlink": "/opt/obsidian/obsidian"
+    },
+    "/usr/local/share/applications/obsidian-AM.desktop": {
+      "sha256": "55917268f0f931ddd4dbb1a5d1e2967adb7064ea2e96cf4a183ae6ee4ba5bc7a",
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "symlink": null
+    }
+  },
+  "completed": "2026-10-27T23:59:25.391454+00:00"
+}

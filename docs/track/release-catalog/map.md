@@ -406,3 +406,10 @@ Hash/syntax prechecks passed, but backup ownership preservation failed EPERM
 before any installed replacement. sudo requires interactive authentication.
 Partial backups are retained; checked delivery script is saved. Resume the same
 approved pilot after sudo authentication; no app/update operation has run.
+
+
+2026-10-28: [32 resolved: installed delivery and user-run update](issues/32-installed-obsidian-delivery-pilot.md).
+Marek completed sudo delivery, then pinned `am -u obsidian`; original upstream
+1.14.5 binary downloaded. Read-only inspection confirms payload hashes, version,
+binary size/hash and absent tmp. Evidence distinguishes delivery-only backup from
+subsequent app replacement; no app launch or independent authenticity claim.
