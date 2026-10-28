@@ -1,6 +1,6 @@
-"""Dormant hourly pilot controller; dispatches existing guarded workflow once.
+"""Hourly pilot controller; dispatches existing guarded workflow once.
 
-The proposed schedule lives outside .github/workflows until explicitly approved.
+The installed schedule requires an approved source revision and bounded window.
 No upstream collection, publication credential or Git checkout occurs here.
 """
 from datetime import datetime, timezone

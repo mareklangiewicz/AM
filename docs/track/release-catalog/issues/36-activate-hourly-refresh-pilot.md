@@ -1,8 +1,8 @@
 # Activate one 24-hour hourly freshness pilot
 
 Type: task
-Status: open
-Triage: ready-for-human
+Status: claimed
+Triage: ready-for-agent
 
 ## Scope and authorization target
 
@@ -19,3 +19,5 @@ before any extension. No app changes, source expansion or indefinite cadence.
 
 Await explicit schedule activation approval. Existing manual workflow still
 requires individual approval outside this proposed scheduled pilot window.
+
+Marek explicitly approved activation with “ok”. Final remote prechecks passed: default main-marek, exact source 3ad023822 and publication e8e5cf962, only collector active, no pending collector runs or preexisting schedule variables.

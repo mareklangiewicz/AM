@@ -1,0 +1,37 @@
+# Approved 24-hour pilot; repository variables pin source and expiry.
+name: Bounded hourly catalog dispatcher
+on:
+  schedule:
+    - cron: '17 * * * *'
+permissions:
+  contents: read
+concurrency:
+  group: restricted-catalog-hourly-dispatch
+  cancel-in-progress: false
+jobs:
+  dispatch:
+    if: github.repository == 'mareklangiewicz/AM' && github.event_name == 'schedule' && github.ref == 'refs/heads/main-marek' && github.sha == vars.CATALOG_SCHEDULE_REVISION && github.run_attempt == 1
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      actions: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Dispatch one guarded six-source refresh within approved window
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CTX_REPOSITORY: ${{ github.repository }}
+          CTX_EVENT: ${{ github.event_name }}
+          CTX_SCHEDULE: ${{ github.event.schedule }}
+          CTX_REF: ${{ github.ref }}
+          CTX_SHA: ${{ github.sha }}
+          CTX_WORKFLOW_SHA: ${{ github.workflow_sha }}
+          CTX_RUN_ATTEMPT: ${{ github.run_attempt }}
+          CTX_APPROVED_REVISION: ${{ vars.CATALOG_SCHEDULE_REVISION }}
+          CTX_START: ${{ vars.CATALOG_SCHEDULE_START }}
+          CTX_UNTIL: ${{ vars.CATALOG_SCHEDULE_UNTIL }}
+        run: python3 -B tools/catalog-collector/scheduled_dispatch.py
