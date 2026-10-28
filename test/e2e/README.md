@@ -41,7 +41,7 @@ app-directory mount is used. Container sudo policy and adapters are test-only.
   checksum. A small legacy recipe is installed through normal AM dispatch to
   exercise a mixed batch; it is not a migrated catalog recipe.
 
-Nine scenarios on each target cover:
+Eleven scenarios on each target cover:
 
 1. System recipe installation, expected retained URL, desktop extraction, binary
    symlink, source embedding, real checksum verification and standalone updater.
@@ -65,6 +65,12 @@ cross-distro gap; it supplements those tests.
 9. Neovim stable/nightly installation from retained observations, repeated nightly
    download at its unchanged URL, standalone updater, failed transfer/retry and
    stale refusal, preserving a user-level nvim symlink and configuration sentinel.
+
+10. Partial binary transfer writes truncated staging bytes and fails, preserving
+    the working installation; retry replaces it with the complete fixture.
+11. Normal confirmed removal and reinstall in both system AM and unprivileged
+    AppMan, removing app files/command symlink/desktop entry while preserving
+    user configuration, then checking the reinstalled standalone updater.
 
 Optional real-binary startup checks (cached matrix images required):
 

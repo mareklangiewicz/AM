@@ -251,6 +251,53 @@ esac
         self.assertEqual((app/'obsidian').read_bytes(),binary)
         self.assertIn('SHA256:',(app/'AM-VERIFIED').read_text())
 
+    def test_partial_download_preserves_installation_and_retry(self):
+        self.command('-i','obsidian')
+        app=Path('/opt/obsidian')
+        (app/'version').write_text('old synthetic installed URL\n')
+        before=self.snapshot(app)
+        self.configure(download_partial_fail=True)
+        self.command('-u','obsidian','--commit',PIN,success=False)
+        self.assertEqual((app/'tmp/obsidian.AppImage').read_bytes(),
+                         (self.fixture/'binary').read_bytes()[:17])
+        after=self.snapshot(app)
+        self.assertEqual({k:v for k,v in after.items() if k!='tmp' and not k.startswith('tmp/')},before)
+        self.assertTrue(Path('/usr/local/bin/obsidian').samefile(app/'obsidian'))
+        self.configure(download_partial_fail=False)
+        self.command('-u','obsidian','--commit',PIN)
+        self.assertEqual((app/'obsidian').read_bytes(),(self.fixture/'binary').read_bytes())
+        self.assertEqual((app/'version').read_text().strip(),OBSIDIAN)
+        self.assertFalse((app/'tmp').exists())
+
+    def test_remove_reinstall_preserves_user_configuration(self):
+        for appman in (False,True):
+            with self.subTest(appman=appman):
+                home=self.fixture/'remove-appman-home' if appman else self.home
+                if appman:
+                    home.mkdir()
+                    self.prepare_home(home,appman=True)
+                executable=str(home/'Applications/appman/appman') if appman else '/usr/local/bin/am'
+                app=home/'Applications/obsidian' if appman else Path('/opt/obsidian')
+                launcher=home/'.local/bin/obsidian' if appman else Path('/usr/local/bin/obsidian')
+                desktop=home/'.local/share/applications/obsidian-AM.desktop' if appman else Path('/usr/local/share/applications/obsidian-AM.desktop')
+                config=home/'.config/obsidian';config.mkdir(parents=True)
+                sentinel=config/'user-settings';sentinel.write_text('keep my settings\n')
+                for path in (config,sentinel): os.chown(path,USER.pw_uid,USER.pw_gid)
+                self.command('-i','obsidian',home=home,executable=executable)
+                self.assertTrue(desktop.is_file())
+                before=self.snapshot(config)
+                self.command('-r','obsidian',home=home,executable=executable,input_text='y\n')
+                self.assertFalse(app.exists())
+                self.assertFalse(os.path.lexists(launcher))
+                self.assertFalse(os.path.lexists(desktop))
+                self.assertEqual(self.snapshot(config),before)
+                self.command('-i','obsidian',home=home,executable=executable)
+                self.assertTrue(launcher.samefile(app/'obsidian'))
+                self.assertTrue(desktop.is_file())
+                self.assertEqual((app/'version').read_text().strip(),OBSIDIAN)
+                self.command('--commit',PIN,home=home,executable=str(app/'AM-updater'))
+                self.assertEqual(self.snapshot(config),before)
+
     def test_integrity_and_stale_refusal_preserve_app_and_interrupted_work(self):
         self.command('-i','obsidian')
         app=Path('/opt/obsidian')

@@ -667,3 +667,9 @@ Static audit confirms one lifecycle body across all 356 utility recipes, identif
 the two identity-validation exceptions and records the proposed shared interface,
 installer integration and verification sequence. No production implementation,
 live enrollment, host delivery or pilot change; 48 remains blocked by 47.
+
+
+2026-10-28: [55 resolved: partial transfer and removal e2e](issues/55-e2e-partial-download-removal.md).
+Added truncated-transfer preservation/retry and AM/AppMan removal/reinstall with
+configuration preservation. Full Debian/Fedora matrix: 22 passing scenarios, zero
+unexpected requests. Production unchanged; no host delivery or operational change.

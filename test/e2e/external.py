@@ -64,6 +64,13 @@ elif url.startswith('https://raw.githubusercontent.com/'+settings['repository']+
     if name in settings['catalog_paths']:
         raw = (fixture/'tree'/name).read_bytes()
 elif url in settings['assets']:
+    if settings.get('download_partial_fail'):
+        output = next((args[i+1] for i, arg in enumerate(args[:-1])
+                       if arg in ('-O', '--output', '-o', '-Lo')), None)
+        if output is None:
+            raise SystemExit('Partial transfer requires an output path')
+        Path(output).write_bytes((fixture/'binary').read_bytes()[:17])
+        raise SystemExit(9)
     if settings.get('download_fail'):
         raise SystemExit(9)
     raw = (fixture/'binary').read_bytes()
