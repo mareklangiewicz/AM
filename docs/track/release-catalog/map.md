@@ -436,3 +436,12 @@ prepared; 111 tests pass. Default branch is now main-marek. Existing collector
 unchanged; exact-source/window/overlap/count refusal guards checked offline.
 [36](issues/36-activate-hourly-refresh-pilot.md) awaits explicit schedule activation;
 no schedule, remote variable, collection, publication or app change occurred.
+
+
+2026-10-28: [36 activation armed, verification pending](issues/36-activate-hourly-refresh-pilot.md).
+Approved schedule/controller pushed at 466e1facc; only collector and dispatcher
+active, six other workflows disabled. Variables verified for exact revision and
+2026-10-28T00:12:16Z to exclusive 2026-10-29T00:12:16Z. No natural scheduled event
+listed yet at 00:19:04Z; no extra dispatch or app operation. Activation evidence
+saved locally so source pin remains stable. [37](issues/37-assess-hourly-pilot.md)
+tracks expiry shutdown/assessment without implicit window extension.

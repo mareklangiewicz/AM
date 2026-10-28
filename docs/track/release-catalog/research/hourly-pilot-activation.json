@@ -1,0 +1,128 @@
+{
+  "revision": "466e1facce4e66d4b26c06446fc1e524aa0d76df",
+  "start": 1793146336,
+  "until": 1793232736,
+  "start_utc": "2026-10-28T00:12:16+00:00",
+  "until_utc": "2026-10-29T00:12:16+00:00",
+  "variables": {
+    "CATALOG_SCHEDULE_START": "1793146336",
+    "CATALOG_SCHEDULE_UNTIL": "1793232736",
+    "CATALOG_SCHEDULE_REVISION": "466e1facce4e66d4b26c06446fc1e524aa0d76df"
+  },
+  "workflow_precheck": {
+    "total_count": 8,
+    "workflows": [
+      {
+        "id": 329958059,
+        "node_id": "W_kwDOTPNl8s4TqsKr",
+        "name": "Auto-label AM or AppMan",
+        "path": ".github/workflows/auto-label.yml",
+        "state": "disabled_manually",
+        "created_at": "2026-08-08T14:48:44.000+02:00",
+        "updated_at": "2026-10-27T12:24:05.000+01:00",
+        "url": "https://api.github.com/repos/mareklangiewicz/AM/actions/workflows/329958059",
+        "html_url": "https://github.com/mareklangiewicz/AM/blob/main-marek/.github/workflows/auto-label.yml",
+        "badge_url": "https://github.com/mareklangiewicz/AM/workflows/Auto-label%20AM%20or%20AppMan/badge.svg"
+      },
+      {
+        "id": 398399199,
+        "node_id": "W_kwDOTPNl8s4Xvxbf",
+        "name": "Restricted catalog validation",
+        "path": ".github/workflows/catalog-collector.yml",
+        "state": "active",
+        "created_at": "2026-10-27T16:17:06.000+01:00",
+        "updated_at": "2026-10-27T16:17:06.000+01:00",
+        "url": "https://api.github.com/repos/mareklangiewicz/AM/actions/workflows/398399199",
+        "html_url": "https://github.com/mareklangiewicz/AM/blob/main-marek/.github/workflows/catalog-collector.yml",
+        "badge_url": "https://github.com/mareklangiewicz/AM/workflows/Restricted%20catalog%20validation/badge.svg"
+      },
+      {
+        "id": 398162689,
+        "node_id": "W_kwDOTPNl8s4Xu3sB",
+        "name": "Catalog quota probe",
+        "path": ".github/workflows/catalog-quota-probe.yml",
+        "state": "disabled_manually",
+        "created_at": "2026-10-27T12:22:43.000+01:00",
+        "updated_at": "2026-10-27T16:17:35.000+01:00",
+        "url": "https://api.github.com/repos/mareklangiewicz/AM/actions/workflows/398162689",
+        "html_url": "https://github.com/mareklangiewicz/AM/blob/main-marek/.github/workflows/catalog-quota-probe.yml",
+        "badge_url": "https://github.com/mareklangiewicz/AM/workflows/Catalog%20quota%20probe/badge.svg"
+      },
+      {
+        "id": 398856984,
+        "node_id": "W_kwDOTPNl8s4XxhMY",
+        "name": "Bounded hourly catalog dispatcher",
+        "path": ".github/workflows/catalog-schedule.yml",
+        "state": "active",
+        "created_at": "2026-10-28T01:12:02.000+01:00",
+        "updated_at": "2026-10-28T01:12:02.000+01:00",
+        "url": "https://api.github.com/repos/mareklangiewicz/AM/actions/workflows/398856984",
+        "html_url": "https://github.com/mareklangiewicz/AM/blob/main-marek/.github/workflows/catalog-schedule.yml",
+        "badge_url": "https://github.com/mareklangiewicz/AM/workflows/Bounded%20hourly%20catalog%20dispatcher/badge.svg"
+      },
+      {
+        "id": 329958061,
+        "node_id": "W_kwDOTPNl8s4TqsKt",
+        "name": "Check archived and obsolete sources",
+        "path": ".github/workflows/check-obsolete-sources.yml",
+        "state": "disabled_manually",
+        "created_at": "2026-08-08T14:48:44.000+02:00",
+        "updated_at": "2026-10-27T12:24:07.000+01:00",
+        "url": "https://api.github.com/repos/mareklangiewicz/AM/actions/workflows/329958061",
+        "html_url": "https://github.com/mareklangiewicz/AM/blob/main-marek/.github/workflows/check-obsolete-sources.yml",
+        "badge_url": "https://github.com/mareklangiewicz/AM/workflows/Check%20archived%20and%20obsolete%20sources/badge.svg"
+      },
+      {
+        "id": 329958062,
+        "node_id": "W_kwDOTPNl8s4TqsKu",
+        "name": "Deploy Jekyll with GitHub Pages dependencies preinstalled",
+        "path": ".github/workflows/jekyll-gh-pages.yml",
+        "state": "disabled_manually",
+        "created_at": "2026-08-08T14:48:44.000+02:00",
+        "updated_at": "2026-10-27T12:24:09.000+01:00",
+        "url": "https://api.github.com/repos/mareklangiewicz/AM/actions/workflows/329958062",
+        "html_url": "https://github.com/mareklangiewicz/AM/blob/main-marek/.github/workflows/jekyll-gh-pages.yml",
+        "badge_url": "https://github.com/mareklangiewicz/AM/workflows/Deploy%20Jekyll%20with%20GitHub%20Pages%20dependencies%20preinstalled/badge.svg"
+      },
+      {
+        "id": 329958063,
+        "node_id": "W_kwDOTPNl8s4TqsKv",
+        "name": "Language Manager",
+        "path": ".github/workflows/language-updater.yml",
+        "state": "disabled_manually",
+        "created_at": "2026-08-08T14:48:44.000+02:00",
+        "updated_at": "2026-10-27T12:24:10.000+01:00",
+        "url": "https://api.github.com/repos/mareklangiewicz/AM/actions/workflows/329958063",
+        "html_url": "https://github.com/mareklangiewicz/AM/blob/main-marek/.github/workflows/language-updater.yml",
+        "badge_url": "https://github.com/mareklangiewicz/AM/workflows/Language%20Manager/badge.svg"
+      },
+      {
+        "id": 329958064,
+        "node_id": "W_kwDOTPNl8s4TqsKw",
+        "name": "Sync Apps List",
+        "path": ".github/workflows/lister.yml",
+        "state": "disabled_manually",
+        "created_at": "2026-08-08T14:48:44.000+02:00",
+        "updated_at": "2026-10-27T12:24:12.000+01:00",
+        "url": "https://api.github.com/repos/mareklangiewicz/AM/actions/workflows/329958064",
+        "html_url": "https://github.com/mareklangiewicz/AM/blob/main-marek/.github/workflows/lister.yml",
+        "badge_url": "https://github.com/mareklangiewicz/AM/workflows/Sync%20Apps%20List/badge.svg"
+      }
+    ]
+  },
+  "status": "armed",
+  "verified_variables": [
+    {
+      "name": "CATALOG_SCHEDULE_REVISION",
+      "value": "466e1facce4e66d4b26c06446fc1e524aa0d76df"
+    },
+    {
+      "name": "CATALOG_SCHEDULE_START",
+      "value": "1793146336"
+    },
+    {
+      "name": "CATALOG_SCHEDULE_UNTIL",
+      "value": "1793232736"
+    }
+  ]
+}

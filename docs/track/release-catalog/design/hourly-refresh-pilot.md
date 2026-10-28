@@ -1,10 +1,14 @@
-# Prepared hourly freshness pilot (inactive)
+# Reviewed hourly freshness pilot
 
 Ticket [35](../issues/35-prepare-hourly-refresh-pilot.md).
 Review targets: [proposed workflow](catalog-schedule.yml.proposed),
 [controller](../../../../tools/catalog-collector/scheduled_dispatch.py),
 [offline checks](../../../../tools/catalog-collector/test_scheduled_dispatch.py).
-No schedule is installed and no repository variable has been changed.
+Preparation below is historical. Marek approved activation; schedule/controller
+were pushed at 466e1facce4e66d4b26c06446fc1e524aa0d76df and armed for
+2026-10-28T00:12:16Z through exclusive 2026-10-29T00:12:16Z. See
+[activation record](../research/hourly-pilot-activation.json) and
+[ticket 36](../issues/36-activate-hourly-refresh-pilot.md).
 
 ## Decision proposed for approval
 

@@ -1,0 +1,23 @@
+# Close and assess the bounded hourly pilot
+
+Type: task
+Status: open
+Triage: ready-for-human
+Blocked by: 36
+
+## Scope
+
+At/after 2026-10-29T00:12:16Z, disable catalog-schedule.yml (already authorized by
+ticket 36), verify no new child dispatch after expiry, and assess actual run count,
+release requests/statuses/bytes, freshness and full remote history object growth.
+Retain exact artifacts/logs/publication relationships before seven-day expiry.
+Do not extend window, repin source or enable ongoing scheduling automatically.
+
+The controller refuses further submission after expiry even if disabling is
+late. Existing queued child may complete. Emergency stop is disable workflow and
+clear CATALOG_SCHEDULE_REVISION; independently cancel in-flight child if required.
+Do not rewrite/delete release-catalog or alter installed apps as cleanup.
+
+Use `gh workflow disable catalog-schedule.yml --repo mareklangiewicz/AM` for
+closing the trigger, then verify remote workflow state. This task requires elapsed
+pilot time, not another approval for the already approved shutdown.

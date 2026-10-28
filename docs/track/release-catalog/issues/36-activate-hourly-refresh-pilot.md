@@ -1,7 +1,7 @@
 # Activate one 24-hour hourly freshness pilot
 
 Type: task
-Status: claimed
+Status: open
 Triage: ready-for-agent
 
 ## Scope and authorization target
@@ -21,3 +21,34 @@ Await explicit schedule activation approval. Existing manual workflow still
 requires individual approval outside this proposed scheduled pilot window.
 
 Marek explicitly approved activation with “ok”. Final remote prechecks passed: default main-marek, exact source 3ad023822 and publication e8e5cf962, only collector active, no pending collector runs or preexisting schedule variables.
+
+## Activation state
+
+Approved schedule installed and pushed as 466e1facce4e66d4b26c06446fc1e524aa0d76df.
+[Verified activation record](../research/hourly-pilot-activation.json) preserves
+active workflow inventory and repository variables. Window:
+2026-10-28T00:12:16Z <= dispatch time < 2026-10-29T00:12:16Z.
+Only collector and dispatcher are active; six unrelated workflows remain disabled.
+Four targeted tests pass; prior full suite 111 passed. No extra test dispatch.
+Awaiting first naturally scheduled tick for live verification.
+
+Do not push evidence-only commits during the window without an explicitly reviewed
+repin: the approved source guard deliberately stops collection after source drift.
+Window expiry stops submission; a queued child may finish afterward. Disable
+catalog-schedule.yml after expiry and retain run evidence before seven-day expiry.
+
+## Activation completed; first live tick pending
+
+At 2026-10-28T00:19:04Z the scheduled-run listing was still empty (first intended
+slot 00:17Z). No extra workflow dispatch was submitted. Bounded observation was
+stopped; no background monitor was left running. Activation itself is complete,
+but this ticket remains open for first naturally scheduled-run/child verification.
+No scheduled collection success is claimed. Retain first-run evidence and verify
+child source/prior/artifact/permissions/tree when the first event arrives.
+
+[History baseline](../research/hourly-pilot-baseline.json) records the full
+four-commit publication history before the pilot. It is an earlier verified
+fetch, not a new independent remote-history measurement at every tick.
+Activation evidence is committed locally without pushing it: a source push would
+invalidate the approved revision and stop dispatch until a separately reviewed
+repin. No repin or extension is implicit.
