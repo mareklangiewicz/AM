@@ -700,3 +700,11 @@ Updated the current frontier and added chmod/replacement/version-write failure
 and retry coverage through real recipes and standalone updaters, including fresh
 installation retries. No production fix needed; version-write failure reports
 partial completion after binary replacement, without an atomic rollback claim.
+
+
+2026-10-28: [59 resolved: offline daily-switch review](issues/59-daily-switch-offline-review.md).
+Daily workflow/controller still match ticket 40; collector workflow and operational
+six-source manifest match cached origin. Candidate enrollment remains separate;
+known private delivery paths and removed commits are absent from queued history.
+Five focused checks pass. Live closure/assessment and final source/pin verification
+remain 37/41; no push, live request, workflow change or host delivery occurred.

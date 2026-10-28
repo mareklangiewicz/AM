@@ -1,0 +1,68 @@
+{
+  "reviewed_head": "f2eab989e46469184a623cb56d23be7ccc630a8e",
+  "cached_origin_main_marek": "466e1facce4e66d4b26c06446fc1e524aa0d76df",
+  "queued_commits": 26,
+  "queued_changed_paths": 137,
+  "daily_workflow_controller_equal_ticket_40": true,
+  "cron": "17 3 * * *",
+  "freshness_seconds": 172800,
+  "operational_manifest_unchanged": true,
+  "operational_sources": 6,
+  "candidate_sources": 7,
+  "operational_manifest_sha256": "1c550b882e9855a7a652e44516d88db95046641da92f4b6e34fd65b9a6da87b9",
+  "collector_workflow_unchanged": true,
+  "byte_cap_definitions_unchanged": true,
+  "private_delivery_paths_absent_from_queued_history": true,
+  "tracked_ignored_paths": 0,
+  "excluded_commits": {
+    "cd3043c27": "not_ancestor",
+    "26f9ff4c0": "not_ancestor"
+  },
+  "archive_path_checks": [
+    {
+      "path": "docs/track/release-catalog/research/container-cli-e2e-20261028T162910Z.tar.gz",
+      "members": 552,
+      "bytes": 37449,
+      "sha256": "64adfbbc1734967d497debdcec681107e23a6b34b15fadf9d228498c065794a7"
+    },
+    {
+      "path": "docs/track/release-catalog/research/hourly-pilot-first-run-evidence.tar.gz",
+      "members": 15,
+      "bytes": 1011012,
+      "sha256": "dbfa13db1404165fc2a8ae645927e919d56775b4be43f4d4e3f929079cc69982"
+    },
+    {
+      "path": "docs/track/release-catalog/research/neovim-migration-46-evidence.tar.gz",
+      "members": 679,
+      "bytes": 44862,
+      "sha256": "a5b117c325d378b8d59f9400174021e12483743065359cda97a249528103439e"
+    },
+    {
+      "path": "docs/track/release-catalog/research/scheduled-cadence-diagnosis-evidence.tar.gz",
+      "members": 18,
+      "bytes": 12231,
+      "sha256": "1937db4eaba5f359625edf1137f2be47657d4481e08fe1d5ad3cc5e3bfa3d28c"
+    }
+  ],
+  "files": {
+    ".github/workflows/catalog-schedule.yml": "60b8bb8ab9b3027bb7ab04d6f62b791ff1eecaf369320c789a2a68d0124aef58",
+    "tools/catalog-collector/scheduled_dispatch.py": "4c8d4fac97d5ecb57b2bb027d514a6517ef1df73e2532330b449b548ddbc68e7",
+    "docs/track/release-catalog/design/staged-manifest.json": "1c550b882e9855a7a652e44516d88db95046641da92f4b6e34fd65b9a6da87b9",
+    "docs/track/release-catalog/design/staged-manifest-am-utils.json": "96fd3477b59a9806584f155c9180be1cd9c7ce368d02e0973b28afd2e0c4da62",
+    ".github/workflows/catalog-collector.yml": "b35f9adaf5329e6c18300c49a1af8a7540524c3e1a64bcf2a428034d99fc6447",
+    "tools/catalog-collector/workflow_adapter.py": "971336ac87b5be0a61648238be3e155bf7797a479e9efd941267c653dc3dd0e2",
+    "tools/catalog-collector/collector.py": "7fb53dc436360712b3c7bd8883c138834b16bb49bf7335967ac9715b0ffcf4f1",
+    "tools/catalog-collector/manifest.py": "ca3ec0f6eaf48e66e4a312906a27652a48eef33de1a2bb1f822a3b5ea16a024d",
+    "tools/catalog-collector/supervised_transport.py": "210adc2267d2b5f1bd7a24ba7cc20133f5a641a833c9df001c63938a17ccea61",
+    "tools/catalog-collector/storage.py": "4e2c9c0930db667fb3090db58e6037942b3eb9311316e94e092575f37762c591",
+    "tools/catalog-collector/delivery.py": "ebeca865355c2a0bdbf68d5f6bfd858c916ce466923b4b4ef8fdb02f26fa50df",
+    "modules/catalog.am": "5c1ca600e478ef26ec7ff3c70ef4bd61f49f6e86ff66696e722a9e9b90255618",
+    "tools/catalog-collector/reader.py": "2ce92fdca7cc1fbd0b2fdb6d786a6d2ecb6cc2f7634bb1bbee32a3d6bff94a6a"
+  },
+  "limits": [
+    "Offline cached-ref comparison; remote state not verified.",
+    "Archive member names checked; no full payload privacy/content audit claimed.",
+    "Bounded activation review, not full standards/spec review of every queued source change.",
+    "Final activation commit must include later closure evidence; recheck source and manifest then."
+  ]
+}

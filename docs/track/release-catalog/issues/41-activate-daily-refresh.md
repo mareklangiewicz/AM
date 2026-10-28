@@ -46,3 +46,11 @@ Readers then refuse unless exact stale consent is given. Failed observations do
 not get new validation timestamps. The 48-hour policy is implemented in both shell
 and Python reference readers; historical expiration evidence keeps its original
 24-hour meaning. No rollback of installed apps or publication history is needed.
+
+## Offline readiness review — 2026-10-28
+
+[59](59-daily-switch-offline-review.md) verifies the queued daily workflow/controller
+still match ticket 40 and the operational collector/manifest remain six-source.
+It records cached-ref hashes, private-path/ancestry checks and five focused tests.
+This does not replace live checks or 37's closure; use the final reviewed pushed
+SHA, not the earlier offline review HEAD, for activation.
