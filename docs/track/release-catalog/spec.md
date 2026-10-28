@@ -157,3 +157,18 @@ apps. It supplements narrower function-level integration tests. Whole-command
 regressions now lock down sync under pipefail, configured module ownership and
 aggregate app failure through no-argument sync. No remote test workflow, installed
 rollout or operational freshness claim follows from container success.
+
+
+## Offline enrollment preparation (2026-10-28; ticket 47)
+
+The am-utils source has reviewed real public identity and one bounded numeric
+release response. Authorized repair of two c++filt selectors now establishes
+356/356 metadata selections for retained bytes. The prepared seven-source
+contract accepts a separate candidate manifest while preserving exact historical
+six-source rows/readability and all byte/time/integrity/freshness safeguards.
+[Preparation and measurements](design/am-utils-seven-source-preparation.md)
+distinguish synthetic offline repeat events/local publication from live evidence.
+The operational manifest, workflow paths and schedule controller hash still select
+six sources. This does not extend the already authorized six-source daily switch,
+authorize new collection/publication, or unblock 48 before real enrollment is
+accepted and available. The 50-endpoint AppImage queue remains deferred.

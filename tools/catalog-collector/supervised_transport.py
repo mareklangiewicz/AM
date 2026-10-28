@@ -85,7 +85,7 @@ class SupervisedTransport:
 
     def execute(self, request, credential, limits):
         validate_plan(self._plan, self._workflow)
-        require(request in self._plan.requests and self._calls < 6 and
+        require(request in self._plan.requests and self._calls < len(self._plan.requests) and
                 request.source.descriptor.request_id not in self._used, 'unplanned_request')
         require(type(credential) is Token and type(limits) is Limits, 'invalid_runtime_input')
         require(all(type(v) in (float, int) and math.isfinite(v) for v in

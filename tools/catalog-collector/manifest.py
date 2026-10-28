@@ -1,6 +1,6 @@
 """Reviewed manifest loader; no network or credential access."""
 import json
-from collector import Descriptor, Source, plan, require
+from collector import Descriptor, Source, SOURCE_CAP, plan, require
 
 
 def load_manifest(raw, workflow_identity):
@@ -15,7 +15,7 @@ def load_manifest(raw, workflow_identity):
         raise ValueError('invalid_manifest_json')
     obj = json.loads(raw, object_pairs_hook=pairs, parse_constant=constant)
     require(type(obj) is dict and obj.get('schema') == 1 and
-            type(obj.get('sources')) is list and len(obj['sources']) == 6, 'invalid_manifest')
+            type(obj.get('sources')) is list and len(obj['sources']) in (6, SOURCE_CAP), 'invalid_manifest')
     sources = []
     for row in obj['sources']:
         require(type(row) is dict and type(row.get('repository_id')) is int and

@@ -1,0 +1,44 @@
+2026-10-28 — authorized offline preparation, no network/host operations
+
+c++filt regression:
+  python -B -m unittest discover -s tools/catalog-collector -p test_utility_selectors.py -v
+  Before repair: 4 subcase failures (both architectures, install/update empty).
+  After repair: passed (1 test / 4 actual selector subcases).
+
+Whole frozen-path audit:
+  python -B docs/track/release-catalog/research/am-utils-release-20261028/verify_selectors.py
+  356 recipes, 178 per architecture; 0 missing, 0 non-asset, 160 multiple.
+  All 356 equal their current actual recipe selector; post-fix report retained.
+
+Seven-source preparation:
+  Initial migration tests refused candidate at invalid_manifest (six-source guard).
+  python -B -m unittest discover -s tools/catalog-collector -p test_migration_enrollment.py -v
+  Final 7 tests passed in 10.453 seconds, including added actual workflow staging.
+  python -B -m unittest discover -s tools/catalog-collector -p test_supervised_transport.py -v
+  21 tests passed in 1.613 seconds, including seven workers/duplicate/eighth refusal.
+
+Full catalog verification:
+  python -B -m unittest discover -s tools/catalog-collector -p 'test_*.py' -v
+  192 tests passed in 133.635 seconds.
+  Discovery preceded the final workflow-staging regression added to migration
+  tests; that new test passed in the final seven-test focused run above.
+  193 distinct catalog tests were therefore exercised successfully on final code.
+
+Resource replay:
+  python -B docs/track/release-catalog/research/am-utils-release-20261028/measure_preparation.py
+  Bounded ZIP recomputation and temporary local Git publication pass.
+  Candidate tree 7621340 bytes, compressed artifact 553748 bytes / 18 members.
+  Local object file growth 147193 bytes. See preparation-resources.json for hashes.
+  Synthetic repeat events only; no live conditional/publication/freshness claim.
+
+Other checks:
+  Both changed shell recipes pass sh -n.
+  Warning ShellCheck diagnostics exactly match pre-fix recipes: pre-existing
+  SC2034 unused SITE assignment in each, no new warning.
+  Changed Python AST/JSON parsing, local documentation links, diff checks pass.
+  Operational six-source manifest SHA256 remains
+  1c550b882e9855a7a652e44516d88db95046641da92f4b6e34fd65b9a6da87b9.
+  Candidate seven-source SHA256:
+  96fd3477b59a9806584f155c9180be1cd9c7ce368d02e0973b28afd2e0c4da62.
+  No workflow/controller changes, source push/repin, collection/publication,
+  installed delivery, binary download or host configuration change.

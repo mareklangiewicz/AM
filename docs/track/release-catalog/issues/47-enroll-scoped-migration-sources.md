@@ -2,7 +2,7 @@
 
 Type: task
 Status: claimed
-Triage: needs-info
+Triage: ready-for-human
 Blocked by: 45
 
 ## Scope
@@ -92,3 +92,41 @@ the two selector exceptions and coordinated seven-source offline storage/deliver
 verification, before a separately approved collection/publication stage. Six-source
 manifest/guards, pilot source pin and schedule are unchanged. Status remains
 claimed/needs-info, with 48/49 still blocked.
+
+
+## Authorized offline selector/contract preparation — 2026-10-28
+
+Marek approved repairing the two c++filt selectors and preparing/testing the
+seven-source path offline. Commit `033ed3d57` fixes both actual install/update
+filters to match encoded-plus asset URLs; focused regression was red before/green
+after, and the separate [post-fix audit](../research/am-utils-release-20261028/selector-report-fixed.json)
+confirms all 356 selectors choose actual retained assets. The historical 354/356
+report remains unchanged. Shell syntax passes; warning ShellCheck reports only the
+pre-existing unused SITE assignment in both legacy recipes.
+
+[Seven-source preparation](../design/am-utils-seven-source-preparation.md) records
+the separate candidate manifest, coordinated count guards, exact-prior tests and
+resource replay. Historical six-source manifests remain readable; the operational
+manifest/workflow paths/controller hash remain unchanged. Max seven planned
+requests, each once, exact approved attempt count and all-source success remain
+required; byte/time caps are unchanged.
+
+The offline candidate tree is 7,621,340 bytes, compressed test artifact 553,748
+bytes, temporary local object-file growth 147,193 bytes. These use genuine saved
+bodies and explicitly synthetic six-source 304 events, not a live workflow or
+new publication/freshness claim. Storage/ZIP/publisher/readers, failed seventh
+source, exact conditional handling, byte/count bounds and local Git parent/child
+are verified. The new source is not yet available in the operational catalog.
+
+Status remains claimed/partial; triage is now ready-for-human for the next scoped
+acceptance after 37's closure and coordination with the already authorized
+six-source daily switch. No push, remote repin, workflow/schedule or host change,
+new collection or live publication occurred. 48/49 remain blocked.
+
+
+Final [verification record](../research/am-utils-enrollment-preparation-checks.txt):
+192-test full catalog suite plus the newly added staging regression pass, covering
+193 distinct tests; focused enrollment seven and supervised transport 21 pass.
+Operational manifest hash, syntax/diff/link checks and unchanged warning baseline
+verified. No outstanding offline failure; remaining work requires actual accepted
+live enrollment/publication and does not justify resolving this ticket yet.

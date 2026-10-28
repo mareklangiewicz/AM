@@ -163,7 +163,7 @@ def unpack_artifact(raw):
 
 
 def verify_artifact(files, context, manifest_raw, revision, previous):
-    preflight(context, manifest_raw, revision)
+    approved = preflight(context, manifest_raw, revision)
     report = decode(files['report.json'])
     require(report['context'] == context, 'artifact_context_mismatch')
     tree = {p[len('candidate/'):]: raw for p, raw in files.items() if p.startswith('candidate/')}
@@ -192,7 +192,7 @@ def verify_artifact(files, context, manifest_raw, revision, previous):
     storage_report = decode(files['storage-report.json'])
     require(storage_report == {'outcome':'validated_candidate', 'transitions':transitions,
         'files':{p:{'bytes':len(raw),'sha256':digest(raw)} for p,raw in tree.items()}}, 'storage_report_mismatch')
-    require(report['run']['complete'] is True and len(attempts) == 6 and
+    require(report['run']['complete'] is True and len(attempts) == len(approved.requests) and
             all(t['outcome'] in {'observed', 'validated'} for t in transitions), 'incomplete_publication')
     return tree
 

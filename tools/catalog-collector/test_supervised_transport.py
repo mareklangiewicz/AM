@@ -114,6 +114,27 @@ class AdapterContract(unittest.TestCase):
         _worker(cfg,lambda k,p:emitted.append((k,p)),connect=connect or (lambda timeout:sock))
         return sock,emitted
 
+    def test_seven_planned_workers_finish_once_and_eighth_is_rejected(self):
+        value = plan(tuple(Source(Descriptor(f'https://api.github.com/repositories/{100+n}/releases'),
+                                  100+n, 'docs/track/release-catalog/research/fixture.md#id')
+                           for n in range(7)), 1)
+        transport = self.transport(self.factory(valid_frames()), value)
+        class Clock:
+            utcnow = staticmethod(lambda: datetime.now(timezone.utc))
+            monotonic = staticmethod(time.monotonic)
+        attempts, report = collect(value, transport, Clock(), Token(SECRET), workflow_identity=1)
+        self.assertTrue(report['complete'])
+        self.assertEqual(len(attempts), 7)
+        self.assertEqual(len(self.processes), 7)
+        self.assertTrue(all(a['body'] == b' []\n' and a['outcome'] == 'response' for a in attempts))
+        with self.assertRaisesRegex(Refusal, 'unplanned_request'):
+            list(transport.execute(value.requests[-1], Token(SECRET), limits()))
+        self.assertEqual(len(self.processes), 7)
+        with self.assertRaisesRegex(Refusal, 'source_count'):
+            plan(tuple(r.source for r in value.requests) +
+                 (Source(Descriptor('https://api.github.com/repositories/107/releases'),
+                         107, 'docs/track/release-catalog/research/fixture.md#id'),), 1)
+
     def test_preflight_excludes_names_own_ids_and_unapproved_revisions(self):
         calls=[]
         factory=lambda:calls.append(True)

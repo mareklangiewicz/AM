@@ -213,7 +213,7 @@ def apply(previous_tree, manifest_raw, attempts, *, workflow_identity, generated
                                      observation=None, validators={}, latest_attempt=None, availability='unknown'))
         for alias in (source.descriptor.url, *source.aliases):
             aliases[alias] = {'request_id': rid, 'active': True}
-    require(type(attempts) is list and len(attempts) <= 6, 'invalid_batch')
+    require(type(attempts) is list and len(attempts) <= len(active), 'invalid_batch')
     seen, report = set(), []
     for attempt in attempts:
         require(type(attempt) is dict and set(attempt) == {

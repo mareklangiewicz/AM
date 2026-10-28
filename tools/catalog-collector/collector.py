@@ -11,6 +11,7 @@ import json
 import math
 import re
 
+SOURCE_CAP = 7  # six historical sources plus the reviewed am-utils candidate
 BODY_CAP = 8_000_000
 HEADER_CAP = 64_000
 VALUE_CAP = 8_192
@@ -126,7 +127,7 @@ def validate_plan(value, workflow_repository_id):
     require(type(value) is Plan and value.workflow_repository_id == workflow_repository_id,
             'workflow_identity_mismatch')
     identity(value.workflow_repository_id)
-    require(type(value.requests) is tuple and 0 < len(value.requests) <= 6, 'source_count')
+    require(type(value.requests) is tuple and 0 < len(value.requests) <= SOURCE_CAP, 'source_count')
     seen, aliases, locators = set(), set(), {}
     for request in value.requests:
         require(type(request) is Request and type(request.source) is Source, 'invalid_plan')

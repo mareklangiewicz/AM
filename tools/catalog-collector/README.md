@@ -81,7 +81,7 @@ matching approved/current full source revision. Pass an explicitly constructed
 opaque `Token` to `collect`. These supplied values still require a trusted future
 workflow adapter; matching strings and a Token object alone cannot establish their
 provenance. This transport is scoped to one run: each planned request may start
-once, at most six workers total. Aliases never become fetch targets and a changed
+once, bounded by the approved plan (at most seven workers; six in the operational manifest). Aliases never become fetch targets and a changed
 numeric URL still changes request ID and invalidates old state.
 
 A fresh isolated Python worker gets one bounded bootstrap over private stdin.
@@ -262,3 +262,15 @@ inert binaries and strict offline external-command adapters with runtime network
 disabled. See [runner, scenarios and limits](../../test/e2e/README.md). This
 supplements the Python suite, whose narrower integration tests extract functions
 and stub manager services.
+
+## Seven-source offline preparation (ticket 47)
+
+The planner now caps a run at seven sources. Manifest validation retains the
+six-source historical profile and accepts a separate seven-source candidate;
+transport/storage/publisher count checks bind to the approved plan. Byte/time
+caps and all-source publication success requirements are unchanged.
+`design/staged-manifest-am-utils.json` under the release-catalog tracker adds the
+reviewed am-utils endpoint while preserving the six original rows. The operational
+`staged-manifest.json`, workflow paths and scheduled controller hash still select
+six sources: this preparation does not activate the candidate. See
+[prepared contract, tests and measured limits](../../docs/track/release-catalog/design/am-utils-seven-source-preparation.md).

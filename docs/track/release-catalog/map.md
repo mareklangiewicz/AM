@@ -648,3 +648,15 @@ All 356 original selectors audited offline: 354 choose saved assets; both c++fil
 recipes miss GitHub's encoded-plus URLs. No filter changes; whole-family
 compatibility and operational enrollment remain incomplete. Existing guards/pilot
 pin unchanged, no push or workflow/host operation; 48/49 stay blocked.
+
+
+2026-10-28: [47 offline implementation prepared](design/am-utils-seven-source-preparation.md).
+Commit `033ed3d57` fixes both c++filt install/update selectors; all 356 now select
+actual retained assets. A separate seven-source manifest preserves the exact six
+original rows, with coordinated planner/manifest/transport/storage/publisher counts.
+Seven-source ZIP/recomputation/temporary local publication and shell/reference
+reader checks preserve refusal/freshness/conditional contracts. Measured candidate
+tree 7.62 MB, ZIP 554 KB, local object growth 147 KB; unchanged byte/time caps.
+Operational manifest/workflow/controller still select six sources. No live request,
+source push/repin, schedule change or host delivery; 47 remains partial/ready-for-human
+and 48/49 remain blocked. Pilot closure/daily switch retain their separate scope.
