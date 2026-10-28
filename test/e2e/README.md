@@ -41,7 +41,7 @@ app-directory mount is used. Container sudo policy and adapters are test-only.
   checksum. A small legacy recipe is installed through normal AM dispatch to
   exercise a mixed batch; it is not a migrated catalog recipe.
 
-Eleven scenarios on each target cover:
+Thirteen scenarios on each target cover:
 
 1. System recipe installation, expected retained URL, desktop extraction, binary
    symlink, source embedding, real checksum verification and standalone updater.
@@ -71,6 +71,13 @@ cross-distro gap; it supplements those tests.
 11. Normal confirmed removal and reinstall in both system AM and unprivileged
     AppMan, removing app files/command symlink/desktop entry while preserving
     user configuration, then checking the reinstalled standalone updater.
+
+12. Installed manager repository changes select the new catalog repository while
+    standalone updaters keep the original embedded source; transport traces verify
+    both choices without depending on different fixture contents.
+13. Exact inclusive 48-hour freshness acceptance and refusal one microsecond beyond
+    it through the installed CLI. Failed acceptance preserves the installed tree;
+    successful unchanged checks may refresh optional checksum evidence.
 
 Optional real-binary startup checks (cached matrix images required):
 
@@ -128,7 +135,7 @@ The built image ID and exact tested source hashes are retained with each run.
 Builds use network; runtime containers use `--network=none` and strict fixture
 transport, just like the other targets.
 
-All seven Termux scenarios execute as the native unprivileged `system` user
+All eight Termux scenarios execute as the native unprivileged `system` user
 (uid/gid 1000). Root only prepares a system-AM fixture and result permissions.
 There are no `/bin` or `/usr` compatibility links. The native Termux
 `libtermux-exec.so` preload supplies normal Termux shebang/path translation;
@@ -145,7 +152,10 @@ Coverage:
   leaves the app uninstalled. A writable system directory still refuses without
   sudo/doas. The fixture directory is user-owned with write bits removed so the
   negative test can toggle permissions; manager/module files remain root-owned.
-- Failed transfer preservation/retry and catalog freshness refusal.
+- Partial transfer writes truncated staging bytes before failure; working binary
+  and version survive, retry succeeds, and catalog freshness refusal preserves files.
+- Normal AppMan removal/reinstall cleans launchers and preserves user configuration,
+  with the reinstalled standalone updater exercised.
 - Download/install/execution of real Android-native Bash ELF bytes from the image,
   through a controlled legacy CLI recipe and the offline download adapter.
 

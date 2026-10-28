@@ -1,5 +1,6 @@
 """Container-only tests of whole, byte-unmodified installed AM/AppMan commands."""
 import hashlib
+from decimal import Decimal
 import json
 import os
 from pathlib import Path
@@ -17,6 +18,7 @@ if not Path('/run/am-e2e-container').is_file() or not Path('/src/APP-MANAGER').i
 sys.path.insert(0, '/src/tools/catalog-collector')
 import test_storage as retained
 from shell_lookup import render
+from shell_lookup import epoch
 from storage import validate
 
 SOURCE = 'https://raw.githubusercontent.com/e2e-selected/AM/test-source'
@@ -269,8 +271,46 @@ esac
         self.assertEqual((app/'version').read_text().strip(),OBSIDIAN)
         self.assertFalse((app/'tmp').exists())
 
+    def test_repository_switch_keeps_standalone_embedded_source(self):
+        self.command('-i','obsidian')
+        app=Path('/opt/obsidian')
+        alternate='https://raw.githubusercontent.com/e2e-alternate/AM/test-source'
+        self.configure(alternate_source=alternate,alternate_repository='e2e-alternate/AM')
+        (self.home/'.local/share/AM/newrepo-on').write_text(alternate+'\n')
+        previous=set((self.fixture/'calls').iterdir())
+        self.command('-u','obsidian','--commit',PIN)
+        calls=[json.loads(p.read_text())['url'] for p in set((self.fixture/'calls').iterdir())-previous]
+        self.assertTrue(any(url.startswith('https://raw.githubusercontent.com/e2e-alternate/AM/'+PIN+'/') for url in calls))
+        self.assertFalse(any(url.startswith('https://raw.githubusercontent.com/e2e-selected/AM/'+PIN+'/') for url in calls))
+        self.assertIn('AMREPO=${AMREPO-"'+SOURCE+'"}',(app/'recipe.am').read_text())
+        previous=set((self.fixture/'calls').iterdir())
+        self.command('--commit',PIN,executable=str(app/'AM-updater'))
+        calls=[json.loads(p.read_text())['url'] for p in set((self.fixture/'calls').iterdir())-previous]
+        self.assertTrue(any(url.startswith('https://raw.githubusercontent.com/e2e-selected/AM/'+PIN+'/') for url in calls))
+        self.assertFalse(any('e2e-alternate' in url for url in calls))
+
+    def test_exact_48_hour_cli_freshness_boundary(self):
+        self.command('-i','obsidian')
+        app=Path('/opt/obsidian')
+        alias='https://api.github.com/repos/obsidianmd/obsidian-releases/releases'
+        rid=self.index['aliases'][alias]['request_id']
+        checked=Decimal(epoch(self.index['entries'][rid]['observation']['validated_at']))
+        boundary=checked+Decimal(172800)
+        before=self.snapshot(app)
+        self.configure(clock=f'{boundary:.6f}')
+        result=self.command('-u','obsidian','--commit',PIN)
+        self.assertIn('obsidian: unchanged',result.stdout)
+        after=self.snapshot(app)
+        for name in ('obsidian','version'):
+            self.assertEqual(after[name],before[name])
+        before=after
+        self.configure(clock=f'{boundary+Decimal("0.000001"):.6f}')
+        result=self.command('-u','obsidian','--commit',PIN,success=False)
+        self.assertIn('stale',result.stderr)
+        self.assertEqual(self.snapshot(app),before)
+
     def test_remove_reinstall_preserves_user_configuration(self):
-        for appman in (False,True):
+        for appman in ((True,) if os.environ.get('E2E_TARGET') == 'termux' else (False,True)):
             with self.subTest(appman=appman):
                 home=self.fixture/'remove-appman-home' if appman else self.home
                 if appman:

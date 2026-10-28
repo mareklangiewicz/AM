@@ -28,6 +28,17 @@ record = {'tool': tool, 'url': url, 'head': head}
 # Reader file-size limits also apply to adapters: one small trace per request.
 (fixture/'calls'/f'{time.time_ns()}-{os.getpid()}.json').write_text(json.dumps(record))
 source = settings['source']
+# Explicit alternate fixture source for repository-switch scenarios. Keep traces
+# at their original URLs and accept only the configured additional repository.
+alternate = settings.get('alternate_source')
+if alternate and url.startswith(alternate+'/'):
+    url = source+url[len(alternate):]
+alternate_repo = settings.get('alternate_repository')
+if alternate_repo:
+    for host in ('https://api.github.com/repos/', 'https://raw.githubusercontent.com/'):
+        prefix = host+alternate_repo+'/'
+        if url.startswith(prefix):
+            url = host+settings['repository']+'/'+url[len(prefix):]
 raw = None
 if url == 'https://raw.githubusercontent.com/ivan-hc/am-extras/main/am-extras':
     raw = b'# Offline extras configuration\nthird_party_flags="--fixtureunused"\nfixtureunused_readme="https://example.invalid/e2e-extras"\n'

@@ -26,7 +26,7 @@ class TermuxCLI(unittest.TestCase):
                            for p in Path('/src/modules').glob('*.am')}
         inputs=['APP-MANAGER','test/e2e/Containerfile.termux','test/e2e/termux-test.sh',
                 'test/e2e/termux_scenarios.py','test/e2e/scenarios.py','test/e2e/external.py',
-                'test/e2e/run','test/e2e/fixtures/e2e-legacy','programs/x86_64/sqlitebrowser',
+                'test/e2e/run','test/e2e/fixtures/e2e-legacy','programs/x86_64/sqlitebrowser','programs/x86_64/obsidian',
                 'docs/track/release-catalog/design/staged-manifest.json',
                 'docs/track/release-catalog/research/supervised-baseline-40529551070-evidence.tar.gz']
         (OUT/'tested-source.json').write_text(json.dumps({
@@ -45,6 +45,7 @@ class TermuxCLI(unittest.TestCase):
     command=shared.InstalledCLI.command
     snapshot=shared.InstalledCLI.snapshot
     test_unprivileged_appman_install_and_standalone_source=shared.InstalledCLI.test_unprivileged_appman_install_and_standalone_source
+    test_remove_reinstall_preserves_user_configuration=shared.InstalledCLI.test_remove_reinstall_preserves_user_configuration
 
     def appman(self):
         self.prepare_home(self.home,appman=True)
@@ -107,11 +108,13 @@ class TermuxCLI(unittest.TestCase):
         app=self.home/'Applications/sqlitebrowser'
         before=(app/'sqlitebrowser').read_bytes()
         (app/'version').write_text('old\n')
-        self.configure(download_fail=True)
+        self.configure(download_partial_fail=True)
         self.command('-u','sqlitebrowser','--commit',PIN,executable=executable,success=False)
+        self.assertEqual((app/'tmp/sqlitebrowser.AppImage').read_bytes(),
+                         (self.fixture/'binary').read_bytes()[:17])
         self.assertEqual((app/'sqlitebrowser').read_bytes(),before)
         self.assertEqual((app/'version').read_text(),'old\n')
-        self.configure(download_fail=False)
+        self.configure(download_partial_fail=False)
         self.command('-u','sqlitebrowser','--commit',PIN,executable=executable)
         self.assertEqual((app/'version').read_text().strip(),SQLITE)
         before=self.snapshot(app)

@@ -673,3 +673,10 @@ live enrollment, host delivery or pilot change; 48 remains blocked by 47.
 Added truncated-transfer preservation/retry and AM/AppMan removal/reinstall with
 configuration preservation. Full Debian/Fedora matrix: 22 passing scenarios, zero
 unexpected requests. Production unchanged; no host delivery or operational change.
+
+
+2026-10-28: [56 resolved: source/freshness/Termux e2e](issues/56-e2e-source-freshness-termux.md).
+Real installed commands verify manager source switching versus embedded standalone
+source and the exact inclusive 48-hour freshness edge. Termux gains truncated
+transfer and AppMan removal/reinstall coverage. Final 34 scenarios pass across
+three targets; zero unexpected requests, unchanged production and pilot state.

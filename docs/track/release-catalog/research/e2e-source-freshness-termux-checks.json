@@ -1,0 +1,128 @@
+{
+  "scope": "offline installed commands; unchanged production code",
+  "initial_failure": {
+    "run": "test/e2e/out/20261028T215936Z-804829/debian",
+    "cause": "Test compared checksum evidence mtime after successful unchanged manager verification. Narrowed success assertion to binary/version and kept full-tree stale-refusal assertion.",
+    "production_fix": false
+  },
+  "targets": {
+    "debian": {
+      "run": "test/e2e/out/20261028T220052Z-823007/debian",
+      "result": {
+        "target": "debian",
+        "tests_run": 13,
+        "success": true,
+        "failures": [],
+        "errors": []
+      },
+      "commands": 45,
+      "unexpected_requests": 0,
+      "image_id": "410bd2006f3fe83f52014397c0a89a562edb24e590881af876f473681b92988a",
+      "tested_source": {
+        "inputs": {
+          "test/e2e/scenarios.py": "1fbfa1582cd4f75535357c2d477c12a7570b56ddbd17ee4bd42e743c0fef38ec",
+          "test/e2e/external.py": "54249655abc512349d7d742d45182bc4133228f68bb075ce87d6f7617d18d135",
+          "test/e2e/run": "051f330d0f1c8f1805226f0d13b346c30562ddc40adccedd876d45ba27ff3681",
+          "test/e2e/container-test.sh": "9b54b6754e1364ec29c39b422ecd6c0a812f09bcbbe14b90a0d926cbd2d225ac",
+          "test/e2e/fixtures/e2e-legacy": "6e950297b28f39e01e247fc27b6b52a3b34a7cb962e1940020cf60ef88a62e33",
+          "test/e2e/Containerfile.debian": "d4640563695b7149e3205b8d540d7b875833a4bc7af23c563097f0785425af25",
+          "test/e2e/Containerfile.fedora": "39f15c60fa3d5735dca8a3731c5e6f7673f101669d5d10b270a62a9c6a36dcc3",
+          "APP-MANAGER": "a76fd0bed64438da87d60f615e997409e50d86886ea795a9a4bd563e4f086137",
+          "programs/x86_64/nvim": "341ad350f7b79bc6714f0093eb780924c11efed5db0f1e6f9cca83d8a3ea795d",
+          "programs/x86_64/nvim-nightly": "3acb37b83dd78866dfd09b5b64e57acc94f1c1432c4d3a4b2eade2e55bbff55e",
+          "programs/x86_64/obsidian": "5d0ca2dce6b0eb56a55f199c9790b2007a4ee3fb71a864d7a6e6921d916b1526",
+          "programs/x86_64/sqlitebrowser": "859bee8c31ff9ca3223c124d2085abedd9d3fb7307e826427432a03269ca4236",
+          "docs/track/release-catalog/design/staged-manifest.json": "1c550b882e9855a7a652e44516d88db95046641da92f4b6e34fd65b9a6da87b9",
+          "docs/track/release-catalog/research/supervised-baseline-40529551070-evidence.tar.gz": "037f19a159d8788fcb95c4d6a8fe182ee44d3c452412bb3da826e3b94ba45dd9"
+        },
+        "modules": {
+          "database.am": "77a2279ab14d14a2d53b5eaf5903a42282ec4c00ef37f95009adfa8d82bf2d5e",
+          "install.am": "70935794b92ed8f49e2553393472aed0c3acd90bb9c00b6d02af595aa7e51bff",
+          "template.am": "67f672f72ccde05b835bf7c4d3061ecc8429088b9dc1f1a15b6857dbc971441c",
+          "catalog.am": "5c1ca600e478ef26ec7ff3c70ef4bd61f49f6e86ff66696e722a9e9b90255618",
+          "appimage.am": "2635c45af64031773d8dfcf3511df012d0ff42560bfd13dd80a65d4d41b4c473",
+          "management.am": "1a1962d6e85481a030653f53182496f7c5e9da490fc22f194b9046aeac4cae2b"
+        }
+      },
+      "scenario_log_sha256": "753b335c67d53049a39745bcc3c32db6044214982c4cf6245c736f430463e2ed"
+    },
+    "fedora": {
+      "run": "test/e2e/out/20261028T215936Z-804829/fedora",
+      "result": {
+        "target": "fedora",
+        "tests_run": 13,
+        "success": true,
+        "failures": [],
+        "errors": []
+      },
+      "commands": 45,
+      "unexpected_requests": 0,
+      "image_id": "b58e0faaf358d478f3c2b042fe829953b9d7de1bbea685f95887f5f50c489d70",
+      "tested_source": {
+        "inputs": {
+          "test/e2e/scenarios.py": "1fbfa1582cd4f75535357c2d477c12a7570b56ddbd17ee4bd42e743c0fef38ec",
+          "test/e2e/external.py": "54249655abc512349d7d742d45182bc4133228f68bb075ce87d6f7617d18d135",
+          "test/e2e/run": "051f330d0f1c8f1805226f0d13b346c30562ddc40adccedd876d45ba27ff3681",
+          "test/e2e/container-test.sh": "9b54b6754e1364ec29c39b422ecd6c0a812f09bcbbe14b90a0d926cbd2d225ac",
+          "test/e2e/fixtures/e2e-legacy": "6e950297b28f39e01e247fc27b6b52a3b34a7cb962e1940020cf60ef88a62e33",
+          "test/e2e/Containerfile.debian": "d4640563695b7149e3205b8d540d7b875833a4bc7af23c563097f0785425af25",
+          "test/e2e/Containerfile.fedora": "39f15c60fa3d5735dca8a3731c5e6f7673f101669d5d10b270a62a9c6a36dcc3",
+          "APP-MANAGER": "a76fd0bed64438da87d60f615e997409e50d86886ea795a9a4bd563e4f086137",
+          "programs/x86_64/nvim": "341ad350f7b79bc6714f0093eb780924c11efed5db0f1e6f9cca83d8a3ea795d",
+          "programs/x86_64/nvim-nightly": "3acb37b83dd78866dfd09b5b64e57acc94f1c1432c4d3a4b2eade2e55bbff55e",
+          "programs/x86_64/obsidian": "5d0ca2dce6b0eb56a55f199c9790b2007a4ee3fb71a864d7a6e6921d916b1526",
+          "programs/x86_64/sqlitebrowser": "859bee8c31ff9ca3223c124d2085abedd9d3fb7307e826427432a03269ca4236",
+          "docs/track/release-catalog/design/staged-manifest.json": "1c550b882e9855a7a652e44516d88db95046641da92f4b6e34fd65b9a6da87b9",
+          "docs/track/release-catalog/research/supervised-baseline-40529551070-evidence.tar.gz": "037f19a159d8788fcb95c4d6a8fe182ee44d3c452412bb3da826e3b94ba45dd9"
+        },
+        "modules": {
+          "database.am": "77a2279ab14d14a2d53b5eaf5903a42282ec4c00ef37f95009adfa8d82bf2d5e",
+          "install.am": "70935794b92ed8f49e2553393472aed0c3acd90bb9c00b6d02af595aa7e51bff",
+          "template.am": "67f672f72ccde05b835bf7c4d3061ecc8429088b9dc1f1a15b6857dbc971441c",
+          "catalog.am": "5c1ca600e478ef26ec7ff3c70ef4bd61f49f6e86ff66696e722a9e9b90255618",
+          "appimage.am": "2635c45af64031773d8dfcf3511df012d0ff42560bfd13dd80a65d4d41b4c473",
+          "management.am": "1a1962d6e85481a030653f53182496f7c5e9da490fc22f194b9046aeac4cae2b"
+        }
+      },
+      "scenario_log_sha256": "5b51033367f003a0b694d77cbf54419ac1b956ff39c1722234727aef8c4fff5a"
+    },
+    "termux": {
+      "run": "test/e2e/out/20261028T215936Z-804829/termux",
+      "result": {
+        "target": "termux",
+        "tests_run": 8,
+        "success": true,
+        "failures": [],
+        "errors": []
+      },
+      "commands": 18,
+      "unexpected_requests": 0,
+      "image_id": "127af029c294d496bfdbadb7a7b8b72e312ce128666186ae5b0f4a74a58ee9b8",
+      "tested_source": {
+        "inputs": {
+          "APP-MANAGER": "a76fd0bed64438da87d60f615e997409e50d86886ea795a9a4bd563e4f086137",
+          "test/e2e/Containerfile.termux": "1c0d45280571049e1a81708a1a50362d232b199006ef0dafd712e4d763d793dd",
+          "test/e2e/termux-test.sh": "c17b05b9aff1b73aace5505bc0c4b71c17462db6b923eb655148044a87bd8c6c",
+          "test/e2e/termux_scenarios.py": "36872ecd2026a8e5348a620baa26696fb4c6ea2d34ac15ab13690b3eae1bafc5",
+          "test/e2e/scenarios.py": "1fbfa1582cd4f75535357c2d477c12a7570b56ddbd17ee4bd42e743c0fef38ec",
+          "test/e2e/external.py": "54249655abc512349d7d742d45182bc4133228f68bb075ce87d6f7617d18d135",
+          "test/e2e/run": "051f330d0f1c8f1805226f0d13b346c30562ddc40adccedd876d45ba27ff3681",
+          "test/e2e/fixtures/e2e-legacy": "6e950297b28f39e01e247fc27b6b52a3b34a7cb962e1940020cf60ef88a62e33",
+          "programs/x86_64/sqlitebrowser": "859bee8c31ff9ca3223c124d2085abedd9d3fb7307e826427432a03269ca4236",
+          "programs/x86_64/obsidian": "5d0ca2dce6b0eb56a55f199c9790b2007a4ee3fb71a864d7a6e6921d916b1526",
+          "docs/track/release-catalog/design/staged-manifest.json": "1c550b882e9855a7a652e44516d88db95046641da92f4b6e34fd65b9a6da87b9",
+          "docs/track/release-catalog/research/supervised-baseline-40529551070-evidence.tar.gz": "037f19a159d8788fcb95c4d6a8fe182ee44d3c452412bb3da826e3b94ba45dd9"
+        },
+        "modules": {
+          "database.am": "77a2279ab14d14a2d53b5eaf5903a42282ec4c00ef37f95009adfa8d82bf2d5e",
+          "install.am": "70935794b92ed8f49e2553393472aed0c3acd90bb9c00b6d02af595aa7e51bff",
+          "template.am": "67f672f72ccde05b835bf7c4d3061ecc8429088b9dc1f1a15b6857dbc971441c",
+          "catalog.am": "5c1ca600e478ef26ec7ff3c70ef4bd61f49f6e86ff66696e722a9e9b90255618",
+          "appimage.am": "2635c45af64031773d8dfcf3511df012d0ff42560bfd13dd80a65d4d41b4c473",
+          "management.am": "1a1962d6e85481a030653f53182496f7c5e9da490fc22f194b9046aeac4cae2b"
+        }
+      },
+      "scenario_log_sha256": "ae8bae4a6171775b1d5140dabf29224512ac395f6fe86edf273f0c02893ba262"
+    }
+  }
+}
