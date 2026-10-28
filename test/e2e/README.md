@@ -41,7 +41,7 @@ app-directory mount is used. Container sudo policy and adapters are test-only.
   checksum. A small legacy recipe is installed through normal AM dispatch to
   exercise a mixed batch; it is not a migrated catalog recipe.
 
-Thirteen scenarios on each target cover:
+Fourteen scenarios on each target cover:
 
 1. System recipe installation, expected retained URL, desktop extraction, binary
    symlink, source embedding, real checksum verification and standalone updater.
@@ -78,6 +78,11 @@ cross-distro gap; it supplements those tests.
 13. Exact inclusive 48-hour freshness acceptance and refusal one microsecond beyond
     it through the installed CLI. Failed acceptance preserves the installed tree;
     successful unchanged checks may refresh optional checksum evidence.
+
+14. Unprivileged AppMan mixed batches: catalog-integrity refusal, legacy updater
+    failure and binary-transfer failure each report aggregate failure while later
+    apps continue. Successful retry, one shared pin/lookup, user ownership and
+    user launchers are checked through whole installed commands.
 
 Optional real-binary startup checks (cached matrix images required):
 

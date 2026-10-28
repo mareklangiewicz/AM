@@ -708,3 +708,12 @@ six-source manifest match cached origin. Candidate enrollment remains separate;
 known private delivery paths and removed commits are absent from queued history.
 Five focused checks pass. Live closure/assessment and final source/pin verification
 remain 37/41; no push, live request, workflow change or host delivery occurred.
+
+
+2026-10-28: [60 resolved: installed AppMan batch failures](issues/60-appman-mixed-batch-failures.md).
+Whole installed user-mode batches now cover catalog refusal, legacy failure,
+transfer failure and successful retry, with continuation and aggregate statuses.
+Final Debian/Fedora 28 scenarios / 100 commands pass, zero unexpected requests;
+nine support-tool specs and lint/diff checks pass. Corrected one new test's
+updated-versus-unchanged expectation; production unchanged. No host delivery,
+source push, live collection, enrollment or pilot/schedule change.

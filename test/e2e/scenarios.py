@@ -382,6 +382,60 @@ esac
         self.assertEqual(sum(c['url'].endswith('/lookup.tsv') for c in calls),1)
         self.assertEqual(sum('/bodies/' in c['url'] for c in calls),2)
 
+    def test_appman_mixed_batch_failures_continue_and_retry(self):
+        home=self.fixture/'appman-home';home.mkdir()
+        self.prepare_home(home,appman=True)
+        executable=str(home/'Applications/appman/appman')
+        self.command('-i','obsidian','sqlitebrowser','e2e-legacy',executable=executable,home=home)
+        apps=home/'Applications';app=apps/'obsidian'
+        legacy=apps/'e2e-legacy'
+        before=snapshot_tree(app)
+        alias='https://api.github.com/repos/obsidianmd/obsidian-releases/releases'
+        rid=self.index['aliases'][alias]['request_id']
+        body=self.fixture/'tree/bodies'/f'{rid}.json'
+        original=body.read_bytes();body.write_bytes(b'[]')
+        previous=set((self.fixture/'calls').iterdir())
+        result=self.command('-u','obsidian','e2e-legacy','sqlitebrowser',
+                            executable=executable,home=home,success=False)
+        self.assertIn('obsidian: refused',result.stderr)
+        self.assertIn('e2e-legacy: updated',result.stdout)
+        self.assertIn('sqlitebrowser: unchanged',result.stdout)
+        self.assertEqual(snapshot_tree(app),before)
+        self.assertEqual((legacy/'version').read_text().strip(),'legacy-new')
+        calls=read_transport_records(self.fixture/'calls',excluding=previous)
+        self.assertEqual(sum('/commits/heads/release-catalog' in c['url'] for c in calls),1)
+        self.assertEqual(sum(c['url'].endswith('/lookup.tsv') for c in calls),1)
+        self.assertEqual(sum('/bodies/' in c['url'] for c in calls),2)
+        body.write_bytes(original)
+        (self.fixture/'legacy-fail').touch()
+        result=self.command('-u','e2e-legacy','obsidian','sqlitebrowser',
+                            executable=executable,home=home,success=False)
+        self.assertIn('e2e-legacy: failed',result.stderr)
+        self.assertIn('obsidian: unchanged',result.stdout)
+        self.assertIn('sqlitebrowser: unchanged',result.stdout)
+        (self.fixture/'legacy-fail').unlink()
+        (app/'version').write_text('old\n')
+        before_binary=(app/'obsidian').read_bytes()
+        self.configure(download_fail=True)
+        result=self.command('-u','obsidian','e2e-legacy','sqlitebrowser',
+                            executable=executable,home=home,success=False)
+        self.assertIn('obsidian: failed',result.stderr)
+        self.assertIn('e2e-legacy: unchanged',result.stdout)
+        self.assertIn('sqlitebrowser: unchanged',result.stdout)
+        self.assertEqual((app/'obsidian').read_bytes(),before_binary)
+        self.assertEqual((app/'version').read_text(),'old\n')
+        self.configure(download_fail=False)
+        result=self.command('-u','obsidian','e2e-legacy','sqlitebrowser',
+                            executable=executable,home=home)
+        self.assertIn('obsidian: updated',result.stdout)
+        self.assertIn('sqlitebrowser: unchanged',result.stdout)
+        self.assertEqual((app/'version').read_text().strip(),OBSIDIAN)
+        self.assertEqual((self.fixture/'legacy-runs').read_text(),'ran'*4)
+        for name in ('obsidian','sqlitebrowser','e2e-legacy'):
+            self.assertFalse((Path('/opt')/name).exists())
+            self.assertEqual((apps/name/name).stat().st_uid,USER.pw_uid)
+            self.assertTrue((home/'.local/bin'/name).samefile(apps/name/name))
+
     def test_optional_digest_unavailable_differs_from_checksum_mismatch(self):
         self.command('-i','obsidian')
         self.configure(bad_digest=True)

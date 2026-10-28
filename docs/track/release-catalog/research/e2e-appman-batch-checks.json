@@ -1,0 +1,134 @@
+{
+  "scope": "offline whole installed AppMan mixed-batch faults; production unchanged",
+  "run": "test/e2e/out/20261028T231023Z-961272",
+  "targets": {
+    "debian": {
+      "result": {
+        "target": "debian",
+        "tests_run": 14,
+        "success": true,
+        "failures": [],
+        "errors": []
+      },
+      "commands": 50,
+      "new_scenario_commands": 5,
+      "unexpected_requests": 0,
+      "image_id": "410bd2006f3fe83f52014397c0a89a562edb24e590881af876f473681b92988a",
+      "environment": "target=debian\n/bin/sh=/usr/bin/dash\nPRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"\nNAME=\"Debian GNU/Linux\"\nVERSION_ID=\"13\"\nVERSION=\"13 (trixie)\"\nVERSION_CODENAME=trixie\nDEBIAN_VERSION_FULL=13.5\nID=debian\nHOME_URL=\"https://www.debian.org/\"\nSUPPORT_URL=\"https://www.debian.org/support\"\nBUG_REPORT_URL=\"https://bugs.debian.org/\"\n",
+      "tested_source": {
+        "inputs": {
+          "test/e2e/scenarios.py": "127b5a7724851263947c6e5f128d9da65823ac850e21671aa7bb28fda9257158",
+          "test/e2e/external.py": "d7b98b8f92e13dd1b4f030c5e08b36a6656c72dd8c530325ca617f7626b008a8",
+          "test/e2e/run": "051f330d0f1c8f1805226f0d13b346c30562ddc40adccedd876d45ba27ff3681",
+          "test/e2e/filesystem.py": "ae6636ed307a6d514fa5e51fd51a2d82b6ed8a91b4a225d9a09c905671f9c023",
+          "test/e2e/transport_args.py": "d4b56c101b4144e3813290f638cbb95d499d0c9d4d081948b69d83f8fa1c4c4b",
+          "test/e2e/transport_records.py": "853291743574ae1eb20ed20e97cc5c9aecca606aec4470dbf178f43d8d00a305",
+          "test/e2e/container-test.sh": "9b54b6754e1364ec29c39b422ecd6c0a812f09bcbbe14b90a0d926cbd2d225ac",
+          "test/e2e/fixtures/e2e-legacy": "6e950297b28f39e01e247fc27b6b52a3b34a7cb962e1940020cf60ef88a62e33",
+          "test/e2e/Containerfile.debian": "d4640563695b7149e3205b8d540d7b875833a4bc7af23c563097f0785425af25",
+          "test/e2e/Containerfile.fedora": "39f15c60fa3d5735dca8a3731c5e6f7673f101669d5d10b270a62a9c6a36dcc3",
+          "APP-MANAGER": "a76fd0bed64438da87d60f615e997409e50d86886ea795a9a4bd563e4f086137",
+          "programs/x86_64/nvim": "341ad350f7b79bc6714f0093eb780924c11efed5db0f1e6f9cca83d8a3ea795d",
+          "programs/x86_64/nvim-nightly": "3acb37b83dd78866dfd09b5b64e57acc94f1c1432c4d3a4b2eade2e55bbff55e",
+          "programs/x86_64/obsidian": "5d0ca2dce6b0eb56a55f199c9790b2007a4ee3fb71a864d7a6e6921d916b1526",
+          "programs/x86_64/sqlitebrowser": "859bee8c31ff9ca3223c124d2085abedd9d3fb7307e826427432a03269ca4236",
+          "docs/track/release-catalog/design/staged-manifest.json": "1c550b882e9855a7a652e44516d88db95046641da92f4b6e34fd65b9a6da87b9",
+          "docs/track/release-catalog/research/supervised-baseline-40529551070-evidence.tar.gz": "037f19a159d8788fcb95c4d6a8fe182ee44d3c452412bb3da826e3b94ba45dd9"
+        },
+        "modules": {
+          "database.am": "77a2279ab14d14a2d53b5eaf5903a42282ec4c00ef37f95009adfa8d82bf2d5e",
+          "install.am": "70935794b92ed8f49e2553393472aed0c3acd90bb9c00b6d02af595aa7e51bff",
+          "template.am": "67f672f72ccde05b835bf7c4d3061ecc8429088b9dc1f1a15b6857dbc971441c",
+          "catalog.am": "5c1ca600e478ef26ec7ff3c70ef4bd61f49f6e86ff66696e722a9e9b90255618",
+          "appimage.am": "2635c45af64031773d8dfcf3511df012d0ff42560bfd13dd80a65d4d41b4c473",
+          "management.am": "1a1962d6e85481a030653f53182496f7c5e9da490fc22f194b9046aeac4cae2b"
+        }
+      },
+      "scenario_log_sha256": "14cdfa75bb6a58eb7ff8d19090e6d45426cc3810373fe8a2be6f08449fa73962"
+    },
+    "fedora": {
+      "result": {
+        "target": "fedora",
+        "tests_run": 14,
+        "success": true,
+        "failures": [],
+        "errors": []
+      },
+      "commands": 50,
+      "new_scenario_commands": 5,
+      "unexpected_requests": 0,
+      "image_id": "b58e0faaf358d478f3c2b042fe829953b9d7de1bbea685f95887f5f50c489d70",
+      "environment": "target=fedora\n/bin/sh=/usr/bin/bash\nNAME=\"Fedora Linux\"\nVERSION=\"44 (Container Image)\"\nRELEASE_TYPE=stable\nID=fedora\nVERSION_ID=44\nVERSION_CODENAME=\"\"\nPRETTY_NAME=\"Fedora Linux 44 (Container Image)\"\nANSI_COLOR=\"0;38;2;60;110;180\"\nLOGO=fedora-logo-icon\nCPE_NAME=\"cpe:/o:fedoraproject:fedora:44\"\nDEFAULT_HOSTNAME=\"fedora\"\nHOME_URL=\"https://fedoraproject.org/\"\nDOCUMENTATION_URL=\"https://docs.fedoraproject.org/en-US/fedora/f44/\"\nSUPPORT_URL=\"https://ask.fedoraproject.org/\"\nBUG_REPORT_URL=\"https://bugzilla.redhat.com/\"\nREDHAT_BUGZILLA_PRODUCT=\"Fedora\"\nREDHAT_BUGZILLA_PRODUCT_VERSION=44\nREDHAT_SUPPORT_PRODUCT=\"Fedora\"\nREDHAT_SUPPORT_PRODUCT_VERSION=44\nSUPPORT_END=2027-05-19\nVARIANT=\"Container Image\"\nVARIANT_ID=container\n",
+      "tested_source": {
+        "inputs": {
+          "test/e2e/scenarios.py": "127b5a7724851263947c6e5f128d9da65823ac850e21671aa7bb28fda9257158",
+          "test/e2e/external.py": "d7b98b8f92e13dd1b4f030c5e08b36a6656c72dd8c530325ca617f7626b008a8",
+          "test/e2e/run": "051f330d0f1c8f1805226f0d13b346c30562ddc40adccedd876d45ba27ff3681",
+          "test/e2e/filesystem.py": "ae6636ed307a6d514fa5e51fd51a2d82b6ed8a91b4a225d9a09c905671f9c023",
+          "test/e2e/transport_args.py": "d4b56c101b4144e3813290f638cbb95d499d0c9d4d081948b69d83f8fa1c4c4b",
+          "test/e2e/transport_records.py": "853291743574ae1eb20ed20e97cc5c9aecca606aec4470dbf178f43d8d00a305",
+          "test/e2e/container-test.sh": "9b54b6754e1364ec29c39b422ecd6c0a812f09bcbbe14b90a0d926cbd2d225ac",
+          "test/e2e/fixtures/e2e-legacy": "6e950297b28f39e01e247fc27b6b52a3b34a7cb962e1940020cf60ef88a62e33",
+          "test/e2e/Containerfile.debian": "d4640563695b7149e3205b8d540d7b875833a4bc7af23c563097f0785425af25",
+          "test/e2e/Containerfile.fedora": "39f15c60fa3d5735dca8a3731c5e6f7673f101669d5d10b270a62a9c6a36dcc3",
+          "APP-MANAGER": "a76fd0bed64438da87d60f615e997409e50d86886ea795a9a4bd563e4f086137",
+          "programs/x86_64/nvim": "341ad350f7b79bc6714f0093eb780924c11efed5db0f1e6f9cca83d8a3ea795d",
+          "programs/x86_64/nvim-nightly": "3acb37b83dd78866dfd09b5b64e57acc94f1c1432c4d3a4b2eade2e55bbff55e",
+          "programs/x86_64/obsidian": "5d0ca2dce6b0eb56a55f199c9790b2007a4ee3fb71a864d7a6e6921d916b1526",
+          "programs/x86_64/sqlitebrowser": "859bee8c31ff9ca3223c124d2085abedd9d3fb7307e826427432a03269ca4236",
+          "docs/track/release-catalog/design/staged-manifest.json": "1c550b882e9855a7a652e44516d88db95046641da92f4b6e34fd65b9a6da87b9",
+          "docs/track/release-catalog/research/supervised-baseline-40529551070-evidence.tar.gz": "037f19a159d8788fcb95c4d6a8fe182ee44d3c452412bb3da826e3b94ba45dd9"
+        },
+        "modules": {
+          "database.am": "77a2279ab14d14a2d53b5eaf5903a42282ec4c00ef37f95009adfa8d82bf2d5e",
+          "install.am": "70935794b92ed8f49e2553393472aed0c3acd90bb9c00b6d02af595aa7e51bff",
+          "template.am": "67f672f72ccde05b835bf7c4d3061ecc8429088b9dc1f1a15b6857dbc971441c",
+          "catalog.am": "5c1ca600e478ef26ec7ff3c70ef4bd61f49f6e86ff66696e722a9e9b90255618",
+          "appimage.am": "2635c45af64031773d8dfcf3511df012d0ff42560bfd13dd80a65d4d41b4c473",
+          "management.am": "1a1962d6e85481a030653f53182496f7c5e9da490fc22f194b9046aeac4cae2b"
+        }
+      },
+      "scenario_log_sha256": "63bb7214b59effb0bc1e54e3f8a7ea5378ecc9c9881ac872f4448f465966d456"
+    }
+  },
+  "initial_assertion_failure": {
+    "run": "test/e2e/out/20261028T230812Z-924357",
+    "cause": "Expected updated after legacy version already current; corrected to unchanged. No production fix.",
+    "debian": {
+      "result": {
+        "target": "debian",
+        "tests_run": 14,
+        "success": false,
+        "failures": [
+          "__main__.InstalledCLI.test_appman_mixed_batch_failures_continue_and_retry"
+        ],
+        "errors": []
+      },
+      "scenario_log_sha256": "ebe005f955f16ba2441881e803e42f8f94fd5879ed1bad1788071618b84d2ade",
+      "tested_scenario_sha256": "46db1845c53748e537f953afc222669411681cc72df6fe7b7b131e8ee557f0ff"
+    },
+    "fedora": {
+      "result": {
+        "target": "fedora",
+        "tests_run": 14,
+        "success": false,
+        "failures": [
+          "__main__.InstalledCLI.test_appman_mixed_batch_failures_continue_and_retry"
+        ],
+        "errors": []
+      },
+      "scenario_log_sha256": "e870573db4579e8071e52bb1eef0598af75c06f031a281e959cab2fc1cc627b3",
+      "tested_scenario_sha256": "46db1845c53748e537f953afc222669411681cc72df6fe7b7b131e8ee557f0ff"
+    }
+  },
+  "support_tool_specs": 9,
+  "shellcheck": "pass",
+  "diff_check": "pass",
+  "limits": [
+    "Retained catalog and inert binaries; no live freshness or GUI claim.",
+    "AppMan batch scenario added for Debian/dash and Fedora/bash only; Termux suite unchanged and not rerun.",
+    "No source push, workflow change, enrollment or host delivery."
+  ],
+  "total_scenarios": 28,
+  "total_commands": 100
+}
