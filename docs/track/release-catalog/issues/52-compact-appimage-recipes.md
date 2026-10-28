@@ -23,7 +23,7 @@ source/path bindings before existing path/source transformations. Expanded older
 recipes remain compatible. Production source shrinks 30 lines overall; installed
 recipes shrink three lines each. Exact selectors and nightly refresh stay intact.
 
-[Current interface and cost](../design/shared-appimage-lifecycle.md#current-compact-interface-ticket-52).
+[Current interface and cost](../design/shared-appimage-lifecycle.md#compact-installation-bindings-ticket-52).
 
 Validation: full 182-test catalog discovery initially exposed two inherited test
 identity substitutions and six batch fixture path assumptions. Corrected those

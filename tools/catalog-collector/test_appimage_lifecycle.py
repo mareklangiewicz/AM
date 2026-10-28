@@ -14,6 +14,16 @@ APP = ROOT / 'programs/x86_64/obsidian'
 LIFECYCLE = ROOT / 'modules/appimage.am'
 
 
+def selector_script(path):
+    return path.read_text().rsplit('am_appimage "$0" "$@"', 1)[0].replace(
+        '/opt/am/modules/appimage.am', str(LIFECYCLE)) + '\nam_appimage_select_asset\n'
+
+
+def previous_selector(path, revision='f8add0784'):
+    source = subprocess.check_output(['git', 'show', revision+':'+str(path.relative_to(ROOT))], cwd=ROOT).decode()
+    return source.split('select_asset() {\n\t')[1].split('\n}')[0]
+
+
 def bound_recipe(recipe):
     # Function-level tests bind a private root explicitly; whole installer tests
     # below exercise production expansion of compact recipes.
@@ -46,7 +56,7 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\nmkdir -p 
 ''')
         self.script('notify-send','pass\n')
         self.script('appimageupdatetool',"raise RuntimeError('forbidden bypass')\n")
-        self.filters=[APP.read_text().split('select_asset() {\n\t')[1].split('\n}')[0]]
+        self.filters=[previous_selector(APP)]
         self.expected=subprocess.run(['/bin/sh','-c',self.filters[0]],input=self.body,
                                      capture_output=True,check=True).stdout.strip().decode()
 
@@ -70,6 +80,9 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\nmkdir -p 
         previous=subprocess.run(['git','show','0a21fef3c:programs/x86_64/obsidian'],
                                 cwd=ROOT,capture_output=True,check=True).stdout.decode()
         legacy=re.findall(r'version=\$\(curl[^|]+\| (.*)\)',previous)
+        selected=subprocess.run(['sh','-c',selector_script(APP)],input=self.body,
+                                capture_output=True,check=True).stdout.strip().decode()
+        self.assertEqual(selected,self.expected)
         self.assertEqual(self.filters,[legacy[0]])
         self.assertEqual(legacy[0],legacy[1])
         updater=self.install()
@@ -696,9 +709,9 @@ class NvimLifecycle(AppImageRecipeCases, ShellFixture):
         previous=subprocess.run(['git','show','c2bcd8f82:programs/x86_64/nvim'],
                                 cwd=ROOT,capture_output=True,check=True).stdout.decode()
         original=re.findall(r'version=\$\(curl[^|]+\| (.*)\)',previous)
-        current=self.recipe_path.read_text().split('select_asset() {\n\t')[1].split('\n}')[0]
+        current=previous_selector(self.recipe_path)
         self.assertEqual(original,[current,current])
-        result=subprocess.run(['sh','-c',current],input=self.body,capture_output=True,check=True)
+        result=subprocess.run(['sh','-c',selector_script(self.recipe_path)],input=self.body,capture_output=True,check=True)
         self.assertEqual(result.stdout.strip().decode(),self.expected_url)
 
     def test_mutable_url_refreshes_without_version_change(self):
@@ -740,7 +753,56 @@ def assert_original_neovim_selectors(case):
     previous=subprocess.run(['git','show','e38e8b844:'+str(case.recipe_path.relative_to(ROOT))],
                             cwd=ROOT,capture_output=True,check=True).stdout.decode()
     original=re.findall(r'version=\$\(curl[^|]+\| (.*)\)',previous)
-    current=case.recipe_path.read_text().split('select_asset() {\n\t')[1].split('\n}')[0]
+    current=previous_selector(case.recipe_path)
     case.assertEqual(original,[current,current])
-    result=subprocess.run(['sh','-c',current],input=case.body,capture_output=True,check=True)
+    result=subprocess.run(['sh','-c',selector_script(case.recipe_path)],input=case.body,capture_output=True,check=True)
     case.assertEqual(result.stdout.strip().decode(),case.expected_url)
+
+
+class AssetSelection(unittest.TestCase):
+    def test_declarative_selectors_match_previous_pipelines(self):
+        # Compare both accepted and rejected candidates, ordering, casing and
+        # empty input against the original executable policies for every recipe.
+        urls = [
+            'https://github.com/obsidianmd/obsidian-releases/releases/download/v1/Obsidian.AppImage',
+            'https://github.com/obsidianmd/obsidian-releases/releases/download/v1/Obsidian-arm64.AppImage',
+            'https://github.com/sqlitebrowser/sqlitebrowser/releases/download/v3.13.1/db-x86.64.AppImage',
+            'https://github.com/sqlitebrowser/sqlitebrowser/releases/download/3.13.1/db-x86_64.AppImage',
+            'https://github.com/sqlitebrowser/sqlitebrowser/releases/download/v3-rc1/db-x86_64.AppImage',
+            'https://github.com/sqlitebrowser/sqlitebrowser/releases/download/continuous/db-x86_64.AppImage',
+            'https://github.com/sqlitebrowser/sqlitebrowser/releases/download/dev/db-x86_64.AppImage',
+            'https://github.com/neovim/neovim/releases/download/v0.12.6/nvim-linux-x86_64.appimage',
+            'https://github.com/neovim/neovim/releases/download/v0.12.6/nvim-linux-arm64.appimage',
+            'https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.appimage',
+            'https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-arm64.appimage',
+            'https://github.com/neovim/neovim/releases/download/NIGHTLY/nvim-linux-x86_64.appimage',
+            'https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-i686.appimage',
+            'https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-aarch64.appimage',
+            'https://example.org/x86_64.AppImage',
+            'https://example.org/I386.AppImage',
+            'https://example.org/file.tar.gz',
+        ]
+        recipes = [ROOT/'programs'/arch/app for arch,app in
+                   [('x86_64','obsidian'),('x86_64','sqlitebrowser'),
+                    ('x86_64','nvim'),('aarch64','nvim'),
+                    ('x86_64','nvim-nightly'),('aarch64','nvim-nightly')]]
+        cases = [[], urls, list(reversed(urls)), [url.upper() for url in urls]]
+        cases += [[url] for url in urls]
+        for recipe in recipes:
+            old=previous_selector(recipe)
+            new=selector_script(recipe)
+            for candidates in cases:
+                with self.subTest(recipe=str(recipe.relative_to(ROOT)), candidates=candidates):
+                    body=json.dumps({'assets':[{'browser_download_url':url} for url in candidates]}).encode()
+                    before=subprocess.run(['sh','-c',old],input=body,capture_output=True,check=True)
+                    after=subprocess.run(['sh','-c',new],input=body,capture_output=True,check=True)
+                    self.assertEqual(after.stdout,before.stdout)
+
+    def test_custom_selector_takes_precedence_and_propagates_failure(self):
+        for status in (0,7):
+            script = (f'. "{LIFECYCLE}"\nASSET_EXCLUDE=.*\n'
+                      'select_asset() { cat; return '+str(status)+'; }\n'
+                      'am_appimage_select_asset\n')
+            result=subprocess.run(['sh','-c',script],input=b'custom\n',capture_output=True)
+            self.assertEqual(result.stdout,b'custom\n')
+            self.assertEqual(result.returncode,status)

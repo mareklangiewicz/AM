@@ -6,9 +6,9 @@ APP=nvim-nightly
 CATALOG_ALIAS="https://api.github.com/repos/neovim/neovim/releases"
 # Nightly assets change in place at the same URL.
 REFRESH_ALWAYS=true
-select_asset() {
-	sed 's/[()",{} ]/\n/g' | grep -o 'https.*releases.*nvim.*mage$' | grep -v "x86_64\|i686\|i386" | grep -i nightly | head -1
-}
+ASSET_URL='https.*releases.*nvim.*mage$'
+ASSET_EXCLUDE="x86_64\|i686\|i386"
+ASSET_INCLUDE=nightly
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

@@ -1,6 +1,16 @@
 #!/bin/sh
 # AMCLI shared AppImage lifecycle. Sourced only by trusted AM recipes.
 # Selector and installed bindings come from trusted recipes, never catalog JSON.
+# URL/exclude matching is case-sensitive unless requested; include matching is
+# case-insensitive (release tags/channels). Retain upstream order, then take first.
+am_appimage_select_asset() (
+	if command -v select_asset >/dev/null 2>&1; then select_asset; exit; fi
+	match() { if [ "${ASSET_IGNORE_CASE-false}" = true ]; then grep -i "$@"; else grep "$@"; fi; }
+	include() { if [ -n "${ASSET_INCLUDE-}" ]; then grep -i -- "$ASSET_INCLUDE"; else cat; fi; }
+	exclude() { if [ -n "${ASSET_EXCLUDE-}" ]; then match -v -- "$ASSET_EXCLUDE"; else cat; fi; }
+	sed 's/[()",{} ]/\n/g' | match -o -- "${ASSET_URL-https.*mage$}" | include | exclude | head -1
+)
+
 am_appimage() (
 	set -eu
 	recipe=$1; shift
@@ -18,7 +28,7 @@ am_appimage() (
 	case $APP in ''|*[!a-z0-9_-]*) echo 'Invalid app identity' >&2; exit 1;; esac
 	[ -r "$CATALOG_HELPER" ] || { echo 'Missing catalog.am; synchronize AM modules.' >&2; exit 3; }
 	catalog_body=$(sh "$CATALOG_HELPER" "$CATALOG_ALIAS" "$@") || exit 3
-	version=$(printf '%s\n' "$catalog_body" | select_asset) || exit 3
+	version=$(printf '%s\n' "$catalog_body" | am_appimage_select_asset) || exit 3
 	[ -n "$version" ] || { echo 'Error getting link' >&2; exit 3; }
 	APPS_DIR=${APPS_DIR%/}
 	dir="$APPS_DIR/$APP"

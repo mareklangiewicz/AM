@@ -604,3 +604,12 @@ all 182 cases after affected-module fixture corrections, eight historical probes
 and 18 Debian/Fedora whole-command scenarios / 56 commands. No host delivery,
 source push or workflow change; private payload manifests require rechecking and
 37/41 obligations remain independent.
+
+
+2026-10-28: [53 resolved: shared asset selection](issues/53-share-asset-selection.md).
+Six recipes declare URL/include/exclude patterns; shared tokenization/filtering/
+first-match logic preserves exact selection and case policy, with custom selectors
+still supported. 184 catalog tests pass, including 126 differential selector cases;
+18 Debian/Fedora whole-command scenarios / 56 commands pass. Recipe lines 84 -> 82,
+production net +8 lines: centralization rather than a large size reduction. No host
+delivery, source push, collection or workflow change; 37/41 remain independent.

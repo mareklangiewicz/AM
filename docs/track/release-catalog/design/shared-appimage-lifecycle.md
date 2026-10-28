@@ -1,11 +1,41 @@
 # Shared AppImage lifecycle
 
-## Current compact interface (ticket 52)
+## Current selection interface (ticket 53)
 
-Recipes now contain app identity, exact catalog alias, one selector, real app
-exceptions, and the shared-helper invocation. AppImage format is implied by that
-invocation. Six recipes lose eight lines each: 132 -> 84 total source lines;
-ordinary recipes are 13 lines, Obsidian/nightly 15 including comments and blanks.
+Typical recipes declare patterns instead of a `select_asset` function:
+
+- `ASSET_URL`: basic grep regex extracting the URL substring; default `https.*mage$`.
+- `ASSET_EXCLUDE`: optional rejection regex.
+- `ASSET_INCLUDE`: optional case-insensitive release/channel regex.
+- `ASSET_IGNORE_CASE=true`: make URL and exclusion matching case-insensitive;
+  they are case-sensitive by default.
+
+The shared selector tokenizes exactly as the original recipes did, extracts URLs,
+filters candidates without sorting and takes the first match. Include/exclude
+filters only discard whole candidates; their relative order cannot change the
+selected URL. The per-recipe settings preserve each previous selector's casing,
+architecture and channel rules, including the asymmetry in Neovim nightly
+(case-sensitive URL/exclusion and case-insensitive nightly inclusion).
+
+A trusted recipe may still define `select_asset` for exceptional policy. It gets
+raw response bytes and takes precedence over the pattern defaults; its failure
+status propagates. Existing installed custom-selector recipes remain supported.
+Catalog JSON remains inert and supplies neither patterns nor executable code.
+
+The six recipes now total 82 lines (previously 84); shared selection adds ten
+helper lines, for eight additional production lines overall. This change removes
+repeated mechanics rather than promising a large line-count reduction. Selectors
+are verified against their pre-change pipelines on retained responses and a
+126-case differential corpus covering casing, ordering and rejected candidates.
+No host delivery, source push or new collection follows from these local changes.
+
+## Compact installation bindings (ticket 52)
+
+At ticket 52, recipes retained app identity, exact catalog alias, one selector,
+real exceptions, and the shared-helper invocation, which implies AppImage format.
+Six recipes lost eight lines each: 132 -> 84 total source lines; ordinary recipes
+were 13 lines, Obsidian/nightly 15 including comments and blanks. Ticket 53 above
+supersedes those selector declarations and counts.
 
 The installer inserts source/path bindings immediately before sourcing the helper,
 then applies its existing AppMan/module/source transformations. These bindings

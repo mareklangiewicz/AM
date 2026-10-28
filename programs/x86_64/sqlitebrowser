@@ -4,9 +4,10 @@
 set -eu
 APP=sqlitebrowser
 CATALOG_ALIAS="https://api.github.com/repos/sqlitebrowser/sqlitebrowser/releases?per_page=100"
-select_asset() {
-	sed 's/[()",{} ]/\n/g' | grep -oi "https.*x86.*64.*mage$" | grep -i "/v[0-9].*/\|/[0-9].*/" | grep -vi "nightly\|continuous\|-rc[0-9]/\|dev" | head -1
-}
+ASSET_IGNORE_CASE=true
+ASSET_URL="https.*x86.*64.*mage$"
+ASSET_INCLUDE="/v[0-9].*/\|/[0-9].*/"
+ASSET_EXCLUDE="nightly\|continuous\|-rc[0-9]/\|dev"
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

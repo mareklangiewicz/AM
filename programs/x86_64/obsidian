@@ -4,9 +4,8 @@
 set -eu
 APP=obsidian
 CATALOG_ALIAS="https://api.github.com/repos/obsidianmd/obsidian-releases/releases"
-select_asset() {
-	sed 's/[()",{} ]/\n/g' | grep -oi "https.*mage$" | grep -vi "i386\|i686\|aarch64\|arm64\|armv7l" | head -1
-}
+ASSET_IGNORE_CASE=true
+ASSET_EXCLUDE="i386\|i686\|aarch64\|arm64\|armv7l"
 
 appimage_desktop() { sed -i 's# --no-sandbox##g' "$1"; }
 
