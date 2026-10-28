@@ -413,3 +413,11 @@ Marek completed sudo delivery, then pinned `am -u obsidian`; original upstream
 1.14.5 binary downloaded. Read-only inspection confirms payload hashes, version,
 binary size/hash and absent tmp. Evidence distinguishes delivery-only backup from
 subsequent app replacement; no app launch or independent authenticity claim.
+
+
+2026-10-28: [33 resolved: freshness-run preparation](issues/33-prepare-manual-freshness-run.md).
+Read-only remote checks confirm manual collector alone active and exact source/
+publication pins. Retained prior prepares offline; 107 tests pass. Concrete
+[six-source manual run and publication plan](research/manual-freshness-run-plan.md)
+is ready; [34](issues/34-one-manual-freshness-run.md) awaits explicit run approval.
+No collection, dispatch, publication, schedule or app operation in preparation.
