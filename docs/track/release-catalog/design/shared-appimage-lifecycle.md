@@ -93,3 +93,41 @@ Final checks: 124 tests from `python -m unittest discover -s tools/catalog-colle
 and 8 from `python -m unittest discover -s tools/catalog-probe`; POSIX recipe/runtime
 and Bash manager/install syntax; `shellcheck -x -S warning` on reader, runtime and
 both recipes; `git diff --check`. All pass. No deployment or host migration.
+
+## Third caller: nvim (ticket 43)
+
+At baseline `c2bcd8f82`, the x86_64 nvim recipe also installs AppImage, so it
+requires neither a new format nor an additional shared hook. It now uses the
+already-enrolled `https://api.github.com/repos/neovim/neovim/releases` alias and
+retains one exact copy of its original selector: release-list URLs containing
+`releases`/`nvim`, ending in `mage`, excluding nightly and the other architectures.
+The two original install/update filters select the same retained upstream URL:
+`https://github.com/neovim/neovim/releases/download/v0.12.6/nvim-linux-x86_64.appimage`.
+This describes retained observation bytes, not a fresh release check.
+
+The recipe shrinks from 77 lines / 3167 bytes to 21 lines / 607 bytes: **56 lines
+and 2560 bytes removed**, including its duplicated lifecycle and 25-line generated
+updater. The shared reader, lifecycle and manager require no changes or new code.
+Its appimageupdatetool bypass is removed so update and repair consistently use the
+same accepted metadata and selector as installation. No app-specific hook is needed.
+
+nvim's installed shell code changes from a 25-line updater + five-line remover
+(30) to a 21-line saved recipe + three-line updater + five-line remover (29).
+For a host already carrying the ticket 42 runtime, this is one fewer installed
+line; the three-app total including the once-per-manager reader/lifecycle is
+282 lines (253 from the previous two-app audit + 29). The prior two-app audit
+above is retained at its original baseline.
+
+The shared recipe test cases are reused by both SQLite Browser and nvim, with
+app identity, alias, recipe path and expected URL supplied by each test class.
+This exercises the same real interface and actual manager delivery for nvim:
+install/update/no-change, transfer failure/retry/checksum repair, preflight refusal
+and exact stale consent, managed source override, standalone source persistence
+through privilege environment clearing, and AppMan/system paths. A separate
+retained-byte comparison verifies that both original selectors equal the one
+remaining in the recipe. No runtime hook expansion, source enrollment, collection,
+host migration or app execution is involved.
+
+Ticket 43 validation: all 132 catalog tests pass, including eight nvim cases;
+warning-level ShellCheck on reader/runtime/all three recipes, shell syntax and
+`git diff --check` pass. All operations used retained bytes and temporary roots.

@@ -514,3 +514,13 @@ source lines, with an honest 87-line increase in the two-app installed footprint
 including shared runtime. 124 catalog + 8 historical probe tests, syntax, warning
 ShellCheck and diff checks pass. No source push, live request, host app/helper
 migration or workflow change; timed 37/41 obligations remain, followed by 43–45.
+
+
+2026-10-28: [43 resolved](issues/43-migrate-nvim-shared-lifecycle.md). nvim is the
+third caller of the unchanged shared AppImage implementation, retaining its exact
+stable/architecture selector and upstream URL in one small recipe. Removed 56
+source lines / 2560 bytes and its alternate updater bypass. [Incremental cost and
+delivery audit](design/shared-appimage-lifecycle.md#third-caller-nvim-ticket-43).
+132 catalog tests, syntax, warning ShellCheck and diff checks pass. No network,
+source enrollment/push, host migration or workflow change. Timed 37/41 obligations
+remain independent; 44 is the next coding frontier.

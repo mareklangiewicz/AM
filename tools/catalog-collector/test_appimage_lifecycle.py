@@ -503,14 +503,12 @@ sys.exit(subprocess.run(sys.argv[1:],env=env).returncode)
         self.assertEqual(result.returncode,0,result.stderr)
 
 
-class SQLiteLifecycle(ShellFixture):
-    catalog_alias = 'https://api.github.com/repos/sqlitebrowser/sqlitebrowser/releases?per_page=100'
-
+class AppImageRecipeCases:
     def setUp(self):
         super().setUp()
         self.root=self.path/'root'
-        self.app=self.root/'opt/sqlitebrowser'
-        source=(ROOT/'programs/x86_64/sqlitebrowser').read_text().replace('/opt/am/modules/catalog.am',str(HELPER)).replace('/opt/am/modules/appimage.am',str(LIFECYCLE))
+        self.app=self.root/'opt'/self.app_name
+        source=self.recipe_path.read_text().replace('/opt/am/modules/catalog.am',str(HELPER)).replace('/opt/am/modules/appimage.am',str(LIFECYCLE))
         self.recipe=self.path/'recipe'
         self.recipe.write_text(source.replace('/opt/',str(self.root)+'/opt/').replace(
             '/usr/local/',str(self.root)+'/usr/local/'))
@@ -519,6 +517,8 @@ p=pathlib.Path(os.environ['FIXTURE']);(p/'download').write_text(sys.argv[-1])
 if os.environ.get('DOWNLOAD_FAIL'):sys.exit(9)
 pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\nmkdir -p squashfs-root\\ncase $2 in\\n*.desktop) printf '[Desktop Entry]\\\\nExec=sqlitebrowser\\\\nIcon=sqlitebrowser\\\\n' > squashfs-root/sqlitebrowser.desktop ;;\\n.DirIcon) printf icon > squashfs-root/.DirIcon ;;\\nesac\\n")
 ''')
+        # The downloaded executable is inert extraction-only fixture code.
+        wget=self.bin/'wget';wget.write_text(wget.read_text().replace('sqlitebrowser',self.app_name))
         self.script('notify-send','raise SystemExit(1)\n')
         self.script('appimageupdatetool',"raise RuntimeError('forbidden bypass')\n")
 
@@ -543,8 +543,7 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\nmkdir -p 
 
     def test_retained_filter_install_and_standalone_unchanged(self):
         updater=self.install()
-        self.assertEqual(self.url, 'https://github.com/sqlitebrowser/sqlitebrowser/releases/'
-            'download/v3.13.1/DB.Browser.for.SQLite-v3.13.1-x86.64-v2.AppImage')
+        self.assertEqual(self.url,self.expected_url)
         self.assertEqual((self.path/'download').read_text(),self.url)
         self.assertEqual(len(self.calls()),2)
         self.assertIn('# AM-CATALOG-UPDATER 1',updater.read_text())
@@ -593,7 +592,7 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\nmkdir -p 
         self.assertNotEqual(result.returncode,0)
         self.assertEqual(self.state(),before)
 
-    def test_actual_manager_route_propagates_selected_source_for_second_app(self):
+    def test_actual_manager_route_propagates_selected_source(self):
         self.install()
         manager=(ROOT/'APP-MANAGER').read_text()
         route=manager[manager.index('_catalog_update() {'):manager.index('\n_use_update() {')]
@@ -601,7 +600,7 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\nmkdir -p 
         harness.write_text('AMREPO=https://raw.githubusercontent.com/selected-owner/extra.apps/main\n'
             '_use_verify() { :; }\n'+route+'\n_catalog_update "$@"\n')
         self.stage()
-        result=subprocess.run(['/bin/bash',str(harness),'-u','sqlitebrowser','--commit',PIN],
+        result=subprocess.run(['/bin/bash',str(harness),'-u',self.app_name,'--commit',PIN],
             env={**self.env(),'APPSPATH':str(self.root/'opt')},capture_output=True)
         self.assertEqual(result.returncode,0,result.stderr)
         self.assertTrue(all('/selected-owner/extra.apps/' in c[-1] for c in self.calls()))
@@ -610,7 +609,7 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\nmkdir -p 
     def test_real_install_dispatch_persists_source_after_privilege_environment_loss(self):
         source='https://raw.githubusercontent.com/selected-owner/extra.apps/main'
         result=AppImageLifecycle.run_manager_install(
-            self,amrepo=source,recipe=ROOT/'programs/x86_64/sqlitebrowser',app_name='sqlitebrowser')
+            self,amrepo=source,recipe=self.recipe_path,app_name=self.app_name)
         self.assertEqual(result.returncode,0,result.stderr)
         updater=self.app/'AM-updater'
         self.assertIn('AMREPO=${AMREPO-"'+source+'"}',(self.app/'recipe.am').read_text())
@@ -620,11 +619,35 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\nmkdir -p 
         self.assertIn(b'Update not needed!',result.stdout)
         self.assertTrue(all('/selected-owner/extra.apps/' in c[-1] for c in self.calls()))
 
-    def test_actual_appman_delivery_for_sqlitebrowser(self):
+    def test_actual_appman_delivery(self):
         result=AppImageLifecycle.run_manager_install(
-            self,recipe=ROOT/'programs/x86_64/sqlitebrowser',app_name='sqlitebrowser',appman=True)
+            self,recipe=self.recipe_path,app_name=self.app_name,appman=True)
         self.assertEqual(result.returncode,0,result.stderr)
         result=self.run_script(self.app/'AM-updater')
         self.assertEqual(result.returncode,0,result.stderr)
         self.assertIn(b'Update not needed!',result.stdout)
-        self.assertEqual((self.root/'usr/local/bin/sqlitebrowser').resolve(),self.app/'sqlitebrowser')
+        self.assertEqual((self.root/'usr/local/bin'/self.app_name).resolve(),self.app/self.app_name)
+
+
+class SQLiteLifecycle(AppImageRecipeCases, ShellFixture):
+    app_name = 'sqlitebrowser'
+    recipe_path = ROOT/'programs/x86_64/sqlitebrowser'
+    expected_url = ('https://github.com/sqlitebrowser/sqlitebrowser/releases/'
+                    'download/v3.13.1/DB.Browser.for.SQLite-v3.13.1-x86.64-v2.AppImage')
+    catalog_alias = 'https://api.github.com/repos/sqlitebrowser/sqlitebrowser/releases?per_page=100'
+
+
+class NvimLifecycle(AppImageRecipeCases, ShellFixture):
+    app_name = 'nvim'
+    recipe_path = ROOT/'programs/x86_64/nvim'
+    catalog_alias = 'https://api.github.com/repos/neovim/neovim/releases'
+    expected_url = 'https://github.com/neovim/neovim/releases/download/v0.12.6/nvim-linux-x86_64.appimage'
+
+    def test_original_install_and_update_selectors_are_preserved_once(self):
+        previous=subprocess.run(['git','show','c2bcd8f82:programs/x86_64/nvim'],
+                                cwd=ROOT,capture_output=True,check=True).stdout.decode()
+        original=re.findall(r'version=\$\(curl[^|]+\| (.*)\)',previous)
+        current=self.recipe_path.read_text().split('select_asset() {\n\t')[1].split('\n}')[0]
+        self.assertEqual(original,[current,current])
+        result=subprocess.run(['sh','-c',current],input=self.body,capture_output=True,check=True)
+        self.assertEqual(result.stdout.strip().decode(),self.expected_url)
