@@ -17,7 +17,7 @@ while [ "$#" -gt 0 ]; do
 done
 hex() { [ "${#1}" -eq "$2" ] && case $1 in *[!0-9a-f]*) return 1;; esac; }
 [ -z "$pin" ] || hex "$pin" 40 || fail 'full commit required'
-for tool in curl awk date sha256sum mktemp wc cat rm grep; do
+for tool in curl awk date sha256sum mktemp wc cat cp rm grep; do
     command -v "$tool" >/dev/null 2>&1 || fail "missing tool: $tool"
 done
 # Use the selected AM source; unsupported/local sources have no remote fallback.
@@ -48,6 +48,24 @@ fetch() {
     ) || fail 'catalog transfer refused'
     [ "$code" = 200 ] && [ "$(wc -c < "$out")" -le "$cap" ] || fail 'catalog response refused'
 }
+# A manager command may share only acquisition bytes, never acceptance results.
+# The manager owns this private directory and executes readers sequentially.
+session=${AM_CATALOG_SESSION-}
+if [ -n "$session" ]; then
+    [ -d "$session" ] && [ -w "$session" ] || fail 'invalid command session'
+    if [ -f "$session/source" ]; then
+        [ "$(cat "$session/source")" = "$source" ] || fail 'command source changed'
+        [ ! -f "$session/failed" ] || fail 'command catalog acquisition already refused'
+        shared_pin=$(cat "$session/pin") || fail 'missing command pin'
+        [ -z "$pin" ] || [ "$pin" = "$shared_pin" ] || fail 'command pin changed'
+        pin=$shared_pin
+        hex "$pin" 40 || fail 'invalid command pin'
+    else
+        printf '%s\n' "$source" > "$session/source"
+        # Leave failure latched until both ref and lookup acquisition complete.
+        : > "$session/failed"
+    fi
+fi
 # Resolve only the catalog owned by the configured AM repository.
 if [ -z "$pin" ]; then
     fetch "https://api.github.com/repos/$repository/commits/heads/release-catalog" 128 "$scratch/ref" 'application/vnd.github.sha'
@@ -55,7 +73,16 @@ if [ -z "$pin" ]; then
     hex "$pin" 40 || fail 'invalid publication ref'
 fi
 root="https://raw.githubusercontent.com/$repository/$pin"
-fetch "$root/lookup.tsv" 2000000 "$scratch/lookup" 'application/octet-stream'
+if [ -n "$session" ] && [ -f "$session/lookup" ]; then
+    cp "$session/lookup" "$scratch/lookup"
+else
+    fetch "$root/lookup.tsv" 2000000 "$scratch/lookup" 'application/octet-stream'
+    if [ -n "$session" ]; then
+        cp "$scratch/lookup" "$session/lookup"
+        printf '%s\n' "$pin" > "$session/pin"
+        rm -f "$session/failed"
+    fi
+fi
 # Check framing, uniqueness and the selected record without interpreting fields as code.
 row=$(AM_CATALOG_ALIAS="$alias" awk -F '\t' '
     BEGIN { wanted=ENVIRON["AM_CATALOG_ALIAS"] }

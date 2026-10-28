@@ -17,6 +17,9 @@ LIFECYCLE = ROOT / 'modules/appimage.am'
 class AppImageLifecycle(ShellFixture):
     def setUp(self):
         super().setUp()
+        self.set_up_appimage()
+
+    def set_up_appimage(self):
         self.root=self.path/'root'
         for p in ('usr/local/bin','usr/local/share/applications'):
             (self.root/p).mkdir(parents=True,exist_ok=True)
@@ -110,7 +113,7 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\nmkdir -p 
         # Execute the real _use_update prelude, stopping before any legacy operation.
         prelude=manager[manager.index('_use_update() {'):manager.index('\n\t_online_check',manager.index('_use_update() {'))]
         harness=self.path/'manager-test'
-        harness.write_text('_use_verify() { printf verified > "$FIXTURE/verified"; }\n'+route+'\n'+prelude+'\n echo forbidden-legacy >&2; return 99\n}\n_use_update "$@"\n')
+        harness.write_text('_use_sync() { :; }\n_use_verify() { printf verified > "$FIXTURE/verified"; }\n'+route+'\n'+prelude+'\n echo forbidden-legacy >&2; return 99\n}\n_use_update "$@"\n')
         env={**self.env(),'APPSPATH':str(self.root/'opt'),'APPMAN_APPSPATH':str(self.path/'absent')}
         self.stage()
         r=subprocess.run(['/bin/bash',str(harness),'-u','obsidian','--commit',PIN],env=env,capture_output=True)
@@ -119,9 +122,11 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\nmkdir -p 
         r=subprocess.run(['/bin/bash',str(harness),'-u','obsidian','--commit',PIN],env=env,capture_output=True)
         self.assertNotEqual(r.returncode,0);self.assertNotIn(b'forbidden-legacy',r.stderr)
         self.assertEqual(self.snapshot(),before)
-        for args in (['-u'],['-u','--apps'],['-u','another','obsidian']):
+        self.tree=dict(self.base);self.stage()
+        for args in (['-u'],['-u','--apps']):
+            self.stage()
             r=subprocess.run(['/bin/bash',str(harness),*args],env=env,capture_output=True)
-            self.assertNotEqual(r.returncode,0);self.assertNotIn(b'forbidden-legacy',r.stderr)
+            self.assertEqual(r.returncode,0,r.stderr);self.assertNotIn(b'forbidden-legacy',r.stderr)
 
     def test_real_module_location_patch_survives_appman_and_shell_metacharacters(self):
         module_dir=self.path/'owned modules $literal `literal` & |'

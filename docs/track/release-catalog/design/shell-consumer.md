@@ -105,15 +105,14 @@ without deleting the installed version before acceptance. Optional managed binar
 verification still runs afterward; stale verification is not independent proof of
 the replacement binary's authenticity.
 
-A marked newly generated updater uses a foreground single-app manager route
-before legacy token edits, quota probing and cleanup. Use `am -u obsidian`, with
-optional reader arguments forwarded to the updater. The standard `--debug` manager flag is consumed before reader invocation.
-Launcher-only operations retain their separate existing route. Batch/mixed
-selection involving a catalog updater refuses; it is not a fleet implementation. Color-filter pipelines
-preserve nonzero status. Duplicate roots are deduplicated; ambiguous app locations
-refuse. Old installed updaters remain legacy until a separately authorized migration.
-The marker denotes an AM-generated installed script, not a discovery mechanism
-that executes saved installer text.
+Ticket 44 supersedes the initial single-app restriction: marked updaters now
+participate in normal all-app and explicit mixed batches. The command shares one
+source-bound publication pin/lookup, retains per-app acceptance, continues after
+refusal/failure and aggregates nonzero status. Standard `--debug` is consumed
+before reader invocation; launcher-only operations retain their separate route.
+Both configured app locations are processed when present; duplicate roots and
+explicit targets run once. Old installed updaters remain legacy until explicitly
+migrated. See [current batch semantics](normal-batch-updates.md).
 
 After a successful managed updater run, AM's optional `_use_verify` still probes
 original upstream binary digest URLs (`.zsync`, digest suffixes). A recorded
@@ -159,7 +158,8 @@ They use retained measured Obsidian bytes, not newly collected release data.
 Checks cover exact bytes/filter equivalence, fresh/stale edge and tuple binding,
 clock regression/expiry, malformed/duplicate/unavailable lookup, size/hash failure,
 missing tool/helper, module-path embedding, unchanged/changed updates, no app-state
-mutation on refusal, binary download failure, batch refusal and visible manager
+mutation on refusal, binary download failure, the initial batch refusal (superseded
+by ticket 44), and visible manager
 failure through color filtering. Existing collector/storage/delivery contracts
 exercise atomic lookup recomputation and old-publication compatibility. The final
 ticket-23 suite passed **89 tests**. Shell syntax checks passed for the manager, installation

@@ -48,17 +48,15 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 
 ## Current continuation boundary
 
-**Current implementation priority (2026-10-28):**
-[42: shared AppImage install/update and two small recipes](issues/42-shared-appimage-lifecycle.md).
-Marek endorsed this direction and asked to record it. Stop expanding the earlier
-read-call-only migration pattern: first remove duplicated lifecycle/updater code
-for Obsidian and SQLite Browser behind one small shared interface, preserving
-consumer filters, source ownership and all acceptance checks. Follow-ons are
-[43 nvim](issues/43-migrate-nvim-shared-lifecycle.md),
-[44 batch updates](issues/44-normal-batch-catalog-updates.md) and
-[45 inventory/migration batches](issues/45-recipe-inventory-and-migration-batches.md),
-all blocked on the two-app proof, not on elapsed pilot time. Tickets 37/41 retain
-their timed operational obligations and existing authorization independently.
+**Current implementation frontier (2026-10-28):**
+[42 shared lifecycle](issues/42-shared-appimage-lifecycle.md),
+[43 nvim](issues/43-migrate-nvim-shared-lifecycle.md) and
+[44 normal mixed batches](issues/44-normal-batch-catalog-updates.md) are resolved.
+Next is [45 inventory/migration batches](issues/45-recipe-inventory-and-migration-batches.md):
+actual recipe/endpoint families and substantial scoped migration work, without
+speculative adapters or unreviewed source enrollment. Installed rollout remains
+separate from repository implementation. Tickets 37/41 retain timed pilot closure
+and the already authorized daily activation independently; no mid-pilot source push.
 
 
 Use AMREPO-owned fork catalog and managed helper/source delivery (ticket 29).
@@ -524,3 +522,15 @@ delivery audit](design/shared-appimage-lifecycle.md#third-caller-nvim-ticket-43)
 132 catalog tests, syntax, warning ShellCheck and diff checks pass. No network,
 source enrollment/push, host migration or workflow change. Timed 37/41 obligations
 remain independent; 44 is the next coding frontier.
+
+
+2026-10-28: [44 resolved](issues/44-normal-batch-catalog-updates.md). Normal no-arg,
+all-app and explicit mixed batches now continue sequentially with visible per-path
+results and aggregate failure status, including through actual command/color
+filter dispatch and post-app sync. One source-bound command publication pin/lookup
+is reused, with per-app freshness/exact consent/integrity. Migrated paths avoid
+legacy preprocessing/global cleanup; legacy child/checksum status is preserved.
+[Semantics, delivery and cost](design/normal-batch-updates.md): 149 catalog + 8
+historical tests, syntax/lint/baseline warnings and diff checks pass; production
+-61 lines / -2149 bytes. No live requests, installed migration, source push or
+workflow changes. Timed 37/41 obligations remain; 45 is the next coding frontier.

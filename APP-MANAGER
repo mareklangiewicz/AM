@@ -2005,13 +2005,6 @@ _use_verify() {
 #				UPDATE
 ################################################################################################################################################################
 
-_update_updatable_apps_msg_head() {
-	printf $" %b\"%b\" CAN MANAGE UPDATES FOR THE FOLLOWING PROGRAMS\033[0m:\n%b\n\n" "${Gold}" "$AMCLIUPPER" "$DIVIDING_LINE"
-	[ -f "$AMCACHEDIR/updatable-args-list" ] && grep "◆" "$AMCACHEDIR/updatable-args-list" | sort | sed 's/\([✖✓🔒]\)/ \1/g' || echo $" None"
-	printf $"\n %bAll self-updatable programs are excluded\033[0m\n" "${RED}"
-	echo "$DIVIDING_LINE"
-}
-
 _update_list_updatable_apps() {
 	_determine_args
 	_check_version
@@ -2032,75 +2025,6 @@ _update_list_updatable_apps() {
 	done
 	if [ -f "$AMCACHEDIR"/updatable-args-list ]; then
 		sort -u "$AMCACHEDIR"/updatable-args-list > "$AMCACHEDIR"/updatable-args-list-sort && mv "$AMCACHEDIR"/updatable-args-list-sort "$AMCACHEDIR"/updatable-args-list
-	fi
-}
-
-_update_print_updated_apps_table() {
-	OLDVER="$1"
-	NEWVER="$2"
-	app_header=$(printf $"App")
-	old_header=$(printf $"Previous")
-	new_header=$(printf $"Current")
-	awk '
-	NR==FNR { a[NR]=$0; next }
-	{
-		if ($0 != a[FNR]) {
-			print "< " a[FNR]
-			print "> " $0
-		}
-	}
-	' "$OLDVER" "$NEWVER" | grep "^>" | sed 's/^> //g' | while IFS= read -r updated_app; do
-		arg=$(printf "%s\n" "$updated_app" | awk '{print $2}')
-		old_app=$(grep -F " ◆ $arg " "$OLDVER" | head -1)
-		old_version=$(printf "%s\n" "$old_app" | sed "s/^ ◆ $arg //; s/\x1b\[[0-9;]*m//g; s/[✖✓🔒]//g; s/  */ /g; s/ $//")
-		new_version=$(printf "%s\n" "$updated_app" | sed "s/^ ◆ $arg //; s/\x1b\[[0-9;]*m//g; s/[✖✓🔒]//g; s/  */ /g; s/ $//")
-		old_marker=$(printf "%s\n" "$old_app" | grep -o '[✖✓🔒]' | head -1)
-		new_marker=$(printf "%s\n" "$updated_app" | grep -o '[✖✓🔒]' | head -1)
-		checksum_note=""
-		[ "$old_version" = "$new_version" ] && [ "$old_marker" != "$new_marker" ] && checksum_note="($(echo $"checksum changed"))"
-		printf "%s\t%s\t%s\t%s\n" "$arg" "$old_version" "$new_version" "$checksum_note"
-	done | awk -F '\t' -v blue="$LightBlue" -v reset="\033[0m" -v app_header="$app_header" -v old_header="$old_header" -v new_header="$new_header" '
-		BEGIN {
-			app_width = length(app_header)
-			old_width = length(old_header)
-			new_width = length(new_header)
-		}
-		{
-			apps[NR] = $1
-			old_versions[NR] = $2
-			new_versions[NR] = $3
-			notes[NR] = $4
-			if (length($1) > app_width) app_width = length($1)
-			if (length($2) > old_width) old_width = length($2)
-			if (length($3) > new_width) new_width = length($3)
-		}
-		END {
-			header_format = "     %s%-" app_width "s%s  %s%-" old_width "s%s  %s%-" new_width "s%s\n\n"
-			row_format = "%2d.  %-" app_width "s  %-" old_width "s  %-" new_width "s  %s\n"
-			printf header_format, blue, app_header, reset, blue, old_header, reset, blue, new_header, reset
-			for (i = 1; i <= NR; i++) {
-				printf row_format, i, apps[i], old_versions[i], new_versions[i], notes[i]
-			}
-		}
-	'
-}
-
-_update_determine_apps_version_changes() {
-	[ -z "$debug_update" ] && echo "$DIVIDING_LINE"
-	if [ -f "$AMCACHEDIR"/updatable-args-list ]; then
-		mv "$AMCACHEDIR"/updatable-args-list "$AMCACHEDIR"/updatable-args-list-old
-		_update_list_updatable_apps
-		OLDVER="$AMCACHEDIR/updatable-args-list-old"
-		NEWVER="$AMCACHEDIR/updatable-args-list"
-		if [ "$(sort "$NEWVER")" = "$(sort "$OLDVER")" ]; then
-			printf $" Nothing to do here! \n"
-		else
-			printf $" The following apps have been updated:\n\n"
-			_update_print_updated_apps_table "$OLDVER" "$NEWVER"
-			echo ""
-		fi
-	else
-		echo $" No apps to update here!"
 	fi
 }
 
@@ -2183,54 +2107,26 @@ _update_run_updater() {
 	if grep -sq "Checksum failure" "$argpath"/AM-VERIFIED; then
 		rm -f "$argpath"/version # Triggers AM-updater to re-download the Appimage binary
 	fi
+	local updater_status=0
 	if [ -z "$debug_update" ]; then
-		"$argpath"/AM-updater >/dev/null 2>&1
+		"$argpath"/AM-updater >/dev/null 2>&1 || updater_status=$?
 	else
-		"$argpath"/AM-updater
+		"$argpath"/AM-updater || updater_status=$?
 	fi
 	_alt_gh_off "$argpath"/AM-updater 2>/dev/null
+	[ "$updater_status" -eq 0 ] || return "$updater_status"
 	checksum_msg=$(_use_verify | xargs 2>/dev/null)
+	grep -sq '^Checksum failure$' "$argpath/AM-VERIFIED" && return 1
 	end=$(date +%s)
 	timelapsed=$((end - start))
 	if [ "$timelapsed" = 1 ]; then
-		timelapsed_msg=$(printf $" %b✔\033[0m $APPNAME is updated, $timelapsed second elapsed! \n" "${Green}")
+		timelapsed_msg=$(printf $" %b✔\033[0m $APPNAME updater completed, $timelapsed second elapsed! \n" "${Green}")
 	else
-		timelapsed_msg=$(printf $" %b✔\033[0m $APPNAME is updated, $timelapsed seconds elapsed! \n" "${Green}")
+		timelapsed_msg=$(printf $" %b✔\033[0m $APPNAME updater completed, $timelapsed seconds elapsed! \n" "${Green}")
 	fi
 	printf -- "%b%b\n" "$timelapsed_msg" "$checksum_msg" | sed 's/^ //g; s/^/ /g'
 	[ -n "$debug_update" ] && echo "$DIVIDING_LINE"
-}
-
-_update_app() {
-	APPNAME=$(echo "$arg" | tr '[:lower:]' '[:upper:]')
-	if ! echo "$argpath" | grep -q "^/opt\|^/var/opt" && [ "$AMCLI" != appman ]; then
-		APPNAME="$APPNAME (AppMan)"
-	fi
-	start=$(date +%s)
-	if [ -w "$argpath"/AM-updater ]; then
-		_update_run_updater &
-	else
-		printf $" %b✖\033[0m %b is read-only, cannot update it!\n" "${RED}" "$APPNAME"
-	fi
-}
-
-_update_all_apps() {
-	ARGS=$(echo "$ARGS" | tr ' ' '\n' | sort -u | xargs)
-	ARGPATHS=$(echo "$ARGPATHS" | tr ' ' '\n' | sort -u | xargs)
-	for arg in $ARGS; do
-		argpath_items=$(echo "$ARGPATHS" | grep "/$arg$" | xargs)
-		for argpath in $argpath_items; do
-			cd "$argpath" || exit 1
-			arg=$(printf '%s\n' "${PWD##*/}")
-			if [ -f "$argpath"/AM-updater ]; then
-				_update_app
-			fi
-		done
-	done
-	wait
-	_update_determine_apps_version_changes
-	_clean_all_tmp_directories_from_appspath >/dev/null
-	[ -z "$pending_args" ] && [ -d "$APPMAN_APPSPATH" ] && rm -Rf "$APPMAN_APPSPATH"/*/tmp
+	return 0
 }
 
 _update_launchers_not_found_msg() {
@@ -2263,106 +2159,122 @@ _update_launchers() {
 	fi
 }
 
-# A bounded single-app route, before legacy cleanup, token edits or quota probes.
-# Existing installed updaters remain legacy until explicitly replaced.
+# One command session, sequential app results, and no cross-app cleanup.
+# Installed scripts remain legacy until explicitly migrated.
 _catalog_update() {
+(
 	shift
-	local candidate="" path app selected entry argpath arg pure_arg
-	local debug_update="${debug_update-}"
-	local -a catalog_args=()
-	for entry in "$@"; do
-		if [ "$entry" = --debug ]; then debug_update=1; else catalog_args+=("$entry"); fi
+	local entry path app argpath arg pure_arg before after result status=0 found existing repair
+	local debug_update="${debug_update-}" launcher=false apps=false
+	local -a batch_names=() options=() paths=() roots=("$APPSPATH")
+	while [ "$#" -gt 0 ]; do
+		case $1 in
+			--debug) debug_update=1; shift ;;
+			--apps) apps=true; shift ;;
+			--launcher) launcher=true; shift ;;
+			--commit)
+				[ "$#" -ge 2 ] || { echo 'Missing catalog commit' >&2; return 1; }
+				options+=("$1" "$2"); shift 2 ;;
+			--accept-stale)
+				[ "$#" -ge 4 ] || { echo 'Missing exact stale tuple' >&2; return 1; }
+				options+=("$1" "$2" "$3" "$4"); shift 4 ;;
+			-*) printf 'Unsupported update option: %s\n' "$1" >&2; return 1 ;;
+			*) batch_names+=("$1"); shift ;;
+		esac
 	done
-	set -- "${catalog_args[@]}"
-	local launcher_only=true launcher=false
-	for entry in "$@"; do
-		case $entry in --launcher) launcher=true ;; *) launcher_only=false ;; esac
-	done
-	if [ "$launcher_only" = true ] && [ "$launcher" = true ]; then return 2; fi
+	if [ "$launcher" = true ]; then
+		if [ "${#batch_names[@]}" -eq 0 ] && [ "$apps" = false ] && [ "${#options[@]}" -eq 0 ]; then return 2; fi
+		echo 'Use --launcher separately from app updates.' >&2; return 1
+	fi
 	if [ "${AMCLI-}" = am ]; then _detect_appman_apps; fi
-	for path in "$APPSPATH"/*/AM-updater "${APPMAN_APPSPATH:-/nonexistent}"/*/AM-updater; do
-		[ -f "$path" ] || continue
-		[ "$candidate" = "$path" ] && continue
-		grep -qx '# AM-CATALOG-UPDATER 1' "$path" || continue
-		app=${path%/AM-updater}; app=${app##*/}
-		selected=false
-		case ${1-} in ""|--*) selected=true ;; esac
-		for entry in "$@"; do [ "$entry" = "$app" ] && selected=true; done
-		[ "$selected" = true ] || continue
-		if [ -n "$candidate" ] || [ "${1-}" != "$app" ]; then
-			printf '%s\n' 'Catalog updates currently require one explicit app.' >&2
-			return 1
+	if [ -n "${APPMAN_APPSPATH-}" ] && ! [ "$APPMAN_APPSPATH" -ef "$APPSPATH" ]; then roots+=("$APPMAN_APPSPATH"); fi
+	if [ "${#batch_names[@]}" -eq 0 ]; then
+		for entry in "${roots[@]}"; do
+			for path in "$entry"/*/AM-updater; do
+				[ -f "$path" ] || continue
+				[ ! -f "${path%/AM-updater}/remove.old" ] || continue
+				paths+=("${path%/AM-updater}")
+			done
+		done
+	else
+		for app in "${batch_names[@]}"; do
+			case $app in ''|*[!a-zA-Z0-9_.+-]*|.|..) printf '%s: refused (invalid app name)\n' "$app" >&2; status=1; continue ;; esac
+			found=false
+			for entry in "${roots[@]}"; do
+				path="$entry/$app"
+				[ -d "$path" ] || continue
+				found=true
+				# Avoid running duplicate explicit targets twice.
+				for existing in "${paths[@]}"; do [ "$existing" != "$path" ] || continue 2; done
+				paths+=("$path")
+			done
+			if [ "$found" = false ]; then printf '%s: failed (not installed)\n' "$app" >&2; status=1; fi
+		done
+	fi
+	local session
+	session=$(mktemp -d) || return 1
+	trap 'rm -rf -- "$session"' EXIT
+	trap 'exit 1' HUP INT TERM
+	# Ignore inherited sessions; every manager invocation owns its acquisition.
+	local AM_CATALOG_SESSION=$session
+	export AM_CATALOG_SESSION
+	for argpath in "${paths[@]}"; do
+		arg=${argpath##*/}; pure_arg=$arg
+		if [ -f "$argpath/remove.old" ] || [ ! -f "$argpath/AM-updater" ] || [ ! -w "$argpath/AM-updater" ]; then
+			printf '%s: failed (hidden, locked, read-only or no updater)\n' "$argpath" >&2
+			status=1; continue
 		fi
-		candidate=$path
+		before=$(cat "$argpath/version" 2>/dev/null)
+		repair=false
+		grep -sq '^Checksum failure$' "$argpath/AM-VERIFIED" && repair=true
+		if grep -qx '# AM-CATALOG-UPDATER 1' "$argpath/AM-updater"; then
+			AMREPO="$AMREPO" "$argpath/AM-updater" "${options[@]}"
+			result=$?
+			if [ "$result" -eq 3 ]; then
+				printf '%s: refused\n' "$argpath" >&2; status=1; continue
+			fi
+			if [ "$result" -eq 0 ]; then
+				( _use_verify ) || :
+				grep -sq '^Checksum failure$' "$argpath/AM-VERIFIED" && result=1
+			fi
+		else
+			# Preparation is restricted to this legacy app, never catalog recipes.
+			(
+				cd "$argpath" || exit 1
+				ARGS=$arg ARGPATHS=$argpath GH_APPS='' GH_API_ALLOWED=0
+				_online_check
+				_update_github_api_key_in_the_updater_files
+				_update_determine_gh_apps_number
+				APPNAME=$arg; start=$(date +%s)
+				_update_run_updater
+			)
+			result=$?
+		fi
+		if [ "$result" -ne 0 ]; then
+			printf '%s: failed\n' "$argpath" >&2; status=1
+		else
+			after=$(cat "$argpath/version" 2>/dev/null)
+			if [ "$before" = "$after" ] && [ "$repair" = false ]; then result=unchanged; else result=updated; fi
+			printf '%s: %s\n' "$argpath" "$result"
+		fi
 	done
-	[ -n "$candidate" ] || return 2
-	shift
-	AMREPO="$AMREPO" "$candidate" "$@" || return 1
-	argpath=${candidate%/AM-updater}; arg=${argpath##*/}; pure_arg=$arg
-	# Keep existing optional upstream binary-digest verification after preflight.
-	_use_verify || :
-	if grep -sq '^Checksum failure$' "$argpath/AM-VERIFIED"; then return 1; fi
+	return "$status"
+)
 }
 
 _use_update() {
-	local catalog_status
-	_catalog_update "$@" && return 0
-	catalog_status=$?
-	[ "$catalog_status" -eq 2 ] || return "$catalog_status"
-	_online_check
-	_update_github_api_key_in_the_updater_files
-	_clean_all_tmp_directories_from_appspath >/dev/null
-
-	ENTRIES="$(echo "$@" | cut -f2- -d ' ' | tr ' ' '\n' | grep -v -- "^-\|^$1$")"
-	FLAGS=$(echo "$@" | tr ' ' '\n' | grep -- "--" | tr '\n ' ' ')
-	if echo "$FLAGS" | grep -q -- "--debug"; then
-		debug_update="1"
-	fi
-
-	_update_determine_gh_apps_number
-
-	if [ -z "$ENTRIES" ]; then
-		_clean_amcachedir
-		_update_list_updatable_apps
-		printf $"%b\n >> %bSTART OF ALL PROCESSES\033[0m << \n%b\n" "$DIVIDING_LINE" "${LightBlue}" "$DIVIDING_LINE"
-		if echo "$FLAGS" | grep -q -- "--apps"; then
-			_update_updatable_apps_msg_head
-			_update_all_apps
-		elif echo "$FLAGS" | grep -q -- "--launcher"; then
-			_update_launchers
-		else
-			_update_updatable_apps_msg_head
-			_update_all_apps
-			_use_sync
-			printf $" >> %bEND OF ALL PROCESSES\033[0m << \n%b\n" "${LightBlue}" "$DIVIDING_LINE"
-			sleep 0.2
-			exit 0
-		fi
-		printf $"%b\n >> %bEND OF ALL PROCESSES\033[0m << \n%b\n" "$DIVIDING_LINE" "${LightBlue}" "$DIVIDING_LINE"
-		sleep 0.2
-		exit 0
-	else
-		[ -n "$debug_update" ] && echo "$DIVIDING_LINE"
-		_determine_args
-		for arg in $ENTRIES; do
-			argpath_items=$(echo "$ARGPATHS" | grep "/$arg$" | xargs)
-			for argpath in $argpath_items; do
-				if [ -f "$argpath"/AM-updater ]; then
-					cd "$argpath" 2>/dev/null || exit 1
-					_update_app
-				elif [ ! -d "$argpath" ]; then
-					printf $" %b✖\033[0m %b cannot be updated, program not found \n" "${RED}" "$(echo "$arg" | tr '[:lower:]' '[:upper:]')"
-				else
-					UPDATERS=$(cd "$argpath" 2>/dev/null && find . -name "*update*" -print 2>/dev/null)
-					[ -n "$UPDATERS" ] && arg_autoupdatable=", it may have its update system"
-					[ "$arg" = "$AMCLI" ] && arg_autoupdatable=", use \"-s\" instead"
-					printf $" %b✖\033[0m %b cannot be updated%b\n" "${RED}" "$(echo "$arg" | tr '[:lower:]' '[:upper:]')" "$arg_autoupdatable"
-				fi
-			done
+	local catalog_status=0 entry sync=true
+	_catalog_update "$@" || catalog_status=$?
+	if [ "$catalog_status" -ne 2 ]; then
+		shift
+		for entry in "$@"; do
+			case $entry in --debug) ;; *) sync=false ;; esac
 		done
-		wait
-		exit 0
+		if [ "$sync" = true ]; then _use_sync || catalog_status=1; fi
+		return "$catalog_status"
 	fi
+	_online_check
+	_update_launchers
 }
 
 _use_force_latest() {

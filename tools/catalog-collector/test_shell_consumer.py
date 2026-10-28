@@ -89,6 +89,45 @@ t=json.loads(p.read_text()); print(t.pop(0) if len(t)>1 else t[0]); p.write_text
 
 
 class ShellConsumer(ShellFixture):
+    def test_command_session_reuses_pin_lookup_but_rechecks_body_and_freshness(self):
+        session=self.path/'session';session.mkdir()
+        env={**self.env(),'AM_CATALOG_SESSION':str(session)}
+        result=self.invoke(args=[],env=env)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertEqual(len(self.calls()),3)
+        result=self.invoke(args=[],env=env)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertEqual(len(self.calls()),1)
+        self.tree['bodies/'+self.rid+'.json']=b'[]'
+        result=self.invoke(args=[],env=env)
+        self.assertNotEqual(result.returncode,0)
+        self.assertIn(b'mismatch',result.stderr)
+        self.assertEqual(len(self.calls()),1)
+        self.tree=dict(self.base)
+        self.now=[epoch((datetime.fromisoformat(self.obs['validated_at'])+
+            timedelta(days=2,microseconds=1)).isoformat())]*3
+        result=self.invoke(args=[],env=env)
+        self.assertNotEqual(result.returncode,0)
+        self.assertIn(b'stale',result.stderr)
+        self.assertEqual(self.calls(),[])
+        result=self.invoke(args=self.consent(),env=env)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertEqual(len(self.calls()),1)
+
+    def test_command_session_binds_source_and_pin_without_fallback(self):
+        session=self.path/'session';session.mkdir()
+        env={**self.env(),'AM_CATALOG_SESSION':str(session)}
+        result=self.invoke(env=env)
+        self.assertEqual(result.returncode,0,result.stderr)
+        result=self.invoke(args=['--commit','c'*40],env=env)
+        self.assertNotEqual(result.returncode,0)
+        self.assertIn(b'pin changed',result.stderr)
+        self.assertEqual(self.calls(),[])
+        result=self.invoke(env={**env,'AMREPO':'https://raw.githubusercontent.com/other/AM/main'})
+        self.assertNotEqual(result.returncode,0)
+        self.assertIn(b'source changed',result.stderr)
+        self.assertEqual(self.calls(),[])
+
     def test_exact_bytes_pin_and_original_host_for_dash_and_bash(self):
         for shell in ('/bin/sh', '/bin/bash'):
             result=self.invoke(shell=shell)

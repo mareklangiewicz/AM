@@ -4,8 +4,9 @@ Ticket [42](../issues/42-shared-appimage-lifecycle.md), baseline `0de7c6400`.
 
 `modules/appimage.am` owns install/update for the x86_64 Obsidian and SQLite
 Browser recipes. Only `PACKAGE_KIND=appimage` is supported. Archive and plain
-binary packages, other architectures, batch routing and installed migration are
-outside this implementation.
+binary packages, other architectures and installed migration are outside this
+implementation. Ticket [44](normal-batch-updates.md) subsequently adds manager
+batch routing without changing the recipe interface.
 
 The trusted recipe declares APP, exact CATALOG_ALIAS, PACKAGE_KIND and one
 `select_asset` pipeline operating on stdin. Obsidian alone supplies the real

@@ -119,3 +119,16 @@ routing. Then [43: nvim](issues/43-migrate-nvim-shared-lifecycle.md),
 Timed pilot closure and the already authorized daily switch remain independent
 operational tasks (37/41). This tracker update does not perform or authorize new
 source collection, host app execution or a mid-pilot source push.
+
+
+## Normal batch operation (2026-10-28; ticket 44)
+
+Tickets 42–44 are implemented locally: three shared AppImage recipes and normal
+all-app/explicit mixed updates. Continue after individual refusal/failure, show
+per-path results and return aggregate nonzero status; successful apps are not
+rolled back. Share one command publication pin/lookup while independently checking
+freshness, exact stale consent and body integrity for each migrated app. Legacy
+apps retain isolated preparation; migrated apps never receive legacy token/quota
+patches or global app cleanup. See [current semantics](design/normal-batch-updates.md).
+Ticket 45's recipe-family inventory/migration batches are next. Installed delivery,
+pilot closure and daily activation retain their separate recorded scopes.

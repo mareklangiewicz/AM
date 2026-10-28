@@ -200,10 +200,13 @@ used a modified reader copy because of the now-fixed ownership defect; current
 source-selection regression checks use the unmodified helper. See the
 [implementation and ownership correction](../../docs/track/release-catalog/design/shell-consumer.md).
 
-The ordinary x86_64 Obsidian and SQLite Browser installers and newly generated
+The ordinary x86_64 Obsidian, SQLite Browser and nvim installers and newly generated
 updaters now invoke the shared
 reader before app-state changes. The manager embeds its managed module location,
-and routes one marked updater in the foreground before legacy mutation. Existing
+and processes normal all-app and explicit mixed batches sequentially. Each path
+reports unchanged/updated/refused/failed; failures continue and aggregate to a
+nonzero command status. Migrated apps share one source-bound publication pin and
+lookup per command, with per-app freshness, exact stale consent and body checks. Existing
 installed updaters are unchanged until explicitly migrated. Binary URLs and the
 existing release-list selection filter are preserved; the appimageupdatetool
 alternate metadata path is removed for this recipe.
@@ -216,10 +219,12 @@ app script is an installer operation.
 
 SQLite Browser uses its already enrolled exact `releases?per_page=100` alias;
 its stable x86-64 AppImage filter and original GitHub binary URL are unchanged.
-Like Obsidian, it requires one explicit app for managed updates and refuses before
-app-state changes if catalog data is unavailable or stale. Existing installed
+Like Obsidian and nvim, it refuses before app-state changes if catalog data is
+unavailable or stale. Normal batches continue with other apps after refusal. Existing installed
 legacy updaters are not rewritten by a repository recipe change. No additional
 source collection or runtime service is needed for this migration.
+
+See [normal batch update semantics and verification](../../docs/track/release-catalog/design/normal-batch-updates.md).
 
 ## Accepted daily refresh policy (ticket 40)
 

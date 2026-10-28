@@ -10,10 +10,10 @@ am_appimage() (
 	if [ "${1-}" = --am-update ]; then mode=update; shift; fi
 	[ "$PACKAGE_KIND" = appimage ] || { echo 'Unsupported package format' >&2; exit 1; }
 	case $APP in ''|*[!a-z0-9_-]*) echo 'Invalid app identity' >&2; exit 1;; esac
-	[ -r "$CATALOG_HELPER" ] || { echo 'Missing catalog.am; synchronize AM modules.' >&2; exit 1; }
-	catalog_body=$(sh "$CATALOG_HELPER" "$CATALOG_ALIAS" "$@") || exit 1
-	version=$(printf '%s\n' "$catalog_body" | select_asset)
-	[ -n "$version" ] || { echo 'Error getting link' >&2; exit 1; }
+	[ -r "$CATALOG_HELPER" ] || { echo 'Missing catalog.am; synchronize AM modules.' >&2; exit 3; }
+	catalog_body=$(sh "$CATALOG_HELPER" "$CATALOG_ALIAS" "$@") || exit 3
+	version=$(printf '%s\n' "$catalog_body" | select_asset) || exit 3
+	[ -n "$version" ] || { echo 'Error getting link' >&2; exit 3; }
 	APPS_DIR=${APPS_DIR%/}
 	dir="$APPS_DIR/$APP"
 	if [ "$mode" = update ] && [ "$version" = "$(cat "$dir/version")" ] &&
