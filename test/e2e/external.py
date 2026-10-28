@@ -7,6 +7,7 @@ from pathlib import Path
 import subprocess
 import sys
 import time
+from transport_args import download_destination
 
 fixture = Path(os.environ['E2E_FIXTURE'])
 settings = json.loads((fixture/'settings.json').read_text())
@@ -76,11 +77,10 @@ elif url.startswith('https://raw.githubusercontent.com/'+settings['repository']+
         raw = (fixture/'tree'/name).read_bytes()
 elif url in settings['assets']:
     if settings.get('download_partial_fail'):
-        output = next((args[i+1] for i, arg in enumerate(args[:-1])
-                       if arg in ('-O', '--output', '-o', '-Lo')), None)
+        output = download_destination(tool, args)
         if output is None:
             raise SystemExit('Partial transfer requires an output path')
-        Path(output).write_bytes((fixture/'binary').read_bytes()[:17])
+        output.write_bytes((fixture/'binary').read_bytes()[:17])
         raise SystemExit(9)
     if settings.get('download_fail'):
         raise SystemExit(9)
@@ -96,14 +96,11 @@ if raw is None:
     print('Unexpected offline request: '+url, file=sys.stderr)
     raise SystemExit(22)
 if tool == 'wget':
-    if '-O' not in args:
-        raise SystemExit('Unsupported wget invocation')
-    Path(args[args.index('-O')+1]).write_bytes(raw)
+    download_destination(tool, args).write_bytes(raw)
 elif tool == 'curl':
-    output = next((args[i+1] for i, arg in enumerate(args[:-1])
-                   if arg in ('--output', '-o', '-Lo')), None)
+    output = download_destination(tool, args)
     if output:
-        Path(output).write_bytes(b'' if head else raw)
+        output.write_bytes(b'' if head else raw)
     elif not head:
         sys.stdout.buffer.write(raw)
     if '--write-out' in args:

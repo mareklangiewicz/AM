@@ -20,6 +20,8 @@ import test_storage as retained
 from shell_lookup import render
 from shell_lookup import epoch
 from storage import validate
+from filesystem import snapshot_tree
+from transport_records import read_transport_records
 
 SOURCE = 'https://raw.githubusercontent.com/e2e-selected/AM/test-source'
 PIN = 'b'*40
@@ -46,6 +48,7 @@ class InstalledCLI(unittest.TestCase):
         cls.module_hashes = {p.name:hashlib.sha256(p.read_bytes()).hexdigest()
                              for p in Path('/src/modules').glob('*.am')}
         inputs=['test/e2e/scenarios.py','test/e2e/external.py','test/e2e/run',
+                'test/e2e/filesystem.py','test/e2e/transport_args.py','test/e2e/transport_records.py',
                 'test/e2e/container-test.sh','test/e2e/fixtures/e2e-legacy',
                 'test/e2e/Containerfile.debian','test/e2e/Containerfile.fedora',
                 'APP-MANAGER','programs/x86_64/nvim','programs/x86_64/nvim-nightly','programs/x86_64/obsidian','programs/x86_64/sqlitebrowser',
@@ -163,20 +166,13 @@ esac
         for name,digest in self.module_hashes.items():
             self.assertEqual(hashlib.sha256((Path('/opt/am/modules')/name).read_bytes()).hexdigest(),digest)
 
-    def snapshot(self, directory):
-        return {str(path.relative_to(directory)):
-                ('link',os.readlink(path)) if path.is_symlink() else
-                ('file',path.read_bytes(),path.stat().st_mode,path.stat().st_mtime_ns) if path.is_file() else
-                ('dir',path.stat().st_mode)
-                for path in directory.rglob('*')}
-
     def test_neovim_stable_and_nightly_refresh_preserve_user_setup(self):
         # Both selectors use retained observations; executable bytes are inert.
         config=self.home/'.config/nvim';config.mkdir(parents=True)
         (config/'init.lua').write_text('-- untouched user configuration\n')
         launcher=self.home/'.local/bin/nvim'
         launcher.symlink_to('/opt/nvim-nightly/nvim-nightly')
-        before=self.snapshot(self.home/'.config')
+        before=snapshot_tree(self.home/'.config')
         self.command('-i','nvim')
         app=Path('/opt/nvim')
         self.assertEqual((app/'version').read_text().strip(),
@@ -193,14 +189,14 @@ esac
         self.assertIn('nvim-nightly: updated',result.stdout)
         previous=set((self.fixture/'calls').iterdir())
         self.command('--commit',PIN,executable=str(nightly/'AM-updater'))
-        calls=[json.loads(p.read_text()) for p in set((self.fixture/'calls').iterdir())-previous]
+        calls=read_transport_records(self.fixture/'calls', excluding=previous)
         self.assertTrue(any(c['tool']=='wget' and c['url'].endswith('/nightly/nvim-linux-x86_64.appimage') for c in calls))
         self.configure(clock='1793500000.000000')
-        before_app=self.snapshot(nightly)
+        before_app=snapshot_tree(nightly)
         self.command('-u','nvim-nightly','--commit',PIN,success=False)
-        self.assertEqual(self.snapshot(nightly),before_app)
+        self.assertEqual(snapshot_tree(nightly),before_app)
         self.assertEqual(os.readlink(launcher),'/opt/nvim-nightly/nvim-nightly')
-        self.assertEqual(self.snapshot(self.home/'.config'),before)
+        self.assertEqual(snapshot_tree(self.home/'.config'),before)
 
     def test_system_install_and_standalone_updater(self):
         result=self.command('-i','obsidian')
@@ -257,12 +253,12 @@ esac
         self.command('-i','obsidian')
         app=Path('/opt/obsidian')
         (app/'version').write_text('old synthetic installed URL\n')
-        before=self.snapshot(app)
+        before=snapshot_tree(app)
         self.configure(download_partial_fail=True)
         self.command('-u','obsidian','--commit',PIN,success=False)
         self.assertEqual((app/'tmp/obsidian.AppImage').read_bytes(),
                          (self.fixture/'binary').read_bytes()[:17])
-        after=self.snapshot(app)
+        after=snapshot_tree(app)
         self.assertEqual({k:v for k,v in after.items() if k!='tmp' and not k.startswith('tmp/')},before)
         self.assertTrue(Path('/usr/local/bin/obsidian').samefile(app/'obsidian'))
         self.configure(download_partial_fail=False)
@@ -279,13 +275,13 @@ esac
         (self.home/'.local/share/AM/newrepo-on').write_text(alternate+'\n')
         previous=set((self.fixture/'calls').iterdir())
         self.command('-u','obsidian','--commit',PIN)
-        calls=[json.loads(p.read_text())['url'] for p in set((self.fixture/'calls').iterdir())-previous]
+        calls=[record['url'] for record in read_transport_records(self.fixture/'calls', excluding=previous)]
         self.assertTrue(any(url.startswith('https://raw.githubusercontent.com/e2e-alternate/AM/'+PIN+'/') for url in calls))
         self.assertFalse(any(url.startswith('https://raw.githubusercontent.com/e2e-selected/AM/'+PIN+'/') for url in calls))
         self.assertIn('AMREPO=${AMREPO-"'+SOURCE+'"}',(app/'recipe.am').read_text())
         previous=set((self.fixture/'calls').iterdir())
         self.command('--commit',PIN,executable=str(app/'AM-updater'))
-        calls=[json.loads(p.read_text())['url'] for p in set((self.fixture/'calls').iterdir())-previous]
+        calls=[record['url'] for record in read_transport_records(self.fixture/'calls', excluding=previous)]
         self.assertTrue(any(url.startswith('https://raw.githubusercontent.com/e2e-selected/AM/'+PIN+'/') for url in calls))
         self.assertFalse(any('e2e-alternate' in url for url in calls))
 
@@ -296,18 +292,18 @@ esac
         rid=self.index['aliases'][alias]['request_id']
         checked=Decimal(epoch(self.index['entries'][rid]['observation']['validated_at']))
         boundary=checked+Decimal(172800)
-        before=self.snapshot(app)
+        before=snapshot_tree(app)
         self.configure(clock=f'{boundary:.6f}')
         result=self.command('-u','obsidian','--commit',PIN)
         self.assertIn('obsidian: unchanged',result.stdout)
-        after=self.snapshot(app)
+        after=snapshot_tree(app)
         for name in ('obsidian','version'):
             self.assertEqual(after[name],before[name])
         before=after
         self.configure(clock=f'{boundary+Decimal("0.000001"):.6f}')
         result=self.command('-u','obsidian','--commit',PIN,success=False)
         self.assertIn('stale',result.stderr)
-        self.assertEqual(self.snapshot(app),before)
+        self.assertEqual(snapshot_tree(app),before)
 
     def test_remove_reinstall_preserves_user_configuration(self):
         for appman in ((True,) if os.environ.get('E2E_TARGET') == 'termux' else (False,True)):
@@ -325,36 +321,36 @@ esac
                 for path in (config,sentinel): os.chown(path,USER.pw_uid,USER.pw_gid)
                 self.command('-i','obsidian',home=home,executable=executable)
                 self.assertTrue(desktop.is_file())
-                before=self.snapshot(config)
+                before=snapshot_tree(config)
                 self.command('-r','obsidian',home=home,executable=executable,input_text='y\n')
                 self.assertFalse(app.exists())
                 self.assertFalse(os.path.lexists(launcher))
                 self.assertFalse(os.path.lexists(desktop))
-                self.assertEqual(self.snapshot(config),before)
+                self.assertEqual(snapshot_tree(config),before)
                 self.command('-i','obsidian',home=home,executable=executable)
                 self.assertTrue(launcher.samefile(app/'obsidian'))
                 self.assertTrue(desktop.is_file())
                 self.assertEqual((app/'version').read_text().strip(),OBSIDIAN)
                 self.command('--commit',PIN,home=home,executable=str(app/'AM-updater'))
-                self.assertEqual(self.snapshot(config),before)
+                self.assertEqual(snapshot_tree(config),before)
 
     def test_integrity_and_stale_refusal_preserve_app_and_interrupted_work(self):
         self.command('-i','obsidian')
         app=Path('/opt/obsidian')
         (app/'tmp').mkdir();(app/'tmp/retained').write_text('interrupted work\n')
-        before=self.snapshot(app)
+        before=snapshot_tree(app)
         alias='https://api.github.com/repos/obsidianmd/obsidian-releases/releases'
         rid=self.index['aliases'][alias]['request_id']
         body=self.fixture/'tree/bodies'/f'{rid}.json'
         body.write_bytes(b'[]')
         result=self.command('-u','obsidian','--commit',PIN,success=False)
         self.assertIn('obsidian: refused',result.stderr)
-        self.assertEqual(self.snapshot(app),before)
+        self.assertEqual(snapshot_tree(app),before)
         body.write_bytes(self.tree[f'bodies/{rid}.json'])
         self.configure(clock='1793500000.000000')
         result=self.command('-u','obsidian','--commit',PIN,success=False)
         self.assertIn('stale',result.stderr)
-        self.assertEqual(self.snapshot(app),before)
+        self.assertEqual(snapshot_tree(app),before)
         digest=self.index['entries'][rid]['observation']['sha256']
         result=self.command('-u','obsidian','--commit',PIN,'--accept-stale',PIN,rid,digest)
         self.assertIn('obsidian: unchanged',result.stdout)
@@ -370,7 +366,7 @@ esac
     def test_mixed_batch_continues_with_shared_catalog_acquisition(self):
         self.command('-i','obsidian','sqlitebrowser','e2e-legacy')
         app=Path('/opt/obsidian')
-        before=self.snapshot(app)
+        before=snapshot_tree(app)
         alias='https://api.github.com/repos/obsidianmd/obsidian-releases/releases'
         rid=self.index['aliases'][alias]['request_id']
         (self.fixture/'tree/bodies'/f'{rid}.json').write_bytes(b'[]')
@@ -379,9 +375,9 @@ esac
         self.assertIn('obsidian: refused',result.stderr)
         self.assertIn('e2e-legacy: updated',result.stdout)
         self.assertIn('sqlitebrowser: unchanged',result.stdout)
-        self.assertEqual(self.snapshot(app),before)
+        self.assertEqual(snapshot_tree(app),before)
         self.assertEqual((self.fixture/'legacy-runs').read_text(),'ran')
-        calls=[json.loads(p.read_text()) for p in set((self.fixture/'calls').iterdir())-previous]
+        calls=read_transport_records(self.fixture/'calls', excluding=previous)
         self.assertEqual(sum('/commits/heads/release-catalog' in c['url'] for c in calls),1)
         self.assertEqual(sum(c['url'].endswith('/lookup.tsv') for c in calls),1)
         self.assertEqual(sum('/bodies/' in c['url'] for c in calls),2)
@@ -409,7 +405,7 @@ esac
         self.assertIn('e2e-legacy: failed',result.stderr)
         self.assertIn('obsidian: unchanged',result.stdout)
         self.assertIn('SYNCHRONIZING',result.stdout)
-        calls=[json.loads(p.read_text()) for p in (self.fixture/'calls').iterdir()]
+        calls=read_transport_records(self.fixture/'calls')
         self.assertTrue(any(c['url']==SOURCE+'/APP-MANAGER' for c in calls))
         self.assertTrue(any(c['url']==SOURCE+'/modules/catalog.am' for c in calls))
         self.assertEqual(Path('/opt/obsidian/version').read_text().strip(),OBSIDIAN)

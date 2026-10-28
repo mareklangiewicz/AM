@@ -169,3 +169,14 @@ phone ARM64 binaries, arbitrary GNU/Linux binary compatibility, FUSE, Android
 SELinux/app-lifecycle behavior, or real-device installation. The `/opt/am` system
 fixture is deliberately prepared by container root to exercise fallback; native
 Termux's real user normally cannot create that path.
+
+## Fast support-tool specs
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s test/e2e -p 'test_*.py' -v
+```
+
+These run on the host using disposable temporary directories, without importing
+container scenarios or touching installed apps. They specify supported transport
+output arguments, filesystem snapshot semantics and incremental trace reading.
+The full container matrix remains the installed-command verification.

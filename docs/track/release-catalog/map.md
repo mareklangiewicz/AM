@@ -680,3 +680,11 @@ Real installed commands verify manager source switching versus embedded standalo
 source and the exact inclusive 48-hour freshness edge. Termux gains truncated
 transfer and AppMan removal/reinstall coverage. Final 34 scenarios pass across
 three targets; zero unexpected requests, unchanged production and pilot state.
+
+
+2026-10-28: [57 resolved: specified e2e tools](issues/57-ground-e2e-tools.md).
+Applied three myground findings: download destination parser, independent
+filesystem snapshot and incremental transport-record reader. Nine focused specs
+and 34 container scenarios / 108 commands pass; no repairs/reverts or production
+changes. Initially uncommitted per skill; Marek subsequently authorized the local
+commit. No source push or pilot/host operation.

@@ -8,6 +8,8 @@ import subprocess
 import sys
 import unittest
 
+from filesystem import snapshot_tree
+
 import scenarios as shared
 from scenarios import OUT, USER, SOURCE, PIN, SQLITE, retained, render, validate
 
@@ -26,6 +28,7 @@ class TermuxCLI(unittest.TestCase):
                            for p in Path('/src/modules').glob('*.am')}
         inputs=['APP-MANAGER','test/e2e/Containerfile.termux','test/e2e/termux-test.sh',
                 'test/e2e/termux_scenarios.py','test/e2e/scenarios.py','test/e2e/external.py',
+                'test/e2e/filesystem.py','test/e2e/transport_args.py','test/e2e/transport_records.py',
                 'test/e2e/run','test/e2e/fixtures/e2e-legacy','programs/x86_64/sqlitebrowser','programs/x86_64/obsidian',
                 'docs/track/release-catalog/design/staged-manifest.json',
                 'docs/track/release-catalog/research/supervised-baseline-40529551070-evidence.tar.gz']
@@ -43,7 +46,6 @@ class TermuxCLI(unittest.TestCase):
     configure=shared.InstalledCLI.configure
     prepare_home=shared.InstalledCLI.prepare_home
     command=shared.InstalledCLI.command
-    snapshot=shared.InstalledCLI.snapshot
     test_unprivileged_appman_install_and_standalone_source=shared.InstalledCLI.test_unprivileged_appman_install_and_standalone_source
     test_remove_reinstall_preserves_user_configuration=shared.InstalledCLI.test_remove_reinstall_preserves_user_configuration
 
@@ -117,10 +119,10 @@ class TermuxCLI(unittest.TestCase):
         self.configure(download_partial_fail=False)
         self.command('-u','sqlitebrowser','--commit',PIN,executable=executable)
         self.assertEqual((app/'version').read_text().strip(),SQLITE)
-        before=self.snapshot(app)
+        before=snapshot_tree(app)
         self.configure(clock='1793500000.000000')
         self.command('-u','sqlitebrowser','--commit',PIN,executable=executable,success=False)
-        self.assertEqual(self.snapshot(app),before)
+        self.assertEqual(snapshot_tree(app),before)
 
     def test_read_only_am_falls_back_without_sudo(self):
         self.appman()
