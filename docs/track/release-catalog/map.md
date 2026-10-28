@@ -613,3 +613,13 @@ still supported. 184 catalog tests pass, including 126 differential selector cas
 18 Debian/Fedora whole-command scenarios / 56 commands pass. Recipe lines 84 -> 82,
 production net +8 lines: centralization rather than a large size reduction. No host
 delivery, source push, collection or workflow change; 37/41 remain independent.
+
+
+2026-10-28: [54 resolved: native Termux command tests](issues/54-termux-container-cli.md).
+Native Android/Bionic userland runs seven scenarios as uid/gid 1000 without FHS
+compatibility links: direct AppMan, local AM auto-mode, read-only fallback,
+privilege refusal, transfer/catalog preservation and a real native CLI ELF.
+Fixed the demonstrated sudo-before-fallback ordering defect. [Findings](research/termux-container-findings.md)
+retain exact red/green evidence and limits. Full matrix 25 scenarios / 70 commands
+and all 184 catalog tests pass; final Termux rerun 7/14 also passes. No host delivery,
+production collection, source push/repin or workflow change; timed 37/41 remain.

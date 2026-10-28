@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """Strict offline external-command adapters. Never opens a network connection."""
 import hashlib
 import json
@@ -16,12 +16,12 @@ if tool == 'date':
     if args == ['-u', '+%s.%6N']:
         print(settings['clock'])
     else:
-        raise SystemExit(subprocess.call(['/usr/bin/date', *args]))
+        raise SystemExit(subprocess.call([os.environ.get('PREFIX','/usr')+'/bin/date', *args]))
     raise SystemExit(0)
 if tool == 'notify-send':
     raise SystemExit(1)  # Desktop notification absence must be nonfatal.
 if tool == 'wget' and args == ['--version']:
-    raise SystemExit(subprocess.call(['/usr/bin/wget', '--version']))
+    raise SystemExit(subprocess.call([os.environ.get('PREFIX','/usr')+'/bin/wget', '--version']))
 url = args[-1]
 head = '--head' in args
 record = {'tool': tool, 'url': url, 'head': head}

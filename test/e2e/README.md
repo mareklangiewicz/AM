@@ -105,3 +105,51 @@ is performed, and no production workflow is enabled.
 The old `regress/` suite uses live app downloads and clears app/binary locations.
 This runner does not invoke it or make it a host pre-commit gate. No remote CI
 workflow is added while the bounded catalog pilot is active.
+
+## Native Termux target
+
+```sh
+./test/e2e/run termux
+./test/e2e/run termux debian fedora
+E2E_TEST=TermuxCLI.test_read_only_am_falls_back_without_sudo ./test/e2e/run termux
+```
+
+Termux is explicitly selected; the default remains Debian/Fedora. The base is
+`termux/termux-docker`, an Android/Bionic userland, not a Debian proot environment.
+The image upgrades its packaged dependencies before installing Python/wget/git/file
+because old base-package versions can otherwise conflict with current repositories.
+The built image ID and exact tested source hashes are retained with each run.
+Builds use network; runtime containers use `--network=none` and strict fixture
+transport, just like the other targets.
+
+All seven Termux scenarios execute as the native unprivileged `system` user
+(uid/gid 1000). Root only prepares a system-AM fixture and result permissions.
+There are no `/bin` or `/usr` compatibility links. The native Termux
+`libtermux-exec.so` preload supplies normal Termux shebang/path translation;
+`PREFIX`, Android environment and the native temporary directory are preserved.
+The harness is invoked through the absolute Termux interpreter path.
+
+Coverage:
+
+- Direct AppMan install, saved helpers/source, standalone update and app ownership.
+- The unchanged manager installed locally under the command name `am` selects
+  AppMan paths without a system-mode marker.
+- A read-only system-AM fixture offers AppMan mode without sudo/doas; acceptance
+  persists and installs locally using the system-owned helpers, and declining
+  leaves the app uninstalled. A writable system directory still refuses without
+  sudo/doas. The fixture directory is user-owned with write bits removed so the
+  negative test can toggle permissions; manager/module files remain root-owned.
+- Failed transfer preservation/retry and catalog freshness refusal.
+- Download/install/execution of real Android-native Bash ELF bytes from the image,
+  through a controlled legacy CLI recipe and the offline download adapter.
+
+The first actual run exposed AM's early sudo/doas check, which prevented reaching
+read-only fallback. The requirement now runs after mode selection, preserving the
+system-mode refusal while allowing unprivileged AppMan fallback.
+
+The AppImage-path tests use inert extraction scripts, not native GUI AppImages.
+This is x86_64 userland coverage on a Linux container kernel; it does not prove
+phone ARM64 binaries, arbitrary GNU/Linux binary compatibility, FUSE, Android
+SELinux/app-lifecycle behavior, or real-device installation. The `/opt/am` system
+fixture is deliberately prepared by container root to exercise fallback; native
+Termux's real user normally cannot create that path.

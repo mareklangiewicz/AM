@@ -24,7 +24,7 @@ PIN = 'b'*40
 OBSIDIAN = 'https://github.com/obsidianmd/obsidian-releases/releases/download/v1.14.5/Obsidian-1.14.5.AppImage'
 SQLITE = 'https://github.com/sqlitebrowser/sqlitebrowser/releases/download/v3.13.1/DB.Browser.for.SQLite-v3.13.1-x86.64-v2.AppImage'
 OUT = Path('/out')
-USER = pwd.getpwnam('e2e')
+USER = pwd.getpwnam('system' if os.environ.get('E2E_TARGET') == 'termux' else 'e2e')
 
 
 class InstalledCLI(unittest.TestCase):
@@ -118,18 +118,25 @@ esac
         for path in (home,*home.rglob('*')):
             os.chown(path,USER.pw_uid,USER.pw_gid)
 
-    def command(self, *args, executable='/usr/local/bin/am', home=None, success=True):
+    def command(self, *args, executable='/usr/local/bin/am', home=None, success=True, input_text=None):
         self.sequence+=1
         chosen=home or self.home
         env={'HOME':str(chosen),'USER':'e2e','LOGNAME':'e2e','LANG':'C','TERM':'xterm',
             'PATH':str(self.bin)+':'+str(chosen/'.local/bin')+':/usr/local/bin:/usr/bin:/bin',
             'E2E_FIXTURE':str(self.fixture),'NO_COLOR':'1'}
+        if os.environ.get('E2E_TARGET') == 'termux':
+            for key in ('PREFIX','TMPDIR','ANDROID_DATA','ANDROID_ROOT','LD_PRELOAD','TERMUX_VERSION'):
+                env[key]=os.environ[key]
+            env['PATH']=str(self.bin)+':'+str(chosen/'.local/bin')+':'+env['PREFIX']+'/bin'
+            env['USER']=env['LOGNAME']='system'
         # No AMREPO environment: manager configuration and saved recipes deliver it.
         cmd=['runuser','-u','e2e','--','env','-i',*[f'{k}={v}' for k,v in env.items()],executable,*args]
-        process=subprocess.Popen(cmd,cwd=chosen,stdout=subprocess.PIPE,stderr=subprocess.PIPE,
-                                 text=True,start_new_session=True,stdin=subprocess.DEVNULL)
+        if os.environ.get('E2E_TARGET') == 'termux':
+            cmd=[executable,*args]
+        process=subprocess.Popen(cmd,env=env if os.environ.get('E2E_TARGET') == 'termux' else None,cwd=chosen,stdout=subprocess.PIPE,stderr=subprocess.PIPE,
+                                 text=True,start_new_session=True,stdin=subprocess.PIPE if input_text is not None else subprocess.DEVNULL)
         try:
-            stdout,stderr=process.communicate(timeout=45)
+            stdout,stderr=process.communicate(input=input_text,timeout=45)
         except subprocess.TimeoutExpired:
             os.killpg(process.pid,signal.SIGKILL)
             stdout,stderr=process.communicate()

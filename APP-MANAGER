@@ -445,8 +445,8 @@ _am() {
 	elif command -v doas >/dev/null 2>&1; then
 		export SUDOCMD="doas"
 	else
-		echo $"ERROR: No sudo or doas found"
-		exit 1
+		# AppMan fallback may still make this an unprivileged command.
+		export SUDOCMD=""
 	fi
 	APPSPATH="$(readlink -f /opt)"
 	AMPATH="$APPSPATH/$AMCLI"
@@ -1518,6 +1518,12 @@ if [ "$AMCLI" = am ]; then
 			_use_appman 1>/dev/null
 		fi
 	fi
+fi
+
+# Require privilege tools only after the read-only/AppMan decision.
+if [ "$AMCLI" = am ] && [ -z "$SUDOCMD" ]; then
+	echo $"ERROR: No sudo or doas found"
+	exit 1
 fi
 
 ################################################################################################################################################################

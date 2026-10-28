@@ -1,0 +1,6 @@
+# Native Android/Bionic userland; deliberately no /bin or /usr compatibility links.
+FROM docker.io/termux/termux-docker:latest
+RUN ["/data/data/com.termux/files/usr/bin/sh", "-c", "/entrypoint.sh sh -c 'apt-get update && apt-get -y -o Dpkg::Options::=--force-confnew dist-upgrade && apt-get install -y python wget git file'"]
+ENV TERMUX_VERSION=0.118.0-e2e
+ENV LD_PRELOAD=/data/data/com.termux/files/usr/lib/libtermux-exec.so
+ENTRYPOINT ["/data/data/com.termux/files/usr/bin/bash", "/src/test/e2e/termux-test.sh"]

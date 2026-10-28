@@ -9,7 +9,7 @@ command -v "$ENGINE" >/dev/null 2>&1 || { echo "Missing engine: $ENGINE" >&2; ex
 [ "$#" -gt 0 ] || set -- debian fedora
 # Validate every target before building or running any of them.
 for target do
-    case $target in debian|fedora) ;; *) echo "Unknown target: $target" >&2; exit 2 ;; esac
+    case $target in debian|fedora|termux) ;; *) echo "Unknown target: $target" >&2; exit 2 ;; esac
     [ -f "$HERE/Containerfile.$target" ] || exit 2
 done
 mkdir -p "$OUT"
@@ -29,6 +29,16 @@ for target do
     fi
     "$ENGINE" image inspect --format '{{.Id}}' "$image" > "$OUT/$target/image-id.txt"
     printf 'Running %s with networking disabled\n' "$target"
+    if [ "$target" = termux ]; then
+        if "$ENGINE" run --rm --network=none \
+            -v "$REPO:/src:ro" -v "$OUT/$target:/out:rw" \
+            -e E2E_TARGET=termux -e "E2E_TEST=${E2E_TEST-}" "$image"; then
+            echo "PASS $target"
+        else
+            echo "FAIL $target" >&2; status=1
+        fi
+        continue
+    fi
     if "$ENGINE" run --rm --network=none --entrypoint /bin/bash \
         --tmpfs /run:rw --tmpfs /tmp:rw,exec \
         -v "$REPO:/src:ro" -v "$OUT/$target:/out:rw" \
