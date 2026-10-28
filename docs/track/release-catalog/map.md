@@ -593,3 +593,14 @@ environments; the public fixture matrix passes 18 scenarios / 56 commands.
 No host delivery, upstream binary download, source push or operational change.
 Timed 37/41 remain independent. Earlier unpublished inclusion of host metadata
 was removed by rewriting the unpublished commits before publication.
+
+
+2026-10-28: [52 resolved: compact AppImage recipes](issues/52-compact-appimage-recipes.md).
+Six recipes drop eight repeated setup lines each, leaving app identity, exact
+catalog alias, selector and genuine exceptions. Shared defaults and installer-owned
+persistent bindings preserve AppMan/standalone behavior and older expanded recipes.
+132 -> 84 recipe lines; production source -30 lines. Catalog verification covers
+all 182 cases after affected-module fixture corrections, eight historical probes,
+and 18 Debian/Fedora whole-command scenarios / 56 commands. No host delivery,
+source push or workflow change; private payload manifests require rechecking and
+37/41 obligations remain independent.

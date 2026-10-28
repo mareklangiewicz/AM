@@ -4,20 +4,12 @@
 set -eu
 APP=nvim-nightly
 CATALOG_ALIAS="https://api.github.com/repos/neovim/neovim/releases"
-PACKAGE_KIND=appimage
 # Nightly assets change in place at the same URL.
 REFRESH_ALWAYS=true
-AMREPO=${AMREPO-}
-export AMREPO
-APPS_DIR="/opt/"
-BIN_DIR="/usr/local/bin"
-DESKTOP_DIR="/usr/local/share/applications"
-CATALOG_HELPER="/opt/am/modules/catalog.am"
-LIFECYCLE_HELPER="/opt/am/modules/appimage.am"
 select_asset() {
 	sed 's/[()",{} ]/\n/g' | grep -o 'https.*releases.*nvim.*mage$' | grep -v "arm64\|aarch64\|i686\|i386" | grep -i nightly | head -1
 }
 
 # shellcheck source=modules/appimage.am
-. "$LIFECYCLE_HELPER"
+. "/opt/am/modules/appimage.am"
 am_appimage "$0" "$@"

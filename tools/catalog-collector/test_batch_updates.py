@@ -21,7 +21,7 @@ class BatchUpdates(ShellFixture):
 
     def second_catalog_app(self):
         recipe = self.path/'sqlite-recipe'
-        source = (ROOT/'programs/x86_64/sqlitebrowser').read_text()
+        source = lifecycle.bound_recipe((ROOT/'programs/x86_64/sqlitebrowser').read_text())
         source = source.replace('/opt/am/modules/catalog.am',str(HELPER)).replace(
             '/opt/am/modules/appimage.am',str(LIFECYCLE))
         recipe.write_text(source.replace('/opt/',str(self.root)+'/opt/').replace(

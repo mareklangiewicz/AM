@@ -14,6 +14,17 @@ APP = ROOT / 'programs/x86_64/obsidian'
 LIFECYCLE = ROOT / 'modules/appimage.am'
 
 
+def bound_recipe(recipe):
+    # Function-level tests bind a private root explicitly; whole installer tests
+    # below exercise production expansion of compact recipes.
+    bindings = ('AMREPO=${AMREPO-}\nAPPS_DIR="/opt/"\n'
+                'BIN_DIR="/usr/local/bin"\n'
+                'DESKTOP_DIR="/usr/local/share/applications"\n'
+                'CATALOG_HELPER="/opt/am/modules/catalog.am"\n')
+    return recipe.replace('. "/opt/am/modules/appimage.am"',
+                          bindings + '. "/opt/am/modules/appimage.am"')
+
+
 class AppImageLifecycle(ShellFixture):
     def setUp(self):
         super().setUp()
@@ -24,7 +35,7 @@ class AppImageLifecycle(ShellFixture):
         for p in ('usr/local/bin','usr/local/share/applications'):
             (self.root/p).mkdir(parents=True,exist_ok=True)
         self.app=self.root/'opt/obsidian'
-        self.source=APP.read_text().replace('/opt/am/modules/catalog.am',str(HELPER)).replace('/opt/am/modules/appimage.am',str(LIFECYCLE))
+        self.source=bound_recipe(APP.read_text()).replace('/opt/am/modules/catalog.am',str(HELPER)).replace('/opt/am/modules/appimage.am',str(LIFECYCLE))
         self.source=self.source.replace('/opt/',str(self.root)+'/opt/').replace('/usr/local/',str(self.root)+'/usr/local/')
         self.recipe=self.path/'recipe'
         self.recipe.write_text(self.source)
@@ -132,7 +143,7 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\nmkdir -p 
         module_dir=self.path/'owned modules $literal `literal` & |'
         module_dir.mkdir();(module_dir/'catalog.am').symlink_to(HELPER)
         (module_dir/'appimage.am').symlink_to(LIFECYCLE)
-        self.recipe.write_text(APP.read_text().replace('/usr/local/',str(self.root)+'/usr/local/'))
+        self.recipe.write_text(bound_recipe(APP.read_text()).replace('/usr/local/',str(self.root)+'/usr/local/'))
         source=(ROOT/'modules/install.am').read_text()
         start=source.index('\t# Embed the AM/AppMan-owned module location')
         end=source.index('\t# Patch to apply to installation scripts',start)
@@ -513,7 +524,7 @@ class AppImageRecipeCases:
         super().setUp()
         self.root=self.path/'root'
         self.app=self.root/'opt'/self.app_name
-        source=self.recipe_path.read_text().replace('/opt/am/modules/catalog.am',str(HELPER)).replace('/opt/am/modules/appimage.am',str(LIFECYCLE))
+        source=bound_recipe(self.recipe_path.read_text()).replace('/opt/am/modules/catalog.am',str(HELPER)).replace('/opt/am/modules/appimage.am',str(LIFECYCLE))
         self.recipe=self.path/'recipe'
         self.recipe.write_text(source.replace('/opt/',str(self.root)+'/opt/').replace(
             '/usr/local/',str(self.root)+'/usr/local/'))
@@ -694,7 +705,7 @@ class NvimLifecycle(AppImageRecipeCases, ShellFixture):
         # Drive the real shared runtime with the nightly recipe policy; retained
         # stable bytes isolate refresh mechanics from release selection.
         self.recipe.write_text(self.recipe.read_text().replace(
-            'PACKAGE_KIND=appimage', 'PACKAGE_KIND=appimage\nREFRESH_ALWAYS=true'))
+            'set -eu\n', 'set -eu\nREFRESH_ALWAYS=true\n', 1))
         updater=self.install()
         (self.path/'download').unlink()
         result=self.run_script(updater)

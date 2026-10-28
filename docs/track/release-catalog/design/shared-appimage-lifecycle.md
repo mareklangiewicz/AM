@@ -1,5 +1,26 @@
 # Shared AppImage lifecycle
 
+## Current compact interface (ticket 52)
+
+Recipes now contain app identity, exact catalog alias, one selector, real app
+exceptions, and the shared-helper invocation. AppImage format is implied by that
+invocation. Six recipes lose eight lines each: 132 -> 84 total source lines;
+ordinary recipes are 13 lines, Obsidian/nightly 15 including comments and blanks.
+
+The installer inserts source/path bindings immediately before sourcing the helper,
+then applies its existing AppMan/module/source transformations. These bindings
+remain in the saved installed recipe for standalone execution. The shared helper
+exports AMREPO and supplies system defaults for direct execution. Explicit empty
+AMREPO still refuses; no default repository is introduced. Older expanded recipes
+remain supported, including their explicit package-kind check. Installed recipe
+code is three lines shorter per app; this primarily reduces maintained source
+repetition. Including installer/helper changes, production source shrinks 30 lines.
+
+This is a local source change, not installed delivery. Previous private payload
+manifests need rebuilding/rechecking before any future delivery.
+
+The original implementation and its historical measurements follow.
+
 Ticket [42](../issues/42-shared-appimage-lifecycle.md), baseline `0de7c6400`.
 
 `modules/appimage.am` owns install/update for the x86_64 Obsidian and SQLite

@@ -247,6 +247,18 @@ _install_arg() {
 
 	# APPLY PATCHES
 
+	# Expand compact recipes with installation bindings before normal path/source patches.
+	# Keep these in the saved recipe so standalone execution needs no manager environment.
+	if grep -qx '# AM-CATALOG-RECIPE 1' ./"$arg" &&
+		grep -Fqx '. "/opt/am/modules/appimage.am"' ./"$arg"; then
+		sed -i '\|^\. "/opt/am/modules/appimage.am"$|i\
+AMREPO=${AMREPO-}\
+APPS_DIR="/opt/"\
+BIN_DIR="/usr/local/bin"\
+DESKTOP_DIR="/usr/local/share/applications"\
+CATALOG_HELPER="/opt/am/modules/catalog.am"' ./"$arg" || exit 1
+	fi
+
 	# Patch "$WGETCMD" (version 1.x) to have a progress bar and fix errors when applying patches
 	if [ -n "$WGETV" ]; then
 		! echo "$FLAGS" | grep -q -- "--debug" && sed -i "s#$WGETCMD #$WGETPROGRESS #g" ./"$arg"

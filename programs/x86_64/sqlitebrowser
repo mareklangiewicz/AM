@@ -4,18 +4,10 @@
 set -eu
 APP=sqlitebrowser
 CATALOG_ALIAS="https://api.github.com/repos/sqlitebrowser/sqlitebrowser/releases?per_page=100"
-PACKAGE_KIND=appimage
-AMREPO=${AMREPO-}
-export AMREPO
-APPS_DIR="/opt/"
-BIN_DIR="/usr/local/bin"
-DESKTOP_DIR="/usr/local/share/applications"
-CATALOG_HELPER="/opt/am/modules/catalog.am"
-LIFECYCLE_HELPER="/opt/am/modules/appimage.am"
 select_asset() {
 	sed 's/[()",{} ]/\n/g' | grep -oi "https.*x86.*64.*mage$" | grep -i "/v[0-9].*/\|/[0-9].*/" | grep -vi "nightly\|continuous\|-rc[0-9]/\|dev" | head -1
 }
 
 # shellcheck source=modules/appimage.am
-. "$LIFECYCLE_HELPER"
+. "/opt/am/modules/appimage.am"
 am_appimage "$0" "$@"
