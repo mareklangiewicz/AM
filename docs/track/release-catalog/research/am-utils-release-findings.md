@@ -89,3 +89,22 @@ an exact collection/publication approval. Neither this read nor the authorized
 six-source daily activation authorizes seventh-source operational enrollment.
 Ticket 47 remains claimed/partial, and 48/49 remain blocked. No source push,
 repin, workflow/schedule change or host operation occurred.
+
+## Authorized selector repair — 2026-10-28
+
+Marek approved fixing the two selectors and preparing seven-source enrollment
+offline. A regression using each actual c++filt install/update selector returned
+empty four times before repair. Both recipes now match the literal encoded URL
+component `c%2B%2Bfilt`, preserving date, architecture, case-insensitivity, original
+upstream URL and first-match ordering. No generic encoding framework or other
+recipe change was needed. The focused regression now passes.
+
+The updated [whole-family checker](am-utils-release-20261028/verify_selectors.py)
+accepts only this explicit two-path exception to the frozen original frame and
+writes a separate [post-fix report](am-utils-release-20261028/selector-report-fixed.json):
+**356/356 selectors match actual retained assets**, zero missing/non-asset results,
+all 356 equal their current trusted recipe pipeline. The original report above
+remains historical evidence of the pre-fix failure; use source commit `0c1aaf672`
+for the checker that reproduces that original audit. The 160 multi-match cases
+still use unchanged first-match policy. This repairs metadata selection only,
+without binary download/execution or installed updater delivery.

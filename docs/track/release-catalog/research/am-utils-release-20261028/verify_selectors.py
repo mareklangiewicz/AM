@@ -1,4 +1,4 @@
-"""Offline audit of the frozen family; executes only fixed sed/grep pipelines."""
+"""Offline audit of the frozen paths after the reviewed c++filt correction; executes only fixed sed/grep pipelines."""
 import collections
 import hashlib
 import json
@@ -33,7 +33,8 @@ def main():
         assert re.fullmatch(r'[a-z0-9.+-]+', app), name
         arch = name.split('/')[1]
         assert arch in ('aarch64', 'x86_64'), name
-        expr = f'https.*download.*/{arch}-[0-9]{{8}}/${{APP}}_.*-{arch}-static$'
+        component = 'c%2B%2Bfilt' if app == 'c++filt' else '${APP}'
+        expr = f'https.*download.*/{arch}-[0-9]{{8}}/{component}_.*-{arch}-static$'
         lines = [line for line in source.splitlines() if line.startswith('version=')]
         expected = ('version=$(curl -Ls https://api.github.com/repos/ivan-hc/am-utils/releases '
                     '| sed \'s/[()",{} ]/\\n/g\' | grep -Eoi "' + expr + '" | head -1)')
@@ -63,7 +64,7 @@ def main():
                   multiple=sum(r['match_count'] > 1 for r in rows),
                   non_asset=sum(bool(r['selected']) and not r['selected_is_asset'] for r in rows),
                   differential_equal=sum(r['differential_equal'] for r in rows), rows=rows)
-    (OUT / 'selector-report.json').write_text(json.dumps(report, indent=2) + '\n')
+    (OUT / 'selector-report-fixed.json').write_text(json.dumps(report, indent=2) + '\n')
     print(json.dumps({k: v for k, v in report.items() if k != 'rows'}, indent=2))
     return bool(report['missing'] or report['non_asset'])
 
