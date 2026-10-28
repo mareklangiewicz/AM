@@ -463,3 +463,12 @@ verified with retained bytes and isolated roots. Full suite 116 passes before th
 final additional install-dispatch test; six final SQLite tests, syntax and lint pass.
 No shared runtime/collector change, live source request, installed migration or
 push that would disturb the running hourly pilot's source pin.
+
+
+2026-10-28: [39 resolved: sparse schedule diagnosis](issues/39-diagnose-scheduled-cadence.md).
+Ten nominal slots, one scheduled event across both API query scopes; no failed,
+skipped or queued run. Existing dispatcher/job start promptly and child succeeds.
+Remote cron/default/source/window/state/history correct. Gap is before workflow
+execution; documented GitHub schedule delay/drop fits, internal reason unproven.
+[Replayable evidence and alternatives](research/scheduled-cadence-diagnosis.md).
+No cron change, repin, extra dispatch/collection, app operation or extension.
