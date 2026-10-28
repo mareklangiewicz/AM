@@ -717,3 +717,11 @@ Final Debian/Fedora 28 scenarios / 100 commands pass, zero unexpected requests;
 nine support-tool specs and lint/diff checks pass. Corrected one new test's
 updated-versus-unchanged expectation; production unchanged. No host delivery,
 source push, live collection, enrollment or pilot/schedule change.
+
+
+2026-10-28: [61 resolved: interrupted AppMan commands](issues/61-interrupted-install-retry.md).
+Actual SIGKILL after partial staging now covers fresh installation and existing-app
+update, followed by normal retries and preservation checks. Final Debian/Fedora
+30 scenarios / 108 commands pass, zero unexpected requests; nine support-tool specs
+and lint/diff checks pass. No production fix, host delivery, source push, collection,
+enrollment or pilot/schedule change; interruption coverage is one controlled point.

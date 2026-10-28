@@ -41,7 +41,7 @@ app-directory mount is used. Container sudo policy and adapters are test-only.
   checksum. A small legacy recipe is installed through normal AM dispatch to
   exercise a mixed batch; it is not a migrated catalog recipe.
 
-Fourteen scenarios on each target cover:
+Fifteen scenarios on each target cover:
 
 1. System recipe installation, expected retained URL, desktop extraction, binary
    symlink, source embedding, real checksum verification and standalone updater.
@@ -83,6 +83,11 @@ cross-distro gap; it supplements those tests.
     failure and binary-transfer failure each report aggregate failure while later
     apps continue. Successful retry, one shared pin/lookup, user ownership and
     user launchers are checked through whole installed commands.
+
+15. Abrupt SIGKILL of an AppMan command group after partial download staging,
+    for fresh installation and existing-app update. Normal retries complete;
+    installed files, launchers and user configuration survive interrupted updates.
+    This exercises one controlled interruption point, not general crash durability.
 
 Optional real-binary startup checks (cached matrix images required):
 

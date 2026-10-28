@@ -76,6 +76,17 @@ elif url.startswith('https://raw.githubusercontent.com/'+settings['repository']+
     if name in settings['catalog_paths']:
         raw = (fixture/'tree'/name).read_bytes()
 elif url in settings['assets']:
+    if settings.get('download_pause'):
+        output = download_destination(tool, args)
+        if output is None:
+            raise SystemExit('Paused transfer requires an output path')
+        output.write_bytes((fixture/'binary').read_bytes()[:17])
+        marker=fixture/'download-paused.tmp'
+        marker.write_text(json.dumps({'pid':os.getpid(),'pgid':os.getpgrp()}))
+        marker.replace(fixture/'download-paused')
+        # The container harness kills this command group after observing staging.
+        while True:
+            time.sleep(1)
     if settings.get('download_partial_fail'):
         output = download_destination(tool, args)
         if output is None:

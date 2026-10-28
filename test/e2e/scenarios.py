@@ -10,6 +10,7 @@ import signal
 import subprocess
 import sys
 import tempfile
+import time
 import unittest
 
 if not Path('/run/am-e2e-container').is_file() or not Path('/src/APP-MANAGER').is_file():
@@ -123,7 +124,7 @@ esac
         for path in (home,*home.rglob('*')):
             os.chown(path,USER.pw_uid,USER.pw_gid)
 
-    def command(self, *args, executable='/usr/local/bin/am', home=None, success=True, input_text=None):
+    def command(self, *args, executable='/usr/local/bin/am', home=None, success=True, input_text=None, interrupt_download=False):
         self.sequence+=1
         chosen=home or self.home
         env={'HOME':str(chosen),'USER':'e2e','LOGNAME':'e2e','LANG':'C','TERM':'xterm',
@@ -140,7 +141,20 @@ esac
             cmd=[executable,*args]
         process=subprocess.Popen(cmd,env=env if os.environ.get('E2E_TARGET') == 'termux' else None,cwd=chosen,stdout=subprocess.PIPE,stderr=subprocess.PIPE,
                                  text=True,start_new_session=True,stdin=subprocess.PIPE if input_text is not None else subprocess.DEVNULL)
+        paused=None
         try:
+            if interrupt_download:
+                marker=self.fixture/'download-paused'
+                deadline=time.monotonic()+45
+                while not marker.exists() and process.poll() is None and time.monotonic()<deadline:
+                    time.sleep(0.02)
+                if not marker.exists():
+                    raise subprocess.TimeoutExpired(cmd,45)
+                paused=json.loads(marker.read_text())
+                os.killpg(process.pid,signal.SIGKILL)
+                (self.logs/f'{self.sequence:02d}.interruption.json').write_text(json.dumps({
+                    'signal':'SIGKILL','command_pgid':process.pid,'download':paused}))
+                marker.unlink()
             stdout,stderr=process.communicate(input=input_text,timeout=45)
         except subprocess.TimeoutExpired:
             os.killpg(process.pid,signal.SIGKILL)
@@ -152,6 +166,9 @@ esac
         prefix.with_suffix('.stdout').write_text(result.stdout)
         prefix.with_suffix('.stderr').write_text(result.stderr)
         prefix.with_suffix('.status').write_text(str(result.returncode)+'\n')
+        if interrupt_download:
+            self.assertIsNotNone(paused,'download never reached interruption checkpoint')
+            self.assertEqual(paused['pgid'],process.pid,'download escaped command process group')
         if success:
             self.assertEqual(result.returncode,0,result.stdout+result.stderr)
         else:
@@ -266,6 +283,43 @@ esac
         self.assertEqual((app/'obsidian').read_bytes(),(self.fixture/'binary').read_bytes())
         self.assertEqual((app/'version').read_text().strip(),OBSIDIAN)
         self.assertFalse((app/'tmp').exists())
+
+    def test_interrupted_appman_install_and_update_retry(self):
+        home=self.fixture/'appman-home';home.mkdir()
+        self.prepare_home(home,appman=True)
+        executable=str(home/'Applications/appman/appman')
+        config=home/'.config/obsidian';config.mkdir()
+        (config/'sentinel').write_text('keep user configuration\n')
+        before_config=snapshot_tree(config)
+        app=home/'Applications/obsidian'
+        self.configure(download_pause=True)
+        result=self.command('-i','obsidian',executable=executable,home=home,
+                            success=False,interrupt_download=True)
+        self.assertEqual(result.returncode,-signal.SIGKILL)
+        self.assertEqual((app/'tmp/obsidian.AppImage').read_bytes(),
+                         (self.fixture/'binary').read_bytes()[:17])
+        self.assertFalse((app/'version').exists())
+        self.assertFalse((home/'.local/bin/obsidian').exists())
+        self.configure(download_pause=False)
+        self.command('-i','obsidian',executable=executable,home=home)
+        self.assertEqual((app/'version').read_text().strip(),OBSIDIAN)
+        self.assertFalse((app/'tmp').exists())
+        self.assertTrue((home/'.local/bin/obsidian').samefile(app/'obsidian'))
+        (app/'version').write_text('old\n')
+        before=snapshot_tree(app)
+        self.configure(download_pause=True)
+        result=self.command('-u','obsidian',executable=executable,home=home,
+                            success=False,interrupt_download=True)
+        self.assertEqual(result.returncode,-signal.SIGKILL)
+        after=snapshot_tree(app)
+        self.assertEqual({k:v for k,v in after.items() if k!='tmp' and not k.startswith('tmp/')},before)
+        self.assertTrue((home/'.local/bin/obsidian').samefile(app/'obsidian'))
+        self.configure(download_pause=False)
+        self.command('-u','obsidian',executable=executable,home=home)
+        self.assertEqual((app/'version').read_text().strip(),OBSIDIAN)
+        self.assertFalse((app/'tmp').exists())
+        self.assertEqual(snapshot_tree(config),before_config)
+        self.assertFalse(Path('/opt/obsidian').exists())
 
     def test_repository_switch_keeps_standalone_embedded_source(self):
         self.command('-i','obsidian')
