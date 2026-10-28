@@ -130,6 +130,92 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\nmkdir -p 
         self.assertNotEqual(r.returncode,0)
         self.assertEqual((self.app/'version').read_text(),'old\n')
 
+    def test_chmod_failure_preserves_binary_and_version_then_retry(self):
+        updater=self.install()
+        (self.app/'obsidian').write_bytes(b'old working binary\n')
+        (self.app/'version').write_text('old\n')
+        before=(self.app/'obsidian').stat().st_mode
+        self.script('chmod', "import sys\nsys.stderr.write('injected chmod failure\\n')\nsys.exit(9)\n")
+        result=self.run_script(updater)
+        self.assertNotEqual(result.returncode,0,result.stderr)
+        self.assertIn(b'injected chmod failure',result.stderr)
+        self.assertEqual((self.app/'obsidian').read_bytes(),b'old working binary\n')
+        self.assertEqual((self.app/'obsidian').stat().st_mode,before)
+        self.assertEqual((self.app/'version').read_text(),'old\n')
+        self.assertTrue((self.app/'tmp/obsidian.AppImage').is_file())
+        (self.bin/'chmod').unlink()
+        result=self.run_script(updater)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertEqual((self.app/'version').read_text().strip(),self.expected)
+        self.assertNotEqual((self.app/'obsidian').read_bytes(),b'old working binary\n')
+        self.assertTrue(os.access(self.app/'obsidian',os.X_OK))
+        self.assertFalse((self.app/'tmp').exists())
+
+    def test_replacement_failure_preserves_binary_and_version_then_retry(self):
+        updater=self.install()
+        (self.app/'obsidian').write_bytes(b'old working binary\n')
+        (self.app/'version').write_text('old\n')
+        self.script('mv', "import sys\nsys.stderr.write('injected replacement failure\\n')\nsys.exit(9)\n")
+        result=self.run_script(updater)
+        self.assertNotEqual(result.returncode,0,result.stderr)
+        self.assertIn(b'injected replacement failure',result.stderr)
+        self.assertEqual((self.app/'obsidian').read_bytes(),b'old working binary\n')
+        self.assertEqual((self.app/'version').read_text(),'old\n')
+        self.assertTrue(os.access(self.app/'tmp/obsidian.AppImage',os.X_OK))
+        (self.bin/'mv').unlink()
+        result=self.run_script(updater)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertEqual((self.app/'version').read_text().strip(),self.expected)
+        self.assertNotEqual((self.app/'obsidian').read_bytes(),b'old working binary\n')
+        self.assertFalse((self.app/'tmp').exists())
+
+    def test_version_write_failure_reports_partial_update_and_retry_recovers(self):
+        updater=self.install()
+        (self.app/'obsidian').write_bytes(b'old working binary\n')
+        # A directory forces a real shell redirection failure, even as root.
+        # Binary replacement precedes the version write: no multi-file rollback.
+        (self.app/'version').unlink()
+        (self.app/'version').mkdir()
+        result=self.run_script(updater)
+        self.assertNotEqual(result.returncode,0,result.stderr)
+        self.assertTrue((self.app/'version').is_dir())
+        self.assertNotEqual((self.app/'obsidian').read_bytes(),b'old working binary\n')
+        self.assertTrue(os.access(self.app/'obsidian',os.X_OK))
+        self.assertTrue((self.app/'tmp').exists())
+        (self.app/'version').rmdir()
+        (self.app/'version').write_text('old\n')
+        result=self.run_script(updater)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertEqual((self.app/'version').read_text().strip(),self.expected)
+        self.assertFalse((self.app/'tmp').exists())
+
+    def test_fresh_install_filesystem_failure_then_retry(self):
+        for failure in ('chmod','mv','version'):
+            with self.subTest(failure=failure):
+                if failure == 'version':
+                    (self.app/'version').mkdir(parents=True)
+                else:
+                    self.script(failure, "import sys\nsys.stderr.write('injected filesystem failure\\n')\nsys.exit(9)\n")
+                result=self.run_script(self.recipe)
+                self.assertNotEqual(result.returncode,0,result.stderr)
+                self.assertFalse((self.app/'AM-updater').exists())
+                self.assertFalse((self.root/'usr/local/bin/obsidian').exists())
+                if failure == 'version':
+                    self.assertTrue((self.app/'obsidian').is_file())
+                    (self.app/'version').rmdir()
+                else:
+                    self.assertFalse((self.app/'obsidian').exists())
+                    self.assertFalse((self.app/'version').exists())
+                    (self.bin/failure).unlink()
+                updater=self.install()
+                self.assertEqual((self.app/'version').read_text().strip(),self.expected)
+                self.assertTrue((self.root/'usr/local/bin/obsidian').exists())
+                self.assertEqual(len(updater.read_text().splitlines()),3)
+                self.assertFalse((self.app/'tmp').exists())
+                result=self.run_script(self.app/'remove')
+                self.assertEqual(result.returncode,0,result.stderr)
+                self.assertFalse(self.app.exists())
+
     def test_manager_foreground_route_precedes_legacy_mutation_and_preserves_failure(self):
         updater=self.install()
         manager=(ROOT/'APP-MANAGER').read_text()

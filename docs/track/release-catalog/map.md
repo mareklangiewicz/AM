@@ -48,24 +48,29 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 
 ## Current continuation boundary
 
-**Current implementation frontier (2026-10-28):**
-[42 shared lifecycle](issues/42-shared-appimage-lifecycle.md),
-[43 nvim](issues/43-migrate-nvim-shared-lifecycle.md),
-[44 normal mixed batches](issues/44-normal-batch-catalog-updates.md) and
-[45 recipe inventory](issues/45-recipe-inventory-and-migration-batches.md) are resolved.
-[46 the remaining Neovim AppImages](issues/46-migrate-remaining-neovim-appimages.md)
-and follow-ups 50–54 are resolved. Next is ticket 47’s staged enrollment preparation.
-[47 reviewed enrollment](issues/47-enroll-scoped-migration-sources.md) gates the
-concrete larger batches: [48 am-utils executables](issues/48-shared-executable-am-utils-batch.md)
-(356 recipes / one exact endpoint), then
-[49 common AppImages](issues/49-migrate-common-appimage-batch.md)
-(124 recipes / 50 exact endpoints). These are measured queues, not approved new
-collection or implemented migrations. See [inventory and capacity limits](research/recipe-family-inventory.md).
-[50 installed-command e2e](issues/50-container-cli-e2e.md) is also resolved after
-Marek requested mysh-style coverage; Debian/dash and Fedora/bash pass with actual
-installed CLI/module/sudo/sync paths and controlled external IO.
-Installed rollout remains separate. Tickets 37/41 retain timed pilot closure
-and the already authorized daily activation; no mid-pilot source push.
+**Current frontier (2026-10-28):**
+
+- At/after **2026-10-29T00:12:16Z**, close and assess the bounded hourly pilot
+  under [37](issues/37-assess-hourly-pilot.md). No source push or repin before
+  closure, no extension or replacement dispatch. No background timer exists.
+- After 37, perform the already authorized **six-source daily switch** under
+  [41](issues/41-activate-daily-refresh.md): 03:17 UTC and inclusive 48-hour
+  freshness. Review queued source changes before push/pin; installed helper
+  delivery remains separate.
+- [47 enrollment](issues/47-enroll-scoped-migration-sources.md) has completed
+  selector repair and seven-source offline preparation. Actual operational
+  enrollment/publication still requires separate scoped approval; the operational
+  manifest remains six-source.
+- [48 executable migration](issues/48-shared-executable-am-utils-batch.md)
+  remains blocked by 47. Its static preparation is complete: 356 recipes share
+  one lifecycle shape. [49 AppImage migration](issues/49-migrate-common-appimage-batch.md)
+  is also blocked; its 50 endpoints are a measured queue, not approved collection.
+
+Shared AppImage implementation and recipe simplifications (42–46, 52–53), installed
+CLI/Termux coverage (50, 54–56), and e2e support-tool extraction (57) are resolved.
+Their evidence and limitations remain in the tickets and historical progress below.
+[58](issues/58-post-download-failures.md) verifies post-download filesystem
+failure and retry behavior offline; no production defect was demonstrated.
 
 
 Use AMREPO-owned fork catalog and managed helper/source delivery (ticket 29).
@@ -688,3 +693,10 @@ filesystem snapshot and incremental transport-record reader. Nine focused specs
 and 34 container scenarios / 108 commands pass; no repairs/reverts or production
 changes. Initially uncommitted per skill; Marek subsequently authorized the local
 commit. No source push or pilot/host operation.
+
+
+2026-10-28: [58 resolved: post-download filesystem failures](issues/58-post-download-failures.md).
+Updated the current frontier and added chmod/replacement/version-write failure
+and retry coverage through real recipes and standalone updaters, including fresh
+installation retries. No production fix needed; version-write failure reports
+partial completion after binary replacement, without an atomic rollback claim.
