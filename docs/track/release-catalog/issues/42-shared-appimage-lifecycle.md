@@ -1,7 +1,7 @@
 # Share AppImage install/update implementation and shrink two recipes
 
 Type: task
-Status: open
+Status: resolved
 Triage: ready-for-agent
 
 ## Accepted direction and priority
@@ -89,3 +89,32 @@ for this work. Per Marek's preference, provide concrete commands for any later
 privileged host changes. Source changes can be committed locally while the pilot
 continues. Follow-on tasks: [43](43-migrate-nvim-shared-lifecycle.md),
 [44](44-normal-batch-catalog-updates.md), [45](45-recipe-inventory-and-migration-batches.md).
+
+## Answer — 2026-10-28
+
+Implemented `modules/appimage.am` and converted both x86_64 recipes together.
+One selector per recipe now serves install and update; the shared module owns
+preflight, transfer/retry/replacement, version/checksum-repair behavior, remover,
+launcher/icon extraction and installed delivery. Installed `recipe.am` retains
+trusted code/source/path bindings; the three-line standalone updater invokes it
+through the normal managed module, with no checkout or runtime code download.
+Obsidian's no-sandbox desktop edit remains an explicit app exception. Exact alias,
+original upstream URLs, reader freshness/stale consent and optional manager binary
+verification stay distinct and preserved.
+
+[Interface, supported format, delivery and full cost audit](../design/shared-appimage-lifecycle.md):
+50 fewer source lines / 2490 fewer bytes including new runtime and manager changes.
+Installed per-app code shrinks slightly, but the two-app total including shared
+runtime grows 87 lines (166 to 253); this is explicitly a maintenance/locality
+improvement, not an installed-size reduction.
+
+Replaced the two old recipe test files with shared-interface/manager integration
+coverage. **124 catalog tests + 8 historical probe tests pass**, plus shell syntax,
+warning-level ShellCheck (reader/runtime/recipes), and `git diff --check`. Retained
+metadata/stub binaries exercise both apps and both manager layouts, no-change and
+replacement, standalone source persistence after privilege environment loss,
+missing helpers, refusal before mutation, exact stale consent, failed transfer/
+retry, working-binary preservation, checksum repair, quoted paths, module sync/
+cleanup and icon-theme delivery. No live network, source push, host installation,
+app execution or workflow change. Tickets 37/41 remain separate timed obligations;
+43–45 are unclaimed follow-ons.

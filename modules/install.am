@@ -256,6 +256,7 @@ _install_arg() {
 	# Install the app so that it can rely on an icon theme (if available)
 	if echo "$FLAGS" | grep -q -- '--icons'; then
 		sed -i "s#Icon=/opt/\$APP/icons/#Icon=#g" ./"$arg"
+		sed -i 's/^am_appimage "$0" "$@"$/am_appimage "$0" --am-icons "$@"/' ./"$arg"
 	fi
 	# If you use the --latest option, add the "latest" flag to scripts that point to a very common "release"
 	if echo "$FLAGS" | grep -q -- '--force-latest'; then
@@ -266,15 +267,20 @@ _install_arg() {
 		sed -i "s#/usr/local/bin#$BINDIR#g" ./"$arg"
 		sed -i "s#/usr/local/share/applications#$DATADIR/$LAUNCHERS_DIR#g" ./"$arg"
 		sed -i "s#/usr/local/share#$DATADIR#g" ./"$arg"
-		sed -i '\|sh "/opt/am/modules/catalog.am"|! s#/opt/#'"$APPSPATH"'/#g' ./"$arg"
+		sed -i '\|/opt/am/modules/|! s#/opt/#'"$APPSPATH"'/#g' ./"$arg"
 	elif ! grep -qx '# AM-CATALOG-RECIPE 1' ./"$arg"; then
 		"$SUDOCMD" mkdir -p /usr/local/share/"$LAUNCHERS_DIR" /usr/local/bin
 	fi
 	# Embed the AM/AppMan-owned module location in both recipe and updater.
 	if grep -qx '# AM-CATALOG-RECIPE 1' ./"$arg"; then
 		[ -r "$MODULES_PATH/catalog.am" ] || { echo 'Missing catalog.am; synchronize AM modules.' >&2; exit 1; }
-		catalog_path=$(printf '%s' "$MODULES_PATH/catalog.am" | sed 's/[\\"`$]/\\&/g' | sed 's/[\\&|]/\\&/g')
-		sed -i "s|/opt/am/modules/catalog.am|$catalog_path|g" ./"$arg" || exit 1
+		for managed_module in catalog.am appimage.am; do
+			if grep -q "/opt/am/modules/$managed_module" ./"$arg"; then
+				[ -r "$MODULES_PATH/$managed_module" ] || { echo "Missing $managed_module; synchronize AM modules." >&2; exit 1; }
+				catalog_path=$(printf '%s' "$MODULES_PATH/$managed_module" | sed 's/[\\"`$]/\\&/g' | sed 's/[\\&|]/\\&/g')
+				sed -i "s|/opt/am/modules/$managed_module|$catalog_path|g" ./"$arg" || exit 1
+			fi
+		done
 		# Persist the selected source in the recipe and heredoc-generated updater.
 		catalog_source=$(printf '%s' "$AMREPO" | sed 's/[\\"`$]/\\&/g' | sed 's/[\\&|]/\\&/g')
 		sed -i 's|^AMREPO=${AMREPO-}$|AMREPO=${AMREPO-"'"$catalog_source"'"}|g' ./"$arg" || exit 1

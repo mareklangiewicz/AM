@@ -1,4 +1,6 @@
-"""Actual recipe/generated updater in temporary roots with stubbed app operations."""
+"""Shared AppImage interface and actual manager delivery using retained metadata."""
+from datetime import datetime, timedelta
+from shell_lookup import epoch
 import json
 import os
 from pathlib import Path
@@ -9,27 +11,28 @@ import unittest
 from test_shell_consumer import ShellFixture, ROOT, HELPER, PIN, ALIAS, SOURCE
 
 APP = ROOT / 'programs/x86_64/obsidian'
+LIFECYCLE = ROOT / 'modules/appimage.am'
 
 
-class ObsidianFilter(ShellFixture):
+class AppImageLifecycle(ShellFixture):
     def setUp(self):
         super().setUp()
         self.root=self.path/'root'
         for p in ('usr/local/bin','usr/local/share/applications'):
             (self.root/p).mkdir(parents=True,exist_ok=True)
         self.app=self.root/'opt/obsidian'
-        self.source=APP.read_text().replace('/opt/am/modules/catalog.am',str(HELPER))
+        self.source=APP.read_text().replace('/opt/am/modules/catalog.am',str(HELPER)).replace('/opt/am/modules/appimage.am',str(LIFECYCLE))
         self.source=self.source.replace('/opt/',str(self.root)+'/opt/').replace('/usr/local/',str(self.root)+'/usr/local/')
         self.recipe=self.path/'recipe'
         self.recipe.write_text(self.source)
         self.script('wget', '''import os,pathlib,sys
 p=pathlib.Path(os.environ['FIXTURE']); (p/'download').write_text(sys.argv[-1])
 if os.environ.get('DOWNLOAD_FAIL'): sys.exit(9)
-pathlib.Path('Obsidian.AppImage').write_text("#!/bin/sh\\nmkdir -p squashfs-root\\ncase $2 in\\n*.desktop) printf '[Desktop Entry]\\\\nExec=obsidian\\\\nIcon=obsidian\\\\n' > squashfs-root/obsidian.desktop ;;\\n.DirIcon) printf icon > squashfs-root/.DirIcon ;;\\nesac\\n")
+pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\nmkdir -p squashfs-root\\ncase $2 in\\n*.desktop) printf '[Desktop Entry]\\\\nExec=obsidian\\\\nIcon=obsidian\\\\n' > squashfs-root/obsidian.desktop ;;\\n.DirIcon) printf icon > squashfs-root/.DirIcon ;;\\nesac\\n")
 ''')
         self.script('notify-send','pass\n')
         self.script('appimageupdatetool',"raise RuntimeError('forbidden bypass')\n")
-        self.filters=re.findall(r'version=\$\(printf[^|]+\| (.*)\)',APP.read_text())
+        self.filters=[APP.read_text().split('select_asset() {\n\t')[1].split('\n}')[0]]
         self.expected=subprocess.run(['/bin/sh','-c',self.filters[0]],input=self.body,
                                      capture_output=True,check=True).stdout.strip().decode()
 
@@ -53,11 +56,13 @@ pathlib.Path('Obsidian.AppImage').write_text("#!/bin/sh\\nmkdir -p squashfs-root
         previous=subprocess.run(['git','show','0a21fef3c:programs/x86_64/obsidian'],
                                 cwd=ROOT,capture_output=True,check=True).stdout.decode()
         legacy=re.findall(r'version=\$\(curl[^|]+\| (.*)\)',previous)
-        self.assertEqual(self.filters,legacy)
+        self.assertEqual(self.filters,[legacy[0]])
+        self.assertEqual(legacy[0],legacy[1])
         updater=self.install()
         self.assertEqual((self.path/'download').read_text(),self.expected)
         self.assertTrue(self.expected.startswith('https://github.com/obsidianmd/'))
-        self.assertIn(str(HELPER),updater.read_text())
+        self.assertIn(str(HELPER),(self.app/'recipe.am').read_text())
+        self.assertEqual(len(updater.read_text().splitlines()),3)
         (self.path/'download').unlink()
         r=self.run_script(updater)
         self.assertEqual(r.returncode,0,r.stderr)
@@ -121,12 +126,13 @@ pathlib.Path('Obsidian.AppImage').write_text("#!/bin/sh\\nmkdir -p squashfs-root
     def test_real_module_location_patch_survives_appman_and_shell_metacharacters(self):
         module_dir=self.path/'owned modules $literal `literal` & |'
         module_dir.mkdir();(module_dir/'catalog.am').symlink_to(HELPER)
+        (module_dir/'appimage.am').symlink_to(LIFECYCLE)
         self.recipe.write_text(APP.read_text().replace('/usr/local/',str(self.root)+'/usr/local/'))
         source=(ROOT/'modules/install.am').read_text()
         start=source.index('\t# Embed the AM/AppMan-owned module location')
         end=source.index('\t# Patch to apply to installation scripts',start)
         patch=source[start:end]
-        appman=next(line for line in source.splitlines() if "catalog.am\"|! s#/opt/" in line)
+        appman=next(line for line in source.splitlines() if "/opt/am/modules/|! s#/opt/" in line)
         harness=self.path/'patch-test'
         harness.write_text('patch_recipe() {\n'+appman+'\n'+patch+'\n}\npatch_recipe\n')
         env={**self.env(),'arg':self.recipe.name,'MODULES_PATH':str(module_dir),
@@ -188,9 +194,10 @@ _sync_modules
             result=subprocess.run(['/bin/bash',str(harness)],cwd=self.path,env=env,capture_output=True)
             self.assertEqual(result.returncode,0,result.stderr)
             self.assertEqual(installed.read_bytes(),HELPER.read_bytes())
+            self.assertEqual((module_dir/'appimage.am').read_bytes(),LIFECYCLE.read_bytes())
         synchronize()
         self.assertFalse(obsolete.exists())
-        self.recipe.write_text(self.source.replace(str(HELPER),str(installed)))
+        self.recipe.write_text(self.source.replace(str(HELPER),str(installed)).replace(str(LIFECYCLE),str(module_dir/'appimage.am')))
         updater=self.install()
         # A subsequent sync/obsolete-module pass must preserve the helper used by
         # an already generated updater; no checkout or manager sourcing at runtime.
@@ -256,10 +263,11 @@ _use_update "$@"
             self.assertIn(b'launcher-ok',result.stdout)
             self.assertEqual(self.snapshot(),before)
 
-    def run_manager_install(self, *, missing_helper=False, local_script=False, source_unavailable=False, amrepo=SOURCE, recipe=APP, app_name="obsidian"):
+    def run_manager_install(self, *, missing_helper=False, local_script=False, source_unavailable=False, amrepo=SOURCE, recipe=APP, app_name="obsidian", appman=False, flags=""):
         """Execute real install dispatch/functions with only external AM services stubbed."""
         module_dir=self.root/'opt/am/modules';module_dir.mkdir(parents=True,exist_ok=True)
         helper=module_dir/'catalog.am'
+        (module_dir/'appimage.am').write_bytes(LIFECYCLE.read_bytes())
         if not missing_helper: helper.write_bytes(HELPER.read_bytes())
         elif helper.exists(): helper.unlink()
         cache=self.path/'manager-cache';cache.mkdir(exist_ok=True)
@@ -294,17 +302,17 @@ env=dict(os.environ);env.pop('AMREPO',None) # sudo normally drops this variable
 sys.exit(subprocess.run(sys.argv[1:],env=env).returncode)
 ''')
         self.stage()
-        env={**self.env(),'AMREPO':amrepo,'CLI':'am','AMCLI':'am','ARCH':'x86_64','REALDIR':str(self.path),
+        env={**self.env(),'AMREPO':amrepo,'CLI':'appman' if appman else 'am','AMCLI':'appman' if appman else 'am','ARCH':'x86_64','REALDIR':str(self.path),
              'APPSPATH':str(self.root/'opt'),'APPSDB':'https://fixture.invalid/programs',
-             'XDG_BIN_HOME':str(self.root/'usr/local/bin'),'DATADIR':str(self.root/'usr/local/share'),
+             'BINDIR':str(self.root/'usr/local/bin'),'XDG_BIN_HOME':str(self.root/'usr/local/bin'),'DATADIR':str(self.root/'usr/local/share'),
              'LAUNCHERS_DIR':'applications','MODULES_PATH':str(module_dir),'AMCACHEDIR':str(cache),
              'CACHEDIR':str(cache),'AMDATADIR':str(data),'RECIPE_SOURCE':str(recipe_source),'RECIPE_UNAVAILABLE':'1' if source_unavailable else '',
-             'SUDOCMD':str(self.bin/'privilege-wrapper'),'WGETCMD':'wget','CURLCMD':'curl',
+             'FLAGS':flags,'SUDOCMD':str(self.bin/'privilege-wrapper'),'WGETCMD':'wget','CURLCMD':'curl',
              'WGETV':'1','WGETPROGRESS':'wget','tp_flags':'--fixture-extra','tp_extensions':'.fixture-extra'}
         target=app_name
         if local_script:
             local=self.path/app_name;local.write_text(recipe_source.read_text());target=str(local)
-        return subprocess.run(['/bin/bash',str(harness),'-i',target],cwd=self.path,env=env,capture_output=True)
+        return subprocess.run(['/bin/bash',str(harness),'-i',target,*flags.split()],cwd=self.path,env=env,capture_output=True)
 
     def test_actual_install_embeds_selected_source_for_standalone_updater(self):
         source='https://raw.githubusercontent.com/another-owner/extra.apps/feature/catalog'
@@ -312,7 +320,7 @@ sys.exit(subprocess.run(sys.argv[1:],env=env).returncode)
         self.assertEqual(result.returncode,0,result.stderr)
         self.assertTrue(all('/another-owner/extra.apps/' in c[-1] for c in self.calls()))
         updater=self.app/'AM-updater'
-        self.assertIn('AMREPO=${AMREPO-"'+source+'"}',updater.read_text())
+        self.assertIn('AMREPO=${AMREPO-"'+source+'"}',(self.app/'recipe.am').read_text())
         # Run outside the manager with no AMREPO environment; installation persists it.
         env=self.env();env.pop('AMREPO')
         result=self.run_script(updater,env=env)
@@ -367,6 +375,7 @@ sys.exit(subprocess.run(sys.argv[1:],env=env).returncode)
         # Establish the managed helper before the state snapshot; its creation is test setup.
         module_dir=self.root/'opt/am/modules';module_dir.mkdir(parents=True)
         (module_dir/'catalog.am').write_bytes(HELPER.read_bytes())
+        (module_dir/'appimage.am').write_bytes(LIFECYCLE.read_bytes())
         self.tree['bodies/'+self.rid+'.json']=b'[]'
         before=self.snapshot()
         for local in (False,True):
@@ -380,6 +389,7 @@ sys.exit(subprocess.run(sys.argv[1:],env=env).returncode)
         import shutil
         shutil.rmtree(self.root/'usr/local')
         (self.root/'opt/am/modules').mkdir(parents=True)
+        (self.root/'opt/am/modules/appimage.am').write_bytes(LIFECYCLE.read_bytes())
         before=self.snapshot()
         result=self.run_manager_install(missing_helper=True)
         self.assertNotEqual(result.returncode,0,result.stderr)
@@ -413,6 +423,7 @@ sys.exit(subprocess.run(sys.argv[1:],env=env).returncode)
         launcher=self.root/'usr/local/bin/obsidian';launcher.symlink_to(self.path/'missing-binary')
         module_dir=self.root/'opt/am/modules';module_dir.mkdir(parents=True)
         (module_dir/'catalog.am').write_bytes(HELPER.read_bytes())
+        (module_dir/'appimage.am').write_bytes(LIFECYCLE.read_bytes())
         before=self.snapshot()
         result=self.run_manager_install(source_unavailable=True)
         self.assertNotEqual(result.returncode,0,result.stderr)
@@ -442,3 +453,178 @@ sys.exit(subprocess.run(sys.argv[1:],env=env).returncode)
             self.assertEqual(result.returncode,0,result.stderr)
             self.assertIn(b'Update not needed!',result.stdout)
             self.assertEqual(len(self.calls()),2)
+
+    def test_actual_appman_delivery_and_standalone_without_source_checkout(self):
+        result=self.run_manager_install(appman=True)
+        self.assertEqual(result.returncode,0,result.stderr)
+        (self.path/'managed-recipe').unlink()
+        self.recipe.unlink()
+        result=self.run_script(self.app/'AM-updater')
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertIn(b'Update not needed!',result.stdout)
+        self.assertEqual((self.root/'usr/local/bin/obsidian').resolve(),self.app/'obsidian')
+
+    def test_installed_launcher_and_remover_quote_literal_paths(self):
+        special=self.path/"literal ' $d `literal` & |"
+        self.recipe.write_text(self.source.replace(str(self.root),str(special).replace('$',r'\$').replace('`',r'\`')))
+        result=self.run_script(self.recipe)
+        self.assertEqual(result.returncode,0,result.stderr)
+        app=special/'opt/obsidian'
+        self.assertIn('Icon='+str(app/'icons/obsidian'),(special/'usr/local/share/applications/obsidian-AM.desktop').read_text())
+        result=self.run_script(app/'AM-updater')
+        self.assertEqual(result.returncode,0,result.stderr)
+        result=subprocess.run(['sh',str(app/'remove')],capture_output=True)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertFalse(app.exists())
+
+    def test_missing_lifecycle_refuses_before_mutation(self):
+        self.recipe.write_text(self.source.replace(str(LIFECYCLE),str(self.path/'missing.am')))
+        before=self.snapshot()
+        result=self.run_script(self.recipe)
+        self.assertNotEqual(result.returncode,0)
+        self.assertEqual(self.snapshot(),before)
+
+    def test_failed_download_keeps_working_binary_even_on_install_retry(self):
+        self.install()
+        before=(self.app/'obsidian').read_bytes()
+        (self.app/'tmp').mkdir()
+        result=self.run_script(self.recipe,env={**self.env(),'DOWNLOAD_FAIL':'1'})
+        self.assertNotEqual(result.returncode,0)
+        self.assertEqual((self.app/'obsidian').read_bytes(),before)
+        result=self.run_script(self.app/'AM-updater')
+        self.assertEqual(result.returncode,0,result.stderr)
+
+    def test_manager_icons_option_persists_in_installed_recipe(self):
+        result=self.run_manager_install(flags='--icons')
+        self.assertEqual(result.returncode,0,result.stderr)
+        desktop=self.root/'usr/local/share/applications/obsidian-AM.desktop'
+        self.assertIn('Icon=obsidian\n',desktop.read_text())
+        result=self.run_script(self.app/'AM-updater')
+        self.assertEqual(result.returncode,0,result.stderr)
+
+
+class SQLiteLifecycle(ShellFixture):
+    catalog_alias = 'https://api.github.com/repos/sqlitebrowser/sqlitebrowser/releases?per_page=100'
+
+    def setUp(self):
+        super().setUp()
+        self.root=self.path/'root'
+        self.app=self.root/'opt/sqlitebrowser'
+        source=(ROOT/'programs/x86_64/sqlitebrowser').read_text().replace('/opt/am/modules/catalog.am',str(HELPER)).replace('/opt/am/modules/appimage.am',str(LIFECYCLE))
+        self.recipe=self.path/'recipe'
+        self.recipe.write_text(source.replace('/opt/',str(self.root)+'/opt/').replace(
+            '/usr/local/',str(self.root)+'/usr/local/'))
+        self.script('wget', '''import os,pathlib,sys
+p=pathlib.Path(os.environ['FIXTURE']);(p/'download').write_text(sys.argv[-1])
+if os.environ.get('DOWNLOAD_FAIL'):sys.exit(9)
+pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\nmkdir -p squashfs-root\\ncase $2 in\\n*.desktop) printf '[Desktop Entry]\\\\nExec=sqlitebrowser\\\\nIcon=sqlitebrowser\\\\n' > squashfs-root/sqlitebrowser.desktop ;;\\n.DirIcon) printf icon > squashfs-root/.DirIcon ;;\\nesac\\n")
+''')
+        self.script('notify-send','raise SystemExit(1)\n')
+        self.script('appimageupdatetool',"raise RuntimeError('forbidden bypass')\n")
+
+    def run_script(self,path,args=None,env=None):
+        self.stage()
+        return subprocess.run(['/bin/sh',str(path),*(args or ['--commit',PIN])],
+            cwd=self.path,env=env or self.env(),capture_output=True)
+
+    def install(self):
+        result=self.run_script(self.recipe)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.url=(self.app/'version').read_text().strip()
+        return self.app/'AM-updater'
+
+    def state(self):
+        return {str(p.relative_to(self.root)):p.read_bytes() for p in self.root.rglob('*')
+                if p.is_file() and not p.is_symlink()}
+
+    def stale(self):
+        self.now=[epoch((datetime.fromisoformat(self.obs['validated_at'])+
+                  timedelta(days=2,microseconds=1)).isoformat())]*3
+
+    def test_retained_filter_install_and_standalone_unchanged(self):
+        updater=self.install()
+        self.assertEqual(self.url, 'https://github.com/sqlitebrowser/sqlitebrowser/releases/'
+            'download/v3.13.1/DB.Browser.for.SQLite-v3.13.1-x86.64-v2.AppImage')
+        self.assertEqual((self.path/'download').read_text(),self.url)
+        self.assertEqual(len(self.calls()),2)
+        self.assertIn('# AM-CATALOG-UPDATER 1',updater.read_text())
+        (self.path/'download').unlink()
+        before=self.state()
+        result=self.run_script(updater)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertIn(b'Update not needed!',result.stdout)
+        self.assertEqual(self.state(),before)
+        self.assertFalse((self.path/'download').exists())
+
+    def test_stale_install_refuses_before_any_directory_or_download(self):
+        self.stale()
+        result=self.run_script(self.recipe)
+        self.assertNotEqual(result.returncode,0)
+        self.assertIn(b'stale',result.stderr)
+        self.assertFalse(self.root.exists())
+        self.assertFalse((self.path/'download').exists())
+        self.assertEqual(len(self.calls()),1)
+        result=self.run_script(self.recipe,self.consent())
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertTrue((self.app/'AM-updater').exists())
+
+    def test_changed_update_download_retry_and_checksum_repair(self):
+        updater=self.install()
+        (self.app/'version').write_text('old-url\n')
+        result=self.run_script(updater,env={**self.env(),'DOWNLOAD_FAIL':'1'})
+        self.assertNotEqual(result.returncode,0)
+        self.assertEqual((self.app/'version').read_text(),'old-url\n')
+        self.assertTrue((self.app/'tmp').exists())
+        result=self.run_script(updater)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertEqual((self.app/'version').read_text().strip(),self.url)
+        self.assertFalse((self.app/'tmp').exists())
+        (self.app/'AM-VERIFIED').write_text('Checksum failure\n')
+        (self.path/'download').unlink()
+        result=self.run_script(updater)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertEqual((self.path/'download').read_text(),self.url)
+
+    def test_stale_updater_preserves_incomplete_state(self):
+        updater=self.install()
+        (self.app/'tmp').mkdir();(self.app/'tmp/retained').write_text('partial')
+        self.stale();before=self.state()
+        result=self.run_script(updater)
+        self.assertNotEqual(result.returncode,0)
+        self.assertEqual(self.state(),before)
+
+    def test_actual_manager_route_propagates_selected_source_for_second_app(self):
+        self.install()
+        manager=(ROOT/'APP-MANAGER').read_text()
+        route=manager[manager.index('_catalog_update() {'):manager.index('\n_use_update() {')]
+        harness=self.path/'manager'
+        harness.write_text('AMREPO=https://raw.githubusercontent.com/selected-owner/extra.apps/main\n'
+            '_use_verify() { :; }\n'+route+'\n_catalog_update "$@"\n')
+        self.stage()
+        result=subprocess.run(['/bin/bash',str(harness),'-u','sqlitebrowser','--commit',PIN],
+            env={**self.env(),'APPSPATH':str(self.root/'opt')},capture_output=True)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertTrue(all('/selected-owner/extra.apps/' in c[-1] for c in self.calls()))
+        self.assertEqual(len(self.calls()),2)
+
+    def test_real_install_dispatch_persists_source_after_privilege_environment_loss(self):
+        source='https://raw.githubusercontent.com/selected-owner/extra.apps/main'
+        result=AppImageLifecycle.run_manager_install(
+            self,amrepo=source,recipe=ROOT/'programs/x86_64/sqlitebrowser',app_name='sqlitebrowser')
+        self.assertEqual(result.returncode,0,result.stderr)
+        updater=self.app/'AM-updater'
+        self.assertIn('AMREPO=${AMREPO-"'+source+'"}',(self.app/'recipe.am').read_text())
+        env=self.env();env.pop('AMREPO')
+        result=self.run_script(updater,env=env)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertIn(b'Update not needed!',result.stdout)
+        self.assertTrue(all('/selected-owner/extra.apps/' in c[-1] for c in self.calls()))
+
+    def test_actual_appman_delivery_for_sqlitebrowser(self):
+        result=AppImageLifecycle.run_manager_install(
+            self,recipe=ROOT/'programs/x86_64/sqlitebrowser',app_name='sqlitebrowser',appman=True)
+        self.assertEqual(result.returncode,0,result.stderr)
+        result=self.run_script(self.app/'AM-updater')
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertIn(b'Update not needed!',result.stdout)
+        self.assertEqual((self.root/'usr/local/bin/sqlitebrowser').resolve(),self.app/'sqlitebrowser')

@@ -1,0 +1,91 @@
+#!/bin/sh
+# AMCLI shared AppImage lifecycle. Sourced only by trusted AM recipes.
+# Paths and selector are supplied by the recipe, never by catalog JSON.
+am_appimage() (
+	set -eu
+	recipe=$1; shift
+	icon_theme=false
+	if [ "${1-}" = --am-icons ]; then icon_theme=true; shift; fi
+	mode=install
+	if [ "${1-}" = --am-update ]; then mode=update; shift; fi
+	[ "$PACKAGE_KIND" = appimage ] || { echo 'Unsupported package format' >&2; exit 1; }
+	case $APP in ''|*[!a-z0-9_-]*) echo 'Invalid app identity' >&2; exit 1;; esac
+	[ -r "$CATALOG_HELPER" ] || { echo 'Missing catalog.am; synchronize AM modules.' >&2; exit 1; }
+	catalog_body=$(sh "$CATALOG_HELPER" "$CATALOG_ALIAS" "$@") || exit 1
+	version=$(printf '%s\n' "$catalog_body" | select_asset)
+	[ -n "$version" ] || { echo 'Error getting link' >&2; exit 1; }
+	APPS_DIR=${APPS_DIR%/}
+	dir="$APPS_DIR/$APP"
+	if [ "$mode" = update ] && [ "$version" = "$(cat "$dir/version")" ] &&
+		! grep -sq '^Checksum failure$' "$dir/AM-VERIFIED"; then
+		echo 'Update not needed!'; exit 0
+	fi
+	# All acceptance/filter checks precede cleanup, including incomplete installs.
+	# Keep working installations intact even when an install retry finds tmp.
+	if [ "$mode" = install ] && [ -d "$dir/tmp" ] && [ ! -f "$dir/version" ] && [ -f "$dir/remove" ]; then
+		sh "$dir/remove"
+	fi
+	mkdir -p "$dir/tmp" "$dir/icons"
+	rm -rf "$dir/tmp"
+	mkdir "$dir/tmp"
+	notify-send "A new version of $APP is available, please wait" 2>/dev/null || :
+	if command -v wget >/dev/null 2>&1; then
+		wget -O "$dir/tmp/$APP.AppImage" "$version" || exit 1
+	else
+		curl --fail -L -o "$dir/tmp/$APP.AppImage" "$version" || exit 1
+	fi
+	chmod a+x "$dir/tmp/$APP.AppImage"
+	mv -f "$dir/tmp/$APP.AppImage" "$dir/$APP"
+	printf '%s\n' "$version" > "$dir/version"
+	rm -rf "$dir/tmp"
+	if [ "$mode" = update ]; then
+		notify-send "$APP is updated!" 2>/dev/null || :
+		exit 0
+	fi
+	mkdir -p "$BIN_DIR" "$DESKTOP_DIR"
+	# Quote paths as shell literals for standalone installed launchers/removers.
+	quote() { printf "'"; printf '%s' "$1" | sed "s/'/'\\\\''/g"; printf "'"; }
+	{
+		printf '#!/bin/sh\nset -e\nrm -f '; quote "$BIN_DIR/$APP"
+		printf '\nrm -rf '; quote "$dir"
+		printf '\nrm -f '; quote "$DESKTOP_DIR/$APP-AM.desktop"; printf '\n'
+	} > "$dir/remove"
+	cp "$recipe" "$dir/recipe.am"
+	{
+		printf '#!/bin/sh\n# AM-CATALOG-UPDATER 1\nexec sh '
+		quote "$dir/recipe.am"; printf ' --am-update "$@"\n'
+	} > "$dir/AM-updater"
+	chmod a+x "$dir/remove" "$dir/AM-updater"
+	ln -sf "$dir/$APP" "$BIN_DIR/$APP"
+	cd "$dir"
+	# AppImage extraction with the same installed-tool fallback as AM installers.
+	extract() {
+		if ! ./"$APP" --appimage-extract "$@"; then
+			if command -v 7z >/dev/null 2>&1; then 7z x ./"$APP" -o./squashfs-root "$@"
+			elif command -v 7zz >/dev/null 2>&1; then 7zz x ./"$APP" -o./squashfs-root "$@"
+			else return 1
+			fi
+		fi
+	}
+	extract '*.desktop' 1>/dev/null && mv ./squashfs-root/*.desktop ./"$APP".desktop
+	extract .DirIcon 1>/dev/null && mv ./squashfs-root/.DirIcon ./DirIcon
+	COUNT=0
+	while [ "$COUNT" -lt 10 ]; do # Tries to get the actual icon/desktop if it is a symlink to another symlink
+		if [ -L ./"$APP".desktop ]; then
+			LINKPATH="$(readlink ./"$APP".desktop | sed 's|^\./||' 2>/dev/null)"
+			extract "$LINKPATH" 1>/dev/null && mv ./squashfs-root/"$LINKPATH" ./"$APP".desktop
+		fi
+		if [ -L ./DirIcon ]; then
+			LINKPATH="$(readlink ./DirIcon | sed 's|^\./||' 2>/dev/null)"
+			extract "$LINKPATH" 1>/dev/null && mv ./squashfs-root/"$LINKPATH" ./DirIcon
+		fi
+		[ ! -L ./"$APP".desktop ] && [ ! -L ./DirIcon ] && break
+		COUNT=$((COUNT + 1))
+	done
+	icon=$(printf '%s' "$dir/icons/$APP" | sed 's/[\\&#]/\\&/g')
+	[ "$icon_theme" = false ] || icon=$APP
+	sed -i "s#Exec=[^ ]*#Exec=$APP#g; s#Icon=.*#Icon=$icon#g" ./"$APP".desktop
+	if command -v appimage_desktop >/dev/null 2>&1; then appimage_desktop ./"$APP".desktop; fi
+	mv ./"$APP".desktop "$DESKTOP_DIR"/"$APP"-AM.desktop && mv ./DirIcon ./icons/"$APP" 1>/dev/null
+	rm -R -f ./squashfs-root
+)

@@ -504,3 +504,13 @@ recipe-family inventory. Spec and current continuation priority updated. This
 supersedes the earlier batch-first/read-call-only continuation recommendation;
 historical implementation evidence remains unchanged. Documentation only; no
 runtime, source push, workflow, collection or installed-state changes.
+
+
+2026-10-28: [42 resolved](issues/42-shared-appimage-lifecycle.md). Obsidian and
+SQLite Browser share managed AppImage install/update mechanics, each retaining
+one selector and a saved trusted recipe behind a three-line standalone updater.
+[Interface/delivery/cost audit](design/shared-appimage-lifecycle.md) records 50 fewer
+source lines, with an honest 87-line increase in the two-app installed footprint
+including shared runtime. 124 catalog + 8 historical probe tests, syntax, warning
+ShellCheck and diff checks pass. No source push, live request, host app/helper
+migration or workflow change; timed 37/41 obligations remain, followed by 43–45.
