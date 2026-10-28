@@ -57,3 +57,19 @@ Awaiting user authorization for the package's one bounded unauthenticated
 `GET https://api.github.com/repos/ivan-hc/am-utils` identity read. No release read,
 collection, publication, push or schedule/source change is included. Status stays
 claimed (partial preparation); 48/49 remain blocked. Do not resolve from a plan.
+
+
+## Approved identity stage completed — 2026-10-28
+
+The user approved the one bounded repository identity GET. HTTP 200 confirmed
+public `ivan-hc/am-utils`, repository ID 1225768109; exact 4965-byte body and
+1323-byte headers, hashes/timings and the guarded runner are retained in
+[findings](../research/am-utils-enrollment-findings.md), committed as `4a9aadb90`.
+Candidate queue fields now use that reviewed ID and computed numeric request ID,
+with no validators; deferred rows remain unresolved. This supersedes the earlier
+awaiting-identity-approval note.
+
+No release request or enrollment/publication occurred. Next is a separately
+reviewable bounded numeric release-read proposal and its authorization, followed
+by 356-selector/resource verification. Status remains claimed/needs-info; 48/49
+remain blocked. No push, repin, workflow or host change.

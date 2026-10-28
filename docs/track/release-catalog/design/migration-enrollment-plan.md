@@ -8,8 +8,9 @@ workflow change, source push or installed operation has occurred.
 
 [Queue payload](migration-enrollment-queue.json) records the exact inventory hash,
 current manifest hash, 356 utility recipe paths and 124 later AppImage recipe paths.
-It is deliberately **not** a loadable collector manifest. Unknown repository IDs,
-numeric fetch URLs and request IDs are null, never synthetic production values.
+It is deliberately **not** a loadable collector manifest. Deferred repository IDs, numeric fetch URLs and request IDs remain null. The
+utility candidate now uses reviewed identity evidence; its release route is still
+unrequested and it is not operationally enrolled.
 The six sources in [staged-manifest.json](staged-manifest.json) remain the entire
 enrolled operational subset. Neither proposed stage is accepted/published yet;
 48 and 49 remain blocked on actual source availability.
@@ -130,3 +131,17 @@ list/latest/query descriptors and validators. Each stage records accepted subset
 resource measurements and actual publication commit. Full ticket 47 resolution
 requires its dependent enrollment scope actually accepted and available; utility
 completion can unblock only 48 while the remaining queue stays explicit here.
+
+
+## Identity stage completed — 2026-10-28
+
+The user approved only the first identity request. It returned HTTP 200 and
+confirmed public `ivan-hc/am-utils`, ID **1225768109**.
+[Exact evidence and findings](../research/am-utils-enrollment-findings.md) were
+committed as `4a9aadb90` before filling the candidate queue fields.
+The candidate fetch URL is now
+`https://api.github.com/repositories/1225768109/releases`; the queue computes its
+request ID from the exact pinned representation and starts without validators.
+The historical first-stage instructions above explain the procedure; this evidence
+supersedes only its missing-identity state. No second-stage request is authorized
+or performed. Six-source operation and 48/49 blockers remain unchanged.

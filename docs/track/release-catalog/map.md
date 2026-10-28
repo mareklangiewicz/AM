@@ -632,3 +632,11 @@ production collection, source push/repin or workflow change; timed 37/41 remain.
 unauthenticated am-utils identity GET; unknown IDs remain null. Existing six-source
 manifest/guards, pilot pin and publication remain unchanged. No live request or
 enrollment occurred; 48/49 remain blocked pending actual accepted availability.
+
+
+2026-10-28: [47 identity stage completed](research/am-utils-enrollment-findings.md).
+One user-approved unauthenticated GET confirmed public am-utils ID 1225768109,
+HTTP 200, 4965 body bytes / 1323 header bytes in 0.557 s. Exact evidence committed
+as `4a9aadb90`; candidate numeric descriptor recorded afterward, without validators.
+No release request, operational enrollment, source push or schedule change; 48/49
+remain blocked pending actual accepted release availability.

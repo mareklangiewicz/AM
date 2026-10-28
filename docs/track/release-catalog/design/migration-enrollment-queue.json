@@ -7,10 +7,10 @@
   "first_stage": {
     "alias": "https://api.github.com/repos/ivan-hc/am-utils/releases",
     "identity_request": "https://api.github.com/repos/ivan-hc/am-utils",
-    "repository_id": null,
-    "fetch_url": null,
-    "request_id": null,
-    "identity_status": "missing-reviewed-evidence",
+    "repository_id": 1225768109,
+    "fetch_url": "https://api.github.com/repositories/1225768109/releases",
+    "request_id": "033cc5f80e8fbd7074c6a2e48cace911348e6ff63652618cbf8f3d95cdfb2700",
+    "identity_status": "reviewed-public-identity-release-route-unverified",
     "recipes": [
       "programs/aarch64/7z",
       "programs/aarch64/addr2line",
@@ -368,7 +368,10 @@
       "programs/x86_64/yes",
       "programs/x86_64/zcat",
       "programs/x86_64/zsync"
-    ]
+    ],
+    "identity_evidence": "docs/track/release-catalog/research/am-utils-enrollment-findings.md#reviewed-identity",
+    "identity_evidence_commit": "4a9aadb90",
+    "initial_validators": {}
   },
   "deferred_appimage_queue": [
     {
