@@ -428,3 +428,11 @@ One approved run 40606441534, six conditional 200s, exact-prior child e8e5cf962
 published; full artifact/tree/permission verification and two pinned public helper
 GETs pass. [Persistent evidence](research/manual-freshness-run-findings.md).
 Obsidian fresh through 2026-10-29T00:05:15.676301Z; no recurring schedule or app run.
+
+
+2026-10-28: [35 resolved: hourly pilot preparation](issues/35-prepare-hourly-refresh-pilot.md).
+Inert workflow/controller and [bounded 24-hour plan](design/hourly-refresh-pilot.md)
+prepared; 111 tests pass. Default branch is now main-marek. Existing collector
+unchanged; exact-source/window/overlap/count refusal guards checked offline.
+[36](issues/36-activate-hourly-refresh-pilot.md) awaits explicit schedule activation;
+no schedule, remote variable, collection, publication or app change occurred.
