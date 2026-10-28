@@ -45,7 +45,7 @@ pathlib.Path('SQLite.AppImage').write_text("#!/bin/sh\\nmkdir -p squashfs-root\\
 
     def stale(self):
         self.now=[epoch((datetime.fromisoformat(self.obs['validated_at'])+
-                  timedelta(days=1,microseconds=1)).isoformat())]*3
+                  timedelta(days=2,microseconds=1)).isoformat())]*3
 
     def test_retained_filter_install_and_standalone_unchanged(self):
         updater=self.install()

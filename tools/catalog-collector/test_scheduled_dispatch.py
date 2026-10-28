@@ -13,13 +13,13 @@ class ScheduledDispatch(unittest.TestCase):
     def setUp(self):
         self.context = dict(repository='mareklangiewicz/AM', event='schedule', schedule=CRON,
             ref='refs/heads/main-marek', run_attempt='1', sha=REV, workflow_sha=REV,
-            approved_revision=REV, start='1800000000', until='1800086400')
+            approved_revision=REV)
         self.responses = [dict(default_branch='main-marek'),dict(object=dict(sha=REV)),
             dict(total_count=3,workflows=[
                 dict(path='.github/workflows/catalog-collector.yml',state='active'),
                 dict(path='.github/workflows/catalog-schedule.yml',state='active'),
                 dict(path='.github/workflows/lister.yml',state='disabled_manually')]),
-            dict(workflow_runs=[dict(status='completed')]), dict(total_count=0), dict(object=dict(sha=PIN))]
+            dict(workflow_runs=[dict(status='completed')]), dict(object=dict(sha=PIN))]
         self.calls=[]
 
     def execute(self,args):
@@ -27,8 +27,8 @@ class ScheduledDispatch(unittest.TestCase):
         if args[0]=='workflow':return b''
         return json.dumps(self.responses.pop(0)).encode()
 
-    def invoke(self,context=None,now=1800000001):
-        return dispatch(context or self.context,now=now,execute=self.execute)
+    def invoke(self,context=None):
+        return dispatch(context or self.context,execute=self.execute)
 
     def test_exact_pin_and_manifest_are_forwarded_once(self):
         result=self.invoke()
@@ -38,24 +38,20 @@ class ScheduledDispatch(unittest.TestCase):
         self.assertIn('approved_revision='+REV,submitted[0])
         self.assertIn('previous_publication='+PIN,submitted[0])
 
-    def test_context_revision_window_and_rerun_refuse_before_api(self):
-        for key,value in [('repository','other/AM'),('event','push'),('schedule','* * * * *'),
+    def test_context_revision_and_rerun_refuse_before_api(self):
+        for key,value in [('repository','other/AM'),('event','push'),('schedule','* * * * *'),('schedule','17 * * * *'),
                 ('ref','refs/heads/main'),('run_attempt','2'),('sha','c'*40),
-                ('workflow_sha','c'*40),('approved_revision',''),('start',''),
-                ('until','1800086401')]:
+                ('workflow_sha','c'*40),('approved_revision','')]:
             with self.subTest(key=key):
                 context={**self.context,key:value}
                 with self.assertRaises(Refusal):self.invoke(context)
                 self.assertEqual(self.calls,[])
-        for now in (1799999999,1800086400):
-            with self.assertRaises(Refusal):self.invoke(now=now)
-            self.assertEqual(self.calls,[])
 
     def test_remote_drift_active_work_and_invalid_pin_never_dispatch(self):
         changes=[(0,dict(default_branch='main')),(1,dict(object=dict(sha='c'*40))),
             (2,dict(total_count=0,workflows=[])),
             (3,dict(workflow_runs=[dict(status='in_progress')])),
-            (4,dict(total_count=24)),(5,dict(object=dict(sha='bad')))]
+            (4,dict(object=dict(sha='bad')))]
         original=copy.deepcopy(self.responses)
         for index,value in changes:
             with self.subTest(index=index):
@@ -70,5 +66,5 @@ class ScheduledDispatch(unittest.TestCase):
                 raise TimeoutError('ambiguous dispatch')
             return self.execute(args)
         with self.assertRaises(TimeoutError):
-            dispatch(self.context,now=1800000001,execute=fail)
+            dispatch(self.context,execute=fail)
         self.assertEqual(len([c for c in self.calls if c[0]=='workflow']),1)

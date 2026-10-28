@@ -4,6 +4,7 @@ from collector import Refusal, require, timestamp
 from storage import content, digest, validate_index
 
 CATALOG_REPOSITORY_ID = 1291019762
+FRESHNESS_SECONDS = 48 * 60 * 60
 
 
 class StaleObservation(Refusal):
@@ -27,12 +28,12 @@ def select(index_raw, alias, commit, *, now, stale_acceptance=None):
     age = (current - timestamp(obs['validated_at'])).total_seconds()
     require(age >= 0, 'future_observation')
     acceptance = {'commit': commit, 'request_id': rid, 'sha256': obs['sha256']}
-    if age > 86400 and stale_acceptance != acceptance:
+    if age > FRESHNESS_SECONDS and stale_acceptance != acceptance:
         raise StaleObservation(acceptance)
     return entry, {'commit': commit, 'request_id': rid, 'sha256': obs['sha256'],
                    'bytes': obs['bytes'], 'received_at': obs['received_at'],
                    'validated_at': obs['validated_at'], 'age_seconds': age,
-                   'stale_accepted': age > 86400, 'source_revision': index['collector_revision'],
+                   'stale_accepted': age > FRESHNESS_SECONDS, 'source_revision': index['collector_revision'],
                    'run': index['run'], 'scope': obs['scope']}
 
 

@@ -28,3 +28,10 @@ but only one event listed in approximately nine pilot hours. Actual source and
 variables unchanged; no failed controller job to explain absent ticks. Assess
 scheduler delivery separately from successful six-source collection/publication.
 No automatic extension or replacement dispatch is authorized.
+
+## Accepted follow-on daily operation
+
+Marek subsequently accepted ticket 40's once-daily final cadence and 48-hour
+freshness policy. Complete the existing expiry/shutdown/assessment without
+extending the hourly pilot, then [41](41-activate-daily-refresh.md) may perform the
+already authorized daily switch. No repeat approval is required for that scope.

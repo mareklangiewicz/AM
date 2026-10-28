@@ -63,7 +63,7 @@ limited to 30 seconds, may occur; the reader refuses elapsed reads beyond 90
 seconds before releasing bytes. This is bounded transfer/refusal, not a hard
 process wall-clock guarantee under arbitrary local tool stalls.
 
-The inclusive 24-hour limit, future/unmeasured/unavailable/retired/removed-alias
+The inclusive 48-hour limit (accepted daily policy in ticket 40), future/unmeasured/unavailable/retired/removed-alias
 refusal, exact `--commit SHA --accept-stale SHA REQUEST BODY_HASH` consent,
 body byte count/hash and post-transfer freshness/clock checks live in this one
 reader. Refusal emits no body. The body hash checks publication consistency;

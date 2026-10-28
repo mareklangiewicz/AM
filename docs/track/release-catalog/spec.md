@@ -76,3 +76,18 @@ findings and tickets 19–21's Python/opt-in evidence remain useful references.
 That implementation and its ownership correction are now resolved in tickets 23–29;
 this historical decision adds no installed migration, installer execution, schedule
 or automatic workflow authorization.
+
+
+## Accepted daily operation (2026-10-28; ticket 40)
+
+Marek accepted daily scheduled catalog collection with a **48-hour freshness**
+limit, superseding the initial roughly-24-hour target and hourly pilot direction
+for final operation. Daily cron is 03:17 UTC, same six enrolled sources and
+conditional collection/publisher contracts; no external timer. Finish the bounded
+hourly pilot before remote switch. Existing source-review pin remains required;
+remove the pilot-only start/end/count controls for final daily operation.
+Failures preserve previous observation ages; exact explicit stale consent remains
+required beyond 48 hours. No fabricated timestamps, silent fallback or automatic
+retry. This does not migrate installed app scripts or silently update host helper
+files. [40](issues/40-daily-refresh-48-hour-freshness.md) records implementation and
+activation state; the existing pilot's shutdown/assessment remains ticket 37.

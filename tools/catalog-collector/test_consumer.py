@@ -68,7 +68,7 @@ class ConsumerContract(unittest.TestCase):
 
     def test_freshness_edge_and_exact_stale_acceptance_before_body_fetch(self):
         index=decode(self.tree['index.json']);obs=index['entries'][self.rid]['observation']
-        edge=datetime.fromisoformat(obs['validated_at'])+timedelta(seconds=86400)
+        edge=datetime.fromisoformat(obs['validated_at'])+timedelta(seconds=172800)
         self.now=edge;self.read(commit=PIN)
         self.calls=[];self.now=edge+timedelta(microseconds=1)
         with self.assertRaises(StaleObservation) as stale:self.read(commit=PIN)
@@ -84,7 +84,7 @@ class ConsumerContract(unittest.TestCase):
 
     def test_expiry_during_body_fetch_and_clock_regression_refuse(self):
         obs=decode(self.tree['index.json'])['entries'][self.rid]['observation']
-        edge=datetime.fromisoformat(obs['validated_at'])+timedelta(seconds=86400)
+        edge=datetime.fromisoformat(obs['validated_at'])+timedelta(seconds=172800)
         values=iter([edge,edge+timedelta(microseconds=1)])
         with self.assertRaises(StaleObservation):
             lookup(self.alias,commit=PIN,fetch=self.fetch,utcnow=lambda:next(values))

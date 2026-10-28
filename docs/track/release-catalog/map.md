@@ -472,3 +472,13 @@ Remote cron/default/source/window/state/history correct. Gap is before workflow
 execution; documented GitHub schedule delay/drop fits, internal reason unproven.
 [Replayable evidence and alternatives](research/scheduled-cadence-diagnosis.md).
 No cron change, repin, extra dispatch/collection, app operation or extension.
+
+
+2026-10-28: [40 resolved: daily refresh/48-hour policy](issues/40-daily-refresh-48-hour-freshness.md).
+Marek accepted final daily collection and 48-hour freshness. Local workflow now
+03:17 UTC daily; final controller drops pilot-only window/count machinery while
+retaining source/ref/event/isolation/overlap/rerun guards. Both readers use inclusive
+48-hour measured age and exact consent beyond it. 118 tests, syntax, lint, YAML
+and diff checks pass. [41](issues/41-activate-daily-refresh.md) is already authorized
+but waits for ticket 37's planned pilot shutdown. No mid-pilot remote/source change
+or installed app/helper mutation. Historical 24-hour evidence retains its meaning.

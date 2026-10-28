@@ -1,6 +1,7 @@
 """Actual ZIP -> publisher -> bare Git -> pinned shell roundtrips, without HTTP."""
 import io
 import json
+from datetime import datetime, timedelta
 from pathlib import Path
 import subprocess
 from unittest.mock import patch
@@ -87,7 +88,9 @@ print('200',end='')
 
     def test_stale_acceptance_binds_actual_publication_even_for_same_body(self):
         first,tree=self.publish();second,tree2=self.repeat(first,tree)
-        self.now=[epoch('2026-10-29T15:20:00+00:00')]*3
+        newest=max(datetime.fromisoformat(validate(t)['entries'][self.rid]['observation']['validated_at'])
+                   for t in (tree,tree2))
+        self.now=[epoch((newest+timedelta(hours=48,microseconds=1)).isoformat())]*3
         obs=validate(tree)['entries'][self.rid]['observation']
         exact=['--commit',first,'--accept-stale',first,self.rid,obs['sha256']]
         r=self.invoke(args=['--commit',first]);self.assertNotEqual(r.returncode,0)

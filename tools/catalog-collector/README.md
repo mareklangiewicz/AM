@@ -220,3 +220,18 @@ Like Obsidian, it requires one explicit app for managed updates and refuses befo
 app-state changes if catalog data is unavailable or stale. Existing installed
 legacy updaters are not rewritten by a repository recipe change. No additional
 source collection or runtime service is needed for this migration.
+
+## Accepted daily refresh policy (ticket 40)
+
+The final schedule is once daily at 03:17 UTC (`17 3 * * *`), using the same six
+conditional source requests and separate exact-prior publisher. The reviewed
+source pin remains required. Hourly pilot window/count variables are not part
+of the daily controller. Activation follows the current bounded pilot's shutdown;
+local code alone does not change the pinned remote workflow or installed helper.
+
+Shell and Python readers now accept observations through the inclusive **48-hour**
+boundary measured from actual validated_at. The extra day provides headroom for
+GitHub scheduling delays, not a promise of two-day availability. Failures retain
+prior ages; beyond 48 hours, the same exact publication/request/body stale consent
+is required. Future, unavailable, malformed and corrupt observations still refuse.
+Neither collection nor metadata hashes independently authenticate app binaries.

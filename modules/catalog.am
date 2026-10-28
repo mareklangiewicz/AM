@@ -26,7 +26,7 @@ case $source in *[!A-Za-z0-9_./:-]*) fail 'unsupported AMREPO characters' ;; esa
 printf '%s\n' "$source" | grep -Eq '^https://raw\.githubusercontent\.com/[A-Za-z0-9-]+/[A-Za-z0-9_.-]+/[A-Za-z0-9_./-]+$' || fail 'missing or unsupported AMREPO'
 repository=${source#https://raw.githubusercontent.com/}
 owner=${repository%%/*}; repository=${repository#*/}; repository=$owner/${repository%%/*}
-# GNU date's fractional UTC epoch preserves the inclusive 24-hour boundary.
+# GNU date's fractional UTC epoch preserves the inclusive 48-hour boundary.
 clock() { date -u +%s.%6N; }
 start=$(clock)
 printf '%s\n' "$start" | grep -Eq '^[0-9]{1,12}\.[0-9]{6}$' || fail 'GNU date required'
@@ -86,7 +86,7 @@ fresh() {
     now=$(clock)
     result=$(awk -v now="$now" -v start="$start" -v prev="$last" -v gen="$generated" -v checked="$validated" '
         BEGIN { if (now !~ /^[0-9]+\.[0-9]+$/ || now+0<prev+0 || gen+0>now+0 || checked+0>now+0 || now-start>90) print "invalid";
-                else if (now-checked>86400) print "stale"; else print "fresh" }')
+                else if (now-checked>172800) print "stale"; else print "fresh" }')
     last=$now
     case $result in
         invalid) fail 'future time, regressed clock or expired read' ;;

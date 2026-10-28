@@ -145,8 +145,16 @@ class ShellConsumer(ShellFixture):
         self.assertIn('/commits/heads/release-catalog',self.calls()[0][-1])
         self.assertEqual(result.stdout,self.body)
 
+    def test_observation_older_than_one_day_is_still_fresh_with_daily_policy(self):
+        current=datetime.fromisoformat(self.obs['validated_at'])+timedelta(hours=36)
+        self.now=[epoch(current.isoformat())]*3
+        result=self.invoke()
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertEqual(result.stdout,self.body)
+        self.assertEqual(len(self.calls()),2)
+
     def test_inclusive_edge_exact_stale_and_wrong_tuple(self):
-        edge=datetime.fromisoformat(self.obs['validated_at'])+timedelta(days=1)
+        edge=datetime.fromisoformat(self.obs['validated_at'])+timedelta(days=2)
         self.now=[epoch(edge.isoformat())]*3
         result=self.invoke();self.assertEqual(result.returncode,0,result.stderr)
         self.now=[epoch((edge+timedelta(microseconds=1)).isoformat())]*3
@@ -158,7 +166,7 @@ class ShellConsumer(ShellFixture):
         self.assertNotEqual(self.invoke(bad).returncode,0)
 
     def test_future_expiry_and_regression_never_emit_body(self):
-        edge=datetime.fromisoformat(self.obs['validated_at'])+timedelta(days=1)
+        edge=datetime.fromisoformat(self.obs['validated_at'])+timedelta(days=2)
         at=epoch(edge.isoformat());after=epoch((edge+timedelta(microseconds=1)).isoformat())
         gen=datetime.fromisoformat(GEN)
         for times in ([epoch((gen-timedelta(days=1)).isoformat())]*3,
