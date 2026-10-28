@@ -91,3 +91,31 @@ required beyond 48 hours. No fabricated timestamps, silent fallback or automatic
 retry. This does not migrate installed app scripts or silently update host helper
 files. [40](issues/40-daily-refresh-48-hour-freshness.md) records implementation and
 activation state; the existing pilot's shutdown/assessment remains ticket 37.
+
+
+## Accepted recipe simplification direction (2026-10-28)
+
+Marek endorsed moving beyond read-call substitutions to one shared AppImage
+install/update implementation, with small recipes providing app identity, exact
+catalog alias, package format and one asset-selection function. Prove the interface
+with Obsidian and SQLite Browser together. Both install/update use that same
+selector; installed small recipes and standalone launchers use the managed runtime
+without copied update bodies, checkout or runtime bootstrap downloads.
+
+Centralize actual common lifecycle mechanics and remove their per-app copies.
+Keep release/architecture/channel policy in consumer filters and original binary
+URLs; no collector-side download selection, new language/runtime requirement,
+external metadata operator or elaborate configuration language. Allow explicit
+hooks only for demonstrated differences. Preserve preflight/refusal, repair,
+AM/AppMan paths, standalone/managed source delivery and optional binary-check
+semantics. Measure total shared/client/generated code and interface complexity,
+not just recipe length.
+
+[42: shared lifecycle/two-app proof](issues/42-shared-appimage-lifecycle.md) is the
+next implementation priority, ahead of more read-call-only migrations and batch
+routing. Then [43: nvim](issues/43-migrate-nvim-shared-lifecycle.md),
+[44: normal batch updates](issues/44-normal-batch-catalog-updates.md) and
+[45: recipe families/migration batches](issues/45-recipe-inventory-and-migration-batches.md).
+Timed pilot closure and the already authorized daily switch remain independent
+operational tasks (37/41). This tracker update does not perform or authorize new
+source collection, host app execution or a mid-pilot source push.

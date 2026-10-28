@@ -48,6 +48,19 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 
 ## Current continuation boundary
 
+**Current implementation priority (2026-10-28):**
+[42: shared AppImage install/update and two small recipes](issues/42-shared-appimage-lifecycle.md).
+Marek endorsed this direction and asked to record it. Stop expanding the earlier
+read-call-only migration pattern: first remove duplicated lifecycle/updater code
+for Obsidian and SQLite Browser behind one small shared interface, preserving
+consumer filters, source ownership and all acceptance checks. Follow-ons are
+[43 nvim](issues/43-migrate-nvim-shared-lifecycle.md),
+[44 batch updates](issues/44-normal-batch-catalog-updates.md) and
+[45 inventory/migration batches](issues/45-recipe-inventory-and-migration-batches.md),
+all blocked on the two-app proof, not on elapsed pilot time. Tickets 37/41 retain
+their timed operational obligations and existing authorization independently.
+
+
 Use AMREPO-owned fork catalog and managed helper/source delivery (ticket 29).
 The retained public candidate is a0fdd1255; its observation times are unchanged,
 so freshness/explicit stale consent still apply. No installed updater migration,
@@ -482,3 +495,12 @@ retaining source/ref/event/isolation/overlap/rerun guards. Both readers use incl
 and diff checks pass. [41](issues/41-activate-daily-refresh.md) is already authorized
 but waits for ticket 37's planned pilot shutdown. No mid-pilot remote/source change
 or installed app/helper mutation. Historical 24-hour evidence retains its meaning.
+
+
+2026-10-28: recorded accepted shared-lifecycle direction and opened
+[42](issues/42-shared-appimage-lifecycle.md) as ready-for-agent, unclaimed next
+implementation. Added dependent 43–45 for nvim, normal mixed/batch updates and
+recipe-family inventory. Spec and current continuation priority updated. This
+supersedes the earlier batch-first/read-call-only continuation recommendation;
+historical implementation evidence remains unchanged. Documentation only; no
+runtime, source push, workflow, collection or installed-state changes.
