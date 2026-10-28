@@ -1,7 +1,7 @@
 # Activate one 24-hour hourly freshness pilot
 
 Type: task
-Status: open
+Status: resolved
 Triage: ready-for-agent
 
 ## Scope and authorization target
@@ -52,3 +52,13 @@ fetch, not a new independent remote-history measurement at every tick.
 Activation evidence is committed locally without pushing it: a source push would
 invalidate the approved revision and stop dispatch until a separately reviewed
 repin. No repin or extension is implicit.
+
+## Answer — first naturally scheduled run verified
+
+At approximately 2026-10-28T08:56Z, observed exactly one successful scheduled
+controller 40640684033 and its successful child 40640700123. Six conditional 200s,
+exact prior, artifact digest/recomputation, published tree/parent and permission
+checks pass. [Findings and retained evidence](../research/hourly-pilot-first-run-findings.md).
+First scheduled path is established; hourly cadence is not. No failed scheduled
+events are listed. No extra collection or dispatch was made during verification.
+Window/source pin are unchanged; ticket 37 tracks expiry and overall assessment.

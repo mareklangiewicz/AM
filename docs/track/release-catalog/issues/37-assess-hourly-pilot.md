@@ -3,7 +3,6 @@
 Type: task
 Status: open
 Triage: ready-for-human
-Blocked by: 36
 
 ## Scope
 
@@ -21,3 +20,11 @@ Do not rewrite/delete release-catalog or alter installed apps as cleanup.
 Use `gh workflow disable catalog-schedule.yml --repo mareklangiewicz/AM` for
 closing the trigger, then verify remote workflow state. This task requires elapsed
 pilot time, not another approval for the already approved shutdown.
+
+## Interim observation 2026-10-28T08:56Z
+
+[First scheduled run verified](../research/hourly-pilot-first-run-findings.md),
+but only one event listed in approximately nine pilot hours. Actual source and
+variables unchanged; no failed controller job to explain absent ticks. Assess
+scheduler delivery separately from successful six-source collection/publication.
+No automatic extension or replacement dispatch is authorized.

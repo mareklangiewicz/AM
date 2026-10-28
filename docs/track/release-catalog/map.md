@@ -445,3 +445,11 @@ active, six other workflows disabled. Variables verified for exact revision and
 listed yet at 00:19:04Z; no extra dispatch or app operation. Activation evidence
 saved locally so source pin remains stable. [37](issues/37-assess-hourly-pilot.md)
 tracks expiry shutdown/assessment without implicit window extension.
+
+
+2026-10-28 08:56Z: [36 resolved: first natural scheduled path verified](issues/36-activate-hourly-refresh-pilot.md).
+Scheduled controller 40640684033 -> child 40640700123 -> publication 2dd9db2bd.
+Six conditional 200s, prior tuples, exact artifact/tree/parent and permission logs
+verified and archived. Only one scheduled event so far; hourly cadence is not
+established. Obsidian fresh through 2026-10-29T05:54:45.963442Z. Ticket 37 remains
+open for expiry shutdown/assessment; no extra dispatch, app operation or extension.

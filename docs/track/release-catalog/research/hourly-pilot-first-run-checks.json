@@ -1,0 +1,63 @@
+{
+  "publication": {
+    "commit": "2dd9db2bd4744c6f453869d3dd22fb634bacfbcc",
+    "parent": "e8e5cf96295369d90402d7584853eb1d3436463d",
+    "ref": "refs/heads/release-catalog",
+    "source_revision": "466e1facce4e66d4b26c06446fc1e524aa0d76df",
+    "run_id": "40640700123",
+    "run_attempt": "1",
+    "artifact_id": "12795078211",
+    "artifact_digest": "b1aa5ab35c6c75c66ebbc826d401c3252220dca438ee7603924328751d77385d",
+    "index_sha256": "dc2a2df81f9d826c5d052dda4ae827bb333d55d6ff868838128c3696b963eca9",
+    "tree_bytes": 4898414
+  },
+  "collection": {
+    "attempted": 6,
+    "completed": 6,
+    "not_attempted": [],
+    "stop_reason": null,
+    "all_attempted": true,
+    "complete": true,
+    "received_bytes": 4877559,
+    "elapsed_seconds": 3.968926980999999
+  },
+  "status_counts": {
+    "200": 6
+  },
+  "prior_conditions_verified": 6,
+  "tree_recomputation_equal": true,
+  "permission_log_lines": {
+    "collect": [
+      "2026-10-28T05:54:40.7369185Z Contents: read",
+      "2026-10-28T05:54:40.7369700Z Metadata: read"
+    ],
+    "publish": [
+      "2026-10-28T05:54:54.9818270Z Actions: read",
+      "2026-10-28T05:54:54.9818664Z Contents: write",
+      "2026-10-28T05:54:54.9819050Z Metadata: read"
+    ]
+  },
+  "obsidian_observation": {
+    "bytes": 450991,
+    "link": "<https://api.github.com/repositories/262342594/releases?page=2>; rel=\"next\", <https://api.github.com/repositories/262342594/releases?page=6>; rel=\"last\"",
+    "path": "bodies/98c8484a8be11cb446c110c6c2a36368618e2015793a4e241ab3aeef7a867205.json",
+    "received_at": "2026-10-28T05:54:45.963442+00:00",
+    "received_time_basis": "response-completed",
+    "scope": "single-response",
+    "sha256": "6c462873a85eef4e4d649af955fae6cd0a31eeb3c9ab172b47ea4afa7bfe3a39",
+    "validated_at": "2026-10-28T05:54:45.963442+00:00",
+    "validation_status": 200,
+    "validation_time_basis": "response-completed"
+  },
+  "obsidian_fresh_through": "2026-10-29T05:54:45.963442+00:00",
+  "scheduled_run": {
+    "id": 40640684033,
+    "created_at": "2026-10-28T05:54:26Z",
+    "event": "schedule",
+    "conclusion": "success",
+    "dispatch_prior": "e8e5cf96295369d90402d7584853eb1d3436463d",
+    "live_scheduled_runs_seen_as_of": "2026-10-28T08:56:00Z",
+    "scheduled_run_count": 1,
+    "scheduled_cadence_proven": false
+  }
+}
