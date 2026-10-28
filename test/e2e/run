@@ -1,0 +1,43 @@
+#!/bin/sh
+# Opt-in whole-command matrix. Never run the scenarios directly on the host.
+set -eu
+HERE=$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd)
+REPO=$(CDPATH='' cd -- "$HERE/../.." && pwd)
+ENGINE=${ENGINE:-podman}
+OUT=${E2E_OUT:-$HERE/out}
+command -v "$ENGINE" >/dev/null 2>&1 || { echo "Missing engine: $ENGINE" >&2; exit 127; }
+[ "$#" -gt 0 ] || set -- debian fedora
+# Validate every target before building or running any of them.
+for target do
+    case $target in debian|fedora) ;; *) echo "Unknown target: $target" >&2; exit 2 ;; esac
+    [ -f "$HERE/Containerfile.$target" ] || exit 2
+done
+mkdir -p "$OUT"
+OUT=$(CDPATH='' cd -- "$OUT" && pwd)
+# A fresh run directory keeps failed and repeated traces separate.
+OUT="$OUT/$(date -u +%Y%m%dT%H%M%SZ)-$$"
+mkdir -p "$OUT"
+git -C "$REPO" rev-parse HEAD > "$OUT/source-revision.txt"
+status=0
+for target do
+    mkdir -p "$OUT/$target"
+    image="localhost/am-cli-e2e:$target"
+    printf '\nBuilding %s\n' "$target"
+    if ! "$ENGINE" build -t "$image" -f "$HERE/Containerfile.$target" "$HERE" > "$OUT/$target/build.log" 2>&1; then
+        cat "$OUT/$target/build.log" >&2
+        echo "FAIL $target (build)" >&2; status=1; continue
+    fi
+    "$ENGINE" image inspect --format '{{.Id}}' "$image" > "$OUT/$target/image-id.txt"
+    printf 'Running %s with networking disabled\n' "$target"
+    if "$ENGINE" run --rm --network=none --entrypoint /bin/bash \
+        --tmpfs /run:rw --tmpfs /tmp:rw,exec \
+        -v "$REPO:/src:ro" -v "$OUT/$target:/out:rw" \
+        -e "E2E_TARGET=$target" "$image" \
+        -c 'touch /run/am-e2e-container; exec /bin/bash /src/test/e2e/container-test.sh'; then
+        echo "PASS $target"
+    else
+        echo "FAIL $target" >&2; status=1
+    fi
+done
+printf 'Logs: %s\n' "$OUT"
+exit "$status"

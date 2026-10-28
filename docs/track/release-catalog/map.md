@@ -61,6 +61,9 @@ concrete larger batches: [48 am-utils executables](issues/48-shared-executable-a
 [49 common AppImages](issues/49-migrate-common-appimage-batch.md)
 (124 recipes / 50 exact endpoints). These are measured queues, not approved new
 collection or implemented migrations. See [inventory and capacity limits](research/recipe-family-inventory.md).
+[50 installed-command e2e](issues/50-container-cli-e2e.md) is also resolved after
+Marek requested mysh-style coverage; Debian/dash and Fedora/bash pass with actual
+installed CLI/module/sudo/sync paths and controlled external IO.
 Installed rollout remains separate. Tickets 37/41 retain timed pilot closure
 and the already authorized daily activation; no mid-pilot source push.
 
@@ -554,3 +557,16 @@ guards require measured incremental enrollment, not a blind manifest expansion.
 Independent AWK token comparison, repeated output, path/partition checks, Python
 compilation and diff checks pass. No runtime/recipe/filter execution, live requests,
 installed changes, collection, workflows or source push. Timed 37/41 remain.
+
+
+2026-10-28: [50 resolved](issues/50-container-cli-e2e.md), taking user-requested e2e
+coverage ahead of the migration frontier. The [container runner](../../../test/e2e/README.md)
+passes eight whole-installed-command scenarios / 21 invocations on each of Debian
+and Fedora, without extracted manager functions or stubbed sync/verification.
+[Findings and actual run evidence](research/container-cli-e2e-findings.md) record
+real fixes for quiet-grep SIGPIPE under pipefail and stale configured module source.
+The regression repairs an older installed module and preserves app failure through
+real no-argument sync. 149 catalog tests, syntax/lint/baseline warning checks and
+diff checks pass. Runtime networking disabled; retained observations/inert binaries,
+not live upstream assets. No host delivery, production workflow or source push.
+Ticket 46 remains next; timed 37/41 remain independent.

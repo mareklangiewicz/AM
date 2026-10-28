@@ -251,3 +251,14 @@ It does not enroll sources, prove asset compatibility or migrate installed apps.
 The report records input revision/content and script/manifest hashes. See the
 [measured findings and next batches](../../docs/track/release-catalog/research/recipe-family-inventory.md)
 for method limits, projected versus actual deletion, and capacity/enrollment gates.
+
+
+## Whole-command container tests
+
+`./test/e2e/run` adds opt-in Debian/dash and Fedora/bash coverage around the whole
+installed AM/AppMan executable, real module dispatch, sudo/environment clearing,
+standalone updater and real no-argument sync. Containers use retained metadata,
+inert binaries and strict offline external-command adapters with runtime networking
+disabled. See [runner, scenarios and limits](../../test/e2e/README.md). This
+supplements the Python suite, whose narrower integration tests extract functions
+and stub manager services.

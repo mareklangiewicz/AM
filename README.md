@@ -74,6 +74,8 @@ You can use the command `am -a {PROGRAM}` to view the description and get the so
 
 [Regression Testing (for developers)](regress)
 
+[Offline installed-command e2e tests (Debian/Fedora)](test/e2e/README.md)
+
 [Instructions for Linux Distro Maintainers](#instructions-for-linux-distro-maintainers)
 
 [Troubleshooting](#troubleshooting)

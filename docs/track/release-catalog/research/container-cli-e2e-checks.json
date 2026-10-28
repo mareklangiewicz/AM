@@ -1,0 +1,134 @@
+{
+  "archive": "container-cli-e2e-20261028T162910Z.tar.gz",
+  "archive_sha256": "64adfbbc1734967d497debdcec681107e23a6b34b15fadf9d228498c065794a7",
+  "baseline_revision": "7ad0aff391107c20b0cf9aa81cd8e6587e98a1f8",
+  "external_io": "retained catalog / synthetic binary / explicit clock / failing notification adapters",
+  "host_catalog_suite": {
+    "command": "python3 -B -m unittest discover -s tools/catalog-collector -p 'test_*.py'",
+    "success": true,
+    "tests": 149
+  },
+  "host_execution_guard": true,
+  "manager_and_modules_initially_copied_without_test_rewrites": true,
+  "manager_functions_extracted": false,
+  "obsolete_installed_module_repaired_to_exact_source": true,
+  "quiet_check_probe": {
+    "echo_pipeline_with_pipefail": 141,
+    "here_string": 0
+  },
+  "runtime_network": "none",
+  "targets": {
+    "debian": {
+      "command_count": 21,
+      "environment": [
+        "target=debian",
+        "/bin/sh=/usr/bin/dash",
+        "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"",
+        "NAME=\"Debian GNU/Linux\"",
+        "VERSION_ID=\"13\"",
+        "VERSION=\"13 (trixie)\"",
+        "VERSION_CODENAME=trixie",
+        "DEBIAN_VERSION_FULL=13.5",
+        "ID=debian",
+        "HOME_URL=\"https://www.debian.org/\"",
+        "SUPPORT_URL=\"https://www.debian.org/support\"",
+        "BUG_REPORT_URL=\"https://bugs.debian.org/\""
+      ],
+      "errors": [],
+      "failures": [],
+      "image_id": "13b8244c76d5291f75655df642a419aa1714e6b12a6c03d8dc8bc8fc7244ebbe",
+      "success": true,
+      "target": "debian",
+      "tested_source": {
+        "inputs": {
+          "APP-MANAGER": "9c8defeff18f76507d1abe48db334ab0047803cdbe6d31b2e6fc7524f55add0b",
+          "docs/track/release-catalog/design/staged-manifest.json": "1c550b882e9855a7a652e44516d88db95046641da92f4b6e34fd65b9a6da87b9",
+          "docs/track/release-catalog/research/supervised-baseline-40529551070-evidence.tar.gz": "037f19a159d8788fcb95c4d6a8fe182ee44d3c452412bb3da826e3b94ba45dd9",
+          "programs/x86_64/obsidian": "8990e0a6b62b338710e97026503a8dc49f443d522657bbb418ad886085a44c71",
+          "programs/x86_64/sqlitebrowser": "cc91f4e70f4f2e0a040d5bfbc7158b7d93a7566e994e292075497159c71c1d54",
+          "test/e2e/Containerfile.debian": "629e42f59ceec1981b8c8a23b9786577a3bdfb0affcf3fee74aed96db1fdae44",
+          "test/e2e/Containerfile.fedora": "ac47a9e42982b75c2ce5c4cdbff62186b90db003fbb9675d41b21ec47d4f3f36",
+          "test/e2e/container-test.sh": "9b54b6754e1364ec29c39b422ecd6c0a812f09bcbbe14b90a0d926cbd2d225ac",
+          "test/e2e/external.py": "587a122f626fcb2c4764a031398ad5e33aface7b288614f629fa697b6499569d",
+          "test/e2e/fixtures/e2e-legacy": "6e950297b28f39e01e247fc27b6b52a3b34a7cb962e1940020cf60ef88a62e33",
+          "test/e2e/run": "d5434df814e6c25e6546f4038abc4cd0c7372974e422be3eb331ac2fd042c02e",
+          "test/e2e/scenarios.py": "996a5b534cda0e6221176056dea05c3e57c3645296d7860ff449d6c5a3394406"
+        },
+        "modules": {
+          "appimage.am": "b39fa45038bf52b5e2eabd260e512deea0084607abdd5948ac7cc9e8199d0172",
+          "catalog.am": "5c1ca600e478ef26ec7ff3c70ef4bd61f49f6e86ff66696e722a9e9b90255618",
+          "database.am": "77a2279ab14d14a2d53b5eaf5903a42282ec4c00ef37f95009adfa8d82bf2d5e",
+          "install.am": "7a59885d558becf75d5984ca8a7dd0d61d2b2a6c7c872cab1cde96fc91a3adf2",
+          "management.am": "1a1962d6e85481a030653f53182496f7c5e9da490fc22f194b9046aeac4cae2b",
+          "template.am": "67f672f72ccde05b835bf7c4d3061ecc8429088b9dc1f1a15b6857dbc971441c"
+        }
+      },
+      "tests_run": 8,
+      "transport_records": 160,
+      "unexpected_requests": 0
+    },
+    "fedora": {
+      "command_count": 21,
+      "environment": [
+        "target=fedora",
+        "/bin/sh=/usr/bin/bash",
+        "NAME=\"Fedora Linux\"",
+        "VERSION=\"44 (Container Image)\"",
+        "RELEASE_TYPE=stable",
+        "ID=fedora",
+        "VERSION_ID=44",
+        "VERSION_CODENAME=\"\"",
+        "PRETTY_NAME=\"Fedora Linux 44 (Container Image)\"",
+        "ANSI_COLOR=\"0;38;2;60;110;180\"",
+        "LOGO=fedora-logo-icon",
+        "CPE_NAME=\"cpe:/o:fedoraproject:fedora:44\"",
+        "DEFAULT_HOSTNAME=\"fedora\"",
+        "HOME_URL=\"https://fedoraproject.org/\"",
+        "DOCUMENTATION_URL=\"https://docs.fedoraproject.org/en-US/fedora/f44/\"",
+        "SUPPORT_URL=\"https://ask.fedoraproject.org/\"",
+        "BUG_REPORT_URL=\"https://bugzilla.redhat.com/\"",
+        "REDHAT_BUGZILLA_PRODUCT=\"Fedora\"",
+        "REDHAT_BUGZILLA_PRODUCT_VERSION=44",
+        "REDHAT_SUPPORT_PRODUCT=\"Fedora\"",
+        "REDHAT_SUPPORT_PRODUCT_VERSION=44",
+        "SUPPORT_END=2027-05-19",
+        "VARIANT=\"Container Image\"",
+        "VARIANT_ID=container"
+      ],
+      "errors": [],
+      "failures": [],
+      "image_id": "c8c76087cdf88daf19e32cc5a45827fdd3e5bad7858ee93b8a35a251e1ddb123",
+      "success": true,
+      "target": "fedora",
+      "tested_source": {
+        "inputs": {
+          "APP-MANAGER": "9c8defeff18f76507d1abe48db334ab0047803cdbe6d31b2e6fc7524f55add0b",
+          "docs/track/release-catalog/design/staged-manifest.json": "1c550b882e9855a7a652e44516d88db95046641da92f4b6e34fd65b9a6da87b9",
+          "docs/track/release-catalog/research/supervised-baseline-40529551070-evidence.tar.gz": "037f19a159d8788fcb95c4d6a8fe182ee44d3c452412bb3da826e3b94ba45dd9",
+          "programs/x86_64/obsidian": "8990e0a6b62b338710e97026503a8dc49f443d522657bbb418ad886085a44c71",
+          "programs/x86_64/sqlitebrowser": "cc91f4e70f4f2e0a040d5bfbc7158b7d93a7566e994e292075497159c71c1d54",
+          "test/e2e/Containerfile.debian": "629e42f59ceec1981b8c8a23b9786577a3bdfb0affcf3fee74aed96db1fdae44",
+          "test/e2e/Containerfile.fedora": "ac47a9e42982b75c2ce5c4cdbff62186b90db003fbb9675d41b21ec47d4f3f36",
+          "test/e2e/container-test.sh": "9b54b6754e1364ec29c39b422ecd6c0a812f09bcbbe14b90a0d926cbd2d225ac",
+          "test/e2e/external.py": "587a122f626fcb2c4764a031398ad5e33aface7b288614f629fa697b6499569d",
+          "test/e2e/fixtures/e2e-legacy": "6e950297b28f39e01e247fc27b6b52a3b34a7cb962e1940020cf60ef88a62e33",
+          "test/e2e/run": "d5434df814e6c25e6546f4038abc4cd0c7372974e422be3eb331ac2fd042c02e",
+          "test/e2e/scenarios.py": "996a5b534cda0e6221176056dea05c3e57c3645296d7860ff449d6c5a3394406"
+        },
+        "modules": {
+          "appimage.am": "b39fa45038bf52b5e2eabd260e512deea0084607abdd5948ac7cc9e8199d0172",
+          "catalog.am": "5c1ca600e478ef26ec7ff3c70ef4bd61f49f6e86ff66696e722a9e9b90255618",
+          "database.am": "77a2279ab14d14a2d53b5eaf5903a42282ec4c00ef37f95009adfa8d82bf2d5e",
+          "install.am": "7a59885d558becf75d5984ca8a7dd0d61d2b2a6c7c872cab1cde96fc91a3adf2",
+          "management.am": "1a1962d6e85481a030653f53182496f7c5e9da490fc22f194b9046aeac4cae2b",
+          "template.am": "67f672f72ccde05b835bf7c4d3061ecc8429088b9dc1f1a15b6857dbc971441c"
+        }
+      },
+      "tests_run": 8,
+      "transport_records": 160,
+      "unexpected_requests": 0
+    }
+  },
+  "unknown_target_rejected_before_build": true,
+  "whole_installed_cli": true
+}

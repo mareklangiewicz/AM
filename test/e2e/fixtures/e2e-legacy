@@ -1,0 +1,18 @@
+#!/bin/sh
+# Offline legacy installation recipe, deliberately without catalog routing.
+set -eu
+APP=e2e-legacy
+mkdir -p "/opt/$APP/icons"
+printf '#!/bin/sh\nprintf "inert legacy binary\\n"\n' > "/opt/$APP/$APP"
+printf '#!/bin/sh\nrm -f /usr/local/bin/e2e-legacy\nrm -rf /opt/e2e-legacy\n' > "/opt/$APP/remove"
+printf 'legacy-old\n' > "/opt/$APP/version"
+printf 'inert icon' > "/opt/$APP/icons/$APP"
+cat > "/opt/$APP/AM-updater" <<'UPDATER'
+#!/bin/sh
+set -eu
+printf ran >> "$E2E_FIXTURE/legacy-runs"
+[ ! -f "$E2E_FIXTURE/legacy-fail" ] || exit 7
+printf 'legacy-new\n' > /opt/e2e-legacy/version
+UPDATER
+chmod +x "/opt/$APP/$APP" "/opt/$APP/remove" "/opt/$APP/AM-updater"
+ln -s "/opt/$APP/$APP" "/usr/local/bin/$APP"

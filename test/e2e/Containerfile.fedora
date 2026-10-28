@@ -1,0 +1,10 @@
+# /bin/sh remains Fedora's bash; Debian uses dash.
+FROM registry.fedoraproject.org/fedora:latest
+RUN dnf install -y --setopt=install_weak_deps=False bash python3 sudo curl wget \
+      ca-certificates coreutils findutils grep sed gawk binutils util-linux \
+      file xz unzip 7zip libnotify ncurses \
+ && dnf clean all
+RUN useradd --create-home --uid 1000 e2e \
+ && printf 'e2e ALL=(ALL) NOPASSWD: ALL\nDefaults env_keep += "E2E_FIXTURE"\nDefaults secure_path="/src/test/e2e/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"\n' > /etc/sudoers.d/e2e \
+ && chmod 0440 /etc/sudoers.d/e2e
+ENTRYPOINT ["/bin/bash", "/src/test/e2e/container-test.sh"]

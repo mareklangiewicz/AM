@@ -145,3 +145,15 @@ common AppImage migration. These queues do not authorize new collection or promi
 asset compatibility; current six-source/resource guards need measured enrollment
 work first. Global legacy support still has callers. Installed rollout and timed
 pilot/daily obligations remain separately scoped.
+
+
+## Installed-command regression coverage (2026-10-28; ticket 50)
+
+The [optional container matrix](../../../test/e2e/README.md) executes whole installed
+AM/AppMan commands on Debian/dash and Fedora/bash with real privilege/environment,
+module dispatch and sync paths. Retained metadata, controlled external transport/
+clock and inert binary fixtures keep tests independent of live collection and host
+apps. It supplements narrower function-level integration tests. Whole-command
+regressions now lock down sync under pipefail, configured module ownership and
+aggregate app failure through no-argument sync. No remote test workflow, installed
+rollout or operational freshness claim follows from container success.

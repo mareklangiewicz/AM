@@ -886,6 +886,7 @@ _am_newrepo_check() {
 			AMREPO="file://$(sort "$AMDATADIR/newrepo-on")"
 		fi
 		AMBRANCH=$(basename "$AMREPO")
+		MODULES_SOURCE="$AMREPO/modules"
 		export APPSDB="$AMREPO/programs/$ARCH"
 		export APPSLISTDB="$AMREPO/programs/$ARCH-apps"
 		export MODULES_PATH="$AMPATH/modules"
@@ -1856,7 +1857,7 @@ _sync_modules() {
 		fi
 		CURRENT=$(cat ./"$module_name" 2>/dev/null)
 		SOURCE=$(_use_online_reading_tool "$MODULES_SOURCE/$module_name")
-		if echo "$SOURCE" | grep -q AMCLI; then
+		if grep -q AMCLI <<< "$SOURCE"; then
 			if [ "$CURRENT" = "$SOURCE" ]; then
 				echo -ne "\r" 2>/dev/null
 			else
@@ -1897,7 +1898,7 @@ _use_sync() {
 	_validate_and_download_lists_of_archived_and_obsolete_apps
 	if [ "$CLI_PATH" != "/usr/bin/am" ] && [ "$AMSYNC" != 1 ]; then
 		AMCLI_ONLINE_CONTENT=$(_use_online_reading_tool "$AMREPO"/APP-MANAGER)
-		if echo "$AMCLI_ONLINE_CONTENT" | grep -q AMCLI; then
+		if grep -q AMCLI <<< "$AMCLI_ONLINE_CONTENT"; then
 			if [ "$CLI" = am ]; then
 				if [ -f "$APPMANCONFIG"/appman-mode ]; then
 					if [ -d "$(readlink -f /opt)/am/modules" ]; then
