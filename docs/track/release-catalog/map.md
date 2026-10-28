@@ -50,13 +50,19 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 
 **Current implementation frontier (2026-10-28):**
 [42 shared lifecycle](issues/42-shared-appimage-lifecycle.md),
-[43 nvim](issues/43-migrate-nvim-shared-lifecycle.md) and
-[44 normal mixed batches](issues/44-normal-batch-catalog-updates.md) are resolved.
-Next is [45 inventory/migration batches](issues/45-recipe-inventory-and-migration-batches.md):
-actual recipe/endpoint families and substantial scoped migration work, without
-speculative adapters or unreviewed source enrollment. Installed rollout remains
-separate from repository implementation. Tickets 37/41 retain timed pilot closure
-and the already authorized daily activation independently; no mid-pilot source push.
+[43 nvim](issues/43-migrate-nvim-shared-lifecycle.md),
+[44 normal mixed batches](issues/44-normal-batch-catalog-updates.md) and
+[45 recipe inventory](issues/45-recipe-inventory-and-migration-batches.md) are resolved.
+Next is [46 the remaining Neovim AppImages](issues/46-migrate-remaining-neovim-appimages.md),
+a three-recipe batch using the existing endpoint/shared implementation.
+[47 reviewed enrollment](issues/47-enroll-scoped-migration-sources.md) gates the
+concrete larger batches: [48 am-utils executables](issues/48-shared-executable-am-utils-batch.md)
+(356 recipes / one exact endpoint), then
+[49 common AppImages](issues/49-migrate-common-appimage-batch.md)
+(124 recipes / 50 exact endpoints). These are measured queues, not approved new
+collection or implemented migrations. See [inventory and capacity limits](research/recipe-family-inventory.md).
+Installed rollout remains separate. Tickets 37/41 retain timed pilot closure
+and the already authorized daily activation; no mid-pilot source push.
 
 
 Use AMREPO-owned fork catalog and managed helper/source delivery (ticket 29).
@@ -534,3 +540,17 @@ legacy preprocessing/global cleanup; legacy child/checksum status is preserved.
 historical tests, syntax/lint/baseline warnings and diff checks pass; production
 -61 lines / -2149 bytes. No live requests, installed migration, source push or
 workflow changes. Timed 37/41 obligations remain; 45 is the next coding frontier.
+
+
+2026-10-28: [45 resolved](issues/45-recipe-inventory-and-migration-batches.md).
+[Static recipe inventory](research/recipe-family-inventory.md) scans all 10,716
+architecture recipes, with a hashed reproducible JSON report and independent
+[exception/caller audit](research/recipe-exceptions-and-callers.md). Only three
+remaining Neovim AppImages are fully exact-covered. Opened 46 for that batch and
+47–49 for separate reviewed enrollment and real larger families: 356 plain
+executables / one source; 124 AppImages / 50 sources. Projected deletion is kept
+separate from implemented/installed savings. Existing six-request/8 MB/300 s/50 MB
+guards require measured incremental enrollment, not a blind manifest expansion.
+Independent AWK token comparison, repeated output, path/partition checks, Python
+compilation and diff checks pass. No runtime/recipe/filter execution, live requests,
+installed changes, collection, workflows or source push. Timed 37/41 remain.

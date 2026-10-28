@@ -240,3 +240,14 @@ GitHub scheduling delays, not a promise of two-day availability. Failures retain
 prior ages; beyond 48 hours, the same exact publication/request/body stale consent
 is required. Future, unavailable, malformed and corrupt observations still refuse.
 Neither collection nor metadata hashes independently authenticate app binaries.
+
+## Static recipe-family inventory
+
+`python3 tools/catalog-collector/recipe_inventory.py --output /tmp/recipe-family-inventory.json`
+reads the four architecture recipe directories and the reviewed manifest without
+running shell, filters or HTTP. It reports marker buckets, normalized source
+frames, exact alias coverage and concrete AppImage/plain-executable review queues.
+It does not enroll sources, prove asset compatibility or migrate installed apps.
+The report records input revision/content and script/manifest hashes. See the
+[measured findings and next batches](../../docs/track/release-catalog/research/recipe-family-inventory.md)
+for method limits, projected versus actual deletion, and capacity/enrollment gates.

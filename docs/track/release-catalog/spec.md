@@ -132,3 +132,16 @@ apps retain isolated preparation; migrated apps never receive legacy token/quota
 patches or global app cleanup. See [current semantics](design/normal-batch-updates.md).
 Ticket 45's recipe-family inventory/migration batches are next. Installed delivery,
 pilot closure and daily activation retain their separate recorded scopes.
+
+
+## Inventory continuation (2026-10-28; ticket 45)
+
+The [local inventory](research/recipe-family-inventory.md) records three remaining
+Neovim AppImages using existing observations, followed by concrete larger queues
+of 356 plain executables from one exact endpoint and 124 AppImages from 50 exact
+endpoints. Tickets 46–49 distinguish small existing-source implementation, new
+reviewed enrollment, shared executable mechanics justified by real callers and
+common AppImage migration. These queues do not authorize new collection or promise
+asset compatibility; current six-source/resource guards need measured enrollment
+work first. Global legacy support still has callers. Installed rollout and timed
+pilot/daily obligations remain separately scoped.
