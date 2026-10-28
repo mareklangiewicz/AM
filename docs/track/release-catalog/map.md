@@ -453,3 +453,13 @@ Six conditional 200s, prior tuples, exact artifact/tree/parent and permission lo
 verified and archived. Only one scheduled event so far; hourly cadence is not
 established. Obsidian fresh through 2026-10-29T05:54:45.963442Z. Ticket 37 remains
 open for expiry shutdown/assessment; no extra dispatch, app operation or extension.
+
+
+2026-10-28: [38 resolved: second recipe migrated](issues/38-sqlitebrowser-catalog-recipe.md).
+SQLite Browser now consumes its already enrolled catalog alias through the shared
+reader. Both filters/original binary URLs preserved; alternate updater removed.
+Actual installer/generated updater/manager handoff, stale/refusal and repair paths
+verified with retained bytes and isolated roots. Full suite 116 passes before the
+final additional install-dispatch test; six final SQLite tests, syntax and lint pass.
+No shared runtime/collector change, live source request, installed migration or
+push that would disturb the running hourly pilot's source pin.

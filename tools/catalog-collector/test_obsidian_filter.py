@@ -256,7 +256,7 @@ _use_update "$@"
             self.assertIn(b'launcher-ok',result.stdout)
             self.assertEqual(self.snapshot(),before)
 
-    def run_manager_install(self, *, missing_helper=False, local_script=False, source_unavailable=False, amrepo=SOURCE):
+    def run_manager_install(self, *, missing_helper=False, local_script=False, source_unavailable=False, amrepo=SOURCE, recipe=APP, app_name="obsidian"):
         """Execute real install dispatch/functions with only external AM services stubbed."""
         module_dir=self.root/'opt/am/modules';module_dir.mkdir(parents=True,exist_ok=True)
         helper=module_dir/'catalog.am'
@@ -267,7 +267,7 @@ _use_update "$@"
         (data/'x86_64-apps').write_text('fixture inventory\n')
         recipe_source=self.path/'managed-recipe'
         # Redirect every absolute install location before any script can execute.
-        recipe_source.write_text(APP.read_text().replace('/opt/',str(self.root)+'/opt/')
+        recipe_source.write_text(recipe.read_text().replace('/opt/',str(self.root)+'/opt/')
                                  .replace('/usr/local/',str(self.root)+'/usr/local/'))
         module=(ROOT/'modules/install.am').read_text()
         module=module.replace('/opt/',str(self.root)+'/opt/').replace('/usr/local/',str(self.root)+'/usr/local/')
@@ -301,9 +301,9 @@ sys.exit(subprocess.run(sys.argv[1:],env=env).returncode)
              'CACHEDIR':str(cache),'AMDATADIR':str(data),'RECIPE_SOURCE':str(recipe_source),'RECIPE_UNAVAILABLE':'1' if source_unavailable else '',
              'SUDOCMD':str(self.bin/'privilege-wrapper'),'WGETCMD':'wget','CURLCMD':'curl',
              'WGETV':'1','WGETPROGRESS':'wget','tp_flags':'--fixture-extra','tp_extensions':'.fixture-extra'}
-        target='obsidian'
+        target=app_name
         if local_script:
-            local=self.path/'obsidian';local.write_text(recipe_source.read_text());target=str(local)
+            local=self.path/app_name;local.write_text(recipe_source.read_text());target=str(local)
         return subprocess.run(['/bin/bash',str(harness),'-i',target],cwd=self.path,env=env,capture_output=True)
 
     def test_actual_install_embeds_selected_source_for_standalone_updater(self):

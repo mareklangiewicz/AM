@@ -175,7 +175,7 @@ See docs/track/release-catalog/design/catalog-consumer.md for scope and bounds.
 
 The installed-user path is `modules/catalog.am`, distributed through AM's normal
 shell module sync. It uses shell and existing utilities; neither Python nor jq
-is required by the reader or Obsidian recipe. Read-only invocation from a checkout:
+is required by the reader or migrated recipes. Read-only invocation from a checkout:
 
 ```sh
 AMREPO=https://raw.githubusercontent.com/mareklangiewicz/AM/main-marek \
@@ -200,7 +200,8 @@ used a modified reader copy because of the now-fixed ownership defect; current
 source-selection regression checks use the unmodified helper. See the
 [implementation and ownership correction](../../docs/track/release-catalog/design/shell-consumer.md).
 
-The ordinary Obsidian installer and newly generated updater now invoke the shared
+The ordinary x86_64 Obsidian and SQLite Browser installers and newly generated
+updaters now invoke the shared
 reader before app-state changes. The manager embeds its managed module location,
 and routes one marked updater in the foreground before legacy mutation. Existing
 installed updaters are unchanged until explicitly migrated. Binary URLs and the
@@ -212,3 +213,10 @@ The checkout-only `--catalog-version` mode from tickets 20–21 is retired. Its
 and the Python consumer remain references; that option is no longer accepted by
 the app script. Use the shared reader for a read-only query. Invoking the ordinary
 app script is an installer operation.
+
+SQLite Browser uses its already enrolled exact `releases?per_page=100` alias;
+its stable x86-64 AppImage filter and original GitHub binary URL are unchanged.
+Like Obsidian, it requires one explicit app for managed updates and refuses before
+app-state changes if catalog data is unavailable or stale. Existing installed
+legacy updaters are not rewritten by a repository recipe change. No additional
+source collection or runtime service is needed for this migration.

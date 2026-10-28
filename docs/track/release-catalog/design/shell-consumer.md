@@ -226,3 +226,29 @@ reader/recipe lint pass. Full [findings](../research/catalog-source-correction-f
 and [tracker correction](../issues/29-respect-configured-catalog-repository.md)
 record what supersedes the historical fixed-upstream claims. No new live read
 was performed by this repair.
+
+## SQLite Browser migration (ticket 38)
+
+The x86_64 sqlitebrowser recipe now uses the same shared reader and generated
+updater route, with its already enrolled exact releases?per_page=100 alias.
+Both original asset-selection pipelines are byte-identical after substituting
+verified catalog bytes for the direct API response. Retained metadata selects
+DB.Browser.for.SQLite-v3.13.1-x86.64-v2.AppImage from its original GitHub URL.
+No new endpoint, manifest change, collector request or shared runtime code.
+
+Preflight precedes app directories, launcher repair and incomplete-install cleanup.
+Standalone source persistence and current managed-source handoff use the existing
+install/manager markers. Interrupted downloads retry after accepted preflight;
+checksum-failure state forces same-version repair. Notifications are nonfatal.
+The recipe's appimageupdatetool bypass is removed, and the marked manager route
+skips displaced legacy token/proxy/quota handling. The general legacy machinery
+still has unmigrated callers and is not deleted. This recipe changes by +19 net
+lines; it is reuse of the existing reader, not proof of overall line reduction.
+
+Six new retained-data integration tests cover installation/generated updater,
+no-change and changed updates, stale refusal/exact acceptance, preserved partial
+state, failed-download retry, checksum repair, manager source selection, and
+actual install-module dispatch with privilege environment clearing followed by
+standalone execution without AMREPO. Real app/network operations are stubs in
+isolated roots. Existing installed SQLite Browser updaters are not migrated.
+The prior Obsidian pilot and pinned remote scheduler remain unchanged.

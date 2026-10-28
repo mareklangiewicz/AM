@@ -27,7 +27,7 @@ class ShellFixture(unittest.TestCase):
         storage_tests.StorageContract.setUpClass()
         cls.base = storage_tests.StorageContract.base
         cls.index = validate(cls.base)
-        cls.rid = cls.index['aliases'][ALIAS]['request_id']
+        cls.rid = cls.index['aliases'][getattr(cls, 'catalog_alias', ALIAS)]['request_id']
         cls.obs = cls.index['entries'][cls.rid]['observation']
 
     def setUp(self):
