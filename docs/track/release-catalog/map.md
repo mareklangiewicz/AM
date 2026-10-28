@@ -53,8 +53,8 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 [43 nvim](issues/43-migrate-nvim-shared-lifecycle.md),
 [44 normal mixed batches](issues/44-normal-batch-catalog-updates.md) and
 [45 recipe inventory](issues/45-recipe-inventory-and-migration-batches.md) are resolved.
-Next is [46 the remaining Neovim AppImages](issues/46-migrate-remaining-neovim-appimages.md),
-a three-recipe batch using the existing endpoint/shared implementation.
+[46 the remaining Neovim AppImages](issues/46-migrate-remaining-neovim-appimages.md)
+and follow-ups 50–54 are resolved. Next is ticket 47’s staged enrollment preparation.
 [47 reviewed enrollment](issues/47-enroll-scoped-migration-sources.md) gates the
 concrete larger batches: [48 am-utils executables](issues/48-shared-executable-am-utils-batch.md)
 (356 recipes / one exact endpoint), then
@@ -623,3 +623,12 @@ Fixed the demonstrated sudo-before-fallback ordering defect. [Findings](research
 retain exact red/green evidence and limits. Full matrix 25 scenarios / 70 commands
 and all 184 catalog tests pass; final Termux rerun 7/14 also passes. No host delivery,
 production collection, source push/repin or workflow change; timed 37/41 remain.
+
+
+2026-10-28: [47 partially prepared](issues/47-enroll-scoped-migration-sources.md).
+[Offline review package](design/migration-enrollment-plan.md) and
+[exact queue](design/migration-enrollment-queue.json) freeze 356 utility paths plus
+50 deferred endpoints / 49 identity requests. The first proposal is one bounded
+unauthenticated am-utils identity GET; unknown IDs remain null. Existing six-source
+manifest/guards, pilot pin and publication remain unchanged. No live request or
+enrollment occurred; 48/49 remain blocked pending actual accepted availability.

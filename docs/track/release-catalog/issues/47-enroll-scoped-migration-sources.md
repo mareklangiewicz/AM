@@ -1,8 +1,8 @@
 # Review and stage enrollment for the concrete migration batches
 
 Type: task
-Status: open
-Triage: ready-for-agent
+Status: claimed
+Triage: needs-info
 Blocked by: 45
 
 ## Scope
@@ -43,3 +43,17 @@ actual authorized evidence (if subsequently approved), resource/cadence limits
 and reproducible checks. Resolve only when the dependent batch enrollment scope
 is actually accepted and available; otherwise record exact partial stage/remaining
 human action here, keeping blocked migrations honest.
+
+## Partial stage — 2026-10-28 offline preparation
+
+Claimed for offline preparation. [Review package](../design/migration-enrollment-plan.md)
+and [exact queue payload](../design/migration-enrollment-queue.json) preserve the
+356 utility paths and 50 later endpoints / 49 repository identity requests.
+Unknown IDs/descriptors remain null; operational manifest and six-source guards
+are unchanged. [Source audit](../research/am-utils-enrollment-audit.md) identifies
+evidence gaps and the cross-boundary capacity/delivery requirements.
+
+Awaiting user authorization for the package's one bounded unauthenticated
+`GET https://api.github.com/repos/ivan-hc/am-utils` identity read. No release read,
+collection, publication, push or schedule/source change is included. Status stays
+claimed (partial preparation); 48/49 remain blocked. Do not resolve from a plan.

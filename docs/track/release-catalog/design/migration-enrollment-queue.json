@@ -1,0 +1,999 @@
+{
+  "schema": 1,
+  "status": "offline-review-only-not-a-collector-manifest",
+  "inventory_path": "docs/track/release-catalog/research/recipe-family-inventory.json",
+  "inventory_sha256": "896e2c3df674139e382c10553121c672b8c452f757c3af92d1eda07ad2f0c961",
+  "existing_manifest_sha256": "1c550b882e9855a7a652e44516d88db95046641da92f4b6e34fd65b9a6da87b9",
+  "first_stage": {
+    "alias": "https://api.github.com/repos/ivan-hc/am-utils/releases",
+    "identity_request": "https://api.github.com/repos/ivan-hc/am-utils",
+    "repository_id": null,
+    "fetch_url": null,
+    "request_id": null,
+    "identity_status": "missing-reviewed-evidence",
+    "recipes": [
+      "programs/aarch64/7z",
+      "programs/aarch64/addr2line",
+      "programs/aarch64/ar",
+      "programs/aarch64/arch",
+      "programs/aarch64/as",
+      "programs/aarch64/b2sum",
+      "programs/aarch64/base32",
+      "programs/aarch64/base64",
+      "programs/aarch64/basename",
+      "programs/aarch64/basenc",
+      "programs/aarch64/bzip2",
+      "programs/aarch64/c++filt",
+      "programs/aarch64/cat",
+      "programs/aarch64/chcon",
+      "programs/aarch64/chgrp",
+      "programs/aarch64/chmod",
+      "programs/aarch64/chown",
+      "programs/aarch64/chroot",
+      "programs/aarch64/cksum",
+      "programs/aarch64/clear",
+      "programs/aarch64/col",
+      "programs/aarch64/colcrt",
+      "programs/aarch64/colrm",
+      "programs/aarch64/column",
+      "programs/aarch64/comm",
+      "programs/aarch64/cp",
+      "programs/aarch64/csplit",
+      "programs/aarch64/curl",
+      "programs/aarch64/cut",
+      "programs/aarch64/date",
+      "programs/aarch64/dd",
+      "programs/aarch64/df",
+      "programs/aarch64/diff",
+      "programs/aarch64/dir",
+      "programs/aarch64/dircolors",
+      "programs/aarch64/dirname",
+      "programs/aarch64/du",
+      "programs/aarch64/echo",
+      "programs/aarch64/elfedit",
+      "programs/aarch64/env",
+      "programs/aarch64/expand",
+      "programs/aarch64/expr",
+      "programs/aarch64/factor",
+      "programs/aarch64/false",
+      "programs/aarch64/file",
+      "programs/aarch64/find",
+      "programs/aarch64/fmt",
+      "programs/aarch64/fold",
+      "programs/aarch64/gawk",
+      "programs/aarch64/gp-archive",
+      "programs/aarch64/gp-collect-app",
+      "programs/aarch64/gp-display-html",
+      "programs/aarch64/gp-display-src",
+      "programs/aarch64/gp-display-text",
+      "programs/aarch64/gprof",
+      "programs/aarch64/gprofng",
+      "programs/aarch64/gprofng-archive",
+      "programs/aarch64/gprofng-collect-app",
+      "programs/aarch64/gprofng-display-html",
+      "programs/aarch64/gprofng-display-src",
+      "programs/aarch64/gprofng-display-text",
+      "programs/aarch64/gprofng-gmon",
+      "programs/aarch64/grep",
+      "programs/aarch64/groups",
+      "programs/aarch64/hd",
+      "programs/aarch64/head",
+      "programs/aarch64/hexdump",
+      "programs/aarch64/hostid",
+      "programs/aarch64/id",
+      "programs/aarch64/install",
+      "programs/aarch64/join",
+      "programs/aarch64/kill",
+      "programs/aarch64/killall",
+      "programs/aarch64/ld",
+      "programs/aarch64/ld.bfd",
+      "programs/aarch64/less",
+      "programs/aarch64/link",
+      "programs/aarch64/ln",
+      "programs/aarch64/logname",
+      "programs/aarch64/look",
+      "programs/aarch64/ls",
+      "programs/aarch64/mawk",
+      "programs/aarch64/md5sum",
+      "programs/aarch64/mkdir",
+      "programs/aarch64/mkfifo",
+      "programs/aarch64/mknod",
+      "programs/aarch64/mktemp",
+      "programs/aarch64/more",
+      "programs/aarch64/mount",
+      "programs/aarch64/mv",
+      "programs/aarch64/nice",
+      "programs/aarch64/nl",
+      "programs/aarch64/nm",
+      "programs/aarch64/nohup",
+      "programs/aarch64/notify-send",
+      "programs/aarch64/nproc",
+      "programs/aarch64/numfmt",
+      "programs/aarch64/objcopy",
+      "programs/aarch64/objdump",
+      "programs/aarch64/od",
+      "programs/aarch64/paste",
+      "programs/aarch64/pathchk",
+      "programs/aarch64/pinky",
+      "programs/aarch64/pr",
+      "programs/aarch64/printenv",
+      "programs/aarch64/printf",
+      "programs/aarch64/ptx",
+      "programs/aarch64/pwd",
+      "programs/aarch64/ranlib",
+      "programs/aarch64/readelf",
+      "programs/aarch64/readlink",
+      "programs/aarch64/realpath",
+      "programs/aarch64/rev",
+      "programs/aarch64/rm",
+      "programs/aarch64/rmdir",
+      "programs/aarch64/runcon",
+      "programs/aarch64/sed",
+      "programs/aarch64/seq",
+      "programs/aarch64/sh",
+      "programs/aarch64/sha1sum",
+      "programs/aarch64/sha224sum",
+      "programs/aarch64/sha256sum",
+      "programs/aarch64/sha384sum",
+      "programs/aarch64/sha512sum",
+      "programs/aarch64/shred",
+      "programs/aarch64/shuf",
+      "programs/aarch64/size",
+      "programs/aarch64/sleep",
+      "programs/aarch64/sort",
+      "programs/aarch64/split",
+      "programs/aarch64/stat",
+      "programs/aarch64/stdbuf",
+      "programs/aarch64/strace",
+      "programs/aarch64/strings",
+      "programs/aarch64/strip",
+      "programs/aarch64/stty",
+      "programs/aarch64/sum",
+      "programs/aarch64/swapoff",
+      "programs/aarch64/swapon",
+      "programs/aarch64/sync",
+      "programs/aarch64/tac",
+      "programs/aarch64/tail",
+      "programs/aarch64/tar",
+      "programs/aarch64/tee",
+      "programs/aarch64/test",
+      "programs/aarch64/timeout",
+      "programs/aarch64/top",
+      "programs/aarch64/touch",
+      "programs/aarch64/tput",
+      "programs/aarch64/tr",
+      "programs/aarch64/true",
+      "programs/aarch64/truncate",
+      "programs/aarch64/tsort",
+      "programs/aarch64/tty",
+      "programs/aarch64/ul",
+      "programs/aarch64/umount",
+      "programs/aarch64/uname",
+      "programs/aarch64/uncompress",
+      "programs/aarch64/unexpand",
+      "programs/aarch64/uniq",
+      "programs/aarch64/unlink",
+      "programs/aarch64/unshare",
+      "programs/aarch64/unxz",
+      "programs/aarch64/unzip",
+      "programs/aarch64/uptime",
+      "programs/aarch64/users",
+      "programs/aarch64/vdir",
+      "programs/aarch64/watch",
+      "programs/aarch64/wc",
+      "programs/aarch64/wget",
+      "programs/aarch64/who",
+      "programs/aarch64/whoami",
+      "programs/aarch64/xargs",
+      "programs/aarch64/xz",
+      "programs/aarch64/xzcat",
+      "programs/aarch64/yes",
+      "programs/aarch64/zcat",
+      "programs/aarch64/zsync",
+      "programs/x86_64/7z",
+      "programs/x86_64/addr2line",
+      "programs/x86_64/ar",
+      "programs/x86_64/arch",
+      "programs/x86_64/as",
+      "programs/x86_64/b2sum",
+      "programs/x86_64/base32",
+      "programs/x86_64/base64",
+      "programs/x86_64/basename",
+      "programs/x86_64/basenc",
+      "programs/x86_64/bzip2",
+      "programs/x86_64/c++filt",
+      "programs/x86_64/cat",
+      "programs/x86_64/chcon",
+      "programs/x86_64/chgrp",
+      "programs/x86_64/chmod",
+      "programs/x86_64/chown",
+      "programs/x86_64/chroot",
+      "programs/x86_64/cksum",
+      "programs/x86_64/clear",
+      "programs/x86_64/col",
+      "programs/x86_64/colcrt",
+      "programs/x86_64/colrm",
+      "programs/x86_64/column",
+      "programs/x86_64/comm",
+      "programs/x86_64/cp",
+      "programs/x86_64/csplit",
+      "programs/x86_64/curl",
+      "programs/x86_64/cut",
+      "programs/x86_64/date",
+      "programs/x86_64/dd",
+      "programs/x86_64/df",
+      "programs/x86_64/diff",
+      "programs/x86_64/dir",
+      "programs/x86_64/dircolors",
+      "programs/x86_64/dirname",
+      "programs/x86_64/du",
+      "programs/x86_64/echo",
+      "programs/x86_64/elfedit",
+      "programs/x86_64/env",
+      "programs/x86_64/expand",
+      "programs/x86_64/expr",
+      "programs/x86_64/factor",
+      "programs/x86_64/false",
+      "programs/x86_64/file",
+      "programs/x86_64/find",
+      "programs/x86_64/fmt",
+      "programs/x86_64/fold",
+      "programs/x86_64/gawk",
+      "programs/x86_64/gp-archive",
+      "programs/x86_64/gp-collect-app",
+      "programs/x86_64/gp-display-html",
+      "programs/x86_64/gp-display-src",
+      "programs/x86_64/gp-display-text",
+      "programs/x86_64/gprof",
+      "programs/x86_64/gprofng",
+      "programs/x86_64/gprofng-archive",
+      "programs/x86_64/gprofng-collect-app",
+      "programs/x86_64/gprofng-display-html",
+      "programs/x86_64/gprofng-display-src",
+      "programs/x86_64/gprofng-display-text",
+      "programs/x86_64/gprofng-gmon",
+      "programs/x86_64/grep",
+      "programs/x86_64/groups",
+      "programs/x86_64/hd",
+      "programs/x86_64/head",
+      "programs/x86_64/hexdump",
+      "programs/x86_64/hostid",
+      "programs/x86_64/id",
+      "programs/x86_64/install",
+      "programs/x86_64/join",
+      "programs/x86_64/kill",
+      "programs/x86_64/killall",
+      "programs/x86_64/ld",
+      "programs/x86_64/ld.bfd",
+      "programs/x86_64/less",
+      "programs/x86_64/link",
+      "programs/x86_64/ln",
+      "programs/x86_64/logname",
+      "programs/x86_64/look",
+      "programs/x86_64/ls",
+      "programs/x86_64/mawk",
+      "programs/x86_64/md5sum",
+      "programs/x86_64/mkdir",
+      "programs/x86_64/mkfifo",
+      "programs/x86_64/mknod",
+      "programs/x86_64/mktemp",
+      "programs/x86_64/more",
+      "programs/x86_64/mount",
+      "programs/x86_64/mv",
+      "programs/x86_64/nice",
+      "programs/x86_64/nl",
+      "programs/x86_64/nm",
+      "programs/x86_64/nohup",
+      "programs/x86_64/notify-send",
+      "programs/x86_64/nproc",
+      "programs/x86_64/numfmt",
+      "programs/x86_64/objcopy",
+      "programs/x86_64/objdump",
+      "programs/x86_64/od",
+      "programs/x86_64/paste",
+      "programs/x86_64/pathchk",
+      "programs/x86_64/pinky",
+      "programs/x86_64/pr",
+      "programs/x86_64/printenv",
+      "programs/x86_64/printf",
+      "programs/x86_64/ptx",
+      "programs/x86_64/pwd",
+      "programs/x86_64/ranlib",
+      "programs/x86_64/readelf",
+      "programs/x86_64/readlink",
+      "programs/x86_64/realpath",
+      "programs/x86_64/rev",
+      "programs/x86_64/rm",
+      "programs/x86_64/rmdir",
+      "programs/x86_64/runcon",
+      "programs/x86_64/sed",
+      "programs/x86_64/seq",
+      "programs/x86_64/sh",
+      "programs/x86_64/sha1sum",
+      "programs/x86_64/sha224sum",
+      "programs/x86_64/sha256sum",
+      "programs/x86_64/sha384sum",
+      "programs/x86_64/sha512sum",
+      "programs/x86_64/shred",
+      "programs/x86_64/shuf",
+      "programs/x86_64/size",
+      "programs/x86_64/sleep",
+      "programs/x86_64/sort",
+      "programs/x86_64/split",
+      "programs/x86_64/stat",
+      "programs/x86_64/stdbuf",
+      "programs/x86_64/strace",
+      "programs/x86_64/strings",
+      "programs/x86_64/strip",
+      "programs/x86_64/stty",
+      "programs/x86_64/sum",
+      "programs/x86_64/swapoff",
+      "programs/x86_64/swapon",
+      "programs/x86_64/sync",
+      "programs/x86_64/tac",
+      "programs/x86_64/tail",
+      "programs/x86_64/tar",
+      "programs/x86_64/tee",
+      "programs/x86_64/test",
+      "programs/x86_64/timeout",
+      "programs/x86_64/top",
+      "programs/x86_64/touch",
+      "programs/x86_64/tput",
+      "programs/x86_64/tr",
+      "programs/x86_64/true",
+      "programs/x86_64/truncate",
+      "programs/x86_64/tsort",
+      "programs/x86_64/tty",
+      "programs/x86_64/ul",
+      "programs/x86_64/umount",
+      "programs/x86_64/uname",
+      "programs/x86_64/uncompress",
+      "programs/x86_64/unexpand",
+      "programs/x86_64/uniq",
+      "programs/x86_64/unlink",
+      "programs/x86_64/unshare",
+      "programs/x86_64/unxz",
+      "programs/x86_64/unzip",
+      "programs/x86_64/uptime",
+      "programs/x86_64/users",
+      "programs/x86_64/vdir",
+      "programs/x86_64/watch",
+      "programs/x86_64/wc",
+      "programs/x86_64/wget",
+      "programs/x86_64/who",
+      "programs/x86_64/whoami",
+      "programs/x86_64/xargs",
+      "programs/x86_64/xz",
+      "programs/x86_64/xzcat",
+      "programs/x86_64/yes",
+      "programs/x86_64/zcat",
+      "programs/x86_64/zsync"
+    ]
+  },
+  "deferred_appimage_queue": [
+    {
+      "alias": "https://api.github.com/repos/ivan-hc/Brave-appimage/releases",
+      "identity_request": "https://api.github.com/repos/ivan-hc/Brave-appimage",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/brave",
+        "programs/aarch64/brave-beta",
+        "programs/aarch64/brave-nightly",
+        "programs/x86_64/brave",
+        "programs/x86_64/brave-beta",
+        "programs/x86_64/brave-nightly"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/ARPA-SIMC/CRITERIA1D/releases",
+      "identity_request": "https://api.github.com/repos/ARPA-SIMC/CRITERIA1D",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/x86_64/criteria-geo",
+        "programs/x86_64/criteria1d",
+        "programs/x86_64/criteria1d-pro",
+        "programs/x86_64/heat1d",
+        "programs/x86_64/soil-editor"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/VitoVan/calm/releases",
+      "identity_request": "https://api.github.com/repos/VitoVan/calm",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/x86_64/calm-circles",
+        "programs/x86_64/calm-fan",
+        "programs/x86_64/calm-meditator",
+        "programs/x86_64/calm-mondrian"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/ivan-hc/Vivaldi-appimage/releases/latest",
+      "identity_request": "https://api.github.com/repos/ivan-hc/Vivaldi-appimage",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/vivaldi-snapshot",
+        "programs/aarch64/vivaldi-stable",
+        "programs/x86_64/vivaldi-snapshot",
+        "programs/x86_64/vivaldi-stable"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/mmtrt/WINE_AppImage/releases",
+      "identity_request": "https://api.github.com/repos/mmtrt/WINE_AppImage",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/x86_64/wine-devel",
+        "programs/x86_64/wine-stable",
+        "programs/x86_64/wine-staging",
+        "programs/x86_64/wine-staging-ge-proton"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/wekan/wekan/releases",
+      "identity_request": "https://api.github.com/repos/wekan/wekan",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/wekan",
+        "programs/armv7l/wekan",
+        "programs/i686/wekan",
+        "programs/x86_64/wekan"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/OpenRA/OpenRA/releases",
+      "identity_request": "https://api.github.com/repos/OpenRA/OpenRA",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/x86_64/openra-dune",
+        "programs/x86_64/openra-red-alert",
+        "programs/x86_64/openra-tiberian-dawn"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/ivan-hc/Blender-appimage/releases?per_page=100",
+      "identity_request": "https://api.github.com/repos/ivan-hc/Blender-appimage",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/x86_64/blender-alpha",
+        "programs/x86_64/blender-beta",
+        "programs/x86_64/blender-rc"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/ivan-hc/Opera-appimage/releases",
+      "identity_request": "https://api.github.com/repos/ivan-hc/Opera-appimage",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/x86_64/opera",
+        "programs/x86_64/opera-beta",
+        "programs/x86_64/opera-dev"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/ivan-hc/SuperTuxKart-appimage/releases",
+      "identity_request": "https://api.github.com/repos/ivan-hc/SuperTuxKart-appimage",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/supertuxkart-dev",
+        "programs/i686/supertuxkart-dev",
+        "programs/x86_64/supertuxkart-dev"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/ivan-hc/SuperTuxKart-appimage/releases/latest",
+      "identity_request": "https://api.github.com/repos/ivan-hc/SuperTuxKart-appimage",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/supertuxkart",
+        "programs/i686/supertuxkart",
+        "programs/x86_64/supertuxkart"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/ivan-hc/Yandex-Browser-appimage/releases",
+      "identity_request": "https://api.github.com/repos/ivan-hc/Yandex-Browser-appimage",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/x86_64/yandex-browser",
+        "programs/x86_64/yandex-browser-beta",
+        "programs/x86_64/yandex-browser-corporate"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/kubernetes-sigs/headlamp/releases",
+      "identity_request": "https://api.github.com/repos/kubernetes-sigs/headlamp",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/headlamp",
+        "programs/armv7l/headlamp",
+        "programs/x86_64/headlamp"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/mysteryx93/NaturalGroundingPlayer/releases",
+      "identity_request": "https://api.github.com/repos/mysteryx93/NaturalGroundingPlayer",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/x86_64/432hz-player",
+        "programs/x86_64/converter432hz",
+        "programs/x86_64/powerliminals-player"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/pkgforge-dev/ghostty-appimage/releases",
+      "identity_request": "https://api.github.com/repos/pkgforge-dev/ghostty-appimage",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/x86_64/ghostty-glfw",
+        "programs/x86_64/ghostty-glfw-nightly",
+        "programs/x86_64/ghostty-nightly"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/0xbl33p/goblintown/releases",
+      "identity_request": "https://api.github.com/repos/0xbl33p/goblintown",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/goblintown",
+        "programs/x86_64/goblintown"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/0xerwin1/dbflux/releases",
+      "identity_request": "https://api.github.com/repos/0xerwin1/dbflux",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/dbflux",
+        "programs/x86_64/dbflux"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/1337raspberry/ramus/releases",
+      "identity_request": "https://api.github.com/repos/1337raspberry/ramus",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/ramus",
+        "programs/x86_64/ramus"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/1783cwf/local-lake-notes/releases",
+      "identity_request": "https://api.github.com/repos/1783cwf/local-lake-notes",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/local-lake-notes",
+        "programs/x86_64/local-lake-notes"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/2303886347/ros-navigation-algorithm-visual-learning-platform/releases",
+      "identity_request": "https://api.github.com/repos/2303886347/ros-navigation-algorithm-visual-learning-platform",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/ros-navigation-learning-platform",
+        "programs/x86_64/ros-navigation-learning-platform"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/239573049/astra-gate/releases",
+      "identity_request": "https://api.github.com/repos/239573049/astra-gate",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/astra-gate",
+        "programs/x86_64/astra-gate"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/3516634930/payloader/releases",
+      "identity_request": "https://api.github.com/repos/3516634930/payloader",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/payloader",
+        "programs/x86_64/payloader"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/3kh0/slick/releases",
+      "identity_request": "https://api.github.com/repos/3kh0/slick",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/slick",
+        "programs/x86_64/slick"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/77elements/noornote/releases",
+      "identity_request": "https://api.github.com/repos/77elements/noornote",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/noornote",
+        "programs/x86_64/noornote"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/7836246/kcode/releases",
+      "identity_request": "https://api.github.com/repos/7836246/kcode",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/kcode",
+        "programs/x86_64/kcode"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/999sian/melee-pc/releases",
+      "identity_request": "https://api.github.com/repos/999sian/melee-pc",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/melee-pc",
+        "programs/x86_64/melee-pc"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/AChep/keyguard-app/releases",
+      "identity_request": "https://api.github.com/repos/AChep/keyguard-app",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/keyguard",
+        "programs/x86_64/keyguard"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/ActivityWatch/activitywatch/releases",
+      "identity_request": "https://api.github.com/repos/ActivityWatch/activitywatch",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/activitywatch",
+        "programs/x86_64/activitywatch"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/AmarOk1412/Eksplode.re/releases",
+      "identity_request": "https://api.github.com/repos/AmarOk1412/Eksplode.re",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/x86_64/eksplode.re",
+        "programs/x86_64/exsplode.re"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/AshBuk/dabri/releases",
+      "identity_request": "https://api.github.com/repos/AshBuk/dabri",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/dabri",
+        "programs/x86_64/dabri"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/Boteium/muon-pdf/releases",
+      "identity_request": "https://api.github.com/repos/Boteium/muon-pdf",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/muon-pdf",
+        "programs/x86_64/muon-pdf"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/Chatterino/chatterino2/releases",
+      "identity_request": "https://api.github.com/repos/Chatterino/chatterino2",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/x86_64/chatterino2",
+        "programs/x86_64/chatterino2-nightly"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/DRAZY/deemix-remastered/releases",
+      "identity_request": "https://api.github.com/repos/DRAZY/deemix-remastered",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/deemix-remastered",
+        "programs/x86_64/deemix-remastered"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/DavidVentura/offline-translator-linux/releases",
+      "identity_request": "https://api.github.com/repos/DavidVentura/offline-translator-linux",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/offline-translator",
+        "programs/x86_64/offline-translator"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/GCWing/OpenBitFun/releases",
+      "identity_request": "https://api.github.com/repos/GCWing/OpenBitFun",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/openbitfun",
+        "programs/x86_64/openbitfun"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/ImageMagick/ImageMagick/releases",
+      "identity_request": "https://api.github.com/repos/ImageMagick/ImageMagick",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/x86_64/imagemagick-clang",
+        "programs/x86_64/imagemagick-gcc"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/Jermolene/TiddlyDesktop/releases",
+      "identity_request": "https://api.github.com/repos/Jermolene/TiddlyDesktop",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/tiddlydesktop",
+        "programs/x86_64/tiddlydesktop"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/KeithDHedger/KKEditQT/releases",
+      "identity_request": "https://api.github.com/repos/KeithDHedger/KKEditQT",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/x86_64/kkedit-qt",
+        "programs/x86_64/kkeditqt"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/KejPi/AbracaDABra/releases",
+      "identity_request": "https://api.github.com/repos/KejPi/AbracaDABra",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/abracadabra",
+        "programs/x86_64/abracadabra"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/Korkman/macemu-appimage-builder/releases",
+      "identity_request": "https://api.github.com/repos/Korkman/macemu-appimage-builder",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/x86_64/basilisk2",
+        "programs/x86_64/sheepshaver"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/LifetimeLabsDev/privacynotes.app/releases",
+      "identity_request": "https://api.github.com/repos/LifetimeLabsDev/privacynotes.app",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/privacynotes",
+        "programs/x86_64/privacynotes"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/Oleafly/Oleafly/releases",
+      "identity_request": "https://api.github.com/repos/Oleafly/Oleafly",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/oleafly",
+        "programs/x86_64/oleafly"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/OpenCloudGaming/OpenNOW/releases",
+      "identity_request": "https://api.github.com/repos/OpenCloudGaming/OpenNOW",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/opennow",
+        "programs/x86_64/opennow"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/PolyMC/PolyMC/releases/latest",
+      "identity_request": "https://api.github.com/repos/PolyMC/PolyMC",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/polymc",
+        "programs/x86_64/polymc"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/Portable-Linux-Apps/floorp-AppImage/releases",
+      "identity_request": "https://api.github.com/repos/Portable-Linux-Apps/floorp-AppImage",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/floorp",
+        "programs/x86_64/floorp"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/Portable-Linux-Apps/lapce-AppImage/releases",
+      "identity_request": "https://api.github.com/repos/Portable-Linux-Apps/lapce-AppImage",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/lapce",
+        "programs/x86_64/lapce"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/RaphaelMartin83/MeMoTo/releases",
+      "identity_request": "https://api.github.com/repos/RaphaelMartin83/MeMoTo",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/memoto",
+        "programs/x86_64/memoto"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/Rodert/qq-versions/releases",
+      "identity_request": "https://api.github.com/repos/Rodert/qq-versions",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/linuxqq",
+        "programs/x86_64/linuxqq"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/Shikakiben/SaveDesktop-AppImage/releases",
+      "identity_request": "https://api.github.com/repos/Shikakiben/SaveDesktop-AppImage",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/aarch64/savedesktop",
+        "programs/x86_64/savedesktop"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/UltraStar-Deluxe/USDX/releases",
+      "identity_request": "https://api.github.com/repos/UltraStar-Deluxe/USDX",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "identity_status": "missing-reviewed-evidence",
+      "recipes": [
+        "programs/i686/usdx",
+        "programs/x86_64/usdx"
+      ]
+    }
+  ]
+}
