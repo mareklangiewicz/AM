@@ -640,3 +640,11 @@ HTTP 200, 4965 body bytes / 1323 header bytes in 0.557 s. Exact evidence committ
 as `4a9aadb90`; candidate numeric descriptor recorded afterward, without validators.
 No release request, operational enrollment, source push or schedule change; 48/49
 remain blocked pending actual accepted release availability.
+
+
+2026-10-28: [47 numeric release evidence](research/am-utils-release-findings.md).
+One separately approved bounded GET succeeded (HTTP 200, 2.72 MB, 1.777 s).
+All 356 original selectors audited offline: 354 choose saved assets; both c++filt
+recipes miss GitHub's encoded-plus URLs. No filter changes; whole-family
+compatibility and operational enrollment remain incomplete. Existing guards/pilot
+pin unchanged, no push or workflow/host operation; 48/49 stay blocked.

@@ -73,3 +73,22 @@ No release request or enrollment/publication occurred. Next is a separately
 reviewable bounded numeric release-read proposal and its authorization, followed
 by 356-selector/resource verification. Status remains claimed/needs-info; 48/49
 remain blocked. No push, repin, workflow or host change.
+
+
+## Approved bounded release stage — 2026-10-28
+
+The user's follow-up approved the next bounded release read. One unauthenticated
+numeric GET returned HTTP 200: 2,722,290 bytes in 1.777211 seconds, six releases /
+1750 assets. [Exact evidence and offline audit](../research/am-utils-release-findings.md)
+retain request/body/header hashes, bounds and original-selector differential checks.
+All 356 selectors reproduce original behavior; 354 select actual assets. Both
+c++filt recipes miss because actual URLs encode the plus signs as `%2B%2B` and
+the original patterns use unescaped APP regex text. Diagnostic only; filters were
+not changed. No additional request or automatic fallback.
+
+This supersedes the earlier missing numeric-route evidence, but does not establish
+full family compatibility or operational enrollment. Next is explicit treatment of
+the two selector exceptions and coordinated seven-source offline storage/delivery
+verification, before a separately approved collection/publication stage. Six-source
+manifest/guards, pilot source pin and schedule are unchanged. Status remains
+claimed/needs-info, with 48/49 still blocked.

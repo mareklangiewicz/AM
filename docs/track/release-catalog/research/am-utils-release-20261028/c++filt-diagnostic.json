@@ -1,0 +1,34 @@
+{
+  "aarch64": {
+    "original": {
+      "pattern": "https.*download.*/aarch64-[0-9]{8}/c++filt_.*-aarch64-static$",
+      "matches": []
+    },
+    "escaped_only": {
+      "pattern": "https.*download.*/aarch64-[0-9]{8}/c\\+\\+filt_.*-aarch64-static$",
+      "matches": []
+    },
+    "url_encoded": {
+      "pattern": "https.*download.*/aarch64-[0-9]{8}/c%2B%2Bfilt_.*-aarch64-static$",
+      "matches": [
+        "https://github.com/ivan-hc/am-utils/releases/download/aarch64-20260526/c%2B%2Bfilt_2.46-3-aarch64-static"
+      ]
+    }
+  },
+  "x86_64": {
+    "original": {
+      "pattern": "https.*download.*/x86_64-[0-9]{8}/c++filt_.*-x86_64-static$",
+      "matches": []
+    },
+    "escaped_only": {
+      "pattern": "https.*download.*/x86_64-[0-9]{8}/c\\+\\+filt_.*-x86_64-static$",
+      "matches": []
+    },
+    "url_encoded": {
+      "pattern": "https.*download.*/x86_64-[0-9]{8}/c%2B%2Bfilt_.*-x86_64-static$",
+      "matches": [
+        "https://github.com/ivan-hc/am-utils/releases/download/x86_64-20260526/c%2B%2Bfilt_2.46-3-x86_64-static"
+      ]
+    }
+  }
+}

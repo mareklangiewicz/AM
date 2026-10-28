@@ -145,3 +145,14 @@ request ID from the exact pinned representation and starts without validators.
 The historical first-stage instructions above explain the procedure; this evidence
 supersedes only its missing-identity state. No second-stage request is authorized
 or performed. Six-source operation and 48/49 blockers remain unchanged.
+
+
+## Numeric response stage completed — 2026-10-28
+
+A separately approved single bounded numeric release GET succeeded: HTTP 200,
+2,722,290 bytes / 1.777211 seconds. [Evidence and selector audit](../research/am-utils-release-findings.md)
+show 354/356 original selectors select actual assets, with both c++filt recipes
+missing encoded-plus URLs. Original policies remain unchanged; full family
+compatibility is unproven. This supersedes the preceding unrequested-route state,
+without accepting operational enrollment or changing any source/count guards.
+No conditional repeat, seven-source candidate/publication, push or schedule change.
