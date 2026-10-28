@@ -660,3 +660,10 @@ tree 7.62 MB, ZIP 554 KB, local object growth 147 KB; unchanged byte/time caps.
 Operational manifest/workflow/controller still select six sources. No live request,
 source push/repin, schedule change or host delivery; 47 remains partial/ready-for-human
 and 48/49 remain blocked. Pilot closure/daily switch retain their separate scope.
+
+
+2026-10-28: [48 offline preparation](design/shared-executable-preparation.md).
+Static audit confirms one lifecycle body across all 356 utility recipes, identifies
+the two identity-validation exceptions and records the proposed shared interface,
+installer integration and verification sequence. No production implementation,
+live enrollment, host delivery or pilot change; 48 remains blocked by 47.

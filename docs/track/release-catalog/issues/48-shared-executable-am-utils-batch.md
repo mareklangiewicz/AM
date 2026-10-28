@@ -39,3 +39,15 @@ Preserve legacy support still used elsewhere. Complete code/tests/docs and commi
 locally in useful chunks. No host migration, new collection or workflow activation
 is implied by implementation. If only the utility source stage of ticket 47 is
 complete, cite its actual accepted evidence before unblocking this ticket.
+
+## Offline preparation 2026-10-28
+
+At Marek's request, completed the [representative review and proposed shared
+interface](../design/shared-executable-preparation.md), with a reproducible static
+audit of every frozen recipe. All 356 have one lifecycle shape after removing only
+identity and selector declarations; current size is 18,868 lines / 673,212 bytes
+after the reviewed c++filt fixes. Existing AppImage validation rejects c++filt and
+ld.bfd; extended-regex selectors need preservation through the existing custom
+selector seam. Plan shares lifecycle mechanics with a format-specific integration
+branch and preserves installed entry-point compatibility. No implementation or
+operational enrollment; this ticket remains open and blocked by 47.
