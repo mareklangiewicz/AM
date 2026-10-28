@@ -421,3 +421,10 @@ publication pins. Retained prior prepares offline; 107 tests pass. Concrete
 [six-source manual run and publication plan](research/manual-freshness-run-plan.md)
 is ready; [34](issues/34-one-manual-freshness-run.md) awaits explicit run approval.
 No collection, dispatch, publication, schedule or app operation in preparation.
+
+
+2026-10-28: [34 resolved: manual freshness refresh](issues/34-one-manual-freshness-run.md).
+One approved run 40606441534, six conditional 200s, exact-prior child e8e5cf962
+published; full artifact/tree/permission verification and two pinned public helper
+GETs pass. [Persistent evidence](research/manual-freshness-run-findings.md).
+Obsidian fresh through 2026-10-29T00:05:15.676301Z; no recurring schedule or app run.

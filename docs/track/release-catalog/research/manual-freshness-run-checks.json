@@ -1,0 +1,74 @@
+{
+  "publication": {
+    "commit": "e8e5cf96295369d90402d7584853eb1d3436463d",
+    "parent": "a0fdd125558c4629a07c7edd0d7f6f7f96b1dcc1",
+    "ref": "refs/heads/release-catalog",
+    "source_revision": "3ad023822c4df52e3f69874b21200899bf7d3e82",
+    "run_id": "40606441534",
+    "run_attempt": "1",
+    "artifact_id": "12780649040",
+    "artifact_digest": "86a1ec4a715e532517797c3c1eb7a99b9eaf8511c12d64e5204b8d331e67c1e2",
+    "index_sha256": "6f58c31251c093a202d81a5a715b8e6b01c8f09744f62ab98502e8bfbbb12f28",
+    "tree_bytes": 4898621
+  },
+  "collection": {
+    "attempted": 6,
+    "completed": 6,
+    "not_attempted": [],
+    "stop_reason": null,
+    "all_attempted": true,
+    "complete": true,
+    "received_bytes": 4877766,
+    "elapsed_seconds": 6.319069174999999
+  },
+  "status_counts": {
+    "200": 6
+  },
+  "prior_conditions_verified": 6,
+  "tree_recomputation_equal": true,
+  "permission_log_lines": {
+    "collect": [
+      "2026-10-28T00:05:08.5751457Z Contents: read",
+      "2026-10-28T00:05:08.5752062Z Metadata: read"
+    ],
+    "publish": [
+      "2026-10-28T00:05:27.5978356Z Actions: read",
+      "2026-10-28T00:05:27.5978710Z Contents: write",
+      "2026-10-28T00:05:27.5979122Z Metadata: read"
+    ]
+  },
+  "obsidian_observation": {
+    "bytes": 450991,
+    "link": "<https://api.github.com/repositories/262342594/releases?page=2>; rel=\"next\", <https://api.github.com/repositories/262342594/releases?page=6>; rel=\"last\"",
+    "path": "bodies/98c8484a8be11cb446c110c6c2a36368618e2015793a4e241ab3aeef7a867205.json",
+    "received_at": "2026-10-28T00:05:15.676301+00:00",
+    "received_time_basis": "response-completed",
+    "scope": "single-response",
+    "sha256": "fbaf02376516615343c339b54834811ba72a42c2d2049582086a6550af1b3a6d",
+    "validated_at": "2026-10-28T00:05:15.676301+00:00",
+    "validation_status": 200,
+    "validation_time_basis": "response-completed"
+  },
+  "obsidian_fresh_through": "2026-10-29T00:05:15.676301+00:00",
+  "public_read": {
+    "successful_gets": 2,
+    "exact_tree_bytes": true,
+    "empty_stderr": true,
+    "filter_url": "https://github.com/obsidianmd/obsidian-releases/releases/download/v1.14.5/Obsidian-1.14.5.AppImage",
+    "result": {
+      "start": "2026-10-28T00:06:24.216719+00:00",
+      "end": "2026-10-28T00:06:25.866077+00:00",
+      "command": [
+        "sh",
+        "/home/marek/code/shell/AM/modules/catalog.am",
+        "https://api.github.com/repos/obsidianmd/obsidian-releases/releases",
+        "--commit",
+        "e8e5cf96295369d90402d7584853eb1d3436463d"
+      ],
+      "AMREPO": "https://raw.githubusercontent.com/mareklangiewicz/AM/main-marek",
+      "helper_sha256": "b827f9febc90a45012f540926674f8f4210e3e1f3626cb30050b4422092be6fc",
+      "returncode": 0,
+      "stdout_bytes": 450991
+    }
+  }
+}
