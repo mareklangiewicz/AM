@@ -16,7 +16,7 @@ am_appimage() (
 	[ -n "$version" ] || { echo 'Error getting link' >&2; exit 3; }
 	APPS_DIR=${APPS_DIR%/}
 	dir="$APPS_DIR/$APP"
-	if [ "$mode" = update ] && [ "$version" = "$(cat "$dir/version")" ] &&
+	if [ "$mode" = update ] && [ "${REFRESH_ALWAYS-false}" = false ] && [ "$version" = "$(cat "$dir/version")" ] &&
 		! grep -sq '^Checksum failure$' "$dir/AM-VERIFIED"; then
 		echo 'Update not needed!'; exit 0
 	fi

@@ -1,6 +1,6 @@
 # /bin/sh remains Fedora's bash; Debian uses dash.
 FROM registry.fedoraproject.org/fedora:latest
-RUN dnf install -y --setopt=install_weak_deps=False bash python3 sudo curl wget \
+RUN dnf install -y --setopt=install_weak_deps=False bash python3 sudo curl wget git \
       ca-certificates coreutils findutils grep sed gawk binutils util-linux \
       file xz unzip 7zip libnotify ncurses \
  && dnf clean all

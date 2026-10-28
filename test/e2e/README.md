@@ -41,7 +41,7 @@ app-directory mount is used. Container sudo policy and adapters are test-only.
   checksum. A small legacy recipe is installed through normal AM dispatch to
   exercise a mixed batch; it is not a migrated catalog recipe.
 
-Eight scenarios on each target cover:
+Nine scenarios on each target cover:
 
 1. System recipe installation, expected retained URL, desktop extraction, binary
    symlink, source embedding, real checksum verification and standalone updater.
@@ -61,6 +61,21 @@ Eight scenarios on each target cover:
 The existing Python catalog tests remain the faster, more detailed retained-data
 regression suite. This matrix closes the whole-command, privilege/environment and
 cross-distro gap; it supplements those tests.
+
+9. Neovim stable/nightly installation from retained observations, repeated nightly
+   download at its unchanged URL, standalone updater, failed transfer/retry and
+   stale refusal, preserving a user-level nvim symlink and configuration sentinel.
+
+Optional real-binary startup checks (cached matrix images required):
+
+```sh
+./test/e2e/neovim-smoke /opt/nvim/nvim /opt/nvim-nightly/nvim-nightly
+```
+
+This mounts only the specified executable read-only and uses network-disabled,
+read-only containers with disposable writable homes/extraction state. It runs
+`--version` and headless startup with `-u NONE -i NONE` on both distributions.
+It does not load host plugins/configuration or download a new upstream binary.
 
 ## Results
 

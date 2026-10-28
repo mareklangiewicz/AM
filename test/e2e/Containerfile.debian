@@ -2,7 +2,7 @@
 FROM debian:stable-slim
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
- && apt-get install -y --no-install-recommends bash python3 sudo curl wget \
+ && apt-get install -y --no-install-recommends bash python3 sudo curl wget git \
       ca-certificates coreutils findutils grep sed gawk binutils util-linux \
       bsdextrautils file xz-utils unzip p7zip-full libnotify-bin ncurses-bin \
  && rm -rf /var/lib/apt/lists/*

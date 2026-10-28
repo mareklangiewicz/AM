@@ -1,0 +1,12 @@
+Baseline: e38e8b844
+python3 -m unittest discover -s tools/catalog-collector: 182 passed (120.393 s)
+python3 -m unittest discover -s tools/catalog-probe: 8 passed
+./test/e2e/run: Debian/dash 9 scenarios / 28 commands passed; Fedora/bash 9 / 28 passed
+Final matrix: 20261028T165408Z-480067; runtime networking disabled
+Optional existing-binary smoke passed; host-specific logs retained privately
+POSIX/Bash syntax and changed shell warning-level ShellCheck: passed
+Manager warning-code counts identical to baseline
+Manager baseline/current SC1090=3 SC2034=5 SC2088=1 SC2140=5 SC2154=2 SC2216=1 SC2247=1
+Synthetic empty metadata is explicitly labeled; other selectors use retained bytes
+No host app/config/helper writes, fresh download, source push, workflow or publication change
+Evidence SHA256: a5b117c325d378b8d59f9400174021e12483743065359cda97a249528103439e

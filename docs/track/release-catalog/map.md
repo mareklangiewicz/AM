@@ -570,3 +570,26 @@ real no-argument sync. 149 catalog tests, syntax/lint/baseline warning checks an
 diff checks pass. Runtime networking disabled; retained observations/inert binaries,
 not live upstream assets. No host delivery, production workflow or source push.
 Ticket 46 remains next; timed 37/41 remain independent.
+
+
+2026-10-28: [46 resolved](issues/46-migrate-remaining-neovim-appimages.md)
+migrates the three remaining Neovim recipes with exact selectors and retained
+assets. A demonstrated mutable nightly URL requires one trusted refresh flag;
+explicit nightly updates now redownload after acceptance. Container whole-command
+matrix passes 18 scenarios / 56 commands, and existing real stable/nightly
+AppImages pass isolated startup on both distributions. Host updaters/configuration
+remain untouched. [51](issues/51-prepare-neovim-host-delivery.md) tracks legacy
+payload rehearsal, copied-config compatibility and rollback before live delivery.
+182 catalog + 8 historical probe tests, syntax/lint and unchanged manager warning
+baseline pass. [Checks/evidence](research/neovim-migration-46-checks.txt) retain
+actual successful runs. Timed 37/41 and no-source-push restriction remain independent.
+
+
+2026-10-28: [51 resolved: prepared Neovim delivery](issues/51-prepare-neovim-host-delivery.md).
+Private delivery/rollback rehearsal and isolated configuration startup checks pass
+on Debian/Fedora. Host-specific inventories, payloads, paths/hashes, plugin lists
+and logs are retained locally outside publishable history. Added Git to container
+environments; the public fixture matrix passes 18 scenarios / 56 commands.
+No host delivery, upstream binary download, source push or operational change.
+Timed 37/41 remain independent. Earlier unpublished inclusion of host metadata
+was removed by rewriting the unpublished commits before publication.

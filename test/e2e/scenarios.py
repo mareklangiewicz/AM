@@ -46,7 +46,7 @@ class InstalledCLI(unittest.TestCase):
         inputs=['test/e2e/scenarios.py','test/e2e/external.py','test/e2e/run',
                 'test/e2e/container-test.sh','test/e2e/fixtures/e2e-legacy',
                 'test/e2e/Containerfile.debian','test/e2e/Containerfile.fedora',
-                'APP-MANAGER','programs/x86_64/obsidian','programs/x86_64/sqlitebrowser',
+                'APP-MANAGER','programs/x86_64/nvim','programs/x86_64/nvim-nightly','programs/x86_64/obsidian','programs/x86_64/sqlitebrowser',
                 'docs/track/release-catalog/design/staged-manifest.json',
                 'docs/track/release-catalog/research/supervised-baseline-40529551070-evidence.tar.gz']
         (OUT/'tested-source.json').write_text(json.dumps({
@@ -63,7 +63,7 @@ class InstalledCLI(unittest.TestCase):
         for name in ('curl','wget','date','notify-send'):
             (self.bin/name).symlink_to('/src/test/e2e/external.py')
         self.settings = {'source':SOURCE,'repository':'e2e-selected/AM','pin':PIN,
-            'clock':'1793114400.000000','assets':[OBSIDIAN,SQLITE],
+            'clock':'1793114400.000000','assets':[OBSIDIAN,SQLITE,'https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.appimage','https://github.com/neovim/neovim/releases/download/v0.12.6/nvim-linux-x86_64.appimage'],
             'catalog_paths':list(self.tree)}
         self.configure()
         shutil.copy2('/src/test/e2e/fixtures/e2e-legacy',self.fixture/'legacy-recipe')
@@ -84,7 +84,7 @@ case ${1-} in
 esac
 ''')
         self.home=self.fixture/'home';self.home.mkdir()
-        for name in ('obsidian','sqlitebrowser','e2e-legacy'):
+        for name in ('obsidian','sqlitebrowser','nvim','nvim-nightly','e2e-legacy'):
             shutil.rmtree(Path('/opt')/name,ignore_errors=True)
             launcher=Path('/usr/local/bin')/name
             if launcher.is_symlink() or launcher.exists(): launcher.unlink()
@@ -105,8 +105,8 @@ esac
         (data/'locale').write_text('en\n')
         (data/'disable-dependencies-prompt').touch()
         (data/'newrepo-on').write_text(SOURCE+'\n')
-        (data/'x86_64-apps').write_text('◆ obsidian : Offline fixture\n◆ sqlitebrowser : Offline fixture\n')
-        (data/'x86_64-appimages').write_text('obsidian\nsqlitebrowser\n')
+        (data/'x86_64-apps').write_text('◆ obsidian : Offline fixture\n◆ sqlitebrowser : Offline fixture\n◆ nvim : Offline fixture\n◆ nvim-nightly : Offline fixture\n')
+        (data/'x86_64-appimages').write_text('obsidian\nsqlitebrowser\nnvim\nnvim-nightly\n')
         (home/'.local/bin').mkdir(parents=True,exist_ok=True)
         if appman:
             apps=home/'Applications';apps.mkdir()
@@ -160,6 +160,38 @@ esac
                 ('file',path.read_bytes(),path.stat().st_mode,path.stat().st_mtime_ns) if path.is_file() else
                 ('dir',path.stat().st_mode)
                 for path in directory.rglob('*')}
+
+    def test_neovim_stable_and_nightly_refresh_preserve_user_setup(self):
+        # Both selectors use retained observations; executable bytes are inert.
+        config=self.home/'.config/nvim';config.mkdir(parents=True)
+        (config/'init.lua').write_text('-- untouched user configuration\n')
+        launcher=self.home/'.local/bin/nvim'
+        launcher.symlink_to('/opt/nvim-nightly/nvim-nightly')
+        before=self.snapshot(self.home/'.config')
+        self.command('-i','nvim')
+        app=Path('/opt/nvim')
+        self.assertEqual((app/'version').read_text().strip(),
+            'https://github.com/neovim/neovim/releases/download/v0.12.6/nvim-linux-x86_64.appimage')
+        self.command('--commit',PIN,executable=str(app/'AM-updater'))
+        self.command('-i','nvim-nightly')
+        nightly=Path('/opt/nvim-nightly')
+        old=(nightly/'nvim-nightly').read_bytes()
+        self.configure(download_fail=True)
+        self.command('-u','nvim-nightly','--commit',PIN,success=False)
+        self.assertEqual((nightly/'nvim-nightly').read_bytes(),old)
+        self.configure(download_fail=False)
+        result=self.command('-u','nvim-nightly','--commit',PIN)
+        self.assertIn('nvim-nightly: updated',result.stdout)
+        previous=set((self.fixture/'calls').iterdir())
+        self.command('--commit',PIN,executable=str(nightly/'AM-updater'))
+        calls=[json.loads(p.read_text()) for p in set((self.fixture/'calls').iterdir())-previous]
+        self.assertTrue(any(c['tool']=='wget' and c['url'].endswith('/nightly/nvim-linux-x86_64.appimage') for c in calls))
+        self.configure(clock='1793500000.000000')
+        before_app=self.snapshot(nightly)
+        self.command('-u','nvim-nightly','--commit',PIN,success=False)
+        self.assertEqual(self.snapshot(nightly),before_app)
+        self.assertEqual(os.readlink(launcher),'/opt/nvim-nightly/nvim-nightly')
+        self.assertEqual(self.snapshot(self.home/'.config'),before)
 
     def test_system_install_and_standalone_updater(self):
         result=self.command('-i','obsidian')

@@ -1,0 +1,23 @@
+#!/bin/sh
+# Optional real installed AppImage smoke test. Host files are mounted read-only;
+# all extraction, home and editor state are disposable and networking is disabled.
+set -eu
+ENGINE=${ENGINE:-podman}
+[ "$#" -gt 0 ] || { echo "Usage: $0 /absolute/path/to/neovim.AppImage [...]" >&2; exit 2; }
+for binary do
+    case $binary in /*) ;; *) echo 'Use an absolute binary path' >&2; exit 2 ;; esac
+    [ -f "$binary" ] || exit 2
+    sha256sum "$binary"
+    for target in debian fedora; do
+        printf 'Real AppImage smoke: %s / %s\n' "$binary" "$target"
+        "$ENGINE" run --rm --network=none --read-only --tmpfs /tmp:rw,exec \
+            -v "$binary:/neovim.AppImage:ro" --entrypoint /bin/sh \
+            "localhost/am-cli-e2e:$target" -c '
+                export HOME=/tmp/home XDG_CONFIG_HOME=/tmp/config XDG_DATA_HOME=/tmp/data XDG_STATE_HOME=/tmp/state XDG_CACHE_HOME=/tmp/cache
+                mkdir -p "$HOME"
+                export APPIMAGE_EXTRACT_AND_RUN=1
+                /neovim.AppImage --version
+                /neovim.AppImage --headless -u NONE -i NONE "+lua assert(vim.fn.has(\"nvim\") == 1); print(\"isolated headless smoke passed\")" +qa
+            '
+    done
+done

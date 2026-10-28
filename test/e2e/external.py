@@ -42,7 +42,7 @@ elif url.startswith(source+'/modules/'):
     if name in {p.name for p in Path('/src/modules').glob('*.am')}:
         raw=(Path('/src/modules')/name).read_bytes()
 elif url == source+'/programs/x86_64-appimages':
-    raw = b'\xe2\x97\x86 obsidian : Offline fixture\n\xe2\x97\x86 sqlitebrowser : Offline fixture\n'
+    raw = b'\xe2\x97\x86 obsidian : Offline fixture\n\xe2\x97\x86 sqlitebrowser : Offline fixture\n\xe2\x97\x86 nvim : Offline fixture\n\xe2\x97\x86 nvim-nightly : Offline fixture\n'
 elif url == source+'/programs/x86_64-portable':
     raw = b''
 elif url == source+'/programs/archived-apps':
@@ -50,12 +50,12 @@ elif url == source+'/programs/archived-apps':
 elif url == source+'/programs/obsolete-apps':
     raw = b'# OBSOLETE SOURCES\n'
 elif url == source+'/programs/x86_64-apps':
-    raw = b'\xe2\x97\x86 obsidian : Offline fixture\n\xe2\x97\x86 sqlitebrowser : Offline fixture\n'
+    raw = b'\xe2\x97\x86 obsidian : Offline fixture\n\xe2\x97\x86 sqlitebrowser : Offline fixture\n\xe2\x97\x86 nvim : Offline fixture\n\xe2\x97\x86 nvim-nightly : Offline fixture\n'
 elif url.startswith(source+'/programs/x86_64/'):
     app = url.removeprefix(source+'/programs/x86_64/')
     if app == 'e2e-legacy' and (fixture/'legacy-recipe').is_file():
         raw = (fixture/'legacy-recipe').read_bytes()
-    elif app in ('obsidian', 'sqlitebrowser'):
+    elif app in ('obsidian', 'sqlitebrowser', 'nvim', 'nvim-nightly'):
         raw = (Path('/src/programs/x86_64')/app).read_bytes()
 elif url == 'https://api.github.com/repos/'+settings['repository']+'/commits/heads/release-catalog':
     raw = (settings['pin']+'\n').encode()

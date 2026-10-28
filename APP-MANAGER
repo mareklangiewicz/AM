@@ -2165,7 +2165,7 @@ _update_launchers() {
 _catalog_update() {
 (
 	shift
-	local entry path app argpath arg pure_arg before after result status=0 found existing repair
+	local entry path app argpath arg pure_arg before before_binary after result status=0 found existing repair
 	local debug_update="${debug_update-}" launcher=false apps=false
 	local -a batch_names=() options=() paths=() roots=("$APPSPATH")
 	while [ "$#" -gt 0 ]; do
@@ -2226,6 +2226,7 @@ _catalog_update() {
 			status=1; continue
 		fi
 		before=$(cat "$argpath/version" 2>/dev/null)
+		before_binary=$(stat -c '%d:%i:%y' "$argpath/$arg" 2>/dev/null)
 		repair=false
 		grep -sq '^Checksum failure$' "$argpath/AM-VERIFIED" && repair=true
 		if grep -qx '# AM-CATALOG-UPDATER 1' "$argpath/AM-updater"; then
@@ -2255,7 +2256,7 @@ _catalog_update() {
 			printf '%s: failed\n' "$argpath" >&2; status=1
 		else
 			after=$(cat "$argpath/version" 2>/dev/null)
-			if [ "$before" = "$after" ] && [ "$repair" = false ]; then result=unchanged; else result=updated; fi
+			if [ "$before" = "$after" ] && [ "$before_binary" = "$(stat -c '%d:%i:%y' "$argpath/$arg" 2>/dev/null)" ] && [ "$repair" = false ]; then result=unchanged; else result=updated; fi
 			printf '%s: %s\n' "$argpath" "$result"
 		fi
 	done

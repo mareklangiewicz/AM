@@ -132,3 +132,41 @@ host migration or app execution is involved.
 Ticket 43 validation: all 132 catalog tests pass, including eight nvim cases;
 warning-level ShellCheck on reader/runtime/all three recipes, shell syntax and
 `git diff --check` pass. All operations used retained bytes and temporary roots.
+
+
+## Remaining Neovim recipes (ticket 46)
+
+All three remaining recipes now use the same lifecycle and their original exact
+selectors. Retained observations contain matching AppImages for stable/nightly on
+both x86_64 and aarch64. No source enrollment or fresh upstream request is needed.
+ARM coverage executes shell selection/lifecycle with inert binaries on x86_64;
+it is not ARM machine-code execution.
+
+The unchanged-interface constraint needed one justified exception: nightly assets
+change at the same URL. A red regression demonstrated that removing the optional
+appimageupdatetool bypass would leave nightly permanently skipped by URL equality.
+Trusted nightly recipes now declare `REFRESH_ALWAYS=true`. After normal catalog
+acceptance, each requested update downloads the full original binary URL, even if
+unchanged; no implicit polling, delta tool, new endpoint or asset parsing is added.
+Stable recipes retain URL comparison. This can redownload identical nightly bytes.
+Catalog acceptance does not freeze bytes behind a mutable upstream download URL.
+
+Batch reporting also checks the binary's device/inode/mtime, so successful
+same-URL replacement reports updated instead of unchanged. This is an operation
+result, not proof of different binary contents or software authenticity.
+
+Against e38e8b844 the three recipes shrink from 231 lines / 9537 bytes to 67 /
+1979: 164 lines / 7558 bytes removed. Runtime adds 41 bytes (no lines); manager
+adds one line / 158 bytes. Total production reduction: **163 lines / 7359 bytes**.
+Installed per-app shell is 31/29/31 lines (saved recipe + three-line updater +
+five-line remover), versus 30 each before: **one additional line across three
+apps**, plus one shared lifecycle delivery for installations lacking it. Existing
+shared module costs remain as documented above; no per-host byte claim is made.
+
+Optional existing-binary startup checks passed on both distributions in isolated
+containers. Host-specific logs are retained privately, outside publishable Git
+history. These checks load no user configuration and make no future-binary claim.
+
+Before live delivery, ticket 51 requires a concrete backup/rollback payload,
+container rehearsal of legacy-to-shared delivery, and isolated copied-config
+compatibility checks. Current tests do not claim that installed transition.

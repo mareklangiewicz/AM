@@ -556,9 +556,12 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\nmkdir -p 
         before=self.state()
         result=self.run_script(updater)
         self.assertEqual(result.returncode,0,result.stderr)
-        self.assertIn(b'Update not needed!',result.stdout)
+        if getattr(self,'refresh_always',False):
+            self.assertNotIn(b'Update not needed!',result.stdout)
+        else:
+            self.assertIn(b'Update not needed!',result.stdout)
         self.assertEqual(self.state(),before)
-        self.assertFalse((self.path/'download').exists())
+        self.assertEqual((self.path/'download').exists(),getattr(self,'refresh_always',False))
 
     def test_stale_install_refuses_before_any_directory_or_download(self):
         self.stale()
@@ -571,6 +574,30 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\nmkdir -p 
         result=self.run_script(self.recipe,self.consent())
         self.assertEqual(result.returncode,0,result.stderr)
         self.assertTrue((self.app/'AM-updater').exists())
+
+    def test_integrity_and_empty_selection_refuse_before_mutation(self):
+        self.install()
+        before=self.state()
+        self.tree['bodies/'+self.rid+'.json']=b'[]'
+        result=self.run_script(self.app/'AM-updater')
+        self.assertEqual(result.returncode,3,result.stderr)
+        self.assertEqual(self.state(),before)
+        # Explicitly synthetic valid empty response exercises selector refusal.
+        import hashlib
+        index=json.loads(self.tree['index.json'])
+        obs=index['entries'][self.rid]['observation']
+        empty=b'[]'+b' '*4096  # Leave room for the adapter trace under the transfer ulimit.
+        self.tree['bodies/'+self.rid+'.json']=empty
+        obs.update(sha256=hashlib.sha256(empty).hexdigest(),bytes=len(empty))
+        self.tree['index.json']=json.dumps(index).encode()
+        from shell_lookup import render
+        from storage import validate
+        self.tree['lookup.tsv']=render(index,self.tree['index.json'])
+        validate(self.tree)
+        result=self.run_script(self.app/'AM-updater')
+        self.assertEqual(result.returncode,3,result.stderr)
+        self.assertIn(b'Error getting link',result.stderr)
+        self.assertEqual(self.state(),before)
 
     def test_changed_update_download_retry_and_checksum_repair(self):
         updater=self.install()
@@ -621,7 +648,10 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\nmkdir -p 
         env=self.env();env.pop('AMREPO')
         result=self.run_script(updater,env=env)
         self.assertEqual(result.returncode,0,result.stderr)
-        self.assertIn(b'Update not needed!',result.stdout)
+        if getattr(self,'refresh_always',False):
+            self.assertNotIn(b'Update not needed!',result.stdout)
+        else:
+            self.assertIn(b'Update not needed!',result.stdout)
         self.assertTrue(all('/selected-owner/extra.apps/' in c[-1] for c in self.calls()))
 
     def test_actual_appman_delivery(self):
@@ -630,7 +660,10 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\nmkdir -p 
         self.assertEqual(result.returncode,0,result.stderr)
         result=self.run_script(self.app/'AM-updater')
         self.assertEqual(result.returncode,0,result.stderr)
-        self.assertIn(b'Update not needed!',result.stdout)
+        if getattr(self,'refresh_always',False):
+            self.assertNotIn(b'Update not needed!',result.stdout)
+        else:
+            self.assertIn(b'Update not needed!',result.stdout)
         self.assertEqual((self.root/'usr/local/bin'/self.app_name).resolve(),self.app/self.app_name)
 
 
@@ -656,3 +689,47 @@ class NvimLifecycle(AppImageRecipeCases, ShellFixture):
         self.assertEqual(original,[current,current])
         result=subprocess.run(['sh','-c',current],input=self.body,capture_output=True,check=True)
         self.assertEqual(result.stdout.strip().decode(),self.expected_url)
+
+    def test_mutable_url_refreshes_without_version_change(self):
+        # Drive the real shared runtime with the nightly recipe policy; retained
+        # stable bytes isolate refresh mechanics from release selection.
+        self.recipe.write_text(self.recipe.read_text().replace(
+            'PACKAGE_KIND=appimage', 'PACKAGE_KIND=appimage\nREFRESH_ALWAYS=true'))
+        updater=self.install()
+        (self.path/'download').unlink()
+        result=self.run_script(updater)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertTrue((self.path/'download').exists(), 'mutable URL was incorrectly skipped')
+
+
+class NvimArmLifecycle(NvimLifecycle):
+    recipe_path = ROOT/'programs/aarch64/nvim'
+    expected_url = 'https://github.com/neovim/neovim/releases/download/v0.12.6/nvim-linux-arm64.appimage'
+
+    def test_original_install_and_update_selectors_are_preserved_once(self):
+        assert_original_neovim_selectors(self)
+
+
+class NvimNightlyLifecycle(NvimLifecycle):
+    app_name = 'nvim-nightly'
+    recipe_path = ROOT/'programs/x86_64/nvim-nightly'
+    expected_url = 'https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.appimage'
+    refresh_always = True
+
+    def test_original_install_and_update_selectors_are_preserved_once(self):
+        assert_original_neovim_selectors(self)
+
+
+class NvimArmNightlyLifecycle(NvimNightlyLifecycle):
+    recipe_path = ROOT/'programs/aarch64/nvim-nightly'
+    expected_url = 'https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-arm64.appimage'
+
+
+def assert_original_neovim_selectors(case):
+    previous=subprocess.run(['git','show','e38e8b844:'+str(case.recipe_path.relative_to(ROOT))],
+                            cwd=ROOT,capture_output=True,check=True).stdout.decode()
+    original=re.findall(r'version=\$\(curl[^|]+\| (.*)\)',previous)
+    current=case.recipe_path.read_text().split('select_asset() {\n\t')[1].split('\n}')[0]
+    case.assertEqual(original,[current,current])
+    result=subprocess.run(['sh','-c',current],input=case.body,capture_output=True,check=True)
+    case.assertEqual(result.stdout.strip().decode(),case.expected_url)
