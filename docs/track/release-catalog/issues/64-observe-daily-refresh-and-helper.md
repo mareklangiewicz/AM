@@ -40,3 +40,14 @@ this file would fail. Restore previous ownership with user-run
 `sudo chown marek:marek /opt/am/modules/catalog.am`, then verify writability.
 Ownership restoration has not yet been observed. Prefer normal `am -s` delivery
 in future; no privileged copy is needed for this user-owned AM installation.
+
+## Normal synchronization verified — 2026-10-29 10:31 Warsaw
+
+Marek restored catalog.am ownership to marek:marek, then ran `am -s`.
+Read-only byte comparison confirms installed APP-MANAGER, catalog.am, appimage.am
+and install.am exactly match published revision
+`da0bb8b9768856e69db1b9f6c0b5e77c73f27fd5`. Shared runtime delivery is complete
+for these system-AM files through normal synchronization. No app reinstall or
+installed-updater migration was performed or inferred. Natural daily execution
+remains the outstanding observation. Sync output's upstream recipe links are
+not evidence that downloads used upstream; exact installed bytes match our fork.
