@@ -8,7 +8,7 @@ import subprocess
 import sys
 import unittest
 
-from filesystem import snapshot_tree
+from filesystem import fingerprint_files, snapshot_tree
 
 import scenarios as shared
 from scenarios import OUT, USER, SOURCE, PIN, SQLITE, retained, render, validate
@@ -23,9 +23,9 @@ class TermuxCLI(unittest.TestCase):
         cls.tree=dict(retained.StorageContract.base)
         cls.tree['lookup.tsv']=render(validate(cls.tree),cls.tree['index.json'])
         cls.index=validate(cls.tree)
-        cls.manager_hash=hashlib.sha256(Path('/src/APP-MANAGER').read_bytes()).hexdigest()
-        cls.module_hashes={p.name:hashlib.sha256(p.read_bytes()).hexdigest()
-                           for p in Path('/src/modules').glob('*.am')}
+        cls.manager_hash = fingerprint_files(Path('/src'), ['APP-MANAGER'])['APP-MANAGER']
+        cls.module_hashes = fingerprint_files(Path('/src/modules'),
+                                            [p.name for p in Path('/src/modules').glob('*.am')])
         inputs=['APP-MANAGER','test/e2e/Containerfile.termux','test/e2e/termux-test.sh',
                 'test/e2e/termux_scenarios.py','test/e2e/scenarios.py','test/e2e/external.py',
                 'test/e2e/filesystem.py','test/e2e/transport_args.py','test/e2e/transport_records.py',
@@ -33,7 +33,7 @@ class TermuxCLI(unittest.TestCase):
                 'docs/track/release-catalog/design/staged-manifest.json',
                 'docs/track/release-catalog/research/supervised-baseline-40529551070-evidence.tar.gz']
         (OUT/'tested-source.json').write_text(json.dumps({
-            'inputs':{p:hashlib.sha256((Path('/src')/p).read_bytes()).hexdigest() for p in inputs},
+            'inputs':fingerprint_files(Path('/src'), inputs),
             'modules':cls.module_hashes},indent=2)+'\n')
         (OUT/'user-environment.json').write_text(json.dumps({
             'uid':os.getuid(),'gid':os.getgid(),'prefix':os.environ['PREFIX'],

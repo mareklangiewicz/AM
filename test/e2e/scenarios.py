@@ -21,7 +21,7 @@ import test_storage as retained
 from shell_lookup import render
 from shell_lookup import epoch
 from storage import validate
-from filesystem import snapshot_tree
+from filesystem import fingerprint_files, snapshot_tree
 from transport_records import read_transport_records
 
 SOURCE = 'https://raw.githubusercontent.com/e2e-selected/AM/test-source'
@@ -45,9 +45,9 @@ class InstalledCLI(unittest.TestCase):
         for path in (manager, *manager.rglob('*')):
             os.chown(path, USER.pw_uid, USER.pw_gid)
         Path('/usr/local/bin/am').symlink_to(manager/'APP-MANAGER')
-        cls.manager_hash = hashlib.sha256(Path('/src/APP-MANAGER').read_bytes()).hexdigest()
-        cls.module_hashes = {p.name:hashlib.sha256(p.read_bytes()).hexdigest()
-                             for p in Path('/src/modules').glob('*.am')}
+        cls.manager_hash = fingerprint_files(Path('/src'), ['APP-MANAGER'])['APP-MANAGER']
+        cls.module_hashes = fingerprint_files(Path('/src/modules'),
+                                            [p.name for p in Path('/src/modules').glob('*.am')])
         inputs=['test/e2e/scenarios.py','test/e2e/external.py','test/e2e/run',
                 'test/e2e/filesystem.py','test/e2e/transport_args.py','test/e2e/transport_records.py',
                 'test/e2e/container-test.sh','test/e2e/fixtures/e2e-legacy',
@@ -56,7 +56,7 @@ class InstalledCLI(unittest.TestCase):
                 'docs/track/release-catalog/design/staged-manifest.json',
                 'docs/track/release-catalog/research/supervised-baseline-40529551070-evidence.tar.gz']
         (OUT/'tested-source.json').write_text(json.dumps({
-            'inputs':{name:hashlib.sha256((Path('/src')/name).read_bytes()).hexdigest() for name in inputs},
+            'inputs':fingerprint_files(Path('/src'), inputs),
             'modules':cls.module_hashes},indent=2)+'\n')
 
     def setUp(self):

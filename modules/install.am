@@ -15,6 +15,11 @@ BINDIR="${XDG_BIN_HOME:-$HOME/.local/bin}"
 #				DOWNLOAD
 ################################################################################################################################################################
 
+# Encode shell double-quoted text for a | delimited sed replacement.
+am_recipe_replacement() {
+	printf '%s' "$1" | sed 's/[\\"`$]/\\&/g' | sed 's/[\\&|]/\\&/g'
+}
+
 _convert_to_appman_compatible_script() {
 	_detect_appman_apps
 	_appman
@@ -289,12 +294,12 @@ CATALOG_HELPER="/opt/am/modules/catalog.am"' ./"$arg" || exit 1
 		for managed_module in catalog.am appimage.am; do
 			if grep -q "/opt/am/modules/$managed_module" ./"$arg"; then
 				[ -r "$MODULES_PATH/$managed_module" ] || { echo "Missing $managed_module; synchronize AM modules." >&2; exit 1; }
-				catalog_path=$(printf '%s' "$MODULES_PATH/$managed_module" | sed 's/[\\"`$]/\\&/g' | sed 's/[\\&|]/\\&/g')
+				catalog_path=$(am_recipe_replacement "$MODULES_PATH/$managed_module")
 				sed -i "s|/opt/am/modules/$managed_module|$catalog_path|g" ./"$arg" || exit 1
 			fi
 		done
 		# Persist the selected source in the recipe and heredoc-generated updater.
-		catalog_source=$(printf '%s' "$AMREPO" | sed 's/[\\"`$]/\\&/g' | sed 's/[\\&|]/\\&/g')
+		catalog_source=$(am_recipe_replacement "$AMREPO")
 		sed -i 's|^AMREPO=${AMREPO-}$|AMREPO=${AMREPO-"'"$catalog_source"'"}|g' ./"$arg" || exit 1
 	fi
 	# Patch to apply to installation scripts

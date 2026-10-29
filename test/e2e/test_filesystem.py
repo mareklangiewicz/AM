@@ -3,7 +3,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from filesystem import snapshot_tree
+from filesystem import fingerprint_files, snapshot_tree
 
 
 class SnapshotTree(unittest.TestCase):
@@ -44,3 +44,23 @@ class SnapshotTree(unittest.TestCase):
         for name, target in (('live','dir/file'), ('dangling','missing'), ('directory-link','dir')):
             self.assertEqual(snapshot[name], ('link', target))
         self.assertNotIn('directory-link/file', snapshot)
+
+
+class FingerprintFiles(unittest.TestCase):
+    def test_empty_nested_binary_and_changed_files(self):
+        import hashlib
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.assertEqual(fingerprint_files(root, []), {})
+            (root/'nested').mkdir()
+            (root/'nested/file').write_bytes(b'\x00\xff')
+            (root/'other').write_bytes(b'unchanged')
+            paths = ['nested/file', 'other']
+            before = fingerprint_files(root, paths)
+            self.assertEqual(before['nested/file'], hashlib.sha256(b'\x00\xff').hexdigest())
+            (root/'nested/file').write_bytes(b'changed')
+            after = fingerprint_files(root, paths)
+            self.assertNotEqual(before['nested/file'], after['nested/file'])
+            self.assertEqual(before['other'], after['other'])
+            with self.assertRaises(FileNotFoundError):
+                fingerprint_files(root, ['missing'])

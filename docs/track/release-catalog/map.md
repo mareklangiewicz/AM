@@ -725,3 +725,7 @@ update, followed by normal retries and preservation checks. Final Debian/Fedora
 30 scenarios / 108 commands pass, zero unexpected requests; nine support-tool specs
 and lint/diff checks pass. No production fix, host delivery, source push, collection,
 enrollment or pilot/schedule change; interruption coverage is one controlled point.
+
+2026-10-29: [62 resolved: ground review tools](issues/62-ground-review-tools.md).
+Shared recipe replacement encoding and source-file fingerprinting with focused
+specs; both platform callers migrated. Focused checks passed, no reverts.
