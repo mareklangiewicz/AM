@@ -12,8 +12,7 @@ Daily activation completed in 41, pinned to
 available; retain timestamps, six conditional outcomes, publication parent/tree
 and actual freshness. No manual replacement dispatch or automatic future repin.
 
-The installed helper is still the pilot's 24-hour version. Marek prefers running
-privileged host commands himself; provide:
+Original delivery instruction (completed October 29; see verification below):
 
 ```sh
 sudo install -m 644 /home/marek/code/shell/AM/modules/catalog.am /opt/am/modules/catalog.am
@@ -26,3 +25,18 @@ need separate delivery. No app install/update/run is part of this task.
 
 Activation evidence is a local follow-up commit, deliberately unpushed to preserve
 the exact reviewed remote source pin. A future push requires reviewed repinning.
+
+## Host delivery verified — 2026-10-29
+
+Marek ran the recorded install command at 10:27 Warsaw. Read-only verification
+confirms installed catalog.am exactly matches the 48-hour helper SHA256 above.
+Natural daily execution remains unobserved; other installed consumers are not
+claimed migrated.
+
+The suggested sudo install unintentionally changed the previously marek:marek
+file to root:root mode 644 (user's host output). Normal _sync_modules writes
+existing modules with unprivileged shell redirection, so future replacement of
+this file would fail. Restore previous ownership with user-run
+`sudo chown marek:marek /opt/am/modules/catalog.am`, then verify writability.
+Ownership restoration has not yet been observed. Prefer normal `am -s` delivery
+in future; no privileged copy is needed for this user-owned AM installation.
