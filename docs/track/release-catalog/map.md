@@ -52,10 +52,10 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 
 - [37](issues/37-assess-hourly-pilot.md) is closed: hourly workflow disabled,
   four successful child publications verified and archived; expiry refusal verified.
-- After 37, perform the already authorized **six-source daily switch** under
-  [41](issues/41-activate-daily-refresh.md): 03:17 UTC and inclusive 48-hour
-  freshness. Review queued source changes before push/pin; installed helper
-  delivery remains separate.
+- [41](issues/41-activate-daily-refresh.md) activated six-source daily operation
+  at 03:17 UTC, pinned to da0bb8b9768856e69db1b9f6c0b5e77c73f27fd5.
+  [64](issues/64-observe-daily-refresh-and-helper.md) tracks natural execution
+  observation and user-run host helper delivery; neither has occurred.
 - [47 enrollment](issues/47-enroll-scoped-migration-sources.md) has completed
   selector repair and seven-source offline preparation. Actual operational
   enrollment/publication still requires separate scoped approval; the operational
@@ -736,3 +736,7 @@ growth. No post-expiry child; daily activation under 41 is unblocked.
 2026-10-29: [63 resolved](issues/63-repair-extracted-installer-test.md). Fixed
 missing encoder dependency in extracted test harness. Full catalog suite 198 passes,
 10 support specs and 38 Termux/Debian/Fedora container scenarios pass.
+
+2026-10-29: [41 activated](issues/41-activate-daily-refresh.md). Verified source
+pushed/pinned, daily workflow active, old window removed. Natural execution and
+host delivery remain [64](issues/64-observe-daily-refresh-and-helper.md).

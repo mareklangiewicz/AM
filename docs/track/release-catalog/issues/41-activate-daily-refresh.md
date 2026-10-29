@@ -1,7 +1,7 @@
 # Switch from the finished hourly pilot to daily operation
 
 Type: task
-Status: claimed
+Status: resolved
 Triage: ready-for-agent
 Blocked by: 37
 
@@ -68,3 +68,21 @@ Installed catalog.am hash `b827f9febc90a45012f540926674f8f4210e3e1f3626cb30050b4
 exactly matches the old pilot helper. Current 48-hour helper hash is
 `5c1ca600e478ef26ec7ff3c70ef4bd61f49f6e86ff66696e722a9e9b90255618`.
 Host delivery remains user-run and has not occurred.
+
+## Answer — activated 2026-10-29T09:21Z
+
+Pushed and pinned `da0bb8b9768856e69db1b9f6c0b5e77c73f27fd5`. Remote branch,
+workflow/controller/manifest bytes verified exact before activation. Recorded old
+window variables in 37's archive, removed START/UNTIL and verified only REVISION
+remains. Daily workflow enabled and confirmed active; collector active, six
+unrelated workflows disabled. No synthetic dispatch or source enrollment.
+
+[Activation checks](../research/daily-activation-checks.json) and
+[final source review](../research/daily-activation-source-review.json).
+198 catalog tests, 10 support specs, 38 container scenarios passed.
+
+Natural daily observation and user-run host helper delivery remain explicitly
+open under [64](64-observe-daily-refresh-and-helper.md). This resolution records
+configuration activation, not an observed daily execution or host delivery.
+Do not push later documentation commits without reviewing and deliberately
+updating the source pin: the dispatcher requires default-branch HEAD to equal it.
