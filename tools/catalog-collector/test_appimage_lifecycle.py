@@ -249,11 +249,14 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\nmkdir -p 
         patch=source[start:end]
         appman=next(line for line in source.splitlines() if "/opt/am/modules/|! s#/opt/" in line)
         harness=self.path/'patch-test'
-        harness.write_text('patch_recipe() {\n'+appman+'\n'+patch+'\n}\npatch_recipe\n')
+        helper_start=source.index('am_recipe_replacement() {')
+        helper=source[helper_start:source.index('\n}',helper_start)+2]
+        harness.write_text(helper+'\npatch_recipe() {\n'+appman+'\n'+patch+'\n}\npatch_recipe\n')
         env={**self.env(),'arg':self.recipe.name,'MODULES_PATH':str(module_dir),
              'APPSPATH':str(self.root/'opt')}
         r=subprocess.run(['/bin/bash',str(harness)],cwd=self.path,env=env,capture_output=True)
         self.assertEqual(r.returncode,0,r.stderr)
+        self.assertEqual(r.stderr,b'')
         r=self.run_script(self.recipe);self.assertEqual(r.returncode,0,r.stderr)
         r=self.run_script(self.app/'AM-updater');self.assertEqual(r.returncode,0,r.stderr)
         self.assertIn(b'Update not needed!',r.stdout)

@@ -1,7 +1,7 @@
 # Close and assess the bounded hourly pilot
 
 Type: task
-Status: open
+Status: resolved
 Triage: ready-for-human
 
 ## Scope
@@ -35,3 +35,10 @@ Marek subsequently accepted ticket 40's once-daily final cadence and 48-hour
 freshness policy. Complete the existing expiry/shutdown/assessment without
 extending the hourly pilot, then [41](41-activate-daily-refresh.md) may perform the
 already authorized daily switch. No repeat approval is required for that scope.
+
+## Answer — 2026-10-29
+
+Closed and assessed; [retained verification](../research/hourly-pilot-closure.md).
+Four successful children, 24 conditional HTTP 200 responses, exact artifact/tree/parent
+verification, full history growth measured. Post-expiry dispatcher refused and
+created no child. Workflow disabled; no in-flight collector. Ticket 41 unblocked.

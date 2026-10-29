@@ -48,11 +48,10 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 
 ## Current continuation boundary
 
-**Current frontier (2026-10-28):**
+**Current frontier (2026-10-29):**
 
-- At/after **2026-10-29T00:12:16Z**, close and assess the bounded hourly pilot
-  under [37](issues/37-assess-hourly-pilot.md). No source push or repin before
-  closure, no extension or replacement dispatch. No background timer exists.
+- [37](issues/37-assess-hourly-pilot.md) is closed: hourly workflow disabled,
+  four successful child publications verified and archived; expiry refusal verified.
 - After 37, perform the already authorized **six-source daily switch** under
   [41](issues/41-activate-daily-refresh.md): 03:17 UTC and inclusive 48-hour
   freshness. Review queued source changes before push/pin; installed helper
@@ -729,3 +728,11 @@ enrollment or pilot/schedule change; interruption coverage is one controlled poi
 2026-10-29: [62 resolved: ground review tools](issues/62-ground-review-tools.md).
 Shared recipe replacement encoding and source-file fingerprinting with focused
 specs; both platform callers migrated. Focused checks passed, no reverts.
+
+2026-10-29: [37 resolved](issues/37-assess-hourly-pilot.md). Full pilot evidence
+retained; 24 HTTP 200 requests, 19.51 MB bodies, 19.60 MB uncompressed history
+growth. No post-expiry child; daily activation under 41 is unblocked.
+
+2026-10-29: [63 resolved](issues/63-repair-extracted-installer-test.md). Fixed
+missing encoder dependency in extracted test harness. Full catalog suite 198 passes,
+10 support specs and 38 Termux/Debian/Fedora container scenarios pass.

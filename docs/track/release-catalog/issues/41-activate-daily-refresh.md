@@ -1,7 +1,7 @@
 # Switch from the finished hourly pilot to daily operation
 
 Type: task
-Status: open
+Status: claimed
 Triage: ready-for-agent
 Blocked by: 37
 
@@ -54,3 +54,17 @@ still match ticket 40 and the operational collector/manifest remain six-source.
 It records cached-ref hashes, private-path/ancestry checks and five focused tests.
 This does not replace live checks or 37's closure; use the final reviewed pushed
 SHA, not the earlier offline review HEAD, for activation.
+
+## Activation preflight — 2026-10-29
+
+37 closed; live default branch main-marek, six unrelated workflows disabled,
+no in-flight collector. Daily workflow/controller still equal ticket 40; operational
+manifest remains six-source and collector workflow is unchanged from remote.
+Full three-target matrix passes 38 scenarios at 6fd050bda; logs at
+`test/e2e/out/20261029T091354Z-1117351`. One extracted-test harness omitted the new
+encoder definition; ticket 63 repairs that test only.
+
+Installed catalog.am hash `b827f9febc90a45012f540926674f8f4210e3e1f3626cb30050b4422092be6fc`
+exactly matches the old pilot helper. Current 48-hour helper hash is
+`5c1ca600e478ef26ec7ff3c70ef4bd61f49f6e86ff66696e722a9e9b90255618`.
+Host delivery remains user-run and has not occurred.
