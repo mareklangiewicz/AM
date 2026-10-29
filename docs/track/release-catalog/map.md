@@ -740,3 +740,7 @@ missing encoder dependency in extracted test harness. Full catalog suite 198 pas
 2026-10-29: [41 activated](issues/41-activate-daily-refresh.md). Verified source
 pushed/pinned, daily workflow active, old window removed. Natural execution and
 host delivery remain [64](issues/64-observe-daily-refresh-and-helper.md).
+
+2026-10-29: [65 resolved](issues/65-configured-sync-notice-links.md). Sync notices
+show actual configured recipe/manager source URLs. Reporting-only change; syntax,
+diff and three-source rendering checks pass. Local commit, not delivered or pushed.

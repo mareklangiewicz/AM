@@ -1801,7 +1801,7 @@ _sync_installation_scripts() {
 					if [ "$CURRENT" = "$SOURCE" ]; then
 						echo -ne "\r" 2>/dev/null
 					else
-						printf $" ◆ %b%b\033[0m has changed, you may need to reinstall it, see\n   https://github.com/ivan-hc/AM/blob/main/programs/%b/%b\n" "${RED}" "$scriptname" "$ARCH" "$scriptname"
+						printf $" ◆ %b%b\033[0m has changed, you may need to reinstall it, see\n   %s\n" "${RED}" "$scriptname" "$APPSDB/$scriptname"
 						to_reinstall_true=1
 					fi
 				else
@@ -1888,10 +1888,10 @@ _sync_amcli() {
 		echo -ne $" A new release of \"$AMCLIUPPER\" is available, please wait...\r"
 		echo $" ◆ \"$AMCLIUPPER\" IS NOW UPDATED TO THE BRAND NEW \"$NEW_AM_VERSION\" VERSION!"
 		printf $"\n  Replacement of version \"%b\" currently in use, COMPLETED! \n" "$CURRENT_AM_VERSION"
-		printf $"\n See https://github.com/ivan-hc/AM/commits/main\n\n"
+		printf $"\n Source: %s\n\n" "$AMREPO/APP-MANAGER"
 	else
 		echo $" ◆ \"$AMCLIUPPER\" IS ALREADY UPDATED, CURRENT VERSION \"$CURRENT_AM_VERSION\""
-		printf $"\n See https://github.com/ivan-hc/AM/commits/%b\n\n" "$AMBRANCH"
+		printf $"\n Source: %s\n\n" "$AMREPO/APP-MANAGER"
 	fi
 }
 
