@@ -53,8 +53,8 @@ class WorkflowPreparation(unittest.TestCase):
     def test_reviewed_real_manifest_is_ready_for_offline_preflight(self):
         raw = MANIFEST.read_bytes()
         value = preflight(self.context(raw), raw, REV)
-        self.assertEqual(value.requests[-1].source.repository_id, 1225768109)
-        self.assertEqual(len(value.requests), 7)
+        self.assertEqual(value.requests[-1].source.repository_id, 947512058)
+        self.assertEqual(len(value.requests), 8)
         self.assertTrue(all(not r.condition for r in value.requests))
 
     def test_context_revision_hash_and_own_repository_refusals(self):

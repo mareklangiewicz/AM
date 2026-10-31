@@ -12,7 +12,7 @@ from collector import require
 
 REPOSITORY = 'mareklangiewicz/AM'
 WORKFLOW = 'catalog-collector.yml'
-MANIFEST = '96fd3477b59a9806584f155c9180be1cd9c7ce368d02e0973b28afd2e0c4da62'
+MANIFEST = 'dfca1d3e7504e4c6fa83ae6260ba1bb6e2db4cca736fb3693db9ec4aeea1a8bf'
 CRON = '17 3 * * *'
 
 

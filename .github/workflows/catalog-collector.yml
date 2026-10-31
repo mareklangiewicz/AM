@@ -59,7 +59,7 @@ jobs:
           revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
           preflight(context, raw, revision)
           PY
-      - name: Collect seven descriptors and stage validated catalog
+      - name: Collect eight descriptors and stage validated catalog
         env:
           COLLECTOR_WORKFLOW_TOKEN: ${{ github.token }}
         run: |

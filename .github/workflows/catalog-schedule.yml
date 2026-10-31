@@ -21,7 +21,7 @@ jobs:
         with:
           ref: ${{ github.sha }}
           persist-credentials: false
-      - name: Dispatch one guarded seven-source refresh at the daily cadence
+      - name: Dispatch one guarded eight-source refresh at the daily cadence
         env:
           GH_TOKEN: ${{ github.token }}
           CTX_REPOSITORY: ${{ github.repository }}
