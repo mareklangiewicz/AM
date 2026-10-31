@@ -65,17 +65,16 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
   Published and repinned as `6dddde9f6`; Marek ran normal sync and installed
   manager/install-module bytes were verified against that source. No host
   reinstall was needed to verify delivery.
-- [47 enrollment](issues/47-enroll-scoped-migration-sources.md) has completed
-  selector repair and seven-source offline preparation. The October 31
-  [rollout package](design/am-utils-seven-source-rollout.md) now stages the local
-  operational manifest/controller switch, with 199 tests and 356 retained selectors
-  verified. Live operation remains six-source at `6dddde9f6`; source push, first
-  seven-source publication and daily repin require package approval. Utility-only
-  acceptance may unblock 48; 49's separate enrollment remains outstanding.
-- [48 executable migration](issues/48-shared-executable-am-utils-batch.md)
-  remains blocked by 47. Its static preparation is complete: 356 recipes share
-  one lifecycle shape. [49 AppImage migration](issues/49-migrate-common-appimage-batch.md)
-  is also blocked; its 50 endpoints are a measured queue, not approved collection.
+- [47 enrollment](issues/47-enroll-scoped-migration-sources.md) has accepted the
+  utility-source stage. [Live evidence](research/am-utils-live-20261031.md) verifies
+  run 41232846271, seven HTTP 200 results, exact published tree/parent and 356/356
+  selectors against returned bytes. Source and daily pin are
+  `c787efe3a42fac015f743255006fddd7ea9b3817`; natural seven-source repeat remains
+  unobserved. Ticket 47 stays claimed/partial for separate AppImage enrollment.
+- [48 executable migration](issues/48-shared-executable-am-utils-batch.md) is now
+  unblocked and open. Its static preparation is complete: 356 recipes share one
+  lifecycle shape. [49 AppImage migration](issues/49-migrate-common-appimage-batch.md)
+  remains blocked; its 50 endpoints are a measured queue, not approved collection.
 
 Shared AppImage implementation and recipe simplifications (42–46, 52–53), installed
 CLI/Termux coverage (50, 54–56), and e2e support-tool extraction (57) are resolved.
@@ -85,11 +84,12 @@ failure and retry behavior offline; no production defect was demonstrated.
 
 
 Use AMREPO-owned fork catalog and managed helper/source delivery (ticket 29).
-Latest verified public publication is `067f236b205d8fe01c6f4e79744887e4979437fc`,
-from the October 31 natural daily run; its actual observation times govern freshness.
-The October 29 handoff records user-driven installed-updater migration; older
-unmigrated/undelivered claims in this map are historical. This continuation made
-read-only operational checks, with no host operation, dispatch, source push or repin.
+Latest verified public publication is `a113cd0aca3247111b6ba231f6a30b6477ac2c75`,
+from the approved October 31 seven-source rollout; actual observation times govern
+freshness. Source push, one collection/publication and daily repin completed after
+acceptance. The October 29 handoff records user-driven installed-updater migration;
+older unmigrated/undelivered claims are historical. No host operation occurred in
+this rollout.
 Upstream submission is optional future work; ticket 28's upstream-first
 recommendation is superseded. Future source publication requires reviewing and
 repinning the exact source revision together.
@@ -786,3 +786,12 @@ fast-forward rollback. Full 199-test suite passes; all 356 retained selector res
 match; tree/ZIP replay remains within unchanged caps. Local preparation only:
 no upstream metadata request, source push/repin, dispatch or host operation.
 Ticket 47 remains partial/ready-for-human; 48/49 remain blocked.
+
+
+2026-10-31: [47 utility-source stage accepted](research/am-utils-live-20261031.md).
+Approved exact source `c787efe3a`, run 41232846271 and publication `a113cd0ac` pass
+seven-source recomputation, complete Git tree/parent, 356 actual asset selections,
+pinned shell/Python readers and unchanged resource caps. Artifacts retained;
+daily source repinned after acceptance with isolation verified. 48 unblocked;
+47 remains partial and 49 blocked. Natural repeat evidence remains outstanding.
+No recipe migration, host operation or second manual run.

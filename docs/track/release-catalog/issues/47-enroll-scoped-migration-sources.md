@@ -166,3 +166,15 @@ bounded rollback if needed. No live metadata request, dispatch/publication,
 source push, repin, enrollment or host operation occurred in this preparation.
 The utility-source acceptance may subsequently unblock 48; 49 remains blocked on
 its separate AppImage enrollment. Do not resolve all of 47 from the utility stage.
+
+## Utility source accepted — 2026-10-31
+
+Marek approved the exact `c787efe3a42fac015f743255006fddd7ea9b3817` rollout.
+[Live acceptance and retained evidence](../research/am-utils-live-20261031.md)
+verify run 41232846271, publication `a113cd0aca3247111b6ba231f6a30b6477ac2c75`,
+seven successful attempts, exact-prior recomputation/published tree, 356/356
+unchanged-recipe asset selectors, actual pinned readers and unchanged resource caps.
+Daily source/pin equality now uses the approved candidate, after acceptance.
+Utility enrollment is accepted and 48 is unblocked. Status stays claimed/partial;
+49's separate enrollment remains blocked. Natural seven-source repeat evidence
+is still pending; no second manual run or recipe/host migration was performed.

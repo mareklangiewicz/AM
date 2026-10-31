@@ -3,9 +3,15 @@
 Type: task
 Status: open
 Triage: ready-for-agent
-Blocked by: 47
+Dependency: ticket 47 utility-source stage accepted on 2026-10-31
 
 ## Scope
+
+Operational prerequisite accepted: [live enrollment evidence](../research/am-utils-live-20261031.md)
+verifies publication `a113cd0aca3247111b6ba231f6a30b6477ac2c75`, all 356 original
+selectors against actual returned bytes and seven-source daily repinning. This
+ticket is now unblocked; implementation remains open. Ticket 47's broader
+AppImage-source enrollment is separate.
 
 After its exact source is accepted/published under ticket 47, migrate the 356
 `plain_utility_batch` recipe paths in
