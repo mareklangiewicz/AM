@@ -1,5 +1,5 @@
 #!/bin/sh
-# AMCLI shared AppImage lifecycle. Sourced only by trusted AM recipes.
+# AMCLI shared AppImage/executable lifecycle. Sourced only by trusted AM recipes.
 # Selector and installed bindings come from trusted recipes, never catalog JSON.
 # URL/exclude matching is case-sensitive unless requested; include matching is
 # case-insensitive (release tags/channels). Retain upstream order, then take first.
@@ -11,7 +11,10 @@ am_appimage_select_asset() (
 	sed 's/[()",{} ]/\n/g' | match -o -- "${ASSET_URL-https.*mage$}" | include | exclude | head -1
 )
 
-am_appimage() (
+# Preserve the installed AppImage entry point and module path.
+am_appimage() { am_package "$@"; }
+
+am_package() (
 	set -eu
 	recipe=$1; shift
 	icon_theme=false
@@ -24,8 +27,14 @@ am_appimage() (
 	BIN_DIR=${BIN_DIR-/usr/local/bin}
 	DESKTOP_DIR=${DESKTOP_DIR-/usr/local/share/applications}
 	CATALOG_HELPER=${CATALOG_HELPER-/opt/am/modules/catalog.am}
-	[ "${PACKAGE_KIND-appimage}" = appimage ] || { echo 'Unsupported package format' >&2; exit 1; }
-	case $APP in ''|*[!a-z0-9_-]*) echo 'Invalid app identity' >&2; exit 1;; esac
+	PACKAGE_KIND=${PACKAGE_KIND-appimage}
+	case $PACKAGE_KIND in
+		appimage) case $APP in ''|*[!a-z0-9_-]*) echo 'Invalid app identity' >&2; exit 1;; esac ;;
+		executable) case $APP in [a-z0-9]*)
+			case $APP in *[!a-z0-9.+_-]*) echo 'Invalid app identity' >&2; exit 1;; esac ;;
+			*) echo 'Invalid app identity' >&2; exit 1;; esac ;;
+		*) echo 'Unsupported package format' >&2; exit 1 ;;
+	esac
 	[ -r "$CATALOG_HELPER" ] || { echo 'Missing catalog.am; synchronize AM modules.' >&2; exit 3; }
 	catalog_body=$(sh "$CATALOG_HELPER" "$CATALOG_ALIAS" "$@") || exit 3
 	version=$(printf '%s\n' "$catalog_body" | am_appimage_select_asset) || exit 3
@@ -41,30 +50,33 @@ am_appimage() (
 	if [ "$mode" = install ] && [ -d "$dir/tmp" ] && [ ! -f "$dir/version" ] && [ -f "$dir/remove" ]; then
 		sh "$dir/remove"
 	fi
-	mkdir -p "$dir/tmp" "$dir/icons"
+	mkdir -p "$dir/tmp"
 	rm -rf "$dir/tmp"
 	mkdir "$dir/tmp"
 	notify-send "A new version of $APP is available, please wait" 2>/dev/null || :
 	if command -v wget >/dev/null 2>&1; then
-		wget -O "$dir/tmp/$APP.AppImage" "$version" || exit 1
+		wget -O "$dir/tmp/$APP" "$version" || exit 1
 	else
-		curl --fail -L -o "$dir/tmp/$APP.AppImage" "$version" || exit 1
+		curl --fail -L -o "$dir/tmp/$APP" "$version" || exit 1
 	fi
-	chmod a+x "$dir/tmp/$APP.AppImage"
-	mv -f "$dir/tmp/$APP.AppImage" "$dir/$APP"
+	chmod a+x "$dir/tmp/$APP"
+	mv -f "$dir/tmp/$APP" "$dir/$APP"
 	printf '%s\n' "$version" > "$dir/version"
 	rm -rf "$dir/tmp"
 	if [ "$mode" = update ]; then
 		notify-send "$APP is updated!" 2>/dev/null || :
 		exit 0
 	fi
-	mkdir -p "$BIN_DIR" "$DESKTOP_DIR"
+	mkdir -p "$BIN_DIR"
 	# Quote paths as shell literals for standalone installed launchers/removers.
 	quote() { printf "'"; printf '%s' "$1" | sed "s/'/'\\\\''/g"; printf "'"; }
 	{
 		printf '#!/bin/sh\nset -e\nrm -f '; quote "$BIN_DIR/$APP"
 		printf '\nrm -rf '; quote "$dir"
-		printf '\nrm -f '; quote "$DESKTOP_DIR/$APP-AM.desktop"; printf '\n'
+		if [ "$PACKAGE_KIND" = appimage ]; then
+			printf '\nrm -f '; quote "$DESKTOP_DIR/$APP-AM.desktop"
+		fi
+		printf '\n'
 	} > "$dir/remove"
 	cp "$recipe" "$dir/recipe.am"
 	{
@@ -73,6 +85,8 @@ am_appimage() (
 	} > "$dir/AM-updater"
 	chmod a+x "$dir/remove" "$dir/AM-updater"
 	ln -sf "$dir/$APP" "$BIN_DIR/$APP"
+	[ "$PACKAGE_KIND" = appimage ] || exit 0
+	mkdir -p "$DESKTOP_DIR" "$dir/icons"
 	cd "$dir"
 	# AppImage extraction with the same installed-tool fallback as AM installers.
 	extract() {

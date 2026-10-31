@@ -243,6 +243,7 @@ _install_script_retry() {
 }
 
 _install_arg() {
+	local catalog_executable=false
 	# This function is needed to parse the installation script and then execute it
 	APPNAME=$(echo "\"$pure_arg\"" | tr '[:lower:]' '[:upper:]')
 	chmod a+x ./"$arg"
@@ -256,6 +257,7 @@ _install_arg() {
 	# Keep these in the saved recipe so standalone execution needs no manager environment.
 	if grep -qx '# AM-CATALOG-RECIPE 1' ./"$arg" &&
 		grep -Fqx '. "/opt/am/modules/appimage.am"' ./"$arg"; then
+		if grep -qx 'PACKAGE_KIND=executable' ./"$arg"; then catalog_executable=true; fi
 		sed -i '\|^\. "/opt/am/modules/appimage.am"$|i\
 AMREPO=${AMREPO-}\
 APPS_DIR="/opt/"\
@@ -386,63 +388,67 @@ CATALOG_HELPER="/opt/am/modules/catalog.am"' ./"$arg" || exit 1
 		fi
 	fi
 
-	# Check broken/missing icons
-	find "${LASTDIRPATH}"/icons/* -type l -delete 2>/dev/null # Removes broken links
-	if [ -z "$(ls -A "${LASTDIRPATH}"/icons 2>/dev/null)" ]; then
-		# Detect if the installed app is an appimage
-		if [ -f "${LASTDIRPATH}"/"$pure_arg" ] && head -c10 "${LASTDIRPATH}"/"$pure_arg" 2>/dev/null | grep -qa '^.ELF....AI$' 2>/dev/null; then
-			cd "${LASTDIRPATH}" || return 1
-			if grep -Eaoq -m 1 "appimage-extract" ./"$pure_arg"; then
-				extracted_dir=""
-				for p in png svg; do
-					./"$pure_arg" --appimage-extract *."$p" 2>/dev/null
-				done
-				wait
-				if [ -d ./squashfs-root ]; then
-					extracted_dir="squashfs-root"
-				elif [ -d ./AppDir ]; then
-					extracted_dir="AppDir"
-				fi
-				if [ -n "$extracted_dir" ] && [ -d ./"$extracted_dir" ] && [ -n "$(ls -A ./"$extracted_dir" 2>/dev/null)" ]; then
-					find "${LASTDIRPATH}"/icons/* -type l -delete 2>/dev/null # Removes broken links
-					if [ -n "$(ls -A ./"$extracted_dir" 2>/dev/null)" ]; then
-						for i in ./"$extracted_dir"/*; do
-							[ -L "$i" ] && rm -f "$i" || mv "$i" ./icons/"$pure_arg"
-						done
+	# Plain catalog executables have no desktop/icon integration or icon fallback.
+	if [ "$catalog_executable" = false ]; then
+		# Check broken/missing icons
+		find "${LASTDIRPATH}"/icons/* -type l -delete 2>/dev/null # Removes broken links
+		if [ -z "$(ls -A "${LASTDIRPATH}"/icons 2>/dev/null)" ]; then
+			# Detect if the installed app is an appimage
+			if [ -f "${LASTDIRPATH}"/"$pure_arg" ] && head -c10 "${LASTDIRPATH}"/"$pure_arg" 2>/dev/null | grep -qa '^.ELF....AI$' 2>/dev/null; then
+				cd "${LASTDIRPATH}" || return 1
+				if grep -Eaoq -m 1 "appimage-extract" ./"$pure_arg"; then
+					extracted_dir=""
+					for p in png svg; do
+						./"$pure_arg" --appimage-extract *."$p" 2>/dev/null
+					done
+					wait
+					if [ -d ./squashfs-root ]; then
+						extracted_dir="squashfs-root"
+					elif [ -d ./AppDir ]; then
+						extracted_dir="AppDir"
 					fi
-					rmdir ./"$extracted_dir"
+					if [ -n "$extracted_dir" ] && [ -d ./"$extracted_dir" ] && [ -n "$(ls -A ./"$extracted_dir" 2>/dev/null)" ]; then
+						find "${LASTDIRPATH}"/icons/* -type l -delete 2>/dev/null # Removes broken links
+						if [ -n "$(ls -A ./"$extracted_dir" 2>/dev/null)" ]; then
+							for i in ./"$extracted_dir"/*; do
+								[ -L "$i" ] && rm -f "$i" || mv "$i" ./icons/"$pure_arg"
+							done
+						fi
+						rmdir ./"$extracted_dir"
+					fi
 				fi
 			fi
 		fi
-	fi
-	if [ -z "$(ls -A "${LASTDIRPATH}"/icons 2>/dev/null)" ]; then
-		# If you have a broken or missing icon in your "icons" directory, download one from the catalog
-		AMCATALOGUEICONS="${AMCATALOGUEICONS:-https://raw.githubusercontent.com/Portable-Linux-Apps/Portable-Linux-Apps.github.io/main/icons}"
-		_use_online_downloader "$AMCATALOGUEICONS"/"$arg".png "${LASTDIRPATH}"/icons/"$arg"
-	fi
-
-	# Patch .desktop to change paths if the app is installed locally
-	if [ "$AMCLI" = "appman" ]; then
-		for a in $DATADIR/$LAUNCHERS_DIR/*-AM.desktop; do
-			sed -i "s#Exec=$pure_arg#Exec=$BINDIR/$pure_arg#g" "$a" 2>/dev/null
-			sed -i "s#Exec=/usr/bin/#Exec=$BINDIR/#g" "$a" 2>/dev/null
-			sed -i "s#Exec=/opt/#Exec=$BINDIR/#g" "$a" 2>/dev/null
-		done
-	fi
-	# Export all icons for hicolor theme usage
-	if echo "$FLAGS" | grep -q -- '--icons'; then
-		_icon_theme_export_to_datadir 2>/dev/null
-	fi
-
-	# UPDATE MIME DATABASE
-	if command -v update-mime-database >/dev/null 2>&1 && command -v update-desktop-database >/dev/null 2>&1 && [ ! -f /var/lib/mime/mime.cache ] && [ ! -f /var/cache/desktop/desktop.cache ]; then
-		if [ "$AMCLI" = "appman" ]; then
-			mkdir -p "$DATADIR"/mime/packages && update-mime-database "$DATADIR"/mime
-			mkdir -p "$DATADIR"/applications && update-desktop-database "$DATADIR"/applications
-		else
-			$SUDOCMD mkdir -p /usr/local/share/mime/packages && $SUDOCMD update-mime-database /usr/local/share/mime
-			$SUDOCMD mkdir -p /usr/local/share/applications && $SUDOCMD update-desktop-database /usr/local/share/applications
+		if [ -z "$(ls -A "${LASTDIRPATH}"/icons 2>/dev/null)" ]; then
+			# If you have a broken or missing icon in your "icons" directory, download one from the catalog
+			AMCATALOGUEICONS="${AMCATALOGUEICONS:-https://raw.githubusercontent.com/Portable-Linux-Apps/Portable-Linux-Apps.github.io/main/icons}"
+			_use_online_downloader "$AMCATALOGUEICONS"/"$arg".png "${LASTDIRPATH}"/icons/"$arg"
 		fi
+
+		# Patch .desktop to change paths if the app is installed locally
+		if [ "$AMCLI" = "appman" ]; then
+			for a in $DATADIR/$LAUNCHERS_DIR/*-AM.desktop; do
+				sed -i "s#Exec=$pure_arg#Exec=$BINDIR/$pure_arg#g" "$a" 2>/dev/null
+				sed -i "s#Exec=/usr/bin/#Exec=$BINDIR/#g" "$a" 2>/dev/null
+				sed -i "s#Exec=/opt/#Exec=$BINDIR/#g" "$a" 2>/dev/null
+			done
+		fi
+		# Export all icons for hicolor theme usage
+		if echo "$FLAGS" | grep -q -- '--icons'; then
+			_icon_theme_export_to_datadir 2>/dev/null
+		fi
+
+		# UPDATE MIME DATABASE
+		if command -v update-mime-database >/dev/null 2>&1 && command -v update-desktop-database >/dev/null 2>&1 && [ ! -f /var/lib/mime/mime.cache ] && [ ! -f /var/cache/desktop/desktop.cache ]; then
+			if [ "$AMCLI" = "appman" ]; then
+				mkdir -p "$DATADIR"/mime/packages && update-mime-database "$DATADIR"/mime
+				mkdir -p "$DATADIR"/applications && update-desktop-database "$DATADIR"/applications
+			else
+				$SUDOCMD mkdir -p /usr/local/share/mime/packages && $SUDOCMD update-mime-database /usr/local/share/mime
+				$SUDOCMD mkdir -p /usr/local/share/applications && $SUDOCMD update-desktop-database /usr/local/share/applications
+			fi
+		fi
+
 	fi
 
 	# ENDING THE INSTALLATION

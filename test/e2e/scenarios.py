@@ -21,6 +21,7 @@ import test_storage as retained
 from shell_lookup import render
 from shell_lookup import epoch
 from storage import validate
+from test_utility_selectors import accepted_tree, ALIAS as UTILITY_ALIAS
 from filesystem import fingerprint_files, snapshot_tree
 from transport_records import read_transport_records
 
@@ -53,6 +54,9 @@ class InstalledCLI(unittest.TestCase):
                 'test/e2e/container-test.sh','test/e2e/fixtures/e2e-legacy',
                 'test/e2e/Containerfile.debian','test/e2e/Containerfile.fedora',
                 'APP-MANAGER','programs/x86_64/nvim','programs/x86_64/nvim-nightly','programs/x86_64/obsidian','programs/x86_64/sqlitebrowser',
+                'programs/x86_64/7z','programs/x86_64/arch','programs/x86_64/c++filt','programs/x86_64/ld.bfd',
+                'tools/catalog-collector/test_utility_selectors.py',
+                'docs/track/release-catalog/research/am-utils-live-20261031-evidence.tar.gz',
                 'docs/track/release-catalog/design/staged-manifest.json',
                 'docs/track/release-catalog/research/supervised-baseline-40529551070-evidence.tar.gz']
         (OUT/'tested-source.json').write_text(json.dumps({
@@ -77,6 +81,9 @@ class InstalledCLI(unittest.TestCase):
             path=self.fixture/'tree'/name;path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(raw)
         (self.fixture/'binary').write_text('''#!/bin/sh
 app=${0##*/}
+case $app in
+    7z|arch|c++filt|ld.bfd) printf forbidden > "$E2E_FIXTURE/utility-executed"; exit 97 ;;
+esac
 case ${1-} in
     --appimage-extract)
         mkdir -p squashfs-root
@@ -90,7 +97,7 @@ case ${1-} in
 esac
 ''')
         self.home=self.fixture/'home';self.home.mkdir()
-        for name in ('obsidian','sqlitebrowser','nvim','nvim-nightly','e2e-legacy'):
+        for name in ('obsidian','sqlitebrowser','nvim','nvim-nightly','e2e-legacy','7z','arch','c++filt','ld.bfd'):
             shutil.rmtree(Path('/opt')/name,ignore_errors=True)
             launcher=Path('/usr/local/bin')/name
             if launcher.is_symlink() or launcher.exists(): launcher.unlink()
@@ -111,7 +118,8 @@ esac
         (data/'locale').write_text('en\n')
         (data/'disable-dependencies-prompt').touch()
         (data/'newrepo-on').write_text(SOURCE+'\n')
-        (data/'x86_64-apps').write_text('◆ obsidian : Offline fixture\n◆ sqlitebrowser : Offline fixture\n◆ nvim : Offline fixture\n◆ nvim-nightly : Offline fixture\n')
+        (data/'x86_64-apps').write_text(''.join('◆ '+app+' : Offline fixture\n' for app in
+            ('obsidian','sqlitebrowser','nvim','nvim-nightly','7z','arch','c++filt','ld.bfd')))
         (data/'x86_64-appimages').write_text('obsidian\nsqlitebrowser\nnvim\nnvim-nightly\n')
         (home/'.local/bin').mkdir(parents=True,exist_ok=True)
         if appman:
@@ -273,7 +281,7 @@ esac
         before=snapshot_tree(app)
         self.configure(download_partial_fail=True)
         self.command('-u','obsidian','--commit',PIN,success=False)
-        self.assertEqual((app/'tmp/obsidian.AppImage').read_bytes(),
+        self.assertEqual((app/'tmp/obsidian').read_bytes(),
                          (self.fixture/'binary').read_bytes()[:17])
         after=snapshot_tree(app)
         self.assertEqual({k:v for k,v in after.items() if k!='tmp' and not k.startswith('tmp/')},before)
@@ -296,7 +304,7 @@ esac
         result=self.command('-i','obsidian',executable=executable,home=home,
                             success=False,interrupt_download=True)
         self.assertEqual(result.returncode,-signal.SIGKILL)
-        self.assertEqual((app/'tmp/obsidian.AppImage').read_bytes(),
+        self.assertEqual((app/'tmp/obsidian').read_bytes(),
                          (self.fixture/'binary').read_bytes()[:17])
         self.assertFalse((app/'version').exists())
         self.assertFalse((home/'.local/bin/obsidian').exists())
@@ -595,6 +603,171 @@ esac
         self.assertTrue(any(c['url']==SOURCE+'/APP-MANAGER' for c in calls))
         self.assertTrue(any(c['url']==SOURCE+'/modules/catalog.am' for c in calls))
         self.assertEqual(Path('/opt/obsidian/version').read_text().strip(),OBSIDIAN)
+
+
+    def utility_catalog(self):
+        # Exact accepted first seven-source publication; never synthetic freshness.
+        # Only the fixture clock is set to the publication's recorded time.
+        self.tree=accepted_tree()
+        self.index=validate(self.tree)
+        assets=[]
+        for entry in self.index['entries'].values():
+            value=json.loads(self.tree[entry['observation']['path']])
+            releases=value if isinstance(value,list) else [value]
+            assets.extend(a['browser_download_url'] for release in releases for a in release['assets'])
+        for name,raw in self.tree.items():
+            path=self.fixture/'tree'/name
+            path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(raw)
+        self.configure(catalog_paths=list(self.tree),assets=assets,clock=epoch(self.index['generated_at']))
+        for path in (self.fixture,*self.fixture.rglob('*')):
+            if not path.is_symlink(): os.chown(path,USER.pw_uid,USER.pw_gid)
+
+    def test_executable_system_install_icons_standalone_update_and_remove(self):
+        self.utility_catalog()
+        self.command('-i','7z','arch','c++filt','ld.bfd','--icons')
+        for name in ('7z','arch','c++filt','ld.bfd'):
+            app=Path('/opt')/name
+            selected=(app/'version').read_text().strip()
+            self.assertIn('/x86_64-',selected)
+            self.assertTrue((Path('/usr/local/bin')/name).samefile(app/name))
+            self.assertFalse((app/'icons').exists())
+            self.assertFalse((Path('/usr/local/share/applications')/(name+'-AM.desktop')).exists())
+            self.assertEqual(len((app/'AM-updater').read_text().splitlines()),3)
+            result=self.command('--commit',PIN,executable=str(app/'AM-updater'))
+            self.assertIn('Update not needed!',result.stdout)
+            (app/'version').write_text('old\n')
+            self.command('-u',name,'--commit',PIN)
+            self.assertEqual((app/'version').read_text().strip(),selected)
+        self.assertFalse((self.fixture/'utility-executed').exists())
+        config=self.home/'.config/arch';config.mkdir(parents=True);(config/'keep').write_text('user configuration')
+        self.command('-r','arch',input_text='y\n')
+        self.assertFalse(Path('/opt/arch').exists())
+        self.assertFalse(Path('/usr/local/bin/arch').exists())
+        self.assertEqual((config/'keep').read_text(),'user configuration')
+
+    def test_executable_metadata_refusal_and_exact_stale_consent(self):
+        self.utility_catalog()
+        self.command('-i','7z')
+        app=Path('/opt/7z');(app/'tmp').mkdir();(app/'tmp/interrupted').write_text('keep')
+        before=snapshot_tree(app)
+        rid=self.index['aliases'][UTILITY_ALIAS]['request_id']
+        body=self.fixture/'tree/bodies'/f'{rid}.json'
+        original=body.read_bytes();body.write_bytes(b'[]')
+        self.command('-u','7z','--commit',PIN,success=False)
+        self.assertEqual(snapshot_tree(app),before)
+        self.command('-i','ld.bfd',success=False)
+        self.assertFalse(Path('/opt/ld.bfd').exists())
+        body.write_bytes(original)
+        obs=self.index['entries'][rid]['observation']
+        self.configure(clock=str(Decimal(epoch(obs['validated_at']))+Decimal('172800.000001')))
+        self.command('-u','7z','--commit',PIN,success=False)
+        self.assertEqual(snapshot_tree(app),before)
+        self.command('-u','7z','--commit',PIN,'--accept-stale',PIN,rid,obs['sha256'])
+        self.assertEqual((app/'tmp/interrupted').read_text(),'keep')
+        self.assertFalse((self.fixture/'utility-executed').exists())
+
+    def test_executable_partial_transfer_retry_and_checksum_repair(self):
+        self.utility_catalog()
+        self.command('-i','c++filt')
+        app=Path('/opt/c++filt');binary=(app/'c++filt').read_bytes()
+        (app/'version').write_text('old\n')
+        self.configure(download_partial_fail=True)
+        self.command('-u','c++filt','--commit',PIN,success=False)
+        self.assertEqual((app/'c++filt').read_bytes(),binary)
+        self.assertEqual((app/'version').read_text(),'old\n')
+        self.assertEqual((app/'tmp/c++filt').read_bytes(),binary[:17])
+        self.configure(download_partial_fail=False)
+        self.command('-u','c++filt','--commit',PIN)
+        self.assertFalse((app/'tmp').exists())
+        (app/'c++filt').write_text('corrupt')
+        (app/'AM-VERIFIED').write_text('Checksum failure\n')
+        self.command('-u','c++filt','--commit',PIN)
+        self.assertEqual((app/'c++filt').read_bytes(),binary)
+        self.assertFalse((self.fixture/'utility-executed').exists())
+
+    def test_executable_optional_digest_missing_and_mismatch(self):
+        self.utility_catalog()
+        self.command('-i','ld.bfd')
+        app=Path('/opt/ld.bfd')
+        self.configure(bad_digest=True)
+        self.command('-u','ld.bfd','--commit',PIN,success=False)
+        self.assertEqual((app/'AM-VERIFIED').read_text(),'Checksum failure')
+        self.configure(bad_digest=False,digest_missing=True)
+        self.command('-u','ld.bfd','--commit',PIN)
+        self.assertFalse((app/'AM-VERIFIED').exists())
+        self.assertFalse((self.fixture/'utility-executed').exists())
+
+    def test_executable_mixed_batch_and_no_argument_sync(self):
+        self.utility_catalog()
+        self.command('-i','7z','arch','obsidian','e2e-legacy')
+        (Path('/opt/7z/version')).write_text('old\n')
+        self.configure(download_fail=True)
+        before={p.name for p in (self.fixture/'calls').iterdir()}
+        result=self.command('-u','7z','obsidian','e2e-legacy','arch',success=False)
+        self.assertIn('7z: failed',result.stderr)
+        self.assertIn('obsidian: unchanged',result.stdout)
+        self.assertIn('arch: unchanged',result.stdout)
+        calls=[json.loads(p.read_text()) for p in (self.fixture/'calls').iterdir() if p.name not in before]
+        self.assertEqual(sum('/commits/heads/release-catalog' in c['url'] for c in calls),1)
+        self.assertEqual(sum(c['url'].endswith('/lookup.tsv') for c in calls),1)
+        self.assertEqual(sum(c['url'].endswith('/bodies/'+self.index['aliases'][UTILITY_ALIAS]['request_id']+'.json') for c in calls),2)
+        self.configure(download_fail=False)
+        (self.fixture/'legacy-fail').touch()
+        result=self.command('-u',success=False)
+        self.assertIn('7z: updated',result.stdout)
+        self.assertIn('e2e-legacy: failed',result.stderr)
+        self.assertIn('SYNCHRONIZING',result.stdout)
+        self.assertFalse((self.fixture/'utility-executed').exists())
+
+    def test_executable_appman_install_standalone_source_and_remove(self):
+        self.utility_catalog()
+        home=self.fixture/'utility-home';home.mkdir();self.prepare_home(home,appman=True)
+        executable=str(home/'Applications/appman/appman')
+        self.command('-i','7z','arch','c++filt','ld.bfd',executable=executable,home=home)
+        for name in ('7z','arch','c++filt','ld.bfd'):
+            app=home/'Applications'/name
+            self.assertEqual((app/name).stat().st_uid,USER.pw_uid)
+            self.assertTrue((home/'.local/bin'/name).samefile(app/name))
+            self.assertFalse((app/'icons').exists())
+            self.assertIn(str(home/'Applications/appman/modules/appimage.am'),(app/'recipe.am').read_text())
+            self.assertFalse((Path('/opt')/name).exists())
+        alternate='https://raw.githubusercontent.com/e2e-alternate/AM/test-source'
+        self.configure(alternate_source=alternate,alternate_repository='e2e-alternate/AM')
+        (home/'.local/share/AM/newrepo-on').write_text(alternate+'\n')
+        before={p.name for p in (self.fixture/'calls').iterdir()}
+        self.command('-u','7z','--commit',PIN,executable=executable,home=home)
+        calls=[json.loads(p.read_text()) for p in (self.fixture/'calls').iterdir() if p.name not in before]
+        self.assertTrue(any('raw.githubusercontent.com/e2e-alternate/AM/' in c['url'] for c in calls))
+        before={p.name for p in (self.fixture/'calls').iterdir()}
+        self.command('--commit',PIN,executable=str(home/'Applications/7z/AM-updater'),home=home)
+        calls=[json.loads(p.read_text()) for p in (self.fixture/'calls').iterdir() if p.name not in before]
+        self.assertTrue(any('raw.githubusercontent.com/e2e-selected/AM/' in c['url'] for c in calls))
+        self.assertFalse(any('e2e-alternate' in c['url'] for c in calls))
+        config=home/'.config/ld.bfd';config.mkdir();(config/'keep').write_text('keep')
+        self.command('-r','ld.bfd',executable=executable,home=home,input_text='y\n')
+        self.assertFalse((home/'Applications/ld.bfd').exists())
+        self.assertFalse((home/'.local/bin/ld.bfd').exists())
+        self.assertEqual((config/'keep').read_text(),'keep')
+        self.assertFalse((self.fixture/'utility-executed').exists())
+
+    def test_executable_appman_mixed_failure_preserves_install_and_continues(self):
+        self.utility_catalog()
+        home=self.fixture/'utility-home';home.mkdir();self.prepare_home(home,appman=True)
+        executable=str(home/'Applications/appman/appman')
+        self.command('-i','7z','c++filt','obsidian','e2e-legacy',executable=executable,home=home)
+        apps=home/'Applications';binary=(apps/'7z/7z').read_bytes()
+        (apps/'7z/version').write_text('old\n')
+        self.configure(download_partial_fail=True)
+        result=self.command('-u','7z','c++filt','obsidian','e2e-legacy',executable=executable,home=home,success=False)
+        self.assertIn('7z: failed',result.stderr)
+        self.assertIn('c++filt: unchanged',result.stdout)
+        self.assertIn('obsidian: unchanged',result.stdout)
+        self.assertEqual((apps/'7z/7z').read_bytes(),binary)
+        self.assertEqual((apps/'7z/version').read_text(),'old\n')
+        self.configure(download_partial_fail=False)
+        self.command('-u','7z','--commit',PIN,executable=executable,home=home)
+        self.assertFalse((apps/'7z/tmp').exists())
+        self.assertFalse((self.fixture/'utility-executed').exists())
 
 
 if __name__ == '__main__':

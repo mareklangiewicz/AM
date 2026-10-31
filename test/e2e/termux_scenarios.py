@@ -30,6 +30,9 @@ class TermuxCLI(unittest.TestCase):
                 'test/e2e/termux_scenarios.py','test/e2e/scenarios.py','test/e2e/external.py',
                 'test/e2e/filesystem.py','test/e2e/transport_args.py','test/e2e/transport_records.py',
                 'test/e2e/run','test/e2e/fixtures/e2e-legacy','programs/x86_64/sqlitebrowser','programs/x86_64/obsidian',
+                'programs/x86_64/7z','programs/x86_64/arch','programs/x86_64/c++filt','programs/x86_64/ld.bfd',
+                'tools/catalog-collector/test_utility_selectors.py',
+                'docs/track/release-catalog/research/am-utils-live-20261031-evidence.tar.gz',
                 'docs/track/release-catalog/design/staged-manifest.json',
                 'docs/track/release-catalog/research/supervised-baseline-40529551070-evidence.tar.gz']
         (OUT/'tested-source.json').write_text(json.dumps({
@@ -55,6 +58,10 @@ class TermuxCLI(unittest.TestCase):
     test_mixed_present_missing_reinstall_names=shared.InstalledCLI.test_mixed_present_missing_reinstall_names
     test_no_argument_reinstall_only_selects_changed_recipes=shared.InstalledCLI.test_no_argument_reinstall_only_selects_changed_recipes
     test_named_reinstall_with_global_assume_yes=shared.InstalledCLI.test_named_reinstall_with_global_assume_yes
+
+    utility_catalog=shared.InstalledCLI.utility_catalog
+    test_executable_appman_install_standalone_source_and_remove=shared.InstalledCLI.test_executable_appman_install_standalone_source_and_remove
+    test_executable_appman_mixed_failure_preserves_install_and_continues=shared.InstalledCLI.test_executable_appman_mixed_failure_preserves_install_and_continues
 
     def appman(self):
         self.prepare_home(self.home,appman=True)
@@ -119,7 +126,7 @@ class TermuxCLI(unittest.TestCase):
         (app/'version').write_text('old\n')
         self.configure(download_partial_fail=True)
         self.command('-u','sqlitebrowser','--commit',PIN,executable=executable,success=False)
-        self.assertEqual((app/'tmp/sqlitebrowser.AppImage').read_bytes(),
+        self.assertEqual((app/'tmp/sqlitebrowser').read_bytes(),
                          (self.fixture/'binary').read_bytes()[:17])
         self.assertEqual((app/'sqlitebrowser').read_bytes(),before)
         self.assertEqual((app/'version').read_text(),'old\n')

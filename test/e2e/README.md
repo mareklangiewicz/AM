@@ -41,7 +41,7 @@ app-directory mount is used. Container sudo policy and adapters are test-only.
   checksum. A small legacy recipe is installed through normal AM dispatch to
   exercise a mixed batch; it is not a migrated catalog recipe.
 
-Twenty-one scenarios on each target cover:
+Twenty-eight scenarios on each target cover:
 
 1. System recipe installation, expected retained URL, desktop extraction, binary
    symlink, source embedding, real checksum verification and standalone updater.
@@ -96,6 +96,14 @@ Named commands preserve unrelated changed recipes and incomplete installations,
 including during startup discovery and child installation/removal commands.
 No-argument commands still reinstall only changed recipes. Exact saved recipes,
 single binary transfers, untouched app trees and user settings are checked.
+
+Seven utility scenarios use the accepted seven-source publication and the actual
+`7z`, `arch`, `c++filt` and `ld.bfd` recipes. They cover system AM and AppMan
+installation, ignored desktop options, standalone/current source selection,
+changed/unchanged updates, integrity/stale refusal and exact consent, partial
+download/retry, checksum repair, optional digest absence versus mismatch, mixed
+utility/AppImage/legacy continuation, no-argument sync and removal/configuration
+preservation. Unexpected icon requests and any utility binary execution fail.
 
 Optional real-binary startup checks (cached matrix images required):
 
@@ -153,7 +161,7 @@ The built image ID and exact tested source hashes are retained with each run.
 Builds use network; runtime containers use `--network=none` and strict fixture
 transport, just like the other targets.
 
-All fourteen Termux scenarios execute as the native unprivileged `system` user
+All sixteen Termux scenarios execute as the native unprivileged `system` user
 (uid/gid 1000). Root only prepares a system-AM fixture and result permissions.
 There are no `/bin` or `/usr` compatibility links. The native Termux
 `libtermux-exec.so` preload supplies normal Termux shebang/path translation;
@@ -175,6 +183,9 @@ Coverage:
 - Normal AppMan removal/reinstall cleans launchers and preserves user configuration,
   with the reinstalled standalone updater exercised.
 - All six reinstall-selection scenarios above run through native AppMan paths.
+- Both utility AppMan scenarios run through native paths: representative identity
+  installs, saved source versus current source, removal/configuration preservation,
+  mixed-batch partial failure and retry. Downloaded utility fixtures remain inert.
 - Download/install/execution of real Android-native Bash ELF bytes from the image,
   through a controlled legacy CLI recipe and the offline download adapter.
 
