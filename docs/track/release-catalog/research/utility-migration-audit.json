@@ -1,0 +1,6102 @@
+{
+  "baseline": "c787efe3a42fac015f743255006fddd7ea9b3817",
+  "recipes": 356,
+  "identities": 178,
+  "recipes_before": {
+    "lines": 18868,
+    "bytes": 673212
+  },
+  "recipes_after": {
+    "lines": 5340,
+    "bytes": 142230
+  },
+  "recipe_delta": {
+    "lines": -13528,
+    "bytes": -530982
+  },
+  "shared_changes": {
+    "modules/appimage.am": {
+      "before": {
+        "bytes": 4905,
+        "lines": 107
+      },
+      "after": {
+        "bytes": 5295,
+        "lines": 121
+      },
+      "delta_bytes": 390,
+      "delta_lines": 14
+    },
+    "modules/install.am": {
+      "before": {
+        "bytes": 60439,
+        "lines": 1436
+      },
+      "after": {
+        "bytes": 60739,
+        "lines": 1442
+      },
+      "delta_bytes": 300,
+      "delta_lines": 6
+    }
+  },
+  "production_delta": {
+    "lines": -13508,
+    "bytes": -530292
+  },
+  "notes": "Exact original selector text preserved for every recipe; generated standalone launchers measured by container installed-code.json. Historical audit-executable-lifecycle.py remains a pre-migration baseline audit.",
+  "rows": [
+    {
+      "path": "programs/x86_64/7z",
+      "before": {
+        "bytes": 1882,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 395,
+        "lines": 15
+      },
+      "original_sha256": "5bfbe715031eca6f0018de7a95e7f48c7aed1af6529f5ebe9de9f33fd232e460",
+      "recipe_sha256": "1a136ac790713859d0e6bdaec5ed7b752b3e1be0fc20fb8c33c512bb94c296f7",
+      "original_generated_updater": {
+        "bytes": 756,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/addr2line",
+      "before": {
+        "bytes": 1896,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 402,
+        "lines": 15
+      },
+      "original_sha256": "48b7664390d0cc5fc6a5978d12cbb7f7481cc059b0cd694819b0259308f72a58",
+      "recipe_sha256": "505e4fcd14133ae9ee91dc6d1c3f7927af5ab9101471288fbad1276cce0d1254",
+      "original_generated_updater": {
+        "bytes": 763,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/ar",
+      "before": {
+        "bytes": 1882,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 395,
+        "lines": 15
+      },
+      "original_sha256": "8a494c3dd7b94de0d56c4f33c6cd2e4ef3f6891ac9f5039198a42fb6ca225831",
+      "recipe_sha256": "fb7541f7862a996ceb85fc136390d757615ec3d8e6526937cabb387a5cdde16c",
+      "original_generated_updater": {
+        "bytes": 756,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/arch",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "6e440c54acab2d58464517cf9eeb711b5933962565995049cd95049d6935f27a",
+      "recipe_sha256": "84c2f0ee66368fcaf3eb061f62e0f49d2c69416ba5bc94b7b8c8491362670992",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/as",
+      "before": {
+        "bytes": 1882,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 395,
+        "lines": 15
+      },
+      "original_sha256": "3244160e9cf2f3f17d9693a24a6f69d710dc7707ec7a5432b52fa9204fd971e0",
+      "recipe_sha256": "ed968f6dbad1cf0ef5c46660f6d6bc5158e32a8a4a2160a43712c0af46eb06da",
+      "original_generated_updater": {
+        "bytes": 756,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/b2sum",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "66dcf551c2a9d22760f3fc7ca4e9b6039523fd7e1bebe96bc23900eeb14400da",
+      "recipe_sha256": "0837077189487fba7f08d43663336486195ed4b1ad385c4c0d69d8c92154e0a6",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/base32",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "4970b1ce3150a6fed1e9b10148673a2375cd99a013313fa1e78a236e90ea3ee6",
+      "recipe_sha256": "c227c563a503f8b6b2585d8e7c1c66a15e6abd070fc6e897a0fae73188b821ac",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/base64",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "44bc902e3f8a879437245f3e3ab1d4aa03e022fe3c9638d2be15ff18de103db5",
+      "recipe_sha256": "89316f2135c96fee3b882311998f9640a6e762fb462ca56adfbf00c53f375faf",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/basename",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "ba2d6ee4ce285b329cac62b2546541eaedbcda3167ab45c24fac93ca399c3693",
+      "recipe_sha256": "3b9a3399e3f7d113d53d5eb1ee7a770b486a6cdeb53dc479d18bb4d7eca1bb55",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/basenc",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "5ecdd31b987cb2a3f4fb43c7be6fb058b2c5eaa1a8eb108c77fe91742e2169c3",
+      "recipe_sha256": "2889c13f9a13762b0ff8c725801f928b7a5dcb49fca39b448b1f77ecb63845d8",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/bzip2",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "789dacc696e1269dac0820dfa9d931f429205a461629d5a1951820cd8ed8eaa4",
+      "recipe_sha256": "ff9bd798bd43f08b30f0611f214b77ade9a347c212df0fac38497cb2f5c27b97",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/c++filt",
+      "before": {
+        "bytes": 1902,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 405,
+        "lines": 15
+      },
+      "original_sha256": "2afac7ae0e43948b184cc9b283819d5f021e799db872e11c292e0c922d77ce79",
+      "recipe_sha256": "6906ac6d4ece11f9dabfcfd7f628a6b285d41e71f6180e38f0be97cb12fe3e4b",
+      "original_generated_updater": {
+        "bytes": 766,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/cat",
+      "before": {
+        "bytes": 1884,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 396,
+        "lines": 15
+      },
+      "original_sha256": "55e3bc40a76a223950f00e7e60330735c8a900a2ef50cc853c96f13a00483810",
+      "recipe_sha256": "599c975bcdc9bd5ececbed387171ed8b2de5f2b10f8936d7921d5715e448eabd",
+      "original_generated_updater": {
+        "bytes": 757,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/chcon",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "3be29ab87eae9fb335e5ca9763a25b615442076c53f84da577a1c219ee3c0093",
+      "recipe_sha256": "a8a6a6ccadacc021bb8877456e0dce36f3db0f9c0c39b4b7412a4c02945a5ef5",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/chgrp",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "96d182de233c00556eb33dfdababe6a8cec524b527f2dae1833947757b10edad",
+      "recipe_sha256": "744f7d3667224269e49fb8150f05a7660b473bea4b1f381a516f07c32347b24e",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/chmod",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "a4b9c069cf91b3ebd04b5d338f91a84148d7b6990c214827e3c0d485d02c6f32",
+      "recipe_sha256": "59543718b2fe00d3c761a67aefc346d7365091a8c6110c7c516c59714b1d0a45",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/chown",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "935d60f7ed5b60f6f0c12147086c5dc0b8fc41e6f448757b5573f382c85907af",
+      "recipe_sha256": "bb1495215380b5dca6eca953e74d09c31920e89b8393c6228c302294777c2324",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/chroot",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "fdee68b8433069c19a9f3363500f9313c7cffada03363f84233bb6b2a95aeac6",
+      "recipe_sha256": "a17b6b4a1cfaa8add200318dee23831d3f3347ad6c0581b9fbd1ac63ad2524d4",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/cksum",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "96fa38c8c5ff100b04fe5335f13f4435974e30fb840d90a9df8ee44bbd0e7507",
+      "recipe_sha256": "4de437d89a2bf8f499100b4e0930da96f8d5d57c174155cf9a477df471f9b010",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/clear",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "e172241ba8f88b842e251a2c1b8743bf6cda907ecbb2e70acfee8ff8a5cd94ef",
+      "recipe_sha256": "d2796646b838a7a867bcaa3e0879ce67b5627522b69af5ed40d7a1491ceff40d",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/col",
+      "before": {
+        "bytes": 1884,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 396,
+        "lines": 15
+      },
+      "original_sha256": "0fc40c9d26cde5841d527d14af94c9829921ae61d67d487ebed71c328b412aeb",
+      "recipe_sha256": "cfa437792f9a48069022cf30425cd472012bc3671e267ecaac42e890503c2830",
+      "original_generated_updater": {
+        "bytes": 757,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/colcrt",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "8593004485c74e43c64b61b8128d86327dffbb3e7560607b7079bc5ebbe212ca",
+      "recipe_sha256": "97ca6c972fb71f75c4d299e17206caced2c683122c8fee38b5b0eed85f63d7da",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/colrm",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "67e6047d99bb4c37c7591b6f0fcbf8c25dfd4aa98aacfbc071aa14d1afab394b",
+      "recipe_sha256": "59360d075e191d3bc49519db9403a984e2323dcda6b2a1155e03be0d4634328d",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/column",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "78cc00ef62450aadbd309794dd10060657174eb47aa7e7595a7fdd00c31d2a8a",
+      "recipe_sha256": "6cc7a583e8f80fae3287af6e13e8a2ce03b74cddda1c8b39ae74f492247fc6d4",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/comm",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "9b00c138642ae12e9786b3801a57751535aea53842e62c0d0893a991c6534347",
+      "recipe_sha256": "55e347b30a0b3d958e57757a40bb916bcdc6a46422b8765464370999821c8ffb",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/cp",
+      "before": {
+        "bytes": 1882,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 395,
+        "lines": 15
+      },
+      "original_sha256": "eda8c218126cc7810170f8574c8b1b369a8f97558ee5225e84bbbbafcc365b62",
+      "recipe_sha256": "9738f3d1a24409a4c11703174ad065165b12f97ddc0667e2ee109a363521ccd2",
+      "original_generated_updater": {
+        "bytes": 756,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/csplit",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "b82f60ff19ab3f95e56e67b00de95c6b8c7ac742a46cd060b5b230b73538a701",
+      "recipe_sha256": "a5682429fdc9a5d00a75e51554fc8eaf0111ffd3fd8aa53873c392c4bf69180b",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/curl",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "c395fbc68675b4695f9fc3762f6e66d14e53a9efef8dba0caf0a57a2b9e120f0",
+      "recipe_sha256": "afafe6f60d63714eef064e6f023ee48462bd2aac72ebee9a1d43cfbfc6cf9d2e",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/cut",
+      "before": {
+        "bytes": 1884,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 396,
+        "lines": 15
+      },
+      "original_sha256": "b3bfee1babcec0454908faadf583d055257be0aaf17550211791a7918c00807a",
+      "recipe_sha256": "3df29bca2e0e91b8599d67c41b153b863bfd74468d81c4d3a870dc5f2ae664f9",
+      "original_generated_updater": {
+        "bytes": 757,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/date",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "786d0cb65cf9fdf5f0db867e30cfcaf70e92b65691a859040166c5f1c7dcc4af",
+      "recipe_sha256": "4a56b542b0361f896e913b42ddc8edee7fcab749a9e214fe992b1b6e38bb2dee",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/dd",
+      "before": {
+        "bytes": 1882,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 395,
+        "lines": 15
+      },
+      "original_sha256": "4e0b5a0846a36b97a9c9a62517a4571453eda34019c1544f05ebcaf986cd3ca9",
+      "recipe_sha256": "0d2afabcb2dcc0d6cf1e26be16a722614c812b7dc6530c743b6404a72911c162",
+      "original_generated_updater": {
+        "bytes": 756,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/df",
+      "before": {
+        "bytes": 1882,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 395,
+        "lines": 15
+      },
+      "original_sha256": "2d10acd069835776034cbeec5a78a8bdb63b9d73df19871f6088dbb3ddf0fb7b",
+      "recipe_sha256": "35db7c6fec085120872c4357732725a1a932cab44ebd7c78f8456595afb10321",
+      "original_generated_updater": {
+        "bytes": 756,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/diff",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "f757f306982656cb74df9c991c208cc33e0b2c314a833959baf8cf6a5f73b5eb",
+      "recipe_sha256": "78b7f4011f5a6df8046abe542e19a42b4fa53c4382ede7e40b2c1937700563fd",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/dir",
+      "before": {
+        "bytes": 1884,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 396,
+        "lines": 15
+      },
+      "original_sha256": "370efe7ce1ef7e00e8c8c94c26de64910352677a7628baf10132bb8ca41d0eeb",
+      "recipe_sha256": "98a48a505f61c3f23817c640c1c034d51c5e52e2d6f546a93547f27539da653f",
+      "original_generated_updater": {
+        "bytes": 757,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/dircolors",
+      "before": {
+        "bytes": 1896,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 402,
+        "lines": 15
+      },
+      "original_sha256": "c14c282ab39886b749ccedf65b13fb1b97fabac8e953e8ecb7132969fab84bd2",
+      "recipe_sha256": "c62634b4cf0c82a44f7168e8414a44149396605c36bf2cf0e89df176599c48f7",
+      "original_generated_updater": {
+        "bytes": 763,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/dirname",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "b2b23c74f6bc1cc4b2952a92198d54714168faa96712d61c1fba7d036af9276b",
+      "recipe_sha256": "2719ff535f897709bf5732c259bea67b60a3b92ebba9d99d6cf3acc4aca1ca5f",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/du",
+      "before": {
+        "bytes": 1882,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 395,
+        "lines": 15
+      },
+      "original_sha256": "76104e347e13ca2fad604db177e3caa066077053c0b7bdd5c252185f1924d877",
+      "recipe_sha256": "18b387ad8f2262cac5097a35e0ba6e05619831b8e3d311ab3a056b9b47dab5e4",
+      "original_generated_updater": {
+        "bytes": 756,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/echo",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "96b7183d2c263b1c294db32d5ad03737856252bb3343461648f897cb879d8259",
+      "recipe_sha256": "e55e142cdff1c28ee577a5ce688f831036eee80bbbab8ae7313fbbaae2f5c34a",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/elfedit",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "ee475a8d27024bd6e51cbd3a7ebb1be013671d6f71a077a59877d011bb5fbdbd",
+      "recipe_sha256": "3e34f51ec44bbcfd1481f07cc7ab133e246e7f3d04e071a624f857363f61e864",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/env",
+      "before": {
+        "bytes": 1884,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 396,
+        "lines": 15
+      },
+      "original_sha256": "8b50b8722a09720c34c414939e60e217466ae63fc02e296d76d0cd679189c801",
+      "recipe_sha256": "c76ecafe0121c3988aedc2f08a43f2a92eb7011528d6b2bb23648a077e24da75",
+      "original_generated_updater": {
+        "bytes": 757,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/expand",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "11b05e50a8cd03096c319de280f27aac083df4c226622ae73b963cd6f97e16ca",
+      "recipe_sha256": "ac9e088efe9bde051d9bd53bde91d1f99f3cdb30bc6a250f501bf92dc663553e",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/expr",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "f0486eebfa359bf944cd761082247ffedebdc2a1406df73b288f2f3df9c0030f",
+      "recipe_sha256": "1bd8a04fb8eac84a32b83122ad648859537b895379f272c9f2b0bc3b6ab474f4",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/factor",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "42d1a65662a9b06c67748703700624ac6631e407599d9603013cc37c5bdae897",
+      "recipe_sha256": "d5433749086c6ff2cdf52713693c216bc0e9b66f947a4d93546fc83e50c8f122",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/false",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "58e00bcc761e81b28d44af4ab2e7889a0645206a941529d27419f19935e2f48d",
+      "recipe_sha256": "317039a3105c9f132c1cd57b0a3674197f41df265fba7db92923e384d438cdd5",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/file",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "322942229a82f5c1450857e5a1a2acd58365ec45ee562760add38bad7f339b3c",
+      "recipe_sha256": "fe3ceaaa40066b2b23ec59da8d44ffd65d5fdca2d4cdaa1707e9c071b7a176af",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/find",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "45cae3638e84ee3ee17d4453a1ab3120c78d247df987e8607a222456fa67b710",
+      "recipe_sha256": "1bdce63f31b222524568a753e602c4c893e6547a1bd66b12752569729466b5f1",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/fmt",
+      "before": {
+        "bytes": 1884,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 396,
+        "lines": 15
+      },
+      "original_sha256": "658ce1fbb6cef2e62205367135a100e00091f0afd2c26b83474aaee338c16423",
+      "recipe_sha256": "f80fbf452c079f56a80d51b16ae9ca47e760325705cf334ebd798ff600229b95",
+      "original_generated_updater": {
+        "bytes": 757,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/fold",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "2d91aee392def5e6f75f9c77492312e2278c05f24b793c923b0c89d94afffb5c",
+      "recipe_sha256": "0b5edcce51cfc2b4db2585b5592739f8ca7f4924f1acfd9eeca1694b619dee4d",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/gawk",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "4a38abbfca809d4df2a97d8ceacc0f582189ef600b86bdd64f572aa398f69edb",
+      "recipe_sha256": "f48ea3fb5df82ac28c14b193908f32c64d332df166a971313d00d96950e34872",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/gp-archive",
+      "before": {
+        "bytes": 1898,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 403,
+        "lines": 15
+      },
+      "original_sha256": "ef3d7cea653a0d71d06ac65cb693ebe554b1ddfc2004548ed81a12b04916ee4d",
+      "recipe_sha256": "2867a3f62518be5523ef8dbca0fd86dea9053be4514f21c7ea9772cb9fff62de",
+      "original_generated_updater": {
+        "bytes": 764,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/gp-collect-app",
+      "before": {
+        "bytes": 1906,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 407,
+        "lines": 15
+      },
+      "original_sha256": "5061f3ba2341553ac08989abafb5531d87eb0f36d2743255f1b7ccd90e82ceb7",
+      "recipe_sha256": "0d4911800848e66220f0f531ab7bc696db2bcca3c289ac58e3ac747208f4d473",
+      "original_generated_updater": {
+        "bytes": 768,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/gp-display-html",
+      "before": {
+        "bytes": 1908,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 408,
+        "lines": 15
+      },
+      "original_sha256": "9209a08cf2b1ac8851fce7ee38c82ed0d356a066117529d8f81da05025d52207",
+      "recipe_sha256": "94b365345e8e0ff9d63be49036a542d398c89c48a9832e2b2ecf77d5e065a460",
+      "original_generated_updater": {
+        "bytes": 769,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/gp-display-src",
+      "before": {
+        "bytes": 1906,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 407,
+        "lines": 15
+      },
+      "original_sha256": "8809b8bb96e50fc740e410410f1c1b791932aef0e6e36b4623e12cf62cea8dfa",
+      "recipe_sha256": "fb1217598f61af2a483e0c7e47aef2a84ea792b3971bc3242da45fb4cc55b485",
+      "original_generated_updater": {
+        "bytes": 768,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/gp-display-text",
+      "before": {
+        "bytes": 1908,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 408,
+        "lines": 15
+      },
+      "original_sha256": "228123d5a4a9422b8a0f5a908435b8ada73281aba22614c47c72fd66d2d25a9b",
+      "recipe_sha256": "05eb7f7d884a0728123956cf7de9591d36caa4c2a03e1189fa6a03e89ac8ebb2",
+      "original_generated_updater": {
+        "bytes": 769,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/gprof",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "1629729a300114ac8a404d1ca3a3a3e366b30b3e688c162ac61a7e81fc587242",
+      "recipe_sha256": "ea3a92f2084741d8f1361eca5e97faac16ae01a66a8d99f090f228240c080671",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/gprofng",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "74d9399e0ee2d93511e0dcc7d44923e6a8dc56380e476861b652dfef768cd384",
+      "recipe_sha256": "6be88ea298f60cbcfbb66bbbacc183c904603ace154b1b7f1ed1a3684a72e53c",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/gprofng-archive",
+      "before": {
+        "bytes": 1908,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 408,
+        "lines": 15
+      },
+      "original_sha256": "5dbcdc1428b09c5a26c23109eb426fd02abd328ba1b59a0a64ea29a49d35a093",
+      "recipe_sha256": "e36317affa7e6515f6b717948dee0e5c17657c2b49d7b883709af8e04b5581f1",
+      "original_generated_updater": {
+        "bytes": 769,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/gprofng-collect-app",
+      "before": {
+        "bytes": 1916,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 412,
+        "lines": 15
+      },
+      "original_sha256": "94ba8d74632943c775c83943a02bc383b777d325ee83124c6b581e5bc79b0f0f",
+      "recipe_sha256": "ab14c07bd5151fa3322c12ab31954d30c7d9d83a8be74972e2851dc9d55f761c",
+      "original_generated_updater": {
+        "bytes": 773,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/gprofng-display-html",
+      "before": {
+        "bytes": 1918,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 413,
+        "lines": 15
+      },
+      "original_sha256": "5d9b977f0d7a27a6b368c85e4f63f4c9941a7a930ea418c4063da2ed92ffb328",
+      "recipe_sha256": "5833a965e67fca2e720662e56e4e7165a9d2cf33ec1b3efa8dae2a568ccec8cf",
+      "original_generated_updater": {
+        "bytes": 774,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/gprofng-display-src",
+      "before": {
+        "bytes": 1916,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 412,
+        "lines": 15
+      },
+      "original_sha256": "51c039345b6bc3fc4d8ffd3395d9fc77d3491736598377d7a48c0cebdb7bb9e2",
+      "recipe_sha256": "1d8b773257c602e4290a73075dff9eceb404d72e8a13e2f370ac1ba1eb706377",
+      "original_generated_updater": {
+        "bytes": 773,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/gprofng-display-text",
+      "before": {
+        "bytes": 1918,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 413,
+        "lines": 15
+      },
+      "original_sha256": "e7b7152eb4508d0e5acb8485c4233eb570b61a716a9f32df8d3f1c4dbc3aa885",
+      "recipe_sha256": "42c91ea87566e3f48837feb51686a6881456e041656b824ddb410fff504b27f9",
+      "original_generated_updater": {
+        "bytes": 774,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/gprofng-gmon",
+      "before": {
+        "bytes": 1902,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 405,
+        "lines": 15
+      },
+      "original_sha256": "49a10be9595b3dcfc5106ea8b46e5c1a5c460270422b6c4c620133b0f6ef5592",
+      "recipe_sha256": "690e1aa8c92b9ac49e1e75a800f377d3894de28c8ba415d3df826e2f19ed4123",
+      "original_generated_updater": {
+        "bytes": 766,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/grep",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "46594e1bc9fa625e71b40cd056597ccca2ac491e8b5b60914286305d267ddfb4",
+      "recipe_sha256": "4841ed86d5741fc785082b101fed38701b1310b9b9497343453f66d3ea8bc308",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/groups",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "0fffda8bf47570562636578ae7ea9979cccd9c597f098e1a7afc7b7b139e954a",
+      "recipe_sha256": "c887f1f730a4ddf8a3587495b2e9132d72289ec5d2c910fe9849f14c4cdccf20",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/hd",
+      "before": {
+        "bytes": 1882,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 395,
+        "lines": 15
+      },
+      "original_sha256": "0af2303d23f7add504a6bc365cafc8d23c70078886db0193f0aa0d52a5e3601c",
+      "recipe_sha256": "4fae274eb4ea8af16dc0744310e14ef222a2263e07ab88700cb6aad7baa6f51c",
+      "original_generated_updater": {
+        "bytes": 756,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/head",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "5340e1d55e44721fcb6f67bf35a16af7825841cc487eaf697b6ab242bb2b8a13",
+      "recipe_sha256": "7ba3d5641b454b2c2cc8427ab22ffded3e38687de71c7e3e216cc57179048fb0",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/hexdump",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "b8987c8776ebb8922163f023e2d3195289a7dbde230ca85a93f5aa3cf60d88fe",
+      "recipe_sha256": "d710934a84c5e644c39824a333b846c65fe7f521af712eda7e7420b3a1bfa685",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/hostid",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "c3224c1979bc1a8ea55d8f235233cf100968800ea73248dbd0af380683b7eaec",
+      "recipe_sha256": "1cf69501598c6ec791e1eec62244ab531d9e96b0e93b8c3c3d4945d355d54c98",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/id",
+      "before": {
+        "bytes": 1882,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 395,
+        "lines": 15
+      },
+      "original_sha256": "875d384ea6d9089a8fd44da17908696525c87fe4631b910e9a13977126360eba",
+      "recipe_sha256": "ab3e14793074585b9231381b116ab64e45da9c2726ee47292629c5c0e5794ab4",
+      "original_generated_updater": {
+        "bytes": 756,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/install",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "8014bdaa15aa00336868d2ea956f7384965fd938e9bf0ff633c10a633f32ee28",
+      "recipe_sha256": "8f296a0dc61327a70c154cc31222aa0575f62463a80267baf18e4fa764de5050",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/join",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "6fcf4b2d2115c65e79eff49d3475067c1e718177a62829f5fa9b97c14343311d",
+      "recipe_sha256": "6d6b187c4982c59756124d2e6bd5a6922866b6f91f80e18011e2b30aed0a0cc2",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/kill",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "f5fc04d3f3ae3857e5ec17abd15a93291b2726f614d1fb8f401133be33608b5e",
+      "recipe_sha256": "2d4b5a15016af7d5db20cab3df9104e37e3052a392a5fb5588fdfb03feb26d96",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/killall",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "79fa316c1162cdeb834e0e2722585d0b7c034d78a45d2c3843f3cf59902607bd",
+      "recipe_sha256": "e9e914f2b91db03dc98e25e9bc50294112b5093e38c06f292104b653515c0fd7",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/ld",
+      "before": {
+        "bytes": 1882,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 395,
+        "lines": 15
+      },
+      "original_sha256": "d945ae36921029da71da25ded7840a5cea1812acb3a0975d214d11ce49bd2e20",
+      "recipe_sha256": "24fd98eb834c21449395efc415c1e2ac55cb1317b98307c1dab427fd40e92dcf",
+      "original_generated_updater": {
+        "bytes": 756,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/ld.bfd",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "a91ec2994321934f2746cda2574cf2632d5bcc66ab2db118ae438966a128ac74",
+      "recipe_sha256": "acd674d69b5dca6ce42d44078345c1a8bb6ca97e0cc8621661efb95aef38cad0",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/less",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "865b41e4af1cea9af297b6450c328cda2900196f823e66952265762c4a77288b",
+      "recipe_sha256": "4ec39428094fc52f05b1015219b5de45587b142dadbe0ed49260884fd29e1b25",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/link",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "72e2667ceaa09cfbaacf93c78c2cabb3f7b0634b8c6063fac7cf1ec63eb5842d",
+      "recipe_sha256": "41d03a33bef3393476f0f0b165c47f001bd03fa7aca285c08b2c0e261dd74721",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/ln",
+      "before": {
+        "bytes": 1882,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 395,
+        "lines": 15
+      },
+      "original_sha256": "b7a204c621ddf54e3c6cbe852f32b16e67987d47431893bc7d0be97e1eff1255",
+      "recipe_sha256": "dbd6901cc6033546b6672ab7ffaa8820b1313db1ea17fffb96dfa83d8681dbbe",
+      "original_generated_updater": {
+        "bytes": 756,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/logname",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "3c362124e461f794a52491d2ae68abfaed92e156afa379c22186644ce0fd483c",
+      "recipe_sha256": "c5e39e5523bcd3cafbf269d34189737c19828c58441cdd20da09099bd11ebe11",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/look",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "07db58c805523fb6d9a30e8d2afbcd31ee1bffbfbc6130fad5769a20d458ec6c",
+      "recipe_sha256": "fcf83777b959292c43b63db8523007d97b40df7671af26ca741d09451b829920",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/ls",
+      "before": {
+        "bytes": 1882,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 395,
+        "lines": 15
+      },
+      "original_sha256": "accfb08fe24a11dfcf37a5ad3e7b7d91754bc5b3bacdd5c1f2b43e5daa00ff60",
+      "recipe_sha256": "44a7ce4f4643a97e5ad8819f41a60e03fa8e232dce3d4a1d9c38a1dc4d93941e",
+      "original_generated_updater": {
+        "bytes": 756,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/mawk",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "b2237fa5f7b0ca8709d8e77dfbf74b31b08d873af3628974a20503f153eeb26d",
+      "recipe_sha256": "c9a3eaa1c1af79827b1265c751d5de1b64d6ac96321127cd28243928db601b91",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/md5sum",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "2150635f39485fbacd08cd2c3c436a8277f39359befa9eb00c303eef95fa6bce",
+      "recipe_sha256": "319bb1149805b8301a4c4b9f35ffb2cf81496d478f9e4d79da09ab9c2841b6b5",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/mkdir",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "99c98ce8a8becba702fb53a905911125cee7a954a8c166534f251350c5b108c2",
+      "recipe_sha256": "a46a67578b8b0c5605d7b0b980b82f081118cdbc7d5720c175669e0a7be29680",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/mkfifo",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "2692f5689c4f33bf7524de71f1c57e7659729dd00d4e698a295802f7554368a1",
+      "recipe_sha256": "861ab5d51114cbc9a0e059e376a0c164d0371c49787686aadadef9273a648640",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/mknod",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "830b117260c03001a4d1615d6ae2ed831e5874aaaadf6ece2108d2f1d29cb913",
+      "recipe_sha256": "0091c74daa85af56f819b3c4bd9b3f79823b5e92ff73dae3979d2dbdb76c30af",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/mktemp",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "d727a527b7ba5af17bcec7a5d7e52eb3b4877dc7dbd8eb04c12a951d5f2fc239",
+      "recipe_sha256": "638253a8594aa8bfde6f05f83e95d1ad060d5615ba3e9d63eda9441fb1ad7578",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/more",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "112135c42a200ebad6d7a7110344a8a943340e7f5d892a526bd9d2752c78e9c2",
+      "recipe_sha256": "03fbcbee435869f79a46cdec337f75b433a9329cbf918e057fb2ff74dfeb6a0c",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/mount",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "13ac1a4409984ab6a0e9e3d1f9029ddb772a98359e66282d1c84a5b8f4ac7b98",
+      "recipe_sha256": "9361bbdc808a4b35cbdd81595b1013ab937b73427bf67ca4246393d078b819c2",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/mv",
+      "before": {
+        "bytes": 1882,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 395,
+        "lines": 15
+      },
+      "original_sha256": "39a4b4969374595e17b62b8049be71bbea201779cecf00fd59fd7ee2975dda2c",
+      "recipe_sha256": "33fffae27650c67ccc984ea255adc86ba6b793662536f595ee3541e29d03316e",
+      "original_generated_updater": {
+        "bytes": 756,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/nice",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "9e14cd55b837cd04695f17287ea468c8ce3c4687d8aed962aafb1605020bd863",
+      "recipe_sha256": "168e777e0127a1ed37e8b428e5892bcfc9003811fceba87441c120528adbe77b",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/nl",
+      "before": {
+        "bytes": 1882,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 395,
+        "lines": 15
+      },
+      "original_sha256": "ff0f0707bb11b1ba2e05e25853eb659d4c9c261a01a9b325aae1246e4222c6ba",
+      "recipe_sha256": "d496283ad5d4832c7931cd90395af54dc69d15c8654713d2f36fd460a57a0e88",
+      "original_generated_updater": {
+        "bytes": 756,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/nm",
+      "before": {
+        "bytes": 1882,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 395,
+        "lines": 15
+      },
+      "original_sha256": "07e449ed4f540dac06803578ed63019187e569558c88de140f6970a3805047cd",
+      "recipe_sha256": "bfd37666999ad5e27760330238dd1b9040b42e3ae4671b33106fa9497cd19791",
+      "original_generated_updater": {
+        "bytes": 756,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/nohup",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "01284a89a15a402e161b47d694c5499ca20574da9b2e8bb667a7fd62eb49b267",
+      "recipe_sha256": "3b017cfb2dc393dd71325b7b05e44ac6a1733270e19076a3505527507ae6f982",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/notify-send",
+      "before": {
+        "bytes": 1900,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 404,
+        "lines": 15
+      },
+      "original_sha256": "4c3f5260d06854ce62f92910f9556c08d7c1c38a1d74b55729285b7e9a09a113",
+      "recipe_sha256": "c5401cfb538703ecd7f030b98c0f58d42de0ec0880eceacfd8b9faddcaae050f",
+      "original_generated_updater": {
+        "bytes": 765,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/nproc",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "dcd05fdf1d8174a4e0f8a1fb583b8c7b5868e3ea094d95af3a0b80ce6e6259f6",
+      "recipe_sha256": "c3b0f4231eca54d8cf53bfc0caef8631f267704cc8d527b79e1d0e57ceaa889d",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/numfmt",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "19e009969e66c72ff9f9d8062177bdef0e9b1934e1480d74cb82d215fc493855",
+      "recipe_sha256": "21505bec0171ad87b8dcabfd57941701a04d924d51bef783e5e7170498aa3f54",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/objcopy",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "3d5c6619af28f788a9b6609c2f58e35d7157df4cf5820325550d32e98c1673b5",
+      "recipe_sha256": "88fc04a0a0fd8ab15a64baa890f2deb404d30a7048c8a1657702dfd7292061a3",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/objdump",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "3c4c256b8b6547d689b65b06118528f64db1ddf54a80ec637f9d61ffe1e33b16",
+      "recipe_sha256": "43d12e1cc2f34f27f61144dec55c3593fa0dc1f34cecc09063ea360a64c11109",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/od",
+      "before": {
+        "bytes": 1882,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 395,
+        "lines": 15
+      },
+      "original_sha256": "dfee547d0939340e54fc527ec45a518f782468c28bd7fed61c6709bd3be73bb1",
+      "recipe_sha256": "86aad48187f41b37bbcb6908b606e5b01c95d1fc80917de5f4f0cee62c8a3c8f",
+      "original_generated_updater": {
+        "bytes": 756,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/paste",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "05f7ecfc2e73ea8e3d82c84d9ec96adf65b36fb8ab9d2a4050f4ef7ff303d037",
+      "recipe_sha256": "ce1a4a59b259504d6a6524352cfd10d97589a1800aa968a7190c5218dd283668",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/pathchk",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "c8a124d94cd8f6caafe5f02de35bc873e2794607afbff9dda19ce7d61881553c",
+      "recipe_sha256": "8c96f3dfd337a38fb94e1f4267385ffb533b7e9053eecb4b286ae5691b6919fc",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/pinky",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "810491c6b2633b3fd7b823c274a494f4594540334a987283fbf686f74303f289",
+      "recipe_sha256": "58952f8fda6e302f41b912c5c6d21414b17b324831147a66da2fde6f3834e004",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/pr",
+      "before": {
+        "bytes": 1882,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 395,
+        "lines": 15
+      },
+      "original_sha256": "29aeafdfd07018af13003837c48b98e90b08c7d3f9d26ec35b6e4f9190e5e418",
+      "recipe_sha256": "4dcda4ef75eba0c2521e4c5133cb5bce0acc62ac6a9e5d3f22ac79728910decf",
+      "original_generated_updater": {
+        "bytes": 756,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/printenv",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "1ffd8646650ec72892a150169fe26b02ae68fff703633057d420cfcded354604",
+      "recipe_sha256": "c2b5e7c6d18a6691deea41b0d79b358995f3507ef94bd950f93ca72da837211a",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/printf",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "e66da2f2b465f8e7945d56843dbb2eff0d631c872e74abf682acac010714e43e",
+      "recipe_sha256": "31cfc86531bbe7bbd3032fd7d47da4d7c4405e901b41de560cbee4c08860ef73",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/ptx",
+      "before": {
+        "bytes": 1884,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 396,
+        "lines": 15
+      },
+      "original_sha256": "a776f1b5e09903fe7326271b4a15ec27dcd983e56b24093fadfcf4ddb8648461",
+      "recipe_sha256": "20339e7bd0217e64c97783364092f5f6ced2d5a3d757f287abf25dcb78c5e760",
+      "original_generated_updater": {
+        "bytes": 757,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/pwd",
+      "before": {
+        "bytes": 1884,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 396,
+        "lines": 15
+      },
+      "original_sha256": "8639ac412cffeff07ba5f02712ff166c6ee76e08c5196961105fa8c98ebb2279",
+      "recipe_sha256": "8a69ba9d6fb75fe37e28807442a83386da4ec8d5b9902fb8a6315941b1fdea69",
+      "original_generated_updater": {
+        "bytes": 757,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/ranlib",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "130e240bcd1a40a724ddb12a8467d6df0242f46fb6bfa56dc4b5eaf0f59e8247",
+      "recipe_sha256": "79b6cc650023da5678ee68955b4c79cafc25c519797e142b57297c60ee7ba76a",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/readelf",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "768a55f1abe9621780ab9941c8f801b894f7725f4b473cd0379e84513d2f18d4",
+      "recipe_sha256": "1426e6214396168552fe393134717c02fb5e18b7a7bc2d8a095c1ac7809134f5",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/readlink",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "fe1df4c99e93bf29d1482fe5840358130504b44486f520811d0c1d2ab5de895f",
+      "recipe_sha256": "ca741bfc9753b3dcfbfdac8eae60e85a2462000e8f76151deee0244ab75e1ce2",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/realpath",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "51ca36e54145a8d90165d9589a56b77659c5571d3408809f23c8cb5c50fb09d2",
+      "recipe_sha256": "95a21d60a68bdb61b0e57ea824a613c8c0621833fb3c7f2947d8ca281bf93edf",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/rev",
+      "before": {
+        "bytes": 1884,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 396,
+        "lines": 15
+      },
+      "original_sha256": "5280c2c56104486f8d508088e580a4838d94b0662f830754dcf3871cfec3799f",
+      "recipe_sha256": "0f21dccc5b5e0192319b95392c01556ee0f0cf2b27df2b845fdf586b133cd97a",
+      "original_generated_updater": {
+        "bytes": 757,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/rm",
+      "before": {
+        "bytes": 1882,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 395,
+        "lines": 15
+      },
+      "original_sha256": "eb7886980ef3341c48c94853fb24a2aa231f0cdad9e4373e17e591cd2046eb74",
+      "recipe_sha256": "cfa0501eae3065fae7375eacaa0a5d50948b4d7f6d418e5a394ebb38fc4d44a1",
+      "original_generated_updater": {
+        "bytes": 756,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/rmdir",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "010ca355e09ef8242d45561d2a7f3f4abd02ac9ccddfbf0d161d86d059a4bbef",
+      "recipe_sha256": "a447f1b91a9d8eafa81f1f7a511141140d4f4d3894fd283faa6a9754e3757c91",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/runcon",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "18e9775c5d35fcac49dea7f7a89834a0e97624a6822b1cac1ee87a7056ec558a",
+      "recipe_sha256": "eff294b1b2b16827b995022656c93f9052e0b73e3b3b58f004b8b777cc2d4fdb",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/sed",
+      "before": {
+        "bytes": 1884,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 396,
+        "lines": 15
+      },
+      "original_sha256": "311a51d5a0c6b019e201241b91ee6b6260686b88d9811fd10951f82b08c69581",
+      "recipe_sha256": "e9cba304ea43c129c69be2b88cef0c42ea0724342cb2398c7c9b22e64525e2b3",
+      "original_generated_updater": {
+        "bytes": 757,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/seq",
+      "before": {
+        "bytes": 1884,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 396,
+        "lines": 15
+      },
+      "original_sha256": "36d14bdb2e462f9621d749944093d5ba5fd5633db2288ded048fafd406a3cd68",
+      "recipe_sha256": "f32c9c88f820ab5adb627cfa21fbc2c9aaadaa136a9f60bc1499278432ca46fb",
+      "original_generated_updater": {
+        "bytes": 757,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/sh",
+      "before": {
+        "bytes": 1882,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 395,
+        "lines": 15
+      },
+      "original_sha256": "e6783b6c8e3f732e0e5b5ed140a34251211d591229a6f605e42581839690168b",
+      "recipe_sha256": "fbd021294e1304e15b955dc62891a07db6835dd5730ee210ff09870bce8dfe18",
+      "original_generated_updater": {
+        "bytes": 756,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/sha1sum",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "6862a721dae4b4928aa50df893770161dd302be56d116de270b65b8d47bd642e",
+      "recipe_sha256": "5ccea1afcbd4c431c5a75a401a2bc52a1f82bec4acfba26afcf372110bf33081",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/sha224sum",
+      "before": {
+        "bytes": 1896,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 402,
+        "lines": 15
+      },
+      "original_sha256": "79e0e69bc8a8416a422265e87639b35042d77e3eb562f8e754cbd115c825c6ce",
+      "recipe_sha256": "7e6f39bad66459169fe16cc7d8ae9c9309fcd78c17b7c3b4d3fe32c726911abf",
+      "original_generated_updater": {
+        "bytes": 763,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/sha256sum",
+      "before": {
+        "bytes": 1896,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 402,
+        "lines": 15
+      },
+      "original_sha256": "7a6cd3f7c817f82758c018856aec30d008559c0b541932083ccbd7b43ef6dafa",
+      "recipe_sha256": "add45842933aaad2ffcaa9b5a8513c0cc5f4553ed8bcb2068943e0afc890bee6",
+      "original_generated_updater": {
+        "bytes": 763,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/sha384sum",
+      "before": {
+        "bytes": 1896,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 402,
+        "lines": 15
+      },
+      "original_sha256": "1dfa5d0a5a8f4cf41c96a84d2875a14b848cdb4f7c960909b921eb32cfe9994e",
+      "recipe_sha256": "13ecf7657ff157073677aa72d102dff84db74575e9a35b5fe2f58b9706439af4",
+      "original_generated_updater": {
+        "bytes": 763,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/sha512sum",
+      "before": {
+        "bytes": 1896,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 402,
+        "lines": 15
+      },
+      "original_sha256": "12125a6569fd412b0363e1676f5f50a084c66178e31526af6f6bfd80ff037c3d",
+      "recipe_sha256": "b3a754e249baeacc4ad3b41b50d91b8c10b2952c526a920052241eab352a6cd7",
+      "original_generated_updater": {
+        "bytes": 763,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/shred",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "ef5cf1bd4a8197c8f81e9f25fde3007356ae4991772ffe97132ca24de5c42a9c",
+      "recipe_sha256": "322865258bb1a2ef9b4edee0bd6cd2bfaf6f7d7ead3eb3bb761f50efa3cedac8",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/shuf",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "b789086097a5395b2c5151fad67ab0562df39a24371d28d53d46786f9d5b4576",
+      "recipe_sha256": "64160618d237211247b310a17bbfafbfd4dd8f9e4b01018434f5cff473c29229",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/size",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "3a6c5a0c3b9344a2f648372168520f67e9e9a0319e76ae1bbf327f363dae845f",
+      "recipe_sha256": "2bb66bff644b95ceb98347b9cfa9fcdb10629ac760c269f53ded161302f45c77",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/sleep",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "a2e882585e57afc619d15b7a23bb89eff52ce3f05f4f62e0101676d45ebc18d2",
+      "recipe_sha256": "754d852131257d657219de5963458636069da5df40056c84dc8ab1a97b6d3edc",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/sort",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "d4623904d9445bd869e6583dc4ae1e9c39a6f5ffb15d7d8db635cba1519b9c80",
+      "recipe_sha256": "4d68462033f1323de3a0171a05a3d5f190685ff6fb79978f6281aacf4c183b08",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/split",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "f826cb162f6512778a51b375110f05bcd05b9cb5716bd9c831b53a86b6e704c5",
+      "recipe_sha256": "67198bfabb8aab8a3a97c9535a5510aee2853d01c5dc8edee7e97e64d793fb22",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/stat",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "cb77f4e07bb23465cabd8cea09c22e20705bd69c60bcb947accefbb76d561070",
+      "recipe_sha256": "dec742f8f320ba266cbce078fc3efdcaf3d7f7914ce4fe83d73272c78e523ade",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/stdbuf",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "89a28b9a950ab6a9ef8a9a526d633fde1c990581d32eb9aedcfef47ff566e577",
+      "recipe_sha256": "e7e03c07aa1c7f12ad41a023ec2434f212936d0fa22050606ad844a634282aa9",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/strace",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "3d3b13c78957b44b4f50b4d98d11d6d3bc1af3a811e379491e42ed52ebf216b1",
+      "recipe_sha256": "643e5b3b0d138f82626a2686795a2bad716f861b5d2dc0c7c245648f7a71d8d1",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/strings",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "6cdda179a04d382d09f921b8fd5445d5a5ea3e4f314353e38143e64ed36bf7a5",
+      "recipe_sha256": "776af10208b640726fecb1233136040430493e7fea6724faca668c679b1d1839",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/strip",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "b4a48d390597966b6cf1aed5b214bfdf49b18d88a5468a29ff14d8e671406572",
+      "recipe_sha256": "b0a7a119f2789e1420523400b690dcd249f318d74f46f2d82c88c30c2e17d096",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/stty",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "9d65ddea9e5d1f1e5f1dc714e9f34d209794dc0083bbbfaba94c47bcbc62eea0",
+      "recipe_sha256": "492786a242c43329b1865a8101dab3f655acb31a98f7fe626736e299778804ef",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/sum",
+      "before": {
+        "bytes": 1884,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 396,
+        "lines": 15
+      },
+      "original_sha256": "90eb7c6a00faf4312b8c91a104c2a0fdf808d2dc67b9cd731f5221fd6bde7536",
+      "recipe_sha256": "30bb3dabd01410eccfe270a7e598ca826054d8b32ce7d69da82ee5b1472c16f5",
+      "original_generated_updater": {
+        "bytes": 757,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/swapoff",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "4a2f56efab9e0331e20a4e37cdf18b994a91958a8ca9fbce33df021e2addce84",
+      "recipe_sha256": "88241fae84ff9df1cb2af6e427c5eaad43c67c94b8fc590de2459443d62013b2",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/swapon",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "b5970b5cdc07504dc8d082b461dcffe317f25852311bddd1b8c130565a50e66e",
+      "recipe_sha256": "cd86cffee18448dab775dba792508c40ccb3c4707bf1d07ceada0894501a53e2",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/sync",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "97dd731fe5d5776646d431a79a5331ca1cbd07e491205f61148ecdc740d94e02",
+      "recipe_sha256": "78b0cac6dd5485e7c3be8754c55656c155a91f1b801d0fc7deaac2c1308a4eb5",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/tac",
+      "before": {
+        "bytes": 1884,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 396,
+        "lines": 15
+      },
+      "original_sha256": "93aab4b9224bc47d39ef7e411b5331ee770bcdbf0612e7deb888d93c05315e46",
+      "recipe_sha256": "2aafcd4278b0aa88ca33f7b5a1b41d236c62b68c5907215f3b1486e99ac230b6",
+      "original_generated_updater": {
+        "bytes": 757,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/tail",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "81578d115777f5db28ad487dbad63da9d95205eb9ad9c987390f4448d2dab95a",
+      "recipe_sha256": "8d9496db0eb96636d58fc5acf36713d28b549cb6ac57225d1cd02cde41cfba51",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/tar",
+      "before": {
+        "bytes": 1884,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 396,
+        "lines": 15
+      },
+      "original_sha256": "58945aeedfe37e6a69410fc0879ae3fe83fb32a1deccbbe1ef8e1e18c8d6b1d8",
+      "recipe_sha256": "cd3195106ed78a3f3182e0190d872ea7ef554ed3de4e8c55ba49a8faf9b6cf75",
+      "original_generated_updater": {
+        "bytes": 757,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/tee",
+      "before": {
+        "bytes": 1884,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 396,
+        "lines": 15
+      },
+      "original_sha256": "a86fcaf586aaba02a89100058e7a21c98a4dbf0097120cfe44c0e4537d437ed7",
+      "recipe_sha256": "6cd8b34975c0630db99be1d7bffc169067e6e0d540878134e4dd835fd544fc55",
+      "original_generated_updater": {
+        "bytes": 757,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/test",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "54e2dc5d1e5357ccbce64142adee433b35e85459c15071576dbf7fe4d31451c2",
+      "recipe_sha256": "7b084dac7f996581cf7b751ac14dce4b18c42162df58e745ea95720c39a07d99",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/timeout",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "1a1dfb6844f46fafccb9d512f75abbe973ed77b60d1dd97439b3709ee294df00",
+      "recipe_sha256": "a51321d5908b419468b9338c172ce67f3b3865d27940d8ce8522697ade54c789",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/top",
+      "before": {
+        "bytes": 1884,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 396,
+        "lines": 15
+      },
+      "original_sha256": "d63594950e67ef8cd191b2dd9fed759d905a25b84746c96210d5fff2b3d4eb06",
+      "recipe_sha256": "62845ce49bb01068a6b366666b90a1de60de95596ef9e6bfb8eafa60855666a7",
+      "original_generated_updater": {
+        "bytes": 757,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/touch",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "6c6c9ec29809ac1c78f46eefe3bedd3a1af2813fb9859f45dd29b8aeb4a0aee1",
+      "recipe_sha256": "4a2566ebcfac30b71696275c5c19b5f9ecd42d8cdca6d54bfd52adb85f83ef4d",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/tput",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "86e6dbc66f65c062048acf68256437d3e8c214c9d921f55638d4cd42ec912033",
+      "recipe_sha256": "2f58faa5c6858e319f8aa01f86a49e5d70748e07673c9e383905f949fe593bdc",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/tr",
+      "before": {
+        "bytes": 1882,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 395,
+        "lines": 15
+      },
+      "original_sha256": "5c349e0a9245b2a80c9b87a12b925441e9061a2b802ff34c2c26705479f49f11",
+      "recipe_sha256": "de1441af2365e5688bc772ccbb76bc0708af7442d47dd2f486a65c668fdc3cf3",
+      "original_generated_updater": {
+        "bytes": 756,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/true",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "a319f5590a25195c6f11da306500fcbfa5c737e1ef20682aa838c68cd323252a",
+      "recipe_sha256": "d56efc5e2ce1d4d9f4579602ea25ba0c4acf6e25472e97ebc9c46ab7f544c180",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/truncate",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "89d70bb3c6d71217261fe87efdc7c75e6c4a2988afba94adf95c1550b573b93e",
+      "recipe_sha256": "95ea5b2d8e3aa946b64ff8b1ba008b3fd9f3cde410eb99e7b6d66165edb40be4",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/tsort",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "2858197dc4cc2a85262396a9c1d9850001d84060399ab9e56ea67f11e668f0cc",
+      "recipe_sha256": "bebdbf6830f06ee358d1bf1d3db3a1cae0ea4a470e70bfc93c9584b2abc8a4bf",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/tty",
+      "before": {
+        "bytes": 1884,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 396,
+        "lines": 15
+      },
+      "original_sha256": "321d09a0962f5d454aa27608edae48c26016537331e3109f5cd0790193af525e",
+      "recipe_sha256": "cd5dafbaec4960c62521cfbf4bc69e0e21725543a8723cff4feb5db0df00037f",
+      "original_generated_updater": {
+        "bytes": 757,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/ul",
+      "before": {
+        "bytes": 1882,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 395,
+        "lines": 15
+      },
+      "original_sha256": "6ed744ac9776adee6970255d8a963b12688875691ccdeb52fa099f3110961a6f",
+      "recipe_sha256": "79e358669c46531db879c145d8733bdba855135932a11f7ef4a73acd94795cd1",
+      "original_generated_updater": {
+        "bytes": 756,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/umount",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "8bd5e9cb7d9bc48a9362a923dda86478c4f9d71fcc417fe0dc4d8cd716a6b243",
+      "recipe_sha256": "e9de467e2308d0f09f915af87b4589707648d820b6b99bfbc821ec245c473040",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/uname",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "04848e578ef6595a7a4437fc961152463a3cbed83c47e0a20ea7ee7fe304e105",
+      "recipe_sha256": "2fa5592067989450ed7e4c9c68a34c89b40d769275a3cd9748b0b4ec1fca886d",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/uncompress",
+      "before": {
+        "bytes": 1898,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 403,
+        "lines": 15
+      },
+      "original_sha256": "debb45920395bf7978a875515b219b06c55e1a8e86de0294c3cb08077298bde5",
+      "recipe_sha256": "4e5e39bfd1c9a18a0adfcbb6d88b4d514af085566a80c75c34f561a1228279ed",
+      "original_generated_updater": {
+        "bytes": 764,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/unexpand",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "c6d5ec36f033e18c2890f29596e259c57625323ce48fd7dcefcd9e665af10735",
+      "recipe_sha256": "1c5a9fc8c487666f484c99baad02f3b31ca9c2888fa56645d5afbe62f3ed21c4",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/uniq",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "7def2ed1434fcfa135e7bf71c4dba0745312f786abb2ee5f8886be3646264bbd",
+      "recipe_sha256": "e59bfa8aa4aa5d758afc8c9ff8fb3c75bebf47e37d5af7cb3fe702491b62838a",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/unlink",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "d2199cc109d21184eb61bdf24e6c42377e252c48bf0d7ac9565ed0956b572ceb",
+      "recipe_sha256": "0f7e6289a94d7f959746596cf5b9ff1e5a390f6d2ef2162de9440f3c5f08f0e2",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/unshare",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "2054e4a5a33b06658c867e41fcf5f317d58aebb7ae0732f8375e1f1d7f9a4bee",
+      "recipe_sha256": "2f779bc6e675e04e321282a193075fb53e6e1410bbc20817e061b009e8d5bb3c",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/unxz",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "47186d42e7393afb7724099b40a7e854dd232d91e03680d7e025ad9a404d3dad",
+      "recipe_sha256": "bff8b87e1ba9c6c75c4dc8c9997171a9979ba118b3756535a63a52865e37b414",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/unzip",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "56a7d5bf9adf7a706d533e361cdf4aa41b0ad4657dd768442f5e6248992ab93e",
+      "recipe_sha256": "6f25304f8dc311534fbe32c94251bff3d5c723836fcf347618b080835b99aff0",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/uptime",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "ccca1986ac5c08b8554cf357c1b181836a6f16ed0fdb289a93d8c03e03c86de9",
+      "recipe_sha256": "fdf8922619b8f3247205bb82a152b53313d97e9cd3edc15db48e503e99db16dd",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/users",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "2192b5f2992563ff74dad6c3b8fede802e6ea7f2855e16e04e9dfd40f0371d6d",
+      "recipe_sha256": "dfd39fdd18f471e70e27d1864124d4800973bef45e1e7fd945867d4d0869cd4f",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/vdir",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "a6331b95e365e58f5917e3b17f7c61c78e8702d73d1d7bbb77a3e9f8ec4701a5",
+      "recipe_sha256": "6eaaf24fd3b5d11317375d110e0bbe405529eb13938b94ff080acba5ecf3907c",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/watch",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "1d69d64826df2b184d933b6f7fc46373677636b604f18374c42f3d4eeef38399",
+      "recipe_sha256": "ec252aec52d2663c5191c815c56af7cd17e5a68d4d6f26055d0e04c4942db623",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/wc",
+      "before": {
+        "bytes": 1882,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 395,
+        "lines": 15
+      },
+      "original_sha256": "cdde24c1d015dc4692ed7d0030ec90c2857be57b29e49bb2b5c4c2b8d3b67e5c",
+      "recipe_sha256": "06902049f5240d06dda67e9e4c13415f9641907f12a5241a9fd47b4c8569795d",
+      "original_generated_updater": {
+        "bytes": 756,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/wget",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "ea7210f468efe877af2b3e4559e2b8ae1d39c6986bcf0d1a0f74ba403202734d",
+      "recipe_sha256": "96a80d81d715b5cef42780de01b0c8da7534942b3608e2644cef8079bf52c9e6",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/who",
+      "before": {
+        "bytes": 1884,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 396,
+        "lines": 15
+      },
+      "original_sha256": "bf586ea8662dd17d3817ac4a06cd077fce17db8205574f9405244926b9771b32",
+      "recipe_sha256": "8b14d23098eed8377b8cfff0531906ffa0eb03644a8242325894f041bc87cafe",
+      "original_generated_updater": {
+        "bytes": 757,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/whoami",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "d1e43fedc5efc38818118834e0455299699071286ffd8b45475b76e04ffc130f",
+      "recipe_sha256": "6b88b41de5d7be848384124b555ae6333fd858e7f45ece4707a1f3839d955ba7",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/xargs",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "7d0df2979c48d99591532919edf85a0024896c4c46990d6d55f56dc130a038a5",
+      "recipe_sha256": "c1515452723396f9191a479cfa7b09ceaca500381767f8237fde95146afc7647",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/xz",
+      "before": {
+        "bytes": 1882,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 395,
+        "lines": 15
+      },
+      "original_sha256": "168f60e00e33832b7d549753cc100fc08524858f1f0f1d08806c30bd2f9b8531",
+      "recipe_sha256": "cfa268204549566b4465a8dd1b3a34a91e68683784b789a4e2d8dd9a73ec1180",
+      "original_generated_updater": {
+        "bytes": 756,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/xzcat",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "f76dc03bf3cbdc742522a9f569dca8ca7dfbf877828e86d5a349b72d0ca06904",
+      "recipe_sha256": "a04d93809c9ffd041faeac562d5f7a24864b5e3089d7fe60106b2332336ec742",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/yes",
+      "before": {
+        "bytes": 1884,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 396,
+        "lines": 15
+      },
+      "original_sha256": "3cc5ea970d621a3393c7dc265cdc08a0dd20fd18863f9e4b797a857b896e86f2",
+      "recipe_sha256": "5e39d1d4900bc1fb73680c8d0d87426509273f31072341ebe0a62eb0979a88df",
+      "original_generated_updater": {
+        "bytes": 757,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/zcat",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "98a244df9fde60711a1524c22f8201d8385ead2d7a42ef41a7238a436d084bd6",
+      "recipe_sha256": "6e283806dcab3facd0d4365f5d3f8a92463ca68d10361c5b7cdf784905d58e09",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/x86_64/zsync",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "a1ba21f9aff8f11554478d685f4e3e82e04674902731769c44b26d7613ad543f",
+      "recipe_sha256": "ce7c41698713ce6ff2c057990bed24f8f0cbca3bd8ee4fe95ab0c005071fff9b",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/7z",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "d777b815e1df1825bb4b6a0d67c29ba110abab297f3261caa6386d1be02b8148",
+      "recipe_sha256": "452d87d5fba0ed2ac8412bb8a8defe21684b6837c2c9aa90a067e2830b2919f6",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/addr2line",
+      "before": {
+        "bytes": 1900,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 404,
+        "lines": 15
+      },
+      "original_sha256": "1150a3e31a6a5c119e576d0ef26c92bf980a07b74e374be9650e0821c17d9f8b",
+      "recipe_sha256": "4d30466c9c905645e5432f50c7d120b5da74eabc91c878382b52acb964575f86",
+      "original_generated_updater": {
+        "bytes": 765,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/ar",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "65360a6f23962c75d58e7a51a210f3ceba07d0f9bd298adeb3d9ed435da632c3",
+      "recipe_sha256": "a42e706984dbbdf46dfff490487721b4edfb02b528161b32663150da6aaf44cc",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/arch",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "fe1444832f8cee585fcd2c7d06157223a83111f584d6365d3c1f303ca036a226",
+      "recipe_sha256": "79438505b4ec0a23c580e40afdbe264ac600a2ef3e4a7bc90b37ea622c19c762",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/as",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "bf5eee5b139b17bd06ba76ef0fee8c1263eca9854158a92b205464d4e8da57d5",
+      "recipe_sha256": "88d455d03bb197a26a7d54b176aa14e1b7598d3cafc38f42595807bbc6663c81",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/b2sum",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "e1aa2347341235a40e4c33f0c2b251d4f4aef2929524e3b5c6bc86faef2cff44",
+      "recipe_sha256": "9cb19a327946da622ca1b63700167d523db6381062595a17bd86eb92faaae067",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/base32",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "b307c9786aaf271caad5bdeda4ce5ccf8fd413a55c3d075a3552e2637869a45a",
+      "recipe_sha256": "b9f2e399b6ca5c5b5d597736c01442f28b0e5f8c8cfbd086777094c2c1ba5197",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/base64",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "66b5e266e73afc6e9e1817335a0bf01103eb04d6ea3f8587bd92375e02c49633",
+      "recipe_sha256": "3c0a09eece59a1102a4ccfb7412212675aa6554a54d226b840871030a515f297",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/basename",
+      "before": {
+        "bytes": 1898,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 403,
+        "lines": 15
+      },
+      "original_sha256": "77c8d072a8751bcf866ba52f290ba1fdb4bdaa348264478447ca90ac8c633e92",
+      "recipe_sha256": "06818fe4eda21c63e4033fc7b4a9c71a665c4029f9aa8f9160c7d8b2c062f7e0",
+      "original_generated_updater": {
+        "bytes": 764,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/basenc",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "425819fbf8eed819df8bd3c792006936f9460044036a815d7e59f7c68536ff0a",
+      "recipe_sha256": "6eaeb4adc05446d6823ac6964a64c6a49d4b3ceee746009313074467da05865f",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/bzip2",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "e41ab197e57a08c705156f9be4757d4581c58789f7fc6fcc6f80c11b06c844ce",
+      "recipe_sha256": "f5afbff35a3373fcc3cdd5d4518e317b5ffc82e8631926f709f6b0381e518bb8",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/c++filt",
+      "before": {
+        "bytes": 1906,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 407,
+        "lines": 15
+      },
+      "original_sha256": "2b396841722f9ff3c1c01c1aed60b58b1d7cfb4a4ad9deb2050b559e788adf93",
+      "recipe_sha256": "a6976df03e55a02f3e7abf1a6173ff620c45a4a442e4ede4a9f347f6f9bd9764",
+      "original_generated_updater": {
+        "bytes": 768,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/cat",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "44c9da6b0165f3dafdbc358ff269771f276e7a3e73a8223ed41846f9a1a522d7",
+      "recipe_sha256": "60e365780c1d8114aef0f9cefec6b090abcb9a4f5de3363b0e1554d8c5e784db",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/chcon",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "80be946c5172fefa3420a8e8c13d554a3b8c0982034d12977b57aa22f16d2f45",
+      "recipe_sha256": "0b33e932f36fac697e3a91afd88709f77d7cd30e72bf11ca7b7fa7deb8bc1b49",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/chgrp",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "ab493d61d6a71271cdf1b6700ea765d85706bd4c035a8f75d046a9745bdbf470",
+      "recipe_sha256": "05689823b25d2a2d39290efd9c5f5816fb249a09128de64ec1f585a11b325859",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/chmod",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "5d63223b21dac95065063a795b78e4b1aac97a55c449de9ba21e77c8856d4340",
+      "recipe_sha256": "bc4862959b74f813bfad56c58727609538d428b63b3d0231bebc07b21c26cb31",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/chown",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "0a4a4d5191fe92adcfcc5f0f6a1ce7187d2217e37b19540aa43277c5eb71cb93",
+      "recipe_sha256": "e3c00f64cff75f701ade8afcf62d44235086423a9d8bbeb5b32b6f5068e03793",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/chroot",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "33bc03bcea5f7ddb69bd6eaef907adf9567083d759664b4dbf68c047151cf2ea",
+      "recipe_sha256": "67bc6fe810070c02e78a2ed9715e508ff784d3a95e4e5ce704096db0fa53e1aa",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/cksum",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "4b6a6479feb954b54a31776638997d394ff80498d1b093ba505be0713dff2884",
+      "recipe_sha256": "2493f0ae87a6ad831e300bf5eb3d27bf80dd1aa84b2e63c2e056f4c57e616236",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/clear",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "3782d94aec1a742eeedf2d6edae50c4e29da7498c2d8d7cde45f0d9cfdc3b8a7",
+      "recipe_sha256": "ebdb67fb48f6883d58a1f21b97bfa986963af4830aa114aeb5173bad30682bdd",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/col",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "bb8b0ac8bca8cf1f4cf9a6eb308e69989104273a4a8154d2bacab3ff740ba140",
+      "recipe_sha256": "b1b8758ab6abc7eaa071800e9584596a28fd228aa2c795226c502c865feb7838",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/colcrt",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "704859f6ce8926a4f4af9c0cbcf1134393c0f19654e1cf25cfd45791973dce84",
+      "recipe_sha256": "10bdf2e105f092e41e936a33eab669a43e60762db601cb6b564864fe6f6975ca",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/colrm",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "fac7d342f19b0a2dc3dc0a542bbff72749ae9e9612b3e777ed2e6d233a4cf1dc",
+      "recipe_sha256": "3f2cdc55b0b420dd23cc162d43d4f1a16783aadfbc7df687464e595a7298e914",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/column",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "9494b740ae0acc769d0ef7493153ba18f868caec40ebda5f56530bd716cf214d",
+      "recipe_sha256": "0eccad4d6ac1678a341024109ea9197c33945f796a18270fc73aaa20614049bb",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/comm",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "a2e8613c23bec2bbac161d8224badcf0ed9d98378a2648c464309df61a9e0fe5",
+      "recipe_sha256": "daec41cf4c3d2f9073094ac23e4fec87f1d6d7be5761762514edb05b0b056635",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/cp",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "2bd37ed013f9a1d12a99ed565fd464d294299e113308e437b6cc86b85d49b99b",
+      "recipe_sha256": "3a06e3ae5d47af7cdc2555fe7e8bd703ba0b827afec4e792916fdbfe3b831862",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/csplit",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "dc6f5eefb4beaa4e3e6b451466310047f5f09209f0e4c9c10b569b0bb03c2b4c",
+      "recipe_sha256": "ca23af5342cc209c8cc0e8aea658385d7935591cd94cf751924d167cb3d62901",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/curl",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "5a22ab1e65740dbd7301ff52e738fc4063ddb2e8075aecc28bd3d3471c1f7f3e",
+      "recipe_sha256": "c15c61b280314a3c9c9696d8dc2b9f57818d42ff82ac6a562383ed987d747699",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/cut",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "63c75e95d4df5e6e60e9338885a188f748e538eaed85e273c5eff715e6e3688b",
+      "recipe_sha256": "c19377932a41f25ea0862c549fb1991195e30533eb1daf5874de3a11ffa6a967",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/date",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "4be1b7428ad8f1632c7708cd11fc6d8cb36d73bbb6e09a6b7f283245110ea01a",
+      "recipe_sha256": "aadf5970e22f5a6589a2dc5888d426e57b9d01e99ba58c7d244a21fd993184e5",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/dd",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "b2130f7da6228fc64ce568bdfd43f130ebb3b6f7caba066396fb8385abaca6c8",
+      "recipe_sha256": "54cfc971806f77df2a1409f60aab797d2e82c9c63c9a39ee174426c11531496a",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/df",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "07568a859d1478a10e6f282c73245c53b9d830adfa6369f2eef4a7cf4d0684c3",
+      "recipe_sha256": "b49b769625d8cefb90452015ad8759c327131f568fe7374d2b178d62d3ea70c7",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/diff",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "71b6a7c49aab147daab2b8b9903861d32a82fc770651df87a3ed2b5384d856c4",
+      "recipe_sha256": "534aa756021f89478c1d93cbabe55943767e768b97d68ce9c8b543080a66d6dc",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/dir",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "845ac48e1982b518fefebc5744ee0ce9da1b7d5985e276697e3e6266d5457fcd",
+      "recipe_sha256": "b7013184d4b32acc0ae0de68cd3b1076f0aac49caada42f555a87975b2d2fcf7",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/dircolors",
+      "before": {
+        "bytes": 1900,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 404,
+        "lines": 15
+      },
+      "original_sha256": "efb7efeb8b18fb5501f28eae72acdcca91d40b28e55d9fcaeb96a1225b85d94b",
+      "recipe_sha256": "bb7611c2c7bddf5f708b459827cb7fcde8b458e7d784c968775d46eeff074811",
+      "original_generated_updater": {
+        "bytes": 765,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/dirname",
+      "before": {
+        "bytes": 1896,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 402,
+        "lines": 15
+      },
+      "original_sha256": "adc79637ee01870b81d3bb08817d4981212a33df241ff58d98c61038bde56c83",
+      "recipe_sha256": "38390b922241d5325aba0cb32c0054998cc9cbc646837dfe8fe873fa58b1c144",
+      "original_generated_updater": {
+        "bytes": 763,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/du",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "1722241790ad482c7587d28d4437eb5a7a166be6700f2dd3d35954f52f6eb3a5",
+      "recipe_sha256": "3acf33ed53dc0f1df42a2a0d81206dcb49f0f14062f0d111eea0a515a6acc46d",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/echo",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "2cbd9fc05abd0ea4de068670bcaa9c9adc3dc167541972c24cbf8a6d6037fdb4",
+      "recipe_sha256": "8a82bf66fe3d08138d9e5d9fd8b401277a7b664643403c237d71344f15e67661",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/elfedit",
+      "before": {
+        "bytes": 1896,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 402,
+        "lines": 15
+      },
+      "original_sha256": "37bc133faed9628e24c727cd526fcec011a3ce35e8f41f5a09f84949d55fe87c",
+      "recipe_sha256": "e526e378bdf727039b818bf67a2bd4475c89561c67caf0a09b5aeaefae2f444f",
+      "original_generated_updater": {
+        "bytes": 763,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/env",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "9ca8e2de213b1b0de5bb3a17411a56b9b3cc67d6a6c44711abbd19fa3b25af01",
+      "recipe_sha256": "c6e950da5849e9131e8bd39bdd608cba34f6e7377d0fc92ede1b54b22919884b",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/expand",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "719938ca8602a52c26bfc077904b4ad96f458e711f571fd93c6686ff3b560934",
+      "recipe_sha256": "344cecd95c2c3d73ef445cbe46a5efc2d54d4265a0a5a04882c87fad0571b846",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/expr",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "15b2389e8a0de46d855a8f20625ce4ea633100eca121638d29f9bfb38cfe2ed4",
+      "recipe_sha256": "4517be216705cfec5b03d3fece3f6e423413b2b90ffe4aaa119c732693c41dc8",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/factor",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "8109c156b082c60f2d1fe12799dfcfbd3662ce1fd18f964bc2d2a3974cbf2abf",
+      "recipe_sha256": "635bb6b9a2b3be7e3d3c0e472b2399fca077da33c8674b1beff4bfaf363b1ea7",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/false",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "61161217a1d27efcae9c939c9d584cff55080d0fc82c3fe2ee7147630af8ea71",
+      "recipe_sha256": "743f5b772297b2a503791cf37f829426d87f7445f214e802d78bc3b9c060c272",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/file",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "73bfaae52e18e7c18ea964808e55817d36676f8f5e717f1e2e3a0839ab2961ac",
+      "recipe_sha256": "5067d05cad071f0ba400b2d51df82f38e94c36c6c90e1863f03ec7eb2ec2ceec",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/find",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "ffedff4b8409dbf1d05d72ce8b5de6aa6e1b1c539359679ec0c73c0a493d3318",
+      "recipe_sha256": "17f8a3f57789a1033b89d4f4e29b6cf316d1de265a3783ae2c79c24a6747a5f3",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/fmt",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "7ecd4f49b531709b587c252f37057a085556bee2b72289c2fee367bfa926fc33",
+      "recipe_sha256": "5c5e28044fc50d8ded973d7bc1fbdfa0de45764ea9f570dcce7c3472c18176c9",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/fold",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "ae809a151d6ceccf16a2110596a4a1c90cc862ad391c0b7febe19231698b8200",
+      "recipe_sha256": "01e3bfa33a57c8b8a99562cb0f7cfb2e92b89811e3a3841065b1e2f8b3eea56e",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/gawk",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "166e1ef5cf227d7bada9004b6bde05d88e0173dbfb6b0d0d36ee941ea3877759",
+      "recipe_sha256": "53ae5e9e0ec6e23f5211e382fab31f952b8c516601e4fad668730b412d9c4aed",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/gp-archive",
+      "before": {
+        "bytes": 1902,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 405,
+        "lines": 15
+      },
+      "original_sha256": "390f39cfb7d4639da7584d1753bc0c061f346bd31515face1895459ea059b46d",
+      "recipe_sha256": "b77a2254a05807406430d4555d4d0275e05a8c5d5c0c4686e23ba9ea3f92a3ca",
+      "original_generated_updater": {
+        "bytes": 766,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/gp-collect-app",
+      "before": {
+        "bytes": 1910,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 409,
+        "lines": 15
+      },
+      "original_sha256": "0bce8c494ee13018b63b7209f8f7bebd6ff55b7fba9e6c2d4b4f197c70d417b5",
+      "recipe_sha256": "9491fad851b5ec0523672ac32468c7e5c4184a9f02f81e892b277179b08572d5",
+      "original_generated_updater": {
+        "bytes": 770,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/gp-display-html",
+      "before": {
+        "bytes": 1912,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 410,
+        "lines": 15
+      },
+      "original_sha256": "c7ed065d9d872a535c966f1cd18221b5383e49995ecb2b93928ff20e79bcee8c",
+      "recipe_sha256": "a5d27b46ad90e6af73bd4b238278ee3ae268c5978fb7b7a6f30e64995da1e99e",
+      "original_generated_updater": {
+        "bytes": 771,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/gp-display-src",
+      "before": {
+        "bytes": 1910,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 409,
+        "lines": 15
+      },
+      "original_sha256": "f38fdebf9c328960056353332038fa2e64deab1add1d58aafb5cd95cbc0ceaf8",
+      "recipe_sha256": "b3b660bce1037196c7d2e5f5be56f9e6da3f791963eebe63467756c2e3d91a50",
+      "original_generated_updater": {
+        "bytes": 770,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/gp-display-text",
+      "before": {
+        "bytes": 1912,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 410,
+        "lines": 15
+      },
+      "original_sha256": "e8f9afd9d23a5be008ff51d9f6b0694551f8ee707ef746ddd5515164943898e3",
+      "recipe_sha256": "d9ffcf276988171af185ea5d9ec391c684709439c085ff891fa283e55ef19fa4",
+      "original_generated_updater": {
+        "bytes": 771,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/gprof",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "43483dc9ae962114b9781c0dbf676c0085aad8e2a02c6dcdb47dce3c7e11edb1",
+      "recipe_sha256": "b54da97b944d92babb8187b7a98dd9a364dbbe4a3a9a0ac3e7c4ea88d9c78ecf",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/gprofng",
+      "before": {
+        "bytes": 1896,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 402,
+        "lines": 15
+      },
+      "original_sha256": "8eb7a59070197e0e0ba5ee98d792f13763933da388fefedf56772c84404bafab",
+      "recipe_sha256": "0c9efb7927c8b2c6f9477c28f4699234f79a6f68c22c1ca6b3d9043584924163",
+      "original_generated_updater": {
+        "bytes": 763,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/gprofng-archive",
+      "before": {
+        "bytes": 1912,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 410,
+        "lines": 15
+      },
+      "original_sha256": "bce3c55bb7bcf492051bdc566c19a3e451d801a032f7423ad1876686d5fb14c0",
+      "recipe_sha256": "cded1cc9bd8a0225aa073b7424891c97f071b8beca6b0fd9d485405b2bf334af",
+      "original_generated_updater": {
+        "bytes": 771,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/gprofng-collect-app",
+      "before": {
+        "bytes": 1920,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 414,
+        "lines": 15
+      },
+      "original_sha256": "608733a94edd9cb4f43a2eede8fb608529f8b9bf5e10eabbd01b0da29302d717",
+      "recipe_sha256": "893fca4ede95c2a68af4edc34b928b7e4c3578dafaec318d5eb9735dc79c40e7",
+      "original_generated_updater": {
+        "bytes": 775,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/gprofng-display-html",
+      "before": {
+        "bytes": 1922,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 415,
+        "lines": 15
+      },
+      "original_sha256": "f5fff94f62e8283d4288b42c832982de3307ecd82a75467dc019b4f72891a72d",
+      "recipe_sha256": "feee322396ef055b0d109d7bcde644764cd7a746220ae712f8430f471ba408ac",
+      "original_generated_updater": {
+        "bytes": 776,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/gprofng-display-src",
+      "before": {
+        "bytes": 1920,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 414,
+        "lines": 15
+      },
+      "original_sha256": "df7850562513b768c317a56ca685914690a0a935944f12d7d2faa09243d37539",
+      "recipe_sha256": "618b27437766ab148ca64c061fc1727208c8100e35ead7391136b35b791d6817",
+      "original_generated_updater": {
+        "bytes": 775,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/gprofng-display-text",
+      "before": {
+        "bytes": 1922,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 415,
+        "lines": 15
+      },
+      "original_sha256": "8fe2cf35a2243c4b9b81b15d13eb7a9e5d165a3fd0e582aa9844e8d9e8ead659",
+      "recipe_sha256": "97a05eba038a91ae089945317b0344e82ac5a80d926f9e4d7fe0df5cb15fd9cc",
+      "original_generated_updater": {
+        "bytes": 776,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/gprofng-gmon",
+      "before": {
+        "bytes": 1906,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 407,
+        "lines": 15
+      },
+      "original_sha256": "697661127cacaf512a63d6f090dfea4fff83c488fff8e7172a9c6d6f6b272fb2",
+      "recipe_sha256": "6c7856ad6a32a3b9f1a92e59542c633891b3bd95936bc353755212a4d62e45f1",
+      "original_generated_updater": {
+        "bytes": 768,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/grep",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "a4a637323060557bb6001771bb0d60f0361d933246235bb246356cc19dab4839",
+      "recipe_sha256": "524d04beabc0877009a9216572f387ec7a671af7eb51618fb9decc111c793bca",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/groups",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "f668c97077210f65259c7b3a11eafefd96fb636862dd47d6c8400422ae426b2c",
+      "recipe_sha256": "6c89941ee30b98274936279ead0977a3ad271d220bf8a4a9c892a779b0a3957c",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/hd",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "5353ccfb446a4cab06f13c633fc5b7262e9b3ac277325942a7a130fdc2b4a314",
+      "recipe_sha256": "bec56c57d85b4c03465c782928e091e6e36a25f5b5d0da974348a89df5fbe434",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/head",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "07cbc752b30f8ce737ef617771ae3b6fcd63842aa75c86562dcef9a7d7248133",
+      "recipe_sha256": "0b642a0124458cdda2f106432886409c01cb10fc37aee93b70f900c84eee1cb5",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/hexdump",
+      "before": {
+        "bytes": 1896,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 402,
+        "lines": 15
+      },
+      "original_sha256": "c236c7ea1a18f91ddf498f6f88b90d30ec2872bc41145d5de8c52a9b0d2bc28b",
+      "recipe_sha256": "bac5c013a6cb79f647b1163cb21b6b0fd587917291afd5268f891e3033fc9003",
+      "original_generated_updater": {
+        "bytes": 763,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/hostid",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "c4a3ec7a64769958836a4f039ef625fd92e4f3398c416c3ec194c32df1fa8cf1",
+      "recipe_sha256": "bebe8a138ffb5e9e2a6424c1aaf534b1a3ba992ac45284f1fa56ebf3701a54ff",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/id",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "98997ccd1f14eeddb1bea762f0e8e3181c89bd9811f40558f07b023aa1a68ce4",
+      "recipe_sha256": "c82eabd34e2107f6d55463c83a7fbf305ec7be2725327e4cba97572c5aaf6181",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/install",
+      "before": {
+        "bytes": 1896,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 402,
+        "lines": 15
+      },
+      "original_sha256": "8c6f243d67b5c1f288e0b1fa74c694415a23b9bcd84195da1aedc620c11d1d73",
+      "recipe_sha256": "e442a979612adb3e49d39754277c3cdabc6ba84a40cb0e9f99ea32f2a9f51923",
+      "original_generated_updater": {
+        "bytes": 763,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/join",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "bb8620e85da86dd189aad1a57992ad5f95400bcf58a9600845be0403314547b7",
+      "recipe_sha256": "80755299c0c7d6b43260740d148f0368bac455c5500251cf14b759b8f7efa21c",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/kill",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "527b97de516cf292e89c1196ec6275331885e27de2ebb1982108c60a56ffe265",
+      "recipe_sha256": "0be5770b3b64f0303346246306ccc593faa7b24351e4504a89e0e38cc4719f8d",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/killall",
+      "before": {
+        "bytes": 1896,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 402,
+        "lines": 15
+      },
+      "original_sha256": "2a74a943fa3df585db0cb90a872d37c76662cb689b5c5d0202669ba74e11c483",
+      "recipe_sha256": "4365d97189c5f936c5ea414f2105cd8c37e5619eb1d9013b0e97c2497232ca7a",
+      "original_generated_updater": {
+        "bytes": 763,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/ld",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "8e31b2539701f042c3dcd530f6fa8d0b697107118081be0e119cea22614847a5",
+      "recipe_sha256": "7e4644af9ae4d8ac3fb42396af4c63757b7e94d43dc80dd963d585c1b374b119",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/ld.bfd",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "cbd61fe101a2aeaa5cff9f5796791726391a23d8c0817146e365c30d1982d713",
+      "recipe_sha256": "b761c5b9fe299b5fb15a65fdb8f4f1b4ecd582dbcde01a31165a9c05f978928b",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/less",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "74cebf6b406ff5e9038c7bde0057fda120998d8f6b86f449390637e89cc42578",
+      "recipe_sha256": "f2ab3a1720177a3f09fad06575c6d5dd211ace74a76c531606f07bf60a410fa2",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/link",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "944d7026fd7ba82eb7fea3eec08bc91aa3520ca159f7b699a3133b4f94bb3027",
+      "recipe_sha256": "e2c3785332a66d109d1ba1586eddcb1c1cc116db9e1b72978fac280339d5a457",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/ln",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "99366200c3636ab5c648ffe6a0a206143381e2410913ec8eff2c6d161d5d1b07",
+      "recipe_sha256": "8538cf8321b42fb3cdc21ae3c8400180945d8882916b7857897533c68e927222",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/logname",
+      "before": {
+        "bytes": 1896,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 402,
+        "lines": 15
+      },
+      "original_sha256": "796cb3b3d83f1736ae56c549fd7eb96968161fcc528066e3e9080655e70e17ef",
+      "recipe_sha256": "94d64280b13275dcd9fa59130bd1a45c4ef287f87f7e7b5972c7bc90dbf347f0",
+      "original_generated_updater": {
+        "bytes": 763,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/look",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "15a1812de34c09606d570fb283563c1fa9325c5ae274e639115ae1ee671f6238",
+      "recipe_sha256": "35d1a4d60e9f8fe1a8a9b445147fd66e462cd8d6ae1b4fc5df09275d1670d6c7",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/ls",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "13794f1117debf98c1e48b9401578ee3715ef81f6958168a39f54519fa1b5c86",
+      "recipe_sha256": "5ed29bd884fe4d6dc6f0be3bbf40c4ac72e07c55e2bf93a5c1171c59f0e1cd54",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/mawk",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "f33133c92e9c7b9db2d23a8b96b352b637ca14c41ad83d3cfafd075dd1288cce",
+      "recipe_sha256": "3ea915c0826b78b424b29377da2ebeebd7b81fd14e74a1b85187178fbc6e0e91",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/md5sum",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "59694918c456e3f820d05b8da1b90fa1a7db2742ac96e778904687a1e03d229c",
+      "recipe_sha256": "6d6b8f878e21ea6b2fa30efa0cee49b07a503b7a598352a3dd1a467bcec11416",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/mkdir",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "d82d620cc29e35ce8f6e9eeb70de0caa8d31796fdf0c1cbdf5ecff830e53a7a1",
+      "recipe_sha256": "e7acb9b4699b42f9133b951125ba594a65fb52820303915e352014a03f5cc338",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/mkfifo",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "66ab6d9e756603321a85b8b65da4743d5bb01a3c107625ae9897a604702efacb",
+      "recipe_sha256": "3e09657ac192f6ecf6e8b93ef862acd92943767528c789ba0d97b3a3dbd311d7",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/mknod",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "89ab032ba42ef020119269ea981ef3ba70542e63a6976a2fe9c73944800155b4",
+      "recipe_sha256": "98385d4a40e0de93cf6f88b0cba5122129afef879b254d652ddd3588a552f8ce",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/mktemp",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "6da5a3b3c668927b483a34a7fc28494a7a081fef1c19eb8bebc3ac69ee86de05",
+      "recipe_sha256": "c458fa4e0a685dc95fcc10901e15feaf8cefd0d38124687a0ccf2a48e5e78d2c",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/more",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "6a63235cbe36c71d8da6a44e6abb4d7ee1f44ea82afe0e8c2c8a22f9cd7f1d65",
+      "recipe_sha256": "2353da82a837745650da32db8d8f08d7137d37b4b71c294ea44b340890144064",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/mount",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "98ac0ce541bc030178618df5f0eb8283a89a75498406a75c7c8a582da9dfcc17",
+      "recipe_sha256": "32ba59bcd8b70c54e5da2bbf37924ca15b166a637c212990fb1fc3e84cb3fa5f",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/mv",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "bdef0d2aef5ef179f9d1f11925ade37f001417ebb299b8f2c754f635450fcf31",
+      "recipe_sha256": "9fddae67d39c1f6f6edbdceddcc881cdc34007b6128253188e0e4145a89eb35f",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/nice",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "f1f1509397add56cb47ae7bbfdb71d692f23b5b8906192633a7dac7553bace3d",
+      "recipe_sha256": "a3baaa274a24d2f1a0b6d235770ef6bf5b47c7c14afc0d3ce66d5d296846f495",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/nl",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "5c98bba274a4791de596779ff53987d19f01ad9f2df1759956e69b88dd7fe401",
+      "recipe_sha256": "2bcc1ea6d8be0c552216bd75c0e139399dd5627c3e7fd54e5ea3a0a87adcea79",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/nm",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "a109c6a699011416c94e97db3d474c05b2abf686fa3e861f77a06baf7ef65859",
+      "recipe_sha256": "f39acd16927fecedc95aa882ab683cd8bf1ff2a9a31559e5f5914e025dac25e3",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/nohup",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "7af6d2c0faf2ce67f27a4acc865a666f3a2f8da4d3b99e8fd70d98fd6a64623b",
+      "recipe_sha256": "b0b7516f70ea74fd2c5f1f486904b448772f3e9944aec41a809066251229bb08",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/notify-send",
+      "before": {
+        "bytes": 1904,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 406,
+        "lines": 15
+      },
+      "original_sha256": "5733903f370cbc2e2d55334dbe6bca54f495b18ee16abdb182382bbbeaea70ab",
+      "recipe_sha256": "99c99ec9b1ead17f59820a1a48220ed30a71891440319e6a1c5f2c71d611835d",
+      "original_generated_updater": {
+        "bytes": 767,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/nproc",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "1828f70422aa24bf62f228e0575445ce34b2e081a135d63614aac461a3ad7736",
+      "recipe_sha256": "ae31a4a3738c6fbf6c8455d264a42ed95b5108a09c3342e8707e199e168badb8",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/numfmt",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "316af0fcfa7880f37319d2c5ce8909ec7af6bbcde5e449b987c4a23bf2d33064",
+      "recipe_sha256": "9653bc64746bf0374a918764253214a4b1bd67dc0910487378ebc40b5235b820",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/objcopy",
+      "before": {
+        "bytes": 1896,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 402,
+        "lines": 15
+      },
+      "original_sha256": "127f6f9e01a6af41fc278d654cf22b37c806203604c187723f71aeebcf929982",
+      "recipe_sha256": "74d66f2ad02f010017163285926a15bf1f0b5d0e1dc145088b5c1d95e143cdd0",
+      "original_generated_updater": {
+        "bytes": 763,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/objdump",
+      "before": {
+        "bytes": 1896,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 402,
+        "lines": 15
+      },
+      "original_sha256": "bc598973ab54da1748535d27f1067614447ef6742f4fe32a2bd46b1f15cc50e0",
+      "recipe_sha256": "12141940e06f7f8eddef5eb47f6584d94e21cfcd35acaabeec9810a466a42884",
+      "original_generated_updater": {
+        "bytes": 763,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/od",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "15b20314a5cb99fd850480cc5d4fbd4bdbdc7321561bbff8ee1386834e3cfc76",
+      "recipe_sha256": "eadd4728b7b009847b8d9f4f14f5aab090268f94ff27c8d83cf10b12b4a8a84a",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/paste",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "d89d9fbce6b7827f0a344fca74034eacfbc47d9bd4c442d3bb2fa66206c06d43",
+      "recipe_sha256": "fb8e847a2eacabf763ec5495d25e5315ad07ab1a2ce57c74e6da7d462c85dfc0",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/pathchk",
+      "before": {
+        "bytes": 1896,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 402,
+        "lines": 15
+      },
+      "original_sha256": "bbff50d068dce2733b8b21de9d850825c21d6b203e16e50f9f83f65d513799c8",
+      "recipe_sha256": "09408cdf95d96cbcef3d8df35addb7cb094ac773e8e1b5b95adeae9cb0ee991b",
+      "original_generated_updater": {
+        "bytes": 763,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/pinky",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "d0d98e5286d902090b27d479e93762569460bc1fea359ddc0011b8a2e46f864a",
+      "recipe_sha256": "030cd348b1ac451d6477b8856647689844728fc44d1644ebd3e5fb2e3a17458e",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/pr",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "a5d958913994e40c9a35ec61f5f31d349b69e682b81eb13a95bb28bb9f1c1a84",
+      "recipe_sha256": "06a0aa0539c744f39b6e7528cd20c587a6ce49765396b689a4ff7a53ad346ae5",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/printenv",
+      "before": {
+        "bytes": 1898,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 403,
+        "lines": 15
+      },
+      "original_sha256": "3c75203eb05ba148886d8b384368a7abe6cfdceead2bf5b90f73f8bf1885482a",
+      "recipe_sha256": "5e7ee6bb9fe8e690ab8c5071cbc88e11c0b43054a69b762fe40a10e2e25727d2",
+      "original_generated_updater": {
+        "bytes": 764,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/printf",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "da352e2e83d09f859b9ec486cd9b2c89b62d50fb0aaf7eb08fcb231df6657927",
+      "recipe_sha256": "8210acdaf1f26d50e50959242a5c0491c4a696dd2e0cee21f792266f170042d6",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/ptx",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "c2abdf976a9868b4f02df844fea493df87d5e90665386f42e62f060fb563179b",
+      "recipe_sha256": "aec9845fa11c456fdc3a7e7851c916652dbb065eb2ce05648892b044b9fc133a",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/pwd",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "06e10ea77b83f1e66ca58ed5ca189bd9a0ac56ab7f95d7f181561a676c1865e2",
+      "recipe_sha256": "100f6dbe10c00c514af1582c86fe362207f4dda18affe08ac18fe5049b1e606d",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/ranlib",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "0ad8720ece39b485d831dfb5683481fcfa9c9c531a42549a0c96c0a6ee2be0a3",
+      "recipe_sha256": "e17dd8d91e8e62e09b7186dc26df8826de87bae13207fd09499d04b75c9f9b2b",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/readelf",
+      "before": {
+        "bytes": 1896,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 402,
+        "lines": 15
+      },
+      "original_sha256": "bb3c4b48106ab817f37ccea58714bbc4651a7bd046bb49ad1824623dd01732c1",
+      "recipe_sha256": "0c24e6935a089068b3c9815b4f8aba9221eb4a9727102c80dceaeb55fcf91c49",
+      "original_generated_updater": {
+        "bytes": 763,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/readlink",
+      "before": {
+        "bytes": 1898,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 403,
+        "lines": 15
+      },
+      "original_sha256": "e58d1e8416c405a0fab38fa4d5dc3811cacaf10d7abaa86f0ac2b8c6a823e184",
+      "recipe_sha256": "a34851b707312e258ff7607cdff4deb3d478e9daa2946f78ab20443362343d4d",
+      "original_generated_updater": {
+        "bytes": 764,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/realpath",
+      "before": {
+        "bytes": 1898,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 403,
+        "lines": 15
+      },
+      "original_sha256": "b97e4dd2017d02a66efb8792b82c479dabf05e387ac6d18dcb1b619ae271b757",
+      "recipe_sha256": "e25a8baa1247764ce0b82626416bff4896f16b1df0ebadcdcee28905f455e830",
+      "original_generated_updater": {
+        "bytes": 764,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/rev",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "95861f50caa594c76bb3b0b19e85d9f89ce467ca14dd0ccab39755f5ab558557",
+      "recipe_sha256": "36d5c4d7b26d56b9bdb75221d87aac4baa348f78e8c48e5df6f5140241dbea2f",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/rm",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "5e142a4b04929476247e272b3900e54abe69e5261f7c58680ff8247b7e53cb51",
+      "recipe_sha256": "421c3b773450626205c150d99b503550cdd1fec1d67f1a87fd0d509f14d2a695",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/rmdir",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "ac1f1d6968aaa4cd4bce08ce0c715ee7d6617dac9d621975cf87371fd052f4e2",
+      "recipe_sha256": "dc9586504f79ec0e9836817309e091ddc4abe5173ba8c9fc7e382e403ec05812",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/runcon",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "c3f25b447ede6bd52aa90b717d6c04d845a6d01eb559f06bddcb0b7e04f32092",
+      "recipe_sha256": "d55bc54c1a54df2b84990b6424f8a219f6e482698fd61c13b037a6215e1c98ea",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/sed",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "a9568cdb49c977633efd78e6d05af1270c3d8db4edc9f29cf977a87369688318",
+      "recipe_sha256": "3d5e0a1a42e5dbf27176e5a5fe6304b1e499c5bd7d7dba91c22224d92c702715",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/seq",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "0ce467fac2b0daae0b1768a85cd48b9ac8d3d91d1d0191f366210d7e5820c08c",
+      "recipe_sha256": "6fa65871b16e0bb51c1d1fe37e9e352045d3d83a0b7e01003ae0da3147bcd417",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/sh",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "6772947537771e21396e7b26703eb32b5e284beb8f0150c518290af21459bc42",
+      "recipe_sha256": "0143cba8fb9055b09fc3c21c0ea816ff6ec16b5bbfe77ef852452705d5567e9e",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/sha1sum",
+      "before": {
+        "bytes": 1896,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 402,
+        "lines": 15
+      },
+      "original_sha256": "4d881ff47548ea09ff74c5b00d297a8aeb09ee5727734913c507fddfa6136c3f",
+      "recipe_sha256": "03a26551adf5761572bc7390b125c5d779271ce8b07d529301318d6969e7435e",
+      "original_generated_updater": {
+        "bytes": 763,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/sha224sum",
+      "before": {
+        "bytes": 1900,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 404,
+        "lines": 15
+      },
+      "original_sha256": "a7ca0a76a297a9452ba8da1fc5a970b9f79862fb9610f608d4edbb968fd3a4a6",
+      "recipe_sha256": "aadaef230981380745751a6baa50a6101c9352fbb55a1c38557b7289f0d6acc3",
+      "original_generated_updater": {
+        "bytes": 765,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/sha256sum",
+      "before": {
+        "bytes": 1900,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 404,
+        "lines": 15
+      },
+      "original_sha256": "6c62f5a3713e672c9d1086055234fcf7d2b166e58b70152ea84387284275bfa6",
+      "recipe_sha256": "a455e233ad922afdd0c96881e46d405b35ac13edd94b596b1d15f7e42d71d763",
+      "original_generated_updater": {
+        "bytes": 765,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/sha384sum",
+      "before": {
+        "bytes": 1900,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 404,
+        "lines": 15
+      },
+      "original_sha256": "88bc70390948124adec47e14f677ed5c0a381170940325f80eeca1e926e46c08",
+      "recipe_sha256": "f8b4e273ec16dadc5065026340751e4357abe8e298fd3472dbc406434a1575f2",
+      "original_generated_updater": {
+        "bytes": 765,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/sha512sum",
+      "before": {
+        "bytes": 1900,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 404,
+        "lines": 15
+      },
+      "original_sha256": "5b49c3fdd659419800b362560a37f98de68b4268746f5b3161cdcb800208a1cf",
+      "recipe_sha256": "c2adbb789352b48794ba5091fd94c7b97bebb162cafc128de3bb8b3cb73e6f33",
+      "original_generated_updater": {
+        "bytes": 765,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/shred",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "c3007fc8af50d7299e92659e0540f66ea7b2a487290d595169cc8e6826a4a73d",
+      "recipe_sha256": "d1f860bc2f6827da846c1ee89b21e683915ab98604310868ed48c959695692eb",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/shuf",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "024e93dccd0343dcce0e04ef56b2ab1c2ccb3f4820c23c2e7a7af4e15374b864",
+      "recipe_sha256": "60564ec16e54c435c11d2e176796dd39a258ac76cbea0e46753572e0e32576ab",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/size",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "61e1032ce556909cf8f4d23d147cb11e2bb3b48f0776e809b9878b96c2f62801",
+      "recipe_sha256": "0e573f35d48cb849ba819a94dc1e889cdae42ade43414ccc53ee7890bd638008",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/sleep",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "5892b47af3c3c70100304b1731034087348aaea324c38758f507fd9129f3453a",
+      "recipe_sha256": "4309b628aab79bf43ce5353cc6b484e05fe33ac72b7dc67a3f587c20c1e4362e",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/sort",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "676634c540a0da37d9f41a5d333f787b2f3df31661871d3872df50d063f2c4b5",
+      "recipe_sha256": "7d1a2dd6ceccc7d3281bf07be98b73fe96ac58124874c6e40e393f67b967740e",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/split",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "5d198fed55b32509c0de09eb9bad3c827390233873ae14138da61892916429b3",
+      "recipe_sha256": "6bc2602820384c7cb67eda95c7c582b4f27eccb442d3e3263a00f9b80ddc37b7",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/stat",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "197d83b1c242f40134da050445907f65a1473f1541386faaed3ad6b8bc540b8d",
+      "recipe_sha256": "7f752f4a5b695bac12b051ed936aa1274b6e567f269bbf431b97364809560ab9",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/stdbuf",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "32b6796efaac993f5592b048a144e49200b420e789cefbe4808fa0153f3f1b6e",
+      "recipe_sha256": "bf8b12b729d6b234376ea2a286d8f3371275b82662f03e489a5359f237fdddd4",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/strace",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "91e9b53a2e9843da5876a5a97156154d106850347bc9f8e7208a55af109fb3da",
+      "recipe_sha256": "80a6c81e5103b9f0f64b80dcc617db88fe6a6a957738a4baaace3b814addbac8",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/strings",
+      "before": {
+        "bytes": 1896,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 402,
+        "lines": 15
+      },
+      "original_sha256": "e5d0d9e74be9001b9cc4c68656b5f2c2d218988a491cec0b254dc55e040d021e",
+      "recipe_sha256": "9b4a2a8e1d79d1bb65e25711f6e57b8b68a23d7678afa1175bc5141139de42da",
+      "original_generated_updater": {
+        "bytes": 763,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/strip",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "4fa7c4b82b6fc589209323922883d66cb4cf356cc49413ddd31dd139a370e28d",
+      "recipe_sha256": "c234a5519b3ca53e7eef9f17717c277e0d1c002b2d4aa8c980a78a2c715c5042",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/stty",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "94666df8515f5e4611136ffeabea7cbeb037cd9e7601e0f98a1539dc7a00701e",
+      "recipe_sha256": "8a39c17d013e3e470d8ec5b3530df098e0b07c3326926b26d873e51265b7c750",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/sum",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "8c49a5db3c058c20b30f495873b84959514ce4343bc01af509567c0f64dda739",
+      "recipe_sha256": "e219572ef165a9cc75213410a95f9783ac31460ebc54fb4e9b2e6e6e64391ce9",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/swapoff",
+      "before": {
+        "bytes": 1896,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 402,
+        "lines": 15
+      },
+      "original_sha256": "b3d47874af6194fa8327c310742811530465db543c0f85d4b61be77ca3a588bc",
+      "recipe_sha256": "22494ad447410410a081e615feed5f23e622051291a992d0be84ca83b6ed7f30",
+      "original_generated_updater": {
+        "bytes": 763,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/swapon",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "d44615755bf9fa48d11993f2f95a67d530db850152c86d20cec7e76ce91115f7",
+      "recipe_sha256": "d932fc754ef96c78d7e3d8e8eaa3b94b784caab6981fcffae997bdb0128c1ea4",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/sync",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "2ed827a364f91559662ff6b4121c64c95e26602c8d3bc634f89e2a4e1419223c",
+      "recipe_sha256": "e85d99074c8fcf317d87b3e130472615aef71dbd186aaab41210dcda6dca5786",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/tac",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "a7104bbb64fc656279fc4866f8a18ea1cfc00c3b9911439f72cc63151cef78b4",
+      "recipe_sha256": "699d263fa7fd04ab15395963e847a27978b00e818874d771c10696b2e1a9e4d5",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/tail",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "9e7521946ee785e83f3b1753d06a5664a5a64ff9f8ba6252c35d19f95ccb189c",
+      "recipe_sha256": "efd39376654f17925487cdd6f512c35d6d95460b1fff4bddad97f33a72fdeb04",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/tar",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "158425776aaa6dd4b8b3d008ff0274a1f7f3e588e65fe184615f67d6835270f1",
+      "recipe_sha256": "69005af99638a18678c582120e6aeefb2958533b26f8c408464a468d92a89809",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/tee",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "13d7a0c4643879ffab32a25dc7b735963852719ae98de6f33eb19e7b09e57d7c",
+      "recipe_sha256": "839e3aa3508a2848e761495587ed0e19710428811ccea5904ea0f19c77661e0e",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/test",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "f4a00fd7c7d28584241742014325d282d023180428d93e3fd43e02a27a051bbb",
+      "recipe_sha256": "752ad1da42824071d2dcf5b893ca176838b49fc09341265cd8aa70a712b93969",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/timeout",
+      "before": {
+        "bytes": 1896,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 402,
+        "lines": 15
+      },
+      "original_sha256": "7cc5b62e2a3563167689f19f886f401c9057ec7ebc3a9cf9f1c4d1edd6605189",
+      "recipe_sha256": "af72888b09405ee1accb0ef584bf5353317a1e68d9e53dcfb8d9c606e3b98b18",
+      "original_generated_updater": {
+        "bytes": 763,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/top",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "027ba3d446dbbc901255cada14c92b851116edc362ca93f62a80194ad0b717bc",
+      "recipe_sha256": "5158890398dacdffe8beda40bc9cc8a0d835f119a9f9c028225b177e1bb948eb",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/touch",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "f63db0f7f1dce1329e042743f5009b0f524551ce321fd6fc0560a168e4f37cc3",
+      "recipe_sha256": "c9add43c939ccc01dfb08bd63a10a5713dafc47a1224a7c2515f75166c85a87c",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/tput",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "bf198b8b3c4c2483eccbefb4216f05ae95deeadb574c68da9014d7c3039e1140",
+      "recipe_sha256": "ddc08b8448a5e12f041f90f485dd24c60252f71d64ef17ed1982cbe9f171f2f4",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/tr",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "ddcb265f4f0b350d1002e90ceefd4497347c0519a927590732ff1993e7661033",
+      "recipe_sha256": "06e9bb5de140f5b5b7bf5b4ad848a7b60670b9b82e3d5ea22882c17aeef448f9",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/true",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "121ce847eb00437dbccf5d1b0eab3fae5511ad43241eacc2a9504929aa63b7c6",
+      "recipe_sha256": "65171b66dbac71ac6cd616801053ebff8db2519d2baa4e758ed5bed4aded6287",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/truncate",
+      "before": {
+        "bytes": 1898,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 403,
+        "lines": 15
+      },
+      "original_sha256": "9ee7db03c73e424fa3e07809e4dcab192deb4a9383dab877702e5076aac803e4",
+      "recipe_sha256": "6bc3f0d018f1cd85d08dd7c18dc7251dedda645dfd702d80c537c328fd046a2e",
+      "original_generated_updater": {
+        "bytes": 764,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/tsort",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "0e97992bbec5b69c10411042efcc92125a3c8b4a6b564236b72d87bb347e322f",
+      "recipe_sha256": "01a18190226ddf868f1db1525a7cc813c7aa3859c11d99147e796baa85a9d07b",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/tty",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "c22ae42c6eb91063e93290f54439c1ff00f77dd763b660f3490b1027412a61f4",
+      "recipe_sha256": "828179243164baa473b04eb6ddd9e4cd2e12d576e9dfb4303fce0598331e3f6e",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/ul",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "c6f12ad355e21fe1ee54a633bec41c264f8c509b2379085ef11971457e2d5aae",
+      "recipe_sha256": "a9f8b4120ed46c12d2f36c3e5fdacab8894b77c43a6d38ed7ef41470f1d0d2ee",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/umount",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "d54df9a420636ee2d36b5e0418d1faba4bdbeb8258a2e4c9a4cbfa07de49f22c",
+      "recipe_sha256": "406cd5ef43a1939bec623cabc2189b355a5ac390e2b20d8b4ecc08f1f7f5f2fe",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/uname",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "988659e03ec1e9a9a75d796cabf1100f68f283078a9ae9d33fdf7e867698a467",
+      "recipe_sha256": "899b912c10afd20f8270fb9653cbdbfe1ccd4189941e314d456ddec2e6fa3c16",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/uncompress",
+      "before": {
+        "bytes": 1902,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 405,
+        "lines": 15
+      },
+      "original_sha256": "bbc06afbdd3c2fd31b0227455837718881e359f52fc8d3d1e340cd8c51b850bc",
+      "recipe_sha256": "2c6f830d84b99b09828786f2a88162bc838bfbecc17d6df63e02f0972f40b451",
+      "original_generated_updater": {
+        "bytes": 766,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/unexpand",
+      "before": {
+        "bytes": 1898,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 403,
+        "lines": 15
+      },
+      "original_sha256": "b0fa44c0ef02a1dc517b40d7dec6e36bb4ff7e13db44c7a2663748b24b668e40",
+      "recipe_sha256": "877957baf045e6a4c08185374c95fc3dd7c74d043e1d36c94a3cf1ab52ff804e",
+      "original_generated_updater": {
+        "bytes": 764,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/uniq",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "457e0381b90bf68ec214fc5e856179e45ccfcbbc4ab2bff2830669781abe9557",
+      "recipe_sha256": "e69aba386b062cac5ea1f99fe46d0075d5ba8d377562923b3480d82b7b6ad9f7",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/unlink",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "01992d8bf256925ac500e2b16cdcb6a96a838b4924dc420dbb4f921f7657cbb0",
+      "recipe_sha256": "ff13498363dba5238cf360ce34df83d9fd6f9940b986469db61a51c65278c833",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/unshare",
+      "before": {
+        "bytes": 1896,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 402,
+        "lines": 15
+      },
+      "original_sha256": "03054dff89de82d9c9fac1cc4e4aa4ba222bf9b52392e598b6c22ebd2e0f4b53",
+      "recipe_sha256": "60036eb3c5b38949e24285f69bd19075d2406903e3bebaee78ebef02218c4fa5",
+      "original_generated_updater": {
+        "bytes": 763,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/unxz",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "fe61628d82f82a88b98082bfa69bd85476b0c0c7f417b1ea839bc4aee2c05111",
+      "recipe_sha256": "c5d3f58544c8977565304ed7870c5f10efc822fdca525699828e0fa60d0ab2b6",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/unzip",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "a6c0bca61a5bc070bce91a7cd1b03b98166c16203abcf80671137c2e6c4ef70a",
+      "recipe_sha256": "84bdf3483c3464cba70b7bfc58e371c192ed60aca0a9c498a46d112151157296",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/uptime",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "78635599f1075729f888619885f9a21db6785c3e90a95865f9695ffd856f79d6",
+      "recipe_sha256": "4ad5d7a5e82ec7e8f7c9f91970802e7f913bbc07457449b686c503873fa39688",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/users",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "408ea85c8603ce19753bbe33eb0bcb64b835c873c6aafe0fcf5b8fede29af704",
+      "recipe_sha256": "0f8f11fb0599811495654b77ba4601b2a47f702a0d08b373c5e94830e70a8f16",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/vdir",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "cf912cb801c77bc1ff693665301e22c8a3092dd3c203e7ab19e805bcafcd6eb9",
+      "recipe_sha256": "22c13da32880e9c9e37dfa6119d723ed807cd90c626b77a853ea4c05c57282f9",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/watch",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "c80216b97ced28d782f129aa2e19d5d656d8d238deb6baea437c5e8d51a0f76e",
+      "recipe_sha256": "8bc9efb960ad26e723bd8b172a19c327e0f6031063952f14e781df32cf2cd0b6",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/wc",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "cf28cb3a7b9b6de324d51062bfae6cca312d76544ced4bc4278fa0c79bbb8353",
+      "recipe_sha256": "554d8389eead54bb882de8ecfa03707cec339a35eeb560381c50bb5f58cb0ab9",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/wget",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "948c882e310c28d39b91a7bcdf1a18fbcdcbe194cc521a457a2afbcb3fb099d4",
+      "recipe_sha256": "99f67932d5b0948968b97ba071ec51c511960eeeac930345d285f516d0655659",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/who",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "573ab0abf520f3a8a24997f07e2571edb5b1aee2686478506ad8c9d78cc51e9b",
+      "recipe_sha256": "c282429f1cf134fddd1748bfb1eccbcdabfdc2e1afd0d04bf2b9c94fea6e975b",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/whoami",
+      "before": {
+        "bytes": 1894,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 401,
+        "lines": 15
+      },
+      "original_sha256": "6febf460be881c0b44c99f092a0e13ea7ac049e298774367192bd41c0c36e96c",
+      "recipe_sha256": "299ebfbaf9719f30748fabc1d04c83007cd1870501a199a4702ad50172f8fa2c",
+      "original_generated_updater": {
+        "bytes": 762,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/xargs",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "19a8a740b086705f5752eeb4a4454fc762f848eef1b6ac73fb2a661d4d131b1d",
+      "recipe_sha256": "e2b0c0ea3bc49362730fed8aa15e87a86b988a144d1adedab530063c1f48b1e7",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/xz",
+      "before": {
+        "bytes": 1886,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 397,
+        "lines": 15
+      },
+      "original_sha256": "88d9e02117934d1cb85666ef467140b4faad38854f60340e32c8d03b5154d22d",
+      "recipe_sha256": "b7f5ee90ac7f57716fbc40bc1841e928dc1c28f0577fa8a34dba74a142621db8",
+      "original_generated_updater": {
+        "bytes": 758,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/xzcat",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "12ef119a4510867befa61682c1159c5bebfef364ed12184d0cd98e1e29409eaf",
+      "recipe_sha256": "2e8573fdaf667d30290813c18f5a54dc5cb2b0b38513111eb1a06a836c296b20",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/yes",
+      "before": {
+        "bytes": 1888,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 398,
+        "lines": 15
+      },
+      "original_sha256": "0a69311dcc745d923d8acbb898df626a03500baee908b4ac0b502d28d1b7c357",
+      "recipe_sha256": "a962cc993c01d8581f24a760e7f15d3feab485b329ecaf6921ca7c43663c1e01",
+      "original_generated_updater": {
+        "bytes": 759,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/zcat",
+      "before": {
+        "bytes": 1890,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 399,
+        "lines": 15
+      },
+      "original_sha256": "96836147ad6ab9be12264ea12a20765b701d5566ba47688760b4d4aa262ad0bf",
+      "recipe_sha256": "00e2fe27427e392d07d78d14ac801ca96eef0778df6a7fc509c79ca8ebd06fa2",
+      "original_generated_updater": {
+        "bytes": 760,
+        "lines": 21
+      }
+    },
+    {
+      "path": "programs/aarch64/zsync",
+      "before": {
+        "bytes": 1892,
+        "lines": 53
+      },
+      "after": {
+        "bytes": 400,
+        "lines": 15
+      },
+      "original_sha256": "ee838b26a986f5cf32a2853def4f30f064bc48732ffee8385e1779f24969049c",
+      "recipe_sha256": "826e2c731f47eb162a38ba68f3f6baba4564bc9d746cef5a2709cf1055f8d39d",
+      "original_generated_updater": {
+        "bytes": 761,
+        "lines": 21
+      }
+    }
+  ]
+}

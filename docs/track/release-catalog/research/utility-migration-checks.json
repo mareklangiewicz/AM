@@ -1,0 +1,38 @@
+{
+  "catalog_tests": 206,
+  "support_tests": 10,
+  "container_scenarios": 72,
+  "container_commands": 257,
+  "platforms": {
+    "debian": {
+      "tests": 28,
+      "commands": 110,
+      "unexpected_requests": 0,
+      "image_id": "410bd2006f3fe83f52014397c0a89a562edb24e590881af876f473681b92988a"
+    },
+    "fedora": {
+      "tests": 28,
+      "commands": 110,
+      "unexpected_requests": 0,
+      "image_id": "b58e0faaf358d478f3c2b042fe829953b9d7de1bbea685f95887f5f50c489d70"
+    },
+    "termux": {
+      "tests": 16,
+      "commands": 37,
+      "unexpected_requests": 0,
+      "image_id": "127af029c294d496bfdbadb7a7b8b72e312ce128666186ae5b0f4a74a58ee9b8"
+    }
+  },
+  "recipe_syntax_checks": 356,
+  "scope": "No network in runtime containers; accepted metadata and inert downloads; no host app/helper delivery or source push.",
+  "lint": {
+    "shared_lifecycle_warnings": 0,
+    "installer_unchanged_baseline": 18,
+    "recipe_existing_identity_assignment_warnings": 146,
+    "recipe_warning_codes": [
+      "SC2209"
+    ]
+  },
+  "red_evidence": "First disposable Debian run caught icon fallback requests on executable installs; runner stopped before other targets. Final matrix verifies zero unexpected requests. A host-only audit assertion initially matched app identities chmod/curl/wget; corrected to match commands.",
+  "test_fingerprint_note": "Debian test_utility_selectors.py input hash precedes a correction to its host-only assertion. The accepted_tree loader used by containers was unchanged; Fedora/Termux record the corrected file. All tested production inputs and module hashes match the final source."
+}

@@ -1,7 +1,7 @@
 # Share the executable lifecycle and migrate the am-utils family
 
 Type: task
-Status: open
+Status: resolved
 Triage: ready-for-agent
 Dependency: ticket 47 utility-source stage accepted on 2026-10-31
 
@@ -10,7 +10,7 @@ Dependency: ticket 47 utility-source stage accepted on 2026-10-31
 Operational prerequisite accepted: [live enrollment evidence](../research/am-utils-live-20261031.md)
 verifies publication `a113cd0aca3247111b6ba231f6a30b6477ac2c75`, all 356 original
 selectors against actual returned bytes and seven-source daily repinning. This
-ticket is now unblocked; implementation remains open. Ticket 47's broader
+ticket's implementation is completed in the Answer below. Ticket 47's broader
 AppImage-source enrollment is separate.
 
 After its exact source is accepted/published under ticket 47, migrate the 356
@@ -57,3 +57,42 @@ ld.bfd; extended-regex selectors need preservation through the existing custom
 selector seam. Plan shares lifecycle mechanics with a format-specific integration
 branch and preserves installed entry-point compatibility. No implementation or
 operational enrollment; this ticket remains open and blocked by 47.
+
+## Answer — 2026-10-31
+
+Implementation and regression tests are committed locally as `a70082248`.
+Claimed after the user authorized continuing the accepted utility migration.
+[Implementation, interface, costs and limits](../design/shared-executable-lifecycle.md)
+extend the existing managed lifecycle with the closed executable kind, retaining
+the AppImage module/entry point and shared metadata/download/version/update/removal
+mechanics. All 356 recipes are now 15 lines, with their exact original selector
+suffix and actual app identity preserved. Manager integration skips desktop/icon
+post-processing for executables; the new whole-command tests demonstrated the old
+icon-fetch fallback before the fix. No executable payload is invoked by this path.
+
+[Reproducible audit](../research/utility-migration-audit.json) records 18,868 → 5,340
+recipe lines and 673,212 → 142,230 bytes. Including shared runtime and installer,
+production falls by 13,508 lines / 530,292 bytes. Actual representative installs
+use 20-line saved recipes and three-line standalone updaters; control-file and
+one-time shared-module costs are counted separately in the design/evidence.
+
+[Final checks](../research/utility-migration-checks.json): 206 catalog tests,
+10 support specs and 72 Debian/Fedora/native-Termux container scenarios / 257 whole
+commands pass, with zero unexpected requests. Tests cover all selectors against
+accepted live bytes, both architectures' representative identities, installer,
+standalone and manager routes, metadata refusal before mutation, transfer and
+filesystem failures/retry, checksum repair, optional digest distinction, source
+ownership, mixed batches, sync and removal/config preservation. Syntax passes for
+all 356 recipes; ShellCheck has no new diagnostics (existing installer and identity
+assignment baseline retained).
+
+[Retained evidence](../research/utility-migration-evidence.tar.gz) includes successful
+matrix results, logs, source fingerprints, actual installed code measurements and
+the initial failing icon-request traces. Existing historical audits remain unchanged
+and are superseded for current recipes by `audit-utility-migration.py`.
+
+Resolved for local implementation and controlled compatibility verification.
+No host migration, live source request/collection, source push, schedule repin or
+workflow change occurred. Existing installed legacy utility updaters still require
+separate delivery. Ticket 47 remains partial and 49 blocked on its own enrollment;
+natural seven-source repeat behavior is also a separate pending observation.

@@ -71,10 +71,15 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
   selectors against returned bytes. Source and daily pin are
   `c787efe3a42fac015f743255006fddd7ea9b3817`; natural seven-source repeat remains
   unobserved. Ticket 47 stays claimed/partial for separate AppImage enrollment.
-- [48 executable migration](issues/48-shared-executable-am-utils-batch.md) is now
-  unblocked and open. Its static preparation is complete: 356 recipes share one
-  lifecycle shape. [49 AppImage migration](issues/49-migrate-common-appimage-batch.md)
-  remains blocked; its 50 endpoints are a measured queue, not approved collection.
+- [48 executable migration](issues/48-shared-executable-am-utils-batch.md) is
+  resolved locally: all 356 exact selectors now use the shared executable lifecycle.
+  [Implementation/cost/evidence](design/shared-executable-lifecycle.md): net
+  −13,508 production lines / −530,292 bytes; 206 catalog tests, 10 support specs and
+  72 container scenarios / 257 whole commands pass. No host delivery or source push.
+- [49 AppImage migration](issues/49-migrate-common-appimage-batch.md) remains
+  blocked on its separate enrollment; the 50 endpoints are not approved collection.
+  Next operational observation is a natural seven-source daily repeat, distinct
+  from implementation and from the next reviewed source push/pin or host delivery.
 
 Shared AppImage implementation and recipe simplifications (42–46, 52–53), installed
 CLI/Termux coverage (50, 54–56), and e2e support-tool extraction (57) are resolved.
@@ -795,3 +800,14 @@ pinned shell/Python readers and unchanged resource caps. Artifacts retained;
 daily source repinned after acceptance with isolation verified. 48 unblocked;
 47 remains partial and 49 blocked. Natural repeat evidence remains outstanding.
 No recipe migration, host operation or second manual run.
+
+
+2026-10-31: [48 resolved: shared utility lifecycle](issues/48-shared-executable-am-utils-batch.md).
+All 356 utility recipes preserve original selectors and use the existing managed
+module with a closed executable kind. Real installer integration skips desktop
+post-processing; container tests caught and fixed its icon fallback. Net production
+−13,508 lines / −530,292 bytes; 206 catalog tests, 10 support specs and 72 container
+scenarios / 257 whole commands pass, zero unexpected requests. Actual installed
+control-file costs and [retained evidence](research/utility-migration-evidence.tar.gz)
+are recorded. Local implementation only; no host delivery, source push, collection,
+workflow change or repin. 47 remains partial; 49 remains separately blocked.

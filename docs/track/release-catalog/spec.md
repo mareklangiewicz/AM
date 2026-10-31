@@ -172,3 +172,18 @@ The operational manifest, workflow paths and schedule controller hash still sele
 six sources. This does not extend the already authorized six-source daily switch,
 authorize new collection/publication, or unblock 48 before real enrollment is
 accepted and available. The 50-endpoint AppImage queue remains deferred.
+
+## Accepted utility stage and migration (2026-10-31; tickets 47–48)
+
+The separately approved [live utility enrollment](research/am-utils-live-20261031.md)
+supersedes the operational six-source boundary above. Seven-source publication
+and daily repinning were accepted with actual 356/356 selections. Ticket 47 stays
+partial for the distinct AppImage queue; utility recipe implementation is now
+unblocked under 48.
+
+[Shared executable implementation](design/shared-executable-lifecycle.md) keeps
+the managed module path and existing AppImage entry point, adds a closed executable
+kind and migrates the frozen 356 paths with their original selectors. All formats
+share catalog acceptance and executable file/update mechanics. Executables skip
+desktop integration and binary execution. Source implementation, installed host
+delivery, further enrollment and the next natural seven-source run remain distinct.

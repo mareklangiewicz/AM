@@ -1,5 +1,9 @@
 # Executable lifecycle preparation
 
+Historical proposal. The utility source was accepted October 31; ticket 48's
+[implemented lifecycle and cost](shared-executable-lifecycle.md) supersedes the
+pending-enrollment/implementation statements below. Original static evidence is retained.
+
 Status: proposed implementation plan; static review at `8feef1f47`.
 Ticket [48](../issues/48-shared-executable-am-utils-batch.md) remains blocked by actual
 accepted source publication in 47. This preparation does not claim that work.
