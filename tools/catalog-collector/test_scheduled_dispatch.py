@@ -1,9 +1,11 @@
 """Offline dispatch orchestration; no real gh, credentials or network."""
 import copy
+import hashlib
 import json
+from pathlib import Path
 import unittest
 from collector import Refusal
-from scheduled_dispatch import dispatch, CRON
+from scheduled_dispatch import dispatch, CRON, MANIFEST
 
 REV = 'a'*40
 PIN = 'b'*40
@@ -37,6 +39,21 @@ class ScheduledDispatch(unittest.TestCase):
         self.assertEqual(len(submitted),1)
         self.assertIn('approved_revision='+REV,submitted[0])
         self.assertIn('previous_publication='+PIN,submitted[0])
+        self.assertIn('manifest_sha256='+MANIFEST,submitted[0])
+
+    def test_controller_hash_binds_exact_operational_seven_source_manifest(self):
+        root=Path(__file__).resolve().parents[2]
+        design=root/'docs/track/release-catalog/design'
+        raw=(design/'staged-manifest.json').read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(),MANIFEST)
+        self.assertEqual(raw,(design/'staged-manifest-am-utils.json').read_bytes())
+        from test_storage import baseline_manifest
+        six=json.loads(baseline_manifest())
+        seven=json.loads(raw)
+        self.assertEqual(seven['sources'][:6],six['sources'])
+        self.assertEqual(len(seven['sources']),7)
+        self.assertEqual(seven['sources'][-1]['url'],
+                         'https://api.github.com/repositories/1225768109/releases')
 
     def test_context_revision_and_rerun_refuse_before_api(self):
         for key,value in [('repository','other/AM'),('event','push'),('schedule','* * * * *'),('schedule','17 * * * *'),

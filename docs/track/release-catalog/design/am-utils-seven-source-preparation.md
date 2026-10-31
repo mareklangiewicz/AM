@@ -1,5 +1,11 @@
 # am-utils: seven-source offline preparation
 
+October 31 continuation: [the concrete rollout package](am-utils-seven-source-rollout.md)
+now prepares the local operational manifest/controller switch. This document
+records the earlier October 28 stage; its six-source operational statements are
+historical. Live operation remains six-source until the new package is approved
+and executed.
+
 2026-10-28. Partial implementation of [47](../issues/47-enroll-scoped-migration-sources.md),
 authorized after the retained identity/release reads. This document supersedes the
 missing-compatibility and unchanged-local-count statements in earlier preparation

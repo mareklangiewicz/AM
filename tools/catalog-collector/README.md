@@ -228,8 +228,8 @@ See [normal batch update semantics and verification](../../docs/track/release-ca
 
 ## Accepted daily refresh policy (ticket 40)
 
-The final schedule is once daily at 03:17 UTC (`17 3 * * *`), using the same six
-conditional source requests and separate exact-prior publisher. The reviewed
+The schedule is once daily at 03:17 UTC (`17 3 * * *`), using the enrolled
+source requests and separate exact-prior publisher. The reviewed
 source pin remains required. Hourly pilot window/count variables are not part
 of the daily controller. Activation follows the current bounded pilot's shutdown;
 local code alone does not change the pinned remote workflow or installed helper.
@@ -270,7 +270,9 @@ six-source historical profile and accepts a separate seven-source candidate;
 transport/storage/publisher count checks bind to the approved plan. Byte/time
 caps and all-source publication success requirements are unchanged.
 `design/staged-manifest-am-utils.json` under the release-catalog tracker adds the
-reviewed am-utils endpoint while preserving the six original rows. The operational
-`staged-manifest.json`, workflow paths and scheduled controller hash still select
-six sources: this preparation does not activate the candidate. See
+reviewed am-utils endpoint while preserving the six original rows. The October 31
+[rollout package](../../docs/track/release-catalog/design/am-utils-seven-source-rollout.md)
+prepares the local operational manifest and controller hash for that exact candidate.
+Published operation remains six-source until the package's separately approved
+push, first collection/publication and daily source repin. See the historical
 [prepared contract, tests and measured limits](../../docs/track/release-catalog/design/am-utils-seven-source-preparation.md).

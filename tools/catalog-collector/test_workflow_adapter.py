@@ -7,6 +7,7 @@ from unittest.mock import patch
 
 from collector import Refusal
 from workflow_adapter import preflight, run
+from test_storage import baseline_manifest
 
 REV = 'a' * 40
 MANIFEST = Path(__file__).resolve().parents[2] / 'docs/track/release-catalog/design/staged-manifest.json'
@@ -14,7 +15,7 @@ MANIFEST = Path(__file__).resolve().parents[2] / 'docs/track/release-catalog/des
 
 class WorkflowPreparation(unittest.TestCase):
     def raw(self, enrolled=False):
-        obj = json.loads(MANIFEST.read_bytes())
+        obj = json.loads(baseline_manifest())
         if enrolled:
             # Synthetic ID only in memory, never written to staged enrollment.
             from collector import Descriptor
@@ -52,8 +53,8 @@ class WorkflowPreparation(unittest.TestCase):
     def test_reviewed_real_manifest_is_ready_for_offline_preflight(self):
         raw = MANIFEST.read_bytes()
         value = preflight(self.context(raw), raw, REV)
-        self.assertEqual(value.requests[-1].source.repository_id, 19416551)
-        self.assertEqual(len(value.requests), 6)
+        self.assertEqual(value.requests[-1].source.repository_id, 1225768109)
+        self.assertEqual(len(value.requests), 7)
         self.assertTrue(all(not r.condition for r in value.requests))
 
     def test_context_revision_hash_and_own_repository_refusals(self):

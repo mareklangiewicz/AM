@@ -136,9 +136,9 @@ class MigrationEnrollment(unittest.TestCase):
         with self.assertRaises(StaleObservation):
             select(tree['index.json'],ALIAS,'c'*40,now=stale,stale_acceptance=refusal.exception.acceptance)
 
-    def test_workflow_stages_seven_artifacts_without_replacing_operational_manifest(self):
+    def test_workflow_stages_seven_artifacts_without_mutating_manifest(self):
         operational=(DESIGN/'staged-manifest.json').read_bytes()
-        self.assertEqual(operational,self.six_raw)
+        self.assertEqual(operational,RAW)
         with tempfile.TemporaryDirectory() as directory:
             output=Path(directory)/'out'
             with patch('workflow_adapter.SupervisedTransport'), patch('workflow_adapter.collect',

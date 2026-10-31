@@ -130,3 +130,39 @@ Final [verification record](../research/am-utils-enrollment-preparation-checks.t
 Operational manifest hash, syntax/diff/link checks and unchanged warning baseline
 verified. No outstanding offline failure; remaining work requires actual accepted
 live enrollment/publication and does not justify resolving this ticket yet.
+
+## Rollout preparation — 2026-10-31
+
+Marek authorized preparation of the concrete seven-source rollout for review after
+verified six-source daily operation and delivery of ticket 66. Prepare and validate
+the local manifest/controller/workflow switch, exact source commit and guarded
+execution/rollback payload. This authorization does not include source push,
+live collection/publication or schedule repinning. Existing live operation remains
+six-source; 48/49 remain blocked until accepted operational evidence exists.
+
+## Rollout package ready for approval — 2026-10-31
+
+[Concrete rollout and rollback](../design/am-utils-seven-source-rollout.md) prepares
+the local operational manifest switch, controller hash and workflow labels.
+Manifest SHA256 is
+`96fd3477b59a9806584f155c9180be1cd9c7ce368d02e0973b28afd2e0c4da62`;
+all original six rows are unchanged. Reviewed live source/pin both remain
+`6dddde9f6f55a7f0919d59fc8be56aa93acb33ac`, with observed publication parent
+`067f236b205d8fe01c6f4e79744887e4979437fc`. Recheck these before execution.
+
+The full offline suite passes 199 tests. Current 356 recipe hashes and every
+selected real asset reproduce the retained post-fix audit exactly. Replay proves
+the same 7,621,340-byte tree and 553,748-byte ZIP within unchanged caps; local Git
+object growth was 147,188 bytes in this replay, not operational history growth.
+Historical six-source test fixtures now load their original archived manifest so
+operational enrollment can advance without rewriting historical evidence.
+[Verification payload](../research/am-utils-rollout-20261031.json) records exact
+sources, implementation hashes, selector audit and replay results.
+
+Status remains claimed/partial, ready-for-human. Approval must identify the actual
+candidate commit SHA and cover source push, exactly one bounded seven-source
+collection/publication, evidence acceptance and daily repin, with the documented
+bounded rollback if needed. No live metadata request, dispatch/publication,
+source push, repin, enrollment or host operation occurred in this preparation.
+The utility-source acceptance may subsequently unblock 48; 49 remains blocked on
+its separate AppImage enrollment. Do not resolve all of 47 from the utility stage.

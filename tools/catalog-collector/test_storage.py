@@ -17,15 +17,21 @@ ROOT = Path(__file__).resolve().parents[2]
 REV = 'a' * 40
 GEN = '2026-10-27T15:20:00+00:00'
 LATER = '2026-10-27T15:21:00+00:00'
+BASELINE_ARCHIVE = ROOT / 'docs/track/release-catalog/research/supervised-baseline-40529551070-evidence.tar.gz'
+
+
+def baseline_manifest():
+    """Keep six-source historical replays independent of operational enrollment."""
+    with tarfile.open(BASELINE_ARCHIVE) as tar:
+        return tar.extractfile('supervised-baseline-40529551070/manifest.json').read()
 
 
 class StorageContract(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.raw = (ROOT / 'docs/track/release-catalog/design/staged-manifest.json').read_bytes()
-        archive = ROOT / 'docs/track/release-catalog/research/supervised-baseline-40529551070-evidence.tar.gz'
-        with tarfile.open(archive) as tar:
+        with tarfile.open(BASELINE_ARCHIVE) as tar:
             prefix = 'supervised-baseline-40529551070/'
+            cls.raw = tar.extractfile(prefix + 'manifest.json').read()
             report = json.load(tar.extractfile(prefix + 'report.json'))
             cls.attempts = []
             for record in report['attempts']:

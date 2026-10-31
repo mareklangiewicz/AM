@@ -62,12 +62,16 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 - [66](issues/66-scope-explicit-reinstall.md) is resolved locally: named reinstall
   selection now applies before startup discovery and child-command cleanup.
   Final 56 container scenarios, 198 catalog tests and 10 support specs pass.
-  Source publication with a reviewed schedule repin and normal host delivery
-  remain separate actions; no host reinstall or source push occurred here.
+  Published and repinned as `6dddde9f6`; Marek ran normal sync and installed
+  manager/install-module bytes were verified against that source. No host
+  reinstall was needed to verify delivery.
 - [47 enrollment](issues/47-enroll-scoped-migration-sources.md) has completed
-  selector repair and seven-source offline preparation. Actual operational
-  enrollment/publication still requires separate scoped approval; the operational
-  manifest remains six-source.
+  selector repair and seven-source offline preparation. The October 31
+  [rollout package](design/am-utils-seven-source-rollout.md) now stages the local
+  operational manifest/controller switch, with 199 tests and 356 retained selectors
+  verified. Live operation remains six-source at `6dddde9f6`; source push, first
+  seven-source publication and daily repin require package approval. Utility-only
+  acceptance may unblock 48; 49's separate enrollment remains outstanding.
 - [48 executable migration](issues/48-shared-executable-am-utils-batch.md)
   remains blocked by 47. Its static preparation is complete: 356 recipes share
   one lifecycle shape. [49 AppImage migration](issues/49-migrate-common-appimage-batch.md)
@@ -772,3 +776,13 @@ discovery before cleanup, including child removals/installations; removed forced
 saved-recipe edits. Six new whole-command cases across AM/AppMan and native Termux;
 final 56 scenarios, 198 catalog tests and 10 support specs pass. No host operation,
 source push/repin, manual collection or enrollment in this continuation.
+
+2026-10-31: [47 rollout prepared](design/am-utils-seven-source-rollout.md).
+After the approved push/repin of `6dddde9f6` and Marek's normal sync, read-only comparison
+verified installed manager/install-module bytes. Prepared exact seven-source local
+manifest/controller binding, preserved original six-source test evidence, and
+specified one guarded first publication, acceptance, daily repin and bounded
+fast-forward rollback. Full 199-test suite passes; all 356 retained selector results
+match; tree/ZIP replay remains within unchanged caps. Local preparation only:
+no upstream metadata request, source push/repin, dispatch or host operation.
+Ticket 47 remains partial/ready-for-human; 48/49 remain blocked.
