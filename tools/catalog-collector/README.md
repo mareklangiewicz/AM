@@ -276,3 +276,13 @@ prepares the local operational manifest and controller hash for that exact candi
 Published operation remains six-source until the package's separately approved
 push, first collection/publication and daily source repin. See the historical
 [prepared contract, tests and measured limits](../../docs/track/release-catalog/design/am-utils-seven-source-preparation.md).
+
+### Offline Brave candidate (2026-10-31)
+
+The planner cap is eight; manifest parsing preserves the six- and seven-source
+historical profiles and accepts an eight-source candidate. The operational
+manifest and dispatcher remain the accepted seven-source bytes. Only
+`design/staged-manifest-brave.json` proposes Brave, based on retained public
+identity/release evidence and twelve original selector checks. Exact manifest hash
+approval still gates collection, with no ninth source and no increased byte/time
+limits. See the [offline package](../../docs/track/release-catalog/design/brave-eight-source-preparation.md).

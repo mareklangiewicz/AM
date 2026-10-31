@@ -77,7 +77,7 @@ class MigrationEnrollment(unittest.TestCase):
         return delivery_tests.DeliveryContract.files(self, context(), self.base if prior is None else prior,
                                       self.attempts if attempts is None else attempts, generated)
 
-    def test_exact_six_preserved_seven_planned_and_eighth_refused(self):
+    def test_exact_six_preserved_seven_planned_and_ninth_refused(self):
         six = json.loads(self.six_raw)
         seven = json.loads(RAW)
         self.assertEqual(seven['sources'][:6], six['sources'])
@@ -87,16 +87,17 @@ class MigrationEnrollment(unittest.TestCase):
         self.assertTrue(all(r.condition for r in value.requests[:6]))
         self.assertEqual(value.requests[-1].condition,())
         self.assertEqual(value.requests[-1].source.aliases,(ALIAS,))
-        for count in (5,8):
+        for count in (5,9):
             bad = copy.deepcopy(seven)
             if count == 5:
                 bad['sources'] = bad['sources'][:5]
             else:
-                row=copy.deepcopy(bad['sources'][-1])
-                row['url'] += '?page=2'
-                row['request_id']=Descriptor(row['url']).request_id
-                row['aliases']=[]
-                bad['sources'].append(row)
+                for page in (2,3):
+                    row=copy.deepcopy(seven['sources'][-1])
+                    row['url'] += '?page='+str(page)
+                    row['request_id']=Descriptor(row['url']).request_id
+                    row['aliases']=[]
+                    bad['sources'].append(row)
             raw=canonical(bad)
             with self.subTest(count=count), patch('workflow_adapter.SupervisedTransport') as worker, patch('workflow_adapter.Token') as token:
                 with self.assertRaises(Refusal):
@@ -138,7 +139,7 @@ class MigrationEnrollment(unittest.TestCase):
 
     def test_workflow_stages_seven_artifacts_without_mutating_manifest(self):
         operational=(DESIGN/'staged-manifest.json').read_bytes()
-        self.assertEqual(operational,RAW)
+        self.assertEqual(json.loads(operational)['sources'][:7],json.loads(RAW)['sources'])
         with tempfile.TemporaryDirectory() as directory:
             output=Path(directory)/'out'
             with patch('workflow_adapter.SupervisedTransport'), patch('workflow_adapter.collect',

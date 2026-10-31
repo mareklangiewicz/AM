@@ -1,0 +1,96 @@
+--- a/docs/track/release-catalog/design/staged-manifest.json
++++ b/docs/track/release-catalog/design/staged-manifest.json
+@@ -97,6 +97,19 @@
+       "evidence_audit": "docs/track/release-catalog/research/am-utils-release-20261028/report.json",
+       "request_id": "033cc5f80e8fbd7074c6a2e48cace911348e6ff63652618cbf8f3d95cdfb2700",
+       "route_observed": true
++    },
++    {
++      "name": "brave-list",
++      "repository_id": 947512058,
++      "url": "https://api.github.com/repositories/947512058/releases",
++      "proposed_path": "/repositories/947512058/releases",
++      "aliases": [
++        "https://api.github.com/repos/ivan-hc/Brave-appimage/releases"
++      ],
++      "identity_evidence": "docs/track/release-catalog/research/brave-enrollment-findings.md#identity",
++      "evidence_audit": "docs/track/release-catalog/research/brave-release-20261031/report.json",
++      "request_id": "cc6d925dcd7e84d969cfdd6b8f3413a13855b37dca9fc6e569b38a36a967fff8",
++      "route_observed": true
+     }
+   ]
+ }
+--- a/tools/catalog-collector/scheduled_dispatch.py
++++ b/tools/catalog-collector/scheduled_dispatch.py
+@@ -12,7 +12,7 @@
+ 
+ REPOSITORY = 'mareklangiewicz/AM'
+ WORKFLOW = 'catalog-collector.yml'
+-MANIFEST = '96fd3477b59a9806584f155c9180be1cd9c7ce368d02e0973b28afd2e0c4da62'
++MANIFEST = 'dfca1d3e7504e4c6fa83ae6260ba1bb6e2db4cca736fb3693db9ec4aeea1a8bf'
+ CRON = '17 3 * * *'
+ 
+ 
+--- a/.github/workflows/catalog-collector.yml
++++ b/.github/workflows/catalog-collector.yml
+@@ -59,7 +59,7 @@
+           revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+           preflight(context, raw, revision)
+           PY
+-      - name: Collect seven descriptors and stage validated catalog
++      - name: Collect eight descriptors and stage validated catalog
+         env:
+           COLLECTOR_WORKFLOW_TOKEN: ${{ github.token }}
+         run: |
+--- a/.github/workflows/catalog-schedule.yml
++++ b/.github/workflows/catalog-schedule.yml
+@@ -21,7 +21,7 @@
+         with:
+           ref: ${{ github.sha }}
+           persist-credentials: false
+-      - name: Dispatch one guarded seven-source refresh at the daily cadence
++      - name: Dispatch one guarded eight-source refresh at the daily cadence
+         env:
+           GH_TOKEN: ${{ github.token }}
+           CTX_REPOSITORY: ${{ github.repository }}
+--- a/tools/catalog-collector/test_scheduled_dispatch.py
++++ b/tools/catalog-collector/test_scheduled_dispatch.py
+@@ -41,19 +41,21 @@
+         self.assertIn('previous_publication='+PIN,submitted[0])
+         self.assertIn('manifest_sha256='+MANIFEST,submitted[0])
+ 
+-    def test_controller_hash_binds_exact_operational_seven_source_manifest(self):
++    def test_controller_hash_binds_exact_operational_eight_source_manifest(self):
+         root=Path(__file__).resolve().parents[2]
+         design=root/'docs/track/release-catalog/design'
+         raw=(design/'staged-manifest.json').read_bytes()
+         self.assertEqual(hashlib.sha256(raw).hexdigest(),MANIFEST)
+-        self.assertEqual(raw,(design/'staged-manifest-am-utils.json').read_bytes())
++        self.assertEqual(raw,(design/'staged-manifest-brave.json').read_bytes())
+         from test_storage import baseline_manifest
+         six=json.loads(baseline_manifest())
+         seven=json.loads(raw)
+         self.assertEqual(seven['sources'][:6],six['sources'])
+-        self.assertEqual(len(seven['sources']),7)
++        prior=json.loads((design/'staged-manifest-am-utils.json').read_bytes())
++        self.assertEqual(seven['sources'][:7],prior['sources'])
++        self.assertEqual(len(seven['sources']),8)
+         self.assertEqual(seven['sources'][-1]['url'],
+-                         'https://api.github.com/repositories/1225768109/releases')
++                         'https://api.github.com/repositories/947512058/releases')
+ 
+     def test_context_revision_and_rerun_refuse_before_api(self):
+         for key,value in [('repository','other/AM'),('event','push'),('schedule','* * * * *'),('schedule','17 * * * *'),
+--- a/tools/catalog-collector/test_workflow_adapter.py
++++ b/tools/catalog-collector/test_workflow_adapter.py
+@@ -53,8 +53,8 @@
+     def test_reviewed_real_manifest_is_ready_for_offline_preflight(self):
+         raw = MANIFEST.read_bytes()
+         value = preflight(self.context(raw), raw, REV)
+-        self.assertEqual(value.requests[-1].source.repository_id, 1225768109)
+-        self.assertEqual(len(value.requests), 7)
++        self.assertEqual(value.requests[-1].source.repository_id, 947512058)
++        self.assertEqual(len(value.requests), 8)
+         self.assertTrue(all(not r.condition for r in value.requests))
+ 
+     def test_context_revision_hash_and_own_repository_refusals(self):

@@ -1,0 +1,40 @@
+{
+  "interpretation": "OFFLINE ONLY: retained accepted seven-source tree, real Brave body, synthetic seven 304 events and local Git; no live publication or retention guarantee",
+  "source_revision": "implementation bound by hashes; containing preparation commit supplied separately; activation revision not assigned",
+  "retained_publication": "a113cd0aca3247111b6ba231f6a30b6477ac2c75",
+  "manifest_sha256": "dfca1d3e7504e4c6fa83ae6260ba1bb6e2db4cca736fb3693db9ec4aeea1a8bf",
+  "previous_tree_bytes": 7624027,
+  "candidate_tree_bytes": 8263578,
+  "index_bytes": 18251,
+  "lookup_bytes": 6081,
+  "body_bytes": 8239246,
+  "source_count": 8,
+  "artifact_members": 20,
+  "artifact_uncompressed_bytes": 8911613,
+  "artifact_zip_bytes": 508768,
+  "artifact_zip_sha256": "481ea8f592a66fedeb9a4bde8ec80811396b5924a990aa3f9fd3482afca9f4a8",
+  "local_objects_before_bytes": 572558,
+  "local_objects_after_bytes": 617705,
+  "local_object_growth_bytes": 45147,
+  "caps": {
+    "body": 8000000,
+    "headers": 64000,
+    "index": 2000000,
+    "tree": 50000000,
+    "artifact": 105000000,
+    "history": 128000000,
+    "connect_seconds": 10,
+    "request_seconds": 30,
+    "batch_seconds": 300
+  },
+  "nominal_eight_request_seconds": 240,
+  "implementation_sha256": {
+    "tools/catalog-collector/collector.py": "9f073b30d71001265f2943d74338c926cd8aa63fe194c9ebee0bcfa8fb496a1f",
+    "tools/catalog-collector/manifest.py": "9cfb90d34c712250eb6b5bf73dc10006306815acf82ca30047957aeae25925e7",
+    "tools/catalog-collector/workflow_adapter.py": "971336ac87b5be0a61648238be3e155bf7797a479e9efd941267c653dc3dd0e2",
+    "tools/catalog-collector/supervised_transport.py": "210adc2267d2b5f1bd7a24ba7cc20133f5a641a833c9df001c63938a17ccea61",
+    "tools/catalog-collector/storage.py": "4e2c9c0930db667fb3090db58e6037942b3eb9311316e94e092575f37762c591",
+    "tools/catalog-collector/delivery.py": "ebeca865355c2a0bdbf68d5f6bfd858c916ce466923b4b4ef8fdb02f26fa50df",
+    "docs/track/release-catalog/design/staged-manifest-brave.json": "dfca1d3e7504e4c6fa83ae6260ba1bb6e2db4cca736fb3693db9ec4aeea1a8bf"
+  }
+}

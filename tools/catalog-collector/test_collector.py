@@ -99,7 +99,7 @@ class CollectorContract(unittest.TestCase):
                 plan((source,), 1)
 
     def test_preflight_revalidation_zero_calls(self):
-        invalid = [Plan(2, ()), Plan(True, (Request(sources(1)[0]),)), Plan(1, tuple(Request(s) for s in sources(8))),
+        invalid = [Plan(2, ()), Plan(True, (Request(sources(1)[0]),)), Plan(1, tuple(Request(s) for s in sources(9))),
                    Plan(1, (Request(replace(sources(1)[0], repository_id=1)),)),
                    Plan(1, (Request(replace(sources(1)[0], repository_id=None)),))]
         clock = Clock()

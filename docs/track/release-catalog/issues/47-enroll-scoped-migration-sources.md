@@ -206,3 +206,46 @@ Queue mapping updated, operational manifest unchanged. No pagination, retries,
 binaries, recipe migration, push, repin or host operation. Status remains partial;
 49 requires actual accepted operational publication. Natural repeat is independent
 and still unobserved; next preparation is the offline eight-source contract.
+
+## Brave eight-source offline contract — 2026-10-31
+
+The user authorized the next offline preparation. [Contract and rollout review](../design/brave-eight-source-preparation.md)
+preserve all seven accepted descriptors and add exactly Brave in a separate
+candidate manifest, SHA256 `dfca1d3e7504e4c6fa83ae6260ba1bb6e2db4cca736fb3693db9ec4aeea1a8bf`.
+Planner cap is eight; six/seven historical manifest profiles remain readable.
+Ninth-source refusal happens before transport/credentials. Byte/time limits,
+transport/storage/publisher runtime, operational manifest, workflow bytes and
+seven-source controller hash remain unchanged.
+
+[Replay](../research/brave-eight-source-replay.json) uses the hash-bound accepted
+publication `a113cd0ac`, real retained Brave bytes and labeled synthetic seven 304s:
+8,263,578-byte tree, 508,768-byte ZIP, 45,147-byte temporary Git object growth.
+These are offline costs, not measured production churn or timing. Eight nominal
+requests leave 60 seconds of the existing batch budget for overhead; actual future
+collection may refuse rather than silently expanding caps.
+
+A separate [six-file activation patch](../design/brave-eight-source-activation.patch)
+prepares manifest/hash/workflow-label and operational-test changes. It was applied
+only to a temporary copy, where 22 affected tests pass. Focused enrollment tests
+cover real retained bodies, synthetic failures/repeats, exact-parent publication,
+all aliases and actual pinned shell reader freshness/consent/integrity behavior.
+Initial full-suite validation exposed an old preflight fixture that still called
+eight sources excessive; updated to nine, and all 17 collector tests pass.
+Final complete-suite results are recorded below after execution.
+
+Retained identity/release evidence and exact original-selector audit are committed
+locally as `104b06682`; raw HTTP headers preserve exact CRLF bytes in Git, with
+staged hashes checked against the transport reports. No source push, live request,
+collection/publication, daily repin, recipe conversion or host delivery occurred
+in this offline stage. 47 remains partial/claimed and 49 blocked until separately
+accepted operational availability; other 49 deferred endpoints are untouched.
+
+Final [verification record](../research/brave-eight-source-checks.json): all **212**
+catalog tests pass in 197.600 seconds; 22 activation checks pass in the temporary
+copy. Recorded implementation fingerprints, new document links, exact retained
+body/header Git hashes and diff checks pass. The operational manifest, workflows,
+controller, modules and recipes remain byte-identical to published `7b31340a8`.
+The containing preparation commit remains on local main-marek; a separate local
+`prep/brave-eight-source` activation candidate applies only the six-file patch.
+Its full SHA is supplied in the completion message for exact review. Neither
+local commit nor activation branch is pushed, dispatched or pinned.

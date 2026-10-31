@@ -832,3 +832,14 @@ two HTTP 200 GETs establish public ID 947512058 and a 639,169-byte release body;
 Candidate queue updated; no operational enrollment, migration, push/repin or host
 operation. 49 remains blocked; eight-source offline preparation is next. Earlier
 wait-before-evidence notes are superseded by this explicit sequencing decision.
+
+2026-10-31: [47 Brave eight-source offline contract](design/brave-eight-source-preparation.md)
+adds a separate exact eighth-source candidate while preserving operational seven.
+Measured replay: 8.26 MB tree, 509 KB ZIP and 45 KB temporary object growth within
+unchanged caps. Six-file activation patch passes 22 affected tests in a temporary
+copy. Retained identity/release evidence is committed locally as `104b06682`.
+No push, collection, repin, recipe migration or host operation; 49 remains blocked.
+Final eight-source preparation validation: [212 catalog tests and 22 isolated
+activation checks pass](research/brave-eight-source-checks.json). Separate local
+`prep/brave-eight-source` supplies the exact activation review candidate; remote
+source/daily operation remain unchanged pending a separate rollout authorization.
