@@ -178,3 +178,31 @@ Daily source/pin equality now uses the approved candidate, after acceptance.
 Utility enrollment is accepted and 48 is unblocked. Status stays claimed/partial;
 49's separate enrollment remains blocked. Natural seven-source repeat evidence
 is still pending; no second manual run or recipe/host migration was performed.
+
+## First deferred subset prepared offline — 2026-10-31
+
+On “continue”, checked the next boundary and prepared the first frozen queue row:
+[Brave subset and staged review](../design/brave-enrollment-preparation.md), with
+[six recipe fingerprints and exact selectors](../research/brave-enrollment-preparation.json).
+All install/update selector pairs match and shell syntax passes; baseline is
+462 lines / 19,164 bytes. No numeric ID or asset availability is inferred.
+Read-only GitHub inspection found no new run after 41232846271 and unchanged
+publication `a113cd0ac`; natural seven-source repeat/retention remains pending.
+The existing staged plan requires that evidence before proposing the next live
+subset. No live identity/release request, manual dispatch, enrollment, host delivery,
+source push or repin occurred. Status stays claimed/partial, 49 blocked. Next live
+proposal will need a concrete reviewed runner and separate identity-only approval;
+the saved am-utils runner is only a reference at this stage.
+
+## Brave evidence stage accepted for preparation — 2026-10-31
+
+The user approved proceeding with bounded identity/release checks without waiting
+for natural repeat, superseding the preceding wait-before-evidence sequencing.
+[Actual evidence](../research/brave-enrollment-findings.md) records exactly two
+unauthenticated HTTP 200 GETs: public repository ID 947512058 and numeric releases
+(639,169 bytes, 30 releases / 336 assets). All twelve original install/update
+selectors for six Brave recipes select actual assets; frozen source hashes match.
+Queue mapping updated, operational manifest unchanged. No pagination, retries,
+binaries, recipe migration, push, repin or host operation. Status remains partial;
+49 requires actual accepted operational publication. Natural repeat is independent
+and still unobserved; next preparation is the offline eight-source contract.

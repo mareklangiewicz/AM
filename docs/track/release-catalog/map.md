@@ -811,3 +811,24 @@ scenarios / 257 whole commands pass, zero unexpected requests. Actual installed
 control-file costs and [retained evidence](research/utility-migration-evidence.tar.gz)
 are recorded. Local implementation only; no host delivery, source push, collection,
 workflow change or repin. 47 remains partial; 49 remains separately blocked.
+
+2026-10-31: [48 published](issues/48-shared-executable-am-utils-batch.md).
+User-authorized fast-forward through `7b31340a818a226c399130a776c5b03e78241438`
+and matching daily pin verified. Collector/workflow production is unchanged;
+only collector/dispatcher remain active, no unfinished runs observed, publication
+remains `a113cd0ac`. No manual collection or host delivery. Natural seven-source
+repeat remains outstanding. This post-publication record is local/uncommitted.
+
+2026-10-31: [47 next-subset offline preparation](design/brave-enrollment-preparation.md)
+freezes Brave's six recipe fingerprints and unchanged install/update selectors
+(462 lines / 19,164 bytes), with syntax verified. Read-only checks show no natural
+seven-source repeat yet. No new source requests, enrollment or operations; 49
+remains blocked. Preparation remains local/uncommitted.
+
+2026-10-31: [47 Brave bounded evidence](research/brave-enrollment-findings.md).
+User approved advancing identity/release evidence before natural repeat. Exactly
+two HTTP 200 GETs establish public ID 947512058 and a 639,169-byte release body;
+12/12 original install/update selectors choose actual assets across six recipes.
+Candidate queue updated; no operational enrollment, migration, push/repin or host
+operation. 49 remains blocked; eight-source offline preparation is next. Earlier
+wait-before-evidence notes are superseded by this explicit sequencing decision.

@@ -96,3 +96,17 @@ No host migration, live source request/collection, source push, schedule repin o
 workflow change occurred. Existing installed legacy utility updaters still require
 separate delivery. Ticket 47 remains partial and 49 blocked on its own enrollment;
 natural seven-source repeat behavior is also a separate pending observation.
+
+### Publication — 2026-10-31
+
+Following the user's “go ahead”, verified remote/default/source pin, publication
+and workflow isolation against the handoff. Fast-forward pushed the three completed
+commits through `7b31340a818a226c399130a776c5b03e78241438` and set
+`CATALOG_SCHEDULE_REVISION` to that exact revision. Final read-only checks confirmed
+source/pin equality, only collector and daily dispatcher active, the other six
+workflows disabled, no unfinished runs in the latest 100-run response, and unchanged
+publication `a113cd0aca3247111b6ba231f6a30b6477ac2c75`.
+Collector production and workflow bytes are unchanged from the accepted source;
+retained implementation validation remains applicable. No manual collection, host
+sync or installed-updater migration occurred. Natural seven-source repeat remains
+unobserved. This publication note was recorded locally after the pinned commit.

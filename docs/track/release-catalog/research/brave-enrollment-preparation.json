@@ -1,0 +1,72 @@
+{
+  "status": "offline-preparation-only-not-approved-for-live-execution",
+  "queue_sha256": "cca5f790724e5ee4438393dd32736c88b140848881ffc1ddf8cae99c321c7f73",
+  "queue_index": 0,
+  "alias": "https://api.github.com/repos/ivan-hc/Brave-appimage/releases",
+  "identity_request": "https://api.github.com/repos/ivan-hc/Brave-appimage",
+  "repository_id": null,
+  "fetch_url": null,
+  "request_id": null,
+  "recipes": [
+    {
+      "path": "programs/aarch64/brave",
+      "sha256": "dacc6f5210c62bf2afff3bdd1cd236ade8a1cb5c0d2b1b36b3116d8af26d580e",
+      "bytes": 3187,
+      "lines": 77,
+      "original_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Brave-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*aarch64.*mage$\"| grep -i \"stable\" | head -1)",
+      "install_update_identical": true
+    },
+    {
+      "path": "programs/aarch64/brave-beta",
+      "sha256": "c010cc01770602e845e9b844e5ae4de24aa67871b464bc552ceac80882b4e2bb",
+      "bytes": 3193,
+      "lines": 77,
+      "original_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Brave-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*aarch64.*mage$\"| grep -i \"beta\" | head -1)",
+      "install_update_identical": true
+    },
+    {
+      "path": "programs/aarch64/brave-nightly",
+      "sha256": "927e789fc82190290d6d4e575ccd6661e9a4defafb07f420bea1b0e391f7e514",
+      "bytes": 3205,
+      "lines": 77,
+      "original_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Brave-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*aarch64.*mage$\"| grep -i \"nightly\" | head -1)",
+      "install_update_identical": true
+    },
+    {
+      "path": "programs/x86_64/brave",
+      "sha256": "e87f729a53131736bbb083070fa26071c5a364bc167013134daa671d83b581da",
+      "bytes": 3185,
+      "lines": 77,
+      "original_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Brave-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*x86_64.*mage$\"| grep -i \"stable\" | head -1)",
+      "install_update_identical": true
+    },
+    {
+      "path": "programs/x86_64/brave-beta",
+      "sha256": "3ed83016ef9bea37d9550811dfce7da1bbc97ef7502a97adccf43e3834d1068e",
+      "bytes": 3191,
+      "lines": 77,
+      "original_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Brave-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*x86_64.*mage$\"| grep -i \"beta\" | head -1)",
+      "install_update_identical": true
+    },
+    {
+      "path": "programs/x86_64/brave-nightly",
+      "sha256": "befac8ea306bbc70d497c8efbf9d169677c067ea58deda88acfb9bbb98333b32",
+      "bytes": 3203,
+      "lines": 77,
+      "original_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Brave-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*x86_64.*mage$\"| grep -i \"nightly\" | head -1)",
+      "install_update_identical": true
+    }
+  ],
+  "totals": {
+    "recipes": 6,
+    "bytes": 19164,
+    "lines": 462
+  },
+  "identity_runner_reference": "docs/track/release-catalog/research/am-utils-enrollment-20261028/request.py",
+  "prerequisites": [
+    "observe and accept natural seven-source repeat/resource evidence",
+    "review utility delivery/retention boundary before expanding enrollment",
+    "separate exact bounded identity-request approval"
+  ],
+  "live_requests": 0
+}
