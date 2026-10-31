@@ -1378,26 +1378,12 @@ case "$1" in
 			echo "$DIVIDING_LINE"
 		else
 			# Reinstall applications with updated installation scripts
+			entries=""
 			if [ -z "$2" ]; then
 				printf $"%b\n Checking for changes of the installation scripts in the online database...\n%b\n" "$DIVIDING_LINE" "$DIVIDING_LINE"
 			else
 				echo "$DIVIDING_LINE"
-				entries="$(echo "$@" | cut -f2- -d ' ' | tr ' ' '\n' | grep -v -- "--")"
-				_determine_args
-				for arg in $entries; do
-					if echo "$ARGPATHS" | grep -q "/$arg$"; then
-						argpath_items=$(echo "$ARGPATHS" | grep "/$arg$" | xargs)
-						for argpath in $argpath_items; do
-							if [ -f "$argpath"/AM-updater ]; then
-								mkdir -p "$argpath"/.am-installer
-								scriptname=$(ls "$argpath/.am-installer/" | head -1)
-								if [ -n "$scriptname" ] && grep -q "^◆ $scriptname :" "$AMDATADIR/$ARCH-apps"; then
-									printf "\nchange-me" >> "$argpath/.am-installer/$scriptname"
-								fi
-							fi
-						done
-					fi
-				done
+				entries="$AM_REINSTALL_SELECTION"
 			fi
 			_determine_args
 			for arg in $ARGS; do
@@ -1410,7 +1396,7 @@ case "$1" in
 							CURRENT=$(cat "$argpath"/.am-installer/"$scriptname")
 							SOURCE=$(_use_online_reading_tool "$APPSDB"/"$scriptname")
 							if echo "$SOURCE" | grep -q "APP=$arg"; then
-								if [ "$CURRENT" != "$SOURCE" ]; then
+								if [ -n "$entries" ] || [ "$CURRENT" != "$SOURCE" ]; then
 									reinstall_true=1
 									_reinstall_save_backups
 									"$AMCLIPATH_ORIGIN" -R "$arg"

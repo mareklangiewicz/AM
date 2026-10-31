@@ -48,14 +48,22 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 
 ## Current continuation boundary
 
-**Current frontier (2026-10-29):**
+**Current frontier (2026-10-31):**
 
 - [37](issues/37-assess-hourly-pilot.md) is closed: hourly workflow disabled,
   four successful child publications verified and archived; expiry refusal verified.
 - [41](issues/41-activate-daily-refresh.md) activated six-source daily operation
-  at 03:17 UTC, pinned to da0bb8b9768856e69db1b9f6c0b5e77c73f27fd5.
-  [64](issues/64-observe-daily-refresh-and-helper.md) tracks natural execution
-  observation and user-run host helper delivery; neither has occurred.
+  at 03:17 UTC. The subsequent reviewed notice-fix source pin is
+  `1d3253c5f2a82c74319d8188b02d5361457beb7b`.
+  [64](issues/64-observe-daily-refresh-and-helper.md) is resolved: normal helper
+  delivery was verified October 29; successful natural daily runs on October 30
+  and 31 have exact publication evidence retained. Latest observations were about
+  eight hours old at verification; scheduler delivery lagged over six hours.
+- [66](issues/66-scope-explicit-reinstall.md) is resolved locally: named reinstall
+  selection now applies before startup discovery and child-command cleanup.
+  Final 56 container scenarios, 198 catalog tests and 10 support specs pass.
+  Source publication with a reviewed schedule repin and normal host delivery
+  remain separate actions; no host reinstall or source push occurred here.
 - [47 enrollment](issues/47-enroll-scoped-migration-sources.md) has completed
   selector repair and seven-source offline preparation. Actual operational
   enrollment/publication still requires separate scoped approval; the operational
@@ -73,10 +81,14 @@ failure and retry behavior offline; no production defect was demonstrated.
 
 
 Use AMREPO-owned fork catalog and managed helper/source delivery (ticket 29).
-The retained public candidate is a0fdd1255; its observation times are unchanged,
-so freshness/explicit stale consent still apply. No installed updater migration,
-new collection, workflow or schedule has run in this repair. Upstream submission
-is optional future work; ticket 28's upstream-first recommendation is superseded.
+Latest verified public publication is `067f236b205d8fe01c6f4e79744887e4979437fc`,
+from the October 31 natural daily run; its actual observation times govern freshness.
+The October 29 handoff records user-driven installed-updater migration; older
+unmigrated/undelivered claims in this map are historical. This continuation made
+read-only operational checks, with no host operation, dispatch, source push or repin.
+Upstream submission is optional future work; ticket 28's upstream-first
+recommendation is superseded. Future source publication requires reviewing and
+repinning the exact source revision together.
 Historical entries below describe what happened, not current runtime policy.
 
 ## Fog
@@ -744,3 +756,19 @@ host delivery remain [64](issues/64-observe-daily-refresh-and-helper.md).
 2026-10-29: [65 resolved](issues/65-configured-sync-notice-links.md). Sync notices
 show actual configured recipe/manager source URLs. Reporting-only change; syntax,
 diff and three-source rendering checks pass. Local commit, not delivered or pushed.
+
+2026-10-31: [64 resolved](issues/64-observe-daily-refresh-and-helper.md).
+Read-only verification of October 30/31 natural daily runs: twelve conditional
+HTTP 200 outcomes, validated candidates, exact published Git blobs and chained
+parents. [Evidence retained](research/daily-refresh-20261030-31.md). Latest
+observations were about eight hours old; controllers arrived over six hours late.
+The prior host delivery and ticket-65 source push/repin are historical user actions
+recorded in the October 29 handoff, superseding earlier local-only claims.
+
+2026-10-31: [66 resolved](issues/66-scope-explicit-reinstall.md).
+Reproduced unwanted unrelated-app reinstall, then caught startup's additional
+incomplete-app cleanup path. One command-wide named selection now constrains
+discovery before cleanup, including child removals/installations; removed forced
+saved-recipe edits. Six new whole-command cases across AM/AppMan and native Termux;
+final 56 scenarios, 198 catalog tests and 10 support specs pass. No host operation,
+source push/repin, manual collection or enrollment in this continuation.

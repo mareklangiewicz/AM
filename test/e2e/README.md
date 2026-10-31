@@ -41,7 +41,7 @@ app-directory mount is used. Container sudo policy and adapters are test-only.
   checksum. A small legacy recipe is installed through normal AM dispatch to
   exercise a mixed batch; it is not a migrated catalog recipe.
 
-Fifteen scenarios on each target cover:
+Twenty-one scenarios on each target cover:
 
 1. System recipe installation, expected retained URL, desktop extraction, binary
    symlink, source embedding, real checksum verification and standalone updater.
@@ -88,6 +88,14 @@ cross-distro gap; it supplements those tests.
     for fresh installation and existing-app update. Normal retries complete;
     installed files, launchers and user configuration survive interrupted updates.
     This exercises one controlled interruption point, not general crash durability.
+
+Six additional scenarios exercise actual `reinstall` dispatch in both AM and
+AppMan: single names, multiple/duplicate names, missing and regex-like names,
+mixed present/missing names, no arguments and the global assume-yes switch.
+Named commands preserve unrelated changed recipes and incomplete installations,
+including during startup discovery and child installation/removal commands.
+No-argument commands still reinstall only changed recipes. Exact saved recipes,
+single binary transfers, untouched app trees and user settings are checked.
 
 Optional real-binary startup checks (cached matrix images required):
 
@@ -145,7 +153,7 @@ The built image ID and exact tested source hashes are retained with each run.
 Builds use network; runtime containers use `--network=none` and strict fixture
 transport, just like the other targets.
 
-All eight Termux scenarios execute as the native unprivileged `system` user
+All fourteen Termux scenarios execute as the native unprivileged `system` user
 (uid/gid 1000). Root only prepares a system-AM fixture and result permissions.
 There are no `/bin` or `/usr` compatibility links. The native Termux
 `libtermux-exec.so` preload supplies normal Termux shebang/path translation;
@@ -166,6 +174,7 @@ Coverage:
   and version survive, retry succeeds, and catalog freshness refusal preserves files.
 - Normal AppMan removal/reinstall cleans launchers and preserves user configuration,
   with the reinstalled standalone updater exercised.
+- All six reinstall-selection scenarios above run through native AppMan paths.
 - Download/install/execution of real Android-native Bash ELF bytes from the image,
   through a controlled legacy CLI recipe and the offline download adapter.
 

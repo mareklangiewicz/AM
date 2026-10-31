@@ -48,6 +48,13 @@ class TermuxCLI(unittest.TestCase):
     command=shared.InstalledCLI.command
     test_unprivileged_appman_install_and_standalone_source=shared.InstalledCLI.test_unprivileged_appman_install_and_standalone_source
     test_remove_reinstall_preserves_user_configuration=shared.InstalledCLI.test_remove_reinstall_preserves_user_configuration
+    check_reinstall_selection=shared.InstalledCLI.check_reinstall_selection
+    test_named_reinstall_preserves_unrelated_changed_app=shared.InstalledCLI.test_named_reinstall_preserves_unrelated_changed_app
+    test_multiple_named_reinstall_is_deduplicated_and_scoped=shared.InstalledCLI.test_multiple_named_reinstall_is_deduplicated_and_scoped
+    test_missing_reinstall_names_preserve_all_apps=shared.InstalledCLI.test_missing_reinstall_names_preserve_all_apps
+    test_mixed_present_missing_reinstall_names=shared.InstalledCLI.test_mixed_present_missing_reinstall_names
+    test_no_argument_reinstall_only_selects_changed_recipes=shared.InstalledCLI.test_no_argument_reinstall_only_selects_changed_recipes
+    test_named_reinstall_with_global_assume_yes=shared.InstalledCLI.test_named_reinstall_with_global_assume_yes
 
     def appman(self):
         self.prepare_home(self.home,appman=True)

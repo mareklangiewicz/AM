@@ -359,6 +359,84 @@ esac
         self.assertIn('stale',result.stderr)
         self.assertEqual(snapshot_tree(app),before)
 
+    def test_named_reinstall_preserves_unrelated_changed_app(self):
+        self.check_reinstall_selection(('obsidian',),('nvim',),('obsidian',))
+
+    def test_multiple_named_reinstall_is_deduplicated_and_scoped(self):
+        self.check_reinstall_selection(('obsidian','sqlitebrowser','obsidian'),
+                                       ('nvim',),('obsidian','sqlitebrowser'))
+
+    def test_missing_reinstall_names_preserve_all_apps(self):
+        # A regex-like missing name must not select nvim.
+        self.check_reinstall_selection(('missing-app','nv.m'),('nvim',),())
+
+    def test_mixed_present_missing_reinstall_names(self):
+        self.check_reinstall_selection(('obsidian','missing-app'),('nvim',),('obsidian',))
+
+    def test_no_argument_reinstall_only_selects_changed_recipes(self):
+        self.check_reinstall_selection((),('nvim','sqlitebrowser'),('nvim','sqlitebrowser'))
+
+    def test_named_reinstall_with_global_assume_yes(self):
+        self.check_reinstall_selection(('obsidian',),('nvim',),('obsidian',),prefix=('-y',))
+
+    def check_reinstall_selection(self, names, changed, expected, *, prefix=()):
+        for appman in ((True,) if os.environ.get('E2E_TARGET') == 'termux' else (False,True)):
+            with self.subTest(appman=appman):
+                home=self.fixture/'reinstall-appman-home' if appman else self.home
+                if appman:
+                    home.mkdir()
+                    self.prepare_home(home,appman=True)
+                executable=str(home/'Applications/appman/appman') if appman else '/usr/local/bin/am'
+                root=home/'Applications' if appman else Path('/opt')
+                apps=('obsidian','nvim','sqlitebrowser')
+                self.command('-i',*apps,home=home,executable=executable)
+                for app in changed:
+                    recipe=root/app/'.am-installer'/app
+                    recipe.write_text(recipe.read_text()+'\n# old saved recipe\n')
+                for app in apps:
+                    marker=root/app/'reinstall-sentinel'
+                    marker.write_text('must survive unless explicitly selected or changed\n')
+                    os.chown(marker,USER.pw_uid,USER.pw_gid)
+                # Discovery normally removes incomplete installations. Explicit
+                # selection must exclude these before that cleanup can mutate them.
+                incomplete=root/'e2e-unrelated'
+                if names:
+                    incomplete.mkdir()
+                    remove=incomplete/'remove'
+                    remove.write_text('#!/bin/sh\nrm -rf "'+str(incomplete)+'"\n')
+                    remove.chmod(0o755)
+                    for path in (incomplete,remove): os.chown(path,USER.pw_uid,USER.pw_gid)
+                    self.addCleanup(shutil.rmtree,incomplete,True)
+                before={app:snapshot_tree(root/app) for app in apps}
+                incomplete_before=snapshot_tree(incomplete) if names else None
+                config=home/'.config'
+                sentinel=config/'e2e-reinstall/settings'
+                sentinel.parent.mkdir(parents=True)
+                sentinel.write_text('preserve user settings\n')
+                for path in (sentinel.parent,sentinel): os.chown(path,USER.pw_uid,USER.pw_gid)
+                before_config=snapshot_tree(config)
+                previous=set((self.fixture/'calls').iterdir())
+                self.command(*prefix,'reinstall',*names,home=home,executable=executable)
+                calls=read_transport_records(self.fixture/'calls',excluding=previous)
+                for app in apps:
+                    with self.subTest(app=app):
+                        if app in expected:
+                            self.assertFalse((root/app/'reinstall-sentinel').exists())
+                            self.assertTrue((root/app/'AM-updater').is_file())
+                            self.assertEqual((root/app/'.am-installer'/app).read_bytes(),
+                                             (Path('/src/programs/x86_64')/app).read_bytes())
+                            # Exactly one binary transfer even for duplicate names.
+                            self.assertEqual(sum(c['tool']=='wget' and not c['head'] and
+                                c['url']==(root/app/'version').read_text().strip() for c in calls),1)
+                        else:
+                            self.assertEqual(snapshot_tree(root/app),before[app])
+                            if names:
+                                self.assertFalse(any(c['url']==SOURCE+'/programs/x86_64/'+app for c in calls))
+                if names:
+                    self.assertTrue(incomplete.is_dir())
+                    self.assertEqual(snapshot_tree(incomplete),incomplete_before)
+                self.assertEqual(snapshot_tree(config),before_config)
+
     def test_remove_reinstall_preserves_user_configuration(self):
         for appman in ((True,) if os.environ.get('E2E_TARGET') == 'termux' else (False,True)):
             with self.subTest(appman=appman):

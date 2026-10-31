@@ -473,6 +473,18 @@ _detect_appman_apps() {
 	fi
 }
 
+# Scope the entire named-reinstall command, including startup cache refresh and
+# child removal/installation commands, before any discovery can clean app files.
+_set_reinstall_selection() {
+	case "$1" in -y|--assume-yes) shift ;; esac
+	[ "$1" = reinstall ] || return 0
+	case "$2" in ''|--all|--launcher) return 0 ;; esac
+	shift
+	AM_REINSTALL_SELECTION="$(printf '%s\n' "$@" | grep -v -- '--')"
+	export AM_REINSTALL_SELECTION
+}
+_set_reinstall_selection "$@"
+
 _determine_args() {
 	if [ -d "$APPSPATH" ]; then
 		if [ -L "$APPSPATH" ]; then
@@ -491,6 +503,16 @@ _determine_args() {
 				ARGPATHS=$(printf "%b\n%b" "$ARGPATHS" "$APPMAN_PATHS")
 			fi
 		fi
+	fi
+	if [ "${AM_REINSTALL_SELECTION+x}" = x ]; then
+		ARGPATHS=$(for selected_path in $ARGPATHS; do
+			while IFS= read -r selected_arg; do
+				if [ "${selected_path##*/}" = "$selected_arg" ]; then
+					printf '%s\n' "$selected_path"
+					break
+				fi
+			done <<< "$AM_REINSTALL_SELECTION"
+		done)
 	fi
 	# Detect directories with less than 4 elements
 	for a in $ARGPATHS; do

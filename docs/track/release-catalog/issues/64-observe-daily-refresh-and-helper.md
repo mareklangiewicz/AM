@@ -1,8 +1,8 @@
 # Observe natural daily refresh and host freshness helper delivery
 
 Type: task
-Status: open
-Triage: ready-for-human
+Status: resolved
+Triage: ready-for-agent
 
 ## Scope
 
@@ -51,3 +51,18 @@ for these system-AM files through normal synchronization. No app reinstall or
 installed-updater migration was performed or inferred. Natural daily execution
 remains the outstanding observation. Sync output's upstream recipe links are
 not evidence that downloads used upstream; exact installed bytes match our fork.
+
+## Answer — 2026-10-31
+
+Natural daily controllers on October 30 and 31 both successfully dispatched their
+six-source collection/publication child at the reviewed `1d3253c5f2` source pin.
+All twelve conditional requests returned HTTP 200. Both candidate trees validate,
+their published Git blobs match exactly, and the publication parents form the
+expected chain. The latest observations were about eight hours old at verification.
+Controller delivery was over six hours after the nominal schedule on both dates.
+
+See [run links, verification and retained artifacts](../research/daily-refresh-20261030-31.md).
+Together with the host delivery/ownership correction recorded above, this completes
+the ticket. The activation pin at the start of this file is historical; the later
+notice-fix delivery/pin is recorded in the October 29 handoff and ticket 65.
+No manual dispatch, source push/repin, new enrollment or host modification occurred.
