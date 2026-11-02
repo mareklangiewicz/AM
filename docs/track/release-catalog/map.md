@@ -890,3 +890,10 @@ aliases map to verified numeric public repositories; eight replacement recipes
 remove 544 lines / 25,702 bytes. 37 affected tests and five candidate checks pass.
 aarch64/tiddlydesktop selects an x86 asset and stays unchanged, alongside the two
 payloader 404 paths. No 56-source activation, push, repin or host operation.
+
+2026-11-02: User prioritizes migration speed beyond the original 124-recipe slice.
+[67](issues/67-expand-appimage-migration-throughput.md) freezes 1,000 further
+candidate replacements from a 2,549-recipe lexical pool; 732 exact endpoints,
+730 identity requests, 67,776 static lines displaced. Syntax/patch checks pass;
+metadata and actual assets remain unverified. Collector/publication capacity is
+the next throughput boundary; the eight redirect leftovers are a side batch.
