@@ -26,9 +26,31 @@ from shards import compose, root_index
 from storage import canonical, content, decode, digest
 
 
-def accept(run_id, revision, parent, output):
+def reviewed_inputs(package, payload_package, extra_migration, revision):
+    source_data = [payload_package/'payload.json', package/'prepared/inventory.json',
+                   package/'prepared/migration.json']
+    if extra_migration is not None:
+        source_data.extend([extra_migration, package/'queue.json'])
+    for path in source_data:
+        relative = str(path.relative_to(ROOT))
+        require(git(ROOT,'show',revision+':'+relative)==path.read_bytes(),
+                'acceptance_source_data_changed')
+    payload_raw = (payload_package/'payload.json').read_bytes()
+    require(digest(payload_raw)==PAYLOAD_HASH, 'acceptance_payload_digest')
+    payload = decode(payload_raw)
+    migration = decode((package/'prepared/migration.json').read_bytes())
+    if extra_migration is not None:
+        migration['migrated'] += decode(extra_migration.read_bytes())['migrated']
+    require(len({item['path'] for item in migration['migrated']}) == len(migration['migrated']),
+            'acceptance_duplicate_recipe')
+    return (package/'prepared/inventory.json').read_bytes(), payload, migration
+
+
+def accept(run_id, revision, parent, output, *, package=DIRECTORY,
+           payload_package=DIRECTORY, extra_migration=None):
     require(re.fullmatch('[1-9][0-9]*', run_id) and re.fullmatch('[0-9a-f]{40}', revision) and
             re.fullmatch('[0-9a-f]{40}', parent), 'acceptance_arguments')
+    raw, payload, migration = reviewed_inputs(package, payload_package, extra_migration, revision)
     output = Path(output); output.mkdir(exist_ok=False)
     token = subprocess.run(['gh','auth','token','--hostname','github.com'],check=True,
         stdout=subprocess.PIPE, stderr=subprocess.DEVNULL,timeout=10).stdout.strip()
@@ -65,11 +87,6 @@ def accept(run_id, revision, parent, output):
         event='workflow_dispatch',ref='refs/heads/main-marek',sha=revision,workflow_sha=revision,
         approved_revision=revision,run_id=run_id,run_attempt='1',previous_publication=parent,
         inventory_sha256=published['inventory_sha256'])
-    raw = (DIRECTORY/'prepared/inventory.json').read_bytes()
-    for path in ('payload.json','prepared/inventory.json','prepared/migration.json'):
-        relative = str((DIRECTORY/path).relative_to(ROOT))
-        require(git(ROOT,'show',revision+':'+relative)==(DIRECTORY/path).read_bytes(),
-                'acceptance_source_data_changed')
     manifests = inventory(context,raw,revision,ROOT)
     require(set(artifacts)=={f'restricted-catalog-{run_id}-1-{name}' for name in manifests} |
             {f'catalog-shard-publication-{run_id}-1'}, 'unexpected_artifacts')
@@ -124,11 +141,7 @@ def accept(run_id, revision, parent, output):
     entries, aliases = {}, {}
     for candidate in trees.values():
         index = decode(candidate['index.json']); entries.update(index['entries']); aliases.update(index['aliases'])
-    payload_raw = (DIRECTORY/'payload.json').read_bytes()
-    require(digest(payload_raw)==PAYLOAD_HASH, 'acceptance_payload_digest')
-    payload = decode(payload_raw)
     frozen = {r['path']:(row,r) for row in payload['rows'] for r in row['recipes']}
-    migration = decode((DIRECTORY/'prepared/migration.json').read_bytes())
     for item in migration['migrated']:
         require(digest((ROOT/item['path']).read_bytes())==item['candidate_sha256'], 'acceptance_recipe_changed')
         row,recipe = frozen[item['path']]

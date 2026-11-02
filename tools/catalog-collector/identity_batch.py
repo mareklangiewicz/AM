@@ -17,7 +17,7 @@ CAP = 64_000
 def fetch(url, out, deadline, *, validate_value, body_cap=64_000, token=None, curl="/usr/bin/curl"):
     if not (type(body_cap) is int and 0 < body_cap <= 8_000_000):
         raise ValueError("body_cap_refused")
-    if not re.fullmatch(r"https://api\.github\.com/(?:repos/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+|repositories/[1-9][0-9]*/releases(?:/latest)?(?:\?(?:page|per_page)=[1-9][0-9]*(?:&(?:page|per_page)=[1-9][0-9]*)*)?)", url):
+    if not re.fullmatch(r"https://api\.github\.com/(?:repos/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+|repositories/[1-9][0-9]*(?:/releases(?:/latest)?(?:\?(?:page|per_page)=[1-9][0-9]*(?:&(?:page|per_page)=[1-9][0-9]*)*)?)?)", url):
         raise ValueError("evidence_url_refused")
     seconds = min(30, deadline - time.monotonic())
     if seconds <= 0:

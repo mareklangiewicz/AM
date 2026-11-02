@@ -1,0 +1,62 @@
+--- a/.github/workflows/catalog-shards.yml
++++ b/.github/workflows/catalog-shards.yml
+@@ -51,7 +51,7 @@
+           sys.path.insert(0, 'tools/catalog-collector')
+           from shard_delivery import inventory
+           context = {k[4:].lower(): v for k, v in os.environ.items() if k.startswith('CTX_')}
+-          raw = pathlib.Path('docs/track/release-catalog/research/appimage-next-large-batch-20261102/prepared/inventory.json').read_bytes()
++          raw = pathlib.Path('docs/track/release-catalog/research/appimage-exceptions-next-20261102/prepared/inventory.json').read_bytes()
+           revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+           manifests = inventory(context, raw, revision, pathlib.Path.cwd())
+           with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
+@@ -80,7 +80,7 @@
+           sys.path.insert(0, 'tools/catalog-collector')
+           from shard_delivery import collect_shard
+           context = {k[4:].lower(): v for k, v in os.environ.items() if k.startswith('CTX_')}
+-          raw = pathlib.Path('docs/track/release-catalog/research/appimage-next-large-batch-20261102/prepared/inventory.json').read_bytes()
++          raw = pathlib.Path('docs/track/release-catalog/research/appimage-exceptions-next-20261102/prepared/inventory.json').read_bytes()
+           revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+           token = os.environ.pop('COLLECTOR_WORKFLOW_TOKEN').encode('ascii')
+           temporary = pathlib.Path(os.environ['RUNNER_TEMP'])
+@@ -118,7 +118,7 @@
+           sys.path.insert(0, 'tools/catalog-collector')
+           from shard_delivery import inventory, list_artifacts, publish
+           context = {k[4:].lower(): v for k, v in os.environ.items() if k.startswith('CTX_')}
+-          raw = pathlib.Path('docs/track/release-catalog/research/appimage-next-large-batch-20261102/prepared/inventory.json').read_bytes()
++          raw = pathlib.Path('docs/track/release-catalog/research/appimage-exceptions-next-20261102/prepared/inventory.json').read_bytes()
+           revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+           manifests = inventory(context, raw, revision, pathlib.Path.cwd())
+           token = os.environ.pop('PUBLISHER_WORKFLOW_TOKEN').encode('ascii')
+--- a/tools/catalog-collector/scheduled_dispatch.py
++++ b/tools/catalog-collector/scheduled_dispatch.py
+@@ -13,7 +13,7 @@
+ REPOSITORY = 'mareklangiewicz/AM'
+ WORKFLOW = 'catalog-shards.yml'
+ MANIFEST = '8d9eb1ec29b5e9a28e940e9a898cef20dcdf8246a57820e7ceb328ff8378e265'
+-INVENTORY = 'bf7248af7b047a02fa567a32f8f6f3f8b374e969296e219b3513101dbbeedec0'
++INVENTORY = '1bb994e8f4cceb57b5ef11135733e3c79a7a1c4ba330ba53b475e38a693f62dd'
+ CRON = '17 3 * * *'
+ 
+ 
+--- a/tools/catalog-collector/shard_delivery.py
++++ b/tools/catalog-collector/shard_delivery.py
+@@ -29,7 +29,7 @@
+         require(type(name) is str and re.fullmatch('[0-9]{2}', name) and
+                 type(row) is dict and set(row) == {'path', 'sha256'} and
+                 type(row['path']) is str and re.fullmatch(
+-                    r'docs/track/release-catalog/research/appimage-next-large-batch-20261102/prepared/manifest-[0-9]{2}\.json', row['path']) and
++                    r'docs/track/release-catalog/research/(?:appimage-next-large-batch-20261102|appimage-exceptions-next-20261102)/prepared/manifest-[0-9]{2}\.json', row['path']) and
+                 row['path'].endswith(f'manifest-{name}.json'), 'inventory_path')
+         path = Path(root)/row['path']
+         require(not path.is_symlink() and path.stat().st_size <= 64_000, 'manifest_bound')
+--- a/tools/catalog-collector/test_scheduled_dispatch.py
++++ b/tools/catalog-collector/test_scheduled_dispatch.py
+@@ -43,7 +43,7 @@
+ 
+     def test_controller_hash_binds_complete_shard_inventory(self):
+         root=Path(__file__).resolve().parents[2]
+-        path=root/'docs/track/release-catalog/research/appimage-next-large-batch-20261102/prepared/inventory.json'
++        path=root/'docs/track/release-catalog/research/appimage-exceptions-next-20261102/prepared/inventory.json'
+         raw=path.read_bytes()
+         self.assertEqual(hashlib.sha256(raw).hexdigest(),INVENTORY)
+         for row in json.loads(raw)['shards'].values():
