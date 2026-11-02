@@ -1,8 +1,8 @@
 # Expand AppImage migration beyond the original 124-recipe slice
 
 Type: task
-Status: claimed
-Triage: ready-for-human
+Status: resolved
+Triage: ready-for-agent
 
 ## Scope
 
@@ -21,12 +21,10 @@ New publication and installed rollout remain distinct operations.
 
 ## Current result
 
-**922 compatible recipes are migrated locally**, with 78 frozen exceptions left
-unchanged. Actual metadata, original selectors, bounded sharded publication,
-artifact/Git replay and runtime verification are recorded below. Enrollment
-source is `9f114d25fff27b0bd2f0ecf561871ca267a9f29f`; source publication,
-one guarded live refresh/acceptance, recipe publication and daily repin remain
-pending Marek's push decision. No operational migration is claimed yet.
+**922 compatible recipes are published and accepted**, with 78 frozen exceptions
+unchanged. The approved 14-shard live run, independent acceptance and matching
+recipe source/daily pin are recorded in the [rollout result](../research/appimage-next-large-batch-20261102/live-rollout.md).
+Installed host delivery remains separate.
 
 ### Initial prepared result (historical)
 
@@ -214,3 +212,13 @@ and no unfinished run. Recheck again at execution. Push, workflow switch, dispat
 acceptance, recipe publication and repin remain the only operational steps; no
 host sync or installed-updater migration is included. Ticket remains claimed and
 ready-for-human for that concrete publication decision.
+
+
+## Answer — approved live rollout completed
+
+[Live rollout and retained evidence](../research/appimage-next-large-batch-20261102/live-rollout.md):
+run 41471816957 succeeded across all 14 shards and publisher. Independent acceptance
+passed exact artifact/Git recomputation, 1,844 selectors and pinned readers.
+Published recipe source and daily pin both `f6b3c349cf4d590d0591b9c601bb8ac01c4fc629`;
+accepted catalog `6f21b8c1d2bf271f570a0177bc1068bb9ca43d0a`. No host delivery.
+Earlier pending-publication statements above are historical and superseded.

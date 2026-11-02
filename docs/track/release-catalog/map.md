@@ -48,6 +48,14 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 
 ## Latest accepted stage — November 2, 2026
 
+[67 resolved: 922-recipe sharded rollout accepted](research/appimage-next-large-batch-20261102/live-rollout.md).
+Approved run 41471816957 passed all 14 shards and publisher; independent acceptance
+verified all artifacts/Git, 1,844 selectors and pinned readers. Published source
+and daily pin: `f6b3c349cf4d590d0591b9c601bb8ac01c4fc629`; catalog:
+`6f21b8c1d2bf271f570a0177bc1068bb9ca43d0a`. Only sharded collector/dispatcher
+active; 78 exceptions unchanged. No host delivery. One live run establishes no
+long-term reliability or Git-growth claim. Earlier stage details follow.
+
 [52-source enrollment and 107-recipe publication accepted](research/appimage-52-live-20261102.md).
 Exactly one approved run 41442000508 returned 52 HTTP 200 responses in 42.44 seconds;
 full artifact/Git recomputation, 214 original selectors and both pinned readers pass.
