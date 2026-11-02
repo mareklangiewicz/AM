@@ -1,8 +1,8 @@
 # Installed Obsidian catalog clock refusal
 
 Type: research
-Status: open
-Triage: needs-info
+Status: resolved
+Triage: ready-for-agent
 
 Separate from completed rollout ticket 69. Marek reported `am -u` refusing
 Obsidian with `AM catalog: future time, regressed clock or expired read` and
@@ -123,3 +123,32 @@ reads with matching body hashes. The transport refusal was not a clock failure.
   and [refs/runs](../research/obsidian-installed-refusal-20261102/current-refs-runs.json).
 
 Ticket remains open for original-host confirmation and installed delivery.
+
+## Answer — host confirmation and delivery, November 2, 2026
+
+Marek supplied output from his original terminal on myxps: `type -a date`
+resolved `/usr/bin/date` and `/bin/date`; `date --version` reported uutils
+coreutils 0.10.0. This confirms the affected implementation on the original
+host. The original refusal itself remains uncaptured, so its exact predicates
+cannot be reconstructed; the formatter defect is the supported explanation,
+not proof of an NTP or hardware clock step.
+
+Marek then ran normal `am -s` at approximately 18:26 Warsaw. It reported
+updating `catalog.am` and AM already current at 10.6-4. His named
+`am -u obsidian` retry at 18:27 downloaded Obsidian 1.15.0 and ended with
+`/opt/obsidian: updated` at approximately 18:27:25. No catalog refusal appeared.
+The transcript does not print a numeric exit status; success is established by
+the updater's completion message. Signed redirect URLs and tokens are omitted.
+Agent read-only verification with `cmp /opt/am/modules/catalog.am modules/catalog.am`
+returned 0: installed helper equals the corrected repository bytes.
+
+Publication had already completed before this confirmation: source and daily
+pin were both `0464ec126f2d65ba23d0a06871f284590efe06f1`, catalog remained
+`e391f35f61a61fde63e9d12ab10b3deb04f2abfb`, as recorded in the
+20261102T1721Z handoff. These are prior verified controls, not a fresh remote
+survey. This documentation follow-up is local only and must not be pushed
+without reviewing its exact source and matching daily repin together.
+
+Host confirmation, helper delivery and the named retry are settled; ticket 70
+is resolved. Observing and independently accepting the next natural daily run
+(November 3, 03:17 UTC / 04:17 Warsaw) remains separate frontier work.

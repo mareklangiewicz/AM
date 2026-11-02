@@ -54,10 +54,12 @@ selectors and pinned shell/Python readers. Source and daily pin now equal exact
 reviewed recipe commit 5ab112d25; accepted catalog e391f35f6 is unchanged.
 Final workflow/run controls passed. The subsequently approved evidence publication
 and daily repin advanced source=pin to `519c0e484`; accepted catalog is unchanged.
-Earlier refusals remain preserved. Ticket 70 now reproduces a clock-formatting
-defect in this execution environment; attribution of the original host refusal
-still requires confirming the host date implementation. No collection retry or
-agent-run host update. Natural sharded daily repeat remains unproven.
+Earlier refusals remain preserved. [70 resolved](issues/70-diagnose-installed-obsidian-clock-refusal.md):
+uutils date 0.10.0 confirmed in Marek's original terminal; Marek synced the
+corrected helper and successfully updated Obsidian 1.15.0. Installed helper
+matches repository bytes. Original failure predicates remain uncaptured.
+Published correction source=pin was `0464ec126`; this documentation follow-up
+is local only. Natural sharded daily repeat remains unproven.
 
 ## Historical rollout stop — November 2, 2026 (superseded by completion above)
 
@@ -100,18 +102,17 @@ Tickets 47/49 remain partial only for eleven unchanged legacy exception paths
 
 **Current frontier (November 2, 2026):**
 
-- Diagnose and validate [70's installed-reader refusal](issues/70-diagnose-installed-obsidian-clock-refusal.md).
-  An actual reader trace reproduced backwards formatted time despite advancing
-  Python clock samples. uutils date 0.10.0 loses leading fractional zeros with
-  `%6N`; repository correction uses full nanoseconds and explicit truncation.
-  Installed helper delivery and a subsequent named Obsidian update are separate.
-- Read-only controls on November 2 still show source=pin=`519c0e484`, catalog
-  `e391f35f6`, and only the sharded collector and daily dispatcher active.
-  Next configured natural run: November 3 at 03:17 UTC / 04:17 Warsaw.
-  Observe that run and independently accept its artifacts/publication; do not
-  substitute a manual dispatch for natural scheduling evidence.
-- Reconcile and review local changes before any source publication. Publishing
-  requires the matching reviewed daily repin. No push or repin occurred here.
+- [70 resolved](issues/70-diagnose-installed-obsidian-clock-refusal.md): original
+  terminal uses affected uutils date 0.10.0; normal module sync delivered the
+  fix and Marek's named Obsidian retry completed successfully.
+- Last verified published source=pin was `0464ec126`, catalog `e391f35f6`,
+  with only the sharded collector and daily dispatcher active (17:19 UTC,
+  November 2 handoff). This documentation follow-up has not been published.
+  Recheck remote controls before mutations.
+- Next configured natural run: November 3 at 03:17 UTC / 04:17 Warsaw.
+  Observe it and independently accept artifacts/publication; do not substitute
+  a manual dispatch. No natural repeat has yet been observed.
+- Future source publication requires review and matching exact daily repin.
 - Rollout 69 is complete. Older migration/enrollment frontiers below are
   historical and must not restart completed rollout planning.
 
@@ -171,11 +172,10 @@ Historical entries below describe what happened, not current runtime policy.
 
 ## Fog
 
-- [70: installed Obsidian clock refusal](issues/70-diagnose-installed-obsidian-clock-refusal.md)
-  remains open for host confirmation/delivery: live reader refusal reproduced,
-  uutils date `%6N` formatting defect isolated, local correction validated by
-  107 focused tests and five live reads. Original host event remains uncaptured;
-  rollout 69 stays completed.
+- [70 resolved: installed Obsidian clock refusal](issues/70-diagnose-installed-obsidian-clock-refusal.md):
+  host implementation confirmed, corrected helper delivered and named retry
+  succeeded. The original event remains uncaptured; no actual wall-clock step
+  is established. Natural daily repeat remains to be observed.
 
 - [06 resolved](issues/06-manual-rest-churn-experiment.md): baseline/hour measurements support provisional REST-first work; day sampling is optional. Fleet storage remains unmeasured.
 - [08 resolved](issues/08-offline-storage-prototype.md): 64 offline replay checks support the bounded format/state/publication contract; [09 resolved](issues/09-review-offline-findings.md) records review refinements; [10 resolved](issues/10-offline-client-freshness.md) verifies bounded freshness/consent; [11 resolved](issues/11-review-client-and-collection-boundaries.md) accepts the initial policy/direction; [12 resolved](issues/12-offline-restricted-collector.md) implements the offline core; [13 resolved](issues/13-prepare-adapter-and-enrollment-review.md) prepares that review; [14 resolved](issues/14-offline-supervised-transport.md) implements the adapter offline; [15 resolved](issues/15-review-adapter-and-stage-manifest.md) staged the reviewed run package; [16 resolved](issues/16-first-supervised-live-validation.md) validates its first live six-route baseline after approved SQLite enrollment.
