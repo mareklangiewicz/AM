@@ -48,15 +48,13 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 
 ## Latest accepted stage — November 2, 2026
 
-[Brave enrollment accepted](research/brave-live-20261102.md): source and daily pin
-`3c44b0ba45bb78f5c55f61b179c9cc4a068c82d5`, publication
-`4c6000aea8704d6585325146b85ebdf21cf0a628`, one approved run. Both pinned readers,
-full publication recomputation and 12 original selectors pass. Only the six Brave
-recipes of 49 are unblocked; their [local shared-lifecycle migration](design/brave-six-recipe-migration.md)
-removes 378 lines / 16,977 bytes and preserves all original selectors. Ticket 47 stays
-partial for the remaining 49 deferred endpoints. No host delivery.
-[Natural seven-source repeat](research/daily-refresh-20261101.md) is verified;
-older unobserved statements below are historical.
+[52-source enrollment and 107-recipe publication accepted](research/appimage-52-live-20261102.md).
+Exactly one approved run 41442000508 returned 52 HTTP 200 responses in 42.44 seconds;
+full artifact/Git recomputation, 214 original selectors and both pinned readers pass.
+Catalog tip `29e37bd9207ae9557e8f57afa010699c649d4cde`; published source and daily
+pin both `d6e7421579d5a0f65588e39bb72995a675b9f08a`. No rollback or host delivery.
+Tickets 47/49 remain partial only for eleven unchanged legacy exception paths
+(four redirects and one 404). Older operational boundaries below are historical.
 
 ## Current continuation boundary
 

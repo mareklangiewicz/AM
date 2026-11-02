@@ -323,3 +323,14 @@ publication. Current remote source/pin remain cc2ba588d; exact catalog parent
 result refuse. A source rollback must also restore the eight-source catalog if
 52-source publication occurred, before old collector code resumes. No push,
 dispatch, repin or host operation. 47/49 remain partial.
+
+## Approved 52-source rollout accepted — 2026-11-02
+
+[Live result and retained evidence](../research/appimage-52-live-20261102.md):
+one approved run, 52 HTTP 200 responses, full artifact/Git recomputation,
+214 actual original selectors and both pinned readers pass. Catalog publication
+29e37bd9 accepted before publishing the 107-recipe candidate d6e742157 and
+repinning daily to that exact SHA. No rollback, host sync or installed-updater
+migration. Status remains claimed/partial for the eleven legacy paths excluded
+by four redirected identities and one 404; their exception handling needs separate
+scope. Prior pending-approval and unpublished statements above are historical.

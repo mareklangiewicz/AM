@@ -77,3 +77,14 @@ Together with published Brave, implementations cover 113/124 paths. Eleven paths
 remain unchanged for four redirected repositories and one 404. This supersedes
 the earlier preparation blocker for these 107 paths, not their activation dependency.
 Status remains claimed/partial; no source push, daily repin or host delivery.
+
+## Approved 52-source rollout accepted — 2026-11-02
+
+[Live result and retained evidence](../research/appimage-52-live-20261102.md):
+one approved run, 52 HTTP 200 responses, full artifact/Git recomputation,
+214 actual original selectors and both pinned readers pass. Catalog publication
+29e37bd9 accepted before publishing the 107-recipe candidate d6e742157 and
+repinning daily to that exact SHA. No rollback, host sync or installed-updater
+migration. Status remains claimed/partial for the eleven legacy paths excluded
+by four redirected identities and one 404; their exception handling needs separate
+scope. Prior pending-approval and unpublished statements above are historical.
