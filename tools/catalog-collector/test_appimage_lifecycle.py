@@ -36,6 +36,18 @@ def bound_recipe(recipe):
 
 
 class AppImageLifecycle(ShellFixture):
+    def test_plus_package_name_installs_and_generated_updater_runs(self):
+        self.recipe.write_text(self.source.replace('APP=obsidian\n','APP=icalingua++\n',1))
+        result=self.run_script(self.recipe)
+        self.assertEqual(result.returncode,0,result.stderr)
+        app=self.root/'opt/icalingua++'
+        self.assertEqual((app/'version').read_text().strip(),self.expected)
+        self.assertTrue((self.root/'usr/local/bin/icalingua++').samefile(app/'icalingua++'))
+        (app/'version').write_text('old\n')
+        result=self.run_script(app/'AM-updater')
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertEqual((app/'version').read_text().strip(),self.expected)
+
     def setUp(self):
         super().setUp()
         self.set_up_appimage()
