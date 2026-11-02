@@ -155,7 +155,8 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text('#!/bin/sh\\nmkdir -p 
         representatives = {}
         for item in self.rows:
             representatives.setdefault(Path(item['path']).parent.name,item)
-        self.assertEqual(set(representatives),{'x86_64','aarch64','i686','armv7l'})
+        self.assertEqual(set(representatives),getattr(self, 'expected_architectures',
+                         {'x86_64','aarch64','i686','armv7l'}))
         for item in representatives.values():
             with self.subTest(path=item['path']):
                 self.activate(item)
@@ -182,7 +183,7 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text('#!/bin/sh\\nmkdir -p 
                 self.assertEqual((app/app.name).read_bytes(),binary)
                 self.activate(item)
                 (app/'version').write_text('old\n')
-                self.now = [str(Decimal(epoch(GEN))+49*3600)]*3
+                self.now = [str(Decimal(epoch(getattr(self, 'generation', GEN)))+49*3600)]*3
                 self.assertNotEqual(self.run_script(updater).returncode,0)
                 self.assertEqual((app/'version').read_text(),'old\n')
                 result = self.run_script(updater,args=self.consent())

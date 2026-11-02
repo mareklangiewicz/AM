@@ -35,7 +35,22 @@ def lookup(alias, *, commit=None, stale_acceptance=None, fetch=get,
     index_url=RAW_ROOT+pin+'/index.json'
     index_raw=fetch(index_url,INDEX_CAP,deadline)
     require(monotonic() < deadline,'catalog_deadline')
+    root_raw = index_raw
+    sharded = decode(index_raw).get('schema_version') == 2
+    if sharded:
+        from shards import root_index, selected_index
+        root = root_index(root_raw)
+        name = root['aliases'].get(alias)
+        require(name is not None, 'alias_unavailable')
+        row = root['shards'][name]
+        index_url = RAW_ROOT+pin+'/'+row['path']
+        index_raw = fetch(index_url, row['bytes'], deadline)
+        selected_index(root_raw, alias, index_raw)
+        require(monotonic() < deadline, 'catalog_deadline')
     started=utcnow()
+    if sharded:
+        from collector import timestamp
+        require(timestamp(root['generated_at']) <= started, 'future_publication')
     entry, metadata=select(index_raw,alias,pin,now=started.isoformat(),stale_acceptance=stale_acceptance)
     body_url=RAW_ROOT+pin+'/'+entry['observation']['path']
     raw=fetch(body_url,entry['observation']['bytes'] or 1,deadline)
@@ -47,7 +62,7 @@ def lookup(alias, *, commit=None, stale_acceptance=None, fetch=get,
     _, metadata=select(index_raw,alias,pin,now=finished.isoformat(),stale_acceptance=stale_acceptance)
     metadata.update(index_url=index_url,body_url=body_url,index_sha256=digest(index_raw),
                     checked_at=finished.isoformat(),resolved_ref_once=commit is None,
-                    catalog_gets=3 if commit is None else 2)
+                    catalog_gets=(3 if commit is None else 2)+int(sharded))
     return raw,metadata
 
 

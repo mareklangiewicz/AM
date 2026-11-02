@@ -14,8 +14,10 @@ def load_manifest(raw, workflow_identity):
     def constant(_):
         raise ValueError('invalid_manifest_json')
     obj = json.loads(raw, object_pairs_hook=pairs, parse_constant=constant)
-    require(type(obj) is dict and obj.get('schema') == 1 and
-            type(obj.get('sources')) is list and len(obj['sources']) in (6, 7, 8, SOURCE_CAP), 'invalid_manifest')
+    require(type(obj) is dict and type(obj.get('schema')) is int and obj['schema'] in (1, 2) and
+            type(obj.get('sources')) is list and
+            (len(obj['sources']) in (6, 7, 8, SOURCE_CAP) if obj['schema'] == 1 else
+             0 < len(obj['sources']) <= SOURCE_CAP), 'invalid_manifest')
     sources = []
     for row in obj['sources']:
         require(type(row) is dict and type(row.get('repository_id')) is int and

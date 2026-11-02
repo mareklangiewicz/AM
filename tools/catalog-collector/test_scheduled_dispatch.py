@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 import unittest
 from collector import Refusal
-from scheduled_dispatch import dispatch, CRON, MANIFEST
+from scheduled_dispatch import dispatch, CRON, MANIFEST, INVENTORY
 
 REV = 'a'*40
 PIN = 'b'*40
@@ -18,7 +18,7 @@ class ScheduledDispatch(unittest.TestCase):
             approved_revision=REV)
         self.responses = [dict(default_branch='main-marek'),dict(object=dict(sha=REV)),
             dict(total_count=3,workflows=[
-                dict(path='.github/workflows/catalog-collector.yml',state='active'),
+                dict(path='.github/workflows/catalog-shards.yml',state='active'),
                 dict(path='.github/workflows/catalog-schedule.yml',state='active'),
                 dict(path='.github/workflows/lister.yml',state='disabled_manually')]),
             dict(workflow_runs=[dict(status='completed')]), dict(object=dict(sha=PIN))]
@@ -39,7 +39,15 @@ class ScheduledDispatch(unittest.TestCase):
         self.assertEqual(len(submitted),1)
         self.assertIn('approved_revision='+REV,submitted[0])
         self.assertIn('previous_publication='+PIN,submitted[0])
-        self.assertIn('manifest_sha256='+MANIFEST,submitted[0])
+        self.assertIn('inventory_sha256='+INVENTORY,submitted[0])
+
+    def test_controller_hash_binds_complete_shard_inventory(self):
+        root=Path(__file__).resolve().parents[2]
+        path=root/'docs/track/release-catalog/research/appimage-next-large-batch-20261102/prepared/inventory.json'
+        raw=path.read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(),INVENTORY)
+        for row in json.loads(raw)['shards'].values():
+            self.assertEqual(hashlib.sha256((root/row['path']).read_bytes()).hexdigest(),row['sha256'])
 
     def test_controller_hash_binds_exact_operational_52_source_manifest(self):
         root=Path(__file__).resolve().parents[2]

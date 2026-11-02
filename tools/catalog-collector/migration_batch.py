@@ -14,7 +14,7 @@ REPORT = EVIDENCE/'migration.json'
 
 
 def pipeline(row, selector):
-    match = re.fullmatch(r"version=\$\(curl -Ls (['\"]?)"+re.escape(row['alias'])+r"\1 \| (.*)\)", selector)
+    match = re.fullmatch(r"version=\$\(curl -Ls\s+(['\"]?)"+re.escape(row['alias'])+r"\1\s*\| (.*)\)", selector)
     if not match:
         raise ValueError('unsupported_selector: '+selector)
     return match.group(2)

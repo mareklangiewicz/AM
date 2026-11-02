@@ -88,3 +88,79 @@ Four focused checks pass: full queue conservation, changed-source refusal,
 duplicate refusal, and actual storage retirement replay. No new metadata GET,
 push, dispatch, repin, installed migration or full-suite pass is claimed. Ticket
 remains claimed; bounded live acquisition and operational delivery are unfinished.
+
+## Verified identities
+
+The subsequent user instruction, “go ahead finish migration”, authorized advancing
+the whole frozen queue. The [bounded acquisition runner](../../../../tools/catalog-collector/large_evidence.py)
+completed all 730 identity requests: 669 public identities matched their exact
+original owner/name (case-insensitive comparison only), 59 returned redirects and
+two returned 404. Redirects were not followed. Release collection attempted all
+671 endpoints of the matching identities: 670 accepted responses and one refused
+at the unchanged 8,000,000-byte limit. An initial stop on that response's missing
+parsed quota was followed by a network-approved resume of **unattempted** URLs;
+its retained HTTP 200 headers independently showed quota headroom. No GET was
+retried. The resume reconstructed previous results from hash-checked bytes.
+
+[Exact public acquisition evidence](../research/appimage-next-large-batch-20261102/evidence.tar.gz)
+SHA256 `2b574f20f705225247c79233168bda2d998562aeec5e96286e5f9a6b0c469c16`
+contains original headers/bodies/reports and final accounting. Total retained
+response bytes including headers: 230,056,932. The resume's start/end times cover
+the resume only; individual reports preserve the original acquisition times.
+The credential was explicitly acquired from gh, passed through private pipes,
+and never persisted. Four concurrent requests per wave bounded release response
+allocation below 32 MB, with 300-second wave and 30-second request deadlines.
+The session ceiling was one hour / 1 GB, plus at most one in-flight wave; this is
+an evidence-acquisition ceiling, not a change to publication/storage limits.
+
+Both original selectors for all candidates with accepted metadata were evaluated.
+[Migration results](../research/appimage-next-large-batch-20261102/prepared/migration.json)
+identify 922 compatible paths across 667 new descriptors: 676 x86_64, 245 aarch64,
+one i686. Their original exact selected URLs are returned assets. The other 78
+paths remain unchanged: 70 identity/release exceptions and eight selectors without
+a returned GitHub asset (including Chatbox's external download links). Potential
+production reduction is 62,630 lines / 2,927,077 bytes. Candidate syntax and patch
+application checks pass. A nonempty selector alone is not accepted compatibility.
+
+### Implemented bounded publication
+
+The metadata measurements establish that one 50-MB tree cannot fit this batch.
+Implemented a schema-2 root over 14 independently validated storage shards,
+retaining schema-1 shard indexes. The 52-source operational manifest is preserved
+byte-for-byte as shard 00; the 667 new descriptors occupy 13 further shards,
+chosen by exact measured body lengths (32-MB preparation target) and at most 52
+sources. Manifest schema 2 permits 1–52 sources without broadening legacy schema-1
+profiles. Each manifest remains <=64 KB and bound by its exact reviewed hash.
+[Inventory](../research/appimage-next-large-batch-20261102/prepared/inventory.json)
+SHA256 `bf7248af7b047a02fa567a32f8f6f3f8b374e969296e219b3513101dbbeedec0`.
+
+The new workflow validates the complete inventory before credentials, collects
+at most four shards concurrently under existing per-run guards, retains each
+same-run artifact, then independently recomputes every shard against the exact
+root parent. Only all-shard success can publish one atomic root commit. Cross-shard
+duplicate aliases, descriptors and conflicting repository locators refuse.
+Unchanged shell reader paths/TSV layout preserve managed and standalone readers;
+the Python reference reader fetches only root metadata, its selected shard index
+and body, all pinned to one root commit. Shard indexes carry their own receipt,
+validation, source and run provenance. No response body is synthesized or trimmed.
+
+The existing 50-MB tree cap applies separately to every shard; root metadata and
+lookup retain their existing 2-MB caps. The aggregate root ceiling is explicit:
+at most 32 reviewed shards, each <=50 MB, plus bounded root metadata. This is a
+new sharded format, not a silent increase of legacy TREE_CAP. Compressed Git
+objects remain under the existing 128-MB history ceiling. Future growth still
+refuses rather than silently increasing that ceiling.
+
+[Offline replay](../research/appimage-next-large-batch-20261102/prepared/replay.json)
+uses all exact accepted new bodies and the archived accepted legacy artifact.
+Its legacy 304s, run context and revision are explicitly synthetic; new-source
+receipt times remain actual saved transfer times. All per-shard ZIP bounds,
+publisher artifact recomputations, complete temporary Git body/index roundtrips
+and stale-parent refusal pass. Root: 261,415,274 bytes; index: 95,635 bytes;
+lookup: 522,798 bytes; Git objects: 26,912,981 bytes; largest shard: 36,316,210 bytes.
+These are one replay's measurements, not live refresh or long-term retention claims.
+
+Enrollment and recipe publication remain separate commits/stages. Remote parent
+was rechecked as `29e37bd9207ae9557e8f57afa010699c649d4cde`. The explicit home
+instruction reserves pushing for Marek's decision; finish local verification and
+prepare exact push/run/acceptance/recipe/pin steps before asking for that decision.

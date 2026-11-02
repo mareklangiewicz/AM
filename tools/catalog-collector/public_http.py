@@ -16,7 +16,7 @@ RAW_ROOT = 'https://raw.githubusercontent.com/mareklangiewicz/AM/'
 
 def allowed(url):
     return type(url) is str and (url == REF_URL or re.fullmatch(
-        re.escape(RAW_ROOT)+r'[0-9a-f]{40}/(?:index\.json|bodies/[0-9a-f]{64}\.json)', url))
+        re.escape(RAW_ROOT)+r'[0-9a-f]{40}/(?:index\.json|shards/[0-9]{2}/index\.json|bodies/[0-9a-f]{64}\.json)', url))
 
 
 def get(url, cap, deadline, *, monotonic=time.monotonic, spawn=subprocess.Popen):

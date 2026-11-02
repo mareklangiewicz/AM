@@ -286,3 +286,27 @@ manifest and dispatcher remain the accepted seven-source bytes. Only
 identity/release evidence and twelve original selector checks. Exact manifest hash
 approval still gates collection, with no ninth source and no increased byte/time
 limits. See the [offline package](../../docs/track/release-catalog/design/brave-eight-source-preparation.md).
+
+## Thousand-recipe throughput continuation
+
+Ticket [67](../../docs/track/release-catalog/issues/67-expand-appimage-migration-throughput.md#verified-identities)
+records actual metadata, exceptions, the exact prepared inventory and rollout state.
+`large_evidence.py` is an explicitly invoked, frozen-queue evidence runner;
+`large_migration.py` verifies original selectors and prepares compatible patches.
+It does not apply recipes. `large_replay.py` validates saved-body ZIP/artifact/Git
+publication offline, with explicitly synthetic conditional repeats.
+
+`shards.py` composes at most 32 independently bounded storage trees under one
+atomic publication. Each keeps the existing 52-source, 64-KB manifest, 50-MB tree
+and per-body limits. Root index and lookup remain <=2 MB; compressed Git objects
+remain <=128 MB. The root's aggregate uncompressed ceiling follows the explicitly
+reviewed shard inventory. Shell reader paths and TSV framing stay unchanged.
+The Python reader supports selective schema-2 root/shard reads. Legacy schema-1
+publications continue to work.
+
+`catalog-shards.yml` binds the entire inventory, collects at most four shards at
+once and publishes only after every same-run artifact recomputes against the
+exact parent. Each run remains separately authorized. Local candidate code and
+scheduled-dispatch edits do not by themselves change the remote source pin.
+After applying the compatible recipe patch, the explicit full-batch inert
+install/update check is `python3 -B tools/catalog-collector/check_large_lifecycle.py -v`.

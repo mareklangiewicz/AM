@@ -11,8 +11,9 @@ import subprocess
 from collector import require
 
 REPOSITORY = 'mareklangiewicz/AM'
-WORKFLOW = 'catalog-collector.yml'
+WORKFLOW = 'catalog-shards.yml'
 MANIFEST = '8d9eb1ec29b5e9a28e940e9a898cef20dcdf8246a57820e7ceb328ff8378e265'
+INVENTORY = 'bf7248af7b047a02fa567a32f8f6f3f8b374e969296e219b3513101dbbeedec0'
 CRON = '17 3 * * *'
 
 
@@ -46,7 +47,7 @@ def dispatch(context, *, execute=command):
     workflows = api('actions/workflows')
     require(workflows['total_count'] == len(workflows['workflows']) and
             {w['path'] for w in workflows['workflows'] if w['state'] == 'active'} ==
-            {'.github/workflows/catalog-collector.yml',
+            {'.github/workflows/catalog-shards.yml',
              '.github/workflows/catalog-schedule.yml'}, 'unexpected_active_workflow')
     runs = api(f'actions/workflows/{WORKFLOW}/runs?per_page=100')
     # Recent API ordering cannot prove no arbitrarily old active run. The actual
@@ -57,7 +58,7 @@ def dispatch(context, *, execute=command):
     require(re.fullmatch('[0-9a-f]{40}', parent) is not None, 'invalid_schedule_prior')
     execute(['workflow', 'run', WORKFLOW, '--repo', REPOSITORY,
              '--ref', 'main-marek', '-f', 'approved_revision='+revision,
-             '-f', 'manifest_sha256='+MANIFEST, '-f', 'previous_publication='+parent])
+             '-f', 'inventory_sha256='+INVENTORY, '-f', 'previous_publication='+parent])
     return {'outcome': 'dispatch_submitted', 'approved_revision': revision,
             'previous_publication': parent}
 

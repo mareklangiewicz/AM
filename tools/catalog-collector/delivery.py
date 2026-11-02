@@ -105,7 +105,7 @@ def read_git_tree(repo, commit):
     return tree
 
 
-def fetch_prior(context, token, directory):
+def fetch_prior(context, token, directory, *, reader=read_git_tree):
     """Require exact caller pin or proven branch absence; no fallback/retry."""
     pin = context.get('previous_publication', '')
     require(type(pin) is str and (pin == '' or re.fullmatch('[0-9a-f]{40}', pin)), 'invalid_prior_pin')
@@ -121,8 +121,9 @@ def fetch_prior(context, token, directory):
     remote_git(repo, token, 'fetch', '--quiet', '--no-tags', '--depth=1', URL, f'{REMOTE_REF}:{REF}')
     actual = git(repo, 'rev-parse', REF).decode().strip()
     require(actual == pin, 'publication_parent_changed')
-    tree = read_git_tree(repo, pin)
-    require(timestamp(validate(tree)['generated_at']) <= datetime.now(timezone.utc), 'future_prior')
+    tree = reader(repo, pin)
+    if tree is not None:
+        require(timestamp(validate(tree)['generated_at']) <= datetime.now(timezone.utc), 'future_prior')
     return tree
 
 
@@ -198,7 +199,7 @@ def verify_artifact(files, context, manifest_raw, revision, previous):
     return tree
 
 
-def download_artifact(context, artifact_id, expected_digest, token):
+def download_artifact(context, artifact_id, expected_digest, token, *, artifact_name=None):
     require(type(artifact_id) is str and re.fullmatch('[1-9][0-9]*', artifact_id), 'invalid_artifact_id')
     require(type(expected_digest) is str and re.fullmatch('[0-9a-f]{64}', expected_digest), 'invalid_artifact_digest')
     endpoint = f'repos/{REPOSITORY}/actions/artifacts/{artifact_id}'
@@ -208,7 +209,7 @@ def download_artifact(context, artifact_id, expected_digest, token):
         meta = decode(bounded([*command, endpoint], env=env, cap=64_000))
         run = meta['workflow_run']
         require(meta['id'] == int(artifact_id) and meta['expired'] is False and
-                meta['name'] == f'restricted-catalog-{context["run_id"]}-{context["run_attempt"]}' and
+                meta['name'] == (artifact_name or f'restricted-catalog-{context["run_id"]}-{context["run_attempt"]}') and
                 run['id'] == int(context['run_id']) and run['head_sha'] == context['sha'] and
                 run['repository_id'] == int(context['repository_id']) and
                 run['head_repository_id'] == int(context['repository_id']) and
