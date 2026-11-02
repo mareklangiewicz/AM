@@ -1,0 +1,3 @@
+# Publish normalized release facts; clients select releases
+
+The catalog will publish important upstream release and asset facts in a precisely defined YAML subset, without distributing raw upstream JSON responses. Clients own release and asset selection, including their definition of latest; the catalog will not reproduce GitHub's latest designation or make a separate request for it. This replaces response-shape compatibility with a shared fact model and a small shell reader; existing consumers must have their selection rules reviewed during the direct migration. Release coverage and the detailed grammar remain under design.

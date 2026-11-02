@@ -49,3 +49,17 @@ Marek accepted Q12–Q14:
 GitHub documents only page and per_page for List releases, no sort parameter or guaranteed newest-by-publication ordering. Listed records do not expose a documented latest designation; fetching all pages cannot by itself preserve GitHub's latest answer. Keep newest-by-publication, newest-by-creation, and GitHub-designated latest distinct. A separate latest endpoint remains necessary if preserving that designation.
 
 Local active sharded inventory inspection found 777 endpoint descriptors across 772 distinct numeric upstream repository IDs (755 list endpoints, 22 latest endpoints). Retained release arrays are first-page observations and do not establish how many repositories have over 100 releases. No live all-repository count census performed. Full history request cost and coverage remain undecided.
+
+## Settled client selection and next experiment
+
+Marek accepted Q20–Q21:
+- Drop GitHub-designated latest from the required facts; do not make a separate latest request. Clients explicitly select using available facts (publication/update times, prerelease status, version or repository-specific rules). Existing latest-endpoint consumers need explicit rule review; identical selection is not promised.
+- Measure full-history cost before choosing release coverage: pages, response bytes, provisional normalized YAML size, and collection duration. A bounded staged measurement may stop and report uncertainty. Production collection remains unchanged.
+- Q18 accepted: every YAML file has a format version and immutable source-document/schema link; readers recognize schema locally without downloading documentation.
+- Q19 accepted: demonstrate small parsing and structural validation on valid and malformed fixtures before deciding to omit consumer validation. Grammar may be reconsidered if strict validation is too complex.
+
+This supersedes the earlier requirement to preserve GitHub's latest designation. One-page coverage is reopened pending measurements.
+
+## Q21 measurement result
+
+[Bounded experiment](yaml-history-measurement-20261103/findings.md): uniform sample 24/772 upstream repositories, 23 single-page histories and one 227-release/3-page history; all sampled pagination completed. 26 API requests, 13,117,687 response bytes, 2,338,942 provisional normalized YAML bytes, 27.23 seconds. No production changes or raw response retention. Full coverage remains a decision: sample does not bound rare large histories, asset completeness or Git growth.

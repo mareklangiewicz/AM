@@ -11,8 +11,8 @@ A client's choice of release and assets for installation, browsing, presentation
 **Release window**:
 The bounded set of published releases offered for a source in a catalog observation; it does not necessarily include the source's entire release history.
 
-**Latest designation**:
-The release GitHub identifies as latest for a source, distinct from a client's choice of release.
+**Release selection rule**:
+A client's explicit rule for choosing among cataloged releases, such as publication time, version, prerelease status, or source-specific conventions.
 
 **Source check time**:
 The time a source's catalog observation was last successfully validated against upstream.

@@ -100,7 +100,11 @@ Tickets 47/49 remain partial only for eleven unchanged legacy exception paths
 
 ## Current continuation boundary
 
-**Current frontier (November 2, 2026):**
+**Current frontier (updated November 3, 2026):**
+
+- [71 claimed: design simple YAML catalog](issues/71-design-simple-yaml-catalog.md).
+  Ongoing interview; clients own selection. Bounded read-only history-cost
+  measurement authorized; production changes await shared understanding.
 
 - [70 resolved](issues/70-diagnose-installed-obsidian-clock-refusal.md): original
   terminal uses affected uutils date 0.10.0; normal module sync delivered the
