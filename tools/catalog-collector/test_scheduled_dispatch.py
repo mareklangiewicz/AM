@@ -41,21 +41,19 @@ class ScheduledDispatch(unittest.TestCase):
         self.assertIn('previous_publication='+PIN,submitted[0])
         self.assertIn('manifest_sha256='+MANIFEST,submitted[0])
 
-    def test_controller_hash_binds_exact_operational_eight_source_manifest(self):
+    def test_controller_hash_binds_exact_operational_52_source_manifest(self):
         root=Path(__file__).resolve().parents[2]
         design=root/'docs/track/release-catalog/design'
         raw=(design/'staged-manifest.json').read_bytes()
         self.assertEqual(hashlib.sha256(raw).hexdigest(),MANIFEST)
-        self.assertEqual(raw,(design/'staged-manifest-brave.json').read_bytes())
-        from test_storage import baseline_manifest
-        six=json.loads(baseline_manifest())
-        seven=json.loads(raw)
-        self.assertEqual(seven['sources'][:6],six['sources'])
-        prior=json.loads((design/'staged-manifest-am-utils.json').read_bytes())
-        self.assertEqual(seven['sources'][:7],prior['sources'])
-        self.assertEqual(len(seven['sources']),8)
-        self.assertEqual(seven['sources'][-1]['url'],
-                         'https://api.github.com/repositories/947512058/releases')
+        candidate=root/'docs/track/release-catalog/research/appimage-batch-20261102/candidate-manifest.json'
+        self.assertEqual(raw,candidate.read_bytes())
+        prior=json.loads((design/'staged-manifest-brave.json').read_bytes())
+        current=json.loads(raw)
+        self.assertEqual(current['sources'][:8],prior['sources'])
+        self.assertEqual(len(current['sources']),52)
+        self.assertEqual(current['sources'][-1]['url'],
+                         'https://api.github.com/repositories/46124547/releases')
 
     def test_context_revision_and_rerun_refuse_before_api(self):
         for key,value in [('repository','other/AM'),('event','push'),('schedule','* * * * *'),('schedule','17 * * * *'),

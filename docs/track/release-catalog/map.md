@@ -855,3 +855,33 @@ Final eight-source preparation validation: [212 catalog tests and 22 isolated
 activation checks pass](research/brave-eight-source-checks.json). Separate local
 `prep/brave-eight-source` supplies the exact activation review candidate; remote
 source/daily operation remain unchanged pending a separate rollout authorization.
+
+2026-11-02: [47 remaining-batch offline preparation](design/remaining-appimage-preparation.md)
+freezes 49 endpoints / 118 recipes and 48 distinct identity requests. All 236
+original selectors and recipe fingerprints are retained; syntax and inventory
+hash checks pass. Full 57-source activation needs a capacity decision under the
+unchanged 300-second deadline. No metadata requests, source push, repin or host
+operation; 47/49 remain partial.
+
+2026-11-02: [Approved identity batch](research/remaining-identities-20261102-findings.md)
+stopped at its first attempted transfer on local DNS failure (curl 6, zero response
+bytes). No identity collected; 47 URLs unattempted. Failed evidence retained;
+fresh network-enabled retry prepared, requiring scoped retry approval under the
+stop-on-first-failure contract. No operational or host change.
+
+2026-11-02: [Network-enabled identity retry](research/remaining-identities-20261102-network-findings.md)
+verified 11 public identities (12 candidate release endpoints / 42 recipes), then
+stopped on NaturalGroundingPlayer HTTP 301 without following it. Thirty-six
+identity URLs remain unattempted. Offline evidence hashes, scope and descriptor
+checks pass; no release requests, operational changes or host delivery.
+
+2026-11-02: [Substantial AppImage batch](research/appimage-batch-20261102.md):
+107 local recipe migrations, 214 unchanged selectors against 44 real responses,
+and −7,196 production lines / −334,946 bytes including supporting changes.
+Five endpoint exceptions preserve 11 legacy paths. Offline 52-source contract
+keeps time/byte caps; activation/publication and host delivery remain separate.
+
+2026-11-02: migration batch committed locally as `2496e90e4`;
+[two-stage activation preparation](design/appimage-52-source-rollout.md) separates
+52-source enrollment from the subsequent 107-recipe delivery. Current parent
+9f4e356e validated/replayed; remote source/pin remain cc2ba588d. No remote mutation.

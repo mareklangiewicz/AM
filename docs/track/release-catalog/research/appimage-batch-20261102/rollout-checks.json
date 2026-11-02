@@ -1,0 +1,33 @@
+{
+  "prior_publication": "9f4e356ec2d50260196748374b00efdda397d7f7",
+  "prior_source": "cc2ba588d5446df5a9fdb5366ad689e672986a2a",
+  "prior_manifest_sha256": "dfca1d3e7504e4c6fa83ae6260ba1bb6e2db4cca736fb3693db9ec4aeea1a8bf",
+  "candidate_manifest_sha256": "8d9eb1ec29b5e9a28e940e9a898cef20dcdf8246a57820e7ceb328ff8378e265",
+  "existing_requests_with_exact_conditions": 8,
+  "new_unconditional_requests": 44,
+  "request_limit": 52,
+  "full_artifact_recomputation": true,
+  "zip_roundtrip": true,
+  "candidate_tree_bytes": 36276153,
+  "artifact_zip_bytes": 4877880,
+  "refusals_verified": [
+    "first-new-304",
+    "new-timeout",
+    "missing-new-result"
+  ],
+  "events": "eight synthetic 304 events plus 44 retained real release bodies; no collection or freshness claim",
+  "prior_zip_sha256": "16bf9608a810d3a8c6b310e677c5f0b276fe0f2b2c167c2774bb69cd1a7e13aa",
+  "combined_candidate_tests": {
+    "tests_run": 243,
+    "success": true,
+    "log": "activation-full-tests.log"
+  },
+  "activation_file_sha256": {
+    ".github/workflows/catalog-collector.yml": "1505500460fd9f867512bdfee96433618afe88d8a2b11b1d1ece9fe954bbc2e6",
+    ".github/workflows/catalog-schedule.yml": "6e0c866e32b5d415f7a9a69d7e55adb12b2124b85f8ff280e223233742f5919b",
+    "docs/track/release-catalog/design/staged-manifest.json": "8d9eb1ec29b5e9a28e940e9a898cef20dcdf8246a57820e7ceb328ff8378e265",
+    "tools/catalog-collector/scheduled_dispatch.py": "24d2f2f282cbd72124cfe3c494cf233ceb54176e7ef3de680292dd3e5d21919c",
+    "tools/catalog-collector/test_scheduled_dispatch.py": "8e976b8ba50da6a8e9365194d599ba47842006548732dc6b83691c6158808fa9",
+    "tools/catalog-collector/test_workflow_adapter.py": "6fcf7f76b6497c2d93f5f6e09b900e1335dde74a386ac9b3b92737597cefe7b9"
+  }
+}

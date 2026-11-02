@@ -27,6 +27,7 @@ REPOSITORY = 'mareklangiewicz/AM'
 URL = 'https://github.com/mareklangiewicz/AM.git'
 REMOTE_REF = 'refs/heads/release-catalog'
 ZIP_CAP = 105_000_000
+ARTIFACT_FILE_CAP = 108  # 52 candidate bodies + 52 attempt bodies + four metadata files
 
 
 def bounded(command, *, env, cap, objects=None, seconds=90):
@@ -134,13 +135,13 @@ def unpack_artifact(raw):
     require(position >= 0 and len(raw)-position >= 22, 'artifact_zip_directory')
     disk, start_disk, disk_count, count, directory_size, offset, comment = struct.unpack(
         '<4H2IH', raw[position+4:position+22])
-    require(disk == start_disk == 0 and disk_count == count and count <= 100 and
+    require(disk == start_disk == 0 and disk_count == count and count <= ARTIFACT_FILE_CAP and
             directory_size <= 64_000 and offset+directory_size <= position and
             position+22+comment == len(raw), 'artifact_zip_directory_bound')
     files, total = {}, 0
     with zipfile.ZipFile(io.BytesIO(raw)) as archive:
         infos = archive.infolist()
-        require(len(infos) <= 100, 'artifact_file_count')
+        require(len(infos) <= ARTIFACT_FILE_CAP, 'artifact_file_count')
         for member in infos:
             name = member.filename
             require(name not in files and not member.is_dir() and

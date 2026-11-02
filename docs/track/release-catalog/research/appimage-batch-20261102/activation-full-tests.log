@@ -1,0 +1,29 @@
+...................................................................................................................................................................................................................................................
+----------------------------------------------------------------------
+Ran 243 tests in 462.958s
+
+OK
+{
+  "identities": 2,
+  "releases": 2,
+  "accepted": 1,
+  "failures": [
+    {
+      "stage": "identity",
+      "alias": "https://api.github.com/repos/owner/missing/releases",
+      "report": "out/identity-01/report.json"
+    },
+    {
+      "stage": "release",
+      "alias": "https://api.github.com/repos/owner/redirect/releases",
+      "report": "out/release-02/report.json"
+    },
+    {
+      "stage": "identity",
+      "alias": "https://api.github.com/repos/owner/quota/releases",
+      "report": "out/identity-04/report.json"
+    }
+  ],
+  "pending": 1,
+  "quota_exhausted": true
+}

@@ -55,3 +55,25 @@ three lines. Accepted live metadata and inert mechanics are explicitly separated
 This is six completed local recipes, not resolution of all 124 paths. Remaining
 118 recipes across 49 endpoints retain dependency 47. No host delivery or source
 push of this migration has occurred.
+
+### November 2 source publication
+
+User approved publishing the completed Brave subset. Fast-forward pushed exact
+`cc2ba588d5446df5a9fdb5366ad689e672986a2a` and coordinated the daily source pin.
+Final read-only verification confirms source/pin equality, default main-marek,
+only collector/dispatcher active, no queued/in-progress/waiting/pending/requested
+runs and unchanged publication `4c6000aea8704d6585325146b85ebdf21cf0a628`.
+Operational manifest/controller/workflows are unchanged by recipe publication.
+No manual collection or host synchronization occurred. Six paths are published;
+the remaining 118 paths across 49 endpoints remain blocked by enrollment.
+
+## Substantial local batch — 2026-11-02
+
+User authorized preparing compatible migrations from bounded live metadata before
+separate enrollment activation. [Consolidated result](../research/appimage-batch-20261102.md)
+records 107 local recipe migrations, all original selectors preserved, and total
+production reduction of 7,196 lines / 334,946 bytes including supporting changes.
+Together with published Brave, implementations cover 113/124 paths. Eleven paths
+remain unchanged for four redirected repositories and one 404. This supersedes
+the earlier preparation blocker for these 107 paths, not their activation dependency.
+Status remains claimed/partial; no source push, daily repin or host delivery.

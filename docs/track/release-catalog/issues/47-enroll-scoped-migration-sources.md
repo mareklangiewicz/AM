@@ -259,3 +259,67 @@ local commit nor activation branch is pushed, dispatched or pinned.
 [Natural seven-source repeat](../research/daily-refresh-20261101.md) is also verified.
 Only six Brave paths in 49 are unblocked; remaining 49 endpoints remain deferred.
 Status stays claimed/partial. No host delivery or additional collection.
+
+## Remaining batch prepared offline — 2026-11-02
+
+[Remaining batch review](../design/remaining-appimage-preparation.md) and
+[hash-bound payload](../research/remaining-appimage-preparation-20261102.json)
+freeze the other 49 endpoints / 118 recipes, with 48 distinct identity requests
+and all 236 original selectors. Frozen inventory hash, exact alias inclusion and
+all recipe shell syntax checks pass. No compatibility claim follows without real
+responses. The proposed evidence stages are substantial batches, separately
+reviewed from activation. Full 57-source activation cannot fit the current
+300-second deadline at existing per-request bounds; capacity design remains open.
+No new requests, source push, operational changes or host delivery. Status remains
+claimed/partial; executable supervised evidence runner is the next offline step.
+
+Identity batch [runner and concrete command](../design/remaining-appimage-preparation.md#identity-runner-ready-for-review)
+are now ready for review. Fifteen offline tests pass, including supervised child
+termination, stream bounds, wrong/self identity refusal, failure retention and
+repeat refusal. The 48 exact identity GETs require the ticket's explicit scoped
+authorization before execution; default invocation only prints the offline plan.
+No live request or operational change occurred. Triage stays ready-for-human.
+
+## Approved identity batch stopped on local DNS failure — 2026-11-02
+
+The user approved the 48-identity batch. [Retained failure and retry proposal](../research/remaining-identities-20261102-findings.md)
+record exactly one attempted transfer: CRITERIA1D returned curl exit 6, zero
+response bytes, no HTTP status. The restricted environment could not resolve the
+host; no repository identity was established. Runner stopped, leaving the other
+47 URLs unattempted. No automatic retry, escalation, release GET or operational
+change. Fresh network-enabled retry is concretely prepared for scoped approval;
+failed evidence is preserved and 47/49 remain partial.
+
+## Network-enabled retry: 11 identities verified, redirect stop — 2026-11-02
+
+The user authorized continuation with network access. [Retained evidence and audit](../research/remaining-identities-20261102-network-findings.md)
+verify 11 public identities, supporting candidate mappings for 12 exact release
+endpoints / 42 recipes. Attempt 12 (mysteryx93/NaturalGroundingPlayer) returned
+HTTP 301 to numeric repository 37950127; the runner did not follow it or accept
+its identity. The other 36 identity URLs remain unattempted. All retained stream
+hashes and mapping/scope checks pass. The frozen queue is unchanged; no release
+requests, enrollment, push/repin or host operations occurred. Prepare an exact
+continuation for the 36 untouched URLs and separate release-read stage; keep the
+redirect unresolved pending its own review. Status stays claimed/partial.
+
+## Substantial remaining-batch preparation — 2026-11-02
+
+User authorized metadata reads, failure isolation and offline implementation as
+one batch, superseding per-endpoint approval/whole-evidence-batch stop policy.
+[Consolidated result](../research/appimage-batch-20261102.md): all 48 identities
+attempted; 43 public mappings and 44 successful exact release responses support
+107 recipe migrations. Four redirects and one 404 isolate 11 untouched recipes.
+Prepared/tested the 52-source contract under unchanged time/byte caps; operational
+manifest/controller/workflows and remote state remain unchanged. Status stays
+claimed/partial pending separately approved activation and exception handling.
+
+## Committed migration and activation preparation — 2026-11-02
+
+Migration/evidence committed locally as `2496e90e4419ab6ec29a252e5143cc8526430946`.
+[Two-stage rollout](../design/appimage-52-source-rollout.md) prepares enrollment
+with legacy recipes preserved, then fast-forward migration delivery after accepted
+publication. Current remote source/pin remain cc2ba588d; exact catalog parent
+9f4e356e was fetched/validated and replayed. Initial-new 304, timeout and missing
+result refuse. A source rollback must also restore the eight-source catalog if
+52-source publication occurred, before old collector code resumes. No push,
+dispatch, repin or host operation. 47/49 remain partial.
