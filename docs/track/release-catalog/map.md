@@ -46,7 +46,17 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 - Exact REST snapshots are the provisional direction after the baseline/hour sample. The day sample is optional; retain the six-endpoint, short-window limits on any storage conclusions. Reconsider representation with broader evidence or new consumer needs.
 - Catalog work does not execute the active app installer or installed updaters. Existing app management behavior remains unchanged during experiments.
 
-## Current approved rollout stop — November 2, 2026
+## Latest completed rollout — November 2, 2026
+
+[69 resolved: approved 65-recipe rollout completed](research/appimage-exceptions-next-20261102/live-rollout-accepted.md).
+Same run 41479232632 passed full acceptance: 16 shards, 987 recipes, all 1,974
+selectors and pinned shell/Python readers. Source and daily pin now equal exact
+reviewed recipe commit 5ab112d25; accepted catalog e391f35f6 is unchanged.
+Final workflow/run controls passed. Finite clock probes saw no regression;
+earlier refusals are preserved and their clock regression cause remains unknown.
+No collection retry or host delivery. Natural daily repeat remains unproven.
+
+## Historical rollout stop — November 2, 2026 (superseded by completion above)
 
 [69: 65-recipe rollout stopped at client acceptance](research/appimage-exceptions-next-20261102/live-rollout-stop.md).
 Enrollment ab04b9d8c and exactly one successful 16-shard run 41479232632 published
