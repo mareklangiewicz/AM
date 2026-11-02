@@ -897,3 +897,11 @@ candidate replacements from a 2,549-recipe lexical pool; 732 exact endpoints,
 730 identity requests, 67,776 static lines displaced. Syntax/patch checks pass;
 metadata and actual assets remain unverified. Collector/publication capacity is
 the next throughput boundary; the eight redirect leftovers are a side batch.
+
+2026-11-02 continuation: [67 capacity audit](issues/67-expand-appimage-migration-throughput.md#capacity-audit-and-evidence-queue--2026-11-02-continuation)
+adds an offline, fingerprint-checked 15-cohort evidence queue for all 1,000 paths.
+Four focused checks pass, including a real storage replay proving that rotating
+replacement manifests retires earlier sources. The 784-source union's synthetic
+manifest exceeds the current parser cap; actual body capacity remains unmeasured.
+Recorded conditional incremental/sharded alternatives pending actual metadata;
+no production changes, source acquisition or operational delivery.
