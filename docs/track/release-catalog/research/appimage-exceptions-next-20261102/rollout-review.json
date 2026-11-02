@@ -1,0 +1,43 @@
+{
+  "enrollment_source": "ab04b9d8cb65e9ebbd26a5b6d1b530edc5e8263f",
+  "recipe_delivery_source": "5ab112d256683d0cbf27d7fb46a670f71e66406c",
+  "expected_remote_source": "f6b3c349cf4d590d0591b9c601bb8ac01c4fc629",
+  "expected_daily_pin": "f6b3c349cf4d590d0591b9c601bb8ac01c4fc629",
+  "expected_catalog_parent": "6f21b8c1d2bf271f570a0177bc1068bb9ca43d0a",
+  "inventory_sha256": "1bb994e8f4cceb57b5ef11135733e3c79a7a1c4ba330ba53b475e38a693f62dd",
+  "new_recipes": 65,
+  "all_recipes_checked_at_acceptance": 987,
+  "original_selectors_at_acceptance": 1974,
+  "unchanged_exceptions": 13,
+  "shards": 16,
+  "total_descriptors": 777,
+  "new_descriptors": 58,
+  "identity_review": "findings.md#identity-mappings",
+  "evidence_sha256": "d0b372bf9489e847fef4518392ab1a2b5c0205a926b8ed585bfe409bbcc2e011",
+  "manual_dispatches_authorized": 0,
+  "manual_dispatches_proposed": 1,
+  "recipe_publish_requires_accepted_live_catalog": true,
+  "proposed_workflow": "catalog-shards.yml",
+  "proposed_active_workflows": [
+    "catalog-shards.yml",
+    "catalog-schedule.yml"
+  ],
+  "proposed_final_daily_pin": "5ab112d256683d0cbf27d7fb46a670f71e66406c",
+  "operational_files_identical_between_stages": [
+    ".github/workflows/catalog-shards.yml",
+    ".github/workflows/catalog-schedule.yml",
+    "tools/catalog-collector/collector.py",
+    "tools/catalog-collector/storage.py",
+    "tools/catalog-collector/shard_delivery.py",
+    "tools/catalog-collector/shards.py",
+    "tools/catalog-collector/delivery.py",
+    "tools/catalog-collector/scheduled_dispatch.py",
+    "tools/catalog-collector/manifest.py",
+    "tools/catalog-collector/consumer.py",
+    "tools/catalog-collector/public_http.py"
+  ],
+  "host_operations_included": false,
+  "pushed": false,
+  "dispatched": false,
+  "repinned": false
+}

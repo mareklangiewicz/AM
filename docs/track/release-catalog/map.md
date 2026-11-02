@@ -48,6 +48,13 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 
 ## Latest accepted stage — November 2, 2026
 
+[68 resolved: next 65 exception recipes prepared locally](research/appimage-exceptions-next-20261102/findings.md).
+Explicit redirect identities, actual selectors, preserved 719-source inventory,
+16-shard replay and all 65 inert installs/updates pass. Two exact local stages
+and [rollout review](research/appimage-exceptions-next-20261102/rollout.md) await
+the separate push decision; 13 exceptions remain unchanged. No new collection,
+source publication, repin or host delivery; no natural sharded repeat observed.
+
 [67 resolved: 922-recipe sharded rollout accepted](research/appimage-next-large-batch-20261102/live-rollout.md).
 Approved run 41471816957 passed all 14 shards and publisher; independent acceptance
 verified all artifacts/Git, 1,844 selectors and pinned readers. Published source

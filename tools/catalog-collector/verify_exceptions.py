@@ -17,9 +17,14 @@ def main():
         for directory in ('tools','modules'): shutil.copytree(ROOT/directory,root/directory,ignore=shutil.ignore_patterns('__pycache__'))
         (root/'docs').symlink_to(ROOT/'docs',target_is_directory=True)
         rows=json.loads((DIRECTORY/'prepared/migration.json').read_bytes())['migrated']
+        revision=json.loads((DIRECTORY/'queue.json').read_bytes())['source_revision']
         for path in {'programs/x86_64/obsidian',*(item['path'] for item in rows)}:
-            dest=root/path;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/path,dest)
+            dest=root/path;dest.parent.mkdir(parents=True,exist_ok=True)
+            dest.write_bytes(subprocess.check_output(['git','show',revision+':'+path],cwd=ROOT))
         path=root/'.github/workflows/catalog-shards.yml';path.parent.mkdir(parents=True);shutil.copyfile(ROOT/'.github/workflows/catalog-shards.yml',path)
+        for path in ('.github/workflows/catalog-shards.yml','tools/catalog-collector/scheduled_dispatch.py',
+                     'tools/catalog-collector/shard_delivery.py','tools/catalog-collector/test_scheduled_dispatch.py'):
+            (root/path).write_bytes(subprocess.check_output(['git','show',revision+':'+path],cwd=ROOT))
         for name in ('enrollment.patch','recipes.patch'):
             subprocess.run(['git','apply',str(DIRECTORY/'prepared'/name)],cwd=root,check=True)
         # Full operational inventory preflight in the patched snapshot before lifecycle tests.
