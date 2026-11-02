@@ -46,6 +46,18 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 - Exact REST snapshots are the provisional direction after the baseline/hour sample. The day sample is optional; retain the six-endpoint, short-window limits on any storage conclusions. Reconsider representation with broader evidence or new consumer needs.
 - Catalog work does not execute the active app installer or installed updaters. Existing app management behavior remains unchanged during experiments.
 
+## Current approved rollout stop — November 2, 2026
+
+[69: 65-recipe rollout stopped at client acceptance](research/appimage-exceptions-next-20261102/live-rollout-stop.md).
+Enrollment ab04b9d8c and exactly one successful 16-shard run 41479232632 published
+catalog e391f35f6. Both read-only acceptance attempts passed artifacts/Git and all
+1,974 selectors, then shell-reader acceptance refused. A trace reproduced a
+0.501250-second local wall-clock regression; body hash matched and the guard
+correctly refused. Recipe delivery 5ab112d25 remains unpushed; pin stays f6b3c349c,
+so source/pin mismatch intentionally gates scheduled dispatch. Establish a stable
+clock and complete same-run read-only acceptance before the already approved
+recipe/pin steps. No collection rerun or host operation.
+
 ## Latest accepted stage — November 2, 2026
 
 [68 resolved: next 65 exception recipes prepared locally](research/appimage-exceptions-next-20261102/findings.md).

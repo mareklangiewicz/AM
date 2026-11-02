@@ -46,6 +46,16 @@ def reviewed_inputs(package, payload_package, extra_migration, revision):
     return (package/'prepared/inventory.json').read_bytes(), payload, migration
 
 
+def shell_reader_check(shell, expected, alias, commit, output):
+    record = dict(alias=alias, commit=commit, returncode=shell.returncode,
+                  stdout_bytes=len(shell.stdout), stdout_sha256=digest(shell.stdout),
+                  expected_bytes=len(expected), expected_sha256=digest(expected),
+                  stderr=shell.stderr.decode('utf-8', errors='replace'),
+                  matched=shell.returncode == 0 and shell.stdout == expected)
+    (Path(output)/('shell-reader-'+digest(alias.encode())+'.json')).write_bytes(canonical(record)+b'\n')
+    require(record['matched'], 'acceptance_shell_reader')
+
+
 def accept(run_id, revision, parent, output, *, package=DIRECTORY,
            payload_package=DIRECTORY, extra_migration=None):
     require(re.fullmatch('[1-9][0-9]*', run_id) and re.fullmatch('[0-9a-f]{40}', revision) and
@@ -168,7 +178,7 @@ def accept(run_id, revision, parent, output, *, package=DIRECTORY,
             env={'PATH':'/usr/bin:/bin','LANG':'C.UTF-8',
                  'AMREPO':'https://raw.githubusercontent.com/mareklangiewicz/AM/main-marek'},
             stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=95)
-        require(shell.returncode==0 and shell.stdout==expected, 'acceptance_shell_reader')
+        shell_reader_check(shell, expected, alias, commit, output)
         reader_checks.append(dict(alias=alias,sha256=digest(expected),both_readers=True))
     result = dict(outcome='accepted',commit=commit,parent=parent,source_revision=revision,
         run_id=run_id,shards=len(trees),recipes=len(migration['migrated']),
