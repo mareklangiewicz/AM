@@ -7,6 +7,8 @@ repinned or enabled/disabled while preparing this package.
 ## Frozen enrollment stage
 
 - Enrollment source: `9f114d25fff27b0bd2f0ecf561871ca267a9f29f`.
+- Recipe delivery source: `f6b3c349cf4d590d0591b9c601bb8ac01c4fc629`.
+  This includes the plus-name helper fix `93fc26fb5` and the 922 replacements.
 - Inventory SHA256: `bf7248af7b047a02fa567a32f8f6f3f8b374e969296e219b3513101dbbeedec0`.
 - 14 shards, 719 descriptors total: the unchanged operational 52 plus 667 new.
 - Compatible recipe patch: `prepared/recipes.patch`, 922 paths. The enrollment
@@ -23,6 +25,11 @@ It does not rely on the unrelated 56-source/eight-recipe preparation branches.
 No redirects or extra aliases from those branches are accepted by this package.
 
 ## After the push decision
+
+[Machine-readable exact review](rollout-review.json) binds both stages, evidence
+digests and proposed controls. Its operational source files were compared between
+stages and are byte-identical; only recipe/helper delivery, offline verification
+tools/tests and documentation differ. Final daily pin is the recipe delivery SHA.
 
 1. Recheck source, daily variable, exact catalog parent and workflow isolation.
    Refuse drift or overlap instead of assuming these November 2 observations
