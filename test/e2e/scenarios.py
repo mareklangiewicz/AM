@@ -23,6 +23,7 @@ from shell_lookup import epoch
 from storage import validate
 from test_utility_selectors import accepted_tree, ALIAS as UTILITY_ALIAS
 from test_brave_migration import accepted_brave_tree, ALIAS as BRAVE_ALIAS
+from test_migration_batch import retained_tree as migration_tree, migration_rows
 from filesystem import fingerprint_files, snapshot_tree
 from transport_records import read_transport_records
 
@@ -63,6 +64,9 @@ class InstalledCLI(unittest.TestCase):
                 'docs/track/release-catalog/research/am-utils-live-20261031-evidence.tar.gz',
                 'docs/track/release-catalog/design/staged-manifest.json',
                 'docs/track/release-catalog/research/supervised-baseline-40529551070-evidence.tar.gz']
+        inputs += ['tools/catalog-collector/test_migration_batch.py',
+                   'docs/track/release-catalog/research/appimage-batch-20261102/migration.json']
+        inputs += [row['path'] for row in migration_rows()]
         (OUT/'tested-source.json').write_text(json.dumps({
             'inputs':fingerprint_files(Path('/src'), inputs),
             'modules':cls.module_hashes},indent=2)+'\n')
@@ -123,7 +127,7 @@ esac
         (data/'disable-dependencies-prompt').touch()
         (data/'newrepo-on').write_text(SOURCE+'\n')
         (data/'x86_64-apps').write_text(''.join('◆ '+app+' : Offline fixture\n' for app in
-            ('obsidian','sqlitebrowser','nvim','nvim-nightly','7z','arch','c++filt','ld.bfd','brave','brave-beta','brave-nightly')))
+            ('obsidian','sqlitebrowser','nvim','nvim-nightly','7z','arch','c++filt','ld.bfd','brave','brave-beta','brave-nightly')+tuple(self.settings.get('additional_recipes', []))))
         (data/'x86_64-appimages').write_text('obsidian\nsqlitebrowser\nnvim\nnvim-nightly\n')
         (home/'.local/bin').mkdir(parents=True,exist_ok=True)
         if appman:
@@ -773,6 +777,42 @@ esac
         self.assertFalse((apps/'7z/tmp').exists())
         self.assertFalse((self.fixture/'utility-executed').exists())
 
+
+    def test_remaining_batch_both_frames_system_appman_and_mixed_failure(self):
+        rows={Path(item['path']).name:item for item in migration_rows() if '/x86_64/' in item['path']}
+        names=('criteria1d','wekan','eksplode.re')
+        self.configure(additional_recipes=list(names))
+        for name in names:
+            shutil.rmtree(Path('/opt')/name,ignore_errors=True)
+            launcher=Path('/usr/local/bin')/name
+            if launcher.is_symlink() or launcher.exists(): launcher.unlink()
+        for name in names:
+            item=rows[name]
+            self.utility_catalog(migration_tree(item['alias'],item['evidence']))
+            self.command('-i',name,'e2e-legacy')
+            app=Path('/opt')/name
+            self.assertEqual((app/'version').read_text().strip(),item['asset'])
+            self.assertEqual(len((app/'AM-updater').read_text().splitlines()),3)
+            self.assertTrue((app/'icons'/name).is_file())
+            binary=(app/name).read_bytes()
+            (app/'version').write_text('old\n')
+            self.configure(download_partial_fail=True)
+            result=self.command('-u',name,'e2e-legacy',success=False)
+            self.assertIn(name+': failed',result.stderr)
+            self.assertEqual((app/name).read_bytes(),binary)
+            self.assertEqual((app/'version').read_text(),'old\n')
+            self.configure(download_partial_fail=False)
+            self.command('--commit',PIN,executable=str(app/'AM-updater'))
+            self.assertEqual((app/'version').read_text().strip(),item['asset'])
+        name='wekan';item=rows[name]
+        self.utility_catalog(migration_tree(item['alias'],item['evidence']))
+        home=self.fixture/'remaining-appman';home.mkdir();self.prepare_home(home,appman=True)
+        executable=str(home/'Applications/appman/appman')
+        self.command('-i',name,executable=executable,home=home)
+        app=home/'Applications'/name
+        (app/'version').write_text('old\n')
+        self.command('--commit',PIN,executable=str(app/'AM-updater'),home=home)
+        self.assertEqual((app/'version').read_text().strip(),item['asset'])
 
     def test_brave_channels_install_standalone_and_mixed_retry(self):
         self.utility_catalog(accepted_brave_tree())

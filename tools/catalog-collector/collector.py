@@ -11,7 +11,7 @@ import json
 import math
 import re
 
-SOURCE_CAP = 8  # six historical sources, accepted am-utils, reviewed Brave candidate
+SOURCE_CAP = 52  # eight accepted sources plus 44 evidence-backed AppImage candidates
 BODY_CAP = 8_000_000
 HEADER_CAP = 64_000
 VALUE_CAP = 8_192

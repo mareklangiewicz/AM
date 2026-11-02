@@ -29,7 +29,7 @@ am_package() (
 	CATALOG_HELPER=${CATALOG_HELPER-/opt/am/modules/catalog.am}
 	PACKAGE_KIND=${PACKAGE_KIND-appimage}
 	case $PACKAGE_KIND in
-		appimage) case $APP in ''|*[!a-z0-9_-]*) echo 'Invalid app identity' >&2; exit 1;; esac ;;
+		appimage) case $APP in ''|.*|*[!a-z0-9._-]*) echo 'Invalid app identity' >&2; exit 1;; esac ;;
 		executable) case $APP in [a-z0-9]*)
 			case $APP in *[!a-z0-9.+_-]*) echo 'Invalid app identity' >&2; exit 1;; esac ;;
 			*) echo 'Invalid app identity' >&2; exit 1;; esac ;;

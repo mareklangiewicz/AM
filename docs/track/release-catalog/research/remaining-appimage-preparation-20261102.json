@@ -1,0 +1,1453 @@
+{
+  "schema": 1,
+  "status": "offline-review-only-no-requests-authorized",
+  "source_revision": "cc2ba588d5446df5a9fdb5366ad689e672986a2a",
+  "queue_sha256": "bcaac2320e9cd33b7f4688d3c3dc8456c2b6899ab72c66611fd3c87f27bbefc6",
+  "inventory_sha256": "896e2c3df674139e382c10553121c672b8c452f757c3af92d1eda07ad2f0c961",
+  "endpoint_count": 49,
+  "recipe_count": 118,
+  "identity_requests": [
+    "https://api.github.com/repos/ARPA-SIMC/CRITERIA1D",
+    "https://api.github.com/repos/VitoVan/calm",
+    "https://api.github.com/repos/ivan-hc/Vivaldi-appimage",
+    "https://api.github.com/repos/mmtrt/WINE_AppImage",
+    "https://api.github.com/repos/wekan/wekan",
+    "https://api.github.com/repos/OpenRA/OpenRA",
+    "https://api.github.com/repos/ivan-hc/Blender-appimage",
+    "https://api.github.com/repos/ivan-hc/Opera-appimage",
+    "https://api.github.com/repos/ivan-hc/SuperTuxKart-appimage",
+    "https://api.github.com/repos/ivan-hc/Yandex-Browser-appimage",
+    "https://api.github.com/repos/kubernetes-sigs/headlamp",
+    "https://api.github.com/repos/mysteryx93/NaturalGroundingPlayer",
+    "https://api.github.com/repos/pkgforge-dev/ghostty-appimage",
+    "https://api.github.com/repos/0xbl33p/goblintown",
+    "https://api.github.com/repos/0xerwin1/dbflux",
+    "https://api.github.com/repos/1337raspberry/ramus",
+    "https://api.github.com/repos/1783cwf/local-lake-notes",
+    "https://api.github.com/repos/2303886347/ros-navigation-algorithm-visual-learning-platform",
+    "https://api.github.com/repos/239573049/astra-gate",
+    "https://api.github.com/repos/3516634930/payloader",
+    "https://api.github.com/repos/3kh0/slick",
+    "https://api.github.com/repos/77elements/noornote",
+    "https://api.github.com/repos/7836246/kcode",
+    "https://api.github.com/repos/999sian/melee-pc",
+    "https://api.github.com/repos/AChep/keyguard-app",
+    "https://api.github.com/repos/ActivityWatch/activitywatch",
+    "https://api.github.com/repos/AmarOk1412/Eksplode.re",
+    "https://api.github.com/repos/AshBuk/dabri",
+    "https://api.github.com/repos/Boteium/muon-pdf",
+    "https://api.github.com/repos/Chatterino/chatterino2",
+    "https://api.github.com/repos/DRAZY/deemix-remastered",
+    "https://api.github.com/repos/DavidVentura/offline-translator-linux",
+    "https://api.github.com/repos/GCWing/OpenBitFun",
+    "https://api.github.com/repos/ImageMagick/ImageMagick",
+    "https://api.github.com/repos/Jermolene/TiddlyDesktop",
+    "https://api.github.com/repos/KeithDHedger/KKEditQT",
+    "https://api.github.com/repos/KejPi/AbracaDABra",
+    "https://api.github.com/repos/Korkman/macemu-appimage-builder",
+    "https://api.github.com/repos/LifetimeLabsDev/privacynotes.app",
+    "https://api.github.com/repos/Oleafly/Oleafly",
+    "https://api.github.com/repos/OpenCloudGaming/OpenNOW",
+    "https://api.github.com/repos/PolyMC/PolyMC",
+    "https://api.github.com/repos/Portable-Linux-Apps/floorp-AppImage",
+    "https://api.github.com/repos/Portable-Linux-Apps/lapce-AppImage",
+    "https://api.github.com/repos/RaphaelMartin83/MeMoTo",
+    "https://api.github.com/repos/Rodert/qq-versions",
+    "https://api.github.com/repos/Shikakiben/SaveDesktop-AppImage",
+    "https://api.github.com/repos/UltraStar-Deluxe/USDX"
+  ],
+  "identity_request_count": 48,
+  "maximum_release_requests": 49,
+  "rows": [
+    {
+      "alias": "https://api.github.com/repos/ARPA-SIMC/CRITERIA1D/releases",
+      "identity_request": "https://api.github.com/repos/ARPA-SIMC/CRITERIA1D",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/x86_64/criteria-geo",
+          "sha256": "81f34dc09248cf2abbde846ded9776f275ccc50904d1cb18c4ae9b0c52794974",
+          "bytes": 3267,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ARPA-SIMC/CRITERIA1D/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"geo\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ARPA-SIMC/CRITERIA1D/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"geo\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/criteria1d",
+          "sha256": "f4c627fb24c5f242263956d7552edc7f9c97b3bb6733b062f14544df84057f5a",
+          "bytes": 3269,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ARPA-SIMC/CRITERIA1D/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*CRITERIA1D-x86_64.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ARPA-SIMC/CRITERIA1D/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*CRITERIA1D-x86_64.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/criteria1d-pro",
+          "sha256": "be9ac4d8e8858bf8911dcf331f4415cfacbf31093237c7ae3e04bcf42fb437f7",
+          "bytes": 3249,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ARPA-SIMC/CRITERIA1D/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*pro.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ARPA-SIMC/CRITERIA1D/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*pro.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/heat1d",
+          "sha256": "21a77f670149522995762e19d0f6f9200f735f8cb333b4c631b337c17ea75ddd",
+          "bytes": 3257,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ARPA-SIMC/CRITERIA1D/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"heat\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ARPA-SIMC/CRITERIA1D/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"heat\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/soil-editor",
+          "sha256": "84865d5898300919c514b3fc74caa354130f032bc91f30d6d28345265a5fb5c2",
+          "bytes": 3233,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ARPA-SIMC/CRITERIA1D/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ARPA-SIMC/CRITERIA1D/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/VitoVan/calm/releases",
+      "identity_request": "https://api.github.com/repos/VitoVan/calm",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/x86_64/calm-circles",
+          "sha256": "57ebda9558c9e9ff19dee74ada895ca36f40a7b086540908d98a3ddb56e76bae",
+          "bytes": 3243,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/VitoVan/calm/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"circles\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/VitoVan/calm/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"circles\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/calm-fan",
+          "sha256": "bd418a5c8f4eeaf2c47f5ebf80084a7ee870a7ef796a23c60b558af8431d86b8",
+          "bytes": 3227,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/VitoVan/calm/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"fan\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/VitoVan/calm/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"fan\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/calm-meditator",
+          "sha256": "fd4e752f06bc083bacd2fb4bdccf07a9d250b8ecf6e6d66cb50a7a7180e4755a",
+          "bytes": 3251,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/VitoVan/calm/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"meditator\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/VitoVan/calm/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"meditator\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/calm-mondrian",
+          "sha256": "e923494246999837778b9c39014aa4c4b580d516909742737e1b63019f23e4d6",
+          "bytes": 3247,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/VitoVan/calm/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"mondrian\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/VitoVan/calm/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"mondrian\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/ivan-hc/Vivaldi-appimage/releases/latest",
+      "identity_request": "https://api.github.com/repos/ivan-hc/Vivaldi-appimage",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/vivaldi-snapshot",
+          "sha256": "90042bd62f8e623863a92877d6ffbfb613f36e1dd911ac776538676c3a6fa2b8",
+          "bytes": 3215,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Vivaldi-appimage/releases/latest | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*snapshot.*aarch64.*mage$\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Vivaldi-appimage/releases/latest | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*snapshot.*aarch64.*mage$\" | head -1)"
+        },
+        {
+          "path": "programs/aarch64/vivaldi-stable",
+          "sha256": "15d9e4f01e4fc9ad371477a29c570078519848ebbbdcab9b1d083b2a6cdae174",
+          "bytes": 3207,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Vivaldi-appimage/releases/latest | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*stable.*aarch64.*mage$\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Vivaldi-appimage/releases/latest | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*stable.*aarch64.*mage$\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/vivaldi-snapshot",
+          "sha256": "776e3fc4f1c283bbd5607f65d4583077cdf8c8d983430b5b7d1e62d72f46216f",
+          "bytes": 3213,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Vivaldi-appimage/releases/latest | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*snapshot.*x86_64.*mage$\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Vivaldi-appimage/releases/latest | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*snapshot.*x86_64.*mage$\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/vivaldi-stable",
+          "sha256": "31509e57154199ec869525326cbe0dc78e526773388517ffc651d05ca72896f3",
+          "bytes": 3205,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Vivaldi-appimage/releases/latest | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*stable.*x86_64.*mage$\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Vivaldi-appimage/releases/latest | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*stable.*x86_64.*mage$\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/mmtrt/WINE_AppImage/releases",
+      "identity_request": "https://api.github.com/repos/mmtrt/WINE_AppImage",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/x86_64/wine-devel",
+          "sha256": "f033e25a28ec0edc953c36841b236c3e4bf9ba0483cc735b5d6096e0fe736f16",
+          "bytes": 3263,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/mmtrt/WINE_AppImage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386|i686|aarch64|arm64|armv7l\\|v8\" | grep -i \"devel\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/mmtrt/WINE_AppImage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386|i686|aarch64|arm64|armv7l\\|v8\" | grep -i \"devel\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/wine-stable",
+          "sha256": "0a669a018f6e31fe36517230c1e42dea3998b33c683b4a74282b4499bcdc74de",
+          "bytes": 3267,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/mmtrt/WINE_AppImage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386|i686|aarch64|arm64|armv7l\\|v8\" | grep -i \"stable\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/mmtrt/WINE_AppImage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386|i686|aarch64|arm64|armv7l\\|v8\" | grep -i \"stable\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/wine-staging",
+          "sha256": "b46b29a9c957d7adf066276e40ddd98553fb75acbd2853078a5e2c2d9d8b8fdb",
+          "bytes": 3287,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/mmtrt/WINE_AppImage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386|i686|aarch64|arm64|armv7l\\|proton\\|v8\" | grep -i \"staging\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/mmtrt/WINE_AppImage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386|i686|aarch64|arm64|armv7l\\|proton\\|v8\" | grep -i \"staging\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/wine-staging-ge-proton",
+          "sha256": "0ce4c1faf6630e21ab549dbe87ab6de1d9edc5679a755cb4c0190e2cea6eb921",
+          "bytes": 3289,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/mmtrt/WINE_AppImage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386|i686|aarch64|arm64|armv7l\\|v8\" | grep -i \"proton\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/mmtrt/WINE_AppImage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386|i686|aarch64|arm64|armv7l\\|v8\" | grep -i \"proton\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/wekan/wekan/releases",
+      "identity_request": "https://api.github.com/repos/wekan/wekan",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/wekan",
+          "sha256": "1dd3d059ca74ecbcad7171d3864e1395bdf04469f4ba2a010a20c562c5452889",
+          "bytes": 3711,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls 'https://api.github.com/repos/wekan/wekan/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|armv7l\\|i386\\|i686\" | head -1)",
+          "update_selector": "version=$(curl -Ls 'https://api.github.com/repos/wekan/wekan/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|armv7l\\|i386\\|i686\" | head -1)"
+        },
+        {
+          "path": "programs/armv7l/wekan",
+          "sha256": "850f266879e280708f8b097836f9593799911d614b2110538bca8ff4ccf6977f",
+          "bytes": 3719,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls 'https://api.github.com/repos/wekan/wekan/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls 'https://api.github.com/repos/wekan/wekan/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        },
+        {
+          "path": "programs/i686/wekan",
+          "sha256": "850f266879e280708f8b097836f9593799911d614b2110538bca8ff4ccf6977f",
+          "bytes": 3719,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls 'https://api.github.com/repos/wekan/wekan/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls 'https://api.github.com/repos/wekan/wekan/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/wekan",
+          "sha256": "01f91848dd948992d0297464e23725ca6d3f4f87ee9623ee2738dcf2f2af13dd",
+          "bytes": 3713,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls 'https://api.github.com/repos/wekan/wekan/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1)",
+          "update_selector": "version=$(curl -Ls 'https://api.github.com/repos/wekan/wekan/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/OpenRA/OpenRA/releases",
+      "identity_request": "https://api.github.com/repos/OpenRA/OpenRA",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/x86_64/openra-dune",
+          "sha256": "79428ba9c25478896acfe5e738911f775e4bccfd44bffdca1a2ebead4fbebf61",
+          "bytes": 3217,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/OpenRA/OpenRA/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*dune.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/OpenRA/OpenRA/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*dune.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/openra-red-alert",
+          "sha256": "6812d46ad674e993f9a6cb83243dcc130568567de04997205dd03ee47ddaf66d",
+          "bytes": 3225,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/OpenRA/OpenRA/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*red.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/OpenRA/OpenRA/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*red.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/openra-tiberian-dawn",
+          "sha256": "d8fe271b4a2dc118812db334b1411de7fbf830919904fc6f32ab122101f21209",
+          "bytes": 3243,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/OpenRA/OpenRA/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*tiberian.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/OpenRA/OpenRA/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*tiberian.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/ivan-hc/Blender-appimage/releases?per_page=100",
+      "identity_request": "https://api.github.com/repos/ivan-hc/Blender-appimage",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/x86_64/blender-alpha",
+          "sha256": "947a347d0838f5e5e581d47200a12f466a9244be90fba39ad494461c08492bb4",
+          "bytes": 3315,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Blender-appimage/releases?per_page=100 | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"alpha\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Blender-appimage/releases?per_page=100 | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"alpha\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/blender-beta",
+          "sha256": "de16f5114812bf502938fb38fc4f7b43326a9ae7789800820516c1a2608d47dc",
+          "bytes": 3311,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Blender-appimage/releases?per_page=100 | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"beta\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Blender-appimage/releases?per_page=100 | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"beta\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/blender-rc",
+          "sha256": "8684deddbe11e0e74942fc789729fb07bb32125c405859d87fcfbbd1baa2fd3c",
+          "bytes": 3317,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Blender-appimage/releases?per_page=100 | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"candidate\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Blender-appimage/releases?per_page=100 | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"candidate\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/ivan-hc/Opera-appimage/releases",
+      "identity_request": "https://api.github.com/repos/ivan-hc/Opera-appimage",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/x86_64/opera",
+          "sha256": "86bce00571710313b185998c924f20d959188b442662a1f2390ccb686c54de35",
+          "bytes": 3243,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Opera-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386|i686|aarch64|arm64|armv7l\\|beta\\|dev\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Opera-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386|i686|aarch64|arm64|armv7l\\|beta\\|dev\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/opera-beta",
+          "sha256": "c503b97bf5b0c263c6d6ce822530ad259c2bc3baa1f7665e6b602f04f84ff077",
+          "bytes": 3251,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Opera-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*beta.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Opera-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*beta.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/opera-dev",
+          "sha256": "af3f5349f1d3f963f6b66b93bbae34d039ac6f55a99ddd26ff06f6023c9cfd94",
+          "bytes": 3247,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Opera-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*dev.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Opera-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*dev.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/ivan-hc/SuperTuxKart-appimage/releases",
+      "identity_request": "https://api.github.com/repos/ivan-hc/SuperTuxKart-appimage",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/supertuxkart-dev",
+          "sha256": "67dacc2909335aa394e5db8f89b54198218a112718f4b779c697b6625ee517a9",
+          "bytes": 3227,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/SuperTuxKart-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*aarch64.*mage$\" | grep \"DEV\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/SuperTuxKart-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*aarch64.*mage$\" | grep \"DEV\" | head -1)"
+        },
+        {
+          "path": "programs/i686/supertuxkart-dev",
+          "sha256": "53875ebff8f9c67f96e9309ba18492dbf04bed57fd2e0cfd64489d5989b43bee",
+          "bytes": 3221,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/SuperTuxKart-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*i686.*mage$\" | grep \"DEV\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/SuperTuxKart-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*i686.*mage$\" | grep \"DEV\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/supertuxkart-dev",
+          "sha256": "43d099eb224e0f75c876dc042d9373b9c60a1372401a6adb0a9e9c3eaa4fba9f",
+          "bytes": 3225,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/SuperTuxKart-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*x86_64.*mage$\" | grep \"DEV\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/SuperTuxKart-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*x86_64.*mage$\" | grep \"DEV\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/ivan-hc/SuperTuxKart-appimage/releases/latest",
+      "identity_request": "https://api.github.com/repos/ivan-hc/SuperTuxKart-appimage",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/supertuxkart",
+          "sha256": "2ce5d40a2a7109eb2a35758f47cf85623bc326bb4007537a85c051913057bcce",
+          "bytes": 3207,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/SuperTuxKart-appimage/releases/latest | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*aarch64.*mage$\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/SuperTuxKart-appimage/releases/latest | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*aarch64.*mage$\" | head -1)"
+        },
+        {
+          "path": "programs/i686/supertuxkart",
+          "sha256": "523e9bb75b6bd0a8e62d7729fae270a4d4e3d3ad35bac83363765a417a9d7b8e",
+          "bytes": 3201,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/SuperTuxKart-appimage/releases/latest | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*i686.*mage$\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/SuperTuxKart-appimage/releases/latest | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*i686.*mage$\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/supertuxkart",
+          "sha256": "abcdab4d23c37216b1f8a3d333a4927ec0739f5887e0224d6ce3425d11445d07",
+          "bytes": 3205,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/SuperTuxKart-appimage/releases/latest | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*x86_64.*mage$\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/SuperTuxKart-appimage/releases/latest | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*x86_64.*mage$\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/ivan-hc/Yandex-Browser-appimage/releases",
+      "identity_request": "https://api.github.com/repos/ivan-hc/Yandex-Browser-appimage",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/x86_64/yandex-browser",
+          "sha256": "4eb4a4828b09a6365e4974c05bad333c19a65e85fbcee9df0bef80440c86148d",
+          "bytes": 3225,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Yandex-Browser-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -i \"stable\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Yandex-Browser-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -i \"stable\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/yandex-browser-beta",
+          "sha256": "9d5769ef43c1af874ddb54da6293f3d374ff41813801bfb3d4a55562db9a30cf",
+          "bytes": 3231,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Yandex-Browser-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -i \"beta\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Yandex-Browser-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -i \"beta\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/yandex-browser-corporate",
+          "sha256": "955580a9338546ae41bc96c5a3993328a62f2a24097c5e48022067befd5c019f",
+          "bytes": 3251,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Yandex-Browser-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -i \"corporate\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ivan-hc/Yandex-Browser-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -i \"corporate\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/kubernetes-sigs/headlamp/releases",
+      "identity_request": "https://api.github.com/repos/kubernetes-sigs/headlamp",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/headlamp",
+          "sha256": "7875edb2d9dd90e77d429bbc26c44a6d02aed0c7f2d13d825d2ab6977d26576d",
+          "bytes": 3769,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls 'https://api.github.com/repos/kubernetes-sigs/headlamp/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|armv7l\\|i386\\|i686\" | head -1)",
+          "update_selector": "version=$(curl -Ls 'https://api.github.com/repos/kubernetes-sigs/headlamp/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|armv7l\\|i386\\|i686\" | head -1)"
+        },
+        {
+          "path": "programs/armv7l/headlamp",
+          "sha256": "9e0ccfca39bece06aa8a7127137b83c2f97bed4a2c0059a9f9118a16c720a019",
+          "bytes": 3777,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls 'https://api.github.com/repos/kubernetes-sigs/headlamp/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls 'https://api.github.com/repos/kubernetes-sigs/headlamp/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/headlamp",
+          "sha256": "29527400ffb895c158d713073456a22eacd6e9087d38c68c766a288efe296ed1",
+          "bytes": 3771,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls 'https://api.github.com/repos/kubernetes-sigs/headlamp/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1)",
+          "update_selector": "version=$(curl -Ls 'https://api.github.com/repos/kubernetes-sigs/headlamp/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/mysteryx93/NaturalGroundingPlayer/releases",
+      "identity_request": "https://api.github.com/repos/mysteryx93/NaturalGroundingPlayer",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/x86_64/432hz-player",
+          "sha256": "022f4964dea23b68f4b36de6844ab80f35dae9dc7f4641bf9880238472c76a80",
+          "bytes": 3217,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/mysteryx93/NaturalGroundingPlayer/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*player.*x64.*mage$\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/mysteryx93/NaturalGroundingPlayer/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*player.*x64.*mage$\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/converter432hz",
+          "sha256": "56d746206147bb0a9744bb8627ff078b54556b9b8fbca2a9a8aef257418ec426",
+          "bytes": 3291,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/mysteryx93/NaturalGroundingPlayer/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/mysteryx93/NaturalGroundingPlayer/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/powerliminals-player",
+          "sha256": "b814bb571642c630860ffdcaacd48ffd41b8d92c7645daef941592018a27daee",
+          "bytes": 3319,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/mysteryx93/NaturalGroundingPlayer/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*player.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/mysteryx93/NaturalGroundingPlayer/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*player.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/pkgforge-dev/ghostty-appimage/releases",
+      "identity_request": "https://api.github.com/repos/pkgforge-dev/ghostty-appimage",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/x86_64/ghostty-glfw",
+          "sha256": "6f49e10f0623d2bff686fab2cdb4948db14e2d7b2881e0b93e532396d2884f45",
+          "bytes": 3239,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/pkgforge-dev/ghostty-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*glfw.*x86_64.*mage$\" | grep -vi \"main\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/pkgforge-dev/ghostty-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*glfw.*x86_64.*mage$\" | grep -vi \"main\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/ghostty-glfw-nightly",
+          "sha256": "c18dd1cc09cbeaf7e8ae02efbd119e29da92939619824523ebd2fa28acade447",
+          "bytes": 3253,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/pkgforge-dev/ghostty-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*glfw.*x86_64.*mage$\" | grep -i \"main\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/pkgforge-dev/ghostty-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*glfw.*x86_64.*mage$\" | grep -i \"main\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/ghostty-nightly",
+          "sha256": "e02c75f8dc8e35803ef3c7519257f972da358b309aa6e7e8460edb38f1f0b921",
+          "bytes": 3287,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/pkgforge-dev/ghostty-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*tip.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/pkgforge-dev/ghostty-appimage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*tip.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/0xbl33p/goblintown/releases",
+      "identity_request": "https://api.github.com/repos/0xbl33p/goblintown",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/goblintown",
+          "sha256": "f54a8695c537bca6a9830797596ebe8ef33e46ae1f45381b285fb031008d89e9",
+          "bytes": 3723,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/0xbl33p/goblintown/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/0xbl33p/goblintown/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/goblintown",
+          "sha256": "ca3546d81b90539758bd2e29fa64196e784fd22fbb975d1d99222274c07d5a18",
+          "bytes": 3777,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/0xbl33p/goblintown/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/0xbl33p/goblintown/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/0xerwin1/dbflux/releases",
+      "identity_request": "https://api.github.com/repos/0xerwin1/dbflux",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/dbflux",
+          "sha256": "7f7f3cac96082db5bd84c9b1e6e7a1513fdccb33d892dbb082a736f908bddf68",
+          "bytes": 3703,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/0xerwin1/dbflux/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/0xerwin1/dbflux/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/dbflux",
+          "sha256": "0f5cd3bfff72bb212d9d338f5206d72d3241e8fcc1260317f301645b16a9dad4",
+          "bytes": 3757,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/0xerwin1/dbflux/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/0xerwin1/dbflux/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/1337raspberry/ramus/releases",
+      "identity_request": "https://api.github.com/repos/1337raspberry/ramus",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/ramus",
+          "sha256": "ee7cc0f72ce7a12250abfd4fb7c129cb3db18f22b5dff5c677b2c8e9a406ec41",
+          "bytes": 3717,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/1337raspberry/ramus/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/1337raspberry/ramus/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/ramus",
+          "sha256": "0ccc1c4f7e3e4b7ecf8fcd6ee2ffdfbdcdf60befe0c5049733c7170dc44bd495",
+          "bytes": 3771,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/1337raspberry/ramus/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/1337raspberry/ramus/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/1783cwf/local-lake-notes/releases",
+      "identity_request": "https://api.github.com/repos/1783cwf/local-lake-notes",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/local-lake-notes",
+          "sha256": "bdd9e9c91a26cf2cd58ade57d0ccb306fa11a07a3480c33134a29dd5391c5ae8",
+          "bytes": 3759,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/1783cwf/local-lake-notes/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/1783cwf/local-lake-notes/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/local-lake-notes",
+          "sha256": "d4b2bcef7c925ec7180aa56c8e985a01a1e72586d1812d76b7a75a790077127a",
+          "bytes": 3813,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/1783cwf/local-lake-notes/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/1783cwf/local-lake-notes/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/2303886347/ros-navigation-algorithm-visual-learning-platform/releases",
+      "identity_request": "https://api.github.com/repos/2303886347/ros-navigation-algorithm-visual-learning-platform",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/ros-navigation-learning-platform",
+          "sha256": "6f9306166389f9146c71801125c8bc11dc9c99a44fe10c5c9f6cde07a1342814",
+          "bytes": 3935,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/2303886347/ros-navigation-algorithm-visual-learning-platform/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/2303886347/ros-navigation-algorithm-visual-learning-platform/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/ros-navigation-learning-platform",
+          "sha256": "677ff18e5e8adf60e595e2e06acbdbe57ceed096612d6e8620b407d0fa13d583",
+          "bytes": 3989,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/2303886347/ros-navigation-algorithm-visual-learning-platform/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/2303886347/ros-navigation-algorithm-visual-learning-platform/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/239573049/astra-gate/releases",
+      "identity_request": "https://api.github.com/repos/239573049/astra-gate",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/astra-gate",
+          "sha256": "be4447d3c104bf2cd1443d095205257e4491bec93cc22299a04691995f8c864b",
+          "bytes": 3731,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/239573049/astra-gate/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/239573049/astra-gate/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/astra-gate",
+          "sha256": "9f8f2b4abf530cf687462324337eaafede524cc060c5dad58f0af3aa094a1af1",
+          "bytes": 3785,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/239573049/astra-gate/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/239573049/astra-gate/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/3516634930/payloader/releases",
+      "identity_request": "https://api.github.com/repos/3516634930/payloader",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/payloader",
+          "sha256": "df172b604e5dc04322e9662891a7b3e94c96024d96a4f8e99388ce342e3e0d46",
+          "bytes": 3729,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/3516634930/payloader/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/3516634930/payloader/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/payloader",
+          "sha256": "034ebde128c7c3ae82ebd39ce0b14c5a97d8f8ef0ed28f4693e1498f43a771b9",
+          "bytes": 3783,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/3516634930/payloader/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/3516634930/payloader/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/3kh0/slick/releases",
+      "identity_request": "https://api.github.com/repos/3kh0/slick",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/slick",
+          "sha256": "24695a1868b292137afe04f0b9cf6c7e95964dffd30a6722731ea8f8f6c3f59b",
+          "bytes": 3681,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/3kh0/slick/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/3kh0/slick/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/slick",
+          "sha256": "8a5ff92096e91cbbedb9f460a055c48a56e88398506ef3b3521f7f5542e58c38",
+          "bytes": 3735,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/3kh0/slick/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/3kh0/slick/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/77elements/noornote/releases",
+      "identity_request": "https://api.github.com/repos/77elements/noornote",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/noornote",
+          "sha256": "7236164459b828190838058accdd5ab4c6d65746b5a750808b4760df54464e0e",
+          "bytes": 3723,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/77elements/noornote/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/77elements/noornote/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/noornote",
+          "sha256": "6e6d0d1aae636feb8ea8d7af4213357f4f8a18641c01343e5e59665ef4ff04ce",
+          "bytes": 3777,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/77elements/noornote/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/77elements/noornote/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/7836246/kcode/releases",
+      "identity_request": "https://api.github.com/repos/7836246/kcode",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/kcode",
+          "sha256": "3b83d82c3c7f8ea0cd33029a854eb8aefae1e096fb5d69697cbfd748afaf171c",
+          "bytes": 3693,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/7836246/kcode/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/7836246/kcode/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/kcode",
+          "sha256": "edde7b5d1a815f969ae332a7367b9ad26d8814fd69f64bc7721241c52f1573ff",
+          "bytes": 3747,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/7836246/kcode/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/7836246/kcode/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/999sian/melee-pc/releases",
+      "identity_request": "https://api.github.com/repos/999sian/melee-pc",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/melee-pc",
+          "sha256": "2bd97969394a2405caf6b7264567ee1c1071c2523e0f2987941b9cd5810476cf",
+          "bytes": 3711,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/999sian/melee-pc/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/999sian/melee-pc/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/melee-pc",
+          "sha256": "72ad3c9ade33f4050d0a4a02dbe41ec4fd1ddf29ca1d75f867f05792e7bbb720",
+          "bytes": 3765,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/999sian/melee-pc/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/999sian/melee-pc/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/AChep/keyguard-app/releases",
+      "identity_request": "https://api.github.com/repos/AChep/keyguard-app",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/keyguard",
+          "sha256": "f5e58d14078e6538c934df50e8c7d01fc3853786a6ced1e421d56ecde51f9820",
+          "bytes": 3719,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/AChep/keyguard-app/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/AChep/keyguard-app/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/keyguard",
+          "sha256": "ce0538e437a43a309ebab646255819d12e065b1291653bc25d087ea4dab66211",
+          "bytes": 3773,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/AChep/keyguard-app/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/AChep/keyguard-app/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/ActivityWatch/activitywatch/releases",
+      "identity_request": "https://api.github.com/repos/ActivityWatch/activitywatch",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/activitywatch",
+          "sha256": "0dc275fbc317a8eecf1b890c301689101a7738aff1e5af74ddc6c2093a35814a",
+          "bytes": 3791,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls 'https://api.github.com/repos/ActivityWatch/activitywatch/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|armv7l\\|i386\\|i686\" | head -1)",
+          "update_selector": "version=$(curl -Ls 'https://api.github.com/repos/ActivityWatch/activitywatch/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|armv7l\\|i386\\|i686\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/activitywatch",
+          "sha256": "d9e627f26a95e925a41d2712d48e68a42e1b7a20eaa4e1c2f8891b23b9ac362f",
+          "bytes": 3793,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls 'https://api.github.com/repos/ActivityWatch/activitywatch/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1)",
+          "update_selector": "version=$(curl -Ls 'https://api.github.com/repos/ActivityWatch/activitywatch/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/AmarOk1412/Eksplode.re/releases",
+      "identity_request": "https://api.github.com/repos/AmarOk1412/Eksplode.re",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/x86_64/eksplode.re",
+          "sha256": "8c2b9c487ab85612cfc0a107f7a2d95b3f24814945c065ad2245f33241085614",
+          "bytes": 3241,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/AmarOk1412/Eksplode.re/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/AmarOk1412/Eksplode.re/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/exsplode.re",
+          "sha256": "76f55d560fcf56b9c02d4f18d5466b48437b0473669d01433dbe816d2261af81",
+          "bytes": 3241,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/AmarOk1412/Eksplode.re/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/AmarOk1412/Eksplode.re/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/AshBuk/dabri/releases",
+      "identity_request": "https://api.github.com/repos/AshBuk/dabri",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/dabri",
+          "sha256": "ea92904a3c765c0d1fd4604d2f808d16cb816e7728b6ec13f3a9724d2c80d616",
+          "bytes": 3689,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/AshBuk/dabri/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/AshBuk/dabri/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/dabri",
+          "sha256": "6f155ab6ca20c3e9bba58cd70d4f147205d079fe0359d53b1c0bed56a3ba1e0b",
+          "bytes": 3743,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/AshBuk/dabri/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/AshBuk/dabri/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/Boteium/muon-pdf/releases",
+      "identity_request": "https://api.github.com/repos/Boteium/muon-pdf",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/muon-pdf",
+          "sha256": "3227177044a79d650e3ba8a7fc977250acb6b7ef722a9c54e7389d6aa5df23ba",
+          "bytes": 3737,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls 'https://api.github.com/repos/Boteium/muon-pdf/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|armv7l\\|i386\\|i686\" | head -1)",
+          "update_selector": "version=$(curl -Ls 'https://api.github.com/repos/Boteium/muon-pdf/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|armv7l\\|i386\\|i686\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/muon-pdf",
+          "sha256": "bf72da3d2b970dc91400348b3db5bd889453d8275f02a0bbf595b77ea1491b77",
+          "bytes": 3739,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls 'https://api.github.com/repos/Boteium/muon-pdf/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1)",
+          "update_selector": "version=$(curl -Ls 'https://api.github.com/repos/Boteium/muon-pdf/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/Chatterino/chatterino2/releases",
+      "identity_request": "https://api.github.com/repos/Chatterino/chatterino2",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/x86_64/chatterino2",
+          "sha256": "0c93b7e34777c5bd74f10c8b2812efe4e1a66cec1b39225a0a0935ed9027f813",
+          "bytes": 3241,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/Chatterino/chatterino2/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/Chatterino/chatterino2/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/chatterino2-nightly",
+          "sha256": "a30ee4a1cc10cd27d66d76cd8697321d04aac9368e498f33754bae0dc84d8254",
+          "bytes": 3257,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/Chatterino/chatterino2/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/Chatterino/chatterino2/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/DRAZY/deemix-remastered/releases",
+      "identity_request": "https://api.github.com/repos/DRAZY/deemix-remastered",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/deemix-remastered",
+          "sha256": "f04161b1cb20f6c40505d816a8b9c2874ddc50fb05c28e768cd773428f3427a3",
+          "bytes": 3783,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls 'https://api.github.com/repos/DRAZY/deemix-remastered/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|armv7l\\|i386\\|i686\" | head -1)",
+          "update_selector": "version=$(curl -Ls 'https://api.github.com/repos/DRAZY/deemix-remastered/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|armv7l\\|i386\\|i686\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/deemix-remastered",
+          "sha256": "ee39e6c56657f05bab2ae221959164f3f9eb5f1b4f9ccb8d59a8c9e3812d4ae9",
+          "bytes": 3785,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls 'https://api.github.com/repos/DRAZY/deemix-remastered/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1)",
+          "update_selector": "version=$(curl -Ls 'https://api.github.com/repos/DRAZY/deemix-remastered/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/DavidVentura/offline-translator-linux/releases",
+      "identity_request": "https://api.github.com/repos/DavidVentura/offline-translator-linux",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/offline-translator",
+          "sha256": "24959262a55ff3f101391a8e3185f3e858210f8ea111ba73ce6a70e4f2249cf8",
+          "bytes": 3815,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/DavidVentura/offline-translator-linux/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/DavidVentura/offline-translator-linux/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/offline-translator",
+          "sha256": "809c85f60e12889475e3afa8b18348b404e0ff8668b1044c4c338b261bc6b586",
+          "bytes": 3869,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/DavidVentura/offline-translator-linux/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/DavidVentura/offline-translator-linux/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/GCWing/OpenBitFun/releases",
+      "identity_request": "https://api.github.com/repos/GCWing/OpenBitFun",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/openbitfun",
+          "sha256": "20938dbe61228cc0654bbc01b1aff07de49dae28a9861846735026b6d9d0b762",
+          "bytes": 3719,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/GCWing/OpenBitFun/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/GCWing/OpenBitFun/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/openbitfun",
+          "sha256": "b96ffdd4043ae83e31263d29fe99b6c4105b0cb0eae2ea5c5e7fb5591faf8ccc",
+          "bytes": 3773,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/GCWing/OpenBitFun/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/GCWing/OpenBitFun/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/ImageMagick/ImageMagick/releases",
+      "identity_request": "https://api.github.com/repos/ImageMagick/ImageMagick",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/x86_64/imagemagick-clang",
+          "sha256": "27cfdbd12baff581a1eb652cb823e618dad9a1a20881bb821d71b1468d2425d6",
+          "bytes": 3293,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ImageMagick/ImageMagick/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"clang\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ImageMagick/ImageMagick/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"clang\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/imagemagick-gcc",
+          "sha256": "df660edfe3ac323e6913d2f92ec02b40d09f38ff8703e86842dec671ef28ef6b",
+          "bytes": 3285,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/ImageMagick/ImageMagick/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"gcc\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/ImageMagick/ImageMagick/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"gcc\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/Jermolene/TiddlyDesktop/releases",
+      "identity_request": "https://api.github.com/repos/Jermolene/TiddlyDesktop",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/tiddlydesktop",
+          "sha256": "2696fd20130152cdcb3759acad52b7cd6f20cfbb4574b3d2a7f4965219acf601",
+          "bytes": 3775,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls 'https://api.github.com/repos/Jermolene/TiddlyDesktop/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|armv7l\\|i386\\|i686\" | head -1)",
+          "update_selector": "version=$(curl -Ls 'https://api.github.com/repos/Jermolene/TiddlyDesktop/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|armv7l\\|i386\\|i686\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/tiddlydesktop",
+          "sha256": "1e5f362b9b1ec7e5e4766f9fc14f50c80ea0e98fe64f0511c13f1489417202b1",
+          "bytes": 3777,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls 'https://api.github.com/repos/Jermolene/TiddlyDesktop/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1)",
+          "update_selector": "version=$(curl -Ls 'https://api.github.com/repos/Jermolene/TiddlyDesktop/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/KeithDHedger/KKEditQT/releases",
+      "identity_request": "https://api.github.com/repos/KeithDHedger/KKEditQT",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/x86_64/kkedit-qt",
+          "sha256": "8e5aaae1f656b703cc570bcf2ee84b53bb6a76184489a773358004a6df5e585a",
+          "bytes": 3787,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/KeithDHedger/KKEditQT/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/KeithDHedger/KKEditQT/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/kkeditqt",
+          "sha256": "08939413e4ee173d885afd7ca19e7f4730a03a6e32fe15421d8884ca0c816dbe",
+          "bytes": 3785,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/KeithDHedger/KKEditQT/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/KeithDHedger/KKEditQT/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/KejPi/AbracaDABra/releases",
+      "identity_request": "https://api.github.com/repos/KejPi/AbracaDABra",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/abracadabra",
+          "sha256": "58350ca42ca57fc88ce2eda19549c062b64186657c141a1e6dac76c68ccc05bf",
+          "bytes": 3747,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls 'https://api.github.com/repos/KejPi/AbracaDABra/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|armv7l\\|i386\\|i686\" | head -1)",
+          "update_selector": "version=$(curl -Ls 'https://api.github.com/repos/KejPi/AbracaDABra/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|armv7l\\|i386\\|i686\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/abracadabra",
+          "sha256": "fe3370f4aad193bce6243942593a4cc12c1723b3c956e94a9cc914ae8e5ddeda",
+          "bytes": 3749,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls 'https://api.github.com/repos/KejPi/AbracaDABra/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1)",
+          "update_selector": "version=$(curl -Ls 'https://api.github.com/repos/KejPi/AbracaDABra/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/Korkman/macemu-appimage-builder/releases",
+      "identity_request": "https://api.github.com/repos/Korkman/macemu-appimage-builder",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/x86_64/basilisk2",
+          "sha256": "b0983c9ce6cde7bf1f9df97fdb4e65b06982ba0beb5372456cf217890d723c83",
+          "bytes": 3361,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/Korkman/macemu-appimage-builder/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"basilisk\" | grep -v \"continuous\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/Korkman/macemu-appimage-builder/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"basilisk\" | grep -v \"continuous\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/sheepshaver",
+          "sha256": "2c8fe3f6f65d76450ea7403a106ba874b49dcf3c94f532bb47ccc33b6b202cd1",
+          "bytes": 3371,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/Korkman/macemu-appimage-builder/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"sheepshaver\" | grep -v \"continuous\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/Korkman/macemu-appimage-builder/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"sheepshaver\" | grep -v \"continuous\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/LifetimeLabsDev/privacynotes.app/releases",
+      "identity_request": "https://api.github.com/repos/LifetimeLabsDev/privacynotes.app",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/privacynotes",
+          "sha256": "ca5868b40234e2568bb458a58c59820b1b542a40eed4cb5bbd8a5766dbde345b",
+          "bytes": 3783,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/LifetimeLabsDev/privacynotes.app/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/LifetimeLabsDev/privacynotes.app/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/privacynotes",
+          "sha256": "38dbd01c269d9065ba49928b098322f96edc852ac7f0079077b30bd7ebd698a3",
+          "bytes": 3837,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/LifetimeLabsDev/privacynotes.app/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/LifetimeLabsDev/privacynotes.app/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/Oleafly/Oleafly/releases",
+      "identity_request": "https://api.github.com/repos/Oleafly/Oleafly",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/oleafly",
+          "sha256": "ba2de11f253463f671f444e03f340940eefa6263d02b46ce22cf786042a2a845",
+          "bytes": 3731,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls 'https://api.github.com/repos/Oleafly/Oleafly/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|armv7l\\|i386\\|i686\" | head -1)",
+          "update_selector": "version=$(curl -Ls 'https://api.github.com/repos/Oleafly/Oleafly/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|armv7l\\|i386\\|i686\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/oleafly",
+          "sha256": "23f4ac1958c7fba20c7d15712b64b0d2c957d2b6030ef04760b128502d444010",
+          "bytes": 3733,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls 'https://api.github.com/repos/Oleafly/Oleafly/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1)",
+          "update_selector": "version=$(curl -Ls 'https://api.github.com/repos/Oleafly/Oleafly/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/OpenCloudGaming/OpenNOW/releases",
+      "identity_request": "https://api.github.com/repos/OpenCloudGaming/OpenNOW",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/opennow",
+          "sha256": "adcdef4f196e885bf5f61d81ec4f6f6b54259def05f057cc98b5252f6124906d",
+          "bytes": 3737,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/OpenCloudGaming/OpenNOW/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/OpenCloudGaming/OpenNOW/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/opennow",
+          "sha256": "2e98f263ba907c1e6294f413eb70e4c6d778c1efd2ba9d64a089a856bfeeb43f",
+          "bytes": 3791,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/OpenCloudGaming/OpenNOW/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/OpenCloudGaming/OpenNOW/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/PolyMC/PolyMC/releases/latest",
+      "identity_request": "https://api.github.com/repos/PolyMC/PolyMC",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/polymc",
+          "sha256": "c3369e2934eb3ed53c9c14b950d38c2e2122966a8a46756ccbe8286e534f6a69",
+          "bytes": 3709,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/PolyMC/PolyMC/releases/latest | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/PolyMC/PolyMC/releases/latest | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/polymc",
+          "sha256": "e3a71f2fd99d0a95f03425b818bdd4b91cf385228c8df6c55c123b1238ebd040",
+          "bytes": 3763,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/PolyMC/PolyMC/releases/latest | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/PolyMC/PolyMC/releases/latest | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/Portable-Linux-Apps/floorp-AppImage/releases",
+      "identity_request": "https://api.github.com/repos/Portable-Linux-Apps/floorp-AppImage",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/floorp",
+          "sha256": "823416341034c3d1a7441aff1675efa68d4a83c176afaf952899a821e02833c8",
+          "bytes": 3205,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/Portable-Linux-Apps/floorp-AppImage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*aarch64.*mage$\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/Portable-Linux-Apps/floorp-AppImage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*aarch64.*mage$\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/floorp",
+          "sha256": "b36a2d7f4c6f0f6cb26eec81477072485e17c28dcc1cc4c7c892efe5a1d7946f",
+          "bytes": 3283,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/Portable-Linux-Apps/floorp-AppImage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/Portable-Linux-Apps/floorp-AppImage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/Portable-Linux-Apps/lapce-AppImage/releases",
+      "identity_request": "https://api.github.com/repos/Portable-Linux-Apps/lapce-AppImage",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/lapce",
+          "sha256": "754174b40133443de7a40c1aa5f1f84d3e96f172a25a08a79d1e7722b02508a9",
+          "bytes": 3197,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/Portable-Linux-Apps/lapce-AppImage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*x86_64.*mage$\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/Portable-Linux-Apps/lapce-AppImage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*x86_64.*mage$\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/lapce",
+          "sha256": "754174b40133443de7a40c1aa5f1f84d3e96f172a25a08a79d1e7722b02508a9",
+          "bytes": 3197,
+          "lines": 77,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/Portable-Linux-Apps/lapce-AppImage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*x86_64.*mage$\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/Portable-Linux-Apps/lapce-AppImage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*x86_64.*mage$\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/RaphaelMartin83/MeMoTo/releases",
+      "identity_request": "https://api.github.com/repos/RaphaelMartin83/MeMoTo",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/memoto",
+          "sha256": "addd42a5bbd6850e6966d1bb2c60d12c120dbf12359fcf738d0fd7e74b4d8290",
+          "bytes": 3731,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/RaphaelMartin83/MeMoTo/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/RaphaelMartin83/MeMoTo/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/memoto",
+          "sha256": "a4bb4faab5e814e7b9cb53ebfaa59315a8deb9d18af391d2ec3d5f9db8db217d",
+          "bytes": 3785,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/RaphaelMartin83/MeMoTo/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/RaphaelMartin83/MeMoTo/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/Rodert/qq-versions/releases",
+      "identity_request": "https://api.github.com/repos/Rodert/qq-versions",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/linuxqq",
+          "sha256": "14ddf93928287661c688699e10db0549344d435bec27e48922c71ac6874bee33",
+          "bytes": 3717,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/Rodert/qq-versions/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/Rodert/qq-versions/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/linuxqq",
+          "sha256": "3a01d4fe2cd3057782e842a0a6bddd5247083024f9d16708ae526d056f3e6005",
+          "bytes": 3771,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/Rodert/qq-versions/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/Rodert/qq-versions/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/Shikakiben/SaveDesktop-AppImage/releases",
+      "identity_request": "https://api.github.com/repos/Shikakiben/SaveDesktop-AppImage",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/aarch64/savedesktop",
+          "sha256": "ed0ecbeb2827723de2f5c893a6a6b246a9f070e31ea4ae76316103c4715f67c0",
+          "bytes": 3775,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/Shikakiben/SaveDesktop-AppImage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -i \"aarch64\\|arm64\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/Shikakiben/SaveDesktop-AppImage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -i \"aarch64\\|arm64\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/savedesktop",
+          "sha256": "b68a90b3f0c2eb402acab386eaa1522fc9fe54dfa65fc1517ea0e78397cba271",
+          "bytes": 3831,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls https://api.github.com/repos/Shikakiben/SaveDesktop-AppImage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls https://api.github.com/repos/Shikakiben/SaveDesktop-AppImage/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        }
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/UltraStar-Deluxe/USDX/releases",
+      "identity_request": "https://api.github.com/repos/UltraStar-Deluxe/USDX",
+      "repository_id": null,
+      "fetch_url": null,
+      "request_id": null,
+      "recipes": [
+        {
+          "path": "programs/i686/usdx",
+          "sha256": "68f7ac6d2f68c210d890a59188150f19d97a47b805dc1d46b2158d12cfb29ba8",
+          "bytes": 3757,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls 'https://api.github.com/repos/UltraStar-Deluxe/USDX/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|aarch64\\|arm64\\|armv7l\" | head -1)",
+          "update_selector": "version=$(curl -Ls 'https://api.github.com/repos/UltraStar-Deluxe/USDX/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|aarch64\\|arm64\\|armv7l\" | head -1)"
+        },
+        {
+          "path": "programs/x86_64/usdx",
+          "sha256": "b1691d8004baf0b344739b14ea1be98117baddc9cba7bb71d0d705d60baf63f6",
+          "bytes": 3751,
+          "lines": 85,
+          "install_selector": "version=$(curl -Ls 'https://api.github.com/repos/UltraStar-Deluxe/USDX/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1)",
+          "update_selector": "version=$(curl -Ls 'https://api.github.com/repos/UltraStar-Deluxe/USDX/releases' | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1)"
+        }
+      ]
+    }
+  ],
+  "checks": {
+    "inventory_hash_matches": true,
+    "all_recipe_shell_syntax_passes": true,
+    "all_exact_aliases_in_both_original_selectors": true
+  }
+}

@@ -67,7 +67,7 @@ elif url.startswith(source+'/programs/x86_64/'):
     app = url.removeprefix(source+'/programs/x86_64/')
     if app == 'e2e-legacy' and (fixture/'legacy-recipe').is_file():
         raw = (fixture/'legacy-recipe').read_bytes()
-    elif app in ('obsidian', 'sqlitebrowser', 'nvim', 'nvim-nightly', '7z', 'arch', 'c++filt', 'ld.bfd', 'brave', 'brave-beta', 'brave-nightly'):
+    elif app in ('obsidian', 'sqlitebrowser', 'nvim', 'nvim-nightly', '7z', 'arch', 'c++filt', 'ld.bfd', 'brave', 'brave-beta', 'brave-nightly') or app in settings.get('additional_recipes', []):
         raw = (Path('/src/programs/x86_64')/app).read_bytes()
 elif url == 'https://api.github.com/repos/'+settings['repository']+'/commits/heads/release-catalog':
     raw = (settings['pin']+'\n').encode()

@@ -1,0 +1,260 @@
+{
+  "schema": 1,
+  "payload_sha256": "5538f32fd32d3e3b5f6d545d6f72e9d5af77bc76a021e6b633c518571a2d7066",
+  "attempted_identities": 12,
+  "accepted_identities": 11,
+  "release_candidate_count": 12,
+  "recipe_count": 42,
+  "body_bytes": 64104,
+  "header_bytes": 15769,
+  "elapsed_request_seconds": 5.431263592000505,
+  "failed": [
+    {
+      "url": "https://api.github.com/repos/mysteryx93/NaturalGroundingPlayer",
+      "status": 301,
+      "location": [
+        "https://api.github.com/repositories/37950127"
+      ],
+      "identity_accepted": false,
+      "directory": "12"
+    }
+  ],
+  "release_candidates": [
+    {
+      "alias": "https://api.github.com/repos/ARPA-SIMC/CRITERIA1D/releases",
+      "repository_id": 286458735,
+      "fetch_url": "https://api.github.com/repositories/286458735/releases",
+      "request_id": "688bb7a73119d63e66e200c47d53139a13399b4db2a43f4b0c60d3d3f41e1e93",
+      "api_version": "2022-11-28",
+      "accept": "application/vnd.github+json",
+      "initial_validators": {},
+      "identity_evidence": "01/report.json",
+      "release_status": "not-requested-not-enrolled",
+      "recipes": [
+        "programs/x86_64/criteria-geo",
+        "programs/x86_64/criteria1d",
+        "programs/x86_64/criteria1d-pro",
+        "programs/x86_64/heat1d",
+        "programs/x86_64/soil-editor"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/VitoVan/calm/releases",
+      "repository_id": 543547002,
+      "fetch_url": "https://api.github.com/repositories/543547002/releases",
+      "request_id": "221338dac050d325c1189e4bc13dbca7b0c81ebbb85f3e76c407c4cc19e567a4",
+      "api_version": "2022-11-28",
+      "accept": "application/vnd.github+json",
+      "initial_validators": {},
+      "identity_evidence": "02/report.json",
+      "release_status": "not-requested-not-enrolled",
+      "recipes": [
+        "programs/x86_64/calm-circles",
+        "programs/x86_64/calm-fan",
+        "programs/x86_64/calm-meditator",
+        "programs/x86_64/calm-mondrian"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/ivan-hc/Vivaldi-appimage/releases/latest",
+      "repository_id": 656906008,
+      "fetch_url": "https://api.github.com/repositories/656906008/releases/latest",
+      "request_id": "ee07559ae82037f7fffb2fe5f05e9cabb1e2b4c71da335c4db82bb5e3ff55e2a",
+      "api_version": "2022-11-28",
+      "accept": "application/vnd.github+json",
+      "initial_validators": {},
+      "identity_evidence": "03/report.json",
+      "release_status": "not-requested-not-enrolled",
+      "recipes": [
+        "programs/aarch64/vivaldi-snapshot",
+        "programs/aarch64/vivaldi-stable",
+        "programs/x86_64/vivaldi-snapshot",
+        "programs/x86_64/vivaldi-stable"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/mmtrt/WINE_AppImage/releases",
+      "repository_id": 298360082,
+      "fetch_url": "https://api.github.com/repositories/298360082/releases",
+      "request_id": "1c0bd222afe08914a82ec3cb76e3bfb775709090036396fb1d09e2c9845639c6",
+      "api_version": "2022-11-28",
+      "accept": "application/vnd.github+json",
+      "initial_validators": {},
+      "identity_evidence": "04/report.json",
+      "release_status": "not-requested-not-enrolled",
+      "recipes": [
+        "programs/x86_64/wine-devel",
+        "programs/x86_64/wine-stable",
+        "programs/x86_64/wine-staging",
+        "programs/x86_64/wine-staging-ge-proton"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/wekan/wekan/releases",
+      "repository_id": 16089035,
+      "fetch_url": "https://api.github.com/repositories/16089035/releases",
+      "request_id": "aba09d3f46303f23f70f8966a32c05730f0c877b1e47958b506ebf3425ba7083",
+      "api_version": "2022-11-28",
+      "accept": "application/vnd.github+json",
+      "initial_validators": {},
+      "identity_evidence": "05/report.json",
+      "release_status": "not-requested-not-enrolled",
+      "recipes": [
+        "programs/aarch64/wekan",
+        "programs/armv7l/wekan",
+        "programs/i686/wekan",
+        "programs/x86_64/wekan"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/OpenRA/OpenRA/releases",
+      "repository_id": 959908,
+      "fetch_url": "https://api.github.com/repositories/959908/releases",
+      "request_id": "b75c70009f11901137718dbdcafc50ebc8ecb1988c30ca399d6da19ba1e743e3",
+      "api_version": "2022-11-28",
+      "accept": "application/vnd.github+json",
+      "initial_validators": {},
+      "identity_evidence": "06/report.json",
+      "release_status": "not-requested-not-enrolled",
+      "recipes": [
+        "programs/x86_64/openra-dune",
+        "programs/x86_64/openra-red-alert",
+        "programs/x86_64/openra-tiberian-dawn"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/ivan-hc/Blender-appimage/releases?per_page=100",
+      "repository_id": 980873950,
+      "fetch_url": "https://api.github.com/repositories/980873950/releases?per_page=100",
+      "request_id": "9b5f4423d89e95787a4c478fb2af794754523cc7dcc727161d6f57c72ad5da2c",
+      "api_version": "2022-11-28",
+      "accept": "application/vnd.github+json",
+      "initial_validators": {},
+      "identity_evidence": "07/report.json",
+      "release_status": "not-requested-not-enrolled",
+      "recipes": [
+        "programs/x86_64/blender-alpha",
+        "programs/x86_64/blender-beta",
+        "programs/x86_64/blender-rc"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/ivan-hc/Opera-appimage/releases",
+      "repository_id": 656834791,
+      "fetch_url": "https://api.github.com/repositories/656834791/releases",
+      "request_id": "55ef92b19bb49d5d2413b9b8b0495bc3674b86769ec4e9c044ba22c9ed3a699b",
+      "api_version": "2022-11-28",
+      "accept": "application/vnd.github+json",
+      "initial_validators": {},
+      "identity_evidence": "08/report.json",
+      "release_status": "not-requested-not-enrolled",
+      "recipes": [
+        "programs/x86_64/opera",
+        "programs/x86_64/opera-beta",
+        "programs/x86_64/opera-dev"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/ivan-hc/SuperTuxKart-appimage/releases",
+      "repository_id": 547567579,
+      "fetch_url": "https://api.github.com/repositories/547567579/releases",
+      "request_id": "9248c3dc8648da80b8b0c6285b7d4b58760b5314bf46c56ac72b1528e1c23f2f",
+      "api_version": "2022-11-28",
+      "accept": "application/vnd.github+json",
+      "initial_validators": {},
+      "identity_evidence": "09/report.json",
+      "release_status": "not-requested-not-enrolled",
+      "recipes": [
+        "programs/aarch64/supertuxkart-dev",
+        "programs/i686/supertuxkart-dev",
+        "programs/x86_64/supertuxkart-dev"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/ivan-hc/SuperTuxKart-appimage/releases/latest",
+      "repository_id": 547567579,
+      "fetch_url": "https://api.github.com/repositories/547567579/releases/latest",
+      "request_id": "3700899600730c362dfb03fa92e85d6d305cc3a57da2f6f5f0a94aa9a8fa03b8",
+      "api_version": "2022-11-28",
+      "accept": "application/vnd.github+json",
+      "initial_validators": {},
+      "identity_evidence": "09/report.json",
+      "release_status": "not-requested-not-enrolled",
+      "recipes": [
+        "programs/aarch64/supertuxkart",
+        "programs/i686/supertuxkart",
+        "programs/x86_64/supertuxkart"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/ivan-hc/Yandex-Browser-appimage/releases",
+      "repository_id": 824532994,
+      "fetch_url": "https://api.github.com/repositories/824532994/releases",
+      "request_id": "5b6a08ab5eade3f4b09cdaad5673c490168443a1a42f05122b64a23ea9b89ea4",
+      "api_version": "2022-11-28",
+      "accept": "application/vnd.github+json",
+      "initial_validators": {},
+      "identity_evidence": "10/report.json",
+      "release_status": "not-requested-not-enrolled",
+      "recipes": [
+        "programs/x86_64/yandex-browser",
+        "programs/x86_64/yandex-browser-beta",
+        "programs/x86_64/yandex-browser-corporate"
+      ]
+    },
+    {
+      "alias": "https://api.github.com/repos/kubernetes-sigs/headlamp/releases",
+      "repository_id": 220546758,
+      "fetch_url": "https://api.github.com/repositories/220546758/releases",
+      "request_id": "99fa3a27dfc96b99c3b05c3712291df7a7dd2e5d49c9a47c6daadf71ca354095",
+      "api_version": "2022-11-28",
+      "accept": "application/vnd.github+json",
+      "initial_validators": {},
+      "identity_evidence": "11/report.json",
+      "release_status": "not-requested-not-enrolled",
+      "recipes": [
+        "programs/aarch64/headlamp",
+        "programs/armv7l/headlamp",
+        "programs/x86_64/headlamp"
+      ]
+    }
+  ],
+  "unattempted_identity_requests": [
+    "https://api.github.com/repos/pkgforge-dev/ghostty-appimage",
+    "https://api.github.com/repos/0xbl33p/goblintown",
+    "https://api.github.com/repos/0xerwin1/dbflux",
+    "https://api.github.com/repos/1337raspberry/ramus",
+    "https://api.github.com/repos/1783cwf/local-lake-notes",
+    "https://api.github.com/repos/2303886347/ros-navigation-algorithm-visual-learning-platform",
+    "https://api.github.com/repos/239573049/astra-gate",
+    "https://api.github.com/repos/3516634930/payloader",
+    "https://api.github.com/repos/3kh0/slick",
+    "https://api.github.com/repos/77elements/noornote",
+    "https://api.github.com/repos/7836246/kcode",
+    "https://api.github.com/repos/999sian/melee-pc",
+    "https://api.github.com/repos/AChep/keyguard-app",
+    "https://api.github.com/repos/ActivityWatch/activitywatch",
+    "https://api.github.com/repos/AmarOk1412/Eksplode.re",
+    "https://api.github.com/repos/AshBuk/dabri",
+    "https://api.github.com/repos/Boteium/muon-pdf",
+    "https://api.github.com/repos/Chatterino/chatterino2",
+    "https://api.github.com/repos/DRAZY/deemix-remastered",
+    "https://api.github.com/repos/DavidVentura/offline-translator-linux",
+    "https://api.github.com/repos/GCWing/OpenBitFun",
+    "https://api.github.com/repos/ImageMagick/ImageMagick",
+    "https://api.github.com/repos/Jermolene/TiddlyDesktop",
+    "https://api.github.com/repos/KeithDHedger/KKEditQT",
+    "https://api.github.com/repos/KejPi/AbracaDABra",
+    "https://api.github.com/repos/Korkman/macemu-appimage-builder",
+    "https://api.github.com/repos/LifetimeLabsDev/privacynotes.app",
+    "https://api.github.com/repos/Oleafly/Oleafly",
+    "https://api.github.com/repos/OpenCloudGaming/OpenNOW",
+    "https://api.github.com/repos/PolyMC/PolyMC",
+    "https://api.github.com/repos/Portable-Linux-Apps/floorp-AppImage",
+    "https://api.github.com/repos/Portable-Linux-Apps/lapce-AppImage",
+    "https://api.github.com/repos/RaphaelMartin83/MeMoTo",
+    "https://api.github.com/repos/Rodert/qq-versions",
+    "https://api.github.com/repos/Shikakiben/SaveDesktop-AppImage",
+    "https://api.github.com/repos/UltraStar-Deluxe/USDX"
+  ]
+}

@@ -1,0 +1,38 @@
+..............................................................................................................................................................................................................................F....................
+======================================================================
+FAIL: test_eight_planned_workers_finish_once_and_ninth_is_rejected (test_supervised_transport.AdapterContract.test_eight_planned_workers_finish_once_and_ninth_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/marek/code/shell/AM/tools/catalog-collector/test_supervised_transport.py", line 133, in test_eight_planned_workers_finish_once_and_ninth_is_rejected
+    with self.assertRaisesRegex(Refusal, 'source_count'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Refusal not raised
+
+----------------------------------------------------------------------
+Ran 243 tests in 393.897s
+
+FAILED (failures=1)
+{
+  "identities": 2,
+  "releases": 2,
+  "accepted": 1,
+  "failures": [
+    {
+      "stage": "identity",
+      "alias": "https://api.github.com/repos/owner/missing/releases",
+      "report": "out/identity-01/report.json"
+    },
+    {
+      "stage": "release",
+      "alias": "https://api.github.com/repos/owner/redirect/releases",
+      "report": "out/release-02/report.json"
+    },
+    {
+      "stage": "identity",
+      "alias": "https://api.github.com/repos/owner/quota/releases",
+      "report": "out/identity-04/report.json"
+    }
+  ],
+  "pending": 1,
+  "quota_exhausted": true
+}

@@ -35,6 +35,9 @@ class TermuxCLI(unittest.TestCase):
                 'docs/track/release-catalog/research/am-utils-live-20261031-evidence.tar.gz',
                 'docs/track/release-catalog/design/staged-manifest.json',
                 'docs/track/release-catalog/research/supervised-baseline-40529551070-evidence.tar.gz']
+        inputs += ['tools/catalog-collector/test_migration_batch.py',
+                   'docs/track/release-catalog/research/appimage-batch-20261102/migration.json',
+                   'programs/x86_64/wekan','programs/x86_64/eksplode.re']
         (OUT/'tested-source.json').write_text(json.dumps({
             'inputs':fingerprint_files(Path('/src'), inputs),
             'modules':cls.module_hashes},indent=2)+'\n')
@@ -67,6 +70,22 @@ class TermuxCLI(unittest.TestCase):
     def appman(self):
         self.prepare_home(self.home,appman=True)
         return str(self.home/'Applications/appman/appman')
+
+    def test_remaining_batch_native_appman(self):
+        rows={Path(item['path']).name:item for item in shared.migration_rows() if '/x86_64/' in item['path']}
+        self.configure(additional_recipes=['wekan','eksplode.re'])
+        executable=self.appman()
+        for name in ('wekan','eksplode.re'):
+            item=rows[name]
+            self.utility_catalog(shared.migration_tree(item['alias'],item['evidence']))
+            self.command('-i',name,executable=executable)
+            app=self.home/'Applications'/name
+            self.assertEqual((app/'version').read_text().strip(),item['asset'])
+            self.assertTrue((self.home/'.local/bin'/name).samefile(app/name))
+            self.assertTrue((self.home/'.local/share/applications'/(name+'-AM.desktop')).is_file())
+            (app/'version').write_text('old\n')
+            self.command('--commit',PIN,executable=str(app/'AM-updater'))
+            self.assertEqual((app/'version').read_text().strip(),item['asset'])
 
     def test_local_am_automatically_uses_appman_paths(self):
         self.appman()

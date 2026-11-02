@@ -13,7 +13,7 @@ import test_storage as fixtures
 from test_storage import REV, GEN, LATER
 from storage import apply,canonical,digest,validate
 from workflow_adapter import prepare
-from delivery import unpack_artifact,verify_artifact,fetch_prior,publish,read_git_tree,REMOTE_REF
+from delivery import unpack_artifact,verify_artifact,fetch_prior,publish,read_git_tree,REMOTE_REF,ARTIFACT_FILE_CAP
 from publication import git,lookup_local
 
 
@@ -58,7 +58,7 @@ class DeliveryContract(unittest.TestCase):
 
     def test_directory_bound_applies_before_zip_member_allocation(self):
         import struct
-        raw=struct.pack('<4s4H2IH',b'PK\x05\x06',0,0,101,101,0,0,0)
+        raw=struct.pack('<4s4H2IH',b'PK\x05\x06',0,0,ARTIFACT_FILE_CAP+1,ARTIFACT_FILE_CAP+1,0,0,0)
         with patch('delivery.zipfile.ZipFile') as parser, self.assertRaises(ValueError):
             unpack_artifact(raw)
         parser.assert_not_called()
