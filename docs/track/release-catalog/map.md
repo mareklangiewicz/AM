@@ -46,6 +46,17 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 - Exact REST snapshots are the provisional direction after the baseline/hour sample. The day sample is optional; retain the six-endpoint, short-window limits on any storage conclusions. Reconsider representation with broader evidence or new consumer needs.
 - Catalog work does not execute the active app installer or installed updaters. Existing app management behavior remains unchanged during experiments.
 
+## Latest accepted stage — November 2, 2026
+
+[Brave enrollment accepted](research/brave-live-20261102.md): source and daily pin
+`3c44b0ba45bb78f5c55f61b179c9cc4a068c82d5`, publication
+`4c6000aea8704d6585325146b85ebdf21cf0a628`, one approved run. Both pinned readers,
+full publication recomputation and 12 original selectors pass. Only the six Brave
+recipes of 49 are unblocked; their local migration is in progress. Ticket 47 stays
+partial for the remaining 49 deferred endpoints. No host delivery.
+[Natural seven-source repeat](research/daily-refresh-20261101.md) is verified;
+older unobserved statements below are historical.
+
 ## Current continuation boundary
 
 **Current frontier (2026-10-31):**

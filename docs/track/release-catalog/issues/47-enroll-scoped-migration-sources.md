@@ -249,3 +249,13 @@ The containing preparation commit remains on local main-marek; a separate local
 `prep/brave-eight-source` activation candidate applies only the six-file patch.
 Its full SHA is supplied in the completion message for exact review. Neither
 local commit nor activation branch is pushed, dispatched or pinned.
+
+## November 2 accepted Brave stage
+
+[Live acceptance](../research/brave-live-20261102.md): approved source
+`3c44b0ba45bb78f5c55f61b179c9cc4a068c82d5`, one successful eight-source run
+41429379232, exact publication `4c6000aea8704d6585325146b85ebdf21cf0a628`,
+12/12 original selectors and both pinned readers verified, then daily repinned.
+[Natural seven-source repeat](../research/daily-refresh-20261101.md) is also verified.
+Only six Brave paths in 49 are unblocked; remaining 49 endpoints remain deferred.
+Status stays claimed/partial. No host delivery or additional collection.
