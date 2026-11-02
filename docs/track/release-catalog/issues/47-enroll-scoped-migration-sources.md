@@ -312,3 +312,14 @@ attempted; 43 public mappings and 44 successful exact release responses support
 Prepared/tested the 52-source contract under unchanged time/byte caps; operational
 manifest/controller/workflows and remote state remain unchanged. Status stays
 claimed/partial pending separately approved activation and exception handling.
+
+## Committed migration and activation preparation — 2026-11-02
+
+Migration/evidence committed locally as `2496e90e4419ab6ec29a252e5143cc8526430946`.
+[Two-stage rollout](../design/appimage-52-source-rollout.md) prepares enrollment
+with legacy recipes preserved, then fast-forward migration delivery after accepted
+publication. Current remote source/pin remain cc2ba588d; exact catalog parent
+9f4e356e was fetched/validated and replayed. Initial-new 304, timeout and missing
+result refuse. A source rollback must also restore the eight-source catalog if
+52-source publication occurred, before old collector code resumes. No push,
+dispatch, repin or host operation. 47/49 remain partial.

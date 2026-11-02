@@ -1,0 +1,26 @@
+{
+  "enrollment": "4e379050d5a71f6494e84308383a6c36ec6d47cf",
+  "rollback": "01e644b1d2e91e7cdafacbbe88a94c3d8f6b70a5",
+  "migration": "2496e90e4419ab6ec29a252e5143cc8526430946",
+  "enrollment_files": 325,
+  "legacy_recipe_paths_preserved": 107,
+  "combined_publication_candidate": "containing-main-marek-merge-commit",
+  "source_baseline": "cc2ba588d5446df5a9fdb5366ad689e672986a2a",
+  "publication_parent": "9f4e356ec2d50260196748374b00efdda397d7f7",
+  "manifest_sha256": "8d9eb1ec29b5e9a28e940e9a898cef20dcdf8246a57820e7ceb328ff8378e265",
+  "validation": {
+    "combined_tests": 243,
+    "combined_success": true,
+    "enrollment_snapshot_tests": 58,
+    "enrollment_success": true
+  },
+  "rollout_order": [
+    "push enrollment SHA",
+    "one 52-source collection/publication",
+    "accept exact artifacts/tree/parent and all selectors/readers",
+    "push containing main-marek commit",
+    "repin daily to containing main-marek commit"
+  ],
+  "remote_mutations_performed": false,
+  "host_delivery": false
+}

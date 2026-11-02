@@ -880,3 +880,8 @@ checks pass; no release requests, operational changes or host delivery.
 and −7,196 production lines / −334,946 bytes including supporting changes.
 Five endpoint exceptions preserve 11 legacy paths. Offline 52-source contract
 keeps time/byte caps; activation/publication and host delivery remain separate.
+
+2026-11-02: migration batch committed locally as `2496e90e4`;
+[two-stage activation preparation](design/appimage-52-source-rollout.md) separates
+52-source enrollment from the subsequent 107-recipe delivery. Current parent
+9f4e356e validated/replayed; remote source/pin remain cc2ba588d. No remote mutation.
