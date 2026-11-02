@@ -29,7 +29,7 @@ def inventory(context, raw, revision, root):
         require(type(name) is str and re.fullmatch('[0-9]{2}', name) and
                 type(row) is dict and set(row) == {'path', 'sha256'} and
                 type(row['path']) is str and re.fullmatch(
-                    r'docs/track/release-catalog/research/appimage-next-large-batch-20261102/prepared/manifest-[0-9]{2}\.json', row['path']) and
+                    r'docs/track/release-catalog/research/(?:appimage-next-large-batch-20261102|appimage-exceptions-next-20261102)/prepared/manifest-[0-9]{2}\.json', row['path']) and
                 row['path'].endswith(f'manifest-{name}.json'), 'inventory_path')
         path = Path(root)/row['path']
         require(not path.is_symlink() and path.stat().st_size <= 64_000, 'manifest_bound')

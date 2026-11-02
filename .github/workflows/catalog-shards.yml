@@ -51,7 +51,7 @@ jobs:
           sys.path.insert(0, 'tools/catalog-collector')
           from shard_delivery import inventory
           context = {k[4:].lower(): v for k, v in os.environ.items() if k.startswith('CTX_')}
-          raw = pathlib.Path('docs/track/release-catalog/research/appimage-next-large-batch-20261102/prepared/inventory.json').read_bytes()
+          raw = pathlib.Path('docs/track/release-catalog/research/appimage-exceptions-next-20261102/prepared/inventory.json').read_bytes()
           revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
           manifests = inventory(context, raw, revision, pathlib.Path.cwd())
           with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
@@ -80,7 +80,7 @@ jobs:
           sys.path.insert(0, 'tools/catalog-collector')
           from shard_delivery import collect_shard
           context = {k[4:].lower(): v for k, v in os.environ.items() if k.startswith('CTX_')}
-          raw = pathlib.Path('docs/track/release-catalog/research/appimage-next-large-batch-20261102/prepared/inventory.json').read_bytes()
+          raw = pathlib.Path('docs/track/release-catalog/research/appimage-exceptions-next-20261102/prepared/inventory.json').read_bytes()
           revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
           token = os.environ.pop('COLLECTOR_WORKFLOW_TOKEN').encode('ascii')
           temporary = pathlib.Path(os.environ['RUNNER_TEMP'])
@@ -118,7 +118,7 @@ jobs:
           sys.path.insert(0, 'tools/catalog-collector')
           from shard_delivery import inventory, list_artifacts, publish
           context = {k[4:].lower(): v for k, v in os.environ.items() if k.startswith('CTX_')}
-          raw = pathlib.Path('docs/track/release-catalog/research/appimage-next-large-batch-20261102/prepared/inventory.json').read_bytes()
+          raw = pathlib.Path('docs/track/release-catalog/research/appimage-exceptions-next-20261102/prepared/inventory.json').read_bytes()
           revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
           manifests = inventory(context, raw, revision, pathlib.Path.cwd())
           token = os.environ.pop('PUBLISHER_WORKFLOW_TOKEN').encode('ascii')

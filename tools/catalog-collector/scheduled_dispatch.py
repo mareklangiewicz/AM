@@ -13,7 +13,7 @@ from collector import require
 REPOSITORY = 'mareklangiewicz/AM'
 WORKFLOW = 'catalog-shards.yml'
 MANIFEST = '8d9eb1ec29b5e9a28e940e9a898cef20dcdf8246a57820e7ceb328ff8378e265'
-INVENTORY = 'bf7248af7b047a02fa567a32f8f6f3f8b374e969296e219b3513101dbbeedec0'
+INVENTORY = '1bb994e8f4cceb57b5ef11135733e3c79a7a1c4ba330ba53b475e38a693f62dd'
 CRON = '17 3 * * *'
 
 

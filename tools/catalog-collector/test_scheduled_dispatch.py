@@ -43,7 +43,7 @@ class ScheduledDispatch(unittest.TestCase):
 
     def test_controller_hash_binds_complete_shard_inventory(self):
         root=Path(__file__).resolve().parents[2]
-        path=root/'docs/track/release-catalog/research/appimage-next-large-batch-20261102/prepared/inventory.json'
+        path=root/'docs/track/release-catalog/research/appimage-exceptions-next-20261102/prepared/inventory.json'
         raw=path.read_bytes()
         self.assertEqual(hashlib.sha256(raw).hexdigest(),INVENTORY)
         for row in json.loads(raw)['shards'].values():
