@@ -210,3 +210,14 @@ These run on the host using disposable temporary directories, without importing
 container scenarios or touching installed apps. They specify supported transport
 output arguments, filesystem snapshot semantics and incremental trace reading.
 The full container matrix remains the installed-command verification.
+
+## Brave staged migration
+
+Three additional Debian/Fedora scenarios use the exact accepted November 2
+eight-source publication. They cover stable/beta/nightly install and generated
+standalone update, desktop/icon extraction, mixed utility/legacy continuation,
+partial transfer and retry, checksum repair, integrity/stale refusal, exact consent
+and fresh-install refusal. Native Termux adds the Brave AppMan install/standalone
+update scenario. Downloaded executables remain inert extraction fixtures.
+All six x86_64/aarch64 selectors and recipe lifecycle paths also run in the host
+catalog suite; this does not establish actual ARM binary compatibility.

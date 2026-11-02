@@ -52,7 +52,8 @@ Earlier work: [2026-10-20 design and measurements](../../design/version-catalog.
 `3c44b0ba45bb78f5c55f61b179c9cc4a068c82d5`, publication
 `4c6000aea8704d6585325146b85ebdf21cf0a628`, one approved run. Both pinned readers,
 full publication recomputation and 12 original selectors pass. Only the six Brave
-recipes of 49 are unblocked; their local migration is in progress. Ticket 47 stays
+recipes of 49 are unblocked; their [local shared-lifecycle migration](design/brave-six-recipe-migration.md)
+removes 378 lines / 16,977 bytes and preserves all original selectors. Ticket 47 stays
 partial for the remaining 49 deferred endpoints. No host delivery.
 [Natural seven-source repeat](research/daily-refresh-20261101.md) is verified;
 older unobserved statements below are historical.

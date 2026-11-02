@@ -1,7 +1,7 @@
 # Migrate the scoped common AppImage batch
 
 Type: task
-Status: open
+Status: claimed
 Triage: ready-for-agent
 Blocked by: 47
 
@@ -38,3 +38,20 @@ any excluded paths. Complete implementation/tests/docs in substantial commits.
 No installed rollout, new collection or workflow/source activation is implied.
 If ticket 47 progresses in stages, only unblock the precise evidence-backed
 subset; record the remainder rather than silently shrinking a claimed full batch.
+
+## November 2 staged continuation
+
+User approved progressing promptly toward migration after Brave rollout acceptance.
+Only the six Brave stable/beta/nightly recipes on x86_64/aarch64 are being prepared;
+the remaining 118 paths across 49 endpoints retain their enrollment dependency.
+Ticket remains partial; no host delivery is included.
+
+### Brave subset implementation
+
+[Six-recipe implementation and costs](../design/brave-six-recipe-migration.md):
+all six original selectors preserved; 462 lines / 19,164 bytes become
+84 lines / 2,187 bytes, no shared-module additions. Generated updater stays
+three lines. Accepted live metadata and inert mechanics are explicitly separated.
+This is six completed local recipes, not resolution of all 124 paths. Remaining
+118 recipes across 49 endpoints retain dependency 47. No host delivery or source
+push of this migration has occurred.

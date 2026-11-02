@@ -22,6 +22,7 @@ from shell_lookup import render
 from shell_lookup import epoch
 from storage import validate
 from test_utility_selectors import accepted_tree, ALIAS as UTILITY_ALIAS
+from test_brave_migration import accepted_brave_tree, ALIAS as BRAVE_ALIAS
 from filesystem import fingerprint_files, snapshot_tree
 from transport_records import read_transport_records
 
@@ -53,6 +54,9 @@ class InstalledCLI(unittest.TestCase):
                 'test/e2e/filesystem.py','test/e2e/transport_args.py','test/e2e/transport_records.py',
                 'test/e2e/container-test.sh','test/e2e/fixtures/e2e-legacy',
                 'test/e2e/Containerfile.debian','test/e2e/Containerfile.fedora',
+                'tools/catalog-collector/test_brave_migration.py',
+                'docs/track/release-catalog/research/brave-live-20261102-evidence.tar.gz',
+                'programs/x86_64/brave','programs/x86_64/brave-beta','programs/x86_64/brave-nightly',
                 'APP-MANAGER','programs/x86_64/nvim','programs/x86_64/nvim-nightly','programs/x86_64/obsidian','programs/x86_64/sqlitebrowser',
                 'programs/x86_64/7z','programs/x86_64/arch','programs/x86_64/c++filt','programs/x86_64/ld.bfd',
                 'tools/catalog-collector/test_utility_selectors.py',
@@ -97,7 +101,7 @@ case ${1-} in
 esac
 ''')
         self.home=self.fixture/'home';self.home.mkdir()
-        for name in ('obsidian','sqlitebrowser','nvim','nvim-nightly','e2e-legacy','7z','arch','c++filt','ld.bfd'):
+        for name in ('obsidian','sqlitebrowser','nvim','nvim-nightly','e2e-legacy','7z','arch','c++filt','ld.bfd','brave','brave-beta','brave-nightly'):
             shutil.rmtree(Path('/opt')/name,ignore_errors=True)
             launcher=Path('/usr/local/bin')/name
             if launcher.is_symlink() or launcher.exists(): launcher.unlink()
@@ -119,7 +123,7 @@ esac
         (data/'disable-dependencies-prompt').touch()
         (data/'newrepo-on').write_text(SOURCE+'\n')
         (data/'x86_64-apps').write_text(''.join('◆ '+app+' : Offline fixture\n' for app in
-            ('obsidian','sqlitebrowser','nvim','nvim-nightly','7z','arch','c++filt','ld.bfd')))
+            ('obsidian','sqlitebrowser','nvim','nvim-nightly','7z','arch','c++filt','ld.bfd','brave','brave-beta','brave-nightly')))
         (data/'x86_64-appimages').write_text('obsidian\nsqlitebrowser\nnvim\nnvim-nightly\n')
         (home/'.local/bin').mkdir(parents=True,exist_ok=True)
         if appman:
@@ -605,10 +609,10 @@ esac
         self.assertEqual(Path('/opt/obsidian/version').read_text().strip(),OBSIDIAN)
 
 
-    def utility_catalog(self):
+    def utility_catalog(self, tree=None):
         # Exact accepted first seven-source publication; never synthetic freshness.
         # Only the fixture clock is set to the publication's recorded time.
-        self.tree=accepted_tree()
+        self.tree=accepted_tree() if tree is None else tree
         self.index=validate(self.tree)
         assets=[]
         for entry in self.index['entries'].values():
@@ -768,6 +772,71 @@ esac
         self.command('-u','7z','--commit',PIN,executable=executable,home=home)
         self.assertFalse((apps/'7z/tmp').exists())
         self.assertFalse((self.fixture/'utility-executed').exists())
+
+
+    def test_brave_channels_install_standalone_and_mixed_retry(self):
+        self.utility_catalog(accepted_brave_tree())
+        self.command('-i','brave','brave-beta','brave-nightly','7z','e2e-legacy')
+        for name in ('brave','brave-beta','brave-nightly'):
+            app=Path('/opt')/name
+            selected=(app/'version').read_text().strip()
+            self.assertIn('/ivan-hc/Brave-appimage/',selected)
+            self.assertTrue((app/'icons'/name).is_file())
+            self.assertTrue((Path('/usr/local/share/applications')/(name+'-AM.desktop')).is_file())
+            self.assertEqual(len((app/'AM-updater').read_text().splitlines()),3)
+            result=self.command('--commit',PIN,executable=str(app/'AM-updater'))
+            self.assertIn('Update not needed!',result.stdout)
+        costs={}
+        for name in ('brave','brave-beta','brave-nightly'):
+            app=Path('/opt')/name
+            costs[name]={p.name:{'bytes':p.stat().st_size,'lines':len(p.read_bytes().splitlines())}
+                         for p in (app/'recipe.am',app/'AM-updater',app/'remove',app/'.am-installer'/name)}
+        (self.logs/'installed-costs.json').write_text(json.dumps(costs,indent=2)+'\n')
+        app=Path('/opt/brave');binary=(app/'brave').read_bytes()
+        (app/'version').write_text('old\n')
+        self.configure(download_partial_fail=True)
+        result=self.command('-u','brave','brave-beta','7z','e2e-legacy',success=False)
+        self.assertIn('brave: failed',result.stderr)
+        self.assertIn('brave-beta: unchanged',result.stdout)
+        self.assertIn('7z: unchanged',result.stdout)
+        self.assertEqual((app/'brave').read_bytes(),binary)
+        self.assertEqual((app/'version').read_text(),'old\n')
+        self.configure(download_partial_fail=False)
+        self.command('-u','brave')
+        (app/'brave').write_text('corrupt')
+        (app/'AM-VERIFIED').write_text('Checksum failure\n')
+        self.command('-u','brave')
+        self.assertEqual((app/'brave').read_bytes(),binary)
+
+    def test_brave_integrity_stale_consent_and_fresh_install_refusal(self):
+        self.utility_catalog(accepted_brave_tree())
+        self.command('-i','brave')
+        app=Path('/opt/brave');before=snapshot_tree(app)
+        rid=self.index['aliases'][BRAVE_ALIAS]['request_id']
+        body=self.fixture/'tree/bodies'/f'{rid}.json'
+        raw=body.read_bytes();body.write_bytes(b'[]')
+        self.command('-u','brave',success=False)
+        self.command('-i','brave-beta',success=False)
+        self.assertFalse(Path('/opt/brave-beta').exists())
+        self.assertEqual(snapshot_tree(app),before)
+        body.write_bytes(raw)
+        obs=self.index['entries'][rid]['observation']
+        self.configure(clock=str(Decimal(epoch(obs['validated_at']))+Decimal('172800.000001')))
+        self.command('-u','brave','--commit',PIN,success=False)
+        self.assertEqual(snapshot_tree(app),before)
+        self.command('-u','brave','--commit',PIN,'--accept-stale',PIN,rid,obs['sha256'])
+
+    def test_brave_appman_install_standalone_and_update(self):
+        self.utility_catalog(accepted_brave_tree())
+        home=self.fixture/'brave-home';home.mkdir();self.prepare_home(home,appman=True)
+        executable=str(home/'Applications/appman/appman')
+        self.command('-i','brave-nightly',executable=executable,home=home)
+        app=home/'Applications/brave-nightly'
+        self.assertEqual((app/'brave-nightly').stat().st_uid,USER.pw_uid)
+        self.assertTrue((home/'.local/bin/brave-nightly').samefile(app/'brave-nightly'))
+        (app/'version').write_text('old\n')
+        self.command('--commit',PIN,executable=str(app/'AM-updater'),home=home)
+        self.assertIn('/ivan-hc/Brave-appimage/',(app/'version').read_text())
 
 
 if __name__ == '__main__':
