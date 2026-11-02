@@ -12,6 +12,13 @@ run are published. Recipe publication and daily repin require complete acceptanc
 
 ## Current result
 
+Completed: same-run full acceptance, approved recipe/evidence publication, and
+the reviewed daily repin to `519c0e484` are recorded in Answer and Follow-up below.
+Catalog remains `e391f35f6`; natural sharded repeat is pending November 3.
+The installed-reader investigation is separate [ticket 70](70-diagnose-installed-obsidian-clock-refusal.md).
+
+## Historical stop — superseded by completion below
+
 [Acceptance stopped on reproduced local clock regression](../research/appimage-exceptions-next-20261102/live-rollout-stop.md).
 Both full read-only attempts passed artifact/Git recomputation and all 1,974
 selectors, then refused at a pinned shell reader. A trace proves a 0.501250-second
@@ -20,7 +27,7 @@ No complete acceptance exists, so no recipe push or daily repin. Daily dispatch
 remains gated by the deliberate source/pin mismatch; no unfinished run.
 Existing rollout approval persists; system time changes are outside scope.
 
-## Next
+## Historical next step at the stop
 
 Establish a stable execution clock, recheck controls and repeat same-run read-only
 acceptance for run 41479232632/source ab04b9d8c/parent 6f21b8c1d. Only full acceptance

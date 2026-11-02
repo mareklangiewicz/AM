@@ -58,3 +58,68 @@ No cause established and no production change justified. A future failing
 reader-only trace can discriminate these predicates. No updater was executed,
 no app binary downloaded, no clock or installed file changed, no remote controls
 changed, and no push performed. Full update retry remains outside this diagnosis.
+
+## Follow-up — reproduced formatter failure and local correction
+
+The preceding no-cause finding describes the initial single successful probe.
+A bounded series of up to twelve installed-reader reads stopped at attempt four
+with the exact catalog refusal. [Retained series](../research/obsidian-installed-refusal-20261102/reader-series.json):
+
+- First freshness sample `1793639541.892750`; second `1793639541.523636`.
+- The apparent backwards step is 0.369114 seconds; both metadata timestamps
+  were in the past, body hash matched, and duration was far below 90 seconds.
+- Concurrent Python CLOCK_REALTIME monitoring saw no backwards step.
+
+The execution environment resolves `/usr/bin/date` to uutils coreutils 0.10.0.
+Its width-limited nanosecond format loses leading zeros. This deterministic
+command reproduces the defect without network access or clock changes:
+
+```sh
+date -u -d @1793639584.006207078 '+%s.%6N %s.%N'
+# 1793639584.620707 1793639584.006207078
+```
+
+[Four-second comparison](../research/obsidian-installed-refusal-20261102/date-comparison.json)
+found 36 inconsistent outputs in 336 samples, with Python timestamps bracketing
+each call. The formatted reader clock can therefore regress while real time
+advances. This explains the newly reproduced reader failure in this environment;
+it does not independently establish the date implementation used in Marek's
+original terminal or the cause of that uncaptured event. Do not infer NTP or
+hardware failure from this formatted-clock trace. Earlier rollout evidence is
+preserved, with no retrospective claim that its host clock actually stepped.
+
+Repository correction: read `%s.%N`, validate nine fractional digits, and
+explicitly truncate to six. This preserves the microsecond inclusive freshness
+boundary, backwards-clock refusal and 90-second limit. No guard is relaxed.
+The regression test drives the real reader with the system date executable at
+three fixed increasing timestamps. It failed before the correction with the
+exact refusal, then passed afterward:
+
+```sh
+cd tools/catalog-collector
+python3 -m unittest test_shell_consumer.ShellConsumer.test_system_date_leading_fractional_zeros_do_not_invent_regression
+```
+
+Validation: 107 tests passed across `test_shell_consumer`, `test_shell_delivery`,
+`test_appimage_lifecycle`, `test_acceptance_reader_diagnostics` and
+`test_scheduled_dispatch`. Separate focused regression/freshness checks passed;
+shell syntax, shellcheck and diff whitespace checks passed.
+[Candidate reader series](../research/obsidian-installed-refusal-20261102/candidate-reader-series.json)
+retains an initial transport refusal and five subsequent successful metadata-only
+reads with matching body hashes. The transport refusal was not a clock failure.
+
+## Remaining work
+
+- Confirm the actual user's terminal date implementation before attributing
+  the original `am -u` event to this formatter defect.
+- Review publication of the local correction together with its exact daily pin.
+  This changes the runtime reader, so it is not merely a documentation-only repin.
+- Deliver the reviewed helper through the normal module sync, then perform only
+  the named Obsidian retry and verify its exit. No updater or host sync was run
+  in this investigation; installed helper bytes remain unchanged.
+- Observe the natural November 3 sharded run; November 2 control checks show
+  source=pin=`519c0e484` and unchanged catalog `e391f35f6` with only the two intended
+  workflows active. See [controls](../research/obsidian-installed-refusal-20261102/current-controls.json)
+  and [refs/runs](../research/obsidian-installed-refusal-20261102/current-refs-runs.json).
+
+Ticket remains open for original-host confirmation and installed delivery.

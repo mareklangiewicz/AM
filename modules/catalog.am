@@ -26,8 +26,16 @@ case $source in *[!A-Za-z0-9_./:-]*) fail 'unsupported AMREPO characters' ;; esa
 printf '%s\n' "$source" | grep -Eq '^https://raw\.githubusercontent\.com/[A-Za-z0-9-]+/[A-Za-z0-9_.-]+/[A-Za-z0-9_./-]+$' || fail 'missing or unsupported AMREPO'
 repository=${source#https://raw.githubusercontent.com/}
 owner=${repository%%/*}; repository=${repository#*/}; repository=$owner/${repository%%/*}
-# GNU date's fractional UTC epoch preserves the inclusive 48-hour boundary.
-clock() { date -u +%s.%6N; }
+# Full nanoseconds preserve leading zeros on GNU and uutils date. Truncate
+# explicitly: uutils 0.10.0's %6N can invent backwards clock steps.
+clock() {
+    stamp=$(date -u +%s.%N) || return 1
+    printf '%s\n' "$stamp" | awk -F . '
+        NF==2 && $1 ~ /^[0-9]+$/ && $2 ~ /^[0-9]+$/ && length($2)==9 {
+            printf "%s.%s\n", $1, substr($2,1,6); valid=1
+        }
+        END { exit !valid }'
+}
 start=$(clock)
 printf '%s\n' "$start" | grep -Eq '^[0-9]{1,12}\.[0-9]{6}$' || fail 'GNU date required'
 umask 077

@@ -55,9 +55,10 @@ else:
 pathlib.Path(a[a.index('--output')+1]).write_bytes(raw)
 print(os.environ.get('HTTP_STATUS','200'),end='')
 ''')
-        self.script('date', '''import json, os, pathlib
+        self.script('date', '''import json, os, pathlib, sys
 p=pathlib.Path(os.environ['FIXTURE'])/'times'
-t=json.loads(p.read_text()); print(t.pop(0) if len(t)>1 else t[0]); p.write_text(json.dumps(t))
+t=json.loads(p.read_text()); value=t.pop(0) if len(t)>1 else t[0]
+print(value+'000' if sys.argv[-1]=='+%s.%N' else value); p.write_text(json.dumps(t))
 ''')
 
     def script(self, name, body):
@@ -213,6 +214,21 @@ class ShellConsumer(ShellFixture):
                       [epoch(GEN),epoch((gen+timedelta(seconds=10)).isoformat()),epoch((gen+timedelta(seconds=5)).isoformat())]):
             self.now=times
             r=self.invoke();self.assertNotEqual(r.returncode,0);self.assertEqual(r.stdout,b'')
+
+    def test_system_date_leading_fractional_zeros_do_not_invent_regression(self):
+        # Exercise the installed date implementation at fixed increasing times.
+        # uutils 0.10.0's %6N loses leading zeros; %N preserves all nine digits.
+        self.script('date', '''import json, os, pathlib, subprocess, sys
+p=pathlib.Path(os.environ['FIXTURE'])/'times'
+t=json.loads(p.read_text()); value=t.pop(0) if len(t)>1 else t[0]
+p.write_text(json.dumps(t))
+subprocess.run(['/usr/bin/date', '-d', '@'+value, *sys.argv[1:]], check=True)
+''')
+        second=int(float(epoch(GEN)))+1
+        self.now=[str(second)+fraction for fraction in ('.006207', '.021114', '.034799')]
+        result=self.invoke()
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertEqual(result.stdout,self.body)
 
     def test_integrity_redirect_missing_lookup_and_duplicate_refuse(self):
         self.tree['bodies/'+self.rid+'.json']=self.body+b' '
