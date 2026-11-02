@@ -46,6 +46,7 @@ def build():
         previous_publication='29e37bd9207ae9557e8f57afa010699c649d4cde')
     manifests = inventory(context, raw, rev, ROOT)
     old = legacy_tree()
+    old_index = validate(old)
     generated = datetime.now(timezone.utc).isoformat()
     migration = json.loads((prepared/'migration.json').read_bytes())
     evidence = {s['request_id']:s['evidence'] for s in migration['sources']}
@@ -61,7 +62,7 @@ def build():
             descriptor = {k:getattr(__import__('collector').Descriptor(source['url']), k)
                           for k in ('url','api_version','accept')}
             if prior:
-                entry = validate(prior)['entries'][rid]
+                entry = old_index['entries'][rid]
                 report = dict(started_at=generated, completed_at=generated, public_headers={})
                 body, status, condition = b'', 304, entry['validators']
             else:

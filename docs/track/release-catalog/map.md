@@ -905,3 +905,16 @@ replacement manifests retires earlier sources. The 784-source union's synthetic
 manifest exceeds the current parser cap; actual body capacity remains unmeasured.
 Recorded conditional incremental/sharded alternatives pending actual metadata;
 no production changes, source acquisition or operational delivery.
+
+2026-11-02 substantial continuation: [67](issues/67-expand-appimage-migration-throughput.md#verified-identities)
+now has 922 locally migrated recipes, 78 unchanged exceptions and exact metadata
+for the full bounded acquisition queue. Recipe reduction: 62,630 lines / 2,927,077
+bytes. Fourteen bounded shards retain the original 52 plus 667 new descriptors
+under one atomic root with unchanged shell reader paths. Actual saved-body
+ZIP/recomputation/Git replay passes; final focused runtime checks fix the discovered
+`icalingua++` name rejection. All 82 installed-command container scenarios pass.
+The 252-test catalog result predates the final focused additions/fix; retained logs
+identify the one initial all-batch failure and its passing targeted replacement.
+[Rollout package](research/appimage-next-large-batch-20261102/rollout.md) is ready
+for the home-instruction push decision. No push, workflow switch, dispatch, repin
+or host operation occurred; operational delivery remains unfinished.

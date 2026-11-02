@@ -2,7 +2,7 @@
 
 Type: task
 Status: claimed
-Triage: ready-for-agent
+Triage: ready-for-human
 
 ## Scope
 
@@ -20,6 +20,15 @@ retaining previously accepted observations, provenance and pinned readers.
 New publication and installed rollout remain distinct operations.
 
 ## Current result
+
+**922 compatible recipes are migrated locally**, with 78 frozen exceptions left
+unchanged. Actual metadata, original selectors, bounded sharded publication,
+artifact/Git replay and runtime verification are recorded below. Enrollment
+source is `9f114d25fff27b0bd2f0ecf561871ca267a9f29f`; source publication,
+one guarded live refresh/acceptance, recipe publication and daily repin remain
+pending Marek's push decision. No operational migration is claimed yet.
+
+### Initial prepared result (historical)
 
 [Exact frozen payload](../research/appimage-next-large-batch-20261102/payload.json)
 and [1,000 candidate replacements](../research/appimage-next-large-batch-20261102/recipes.patch)
@@ -164,3 +173,44 @@ Enrollment and recipe publication remain separate commits/stages. Remote parent
 was rechecked as `29e37bd9207ae9557e8f57afa010699c649d4cde`. The explicit home
 instruction reserves pushing for Marek's decision; finish local verification and
 prepare exact push/run/acceptance/recipe/pin steps before asking for that decision.
+
+## Local implementation and verification completed
+
+Applied all 922 compatible replacements; original candidate hashes match the
+prepared report. Its `production_applied=false` records the historical preparation
+stage; [final validation](../research/appimage-next-large-batch-20261102/validation.json)
+records application and final verification separately. No exception recipe changed.
+
+The all-922 inert install/generated-update run exposed one genuine lifecycle
+defect: the AppImage identity guard refused the existing `icalingua++` name.
+All other install/update paths, all final selector/hash checks and architecture
+failure/retry/integrity/stale checks passed. A focused regression reproduced
+`Invalid app identity` before the fix and passed after adding `+` to the closed
+AppImage name grammar. All four actual `icalingua++` recipe checks then passed,
+including real temporary-root installation and its generated standalone updater.
+No second all-922 green run is claimed; the original failed log is retained with
+the superseding targeted results. Empty/dot/path/control-character refusals remain.
+
+The catalog suite passed 252 tests before the final focused additions/fix. Final
+affected checks pass: 80 AppImage lifecycle, six executable lifecycle, three
+sharded delivery, four shard/reader, six controller, two evidence-resume, four
+frozen-queue and ten support checks. Counts overlap and are not summed into a
+fictional full-suite total. All 82 installed-command container scenarios passed:
+32 Debian/dash, 32 Fedora/bash, 18 native Termux. Container tests use inert
+binaries and disabled runtime networking; the plus-name regression is separately
+covered by the final actual-recipe and helper tests. Workflow YAML and three
+embedded Python programs parse; shell syntax and diff checks pass.
+
+[Retained verification logs](../research/appimage-next-large-batch-20261102/validation-evidence.tar.gz)
+include the initial runtime failure and superseding checks, container summaries,
+source fingerprints and replay results. The home checkout remains untouched by
+any installer operation; all runtime tests use temporary roots or containers.
+
+[Exact rollout sequence](../research/appimage-next-large-batch-20261102/rollout.md)
+and [read-only acceptance tool](../../../../tools/catalog-collector/accept_large.py)
+are ready. Immediate remote controls still showed source/daily pin
+`d6e7421579d5a0f65588e39bb72995a675b9f08a`, legacy collector/dispatcher isolation
+and no unfinished run. Recheck again at execution. Push, workflow switch, dispatch,
+acceptance, recipe publication and repin remain the only operational steps; no
+host sync or installed-updater migration is included. Ticket remains claimed and
+ready-for-human for that concrete publication decision.

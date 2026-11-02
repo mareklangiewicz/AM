@@ -1,0 +1,52 @@
+{
+  "production_recipes_applied": 922,
+  "unchanged_exceptions": 78,
+  "recipe_lines_removed": 62630,
+  "recipe_bytes_removed": 2927077,
+  "enrollment_source": "9f114d25fff27b0bd2f0ecf561871ca267a9f29f",
+  "inventory_sha256": "bf7248af7b047a02fa567a32f8f6f3f8b374e969296e219b3513101dbbeedec0",
+  "checks": {
+    "catalog_before_final_focused_changes": 252,
+    "shard_delivery": 3,
+    "shards": 4,
+    "dispatch": 6,
+    "evidence_resume": 2,
+    "frozen_queue": 4,
+    "support": 10,
+    "final_appimage_lifecycle": 80,
+    "final_executable_lifecycle": 6,
+    "containers": {
+      "debian": 32,
+      "fedora": 32,
+      "termux": 18
+    }
+  },
+  "full_recipe_lifecycle": {
+    "recipes": 922,
+    "initial_failures": [
+      "programs/x86_64/icalingua++"
+    ],
+    "initial_other_cases_passed": true,
+    "final_icalingua_actual_recipe_tests": 4,
+    "final_icalingua_tests_passed": true,
+    "initial_log_retained": true,
+    "interpretation": "The all-922 run found one name-guard failure. Its focused red/green regression and all four actual-recipe checks passed after allowing plus. No second all-922 green run is claimed."
+  },
+  "workflow_python_blocks_parsed": 3,
+  "appimage_shell_syntax": true,
+  "diff_check": true,
+  "final_changed_file_sha256": {
+    "modules/appimage.am": "87ec4090b04e2c682f712bffb7fa429bae026a3d327e570a30e3f0be9bfa6979",
+    "tools/catalog-collector/accept_large.py": "9795da1107becc17c33735789b92294d0d970b23f36d1a170e0de4a521433f39",
+    "tools/catalog-collector/large_replay.py": "d1031824eb6161039daa8bb1c223bfb11b53e4bd30a06b34276b74bdd94ad95b",
+    "tools/catalog-collector/check_large_lifecycle.py": "819e3e5985539de54a44805354c50c5d401915fa803196bb9c4f05b7a86ceafd",
+    "tools/catalog-collector/test_throughput.py": "00581c12dd4d6f9fb4b76c1b89821f3f3b2f579bddf998e9e370887e4f5e3ed5",
+    "tools/catalog-collector/test_appimage_lifecycle.py": "defd61451c20964850f80fb6c4bc9231bf045330c17ffd1e458a8e4e23d15c73"
+  },
+  "operational": {
+    "pushed": false,
+    "dispatched": false,
+    "repinned": false,
+    "host_operations": false
+  }
+}

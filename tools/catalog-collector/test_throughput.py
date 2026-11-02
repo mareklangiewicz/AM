@@ -1,7 +1,10 @@
 """Conservation and refusal checks for the offline thousand-recipe work queue."""
 import hashlib
+import io
 import json
 from pathlib import Path
+import subprocess
+import tarfile
 import unittest
 
 from throughput import audit
@@ -15,9 +18,15 @@ class Throughput(unittest.TestCase):
     def setUpClass(cls):
         cls.raw = (DIRECTORY/'payload.json').read_bytes()
         cls.manifest = (ROOT/'docs/track/release-catalog/design/staged-manifest.json').read_bytes()
+        payload = json.loads(cls.raw)
+        paths = [recipe['path'] for row in payload['rows'] for recipe in row['recipes']]
+        archive = subprocess.check_output(['git','archive',payload['source_revision'],'--',*paths],cwd=ROOT)
+        with tarfile.open(fileobj=io.BytesIO(archive)) as stream:
+            cls.originals = {member.name:stream.extractfile(member).read()
+                             for member in stream.getmembers() if member.isfile()}
 
     def test_frozen_queue_conserved_and_identities_never_split(self):
-        result = audit(self.raw, self.manifest, lambda p: (ROOT/p).read_bytes())
+        result = audit(self.raw, self.manifest, self.originals.__getitem__)
         payload = json.loads(self.raw)
         cohorts = result['cohorts']
         aliases = [a for c in cohorts for a in c['aliases']]
@@ -42,11 +51,11 @@ class Throughput(unittest.TestCase):
         payload = json.loads(self.raw)
         payload['rows'].append(payload['rows'][0])
         with self.assertRaisesRegex(ValueError, 'queue_alias'):
-            audit(json.dumps(payload).encode(), self.manifest, lambda p: (ROOT/p).read_bytes())
+            audit(json.dumps(payload).encode(), self.manifest, self.originals.__getitem__)
         payload = json.loads(self.raw)
         payload['rows'][1]['recipes'].append(payload['rows'][0]['recipes'][0])
         with self.assertRaisesRegex(ValueError, 'queue_path'):
-            audit(json.dumps(payload).encode(), self.manifest, lambda p: (ROOT/p).read_bytes())
+            audit(json.dumps(payload).encode(), self.manifest, self.originals.__getitem__)
 
     def test_substituting_a_smaller_manifest_retires_earlier_sources(self):
         from test_migration_capacity import files, initial_attempts, GEN, REV

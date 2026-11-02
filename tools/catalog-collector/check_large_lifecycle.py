@@ -3,9 +3,12 @@
 Uses exact retained metadata and inert test AppImages. Never executes a downloaded
 application. The common lifecycle test harness binds every install to a temp root.
 """
+import argparse
 import hashlib
 import json
+from pathlib import Path
 import subprocess
+import sys
 import unittest
 
 from identity_batch import ROOT
@@ -25,6 +28,11 @@ class LargeLifecycle(fixtures.BatchLifecycle):
     def setUpClass(cls):
         migration = json.loads((DIRECTORY/'prepared/migration.json').read_bytes())
         cls.rows = [dict(item, asset=item['selected']) for item in migration['migrated']]
+        if getattr(cls,'only',None):
+            cls.rows = [item for item in cls.rows if item['path'] in cls.only]
+            if {item['path'] for item in cls.rows} != cls.only:
+                raise ValueError('unknown_selected_recipe')
+            cls.expected_architectures = {Path(item['path']).parent.name for item in cls.rows}
         cls.base, _, cls.generation = build()
         cls.entries = {}
         cls.aliases = {}
@@ -54,4 +62,8 @@ class LargeLifecycle(fixtures.BatchLifecycle):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    parser=argparse.ArgumentParser(add_help=False)
+    parser.add_argument('--only',action='append')
+    args,remaining=parser.parse_known_args()
+    LargeLifecycle.only=set(args.only or [])
+    unittest.main(argv=[sys.argv[0],*remaining])
