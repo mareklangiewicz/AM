@@ -35,3 +35,14 @@ daily pin now equal 5ab112d25; accepted catalog e391f35f6 remains unchanged.
 Final workflow/run controls passed. The prior stop above is historical;
 finite clock probes passed but the original regression cause remains unverified.
 No collection retry or host delivery. Original refusal evidence is preserved.
+
+## Follow-up — reviewed daily repin
+
+After the separately approved evidence/verifier push, Marek approved reviewing
+and advancing the daily pin. [Verified repin controls](../research/appimage-exceptions-next-20261102/daily-repin-519c0e484.json)
+record source=pin=519c0e484, unchanged accepted catalog, two active workflows
+and no unfinished runs. Operational inputs/code are unchanged from the accepted
+recipe revision; eight focused tests pass. No manual collection was dispatched.
+Next configured cadence is November 3 at 03:17 UTC; natural repeat remains unobserved.
+This record is committed locally; publishing it would require another reviewed
+repin because the dispatcher requires exact source/pin equality.
