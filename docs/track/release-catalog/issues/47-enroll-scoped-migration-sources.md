@@ -334,3 +334,21 @@ repinning daily to that exact SHA. No rollback, host sync or installed-updater
 migration. Status remains claimed/partial for the eleven legacy paths excluded
 by four redirected identities and one 404; their exception handling needs separate
 scope. Prior pending-approval and unpublished statements above are historical.
+
+## Redirect exception continuation — 2026-11-02
+
+User requested continuation after the accepted rollout. Reviewing the four exact
+recorded numeric identity targets and their release metadata; preparing explicit
+alias mappings and compatible recipe candidates offline. No new enrollment,
+source publication, scheduled repin or host change is implied. The aarch64
+TiddlyDesktop original selector selects the same linux64 asset as x86_64 and is
+excluded from this continuation pending architecture clarification. Existing 404
+payloader evidence remains unchanged. Status stays claimed/partial.
+
+[Concrete exception result](../research/appimage-exceptions-20261102.md): four
+numeric public identities and four release lists verified; eight compatible
+recipe candidates remove 544 lines / 25,702 bytes. Original aliases/selectors
+remain exact. 37 affected tests and five candidate checks pass. Enrollment and
+recipe patches are isolated from operational source. aarch64/tiddlydesktop and
+both payloader paths remain excluded. Identity changes and the next bounded
+rollout are reviewable there; no new activation or host delivery.

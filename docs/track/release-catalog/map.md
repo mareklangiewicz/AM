@@ -883,3 +883,10 @@ keeps time/byte caps; activation/publication and host delivery remain separate.
 [two-stage activation preparation](design/appimage-52-source-rollout.md) separates
 52-source enrollment from the subsequent 107-recipe delivery. Current parent
 9f4e356e validated/replayed; remote source/pin remain cc2ba588d. No remote mutation.
+
+2026-11-02: [Four redirect identities / eight candidates](research/appimage-exceptions-20261102.md)
+prepared offline after eight bounded public metadata GETs. Four exact original
+aliases map to verified numeric public repositories; eight replacement recipes
+remove 544 lines / 25,702 bytes. 37 affected tests and five candidate checks pass.
+aarch64/tiddlydesktop selects an x86 asset and stays unchanged, alongside the two
+payloader 404 paths. No 56-source activation, push, repin or host operation.
