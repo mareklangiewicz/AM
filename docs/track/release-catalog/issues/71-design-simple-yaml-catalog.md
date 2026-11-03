@@ -14,6 +14,6 @@ Q21 authorizes a bounded read-only measurement of release-history request cost, 
 
 ## Remaining
 
-- Complete bounded release-history measurement and choose coverage based on its limits.
+- Bounded history measurement completed; full published release history chosen, subject to explicit ceilings. Finalize ceilings using broader evidence.
 - Settle failure handling, optional values, schema details, reader interface, and remaining design branches.
 - Confirm shared understanding before implementation or reader prototype.

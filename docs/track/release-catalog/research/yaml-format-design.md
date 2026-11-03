@@ -63,3 +63,12 @@ This supersedes the earlier requirement to preserve GitHub's latest designation.
 ## Q21 measurement result
 
 [Bounded experiment](yaml-history-measurement-20261103/findings.md): uniform sample 24/772 upstream repositories, 23 single-page histories and one 227-release/3-page history; all sampled pagination completed. 26 API requests, 13,117,687 response bytes, 2,338,942 provisional normalized YAML bytes, 27.23 seconds. No production changes or raw response retention. Full coverage remains a decision: sample does not bound rare large histories, asset completeness or Git growth.
+
+## Settled full-history and failure policy
+
+Marek accepted Q22–Q24:
+- Collect all published release pages by default, with explicit request/byte/runtime ceilings. If a ceiling prevents completion, report it; never represent partial acquisition as complete.
+- If a repository fails partway through acquisition, retain its previous complete observation and mark the check failed, instead of mixing old and new pages.
+- Omit unavailable optional fields. Empty quoted strings represent actual empty values; do not introduce YAML null as another scalar type.
+
+Open next: asset-list completeness, first-observation failures, pagination consistency limits, reader interface and remaining scalar/schema details. Exact production ceilings remain to be chosen using broader measurements.
