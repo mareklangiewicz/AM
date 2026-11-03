@@ -68,3 +68,21 @@ The conditional avoids using a shell pipeline that hides a reader failure.
 Fixed quoted timestamps compare in chronological order. No version or asset
 selection policy is built into the reader. Nothing here proves the complete new
 collector/consumer system simpler or faster yet.
+
+## Memory follow-up (isolated research/yaml-reader-memory branch)
+
+Run `python3 tools/catalog-yaml-prototype/memory.py`. This runs the acceptance
+corpus on mawk, GNU awk and BusyBox awk and writes `memory-results.json`.
+The reader closes and validates records before discarding them; ID ordering
+needs only the previous sibling ID. App entries are also discarded immediately.
+Query output is spooled to a private temporary file and copied only after success.
+No second input pass or whole-file result buffer is needed. Temporary disk use
+therefore grows with query output. Output transport errors can still yield a
+partial stdout stream; the caller must check status as before.
+
+This experiment retains the original trial 32 MiB file and 64 KiB physical-line
+caps. They remain experiment bounds, not accepted collection policy. Production
+needs explicit projection-column/output bounds, temporary-storage failure tests,
+a bounded transfer path and measured operational budgets. Validation alone emits
+no data but currently still creates an empty spool. Synthetic record-count
+measurements do not establish performance for maximum-length strings.

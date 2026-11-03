@@ -43,9 +43,9 @@ function rank(context,key, fields,a,n,i) {
     n=split(fields,a," "); for(i=1;i<=n;i++) if(a[i]==key) return i
     return 0
 }
-function expect(path,kind) { if(types[path]!=kind) fail("missing or wrong field: " path) }
+function expect(path,kind) { if(types[slot(path)]!=kind) fail("missing or wrong field: " path) }
 function required(path,fields, a,n,i) {
-    n=split(fields,a," "); for(i=1;i<=n;i++) if(!((path "/" a[i]) in types)) fail("missing field: " path "/" a[i])
+    n=split(fields,a," "); for(i=1;i<=n;i++) if(!(slot(path "/" a[i]) in types)) fail("missing field: " path "/" a[i])
 }
 function schema_url(s, a,n) {
     n=split(s,a,"/")
@@ -53,13 +53,55 @@ function schema_url(s, a,n) {
         a[4] ~ /^[A-Za-z0-9-]+$/ && a[5] ~ /^[A-Za-z0-9_.-]+$/ &&
         length(a[6])==40 && a[6] !~ /[^0-9a-f]/ && a[7]=="docs" && a[8]=="catalog-format-v2.md"
 }
-BEGIN { operation=ENVIRON["AM_YAML_OPERATION"]; query=ENVIRON["AM_YAML_QUERY"]; previous=-1 }
+# Reuse storage keys across records, including on awk implementations that retain
+# allocation associated with distinct deleted keys. Full paths remain query facts.
+function slot(p, q) {
+    q=p
+    sub(/\/[0-9]+/,"/@",q); sub(/\/[0-9]+/,"/@",q)
+    if(q ~ /^\/apps\//) q="/apps/@"
+    return q
+}
+function finish_record(p, context, k,prefix,i) {
+    if (context=="release_ids") required(p,"tag url published_at prerelease assets")
+    else required(p,"name url size content_type")
+    if (operation=="rows" && parent_path(p)==query) {
+        printf "%s",substr(p,length(query)+2)
+        for(i=1;i<=field_count;i++) printf "\t%s",encoded[slot(p "/" fields[i])]
+        printf "\n"
+    }
+    prefix=slot(p) "/"
+    for(k in types) if(k==slot(p) || index(k,prefix)==1) {
+        delete types[slot(k)]; delete values[slot(k)]; delete encoded[slot(k)]; delete children[slot(k)]
+        delete last_id[slot(k)]; delete last_order[slot(k)]; delete records[slot(k)]
+    }
+}
+function parent_path(p, q) { q=p; sub(/\/[^\/]*$/,"",q); return q }
+function close_nodes(depth, d,p) {
+    for(d=previous;d>=depth;d--) {
+        p=stack[d]
+        if(slot(p) in types && types[slot(p)]=="map" && !children[slot(p)]) fail("use {} for empty mapping")
+        if(slot(p) in records) finish_record(p,records[slot(p)])
+    }
+}
+BEGIN {
+    operation=ENVIRON["AM_YAML_OPERATION"]; query=ENVIRON["AM_YAML_QUERY"]; previous=-1
+    if(operation=="assets") query="/releases" query "/assets"
+    if(operation=="releases") query="/releases"
+    if(operation=="apps") query="/apps"
+    if(operation=="rows") {
+        if(query !~ /^\/releases(\/[0-9]+\/assets)?$/) fail("collection path")
+        context=(query=="/releases" ? "release" : "asset")
+        field_count=split(ENVIRON["AM_YAML_FIELDS"],fields," ")
+        for(i=1;i<=field_count;i++) if(!rank(context,fields[i]) || fields[i]=="assets") fail("scalar projection field")
+    }
+}
 {
     bytes+=length($0)+1
     if (bytes>33554432 || length($0)>65536) fail("size limit")
     if ($0 ~ /[[:cntrl:]]/ || $0 ~ /\302[\200-\237]|\342\200[\250\251]|\357\277[\276\277]/ || $0 ~ / $/ || $0=="") fail("control, blank line or trailing space")
     match($0,/^ */); depth=RLENGTH/2
     if (RLENGTH%2 || depth>4 || depth>previous+1) fail("indentation")
+    close_nodes(depth)
     line=substr($0,RLENGTH+1); colon=index(line,":")
     if (!colon) fail("missing colon")
     key=substr(line,1,colon-1); raw=substr(line,colon+1)
@@ -67,9 +109,9 @@ BEGIN { operation=ENVIRON["AM_YAML_OPERATION"]; query=ENVIRON["AM_YAML_QUERY"]; 
     if (quoted) key=substr(key,2,length(key)-2)
     else if (key !~ /^[a-z][a-z0-9_]*$/) fail("invalid key")
     parent=(depth ? stack[depth-1] : "")
-    if (depth && types[parent]!="map") fail("child of scalar or empty mapping")
+    if (depth && types[slot(parent)]!="map") fail("child of scalar or empty mapping")
     path=parent "/" key
-    if (path in types) fail("duplicate key")
+    if (slot(path) in types) fail("duplicate key")
     if (depth==0) context="root"
     else if (depth==1 && parent=="/releases") context="release_ids"
     else if (depth==1 && parent=="/apps") context="app_ids"
@@ -78,18 +120,18 @@ BEGIN { operation=ENVIRON["AM_YAML_OPERATION"]; query=ENVIRON["AM_YAML_QUERY"]; 
     else if (depth==4 && parent ~ /^\/releases\/[0-9]+\/assets\/[0-9]+$/) context="asset"
     else fail("unsupported nesting")
     if (context=="release_ids" || context=="asset_ids") {
-        if (!quoted || !id(key) || (parent in last_id && !less(last_id[parent],key))) fail("ID order or spelling")
-        last_id[parent]=key
+        if (!quoted || !id(key) || (slot(parent) in last_id && !less(last_id[slot(parent)],key))) fail("ID order or spelling")
+        last_id[slot(parent)]=key
     } else {
         if (context=="app_ids") {
             if (!quoted) fail("quoted app name required")
-            if (parent in last_id && "x" last_id[parent] >= "x" key) fail("app order")
-            last_id[parent]=key
+            if (slot(parent) in last_id && "x" last_id[slot(parent)] >= "x" key) fail("app order")
+            last_id[slot(parent)]=key
         } else {
             if (quoted) fail("unexpected quoted key")
             order=rank(context,key)
-            if (!order || order<=last_order[parent]) fail("unknown or out-of-order field")
-            last_order[parent]=order
+            if (!order || order<=last_order[slot(parent)]) fail("unknown or out-of-order field")
+            last_order[slot(parent)]=order
         }
     }
     if (raw=="") { kind="map"; value="" }
@@ -104,7 +146,7 @@ BEGIN { operation=ENVIRON["AM_YAML_OPERATION"]; query=ENVIRON["AM_YAML_QUERY"]; 
     }
     if (context=="release_ids" || context=="asset_ids") {
         if (kind!="map") fail("record must be nonempty mapping")
-        records[path]=context
+        records[slot(path)]=context
     } else if (context=="app_ids") {
         if (kind!="integer" || !id(value)) fail("repository ID required")
     } else if (key=="releases" || key=="assets" || key=="apps") {
@@ -118,23 +160,29 @@ BEGIN { operation=ENVIRON["AM_YAML_OPERATION"]; query=ENVIRON["AM_YAML_QUERY"]; 
         if (key ~ /_at$/ && !timestamp(value)) fail("timestamp")
         if ((key=="url" || key ~ /^source_.*_url$/) && (value !~ /^https:\/\// || value ~ /[[:space:][:cntrl:]]/)) fail("HTTPS URL")
     }
-    types[path]=kind; values[path]=value; encoded[path]=raw; stack[depth]=path; previous=depth
-    children[parent]++
-    if (context=="release_ids") release_list=release_list key "\n"
-    if (context=="asset_ids") asset_list[parent]=asset_list[parent] key "\n"
-    if (context=="app_ids") app_list=app_list key "\n"
+    types[slot(path)]=kind; values[slot(path)]=value; encoded[slot(path)]=raw; stack[depth]=path; previous=depth
+    children[slot(parent)]++
+    if(path==query) {
+        found=1
+        if(operation=="get") {
+            if(kind=="map" || kind=="empty") fail("scalar query required")
+            printf "%s",value
+        }
+    }
+    if((operation=="releases" || operation=="assets" || operation=="apps") && parent==query) print key
+    if(context=="app_ids") { delete types[slot(path)]; delete values[slot(path)]; delete encoded[slot(path)] }
 }
 END {
     if (invalid) exit 2
+    close_nodes(0)
     required("","format schema")
-    if (!schema_url(values["/schema"])) fail("immutable schema URL")
-    for (p in types) if (types[p]=="map" && !children[p]) fail("use {} for empty mapping")
+    if (!schema_url(values[slot("/schema")])) fail("immutable schema URL")
     if ("/apps" in types) {
-        if (children[""]!=3) fail("app map root fields")
+        if (children[slot("")]!=3) fail("app map root fields")
     } else {
         required("","repository_id repository check_status")
-        if (values["/repository"] !~ /^[A-Za-z0-9-]+\/[A-Za-z0-9_.-]+$/) fail("repository name")
-        state=values["/check_status"]
+        if (values[slot("/repository")] !~ /^[A-Za-z0-9-]+\/[A-Za-z0-9_.-]+$/) fail("repository name")
+        state=values[slot("/check_status")]
         if (state!="ok" && state!="failed") fail("check status")
         if (("/releases" in types) != ("/checked_at" in types)) fail("observation/check time pairing")
         if (state=="ok") {
@@ -142,38 +190,10 @@ END {
             if ("/check_reason" in types) fail("reason on successful check")
         } else {
             required("","check_reason")
-            if (values["/check_reason"] !~ /^(rate_limited|transport|invalid_response|collection_limit)$/) fail("check reason")
+            if (values[slot("/check_reason")] !~ /^(rate_limited|transport|invalid_response|collection_limit)$/) fail("check reason")
         }
     }
-    for (p in records) {
-        if (records[p]=="release_ids") required(p,"tag url published_at prerelease assets")
-        else required(p,"name url size content_type")
-    }
-    if (operation=="validate") exit 0
-    if (operation=="get") {
-        if (!(query in types)) exit 3
-        if (types[query]=="map" || types[query]=="empty") fail("scalar query required")
-        printf "%s", values[query]; exit 0
-    }
-    if (operation=="rows") {
-        if (query !~ /^\/releases(\/[0-9]+\/assets)?$/) fail("collection path")
-        context=(query=="/releases" ? "release" : "asset")
-        count=split(ENVIRON["AM_YAML_FIELDS"],fields," ")
-        for (i=1;i<=count;i++) if (!rank(context,fields[i]) || fields[i]=="assets") fail("scalar projection field")
-        if (!(query in types)) exit 3
-        count_ids=split(query=="/releases" ? release_list : asset_list[query],ids,"\n")
-        for (i=1;i<=count_ids;i++) if (ids[i]!="") {
-            printf "%s",ids[i]
-            for (j=1;j<=count;j++) printf "\t%s",encoded[query "/" ids[i] "/" fields[j]]
-            printf "\n"
-        }
-        exit 0
-    }
-    if (operation=="releases") { if (!("/releases" in types)) exit 3; printf "%s",release_list; exit 0 }
-    if (operation=="apps") { if (!("/apps" in types)) exit 3; printf "%s",app_list; exit 0 }
-    if (operation=="assets") {
-        p="/releases" query "/assets"; if (!(p in types)) exit 3
-        printf "%s",asset_list[p]; exit 0
-    }
-    fail("unknown operation")
+    if(operation=="validate") exit 0
+    if(!found) exit 3
+    exit 0
 }

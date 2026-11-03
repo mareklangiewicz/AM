@@ -169,6 +169,23 @@ class Experiment(unittest.TestCase):
         self.assertEqual(self.run_reader(text, 'releases').returncode, 0)
         self.assertEqual(self.run_reader(text.replace('releases: {}', 'releases:')).returncode, 2)
 
+    def test_streaming_boundaries_and_refusal(self):
+        obj=repository(); first=obj['releases']['456']
+        first['assets']['790']=copy.deepcopy(first['assets']['789'])
+        obj['releases']['457']=copy.deepcopy(first)
+        text=self.accepted(obj)
+        bads=[text+'unknown: "x"\n',
+              text.replace('        size: 0\n','',1),
+              text.replace('    prerelease: false\n','',1),
+              text.replace('"790":','"789":',1),
+              text.replace('"457":','"456":',1)]
+        for bad in bads:
+            for command,keys in [('rows',('releases','tag')),('rows',('releases/456/assets','name')),('releases',()),('assets',('456',)),('get',('repository',))]:
+                result=self.run_reader(bad,command,*keys)
+                self.assertEqual((result.returncode,result.stdout),(2,b''),result.stderr)
+        result=self.run_reader(text,'get','releases','456','assets')
+        self.assertEqual((result.returncode,result.stdout),(2,b''))
+
     def test_large_integer_ids_are_exact(self):
         obj = repository(); r = obj['releases'].pop('456')
         obj['releases'] = {'9007199254740992': r, '9007199254740993': copy.deepcopy(r),

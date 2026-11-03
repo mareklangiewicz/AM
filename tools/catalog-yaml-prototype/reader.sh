@@ -28,4 +28,11 @@ done
 [ -f "$file" ] && [ -r "$file" ] || { echo 'catalog YAML: unreadable file' >&2; exit 2; }
 # A size check before awk bounds allocation; awk also caps consumed bytes.
 [ "$(wc -c < "$file")" -le 33554432 ] || { echo 'catalog YAML: file too large' >&2; exit 2; }
-AM_YAML_OPERATION=$operation AM_YAML_QUERY=$query AM_YAML_FIELDS=$fields awk -f "$(dirname "$0")/reader.awk" < "$file"
+# Spool privately: malformed suffixes never expose earlier query results.
+spool=$(mktemp) || exit 2
+trap 'rm -f "$spool"' 0
+trap 'exit 2' HUP INT TERM
+status=0
+AM_YAML_OPERATION=$operation AM_YAML_QUERY=$query AM_YAML_FIELDS=$fields awk -f "$(dirname "$0")/reader.awk" < "$file" > "$spool" || status=$?
+[ "$status" -eq 0 ] || exit "$status"
+cat "$spool"
