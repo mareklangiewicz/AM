@@ -53,8 +53,8 @@ function schema_url(s, a,n) {
         a[4] ~ /^[A-Za-z0-9-]+$/ && a[5] ~ /^[A-Za-z0-9_.-]+$/ &&
         length(a[6])==40 && a[6] !~ /[^0-9a-f]/ && a[7]=="docs" && a[8]=="catalog-format-v2.md"
 }
-# Reuse storage keys across records, including on awk implementations that retain
-# allocation associated with distinct deleted keys. Full paths remain query facts.
+# Reuse storage keys across records. This bounds logical bookkeeping keys;
+# measured process RSS can still grow. Full paths remain query facts.
 function slot(p, q) {
     q=p
     sub(/\/[0-9]+/,"/@",q); sub(/\/[0-9]+/,"/@",q)

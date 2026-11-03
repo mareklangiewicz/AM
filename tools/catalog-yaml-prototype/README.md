@@ -86,3 +86,12 @@ needs explicit projection-column/output bounds, temporary-storage failure tests,
 a bounded transfer path and measured operational budgets. Validation alone emits
 no data but currently still creates an empty spool. Synthetic record-count
 measurements do not establish performance for maximum-length strings.
+
+The resource result is mixed: mawk/GNU awk RSS stays roughly flat for the sampled
+record shapes, but BusyBox reaches about 53 MiB at 10,000 releases/80,000 assets.
+Fixed storage slots do not remove that growth and slow parsing; they are an
+experiment, not a recommended optimization. Do not claim portable constant RSS.
+`memory-results-path-keys.json` records the earlier exploratory variant; the main
+`memory-results.json` matches the fixed-slot source in this branch. No allocator
+or interpreter-level cause was established. Use measured file/resource ceilings,
+or investigate another reader strategy before production integration.
