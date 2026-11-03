@@ -201,6 +201,32 @@ class Experiment(unittest.TestCase):
         for i in ('1', '2', '10', '50', '100'):
             result = self.run_reader(text, 'get', 'releases', i, 'title')
             self.assertEqual((result.returncode, result.stdout), (0, expected[i].encode()))
+        rows = self.run_reader(text, 'rows', 'releases', 'title', 'updated_at')
+        self.assertEqual(rows.returncode, 0, rows.stderr)
+        self.assertEqual(len(rows.stdout.splitlines()), 100)
+        for line in rows.stdout.decode().split('\n')[:-1]:
+            key, title, unavailable = line.split('\t')
+            self.assertEqual(yaml.safe_load(title), expected[key])
+            self.assertEqual(unavailable, '')
+
+    def test_batch_projection_selection_and_absence(self):
+        obj = repository(); r = obj['releases']['456']
+        obj['releases']['457'] = dict(r, published_at='2026-11-03T00:00:00Z', prerelease=True)
+        text = self.accepted(obj)
+        rows = self.run_reader(text, 'rows', 'releases', 'published_at', 'prerelease')
+        self.assertEqual(rows.returncode, 0, rows.stderr)
+        choice = subprocess.run(['awk', '-F', '\t', '$3=="false" && $2>newest {newest=$2; id=$1} END {if(id!="") print id; else exit 1}'],
+                                input=rows.stdout, capture_output=True)
+        self.assertEqual((choice.returncode, choice.stdout), (0, b'456\n'))
+        assets = self.run_reader(text, 'rows', 'releases/456/assets', 'name', 'size', 'content_type', 'digest')
+        self.assertEqual(assets.returncode, 0, assets.stderr)
+        parts = assets.stdout.decode().rstrip('\n').split('\t')
+        self.assertEqual([yaml.safe_load(p) for p in parts[1:]], ["John's app #1.AppImage", 0, '', None])
+        for fields in [('assets',), ('unknown',)]:
+            result = self.run_reader(text, 'rows', 'releases', *fields)
+            self.assertEqual((result.returncode, result.stdout), (2,b''))
+        result = self.run_reader(text, 'rows', 'releases/999/assets', 'name')
+        self.assertEqual((result.returncode, result.stdout), (3,b''))
 
 
 def benchmark():
@@ -210,10 +236,16 @@ def benchmark():
     text = document(obj)
     start = time.monotonic()
     result = Experiment().run_reader(text)
+    validation_seconds = time.monotonic()-start
+    start = time.monotonic()
+    rows = Experiment().run_reader(text, 'rows', 'releases', 'published_at', 'prerelease')
+    rows_seconds = time.monotonic()-start
     print(json.dumps(dict(synthetic_releases=1000, synthetic_assets=8000,
-                          bytes=len(text.encode()), seconds=round(time.monotonic()-start, 4),
-                          exit=result.returncode, diagnostic=result.stderr.decode())), flush=True)
-    if result.returncode:
+                          bytes=len(text.encode()), validation_seconds=round(validation_seconds, 4),
+                          projection_seconds=round(rows_seconds, 4), projected_rows=len(rows.stdout.splitlines()),
+                          exit=result.returncode, projection_exit=rows.returncode,
+                          diagnostic=result.stderr.decode())), flush=True)
+    if result.returncode or rows.returncode or len(rows.stdout.splitlines()) != 1000:
         raise SystemExit(1)
 
 

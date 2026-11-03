@@ -118,7 +118,7 @@ BEGIN { operation=ENVIRON["AM_YAML_OPERATION"]; query=ENVIRON["AM_YAML_QUERY"]; 
         if (key ~ /_at$/ && !timestamp(value)) fail("timestamp")
         if ((key=="url" || key ~ /^source_.*_url$/) && (value !~ /^https:\/\// || value ~ /[[:space:][:cntrl:]]/)) fail("HTTPS URL")
     }
-    types[path]=kind; values[path]=value; stack[depth]=path; previous=depth
+    types[path]=kind; values[path]=value; encoded[path]=raw; stack[depth]=path; previous=depth
     children[parent]++
     if (context=="release_ids") release_list=release_list key "\n"
     if (context=="asset_ids") asset_list[parent]=asset_list[parent] key "\n"
@@ -154,6 +154,20 @@ END {
         if (!(query in types)) exit 3
         if (types[query]=="map" || types[query]=="empty") fail("scalar query required")
         printf "%s", values[query]; exit 0
+    }
+    if (operation=="rows") {
+        if (query !~ /^\/releases(\/[0-9]+\/assets)?$/) fail("collection path")
+        context=(query=="/releases" ? "release" : "asset")
+        count=split(ENVIRON["AM_YAML_FIELDS"],fields," ")
+        for (i=1;i<=count;i++) if (!rank(context,fields[i]) || fields[i]=="assets") fail("scalar projection field")
+        if (!(query in types)) exit 3
+        count_ids=split(query=="/releases" ? release_list : asset_list[query],ids,"\n")
+        for (i=1;i<=count_ids;i++) if (ids[i]!="") {
+            printf "%s",ids[i]
+            for (j=1;j<=count;j++) printf "\t%s",encoded[query "/" ids[i] "/" fields[j]]
+            printf "\n"
+        }
+        exit 0
     }
     if (operation=="releases") { if (!("/releases" in types)) exit 3; printf "%s",release_list; exit 0 }
     if (operation=="apps") { if (!("/apps" in types)) exit 3; printf "%s",app_list; exit 0 }

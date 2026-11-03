@@ -20,6 +20,8 @@ sh tools/catalog-yaml-prototype/reader.sh assets repository.yaml 456
 sh tools/catalog-yaml-prototype/reader.sh get repository.yaml releases 456 tag
 sh tools/catalog-yaml-prototype/reader.sh apps apps.yaml
 sh tools/catalog-yaml-prototype/reader.sh get apps.yaml apps obsidian
+sh tools/catalog-yaml-prototype/reader.sh rows repository.yaml releases published_at prerelease
+sh tools/catalog-yaml-prototype/reader.sh rows repository.yaml releases/456/assets name size digest
 ```
 
 Exit status: 0 success, 2 invalid file/query/usage, 3 absent field or collection.
@@ -48,7 +50,21 @@ general UTF-8 decoder. The Python experiment checks accepted fixtures against
 PyYAML and compares decoded objects and scalar query bytes.
 
 The parser stores paths and values, and each command scans the entire file.
-This is simple to demonstrate but repeated one-field queries are unsuitable for
-large-history selection loops. A production interface must measure a bulk
-projection/iteration operation against real consumer needs. Nothing here proves
-the complete new collector/consumer system simpler or faster yet.
+Repeated one-field queries are unsuitable for large-history selection loops.
+The experiment therefore adds `rows`: project requested scalar fields in one
+validated scan. It writes ID then TAB-separated canonical YAML scalar tokens;
+missing optional fields have an empty column, actual empty strings have `""`.
+Escapes remain encoded, so tabs/newlines inside a name cannot break row framing.
+This is ephemeral query output, not another published catalog representation.
+
+For example, the client rule "newest published non-prerelease" is:
+
+```sh
+sh tools/catalog-yaml-prototype/reader.sh rows repository.yaml releases published_at prerelease > rows.tmp || exit
+awk -F '\t' '$3=="false" && $2>newest {newest=$2; id=$1} END {if(id!="") print id; else exit 1}' rows.tmp
+```
+
+The conditional avoids using a shell pipeline that hides a reader failure.
+Fixed quoted timestamps compare in chronological order. No version or asset
+selection policy is built into the reader. Nothing here proves the complete new
+collector/consumer system simpler or faster yet.
