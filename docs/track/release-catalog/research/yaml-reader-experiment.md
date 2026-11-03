@@ -46,8 +46,8 @@ after ordinary Unicode fixtures passed.
 The branch proposes standard YAML `\N`, `\L`, `\P` escapes for those three code
 points, with literal forms forbidden. Three fixed decoder branches make both
 the shell reader and standard YAML parser preserve the original values. This is
-a proposed extension to the accepted five-escape grammar, not an unnoticed
-production change. Unsupported other control characters must cause normalization
+an extension to the original five-escape grammar, accepted by Marek after
+reviewing the experiment. Production remains unchanged. Unsupported other control characters must cause normalization
 failure; there is no silent rewriting. General UTF-8 validation remains the
 publisher's responsibility; the shell checks structure and selected forbidden
 byte forms rather than implementing a Unicode decoder.
@@ -105,8 +105,8 @@ that very large histories fit the existing collector/reader limits.
 ## Next work and boundaries
 
 The [schema draft](../../../catalog-format-v2.md) records exact trial fields,
-ordering, types and state relationships. Accept or revise the three extra escapes
-before production implementation. Then settle broader history/outlier budgets
+ordering, types and state relationships. Marek accepted the three extra escapes.
+Next settle broader history/outlier budgets
 and the reader's memory strategy, implement the normalized publisher and explicit
 consumer selection rules, and compare actual app behavior.
 

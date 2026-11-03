@@ -56,10 +56,11 @@ is explicit per repository and may be older than publication.
   ASCII byte order. Fields follow the order specified below. Duplicate, unknown
   and out-of-order keys are rejected.
 - All strings fit one physical line. The agreed escapes are `\"`, `\\`, `\n`,
-  `\r`, `\t`. **Proposed experimental extension:** `\N`, `\L`, `\P` represent
+  `\r`, `\t`. **Accepted extension:** `\N`, `\L`, `\P` represent
   Unicode U+0085/U+2028/U+2029. Literal Unicode line-break characters are rejected
   because YAML folding can change their values or adjacent whitespace. This
-  extension is pending acceptance; it is exercised by the prototype only.
+  extension was accepted by Marek after the round-trip experiment; it is
+  currently implemented in the prototype only.
 - Other ASCII/C1 control characters and U+FFFE/U+FFFF are not representable.
   Unsupported input fails source normalization; it must not be silently changed.
   Publisher validation enforces UTF-8 and YAML validity. The trial shell reader

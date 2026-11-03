@@ -103,3 +103,7 @@ The design frontier is ready for final shared-understanding confirmation. No par
 Marek confirmed shared understanding and authorized the schema/reader experiment ("yes, go ahead"). The prior pending-confirmation boundary is superseded. [Findings](yaml-reader-experiment.md) and [schema draft](../../../catalog-format-v2.md) are retained on main; prototype code is archived on research/yaml-reader-prototype at 8a3e5c623, not merged into production.
 
 Validation and queries fit in 210 lines of shell/awk. Eight test groups pass on mawk, GNU awk and BusyBox awk. The independent YAML parser revealed Unicode line-break folding: three additional fixed escapes \N/\L/\P are proposed, pending acceptance. A real large-history selection case justified an experimental batch projection operation; clients retain all policy. Per-file memory is linear and measured; production budgets/streaming strategy remain to be settled before integration.
+
+## Unicode escape extension accepted
+
+Marek accepted the proposed standard YAML escapes \N, \L, \P after reviewing the reader experiment. The allowed escape set is now quote, backslash, newline, carriage return, tab, NEL, Unicode line separator and Unicode paragraph separator. Literal forms of these Unicode line breaks remain forbidden to avoid YAML folding. The earlier pending-acceptance statements above are historical. Production resource/memory strategy and broader collection ceilings remain the next work; no production or remote mutation is implied by this acceptance.
