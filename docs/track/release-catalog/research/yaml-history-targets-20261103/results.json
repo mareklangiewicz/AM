@@ -1,0 +1,133 @@
+{
+  "started_at": "2026-11-03T17:26:11.225360+00:00",
+  "selection": "five explicit active histories; not random",
+  "inventory_repositories": 772,
+  "sample_size": 5,
+  "authenticated": true,
+  "limits": {
+    "calls": 24,
+    "body_bytes": 16777216,
+    "total_bytes": 100663296,
+    "seconds": 120
+  },
+  "rows": [
+    {
+      "repository_id": 16408992,
+      "pages": [
+        {
+          "page": 1,
+          "release_count": 56,
+          "bytes": 1270903,
+          "elapsed_seconds": 1.4242,
+          "last_page": null,
+          "has_next": false,
+          "rate_remaining": "4934"
+        }
+      ],
+      "page1_yaml_bytes": 165452,
+      "complete": true,
+      "estimated_pages": 1,
+      "measured_releases": 56,
+      "distinct_releases": 56,
+      "measured_assets": 537,
+      "projected_yaml_bytes": 165452
+    },
+    {
+      "repository_id": 984423768,
+      "pages": [
+        {
+          "page": 1,
+          "release_count": 77,
+          "bytes": 630406,
+          "elapsed_seconds": 1.2355,
+          "last_page": null,
+          "has_next": false,
+          "rate_remaining": "4933"
+        }
+      ],
+      "page1_yaml_bytes": 134411,
+      "complete": true,
+      "estimated_pages": 1,
+      "measured_releases": 77,
+      "distinct_releases": 77,
+      "measured_assets": 272,
+      "projected_yaml_bytes": 134411
+    },
+    {
+      "repository_id": 5736080,
+      "pages": [
+        {
+          "page": 1,
+          "release_count": 100,
+          "bytes": 2990084,
+          "elapsed_seconds": 2.4066,
+          "last_page": 2,
+          "has_next": true,
+          "rate_remaining": "4932"
+        },
+        {
+          "page": 2,
+          "release_count": 29,
+          "bytes": 545484,
+          "elapsed_seconds": 1.3742,
+          "last_page": null,
+          "has_next": false,
+          "rate_remaining": "4929"
+        }
+      ],
+      "page1_yaml_bytes": 635046,
+      "complete": true,
+      "estimated_pages": 2,
+      "measured_releases": 129,
+      "distinct_releases": 129,
+      "measured_assets": 1786,
+      "projected_yaml_bytes": 731186
+    },
+    {
+      "repository_id": 15379620,
+      "pages": [
+        {
+          "page": 1,
+          "release_count": 100,
+          "bytes": 1050271,
+          "elapsed_seconds": 1.337,
+          "last_page": 58,
+          "has_next": true,
+          "rate_remaining": "4931"
+        }
+      ],
+      "page1_yaml_bytes": 209592,
+      "complete": false,
+      "estimated_pages": 58,
+      "measured_releases": 100,
+      "distinct_releases": 100,
+      "measured_assets": 500,
+      "projected_yaml_bytes": 209592
+    },
+    {
+      "repository_id": 162045852,
+      "pages": [
+        {
+          "page": 1,
+          "release_count": 100,
+          "bytes": 218365,
+          "elapsed_seconds": 1.1124,
+          "last_page": 63,
+          "has_next": true,
+          "rate_remaining": "4930"
+        }
+      ],
+      "page1_yaml_bytes": 74941,
+      "complete": false,
+      "estimated_pages": 63,
+      "measured_releases": 100,
+      "distinct_releases": 100,
+      "measured_assets": 100,
+      "projected_yaml_bytes": 74941
+    }
+  ],
+  "calls": 6,
+  "total_bytes": 6705513,
+  "elapsed_seconds": 9.0173,
+  "stop_reason": null
+}

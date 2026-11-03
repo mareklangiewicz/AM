@@ -26,3 +26,13 @@ Marek confirmed the design and authorized the local experiment. [72 resolved](72
 ## Comments — escape extension accepted
 
 Marek accepted \N, \L and \P. The schema draft and findings now record acceptance. The interview no longer awaits that decision; remaining work concerns measured collection ceilings and reader memory strategy before production integration.
+
+## Comments — resource follow-up underway
+
+[73 resolved](73-bound-yaml-reader-memory.md): record-scoped validation and private
+output spooling preserve the contract, but portable constant RSS is not established. A [second random sample plus targeted histories](../research/yaml-history-outliers-20261103/findings.md)
+found active sources advertising 58 and 63 release pages; they were not fully
+acquired. A [concrete resource proposal](../research/yaml-resource-strategy.md)
+records candidate ceilings and the remaining exact-format, runner and scheduling
+gates. Candidate numbers are not accepted production budgets. No deployment,
+remote mutation, natural-run acceptance or installed-host delivery is implied.

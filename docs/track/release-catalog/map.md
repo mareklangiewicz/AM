@@ -98,6 +98,18 @@ pin both `d6e7421579d5a0f65588e39bb72995a675b9f08a`. No rollback or host deliver
 Tickets 47/49 remain partial only for eleven unchanged legacy exception paths
 (four redirects and one 404). Older operational boundaries below are historical.
 
+## Resource continuation — November 3, 2026
+
+[73 resolved](issues/73-bound-yaml-reader-memory.md): [reader memory experiment](research/yaml-reader-memory-experiment.md)
+preserves the contract, but BusyBox still reaches 54,360 KiB on a 16.38 MB fixture.
+Fixed storage slots do not fix that growth. Prototype source is local on
+research/yaml-reader-memory at ae1f216b4; production remains unchanged. [Wider and targeted history probes](research/yaml-history-outliers-20261103/findings.md)
+completed 48 additional random histories in 65 requests, and identified two active
+sources advertising 58/63 pages. Their full histories were deliberately not fetched.
+[Candidate resource strategy and ceilings](research/yaml-resource-strategy.md)
+remain proposals; aggregate request capacity and fair freshness need validation.
+No production integration, push, daily repin, natural-run acceptance or host change.
+
 ## Current continuation boundary
 
 **Current frontier (updated November 3, 2026):**
