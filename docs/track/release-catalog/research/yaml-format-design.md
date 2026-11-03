@@ -81,3 +81,10 @@ Marek accepted Q25–Q27:
 - Before any successful observation, publish source identity and failed-check status, omitting release data and checked_at. Later failures retain the previous complete observation and its original check time.
 
 Primary reference for separate paginated asset endpoint: https://docs.github.com/en/rest/releases/assets#list-release-assets . No explicit embedded-array completeness guarantee was established.
+
+## Settled timestamps, file identity and failure vocabulary
+
+Marek accepted Q28–Q30:
+- Quote fixed UTC whole-second timestamps, YYYY-MM-DDTHH:MM:SSZ. No redundant epoch fields; readers convert only when needed for freshness.
+- Repository YAML paths use stable numeric repository IDs (repositories/ID.yaml), with readable owner/name and numeric identity inside. App mapping provides navigation and aliases survive upstream renames.
+- Use small stable check_status/check_reason vocabularies, including distinguishable rate-limit, transport, invalid-response and collection-limit failures. Do not publish arbitrary error messages; detailed diagnostics remain in workflow logs.
