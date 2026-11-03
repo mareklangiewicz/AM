@@ -1,0 +1,19 @@
+format: 2
+schema: "https://raw.githubusercontent.com/example/AM/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/docs/catalog-format-v2.md"
+repository_id: 123
+repository: "example/app"
+checked_at: "2026-11-03T01:00:00Z"
+check_status: "ok"
+releases:
+  "456":
+    tag: "v2.0.0"
+    title: "Quotes \" and \\; café 中文 🐧\n\r\t\n"
+    url: "https://github.com/example/app/releases/tag/v2.0.0"
+    published_at: "2026-11-02T12:00:00Z"
+    prerelease: false
+    assets:
+      "789":
+        name: "John's app #1.AppImage"
+        url: "https://github.com/example/app/releases/download/v2.0.0/app?x=a:b#part"
+        size: 0
+        content_type: ""
