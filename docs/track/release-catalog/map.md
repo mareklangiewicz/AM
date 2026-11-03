@@ -102,9 +102,12 @@ Tickets 47/49 remain partial only for eleven unchanged legacy exception paths
 
 **Current frontier (updated November 3, 2026):**
 
-- [71 claimed: design simple YAML catalog](issues/71-design-simple-yaml-catalog.md).
-  Ongoing interview; clients own selection. Bounded read-only history-cost
-  measurement authorized; production changes await shared understanding.
+- [71 open: design simple YAML catalog](issues/71-design-simple-yaml-catalog.md).
+  Design confirmed and [72 reader experiment resolved](issues/72-prove-yaml-reader-feasibility.md).
+  See [findings](research/yaml-reader-experiment.md): strict validation is feasible;
+  proposed Unicode escapes and production resource strategy remain open.
+  Prototype archived on research/yaml-reader-prototype at 8a3e5c623; production
+  remains unchanged.
 
 - [70 resolved](issues/70-diagnose-installed-obsidian-clock-refusal.md): original
   terminal uses affected uutils date 0.10.0; normal module sync delivered the

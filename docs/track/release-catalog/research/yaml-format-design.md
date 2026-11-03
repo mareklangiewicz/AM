@@ -97,3 +97,9 @@ Marek accepted Q31–Q33:
 - A single pinned Git commit identifies a client command's snapshot; fetch all its files from that commit via GitHub HTTPS. Remove per-catalog-body hashes/sizes and redundant JSON/TSV representations. Retain transfer limits and structural validation; upstream asset digests remain facts.
 
 The design frontier is ready for final shared-understanding confirmation. No parser experiment or production implementation has begun.
+
+## Confirmed checkpoint and completed reader experiment
+
+Marek confirmed shared understanding and authorized the schema/reader experiment ("yes, go ahead"). The prior pending-confirmation boundary is superseded. [Findings](yaml-reader-experiment.md) and [schema draft](../../../catalog-format-v2.md) are retained on main; prototype code is archived on research/yaml-reader-prototype at 8a3e5c623, not merged into production.
+
+Validation and queries fit in 210 lines of shell/awk. Eight test groups pass on mawk, GNU awk and BusyBox awk. The independent YAML parser revealed Unicode line-break folding: three additional fixed escapes \N/\L/\P are proposed, pending acceptance. A real large-history selection case justified an experimental batch projection operation; clients retain all policy. Per-file memory is linear and measured; production budgets/streaming strategy remain to be settled before integration.

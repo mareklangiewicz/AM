@@ -1,6 +1,6 @@
 # YAML catalog design — shared-understanding checkpoint
 
-Status: design decisions individually accepted; final shared-understanding confirmation pending.
+Status: shared understanding confirmed by Marek; schema/reader experiment completed. See [findings](yaml-reader-experiment.md) for the proposed escape extension and remaining resource-policy work.
 
 ## Published model
 
