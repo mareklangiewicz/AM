@@ -15,5 +15,5 @@ Q21 authorizes a bounded read-only measurement of release-history request cost, 
 ## Remaining
 
 - Bounded history measurement completed; full published release history chosen, subject to explicit ceilings. Finalize ceilings using broader evidence.
-- Settle failure handling, optional values, schema details, reader interface, and remaining design branches.
+- Policy interview decisions settled; see [consolidated review](../research/yaml-catalog-design-review.md). Exact grammar and budgets are the next experiments after confirmation.
 - Confirm shared understanding before implementation or reader prototype.

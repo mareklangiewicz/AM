@@ -88,3 +88,12 @@ Marek accepted Q28–Q30:
 - Quote fixed UTC whole-second timestamps, YYYY-MM-DDTHH:MM:SSZ. No redundant epoch fields; readers convert only when needed for freshness.
 - Repository YAML paths use stable numeric repository IDs (repositories/ID.yaml), with readable owner/name and numeric identity inside. App mapping provides navigation and aliases survive upstream renames.
 - Use small stable check_status/check_reason vocabularies, including distinguishable rate-limit, transport, invalid-response and collection-limit failures. Do not publish arbitrary error messages; detailed diagnostics remain in workflow logs.
+
+## Settled archives, reader interface and snapshot trust
+
+Marek accepted Q31–Q33:
+- Preserve GitHub-generated source archive URLs as source_zip_url/source_tar_url when supplied, distinct from uploaded assets.
+- Shared reader supports validation, release/asset ID listing one per line, and named scalar lookup with decoding. Missing fields have a distinct nonzero result; false, zero and empty string are valid. Add batching only for demonstrated consumer needs.
+- A single pinned Git commit identifies a client command's snapshot; fetch all its files from that commit via GitHub HTTPS. Remove per-catalog-body hashes/sizes and redundant JSON/TSV representations. Retain transfer limits and structural validation; upstream asset digests remain facts.
+
+The design frontier is ready for final shared-understanding confirmation. No parser experiment or production implementation has begun.
