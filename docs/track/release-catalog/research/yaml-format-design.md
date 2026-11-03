@@ -72,3 +72,12 @@ Marek accepted Q22–Q24:
 - Omit unavailable optional fields. Empty quoted strings represent actual empty values; do not introduce YAML null as another scalar type.
 
 Open next: asset-list completeness, first-observation failures, pagination consistency limits, reader interface and remaining scalar/schema details. Exact production ceilings remain to be chosen using broader measurements.
+
+## Settled asset observation and empty/unavailable cases
+
+Marek accepted Q25–Q27:
+- Publish embedded asset lists from release responses initially, without additional per-release asset requests. Document that full history means complete release pagination, not independently audited embedded-asset completeness. Revisit if truncation evidence appears.
+- Permit exactly {} for an empty mapping: releases: {} means a successful observation found no releases; assets: {} means no assets were returned. Optional unavailable scalar fields are omitted.
+- Before any successful observation, publish source identity and failed-check status, omitting release data and checked_at. Later failures retain the previous complete observation and its original check time.
+
+Primary reference for separate paginated asset endpoint: https://docs.github.com/en/rest/releases/assets#list-release-assets . No explicit embedded-array completeness guarantee was established.

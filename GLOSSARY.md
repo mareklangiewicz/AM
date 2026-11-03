@@ -19,3 +19,6 @@ The time a source's catalog observation was last successfully validated against 
 
 **Publication time**:
 The time a catalog snapshot was published, distinct from the check times of its sources.
+
+**Complete release observation**:
+An observation acquired by reaching the end of the source's published release pagination. It does not assert a transactional snapshot or independently verified completeness of embedded asset lists.
