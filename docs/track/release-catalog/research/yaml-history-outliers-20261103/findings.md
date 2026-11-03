@@ -1,5 +1,9 @@
 # Wider history sample and targeted tails — November 3, 2026
 
+Historical evidence at the recorded schema/source revision. The [retention revision](../yaml-retention-revision.md)
+supersedes mandatory full-history/default costs and repository check-time freshness.
+Old fixtures and measurements are not validation of the revised schema.
+
 ## Observed result
 
 A second deterministic uniform sample of 48 distinct active repository identities,

@@ -1,5 +1,17 @@
 # Release observations exploration brief
 
+## Current YAML collection revision — November 3, 2026
+
+For format-2 design, [scoped retained observations](research/yaml-retention-revision.md)
+and [the schema](../../catalog-format-v2.md) supersede older raw-response,
+replacement-window and mandatory full-history assumptions below. Scheduled scope
+is all configured sources, one page of 100 releases; manual runs parameterize
+source subset, page size 1–100 and positive page limit or all. Merge successful
+fetched records, preserve unfetched records, and use per-release observed_at for
+installation freshness. Safety-budget exhaustion before requested-scope completion
+fails atomically for that source. Repository scope/time and publication do not
+refresh untouched releases. No deployment, dispatch, push or repin is authorized.
+
 Status: exploratory, subject to evidence and revision.
 
 Investigate a shared catalog of observed upstream release metadata for AM, eliminating reliance on third-party API proxies. Keep version ordering and asset selection in consumers. Potential reuse by Portable Linux Apps is a motivation, not an integration commitment.

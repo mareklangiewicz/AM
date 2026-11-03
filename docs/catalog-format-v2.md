@@ -1,7 +1,8 @@
 # Catalog YAML format 2 — experiment draft
 
-Status: local design draft, not a deployed format. The prototype is captured on
-the `research/yaml-reader-prototype` branch under `tools/catalog-yaml-prototype/`.
+Status: local design draft, not a deployed format. The revised retained-observation prototype is on
+`research/yaml-retained-observations` under `tools/catalog-yaml-prototype/`.
+Earlier reader/resource branches describe the superseded full-history model.
 The production catalog and reader still use format 1. Detailed experiment results
 are in [the findings](track/release-catalog/research/yaml-reader-experiment.md).
 
@@ -33,8 +34,10 @@ repository and 40-character lowercase hexadecimal source revision. Readers
 recognize the format locally; they do not download the schema. A file's path ID
 must agree with `repository_id`; the publisher checks app-map references.
 
-Git publication commit time represents publication time. Source validation time
-is explicit per repository and may be older than publication.
+Git publication commit time represents publication time. Repository collection
+metadata describes collection scope and timing; each retained release separately
+records its own observation time. Neither collection nor publication time proves
+that an untouched release was reobserved.
 
 ## Exact YAML subset
 
@@ -80,21 +83,49 @@ Fields occur in this order; `?` means omit if unavailable/inapplicable:
 | schema | string | Immutable description URL |
 | repository_id | positive integer | Stable numeric upstream identity |
 | repository | string | Readable owner/name |
-| checked_at? | timestamp | Last successful complete release validation |
-| check_status | string | `ok` or `failed` |
-| check_reason? | string | Failure reason, only with `failed` |
-| releases? | mapping | Quoted release IDs to release records |
+| collection | mapping | Most recent attempt for this repository |
+| last_success? | mapping | Most recent successfully completed requested scope |
+| releases? | mapping | Retained release records, merged across successful collections |
 
-Timestamps are quoted UTC `YYYY-MM-DDTHH:MM:SSZ`, with whole-second precision
-and valid calendar dates. The trial supports years 1970–9999. There are no
-duplicate epoch fields. Optional missing facts differ from empty strings.
+`collection` fields in order: `attempted_at` (timestamp), `page_size` (integer
+1–100), `page_limit` (positive integer or quoted `"all"`), `reconcile`
+(boolean; true requires explicit `"all"`), `status` (`"ok"` or
+`"failed"`), `reason?` (string required only on failure). Reasons are
+`rate_limited`, `transport`, `invalid_response`, `collection_limit`; arbitrary
+diagnostics stay in logs. Source subsets are validated against configured numeric
+identities at command entry; an unselected repository's file is unchanged.
 
-A successful check requires `checked_at` and `releases`, and omits `check_reason`.
-An empty successful history is `releases: {}`. A failed check retains the previous
-complete observation and its check time, if any. With no successful observation,
-both `checked_at` and `releases` are absent. The trial reason vocabulary is
-`rate_limited`, `transport`, `invalid_response`, `collection_limit`; detailed
-diagnostics remain in workflow logs, not arbitrary catalog error strings.
+`last_success` fields in order: `completed_at` (timestamp), `page_size` (integer
+1–100), `page_limit` (positive integer or quoted `"all"`), `reconcile`
+(boolean), `pages_fetched`
+(positive integer), `history_complete` (boolean). These describe that successful
+collection, not the total retained history. A finite scope starts at page 1 and
+completes on its page limit or an earlier end of pagination. With finite limits,
+`pages_fetched <= page_limit`; stopping below the limit requires
+`history_complete: true`. `"all"` succeeds only with `history_complete: true`.
+An empty response still counts as one fetched page. Even a finite limit can reach
+the end of history; `history_complete` reports that fact independently of intent.
+
+`last_success` and `releases` are either both present or both absent. A successful
+attempt requires both, matching page size/limit/reconcile between the attempt and success,
+and no reason. With no successful collection yet, a failure omits both. Later
+failures preserve both exactly, including every per-release observation time;
+only current attempt metadata changes. Each repository commits staged changes
+atomically after the entire requested scope and merged catalog pass validation
+and resource budgets. Other successful sources need not roll back if one fails.
+An unattempted source is left unchanged; aggregate exhaustion must be reported
+for requested sources that were not attempted, without inventing an attempt time.
+
+Timestamps are quoted UTC `YYYY-MM-DDTHH:MM:SSZ`, whole-second precision, valid
+calendar dates, years 1970–9999 in the trial. No duplicate epoch fields. Completion
+must not precede attempt time on success. Every release observation must be no
+later than the last successful completion time. Failed-attempt timestamps do not
+refresh the previous observation. Clock regressions that invalidate these
+relationships fail the attempt rather than minting misleading freshness.
+
+A successful empty fetch retains prior records. `releases: {}` means the retained
+set is empty (for example, an initially empty repository), not that a partial
+fetch proved every previously observed release absent.
 
 ## Release and asset records
 
@@ -102,6 +133,7 @@ Release fields, in order:
 
 | Field | Type | Meaning |
 | --- | --- | --- |
+| observed_at | timestamp | Last response inclusion of this release in a successful committed collection |
 | tag | string | Upstream tag |
 | title? | string | Release name, omitted if unavailable |
 | url | string | HTTPS release page URL |
@@ -119,11 +151,48 @@ facts; the catalog does not infer an architecture or select a preferred asset.
 Names and content types can be actual empty strings; an unavailable digest is
 omitted. Release notes, author profiles and unused response fields are omitted.
 
-Collect all published release pages, including prereleases and excluding drafts.
-No separate GitHub latest request. Explicit request/byte/runtime ceilings may
-prevent completing a source; mark failure and retain the previous observation.
-Reject detectable pagination inconsistencies such as duplicate release IDs.
-The result is not a transactional snapshot across mutable upstream pages.
+## Requested collection and retention
+
+Collection parameters are a configured source subset (default all), page size
+1–100 (default 100), and page limit as a positive count or `all` (default 1).
+Scheduled collection defaults to all configured sources, one page of 100
+published releases, including prereleases and excluding drafts. Manual runs can
+request other subsets, page sizes and page limits. There is no separate GitHub
+latest request, and page order is not a client selection guarantee.
+
+Explicit request, response-byte, total-byte and time budgets apply independently
+of requested scope, even with `all`. Completing the limited requested scope is
+success despite unvisited pages. Hitting a safety budget before completing it is
+failure. Reject duplicate release IDs across fetched pages, malformed data and
+detectable pagination inconsistencies. A failure after one good page commits no
+staged release updates and advances no retained timestamps. Do not label a
+budget-truncated `all` request as a successful limited request.
+
+Merge fetched releases by numeric release ID into retained records. Replace a
+fetched release's normalized facts and complete embedded-asset mapping with its
+new response values, removing optional fields/assets no longer supplied for that
+release. Preserve unfetched releases exactly. A release's `observed_at` is the
+UTC time the response containing it was received (after the body was acquired),
+not the attempt start, normalization completion or publication time. Commit it
+only if the requested scope succeeds. An unchanged release included in a fresh
+response is reobserved; mere absence, a 304 without a release body, or reuse of
+cached facts cannot advance `observed_at`. Drafts are not merged as published
+release facts. Selection and freshness use retained facts, not upstream page
+position or recent collection status.
+
+Absence from a partial fetch never deletes a release. Full-history absence is
+not a transactional deletion proof. The reconciliation policy is specified in
+[the retention revision](track/release-catalog/research/yaml-retention-revision.md);
+default retention applies even after full history; explicit `reconcile: true`
+removes absent IDs only after a successful `"all"` scope. The last-success flag
+records whether reconciliation was requested. A finite scope with reconciliation
+is rejected before acquisition, even if it could reach EOF. Successful empty full
+reconciliation removes all retained releases; any failure rolls back deletions as
+well as updates. No eviction may silently bound
+retained size: if the staged merged document exceeds its limit, fail and retain
+the previous observation. Catalog size, line length, client memory and spool
+output remain independently bounded; one-page acquisition does not bound the
+size of an accumulated retained catalog.
 
 Assets are the lists embedded in release responses, without extra per-release
 asset requests. Complete release pagination does not assert independently audited
@@ -165,6 +234,9 @@ chosen record. Repeated individual scalar invocations are not an efficient
 large-history selection loop.
 
 The reader supplies facts. Clients apply freshness policy: initially the existing
-48-hour installation rule and explicit stale override, while browsing can display
-older observations with status. Publication and exact source repin are separate
+48-hour installation rule and explicit stale override, measured against the
+selected release's `observed_at`. A recently collected repository or newly
+published catalog cannot make an older untouched release fresh. Clients can
+select an older stable release directly from the current catalog; stale policy
+still applies to that record. Browsing can display older observations with status. Publication and exact source repin are separate
 operations; this draft does not authorize deployment.

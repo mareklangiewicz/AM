@@ -1,5 +1,20 @@
 # Release catalog exploration
 
+## Current design — scoped retention, November 3, 2026
+
+[74 resolved](issues/74-revise-scoped-retained-catalog.md) applies Marek's
+[retained-observation revision](research/yaml-retention-revision.md). This supersedes
+mandatory full-history and replacement-only windows throughout historical entries.
+Scheduled default: all sources, one page of 100 releases. Parameterized scopes
+merge successful fetched records into retention; untouched releases keep their
+observed_at, which determines selected-release installation freshness. Safety
+budgets and retained-size/reader-memory bounds remain required. Reconciliation is
+explicit all-only in the local proposal. Schema and experiments are local only;
+no deployment, dispatch, push or repin is authorized.
+Sixteen test groups pass on all three awk tools. Prototype source is local on
+research/yaml-retained-observations at 4600ae084; production memory/CPU bounds
+remain unproven for the revised schema.
+
 ## Notes
 
 Work in Marek's active AM fork, on main-marek. Goal: find a simple reliable approach, evolve it through experiments, then propose it upstream. This map and tickets are intentionally tracked by Git.

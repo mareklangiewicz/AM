@@ -1,5 +1,9 @@
 # Catalog YAML design interview
 
+Current authority: [November 3 retained-observation revision](yaml-retention-revision.md).
+This is a chronological record; the latest revision supersedes mandatory full
+history, replacement-only windows and repository-time installation freshness below.
+
 Provisional design constraints agreed with Marek on November 2, 2026.
 This records design discussion; implementation awaits shared-understanding confirmation.
 
@@ -107,3 +111,25 @@ Validation and queries fit in 210 lines of shell/awk. Eight test groups pass on 
 ## Unicode escape extension accepted
 
 Marek accepted the proposed standard YAML escapes \N, \L, \P after reviewing the reader experiment. The allowed escape set is now quote, backslash, newline, carriage return, tab, NEL, Unicode line separator and Unicode paragraph separator. Literal forms of these Unicode line breaks remain forbidden to avoid YAML folding. The earlier pending-acceptance statements above are historical. Production resource/memory strategy and broader collection ceilings remain the next work; no production or remote mutation is implied by this acceptance.
+
+## Scoped collection and retained observations — user revision, November 3
+
+Marek explicitly revised the design: parameterize source subset, page_size 1–100
+and positive page_limit or all. Scheduled defaults are all configured sources,
+one page of 100 releases. Completing the requested scope succeeds; safety budget
+exhaustion before completion fails and preserves previous observations.
+
+Merge fetched release records into retained records, replacing fetched facts and
+preserving unfetched releases. Add per-release observed_at for the last actual
+upstream-response inclusion committed after scope success. Untouched records
+keep their own timestamps. Repository collection scope/time and publication time
+are separate; installations use the selected release's observation time. Older
+stable releases remain directly selectable from the current catalog.
+
+Partial absence never deletes records. [The reconciliation proposal](yaml-retention-revision.md)
+retains by default and allows explicit reconciliation only with successful all
+scope. Size, reader-memory and spool bounds remain required. These instructions
+supersede Q22's mandatory full-history collection, replacement-only windows and
+source check time as a freshness proxy. The accepted facts/selection boundary,
+strict YAML grammar and embedded-asset scope remain in force. Authorization is
+local design and experiments only; no deployment, dispatch, push or repin.

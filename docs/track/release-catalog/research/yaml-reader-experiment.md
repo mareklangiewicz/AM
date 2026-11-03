@@ -1,5 +1,9 @@
 # YAML reader experiment — November 3, 2026
 
+Historical evidence at the recorded schema/source revision. The [retention revision](yaml-retention-revision.md)
+supersedes mandatory full-history/default costs and repository check-time freshness.
+Old fixtures and measurements are not validation of the revised schema.
+
 ## Verdict
 
 Strict structure validation and useful fact queries fit in 31 lines of POSIX

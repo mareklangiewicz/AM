@@ -1,99 +1,84 @@
-# YAML resource strategy — measured proposal, November 3, 2026
+# YAML resource strategy — scoped retention revision, November 3, 2026
 
-Status: research recommendation, not an accepted production budget or deployment.
-Ticket 71 remains open. Preserve the accepted complete-history/failure model.
+Status: trial proposals, not deployed budgets. [Current retention design](yaml-retention-revision.md)
+supersedes this document's earlier mandatory full-history assumptions. Ticket 71
+remains open for bounded implementation and operational measurements.
 
-## Consumer strategy
+## Consumer
 
-Prefer one-pass record-scoped validation with private output spooling over a
-whole-document object store. Validate required fields as each asset/release
-closes, keep previous sibling IDs to enforce strict ordering, and discard closed
-facts. Keep full paths for query matching; fixed storage slots gave no measured benefit.
-The schema's fixed depth and fixed field sets permit bounded logical live state,
-but BusyBox process RSS still grows on the large fixture.
-The private spool holds query output until EOF and root-state validation succeed.
-There is no second read of a mutable input, and malformed suffixes expose no
-query output. An interrupted output copy can still produce partial bytes; callers
-must check status. The [completed experiment](yaml-reader-memory-experiment.md) supports the contract
-but does not establish portable constant RSS. Production resource/failure tests
-remain necessary.
+Keep record-scoped validation and private output spooling so malformed suffixes
+expose no query output. The [memory experiment](yaml-reader-memory-experiment.md)
+found roughly flat RSS on mawk/GNU awk for tested shapes, but BusyBox reached
+54,360 KiB on a 16.38 MB fixture. Fixed storage slots gave no memory benefit.
+The revised observation/scope schema has not received that full resource matrix;
+do not treat the old measurements as a worst-case bound for the new reader.
 
-Do not transplant the prototype wrapper unchanged. Production needs bounded
-network acquisition into a private file, private temporary directory/cleanup,
-explicit disk/write failure handling and output bounds. Limit projections to
-schema fields without repeated columns (at most nine release scalar fields or
-five asset fields). Budget each command's input and output separately. Keep
-validation and decoding shared with scalar lookups. Repeated per-field scans
-remain the wrong selection loop; use a batch projection.
+Bound acquired input bytes, line size, process memory, projected output and
+private temporary storage independently. Restrict batch columns to schema scalar
+fields without duplicates (now ten release scalar fields, five asset fields).
+Test write failures, storage exhaustion, maximum string/row lengths and malformed
+input. Callers must still check status after copying validated output.
 
-## Collector strategy
+## Incremental collector
 
-Normalize each bounded API page promptly and discard raw JSON after checking it.
-Retain only bounded normalized facts plus release-ID bookkeeping; sort numeric
-IDs before final output. A temporary directory can hold staged normalized records
-if a bounded in-memory representation exceeds the measured worker allocation.
-Never collect all raw pages in RAM as the measurement script does. Measure Python
-JSON expansion and normalization CPU at the response and document ceilings.
+Normalize each bounded page, discard its raw response, and stage a merge with the
+previous retained catalog. Keep unfetched records unchanged and replace fetched
+records with their actual response observation times. Commit per source only
+after requested scope completion, normalization, merged-document validation and
+all resource bounds pass. A safety stop before completion is `collection_limit`;
+no staged fact/timestamp changes survive. A completed finite scope succeeds even
+if more upstream pages exist. A completed empty page does not erase retained data.
 
-A source is successful only after reaching the end of published release pagination
-and passing normalization/validation. Exhausting any source or aggregate ceiling
-is `collection_limit`: retain the previous complete observation and check time,
-or publish failed-before-first-observation. Do not publish a truncated history as
-success. Embedded assets retain the accepted as-returned scope.
+Default scheduled scope: all configured sources, page_size=100, page_limit=1.
+Manual requests can select other subsets and limits, including `all`, always
+under explicit safety budgets. Resource limits never implicitly rewrite scope.
+Partial absence never prunes records. Explicit full-history reconciliation follows
+the retention policy; no automatic count/age eviction is part of collection.
 
-## Concrete candidate limits for the next integration experiment
+## Candidate ceilings for a local integration trial
 
-These values deliberately define a bounded trial, not guaranteed inventory
-coverage. All units below are binary MiB/KiB. They require exact-format measurements
-and tests before adoption.
+These are proposed guardrails, not accepted production budgets or guarantees.
+They must apply to input and the retained merge, not just the latest page.
 
-| Scope | Candidate trial ceiling | Reason / unresolved cost |
+| Safety scope | Candidate ceiling | Required evidence |
 | --- | --- | --- |
-| Per-source page requests | 64, no retries initially | Accommodates advertised 58/63-page tails; future growth can still exceed it |
-| One response body | 16 MiB | Wider sample maximum 4.59 MB; JSON memory expansion remains unmeasured |
-| Aggregate raw bytes per source | 96 MiB | Finite upper transfer bound; the two long histories were not fully measured |
-| Normalized repository YAML | 16 MiB | Consumer stress fixture is 16.38 MB; real tail documents still need exact measurement |
-| Physical YAML line | 64 KiB | Preserve existing trial bound; maximum-length scalar CPU still needs measurement |
-| Aggregate page attempts per scheduled collection | 900 | Proposed operational allowance, not a claim about current credential quota; must reserve capacity for actual other API calls and honor live limits |
-| Aggregate raw transfer per scheduled collection | 1 GiB | Explicit stop bound; neither random sample proves the full inventory fits |
-| Source / collection elapsed time | 120 s / 20 min | Candidate initiation and operation deadlines need actual runner validation |
+| Per-source page attempts | 64 | Separate from requested limit; a larger request fails if it cannot reach EOF within this guard |
+| One response body | 16 MiB | JSON memory amplification/normalization CPU still unmeasured at the boundary |
+| Aggregate raw source bytes | 96 MiB | Manual long-history behavior still needs exact-format measurement |
+| Merged repository YAML | 16 MiB | Accumulation can exceed this even with one-page requests; fail without silent eviction |
+| Physical YAML line | 64 KiB | Maximum-string CPU and allocation need measurement |
+| Aggregate page attempts per run | 900 | Recount configured sources; reserve other calls and obey actual credential limits |
+| Aggregate raw transfer per run | 1 GiB | Default one-page bytes and retained-merge costs need actual runner measurements |
+| Source / run elapsed time | 120 s / 20 min | Enforce actual deadlines; fixture simulation is not runtime enforcement |
 
-A source budget must reserve its advertised remaining pages against the aggregate
-allowance before acquiring them. Check subsequent pagination too; Link counts can
-change. Page-count reservation cannot prove byte/time fit. Account failed attempts
-against the run budget. Stop acquisition on auth/rate refusals and retain facts.
+For the recorded 772-identity inventory the default is 772 first-page attempts,
+not the earlier full-history extrapolation of about 976. This does not establish
+that all bytes, processing or credential quota fit. Request budgets count failed
+attempts; no retries initially. For manual wider scopes, reserve only the requested
+remaining pages (or advertised pages for `all`), not the source's full history
+when the request is limited. Continue validating changing pagination metadata.
+Stop on auth/rate refusals; preserve observations and report unattempted sources.
 
-The aggregate allowance is intentionally below a nominal 1,000-request envelope;
-verify the real workflow credential quota and all non-release API calls instead
-of inheriting the local credential's observed 5,000-scale remainder. The two
-random samples extrapolate to roughly 836 and 1,045 requests respectively; the
-pooled sample gives roughly 976. None establishes daily full-inventory feasibility.
-The 58/63-page targeted sources make a single normal refresh materially costlier
-than one-request-per-source reasoning suggests.
+If aggregate capacity is insufficient, test fair ordering based on last successful
+collection with explicit first-observation handling. It governs scope scheduling,
+not release freshness. A daily one-page success can coexist with very old retained
+releases; this is expected. Installation must judge the selected release's
+`observed_at`. Manual deeper collection may refresh it, or the existing explicit
+stale override may be required. Never mint fresh timestamps to compensate for
+budget or coverage limitations.
 
-A fixed inventory order risks starving later sources whenever an aggregate cap is
-hit. Before integration, implement and test deterministic oldest-successful-check
-priority with explicit first-observation handling, and prove retained failures do
-not reset that priority. A source whose advertised history exceeds its own ceiling
-must be reported distinctly, without wasting its page budget on every attempt.
-If fair bounded daily runs cannot keep successful checks within the existing
-48-hour installation freshness rule, the trial is unacceptable: revisit cadence,
-budget or collection acquisition strategy. Do not quietly alter freshness or
-replace full histories with a release window.
+## Retention growth and remaining gates
 
-## Remaining gates
+One-page acquisition bounds fetched input records, not accumulated history.
+Measure repeated partial merges across many days, including many new IDs and
+large embedded asset sets. Measure peak staging and reader memory with a nearly
+full retained document plus fetched updates. A merged-size refusal preserves the
+previous observation, potentially leaving even recent releases unrefreshed until
+maintenance succeeds. Full reconciliation may shrink retention but is itself a
+bounded explicit collection; it cannot bypass acquisition/staging guards.
 
-1. The reader resource experiment is complete: BusyBox RSS grows despite record
-   disposal. Stress maximum string lengths, spool limits,
-   temporary-storage exhaustion and reader transfer failures before production.
-2. Measure the two detected long histories within explicit separate bounds using
-   the actual serializer. Determine source bytes, document bytes and runner cost.
-3. Inventory-wide page-count evidence or a staged bounded refresh is needed to
-   size run budgets and freshness capacity. Samples do not rule out larger tails.
-4. Implement local normalization/selection migration only after the budgets and
-   scheduling proposal are settled. Review exact source publication and daily
-   repin separately. This document authorizes no remote mutation or host delivery.
-
-Evidence: [wider and targeted history probes](yaml-history-outliers-20261103/findings.md),
-[original reader experiment](yaml-reader-experiment.md), and ticket 73's memory
-follow-up. Natural November 3 run acceptance remains a separate operational task.
+The earlier 58/63-page tail probes inform manual `all` and reconciliation costs.
+They no longer imply mandatory daily costs. Before implementation, measure the
+revised serializer, worst-case scalar/projection sizes, default runner capacity,
+retained-growth behavior and actual resource enforcement. Budget/fairness choices
+remain proposals; no deployment, workflow dispatch, push or source repin follows.

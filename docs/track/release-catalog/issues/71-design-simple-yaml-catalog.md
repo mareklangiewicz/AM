@@ -14,7 +14,7 @@ Q21 authorizes a bounded read-only measurement of release-history request cost, 
 
 ## Remaining
 
-- Bounded history measurement completed; full published release history chosen, subject to explicit ceilings. Finalize ceilings using broader evidence.
+- Collection revised to configurable scopes and retained merges; scheduled default is all sources, one page of 100. Finalize independent safety and retained-size budgets.
 - Policy interview decisions settled; see [consolidated review](../research/yaml-catalog-design-review.md). Exact grammar and budgets are the next experiments after confirmation.
 - Shared understanding confirmed; schema/reader experiment completed in ticket 72.
 - Unicode escape extension accepted; settle production resource strategy and collection ceilings before integration.
@@ -36,3 +36,14 @@ acquired. A [concrete resource proposal](../research/yaml-resource-strategy.md)
 records candidate ceilings and the remaining exact-format, runner and scheduling
 gates. Candidate numbers are not accepted production budgets. No deployment,
 remote mutation, natural-run acceptance or installed-host delivery is implied.
+
+## Current design revision — retained observations
+
+Marek's [explicit revision](../research/yaml-retention-revision.md) supersedes
+mandatory full-history collection and replacement-only windows. Per-release
+observed_at controls installation freshness; successful limited collections merge
+fetched records without touching unfetched facts/times. Repository attempt and
+last-success metadata record scope separately. [74 resolved](74-revise-scoped-retained-catalog.md)
+updates the schema and offline experiments. The reconciliation policy is an
+explicit all-only local proposal, defaulting to retention. Resource ceilings,
+retained-growth tests and production integration remain open; no remote mutation.
