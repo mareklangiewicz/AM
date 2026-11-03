@@ -36,8 +36,10 @@ function decode(s, out,i,c,e) {
     return out
 }
 function rank(context,key, fields,a,n,i) {
-    if (context=="root") fields="format schema repository_id repository checked_at check_status check_reason releases apps"
-    else if (context=="release") fields="tag title url created_at published_at updated_at prerelease source_zip_url source_tar_url assets"
+    if (context=="root") fields="format schema repository_id repository collection last_success releases apps"
+    else if (context=="release") fields="observed_at tag title url created_at published_at updated_at prerelease source_zip_url source_tar_url assets"
+    else if (context=="collection") fields="attempted_at page_size page_limit reconcile status reason"
+    else if (context=="last_success") fields="completed_at page_size page_limit reconcile pages_fetched history_complete"
     else if (context=="asset") fields="name url size content_type digest"
     else return 0
     n=split(fields,a," "); for(i=1;i<=n;i++) if(a[i]==key) return i
@@ -62,8 +64,9 @@ function slot(p, q) {
     return q
 }
 function finish_record(p, context, k,prefix,i) {
-    if (context=="release_ids") required(p,"tag url published_at prerelease assets")
-    else required(p,"name url size content_type")
+    if (context=="release_ids") required(p,"observed_at tag url published_at prerelease assets")
+    if(context=="release_ids" && values[slot(p "/observed_at")]>values[slot("/last_success/completed_at")]) fail("release observation after collection")
+    if(context=="asset_ids") required(p,"name url size content_type")
     if (operation=="rows" && parent_path(p)==query) {
         printf "%s",substr(p,length(query)+2)
         for(i=1;i<=field_count;i++) printf "\t%s",encoded[slot(p "/" fields[i])]
@@ -113,6 +116,7 @@ BEGIN {
     path=parent "/" key
     if (slot(path) in types) fail("duplicate key")
     if (depth==0) context="root"
+    else if (depth==1 && (parent=="/collection" || parent=="/last_success")) context=substr(parent,2)
     else if (depth==1 && parent=="/releases") context="release_ids"
     else if (depth==1 && parent=="/apps") context="app_ids"
     else if (depth==2 && parent ~ /^\/releases\/[0-9]+$/) context="release"
@@ -149,11 +153,15 @@ BEGIN {
         records[slot(path)]=context
     } else if (context=="app_ids") {
         if (kind!="integer" || !id(value)) fail("repository ID required")
-    } else if (key=="releases" || key=="assets" || key=="apps") {
+    } else if (key=="releases" || key=="assets" || key=="apps" || key=="collection" || key=="last_success") {
         if (kind!="map" && kind!="empty") fail("mapping required")
+    } else if (key=="page_limit") {
+        if(!((kind=="integer" && id(value)) || (kind=="string" && value=="all"))) fail("page limit")
+    } else if (key=="page_size" || key=="pages_fetched") {
+        if(kind!="integer" || !id(value) || (key=="page_size" && value+0>100)) fail("page count or size")
     } else if (key=="format" || key=="repository_id" || key=="size") {
         if (kind!="integer" || (key=="format" && value!="2") || (key=="repository_id" && !id(value))) fail("integer field")
-    } else if (key=="prerelease") {
+    } else if (key=="prerelease" || key=="history_complete" || key=="reconcile") {
         if (kind!="bool") fail("boolean required")
     } else {
         if (kind!="string") fail("string required")
@@ -180,17 +188,31 @@ END {
     if ("/apps" in types) {
         if (children[slot("")]!=3) fail("app map root fields")
     } else {
-        required("","repository_id repository check_status")
-        if (values[slot("/repository")] !~ /^[A-Za-z0-9-]+\/[A-Za-z0-9_.-]+$/) fail("repository name")
-        state=values[slot("/check_status")]
-        if (state!="ok" && state!="failed") fail("check status")
-        if (("/releases" in types) != ("/checked_at" in types)) fail("observation/check time pairing")
-        if (state=="ok") {
-            required("","checked_at releases")
-            if ("/check_reason" in types) fail("reason on successful check")
+        required("","repository_id repository collection")
+        required("/collection","attempted_at page_size page_limit reconcile status")
+        if(values[slot("/repository")] !~ /^[A-Za-z0-9-]+\/[A-Za-z0-9_.-]+$/) fail("repository name")
+        if(values[slot("/collection/reconcile")]=="true" && values[slot("/collection/page_limit")]!="all") fail("reconciliation scope")
+        state=values[slot("/collection/status")]
+        if(state!="ok" && state!="failed") fail("collection status")
+        if(("/releases" in types)!=("/last_success" in types)) fail("retained observation pairing")
+        if(state=="ok") {
+            required("","last_success releases")
+            if("/collection/reason" in types) fail("reason on success")
         } else {
-            required("","check_reason")
-            if (values[slot("/check_reason")] !~ /^(rate_limited|transport|invalid_response|collection_limit)$/) fail("check reason")
+            required("/collection","reason")
+            if(values[slot("/collection/reason")] !~ /^(rate_limited|transport|invalid_response|collection_limit)$/) fail("collection reason")
+        }
+        if("/last_success" in types) {
+            required("/last_success","completed_at page_size page_limit reconcile pages_fetched history_complete")
+            limit=values[slot("/last_success/page_limit")]; pages=values[slot("/last_success/pages_fetched")]
+            complete=values[slot("/last_success/history_complete")]
+            if(values[slot("/last_success/reconcile")]=="true" && limit!="all") fail("reconciliation scope")
+            if(limit=="all" && complete!="true") fail("all requires history completion")
+            if(limit!="all" && (less(limit,pages) || (less(pages,limit) && complete!="true"))) fail("scope completion")
+            if(state=="ok") {
+                if(values[slot("/collection/attempted_at")]>values[slot("/last_success/completed_at")]) fail("collection time order")
+                if(values[slot("/collection/page_size")]!=values[slot("/last_success/page_size")] || values[slot("/collection/page_limit")]!=limit || values[slot("/collection/reconcile")]!=values[slot("/last_success/reconcile")]) fail("scope pairing")
+            }
         }
     }
     if(operation=="validate") exit 0

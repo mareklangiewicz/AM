@@ -1,3 +1,41 @@
+# Retained-observation schema revision (local experiment)
+
+Current branch: `research/yaml-retained-observations`. This supersedes this
+README's older full-history/check-time examples. No production collector,
+workflow, recipe, installed helper or remote control is changed.
+
+Run `python3 tools/catalog-yaml-prototype/retention_matrix.py` for all 16 unique
+acceptance groups on mawk, GNU awk and BusyBox awk. The generated
+`retention-results.json` records results. `retention.py` is a fixture-driven
+per-source transition model with subset selection, page size/limit inputs,
+explicit trial budgets and optional all-only reconciliation; it makes no network
+calls. Shared fixture budgets account requests/bytes/time across sources and
+report untouched unattempted sources; this is not actual transport/deadline
+enforcement, fair runner scheduling or a production normalizer.
+
+The reader now validates `collection`, `last_success` and required per-release
+`observed_at`, requested-scope completion and timestamp relationships. The
+example repository uses that revised schema. Model fixtures prove partial
+retention, fetched-record replacement (including omitted optional fields/assets),
+untouched observation times, per-page response times, failure rollback, default
+all-source selection, empty subsets and source/parameter rejection. Selected
+stable releases remain available but can be stale despite a recent collection.
+
+Reconciliation defaults false. With explicit `page_limit=all` and reconciliation
+true, success replaces the retained ID set with fetched IDs; failure preserves
+all prior observations. A finite scope with reconciliation is rejected before
+work. This is an explicit local design policy, not a deployed deletion mechanism.
+
+`memory.py` uses the revised fixture builder if rerun. The existing
+`memory-results*.json` files are historical measurements of the previous schema;
+they do not measure this revision or establish memory/CPU ceilings. BusyBox's
+previous large-fixture RSS growth remains unresolved. The 32 MiB file / 64 KiB
+line guards are still experiment bounds, independent of requested page count.
+
+---
+
+The following is preserved background from the earlier reader experiments.
+
 # THROWAWAY YAML reader experiment
 
 Question: can AM's proposed YAML subset support small POSIX shell/awk structure

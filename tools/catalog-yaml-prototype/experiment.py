@@ -19,8 +19,9 @@ SCHEMA = 'https://raw.githubusercontent.com/example/AM/' + 'a' * 40 + '/docs/cat
 
 def repository():
     return dict(format=2, schema=SCHEMA, repository_id=123, repository='example/app',
-                checked_at='2026-11-03T01:00:00Z', check_status='ok', releases={
-                    '456': dict(tag='v2.0.0', title='Quotes " and \\; café 中文 🐧\n\r\t\n',
+                collection=dict(attempted_at='2026-11-03T00:59:00Z',page_size=100,page_limit=1,reconcile=False,status='ok'),
+                last_success=dict(completed_at='2026-11-03T01:00:00Z',page_size=100,page_limit=1,reconcile=False,pages_fetched=1,history_complete=False), releases={
+                    '456': dict(observed_at='2026-11-03T00:59:30Z',tag='v2.0.0', title='Quotes " and \\; café 中文 🐧\n\r\t\n',
                                 url='https://github.com/example/app/releases/tag/v2.0.0',
                                 published_at='2026-11-02T12:00:00Z', prerelease=False,
                                 assets={'789': dict(name="John's app #1.AppImage",
@@ -71,10 +72,10 @@ class Experiment(unittest.TestCase):
         self.accepted(base)
         empty = copy.deepcopy(base); empty['releases'] = {}; self.accepted(empty)
         no_assets = copy.deepcopy(base); no_assets['releases']['456']['assets'] = {}; self.accepted(no_assets)
-        retained = dict(list(base.items())[:5], check_status='failed', check_reason='transport', releases=base['releases'])
+        retained = copy.deepcopy(base); retained['collection']['status']='failed'; retained['collection']['reason']='transport'
         self.accepted(retained)
         never = dict(format=2, schema=SCHEMA, repository_id=123, repository='example/app',
-                     check_status='failed', check_reason='rate_limited')
+                     collection=dict(attempted_at='2026-11-03T02:00:00Z',page_size=100,page_limit='all',reconcile=False,status='failed',reason='rate_limited'))
         self.accepted(never)
         self.accepted(dict(format=2, schema=SCHEMA, apps={'app': 123, 'app-beta': 123}))
         self.accepted(dict(format=2, schema=SCHEMA, apps={}))
@@ -133,10 +134,10 @@ class Experiment(unittest.TestCase):
             'http': good.replace('url: "https:', 'url: "http:'),
             'URL newline': good.replace('tag/v2.0.0"', 'tag/v2.0.0\\n"'),
             'schema branch': good.replace('/' + 'a' * 40 + '/', '/main/'),
-            'missing check time': good.replace('checked_at: "2026-11-03T01:00:00Z"\n', ''),
+            'missing completion time': good.replace('  completed_at: "2026-11-03T01:00:00Z"\n', ''),
             'missing required asset': good.replace('        size: 0\n', ''),
             'empty implicit map': good.replace('releases:', 'releases: {}'),
-            'wrong status': good.replace('check_status: "ok"', 'check_status: "unknown"'),
+            'wrong status': good.replace('status: "ok"', 'status: "unknown"'),
             'mixed roots': good + 'apps: {}\n',
             'NEL changes value in YAML': good.replace('tag: "v2.0.0"', 'tag: "a\u0085b"'),
             'literal line separator': good.replace('tag: "v2.0.0"', 'tag: "a \u2028b"'),

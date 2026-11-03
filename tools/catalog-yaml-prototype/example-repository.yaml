@@ -2,10 +2,22 @@ format: 2
 schema: "https://raw.githubusercontent.com/example/AM/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/docs/catalog-format-v2.md"
 repository_id: 123
 repository: "example/app"
-checked_at: "2026-11-03T01:00:00Z"
-check_status: "ok"
+collection:
+  attempted_at: "2026-11-03T00:59:00Z"
+  page_size: 100
+  page_limit: 1
+  reconcile: false
+  status: "ok"
+last_success:
+  completed_at: "2026-11-03T01:00:00Z"
+  page_size: 100
+  page_limit: 1
+  reconcile: false
+  pages_fetched: 1
+  history_complete: false
 releases:
   "456":
+    observed_at: "2026-11-03T00:59:30Z"
     tag: "v2.0.0"
     title: "Quotes \" and \\; café 中文 🐧\n\r\t\n"
     url: "https://github.com/example/app/releases/tag/v2.0.0"
