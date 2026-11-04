@@ -1191,3 +1191,10 @@ retained-growth refusal, and replays 41 saved real responses. Static 475-path
 consumer inventory and explicit pinned selection/freshness reference prepare
 migration; 12 focused checks pass. Candidate `a295d7a2d`; no cap acceptance,
 automatic legacy-policy translation or live/operational change.
+
+2026-11-04: [96 resolved](issues/96-prepare-yaml-recipe-cohort.md):
+[named YAML recipe policies](research/yaml-recipe-cohort.md) compare five
+Obsidian/Neovim paths against two hash-checked saved list responses; exact URLs
+match. Seven adversarial groups expose proposed order/tag changes; 19 focused
+tests pass. Candidate `b58f30f1d`; policy acceptance and portable shell/lifecycle
+integration remain. No active consumer, operational or live change.
