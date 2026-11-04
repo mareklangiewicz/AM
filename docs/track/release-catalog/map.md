@@ -1269,3 +1269,15 @@ remaining format-1 shared paths. Fixed separate release-catalog-yaml-v2 wiring i
 an inactive local proposal; format 1 remains supported. 59 distinct tests pass;
 one Standards and two Spec findings fixed/confirmed, zero remaining. No installed
 mutation, push, live acquisition, publication, workflow, repin or yadm changes.
+
+
+2026-11-04: [104 resolved](issues/104-rehearse-yaml-host-cutover.md):
+[Sunshine/host rehearsal](research/yaml-host-rehearsal.md), isolated source
+d79100e5f, reaches476 bound paths/50sources and four installed replacement plans.
+Exact17-legacy-updater audit grants no automatic eligibility. End-to-end disposable
+module/recipe/inert update/recovery/restoredF1 execution passes, with manager
+harness limits explicit. 31 test groups include115 inert AppImage installs and
+updaters; both review axes zero findings. Saved48-source YAML7.00MB, largest1.25MB;
+synthetic Sunshine growth refusescycle12 retaining330releases/7161assets below2MiB.
+Updated private package verifies; live/default capacity, legacy adapters, policy
+and operational gates remain. No live/installed/push/publication/workflow/repin/yadm.
