@@ -118,7 +118,7 @@ am_package() (
 		am_archive_stage "$layout" "$stage" "$APP" || exit 1
 		# Interrupted replacement is repaired by reinstalling. Keep app data and
 		# supporting paths; never call an old remove script during migration.
-		cp -a "$stage/payload/." "$dir/" || exit 1
+		cp -a --remove-destination "$stage/payload/." "$dir/" || exit 1
 	else
 		[ -s "$stage/asset" ] || exit 1
 		chmod a+x "$stage/asset"

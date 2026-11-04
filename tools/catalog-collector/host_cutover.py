@@ -89,6 +89,27 @@ def prepare(repo, out, cache):
     return manifest
 
 
+def overlay(source, target):
+    """Replace program files by rename so running executables remain usable."""
+    if source.is_symlink():
+        if target.exists() and target.is_dir() and not target.is_symlink():
+            raise ValueError('directory/link layout conflict: '+str(target))
+        if target.is_symlink() or target.exists():target.unlink()
+        target.symlink_to(os.readlink(source))
+    elif source.is_dir():
+        if target.is_symlink():raise ValueError('directory/link layout conflict: '+str(target))
+        target.mkdir(exist_ok=True)
+        for child in source.iterdir():overlay(child,target/child.name)
+    else:
+        fd,name=tempfile.mkstemp(prefix='.am-reinstall-',dir=target.parent)
+        os.close(fd)
+        try:
+            shutil.copy2(source,name)
+            os.replace(name,target)
+        finally:
+            if os.path.exists(name):os.unlink(name)
+
+
 def apply(prepared, root):
     manifest=json.loads((prepared/'manifest.json').read_text())
     source=manifest['source']
@@ -130,7 +151,7 @@ def apply(prepared, root):
     for module in (ROOT/'modules').glob('*.am'):shutil.copy2(module,manager/'modules'/module.name)
     for row in manifest['apps']:
         app=row['app'];path=apps/app;layout=row['layout'];payload=prepared/app/'payload'
-        shutil.copytree(payload,path,dirs_exist_ok=True,symlinks=True)
+        overlay(payload,path)
         text=(ROOT/'programs/x86_64'/app).read_text()
         bindings='\n'.join(['AMREPO=${AMREPO-"https://raw.githubusercontent.com/mareklangiewicz/AM/'+source+'"}',
             'APPS_DIR="'+str(apps)+'"','BIN_DIR="'+str(bins)+'"','DESKTOP_DIR="'+str(desktop)+'"',
