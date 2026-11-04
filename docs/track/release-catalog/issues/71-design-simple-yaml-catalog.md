@@ -208,3 +208,13 @@ record 45 passing checks and the inactive bootstrap workflow proposal. Profile
 numbers are not operational capacity guarantees. Authenticated artifact/prior
 acquisition, publication CAS and reviewed activation remain; no live or
 operational action occurred.
+
+## November 4 — offline capacity and consumer preparation
+
+[95 resolved](95-measure-yaml-capacity-and-prepare-consumers.md) measures the
+maintained synthetic 49-source/100-release shape and saved-response normalization.
+Current 2 MiB trial cap rejects a dense source and the eighth synthetic retention
+round without partial merge. This is explicit refusal evidence, not budget
+acceptance or real full-default capacity. Static consumer map/reference selection
+prepare direct migration; accepted per-app policies and portable-shell integration
+remain open.

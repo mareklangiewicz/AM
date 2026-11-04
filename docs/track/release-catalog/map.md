@@ -1183,3 +1183,11 @@ collection/publication proposal remains inactive. 83 collector/delivery and 62
 reader/retention checks pass, plus three-tool publication trials. Candidate
 `ff2dc1499`; maintainer promotion, capacity/policy, consumer migration,
 transition/rollback and operational activation remain separate. No live changes.
+
+2026-11-04: [95 resolved](issues/95-measure-yaml-capacity-and-prepare-consumers.md):
+[offline capacity and consumers](research/yaml-capacity-and-consumers.md) stages
+synthetic 49×100/8-asset facts (13.30 MB YAML / 287.9 s local), confirms dense and
+retained-growth refusal, and replays 41 saved real responses. Static 475-path
+consumer inventory and explicit pinned selection/freshness reference prepare
+migration; 12 focused checks pass. Candidate `a295d7a2d`; no cap acceptance,
+automatic legacy-policy translation or live/operational change.
