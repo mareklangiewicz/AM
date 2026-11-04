@@ -310,3 +310,177 @@ exact parent. Each run remains separately authorized. Local candidate code and
 scheduled-dispatch edits do not by themselves change the remote source pin.
 After applying the compatible recipe patch, the explicit full-batch inert
 install/update check is `python3 -B tools/catalog-collector/check_large_lifecycle.py -v`.
+
+## YAML source adapter candidate
+
+`yaml_adapter.py` prepares numeric list plans from the reviewed manifest,
+coalescing latest/tag/list endpoint variants by repository identity. Requests
+are unconditional, with explicit `per_page` and page 1. `collect_one_page`
+uses the existing collector and a caller-supplied transport/opaque credential,
+merges original receipt times into retained format-2 facts, and returns a fully
+validated YAML candidate tree plus collection/source outcomes. It has no CLI,
+ambient credentials, workflow integration or publication side effect.
+
+Supply an explicit file allowance, reviewed app map and repository identities,
+and an actual immutable source revision. Existing pinned YAML can be loaded with
+`yaml_publication.load_local`; bootstrap/enrollment is the caller's responsibility.
+A transport stop leaves unattempted repository state unchanged and reports their
+numeric IDs. Pagination links must retain numeric identity, list route, page
+size and consistent relations; malformed metadata fails that source. Completing
+page 1 with a next link is successful partial scope, never full history.
+
+`collect_one_page` implements the default one-page scope. `collect_scoped` adds
+finite page limits or `all`, optional explicit all-only reconciliation and shared
+transport budgets. Actual AM app enrollment/bootstrap, accepted production budgets
+and reviewed workflow/artifact staging remain necessary before operational use.
+It imports the current shared YAML candidate components rather than copying
+another normalizer/writer. No operational workflow imports this module.
+
+Offline checks: `python3 -m unittest discover -s tools/catalog-collector -p test_yaml_adapter.py`.
+
+`collect_scoped` takes a `transport_factory(page_plan)`, constructing the existing
+`SupervisedTransport` for each validated page plan with trusted workflow identity
+and reviewed source/approved revisions. It requires explicit aggregate request
+and body-byte allowances, caps elapsed transport time at at most 300 seconds,
+and passes the shared absolute deadline to existing transport limits. The default
+per-source request ceiling is 64; all numbers remain caller policy/trial inputs.
+Responses stream through the existing bounded collector; the budget counts body
+chunks, including the chunk crossing the allowance, and rejects that source.
+This is logical byte accounting, not a filesystem or exact wire-byte quota.
+
+Pages are acquired lazily by the retained merge: malformed bodies, duplicates or
+invalid links stop that source without acquiring another page. A later failure
+rolls back all fetched facts/times for that source. Finite completion on its last
+allowed request succeeds. An incomplete scope at a request, byte or deadline
+boundary fails; unattempted sources retain prior state and are reported by ID.
+Source-local caps allow other sources to proceed; quota/auth/protocol stops and
+two consecutive transfer/server failures stop the run. Reader validation/staging
+is outside the transport elapsed deadline; no additional process supervisor was
+introduced.
+
+`yaml_enrollment.enroll` derives the format-2 app map from current marked shared
+recipes and exact aliases in a reviewed manifest. It reads static APP and
+CATALOG_ALIAS assignments without shell evaluation, coalesces architecture paths
+by app name, rejects identity conflicts, and reports recipe hashes/excluded paths
+for review. `shared_recipes(root)` scans only the four AM recipe directories.
+Readable bootstrap names come from the manifest's enrolled owner/name aliases;
+they are display identities, not a new canonical-name acquisition.
+
+`prepare_pinned` loads an exact local format-2 commit (or explicitly bootstraps
+with commit=None), keeps previous repositories and aliases, enrolls additions and
+rejects reassignment. `collect_pinned` connects that state to scoped collection
+and returns the previous pin in its report. Neither updates Git refs. A later
+publisher must compare-and-swap against that same pin; this is still a source
+candidate, with workflow staging/publication unwired.
+
+New identities carry no collection/observation metadata until actually attempted.
+If any remain unattempted, `IncompleteBootstrap` refuses the entire candidate and
+exposes its aggregate `.report`, including bootstrap_unattempted_repositories.
+The caller can retain diagnostics and retry; it cannot publish placeholder
+attempts. Actually attempted failures may be represented honestly with collection
+failure metadata and no last-success/observations. Existing pinned sources can
+remain unattempted unchanged. File allowance remains an explicit trial/policy
+input, and no remote format-1-to-2 conversion is implicit.
+
+Enrollment/pinned checks: `python3 -m unittest discover -s tools/catalog-collector -p test_yaml_enrollment.py`.
+
+`yaml_staging.py` adds an inactive workflow/artifact source candidate. It checks
+manual run context plus manifest/policy/scope hashes, stages a private normalized
+YAML package with a receipt, and verifies closed directory layout, enrollment,
+pinned state and preservation rules. `yaml-policy.json` supplies explicit review
+limits. See [the staging design](../../docs/track/release-catalog/design/yaml-staging.md)
+and inactive `catalog-yaml-staging.yml.proposed` for boundaries and default scope
+hashing. No active workflow imports this module; download authentication, remote
+prior loading and publication remain unwired.
+
+## Inactive YAML artifact acquisition candidate (ticket 92)
+
+`yaml_delivery.acquire` reuses authenticated `delivery.download_artifact` with the
+inactive proposal's `yaml-bootstrap-RUN-ATTEMPT` name and an explicit ZIP cap.
+Trusted caller context and upload artifact ID/digest are required; receipt values
+are not an authentication source. GitHub metadata must match repository, run,
+source SHA, branch, artifact name and digest; downloaded bytes must hash to that
+digest before decoding. No live API capability was exercised by the offline tests.
+
+The decoder bounds ZIP central-directory size/count before parsing, then accepts
+only `receipt.json`, candidate YAML and optional structural directories. It reads
+store/deflate members into bounded data, never extracts paths, and refuses duplicate,
+traversal, NUL, symlink, executable, special-file, encrypted and extra members.
+Uncompressed YAML/receipt policy bounds apply independently of the ZIP envelope.
+The ZIP envelope allows tree + receipt + 1,000,000 bytes of framing/compression
+overhead (136,266,304 bytes for the candidate profile). Excess is refused rather
+than inferred safe from compression ratio. ZIP64 and multidisk are unsupported.
+
+Full staging verification runs before creating a new private output directory;
+no failed authentication/verification leaves accepted output. The caller must
+already have the exact-pin local prior. Remote prior acquisition, publication CAS,
+reviewed source promotion, runner provisioning and workflow activation remain
+unwired. Only YAML belongs in future catalog history; receipt stays artifact-only.
+
+Offline checks: `PYTHONPATH=tools/catalog-collector:tools/catalog-yaml-prototype python3 -m unittest test_yaml_delivery`.
+
+## Inactive YAML remote prior/publication candidate (ticket 93)
+
+`yaml_delivery.fetch_prior` preflights trusted source/context/profile, requires
+exact remote pin or proven absence using shared isolated Git acquisition, and
+loads bounded canonical format-2 YAML. It refuses format 1 without conversion.
+`yaml_delivery.publish` reacquires the same pin, authenticates/verifies the
+normalized artifact, constructs a direct-child YAML-only commit and pushes to the
+fixed catalog ref with an explicit expected-parent lease (empty for bootstrap).
+No retry, rebase, alternate URL/ref or receipt in Git history is supported.
+
+The exact lease rejects racing creation, advance, deletion and backward reset;
+ordinary fast-forward alone does not provide the latter guarantees. Existing
+format-1 publication behavior remains separate. Failed operations may retain
+private scratch but write no success report. Lost push acknowledgement/report
+write failure requires remote-state inspection, not automatic retry.
+Existing Git history and per-command I/O/time bounds still apply; these are not
+hosted-runner capacity evidence. No active workflow calls these candidates.
+See docs/track/release-catalog/design/yaml-pinned-publication.md for boundaries.
+
+Offline checks: `PYTHONPATH=tools/catalog-collector:tools/catalog-yaml-prototype python3 -m unittest test_yaml_publication_delivery`.
+
+## Consolidated YAML runtime and inactive complete workflow (ticket 94)
+
+Reusable YAML code and reader now live directly here: writer.py, retention.py,
+bounded.py, attempt_adapter.py, yaml_publication.py, reader.sh and reader.awk.
+Historical prototype paths are relative symlinks for old experiments. Runtime
+modules do not import that experiment directory; only test fixture builders do.
+`yaml_publication.read_tree` supplies one bounded canonical snapshot loader, and
+`publication.publish_tree` supplies one local commit/ref implementation for both
+formats. Local fixture helper APIs remain available to historical experiments.
+
+Repository schema provenance is per document. Successful attempts use the current
+source schema; unselected/unattempted documents retain exact prior bytes, and
+failed attempts preserve schema/facts/observations while changing only collection
+metadata. A snapshot may therefore contain valid different immutable schema refs.
+The earlier current-schema-for-every-file candidate rule was incorrect.
+
+`yaml_workflow.py validate|collect|publish` is the explicit entry point for the
+complete inactive manual proposal at
+`docs/track/release-catalog/design/catalog-yaml-publication.yml.proposed`.
+It validates explicit scope JSON against its trusted digest before token handoff.
+Collection fetches exact prior with read permission, then stages normalized YAML;
+publication uses a separate job with contents-write/actions-read permissions and
+trusted artifact outputs. Failed or unattempted requested sources fail collection,
+so default job dependency prevents publishing that run. Artifacts can remain for
+review. No schedule, implicit format-1 migration or automatic activation is added.
+The earlier bootstrap-only proposal is historical; the new complete proposal
+supersedes it for review without installing either in .github/workflows.
+
+The runner must already provide PyYAML and existing gh/git/transport dependencies;
+preflight fails without them. Provisioning and hosted capacity are unverified.
+No claim of dispatch readiness or operational budget acceptance is made.
+
+## Offline consumer policy rehearsal (ticket 95)
+
+`yaml_selection.py` rehearses explicit structured release/asset rules against a
+pinned local format-2 snapshot, then applies selected-release observation freshness
+and an exact stale-selection waiver. This is a Python reference using publisher
+dependencies, not an installed client or automatic legacy regex translator.
+No operational module or recipe imports it. See
+`docs/track/release-catalog/design/yaml-consumer-migration.md` for the static
+475-path consumer map, policy differences and remaining portable-shell integration.
+Seven focused checks: `PYTHONPATH=tools/catalog-collector python3 -m unittest test_yaml_selection`.
+Capacity rehearsal/results are under tools/catalog-yaml-prototype/capacity.py and
+capacity-results.json; numbers do not accept operating budgets.

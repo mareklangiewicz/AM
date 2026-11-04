@@ -4,6 +4,8 @@
 set -eu
 APP=readelf
 PACKAGE_KIND=executable
+CATALOG_FORMAT=2
+CATALOG_RECIPE="aarch64/readelf"
 CATALOG_ALIAS="https://api.github.com/repos/ivan-hc/am-utils/releases"
 
 select_asset() {

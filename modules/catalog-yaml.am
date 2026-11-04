@@ -1,0 +1,128 @@
+#!/bin/sh
+# AMCLI format-2 acquisition/selection candidate. No Git/Python/jq on clients.
+# Named policies and --accept-stale-release are proposed, not rollout acceptance.
+set -eu
+export LC_ALL=C
+fail() { printf 'AM YAML catalog: %s\n' "$*" >&2; exit 1; }
+[ "$#" -gt 0 ] || fail 'missing recipe'
+AM_YAML_RECIPE=$1; shift
+app=${AM_YAML_RECIPE#*/}
+pin='' AM_YAML_ACCEPT=''
+hex() { [ "${#1}" -eq 40 ] && case $1 in *[!0-9a-f]*) return 1;; esac; }
+while [ "$#" -gt 0 ]; do
+    case $1 in
+        --commit) [ "$#" -ge 2 ] && [ -z "$pin" ] || fail 'missing or repeated commit'; pin=$2; shift 2 ;;
+        --accept-stale-release)
+            [ "$#" -ge 6 ] && [ -z "$AM_YAML_ACCEPT" ] || fail 'missing or repeated selected-release tuple'
+            AM_YAML_ACCEPT=$2:$3:$4:$5:$6; shift 6 ;;
+        *) fail 'unsupported option (format-1 consent does not apply)' ;;
+    esac
+done
+[ -z "$pin" ] || hex "$pin" || fail 'full commit required'
+source=${AMREPO-}
+case $source in *[!A-Za-z0-9_./:-]*) fail 'unsupported AMREPO characters';; esac
+printf '%s\n' "$source" | grep -Eq '^https://raw\.githubusercontent\.com/[A-Za-z0-9-]+/[A-Za-z0-9_.-]+/[A-Za-z0-9_./-]+$' || fail 'missing or unsupported AMREPO'
+repository=${source#https://raw.githubusercontent.com/}
+owner=${repository%%/*}; repository=${repository#*/}; repository=$owner/${repository%%/*}
+here=$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd)
+reader=$here/catalog-yaml-reader.am
+for module in catalog-yaml-reader.am catalog-yaml-parser.am catalog-yaml-policy.am; do
+    [ -r "$here/$module" ] || fail "missing module: $module"
+done
+# Validate against the policy's single trusted enrollment registry before HTTP.
+AM_YAML_RECIPE=$AM_YAML_RECIPE AM_YAML_CHECK_RECIPE=1 \
+    awk -f "$here/catalog-yaml-policy.am" </dev/null || fail 'unsupported recipe policy'
+# Fixed trial budgets shared with the source candidate. No optional consumer workers.
+AM_YAML_MAX_INPUT_BYTES=2097152 AM_YAML_MAX_OUTPUT_BYTES=2097152
+export AM_YAML_MAX_INPUT_BYTES AM_YAML_MAX_OUTPUT_BYTES
+clock() {
+    stamp=$(date -u '+%s %Y-%m-%dT%H:%M:%SZ') || fail 'UTC clock unavailable'
+    now_epoch=${stamp%% *}; AM_YAML_NOW=${stamp#* }
+    case $now_epoch in ''|*[!0-9]*) fail 'invalid clock';; esac
+    [ "${#now_epoch}" -le 12 ] || fail 'invalid clock'
+}
+clock
+start=$now_epoch last=$now_epoch
+check_clock() {
+    clock
+    [ "$now_epoch" -ge "$last" ] && [ "$((now_epoch - start))" -le 90 ] || fail 'regressed clock or expired read'
+    last=$now_epoch
+}
+umask 077
+scratch=$(mktemp -d) || fail 'private staging unavailable'
+trap 'rm -rf -- "$scratch"' 0
+trap 'exit 1' HUP INT TERM
+# Same transport contract as format 1: no config, auth, proxy, redirects/retries.
+fetch() {
+    code=$(
+        ulimit -f "$(( ($2 + 511) / 512 ))" || exit 1
+        curl -q --silent --show-error --fail --noproxy '*' --proto '=https' \
+            --max-redirs 0 --connect-timeout 10 --max-time 30 --max-filesize "$2" \
+            -H 'Accept-Encoding: identity' -H "Accept: $4" \
+            -H 'X-GitHub-Api-Version: 2022-11-28' \
+            --output "$3" --write-out '%{http_code}' "$1"
+    ) || fail 'catalog transfer refused'
+    [ "$code" = 200 ] && [ "$(wc -c < "$3")" -le "$2" ] || fail 'catalog response refused'
+    check_clock
+}
+# Separate namespace permits mixed format-1/2 code in the source rehearsal.
+# It does not make a mixed-format publication/rollout operationally valid.
+session=${AM_CATALOG_SESSION-}
+if [ -n "$session" ]; then
+    [ -d "$session" ] && [ -w "$session" ] && [ ! -L "$session" ] || fail 'invalid command session'
+    cache=$session/yaml-v2
+    if [ -d "$cache" ]; then
+        [ "$(cat "$cache/source")" = "$source" ] || fail 'command source changed'
+        [ ! -f "$cache/failed" ] || fail 'command catalog acquisition already refused'
+        shared_pin=$(cat "$cache/pin") || fail 'missing command pin'
+        [ -z "$pin" ] || [ "$pin" = "$shared_pin" ] || fail 'command pin changed'
+        pin=$shared_pin
+        hex "$pin" || fail 'invalid command pin'
+    else
+        mkdir "$cache"
+        printf '%s\n' "$source" > "$cache/source"
+        : > "$cache/failed"
+    fi
+else
+    cache=$scratch/cache
+    mkdir "$cache"
+fi
+if [ -z "$pin" ]; then
+    fetch "https://api.github.com/repos/$repository/commits/heads/release-catalog" 128 "$scratch/ref" 'application/vnd.github.sha'
+    pin=$(cat "$scratch/ref")
+    hex "$pin" || fail 'invalid publication ref'
+fi
+root=https://raw.githubusercontent.com/$repository/$pin
+acquire() {
+    name=$1 target=$cache/$1
+    if [ ! -f "$target" ]; then
+        # Any transfer/validation failure latches the command; stale selection
+        # alone does not latch and cannot authorize a different record.
+        : > "$cache/failed"
+        fetch "$root/$name" 2097152 "$scratch/document" 'application/octet-stream'
+        sh "$reader" validate "$scratch/document" || fail 'invalid YAML document'
+        cp "$scratch/document" "$target"
+    fi
+}
+acquire apps.yaml
+printf '%s\n' "$pin" > "$cache/pin"
+# Revalidate cached bytes before each selection; never cache acceptance.
+AM_YAML_REPOSITORY=$(sh "$reader" get "$cache/apps.yaml" apps "$app") || fail 'unknown app or invalid app map'
+case $AM_YAML_REPOSITORY in ''|*[!0-9]*) fail 'invalid repository ID';; esac
+mkdir -p "$cache/repositories"
+acquire "repositories/$AM_YAML_REPOSITORY.yaml"
+file=$cache/repositories/$AM_YAML_REPOSITORY.yaml
+actual=$(sh "$reader" get "$file" repository_id) || fail 'invalid repository document'
+[ "$actual" = "$AM_YAML_REPOSITORY" ] || fail 'repository identity mismatch'
+sh "$reader" asset_facts "$file" > "$scratch/facts" || fail 'invalid repository facts'
+rm -f "$cache/failed"
+check_clock
+AM_YAML_PIN=$pin AM_YAML_STALE_OPTION=release
+export AM_YAML_STALE_OPTION
+export AM_YAML_RECIPE AM_YAML_ACCEPT AM_YAML_REPOSITORY AM_YAML_NOW AM_YAML_PIN
+awk -f "$here/catalog-yaml-policy.am" "$scratch/facts" > "$scratch/result" || exit 1
+check_clock
+# Recheck the same selected facts at the final clock before output.
+export AM_YAML_NOW
+awk -f "$here/catalog-yaml-policy.am" "$scratch/facts" > "$scratch/result" || exit 1
+cat "$scratch/result"

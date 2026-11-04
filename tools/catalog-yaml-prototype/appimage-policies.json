@@ -1,0 +1,2332 @@
+[
+  {
+    "recipe": "x86_64/abracadabra",
+    "repository_id": 490391156,
+    "endpoint": "list",
+    "source_sha256": "3b332ec00ed6f9d704b25fdd42d0d0c9b279af80bd1ef1072bca5e1ac50961cb",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64|armv7l|i386|i686",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/activitywatch",
+    "repository_id": 57224308,
+    "endpoint": "list",
+    "source_sha256": "c63956ab0426a2479cc5a858cfee4d2ebdb707cf82724ecf800a98341e09794d",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64|armv7l|i386|i686",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/astra-gate",
+    "repository_id": 1409040467,
+    "endpoint": "list",
+    "source_sha256": "ae7651072b93489568b03b1df3a89292128e2cc6f2ab03c8176cfe23e0fa816f",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|armhf|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/basilisk2",
+    "repository_id": 496695667,
+    "endpoint": "list",
+    "source_sha256": "65156e17efb3d6f2f8a785f88e30333749f51dd8690ffe3230a018cdb7f12866",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"basilisk\" | grep -v \"continuous\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      },
+      {
+        "pattern": "basilisk",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "continuous",
+        "ignore_case": false,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/blender-alpha",
+    "repository_id": 980873950,
+    "endpoint": "list",
+    "source_sha256": "df5ea47116f845b90bd3a1dde71346ed2a056cfb098f82b8c5bc5146b3a3c6c2",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"alpha\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      },
+      {
+        "pattern": "alpha",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/blender-beta",
+    "repository_id": 980873950,
+    "endpoint": "list",
+    "source_sha256": "6818fa851ab412c5239b5f264e6873a8d2ac0f357ca16a6c51a5950f12db1421",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"beta\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      },
+      {
+        "pattern": "beta",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/blender-rc",
+    "repository_id": 980873950,
+    "endpoint": "list",
+    "source_sha256": "0c2fb8e136cc4c178c7db757f221c1c53f3c8c2a6ca301ce2ecc013427e1ea56",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"candidate\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      },
+      {
+        "pattern": "candidate",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/brave",
+    "repository_id": 947512058,
+    "endpoint": "list",
+    "source_sha256": "75899028ba7acf6663b710a1654eea006c4bee9d99b84a3dbfab7989c781e4bd",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*x86_64.*mage$\"| grep -i \"stable\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "stable",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/brave-beta",
+    "repository_id": 947512058,
+    "endpoint": "list",
+    "source_sha256": "1ce47cafa316bd0787bf52871cf3ff3d84a0f42fe92a22cc410a9828233b3332",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*x86_64.*mage$\"| grep -i \"beta\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "beta",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/brave-nightly",
+    "repository_id": 947512058,
+    "endpoint": "list",
+    "source_sha256": "449ae9af057614c1ff8382548ea24e73f5bb8586559bce293138c19156f6d4dd",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*x86_64.*mage$\"| grep -i \"nightly\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "nightly",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/calm-circles",
+    "repository_id": 543547002,
+    "endpoint": "list",
+    "source_sha256": "9a74249f15e85af8c20111e9047ea5e39615fe8f1c7d41510c78f97000a5d92d",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"circles\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      },
+      {
+        "pattern": "circles",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/calm-fan",
+    "repository_id": 543547002,
+    "endpoint": "list",
+    "source_sha256": "20bc4daba02f511b1bf34d8c88ee897cfc6748ca546b0307f25753abccdea54e",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"fan\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      },
+      {
+        "pattern": "fan",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/calm-meditator",
+    "repository_id": 543547002,
+    "endpoint": "list",
+    "source_sha256": "df9d0f38e240e5b9e9c7a1393de9fdea526e7232b608b4627a296e9777dcca72",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"meditator\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      },
+      {
+        "pattern": "meditator",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/calm-mondrian",
+    "repository_id": 543547002,
+    "endpoint": "list",
+    "source_sha256": "936e8a46ab7e515f2074ff71883a4f9b066de841b3737b2e90290932ace79ec0",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"mondrian\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      },
+      {
+        "pattern": "mondrian",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/chatterino2",
+    "repository_id": 77624593,
+    "endpoint": "list",
+    "source_sha256": "bb06936b32b988b0cb5fcd6f859e4b4bf29849ce0d1ed35b72443ceeb6bd7efd",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/chatterino2-nightly",
+    "repository_id": 77624593,
+    "endpoint": "list",
+    "source_sha256": "f7708be0db7ea9663edda9238e85e1e192117aa238c171037d8ff23c26b0ed9a",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/criteria-geo",
+    "repository_id": 286458735,
+    "endpoint": "list",
+    "source_sha256": "94b385b808220c003f9c6665734274888fef97ae026954a0e7ded2f2f13a003f",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"geo\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      },
+      {
+        "pattern": "geo",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/criteria1d",
+    "repository_id": 286458735,
+    "endpoint": "list",
+    "source_sha256": "d238fd2bd08ecd732720def4d1bb25a49d8b570312ba5a47927a63dfc0715cad",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*CRITERIA1D-x86_64.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*CRITERIA1D-x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/criteria1d-pro",
+    "repository_id": 286458735,
+    "endpoint": "list",
+    "source_sha256": "c34d80f70b1a2d3b7304457a52d602ca83196951262df02ae67bf1c1574786d1",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*pro.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*pro.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/dabri",
+    "repository_id": 970408916,
+    "endpoint": "list",
+    "source_sha256": "4995caad6f159c4ef878c32e47c978c26715c2d2a78de1b3ef543ec4b421e6bb",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|armhf|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/dbflux",
+    "repository_id": 1125356218,
+    "endpoint": "list",
+    "source_sha256": "c76ee88b5450ec2aaf7fff9ccc326bd04e6beb6966b44bc1807b01ae25926a4c",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|armhf|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/deemix-remastered",
+    "repository_id": 1175155242,
+    "endpoint": "list",
+    "source_sha256": "3d812fa5ee4b795f3f71b92687133b68ac16558187b77cfac39b3ecbf9b38ef4",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64|armv7l|i386|i686",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/eksplode.re",
+    "repository_id": 261333718,
+    "endpoint": "list",
+    "source_sha256": "05c86dc0d162e9697e35ad6e3836b34588c86442415bd671bbc3cc34b7ae7dca",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/exsplode.re",
+    "repository_id": 261333718,
+    "endpoint": "list",
+    "source_sha256": "87d7a6869c77dae0f0f1cff7bede52956279078cfa420580ff6203d0ff050467",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/floorp",
+    "repository_id": 984423768,
+    "endpoint": "list",
+    "source_sha256": "c56da30493078c6c57e494b68adacda1d10db44c6aef9651b9e5f9514e057614",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/ghostty-glfw",
+    "repository_id": 912943674,
+    "endpoint": "list",
+    "source_sha256": "ded0394b0374f0f8bf9169ec772bb31dcb040762c50fd01ca8f97c5a37c68fdb",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*glfw.*x86_64.*mage$\" | grep -vi \"main\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*glfw.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "main",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/ghostty-glfw-nightly",
+    "repository_id": 912943674,
+    "endpoint": "list",
+    "source_sha256": "04ac6dd8362e36af2ad914b3207d4c9b2e2d63e31dc0c2efd4a77373f5061e87",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*glfw.*x86_64.*mage$\" | grep -i \"main\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*glfw.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "main",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/ghostty-nightly",
+    "repository_id": 912943674,
+    "endpoint": "list",
+    "source_sha256": "d15e1ee581ace6cf9566ad021cbba22964d506e1c253dcb0875b6d987f4b0518",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*tip.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*tip.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/goblintown",
+    "repository_id": 1226456766,
+    "endpoint": "list",
+    "source_sha256": "6103caf517a90e95c1c715fe7e4d3161320e41b152fb8636516a36dde85eac05",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|armhf|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/headlamp",
+    "repository_id": 220546758,
+    "endpoint": "list",
+    "source_sha256": "a55907de6a836c6f045469798ecac201e87fab5700c71897957cd0061c6e0f8e",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64|armv7l|i386|i686",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/heat1d",
+    "repository_id": 286458735,
+    "endpoint": "list",
+    "source_sha256": "429946f5950cc1cbc656e380087155494afa8033827da34d7f9958edc052d084",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"heat\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      },
+      {
+        "pattern": "heat",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/imagemagick-clang",
+    "repository_id": 35780977,
+    "endpoint": "list",
+    "source_sha256": "ffc5d2a3bdec92280b4c818117d37183b3861aa1ce1789c90139fe4639c1aa33",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"clang\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      },
+      {
+        "pattern": "clang",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/imagemagick-gcc",
+    "repository_id": 35780977,
+    "endpoint": "list",
+    "source_sha256": "4db625eab76480e7271d9bc1b91b3360ecb523160b9bea5168aa6d4fd07576b7",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"gcc\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      },
+      {
+        "pattern": "gcc",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/kcode",
+    "repository_id": 1379205525,
+    "endpoint": "list",
+    "source_sha256": "f481d12434e18fe0ddee21dbc4e5e7df402639b936660206a9056375230b6a42",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|armhf|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/keyguard",
+    "repository_id": 669697660,
+    "endpoint": "list",
+    "source_sha256": "962af960617293b93609ebe46ce257c152676b9404cb973c036d70b7ae9e73da",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|armhf|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/kkedit-qt",
+    "repository_id": 464169731,
+    "endpoint": "list",
+    "source_sha256": "f919a25d7ac67fd97324e3c68393e11e0f2bd8a25c4c99034f950c33b7bf9915",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|armhf|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/kkeditqt",
+    "repository_id": 464169731,
+    "endpoint": "list",
+    "source_sha256": "0fa663428b53e777946a5f19a6adc6a7fe6b173423b89433a9e6c810f943a57a",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|armhf|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/lapce",
+    "repository_id": 987225517,
+    "endpoint": "list",
+    "source_sha256": "8ef67add5cf7a86b4a9861e96f8b931b8435be732560c45c5a58de61146d320c",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*x86_64.*mage$\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/linuxqq",
+    "repository_id": 1226407465,
+    "endpoint": "list",
+    "source_sha256": "7a45cea1aa965f500b78a916715521a5167e22eaa2afe4bcf984bff981803b3c",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|armhf|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/local-lake-notes",
+    "repository_id": 1228738731,
+    "endpoint": "list",
+    "source_sha256": "1b56550db0cef18126a88aefc2c091127ba309e54e469ab4f87a3e78f568cc32",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|armhf|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/melee-pc",
+    "repository_id": 1369235759,
+    "endpoint": "list",
+    "source_sha256": "5bfae8e3d7f31d1766efa7b370994aa00f92d6887f91b1941054142746f7b83c",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|armhf|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/memoto",
+    "repository_id": 619530460,
+    "endpoint": "list",
+    "source_sha256": "43ca0c0c8e42e5840812efe560016d9fec75ff68aa7c06280ed76ce8331b2a54",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|armhf|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/muon-pdf",
+    "repository_id": 1263946354,
+    "endpoint": "list",
+    "source_sha256": "5eb41c7f95d2ce2337c7904b5570dc24731470c69222d697a6f265dd2d17a2a2",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64|armv7l|i386|i686",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/noornote",
+    "repository_id": 1105596660,
+    "endpoint": "list",
+    "source_sha256": "39e4022e934ec919c72a50cb2b38ef7eebb2d1456a4bffcbfe3aee5c32c30ab6",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|armhf|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/oleafly",
+    "repository_id": 1289704847,
+    "endpoint": "list",
+    "source_sha256": "142a3996d7d8d5023c25ec3548a4920083f38778f29c749bbecd80e2bca03976",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64|armv7l|i386|i686",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/openbitfun",
+    "repository_id": 1147866277,
+    "endpoint": "list",
+    "source_sha256": "98138fe97e966b4dd4aa3886d14038159014473d35ae470a4d53e8ac1be63fde",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|armhf|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/opennow",
+    "repository_id": 729255101,
+    "endpoint": "list",
+    "source_sha256": "db9f62714b1d270b582b9a05d81d22e94285d57b564098ff8f397bc25a580afd",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|armhf|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/openra-dune",
+    "repository_id": 959908,
+    "endpoint": "list",
+    "source_sha256": "41cdbdf59a21438a5503e91a7fcd6848a641c9cf083ac21f174b0ccba7429b4d",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*dune.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*dune.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/openra-red-alert",
+    "repository_id": 959908,
+    "endpoint": "list",
+    "source_sha256": "1b671aeaf7c7693b5fcfbe5750c934ae6dcc72a455b71f54c9f3cbfcc43494c3",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*red.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*red.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/openra-tiberian-dawn",
+    "repository_id": 959908,
+    "endpoint": "list",
+    "source_sha256": "8a0ebca38f5d3885583d624ddf5b6c78e2dc7b4e548cacfa9cfc2178ed9be2a3",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*tiberian.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*tiberian.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/opera",
+    "repository_id": 656834791,
+    "endpoint": "list",
+    "source_sha256": "53ac1b916f42c837cdf98560ca396cb9b3590b64a6934a803fc4b507d53bc6b7",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386|i686|aarch64|arm64|armv7l\\|beta\\|dev\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386[|]i686[|]aarch64[|]arm64[|]armv7l|beta|dev",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/opera-beta",
+    "repository_id": 656834791,
+    "endpoint": "list",
+    "source_sha256": "f724ce222a0784f6a829026a0420c1ef84c2bb21f219773555ce751eaca76f61",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*beta.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*beta.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/opera-dev",
+    "repository_id": 656834791,
+    "endpoint": "list",
+    "source_sha256": "34c3f6921d895dcf678f828930fefbfdcebe4ad2f81b047021008d73d8e92d3c",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*dev.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*dev.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/polymc",
+    "repository_id": 439448087,
+    "endpoint": "latest",
+    "source_sha256": "fafd8ef4497f439333c2991110e31a891cd6a7d824e42dc1e31f118feb380be3",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|armhf|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "stable_published_desc"
+  },
+  {
+    "recipe": "x86_64/ramus",
+    "repository_id": 1203688724,
+    "endpoint": "list",
+    "source_sha256": "fcf815e3717af0a66e381593a0aa226a90086406cb4f4624b1e0c3b7600178aa",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|armhf|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/ros-navigation-learning-platform",
+    "repository_id": 1314681352,
+    "endpoint": "list",
+    "source_sha256": "d23a4945236b57e429c29d948aa6d1a6411b17998b867c604c3e0e7381a7ce60",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|armhf|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/savedesktop",
+    "repository_id": 1143446696,
+    "endpoint": "list",
+    "source_sha256": "a0792420143fb8d52c22292943b656e6717454ac38ef78bcca2d4850102452e7",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|armhf|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/sheepshaver",
+    "repository_id": 496695667,
+    "endpoint": "list",
+    "source_sha256": "4284727f3753d1c4ded850c5412eec0728f88804439c9dbe76f42ef11c24664f",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | grep -i \"sheepshaver\" | grep -v \"continuous\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      },
+      {
+        "pattern": "sheepshaver",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "continuous",
+        "ignore_case": false,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/slick",
+    "repository_id": 1260466044,
+    "endpoint": "list",
+    "source_sha256": "9ec34e1b8f4dfccfa3f1bdd233e6e93c06ca61905248e0b592ecf32dfc6aedc8",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|armhf|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/soil-editor",
+    "repository_id": 286458735,
+    "endpoint": "list",
+    "source_sha256": "ba7ce7b1d118efad2bb7043fb9c61fc3eb21f57d5092f4023e031bb2e91f5db8",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/sqlitebrowser",
+    "repository_id": 19416551,
+    "endpoint": "list",
+    "source_sha256": "859bee8c31ff9ca3223c124d2085abedd9d3fb7307e826427432a03269ca4236",
+    "selector": "generic declarations",
+    "rules": [
+      {
+        "pattern": "https.*x86.*64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "/v[0-9].*/|/[0-9].*/",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "nightly|continuous|-rc[0-9]/|dev",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/supertuxkart",
+    "repository_id": 547567579,
+    "endpoint": "latest",
+    "source_sha256": "a5cd7b03500208d606e664fe6b051ae00aeaa2b1154281b51bcffe2edfa7e5d9",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*x86_64.*mage$\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "stable_published_desc"
+  },
+  {
+    "recipe": "x86_64/supertuxkart-dev",
+    "repository_id": 547567579,
+    "endpoint": "list",
+    "source_sha256": "1bca7d67a6de2f1a918f855fb223130d56e2b449633ac41214a95a24b2aa2b5a",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*x86_64.*mage$\" | grep \"DEV\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "DEV",
+        "ignore_case": false,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/usdx",
+    "repository_id": 46124547,
+    "endpoint": "list",
+    "source_sha256": "0173a787b6a35215bb235664083cfe4aecde379cc788c60577a13e44b27ac6fa",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64|armv7l|i386|i686",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/vivaldi-snapshot",
+    "repository_id": 656906008,
+    "endpoint": "latest",
+    "source_sha256": "2e6fd03b84ce13ee197bd28fd1efba788d25a6f31ca6fe5dac5cbc70b4fd7159",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*snapshot.*x86_64.*mage$\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*snapshot.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/vivaldi-stable",
+    "repository_id": 656906008,
+    "endpoint": "latest",
+    "source_sha256": "61a17fa52af157584145e40db4ec8c246afd8629853872e2c5735562931e9a3f",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*stable.*x86_64.*mage$\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*stable.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "stable_published_desc"
+  },
+  {
+    "recipe": "x86_64/wekan",
+    "repository_id": 16089035,
+    "endpoint": "list",
+    "source_sha256": "f62fc7e89a190c0bea60254281a9b0fec45fc2e54ac3c292e19952cf446704ac",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"aarch64\\|arm64\\|armv7l\\|i386\\|i686\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64|armv7l|i386|i686",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/wine-devel",
+    "repository_id": 298360082,
+    "endpoint": "list",
+    "source_sha256": "8871c424643c2aaec3f48432aba21edb7b600422189ddd56aad6ef6585c504d5",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386|i686|aarch64|arm64|armv7l\\|v8\" | grep -i \"devel\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386[|]i686[|]aarch64[|]arm64[|]armv7l|v8",
+        "ignore_case": true,
+        "exclude": true
+      },
+      {
+        "pattern": "devel",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/wine-stable",
+    "repository_id": 298360082,
+    "endpoint": "list",
+    "source_sha256": "a3b7714d507dc44c958168130e4b5026270fdaa85d8b7a483052ed55ab072491",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386|i686|aarch64|arm64|armv7l\\|v8\" | grep -i \"stable\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386[|]i686[|]aarch64[|]arm64[|]armv7l|v8",
+        "ignore_case": true,
+        "exclude": true
+      },
+      {
+        "pattern": "stable",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/wine-staging",
+    "repository_id": 298360082,
+    "endpoint": "list",
+    "source_sha256": "9fed82b6cfef03c44dfa999984555d6a1d0a606966de97540e2c99cb11054065",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386|i686|aarch64|arm64|armv7l\\|proton\\|v8\" | grep -i \"staging\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386[|]i686[|]aarch64[|]arm64[|]armv7l|proton|v8",
+        "ignore_case": true,
+        "exclude": true
+      },
+      {
+        "pattern": "staging",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/wine-staging-ge-proton",
+    "repository_id": 298360082,
+    "endpoint": "list",
+    "source_sha256": "6fb1da7b010459943b46df7a3c0906c4a1bc69999a4b296802799c5f0711e989",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386|i686|aarch64|arm64|armv7l\\|v8\" | grep -i \"proton\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386[|]i686[|]aarch64[|]arm64[|]armv7l|v8",
+        "ignore_case": true,
+        "exclude": true
+      },
+      {
+        "pattern": "proton",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/yandex-browser",
+    "repository_id": 824532994,
+    "endpoint": "list",
+    "source_sha256": "caa01ade7afcbcd54ccdc635f5c675135ffcbbc6f59ab736af281d0d3001a456",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -i \"stable\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "stable",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/yandex-browser-beta",
+    "repository_id": 824532994,
+    "endpoint": "list",
+    "source_sha256": "caca3400270649fad59a892f8f0e85023e2559121b94cc7d341b0a310b1794d2",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -i \"beta\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "beta",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/yandex-browser-corporate",
+    "repository_id": 824532994,
+    "endpoint": "list",
+    "source_sha256": "2881c134da5802a7c57b3dc8d738113d1936e3c4e6cc55d3d9f05bba8fdd2101",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -i \"corporate\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "corporate",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/abracadabra",
+    "repository_id": 490391156,
+    "endpoint": "list",
+    "source_sha256": "78040ce99efddc686d3f5b4e2ae5977b8102eb2fdd5cf27ca375de92eb387d32",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|armv7l\\|i386\\|i686\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "x86_64|amd64|armv7l|i386|i686",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/activitywatch",
+    "repository_id": 57224308,
+    "endpoint": "list",
+    "source_sha256": "06a8c612a8bf8b8ed2fb4d177525d32aba2c7668011908cab98b85dcfc99cca9",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|armv7l\\|i386\\|i686\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "x86_64|amd64|armv7l|i386|i686",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/astra-gate",
+    "repository_id": 1409040467,
+    "endpoint": "list",
+    "source_sha256": "febc63e77780db596a7b183535647f3626f95cd7488b3d3f738331826e48eed0",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/brave",
+    "repository_id": 947512058,
+    "endpoint": "list",
+    "source_sha256": "35eb0ff9e63af3e6cf04961909267467063d0ecff38e7a612915fc5b79792617",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*aarch64.*mage$\"| grep -i \"stable\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*aarch64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "stable",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/brave-beta",
+    "repository_id": 947512058,
+    "endpoint": "list",
+    "source_sha256": "a5715b369c2fa180457bef1dbed5121f7ec6055bfec37398956657102ba0b338",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*aarch64.*mage$\"| grep -i \"beta\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*aarch64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "beta",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/brave-nightly",
+    "repository_id": 947512058,
+    "endpoint": "list",
+    "source_sha256": "d8f9d939d374ef18e839fa1a476c7ee8132c7908a57e4b5dfebe51fbc8d9e4f9",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*aarch64.*mage$\"| grep -i \"nightly\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*aarch64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "nightly",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/dabri",
+    "repository_id": 970408916,
+    "endpoint": "list",
+    "source_sha256": "e0b7eaf4d187b6a996f05518cfa3363443d8979ae5bced6f36003a568a744beb",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/dbflux",
+    "repository_id": 1125356218,
+    "endpoint": "list",
+    "source_sha256": "fbc522ea3a31f7d2d311bf0d98e09febc448f3b05ea62827ccf72ee1f85f7ddd",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/deemix-remastered",
+    "repository_id": 1175155242,
+    "endpoint": "list",
+    "source_sha256": "9df6b39db0e08e0dd0396d051d29bcbfec2c848bc1491c0c9ae5621258999d60",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|armv7l\\|i386\\|i686\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "x86_64|amd64|armv7l|i386|i686",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/floorp",
+    "repository_id": 984423768,
+    "endpoint": "list",
+    "source_sha256": "f3423d2aeb46b3a0169719d7e9ce10a89574d418ff79fff451bfba8c946731a4",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*aarch64.*mage$\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*aarch64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/goblintown",
+    "repository_id": 1226456766,
+    "endpoint": "list",
+    "source_sha256": "ab0a1d5f2cc476f12798f5dc48029049cf1756443660e3da390d972c9aef7d7f",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/headlamp",
+    "repository_id": 220546758,
+    "endpoint": "list",
+    "source_sha256": "2a5eb95bc403189b02208b7aff8cd8b273c66efea3bfc45a42e07a18886c5144",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|armv7l\\|i386\\|i686\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "x86_64|amd64|armv7l|i386|i686",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/kcode",
+    "repository_id": 1379205525,
+    "endpoint": "list",
+    "source_sha256": "48d8a6f2ed55deb4bc838034eb269a4d5a0c94a7c0703fb51ffc161d8789a90b",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/keyguard",
+    "repository_id": 669697660,
+    "endpoint": "list",
+    "source_sha256": "0b40ddc34a9cd5f039ba808e7c0fde3c5872143086df955560168273c819678e",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/lapce",
+    "repository_id": 987225517,
+    "endpoint": "list",
+    "source_sha256": "8ef67add5cf7a86b4a9861e96f8b931b8435be732560c45c5a58de61146d320c",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*x86_64.*mage$\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/linuxqq",
+    "repository_id": 1226407465,
+    "endpoint": "list",
+    "source_sha256": "9bdca370fe854ad825d9abb0b3dd16f105f3dc4c1dfa1759e245bb49dc3ea493",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/local-lake-notes",
+    "repository_id": 1228738731,
+    "endpoint": "list",
+    "source_sha256": "f1047bff855b5123ded78daacc9a83f595ae221e1e32e645a03233b72f8452e1",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/melee-pc",
+    "repository_id": 1369235759,
+    "endpoint": "list",
+    "source_sha256": "6eb069046a03ba8f1ef3d3dec1f5b4fa9385acf41cdeabf4e6a0d34137b3cc79",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/memoto",
+    "repository_id": 619530460,
+    "endpoint": "list",
+    "source_sha256": "27600e1129954b56a1162d5c29927dbcf128d51b8a9777c1fb0823558d228d73",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/muon-pdf",
+    "repository_id": 1263946354,
+    "endpoint": "list",
+    "source_sha256": "e0cedb7d7e16def70becebd7fe084f4ac91910645f6e5b4f3c345d9bd8164a90",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|armv7l\\|i386\\|i686\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "x86_64|amd64|armv7l|i386|i686",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/noornote",
+    "repository_id": 1105596660,
+    "endpoint": "list",
+    "source_sha256": "7860becf55694ff282ea12bf8b2e1d56df5d72726f014547810a098d3e2241ef",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/oleafly",
+    "repository_id": 1289704847,
+    "endpoint": "list",
+    "source_sha256": "e124b5a39a1dd8141c43b70b3e1bab5ad61b3d282f39014a3c0c416d3fe361fa",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|armv7l\\|i386\\|i686\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "x86_64|amd64|armv7l|i386|i686",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/openbitfun",
+    "repository_id": 1147866277,
+    "endpoint": "list",
+    "source_sha256": "6e7d4018ee360851ce55e217e0b3062530e5c526929e4301e48d9c27c36159b2",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/opennow",
+    "repository_id": 729255101,
+    "endpoint": "list",
+    "source_sha256": "7233cf6449f7991a488fde289865f5a9784826f4c348e731400dfaefab820e34",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/polymc",
+    "repository_id": 439448087,
+    "endpoint": "latest",
+    "source_sha256": "ca697bbaed361117571b5578c28873a28c2a52370a8e2218165d42d94bad0aa1",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "stable_published_desc"
+  },
+  {
+    "recipe": "aarch64/ramus",
+    "repository_id": 1203688724,
+    "endpoint": "list",
+    "source_sha256": "332741955d7622ffc8108917f73e6a82121b81f32c1c38fe0939241829892185",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/ros-navigation-learning-platform",
+    "repository_id": 1314681352,
+    "endpoint": "list",
+    "source_sha256": "1d9faaab603bbaa2d6afdfaf3789f94be4aa0fcd8c28fffde2a36aa60c10f36f",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/savedesktop",
+    "repository_id": 1143446696,
+    "endpoint": "list",
+    "source_sha256": "614144dca1dc3f89d9054ed20ca3348d32884d47c0a67d483b1f332529993aaf",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -i \"aarch64\\|arm64\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/slick",
+    "repository_id": 1260466044,
+    "endpoint": "list",
+    "source_sha256": "b5fee260c80201cfa8cce9e0864f26b514cc7b5a954870433f9093a065f5047f",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" |  grep -i \"aarch64\\|arm64\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/supertuxkart",
+    "repository_id": 547567579,
+    "endpoint": "latest",
+    "source_sha256": "edb222ca75dff377d4fdc3a7ca368f0ad0bbf168a8ad15116fbfa59dc259636e",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*aarch64.*mage$\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*aarch64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "stable_published_desc"
+  },
+  {
+    "recipe": "aarch64/supertuxkart-dev",
+    "repository_id": 547567579,
+    "endpoint": "list",
+    "source_sha256": "27fafec511d2af4a0c4b5b832421dd8868342bab18137466f049d09f2465b929",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*aarch64.*mage$\" | grep \"DEV\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*aarch64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "DEV",
+        "ignore_case": false,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/vivaldi-snapshot",
+    "repository_id": 656906008,
+    "endpoint": "latest",
+    "source_sha256": "94f5a3c9373262b76362b31682988468b58139aad10b09d7a0449fa72659ec15",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*snapshot.*aarch64.*mage$\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*snapshot.*aarch64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "aarch64/vivaldi-stable",
+    "repository_id": 656906008,
+    "endpoint": "latest",
+    "source_sha256": "ddc8c0409a42f8feeb78e7ec9b4a560d27c4cd5511756d088f9f6b738ba055ba",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*stable.*aarch64.*mage$\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*stable.*aarch64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "stable_published_desc"
+  },
+  {
+    "recipe": "aarch64/wekan",
+    "repository_id": 16089035,
+    "endpoint": "list",
+    "source_sha256": "b8ff37e4c0e063b65c819a2bd0781683bd69a8d28000f7dd67e38b35f32bb9e1",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|armv7l\\|i386\\|i686\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "x86_64|amd64|armv7l|i386|i686",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "i686/supertuxkart",
+    "repository_id": 547567579,
+    "endpoint": "latest",
+    "source_sha256": "4367b2fd9c1fbc858d87e35808a448385f9b235f2023ec7177e8b5acf2240c1d",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*i686.*mage$\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*i686.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "release_rule": "stable_published_desc"
+  },
+  {
+    "recipe": "i686/supertuxkart-dev",
+    "repository_id": 547567579,
+    "endpoint": "list",
+    "source_sha256": "6b7499ae6b6d7a618519be484e07d434fe77606d533dadc79c55c5c776717e77",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*i686.*mage$\" | grep \"DEV\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*i686.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "DEV",
+        "ignore_case": false,
+        "exclude": false
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "i686/usdx",
+    "repository_id": 46124547,
+    "endpoint": "list",
+    "source_sha256": "31f667c43ceef2ddcd48565e88c29dbd2a059de8020cf5e9e6a3a57499ddb4ee",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "x86_64|amd64|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "i686/wekan",
+    "repository_id": 16089035,
+    "endpoint": "list",
+    "source_sha256": "ad11cd1ea3b575b1814e1cbf991fe12318f004dbe57e612f281ecbf43355ff94",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "x86_64|amd64|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "armv7l/headlamp",
+    "repository_id": 220546758,
+    "endpoint": "list",
+    "source_sha256": "1a7bb034104713a68cf681fef40c204df526ef4dcecd44053b827e2bd28d1bfb",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "x86_64|amd64|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  },
+  {
+    "recipe": "armv7l/wekan",
+    "repository_id": 16089035,
+    "endpoint": "list",
+    "source_sha256": "ad11cd1ea3b575b1814e1cbf991fe12318f004dbe57e612f281ecbf43355ff94",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"x86_64\\|amd64\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "x86_64|amd64|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
+  }
+]

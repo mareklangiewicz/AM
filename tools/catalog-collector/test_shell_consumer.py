@@ -58,7 +58,7 @@ print(os.environ.get('HTTP_STATUS','200'),end='')
         self.script('date', '''import json, os, pathlib, sys
 p=pathlib.Path(os.environ['FIXTURE'])/'times'
 t=json.loads(p.read_text()); value=t.pop(0) if len(t)>1 else t[0]
-print(value+'000' if sys.argv[-1]=='+%s.%N' else value); p.write_text(json.dumps(t))
+print(value.split('.')[0] if sys.argv[-1]=='+%s' else value+'000' if sys.argv[-1]=='+%s.%N' else value); p.write_text(json.dumps(t))
 ''')
 
     def script(self, name, body):

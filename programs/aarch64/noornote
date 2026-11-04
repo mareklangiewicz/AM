@@ -3,6 +3,8 @@
 # AM-CATALOG-RECIPE 1
 set -eu
 APP=noornote
+CATALOG_FORMAT=2
+CATALOG_RECIPE="aarch64/noornote"
 CATALOG_ALIAS="https://api.github.com/repos/77elements/noornote/releases"
 
 select_asset() {

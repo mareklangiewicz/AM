@@ -1,0 +1,1 @@
+../catalog-collector/attempt_adapter.py

@@ -154,6 +154,12 @@ if [ "$(ls -A "$CACHEDIR"/AMCACHEPATH 2>/dev/null)" ]; then
 fi
 
 _install_exec_installation_script() {
+	local -a selection_options=()
+	if grep -qx '# AM-CATALOG-RECIPE 1' ./"$arg"; then
+		selection_options=("${catalog_install_options[@]}")
+	elif [ "${#catalog_install_options[@]}" -gt 0 ]; then
+		echo 'Catalog options require a catalog recipe' >&2; return 1
+	fi
 	if [ "$(ls -A "$CACHEDIR"/AMCACHEPATH 2>/dev/null)" ] && [ -n "$SUDOCMD" ]; then
 		$SUDOCMD chmod a-w "$CACHEDIR"/AMCACHEPATH
 		# Check allowed binaries
@@ -199,9 +205,9 @@ _install_exec_installation_script() {
 			done
 		fi
 		trap '$SUDOCMD chmod u+w "$CACHEDIR"/AMCACHEPATH' EXIT INT TERM
-		$SUDOCMD PATH="$PATH" ./"$arg"
+		$SUDOCMD PATH="$PATH" ./"$arg" "${selection_options[@]}"
 	else
-		$SUDOCMD ./"$arg"
+		$SUDOCMD ./"$arg" "${selection_options[@]}"
 	fi
 }
 
@@ -246,6 +252,9 @@ _install_arg() {
 	local catalog_executable=false
 	# This function is needed to parse the installation script and then execute it
 	APPNAME=$(echo "\"$pure_arg\"" | tr '[:lower:]' '[:upper:]')
+	if grep -qx 'CATALOG_FORMAT=2' ./"$arg" && echo "$FLAGS" | grep -q -- '--force-latest'; then
+		echo 'Named format-2 policy does not support --force-latest' >&2; exit 1
+	fi
 	chmod a+x ./"$arg"
 	_check_if_optional_dependences_are_needed || return 1
 	_check_if_spooky_flag_exists || return 1
@@ -264,6 +273,9 @@ APPS_DIR="/opt/"\
 BIN_DIR="/usr/local/bin"\
 DESKTOP_DIR="/usr/local/share/applications"\
 CATALOG_HELPER="/opt/am/modules/catalog.am"' ./"$arg" || exit 1
+		if grep -qx 'CATALOG_FORMAT=2' ./"$arg"; then
+			sed -i 's|^CATALOG_HELPER="/opt/am/modules/catalog.am"$|CATALOG_YAML_HELPER="/opt/am/modules/catalog-yaml.am"|' ./"$arg" || exit 1
+		fi
 	fi
 
 	# Patch "$WGETCMD" (version 1.x) to have a progress bar and fix errors when applying patches
@@ -292,10 +304,13 @@ CATALOG_HELPER="/opt/am/modules/catalog.am"' ./"$arg" || exit 1
 	fi
 	# Embed the AM/AppMan-owned module location in both recipe and updater.
 	if grep -qx '# AM-CATALOG-RECIPE 1' ./"$arg"; then
-		[ -r "$MODULES_PATH/catalog.am" ] || { echo 'Missing catalog.am; synchronize AM modules.' >&2; exit 1; }
-		for managed_module in catalog.am appimage.am; do
+		local managed_modules="catalog.am appimage.am"
+		if grep -qx 'CATALOG_FORMAT=2' ./"$arg"; then
+			managed_modules="catalog-yaml.am catalog-yaml-reader.am catalog-yaml-parser.am catalog-yaml-policy.am appimage.am"
+		fi
+		for managed_module in $managed_modules; do
+			[ -r "$MODULES_PATH/$managed_module" ] || { echo "Missing $managed_module; synchronize AM modules." >&2; exit 1; }
 			if grep -q "/opt/am/modules/$managed_module" ./"$arg"; then
-				[ -r "$MODULES_PATH/$managed_module" ] || { echo "Missing $managed_module; synchronize AM modules." >&2; exit 1; }
 				catalog_path=$(am_recipe_replacement "$MODULES_PATH/$managed_module")
 				sed -i "s|/opt/am/modules/$managed_module|$catalog_path|g" ./"$arg" || exit 1
 			fi
@@ -1092,6 +1107,24 @@ case "$1" in
 		;;
 
 	'install'|'-i'|'-ias'|'install-appimage'|'-ia')
+		# Keep catalog option operands out of the legacy app-name splitter.
+		catalog_install_options=()
+		install_arguments=("$1"); shift
+		while [ "$#" -gt 0 ]; do
+			case $1 in
+				--commit)
+					[ "$#" -ge 2 ] || { echo 'Missing catalog commit' >&2; exit 1; }
+					catalog_install_options+=("$1" "$2"); shift 2 ;;
+				--accept-stale)
+					[ "$#" -ge 4 ] || { echo 'Missing exact stale tuple' >&2; exit 1; }
+					catalog_install_options+=("$1" "$2" "$3" "$4"); shift 4 ;;
+				--accept-stale-release)
+					[ "$#" -ge 6 ] || { echo 'Missing exact selected-release tuple' >&2; exit 1; }
+					catalog_install_options+=("$1" "$2" "$3" "$4" "$5" "$6"); shift 6 ;;
+				*) install_arguments+=("$1"); shift ;;
+			esac
+		done
+		set -- "${install_arguments[@]}"
 		_online_check
 		[ "$AMCLI" = "am" ] && echo "$@" | grep -q -- "--user" && _appman
 

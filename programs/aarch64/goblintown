@@ -3,6 +3,8 @@
 # AM-CATALOG-RECIPE 1
 set -eu
 APP=goblintown
+CATALOG_FORMAT=2
+CATALOG_RECIPE="aarch64/goblintown"
 CATALOG_ALIAS="https://api.github.com/repos/0xbl33p/goblintown/releases"
 
 select_asset() {

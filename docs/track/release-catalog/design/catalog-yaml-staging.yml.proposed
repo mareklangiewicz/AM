@@ -1,0 +1,114 @@
+# INACTIVE REVIEW ARTIFACT. Bootstrap staging only; no publisher or branch update.
+# Requires the complete reviewed YAML source candidate to be merged before use.
+# Existing prior-pin refresh is available through the local API, not this proposal.
+name: YAML catalog bootstrap staging candidate
+on:
+  workflow_dispatch:
+    inputs:
+      approved_revision:
+        description: Full separately reviewed pushed source SHA
+        required: true
+        type: string
+      manifest_sha256:
+        description: Reviewed staged-manifest.json SHA256
+        required: true
+        type: string
+      yaml_policy_sha256:
+        description: Reviewed tools/catalog-collector/yaml-policy.json SHA256
+        required: true
+        type: string
+      yaml_scope_sha256:
+        description: SHA256 of canonical default scope JSON documented in yaml-staging.md
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: yaml-catalog-bootstrap-staging
+  cancel-in-progress: false
+jobs:
+  stage:
+    if: github.repository == 'mareklangiewicz/AM' && github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main-marek'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      CTX_REPOSITORY: ${{ github.repository }}
+      CTX_REPOSITORY_ID: ${{ github.repository_id }}
+      CTX_EVENT: ${{ github.event_name }}
+      CTX_REF: ${{ github.ref }}
+      CTX_SHA: ${{ github.sha }}
+      CTX_WORKFLOW_SHA: ${{ github.workflow_sha }}
+      CTX_RUN_ID: ${{ github.run_id }}
+      CTX_RUN_ATTEMPT: ${{ github.run_attempt }}
+      CTX_APPROVED_REVISION: ${{ inputs.approved_revision }}
+      CTX_MANIFEST_SHA256: ${{ inputs.manifest_sha256 }}
+      CTX_YAML_POLICY_SHA256: ${{ inputs.yaml_policy_sha256 }}
+      CTX_YAML_SCOPE_SHA256: ${{ inputs.yaml_scope_sha256 }}
+      CTX_PREVIOUS_PUBLICATION: ''
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Validate source, profile, default scope and runner dependency without token
+        run: |
+          python3 -B - <<'PY'
+          import hashlib, os, pathlib, subprocess, sys
+          import yaml
+          sys.path.insert(0, 'tools/catalog-collector')
+          from collector import require
+          from storage import canonical
+          from yaml_staging import checked
+          context = {k[4:].lower(): v for k,v in os.environ.items() if k.startswith('CTX_')}
+          raw = pathlib.Path('docs/track/release-catalog/design/staged-manifest.json').read_bytes()
+          policy = pathlib.Path('tools/catalog-collector/yaml-policy.json').read_bytes()
+          revision = subprocess.check_output(['git','rev-parse','HEAD'], text=True).strip()
+          checked(context, raw, revision, policy)
+          scope = dict(sources=None, page_size=100, page_limit=1, reconcile=False)
+          require(hashlib.sha256(canonical(scope)).hexdigest() == context['yaml_scope_sha256'], 'unapproved_yaml_scope')
+          PY
+      - name: Collect and verify normalized bootstrap artifact
+        env:
+          YAML_COLLECTOR_TOKEN: ${{ github.token }}
+        run: |
+          python3 -B - <<'PY'
+          import os, pathlib, subprocess, sys
+          sys.path.insert(0, 'tools/catalog-collector')
+          from supervised_transport import SupervisedTransport, Token
+          from workflow_adapter import Clock
+          from yaml_enrollment import shared_recipes
+          from yaml_adapter import IncompleteBootstrap
+          from yaml_staging import checked, collect_stage, read_staged, verify
+          root = pathlib.Path.cwd()
+          context = {k[4:].lower(): v for k,v in os.environ.items() if k.startswith('CTX_')}
+          raw = (root/'docs/track/release-catalog/design/staged-manifest.json').read_bytes()
+          policy = (root/'tools/catalog-collector/yaml-policy.json').read_bytes()
+          revision = subprocess.check_output(['git','rev-parse','HEAD'], text=True).strip()
+          limits = checked(context, raw, revision, policy)
+          credential = Token(os.environ.pop('YAML_COLLECTOR_TOKEN').encode('ascii'))
+          recipes = list(shared_recipes(root))
+          def transport(value):
+              return SupervisedTransport(value, workflow_identity=int(context['repository_id']),
+                  source_revision=revision, approved_revision=context['approved_revision'])
+          output = pathlib.Path(os.environ['RUNNER_TEMP'])/'yaml-bootstrap-staging'
+          try:
+              report = collect_stage(context, raw, revision, policy, recipes, transport,
+                  Clock(), credential, output, repo=None)
+          except IncompleteBootstrap as failure:
+              from storage import canonical
+              print(canonical(failure.report).decode('utf-8'))
+              raise SystemExit(1)
+          tree, receipt = read_staged(output, limits)
+          verify(tree, receipt, context, raw, revision, policy, recipes, repo=None)
+          # Failed attempted sources are valid metadata, but do not mark the job successful.
+          raise SystemExit(0 if not report['not_attempted_repositories'] and
+              all(status == 'ok' for status in report['sources'].values()) else 1)
+          PY
+      - name: Retain validated staging package
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: yaml-bootstrap-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/yaml-bootstrap-staging/
+          retention-days: 7
+          if-no-files-found: warn

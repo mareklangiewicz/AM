@@ -11,10 +11,6 @@ class BatchUpdates(ShellFixture):
     def setUp(self):
         super().setUp()
         lifecycle.AppImageLifecycle.set_up_appimage(self)
-        date=self.bin/'date'
-        date.write_text(date.read_text().replace('import json, os, pathlib', 'import json, os, pathlib, sys').replace(
-            'print(t.pop(0) if len(t)>1 else t[0])',
-            "value=t.pop(0) if len(t)>1 else t[0]; print(value.split('.')[0] if sys.argv[-1] == '+%s' else value)"))
     run_script = lifecycle.AppImageLifecycle.run_script
     install = lifecycle.AppImageLifecycle.install
     snapshot = lifecycle.AppImageLifecycle.snapshot

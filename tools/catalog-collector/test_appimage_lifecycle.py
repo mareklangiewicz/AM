@@ -1,4 +1,7 @@
-"""Shared AppImage interface and actual manager delivery using retained metadata."""
+"""Format-1 compatibility of shared lifecycle and actual manager functions.
+
+The YAML candidate has separate real-recipe tests in test_yaml_manager_integration.
+"""
 from datetime import datetime, timedelta
 from shell_lookup import epoch
 import json
@@ -24,7 +27,14 @@ def previous_selector(path, revision='f8add0784'):
     return source.split('select_asset() {\n\t')[1].split('\n}')[0]
 
 
+def format1_recipe(recipe):
+    """Freeze legacy policy mode for raw-response compatibility fixtures."""
+    return '\n'.join(line for line in recipe.split('\n')
+                     if line != 'CATALOG_FORMAT=2' and not line.startswith('CATALOG_RECIPE='))
+
+
 def bound_recipe(recipe):
+    recipe = format1_recipe(recipe)
     # Function-level tests bind a private root explicitly; whole installer tests
     # below exercise production expansion of compact recipes.
     bindings = ('AMREPO=${AMREPO-}\nAPPS_DIR="/opt/"\n'
@@ -393,7 +403,7 @@ _use_update "$@"
             self.assertIn(b'launcher-ok',result.stdout)
             self.assertEqual(self.snapshot(),before)
 
-    def run_manager_install(self, *, missing_helper=False, local_script=False, source_unavailable=False, amrepo=SOURCE, recipe=APP, app_name="obsidian", appman=False, flags=""):
+    def run_manager_install(self, *, missing_helper=False, local_script=False, source_unavailable=False, amrepo=SOURCE, recipe=APP, app_name="obsidian", appman=False, flags="", format1=True):
         """Execute real install dispatch/functions with only external AM services stubbed."""
         module_dir=self.root/'opt/am/modules';module_dir.mkdir(parents=True,exist_ok=True)
         helper=module_dir/'catalog.am'
@@ -405,7 +415,8 @@ _use_update "$@"
         (data/'x86_64-apps').write_text('fixture inventory\n')
         recipe_source=self.path/'managed-recipe'
         # Redirect every absolute install location before any script can execute.
-        recipe_source.write_text(recipe.read_text().replace('/opt/',str(self.root)+'/opt/')
+        recipe_text = format1_recipe(recipe.read_text()) if format1 else recipe.read_text()
+        recipe_source.write_text(recipe_text.replace('/opt/',str(self.root)+'/opt/')
                                  .replace('/usr/local/',str(self.root)+'/usr/local/'))
         module=(ROOT/'modules/install.am').read_text()
         module=module.replace('/opt/',str(self.root)+'/opt/').replace('/usr/local/',str(self.root)+'/usr/local/')

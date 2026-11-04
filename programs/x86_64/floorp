@@ -3,6 +3,8 @@
 # AM-CATALOG-RECIPE 1
 set -eu
 APP=floorp
+CATALOG_FORMAT=2
+CATALOG_RECIPE="x86_64/floorp"
 CATALOG_ALIAS="https://api.github.com/repos/Portable-Linux-Apps/floorp-AppImage/releases"
 
 select_asset() {

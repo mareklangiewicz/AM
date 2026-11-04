@@ -1,0 +1,1 @@
+../../modules/catalog-yaml-parser.am

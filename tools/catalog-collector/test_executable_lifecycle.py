@@ -1,16 +1,18 @@
-"""Shared executable lifecycle through trusted recipes and saved standalone updaters."""
+"""Explicit format-1 executable compatibility; format 2 has separate real-recipe tests."""
 from datetime import datetime, timedelta
 import os
 from pathlib import Path
 import subprocess
 
-from test_shell_consumer import ShellFixture, ROOT, HELPER, PIN, SOURCE
+import test_shell_consumer as shell_consumer
+from test_shell_consumer import ROOT, HELPER, PIN, SOURCE
+from test_appimage_lifecycle import format1_recipe
 from test_utility_selectors import accepted_tree, ALIAS
 from storage import validate
 from shell_lookup import epoch
 
 
-class ExecutableLifecycle(ShellFixture):
+class ExecutableLifecycle(shell_consumer.ShellFixture):
     @classmethod
     def setUpClass(cls):
         cls.base = accepted_tree()
@@ -39,7 +41,7 @@ out.write_bytes(b'#!/bin/sh\\nexit 97 # Must never be executed by the lifecycle\
 
     def bind(self, arch, app):
         self.app = self.root/app
-        source = (ROOT/'programs'/arch/app).read_text()
+        source = format1_recipe((ROOT/'programs'/arch/app).read_text())
         bindings = (f'AMREPO=${{AMREPO-"{SOURCE}"}}\nAPPS_DIR="{self.root}"\n'
                     f'BIN_DIR="{self.launchers}"\nDESKTOP_DIR="{self.desktop}"\n'
                     f'CATALOG_HELPER="{HELPER}"\n')

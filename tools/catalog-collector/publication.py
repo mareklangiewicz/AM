@@ -35,6 +35,11 @@ def git(repo, *args, data=None, index=None):
 
 def publish_local(repo, tree, expected_parent):
     validate(tree)
+    return publish_tree(repo,tree,expected_parent)
+
+
+def publish_tree(repo, tree, expected_parent):
+    """Commit a caller-validated inert tree and atomically advance a local ref."""
     require(not git(repo, 'remote').strip(), 'remote_publication_not_supported')
     require(expected_parent is None or type(expected_parent) is str and
             re.fullmatch('[0-9a-f]{40}', expected_parent), 'invalid_parent')

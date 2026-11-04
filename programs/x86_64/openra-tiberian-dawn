@@ -3,6 +3,8 @@
 # AM-CATALOG-RECIPE 1
 set -eu
 APP=openra-tiberian-dawn
+CATALOG_FORMAT=2
+CATALOG_RECIPE="x86_64/openra-tiberian-dawn"
 CATALOG_ALIAS="https://api.github.com/repos/OpenRA/OpenRA/releases"
 
 select_asset() {

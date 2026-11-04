@@ -3,6 +3,8 @@
 # AM-CATALOG-RECIPE 1
 set -eu
 APP=linuxqq
+CATALOG_FORMAT=2
+CATALOG_RECIPE="x86_64/linuxqq"
 CATALOG_ALIAS="https://api.github.com/repos/Rodert/qq-versions/releases"
 
 select_asset() {

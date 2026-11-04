@@ -1,0 +1,289 @@
+# AMCLI client policy over fully validated reader asset_facts, LC_ALL=C.
+function refuse(s) { print "catalog selection: " s > "/dev/stderr"; failed=1; exit 3 }
+function decode(s, out,i,c,e) {
+    out=""
+    for(i=2;i<length(s);i++) {
+        c=substr(s,i,1)
+        if(c=="\\") {
+            e=substr(s,++i,1)
+            if(e=="n") c="\n"
+            else if(e=="r") c="\r"
+            else if(e=="t") c="\t"
+            else if(e=="N") c="\302\205"
+            else if(e=="L") c="\342\200\250"
+            else if(e=="P") c="\342\200\251"
+            else c=e
+        }
+        out=out c
+    }
+    return out
+}
+function less(a,b) { return length(a)<length(b) || (length(a)==length(b) && "x" a<"x" b) }
+function timestamp(s, y,m,d,h,n,t,days) {
+    if (length(s)!=20 || s !~ /^[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]T[0-9][0-9]:[0-9][0-9]:[0-9][0-9]Z$/) return 0
+    y=substr(s,1,4)+0; m=substr(s,6,2)+0; d=substr(s,9,2)+0
+    h=substr(s,12,2)+0; n=substr(s,15,2)+0; t=substr(s,18,2)+0
+    days=(m==2 ? 28+(y%4==0 && (y%100!=0 || y%400==0)) : (m==4 || m==6 || m==9 || m==11 ? 30 : 31))
+    return y>=1970 && m>=1 && m<=12 && d>=1 && d<=days && h<24 && n<60 && t<60
+}
+function seconds(s, y,m,d,i,n) {
+    y=substr(s,1,4)+0; m=substr(s,6,2)+0; d=substr(s,9,2)+0
+    n=365*(y-1970)+int((y-1)/4)-int(1969/4)-int((y-1)/100)+int(1969/100)+int((y-1)/400)-int(1969/400)
+    for(i=1;i<m;i++) n+=(i==2 ? 28+(y%4==0 && (y%100!=0 || y%400==0)) : (i==4 || i==6 || i==9 || i==11 ? 30 : 31))
+    return ((n+d-1)*24+substr(s,12,2))*3600+substr(s,15,2)*60+substr(s,18,2)
+}
+# Explicit reviewed am-utils enrollment: both architectures have the same names.
+# This registry is trusted source; catalog data cannot enroll another recipe.
+function am_utils_recipe(recipe, names,n,i) {
+    n=split("7z addr2line ar arch as b2sum base32 base64 basename basenc bzip2 c++filt cat chcon chgrp chmod chown chroot cksum clear col colcrt colrm column comm cp csplit curl cut date dd df diff dir dircolors dirname du echo elfedit env expand expr factor false file find fmt fold gawk gp-archive gp-collect-app gp-display-html gp-display-src gp-display-text gprof gprofng gprofng-archive gprofng-collect-app gprofng-display-html gprofng-display-src gprofng-display-text gprofng-gmon grep groups hd head hexdump hostid id install join kill killall ld ld.bfd less link ln logname look ls mawk md5sum mkdir mkfifo mknod mktemp more mount mv nice nl nm nohup notify-send nproc numfmt objcopy objdump od paste pathchk pinky pr printenv printf ptx pwd ranlib readelf readlink realpath rev rm rmdir runcon sed seq sh sha1sum sha224sum sha256sum sha384sum sha512sum shred shuf size sleep sort split stat stdbuf strace strings strip stty sum swapoff swapon sync tac tail tar tee test timeout top touch tput tr true truncate tsort tty ul umount uname uncompress unexpand uniq unlink unshare unxz unzip uptime users vdir watch wc wget who whoami xargs xz xzcat yes zcat zsync", names, " ")
+    for(i=1;i<=n;i++)
+        if(recipe=="x86_64/" names[i] || recipe=="aarch64/" names[i]) return 1
+    return 0
+}
+# BEGIN explicit AppImage policies (appimage_policy_source.py)
+function appimage_recipe(recipe) {
+    if(recipe=="x86_64/abracadabra") { image_policy=1; image_repository="490391156"; image_stable=0; return 1 }
+    if(recipe=="x86_64/activitywatch") { image_policy=1; image_repository="57224308"; image_stable=0; return 1 }
+    if(recipe=="x86_64/deemix-remastered") { image_policy=1; image_repository="1175155242"; image_stable=0; return 1 }
+    if(recipe=="x86_64/headlamp") { image_policy=1; image_repository="220546758"; image_stable=0; return 1 }
+    if(recipe=="x86_64/muon-pdf") { image_policy=1; image_repository="1263946354"; image_stable=0; return 1 }
+    if(recipe=="x86_64/oleafly") { image_policy=1; image_repository="1289704847"; image_stable=0; return 1 }
+    if(recipe=="x86_64/usdx") { image_policy=1; image_repository="46124547"; image_stable=0; return 1 }
+    if(recipe=="x86_64/wekan") { image_policy=1; image_repository="16089035"; image_stable=0; return 1 }
+    if(recipe=="x86_64/astra-gate") { image_policy=2; image_repository="1409040467"; image_stable=0; return 1 }
+    if(recipe=="x86_64/dabri") { image_policy=2; image_repository="970408916"; image_stable=0; return 1 }
+    if(recipe=="x86_64/dbflux") { image_policy=2; image_repository="1125356218"; image_stable=0; return 1 }
+    if(recipe=="x86_64/goblintown") { image_policy=2; image_repository="1226456766"; image_stable=0; return 1 }
+    if(recipe=="x86_64/kcode") { image_policy=2; image_repository="1379205525"; image_stable=0; return 1 }
+    if(recipe=="x86_64/keyguard") { image_policy=2; image_repository="669697660"; image_stable=0; return 1 }
+    if(recipe=="x86_64/kkedit-qt") { image_policy=2; image_repository="464169731"; image_stable=0; return 1 }
+    if(recipe=="x86_64/kkeditqt") { image_policy=2; image_repository="464169731"; image_stable=0; return 1 }
+    if(recipe=="x86_64/linuxqq") { image_policy=2; image_repository="1226407465"; image_stable=0; return 1 }
+    if(recipe=="x86_64/local-lake-notes") { image_policy=2; image_repository="1228738731"; image_stable=0; return 1 }
+    if(recipe=="x86_64/melee-pc") { image_policy=2; image_repository="1369235759"; image_stable=0; return 1 }
+    if(recipe=="x86_64/memoto") { image_policy=2; image_repository="619530460"; image_stable=0; return 1 }
+    if(recipe=="x86_64/noornote") { image_policy=2; image_repository="1105596660"; image_stable=0; return 1 }
+    if(recipe=="x86_64/openbitfun") { image_policy=2; image_repository="1147866277"; image_stable=0; return 1 }
+    if(recipe=="x86_64/opennow") { image_policy=2; image_repository="729255101"; image_stable=0; return 1 }
+    if(recipe=="x86_64/polymc") { image_policy=2; image_repository="439448087"; image_stable=1; return 1 }
+    if(recipe=="x86_64/ramus") { image_policy=2; image_repository="1203688724"; image_stable=0; return 1 }
+    if(recipe=="x86_64/ros-navigation-learning-platform") { image_policy=2; image_repository="1314681352"; image_stable=0; return 1 }
+    if(recipe=="x86_64/savedesktop") { image_policy=2; image_repository="1143446696"; image_stable=0; return 1 }
+    if(recipe=="x86_64/slick") { image_policy=2; image_repository="1260466044"; image_stable=0; return 1 }
+    if(recipe=="x86_64/basilisk2") { image_policy=3; image_repository="496695667"; image_stable=0; return 1 }
+    if(recipe=="x86_64/blender-alpha") { image_policy=4; image_repository="980873950"; image_stable=0; return 1 }
+    if(recipe=="x86_64/blender-beta") { image_policy=5; image_repository="980873950"; image_stable=0; return 1 }
+    if(recipe=="x86_64/blender-rc") { image_policy=6; image_repository="980873950"; image_stable=0; return 1 }
+    if(recipe=="x86_64/brave") { image_policy=7; image_repository="947512058"; image_stable=0; return 1 }
+    if(recipe=="x86_64/brave-beta") { image_policy=8; image_repository="947512058"; image_stable=0; return 1 }
+    if(recipe=="x86_64/brave-nightly") { image_policy=9; image_repository="947512058"; image_stable=0; return 1 }
+    if(recipe=="x86_64/calm-circles") { image_policy=10; image_repository="543547002"; image_stable=0; return 1 }
+    if(recipe=="x86_64/calm-fan") { image_policy=11; image_repository="543547002"; image_stable=0; return 1 }
+    if(recipe=="x86_64/calm-meditator") { image_policy=12; image_repository="543547002"; image_stable=0; return 1 }
+    if(recipe=="x86_64/calm-mondrian") { image_policy=13; image_repository="543547002"; image_stable=0; return 1 }
+    if(recipe=="x86_64/chatterino2") { image_policy=14; image_repository="77624593"; image_stable=0; return 1 }
+    if(recipe=="x86_64/chatterino2-nightly") { image_policy=14; image_repository="77624593"; image_stable=0; return 1 }
+    if(recipe=="x86_64/eksplode.re") { image_policy=14; image_repository="261333718"; image_stable=0; return 1 }
+    if(recipe=="x86_64/exsplode.re") { image_policy=14; image_repository="261333718"; image_stable=0; return 1 }
+    if(recipe=="x86_64/floorp") { image_policy=14; image_repository="984423768"; image_stable=0; return 1 }
+    if(recipe=="x86_64/soil-editor") { image_policy=14; image_repository="286458735"; image_stable=0; return 1 }
+    if(recipe=="x86_64/criteria-geo") { image_policy=15; image_repository="286458735"; image_stable=0; return 1 }
+    if(recipe=="x86_64/criteria1d") { image_policy=16; image_repository="286458735"; image_stable=0; return 1 }
+    if(recipe=="x86_64/criteria1d-pro") { image_policy=17; image_repository="286458735"; image_stable=0; return 1 }
+    if(recipe=="x86_64/ghostty-glfw") { image_policy=18; image_repository="912943674"; image_stable=0; return 1 }
+    if(recipe=="x86_64/ghostty-glfw-nightly") { image_policy=19; image_repository="912943674"; image_stable=0; return 1 }
+    if(recipe=="x86_64/ghostty-nightly") { image_policy=20; image_repository="912943674"; image_stable=0; return 1 }
+    if(recipe=="x86_64/heat1d") { image_policy=21; image_repository="286458735"; image_stable=0; return 1 }
+    if(recipe=="x86_64/imagemagick-clang") { image_policy=22; image_repository="35780977"; image_stable=0; return 1 }
+    if(recipe=="x86_64/imagemagick-gcc") { image_policy=23; image_repository="35780977"; image_stable=0; return 1 }
+    if(recipe=="x86_64/lapce") { image_policy=24; image_repository="987225517"; image_stable=0; return 1 }
+    if(recipe=="x86_64/supertuxkart") { image_policy=24; image_repository="547567579"; image_stable=1; return 1 }
+    if(recipe=="aarch64/lapce") { image_policy=24; image_repository="987225517"; image_stable=0; return 1 }
+    if(recipe=="x86_64/openra-dune") { image_policy=25; image_repository="959908"; image_stable=0; return 1 }
+    if(recipe=="x86_64/openra-red-alert") { image_policy=26; image_repository="959908"; image_stable=0; return 1 }
+    if(recipe=="x86_64/openra-tiberian-dawn") { image_policy=27; image_repository="959908"; image_stable=0; return 1 }
+    if(recipe=="x86_64/opera") { image_policy=28; image_repository="656834791"; image_stable=0; return 1 }
+    if(recipe=="x86_64/opera-beta") { image_policy=29; image_repository="656834791"; image_stable=0; return 1 }
+    if(recipe=="x86_64/opera-dev") { image_policy=30; image_repository="656834791"; image_stable=0; return 1 }
+    if(recipe=="x86_64/sheepshaver") { image_policy=31; image_repository="496695667"; image_stable=0; return 1 }
+    if(recipe=="x86_64/sqlitebrowser") { image_policy=32; image_repository="19416551"; image_stable=0; return 1 }
+    if(recipe=="x86_64/supertuxkart-dev") { image_policy=33; image_repository="547567579"; image_stable=0; return 1 }
+    if(recipe=="x86_64/vivaldi-snapshot") { image_policy=34; image_repository="656906008"; image_stable=0; return 1 }
+    if(recipe=="x86_64/vivaldi-stable") { image_policy=35; image_repository="656906008"; image_stable=1; return 1 }
+    if(recipe=="x86_64/wine-devel") { image_policy=36; image_repository="298360082"; image_stable=0; return 1 }
+    if(recipe=="x86_64/wine-stable") { image_policy=37; image_repository="298360082"; image_stable=0; return 1 }
+    if(recipe=="x86_64/wine-staging") { image_policy=38; image_repository="298360082"; image_stable=0; return 1 }
+    if(recipe=="x86_64/wine-staging-ge-proton") { image_policy=39; image_repository="298360082"; image_stable=0; return 1 }
+    if(recipe=="x86_64/yandex-browser") { image_policy=40; image_repository="824532994"; image_stable=0; return 1 }
+    if(recipe=="x86_64/yandex-browser-beta") { image_policy=41; image_repository="824532994"; image_stable=0; return 1 }
+    if(recipe=="x86_64/yandex-browser-corporate") { image_policy=42; image_repository="824532994"; image_stable=0; return 1 }
+    if(recipe=="aarch64/abracadabra") { image_policy=43; image_repository="490391156"; image_stable=0; return 1 }
+    if(recipe=="aarch64/activitywatch") { image_policy=43; image_repository="57224308"; image_stable=0; return 1 }
+    if(recipe=="aarch64/deemix-remastered") { image_policy=43; image_repository="1175155242"; image_stable=0; return 1 }
+    if(recipe=="aarch64/headlamp") { image_policy=43; image_repository="220546758"; image_stable=0; return 1 }
+    if(recipe=="aarch64/muon-pdf") { image_policy=43; image_repository="1263946354"; image_stable=0; return 1 }
+    if(recipe=="aarch64/oleafly") { image_policy=43; image_repository="1289704847"; image_stable=0; return 1 }
+    if(recipe=="aarch64/wekan") { image_policy=43; image_repository="16089035"; image_stable=0; return 1 }
+    if(recipe=="aarch64/astra-gate") { image_policy=44; image_repository="1409040467"; image_stable=0; return 1 }
+    if(recipe=="aarch64/dabri") { image_policy=44; image_repository="970408916"; image_stable=0; return 1 }
+    if(recipe=="aarch64/dbflux") { image_policy=44; image_repository="1125356218"; image_stable=0; return 1 }
+    if(recipe=="aarch64/goblintown") { image_policy=44; image_repository="1226456766"; image_stable=0; return 1 }
+    if(recipe=="aarch64/kcode") { image_policy=44; image_repository="1379205525"; image_stable=0; return 1 }
+    if(recipe=="aarch64/keyguard") { image_policy=44; image_repository="669697660"; image_stable=0; return 1 }
+    if(recipe=="aarch64/linuxqq") { image_policy=44; image_repository="1226407465"; image_stable=0; return 1 }
+    if(recipe=="aarch64/local-lake-notes") { image_policy=44; image_repository="1228738731"; image_stable=0; return 1 }
+    if(recipe=="aarch64/melee-pc") { image_policy=44; image_repository="1369235759"; image_stable=0; return 1 }
+    if(recipe=="aarch64/memoto") { image_policy=44; image_repository="619530460"; image_stable=0; return 1 }
+    if(recipe=="aarch64/noornote") { image_policy=44; image_repository="1105596660"; image_stable=0; return 1 }
+    if(recipe=="aarch64/openbitfun") { image_policy=44; image_repository="1147866277"; image_stable=0; return 1 }
+    if(recipe=="aarch64/opennow") { image_policy=44; image_repository="729255101"; image_stable=0; return 1 }
+    if(recipe=="aarch64/polymc") { image_policy=44; image_repository="439448087"; image_stable=1; return 1 }
+    if(recipe=="aarch64/ramus") { image_policy=44; image_repository="1203688724"; image_stable=0; return 1 }
+    if(recipe=="aarch64/ros-navigation-learning-platform") { image_policy=44; image_repository="1314681352"; image_stable=0; return 1 }
+    if(recipe=="aarch64/savedesktop") { image_policy=44; image_repository="1143446696"; image_stable=0; return 1 }
+    if(recipe=="aarch64/slick") { image_policy=44; image_repository="1260466044"; image_stable=0; return 1 }
+    if(recipe=="aarch64/brave") { image_policy=45; image_repository="947512058"; image_stable=0; return 1 }
+    if(recipe=="aarch64/brave-beta") { image_policy=46; image_repository="947512058"; image_stable=0; return 1 }
+    if(recipe=="aarch64/brave-nightly") { image_policy=47; image_repository="947512058"; image_stable=0; return 1 }
+    if(recipe=="aarch64/floorp") { image_policy=48; image_repository="984423768"; image_stable=0; return 1 }
+    if(recipe=="aarch64/supertuxkart") { image_policy=48; image_repository="547567579"; image_stable=1; return 1 }
+    if(recipe=="aarch64/supertuxkart-dev") { image_policy=49; image_repository="547567579"; image_stable=0; return 1 }
+    if(recipe=="aarch64/vivaldi-snapshot") { image_policy=50; image_repository="656906008"; image_stable=0; return 1 }
+    if(recipe=="aarch64/vivaldi-stable") { image_policy=51; image_repository="656906008"; image_stable=1; return 1 }
+    if(recipe=="i686/supertuxkart") { image_policy=52; image_repository="547567579"; image_stable=1; return 1 }
+    if(recipe=="i686/supertuxkart-dev") { image_policy=53; image_repository="547567579"; image_stable=0; return 1 }
+    if(recipe=="i686/usdx") { image_policy=54; image_repository="46124547"; image_stable=0; return 1 }
+    if(recipe=="i686/wekan") { image_policy=54; image_repository="16089035"; image_stable=0; return 1 }
+    if(recipe=="armv7l/headlamp") { image_policy=54; image_repository="220546758"; image_stable=0; return 1 }
+    if(recipe=="armv7l/wekan") { image_policy=54; image_repository="16089035"; image_stable=0; return 1 }
+    return 0
+}
+function appimage_eligible(url, lower) {
+    lower=tolower(url)
+    if(image_policy==1) return (lower ~ "https.*mage$" && lower !~ "aarch64|arm64|armv7l|i386|i686")
+    if(image_policy==2) return (lower ~ "https.*download.*mage$" && lower !~ "i386|i686|armhf|aarch64|arm64|armv7l")
+    if(image_policy==3) return (lower ~ "https.*mage$" && lower !~ "i386|i686|aarch64|arm64|armv7l" && lower ~ "basilisk" && url !~ "continuous")
+    if(image_policy==4) return (lower ~ "https.*mage$" && lower !~ "i386|i686|aarch64|arm64|armv7l" && lower ~ "alpha")
+    if(image_policy==5) return (lower ~ "https.*mage$" && lower !~ "i386|i686|aarch64|arm64|armv7l" && lower ~ "beta")
+    if(image_policy==6) return (lower ~ "https.*mage$" && lower !~ "i386|i686|aarch64|arm64|armv7l" && lower ~ "candidate")
+    if(image_policy==7) return (lower ~ "https.*x86_64.*mage$" && lower ~ "stable")
+    if(image_policy==8) return (lower ~ "https.*x86_64.*mage$" && lower ~ "beta")
+    if(image_policy==9) return (lower ~ "https.*x86_64.*mage$" && lower ~ "nightly")
+    if(image_policy==10) return (lower ~ "https.*mage$" && lower !~ "i386|i686|aarch64|arm64|armv7l" && lower ~ "circles")
+    if(image_policy==11) return (lower ~ "https.*mage$" && lower !~ "i386|i686|aarch64|arm64|armv7l" && lower ~ "fan")
+    if(image_policy==12) return (lower ~ "https.*mage$" && lower !~ "i386|i686|aarch64|arm64|armv7l" && lower ~ "meditator")
+    if(image_policy==13) return (lower ~ "https.*mage$" && lower !~ "i386|i686|aarch64|arm64|armv7l" && lower ~ "mondrian")
+    if(image_policy==14) return (lower ~ "https.*mage$" && lower !~ "i386|i686|aarch64|arm64|armv7l")
+    if(image_policy==15) return (lower ~ "https.*mage$" && lower !~ "i386|i686|aarch64|arm64|armv7l" && lower ~ "geo")
+    if(image_policy==16) return (lower ~ "https.*criteria1d-x86_64.*mage$" && lower !~ "i386|i686|aarch64|arm64|armv7l")
+    if(image_policy==17) return (lower ~ "https.*pro.*mage$" && lower !~ "i386|i686|aarch64|arm64|armv7l")
+    if(image_policy==18) return (lower ~ "https.*glfw.*x86_64.*mage$" && lower !~ "main")
+    if(image_policy==19) return (lower ~ "https.*glfw.*x86_64.*mage$" && lower ~ "main")
+    if(image_policy==20) return (lower ~ "https.*tip.*mage$" && lower !~ "i386|i686|aarch64|arm64|armv7l")
+    if(image_policy==21) return (lower ~ "https.*mage$" && lower !~ "i386|i686|aarch64|arm64|armv7l" && lower ~ "heat")
+    if(image_policy==22) return (lower ~ "https.*mage$" && lower !~ "i386|i686|aarch64|arm64|armv7l" && lower ~ "clang")
+    if(image_policy==23) return (lower ~ "https.*mage$" && lower !~ "i386|i686|aarch64|arm64|armv7l" && lower ~ "gcc")
+    if(image_policy==24) return (lower ~ "https.*x86_64.*mage$")
+    if(image_policy==25) return (lower ~ "https.*dune.*mage$" && lower !~ "i386|i686|aarch64|arm64|armv7l")
+    if(image_policy==26) return (lower ~ "https.*red.*mage$" && lower !~ "i386|i686|aarch64|arm64|armv7l")
+    if(image_policy==27) return (lower ~ "https.*tiberian.*mage$" && lower !~ "i386|i686|aarch64|arm64|armv7l")
+    if(image_policy==28) return (lower ~ "https.*mage$" && lower !~ "i386[|]i686[|]aarch64[|]arm64[|]armv7l|beta|dev")
+    if(image_policy==29) return (lower ~ "https.*beta.*mage$" && lower !~ "i386|i686|aarch64|arm64|armv7l")
+    if(image_policy==30) return (lower ~ "https.*dev.*mage$" && lower !~ "i386|i686|aarch64|arm64|armv7l")
+    if(image_policy==31) return (lower ~ "https.*mage$" && lower !~ "i386|i686|aarch64|arm64|armv7l" && lower ~ "sheepshaver" && url !~ "continuous")
+    if(image_policy==32) return (lower ~ "https.*x86.*64.*mage$" && lower ~ "/v[0-9].*/|/[0-9].*/" && lower !~ "nightly|continuous|-rc[0-9]/|dev")
+    if(image_policy==33) return (lower ~ "https.*x86_64.*mage$" && url ~ "DEV")
+    if(image_policy==34) return (lower ~ "https.*snapshot.*x86_64.*mage$")
+    if(image_policy==35) return (lower ~ "https.*stable.*x86_64.*mage$")
+    if(image_policy==36) return (lower ~ "https.*mage$" && lower !~ "i386[|]i686[|]aarch64[|]arm64[|]armv7l|v8" && lower ~ "devel")
+    if(image_policy==37) return (lower ~ "https.*mage$" && lower !~ "i386[|]i686[|]aarch64[|]arm64[|]armv7l|v8" && lower ~ "stable")
+    if(image_policy==38) return (lower ~ "https.*mage$" && lower !~ "i386[|]i686[|]aarch64[|]arm64[|]armv7l|proton|v8" && lower ~ "staging")
+    if(image_policy==39) return (lower ~ "https.*mage$" && lower !~ "i386[|]i686[|]aarch64[|]arm64[|]armv7l|v8" && lower ~ "proton")
+    if(image_policy==40) return (lower ~ "https.*mage$" && lower ~ "stable")
+    if(image_policy==41) return (lower ~ "https.*mage$" && lower ~ "beta")
+    if(image_policy==42) return (lower ~ "https.*mage$" && lower ~ "corporate")
+    if(image_policy==43) return (lower ~ "https.*mage$" && lower !~ "x86_64|amd64|armv7l|i386|i686")
+    if(image_policy==44) return (lower ~ "https.*download.*mage$" && lower ~ "aarch64|arm64")
+    if(image_policy==45) return (lower ~ "https.*aarch64.*mage$" && lower ~ "stable")
+    if(image_policy==46) return (lower ~ "https.*aarch64.*mage$" && lower ~ "beta")
+    if(image_policy==47) return (lower ~ "https.*aarch64.*mage$" && lower ~ "nightly")
+    if(image_policy==48) return (lower ~ "https.*aarch64.*mage$")
+    if(image_policy==49) return (lower ~ "https.*aarch64.*mage$" && url ~ "DEV")
+    if(image_policy==50) return (lower ~ "https.*snapshot.*aarch64.*mage$")
+    if(image_policy==51) return (lower ~ "https.*stable.*aarch64.*mage$")
+    if(image_policy==52) return (lower ~ "https.*i686.*mage$")
+    if(image_policy==53) return (lower ~ "https.*i686.*mage$" && url ~ "DEV")
+    if(image_policy==54) return (lower ~ "https.*mage$" && lower !~ "x86_64|amd64|aarch64|arm64|armv7l")
+    return 0
+}
+# END explicit AppImage policies
+BEGIN {
+    recipe=ENVIRON["AM_YAML_RECIPE"]; split(recipe,r,"/"); arch=r[1]; app=r[2]
+    utility=am_utils_recipe(recipe)
+    image=appimage_recipe(recipe)
+    known=(utility || image || recipe=="x86_64/obsidian" || recipe=="x86_64/nvim" ||
+           recipe=="aarch64/nvim" || recipe=="x86_64/nvim-nightly" || recipe=="aarch64/nvim-nightly")
+    if(!known) refuse("unsupported_recipe_policy")
+    check_only=(ENVIRON["AM_YAML_CHECK_RECIPE"]=="1")
+    if(check_only) exit
+    if(!timestamp(ENVIRON["AM_YAML_NOW"])) refuse("utc_now_required")
+    if(utility && ENVIRON["AM_YAML_REPOSITORY"]!="1225768109") refuse("am_utils_repository_mismatch")
+    if(image && ENVIRON["AM_YAML_REPOSITORY"]!=image_repository) refuse("appimage_repository_mismatch")
+    FS="\t"
+}
+
+{
+    release_id=$1; asset_id=$2; observed=decode($3); published=decode($4)
+    tag=decode($5); name=decode($6); url=decode($7)
+    if(image) {
+        eligible=appimage_eligible(url)
+        if(image_stable && $8!="false") eligible=0
+    } else if(utility) {
+        # Match the literal URL component, including the reviewed encoded pluses.
+        # ld.bfd's dot is literal here, unlike the old interpolated ERE wildcard.
+        component=(app=="c++filt" ? "c%2b%2bfilt" : app)
+        u=tolower(url)
+        gsub(/[.]/,"[.]",component)
+        # Match the entire expression: a greedy prefix-only match can skip an
+        # earlier eligible component when the URL has repeated dated paths.
+        pattern="https.*download.*/" arch "-[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]/" component "_.*-" arch "-static$"
+        eligible=(u ~ pattern)
+    } else if(app=="obsidian") {
+        u=tolower(url)
+        eligible=(u ~ /https.*mage$/ && u !~ /i386|i686|aarch64|arm64|armv7l/)
+    } else {
+        eligible=(url ~ /https.*releases.*nvim.*mage$/)
+        if(arch=="x86_64" && url ~ /arm64|aarch64|i686|i386/) eligible=0
+        if(arch=="aarch64" && url ~ /x86_64|i686|i386/) eligible=0
+        if(app=="nvim-nightly") { if(tag!="nightly" || index(tolower(url),"nightly")==0) eligible=0 }
+        else if(tag=="nightly" || index(url,"nightly")!=0) eligible=0
+    }
+    if(!eligible) next
+    better=(!chosen || published>best_published || (published==best_published && less(best_release,release_id)))
+    if(chosen && "x" release_id=="x" best_release)
+        better=("x" name<"x" best_name || ("x" name=="x" best_name && less(asset_id,best_asset)))
+    if(better) {
+        chosen=1; best_release=release_id; best_asset=asset_id; best_published=published
+        best_name=name; best_url=url; best_observed=observed
+    }
+}
+END {
+    if(failed) exit 3
+    if(check_only) exit 0
+    if(!chosen) refuse("no_matching_asset")
+    age=seconds(ENVIRON["AM_YAML_NOW"])-seconds(best_observed)
+    token=ENVIRON["AM_YAML_PIN"] ":" ENVIRON["AM_YAML_REPOSITORY"] ":" best_release ":" best_asset ":" best_observed
+    if(age<0) refuse("future_release_observation")
+    if(age>172800 && ENVIRON["AM_YAML_ACCEPT"]!=token) {
+        if(ENVIRON["AM_YAML_STALE_OPTION"]=="release")
+            refuse("stale; retry with --commit " ENVIRON["AM_YAML_PIN"] " --accept-stale-release " ENVIRON["AM_YAML_PIN"] " " ENVIRON["AM_YAML_REPOSITORY"] " " best_release " " best_asset " " best_observed)
+        refuse("stale_release_acceptance_required " token)
+    }
+    # Fixed line protocol: no eval or shell interpretation; URL has no whitespace.
+    print ENVIRON["AM_YAML_PIN"]
+    print ENVIRON["AM_YAML_REPOSITORY"]
+    print best_release
+    print best_asset
+    print best_observed
+    print best_url
+}
