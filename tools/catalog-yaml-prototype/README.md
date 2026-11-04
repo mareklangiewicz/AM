@@ -254,43 +254,24 @@ startup; it is not isolated awk RSS or simultaneous tree/parent memory. Fixture
 construction and source originals are outside measured child limits. Historical
 resource results retain their original schema and limits.
 
-## Shell-only parser deadline follow-up
+## Simple consumer candidate (ticket 83)
 
-Optional `AM_YAML_PARSE_SECONDS=1..3600` runs the single trusted awk parser under
-`timeout -s KILL SECONDS`. Empty/unset preserves the existing direct invocation.
-A configured deadline with no timeout executable refuses before parsing; it never
-silently runs without the requested guard. Positive canonical integer seconds
-only. Parser/timeout status propagates, and the reader shell removes its private
-spool before returning on refusal. The final stdout copy still requires callers
-to check status as before.
+This branch removes the optional parser timeout. The consumer path is shell + awk,
+complete validation, byte caps and a private spool. It does not require Python,
+timeout, process-group supervision or staging reservations. Python files remain
+offline experimental/measurement tools. Explicit external awk lookup is retained:
+it makes PATH-selected tools consistent even under BusyBox standalone shells.
+Callers must check the command status and prefer one `rows` query over repeated
+scalar invocations when collecting several fields.
 
-This is specifically a parser deadline, not whole-query or process-tree control.
-`reader.awk` does not spawn subprocesses. Do not generalize this wrapper to shell
-commands that spawn children. `deadline_probe.py` found that both installed
-uutils timeout 0.10.0 and BusyBox timeout 1.37.0 leave the tested shell descendant
-running after killing its parent. Both killed a single exec target at about one
-second. No GNU coreutils timeout was tested; the unqualified local timeout is
-uutils. A timeout utility remains an additional explicit trial dependency; its
-availability/behavior on other supported consumer platforms is unverified.
+Run `simple_measure.py` for direct, single-pass rows measurements on 100/500/1000
+synthetic releases with eight assets each. GNU time and Python are measurement
+tools only. `reader_budget_matrix.py` checks the unchanged validation, byte caps,
+private-spool and refusal semantics on mawk/GNU awk/BusyBox awk.
 
-Input size checks, spool setup and final copying are outside the parser watchdog.
-No process memory limit, process-tree kill, hard parent/output deadline or aggregate
-disk quota is supplied by this option. Scheduling/kernel delays can postpone
-termination. The Python supervisor from ticket 80 remains a separate offline
-whole-worker mechanism, not a newly accepted consumer requirement.
-
-Run `deadline_probe.py` for the raw timeout behavior comparison and
-`deadline_matrix.py` for dash/BusyBox sh × uutils/BusyBox timeout × mawk/GNU awk/
-BusyBox awk. Each combination has six deadline groups plus nine inherited reader
-groups; results record the local implementations only. New groups test byte
-identity, uncooperative single-process kill, private partial-spool suppression,
-missing utility, invalid durations and original refusal status/cleanup.
-
-The same local probe also found BusyBox applet preference: bare `awk` under
-BusyBox timeout bypassed the PATH shim, and BusyBox sh's `command -v awk` returned
-an applet name. The reader now searches PATH for external awk/timeout executables
-and invokes their explicit paths. This honors the selected interpreter instead
-of accidentally testing BusyBox's built-in applet. The helper treats empty PATH
-entries as the current directory and quotes candidate paths. It does not install
-utilities or select an interpreter on the user's behalf. Missing external awk
-refuses, including on standalone shells offering only an internal applet.
+The earlier parser-watchdog experiment is preserved at `5a9e2043d` on
+`research/yaml-shell-deadlines`; run `deadline_matrix.py` there. That harness and
+its historical result files are not acceptance checks for this simplified reader.
+Likewise the historical whole-query deadline probe belongs to `84849179b`.
+Existing configurable byte-cap defaults remain experimental; ticket 83's policy
+proposal is documented in the main repo findings, not adopted production policy.

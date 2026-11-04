@@ -54,14 +54,6 @@ for bound in "$AM_YAML_MAX_INPUT_BYTES" "$AM_YAML_MAX_OUTPUT_BYTES"; do
 done
 [ "$AM_YAML_MAX_INPUT_BYTES" -gt 0 ] || usage
 export AM_YAML_MAX_INPUT_BYTES AM_YAML_MAX_OUTPUT_BYTES
-# Optional local trial dependency: timeout controls only the single trusted awk
-# parser. It is not a whole-shell/process-tree or final-output delivery watchdog.
-parse_seconds=${AM_YAML_PARSE_SECONDS:-}
-if [ -n "$parse_seconds" ]; then
-    case $parse_seconds in ''|*[!0-9]*|0*) usage ;; esac
-    [ "${#parse_seconds}" -le 4 ] && [ "$parse_seconds" -le 3600 ] || usage
-    timeout_command=$(external_tool timeout) || { echo 'catalog YAML: timeout unavailable' >&2; exit 2; }
-fi
 awk_command=$(external_tool awk) || { echo 'catalog YAML: external awk unavailable' >&2; exit 2; }
 # A size check before awk bounds allocation; awk also caps consumed bytes.
 [ "$(wc -c < "$file")" -le "$AM_YAML_MAX_INPUT_BYTES" ] || { echo 'catalog YAML: file too large' >&2; exit 2; }
@@ -76,9 +68,6 @@ trap 'rm -f "$spool"' 0
 trap 'exit 2' HUP INT TERM
 status=0
 set -- "$awk_command" -f "$(dirname "$0")/reader.awk"
-if [ -n "$parse_seconds" ]; then
-    set -- "$timeout_command" -s KILL "$parse_seconds" "$@"
-fi
 AM_YAML_OPERATION=$operation AM_YAML_QUERY=$query AM_YAML_FIELDS=$fields "$@" < "$file" > "$spool" || status=$?
 [ "$status" -eq 0 ] || exit "$status"
 cat "$spool"
