@@ -96,6 +96,12 @@ def apply(prepared, root):
         raise ValueError('use the source revision that prepared this cutover')
     manager=root/'opt/am';apps=root/'opt';bins=root/'usr/local/bin'
     desktop=root/'usr/local/share/applications'
+    def launcher_targets(row):
+        app=row['app'];layout=row['layout']
+        return ([('kitty','bin/kitty'),('kitten','bin/kitten')] if layout=='kitty' else
+                [('btop','bin/btop')] if layout=='btop' else
+                [(t,t) for t in ('emmylua_ls','emmylua_check','emmylua_doc_cli','luafmt')] if layout=='emmylua' else [(app,app)])
+
     # One simple, exclusive snapshot of manager and small app metadata. User
     # data remains where it is; binaries are replaceable downloads.
     backup=prepared/'before'
@@ -112,6 +118,12 @@ def apply(prepared, root):
                 if (path/name).is_file():shutil.copy2(path/name,dest/name)
             launcher=desktop/(app+'-AM.desktop')
             if launcher.is_file():shutil.copy2(launcher,dest/'launcher.desktop')
+        launchers={}
+        for row in manifest['apps']:
+            for name,_ in launcher_targets(row):
+                link=bins/name
+                launchers[str(link)] = dict(target=os.readlink(link)) if link.is_symlink() else dict(preserved_regular=link.exists())
+        (backup/'launchers.json').write_text(json.dumps(launchers,indent=2)+'\n')
         (backup/'complete').write_text('Metadata snapshot complete\n')
     # This is deliberately a maintenance-window operation, not pair-atomic delivery.
     shutil.copy2(ROOT/'APP-MANAGER',manager/'APP-MANAGER')
@@ -129,13 +141,16 @@ def apply(prepared, root):
         first=next(iter(manifest['selections'][app].values()))
         version=first['published_at'] if row['version_identity']=='published_at' else first['url']
         (path/'version').write_text(version+'\n');(path/'download-url').write_text(first['url']+'\n')
-        targets=([('kitty','bin/kitty'),('kitten','bin/kitten')] if layout=='kitty' else
-                 [('btop','bin/btop')] if layout=='btop' else
-                 [(t,t) for t in ('emmylua_ls','emmylua_check','emmylua_doc_cli','luafmt')] if layout=='emmylua' else [(app,app)])
-        for name,entry in targets:
+        for name,entry in launcher_targets(row):
             link=bins/name
-            if link.is_symlink():link.unlink()
-            elif link.exists():raise ValueError('refuse replacing non-symlink launcher: '+str(link))
+            if link.is_symlink():
+                if os.readlink(link) not in (str(path/name), str(path/'bin'/name)):
+                    print('Preserving custom launcher: '+str(link),flush=True)
+                    continue
+                link.unlink()
+            elif link.exists():
+                print('Preserving custom launcher: '+str(link),flush=True)
+                continue
             link.symlink_to(path/entry)
         print('Reinstalled '+app,flush=True)
     (prepared/'applied.json').write_text(json.dumps(dict(source=source,catalog=manifest['catalog']),indent=2)+'\n')

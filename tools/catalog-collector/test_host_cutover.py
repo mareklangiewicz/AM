@@ -129,7 +129,10 @@ else:
             (payload/entry).parent.mkdir(parents=True,exist_ok=True);(payload/entry).write_text('new binary')
             selections[app]={app:dict(url='https://example.org/'+app,published_at=NOW)}
         (prepared/'manifest.json').write_text(json.dumps(dict(source=source,catalog=self.pin,apps=self.rows,selections=selections)))
+        custom=bins/'kitty';custom.symlink_to('/custom/kitty-wrapper')
         apply(prepared,root)
+        self.assertEqual(custom.readlink(),Path('/custom/kitty-wrapper'))
+        self.assertEqual(json.loads((prepared/'before/launchers.json').read_text())[str(custom)]['target'],'/custom/kitty-wrapper')
         for row in self.rows:
             app=row['app'];path=root/'opt'/app
             self.assertEqual((path/'my-settings').read_text(),'precious')
@@ -140,7 +143,25 @@ else:
             self.assertIn(source,(path/'recipe.am').read_text())
         self.assertEqual((prepared/'before/APP-MANAGER').read_text(),'old manager')
 
+    def test_partial_extraction_failure_is_not_accepted(self):
+        self.script('tar', '''import pathlib,sys
+if '-tf' in sys.argv:print('fzf')
+else:
+ target=pathlib.Path(sys.argv[sys.argv.index('-C')+1]);(target/'fzf').write_text('partial');raise SystemExit(9)
+''')
+        stage=self.path/'partial';stage.mkdir();(stage/'asset').write_text('archive')
+        result=subprocess.run(['sh','-c','. "$1"; am_archive_stage tar "$2" fzf || exit 1','sh',
+            str(ROOT/'modules/appimage.am'),str(stage)],env=self.env(),capture_output=True)
+        self.assertNotEqual(result.returncode,0)
+        self.assertFalse((stage/'payload/fzf').exists())
+
+    def test_emmylua_stale_consent_is_explicitly_fresh_only(self):
+        result=subprocess.run(['sh',str(ROOT/'modules/catalog-yaml.am'),'x86_64/emmylua',
+            '--accept-stale-release',self.pin,'872860168','1','1',NOW],env=self.env(),capture_output=True)
+        self.assertNotEqual(result.returncode,0)
+        self.assertIn(b'requires fresh observations',result.stderr)
+
 
 if __name__=='__main__':
     suite=unittest.TestSuite(HostCutover(n) for n in HostCutover.__dict__ if n.startswith('test_'))
-    unittest.TextTestRunner(verbosity=2).run(suite)
+    raise SystemExit(not unittest.TextTestRunner(verbosity=2).run(suite).wasSuccessful())

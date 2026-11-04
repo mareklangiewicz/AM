@@ -5,7 +5,7 @@ am_appimage() { am_package "$@"; }
 am_archive_stage() (
 	set -eu
 	layout=$1 stage=$2 app=$3
-	mkdir "$stage/unpacked" "$stage/payload"
+	mkdir "$stage/unpacked" "$stage/payload" || exit 1
 	check_names() {
 		awk 'BEGIN { bad=0 } /^\// || /(^|\/)\.\.(\/|$)/ || /\\/ { bad=1 } END { exit bad }'
 	}
@@ -17,22 +17,22 @@ am_archive_stage() (
 	case $layout in
 		emmylua)
 			for tool in emmylua_ls emmylua_check emmylua_doc_cli luafmt; do
-				mkdir "$stage/unpacked/$tool"
-				untar "$stage/$tool.tar.gz" "$stage/unpacked/$tool"
+				mkdir "$stage/unpacked/$tool" || exit 1
+				untar "$stage/$tool.tar.gz" "$stage/unpacked/$tool" || exit 1
 				[ -f "$stage/unpacked/$tool/$tool" ] && [ ! -L "$stage/unpacked/$tool/$tool" ] || exit 1
-				cp "$stage/unpacked/$tool/$tool" "$stage/payload/$tool"
-				chmod a+x "$stage/payload/$tool"
+				cp "$stage/unpacked/$tool/$tool" "$stage/payload/$tool" || exit 1
+				chmod a+x "$stage/payload/$tool" || exit 1
 			done ;;
 		rclone)
 			unzip -Z1 "$stage/asset" > "$stage/members" || exit 1
 			check_names < "$stage/members" || exit 1
-			unzip -q "$stage/asset" -d "$stage/unpacked"
+			unzip -q "$stage/asset" -d "$stage/unpacked" || exit 1
 			set -- "$stage/unpacked"/rclone-*-linux-amd64
 			[ "$#" -eq 1 ] && [ -f "$1/rclone" ] && [ ! -L "$1" ] || exit 1
-			cp -a "$1/." "$stage/payload/"
-			chmod a+x "$stage/payload/rclone" ;;
+			cp -a "$1/." "$stage/payload/" || exit 1
+			chmod a+x "$stage/payload/rclone" || exit 1 ;;
 		tar|btop|kitty)
-			untar "$stage/asset" "$stage/unpacked"
+			untar "$stage/asset" "$stage/unpacked" || exit 1
 			case $layout in
 				btop) tree=$stage/unpacked/btop; binary=bin/btop ;;
 				kitty) tree=$stage/unpacked; binary=bin/kitty
@@ -40,8 +40,8 @@ am_archive_stage() (
 				*) tree=$stage/unpacked; binary=$app ;;
 			esac
 			[ -f "$tree/$binary" ] && [ ! -L "$tree/$binary" ] || exit 1
-			cp -a "$tree/." "$stage/payload/"
-			chmod a+x "$stage/payload/$binary" ;;
+			cp -a "$tree/." "$stage/payload/" || exit 1
+			chmod a+x "$stage/payload/$binary" || exit 1 ;;
 		*) echo 'Unsupported archive layout' >&2; exit 1 ;;
 	esac
 )
@@ -122,7 +122,7 @@ am_package() (
 	else
 		[ -s "$stage/asset" ] || exit 1
 		chmod a+x "$stage/asset"
-		mv -f "$stage/asset" "$dir/$APP"
+		mv -f "$stage/asset" "$dir/$APP" || exit 1
 	fi
 	printf '%s\n' "$version" > "$dir/version"
 	printf '%s\n' "$download" > "$dir/download-url"
@@ -147,12 +147,24 @@ am_package() (
 		quote "$dir/recipe.am"; printf ' --am-update "$@"\n'
 	} > "$dir/AM-updater"
 	chmod a+x "$dir/remove" "$dir/AM-updater"
+	link_app() {
+		link=$BIN_DIR/$1 target=$2
+		if [ -L "$link" ]; then
+			old=$(readlink "$link")
+			case $old in "$dir/$1"|"$dir/bin/$1") rm -f "$link" || return 1 ;;
+				*) printf 'Preserving custom launcher: %s\n' "$link"; return 0 ;;
+			esac
+		elif [ -e "$link" ]; then
+			printf 'Preserving custom launcher: %s\n' "$link"; return 0
+		fi
+		ln -s "$target" "$link"
+	}
 	case $layout in
-		btop|kitty) ln -sf "$dir/bin/$APP" "$BIN_DIR/$APP" ;;
-		emmylua) for tool in $tools; do ln -sf "$dir/$tool" "$BIN_DIR/$tool"; done ;;
-		*) ln -sf "$dir/$APP" "$BIN_DIR/$APP" ;;
+		btop|kitty) link_app "$APP" "$dir/bin/$APP" ;;
+		emmylua) for tool in $tools; do link_app "$tool" "$dir/$tool"; done ;;
+		*) link_app "$APP" "$dir/$APP" ;;
 	esac
-	if [ "$layout" = kitty ]; then ln -sf "$dir/bin/kitten" "$BIN_DIR/kitten"; fi
+	if [ "$layout" = kitty ]; then link_app kitten "$dir/bin/kitten"; fi
 	[ "$PACKAGE_KIND" = appimage ] || exit 0
 	mkdir -p "$DESKTOP_DIR" "$dir/icons"
 	cd "$dir"

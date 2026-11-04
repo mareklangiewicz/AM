@@ -46,3 +46,9 @@ Save manager/app/config metadata; retain user data and launchers. Recovery is
 restoring the previous manager and reinstalling apps, not a binary transaction.
 Retire unsupported format-1 catalog recipes explicitly. Source pushes remain
 Marek's call under the home AGENTS instructions; ask when concrete pushes are due.
+
+Operational simplification: EmmyLua is fresh-only for all four selected assets.
+Stale-consent tuples are explicitly refused for that toolset; refresh the daily
+catalog instead. This supersedes the earlier per-asset stale-consent requirement
+without weakening the selected-record freshness check. Existing custom executable
+and desktop launchers are preserved; AM-owned links are retargeted as needed.

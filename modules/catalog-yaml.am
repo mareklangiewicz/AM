@@ -20,6 +20,9 @@ while [ "$#" -gt 0 ]; do
         *) fail 'unsupported option (format-1 consent does not apply)' ;;
     esac
 done
+if [ "$AM_YAML_RECIPE" = x86_64/emmylua ] && [ -n "$AM_YAML_ACCEPT" ]; then
+    fail 'EmmyLua requires fresh observations for all four assets; refresh the catalog instead of accepting stale assets'
+fi
 [ -z "$pin" ] || hex "$pin" || fail 'full commit required'
 source=${AMREPO-}
 case $source in *[!A-Za-z0-9_./:-]*) fail 'unsupported AMREPO characters';; esac
