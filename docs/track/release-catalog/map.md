@@ -1158,3 +1158,10 @@ explicit review profile, trusted-context/hash preflight, private normalized YAML
 staging and verifier, plus an inactive bootstrap workflow proposal. All 45 relevant
 checks pass. Authenticated acquisition, remote prior loading, publication CAS
 and reviewed activation/capacity remain; no operational or live action.
+
+2026-11-04: [92 resolved](issues/92-prepare-yaml-artifact-acquisition.md):
+[authenticated YAML artifact acquisition](research/yaml-artifact-acquisition.md)
+reuses GitHub metadata/digest authentication with bounded closed ZIP decoding and
+verification before private staging. Six new and 49 regression checks pass (55).
+Candidate `eecdbdc09`; remote prior loading/publication CAS and activation remain.
+No live request or operational change.
