@@ -68,7 +68,8 @@ manager/module delivery uses the transaction tool's metadata-preserving rename
 primitive. The installed migrator checks the newly delivered bytes, preflights
 the exact selected record, replaces the recipe and successfully runs its updater
 without a binary change. An explicitly synthetic next-release fixture drives an
-actual manager update with the inert downloader; binary and version change.
+actual manager update dispatch/functions in the existing isolated harness with
+service/configuration functions stubbed and the inert downloader; binary and version change.
 Recipe rollback correctly refuses their drift. A separately retained original
 binary/version pair restores those guards; recipe rollback and old manager/module
 restoration then permit the actual format-1 updater/helper to execute again.
@@ -79,7 +80,8 @@ atomic multi-module operation, a pair-atomic binary/version restore, a power-cut
 test or a promise of binary rollback for real applications. For production,
 record and guard the post-update pair, retain trusted artifacts, stop competing
 updates/sync, and recover binary and version deliberately before recipe rollback.
-No real host updater or app binary is executed in this test.
+Complete delivered-manager startup is not tested. No real host updater or app
+binary is executed in this test.
 
 ## Capacity evidence and package freeze
 
@@ -100,3 +102,11 @@ Remaining gates include actual page-100/live capacity, policy/stale acceptance,
 legacy adapters, reviewed delivery/recovery and explicit source/publication/host
 cutover authorization. Keep format-1 support for the 986 remaining source paths;
 four local managed replacements alone cannot retire that publication.
+
+
+sunshine_growth.py separately clones saved Sunshine asset-density/string shapes
+with synthetic noncolliding IDs and receipt dates until the unchanged retained
+file cap refuses. It checks exact retained facts/default/schema/last-success
+preservation and validates the failed-metadata document within the same cap.
+This is a retention-limit test, not a claim to observe additional releases or a
+reason to trim records/increase caps.
