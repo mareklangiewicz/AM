@@ -1128,3 +1128,11 @@ passes 41 list sources/914 releases/14,242 assets and a small collector-attempt
 adapter. Largest source is 1.25 MB; browse hashes match on three awk tools. Three
 latest-only bodies excluded. Concrete production seams recorded; no operational
 changes. Prototype `125a2ff9d`.
+
+2026-11-04: [88 resolved](issues/88-prepare-yaml-list-transport-adapter.md):
+[one-page YAML transport adapter](research/yaml-list-transport-adapter.md)
+prepares unconditional numeric list requests from real manifest enrollment and
+returns validated retained YAML from existing collector attempts. Six new,
+17 collector and six attempt-adapter checks pass. Multi-page orchestration,
+real app-map/bootstrap wiring, accepted limits and workflow staging remain.
+No live acquisition or operational format switch.

@@ -171,3 +171,12 @@ largest-source browse output on three awk tools. Production integration needs
 unconditional numeric list requests, validated pagination, real app-map/bootstrap
 and workflow staging changes. Avoid conditional membership/cache machinery for
 the first integration. No operational format switch or live collection occurred.
+
+## November 4 — one-page transport adapter candidate
+
+[88 resolved](88-prepare-yaml-list-transport-adapter.md) connects unconditional
+numeric list plans from the reviewed manifest to existing transport and retained
+YAML candidate staging. [Findings](../research/yaml-list-transport-adapter.md)
+record six new checks plus 23 existing checks. This covers the default one-page
+scope only; multi-page orchestration, real app-map/bootstrap wiring, production
+limits and workflow staging remain open. No live or operational action occurred.
