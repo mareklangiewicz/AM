@@ -116,5 +116,131 @@ class YamlAdapter(unittest.TestCase):
         self.assertFalse(adapter.has_next(attempt, page_size=100))
 
 
+class ScopedYamlAdapter(unittest.TestCase):
+    setUp = YamlAdapter.setUp
+
+    def scoped(self, scripts, **options):
+        clock = ClockNow()
+        transport = FakeTransport(clock, scripts)
+        plans = []
+        def factory(value):
+            plans.append(value)
+            return transport
+        arguments = dict(workflow_identity=1, apps=self.apps, repositories=self.repositories,
+            source_revision=self.revision, max_file_bytes=2*1024*1024,
+            max_run_requests=20, max_run_bytes=8_000_000, page_limit='all')
+        arguments.update(options)
+        tree, report = adapter.collect_scoped(self.value, factory, clock, Credential(), **arguments)
+        decoded = {key: decode_document(raw, 2*1024*1024) for key, raw in tree.items()}
+        return decoded, report, transport, plans
+
+    def first(self, rid=457):
+        link = '<' + adapter.list_url(262342594, 100, 2) + '>; rel="next"'
+        return response(body=json.dumps([release(rid)]).encode(), headers=QUOTA+(('link', link),))
+
+    def preserved(self, tree, rid='262342594'):
+        result = tree['repositories/'+rid+'.yaml']
+        self.assertEqual(result['collection']['status'], 'failed')
+        for key in ('releases', 'observed_at', 'last_success'):
+            self.assertEqual(result[key], self.repositories[rid][key])
+        return result['collection']['reason']
+
+    def test_all_pages_use_validated_plans_and_distinct_receipts(self):
+        tree, report, transport, plans = self.scoped([
+            self.first(), response(body=json.dumps([release(458)]).encode()), response()])
+        result = tree['repositories/262342594.yaml']
+        self.assertEqual(result['last_success']['pages_fetched'], 2)
+        self.assertTrue(result['last_success']['history_complete'])
+        self.assertEqual(result['observed_at'], '2026-11-04T13:00:02Z')
+        self.assertEqual(result['releases']['457']['observed_at'], '2026-11-04T13:00:01Z')
+        self.assertNotIn('observed_at', result['releases']['458'])
+        self.assertEqual(plans[1].requests[0].source.descriptor.url, adapter.list_url(262342594,100,2))
+        self.assertTrue(all(not p.requests[0].condition for p in plans))
+        self.assertEqual(report['requests'], 3)
+        self.assertEqual(transport.closed, 3)
+
+    def test_finite_scope_never_fetches_next_page(self):
+        tree, report, transport, _ = self.scoped([self.first(), response()], page_limit=1)
+        self.assertEqual(report['requests'], 2)
+        self.assertFalse(tree['repositories/262342594.yaml']['last_success']['history_complete'])
+        self.assertEqual(transport.calls[1][0].source.repository_id, 16408992)
+
+    def test_duplicate_later_release_rolls_back_without_third_page(self):
+        tree, report, _, _ = self.scoped([self.first(), response(body=json.dumps([release()]).encode()), response()])
+        self.assertEqual(self.preserved(tree), 'invalid_response')
+        self.assertEqual(report['requests'], 3)
+
+    def test_later_bad_body_rolls_back(self):
+        tree, report, _, _ = self.scoped([self.first(), response(body=b'{'), response()])
+        self.assertEqual(self.preserved(tree), 'invalid_response')
+        self.assertEqual(report['sources']['16408992'], 'ok')
+
+    def test_request_limit_does_not_invent_unattempted_time(self):
+        tree, report, _, _ = self.scoped([self.first()], max_run_requests=1)
+        self.assertEqual(self.preserved(tree), 'collection_limit')
+        self.assertEqual(report['not_attempted_repositories'], ['16408992'])
+        self.assertEqual(tree['repositories/16408992.yaml'], self.repositories['16408992'])
+        self.assertEqual(report['requests'], 1)
+
+    def test_byte_limit_on_later_page_rolls_back_and_closes_transport(self):
+        size = len(json.dumps([release()]).encode())
+        tree, report, transport, _ = self.scoped([self.first(), response(body=b'x'*20)],
+                                                max_run_bytes=size+10)
+        self.assertEqual(self.preserved(tree), 'collection_limit')
+        self.assertEqual(report['requests'], 2)
+        self.assertEqual(transport.closed, 2)
+        self.assertGreater(report['received_bytes'], size+10)
+
+    def test_shared_deadline_is_passed_to_existing_transport(self):
+        tree, report, transport, _ = self.scoped([self.first(), response(delay=5)], run_seconds=3)
+        self.assertEqual(self.preserved(tree), 'collection_limit')
+        self.assertEqual(report['not_attempted_repositories'], ['16408992'])
+        self.assertTrue(all(limits.batch_deadline == 3 and limits.request_deadline <= 3
+                            and limits.connect_deadline <= 3 for _,limits in transport.calls))
+        self.assertEqual(transport.closed, 2)
+
+    def test_later_rate_stop_preserves_entire_source(self):
+        tree, report, _, _ = self.scoped([self.first(), response(status=429,body=b'{}')])
+        self.assertEqual(self.preserved(tree), 'rate_limited')
+        self.assertEqual(report['not_attempted_repositories'], ['16408992'])
+        self.assertEqual(report['stop_reason'], 'rate_limit')
+
+    def test_source_request_cap_allows_other_sources(self):
+        tree, report, _, _ = self.scoped([self.first(), response()], max_source_requests=1)
+        self.assertEqual(self.preserved(tree), 'collection_limit')
+        self.assertEqual(report['sources']['16408992'], 'ok')
+
+    def test_two_server_failures_stop_before_third_source(self):
+        import copy
+        self.value = adapter.list_plan(RAW, 1, sources=['262342594', '16408992', '46124547'])
+        extra = copy.deepcopy(self.repositories['16408992'])
+        extra['repository_id'] = 46124547
+        self.repositories['46124547'] = extra
+        tree, report, _, _ = self.scoped([response(status=500), response(status=500)])
+        self.assertEqual(report['stop_reason'], 'consecutive_failures')
+        self.assertEqual(report['not_attempted_repositories'], ['46124547'])
+        self.assertEqual(tree['repositories/46124547.yaml'], extra)
+
+    def test_final_budgeted_request_can_complete_scope(self):
+        tree, report, _, _ = self.scoped([response()], max_run_requests=1)
+        self.assertEqual(report['sources'], {'262342594': 'ok'})
+        self.assertEqual(report['not_attempted_repositories'], ['16408992'])
+        self.assertTrue(tree['repositories/262342594.yaml']['last_success']['history_complete'])
+
+    def test_explicit_all_reconciliation_waits_for_scope_success(self):
+        tree, _, _, _ = self.scoped([self.first(), response(), response()], reconcile=True)
+        self.assertNotIn('456', tree['repositories/262342594.yaml']['releases'])
+        self.assertIn('457', tree['repositories/262342594.yaml']['releases'])
+        tree, _, _, _ = self.scoped([self.first(), response(body=b'{'), response()], reconcile=True)
+        self.preserved(tree)
+
+    def test_invalid_budgets_refuse_before_factory(self):
+        for options in (dict(max_run_requests=0), dict(max_run_bytes=True),
+                        dict(run_seconds=float('nan')), dict(run_seconds=301),
+                        dict(page_limit=1,reconcile=True)):
+            with self.subTest(options=options), self.assertRaises(ValueError):
+                self.scoped([], **options)
+
+
 if __name__ == '__main__':
     unittest.main()

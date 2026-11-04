@@ -329,10 +329,31 @@ numeric IDs. Pagination links must retain numeric identity, list route, page
 size and consistent relations; malformed metadata fails that source. Completing
 page 1 with a next link is successful partial scope, never full history.
 
-This entry point implements the default one-page scope only. Configurable
-multi-page orchestration, actual AM app enrollment/bootstrap, production budgets
+`collect_one_page` implements the default one-page scope. `collect_scoped` adds
+finite page limits or `all`, optional explicit all-only reconciliation and shared
+transport budgets. Actual AM app enrollment/bootstrap, accepted production budgets
 and reviewed workflow/artifact staging remain necessary before operational use.
 It imports the current shared YAML candidate components rather than copying
 another normalizer/writer. No operational workflow imports this module.
 
 Offline checks: `python3 -m unittest discover -s tools/catalog-collector -p test_yaml_adapter.py`.
+
+`collect_scoped` takes a `transport_factory(page_plan)`, constructing the existing
+`SupervisedTransport` for each validated page plan with trusted workflow identity
+and reviewed source/approved revisions. It requires explicit aggregate request
+and body-byte allowances, caps elapsed transport time at at most 300 seconds,
+and passes the shared absolute deadline to existing transport limits. The default
+per-source request ceiling is 64; all numbers remain caller policy/trial inputs.
+Responses stream through the existing bounded collector; the budget counts body
+chunks, including the chunk crossing the allowance, and rejects that source.
+This is logical byte accounting, not a filesystem or exact wire-byte quota.
+
+Pages are acquired lazily by the retained merge: malformed bodies, duplicates or
+invalid links stop that source without acquiring another page. A later failure
+rolls back all fetched facts/times for that source. Finite completion on its last
+allowed request succeeds. An incomplete scope at a request, byte or deadline
+boundary fails; unattempted sources retain prior state and are reported by ID.
+Source-local caps allow other sources to proceed; quota/auth/protocol stops and
+two consecutive transfer/server failures stop the run. Reader validation/staging
+is outside the transport elapsed deadline; no additional process supervisor was
+introduced.
