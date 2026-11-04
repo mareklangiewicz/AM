@@ -105,6 +105,8 @@ def prepare(source, source_pin, source_url, installation, recipe, replacement,
         raise ValueError('AMREPO must name exact source commit')
     if not re.fullmatch(r'(x86_64|aarch64)/[a-z0-9][a-z0-9.+_-]*', recipe):
         raise ValueError('explicit supported architecture/app required')
+    source = directory(source)
+    regular(replacement)
     installation = directory(installation)
     modules = directory(modules)
     if installation.name != recipe.split('/')[1]:
@@ -291,6 +293,7 @@ def main():
     action = args.pop('command')
     if action == 'plan':
         out = Path(args.pop('out'))
+        regular(args['selection'])
         args['selection'] = Path(args['selection']).read_text()
         if out.exists():
             raise ValueError('plan output already exists')

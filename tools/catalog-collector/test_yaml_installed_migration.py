@@ -151,6 +151,23 @@ class InstalledMigration(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'drift'): self.apply(rollback=True)
         self.assertEqual(self.target.read_bytes(),self.replacement.read_bytes())
 
+    def test_plan_refuses_unreviewed_recipe_or_symlink_source(self):
+        args = [ROOT,self.source_pin,self.source_url,self.app,'x86_64/7z',
+                self.replacement,self.manager_file,self.module_dir,self.pin,
+                self.selection,'0'*64]
+        with self.assertRaisesRegex(ValueError,'reviewed legacy hash'):
+            migration.prepare(*args)
+        args[-1] = migration.digest(self.before)
+        link = self.path/'linked-source'; link.symlink_to(ROOT)
+        args[0] = link
+        with self.assertRaisesRegex(ValueError,'symlink directory'):
+            migration.prepare(*args)
+        args[0] = ROOT
+        link = self.path/'linked-replacement'; link.symlink_to(self.replacement)
+        args[5] = link
+        with self.assertRaisesRegex(ValueError,'symlink'):
+            migration.prepare(*args)
+
     def test_lock_symlink_and_metadata_refusals(self):
         link = self.app/'link';link.symlink_to(self.target)
         with self.assertRaisesRegex(ValueError,'symlink'): migration.regular(link)
