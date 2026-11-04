@@ -142,3 +142,12 @@ record its three reader calls and repeated repository parse explicitly. User
 approved source pushes; no publication, pin, dispatch or installed change occurred.
 Next substantive work is an offline format-2 writer/publication candidate reusing
 existing mechanisms, not another defensive consumer layer.
+
+## November 4 — offline writer/publication candidate
+
+[85 resolved](85-prepare-offline-yaml-publication.md): canonical emitter extraction
+and a small local Git publisher connect retained merges to the simple consumer.
+[Findings](../research/yaml-offline-publication.md) record three-tool pinned reads,
+failed-source preservation and unchanged refs on candidate refusal. Reconstructing
+prior state from pinned YAML and feeding saved responses through the complete loop
+is next; no actual format switch or new consumer machinery is implied.

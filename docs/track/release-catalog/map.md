@@ -1111,3 +1111,8 @@ not prerequisites. Prototype `7e8210a56`; no production/remote changes.
 resolution, repository identity checking and effective-observation rows in a short
 shell example. All 18 cases pass on three awk tools. Source pushes authorized;
 no catalog publication, daily pin, workflow dispatch or installed AM change.
+
+2026-11-04: [85 offline YAML publication](research/yaml-offline-publication.md)
+reuses the emitter/Git helper and simple consumer: six local snapshots, nine pinned
+reads and fifteen rejected candidates pass on three awk tools; 93 existing checks
+also pass. Prototype `b85f56fec`. No live/installed/workflow/pin changes.
