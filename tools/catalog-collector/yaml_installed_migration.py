@@ -234,6 +234,7 @@ def transact(plan, transaction, rollback=False, accept=False, env=None):
             check(target, plan['old'])
             atomic(backup, target.read_bytes())
             atomic(intent, encoded)
+        record = None
         if receipt.exists():
             regular(receipt)
             record = json.loads(receipt.read_text())
@@ -251,8 +252,11 @@ def transact(plan, transaction, rollback=False, accept=False, env=None):
                 raise ValueError('rollback belongs to another plan')
             if not rollback:
                 raise ValueError('rollback already started')
-        elif rollback:
-            atomic(rollback_intent, encoded)
+        else:
+            if record and record['result'] == 'applied' and current != plan['new']:
+                raise ValueError('applied recipe reverted without rollback intent')
+            if rollback:
+                atomic(rollback_intent, encoded)
         desired = plan['old'] if rollback else plan['new']
         if current != desired:
             if not rollback:

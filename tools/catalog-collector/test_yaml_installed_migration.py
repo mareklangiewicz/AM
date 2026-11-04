@@ -134,6 +134,14 @@ class InstalledMigration(unittest.TestCase):
         self.assertEqual(self.apply(rollback=True),'unchanged')
         self.assertEqual(self.target.read_bytes(),self.before)
 
+    def test_applied_recipe_reversion_without_rollback_intent_refuses(self):
+        self.apply()
+        self.target.write_bytes(self.before)
+        for rollback in (False,True):
+            with self.assertRaisesRegex(ValueError,'reverted without rollback intent'):
+                self.apply(rollback=rollback)
+        self.assertFalse((self.tx/'rollback.json').exists())
+
     def test_backup_and_post_update_drift_refuse_rollback(self):
         self.apply()
         (self.tx/'recipe.before').write_bytes(b'changed')
