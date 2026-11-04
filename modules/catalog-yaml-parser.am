@@ -87,7 +87,7 @@ function finish_record(p, context, k,prefix,i,parts,observed_key) {
     if(operation=="asset_facts" && context=="asset_ids") {
         split(p,parts,"/")
         observed_key=(slot("/releases/" parts[3] "/observed_at") in types ? slot("/releases/" parts[3] "/observed_at") : "/observed_at")
-        emit(parts[3] "\t" parts[5] "\t" encoded[observed_key] "\t" encoded[slot("/releases/" parts[3] "/published_at")] "\t" encoded[slot("/releases/" parts[3] "/tag")] "\t" encoded[slot(p "/name")] "\t" encoded[slot(p "/url")] "\n")
+        emit(parts[3] "\t" parts[5] "\t" encoded[observed_key] "\t" encoded[slot("/releases/" parts[3] "/published_at")] "\t" encoded[slot("/releases/" parts[3] "/tag")] "\t" encoded[slot(p "/name")] "\t" encoded[slot(p "/url")] "\t" encoded[slot("/releases/" parts[3] "/prerelease")] "\n")
     }
     if (operation=="rows" && parent_path(p)==query) {
         emit(substr(p,length(query)+2))

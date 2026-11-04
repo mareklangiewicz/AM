@@ -3,6 +3,8 @@
 # AM-CATALOG-RECIPE 1
 set -eu
 APP=sheepshaver
+CATALOG_FORMAT=2
+CATALOG_RECIPE="x86_64/sheepshaver"
 CATALOG_ALIAS="https://api.github.com/repos/Korkman/macemu-appimage-builder/releases"
 
 select_asset() {

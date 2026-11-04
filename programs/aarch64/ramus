@@ -3,6 +3,8 @@
 # AM-CATALOG-RECIPE 1
 set -eu
 APP=ramus
+CATALOG_FORMAT=2
+CATALOG_RECIPE="aarch64/ramus"
 CATALOG_ALIAS="https://api.github.com/repos/1337raspberry/ramus/releases"
 
 select_asset() {

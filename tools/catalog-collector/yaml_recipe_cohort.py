@@ -14,13 +14,25 @@ _INVENTORY = Path(__file__).resolve().parents[1]/'catalog-yaml-prototype/consume
 AM_UTILS = tuple(row['path'].removeprefix('programs/')
                  for row in json.loads(_INVENTORY.read_text())['recipes']
                  if row['kind'] == 'executable')
-SUPPORTED = COHORT + AM_UTILS
+_POLICIES = _INVENTORY.with_name("appimage-policies.json")
+APPIMAGES = {row["recipe"]: row for row in json.loads(_POLICIES.read_text())}
+SUPPORTED = COHORT + AM_UTILS + tuple(APPIMAGES)
 
 
 def matches(recipe, release, asset):
     require(recipe in SUPPORTED, 'unknown_cohort_recipe')
     arch, app = recipe.split('/')
     url = asset['url']
+    if recipe in APPIMAGES:
+        if APPIMAGES[recipe]['release_rule']=='stable_published_desc' and release['prerelease']:
+            return False
+        for rule in APPIMAGES[recipe]['rules']:
+            value = url.translate(ASCII_LOWER) if rule['ignore_case'] else url
+            pattern = rule['pattern'].translate(ASCII_LOWER) if rule['ignore_case'] else rule['pattern']
+            matched = re.search(pattern, value) is not None
+            if matched == rule['exclude']:
+                return False
+        return True
     if recipe in AM_UTILS:
         component = 'c%2b%2bfilt' if app == 'c++filt' else app
         return re.search(r'https.*download.*/'+arch+r'-[0-9]{8}/'+
@@ -46,6 +58,9 @@ def select_cohort(recipe, repository, commit, *, now, accept_stale=None):
     require(now.tzinfo is not None and now.utcoffset().total_seconds() == 0, 'utc_now_required')
     if recipe in AM_UTILS:
         require(str(repository['repository_id']) == '1225768109', 'am_utils_repository_mismatch')
+    if recipe in APPIMAGES:
+        require(str(repository['repository_id']) == str(APPIMAGES[recipe]['repository_id']),
+                'appimage_repository_mismatch')
     # Input must come from the shared full validator, as in yaml_selection.select.
     for release_id, release in sorted(repository.get('releases', {}).items(),
             key=lambda item: (item[1]['published_at'], int(item[0])), reverse=True):
