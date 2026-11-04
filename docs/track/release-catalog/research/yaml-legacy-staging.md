@@ -42,12 +42,13 @@ The six-line shell protocol cannot supply Logseq's publication identity.
 
 Tar and ZIP member names must be normalized relative paths, with no traversal,
 backslashes, control characters, duplicates, file/directory collisions, links or
-special files. Existing archive executable permission bits are retained as 0755;
+special files. Empty directory members also refuse pending explicit layout review;
+nonempty directory structure is recreated from its files. Existing archive executable permission bits are retained as 0755;
 other files become 0644, with required entrypoints executable. Ownership and
 special permission bits are not imported. Links require a future explicit review;
 this is a safe refusal, not a claim that every real kitty or other release archive
 has passed. Fixed rehearsal bounds: 10,000 members per archive, 512 MiB compressed
-input per asset and expanded payload overall. Catalog caps and manifest stay intact.
+input per asset (checked before allocation with a bounded read) and expanded payload overall. Catalog caps and manifest stay intact.
 
 ## Transition and behavior boundaries
 

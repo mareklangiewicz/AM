@@ -5,11 +5,12 @@ asset, or calls an embedded updater. Selection/consent must already be reviewed.
 This is not a consumer interface or a production update/recovery transaction.
 """
 import hashlib
+import io
+from datetime import datetime
 import json
 import os
 from pathlib import Path, PurePosixPath
 import re
-import shutil
 import stat
 import tarfile
 import zipfile
@@ -68,7 +69,7 @@ def relative(name):
 
 def unpack(archive):
     """Return regular member bytes only; links/special files need explicit review."""
-    files, permissions, seen, total = {}, {}, set(), 0
+    files, permissions, seen, directories, total = {}, {}, set(), set(), 0
 
     def add(name, size, read, mode, directory=False):
         nonlocal total
@@ -79,13 +80,16 @@ def unpack(archive):
         total += size
         if size < 0 or total > MAX_BYTES:
             raise ValueError('expanded archive byte budget')
-        if not directory:
+        if directory:
+            directories.add(path)
+        else:
             data = read()
             if len(data) != size:
                 raise ValueError('incomplete archive member')
             files[path.as_posix()] = data
             permissions[path.as_posix()] = 0o755 if mode & 0o111 else 0o644
 
+    archive = io.BytesIO(archive) if isinstance(archive, bytes) else archive
     if zipfile.is_zipfile(archive):
         with zipfile.ZipFile(archive) as stream:
             for member in stream.infolist():
@@ -95,7 +99,10 @@ def unpack(archive):
                 add(member.filename, member.file_size,
                     lambda m=member: stream.read(m), mode, member.is_dir())
     else:
-        with tarfile.open(archive, 'r:*') as stream:
+        if hasattr(archive, 'seek'):
+            archive.seek(0)
+        options = {'fileobj': archive} if hasattr(archive, 'read') else {'name': archive}
+        with tarfile.open(mode='r:*', **options) as stream:
             for member in stream:
                 if not (member.isfile() or member.isdir()):
                     raise ValueError('archive links/special files need separate review')
@@ -103,9 +110,12 @@ def unpack(archive):
                     lambda m=member: stream.extractfile(m).read(), member.mode, member.isdir())
     if not files:
         raise ValueError('empty archive')
-    for name in files:
-        if any(p.as_posix() in files for p in PurePosixPath(name).parents if str(p) != '.'):
+    for name in seen:
+        if any(p.as_posix() in files for p in name.parents if str(p) != '.'):
             raise ValueError('file/directory member collision')
+    for path in directories:
+        if not any(name.startswith(path.as_posix()+'/') for name in files):
+            raise ValueError('empty directory needs separate layout review')
     return files, permissions
 
 
@@ -124,10 +134,31 @@ def selected(value):
     for key in ('observed_at', 'published_at'):
         if not re.fullmatch(r'[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z', value[key]):
             raise ValueError('UTC identity required')
+        datetime.strptime(value[key], '%Y-%m-%dT%H:%M:%SZ')
     if not value['asset']['url'].startswith('https://') or any(
             c in value['asset']['url'] for c in ('\n', '\r', '\t')):
         raise ValueError('selected HTTPS URL required')
     return value
+
+
+def download_snapshot(path):
+    """Bound the read and hash exactly the supplied bytes used for staging."""
+    directory(path.parent)
+    fd = os.open(path, os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK)
+    with os.fdopen(fd, 'rb') as stream:
+        info = os.fstat(stream.fileno())
+        if not stat.S_ISREG(info.st_mode) or info.st_nlink != 1 or os.listxattr(stream.fileno()):
+            raise ValueError('regular metadata-free download required')
+        if info.st_size > MAX_BYTES:
+            raise ValueError('download byte budget')
+        data = stream.read(MAX_BYTES+1)
+        after = os.fstat(stream.fileno())
+        fields = ('st_size', 'st_mtime_ns', 'st_ctime_ns', 'st_mode', 'st_nlink')
+        if (len(data) > MAX_BYTES or len(data) != info.st_size or
+                any(getattr(after, key) != getattr(info, key) for key in fields)):
+            raise ValueError('oversized or changing download')
+    return data, dict(sha256=hashlib.sha256(data).hexdigest(), mode=stat.S_IMODE(info.st_mode),
+                      uid=info.st_uid, gid=info.st_gid)
 
 
 def stage(app, downloads, destination, root=ROOT):
@@ -147,16 +178,14 @@ def stage(app, downloads, destination, root=ROOT):
         value = selected(entry['selection'])
         records[key] = value
         path = Path(entry['path'])
-        inputs[key] = regular(path)
-        if path.stat().st_size > MAX_BYTES:
-            raise ValueError('download byte budget')
+        data, inputs[key] = download_snapshot(path)
         if app in APPIMAGES or app == 'yt-dlp':
-            files = {app: path.read_bytes()}
+            files = {app: data}
             file_modes = {app: 0o755}
             if not files[app]:
                 raise ValueError('empty download')
         else:
-            files, file_modes = unpack(path)
+            files, file_modes = unpack(data)
             if app == 'emmylua':
                 if set(files) != {key}:
                     raise ValueError('tool archive must contain exact executable only')

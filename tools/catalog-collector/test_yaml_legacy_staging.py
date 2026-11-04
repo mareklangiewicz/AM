@@ -96,11 +96,14 @@ class LegacyStaging(unittest.TestCase):
     def test_traversal_links_duplicates_and_collisions_refuse(self):
         for name in ('../escape','/absolute','a/../../escape','a\\escape','a//b','a/./b','a\nb'):
             with self.assertRaises(ValueError):unpack(self.download({name:b'x'})['path'])
-        for kind in ('symlink','hardlink','fifo','duplicate','collision'):
+        for kind in ('symlink','hardlink','fifo','duplicate','collision','directory-collision','empty-directory'):
             path=self.root/kind
             with tarfile.open(path,'w') as stream:
                 info=tarfile.TarInfo('x');info.size=1;stream.addfile(info,io.BytesIO(b'x'))
-                if kind=='duplicate':stream.addfile(info,io.BytesIO(b'x'))
+                if kind in ('directory-collision','empty-directory'):
+                    info=tarfile.TarInfo('x/empty' if kind=='directory-collision' else 'empty')
+                    info.type=tarfile.DIRTYPE;stream.addfile(info)
+                elif kind=='duplicate':stream.addfile(info,io.BytesIO(b'x'))
                 elif kind=='collision':
                     info=tarfile.TarInfo('x/y');info.size=1;stream.addfile(info,io.BytesIO(b'x'))
                 else:
@@ -133,6 +136,10 @@ class LegacyStaging(unittest.TestCase):
         self.assertEqual(json.loads((out/'review.json').read_text())['version'],entry['selection']['asset']['url'])
 
     def test_limits_symlink_parent_and_source_drift(self):
+        oversized=self.download(data=b'12345678')
+        with patch('yaml_legacy_staging.MAX_BYTES',7):
+            with self.assertRaisesRegex(ValueError,'download byte budget'):
+                stage('yt-dlp',{'yt-dlp':oversized},self.root/'bad')
         entry=self.download({'fzf':b'1234','LICENSE':b'5678'})
         with patch('yaml_legacy_staging.MAX_BYTES',7):
             with self.assertRaises(ValueError):stage('fzf',{'fzf':entry},self.root/'bad')
