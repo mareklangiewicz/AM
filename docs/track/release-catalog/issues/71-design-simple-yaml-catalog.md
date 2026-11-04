@@ -47,3 +47,13 @@ last-success metadata record scope separately. [74 resolved](74-revise-scoped-re
 updates the schema and offline experiments. The reconciliation policy is an
 explicit all-only local proposal, defaulting to retention. Resource ceilings,
 retained-growth tests and production integration remain open; no remote mutation.
+
+## November 4 — offline acquisition and retained growth
+
+[75 resolved](75-bound-offline-response-normalization.md) adds bounded local JSON
+fixture acquisition/normalization. [76](76-measure-retained-growth-and-staging.md)
+measures repeated retention, near-cap staging, reader/spool costs and selected
+freshness. [Findings](../research/yaml-retained-growth.md) keep the 16 MiB trial
+ceiling provisional: BusyBox hits a 55-second CPU allowance on a 16.67 MB revised
+fixture. Hard collector/runtime/staging limits and actual default-run capacity
+remain open; production integration is not authorized by these experiments.

@@ -4,14 +4,21 @@ Status: trial proposals, not deployed budgets. [Current retention design](yaml-r
 supersedes this document's earlier mandatory full-history assumptions. Ticket 71
 remains open for bounded implementation and operational measurements.
 
+November 4 follow-up: [retained-growth and staging measurements](yaml-retained-growth.md)
+exercise the revised schema. Thirty 100-new-ID merges grow to 5.00 MB; near-cap
+staging reaches 16.73 MB at about 125 MiB peak RSS. A 16.67 MB reader fixture
+passes mawk/GNU awk but BusyBox hits the local 55-second CPU cap, with zero query
+output. The 16 MiB candidate below remains provisional, not a portable performance
+ceiling. Hard collector limits and live run-capacity gates remain outstanding.
+
 ## Consumer
 
 Keep record-scoped validation and private output spooling so malformed suffixes
 expose no query output. The [memory experiment](yaml-reader-memory-experiment.md)
 found roughly flat RSS on mawk/GNU awk for tested shapes, but BusyBox reached
 54,360 KiB on a 16.38 MB fixture. Fixed storage slots gave no memory benefit.
-The revised observation/scope schema has not received that full resource matrix;
-do not treat the old measurements as a worst-case bound for the new reader.
+The revised observation/scope schema now has the linked growth/staging matrix;
+neither that matrix nor the old measurements establish portable worst-case bounds.
 
 Bound acquired input bytes, line size, process memory, projected output and
 private temporary storage independently. Restrict batch columns to schema scalar

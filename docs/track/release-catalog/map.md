@@ -1,5 +1,14 @@
 # Release catalog exploration
 
+## Retained-growth experiment — November 4, 2026
+
+[76 resolved](issues/76-measure-retained-growth-and-staging.md): thirty 100-new-ID
+merges grow to 5.00 MB; near-cap staging reaches 16.73 MB at about 125 MiB RSS.
+[Revised-reader results](research/yaml-retained-growth.md) include line/spool
+boundaries and zero-output refusals. BusyBox hits a 55-second CPU cap at 16.67 MB;
+mawk/GNU awk complete. Trial ceilings remain provisional; hard runtime/staging
+limits and live capacity remain 71's gates. Local prototype `ccd0273e4` only.
+
 ## Latest local experiment — November 4, 2026
 
 [75 resolved](issues/75-bound-offline-response-normalization.md): file-backed JSON
