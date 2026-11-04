@@ -1,5 +1,16 @@
 # Release catalog exploration
 
+## Aggregate managed staging — November 4, 2026
+
+[79 resolved](issues/79-bound-offline-aggregate-staging.md): reservations bound
+simultaneous managed logical file bytes across sources, including retained
+candidates and result headroom. File-oriented collection avoids parent JSON
+decoding. [Findings](research/yaml-staging-limits.md): 48 staging-matrix and 45
+existing worker-matrix executions pass on three awk tools. Prototype `a710841e8`
+is local on `research/yaml-staging-limits`. This is not a filesystem quota or
+arbitrary-write bound. Reader/runtime budgets, real transport/publication staging
+and separately authorized live capacity remain open; no production operations.
+
 ## Hard offline worker follow-up — November 4, 2026
 
 [78 resolved](issues/78-enforce-offline-worker-limits.md): external deadline and

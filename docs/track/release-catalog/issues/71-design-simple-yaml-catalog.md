@@ -75,3 +75,14 @@ private-result quarantine. [Findings](../research/yaml-worker-limits.md) record
 45 passing executions across three awk tools and retained-state refusal checks.
 Aggregate temporary storage, parent staging and reader budgets remain unresolved;
 trial limits are unapproved and no live collection or integration is implied.
+
+## November 4 — aggregate managed staging follow-up
+
+[79 resolved](79-bound-offline-aggregate-staging.md) adds aggregate logical-byte
+reservations and bounded input snapshots, retaining candidate charges across
+sources. The file-oriented API avoids parent input/result JSON decoding.
+[Findings](../research/yaml-staging-limits.md) record 48 passing staging executions
+and 45 existing worker executions on three awk tools. These are trusted managed
+files, not filesystem quotas; real transport/publication staging and parent elapsed
+bounds remain unproven. Reader budgets and separately authorized live capacity
+remain open. No production integration or remote operations occurred.
