@@ -95,3 +95,22 @@ symlink parents and CLI/private output. Real downloaded release archives and liv
 installed transitions have not been tested. Production staging, module delivery,
 updater activation, interrupted apply/rollback and release/capacity acceptance
 remain subsequent work; the frozen package from 104 remains unchanged.
+
+
+Verification at source 8164e767f (2026-11-04):
+
+```sh
+cd tools/catalog-collector
+python3 -m unittest test_legacy_updater_audit test_yaml_installed_migration test_yaml_cutover_package test_yaml_legacy_staging
+```
+
+All 31 tests passed in 162.039 seconds (1 audit, 11 installed transactions,
+9 cutover package, 10 new staging groups). The final 10 staging groups also passed
+independently after review fixes. `git diff --check` passed. Initial parallel review
+of db230336a against handoff base 2f18bd3be found two Standards-axis correctness
+issues and one overlapping Spec issue; fixes in 8164e767f were independently
+confirmed on both axes with zero remaining actionable findings.
+
+[107](../issues/107-prepare-delivered-legacy-adapters.md) records the remaining
+consumer/runtime, evidence/enrollment and installed transition work. No main
+runtime promotion, installed or remote changes occurred.

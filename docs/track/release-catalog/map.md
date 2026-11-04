@@ -1291,3 +1291,14 @@ delta/native updates and a partial upstream proposal remain possible. No current
 digest guarantee or upstream acceptance is claimed. This supersedes 104's
 unanswered preference checkpoint; frozen packages/audit stay unchanged. No runtime,
 installed, network, publication, workflow, push, repin or yadm changes.
+
+
+2026-11-04: [106 resolved](issues/106-prepare-legacy-staging-adapters.md):
+[legacy staging/contracts](research/yaml-legacy-staging.md) on isolated source
+8164e767f stage all 17 audited shapes from local selected downloads, preserving
+Logseq publication identity and four-asset EmmyLua coherence. Ten new offline
+groups pass. Review allocation/directory findings fixed; both axes confirmed zero
+remaining findings. Disposable review output only: production adapter delivery,
+source/policy evidence, installed transaction/recovery and operational gates stay
+open in [107](issues/107-prepare-delivered-legacy-adapters.md). No enrollment,
+manifest/cap/runtime/live/push/publication/repin/yadm changes.
