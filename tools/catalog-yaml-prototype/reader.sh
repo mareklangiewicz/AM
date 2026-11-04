@@ -5,7 +5,7 @@ export LC_ALL=C
 usage() { echo 'usage: reader.sh validate|releases|apps FILE | assets FILE RELEASE | get FILE KEY... | rows FILE COLLECTION FIELD...' >&2; exit 2; }
 [ "$#" -ge 2 ] || usage
 operation=$1 file=$2; shift 2
-query='' fields=''
+query='' fields='' field_count=0
 case $operation in
     validate|releases|apps) [ "$#" -eq 0 ] || usage ;;
     assets) [ "$#" -eq 1 ] || usage ;;
@@ -15,6 +15,8 @@ case $operation in
         case $1 in ''|*[!a-z0-9/]*) usage ;; esac
         query=/$1; shift
         for field do
+            field_count=$((field_count + 1))
+            [ "$field_count" -le 10 ] || usage
             case $field in ''|*[!a-z_]*) usage ;; esac
             fields="$fields$field "
         done
@@ -26,10 +28,24 @@ for key do
     query=$query/$key
 done
 [ -f "$file" ] && [ -r "$file" ] || { echo 'catalog YAML: unreadable file' >&2; exit 2; }
+# Trial input/output bounds; awk repeats validation for direct invocation.
+AM_YAML_MAX_INPUT_BYTES=${AM_YAML_MAX_INPUT_BYTES:-33554432}
+AM_YAML_MAX_OUTPUT_BYTES=${AM_YAML_MAX_OUTPUT_BYTES:-16777216}
+for bound in "$AM_YAML_MAX_INPUT_BYTES" "$AM_YAML_MAX_OUTPUT_BYTES"; do
+    case $bound in ''|*[!0-9]*) usage ;; esac
+    [ "${#bound}" -le 8 ] && [ "$bound" -le 33554432 ] || usage
+done
+[ "$AM_YAML_MAX_INPUT_BYTES" -gt 0 ] || usage
+export AM_YAML_MAX_INPUT_BYTES AM_YAML_MAX_OUTPUT_BYTES
 # A size check before awk bounds allocation; awk also caps consumed bytes.
-[ "$(wc -c < "$file")" -le 33554432 ] || { echo 'catalog YAML: file too large' >&2; exit 2; }
+[ "$(wc -c < "$file")" -le "$AM_YAML_MAX_INPUT_BYTES" ] || { echo 'catalog YAML: file too large' >&2; exit 2; }
 # Spool privately: malformed suffixes never expose earlier query results.
-spool=$(mktemp) || exit 2
+if [ -n "${AM_YAML_PRIVATE_SPOOL:-}" ]; then
+    spool=$AM_YAML_PRIVATE_SPOOL
+    (set -C; : > "$spool") || exit 2
+else
+    spool=$(mktemp) || exit 2
+fi
 trap 'rm -f "$spool"' 0
 trap 'exit 2' HUP INT TERM
 status=0

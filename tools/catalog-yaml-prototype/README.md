@@ -216,3 +216,40 @@ Run `python3 tools/catalog-yaml-prototype/staging_matrix.py`: seven staging grou
 plus nine inherited reader groups on each awk implementation. Run `worker_matrix.py`
 to check the existing object-returning worker API after the optional file-result
 extension. Older benchmarks are not remeasurements of this staging interface.
+
+## Reader budget follow-up
+
+The POSIX reader now checks every emitted byte before writing its private spool.
+`AM_YAML_MAX_INPUT_BYTES` accepts 1–33,554,432 (default 33,554,432);
+`AM_YAML_MAX_OUTPUT_BYTES` accepts 0–33,554,432 (default 16,777,216).
+Counts use the C locale. `get` counts decoded bytes; `rows` counts encoded tokens,
+IDs, separators and line endings. Zero output capacity permits validation and
+empty scalar results. Projection fields must be distinct schema scalars (at most
+ten release or five asset fields). The shell also limits field arguments to ten.
+
+`reader_budget.py` provides offline `query_staged`: the supervisor reserves input,
+spool, copied output, diagnostics and a small status receipt in one arena. Both
+spool and copied output receive full output capacity. Diagnostics reserve
+`max(output_capacity,4096)` to match the child's per-file kernel allowance;
+only their first 512 bytes enter the <=4096-byte receipt. The parent decodes only
+that receipt. Accepted raw output stays private and charged until arena release.
+Malformed suffixes, output exhaustion, missing queries and killed workers expose
+no candidate. Reader exit statuses remain visible via `ReaderRefusal.status`;
+worker refusals remain distinct. Diagnostic text is bounded experimental evidence.
+
+The shell accepts an optional trusted `AM_YAML_PRIVATE_SPOOL` destination from
+the supervisor; exclusive creation refuses existing files. Otherwise it uses its
+usual private mktemp file. A direct shell invocation has byte/spool bounds but
+no hard wall or address-space enforcement. The Python supervisor is an offline
+experiment, not an accepted consumer dependency or production reader strategy.
+The deadline starts after parent input snapshotting, as in the collector wrapper.
+
+Run `reader_budget_matrix.py` for six new groups plus nine inherited reader groups
+on each awk tool. `reader_budget_measure.py` serially measures shared-default
+fixtures with 60-second worker deadlines, 128 MiB address space and a 128 MiB arena.
+It verifies complete output hashes/row counts against an oracle built from the
+fixture facts and records refusal diagnostics separately from resource diagnoses.
+`peak_rss_kib` is largest child-process RSS from getrusage, including fork/exec
+startup; it is not isolated awk RSS or simultaneous tree/parent memory. Fixture
+construction and source originals are outside measured child limits. Historical
+resource results retain their original schema and limits.

@@ -3,6 +3,11 @@ function fail(message) {
     print "catalog YAML: line " NR ": " message > "/dev/stderr"
     invalid=1; exit 2
 }
+function emit(s) {
+    if(output_bytes+length(s)>output_limit) fail("output byte limit")
+    output_bytes+=length(s)
+    printf "%s",s
+}
 function less(a,b) { return length(a)<length(b) || (length(a)==length(b) && "x" a < "x" b) }
 function uint(s) { return s ~ /^(0|[1-9][0-9]*)$/ && !less("9223372036854775807",s) }
 function id(s) { return uint(s) && s!="0" }
@@ -74,14 +79,14 @@ function finish_record(p, context, k,prefix,i) {
             # Virtual query field; retain the compact stored representation.
             types[k]="string"; values[k]=values["/observed_at"]; encoded[k]=encoded["/observed_at"]
         }
-        if(operation=="get" && query==p "/observed_at") { found=1; printf "%s",values[k] }
+        if(operation=="get" && query==p "/observed_at") { found=1; emit(values[k]) }
     }
     if(context=="release_ids" && values[slot(p "/observed_at")]>values[slot("/last_success/completed_at")]) fail("release observation after collection")
     if(context=="asset_ids") required(p,"name url size content_type")
     if (operation=="rows" && parent_path(p)==query) {
-        printf "%s",substr(p,length(query)+2)
-        for(i=1;i<=field_count;i++) printf "\t%s",encoded[slot(p "/" fields[i])]
-        printf "\n"
+        emit(substr(p,length(query)+2))
+        for(i=1;i<=field_count;i++) emit("\t" encoded[slot(p "/" fields[i])])
+        emit("\n")
     }
     prefix=slot(p) "/"
     for(k in types) if(k==slot(p) || index(k,prefix)==1) {
@@ -98,6 +103,12 @@ function close_nodes(depth, d,p) {
     }
 }
 BEGIN {
+    input_limit=ENVIRON["AM_YAML_MAX_INPUT_BYTES"]
+    output_limit=ENVIRON["AM_YAML_MAX_OUTPUT_BYTES"]
+    if(input_limit=="") input_limit="33554432"
+    if(output_limit=="") output_limit="16777216"
+    if(!uint(input_limit) || input_limit+0<1 || input_limit+0>33554432 ||
+       !uint(output_limit) || output_limit+0>33554432) fail("reader budgets")
     operation=ENVIRON["AM_YAML_OPERATION"]; query=ENVIRON["AM_YAML_QUERY"]; previous=-1
     if(operation=="assets") query="/releases" query "/assets"
     if(operation=="releases") query="/releases"
@@ -106,12 +117,14 @@ BEGIN {
         if(query !~ /^\/releases(\/[0-9]+\/assets)?$/) fail("collection path")
         context=(query=="/releases" ? "release" : "asset")
         field_count=split(ENVIRON["AM_YAML_FIELDS"],fields," ")
-        for(i=1;i<=field_count;i++) if(!rank(context,fields[i]) || fields[i]=="assets") fail("scalar projection field")
+        for(i=1;i<=field_count;i++) {
+            if(!rank(context,fields[i]) || fields[i]=="assets" || projected[fields[i]]++) fail("scalar projection field")
+        }
     }
 }
 {
     bytes+=length($0)+1
-    if (bytes>33554432 || length($0)>65536) fail("size limit")
+    if (bytes>input_limit || length($0)>65536) fail("size limit")
     if ($0 ~ /[[:cntrl:]]/ || $0 ~ /\302[\200-\237]|\342\200[\250\251]|\357\277[\276\277]/ || $0 ~ / $/ || $0=="") fail("control, blank line or trailing space")
     match($0,/^ */); depth=RLENGTH/2
     if (RLENGTH%2 || depth>4 || depth>previous+1) fail("indentation")
@@ -185,10 +198,10 @@ BEGIN {
         found=1
         if(operation=="get" && path !~ /^\/releases\/[0-9]+\/observed_at$/) {
             if(kind=="map" || kind=="empty") fail("scalar query required")
-            printf "%s",value
+            emit(value)
         }
     }
-    if((operation=="releases" || operation=="assets" || operation=="apps") && parent==query) print key
+    if((operation=="releases" || operation=="assets" || operation=="apps") && parent==query) emit(key "\n")
     if(context=="app_ids") { delete types[slot(path)]; delete values[slot(path)]; delete encoded[slot(path)] }
 }
 END {
