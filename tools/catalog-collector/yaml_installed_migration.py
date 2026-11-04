@@ -95,6 +95,11 @@ def blob(source, pin, name):
                           check=True, capture_output=True).stdout
 
 
+def managed_updater(recipe):
+    return ('#!/bin/sh\n# AM-CATALOG-UPDATER 1\nexec sh '+
+            "'"+str(recipe).replace("'", "'\\''")+"' --am-update \"$@\"\n").encode()
+
+
 def prepare(source, source_pin, source_url, installation, recipe, replacement,
             manager, modules, publication_pin, selection, expected_old_sha256):
     """Inventory only selected paths. Caller must review binding and all hashes."""
@@ -113,8 +118,7 @@ def prepare(source, source_pin, source_url, installation, recipe, replacement,
         raise ValueError('installation/app mismatch')
     old = installation/'recipe.am'
     updater = installation/'AM-updater'
-    expected_updater = ('#!/bin/sh\n# AM-CATALOG-UPDATER 1\nexec sh '+
-                        "'"+str(old).replace("'", "'\\''")+"' --am-update \"$@\"\n").encode()
+    expected_updater = managed_updater(old)
     if updater.read_bytes() != expected_updater:
         raise ValueError('unsupported managed updater')
     original = old.read_bytes()

@@ -13,7 +13,8 @@ module directory, architecture, AppMan configuration file and AM data directory.
 It reads scripts/configuration and streams binary hashes, without executing any
 installed code. Its JSON records hashes, sizes, Unix metadata, link kinds and
 extended-attribute names; it does not record attribute values or binary contents.
-It records configured AppMan root presence, source-override/beta/mode probes,
+The manager and active configuration probes must be regular files. It records
+configured AppMan root presence, source-override/beta/mode probes,
 module/updater path sets and skipped directory symlinks. A configured AppMan root
 must be explicitly included or the inventory refuses. No traversal of directory
 symlinks and no discovery under home or unrelated repositories occurs. This is a
@@ -32,7 +33,9 @@ tree. The package includes a complete Git source archive, exact source manager
 and all .am modules, and before-images of the inventoried manager/modules and
 installed updater/recipe/version files. It retains original metadata in the
 inventory for later delivery/restoration. It does not back up installed binaries
-or claim binary rollback. The private output directory must be new.
+or claim binary rollback. The private output directory must be new. Each installation has a distinct
+app-plus-full-path-hash identity used by its backup and replacement payloads;
+AM and AppMan copies of one app cannot overwrite each other.
 
 For each managed client whose exact source recipe opts into format 2, reproduce
 its installed legacy recipe from the exact legacy source with the inventoried

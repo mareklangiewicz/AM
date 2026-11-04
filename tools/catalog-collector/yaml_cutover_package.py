@@ -13,7 +13,7 @@ import re
 import stat
 import subprocess
 
-from yaml_installed_migration import directory
+from yaml_installed_migration import directory, managed_updater
 
 V1_REF = 'refs/heads/release-catalog'
 V2_REF = 'refs/heads/release-catalog-yaml-v2'
@@ -88,7 +88,8 @@ def inventory(roots, manager, modules, architecture, appman_config, am_data):
         value = record(path)
         files[str(path)] = value
         return value
-    capture(manager)
+    if capture(manager)['kind'] != 'file':
+        raise ValueError('manager must be a regular file, not a symlink')
     for path in sorted(Path(modules).glob('*.am')):
         capture(path)
     config = Path(appman_config)
@@ -104,7 +105,8 @@ def inventory(roots, manager, modules, architecture, appman_config, am_data):
     for path in (Path(am_data)/'newrepo-on',Path(am_data)/'betatester',
                  config.parent/'appman-mode'):
         probes[str(path)]=path.exists() or path.is_symlink()
-        if probes[str(path)]: capture(path)
+        if probes[str(path)] and capture(path)['kind'] != 'file':
+            raise ValueError('configuration probe must be a regular file')
     skipped=[]
     for root in roots:
         for installed in sorted(Path(root).iterdir()):
@@ -193,6 +195,10 @@ def installed_bindings(text):
     return rows[0],values
 
 
+def installation_key(path):
+    return Path(path).name+'-'+hashlib.sha256(str(path).encode()).hexdigest()
+
+
 def package(source,pin,legacy_pin,source_repository,observed,output):
     source = directory(source)
     for revision in (pin,legacy_pin): pin_check(source,revision)
@@ -223,13 +229,13 @@ def package(source,pin,legacy_pin,source_repository,observed,output):
             save('before/modules/'+path.name,path.read_bytes())
         elif path.name in ('recipe.am','AM-updater','version'):
             if expected['kind']!='file': raise ValueError('unsupported installed script link')
-            save('before/clients/'+path.parent.name+'/'+path.name,path.read_bytes())
+            save('before/clients/'+installation_key(path.parent)+'/'+path.name,path.read_bytes())
     source_url='https://raw.githubusercontent.com/'+source_repository+'/'+pin
     shared=git(source,'grep','-l','^# AM-CATALOG-RECIPE 1$',pin,'--','programs').splitlines()
     yaml_recipes=git(source,'grep','-l','^CATALOG_FORMAT=2$',pin,'--','programs').splitlines()
     clients=[]
     for client in observed['clients']:
-        row=dict(client)
+        row=dict(client,installation_id=installation_key(client['installation']))
         row['replacement']=None
         if client['kind']!='managed-catalog':
             row['disposition']='separate-legacy-updater-adapter-required'
@@ -247,8 +253,7 @@ def package(source,pin,legacy_pin,source_repository,observed,output):
                             previous_source,paths,observed['scope']['modules'])
         if old!=legacy:
             raise ValueError('installed recipe differs from exact legacy source binding: '+str(path))
-        expected_updater=("#!/bin/sh\n# AM-CATALOG-UPDATER 1\nexec sh '"+
-                          str(path).replace("'","'\\''")+"' --am-update \"$@\"\n").encode()
+        expected_updater=managed_updater(path)
         if path.with_name('AM-updater').read_bytes()!=expected_updater:
             raise ValueError('unsupported installed trampoline: '+str(path))
         final=bound_recipe(replacement,source_url,paths,observed['scope']['modules'])
@@ -257,7 +262,7 @@ def package(source,pin,legacy_pin,source_repository,observed,output):
             if get(old)!=get(final): raise ValueError('package semantics changed: '+name)
         if Path(paths['APPS_DIR']).resolve()/client['app'] != path.parent:
             raise ValueError('installed directory binding mismatch')
-        name='replacements/'+client['recipe']+'.am'
+        name='replacements/'+row['installation_id']+'.am'
         save(name,final)
         row.update(disposition='bound-ready-pending-publication',replacement=name,
                    expected_old_sha256=hashlib.sha256(old).hexdigest(),

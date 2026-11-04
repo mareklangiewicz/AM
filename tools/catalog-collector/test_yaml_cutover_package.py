@@ -66,11 +66,12 @@ class Cutover(unittest.TestCase):
         choices={r['app']:r['disposition'] for r in report['clients']}
         self.assertEqual(choices['sunshine'],'retain-format-1-not-yaml-enrolled')
         self.assertEqual(choices['obsidian'],'bound-ready-pending-publication')
-        replacement=(one/'replacements/x86_64/obsidian.am').read_text()
+        replacement_path=next(r['replacement'] for r in report['clients'] if r['app']=='obsidian')
+        replacement=(one/replacement_path).read_text()
         self.assertIn(self.pin,replacement)
         self.assertIn('CATALOG_FORMAT=2',replacement)
         self.assertIn('APPS_DIR="'+self.paths['APPS_DIR']+'"',replacement)
-        subprocess.run(['sh','-n',str(one/'replacements/x86_64/obsidian.am')],check=True)
+        subprocess.run(['sh','-n',str(one/replacement_path)],check=True)
 
     def test_payload_tamper_extra_files_and_symlinks_refuse(self):
         output,_=self.build()
@@ -98,6 +99,34 @@ class Cutover(unittest.TestCase):
         (self.path/'data').mkdir()
         (self.path/'data/newrepo-on').write_text('https://example.org')
         with self.assertRaisesRegex(ValueError,'configuration appeared'):self.build(observed)
+
+    def test_same_app_in_two_roots_keeps_independent_payloads(self):
+        second=self.path/'second-root';second.mkdir()
+        app=second/'obsidian';app.mkdir()
+        paths={**self.paths,'APPS_DIR':str(second)+'/'}
+        body=cutover.blob(ROOT,LEGACY,'programs/x86_64/obsidian')
+        recipe=app/'recipe.am'
+        recipe.write_bytes(cutover.bound_recipe(body,self.source,paths,self.modules))
+        (app/'AM-updater').write_bytes(cutover.managed_updater(recipe))
+        (app/'version').write_bytes(b'separate version')
+        (app/'obsidian').write_bytes(b'separate binary')
+        observed=cutover.inventory([self.apps,second],self.manager,self.modules,
+                                  'x86_64',self.config,self.path/'data')
+        output,report=self.build(observed)
+        rows=[r for r in report['clients'] if r['app']=='obsidian']
+        self.assertEqual(len({r['replacement'] for r in rows}),2)
+        for row in rows:
+            original=Path(row['installation'])/'recipe.am'
+            backup=output/'before/clients'/row['installation_id']/'recipe.am'
+            self.assertEqual(backup.read_bytes(),original.read_bytes())
+            self.assertIn(str(original.parent.parent),(output/row['replacement']).read_text())
+        cutover.verify_package(output)
+
+    def test_symlink_manager_refuses_before_following_contents(self):
+        target=self.manager.with_name('target-manager')
+        self.manager.rename(target);self.manager.symlink_to(target)
+        with self.assertRaisesRegex(ValueError,'manager must be a regular file'):
+            self.inventory()
 
     def test_new_updater_or_module_refuses_stale_inventory(self):
         observed=self.inventory()
