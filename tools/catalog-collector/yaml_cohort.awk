@@ -1,0 +1,72 @@
+# Client policy over fully validated reader asset_facts, LC_ALL=C.
+function refuse(s) { print "catalog selection: " s > "/dev/stderr"; failed=1; exit 3 }
+function decode(s, out,i,c,e) {
+    out=""
+    for(i=2;i<length(s);i++) {
+        c=substr(s,i,1)
+        if(c=="\\") {
+            e=substr(s,++i,1)
+            if(e=="n") c="\n"
+            else if(e=="r") c="\r"
+            else if(e=="t") c="\t"
+            else if(e=="N") c="\302\205"
+            else if(e=="L") c="\342\200\250"
+            else if(e=="P") c="\342\200\251"
+            else c=e
+        }
+        out=out c
+    }
+    return out
+}
+function less(a,b) { return length(a)<length(b) || (length(a)==length(b) && "x" a<"x" b) }
+function timestamp(s, y,m,d,h,n,t,days) {
+    if (length(s)!=20 || s !~ /^[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]T[0-9][0-9]:[0-9][0-9]:[0-9][0-9]Z$/) return 0
+    y=substr(s,1,4)+0; m=substr(s,6,2)+0; d=substr(s,9,2)+0
+    h=substr(s,12,2)+0; n=substr(s,15,2)+0; t=substr(s,18,2)+0
+    days=(m==2 ? 28+(y%4==0 && (y%100!=0 || y%400==0)) : (m==4 || m==6 || m==9 || m==11 ? 30 : 31))
+    return y>=1970 && m>=1 && m<=12 && d>=1 && d<=days && h<24 && n<60 && t<60
+}
+function seconds(s, y,m,d,i,n) {
+    y=substr(s,1,4)+0; m=substr(s,6,2)+0; d=substr(s,9,2)+0
+    n=365*(y-1970)+int((y-1)/4)-int(1969/4)-int((y-1)/100)+int(1969/100)+int((y-1)/400)-int(1969/400)
+    for(i=1;i<m;i++) n+=(i==2 ? 28+(y%4==0 && (y%100!=0 || y%400==0)) : (i==4 || i==6 || i==9 || i==11 ? 30 : 31))
+    return ((n+d-1)*24+substr(s,12,2))*3600+substr(s,15,2)*60+substr(s,18,2)
+}
+BEGIN { if(!timestamp(ENVIRON["AM_YAML_NOW"])) refuse("utc_now_required"); FS="\t"; recipe=ENVIRON["AM_YAML_RECIPE"]; split(recipe,r,"/"); arch=r[1]; app=r[2] }
+{
+    release_id=$1; asset_id=$2; observed=decode($3); published=decode($4)
+    tag=decode($5); name=decode($6); url=decode($7)
+    if(app=="obsidian") {
+        u=tolower(url)
+        eligible=(u ~ /https.*mage$/ && u !~ /i386|i686|aarch64|arm64|armv7l/)
+    } else {
+        eligible=(url ~ /https.*releases.*nvim.*mage$/)
+        if(arch=="x86_64" && url ~ /arm64|aarch64|i686|i386/) eligible=0
+        if(arch=="aarch64" && url ~ /x86_64|i686|i386/) eligible=0
+        if(app=="nvim-nightly") { if(tag!="nightly" || index(tolower(url),"nightly")==0) eligible=0 }
+        else if(tag=="nightly" || index(url,"nightly")!=0) eligible=0
+    }
+    if(!eligible) next
+    better=(!chosen || published>best_published || (published==best_published && less(best_release,release_id)))
+    if(chosen && "x" release_id=="x" best_release)
+        better=("x" name<"x" best_name || ("x" name=="x" best_name && less(asset_id,best_asset)))
+    if(better) {
+        chosen=1; best_release=release_id; best_asset=asset_id; best_published=published
+        best_name=name; best_url=url; best_observed=observed
+    }
+}
+END {
+    if(failed) exit 3
+    if(!chosen) refuse("no_matching_asset")
+    age=seconds(ENVIRON["AM_YAML_NOW"])-seconds(best_observed)
+    token=ENVIRON["AM_YAML_PIN"] ":" ENVIRON["AM_YAML_REPOSITORY"] ":" best_release ":" best_asset ":" best_observed
+    if(age<0) refuse("future_release_observation")
+    if(age>172800 && ENVIRON["AM_YAML_ACCEPT"]!=token) refuse("stale_release_acceptance_required " token)
+    # Fixed line protocol: no eval or shell interpretation; URL has no whitespace.
+    print ENVIRON["AM_YAML_PIN"]
+    print ENVIRON["AM_YAML_REPOSITORY"]
+    print best_release
+    print best_asset
+    print best_observed
+    print best_url
+}

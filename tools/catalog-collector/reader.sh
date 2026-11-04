@@ -19,12 +19,12 @@ external_tool() {
         [ "$more" = yes ] || return 1
     done
 }
-usage() { echo 'usage: reader.sh validate|releases|apps FILE | assets FILE RELEASE | get FILE KEY... | rows FILE COLLECTION FIELD...' >&2; exit 2; }
+usage() { echo 'usage: reader.sh validate|releases|apps|asset_facts FILE | assets FILE RELEASE | get FILE KEY... | rows FILE COLLECTION FIELD...' >&2; exit 2; }
 [ "$#" -ge 2 ] || usage
 operation=$1 file=$2; shift 2
 query='' fields='' field_count=0
 case $operation in
-    validate|releases|apps) [ "$#" -eq 0 ] || usage ;;
+    validate|releases|apps|asset_facts) [ "$#" -eq 0 ] || usage ;;
     assets) [ "$#" -eq 1 ] || usage ;;
     get) [ "$#" -ge 1 ] || usage ;;
     rows)

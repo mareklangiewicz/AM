@@ -68,7 +68,7 @@ function slot(p, q) {
     if(q ~ /^\/apps\//) q="/apps/@"
     return q
 }
-function finish_record(p, context, k,prefix,i) {
+function finish_record(p, context, k,prefix,i,parts,observed_key) {
     if (context=="release_ids") {
         required(p,"tag url published_at prerelease assets")
         expect("/observed_at","string")
@@ -83,6 +83,12 @@ function finish_record(p, context, k,prefix,i) {
     }
     if(context=="release_ids" && values[slot(p "/observed_at")]>values[slot("/last_success/completed_at")]) fail("release observation after collection")
     if(context=="asset_ids") required(p,"name url size content_type")
+    # Generic fact projection: no client policy in the shared reader.
+    if(operation=="asset_facts" && context=="asset_ids") {
+        split(p,parts,"/")
+        observed_key=(slot("/releases/" parts[3] "/observed_at") in types ? slot("/releases/" parts[3] "/observed_at") : "/observed_at")
+        emit(parts[3] "\t" parts[5] "\t" encoded[observed_key] "\t" encoded[slot("/releases/" parts[3] "/published_at")] "\t" encoded[slot("/releases/" parts[3] "/tag")] "\t" encoded[slot(p "/name")] "\t" encoded[slot(p "/url")] "\n")
+    }
     if (operation=="rows" && parent_path(p)==query) {
         emit(substr(p,length(query)+2))
         for(i=1;i<=field_count;i++) emit("\t" encoded[slot(p "/" fields[i])])
@@ -240,7 +246,7 @@ END {
             }
         }
     }
-    if(operation=="validate") exit 0
+    if(operation=="validate" || operation=="asset_facts") exit 0
     if(!found) exit 3
     exit 0
 }
