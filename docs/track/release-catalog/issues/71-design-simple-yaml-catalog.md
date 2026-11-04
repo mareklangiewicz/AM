@@ -160,3 +160,14 @@ path. [Findings](../research/yaml-offline-refresh.md) record preserved unselecte
 bytes, successful retries and rollback after a later-page failure on three awk
 tools. Next is realistic saved-response replay and a small production adapter
 review, without adding defensive consumer machinery. No operational format switch.
+
+## November 4 — realistic saved-response replay
+
+[87 resolved](87-replay-real-responses-and-prepare-adapter.md): 41 real list
+responses replay through pinned YAML and the candidate collector-attempt adapter;
+three latest-only responses are explicitly excluded. [Findings](../research/yaml-real-response-replay.md)
+record 914 releases/14,242 assets, preserved recorded receipts and matching
+largest-source browse output on three awk tools. Production integration needs
+unconditional numeric list requests, validated pagination, real app-map/bootstrap
+and workflow staging changes. Avoid conditional membership/cache machinery for
+the first integration. No operational format switch or live collection occurred.

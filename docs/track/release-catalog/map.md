@@ -1122,3 +1122,9 @@ YAML, normalizes saved JSON, merges retained releases and writes the next local
 snapshot. Twelve snapshots/consumer reads and twelve rejected operations pass on
 three tools; prior publication checks pass. Prototype `1719bd8aa`; no operational
 or installed changes.
+
+2026-11-04: [87 real saved-response replay](research/yaml-real-response-replay.md)
+passes 41 list sources/914 releases/14,242 assets and a small collector-attempt
+adapter. Largest source is 1.25 MB; browse hashes match on three awk tools. Three
+latest-only bodies excluded. Concrete production seams recorded; no operational
+changes. Prototype `125a2ff9d`.
