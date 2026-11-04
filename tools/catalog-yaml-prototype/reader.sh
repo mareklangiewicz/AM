@@ -2,6 +2,23 @@
 # THROWAWAY: local format experiment; no network or production integration.
 set -eu
 export LC_ALL=C
+# BusyBox standalone shells/timeout may prefer built-in applets even when PATH
+# contains another executable. Resolve external tools to paths explicitly.
+external_tool() {
+    remaining=${PATH-}
+    while :; do
+        case $remaining in
+            *:*) directory=${remaining%%:*}; remaining=${remaining#*:}; more=yes ;;
+            *) directory=$remaining; more=no ;;
+        esac
+        candidate=${directory:-.}/$1
+        if [ -f "$candidate" ] && [ -x "$candidate" ]; then
+            printf '%s\n' "$candidate"
+            return 0
+        fi
+        [ "$more" = yes ] || return 1
+    done
+}
 usage() { echo 'usage: reader.sh validate|releases|apps FILE | assets FILE RELEASE | get FILE KEY... | rows FILE COLLECTION FIELD...' >&2; exit 2; }
 [ "$#" -ge 2 ] || usage
 operation=$1 file=$2; shift 2
@@ -37,6 +54,15 @@ for bound in "$AM_YAML_MAX_INPUT_BYTES" "$AM_YAML_MAX_OUTPUT_BYTES"; do
 done
 [ "$AM_YAML_MAX_INPUT_BYTES" -gt 0 ] || usage
 export AM_YAML_MAX_INPUT_BYTES AM_YAML_MAX_OUTPUT_BYTES
+# Optional local trial dependency: timeout controls only the single trusted awk
+# parser. It is not a whole-shell/process-tree or final-output delivery watchdog.
+parse_seconds=${AM_YAML_PARSE_SECONDS:-}
+if [ -n "$parse_seconds" ]; then
+    case $parse_seconds in ''|*[!0-9]*|0*) usage ;; esac
+    [ "${#parse_seconds}" -le 4 ] && [ "$parse_seconds" -le 3600 ] || usage
+    timeout_command=$(external_tool timeout) || { echo 'catalog YAML: timeout unavailable' >&2; exit 2; }
+fi
+awk_command=$(external_tool awk) || { echo 'catalog YAML: external awk unavailable' >&2; exit 2; }
 # A size check before awk bounds allocation; awk also caps consumed bytes.
 [ "$(wc -c < "$file")" -le "$AM_YAML_MAX_INPUT_BYTES" ] || { echo 'catalog YAML: file too large' >&2; exit 2; }
 # Spool privately: malformed suffixes never expose earlier query results.
@@ -49,6 +75,10 @@ fi
 trap 'rm -f "$spool"' 0
 trap 'exit 2' HUP INT TERM
 status=0
-AM_YAML_OPERATION=$operation AM_YAML_QUERY=$query AM_YAML_FIELDS=$fields awk -f "$(dirname "$0")/reader.awk" < "$file" > "$spool" || status=$?
+set -- "$awk_command" -f "$(dirname "$0")/reader.awk"
+if [ -n "$parse_seconds" ]; then
+    set -- "$timeout_command" -s KILL "$parse_seconds" "$@"
+fi
+AM_YAML_OPERATION=$operation AM_YAML_QUERY=$query AM_YAML_FIELDS=$fields "$@" < "$file" > "$spool" || status=$?
 [ "$status" -eq 0 ] || exit "$status"
 cat "$spool"

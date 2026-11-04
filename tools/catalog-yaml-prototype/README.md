@@ -253,3 +253,44 @@ fixture facts and records refusal diagnostics separately from resource diagnoses
 startup; it is not isolated awk RSS or simultaneous tree/parent memory. Fixture
 construction and source originals are outside measured child limits. Historical
 resource results retain their original schema and limits.
+
+## Shell-only parser deadline follow-up
+
+Optional `AM_YAML_PARSE_SECONDS=1..3600` runs the single trusted awk parser under
+`timeout -s KILL SECONDS`. Empty/unset preserves the existing direct invocation.
+A configured deadline with no timeout executable refuses before parsing; it never
+silently runs without the requested guard. Positive canonical integer seconds
+only. Parser/timeout status propagates, and the reader shell removes its private
+spool before returning on refusal. The final stdout copy still requires callers
+to check status as before.
+
+This is specifically a parser deadline, not whole-query or process-tree control.
+`reader.awk` does not spawn subprocesses. Do not generalize this wrapper to shell
+commands that spawn children. `deadline_probe.py` found that both installed
+uutils timeout 0.10.0 and BusyBox timeout 1.37.0 leave the tested shell descendant
+running after killing its parent. Both killed a single exec target at about one
+second. No GNU coreutils timeout was tested; the unqualified local timeout is
+uutils. A timeout utility remains an additional explicit trial dependency; its
+availability/behavior on other supported consumer platforms is unverified.
+
+Input size checks, spool setup and final copying are outside the parser watchdog.
+No process memory limit, process-tree kill, hard parent/output deadline or aggregate
+disk quota is supplied by this option. Scheduling/kernel delays can postpone
+termination. The Python supervisor from ticket 80 remains a separate offline
+whole-worker mechanism, not a newly accepted consumer requirement.
+
+Run `deadline_probe.py` for the raw timeout behavior comparison and
+`deadline_matrix.py` for dash/BusyBox sh × uutils/BusyBox timeout × mawk/GNU awk/
+BusyBox awk. Each combination has six deadline groups plus nine inherited reader
+groups; results record the local implementations only. New groups test byte
+identity, uncooperative single-process kill, private partial-spool suppression,
+missing utility, invalid durations and original refusal status/cleanup.
+
+The same local probe also found BusyBox applet preference: bare `awk` under
+BusyBox timeout bypassed the PATH shim, and BusyBox sh's `command -v awk` returned
+an applet name. The reader now searches PATH for external awk/timeout executables
+and invokes their explicit paths. This honors the selected interpreter instead
+of accidentally testing BusyBox's built-in applet. The helper treats empty PATH
+entries as the current directory and quotes candidate paths. It does not install
+utilities or select an interpreter on the user's behalf. Missing external awk
+refuses, including on standalone shells offering only an internal applet.
