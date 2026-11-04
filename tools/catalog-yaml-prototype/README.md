@@ -275,3 +275,24 @@ its historical result files are not acceptance checks for this simplified reader
 Likewise the historical whole-query deadline probe belongs to `84849179b`.
 Existing configurable byte-cap defaults remain experimental; ticket 83's policy
 proposal is documented in the main repo findings, not adopted production policy.
+
+## Offline consumer example
+
+```sh
+sh tools/catalog-yaml-prototype/browse.sh /path/to/snapshot example
+```
+
+The snapshot contains `apps.yaml` and `repositories/ID.yaml`, all obtained from
+one publication commit by the caller. `browse.sh` resolves an app (including an
+alias), checks that the repository file declares the mapped identity, and prints
+release rows: ID, tag, effective observed_at, published_at, prerelease, title.
+Fields after ID are canonical JSON scalar tokens separated by tabs; do not eval
+them. Missing app returns 3; malformed/mismatched data returns 2 with no release
+rows. It applies no newest/stable/freshness or installation policy.
+
+This deliberately small example makes three reader calls: map lookup, identity
+check, release rows. It parses the repository twice; the ticket 83 single-query
+timings therefore are not end-to-end browse timings. Callers already holding a
+validated repository identity can use `reader.sh rows` directly. It fetches
+nothing, introduces no cache or daemon and is not wired into installed AM.
+Run `browse_experiment.py` for the six-case matrix on three awk tools.
