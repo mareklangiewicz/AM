@@ -36,9 +36,9 @@ sequence passes; the manager dispatch is exercised through the existing harness.
 Parallel Standards/Spec review has zero actionable findings on each axis.
 
 Saved 48-source capacity is 7.00 MB YAML from 37.56 MB JSON; PolyMC/Vivaldi lack
-list evidence. Sunshine-shaped synthetic growth refuses atomically at cycle12,
-retaining330releases/7161assets below unchanged2MiBcap. Neither establishes live
-page100 capacity or cap acceptance. Updated private exact-source package verifies
+list evidence. Sunshine-shaped synthetic growth refuses atomically at cycle 12,
+retaining 330 releases/7161 assets below the unchanged 2 MiB cap. Neither establishes live
+page-100 capacity or cap acceptance. Updated private exact-source package verifies
 with four replacements; publication pins null/apply_ready=false. Legacy adapters,
 policy/capacity and operational cutover remain separate. No live or installed
 host changes, pushes, publication, workflow, repin or yadm changes.

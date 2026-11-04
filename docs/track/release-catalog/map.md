@@ -1273,11 +1273,11 @@ mutation, push, live acquisition, publication, workflow, repin or yadm changes.
 
 2026-11-04: [104 resolved](issues/104-rehearse-yaml-host-cutover.md):
 [Sunshine/host rehearsal](research/yaml-host-rehearsal.md), isolated source
-d79100e5f, reaches476 bound paths/50sources and four installed replacement plans.
-Exact17-legacy-updater audit grants no automatic eligibility. End-to-end disposable
+d79100e5f, reaches 476 bound paths/50 sources and four installed replacement recipes.
+Exact 17-legacy-updater audit grants no automatic eligibility. End-to-end disposable
 module/recipe/inert update/recovery/restoredF1 execution passes, with manager
-harness limits explicit. 31 test groups include115 inert AppImage installs and
-updaters; both review axes zero findings. Saved48-source YAML7.00MB, largest1.25MB;
-synthetic Sunshine growth refusescycle12 retaining330releases/7161assets below2MiB.
+harness limits explicit. 31 test groups include 115 inert AppImage installs and
+updaters; both review axes zero findings. Saved 48-source YAML 7.00 MB, largest 1.25 MB;
+synthetic Sunshine growth refuses cycle 12 retaining 330 releases/7161 assets below 2 MiB.
 Updated private package verifies; live/default capacity, legacy adapters, policy
 and operational gates remain. No live/installed/push/publication/workflow/repin/yadm.
