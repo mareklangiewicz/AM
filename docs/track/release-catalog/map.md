@@ -1244,3 +1244,16 @@ standalone updaters. Parallel standards/spec review: zero actionable findings on
 each axis. Local/unmerged/unpushed only. Installed migrator, policy/stale UI and
 capacity acceptance, exact operational pins and publication/ref transition remain;
 source coverage does not authorize deployment or a release-catalog ref switch.
+
+
+2026-11-04: [102 resolved](issues/102-prepare-yaml-installed-migrator.md):
+[explicit installed recipe transactions](research/yaml-installed-migrator.md)
+prepare maintainer-only exact-source plans, selected-record preflight, guarded
+atomic recipe replacement, durable receipts/backups and interrupted apply/rollback
+recovery on isolated prep/yaml-installed-migration at 5d410b1a5 (code reviewed at
+974cc963a). All 11 disposable tests pass; standards review has zero findings and
+the single spec drift finding was fixed/confirmed. Recipe-only source preparation
+does not provide binary rollback or operational deployment. Reviewed package and
+binding, module delivery, installed inventory, policy/stale UI/capacity and
+publication/ref transition remain separate. No live, installed-host, push,
+workflow, repin or yadm changes.
