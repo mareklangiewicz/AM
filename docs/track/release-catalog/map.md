@@ -1143,3 +1143,11 @@ finite/all-page orchestration, shared request/byte/elapsed transport budgets and
 source-atomic retained merges. All 63 relevant checks pass. Real app-map/bootstrap,
 pinned prior wiring, accepted budgets and workflow staging remain; no live or
 operational action.
+
+2026-11-04: [90 resolved](issues/90-wire-yaml-enrollment-and-pinned-prior.md):
+[real enrollment and pinned prior](research/yaml-enrollment-and-pinned-prior.md)
+connect 255 AM names / 475 recipe paths to 49 reviewed numeric repositories;
+987 out-of-scope shared paths stay excluded. Exact-pin refresh preserves prior
+aliases/unselected state; incomplete bootstrap refuses without invented times.
+All 34 relevant checks pass, including saved 100-page response replay. Accepted
+budgets and workflow/artifact staging remain; no live or operational action.

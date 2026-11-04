@@ -189,3 +189,12 @@ with shared transport budgets and atomic retained merges; 63 relevant checks pas
 between transport deadlines and reader/staging work. Real AM app-map/bootstrap,
 pinned prior wiring, accepted budgets and workflow staging remain. No live or
 operational action occurred.
+
+## November 4 — real app map and pinned previous state
+
+[90 resolved](90-wire-yaml-enrollment-and-pinned-prior.md) wires actual shared
+recipe names and reviewed manifest identities into bootstrap/exact-pin refresh.
+[Findings](../research/yaml-enrollment-and-pinned-prior.md) record 255 names,
+49 repositories, explicit scope exclusions and incomplete-bootstrap refusal.
+All 34 relevant checks pass, including real saved response replay. Accepted
+production budgets and workflow/artifact staging remain; no operational change.
