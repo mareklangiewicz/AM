@@ -2,7 +2,7 @@
 """THROWAWAY offline transition model. Responses are fixtures, never network I/O."""
 import copy
 import datetime
-from experiment import document
+from writer import document
 
 
 class CollectionFailure(Exception):

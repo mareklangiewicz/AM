@@ -341,3 +341,30 @@ retry -> later-page failure. Four snapshots per awk tool demonstrate pinned read
 unchanged unselected bytes, normalization including escaped Unicode, and rollback
 of a genuinely new first-page release when the second page fails. The harness
 uses a fixed advancing receipt clock; it makes no live transport/time guarantee.
+
+## Saved real-response replay and attempt adapter (ticket 87)
+
+`attempt_adapter.merge_attempts(previous, pages, attempted_at=..., **scope_options)`
+accepts `(collector_attempt, has_next)` pairs. It uses the collector's numeric
+identity, list descriptor, body/outcome/status and recorded response receipt time.
+Fractional UTC receipts are represented at the schema's whole-second precision;
+replay time never becomes observation time. `refresh_from_attempts` connects this
+to pinned loading and local publication. The retained model now imports the writer
+directly, without importing test fixtures.
+
+This is a production adapter **candidate**, not workflow wiring: the caller still
+owns scope configuration, acquisition, explicit validated pagination metadata and
+source enrollment. Conditional 304 responses refuse because the retained catalog
+does not store which releases belonged to a prior partial page. The candidate
+therefore needs unconditional 200 list bodies; it does not reobserve every retained
+release when given an unchanged-page response. Latest-only endpoints also refuse.
+The current format-1 collector/workflows and credentials are untouched.
+
+`real_replay.py` reads the tracked AppImage batch evidence, verifies saved body
+hashes/lengths, and replays 41 numeric list endpoints. Three latest-only bodies are
+explicitly excluded. Forty list requests used default 30-release pages and one
+used per_page=100. It validates normalized release/asset facts against the saved
+objects, writes/loads/replays complete local snapshots, and compares the largest
+source's browse output across all three awk tools. Generated `source-ID` aliases
+are replay fixtures, not migrated AM recipe names. No network or binaries run.
+Use `test_attempt_adapter.py` for six focused adapter contract tests.
