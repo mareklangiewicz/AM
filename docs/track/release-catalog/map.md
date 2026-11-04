@@ -1100,3 +1100,9 @@ refusals, stopped recorded targets and private-arena cleanup. Private-file
 acceptance discards partial output; streaming delivery cannot retract received
 bytes. Parent snapshot deadlines and portable consumer requirements remain open;
 no production integration, live collection or remote mutations.
+
+2026-11-04: [83 simple consumer](research/yaml-simple-consumer.md) follows Marek's
+simplicity priority: remove optional parser timeout; retain validation, byte caps
+and private spooling. Nine direct benchmark cases and 45 checks pass. Proposed
+2 MiB policy is unaccepted; further speculative consumer watchdogs are optional,
+not prerequisites. Prototype `7e8210a56`; no production/remote changes.

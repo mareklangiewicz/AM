@@ -120,3 +120,15 @@ quarantine and BusyBox cat backpressure termination. [Findings](../research/yaml
 distinguish private-file acceptance from irreversible streaming delivery. Parent
 snapshot acquisition remains outside the existing timer; consumer platforms,
 operating budgets and integration remain open. No production or remote changes.
+
+## November 4 — simplicity takes priority
+
+Marek directs simpler consumers over excessive defensive machinery.
+[83 resolved](83-simplify-consumer-reader.md): remove the optional parser timer;
+keep full validation, byte caps and private spooling. Nine direct measurements
+and 45 checks pass. [Recommendation](../research/yaml-simple-consumer.md) proposes
+2 MiB source/output caps with mawk/GNU awk preferred for larger snapshots and
+BusyBox compatibility retained. This is not an accepted production cap. Further
+whole-query/snapshot supervision is optional research, superseding earlier notes
+that framed those experiments as necessary next gates. Real integration and
+collection/publication requirements remain; no live or remote action occurred.
