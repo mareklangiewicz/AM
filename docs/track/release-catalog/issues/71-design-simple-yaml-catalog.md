@@ -151,3 +151,12 @@ and a small local Git publisher connect retained merges to the simple consumer.
 failed-source preservation and unchanged refs on candidate refusal. Reconstructing
 prior state from pinned YAML and feeding saved responses through the complete loop
 is next; no actual format switch or new consumer machinery is implied.
+
+## November 4 — offline loop closed
+
+[86 resolved](86-close-offline-yaml-refresh-loop.md): pinned YAML loading, saved
+JSON normalization, retained merge and local publication now form one offline
+path. [Findings](../research/yaml-offline-refresh.md) record preserved unselected
+bytes, successful retries and rollback after a later-page failure on three awk
+tools. Next is realistic saved-response replay and a small production adapter
+review, without adding defensive consumer machinery. No operational format switch.

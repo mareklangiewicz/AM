@@ -1116,3 +1116,9 @@ no catalog publication, daily pin, workflow dispatch or installed AM change.
 reuses the emitter/Git helper and simple consumer: six local snapshots, nine pinned
 reads and fifteen rejected candidates pass on three awk tools; 93 existing checks
 also pass. Prototype `b85f56fec`. No live/installed/workflow/pin changes.
+
+2026-11-04: [86 offline refresh loop](research/yaml-offline-refresh.md) loads pinned
+YAML, normalizes saved JSON, merges retained releases and writes the next local
+snapshot. Twelve snapshots/consumer reads and twelve rejected operations pass on
+three tools; prior publication checks pass. Prototype `1719bd8aa`; no operational
+or installed changes.
