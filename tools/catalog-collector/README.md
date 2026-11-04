@@ -392,3 +392,29 @@ limits. See [the staging design](../../docs/track/release-catalog/design/yaml-st
 and inactive `catalog-yaml-staging.yml.proposed` for boundaries and default scope
 hashing. No active workflow imports this module; download authentication, remote
 prior loading and publication remain unwired.
+
+## Inactive YAML artifact acquisition candidate (ticket 92)
+
+`yaml_delivery.acquire` reuses authenticated `delivery.download_artifact` with the
+inactive proposal's `yaml-bootstrap-RUN-ATTEMPT` name and an explicit ZIP cap.
+Trusted caller context and upload artifact ID/digest are required; receipt values
+are not an authentication source. GitHub metadata must match repository, run,
+source SHA, branch, artifact name and digest; downloaded bytes must hash to that
+digest before decoding. No live API capability was exercised by the offline tests.
+
+The decoder bounds ZIP central-directory size/count before parsing, then accepts
+only `receipt.json`, candidate YAML and optional structural directories. It reads
+store/deflate members into bounded data, never extracts paths, and refuses duplicate,
+traversal, NUL, symlink, executable, special-file, encrypted and extra members.
+Uncompressed YAML/receipt policy bounds apply independently of the ZIP envelope.
+The ZIP envelope allows tree + receipt + 1,000,000 bytes of framing/compression
+overhead (136,266,304 bytes for the candidate profile). Excess is refused rather
+than inferred safe from compression ratio. ZIP64 and multidisk are unsupported.
+
+Full staging verification runs before creating a new private output directory;
+no failed authentication/verification leaves accepted output. The caller must
+already have the exact-pin local prior. Remote prior acquisition, publication CAS,
+reviewed source promotion, runner provisioning and workflow activation remain
+unwired. Only YAML belongs in future catalog history; receipt stays artifact-only.
+
+Offline checks: `PYTHONPATH=tools/catalog-collector:tools/catalog-yaml-prototype python3 -m unittest test_yaml_delivery`.

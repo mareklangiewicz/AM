@@ -199,9 +199,11 @@ def verify_artifact(files, context, manifest_raw, revision, previous):
     return tree
 
 
-def download_artifact(context, artifact_id, expected_digest, token, *, artifact_name=None):
+def download_artifact(context, artifact_id, expected_digest, token, *, artifact_name=None,
+                      zip_cap=ZIP_CAP, unpacker=unpack_artifact):
     require(type(artifact_id) is str and re.fullmatch('[1-9][0-9]*', artifact_id), 'invalid_artifact_id')
     require(type(expected_digest) is str and re.fullmatch('[0-9a-f]{64}', expected_digest), 'invalid_artifact_digest')
+    require(type(zip_cap) is int and 0 < zip_cap <= 1_100_000_000, 'invalid_artifact_zip_cap')
     endpoint = f'repos/{REPOSITORY}/actions/artifacts/{artifact_id}'
     with tempfile.TemporaryDirectory(prefix='catalog-api-') as scratch:
         env = environment(token, scratch, github=True)
@@ -213,11 +215,12 @@ def download_artifact(context, artifact_id, expected_digest, token, *, artifact_
                 run['id'] == int(context['run_id']) and run['head_sha'] == context['sha'] and
                 run['repository_id'] == int(context['repository_id']) and
                 run['head_repository_id'] == int(context['repository_id']) and
-                run['head_branch'] == 'main-marek' and meta['size_in_bytes'] <= ZIP_CAP and
+                run['head_branch'] == 'main-marek' and
+                type(meta['size_in_bytes']) is int and 0 <= meta['size_in_bytes'] <= zip_cap and
                 meta['digest'] == 'sha256:'+expected_digest, 'artifact_origin_mismatch')
-        raw = bounded([*command, endpoint+'/zip'], env=env, cap=ZIP_CAP)
+        raw = bounded([*command, endpoint+'/zip'], env=env, cap=zip_cap)
         require(digest(raw) == expected_digest, 'artifact_download_digest')
-        return unpack_artifact(raw)
+        return unpacker(raw)
 
 
 def publish(context, manifest_raw, revision, artifact_id, artifact_digest, token, directory):
