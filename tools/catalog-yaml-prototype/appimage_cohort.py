@@ -23,9 +23,12 @@ RESEARCH = ROOT/'docs/track/release-catalog/research'
 
 def fixtures():
     sources = json.loads((ROOT/'docs/track/release-catalog/design/staged-manifest.json').read_text())['sources']
+    from sunshine_fixture import RID, saved
+    source, raw, report = saved()
+    sources.append(source)
     by_request = {s['request_id']:s for s in sources}
     needed = {row['repository_id'] for row in APPIMAGES.values()}
-    found = {}
+    found = {RID: (source,raw,report,'docs/track/release-catalog/research/appimage-next-large-batch-20261102/evidence.tar.gz:release-0531')}
     for report_path in sorted(RESEARCH.glob('*/release-*/report.json')) + [RESEARCH/'brave-release-20261031/report.json']:
         report = json.loads(report_path.read_text())
         request = report.get('descriptor', {}).get('request_id')

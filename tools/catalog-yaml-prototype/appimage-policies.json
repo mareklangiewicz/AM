@@ -2328,5 +2328,25 @@
       }
     ],
     "release_rule": "published_desc"
+  },
+  {
+    "recipe": "x86_64/sunshine",
+    "repository_id": 438803890,
+    "endpoint": "list",
+    "source_sha256": "0db782f01f82195b426345812f0c8ec4ae231a3c31fee2a7303c1429bc51895c",
+    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1",
+    "rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "release_rule": "published_desc"
   }
 ]

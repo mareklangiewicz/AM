@@ -19,7 +19,7 @@ class Workflow(unittest.TestCase):
         self.tmp = tempfile.TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)
         revision = subprocess.check_output(['git','-C',str(ROOT),'rev-parse','HEAD'],text=True).strip()
-        raw = (ROOT/'docs/track/release-catalog/design/staged-manifest.json').read_bytes()
+        raw = (ROOT/'docs/track/release-catalog/design/yaml-manifest.json').read_bytes()
         policy = (ROOT/'tools/catalog-collector/yaml-policy.json').read_bytes()
         self.scope = dict(sources=None,page_size=100,page_limit=1,reconcile=False)
         context = dict(repository='mareklangiewicz/AM',repository_id='1',event='workflow_dispatch',

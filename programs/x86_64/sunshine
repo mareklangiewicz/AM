@@ -3,6 +3,8 @@
 # AM-CATALOG-RECIPE 1
 set -eu
 APP=sunshine
+CATALOG_FORMAT=2
+CATALOG_RECIPE="x86_64/sunshine"
 CATALOG_ALIAS="https://api.github.com/repos/LizardByte/Sunshine/releases"
 
 select_asset() {

@@ -59,7 +59,7 @@ class AppImages(unittest.TestCase):
     def test_generated_registry_source_identity_and_enrollment(self):
         source = (ROOT/'modules/catalog-yaml-policy.am').read_text()
         self.assertEqual(START+source.split(START,1)[1].split(END,1)[0]+END,compile_source())
-        self.assertEqual(len(APPIMAGES),114)
+        self.assertEqual(len(APPIMAGES),115)
         for row in json.loads(POLICIES.read_text()):
             recipe = row['recipe']; text=(ROOT/'programs'/recipe).read_text()
             self.assertIn('CATALOG_FORMAT=2\nCATALOG_RECIPE="'+recipe+'"\n',text)

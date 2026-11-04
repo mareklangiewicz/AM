@@ -19,7 +19,7 @@ from retention import parameters
 
 def prepare(root, environ):
     context = {k[4:].lower():v for k,v in environ.items() if k.startswith('CTX_')}
-    raw = (root/'docs/track/release-catalog/design/staged-manifest.json').read_bytes()
+    raw = (root/'docs/track/release-catalog/design/yaml-manifest.json').read_bytes()
     policy_raw = (root/'tools/catalog-collector/yaml-policy.json').read_bytes()
     revision = subprocess.check_output(['git','-C',str(root),'rev-parse','HEAD'],text=True).strip()
     checked(context,raw,revision,policy_raw)
