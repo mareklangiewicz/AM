@@ -29,7 +29,8 @@ record a concrete remaining cutover sequence and blockers.
 ## Answer
 
 Isolated prep/yaml-cutover-package consolidates main records and all inherited
-YAML source candidates. [Host inventory, exact package, tests and next sequence](../research/yaml-host-cutover-package.md).
+YAML source candidates at ee89ef3bd42aed9d5613650b15c976823f73f281.
+[Host inventory, exact package, tests and next sequence](../research/yaml-host-cutover-package.md).
 Frozen source bbfc63fad0c59a7cfb4098abe8cb5ece1a35107e builds/verifies a private
 69-payload-file local package with exact runtime/source, before-images and bound
 replacements for obsidian/nvim/nvim-nightly. Read-only /opt/account inventory

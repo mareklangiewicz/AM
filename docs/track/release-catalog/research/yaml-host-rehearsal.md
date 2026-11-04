@@ -3,7 +3,8 @@
 Ticket 104 continues ee89ef3bd on isolated `prep/yaml-host-rehearsal`, worktree
 `/tmp/am-yaml-host-rehearsal`. Frozen source/package revision:
 `d79100e5f2d358961782c2442a61044b0ac3c728`. Main runtime and live installations
-remain unchanged. Source commits: 117617148 (Sunshine/audit), 1876fd399
+remain unchanged. Complete clean candidate with final records:
+`bd2abf38ae7a0c56e71b3205e5fee9d53936234b`. Source commits: 117617148 (Sunshine/audit), 1876fd399
 (rehearsal/capacity harness), d79100e5f (measurements/growth and reporting).
 
 ## Source and client coverage

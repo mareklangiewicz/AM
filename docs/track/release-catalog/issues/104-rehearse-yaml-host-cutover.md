@@ -26,7 +26,8 @@ release-catalog remains format 1; separate YAML ref is a local proposal only.
 
 ## Answer
 
-Source d79100e5f on prep/yaml-host-rehearsal enrolls Sunshine via a separate
+Complete clean candidate bd2abf38ae7a0c56e71b3205e5fee9d53936234b, with
+frozen source d79100e5f on prep/yaml-host-rehearsal, enrolls Sunshine via a separate
 YAML-only 50-source manifest, reaching 476 bound paths and preparing all four
 inventoried managed clients. [Findings/package and remaining gates](../research/yaml-host-rehearsal.md).
 Exact-hash audit classifies all 17 legacy updaters without granting automatic

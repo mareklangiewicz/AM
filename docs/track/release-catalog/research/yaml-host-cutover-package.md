@@ -2,6 +2,8 @@
 
 Ticket 103. Main runtime is unchanged. Isolated consolidated source branch:
 `prep/yaml-cutover-package`, worktree `/tmp/am-yaml-cutover-package`.
+Complete clean candidate with final evidence/tracker records:
+`ee89ef3bd42aed9d5613650b15c976823f73f281`.
 
 ## Exact source and package
 
