@@ -58,24 +58,30 @@ def select(apps, repositories, app, commit, rule, *, now, accept_stale=None):
                     not all(fold(s) in name for s in rule['include']) or
                     any(fold(s) in name for s in rule['exclude'])):
                 continue
-            observed = release.get('observed_at',repository.get('observed_at'))
-            require(type(observed) is str, 'missing_release_observation')
-            received = datetime.strptime(observed,'%Y-%m-%dT%H:%M:%SZ').replace(tzinfo=timezone.utc)
-            age = (now-received).total_seconds()
-            require(age >= 0, 'future_release_observation')
-            acceptance = dict(commit=commit,repository_id=rid,release_id=release_id,
-                              asset_id=asset_id,observed_at=observed)
-            stale = age > 48*3600
-            if stale and accept_stale != acceptance:
-                raise StaleSelection(acceptance)
-            return dict(app=app,**acceptance,tag=release['tag'],published_at=release['published_at'],
-                        prerelease=release['prerelease'],stale=stale,asset=dict(asset))
+            return accept_selection(app, rid, repository, release_id, release, asset_id,
+                                    asset, commit, now=now, accept_stale=accept_stale)
     raise ValueError('no_matching_asset')
 
 
 def select_local(repo, commit, app, rule, *, now, accept_stale=None, max_file_bytes=2097152):
     apps,repositories = load_local(repo,commit,max_file_bytes=max_file_bytes)
     return select(apps,repositories,app,commit,rule,now=now,accept_stale=accept_stale)
+
+
+def accept_selection(app, rid, repository, release_id, release, asset_id, asset, commit, *, now, accept_stale=None):
+    """Shared selected-record freshness check for offline policy rehearsals."""
+    observed = release.get('observed_at',repository.get('observed_at'))
+    require(type(observed) is str, 'missing_release_observation')
+    received = datetime.strptime(observed,'%Y-%m-%dT%H:%M:%SZ').replace(tzinfo=timezone.utc)
+    age = (now-received).total_seconds()
+    require(age >= 0, 'future_release_observation')
+    acceptance = dict(commit=commit,repository_id=rid,release_id=release_id,
+                      asset_id=asset_id,observed_at=observed)
+    stale = age > 48*3600
+    if stale and accept_stale != acceptance:
+        raise StaleSelection(acceptance)
+    return dict(app=app,**acceptance,tag=release['tag'],published_at=release['published_at'],
+                prerelease=release['prerelease'],stale=stale,asset=dict(asset))
 
 
 if __name__ == '__main__':
