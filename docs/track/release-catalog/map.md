@@ -1206,3 +1206,11 @@ record acceptance. Eight shell/lifecycle groups plus 28 reader/policy/workflow
 checks pass; five saved policies agree on three awk tools. Candidate `7e62a68cc`;
 production acquisition/module delivery and actual manager batch integration remain.
 No live catalog, active consumer, workflow or installed change.
+
+2026-11-04: [98 resolved](issues/98-prepare-yaml-network-and-manager-integration.md):
+[YAML manager integration](research/yaml-manager-integration.md) prepares exact-pin
+configured-AMREPO raw acquisition, four ordinary shared modules, five source recipe
+bindings and real install/batch/sync seams. 161 scoped checks pass. Candidate
+`7946f2167` on separate prep/yaml-consumer-integration; main runtime remains
+unchanged. Review, 470 remaining policies and complete transition/rollback remain.
+No live catalog, workflow, installed change or yadm pointer operation.
