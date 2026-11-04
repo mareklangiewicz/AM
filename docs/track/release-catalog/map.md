@@ -1261,36 +1261,44 @@ workflow, repin or yadm changes.
 
 2026-11-04: [103 resolved](issues/103-prepare-host-cutover-package.md):
 [host cutover inventory/package](research/yaml-host-cutover-package.md) consolidates
-all YAML candidates and authoritative main records at ee89ef3bd. Frozen source
-bbfc63fad builds/verifies a private 69-file package with exact runtime, before-
-images and three bound installed replacements. Four catalog clients include
-unenrolled Sunshine; 17 legacy updaters need separate adapters. Source scope is
-475 YAML plus 987 remaining format-1 shared paths. Fixed separate
-release-catalog-yaml-v2 wiring is an inactive local proposal; format 1 remains
-supported. 59 distinct tests pass; one Standards/two Spec findings fixed and
-confirmed, zero remaining. No installed mutation, push, live acquisition,
-publication, workflow, repin or yadm changes.
+all YAML candidates and authoritative main records. Frozen source bbfc63fad builds
+and verifies a private 69-file package with exact runtime, before-images and three
+bound installed replacements. Four catalog clients include unenrolled Sunshine;
+17 legacy updaters require separate adapters. Source scope is 475 YAML plus 987
+remaining format-1 shared paths. Fixed separate release-catalog-yaml-v2 wiring is
+an inactive local proposal; format 1 remains supported. 59 distinct tests pass;
+one Standards and two Spec findings fixed/confirmed, zero remaining. No installed
+mutation, push, live acquisition, publication, workflow, repin or yadm changes.
 
 
 2026-11-04: [104 resolved](issues/104-rehearse-yaml-host-cutover.md):
-[Sunshine/host rehearsal](research/yaml-host-rehearsal.md), clean candidate
-bd2abf38a with frozen source d79100e5f, reaches 476 bound paths/50 sources and
-four installed replacement recipes. Exact 17-updater audit grants no automatic
-eligibility. Disposable module/recipe/inert update/recovery/restored-F1 execution
-passes; manager harness limits are explicit. 31 test groups include all 115 inert
-AppImage installs/updaters; both review axes zero findings. Saved 48-source YAML
-is 7.00 MB (largest 1.25 MB); synthetic Sunshine growth refuses cycle 12 while
-retaining 330 releases/7161 assets below unchanged 2 MiB. Updated private package
-verifies. Real/default capacity, legacy policies/adapters and operational gates
-remain. No live acquisition, installed mutation, push, publication, workflow,
-repin, main runtime promotion or yadm changes.
+[Sunshine/host rehearsal](research/yaml-host-rehearsal.md), isolated source
+d79100e5f, reaches 476 bound paths/50 sources and four installed replacement recipes.
+Exact 17-legacy-updater audit grants no automatic eligibility. End-to-end disposable
+module/recipe/inert update/recovery/restoredF1 execution passes, with manager
+harness limits explicit. 31 test groups include 115 inert AppImage installs and
+updaters; both review axes zero findings. Saved 48-source YAML 7.00 MB, largest 1.25 MB;
+synthetic Sunshine growth refuses cycle 12 retaining 330 releases/7161 assets below 2 MiB.
+Updated private package verifies; live/default capacity, legacy adapters, policy
+and operational gates remain. No live/installed/push/publication/workflow/repin/yadm.
 
 
 2026-11-04: [105 resolved](issues/105-record-direct-asset-acquisition-direction.md):
 [asset acquisition direction](research/yaml-asset-acquisition-direction.md)
 records Marek's preference for direct selected-asset downloads for the remaining
-AppImage adapters. Selection remains separate from acquisition, leaving room for
-future verified delta/native updates and a partial upstream proposal. No current
-byte-integrity guarantee or upstream acceptance is claimed. This supersedes 104's
-unanswered preference checkpoint; its audit/package stays historical. No runtime,
+AppImage adapters. Selection stays separate from acquisition; future verified
+delta/native updates and a partial upstream proposal remain possible. No current
+digest guarantee or upstream acceptance is claimed. This supersedes 104's
+unanswered preference checkpoint; frozen packages/audit stay unchanged. No runtime,
 installed, network, publication, workflow, push, repin or yadm changes.
+
+
+2026-11-04: [106 resolved](issues/106-prepare-legacy-staging-adapters.md):
+[legacy staging/contracts](research/yaml-legacy-staging.md) on isolated source
+8164e767f stage all 17 audited shapes from local selected downloads, preserving
+Logseq publication identity and four-asset EmmyLua coherence. Ten new offline
+groups pass. Review allocation/directory findings fixed; both axes confirmed zero
+remaining findings. Disposable review output only: production adapter delivery,
+source/policy evidence, installed transaction/recovery and operational gates stay
+open in [107](issues/107-prepare-delivered-legacy-adapters.md). No enrollment,
+manifest/cap/runtime/live/push/publication/repin/yadm changes.
