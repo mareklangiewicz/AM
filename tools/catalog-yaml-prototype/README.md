@@ -296,3 +296,26 @@ timings therefore are not end-to-end browse timings. Callers already holding a
 validated repository identity can use `reader.sh rows` directly. It fetches
 nothing, introduces no cache or daemon and is not wired into installed AM.
 Run `browse_experiment.py` for the six-case matrix on three awk tools.
+
+## Offline writer/publication candidate (ticket 85)
+
+`writer.py` is the original canonical emitter extracted into a reusable module.
+`yaml_publication.candidate_tree(apps, repositories, schema=...,
+max_file_bytes=...)` assembles only `apps.yaml` and `repositories/ID.yaml`, checks
+references/identities, YAML round trips and the strict reader. The file allowance
+is an explicit experiment argument. The example uses 2 MiB, still a proposal.
+
+`yaml_publication.publish_local(..., expected_parent=...)` writes the complete
+validated tree to a remote-free local Git repository, using the collector's
+existing Git invocation helper and compare-and-swap ref update. It does not call
+the format-1 publication validator, alter format-1 code or connect to workflows.
+All candidate files are validated before the ref can advance. Unchanged sources
+must be supplied by the caller as part of the complete tree; this function does
+not discover prior files, acquire responses or run retained merges itself.
+
+Run `publication_experiment.py` for retained merge -> YAML -> two local Git
+snapshots -> pinned simple consumer. It checks old/new/old reads, failed-source
+preservation, stale parents, bad identities, missing app references, unsupported
+strings and file-cap refusal on three awk tools. PyYAML is a publisher-side
+round-trip check, not a shell consumer dependency. Git identities/environment are
+provided by the reused local helper. These are disposable fixture repos only.
