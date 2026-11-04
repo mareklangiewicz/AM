@@ -23,3 +23,16 @@ def saved():
     source=next(s for s in json.loads((ROOT/'docs/track/release-catalog/design/yaml-manifest.json').read_text())['sources']
                 if s['repository_id']==RID)
     return source,body,report
+
+
+def observation():
+    from attempt_adapter import merge_attempts, utc
+    from experiment import SCHEMA
+    source,body,report=saved()
+    attempt=dict(repository_id=RID,descriptor=report['descriptor'],body=body,outcome='response',
+                 status=200,request_started_at=report['started_at'],response_completed_at=report['completed_at'])
+    repository=merge_attempts(dict(format=2,schema=SCHEMA,repository_id=RID,repository='LizardByte/Sunshine'),
+        [(attempt,True)],attempted_at=utc(report['started_at']).strftime('%Y-%m-%dT%H:%M:%SZ'),
+        page_size=30,max_catalog_bytes=2097152)
+    if repository['collection']['status']!='ok':raise ValueError('Sunshine saved normalization refused')
+    return source,body,report,repository

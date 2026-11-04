@@ -64,7 +64,7 @@ class Cutover(unittest.TestCase):
         self.assertEqual(cutover.verify_package(one),report)
         self.assertFalse(report['apply_ready'])
         choices={r['app']:r['disposition'] for r in report['clients']}
-        self.assertEqual(choices['sunshine'],'retain-format-1-not-yaml-enrolled')
+        self.assertEqual(choices['sunshine'],'bound-ready-pending-publication')
         self.assertEqual(choices['obsidian'],'bound-ready-pending-publication')
         replacement_path=next(r['replacement'] for r in report['clients'] if r['app']=='obsidian')
         replacement=(one/replacement_path).read_text()
