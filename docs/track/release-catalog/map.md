@@ -1231,3 +1231,16 @@ groups and 120 compatibility/cohort/enrollment checks pass. Source coverage is
 mismatch, fixed and confirmed. Installed transition/rollback is a concrete
 proposal/rehearsal, not a production migrator or accepted dual-publication scheme.
 Candidate remains isolated/unmerged and local; no live or installed host change.
+
+
+2026-11-04: [101 resolved](issues/101-prepare-yaml-appimage-migration.md):
+[remaining AppImage source preparation](research/yaml-appimage-migration.md) adds
+114 explicit policies/bindings on isolated candidate 0c157af59, reaching 475/475
+enrolled source paths. Latest replacements are explicit; saved evidence covers
+45 repositories (two have only latest singleton fixtures). All 342 three-awk
+comparisons agree with Python; 106 saved URLs match legacy and eight ordering
+differences are documented. All 149 tests pass, including 114 inert installs and
+standalone updaters. Parallel standards/spec review: zero actionable findings on
+each axis. Local/unmerged/unpushed only. Installed migrator, policy/stale UI and
+capacity acceptance, exact operational pins and publication/ref transition remain;
+source coverage does not authorize deployment or a release-catalog ref switch.
