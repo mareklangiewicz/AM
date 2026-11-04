@@ -1106,3 +1106,8 @@ simplicity priority: remove optional parser timeout; retain validation, byte cap
 and private spooling. Nine direct benchmark cases and 45 checks pass. Proposed
 2 MiB policy is unaccepted; further speculative consumer watchdogs are optional,
 not prerequisites. Prototype `7e8210a56`; no production/remote changes.
+
+2026-11-04: [84 simple offline browsing](research/yaml-simple-browse.md) adds app
+resolution, repository identity checking and effective-observation rows in a short
+shell example. All 18 cases pass on three awk tools. Source pushes authorized;
+no catalog publication, daily pin, workflow dispatch or installed AM change.

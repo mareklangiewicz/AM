@@ -132,3 +132,13 @@ BusyBox compatibility retained. This is not an accepted production cap. Further
 whole-query/snapshot supervision is optional research, superseding earlier notes
 that framed those experiments as necessary next gates. Real integration and
 collection/publication requirements remain; no live or remote action occurred.
+
+## November 4 — simple offline consumer exercised
+
+[84 resolved](84-exercise-simple-offline-consumer.md): a short shell app-to-release
+example passes 18 cases across three awk tools, preserving effective observations
+and rejecting malformed/mismatched files. [Findings](../research/yaml-simple-browse.md)
+record its three reader calls and repeated repository parse explicitly. User
+approved source pushes; no publication, pin, dispatch or installed change occurred.
+Next substantive work is an offline format-2 writer/publication candidate reusing
+existing mechanisms, not another defensive consumer layer.
