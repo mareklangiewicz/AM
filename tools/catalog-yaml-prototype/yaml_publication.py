@@ -11,15 +11,12 @@ from writer import document
 
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent/'catalog-collector'))
-from publication import git  # Reuse existing isolated local Git invocation.
+from publication import blob, git  # Reuse existing isolated local Git invocation.
 
 REF = 'refs/heads/catalog'
 
 
-def candidate_tree(apps, repositories, *, schema, max_file_bytes):
-    """Assemble a complete snapshot; trial file allowance is explicit."""
-    if type(max_file_bytes) is not int or not 1 <= max_file_bytes <= 33554432:
-        raise ValueError('file allowance')
+def check_references(apps, repositories):
     for rid, repository in repositories.items():
         if (type(rid) is not str or not re.fullmatch('[1-9][0-9]*', rid)
                 or type(repository['repository_id']) is not int
@@ -27,27 +24,38 @@ def candidate_tree(apps, repositories, *, schema, max_file_bytes):
             raise ValueError('repository identity')
     if any(type(rid) is not int or str(rid) not in repositories for rid in apps.values()):
         raise ValueError('app references missing repository')
+
+
+def decode_document(raw, max_file_bytes):
+    """Validate the original bytes before a general YAML parser can normalize them."""
+    if len(raw) > max_file_bytes:
+        raise ValueError('file allowance')
+    with tempfile.TemporaryDirectory(prefix='yaml-validate-') as directory:
+        path = pathlib.Path(directory)/'document.yaml'
+        path.write_bytes(raw)
+        env = dict(os.environ, AM_YAML_MAX_INPUT_BYTES=str(max_file_bytes))
+        run = subprocess.run(['sh', str(HERE/'reader.sh'), 'validate', str(path)],
+                             env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        if run.returncode:
+            raise ValueError(run.stderr.decode('utf-8', errors='replace'))
+    return yaml.safe_load(raw)
+
+
+def candidate_tree(apps, repositories, *, schema, max_file_bytes):
+    """Assemble a complete snapshot; trial file allowance is explicit."""
+    if type(max_file_bytes) is not int or not 1 <= max_file_bytes <= 33554432:
+        raise ValueError('file allowance')
+    check_references(apps, repositories)
     documents = {'apps.yaml': dict(format=2, schema=schema, apps=dict(sorted(apps.items())))}
     for rid in sorted(repositories, key=int):
         # Schema describes this writer's reviewed source, not a collection time.
         documents['repositories/'+rid+'.yaml'] = dict(repositories[rid], schema=schema)
     tree = {}
-    with tempfile.TemporaryDirectory(prefix='yaml-validate-') as directory:
-        path = pathlib.Path(directory)/'document.yaml'
-        for name, obj in documents.items():
-            raw = document(obj).encode('utf-8')
-            if len(raw) > max_file_bytes:
-                raise ValueError('file allowance')
-            # The writer owns YAML/Unicode correctness; the shell owns the subset.
-            if yaml.safe_load(raw) != obj:
-                raise ValueError('YAML round trip')
-            path.write_bytes(raw)
-            env = dict(os.environ, AM_YAML_MAX_INPUT_BYTES=str(max_file_bytes))
-            run = subprocess.run(['sh', str(HERE/'reader.sh'), 'validate', str(path)],
-                                 env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            if run.returncode:
-                raise ValueError(run.stderr.decode('utf-8', errors='replace'))
-            tree[name] = raw
+    for name, obj in documents.items():
+        raw = document(obj).encode('utf-8')
+        if decode_document(raw, max_file_bytes) != obj:
+            raise ValueError('YAML round trip')
+        tree[name] = raw
     return tree
 
 
@@ -73,3 +81,45 @@ def publish_local(repo, apps, repositories, *, schema, max_file_bytes, expected_
                      data=b'Offline format-2 catalog candidate\n').decode().strip()
         git(repo, 'update-ref', REF, commit, current or '0'*40)
         return commit
+
+
+def load_local(repo, commit, *, max_file_bytes):
+    """Read a complete format-2 snapshot at an exact commit, never a moving ref."""
+    if type(commit) is not str or not re.fullmatch('[0-9a-f]{40}', commit):
+        raise ValueError('commit pin required')
+    if type(max_file_bytes) is not int or not 1 <= max_file_bytes <= 33554432:
+        raise ValueError('file allowance')
+    documents = {}
+    for entry in git(repo, 'ls-tree', '-rz', commit).split(b'\0'):
+        if not entry:
+            continue
+        header, path = entry.split(b'\t', 1)
+        mode, kind, _ = header.split()
+        name = path.decode('utf-8')
+        if (mode != b'100644' or kind != b'blob' or
+                not re.fullmatch(r'apps\.yaml|repositories/[1-9][0-9]*\.yaml', name)):
+            raise ValueError('snapshot layout')
+        documents[name] = decode_document(blob(repo, commit, name, max_file_bytes), max_file_bytes)
+    if 'apps.yaml' not in documents:
+        raise ValueError('missing app map')
+    apps = documents.pop('apps.yaml')['apps']
+    repositories = {name.removeprefix('repositories/').removesuffix('.yaml'): obj
+                    for name, obj in documents.items()}
+    check_references(apps, repositories)
+    return apps, repositories
+
+
+def refresh_local(repo, commit, pages, *, attempted_at, schema, max_file_bytes,
+                  **collection_options):
+    """Refresh explicitly selected sources from saved responses; preserve the rest."""
+    from bounded import collect_files
+    apps, repositories = load_local(repo, commit, max_file_bytes=max_file_bytes)
+    if any(rid not in repositories for rid in pages):
+        raise ValueError('unknown selected repository')
+    for rid, responses in pages.items():
+        repositories[rid] = collect_files(repositories[rid], responses,
+                                          attempted_at=attempted_at,
+                                          max_catalog_bytes=max_file_bytes,
+                                          **collection_options)
+    return publish_local(repo, apps, repositories, schema=schema,
+                         max_file_bytes=max_file_bytes, expected_parent=commit)

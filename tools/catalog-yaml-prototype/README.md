@@ -319,3 +319,25 @@ preservation, stale parents, bad identities, missing app references, unsupported
 strings and file-cap refusal on three awk tools. PyYAML is a publisher-side
 round-trip check, not a shell consumer dependency. Git identities/environment are
 provided by the reused local helper. These are disposable fixture repos only.
+
+## Closed offline refresh loop (ticket 86)
+
+`yaml_publication.load_local(repo, full_commit, max_file_bytes=...)` reads the
+complete pinned YAML tree back into the retained model. Original YAML is checked
+with the strict reader before PyYAML decoding, preserving duplicate-key and exact
+subset rejection. File references/identities are checked as for new candidates.
+Git blob sizes are checked before reading, using the existing collector helper.
+
+`refresh_local(repo, full_commit, pages_by_repository, attempted_at=..., schema=...,
+max_file_bytes=..., **collection_options)` loads that state, feeds the explicitly
+selected saved response pages through `bounded.collect_files`, preserves unselected
+sources, then publishes with the original commit as the expected parent. A failed
+source contributes updated attempt metadata with old facts/observations. The map
+is carried forward. Bootstrap still uses `publish_local`; adding/removing configured
+sources is a separate caller responsibility. There is no network transport here.
+
+Run `refresh_experiment.py` for initial -> partial success/failure -> successful
+retry -> later-page failure. Four snapshots per awk tool demonstrate pinned reads,
+unchanged unselected bytes, normalization including escaped Unicode, and rollback
+of a genuinely new first-page release when the second page fails. The harness
+uses a fixed advancing receipt clock; it makes no live transport/time guarantee.
