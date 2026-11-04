@@ -1136,3 +1136,10 @@ returns validated retained YAML from existing collector attempts. Six new,
 17 collector and six attempt-adapter checks pass. Multi-page orchestration,
 real app-map/bootstrap wiring, accepted limits and workflow staging remain.
 No live acquisition or operational format switch.
+
+2026-11-04: [89 resolved](issues/89-prepare-scoped-yaml-collection.md):
+[scoped transport candidate](research/yaml-scoped-transport-adapter.md) adds
+finite/all-page orchestration, shared request/byte/elapsed transport budgets and
+source-atomic retained merges. All 63 relevant checks pass. Real app-map/bootstrap,
+pinned prior wiring, accepted budgets and workflow staging remain; no live or
+operational action.

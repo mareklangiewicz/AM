@@ -180,3 +180,12 @@ YAML candidate staging. [Findings](../research/yaml-list-transport-adapter.md)
 record six new checks plus 23 existing checks. This covers the default one-page
 scope only; multi-page orchestration, real app-map/bootstrap wiring, production
 limits and workflow staging remain open. No live or operational action occurred.
+
+## November 4 — scoped transport candidate
+
+[89 resolved](89-prepare-scoped-yaml-collection.md) adds finite/all-page scheduling
+with shared transport budgets and atomic retained merges; 63 relevant checks pass.
+[Findings](../research/yaml-scoped-transport-adapter.md) preserve the distinction
+between transport deadlines and reader/staging work. Real AM app-map/bootstrap,
+pinned prior wiring, accepted budgets and workflow staging remain. No live or
+operational action occurred.
