@@ -158,3 +158,29 @@ experiment, not a recommended optimization. Do not claim portable constant RSS.
 `memory-results.json` matches the fixed-slot source in this branch. No allocator
 or interpreter-level cause was established. Use measured file/resource ceilings,
 or investigate another reader strategy before production integration.
+
+## Hard offline worker follow-up
+
+`worker.py` wraps the local JSON adapter with a POSIX fork supervisor. Run
+`python3 tools/catalog-yaml-prototype/worker_matrix.py` for six process-limit
+acceptance groups plus nine inherited reader groups on each awk implementation.
+`collect_supervised` runs normalization/retained merge and result serialization
+inside the child; only a complete JSON result from exit 0 is returned. A hard
+worker refusal yields parent-built `collection_limit` metadata while preserving
+prior facts, default, overrides and last-success metadata.
+
+Trial defaults: 120 seconds elapsed, 384 MiB address space and 32 MiB per regular
+file. These are configurable experimental inputs, not accepted operating budgets.
+The parent sends SIGKILL at deadline (10 ms polling plus OS scheduling latency),
+kills remaining members of the child's session and reaps its direct child. Child
+stdout/stderr are discarded. A private result directory is removed on exit.
+The process is trusted, single-threaded fork work; this is not a security sandbox.
+Descendants deliberately escaping the session are outside the contract.
+
+RLIMIT_AS limits virtual address space, not RSS; existing input/parent allocation,
+parent result decoding, aggregate memory and aggregate temporary disk are not
+bounded here. RLIMIT_FSIZE limits each regular file and output serialization;
+it does not constrain the sum of files. Setup/I/O failures propagate without a
+candidate. Failure status cannot distinguish OOM from arbitrary child faults;
+no precise diagnosis is inferred. No network transport, live capacity measurement,
+fair scheduler, production integration or reader resource ceiling follows.
