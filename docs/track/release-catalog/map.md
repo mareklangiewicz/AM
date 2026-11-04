@@ -1198,3 +1198,11 @@ Obsidian/Neovim paths against two hash-checked saved list responses; exact URLs
 match. Seven adversarial groups expose proposed order/tag changes; 19 focused
 tests pass. Candidate `b58f30f1d`; policy acceptance and portable shell/lifecycle
 integration remain. No active consumer, operational or live change.
+
+2026-11-04: [97 resolved](issues/97-prepare-portable-yaml-cohort-consumer.md):
+[portable cohort rehearsal](research/yaml-shell-cohort.md) adds fully validated
+asset facts, shell/awk named selection, exact-local-pin byte reuse and selected-
+record acceptance. Eight shell/lifecycle groups plus 28 reader/policy/workflow
+checks pass; five saved policies agree on three awk tools. Candidate `7e62a68cc`;
+production acquisition/module delivery and actual manager batch integration remain.
+No live catalog, active consumer, workflow or installed change.
