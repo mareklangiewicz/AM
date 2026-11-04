@@ -1221,3 +1221,13 @@ compares candidate 7946f2167 against 7e62a68cc with independent parallel
 standards/spec axes; zero actionable findings on each. All 11 integration tests
 pass in a fresh offline run. Candidate remains unchanged and unmerged; remaining
 migration, policy/capacity acceptance and operational transition stay separate.
+
+2026-11-04: [100 resolved](issues/100-prepare-yaml-executable-migration.md):
+[executable source migration](research/yaml-executable-migration.md) adds explicit
+format-2 policies/bindings for 356 executable paths on candidate 7cfd1218f.
+All 356 saved selections and 1068 three-awk comparisons agree; six new migration
+groups and 120 compatibility/cohort/enrollment checks pass. Source coverage is
+361/475, with 114 AppImage paths remaining. Parallel review found one eligibility
+mismatch, fixed and confirmed. Installed transition/rollback is a concrete
+proposal/rehearsal, not a production migrator or accepted dual-publication scheme.
+Candidate remains isolated/unmerged and local; no live or installed host change.
