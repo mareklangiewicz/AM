@@ -65,7 +65,7 @@ def prepare(repo, out, cache):
             path=cache/(selection['repository_id']+'-'+selection['asset_id'])
             if not path.exists():
                 partial=path.with_suffix('.part')
-                run('curl','--fail','--location','--connect-timeout','15','--max-time','600',
+                run('curl','--silent','--show-error','--fail','--location','--connect-timeout','15','--max-time','600',
                     '--output',partial,selection['url'])
                 if not partial.stat().st_size:raise ValueError('empty download')
                 partial.rename(path)
