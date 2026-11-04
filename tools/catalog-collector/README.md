@@ -383,3 +383,12 @@ remain unattempted unchanged. File allowance remains an explicit trial/policy
 input, and no remote format-1-to-2 conversion is implicit.
 
 Enrollment/pinned checks: `python3 -m unittest discover -s tools/catalog-collector -p test_yaml_enrollment.py`.
+
+`yaml_staging.py` adds an inactive workflow/artifact source candidate. It checks
+manual run context plus manifest/policy/scope hashes, stages a private normalized
+YAML package with a receipt, and verifies closed directory layout, enrollment,
+pinned state and preservation rules. `yaml-policy.json` supplies explicit review
+limits. See [the staging design](../../docs/track/release-catalog/design/yaml-staging.md)
+and inactive `catalog-yaml-staging.yml.proposed` for boundaries and default scope
+hashing. No active workflow imports this module; download authentication, remote
+prior loading and publication remain unwired.
