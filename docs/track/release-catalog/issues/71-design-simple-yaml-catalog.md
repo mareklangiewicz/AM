@@ -198,3 +198,13 @@ recipe names and reviewed manifest identities into bootstrap/exact-pin refresh.
 49 repositories, explicit scope exclusions and incomplete-bootstrap refusal.
 All 34 relevant checks pass, including real saved response replay. Accepted
 production budgets and workflow/artifact staging remain; no operational change.
+
+## November 4 — budget profile and artifact staging candidate
+
+[91 resolved](91-prepare-yaml-budget-and-artifact-staging.md) prepares explicit
+profile choices, context/revision/manifest/policy/scope binding and normalized
+artifact staging/verification. [Findings](../research/yaml-budget-and-artifact-staging.md)
+record 45 passing checks and the inactive bootstrap workflow proposal. Profile
+numbers are not operational capacity guarantees. Authenticated artifact/prior
+acquisition, publication CAS and reviewed activation remain; no live or
+operational action occurred.

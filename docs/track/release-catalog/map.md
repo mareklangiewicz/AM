@@ -1151,3 +1151,10 @@ connect 255 AM names / 475 recipe paths to 49 reviewed numeric repositories;
 aliases/unselected state; incomplete bootstrap refuses without invented times.
 All 34 relevant checks pass, including saved 100-page response replay. Accepted
 budgets and workflow/artifact staging remain; no live or operational action.
+
+2026-11-04: [91 resolved](issues/91-prepare-yaml-budget-and-artifact-staging.md):
+[budget/artifact candidate](research/yaml-budget-and-artifact-staging.md) adds an
+explicit review profile, trusted-context/hash preflight, private normalized YAML
+staging and verifier, plus an inactive bootstrap workflow proposal. All 45 relevant
+checks pass. Authenticated acquisition, remote prior loading, publication CAS
+and reviewed activation/capacity remain; no operational or live action.
