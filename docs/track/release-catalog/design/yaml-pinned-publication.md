@@ -78,3 +78,12 @@ inactive workflow is bootstrap staging only and still has no publisher. Source
 review/promotion, accepted capacity/policy, migration and operational activation
 remain separate. No workflow edit, dispatch, catalog push, repin, installed change,
 schedule or yadm pointer update is implied by these source APIs.
+
+## Consolidated-review correction (ticket 94)
+
+The shared loader now lives in tools/catalog-collector/yaml_publication.py and is
+also used by local pinned reads; canonical validation allows distinct immutable
+schema refs across documents to preserve untouched bytes. Local Git commit/ref
+construction is shared through publication.publish_tree, including its history
+check. The new complete inactive manual workflow is catalog-yaml-publication.yml.proposed;
+no operational workflow has been changed.

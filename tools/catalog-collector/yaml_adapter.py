@@ -4,15 +4,12 @@ The existing collector executes unconditional numeric list requests. The scoped
 bridge schedules finite/all pages within shared transport budgets. Reader,
 normalization and retained merge are shared with the YAML candidate.
 """
-from pathlib import Path
 import re
-import sys
 from urllib.parse import parse_qsl, urlsplit
 
 from collector import Descriptor, Refusal, Source, collect, plan, require
 from manifest import load_manifest
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'catalog-yaml-prototype'))
 from attempt_adapter import merge_attempts
 from retention import parameters
 from yaml_publication import candidate_tree
@@ -131,6 +128,8 @@ def collect_one_page(value, transport, clock, credential, *, workflow_identity,
         updated[rid] = merge_attempts(repositories[rid], [(attempt, following)],
             attempted_at=attempt['request_started_at'][:19] + 'Z', page_size=page_size,
             page_limit=1, max_catalog_bytes=max_file_bytes)
+        if updated[rid]['collection']['status'] == 'ok':
+            updated[rid]['schema'] = schema
     tree = candidate_tree(apps, updated, schema=schema, max_file_bytes=max_file_bytes)
     report = dict(report, not_attempted_repositories=[str(r.source.repository_id)
                   for r in value.requests[len(attempts):]], sources={str(a['repository_id']):
@@ -279,6 +278,8 @@ def collect_scoped(value, transport_factory, clock, credential, *, workflow_iden
             page_size=page_size, page_limit=page_limit, reconcile=reconcile,
             max_catalog_bytes=max_file_bytes, max_requests=max_source_requests,
             max_bytes=max_run_bytes, max_seconds=run_seconds)
+        if updated[rid]['collection']['status'] == 'ok':
+            updated[rid]['schema'] = schema
         outcomes[rid] = updated[rid]['collection']['status']
     report = dict(sources=outcomes, requests=used_requests, received_bytes=used_bytes,
                       elapsed_seconds=mono(clock)-start, stop_reason=stop,

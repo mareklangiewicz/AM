@@ -1,71 +1,75 @@
-# YAML catalog design — shared-understanding checkpoint
+# YAML catalog design — current shared understanding
 
-Status: design decisions individually accepted; final shared-understanding confirmation pending.
+Status: user-revised November 3, 2026. [Retention revision](yaml-retention-revision.md)
+supersedes mandatory full-history collection and replacement-only release windows.
+Production remains format 1; this is local design and experiment authorization.
 
-## Published model
+## Facts and format
 
-Replace published raw release responses, JSON index and TSV lookup with a precisely defined YAML subset. Publish one repositories/ID.yaml file per upstream numeric repository identity and a small YAML app-to-repository map. Store readable owner/name in each repository record. A format version and immutable source documentation URL identify the schema.
+Publish normalized release facts as `repositories/ID.yaml` and a small YAML app
+map, without raw responses or a distributed JSON/TSV compatibility layer. Clients
+choose releases/assets and define latest; collection makes no separate latest
+request. Keep source archive URLs and embedded uploaded-asset facts as returned,
+without claiming independently audited asset completeness or transactional pages.
 
-Collect all published release pages, including prereleases and excluding drafts, without a separate latest request. Clients define latest and choose releases/assets using facts, not record order. Existing /latest consumers require explicit selection review rather than an identical-behavior promise. Source archive links and all embedded uploaded-asset records are retained. Complete release pagination does not claim independently audited embedded-asset completeness or a transactional cross-page snapshot.
+Use the strict mapping-only YAML subset and ordered fields in the
+[schema draft](../../../catalog-format-v2.md): quoted dynamic keys/strings,
+canonical integers/booleans, `{}` for empty maps, fixed indentation, immutable
+schema reference and shared structural validation. The accepted escape set
+includes `\N`, `\L`, `\P` along with quote/backslash/newline/carriage-return/tab.
+Missing optional fields differ from actual empty strings. Unsupported input fails
+normalization rather than being silently changed.
 
-Fields: repository identity; release ID, tag/title/page URL, creation/publication/update times where upstream provides them, prerelease flag; asset ID, original name, download URL, size, content type, upstream digest when available; source archive URLs. Omit release notes, authors/profiles and other unused upstream fields. Missing optional values are omitted, not null.
+## Scope, merge and freshness
 
-## Format
+Parameters: configured source subset (default all), page size 1–100 (default 100),
+and a positive page count or `all` (default 1). Scheduled runs default to all
+configured sources and one page of 100 releases. Manual runs can request other
+scopes. Request/byte/time budgets remain mandatory even with `all`.
 
-Fixed schema keys, spaces-only indentation, ID-keyed mappings in deterministic order. Scalars are quoted strings, schema-defined integers, and true/false booleans; {} is the sole empty mapping syntax. Strings are literal UTF-8 on one physical line with only quote/backslash/newline/carriage-return/tab escapes. No arbitrary YAML tags, anchors, multiline scalars, sequences or implicit string typing. Precise depth/indentation/order, integer bounds, duplicate-key rejection and unsupported-character handling will be specified and tested in the parser experiment, without adding general YAML support.
+Completing the requested limited scope succeeds; exhausting a budget before its
+completion fails. Stage a per-source merge: replace fetched release facts and
+assets, retain unfetched facts and effective observation times, and commit only on success. Failure
+preserves all previous release observations and last-success scope/time metadata.
+Unselected sources remain unchanged. `collection` records the latest attempt;
+`last_success` records the last completed scope, actual page count and whether
+pagination reached EOF. None implies every retained release was revisited.
 
-Timestamps are quoted UTC YYYY-MM-DDTHH:MM:SSZ values at whole-second precision. No duplicated epoch fields. Git commit time is publication time; per-source checked_at represents successful validation time.
+Every release has an effective `observed_at`: last successful committed response inclusion,
+using that response's receipt time. Unchanged included records are reobserved;
+untouched records, failed staged updates, cached copies and publication do not
+advance it. Clients can choose an older stable release from the current catalog.
+Installation freshness uses that release's observation time under the existing
+48-hour rule and explicit stale override. A repository's recent collection time
+cannot rescue a stale selected release.
 
-## Observations and failure
+November 4 agreed representation: repository `observed_at` supplies a shared
+default; release overrides are stored only when different. Before changing the
+default, materialize the former effective times of untouched implicit releases.
+Failure preserves the default and release observations. The prototype chooses
+final-page receipt as its default and preserves earlier page times as overrides.
+Release reader queries resolve effective times, so implicit storage never makes
+freshness depend on publication or a later unrelated collection.
 
-Apply explicit per-repository and aggregate request/byte/runtime ceilings. No retry or ceiling policy may silently convert an incomplete history into a complete observation. Choose concrete budgets using broader measurements before production rollout; the existing 24-source sample does not bound outliers.
+Partial absence never deletes retained releases. The [exact local reconciliation
+proposal](yaml-retention-revision.md#exact-reconciliation-policy-local-design-proposal)
+retains by default, including on full history, and permits explicit deletion only
+with a successful `all` reconciliation request. Full-history absence is not proof
+of upstream deletion. Retained size can grow beyond one fetched page; independent
+catalog-size, reader-memory and output-spool bounds still need measurement.
 
-A successful empty result has releases: {}. On a later failed check, retain the previous complete observation and its checked_at; publish a small failed status/reason. Before the first successful check, publish identity/status without release data or checked_at. Reasons distinguish rate limiting, transport failure, invalid response and collection ceilings; detailed arbitrary errors stay in workflow logs. Pagination must be checked for detectable inconsistency such as duplicate IDs; upstream mutation means no transactional completeness claim.
+## Migration and evidence
 
-## Trust and consumers
+The chronology remains in [interview decisions](yaml-format-design.md); newer
+answers supersede older mandatory-history/check-time statements. [ADR 0001](../../../adr/0001-catalog-facts-and-client-selection.md)
+keeps client selection separate, and [ADR 0002](../../../adr/0002-retained-release-observations.md)
+records scoped retained observations. [Reader feasibility](yaml-reader-experiment.md)
+and [memory measurements](yaml-reader-memory-experiment.md) are evidence for their
+recorded schema revisions, not current worst-case bounds. [Resource strategy](yaml-resource-strategy.md)
+is revised for incremental retention; candidate numbers remain trial proposals.
 
-Trust the reviewed AM workflow, GitHub-hosted runners and GitHub API acquisition. All files used by a client command come from one pinned Git commit over GitHub HTTPS. No per-catalog-body checksum/size ledger or raw-JSON compatibility reconstruction. Keep transfer bounds and simple structure validation. Upstream asset digests are separate facts.
-
-Shared POSIX shell/awk reader: validate; list release or asset IDs one per line; read a named scalar with decoding. Missing fields differ from false/zero/empty-string values. Clients implement selection and freshness policy. Initially preserve the 48-hour installation freshness rule and explicit stale override; browsing can show old facts with status. Demonstrate a small strict parser against malformed and valid cases first; reconsider grammar/consumer validation if this proves cumbersome.
-
-## Migration and work order
-
-One user, few installed apps: direct coordinated publication/consumer migration, without prolonged dual-format rollout. No production change until the design checkpoint is confirmed. Then:
-
-1. Write exact schema/subset documentation and a disposable reader/validator experiment with adversarial fixtures.
-2. Measure wider history/size outliers and settle operational budgets. Do not overstate asset completeness.
-3. Implement normalization/publication and adapt consumers to explicit selection rules; compare existing choices where applicable and document deliberate latest-policy changes.
-4. Validate and review local work; publication, exact daily source repin, and host delivery are separate explicit operations. No push or workflow dispatch authorized by this checkpoint alone.
-
-Natural November 3 production run observation/acceptance is separate outstanding work, not established by this format research. Existing local commits advance source beyond the last recorded daily pin; recheck actual remote controls before publication decisions.
-
-## Representative repository file
-
-Illustrative IDs, times, URLs and sizes; not live release evidence. Schema URL SOURCE_COMMIT stands for the exact source revision containing the documentation.
-
-```yaml
-format: 2
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/SOURCE_COMMIT/docs/catalog-format-v2.md"
-repository_id: 123
-repository: "example/app"
-checked_at: "2026-11-03T01:00:00Z"
-check_status: "ok"
-releases:
-  "456":
-    tag: "v2.0.0"
-    title: "Version 2.0"
-    url: "https://github.com/example/app/releases/tag/v2.0.0"
-    published_at: "2026-11-02T12:00:00Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/example/app/zipball/v2.0.0"
-    assets:
-      "789":
-        name: "App-x86_64.AppImage"
-        url: "https://github.com/example/app/releases/download/v2.0.0/App-x86_64.AppImage"
-        size: 123456
-        content_type: "application/octet-stream"
-```
-
-## Evidence
-
-[Interview decisions](yaml-format-design.md), [bounded history measurement](yaml-history-measurement-20261103/findings.md), [architectural boundary](../../../adr/0001-catalog-facts-and-client-selection.md).
+The local retained-observation experiment updates the reader and demonstrates
+merge/failure/freshness behavior without network calls. Production normalization,
+consumer selection migration, operational resource budgets and reviews remain
+before deployment. No workflow dispatch, push, source repin or host delivery is
+authorized by this revision. Natural-run acceptance remains separate.

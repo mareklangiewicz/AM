@@ -439,3 +439,35 @@ hosted-runner capacity evidence. No active workflow calls these candidates.
 See docs/track/release-catalog/design/yaml-pinned-publication.md for boundaries.
 
 Offline checks: `PYTHONPATH=tools/catalog-collector:tools/catalog-yaml-prototype python3 -m unittest test_yaml_publication_delivery`.
+
+## Consolidated YAML runtime and inactive complete workflow (ticket 94)
+
+Reusable YAML code and reader now live directly here: writer.py, retention.py,
+bounded.py, attempt_adapter.py, yaml_publication.py, reader.sh and reader.awk.
+Historical prototype paths are relative symlinks for old experiments. Runtime
+modules do not import that experiment directory; only test fixture builders do.
+`yaml_publication.read_tree` supplies one bounded canonical snapshot loader, and
+`publication.publish_tree` supplies one local commit/ref implementation for both
+formats. Local fixture helper APIs remain available to historical experiments.
+
+Repository schema provenance is per document. Successful attempts use the current
+source schema; unselected/unattempted documents retain exact prior bytes, and
+failed attempts preserve schema/facts/observations while changing only collection
+metadata. A snapshot may therefore contain valid different immutable schema refs.
+The earlier current-schema-for-every-file candidate rule was incorrect.
+
+`yaml_workflow.py validate|collect|publish` is the explicit entry point for the
+complete inactive manual proposal at
+`docs/track/release-catalog/design/catalog-yaml-publication.yml.proposed`.
+It validates explicit scope JSON against its trusted digest before token handoff.
+Collection fetches exact prior with read permission, then stages normalized YAML;
+publication uses a separate job with contents-write/actions-read permissions and
+trusted artifact outputs. Failed or unattempted requested sources fail collection,
+so default job dependency prevents publishing that run. Artifacts can remain for
+review. No schedule, implicit format-1 migration or automatic activation is added.
+The earlier bootstrap-only proposal is historical; the new complete proposal
+supersedes it for review without installing either in .github/workflows.
+
+The runner must already provide PyYAML and existing gh/git/transport dependencies;
+preflight fails without them. Provisioning and hosted capacity are unverified.
+No claim of dispatch readiness or operational budget acceptance is made.

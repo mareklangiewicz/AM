@@ -1,4 +1,8 @@
 """Small collector-attempt contract checks; fixture timestamps never use replay time."""
+import sys
+from pathlib import Path
+# Legacy experiment entry point; runtime code lives in catalog-collector.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'catalog-collector'))
 import json
 import unittest
 

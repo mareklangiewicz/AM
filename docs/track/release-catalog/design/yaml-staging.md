@@ -78,3 +78,13 @@ not implemented here. No source YAML artifact can authorize those operations.
 
 Offline checks:
 `python3 -m unittest discover -s tools/catalog-collector -p 'test_yaml*.py'`.
+
+## Consolidated-review correction (ticket 94)
+
+The initial schema-for-every-file rule is superseded: repository documents retain
+individual immutable schema provenance. Unselected/unattempted files remain exact
+prior bytes; failed attempts preserve schema and facts, changing collection only.
+Only successful attempted documents take the current source schema. The complete
+inactive workflow proposal is now catalog-yaml-publication.yml.proposed; the
+bootstrap-only file above remains historical. Maintained modules/readers now live
+in tools/catalog-collector, with prototype paths as compatibility symlinks.

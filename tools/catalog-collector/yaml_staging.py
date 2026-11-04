@@ -9,7 +9,7 @@ from storage import canonical, decode
 from workflow_adapter import preflight
 from yaml_adapter import schema_url
 from yaml_enrollment import collect_pinned, prepare_pinned
-from yaml_publication import candidate_tree, decode_document
+from yaml_publication import decode_document, tree_documents
 
 POLICY_MAXIMA = dict(max_file_bytes=33554432, max_run_requests=900,
     max_run_bytes=1073741824, run_seconds=300, max_source_requests=900,
@@ -31,30 +31,6 @@ def checked(context, raw, revision, policy_raw):
             'unapproved_yaml_policy')
     return policy(policy_raw)
 
-
-def tree_documents(tree, limits):
-    require(type(tree) is dict and 'apps.yaml' in tree and len(tree) <= limits['max_files'],
-            'invalid_yaml_tree')
-    total = 0
-    repositories = {}
-    for path, body in tree.items():
-        require(path == 'apps.yaml' or re.fullmatch(r'repositories/[1-9][0-9]*\.yaml',path),
-                'unexpected_yaml_path')
-        require(type(body) is bytes, 'invalid_yaml_bytes')
-        total += len(body)
-        require(total <= limits['max_tree_bytes'], 'yaml_tree_bound')
-        obj = decode_document(body, limits['max_file_bytes'])
-        if path == 'apps.yaml':
-            apps = obj['apps']
-            schema = obj['schema']
-        else:
-            rid = path.split('/')[1][:-5]
-            require(str(obj['repository_id']) == rid, 'yaml_path_identity')
-            repositories[rid] = obj
-    # Check complete cross-file references, canonical bytes and one shared schema.
-    require(candidate_tree(apps,repositories,schema=schema,
-            max_file_bytes=limits['max_file_bytes']) == tree, 'noncanonical_yaml_candidate')
-    return apps, repositories
 
 
 def verify(tree, receipt, context, raw, revision, policy_raw, recipes, *, repo):
@@ -84,8 +60,7 @@ def verify(tree, receipt, context, raw, revision, policy_raw, recipes, *, repo):
     apps, repositories = tree_documents(tree,limits)
     require(apps == expected_apps and set(repositories) == set(previous), 'yaml_enrollment_mismatch')
     expected_schema = schema_url(revision)
-    require(all(obj['schema'] == expected_schema for obj in repositories.values())
-            and decode_document(tree['apps.yaml'],limits['max_file_bytes'])['schema'] == expected_schema,
+    require(decode_document(tree['apps.yaml'],limits['max_file_bytes'])['schema'] == expected_schema,
             'unapproved_yaml_schema')
     report = record['report']
     require(report['previous_publication'] == pin and report['enrollment'] == enrollment,
@@ -99,8 +74,10 @@ def verify(tree, receipt, context, raw, revision, policy_raw, recipes, *, repo):
     for rid, obj in repositories.items():
         before = previous[rid]
         if rid not in outcomes:
-            require(obj == dict(before,schema=schema_url(revision)), 'yaml_unattempted_changed')
+            require(obj == before, 'yaml_unattempted_changed')
             continue
+        require(obj['schema'] == (expected_schema if outcomes[rid] == 'ok' else before['schema']),
+                'unapproved_yaml_schema')
         require(obj['repository'] == before['repository'], 'yaml_readable_identity_changed')
         attempt = obj['collection']
         require(attempt['status'] == outcomes[rid] and attempt['page_size'] == scope['page_size']

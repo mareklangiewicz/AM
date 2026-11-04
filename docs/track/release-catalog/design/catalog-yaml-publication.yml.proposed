@@ -1,0 +1,104 @@
+# INACTIVE REVIEW ARTIFACT: do not copy into .github without separate rollout approval.
+# Requires reviewed source promotion and a runner provisioned with Python3/PyYAML,
+# gh, git and the existing transport dependencies. No schedule or migration here.
+name: YAML catalog manual publication candidate
+on:
+  workflow_dispatch:
+    inputs:
+      approved_revision:
+        description: Full separately reviewed pushed source SHA
+        required: true
+        type: string
+      manifest_sha256:
+        description: Reviewed staged-manifest.json SHA256
+        required: true
+        type: string
+      yaml_policy_sha256:
+        description: Reviewed yaml-policy.json SHA256
+        required: true
+        type: string
+      yaml_scope_sha256:
+        description: SHA256 of canonical collection_scope JSON
+        required: true
+        type: string
+      collection_scope:
+        description: Explicit sources, page_size, page_limit and reconcile JSON
+        required: true
+        type: string
+        default: '{"page_limit":1,"page_size":100,"reconcile":false,"sources":null}'
+      previous_publication:
+        description: Exact format-2 release-catalog commit; empty requires proven absence
+        required: false
+        type: string
+        default: ''
+permissions: {}
+concurrency:
+  group: yaml-catalog-manual-publication
+  cancel-in-progress: false
+env:
+  CTX_REPOSITORY: ${{ github.repository }}
+  CTX_REPOSITORY_ID: ${{ github.repository_id }}
+  CTX_EVENT: ${{ github.event_name }}
+  CTX_REF: ${{ github.ref }}
+  CTX_SHA: ${{ github.sha }}
+  CTX_WORKFLOW_SHA: ${{ github.workflow_sha }}
+  CTX_RUN_ID: ${{ github.run_id }}
+  CTX_RUN_ATTEMPT: ${{ github.run_attempt }}
+  CTX_APPROVED_REVISION: ${{ inputs.approved_revision }}
+  CTX_MANIFEST_SHA256: ${{ inputs.manifest_sha256 }}
+  CTX_YAML_POLICY_SHA256: ${{ inputs.yaml_policy_sha256 }}
+  CTX_YAML_SCOPE_SHA256: ${{ inputs.yaml_scope_sha256 }}
+  CTX_PREVIOUS_PUBLICATION: ${{ inputs.previous_publication }}
+  YAML_SCOPE_JSON: ${{ inputs.collection_scope }}
+jobs:
+  collect:
+    if: github.repository == 'mareklangiewicz/AM' && github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main-marek'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    outputs:
+      artifact_id: ${{ steps.package.outputs.artifact-id }}
+      artifact_digest: ${{ steps.package.outputs.artifact-digest }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Preflight source, scope, profile and provisioned dependency without token
+        run: python3 -B tools/catalog-collector/yaml_workflow.py validate
+      - name: Fetch exact prior and collect normalized YAML
+        env:
+          YAML_WORKFLOW_TOKEN: ${{ github.token }}
+        run: python3 -B tools/catalog-collector/yaml_workflow.py collect
+      - name: Retain normalized YAML and receipt
+        id: package
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          # Existing authenticated acquisition name; also used for pinned refresh.
+          name: yaml-bootstrap-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/yaml-staging/
+          retention-days: 7
+          if-no-files-found: warn
+  publish:
+    needs: collect
+    if: github.repository == 'mareklangiewicz/AM' && github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main-marek'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Preflight source, scope, profile and provisioned dependency without token
+        run: python3 -B tools/catalog-collector/yaml_workflow.py validate
+      - name: Reacquire exact prior, authenticate artifact and publish with exact lease
+        env:
+          YAML_WORKFLOW_TOKEN: ${{ github.token }}
+          YAML_ARTIFACT_ID: ${{ needs.collect.outputs.artifact_id }}
+          YAML_ARTIFACT_DIGEST: ${{ needs.collect.outputs.artifact_digest }}
+        run: python3 -B tools/catalog-collector/yaml_workflow.py publish

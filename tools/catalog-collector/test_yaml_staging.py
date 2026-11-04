@@ -186,6 +186,42 @@ class Staging(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     self.verified(changed,receipt)
 
+    def test_new_source_revision_preserves_unselected_document_bytes(self):
+        self.produce()
+        before, _ = staging.read_staged(self.output,self.limits)
+        from yaml_publication import tree_documents
+        apps, repositories = tree_documents(before,self.limits)
+        pin = publish_local(self.repo,apps,repositories,schema=repositories['16408992']['schema'],
+            max_file_bytes=self.limits['max_file_bytes'],expected_parent=None)
+        revision = 'b'*40
+        self.context.update(previous_publication=pin,sha=revision,workflow_sha=revision,
+                            approved_revision=revision)
+        cases = (('success',(),['262342594'],POLICY),
+                 ('failed',(response(body=b'{'),),['262342594'],POLICY),
+                 ('unattempted',(),None,canonical(dict(self.limits,max_run_requests=1))))
+        for name,scripts,sources,policy_raw in cases:
+            with self.subTest(case=name):
+                self.scope['sources'] = sources
+                self.context['yaml_scope_sha256'] = hashlib.sha256(canonical(self.scope)).hexdigest()
+                self.context['yaml_policy_sha256'] = hashlib.sha256(policy_raw).hexdigest()
+                limits = staging.policy(policy_raw)
+                output = Path(self.directory.name)/('new-source-'+name)
+                clock = ClockNow()
+                staging.collect_stage(self.context,self.raw,revision,policy_raw,self.recipes,
+                    lambda value:FakeTransport(clock,scripts),clock,Credential(),output,
+                    repo=self.repo,**self.scope)
+                tree, receipt = staging.read_staged(output,limits)
+                self.assertEqual(tree['repositories/16408992.yaml'],before['repositories/16408992.yaml'])
+                changed = decode_document(tree['repositories/262342594.yaml'],limits['max_file_bytes'])
+                if name == 'failed':
+                    original = decode_document(before['repositories/262342594.yaml'],limits['max_file_bytes'])
+                    self.assertEqual({k:v for k,v in changed.items() if k != 'collection'},
+                                     {k:v for k,v in original.items() if k != 'collection'})
+                else:
+                    self.assertIn(revision.encode(),tree['repositories/262342594.yaml'])
+                self.assertEqual(staging.verify(tree,receipt,self.context,self.raw,revision,policy_raw,
+                                               self.recipes,repo=self.repo),tree)
+
     def test_existing_output_is_preserved(self):
         self.output.mkdir()
         (self.output/'keep').write_bytes(b'keep')

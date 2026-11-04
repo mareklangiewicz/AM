@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 """Replay tracked real response evidence, never request it again."""
+import sys
+from pathlib import Path
+# Legacy experiment entry point; runtime code lives in catalog-collector.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'catalog-collector'))
 import hashlib
 import json
 import os

@@ -8,6 +8,7 @@ import zipfile
 from collector import require
 from delivery import download_artifact
 from yaml_staging import checked, stage, verify
+from yaml_publication import read_tree as read_prior
 
 
 def archive_cap(limits):
@@ -91,43 +92,6 @@ def acquire(context, manifest_raw, revision, policy_raw, recipes, artifact_id,
         zip_cap=archive_cap(limits),unpacker=lambda raw:unpack(raw,limits))
     verify(tree,receipt,context,manifest_raw,revision,policy_raw,recipes,repo=repo)
     stage(destination,tree,receipt,limits)
-    return tree
-
-
-def read_prior(repo, pin, limits):
-    """Read only bounded canonical format-2 blobs at the exact fetched commit."""
-    from pathlib import Path
-    import tempfile
-    from delivery import bounded, environment
-    from yaml_staging import tree_documents
-
-    require(type(pin) is str and re.fullmatch('[0-9a-f]{40}',pin), 'invalid_prior_pin')
-    # Reuse credential-free isolated Git environment and bounded process I/O.
-    with tempfile.TemporaryDirectory(prefix='yaml-local-git-') as scratch:
-        env = environment(b'local',scratch,github=True)
-        def local(*args, cap):
-            return bounded(['git','-C',str(repo),'-c','core.hooksPath=/dev/null',*args],
-                           env=env,cap=cap,objects=Path(repo))
-        listing = local('ls-tree','-rz',pin,cap=200_000)
-        tree, total = {}, 0
-        for record in listing.split(b'\0'):
-            if not record:
-                continue
-            require(len(tree) < limits['max_files'], 'yaml_prior_file_bound')
-            metadata, name = record.split(b'\t',1)
-            mode, kind, oid = metadata.split(b' ')
-            path = name.decode('utf-8')
-            require(mode == b'100644' and kind == b'blob' and
-                    (path == 'apps.yaml' or re.fullmatch(r'repositories/[1-9][0-9]*\.yaml',path)),
-                    'yaml_prior_layout')
-            size = int(local('cat-file','-s',oid.decode(),cap=64))
-            total += size
-            require(size <= limits['max_file_bytes'] and total <= limits['max_tree_bytes'],
-                    'yaml_prior_byte_bound')
-            body = local('cat-file','blob',oid.decode(),cap=limits['max_file_bytes'])
-            require(len(body) == size, 'yaml_prior_blob_length')
-            tree[path] = body
-    tree_documents(tree,limits)
     return tree
 
 

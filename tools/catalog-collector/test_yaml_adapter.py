@@ -3,6 +3,10 @@ from datetime import datetime, timezone
 import json
 from pathlib import Path
 import unittest
+import sys
+
+# Historical fixture builders remain test-only dependencies.
+sys.path.append(str(Path(__file__).resolve().parents[1]/'catalog-yaml-prototype'))
 
 import yaml_adapter as adapter
 from test_collector import Clock, Credential, FakeTransport, QUOTA, response
