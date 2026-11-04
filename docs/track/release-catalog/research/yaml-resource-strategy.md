@@ -16,6 +16,17 @@ timestamp churn and measured synthetic Git history while preserving effective
 freshness. The linked growth/reader resource numbers predate that encoding;
 no CPU/RSS improvement or new operational ceiling follows from the history result.
 
+November 4 later follow-ups: [hard workers](yaml-worker-limits.md),
+[aggregate managed staging](yaml-staging-limits.md) and
+[shared-default reader budgets](yaml-reader-budgets.md) now exercise opt-in offline
+enforcement. The 16.31 MB shared-default fixture completes on all three awk tools,
+but BusyBox takes 56.4 s under a 60 s wall trial. This does not supersede the
+historical 55 s CPU refusal or approve 16 MiB as portable. Direct shell queries
+have output bounds but no hard deadline; the Python supervisor is not an accepted
+consumer dependency. Real transport/publication staging and live capacity remain
+unproved. One initial GNU awk status-2 attempt remains unexplained despite passing
+reproductions; bounded diagnostics are now retained.
+
 ## Consumer
 
 Keep record-scoped validation and private output spooling so malformed suffixes

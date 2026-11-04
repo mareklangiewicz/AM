@@ -1,5 +1,18 @@
 # Release catalog exploration
 
+## Shared-default reader budgets — November 4, 2026
+
+[80 resolved](issues/80-bound-and-measure-shared-default-reader.md): portable
+output accounting and distinct scalar projections, plus offline supervised
+runtime/address-space and reserved input/spool/output/diagnostic storage.
+[Findings](research/yaml-reader-budgets.md): six new groups and inherited reader
+checks pass on three tools; 21 measured cases include 15 full-hash successes and
+six deliberate zero-candidate refusals. BusyBox needs 56.4 s for the 16.31 MB
+retained shape under a 60 s trial; 16 MiB remains provisional. An initial
+uncaptured GNU awk refusal remains unexplained despite passing reproductions.
+Prototype `3a8087613` is local only. Portable consumer deadlines, accepted budgets,
+real transport/publication staging and live capacity remain 71's gates.
+
 ## Aggregate managed staging — November 4, 2026
 
 [79 resolved](issues/79-bound-offline-aggregate-staging.md): reservations bound

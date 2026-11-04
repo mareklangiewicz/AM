@@ -86,3 +86,16 @@ and 45 existing worker executions on three awk tools. These are trusted managed
 files, not filesystem quotas; real transport/publication staging and parent elapsed
 bounds remain unproven. Reader budgets and separately authorized live capacity
 remain open. No production integration or remote operations occurred.
+
+## November 4 — reader budget follow-up
+
+[80 resolved](80-bound-and-measure-shared-default-reader.md) adds output-byte
+accounting and distinct scalar projection bounds. Offline supervision reserves
+input, spool, copied output, bounded diagnostics and receipt; refusals expose no
+candidate. [Shared-default measurements](../research/yaml-reader-budgets.md):
+15 full-hash successes and six deliberate refusals. BusyBox's 56.4 s on a 16.31 MB
+retained fixture leaves little margin under the 60 s trial; no portable ceiling is
+accepted. An initial GNU awk status-2 attempt remains unexplained; bounded
+diagnostics now preserve recurrences. Portable consumer hard deadlines, accepted
+operating budgets, real transport/publication integration and separately authorized
+live capacity remain open. No production changes or remote operations occurred.
