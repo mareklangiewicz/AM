@@ -1257,3 +1257,16 @@ does not provide binary rollback or operational deployment. Reviewed package and
 binding, module delivery, installed inventory, policy/stale UI/capacity and
 publication/ref transition remain separate. No live, installed-host, push,
 workflow, repin or yadm changes.
+
+
+2026-11-04: [103 resolved](issues/103-prepare-host-cutover-package.md):
+[host cutover inventory/package](research/yaml-host-cutover-package.md) consolidates
+all YAML candidates and authoritative main records at ee89ef3bd. Frozen source
+bbfc63fad builds/verifies a private 69-file package with exact runtime, before-
+images and three bound installed replacements. Four catalog clients include
+unenrolled Sunshine; 17 legacy updaters need separate adapters. Source scope is
+475 YAML plus 987 remaining format-1 shared paths. Fixed separate
+release-catalog-yaml-v2 wiring is an inactive local proposal; format 1 remains
+supported. 59 distinct tests pass; one Standards/two Spec findings fixed and
+confirmed, zero remaining. No installed mutation, push, live acquisition,
+publication, workflow, repin or yadm changes.
