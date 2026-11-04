@@ -1,0 +1,195 @@
+{
+  "clients": [
+    {
+      "adapter": "embedded-appimage-update",
+      "app": "appimagetool",
+      "apply_ready": false,
+      "installation": "/opt/appimagetool",
+      "reason": "Embedded update URL can differ from catalog selection; decide transport and URL identity explicitly.",
+      "shared_source": false,
+      "source_path": "programs/x86_64/appimagetool",
+      "source_sha256": "65bd18cac5a4fbe7b7fd8953d90676bde1223ab8dd7c36cc6fed5fd4bda584f4",
+      "updater_sha256": "95d4cb94b19be36003f8387560116118580e68384b73acfeeb20b17fa920c577"
+    },
+    {
+      "adapter": "embedded-appimage-update-custom-identity",
+      "app": "appimageupdatetool",
+      "apply_ready": false,
+      "installation": "/opt/appimageupdatetool",
+      "reason": "Preserve Marek patch recording the URL actually used by embedded self-update, not scraped release URL.",
+      "shared_source": false,
+      "source_path": "programs/x86_64/appimageupdatetool",
+      "source_sha256": "ebd9ce61e99ccb900ead81e48856c4770ac11dbc8fb854bc6e108dcda4d2c303",
+      "updater_sha256": "ba98ddde6d96cd9219a0b9f141475ed27ba81cb2a8098c2cee0f206f7e3b609b"
+    },
+    {
+      "adapter": "archive-directory-layout",
+      "app": "btop",
+      "apply_ready": false,
+      "installation": "/opt/btop",
+      "reason": "Preserve bin/btop, extracted directory contents and launcher; raw single-file lifecycle is incompatible.",
+      "shared_source": false,
+      "source_path": "programs/x86_64/btop",
+      "source_sha256": "d307c8bb3253b19b7aae64cb2ec7d4fd45dcd87d96485b2335504148975ac091",
+      "updater_sha256": "ad5a3c24a33aad573c09f3a64cddd32955efc9fe75f411aacc35fecacd60dd89"
+    },
+    {
+      "adapter": "multi-asset-toolset",
+      "app": "emmylua",
+      "apply_ready": false,
+      "installation": "/opt/emmylua",
+      "reason": "Select and stage four same-release archives before replacing tools; define interrupted multi-file recovery.",
+      "shared_source": false,
+      "source_path": "programs/x86_64/emmylua",
+      "source_sha256": "fde2111d21666844a684eba3165deff04e8a3c0a22f1f5070b257f48352ceeec",
+      "updater_sha256": "281adfd99954e55c06bfebf1a5a5b9dc3dbe61be7dae0fbb6049b92ceb432a8a"
+    },
+    {
+      "adapter": "archive-single-binary",
+      "app": "fzf",
+      "apply_ready": false,
+      "installation": "/opt/fzf",
+      "reason": "Add reviewed tar extraction and exact fzf entry selection; retain URL version identity.",
+      "shared_source": false,
+      "source_path": "programs/x86_64/fzf",
+      "source_sha256": "6afd1ae62a4d9ab7733233d8fd620a05f8d559b94f8fc4cdfa1875ed711bc7bf",
+      "updater_sha256": "c233b23edcf747975f1fd24e1190260f686a6a35ce6a68db1e771760a07bb53d"
+    },
+    {
+      "adapter": "archive-directory-layout",
+      "app": "kitty",
+      "apply_ready": false,
+      "installation": "/opt/kitty",
+      "reason": "Preserve bin/kitty, bin/kitten, supporting tree and launchers; not a raw executable replacement.",
+      "shared_source": false,
+      "source_path": "programs/x86_64/kitty",
+      "source_sha256": "d5cce15a82f05ed8d20d55182fb457a007864229d9d19f3f371386ab74990baf",
+      "updater_sha256": "a236b3b68bd1c62b6adf239351f7c6e8b4fef6f047d372972e21b87bdd150936"
+    },
+    {
+      "adapter": "archive-single-binary",
+      "app": "lazygit",
+      "apply_ready": false,
+      "installation": "/opt/lazygit",
+      "reason": "Select archive and extract exact lazygit entry; retain supporting files intentionally.",
+      "shared_source": false,
+      "source_path": "programs/x86_64/lazygit",
+      "source_sha256": "e4b21055ecdd0115762bbb20626a22f8d8a5a424c1356b7dd276d5db7d9561f2",
+      "updater_sha256": "48580d843e2e4ee67a3af8b90ef341e4a54c54e785247508aaf7d5c8eddca673"
+    },
+    {
+      "adapter": "publication-time-appimage",
+      "app": "logseq-app-db-nightly",
+      "apply_ready": false,
+      "installation": "/opt/logseq-app-db-nightly",
+      "reason": "Version identity is published_at, not asset URL; preserve same-URL refresh by release publication.",
+      "shared_source": false,
+      "source_path": "programs/x86_64/logseq-app-db-nightly",
+      "source_sha256": "6b29682708feafb56e314d8e20f83f2f98f86d6eca7202fe84c575b5448d2a3c",
+      "updater_sha256": "bcdc52b1d7996f8c1af4e3b01e22470794795f8f6d2e788c8caffab9fc1c4c07"
+    },
+    {
+      "adapter": "appimage-latest-rule",
+      "app": "logseq-app-og",
+      "apply_ready": false,
+      "installation": "/opt/logseq-app-og",
+      "reason": "Shared AppImage lifecycle candidate after explicit latest replacement and numeric/list evidence.",
+      "shared_source": false,
+      "source_path": "programs/x86_64/logseq-app-og",
+      "source_sha256": "c8dacd3a35fc3f677b2e831bb7bdbe06ccf379e14ebe123164690e60c7631be5",
+      "updater_sha256": "8d9bd399689bf6e384011a1f22cfb18084dc743bdbf128062136c3f4ac7e0b90"
+    },
+    {
+      "adapter": "embedded-appimage-update",
+      "app": "neovide",
+      "apply_ready": false,
+      "installation": "/opt/neovide",
+      "reason": "Resolve latest selection and embedded self-update identity before switching transport.",
+      "shared_source": false,
+      "source_path": "programs/x86_64/neovide",
+      "source_sha256": "e2a52c067905042a66135972f283dd1a5d7f32ab269281e60c8f8692b5acbfde",
+      "updater_sha256": "1042592a3d990ae05c38500b48ad2004c0a3e7a5a3828076e915f396526b5cb5"
+    },
+    {
+      "adapter": "embedded-appimage-update",
+      "app": "neovide-nightly",
+      "apply_ready": false,
+      "installation": "/opt/neovide-nightly",
+      "reason": "Preserve nightly gate; resolve embedded self-update versus selected release and same-URL refresh.",
+      "shared_source": false,
+      "source_path": "programs/x86_64/neovide-nightly",
+      "source_sha256": "5285f9673b65e7925e52d368943b70c1ee4e0ff2bc0e47dbdbd279d021d91016",
+      "updater_sha256": "4cd8c6fe9befd881037fa33d20380254d61d7c8998ea3995c7705030c3247c61"
+    },
+    {
+      "adapter": "archive-single-binary",
+      "app": "rclone",
+      "apply_ready": false,
+      "installation": "/opt/rclone",
+      "reason": "Handle nested ZIP directory, exact rclone binary, supporting files and safe archive member paths.",
+      "shared_source": false,
+      "source_path": "programs/x86_64/rclone",
+      "source_sha256": "c69c485e4469b26392324f6dc8909834461c00ca3effa338b5cd09aec2ca157e",
+      "updater_sha256": "2cbd331610112007637b8799e0c334ab7ede6f47a26b95b7b2b5874a291958ab"
+    },
+    {
+      "adapter": "embedded-appimage-update",
+      "app": "rclone-ui",
+      "apply_ready": false,
+      "installation": "/opt/rclone-ui",
+      "reason": "Resolve embedded update target/refresh behavior; do not replace by name alone.",
+      "shared_source": false,
+      "source_path": "programs/x86_64/rclone-ui",
+      "source_sha256": "b2828e41be547382ea7269dbafb5480d38fe7dfd08899ec3a97bcbee805387e9",
+      "updater_sha256": "386401d61ceb83ee06b6216196d780d52dc8ce9aebe4ac97a83910def5fc3a7d"
+    },
+    {
+      "adapter": "embedded-appimage-update",
+      "app": "satty",
+      "apply_ready": false,
+      "installation": "/opt/satty",
+      "reason": "Resolve latest replacement and embedded update target before changing updater.",
+      "shared_source": false,
+      "source_path": "programs/x86_64/satty",
+      "source_sha256": "f8c83a378b9288014bdfd280e543bb44b97836091ce4db18ffd487e7e20697b1",
+      "updater_sha256": "ddaf55e9f087e3a1dc022c9d314b52809fe3028306466eb079c6e3bd06631760"
+    },
+    {
+      "adapter": "direct-single-binary",
+      "app": "yt-dlp",
+      "apply_ready": false,
+      "installation": "/opt/yt-dlp",
+      "reason": "Closest to shared executable lifecycle; still needs explicit numeric enrollment/policy and updater transition.",
+      "shared_source": false,
+      "source_path": "programs/x86_64/yt-dlp",
+      "source_sha256": "5782aaf77ab34c9ebeee9fa1a80e0aecfe159b751f4d89ef0c839f6ab69b2fba",
+      "updater_sha256": "80c9627704b4d88fa6dbcc35c61190ef2d56ebce7cd10c29fdad5f5341997211"
+    },
+    {
+      "adapter": "archive-single-binary",
+      "app": "zellij",
+      "apply_ready": false,
+      "installation": "/opt/zellij",
+      "reason": "Preserve OS/architecture exclusion and archive member selection; generic raw-file lifecycle is incompatible.",
+      "shared_source": false,
+      "source_path": "programs/x86_64/zellij",
+      "source_sha256": "e76d07f8b080cdda24d659549a6fbfbc42b1a64f83dfe022b5979f40c80e1942",
+      "updater_sha256": "8e9c3d87630fa4701af434f1d1846a0da5415cc2e20c7712e4164a60976fa5ff"
+    },
+    {
+      "adapter": "archive-single-binary",
+      "app": "zmx",
+      "apply_ready": false,
+      "installation": "/opt/zmx",
+      "reason": "Preserve additional macos exclusion and exact archive entry; review source/local drift.",
+      "shared_source": false,
+      "source_path": "programs/x86_64/zmx",
+      "source_sha256": "48ac5ff33cb184ef4cc635c6e4d665f01593243c06e9ee0caa01f8e9563c0c03",
+      "updater_sha256": "8fa59bffa38fe167e3ce4f15903d01ccd413e79af06310f1a6c0b0910d57c4e1"
+    }
+  ],
+  "conclusion": "No legacy updater is automatically eligible for the recipe-only migrator.",
+  "count": 17,
+  "evidence": "hash-matched local scripts; no updater execution or upstream requests",
+  "format": 1
+}

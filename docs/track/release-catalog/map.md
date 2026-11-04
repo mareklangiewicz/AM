@@ -1270,3 +1270,17 @@ release-catalog-yaml-v2 wiring is an inactive local proposal; format 1 remains
 supported. 59 distinct tests pass; one Standards/two Spec findings fixed and
 confirmed, zero remaining. No installed mutation, push, live acquisition,
 publication, workflow, repin or yadm changes.
+
+
+2026-11-04: [104 resolved](issues/104-rehearse-yaml-host-cutover.md):
+[Sunshine/host rehearsal](research/yaml-host-rehearsal.md), clean candidate
+bd2abf38a with frozen source d79100e5f, reaches 476 bound paths/50 sources and
+four installed replacement recipes. Exact 17-updater audit grants no automatic
+eligibility. Disposable module/recipe/inert update/recovery/restored-F1 execution
+passes; manager harness limits are explicit. 31 test groups include all 115 inert
+AppImage installs/updaters; both review axes zero findings. Saved 48-source YAML
+is 7.00 MB (largest 1.25 MB); synthetic Sunshine growth refuses cycle 12 while
+retaining 330 releases/7161 assets below unchanged 2 MiB. Updated private package
+verifies. Real/default capacity, legacy policies/adapters and operational gates
+remain. No live acquisition, installed mutation, push, publication, workflow,
+repin, main runtime promotion or yadm changes.
