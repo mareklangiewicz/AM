@@ -111,3 +111,12 @@ external tool paths fix that execution seam. The timeout dependency and broader
 platform support remain unaccepted. Whole-query/output deadlines, acceptable
 memory/performance budgets, real transport/publication integration and separately
 authorized live capacity remain open; no production or remote operations.
+
+## November 4 — whole-query/output boundary
+
+[82 resolved](82-probe-whole-query-deadline-boundaries.md): six focused offline
+cases demonstrate complete reader-shell supervision, partial private-output
+quarantine and BusyBox cat backpressure termination. [Findings](../research/yaml-whole-query-deadlines.md)
+distinguish private-file acceptance from irreversible streaming delivery. Parent
+snapshot acquisition remains outside the existing timer; consumer platforms,
+operating budgets and integration remain open. No production or remote changes.

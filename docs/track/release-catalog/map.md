@@ -1093,3 +1093,10 @@ identify the one initial all-batch failure and its passing targeted replacement.
 [Rollout package](research/appimage-next-large-batch-20261102/rollout.md) is ready
 for the home-instruction push decision. No push, workflow switch, dispatch, repin
 or host operation occurred; operational delivery remains unfinished.
+
+2026-11-04: [82 whole-query deadline probe](research/yaml-whole-query-deadlines.md)
+passes six focused cases on local Linux: exact success bytes, five deadline
+refusals, stopped recorded targets and private-arena cleanup. Private-file
+acceptance discards partial output; streaming delivery cannot retract received
+bytes. Parent snapshot deadlines and portable consumer requirements remain open;
+no production integration, live collection or remote mutations.
