@@ -1,10 +1,12 @@
 # Catalog YAML format 2 — experiment draft
 
 Status: local design draft, not a deployed format. The revised retained-observation prototype is on
-`research/yaml-retained-observations` under `tools/catalog-yaml-prototype/`.
+`research/yaml-observation-default` under `tools/catalog-yaml-prototype/`.
 Earlier reader/resource branches describe the superseded full-history model.
 The production catalog and reader still use format 1. Detailed experiment results
 are in [the findings](track/release-catalog/research/yaml-reader-experiment.md).
+The [shared observation default](track/release-catalog/research/yaml-shared-observation-default.md)
+records the latest agreed encoding and Git-history measurements.
 
 ## Purpose and trust
 
@@ -35,8 +37,9 @@ recognize the format locally; they do not download the schema. A file's path ID
 must agree with `repository_id`; the publisher checks app-map references.
 
 Git publication commit time represents publication time. Repository collection
-metadata describes collection scope and timing; each retained release separately
-records its own observation time. Neither collection nor publication time proves
+metadata describes collection scope and timing; each retained release has an
+effective observation time, using a shared default or explicit override.
+Neither collection nor publication time proves
 that an untouched release was reobserved.
 
 ## Exact YAML subset
@@ -85,6 +88,7 @@ Fields occur in this order; `?` means omit if unavailable/inapplicable:
 | repository | string | Readable owner/name |
 | collection | mapping | Most recent attempt for this repository |
 | last_success? | mapping | Most recent successfully completed requested scope |
+| observed_at? | timestamp | Shared default release observation time |
 | releases? | mapping | Retained release records, merged across successful collections |
 
 `collection` fields in order: `attempted_at` (timestamp), `page_size` (integer
@@ -106,10 +110,11 @@ completes on its page limit or an earlier end of pagination. With finite limits,
 An empty response still counts as one fetched page. Even a finite limit can reach
 the end of history; `history_complete` reports that fact independently of intent.
 
-`last_success` and `releases` are either both present or both absent. A successful
-attempt requires both, matching page size/limit/reconcile between the attempt and success,
-and no reason. With no successful collection yet, a failure omits both. Later
-failures preserve both exactly, including every per-release observation time;
+`last_success`, repository `observed_at` and `releases` are either all present or
+all absent, including a successful empty retained set. A successful
+attempt requires all three, matching page size/limit/reconcile between the attempt and success,
+and no reason. With no successful collection yet, a failure omits all three. Later
+failures preserve all three exactly, including overrides and omitted observations;
 only current attempt metadata changes. Each repository commits staged changes
 atomically after the entire requested scope and merged catalog pass validation
 and resource budgets. Other successful sources need not roll back if one fails.
@@ -119,7 +124,9 @@ for requested sources that were not attempted, without inventing an attempt time
 Timestamps are quoted UTC `YYYY-MM-DDTHH:MM:SSZ`, whole-second precision, valid
 calendar dates, years 1970–9999 in the trial. No duplicate epoch fields. Completion
 must not precede attempt time on success. Every release observation must be no
-later than the last successful completion time. Failed-attempt timestamps do not
+later than the last successful completion time. The shared default obeys the same
+bound, even when every release has an override or the retained set is empty.
+Failed-attempt timestamps do not
 refresh the previous observation. Clock regressions that invalidate these
 relationships fail the attempt rather than minting misleading freshness.
 
@@ -133,7 +140,7 @@ Release fields, in order:
 
 | Field | Type | Meaning |
 | --- | --- | --- |
-| observed_at | timestamp | Last response inclusion of this release in a successful committed collection |
+| observed_at? | timestamp | Override of the shared observation default; omit when equal |
 | tag | string | Upstream tag |
 | title? | string | Release name, omitted if unavailable |
 | url | string | HTTPS release page URL |
@@ -171,7 +178,8 @@ budget-truncated `all` request as a successful limited request.
 Merge fetched releases by numeric release ID into retained records. Replace a
 fetched release's normalized facts and complete embedded-asset mapping with its
 new response values, removing optional fields/assets no longer supplied for that
-release. Preserve unfetched releases exactly. A release's `observed_at` is the
+release. Preserve unfetched facts and effective observation times. A release's
+effective `observed_at` is the
 UTC time the response containing it was received (after the body was acquired),
 not the attempt start, normalization completion or publication time. Commit it
 only if the requested scope succeeds. An unchanged release included in a fresh
@@ -179,6 +187,24 @@ response is reobserved; mere absence, a 304 without a release body, or reuse of
 cached facts cannot advance `observed_at`. Drafts are not merged as published
 release facts. Selection and freshness use retained facts, not upstream page
 position or recent collection status.
+
+The repository-level `observed_at` supplies the shared default. A release uses
+its own `observed_at` override when present, otherwise the shared timestamp.
+Writers omit overrides equal to the default; the strict trial reader rejects
+redundant equal overrides. Before changing the default, materialize the old
+effective timestamp for every previously implicit retained release that was not
+fetched. Then replace fetched records, retaining each page's actual receipt
+timestamp, and omit only observations equal to the new default. All of these
+changes stage and commit atomically; failure preserves the previous default and
+release representation exactly. A new default never refreshes untouched records.
+
+The local prototype chooses the final fetched page's receipt time as the new
+shared default after scope success, including an empty page. Earlier pages use
+explicit overrides when their receipt times differ. An empty fetch can therefore
+materialize old implicit records without changing their effective times; it does
+not refresh them. This deterministic writer choice is independent of completion
+or publication timestamps, and does not claim every retained release was observed
+on the final page.
 
 Absence from a partial fetch never deletes a release. Full-history absence is
 not a transactional deletion proof. The reconciliation policy is specified in
@@ -218,7 +244,11 @@ No aliases are hardcoded into the reader. `apps: {}` is a valid empty map.
 by the prototype. ID/name enumeration
 is one entry per line. Scalar lookup writes exact decoded bytes with no added
 newline. Missing data returns status 3; invalid data/query/usage returns 2;
-successful values including false, zero and empty strings return 0.
+successful values including false, zero and empty strings return 0. A release
+`get ... observed_at` and `rows releases observed_at` return the effective
+observation timestamp, resolving the shared default even when no release override
+is stored. A missing release still returns 3; optional upstream fields retain
+their ordinary missing-field behavior. `get observed_at` returns the shared default.
 
 No output is emitted until the whole file validates. Quoting and escape decoding
 are shared; recipes do not each implement another parser. Shell command

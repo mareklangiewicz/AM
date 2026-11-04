@@ -29,19 +29,27 @@ scopes. Request/byte/time budgets remain mandatory even with `all`.
 
 Completing the requested limited scope succeeds; exhausting a budget before its
 completion fails. Stage a per-source merge: replace fetched release facts and
-assets, retain unfetched releases exactly, and commit only on success. Failure
+assets, retain unfetched facts and effective observation times, and commit only on success. Failure
 preserves all previous release observations and last-success scope/time metadata.
 Unselected sources remain unchanged. `collection` records the latest attempt;
 `last_success` records the last completed scope, actual page count and whether
 pagination reached EOF. None implies every retained release was revisited.
 
-Every release has `observed_at`: last successful committed response inclusion,
+Every release has an effective `observed_at`: last successful committed response inclusion,
 using that response's receipt time. Unchanged included records are reobserved;
 untouched records, failed staged updates, cached copies and publication do not
 advance it. Clients can choose an older stable release from the current catalog.
 Installation freshness uses that release's observation time under the existing
 48-hour rule and explicit stale override. A repository's recent collection time
 cannot rescue a stale selected release.
+
+November 4 agreed representation: repository `observed_at` supplies a shared
+default; release overrides are stored only when different. Before changing the
+default, materialize the former effective times of untouched implicit releases.
+Failure preserves the default and release observations. The prototype chooses
+final-page receipt as its default and preserves earlier page times as overrides.
+Release reader queries resolve effective times, so implicit storage never makes
+freshness depend on publication or a later unrelated collection.
 
 Partial absence never deletes retained releases. The [exact local reconciliation
 proposal](yaml-retention-revision.md#exact-reconciliation-policy-local-design-proposal)

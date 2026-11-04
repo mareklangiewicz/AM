@@ -11,6 +11,11 @@ passes mawk/GNU awk but BusyBox hits the local 55-second CPU cap, with zero quer
 output. The 16 MiB candidate below remains provisional, not a portable performance
 ceiling. Hard collector limits and live run-capacity gates remain outstanding.
 
+The later [shared observation default](yaml-shared-observation-default.md) reduces
+timestamp churn and measured synthetic Git history while preserving effective
+freshness. The linked growth/reader resource numbers predate that encoding;
+no CPU/RSS improvement or new operational ceiling follows from the history result.
+
 ## Consumer
 
 Keep record-scoped validation and private output spooling so malformed suffixes

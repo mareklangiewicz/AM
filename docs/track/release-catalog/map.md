@@ -1,5 +1,17 @@
 # Release catalog exploration
 
+## Shared observation default — November 4, 2026
+
+[77 resolved](issues/77-share-observation-default-and-measure-history.md): agreed
+repository observation default with only differing release overrides. Materialize
+old implicit observations for untouched releases before changing the default;
+failure preserves default and stored observations. Reader queries resolve effective
+times. [Findings](research/yaml-shared-observation-default.md): 29 unique groups
+pass on three awk tools; four synthetic Git histories save 3.71–43.31% in packed
+objects plus indexes. Earlier resource measurements remain historical for the
+explicit encoding. Prototype `b3e8b4e70` on `research/yaml-observation-default` is
+local only; production remains format 1, with no push, dispatch or repin.
+
 ## Retained-growth experiment — November 4, 2026
 
 [76 resolved](issues/76-measure-retained-growth-and-staging.md): thirty 100-new-ID

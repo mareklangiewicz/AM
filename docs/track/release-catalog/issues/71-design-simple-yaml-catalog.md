@@ -57,3 +57,12 @@ freshness. [Findings](../research/yaml-retained-growth.md) keep the 16 MiB trial
 ceiling provisional: BusyBox hits a 55-second CPU allowance on a 16.67 MB revised
 fixture. Hard collector/runtime/staging limits and actual default-run capacity
 remain open; production integration is not authorized by these experiments.
+
+## November 4 — shared observation default agreed
+
+[77 resolved](77-share-observation-default-and-measure-history.md): shared default
+plus differing overrides replaces required physical per-release timestamps.
+Effective observations and freshness are unchanged; failures preserve the prior
+default and observations. Paired synthetic Git histories measure 3.71–43.31%
+packed-object-plus-index savings. The schema/ADR and reader prototype are revised;
+production and operational budget approval remain separate.

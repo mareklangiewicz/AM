@@ -17,6 +17,9 @@ The requested sources, releases per page and number of pages (or all pages) for 
 **Release observation time**:
 The last time a successful collection received an upstream response including that release. It measures that release's freshness independently of collection or publication time.
 
+**Shared observation time**:
+An observation time shared by releases that have no individual exception. Changing it does not reobserve releases left untouched by a collection.
+
 **Release selection rule**:
 A client's explicit rule for choosing among cataloged releases, such as publication time, version, prerelease status, or source-specific conventions.
 

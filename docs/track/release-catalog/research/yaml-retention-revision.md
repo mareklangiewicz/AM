@@ -5,6 +5,15 @@ experiments only. Supersedes mandatory full-history collection and replacement-o
 release windows. [Schema](../../../catalog-format-v2.md) and
 [ADR 0002](../../../adr/0002-retained-release-observations.md) describe the new model.
 
+November 4 agreed encoding revision: a repository `observed_at` supplies the shared
+default; release overrides are omitted when equal and included otherwise. Resolve
+the effective observation before judging freshness. Before advancing the default,
+materialize old effective times for untouched implicit releases; failure preserves
+the prior default and release observations exactly. Per-page receipt times remain
+distinct through overrides. The schema and ticket 77 describe the implementation;
+the completed November 3 experiment below is historical evidence for the earlier
+fully explicit encoding.
+
 ## Parameters and outcomes
 
 A collection chooses configured source identities (default all), page size
@@ -24,13 +33,14 @@ latest request or release selection policy is added to collection.
 
 Stage a per-source merge by release identity. Replace fetched normalized release
 facts, including its returned asset mapping and optional-field omissions. Preserve
-every unfetched release and its timestamps. Commit only when the complete
+every unfetched release's facts and effective timestamps. Its stored timestamp
+may become explicit to preserve the old value when the default changes. Commit only when the complete
 requested scope and merged document fit validation and safety budgets. On failure
 retain the previous releases and last-success metadata exactly; publish only the
 latest attempt status/scope/time/reason. Unselected source files are unchanged.
 Other independently successful sources can commit their own observations.
 
-The per-release `observed_at` is the response-receipt time for the body actually
+The effective per-release `observed_at` is the response-receipt time for the body actually
 including that release, committed only after scope success. Different pages can
 have different observation times. Inclusion with unchanged facts advances time;
 absence, publication, a recent repository collection, a 304 with no release body,
