@@ -48,7 +48,7 @@ def growth():
         previous = result
         history.append(dict(day=day, releases=len(result['releases']), bytes=len(document(result).encode())))
     assert not fresh(previous['releases']['1'], at)
-    assert fresh(previous['releases']['3001'], at)
+    assert fresh(previous['releases']['3001'], at, default=previous['observed_at'])
     # Discover exact merged size once, then test inclusive boundary and one byte below.
     seen = '2026-12-04T00:00:00Z'
     response = dict(received_at=seen, releases={'4000': facts}, has_next=True, bytes=1, seconds=0)

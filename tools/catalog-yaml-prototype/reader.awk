@@ -36,7 +36,7 @@ function decode(s, out,i,c,e) {
     return out
 }
 function rank(context,key, fields,a,n,i) {
-    if (context=="root") fields="format schema repository_id repository collection last_success releases apps"
+    if (context=="root") fields="format schema repository_id repository collection last_success observed_at releases apps"
     else if (context=="release") fields="observed_at tag title url created_at published_at updated_at prerelease source_zip_url source_tar_url assets"
     else if (context=="collection") fields="attempted_at page_size page_limit reconcile status reason"
     else if (context=="last_success") fields="completed_at page_size page_limit reconcile pages_fetched history_complete"
@@ -64,7 +64,18 @@ function slot(p, q) {
     return q
 }
 function finish_record(p, context, k,prefix,i) {
-    if (context=="release_ids") required(p,"observed_at tag url published_at prerelease assets")
+    if (context=="release_ids") {
+        required(p,"tag url published_at prerelease assets")
+        expect("/observed_at","string")
+        k=slot(p "/observed_at")
+        if(k in types) {
+            if(values[k]==values["/observed_at"]) fail("redundant observation override")
+        } else {
+            # Virtual query field; retain the compact stored representation.
+            types[k]="string"; values[k]=values["/observed_at"]; encoded[k]=encoded["/observed_at"]
+        }
+        if(operation=="get" && query==p "/observed_at") { found=1; printf "%s",values[k] }
+    }
     if(context=="release_ids" && values[slot(p "/observed_at")]>values[slot("/last_success/completed_at")]) fail("release observation after collection")
     if(context=="asset_ids") required(p,"name url size content_type")
     if (operation=="rows" && parent_path(p)==query) {
@@ -172,7 +183,7 @@ BEGIN {
     children[slot(parent)]++
     if(path==query) {
         found=1
-        if(operation=="get") {
+        if(operation=="get" && path !~ /^\/releases\/[0-9]+\/observed_at$/) {
             if(kind=="map" || kind=="empty") fail("scalar query required")
             printf "%s",value
         }
@@ -194,9 +205,9 @@ END {
         if(values[slot("/collection/reconcile")]=="true" && values[slot("/collection/page_limit")]!="all") fail("reconciliation scope")
         state=values[slot("/collection/status")]
         if(state!="ok" && state!="failed") fail("collection status")
-        if(("/releases" in types)!=("/last_success" in types)) fail("retained observation pairing")
+        if(("/releases" in types)!=("/last_success" in types) || ("/observed_at" in types)!=("/last_success" in types)) fail("retained observation pairing")
         if(state=="ok") {
-            required("","last_success releases")
+            required("","last_success observed_at releases")
             if("/collection/reason" in types) fail("reason on success")
         } else {
             required("/collection","reason")
@@ -204,6 +215,7 @@ END {
         }
         if("/last_success" in types) {
             required("/last_success","completed_at page_size page_limit reconcile pages_fetched history_complete")
+            if(values["/observed_at"]>values[slot("/last_success/completed_at")]) fail("shared observation after collection")
             limit=values[slot("/last_success/page_limit")]; pages=values[slot("/last_success/pages_fetched")]
             complete=values[slot("/last_success/history_complete")]
             if(values[slot("/last_success/reconcile")]=="true" && limit!="all") fail("reconciliation scope")

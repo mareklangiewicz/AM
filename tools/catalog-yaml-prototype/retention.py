@@ -34,9 +34,16 @@ def parameters(page_size=100, page_limit=1):
     return page_size, page_limit
 
 
-def fresh(release, now, hours=48):
+def observation(release, default=None):
+    value=release.get('observed_at',default)
+    if value is None:
+        raise ValueError('release observation needs a shared default')
+    return value
+
+
+def fresh(release, now, hours=48, *, default=None):
     parse=lambda s: datetime.datetime.strptime(s, '%Y-%m-%dT%H:%M:%SZ')
-    age=(parse(now)-parse(release['observed_at'])).total_seconds()
+    age=(parse(now)-parse(observation(release,default))).total_seconds()
     return 0 <= age <= hours*3600
 
 
@@ -84,15 +91,24 @@ def refresh(previous, responses, *, attempted_at, page_size=100, page_limit=1,
                 break
         else:
             raise CollectionFailure('transport')
-        retained={} if reconcile else copy.deepcopy(previous.get('releases',{}))
+        # Expand old defaults before any change. Unfetched implicit records must
+        # keep their former effective times; failed staging never changes input.
+        retained={} if reconcile else {
+            rid:dict(observed_at=observation(record,previous.get('observed_at')),
+                     **{k:v for k,v in copy.deepcopy(record).items() if k!='observed_at'})
+            for rid,record in previous.get('releases',{}).items()}
         retained.update(fetched)
         result['last_success']=dict(completed_at=completed,page_size=page_size,
                                     page_limit=page_limit,reconcile=reconcile,pages_fetched=pages,history_complete=complete)
-        result['releases']={rid:retained[rid] for rid in sorted(retained,key=int)}
         if any(r['observed_at']>completed for r in retained.values()):
             raise CollectionFailure('invalid_response')
+        # Deterministic trial default: final page receipt, not publication time.
+        result['observed_at']=completed
+        result['releases']={rid:{k:v for k,v in retained[rid].items()
+                                if k!='observed_at' or v!=completed}
+                            for rid in sorted(retained,key=int)}
         # Canonical root order; preserve the identity, not former attempt metadata.
-        result={k:result[k] for k in ('format','schema','repository_id','repository','collection','last_success','releases')}
+        result={k:result[k] for k in ('format','schema','repository_id','repository','collection','last_success','observed_at','releases')}
         encoded=document(result).encode()
         if len(encoded)>max_catalog_bytes or any(len(line)>max_line_bytes for line in encoded.splitlines()):
             raise CollectionFailure('collection_limit')
@@ -101,7 +117,7 @@ def refresh(previous, responses, *, attempted_at, page_size=100, page_limit=1,
         result=copy.deepcopy(previous)
         attempt.update(status='failed',reason=str(exc))
         result['collection']=attempt
-        return {k:result[k] for k in ('format','schema','repository_id','repository','collection','last_success','releases') if k in result}
+        return {k:result[k] for k in ('format','schema','repository_id','repository','collection','last_success','observed_at','releases') if k in result}
 
 
 def collect(configured, fixtures, *, sources=None, run_budget=None, report=None, **options):

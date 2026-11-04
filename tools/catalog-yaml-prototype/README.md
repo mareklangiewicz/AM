@@ -1,6 +1,6 @@
 # Retained-observation schema revision (local experiment)
 
-Current branch: `research/yaml-retained-observations`. This supersedes this
+Current branch: `research/yaml-observation-default`. This supersedes this
 README's older full-history/check-time examples. No production collector,
 workflow, recipe, installed helper or remote control is changed.
 
@@ -13,8 +13,9 @@ calls. Shared fixture budgets account requests/bytes/time across sources and
 report untouched unattempted sources; this is not actual transport/deadline
 enforcement, fair runner scheduling or a production normalizer.
 
-The reader now validates `collection`, `last_success` and required per-release
-`observed_at`, requested-scope completion and timestamp relationships. The
+The reader validates `collection`, `last_success`, required repository `observed_at`
+and optional per-release overrides, requested-scope completion and effective
+timestamp relationships. Release `get`/`rows observed_at` resolve the default. The
 example repository uses that revised schema. Model fixtures prove partial
 retention, fetched-record replacement (including omitted optional fields/assets),
 untouched observation times, per-page response times, failure rollback, default
@@ -31,6 +32,30 @@ work. This is an explicit local design policy, not a deployed deletion mechanism
 they do not measure this revision or establish memory/CPU ceilings. BusyBox's
 previous large-fixture RSS growth remains unresolved. The 32 MiB file / 64 KiB
 line guards are still experiment bounds, independent of requested page count.
+
+## Shared observation default — November 4
+
+Repository `observed_at` supplies the shared default. The writer chooses final
+page receipt, materializes old implicit observations for untouched releases, and
+omits release overrides equal to the new default. Failed collections preserve
+the old default and stored observations exactly. Earlier page receipt times are
+explicit overrides when different. This changes representation, not freshness.
+
+Run `default_matrix.py`, `retention_matrix.py` and `bounded_matrix.py` in this
+directory for 29 unique groups (nine reader, seven retention, six adapter, seven
+default groups) on each of mawk/GNU awk/BusyBox awk. Examples validate against the
+revised reader. All matrices use independent YAML parsing in the test harness.
+
+Run `python3 tools/catalog-yaml-prototype/history.py` from the repository root
+for paired 32-snapshot temporary Git histories. It independently checks effective
+facts, then measures snapshot bytes, line churn and packed Git objects/indexes.
+No remotes, credentials or network calls are involved. Results are synthetic,
+with fixed Git packing options; they are not live-catalog storage forecasts.
+The replay has 384 MiB address-space and 128 MiB per-file guards, inherited by Git.
+
+`growth-results.json` and `growth-pilot-results.json` are historical measurements
+at `ccd0273e4`, before shared defaults; their measured reader timings must not be
+attributed to this encoding. `growth.py` uses the current fixture/schema if rerun.
 
 ---
 

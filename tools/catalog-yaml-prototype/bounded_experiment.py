@@ -42,7 +42,7 @@ class Bounded(unittest.TestCase):
 
     def rollback(self, result, reason):
         self.assertEqual(result['collection']['reason'], reason)
-        for field in ('releases', 'last_success'):
+        for field in ('releases', 'last_success', 'observed_at'):
             self.assertEqual(result[field], self.old[field])
 
     def test_normalize_merge_and_finite_scope_is_lazy(self):

@@ -20,7 +20,8 @@ SCHEMA = 'https://raw.githubusercontent.com/example/AM/' + 'a' * 40 + '/docs/cat
 def repository():
     return dict(format=2, schema=SCHEMA, repository_id=123, repository='example/app',
                 collection=dict(attempted_at='2026-11-03T00:59:00Z',page_size=100,page_limit=1,reconcile=False,status='ok'),
-                last_success=dict(completed_at='2026-11-03T01:00:00Z',page_size=100,page_limit=1,reconcile=False,pages_fetched=1,history_complete=False), releases={
+                last_success=dict(completed_at='2026-11-03T01:00:00Z',page_size=100,page_limit=1,reconcile=False,pages_fetched=1,history_complete=False),
+                observed_at='2026-11-03T01:00:00Z', releases={
                     '456': dict(observed_at='2026-11-03T00:59:30Z',tag='v2.0.0', title='Quotes " and \\; café 中文 🐧\n\r\t\n',
                                 url='https://github.com/example/app/releases/tag/v2.0.0',
                                 published_at='2026-11-02T12:00:00Z', prerelease=False,

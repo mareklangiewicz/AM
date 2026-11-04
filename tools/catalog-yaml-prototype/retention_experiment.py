@@ -3,7 +3,7 @@
 import copy
 import unittest
 from experiment import Experiment, repository
-from retention import RunBudget, collect, fresh, parameters, refresh
+from retention import RunBudget, collect, fresh, observation, parameters, refresh
 
 ATTEMPT='2026-11-04T00:00:00Z'
 SEEN='2026-11-04T00:00:10Z'
@@ -33,10 +33,10 @@ class Retention(unittest.TestCase):
         self.assertEqual(result['collection']['status'],'ok')
         self.assertFalse(result['last_success']['history_complete'])
         self.assertEqual(result['releases']['456'],before['releases']['456'])
-        self.assertEqual(result['releases']['457']['observed_at'],SEEN)
+        self.assertEqual(observation(result['releases']['457'],result['observed_at']),SEEN)
         self.assertEqual(self.old,before)
         self.assertFalse(fresh(result['releases']['456'],'2026-11-05T01:00:00Z'))
-        self.assertTrue(fresh(result['releases']['457'],'2026-11-05T01:00:00Z'))
+        self.assertTrue(fresh(result['releases']['457'],'2026-11-05T01:00:00Z',default=result['observed_at']))
         # Older stable remains selectable even after a newer prerelease is merged.
         prerelease=dict(self.facts,prerelease=True)
         result=self.run_refresh([response({'457':prerelease})])
@@ -50,7 +50,7 @@ class Retention(unittest.TestCase):
         result=self.run_refresh([response({'456':changed})])
         self.assertNotIn('title',result['releases']['456'])
         self.assertEqual(result['releases']['456']['assets'],{})
-        self.assertEqual(result['releases']['456']['observed_at'],SEEN)
+        self.assertEqual(observation(result['releases']['456'],result['observed_at']),SEEN)
 
     def test_scope_completion_and_empty_fetch(self):
         result=self.run_refresh([response()])
@@ -59,8 +59,8 @@ class Retention(unittest.TestCase):
         self.assertTrue(result['last_success']['history_complete'])
         self.assertEqual(result['last_success']['pages_fetched'],1)
         result=self.run_refresh([response({'457':self.facts}),response({'458':self.facts},next=False,at=LATER)],page_limit='all')
-        self.assertEqual(result['releases']['457']['observed_at'],SEEN)
-        self.assertEqual(result['releases']['458']['observed_at'],LATER)
+        self.assertEqual(observation(result['releases']['457'],result['observed_at']),SEEN)
+        self.assertEqual(observation(result['releases']['458'],result['observed_at']),LATER)
         self.assertEqual(result['last_success']['completed_at'],LATER)
         self.assertIn('456',result['releases'])
         never={k:self.old[k] for k in ('format','schema','repository_id','repository')}
@@ -123,7 +123,7 @@ class Retention(unittest.TestCase):
                        lambda r:r['last_success'].update(page_limit='all'),
                        lambda r:r['last_success'].update(pages_fetched=2),
                        lambda r:r['last_success'].update(page_limit=2),
-                       lambda r:r['releases']['456'].pop('observed_at'),
+                       lambda r:r.pop('observed_at'),
                        lambda r:r['releases']['456'].update(observed_at='2026-11-04T00:00:00Z')]:
             obj=repository();mutate(obj)
             from experiment import document
