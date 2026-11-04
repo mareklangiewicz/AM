@@ -357,3 +357,29 @@ Source-local caps allow other sources to proceed; quota/auth/protocol stops and
 two consecutive transfer/server failures stop the run. Reader validation/staging
 is outside the transport elapsed deadline; no additional process supervisor was
 introduced.
+
+`yaml_enrollment.enroll` derives the format-2 app map from current marked shared
+recipes and exact aliases in a reviewed manifest. It reads static APP and
+CATALOG_ALIAS assignments without shell evaluation, coalesces architecture paths
+by app name, rejects identity conflicts, and reports recipe hashes/excluded paths
+for review. `shared_recipes(root)` scans only the four AM recipe directories.
+Readable bootstrap names come from the manifest's enrolled owner/name aliases;
+they are display identities, not a new canonical-name acquisition.
+
+`prepare_pinned` loads an exact local format-2 commit (or explicitly bootstraps
+with commit=None), keeps previous repositories and aliases, enrolls additions and
+rejects reassignment. `collect_pinned` connects that state to scoped collection
+and returns the previous pin in its report. Neither updates Git refs. A later
+publisher must compare-and-swap against that same pin; this is still a source
+candidate, with workflow staging/publication unwired.
+
+New identities carry no collection/observation metadata until actually attempted.
+If any remain unattempted, `IncompleteBootstrap` refuses the entire candidate and
+exposes its aggregate `.report`, including bootstrap_unattempted_repositories.
+The caller can retain diagnostics and retry; it cannot publish placeholder
+attempts. Actually attempted failures may be represented honestly with collection
+failure metadata and no last-success/observations. Existing pinned sources can
+remain unattempted unchanged. File allowance remains an explicit trial/policy
+input, and no remote format-1-to-2 conversion is implicit.
+
+Enrollment/pinned checks: `python3 -m unittest discover -s tools/catalog-collector -p test_yaml_enrollment.py`.

@@ -9,13 +9,20 @@ import re
 import sys
 from urllib.parse import parse_qsl, urlsplit
 
-from collector import Descriptor, Source, collect, plan, require
+from collector import Descriptor, Refusal, Source, collect, plan, require
 from manifest import load_manifest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'catalog-yaml-prototype'))
 from attempt_adapter import merge_attempts
 from retention import parameters
 from yaml_publication import candidate_tree
+
+
+class IncompleteBootstrap(Refusal):
+    """No candidate exists; retain the aggregate report for the caller's logs."""
+    def __init__(self, report):
+        super().__init__('incomplete_bootstrap')
+        self.report = report
 
 
 def list_url(repository_id, page_size, page=1):
@@ -131,6 +138,29 @@ def collect_one_page(value, transport, clock, credential, *, workflow_identity,
     return tree, report
 
 
+def validate_collection_state(apps, repositories, *, schema, max_file_bytes):
+    """Validate retained documents and observation-free bootstrap identities."""
+    from bounded import integer
+    from writer import document
+    from yaml_publication import check_references, decode_document
+    check_references(apps, repositories)
+    retained = {}
+    for rid, obj in repositories.items():
+        if 'collection' in obj:
+            retained[rid] = obj
+            continue
+        require(set(obj) == {'format', 'schema', 'repository_id', 'repository'}
+                and type(obj['format']) is int and obj['format'] == 2
+                and obj['schema'] == schema and isinstance(obj['repository'], str)
+                and re.fullmatch('[A-Za-z0-9-]+/[A-Za-z0-9_.-]+', obj['repository']),
+                'invalid_bootstrap_identity')
+        integer(obj['repository_id'], 1)
+    candidate_tree({name: rid for name, rid in apps.items() if str(rid) in retained},
+                   retained, schema=schema, max_file_bytes=max_file_bytes)
+    decode_document(document(dict(format=2, schema=schema, apps=dict(sorted(apps.items())))).encode(),
+                    max_file_bytes)
+
+
 def collect_scoped(value, transport_factory, clock, credential, *, workflow_identity,
                    apps, repositories, source_revision, max_file_bytes,
                    max_run_requests, max_run_bytes, page_limit=1, reconcile=False,
@@ -156,7 +186,7 @@ def collect_scoped(value, transport_factory, clock, credential, *, workflow_iden
     require(type(run_seconds) in (int, float) and math.isfinite(run_seconds)
             and 0 < run_seconds <= 300, 'invalid_run_budget')
     schema = schema_url(source_revision)
-    candidate_tree(apps, repositories, schema=schema, max_file_bytes=max_file_bytes)
+    validate_collection_state(apps, repositories, schema=schema, max_file_bytes=max_file_bytes)
     sizes = set()
     for request in value.requests:
         source = request.source
@@ -250,8 +280,12 @@ def collect_scoped(value, transport_factory, clock, credential, *, workflow_iden
             max_catalog_bytes=max_file_bytes, max_requests=max_source_requests,
             max_bytes=max_run_bytes, max_seconds=run_seconds)
         outcomes[rid] = updated[rid]['collection']['status']
-    tree = candidate_tree(apps, updated, schema=schema, max_file_bytes=max_file_bytes)
-    return tree, dict(sources=outcomes, requests=used_requests, received_bytes=used_bytes,
+    report = dict(sources=outcomes, requests=used_requests, received_bytes=used_bytes,
                       elapsed_seconds=mono(clock)-start, stop_reason=stop,
                       not_attempted_repositories=[str(r.source.repository_id) for r in value.requests
                                                   if str(r.source.repository_id) not in outcomes])
+    missing = sorted((rid for rid, obj in updated.items() if 'collection' not in obj), key=int)
+    if missing:
+        raise IncompleteBootstrap(dict(report, bootstrap_unattempted_repositories=missing))
+    tree = candidate_tree(apps, updated, schema=schema, max_file_bytes=max_file_bytes)
+    return tree, report
