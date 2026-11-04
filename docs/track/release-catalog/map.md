@@ -1,5 +1,16 @@
 # Release catalog exploration
 
+## Shell-only parser deadlines — November 4, 2026
+
+[81 resolved](issues/81-test-shell-reader-deadlines.md): optional timeout guard
+for the single trusted awk parser, with explicit external paths to avoid BusyBox
+applet substitution. [Findings](research/yaml-shell-deadlines.md): all 12 local
+shell/timer/awk combinations pass (180 executions); six raw probes show both
+tested timeout invocations leave shell descendants alive. This is not whole-query
+or process-tree supervision. Prototype `5a9e2043d` is local only. Timeout/platform
+requirements, whole-query/output deadlines, accepted performance/memory budgets,
+real transport/publication integration and live capacity remain 71's gates.
+
 ## Shared-default reader budgets — November 4, 2026
 
 [80 resolved](issues/80-bound-and-measure-shared-default-reader.md): portable

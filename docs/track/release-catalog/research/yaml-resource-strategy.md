@@ -27,6 +27,13 @@ consumer dependency. Real transport/publication staging and live capacity remain
 unproved. One initial GNU awk status-2 attempt remains unexplained despite passing
 reproductions; bounded diagnostics are now retained.
 
+The [shell-only parser deadline experiment](yaml-shell-deadlines.md) adds an
+optional timeout dependency around the single trusted awk process. Twelve local
+shell/timer/awk combinations pass, but both tested timeout invocations leave
+shell descendants alive. Explicit external paths avoid BusyBox applet substitution.
+Input preparation/final output are outside this timer; no whole-query deadline,
+accepted timeout dependency or broader consumer platform support is established.
+
 ## Consumer
 
 Keep record-scoped validation and private output spooling so malformed suffixes

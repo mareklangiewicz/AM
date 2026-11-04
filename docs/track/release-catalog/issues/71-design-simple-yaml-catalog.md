@@ -99,3 +99,15 @@ accepted. An initial GNU awk status-2 attempt remains unexplained; bounded
 diagnostics now preserve recurrences. Portable consumer hard deadlines, accepted
 operating budgets, real transport/publication integration and separately authorized
 live capacity remain open. No production changes or remote operations occurred.
+
+## November 4 — shell-only parser deadlines
+
+[81 resolved](81-test-shell-reader-deadlines.md) exercises an opt-in parser-only
+watchdog using local timeout utilities. [Findings](../research/yaml-shell-deadlines.md):
+180 executions across two shells, two timers and three awk tools pass. Both raw
+timeout probes leave shell descendants alive, so no whole-shell/tree contract is
+claimed. BusyBox applet preference bypassed a bare PATH-selected awk; explicit
+external tool paths fix that execution seam. The timeout dependency and broader
+platform support remain unaccepted. Whole-query/output deadlines, acceptable
+memory/performance budgets, real transport/publication integration and separately
+authorized live capacity remain open; no production or remote operations.
