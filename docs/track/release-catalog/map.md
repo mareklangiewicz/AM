@@ -1214,3 +1214,10 @@ bindings and real install/batch/sync seams. 161 scoped checks pass. Candidate
 `7946f2167` on separate prep/yaml-consumer-integration; main runtime remains
 unchanged. Review, 470 remaining policies and complete transition/rollback remain.
 No live catalog, workflow, installed change or yadm pointer operation.
+
+2026-11-04: [99 resolved](issues/99-review-yaml-consumer-integration.md):
+[isolated consumer source review](research/yaml-consumer-integration-review.md)
+compares candidate 7946f2167 against 7e62a68cc with independent parallel
+standards/spec axes; zero actionable findings on each. All 11 integration tests
+pass in a fresh offline run. Candidate remains unchanged and unmerged; remaining
+migration, policy/capacity acceptance and operational transition stay separate.
