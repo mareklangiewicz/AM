@@ -1174,3 +1174,12 @@ parent leases. Nine new plus 55 regression checks pass (64 total), including
 creation/descendant/deletion/backward-reset races. Candidate `3bf90b411`;
 source promotion, operational migration/capacity/policy and activation remain.
 No live catalog publication or active workflow change.
+
+2026-11-04: [94 resolved](issues/94-review-consolidated-yaml-candidate.md):
+[consolidated YAML review](research/yaml-consolidated-review.md) addresses one
+cross-revision preservation defect, two loader/publisher duplications and a legacy
+import regression. Runtime modules are consolidated and the complete manual
+collection/publication proposal remains inactive. 83 collector/delivery and 62
+reader/retention checks pass, plus three-tool publication trials. Candidate
+`ff2dc1499`; maintainer promotion, capacity/policy, consumer migration,
+transition/rollback and operational activation remain separate. No live changes.
