@@ -1,5 +1,15 @@
 # Release catalog exploration
 
+## Hard offline worker follow-up — November 4, 2026
+
+[78 resolved](issues/78-enforce-offline-worker-limits.md): external deadline and
+child address-space/per-file limits quarantine incomplete results and preserve
+retained observations on refusal. [Findings](research/yaml-worker-limits.md):
+six new groups plus nine inherited reader groups pass on three awk tools.
+Prototype `22bf39a20` on `research/yaml-worker-limits` is local only. Aggregate
+temporary storage, parent staging, reader budgets and separately authorized live
+capacity remain 71's gates. No production integration, push, dispatch or repin.
+
 ## Shared observation default — November 4, 2026
 
 [77 resolved](issues/77-share-observation-default-and-measure-history.md): agreed

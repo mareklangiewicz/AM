@@ -66,3 +66,12 @@ Effective observations and freshness are unchanged; failures preserve the prior
 default and observations. Paired synthetic Git histories measure 3.71–43.31%
 packed-object-plus-index savings. The schema/ADR and reader prototype are revised;
 production and operational budget approval remain separate.
+
+## November 4 — hard worker follow-up
+
+[78 resolved](78-enforce-offline-worker-limits.md) adds opt-in offline worker
+supervision with external elapsed enforcement, address-space/per-file limits and
+private-result quarantine. [Findings](../research/yaml-worker-limits.md) record
+45 passing executions across three awk tools and retained-state refusal checks.
+Aggregate temporary storage, parent staging and reader budgets remain unresolved;
+trial limits are unapproved and no live collection or integration is implied.
