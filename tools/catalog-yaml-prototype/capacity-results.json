@@ -1,0 +1,135 @@
+{
+  "cases": [
+    {
+      "apps": 255,
+      "assets": 39200,
+      "assets_per_release": 8,
+      "body_bytes": 12525709,
+      "case": "ordinary",
+      "cpu_system_seconds": 7.47,
+      "cpu_user_seconds": 279.85,
+      "largest_process_rss_kib": 103884,
+      "largest_yaml_bytes": 305994,
+      "live": false,
+      "local_wall_seconds": 287.855,
+      "policy_sha256": "d464ee0c14d8712ef625d47308d8faf47f5faf459fc565b926d2952d98a73e7b",
+      "receipt_bytes": 96051,
+      "releases": 4900,
+      "requests": 49,
+      "simulated_transport_seconds": 49,
+      "source_revision": "ff2dc14998cd20459a3f8756a6449ac667316652",
+      "sources": 49,
+      "status": "staged",
+      "tree_sha256": "5cc9aa31748ddbaecef5eb8ee1fca8027fece3f276d8d5b5edb98e071a18b1ef",
+      "yaml_tree_bytes": 13297011
+    },
+    {
+      "apps": 1,
+      "assets": 0,
+      "assets_per_release": 80,
+      "body_bytes": 2434589,
+      "case": "dense",
+      "cpu_system_seconds": 0.59,
+      "cpu_user_seconds": 1.31,
+      "failures": {
+        "262342594": "collection_limit"
+      },
+      "largest_process_rss_kib": 48528,
+      "largest_yaml_bytes": 359,
+      "live": false,
+      "local_wall_seconds": 1.764,
+      "policy_sha256": "d464ee0c14d8712ef625d47308d8faf47f5faf459fc565b926d2952d98a73e7b",
+      "receipt_bytes": 42253,
+      "releases": 0,
+      "requests": 1,
+      "simulated_transport_seconds": 1,
+      "source_revision": "ff2dc14998cd20459a3f8756a6449ac667316652",
+      "sources": 1,
+      "status": "staged_failed_metadata",
+      "tree_sha256": "3e4bf72adb9aced7034f61c9f6969ca4ca5e665665726950f68ca8744f48aaaf",
+      "yaml_tree_bytes": 529
+    },
+    {
+      "cap": 2097152,
+      "case": "growth",
+      "cpu_system_seconds": 0.26,
+      "cpu_user_seconds": 20.67,
+      "days": [
+        {
+          "day": 1,
+          "releases": 100,
+          "yaml_bytes": 261839
+        },
+        {
+          "day": 2,
+          "releases": 200,
+          "yaml_bytes": 529339
+        },
+        {
+          "day": 3,
+          "releases": 300,
+          "yaml_bytes": 796839
+        },
+        {
+          "day": 4,
+          "releases": 400,
+          "yaml_bytes": 1064339
+        },
+        {
+          "day": 5,
+          "releases": 500,
+          "yaml_bytes": 1331839
+        },
+        {
+          "day": 6,
+          "releases": 600,
+          "yaml_bytes": 1599339
+        },
+        {
+          "day": 7,
+          "releases": 700,
+          "yaml_bytes": 1866839
+        }
+      ],
+      "failed_metadata_yaml_bytes": 1866872,
+      "largest_process_rss_kib": 89324,
+      "live": false,
+      "local_wall_seconds": 20.81,
+      "note": "synthetic bytes/time inputs are not API resource measurements",
+      "policy_sha256": "d464ee0c14d8712ef625d47308d8faf47f5faf459fc565b926d2952d98a73e7b",
+      "refused_day": 8,
+      "retained_releases": 700,
+      "retained_yaml_bytes": 1866839,
+      "source_revision": "ff2dc14998cd20459a3f8756a6449ac667316652",
+      "status": "growth_refused_atomically"
+    },
+    {
+      "assets": 14242,
+      "case": "saved",
+      "cpu_system_seconds": 3.02,
+      "cpu_user_seconds": 67.07,
+      "evidence": "hash-checked saved responses and original receipt times, not current collection",
+      "excluded_latest": 3,
+      "largest_process_rss_kib": 123412,
+      "largest_yaml_bytes": 1251974,
+      "live": false,
+      "local_wall_seconds": 70.48,
+      "page_size_counts": {
+        "100": 1,
+        "30": 40
+      },
+      "policy_sha256": "d464ee0c14d8712ef625d47308d8faf47f5faf459fc565b926d2952d98a73e7b",
+      "raw_bytes": 27821797,
+      "releases": 914,
+      "source_revision": "ff2dc14998cd20459a3f8756a6449ac667316652",
+      "sources": 41,
+      "status": "saved_normalization_validated",
+      "tree_sha256": "21686b2967bca9b3770571fdd839a4c40c14c247c3b0bea70055b96322133dbf",
+      "yaml_tree_bytes": 5261143
+    }
+  ],
+  "evidence": "offline synthetic scenarios and hash-checked saved responses, no live API requests",
+  "harness_limits": "768 MiB address space and 180 CPU seconds per process, not aggregate runtime limits",
+  "measurement": "GNU time: aggregate child CPU; largest-process RSS is not aggregate peak memory",
+  "python": "3.14.4"
+}

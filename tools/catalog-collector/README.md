@@ -471,3 +471,16 @@ supersedes it for review without installing either in .github/workflows.
 The runner must already provide PyYAML and existing gh/git/transport dependencies;
 preflight fails without them. Provisioning and hosted capacity are unverified.
 No claim of dispatch readiness or operational budget acceptance is made.
+
+## Offline consumer policy rehearsal (ticket 95)
+
+`yaml_selection.py` rehearses explicit structured release/asset rules against a
+pinned local format-2 snapshot, then applies selected-release observation freshness
+and an exact stale-selection waiver. This is a Python reference using publisher
+dependencies, not an installed client or automatic legacy regex translator.
+No operational module or recipe imports it. See
+`docs/track/release-catalog/design/yaml-consumer-migration.md` for the static
+475-path consumer map, policy differences and remaining portable-shell integration.
+Seven focused checks: `PYTHONPATH=tools/catalog-collector python3 -m unittest test_yaml_selection`.
+Capacity rehearsal/results are under tools/catalog-yaml-prototype/capacity.py and
+capacity-results.json; numbers do not accept operating budgets.
