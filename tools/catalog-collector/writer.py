@@ -21,5 +21,3 @@ def emit(obj, depth=0, context=''):
 
 def document(obj):
     return '\n'.join(emit(obj)) + '\n'
-
-

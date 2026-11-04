@@ -147,4 +147,3 @@ def read_tree(repo, pin, limits):
             tree[path] = body
     tree_documents(tree,limits)
     return tree
-
