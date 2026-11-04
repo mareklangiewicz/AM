@@ -418,3 +418,24 @@ reviewed source promotion, runner provisioning and workflow activation remain
 unwired. Only YAML belongs in future catalog history; receipt stays artifact-only.
 
 Offline checks: `PYTHONPATH=tools/catalog-collector:tools/catalog-yaml-prototype python3 -m unittest test_yaml_delivery`.
+
+## Inactive YAML remote prior/publication candidate (ticket 93)
+
+`yaml_delivery.fetch_prior` preflights trusted source/context/profile, requires
+exact remote pin or proven absence using shared isolated Git acquisition, and
+loads bounded canonical format-2 YAML. It refuses format 1 without conversion.
+`yaml_delivery.publish` reacquires the same pin, authenticates/verifies the
+normalized artifact, constructs a direct-child YAML-only commit and pushes to the
+fixed catalog ref with an explicit expected-parent lease (empty for bootstrap).
+No retry, rebase, alternate URL/ref or receipt in Git history is supported.
+
+The exact lease rejects racing creation, advance, deletion and backward reset;
+ordinary fast-forward alone does not provide the latter guarantees. Existing
+format-1 publication behavior remains separate. Failed operations may retain
+private scratch but write no success report. Lost push acknowledgement/report
+write failure requires remote-state inspection, not automatic retry.
+Existing Git history and per-command I/O/time bounds still apply; these are not
+hosted-runner capacity evidence. No active workflow calls these candidates.
+See docs/track/release-catalog/design/yaml-pinned-publication.md for boundaries.
+
+Offline checks: `PYTHONPATH=tools/catalog-collector:tools/catalog-yaml-prototype python3 -m unittest test_yaml_publication_delivery`.

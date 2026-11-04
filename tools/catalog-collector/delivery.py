@@ -105,7 +105,7 @@ def read_git_tree(repo, commit):
     return tree
 
 
-def fetch_prior(context, token, directory, *, reader=read_git_tree):
+def fetch_pinned_repository(context, token, directory):
     """Require exact caller pin or proven branch absence; no fallback/retry."""
     pin = context.get('previous_publication', '')
     require(type(pin) is str and (pin == '' or re.fullmatch('[0-9a-f]{40}', pin)), 'invalid_prior_pin')
@@ -121,7 +121,14 @@ def fetch_prior(context, token, directory, *, reader=read_git_tree):
     remote_git(repo, token, 'fetch', '--quiet', '--no-tags', '--depth=1', URL, f'{REMOTE_REF}:{REF}')
     actual = git(repo, 'rev-parse', REF).decode().strip()
     require(actual == pin, 'publication_parent_changed')
-    tree = reader(repo, pin)
+    return pin
+
+
+def fetch_prior(context, token, directory, *, reader=read_git_tree):
+    pin = fetch_pinned_repository(context, token, directory)
+    if pin is None:
+        return None
+    tree = reader(Path(directory), pin)
     if tree is not None:
         require(timestamp(validate(tree)['generated_at']) <= datetime.now(timezone.utc), 'future_prior')
     return tree
