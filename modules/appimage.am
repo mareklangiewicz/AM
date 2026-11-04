@@ -1,18 +1,50 @@
 #!/bin/sh
-# AMCLI shared AppImage/executable lifecycle. Sourced only by trusted AM recipes.
-# Selector and installed bindings come from trusted recipes, never catalog JSON.
-# URL/exclude matching is case-sensitive unless requested; include matching is
-# case-insensitive (release tags/channels). Retain upstream order, then take first.
-am_appimage_select_asset() (
-	if command -v select_asset >/dev/null 2>&1; then select_asset; exit; fi
-	match() { if [ "${ASSET_IGNORE_CASE-false}" = true ]; then grep -i "$@"; else grep "$@"; fi; }
-	include() { if [ -n "${ASSET_INCLUDE-}" ]; then grep -i -- "$ASSET_INCLUDE"; else cat; fi; }
-	exclude() { if [ -n "${ASSET_EXCLUDE-}" ]; then match -v -- "$ASSET_EXCLUDE"; else cat; fi; }
-	sed 's/[()",{} ]/\n/g' | match -o -- "${ASSET_URL-https.*mage$}" | include | exclude | head -1
-)
-
-# Preserve the installed AppImage entry point and module path.
+# Shared YAML-only installer. Recipes are trusted code; catalogs are inert facts.
 am_appimage() { am_package "$@"; }
+
+am_archive_stage() (
+	set -eu
+	layout=$1 stage=$2 app=$3
+	mkdir "$stage/unpacked" "$stage/payload"
+	check_names() {
+		awk 'BEGIN { bad=0 } /^\// || /(^|\/)\.\.(\/|$)/ || /\\/ { bad=1 } END { exit bad }'
+	}
+	untar() {
+		tar -tf "$1" > "$stage/members" || return 1
+		check_names < "$stage/members" || return 1
+		tar --no-same-owner --no-same-permissions -xf "$1" -C "$2"
+	}
+	case $layout in
+		emmylua)
+			for tool in emmylua_ls emmylua_check emmylua_doc_cli luafmt; do
+				mkdir "$stage/unpacked/$tool"
+				untar "$stage/$tool.tar.gz" "$stage/unpacked/$tool"
+				[ -f "$stage/unpacked/$tool/$tool" ] && [ ! -L "$stage/unpacked/$tool/$tool" ] || exit 1
+				cp "$stage/unpacked/$tool/$tool" "$stage/payload/$tool"
+				chmod a+x "$stage/payload/$tool"
+			done ;;
+		rclone)
+			unzip -Z1 "$stage/asset" > "$stage/members" || exit 1
+			check_names < "$stage/members" || exit 1
+			unzip -q "$stage/asset" -d "$stage/unpacked"
+			set -- "$stage/unpacked"/rclone-*-linux-amd64
+			[ "$#" -eq 1 ] && [ -f "$1/rclone" ] && [ ! -L "$1" ] || exit 1
+			cp -a "$1/." "$stage/payload/"
+			chmod a+x "$stage/payload/rclone" ;;
+		tar|btop|kitty)
+			untar "$stage/asset" "$stage/unpacked"
+			case $layout in
+				btop) tree=$stage/unpacked/btop; binary=bin/btop ;;
+				kitty) tree=$stage/unpacked; binary=bin/kitty
+					[ -f "$tree/bin/kitten" ] || exit 1 ;;
+				*) tree=$stage/unpacked; binary=$app ;;
+			esac
+			[ -f "$tree/$binary" ] && [ ! -L "$tree/$binary" ] || exit 1
+			cp -a "$tree/." "$stage/payload/"
+			chmod a+x "$stage/payload/$binary" ;;
+		*) echo 'Unsupported archive layout' >&2; exit 1 ;;
+	esac
+)
 
 am_package() (
 	set -eu
@@ -21,70 +53,88 @@ am_package() (
 	if [ "${1-}" = --am-icons ]; then icon_theme=true; shift; fi
 	mode=install
 	if [ "${1-}" = --am-update ]; then mode=update; shift; fi
-	AMREPO=${AMREPO-}
-	export AMREPO
-	APPS_DIR=${APPS_DIR-/opt}
-	BIN_DIR=${BIN_DIR-/usr/local/bin}
+	AMREPO=${AMREPO-}; export AMREPO
+	APPS_DIR=${APPS_DIR-/opt}; BIN_DIR=${BIN_DIR-/usr/local/bin}
 	DESKTOP_DIR=${DESKTOP_DIR-/usr/local/share/applications}
-	CATALOG_HELPER=${CATALOG_HELPER-/opt/am/modules/catalog.am}
-	PACKAGE_KIND=${PACKAGE_KIND-appimage}
-	case $PACKAGE_KIND in
-		appimage) case $APP in ''|.*|*[!a-z0-9.+_-]*) echo 'Invalid app identity' >&2; exit 1;; esac ;;
-		executable) case $APP in [a-z0-9]*)
-			case $APP in *[!a-z0-9.+_-]*) echo 'Invalid app identity' >&2; exit 1;; esac ;;
-			*) echo 'Invalid app identity' >&2; exit 1;; esac ;;
-		*) echo 'Unsupported package format' >&2; exit 1 ;;
-	esac
-	case ${CATALOG_FORMAT-1} in
-		1)
-			[ -r "$CATALOG_HELPER" ] || { echo 'Missing catalog.am; synchronize AM modules.' >&2; exit 3; }
-			catalog_body=$(sh "$CATALOG_HELPER" "$CATALOG_ALIAS" "$@") || exit 3
-			version=$(printf '%s\n' "$catalog_body" | am_appimage_select_asset) || exit 3 ;;
-		2)
-			catalog_recipe=${CATALOG_RECIPE-}
-			[ "${catalog_recipe#*/}" = "$APP" ] || { echo 'Catalog recipe/app mismatch' >&2; exit 3; }
-			CATALOG_YAML_HELPER=${CATALOG_YAML_HELPER-/opt/am/modules/catalog-yaml.am}
-			[ -r "$CATALOG_YAML_HELPER" ] || { echo 'Missing catalog-yaml.am; synchronize AM modules.' >&2; exit 3; }
-			selection=$(sh "$CATALOG_YAML_HELPER" "${CATALOG_RECIPE-}" "$@") || exit 3
-			# Trusted helper's fixed six-line protocol; catalog data is never eval'd.
-			[ "$(printf '%s\n' "$selection" | wc -l)" -eq 6 ] || exit 3
-			version=$(printf '%s\n' "$selection" | sed -n '6p') || exit 3 ;;
-		*) echo 'Unsupported catalog format' >&2; exit 3 ;;
-	esac
-	[ -n "$version" ] || { echo 'Error getting link' >&2; exit 3; }
-	APPS_DIR=${APPS_DIR%/}
-	dir="$APPS_DIR/$APP"
-	if [ "$mode" = update ] && [ "${REFRESH_ALWAYS-false}" = false ] && [ "$version" = "$(cat "$dir/version")" ] &&
-		! grep -sq '^Checksum failure$' "$dir/AM-VERIFIED"; then
+	PACKAGE_KIND=${PACKAGE_KIND-appimage}; layout=${PACKAGE_LAYOUT-raw}
+	case $APP in ''|.*|*[!a-z0-9.+_-]*) echo 'Invalid app identity' >&2; exit 1;; esac
+	case $PACKAGE_KIND in appimage|executable) ;; *) exit 1;; esac
+	[ "${CATALOG_FORMAT-1}" = 2 ] || {
+		echo 'This fork uses YAML catalogs only; this recipe needs conversion.' >&2; exit 3;
+	}
+	catalog_recipe=${CATALOG_RECIPE-}
+	[ "${catalog_recipe#*/}" = "$APP" ] || exit 3
+	CATALOG_YAML_HELPER=${CATALOG_YAML_HELPER-/opt/am/modules/catalog-yaml.am}
+	[ -r "$CATALOG_YAML_HELPER" ] || { echo 'Missing catalog-yaml.am; synchronize AM modules.' >&2; exit 3; }
+	if [ "${VERSION_IDENTITY-url}" = published_at ]; then
+		selection=$(sh "$CATALOG_YAML_HELPER" "$catalog_recipe" --with-published-at "$@") || exit 3
+		[ "$(printf '%s\n' "$selection" | wc -l)" -eq 7 ] || exit 3
+		version=$(printf '%s\n' "$selection" | sed -n '7p')
+	else
+		selection=$(sh "$CATALOG_YAML_HELPER" "$catalog_recipe" "$@") || exit 3
+		[ "$(printf '%s\n' "$selection" | wc -l)" -eq 6 ] || exit 3
+		version=$(printf '%s\n' "$selection" | sed -n '6p')
+	fi
+	download=$(printf '%s\n' "$selection" | sed -n '6p')
+	[ -n "$version" ] && [ -n "$download" ] || exit 3
+	if [ "$layout" = emmylua ]; then
+		publication=$(printf '%s\n' "$selection" | sed -n '1p')
+		release=$(printf '%s\n' "$selection" | sed -n '2,3p')
+		tools='emmylua_ls emmylua_check emmylua_doc_cli luafmt'
+		tool_urls=$download
+		for tool in emmylua_check emmylua_doc_cli luafmt; do
+			extra=$(sh "$CATALOG_YAML_HELPER" "$catalog_recipe" --commit "$publication" --tool "$tool") || exit 3
+			[ "$(printf '%s\n' "$extra" | wc -l)" -eq 6 ] &&
+				[ "$(printf '%s\n' "$extra" | sed -n '2,3p')" = "$release" ] || {
+				echo 'EmmyLua tools must come from one release.' >&2; exit 3;
+			}
+			tool_urls=$(printf '%s\n%s' "$tool_urls" "$(printf '%s\n' "$extra" | sed -n '6p')")
+		done
+	fi
+	dir=${APPS_DIR%/}/$APP
+	if [ "$mode" = update ] && [ "${REFRESH_ALWAYS-false}" = false ] &&
+		[ "$version" = "$(cat "$dir/version")" ] && ! grep -sq '^Checksum failure$' "$dir/AM-VERIFIED"; then
 		echo 'Update not needed!'; exit 0
 	fi
-	# All acceptance/filter checks precede cleanup, including incomplete installs.
-	# Keep working installations intact even when an install retry finds tmp.
-	if [ "$mode" = install ] && [ -d "$dir/tmp" ] && [ ! -f "$dir/version" ] && [ -f "$dir/remove" ]; then
-		sh "$dir/remove"
-	fi
-	mkdir -p "$dir/tmp"
-	rm -rf "$dir/tmp"
-	mkdir "$dir/tmp"
-	notify-send "A new version of $APP is available, please wait" 2>/dev/null || :
-	if command -v wget >/dev/null 2>&1; then
-		wget -O "$dir/tmp/$APP" "$version" || exit 1
+	mkdir -p "$dir"
+	stage=$(mktemp -d "$dir/.am-stage.XXXXXX") || exit 1
+	trap 'rm -rf -- "$stage"' 0
+	trap 'exit 1' HUP INT TERM
+	fetch_asset() {
+		if command -v wget >/dev/null 2>&1; then wget -O "$2" "$1"
+		else curl --fail -L -o "$2" "$1"; fi
+	}
+	if [ "$layout" = emmylua ]; then
+		i=1
+		for tool in $tools; do
+			url=$(printf '%s\n' "$tool_urls" | sed -n "${i}p")
+			fetch_asset "$url" "$stage/$tool.tar.gz" || exit 1
+			i=$((i+1))
+		done
 	else
-		curl --fail -L -o "$dir/tmp/$APP" "$version" || exit 1
+		fetch_asset "$download" "$stage/asset" || exit 1
 	fi
-	chmod a+x "$dir/tmp/$APP"
-	mv -f "$dir/tmp/$APP" "$dir/$APP"
+	if [ "$layout" != raw ]; then
+		am_archive_stage "$layout" "$stage" "$APP" || exit 1
+		# Interrupted replacement is repaired by reinstalling. Keep app data and
+		# supporting paths; never call an old remove script during migration.
+		cp -a "$stage/payload/." "$dir/" || exit 1
+	else
+		[ -s "$stage/asset" ] || exit 1
+		chmod a+x "$stage/asset"
+		mv -f "$stage/asset" "$dir/$APP"
+	fi
 	printf '%s\n' "$version" > "$dir/version"
-	rm -rf "$dir/tmp"
-	if [ "$mode" = update ]; then
-		notify-send "$APP is updated!" 2>/dev/null || :
-		exit 0
-	fi
+	printf '%s\n' "$download" > "$dir/download-url"
+	if [ "$mode" = update ]; then exit 0; fi
 	mkdir -p "$BIN_DIR"
-	# Quote paths as shell literals for standalone installed launchers/removers.
 	quote() { printf "'"; printf '%s' "$1" | sed "s/'/'\\\\''/g"; printf "'"; }
 	{
 		printf '#!/bin/sh\nset -e\nrm -f '; quote "$BIN_DIR/$APP"
+		if [ "$layout" = kitty ]; then printf '\nrm -f '; quote "$BIN_DIR/kitten"; fi
+		if [ "$layout" = emmylua ]; then
+			for tool in $tools; do printf '\nrm -f '; quote "$BIN_DIR/$tool"; done
+		fi
 		printf '\nrm -rf '; quote "$dir"
 		if [ "$PACKAGE_KIND" = appimage ]; then
 			printf '\nrm -f '; quote "$DESKTOP_DIR/$APP-AM.desktop"
@@ -97,7 +147,12 @@ am_package() (
 		quote "$dir/recipe.am"; printf ' --am-update "$@"\n'
 	} > "$dir/AM-updater"
 	chmod a+x "$dir/remove" "$dir/AM-updater"
-	ln -sf "$dir/$APP" "$BIN_DIR/$APP"
+	case $layout in
+		btop|kitty) ln -sf "$dir/bin/$APP" "$BIN_DIR/$APP" ;;
+		emmylua) for tool in $tools; do ln -sf "$dir/$tool" "$BIN_DIR/$tool"; done ;;
+		*) ln -sf "$dir/$APP" "$BIN_DIR/$APP" ;;
+	esac
+	if [ "$layout" = kitty ]; then ln -sf "$dir/bin/kitten" "$BIN_DIR/kitten"; fi
 	[ "$PACKAGE_KIND" = appimage ] || exit 0
 	mkdir -p "$DESKTOP_DIR" "$dir/icons"
 	cd "$dir"

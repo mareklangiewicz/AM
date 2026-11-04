@@ -1,7 +1,7 @@
 # Prepare delivered legacy selection and installed updater adapters
 
 Type: task
-Status: open
+Status: claimed
 Triage: ready-for-agent
 
 Continue 106's disposable layout staging against 104's exact 17-updater audit and
@@ -34,3 +34,15 @@ installed mutation/execution, network acquisition, enrollment publication, workf
 activation/repin, main runtime promotion, push or yadm operation is authorized by
 this ticket alone. Policy/stale UI/capacity acceptance and concrete live cutover
 remain separate. Do not restart 71's interview or rollout 69.
+
+## Revised execution scope — Marek, November 2026
+
+Marek explicitly chose the single-user reinstall strategy and said “go ahead”.
+This supersedes this ticket's requirement for durable multi-path transition/
+rollback machinery and its earlier operational exclusions. Implement YAML-only
+catalog runtime and publication, installed-app selection/adapters, a focused
+source manifest, practical layout/update smoke checks and a concrete cutover.
+Save manager/app/config metadata; retain user data and launchers. Recovery is
+restoring the previous manager and reinstalling apps, not a binary transaction.
+Retire unsupported format-1 catalog recipes explicitly. Source pushes remain
+Marek's call under the home AGENTS instructions; ask when concrete pushes are due.

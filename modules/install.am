@@ -249,6 +249,10 @@ _install_script_retry() {
 }
 
 _install_arg() {
+	if grep -qx '# AM-CATALOG-RECIPE 1' ./"$arg" && ! grep -qx 'CATALOG_FORMAT=2' ./"$arg"; then
+		echo 'This catalog recipe is retired; convert it to YAML before installation.' >&2
+		return 1
+	fi
 	local catalog_executable=false
 	# This function is needed to parse the installation script and then execute it
 	APPNAME=$(echo "\"$pure_arg\"" | tr '[:lower:]' '[:upper:]')

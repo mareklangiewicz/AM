@@ -7,10 +7,6 @@ CATALOG_FORMAT=2
 CATALOG_RECIPE="x86_64/sunshine"
 CATALOG_ALIAS="https://api.github.com/repos/LizardByte/Sunshine/releases"
 
-select_asset() {
-	sed 's/[()",{} ]/\n/g' | grep -oi "https.*mage$" | grep -vi "i386\|i686\|aarch64\|arm64\|armv7l" | head -1
-}
-
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"
 am_appimage "$0" "$@"

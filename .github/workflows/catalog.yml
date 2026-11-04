@@ -1,0 +1,49 @@
+name: YAML release catalog
+on:
+  workflow_dispatch:
+    inputs:
+      bootstrap:
+        description: Replace the existing format-1 catalog (first cutover only)
+        type: boolean
+        default: false
+  schedule:
+    - cron: '17 3 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: yaml-release-catalog
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.repository == 'mareklangiewicz/AM' && github.ref == 'refs/heads/main-marek'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 -m pip install 'PyYAML==6.0.3'
+      - name: Collect and publish YAML facts
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BOOTSTRAP: ${{ inputs.bootstrap || false }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          pub="$RUNNER_TEMP/catalog.git"
+          git init --bare "$pub"
+          # Fetch through checkout's authenticated configuration; keep the
+          # publication repository remote-free for the existing local writer.
+          git fetch origin refs/heads/release-catalog
+          parent=$(git rev-parse FETCH_HEAD)
+          git push "$pub" "$parent:refs/heads/catalog"
+          options=()
+          if [ "$BOOTSTRAP" = true ]; then options+=(--bootstrap); fi
+          python3 tools/catalog-collector/host_catalog.py --repo "$pub" --parent "$parent" \
+            --report "$RUNNER_TEMP/catalog-report.json" "${options[@]}"
+          pin=$(git --git-dir="$pub" rev-parse refs/heads/catalog)
+          git fetch "$pub" "$pin"
+          # The candidate is a child of the exact fetched publication. A
+          # concurrent publication refuses rather than overwriting its facts.
+          git push --force-with-lease="refs/heads/release-catalog:$parent" origin "$pin:refs/heads/release-catalog"
