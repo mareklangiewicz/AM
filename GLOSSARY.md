@@ -8,6 +8,9 @@ Published release facts offered to clients, without choosing which release a cli
 **Client selection**:
 A client's choice of release and assets for installation, browsing, presentation, or another purpose.
 
+**Asset acquisition**:
+Obtaining the bytes of the release asset chosen by client selection, through a full transfer or reconstruction from existing bytes.
+
 **Retained release set**:
 The releases currently kept for a source, accumulated from successful collections. It can contain records observed at different times.
 

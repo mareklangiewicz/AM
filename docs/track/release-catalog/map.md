@@ -1284,3 +1284,13 @@ retaining 330 releases/7161 assets below unchanged 2 MiB. Updated private packag
 verifies. Real/default capacity, legacy policies/adapters and operational gates
 remain. No live acquisition, installed mutation, push, publication, workflow,
 repin, main runtime promotion or yadm changes.
+
+
+2026-11-04: [105 resolved](issues/105-record-direct-asset-acquisition-direction.md):
+[asset acquisition direction](research/yaml-asset-acquisition-direction.md)
+records Marek's preference for direct selected-asset downloads for the remaining
+AppImage adapters. Selection remains separate from acquisition, leaving room for
+future verified delta/native updates and a partial upstream proposal. No current
+byte-integrity guarantee or upstream acceptance is claimed. This supersedes 104's
+unanswered preference checkpoint; its audit/package stays historical. No runtime,
+installed, network, publication, workflow, push, repin or yadm changes.
