@@ -310,3 +310,29 @@ exact parent. Each run remains separately authorized. Local candidate code and
 scheduled-dispatch edits do not by themselves change the remote source pin.
 After applying the compatible recipe patch, the explicit full-batch inert
 install/update check is `python3 -B tools/catalog-collector/check_large_lifecycle.py -v`.
+
+## YAML source adapter candidate
+
+`yaml_adapter.py` prepares numeric list plans from the reviewed manifest,
+coalescing latest/tag/list endpoint variants by repository identity. Requests
+are unconditional, with explicit `per_page` and page 1. `collect_one_page`
+uses the existing collector and a caller-supplied transport/opaque credential,
+merges original receipt times into retained format-2 facts, and returns a fully
+validated YAML candidate tree plus collection/source outcomes. It has no CLI,
+ambient credentials, workflow integration or publication side effect.
+
+Supply an explicit file allowance, reviewed app map and repository identities,
+and an actual immutable source revision. Existing pinned YAML can be loaded with
+`yaml_publication.load_local`; bootstrap/enrollment is the caller's responsibility.
+A transport stop leaves unattempted repository state unchanged and reports their
+numeric IDs. Pagination links must retain numeric identity, list route, page
+size and consistent relations; malformed metadata fails that source. Completing
+page 1 with a next link is successful partial scope, never full history.
+
+This entry point implements the default one-page scope only. Configurable
+multi-page orchestration, actual AM app enrollment/bootstrap, production budgets
+and reviewed workflow/artifact staging remain necessary before operational use.
+It imports the current shared YAML candidate components rather than copying
+another normalizer/writer. No operational workflow imports this module.
+
+Offline checks: `python3 -m unittest discover -s tools/catalog-collector -p test_yaml_adapter.py`.
