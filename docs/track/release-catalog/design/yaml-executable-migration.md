@@ -63,3 +63,14 @@ update, and exact recipe-byte restoration. It is not a production migrator.
 361 of 475 enrolled source paths now opt into format 2 in this candidate;
 114 AppImage paths remain. All counts concern source preparation, not installed
 hosts or published catalogs. No candidate is merged into main.
+
+## Source review correction
+
+The independent spec review of initial commit d00582573 found one policy/reference
+mismatch: matching a greedy URL prefix separately could consume through a later
+dated directory and lose a valid earlier app component. A direct regression
+failed on all three awk implementations before the fix. The runtime now matches
+the complete expression with a literal app component; the regression passes on
+all three. Standards review found no actionable findings. Final verification is
+recorded on main with the reviewed source revision; initial failures are not
+passing evidence.

@@ -109,6 +109,19 @@ class AMUtils(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'am_utils_repository_mismatch'):
             select_cohort('x86_64/7z',wrong,self.pin,now=utc(self.clock))
 
+    def test_repeated_dated_directory_matches_reference_on_three_awk(self):
+        url = ('https://example.org/download/x86_64-20261028/ls_foo/'
+               'download/x86_64-20261028/other_1-x86_64-static')
+        self.assertTrue(matches('x86_64/ls',{},dict(url=url)))
+        facts = ('1\t1\t"'+self.clock+'"\t"2026-10-28T00:00:00Z"\t"tag"\t"name"\t"'+url+'"\n').encode()
+        for command in (['mawk'],['gawk'],['busybox','awk']):
+            with self.subTest(awk=command):
+                r = subprocess.run([*command,'-f',str(ROOT/'modules/catalog-yaml-policy.am')],
+                    input=facts,capture_output=True,env={**self.env(),'AM_YAML_RECIPE':'x86_64/ls',
+                        'AM_YAML_NOW':self.clock,'AM_YAML_PIN':self.pin,'AM_YAML_REPOSITORY':str(RID)})
+                self.assertEqual(r.returncode,0,r.stderr)
+                self.assertEqual(r.stdout.decode().splitlines()[-1],url)
+
     def test_existing_recipe_transition_and_exact_rollback_rehearsal(self):
         # Explicit disposable rehearsal, not an automatic production migrator.
         app = self.install('x86_64/7z');recipe = app/'recipe.am';candidate = recipe.read_bytes()

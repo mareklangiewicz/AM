@@ -61,12 +61,11 @@ BEGIN {
         # ld.bfd's dot is literal here, unlike the old interpolated ERE wildcard.
         component=(app=="c++filt" ? "c%2b%2bfilt" : app)
         u=tolower(url)
-        pattern="https.*download.*/" arch "-[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]/"
-        eligible=0
-        if(match(u,pattern)) {
-            rest=substr(u,RSTART+RLENGTH)
-            eligible=(index(rest,component "_")==1 && rest ~ ("-" arch "-static$"))
-        }
+        gsub(/[.]/,"[.]",component)
+        # Match the entire expression: a greedy prefix-only match can skip an
+        # earlier eligible component when the URL has repeated dated paths.
+        pattern="https.*download.*/" arch "-[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]/" component "_.*-" arch "-static$"
+        eligible=(u ~ pattern)
     } else if(app=="obsidian") {
         u=tolower(url)
         eligible=(u ~ /https.*mage$/ && u !~ /i386|i686|aarch64|arm64|armv7l/)
