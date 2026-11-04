@@ -26,6 +26,7 @@ from workflow_adapter import preflight
 REPOSITORY = 'mareklangiewicz/AM'
 URL = 'https://github.com/mareklangiewicz/AM.git'
 REMOTE_REF = 'refs/heads/release-catalog'
+YAML_REMOTE_REF = 'refs/heads/release-catalog-yaml-v2'
 ZIP_CAP = 105_000_000
 ARTIFACT_FILE_CAP = 108  # 52 candidate bodies + 52 attempt bodies + four metadata files
 
@@ -105,20 +106,21 @@ def read_git_tree(repo, commit):
     return tree
 
 
-def fetch_pinned_repository(context, token, directory):
+def fetch_pinned_repository(context, token, directory, *, remote_ref=REMOTE_REF):
     """Require exact caller pin or proven branch absence; no fallback/retry."""
+    require(remote_ref in (REMOTE_REF, YAML_REMOTE_REF), 'unsupported_publication_ref')
     pin = context.get('previous_publication', '')
     require(type(pin) is str and (pin == '' or re.fullmatch('[0-9a-f]{40}', pin)), 'invalid_prior_pin')
     repo = Path(directory)
     repo.mkdir(exist_ok=False)
     # Our Git helper disables global config/hooks and accepts no executable input.
     git(repo, 'init', '--bare', '--quiet', '--template=')
-    remote = remote_git(repo, token, 'ls-remote', '--refs', URL, REMOTE_REF).decode().strip()
-    expected = f'{pin}\t{REMOTE_REF}' if pin else ''
+    remote = remote_git(repo, token, 'ls-remote', '--refs', URL, remote_ref).decode().strip()
+    expected = f'{pin}\t{remote_ref}' if pin else ''
     require(remote == expected, 'publication_parent_changed')
     if not pin:
         return None
-    remote_git(repo, token, 'fetch', '--quiet', '--no-tags', '--depth=1', URL, f'{REMOTE_REF}:{REF}')
+    remote_git(repo, token, 'fetch', '--quiet', '--no-tags', '--depth=1', URL, f'{remote_ref}:{REF}')
     actual = git(repo, 'rev-parse', REF).decode().strip()
     require(actual == pin, 'publication_parent_changed')
     return pin

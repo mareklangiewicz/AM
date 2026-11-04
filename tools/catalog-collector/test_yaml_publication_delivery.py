@@ -6,7 +6,7 @@ import unittest
 from unittest.mock import patch
 
 from publication import git, REF
-from delivery import REMOTE_REF
+from delivery import YAML_REMOTE_REF as REMOTE_REF
 import delivery as shared
 from storage import canonical
 from test_yaml_staging import REV, POLICY
@@ -69,6 +69,15 @@ class Publication(unittest.TestCase):
         tree = git(self.remote,'mktree',data=b'').decode().strip()
         return git(self.remote,'commit-tree',tree,*(['-p',parent] if parent else []),
                    data=b'Competing publication\n').decode().strip()
+
+    def test_yaml_publication_does_not_touch_format1_ref(self):
+        legacy=self.other_commit()
+        git(self.remote,'update-ref',shared.REMOTE_REF,legacy)
+        result=self.publish()
+        self.assertEqual(result['ref'],REMOTE_REF)
+        self.assertNotEqual(REMOTE_REF,shared.REMOTE_REF)
+        self.assertEqual(git(self.remote,'rev-parse',shared.REMOTE_REF).decode().strip(),legacy)
+        self.assertEqual(self.current(),result['commit'])
 
     def test_bootstrap_refresh_exact_pin_and_yaml_only_history(self):
         first = self.publish()

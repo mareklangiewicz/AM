@@ -58,7 +58,7 @@ assert not any('Authorization' in a for a in args)
 def git(*a):
  return subprocess.run(['/usr/bin/git','-C',os.environ['REMOTE'],*a],capture_output=True,check=True).stdout
 expected=os.environ.get('EXPECTED_REPOSITORY','selected-owner/selected.repo')
-if url=='https://api.github.com/repos/'+expected+'/commits/heads/release-catalog':
+if url=='https://api.github.com/repos/'+expected+'/commits/heads/release-catalog-yaml-v2':
  raw=(p/'ref').read_bytes() if (p/'ref').exists() else (os.environ['PIN']+'\\n').encode()
 else:
  match=re.fullmatch(r'https://raw.githubusercontent.com/'+expected+r'/([0-9a-f]{40})/(apps\\.yaml|repositories/[0-9]+\\.yaml)',url)

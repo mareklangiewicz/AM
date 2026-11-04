@@ -17,7 +17,9 @@ Use code-review's separate standards/spec axes against the consolidated base.
 Source coverage is not installed-client coverage. Do not treat 475 enrolled
 paths as every shared source recipe. Preserve existing format-1 client support;
 record a separate format-2 publication ref as a cutover proposal if inventory
-makes an immediate single-ref switch unsafe. Do not invent publication pins,
+makes an immediate single-ref switch unsafe. Wire that fixed candidate namespace
+through YAML prior/publication/client resolution and test isolation from format 1;
+keep the proposed workflow inactive. This is local preparation, not ref creation. Do not invent publication pins,
 selected records, capacity/policy acceptance or host-wide client completeness.
 
 No push, source/catalog publication, workflow activation/dispatch, installed

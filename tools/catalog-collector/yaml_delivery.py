@@ -6,7 +6,7 @@ import struct
 import zipfile
 
 from collector import require
-from delivery import download_artifact
+from delivery import download_artifact, YAML_REMOTE_REF
 from yaml_staging import checked, stage, verify
 from yaml_publication import read_tree as read_prior
 
@@ -99,7 +99,7 @@ def fetch_prior(context, manifest_raw, revision, policy_raw, token, directory):
     """Require proven absence or exact remote format-2 pin; never convert format 1."""
     from delivery import fetch_pinned_repository
     limits = checked(context,manifest_raw,revision,policy_raw)
-    pin = fetch_pinned_repository(context,token,directory)
+    pin = fetch_pinned_repository(context,token,directory,remote_ref=YAML_REMOTE_REF)
     return None if pin is None else read_prior(directory,pin,limits)
 
 
@@ -111,7 +111,7 @@ def publish(context, manifest_raw, revision, policy_raw, recipes, artifact_id,
     exact pin at remote ref update. No retry/rebase, format conversion or repin.
     """
     from pathlib import Path
-    from delivery import remote_git, URL, REMOTE_REF
+    from delivery import remote_git, URL
     from publication import git, HISTORY_CAP
     from storage import canonical
     from yaml_publication import publish_local
@@ -137,9 +137,9 @@ def publish(context, manifest_raw, revision, policy_raw, recipes, artifact_id,
     require([line[7:].decode() for line in parents if line.startswith(b'parent ')] ==
             ([parent] if parent else []), 'yaml_publication_parent')
     expected = parent or ''
-    remote_git(repo,token,'push','--quiet',f'--force-with-lease={REMOTE_REF}:{expected}',
-               URL,f'{commit}:{REMOTE_REF}')
-    result = dict(commit=commit,parent=parent,ref=REMOTE_REF,source_revision=revision,
+    remote_git(repo,token,'push','--quiet',f'--force-with-lease={YAML_REMOTE_REF}:{expected}',
+               URL,f'{commit}:{YAML_REMOTE_REF}')
+    result = dict(commit=commit,parent=parent,ref=YAML_REMOTE_REF,source_revision=revision,
                   run_id=context['run_id'],run_attempt=context['run_attempt'],
                   artifact_id=artifact_id,artifact_digest=artifact_digest,
                   tree_bytes=sum(map(len,tree.values())))

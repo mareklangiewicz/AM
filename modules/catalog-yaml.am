@@ -88,7 +88,7 @@ else
     mkdir "$cache"
 fi
 if [ -z "$pin" ]; then
-    fetch "https://api.github.com/repos/$repository/commits/heads/release-catalog" 128 "$scratch/ref" 'application/vnd.github.sha'
+    fetch "https://api.github.com/repos/$repository/commits/heads/release-catalog-yaml-v2" 128 "$scratch/ref" 'application/vnd.github.sha'
     pin=$(cat "$scratch/ref")
     hex "$pin" || fail 'invalid publication ref'
 fi

@@ -1,0 +1,1016 @@
+{
+  "captured_at": "2026-11-04T20:47:47Z",
+  "clients": [
+    {
+      "app": "appimagetool",
+      "catalog_reference": false,
+      "format": null,
+      "installation": "/opt/appimagetool",
+      "kind": "legacy-standalone",
+      "recipe": "x86_64/appimagetool"
+    },
+    {
+      "app": "appimageupdatetool",
+      "catalog_reference": false,
+      "format": null,
+      "installation": "/opt/appimageupdatetool",
+      "kind": "legacy-standalone",
+      "recipe": "x86_64/appimageupdatetool"
+    },
+    {
+      "app": "btop",
+      "catalog_reference": false,
+      "format": null,
+      "installation": "/opt/btop",
+      "kind": "legacy-standalone",
+      "missing": [
+        "btop"
+      ],
+      "recipe": "x86_64/btop"
+    },
+    {
+      "app": "emmylua",
+      "catalog_reference": false,
+      "format": null,
+      "installation": "/opt/emmylua",
+      "kind": "legacy-standalone",
+      "missing": [
+        "emmylua"
+      ],
+      "recipe": "x86_64/emmylua"
+    },
+    {
+      "app": "fzf",
+      "catalog_reference": false,
+      "format": null,
+      "installation": "/opt/fzf",
+      "kind": "legacy-standalone",
+      "recipe": "x86_64/fzf"
+    },
+    {
+      "app": "kitty",
+      "catalog_reference": false,
+      "format": null,
+      "installation": "/opt/kitty",
+      "kind": "legacy-standalone",
+      "missing": [
+        "kitty"
+      ],
+      "recipe": "x86_64/kitty"
+    },
+    {
+      "app": "lazygit",
+      "catalog_reference": false,
+      "format": null,
+      "installation": "/opt/lazygit",
+      "kind": "legacy-standalone",
+      "recipe": "x86_64/lazygit"
+    },
+    {
+      "app": "logseq-app-db-nightly",
+      "catalog_reference": false,
+      "format": null,
+      "installation": "/opt/logseq-app-db-nightly",
+      "kind": "legacy-standalone",
+      "recipe": "x86_64/logseq-app-db-nightly"
+    },
+    {
+      "app": "logseq-app-og",
+      "catalog_reference": false,
+      "format": null,
+      "installation": "/opt/logseq-app-og",
+      "kind": "legacy-standalone",
+      "recipe": "x86_64/logseq-app-og"
+    },
+    {
+      "app": "neovide",
+      "catalog_reference": false,
+      "format": null,
+      "installation": "/opt/neovide",
+      "kind": "legacy-standalone",
+      "recipe": "x86_64/neovide"
+    },
+    {
+      "app": "neovide-nightly",
+      "catalog_reference": false,
+      "format": null,
+      "installation": "/opt/neovide-nightly",
+      "kind": "legacy-standalone",
+      "recipe": "x86_64/neovide-nightly"
+    },
+    {
+      "app": "nvim",
+      "catalog_reference": true,
+      "format": 1,
+      "installation": "/opt/nvim",
+      "kind": "managed-catalog",
+      "recipe": "x86_64/nvim"
+    },
+    {
+      "app": "nvim-nightly",
+      "catalog_reference": true,
+      "format": 1,
+      "installation": "/opt/nvim-nightly",
+      "kind": "managed-catalog",
+      "recipe": "x86_64/nvim-nightly"
+    },
+    {
+      "app": "obsidian",
+      "catalog_reference": true,
+      "format": 1,
+      "installation": "/opt/obsidian",
+      "kind": "managed-catalog",
+      "recipe": "x86_64/obsidian"
+    },
+    {
+      "app": "rclone",
+      "catalog_reference": false,
+      "format": null,
+      "installation": "/opt/rclone",
+      "kind": "legacy-standalone",
+      "recipe": "x86_64/rclone"
+    },
+    {
+      "app": "rclone-ui",
+      "catalog_reference": false,
+      "format": null,
+      "installation": "/opt/rclone-ui",
+      "kind": "legacy-standalone",
+      "recipe": "x86_64/rclone-ui"
+    },
+    {
+      "app": "satty",
+      "catalog_reference": false,
+      "format": null,
+      "installation": "/opt/satty",
+      "kind": "legacy-standalone",
+      "recipe": "x86_64/satty"
+    },
+    {
+      "app": "sunshine",
+      "catalog_reference": true,
+      "format": 1,
+      "installation": "/opt/sunshine",
+      "kind": "managed-catalog",
+      "recipe": "x86_64/sunshine"
+    },
+    {
+      "app": "yt-dlp",
+      "catalog_reference": false,
+      "format": null,
+      "installation": "/opt/yt-dlp",
+      "kind": "legacy-standalone",
+      "recipe": "x86_64/yt-dlp"
+    },
+    {
+      "app": "zellij",
+      "catalog_reference": false,
+      "format": null,
+      "installation": "/opt/zellij",
+      "kind": "legacy-standalone",
+      "recipe": "x86_64/zellij"
+    },
+    {
+      "app": "zmx",
+      "catalog_reference": false,
+      "format": null,
+      "installation": "/opt/zmx",
+      "kind": "legacy-standalone",
+      "recipe": "x86_64/zmx"
+    }
+  ],
+  "files": {
+    "/opt/am/APP-MANAGER": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 509,
+      "path": "/opt/am/APP-MANAGER",
+      "sha256": "dd299914c4773d77cb8350daa7391c15dab9b530a1b04f028f223f2e8ee5066d",
+      "size": 121155,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/am/modules/appimage.am": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 436,
+      "path": "/opt/am/modules/appimage.am",
+      "sha256": "87ec4090b04e2c682f712bffb7fa429bae026a3d327e570a30e3f0be9bfa6979",
+      "size": 5300,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/am/modules/catalog.am": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 420,
+      "path": "/opt/am/modules/catalog.am",
+      "sha256": "d24f34b6c267e9ce1ad5ad7bf66489cf523791e05ef298a756c53ce29969af7a",
+      "size": 6725,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/am/modules/database.am": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/am/modules/database.am",
+      "sha256": "77a2279ab14d14a2d53b5eaf5903a42282ec4c00ef37f95009adfa8d82bf2d5e",
+      "size": 37342,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/am/modules/install.am": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/am/modules/install.am",
+      "sha256": "1923b663b5c4e84f07371f56da3ef02a000bfd2d5173d744a8ff99ec69d93f41",
+      "size": 60739,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/am/modules/management.am": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/am/modules/management.am",
+      "sha256": "1a1962d6e85481a030653f53182496f7c5e9da490fc22f194b9046aeac4cae2b",
+      "size": 27697,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/am/modules/template.am": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/am/modules/template.am",
+      "sha256": "67f672f72ccde05b835bf7c4d3061ecc8429088b9dc1f1a15b6857dbc971441c",
+      "size": 27769,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/appimagetool/AM-updater": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/appimagetool/AM-updater",
+      "sha256": "95d4cb94b19be36003f8387560116118580e68384b73acfeeb20b17fa920c577",
+      "size": 1021,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/appimagetool/appimagetool": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 509,
+      "path": "/opt/appimagetool/appimagetool",
+      "sha256": "95cbe7cce9717fce90c484e34052ee7c7f1d7635b33c12525b4776826a7d29b6",
+      "size": 15092216,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/appimagetool/version": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 420,
+      "path": "/opt/appimagetool/version",
+      "sha256": "cc9d5d3c66b2cef206f37b689c2a557c7fe479df402264402cdd3214694be840",
+      "size": 99,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/appimageupdatetool/AM-updater": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/appimageupdatetool/AM-updater",
+      "sha256": "ba98ddde6d96cd9219a0b9f141475ed27ba81cb2a8098c2cee0f206f7e3b609b",
+      "size": 2867,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/appimageupdatetool/appimageupdatetool": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/appimageupdatetool/appimageupdatetool",
+      "sha256": "8d17a50e2f7502edacab48216d1b491de3669935858591ea0026cc2db375967c",
+      "size": 36456952,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/appimageupdatetool/version": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 420,
+      "path": "/opt/appimageupdatetool/version",
+      "sha256": "3789ad62902acf49f3179131e9d7d413c220d4cc94a64f54422535ca86fefc83",
+      "size": 116,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/btop/AM-updater": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/btop/AM-updater",
+      "sha256": "ad5a3c24a33aad573c09f3a64cddd32955efc9fe75f411aacc35fecacd60dd89",
+      "size": 1039,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/btop/version": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 420,
+      "path": "/opt/btop/version",
+      "sha256": "19de22e3214dd5ea847f51620a138e7a4c08235588af56b4ce6adcdb8e7cf2d6",
+      "size": 100,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/emmylua/AM-updater": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/emmylua/AM-updater",
+      "sha256": "281adfd99954e55c06bfebf1a5a5b9dc3dbe61be7dae0fbb6049b92ceb432a8a",
+      "size": 1023,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/emmylua/version": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 420,
+      "path": "/opt/emmylua/version",
+      "sha256": "f024cd6b8ec70fbfdf9b70ab93f16ffb304c842836f8dc7ccfc585f04e4b3b0f",
+      "size": 105,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/fzf/AM-updater": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/fzf/AM-updater",
+      "sha256": "c233b23edcf747975f1fd24e1190260f686a6a35ce6a68db1e771760a07bb53d",
+      "size": 722,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/fzf/fzf": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/fzf/fzf",
+      "sha256": "c8d3ac08594f271a108528beb15338c42be113d392816b10bf5955cd139293e8",
+      "size": 5529760,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/fzf/version": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 420,
+      "path": "/opt/fzf/version",
+      "sha256": "6fa5c1c57129fecae4d2ad288465b3b63c73c2b75d5ccb21a80026aec476917e",
+      "size": 88,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/kitty/AM-updater": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/kitty/AM-updater",
+      "sha256": "a236b3b68bd1c62b6adf239351f7c6e8b4fef6f047d372972e21b87bdd150936",
+      "size": 1126,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/kitty/version": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 420,
+      "path": "/opt/kitty/version",
+      "sha256": "a2db07dd42da1f276b7cef24f5ddfff8d8b08ab7779c7e7f5d704ea6a3a2cad7",
+      "size": 86,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/lazygit/AM-updater": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/lazygit/AM-updater",
+      "sha256": "48580d843e2e4ee67a3af8b90ef341e4a54c54e785247508aaf7d5c8eddca673",
+      "size": 1053,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/lazygit/lazygit": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/lazygit/lazygit",
+      "sha256": "3ea229a849a77cae673282433cc9ef821a9164e284bf8ec55b9c2d8d25a5510b",
+      "size": 20623522,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/lazygit/version": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 420,
+      "path": "/opt/lazygit/version",
+      "sha256": "a2071010f080adaa29b5152f34fc60ec46214b0fb87c263d39d4d1eb9637d714",
+      "size": 102,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/logseq-app-db-nightly/AM-updater": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/logseq-app-db-nightly/AM-updater",
+      "sha256": "bcdc52b1d7996f8c1af4e3b01e22470794795f8f6d2e788c8caffab9fc1c4c07",
+      "size": 1029,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/logseq-app-db-nightly/logseq-app-db-nightly": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 509,
+      "path": "/opt/logseq-app-db-nightly/logseq-app-db-nightly",
+      "sha256": "780623426aee824dd15af447406891a3a010da99bf6e2f8e9f8e64a90f108900",
+      "size": 181781802,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/logseq-app-db-nightly/version": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 420,
+      "path": "/opt/logseq-app-db-nightly/version",
+      "sha256": "28ac86184c7eda6e584b373fdbe4c5f67c79783166f201f369901bf02ae2ecdb",
+      "size": 21,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/logseq-app-og/AM-updater": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/logseq-app-og/AM-updater",
+      "sha256": "8d9bd399689bf6e384011a1f22cfb18084dc743bdbf128062136c3f4ac7e0b90",
+      "size": 865,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/logseq-app-og/logseq-app-og": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/logseq-app-og/logseq-app-og",
+      "sha256": "a6bf51a79c523a4572d5c21cbfa133bb764ec99081cb56db82616daa30ff94d1",
+      "size": 196095672,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/logseq-app-og/version": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 420,
+      "path": "/opt/logseq-app-og/version",
+      "sha256": "5fdb07856335bc15b055da69ca2fd05e37cc0d44687a58d3973bf575f8c8599b",
+      "size": 88,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/neovide-nightly/AM-updater": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/neovide-nightly/AM-updater",
+      "sha256": "4cd8c6fe9befd881037fa33d20380254d61d7c8998ea3995c7705030c3247c61",
+      "size": 1070,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/neovide-nightly/neovide-nightly": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/neovide-nightly/neovide-nightly",
+      "sha256": "8f5ff9dc6ff5594535f31321248be8f40dd11027628d1f6d679d17960502915d",
+      "size": 13490680,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/neovide-nightly/version": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 420,
+      "path": "/opt/neovide-nightly/version",
+      "sha256": "63af6f8909d603db21433d79df44cd1d81a6614546130d57088b8bbc699f2281",
+      "size": 78,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/neovide/AM-updater": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/neovide/AM-updater",
+      "sha256": "1042592a3d990ae05c38500b48ad2004c0a3e7a5a3828076e915f396526b5cb5",
+      "size": 1051,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/neovide/neovide": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/neovide/neovide",
+      "sha256": "18e975933eb3cc422e6cd0bcde169f4948490d37ef44892905d74e1c02d19eec",
+      "size": 13470200,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/neovide/version": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 420,
+      "path": "/opt/neovide/version",
+      "sha256": "ab0929051079676f2cf45c35d625e3035885b1cf38cb75123647af461b71051e",
+      "size": 77,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/nvim-nightly/AM-updater": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/nvim-nightly/AM-updater",
+      "sha256": "2c705c2a8d171619e06f77479c5bff2a22a881a3619bcb0193df0d0b593b2298",
+      "size": 88,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/nvim-nightly/nvim-nightly": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 509,
+      "path": "/opt/nvim-nightly/nvim-nightly",
+      "sha256": "2dd733ca11c99e93b2277d3501dc441775734a8b5ea86fd0fc0074c0da16f2e0",
+      "size": 20666872,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/nvim-nightly/recipe.am": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/nvim-nightly/recipe.am",
+      "sha256": "1acb0a237cec0d46285fbbe860aa94fd41dca8fda0c4bf3bb165d5367b22080a",
+      "size": 641,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/nvim-nightly/version": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 420,
+      "path": "/opt/nvim-nightly/version",
+      "sha256": "f45bc42c1312afb0c699f72eb73f41e9f61372850bfe689c7183f01ba19420f9",
+      "size": 86,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/nvim/AM-updater": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/nvim/AM-updater",
+      "sha256": "15a1785c29a5337e27c276a1ac0be301cf87d81c7c215e33085282eeb7b34af7",
+      "size": 80,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/nvim/nvim": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/nvim/nvim",
+      "sha256": "b644d034746aed32f4e918be9fc6147408ce4ecd360fedd7130da543c35f29fb",
+      "size": 11454968,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/nvim/recipe.am": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/nvim/recipe.am",
+      "sha256": "df86a0f36f68b6fad408e3a22f5218d76d62f7b0e9671be7c66665857ddb8347",
+      "size": 550,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/nvim/version": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 420,
+      "path": "/opt/nvim/version",
+      "sha256": "d9604353cef506d612be472f29542504fe3a0fd703d90d9516fb01ee244d9fe3",
+      "size": 86,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/obsidian/AM-updater": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/obsidian/AM-updater",
+      "sha256": "0fd8d21e7a6ab81d3f046c3ee9e21d366474f68cf7d71aef2fe4937974b95daa",
+      "size": 84,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/obsidian/obsidian": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 509,
+      "path": "/opt/obsidian/obsidian",
+      "sha256": "1dd8cfb593deaa644101bdb4df65b159ed7985993b6572dd25fd1363459e91cc",
+      "size": 138122125,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/obsidian/recipe.am": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/obsidian/recipe.am",
+      "sha256": "f27a3f05173264fc2da107fb614022e7b1970994322725e58bbb26800762336d",
+      "size": 608,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/obsidian/version": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 420,
+      "path": "/opt/obsidian/version",
+      "sha256": "da84ba226b74cda70146527509c4d38ae0cdf456d9347baf075644a0d326358a",
+      "size": 99,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/rclone-ui/AM-updater": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/rclone-ui/AM-updater",
+      "sha256": "386401d61ceb83ee06b6216196d780d52dc8ce9aebe4ac97a83910def5fc3a7d",
+      "size": 1054,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/rclone-ui/rclone-ui": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 509,
+      "path": "/opt/rclone-ui/rclone-ui",
+      "sha256": "68a8b0c9f5fa9510f9093a9b60c6674715953a49bbec84f0cc31c4d524c609db",
+      "size": 97864184,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/rclone-ui/version": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 420,
+      "path": "/opt/rclone-ui/version",
+      "sha256": "6c575c8d6459ca79c7baf93d4fabfb2a80b8028de16a47941b3d3b088c3f0045",
+      "size": 86,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/rclone/AM-updater": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/rclone/AM-updater",
+      "sha256": "2cbd331610112007637b8799e0c334ab7ede6f47a26b95b7b2b5874a291958ab",
+      "size": 1039,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/rclone/rclone": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/rclone/rclone",
+      "sha256": "ed7ab1f17876bb006c3df3949a3044959671afd9112362dacaa5dd1647735bc1",
+      "size": 85659810,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/rclone/version": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 420,
+      "path": "/opt/rclone/version",
+      "sha256": "bbe455327ea9e154b0037663c4a5710d9ef5dbb94ea4299340126cf830f4ced7",
+      "size": 90,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/satty/AM-updater": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/satty/AM-updater",
+      "sha256": "ddaf55e9f087e3a1dc022c9d314b52809fe3028306466eb079c6e3bd06631760",
+      "size": 1073,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/satty/satty": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/satty/satty",
+      "sha256": "50d97c0ae56c0d1c4fec9b6c1e2a23751df48cc00f32d69a18af3b76e998c108",
+      "size": 23974443,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/satty/version": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 420,
+      "path": "/opt/satty/version",
+      "sha256": "ce5d0acde928fe94077b272eae9f8626987d22bf97a9e9e9d25f974f450cc9aa",
+      "size": 138,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/sunshine/AM-updater": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/sunshine/AM-updater",
+      "sha256": "171707a57ff14deeb4bb40fd2f4d93cc38fe914c835549cde7d07285f23b6547",
+      "size": 84,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/sunshine/recipe.am": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/sunshine/recipe.am",
+      "sha256": "66e9fcdeebbee1ccba80af3284a3978496bbbf5101e07df6c5db956d91e64a16",
+      "size": 595,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/sunshine/sunshine": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/sunshine/sunshine",
+      "sha256": "836fca22158725f6b8369ef403a1fa696756e2c97becf66bc7d74b2e24dee314",
+      "size": 52546040,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/sunshine/version": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 420,
+      "path": "/opt/sunshine/version",
+      "sha256": "c2bcddb68484a1a5a0c00da7832f8e1d95454417761cd52d2250ea1c384ea4a9",
+      "size": 115,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/yt-dlp/AM-updater": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/yt-dlp/AM-updater",
+      "sha256": "80c9627704b4d88fa6dbcc35c61190ef2d56ebce7cd10c29fdad5f5341997211",
+      "size": 700,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/yt-dlp/version": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 420,
+      "path": "/opt/yt-dlp/version",
+      "sha256": "d623c9fbf762e4bfd6a05f0141b1ed8b9b2d34d388bef8b98d0004e49b821c2a",
+      "size": 75,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/yt-dlp/yt-dlp": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 509,
+      "path": "/opt/yt-dlp/yt-dlp",
+      "sha256": "767ba9dce7052aa196f8b12652f433d76de128ba168966fa84b6394d5e6c6795",
+      "size": 41166968,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/zellij/AM-updater": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/zellij/AM-updater",
+      "sha256": "8e9c3d87630fa4701af434f1d1846a0da5415cc2e20c7712e4164a60976fa5ff",
+      "size": 1031,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/zellij/version": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 420,
+      "path": "/opt/zellij/version",
+      "sha256": "921a8455e62003d2c361780dfb7c75090b719037e737bd3a49b74d585f8fc8f5",
+      "size": 110,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/zellij/zellij": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/zellij/zellij",
+      "sha256": "0ec6ef07b63c6355c02ce18343d40ef5ef5af19e25313ea9009c8fceda29e94f",
+      "size": 43740624,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/zmx/AM-updater": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/zmx/AM-updater",
+      "sha256": "8fa59bffa38fe167e3ce4f15903d01ccd413e79af06310f1a6c0b0910d57c4e1",
+      "size": 1031,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/zmx/version": {
+      "gid": 65534,
+      "kind": "file",
+      "links": 1,
+      "mode": 420,
+      "path": "/opt/zmx/version",
+      "sha256": "c8264d71e299ca4b705a3c212926dba75dffdfb5fb05324212589c72e8ea7fd3",
+      "size": 88,
+      "uid": 1000,
+      "xattrs": []
+    },
+    "/opt/zmx/zmx": {
+      "gid": 1000,
+      "kind": "file",
+      "links": 1,
+      "mode": 493,
+      "path": "/opt/zmx/zmx",
+      "sha256": "48839299cb8bd0aaf1038219541290db19442f354c8fc3cd86ffc28f8aa33816",
+      "size": 15668024,
+      "uid": 1000,
+      "xattrs": []
+    }
+  },
+  "format": 1,
+  "scope": {
+    "appman_config": {
+      "exists": false,
+      "path": "/home/marek/.config/appman/appman-config"
+    },
+    "architecture": "x86_64",
+    "completeness": "explicit local roots only; no other-host assertion",
+    "config_probes": {
+      "/home/marek/.config/appman/appman-mode": false,
+      "/home/marek/.local/share/AM/betatester": false,
+      "/home/marek/.local/share/AM/newrepo-on": false
+    },
+    "manager": "/opt/am/APP-MANAGER",
+    "module_paths": [
+      "/opt/am/modules/appimage.am",
+      "/opt/am/modules/catalog.am",
+      "/opt/am/modules/database.am",
+      "/opt/am/modules/install.am",
+      "/opt/am/modules/management.am",
+      "/opt/am/modules/template.am"
+    ],
+    "modules": "/opt/am/modules",
+    "roots": [
+      "/opt"
+    ],
+    "skipped": [],
+    "updater_paths": [
+      "/opt/appimagetool/AM-updater",
+      "/opt/appimageupdatetool/AM-updater",
+      "/opt/btop/AM-updater",
+      "/opt/emmylua/AM-updater",
+      "/opt/fzf/AM-updater",
+      "/opt/kitty/AM-updater",
+      "/opt/lazygit/AM-updater",
+      "/opt/logseq-app-db-nightly/AM-updater",
+      "/opt/logseq-app-og/AM-updater",
+      "/opt/neovide-nightly/AM-updater",
+      "/opt/neovide/AM-updater",
+      "/opt/nvim-nightly/AM-updater",
+      "/opt/nvim/AM-updater",
+      "/opt/obsidian/AM-updater",
+      "/opt/rclone-ui/AM-updater",
+      "/opt/rclone/AM-updater",
+      "/opt/satty/AM-updater",
+      "/opt/sunshine/AM-updater",
+      "/opt/yt-dlp/AM-updater",
+      "/opt/zellij/AM-updater",
+      "/opt/zmx/AM-updater"
+    ]
+  }
+}
