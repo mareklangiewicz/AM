@@ -1165,3 +1165,12 @@ reuses GitHub metadata/digest authentication with bounded closed ZIP decoding an
 verification before private staging. Six new and 49 regression checks pass (55).
 Candidate `eecdbdc09`; remote prior loading/publication CAS and activation remain.
 No live request or operational change.
+
+2026-11-04: [93 resolved](issues/93-prepare-yaml-pinned-publication.md):
+[pinned YAML prior and publication CAS](research/yaml-pinned-publication.md)
+reuses fixed-ref exact-pin/proven-absence acquisition, validates bounded format-2
+prior YAML and constructs direct-child YAML-only commits with explicit expected-
+parent leases. Nine new plus 55 regression checks pass (64 total), including
+creation/descendant/deletion/backward-reset races. Candidate `3bf90b411`;
+source promotion, operational migration/capacity/policy and activation remain.
+No live catalog publication or active workflow change.
