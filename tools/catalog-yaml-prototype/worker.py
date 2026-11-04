@@ -22,9 +22,11 @@ def positive(value):
 
 
 def run_worker(work, *, seconds=120, address_bytes=384*1024*1024,
-               file_bytes=32*1024*1024, temporary_parent=None):
+               file_bytes=32*1024*1024, temporary_parent=None, result_path=None):
     """Return one JSON result only after exit 0 and complete serialization.
 
+    With result_path, return the private serialized file without parent decoding;
+    caller must own its byte reservation, validation and failure cleanup.
     Address space is RLIMIT_AS, not RSS. RLIMIT_FSIZE is per regular file,
     not aggregate disk. No pipes or inherited worker output can block the parent.
     Only trusted work that does not escape its session is supported. Forking
@@ -35,9 +37,11 @@ def run_worker(work, *, seconds=120, address_bytes=384*1024*1024,
     if (type(seconds) not in (int, float) or not math.isfinite(seconds) or seconds <= 0
             or not positive(address_bytes) or not positive(file_bytes)):
         raise ValueError('worker limits')
+    if result_path is not None and pathlib.Path(result_path).exists():
+        raise ValueError('result path already exists')
     started = time.monotonic()
     with tempfile.TemporaryDirectory(prefix='yaml-worker-', dir=temporary_parent) as directory:
-        output = pathlib.Path(directory) / 'result.json'
+        output = pathlib.Path(result_path) if result_path is not None else pathlib.Path(directory) / 'result.json'
         pid = os.fork()
         if pid == 0:
             try:
@@ -73,6 +77,8 @@ def run_worker(work, *, seconds=120, address_bytes=384*1024*1024,
                 pass
             if output.stat().st_size > file_bytes:
                 raise WorkerRefusal('result size')
+            if result_path is not None:
+                return output  # Caller owns reservation, validation and cleanup.
             try:
                 return json.loads(output.read_text(encoding='utf-8'))
             except (OSError, ValueError) as exc:

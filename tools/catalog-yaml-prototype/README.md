@@ -184,3 +184,35 @@ it does not constrain the sum of files. Setup/I/O failures propagate without a
 candidate. Failure status cannot distinguish OOM from arbitrary child faults;
 no precise diagnosis is inferred. No network transport, live capacity measurement,
 fair scheduler, production integration or reader resource ceiling follows.
+
+## Aggregate managed staging follow-up
+
+`staging.py` adds a file-oriented `collect_staged(stage, previous_path, pages, ...)`
+interface. Use `with Stage(...) as stage`; the returned private JSON candidate
+path remains valid and charged until `stage.release(path)` or arena exit. Reusing
+one arena across sources bounds all retained candidates plus current snapshots
+and reserved output headroom. The parent copies input in chunks of at most 64 KiB
+and never decodes prior/candidate JSON; child decoding and serialization run under
+the worker address-space limit. Finite scopes snapshot only requested pages.
+
+Trial defaults: 128 MiB aggregate logical bytes, 128 files, 32 MiB previous JSON,
+16 MiB per response, 96 MiB source input, 64 pages and 32 MiB result headroom.
+Reservations precede writes. Inputs must be regular files; growth/shrink relative
+to the opened file's initial size refuses. Exact-size snapshots are accepted.
+A refusal raises without a candidate and leaves the original prior file intact;
+it does not generate failed-attempt metadata after a killed worker. Do not treat
+such a refusal as a successful collection. Release candidates after consuming
+or deliberately retaining them; otherwise later sources can exhaust the arena.
+
+This bounds logical lengths of the managed files in this trusted path, not
+filesystem allocation blocks/metadata, external fixture originals, publication
+copies, arbitrary worker writes or other concurrent arenas. It is not a filesystem
+quota or aggregate RSS limit. Private snapshots are not transactional upstream
+observations if an external writer changes source content in place. Parent input
+staging has cooperative bounded copies, not a hard elapsed watchdog. No network
+or production publication path is implemented.
+
+Run `python3 tools/catalog-yaml-prototype/staging_matrix.py`: seven staging groups
+plus nine inherited reader groups on each awk implementation. Run `worker_matrix.py`
+to check the existing object-returning worker API after the optional file-result
+extension. Older benchmarks are not remeasurements of this staging interface.
