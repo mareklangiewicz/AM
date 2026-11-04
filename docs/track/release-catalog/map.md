@@ -987,3 +987,15 @@ identify the one initial all-batch failure and its passing targeted replacement.
 [Rollout package](research/appimage-next-large-batch-20261102/rollout.md) is ready
 for the home-instruction push decision. No push, workflow switch, dispatch, repin
 or host operation occurred; operational delivery remains unfinished.
+
+
+2026-11-04: [102 resolved](issues/102-prepare-yaml-installed-migrator.md):
+[explicit installed recipe transactions](research/yaml-installed-migrator.md)
+prepare maintainer-only exact-source plans, selected-record preflight, guarded
+atomic recipe replacement, durable receipts/backups and interrupted apply/rollback
+recovery on isolated prep/yaml-installed-migration (code reviewed at 974cc963a).
+All 11 disposable tests pass; standards review has zero findings and the single
+spec drift finding was fixed/confirmed. This is recipe-only source preparation,
+not binary rollback or operational deployment. Reviewed package/binding, module
+delivery, policy/stale UI/capacity and publication/ref transition remain separate.
+No live, installed-host, push, workflow, repin or yadm changes.
