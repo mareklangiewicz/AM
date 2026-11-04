@@ -1,5 +1,15 @@
 # Release catalog exploration
 
+## Latest local experiment — November 4, 2026
+
+[75 resolved](issues/75-bound-offline-response-normalization.md): file-backed JSON
+normalization with actual byte accounting, lazy finite scope and atomic retained
+merges. Six new acceptance groups pass on all three awk tools, alongside the
+prior sixteen groups. [Findings](research/yaml-bounded-offline-normalizer.md)
+separate cooperative elapsed refusal from hard deadlines. Retained-growth,
+staging/reader resource stress and operational ceilings remain open under 71.
+Prototype branch is local only; production remains format 1.
+
 ## Current design — scoped retention, November 3, 2026
 
 [74 resolved](issues/74-revise-scoped-retained-catalog.md) applies Marek's
