@@ -32,11 +32,42 @@ function seconds(s, y,m,d,i,n) {
     for(i=1;i<m;i++) n+=(i==2 ? 28+(y%4==0 && (y%100!=0 || y%400==0)) : (i==4 || i==6 || i==9 || i==11 ? 30 : 31))
     return ((n+d-1)*24+substr(s,12,2))*3600+substr(s,15,2)*60+substr(s,18,2)
 }
-BEGIN { if(!timestamp(ENVIRON["AM_YAML_NOW"])) refuse("utc_now_required"); FS="\t"; recipe=ENVIRON["AM_YAML_RECIPE"]; split(recipe,r,"/"); arch=r[1]; app=r[2] }
+# Explicit reviewed am-utils enrollment: both architectures have the same names.
+# This registry is trusted source; catalog data cannot enroll another recipe.
+function am_utils_recipe(recipe, names,n,i) {
+    n=split("7z addr2line ar arch as b2sum base32 base64 basename basenc bzip2 c++filt cat chcon chgrp chmod chown chroot cksum clear col colcrt colrm column comm cp csplit curl cut date dd df diff dir dircolors dirname du echo elfedit env expand expr factor false file find fmt fold gawk gp-archive gp-collect-app gp-display-html gp-display-src gp-display-text gprof gprofng gprofng-archive gprofng-collect-app gprofng-display-html gprofng-display-src gprofng-display-text gprofng-gmon grep groups hd head hexdump hostid id install join kill killall ld ld.bfd less link ln logname look ls mawk md5sum mkdir mkfifo mknod mktemp more mount mv nice nl nm nohup notify-send nproc numfmt objcopy objdump od paste pathchk pinky pr printenv printf ptx pwd ranlib readelf readlink realpath rev rm rmdir runcon sed seq sh sha1sum sha224sum sha256sum sha384sum sha512sum shred shuf size sleep sort split stat stdbuf strace strings strip stty sum swapoff swapon sync tac tail tar tee test timeout top touch tput tr true truncate tsort tty ul umount uname uncompress unexpand uniq unlink unshare unxz unzip uptime users vdir watch wc wget who whoami xargs xz xzcat yes zcat zsync", names, " ")
+    for(i=1;i<=n;i++)
+        if(recipe=="x86_64/" names[i] || recipe=="aarch64/" names[i]) return 1
+    return 0
+}
+BEGIN {
+    recipe=ENVIRON["AM_YAML_RECIPE"]; split(recipe,r,"/"); arch=r[1]; app=r[2]
+    utility=am_utils_recipe(recipe)
+    known=(utility || recipe=="x86_64/obsidian" || recipe=="x86_64/nvim" ||
+           recipe=="aarch64/nvim" || recipe=="x86_64/nvim-nightly" || recipe=="aarch64/nvim-nightly")
+    if(!known) refuse("unsupported_recipe_policy")
+    check_only=(ENVIRON["AM_YAML_CHECK_RECIPE"]=="1")
+    if(check_only) exit
+    if(!timestamp(ENVIRON["AM_YAML_NOW"])) refuse("utc_now_required")
+    if(utility && ENVIRON["AM_YAML_REPOSITORY"]!="1225768109") refuse("am_utils_repository_mismatch")
+    FS="\t"
+}
+
 {
     release_id=$1; asset_id=$2; observed=decode($3); published=decode($4)
     tag=decode($5); name=decode($6); url=decode($7)
-    if(app=="obsidian") {
+    if(utility) {
+        # Match the literal URL component, including the reviewed encoded pluses.
+        # ld.bfd's dot is literal here, unlike the old interpolated ERE wildcard.
+        component=(app=="c++filt" ? "c%2b%2bfilt" : app)
+        u=tolower(url)
+        pattern="https.*download.*/" arch "-[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]/"
+        eligible=0
+        if(match(u,pattern)) {
+            rest=substr(u,RSTART+RLENGTH)
+            eligible=(index(rest,component "_")==1 && rest ~ ("-" arch "-static$"))
+        }
+    } else if(app=="obsidian") {
         u=tolower(url)
         eligible=(u ~ /https.*mage$/ && u !~ /i386|i686|aarch64|arm64|armv7l/)
     } else {
@@ -57,6 +88,7 @@ BEGIN { if(!timestamp(ENVIRON["AM_YAML_NOW"])) refuse("utc_now_required"); FS="\
 }
 END {
     if(failed) exit 3
+    if(check_only) exit 0
     if(!chosen) refuse("no_matching_asset")
     age=seconds(ENVIRON["AM_YAML_NOW"])-seconds(best_observed)
     token=ENVIRON["AM_YAML_PIN"] ":" ENVIRON["AM_YAML_REPOSITORY"] ":" best_release ":" best_asset ":" best_observed

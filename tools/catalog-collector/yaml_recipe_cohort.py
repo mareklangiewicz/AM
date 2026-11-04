@@ -1,5 +1,7 @@
 """Named offline policy proposals; no installed client or automatic migration."""
+import json
 import re
+from pathlib import Path
 
 from collector import require
 from yaml_selection import ASCII_LOWER, accept_selection
@@ -7,11 +9,23 @@ from yaml_selection import ASCII_LOWER, accept_selection
 COHORT = ('x86_64/obsidian', 'x86_64/nvim', 'aarch64/nvim',
           'x86_64/nvim-nightly', 'aarch64/nvim-nightly')
 
+# Independent reference enrollment from the frozen, reviewed static inventory.
+_INVENTORY = Path(__file__).resolve().parents[1]/'catalog-yaml-prototype/consumer-inventory.json'
+AM_UTILS = tuple(row['path'].removeprefix('programs/')
+                 for row in json.loads(_INVENTORY.read_text())['recipes']
+                 if row['kind'] == 'executable')
+SUPPORTED = COHORT + AM_UTILS
+
 
 def matches(recipe, release, asset):
-    require(recipe in COHORT, 'unknown_cohort_recipe')
+    require(recipe in SUPPORTED, 'unknown_cohort_recipe')
     arch, app = recipe.split('/')
     url = asset['url']
+    if recipe in AM_UTILS:
+        component = 'c%2b%2bfilt' if app == 'c++filt' else app
+        return re.search(r'https.*download.*/'+arch+r'-[0-9]{8}/'+
+                         re.escape(component)+r'_.*-'+arch+r'-static$',
+                         url.translate(ASCII_LOWER)) is not None
     if app == 'obsidian':
         url = url.translate(ASCII_LOWER)  # ASCII URLs in saved evidence; proposals use ASCII folding.
         return (re.search(r'https.*mage$', url) is not None and
@@ -27,9 +41,11 @@ def matches(recipe, release, asset):
 
 
 def select_cohort(recipe, repository, commit, *, now, accept_stale=None):
-    require(recipe in COHORT, 'unknown_cohort_recipe')
+    require(recipe in SUPPORTED, 'unknown_cohort_recipe')
     require(re.fullmatch('[0-9a-f]{40}', commit) is not None, 'commit_pin_required')
     require(now.tzinfo is not None and now.utcoffset().total_seconds() == 0, 'utc_now_required')
+    if recipe in AM_UTILS:
+        require(str(repository['repository_id']) == '1225768109', 'am_utils_repository_mismatch')
     # Input must come from the shared full validator, as in yaml_selection.select.
     for release_id, release in sorted(repository.get('releases', {}).items(),
             key=lambda item: (item[1]['published_at'], int(item[0])), reverse=True):

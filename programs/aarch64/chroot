@@ -4,6 +4,8 @@
 set -eu
 APP=chroot
 PACKAGE_KIND=executable
+CATALOG_FORMAT=2
+CATALOG_RECIPE="aarch64/chroot"
 CATALOG_ALIAS="https://api.github.com/repos/ivan-hc/am-utils/releases"
 
 select_asset() {

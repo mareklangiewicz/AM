@@ -6,10 +6,11 @@ export LC_ALL=C
 repo=$1 AM_YAML_PIN=$2 AM_YAML_RECIPE=$3 AM_YAML_NOW=$4 AM_YAML_ACCEPT=${5-}
 case $AM_YAML_PIN in *[!0-9a-f]*|'') exit 2;; esac
 [ "${#AM_YAML_PIN}" -eq 40 ] || exit 2
-case $AM_YAML_RECIPE in x86_64/obsidian|x86_64/nvim|aarch64/nvim|x86_64/nvim-nightly|aarch64/nvim-nightly) ;; *) exit 2;; esac
 app=${AM_YAML_RECIPE#*/}
 here=$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd)
 reader=$here/reader.sh
+AM_YAML_RECIPE=$AM_YAML_RECIPE AM_YAML_CHECK_RECIPE=1 \
+    awk -f "$here/yaml_cohort.awk" </dev/null || exit 2
 # Keep the existing trial caps, not an acceptance or increase.
 AM_YAML_MAX_INPUT_BYTES=2097152 AM_YAML_MAX_OUTPUT_BYTES=2097152
 export AM_YAML_MAX_INPUT_BYTES AM_YAML_MAX_OUTPUT_BYTES

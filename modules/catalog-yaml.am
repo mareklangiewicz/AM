@@ -6,7 +6,6 @@ export LC_ALL=C
 fail() { printf 'AM YAML catalog: %s\n' "$*" >&2; exit 1; }
 [ "$#" -gt 0 ] || fail 'missing recipe'
 AM_YAML_RECIPE=$1; shift
-case $AM_YAML_RECIPE in x86_64/obsidian|x86_64/nvim|aarch64/nvim|x86_64/nvim-nightly|aarch64/nvim-nightly) ;; *) fail 'unsupported recipe policy';; esac
 app=${AM_YAML_RECIPE#*/}
 pin='' AM_YAML_ACCEPT=''
 hex() { [ "${#1}" -eq 40 ] && case $1 in *[!0-9a-f]*) return 1;; esac; }
@@ -30,6 +29,9 @@ reader=$here/catalog-yaml-reader.am
 for module in catalog-yaml-reader.am catalog-yaml-parser.am catalog-yaml-policy.am; do
     [ -r "$here/$module" ] || fail "missing module: $module"
 done
+# Validate against the policy's single trusted enrollment registry before HTTP.
+AM_YAML_RECIPE=$AM_YAML_RECIPE AM_YAML_CHECK_RECIPE=1 \
+    awk -f "$here/catalog-yaml-policy.am" </dev/null || fail 'unsupported recipe policy'
 # Fixed trial budgets shared with the source candidate. No optional consumer workers.
 AM_YAML_MAX_INPUT_BYTES=2097152 AM_YAML_MAX_OUTPUT_BYTES=2097152
 export AM_YAML_MAX_INPUT_BYTES AM_YAML_MAX_OUTPUT_BYTES
