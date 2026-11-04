@@ -13,7 +13,12 @@ def module_candidate():
 \t[ "$#" -eq 0 ] || { echo 'Unsupported offline lifecycle argument' >&2; exit 3; }
 \tselection=$(sh "$CATALOG_YAML_HELPER" "$CATALOG_YAML_REPO" "$CATALOG_YAML_COMMIT" "$CATALOG_YAML_RECIPE" "$CATALOG_YAML_NOW" "${CATALOG_YAML_ACCEPT-}") || exit 3
 \tversion=$(printf '%s\\n' "$selection" | sed -n '6p') || exit 3'''
-    assert source.count(before) == 1
+    if before not in source:
+        # Later integration candidates have a real format switch; this remains
+        # the explicitly local-Git rehearsal, replacing only the handoff.
+        start = source.index('\tcase ${CATALOG_FORMAT-1} in')
+        end = source.index('\t[ -n "$version" ]', start)
+        return source[:start]+after+'\n'+source[end:]
     return source.replace(before, after)
 
 

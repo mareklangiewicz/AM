@@ -137,6 +137,11 @@ MODULES_SOURCE="$AMREPO/modules"
 # Distributed as an executable shell module for standalone app readers.
 CATALOG_MODULE="catalog.am"
 APPIMAGE_MODULE="appimage.am"
+# Shared YAML runtime files use .am so ordinary module sync/cleanup retains them.
+YAML_CATALOG_MODULE="catalog-yaml.am"
+YAML_READER_MODULE="catalog-yaml-reader.am"
+YAML_PARSER_MODULE="catalog-yaml-parser.am"
+YAML_POLICY_MODULE="catalog-yaml-policy.am"
 
 # ALTERNATE CURL AND WGET
 CURLCMD="curl"
@@ -2207,6 +2212,9 @@ _catalog_update() {
 			--accept-stale)
 				[ "$#" -ge 4 ] || { echo 'Missing exact stale tuple' >&2; return 1; }
 				options+=("$1" "$2" "$3" "$4"); shift 4 ;;
+			--accept-stale-release)
+				[ "$#" -ge 6 ] || { echo 'Missing exact selected-release tuple' >&2; return 1; }
+				options+=("$1" "$2" "$3" "$4" "$5" "$6"); shift 6 ;;
 			-*) printf 'Unsupported update option: %s\n' "$1" >&2; return 1 ;;
 			*) batch_names+=("$1"); shift ;;
 		esac

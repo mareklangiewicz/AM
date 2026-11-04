@@ -35,9 +35,22 @@ am_package() (
 			*) echo 'Invalid app identity' >&2; exit 1;; esac ;;
 		*) echo 'Unsupported package format' >&2; exit 1 ;;
 	esac
-	[ -r "$CATALOG_HELPER" ] || { echo 'Missing catalog.am; synchronize AM modules.' >&2; exit 3; }
-	catalog_body=$(sh "$CATALOG_HELPER" "$CATALOG_ALIAS" "$@") || exit 3
-	version=$(printf '%s\n' "$catalog_body" | am_appimage_select_asset) || exit 3
+	case ${CATALOG_FORMAT-1} in
+		1)
+			[ -r "$CATALOG_HELPER" ] || { echo 'Missing catalog.am; synchronize AM modules.' >&2; exit 3; }
+			catalog_body=$(sh "$CATALOG_HELPER" "$CATALOG_ALIAS" "$@") || exit 3
+			version=$(printf '%s\n' "$catalog_body" | am_appimage_select_asset) || exit 3 ;;
+		2)
+			catalog_recipe=${CATALOG_RECIPE-}
+			[ "${catalog_recipe#*/}" = "$APP" ] || { echo 'Catalog recipe/app mismatch' >&2; exit 3; }
+			CATALOG_YAML_HELPER=${CATALOG_YAML_HELPER-/opt/am/modules/catalog-yaml.am}
+			[ -r "$CATALOG_YAML_HELPER" ] || { echo 'Missing catalog-yaml.am; synchronize AM modules.' >&2; exit 3; }
+			selection=$(sh "$CATALOG_YAML_HELPER" "${CATALOG_RECIPE-}" "$@") || exit 3
+			# Trusted helper's fixed six-line protocol; catalog data is never eval'd.
+			[ "$(printf '%s\n' "$selection" | wc -l)" -eq 6 ] || exit 3
+			version=$(printf '%s\n' "$selection" | sed -n '6p') || exit 3 ;;
+		*) echo 'Unsupported catalog format' >&2; exit 3 ;;
+	esac
 	[ -n "$version" ] || { echo 'Error getting link' >&2; exit 3; }
 	APPS_DIR=${APPS_DIR%/}
 	dir="$APPS_DIR/$APP"
