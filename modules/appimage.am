@@ -166,6 +166,10 @@ am_package() (
 	esac
 	if [ "$layout" = kitty ]; then link_app kitten "$dir/bin/kitten"; fi
 	[ "$PACKAGE_KIND" = appimage ] || exit 0
+	if [ -e "$DESKTOP_DIR/$APP-AM.desktop" ] || [ -L "$DESKTOP_DIR/$APP-AM.desktop" ]; then
+		printf 'Preserving desktop launcher: %s\n' "$DESKTOP_DIR/$APP-AM.desktop"
+		exit 0
+	fi
 	mkdir -p "$DESKTOP_DIR" "$dir/icons"
 	cd "$dir"
 	# AppImage extraction with the same installed-tool fallback as AM installers.

@@ -161,6 +161,16 @@ else:
         self.assertNotEqual(result.returncode,0)
         self.assertIn(b'requires fresh observations',result.stderr)
 
+    def test_reinstall_preserves_custom_executable_and_desktop_launchers(self):
+        app=self.install('x86_64/obsidian')
+        desktop=self.root/'usr/local/share/applications/obsidian-AM.desktop'
+        desktop.write_text('custom desktop launcher')
+        link=self.root/'usr/local/bin/obsidian';link.unlink();link.symlink_to('/custom/obsidian-wrapper')
+        result=subprocess.run(['sh',str(app/'recipe.am')],env=self.env(),capture_output=True)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertEqual(desktop.read_text(),'custom desktop launcher')
+        self.assertEqual(link.readlink(),Path('/custom/obsidian-wrapper'))
+
 
 if __name__=='__main__':
     suite=unittest.TestSuite(HostCutover(n) for n in HostCutover.__dict__ if n.startswith('test_'))
