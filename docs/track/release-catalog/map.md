@@ -1281,3 +1281,13 @@ updaters; both review axes zero findings. Saved 48-source YAML 7.00 MB, largest 
 synthetic Sunshine growth refuses cycle 12 retaining 330 releases/7161 assets below 2 MiB.
 Updated private package verifies; live/default capacity, legacy adapters, policy
 and operational gates remain. No live/installed/push/publication/workflow/repin/yadm.
+
+
+2026-11-04: [105 resolved](issues/105-record-direct-asset-acquisition-direction.md):
+[asset acquisition direction](research/yaml-asset-acquisition-direction.md)
+records Marek's preference for direct selected-asset downloads for the remaining
+AppImage adapters. Selection stays separate from acquisition; future verified
+delta/native updates and a partial upstream proposal remain possible. No current
+digest guarantee or upstream acceptance is claimed. This supersedes 104's
+unanswered preference checkpoint; frozen packages/audit stay unchanged. No runtime,
+installed, network, publication, workflow, push, repin or yadm changes.
