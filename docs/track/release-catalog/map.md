@@ -10,7 +10,10 @@ publication and successful ordinary updates with no recipe-change notices.
 Marek accepted moving on without waiting for the natural scheduled trigger; its
 observation is optional monitoring and remains unobserved.
 
-No open or claimed implementation ticket remains. [71](issues/71-design-simple-yaml-catalog.md)
+New proposed source-only scope: [114](issues/114-unify-recipe-declaration-selection.md)
+records inspected consumers and a common declaration/selection path with separate
+collection enrollment. It is open, needs triage, and has no implementation in flight.
+The completed rollout has no remaining implementation ticket. [71](issues/71-design-simple-yaml-catalog.md)
 is resolved by delivered design/implementation. [47](issues/47-enroll-scoped-migration-sources.md)
 and [49](issues/49-migrate-common-appimage-batch.md) are resolved as superseded
 (`wontfix` for their remaining broad legacy scope), not as fully converted batches.
