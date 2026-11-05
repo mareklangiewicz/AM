@@ -71,3 +71,13 @@ refusal and fresh-only EmmyLua. Existing manager mixed-batch, source-binding and
 AppMan-path checks passed. All 21 real staged payloads passed `--version` or
 `--appimage-version` probes; the latter checks the AppImage runtime, not the GUI.
 GUI startup and a natural daily catalog cycle remain post-cutover observations.
+
+
+Live cutover completed November 5, 2026, at source 88ca89f30. All 21 apps now
+have installed YAML recipes and managed updaters. The first
+[YAML publication run](https://github.com/mareklangiewicz/AM/actions/runs/42007220573)
+succeeded. Seven actual manager update cases passed, including a real nightly
+AppImage refresh; original desktop entries, removers and executable-link targets
+were verified preserved. Before-images are in `prepared/before/` under the local
+cutover directory. Logseq's generic checksum UI still treats its version timestamp
+as a missing URL; the selected URL remains in download-url and updates succeed.

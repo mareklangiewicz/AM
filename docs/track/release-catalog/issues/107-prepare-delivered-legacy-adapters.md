@@ -1,7 +1,7 @@
 # Prepare delivered legacy selection and installed updater adapters
 
 Type: task
-Status: claimed
+Status: resolved
 Triage: ready-for-agent
 
 Continue 106's disposable layout staging against 104's exact 17-updater audit and
@@ -52,3 +52,56 @@ Stale-consent tuples are explicitly refused for that toolset; refresh the daily
 catalog instead. This supersedes the earlier per-asset stale-consent requirement
 without weakening the selected-record freshness check. Existing custom executable
 and desktop launchers are preserved; AM-owned links are retargeted as needed.
+
+## Answer — live cutover completed November 5, 2026
+
+Implemented and published source 88ca89f30222767b4bd48c8800498c6d74dcc410
+(the reviewed runtime entered main at 809022416). The focused production manifest
+has all 21 installed apps, backed by 19 verified numeric source identities.
+Format-1 catalog runtime is retired explicitly. The old collector/shard/schedule
+workflows are removed and one daily YAML publication workflow is active.
+
+Marek explicitly approved source/catalog pushes and finishing the live migration.
+The initial YAML tree 312e8d8bc9a7d800fce5a2907db66ca9806b3fad replaced format 1
+as a child of 4f8d6478d93a0be8ffa9d61d2e3cd4e8a419fbf9, preserving old history.
+The first real [YAML workflow](https://github.com/mareklangiewicz/AM/actions/runs/42007220573)
+succeeded and published 9f6056e0b5b36adad54e7b4b9df0aaf7b6300e80. Scheduled
+publication is 03:17 UTC; a natural scheduled run has not yet been observed.
+
+All 21 real selected app payloads were downloaded, staged and checked with their
+CLI version or AppImage runtime option. Archive payloads were restaged with the
+final delivered adapter and matched the prepared files/permissions/links. The live
+apply overlaid program files, saved old manager/modules and app metadata, and
+installed all 21 YAML recipes/updaters. Original removers and desktop launchers
+and all 25 executable-link targets were verified unchanged. No old remove script,
+app-directory removal, home config edit or yadm pointer operation was used.
+
+Live manager startup returns 10.6-4. A real manager update pinned to the workflow's
+catalog passed for neovide-nightly, btop, kitty, emmylua, rclone, yt-dlp and
+logseq-app-db-nightly: Neovide nightly downloaded/refreshed and passed its checksum
+check; the other six were unchanged. Logseq's inherited generic checksum UI still
+warns that its timestamp version is not a download URL; the actual selected URL
+is retained in download-url. This is not an updater failure or a new digest claim.
+GUI startup was not exercised by the AppImage-runtime smoke checks.
+
+Offline coverage includes all 21 actual-manager installs/standalone updaters,
+failed downloads, format-1 refusal, in-place apply/data/launcher preservation,
+partial tar failure, fresh-only EmmyLua and ordinary reinstall/custom launchers.
+Three existing manager integration checks also passed. Parallel review findings
+were fixed and both axes confirmed zero remaining actionable findings. A final
+reinstall test also caught/fixed copying recipe.am onto itself. These are scoped
+checks, not a claim that all historical format-1 rollout tests still apply.
+
+Persistent private preparation and recovery material:
+/home/marek/Documents/Codex/am-yaml-cutover/.
+The source worktree is source/, payloads and manifests are prepared/, and the
+pre-change manager/modules/app metadata are prepared/before/. The temporary
+worktree disappeared between turns; committed refs and this directory survived.
+Recovery is a rerun/reinstall, with manager/metadata before-images available;
+there is no atomic multi-file or binary rollback promise.
+
+[Operating policy](../../../catalog-operating-policy.md) records supported scope,
+selection/freshness behavior and recovery. Unused source recipes have not all
+been converted: format-1 catalog recipes refuse and YAML recipes outside the
+focused app map are not currently enrolled. That unused coverage does not block
+this single-user host's completed migration.

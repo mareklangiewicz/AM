@@ -1,5 +1,23 @@
 # Release catalog exploration
 
+## Live YAML cutover — November 5, 2026
+
+[107 resolved](issues/107-prepare-delivered-legacy-adapters.md): Marek approved
+single-user in-place reinstalls instead of elaborate recovery transactions.
+Source 88ca89f30 is pushed to main-marek; release-catalog now publishes YAML only.
+All 21 installed apps use YAML recipes/updaters and direct selected downloads.
+The focused production manifest has 19 sources. The first real
+[YAML workflow](https://github.com/mareklangiewicz/AM/actions/runs/42007220573)
+succeeded, publishing 9f6056e0. All 21 real executable/runtime smoke probes passed;
+seven live manager update cases passed, including a real Neovide nightly refresh.
+Manager startup works. Original removers/desktop entries and 25 executable links
+were preserved. Local before-images and staged downloads are in
+/home/marek/Documents/Codex/am-yaml-cutover/. Recovery is reinstall, not an atomic
+binary transaction. [Operating policy](../../catalog-operating-policy.md).
+Unused source recipe conversion, GUI startup and the next natural scheduled cycle
+are separate from this completed installed-host migration. Earlier entries below
+record historical source/runtime status and do not override this cutover.
+
 ## Shell-only parser deadlines — November 4, 2026
 
 [81 resolved](issues/81-test-shell-reader-deadlines.md): optional timeout guard
