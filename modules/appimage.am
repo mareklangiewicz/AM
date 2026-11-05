@@ -131,6 +131,11 @@ am_package() (
 	quote() { printf "'"; printf '%s' "$1" | sed "s/'/'\\\\''/g"; printf "'"; }
 	{
 		printf '#!/bin/sh\nset -e\nrm -f '; quote "$BIN_DIR/$APP"
+		if [ "$APP" = obsidian ]; then
+			printf '\nif [ "$(readlink '; quote "$BIN_DIR/obsidian-gui"
+			printf ')" = '; quote "$dir/$APP"
+			printf ' ]; then rm -f '; quote "$BIN_DIR/obsidian-gui"; printf '; fi'
+		fi
 		if [ "$layout" = kitty ]; then printf '\nrm -f '; quote "$BIN_DIR/kitten"; fi
 		if [ "$layout" = emmylua ]; then
 			for tool in $tools; do printf '\nrm -f '; quote "$BIN_DIR/$tool"; done
@@ -165,6 +170,8 @@ am_package() (
 		*) link_app "$APP" "$dir/$APP" ;;
 	esac
 	if [ "$layout" = kitty ]; then link_app kitten "$dir/bin/kitten"; fi
+	# Obsidian registers its official CLI under the same bare name in ~/.local/bin.
+	if [ "$APP" = obsidian ]; then link_app obsidian-gui "$dir/$APP"; fi
 	[ "$PACKAGE_KIND" = appimage ] || exit 0
 	if [ -e "$DESKTOP_DIR/$APP-AM.desktop" ] || [ -L "$DESKTOP_DIR/$APP-AM.desktop" ]; then
 		printf 'Preserving desktop launcher: %s\n' "$DESKTOP_DIR/$APP-AM.desktop"
@@ -199,6 +206,11 @@ am_package() (
 	icon=$(printf '%s' "$dir/icons/$APP" | sed 's/[\\&#]/\\&/g')
 	[ "$icon_theme" = false ] || icon=$APP
 	sed -i "s#Exec=[^ ]*#Exec=$APP#g; s#Icon=.*#Icon=$icon#g" ./"$APP".desktop
+	if [ "$APP" = obsidian ]; then
+		# Desktop Exec uses its own quoting rules, then sed needs replacement escaping.
+		gui=$(printf '%s' "$dir/$APP" | sed 's/[\\"`$]/\\&/g; s/\\/\\\\/g; s/%/%%/g; s/[\\&#]/\\&/g')
+		sed -i "s#^Exec=$APP#Exec=\"$gui\"#" ./"$APP".desktop
+	fi
 	if command -v appimage_desktop >/dev/null 2>&1; then appimage_desktop ./"$APP".desktop; fi
 	mv ./"$APP".desktop "$DESKTOP_DIR"/"$APP"-AM.desktop && mv ./DirIcon ./icons/"$APP" 1>/dev/null
 	rm -R -f ./squashfs-root

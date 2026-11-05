@@ -1,5 +1,14 @@
 # Release catalog exploration
 
+## Obsidian GUI launcher — November 5, 2026
+
+[109 resolved](issues/109-add-obsidian-gui-launcher.md): preserve the official
+Obsidian CLI name; add obsidian-gui and absolute GUI paths in newly generated
+desktop entries. Existing custom launchers remain preserved; removal guards the
+extra alias. Nine host-cutover groups pass and both review axes are clear.
+The host has a per-user GUI alias and desktop override; source module deployment
+and push remain separate. No vault/settings changes or reinstall.
+
 ## Checksum UI cleanup — November 5, 2026
 
 [108 resolved](issues/108-correct-checksum-ui.md): the verifier uses installed

@@ -166,11 +166,46 @@ else:
         desktop=self.root/'usr/local/share/applications/obsidian-AM.desktop'
         desktop.write_text('custom desktop launcher')
         link=self.root/'usr/local/bin/obsidian';link.unlink();link.symlink_to('/custom/obsidian-wrapper')
+        gui=self.root/'usr/local/bin/obsidian-gui';gui.unlink();gui.symlink_to('/custom/obsidian-gui-wrapper')
         self.stage()
         result=subprocess.run(['sh',str(app/'recipe.am')],env=self.env(),capture_output=True)
         self.assertEqual(result.returncode,0,result.stderr)
         self.assertEqual(desktop.read_text(),'custom desktop launcher')
         self.assertEqual(link.readlink(),Path('/custom/obsidian-wrapper'))
+        self.assertEqual(gui.readlink(),Path('/custom/obsidian-gui-wrapper'))
+        result=subprocess.run(['sh',str(app/'remove')],capture_output=True)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertTrue(gui.is_symlink())
+
+    def test_obsidian_gui_alias_desktop_and_removal(self):
+        app=self.install('x86_64/obsidian')
+        gui=self.root/'usr/local/bin/obsidian-gui'
+        self.assertEqual(gui.readlink(),app/'obsidian')
+        self.assertEqual((self.root/'usr/local/bin/obsidian').readlink(),app/'obsidian')
+        desktop=self.root/'usr/local/share/applications/obsidian-AM.desktop'
+        self.assertIn('Exec="'+str(app/'obsidian')+'" --no-sandbox',desktop.read_text())
+        # A second install retains the working alias and existing desktop entry.
+        self.stage()
+        result=subprocess.run(['sh',str(app/'recipe.am')],env=self.env(),capture_output=True)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertEqual(gui.readlink(),app/'obsidian')
+        result=subprocess.run(['sh',str(app/'remove')],capture_output=True)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertFalse(gui.is_symlink())
+
+    def test_obsidian_desktop_path_escaping(self):
+        directory=self.path/'space \\ dollar$ quote" tick` percent% amp& hash#'
+        desktop=self.path/'obsidian.desktop'
+        desktop.write_text('Exec=obsidian --no-sandbox %U\n')
+        source=(ROOT/'modules/appimage.am').read_text()
+        lines=source.splitlines()
+        start=next(n for n,line in enumerate(lines) if line.lstrip().startswith('gui=$('))
+        script='dir=$1; APP=obsidian\n'+'\n'.join(lines[start:start+2])
+        result=subprocess.run(['sh','-c',script,'test',str(directory)],cwd=self.path,capture_output=True)
+        self.assertEqual(result.returncode,0,result.stderr)
+        path=str(directory/'obsidian')
+        quoted=''.join(('\\\\\\\\' if c=='\\' else '\\\\'+c if c in '"`$' else '%%' if c=='%' else c) for c in path)
+        self.assertEqual(desktop.read_text(),'Exec="'+quoted+'" --no-sandbox %U\n')
 
 
 if __name__=='__main__':
