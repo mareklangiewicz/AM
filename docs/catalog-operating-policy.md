@@ -143,4 +143,18 @@ contain old declarations: a module sync alone does not convert them. Refresh
 installed archive recipes together with the shared module when deploying; the
 old named layouts fail before catalog/download work with an explicit recipe
 refresh message. Do not claim deployment complete from module sync alone.
-No live installation or module synchronization was performed for this refactor.
+The source refactor itself performed no live installation or module synchronization.
+
+
+November 5, 2026 deployment: after explicit push and deployment authorization,
+source `e4c84b154803a2ac3e3ac432ba3d0aa9409c2d95` was pushed and deployed on myxps.
+The three changed runtime modules and the installed btop, Kitty, rclone and EmmyLua
+recipes were refreshed together; their `.am-installer` source snapshots were also
+refreshed. The manager and all source modules match installed bytes. Each of the
+four real standalone updaters succeeded with “Update not needed”; all eight
+executable version probes passed. Binaries, version/download metadata, removers,
+updaters, launcher targets and the official Obsidian CLI remained unchanged.
+Local plans, before-images and verification receipts are in
+`/home/marek/Documents/Codex/am-yaml-cutover/recipe-locality-deployment/`.
+No GUI startup was exercised. The November 6 natural scheduled publication and
+subsequent ordinary `am -u` remain unobserved; no workflow was dispatched.

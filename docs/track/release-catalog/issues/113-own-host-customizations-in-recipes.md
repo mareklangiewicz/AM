@@ -43,3 +43,17 @@ that previously used named layouts (btop, Kitty, rclone and EmmyLua) together wi
 the shared module; ordinary module sync alone intentionally does not upgrade
 those recipe declarations. This supersedes 112's compatibility commitment by
 Marek's explicit request, without adding a migration framework.
+
+
+## Deployment follow-up — November 5, 2026
+
+Marek explicitly authorized the four-commit push, then the coordinated live
+refresh. Source e4c84b154 was pushed to main-marek. Three changed modules,
+four installed recipes and their four source snapshots were deployed together.
+All installed source modules and manager byte-match that revision. Four real
+standalone updates report no update needed; eight binary version probes pass.
+Post-update hashes confirm existing binaries, updater/version/remover metadata,
+launcher targets and Obsidian CLI/desktop override were preserved. Plans,
+before-images and receipts: `/home/marek/Documents/Codex/am-yaml-cutover/recipe-locality-deployment/`.
+No GUI check or natural-cycle observation is claimed; November 6 publication and
+ordinary `am -u` remain pending. No workflow dispatch or yadm operation occurred.

@@ -1383,3 +1383,11 @@ remaining findings. Disposable review output only: production adapter delivery,
 source/policy evidence, installed transaction/recovery and operational gates stay
 open in [107](issues/107-prepare-delivered-legacy-adapters.md). No enrollment,
 manifest/cap/runtime/live/push/publication/repin/yadm changes.
+
+
+2026-11-05: [113 deployment follow-up](issues/113-own-host-customizations-in-recipes.md):
+Marek authorized source push and coordinated live recipe/runtime refresh at
+e4c84b154. Four actual standalone updaters and eight version probes pass;
+installed manager/modules byte-match source, preserved metadata/binaries/launchers
+verified. Local before-images and receipts retained. Natural November 6 cycle
+and ordinary `am -u` remain unobserved.
