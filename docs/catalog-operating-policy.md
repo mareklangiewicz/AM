@@ -285,3 +285,16 @@ reviewed complete declarations replace them; collection enrollment is unchanged.
 The retirement itself performs no publication, installed metadata refresh or module
 synchronization. Ticket 119 separately fixes native Termux awk compilation of the
 reader's forbidden-character expression; that source change is not deployed.
+
+November 5 retirement deployment: after explicit push/deploy authorization,
+`eedd89328` was pushed to origin/main-marek. The sole runtime delta since
+`14adf6fd1`, `catalog-yaml-parser.am`, was backed up and deployed on myxps.
+All source modules and the manager match installed bytes; 230 protected paths
+(including installed recipes/snapshots and earlier protected application paths)
+retained their hashes, modes and link targets. The installed reader Unicode /
+forbidden-codepoint regression and manager help passed. Read-only live selection
+passed for Neovim and all four distinct same-release EmmyLua tools at publication
+`9461e1770bbf67be8552c2d1f84811c24a7d2bdd`. The first sandboxed smoke attempt
+failed DNS; a fresh network-enabled session passed. No binary update or recipe
+refresh was needed. Evidence and parser before-image:
+`/home/marek/Documents/Codex/am-yaml-cutover/retirement-deployment/`.
