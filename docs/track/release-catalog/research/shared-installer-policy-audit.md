@@ -79,3 +79,15 @@ The maintenance cutover reads those records instead of its own app switches.
 
 This addresses the scoped findings above; it is not an audit of other historical
 recipes. No live deployment or publication was performed.
+
+## Recipe locality: 113 supersedes the 112 adapter registry
+
+Marek explicitly chose recipe locality over retaining compatibility for old
+installed recipes in his single-user fork. The 21 marked host recipe headers now
+own all host-specific declarations, including selection and archive/toolset facts.
+`host_recipes.py` reads literal declarations for the collector/compiler/cutover;
+the compiler updates derived selection policy without rewriting recipes.
+`host-apps.json` and `archive-policy.am` are deleted. Shared staging reads generic
+recipe settings directly. Named-layout and legacy-target compatibility is dropped;
+the four affected installed recipes must be refreshed together with shared runtime
+on deployment. Source only: no installed-host changes or publication performed.

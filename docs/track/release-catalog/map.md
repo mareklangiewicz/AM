@@ -1,5 +1,16 @@
 # Release catalog exploration
 
+## Full host recipe locality — November 5, 2026
+
+[113 resolved](issues/113-own-host-customizations-in-recipes.md): all host-specific
+settings now live in the 21 marked recipes. Collector, cutover and policy compiler
+read those literal declarations; the compiler leaves recipes untouched. Removed
+`host-apps.json`, `archive-policy.am`, old layout aliases and legacy-target inference.
+This supersedes 112's adapter registry/compatibility approach at Marek's request.
+All 16 host groups, 11 manager tests and two compiler/parser tests pass; Standards
+and Spec reviews are clear. Source only, no push or deployment. The four old named
+archive recipes need refreshing together with shared runtime when deploying.
+
 ## Host archive policy separation — November 5, 2026
 
 [112 resolved](issues/112-separate-host-archive-adapters.md): the host manifest now

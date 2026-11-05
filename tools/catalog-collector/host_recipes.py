@@ -35,7 +35,15 @@ def recipe_rows(root):
         if app != path.name or settings['CATALOG_RECIPE'] != 'x86_64/'+app:
             raise ValueError('host recipe identity mismatch: '+str(path))
         tools = settings.get('PACKAGE_TOOLS', '').split()
-        layout = settings.get('PACKAGE_LAYOUT', 'appimage')
+        kind = settings.get('PACKAGE_KIND', 'appimage')
+        layout = settings.get('PACKAGE_LAYOUT', 'raw' if kind == 'executable' else 'appimage')
+        if kind not in ('appimage','executable') or (layout == 'toolset') != bool(tools):
+            raise ValueError('inconsistent package kind/tools: '+str(path))
+        if settings['CATALOG_CHANNEL'] not in ('any','stable','nightly'):
+            raise ValueError('unsupported host channel: '+str(path))
+        for boolean in ('REFRESH_ALWAYS','CATALOG_FRESH_ONLY'):
+            if settings.get(boolean,'false') not in ('true','false'):
+                raise ValueError('invalid recipe boolean: '+boolean)
         if layout not in ('appimage', 'raw', 'tar', 'zip', 'toolset'):
             raise ValueError('unsupported host package layout: '+str(path))
         row = dict(app=app, repository_id=int(settings['CATALOG_REPOSITORY_ID']),
@@ -43,10 +51,10 @@ def recipe_rows(root):
                    asset_pattern=settings['CATALOG_ASSET_PATTERN'], layout=layout,
                    version_identity=settings.get('VERSION_IDENTITY', 'url'),
                    refresh_always=settings.get('REFRESH_ALWAYS', 'false') == 'true',
+                   fresh_only=settings.get('CATALOG_FRESH_ONLY', 'false') == 'true',
                    settings=settings)
         if tools:
-            row.update(tools=tools, tool_asset_suffix=settings['CATALOG_TOOL_ASSET_SUFFIX'],
-                       fresh_only=settings.get('CATALOG_FRESH_ONLY', 'false') == 'true')
+            row.update(tools=tools, tool_asset_suffix=settings['CATALOG_TOOL_ASSET_SUFFIX'])
         if layout in ('tar', 'zip', 'toolset'):
             row['archive'] = dict(kind=layout, root=settings.get('ARCHIVE_ROOT', '.'),
                 executables=tools or settings.get('PACKAGE_EXECUTABLES', app).split(),

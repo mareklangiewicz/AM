@@ -41,4 +41,19 @@ class HostPolicySource(unittest.TestCase):
                 if path.name!='emmylua':self.assertEqual(before[path.name],path.read_bytes())
 
 
+    def test_nonliteral_and_inconsistent_headers_refuse(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root=Path(temporary)
+            recipes=root/'programs/x86_64';recipes.mkdir(parents=True)
+            source=(compiler.ROOT/'programs/x86_64/emmylua').read_text()
+            recipe=recipes/'emmylua'
+            for bad in (source.replace('CATALOG_FRESH_ONLY=true','CATALOG_FRESH_ONLY=typo'),
+                        source.replace('PACKAGE_LAYOUT=toolset','PACKAGE_LAYOUT=tar'),
+                        source.replace('APP=emmylua','APP=$(touch /tmp/should-not-run)'),
+                        source.replace('APP=emmylua','APP=emmylua; false')):
+                recipe.write_text(bad)
+                with self.assertRaises(ValueError):recipe_rows(root)
+
+
+
 if __name__ == '__main__':unittest.main()
