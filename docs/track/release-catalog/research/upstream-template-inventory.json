@@ -1,0 +1,61 @@
+{
+  "recipes": 9234,
+  "counts": {
+    "unmatched": 2030,
+    "instance": 2080,
+    "parameter_review": 5124
+  },
+  "source_commits": [
+    "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22"
+  ],
+  "templates_checked": 25,
+  "matched_families": {
+    "bb53f3180ec92f862020f8bdccef0f6614015bae:templates/AM-SAMPLE-AppImage": 991,
+    "bb53f3180ec92f862020f8bdccef0f6614015bae:templates/AM-SAMPLE-Archive": 209,
+    "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage": 1087,
+    "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive": 4916,
+    "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-Archive": 209,
+    "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-portable2appimage": 1
+  },
+  "examples": {
+    "unmatched": [
+      "programs/x86_64/0ad",
+      "programs/x86_64/0ad-prerelease",
+      "programs/x86_64/0xchat-app-main",
+      "programs/x86_64/3d-puzzles",
+      "programs/x86_64/3nity-media"
+    ],
+    "instance": [
+      "programs/x86_64/0x808",
+      "programs/x86_64/0xfx",
+      "programs/x86_64/0xsynth",
+      "programs/x86_64/121gw-open-firmware",
+      "programs/x86_64/1aivault"
+    ],
+    "parameter_review": [
+      "programs/x86_64/12to11",
+      "programs/x86_64/20x",
+      "programs/x86_64/2fac",
+      "programs/x86_64/2ship2harkinian",
+      "programs/x86_64/4nier-patrimonio"
+    ]
+  },
+  "compatibility": "unassessed",
+  "automatic_conversion": false,
+  "tool_commit": "f691b7fb5ef80d8673c7bd3180eebb827f4609be",
+  "command": [
+    "python3",
+    "tools/recipe-reconstruction/reconstruct.py",
+    "inventory",
+    "--recipes-revision",
+    "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+    "--summary"
+  ],
+  "prefix": "programs/x86_64/",
+  "template_revisions": [
+    "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+    "bb53f3180ec92f862020f8bdccef0f6614015bae"
+  ],
+  "full_inventory_sha256": "cf773085d71da2325f81359db1fd7db9e4cf17fbce5e8b87312d41f12567ccd7",
+  "full_inventory_local": "/tmp/am-123-upstream-inventory.jsonl"
+}

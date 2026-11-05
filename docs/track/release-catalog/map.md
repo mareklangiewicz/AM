@@ -2,6 +2,15 @@
 
 ## Maintained upstream recipe reconstruction
 
+[123 resolved](issues/123-generalize-upstream-template-recognition.md): reads
+original templates/generator/fixtures directly from Git, removing tracked copies.
+Shared recognition covers all 25 originals across two pinned revisions; tests
+generate cases from every template. Migration inventory of 9,234 upstream x86_64
+recipes finds 2,080 standard instances, 5,124 matching layouts needing parameter
+review and 2,030 unmatched sources. [Summary](research/upstream-template-inventory.json).
+Twenty-four focused tests pass. No recipe conversion or enrollment; recognition
+does not prove runtime compatibility or that a nonmatch necessarily has custom logic.
+
 [122 resolved](issues/122-use-upstream-template-sources.md): renamed the family
 `github-appimage-3.5` and replaced our derived recipe body with upstream's
 unmodified `templates/AM-SAMPLE-AppImage` at `bb53f3180`, plus its original
