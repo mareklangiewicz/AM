@@ -2,14 +2,22 @@
 
 ## Next frontier — upstream recipe reconstruction
 
-[120 open](issues/120-prototype-upstream-recipe-reconstruction.md): before broad
+[120 resolved](issues/120-prototype-upstream-recipe-reconstruction.md): five real
+recipes reconstruct byte-for-byte; custom installer/updater steps and template
+changes refuse. [Report](research/upstream-recipe-reconstruction.md) recommends
+a bounded maintained tool and records runtime compatibility differences.
+Prototype branch `prototype/120-upstream-reconstruction` at `69c76db1f` preserves
+the runnable CLI/HTML and pinned fixtures outside main-marek.
+[121 open](issues/121-maintain-upstream-recipe-reconstruction.md) is the next
+implementation scope; no conversion or collection expansion has started.
+
+Original direction: before broad
 recipe conversion, prototype recognizing one pinned upstream AppImage template,
 extracting a short declaration and reconstructing the complete original recipe.
 Require exact accounting for original content and refusal on custom steps.
 Template recognition and our runtime's behavioral compatibility are separate
 checks. Use a handful of real recipes to decide whether a maintained comparison
-tool will simplify upstream merges. No implementation or collection expansion
-has started; all-app catalog coverage has no scheduled date.
+tool will simplify upstream merges. All-app catalog coverage has no scheduled date.
 
 Deployment follow-up: `eedd89328` was pushed and its parser fix deployed after
 explicit authorization; [operating policy](../../catalog-operating-policy.md)

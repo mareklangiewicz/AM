@@ -1,7 +1,7 @@
 # Prototype upstream recipe recognition and reconstruction
 
 Type: prototype
-Status: claimed
+Status: resolved
 Triage: ready-for-agent
 
 ## Request and purpose
@@ -61,3 +61,15 @@ November 5, 2026: Marek approved recording this direction in the tracker first.
 Implementation has not started.
 
 November 5, 2026: claimed for the pinned-template reconstruction experiment.
+
+## Answer
+
+Five real recipes reconstruct byte-for-byte using one complete upstream template
+and literal app/repository values; eight scenarios demonstrate parameter updates
+and refusals for custom steps, updater drift and template changes. Proceed with
+a small maintained tool, keeping runtime compatibility as a separate gate.
+[Report](../research/upstream-recipe-reconstruction.md) records provenance,
+validation, limitations and compatibility differences. Prototype preserved on
+`prototype/120-upstream-reconstruction` at `69c76db1f`, outside main-marek.
+[121](121-maintain-upstream-recipe-reconstruction.md) scopes maintained work.
+No runtime changes, conversion, enrollment, publication or deployment occurred.
