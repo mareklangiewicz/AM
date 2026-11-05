@@ -1,21 +1,21 @@
 format: 2
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/e1b735b00e80648b1ae19e360291f00d366885fe/docs/catalog-format-v2.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/8090224168f5713ebb33cc4c89e5ded5d75c57f9/docs/catalog-format-v2.md"
 repository_id: 16408992
 repository: "neovim/neovim"
 collection:
-  attempted_at: "2026-11-04T21:47:59Z"
+  attempted_at: "2026-11-05T10:03:04Z"
   page_size: 100
   page_limit: 1
   reconcile: false
   status: "ok"
 last_success:
-  completed_at: "2026-11-04T21:47:59Z"
+  completed_at: "2026-11-05T10:03:05Z"
   page_size: 100
   page_limit: 1
   reconcile: false
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-04T21:47:59Z"
+observed_at: "2026-11-05T10:03:05Z"
 releases:
   "3948163":
     tag: "v0.1.5"
@@ -3395,6 +3395,7 @@ releases:
         content_type: "application/zip"
         digest: "sha256:2e58d259ffcc6145e5112ea02330126c6b57da09087bb9265fb2fa9aa10b485c"
   "433540506":
+    observed_at: "2026-11-04T21:47:59Z"
     tag: "nightly"
     title: "Nvim development (prerelease) build"
     url: "https://github.com/neovim/neovim/releases/tag/nightly"
@@ -3483,3 +3484,92 @@ releases:
         size: 8248782
         content_type: "application/zip"
         digest: "sha256:44fe034f81654294e56dd8138fb42a272e6db123281db69c5006600f4ccb15af"
+  "434810865":
+    tag: "nightly"
+    title: "Nvim development (prerelease) build"
+    url: "https://github.com/neovim/neovim/releases/tag/nightly"
+    created_at: "2026-11-05T00:51:27Z"
+    published_at: "2026-11-05T05:19:06Z"
+    updated_at: "2026-11-05T05:19:06Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/neovim/neovim/zipball/nightly"
+    source_tar_url: "https://api.github.com/repos/neovim/neovim/tarball/nightly"
+    assets:
+      "712176496":
+        name: "nvim-linux-arm64.tar.gz"
+        url: "https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-arm64.tar.gz"
+        size: 21914465
+        content_type: "application/x-gtar"
+        digest: "sha256:5f65f975bd8b31094e71ca63e905017ef55066baa86c43dac237a64c60574279"
+      "712176497":
+        name: "nvim-macos-arm64.tar.gz"
+        url: "https://github.com/neovim/neovim/releases/download/nightly/nvim-macos-arm64.tar.gz"
+        size: 10123635
+        content_type: "application/x-gtar"
+        digest: "sha256:31749c885053645a692dd7ef3e3bdeb0ebc8d11e5202c7a1221a63382a2aa141"
+      "712176498":
+        name: "nvim-linux-x86_64.appimage"
+        url: "https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.appimage"
+        size: 20683256
+        content_type: "application/vnd.appimage"
+        digest: "sha256:43f967eaa0fb9c4695442bfe84f38d9319e79a1cac3203bbbbb995cc8a919ec9"
+      "712176499":
+        name: "nvim-linux-x86_64.tar.gz"
+        url: "https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.tar.gz"
+        size: 21764155
+        content_type: "application/x-gtar"
+        digest: "sha256:0716503b1fc792ac13f8cadf0d5879b310544cdc3eab6d9c3c8307a2e2fb1dfb"
+      "712176500":
+        name: "nvim-macos-x86_64.tar.gz"
+        url: "https://github.com/neovim/neovim/releases/download/nightly/nvim-macos-x86_64.tar.gz"
+        size: 10372848
+        content_type: "application/x-gtar"
+        digest: "sha256:ed420d206df1ffa83db83dfbc4ec7a9a9bfa30e890fe4dfd94c50d69bce13cbd"
+      "712176539":
+        name: "nvim-linux-x86_64.appimage.zsync"
+        url: "https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.appimage.zsync"
+        size: 70923
+        content_type: "application/octet-stream"
+        digest: "sha256:eb57c8ee9e8272a87c925bda47785fed21e09d89b6eb6a40ac00cd4031827562"
+      "712176540":
+        name: "nvim-linux-arm64.appimage"
+        url: "https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-arm64.appimage"
+        size: 20662792
+        content_type: "application/vnd.appimage"
+        digest: "sha256:ec650978bb7e8c0e1e5c2453992ea629eab45d8a89c1139afb326b3166bf5108"
+      "712176549":
+        name: "nvim-linux-arm64.appimage.zsync"
+        url: "https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-arm64.appimage.zsync"
+        size: 70851
+        content_type: "application/octet-stream"
+        digest: "sha256:b3270f0d3447536f6f8d005aa54eaac251751e83660000f6a60696e36efcd12e"
+      "712176551":
+        name: "nvim-win64.msi"
+        url: "https://github.com/neovim/neovim/releases/download/nightly/nvim-win64.msi"
+        size: 19253635
+        content_type: "application/x-msi"
+        digest: "sha256:8451f029c687aaa7f7925d8863ade8c0f17cc0cdd4c52af9f2f8b2b31924f825"
+      "712176552":
+        name: "nvim-win64.zip"
+        url: "https://github.com/neovim/neovim/releases/download/nightly/nvim-win64.zip"
+        size: 19510755
+        content_type: "application/zip"
+        digest: "sha256:d6cd1ed81bca07ce5c3b4e11eb2fe0670dceeeaa822b0e36be1b2b19c9bbad21"
+      "712176557":
+        name: "nvim-win-arm64.msi"
+        url: "https://github.com/neovim/neovim/releases/download/nightly/nvim-win-arm64.msi"
+        size: 19622274
+        content_type: "application/x-msi"
+        digest: "sha256:b27ba95ed38a0180a13c5759f7352a1214ef406f5fb995d783d4fc580e9e035c"
+      "712176565":
+        name: "nvim-win-arm64.zip"
+        url: "https://github.com/neovim/neovim/releases/download/nightly/nvim-win-arm64.zip"
+        size: 19907884
+        content_type: "application/zip"
+        digest: "sha256:b12e48476be5557e357edfcaa151d7394781d1c902710203cc4404f6fcfafd01"
+      "712176574":
+        name: "nvim-wasm-emscripten.zip"
+        url: "https://github.com/neovim/neovim/releases/download/nightly/nvim-wasm-emscripten.zip"
+        size: 8256369
+        content_type: "application/zip"
+        digest: "sha256:17f4d7a7352e5bd7688580ef2daefbb7a086baa75a9871c66ac73c8a82d699d3"

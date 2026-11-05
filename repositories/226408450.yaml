@@ -1,21 +1,21 @@
 format: 2
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/e1b735b00e80648b1ae19e360291f00d366885fe/docs/catalog-format-v2.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/8090224168f5713ebb33cc4c89e5ded5d75c57f9/docs/catalog-format-v2.md"
 repository_id: 226408450
 repository: "neovide/neovide"
 collection:
-  attempted_at: "2026-11-04T21:47:43Z"
+  attempted_at: "2026-11-05T10:02:54Z"
   page_size: 100
   page_limit: 1
   reconcile: false
   status: "ok"
 last_success:
-  completed_at: "2026-11-04T21:47:43Z"
+  completed_at: "2026-11-05T10:02:54Z"
   page_size: 100
   page_limit: 1
   reconcile: false
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-04T21:47:43Z"
+observed_at: "2026-11-05T10:02:54Z"
 releases:
   "23128401":
     tag: "0.1.0"
@@ -1296,6 +1296,7 @@ releases:
         content_type: "application/octet-stream"
         digest: "sha256:ab550938a8f91f37425cde19764fe3c84a8d0df621ab651922f78a7b7d04f8ae"
   "433537621":
+    observed_at: "2026-11-04T21:47:43Z"
     tag: "nightly"
     title: "Nightly"
     url: "https://github.com/neovide/neovide/releases/tag/nightly"
@@ -1413,3 +1414,68 @@ releases:
         size: 13029376
         content_type: "application/x-msi"
         digest: "sha256:c8460bab3f75387822fd41e24114436d72fb879b45e7131f20fef2f5523921d6"
+  "434806746":
+    tag: "nightly"
+    title: "Nightly"
+    url: "https://github.com/neovide/neovide/releases/tag/nightly"
+    created_at: "2026-11-05T00:58:23Z"
+    published_at: "2026-11-05T05:33:12Z"
+    updated_at: "2026-11-05T05:33:12Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/neovide/neovide/zipball/nightly"
+    source_tar_url: "https://api.github.com/repos/neovide/neovide/tarball/nightly"
+    assets:
+      "712169657":
+        name: "neovide-linux-x86_64.tar.gz"
+        url: "https://github.com/neovide/neovide/releases/download/nightly/neovide-linux-x86_64.tar.gz"
+        size: 13474242
+        content_type: "application/octet-stream"
+        digest: "sha256:09e4d36d0bfff97515ec3d8483c396ffb91d84e5ee90ec06ee0a2ad840b3e0c9"
+      "712169725":
+        name: "neovide.AppImage"
+        url: "https://github.com/neovide/neovide/releases/download/nightly/neovide.AppImage"
+        size: 13478392
+        content_type: "application/octet-stream"
+        digest: "sha256:d046294098aebdecf4131e68bc01f320d6f6f41505faf5f43b858e09a020e174"
+      "712169789":
+        name: "neovide.AppImage.zsync"
+        url: "https://github.com/neovide/neovide/releases/download/nightly/neovide.AppImage.zsync"
+        size: 46277
+        content_type: "application/octet-stream"
+        digest: "sha256:34d35b3b9c53f76e262ac3241398c44ee6b655dae6f71f815ac0107c0a6ca06a"
+      "712180353":
+        name: "Neovide-x86_64-apple-darwin.dmg"
+        url: "https://github.com/neovide/neovide/releases/download/nightly/Neovide-x86_64-apple-darwin.dmg"
+        size: 12730795
+        content_type: "application/octet-stream"
+        digest: "sha256:0f14ffda5b9b6529af044998880f13c37097a025582c804f6a315836e388eec4"
+      "712180419":
+        name: "Neovide-aarch64-apple-darwin.dmg"
+        url: "https://github.com/neovide/neovide/releases/download/nightly/Neovide-aarch64-apple-darwin.dmg"
+        size: 12295165
+        content_type: "application/octet-stream"
+        digest: "sha256:fabc34565d7e173090e65cabb71149a83bc856e52a9ae9145623e428ed4b316c"
+      "712180496":
+        name: "neovide-macos-x86_64.tar.gz"
+        url: "https://github.com/neovide/neovide/releases/download/nightly/neovide-macos-x86_64.tar.gz"
+        size: 11590890
+        content_type: "application/octet-stream"
+        digest: "sha256:4d4cd4bd1cae85c164addb0ac1c30b5c4b81ff8f69b1dad83859e97d329ca4be"
+      "712180564":
+        name: "neovide-macos-aarch64.tar.gz"
+        url: "https://github.com/neovide/neovide/releases/download/nightly/neovide-macos-aarch64.tar.gz"
+        size: 11128686
+        content_type: "application/octet-stream"
+        digest: "sha256:a04e12b0082528b4d24d40f2c170b63bf27ea0f8729860be862e923d399853a7"
+      "712205229":
+        name: "neovide.msi"
+        url: "https://github.com/neovide/neovide/releases/download/nightly/neovide.msi"
+        size: 13017088
+        content_type: "application/octet-stream"
+        digest: "sha256:004b15738486787b7fe55ace4604b321349bdba840c528eee7bf4dee833df31b"
+      "712205294":
+        name: "neovide-windows-x86_64.zip"
+        url: "https://github.com/neovide/neovide/releases/download/nightly/neovide-windows-x86_64.zip"
+        size: 12690665
+        content_type: "application/octet-stream"
+        digest: "sha256:95c87d40a4d2ca1c3525fb65ea1af556c2ca2f8ca6f0949a046ba69936cd323c"
