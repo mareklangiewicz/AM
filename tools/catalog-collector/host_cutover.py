@@ -12,7 +12,7 @@ import subprocess
 import tempfile
 
 from host_catalog import configuration, ROOT, FILE_CAP
-from yaml_installed_migration import managed_updater
+from installed_recipe import bound_recipe, managed_updater
 from yaml_publication import load_local
 
 
@@ -36,7 +36,7 @@ def select(rows, repo, pin):
             tools=row.get('tools', [app])
             selections={}
             for tool in tools:
-                env=dict(os.environ,LC_ALL='C',AM_YAML_RECIPE='x86_64/'+app,
+                env=dict(os.environ,LC_ALL='C',AM_YAML_RECIPE=row['recipe'],
                     AM_YAML_PIN=pin,AM_YAML_REPOSITORY=rid,AM_YAML_NOW=now,
                     AM_YAML_TOOL=tool if row.get('tools') else '',AM_YAML_INCLUDE_PUBLICATION='1',AM_YAML_ACCEPT='')
                 fields=subprocess.check_output(['awk','-f',str(ROOT/'modules/catalog-yaml-policy.am')],input=facts,env=env).decode().splitlines()
@@ -151,12 +151,11 @@ def apply(prepared, root):
     for row in manifest['apps']:
         app=row['app'];path=apps/app;layout=row['layout'];payload=prepared/app/'payload'
         overlay(payload,path)
-        text=(ROOT/'programs/x86_64'/app).read_text()
-        bindings='\n'.join(['AMREPO=${AMREPO-"https://raw.githubusercontent.com/mareklangiewicz/AM/'+source+'"}',
-            'APPS_DIR="'+str(apps)+'"','BIN_DIR="'+str(bins)+'"','DESKTOP_DIR="'+str(desktop)+'"',
-            'CATALOG_YAML_HELPER="'+str(manager/'modules/catalog-yaml.am')+'"'])+'\n'
-        text=text.replace('. "/opt/am/modules/appimage.am"',bindings+'. "'+str(manager/'modules/appimage.am')+'"')
-        (path/'recipe.am').write_text(text)
+        body=(ROOT/'programs'/row['recipe']).read_bytes()
+        paths=dict(APPS_DIR=str(apps), BIN_DIR=str(bins), DESKTOP_DIR=str(desktop))
+        text=bound_recipe(body, 'https://raw.githubusercontent.com/mareklangiewicz/AM/'+source,
+                          paths, manager/'modules')
+        (path/'recipe.am').write_bytes(text)
         (path/'AM-updater').write_bytes(managed_updater(path/'recipe.am'));(path/'AM-updater').chmod(0o755)
         first=next(iter(manifest['selections'][app].values()))
         version=first['published_at'] if row['version_identity']=='published_at' else first['url']

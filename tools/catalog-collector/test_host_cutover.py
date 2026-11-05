@@ -6,6 +6,7 @@ import unittest
 
 from bounded import normalize
 from retention import refresh
+from installed_recipe import managed_updater
 from host_catalog import configuration
 from yaml_publication import git, publish_local
 from yaml_adapter import schema_url
@@ -87,7 +88,7 @@ else:
         for row in self.rows:
             with self.subTest(app=row['app']):
                 app=self.install('x86_64/'+row['app'])
-                self.assertIn('# AM-CATALOG-UPDATER 1',(app/'AM-updater').read_text())
+                self.assertEqual((app/'AM-updater').read_bytes(), managed_updater(app/'recipe.am'))
                 self.assertEqual((app/'version').read_text().strip(),'2026-11-02T00:00:00Z' if row['app']=='logseq-app-db-nightly' else (app/'download-url').read_text().strip())
                 result=self.standalone(app/'AM-updater')
                 self.assertEqual(result.returncode,0,result.stderr)

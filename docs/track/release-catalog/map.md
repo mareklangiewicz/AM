@@ -14,7 +14,11 @@ observation is optional monitoring and remains unobserved.
 declaration/selection slice in source: generic architecture-aware declarations,
 data-only generated registry, maintained selector logic and an independent explicit
 collection list (unchanged 21 apps/19 repositories). Older policies remain transitional.
-No push or deployment; installed recipe binding/updater refresh remains separate.
+Source through 01241d2d3 is pushed; no deployment.
+[115 resolved](issues/115-maintained-installed-recipe-refresh.md) adds shared
+maintenance binding/updater rendering and an explicit metadata-only refresh command.
+29 distinct focused tests pass, plus a rerun verifying actual shell installer updater
+bytes for all 21 apps. This maintenance slice is source-only, not deployed.
 The completed rollout has no remaining implementation ticket. [71](issues/71-design-simple-yaml-catalog.md)
 is resolved by delivered design/implementation. [47](issues/47-enroll-scoped-migration-sources.md)
 and [49](issues/49-migrate-common-appimage-batch.md) are resolved as superseded

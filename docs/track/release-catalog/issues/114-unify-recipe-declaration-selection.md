@@ -143,3 +143,8 @@ was rerun and passed after fixing its pre-existing historical-body assumption.
 The broad `test_yaml_*.py` run was interrupted during lengthy legacy AppImage
 coverage; it is not a full-suite pass. Python compilation, shell syntax and
 `git diff --check` pass. No independent agent review is claimed.
+
+## Push follow-up
+
+Marek requested push and continuation. `main-marek` was pushed from 635597fd0
+through 01241d2d3. No live deployment or workflow dispatch accompanied that push.

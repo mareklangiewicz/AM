@@ -5,6 +5,8 @@ trusted local review artifacts, not a remote distribution/authentication format.
 Run with exclusive control of the chosen installation and manager/module paths;
 the advisory transaction lock does not lock ordinary AM updates/module sync.
 """
+from installed_recipe import managed_updater
+
 import argparse
 import contextlib
 import fcntl
@@ -93,11 +95,6 @@ def write_json(path, value):
 def blob(source, pin, name):
     return subprocess.run(['git', '-C', str(source), 'show', pin+':'+name],
                           check=True, capture_output=True).stdout
-
-
-def managed_updater(recipe):
-    return ('#!/bin/sh\n# AM-CATALOG-UPDATER 1\nexec sh '+
-            "'"+str(recipe).replace("'", "'\\''")+"' --am-update \"$@\"\n").encode()
 
 
 def prepare(source, source_pin, source_url, installation, recipe, replacement,

@@ -214,6 +214,44 @@ recipe declarations, not a second final declaration format. Remove those branche
 only after all their supported identities have reviewed replacements and matching
 behavior checks. This slice does not convert unused recipes or widen collection.
 
-This source change has not been pushed or deployed. Existing installed recipes
+Source through `01241d2d3` was pushed after Marek requested it; this change has
+not been deployed. Existing installed recipes
 and source snapshots keep their previous markers until an explicitly authorized
 refresh; selection fields and runtime behavior for those 21 identities are unchanged.
+
+
+## Maintained metadata-only recipe refresh
+
+Use `tools/catalog-collector/recipe_refresh.py` for one explicitly selected
+installation. This maintainer command requires Python; installed AM clients and
+standalone updaters remain shell-only. Preview reads a recipe from a full local
+source commit and prints old/new recipe and `.am-installer` snapshot hashes:
+
+```sh
+python3 tools/catalog-collector/recipe_refresh.py \
+  --source /path/to/AM --commit FULL_SOURCE_SHA \
+  --recipe x86_64/APP --installation /path/to/apps/APP
+```
+
+After reviewing that source and preview, append `--apply --backup /new/backup/dir`
+and `--expect-recipe OLD_RECIPE_SHA256 --expect-snapshot OLD_SNAPSHOT_SHA256`.
+The backup directory must not exist and must be outside the installation. Apply
+checks both hashes and the exact managed updater before writing. It preserves
+installed app/bin/desktop/module paths, keeps configured AMREPO repository ownership,
+and advances only its source ref to the selected commit. Recipes and source
+snapshots retain file modes and ownership. Custom updaters, symlink metadata,
+identity mismatches and unsupported installed bindings refuse.
+
+Only `recipe.am` and `.am-installer/APP` are replaced. Binaries, version/download
+metadata, removers, updaters, desktop files and launcher links remain untouched.
+Runtime synchronization is separate: coordinate any required runtime changes
+before relying on new declarations. Run under exclusive maintenance; this command
+does not lock ordinary AM operations. Each file replaces by rename, but the pair
+is not transactional. If interrupted, inspect the backup and restore its two
+metadata files or rerun with reviewed current hashes and a fresh backup directory.
+It provides no automated rollback or binary migration framework.
+
+The shared Python `installed_recipe.py` owns compact recipe binding and managed
+updater rendering for maintenance/cutover tooling. The production shell installer
+remains independent of Python; integration tests compare its actual updater bytes
+with the maintained renderer. No live refresh accompanied this source addition.
