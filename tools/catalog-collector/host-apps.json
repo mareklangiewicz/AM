@@ -36,6 +36,9 @@
       ],
       "launchers": [
         "btop:bin/btop"
+      ],
+      "legacy_launchers": [
+        "btop:btop"
       ]
     }
   },
@@ -50,7 +53,8 @@
     "refresh_always": false,
     "archive": {
       "kind": "toolset",
-      "root": "."
+      "root": ".",
+      "legacy_launchers": []
     },
     "tools": [
       "emmylua_ls",
@@ -90,6 +94,10 @@
       "launchers": [
         "kitty:bin/kitty",
         "kitten:bin/kitten"
+      ],
+      "legacy_launchers": [
+        "kitty:kitty",
+        "kitten:kitten"
       ]
     }
   },
@@ -160,6 +168,9 @@
       ],
       "launchers": [
         "rclone:rclone"
+      ],
+      "legacy_launchers": [
+        "rclone:bin/rclone"
       ]
     }
   },

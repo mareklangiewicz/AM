@@ -3,7 +3,7 @@
 am_appimage() { am_package "$@"; }
 
 am_archive_configure() {
-	archive_kind=$1 archive_root=. archive_executables=$2 archive_launchers="$2:$2" tools=
+	archive_kind=$1 archive_root=. archive_executables=$2 archive_launchers="$2:$2" archive_legacy_launchers="$2:bin/$2" tools=
 	case $1 in raw|tar) return 0 ;; esac
 	policy=${AM_ARCHIVE_POLICY-$(dirname -- "${CATALOG_YAML_HELPER-/opt/am/modules/catalog-yaml.am}")/archive-policy.am}
 	[ -r "$policy" ] || { echo 'Missing archive-policy.am; synchronize AM modules.' >&2; return 1; }
@@ -186,7 +186,10 @@ am_package() (
 	}
 	for launcher in $archive_launchers; do
 		name=${launcher%%:*} entry=${launcher#*:}
-		case $entry in bin/*) legacy=$dir/$name ;; *) legacy=$dir/bin/$name ;; esac
+		legacy=
+		for previous in $archive_legacy_launchers; do
+			[ "${previous%%:*}" != "$name" ] || legacy=$dir/${previous#*:}
+		done
 		link_app "$name" "$dir/$entry" "$legacy"
 	done
 	for extra in $extra_launchers; do link_app "$extra" "$dir/$APP"; done

@@ -1,5 +1,16 @@
 # Release catalog exploration
 
+## Host archive policy separation — November 5, 2026
+
+[112 resolved](issues/112-separate-host-archive-adapters.md): the host manifest now
+owns archive roots, required binaries, launcher/legacy targets and toolset
+membership. Generated `archive-policy.am` keeps old installed layout names working
+through module-only refresh; shared lifecycle/selection transport has no host app
+identities. EmmyLua retains same-release and fresh-only rules through generated
+policy. The cutover helper uses the manifest too. All 16 host groups, 11 manager
+integration tests and compiler repeatability pass; review findings fixed and both
+axes clear. Source only; no push, live deployment, publication or yadm change.
+
 ## Recipe-owned launch choices and coupling audit — November 5, 2026
 
 [111 resolved](issues/111-move-obsidian-launch-policy-to-recipe.md) moves Obsidian launch

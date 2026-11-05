@@ -64,3 +64,18 @@ user GUI alias/desktop override remains usable. Module synchronization updates
 shared machinery; recipe declarations arrive on install/reinstall. A module-only
 refresh continues ordinary updates of existing recipes, and old archive settings
 remain supported pending 112. No live installation or publication was performed.
+
+## Follow-up: 112
+
+The remaining archive/toolset knowledge is now generated from the trusted host
+manifest into `archive-policy.am` and the explicit catalog selection policy.
+`appimage.am` and `catalog-yaml.am` contain no host app identities. Shared
+orchestration uses archive kind, root, required executable paths, launcher mappings
+and explicit known legacy launcher targets. EmmyLua's single manifest tool list
+supplies asset selection, staging and launchers; its fresh-only setting rejects
+consent in policy preflight before HTTP and still refuses stale individual tools.
+Old installed layout names select the same adapter records after module refresh.
+The maintenance cutover reads those records instead of its own app switches.
+
+This addresses the scoped findings above; it is not an audit of other historical
+recipes. No live deployment or publication was performed.

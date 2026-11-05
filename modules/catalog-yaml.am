@@ -32,7 +32,7 @@ for module in catalog-yaml-reader.am catalog-yaml-parser.am catalog-yaml-policy.
     [ -r "$here/$module" ] || fail "missing module: $module"
 done
 # Validate against the policy's single trusted enrollment registry before HTTP.
-AM_YAML_RECIPE=$AM_YAML_RECIPE AM_YAML_CHECK_RECIPE=1 \
+AM_YAML_RECIPE=$AM_YAML_RECIPE AM_YAML_ACCEPT=$AM_YAML_ACCEPT AM_YAML_CHECK_RECIPE=1 \
     awk -f "$here/catalog-yaml-policy.am" </dev/null || fail 'unsupported recipe policy'
 # Fixed trial budgets shared with the source candidate. No optional consumer workers.
 AM_YAML_MAX_INPUT_BYTES=2097152 AM_YAML_MAX_OUTPUT_BYTES=2097152

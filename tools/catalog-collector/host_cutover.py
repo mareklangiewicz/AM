@@ -122,7 +122,6 @@ def apply(prepared, root):
         return [tuple(pair.split(':',1)) for pair in
                 row.get('archive', {}).get('launchers', [t+':'+t for t in row.get('tools', [app])])]
 
-
     # One simple, exclusive snapshot of manager and small app metadata. User
     # data remains where it is; binaries are replaceable downloads.
     backup=prepared/'before'
@@ -162,12 +161,14 @@ def apply(prepared, root):
         first=next(iter(manifest['selections'][app].values()))
         version=first['published_at'] if row['version_identity']=='published_at' else first['url']
         (path/'version').write_text(version+'\n');(path/'download-url').write_text(first['url']+'\n')
+        legacy=dict(pair.split(':',1) for pair in
+                    row.get('archive', {}).get('legacy_launchers', [app+':bin/'+app]))
         for name,entry in launcher_targets(row):
             link=bins/name
             if link.is_symlink():
                 if os.readlink(link) == str(path/entry):
                     continue
-                if os.readlink(link) not in (str(path/name), str(path/'bin'/name)):
+                if name not in legacy or os.readlink(link) != str(path/legacy[name]):
                     print('Preserving custom launcher: '+str(link),flush=True)
                     continue
                 link.unlink()

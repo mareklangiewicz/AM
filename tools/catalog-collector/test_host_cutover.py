@@ -126,6 +126,15 @@ else:
                 for entry in row['archive'].get('executables',row.get('tools',[])):
                     self.assertTrue((app/entry).is_file())
 
+    def test_toolset_reinstall_preserves_app_local_custom_wrapper(self):
+        app=self.install('x86_64/emmylua')
+        link=self.root/'usr/local/bin/emmylua_ls'
+        link.unlink();link.symlink_to(app/'bin/emmylua_ls')
+        self.stage()
+        result=subprocess.run(['sh',str(app/'recipe.am')],env=self.env(),capture_output=True)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertEqual(link.readlink(),app/'bin/emmylua_ls')
+
     def test_toolset_mixed_release_refuses_before_download(self):
         app=self.install('x86_64/emmylua')
         helper=self.path/'mixed-selection'
@@ -224,11 +233,31 @@ else:
         self.assertNotEqual(result.returncode,0)
         self.assertFalse((stage/'payload/fzf').exists())
 
+    def test_every_tool_requires_fresh_observations_without_consent(self):
+        document=self.path/'tool-repository.yaml'
+        document.write_bytes(subprocess.check_output(['git','-C',str(self.repo),'show',
+            self.pin+':repositories/872860168.yaml']))
+        facts=subprocess.check_output(['sh',str(ROOT/'modules/catalog-yaml-reader.am'),
+                                       'asset_facts',str(document)])
+        tools=next(row['tools'] for row in self.rows if row['app']=='emmylua')
+        for tool in tools:
+            with self.subTest(tool=tool):
+                result=subprocess.run(['awk','-f',str(ROOT/'modules/catalog-yaml-policy.am')],
+                    input=facts,capture_output=True,env={**self.env(),
+                        'AM_YAML_RECIPE':'x86_64/emmylua','AM_YAML_TOOL':tool,
+                        'AM_YAML_REPOSITORY':'872860168','AM_YAML_PIN':self.pin,
+                        'AM_YAML_NOW':'2026-11-07T12:00:00Z','AM_YAML_ACCEPT':''})
+                self.assertNotEqual(result.returncode,0)
+                self.assertIn(b'stale_release_acceptance_required',result.stderr)
+                self.assertEqual(result.stdout,b'')
+
     def test_emmylua_stale_consent_is_explicitly_fresh_only(self):
         result=subprocess.run(['sh',str(ROOT/'modules/catalog-yaml.am'),'x86_64/emmylua',
             '--accept-stale-release',self.pin,'872860168','1','1',NOW],env=self.env(),capture_output=True)
         self.assertNotEqual(result.returncode,0)
         self.assertIn(b'requires fresh observations',result.stderr)
+        self.assertEqual(self.calls(),[])
+        self.assertFalse((self.path/'downloads').exists())
 
     def test_reinstall_preserves_custom_executable_and_desktop_launchers(self):
         app=self.install('x86_64/obsidian')

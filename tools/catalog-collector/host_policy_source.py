@@ -54,6 +54,7 @@ def generate():
         for variable,value in (('archive_kind',archive['kind']),('archive_root',archive['root']),
                                ('archive_executables',' '.join(archive.get('executables', row.get('tools', [])))),
                                ('archive_launchers',' '.join(archive.get('launchers', [t+':'+t for t in row.get('tools', [])]))),
+                               ('archive_legacy_launchers',' '.join(archive.get('legacy_launchers', []))),
                                ('tools',' '.join(row.get('tools',[])))):
             adapters.append('\t\t\t'+variable+'='+shlex.quote(value))
         adapters[-1]+=' ;;'
