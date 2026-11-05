@@ -1,5 +1,14 @@
 # Release catalog exploration
 
+## Checksum UI cleanup — November 5, 2026
+
+[108 resolved](issues/108-correct-checksum-ui.md): the verifier uses installed
+`download-url` before legacy version URLs, including Logseq timestamp identities.
+Archives report skipped verification of extracted files without a verified marker.
+Eight focused offline checks and 11 YAML manager integration tests pass; both
+review axes have zero actionable findings.
+Source-only cleanup; installed manager and publication remain unchanged.
+
 ## Live YAML cutover — November 5, 2026
 
 [107 resolved](issues/107-prepare-delivered-legacy-adapters.md): Marek approved

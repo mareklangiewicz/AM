@@ -1960,18 +1960,22 @@ _use_verify() {
 	# Check if checksum calc tools exist
 	if command -v sha1sum &>/dev/null && command -v sha256sum &>/dev/null && command -v sha512sum &>/dev/null && command -v md5sum &>/dev/null; then
 		[ -f "$argpath/AM-VERIFIED" ] && rm -f "$argpath"/AM-VERIFIED # Remove verified status
+		# YAML recipes may store a timestamp in version; acquisition URL is separate.
+		download_url=
+		if [ -f "$argpath/download-url" ] && grep -qi '^http' "$argpath/download-url"; then
+			download_url=$(cat "$argpath/download-url")
+		elif [ -f "$argpath/version" ] && grep -qi '^http' "$argpath/version"; then
+			download_url=$(sort "$argpath/version")
+		fi
 		# Check if the download was a tarball/zip file
-		if { [ -f "$argpath/version" ] && grep -q '\.xz$\|\.zip$\|\.gz$' "$argpath/version"; } \
+		if { printf '%s\n' "$download_url" | grep -q '\.xz$\|\.zip$\|\.gz$'; } \
 		|| { [ -f "$argpath/AM-updater" ] && grep -q "$WGETCMD.*\.xz \|$WGETCMD.*\.zip \|$WGETCMD.*\.gz " "$argpath/AM-updater"; } \
 		|| { [ ! -f "$argpath/version" ] && [ ! -f "$argpath/AM-updater" ] && [ -f "$argpath/updater.ini" ]; }; then
-			checksum_msg=$(echo $"Checksum auto-verified.")
-			printf "%b✔\033[0m %b \n" "${Green}" "$checksum_msg" | _fit
-			printf "Source is tarball/zip" > "$argpath"/AM-VERIFIED
+			checksum_msg=$(echo $"Checksum verification skipped: extracted archive files are not verified.")
+			printf "%b⚠️\033[0m %b \n" "${Gold}" "$checksum_msg" | _fit
 			return 1
 		# Search for hash files
-		elif [ -f "$argpath"/version ] && grep -qi "^http" "$argpath"/version; then
-			download_url=$(sort "$argpath"/version)
-		elif [ -f "$argpath"/AM-updater ] && grep -q "$WGETCMD .*am-extras" "$argpath"/AM-updater; then
+		elif [ -z "$download_url" ] && [ -f "$argpath"/AM-updater ] && grep -q "$WGETCMD .*am-extras" "$argpath"/AM-updater; then
 			download_url=$(eval "$(grep "$WGETCMD .*am-extras" "$argpath"/AM-updater | tr '()' '\n' | grep curl | head -1)" | xargs 2>/dev/null)
 		fi
 		if [ -n "$download_url" ]; then
