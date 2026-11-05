@@ -1,5 +1,5 @@
 #!/bin/sh
-# Shared YAML-only installer. Recipes are trusted code; catalogs are inert facts.
+# AMCLI shared YAML-only installer. Recipes are trusted code; catalogs are inert facts.
 am_appimage() { am_package "$@"; }
 
 am_archive_stage() (

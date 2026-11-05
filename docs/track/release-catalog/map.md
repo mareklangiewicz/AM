@@ -1,5 +1,12 @@
 # Release catalog exploration
 
+## Shared installer sync — November 5, 2026
+
+[110 resolved](issues/110-sync-shared-appimage-module.md): ordinary module sync
+silently retained appimage.am because it lacked the required AMCLI marker.
+Marker added; the real sync regression now replaces an explicitly stale installer
+and passes. Source-only fix; publication and ordinary am -s deployment are separate.
+
 ## Obsidian GUI launcher — November 5, 2026
 
 [109 resolved](issues/109-add-obsidian-gui-launcher.md): preserve the official

@@ -231,11 +231,12 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\napp=${0##
         obsolete=self.module_dir/'obsolete.am';obsolete.write_text('old')
         (self.module_dir/'catalog-yaml-parser.am').unlink()
         (self.module_dir/'catalog-yaml-policy.am').write_text('# AMCLI old\n')
+        (self.module_dir/'appimage.am').write_text('# AMCLI stale installer\n')
         env={**self.env(),'SOURCE_MODULES':str(ROOT/'modules'),'MANAGER_SOURCE':str(ROOT/'APP-MANAGER'),
             'MODULES_SOURCE':SOURCE+'/modules','MODULES_PATH':str(self.module_dir),'DIVIDING_LINE':''}
         r=subprocess.run(['/bin/bash',str(harness)],env=env,capture_output=True)
         self.assertEqual(r.returncode,0,r.stderr);self.assertFalse(obsolete.exists())
-        for name in RUNTIME:
+        for name in (*RUNTIME, 'appimage.am'):
             self.assertEqual((self.module_dir/name).read_bytes(),(ROOT/'modules'/name).read_bytes())
         for tool in ('git','python','python3','jq'):
             self.script(tool,"raise RuntimeError('forbidden runtime dependency')\n")
