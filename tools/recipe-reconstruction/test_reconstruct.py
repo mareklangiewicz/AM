@@ -38,6 +38,13 @@ class Reconstruction(unittest.TestCase):
         self.assertEqual(result['declaration']['app'], 'example-app')
         self.assertEqual(result['declaration']['repository'], 'example-owner/example-releases')
 
+    def test_repository_names_are_not_reinterpreted_as_template_slots(self):
+        value = dict(template=tool.TEMPLATE, app='example', repository='SAMPLE/FUNCTION')
+        rendered = tool.render(self.template, value)
+        self.assertIn('SITE="SAMPLE/FUNCTION"', rendered)
+        self.assertIn('https://api.github.com/repos/SAMPLE/FUNCTION/releases', rendered)
+        self.assertEqual(tool.check(self.template, rendered, tool.TEMPLATE)['status'], 'exact')
+
     def test_all_content_accounted_for(self):
         edits = [
             self.source.replace('# LINK TO PATH', 'touch /tmp/unexpected\n# LINK TO PATH'),
@@ -109,7 +116,36 @@ class Reconstruction(unittest.TestCase):
         real = tool.read_text
         def changed(path):
             result = real(path)
-            return result+'# drift\n' if Path(path).name == 'template.txt' else result
+            return result+'# drift\n' if Path(path).name == 'AM-SAMPLE-AppImage' else result
+        with patch.object(tool, 'read_text', side_effect=changed), self.assertRaises(ValueError):
+            tool.load_template(tool.TEMPLATE)
+
+    def test_upstream_verification_checks_source_bytes(self):
+        # Normal tests work in source archives/shallow clones as well. The real
+        # pinned-object CLI verification is a separate documented operation.
+        metadata = dict(self.metadata)
+        excerpt = (ROOT/'upstream/github-appimage-function.txt').read_bytes()
+        metadata['generator_line'] = 1
+        metadata['generator_sha256'] = hashlib.sha256(excerpt).hexdigest()
+        objects = {metadata['upstream_commit']+':'+metadata['template_source']:
+                   (ROOT/'upstream/AM-SAMPLE-AppImage').read_bytes(),
+                   metadata['upstream_commit']+':'+metadata['generator_source']: excerpt}
+        objects.update({metadata['fixture_commit']+':'+row['path']:
+                        (ROOT/'fixtures'/Path(row['path']).name).read_bytes()
+                        for row in metadata['fixtures']})
+        with patch.object(tool.subprocess, 'check_output', side_effect=lambda args, **kw: objects[args[-1]]):
+            result = tool.verify_upstream(REPO, metadata)
+            self.assertEqual(result['status'], 'exact')
+            self.assertEqual(result['fixtures_verified'], 5)
+            objects[metadata['upstream_commit']+':'+metadata['template_source']] += b'# drift\n'
+            with self.assertRaises(ValueError):
+                tool.verify_upstream(REPO, metadata)
+
+    def test_generator_integrity(self):
+        real = tool.read_text
+        def changed(path):
+            result = real(path)
+            return result+'# drift\n' if Path(path).name == 'github-appimage-function.txt' else result
         with patch.object(tool, 'read_text', side_effect=changed), self.assertRaises(ValueError):
             tool.load_template(tool.TEMPLATE)
 

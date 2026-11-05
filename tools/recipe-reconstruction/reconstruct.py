@@ -8,9 +8,10 @@ from pathlib import Path
 import re
 import shlex
 import sys
+import subprocess
 
 ROOT = Path(__file__).resolve().parent
-TEMPLATE = 'github-appimage-3.5-obsidian'
+TEMPLATE = 'github-appimage-3.5'
 LIMIT = 1024 * 1024
 APP = r'[a-z0-9][a-z0-9.+_-]*'
 REPOSITORY = r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+'
@@ -53,23 +54,55 @@ def declaration(value):
 
 def render(template, value):
     value = declaration(value)
-    return template.replace('{{APP}}', value['app']).replace('{{SITE}}', value['repository'])
+    # The pinned upstream generator concatenates shell literals and three known
+    # variables. Tokenize only its trusted, hash-checked excerpt; never evaluate it.
+    assignment = read_text(ROOT/'upstream/github-appimage-function.txt').strip()
+    if not assignment.startswith('FUNCTION='):
+        raise ValueError('unsupported upstream generator assignment')
+    words = shlex.split(assignment[len('FUNCTION='):])
+    if len(words) != 1:
+        raise ValueError('unsupported upstream generator concatenation')
+    function = words[0].replace('$CURL_COMMAND_REF', 'curl -Ls https://api.github.com/repos')
+    function = function.replace('$RESPONSE', value['repository']).replace('$q', "'")
+    # Upstream passes FUNCTION through a sed replacement: doubled backslashes
+    # become single backslashes in the resulting recipe.
+    function = function.replace('\\\\', '\\')
+    replacements = dict(SAMPLE=value['app'], REPLACETHIS=value['repository'], FUNCTION=function)
+    return re.sub(r'SAMPLE|REPLACETHIS|FUNCTION(?=\))', lambda match: replacements[match[0]], template)
 
 
 def load_template(identity):
     if identity != TEMPLATE:
         raise Unsupported('unknown template identity')
     metadata = json.loads(read_text(ROOT/'provenance.json'))
-    template = read_text(ROOT/'template.txt')
+    template = read_text(ROOT/'upstream/AM-SAMPLE-AppImage')
     if metadata['template'] != identity or hashlib.sha256(template.encode()).hexdigest() != metadata['template_sha256']:
         raise ValueError('template provenance mismatch')
-    source = read_text(ROOT/'fixtures/obsidian')
-    source_hash = next(row['sha256'] for row in metadata['fixtures'] if row['path'] == metadata['template_source'])
-    if hashlib.sha256(source.encode()).hexdigest() != source_hash:
-        raise ValueError('template source hash mismatch')
-    if render(template, dict(template=identity, **metadata['template_parameters'])) != source:
-        raise ValueError('template does not reconstruct pinned source')
+    excerpt = read_text(ROOT/'upstream/github-appimage-function.txt')
+    if hashlib.sha256(excerpt.encode()).hexdigest() != metadata['generator_excerpt_sha256']:
+        raise ValueError('generator excerpt hash mismatch')
     return template, metadata
+
+
+def verify_upstream(repository, metadata):
+    def source(commit, path):
+        return subprocess.check_output(['git', '--no-replace-objects', '-C', str(repository.resolve()),
+                                        'show', commit+':'+path], stderr=subprocess.PIPE)
+    template = source(metadata['upstream_commit'], metadata['template_source'])
+    if template != (ROOT/'upstream/AM-SAMPLE-AppImage').read_bytes():
+        raise ValueError('upstream template snapshot differs')
+    generator = source(metadata['upstream_commit'], metadata['generator_source'])
+    if hashlib.sha256(generator).hexdigest() != metadata['generator_sha256']:
+        raise ValueError('upstream generator hash differs')
+    line = generator.splitlines(keepends=True)[metadata['generator_line']-1]
+    if line != (ROOT/'upstream/github-appimage-function.txt').read_bytes():
+        raise ValueError('upstream generator excerpt differs')
+    for fixture in metadata['fixtures']:
+        original = source(metadata['fixture_commit'], fixture['path'])
+        if original != (ROOT/'fixtures'/Path(fixture['path']).name).read_bytes():
+            raise ValueError('upstream fixture differs: '+fixture['path'])
+    return dict(status='exact', template=metadata['template'], upstream_commit=metadata['upstream_commit'],
+                fixtures_verified=len(metadata['fixtures']), generator_verified=True)
 
 
 def from_short(source, identity):
@@ -131,15 +164,21 @@ def main(argv=None):
     inputs.add_argument('--declaration', type=Path)
     inputs.add_argument('--short-recipe', type=Path)
     expand.add_argument('--template', required=True)
+    verify = sub.add_parser('verify-upstream', help='verify snapshots against pinned Git objects; JSON on stdout')
+    verify.add_argument('--repo', type=Path, required=True)
+    verify.set_defaults(template=TEMPLATE)
     args = parser.parse_args(argv)
     try:
         template, metadata = load_template(args.template)
+        if args.command == 'verify-upstream':
+            print(json.dumps(verify_upstream(args.repo, metadata), indent=2))
+            return 0
         if args.command == 'check':
             result = check(template, read_text(args.recipe), args.template)
             result['provenance'] = dict(template=metadata['template'], upstream_commit=metadata['upstream_commit'],
-                                        source_path=metadata['template_source'], source_sha256=next(
-                                            row['sha256'] for row in metadata['fixtures'] if row['path'] == metadata['template_source']),
-                                        template_sha256=metadata['template_sha256'])
+                                        source_path=metadata['template_source'], source_sha256=metadata['template_sha256'],
+                                        generator_path=metadata['generator_source'], generator_line=metadata['generator_line'],
+                                        generator_sha256=metadata['generator_sha256'])
             print(json.dumps(result, indent=2))
             return 0 if result['status'] == 'exact' else 1
         if args.short_recipe:
@@ -150,7 +189,7 @@ def main(argv=None):
         return 0
     except Unsupported as error:
         result, code = dict(status='unsupported', reason=str(error)), 2
-    except (OSError, ValueError, KeyError, StopIteration) as error:
+    except (OSError, ValueError, KeyError, IndexError, subprocess.CalledProcessError) as error:
         result, code = dict(status='error', reason=str(error)), 3
     print(json.dumps(result), file=sys.stderr if args.command == 'render' else sys.stdout)
     return code

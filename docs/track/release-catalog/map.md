@@ -2,6 +2,14 @@
 
 ## Maintained upstream recipe reconstruction
 
+[122 resolved](issues/122-use-upstream-template-sources.md): renamed the family
+`github-appimage-3.5` and replaced our derived recipe body with upstream's
+unmodified `templates/AM-SAMPLE-AppImage` at `bb53f3180`, plus its original
+generator assignment. Pinned snapshot provenance and `verify-upstream` keep
+upstream authoritative. Fourteen focused tests and real upstream-object
+verification pass; all five exact fixture reconstructions are preserved.
+Current cached upstream's 3.6 template requires a separate revision review.
+
 [121 resolved](issues/121-maintain-upstream-recipe-reconstruction.md):
 [`tools/recipe-reconstruction`](../../../tools/recipe-reconstruction/README.md)
 provides complete upstream recognition, rendering from short recipes or explicit

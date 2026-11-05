@@ -59,3 +59,7 @@ The unrelated catalog/container suites were not rerun for this isolated tool.
 Source-only: no recipe conversion, enrollment, publication, installed refresh,
 runtime change or deployment. The throwaway prototype remains on its separate
 branch and is not a dependency. Implementation committed as `9ce557fa1`.
+
+Follow-up [122](122-use-upstream-template-sources.md) supersedes the app-derived
+template body/name with canonical pinned upstream template/generator sources,
+family identity `github-appimage-3.5` and explicit upstream-source verification.

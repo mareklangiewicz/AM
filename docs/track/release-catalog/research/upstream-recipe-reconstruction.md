@@ -1,5 +1,10 @@
 # Upstream recipe reconstruction experiment (120)
 
+Follow-up [122](../issues/122-use-upstream-template-sources.md) replaces the
+app-derived prototype body in the maintained tool with the matching unmodified
+upstream template/generator sources and renames the family `github-appimage-3.5`.
+The experiment and branch evidence below remain historical.
+
 ## Verdict
 
 Proceed with a small maintained recognition/reconstruction tool. One pinned

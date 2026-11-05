@@ -4,10 +4,31 @@ Compare complete upstream recipes with one pinned GitHub AppImage template, or
 expand a short declaration into that template's original form. Python 3.10+;
 standard library only. Incoming recipes are read as inert text and never run.
 
-Supported template: `github-appimage-3.5-obsidian`, x86_64 AppImage version 3.5.
+Supported template: `github-appimage-3.5`, x86_64 AppImage version 3.5.
 `provenance.json` records its upstream commit/path, original fixture hashes and
 template hash. The source is a cached upstream revision, not automatically latest.
-Loading verifies both the template hash and reconstruction of the pinned source.
+The recipe body is now the unmodified upstream
+`templates/AM-SAMPLE-AppImage` at commit
+`bb53f3180ec92f862020f8bdccef0f6614015bae`, stored in `upstream/AM-SAMPLE-AppImage`.
+There is no independently authored `template.txt` body. The generator's original
+FUNCTION assignment is stored verbatim as `upstream/github-appimage-function.txt`,
+with its original file hash and line number in provenance. Loading verifies both
+snapshot hashes. Rendering substitutes SAMPLE, REPLACETHIS and FUNCTION as the
+upstream generator does, using the pinned default GitHub/x86_64 profile.
+
+The FUNCTION assignment is tokenized as inert text and its three known variable
+references are substituted; no shell or upstream interactive generator runs.
+This is a deliberately narrow adapter for the pinned generator syntax, not a
+shell interpreter. Changes to that syntax require an adapter review.
+
+Upstream documents this system in its
+[template guide](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/template.md).
+The historical template is deliberately pinned: cached upstream/main at
+`bbffd15c19d01ef9124fbf99b5b9c41d2661ea22` has a version-3.6 AppImage template
+with different desktop handling. Advancing to it requires a separately identified
+revision and compatibility review, not a silent replacement of the 3.5 family.
+The former app-specific identity `github-appimage-3.5-obsidian` is no longer
+accepted. Obsidian remains only one real-app example/fixture.
 
 ## Commands
 
@@ -20,7 +41,7 @@ python3 tools/recipe-reconstruction/reconstruct.py check /path/to/upstream/obsid
 # Expand our current short recipe into the explicitly selected upstream template.
 python3 tools/recipe-reconstruction/reconstruct.py render \
   --short-recipe programs/x86_64/obsidian \
-  --template github-appimage-3.5-obsidian > /tmp/upstream-obsidian
+  --template github-appimage-3.5 > /tmp/upstream-obsidian
 
 # Check the pinned original for comparison.
 python3 tools/recipe-reconstruction/reconstruct.py check \
@@ -32,7 +53,7 @@ exactly these JSON fields (including template identity):
 
 ```json
 {
-  "template": "github-appimage-3.5-obsidian",
+  "template": "github-appimage-3.5",
   "app": "obsidian",
   "repository": "obsidianmd/obsidian-releases"
 }
@@ -69,6 +90,28 @@ recipe bytes on success; failures write a JSON object on stderr and no recipe
 bytes. Invalid command-line syntax uses argparse's normal usage text and exit 2.
 All recognized/candidate check results include `compatibility: "unassessed"`.
 An inconsistent installer/updater parameter yields `review`, never `exact`.
+
+## Verifying and updating upstream sources
+
+With Git and a repository containing both recorded source/fixture commits:
+
+```sh
+python3 tools/recipe-reconstruction/reconstruct.py verify-upstream --repo /path/to/AM
+```
+
+This reads local Git objects only, checks the complete canonical template, the
+full generator hash and exact excerpt line, and every fixture against its recorded
+upstream path. It emits JSON on stdout using exact/error exit codes. It does not
+fetch, execute source, or change files. Normal check/render commands need no Git.
+
+Upstream is authoritative for template body and generator substitutions. Treat the
+`upstream/` files as pinned snapshots, not fork templates to edit independently.
+For an upstream revision: inspect the template/generator diff, copy the original
+bytes and exact FUNCTION line from that commit, update provenance/hashes and the
+family identity as needed, then run verification and all focused checks. No silent
+fallback to an app-derived body is permitted. Keep older revisions pinned if
+existing recipes still need them. Selecting a revision remains explicit; this
+tool does not yet manage multiple families or automate template imports.
 
 ## Reviewing an incoming update
 

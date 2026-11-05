@@ -1,7 +1,6 @@
 {
-  "upstream_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
-  "ref": "upstream/main (cached; no latest-upstream claim)",
-  "template_source": "programs/x86_64/obsidian",
+  "upstream_commit": "bb53f3180ec92f862020f8bdccef0f6614015bae",
+  "template_source": "templates/AM-SAMPLE-AppImage",
   "fixtures": [
     {
       "path": "programs/x86_64/obsidian",
@@ -24,10 +23,12 @@
       "sha256": "3173c53f4bde64d7e06ddbec16839975626aa3acce8c63aab5716a41744649dc"
     }
   ],
-  "template": "github-appimage-3.5-obsidian",
-  "template_sha256": "efb58fb4cd0c51d44f4a78e7538be60645b6ce3b05eca8514bdf686500ab5fa1",
-  "template_parameters": {
-    "app": "obsidian",
-    "repository": "obsidianmd/obsidian-releases"
-  }
+  "template": "github-appimage-3.5",
+  "template_sha256": "1049be481f39bdcdcd3ffa348ac94cdbdaaa65cfe1d341940e4b017963344931",
+  "fixture_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+  "generator_source": "modules/template.am",
+  "generator_sha256": "9608ffd7d6ea2637b064a9ea5aafe2e3aa18e46b4acfd8194b46b82dc65fe474",
+  "generator_line": 218,
+  "generator_excerpt_sha256": "2da8242278325249f0f8e3624ac99ffcf8f37f7dda6ab45f76c7e4f33749b230",
+  "source_selection": "Historical upstream template revision matching the supported 3.5 family"
 }
