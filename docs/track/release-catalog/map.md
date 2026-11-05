@@ -1,6 +1,15 @@
 # Release catalog exploration
 
-## Next frontier — upstream recipe reconstruction
+## Maintained upstream recipe reconstruction
+
+[121 resolved](issues/121-maintain-upstream-recipe-reconstruction.md):
+[`tools/recipe-reconstruction`](../../../tools/recipe-reconstruction/README.md)
+provides complete upstream recognition, rendering from short recipes or explicit
+declarations, pinned provenance and machine-readable exact/review/unsupported
+outcomes. Eleven focused tests pass, including five byte-exact real-fixture
+round trips and custom-updater refusals. Real short Obsidian expands exactly to
+its pinned original. Runtime compatibility remains unassessed; the README records
+conversion gates. No recipes were converted and collection scope is unchanged.
 
 [120 resolved](issues/120-prototype-upstream-recipe-reconstruction.md): five real
 recipes reconstruct byte-for-byte; custom installer/updater steps and template
@@ -8,8 +17,8 @@ changes refuse. [Report](research/upstream-recipe-reconstruction.md) recommends
 a bounded maintained tool and records runtime compatibility differences.
 Prototype branch `prototype/120-upstream-reconstruction` at `69c76db1f` preserves
 the runnable CLI/HTML and pinned fixtures outside main-marek.
-[121 open](issues/121-maintain-upstream-recipe-reconstruction.md) is the next
-implementation scope; no conversion or collection expansion has started.
+[121](issues/121-maintain-upstream-recipe-reconstruction.md) implements the
+maintained tool; no conversion or collection expansion has started.
 
 Original direction: before broad
 recipe conversion, prototype recognizing one pinned upstream AppImage template,
