@@ -1,17 +1,17 @@
-"""Local Git publication and pinned reads. Refuses repositories with remotes.
+"""Isolated local Git publication and bounded snapshot reads.
 
-This module never fetches, pushes, clones, resolves network refs or runs artifacts.
+Callers validate catalog bytes. Publication is remote-free and advances only the
+expected parent; read commands have explicit byte, time and history bounds.
 """
 import os
 from pathlib import Path
 import re
+import select
 import subprocess
 import tempfile
+import time
 
-from collector import require, timestamp
-from storage import decode, digest, validate, INDEX_CAP
-from manifest import load_manifest
-from collector import Descriptor, BODY_CAP
+from bounded import require
 
 REF = 'refs/heads/catalog'
 HISTORY_CAP = 128_000_000
@@ -31,11 +31,6 @@ def git(repo, *args, data=None, index=None):
     return subprocess.run(['git', '-C', str(repo), '-c', 'core.hooksPath=/dev/null', *args],
                           input=data, env=env, check=True, stdout=subprocess.PIPE,
                           stderr=subprocess.PIPE).stdout
-
-
-def publish_local(repo, tree, expected_parent):
-    validate(tree)
-    return publish_tree(repo,tree,expected_parent)
 
 
 def publish_tree(repo, tree, expected_parent):
@@ -63,17 +58,40 @@ def publish_tree(repo, tree, expected_parent):
         return commit
 
 
-def blob(repo, commit, path, cap):
-    size = int(git(repo, 'cat-file', '-s', f'{commit}:{path}').strip())
-    require(0 <= size <= cap, 'blob_bound')
-    return git(repo, 'show', f'{commit}:{path}')
+def bounded(command, *, env, cap, objects=None, seconds=90):
+    """No exception/command diagnostics can expose headers or token values."""
+    process = subprocess.Popen(command, env=env, stdin=subprocess.DEVNULL,
+                               stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, close_fds=True)
+    output = bytearray(); deadline = time.monotonic() + seconds
+    try:
+        os.set_blocking(process.stdout.fileno(), False)
+        while True:
+            require(time.monotonic() < deadline, 'delivery_deadline')
+            if objects is not None:
+                require(sum(p.stat().st_size for p in Path(objects).rglob('*') if p.is_file()) <=
+                        HISTORY_CAP, 'delivery_history_bound')
+            ready, _, _ = select.select([process.stdout], [], [], min(.1, max(0, deadline-time.monotonic())))
+            if not ready:
+                continue
+            chunk = os.read(process.stdout.fileno(), min(8192, cap-len(output)+1))
+            require(len(output)+len(chunk) <= cap, 'delivery_output_bound')
+            if not chunk:
+                break
+            output.extend(chunk)
+        require(process.wait(timeout=max(.001, deadline-time.monotonic())) == 0, 'delivery_command_refusal')
+        return bytes(output)
+    except Exception:
+        raise ValueError('delivery_command_refusal') from None
+    finally:
+        if process.poll() is None:
+            process.kill()
+        process.wait(timeout=1)
+        process.stdout.close()
 
 
-def lookup_local(repo, alias, commit, *, now, stale_acceptance=None):
-    require(type(commit) is str and re.fullmatch('[0-9a-f]{40}', commit), 'commit_pin_required')
-    # Do not resolve a branch during either read: both objects use this full commit.
-    from reader import select, verify_body
-    index_raw = blob(repo, commit, 'index.json', INDEX_CAP)
-    entry, _ = select(index_raw, alias, commit, now=now, stale_acceptance=stale_acceptance)
-    raw = blob(repo, commit, entry['observation']['path'], BODY_CAP)
-    return verify_body(raw, entry), entry
+
+def environment():
+    """Credential-free Git environment; ignore caller Git config and discovery."""
+    return {'PATH': os.environ.get('PATH', '/usr/bin:/bin'), 'LANG': 'C.UTF-8',
+            'GIT_CONFIG_NOSYSTEM': '1', 'GIT_CONFIG_GLOBAL': os.devnull,
+            'GIT_TERMINAL_PROMPT': '0'}

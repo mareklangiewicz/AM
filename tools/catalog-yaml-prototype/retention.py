@@ -1,1 +1,0 @@
-../catalog-collector/retention.py

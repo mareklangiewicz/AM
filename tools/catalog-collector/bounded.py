@@ -10,6 +10,11 @@ import pathlib
 import time
 from retention import parameters, refresh
 
+def require(ok, code):
+    if not ok:
+        raise ValueError(code)
+
+
 MAX_INT = 9223372036854775807
 
 

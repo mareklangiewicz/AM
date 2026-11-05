@@ -267,3 +267,21 @@ selection for Neovim and the four same-release EmmyLua tools passed at publicati
 GUI launch, workflow dispatch or publication occurred during this deployment.
 Plans, before-images and receipts are in
 `/home/marek/Documents/Codex/am-yaml-cutover/common-declarations-deployment/`.
+
+
+## Historical tooling retirement
+
+Ticket 118 retires the historical collector, staging/migration commands, manual
+quota/churn probe workflow and runnable YAML prototype tree from source. Current
+publication uses only maintained YAML normalization/retention, validation and
+isolated local Git helpers. The one-time format-1 bootstrap option is removed;
+publication now requires an existing valid YAML parent. Historical commands and
+prototype results remain in Git history at `007ea4871`, while tracked research
+evidence and local recovery backups remain in place.
+
+See `tools/catalog-collector/README.md` for maintained entry points and offline
+verification. Transitional recipe selectors and their policy compiler remain until
+reviewed complete declarations replace them; collection enrollment is unchanged.
+The retirement itself performs no publication, installed metadata refresh or module
+synchronization. Ticket 119 separately fixes native Termux awk compilation of the
+reader's forbidden-character expression; that source change is not deployed.

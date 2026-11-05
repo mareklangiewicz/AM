@@ -1,4 +1,4 @@
-"""Offline format-2 publication candidate. No network or operational integration."""
+"""Validate, publish and read the maintained YAML catalog at exact Git commits."""
 import os
 import pathlib
 import re
@@ -8,7 +8,7 @@ import tempfile
 import yaml
 from writer import document
 
-from collector import require
+from bounded import require
 from publication import REF, git  # Reuse existing isolated local Git invocation.
 
 HERE = pathlib.Path(__file__).resolve().parent
@@ -32,7 +32,7 @@ def decode_document(raw, max_file_bytes):
         path = pathlib.Path(directory)/'document.yaml'
         path.write_bytes(raw)
         env = dict(os.environ, AM_YAML_MAX_INPUT_BYTES=str(max_file_bytes))
-        run = subprocess.run(['sh', str(HERE/'reader.sh'), 'validate', str(path)],
+        run = subprocess.run(['sh', str(HERE.parent.parent/'modules/catalog-yaml-reader.am'), 'validate', str(path)],
                              env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         if run.returncode:
             raise ValueError(run.stderr.decode('utf-8', errors='replace'))
@@ -116,34 +116,39 @@ def tree_documents(tree, limits):
 def read_tree(repo, pin, limits):
     """Read only bounded canonical format-2 blobs at the exact fetched commit."""
     from pathlib import Path
-    import tempfile
-    from delivery import bounded, environment
+    from publication import bounded, environment
 
     require(type(pin) is str and re.fullmatch('[0-9a-f]{40}',pin), 'invalid_prior_pin')
     # Reuse credential-free isolated Git environment and bounded process I/O.
-    with tempfile.TemporaryDirectory(prefix='yaml-local-git-') as scratch:
-        env = environment(b'local',scratch,github=True)
-        def local(*args, cap):
-            return bounded(['git','-C',str(repo),'-c','core.hooksPath=/dev/null',*args],
-                           env=env,cap=cap,objects=Path(repo))
-        listing = local('ls-tree','-rz',pin,cap=200_000)
-        tree, total = {}, 0
-        for record in listing.split(b'\0'):
-            if not record:
-                continue
-            require(len(tree) < limits['max_files'], 'yaml_prior_file_bound')
-            metadata, name = record.split(b'\t',1)
-            mode, kind, oid = metadata.split(b' ')
-            path = name.decode('utf-8')
-            require(mode == b'100644' and kind == b'blob' and
-                    (path == 'apps.yaml' or re.fullmatch(r'repositories/[1-9][0-9]*\.yaml',path)),
-                    'yaml_prior_layout')
-            size = int(local('cat-file','-s',oid.decode(),cap=64))
-            total += size
-            require(size <= limits['max_file_bytes'] and total <= limits['max_tree_bytes'],
-                    'yaml_prior_byte_bound')
-            body = local('cat-file','blob',oid.decode(),cap=limits['max_file_bytes'])
-            require(len(body) == size, 'yaml_prior_blob_length')
-            tree[path] = body
+    env = environment()
+    def local(*args, cap):
+        return bounded(['git','-C',str(repo),'-c','core.hooksPath=/dev/null',*args],
+                       env=env,cap=cap,objects=Path(repo))
+    listing = local('ls-tree','-rz',pin,cap=200_000)
+    tree, total = {}, 0
+    for record in listing.split(b'\0'):
+        if not record:
+            continue
+        require(len(tree) < limits['max_files'], 'yaml_prior_file_bound')
+        metadata, name = record.split(b'\t',1)
+        mode, kind, oid = metadata.split(b' ')
+        path = name.decode('utf-8')
+        require(mode == b'100644' and kind == b'blob' and
+                (path == 'apps.yaml' or re.fullmatch(r'repositories/[1-9][0-9]*\.yaml',path)),
+                'yaml_prior_layout')
+        size = int(local('cat-file','-s',oid.decode(),cap=64))
+        total += size
+        require(size <= limits['max_file_bytes'] and total <= limits['max_tree_bytes'],
+                'yaml_prior_byte_bound')
+        body = local('cat-file','blob',oid.decode(),cap=limits['max_file_bytes'])
+        require(len(body) == size, 'yaml_prior_blob_length')
+        tree[path] = body
     tree_documents(tree,limits)
     return tree
+
+
+def schema_url(revision):
+    require(isinstance(revision, str) and re.fullmatch('[0-9a-f]{40}', revision),
+            'invalid_source_revision')
+    return ('https://raw.githubusercontent.com/mareklangiewicz/AM/' + revision
+            + '/docs/catalog-format-v2.md')

@@ -1,1 +1,0 @@
-../catalog-collector/reader.sh

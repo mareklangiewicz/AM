@@ -1,11 +1,6 @@
 name: YAML release catalog
 on:
   workflow_dispatch:
-    inputs:
-      bootstrap:
-        description: Replace the existing format-1 catalog (first cutover only)
-        type: boolean
-        default: false
   schedule:
     - cron: '17 3 * * *'
 permissions:
@@ -27,7 +22,6 @@ jobs:
       - name: Collect and publish YAML facts
         env:
           GH_TOKEN: ${{ github.token }}
-          BOOTSTRAP: ${{ inputs.bootstrap || false }}
         shell: bash
         run: |
           set -euo pipefail
@@ -38,10 +32,8 @@ jobs:
           git fetch origin refs/heads/release-catalog
           parent=$(git rev-parse FETCH_HEAD)
           git push "$pub" "$parent:refs/heads/catalog"
-          options=()
-          if [ "$BOOTSTRAP" = true ]; then options+=(--bootstrap); fi
           python3 tools/catalog-collector/host_catalog.py --repo "$pub" --parent "$parent" \
-            --report "$RUNNER_TEMP/catalog-report.json" "${options[@]}"
+            --report "$RUNNER_TEMP/catalog-report.json"
           pin=$(git --git-dir="$pub" rev-parse refs/heads/catalog)
           git fetch "$pub" "$pin"
           # The candidate is a child of the exact fetched publication. A

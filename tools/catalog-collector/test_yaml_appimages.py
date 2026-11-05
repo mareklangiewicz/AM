@@ -1,6 +1,7 @@
 """Explicit remaining AppImage policies, real saved bytes and inert lifecycle."""
 import hashlib
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess
@@ -8,14 +9,13 @@ import tempfile
 import unittest
 
 import test_yaml_manager_integration as integration
-from test_yaml_cohort_shell import ROOT
-from appimage_cohort import fixtures
+from fixture_manager import ROOT
+from fixture_appimages import fixtures
 from appimage_policy_source import compile_source, START, END, POLICIES
-from recipe_cohort import legacy
 from yaml_publication import git, publish_local
-from yaml_recipe_cohort import APPIMAGES, matches, select_cohort
-from attempt_adapter import utc
-from experiment import SCHEMA
+from reference_policies import APPIMAGES, matches, select_cohort
+from fixture_facts import utc
+from test_yaml_reader import SCHEMA
 
 
 class AppImages(unittest.TestCase):
@@ -80,41 +80,6 @@ class AppImages(unittest.TestCase):
                            env=self.env(),capture_output=True)
         self.assertNotEqual(r.returncode,0);self.assertEqual(self.calls(),[])
 
-    def test_url_rules_agree_with_legacy_on_adversarial_independent_json(self):
-        # Synthetic raw upstream fixtures are authored here, never reconstructed
-        # from YAML. Compare eligibility separately from intentional new ordering.
-        components = ['x86_64','aarch64','arm64','i686','armv7l','amd64','x86.64',
-            'CRITERIA1D-x86_64','stable-x86_64','snapshot-x86_64','snapshot-aarch64',
-            'glfw-x86_64','tip-x86_64','beta-x86_64','candidate-x86_64','DEV-x86_64',
-            'dev-x86_64','basilisk','sheepshaver','circles','heat','geo','pro','clang','gcc',
-            'staging','devel','proton','i386|i686|aarch64|arm64|armv7l']
-        urls = ['https://example.org/releases/download/'+tag+'/'+part+suffix
-                for tag in ('v1','1.2','v1-rc2','continuous','Continuous','nightly')
-                for part in components for suffix in ('.AppImage','.appimage','.AppImage.zsync')]
-        # Batch candidate tests per policy in one awk process. A separate unique
-        # release with ascending publication picks the last eligible URL.
-        for recipe,row in APPIMAGES.items():
-            eligible=[]
-            for url in urls:
-                expected=matches(recipe,{'prerelease':False},{'url':url})
-                if expected: eligible.append(url)
-            # Actual trusted legacy pipeline over independently authored raw JSON.
-            # Each URL alone exposes BRE literal | and per-stage case flags.
-            probes = urls[::31] + ['https://example.org/releases/download/v1/DEV-x86_64.AppImage',
-                'https://example.org/releases/download/continuous/basilisk.AppImage',
-                'https://example.org/releases/download/Continuous/basilisk.AppImage',
-                'https://example.org/releases/download/v1/i386|i686|aarch64|arm64|armv7l.AppImage']
-            for url in probes:
-                old=legacy(recipe,json.dumps({'browser_download_url':url}).encode())
-                self.assertEqual(bool(old),matches(recipe,{'prerelease':False},{'url':url}),(recipe,url))
-            facts=b''.join(self.fact(u,asset=str(i),name=f'{i:05d}') for i,u in enumerate(urls,1))
-            # The first eligible by numeric-name ordering, independent of URL.
-            wanted=eligible[0] if eligible else None
-            for tool in ('mawk','gawk','busybox'):
-                result=self.policy(recipe,facts,tool)
-                self.assertEqual(result.returncode==0,wanted is not None,(recipe,tool,result.stderr))
-                if wanted: self.assertEqual(result.stdout.decode().splitlines()[-1],wanted)
-                else: self.assertEqual(result.stdout,b'')
 
     def test_latest_replacement_release_flags_fallthrough_and_selected_freshness(self):
         for recipe in ('x86_64/polymc','aarch64/polymc','i686/supertuxkart',
@@ -178,3 +143,43 @@ class AppImages(unittest.TestCase):
 
 
 if __name__ == '__main__': unittest.main()
+
+
+class AdversarialPolicies(unittest.TestCase):
+    """Direct policy checks need no saved catalog, installer or Git fixture."""
+    pin = 'b'*40
+    policy = AppImages.policy
+    fact = AppImages.fact
+
+    def env(self):
+        return dict(os.environ)
+
+    def test_adversarial_url_rules_on_three_awk_tools(self):
+        # Independently authored asset URLs exercise maintained eligibility and
+        # ordering against the reference rules and all three supported awk tools.
+        components = ['x86_64','aarch64','arm64','i686','armv7l','amd64','x86.64',
+            'CRITERIA1D-x86_64','stable-x86_64','snapshot-x86_64','snapshot-aarch64',
+            'glfw-x86_64','tip-x86_64','beta-x86_64','candidate-x86_64','DEV-x86_64',
+            'dev-x86_64','basilisk','sheepshaver','circles','heat','geo','pro','clang','gcc',
+            'staging','devel','proton','i386|i686|aarch64|arm64|armv7l']
+        urls = ['https://example.org/releases/download/'+tag+'/'+part+suffix
+                for tag in ('v1','1.2','v1-rc2','continuous','Continuous','nightly')
+                for part in components for suffix in ('.AppImage','.appimage','.AppImage.zsync')]
+        # Batch candidate tests per policy in one awk process. A separate unique
+        # release with ascending publication picks the last eligible URL.
+        for recipe,row in APPIMAGES.items():
+            if '# AM-RECIPE-DECLARATION 1' in (ROOT/'programs'/recipe).read_text().splitlines():
+                # Complete declarations have their own compiler and lifecycle checks.
+                continue
+            eligible=[]
+            for url in urls:
+                expected=matches(recipe,{'prerelease':False},{'url':url})
+                if expected: eligible.append(url)
+            facts=b''.join(self.fact(u,asset=str(i),name=f'{i:05d}') for i,u in enumerate(urls,1))
+            # The first eligible by numeric-name ordering, independent of URL.
+            wanted=eligible[0] if eligible else None
+            for tool in ('mawk','gawk','busybox'):
+                result=self.policy(recipe,facts,tool)
+                self.assertEqual(result.returncode==0,wanted is not None,(recipe,tool,result.stderr))
+                if wanted: self.assertEqual(result.stdout.decode().splitlines()[-1],wanted)
+                else: self.assertEqual(result.stdout,b'')

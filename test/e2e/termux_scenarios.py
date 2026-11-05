@@ -11,7 +11,7 @@ import unittest
 from filesystem import fingerprint_files, snapshot_tree
 
 import scenarios as shared
-from scenarios import OUT, USER, SOURCE, PIN, SQLITE, retained, render, validate
+from scenarios import OUT, USER, SOURCE, PIN, SQLITE, catalog_tree
 
 
 class TermuxCLI(unittest.TestCase):
@@ -19,25 +19,17 @@ class TermuxCLI(unittest.TestCase):
     def setUpClass(cls):
         assert os.getuid() == USER.pw_uid != 0
         assert not Path('/bin').exists() and not Path('/usr').exists()
-        retained.StorageContract.setUpClass()
-        cls.tree=dict(retained.StorageContract.base)
-        cls.tree['lookup.tsv']=render(validate(cls.tree),cls.tree['index.json'])
-        cls.index=validate(cls.tree)
+        cls.tree=catalog_tree()
         cls.manager_hash = fingerprint_files(Path('/src'), ['APP-MANAGER'])['APP-MANAGER']
         cls.module_hashes = fingerprint_files(Path('/src/modules'),
                                             [p.name for p in Path('/src/modules').glob('*.am')])
         inputs=['APP-MANAGER','test/e2e/Containerfile.termux','test/e2e/termux-test.sh',
                 'test/e2e/termux_scenarios.py','test/e2e/scenarios.py','test/e2e/external.py',
                 'test/e2e/filesystem.py','test/e2e/transport_args.py','test/e2e/transport_records.py',
-                'test/e2e/run','test/e2e/fixtures/e2e-legacy','programs/x86_64/sqlitebrowser','programs/x86_64/obsidian',
-                'programs/x86_64/7z','programs/x86_64/arch','programs/x86_64/c++filt','programs/x86_64/ld.bfd',
-                'tools/catalog-collector/test_utility_selectors.py',
-                'docs/track/release-catalog/research/am-utils-live-20261031-evidence.tar.gz',
-                'docs/track/release-catalog/design/staged-manifest.json',
-                'docs/track/release-catalog/research/supervised-baseline-40529551070-evidence.tar.gz']
-        inputs += ['tools/catalog-collector/test_migration_batch.py',
-                   'docs/track/release-catalog/research/appimage-batch-20261102/migration.json',
-                   'programs/x86_64/wekan','programs/x86_64/eksplode.re']
+                'test/e2e/run','test/e2e/fixtures/e2e-legacy',
+                'programs/x86_64/sqlitebrowser','programs/x86_64/obsidian']
+        inputs += ['tools/catalog-collector/bounded.py','tools/catalog-collector/retention.py',
+                   'tools/catalog-collector/writer.py']
         (OUT/'tested-source.json').write_text(json.dumps({
             'inputs':fingerprint_files(Path('/src'), inputs),
             'modules':cls.module_hashes},indent=2)+'\n')
@@ -62,30 +54,10 @@ class TermuxCLI(unittest.TestCase):
     test_no_argument_reinstall_only_selects_changed_recipes=shared.InstalledCLI.test_no_argument_reinstall_only_selects_changed_recipes
     test_named_reinstall_with_global_assume_yes=shared.InstalledCLI.test_named_reinstall_with_global_assume_yes
 
-    test_brave_appman_install_standalone_and_update=shared.InstalledCLI.test_brave_appman_install_standalone_and_update
-    utility_catalog=shared.InstalledCLI.utility_catalog
-    test_executable_appman_install_standalone_source_and_remove=shared.InstalledCLI.test_executable_appman_install_standalone_source_and_remove
-    test_executable_appman_mixed_failure_preserves_install_and_continues=shared.InstalledCLI.test_executable_appman_mixed_failure_preserves_install_and_continues
 
     def appman(self):
         self.prepare_home(self.home,appman=True)
         return str(self.home/'Applications/appman/appman')
-
-    def test_remaining_batch_native_appman(self):
-        rows={Path(item['path']).name:item for item in shared.migration_rows() if '/x86_64/' in item['path']}
-        self.configure(additional_recipes=['wekan','eksplode.re'])
-        executable=self.appman()
-        for name in ('wekan','eksplode.re'):
-            item=rows[name]
-            self.utility_catalog(shared.migration_tree(item['alias'],item['evidence']))
-            self.command('-i',name,executable=executable)
-            app=self.home/'Applications'/name
-            self.assertEqual((app/'version').read_text().strip(),item['asset'])
-            self.assertTrue((self.home/'.local/bin'/name).samefile(app/name))
-            self.assertTrue((self.home/'.local/share/applications'/(name+'-AM.desktop')).is_file())
-            (app/'version').write_text('old\n')
-            self.command('--commit',PIN,executable=str(app/'AM-updater'))
-            self.assertEqual((app/'version').read_text().strip(),item['asset'])
 
     def test_local_am_automatically_uses_appman_paths(self):
         self.appman()
@@ -146,8 +118,7 @@ class TermuxCLI(unittest.TestCase):
         (app/'version').write_text('old\n')
         self.configure(download_partial_fail=True)
         self.command('-u','sqlitebrowser','--commit',PIN,executable=executable,success=False)
-        self.assertEqual((app/'tmp/sqlitebrowser').read_bytes(),
-                         (self.fixture/'binary').read_bytes()[:17])
+        self.assertFalse(list(app.glob('.am-stage.*')))
         self.assertEqual((app/'sqlitebrowser').read_bytes(),before)
         self.assertEqual((app/'version').read_text(),'old\n')
         self.configure(download_partial_fail=False)
@@ -168,7 +139,7 @@ class TermuxCLI(unittest.TestCase):
         app=self.home/'Applications/sqlitebrowser'
         self.assertEqual((app/'version').read_text().strip(),SQLITE)
         self.assertFalse(Path('/opt/sqlitebrowser').exists())
-        self.assertIn('/opt/am/modules/catalog.am',(app/'recipe.am').read_text())
+        self.assertIn('/opt/am/modules/catalog-yaml.am',(app/'recipe.am').read_text())
         self.command('--commit',PIN,executable=str(app/'AM-updater'))
         self.command('-u','sqlitebrowser','--commit',PIN,executable=str(Path(os.environ['PREFIX'])/'bin/am'))
 

@@ -9,9 +9,9 @@ from retention import refresh
 from installed_recipe import managed_updater
 from host_catalog import configuration
 from yaml_publication import git, publish_local
-from yaml_adapter import schema_url
+from yaml_publication import schema_url
 import test_yaml_manager_integration as integration
-from test_yaml_cohort_shell import ROOT
+from fixture_manager import ROOT
 
 NAMES = dict(zip(
     'appimagetool appimageupdatetool btop emmylua fzf kitty lazygit logseq-app-db-nightly logseq-app-og neovide neovide-nightly rclone rclone-ui satty yt-dlp zellij zmx nvim nvim-nightly obsidian sunshine'.split(),

@@ -2,6 +2,18 @@
 
 ## Current status — November 5, 2026
 
+[118 resolved](issues/118-retire-historical-catalog-tooling.md): historical
+collector/workflow, shard/artifact delivery, staging/migration, quota/churn probe
+and runnable YAML prototypes are retired: 172 old paths, about 25,000 net lines.
+[Report and keep surface](research/historical-tooling-retirement.md). Current
+publication's import closure is seven modules; transitional recipe behavior and
+collection enrollment are unchanged. Broad discovery passed 128 cases including
+the 115-policy lifecycle group; its sole obsolete-selector oracle was removed
+and the retained direct three-awk check passes. Final publication checks and
+56 whole-command container cases pass (Debian 21, Fedora 21, Termux 14), plus
+11 helper/reader cases. No final full-discovery rerun after test-only oracle
+cleanup; see ticket 118 for precise validation. Source-only, no push/deployment.
+
 [119 resolved](issues/119-fix-native-termux-yaml-parser.md): migrating current YAML
 container checks exposed a pre-existing native Termux awk compilation failure.
 Equivalent complete UTF-8 alternatives preserve forbidden-character checks and

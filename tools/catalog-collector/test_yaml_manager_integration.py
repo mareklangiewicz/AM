@@ -10,12 +10,10 @@ import sys
 import tempfile
 import unittest
 
-import test_yaml_cohort_shell as shell_cohort
-from test_yaml_cohort_shell import ROOT, NOW
-import test_appimage_lifecycle as lifecycle
-import test_batch_updates as batch
+import fixture_manager as harness
+from fixture_manager import ROOT, NOW
 from yaml_publication import git, publish_local
-from experiment import SCHEMA
+from test_yaml_reader import SCHEMA
 
 SOURCE='https://raw.githubusercontent.com/selected-owner/selected.repo/feature/catalog'
 RUNTIME=('catalog-yaml.am','catalog-yaml-reader.am','catalog-yaml-parser.am','catalog-yaml-policy.am')
@@ -24,7 +22,7 @@ RUNTIME=('catalog-yaml.am','catalog-yaml-reader.am','catalog-yaml-parser.am','ca
 class YAMLManager(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        shell_cohort.ShellCohort.setUpClass.__func__(cls)
+        harness.setup_catalog(cls)
 
     def setUp(self):
         self.tmpcase=tempfile.TemporaryDirectory(prefix='yaml-manager-')
@@ -97,10 +95,10 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\napp=${0##
         return [json.loads(line) for line in path.read_text().splitlines()] if path.exists() else []
 
     def run_manager_install(self, **kwargs):
-        return lifecycle.AppImageLifecycle.run_manager_install(self, format1=False, **kwargs)
-    snapshot=lifecycle.AppImageLifecycle.snapshot
-    manager=batch.BatchUpdates.manager
-    legacy=batch.BatchUpdates.legacy
+        return harness.ManagerHarness.run_manager_install(self, **kwargs)
+    snapshot=harness.ManagerHarness.snapshot
+    manager=harness.ManagerHarness.manager
+    legacy=harness.ManagerHarness.legacy
 
     def install(self,recipe='x86_64/obsidian',appman=False):
         r=self.run_manager_install(amrepo=SOURCE,recipe=ROOT/'programs'/recipe,
@@ -151,7 +149,7 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\napp=${0##
         self.assertIn(b'legacy: updated',r.stdout)
         self.assertEqual(len(self.calls()),4) # ref + apps + two repository documents
         self.clock='2026-11-04T12:00:00Z'
-        from yaml_recipe_cohort import select_cohort
+        from reference_policies import select_cohort
         selected=select_cohort('x86_64/obsidian',self.repositories['262342594'],self.pin,
             now=datetime.fromisoformat(NOW.replace('Z','+00:00')))
         waiver=['--commit',self.pin,'--accept-stale-release',self.pin,selected['repository_id'],
@@ -268,7 +266,7 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\napp=${0##
         r=self.run_manager_install(amrepo=SOURCE)
         self.assertNotEqual(r.returncode,0);self.assertFalse(self.app.exists())
         self.assertIn(b'--accept-stale-release',r.stderr)
-        from yaml_recipe_cohort import select_cohort
+        from reference_policies import select_cohort
         selected=select_cohort('x86_64/obsidian',self.repositories['262342594'],self.pin,
             now=datetime.fromisoformat(NOW.replace('Z','+00:00')))
         flags=' '.join(['--commit',self.pin,'--accept-stale-release',self.pin,selected['repository_id'],

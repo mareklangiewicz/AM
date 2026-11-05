@@ -8,12 +8,12 @@ import tempfile
 import unittest
 
 import test_yaml_manager_integration as integration
-from test_yaml_cohort_shell import ROOT
-from am_utils_cohort import RID, fixture
+from fixture_manager import ROOT
+from fixture_am_utils import RID, fixture
 from yaml_publication import git, publish_local, candidate_tree
-from yaml_recipe_cohort import AM_UTILS, matches, select_cohort
-from attempt_adapter import utc
-from experiment import SCHEMA
+from reference_policies import AM_UTILS, matches, select_cohort
+from fixture_facts import utc
+from test_yaml_reader import SCHEMA
 
 
 class AMUtils(unittest.TestCase):

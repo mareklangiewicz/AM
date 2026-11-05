@@ -42,7 +42,7 @@ for target do
     if "$ENGINE" run --rm --network=none --entrypoint /bin/bash \
         --tmpfs /run:rw --tmpfs /tmp:rw,exec \
         -v "$REPO:/src:ro" -v "$OUT/$target:/out:rw" \
-        -e "E2E_TARGET=$target" "$image" \
+        -e "E2E_TARGET=$target" -e "E2E_TEST=${E2E_TEST-}" "$image" \
         -c 'touch /run/am-e2e-container; exec /bin/bash /src/test/e2e/container-test.sh'; then
         echo "PASS $target"
     else

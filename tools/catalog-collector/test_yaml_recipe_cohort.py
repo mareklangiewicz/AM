@@ -3,8 +3,8 @@ import copy
 from datetime import datetime, timedelta, timezone
 import unittest
 
-from yaml_recipe_cohort import matches, select_cohort
-from yaml_selection import StaleSelection
+from reference_policies import matches, select_cohort
+from reference_selection import StaleSelection
 
 NOW = datetime(2026, 11, 4, 12, tzinfo=timezone.utc)
 PIN = 'b'*40

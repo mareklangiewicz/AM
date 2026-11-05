@@ -5,9 +5,9 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from test_yaml_adapter import repository
+from test_yaml_reader import repository
 from yaml_publication import git,publish_local
-from yaml_selection import select,select_local,StaleSelection
+from reference_selection import select,select_local,StaleSelection
 
 PIN = 'a'*40
 NOW = datetime(2026,11,4,13,tzinfo=timezone.utc)

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Strict offline external-command adapters. Never opens a network connection."""
+from datetime import datetime, timezone
 import hashlib
 import json
 import os
@@ -14,7 +15,10 @@ settings = json.loads((fixture/'settings.json').read_text())
 args = sys.argv[1:]
 tool = Path(sys.argv[0]).name
 if tool == 'date':
-    if args == ['-u', '+%s.%6N']:
+    if args == ['-u', '+%s %Y-%m-%dT%H:%M:%SZ']:
+        epoch=int(settings['clock'].split('.')[0])
+        print(str(epoch)+' '+datetime.fromtimestamp(epoch,timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
+    elif args == ['-u', '+%s.%6N']:
         print(settings['clock'])
     else:
         raise SystemExit(subprocess.call([os.environ.get('PREFIX','/usr')+'/bin/date', *args]))
@@ -47,6 +51,8 @@ elif url == 'https://example.invalid/e2e-extras':
     raw = b'# Empty offline third-party list\n'
 elif head and url.startswith('https://github.com/ivan-hc/AM/raw/test-source/translations/'):
     raise SystemExit(22)  # Optional locale is deliberately unavailable.
+elif url in {'https://raw.githubusercontent.com/Portable-Linux-Apps/Portable-Linux-Apps.github.io/main/icons/'+app+'.png' for app in ('obsidian','sqlitebrowser','nvim','nvim-nightly')}:
+    raw = b'inert optional icon'
 elif url == source+'/APP-MANAGER':
     raw = Path('/src/APP-MANAGER').read_bytes()
 elif url.startswith(source+'/modules/'):

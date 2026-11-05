@@ -16,7 +16,7 @@ import urllib.request
 
 from bounded import normalize, unique_object
 from retention import refresh
-from yaml_adapter import schema_url
+from yaml_publication import schema_url
 from yaml_publication import candidate_tree, load_local
 from publication import git, publish_tree
 
@@ -112,16 +112,11 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--repo', required=True, type=Path, help='Remote-free bare publication repository')
     parser.add_argument('--parent', required=True, help='Existing release-catalog commit')
-    parser.add_argument('--bootstrap', action='store_true', help='Explicitly replace the old format-1 tree')
     parser.add_argument('--evidence', type=Path, help='Saved live responses; no requests')
     parser.add_argument('--report', required=True, type=Path)
     args = parser.parse_args()
     revision = subprocess.check_output(['git','-C',str(ROOT),'rev-parse','HEAD'],text=True).strip()
-    # Existing YAML failures must never be treated as permission to bootstrap.
-    previous = {} if args.bootstrap else load_local(args.repo,args.parent,max_file_bytes=FILE_CAP)[1]
-    if args.bootstrap and subprocess.run(['git','-C',str(args.repo),'cat-file','-e',
-                                         args.parent+':apps.yaml'],capture_output=True).returncode == 0:
-        raise ValueError('bootstrap only replaces format 1')
+    previous = load_local(args.repo,args.parent,max_file_bytes=FILE_CAP)[1]
     tree, report = collect(revision, previous, args.evidence)
     pin = publish_tree(args.repo, tree, args.parent)
     args.report.write_text(json.dumps(dict(pin=pin,parent=args.parent,source=revision,sources=report),indent=2)+'\n')

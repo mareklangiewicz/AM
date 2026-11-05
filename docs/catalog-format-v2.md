@@ -1,12 +1,14 @@
-# Catalog YAML format 2 — experiment draft
+# Catalog YAML format 2
 
-Status: local design draft, not a deployed format. The revised retained-observation prototype is on
-`research/yaml-observation-default` under `tools/catalog-yaml-prototype/`.
-Earlier reader/resource branches describe the superseded full-history model.
-The production catalog and reader still use format 1. Detailed experiment results
-are in [the findings](track/release-catalog/research/yaml-reader-experiment.md).
+Status: deployed catalog format. The maintained writer and publication validation
+live in `tools/catalog-collector/`; the distributed parser/reader live in
+`modules/catalog-yaml-{parser,reader}.am`. See the
+[operating policy](catalog-operating-policy.md) for publication and client behavior.
+Historical experiment findings and measurements remain under
+[research](track/release-catalog/research/yaml-reader-experiment.md); runnable
+prototypes were retired in ticket 118 and remain in Git history at `007ea4871`.
 The [shared observation default](track/release-catalog/research/yaml-shared-observation-default.md)
-records the latest agreed encoding and Git-history measurements.
+records the agreed encoding and original Git-history measurements.
 
 ## Purpose and trust
 

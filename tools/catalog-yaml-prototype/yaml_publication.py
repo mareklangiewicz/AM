@@ -1,1 +1,0 @@
-../catalog-collector/yaml_publication.py
