@@ -6,6 +6,8 @@ APP=obsidian
 CATALOG_FORMAT=2
 CATALOG_RECIPE="x86_64/obsidian"
 CATALOG_ALIAS="https://api.github.com/repos/obsidianmd/obsidian-releases/releases"
+EXTRA_APP_LAUNCHERS=obsidian-gui
+DESKTOP_EXEC=installed
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

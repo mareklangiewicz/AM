@@ -1,5 +1,18 @@
 # Release catalog exploration
 
+## Recipe-owned launch choices and coupling audit — November 5, 2026
+
+[111 resolved](issues/111-move-obsidian-launch-policy-to-recipe.md) moves Obsidian launch
+choices into generated recipe settings, with manifest/compiler support. Shared
+code no longer checks Obsidian identity; extra-alias ownership is also corrected.
+Neovim nightly refresh uses its existing manifest setting instead of a generator
+identity override, preserving generated recipe behavior.
+[Audit](research/shared-installer-policy-audit.md) records further archive/toolset
+coupling in the shared lifecycle; [112 open](issues/112-separate-host-archive-adapters.md)
+tracks Kitty/btop/rclone/EmmyLua adapter separation and compatibility for existing
+installed recipes. All 13 scoped test groups pass; both review axes are clear.
+No live deployment, publication or yadm operation.
+
 ## Shared installer sync — November 5, 2026
 
 [110 resolved](issues/110-sync-shared-appimage-module.md): ordinary module sync

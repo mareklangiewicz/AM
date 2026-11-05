@@ -1,5 +1,6 @@
 """Compile the single-user app manifest into trusted shell policies and recipes."""
 import json
+import shlex
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -45,7 +46,9 @@ def generate():
         if layout!='appimage':text+='PACKAGE_KIND=executable\nPACKAGE_LAYOUT='+layout+'\n'
         if row['version_identity']=='published_at':text+='VERSION_IDENTITY=published_at\n'
         if row['refresh_always']:text+='REFRESH_ALWAYS=true\n'
-        if app=='nvim-nightly':text+='REFRESH_ALWAYS=true\n'
+        for key, variable in (('extra_app_launchers', 'EXTRA_APP_LAUNCHERS'),
+                              ('desktop_exec', 'DESKTOP_EXEC')):
+            if key in row:text+=variable+'='+shlex.quote(row[key])+'\n'
         text+='\n# shellcheck source=modules/appimage.am\n. "/opt/am/modules/appimage.am"\nam_appimage "$0" "$@"\n'
         (ROOT/'programs/x86_64'/app).write_text(text)
 

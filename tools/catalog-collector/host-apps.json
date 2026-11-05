@@ -187,7 +187,7 @@
     "channel": "nightly",
     "layout": "appimage",
     "version_identity": "url",
-    "refresh_always": false
+    "refresh_always": true
   },
   {
     "app": "obsidian",
@@ -197,7 +197,9 @@
     "channel": "any",
     "layout": "appimage",
     "version_identity": "url",
-    "refresh_always": false
+    "refresh_always": false,
+    "extra_app_launchers": "obsidian-gui",
+    "desktop_exec": "installed"
   },
   {
     "app": "sunshine",

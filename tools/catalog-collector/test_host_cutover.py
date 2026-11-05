@@ -166,13 +166,14 @@ else:
         desktop=self.root/'usr/local/share/applications/obsidian-AM.desktop'
         desktop.write_text('custom desktop launcher')
         link=self.root/'usr/local/bin/obsidian';link.unlink();link.symlink_to('/custom/obsidian-wrapper')
-        gui=self.root/'usr/local/bin/obsidian-gui';gui.unlink();gui.symlink_to('/custom/obsidian-gui-wrapper')
+        # A custom alias inside the app directory must not look manager-owned.
+        gui=self.root/'usr/local/bin/obsidian-gui';gui.unlink();gui.symlink_to(app/'obsidian-gui')
         self.stage()
         result=subprocess.run(['sh',str(app/'recipe.am')],env=self.env(),capture_output=True)
         self.assertEqual(result.returncode,0,result.stderr)
         self.assertEqual(desktop.read_text(),'custom desktop launcher')
         self.assertEqual(link.readlink(),Path('/custom/obsidian-wrapper'))
-        self.assertEqual(gui.readlink(),Path('/custom/obsidian-gui-wrapper'))
+        self.assertEqual(gui.readlink(),app/'obsidian-gui')
         result=subprocess.run(['sh',str(app/'remove')],capture_output=True)
         self.assertEqual(result.returncode,0,result.stderr)
         self.assertTrue(gui.is_symlink())
@@ -206,6 +207,40 @@ else:
         path=str(directory/'obsidian')
         quoted=''.join(('\\\\\\\\' if c=='\\' else '\\\\'+c if c in '"`$' else '%%' if c=='%' else c) for c in path)
         self.assertEqual(desktop.read_text(),'Exec="'+quoted+'" --no-sandbox %U\n')
+
+    def test_another_recipe_can_request_gui_aliases_and_installed_desktop(self):
+        app=self.install('x86_64/neovide')
+        desktop=self.root/'usr/local/share/applications/neovide-AM.desktop'
+        self.assertIn('Exec=neovide --no-sandbox',desktop.read_text())
+        desktop.unlink()
+        recipe=app/'recipe.am'
+        recipe.write_text(recipe.read_text().replace('APP=neovide\n',
+            'APP=neovide\nEXTRA_APP_LAUNCHERS="neovide-gui neovide-window"\nDESKTOP_EXEC=installed\n'))
+        self.stage()
+        result=subprocess.run(['sh',str(recipe)],env=self.env(),capture_output=True)
+        self.assertEqual(result.returncode,0,result.stderr)
+        for name in ('neovide-gui','neovide-window'):
+            self.assertEqual((self.root/'usr/local/bin'/name).readlink(),app/'neovide')
+        self.assertIn('Exec="'+str(app/'neovide')+'" --no-sandbox',desktop.read_text())
+        result=subprocess.run(['sh',str(app/'remove')],capture_output=True)
+        self.assertEqual(result.returncode,0,result.stderr)
+        for name in ('neovide-gui','neovide-window'):
+            self.assertFalse((self.root/'usr/local/bin'/name).is_symlink())
+
+    def test_recipe_rejects_invalid_launcher_settings_before_download(self):
+        app=self.install('x86_64/obsidian')
+        recipe=app/'recipe.am'
+        original=recipe.read_text()
+        for setting in ('EXTRA_APP_LAUNCHERS=../escape', 'EXTRA_APP_LAUNCHERS="*"',
+                        'EXTRA_APP_LAUNCHERS=obsidian', 'DESKTOP_EXEC=unknown'):
+            with self.subTest(setting=setting):
+                recipe.write_text(original.replace('am_appimage "$0" "$@"',
+                    setting+'\nam_appimage "$0" "$@"'))
+                self.stage()
+                before=(self.path/'downloads').read_bytes()
+                result=subprocess.run(['sh',str(recipe)],env=self.env(),capture_output=True)
+                self.assertNotEqual(result.returncode,0)
+                self.assertEqual((self.path/'downloads').read_bytes(),before)
 
 
 if __name__=='__main__':

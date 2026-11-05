@@ -57,6 +57,14 @@ am_package() (
 	APPS_DIR=${APPS_DIR-/opt}; BIN_DIR=${BIN_DIR-/usr/local/bin}
 	DESKTOP_DIR=${DESKTOP_DIR-/usr/local/share/applications}
 	PACKAGE_KIND=${PACKAGE_KIND-appimage}; layout=${PACKAGE_LAYOUT-raw}
+	# Recipe interface: space-separated extra names for the app executable;
+	# desktop Exec chooses the command name (default) or quoted installed path.
+	extra_launchers=${EXTRA_APP_LAUNCHERS-}
+	case $extra_launchers in *[!a-z0-9.+_\ -]*) echo 'Invalid extra launcher names' >&2; exit 1;; esac
+	for extra in $extra_launchers; do
+		case $extra in .*|"$APP") echo 'Invalid extra launcher name' >&2; exit 1;; esac
+	done
+	case ${DESKTOP_EXEC-command} in command|installed) ;; *) echo 'Invalid desktop Exec mode' >&2; exit 1;; esac
 	case $APP in ''|.*|*[!a-z0-9.+_-]*) echo 'Invalid app identity' >&2; exit 1;; esac
 	case $PACKAGE_KIND in appimage|executable) ;; *) exit 1;; esac
 	[ "${CATALOG_FORMAT-1}" = 2 ] || {
@@ -131,11 +139,11 @@ am_package() (
 	quote() { printf "'"; printf '%s' "$1" | sed "s/'/'\\\\''/g"; printf "'"; }
 	{
 		printf '#!/bin/sh\nset -e\nrm -f '; quote "$BIN_DIR/$APP"
-		if [ "$APP" = obsidian ]; then
-			printf '\nif [ "$(readlink '; quote "$BIN_DIR/obsidian-gui"
+		for extra in $extra_launchers; do
+			printf '\nif [ "$(readlink '; quote "$BIN_DIR/$extra"
 			printf ')" = '; quote "$dir/$APP"
-			printf ' ]; then rm -f '; quote "$BIN_DIR/obsidian-gui"; printf '; fi'
-		fi
+			printf ' ]; then rm -f '; quote "$BIN_DIR/$extra"; printf '; fi'
+		done
 		if [ "$layout" = kitty ]; then printf '\nrm -f '; quote "$BIN_DIR/kitten"; fi
 		if [ "$layout" = emmylua ]; then
 			for tool in $tools; do printf '\nrm -f '; quote "$BIN_DIR/$tool"; done
@@ -153,10 +161,12 @@ am_package() (
 	} > "$dir/AM-updater"
 	chmod a+x "$dir/remove" "$dir/AM-updater"
 	link_app() {
+		# Optional third argument is the known legacy target of a primary launcher.
 		link=$BIN_DIR/$1 target=$2
 		if [ -L "$link" ]; then
 			old=$(readlink "$link")
-			case $old in "$dir/$1"|"$dir/bin/$1") rm -f "$link" || return 1 ;;
+			case $old in "$target") return 0 ;;
+				"${3-}") rm -f "$link" || return 1 ;;
 				*) printf 'Preserving custom launcher: %s\n' "$link"; return 0 ;;
 			esac
 		elif [ -e "$link" ]; then
@@ -165,13 +175,12 @@ am_package() (
 		ln -s "$target" "$link"
 	}
 	case $layout in
-		btop|kitty) link_app "$APP" "$dir/bin/$APP" ;;
+		btop|kitty) link_app "$APP" "$dir/bin/$APP" "$dir/$APP" ;;
 		emmylua) for tool in $tools; do link_app "$tool" "$dir/$tool"; done ;;
-		*) link_app "$APP" "$dir/$APP" ;;
+		*) link_app "$APP" "$dir/$APP" "$dir/bin/$APP" ;;
 	esac
-	if [ "$layout" = kitty ]; then link_app kitten "$dir/bin/kitten"; fi
-	# Obsidian registers its official CLI under the same bare name in ~/.local/bin.
-	if [ "$APP" = obsidian ]; then link_app obsidian-gui "$dir/$APP"; fi
+	if [ "$layout" = kitty ]; then link_app kitten "$dir/bin/kitten" "$dir/kitten"; fi
+	for extra in $extra_launchers; do link_app "$extra" "$dir/$APP"; done
 	[ "$PACKAGE_KIND" = appimage ] || exit 0
 	if [ -e "$DESKTOP_DIR/$APP-AM.desktop" ] || [ -L "$DESKTOP_DIR/$APP-AM.desktop" ]; then
 		printf 'Preserving desktop launcher: %s\n' "$DESKTOP_DIR/$APP-AM.desktop"
@@ -206,7 +215,7 @@ am_package() (
 	icon=$(printf '%s' "$dir/icons/$APP" | sed 's/[\\&#]/\\&/g')
 	[ "$icon_theme" = false ] || icon=$APP
 	sed -i "s#Exec=[^ ]*#Exec=$APP#g; s#Icon=.*#Icon=$icon#g" ./"$APP".desktop
-	if [ "$APP" = obsidian ]; then
+	if [ "${DESKTOP_EXEC-command}" = installed ]; then
 		# Desktop Exec uses its own quoting rules, then sed needs replacement escaping.
 		gui=$(printf '%s' "$dir/$APP" | sed 's/[\\"`$]/\\&/g; s/\\/\\\\/g; s/%/%%/g; s/[\\&#]/\\&/g')
 		sed -i "s#^Exec=$APP#Exec=\"$gui\"#" ./"$APP".desktop

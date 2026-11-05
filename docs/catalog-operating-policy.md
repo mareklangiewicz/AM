@@ -81,3 +81,26 @@ AppImage refresh; original desktop entries, removers and executable-link targets
 were verified preserved. Before-images are in `prepared/before/` under the local
 cutover directory. Logseq's generic checksum UI still treats its version timestamp
 as a missing URL; the selected URL remains in download-url and updates succeed.
+
+## Recipe launcher settings
+
+The host manifest compiles recipe settings through `host_policy_source.py`.
+`EXTRA_APP_LAUNCHERS` is an optional space-separated list of additional command
+names pointing to the installed root executable `$APPS_DIR/$APP/$APP`. Names
+must be simple basenames; dot-prefixed names and the main app name are refused.
+The shared installer creates these links, preserves existing custom launchers,
+and generates removal commands that delete aliases only while they still point
+to that executable. This setting does not describe executables inside archives.
+
+`DESKTOP_EXEC` defaults to `command`, preserving existing desktop behavior.
+`installed` uses the quoted absolute root executable in newly generated desktop
+entries, keeping their arguments and field codes. Existing desktop entries remain
+preserved. Other values are refused before downloading or installing anything.
+
+Obsidian declares `EXTRA_APP_LAUNCHERS=obsidian-gui` and `DESKTOP_EXEC=installed`.
+The shared lifecycle contains no Obsidian identity checks. Official CLI registration
+at `~/.local/bin/obsidian` remains independent. Existing installed recipes are not
+rewritten by module sync; these declarations arrive through the current source
+recipe on install/reinstall. Existing user GUI aliases/desktop overrides need no
+migration. [Archive adapter follow-up](track/release-catalog/issues/112-separate-host-archive-adapters.md)
+records the remaining app-specific archive/layout knowledge in shared code.
