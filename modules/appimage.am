@@ -2,9 +2,19 @@
 # AMCLI shared YAML-only installer. Recipes are trusted code; catalogs are inert facts.
 am_appimage() { am_package "$@"; }
 
+am_archive_configure() {
+	archive_kind=$1 archive_root=. archive_executables=$2 archive_launchers="$2:$2" tools=
+	case $1 in raw|tar) return 0 ;; esac
+	policy=${AM_ARCHIVE_POLICY-$(dirname -- "${CATALOG_YAML_HELPER-/opt/am/modules/catalog-yaml.am}")/archive-policy.am}
+	[ -r "$policy" ] || { echo 'Missing archive-policy.am; synchronize AM modules.' >&2; return 1; }
+	. "$policy"
+	am_archive_policy "$1" "$2"
+}
+
 am_archive_stage() (
 	set -eu
 	layout=$1 stage=$2 app=$3
+	am_archive_configure "$layout" "$app" || exit 1
 	mkdir "$stage/unpacked" "$stage/payload" || exit 1
 	check_names() {
 		awk 'BEGIN { bad=0 } /^\// || /(^|\/)\.\.(\/|$)/ || /\\/ { bad=1 } END { exit bad }'
@@ -14,35 +24,33 @@ am_archive_stage() (
 		check_names < "$stage/members" || return 1
 		tar --no-same-owner --no-same-permissions -xf "$1" -C "$2"
 	}
-	case $layout in
-		emmylua)
-			for tool in emmylua_ls emmylua_check emmylua_doc_cli luafmt; do
+	case $archive_kind in
+		toolset)
+			for tool in $tools; do
 				mkdir "$stage/unpacked/$tool" || exit 1
 				untar "$stage/$tool.tar.gz" "$stage/unpacked/$tool" || exit 1
 				[ -f "$stage/unpacked/$tool/$tool" ] && [ ! -L "$stage/unpacked/$tool/$tool" ] || exit 1
 				cp "$stage/unpacked/$tool/$tool" "$stage/payload/$tool" || exit 1
 				chmod a+x "$stage/payload/$tool" || exit 1
 			done ;;
-		rclone)
-			unzip -Z1 "$stage/asset" > "$stage/members" || exit 1
-			check_names < "$stage/members" || exit 1
-			unzip -q "$stage/asset" -d "$stage/unpacked" || exit 1
-			set -- "$stage/unpacked"/rclone-*-linux-amd64
-			[ "$#" -eq 1 ] && [ -f "$1/rclone" ] && [ ! -L "$1" ] || exit 1
-			cp -a "$1/." "$stage/payload/" || exit 1
-			chmod a+x "$stage/payload/rclone" || exit 1 ;;
-		tar|btop|kitty)
-			untar "$stage/asset" "$stage/unpacked" || exit 1
-			case $layout in
-				btop) tree=$stage/unpacked/btop; binary=bin/btop ;;
-				kitty) tree=$stage/unpacked; binary=bin/kitty
-					[ -f "$tree/bin/kitten" ] || exit 1 ;;
-				*) tree=$stage/unpacked; binary=$app ;;
-			esac
-			[ -f "$tree/$binary" ] && [ ! -L "$tree/$binary" ] || exit 1
+		tar|zip)
+			if [ "$archive_kind" = zip ]; then
+				unzip -Z1 "$stage/asset" > "$stage/members" || exit 1
+				check_names < "$stage/members" || exit 1
+				unzip -q "$stage/asset" -d "$stage/unpacked" || exit 1
+			else
+				untar "$stage/asset" "$stage/unpacked" || exit 1
+			fi
+			# Root globs are trusted adapter data, resolved against extracted paths.
+			set -- "$stage/unpacked"/$archive_root
+			[ "$#" -eq 1 ] && [ -d "$1" ] && [ ! -L "$1" ] || exit 1
+			tree=$1
+			for binary in $archive_executables; do
+				[ -f "$tree/$binary" ] && [ ! -L "$tree/$binary" ] || exit 1
+			done
 			cp -a "$tree/." "$stage/payload/" || exit 1
-			chmod a+x "$stage/payload/$binary" || exit 1 ;;
-		*) echo 'Unsupported archive layout' >&2; exit 1 ;;
+			for binary in $archive_executables; do chmod a+x "$stage/payload/$binary" || exit 1; done ;;
+		*) echo 'Unsupported archive kind' >&2; exit 1 ;;
 	esac
 )
 
@@ -70,6 +78,7 @@ am_package() (
 	[ "${CATALOG_FORMAT-1}" = 2 ] || {
 		echo 'This fork uses YAML catalogs only; this recipe needs conversion.' >&2; exit 3;
 	}
+	am_archive_configure "$layout" "$APP" || exit 3
 	catalog_recipe=${CATALOG_RECIPE-}
 	[ "${catalog_recipe#*/}" = "$APP" ] || exit 3
 	CATALOG_YAML_HELPER=${CATALOG_YAML_HELPER-/opt/am/modules/catalog-yaml.am}
@@ -85,16 +94,17 @@ am_package() (
 	fi
 	download=$(printf '%s\n' "$selection" | sed -n '6p')
 	[ -n "$version" ] && [ -n "$download" ] || exit 3
-	if [ "$layout" = emmylua ]; then
+	if [ -n "$tools" ]; then
 		publication=$(printf '%s\n' "$selection" | sed -n '1p')
 		release=$(printf '%s\n' "$selection" | sed -n '2,3p')
-		tools='emmylua_ls emmylua_check emmylua_doc_cli luafmt'
 		tool_urls=$download
-		for tool in emmylua_check emmylua_doc_cli luafmt; do
+		first_tool=true
+		for tool in $tools; do
+			if [ "$first_tool" = true ]; then first_tool=false; continue; fi
 			extra=$(sh "$CATALOG_YAML_HELPER" "$catalog_recipe" --commit "$publication" --tool "$tool") || exit 3
 			[ "$(printf '%s\n' "$extra" | wc -l)" -eq 6 ] &&
 				[ "$(printf '%s\n' "$extra" | sed -n '2,3p')" = "$release" ] || {
-				echo 'EmmyLua tools must come from one release.' >&2; exit 3;
+				echo 'Package tools must come from one release.' >&2; exit 3;
 			}
 			tool_urls=$(printf '%s\n%s' "$tool_urls" "$(printf '%s\n' "$extra" | sed -n '6p')")
 		done
@@ -112,7 +122,7 @@ am_package() (
 		if command -v wget >/dev/null 2>&1; then wget -O "$2" "$1"
 		else curl --fail -L -o "$2" "$1"; fi
 	}
-	if [ "$layout" = emmylua ]; then
+	if [ -n "$tools" ]; then
 		i=1
 		for tool in $tools; do
 			url=$(printf '%s\n' "$tool_urls" | sed -n "${i}p")
@@ -144,10 +154,10 @@ am_package() (
 			printf ')" = '; quote "$dir/$APP"
 			printf ' ]; then rm -f '; quote "$BIN_DIR/$extra"; printf '; fi'
 		done
-		if [ "$layout" = kitty ]; then printf '\nrm -f '; quote "$BIN_DIR/kitten"; fi
-		if [ "$layout" = emmylua ]; then
-			for tool in $tools; do printf '\nrm -f '; quote "$BIN_DIR/$tool"; done
-		fi
+		for launcher in $archive_launchers; do
+			name=${launcher%%:*}
+			[ "$name" = "$APP" ] || { printf '\nrm -f '; quote "$BIN_DIR/$name"; }
+		done
 		printf '\nrm -rf '; quote "$dir"
 		if [ "$PACKAGE_KIND" = appimage ]; then
 			printf '\nrm -f '; quote "$DESKTOP_DIR/$APP-AM.desktop"
@@ -174,12 +184,11 @@ am_package() (
 		fi
 		ln -s "$target" "$link"
 	}
-	case $layout in
-		btop|kitty) link_app "$APP" "$dir/bin/$APP" "$dir/$APP" ;;
-		emmylua) for tool in $tools; do link_app "$tool" "$dir/$tool"; done ;;
-		*) link_app "$APP" "$dir/$APP" "$dir/bin/$APP" ;;
-	esac
-	if [ "$layout" = kitty ]; then link_app kitten "$dir/bin/kitten" "$dir/kitten"; fi
+	for launcher in $archive_launchers; do
+		name=${launcher%%:*} entry=${launcher#*:}
+		case $entry in bin/*) legacy=$dir/$name ;; *) legacy=$dir/bin/$name ;; esac
+		link_app "$name" "$dir/$entry" "$legacy"
+	done
 	for extra in $extra_launchers; do link_app "$extra" "$dir/$APP"; done
 	[ "$PACKAGE_KIND" = appimage ] || exit 0
 	if [ -e "$DESKTOP_DIR/$APP-AM.desktop" ] || [ -L "$DESKTOP_DIR/$APP-AM.desktop" ]; then

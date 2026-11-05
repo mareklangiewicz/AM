@@ -15,15 +15,18 @@ def generate():
     for row in rows:
         lines.append('    if(recipe=='+json.dumps('x86_64/'+row['app'])+') { host_repository='+
             json.dumps(str(row['repository_id']))+'; host_channel='+json.dumps(row['channel'])+
-            '; host_pattern='+json.dumps(row['asset_pattern'])+'; return 1 }')
+            '; host_pattern='+json.dumps(row['asset_pattern'])+
+            '; host_tools='+json.dumps(' '.join(row.get('tools', [])))+
+            '; host_tool_suffix='+json.dumps(row.get('tool_asset_suffix', ''))+
+            '; host_fresh_only='+str(int(row.get('fresh_only', False)))+'; return 1 }')
     lines += ['    return 0', '}', 'function host_eligible(name, tag, preview, tool) {',
         '    if(host_channel=="stable" && (preview!="false" || tag=="nightly")) return 0',
         '    if(host_channel=="nightly" && tag!="nightly") return 0',
         '    if(tolower(name) ~ /aarch64|arm64|armv7|i386|i686|macos|darwin|windows/) return 0',
-        '    if(app=="emmylua") {',
-        '        tool=ENVIRON["AM_YAML_TOOL"]; if(tool=="") tool="emmylua_ls"',
-        '        if(tool!="emmylua_ls" && tool!="emmylua_check" && tool!="emmylua_doc_cli" && tool!="luafmt") return 0',
-        '        return name==tool "-linux-musl.tar.gz"',
+        '    if(host_tools!="") {',
+        '        tool=ENVIRON["AM_YAML_TOOL"]; split(host_tools,tools," "); if(tool=="") tool=tools[1]',
+        '        if(index(" " host_tools " "," " tool " ")==0) return 0',
+        '        return name==tool host_tool_suffix',
         '    }', '    return name ~ host_pattern', '}', END.rstrip(), '']
     path=ROOT/'modules/catalog-yaml-policy.am'
     source=path.read_text()
@@ -37,7 +40,25 @@ def generate():
     source=source.replace('    if(image && ENVIRON','    if(!host && image && ENVIRON')
     source=source.replace('    if(image) {','    if(host) {\n        eligible=host_eligible(name,tag,$8)\n    } else if(image) {') if 'eligible=host_eligible' not in source else source
     source=source.replace('    print best_url\n','    print best_url\n    if(ENVIRON["AM_YAML_INCLUDE_PUBLICATION"]=="1") print best_published\n') if 'print best_published' not in source else source
+    guard='    if(host_fresh_only && ENVIRON["AM_YAML_ACCEPT"]!="") refuse("toolset requires fresh observations; refresh the catalog")\n'
+    if guard not in source:
+        source=source.replace('    if(check_only) exit\n', guard+'    if(check_only) exit\n')
     path.write_text(source)
+    adapters=['#!/bin/sh', '# AMCLI generated app-owned archive policies; see host-apps.json.',
+              'am_archive_policy() {',
+              '\tcase $1 in']
+    for row in rows:
+        if 'archive' not in row: continue
+        archive=row['archive']
+        adapters.append('\t\t'+row['layout']+')')
+        for variable,value in (('archive_kind',archive['kind']),('archive_root',archive['root']),
+                               ('archive_executables',' '.join(archive.get('executables', row.get('tools', [])))),
+                               ('archive_launchers',' '.join(archive.get('launchers', [t+':'+t for t in row.get('tools', [])]))),
+                               ('tools',' '.join(row.get('tools',[])))):
+            adapters.append('\t\t\t'+variable+'='+shlex.quote(value))
+        adapters[-1]+=' ;;'
+    adapters+=['\t\t*) echo "Unsupported archive layout" >&2; return 1 ;;', '\tesac', '}','']
+    (ROOT/'modules/archive-policy.am').write_text('\n'.join(adapters))
     for row in rows:
         app=row['app'];layout=row['layout']
         text='#!/bin/sh\n# AM INSTALL SCRIPT VERSION 3.5\n# AM-CATALOG-RECIPE 1\nset -eu\n'

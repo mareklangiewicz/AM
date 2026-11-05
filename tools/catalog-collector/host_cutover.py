@@ -33,18 +33,18 @@ def select(rows, repo, pin):
             if not document.exists():
                 document.write_bytes(subprocess.check_output(['git','-C',str(repo),'show',pin+':repositories/'+rid+'.yaml']))
             facts=subprocess.check_output(['sh',str(ROOT/'modules/catalog-yaml-reader.am'),'asset_facts',str(document)])
-            tools=('emmylua_ls','emmylua_check','emmylua_doc_cli','luafmt') if app=='emmylua' else (app,)
+            tools=row.get('tools', [app])
             selections={}
             for tool in tools:
                 env=dict(os.environ,LC_ALL='C',AM_YAML_RECIPE='x86_64/'+app,
                     AM_YAML_PIN=pin,AM_YAML_REPOSITORY=rid,AM_YAML_NOW=now,
-                    AM_YAML_TOOL=tool if app=='emmylua' else '',AM_YAML_INCLUDE_PUBLICATION='1',AM_YAML_ACCEPT='')
+                    AM_YAML_TOOL=tool if row.get('tools') else '',AM_YAML_INCLUDE_PUBLICATION='1',AM_YAML_ACCEPT='')
                 fields=subprocess.check_output(['awk','-f',str(ROOT/'modules/catalog-yaml-policy.am')],input=facts,env=env).decode().splitlines()
                 if len(fields)!=7:raise ValueError('selection protocol')
                 selections[tool]=dict(commit=fields[0],repository_id=fields[1],release_id=fields[2],
                     asset_id=fields[3],observed_at=fields[4],url=fields[5],published_at=fields[6])
             if len({s['release_id'] for s in selections.values()})!=1:
-                raise ValueError('EmmyLua release mismatch')
+                raise ValueError('Package toolset release mismatch')
             results[app]=selections
     return results
 
@@ -76,11 +76,11 @@ def prepare(repo, out, cache):
             (target/'payload'/app).chmod(0o755)
         else:
             stage=target/'archive';stage.mkdir()
-            if row['layout']=='emmylua':
+            if row.get('tools'):
                 for tool,path in downloads.items():shutil.copyfile(path,stage/(tool+'.tar.gz'))
             else:shutil.copyfile(downloads[app],stage/'asset')
             # Exercise the actual delivered archive adapter, not a second extractor.
-            run('sh','-c','. "$1"; am_archive_stage "$2" "$3" "$4"','sh',
+            run('sh','-c','AM_ARCHIVE_POLICY="$(dirname "$1")/archive-policy.am"; . "$1"; am_archive_stage "$2" "$3" "$4"','sh',
                 ROOT/'modules/appimage.am',row['layout'],stage,app)
             (stage/'payload').rename(target/'payload')
             shutil.rmtree(stage)
@@ -118,10 +118,10 @@ def apply(prepared, root):
     manager=root/'opt/am';apps=root/'opt';bins=root/'usr/local/bin'
     desktop=root/'usr/local/share/applications'
     def launcher_targets(row):
-        app=row['app'];layout=row['layout']
-        return ([('kitty','bin/kitty'),('kitten','bin/kitten')] if layout=='kitty' else
-                [('btop','bin/btop')] if layout=='btop' else
-                [(t,t) for t in ('emmylua_ls','emmylua_check','emmylua_doc_cli','luafmt')] if layout=='emmylua' else [(app,app)])
+        app=row['app']
+        return [tuple(pair.split(':',1)) for pair in
+                row.get('archive', {}).get('launchers', [t+':'+t for t in row.get('tools', [app])])]
+
 
     # One simple, exclusive snapshot of manager and small app metadata. User
     # data remains where it is; binaries are replaceable downloads.

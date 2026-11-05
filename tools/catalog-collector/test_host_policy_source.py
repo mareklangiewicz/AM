@@ -23,6 +23,8 @@ class HostPolicySource(unittest.TestCase):
                 compiler.generate()
                 second = {p.relative_to(root): p.read_bytes() for p in root.rglob('*') if p.is_file()}
             self.assertEqual(first, second)
+            self.assertEqual((root/'modules/archive-policy.am').read_bytes(),
+                             (compiler.ROOT/'modules/archive-policy.am').read_bytes())
             obsidian = (recipes/'obsidian').read_text()
             self.assertIn('EXTRA_APP_LAUNCHERS=obsidian-gui\n', obsidian)
             self.assertIn('DESKTOP_EXEC=installed\n', obsidian)

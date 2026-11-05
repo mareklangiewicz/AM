@@ -1,7 +1,7 @@
 # Separate host archive knowledge from the shared package lifecycle
 
 Type: task
-Status: open
+Status: claimed
 Triage: ready-for-agent
 
 Audit from 111 found additional application knowledge in modules/appimage.am:
@@ -27,3 +27,14 @@ without weakening or bypassing it. Review source-of-truth duplication with
 host-apps.json and host_cutover.py as part of the concrete adapter design.
 
 This ticket is source follow-up, not authorization for live deployment or pushes.
+
+## Implementation
+
+The host manifest now owns archive kinds, root paths, executable/launcher mappings
+and toolset membership/fresh-only policy. Its compiler generates a narrow
+`archive-policy.am` adapter registry, delivered by normal module sync. Existing
+layout names remain its interface so old installed recipes need no rewriting.
+Shared extraction/lifecycle code contains no Kitty/btop/rclone/EmmyLua identities.
+The same EmmyLua tool list generates selection, staging and launcher settings;
+`catalog-yaml.am` delegates fresh-only consent refusal to that trusted policy.
+`host_cutover.py` reads the manifest instead of repeating app identity switches.

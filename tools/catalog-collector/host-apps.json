@@ -27,7 +27,17 @@
     "channel": "any",
     "layout": "btop",
     "version_identity": "url",
-    "refresh_always": false
+    "refresh_always": false,
+    "archive": {
+      "kind": "tar",
+      "root": "btop",
+      "executables": [
+        "bin/btop"
+      ],
+      "launchers": [
+        "btop:bin/btop"
+      ]
+    }
   },
   {
     "app": "emmylua",
@@ -37,7 +47,19 @@
     "channel": "stable",
     "layout": "emmylua",
     "version_identity": "url",
-    "refresh_always": false
+    "refresh_always": false,
+    "archive": {
+      "kind": "toolset",
+      "root": "."
+    },
+    "tools": [
+      "emmylua_ls",
+      "emmylua_check",
+      "emmylua_doc_cli",
+      "luafmt"
+    ],
+    "tool_asset_suffix": "-linux-musl.tar.gz",
+    "fresh_only": true
   },
   {
     "app": "fzf",
@@ -57,7 +79,19 @@
     "channel": "stable",
     "layout": "kitty",
     "version_identity": "url",
-    "refresh_always": false
+    "refresh_always": false,
+    "archive": {
+      "kind": "tar",
+      "root": ".",
+      "executables": [
+        "bin/kitty",
+        "bin/kitten"
+      ],
+      "launchers": [
+        "kitty:bin/kitty",
+        "kitten:bin/kitten"
+      ]
+    }
   },
   {
     "app": "lazygit",
@@ -117,7 +151,17 @@
     "channel": "any",
     "layout": "rclone",
     "version_identity": "url",
-    "refresh_always": false
+    "refresh_always": false,
+    "archive": {
+      "kind": "zip",
+      "root": "rclone-*-linux-amd64",
+      "executables": [
+        "rclone"
+      ],
+      "launchers": [
+        "rclone:rclone"
+      ]
+    }
   },
   {
     "app": "rclone-ui",

@@ -104,3 +104,21 @@ rewritten by module sync; these declarations arrive through the current source
 recipe on install/reinstall. Existing user GUI aliases/desktop overrides need no
 migration. [Archive adapter follow-up](track/release-catalog/issues/112-separate-host-archive-adapters.md)
 records the remaining app-specific archive/layout knowledge in shared code.
+
+### Host archive adapters
+
+`tools/catalog-collector/host-apps.json` owns the reviewed host archive roots,
+required executable paths and launcher mappings. `host_policy_source.py` compiles
+these into `modules/archive-policy.am`; edit the manifest and regenerate, rather
+than editing the generated module. `raw` and flat `tar` retain shared defaults.
+Existing `PACKAGE_LAYOUT` values select these app-owned adapters, so module sync
+can update machinery without rewriting installed recipes. The manager's module
+list includes the adapter module, including first delivery to older installations.
+
+The shared installer performs downloads, archive checks, staging, replacement and
+launcher ownership handling. The manifest's EmmyLua tool list drives both archive
+staging/launchers and catalog asset selection; `fresh_only` rejects stale consent
+in the trusted policy before acquisition. All selected tools must match the first
+selection's repository and release at its pinned publication. The maintenance
+cutover helper uses the same manifest mappings. This source change requires no
+reinstall; deployment is an ordinary separately chosen module synchronization.

@@ -1,0 +1,31 @@
+#!/bin/sh
+# AMCLI generated app-owned archive policies; see host-apps.json.
+am_archive_policy() {
+	case $1 in
+		btop)
+			archive_kind=tar
+			archive_root=btop
+			archive_executables=bin/btop
+			archive_launchers=btop:bin/btop
+			tools='' ;;
+		emmylua)
+			archive_kind=toolset
+			archive_root=.
+			archive_executables='emmylua_ls emmylua_check emmylua_doc_cli luafmt'
+			archive_launchers='emmylua_ls:emmylua_ls emmylua_check:emmylua_check emmylua_doc_cli:emmylua_doc_cli luafmt:luafmt'
+			tools='emmylua_ls emmylua_check emmylua_doc_cli luafmt' ;;
+		kitty)
+			archive_kind=tar
+			archive_root=.
+			archive_executables='bin/kitty bin/kitten'
+			archive_launchers='kitty:bin/kitty kitten:bin/kitten'
+			tools='' ;;
+		rclone)
+			archive_kind=zip
+			archive_root='rclone-*-linux-amd64'
+			archive_executables=rclone
+			archive_launchers=rclone:rclone
+			tools='' ;;
+		*) echo "Unsupported archive layout" >&2; return 1 ;;
+	esac
+}
