@@ -1,1 +1,0 @@
-		FUNCTION=''"$CURL_COMMAND_REF"'/'"$RESPONSE"'/releases | sed '"$q"'s/[()",{} ]/\\n/g'"$q"' | grep -oi "https.*mage$" | grep -vi "i386\\|i686\\|aarch64\\|arm64\\|armv7l" | head -1'

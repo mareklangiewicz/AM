@@ -18,12 +18,12 @@ class Reconstruction(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.template, cls.metadata = tool.load_template(tool.TEMPLATE)
-        cls.source = (ROOT/'fixtures/obsidian').read_bytes().decode()
+        cls.source = tool.ORIGINALS.read(cls.metadata['fixture_commit'], 'programs/x86_64/obsidian')
 
     def test_real_fixture_hashes_and_complete_round_trips(self):
         for fixture in self.metadata['fixtures']:
             with self.subTest(path=fixture['path']):
-                data = (ROOT/'fixtures'/Path(fixture['path']).name).read_bytes()
+                data = tool.ORIGINALS.read(self.metadata['fixture_commit'], fixture['path']).encode()
                 self.assertEqual(hashlib.sha256(data).hexdigest(), fixture['sha256'])
                 result = tool.check(self.template, data.decode(), tool.TEMPLATE)
                 self.assertEqual(result['status'], 'exact')
@@ -112,42 +112,17 @@ class Reconstruction(unittest.TestCase):
             with self.subTest(modified=modified[:100]), self.assertRaises(tool.Unsupported):
                 tool.from_short(modified, tool.TEMPLATE)
 
-    def test_template_integrity(self):
-        real = tool.read_text
-        def changed(path):
-            result = real(path)
-            return result+'# drift\n' if Path(path).name == 'AM-SAMPLE-AppImage' else result
-        with patch.object(tool, 'read_text', side_effect=changed), self.assertRaises(ValueError):
-            tool.load_template(tool.TEMPLATE)
+    def test_pinned_source_integrity(self):
+        real = tool.ORIGINALS.read
+        for changed in ('templates/AM-SAMPLE-AppImage', 'modules/template.am'):
+            with self.subTest(path=changed):
+                def drift(commit, path):
+                    return real(commit, path)+('# drift\n' if path == changed else '')
+                with patch.object(tool.ORIGINALS, 'read', side_effect=drift), self.assertRaises(ValueError):
+                    tool.load_template(tool.TEMPLATE)
 
-    def test_upstream_verification_checks_source_bytes(self):
-        # Normal tests work in source archives/shallow clones as well. The real
-        # pinned-object CLI verification is a separate documented operation.
-        metadata = dict(self.metadata)
-        excerpt = (ROOT/'upstream/github-appimage-function.txt').read_bytes()
-        metadata['generator_line'] = 1
-        metadata['generator_sha256'] = hashlib.sha256(excerpt).hexdigest()
-        objects = {metadata['upstream_commit']+':'+metadata['template_source']:
-                   (ROOT/'upstream/AM-SAMPLE-AppImage').read_bytes(),
-                   metadata['upstream_commit']+':'+metadata['generator_source']: excerpt}
-        objects.update({metadata['fixture_commit']+':'+row['path']:
-                        (ROOT/'fixtures'/Path(row['path']).name).read_bytes()
-                        for row in metadata['fixtures']})
-        with patch.object(tool.subprocess, 'check_output', side_effect=lambda args, **kw: objects[args[-1]]):
-            result = tool.verify_upstream(REPO, metadata)
-            self.assertEqual(result['status'], 'exact')
-            self.assertEqual(result['fixtures_verified'], 5)
-            objects[metadata['upstream_commit']+':'+metadata['template_source']] += b'# drift\n'
-            with self.assertRaises(ValueError):
-                tool.verify_upstream(REPO, metadata)
-
-    def test_generator_integrity(self):
-        real = tool.read_text
-        def changed(path):
-            result = real(path)
-            return result+'# drift\n' if Path(path).name == 'github-appimage-function.txt' else result
-        with patch.object(tool, 'read_text', side_effect=changed), self.assertRaises(ValueError):
-            tool.load_template(tool.TEMPLATE)
+    def test_real_git_original_verification(self):
+        self.assertEqual(tool.verify_upstream(REPO, self.metadata)['fixtures_verified'], 5)
 
     def test_cli_json_declaration_round_trip_and_errors(self):
         value = dict(template=tool.TEMPLATE, app='obsidian', repository='obsidianmd/obsidian-releases')

@@ -55,3 +55,22 @@ Their source and experiment results remain in Git history at `007ea4871`.
 Tracked research evidence and local deployment backups were retained. Current
 publication accepts existing YAML state only; the one-time format-1 bootstrap
 option has been removed. There is no historical collector fallback.
+
+## Preparing recipe migrations
+
+Use the shared [upstream template recognizer](../recipe-reconstruction/README.md)
+to inventory a pinned upstream recipe tree before selecting conversion batches:
+
+```sh
+python3 tools/recipe-reconstruction/reconstruct.py inventory \
+  --recipes-revision COMMIT --summary
+```
+
+The same classifier drives the template-driven reconstruction tests and full
+JSONL inventories (`--summary` omitted). Standard instances still require runtime
+selection/installer review; matching layouts with custom parameters and unmatched
+recipes get explicit inspection actions. Recognition does not change these
+maintained declaration/selector policies or collection enrollment. Already-short
+fork declarations are not upstream-template instances; use the explicit `render`
+interface to compare their upstream meaning rather than treating a layout
+nonmatch as evidence of custom shell logic.

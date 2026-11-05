@@ -9,9 +9,11 @@ import re
 import shlex
 import sys
 import subprocess
+from originals import Originals, Catalogue, migration_summary
 
 ROOT = Path(__file__).resolve().parent
 TEMPLATE = 'github-appimage-3.5'
+ORIGINALS = Originals(ROOT.parents[1])
 LIMIT = 1024 * 1024
 APP = r'[a-z0-9][a-z0-9.+_-]*'
 REPOSITORY = r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+'
@@ -56,7 +58,9 @@ def render(template, value):
     value = declaration(value)
     # The pinned upstream generator concatenates shell literals and three known
     # variables. Tokenize only its trusted, hash-checked excerpt; never evaluate it.
-    assignment = read_text(ROOT/'upstream/github-appimage-function.txt').strip()
+    metadata = json.loads(read_text(ROOT/'provenance.json'))
+    generator = ORIGINALS.read(metadata['upstream_commit'], metadata['generator_source'])
+    assignment = generator.splitlines()[metadata['generator_line']-1].strip()
     if not assignment.startswith('FUNCTION='):
         raise ValueError('unsupported upstream generator assignment')
     words = shlex.split(assignment[len('FUNCTION='):])
@@ -75,31 +79,26 @@ def load_template(identity):
     if identity != TEMPLATE:
         raise Unsupported('unknown template identity')
     metadata = json.loads(read_text(ROOT/'provenance.json'))
-    template = read_text(ROOT/'upstream/AM-SAMPLE-AppImage')
+    template = ORIGINALS.read(metadata['upstream_commit'], metadata['template_source'])
     if metadata['template'] != identity or hashlib.sha256(template.encode()).hexdigest() != metadata['template_sha256']:
         raise ValueError('template provenance mismatch')
-    excerpt = read_text(ROOT/'upstream/github-appimage-function.txt')
+    generator = ORIGINALS.read(metadata['upstream_commit'], metadata['generator_source'])
+    if hashlib.sha256(generator.encode()).hexdigest() != metadata['generator_sha256']:
+        raise ValueError('generator source hash mismatch')
+    excerpt = generator.splitlines(keepends=True)[metadata['generator_line']-1]
     if hashlib.sha256(excerpt.encode()).hexdigest() != metadata['generator_excerpt_sha256']:
         raise ValueError('generator excerpt hash mismatch')
     return template, metadata
 
 
 def verify_upstream(repository, metadata):
-    def source(commit, path):
-        return subprocess.check_output(['git', '--no-replace-objects', '-C', str(repository.resolve()),
-                                        'show', commit+':'+path], stderr=subprocess.PIPE)
-    template = source(metadata['upstream_commit'], metadata['template_source'])
-    if template != (ROOT/'upstream/AM-SAMPLE-AppImage').read_bytes():
-        raise ValueError('upstream template snapshot differs')
-    generator = source(metadata['upstream_commit'], metadata['generator_source'])
-    if hashlib.sha256(generator).hexdigest() != metadata['generator_sha256']:
-        raise ValueError('upstream generator hash differs')
-    line = generator.splitlines(keepends=True)[metadata['generator_line']-1]
-    if line != (ROOT/'upstream/github-appimage-function.txt').read_bytes():
-        raise ValueError('upstream generator excerpt differs')
+    originals = Originals(repository)
+    for path, expected in [(metadata['template_source'], metadata['template_sha256']),
+                           (metadata['generator_source'], metadata['generator_sha256'])]:
+        if hashlib.sha256(originals.read(metadata['upstream_commit'], path).encode()).hexdigest() != expected:
+            raise ValueError('pinned source hash differs: '+path)
     for fixture in metadata['fixtures']:
-        original = source(metadata['fixture_commit'], fixture['path'])
-        if original != (ROOT/'fixtures'/Path(fixture['path']).name).read_bytes():
+        if hashlib.sha256(originals.read(metadata['fixture_commit'], fixture['path']).encode()).hexdigest() != fixture['sha256']:
             raise ValueError('upstream fixture differs: '+fixture['path'])
     return dict(status='exact', template=metadata['template'], upstream_commit=metadata['upstream_commit'],
                 fixtures_verified=len(metadata['fixtures']), generator_verified=True)
@@ -167,8 +166,44 @@ def main(argv=None):
     verify = sub.add_parser('verify-upstream', help='verify snapshots against pinned Git objects; JSON on stdout')
     verify.add_argument('--repo', type=Path, required=True)
     verify.set_defaults(template=TEMPLATE)
+    for command in ('classify', 'inventory', 'templates', 'expand'):
+        cmd = sub.add_parser(command)
+        cmd.add_argument('--repo', type=Path, default=ROOT.parents[1])
+        cmd.add_argument('--revision', action='append', help='template Git revision; repeatable, defaults to pinned revisions')
+        if command == 'classify':
+            cmd.add_argument('recipe', type=Path)
+        elif command == 'inventory':
+            cmd.add_argument('--recipes-revision', required=True)
+            cmd.add_argument('--prefix', default='programs/x86_64/')
+            cmd.add_argument('--summary', action='store_true', help='compact migration planning summary')
+        elif command == 'expand':
+            cmd.add_argument('declaration', type=Path)
     args = parser.parse_args(argv)
     try:
+        if args.command in ('classify', 'inventory', 'templates', 'expand'):
+            originals = Originals(args.repo)
+            metadata = json.loads(read_text(ROOT/'provenance.json'))
+            catalogue = Catalogue(originals, args.revision or [metadata['fixture_commit'], metadata['upstream_commit']])
+            if args.command == 'classify':
+                result = catalogue.check(read_text(args.recipe), explain=True)
+                print(json.dumps(result, indent=2))
+                return 0 if result['status'] == 'instance' else 1
+            if args.command == 'inventory':
+                commit = originals.revision(args.recipes_revision)
+                rows = catalogue.inventory(commit, args.prefix)
+                if args.summary:
+                    print(json.dumps(migration_summary(rows), indent=2))
+                else:
+                    for result in rows:
+                        print(json.dumps(result))
+                return 0
+            if args.command == 'templates':
+                print(json.dumps([dict(template=t.identity, source_sha256=hashlib.sha256(t.body.encode()).hexdigest(),
+                                       slots=t.slots) for t in catalogue.templates], indent=2))
+                return 0
+            value = json.loads(read_text(args.declaration))
+            sys.stdout.buffer.write(catalogue.render(value['template'], value['parameters']).encode())
+            return 0
         template, metadata = load_template(args.template)
         if args.command == 'verify-upstream':
             print(json.dumps(verify_upstream(args.repo, metadata), indent=2))
@@ -189,9 +224,9 @@ def main(argv=None):
         return 0
     except Unsupported as error:
         result, code = dict(status='unsupported', reason=str(error)), 2
-    except (OSError, ValueError, KeyError, IndexError, subprocess.CalledProcessError) as error:
+    except (OSError, ValueError, KeyError, IndexError, TypeError, subprocess.CalledProcessError) as error:
         result, code = dict(status='error', reason=str(error)), 3
-    print(json.dumps(result), file=sys.stderr if args.command == 'render' else sys.stdout)
+    print(json.dumps(result), file=sys.stderr if args.command in ('render', 'expand') else sys.stdout)
     return code
 
 

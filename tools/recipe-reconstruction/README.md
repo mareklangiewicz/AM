@@ -1,163 +1,131 @@
-# Upstream recipe reconstruction
+# Upstream recipe recognition and reconstruction
 
-Compare complete upstream recipes with one pinned GitHub AppImage template, or
-expand a short declaration into that template's original form. Python 3.10+;
-standard library only. Incoming recipes are read as inert text and never run.
+Read original templates directly from pinned Git revisions, recognize whole
+recipe instances, expose custom parameters and prepare migration inventories.
+Python 3.10+ and Git are required. No copied templates, generator excerpts or
+recipe fixtures are maintained here. No source shell is evaluated.
 
-Supported template: `github-appimage-3.5`, x86_64 AppImage version 3.5.
-`provenance.json` records its upstream commit/path, original fixture hashes and
-template hash. The source is a cached upstream revision, not automatically latest.
-The recipe body is now the unmodified upstream
-`templates/AM-SAMPLE-AppImage` at commit
-`bb53f3180ec92f862020f8bdccef0f6614015bae`, stored in `upstream/AM-SAMPLE-AppImage`.
-There is no independently authored `template.txt` body. The generator's original
-FUNCTION assignment is stored verbatim as `upstream/github-appimage-function.txt`,
-with its original file hash and line number in provenance. Loading verifies both
-snapshot hashes. Rendering substitutes SAMPLE, REPLACETHIS and FUNCTION as the
-upstream generator does, using the pinned default GitHub/x86_64 profile.
-
-The FUNCTION assignment is tokenized as inert text and its three known variable
-references are substituted; no shell or upstream interactive generator runs.
-This is a deliberately narrow adapter for the pinned generator syntax, not a
-shell interpreter. Changes to that syntax require an adapter review.
-
-Upstream documents this system in its
-[template guide](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/template.md).
-The historical template is deliberately pinned: cached upstream/main at
-`bbffd15c19d01ef9124fbf99b5b9c41d2661ea22` has a version-3.6 AppImage template
-with different desktop handling. Advancing to it requires a separately identified
-revision and compatibility review, not a silent replacement of the 3.5 family.
-The former app-specific identity `github-appimage-3.5-obsidian` is no longer
-accepted. Obsidian remains only one real-app example/fixture.
-
-## Commands
-
-From the repository root:
+## Classify against all original templates
 
 ```sh
-# Recognize a complete incoming upstream recipe.
-python3 tools/recipe-reconstruction/reconstruct.py check /path/to/upstream/obsidian
-
-# Expand our current short recipe into the explicitly selected upstream template.
-python3 tools/recipe-reconstruction/reconstruct.py render \
-  --short-recipe programs/x86_64/obsidian \
-  --template github-appimage-3.5 > /tmp/upstream-obsidian
-
-# Check the pinned original for comparison.
-python3 tools/recipe-reconstruction/reconstruct.py check \
-  tools/recipe-reconstruction/fixtures/obsidian
+python3 tools/recipe-reconstruction/reconstruct.py classify /path/to/recipe
+python3 tools/recipe-reconstruction/reconstruct.py templates
 ```
 
-`render --declaration /path/to/declaration.json --template TEMPLATE` also accepts
-exactly these JSON fields (including template identity):
+The tool discovers every file under `templates/` at the two recorded revisions:
+`bbffd15c19d01ef9124fbf99b5b9c41d2661ea22` and
+`bb53f3180ec92f862020f8bdccef0f6614015bae`. This covers all 15 templates at the
+first revision plus 10 historical originals, including the legacy AppImage
+layout. These are pinned local Git objects, not a claim about latest upstream.
+Use `--repo /path/to/AM --revision COMMIT` to select another source; repeat
+`--revision` to compare multiple revisions. Refs resolve to full commit IDs before
+use. Missing objects fail with an actionable Git error; no fetch or fallback copy.
 
-```json
-{
-  "template": "github-appimage-3.5",
-  "app": "obsidian",
-  "repository": "obsidianmd/obsidian-releases"
-}
-```
-
-An exact check result contains this object as `declaration`. A review result
-contains only a `candidate`, which must not be treated as verified extraction.
-Template identity is maintenance metadata, explicitly selected rather than
-inferred from our installer. A recipe's APP and CATALOG_REPOSITORY provide its
-rendered values. The short reader accepts known literal header settings and the
-current shared-installer wrapper; it rejects unknown assignments, duplicate
-settings, shell expressions, extra commands, non-x86_64 identity and other package
-layouts. Other supported literal settings (including asset pattern and launcher
-choices) are not encoded in upstream output and are not behaviorally validated
-by this tool. Rendering emits the selected template regardless of those choices.
-
-Inputs are limited to 1 MiB of UTF-8 without NUL. Text is not normalized: comments,
-whitespace, repeated updater parameters, CRLF and final-newline differences all
-matter. Unknown content remains unconverted. The tool writes only stdout/stderr;
-use a separate output path when rendering, since shell redirection can truncate
-an existing file before the tool runs.
-
-## Results and exit codes
-
-| Exit | Check status | Meaning |
-| --- | --- | --- |
-| 0 | `exact` | Every input byte is reconstructed; declaration and pinned provenance included |
-| 1 | `review` | Literal candidates exist but the complete text differs; unified diff included |
-| 2 | `unsupported` | Unknown template, unsupported encoding/size or missing supported literal parameters |
-| 3 | `error` | File access, malformed JSON or template integrity failure |
-
-`check` writes one JSON object to stdout for these outcomes. `render` writes only
-recipe bytes on success; failures write a JSON object on stderr and no recipe
-bytes. Invalid command-line syntax uses argparse's normal usage text and exit 2.
-All recognized/candidate check results include `compatibility: "unassessed"`.
-An inconsistent installer/updater parameter yields `review`, never `exact`.
-
-## Verifying and updating upstream sources
-
-With Git and a repository containing both recorded source/fixture commits:
-
-```sh
-python3 tools/recipe-reconstruction/reconstruct.py verify-upstream --repo /path/to/AM
-```
-
-This reads local Git objects only, checks the complete canonical template, the
-full generator hash and exact excerpt line, and every fixture against its recorded
-upstream path. It emits JSON on stdout using exact/error exit codes. It does not
-fetch, execute source, or change files. Normal check/render commands need no Git.
-
-Upstream is authoritative for template body and generator substitutions. Treat the
-`upstream/` files as pinned snapshots, not fork templates to edit independently.
-For an upstream revision: inspect the template/generator diff, copy the original
-bytes and exact FUNCTION line from that commit, update provenance/hashes and the
-family identity as needed, then run verification and all focused checks. No silent
-fallback to an app-derived body is permitted. Keep older revisions pinned if
-existing recipes still need them. Selecting a revision remains explicit; this
-tool does not yet manage multiple families or automate template imports.
-
-## Reviewing an incoming update
-
-Suppose upstream changes every occurrence of Obsidian's repository from
-`obsidianmd/obsidian-releases` to `example-owner/example-releases`, leaving the
-recipe template untouched. Checking that incoming file returns `exact`, with the
-new repository in `declaration`. Compare that declaration with the old result;
-review the upstream move and repository numeric identity before proposing edits
-in our short recipe. It does not enroll a repository or update catalog policy.
-
-If upstream instead inserts a command into AM-updater or updates shared template
-code/comments, the result is `review`; inspect the diff. Retain the original
-incoming recipe until its extra behavior is accounted for. A common change
-across a family calls for a reviewed template revision and new provenance,
-fixtures and checks. Do not add arbitrary updater snippets as parameters or
-silently normalize the change away. The new template's runtime compatibility
-requires its own review.
-
-## Compatibility policy
-
-This tool approves complete source reconstruction only. It neither approves
-conversion nor establishes runtime equivalence. No recipe family currently has
-an automatic conversion approval through this tool.
-
-| Behavior | Current decision for conversion |
+| Status | Meaning |
 | --- | --- |
-| Upstream response-text filtering and first URL vs our explicit catalog selection | Separate selection review required; recognition does not translate filters or infer repository IDs, channel or asset patterns |
-| Upstream appimageupdatetool branch vs our direct acquisition | A conversion must explicitly accept the existing fork update behavior |
-| tmp/move/backup behavior vs our shared staging lifecycle | A conversion must explicitly accept existing fork replacement behavior |
-| Desktop extraction, --no-sandbox handling and custom launcher preservation | Review the application's requirements against the shared installer |
-| Host extras such as obsidian-gui and installed-path desktop Exec | Preserve and review our explicit declarations independently of upstream reconstruction |
+| `instance` | Whole text fits a template; parameters are conservative literal values or recognized upstream generator defaults |
+| `parameter_review` | Whole layout fits, but some parameter contains unresolved/custom/unrecognized logic or repeated standard parameters disagree |
+| `unmatched` | No whole-layout match; may be a custom recipe, unhandled edit form or another historical revision |
 
-These gates preserve the deployed runtime; the tool changes none of those
-behaviors. The [experiment report](../../docs/track/release-catalog/research/upstream-recipe-reconstruction.md)
-records the inspected differences. Collection enrollment is independent of both
-recognition and recipe conversion. No network calls, publication or installed
-recipe changes occur here.
+A structural instance can contain custom logic in upstream's FUNCTION slot. The
+tool explicitly reports every such unrecognized expression in `parameter_review`.
+It does not bless arbitrary shell just because a placeholder accepts it. An
+unmatched recipe is not proof of custom logic. `classify` includes a nearest
+original-template diff for investigation; that preview is unexpanded and is not
+a verified extraction. All results leave runtime compatibility unassessed.
 
-## Verification
+Matching accounts for the complete file with exact line endings and no comment
+or whitespace stripping. Captures cannot span physical lines; extra commands
+outside slots fail the layout match. SAMPLE captures must agree across the file.
+Standard AppImage/Archive installer/updater site and FUNCTION values must agree.
+Captures resembling shell or unresolved markers require review. Inputs are
+limited to 1 MiB; layout matching refuses lines over 8 KiB. New upstream marker
+syntaxes require extending the explicit marker vocabulary and focused checks;
+arbitrary uppercase shell variables are never treated as editable placeholders.
+The current marker vocabulary covers the inspected pinned template set. This
+is conservative syntactic accounting, not shell semantic equivalence.
+
+Exact extracted parameters can be rendered without storing the body:
+
+```sh
+# Save one match object from classify's matches list to declaration.json.
+python3 tools/recipe-reconstruction/reconstruct.py expand declaration.json > /tmp/reconstructed
+```
+
+A match records `template: FULL_COMMIT:templates/NAME`, its source hash and an
+ordered `parameters` list. `expand` requires that identity in the selected source
+revisions, substitutes each original marker once, and writes only recipe bytes.
+Expansion also permits review candidates for inspection; it is not approval to
+execute or convert the resulting recipe. A single-line shell parameter remains
+inert text throughout. Keep output separate from inputs when using redirection.
+
+## Migration planning
+
+```sh
+python3 tools/recipe-reconstruction/reconstruct.py inventory \
+  --recipes-revision bbffd15c19d01ef9124fbf99b5b9c41d2661ea22 --summary
+
+# Full JSONL evidence with source hashes, exact parameters and review findings:
+python3 tools/recipe-reconstruction/reconstruct.py inventory \
+  --recipes-revision COMMIT --prefix programs/x86_64/ > /tmp/recipe-inventory.jsonl
+```
+
+The inventory streams original recipes from a Git tree once. Each row records
+source commit/path/hash, template matches and a migration action:
+`review_runtime_policy`, `inspect_parameter_logic` or `inspect_unmatched_source`.
+Use standard-instance groups as candidate batches; inspect parameter-review
+findings and unmatched sources separately. Reuse the same classifier for changed
+recipes during an upstream merge. No recipes, collection lists, registries or
+installed files are written. Summary counts are evidence, not converted apps.
+
+Template recognition does not infer repository numeric identity, catalog channel
+or asset patterns. Conversion must separately review selection/order, direct
+acquisition versus appimageupdatetool, replacement/backups, desktop behavior and
+host-specific launchers. There is no automatic conversion approval.
+
+## Existing short-recipe expansion
+
+The narrower legacy interface still expands a short declaration through the
+original upstream 3.5 GitHub AppImage generator profile:
+
+```sh
+python3 tools/recipe-reconstruction/reconstruct.py render \
+  --short-recipe programs/x86_64/obsidian --template github-appimage-3.5 > /tmp/upstream-recipe
+python3 tools/recipe-reconstruction/reconstruct.py check /tmp/upstream-recipe
+python3 tools/recipe-reconstruction/reconstruct.py verify-upstream --repo .
+```
+
+`render --declaration FILE --template github-appimage-3.5` accepts exactly
+`{"template":"github-appimage-3.5","app":"example","repository":"owner/project"}`.
+Only known literal current short-header settings/wrapper and x86_64 AppImage
+layout are supported. Other declared selector/launcher settings are not encoded
+in upstream output or behaviorally validated. Template/generator/fixture hashes
+remain in `provenance.json`; the actual bodies come from Git originals. The
+existing short-reader's refusal checks and real round trips remain covered.
+
+`classify` exits 0 for an instance, 1 for review/unmatched. Legacy `check` exits
+0 exact, 1 review, 2 unsupported, 3 operational/integrity error. `inventory` and
+`templates` exit 0 on completion, even if inventory includes review cases.
+Operational errors exit 3; unsupported inputs exit 2. Analysis commands output
+JSON (inventory JSONL); render/expand output bytes and send error JSON to stderr.
+Invalid command syntax uses normal argparse usage text and exit 2.
+
+## Tests and updating source revisions
 
 ```sh
 python3 -B -m unittest discover -s tools/recipe-reconstruction -p 'test_*.py' -v
 ```
 
-Checks cover pinned fixture hashes, five byte-exact round trips, source changes
-inside/outside the updater, parameter drift, template and newline changes,
-nonliteral inputs, current short-recipe rendering, refusal of unsupported short
-recipes, integrity checks and CLI status/output contracts. The throwaway HTML
-remains on `prototype/120-upstream-reconstruction`; it is not a dependency.
+Tests read the originals too: one parametrized contract generates examples for
+**every discovered original**, round-trips extracted parameters and refuses added
+steps. Shared tests exercise custom FUNCTION expressions, nonliteral parameters,
+repeated identities, real upstream recipes, CLI and inventory contracts. No
+per-app template copies or handwritten parallel installer bodies are needed.
+The tests intentionally require the recorded Git objects; source-only archives
+and shallow clones without them must first obtain those originals explicitly.
+
+Upstream remains authoritative. Review a new template/generator revision with
+`--revision`, inspect inventory changes, extend marker/default-expression support
+only with tests, and then update the pinned metadata deliberately. New template
+layouts never silently replace an old family's meaning. Upstream's interactive
+`am -t` is documented in `docs/guides-and-tutorials/template.md`; it is not run.
