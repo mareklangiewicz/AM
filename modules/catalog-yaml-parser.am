@@ -131,7 +131,8 @@ BEGIN {
 {
     bytes+=length($0)+1
     if (bytes>input_limit || length($0)>65536) fail("size limit")
-    if ($0 ~ /[[:cntrl:]]/ || $0 ~ /\302[\200-\237]|\342\200[\250\251]|\357\277[\276\277]/ || $0 ~ / $/ || $0=="") fail("control, blank line or trailing space")
+    # Spell complete UTF-8 sequences: native Termux awk rejects continuation-byte ranges.
+    if ($0 ~ /[[:cntrl:]]/ || $0 ~ /\302\200|\302\201|\302\202|\302\203|\302\204|\302\205|\302\206|\302\207|\302\210|\302\211|\302\212|\302\213|\302\214|\302\215|\302\216|\302\217|\302\220|\302\221|\302\222|\302\223|\302\224|\302\225|\302\226|\302\227|\302\230|\302\231|\302\232|\302\233|\302\234|\302\235|\302\236|\302\237|\342\200\250|\342\200\251|\357\277\276|\357\277\277/ || $0 ~ / $/ || $0=="") fail("control, blank line or trailing space")
     match($0,/^ */); depth=RLENGTH/2
     if (RLENGTH%2 || depth>4 || depth>previous+1) fail("indentation")
     close_nodes(depth)

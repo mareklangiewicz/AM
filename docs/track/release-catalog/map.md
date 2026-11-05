@@ -2,6 +2,12 @@
 
 ## Current status — November 5, 2026
 
+[119 resolved](issues/119-fix-native-termux-yaml-parser.md): migrating current YAML
+container checks exposed a pre-existing native Termux awk compilation failure.
+Equivalent complete UTF-8 alternatives preserve forbidden-character checks and
+compile on Termux. Reader regression passes on host mawk/gawk/BusyBox and native
+Termux. Source-only; installed parser remains unchanged.
+
 [117 resolved](issues/117-inventory-historical-tooling-dependencies.md):
 [dependency inventory](research/historical-tooling-dependencies.md) finds current
 YAML publication still imports historical publication/delivery helpers, and older
