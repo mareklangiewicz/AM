@@ -165,6 +165,8 @@ def apply(prepared, root):
         for name,entry in launcher_targets(row):
             link=bins/name
             if link.is_symlink():
+                if os.readlink(link) == str(path/entry):
+                    continue
                 if os.readlink(link) not in (str(path/name), str(path/'bin'/name)):
                     print('Preserving custom launcher: '+str(link),flush=True)
                     continue
