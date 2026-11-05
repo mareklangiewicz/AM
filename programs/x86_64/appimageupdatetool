@@ -1,11 +1,17 @@
 #!/bin/sh
 # AM INSTALL SCRIPT VERSION 3.5
 # AM-CATALOG-RECIPE 1
+# AM-HOST-RECIPE 1
 set -eu
 APP=appimageupdatetool
 CATALOG_FORMAT=2
 CATALOG_RECIPE="x86_64/appimageupdatetool"
 CATALOG_ALIAS="https://api.github.com/repos/AppImageCommunity/AppImageUpdate/releases"
+
+CATALOG_REPOSITORY_ID=84325774
+CATALOG_REPOSITORY=AppImageCommunity/AppImageUpdate
+CATALOG_CHANNEL=any
+CATALOG_ASSET_PATTERN='^appimageupdatetool-x86_64[.]AppImage$'
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

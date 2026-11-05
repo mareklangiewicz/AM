@@ -18,7 +18,7 @@ from yaml_publication import git, publish_local
 from experiment import SCHEMA
 
 SOURCE='https://raw.githubusercontent.com/selected-owner/selected.repo/feature/catalog'
-RUNTIME=('archive-policy.am','catalog-yaml.am','catalog-yaml-reader.am','catalog-yaml-parser.am','catalog-yaml-policy.am')
+RUNTIME=('catalog-yaml.am','catalog-yaml-reader.am','catalog-yaml-parser.am','catalog-yaml-policy.am')
 
 
 class YAMLManager(unittest.TestCase):
@@ -229,7 +229,6 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\napp=${0##
         harness=self.path/'sync-runtime'
         harness.write_text(cleanup+'\n'+sync+'\n_use_online_downloader() { cp "$SOURCE_MODULES/${1##*/}" "$2"; }\n_use_online_reading_tool() { cat "$SOURCE_MODULES/${1##*/}"; }\nAMCLI_ONLINE_CONTENT=$(cat "$MANAGER_SOURCE")\n_sync_modules\n')
         obsolete=self.module_dir/'obsolete.am';obsolete.write_text('old')
-        (self.module_dir/'archive-policy.am').unlink()
         (self.module_dir/'catalog-yaml-parser.am').unlink()
         (self.module_dir/'catalog-yaml-policy.am').write_text('# AMCLI old\n')
         (self.module_dir/'appimage.am').write_text('# AMCLI stale installer\n')

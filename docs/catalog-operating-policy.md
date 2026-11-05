@@ -1,8 +1,8 @@
 # Single-user YAML catalog operation
 
-Marek's fork now uses the YAML catalog for the 21 installed applications named in
-`tools/catalog-collector/host-apps.json` (19 numeric repository identities). This
-is the production enrollment manifest. The older 50-source design manifest and
+Marek's fork uses the YAML catalog for the 21 host recipes marked
+`# AM-HOST-RECIPE 1` under `programs/x86_64` (19 numeric repository identities).
+Those recipes are the production enrollment and customization source of truth. The older 50-source design manifest and
 format-1 collector experiments are historical evidence, not active publication.
 The source cap remains 52; per-repository YAML remains capped at 2 MiB.
 
@@ -18,7 +18,7 @@ message for old installed recipes, not a format-1 consumer.
 Clients choose by publication time descending, then numeric release ID; eligible
 assets sort by bytewise name then numeric ID. Stable channels exclude prereleases
 and the nightly tag; nightly channels require exactly that tag. App-specific
-patterns and x86_64 platform exclusions are compiled from the manifest. These are
+patterns are compiled from the recipes; x86_64 platform exclusions stay shared. These are
 explicit client policies, not GitHub's latest designation. Neovim/Neovide nightlies
 refresh on each update, matching their reused URLs. Logseq DB nightly uses its
 release publication timestamp as its version and retains the actual download URL
@@ -84,7 +84,8 @@ as a missing URL; the selected URL remains in download-url and updates succeed.
 
 ## Recipe launcher settings
 
-The host manifest compiles recipe settings through `host_policy_source.py`.
+Edit host recipe declarations directly. `host_policy_source.py` compiles their
+selection settings into the trusted policy registry and never rewrites recipes.
 `EXTRA_APP_LAUNCHERS` is an optional space-separated list of additional command
 names pointing to the installed root executable `$APPS_DIR/$APP/$APP`. Names
 must be simple basenames; dot-prefixed names and the main app name are refused.
@@ -102,23 +103,44 @@ The shared lifecycle contains no Obsidian identity checks. Official CLI registra
 at `~/.local/bin/obsidian` remains independent. Existing installed recipes are not
 rewritten by module sync; these declarations arrive through the current source
 recipe on install/reinstall. Existing user GUI aliases/desktop overrides need no
-migration. [Archive adapter follow-up](track/release-catalog/issues/112-separate-host-archive-adapters.md)
-records the remaining app-specific archive/layout knowledge in shared code.
+migration.
 
-### Host archive adapters
+## Recipe archive and selection settings
 
-`tools/catalog-collector/host-apps.json` owns the reviewed host archive roots,
-required executable paths and launcher mappings. `host_policy_source.py` compiles
-these into `modules/archive-policy.am`; edit the manifest and regenerate, rather
-than editing the generated module. `raw` and flat `tar` retain shared defaults.
-Existing `PACKAGE_LAYOUT` values select these app-owned adapters, so module sync
-can update machinery without rewriting installed recipes. The manager's module
-list includes the adapter module, including first delivery to older installations.
+Each marked host recipe owns its repository identity (`CATALOG_REPOSITORY_ID`,
+`CATALOG_REPOSITORY`), channel (`CATALOG_CHANNEL`) and asset pattern
+(`CATALOG_ASSET_PATTERN`), alongside its launcher, refresh and version settings.
+Keep the declaration header literal: one shell assignment per line, with shell
+quoting for spaces and patterns. `host_recipes.py` reads it without executing shell.
+The collector and maintenance cutover read these same recipes. Run
+`python3 tools/catalog-collector/host_policy_source.py` after selection changes,
+and commit the regenerated `modules/catalog-yaml-policy.am` with the recipe.
+The generated registry serves direct catalog clients; it is not another source to
+edit. No JSON host manifest or app-named archive adapter registry remains.
 
-The shared installer performs downloads, archive checks, staging, replacement and
-launcher ownership handling. The manifest's EmmyLua tool list drives both archive
-staging/launchers and catalog asset selection; `fresh_only` rejects stale consent
-in the trusted policy before acquisition. All selected tools must match the first
-selection's repository and release at its pinned publication. The maintenance
-cutover helper uses the same manifest mappings. This source change requires no
-reinstall; deployment is an ordinary separately chosen module synchronization.
+`PACKAGE_LAYOUT` is one of `raw` (default), `tar`, `zip`, or `toolset`.
+`PACKAGE_KIND` distinguishes an AppImage from an executable package.
+`ARCHIVE_ROOT` defaults to `.` and may be a glob matching exactly one extracted
+directory. `PACKAGE_EXECUTABLES` lists required executable paths relative to that
+root; the default is the app name. `PACKAGE_LAUNCHERS` is a space-separated list
+of `command:relative/path` mappings, defaulting to the app name and root executable.
+Kitty declares both `bin/kitty` and `bin/kitten` here; shared code knows neither name.
+
+For `toolset`, `PACKAGE_TOOLS` lists tools in selection order, with the primary
+asset first. Each selected tar archive must contain its tool at the root.
+Executables and launcher mappings are derived from that one list. Asset selection
+uses `CATALOG_TOOL_ASSET_SUFFIX`; `CATALOG_FRESH_ONLY=true` refuses stale consent
+before HTTP. All selections must have the same repository/release at the pinned
+publication, and each selected observation must be fresh. EmmyLua declares these
+settings locally. No arbitrary installation hooks are introduced.
+
+### Installed recipe refresh
+
+This source revision deliberately drops old app-named layout aliases and legacy
+launcher-target inference. Custom launchers remain preserved unless they already
+point to the exact declared target. Recipes installed before this change still
+contain old declarations: a module sync alone does not convert them. Refresh
+installed archive recipes together with the shared module when deploying; the
+old named layouts fail before catalog/download work with an explicit recipe
+refresh message. Do not claim deployment complete from module sync alone.
+No live installation or module synchronization was performed for this refactor.

@@ -1,12 +1,18 @@
 #!/bin/sh
 # AM INSTALL SCRIPT VERSION 3.5
 # AM-CATALOG-RECIPE 1
+# AM-HOST-RECIPE 1
 set -eu
 APP=nvim-nightly
 CATALOG_FORMAT=2
 CATALOG_RECIPE="x86_64/nvim-nightly"
 CATALOG_ALIAS="https://api.github.com/repos/neovim/neovim/releases"
 REFRESH_ALWAYS=true
+
+CATALOG_REPOSITORY_ID=16408992
+CATALOG_REPOSITORY=neovim/neovim
+CATALOG_CHANNEL=nightly
+CATALOG_ASSET_PATTERN='^nvim-linux-x86_64[.]appimage$'
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

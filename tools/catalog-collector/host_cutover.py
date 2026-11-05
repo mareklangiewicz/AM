@@ -79,9 +79,9 @@ def prepare(repo, out, cache):
             if row.get('tools'):
                 for tool,path in downloads.items():shutil.copyfile(path,stage/(tool+'.tar.gz'))
             else:shutil.copyfile(downloads[app],stage/'asset')
-            # Exercise the actual delivered archive adapter, not a second extractor.
-            run('sh','-c','AM_ARCHIVE_POLICY="$(dirname "$1")/archive-policy.am"; . "$1"; am_archive_stage "$2" "$3" "$4"','sh',
-                ROOT/'modules/appimage.am',row['layout'],stage,app)
+            # Exercise shared staging with the recipe declarations.
+            run('sh','-c','. "$1"; am_archive_stage "$2" "$3" "$4"','sh',
+                ROOT/'modules/appimage.am',row['layout'],stage,app,env=dict(os.environ,**row['settings']))
             (stage/'payload').rename(target/'payload')
             shutil.rmtree(stage)
         print('Staged '+app,flush=True)
@@ -161,17 +161,13 @@ def apply(prepared, root):
         first=next(iter(manifest['selections'][app].values()))
         version=first['published_at'] if row['version_identity']=='published_at' else first['url']
         (path/'version').write_text(version+'\n');(path/'download-url').write_text(first['url']+'\n')
-        legacy=dict(pair.split(':',1) for pair in
-                    row.get('archive', {}).get('legacy_launchers', [app+':bin/'+app]))
         for name,entry in launcher_targets(row):
             link=bins/name
             if link.is_symlink():
                 if os.readlink(link) == str(path/entry):
                     continue
-                if name not in legacy or os.readlink(link) != str(path/legacy[name]):
-                    print('Preserving custom launcher: '+str(link),flush=True)
-                    continue
-                link.unlink()
+                print('Preserving custom launcher: '+str(link),flush=True)
+                continue
             elif link.exists():
                 print('Preserving custom launcher: '+str(link),flush=True)
                 continue

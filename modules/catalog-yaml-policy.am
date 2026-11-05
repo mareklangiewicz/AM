@@ -219,6 +219,7 @@ function appimage_eligible(url, lower) {
 }
 # END explicit AppImage policies
 # BEGIN single-user policies
+# Generated from marked host recipes by host_policy_source.py.
 function host_recipe(recipe) {
     if(recipe=="x86_64/appimagetool") { host_repository="658450330"; host_channel="any"; host_pattern="^appimagetool-x86_64[.]AppImage$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
     if(recipe=="x86_64/appimageupdatetool") { host_repository="84325774"; host_channel="any"; host_pattern="^appimageupdatetool-x86_64[.]AppImage$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
@@ -231,16 +232,16 @@ function host_recipe(recipe) {
     if(recipe=="x86_64/logseq-app-og") { host_repository="1122576268"; host_channel="stable"; host_pattern="^Logseq-OG-linux-x64-.*[.]AppImage$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
     if(recipe=="x86_64/neovide") { host_repository="226408450"; host_channel="stable"; host_pattern="^neovide[.]AppImage$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
     if(recipe=="x86_64/neovide-nightly") { host_repository="226408450"; host_channel="nightly"; host_pattern="^neovide[.]AppImage$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    if(recipe=="x86_64/rclone") { host_repository="17803236"; host_channel="any"; host_pattern="^rclone-.*-linux-amd64[.]zip$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    if(recipe=="x86_64/rclone-ui") { host_repository="920598633"; host_channel="any"; host_pattern="^.*[.]AppImage$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    if(recipe=="x86_64/satty") { host_repository="1200402795"; host_channel="stable"; host_pattern="^Satty-.*-x86_64[.]AppImage$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    if(recipe=="x86_64/yt-dlp") { host_repository="307260205"; host_channel="any"; host_pattern="^yt-dlp_linux$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    if(recipe=="x86_64/zellij") { host_repository="292014229"; host_channel="any"; host_pattern="^zellij-x86_64-unknown-linux-musl[.]tar[.]gz$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    if(recipe=="x86_64/zmx") { host_repository="1073900202"; host_channel="any"; host_pattern="^zmx-.*-linux-x86_64[.]tar[.]gz$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
     if(recipe=="x86_64/nvim") { host_repository="16408992"; host_channel="stable"; host_pattern="^nvim-linux-x86_64[.]appimage$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
     if(recipe=="x86_64/nvim-nightly") { host_repository="16408992"; host_channel="nightly"; host_pattern="^nvim-linux-x86_64[.]appimage$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
     if(recipe=="x86_64/obsidian") { host_repository="262342594"; host_channel="any"; host_pattern="^Obsidian-[0-9.]+[.]AppImage$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
+    if(recipe=="x86_64/rclone") { host_repository="17803236"; host_channel="any"; host_pattern="^rclone-.*-linux-amd64[.]zip$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
+    if(recipe=="x86_64/rclone-ui") { host_repository="920598633"; host_channel="any"; host_pattern="^.*[.]AppImage$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
+    if(recipe=="x86_64/satty") { host_repository="1200402795"; host_channel="stable"; host_pattern="^Satty-.*-x86_64[.]AppImage$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
     if(recipe=="x86_64/sunshine") { host_repository="438803890"; host_channel="any"; host_pattern="^Sunshine_.*_x86_64[.]AppImage$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
+    if(recipe=="x86_64/yt-dlp") { host_repository="307260205"; host_channel="any"; host_pattern="^yt-dlp_linux$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
+    if(recipe=="x86_64/zellij") { host_repository="292014229"; host_channel="any"; host_pattern="^zellij-x86_64-unknown-linux-musl[.]tar[.]gz$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
+    if(recipe=="x86_64/zmx") { host_repository="1073900202"; host_channel="any"; host_pattern="^zmx-.*-linux-x86_64[.]tar[.]gz$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
     return 0
 }
 function host_eligible(name, tag, preview, tool) {

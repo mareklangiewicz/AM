@@ -1,11 +1,17 @@
 #!/bin/sh
 # AM INSTALL SCRIPT VERSION 3.5
 # AM-CATALOG-RECIPE 1
+# AM-HOST-RECIPE 1
 set -eu
 APP=satty
 CATALOG_FORMAT=2
 CATALOG_RECIPE="x86_64/satty"
 CATALOG_ALIAS="https://api.github.com/repos/pkgforge-dev/Satty-AppImage/releases"
+
+CATALOG_REPOSITORY_ID=1200402795
+CATALOG_REPOSITORY=pkgforge-dev/Satty-AppImage
+CATALOG_CHANNEL=stable
+CATALOG_ASSET_PATTERN='^Satty-.*-x86_64[.]AppImage$'
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

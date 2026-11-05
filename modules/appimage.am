@@ -3,12 +3,16 @@
 am_appimage() { am_package "$@"; }
 
 am_archive_configure() {
-	archive_kind=$1 archive_root=. archive_executables=$2 archive_launchers="$2:$2" archive_legacy_launchers="$2:bin/$2" tools=
-	case $1 in raw|tar) return 0 ;; esac
-	policy=${AM_ARCHIVE_POLICY-$(dirname -- "${CATALOG_YAML_HELPER-/opt/am/modules/catalog-yaml.am}")/archive-policy.am}
-	[ -r "$policy" ] || { echo 'Missing archive-policy.am; synchronize AM modules.' >&2; return 1; }
-	. "$policy"
-	am_archive_policy "$1" "$2"
+	archive_kind=$1 archive_root=${ARCHIVE_ROOT-.} tools=${PACKAGE_TOOLS-}
+	archive_executables=${PACKAGE_EXECUTABLES-$2} archive_launchers=${PACKAGE_LAUNCHERS-$2:$2}
+	case $archive_kind in
+		raw|tar|zip) ;;
+		toolset)
+			[ -n "$tools" ] || { echo 'Missing package tools' >&2; return 1; }
+			archive_executables=$tools archive_launchers=
+			for tool in $tools; do archive_launchers="$archive_launchers $tool:$tool"; done ;;
+		*) echo 'Unsupported package layout; refresh the installed recipe.' >&2; return 1 ;;
+	esac
 }
 
 am_archive_stage() (
@@ -41,7 +45,7 @@ am_archive_stage() (
 			else
 				untar "$stage/asset" "$stage/unpacked" || exit 1
 			fi
-			# Root globs are trusted adapter data, resolved against extracted paths.
+			# Root globs are trusted recipe data, resolved against extracted paths.
 			set -- "$stage/unpacked"/$archive_root
 			[ "$#" -eq 1 ] && [ -d "$1" ] && [ ! -L "$1" ] || exit 1
 			tree=$1
@@ -171,12 +175,10 @@ am_package() (
 	} > "$dir/AM-updater"
 	chmod a+x "$dir/remove" "$dir/AM-updater"
 	link_app() {
-		# Optional third argument is the known legacy target of a primary launcher.
 		link=$BIN_DIR/$1 target=$2
 		if [ -L "$link" ]; then
 			old=$(readlink "$link")
 			case $old in "$target") return 0 ;;
-				"${3-}") rm -f "$link" || return 1 ;;
 				*) printf 'Preserving custom launcher: %s\n' "$link"; return 0 ;;
 			esac
 		elif [ -e "$link" ]; then
@@ -186,11 +188,7 @@ am_package() (
 	}
 	for launcher in $archive_launchers; do
 		name=${launcher%%:*} entry=${launcher#*:}
-		legacy=
-		for previous in $archive_legacy_launchers; do
-			[ "${previous%%:*}" != "$name" ] || legacy=$dir/${previous#*:}
-		done
-		link_app "$name" "$dir/$entry" "$legacy"
+		link_app "$name" "$dir/$entry"
 	done
 	for extra in $extra_launchers; do link_app "$extra" "$dir/$APP"; done
 	[ "$PACKAGE_KIND" = appimage ] || exit 0

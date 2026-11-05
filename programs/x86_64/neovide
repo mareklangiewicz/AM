@@ -1,11 +1,17 @@
 #!/bin/sh
 # AM INSTALL SCRIPT VERSION 3.5
 # AM-CATALOG-RECIPE 1
+# AM-HOST-RECIPE 1
 set -eu
 APP=neovide
 CATALOG_FORMAT=2
 CATALOG_RECIPE="x86_64/neovide"
 CATALOG_ALIAS="https://api.github.com/repos/neovide/neovide/releases"
+
+CATALOG_REPOSITORY_ID=226408450
+CATALOG_REPOSITORY=neovide/neovide
+CATALOG_CHANNEL=stable
+CATALOG_ASSET_PATTERN='^neovide[.]AppImage$'
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

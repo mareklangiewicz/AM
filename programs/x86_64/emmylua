@@ -1,13 +1,22 @@
 #!/bin/sh
 # AM INSTALL SCRIPT VERSION 3.5
 # AM-CATALOG-RECIPE 1
+# AM-HOST-RECIPE 1
 set -eu
 APP=emmylua
 CATALOG_FORMAT=2
 CATALOG_RECIPE="x86_64/emmylua"
 CATALOG_ALIAS="https://api.github.com/repos/EmmyLuaLs/emmylua-analyzer-rust/releases"
 PACKAGE_KIND=executable
-PACKAGE_LAYOUT=emmylua
+PACKAGE_LAYOUT=toolset
+
+CATALOG_REPOSITORY_ID=872860168
+CATALOG_REPOSITORY=EmmyLuaLs/emmylua-analyzer-rust
+CATALOG_CHANNEL=stable
+CATALOG_ASSET_PATTERN='^emmylua_ls-linux-musl[.]tar[.]gz$'
+PACKAGE_TOOLS='emmylua_ls emmylua_check emmylua_doc_cli luafmt'
+CATALOG_TOOL_ASSET_SUFFIX=-linux-musl.tar.gz
+CATALOG_FRESH_ONLY=true
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

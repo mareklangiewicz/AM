@@ -1,13 +1,22 @@
 #!/bin/sh
 # AM INSTALL SCRIPT VERSION 3.5
 # AM-CATALOG-RECIPE 1
+# AM-HOST-RECIPE 1
 set -eu
 APP=btop
 CATALOG_FORMAT=2
 CATALOG_RECIPE="x86_64/btop"
 CATALOG_ALIAS="https://api.github.com/repos/aristocratos/btop/releases"
 PACKAGE_KIND=executable
-PACKAGE_LAYOUT=btop
+PACKAGE_LAYOUT=tar
+
+CATALOG_REPOSITORY_ID=365005377
+CATALOG_REPOSITORY=aristocratos/btop
+CATALOG_CHANNEL=any
+CATALOG_ASSET_PATTERN='^btop-x86_64-unknown-linux-musl[.]tar[.]gz$'
+ARCHIVE_ROOT=btop
+PACKAGE_EXECUTABLES=bin/btop
+PACKAGE_LAUNCHERS=btop:bin/btop
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

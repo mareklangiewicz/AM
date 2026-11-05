@@ -1,6 +1,7 @@
 #!/bin/sh
 # AM INSTALL SCRIPT VERSION 3.5
 # AM-CATALOG-RECIPE 1
+# AM-HOST-RECIPE 1
 set -eu
 APP=zmx
 CATALOG_FORMAT=2
@@ -8,6 +9,11 @@ CATALOG_RECIPE="x86_64/zmx"
 CATALOG_ALIAS="https://api.github.com/repos/neurosnap/zmx/releases"
 PACKAGE_KIND=executable
 PACKAGE_LAYOUT=tar
+
+CATALOG_REPOSITORY_ID=1073900202
+CATALOG_REPOSITORY=neurosnap/zmx
+CATALOG_CHANNEL=any
+CATALOG_ASSET_PATTERN='^zmx-.*-linux-x86_64[.]tar[.]gz$'
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

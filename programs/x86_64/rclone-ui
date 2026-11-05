@@ -1,11 +1,17 @@
 #!/bin/sh
 # AM INSTALL SCRIPT VERSION 3.5
 # AM-CATALOG-RECIPE 1
+# AM-HOST-RECIPE 1
 set -eu
 APP=rclone-ui
 CATALOG_FORMAT=2
 CATALOG_RECIPE="x86_64/rclone-ui"
 CATALOG_ALIAS="https://api.github.com/repos/rclone/rclone-ui/releases"
+
+CATALOG_REPOSITORY_ID=920598633
+CATALOG_REPOSITORY=rclone/rclone-ui
+CATALOG_CHANNEL=any
+CATALOG_ASSET_PATTERN='^.*[.]AppImage$'
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

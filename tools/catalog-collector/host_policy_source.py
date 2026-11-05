@@ -1,17 +1,18 @@
-"""Compile the single-user app manifest into trusted shell policies and recipes."""
+"""Compile recipe-owned host selection settings into the trusted awk registry."""
 import json
-import shlex
 from pathlib import Path
 
+from host_recipes import recipe_rows
+
 ROOT = Path(__file__).resolve().parents[2]
-CONFIG = Path(__file__).with_name('host-apps.json')
 START = '# BEGIN single-user policies\n'
 END = '# END single-user policies\n'
 
 
 def generate():
-    rows = json.loads(CONFIG.read_text())
-    lines = [START.rstrip(), 'function host_recipe(recipe) {']
+    rows = recipe_rows(ROOT)
+    lines = [START.rstrip(), '# Generated from marked host recipes by host_policy_source.py.',
+             'function host_recipe(recipe) {']
     for row in rows:
         lines.append('    if(recipe=='+json.dumps('x86_64/'+row['app'])+') { host_repository='+
             json.dumps(str(row['repository_id']))+'; host_channel='+json.dumps(row['channel'])+
@@ -44,35 +45,6 @@ def generate():
     if guard not in source:
         source=source.replace('    if(check_only) exit\n', guard+'    if(check_only) exit\n')
     path.write_text(source)
-    adapters=['#!/bin/sh', '# AMCLI generated app-owned archive policies; see host-apps.json.',
-              'am_archive_policy() {',
-              '\tcase $1 in']
-    for row in rows:
-        if 'archive' not in row: continue
-        archive=row['archive']
-        adapters.append('\t\t'+row['layout']+')')
-        for variable,value in (('archive_kind',archive['kind']),('archive_root',archive['root']),
-                               ('archive_executables',' '.join(archive.get('executables', row.get('tools', [])))),
-                               ('archive_launchers',' '.join(archive.get('launchers', [t+':'+t for t in row.get('tools', [])]))),
-                               ('archive_legacy_launchers',' '.join(archive.get('legacy_launchers', []))),
-                               ('tools',' '.join(row.get('tools',[])))):
-            adapters.append('\t\t\t'+variable+'='+shlex.quote(value))
-        adapters[-1]+=' ;;'
-    adapters+=['\t\t*) echo "Unsupported archive layout" >&2; return 1 ;;', '\tesac', '}','']
-    (ROOT/'modules/archive-policy.am').write_text('\n'.join(adapters))
-    for row in rows:
-        app=row['app'];layout=row['layout']
-        text='#!/bin/sh\n# AM INSTALL SCRIPT VERSION 3.5\n# AM-CATALOG-RECIPE 1\nset -eu\n'
-        text+='APP='+app+'\nCATALOG_FORMAT=2\nCATALOG_RECIPE="x86_64/'+app+'"\n'
-        text+='CATALOG_ALIAS="https://api.github.com/repos/'+row['repository']+'/releases"\n'
-        if layout!='appimage':text+='PACKAGE_KIND=executable\nPACKAGE_LAYOUT='+layout+'\n'
-        if row['version_identity']=='published_at':text+='VERSION_IDENTITY=published_at\n'
-        if row['refresh_always']:text+='REFRESH_ALWAYS=true\n'
-        for key, variable in (('extra_app_launchers', 'EXTRA_APP_LAUNCHERS'),
-                              ('desktop_exec', 'DESKTOP_EXEC')):
-            if key in row:text+=variable+'='+shlex.quote(row[key])+'\n'
-        text+='\n# shellcheck source=modules/appimage.am\n. "/opt/am/modules/appimage.am"\nam_appimage "$0" "$@"\n'
-        (ROOT/'programs/x86_64'/app).write_text(text)
 
 
 if __name__=='__main__':generate()

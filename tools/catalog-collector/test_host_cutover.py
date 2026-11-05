@@ -97,34 +97,15 @@ else:
                         self.assertTrue((self.root/'usr/local/bin'/tool).is_symlink())
                 if row['app']=='kitty':self.assertTrue((self.root/'usr/local/bin/kitten').is_symlink())
 
-    def test_old_installed_archive_recipes_survive_module_only_refresh(self):
-        from unittest.mock import patch
-        import test_appimage_lifecycle as lifecycle
-        old_module=self.path/'old-appimage.am'
-        old_module.write_bytes(subprocess.check_output(['git','-C',str(ROOT),'show','4e718e27f:modules/appimage.am']))
-        for name in ('btop','kitty','rclone','emmylua'):
-            with self.subTest(app=name):
-                old_recipe=self.path/('old-'+name)
-                old_recipe.write_bytes(subprocess.check_output(['git','-C',str(ROOT),'show',
-                    '4e718e27f:programs/x86_64/'+name]))
-                with patch.object(lifecycle,'LIFECYCLE',old_module):
-                    result=self.run_manager_install(amrepo=integration.SOURCE,recipe=old_recipe,app_name=name)
-                self.assertEqual(result.returncode,0,result.stderr)
-                app=self.root/'opt'/name
-                before={n:(app/n).read_bytes() for n in ('recipe.am','AM-updater','remove')}
-                # Deliver current modules, without touching installed recipes.
-                for module in ROOT.joinpath('modules').glob('*.am'):
-                    (self.module_dir/module.name).write_bytes(module.read_bytes())
-                (app/'version').write_text('force replacement\n')
-                (app/'precious').write_text('keep')
-                result=self.standalone(app/'AM-updater')
-                self.assertEqual(result.returncode,0,result.stderr)
-                self.assertNotEqual((app/'version').read_text(),'force replacement\n')
-                self.assertEqual((app/'precious').read_text(),'keep')
-                self.assertEqual(before,{n:(app/n).read_bytes() for n in before})
-                row=next(r for r in self.rows if r['app']==name)
-                for entry in row['archive'].get('executables',row.get('tools',[])):
-                    self.assertTrue((app/entry).is_file())
+    def test_obsolete_named_layout_refuses_before_download(self):
+        recipe=self.path/'obsolete-recipe'
+        recipe.write_text('APP=kitty\nCATALOG_FORMAT=2\nPACKAGE_LAYOUT=kitty\n. "'+
+                          str(ROOT/'modules/appimage.am')+'"\nam_appimage "$0"\n')
+        result=subprocess.run(['sh',str(recipe)],env=self.env(),capture_output=True)
+        self.assertNotEqual(result.returncode,0)
+        self.assertIn(b'refresh the installed recipe',result.stderr)
+        self.assertEqual(self.calls(),[])
+        self.assertFalse((self.path/'downloads').exists())
 
     def test_toolset_reinstall_preserves_app_local_custom_wrapper(self):
         app=self.install('x86_64/emmylua')
@@ -144,7 +125,7 @@ printf '%s\\n' '''+self.pin+''' 872860168 "$release" 1 '''+NOW+''' https://examp
 ''')
         recipe=app/'recipe.am'
         recipe.write_text(recipe.read_text().replace('am_appimage "$0" "$@"',
-            'CATALOG_YAML_HELPER="'+str(helper)+'"\nAM_ARCHIVE_POLICY="'+str(self.module_dir/'archive-policy.am')+'"\nam_appimage "$0" "$@"'))
+            'CATALOG_YAML_HELPER="'+str(helper)+'"\nam_appimage "$0" "$@"'))
         before=(self.path/'downloads').read_bytes()
         version=(app/'version').read_bytes()
         result=self.standalone(app/'AM-updater')
@@ -169,8 +150,10 @@ printf '%s\\n' '''+self.pin+''' 872860168 "$release" 1 '''+NOW+''' https://examp
                             info=tarfile.TarInfo(name);info.size=len(body)
                             archive.addfile(info,io.BytesIO(body))
                 result=subprocess.run(['sh','-c',
-                    'AM_ARCHIVE_POLICY="$1/archive-policy.am"; . "$1/appimage.am"; am_archive_stage "$2" "$3" "$2"',
-                    'sh',str(ROOT/'modules'),layout,str(stage)],capture_output=True)
+                    '. "$1/appimage.am"; am_archive_stage "$2" "$3" "$4"',
+                    'sh',str(ROOT/'modules'),next(r['layout'] for r in self.rows if r['app']==layout),
+                    str(stage),layout],capture_output=True,
+                    env={**self.env(),**next(r['settings'] for r in self.rows if r['app']==layout)})
                 self.assertNotEqual(result.returncode,0,result.stderr)
                 self.assertFalse(list((stage/'payload').iterdir()))
                 self.assertFalse((self.path/'escape').exists())
@@ -228,7 +211,7 @@ else:
  target=pathlib.Path(sys.argv[sys.argv.index('-C')+1]);(target/'fzf').write_text('partial');raise SystemExit(9)
 ''')
         stage=self.path/'partial';stage.mkdir();(stage/'asset').write_text('archive')
-        result=subprocess.run(['sh','-c','. "$1"; AM_ARCHIVE_POLICY="$(dirname "$1")/archive-policy.am"; am_archive_stage tar "$2" fzf || exit 1','sh',
+        result=subprocess.run(['sh','-c','. "$1"; am_archive_stage tar "$2" fzf || exit 1','sh',
             str(ROOT/'modules/appimage.am'),str(stage)],env=self.env(),capture_output=True)
         self.assertNotEqual(result.returncode,0)
         self.assertFalse((stage/'payload/fzf').exists())

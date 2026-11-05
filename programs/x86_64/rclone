@@ -1,13 +1,20 @@
 #!/bin/sh
 # AM INSTALL SCRIPT VERSION 3.5
 # AM-CATALOG-RECIPE 1
+# AM-HOST-RECIPE 1
 set -eu
 APP=rclone
 CATALOG_FORMAT=2
 CATALOG_RECIPE="x86_64/rclone"
 CATALOG_ALIAS="https://api.github.com/repos/rclone/rclone/releases"
 PACKAGE_KIND=executable
-PACKAGE_LAYOUT=rclone
+PACKAGE_LAYOUT=zip
+
+CATALOG_REPOSITORY_ID=17803236
+CATALOG_REPOSITORY=rclone/rclone
+CATALOG_CHANNEL=any
+CATALOG_ASSET_PATTERN='^rclone-.*-linux-amd64[.]zip$'
+ARCHIVE_ROOT='rclone-*-linux-amd64'
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

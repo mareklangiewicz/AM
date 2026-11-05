@@ -1,6 +1,6 @@
 """Single-user YAML catalog: bounded release-list collection and retained facts.
 
-The app manifest is reviewed source. One page of 100 releases per source, with
+Host recipes are reviewed source. One page of 100 releases per source, with
 48-hour selected-record freshness enforced by clients. Failures preserve the
 previous published tree. No latest endpoint, consumer version choice or pruning.
 """
@@ -20,8 +20,9 @@ from yaml_adapter import schema_url
 from yaml_publication import candidate_tree, load_local
 from publication import git, publish_tree
 
+from host_recipes import recipe_rows
+
 ROOT = Path(__file__).resolve().parents[2]
-CONFIG = Path(__file__).with_name('host-apps.json')
 FILE_CAP = 2097152
 RESPONSE_CAP = 16 * 1024 * 1024
 TOTAL_CAP = 96 * 1024 * 1024
@@ -32,7 +33,7 @@ def utc():
 
 
 def configuration():
-    rows = json.loads(CONFIG.read_text())
+    rows = recipe_rows(ROOT)
     sources = {}
     for row in rows:
         rid = str(row['repository_id'])
