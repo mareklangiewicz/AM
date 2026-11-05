@@ -184,3 +184,10 @@ their hashes/modes or link targets after the refresh and update. Plans, before-i
 and logs: `/home/marek/Documents/Codex/am-yaml-cutover/remaining-recipe-refresh/`.
 This closes the installed-recipe refresh; the natural November 6 scheduled trigger
 remains unobserved. No additional workflow dispatch or GUI check occurred.
+
+
+Marek subsequently accepted closing the rollout without waiting for the natural
+scheduled trigger. Manual publication plus ordinary updates establish the completed
+publication/consumer path. The scheduled trigger itself remains unobserved and is
+routine monitoring, not a blocker. Historical tracker tickets 47/49 are closed as
+superseded broad scope; design ticket 71 is resolved by the delivered implementation.

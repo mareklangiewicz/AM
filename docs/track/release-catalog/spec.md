@@ -1,5 +1,15 @@
 # Release observations exploration brief
 
+## Delivered scope — November 5, 2026
+
+This exploration produced the deployed 21-app host YAML catalog and shared
+installer. The [operating policy](../../catalog-operating-policy.md) and
+[current tracker status](map.md) supersede provisional scope and operational
+restrictions recorded below. The broader historical recipe migration is not
+active work. Manual publication and ordinary updates passed; Marek accepted
+closing the rollout without waiting for a natural scheduled trigger.
+Earlier experiment evidence and limitations remain historical.
+
 ## Current YAML collection revision — November 3, 2026
 
 For format-2 design, [scoped retained observations](research/yaml-retention-revision.md)

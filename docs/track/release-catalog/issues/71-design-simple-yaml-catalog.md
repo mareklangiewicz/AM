@@ -1,7 +1,7 @@
 # Design a simple YAML catalog of release facts
 
 Type: research
-Status: open
+Status: resolved
 Triage: ready-for-agent
 
 Interview Marek to settle normalized catalog facts, a strict readable YAML subset, client selection responsibilities, and collection coverage. Implementation requires confirmation of shared understanding at the end of the grilling interview.
@@ -218,3 +218,18 @@ round without partial merge. This is explicit refusal evidence, not budget
 acceptance or real full-default capacity. Static consumer map/reference selection
 prepare direct migration; accepted per-app policies and portable-shell integration
 remain open.
+
+
+## Answer — design delivered, November 5, 2026
+
+The interview and design work culminated in the deployed YAML catalog, portable
+consumer, retained observations and recipe-owned selection/customization.
+[107](107-prepare-delivered-legacy-adapters.md) records production cutover;
+[113](113-own-host-customizations-in-recipes.md) records complete host deployment.
+The authoritative current contract is [the operating policy](../../../catalog-operating-policy.md).
+Earlier candidate budgets, broader manifests and outstanding integration notes
+above retain their historical meaning; they are not current rollout blockers.
+Manual publication 42097574409 and ordinary unpinned updates succeeded for all
+21 apps. Marek explicitly accepted moving on without awaiting the natural daily
+trigger. That trigger remains unobserved and is routine monitoring, not required
+work to reopen this design interview. No claim is made for all unused recipes.

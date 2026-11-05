@@ -1,8 +1,8 @@
 # Migrate the scoped common AppImage batch
 
 Type: task
-Status: claimed
-Triage: ready-for-agent
+Status: resolved
+Triage: wontfix
 Blocked by: 47
 
 ## Scope
@@ -106,3 +106,16 @@ remain exact. 37 affected tests and five candidate checks pass. Enrollment and
 recipe patches are isolated from operational source. aarch64/tiddlydesktop and
 both payloader paths remain excluded. Identity changes and the next bounded
 rollout are reviewable there; no new activation or host delivery.
+
+
+## Answer — superseded scope, November 5, 2026
+
+Close this historical broad format-1 batch under the adopted single-user scope.
+[107](107-prepare-delivered-legacy-adapters.md) delivered the YAML cutover for the
+21 installed host apps; [113](113-own-host-customizations-in-recipes.md) completed
+recipe-owned customization and refreshed all installed recipes and snapshots.
+The old 52-source/124-path plan is not the current enrollment or delivery target.
+This closure does not claim the excluded legacy recipe paths were converted or
+that old source identities/selectors remain supported. Their recorded evidence
+and exclusions above remain historical. Any expansion beyond the maintained host
+cohort needs a new concrete scope; do not resume this old claim automatically.

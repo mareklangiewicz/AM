@@ -1,5 +1,23 @@
 # Release catalog exploration
 
+## Current status — November 5, 2026
+
+The 21-app host rollout is complete: [107](issues/107-prepare-delivered-legacy-adapters.md)
+and [113](issues/113-own-host-customizations-in-recipes.md) record deployed YAML
+runtime, recipe-owned settings, all installed recipes/snapshots refreshed, manual
+publication and successful ordinary updates with no recipe-change notices.
+[Operating policy](../../catalog-operating-policy.md) is the current contract.
+Marek accepted moving on without waiting for the natural scheduled trigger; its
+observation is optional monitoring and remains unobserved.
+
+No open or claimed implementation ticket remains. [71](issues/71-design-simple-yaml-catalog.md)
+is resolved by delivered design/implementation. [47](issues/47-enroll-scoped-migration-sources.md)
+and [49](issues/49-migrate-common-appimage-batch.md) are resolved as superseded
+(`wontfix` for their remaining broad legacy scope), not as fully converted batches.
+Do not restart those historical claims or the completed rollout 69. New work
+needs a concrete scope beyond this completed rollout.
+
+
 ## Full host recipe locality — November 5, 2026
 
 [113 resolved](issues/113-own-host-customizations-in-recipes.md): all host-specific
@@ -279,9 +297,11 @@ sources advertising 58/63 pages. Their full histories were deliberately not fetc
 remain proposals; aggregate request capacity and fair freshness need validation.
 No production integration, push, daily repin, natural-run acceptance or host change.
 
-## Current continuation boundary
+## Historical continuation boundary — November 3, 2026
 
-**Current frontier (updated November 3, 2026):**
+The following frontier is superseded by the current status above.
+
+**Recorded frontier (November 3, 2026):**
 
 - [71 open: design simple YAML catalog](issues/71-design-simple-yaml-catalog.md).
   Design confirmed and [72 reader experiment resolved](issues/72-prove-yaml-reader-feasibility.md).
