@@ -166,6 +166,7 @@ else:
         desktop=self.root/'usr/local/share/applications/obsidian-AM.desktop'
         desktop.write_text('custom desktop launcher')
         link=self.root/'usr/local/bin/obsidian';link.unlink();link.symlink_to('/custom/obsidian-wrapper')
+        self.stage()
         result=subprocess.run(['sh',str(app/'recipe.am')],env=self.env(),capture_output=True)
         self.assertEqual(result.returncode,0,result.stderr)
         self.assertEqual(desktop.read_text(),'custom desktop launcher')

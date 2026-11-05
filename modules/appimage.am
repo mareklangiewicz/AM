@@ -141,7 +141,7 @@ am_package() (
 		fi
 		printf '\n'
 	} > "$dir/remove"
-	cp "$recipe" "$dir/recipe.am"
+	if ! [ "$recipe" -ef "$dir/recipe.am" ]; then cp "$recipe" "$dir/recipe.am"; fi
 	{
 		printf '#!/bin/sh\n# AM-CATALOG-UPDATER 1\nexec sh '
 		quote "$dir/recipe.am"; printf ' --am-update "$@"\n'
