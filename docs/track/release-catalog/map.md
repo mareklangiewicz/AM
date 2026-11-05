@@ -2,6 +2,13 @@
 
 ## Current status — November 5, 2026
 
+[117 resolved](issues/117-inventory-historical-tooling-dependencies.md):
+[dependency inventory](research/historical-tooling-dependencies.md) finds current
+YAML publication still imports historical publication/delivery helpers, and older
+staging has test/prototype callers. No removal list is validated. Next proposal:
+isolate reused Git publication/fetch helpers under a separately scoped task.
+Documentation only; runtime and live deployment unchanged.
+
 [116 resolved](issues/116-deploy-common-recipe-declarations.md): source 14adf6fd1
 is pushed and deployed. Two runtime modules and all 21 recipe/snapshot pairs match
 source. Old/new policies chose identical 24 assets; all 187 protected paths remained
