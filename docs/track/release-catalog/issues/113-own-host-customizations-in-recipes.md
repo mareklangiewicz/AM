@@ -57,3 +57,13 @@ launcher targets and Obsidian CLI/desktop override were preserved. Plans,
 before-images and receipts: `/home/marek/Documents/Codex/am-yaml-cutover/recipe-locality-deployment/`.
 No GUI check or natural-cycle observation is claimed; November 6 publication and
 ordinary `am -u` remain pending. No workflow dispatch or yadm operation occurred.
+
+
+Manual publication follow-up: Marek requested running publication now after a
+quota check. [Run 42097574409](https://github.com/mareklangiewicz/AM/actions/runs/42097574409)
+succeeded, publishing 9461e1770bbf67be8552c2d1f84811c24a7d2bdd. Ordinary `am -u`
+exited zero for all 21 apps (two verified nightly refreshes, 19 unchanged).
+Seventeen source-recipe notices remain for apps outside today's required refresh;
+these were recorded, not treated as failed updates or automatic reinstall consent.
+The natural schedule remains unobserved. Local logs and receipt:
+`recipe-locality-deployment/manual-publication*` under the existing evidence root.

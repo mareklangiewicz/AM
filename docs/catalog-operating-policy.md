@@ -158,3 +158,16 @@ Local plans, before-images and verification receipts are in
 `/home/marek/Documents/Codex/am-yaml-cutover/recipe-locality-deployment/`.
 No GUI startup was exercised. The November 6 natural scheduled publication and
 subsequent ordinary `am -u` remain unobserved; no workflow was dispatched.
+
+
+Later November 5, Marek requested a manual publication. Run
+[42097574409](https://github.com/mareklangiewicz/AM/actions/runs/42097574409)
+succeeded at source 264e5264d in an 80-second job, publishing catalog
+`9461e1770bbf67be8552c2d1f84811c24a7d2bdd`. Collection uses 19 release-list
+requests with the workflow token. Ordinary unpinned `am -u` then exited zero:
+Neovide nightly and Neovim nightly refreshed with checksum verification; the other
+19 apps were unchanged. AM reported source-recipe changes for the 17 installed
+recipes outside the coordinated four-recipe refresh; no reinstall was performed
+in response. Official Obsidian CLI and desktop override hashes remain unchanged.
+Manual publication/update receipts are beside the deployment before-images.
+This manual run does not establish that the November 6 schedule fired.
