@@ -1,7 +1,7 @@
 # Prototype upstream recipe recognition and reconstruction
 
 Type: prototype
-Status: open
+Status: claimed
 Triage: ready-for-agent
 
 ## Request and purpose
@@ -59,3 +59,5 @@ from its evidence. No date for all-app catalog coverage is established here.
 
 November 5, 2026: Marek approved recording this direction in the tracker first.
 Implementation has not started.
+
+November 5, 2026: claimed for the pinned-template reconstruction experiment.
