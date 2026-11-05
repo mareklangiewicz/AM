@@ -10,9 +10,11 @@ publication and successful ordinary updates with no recipe-change notices.
 Marek accepted moving on without waiting for the natural scheduled trigger; its
 observation is optional monitoring and remains unobserved.
 
-New proposed source-only scope: [114](issues/114-unify-recipe-declaration-selection.md)
-records inspected consumers and a common declaration/selection path with separate
-collection enrollment. It is open, needs triage, and has no implementation in flight.
+[114](issues/114-unify-recipe-declaration-selection.md) implements the first common
+declaration/selection slice in source: generic architecture-aware declarations,
+data-only generated registry, maintained selector logic and an independent explicit
+collection list (unchanged 21 apps/19 repositories). Older policies remain transitional.
+No push or deployment; installed recipe binding/updater refresh remains separate.
 The completed rollout has no remaining implementation ticket. [71](issues/71-design-simple-yaml-catalog.md)
 is resolved by delivered design/implementation. [47](issues/47-enroll-scoped-migration-sources.md)
 and [49](issues/49-migrate-common-appimage-batch.md) are resolved as superseded

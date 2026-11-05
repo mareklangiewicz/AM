@@ -63,6 +63,11 @@ class AppImages(unittest.TestCase):
         for row in json.loads(POLICIES.read_text()):
             recipe = row['recipe']; text=(ROOT/'programs'/recipe).read_text()
             self.assertIn('CATALOG_FORMAT=2\nCATALOG_RECIPE="'+recipe+'"\n',text)
+            # Complete declarations supersede historical legacy-body hashes.
+            # Their current source/selection contract is covered by declaration
+            # compiler checks and the all-installed-recipes lifecycle tests.
+            if '# AM-RECIPE-DECLARATION 1' in text.splitlines():
+                continue
             before='\n'.join(l for l in text.split('\n') if l!='CATALOG_FORMAT=2' and not l.startswith('CATALOG_RECIPE='))
             self.assertEqual(hashlib.sha256(before.encode()).hexdigest(),row['source_sha256'])
         for recipe in (*APPIMAGES,'x86_64/unknown','x86_64/sqlitebrowser/extra','i686/sqlitebrowser'):

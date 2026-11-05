@@ -1,12 +1,12 @@
-"""Host selection policy and collector settings follow recipe declarations."""
+"""Recipe selection policy and collector settings follow recipe declarations."""
 from pathlib import Path
 import shutil
 import tempfile
 import unittest
 from unittest.mock import patch
 
-import host_policy_source as compiler
-from host_recipes import recipe_rows
+import recipe_policy_source as compiler
+from recipe_declarations import recipe_rows
 
 
 class HostPolicySource(unittest.TestCase):
@@ -35,7 +35,7 @@ class HostPolicySource(unittest.TestCase):
                 row=next(r for r in recipe_rows(root) if r['app']=='emmylua')
                 self.assertEqual(row['tools'],['emmylua_ls','luafmt'])
                 self.assertEqual(row['archive']['launchers'],['emmylua_ls:emmylua_ls','luafmt:luafmt'])
-                self.assertIn('host_tools="emmylua_ls luafmt"',policy.read_text())
+                self.assertIn('recipes_tools["x86_64/emmylua"]="emmylua_ls luafmt"',policy.read_text())
                 self.assertEqual(recipe.read_text().count('emmylua_ls luafmt'),1)
             for path in recipes.iterdir():
                 if path.name!='emmylua':self.assertEqual(before[path.name],path.read_bytes())
@@ -50,7 +50,9 @@ class HostPolicySource(unittest.TestCase):
             for bad in (source.replace('CATALOG_FRESH_ONLY=true','CATALOG_FRESH_ONLY=typo'),
                         source.replace('PACKAGE_LAYOUT=toolset','PACKAGE_LAYOUT=tar'),
                         source.replace('APP=emmylua','APP=$(touch /tmp/should-not-run)'),
-                        source.replace('APP=emmylua','APP=emmylua; false')):
+                        source.replace('APP=emmylua','APP=emmylua; false'),
+                        source.replace('CATALOG_REPOSITORY_ID=872860168', 'CATALOG_REPOSITORY_ID=0'),
+                        source.replace('CATALOG_CHANNEL=stable\n', '')):
                 recipe.write_text(bad)
                 with self.assertRaises(ValueError):recipe_rows(root)
 

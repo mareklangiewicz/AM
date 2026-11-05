@@ -1,8 +1,8 @@
 # Unify recipe declarations and selection independently of collection enrollment
 
 Type: task
-Status: open
-Triage: needs-triage
+Status: resolved
+Triage: ready-for-agent
 
 ## Direction and inspected evidence
 
@@ -98,3 +98,48 @@ The source checkout was clean and one commit ahead of recorded origin at inspect
 the remote was not freshly fetched. Natural daily-trigger monitoring is optional
 and does not block this work. The proposal preserves ADRs 0001 and 0002: clients
 select releases and freshness belongs to release observations.
+
+## Execution
+
+Marek instructed proceeding with this source-only slice. Implementation claimed;
+push and live deployment remain separate.
+
+## Implementation result
+
+`recipe_declarations.py` replaces the host-only reader and accepts all four
+supported architecture directories. It validates required literal settings,
+repository/app identities, channels and existing layout/toolset constraints.
+All 21 source recipe changes are marker-only (`AM-RECIPE-DECLARATION 1`).
+`recipe_policy_source.py` replaces the old generator: it emits only awk array
+data inside a fixed registry seam and refuses missing/duplicate seams. It never
+patches maintained logic. Architecture eligibility, repository checks and the
+existing selection/freshness logic are maintained source. Direct helper calls
+and installer calls still use the same trusted recipe-identity selection interface.
+
+`collection-recipes.txt` independently lists the original 21 identities; the
+scheduled collector resolves those through the common declarations and refuses
+unknown/duplicate entries. Production remains 19 repositories. A synthetic,
+non-enrolled recipe selects on all four architectures under awk/mawk/gawk/BusyBox
+without changing collection inputs. Conflicting cross-architecture app identities
+refuse. Remaining am-utils/AppImage/Neovim policies are retained and documented as
+transitional, with reviewed replacement declarations as their removal criterion.
+
+A focused AppImage test exposed an existing Sunshine legacy-body hash mismatch,
+also present at starting commit 194a1ce2c. Complete declarations now use the
+current declaration/lifecycle contract instead of asserting historical body hashes;
+legacy recipes retain the hash checks. Historical policy evidence was not rewritten.
+
+No installed files, binaries, collection scope, workflow, publication or yadm
+pointers were changed. No push or live deployment was performed. Binding/snapshot/
+updater refresh and dependency-based historical cleanup remain deferred as scoped.
+
+## Validation / Answer
+
+Delivered the scoped first common path above. Forty focused tests passed:
+16 installed-app/cutover groups, 11 manager integrations, seven selection tests,
+three AppImage registry/freshness/reassignment checks, two compiler/parser tests
+and one multi-architecture/non-enrollment regression. The corrected registry check
+was rerun and passed after fixing its pre-existing historical-body assumption.
+The broad `test_yaml_*.py` run was interrupted during lengthy legacy AppImage
+coverage; it is not a full-suite pass. Python compilation, shell syntax and
+`git diff --check` pass. No independent agent review is claimed.

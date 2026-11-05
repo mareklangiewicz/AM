@@ -32,6 +32,8 @@ function seconds(s, y,m,d,i,n) {
     for(i=1;i<m;i++) n+=(i==2 ? 28+(y%4==0 && (y%100!=0 || y%400==0)) : (i==4 || i==6 || i==9 || i==11 ? 30 : 31))
     return ((n+d-1)*24+substr(s,12,2))*3600+substr(s,15,2)*60+substr(s,18,2)
 }
+# Transitional policies for recipes not yet using complete declarations.
+# Retire only after reviewed declaration replacements cover their identities.
 # Explicit reviewed am-utils enrollment: both architectures have the same names.
 # This registry is trusted source; catalog data cannot enroll another recipe.
 function am_utils_recipe(recipe, names,n,i) {
@@ -218,67 +220,187 @@ function appimage_eligible(url, lower) {
     return 0
 }
 # END explicit AppImage policies
-# BEGIN single-user policies
-# Generated from marked host recipes by host_policy_source.py.
-function host_recipe(recipe) {
-    if(recipe=="x86_64/appimagetool") { host_repository="658450330"; host_channel="any"; host_pattern="^appimagetool-x86_64[.]AppImage$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    if(recipe=="x86_64/appimageupdatetool") { host_repository="84325774"; host_channel="any"; host_pattern="^appimageupdatetool-x86_64[.]AppImage$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    if(recipe=="x86_64/btop") { host_repository="365005377"; host_channel="any"; host_pattern="^btop-x86_64-unknown-linux-musl[.]tar[.]gz$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    if(recipe=="x86_64/emmylua") { host_repository="872860168"; host_channel="stable"; host_pattern="^emmylua_ls-linux-musl[.]tar[.]gz$"; host_tools="emmylua_ls emmylua_check emmylua_doc_cli luafmt"; host_tool_suffix="-linux-musl.tar.gz"; host_fresh_only=1; return 1 }
-    if(recipe=="x86_64/fzf") { host_repository="13807606"; host_channel="any"; host_pattern="^fzf-.*-linux_amd64[.]tar[.]gz$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    if(recipe=="x86_64/kitty") { host_repository="71056775"; host_channel="stable"; host_pattern="^kitty-.*-x86_64[.]txz$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    if(recipe=="x86_64/lazygit") { host_repository="134017286"; host_channel="any"; host_pattern="^lazygit_.*_linux_x86_64[.]tar[.]gz$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    if(recipe=="x86_64/logseq-app-db-nightly") { host_repository="266231149"; host_channel="nightly"; host_pattern="^Logseq-linux-x86_64-.*[.]AppImage$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    if(recipe=="x86_64/logseq-app-og") { host_repository="1122576268"; host_channel="stable"; host_pattern="^Logseq-OG-linux-x64-.*[.]AppImage$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    if(recipe=="x86_64/neovide") { host_repository="226408450"; host_channel="stable"; host_pattern="^neovide[.]AppImage$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    if(recipe=="x86_64/neovide-nightly") { host_repository="226408450"; host_channel="nightly"; host_pattern="^neovide[.]AppImage$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    if(recipe=="x86_64/nvim") { host_repository="16408992"; host_channel="stable"; host_pattern="^nvim-linux-x86_64[.]appimage$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    if(recipe=="x86_64/nvim-nightly") { host_repository="16408992"; host_channel="nightly"; host_pattern="^nvim-linux-x86_64[.]appimage$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    if(recipe=="x86_64/obsidian") { host_repository="262342594"; host_channel="any"; host_pattern="^Obsidian-[0-9.]+[.]AppImage$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    if(recipe=="x86_64/rclone") { host_repository="17803236"; host_channel="any"; host_pattern="^rclone-.*-linux-amd64[.]zip$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    if(recipe=="x86_64/rclone-ui") { host_repository="920598633"; host_channel="any"; host_pattern="^.*[.]AppImage$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    if(recipe=="x86_64/satty") { host_repository="1200402795"; host_channel="stable"; host_pattern="^Satty-.*-x86_64[.]AppImage$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    if(recipe=="x86_64/sunshine") { host_repository="438803890"; host_channel="any"; host_pattern="^Sunshine_.*_x86_64[.]AppImage$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    if(recipe=="x86_64/yt-dlp") { host_repository="307260205"; host_channel="any"; host_pattern="^yt-dlp_linux$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    if(recipe=="x86_64/zellij") { host_repository="292014229"; host_channel="any"; host_pattern="^zellij-x86_64-unknown-linux-musl[.]tar[.]gz$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    if(recipe=="x86_64/zmx") { host_repository="1073900202"; host_channel="any"; host_pattern="^zmx-.*-linux-x86_64[.]tar[.]gz$"; host_tools=""; host_tool_suffix=""; host_fresh_only=0; return 1 }
-    return 0
+# BEGIN recipe declarations
+# Generated by recipe_policy_source.py; edit recipe declarations.
+BEGIN {
+    recipes_repository["x86_64/appimagetool"]="658450330"
+    recipes_channel["x86_64/appimagetool"]="any"
+    recipes_pattern["x86_64/appimagetool"]="^appimagetool-x86_64[.]AppImage$"
+    recipes_tools["x86_64/appimagetool"]=""
+    recipes_tool_suffix["x86_64/appimagetool"]=""
+    recipes_fresh_only["x86_64/appimagetool"]=0
+    recipes_repository["x86_64/appimageupdatetool"]="84325774"
+    recipes_channel["x86_64/appimageupdatetool"]="any"
+    recipes_pattern["x86_64/appimageupdatetool"]="^appimageupdatetool-x86_64[.]AppImage$"
+    recipes_tools["x86_64/appimageupdatetool"]=""
+    recipes_tool_suffix["x86_64/appimageupdatetool"]=""
+    recipes_fresh_only["x86_64/appimageupdatetool"]=0
+    recipes_repository["x86_64/btop"]="365005377"
+    recipes_channel["x86_64/btop"]="any"
+    recipes_pattern["x86_64/btop"]="^btop-x86_64-unknown-linux-musl[.]tar[.]gz$"
+    recipes_tools["x86_64/btop"]=""
+    recipes_tool_suffix["x86_64/btop"]=""
+    recipes_fresh_only["x86_64/btop"]=0
+    recipes_repository["x86_64/emmylua"]="872860168"
+    recipes_channel["x86_64/emmylua"]="stable"
+    recipes_pattern["x86_64/emmylua"]="^emmylua_ls-linux-musl[.]tar[.]gz$"
+    recipes_tools["x86_64/emmylua"]="emmylua_ls emmylua_check emmylua_doc_cli luafmt"
+    recipes_tool_suffix["x86_64/emmylua"]="-linux-musl.tar.gz"
+    recipes_fresh_only["x86_64/emmylua"]=1
+    recipes_repository["x86_64/fzf"]="13807606"
+    recipes_channel["x86_64/fzf"]="any"
+    recipes_pattern["x86_64/fzf"]="^fzf-.*-linux_amd64[.]tar[.]gz$"
+    recipes_tools["x86_64/fzf"]=""
+    recipes_tool_suffix["x86_64/fzf"]=""
+    recipes_fresh_only["x86_64/fzf"]=0
+    recipes_repository["x86_64/kitty"]="71056775"
+    recipes_channel["x86_64/kitty"]="stable"
+    recipes_pattern["x86_64/kitty"]="^kitty-.*-x86_64[.]txz$"
+    recipes_tools["x86_64/kitty"]=""
+    recipes_tool_suffix["x86_64/kitty"]=""
+    recipes_fresh_only["x86_64/kitty"]=0
+    recipes_repository["x86_64/lazygit"]="134017286"
+    recipes_channel["x86_64/lazygit"]="any"
+    recipes_pattern["x86_64/lazygit"]="^lazygit_.*_linux_x86_64[.]tar[.]gz$"
+    recipes_tools["x86_64/lazygit"]=""
+    recipes_tool_suffix["x86_64/lazygit"]=""
+    recipes_fresh_only["x86_64/lazygit"]=0
+    recipes_repository["x86_64/logseq-app-db-nightly"]="266231149"
+    recipes_channel["x86_64/logseq-app-db-nightly"]="nightly"
+    recipes_pattern["x86_64/logseq-app-db-nightly"]="^Logseq-linux-x86_64-.*[.]AppImage$"
+    recipes_tools["x86_64/logseq-app-db-nightly"]=""
+    recipes_tool_suffix["x86_64/logseq-app-db-nightly"]=""
+    recipes_fresh_only["x86_64/logseq-app-db-nightly"]=0
+    recipes_repository["x86_64/logseq-app-og"]="1122576268"
+    recipes_channel["x86_64/logseq-app-og"]="stable"
+    recipes_pattern["x86_64/logseq-app-og"]="^Logseq-OG-linux-x64-.*[.]AppImage$"
+    recipes_tools["x86_64/logseq-app-og"]=""
+    recipes_tool_suffix["x86_64/logseq-app-og"]=""
+    recipes_fresh_only["x86_64/logseq-app-og"]=0
+    recipes_repository["x86_64/neovide"]="226408450"
+    recipes_channel["x86_64/neovide"]="stable"
+    recipes_pattern["x86_64/neovide"]="^neovide[.]AppImage$"
+    recipes_tools["x86_64/neovide"]=""
+    recipes_tool_suffix["x86_64/neovide"]=""
+    recipes_fresh_only["x86_64/neovide"]=0
+    recipes_repository["x86_64/neovide-nightly"]="226408450"
+    recipes_channel["x86_64/neovide-nightly"]="nightly"
+    recipes_pattern["x86_64/neovide-nightly"]="^neovide[.]AppImage$"
+    recipes_tools["x86_64/neovide-nightly"]=""
+    recipes_tool_suffix["x86_64/neovide-nightly"]=""
+    recipes_fresh_only["x86_64/neovide-nightly"]=0
+    recipes_repository["x86_64/nvim"]="16408992"
+    recipes_channel["x86_64/nvim"]="stable"
+    recipes_pattern["x86_64/nvim"]="^nvim-linux-x86_64[.]appimage$"
+    recipes_tools["x86_64/nvim"]=""
+    recipes_tool_suffix["x86_64/nvim"]=""
+    recipes_fresh_only["x86_64/nvim"]=0
+    recipes_repository["x86_64/nvim-nightly"]="16408992"
+    recipes_channel["x86_64/nvim-nightly"]="nightly"
+    recipes_pattern["x86_64/nvim-nightly"]="^nvim-linux-x86_64[.]appimage$"
+    recipes_tools["x86_64/nvim-nightly"]=""
+    recipes_tool_suffix["x86_64/nvim-nightly"]=""
+    recipes_fresh_only["x86_64/nvim-nightly"]=0
+    recipes_repository["x86_64/obsidian"]="262342594"
+    recipes_channel["x86_64/obsidian"]="any"
+    recipes_pattern["x86_64/obsidian"]="^Obsidian-[0-9.]+[.]AppImage$"
+    recipes_tools["x86_64/obsidian"]=""
+    recipes_tool_suffix["x86_64/obsidian"]=""
+    recipes_fresh_only["x86_64/obsidian"]=0
+    recipes_repository["x86_64/rclone"]="17803236"
+    recipes_channel["x86_64/rclone"]="any"
+    recipes_pattern["x86_64/rclone"]="^rclone-.*-linux-amd64[.]zip$"
+    recipes_tools["x86_64/rclone"]=""
+    recipes_tool_suffix["x86_64/rclone"]=""
+    recipes_fresh_only["x86_64/rclone"]=0
+    recipes_repository["x86_64/rclone-ui"]="920598633"
+    recipes_channel["x86_64/rclone-ui"]="any"
+    recipes_pattern["x86_64/rclone-ui"]="^.*[.]AppImage$"
+    recipes_tools["x86_64/rclone-ui"]=""
+    recipes_tool_suffix["x86_64/rclone-ui"]=""
+    recipes_fresh_only["x86_64/rclone-ui"]=0
+    recipes_repository["x86_64/satty"]="1200402795"
+    recipes_channel["x86_64/satty"]="stable"
+    recipes_pattern["x86_64/satty"]="^Satty-.*-x86_64[.]AppImage$"
+    recipes_tools["x86_64/satty"]=""
+    recipes_tool_suffix["x86_64/satty"]=""
+    recipes_fresh_only["x86_64/satty"]=0
+    recipes_repository["x86_64/sunshine"]="438803890"
+    recipes_channel["x86_64/sunshine"]="any"
+    recipes_pattern["x86_64/sunshine"]="^Sunshine_.*_x86_64[.]AppImage$"
+    recipes_tools["x86_64/sunshine"]=""
+    recipes_tool_suffix["x86_64/sunshine"]=""
+    recipes_fresh_only["x86_64/sunshine"]=0
+    recipes_repository["x86_64/yt-dlp"]="307260205"
+    recipes_channel["x86_64/yt-dlp"]="any"
+    recipes_pattern["x86_64/yt-dlp"]="^yt-dlp_linux$"
+    recipes_tools["x86_64/yt-dlp"]=""
+    recipes_tool_suffix["x86_64/yt-dlp"]=""
+    recipes_fresh_only["x86_64/yt-dlp"]=0
+    recipes_repository["x86_64/zellij"]="292014229"
+    recipes_channel["x86_64/zellij"]="any"
+    recipes_pattern["x86_64/zellij"]="^zellij-x86_64-unknown-linux-musl[.]tar[.]gz$"
+    recipes_tools["x86_64/zellij"]=""
+    recipes_tool_suffix["x86_64/zellij"]=""
+    recipes_fresh_only["x86_64/zellij"]=0
+    recipes_repository["x86_64/zmx"]="1073900202"
+    recipes_channel["x86_64/zmx"]="any"
+    recipes_pattern["x86_64/zmx"]="^zmx-.*-linux-x86_64[.]tar[.]gz$"
+    recipes_tools["x86_64/zmx"]=""
+    recipes_tool_suffix["x86_64/zmx"]=""
+    recipes_fresh_only["x86_64/zmx"]=0
 }
-function host_eligible(name, tag, preview, tool) {
-    if(host_channel=="stable" && (preview!="false" || tag=="nightly")) return 0
-    if(host_channel=="nightly" && tag!="nightly") return 0
-    if(tolower(name) ~ /aarch64|arm64|armv7|i386|i686|macos|darwin|windows/) return 0
-    if(host_tools!="") {
-        tool=ENVIRON["AM_YAML_TOOL"]; split(host_tools,tools," "); if(tool=="") tool=tools[1]
-        if(index(" " host_tools " "," " tool " ")==0) return 0
-        return name==tool host_tool_suffix
+# END recipe declarations
+# Maintained selection logic; generated declarations above contain data only.
+function declaration_recipe(recipe) {
+    if(!(recipe in recipes_repository)) return 0
+    declaration_repository=recipes_repository[recipe]
+    declaration_channel=recipes_channel[recipe]
+    declaration_pattern=recipes_pattern[recipe]
+    declaration_tools=recipes_tools[recipe]
+    declaration_tool_suffix=recipes_tool_suffix[recipe]
+    declaration_fresh_only=recipes_fresh_only[recipe]
+    return 1
+}
+function declaration_eligible(name, tag, preview, tool, lower) {
+    if(declaration_channel=="stable" && (preview!="false" || tag=="nightly")) return 0
+    if(declaration_channel=="nightly" && tag!="nightly") return 0
+    lower=tolower(name)
+    if(lower ~ /macos|darwin|windows/) return 0
+    if(arch=="x86_64" && lower ~ /aarch64|arm64|armv7|i386|i686/) return 0
+    if(arch=="aarch64" && (lower !~ /aarch64|arm64/ || lower ~ /x86_64|amd64|armv7|i386|i686/)) return 0
+    if(arch=="i686" && (lower !~ /i386|i686/ || lower ~ /x86_64|amd64|aarch64|arm64|armv7/)) return 0
+    if(arch=="armv7l" && (lower !~ /armv7/ || lower ~ /x86_64|amd64|aarch64|arm64|i386|i686/)) return 0
+    if(declaration_tools!="") {
+        tool=ENVIRON["AM_YAML_TOOL"]; split(declaration_tools,tools," "); if(tool=="") tool=tools[1]
+        if(index(" " declaration_tools " "," " tool " ")==0) return 0
+        return name==tool declaration_tool_suffix
     }
-    return name ~ host_pattern
+    return name ~ declaration_pattern
 }
-# END single-user policies
 BEGIN {
     recipe=ENVIRON["AM_YAML_RECIPE"]; split(recipe,r,"/"); arch=r[1]; app=r[2]
-    host=host_recipe(recipe)
+    declared=declaration_recipe(recipe)
     utility=am_utils_recipe(recipe)
     image=appimage_recipe(recipe)
-    known=(host || utility || image || recipe=="x86_64/obsidian" || recipe=="x86_64/nvim" ||
+    known=(declared || utility || image || recipe=="x86_64/obsidian" || recipe=="x86_64/nvim" ||
            recipe=="aarch64/nvim" || recipe=="x86_64/nvim-nightly" || recipe=="aarch64/nvim-nightly")
     if(!known) refuse("unsupported_recipe_policy")
     check_only=(ENVIRON["AM_YAML_CHECK_RECIPE"]=="1")
-    if(host_fresh_only && ENVIRON["AM_YAML_ACCEPT"]!="") refuse("toolset requires fresh observations; refresh the catalog")
+    if(declaration_fresh_only && ENVIRON["AM_YAML_ACCEPT"]!="") refuse("toolset requires fresh observations; refresh the catalog")
     if(check_only) exit
     if(!timestamp(ENVIRON["AM_YAML_NOW"])) refuse("utc_now_required")
-    if(host && ENVIRON["AM_YAML_REPOSITORY"]!=host_repository) refuse("host_repository_mismatch")
-    if(!host && utility && ENVIRON["AM_YAML_REPOSITORY"]!="1225768109") refuse("am_utils_repository_mismatch")
-    if(!host && image && ENVIRON["AM_YAML_REPOSITORY"]!=image_repository) refuse("appimage_repository_mismatch")
+    if(declared && ENVIRON["AM_YAML_REPOSITORY"]!=declaration_repository) refuse("declaration_repository_mismatch")
+    if(!declared && utility && ENVIRON["AM_YAML_REPOSITORY"]!="1225768109") refuse("am_utils_repository_mismatch")
+    if(!declared && image && ENVIRON["AM_YAML_REPOSITORY"]!=image_repository) refuse("appimage_repository_mismatch")
     FS="\t"
 }
 
 {
     release_id=$1; asset_id=$2; observed=decode($3); published=decode($4)
     tag=decode($5); name=decode($6); url=decode($7)
-    if(host) {
-        eligible=host_eligible(name,tag,$8)
+    if(declared) {
+        eligible=declaration_eligible(name,tag,$8)
     } else if(image) {
         eligible=appimage_eligible(url)
         if(image_stable && $8!="false") eligible=0

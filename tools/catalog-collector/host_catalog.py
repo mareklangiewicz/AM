@@ -1,6 +1,6 @@
 """Single-user YAML catalog: bounded release-list collection and retained facts.
 
-Host recipes are reviewed source. One page of 100 releases per source, with
+The explicit collection list resolves reviewed recipe declarations. One page of 100 releases per source, with
 48-hour selected-record freshness enforced by clients. Failures preserve the
 previous published tree. No latest endpoint, consumer version choice or pruning.
 """
@@ -20,7 +20,7 @@ from yaml_adapter import schema_url
 from yaml_publication import candidate_tree, load_local
 from publication import git, publish_tree
 
-from host_recipes import recipe_rows
+from recipe_declarations import recipe_rows
 
 ROOT = Path(__file__).resolve().parents[2]
 FILE_CAP = 2097152
@@ -33,7 +33,14 @@ def utc():
 
 
 def configuration():
-    rows = recipe_rows(ROOT)
+    declarations = {row['recipe']: row for row in recipe_rows(ROOT)}
+    enrolled = [line for line in (ROOT/'tools/catalog-collector/collection-recipes.txt').read_text().splitlines()
+                if line and not line.startswith('#')]
+    if not enrolled or len(set(enrolled)) != len(enrolled):
+        raise ValueError('empty or duplicate collection enrollment')
+    if any(recipe not in declarations for recipe in enrolled):
+        raise ValueError('unknown collection recipe')
+    rows = [declarations[recipe] for recipe in enrolled]
     sources = {}
     for row in rows:
         rid = str(row['repository_id'])

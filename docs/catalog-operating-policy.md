@@ -1,8 +1,11 @@
 # Single-user YAML catalog operation
 
-Marek's fork uses the YAML catalog for the 21 host recipes marked
-`# AM-HOST-RECIPE 1` under `programs/x86_64` (19 numeric repository identities).
-Those recipes are the production enrollment and customization source of truth. The older 50-source design manifest and
+Marek's fork collects YAML release facts for the 21 recipe identities listed in
+`tools/catalog-collector/collection-recipes.txt` (19 numeric repository identities).
+Collection enrollment is independent of recipe declaration support. Recipe headers
+marked `# AM-RECIPE-DECLARATION 1` own customization and selection settings;
+adding a declaration does not enroll it for collection. The older 50-source design
+manifest and
 format-1 collector experiments are historical evidence, not active publication.
 The source cap remains 52; per-repository YAML remains capped at 2 MiB.
 
@@ -84,7 +87,7 @@ as a missing URL; the selected URL remains in download-url and updates succeed.
 
 ## Recipe launcher settings
 
-Edit host recipe declarations directly. `host_policy_source.py` compiles their
+Edit recipe declarations directly. `recipe_policy_source.py` compiles their
 selection settings into the trusted policy registry and never rewrites recipes.
 `EXTRA_APP_LAUNCHERS` is an optional space-separated list of additional command
 names pointing to the installed root executable `$APPS_DIR/$APP/$APP`. Names
@@ -107,16 +110,18 @@ migration.
 
 ## Recipe archive and selection settings
 
-Each marked host recipe owns its repository identity (`CATALOG_REPOSITORY_ID`,
+Each declared recipe owns its repository identity (`CATALOG_REPOSITORY_ID`,
 `CATALOG_REPOSITORY`), channel (`CATALOG_CHANNEL`) and asset pattern
 (`CATALOG_ASSET_PATTERN`), alongside its launcher, refresh and version settings.
 Keep the declaration header literal: one shell assignment per line, with shell
-quoting for spaces and patterns. `host_recipes.py` reads it without executing shell.
-The collector and maintenance cutover read these same recipes. Run
-`python3 tools/catalog-collector/host_policy_source.py` after selection changes,
+quoting for spaces and patterns. `recipe_declarations.py` reads it without executing shell.
+The collector and maintenance cutover resolve the explicit collection list through
+these same declarations. Run
+`python3 tools/catalog-collector/recipe_policy_source.py` after selection changes,
 and commit the regenerated `modules/catalog-yaml-policy.am` with the recipe.
-The generated registry serves direct catalog clients; it is not another source to
-edit. No JSON host manifest or app-named archive adapter registry remains.
+The generator emits registry data only; eligibility, ordering and freshness remain
+maintained selector code. The generated registry serves direct catalog clients; it
+is not another source to edit. No JSON host manifest or app-named archive adapter registry remains.
 
 `PACKAGE_LAYOUT` is one of `raw` (default), `tar`, `zip`, or `toolset`.
 `PACKAGE_KIND` distinguishes an AppImage from an executable package.
@@ -191,3 +196,24 @@ scheduled trigger. Manual publication plus ordinary updates establish the comple
 publication/consumer path. The scheduled trigger itself remains unobserved and is
 routine monitoring, not a blocker. Historical tracker tickets 47/49 are closed as
 superseded broad scope; design ticket 71 is resolved by the delivered implementation.
+
+
+## Common declarations — source change, ticket 114
+
+The declaration reader accepts `x86_64`, `aarch64`, `i686` and `armv7l` recipe
+paths without a host category. Architecture policy excludes other operating
+systems; x86_64 retains its prior exclusions, while the other architectures require
+an explicit matching architecture name and exclude conflicting ones. App-specific
+patterns still apply. Direct catalog clients and the shared installer use the same
+trusted recipe-identity registry; selection settings are not accepted from ambient
+client environment variables. Configured AMREPO still determines catalog ownership.
+
+The remaining 472 format-2 recipes retain the existing am-utils, AppImage and
+Neovim selector policies. These are a transition pending reviewed equivalent
+recipe declarations, not a second final declaration format. Remove those branches
+only after all their supported identities have reviewed replacements and matching
+behavior checks. This slice does not convert unused recipes or widen collection.
+
+This source change has not been pushed or deployed. Existing installed recipes
+and source snapshots keep their previous markers until an explicitly authorized
+refresh; selection fields and runtime behavior for those 21 identities are unchanged.

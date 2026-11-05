@@ -1,13 +1,16 @@
-"""Read literal declarations from marked host recipes, without executing shell."""
+"""Read literal declarations from recipe declaration headers, without executing shell."""
 import re
 import shlex
 
-MARKER = '# AM-HOST-RECIPE 1\n'
+MARKER = '# AM-RECIPE-DECLARATION 1\n'
 
 
 def recipe_rows(root):
     rows = []
-    for path in sorted((root/'programs/x86_64').iterdir()):
+    repositories, apps = {}, {}
+    paths = (path for arch in ('x86_64', 'aarch64', 'i686', 'armv7l')
+             for path in (root/'programs'/arch).glob('*'))
+    for path in sorted(paths):
         if not path.is_file():
             continue
         source = path.read_text()
@@ -27,26 +30,37 @@ def recipe_rows(root):
             double_quoted = literal == '"'+value+'"' and not any(c in value for c in '$`\\"')
             if (not equals or not re.fullmatch(r'[A-Z][A-Z0-9_]*', name) or len(tokens)>1
                     or not (quoted or double_quoted or literal == '')):
-                raise ValueError('host recipes require literal declarations: '+str(path))
+                raise ValueError('recipes require literal declarations: '+str(path))
             if name in settings:
                 raise ValueError('duplicate recipe declaration: '+name)
             settings[name] = value
+        required = ('APP', 'CATALOG_FORMAT', 'CATALOG_RECIPE', 'CATALOG_REPOSITORY_ID',
+                    'CATALOG_REPOSITORY', 'CATALOG_CHANNEL', 'CATALOG_ASSET_PATTERN')
+        if any(not settings.get(key) for key in required):
+            raise ValueError('missing recipe declaration: '+str(path))
+        if settings['CATALOG_FORMAT'] != '2':
+            raise ValueError('unsupported declaration format: '+str(path))
+        if (not re.fullmatch(r'[1-9][0-9]*', settings['CATALOG_REPOSITORY_ID']) or
+                not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', settings['CATALOG_REPOSITORY'])):
+            raise ValueError('invalid repository identity: '+str(path))
         app = settings['APP']
-        if app != path.name or settings['CATALOG_RECIPE'] != 'x86_64/'+app:
-            raise ValueError('host recipe identity mismatch: '+str(path))
+        if not re.fullmatch(r'[a-z0-9][a-z0-9_.+-]*', app):
+            raise ValueError('invalid app identity: '+str(path))
+        if app != path.name or settings['CATALOG_RECIPE'] != path.parent.name+'/'+app:
+            raise ValueError('recipe identity mismatch: '+str(path))
         tools = settings.get('PACKAGE_TOOLS', '').split()
         kind = settings.get('PACKAGE_KIND', 'appimage')
         layout = settings.get('PACKAGE_LAYOUT', 'raw' if kind == 'executable' else 'appimage')
         if kind not in ('appimage','executable') or (layout == 'toolset') != bool(tools):
             raise ValueError('inconsistent package kind/tools: '+str(path))
         if settings['CATALOG_CHANNEL'] not in ('any','stable','nightly'):
-            raise ValueError('unsupported host channel: '+str(path))
+            raise ValueError('unsupported channel: '+str(path))
         for boolean in ('REFRESH_ALWAYS','CATALOG_FRESH_ONLY'):
             if settings.get(boolean,'false') not in ('true','false'):
                 raise ValueError('invalid recipe boolean: '+boolean)
         if layout not in ('appimage', 'raw', 'tar', 'zip', 'toolset'):
-            raise ValueError('unsupported host package layout: '+str(path))
-        row = dict(app=app, repository_id=int(settings['CATALOG_REPOSITORY_ID']),
+            raise ValueError('unsupported package layout: '+str(path))
+        row = dict(recipe=settings['CATALOG_RECIPE'], app=app, repository_id=int(settings['CATALOG_REPOSITORY_ID']),
                    repository=settings['CATALOG_REPOSITORY'], channel=settings['CATALOG_CHANNEL'],
                    asset_pattern=settings['CATALOG_ASSET_PATTERN'], layout=layout,
                    version_identity=settings.get('VERSION_IDENTITY', 'url'),
@@ -62,7 +76,13 @@ def recipe_rows(root):
         for key, variable in (('extra_app_launchers', 'EXTRA_APP_LAUNCHERS'), ('desktop_exec', 'DESKTOP_EXEC')):
             if variable in settings:
                 row[key] = settings[variable]
+        rid, repository = row['repository_id'], row['repository'].lower()
+        if rid in repositories and repositories[rid] != repository:
+            raise ValueError('conflicting repository identity: '+str(path))
+        if app in apps and apps[app] != rid:
+            raise ValueError('conflicting app identity: '+str(path))
+        repositories[rid], apps[app] = repository, rid
         rows.append(row)
     if not rows:
-        raise ValueError('no marked host recipes')
+        raise ValueError('no recipe declaration headers')
     return rows
