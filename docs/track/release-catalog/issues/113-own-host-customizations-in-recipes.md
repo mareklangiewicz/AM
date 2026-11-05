@@ -67,3 +67,16 @@ Seventeen source-recipe notices remain for apps outside today's required refresh
 these were recorded, not treated as failed updates or automatic reinstall consent.
 The natural schedule remains unobserved. Local logs and receipt:
 `recipe-locality-deployment/manual-publication*` under the existing evidence root.
+
+
+November 5 completion: Marek authorized the remaining 17-recipe refresh. Their
+installed declarations and `.am-installer` source snapshots were backed up and
+refreshed from e4c84b154; host path bindings were retained and standalone source
+defaults pinned to that revision. All 21 installed recipe bodies (excluding host
+bindings) and source snapshots match source. Ordinary `am -u` exited zero:
+two nightlies refreshed with checksum verification, 19 apps unchanged, and zero
+source-recipe change/reinstall notices. All 189 recorded protected paths retained
+their hashes/modes or link targets after the refresh and update. Plans, before-images
+and logs: `/home/marek/Documents/Codex/am-yaml-cutover/remaining-recipe-refresh/`.
+This closes the installed-recipe refresh; the natural November 6 scheduled trigger
+remains unobserved. No additional workflow dispatch or GUI check occurred.

@@ -171,3 +171,16 @@ recipes outside the coordinated four-recipe refresh; no reinstall was performed
 in response. Official Obsidian CLI and desktop override hashes remain unchanged.
 Manual publication/update receipts are beside the deployment before-images.
 This manual run does not establish that the November 6 schedule fired.
+
+
+November 5 completion: Marek authorized the remaining 17-recipe refresh. Their
+installed declarations and `.am-installer` source snapshots were backed up and
+refreshed from e4c84b154; host path bindings were retained and standalone source
+defaults pinned to that revision. All 21 installed recipe bodies (excluding host
+bindings) and source snapshots match source. Ordinary `am -u` exited zero:
+two nightlies refreshed with checksum verification, 19 apps unchanged, and zero
+source-recipe change/reinstall notices. All 189 recorded protected paths retained
+their hashes/modes or link targets after the refresh and update. Plans, before-images
+and logs: `/home/marek/Documents/Codex/am-yaml-cutover/remaining-recipe-refresh/`.
+This closes the installed-recipe refresh; the natural November 6 scheduled trigger
+remains unobserved. No additional workflow dispatch or GUI check occurred.
