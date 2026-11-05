@@ -2,6 +2,12 @@
 
 ## Current status — November 5, 2026
 
+[116 resolved](issues/116-deploy-common-recipe-declarations.md): source 14adf6fd1
+is pushed and deployed. Two runtime modules and all 21 recipe/snapshot pairs match
+source. Old/new policies chose identical 24 assets; all 187 protected paths remained
+unchanged. Manager startup and read-only live Neovim/EmmyLua selection passed.
+No binary update, ordinary am -u, publication, GUI check or yadm change this rollout.
+
 The 21-app host rollout is complete: [107](issues/107-prepare-delivered-legacy-adapters.md)
 and [113](issues/113-own-host-customizations-in-recipes.md) record deployed YAML
 runtime, recipe-owned settings, all installed recipes/snapshots refreshed, manual
@@ -14,11 +20,11 @@ observation is optional monitoring and remains unobserved.
 declaration/selection slice in source: generic architecture-aware declarations,
 data-only generated registry, maintained selector logic and an independent explicit
 collection list (unchanged 21 apps/19 repositories). Older policies remain transitional.
-Source through 01241d2d3 is pushed; no deployment.
+Source through 14adf6fd1 is pushed and deployed; see 116.
 [115 resolved](issues/115-maintained-installed-recipe-refresh.md) adds shared
 maintenance binding/updater rendering and an explicit metadata-only refresh command.
 29 distinct focused tests pass, plus a rerun verifying actual shell installer updater
-bytes for all 21 apps. This maintenance slice is source-only, not deployed.
+bytes for all 21 apps. The maintained refresh operation was exercised in deployment 116.
 The completed rollout has no remaining implementation ticket. [71](issues/71-design-simple-yaml-catalog.md)
 is resolved by delivered design/implementation. [47](issues/47-enroll-scoped-migration-sources.md)
 and [49](issues/49-migrate-common-appimage-batch.md) are resolved as superseded

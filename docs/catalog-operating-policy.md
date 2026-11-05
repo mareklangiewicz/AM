@@ -214,10 +214,10 @@ recipe declarations, not a second final declaration format. Remove those branche
 only after all their supported identities have reviewed replacements and matching
 behavior checks. This slice does not convert unused recipes or widen collection.
 
-Source through `01241d2d3` was pushed after Marek requested it; this change has
-not been deployed. Existing installed recipes
-and source snapshots keep their previous markers until an explicitly authorized
-refresh; selection fields and runtime behavior for those 21 identities are unchanged.
+Source `14adf6fd11c0c9109a3f62ced92b3be7548964dc` was pushed and deployed on
+November 5 after Marek requested deployment. All 21 installed recipes and source
+snapshots now use the generic declaration marker; selection fields and behavior
+for those identities are unchanged.
 
 
 ## Maintained metadata-only recipe refresh
@@ -255,3 +255,15 @@ The shared Python `installed_recipe.py` owns compact recipe binding and managed
 updater rendering for maintenance/cutover tooling. The production shell installer
 remains independent of Python; integration tests compare its actual updater bytes
 with the maintained renderer. No live refresh accompanied this source addition.
+
+
+November 5 common-declaration deployment: two runtime modules and all 21
+recipe/snapshot pairs were refreshed from `14adf6fd1`, with per-app backups.
+Old/new selection matched for 21 apps/24 assets on the same local catalog;
+all deployed hashes and 187 protected path hashes/modes/link targets matched after
+apply and again during verification. Manager help and installed-helper live
+selection for Neovim and the four same-release EmmyLua tools passed at publication
+`9461e1770bbf67be8552c2d1f84811c24a7d2bdd`. No binary updates, ordinary `am -u`,
+GUI launch, workflow dispatch or publication occurred during this deployment.
+Plans, before-images and receipts are in
+`/home/marek/Documents/Codex/am-yaml-cutover/common-declarations-deployment/`.

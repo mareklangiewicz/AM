@@ -49,3 +49,10 @@ it was corrected and rerun successfully. No independent agent review is claimed.
 The earlier source through 01241d2d3 was pushed as explicitly requested. This new
 maintenance slice is committed separately; no live refresh, runtime synchronization,
 publication, workflow dispatch or yadm changes were performed.
+
+## Deployment follow-up
+
+Marek requested push and deployment. Source 14adf6fd1 was pushed; deployment 116
+used the maintained refresh operation for all 21 installed recipe/snapshot pairs,
+coordinated with the two changed runtime modules. See
+[116](116-deploy-common-recipe-declarations.md) for verification and backups.
