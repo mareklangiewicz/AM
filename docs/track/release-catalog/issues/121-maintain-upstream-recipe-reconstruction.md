@@ -1,7 +1,7 @@
 # Maintain bounded upstream recipe reconstruction
 
 Type: task
-Status: open
+Status: claimed
 Triage: ready-for-agent
 
 ## Scope from experiment 120
