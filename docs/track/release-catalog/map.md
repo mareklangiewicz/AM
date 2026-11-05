@@ -1,5 +1,22 @@
 # Release catalog exploration
 
+## Next frontier — upstream recipe reconstruction
+
+[120 open](issues/120-prototype-upstream-recipe-reconstruction.md): before broad
+recipe conversion, prototype recognizing one pinned upstream AppImage template,
+extracting a short declaration and reconstructing the complete original recipe.
+Require exact accounting for original content and refusal on custom steps.
+Template recognition and our runtime's behavioral compatibility are separate
+checks. Use a handful of real recipes to decide whether a maintained comparison
+tool will simplify upstream merges. No implementation or collection expansion
+has started; all-app catalog coverage has no scheduled date.
+
+Deployment follow-up: `eedd89328` was pushed and its parser fix deployed after
+explicit authorization; [operating policy](../../catalog-operating-policy.md)
+records successful installed regression/live selection checks and preserved
+paths. This supersedes the source-only deployment statements in the November 5
+status entries below; deployment evidence was committed and pushed as `900b79d37`.
+
 ## Current status — November 5, 2026
 
 [118 resolved](issues/118-retire-historical-catalog-tooling.md): historical
