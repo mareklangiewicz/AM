@@ -1,0 +1,1763 @@
+format: 2
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/743dbf1394aa3433c21814145bf09f86dcb1921d/docs/catalog-format-v2.md"
+repository_id: 1100653513
+repository: "agent0ai/a0-launcher"
+collection:
+  attempted_at: "2026-11-06T03:25:29Z"
+  page_size: 100
+  page_limit: 1
+  reconcile: false
+  status: "ok"
+last_success:
+  completed_at: "2026-11-06T03:25:30Z"
+  page_size: 100
+  page_limit: 1
+  reconcile: false
+  pages_fetched: 1
+  history_complete: true
+observed_at: "2026-11-06T03:25:30Z"
+releases:
+  "268283238":
+    tag: "v0.0"
+    title: "v0.0 - PoC"
+    url: "https://github.com/agent0ai/a0-launcher/releases/tag/v0.0"
+    created_at: "2025-12-08T10:13:04Z"
+    published_at: "2025-12-08T10:41:20Z"
+    updated_at: "2025-12-08T10:47:51Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/agent0ai/a0-launcher/zipball/v0.0"
+    source_tar_url: "https://api.github.com/repos/agent0ai/a0-launcher/tarball/v0.0"
+    assets:
+      "325861161":
+        name: "content.json"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.0/content.json"
+        size: 2226
+        content_type: "application/json"
+        digest: "sha256:f0e98330d9b3230ee4fd4e73af1d5b16710a818d393642788f242019dacf99f1"
+      "325862747":
+        name: "a0-launcher-0.0.0-macos-arm.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.0/a0-launcher-0.0.0-macos-arm.zip"
+        size: 98570593
+        content_type: "application/zip"
+        digest: "sha256:a3035796e66b493f0d001eb6050ff21ad8411cf01794c7767d2eef3d87e8c827"
+      "325862761":
+        name: "a0-launcher-0.0.0-macos-x86.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.0/a0-launcher-0.0.0-macos-x86.dmg"
+        size: 303030215
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:5e769656d16c6468cb6d457f5d60b9ecab6e2ddc041ef73367906aa23268c66e"
+      "325862784":
+        name: "a0-launcher-0.0.0-macos-x86.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.0/a0-launcher-0.0.0-macos-x86.zip"
+        size: 301348747
+        content_type: "application/zip"
+        digest: "sha256:bf86613ffc14d71f9ad44e52f639da0534ae907780c3598c6d8d14535f5ae76a"
+      "325862811":
+        name: "a0-launcher-0.0.0-macos-arm.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.0/a0-launcher-0.0.0-macos-arm.dmg"
+        size: 98419585
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:7f6b19c1a87437f29871a7e033c11c84c8de2fe8e21323ba25627e6aa4ec0845"
+      "325862820":
+        name: "a0-launcher-0.0.0-windows-x86-setup.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.0/a0-launcher-0.0.0-windows-x86-setup.exe"
+        size: 112912896
+        content_type: "application/x-msdownload"
+        digest: "sha256:9a1cf1e88d6b3f748fcf8ac28d58404283d10bc790db5b4e29bb7c5c48abdd8e"
+      "325862827":
+        name: "a0-launcher-0.0.0-windows-arm-setup.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.0/a0-launcher-0.0.0-windows-arm-setup.exe"
+        size: 337653760
+        content_type: "application/x-msdownload"
+        digest: "sha256:d7e8e0e44ec9acb0f00a33189934aadd58c4117f90266ded739a1d9d7a6a35fc"
+      "325862837":
+        name: "a0-launcher-0.0.0-windows-x86.nupkg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.0/a0-launcher-0.0.0-windows-x86.nupkg"
+        size: 111765553
+        content_type: "application/octet-stream"
+        digest: "sha256:e44de1d0df3ed30121dfcbc1ac7f8aa17e9787f3d859eb0e586cb2399d1e9a68"
+      "325862846":
+        name: "a0-launcher-0.0.0-windows-arm.nupkg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.0/a0-launcher-0.0.0-windows-arm.nupkg"
+        size: 336443977
+        content_type: "application/octet-stream"
+        digest: "sha256:25475d68672b8e2b5d5ca53e549c57ba1bd5511a20e26e3c4e5733d748f59609"
+      "325862880":
+        name: "a0-launcher-0.0.0-linux-x86.rpm"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.0/a0-launcher-0.0.0-linux-x86.rpm"
+        size: 85872697
+        content_type: "application/x-rpm"
+        digest: "sha256:6582bfc37a8ccb8e3fc1c5449ae38c33b42b1c02f479c4d48f0a6e7a9ab22f19"
+      "325862893":
+        name: "a0-launcher-0.0.0-linux-arm.deb"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.0/a0-launcher-0.0.0-linux-arm.deb"
+        size: 248269610
+        content_type: "application/x-debian-package"
+        digest: "sha256:cfcaef0b67efecf9ae6b5f2b22dc6f3f635706e1d5f3d4fe2b9addce3dd73961"
+      "325862924":
+        name: "a0-launcher-0.0.0-linux-x86.deb"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.0/a0-launcher-0.0.0-linux-x86.deb"
+        size: 82038456
+        content_type: "application/x-debian-package"
+        digest: "sha256:eebd95c5fe864c083b32393e8cc0a4fcf123b85927463b08aa4e730f46cbe3e6"
+      "325862937":
+        name: "a0-launcher-0.0.0-linux-arm.rpm"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.0/a0-launcher-0.0.0-linux-arm.rpm"
+        size: 252717753
+        content_type: "application/x-rpm"
+        digest: "sha256:d6113dbe38d8292a0d4b140bc4cd28d0f930928602c353a5c3377f35d403cc39"
+  "318741728":
+    tag: "v0.1"
+    title: "v0.1"
+    url: "https://github.com/agent0ai/a0-launcher/releases/tag/v0.1"
+    created_at: "2026-05-18T14:01:44Z"
+    published_at: "2026-05-07T04:00:59Z"
+    updated_at: "2026-05-18T14:01:46Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/agent0ai/a0-launcher/zipball/v0.1"
+    source_tar_url: "https://api.github.com/repos/agent0ai/a0-launcher/tarball/v0.1"
+    assets:
+      "414083470":
+        name: "content.json"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.1/content.json"
+        size: 13498537
+        content_type: "application/json"
+        digest: "sha256:b65874579a3708a5cd34caedb8a757573f5ade5bd6e41b70fe83a9e2eb4d86ee"
+      "414083698":
+        name: "a0-launcher-0.1.0-linux-arm.deb"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.1/a0-launcher-0.1.0-linux-arm.deb"
+        size: 248269610
+        content_type: "application/x-debian-package"
+        digest: "sha256:cfcaef0b67efecf9ae6b5f2b22dc6f3f635706e1d5f3d4fe2b9addce3dd73961"
+      "414083796":
+        name: "a0-launcher-0.1.0-linux-arm.rpm"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.1/a0-launcher-0.1.0-linux-arm.rpm"
+        size: 252717753
+        content_type: "application/x-rpm"
+        digest: "sha256:d6113dbe38d8292a0d4b140bc4cd28d0f930928602c353a5c3377f35d403cc39"
+      "414083870":
+        name: "a0-launcher-0.1.0-linux-x86.deb"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.1/a0-launcher-0.1.0-linux-x86.deb"
+        size: 82038456
+        content_type: "application/x-debian-package"
+        digest: "sha256:eebd95c5fe864c083b32393e8cc0a4fcf123b85927463b08aa4e730f46cbe3e6"
+      "414083905":
+        name: "a0-launcher-0.1.0-linux-x86.rpm"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.1/a0-launcher-0.1.0-linux-x86.rpm"
+        size: 85872697
+        content_type: "application/x-rpm"
+        digest: "sha256:6582bfc37a8ccb8e3fc1c5449ae38c33b42b1c02f479c4d48f0a6e7a9ab22f19"
+      "414083943":
+        name: "a0-launcher-0.1.0-macos-arm.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.1/a0-launcher-0.1.0-macos-arm.dmg"
+        size: 98419585
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:7f6b19c1a87437f29871a7e033c11c84c8de2fe8e21323ba25627e6aa4ec0845"
+      "414083994":
+        name: "a0-launcher-0.1.0-macos-arm.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.1/a0-launcher-0.1.0-macos-arm.zip"
+        size: 98570593
+        content_type: "application/zip"
+        digest: "sha256:a3035796e66b493f0d001eb6050ff21ad8411cf01794c7767d2eef3d87e8c827"
+      "414084017":
+        name: "a0-launcher-0.1.0-macos-x86.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.1/a0-launcher-0.1.0-macos-x86.dmg"
+        size: 303030215
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:5e769656d16c6468cb6d457f5d60b9ecab6e2ddc041ef73367906aa23268c66e"
+      "414084096":
+        name: "a0-launcher-0.1.0-macos-x86.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.1/a0-launcher-0.1.0-macos-x86.zip"
+        size: 301348747
+        content_type: "application/zip"
+        digest: "sha256:bf86613ffc14d71f9ad44e52f639da0534ae907780c3598c6d8d14535f5ae76a"
+      "414084177":
+        name: "a0-launcher-0.1.0-windows-arm-setup.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.1/a0-launcher-0.1.0-windows-arm-setup.exe"
+        size: 337653760
+        content_type: "application/octet-stream"
+        digest: "sha256:d7e8e0e44ec9acb0f00a33189934aadd58c4117f90266ded739a1d9d7a6a35fc"
+      "414084286":
+        name: "a0-launcher-0.1.0-windows-arm.nupkg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.1/a0-launcher-0.1.0-windows-arm.nupkg"
+        size: 336443977
+        content_type: "application/octet-stream"
+        digest: "sha256:25475d68672b8e2b5d5ca53e549c57ba1bd5511a20e26e3c4e5733d748f59609"
+      "414084440":
+        name: "a0-launcher-0.1.0-windows-x86-setup.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.1/a0-launcher-0.1.0-windows-x86-setup.exe"
+        size: 112912896
+        content_type: "application/octet-stream"
+        digest: "sha256:9a1cf1e88d6b3f748fcf8ac28d58404283d10bc790db5b4e29bb7c5c48abdd8e"
+      "414084574":
+        name: "a0-launcher-0.1.0-windows-x86.nupkg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.1/a0-launcher-0.1.0-windows-x86.nupkg"
+        size: 111765553
+        content_type: "application/octet-stream"
+        digest: "sha256:e44de1d0df3ed30121dfcbc1ac7f8aa17e9787f3d859eb0e586cb2399d1e9a68"
+  "324439330":
+    tag: "v0.2"
+    title: "v0.2"
+    url: "https://github.com/agent0ai/a0-launcher/releases/tag/v0.2"
+    created_at: "2026-05-18T17:35:50Z"
+    published_at: "2026-05-18T17:09:04Z"
+    updated_at: "2026-05-18T17:47:41Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/agent0ai/a0-launcher/zipball/v0.2"
+    source_tar_url: "https://api.github.com/repos/agent0ai/a0-launcher/tarball/v0.2"
+    assets:
+      "423467794":
+        name: "content.json"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.2/content.json"
+        size: 13508364
+        content_type: "application/json"
+        digest: "sha256:d8a84ad5f16a7afe3a4403e0f54d63f2399fc15813372163596ff9394105fbb9"
+      "423489493":
+        name: "a0-launcher-0.2.0-windows-x86-setup.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.2/a0-launcher-0.2.0-windows-x86-setup.exe"
+        size: 121279488
+        content_type: "application/octet-stream"
+        digest: "sha256:e60ed0ed0bb46f16f02231d123b192d7dde186945ab5c47341fd1cdf0eac2603"
+      "423489555":
+        name: "a0-launcher-0.2.0-windows-arm-setup.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.2/a0-launcher-0.2.0-windows-arm-setup.exe"
+        size: 362768384
+        content_type: "application/octet-stream"
+        digest: "sha256:7aef49658176160a620a5301c17d317a5a9eeb40ee6b1051b576bf11a6e6ad65"
+      "423489701":
+        name: "a0-launcher-0.2.0-windows-x86.nupkg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.2/a0-launcher-0.2.0-windows-x86.nupkg"
+        size: 120200893
+        content_type: "application/octet-stream"
+        digest: "sha256:b8ed1b4b9cf9f63959dc3a7abb8dc159413f30567f845d8f78806ae2f9730ec3"
+      "423489778":
+        name: "a0-launcher-0.2.0-windows-arm.nupkg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.2/a0-launcher-0.2.0-windows-arm.nupkg"
+        size: 361621874
+        content_type: "application/octet-stream"
+        digest: "sha256:f01f92115d0f458bc34f1f6047c04cba7fbae4908f02c06541ee63da109ef310"
+      "423489871":
+        name: "a0-launcher-0.2.0-macos-x86.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.2/a0-launcher-0.2.0-macos-x86.zip"
+        size: 319342886
+        content_type: "application/zip"
+        digest: "sha256:08531af28986f9f340b767d439a2a8c4f1b9c6c5ac1f70787474e0533fdf723f"
+      "423489975":
+        name: "a0-launcher-0.2.0-macos-arm.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.2/a0-launcher-0.2.0-macos-arm.dmg"
+        size: 103950498
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:97f6ee02985cfb3bc13ee34f3a0c924262698c1ea8dd09e6b17269c5e8ee0c1a"
+      "423490033":
+        name: "a0-launcher-0.2.0-macos-x86.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.2/a0-launcher-0.2.0-macos-x86.dmg"
+        size: 320396610
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:8b720bb25fae86889cc9048425f5fcc0b489c7b74883bd9a3d037dddde955f44"
+      "423490166":
+        name: "a0-launcher-0.2.0-macos-arm.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.2/a0-launcher-0.2.0-macos-arm.zip"
+        size: 104871598
+        content_type: "application/zip"
+        digest: "sha256:ef02fcc28d39058548786fcaa80a80ed3345f3eb5fbc08350bfc4572b03ba037"
+      "423490221":
+        name: "a0-launcher-0.2.0-linux-arm.rpm"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.2/a0-launcher-0.2.0-linux-arm.rpm"
+        size: 264545313
+        content_type: "application/x-rpm"
+        digest: "sha256:c1923182e91782f9c45e13a30e0c4921fd8d823a3297abb4dedd3934fe74d681"
+      "423490337":
+        name: "a0-launcher-0.2.0-linux-x86.deb"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.2/a0-launcher-0.2.0-linux-x86.deb"
+        size: 85674504
+        content_type: "application/x-debian-package"
+        digest: "sha256:45c9f2165477a3e49f8a5f512bf4a0d7325e57022b2c6045b3adde852eefc75f"
+      "423490396":
+        name: "a0-launcher-0.2.0-linux-arm.deb"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.2/a0-launcher-0.2.0-linux-arm.deb"
+        size: 264416476
+        content_type: "application/x-debian-package"
+        digest: "sha256:570d62d6a3346927e65e8a2d5b094ad5dab98efd4aa839417c4a028ae736b912"
+      "423490472":
+        name: "a0-launcher-0.2.0-linux-x86.rpm"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.2/a0-launcher-0.2.0-linux-x86.rpm"
+        size: 89971237
+        content_type: "application/x-rpm"
+        digest: "sha256:1bf1911b51407a5fc63b42548b22398406dc02e48281092f9649bb7c84872318"
+  "324483974":
+    tag: "v0.3"
+    title: "v0.3"
+    url: "https://github.com/agent0ai/a0-launcher/releases/tag/v0.3"
+    created_at: "2026-05-18T18:40:57Z"
+    published_at: "2026-05-18T18:41:14Z"
+    updated_at: "2026-05-18T18:49:02Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/agent0ai/a0-launcher/zipball/v0.3"
+    source_tar_url: "https://api.github.com/repos/agent0ai/a0-launcher/tarball/v0.3"
+    assets:
+      "423523499":
+        name: "content.json"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.3/content.json"
+        size: 13508364
+        content_type: "application/json"
+        digest: "sha256:4c13fd833e2a501ceef25b9c420f94f1f40fc297350cd42b7a493bdb4683f93d"
+      "423527278":
+        name: "a0-launcher-0.3.0-windows-x86-setup.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.3/a0-launcher-0.3.0-windows-x86-setup.exe"
+        size: 121285632
+        content_type: "application/octet-stream"
+        digest: "sha256:8dbf348e2f7aa7d4b63f54b0cfc6bed3cb2a97ae257d82a39dfe86e2e1c58529"
+      "423527332":
+        name: "a0-launcher-0.3.0-windows-x86.nupkg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.3/a0-launcher-0.3.0-windows-x86.nupkg"
+        size: 120206449
+        content_type: "application/octet-stream"
+        digest: "sha256:1c3077934dda0b364b64973ed4082738d0ea5911ad157806e89c485e595703ce"
+      "423527392":
+        name: "a0-launcher-0.3.0-macos-x86.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.3/a0-launcher-0.3.0-macos-x86.zip"
+        size: 319349031
+        content_type: "application/zip"
+        digest: "sha256:15d9b3d333252a6eaa6dc77ca5a1d6cb2cd7c2003321f9956e8b7e66b44e476e"
+      "423527500":
+        name: "a0-launcher-0.3.0-macos-x86.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.3/a0-launcher-0.3.0-macos-x86.dmg"
+        size: 320403183
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:a20ab452817f4b88fb0c9d325d6e2c406f6136ad6d95bfd71ee508cc7979d7e7"
+      "423527611":
+        name: "a0-launcher-0.3.0-macos-arm.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.3/a0-launcher-0.3.0-macos-arm.dmg"
+        size: 103950192
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:1e66e9a7997415709ea8f9013759279f73dd82ab4061d148fb09fb3a2335417a"
+      "423527665":
+        name: "a0-launcher-0.3.0-macos-arm.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.3/a0-launcher-0.3.0-macos-arm.zip"
+        size: 104870744
+        content_type: "application/zip"
+        digest: "sha256:a45f524dafaaf2205a230f3f90abb47c533468e7ec3335eb9fee5137f3902d1a"
+      "423527741":
+        name: "a0-launcher-0.3.0-linux-arm.deb"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.3/a0-launcher-0.3.0-linux-arm.deb"
+        size: 174450088
+        content_type: "application/x-debian-package"
+        digest: "sha256:b79397957c22c5557699cdf2b88041f4c06306e0be8d31f6f8c2061facaca7c8"
+      "423527803":
+        name: "a0-launcher-0.3.0-linux-x86.deb"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.3/a0-launcher-0.3.0-linux-x86.deb"
+        size: 85673060
+        content_type: "application/x-debian-package"
+        digest: "sha256:33a8808d809c5cb04cd86652e3a5eb92a3bc7adb1951cede06c1f48cea749995"
+  "333469550":
+    tag: "v0.4"
+    title: "v0.4"
+    url: "https://github.com/agent0ai/a0-launcher/releases/tag/v0.4"
+    created_at: "2026-06-03T02:55:40Z"
+    published_at: "2026-06-03T02:56:18Z"
+    updated_at: "2026-06-18T12:31:58Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/agent0ai/a0-launcher/zipball/v0.4"
+    source_tar_url: "https://api.github.com/repos/agent0ai/a0-launcher/tarball/v0.4"
+    assets:
+      "436855681":
+        name: "content.json"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.4/content.json"
+        size: 13521299
+        content_type: "application/json"
+        digest: "sha256:616d3b2490a91d9a21c6fdef5412be2a6870a47dd118c6695e5ecb4bd4921cb9"
+      "436859138":
+        name: "a0-launcher-0.4.0-macos-x86.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.4/a0-launcher-0.4.0-macos-x86.dmg"
+        size: 320420429
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:5fcbb80dc868740c59917a49dfbf82cd823b19ffc06aaeba65c31e4f5edcfec3"
+      "436859229":
+        name: "a0-launcher-0.4.0-macos-arm.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.4/a0-launcher-0.4.0-macos-arm.dmg"
+        size: 103951008
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:ceda05a86a86ca7adcce259a29670dd26452c572bb44410db22388497495acb1"
+      "436859264":
+        name: "a0-launcher-0.4.0-macos-x86.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.4/a0-launcher-0.4.0-macos-x86.zip"
+        size: 319366095
+        content_type: "application/zip"
+        digest: "sha256:e0dd044cf3d1967e53490f109aa59e355d660025c51a01203c4c2a55b3d0d84c"
+      "436859374":
+        name: "a0-launcher-0.4.0-macos-arm.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.4/a0-launcher-0.4.0-macos-arm.zip"
+        size: 104876639
+        content_type: "application/zip"
+        digest: "sha256:9e8bf9091c0b2f1d81e52378bbfce22ef3ef54cdeec8c1c50cccd91e604ab24b"
+      "436859415":
+        name: "a0-launcher-0.4.0-windows-x86.nupkg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.4/a0-launcher-0.4.0-windows-x86.nupkg"
+        size: 120221197
+        content_type: "application/octet-stream"
+        digest: "sha256:012967d249a12268357138e8d3c06cb2f3201306d02682f2f129b855a2e0a6a6"
+      "436859468":
+        name: "a0-launcher-0.4.0-windows-arm-setup.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.4/a0-launcher-0.4.0-windows-arm-setup.exe"
+        size: 362832384
+        content_type: "application/octet-stream"
+        digest: "sha256:0f65d5fa2a28e371701d967baa8f105bd6d47a8cd5d08d4951948805da2623fc"
+      "436859538":
+        name: "a0-launcher-0.4.0-windows-arm.nupkg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.4/a0-launcher-0.4.0-windows-arm.nupkg"
+        size: 361685229
+        content_type: "application/octet-stream"
+        digest: "sha256:648b55226658b2967100cf6397742e220bb434af269cb54bd6f5033527739f63"
+      "436859650":
+        name: "a0-launcher-0.4.0-windows-x86-setup.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.4/a0-launcher-0.4.0-windows-x86-setup.exe"
+        size: 121302016
+        content_type: "application/octet-stream"
+        digest: "sha256:c30a0d49da36c41d42d6d3ca49cbbd2a8af162cb27715d4ec92a02f5df5520a8"
+      "436859701":
+        name: "a0-launcher-0.4.0-linux-arm.deb"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.4/a0-launcher-0.4.0-linux-arm.deb"
+        size: 174466554
+        content_type: "application/x-debian-package"
+        digest: "sha256:f46ef1fb69c11a1ca3ca214fc4ca25a56b2872d1f108e4b7c6b3f06c14e13dd7"
+      "436859763":
+        name: "a0-launcher-0.4.0-linux-x86.deb"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.4/a0-launcher-0.4.0-linux-x86.deb"
+        size: 85678708
+        content_type: "application/x-debian-package"
+        digest: "sha256:139865a5f773fabe0354e4066180885aeb8b2b6442c12626b9ed9dca46495d94"
+  "341378661":
+    tag: "v0.5"
+    title: "v0.5"
+    url: "https://github.com/agent0ai/a0-launcher/releases/tag/v0.5"
+    created_at: "2026-06-18T12:37:47Z"
+    published_at: "2026-06-18T12:16:38Z"
+    updated_at: "2026-06-18T12:47:10Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/agent0ai/a0-launcher/zipball/v0.5"
+    source_tar_url: "https://api.github.com/repos/agent0ai/a0-launcher/tarball/v0.5"
+    assets:
+      "451206913":
+        name: "a0-launcher-0.5-macos-x64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.5/a0-launcher-0.5-macos-x64-update.zip"
+        size: 111507665
+        content_type: "application/zip"
+        digest: "sha256:91a4417c6099aea651a3460d56b42f79e5862d3eb4f47baf4bc7749c4f7a9225"
+      "451206914":
+        name: "a0-launcher-0.5-macos-arm64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.5/a0-launcher-0.5-macos-arm64-update.zip"
+        size: 105376789
+        content_type: "application/zip"
+        digest: "sha256:bd67323659ae083b9b68e52e679d008378f68afaeed5d195af5fb10546c586ce"
+      "451206915":
+        name: "a0-launcher-0.5-linux-arm64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.5/a0-launcher-0.5-linux-arm64.AppImage"
+        size: 114760892
+        content_type: "application/vnd.appimage"
+        digest: "sha256:a72c6922e75ba6d16dce4599b5441f1c7fac5b8e721bfe8d3a423682108fd509"
+      "451206916":
+        name: "a0-launcher-0.5-macos-arm64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.5/a0-launcher-0.5-macos-arm64.dmg"
+        size: 104792686
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:9ed62cacf772763ed0762e96df241020c4913958ebd7d23a1744c9a613ca4809"
+      "451206917":
+        name: "a0-launcher-0.5-linux-x64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.5/a0-launcher-0.5-linux-x64.AppImage"
+        size: 114378488
+        content_type: "application/vnd.appimage"
+        digest: "sha256:b387b16b0fc297800dacf1641200d761ea00d141b75413e86ff207a1637f2048"
+      "451206964":
+        name: "a0-launcher-0.5-macos-x64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.5/a0-launcher-0.5-macos-x64.dmg"
+        size: 110864160
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:0806a3b3872c9b27666128dd855beedc36de402719d2d73ef3cad57a9edca67c"
+      "451206969":
+        name: "a0-launcher-0.5-windows-arm64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.5/a0-launcher-0.5-windows-arm64.exe"
+        size: 85918992
+        content_type: "application/octet-stream"
+        digest: "sha256:54c7bbccbad55047a65fd8add09e88b128afbb25ade3d9c706a3dc01459b5c5c"
+      "451206972":
+        name: "a0-launcher-0.5-windows-x64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.5/a0-launcher-0.5-windows-x64.exe"
+        size: 86141841
+        content_type: "application/octet-stream"
+        digest: "sha256:71ad59ae760ce7be7c9c93908633f22503047beec773d55bc4f1e369d8da18a1"
+      "451206973":
+        name: "metadata-latest-linux-arm64.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.5/metadata-latest-linux-arm64.yml"
+        size: 396
+        content_type: "application/yaml"
+        digest: "sha256:1075bf16d180dab40c9146b0df1b316e0e6cc701b583b730192a3ba6b7de88d3"
+      "451206975":
+        name: "metadata-latest-linux.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.5/metadata-latest-linux.yml"
+        size: 392
+        content_type: "application/yaml"
+        digest: "sha256:0b6fb3db03a4e6d32ad5f00bf961f576111799bab0788923d81a44eb7c96be98"
+      "451206977":
+        name: "metadata-latest-mac.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.5/metadata-latest-mac.yml"
+        size: 544
+        content_type: "application/yaml"
+        digest: "sha256:6e4b47e33b71849747c2f5ec728073b2e6e38fa9567560e1967d76ff920398d1"
+      "451206990":
+        name: "metadata-latest-windows.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.5/metadata-latest-windows.yml"
+        size: 527
+        content_type: "application/yaml"
+        digest: "sha256:a2d4ca3bb34e74a6a46226cdef8a4329fa6d63a08eecf03f7f3a70d2134169ee"
+      "451207395":
+        name: "content.json"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.5/content.json"
+        size: 13678413
+        content_type: "application/json"
+        digest: "sha256:2f09bab164427b36043f7e9798a55dc686f0a477bedf543ba7c2073478eed7cc"
+  "343070730":
+    tag: "v0.6"
+    title: "v0.6"
+    url: "https://github.com/agent0ai/a0-launcher/releases/tag/v0.6"
+    created_at: "2026-06-22T17:42:23Z"
+    published_at: "2026-06-22T17:43:01Z"
+    updated_at: "2026-06-22T17:51:04Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/agent0ai/a0-launcher/zipball/v0.6"
+    source_tar_url: "https://api.github.com/repos/agent0ai/a0-launcher/tarball/v0.6"
+    assets:
+      "454813042":
+        name: "content.json"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.6/content.json"
+        size: 21445247
+        content_type: "application/json"
+        digest: "sha256:f9cb7db794555178320179bb60b56da74899e161e49e4bf5ef4e66ad8a5c9bac"
+      "454818278":
+        name: "a0-launcher-0.6-macos-arm64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.6/a0-launcher-0.6-macos-arm64-update.zip"
+        size: 110975827
+        content_type: "application/zip"
+        digest: "sha256:d9fde43349728fab95dc631ba4996973129018745015f478fd4d714a2ae837ef"
+      "454818279":
+        name: "a0-launcher-0.6-linux-x64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.6/a0-launcher-0.6-linux-x64.AppImage"
+        size: 119983707
+        content_type: "application/vnd.appimage"
+        digest: "sha256:646f84fbe91e6651428f4a3f247e88533c951f7649db9ef7f5d518cb4f3a693d"
+      "454818280":
+        name: "a0-launcher-0.6-macos-x64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.6/a0-launcher-0.6-macos-x64-update.zip"
+        size: 117106743
+        content_type: "application/zip"
+        digest: "sha256:ef7186061ea9c42a69863ccdada8fb91d855ab3e56bbde461329d72d26eab685"
+      "454818281":
+        name: "a0-launcher-0.6-linux-arm64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.6/a0-launcher-0.6-linux-arm64.AppImage"
+        size: 120370339
+        content_type: "application/vnd.appimage"
+        digest: "sha256:6c904c9519bd8624d32c3fbb141cb112e2d1db45c23bef9c46d50074483dc7e0"
+      "454818282":
+        name: "a0-launcher-0.6-macos-arm64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.6/a0-launcher-0.6-macos-arm64.dmg"
+        size: 110432735
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:f73a4cec0f26681c36494a707cf8b5dc0f4a90402403f873123550159dc5eb7c"
+      "454818358":
+        name: "a0-launcher-0.6-macos-x64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.6/a0-launcher-0.6-macos-x64.dmg"
+        size: 116517526
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:89aa923c2c24d1995b121838397a12d33b373ad06687af1c40504d2efe81a880"
+      "454818362":
+        name: "a0-launcher-0.6-windows-arm64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.6/a0-launcher-0.6-windows-arm64.exe"
+        size: 91490065
+        content_type: "application/octet-stream"
+        digest: "sha256:a6050800902e264a2123529276db8be6387f296322fd35b744e18e5626eb8058"
+      "454818363":
+        name: "a0-launcher-0.6-windows-x64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.6/a0-launcher-0.6-windows-x64.exe"
+        size: 91712729
+        content_type: "application/octet-stream"
+        digest: "sha256:04019f3be058946ad7dc2a184a487a5d089a80641b65141dd7b85fe68335115d"
+      "454818373":
+        name: "metadata-latest-linux.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.6/metadata-latest-linux.yml"
+        size: 392
+        content_type: "application/yaml"
+        digest: "sha256:2f64553816fa1c667f00759019250a6af97b1ef9008d634de94c18e86acf88e0"
+      "454818374":
+        name: "metadata-latest-linux-arm64.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.6/metadata-latest-linux-arm64.yml"
+        size: 396
+        content_type: "application/yaml"
+        digest: "sha256:d21727f6708de3a137b1ea4c6b86c95e2e04319d6ad042a96451f0b3a93602ac"
+      "454818386":
+        name: "metadata-latest-mac.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.6/metadata-latest-mac.yml"
+        size: 544
+        content_type: "application/yaml"
+        digest: "sha256:a4d5b12b95eee8c1bc2cfeeafaba7dfaade1afc345caa915eef741c7aad2f6c3"
+      "454818387":
+        name: "metadata-latest-windows.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.6/metadata-latest-windows.yml"
+        size: 527
+        content_type: "application/yaml"
+        digest: "sha256:9d44cdfe907674ce64ae99750dba3ca55a2a8d8e34380ef7646798ec146c9b51"
+  "343628610":
+    tag: "v0.7"
+    title: "v0.7"
+    url: "https://github.com/agent0ai/a0-launcher/releases/tag/v0.7"
+    created_at: "2026-06-23T16:37:40Z"
+    published_at: "2026-06-23T16:37:56Z"
+    updated_at: "2026-06-23T17:59:27Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/agent0ai/a0-launcher/zipball/v0.7"
+    source_tar_url: "https://api.github.com/repos/agent0ai/a0-launcher/tarball/v0.7"
+    assets:
+      "455787965":
+        name: "content.json"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.7/content.json"
+        size: 21473746
+        content_type: "application/json"
+        digest: "sha256:0413c33356c1a9c3b2fa3881ad3742acff1d01b3eff851a679bfd3afbd3789cf"
+      "455843567":
+        name: "a0-launcher-0.7-linux-x64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.7/a0-launcher-0.7-linux-x64.AppImage"
+        size: 119996031
+        content_type: "application/vnd.appimage"
+        digest: "sha256:e935f71d5cb5fe659eb989a72b9adedc5a4b41519fb5905fdef469993e20eabf"
+      "455843568":
+        name: "a0-launcher-0.7-macos-arm64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.7/a0-launcher-0.7-macos-arm64-update.zip"
+        size: 109947130
+        content_type: "application/zip"
+        digest: "sha256:86908317cb9ea88363046ae8036dfc2447e446c14063f2202724fa15d4afa779"
+      "455843569":
+        name: "a0-launcher-0.7-macos-x64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.7/a0-launcher-0.7-macos-x64-update.zip"
+        size: 117117707
+        content_type: "application/zip"
+        digest: "sha256:3a9d4bb8db9e27db2a10a95b234c559d222f1dcb21f80d51fc21d0e2354154f4"
+      "455843570":
+        name: "a0-launcher-0.7-linux-arm64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.7/a0-launcher-0.7-linux-arm64.AppImage"
+        size: 120378586
+        content_type: "application/vnd.appimage"
+        digest: "sha256:87a19e3f20d38ec80c383c01d28277e13dc9025eeca993099f8a43c67dbcc8b1"
+      "455843571":
+        name: "a0-launcher-0.7-macos-arm64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.7/a0-launcher-0.7-macos-arm64.dmg"
+        size: 109369773
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:b30d72bd96c7f4211e6b380e92286ac5ef1c0c50a9cab2acf4460022f2b990df"
+      "455843607":
+        name: "a0-launcher-0.7-macos-x64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.7/a0-launcher-0.7-macos-x64.dmg"
+        size: 116523854
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:6079ace2c3aeacae52bb4389b6f98ec820a4abe909d6a76ba54914ca439f7325"
+      "455843609":
+        name: "a0-launcher-0.7-windows-arm64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.7/a0-launcher-0.7-windows-arm64.exe"
+        size: 91499525
+        content_type: "application/octet-stream"
+        digest: "sha256:c58b20c17b5c33aabb99a67957569bc95563f43085797aa2f3a0fd64967b418b"
+      "455843610":
+        name: "a0-launcher-0.7-windows-x64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.7/a0-launcher-0.7-windows-x64.exe"
+        size: 91722451
+        content_type: "application/octet-stream"
+        digest: "sha256:f609d684f42265f17687e513fbde6dffaba26b5fe660c5f266fbdcbf28e33a7e"
+      "455843616":
+        name: "metadata-latest-linux-arm64.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.7/metadata-latest-linux-arm64.yml"
+        size: 396
+        content_type: "application/yaml"
+        digest: "sha256:7042b72996a07d6d50adc836ff43fb943bbfc6ece9c8e49ba301ded6162f71bd"
+      "455843621":
+        name: "metadata-latest-linux.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.7/metadata-latest-linux.yml"
+        size: 392
+        content_type: "application/yaml"
+        digest: "sha256:9a5dbace5cf83814d4686391b596c97f0e69c27805b45c272ac315774328de7c"
+      "455843622":
+        name: "metadata-latest-mac.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.7/metadata-latest-mac.yml"
+        size: 544
+        content_type: "application/yaml"
+        digest: "sha256:a2fde0ea502af381238691ec9edfef9816c7820b7644e9367168d8800303987e"
+      "455843626":
+        name: "metadata-latest-windows.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.7/metadata-latest-windows.yml"
+        size: 527
+        content_type: "application/yaml"
+        digest: "sha256:b69845f32f49aaa80f7be3b4874bb58f2c96155ea1b3fdd2a17103db62df93eb"
+  "343796709":
+    tag: "v0.8"
+    title: "v0.8"
+    url: "https://github.com/agent0ai/a0-launcher/releases/tag/v0.8"
+    created_at: "2026-06-23T22:40:03Z"
+    published_at: "2026-06-23T22:41:26Z"
+    updated_at: "2026-06-23T22:47:08Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/agent0ai/a0-launcher/zipball/v0.8"
+    source_tar_url: "https://api.github.com/repos/agent0ai/a0-launcher/tarball/v0.8"
+    assets:
+      "456029366":
+        name: "content.json"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.8/content.json"
+        size: 22091648
+        content_type: "application/json"
+        digest: "sha256:cd2a1f898f193b0b5ff8310fabd8d7d63430e32ee78987fc6b5a927414136431"
+      "456032214":
+        name: "a0-launcher-0.8-macos-arm64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.8/a0-launcher-0.8-macos-arm64-update.zip"
+        size: 111472645
+        content_type: "application/zip"
+        digest: "sha256:87ea192f0da9dd75942996daeb9e9c99359f3057568c1921b9fb7f5b246a058d"
+      "456032215":
+        name: "a0-launcher-0.8-macos-arm64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.8/a0-launcher-0.8-macos-arm64.dmg"
+        size: 110931299
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:51c212b16552d811b5e364096e7f8249e7fb70da73f0f5494a9edfac1ab875c7"
+      "456032216":
+        name: "a0-launcher-0.8-linux-x64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.8/a0-launcher-0.8-linux-x64.AppImage"
+        size: 120475736
+        content_type: "application/vnd.appimage"
+        digest: "sha256:75e6250e30033ce44a2c91753905b8adb26e6545a651c7b3cfbde58a47f3be78"
+      "456032217":
+        name: "a0-launcher-0.8-linux-arm64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.8/a0-launcher-0.8-linux-arm64.AppImage"
+        size: 120858274
+        content_type: "application/vnd.appimage"
+        digest: "sha256:d1f7fee4d0a3209ec8a5cc154453dd5d6abc7088fa8230abddff61ce94689793"
+      "456032218":
+        name: "a0-launcher-0.8-macos-x64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.8/a0-launcher-0.8-macos-x64-update.zip"
+        size: 117603583
+        content_type: "application/zip"
+        digest: "sha256:0107bcebc925c3d789f1a77be822f6e5f754ac36a4c30f5698131e930f8dcddd"
+      "456032312":
+        name: "a0-launcher-0.8-macos-x64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.8/a0-launcher-0.8-macos-x64.dmg"
+        size: 117050299
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:8828c47ff41c9c23fe5d37e7a3082a342cc61be59dc832d5919177896bf088c6"
+      "456032315":
+        name: "a0-launcher-0.8-windows-arm64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.8/a0-launcher-0.8-windows-arm64.exe"
+        size: 91977284
+        content_type: "application/octet-stream"
+        digest: "sha256:b18171bb0ef546a46baefb603d79b443de4d922ec68b987cfd0e5ac42db13b1a"
+      "456032319":
+        name: "a0-launcher-0.8-windows-x64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.8/a0-launcher-0.8-windows-x64.exe"
+        size: 92200236
+        content_type: "application/octet-stream"
+        digest: "sha256:12ac77516ecb5ebf0813ab676d21b1be819c5bbe7a2cfdac8c4788e39e7f9017"
+      "456032340":
+        name: "metadata-latest-linux-arm64.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.8/metadata-latest-linux-arm64.yml"
+        size: 396
+        content_type: "application/yaml"
+        digest: "sha256:b9e7e9d1230a4c7543c16472ac4a62fe0fc8ddfd8bbaf40d9f462efec616a1bd"
+      "456032342":
+        name: "metadata-latest-linux.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.8/metadata-latest-linux.yml"
+        size: 392
+        content_type: "application/yaml"
+        digest: "sha256:5c5fc5434b2cdb4915e26a2275f3392d39e74e1c941918ca1f253fb655984644"
+      "456032346":
+        name: "metadata-latest-mac.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.8/metadata-latest-mac.yml"
+        size: 544
+        content_type: "application/yaml"
+        digest: "sha256:3598598ab12723020f8b87b9d7be560d5b7822837966c302a19f0818118ed53b"
+      "456032350":
+        name: "metadata-latest-windows.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.8/metadata-latest-windows.yml"
+        size: 527
+        content_type: "application/yaml"
+        digest: "sha256:42523dbc515076458c4e9f12eea64fc00072f2226c779daabb8c3bb7f788e65e"
+  "344039256":
+    tag: "v0.9"
+    title: "v0.9"
+    url: "https://github.com/agent0ai/a0-launcher/releases/tag/v0.9"
+    created_at: "2026-06-24T13:47:43Z"
+    published_at: "2026-06-24T10:36:36Z"
+    updated_at: "2026-06-24T13:56:44Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/agent0ai/a0-launcher/zipball/v0.9"
+    source_tar_url: "https://api.github.com/repos/agent0ai/a0-launcher/tarball/v0.9"
+    assets:
+      "456681881":
+        name: "a0-launcher-0.9-macos-x64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.9/a0-launcher-0.9-macos-x64-update.zip"
+        size: 115130513
+        content_type: "application/zip"
+        digest: "sha256:289b7ebc4de33398406918b14a57ccc7ff8373f33364ab13679d6b12f865ff80"
+      "456681882":
+        name: "a0-launcher-0.9-macos-arm64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.9/a0-launcher-0.9-macos-arm64-update.zip"
+        size: 108999691
+        content_type: "application/zip"
+        digest: "sha256:fce9a02046ce04e8a294a4f8703532e23a35b51c469b4501205354ec1b95c125"
+      "456681883":
+        name: "a0-launcher-0.9-linux-x64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.9/a0-launcher-0.9-linux-x64.AppImage"
+        size: 117994685
+        content_type: "application/vnd.appimage"
+        digest: "sha256:b645b73e66473a0efa38060407066e11af6a30d3f911c9ef304da47e9360d7b3"
+      "456681884":
+        name: "a0-launcher-0.9-linux-arm64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.9/a0-launcher-0.9-linux-arm64.AppImage"
+        size: 118381399
+        content_type: "application/vnd.appimage"
+        digest: "sha256:96b72dd7475e6cb4b271408e0af7395b339b388d7990df3c4c989e396ee26d1f"
+      "456681885":
+        name: "a0-launcher-0.9-macos-arm64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.9/a0-launcher-0.9-macos-arm64.dmg"
+        size: 108450313
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:0d7bc91888e02396ffd4958416c0146fe07cc724249b2d7d43cd98f8e95bb8bc"
+      "456681945":
+        name: "a0-launcher-0.9-macos-x64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.9/a0-launcher-0.9-macos-x64.dmg"
+        size: 114579422
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:0d35f402c747bf6cb88bcdfa9007317302f567b8c27a148b672c25f6f982f7e6"
+      "456681957":
+        name: "a0-launcher-0.9-windows-arm64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.9/a0-launcher-0.9-windows-arm64.exe"
+        size: 89504055
+        content_type: "application/octet-stream"
+        digest: "sha256:9faf7815e5e8e97e45e72b5b5818891c1fc6b1b39194edd1646b3a94b8cc707b"
+      "456681959":
+        name: "a0-launcher-0.9-windows-x64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.9/a0-launcher-0.9-windows-x64.exe"
+        size: 89726905
+        content_type: "application/octet-stream"
+        digest: "sha256:801de7820d7fb3f821967c6fadf2662ac0a4ad0f16dff9a3315f8583eda526a4"
+      "456681960":
+        name: "metadata-latest-linux-arm64.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.9/metadata-latest-linux-arm64.yml"
+        size: 396
+        content_type: "application/yaml"
+        digest: "sha256:23493a46bcbf80a017f538c24763bfade5f0d06d716a54b50b46f7973012b00e"
+      "456681969":
+        name: "metadata-latest-linux.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.9/metadata-latest-linux.yml"
+        size: 392
+        content_type: "application/yaml"
+        digest: "sha256:cc5952dbdc16f954a64cecd902d7069d2a2a017084612322d100cfc9ea157a73"
+      "456681971":
+        name: "metadata-latest-mac.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.9/metadata-latest-mac.yml"
+        size: 544
+        content_type: "application/yaml"
+        digest: "sha256:a52a9d11cfda81e12fc3b9acbdf79aa127d7544c1cf9aa8fdf03c69c035f4164"
+      "456681985":
+        name: "metadata-latest-windows.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.9/metadata-latest-windows.yml"
+        size: 527
+        content_type: "application/yaml"
+        digest: "sha256:ef43976ca07ff4ce40bc493960e84770f5f7f4d711de8a2df8c336a93d161732"
+      "456682683":
+        name: "content.json"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v0.9/content.json"
+        size: 18711387
+        content_type: "application/json"
+        digest: "sha256:e249409f123a586f953381bfb8096fcad9c624e05f7f94d7200b93cbc3352b29"
+  "345332624":
+    tag: "v1.0"
+    title: "v1.0"
+    url: "https://github.com/agent0ai/a0-launcher/releases/tag/v1.0"
+    created_at: "2026-06-26T14:12:17Z"
+    published_at: "2026-06-26T13:25:03Z"
+    updated_at: "2026-06-26T14:19:05Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/agent0ai/a0-launcher/zipball/v1.0"
+    source_tar_url: "https://api.github.com/repos/agent0ai/a0-launcher/tarball/v1.0"
+    assets:
+      "458698045":
+        name: "a0-launcher-1.0-linux-arm64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.0/a0-launcher-1.0-linux-arm64.AppImage"
+        size: 118401969
+        content_type: "application/vnd.appimage"
+        digest: "sha256:29da79660fc3c1e4cbc74fba6e1b4469b50a3cf1c4f340de42887e95e4b38770"
+      "458698046":
+        name: "a0-launcher-1.0-macos-arm64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.0/a0-launcher-1.0-macos-arm64.dmg"
+        size: 107407803
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:1c9e6a661232a09f9522e547dbe807a6095453183adbc2cf5fad54b949634482"
+      "458698047":
+        name: "a0-launcher-1.0-linux-x64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.0/a0-launcher-1.0-linux-x64.AppImage"
+        size: 118019280
+        content_type: "application/vnd.appimage"
+        digest: "sha256:eb8612e1ea65afc5bd33c200a853b0b749169374fa3620d4841533dd06a771b3"
+      "458698048":
+        name: "a0-launcher-1.0-macos-x64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.0/a0-launcher-1.0-macos-x64-update.zip"
+        size: 115194158
+        content_type: "application/zip"
+        digest: "sha256:d06a1527c9d32bdfaf6c2baa98109718b3c1427c237cafe74b34965e61daba5e"
+      "458698049":
+        name: "a0-launcher-1.0-macos-arm64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.0/a0-launcher-1.0-macos-arm64-update.zip"
+        size: 108023535
+        content_type: "application/zip"
+        digest: "sha256:02fa5463dfc48415975424dcc6e31199ef8cb9ab1b7dd5fa4d3c3dcec658dd3e"
+      "458698115":
+        name: "a0-launcher-1.0-macos-x64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.0/a0-launcher-1.0-macos-x64.dmg"
+        size: 114559531
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:025e55e84f8bdad27e66f7c4f4dae158c2b85e885ae2cbc59d1866e223a52afc"
+      "458698119":
+        name: "a0-launcher-1.0-windows-arm64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.0/a0-launcher-1.0-windows-arm64.exe"
+        size: 89525684
+        content_type: "application/octet-stream"
+        digest: "sha256:ad4982a9043318e9983e24d15871d0c247b7b0c7135f2a6c9d3dad6a44ca6b5a"
+      "458698121":
+        name: "a0-launcher-1.0-windows-x64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.0/a0-launcher-1.0-windows-x64.exe"
+        size: 89748850
+        content_type: "application/octet-stream"
+        digest: "sha256:d89f91f03a1250bc0a6ebb48062df23d5d65b5e9bc4435b4fe60c50dd3858911"
+      "458698123":
+        name: "metadata-latest-linux-arm64.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.0/metadata-latest-linux-arm64.yml"
+        size: 396
+        content_type: "application/yaml"
+        digest: "sha256:4fb2faa5c88396707a029f9ec0c3dd40fc8e025e6d69162d9ab0af52ca88dbd8"
+      "458698124":
+        name: "metadata-latest-linux.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.0/metadata-latest-linux.yml"
+        size: 392
+        content_type: "application/yaml"
+        digest: "sha256:ac294b3d218160677ca94579ec34e42edbe461431f3cc8bc503852604749f82e"
+      "458698126":
+        name: "metadata-latest-mac.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.0/metadata-latest-mac.yml"
+        size: 544
+        content_type: "application/yaml"
+        digest: "sha256:b1d15e73a9c90ef79f5ba4a759c3f3e609de9b08a0dafae0698bfdafd54e1c68"
+      "458698128":
+        name: "metadata-latest-windows.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.0/metadata-latest-windows.yml"
+        size: 527
+        content_type: "application/yaml"
+        digest: "sha256:ddb71fe4757d2dc727dbbf46cb443be7d884b88f1bf21e43ebb09864eef6da8c"
+      "458698671":
+        name: "content.json"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.0/content.json"
+        size: 18789022
+        content_type: "application/json"
+        digest: "sha256:68ca91ad00d978afc06533ef7534db112ae7972b5d0bd16e9b17899c2057dea4"
+  "346944473":
+    tag: "v1.1"
+    title: "v1.1"
+    url: "https://github.com/agent0ai/a0-launcher/releases/tag/v1.1"
+    created_at: "2026-06-30T15:57:35Z"
+    published_at: "2026-06-30T15:49:59Z"
+    updated_at: "2026-06-30T16:06:52Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/agent0ai/a0-launcher/zipball/v1.1"
+    source_tar_url: "https://api.github.com/repos/agent0ai/a0-launcher/tarball/v1.1"
+    assets:
+      "462303223":
+        name: "content.json"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.1/content.json"
+        size: 18812955
+        content_type: "application/json"
+        digest: "sha256:77d94f36270d2865a0658b39eb195d819a2cc693cfdd04280bc2c38340ecb9b7"
+      "462308856":
+        name: "a0-launcher-1.1-macos-arm64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.1/a0-launcher-1.1-macos-arm64.dmg"
+        size: 126786471
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:a1f522328cef2e6ea05fdb0d63eafbb46922a99d0ddb0705a82eef38adc84298"
+      "462308857":
+        name: "a0-launcher-1.1-linux-x64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.1/a0-launcher-1.1-linux-x64.AppImage"
+        size: 135896848
+        content_type: "application/vnd.appimage"
+        digest: "sha256:d4e509951f60de34ecc12b65c2a4a7fb7258e2ab188433402ec71194a024b324"
+      "462308859":
+        name: "a0-launcher-1.1-macos-arm64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.1/a0-launcher-1.1-macos-arm64-update.zip"
+        size: 127402581
+        content_type: "application/zip"
+        digest: "sha256:a824c27666e1785cd46276575d2210f7a349907a805596b7547f9d36a391de55"
+      "462308860":
+        name: "a0-launcher-1.1-linux-arm64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.1/a0-launcher-1.1-linux-arm64.AppImage"
+        size: 134445809
+        content_type: "application/vnd.appimage"
+        digest: "sha256:87164edef23848a89610a74fdfd85f362c48d86a8c0d5895b7014aa8228e87c4"
+      "462308861":
+        name: "a0-launcher-1.1-macos-x64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.1/a0-launcher-1.1-macos-x64-update.zip"
+        size: 132336875
+        content_type: "application/zip"
+        digest: "sha256:4b39e8316dffb639388e6b21e2d74a6391b0f27c6150934ff5c2d211cd52c056"
+      "462308935":
+        name: "a0-launcher-1.1-macos-x64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.1/a0-launcher-1.1-macos-x64.dmg"
+        size: 131695614
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:5d7bdb4be4b2b3b3175edbcf408f4fb4f0d75a47b9b3e29e79e8ff87ffe163bd"
+      "462308938":
+        name: "a0-launcher-1.1-windows-x64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.1/a0-launcher-1.1-windows-x64.exe"
+        size: 110881495
+        content_type: "application/octet-stream"
+        digest: "sha256:5085f777eb315e20c08a94c6dc4389bb3ab8a16323fe084806b1cd6e81318155"
+      "462308939":
+        name: "a0-launcher-1.1-windows-arm64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.1/a0-launcher-1.1-windows-arm64.exe"
+        size: 103391763
+        content_type: "application/octet-stream"
+        digest: "sha256:21a5884b368d01de88125238089d19c25a43d1c0dbe61a049ed9bf4a4f8a24fc"
+      "462308940":
+        name: "metadata-latest-linux-arm64.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.1/metadata-latest-linux-arm64.yml"
+        size: 396
+        content_type: "application/yaml"
+        digest: "sha256:19db2dac41c80f72fed72da9e90bbf16af8d2f36f2bbfb10d9681233f64e52a6"
+      "462308942":
+        name: "metadata-latest-linux.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.1/metadata-latest-linux.yml"
+        size: 392
+        content_type: "application/yaml"
+        digest: "sha256:15b6e3fd778bbe1b3ecabbcc93c66641b68b2f6ff494238a37573a602f3418d7"
+      "462308943":
+        name: "metadata-latest-mac.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.1/metadata-latest-mac.yml"
+        size: 544
+        content_type: "application/yaml"
+        digest: "sha256:4e5944e95413767ae066d31c25073dcc8c3c0c987dace0ace5c8532d2d316305"
+      "462308953":
+        name: "metadata-latest-windows.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.1/metadata-latest-windows.yml"
+        size: 529
+        content_type: "application/yaml"
+        digest: "sha256:46989f683369a3106aa359f87f38fa36aab419e744d26a43aa6ce588e848d30c"
+  "349554064":
+    tag: "v1.2"
+    title: "v1.2"
+    url: "https://github.com/agent0ai/a0-launcher/releases/tag/v1.2"
+    created_at: "2026-07-06T12:51:37Z"
+    published_at: "2026-07-06T12:54:18Z"
+    updated_at: "2026-07-06T13:02:33Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/agent0ai/a0-launcher/zipball/v1.2"
+    source_tar_url: "https://api.github.com/repos/agent0ai/a0-launcher/tarball/v1.2"
+    assets:
+      "468075418":
+        name: "content.json"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.2/content.json"
+        size: 18841742
+        content_type: "application/json"
+        digest: "sha256:e3fe5a25d76db0e0492b1832150da9964779cbe81a22a6890a63acae4a417cf6"
+      "468082420":
+        name: "a0-launcher-1.2-macos-arm64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.2/a0-launcher-1.2-macos-arm64-update.zip"
+        size: 128638892
+        content_type: "application/zip"
+        digest: "sha256:77e0be5aa0a3dd4c6a8e5b815064297690ea0d45f2632de7656793d6887f2e1e"
+      "468082422":
+        name: "a0-launcher-1.2-macos-x64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.2/a0-launcher-1.2-macos-x64-update.zip"
+        size: 132348356
+        content_type: "application/zip"
+        digest: "sha256:1a19ebfa8c0843e59810cadb23ff796ac803a187ecda88c4ccfa48c32977d38c"
+      "468082423":
+        name: "a0-launcher-1.2-linux-x64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.2/a0-launcher-1.2-linux-x64.AppImage"
+        size: 135909127
+        content_type: "application/vnd.appimage"
+        digest: "sha256:75c49bed040f53d3cdb1ef77fa80167abacf17d2ada0678490588b462a064c4f"
+      "468082424":
+        name: "a0-launcher-1.2-linux-arm64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.2/a0-launcher-1.2-linux-arm64.AppImage"
+        size: 134458012
+        content_type: "application/vnd.appimage"
+        digest: "sha256:c46ee751f9a254ceba8a454c6918100174b95ac142370b5baa5a12bb1a9e4b0d"
+      "468082425":
+        name: "a0-launcher-1.2-macos-arm64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.2/a0-launcher-1.2-macos-arm64.dmg"
+        size: 128049198
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:a40b2f2de00e3dba574c7360c68f923b7cf20fe1121155e67a1c305def65ef6f"
+      "468082489":
+        name: "a0-launcher-1.2-macos-x64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.2/a0-launcher-1.2-macos-x64.dmg"
+        size: 131713391
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:18d6d5140049f0079b2af08a56d95e7d4bcde8ca4d641b307809047cbe4cf3ac"
+      "468082490":
+        name: "a0-launcher-1.2-windows-arm64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.2/a0-launcher-1.2-windows-arm64.exe"
+        size: 103401068
+        content_type: "application/octet-stream"
+        digest: "sha256:0700edf9dfe6effefe9c31b5a90466780c3f52e17ea9ddcf75cb7beed5152485"
+      "468082494":
+        name: "a0-launcher-1.2-windows-x64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.2/a0-launcher-1.2-windows-x64.exe"
+        size: 110890871
+        content_type: "application/octet-stream"
+        digest: "sha256:1443b60a552d07b5efa5a794edbeb383e827e242c86d8e80d3d9912c90ca222a"
+      "468082495":
+        name: "metadata-latest-linux.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.2/metadata-latest-linux.yml"
+        size: 392
+        content_type: "application/yaml"
+        digest: "sha256:da42114fd5f2a57b98a3b7e44f59779669b49418b3cae643fb2affca256aee90"
+      "468082496":
+        name: "metadata-latest-linux-arm64.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.2/metadata-latest-linux-arm64.yml"
+        size: 396
+        content_type: "application/yaml"
+        digest: "sha256:6234c27dbc2a12ba273bbb94e53eec341111ad5a806b9681e94a9b3b3c8e3011"
+      "468082500":
+        name: "metadata-latest-mac.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.2/metadata-latest-mac.yml"
+        size: 544
+        content_type: "application/yaml"
+        digest: "sha256:804d931ef8a27bf3cdf66473cd485124a18b7f8ff8bcedaf4a480792e264e3a7"
+      "468082501":
+        name: "metadata-latest-windows.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.2/metadata-latest-windows.yml"
+        size: 529
+        content_type: "application/yaml"
+        digest: "sha256:fac4cc599da060e1562e34f09a9667b1770c48ee2af423e7ebb560f6986cb671"
+  "355767744":
+    tag: "v1.3"
+    title: "v1.3"
+    url: "https://github.com/agent0ai/a0-launcher/releases/tag/v1.3"
+    created_at: "2026-07-17T18:44:38Z"
+    published_at: "2026-07-17T15:30:03Z"
+    updated_at: "2026-07-17T18:51:28Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/agent0ai/a0-launcher/zipball/v1.3"
+    source_tar_url: "https://api.github.com/repos/agent0ai/a0-launcher/tarball/v1.3"
+    assets:
+      "480698050":
+        name: "content.json"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.3/content.json"
+        size: 18942891
+        content_type: "application/json"
+        digest: "sha256:9b2411688f4db914a26bdf6f683e21cecaa28f02bb7d965324f946571da552a8"
+      "480703479":
+        name: "a0-launcher-1.3-macos-arm64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.3/a0-launcher-1.3-macos-arm64.dmg"
+        size: 126862582
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:cc2cf0aee950a2b7da29b4f6e61516a227ef741204efee9f53f121deb9362608"
+      "480703480":
+        name: "a0-launcher-1.3-macos-arm64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.3/a0-launcher-1.3-macos-arm64-update.zip"
+        size: 127477245
+        content_type: "application/zip"
+        digest: "sha256:0d362548fc46cb35091aa6631ef993865920aac76b304aa83e184cec2111f7ba"
+      "480703481":
+        name: "a0-launcher-1.3-linux-arm64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.3/a0-launcher-1.3-linux-arm64.AppImage"
+        size: 134515270
+        content_type: "application/vnd.appimage"
+        digest: "sha256:d1a9b0f04bfd8239d7d948cdd90254e14a6e29ef982d5cd269f84b04eeefd6b3"
+      "480703482":
+        name: "a0-launcher-1.3-linux-x64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.3/a0-launcher-1.3-linux-x64.AppImage"
+        size: 135966392
+        content_type: "application/vnd.appimage"
+        digest: "sha256:f647889efd8502893012d3a42584351c3540ec5736d36e975fe2ef9c1cec59b3"
+      "480703483":
+        name: "a0-launcher-1.3-macos-x64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.3/a0-launcher-1.3-macos-x64-update.zip"
+        size: 132411532
+        content_type: "application/zip"
+        digest: "sha256:5d6575171b6308d0fe60c9d8f828104bff2e85e27456297db7bda872d48157a8"
+      "480703582":
+        name: "a0-launcher-1.3-macos-x64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.3/a0-launcher-1.3-macos-x64.dmg"
+        size: 131782820
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:8e5185c7c6ba3e0311c3725f60439082699dd8e59f9f75e94cd4f408b771df8b"
+      "480703585":
+        name: "a0-launcher-1.3-windows-arm64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.3/a0-launcher-1.3-windows-arm64.exe"
+        size: 103455582
+        content_type: "application/octet-stream"
+        digest: "sha256:729b6ae0514cb05586781ff7032b07609497dbbf690c3f5b3101e29dc7107630"
+      "480703586":
+        name: "a0-launcher-1.3-windows-x64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.3/a0-launcher-1.3-windows-x64.exe"
+        size: 110945346
+        content_type: "application/octet-stream"
+        digest: "sha256:b6bfb43e86983837555b3fed15d84f758d5aa24b1af6f5d0999489a33645a3f6"
+      "480703588":
+        name: "metadata-latest-linux-arm64.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.3/metadata-latest-linux-arm64.yml"
+        size: 396
+        content_type: "application/yaml"
+        digest: "sha256:8afee4fa65f971494bb96f37287c7099a6d6a6d69cde69b4a8e53e6935c343c6"
+      "480703594":
+        name: "metadata-latest-linux.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.3/metadata-latest-linux.yml"
+        size: 392
+        content_type: "application/yaml"
+        digest: "sha256:b4a870fb39c84c3002d90bc291e4a1e5c1ce0b95c389d006b677affcb8ccaa78"
+      "480703596":
+        name: "metadata-latest-mac.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.3/metadata-latest-mac.yml"
+        size: 544
+        content_type: "application/yaml"
+        digest: "sha256:4f6cd01ef0c13cae502fa916d65d9f7f7b2e0f282dc841bb6c54487f9ab43e7d"
+      "480703600":
+        name: "metadata-latest-windows.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.3/metadata-latest-windows.yml"
+        size: 529
+        content_type: "application/yaml"
+        digest: "sha256:f74037e56701ae085a0713f9f7851632e6a97472f47adc7297d51907e8acb1d4"
+  "358839485":
+    tag: "v1.4"
+    title: "v1.4"
+    url: "https://github.com/agent0ai/a0-launcher/releases/tag/v1.4"
+    created_at: "2026-07-23T17:12:26Z"
+    published_at: "2026-07-23T17:13:30Z"
+    updated_at: "2026-07-23T17:22:15Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/agent0ai/a0-launcher/zipball/v1.4"
+    source_tar_url: "https://api.github.com/repos/agent0ai/a0-launcher/tarball/v1.4"
+    assets:
+      "487434993":
+        name: "content.json"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.4/content.json"
+        size: 18957967
+        content_type: "application/json"
+        digest: "sha256:34123e13beb6a92b272e2c9b731b4e1f7597e0459fd881129e68206eadc3b06e"
+      "487442584":
+        name: "a0-launcher-1.4-linux-x64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.4/a0-launcher-1.4-linux-x64.AppImage"
+        size: 135974690
+        content_type: "application/vnd.appimage"
+        digest: "sha256:1ae45be8366b8ab322c8ab650ef9179833305172dbba40483bd430bc58792cd4"
+      "487442585":
+        name: "a0-launcher-1.4-macos-arm64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.4/a0-launcher-1.4-macos-arm64.dmg"
+        size: 126902808
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:2763c5df29e4821b30c8ebe36b7a85a9436de35364216f9acc8d1a3cdeb025ab"
+      "487442586":
+        name: "a0-launcher-1.4-macos-x64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.4/a0-launcher-1.4-macos-x64-update.zip"
+        size: 132422192
+        content_type: "application/zip"
+        digest: "sha256:2c989002c26e97e3bdc2712fa75c17905e894a6ad2444332bed3ef936a11a7f5"
+      "487442587":
+        name: "a0-launcher-1.4-linux-arm64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.4/a0-launcher-1.4-linux-arm64.AppImage"
+        size: 134527694
+        content_type: "application/vnd.appimage"
+        digest: "sha256:e4ef7c65abbd39f3a05d81de14f92a6efeb0affe2f180cb62984632aab40b185"
+      "487442589":
+        name: "a0-launcher-1.4-macos-arm64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.4/a0-launcher-1.4-macos-arm64-update.zip"
+        size: 127487788
+        content_type: "application/zip"
+        digest: "sha256:88cd723bc8b27faecfed35f807fde110e399d37827bee62b54049937efc9c745"
+      "487442709":
+        name: "a0-launcher-1.4-macos-x64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.4/a0-launcher-1.4-macos-x64.dmg"
+        size: 131783400
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:156f55239c6a0a81acae0c5a6a1419876d879e6491da580f9b89fc7e142fb0ba"
+      "487442713":
+        name: "a0-launcher-1.4-windows-arm64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.4/a0-launcher-1.4-windows-arm64.exe"
+        size: 103464685
+        content_type: "application/octet-stream"
+        digest: "sha256:871269a9f4fe2db6190f3958f00d837f9e4cafbb634fc5f5dd6a17178d31d3db"
+      "487442717":
+        name: "a0-launcher-1.4-windows-x64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.4/a0-launcher-1.4-windows-x64.exe"
+        size: 110954521
+        content_type: "application/octet-stream"
+        digest: "sha256:84bc7a07e10980fa0bcf4814a4b357c881fdcc20a63d24ca8e62c7029b69f9fe"
+      "487442722":
+        name: "metadata-latest-linux-arm64.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.4/metadata-latest-linux-arm64.yml"
+        size: 396
+        content_type: "application/yaml"
+        digest: "sha256:4946ce5441e94585ee4d26ccd8be2161f983bc5ad543d463a113e6d33a772d9a"
+      "487442730":
+        name: "metadata-latest-linux.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.4/metadata-latest-linux.yml"
+        size: 392
+        content_type: "application/yaml"
+        digest: "sha256:dbcbe39ab6f65b33b4a9bff69a4957e4d0c9f3daec212ca8e0b4d6c66643a664"
+      "487442737":
+        name: "metadata-latest-mac.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.4/metadata-latest-mac.yml"
+        size: 544
+        content_type: "application/yaml"
+        digest: "sha256:f5b4fe2d39d6b8a353a43bd29ea630bb06c37633885feb9920b6eb791f9e1bf3"
+      "487442742":
+        name: "metadata-latest-windows.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.4/metadata-latest-windows.yml"
+        size: 529
+        content_type: "application/yaml"
+        digest: "sha256:630855c61e84652d5302a7c958e42c6a98f285fc5a7f639fe2406dd038c00b97"
+  "363546380":
+    tag: "v1.5"
+    title: "v1.5"
+    url: "https://github.com/agent0ai/a0-launcher/releases/tag/v1.5"
+    created_at: "2026-08-01T14:39:45Z"
+    published_at: "2026-08-01T14:40:21Z"
+    updated_at: "2026-08-01T14:47:30Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/agent0ai/a0-launcher/zipball/v1.5"
+    source_tar_url: "https://api.github.com/repos/agent0ai/a0-launcher/tarball/v1.5"
+    assets:
+      "497979385":
+        name: "content.json"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.5/content.json"
+        size: 18964258
+        content_type: "application/json"
+        digest: "sha256:a2d07d3b2ca55c9b8ebd33770069b61942791c4a7fe34218528db8fb8aa8636d"
+      "497984081":
+        name: "a0-launcher-1.5-linux-x64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.5/a0-launcher-1.5-linux-x64.AppImage"
+        size: 135978752
+        content_type: "application/vnd.appimage"
+        digest: "sha256:e7326dab3b42b7d51d3c6f3372f4a2c4b01ffb5a9e65f82e50c31e8173234963"
+      "497984082":
+        name: "a0-launcher-1.5-macos-arm64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.5/a0-launcher-1.5-macos-arm64.dmg"
+        size: 126874315
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:43900fdaf956fa7205fa7b672e5bededece9347a63e9051ee2b1e8034add1269"
+      "497984084":
+        name: "a0-launcher-1.5-linux-arm64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.5/a0-launcher-1.5-linux-arm64.AppImage"
+        size: 134527667
+        content_type: "application/vnd.appimage"
+        digest: "sha256:7826886745cd83cce6bf023b567b17c4b99b0a4dd72fd9ff732cefe194f9b1c2"
+      "497984085":
+        name: "a0-launcher-1.5-macos-arm64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.5/a0-launcher-1.5-macos-arm64-update.zip"
+        size: 127490434
+        content_type: "application/zip"
+        digest: "sha256:3e2ba07c8ffa0d87258a06daa6c4ea27c8b059ac062836c3512d416b5a9f6a89"
+      "497984086":
+        name: "a0-launcher-1.5-macos-x64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.5/a0-launcher-1.5-macos-x64-update.zip"
+        size: 132424832
+        content_type: "application/zip"
+        digest: "sha256:364a92df162fbabb3cedaa22261d34f4ecd691efef197bfacdbdb87c55046432"
+      "497984240":
+        name: "a0-launcher-1.5-macos-x64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.5/a0-launcher-1.5-macos-x64.dmg"
+        size: 131776314
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:8818e92112055b8b76609bf3404a9cfdea731ae275af11a888498628cf95493e"
+      "497984255":
+        name: "a0-launcher-1.5-windows-arm64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.5/a0-launcher-1.5-windows-arm64.exe"
+        size: 103467069
+        content_type: "application/octet-stream"
+        digest: "sha256:403776d7e089f6d765ca3c253b70027880ff121658b37a1e2b64b7bee5f902b6"
+      "497984259":
+        name: "a0-launcher-1.5-windows-x64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.5/a0-launcher-1.5-windows-x64.exe"
+        size: 110956833
+        content_type: "application/octet-stream"
+        digest: "sha256:e913ddebf0f036e8b8b81be76c79e6ed2a92185f41b1710d8e1305144b3c3ca3"
+      "497984260":
+        name: "metadata-latest-linux-arm64.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.5/metadata-latest-linux-arm64.yml"
+        size: 396
+        content_type: "application/yaml"
+        digest: "sha256:0a9d01f157475ae222e7fa23c458515d92121331dd3509f617a2252d6043ed65"
+      "497984269":
+        name: "metadata-latest-linux.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.5/metadata-latest-linux.yml"
+        size: 392
+        content_type: "application/yaml"
+        digest: "sha256:e021b59cc7ea2ddaa091ceb9f9825bf2ce8c9686d1b85981690830785c89bfd7"
+      "497984271":
+        name: "metadata-latest-mac.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.5/metadata-latest-mac.yml"
+        size: 544
+        content_type: "application/yaml"
+        digest: "sha256:de258b9bfc4df13a4c6b432cdc7bdff7940ee812f4595cdcab75fc13cc2e9bb5"
+      "497984279":
+        name: "metadata-latest-windows.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.5/metadata-latest-windows.yml"
+        size: 529
+        content_type: "application/yaml"
+        digest: "sha256:058e487f3c44da8ce6bb39e260788182e04964b2b2d8422652b0966d164b017b"
+  "377546356":
+    tag: "v1.6"
+    title: "v1.6"
+    url: "https://github.com/agent0ai/a0-launcher/releases/tag/v1.6"
+    created_at: "2026-08-27T03:22:53Z"
+    published_at: "2026-08-27T03:23:46Z"
+    updated_at: "2026-08-27T03:30:52Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/agent0ai/a0-launcher/zipball/v1.6"
+    source_tar_url: "https://api.github.com/repos/agent0ai/a0-launcher/tarball/v1.6"
+    assets:
+      "531681665":
+        name: "content.json"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.6/content.json"
+        size: 18996926
+        content_type: "application/json"
+        digest: "sha256:17db807b4a7bb3063e7e7c8b86417b5f524a6ecea6c8a1d69b2100d4b0afdb19"
+      "531690800":
+        name: "a0-launcher-1.6-linux-x64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.6/a0-launcher-1.6-linux-x64.AppImage"
+        size: 135999244
+        content_type: "application/vnd.appimage"
+        digest: "sha256:d50fa6423ea562fb3fe080085b390b36fc0bd92d1767cb656fd6901c921abf78"
+      "531690801":
+        name: "a0-launcher-1.6-macos-arm64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.6/a0-launcher-1.6-macos-arm64.dmg"
+        size: 126912745
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:fe6071999b7ff45983f96d0dd87b4bd195a98db2f38992fbd40018105edcce4e"
+      "531690802":
+        name: "a0-launcher-1.6-macos-x64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.6/a0-launcher-1.6-macos-x64-update.zip"
+        size: 128219456
+        content_type: "application/zip"
+        digest: "sha256:48450fc5f116ff8cd99a0342ce8addd4dad3c3421b1dfc12fbb00132fe711c87"
+      "531690803":
+        name: "a0-launcher-1.6-linux-arm64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.6/a0-launcher-1.6-linux-arm64.AppImage"
+        size: 134548154
+        content_type: "application/vnd.appimage"
+        digest: "sha256:50182e2efb94e92ec0f850b2e647bb2ab1333dd344641e4070f97564590d388f"
+      "531690804":
+        name: "a0-launcher-1.6-macos-arm64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.6/a0-launcher-1.6-macos-arm64-update.zip"
+        size: 123300847
+        content_type: "application/zip"
+        digest: "sha256:68ed9b8006b05058a3ab38302253d36630bc3cd2d60937b6bad388c906dcfc61"
+      "531690884":
+        name: "a0-launcher-1.6-macos-x64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.6/a0-launcher-1.6-macos-x64.dmg"
+        size: 131793605
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:47e8f428e682fb5420ee7b16cbb5aebcdbfdf467b30ebca5e11475c6e8456565"
+      "531690889":
+        name: "a0-launcher-1.6-windows-arm64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.6/a0-launcher-1.6-windows-arm64.exe"
+        size: 113290146
+        content_type: "application/octet-stream"
+        digest: "sha256:84a4046a3ff7c88f8507a1d5d8c44fb00d0c9ac8f3198d005b8b455464d2e250"
+      "531690903":
+        name: "a0-launcher-1.6-windows-x64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.6/a0-launcher-1.6-windows-x64.exe"
+        size: 119754051
+        content_type: "application/octet-stream"
+        digest: "sha256:645f19013d40edbb44cbdfb8e5f81431c0149a7d2aa7ba3276c65c9c35f6e928"
+      "531690910":
+        name: "metadata-latest-linux-arm64.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.6/metadata-latest-linux-arm64.yml"
+        size: 396
+        content_type: "application/yaml"
+        digest: "sha256:d72afa4b588c327cbe43e69963989936d15ae8640d7432b9533fe7ae7e205716"
+      "531690914":
+        name: "metadata-latest-linux.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.6/metadata-latest-linux.yml"
+        size: 392
+        content_type: "application/yaml"
+        digest: "sha256:630ff41b6fe56c3ecffc33a6a797d891d3411da6e0ddfd584d7637a6913f2a9d"
+      "531690923":
+        name: "metadata-latest-mac.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.6/metadata-latest-mac.yml"
+        size: 544
+        content_type: "application/yaml"
+        digest: "sha256:c2decf68e48fe36a18ca1e6c2d668e002d45bae5467348b29e8a18549899d3a1"
+      "531690925":
+        name: "metadata-latest-windows.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.6/metadata-latest-windows.yml"
+        size: 529
+        content_type: "application/yaml"
+        digest: "sha256:2ea658a76060da5761aa3b5ccccb849f3ce4ebbd2df8273473a93861041506b3"
+  "385247000":
+    tag: "v1.7"
+    title: "v1.7"
+    url: "https://github.com/agent0ai/a0-launcher/releases/tag/v1.7"
+    created_at: "2026-09-09T05:29:32Z"
+    published_at: "2026-09-09T05:29:43Z"
+    updated_at: "2026-09-09T05:37:50Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/agent0ai/a0-launcher/zipball/v1.7"
+    source_tar_url: "https://api.github.com/repos/agent0ai/a0-launcher/tarball/v1.7"
+    assets:
+      "552071403":
+        name: "content.json"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.7/content.json"
+        size: 19025646
+        content_type: "application/json"
+        digest: "sha256:509f4fb2b402d46f744924cb118b0b47bae0e37121104c825c220ee8030ff39c"
+      "552081717":
+        name: "a0-launcher-1.7-macos-arm64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.7/a0-launcher-1.7-macos-arm64.dmg"
+        size: 126930377
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:a8a91cfb56f6dc6ec6eabff60b1dd5540bdf4ad11352c9b04c4d3393045ee08d"
+      "552081718":
+        name: "a0-launcher-1.7-linux-arm64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.7/a0-launcher-1.7-linux-arm64.AppImage"
+        size: 134589303
+        content_type: "application/vnd.appimage"
+        digest: "sha256:d5bda2fbea46363e6759bda54fdb0d33eb7b4f5aedb0bfe30c87f114854c474b"
+      "552081720":
+        name: "a0-launcher-1.7-linux-x64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.7/a0-launcher-1.7-linux-x64.AppImage"
+        size: 136040358
+        content_type: "application/vnd.appimage"
+        digest: "sha256:72cb8c29adccb815544dcc2288bbb278bccdb9f97c989989c76534cfdf0119a9"
+      "552081721":
+        name: "a0-launcher-1.7-macos-arm64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.7/a0-launcher-1.7-macos-arm64-update.zip"
+        size: 123343818
+        content_type: "application/zip"
+        digest: "sha256:3c93bd8d68fd0392c2ecac8d3c1d7ff9016cdb2db42264f0022a2d7f71792019"
+      "552081723":
+        name: "a0-launcher-1.7-macos-x64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.7/a0-launcher-1.7-macos-x64-update.zip"
+        size: 128262397
+        content_type: "application/zip"
+        digest: "sha256:d7b592f4181188abe6210ef64c8870d4f6625fbb8e69fabc8b4aef9d663c6b95"
+      "552081860":
+        name: "a0-launcher-1.7-macos-x64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.7/a0-launcher-1.7-macos-x64.dmg"
+        size: 131840667
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:11a858818625813faf9d04f19b73f82749fb1b079f34ea44cfec9d858900fd81"
+      "552081864":
+        name: "a0-launcher-1.7-windows-arm64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.7/a0-launcher-1.7-windows-arm64.exe"
+        size: 113330303
+        content_type: "application/octet-stream"
+        digest: "sha256:3b1c5b482adebb823748a40fe9402048fa80d55e9ec44de8300128c914ecd312"
+      "552081875":
+        name: "a0-launcher-1.7-windows-x64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.7/a0-launcher-1.7-windows-x64.exe"
+        size: 119794271
+        content_type: "application/octet-stream"
+        digest: "sha256:fafe17235c9887bc8d5438ea29879285129c14402f86f5e5c1d8798ee4e18020"
+      "552081882":
+        name: "metadata-latest-linux-arm64.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.7/metadata-latest-linux-arm64.yml"
+        size: 396
+        content_type: "application/yaml"
+        digest: "sha256:7bc1593745e77ec892743b8cce0ab4eca3c90baadff3e6f499af3afdb95bb492"
+      "552081884":
+        name: "metadata-latest-linux.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.7/metadata-latest-linux.yml"
+        size: 392
+        content_type: "application/yaml"
+        digest: "sha256:fbfda7c625f686985f07b7251978e5b59d069d46389b39419acfa289a13c19e7"
+      "552081887":
+        name: "metadata-latest-mac.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.7/metadata-latest-mac.yml"
+        size: 544
+        content_type: "application/yaml"
+        digest: "sha256:079585e66c7db5e2e86223a3bc3eb597bc9c4df2ac794429d4e35400aaec92ec"
+      "552081896":
+        name: "metadata-latest-windows.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.7/metadata-latest-windows.yml"
+        size: 529
+        content_type: "application/yaml"
+        digest: "sha256:6feaae179d2577822379da76224c112495205b163e2f331527c1b734b0833e4c"
+  "394662398":
+    tag: "v1.8"
+    title: "v1.8"
+    url: "https://github.com/agent0ai/a0-launcher/releases/tag/v1.8"
+    created_at: "2026-09-23T12:57:15Z"
+    published_at: "2026-09-23T12:57:28Z"
+    updated_at: "2026-09-23T13:07:51Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/agent0ai/a0-launcher/zipball/v1.8"
+    source_tar_url: "https://api.github.com/repos/agent0ai/a0-launcher/tarball/v1.8"
+    assets:
+      "583779481":
+        name: "content.json"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.8/content.json"
+        size: 19038155
+        content_type: "application/json"
+        digest: "sha256:1059bda481a7e3e573727edca0acd93a2eb702e37ed578323e07d276fada649f"
+      "583794638":
+        name: "a0-launcher-1.8-macos-arm64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.8/a0-launcher-1.8-macos-arm64.dmg"
+        size: 126958192
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:84f0efc1356d0421f46e3594e4f72beafcda01cf654496a2a3e542894d17082c"
+      "583794642":
+        name: "a0-launcher-1.8-macos-arm64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.8/a0-launcher-1.8-macos-arm64-update.zip"
+        size: 123354447
+        content_type: "application/zip"
+        digest: "sha256:fe190984f235fb43cae6b63e71c35ed29fc3cfa7b115bbc84fda1a4eb1c1a1c7"
+      "583794643":
+        name: "a0-launcher-1.8-linux-arm64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.8/a0-launcher-1.8-linux-arm64.AppImage"
+        size: 134601586
+        content_type: "application/vnd.appimage"
+        digest: "sha256:dbff950dc1c12f961b53ea4b8990933d43aceb5a9155b3e5a414b486df41c318"
+      "583794644":
+        name: "a0-launcher-1.8-linux-x64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.8/a0-launcher-1.8-linux-x64.AppImage"
+        size: 136052613
+        content_type: "application/vnd.appimage"
+        digest: "sha256:330e4dd274c6fa1585e6cfed1db3e4d6beb2e15e0ce51ca73ed5d0f4884359d7"
+      "583794647":
+        name: "a0-launcher-1.8-macos-x64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.8/a0-launcher-1.8-macos-x64-update.zip"
+        size: 128273031
+        content_type: "application/zip"
+        digest: "sha256:954e48c627f6f88c3532e88c0643fc9682eb32c8dac794f58fa208e57d8f63ba"
+      "583794950":
+        name: "a0-launcher-1.8-macos-x64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.8/a0-launcher-1.8-macos-x64.dmg"
+        size: 131840408
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:b49fa0a66704acf056746bd2c5c9c68df46ad1719369a6a369b8eddc6fae5289"
+      "583794986":
+        name: "a0-launcher-1.8-windows-arm64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.8/a0-launcher-1.8-windows-arm64.exe"
+        size: 113340693
+        content_type: "application/octet-stream"
+        digest: "sha256:29e188b9d8bef43e928f52fcc763d50e742ad4c53a73998a4a892a4322d54271"
+      "583794987":
+        name: "a0-launcher-1.8-windows-x64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.8/a0-launcher-1.8-windows-x64.exe"
+        size: 119804615
+        content_type: "application/octet-stream"
+        digest: "sha256:0311cb6ce85f1c2fd897508a1ce6b6292cdd749ab284efbb7c49f002a7e8b89d"
+      "583794994":
+        name: "metadata-latest-linux-arm64.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.8/metadata-latest-linux-arm64.yml"
+        size: 396
+        content_type: "application/yaml"
+        digest: "sha256:60d4d6b47900aa2b67f27249277f7659e79a7e323fa9771eb8515013ce4b8d0b"
+      "583795000":
+        name: "metadata-latest-linux.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.8/metadata-latest-linux.yml"
+        size: 392
+        content_type: "application/yaml"
+        digest: "sha256:3662f69ecaf519e0f65bb594ff96e968262c58219c354e1ef3f9b4f5c629f7a5"
+      "583795003":
+        name: "metadata-latest-mac.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.8/metadata-latest-mac.yml"
+        size: 544
+        content_type: "application/yaml"
+        digest: "sha256:e7eccddd1e23cd2970791e61908ad988a3946cb880a0c0ad9eb01832606fde87"
+      "583795018":
+        name: "metadata-latest-windows.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.8/metadata-latest-windows.yml"
+        size: 529
+        content_type: "application/yaml"
+        digest: "sha256:79dd23d308dfccbd9176e3c1a67ee4a7bbebfe7835bf1c7065c7908ca81ae175"
+  "411871476":
+    tag: "v1.9"
+    title: "v1.9"
+    url: "https://github.com/agent0ai/a0-launcher/releases/tag/v1.9"
+    created_at: "2026-10-13T16:12:00Z"
+    published_at: "2026-10-13T16:12:12Z"
+    updated_at: "2026-10-13T16:22:58Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/agent0ai/a0-launcher/zipball/v1.9"
+    source_tar_url: "https://api.github.com/repos/agent0ai/a0-launcher/tarball/v1.9"
+    assets:
+      "637556690":
+        name: "content.json"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.9/content.json"
+        size: 19058587
+        content_type: "application/json"
+        digest: "sha256:9890a37e9dbc8bae3fdc1cd3fb33b1e1f938e12bd13a4ece10767fb05f4cfdcc"
+      "637583350":
+        name: "a0-launcher-1.9-linux-arm64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.9/a0-launcher-1.9-linux-arm64.AppImage"
+        size: 134650696
+        content_type: "application/vnd.appimage"
+        digest: "sha256:b89d51502daa115bfa58986805e4052b49e53e89e339cc4c10c61a4ca8716286"
+      "637583353":
+        name: "a0-launcher-1.9-macos-arm64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.9/a0-launcher-1.9-macos-arm64.dmg"
+        size: 126973731
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:ac092012097d1e950835e622a64e0a9bf82b51b0b800161e7b7cc67f975be79e"
+      "637583363":
+        name: "a0-launcher-1.9-macos-arm64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.9/a0-launcher-1.9-macos-arm64-update.zip"
+        size: 123407596
+        content_type: "application/zip"
+        digest: "sha256:348cd336ecc38b96c382a2bdd1428863a58d8342c951d394928a3725b728d906"
+      "637583367":
+        name: "a0-launcher-1.9-linux-x64.AppImage"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.9/a0-launcher-1.9-linux-x64.AppImage"
+        size: 136101788
+        content_type: "application/vnd.appimage"
+        digest: "sha256:d22326de6017550a07accd7f261c6fb1ef9bd141b4de87697c0c6a14d49b416b"
+      "637583368":
+        name: "a0-launcher-1.9-macos-x64-update.zip"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.9/a0-launcher-1.9-macos-x64-update.zip"
+        size: 128326117
+        content_type: "application/zip"
+        digest: "sha256:10af70920c8dc8f40c527772c95583deb9f1a869514336dc633dd2410113dcd6"
+      "637584110":
+        name: "a0-launcher-1.9-macos-x64.dmg"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.9/a0-launcher-1.9-macos-x64.dmg"
+        size: 131891009
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:dec997e4a81d4692f9508dbae3d88f90565917409d7d823902265612bc455e1f"
+      "637584125":
+        name: "a0-launcher-1.9-windows-arm64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.9/a0-launcher-1.9-windows-arm64.exe"
+        size: 113387609
+        content_type: "application/octet-stream"
+        digest: "sha256:3cf4c426b57cf8b41a1f22a75f917fbee719b870dcc00dff41f1bb639ea25eef"
+      "637584153":
+        name: "a0-launcher-1.9-windows-x64.exe"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.9/a0-launcher-1.9-windows-x64.exe"
+        size: 119851588
+        content_type: "application/octet-stream"
+        digest: "sha256:dc747b71f9e168ed0e7ce6ebcb8bc60824b343888ee240a1d3c0a502c9445cea"
+      "637584181":
+        name: "metadata-latest-linux-arm64.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.9/metadata-latest-linux-arm64.yml"
+        size: 396
+        content_type: "application/yaml"
+        digest: "sha256:20233bea3396ce6c5c63f22f86301a44ac84d223e0fb697ab80fa5a585002775"
+      "637584185":
+        name: "metadata-latest-linux.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.9/metadata-latest-linux.yml"
+        size: 392
+        content_type: "application/yaml"
+        digest: "sha256:2ce0ea638a57f5fe5f873f522e928eb373f9ea079328646abca34ca5b5f3a36e"
+      "637584204":
+        name: "metadata-latest-mac.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.9/metadata-latest-mac.yml"
+        size: 544
+        content_type: "application/yaml"
+        digest: "sha256:33b36ff3b136557e26534f32fba09f4046ba8dd4bcda07a13cfd0da9032631db"
+      "637584206":
+        name: "metadata-latest-windows.yml"
+        url: "https://github.com/agent0ai/a0-launcher/releases/download/v1.9/metadata-latest-windows.yml"
+        size: 529
+        content_type: "application/yaml"
+        digest: "sha256:892129dce21175f7dbdd29d86f50e57a5d81cd49b066ee6653c2f87c2f747f22"
