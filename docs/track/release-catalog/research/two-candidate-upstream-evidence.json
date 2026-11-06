@@ -1,0 +1,184 @@
+{
+  "source_commit": "e2e96b3a4",
+  "evidence_archive": "two-candidate-upstream-evidence.tar.gz",
+  "evidence_archive_sha256": "efe0712061bfaa60c0f160402eb1de117936d621b312d9d844d114f49f500d16",
+  "evidence_archive_bytes": 100083,
+  "scope": "repository metadata plus first 30 releases; no traversal beyond first page",
+  "receipts": [
+    {
+      "app": "20x",
+      "kind": "repository",
+      "url": "https://api.github.com/repos/peakflo/20x",
+      "observed_at": "2026-11-06T01:29:13.533219+00:00",
+      "final_url": "https://api.github.com/repos/peakflo/20x",
+      "status": 200,
+      "sha256": "2b562a53be24f3ea9fb11561d97e8a1687a3ebef6882c36ebc4de4224ba586bb",
+      "bytes": 5969,
+      "local_path": "/tmp/am-128-evidence/20x-repository.json",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 01:29:13 GMT",
+        "ETag": "W/\"13a528fde2d6e0001355823c85f63e16351562b092d9a95ae9095ba73b0cbdb1\"",
+        "Last-Modified": "Wed, 04 Nov 2026 16:22:27 GMT",
+        "X-RateLimit-Remaining": "53"
+      },
+      "repository": {
+        "id": 1152028865,
+        "full_name": "peakflo/20x",
+        "html_url": "https://github.com/peakflo/20x",
+        "archived": false,
+        "disabled": false,
+        "default_branch": "main",
+        "updated_at": "2026-11-04T16:22:27Z",
+        "pushed_at": "2026-11-04T17:06:42Z"
+      }
+    },
+    {
+      "app": "20x",
+      "kind": "releases",
+      "url": "https://api.github.com/repos/peakflo/20x/releases?per_page=30",
+      "observed_at": "2026-11-06T01:29:13.954472+00:00",
+      "final_url": "https://api.github.com/repos/peakflo/20x/releases?per_page=30",
+      "status": 200,
+      "sha256": "1efc55af9689f556e59225d958feab3c5513fbd0a62aaafca7f46b1a3843bd55",
+      "bytes": 1003327,
+      "local_path": "/tmp/am-128-evidence/20x-releases.json",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 01:29:14 GMT",
+        "ETag": "W/\"7d3304076f8924941c0cb77f0ad0eb146a9bfb71ed0d23f852f82ecef4be1c5d\"",
+        "X-RateLimit-Remaining": "52",
+        "Link": "<https://api.github.com/repositories/1152028865/releases?per_page=30&page=2>; rel=\"next\", <https://api.github.com/repositories/1152028865/releases?per_page=30&page=6>; rel=\"last\""
+      }
+    },
+    {
+      "app": "2fac",
+      "kind": "repository",
+      "url": "https://api.github.com/repos/jeonjw85/2fac",
+      "observed_at": "2026-11-06T01:29:15.101055+00:00",
+      "final_url": "https://api.github.com/repos/jeonjw85/2fac",
+      "status": 200,
+      "sha256": "0d2060e21d62ee9c8f1eee3f6c94ba911b5227e0a6f79786409390d3e75f164e",
+      "bytes": 5102,
+      "local_path": "/tmp/am-128-evidence/2fac-repository.json",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 01:29:15 GMT",
+        "ETag": "W/\"7f797d8a8ab8aa0af8ac8233252f7947baba5ca6b2565f8f7cbeea0512737144\"",
+        "Last-Modified": "Mon, 28 Sep 2026 07:10:20 GMT",
+        "X-RateLimit-Remaining": "51"
+      },
+      "repository": {
+        "id": 1337965664,
+        "full_name": "jeonjw85/2FAC",
+        "html_url": "https://github.com/jeonjw85/2FAC",
+        "archived": false,
+        "disabled": false,
+        "default_branch": "main",
+        "updated_at": "2026-09-28T07:10:20Z",
+        "pushed_at": "2026-09-28T07:10:18Z"
+      }
+    },
+    {
+      "app": "2fac",
+      "kind": "releases",
+      "url": "https://api.github.com/repos/jeonjw85/2fac/releases?per_page=30",
+      "observed_at": "2026-11-06T01:29:15.487460+00:00",
+      "final_url": "https://api.github.com/repos/jeonjw85/2fac/releases?per_page=30",
+      "status": 200,
+      "sha256": "d7b5a3c1ee4c1a21f4cb7ed7b988a3add10ee1b99dd4bb2a7162c20cd905e725",
+      "bytes": 107656,
+      "local_path": "/tmp/am-128-evidence/2fac-releases.json",
+      "headers": {
+        "Date": "Fri, 06 Nov 2026 01:29:15 GMT",
+        "ETag": "W/\"32b4cd30ca67360856ca92c3889880d3323024acae72bf53357b32d4480f2c08\"",
+        "X-RateLimit-Remaining": "50"
+      }
+    }
+  ],
+  "prefix_receipts": [
+    {
+      "app": "20x",
+      "asset_id": 688278008,
+      "url": "https://github.com/peakflo/20x/releases/download/v0.0.186/20x-linux-x86_64.AppImage",
+      "observed_at": "2026-11-06T01:30:19.918515+00:00",
+      "requested_range": "bytes=0-4095",
+      "status": 206,
+      "bytes": 4096,
+      "content_range": "bytes 0-4095/437228965",
+      "content_type": "application/octet-stream",
+      "sha256": "b982f5007e33cfb6ff84e4b037581d990c614989b549d56f44432e77da5eeae2",
+      "local_path": "/tmp/am-128-evidence/20x-asset-prefix.bin",
+      "magic_hex": "7f454c46020101004149020000000000",
+      "elf": true,
+      "appimage_type2": true
+    },
+    {
+      "app": "2fac",
+      "asset_id": 594778867,
+      "url": "https://github.com/jeonjw85/2FAC/releases/download/v0.1.6/2FAC_0.1.6_amd64.AppImage",
+      "observed_at": "2026-11-06T01:30:20.723247+00:00",
+      "requested_range": "bytes=0-4095",
+      "status": 206,
+      "bytes": 4096,
+      "content_range": "bytes 0-4095/83560952",
+      "content_type": "application/octet-stream",
+      "sha256": "ef603bccaa24dc07c0b7e3eda65c3cc5e905d7051f55b4b186f0abf506aa98fd",
+      "local_path": "/tmp/am-128-evidence/2fac-asset-prefix.bin",
+      "magic_hex": "7f454c46020101004149020000000000",
+      "elf": true,
+      "appimage_type2": true
+    }
+  ],
+  "selection_comparison": [
+    {
+      "app": "20x",
+      "repository_id": 1152028865,
+      "repository": "peakflo/20x",
+      "observed_at": "2026-11-06T01:29:13Z",
+      "old_selector_used_full_response": true,
+      "old_selector_url": "https://github.com/peakflo/20x/releases/download/v0.0.186/20x-linux-x86_64.AppImage",
+      "generic_declaration_url": "https://github.com/peakflo/20x/releases/download/v0.0.186/20x-0.0.186-x86_64.AppImage",
+      "narrow_pattern": "^20x-linux-x86_64[.]AppImage$",
+      "narrow_declaration_url": "https://github.com/peakflo/20x/releases/download/v0.0.186/20x-linux-x86_64.AppImage",
+      "old_equals_generic": false,
+      "old_equals_narrow": true,
+      "release_count": 30,
+      "asset_count": 569,
+      "matching_assets": [
+        {
+          "release_id": "427758388",
+          "asset_id": "688278008",
+          "name": "20x-linux-x86_64.AppImage",
+          "url": "https://github.com/peakflo/20x/releases/download/v0.0.186/20x-linux-x86_64.AppImage"
+        }
+      ]
+    },
+    {
+      "app": "2fac",
+      "repository_id": 1337965664,
+      "repository": "jeonjw85/2FAC",
+      "observed_at": "2026-11-06T01:29:15Z",
+      "old_selector_used_full_response": true,
+      "old_selector_url": "https://github.com/jeonjw85/2FAC/releases/download/v0.1.6/2FAC_0.1.6_amd64.AppImage",
+      "generic_declaration_url": "https://github.com/jeonjw85/2FAC/releases/download/v0.1.6/2FAC_0.1.6_amd64.AppImage",
+      "narrow_pattern": "^2FAC_[0-9]+([.][0-9]+)*_amd64[.]AppImage$",
+      "narrow_declaration_url": "https://github.com/jeonjw85/2FAC/releases/download/v0.1.6/2FAC_0.1.6_amd64.AppImage",
+      "old_equals_generic": true,
+      "old_equals_narrow": true,
+      "release_count": 4,
+      "asset_count": 60,
+      "matching_assets": [
+        {
+          "release_id": "398019492",
+          "asset_id": "594778867",
+          "name": "2FAC_0.1.6_amd64.AppImage",
+          "url": "https://github.com/jeonjw85/2FAC/releases/download/v0.1.6/2FAC_0.1.6_amd64.AppImage"
+        }
+      ]
+    }
+  ],
+  "conversion_approved": false,
+  "remaining_gates": [
+    "full static AppImage desktop/icon inspection and full-file hash verification",
+    "accepted ordering, channel, direct acquisition and launcher policy",
+    "explicit conversion/enrollment scope; no live changes"
+  ]
+}

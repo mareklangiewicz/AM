@@ -2,17 +2,20 @@
 
 ## Maintained upstream recipe reconstruction
 
-Current frontier: [128 claimed](issues/128-verify-two-candidate-upstream-evidence.md)
-gathers read-only primary repository/asset evidence for 20x and 2fac.
-[127 resolved](issues/127-review-armhf-declaration-eligibility.md) excludes armhf
-names on non-ARMv7 targets while requiring explicit armv7 names on armv7l;
-unlabelled x86_64 behavior is preserved. All 60 focused tests pass, including
-288 architecture matrix cases on three awk implementations. Source-only change,
-not deployed. Tickets 124–126 and the tracker update are pushed through
-`a2119bd9f`; the earlier [runtime assessment](research/three-candidate-runtime-assessment.md)
-remains evidence at its recorded revision. 4nier-patrimonio remains absent and
-outside the existing pair. No conversion or enrollment is approved. Current
-inventory remains 6,517 instances / 687 review / 2,030 unmatched.
+Current frontier: [129 open, unclaimed](issues/129-inspect-two-candidate-appimage-payloads.md)
+statically inspects exact real payloads and prepares a concrete conversion plan.
+[128 resolved](issues/128-verify-two-candidate-upstream-evidence.md) verifies both
+existing candidates' numeric IDs and observed asset names;
+[primary evidence](research/two-candidate-upstream-preparation.md) includes full
+saved API responses and offline replay. Narrow patterns preserve the observed
+upstream URL winners; the broad pattern changes 20x's URL. Two bounded prefixes
+show AppImage headers only; desktop/icon/full-digest evidence remains.
+[127 resolved](issues/127-review-armhf-declaration-eligibility.md), source
+`e2e96b3a4`, closes the armhf name-filter gap; all 60 focused tests pass.
+This source fix is not deployed. Tickets 124–126 and tracker updates are pushed
+through `a2119bd9f`. No claim is in flight; no conversion or enrollment is approved.
+4nier-patrimonio remains absent and outside the pair. Current inventory remains
+6,517 instances / 687 review / 2,030 unmatched.
 
 [125 resolved](issues/125-recognize-default-appimage-selector.md): exact
 AIA/default-keyword selector recognition is bound to inspected original hashes;
