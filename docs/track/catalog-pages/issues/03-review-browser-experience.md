@@ -2,7 +2,8 @@
 
 Type: prototype
 Label: wayfinder:prototype
-Status: open
+Status: claimed
+Assignee: codex
 Blocked by: 01, 02, 05
 
 ## Question
