@@ -150,7 +150,7 @@ class Publication(unittest.TestCase):
         self.assertEqual(load_local(self.repo,first,max_file_bytes=2097152)[0],
                          {r['app']:r['repository_id'] for r in old_rows})
 
-    def test_current_workflow_collection_publish_and_failure_preserves_previous(self):
+    def test_current_workflow_batch_publish_and_failure_preserves_source_facts(self):
         rows, sources = host_catalog.configuration()
         previous = {}
         evidence = self.path/'responses'; evidence.mkdir()
@@ -165,18 +165,28 @@ class Publication(unittest.TestCase):
             schema=schema_url('a'*40),max_file_bytes=2097152,expected_parent=None)
         report = self.path/'report.json'
         args = ['host_catalog.py','--repo',str(self.repo),'--parent',first,
-                '--evidence',str(evidence),'--report',str(report)]
+                '--evidence',str(evidence),'--report',str(report),'--batch-size','52']
         with patch.object(sys,'argv',args), patch('urllib.request.urlopen',side_effect=AssertionError('network')), redirect_stdout(io.StringIO()):
             host_catalog.main()
         second = self.tip()
         self.assertEqual(json.loads(report.read_text())['pin'],second)
         apps, observed = load_local(self.repo,second,max_file_bytes=2097152)
         self.assertEqual(len(apps),len(rows));self.assertEqual(set(observed),set(sources))
-        (evidence/(next(iter(sources))+'-releases.json')).write_text('[invalid')
+        # Batch mode isolates a malformed upstream source while preserving that
+        # source's observations, rather than failing the entire publication.
+        broken = str(json.loads(report.read_text())['sources'][0]['repository_id'])
+        before = observed[broken]
+        (evidence/(broken+'-releases.json')).write_text('[invalid')
         args[args.index('--parent')+1]=second
-        with patch.object(sys,'argv',args), redirect_stdout(io.StringIO()), self.assertRaises(ValueError):
+        with patch.object(sys,'argv',args), redirect_stdout(io.StringIO()):
             host_catalog.main()
-        self.assertEqual(self.tip(),second)
+        after = load_local(self.repo,self.tip(),max_file_bytes=2097152)[1][broken]
+        self.assertTrue(any(row['repository_id']==int(broken) and row['status']=='failed'
+                            for row in json.loads(report.read_text())['sources']))
+        # Oldest-attempt rotation may leave this source untouched in the next
+        # run; either way, no unsuccessful attempt changes release observations.
+        self.assertEqual(after['releases'],before['releases'])
+        self.assertEqual(after['observed_at'],before['observed_at'])
         workflow = (host_catalog.ROOT/'.github/workflows/catalog.yml').read_text()
         self.assertIn('tools/catalog-collector/host_catalog.py',workflow)
         self.assertNotIn('--bootstrap',workflow)

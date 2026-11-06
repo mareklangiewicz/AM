@@ -1,7 +1,7 @@
 # Maintained YAML catalog tools
 
 Current contract: [operating policy](../../docs/catalog-operating-policy.md).
-The daily `.github/workflows/catalog.yml` publication runs `host_catalog.py`.
+The `.github/workflows/catalog.yml` publication runs `host_catalog.py`.
 Collection enrollment is `collection-recipes.txt`, resolved through literal recipe
 declarations, plus `collection-apps.json` for catalog-only identities; declaring a
 recipe does not enroll it for collection. Catalog-only rows contain exactly
@@ -11,14 +11,42 @@ payload inspection or policy compilation. They do not claim AM installation supp
 App identities must be unique across both lists; sources are deduplicated by
 numeric ID and conflicting names refuse. When a recipe is migrated, move its
 enrollment to `collection-recipes.txt` in the same change, preserving its identity.
-The current 52-source and transport/publication bounds still apply to the union.
+The union is limited to 128 repositories. Each scheduled run attempts at most
+52, oldest collection attempt first (never-attempted sources first, numeric ID
+ties). The schedule is every three hours, nominally covering this scope in three
+runs. Transfer/time budgets or source failures can reduce successful coverage;
+the report lists actual attempts and pending app identities. Selected-release
+freshness remains 48 hours, independent of these scheduling attempts.
+
+Batch collection preserves all untouched documents and their schema/observation
+times. An upstream failure records a failed attempt without changing previous
+release facts or last-success metadata. Auth/rate failures stop further requests
+in that run. A failed partial HTTP read conservatively charges its full remaining
+read allowance, so repeated failures cannot evade the shared byte budget.
+A new app enters apps.yaml only after successful source collection;
+an enrolled identity is not a claim of successful publication. Removing retained
+sources in batch mode refuses. Source enrollment is still an explicit reviewed
+file change, never automatic URL discovery.
+
+The 16 MiB response, 96 MiB per-run transport, 300-second cooperative acquisition,
+2 MiB document, 1,024-file read and Git-history bounds remain. This 128-source
+step is measured; whole-tree validation has not been qualified for thousands.
 
 ## Entry points
 
-- `host_catalog.py`: collect one release-list page per enrolled repository,
+- `host_catalog.py`: collect one release-list page per attempted repository,
   normalize/retain facts, validate YAML, and publish to a remote-free local Git
   repository at an exact expected parent. The workflow pushes that candidate with
-  an exact lease. `--evidence DIRECTORY` reads saved responses instead of HTTP.
+  an exact lease. `--batch-size 52` selects bounded collection;
+  `--evidence DIRECTORY` reads saved responses instead of HTTP. Without a batch
+  size, strict all-or-nothing collection remains available for at most 52 sources.
+- `catalog_sources.py scan --out FILE`: discover explicit source bindings from
+  literal catalog aliases and whole pinned upstream-template instances; do not
+  treat arbitrary GitHub links as release sources. `verify --scan FILE --out FILE`
+  proposes public numeric identities after rechecking source hashes/bindings and
+  a release probe. It checkpoints local evidence and never edits enrollment.
+  Review redirects/unsupported cases separately. Set GH_TOKEN for authenticated
+  public reads; no visitor credentials, new secret or backend is required.
 - `recipe_policy_source.py`: regenerate recipe declaration data in
   `modules/catalog-yaml-policy.am`; selector logic remains maintained shell/awk.
 - `recipe_refresh.py`: preview or explicitly apply one installed recipe/source

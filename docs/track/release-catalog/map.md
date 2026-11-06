@@ -9,11 +9,18 @@ implements independent catalog-only enrollment and publishes Ageha Editor:
 [Successful run 42237434195](https://github.com/mareklangiewicz/AM/actions/runs/42237434195)
 publishes `bcae3298f5ffa1461a74ecab42df1a6c41d68492`; exact-pin map/all source
 readback verifies. No installed-host or recipe migration change;
-[138](issues/138-scale-github-catalog-coverage.md) tracks verified broad discovery
-and collection scaling. Historical counts below describe their recorded rollout;
+[138 claimed](issues/138-scale-github-catalog-coverage.md) prepares the first
+bounded expansion locally: **131 apps / 128 sources**, 77 verified additions,
+three fresh successful batches, all previous identities preserved. A 52-request
+oldest-attempt batch and three-hour cron replace one-shot collection in source;
+broader coverage is still in progress. [Report](research/bounded-catalog-expansion.md).
+Historical counts below describe their recorded rollout;
 the latest publication is above. Installed host remains unchanged.
-[139](issues/139-migrate-next-simple-recipes.md) keeps straightforward recipe
-migrations on their own verified queue, starting with five deferred candidates.
+[139 resolved](issues/139-migrate-next-simple-recipes.md) prepares four straightforward
+source migrations; Agent Skills remains catalog-only after an icon-link exclusion.
+146 collector / 44 reconstruction regressions and five final batch checks pass.
+[140](issues/140-publish-bounded-catalog-expansion.md) is the concrete push/publication
+package, pending Marek's call. Published scope remains 54/52; installed host is unchanged.
 
 ## Maintained upstream recipe reconstruction
 

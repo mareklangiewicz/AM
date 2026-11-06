@@ -1,19 +1,24 @@
 """Single-user YAML catalog: bounded release-list collection and retained facts.
 
-Collection combines reviewed recipe declarations and catalog-only identities. One page of 100 releases per source, with
-48-hour selected-record freshness enforced by clients. Failures preserve the
-previous published tree. No latest endpoint, consumer version choice or pruning.
+Collection combines reviewed recipe declarations and catalog-only identities.
+One page of 100 releases per attempted source; clients enforce 48-hour selected
+record freshness. Batches preserve untouched facts and isolate source failures.
+No latest endpoint, consumer version choice or pruning.
 """
 import argparse
 from datetime import datetime, timezone
 import hashlib
+import http.client
 import json
 import os
 import re
 from pathlib import Path
 import subprocess
 import time
+import urllib.error
 import urllib.request
+
+import yaml
 
 from bounded import normalize, unique_object
 from retention import refresh
@@ -27,6 +32,15 @@ ROOT = Path(__file__).resolve().parents[2]
 FILE_CAP = 2097152
 RESPONSE_CAP = 16 * 1024 * 1024
 TOTAL_CAP = 96 * 1024 * 1024
+SOURCE_CAP = 128
+REQUEST_CAP = 52
+
+
+class TransferFailure(OSError):
+    """Reserve the complete read allowance when a transfer ends mid-response."""
+    def __init__(self, budget_bytes):
+        super().__init__('release transfer failed')
+        self.budget_bytes = budget_bytes
 
 
 def utc():
@@ -64,7 +78,7 @@ def configuration():
         if rid in sources and sources[rid] != row['repository']:
             raise ValueError('conflicting repository identity')
         sources[rid] = row['repository']
-    if len(sources) > 52 or len({r['app'] for r in rows}) != len(rows):
+    if len(sources) > SOURCE_CAP or len({r['app'] for r in rows}) != len(rows):
         raise ValueError('manifest scope')
     return rows, sources
 
@@ -76,58 +90,127 @@ def installation_configuration():
     return rows, {str(row['repository_id']): row['repository'] for row in rows}
 
 
-def collect(revision, previous, evidence=None):
+def _response(rid, evidence, allowance):
+    """Bound response bytes at the transport seam; return inert text and receipt."""
+    if evidence:
+        path = Path(evidence)/(rid+'-releases.json')
+        with path.open('rb') as stream:
+            body = stream.read(allowance+1)
+        received = (Path(evidence)/(rid+'-receipt.txt')).read_text().strip()
+        return body, received
+    url = f'https://api.github.com/repositories/{rid}/releases?per_page=100&page=1'
+    headers = {'Accept':'application/vnd.github+json', 'User-Agent':'AM-YAML-catalog',
+               'X-GitHub-Api-Version':'2022-11-28'}
+    token = os.environ.get('GH_TOKEN')
+    if token:
+        headers['Authorization'] = 'Bearer '+token
+    request = urllib.request.Request(url, headers=headers)
+    with urllib.request.urlopen(request, timeout=30) as response:
+        if response.status != 200 or response.url != url:
+            raise ValueError('release response identity')
+        try:
+            body = response.read(allowance+1)
+        except (OSError, http.client.HTTPException):
+            # Partial bytes may be hidden inside a failed HTTP read. Charging
+            # its full allowance prevents isolated failures bypassing the run
+            # budget. No upstream diagnostic/header is retained in this error.
+            raise TransferFailure(allowance+1) from None
+    return body, utc()
+
+
+def collect(revision, previous, evidence=None, *, batch_size=None):
+    """Refresh all (strict) or a bounded oldest-attempt-first batch.
+
+    Strict mode retains the existing all-or-nothing command. Batch mode reports
+    failures, preserves old observations and publishes only successfully observed
+    new app identities. Unattempted documents retain their original schema too.
+    """
     rows, sources = configuration()
+    if batch_size is not None and (type(batch_size) is not int or not 1 <= batch_size <= REQUEST_CAP):
+        raise ValueError('batch size')
+    if batch_size is None and len(sources) > REQUEST_CAP:
+        raise ValueError('use bounded batch collection')
+    if batch_size is not None and not set(previous) <= set(sources):
+        raise ValueError('batch would discard retained sources')
+    for rid, before in previous.items():
+        if rid in sources and (before['repository_id'] != int(rid) or
+                               before['repository'].lower() != sources[rid].lower()):
+            raise ValueError('retained repository identity mismatch')
+    selected = list(sources)
+    if batch_size is not None:
+        selected.sort(key=lambda rid: (previous.get(rid, {}).get('collection', {}).get('attempted_at', ''), int(rid)))
+        selected = selected[:batch_size]
     schema = schema_url(revision)
-    repositories = {}
+    repositories = dict(previous) if batch_size is not None else {}
     used = 0
     report = []
     started = time.monotonic()
-    for rid, name in sources.items():
-        if time.monotonic()-started > 300:
+    for rid in selected:
+        name = sources[rid]
+        if time.monotonic()-started > 300 or used >= TOTAL_CAP:
+            if batch_size is not None:
+                break
             raise ValueError('collection elapsed budget')
         attempted = utc()
         before = previous.get(rid, dict(format=2, schema=schema,
             repository_id=int(rid), repository=name))
-        if evidence:
-            path = Path(evidence)/(rid+'-releases.json')
-            if path.stat().st_size > RESPONSE_CAP:
-                raise ValueError('response byte budget')
-            body = path.read_bytes()
-            received = (Path(evidence)/(rid+'-receipt.txt')).read_text().strip()
-            attempted = received
-        else:
-            url = f'https://api.github.com/repositories/{rid}/releases?per_page=100&page=1'
-            headers = {'Accept':'application/vnd.github+json', 'User-Agent':'AM-YAML-catalog',
-                       'X-GitHub-Api-Version':'2022-11-28'}
-            token = os.environ.get('GH_TOKEN')
-            if token:
-                headers['Authorization'] = 'Bearer '+token
-            request = urllib.request.Request(url, headers=headers)
-            with urllib.request.urlopen(request, timeout=30) as response:
-                if response.status != 200 or response.url != url:
-                    raise ValueError('release response identity')
-                body = response.read(RESPONSE_CAP+1)
-            received = utc()
-        used += len(body)
-        if len(body)>RESPONSE_CAP or used>TOTAL_CAP:
-            raise ValueError('collection byte budget')
-        raw = json.loads(body, object_pairs_hook=unique_object)
-        records = normalize(raw, 100)
-        # A full page may have more history. Never claim EOF based on the cap.
-        response = dict(received_at=received, releases=records, has_next=len(raw)==100,
-                        bytes=len(body), seconds=0)
-        result = refresh(before, [response], attempted_at=attempted,
-            page_size=100, page_limit=1, max_catalog_bytes=FILE_CAP)
-        if result['collection']['status'] != 'ok':
-            raise ValueError('source refused: '+rid)
+        stop = False
+        reason = 'transport'
+        try:
+            allowance = min(RESPONSE_CAP, TOTAL_CAP-used)
+            body, received = _response(rid, evidence, allowance)
+            used += len(body)
+            if evidence:
+                attempted = received
+            reason = 'collection_limit'
+            if len(body) > allowance:
+                raise ValueError('collection byte budget')
+            reason = 'invalid_response'
+            raw = json.loads(body, object_pairs_hook=unique_object)
+            records = normalize(raw, 100)
+            response = dict(received_at=received, releases=records, has_next=len(raw)==100,
+                            bytes=len(body), seconds=0)
+            result = refresh(before, [response], attempted_at=attempted,
+                page_size=100, page_limit=1, max_catalog_bytes=FILE_CAP)
+            reason = result['collection'].get('reason', 'invalid_response')
+            if result['collection']['status'] != 'ok':
+                raise ValueError('source refused: '+rid)
+        except (OSError, http.client.HTTPException, ValueError, KeyError, TypeError) as error:
+            if batch_size is None:
+                raise
+            # Do not repeat requests after rate/auth failures. Diagnostics never
+            # interpolate exceptions, request headers or credential-bearing URLs.
+            if isinstance(error, urllib.error.HTTPError):
+                stop = error.code in (401, 403, 429)
+                reason = 'transport'
+                error.close()
+            if isinstance(error, TransferFailure):
+                used += error.budget_bytes
+            result = refresh(before, [dict(error=reason, releases={}, bytes=0,
+                seconds=0, received_at=attempted, has_next=False)],
+                attempted_at=attempted, page_size=100, page_limit=1,
+                max_catalog_bytes=FILE_CAP)
+            repositories[rid] = result
+            failure = dict(repository_id=int(rid), repository=name, status='failed', reason=reason)
+            if isinstance(error, urllib.error.HTTPError):
+                failure['http_status'] = error.code
+            if isinstance(error, TransferFailure):
+                failure['response_budget_charge'] = error.budget_bytes
+            report.append(failure)
+            status = ' HTTP '+str(error.code) if isinstance(error, urllib.error.HTTPError) else ''
+            print(name+': failed ('+reason+status+')', flush=True)
+            if stop:
+                break
+            continue
         result['schema'] = schema
         result['repository'] = name
         repositories[rid] = result
-        report.append(dict(repository_id=int(rid), repository=name, observed_at=received,
+        report.append(dict(repository_id=int(rid), repository=name, status='ok', observed_at=received,
                            response_sha256=hashlib.sha256(body).hexdigest()))
         print(name+': '+str(len(records))+' releases', flush=True)
-    apps = {row['app']:row['repository_id'] for row in rows}
+    apps = {row['app']:row['repository_id'] for row in rows
+            if str(row['repository_id']) in repositories and
+            (batch_size is None or 'last_success' in repositories[str(row['repository_id'])])}
     tree = candidate_tree(apps, repositories, schema=schema, max_file_bytes=FILE_CAP)
     return tree, report
 
@@ -138,12 +221,21 @@ def main():
     parser.add_argument('--parent', required=True, help='Existing release-catalog commit')
     parser.add_argument('--evidence', type=Path, help='Saved live responses; no requests')
     parser.add_argument('--report', required=True, type=Path)
+    parser.add_argument('--batch-size', type=int, help='Oldest-attempt-first subset, at most 52 requests')
     args = parser.parse_args()
     revision = subprocess.check_output(['git','-C',str(ROOT),'rev-parse','HEAD'],text=True).strip()
     previous = load_local(args.repo,args.parent,max_file_bytes=FILE_CAP)[1]
-    tree, report = collect(revision, previous, args.evidence)
+    tree, report = collect(revision, previous, args.evidence, batch_size=args.batch_size)
     pin = publish_tree(args.repo, tree, args.parent)
-    args.report.write_text(json.dumps(dict(pin=pin,parent=args.parent,source=revision,sources=report),indent=2)+'\n')
+    rows, sources = configuration()
+    apps = yaml.safe_load(tree['apps.yaml'])['apps']
+    pending = sorted({row['app'] for row in rows}-set(apps))
+    args.report.write_text(json.dumps(dict(pin=pin,parent=args.parent,source=revision,
+        batch_size=args.batch_size,enrolled_apps=len(rows),enrolled_sources=len(sources),
+        published_apps=len(apps),pending_apps=pending,sources=report),indent=2)+'\n')
+    failures = sum(row['status']=='failed' for row in report)
+    print(f'Catalog apps: {len(apps)} / {len(rows)} enrolled; {len(report)} sources attempted; '
+          f'{failures} failed; {len(pending)} apps pending', flush=True)
     print('Catalog commit: '+pin)
 
 

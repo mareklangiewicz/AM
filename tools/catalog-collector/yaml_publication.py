@@ -103,13 +103,17 @@ def tree_documents(tree, limits):
         if path == 'apps.yaml':
             apps = obj['apps']
             schema = obj['schema']
+            canonical = dict(format=2, schema=schema, apps=dict(sorted(apps.items())))
         else:
             rid = path.split('/')[1][:-5]
             require(str(obj['repository_id']) == rid, 'yaml_path_identity')
             repositories[rid] = obj
-    # Check complete cross-file references and canonical bytes per document.
-    require(candidate_tree(apps,repositories,schema=schema,
-            max_file_bytes=limits['max_file_bytes']) == tree, 'noncanonical_yaml_candidate')
+            canonical = obj
+        # The original bytes have already passed the distributed reader above.
+        # Compare canonical encoding directly rather than validating every blob
+        # a second time through candidate_tree on each publication read.
+        require(document(canonical).encode('utf-8') == body, 'noncanonical_yaml_candidate')
+    check_references(apps, repositories)
     return apps, repositories
 
 

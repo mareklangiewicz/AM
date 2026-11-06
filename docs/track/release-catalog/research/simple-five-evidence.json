@@ -1,0 +1,656 @@
+{
+  "source_before": "f657f4d7876f0164b6705795527f5a33738d0f73",
+  "observed_at": "2026-11-06T19:59:03.905751+00:00",
+  "evidence_archive": "simple-five-evidence.tar.gz",
+  "evidence_archive_sha256": "0ff547123ee9ebaaa6f2e8febf135ecd0b53c8b0ab88101937ac655c7f7f6cbb",
+  "converted": [
+    "agent-smith",
+    "agent-switchboard",
+    "agent-teams-ai",
+    "agent-toolkit"
+  ],
+  "candidates": [
+    {
+      "app": "agent-skills",
+      "requested_repository": "chrlsio/agent-skills",
+      "repository": "chrlsio/agent-skills",
+      "repository_id": 1184157221,
+      "observed_at": "2026-11-06T19:53:34.964701+00:00",
+      "repository_sha256": "a7bfeec3e7b9b2f8fde918d4cd246f06dc2f68d52aab4bb23d978ecb7e620035",
+      "releases_sha256": "bd3a488505c69c24940049e060efb092f3f7c6cba12d672db5cb3c7d186fb4ab",
+      "release_count": 7,
+      "status": "selected",
+      "provenance": {
+        "recipe": "programs/x86_64/agent-skills",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "a4f25b4d40ff1660dbad92028ee870f3a09ffc9d837587efb82148b168461cb7",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agent-skills",
+              "chrlsio/agent-skills",
+              "curl -Ls https://api.github.com/repos/chrlsio/agent-skills/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "agent-skills",
+              "chrlsio/agent-skills",
+              "curl -Ls https://api.github.com/repos/chrlsio/agent-skills/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "old_selected_url": "https://github.com/chrlsio/agent-skills/releases/download/v0.1.8/AgentSkills_0.1.8_amd64.AppImage",
+      "selected_release": 306450511,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/chrlsio/agent-skills/releases/assets/391425017",
+        "id": 391425017,
+        "node_id": "RA_kwDORpTOJc4XVKv5",
+        "name": "AgentSkills_0.1.8_amd64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/zip",
+        "state": "uploaded",
+        "size": 88885752,
+        "digest": "sha256:637d94b49181a89a08d8321d188c1cf3208974d55e40f01335680ab86a4561b5",
+        "download_count": 52,
+        "created_at": "2026-04-08T08:18:09Z",
+        "updated_at": "2026-04-08T08:18:12Z",
+        "browser_download_url": "https://github.com/chrlsio/agent-skills/releases/download/v0.1.8/AgentSkills_0.1.8_amd64.AppImage"
+      },
+      "prerelease": false,
+      "pattern": "^AgentSkills_[0-9]+([.][0-9]+)*_amd64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "agent-smith",
+      "requested_repository": "ghostwrk/agent-smith",
+      "repository": "GhostWrk/Agent-Smith",
+      "repository_id": 1279766252,
+      "observed_at": "2026-11-06T19:53:36.032730+00:00",
+      "repository_sha256": "0ffd7daa9c3ae8f570c0ce6fc68430156262f968d52684642732708f8feab32b",
+      "releases_sha256": "47a0e6f05a2d66a945368e6b67ee787fca6e3c17cbcfdb77aa14feb33737d900",
+      "release_count": 1,
+      "status": "selected",
+      "provenance": {
+        "recipe": "programs/x86_64/agent-smith",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "518fd8d9245b68b7f222b004e5a7bac477c59c3cd52c358239035842951c1def",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agent-smith",
+              "ghostwrk/agent-smith",
+              "curl -Ls https://api.github.com/repos/ghostwrk/agent-smith/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "agent-smith",
+              "ghostwrk/agent-smith",
+              "curl -Ls https://api.github.com/repos/ghostwrk/agent-smith/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "old_selected_url": "https://github.com/GhostWrk/Agent-Smith/releases/download/v46.11.0/agent-smith-47.3.0.AppImage",
+      "selected_release": 345238040,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/GhostWrk/Agent-Smith/releases/assets/467365804",
+        "id": 467365804,
+        "node_id": "RA_kwDOTEeu7M4b22-s",
+        "name": "agent-smith-47.3.0.AppImage",
+        "label": null,
+        "uploader": {
+          "login": "GhostWrk",
+          "id": 212288559,
+          "node_id": "U_kgDODKdELw",
+          "avatar_url": "https://avatars.githubusercontent.com/u/212288559?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/GhostWrk",
+          "html_url": "https://github.com/GhostWrk",
+          "followers_url": "https://api.github.com/users/GhostWrk/followers",
+          "following_url": "https://api.github.com/users/GhostWrk/following{/other_user}",
+          "gists_url": "https://api.github.com/users/GhostWrk/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/GhostWrk/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/GhostWrk/subscriptions",
+          "organizations_url": "https://api.github.com/users/GhostWrk/orgs",
+          "repos_url": "https://api.github.com/users/GhostWrk/repos",
+          "events_url": "https://api.github.com/users/GhostWrk/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/GhostWrk/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 143286756,
+        "digest": "sha256:2ca9da131c52486bb53b1b13636ca7d4ea6189aa9288beb7ccf4aadf5bddb27f",
+        "download_count": 20,
+        "created_at": "2026-07-05T19:04:25Z",
+        "updated_at": "2026-07-05T19:04:53Z",
+        "browser_download_url": "https://github.com/GhostWrk/Agent-Smith/releases/download/v46.11.0/agent-smith-47.3.0.AppImage"
+      },
+      "prerelease": false,
+      "pattern": "^agent-smith-[0-9]+([.][0-9]+)*[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "agent-switchboard",
+      "requested_repository": "y4nkk/agent-switchboard",
+      "repository": "y4Nkk/agent-switchboard",
+      "repository_id": 1347012905,
+      "observed_at": "2026-11-06T19:53:37.993607+00:00",
+      "repository_sha256": "7c1764254348b98f20baad04ebc54356c06140b4d8decf267e48678e803c7774",
+      "releases_sha256": "6cda00ef82dfc8c9d6be5b48323c9851ec7f65457e329d0b6fb79e52ad14b547",
+      "release_count": 25,
+      "status": "selected",
+      "provenance": {
+        "recipe": "programs/x86_64/agent-switchboard",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "03a8dcb3d3f092980126b8ac1459660a33ecd4b4cabc99e67018d6bc27e2cb03",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agent-switchboard",
+              "y4nkk/agent-switchboard",
+              "curl -Ls https://api.github.com/repos/y4nkk/agent-switchboard/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "agent-switchboard",
+              "y4nkk/agent-switchboard",
+              "curl -Ls https://api.github.com/repos/y4nkk/agent-switchboard/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "old_selected_url": "https://github.com/y4Nkk/agent-switchboard/releases/download/v0.3.14/agent-switchboard_0.3.14_linux-x86_64.AppImage",
+      "selected_release": 433724644,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/y4Nkk/agent-switchboard/releases/assets/708927296",
+        "id": 708927296,
+        "node_id": "RA_kwDOUEnJKc4qQV9A",
+        "name": "agent-switchboard_0.3.14_linux-x86_64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/vnd.appimage",
+        "state": "uploaded",
+        "size": 106158584,
+        "digest": "sha256:a85b0828319b62907d97ded5308ae1f442691adab5e5408b247f12e887008377",
+        "download_count": 1,
+        "created_at": "2026-11-04T09:14:00Z",
+        "updated_at": "2026-11-04T09:14:06Z",
+        "browser_download_url": "https://github.com/y4Nkk/agent-switchboard/releases/download/v0.3.14/agent-switchboard_0.3.14_linux-x86_64.AppImage"
+      },
+      "prerelease": false,
+      "pattern": "^agent-switchboard_[0-9]+([.][0-9]+)*_linux-x86_64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "agent-teams-ai",
+      "requested_repository": "777genius/agent-teams-ai",
+      "repository": "777genius/agent-teams-ai",
+      "repository_id": 1163183284,
+      "observed_at": "2026-11-06T19:53:40.433082+00:00",
+      "repository_sha256": "80c439c5715f9084760ee063893dcec5cb6f2614af528b515d40068f28789b61",
+      "releases_sha256": "3459464ab33ec93a1b4fe87e1a95914287bb7fbb69f1f204ffd6255a3eb977ca",
+      "release_count": 34,
+      "status": "selected",
+      "provenance": {
+        "recipe": "programs/x86_64/agent-teams-ai",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "44ceeede96ccb9e4570887c5b0ca81789a732654c67ab9b1f9fdc49ca6218056",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agent-teams-ai",
+              "777genius/agent-teams-ai",
+              "curl -Ls https://api.github.com/repos/777genius/agent-teams-ai/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "agent-teams-ai",
+              "777genius/agent-teams-ai",
+              "curl -Ls https://api.github.com/repos/777genius/agent-teams-ai/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "old_selected_url": "https://github.com/777genius/agent-teams-ai/releases/download/v2.18.6/Agent.Teams.AI-2.18.6.AppImage",
+      "selected_release": 434615982,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/777genius/agent-teams-ai/releases/assets/711578314",
+        "id": 711578314,
+        "node_id": "RA_kwDORVTEtM4qadLK",
+        "name": "Agent.Teams.AI-2.18.6.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/vnd.appimage",
+        "state": "uploaded",
+        "size": 401896934,
+        "digest": "sha256:06a2a00b7b25bf59db3d8f8fca3c22973910513c2a75a1d70e91e941cac58012",
+        "download_count": 171,
+        "created_at": "2026-11-05T01:16:34Z",
+        "updated_at": "2026-11-05T01:16:52Z",
+        "browser_download_url": "https://github.com/777genius/agent-teams-ai/releases/download/v2.18.6/Agent.Teams.AI-2.18.6.AppImage"
+      },
+      "prerelease": false,
+      "pattern": "^Agent[.]Teams[.]AI-[0-9]+([.][0-9]+)*[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "agent-toolkit",
+      "requested_repository": "ulises-jeremias/agent-toolkit",
+      "repository": "ulises-jeremias/agent-toolkit",
+      "repository_id": 1322501176,
+      "observed_at": "2026-11-06T19:53:42.656642+00:00",
+      "repository_sha256": "8965c3cbce8f4f549c3f448c16cff9d88da4bc29e7729033dba0a3b6bdea7810",
+      "releases_sha256": "44e9a7fd4d1b7673df18c83dcf1dbbd79e7433aac00e946ce7c393b03f3c387a",
+      "release_count": 84,
+      "status": "selected",
+      "provenance": {
+        "recipe": "programs/x86_64/agent-toolkit",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "422cd9c94d5e725718610867f5784d7d2811a305f209123b62ee47a13fccf195",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agent-toolkit",
+              "ulises-jeremias/agent-toolkit",
+              "curl -Ls https://api.github.com/repos/ulises-jeremias/agent-toolkit/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "agent-toolkit",
+              "ulises-jeremias/agent-toolkit",
+              "curl -Ls https://api.github.com/repos/ulises-jeremias/agent-toolkit/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "old_selected_url": "https://github.com/ulises-jeremias/agent-toolkit/releases/download/v1.48.0/agent-toolkit-desktop-1.48.0-linux-x86_64.AppImage",
+      "selected_release": 423252861,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/ulises-jeremias/agent-toolkit/releases/assets/674550702",
+        "id": 674550702,
+        "node_id": "RA_kwDOTtPEOM4oNNOu",
+        "name": "agent-toolkit-desktop-1.48.0-linux-x86_64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/vnd.appimage",
+        "state": "uploaded",
+        "size": 141739556,
+        "digest": "sha256:c852a47e437ea65cabb2cda8528921ed028147ab107c85437f5c84f1ce4405ce",
+        "download_count": 3,
+        "created_at": "2026-10-25T08:51:55Z",
+        "updated_at": "2026-10-25T08:52:03Z",
+        "browser_download_url": "https://github.com/ulises-jeremias/agent-toolkit/releases/download/v1.48.0/agent-toolkit-desktop-1.48.0-linux-x86_64.AppImage"
+      },
+      "prerelease": false,
+      "pattern": "^agent-toolkit-desktop-[0-9]+([.][0-9]+)*-linux-x86_64[.]AppImage$",
+      "strip_no_sandbox": true
+    }
+  ],
+  "exclusions": [
+    {
+      "app": "agent-skills",
+      "reasons": [
+        "unsafe/unsupported metadata link"
+      ]
+    }
+  ],
+  "manifest": {
+    "agent-skills/listing.txt": {
+      "bytes": 38957,
+      "sha256": "0f28775433e52fabd2d9b494fcdbb7dc8e4bda35e206adedddd3aa139f5b7001"
+    },
+    "agent-skills/payload-receipt.json": {
+      "bytes": 465,
+      "sha256": "1688294c36ee6898d925f1086045f77937c9d8e9571b9371ec14531e0654fd88"
+    },
+    "agent-skills/policy.json": {
+      "bytes": 290,
+      "sha256": "3f0efc2598498e1f28e8ba294475362eb13301975b9df7d615a00231f10b1727"
+    },
+    "agent-skills/releases.json": {
+      "bytes": 107490,
+      "sha256": "bd3a488505c69c24940049e060efb092f3f7c6cba12d672db5cb3c7d186fb4ab"
+    },
+    "agent-skills/repository.json": {
+      "bytes": 5602,
+      "sha256": "a7bfeec3e7b9b2f8fde918d4cd246f06dc2f68d52aab4bb23d978ecb7e620035"
+    },
+    "agent-skills/static.json": {
+      "bytes": 274,
+      "sha256": "258fed491864ea30dc39ab9a7736792eff16effc44712aea3e71d5c13175fc4f"
+    },
+    "agent-skills/superblock.txt": {
+      "bytes": 597,
+      "sha256": "fb3fec6ecf3440af1304ec27d36ce76232e415ec1c0d12279b4e71fed26af599"
+    },
+    "agent-smith/extraction.txt": {
+      "bytes": 199,
+      "sha256": "787baba2c8bed54fb407aa0ee7a0a58f5f7ab7144a41487b1db3ec75af5e8d50"
+    },
+    "agent-smith/listing.txt": {
+      "bytes": 10665,
+      "sha256": "6e4bd317f26a48af01558a7ebdcd8895ddab6a10c9b052ff7665ce880ecf90b9"
+    },
+    "agent-smith/metadata/.DirIcon": {
+      "symlink": "usr/share/icons/hicolor/1024x1024/apps/agent-smith.png"
+    },
+    "agent-smith/metadata/AppRun": {
+      "bytes": 3486,
+      "sha256": "db0389311c7fbe7e56bba61e3b56bfc58f980a48446123c3bcd1b8ff05931f2e"
+    },
+    "agent-smith/metadata/agent-smith.desktop": {
+      "bytes": 309,
+      "sha256": "f838e1c824b2ebce62868553387368dd22a311093eaf2598f9a2db6bca95eb2e"
+    },
+    "agent-smith/metadata/usr/share/icons/hicolor/1024x1024/apps/agent-smith.png": {
+      "bytes": 939119,
+      "sha256": "9af2d2635ae40c5a56a1d7f019e7e81047d475d7634bae56cbc96dffec160439"
+    },
+    "agent-smith/payload-receipt.json": {
+      "bytes": 462,
+      "sha256": "ef83d3fe779df5c9ca9fd7087d4a560c156c62e7593a34f7a375a434787e366f"
+    },
+    "agent-smith/policy.json": {
+      "bytes": 284,
+      "sha256": "cc49fabb0cefa130ce4b99c7adbc7df079b31e9b59528013db1ef1f8bd805fbc"
+    },
+    "agent-smith/releases.json": {
+      "bytes": 5477,
+      "sha256": "47a0e6f05a2d66a945368e6b67ee787fca6e3c17cbcfdb77aa14feb33737d900"
+    },
+    "agent-smith/repository.json": {
+      "bytes": 5309,
+      "sha256": "0ffd7daa9c3ae8f570c0ce6fc68430156262f968d52684642732708f8feab32b"
+    },
+    "agent-smith/static.json": {
+      "bytes": 1463,
+      "sha256": "e7af56ad38cfc2c32bd6641cbd65ed3f110330b8cd3a76987e55a8a14e5546c1"
+    },
+    "agent-smith/superblock.txt": {
+      "bytes": 537,
+      "sha256": "1a05f9246e7140cc4b6a6a0cea8cff7f961b804dff781e77761950cb0b4c630f"
+    },
+    "agent-switchboard/extraction.txt": {
+      "bytes": 199,
+      "sha256": "0411bab0bea19a10fbcbcb6345329125c26b48c2da05b5379e74db2aed961ccd"
+    },
+    "agent-switchboard/listing.txt": {
+      "bytes": 40178,
+      "sha256": "a09faceaa4dec5e41e105ba3364301a018170cb35ae0d6b085241562cee443b2"
+    },
+    "agent-switchboard/metadata/.DirIcon": {
+      "symlink": "Agent Switchboard.png"
+    },
+    "agent-switchboard/metadata/Agent Switchboard.desktop": {
+      "symlink": "usr/share/applications/Agent Switchboard.desktop"
+    },
+    "agent-switchboard/metadata/Agent Switchboard.png": {
+      "bytes": 10752,
+      "sha256": "9978efadf4cf437b14742ef643dd23d6a337388bc5e5d2fddad4db556c4d9a1b"
+    },
+    "agent-switchboard/metadata/AppRun": {
+      "bytes": 274,
+      "sha256": "eb0b254ac0dae6543e6dd7cd02e1baf40a060de95b927313122d6b46323c00aa"
+    },
+    "agent-switchboard/metadata/usr/share/applications/Agent Switchboard.desktop": {
+      "bytes": 162,
+      "sha256": "b4240b587df5c1f31466fc78b510adea59603a6aea8680eaba587a16582060fe"
+    },
+    "agent-switchboard/payload-receipt.json": {
+      "bytes": 489,
+      "sha256": "704746d8c385710f69fe3255c2daec25978b84abb15957cd3c6208e1347f60b0"
+    },
+    "agent-switchboard/policy.json": {
+      "bytes": 326,
+      "sha256": "140c00ccfe2afdb8203a44611b2e1ed8609da403c0508639a5d5ee77998a464e"
+    },
+    "agent-switchboard/releases.json": {
+      "bytes": 617280,
+      "sha256": "6cda00ef82dfc8c9d6be5b48323c9851ec7f65457e329d0b6fb79e52ad14b547"
+    },
+    "agent-switchboard/repository.json": {
+      "bytes": 5886,
+      "sha256": "7c1764254348b98f20baad04ebc54356c06140b4d8decf267e48678e803c7774"
+    },
+    "agent-switchboard/static.json": {
+      "bytes": 1496,
+      "sha256": "c4a21d6ebc37533151fd4f1a090e4936fb88fb35bc1f334060d7d35e7bf1a1c6"
+    },
+    "agent-switchboard/superblock.txt": {
+      "bytes": 605,
+      "sha256": "cb3abf29ad75d7c9da36f08d057b40c4dbca86012f33b2c1bb4c371d76e1679f"
+    },
+    "agent-teams-ai/extraction.txt": {
+      "bytes": 198,
+      "sha256": "f32c6b42b88ff5d25a2f59ec84c8b4d46dee3d6a536521ff1fccc3780d4d530d"
+    },
+    "agent-teams-ai/listing.txt": {
+      "bytes": 171034,
+      "sha256": "73e4f693dc433c573ccccfda156752cfaac6e7747375476297c4924e3221d3f2"
+    },
+    "agent-teams-ai/metadata/.DirIcon": {
+      "symlink": "usr/share/icons/hicolor/1024x1024/apps/agent-teams-ai.png"
+    },
+    "agent-teams-ai/metadata/AppRun": {
+      "bytes": 3489,
+      "sha256": "91defd5819f1dc843be159873ec4a77c0b619949065569476d228be49a848727"
+    },
+    "agent-teams-ai/metadata/agent-teams-ai.desktop": {
+      "bytes": 297,
+      "sha256": "d842bdca0d4945ea539753698903578b0996ee05000f501afebc3fa7ffa3b156"
+    },
+    "agent-teams-ai/metadata/usr/share/icons/hicolor/1024x1024/apps/agent-teams-ai.png": {
+      "bytes": 85282,
+      "sha256": "d7b0b30be4913d8aac0a5295132cafab19a8bf8d98f47e551b3898313f33d97e"
+    },
+    "agent-teams-ai/payload-receipt.json": {
+      "bytes": 471,
+      "sha256": "0a252b6511c110523361f11524d6ab84b7e222ad09679fd82fa589d5f040018f"
+    },
+    "agent-teams-ai/policy.json": {
+      "bytes": 296,
+      "sha256": "cb146a381f599f5743cbb4da9e6c7bd3d8ddf63e0ea16c935817acf04c8a08da"
+    },
+    "agent-teams-ai/releases.json": {
+      "bytes": 2668512,
+      "sha256": "3459464ab33ec93a1b4fe87e1a95914287bb7fbb69f1f204ffd6255a3eb977ca"
+    },
+    "agent-teams-ai/repository.json": {
+      "bytes": 6188,
+      "sha256": "80c439c5715f9084760ee063893dcec5cb6f2614af528b515d40068f28789b61"
+    },
+    "agent-teams-ai/static.json": {
+      "bytes": 1473,
+      "sha256": "b64ac1c313302ab6a802deb6d825a690453ca4054a9dc3b9b07887ed6b880725"
+    },
+    "agent-teams-ai/superblock.txt": {
+      "bytes": 541,
+      "sha256": "e2cc2a7c596487fd85e62bd1873cde68374e43b7bace1b66728c8a554f706cbf"
+    },
+    "agent-toolkit/extraction.txt": {
+      "bytes": 198,
+      "sha256": "f32c6b42b88ff5d25a2f59ec84c8b4d46dee3d6a536521ff1fccc3780d4d530d"
+    },
+    "agent-toolkit/listing.txt": {
+      "bytes": 37411,
+      "sha256": "aead62da6f499dd3c1097f3b61953f792d4e7123aede944bb37cb1de4a233d22"
+    },
+    "agent-toolkit/metadata/.DirIcon": {
+      "symlink": "usr/share/icons/hicolor/512x512/apps/agent-toolkit-desktop.png"
+    },
+    "agent-toolkit/metadata/AppRun": {
+      "bytes": 3496,
+      "sha256": "9bb47b3ccf90433e3f525803e524a292678b8f3a4f2abedc39291e6b88b7176b"
+    },
+    "agent-toolkit/metadata/agent-toolkit-desktop.desktop": {
+      "bytes": 303,
+      "sha256": "007897d902b1dac1b0f1b5b9c486170c35e5a7a2a7554335a999aee744cbc838"
+    },
+    "agent-toolkit/metadata/usr/share/icons/hicolor/512x512/apps/agent-toolkit-desktop.png": {
+      "bytes": 1011,
+      "sha256": "26abccca6779136f129e7f363e7da0b97c91b1da3a2f0db91008c8bef2b294d4"
+    },
+    "agent-toolkit/payload-receipt.json": {
+      "bytes": 495,
+      "sha256": "ab604796da35ab058eaf67f973f38b792f11edf121bfc78ed919b797d7a2955c"
+    },
+    "agent-toolkit/policy.json": {
+      "bytes": 346,
+      "sha256": "b94f4b7e01422a6ba4d1767d16713d853a15486b42abcbc28997daa3aa608c8a"
+    },
+    "agent-toolkit/releases.json": {
+      "bytes": 2103641,
+      "sha256": "44e9a7fd4d1b7673df18c83dcf1dbbd79e7433aac00e946ce7c393b03f3c387a"
+    },
+    "agent-toolkit/repository.json": {
+      "bytes": 6164,
+      "sha256": "8965c3cbce8f4f549c3f448c16cff9d88da4bc29e7729033dba0a3b6bdea7810"
+    },
+    "agent-toolkit/static.json": {
+      "bytes": 1522,
+      "sha256": "a54a875935e402f42b23a0dc0b840856dc4cd27e29eef92aeaa1f908a1df6f11"
+    },
+    "agent-toolkit/superblock.txt": {
+      "bytes": 539,
+      "sha256": "b1867fd3764c14f7b853186f740156d2c0776b398453a0656a1aa28e49cf5589"
+    },
+    "scripts/metadata.json": {
+      "bytes": 9002,
+      "sha256": "a17d2a0454078ccd12cc556bd5a64b3cb9d559cb5f5a68a8e3690f4b293b4ed8"
+    },
+    "scripts/selection.json": {
+      "bytes": 20426,
+      "sha256": "a450b56b52a3450afdb7c6ca26aad188d38f0ebed0ac55dba8dde70ab8459f67"
+    },
+    "scripts/prepare.py": {
+      "bytes": 2817,
+      "sha256": "baca2280eea5dc85c1294ceb07053042513140bb81671f3afc3968e4266d6682"
+    },
+    "scripts/acquire.py": {
+      "bytes": 1966,
+      "sha256": "5e755f6d8ce943916e729474bdcf912cb362a61cdd9348de8c0ecfad9fed8daf"
+    },
+    "scripts/static_payload.py": {
+      "bytes": 4807,
+      "sha256": "c6677344550efa679dc8ce61f54cc3fe8c3f5caa72dab70cbb50637b5312f3b9"
+    },
+    "scripts/policies.py": {
+      "bytes": 2557,
+      "sha256": "d95bf2fa3b0ed5ed6bf7295c619124ce8d7b2c8529d0ac505eaa1b750407907e"
+    }
+  },
+  "total_verified_payload_bytes": 881967582,
+  "collection_identity_change": false,
+  "installed_host_changed": false,
+  "note": "Four reviewed recipe-source migrations. Agent Skills remains catalog-only; payloads were not executed."
+}

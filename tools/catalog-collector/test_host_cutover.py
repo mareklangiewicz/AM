@@ -23,7 +23,7 @@ NAMES = dict(zip(
      'zellij-x86_64-unknown-linux-musl.tar.gz','zmx-1.0-linux-x86_64.tar.gz','nvim-linux-x86_64.appimage',
      'nvim-linux-x86_64.appimage','Obsidian-1.0.AppImage','Sunshine_1.0_x86_64.AppImage']))
 NAMES.update({'20x':'20x-linux-x86_64.AppImage', '2fac':'2FAC_0.1.6_amd64.AppImage'})
-for receipt_name in ('large-batch-evidence.json', 'next-ten-evidence.json'):
+for receipt_name in ('large-batch-evidence.json', 'next-ten-evidence.json', 'simple-five-evidence.json'):
     batch = json.loads((ROOT/'docs/track/release-catalog/research'/receipt_name).read_text())
     NAMES.update({row['app']:row['selected_asset']['name'] for row in batch['candidates']
                   if row['app'] in batch['converted']})

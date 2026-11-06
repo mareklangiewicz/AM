@@ -92,7 +92,7 @@ class CatalogOnlyEnrollment(unittest.TestCase):
                     with self.subTest(bad=bad), self.assertRaises(ValueError):
                         host_catalog.configuration()
                 manifest.write_text(json.dumps([dict(app='extra-'+str(i),
-                    repository_id=i+1, repository='owner/repo-'+str(i)) for i in range(53)]))
+                    repository_id=i+1, repository='owner/repo-'+str(i)) for i in range(host_catalog.SOURCE_CAP+1)]))
                 with self.assertRaisesRegex(ValueError, 'manifest scope'):
                     host_catalog.configuration()
 

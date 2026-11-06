@@ -2,7 +2,7 @@ name: YAML release catalog
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 3 * * *'
+    - cron: '17 */3 * * *'
 permissions:
   contents: write
 concurrency:
@@ -33,6 +33,7 @@ jobs:
           parent=$(git rev-parse FETCH_HEAD)
           git push "$pub" "$parent:refs/heads/catalog"
           python3 tools/catalog-collector/host_catalog.py --repo "$pub" --parent "$parent" \
+            --batch-size 52 \
             --report "$RUNNER_TEMP/catalog-report.json"
           pin=$(git --git-dir="$pub" rev-parse refs/heads/catalog)
           git fetch "$pub" "$pin"

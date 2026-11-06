@@ -16,12 +16,22 @@ source identities/statuses verify.
 The installed host still has 21 apps. All 32 candidates added in the three recent
 batches remain uninstalled. See the [next-ten operational report](track/release-catalog/research/next-ten-publication-deployment.md).
 
+Pending [128-source expansion](track/release-catalog/issues/138-scale-github-catalog-coverage.md)
+prepares **131 apps / 128 repositories**, with 57 declared migrated recipes and
+74 catalog-only identities. Four new source recipes have passed static payload
+and inert lifecycle gates; Agent Skills remains catalog-only. The prepared
+workflow runs every three hours and attempts at most 52 oldest sources, keeping
+untouched observations and isolating source failures. This source preparation is
+not deployed yet; the published 54/52 baseline above and installed 21 apps remain.
+Its concrete publication plan is [140](track/release-catalog/issues/140-publish-bounded-catalog-expansion.md).
+
 Collection enrollment is independent of recipe declaration support. Recipe headers
 marked `# AM-RECIPE-DECLARATION 1` own customization and selection settings;
 adding a declaration does not enroll it for collection. The older 50-source design
 manifest and
 format-1 collector experiments are historical evidence, not active publication.
-The source cap remains 52; per-repository YAML remains capped at 2 MiB.
+The deployed source cap is 52; the pending source cap is 128. Per-repository YAML
+remains capped at 2 MiB in both.
 
 [137](track/release-catalog/issues/137-separate-catalog-enrollment-from-recipe-migration.md)
 adds independent catalog-only identities through `collection-apps.json`.
