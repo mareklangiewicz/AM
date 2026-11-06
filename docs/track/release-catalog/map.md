@@ -2,6 +2,14 @@
 
 ## Maintained upstream recipe reconstruction
 
+Current frontier: [126 open, unclaimed](issues/126-assess-three-candidate-runtime-behavior.md)
+assesses selection/install/updater behavior offline for 20x, 2fac and
+4nier-patrimonio before conversion. Tickets 124 and 125 are resolved and pushed
+through `19482e1a1` on `origin/main-marek`; no claim is in flight. The current
+inventory is 125's 6,517 instances / 687 parameter-review / 2,030 unmatched;
+123's earlier counts remain historical. No conversion, enrollment or deployment
+has been performed by this template-tool work.
+
 [125 resolved](issues/125-recognize-default-appimage-selector.md): exact
 AIA/default-keyword selector recognition is bound to inspected original hashes;
 archive-capable AppImage installer/updater parameters must agree. All 28 focused

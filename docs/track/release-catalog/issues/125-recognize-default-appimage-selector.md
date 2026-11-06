@@ -42,3 +42,11 @@ Runtime compatibility remains unassessed. Next bounded work is independent
 offline selection/install/updater assessment for 20x, 2fac and 4nier-patrimonio,
 using 124's gates before conversion. No recipe, runtime, collection, installed
 file, publication or yadm change was made.
+
+## Comments
+
+2026-11-06: Completed in `19482e1a1` and pushed to `origin/main-marek`
+with Marek's authorization. This push delivered source/documentation only; no
+live deployment or recipe conversion.
+The remaining runtime assessment is tracked as
+[126](126-assess-three-candidate-runtime-behavior.md), open and unclaimed.

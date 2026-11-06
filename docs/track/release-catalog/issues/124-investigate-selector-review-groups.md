@@ -25,3 +25,12 @@ pyuploadtool. No runtime equivalence, conversion, enrollment or live operation
 is claimed. Next implementation scope: recognize the exact generator-derived
 variant with repeated site/FUNCTION consistency and adversarial refusal tests,
 then assess the three-candidate runtime behavior independently.
+
+## Comments
+
+2026-11-06: Completed in `43289d02e` and pushed to `origin/main-marek`
+with Marek's authorization. This push delivered source/documentation only; no
+live deployment or recipe conversion.
+The recognition and archive consistency follow-up proposed above is now
+implemented by [125](125-recognize-default-appimage-selector.md); the earlier
+counts and recommendation remain historical evidence at their recorded revision.
