@@ -85,3 +85,30 @@ the prototype branch also carries it for automatic pushes affecting those files.
 Inherited root Jekyll publishing is skipped in this fork to avoid replacing the
 reviewed artifact with repository-root content. Public-browser verification and
 actual deployment receipts follow; the ticket stays unresolved for human review.
+
+## Public deployment receipt — November 6, 2026
+
+Enabled repository Pages with build_type=workflow, no repository CNAME. GitHub
+inherits the account domain, so the live HTTPS URL is
+https://mareklangiewicz.pl/AM/ (not the initially predicted github.io address).
+The repository was already public. Artifact allowlist review found no credentials,
+private notes or local paths in the four browser files; this is a scoped payload
+review, not a claim of auditing all repository history.
+
+Prototype source `e7539f5d2` deployed successfully via main-marek workflow run
+https://github.com/mareklangiewicz/AM/actions/runs/42216569353 .
+Initial prototype-branch run 42216533345 failed because the newly created Pages
+environment initially allowed main-marek only. Added exactly prototype/catalog-pages
+to the environment's allowed branches; no arbitrary-branch permission. Future
+prototype pushes matching browser/workflow paths automatically deploy; manual
+main-marek dispatch also reads prototype/catalog-pages. No catalog dispatch/change.
+
+HTTPS readback returned 200 and byte-equality for all four files:
+
+- index.html: 5,993 bytes, SHA-256 0340d38bfaea666f3382bb29e5c0e4e1b57bd021f241d2e2e4cd95608cfed459
+- app.mjs: 9,305 bytes, SHA-256 b8f68ef5422063519f7c8e4f09342d869ea9df7f113f54ff4362839dc8e765ed
+- catalog.mjs: 1,395 bytes, SHA-256 56697b596744bc11e4f9b3650ae75d02d7168152ffa6d8307823e1210ab23c0f
+- keyboard.mjs: 2,332 bytes, SHA-256 c9dfc153a2c40b6a03743fd1af9ab227489c8c52ed09e74e3fd2f02c15ad567c
+
+No browser was connected for visual/interaction verification. Layout choice and
+browser acceptance remain open. All three variants remain publicly available.

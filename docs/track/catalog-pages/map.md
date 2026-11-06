@@ -9,7 +9,9 @@ GitHub Pages catalog browser, with no unresolved decisions before implementation
 
 ## Notes
 
-Planning only. Marek accepted the destination and product direction on November 6,
+Planning with an explicitly authorized public prototype deployment on November 6,
+2026; this does not accept a final design. Live preview: https://mareklangiewicz.pl/AM/ .
+See the browsing-experience ticket for the receipt. Marek accepted the destination and product direction on November 6,
 2026: app discovery first; AM users and data enthusiasts also supported; grow
 with published coverage. Searchable app directory and individual app pages with
 descriptions, releases and assets; OS/architecture matching highlights with all
@@ -50,6 +52,6 @@ Implementation milestones and final handoff after the decisions settle.
 
 ## Out of scope
 
-Implementation/deployment during this planning effort; accounts, ratings, submissions,
+Production implementation beyond the authorized public prototype; accounts, ratings, submissions,
 application binary hosting; expanding catalog enrollment or migration capacity;
 installing apps merely to display them; changing AM client selection semantics.
