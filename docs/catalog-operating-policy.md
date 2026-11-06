@@ -1,10 +1,13 @@
 # Single-user YAML catalog operation
 
-The collection list contains 23 recipe identities in
-`tools/catalog-collector/collection-recipes.txt` (21 numeric repository identities),
-including 20x and 2fac. November 6 publication `a547f48289475ed474de10a6389ce69c12c62060`
-successfully collected that scope. The installed host still has 21 apps; catalog
-enrollment does not install the two new candidates.
+The collection list contains 43 recipe identities in
+`tools/catalog-collector/collection-recipes.txt` (41 numeric repository identities).
+November 6 manual run [42156336747](https://github.com/mareklangiewicz/AM/actions/runs/42156336747)
+at source `743dbf139` publishes catalog
+`daf47edb2b382bc6b7df832b00c43fae12bb73d2`; its exact-pin map and all source
+identities/statuses verify. Twenty additional source conversions are enrolled;
+the installed host still has 21 apps. All twenty and the earlier 20x/2fac pilot
+remain uninstalled. See the [batch operational report](track/release-catalog/research/large-batch-publication-deployment.md).
 Collection enrollment is independent of recipe declaration support. Recipe headers
 marked `# AM-RECIPE-DECLARATION 1` own customization and selection settings;
 adding a declaration does not enroll it for collection. The older 50-source design
@@ -110,8 +113,9 @@ desktop files, preserving other keys, other arguments and field codes. This is a
 narrow textual compatibility transformation, not a general desktop argument
 parser; quoted/escaped argument forms require separate review. Other values are
 refused before acquisition and by declaration compilation. Existing desktop files
-remain preserved. 20x opts in to retain its original fork recipe behavior;
-2fac and all other recipes keep the default argument-preservation behavior.
+remain preserved. 20x and the twenty recipes converted in ticket 133 opt in to retain their
+original fork recipe behavior; 2fac and remaining recipes keep the default
+argument-preservation behavior.
 
 20x/2fac declarations and enrollment (tickets 130/131) were pushed November 6.
 [Run 42150558139](https://github.com/mareklangiewicz/AM/actions/runs/42150558139)

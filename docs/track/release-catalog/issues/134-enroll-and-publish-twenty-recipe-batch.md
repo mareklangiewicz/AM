@@ -1,7 +1,7 @@
 # Enroll and publish the twenty converted AppImage recipes
 
 Type: task
-Status: claimed
+Status: resolved
 Triage: ready-for-agent
 
 Marek's November 6 “Go ahead” follows 133's completed twenty-source conversion
@@ -55,3 +55,24 @@ catalog bare repo, matching production isolation. No allowance was raised.
 Source push and immediate manual publication are authorized; record resulting
 source/run/catalog pins below before live compiled-policy refresh. No live file
 has changed during this preflight.
+
+## Answer — publication and live follow-through
+
+[Publication/deployment report](../research/large-batch-publication-deployment.md)
+and [portable receipt](../research/large-batch-publication-deployment.json) record
+successful manual run 42156336747 at pushed source `743dbf139`, catalog
+`daf47edb2b382bc6b7df832b00c43fae12bb73d2`, exact parent `a547f4828`.
+The published map and all 41 source documents verify: 43 recipes / 41 sources,
+8,466,205 YAML bytes, largest 1,142,139 bytes, all collection statuses ok.
+
+Refreshed only the compiled live catalog policy with native metadata and a
+before-image; all source modules/manager byte-match source. All 296 protected
+paths remain unchanged, including twelve Obsidian paths and the official CLI.
+All 26 former asset selections remain identical; all twenty new selections match
+133's inspected asset IDs/URLs. Manager help passes. The host retains 21 apps;
+all twenty new apps and both previous pilot apps remain uninstalled.
+
+Authorization, current test results, capacity limits and recovery directory are
+in the report. No ordinary update, installed recipe refresh, app execution,
+yadm pointer operation or cleanup of prior recovery evidence occurred. Source,
+enrollment, manual publication and scoped live policy refresh are complete.

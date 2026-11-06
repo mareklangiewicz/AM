@@ -55,3 +55,12 @@ preparation/capacity checks and publication before production use. No push,
 workflow/dispatch/publication, app install, live recipe/runtime refresh or yadm
 pointer change occurred. Existing-install transition and historical launcher/
 remover ownership remain separate from source conversion.
+
+
+## Subsequent authorized operation
+
+Marek's “Go ahead” authorized the remaining steps. [134](134-enroll-and-publish-twenty-recipe-batch.md)
+completes enrollment, source push, manual publication and a single compiled live
+policy refresh. Production now contains 43 recipes / 41 sources; all twenty
+inspected selections verify and all candidate apps remain uninstalled. The
+source-only statements above retain the result before that separate operation.

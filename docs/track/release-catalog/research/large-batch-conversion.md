@@ -136,3 +136,12 @@ Validation results are finalized in ticket 133. No real GUI launch, existing-app
 migration, full collector/container suite or catalog capacity/publication trial
 is claimed. Enrollment and operational capacity must be checked separately before
 making these declarations usable through production publication.
+
+
+## Subsequent enrollment and operation
+
+Marek authorized the remaining steps. [134](../issues/134-enroll-and-publish-twenty-recipe-batch.md)
+completes enrollment, source push, manual publication and the single live compiled
+policy refresh. Current production scope is 43 recipes / 41 numeric sources;
+all twenty selections match the inspected assets and the apps remain uninstalled.
+The source-only statements above record this report's pre-enrollment result.

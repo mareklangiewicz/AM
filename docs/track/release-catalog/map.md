@@ -2,16 +2,18 @@
 
 ## Maintained upstream recipe reconstruction
 
-[134 claimed](issues/134-enroll-and-publish-twenty-recipe-batch.md) enrolls the twenty
-converted recipes locally: 43 recipes / 41 numeric sources. Fresh 41-source
-acquisition is 49.70 MB / 51.56 s; actual retained collector replay is 31.93 s,
-8.47 MB YAML with largest file 1.14 MB. All twenty inspected asset IDs match;
-28 focused tests pass. Authorized push/manual publication/live compiled-policy
-refresh are in progress; production and installed state remain at the prior
-recorded result until their follow-up receipts.
+Current deployed result: [134 resolved](issues/134-enroll-and-publish-twenty-recipe-batch.md)
+enrolls and publishes the twenty converted recipes: **43 recipes / 41 sources**.
+Pushed `743dbf139`; successful [manual run 42156336747](https://github.com/mareklangiewicz/AM/actions/runs/42156336747)
+publishes `daf47edb2b382bc6b7df832b00c43fae12bb73d2`. Exact-pin map/all source
+identities/statuses verify; 8.47 MB YAML, largest 1.14 MB. Only the compiled live
+policy was refreshed: all 296 protected paths preserved, all 26 prior asset
+choices identical, twenty new inspected asset IDs/URLs match, manager help passes.
+Host remains at 21 installed apps. Twenty new apps and both earlier pilot apps
+remain uninstalled. [Operational report](research/large-batch-publication-deployment.md).
+28 focused enrollment/integration tests pass; no app execution or yadm changes.
 
-
-Current source result: [133 resolved](issues/133-prepare-large-existing-recipe-batch.md)
+Pre-enrollment source result: [133 resolved](issues/133-prepare-large-existing-recipe-batch.md)
 converts twenty more existing AppImage recipes locally after exact provenance,
 first-party identity, selector and full static payload gates.
 [Batch report](research/large-batch-conversion.md) retains compact digest-bound
