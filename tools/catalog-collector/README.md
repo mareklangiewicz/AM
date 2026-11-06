@@ -3,7 +3,15 @@
 Current contract: [operating policy](../../docs/catalog-operating-policy.md).
 The daily `.github/workflows/catalog.yml` publication runs `host_catalog.py`.
 Collection enrollment is `collection-recipes.txt`, resolved through literal recipe
-declarations; declaring a recipe does not enroll it for collection.
+declarations, plus `collection-apps.json` for catalog-only identities; declaring a
+recipe does not enroll it for collection. Catalog-only rows contain exactly
+`app`, positive integer `repository_id`, and canonical `repository` (owner/name).
+They need verified source identity, but no installer declaration, asset selector,
+payload inspection or policy compilation. They do not claim AM installation support.
+App identities must be unique across both lists; sources are deduplicated by
+numeric ID and conflicting names refuse. When a recipe is migrated, move its
+enrollment to `collection-recipes.txt` in the same change, preserving its identity.
+The current 52-source and transport/publication bounds still apply to the union.
 
 ## Entry points
 

@@ -22,7 +22,7 @@ class Declarations(unittest.TestCase):
         archive = research/receipt['evidence_archive']
         self.assertEqual(hashlib.sha256(archive.read_bytes()).hexdigest(), receipt['evidence_archive_sha256'])
         rows = {r['app']:r for r in recipe_rows(compiler.ROOT)}
-        enrolled, _ = host_catalog.configuration()
+        enrolled, _ = host_catalog.installation_configuration()
         self.assertIn('20x', [r['app'] for r in enrolled])
         self.assertIn('2fac', [r['app'] for r in enrolled])
         with tarfile.open(archive) as evidence:
@@ -112,7 +112,7 @@ class Declarations(unittest.TestCase):
                                 self.assertIn('no_matching_asset', result.stderr)
 
     def test_unenrolled_architectures_select_through_common_registry(self):
-        baseline_rows, baseline_sources = host_catalog.configuration()
+        baseline_rows, baseline_sources = host_catalog.installation_configuration()
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             (root/'modules').mkdir()

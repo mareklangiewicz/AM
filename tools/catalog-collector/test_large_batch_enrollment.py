@@ -29,7 +29,7 @@ class LargeBatchEnrollment(unittest.TestCase):
                          receipt['evidence_archive_sha256'])
         candidates = {r['app']:r for r in receipt['candidates']
                       if r['app'] in receipt['converted']}
-        configured, _ = host_catalog.configuration()
+        configured, _ = host_catalog.installation_configuration()
         old_list = subprocess.check_output(['git','-C',str(host_catalog.ROOT),'show',
             self.baseline_revision+':tools/catalog-collector/collection-recipes.txt'],text=True)
         old_names = {line for line in old_list.splitlines() if line and not line.startswith('#')}

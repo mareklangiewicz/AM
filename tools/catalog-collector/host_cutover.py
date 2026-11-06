@@ -11,7 +11,7 @@ import shutil
 import subprocess
 import tempfile
 
-from host_catalog import configuration, ROOT, FILE_CAP
+from host_catalog import installation_configuration, ROOT, FILE_CAP
 from installed_recipe import bound_recipe, managed_updater
 from yaml_publication import load_local
 
@@ -50,7 +50,7 @@ def select(rows, repo, pin):
 
 
 def prepare(repo, out, cache):
-    rows,_=configuration()
+    rows,_=installation_configuration()
     pin=subprocess.check_output(['git','-C',str(repo),'rev-parse','refs/heads/catalog'],text=True).strip()
     selections=select(rows,repo,pin)
     source=subprocess.check_output(['git','-C',str(ROOT),'rev-parse','HEAD'],text=True).strip()

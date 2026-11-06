@@ -1,5 +1,18 @@
 # Release catalog exploration
 
+## Active expansion — catalog first, simple recipe migrations first
+
+Marek requested broad catalog coverage and confirmed GitHub-backed apps first.
+[137 resolved](issues/137-separate-catalog-enrollment-from-recipe-migration.md)
+implements independent catalog-only enrollment and prepares Ageha Editor locally:
+54 apps / 52 sources, fresh full-scope preflight and 29 checks pass. Push and
+publication await Marek's call;
+[138](issues/138-scale-github-catalog-coverage.md) tracks verified broad discovery
+and collection scaling. Existing published and installed counts below remain the
+deployed baseline until new publication receipts supersede them.
+[139](issues/139-migrate-next-simple-recipes.md) keeps straightforward recipe
+migrations on their own verified queue, starting with five deferred candidates.
+
 ## Maintained upstream recipe reconstruction
 
 Current deployed result: [136 resolved](issues/136-publish-next-ten-and-refresh-live-policy.md)

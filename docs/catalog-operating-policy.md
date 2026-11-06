@@ -16,6 +16,12 @@ manifest and
 format-1 collector experiments are historical evidence, not active publication.
 The source cap remains 52; per-repository YAML remains capped at 2 MiB.
 
+Pending source preparation in [137](track/release-catalog/issues/137-separate-catalog-enrollment-from-recipe-migration.md)
+adds independent catalog-only identities through `collection-apps.json`. Ageha
+Editor is locally prepared as app 54 / source 52; it has no migrated recipe or
+AM-supported asset selection. Publication is pending, so the deployed counts
+above remain the baseline. Installation preparation excludes catalog-only rows.
+
 `.github/workflows/catalog.yml` collects one page of 100 releases per source daily
 at 03:17 UTC or on manual dispatch, retains previously observed releases and
 publishes validated YAML to `release-catalog`. Failed collection leaves the

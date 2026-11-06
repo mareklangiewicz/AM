@@ -1,6 +1,6 @@
 """Single-user YAML catalog: bounded release-list collection and retained facts.
 
-The explicit collection list resolves reviewed recipe declarations. One page of 100 releases per source, with
+Collection combines reviewed recipe declarations and catalog-only identities. One page of 100 releases per source, with
 48-hour selected-record freshness enforced by clients. Failures preserve the
 previous published tree. No latest endpoint, consumer version choice or pruning.
 """
@@ -9,6 +9,7 @@ from datetime import datetime, timezone
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 import subprocess
 import time
@@ -41,6 +42,22 @@ def configuration():
     if any(recipe not in declarations for recipe in enrolled):
         raise ValueError('unknown collection recipe')
     rows = [declarations[recipe] for recipe in enrolled]
+    # Catalog facts do not require an installer migration or selection policy.
+    # Missing file supports older checkouts and isolated declaration fixtures.
+    catalog_only = ROOT/'tools/catalog-collector/collection-apps.json'
+    extra = (json.loads(catalog_only.read_text(), object_pairs_hook=unique_object)
+             if catalog_only.exists() else [])
+    if not isinstance(extra, list):
+        raise ValueError('catalog-only enrollment must be a list')
+    for row in extra:
+        if (not isinstance(row, dict) or set(row) != {'app', 'repository_id', 'repository'}
+                or not isinstance(row['app'], str)
+                or not re.fullmatch(r'[a-z0-9][a-z0-9_.+-]*', row['app'])
+                or type(row['repository_id']) is not int or row['repository_id'] <= 0
+                or not isinstance(row['repository'], str)
+                or not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', row['repository'])):
+            raise ValueError('invalid catalog-only enrollment')
+    rows = rows + extra
     sources = {}
     for row in rows:
         rid = str(row['repository_id'])
@@ -50,6 +67,13 @@ def configuration():
     if len(sources) > 52 or len({r['app'] for r in rows}) != len(rows):
         raise ValueError('manifest scope')
     return rows, sources
+
+
+def installation_configuration():
+    """Only enrolled recipes with reviewed installation/selection declarations."""
+    rows, _ = configuration()
+    rows = [row for row in rows if 'recipe' in row]
+    return rows, {str(row['repository_id']): row['repository'] for row in rows}
 
 
 def collect(revision, previous, evidence=None):
