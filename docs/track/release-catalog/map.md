@@ -2,19 +2,24 @@
 
 ## Maintained upstream recipe reconstruction
 
-Current frontier: [129 open, unclaimed](issues/129-inspect-two-candidate-appimage-payloads.md)
-statically inspects exact real payloads and prepares a concrete conversion plan.
+Current preparation result: [129 resolved](issues/129-inspect-two-candidate-appimage-payloads.md).
+[Static inspection and concrete proposal](research/two-candidate-conversion-proposal.md)
+verify both exact full-file digests and desktop/icon chains, with compact retained
+evidence. 2fac has one logical desktop through a root symlink; 20x has one root
+entry whose `--no-sandbox` argument the shared runtime retains but the old recipe
+strips. Policy acceptance and a separate conversion scope remain; no unchanged
+pair conversion is recommended. No claim is in flight. Do not restart historical
+cleanup from old open tickets. 4nier-patrimonio stays outside this pair.
+
 [128 resolved](issues/128-verify-two-candidate-upstream-evidence.md) verifies both
 existing candidates' numeric IDs and observed asset names;
-[primary evidence](research/two-candidate-upstream-preparation.md) includes full
-saved API responses and offline replay. Narrow patterns preserve the observed
-upstream URL winners; the broad pattern changes 20x's URL. Two bounded prefixes
-show AppImage headers only; desktop/icon/full-digest evidence remains.
-[127 resolved](issues/127-review-armhf-declaration-eligibility.md), source
-`e2e96b3a4`, closes the armhf name-filter gap; all 60 focused tests pass.
-This source fix is not deployed. Tickets 124–126 and tracker updates are pushed
-through `a2119bd9f`. No claim is in flight; no conversion or enrollment is approved.
-4nier-patrimonio remains absent and outside the pair. Current inventory remains
+[primary evidence](research/two-candidate-upstream-preparation.md) includes saved
+API responses and offline replay. Narrow patterns preserve the observed URL
+winners; full payload evidence is now in 129. [127 resolved](issues/127-review-armhf-declaration-eligibility.md),
+source `e2e96b3a4`, closes the armhf name-filter gap; all 60 focused tests pass.
+These changes are not deployed. Tickets 124–126 and tracker updates are pushed
+through `a2119bd9f`; 127–129 remain local pending Marek's push decision.
+No conversion or enrollment is approved. Current inventory remains
 6,517 instances / 687 review / 2,030 unmatched.
 
 [125 resolved](issues/125-recognize-default-appimage-selector.md): exact
