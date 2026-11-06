@@ -2,7 +2,8 @@
 
 Type: research
 Label: wayfinder:research
-Status: open
+Status: claimed
+Assignee: metadata_research
 
 ## Question
 
