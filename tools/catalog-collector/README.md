@@ -44,7 +44,7 @@ Windows, macOS and Darwin names are excluded. The current source contract is:
 These are substring rules, not binary architecture verification. `armhf` alone
 never admits a target; an explicit armv7 name can additionally contain armhf.
 Adding armhf exclusions to the three other targets is ticket 127's source change;
-installed/deployed selectors remain unchanged until a separate rollout. Transitional
+the guard was deployed November 6 at reviewed source `fa36ebb7e` (ticket 132). Transitional
 named policies are unaffected. Names and URLs can disagree, so a declaration still
 needs reviewed real asset evidence and a sufficiently precise asset pattern.
 

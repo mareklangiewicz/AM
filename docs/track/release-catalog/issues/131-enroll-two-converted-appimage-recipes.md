@@ -62,3 +62,16 @@ previous 21/19 baseline until source push and a successful publication; future
 per_page=100 acquisition can still refuse existing limits. Next step is Marek's
 push decision (which makes the next workflow publication attempt the new sources),
 then observing that publication before any client/host deployment.
+
+## Publication follow-up
+
+Marek authorized pushing all five pending source commits through `fa36ebb7e`,
+then requested an immediate catalog run. [Run 42150558139](https://github.com/mareklangiewicz/AM/actions/runs/42150558139)
+succeeded at that source, publishing `a547f48289475ed474de10a6389ce69c12c62060`.
+Read back the exact-pin app map and both repository files with the distributed
+reader: 23 app identities; 20x 100 releases / 1818 assets / 608940 YAML bytes,
+2fac four releases / 60 assets / 20812 bytes. Both collection statuses are ok;
+20x history is incomplete, 2fac reached end. Actual current selection returns the
+same asset IDs 688278008 and 594778867 as the inspected payloads. This supplies
+one live production-page capacity observation, not a future-growth guarantee.
+No app was installed or launched. Shared-module review/deployment follows in 132.

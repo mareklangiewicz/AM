@@ -1,9 +1,10 @@
 # Single-user YAML catalog operation
 
-The local source collection list now contains 23 recipe identities in
+The collection list contains 23 recipe identities in
 `tools/catalog-collector/collection-recipes.txt` (21 numeric repository identities),
-including 20x and 2fac. The deployed baseline remains 21 recipes / 19 repositories
-until the pending source commits are pushed and a publication succeeds.
+including 20x and 2fac. November 6 publication `a547f48289475ed474de10a6389ce69c12c62060`
+successfully collected that scope. The installed host still has 21 apps; catalog
+enrollment does not install the two new candidates.
 Collection enrollment is independent of recipe declaration support. Recipe headers
 marked `# AM-RECIPE-DECLARATION 1` own customization and selection settings;
 adding a declaration does not enroll it for collection. The older 50-source design
@@ -112,11 +113,12 @@ refused before acquisition and by declaration compilation. Existing desktop file
 remain preserved. 20x opts in to retain its original fork recipe behavior;
 2fac and all other recipes keep the default argument-preservation behavior.
 
-20x/2fac have source declarations and local collection enrollment (tickets 130/131).
-Neither local change supplies production catalog coverage or changes installed
-recipes. Pushing would make the next scheduled/manual publication collect the
-two additional sources; push, publication observation and deployment remain
-separate. Do not assume source enrollment proves a successful live collection.
+20x/2fac declarations and enrollment (tickets 130/131) were pushed November 6.
+[Run 42150558139](https://github.com/mareklangiewicz/AM/actions/runs/42150558139)
+succeeded: 20x collected 100 releases / 1818 assets (history incomplete), 2fac
+four releases / 60 assets (end reached). Their published YAML files are 608940
+and 20812 bytes, within the unchanged 2 MiB limit. Read-only selection matched
+the statically inspected assets. Both apps remain uninstalled.
 
 Obsidian declares `EXTRA_APP_LAUNCHERS=obsidian-gui` and `DESKTOP_EXEC=installed`.
 The shared lifecycle contains no Obsidian identity checks. Official CLI registration
@@ -315,3 +317,17 @@ passed for Neovim and all four distinct same-release EmmyLua tools at publicatio
 failed DNS; a fresh network-enabled session passed. No binary update or recipe
 refresh was needed. Evidence and parser before-image:
 `/home/marek/Documents/Codex/am-yaml-cutover/retirement-deployment/`.
+
+
+## November 6 reviewed shared-module refresh
+
+Ticket [132](track/release-catalog/issues/132-review-and-deploy-candidate-shared-modules.md)
+records independent Standards/Spec review of `a2119bd9f...fa36ebb7e`, zero
+findings on each axis, and the authorized live refresh. Only `appimage.am` and
+`catalog-yaml-policy.am` changed on myxps; all source modules and the manager now
+match reviewed source `fa36ebb7edfe3eb47702a8537802f6b95a4b833b`.
+The armhf eligibility guard and explicit desktop flag option are deployed.
+Installed recipe/snapshot bindings were not refreshed; 20x/2fac remain uninstalled.
+Backups, native ownership plan, before/after selection checks and verification:
+`/home/marek/Documents/Codex/am-yaml-cutover/candidate-pair-deployment-20261106/`.
+Earlier recovery directories remain intact.

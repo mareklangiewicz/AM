@@ -2,20 +2,23 @@
 
 ## Maintained upstream recipe reconstruction
 
-Current source result: [131](issues/131-enroll-two-converted-appimage-recipes.md)
-adds only 20x/2fac to local collection enrollment: 23 recipes / 21 numeric sources.
-Saved real responses normalize within unchanged budgets and replay through
-local YAML publication, the distributed reader and three-awk selection. These
-are per_page=30 observations, not proof of production per_page=100 capacity.
-20x history remains explicitly incomplete. No remote publication has happened;
-the deployed baseline stays 21 recipes / 19 sources. A push makes the next
-publication attempt collect these two sources and requires Marek's decision.
+Current result: [132 resolved](issues/132-review-and-deploy-candidate-shared-modules.md)
+reviews the five pushed commits `a2119bd9f...fa36ebb7e` on independent Standards
+and Spec axes (zero findings each), then refreshes only the two changed live
+shared modules. Installed apps/recipes remain unchanged; 20x/2fac stay uninstalled.
+
+[131 resolved](issues/131-enroll-two-converted-appimage-recipes.md) enrolls only
+20x/2fac: 23 recipes / 21 numeric sources. Marek authorized push through `fa36ebb7e`
+and [manual run 42150558139](https://github.com/mareklangiewicz/AM/actions/runs/42150558139),
+which published `a547f48289475ed474de10a6389ce69c12c62060`. Both source documents
+and selections verify; 20x has 100 releases/1818 assets (history incomplete),
+2fac four releases/60 assets. Both fit existing budgets.
 
 [130 resolved](issues/130-convert-two-inspected-appimage-recipes.md) converts
 only existing 20x/2fac source recipes using verified IDs and narrow patterns.
 Explicit `DESKTOP_STRIP_NO_SANDBOX=true` preserves 20x's old generated desktop
 behavior; other recipes preserve arguments by default. No installed transition
-or deployment is performed. 4nier-patrimonio stays outside scope.
+or application deployment is performed. 4nier-patrimonio stays outside scope.
 
 [129 resolved](issues/129-inspect-two-candidate-appimage-payloads.md) retains
 [static inspection and proposal](research/two-candidate-conversion-proposal.md),
@@ -29,9 +32,8 @@ existing candidates' numeric IDs and observed asset names;
 API responses and offline replay. Narrow patterns preserve the observed URL
 winners; full payload evidence is now in 129. [127 resolved](issues/127-review-armhf-declaration-eligibility.md),
 source `e2e96b3a4`, closes the armhf name-filter gap; all 60 focused tests pass.
-These changes are not deployed. Tickets 124–126 and tracker updates are pushed
-through `a2119bd9f`; 127–131 remain local pending Marek's push decision.
-Source conversion and local enrollment are complete; live operations remain separate. Current inventory remains
+Tickets 124–131 are pushed through `fa36ebb7e`; reviewed shared changes are now
+deployed under 132. Source conversion, enrollment and manual publication are complete. Current inventory remains
 6,517 instances / 687 review / 2,030 unmatched.
 
 [125 resolved](issues/125-recognize-default-appimage-selector.md): exact
