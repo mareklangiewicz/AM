@@ -70,3 +70,9 @@ Final validation: all 33 recipe-reconstruction tests pass in 7.533 seconds,
 including the five new assessment groups; changed documentation links and
 whitespace checks pass. No final full catalog/container suite or independent
 code review is claimed.
+
+## Comments
+
+2026-11-06: Assessment source `a2119bd9f` and prior tracker update `44fe43a1b`
+were pushed with Marek's go-ahead. No live deployment. Ticket 127 resolves the
+source armhf guard gap; 128 separately gathers real primary candidate evidence.

@@ -230,3 +230,14 @@ Final validation: the focused assessment passes all five test groups; the full
 recipe-reconstruction suite passes all 33 tests in 7.533 seconds. Documentation
 links and whitespace checks pass. This does not claim a full catalog/container
 suite or an independent code review.
+
+## Ticket 127 source follow-up
+
+The armhf gap above describes the source at `44fe43a1b`; it is retained as
+historical evidence. Ticket [127](../issues/127-review-armhf-declaration-eligibility.md)
+adds armhf exclusions on x86_64, aarch64 and i686 in current source. armv7l still
+requires an explicit armv7 label; armhf alone is insufficient. The assessment
+oracle now expects both the old selector and proposed x86_64 declaration to
+refuse App-armhf.AppImage. Other recorded name/URL, ordering, OS, freshness and
+acquisition differences remain. This source change is not a deployment or
+conversion approval, and it does not verify actual candidate assets or IDs.

@@ -14,6 +14,60 @@ from recipe_declarations import recipe_rows
 
 
 class Declarations(unittest.TestCase):
+    def test_architecture_labels_and_armhf_refusals(self):
+        # Independent expectations for asset names, including conflicting labels.
+        # armhf is not enough to establish ARMv7; unlabelled x86_64 remains allowed.
+        cases = {
+            'unlabelled': {'x86_64'},
+            'x86_64': {'x86_64'}, 'amd64': {'x86_64'}, 'x64': {'x86_64'},
+            'i386': {'i686'}, 'i686': {'i686'},
+            'arm64': {'aarch64'}, 'aarch64': {'aarch64'},
+            'armv7': {'armv7l'}, 'armv7l': {'armv7l'},
+            'armhf': set(), 'ARMHF': set(),
+            'x86_64-armhf': set(), 'amd64-armhf': set(),
+            'aarch64-armhf': set(), 'arm64-ARMHF': set(),
+            'i386-armhf': set(), 'i686-armhf': set(),
+            'armv7-armhf': {'armv7l'}, 'ARMV7L-ARMHF': {'armv7l'},
+            'aarch64-x86_64': set(), 'i686-armv7': set(),
+            'windows-x86_64': set(), 'macos-arm64': set(),
+        }
+        architectures = ('x86_64', 'aarch64', 'i686', 'armv7l')
+        with tempfile.TemporaryDirectory(prefix='armhf-declarations-') as temporary:
+            root = Path(temporary)
+            (root/'modules').mkdir()
+            policy = root/'modules/catalog-yaml-policy.am'
+            shutil.copy2(compiler.ROOT/'modules/catalog-yaml-policy.am', policy)
+            source = (compiler.ROOT/'programs/x86_64/nvim').read_text()
+            for arch in architectures:
+                path = root/'programs'/arch/'example'
+                path.parent.mkdir(parents=True)
+                path.write_text(source.replace('APP=nvim', 'APP=example')
+                    .replace('x86_64/nvim', arch+'/example')
+                    .replace('^nvim-linux-x86_64[.]appimage$', '^example-.*[.]AppImage$'))
+            with patch.object(compiler, 'ROOT', root):
+                compiler.generate()
+            for arch in architectures:
+                for token, allowed in cases.items():
+                    name = 'example-'+token+'.AppImage'
+                    url = 'https://example.invalid/releases/download/v1/'+name
+                    facts = '\t'.join(['1', '1', *map(json.dumps, [
+                        '2026-11-06T12:00:00Z', '2026-11-06T11:00:00Z', 'v1', name, url]),
+                        'false'])+'\n'
+                    for command in (['mawk'], ['gawk'], ['busybox','awk']):
+                        with self.subTest(arch=arch, token=token, command=command):
+                            result = subprocess.run([*command, '-f', str(policy)],
+                                input=facts, text=True, capture_output=True, timeout=10,
+                                env={**os.environ, 'LC_ALL':'C',
+                                    'AM_YAML_RECIPE':arch+'/example', 'AM_YAML_REPOSITORY':'16408992',
+                                    'AM_YAML_NOW':'2026-11-06T12:00:00Z', 'AM_YAML_PIN':'a'*40})
+                            if arch in allowed:
+                                self.assertEqual(result.returncode, 0, result.stderr)
+                                self.assertEqual(result.stdout.splitlines()[-1], url)
+                            else:
+                                self.assertEqual(result.returncode, 3, result.stderr)
+                                self.assertEqual(result.stdout, '')
+                                self.assertIn('no_matching_asset', result.stderr)
+
     def test_unenrolled_architectures_select_through_common_registry(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)

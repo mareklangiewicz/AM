@@ -28,6 +28,26 @@ with the actual distributed reader at `modules/catalog-yaml-reader.am`.
 `bounded.py`, `retention.py` and `writer.py` normalize, merge and encode facts.
 The installed client and installer remain shell-only.
 
+## Declared recipe architecture eligibility
+
+The maintained selector filters asset **names**, case-insensitively for platform
+and architecture labels, before applying the recipe's case-sensitive asset ERE.
+Windows, macOS and Darwin names are excluded. The current source contract is:
+
+| Target | Required label | Excluded labels |
+| --- | --- | --- |
+| x86_64 | None; unlabelled names remain eligible | aarch64, arm64, armhf, armv7, i386, i686 |
+| aarch64 | aarch64 or arm64 | x86_64, amd64, armhf, armv7, i386, i686 |
+| i686 | i386 or i686 | x86_64, amd64, aarch64, arm64, armhf, armv7 |
+| armv7l | armv7 | x86_64, amd64, aarch64, arm64, i386, i686 |
+
+These are substring rules, not binary architecture verification. `armhf` alone
+never admits a target; an explicit armv7 name can additionally contain armhf.
+Adding armhf exclusions to the three other targets is ticket 127's source change;
+installed/deployed selectors remain unchanged until a separate rollout. Transitional
+named policies are unaffected. Names and URLs can disagree, so a declaration still
+needs reviewed real asset evidence and a sufficiently precise asset pattern.
+
 ## Offline verification
 
 Python 3.10+ and PyYAML are required. Lifecycle checks additionally use bash, dash,

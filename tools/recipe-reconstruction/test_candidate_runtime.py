@@ -29,7 +29,8 @@ CANDIDATES = {
     '4nier-patrimonio': ('4nier-app/patrimonio', '36ea29727167c231ac7fc2fb61d770c9a2622eccec258e726a1f26edce89a8ff'),
 }
 # Exploratory policy: case-insensitive suffix, any release channel. Intentionally
-# exposes the current name/URL and armhf gaps, rather than claiming equivalence.
+# exposes name/URL differences, rather than claiming equivalence. Ticket 127
+# closes the historical armhf gap while preserving these other differences.
 PATTERN = '^.*[.][Aa][Pp][Pp][Ii][Mm][Aa][Gg][Ee]$'
 NOW = '2026-11-06T12:00:00Z'
 
@@ -144,8 +145,7 @@ class CandidateRuntime(unittest.TestCase):
             ('retained outside page', [], [self.release([a])],None,url),
             ('OS exclusion', [self.release([self.asset('App-windows.AppImage')])],None,
              self.asset('App-windows.AppImage')['browser_download_url'],None),
-            ('armhf gap', [self.release([self.asset('App-armhf.AppImage')])],None,None,
-             self.asset('App-armhf.AppImage')['browser_download_url']),
+            ('armhf rejected', [self.release([self.asset('App-armhf.AppImage')])],None,None,None),
         ]
         for app in CANDIDATES:
             for name, response, retained, old, new in cases:

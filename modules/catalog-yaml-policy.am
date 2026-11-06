@@ -367,9 +367,11 @@ function declaration_eligible(name, tag, preview, tool, lower) {
     if(declaration_channel=="nightly" && tag!="nightly") return 0
     lower=tolower(name)
     if(lower ~ /macos|darwin|windows/) return 0
-    if(arch=="x86_64" && lower ~ /aarch64|arm64|armv7|i386|i686/) return 0
-    if(arch=="aarch64" && (lower !~ /aarch64|arm64/ || lower ~ /x86_64|amd64|armv7|i386|i686/)) return 0
-    if(arch=="i686" && (lower !~ /i386|i686/ || lower ~ /x86_64|amd64|aarch64|arm64|armv7/)) return 0
+    # armhf alone does not establish ARMv7; only an explicit armv7 label
+    # admits that target. Reject armhf-labelled names on the other targets.
+    if(arch=="x86_64" && lower ~ /aarch64|arm64|armhf|armv7|i386|i686/) return 0
+    if(arch=="aarch64" && (lower !~ /aarch64|arm64/ || lower ~ /x86_64|amd64|armhf|armv7|i386|i686/)) return 0
+    if(arch=="i686" && (lower !~ /i386|i686/ || lower ~ /x86_64|amd64|aarch64|arm64|armhf|armv7/)) return 0
     if(arch=="armv7l" && (lower !~ /armv7/ || lower ~ /x86_64|amd64|aarch64|arm64|i386|i686/)) return 0
     if(declaration_tools!="") {
         tool=ENVIRON["AM_YAML_TOOL"]; split(declaration_tools,tools," "); if(tool=="") tool=tools[1]

@@ -2,16 +2,17 @@
 
 ## Maintained upstream recipe reconstruction
 
-Current frontier: [127 open, unclaimed](issues/127-review-armhf-declaration-eligibility.md)
-reviews the generic armhf eligibility gap found by
-[126 resolved](issues/126-assess-three-candidate-runtime-behavior.md).
-[Runtime assessment](research/three-candidate-runtime-assessment.md) supplies
-42 offline selector comparisons and disposable lifecycle checks. 20x/2fac are
-existing preparation candidates; 4nier-patrimonio is absent. Numeric IDs and
-real asset/launcher evidence remain unverified; no conversion is approved.
-Tickets 124–125 are pushed through `19482e1a1`; 126 is source/test evidence only.
-No claim is in flight. Current inventory remains 6,517 instances / 687 review /
-2,030 unmatched. No conversion, enrollment or deployment by this template work.
+Current frontier: [128 claimed](issues/128-verify-two-candidate-upstream-evidence.md)
+gathers read-only primary repository/asset evidence for 20x and 2fac.
+[127 resolved](issues/127-review-armhf-declaration-eligibility.md) excludes armhf
+names on non-ARMv7 targets while requiring explicit armv7 names on armv7l;
+unlabelled x86_64 behavior is preserved. All 60 focused tests pass, including
+288 architecture matrix cases on three awk implementations. Source-only change,
+not deployed. Tickets 124–126 and the tracker update are pushed through
+`a2119bd9f`; the earlier [runtime assessment](research/three-candidate-runtime-assessment.md)
+remains evidence at its recorded revision. 4nier-patrimonio remains absent and
+outside the existing pair. No conversion or enrollment is approved. Current
+inventory remains 6,517 instances / 687 review / 2,030 unmatched.
 
 [125 resolved](issues/125-recognize-default-appimage-selector.md): exact
 AIA/default-keyword selector recognition is bound to inspected original hashes;
