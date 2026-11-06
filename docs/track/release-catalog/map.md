@@ -2,6 +2,15 @@
 
 ## Maintained upstream recipe reconstruction
 
+[134 claimed](issues/134-enroll-and-publish-twenty-recipe-batch.md) enrolls the twenty
+converted recipes locally: 43 recipes / 41 numeric sources. Fresh 41-source
+acquisition is 49.70 MB / 51.56 s; actual retained collector replay is 31.93 s,
+8.47 MB YAML with largest file 1.14 MB. All twenty inspected asset IDs match;
+28 focused tests pass. Authorized push/manual publication/live compiled-policy
+refresh are in progress; production and installed state remain at the prior
+recorded result until their follow-up receipts.
+
+
 Current source result: [133 resolved](issues/133-prepare-large-existing-recipe-batch.md)
 converts twenty more existing AppImage recipes locally after exact provenance,
 first-party identity, selector and full static payload gates.

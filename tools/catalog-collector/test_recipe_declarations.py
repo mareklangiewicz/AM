@@ -112,6 +112,7 @@ class Declarations(unittest.TestCase):
                                 self.assertIn('no_matching_asset', result.stderr)
 
     def test_unenrolled_architectures_select_through_common_registry(self):
+        baseline_rows, baseline_sources = host_catalog.configuration()
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             (root/'modules').mkdir()
@@ -133,7 +134,8 @@ class Declarations(unittest.TestCase):
             with patch.object(compiler, 'ROOT', root), patch.object(host_catalog, 'ROOT', root):
                 compiler.generate()
                 rows, sources = host_catalog.configuration()
-                self.assertEqual((len(rows), len(sources)), (23, 21))
+                self.assertEqual(rows, baseline_rows)
+                self.assertEqual(sources, baseline_sources)
                 policy = root/'modules/catalog-yaml-policy.am'
                 before, rest = policy.read_text().split(compiler.START)
                 generated, after = rest.split(compiler.END)

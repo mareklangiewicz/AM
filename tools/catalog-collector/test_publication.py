@@ -94,7 +94,9 @@ class Publication(unittest.TestCase):
         archive = research/receipt['evidence_archive']
         self.assertEqual(hashlib.sha256(archive.read_bytes()).hexdigest(), receipt['evidence_archive_sha256'])
         rows, sources = host_catalog.configuration()
-        self.assertEqual((len(rows), len(sources)), (23, 21))
+        # The historical pair remains enrolled as later batches are added.
+        self.assertGreaterEqual(len(rows), 23)
+        self.assertGreaterEqual(len(sources), 21)
         expected_ids = {'20x':1152028865, '2fac':1337965664}
         old_rows = [row for row in rows if row['app'] not in expected_ids]
         prior = {}
