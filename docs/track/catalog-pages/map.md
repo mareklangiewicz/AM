@@ -35,12 +35,13 @@ AM pushes and publication remain subject to Marek's separate approval.
 
 ## Decisions so far
 
-<!-- Initial user preferences above are charting inputs, not resolved tickets. -->
+- [Choose snapshot delivery and GitHub Pages publishing](issues/01-pages-snapshot-delivery.md): research recommends separate generated presentation from an exact catalog pin; hosting and architecture acceptance remain human decisions.
+
+- [Establish app metadata and trustworthy download presentation](issues/02-app-metadata-and-download-semantics.md): existing release facts suffice for browsing; research recommends optional attributed descriptions, icon fallbacks and explicit AM/inferred-match distinction.
 
 ## Not yet specified
 
 Operational recovery and stale-site behavior once snapshot delivery is chosen.
-How richer app identity relates to repositories shared by multiple recipes.
 Performance targets and acceptance checks after data/UI approaches are concrete.
 Accessibility details, release grouping and empty/error states after prototype review.
 Implementation milestones and final handoff after the decisions settle.
