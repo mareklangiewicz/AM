@@ -24,6 +24,8 @@ concurrency:
 jobs:
   # Build job
   build:
+    # The fork publishes its reviewed catalog prototype through a separate workflow.
+    if: github.repository != 'mareklangiewicz/AM'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

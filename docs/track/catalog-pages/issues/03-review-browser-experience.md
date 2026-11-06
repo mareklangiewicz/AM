@@ -69,3 +69,19 @@ Syntax and keyboard-handler smoke checks pass; real-browser focus, mobile and
 accessibility verification remain outstanding. No winning variant or complete
 experience acceptance is recorded. Preview remains http://localhost:8765/;
 refresh an existing tab to load updated code. No push or deployment.
+
+## Public prototype authorization — November 6, 2026
+
+Marek requested publishing now and continuing development publicly. This is a
+specific exception to the planning-only deployment boundary, not acceptance of a
+layout or authorization for catalog/runtime changes. Publish only index.html,
+app.mjs, catalog.mjs and keyboard.mjs from prototype/catalog-pages. Reviewed
+browser payload contains public catalog URLs and no credentials/private notes or
+local paths. README/research/tracker/recovery files are excluded from the artifact.
+Same-repository Pages, no inherited custom domain. All variants remain available.
+
+The maintained main workflow stages that explicit allowlist and deploys Pages;
+the prototype branch also carries it for automatic pushes affecting those files.
+Inherited root Jekyll publishing is skipped in this fork to avoid replacing the
+reviewed artifact with repository-root content. Public-browser verification and
+actual deployment receipts follow; the ticket stays unresolved for human review.
