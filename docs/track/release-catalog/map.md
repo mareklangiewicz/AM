@@ -2,6 +2,15 @@
 
 ## Maintained upstream recipe reconstruction
 
+[125 resolved](issues/125-recognize-default-appimage-selector.md): exact
+AIA/default-keyword selector recognition is bound to inspected original hashes;
+archive-capable AppImage installer/updater parameters must agree. All 28 focused
+tests pass. [New inventory](research/default-appimage-selector-inventory.json)
+finds 6,517 instances, 687 parameter-review and 2,030 unmatched: exactly 4,437
+expected promotions, each source hash and exact expansion checked against Git.
+Runtime assessment of the three preparation candidates remains separate; no
+conversion, enrollment or live changes.
+
 [124 resolved](issues/124-investigate-selector-review-groups.md):
 [selector investigation](research/selector-review-groups.md) identifies 4,437
 archive-layout recipes sharing an upstream generator-derived selector. Three

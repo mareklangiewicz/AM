@@ -1,0 +1,60 @@
+{
+  "recipes": 9234,
+  "counts": {
+    "unmatched": 2030,
+    "instance": 6517,
+    "parameter_review": 687
+  },
+  "source_commits": [
+    "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22"
+  ],
+  "templates_checked": 25,
+  "matched_families": {
+    "bb53f3180ec92f862020f8bdccef0f6614015bae:templates/AM-SAMPLE-AppImage": 991,
+    "bb53f3180ec92f862020f8bdccef0f6614015bae:templates/AM-SAMPLE-Archive": 209,
+    "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage": 1087,
+    "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive": 4916,
+    "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-Archive": 209,
+    "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-portable2appimage": 1
+  },
+  "examples": {
+    "unmatched": [
+      "programs/x86_64/0ad",
+      "programs/x86_64/0ad-prerelease",
+      "programs/x86_64/0xchat-app-main",
+      "programs/x86_64/3d-puzzles",
+      "programs/x86_64/3nity-media"
+    ],
+    "instance": [
+      "programs/x86_64/0x808",
+      "programs/x86_64/0xfx",
+      "programs/x86_64/0xsynth",
+      "programs/x86_64/121gw-open-firmware",
+      "programs/x86_64/1aivault"
+    ],
+    "parameter_review": [
+      "programs/x86_64/12to11",
+      "programs/x86_64/2ship2harkinian",
+      "programs/x86_64/abaddon",
+      "programs/x86_64/acestep-cpp-ui",
+      "programs/x86_64/adobe-flash-player"
+    ]
+  },
+  "compatibility": "unassessed",
+  "automatic_conversion": false,
+  "command": [
+    "python3",
+    "tools/recipe-reconstruction/reconstruct.py",
+    "inventory",
+    "--recipes-revision",
+    "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22"
+  ],
+  "full_inventory_local": "/tmp/am-125-upstream-inventory.jsonl",
+  "full_inventory_sha256": "cf9100c853c98f43469823509e5ea62d41fa27f30490d1e3fb327c6cefe92dc7",
+  "previous_summary": "upstream-template-inventory.json",
+  "status_transitions": {
+    "parameter_review_to_instance": 4437
+  },
+  "generator_sha256": "48652a23fb28e8d912ed36ba40c8db6db9365d8ea3dc6bc7a77df39cfad3b12e",
+  "template_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119"
+}

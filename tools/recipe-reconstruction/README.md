@@ -38,6 +38,14 @@ Matching accounts for the complete file with exact line endings and no comment
 or whitespace stripping. Captures cannot span physical lines; extra commands
 outside slots fail the layout match. SAMPLE captures must agree across the file.
 Standard AppImage/Archive installer/updater site and FUNCTION values must agree.
+This also applies to the archive-capable AppImage layout. The inspected 3.6
+archive layout additionally recognizes the generator's exact AIA/default-keyword
+rewrite: its generic GitHub download selector followed by `grep -i "appimage$"`
+before `head -1`. This extension requires the inspected template and generator
+SHA-256 values in `originals.py`; a changed original must be reviewed again.
+Other endpoints, filters, ordering and extra shell remain parameter review.
+See [selector research](../../docs/track/release-catalog/research/selector-review-groups.md)
+for original generator locations and the bounded migration candidates.
 Captures resembling shell or unresolved markers require review. Inputs are
 limited to 1 MiB; layout matching refuses lines over 8 KiB. New upstream marker
 syntaxes require extending the explicit marker vocabulary and focused checks;

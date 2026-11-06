@@ -6,7 +6,7 @@ import sys
 import tempfile
 import unittest
 
-from originals import Catalogue, Originals, functions, migration_summary
+from originals import Catalogue, Originals, Template, functions, migration_summary
 
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parents[1]
@@ -77,6 +77,57 @@ class TemplateFamilies(unittest.TestCase):
         source = template.render(self.example(template))
         self.assertEqual(self.catalogue.check('custom script\n')['status'], 'unmatched')
         self.assertIsNone(template.match(source.replace('APP=example-app', 'APP=other-app', 1)))
+
+    def test_generator_derived_appimage_candidates(self):
+        for app in ('20x', '2fac', '4nier-patrimonio'):
+            with self.subTest(app=app):
+                source = self.originals.read(self.metadata['fixture_commit'], 'programs/x86_64/'+app)
+                result = self.catalogue.check(source)
+                self.assertEqual(result['status'], 'instance')
+                match = next(m for m in result['matches'] if m['status'] == 'instance')
+                self.assertTrue(match['template'].endswith('/AM-SAMPLE-AppImage-in-archive'))
+                self.assertEqual(self.catalogue.render(match['template'], match['parameters']), source)
+
+    def test_archive_selector_changes_remain_review(self):
+        source = self.originals.read(self.metadata['fixture_commit'], 'programs/x86_64/20x')
+        mutations = [
+            source.replace(' | head -1)', '; touch /tmp/custom)'),
+            source.replace('/releases |', '/releases/latest |'),
+            source.replace('grep -i "appimage$"', 'grep -i "appimage$\\|zip$"'),
+            source.replace(' | grep -i "appimage$" | head -1', ' | head -1 | grep -i "appimage$"'),
+            source.replace('peakflo/20x', '$(touch /tmp/custom)'),
+            source.replace('grep -i "appimage$" | head -1', 'head -1', 1),
+            source.replace('SITE="peakflo/20x"', 'SITE="example/project"', 1),
+        ]
+        for mutated in mutations:
+            with self.subTest(source=mutated):
+                self.assertNotEqual(mutated, source)
+                self.assertEqual(self.catalogue.check(mutated)['status'], 'parameter_review')
+        self.assertEqual(self.catalogue.check(source+'\ntouch /tmp/custom\n')['status'], 'unmatched')
+        # Both commands fit approved forms individually, but cannot disagree.
+        mismatch = self.catalogue.check(mutations[5])['matches'][0]
+        self.assertIn('installer/updater parameters differ',
+                      [item['reason'] for item in mismatch['parameter_review']])
+
+    def test_archive_disagreement_is_explicit(self):
+        source = self.originals.read(self.metadata['fixture_commit'], 'programs/x86_64/pyuploadtool')
+        result = self.catalogue.check(source)
+        self.assertEqual(result['status'], 'parameter_review')
+        self.assertTrue(any(item['marker'] == 'FUNCTION'
+                            and item['reason'] == 'installer/updater parameters differ'
+                            for match in result['matches'] for item in match['parameter_review']))
+
+    def test_selector_profile_requires_inspected_originals(self):
+        source = self.originals.read(self.metadata['fixture_commit'], 'programs/x86_64/20x')
+        template = next(t for t in self.catalogue.templates
+                        if t.commit == self.metadata['fixture_commit']
+                        and t.path.endswith('/AM-SAMPLE-AppImage-in-archive'))
+        for body, generator, recipe in (
+                (template.body, template.generator+'\n# changed\n', source),
+                (template.body+'\n# changed\n', template.generator, source+'\n# changed\n')):
+            with self.subTest(body=body[-20:], generator=generator[-20:]):
+                changed = Template(template.commit, template.path, body, generator)
+                self.assertEqual(changed.match(recipe)['status'], 'parameter_review')
 
     def test_inventory_is_read_only_and_bound_to_source(self):
         commit = self.metadata['fixture_commit']

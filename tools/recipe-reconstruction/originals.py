@@ -15,6 +15,10 @@ SLOTS = re.compile(r'WEBPAGE-CONTAINING-URLS|MAIN-DOMAIN-OR-SITE|USER/REPO|'
                    r'DOMAIN/REPOSITORY|GIVEMEANAME|MYWEBSITE|YOURCATEGORY|YOURICONURL|'
                    r'SAMPLE|REPLACETHIS|FUNCTION|ITEM|KEYWORD[12]|VARIANT[12]|TEST[1-4]|DESCRIPTION')
 LITERAL = re.compile(r'[A-Za-z0-9_.:/+@-]*\Z')
+# Inspected AIA + APPIMAGE_DEFAULT rewrite in modules/template.am at
+# bbffd15c1, lines 361–375 and 443–448. See tracker research/selector-review-groups.md.
+AIA_GENERATOR_SHA256 = '48652a23fb28e8d912ed36ba40c8db6db9365d8ea3dc6bc7a77df39cfad3b12e'
+AIA_TEMPLATE_SHA256 = 'd1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119'
 
 
 def text(data):
@@ -97,6 +101,9 @@ class Template:
     generator: str
 
     def __post_init__(self):
+        self.aia_default = (self.path == 'templates/AM-SAMPLE-AppImage-in-archive'
+                            and hashlib.sha256(self.body.encode()).hexdigest() == AIA_TEMPLATE_SHA256
+                            and hashlib.sha256(self.generator.encode()).hexdigest() == AIA_GENERATOR_SHA256)
         self.lines = self.body.splitlines(keepends=True)
         self.slots, self.patterns = [], []
         self.tokens = list(SLOTS.finditer(self.body))
@@ -139,6 +146,14 @@ class Template:
         sites = {value for slot, value in zip(self.slots, parameters) if slot in ('REPLACETHIS','USER/REPO','DOMAIN/REPOSITORY')
                  and re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', value)}
         approved = set().union(*(functions(self.generator, site) for site in sites))
+        if self.aia_default:
+            # Derive from the original generic FUNCTION assignment; never parse
+            # or execute a recipe's shell, or accept arbitrary keyword expressions.
+            approved.update(value.removesuffix(' | head -1') + ' | grep -i "appimage$" | head -1'
+                            for value in tuple(approved)
+                            if value.startswith('curl -Ls https://api.github.com/repos/')
+                            and 'grep -oi "https.*download.*" |' in value
+                            and value.endswith(' | head -1'))
         review = []
         for index, (slot, value) in enumerate(zip(self.slots, parameters)):
             if slot == 'FUNCTION':
@@ -148,7 +163,8 @@ class Template:
                 review.append(dict(slot=index, marker=slot, reason='unresolved or nonliteral parameter', value=value))
         # A simple generated recipe repeats the same site and download command
         # in installer/updater. A disagreement must not be blessed as standard.
-        if self.path in ('templates/AM-SAMPLE-AppImage', 'templates/AM-SAMPLE-Archive'):
+        if self.path in ('templates/AM-SAMPLE-AppImage', 'templates/AM-SAMPLE-Archive',
+                         'templates/AM-SAMPLE-AppImage-in-archive'):
             for marker in ('REPLACETHIS', 'FUNCTION'):
                 values = {v for k,v in zip(self.slots, parameters) if k == marker}
                 if len(values) > 1:
