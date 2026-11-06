@@ -21,6 +21,7 @@ NAMES = dict(zip(
      'rclone-v1.0-linux-amd64.zip','Rclone.UI_amd64.AppImage','Satty-1.0-x86_64.AppImage','yt-dlp_linux',
      'zellij-x86_64-unknown-linux-musl.tar.gz','zmx-1.0-linux-x86_64.tar.gz','nvim-linux-x86_64.appimage',
      'nvim-linux-x86_64.appimage','Obsidian-1.0.AppImage','Sunshine_1.0_x86_64.AppImage']))
+NAMES.update({'20x':'20x-linux-x86_64.AppImage', '2fac':'2FAC_0.1.6_amd64.AppImage'})
 NOW='2026-11-04T12:00:00Z'
 
 class HostCutover(unittest.TestCase):

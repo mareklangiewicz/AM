@@ -86,6 +86,68 @@ class Publication(unittest.TestCase):
         self.assertEqual(publication.bounded([sys.executable,'-c','print("ok")'],
             env=env,cap=3),b'ok\n')
 
+    def test_two_new_enrollments_publish_saved_facts_and_select_through_reader(self):
+        import hashlib
+        import tarfile
+        research = host_catalog.ROOT/'docs/track/release-catalog/research'
+        receipt = json.loads((research/'two-candidate-upstream-evidence.json').read_text())
+        archive = research/receipt['evidence_archive']
+        self.assertEqual(hashlib.sha256(archive.read_bytes()).hexdigest(), receipt['evidence_archive_sha256'])
+        rows, sources = host_catalog.configuration()
+        self.assertEqual((len(rows), len(sources)), (23, 21))
+        expected_ids = {'20x':1152028865, '2fac':1337965664}
+        old_rows = [row for row in rows if row['app'] not in expected_ids]
+        prior = {}
+        stamp = '2026-11-06T01:00:00Z'
+        for row in old_rows:
+            rid = str(row['repository_id'])
+            seed = dict(format=2,schema=SCHEMA,repository_id=int(rid),repository=row['repository'])
+            prior[rid] = refresh(seed,[dict(received_at=stamp,releases={},has_next=False,
+                bytes=2,seconds=0)],attempted_at=stamp,max_catalog_bytes=2097152)
+        first = publish_local(self.repo,{r['app']:r['repository_id'] for r in old_rows},prior,
+                              schema=SCHEMA,max_file_bytes=2097152,expected_parent=None)
+        candidate = copy.deepcopy(prior)
+        with tarfile.open(archive) as evidence:
+            for app, rid in expected_ids.items():
+                row = next(r for r in rows if r['app']==app)
+                self.assertEqual(row['repository_id'], rid)
+                source = next(r for r in receipt['receipts'] if r['app']==app and r['kind']=='releases')
+                raw = evidence.extractfile(app+'-releases.json').read()
+                self.assertEqual(hashlib.sha256(raw).hexdigest(), source['sha256'])
+                observed = source['observed_at'][:19]+'Z'
+                seed = dict(format=2,schema=SCHEMA,repository_id=rid,repository=row['repository'])
+                # The real saved page is per_page=30: preserve its Link evidence,
+                # rather than misrepresenting it as a complete 100-release response.
+                candidate[str(rid)] = refresh(seed,[dict(received_at=observed,
+                    releases=normalize(json.loads(raw),30),has_next=app=='20x',bytes=len(raw),seconds=0)],
+                    attempted_at=observed,page_size=30,page_limit=1,max_catalog_bytes=2097152)
+                self.assertEqual(candidate[str(rid)]['collection']['status'], 'ok')
+                self.assertEqual(candidate[str(rid)]['last_success']['history_complete'], app=='2fac')
+        second = publish_local(self.repo,{r['app']:r['repository_id'] for r in rows},candidate,
+                               schema=SCHEMA,max_file_bytes=2097152,expected_parent=first)
+        apps, after = load_local(self.repo,second,max_file_bytes=2097152)
+        self.assertEqual(apps,{r['app']:r['repository_id'] for r in rows})
+        self.assertEqual({rid:after[rid] for rid in prior},prior)
+        self.assertEqual(set(after)-set(prior),set(map(str,expected_ids.values())))
+        for app,rid in expected_ids.items():
+            raw = publication.git(self.repo,'show',second+':repositories/'+str(rid)+'.yaml')
+            self.assertLess(len(raw),host_catalog.FILE_CAP)
+            document = self.path/(str(rid)+'.yaml');document.write_bytes(raw)
+            result = subprocess.run(['sh',str(host_catalog.ROOT/'modules/catalog-yaml-reader.am'),
+                'asset_facts',str(document)],capture_output=True,text=True,timeout=30)
+            self.assertEqual(result.returncode,0,result.stderr)
+            expected = next(r['narrow_declaration_url'] for r in receipt['selection_comparison'] if r['app']==app)
+            env = dict(os.environ,LC_ALL='C',AM_YAML_RECIPE='x86_64/'+app,
+                AM_YAML_REPOSITORY=str(rid),AM_YAML_NOW=after[str(rid)]['observed_at'],AM_YAML_PIN=second)
+            for command in (['mawk'], ['gawk'], ['busybox','awk']):
+                with self.subTest(app=app,command=command):
+                    selected = subprocess.run([*command,'-f',str(host_catalog.ROOT/'modules/catalog-yaml-policy.am')],
+                        input=result.stdout,capture_output=True,text=True,env=env,timeout=10)
+                    self.assertEqual(selected.returncode,0,selected.stderr)
+                    self.assertEqual(selected.stdout.splitlines()[-1],expected)
+        self.assertEqual(load_local(self.repo,first,max_file_bytes=2097152)[0],
+                         {r['app']:r['repository_id'] for r in old_rows})
+
     def test_current_workflow_collection_publish_and_failure_preserves_previous(self):
         rows, sources = host_catalog.configuration()
         previous = {}

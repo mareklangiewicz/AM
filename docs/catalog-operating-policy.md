@@ -1,7 +1,9 @@
 # Single-user YAML catalog operation
 
-Marek's fork collects YAML release facts for the 21 recipe identities listed in
-`tools/catalog-collector/collection-recipes.txt` (19 numeric repository identities).
+The local source collection list now contains 23 recipe identities in
+`tools/catalog-collector/collection-recipes.txt` (21 numeric repository identities),
+including 20x and 2fac. The deployed baseline remains 21 recipes / 19 repositories
+until the pending source commits are pushed and a publication succeeds.
 Collection enrollment is independent of recipe declaration support. Recipe headers
 marked `# AM-RECIPE-DECLARATION 1` own customization and selection settings;
 adding a declaration does not enroll it for collection. The older 50-source design
@@ -110,9 +112,11 @@ refused before acquisition and by declaration compilation. Existing desktop file
 remain preserved. 20x opts in to retain its original fork recipe behavior;
 2fac and all other recipes keep the default argument-preservation behavior.
 
-20x/2fac now have source declarations but remain outside collection enrollment.
-Their source conversion does not supply catalog coverage or change installed
-recipes. Enrollment and deployment require separate scope; see ticket 130.
+20x/2fac have source declarations and local collection enrollment (tickets 130/131).
+Neither local change supplies production catalog coverage or changes installed
+recipes. Pushing would make the next scheduled/manual publication collect the
+two additional sources; push, publication observation and deployment remain
+separate. Do not assume source enrollment proves a successful live collection.
 
 Obsidian declares `EXTRA_APP_LAUNCHERS=obsidian-gui` and `DESKTOP_EXEC=installed`.
 The shared lifecycle contains no Obsidian identity checks. Official CLI registration

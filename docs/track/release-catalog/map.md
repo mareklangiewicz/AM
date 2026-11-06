@@ -2,13 +2,20 @@
 
 ## Maintained upstream recipe reconstruction
 
-Current source result: [130](issues/130-convert-two-inspected-appimage-recipes.md)
-converts only existing 20x/2fac recipes to literal declarations with verified
-numeric IDs and narrow patterns, following Marek's go-ahead. Explicit opt-in
-`DESKTOP_STRIP_NO_SANDBOX=true` preserves 20x's old generated desktop behavior;
-all other recipes preserve arguments by default. Collection enrollment stays at
-21 recipes / 19 sources; neither candidate has production catalog coverage from
-this change. Push, enrollment and live deployment remain separate.
+Current source result: [131](issues/131-enroll-two-converted-appimage-recipes.md)
+adds only 20x/2fac to local collection enrollment: 23 recipes / 21 numeric sources.
+Saved real responses normalize within unchanged budgets and replay through
+local YAML publication, the distributed reader and three-awk selection. These
+are per_page=30 observations, not proof of production per_page=100 capacity.
+20x history remains explicitly incomplete. No remote publication has happened;
+the deployed baseline stays 21 recipes / 19 sources. A push makes the next
+publication attempt collect these two sources and requires Marek's decision.
+
+[130 resolved](issues/130-convert-two-inspected-appimage-recipes.md) converts
+only existing 20x/2fac source recipes using verified IDs and narrow patterns.
+Explicit `DESKTOP_STRIP_NO_SANDBOX=true` preserves 20x's old generated desktop
+behavior; other recipes preserve arguments by default. No installed transition
+or deployment is performed. 4nier-patrimonio stays outside scope.
 
 [129 resolved](issues/129-inspect-two-candidate-appimage-payloads.md) retains
 [static inspection and proposal](research/two-candidate-conversion-proposal.md),
@@ -23,8 +30,8 @@ API responses and offline replay. Narrow patterns preserve the observed URL
 winners; full payload evidence is now in 129. [127 resolved](issues/127-review-armhf-declaration-eligibility.md),
 source `e2e96b3a4`, closes the armhf name-filter gap; all 60 focused tests pass.
 These changes are not deployed. Tickets 124–126 and tracker updates are pushed
-through `a2119bd9f`; 127–130 remain local pending Marek's push decision.
-Only the two source conversions are authorized; enrollment remains separate. Current inventory remains
+through `a2119bd9f`; 127–131 remain local pending Marek's push decision.
+Source conversion and local enrollment are complete; live operations remain separate. Current inventory remains
 6,517 instances / 687 review / 2,030 unmatched.
 
 [125 resolved](issues/125-recognize-default-appimage-selector.md): exact

@@ -14,7 +14,7 @@ from recipe_declarations import recipe_rows
 
 
 class Declarations(unittest.TestCase):
-    def test_inspected_candidate_declarations_select_saved_assets_without_enrollment(self):
+    def test_enrolled_candidate_declarations_select_saved_assets(self):
         import hashlib
         import tarfile
         research = compiler.ROOT/'docs/track/release-catalog/research'
@@ -23,8 +23,8 @@ class Declarations(unittest.TestCase):
         self.assertEqual(hashlib.sha256(archive.read_bytes()).hexdigest(), receipt['evidence_archive_sha256'])
         rows = {r['app']:r for r in recipe_rows(compiler.ROOT)}
         enrolled, _ = host_catalog.configuration()
-        self.assertNotIn('20x', [r['app'] for r in enrolled])
-        self.assertNotIn('2fac', [r['app'] for r in enrolled])
+        self.assertIn('20x', [r['app'] for r in enrolled])
+        self.assertIn('2fac', [r['app'] for r in enrolled])
         with tarfile.open(archive) as evidence:
             for app in ('20x', '2fac'):
                 row = rows[app]
@@ -133,7 +133,7 @@ class Declarations(unittest.TestCase):
             with patch.object(compiler, 'ROOT', root), patch.object(host_catalog, 'ROOT', root):
                 compiler.generate()
                 rows, sources = host_catalog.configuration()
-                self.assertEqual((len(rows), len(sources)), (21, 19))
+                self.assertEqual((len(rows), len(sources)), (23, 21))
                 policy = root/'modules/catalog-yaml-policy.am'
                 before, rest = policy.read_text().split(compiler.START)
                 generated, after = rest.split(compiler.END)
