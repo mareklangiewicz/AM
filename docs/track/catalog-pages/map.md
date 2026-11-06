@@ -39,6 +39,8 @@ AM pushes and publication remain subject to Marek's separate approval.
 
 - [Establish app metadata and trustworthy download presentation](issues/02-app-metadata-and-download-semantics.md): existing release facts suffice for browsing; research recommends optional attributed descriptions, icon fallbacks and explicit AM/inferred-match distinction.
 
+- [Choose the Pages home and existing-site coexistence](issues/05-choose-hosting-and-coexistence.md): same repository, code on main-marek, direct JavaScript reads pinned to a release-catalog commit; supersedes generated-index recommendation, pending feasibility prototype.
+
 ## Not yet specified
 
 Operational recovery and stale-site behavior once snapshot delivery is chosen.

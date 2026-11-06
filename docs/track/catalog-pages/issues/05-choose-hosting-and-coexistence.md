@@ -2,7 +2,7 @@
 
 Type: grilling
 Label: wayfinder:grilling
-Status: open
+Status: resolved
 Blocked by: 01
 
 ## Question
@@ -34,3 +34,23 @@ November 6, 2026 read-only check requested by Marek:
   Pages site per the observed repository metadata. Do not inherit upstream CNAME.
 
 Hosting choice remains open for Marek; no settings or deployments changed.
+
+## Answer
+
+Marek accepted the November 6 recommendation: use this same AM repository,
+maintain website HTML/CSS/JavaScript on main-marek and publish through Pages;
+keep release-catalog as the authoritative YAML-only data branch. No inherited
+custom domain. No existing fork Pages site was found to preserve.
+
+Browser code resolves release-catalog to one exact commit per page load, then
+reads apps.yaml and repository YAML at that commit on demand. No generated
+catalog index, copied dataset or data synchronization in the chosen starting
+approach. Catalog changes can appear on a new page load without site redeployment.
+This supersedes the generated-presentation-index recommendation in the snapshot
+research, not its underlying factual findings. Direct-fetch feasibility,
+large-integer preservation, failure behavior and performance remain prototype
+questions; this decision does not claim they have passed.
+
+No implementation, push, Pages configuration or publication is authorized by this
+planning resolution. The intended default project address is
+https://mareklangiewicz.github.io/AM/ once separately configured and deployed.
