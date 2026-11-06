@@ -2,13 +2,16 @@
 
 ## Maintained upstream recipe reconstruction
 
-Current frontier: [126 open, unclaimed](issues/126-assess-three-candidate-runtime-behavior.md)
-assesses selection/install/updater behavior offline for 20x, 2fac and
-4nier-patrimonio before conversion. Tickets 124 and 125 are resolved and pushed
-through `19482e1a1` on `origin/main-marek`; no claim is in flight. The current
-inventory is 125's 6,517 instances / 687 parameter-review / 2,030 unmatched;
-123's earlier counts remain historical. No conversion, enrollment or deployment
-has been performed by this template-tool work.
+Current frontier: [127 open, unclaimed](issues/127-review-armhf-declaration-eligibility.md)
+reviews the generic armhf eligibility gap found by
+[126 resolved](issues/126-assess-three-candidate-runtime-behavior.md).
+[Runtime assessment](research/three-candidate-runtime-assessment.md) supplies
+42 offline selector comparisons and disposable lifecycle checks. 20x/2fac are
+existing preparation candidates; 4nier-patrimonio is absent. Numeric IDs and
+real asset/launcher evidence remain unverified; no conversion is approved.
+Tickets 124–125 are pushed through `19482e1a1`; 126 is source/test evidence only.
+No claim is in flight. Current inventory remains 6,517 instances / 687 review /
+2,030 unmatched. No conversion, enrollment or deployment by this template work.
 
 [125 resolved](issues/125-recognize-default-appimage-selector.md): exact
 AIA/default-keyword selector recognition is bound to inspected original hashes;

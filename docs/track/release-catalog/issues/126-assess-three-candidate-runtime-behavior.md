@@ -1,7 +1,7 @@
 # Assess runtime behavior for three template migration candidates
 
 Type: task
-Status: open
+Status: resolved
 Triage: ready-for-agent
 
 Follow [125](125-recognize-default-appimage-selector.md) with an independent,
@@ -40,3 +40,33 @@ batch only if the evidence supports it; otherwise record concrete blockers.
 No collection expansion, recipe conversion, live installation/deployment,
 publication, network acquisition, push or yadm operation is part of this ticket.
 Claim before implementation. Conversion/enrollment requires a separate scope.
+
+## Answer
+
+[Assessment](../research/three-candidate-runtime-assessment.md) records exact
+upstream/current-source provenance, a per-candidate readiness comparison and
+executable offline evidence. 20x and 2fac remain byte-identical existing fork
+recipes; 4nier-patrimonio is absent and would need a separate addition scope.
+Numeric repository IDs and real asset/launcher facts remain unverified.
+
+Five new assessment groups pass, including 42 selector comparisons across all
+three candidates, stale/identity refusal, inert shared install/standalone update,
+custom desktop/data/command preservation, removal, failed transfer/empty asset/
+helper refusal, and explicit tar staging. A closed command directory stubs all
+network acquisition; no original installer or real app binary executes. The
+report records source-only versus executed evidence and untested capabilities.
+
+The exploratory any-channel/name-suffix declaration differs from the legacy
+first-URL selector in ordering, URL/name matching, OS rules, retained history and
+freshness. It also admits armhf where upstream rejects it. No conversion batch
+is approved by synthetic checks. Keep 20x/2fac as the bounded existing-recipe
+preparation pair; keep 4nier as source-only comparison. Track the concrete
+eligibility gap in [127](127-review-armhf-declaration-eligibility.md). Repository
+identity, real asset/desktop evidence, accepted policy differences and an explicit
+conversion/enrollment scope remain separate gates. No production source/runtime,
+recipe, enrollment, live file, publication, push or yadm change in this ticket.
+
+Final validation: all 33 recipe-reconstruction tests pass in 7.533 seconds,
+including the five new assessment groups; changed documentation links and
+whitespace checks pass. No final full catalog/container suite or independent
+code review is claimed.

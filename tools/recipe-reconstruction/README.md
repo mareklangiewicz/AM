@@ -129,6 +129,11 @@ Tests read the originals too: one parametrized contract generates examples for
 steps. Shared tests exercise custom FUNCTION expressions, nonliteral parameters,
 repeated identities, real upstream recipes, CLI and inventory contracts. No
 per-app template copies or handwritten parallel installer bodies are needed.
+The candidate runtime assessment also compares the extracted, hash-checked
+upstream selector against the maintained awk policy using local facts, and
+exercises the shared installer with inert assets in disposable directories.
+It records known behavioral differences, not migration approval; see
+[assessment](../../docs/track/release-catalog/research/three-candidate-runtime-assessment.md).
 The tests intentionally require the recorded Git objects; source-only archives
 and shallow clones without them must first obtain those originals explicitly.
 
