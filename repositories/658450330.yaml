@@ -1,21 +1,21 @@
 format: 2
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/264e5264d91ef409990011c8c2a4ad3015b38771/docs/catalog-format-v2.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/fa36ebb7edfe3eb47702a8537802f6b95a4b833b/docs/catalog-format-v2.md"
 repository_id: 658450330
 repository: "AppImage/appimagetool"
 collection:
-  attempted_at: "2026-11-05T19:50:24Z"
+  attempted_at: "2026-11-06T02:29:35Z"
   page_size: 100
   page_limit: 1
   reconcile: false
   status: "ok"
 last_success:
-  completed_at: "2026-11-05T19:50:25Z"
+  completed_at: "2026-11-06T02:29:35Z"
   page_size: 100
   page_limit: 1
   reconcile: false
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-05T19:50:25Z"
+observed_at: "2026-11-06T02:29:35Z"
 releases:
   "169226508":
     tag: "1.9.0"
@@ -84,6 +84,7 @@ releases:
         content_type: "application/octet-stream"
         digest: "sha256:ed4ce84f0d9caff66f50bcca6ff6f35aae54ce8135408b3fa33abfc3cb384eb0"
   "430843460":
+    observed_at: "2026-11-05T19:50:25Z"
     tag: "continuous"
     title: "Continuous build"
     url: "https://github.com/AppImage/appimagetool/releases/tag/continuous"
@@ -118,3 +119,38 @@ releases:
         size: 15137272
         content_type: "application/octet-stream"
         digest: "sha256:62aebc77c2149e96b593b94da9bbd1881e0984a56399ff6d7a03b7ddd7c9ce68"
+  "435944148":
+    tag: "continuous"
+    title: "Continuous build"
+    url: "https://github.com/AppImage/appimagetool/releases/tag/continuous"
+    created_at: "2026-11-06T00:46:21Z"
+    published_at: "2026-11-06T00:48:33Z"
+    updated_at: "2026-11-06T00:48:33Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/AppImage/appimagetool/zipball/continuous"
+    source_tar_url: "https://api.github.com/repos/AppImage/appimagetool/tarball/continuous"
+    assets:
+      "715388203":
+        name: "appimagetool-aarch64.AppImage"
+        url: "https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-aarch64.AppImage"
+        size: 14694920
+        content_type: "application/octet-stream"
+        digest: "sha256:d6a061996de690434996c2a523eafedd0a23780aaf02d69ce364537e71607e94"
+      "715388328":
+        name: "appimagetool-armhf.AppImage"
+        url: "https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-armhf.AppImage"
+        size: 14245252
+        content_type: "application/octet-stream"
+        digest: "sha256:e0f68dfd35b8a833ef3d103fb8da0685da7e0325cc009a5e3f9ac24166855d2c"
+      "715388417":
+        name: "appimagetool-i686.AppImage"
+        url: "https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-i686.AppImage"
+        size: 14146936
+        content_type: "application/octet-stream"
+        digest: "sha256:77c4ea4a5dd573a2c064ec074628829f897dd40c8f3d91c37adf6c2d3fb2141e"
+      "715388534":
+        name: "appimagetool-x86_64.AppImage"
+        url: "https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage"
+        size: 15133176
+        content_type: "application/octet-stream"
+        digest: "sha256:e8c1169c4af66c3184d7ee110713d4be04befe671fa358e2c1591ee840553b03"
