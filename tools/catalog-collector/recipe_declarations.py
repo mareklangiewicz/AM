@@ -55,7 +55,7 @@ def recipe_rows(root):
             raise ValueError('inconsistent package kind/tools: '+str(path))
         if settings['CATALOG_CHANNEL'] not in ('any','stable','nightly'):
             raise ValueError('unsupported channel: '+str(path))
-        for boolean in ('REFRESH_ALWAYS','CATALOG_FRESH_ONLY'):
+        for boolean in ('REFRESH_ALWAYS','CATALOG_FRESH_ONLY','DESKTOP_STRIP_NO_SANDBOX'):
             if settings.get(boolean,'false') not in ('true','false'):
                 raise ValueError('invalid recipe boolean: '+boolean)
         if layout not in ('appimage', 'raw', 'tar', 'zip', 'toolset'):

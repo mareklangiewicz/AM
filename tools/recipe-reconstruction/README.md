@@ -106,7 +106,8 @@ python3 tools/recipe-reconstruction/reconstruct.py verify-upstream --repo .
 `render --declaration FILE --template github-appimage-3.5` accepts exactly
 `{"template":"github-appimage-3.5","app":"example","repository":"owner/project"}`.
 Only known literal current short-header settings/wrapper and x86_64 AppImage
-layout are supported. Other declared selector/launcher settings are not encoded
+layout are supported. The literal `DESKTOP_STRIP_NO_SANDBOX` setting is accepted by the short reader.
+Other declared selector/launcher settings are not encoded
 in upstream output or behaviorally validated. Template/generator/fixture hashes
 remain in `provenance.json`; the actual bodies come from Git originals. The
 existing short-reader's refusal checks and real round trips remain covered.

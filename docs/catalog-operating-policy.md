@@ -101,6 +101,19 @@ to that executable. This setting does not describe executables inside archives.
 entries, keeping their arguments and field codes. Existing desktop entries remain
 preserved. Other values are refused before downloading or installing anything.
 
+`DESKTOP_STRIP_NO_SANDBOX` defaults to `false`. An explicit `true` removes
+space-delimited literal `--no-sandbox` flags from `Exec=` lines of newly generated
+desktop files, preserving other keys, other arguments and field codes. This is a
+narrow textual compatibility transformation, not a general desktop argument
+parser; quoted/escaped argument forms require separate review. Other values are
+refused before acquisition and by declaration compilation. Existing desktop files
+remain preserved. 20x opts in to retain its original fork recipe behavior;
+2fac and all other recipes keep the default argument-preservation behavior.
+
+20x/2fac now have source declarations but remain outside collection enrollment.
+Their source conversion does not supply catalog coverage or change installed
+recipes. Enrollment and deployment require separate scope; see ticket 130.
+
 Obsidian declares `EXTRA_APP_LAUNCHERS=obsidian-gui` and `DESKTOP_EXEC=installed`.
 The shared lifecycle contains no Obsidian identity checks. Official CLI registration
 at `~/.local/bin/obsidian` remains independent. Existing installed recipes are not

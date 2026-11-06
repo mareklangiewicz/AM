@@ -253,6 +253,86 @@ cp "$ASSESS_PAYLOAD" "$2"
                 self.assertNotEqual(result.returncode,0)
                 self.assertEqual({p.name:p.read_bytes() for p in installed.iterdir() if p.is_file()},before)
 
+    def test_converted_recipes_with_observed_desktop_and_icon_links(self):
+        evidence = ROOT/'docs/track/release-catalog/research/two-candidate-payload-evidence.tar.gz'
+        for app in ('20x', '2fac'):
+            with self.subTest(app=app):
+                home, recipe, env = self.lifecycle(app)
+                metadata = home/'metadata'; metadata.mkdir()
+                # Only inert desktop/icon data is copied; never copy AppRun.
+                with tarfile.open(evidence) as archive:
+                    prefix = app+'-metadata/'
+                    for member in archive.getmembers():
+                        if not member.name.startswith(prefix) or member.name.endswith('/AppRun'):
+                            continue
+                        target = metadata/member.name[len(prefix):]
+                        target.parent.mkdir(parents=True, exist_ok=True)
+                        if member.issym():
+                            target.symlink_to(member.linkname)
+                        else:
+                            target.write_bytes(archive.extractfile(member).read())
+                (self.bin/'dirname').symlink_to(shutil.which('dirname'))
+                source = (ROOT/'programs/x86_64'/app).read_text()
+                recipe.write_text(source.replace('/opt/am/modules/appimage.am',
+                                                str(ROOT/'modules/appimage.am')))
+                env['ASSESS_METADATA'] = str(metadata)
+                script(home/'payload', '''[ "$1" = --appimage-extract ] || exit 95
+mkdir -p squashfs-root
+case "$2" in
+ '*.desktop') cp -a "$ASSESS_METADATA"/*.desktop squashfs-root/ ;;
+ *) mkdir -p "squashfs-root/$(dirname "$2")"
+    cp -a "$ASSESS_METADATA/$2" "squashfs-root/$2" ;;
+esac
+''')
+                expected = 'Exec=20x %U' if app == '20x' else 'Exec=2fac'
+                result = self.run_recipe(recipe, env)
+                self.assertEqual(result.returncode, 0, result.stderr)
+                installed = home/'apps'/app
+                desktop = home/'desktops'/f'{app}-AM.desktop'
+                self.assertIn(expected, desktop.read_text().splitlines())
+                self.assertNotIn('--no-sandbox', desktop.read_text())
+                self.assertFalse((installed/'icons'/app).is_symlink())
+                self.assertEqual((installed/'icons'/app).read_bytes(), (metadata/'.DirIcon').read_bytes())
+                result = self.run_recipe(installed/'AM-updater', env)
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertIn(b'Update not needed!', result.stdout)
+                desktop.write_text('custom desktop')
+                selection = home/'selection'
+                selection.write_text(selection.read_text().replace('/v1/', '/v2/'))
+                result = self.run_recipe(installed/'AM-updater', env)
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertEqual(desktop.read_text(), 'custom desktop')
+                result = self.run_recipe(installed/'remove', env)
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertFalse(desktop.exists())
+                self.assertFalse((home/'links'/app).is_symlink())
+                # Same fixture directory is reused for the next candidate.
+                (self.bin/'dirname').unlink()
+
+    def test_desktop_argument_option_is_scoped_and_validated(self):
+        home, recipe, env = self.lifecycle('20x')
+        original = recipe.read_text()
+        recipe.write_text(original.replace('CATALOG_FORMAT=2',
+            'DESKTOP_STRIP_NO_SANDBOX=invalid\nCATALOG_FORMAT=2'))
+        result = self.run_recipe(recipe, env)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertFalse((home/'calls').exists())
+        recipe.write_text(original.replace('CATALOG_FORMAT=2',
+            'DESKTOP_STRIP_NO_SANDBOX=true\nCATALOG_FORMAT=2'))
+        script(home/'payload', '''[ "$1" = --appimage-extract ] || exit 95
+mkdir -p squashfs-root
+case "$2" in
+ '*.desktop') printf '%s\\n' '[Desktop Entry]' 'Exec=upstream --no-sandbox --no-sandboxing --no-sandbox %U --no-sandbox' 'Comment=keep --no-sandbox' 'Icon=upstream' > squashfs-root/app.desktop ;;
+ .DirIcon) printf fixture-icon > squashfs-root/.DirIcon ;;
+ *) exit 96 ;;
+esac
+''')
+        result = self.run_recipe(recipe, env)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        desktop = (home/'desktops/20x-AM.desktop').read_text()
+        self.assertIn('Exec=20x --no-sandboxing %U\n', desktop)
+        self.assertIn('Comment=keep --no-sandbox\n', desktop)
+
     def test_archive_staging_requires_explicit_layout_and_root(self):
         home,recipe,env=self.lifecycle('20x')
         payload=home/'payload';archive=home/'bundle.tar.gz'

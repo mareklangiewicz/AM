@@ -167,3 +167,13 @@ Do not use AppImage self-extraction: that executes its runtime. No new runtime
 code changed, so validation here checks evidence integrity, source identity,
 textual desktop transformations and documentation; 126's inert runtime tests
 remain earlier evidence, not a real-payload launch test or complete suite rerun.
+
+## Subsequent source conversion
+
+Marek's November 6 go-ahead accepted the next step described after this report:
+strip 20x's desktop flag through an explicit shared setting, convert both source
+recipes with these proposed selection policies, regenerate declarations and
+validate locally. [130](../issues/130-convert-two-inspected-appimage-recipes.md)
+records implementation and checks. The evidence and readiness statements above
+remain the pre-conversion assessment at `06c01414c`; current source recipes now
+differ from those pinned originals. Enrollment, push and deployment remain separate.

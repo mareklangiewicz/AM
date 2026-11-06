@@ -14,6 +14,49 @@ from recipe_declarations import recipe_rows
 
 
 class Declarations(unittest.TestCase):
+    def test_inspected_candidate_declarations_select_saved_assets_without_enrollment(self):
+        import hashlib
+        import tarfile
+        research = compiler.ROOT/'docs/track/release-catalog/research'
+        receipt = json.loads((research/'two-candidate-upstream-evidence.json').read_text())
+        archive = research/receipt['evidence_archive']
+        self.assertEqual(hashlib.sha256(archive.read_bytes()).hexdigest(), receipt['evidence_archive_sha256'])
+        rows = {r['app']:r for r in recipe_rows(compiler.ROOT)}
+        enrolled, _ = host_catalog.configuration()
+        self.assertNotIn('20x', [r['app'] for r in enrolled])
+        self.assertNotIn('2fac', [r['app'] for r in enrolled])
+        with tarfile.open(archive) as evidence:
+            for app in ('20x', '2fac'):
+                row = rows[app]
+                source = next(r for r in receipt['receipts'] if r['app']==app and r['kind']=='releases')
+                raw = evidence.extractfile(app+'-releases.json').read()
+                self.assertEqual(hashlib.sha256(raw).hexdigest(), source['sha256'])
+                expected = next(r['narrow_declaration_url'] for r in receipt['selection_comparison'] if r['app']==app)
+                facts = ''
+                now = source['observed_at'][:19]+'Z'
+                for release in json.loads(raw):
+                    for asset in release['assets']:
+                        facts += '\t'.join([str(release['id']),str(asset['id']),*map(json.dumps,[
+                            now,release['published_at'],release['tag_name'],asset['name'],
+                            asset['browser_download_url']]),json.dumps(release['prerelease'])])+'\n'
+                for command in (['mawk'], ['gawk'], ['busybox','awk']):
+                    with self.subTest(app=app, command=command):
+                        result = subprocess.run([*command,'-f',str(compiler.ROOT/'modules/catalog-yaml-policy.am')],
+                            input=facts,text=True,capture_output=True,timeout=10,
+                            env={**os.environ,'LC_ALL':'C','AM_YAML_RECIPE':row['recipe'],
+                                 'AM_YAML_REPOSITORY':str(row['repository_id']),
+                                 'AM_YAML_NOW':now,'AM_YAML_PIN':'a'*40})
+                        self.assertEqual(result.returncode,0,result.stderr)
+                        self.assertEqual(result.stdout.splitlines()[-1],expected)
+        # Declaration compilation validates the opt-in boolean before registry generation.
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            path = root/'programs/x86_64/20x';path.parent.mkdir(parents=True)
+            path.write_text((compiler.ROOT/'programs/x86_64/20x').read_text().replace(
+                'DESKTOP_STRIP_NO_SANDBOX=true','DESKTOP_STRIP_NO_SANDBOX=unknown'))
+            with self.assertRaisesRegex(ValueError,'invalid recipe boolean'):
+                recipe_rows(root)
+
     def test_architecture_labels_and_armhf_refusals(self):
         # Independent expectations for asset names, including conflicting labels.
         # armhf is not enough to establish ARMv7; unlabelled x86_64 remains allowed.
