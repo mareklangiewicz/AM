@@ -19,3 +19,19 @@ ten new selections pass, all source runtime/manager bytes match, manager help
 works and protected paths remain unchanged. Preserve prior recovery directories
 and official Obsidian CLI. No real app execution, app install/update, installed
 recipe/snapshot refresh or yadm pointer change. Keep all candidate apps uninstalled.
+
+## Fresh full-scope preflight
+
+[Fresh evidence and rehearsal](../research/next-ten-full-scope-replay.json) retains
+all 51 production-shape pages: 56,386,123 bytes acquired in 62.60 seconds.
+Actual retained collector replay against exact parent
+`daf47edb2b382bc6b7df832b00c43fae12bb73d2` normalizes/validates in 32.86 seconds,
+producing 9,666,397 YAML bytes, largest 1,142,139 bytes. The remote-free candidate
+is `af8d1e21a15ec07927a42222db9a9fd8a49d710f`. Distributed reader and three-awk
+replay preserve all ten inspected current asset IDs and URLs. All prior app
+identities remain. This is one full-scope capacity observation, not future growth
+or all-history completeness. No limits, runtime logic or workflow are changed.
+
+The 70 source/enrollment tests from 135 cover the exact code being pushed;
+only operational records have changed in this step. Source push/manual publication
+and protected one-module refresh remain authorized; receipts follow below.

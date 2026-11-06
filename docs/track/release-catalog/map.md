@@ -2,6 +2,14 @@
 
 ## Maintained upstream recipe reconstruction
 
+[136 claimed](issues/136-publish-next-ten-and-refresh-live-policy.md) performs the
+authorized ten-recipe publication/live follow-through. Fresh 51-source acquisition
+is 56.39 MB / 62.60 s; retained collector replay 32.86 s; 9.67 MB YAML, largest
+1.14 MB. All ten inspected asset IDs/URLs match. No budget changes. Push/manual
+publication and protected compiled-policy refresh are in progress; prior deployed
+state remains until verification receipts below.
+
+
 Current local result: [135 resolved](issues/135-prepare-next-ten-existing-recipes.md)
 converts and locally enrolls ten further existing recipes: **53 recipes / 51
 sources**. [Report](research/next-ten-conversion.md) retains exact Git/API/
