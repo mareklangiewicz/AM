@@ -2,25 +2,32 @@
 
 ## Maintained upstream recipe reconstruction
 
-[136 claimed](issues/136-publish-next-ten-and-refresh-live-policy.md) performs the
-authorized ten-recipe publication/live follow-through. Fresh 51-source acquisition
-is 56.39 MB / 62.60 s; retained collector replay 32.86 s; 9.67 MB YAML, largest
-1.14 MB. All ten inspected asset IDs/URLs match. No budget changes. Push/manual
-publication and protected compiled-policy refresh are in progress; prior deployed
-state remains until verification receipts below.
+Current deployed result: [136 resolved](issues/136-publish-next-ten-and-refresh-live-policy.md)
+publishes the next ten recipes: **53 recipes / 51 sources**, one spare source
+slot. Pushed `ce9bba8c5`; [successful run 42198950964](https://github.com/mareklangiewicz/AM/actions/runs/42198950964)
+publishes `b54c4f267ef8a1eb0aca76f01b68e391ee24a0f7`. Map/all 51 source identities/statuses verify;
+9,666,397 YAML bytes, largest 1,142,139 bytes.
+Only the compiled live policy was refreshed: all 326 protected paths preserved,
+all 46 prior choices identical, ten inspected new asset IDs/URLs match, help passes.
+The host remains at 21 apps; all candidates stay uninstalled. No yadm change.
+[Report](research/next-ten-publication-deployment.md).
 
 
-Current local result: [135 resolved](issues/135-prepare-next-ten-existing-recipes.md)
+[136's preflight](issues/136-publish-next-ten-and-refresh-live-policy.md) measured
+fresh 51-source acquisition at 56.39 MB / 62.60 s and retained collector replay
+at 32.86 s. All ten inspected asset IDs/URLs match, with no budget changes.
+
+Pre-publication local result: [135 resolved](issues/135-prepare-next-ten-existing-recipes.md)
 converts and locally enrolls ten further existing recipes: **53 recipes / 51
 sources**. [Report](research/next-ten-conversion.md) retains exact Git/API/
 full-payload evidence, two unchanged absolute-icon-link exclusions and a 193-entry
 verified manifest. All 70 focused tests pass. Combined exact-prior-plus-ten saved
 snapshot is 9.66 MB YAML / largest 1.14 MB; recorded response bytes total 56.39 MB.
-This is local preparation, not fresh 51-source transport evidence. No new push,
-publication or live/installed change; operational decision remains with Marek.
+Those measurements combine recorded pages rather than fresh full-scope transport.
+This local-preparation result precedes 136's completed operation above.
 
 
-Current deployed result: [134 resolved](issues/134-enroll-and-publish-twenty-recipe-batch.md)
+Prior deployed result: [134 resolved](issues/134-enroll-and-publish-twenty-recipe-batch.md)
 enrolls and publishes the twenty converted recipes: **43 recipes / 41 sources**.
 Pushed `743dbf139`; successful [manual run 42156336747](https://github.com/mareklangiewicz/AM/actions/runs/42156336747)
 publishes `daf47edb2b382bc6b7df832b00c43fae12bb73d2`. Exact-pin map/all source

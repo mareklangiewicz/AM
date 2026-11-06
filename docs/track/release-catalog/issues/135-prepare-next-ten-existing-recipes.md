@@ -51,3 +51,11 @@ Production remains 43 recipes / 41 sources at `daf47edb2`; installed host remain
 installed recipe/runtime refresh, recovery deletion or yadm operation occurred.
 The concrete next decision is pushing/publishing this ten-recipe batch, with fresh
 51-source preflight and protected live compiled-policy follow-through.
+
+
+## Subsequent operation
+
+Marek authorized the next decision. [136](136-publish-next-ten-and-refresh-live-policy.md)
+completes source push, manual publication and protected live policy refresh.
+Production is now 53 recipes / 51 sources; all ten inspected choices pass and
+all candidate apps remain uninstalled. Earlier source-only statements are historical.

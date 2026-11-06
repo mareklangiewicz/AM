@@ -1,19 +1,14 @@
 # Single-user YAML catalog operation
 
-Local ticket [135](track/release-catalog/issues/135-prepare-next-ten-existing-recipes.md)
-prepares ten additional recipes: the local collection list is now 53 recipes /
-51 numeric sources, pending a separate push/publication decision. The deployed
-production scope described below remains 43/41; no live state changed in 135.
+The published collection contains 53 recipe identities from
+`tools/catalog-collector/collection-recipes.txt` (51 numeric repository identities),
+leaving one spare slot under the unchanged 52-source limit. November 6
+[manual run 42198950964](https://github.com/mareklangiewicz/AM/actions/runs/42198950964) at source `ce9bba8c5` publishes
+catalog `b54c4f267ef8a1eb0aca76f01b68e391ee24a0f7`; its exact-pin map and all
+source identities/statuses verify.
+The installed host still has 21 apps. All 32 candidates added in the three recent
+batches remain uninstalled. See the [next-ten operational report](track/release-catalog/research/next-ten-publication-deployment.md).
 
-
-The published collection contains 43 recipe identities from
-`tools/catalog-collector/collection-recipes.txt` (41 numeric repository identities).
-November 6 manual run [42156336747](https://github.com/mareklangiewicz/AM/actions/runs/42156336747)
-at source `743dbf139` publishes catalog
-`daf47edb2b382bc6b7df832b00c43fae12bb73d2`; its exact-pin map and all source
-identities/statuses verify. Twenty additional source conversions are enrolled;
-the installed host still has 21 apps. All twenty and the earlier 20x/2fac pilot
-remain uninstalled. See the [batch operational report](track/release-catalog/research/large-batch-publication-deployment.md).
 Collection enrollment is independent of recipe declaration support. Recipe headers
 marked `# AM-RECIPE-DECLARATION 1` own customization and selection settings;
 adding a declaration does not enroll it for collection. The older 50-source design
@@ -119,7 +114,7 @@ desktop files, preserving other keys, other arguments and field codes. This is a
 narrow textual compatibility transformation, not a general desktop argument
 parser; quoted/escaped argument forms require separate review. Other values are
 refused before acquisition and by declaration compilation. Existing desktop files
-remain preserved. 20x and the twenty recipes converted in ticket 133 opt in to retain their
+remain preserved. 20x and the thirty recipes converted in tickets 133/135 opt in to retain their
 original fork recipe behavior; 2fac and remaining recipes keep the default
 argument-preservation behavior.
 

@@ -1,7 +1,7 @@
 # Publish the next ten recipes and refresh the compiled live policy
 
 Type: task
-Status: claimed
+Status: resolved
 Triage: ready-for-agent
 
 Marek's November 6 “go on” answers the explicit request to push and publish
@@ -35,3 +35,21 @@ or all-history completeness. No limits, runtime logic or workflow are changed.
 The 70 source/enrollment tests from 135 cover the exact code being pushed;
 only operational records have changed in this step. Source push/manual publication
 and protected one-module refresh remain authorized; receipts follow below.
+
+## Answer
+
+[Operational report](../research/next-ten-publication-deployment.md) and
+[portable receipt](../research/next-ten-publication-deployment.json) record pushed
+source `ce9bba8c5218340a387ac95aec45e58fa3f0854e`, successful manual run 42198950964, catalog
+`b54c4f267ef8a1eb0aca76f01b68e391ee24a0f7` and exact parent `daf47edb2b382bc6b7df832b00c43fae12bb73d2`. Published map/all 51 source
+identities/statuses verify: 53 recipes / 51 sources, 9,666,397
+YAML bytes, largest 1,142,139 bytes. All limits remain unchanged.
+
+Refreshed only the compiled live policy from a verified native before-image;
+all runtime/manager bytes match source. All 46 prior choices remain identical,
+ten newly enrolled choices match inspected assets, manager help passes, and all
+326 protected paths including twelve Obsidian paths/official CLI remain unchanged.
+Host remains at 21 installed apps; all new and earlier candidates stay uninstalled.
+No app execution/update, installed recipe refresh, recovery cleanup or yadm change.
+All source/enrollment/publication and protected live follow-through is complete;
+operational receipts are committed/pushed under the same authorization.

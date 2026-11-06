@@ -110,3 +110,12 @@ Local source conversion and enrollment preparation are complete. The named batch
 evidence, exclusions, tests and capacity are reviewable before a separate remote
 push/publication/live-policy decision. Previous recovery directories, installed
 recipes/snapshots/binaries/launchers and official Obsidian CLI remain untouched.
+
+
+## Subsequent authorized operation
+
+[136](../issues/136-publish-next-ten-and-refresh-live-policy.md) completes the
+separately authorized push, manual publication and protected compiled-policy
+refresh. Production is now 53 recipes / 51 sources at `b54c4f267ef8a1eb0aca76f01b68e391ee24a0f7`; all ten
+inspected selections pass and all apps remain uninstalled. Statements above
+retain this report's local-preparation result before that operation.
