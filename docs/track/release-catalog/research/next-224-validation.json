@@ -1,0 +1,31 @@
+{
+  "full_suite": {
+    "tests": 149,
+    "seconds": 1064.231,
+    "initial_errors": [
+      "test_enrolled_candidate_declarations_select_saved_assets",
+      "test_unenrolled_architectures_select_through_common_registry"
+    ],
+    "cause": "Enrollment was edited while the process retained the imported 128-source cap; two checks saw a mixed revision.",
+    "final_declaration_rerun": {
+      "tests": 3,
+      "result": "pass"
+    }
+  },
+  "final_enrollment_tests": {
+    "tests": 2,
+    "result": "pass"
+  },
+  "final_source_tests": {
+    "tests": 6,
+    "result": "pass"
+  },
+  "policy_registry_unchanged": true,
+  "logs": {
+    "snapshot-scaling-tests.log": "cfa9353e2e05eff04135c12e7a7500e8f2caf69d4df5ddd464804fac557a610d",
+    "scaling/final-declarations-tests.log": "220a8ef6b667ffc6395053a8b621a704fe7d6e9027119b949aa0451211f0b8d5",
+    "scaling/final-enrollment-tests.log": "49ac56b211a76bc185fdacb70306152b779fd1eec54e6dc5eb1994115519b44f",
+    "scaling/final-source-tests.log": "39af2822f04d8615a64e7ccb997ad829812dc5882b3bb4ad0b92fd47fffdf322"
+  },
+  "note": "The broad suite was not rerun after the final enrollment edit. Its two errors were rerun successfully in the complete declaration test module against the final 224-source configuration; other 147 broad checks passed."
+}

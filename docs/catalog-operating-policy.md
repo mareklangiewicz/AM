@@ -27,6 +27,14 @@ Local preparation and its heavier per-app inspection are historical evidence;
 future migrations follow the
 [family-level workflow](../tools/recipe-reconstruction/README.md#current-migration-workflow--family-validation-then-bulk-translation).
 
+Pending local [224-source cohort](track/release-catalog/research/next-224-catalog-expansion.md)
+prepares 228 apps with 97 additional catalog-only identities. Five fresh batches
+and a whole-command replay pass under existing resource bounds. The prepared
+source raises enrollment to 224, keeping 52 attempts every three hours (nominal
+five-run rotation); published scope above remains 128 sources until
+[144](track/release-catalog/issues/144-publish-224-source-cohort.md) is authorized.
+No recipe migration or installed refresh is included.
+
 Collection enrollment is independent of recipe declaration support. Recipe headers
 marked `# AM-RECIPE-DECLARATION 1` own customization and selection settings;
 adding a declaration does not enroll it for collection. The older 50-source design

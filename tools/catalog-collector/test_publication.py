@@ -50,6 +50,38 @@ class Publication(unittest.TestCase):
             self.publish(second)
         self.assertEqual(self.tip(), second)
 
+    def test_delta_publication_reuses_blobs_and_exactly_replaces_tree(self):
+        tree = {'apps.yaml':b'original', 'repositories/1.yaml':b'keep',
+                'repositories/2.yaml':b'remove'}
+        first = publication.publish_tree(self.repo, tree, None)
+        replacement = {'apps.yaml':b'changed', 'repositories/1.yaml':b'keep',
+                       'repositories/3.yaml':b'add'}
+        with patch.object(publication, 'git', wraps=publication.git) as calls:
+            second = publication.publish_tree(self.repo, replacement, first)
+        writes = [call for call in calls.call_args_list
+                  if call.args[1:4] == ('hash-object', '-w', '--stdin')]
+        self.assertEqual(len(writes), 2)
+        listing = publication.git(self.repo, 'ls-tree', '-r', '--name-only', second)
+        self.assertEqual(set(listing.decode().splitlines()), set(replacement))
+        for path, raw in replacement.items():
+            self.assertEqual(publication.git(self.repo, 'show', second+':'+path), raw)
+        with patch.object(publication, 'git', wraps=publication.git) as calls:
+            third = publication.publish_tree(self.repo, replacement, second)
+        self.assertFalse(any(call.args[1:4] == ('hash-object', '-w', '--stdin')
+                             for call in calls.call_args_list))
+        self.assertEqual(publication.git(self.repo,'rev-parse',third+'^{tree}'),
+                         publication.git(self.repo,'rev-parse',second+'^{tree}'))
+        self.assertEqual(publication.git(self.repo,'rev-parse',third+'^').decode().strip(),second)
+
+    def test_local_load_validates_each_document_once_with_safe_loader_fallback(self):
+        import yaml_publication as snapshot
+        first = self.publish()
+        with patch.object(snapshot, 'decode_document', wraps=snapshot.decode_document) as decode:
+            accelerated = load_local(self.repo, first, max_file_bytes=2097152)
+        self.assertEqual(decode.call_count, 2)
+        with patch.object(snapshot, 'SAFE_LOADER', snapshot.yaml.SafeLoader):
+            self.assertEqual(load_local(self.repo, first, max_file_bytes=2097152), accelerated)
+
     def test_invalid_document_and_history_limit_leave_tip_unchanged(self):
         first = self.publish()
         bad = repository(); bad['unexpected'] = True

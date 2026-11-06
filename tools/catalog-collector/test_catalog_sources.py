@@ -59,6 +59,33 @@ class Sources(unittest.TestCase):
         self.assertEqual(checkpoints[-1]['requests'], 2)
         self.assertEqual(result['proposals'][0]['metadata_sha256'], 'metadata-hash')
 
+    def test_explicit_redirect_review_requires_same_public_numeric_identity(self):
+        alias = (dict(id=123,full_name='renamed/project',private=False),'alias')
+        direct = (dict(id=123,full_name='renamed/project',private=False),'canonical')
+        result, requests = self.verify(self.queue(), [alias,direct,([dict(draft=False)],'release')],
+                                       review_redirects=True)
+        self.assertEqual(requests,3)
+        proposal=result['proposals'][0]
+        self.assertEqual(proposal['enrollment']['repository'],'renamed/project')
+        self.assertEqual(proposal['canonical_metadata_sha256'],'canonical')
+        for changed in (dict(id=124,full_name='renamed/project',private=False),
+                        dict(id=123,full_name='renamed/project',private=True),
+                        dict(id=123,full_name='another/project',private=False)):
+            result, requests = self.verify(self.queue(), [alias,(changed,'changed')],review_redirects=True)
+            self.assertEqual(result['proposals'],[])
+            self.assertEqual(result['deferred'][0]['reason'],'redirect_identity_mismatch')
+        result,requests=self.verify(self.queue(),[alias],max_requests=1,review_redirects=True)
+        self.assertEqual(requests,1)
+        self.assertEqual(result['proposals'],[])
+
+    def test_identity_proposal_scope_is_independent_of_enrollment_cap(self):
+        with patch.object(discovery,'configuration',return_value=([],{'1':'existing/project'})), \
+                contextlib.redirect_stdout(io.StringIO()):
+            with patch.object(discovery,'_get',return_value=(dict(private=True),'h')):
+                result=discovery.verify(self.queue(),max_sources=224,max_requests=1)
+        self.assertEqual(result['requests'],1)
+        self.assertEqual(result['proposals'],[])
+
     def test_redirect_private_empty_probe_and_budget_do_not_enroll(self):
         for replies in ([ (dict(id=123, full_name='other/source', private=False), 'h') ],
                         [ (dict(id=123, full_name='averagenative/0xfx', private=True), 'h') ],

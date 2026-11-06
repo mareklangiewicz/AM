@@ -2,6 +2,17 @@
 
 ## Active expansion — catalog first, simple recipe migrations first
 
+[142 resolved](issues/142-reduce-full-snapshot-processing.md) reduces repeated
+snapshot processing: same-evidence 128-source replay passes in 94.51 seconds
+versus the recorded 311.45 seconds, with equivalent output.
+[143 resolved locally](issues/143-prepare-224-source-cohort.md) prepares **228 apps /
+224 sources**, 97 verified additions including eleven checked renames. Five fresh
+batches observe all 224 sources with zero failures; whole-command replay passes
+at 138.57 seconds / 200,208 KiB RSS under 1 GiB. [Report](research/next-224-catalog-expansion.md)
+records raw/portable evidence, validation and limits. [144](issues/144-publish-224-source-cohort.md)
+is the concrete push/publication package, pending Marek's call. Published scope
+remains 131 apps / 128 sources; installed host is unchanged.
+
 [140 resolved](issues/140-publish-bounded-catalog-expansion.md): authorized push
 through `42abcbc8e` and three successful manual batches publish **131 apps /
 128 repositories**, final pin `e9d713eb74ca02dca24a5269ace5ee9e28466f41`.

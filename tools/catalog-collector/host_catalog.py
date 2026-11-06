@@ -32,7 +32,7 @@ ROOT = Path(__file__).resolve().parents[2]
 FILE_CAP = 2097152
 RESPONSE_CAP = 16 * 1024 * 1024
 TOTAL_CAP = 96 * 1024 * 1024
-SOURCE_CAP = 128
+SOURCE_CAP = 224
 REQUEST_CAP = 52
 
 

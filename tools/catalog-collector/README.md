@@ -11,9 +11,9 @@ payload inspection or policy compilation. They do not claim AM installation supp
 App identities must be unique across both lists; sources are deduplicated by
 numeric ID and conflicting names refuse. When a recipe is migrated, move its
 enrollment to `collection-recipes.txt` in the same change, preserving its identity.
-The union is limited to 128 repositories. Each scheduled run attempts at most
+The prepared union is limited to 224 repositories (published baseline remains 128 until rollout). Each scheduled run attempts at most
 52, oldest collection attempt first (never-attempted sources first, numeric ID
-ties). The schedule is every three hours, nominally covering this scope in three
+ties). The schedule is every three hours, nominally covering the prepared scope in five
 runs. Transfer/time budgets or source failures can reduce successful coverage;
 the report lists actual attempts and pending app identities. Selected-release
 freshness remains 48 hours, independent of these scheduling attempts.
@@ -29,8 +29,9 @@ sources in batch mode refuses. Source enrollment is still an explicit reviewed
 file change, never automatic URL discovery.
 
 The 16 MiB response, 96 MiB per-run transport, 300-second cooperative acquisition,
-2 MiB document, 1,024-file read and Git-history bounds remain. This 128-source
-step is measured; whole-tree validation has not been qualified for thousands.
+2 MiB document, 1,024-file read and Git-history bounds remain. The prior 128-source
+step is published; the next 224-source scope requires its recorded preflight before
+publication. Whole-tree validation has not been qualified for thousands.
 
 ## Entry points
 
@@ -47,6 +48,11 @@ step is measured; whole-tree validation has not been qualified for thousands.
   a release probe. It checkpoints local evidence and never edits enrollment.
   Review redirects/unsupported cases separately. Set GH_TOKEN for authenticated
   public reads; no visitor credentials, new secret or backend is required.
+  `verify --review-redirects` explicitly checks a renamed repository at its
+  canonical endpoint, requiring the alias and canonical public numeric IDs to
+  agree before probing releases. Default verification still defers redirects.
+  Proposal scope is independent of the active enrollment cap; the fixed
+  200-request per-invocation bound remains, and proposals never enroll sources.
 - `recipe_policy_source.py`: regenerate recipe declaration data in
   `modules/catalog-yaml-policy.am`; selector logic remains maintained shell/awk.
 - `recipe_refresh.py`: preview or explicitly apply one installed recipe/source
@@ -57,6 +63,13 @@ step is measured; whole-tree validation has not been qualified for thousands.
 - `appimage_policy_source.py`: regenerate the transitional AppImage registry from
   `test-data/appimage-policies.json`. Retain it until reviewed complete declarations
   replace these policies. Do not widen collection or change legacy behavior here.
+
+Snapshot loading validates each document once and uses PyYAML's safe C loader
+when available (safe Python fallback). Publication starts its temporary index
+from the exact parent, reuses unchanged Git blobs and updates changed/deleted
+paths in one index operation. All original-byte, canonical and cross-file checks
+remain; snapshots are still materialized in full, so this is not an incremental
+reader or qualification for thousands of sources.
 
 `publication.py` owns isolated Git operations, bounded snapshot reads and
 remote-free exact-parent publication. `yaml_publication.py` validates documents

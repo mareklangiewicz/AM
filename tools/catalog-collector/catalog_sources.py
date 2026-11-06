@@ -110,8 +110,8 @@ def _get(path):
         return json.loads(raw, object_pairs_hook=unique_object), hashlib.sha256(raw).hexdigest()
 
 
-def verify(queue, *, max_sources, max_requests, root=ROOT, checkpoint=None):
-    if type(max_sources) is not int or not 1 <= max_sources <= SOURCE_CAP:
+def verify(queue, *, max_sources, max_requests, root=ROOT, checkpoint=None, review_redirects=False):
+    if type(max_sources) is not int or max_sources < 1:
         raise ValueError('source scope')
     if type(max_requests) is not int or not 1 <= max_requests <= 200:
         raise ValueError('request scope')
@@ -158,9 +158,26 @@ def verify(queue, *, max_sources, max_requests, root=ROOT, checkpoint=None):
             if metadata.get('private') is not False or not metadata.get('full_name'):
                 deferred.append(dict(app=app, reason='not_public_repository'))
                 continue
+            redirect_digest = None
             if metadata['full_name'].lower() != requested.lower():
-                deferred.append(dict(app=app, reason='repository_redirect', canonical=metadata['full_name']))
-                continue
+                canonical = metadata['full_name']
+                if not review_redirects:
+                    deferred.append(dict(app=app, reason='repository_redirect', canonical=canonical))
+                    continue
+                if not re.fullmatch(REPOSITORY, canonical):
+                    raise ValueError('canonical repository spelling')
+                if used >= max_requests:
+                    deferred.append(dict(app=app, reason='redirect_review_request_budget'))
+                    break
+                used += 1
+                direct, redirect_digest = _get('repos/'+canonical)
+                if (type(metadata.get('id')) is not int or metadata['id'] <= 0 or
+                        direct.get('private') is not False or
+                        type(direct.get('id')) is not int or
+                        direct.get('id') != metadata['id'] or
+                        direct.get('full_name') != canonical):
+                    deferred.append(dict(app=app, reason='redirect_identity_mismatch'))
+                    continue
             rid = metadata.get('id')
             if type(rid) is not int or rid <= 0:
                 raise ValueError('numeric repository identity')
@@ -177,9 +194,13 @@ def verify(queue, *, max_sources, max_requests, root=ROOT, checkpoint=None):
                 deferred.append(dict(app=app, reason='no_public_release_in_probe'))
                 continue
             row = dict(app=app, repository_id=rid, repository=canonical)
-            proposals.append(dict(enrollment=row, requested_repository=requested,
+            proposal = dict(enrollment=row, requested_repository=requested,
                 metadata_sha256=digest, release_probe_sha256=release_digest,
-                observed_at=utc(), bindings=candidate['bindings']))
+                observed_at=utc(), bindings=candidate['bindings'])
+            if redirect_digest is not None:
+                proposal['canonical_metadata_sha256'] = redirect_digest
+                proposal['redirect_review'] = 'alias_and_canonical_numeric_identity_agree'
+            proposals.append(proposal)
             known[str(rid)] = canonical
             source_names[canonical.lower()] = rid
             print(app+': '+canonical, flush=True)
@@ -205,6 +226,8 @@ def main():
     review.add_argument('--out', required=True, type=Path)
     review.add_argument('--max-sources', type=int, default=SOURCE_CAP)
     review.add_argument('--max-requests', type=int, default=200)
+    review.add_argument('--review-redirects', action='store_true',
+        help='Verify renamed repositories again at their canonical endpoint before proposing')
     args = parser.parse_args()
     if args.out.exists():
         raise ValueError('refusing to replace evidence')
@@ -213,7 +236,8 @@ def main():
         staging.write_text(json.dumps(result,indent=2)+'\n')
         staging.replace(args.out)
     result = scan() if args.command == 'scan' else verify(json.loads(args.scan.read_text()),
-        max_sources=args.max_sources, max_requests=args.max_requests, checkpoint=checkpoint)
+        max_sources=args.max_sources, max_requests=args.max_requests, checkpoint=checkpoint,
+        review_redirects=args.review_redirects)
     args.out.write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps({key:len(value) if isinstance(value,list) else value
                       for key,value in result.items()},indent=2))

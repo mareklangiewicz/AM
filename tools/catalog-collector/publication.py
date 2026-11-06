@@ -4,6 +4,7 @@ Callers validate catalog bytes. Publication is remote-free and advances only the
 expected parent; read commands have explicit byte, time and history bounds.
 """
 import os
+import hashlib
 from pathlib import Path
 import re
 import select
@@ -46,10 +47,31 @@ def publish_tree(repo, tree, expected_parent):
     require(current == expected_parent, 'stale_parent')
     with tempfile.TemporaryDirectory(prefix='catalog-index-') as scratch:
         index = Path(scratch) / 'index'
-        git(repo, 'read-tree', '--empty', index=index)
+        # Start from the exact validated parent. Unchanged blobs and index entries
+        # are reused; the caller still supplies the entire validated next tree.
+        existing = {}
+        if current:
+            for record in git(repo, 'ls-tree', '-rz', current).split(b'\0'):
+                if record:
+                    metadata, name = record.split(b'\t', 1)
+                    mode, kind, oid = metadata.split(b' ')
+                    existing[name.decode('utf-8')] = (mode, kind, oid.decode())
+            git(repo, 'read-tree', current, index=index)
+        else:
+            git(repo, 'read-tree', '--empty', index=index)
+        updates = bytearray()
+        for path in sorted(existing.keys() - tree.keys()):
+            updates.extend(b'0 '+b'0'*40+b'\t'+path.encode('utf-8')+b'\0')
         for path, raw in sorted(tree.items()):
+            # Catalog pins and publication use Git's SHA-1 object format. Hash the
+            # blob framing too; content digests alone are not Git object IDs.
+            oid = hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
+            if existing.get(path) == (b'100644', b'blob', oid):
+                continue
             oid = git(repo, 'hash-object', '-w', '--stdin', data=raw).decode().strip()
-            git(repo, 'update-index', '--add', '--cacheinfo', '100644', oid, path, index=index)
+            updates.extend(b'100644 '+oid.encode()+b'\t'+path.encode('utf-8')+b'\0')
+        if updates:
+            git(repo, 'update-index', '-z', '--index-info', data=bytes(updates), index=index)
         oid = git(repo, 'write-tree', index=index).decode().strip()
         parent = ['-p', current] if current else []
         commit = git(repo, 'commit-tree', oid, *parent,

@@ -6,6 +6,9 @@ import subprocess
 import tempfile
 
 import yaml
+
+# The distributed reader validates the grammar before either safe loader runs.
+SAFE_LOADER = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
 from writer import document
 
 from bounded import require
@@ -36,7 +39,7 @@ def decode_document(raw, max_file_bytes):
                              env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         if run.returncode:
             raise ValueError(run.stderr.decode('utf-8', errors='replace'))
-    return yaml.safe_load(raw)
+    return yaml.load(raw, Loader=SAFE_LOADER)
 
 
 def candidate_tree(apps, repositories, *, schema, max_file_bytes):
@@ -68,7 +71,7 @@ def load_local(repo, commit, *, max_file_bytes):
     """Read a complete format-2 snapshot at an exact commit, never a moving ref."""
     require(type(max_file_bytes) is int and 1 <= max_file_bytes <= 33554432, 'invalid_yaml_file_cap')
     limits = dict(max_file_bytes=max_file_bytes,max_files=1024,max_tree_bytes=1073741824)
-    tree = read_tree(repo,commit,limits)
+    tree = _read_tree(repo,commit,limits)
     return tree_documents(tree,limits)
 
 
@@ -119,6 +122,13 @@ def tree_documents(tree, limits):
 
 def read_tree(repo, pin, limits):
     """Read only bounded canonical format-2 blobs at the exact fetched commit."""
+    tree = _read_tree(repo, pin, limits)
+    tree_documents(tree, limits)
+    return tree
+
+
+def _read_tree(repo, pin, limits):
+    """Read bounded inert blobs; callers must validate through tree_documents."""
     from pathlib import Path
     from publication import bounded, environment
 
@@ -147,7 +157,6 @@ def read_tree(repo, pin, limits):
         body = local('cat-file','blob',oid.decode(),cap=limits['max_file_bytes'])
         require(len(body) == size, 'yaml_prior_blob_length')
         tree[path] = body
-    tree_documents(tree,limits)
     return tree
 
 

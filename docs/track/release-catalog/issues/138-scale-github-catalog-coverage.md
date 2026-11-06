@@ -106,3 +106,22 @@ every source and zero failures. Final pin `e9d713eb74ca02dca24a5269ace5ee9e28466
 readback and preservation checks. This supersedes the preparation-only status
 above. Installed host is unchanged. Broader attribution/redirects and snapshot
 scaling remain; this ticket stays claimed.
+
+## Next bounded cohort — local preparation
+
+[142](142-reduce-full-snapshot-processing.md) reduces repeated decoding/publication
+work; same-evidence 128-source replay improves from the recorded 311.45 seconds
+to 94.51 seconds, with equivalent output and unchanged bounds.
+[143](143-prepare-224-source-cohort.md) prepares 97 additional app identities,
+reaching 228 apps / 224 sources. Metadata verification uses 206 bounded requests,
+including eleven explicit alias/canonical numeric-ID checks; the original six
+deferred renames are included. Fresh local five-batch preflight succeeds for all 224 sources, with zero failures.
+[Report](../research/next-224-catalog-expansion.md) and receipts record capacity
+and preservation checks; 144 is the pending push/publication package.
+
+Correction to the earlier inventory description: the 3,524 unsupported recipe
+bindings span all four scanned architectures, including x86_64, rather than being
+solely other-architecture recipes. They need explicit attribution work; an
+unmatched template is not proof of a non-GitHub source or custom behavior.
+Whole-snapshot materialization, reader/history bounds and the three-hour schedule
+still constrain broad coverage. No all-GitHub completion claim or new publication.
