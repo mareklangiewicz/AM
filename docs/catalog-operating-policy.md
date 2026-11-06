@@ -1,8 +1,15 @@
 # Single-user YAML catalog operation
 
-The published collection contains 53 recipe identities from
-`tools/catalog-collector/collection-recipes.txt` (51 numeric repository identities),
-leaving one spare slot under the unchanged 52-source limit. November 6
+The published collection contains **54 app identities / 52 repositories**:
+53 migrated recipes from `tools/catalog-collector/collection-recipes.txt` plus
+Ageha Editor from `collection-apps.json`, independently of recipe migration.
+The unchanged 52-source limit is now full. November 6
+[run 42237434195](https://github.com/mareklangiewicz/AM/actions/runs/42237434195)
+publishes `bcae3298f5ffa1461a74ecab42df1a6c41d68492` from source `46fc16ba2`.
+Ageha remains catalog-only, with no AM-supported asset selection or installed change.
+[Publication receipt](track/release-catalog/research/catalog-only-publication.json).
+
+Previous 53-recipe / 51-repository publication: November 6
 [manual run 42198950964](https://github.com/mareklangiewicz/AM/actions/runs/42198950964) at source `ce9bba8c5` publishes
 catalog `b54c4f267ef8a1eb0aca76f01b68e391ee24a0f7`; its exact-pin map and all
 source identities/statuses verify.
@@ -16,11 +23,10 @@ manifest and
 format-1 collector experiments are historical evidence, not active publication.
 The source cap remains 52; per-repository YAML remains capped at 2 MiB.
 
-Pending source preparation in [137](track/release-catalog/issues/137-separate-catalog-enrollment-from-recipe-migration.md)
-adds independent catalog-only identities through `collection-apps.json`. Ageha
-Editor is locally prepared as app 54 / source 52; it has no migrated recipe or
-AM-supported asset selection. Publication is pending, so the deployed counts
-above remain the baseline. Installation preparation excludes catalog-only rows.
+[137](track/release-catalog/issues/137-separate-catalog-enrollment-from-recipe-migration.md)
+adds independent catalog-only identities through `collection-apps.json`.
+Installation preparation excludes catalog-only rows. Further source enrollment
+requires the measured scaling work in 138 rather than raising this cap alone.
 
 `.github/workflows/catalog.yml` collects one page of 100 releases per source daily
 at 03:17 UTC or on manual dispatch, retains previously observed releases and

@@ -42,8 +42,6 @@ Simple recipe migration remains a separate queue: reuse exact upstream-template
 recognition, selector checks and static payload/lifecycle gates from 133/135.
 Catalog-only presence never implies reviewed AM selection or installability.
 
-## Verification / result
-
 ## Answer
 
 Implemented `collection-apps.json` independently of recipe declarations. Strict
@@ -73,3 +71,31 @@ Pages prototype and yadm pointers remain unchanged. No app code executed.
 First local separation is complete. Source push/publication awaits Marek's call;
 no remote catalog or browser coverage change is claimed. Broader coverage and
 actual next recipe conversions continue separately in 138 and 139.
+
+## Publication authorization — November 6, 2026
+
+Marek answered “yes” to pushing source and publishing this first catalog-only
+addition. Source `46fc16ba22bc0ab4f2c84fd299f98e0b70b4f02d` is pushed to
+main-marek. Dispatched the existing catalog workflow on that exact source:
+https://github.com/mareklangiewicz/AM/actions/runs/42237434195 .
+No installed-host policy refresh is needed: the compiled client policy is unchanged
+and Ageha Editor remains catalog-only. Final publication readback follows below.
+
+## Published result — November 6, 2026
+
+Run 42237434195 succeeded at source `46fc16ba22bc0ab4f2c84fd299f98e0b70b4f02d`.
+Published `bcae3298f5ffa1461a74ecab42df1a6c41d68492` is a direct child of
+`03f63def325715a2621b5662b797ff967c8e439c`.
+[Exact-pin readback receipt](../research/catalog-only-publication.json) verifies
+54 app identities / 52 repositories, preserving all previous app identities;
+all source identities and collection statuses match enrollment. Maintained schema
+and distributed-reader validation pass. Total YAML is 9,695,046 bytes; largest
+source is 1,142,139 bytes. Ageha has 9 retained releases / 55 assets, with end of
+history reached by this collection. All existing limits remain unchanged.
+
+The existing public browser discovers the app through its live apps.yaml map:
+https://mareklangiewicz.pl/AM/?app=ageha-editor . Existing pinned visits require
+Latest snapshot. No Pages code/deployment changed; no visual browser acceptance
+claim is made from this data readback. No recipe migration or installed-host
+change occurred. Operational documentation/receipt push is covered by this
+publication authorization. Broad coverage and simple migrations remain 138/139.

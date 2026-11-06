@@ -4,18 +4,20 @@
 
 Marek requested broad catalog coverage and confirmed GitHub-backed apps first.
 [137 resolved](issues/137-separate-catalog-enrollment-from-recipe-migration.md)
-implements independent catalog-only enrollment and prepares Ageha Editor locally:
-54 apps / 52 sources, fresh full-scope preflight and 29 checks pass. Push and
-publication await Marek's call;
+implements independent catalog-only enrollment and publishes Ageha Editor:
+**54 apps / 52 sources**, fresh full-scope preflight and 29 checks pass.
+[Successful run 42237434195](https://github.com/mareklangiewicz/AM/actions/runs/42237434195)
+publishes `bcae3298f5ffa1461a74ecab42df1a6c41d68492`; exact-pin map/all source
+readback verifies. No installed-host or recipe migration change;
 [138](issues/138-scale-github-catalog-coverage.md) tracks verified broad discovery
-and collection scaling. Existing published and installed counts below remain the
-deployed baseline until new publication receipts supersede them.
+and collection scaling. Historical counts below describe their recorded rollout;
+the latest publication is above. Installed host remains unchanged.
 [139](issues/139-migrate-next-simple-recipes.md) keeps straightforward recipe
 migrations on their own verified queue, starting with five deferred candidates.
 
 ## Maintained upstream recipe reconstruction
 
-Current deployed result: [136 resolved](issues/136-publish-next-ten-and-refresh-live-policy.md)
+Prior deployed recipe-migration result: [136 resolved](issues/136-publish-next-ten-and-refresh-live-policy.md)
 publishes the next ten recipes: **53 recipes / 51 sources**, one spare source
 slot. Pushed `ce9bba8c5`; [successful run 42198950964](https://github.com/mareklangiewicz/AM/actions/runs/42198950964)
 publishes `b54c4f267ef8a1eb0aca76f01b68e391ee24a0f7`. Map/all 51 source identities/statuses verify;
