@@ -96,3 +96,13 @@ batch checks additionally verify conservative accounting for failed partial HTTP
 reads, request/rate stopping and observation preservation. The final main-report
 path passes its dedicated workflow publication test. Full remaining limitations
 and scope are in the report; no source push or live catalog expansion yet.
+
+## First cohort published
+
+Marek authorized the push/publication package in 140. Three successful manual
+runs publish all 131 apps / 128 repositories, with successful observations for
+every source and zero failures. Final pin `e9d713eb74ca02dca24a5269ace5ee9e28466f41`;
+[publication report](../research/bounded-catalog-publication.md) records exact-parent
+readback and preservation checks. This supersedes the preparation-only status
+above. Installed host is unchanged. Broader attribution/redirects and snapshot
+scaling remain; this ticket stays claimed.

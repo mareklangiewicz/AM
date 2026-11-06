@@ -2,6 +2,14 @@
 
 ## Active expansion — catalog first, simple recipe migrations first
 
+[140 resolved](issues/140-publish-bounded-catalog-expansion.md): authorized push
+through `42abcbc8e` and three successful manual batches publish **131 apps /
+128 repositories**, final pin `e9d713eb74ca02dca24a5269ace5ee9e28466f41`.
+All 128 sources observed successfully, zero failures, all prior identities retained.
+[Publication report](research/bounded-catalog-publication.md) and portable receipt
+record exact-parent readback and preservation checks. Installed host unchanged.
+The preparation entries below are historical; broad coverage remains with 138.
+
 Marek requested broad catalog coverage and confirmed GitHub-backed apps first.
 [137 resolved](issues/137-separate-catalog-enrollment-from-recipe-migration.md)
 implements independent catalog-only enrollment and publishes Ageha Editor:
@@ -20,14 +28,14 @@ the latest publication is above. Installed host remains unchanged.
 source migrations; Agent Skills remains catalog-only after an icon-link exclusion.
 146 collector / 44 reconstruction regressions and five final batch checks pass.
 [140](issues/140-publish-bounded-catalog-expansion.md) is the concrete push/publication
-package, pending Marek's call. Published scope remains 54/52; installed host is unchanged.
+package, now completed as recorded above; installed host is unchanged.
 
 [141 resolved](issues/141-record-family-level-migration-workflow.md) records Marek's
 faster workflow: validate translation once per pinned family, migrate exact matches
 in bulk preserving literal settings, and inspect exceptions individually. Routine
 per-app payload inspection and lifecycle checks in historical reports are no longer
 the next-batch policy. Existing evidence is reusable, not blanket family approval.
-Catalog-first coverage remains the priority; 140 still awaits the push/publication call.
+Catalog-first coverage remains the priority; 140 is published as recorded above.
 
 ## Maintained upstream recipe reconstruction
 

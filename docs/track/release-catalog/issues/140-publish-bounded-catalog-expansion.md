@@ -1,12 +1,13 @@
 # Publish the bounded 128-source catalog cohort and four source recipes
 
 Type: task
-Status: open
-Triage: ready-for-human
+Status: resolved
+Triage: ready-for-agent
 
 Concrete publication package from 138/139: 131 app identities / 128 repositories,
 including 77 additions and four reviewed source-recipe migrations. The installed
-host stays untouched. Source push awaits Marek's call under home guidance.
+host stays untouched. Marek authorized the source push and publication on November 6; the operation
+below is complete. See the Answer for actual receipts.
 
 ## Proposed operation
 
@@ -55,3 +56,19 @@ is included in this proposed publication.
 focused batch tests cover partial-transfer budget accounting and failure isolation.
 The separate final main-report workflow test passes. Python/workflow syntax and
 diff checks pass. No remote write or host refresh is included until authorized.
+
+## Answer
+
+Pushed both prepared commits through `42abcbc8e` with Marek's authorization.
+Three sequential successful manual runs publish the full 131-app / 128-source
+cohort at `e9d713eb74ca02dca24a5269ace5ee9e28466f41`. All 128 enrolled sources
+have successful observations across 156 attempts, with zero failures or pending
+apps. Exact-parent pin readback, canonical distributed-reader validation, source
+identity checks, previous app preservation, unchanged untouched documents and
+retained-release/observation checks pass. Final YAML is 21,703,160 bytes; largest
+file 1,159,110 bytes. [Report and portable receipt](../research/bounded-catalog-publication.md).
+
+Operating policy now records the deployed source cap and three-hour bounded
+schedule. No installed-host refresh, app installation, binary update, website
+rebuild or yadm operation. New browser acceptance and a natural scheduled trigger
+were not observed. Broad GitHub coverage remains incomplete under 138.
