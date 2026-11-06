@@ -54,3 +54,18 @@ not acceptance measurements. Prototype parser is not full schema validation.
 Ticket stays claimed/open for Marek's layout and behavior feedback. No design
 verdict or implementation readiness is claimed; no Pages settings/deployment,
 production catalog changes or push occurred.
+
+## Human feedback and keyboard iteration — November 6, 2026
+
+Marek finds all three variants interesting, has not chosen, and requests keeping
+all available for further exploration. Required: Vim-like full keyboard navigation.
+Prototype iteration `9867c6ccb` on `prototype/catalog-pages` retains A/B/C and
+adds j/k control traversal, h/l app/detail panes, gg/G endpoints, / search,
+Escape input/scope reset, Ctrl-d/u half-page scrolling, bracket/arrow variant
+cycling and ? modal help. Native Tab/Shift-Tab/Enter/Space remain available.
+Focus outlines and restoration across redraws are included; typing fields keep
+editing behavior. Moving focus does not activate links/downloads.
+Syntax and keyboard-handler smoke checks pass; real-browser focus, mobile and
+accessibility verification remain outstanding. No winning variant or complete
+experience acceptance is recorded. Preview remains http://localhost:8765/;
+refresh an existing tab to load updated code. No push or deployment.
