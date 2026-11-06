@@ -1,4 +1,5 @@
 import {parseCatalog,rawURL} from './catalog.mjs';
+import {installKeyboard} from './keyboard.mjs';
 // Three structurally different views on one route; live catalog only, no stored fixtures.
 const $=id=>document.getElementById(id),params=new URLSearchParams(location.search),cache=new Map(),metrics=[];
 const expanded=new Set(),assetLimits=new Map();
@@ -12,7 +13,9 @@ async function fetchText(url){const t=performance.now(),r=await fetch(url);if(!r
 async function yaml(path){const text=await fetchText(rawURL(pin,path)),t=performance.now(),doc=parseCatalog(text);metrics.push({path,parseMs:+(performance.now()-t).toFixed(2)});return doc;}
 function error(e){$('error').textContent=e.message+' — Retry or choose Latest snapshot. Existing pinned data is never replaced with another snapshot silently.';state();}
 function appLink(name){return '?'+new URLSearchParams({variant,pin,app:name});}
+function focusKey(el){return el?.dataset?.app?'app:'+el.dataset.app:el?.dataset?.release?'release:'+el.dataset.release:el?.dataset?.more?'more:'+el.dataset.more:el?.getAttribute?.('href')?'href:'+el.getAttribute('href'):null;}
 function render(){
+ const active=document.activeElement,restore=$('content').contains(active)?focusKey(active):null;
  url();$('variant').textContent=variant+' · '+names[variant];
  const rows=Object.entries(apps).filter(([n])=>n.includes(query));
  const nav=rows.map(([n,id])=>`<a class="${selected===n?'selected':''}" href="${appLink(n)}" data-app="${esc(n)}">${esc(n)}</a>`).join('');
@@ -23,6 +26,7 @@ function render(){
  $('content').querySelectorAll('[data-app]').forEach(a=>a.onclick=e=>{if(e.ctrlKey||e.metaKey)return;e.preventDefault();openApp(a.dataset.app);});
  $('content').querySelectorAll('[data-release]').forEach(el=>el.onclick=e=>{e.preventDefault();const id=el.dataset.release;expanded.has(id)?expanded.delete(id):expanded.add(id);render();});
  $('content').querySelectorAll('[data-more]').forEach(el=>el.onclick=()=>{assetLimits.set(el.dataset.more,(assetLimits.get(el.dataset.more)||60)+60);render();});
+ if(restore){const replacement=[...$('content').querySelectorAll('a,button,summary')].find(el=>focusKey(el)===restore);replacement?.focus({preventScroll:true});}
  state();
 }
 function releases(d){return Object.entries(d.releases||{}).sort((a,b)=>String(b[1].published_at).localeCompare(String(a[1].published_at))||(BigInt(a[0])<BigInt(b[0])?1:BigInt(a[0])>BigInt(b[0])?-1:0));}
@@ -35,5 +39,5 @@ function detailHTML(){
 }
 async function openApp(name){if(selected!==name){expanded.clear();assetLimits.clear();}selected=name;$('error').textContent='';loading=true;render();const id=apps[name];try{if(id&&!cache.has(id)){const d=await yaml('repositories/'+id+'.yaml');if(d.repository_id!==id)throw Error('Repository identity mismatch');cache.set(id,d);if(releases(d).length)expanded.add(releases(d)[0][0]);}}catch(e){error(e);}finally{loading=false;const t=performance.now();render();metrics.push({renderApp:name,renderMs:+(performance.now()-t).toFixed(2)});state();}}
 async function start(){try{if(!pin){const ref=JSON.parse(await fetchText('https://api.github.com/repos/mareklangiewicz/AM/git/ref/heads/release-catalog'));pin=ref.object.sha;}if(!/^[a-f0-9]{40}$/.test(pin))throw Error('Invalid snapshot commit');apps=(await yaml('apps.yaml')).apps;const n=new Set(Object.values(apps)).size;$('status').innerHTML=`${Object.keys(apps).length} AM identities · ${n} repositories · Snapshot ${link('https://github.com/mareklangiewicz/AM/commit/'+pin,pin.slice(0,10))}`;render();if(selected)await openApp(selected);}catch(e){error(e);}}
-function cycle(d){variant=['A','B','C'][(['A','B','C'].indexOf(variant)+d+3)%3];render();}
-if(!names[variant])variant='A';$('prev').onclick=()=>cycle(-1);$('next').onclick=()=>cycle(1);document.onkeydown=e=>{if(e.target.closest('input,select,textarea,[contenteditable]'))return;if(e.key==='ArrowLeft')cycle(-1);if(e.key==='ArrowRight')cycle(1);};$('search').oninput=e=>{query=e.target.value.toLowerCase();render();};$('platform').onchange=$('arch').onchange=render;$('refresh').onclick=()=>location.href='?'+new URLSearchParams({variant,...(selected?{app:selected}:{})});$('theme').onclick=()=>{const dark=getComputedStyle(document.body).getPropertyValue('--bg').trim()==='#101820';document.body.className=dark?'light':'dark';};start();
+function cycle(d){keyboard.resetScope();variant=['A','B','C'][(['A','B','C'].indexOf(variant)+d+3)%3];render();}
+if(!names[variant])variant='A';$('prev').onclick=()=>cycle(-1);$('next').onclick=()=>cycle(1);const keyboard=installKeyboard({document,window,cycle,help:$('keyhelp')});$('shortcuts').onclick=()=>$('keyhelp').showModal();$('closehelp').onclick=()=>$('keyhelp').close();$('search').oninput=e=>{query=e.target.value.toLowerCase();render();};$('platform').onchange=$('arch').onchange=render;$('refresh').onclick=()=>location.href='?'+new URLSearchParams({variant,...(selected?{app:selected}:{})});$('theme').onclick=()=>{const dark=getComputedStyle(document.body).getPropertyValue('--bg').trim()==='#101820';document.body.className=dark?'light':'dark';};start();

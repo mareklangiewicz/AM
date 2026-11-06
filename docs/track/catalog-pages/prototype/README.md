@@ -63,3 +63,21 @@ search behavior with missing metadata and final rendering budgets remain open.
 
 No deployment or repository Pages settings change. This code stays on
 `prototype/catalog-pages` and is not merged into main.
+
+## Keyboard review (all three variants retained)
+
+Press `?` or use Keyboard shortcuts for the guide. `j`/`k` focus next/previous
+visible content control; `h` switches to apps and `l` to release details.
+`gg`/`G` focus first/last in that pane. `/` focuses search; Escape leaves an
+input and resets pane scope. Ctrl-d/u scroll half a page (within the sidebar
+when focused there). Brackets or left/right arrows cycle variants. Native Tab,
+Shift-Tab, Enter and Space remain available for every control, including filters,
+release expansion, pagination, downloads and the guide. Typing fields keep their
+normal editing keys; modified browser shortcuts are preserved except Ctrl-d/u.
+Focus has a visible outline and is restored across content redraws when the
+same app/release/link/button still exists. Link activation remains explicit.
+
+Syntax and an in-memory keyboard-handler smoke check passed (pane movement,
+first/last, search typing guard, Escape, layout cycling, scrolling and help).
+This is not a real-browser keyboard/accessibility verification; that remains
+part of human review. No layout choice has been made.
