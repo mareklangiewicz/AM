@@ -1,0 +1,50 @@
+name: Public catalog browser prototype
+on:
+  workflow_dispatch:
+  push:
+    branches: [prototype/catalog-pages]
+    paths:
+      - docs/track/catalog-pages/prototype/**
+      - .github/workflows/catalog-pages-prototype.yml
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    if: github.repository == 'mareklangiewicz/AM' && (github.ref == 'refs/heads/main-marek' || github.ref == 'refs/heads/prototype/catalog-pages')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: prototype/catalog-pages
+          persist-credentials: false
+      - name: Stage only reviewed public browser files
+        shell: bash
+        run: |
+          set -euo pipefail
+          source=docs/track/catalog-pages/prototype
+          mkdir "$RUNNER_TEMP/catalog-pages"
+          for file in index.html app.mjs catalog.mjs keyboard.mjs; do
+            test -f "$source/$file" && test ! -L "$source/$file"
+            cp "$source/$file" "$RUNNER_TEMP/catalog-pages/$file"
+          done
+          touch "$RUNNER_TEMP/catalog-pages/.nojekyll"
+          node --check "$source/app.mjs"
+          node --check "$source/catalog.mjs"
+          node --check "$source/keyboard.mjs"
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
+        with:
+          path: ${{ runner.temp }}/catalog-pages
+      - name: Deploy public prototype
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5
