@@ -2,6 +2,14 @@
 
 ## Maintained upstream recipe reconstruction
 
+[124 resolved](issues/124-investigate-selector-review-groups.md):
+[selector investigation](research/selector-review-groups.md) identifies 4,437
+archive-layout recipes sharing an upstream generator-derived selector. Three
+bounded preparation candidates have verified hashes and exact reconstruction.
+Recognition extension must enforce installer/updater consistency, including the
+archive layout; runtime compatibility and conversion remain separate. Fresh
+inventory summary and grouping reproduce recorded counts. Research only.
+
 [123 resolved](issues/123-generalize-upstream-template-recognition.md): reads
 original templates/generator/fixtures directly from Git, removing tracked copies.
 Shared recognition covers all 25 originals across two pinned revisions; tests
