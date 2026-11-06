@@ -1,0 +1,3754 @@
+{
+  "ticket": 133,
+  "source_before": "971abc3d1",
+  "observed_at": "2026-11-06T03:00:42.708751+00:00",
+  "evidence_archive": "large-batch-evidence.tar.gz",
+  "evidence_archive_sha256": "5791f422b8d098399ac3af128d313f542560f5507b3e40099809240b034ccfd7",
+  "converted": [
+    "0x808",
+    "0xsynth",
+    "3mf-katalog-manager",
+    "5ire",
+    "6502-emulator",
+    "a0-launcher",
+    "aartiq",
+    "abcarus",
+    "accordserver",
+    "accshift",
+    "ace-gui",
+    "actiona",
+    "ada",
+    "adbkit",
+    "adelie",
+    "adt-studio",
+    "adventshow",
+    "aeroftp",
+    "aether",
+    "aethersdr"
+  ],
+  "candidates": [
+    {
+      "app": "0x808",
+      "requested_repository": "averagenative/0x808",
+      "provenance": {
+        "recipe": "programs/x86_64/0x808",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "135d39140f10709b8854b20df8ee5cfcce0d4c13ea705129fa12858217bc7ce5",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage",
+            "source_sha256": "5353962fac61f7e0f8d3e949a824700c522c6229c6243ab16e2847a4e71edfa2",
+            "parameters": [
+              "0x808",
+              "averagenative/0x808",
+              "curl -Ls https://api.github.com/repos/averagenative/0x808/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "0x808",
+              "averagenative/0x808",
+              "curl -Ls https://api.github.com/repos/averagenative/0x808/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:40.891146+00:00",
+      "repository_sha256": "79bc391d8f7402bdec5ab96f1a5faa16b6f5c84534ca32451489cd9e35c27931",
+      "releases_sha256": "f87d820e8d25d68e8a3038f4f7f10bf84cde6fbddda390a5dfab599c802b8d40",
+      "repository_id": 1180896595,
+      "repository": "averagenative/0x808",
+      "release_count": 10,
+      "selected_release": 422262360,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/averagenative/0x808/releases/assets/670754561",
+        "id": 670754561,
+        "node_id": "RA_kwDORmMNU84n-ucB",
+        "name": "0x808-1.5.0-x86_64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "averagenative",
+          "id": 102378912,
+          "node_id": "U_kgDOBhotoA",
+          "avatar_url": "https://avatars.githubusercontent.com/u/102378912?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/averagenative",
+          "html_url": "https://github.com/averagenative",
+          "followers_url": "https://api.github.com/users/averagenative/followers",
+          "following_url": "https://api.github.com/users/averagenative/following{/other_user}",
+          "gists_url": "https://api.github.com/users/averagenative/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/averagenative/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/averagenative/subscriptions",
+          "organizations_url": "https://api.github.com/users/averagenative/orgs",
+          "repos_url": "https://api.github.com/users/averagenative/repos",
+          "events_url": "https://api.github.com/users/averagenative/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/averagenative/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/vnd.appimage",
+        "state": "uploaded",
+        "size": 10144248,
+        "digest": "sha256:7f96b304fc62e4476278083ca639ff93328ea8d6e57bad8da78c7e262bf96dd0",
+        "download_count": 14,
+        "created_at": "2026-10-23T23:55:19Z",
+        "updated_at": "2026-10-23T23:55:22Z",
+        "browser_download_url": "https://github.com/averagenative/0x808/releases/download/v1.5.0/0x808-1.5.0-x86_64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/averagenative/0x808/releases/download/v1.5.0/0x808-1.5.0-x86_64.AppImage",
+      "pattern": "^0x808-[0-9]+([.][0-9]+)*-x86_64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "0xsynth",
+      "requested_repository": "averagenative/0xsynth",
+      "provenance": {
+        "recipe": "programs/x86_64/0xsynth",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "e9c0e827f2ff661d9192bbfe4a65b4d1845d6cb025e770bcda8ab175a0100b1f",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage",
+            "source_sha256": "5353962fac61f7e0f8d3e949a824700c522c6229c6243ab16e2847a4e71edfa2",
+            "parameters": [
+              "0xsynth",
+              "averagenative/0xsynth",
+              "curl -Ls https://api.github.com/repos/averagenative/0xsynth/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "0xsynth",
+              "averagenative/0xsynth",
+              "curl -Ls https://api.github.com/repos/averagenative/0xsynth/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:40.891941+00:00",
+      "repository_sha256": "db388975852d9fc5e9cf68657b1c55a067c70d45ba6fbcc718eda577f5329e75",
+      "releases_sha256": "bab32ca3704773c9acab07b6d52cee87e9b9922296d4d54d28befadeef354987",
+      "repository_id": 1182510445,
+      "repository": "averagenative/0xSYNTH",
+      "release_count": 2,
+      "selected_release": 297745535,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/averagenative/0xSYNTH/releases/assets/375896629",
+        "id": 375896629,
+        "node_id": "RA_kwDORnutbc4WZ7o1",
+        "name": "0xSYNTH-1.1.0-x86_64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "averagenative",
+          "id": 102378912,
+          "node_id": "U_kgDOBhotoA",
+          "avatar_url": "https://avatars.githubusercontent.com/u/102378912?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/averagenative",
+          "html_url": "https://github.com/averagenative",
+          "followers_url": "https://api.github.com/users/averagenative/followers",
+          "following_url": "https://api.github.com/users/averagenative/following{/other_user}",
+          "gists_url": "https://api.github.com/users/averagenative/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/averagenative/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/averagenative/subscriptions",
+          "organizations_url": "https://api.github.com/users/averagenative/orgs",
+          "repos_url": "https://api.github.com/users/averagenative/repos",
+          "events_url": "https://api.github.com/users/averagenative/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/averagenative/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/vnd.appimage",
+        "state": "uploaded",
+        "size": 1242304,
+        "digest": "sha256:5300d99eb21e166f818aa915c5e906cf1e22b8c5c1749087fb608ac4a094cef3",
+        "download_count": 31,
+        "created_at": "2026-03-17T17:44:55Z",
+        "updated_at": "2026-03-17T17:44:56Z",
+        "browser_download_url": "https://github.com/averagenative/0xSYNTH/releases/download/v1.1.0/0xSYNTH-1.1.0-x86_64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/averagenative/0xSYNTH/releases/download/v1.1.0/0xSYNTH-1.1.0-x86_64.AppImage",
+      "pattern": "^0xSYNTH-[0-9]+([.][0-9]+)*-x86_64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "3mf-katalog-manager",
+      "requested_repository": "bexxs75/3mf-katalog-manager",
+      "provenance": {
+        "recipe": "programs/x86_64/3mf-katalog-manager",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "05c1b2d3b69cdc5e6d97e46be598e3f38bcdda45c25998303b28e8cc14b8de3e",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage",
+            "source_sha256": "5353962fac61f7e0f8d3e949a824700c522c6229c6243ab16e2847a4e71edfa2",
+            "parameters": [
+              "3mf-katalog-manager",
+              "bexxs75/3mf-katalog-manager",
+              "curl -Ls https://api.github.com/repos/bexxs75/3mf-katalog-manager/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "3mf-katalog-manager",
+              "bexxs75/3mf-katalog-manager",
+              "curl -Ls https://api.github.com/repos/bexxs75/3mf-katalog-manager/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:40.892936+00:00",
+      "repository_sha256": "7cfd1e74c9d82c009cfad22565dda09a467ecc62e803aa602d757809214960fd",
+      "releases_sha256": "7fda37b3c8c3acee4525bafbe19a1e4db31201855d33709ee70246b598281f51",
+      "repository_id": 1362591273,
+      "repository": "Bexxs75/3mf-katalog-manager",
+      "release_count": 36,
+      "selected_release": 433122349,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/Bexxs75/3mf-katalog-manager/releases/assets/706799463",
+        "id": 706799463,
+        "node_id": "RA_kwDOUTd-Kc4qIOdn",
+        "name": "3MF-Katalog-Manager-0.17.2-Linux-x86_64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/vnd.appimage",
+        "state": "uploaded",
+        "size": 101108216,
+        "digest": "sha256:ca5204ff0dbddff3164e9eb5c5ec411dd9b5f45f315f0af83e13effa8277bd03",
+        "download_count": 10,
+        "created_at": "2026-11-03T19:22:40Z",
+        "updated_at": "2026-11-03T19:22:45Z",
+        "browser_download_url": "https://github.com/Bexxs75/3mf-katalog-manager/releases/download/v0.17.2/3MF-Katalog-Manager-0.17.2-Linux-x86_64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/Bexxs75/3mf-katalog-manager/releases/download/v0.17.2/3MF-Katalog-Manager-0.17.2-Linux-x86_64.AppImage",
+      "pattern": "^3MF-Katalog-Manager-[0-9]+([.][0-9]+)*-Linux-x86_64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "5ire",
+      "requested_repository": "nanbingxyz/5ire",
+      "provenance": {
+        "recipe": "programs/x86_64/5ire",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "134e8bc2607d077a9b71428bb2e431fd2a1fb92ee08bf5ab5c7bee99e4c4906f",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bb53f3180ec92f862020f8bdccef0f6614015bae:templates/AM-SAMPLE-AppImage",
+            "source_sha256": "1049be481f39bdcdcd3ffa348ac94cdbdaaa65cfe1d341940e4b017963344931",
+            "parameters": [
+              "5ire",
+              "nanbingxyz/5ire",
+              "curl -Ls https://api.github.com/repos/nanbingxyz/5ire/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "5ire",
+              "nanbingxyz/5ire",
+              "curl -Ls https://api.github.com/repos/nanbingxyz/5ire/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:42.385608+00:00",
+      "repository_sha256": "4c2d9989697ca5cc037308c71a198e5d747f8d92e0ed8f1a0213b73d4570ea5f",
+      "releases_sha256": "a29c1446a347a53d0eee3c1115184896efa78abcf3f839bc17a53157a1ac88e0",
+      "repository_id": 739667828,
+      "repository": "nanbingxyz/5ire",
+      "release_count": 36,
+      "selected_release": 298353040,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/nanbingxyz/5ire/releases/assets/376335539",
+        "id": 376335539,
+        "node_id": "RA_kwDOLBZvdM4Wbmyz",
+        "name": "5ire-0.15.4-x86_64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 224333598,
+        "digest": "sha256:d8054b09a574e389a88db24a6f3aee3f3dc89f8c6041c8fbc6783cc86fca13cf",
+        "download_count": 6355,
+        "created_at": "2026-03-18T09:41:53Z",
+        "updated_at": "2026-03-18T09:42:05Z",
+        "browser_download_url": "https://github.com/nanbingxyz/5ire/releases/download/v0.15.4/5ire-0.15.4-x86_64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/nanbingxyz/5ire/releases/download/v0.15.4/5ire-0.15.4-x86_64.AppImage",
+      "pattern": "^5ire-[0-9]+([.][0-9]+)*-x86_64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "6502-emulator",
+      "requested_repository": "acwright/6502-emulator",
+      "provenance": {
+        "recipe": "programs/x86_64/6502-emulator",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "1d817ccb527a5da43559eb51e31a98122d435ceca2deff1e9d1be3042c459551",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "6502-emulator",
+              "acwright/6502-emulator",
+              "curl -Ls https://api.github.com/repos/acwright/6502-emulator/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "6502-emulator",
+              "acwright/6502-emulator",
+              "curl -Ls https://api.github.com/repos/acwright/6502-emulator/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:42.422314+00:00",
+      "repository_sha256": "8a8ab334e40ca37c1bdd4ccbb8ee4780e07a0ab4a321f85f26d8113a081681e8",
+      "releases_sha256": "950f9e45f97c8967d920f4ca4d985aa6ee0250bb0887f28a58d42a5bab1741ea",
+      "repository_id": 1166443294,
+      "repository": "acwright/6502-EMULATOR",
+      "release_count": 61,
+      "selected_release": 395869067,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/acwright/6502-EMULATOR/releases/assets/586346555",
+        "id": 586346555,
+        "node_id": "RA_kwDORYaDHs4i8vA7",
+        "name": "ac6502-emulator-3.5.0-linux-x86_64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "acwright",
+          "id": 608373,
+          "node_id": "MDQ6VXNlcjYwODM3Mw==",
+          "avatar_url": "https://avatars.githubusercontent.com/u/608373?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/acwright",
+          "html_url": "https://github.com/acwright",
+          "followers_url": "https://api.github.com/users/acwright/followers",
+          "following_url": "https://api.github.com/users/acwright/following{/other_user}",
+          "gists_url": "https://api.github.com/users/acwright/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/acwright/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/acwright/subscriptions",
+          "organizations_url": "https://api.github.com/users/acwright/orgs",
+          "repos_url": "https://api.github.com/users/acwright/repos",
+          "events_url": "https://api.github.com/users/acwright/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/acwright/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 131525783,
+        "digest": "sha256:c8da033455cb8e1a1bfac304d09996b23a292d7b698684bc1eadcb300e2ed674",
+        "download_count": 35,
+        "created_at": "2026-09-24T16:25:52Z",
+        "updated_at": "2026-09-24T16:26:00Z",
+        "browser_download_url": "https://github.com/acwright/6502-EMULATOR/releases/download/v3.5.0/ac6502-emulator-3.5.0-linux-x86_64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/acwright/6502-EMULATOR/releases/download/v3.5.0/ac6502-emulator-3.5.0-linux-x86_64.AppImage",
+      "pattern": "^ac6502-emulator-[0-9]+([.][0-9]+)*-linux-x86_64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "a0-launcher",
+      "requested_repository": "agent0ai/a0-launcher",
+      "provenance": {
+        "recipe": "programs/x86_64/a0-launcher",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "032ffcfa9055dca9d471e3f1c4555f79daba3205dcb62d00083b32e1469ab761",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "a0-launcher",
+              "agent0ai/a0-launcher",
+              "curl -Ls https://api.github.com/repos/agent0ai/a0-launcher/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "a0-launcher",
+              "agent0ai/a0-launcher",
+              "curl -Ls https://api.github.com/repos/agent0ai/a0-launcher/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:42.739231+00:00",
+      "repository_sha256": "898bc417357f70e76b4d10f1c479bb0a96e9e2516d1f8a69945bce64024efc49",
+      "releases_sha256": "a5ea1e85b266afd55e62a5bc1fc1c3303000b32d1839d7f8983887f7561f4222",
+      "repository_id": 1100653513,
+      "repository": "agent0ai/a0-launcher",
+      "release_count": 20,
+      "selected_release": 411871476,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/agent0ai/a0-launcher/releases/assets/637583367",
+        "id": 637583367,
+        "node_id": "RA_kwDOQZqjyc4mAMAH",
+        "name": "a0-launcher-1.9-linux-x64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/vnd.appimage",
+        "state": "uploaded",
+        "size": 136101788,
+        "digest": "sha256:d22326de6017550a07accd7f261c6fb1ef9bd141b4de87697c0c6a14d49b416b",
+        "download_count": 875,
+        "created_at": "2026-10-13T16:22:28Z",
+        "updated_at": "2026-10-13T16:22:44Z",
+        "browser_download_url": "https://github.com/agent0ai/a0-launcher/releases/download/v1.9/a0-launcher-1.9-linux-x64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/agent0ai/a0-launcher/releases/download/v1.9/a0-launcher-1.9-linux-x64.AppImage",
+      "pattern": "^a0-launcher-[0-9]+([.][0-9]+)*-linux-x64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "aartiq",
+      "requested_repository": "latestinssan/aartiq",
+      "provenance": {
+        "recipe": "programs/x86_64/aartiq",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "21d9d7b4ff3c1510e6a3ac234ea0481cb5a32f3a915e6e3916bd474736d88ce5",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "aartiq",
+              "latestinssan/aartiq",
+              "curl -Ls https://api.github.com/repos/latestinssan/aartiq/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "aartiq",
+              "latestinssan/aartiq",
+              "curl -Ls https://api.github.com/repos/latestinssan/aartiq/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:43.944082+00:00",
+      "repository_sha256": "bcd166f9de8ce619a56ba358614185a4a06877dae031ab2df88d013588b32692",
+      "releases_sha256": "2f99da5ea1f8e69e6682514611635e1e7e61a4ef26950ab3fd8bb15406fe5e0e",
+      "repository_id": 1289277101,
+      "repository": "Latestinssan/Aartiq",
+      "release_count": 12,
+      "selected_release": 403096690,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/Latestinssan/Aartiq/releases/assets/610146909",
+        "id": 610146909,
+        "node_id": "RA_kwDOTNjOrc4kXhpd",
+        "name": "Aartiq-0.3.8.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/vnd.appimage",
+        "state": "uploaded",
+        "size": 374584285,
+        "digest": "sha256:23dbc839325ebd843459bd99abfa1dd6bfd7170d2ba525daf8a82cfa522abd39",
+        "download_count": 17,
+        "created_at": "2026-10-04T16:05:57Z",
+        "updated_at": "2026-10-04T16:06:06Z",
+        "browser_download_url": "https://github.com/Latestinssan/Aartiq/releases/download/v0.3.8/Aartiq-0.3.8.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/Latestinssan/Aartiq/releases/download/v0.3.8/Aartiq-0.3.8.AppImage",
+      "pattern": "^Aartiq-[0-9]+([.][0-9]+)*[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "abcarus",
+      "requested_repository": "topchyan/abcarus",
+      "provenance": {
+        "recipe": "programs/x86_64/abcarus",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "618ddebe01a775fc5dd2ad64c3c4a9e58d533fa9df7d93a786f3de9e93fce303",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "abcarus",
+              "topchyan/abcarus",
+              "curl -Ls https://api.github.com/repos/topchyan/abcarus/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "abcarus",
+              "topchyan/abcarus",
+              "curl -Ls https://api.github.com/repos/topchyan/abcarus/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:44.056472+00:00",
+      "repository_sha256": "2e36383d4db939667d673274ae878ff43cdf2b2fd043dde952f98dd3add75ded",
+      "releases_sha256": "d01d318e4460d4b9843f17a4e711f65e57767cdb1dc51844edd482ed96d7bbfa",
+      "repository_id": 1124235503,
+      "repository": "topchyan/abcarus",
+      "release_count": 46,
+      "selected_release": 416187804,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/topchyan/abcarus/releases/assets/652232515",
+        "id": 652232515,
+        "node_id": "RA_kwDOQwJ4784m4EdD",
+        "name": "ABCarus-x86_64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/vnd.appimage",
+        "state": "uploaded",
+        "size": 235272696,
+        "digest": "sha256:17fdfc272dd9f78926eec1367c573027001146b40c7e0314f9fa5b45819dc43e",
+        "download_count": 29,
+        "created_at": "2026-10-18T02:25:12Z",
+        "updated_at": "2026-10-18T02:25:20Z",
+        "browser_download_url": "https://github.com/topchyan/abcarus/releases/download/v1.12.2/ABCarus-x86_64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/topchyan/abcarus/releases/download/v1.12.2/ABCarus-x86_64.AppImage",
+      "pattern": "^ABCarus-x86_64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "abundio",
+      "requested_repository": "emullernl/abundio",
+      "provenance": {
+        "recipe": "programs/x86_64/abundio",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "1f1e027921ed1f6170d8c01559e1be521be399deb76cb9a3dc17381d41dc318c",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "abundio",
+              "emullernl/abundio",
+              "curl -Ls https://api.github.com/repos/emullernl/abundio/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "abundio",
+              "emullernl/abundio",
+              "curl -Ls https://api.github.com/repos/emullernl/abundio/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:44.369078+00:00",
+      "repository_sha256": "dd3c89ea8e87944a4e5d8c2333f72547ed6de9ad8ea89b41948ff3959dc4ccb9",
+      "releases_sha256": "d5c47c2f8b0f76691416aaeff8a694bf0081d21c45e5864a6b95a5f2129215b7",
+      "repository_id": 1194487037,
+      "repository": "emullernl/abundio",
+      "release_count": 44,
+      "selected_release": 435432012,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/emullernl/abundio/releases/assets/714000618",
+        "id": 714000618,
+        "node_id": "RA_kwDORzJs_c4qjsjq",
+        "name": "Abundio_2.2.0_amd64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/zip",
+        "state": "uploaded",
+        "size": 137083384,
+        "digest": "sha256:bb6a9e6de3e08c1b7fb9d763dbc7e5a4040a64809f0fa147cd1bda5df7dc66c9",
+        "download_count": 1,
+        "created_at": "2026-11-05T16:18:43Z",
+        "updated_at": "2026-11-05T16:18:50Z",
+        "browser_download_url": "https://github.com/emullernl/abundio/releases/download/v2.2.0/Abundio_2.2.0_amd64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/emullernl/abundio/releases/download/v2.2.0/Abundio_2.2.0_amd64.AppImage",
+      "pattern": "^Abundio_[0-9]+([.][0-9]+)*_amd64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "accordserver",
+      "requested_repository": "daccordproject/accordserver",
+      "provenance": {
+        "recipe": "programs/x86_64/accordserver",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "2bece698731f5d991bb15f91f400e4dad34179f53e80b213ee5032aec9ab3364",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "accordserver",
+              "daccordproject/accordserver",
+              "curl -Ls https://api.github.com/repos/daccordproject/accordserver/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "accordserver",
+              "daccordproject/accordserver",
+              "curl -Ls https://api.github.com/repos/daccordproject/accordserver/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:45.470713+00:00",
+      "repository_sha256": "b8f9161831a420eaf1648756f439e8394d933edb15cb57b2df32a142dc5f3833",
+      "releases_sha256": "31adb53359b472d77f1c17aad89c5ad949524f089d9f68f160d8f3c10d1bce60",
+      "repository_id": 1160442164,
+      "repository": "DaccordProject/accordserver",
+      "release_count": 16,
+      "selected_release": 402536564,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/DaccordProject/accordserver/releases/assets/607927256",
+        "id": 607927256,
+        "node_id": "RA_kwDORSrxNM4kPDvY",
+        "name": "Accord_0.2.4_amd64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 107723256,
+        "digest": "sha256:d1116622ea3674928714f04f3c64f63d91878509a845b001f61bd7223b4e7c34",
+        "download_count": 80,
+        "created_at": "2026-10-03T14:15:35Z",
+        "updated_at": "2026-10-03T14:15:38Z",
+        "browser_download_url": "https://github.com/DaccordProject/accordserver/releases/download/v0.2.4/Accord_0.2.4_amd64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/DaccordProject/accordserver/releases/download/v0.2.4/Accord_0.2.4_amd64.AppImage",
+      "pattern": "^Accord_[0-9]+([.][0-9]+)*_amd64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "accshift",
+      "requested_repository": "klnuno/accshift",
+      "provenance": {
+        "recipe": "programs/x86_64/accshift",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "8eb5689baec3bab9795289bb0f82c61b6ef11e9afc896995484dcc9dbdd77898",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "accshift",
+              "klnuno/accshift",
+              "curl -Ls https://api.github.com/repos/klnuno/accshift/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "accshift",
+              "klnuno/accshift",
+              "curl -Ls https://api.github.com/repos/klnuno/accshift/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:45.857916+00:00",
+      "repository_sha256": "00fd06b1675bbed0bb872c8edd74175cef3eb413fd45ffd010432e4edaf2c15a",
+      "releases_sha256": "277404669a56a91fb3734032ed2a7079f6be0482091466af3d9c9736408af8c8",
+      "repository_id": 1140627160,
+      "repository": "klNuno/accshift",
+      "release_count": 21,
+      "selected_release": 406187787,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/klNuno/accshift/releases/assets/619893032",
+        "id": 619893032,
+        "node_id": "RA_kwDOQ_yW2M4k8tEo",
+        "name": "accshift_1.0.5_amd64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 83417592,
+        "digest": "sha256:da3e3b4d639e2cc911f125cc8f3e1d5b3cd2037283e97a82bb7aed4a13d194a5",
+        "download_count": 22,
+        "created_at": "2026-10-07T21:43:01Z",
+        "updated_at": "2026-10-07T21:43:04Z",
+        "browser_download_url": "https://github.com/klNuno/accshift/releases/download/v1.0.5/accshift_1.0.5_amd64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/klNuno/accshift/releases/download/v1.0.5/accshift_1.0.5_amd64.AppImage",
+      "pattern": "^accshift_[0-9]+([.][0-9]+)*_amd64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "ace-gui",
+      "requested_repository": "daisy/ace-gui",
+      "provenance": {
+        "recipe": "programs/x86_64/ace-gui",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "cf94279ca07520dec58aa670f470a5090965849c2686c0c020b154f6ccf09629",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "ace-gui",
+              "daisy/ace-gui",
+              "curl -Ls https://api.github.com/repos/daisy/ace-gui/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "ace-gui",
+              "daisy/ace-gui",
+              "curl -Ls https://api.github.com/repos/daisy/ace-gui/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:46.350397+00:00",
+      "repository_sha256": "1e8344443af9ca2959b034f497d6acdecf2c4323e6a2842f77443bde2aafa83b",
+      "releases_sha256": "4bcb4b0da04c15ad48be43b004ff7953afdce8f527aedbdbebb7bc3646aabf47",
+      "repository_id": 134057106,
+      "repository": "daisy/ace-gui",
+      "release_count": 24,
+      "selected_release": 313545941,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/daisy/ace-gui/releases/assets/405236486",
+        "id": 405236486,
+        "node_id": "RA_kwDOB_2Mks4YJ2sG",
+        "name": "Ace.by.DAISY-1.4.6.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/vnd.appimage",
+        "state": "uploaded",
+        "size": 138565113,
+        "digest": "sha256:057411ceff365521fd92f62eeaa467dfc2f0e109634e0fa04905d19a314ba92e",
+        "download_count": 221,
+        "created_at": "2026-04-25T08:49:25Z",
+        "updated_at": "2026-04-25T08:49:34Z",
+        "browser_download_url": "https://github.com/daisy/ace-gui/releases/download/v1.4.6/Ace.by.DAISY-1.4.6.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/daisy/ace-gui/releases/download/v1.4.6/Ace.by.DAISY-1.4.6.AppImage",
+      "pattern": "^Ace[.]by[.]DAISY-[0-9]+([.][0-9]+)*[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "acp-ui",
+      "requested_repository": "formulahendry/acp-ui",
+      "provenance": {
+        "recipe": "programs/x86_64/acp-ui",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "22810029eed1db6d5615e3be88e3b62b9c9e2950e8746b6f38eb6af33d71a16b",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "acp-ui",
+              "formulahendry/acp-ui",
+              "curl -Ls https://api.github.com/repos/formulahendry/acp-ui/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "acp-ui",
+              "formulahendry/acp-ui",
+              "curl -Ls https://api.github.com/repos/formulahendry/acp-ui/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:47.385378+00:00",
+      "repository_sha256": "b27da87a0969eed4eea3f3ed57da3c1cfa51ae9198f3b4aed7dc957d2ff535bf",
+      "releases_sha256": "52de31190e7b3b9e2ed26d61b4ade07ccc198eeb7893357ae6b977a10e4765f7",
+      "repository_id": 1146547653,
+      "repository": "formulahendry/acp-ui",
+      "release_count": 14,
+      "selected_release": 328741272,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/formulahendry/acp-ui/releases/assets/429198046",
+        "id": 429198046,
+        "node_id": "RA_kwDORFbtxc4ZlQre",
+        "name": "acp-ui_0.1.16_amd64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/zip",
+        "state": "uploaded",
+        "size": 82266616,
+        "digest": "sha256:56864176c14ff6674a6423906565dacca06756eaebd7739ff99d4a7102b7bf08",
+        "download_count": 122,
+        "created_at": "2026-05-25T08:40:58Z",
+        "updated_at": "2026-05-25T08:41:01Z",
+        "browser_download_url": "https://github.com/formulahendry/acp-ui/releases/download/v0.1.16/acp-ui_0.1.16_amd64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/formulahendry/acp-ui/releases/download/v0.1.16/acp-ui_0.1.16_amd64.AppImage",
+      "pattern": "^acp-ui_[0-9]+([.][0-9]+)*_amd64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "acreom",
+      "requested_repository": "Acreom/releases",
+      "provenance": {
+        "recipe": "programs/x86_64/acreom",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "6600c502e7303f31a6b131157251761896cc0e42214049467e335702d05e829f",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bb53f3180ec92f862020f8bdccef0f6614015bae:templates/AM-SAMPLE-AppImage",
+            "source_sha256": "1049be481f39bdcdcd3ffa348ac94cdbdaaa65cfe1d341940e4b017963344931",
+            "parameters": [
+              "acreom",
+              "Acreom/releases",
+              "curl -Ls https://api.github.com/repos/Acreom/releases/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "acreom",
+              "Acreom/releases",
+              "curl -Ls https://api.github.com/repos/Acreom/releases/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:48.050059+00:00",
+      "repository_sha256": "51ff84cfa3b9b2662c1848161c786cd9b12d9ff535aadd236776c46965a99009",
+      "releases_sha256": "ad7308cf24be7aa39166e1ec1e819ce680fd40724b3df26c9923fc8bd8352d12",
+      "repository_id": 440575288,
+      "repository": "Acreom/releases",
+      "release_count": 100,
+      "selected_release": 178716617,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/Acreom/releases/releases/assets/197454056",
+        "id": 197454056,
+        "node_id": "RA_kwDOGkKlOM4LxOjo",
+        "name": "acreom-1.20.2.AppImage",
+        "label": null,
+        "uploader": {
+          "login": "hackal",
+          "id": 1612122,
+          "node_id": "MDQ6VXNlcjE2MTIxMjI=",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1612122?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/hackal",
+          "html_url": "https://github.com/hackal",
+          "followers_url": "https://api.github.com/users/hackal/followers",
+          "following_url": "https://api.github.com/users/hackal/following{/other_user}",
+          "gists_url": "https://api.github.com/users/hackal/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/hackal/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/hackal/subscriptions",
+          "organizations_url": "https://api.github.com/users/hackal/orgs",
+          "repos_url": "https://api.github.com/users/hackal/repos",
+          "events_url": "https://api.github.com/users/hackal/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/hackal/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 169150134,
+        "digest": null,
+        "download_count": 3663,
+        "created_at": "2024-10-07T15:25:02Z",
+        "updated_at": "2024-10-07T15:26:44Z",
+        "browser_download_url": "https://github.com/Acreom/releases/releases/download/v1.20.2/acreom-1.20.2.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/Acreom/releases/releases/download/v1.20.2/acreom-1.20.2.AppImage",
+      "pattern": "^acreom-[0-9]+([.][0-9]+)*[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "actiona",
+      "requested_repository": "Jmgr/actiona",
+      "provenance": {
+        "recipe": "programs/x86_64/actiona",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "0a54832d98925c0b1a32319b7f2bf8bf56d4b0bf45d85429cd230fc9c76656ea",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bb53f3180ec92f862020f8bdccef0f6614015bae:templates/AM-SAMPLE-AppImage",
+            "source_sha256": "1049be481f39bdcdcd3ffa348ac94cdbdaaa65cfe1d341940e4b017963344931",
+            "parameters": [
+              "actiona",
+              "Jmgr/actiona",
+              "curl -Ls https://api.github.com/repos/Jmgr/actiona/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "actiona",
+              "Jmgr/actiona",
+              "curl -Ls https://api.github.com/repos/Jmgr/actiona/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:48.576259+00:00",
+      "repository_sha256": "a8dfecd06638a151e34f45e459d69a683f147e963dd68ea07c2144f7221bc4e1",
+      "releases_sha256": "0f13edee5f16992360aadd4fad5bab3e561b182a4600f64358aabeaa678ff288",
+      "repository_id": 2405281,
+      "repository": "Jmgr/actiona",
+      "release_count": 7,
+      "selected_release": 431996780,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/Jmgr/actiona/releases/assets/703264824",
+        "id": 703264824,
+        "node_id": "RA_kwDOACSzoc4p6vg4",
+        "name": "actiona-3.11.5-x86_64.AppImage",
+        "label": null,
+        "uploader": {
+          "login": "Jmgr",
+          "id": 984518,
+          "node_id": "MDQ6VXNlcjk4NDUxOA==",
+          "avatar_url": "https://avatars.githubusercontent.com/u/984518?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/Jmgr",
+          "html_url": "https://github.com/Jmgr",
+          "followers_url": "https://api.github.com/users/Jmgr/followers",
+          "following_url": "https://api.github.com/users/Jmgr/following{/other_user}",
+          "gists_url": "https://api.github.com/users/Jmgr/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/Jmgr/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/Jmgr/subscriptions",
+          "organizations_url": "https://api.github.com/users/Jmgr/orgs",
+          "repos_url": "https://api.github.com/users/Jmgr/repos",
+          "events_url": "https://api.github.com/users/Jmgr/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/Jmgr/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/vnd.appimage",
+        "state": "uploaded",
+        "size": 81771000,
+        "digest": "sha256:798ad735b4873f31f1d81dbdcf229de624147afbfd2cd831d91e04f34d567da0",
+        "download_count": 21,
+        "created_at": "2026-11-02T21:39:02Z",
+        "updated_at": "2026-11-02T21:39:12Z",
+        "browser_download_url": "https://github.com/Jmgr/actiona/releases/download/v3.11.5/actiona-3.11.5-x86_64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/Jmgr/actiona/releases/download/v3.11.5/actiona-3.11.5-x86_64.AppImage",
+      "pattern": "^actiona-[0-9]+([.][0-9]+)*-x86_64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "actone-screenplay",
+      "requested_repository": "beetlebot/actone-screenplay",
+      "provenance": {
+        "recipe": "programs/x86_64/actone-screenplay",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "60c1b39615d210aee36c408c09623bb07e721605c00e51ff0335b21c1a0bcb12",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "actone-screenplay",
+              "beetlebot/actone-screenplay",
+              "curl -Ls https://api.github.com/repos/beetlebot/actone-screenplay/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "actone-screenplay",
+              "beetlebot/actone-screenplay",
+              "curl -Ls https://api.github.com/repos/beetlebot/actone-screenplay/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:48.851629+00:00",
+      "repository_sha256": "f5c612b686e6beb451d455cd369c7faa6e4c609e8d64916420b2ae8361eddeb4",
+      "releases_sha256": "b5e47cf3b1f836fb041ce459ad91afc03bd0d71450748eafe74fdf84ade273bb",
+      "repository_id": 1329785051,
+      "repository": "BeetleBot/ActOne-Screenplay",
+      "release_count": 12,
+      "selected_release": 430493568,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/BeetleBot/ActOne-Screenplay/releases/assets/697949769",
+        "id": 697949769,
+        "node_id": "RA_kwDOT0Lo284pmd5J",
+        "name": "ActOne-Screenplay-x86_64-0.6.2.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/vnd.appimage",
+        "state": "uploaded",
+        "size": 129432056,
+        "digest": "sha256:c20583fa0b5bac9bf9cd616cf5972045eb716384a130790a02691904e4ab64bd",
+        "download_count": 4,
+        "created_at": "2026-11-01T10:02:41Z",
+        "updated_at": "2026-11-01T10:02:44Z",
+        "browser_download_url": "https://github.com/BeetleBot/ActOne-Screenplay/releases/download/v0.6.2/ActOne-Screenplay-x86_64-0.6.2.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/BeetleBot/ActOne-Screenplay/releases/download/v0.6.2/ActOne-Screenplay-x86_64-0.6.2.AppImage",
+      "pattern": "^ActOne-Screenplay-x86_64-[0-9]+([.][0-9]+)*[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "actual",
+      "requested_repository": "actualbudget/releases",
+      "provenance": {
+        "recipe": "programs/x86_64/actual",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "3173c53f4bde64d7e06ddbec16839975626aa3acce8c63aab5716a41744649dc",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bb53f3180ec92f862020f8bdccef0f6614015bae:templates/AM-SAMPLE-AppImage",
+            "source_sha256": "1049be481f39bdcdcd3ffa348ac94cdbdaaa65cfe1d341940e4b017963344931",
+            "parameters": [
+              "actual",
+              "actualbudget/releases",
+              "curl -Ls https://api.github.com/repos/actualbudget/releases/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "actual",
+              "actualbudget/releases",
+              "curl -Ls https://api.github.com/repos/actualbudget/releases/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:49.982212+00:00",
+      "repository_sha256": "1e75dff69e5fc5d1a161f3652e801bb7ccadfa5fe6fce02f76d3cbf23e378706",
+      "releases_sha256": "569a6e9ad9c5b305901ff08fd1a5918b907c9b121f616f5e9e5bbb901cb3ada8",
+      "repository_id": 127176730,
+      "repository": "actualbudget/releases",
+      "release_count": 62,
+      "selected_release": 63104568,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/actualbudget/releases/releases/assets/60994386",
+        "id": 60994386,
+        "node_id": "RA_kwDOB5SQGs4DorNS",
+        "name": "Actual-0.0.148-x86_64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "jlongster",
+          "id": 17031,
+          "node_id": "MDQ6VXNlcjE3MDMx",
+          "avatar_url": "https://avatars.githubusercontent.com/u/17031?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/jlongster",
+          "html_url": "https://github.com/jlongster",
+          "followers_url": "https://api.github.com/users/jlongster/followers",
+          "following_url": "https://api.github.com/users/jlongster/following{/other_user}",
+          "gists_url": "https://api.github.com/users/jlongster/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/jlongster/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/jlongster/subscriptions",
+          "organizations_url": "https://api.github.com/users/jlongster/orgs",
+          "repos_url": "https://api.github.com/users/jlongster/repos",
+          "events_url": "https://api.github.com/users/jlongster/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/jlongster/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 95918814,
+        "digest": null,
+        "download_count": 4527,
+        "created_at": "2022-03-30T02:33:53Z",
+        "updated_at": "2022-03-30T02:34:07Z",
+        "browser_download_url": "https://github.com/actualbudget/releases/releases/download/0.0.148/Actual-0.0.148-x86_64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/actualbudget/releases/releases/download/0.0.148/Actual-0.0.148-x86_64.AppImage",
+      "pattern": "^Actual-[0-9]+([.][0-9]+)*-x86_64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "ada",
+      "requested_repository": "black141312/ada-releases",
+      "provenance": {
+        "recipe": "programs/x86_64/ada",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "be6e8ff6866e4986ba94e898700a68a931ca8356b666f45ab24448481b9bf88d",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "ada",
+              "black141312/ada-releases",
+              "curl -Ls https://api.github.com/repos/black141312/ada-releases/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "ada",
+              "black141312/ada-releases",
+              "curl -Ls https://api.github.com/repos/black141312/ada-releases/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:50.314220+00:00",
+      "repository_sha256": "9db0e108712c87b977c69b862ca9a1fd6a8637cbc7272e79bb0880f5fe8ef2c5",
+      "releases_sha256": "dc2d49e7553894302346d34a5f0ed9d1cf0a92e6c255044d22c8d03bee20886d",
+      "repository_id": 1305051933,
+      "repository": "black141312/ada-releases",
+      "release_count": 57,
+      "selected_release": 402597967,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/black141312/ada-releases/releases/assets/608150607",
+        "id": 608150607,
+        "node_id": "RA_kwDOTcmDHc4kP6RP",
+        "name": "Ada-0.1.69.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "black141312",
+          "id": 24194905,
+          "node_id": "MDQ6VXNlcjI0MTk0OTA1",
+          "avatar_url": "https://avatars.githubusercontent.com/u/24194905?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/black141312",
+          "html_url": "https://github.com/black141312",
+          "followers_url": "https://api.github.com/users/black141312/followers",
+          "following_url": "https://api.github.com/users/black141312/following{/other_user}",
+          "gists_url": "https://api.github.com/users/black141312/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/black141312/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/black141312/subscriptions",
+          "organizations_url": "https://api.github.com/users/black141312/orgs",
+          "repos_url": "https://api.github.com/users/black141312/repos",
+          "events_url": "https://api.github.com/users/black141312/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/black141312/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/vnd.appimage",
+        "state": "uploaded",
+        "size": 386621623,
+        "digest": "sha256:02898fd90a19f0c1c33ef3464237f97a4aee6670fafeb1022703780ecce126f4",
+        "download_count": 30,
+        "created_at": "2026-10-03T16:40:12Z",
+        "updated_at": "2026-10-03T16:40:24Z",
+        "browser_download_url": "https://github.com/black141312/ada-releases/releases/download/v0.1.69/Ada-0.1.69.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/black141312/ada-releases/releases/download/v0.1.69/Ada-0.1.69.AppImage",
+      "pattern": "^Ada-[0-9]+([.][0-9]+)*[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "adbkit",
+      "requested_repository": "drenzzz/adbkit",
+      "provenance": {
+        "recipe": "programs/x86_64/adbkit",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "542e525954bc42b98e7cbf50cf57907d91e4b0cb39a693000754fd881cc3851a",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "adbkit",
+              "drenzzz/adbkit",
+              "curl -Ls https://api.github.com/repos/drenzzz/adbkit/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "adbkit",
+              "drenzzz/adbkit",
+              "curl -Ls https://api.github.com/repos/drenzzz/adbkit/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:50.352279+00:00",
+      "repository_sha256": "8d8e0e74a96fcb30779d6cb77368fa09d753dd3f4c7279d891d5ae7f113bd851",
+      "releases_sha256": "29bf777d5ea78a5a41f0f09ac7cd6ac95bacb68c326b8afdfc5ee58fcd5637ff",
+      "repository_id": 1089623281,
+      "repository": "Drenzzz/ADBKit",
+      "release_count": 10,
+      "selected_release": 386824855,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/Drenzzz/ADBKit/releases/assets/556644512",
+        "id": 556644512,
+        "node_id": "RA_kwDOQPJU8c4hLbig",
+        "name": "ADBKit-2.0.0-linux-x86_64-system.AppImage",
+        "label": null,
+        "uploader": {
+          "login": "Drenzzz",
+          "id": 116653610,
+          "node_id": "U_kgDOBvP-Kg",
+          "avatar_url": "https://avatars.githubusercontent.com/u/116653610?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/Drenzzz",
+          "html_url": "https://github.com/Drenzzz",
+          "followers_url": "https://api.github.com/users/Drenzzz/followers",
+          "following_url": "https://api.github.com/users/Drenzzz/following{/other_user}",
+          "gists_url": "https://api.github.com/users/Drenzzz/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/Drenzzz/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/Drenzzz/subscriptions",
+          "organizations_url": "https://api.github.com/users/Drenzzz/orgs",
+          "repos_url": "https://api.github.com/users/Drenzzz/repos",
+          "events_url": "https://api.github.com/users/Drenzzz/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/Drenzzz/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 6830584,
+        "digest": "sha256:b80df9b55d7527a58b5b6a33958499a6a3cab0d0deaf9022266057b6005224fc",
+        "download_count": 109,
+        "created_at": "2026-09-11T06:27:20Z",
+        "updated_at": "2026-09-11T06:27:29Z",
+        "browser_download_url": "https://github.com/Drenzzz/ADBKit/releases/download/v2.0.0/ADBKit-2.0.0-linux-x86_64-system.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/Drenzzz/ADBKit/releases/download/v2.0.0/ADBKit-2.0.0-linux-x86_64-system.AppImage",
+      "pattern": "^ADBKit-[0-9]+([.][0-9]+)*-linux-x86_64-system[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "adelie",
+      "requested_repository": "lmliheng/adelie",
+      "provenance": {
+        "recipe": "programs/x86_64/adelie",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "e7d1e7492dc8c3f45470707478590412f7253777ddde8142111c40c4382ec682",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "adelie",
+              "lmliheng/adelie",
+              "curl -Ls https://api.github.com/repos/lmliheng/adelie/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "adelie",
+              "lmliheng/adelie",
+              "curl -Ls https://api.github.com/repos/lmliheng/adelie/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:51.884596+00:00",
+      "repository_sha256": "7387031bcd21fe8a2aef227c72011825e31f7aa6bae2f0d51e77cb07ee53ca87",
+      "releases_sha256": "dfa85757c0b48fcc0d29d8f0e341ab5328553115204890e4594b6e9c09b76384",
+      "repository_id": 1404226270,
+      "repository": "lmliheng/Adelie",
+      "release_count": 33,
+      "selected_release": 434804949,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/lmliheng/Adelie/releases/assets/712154786",
+        "id": 712154786,
+        "node_id": "RA_kwDOU7LK3s4qcp6i",
+        "name": "adelie-desktop-linux-x86_64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "lmliheng",
+          "id": 159103134,
+          "node_id": "U_kgDOCXu4ng",
+          "avatar_url": "https://avatars.githubusercontent.com/u/159103134?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/lmliheng",
+          "html_url": "https://github.com/lmliheng",
+          "followers_url": "https://api.github.com/users/lmliheng/followers",
+          "following_url": "https://api.github.com/users/lmliheng/following{/other_user}",
+          "gists_url": "https://api.github.com/users/lmliheng/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/lmliheng/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/lmliheng/subscriptions",
+          "organizations_url": "https://api.github.com/users/lmliheng/orgs",
+          "repos_url": "https://api.github.com/users/lmliheng/repos",
+          "events_url": "https://api.github.com/users/lmliheng/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/lmliheng/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 155348213,
+        "digest": "sha256:164d3a59ec251471d7bd0fd5252513003db3835a60e105460852631307368e39",
+        "download_count": 1,
+        "created_at": "2026-11-05T05:09:08Z",
+        "updated_at": "2026-11-05T05:10:27Z",
+        "browser_download_url": "https://github.com/lmliheng/Adelie/releases/download/v0.6.4/adelie-desktop-linux-x86_64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/lmliheng/Adelie/releases/download/v0.6.4/adelie-desktop-linux-x86_64.AppImage",
+      "pattern": "^adelie-desktop-linux-x86_64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "adiman",
+      "requested_repository": "chaosthechaotic/adiman",
+      "provenance": {
+        "recipe": "programs/x86_64/adiman",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "cade2ad4e42c6a08766fdf47a3bfc0574a0f1a5dd6be5c2b3fd962f53240956a",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "adiman",
+              "chaosthechaotic/adiman",
+              "curl -Ls https://api.github.com/repos/chaosthechaotic/adiman/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "adiman",
+              "chaosthechaotic/adiman",
+              "curl -Ls https://api.github.com/repos/chaosthechaotic/adiman/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:51.994477+00:00",
+      "repository_sha256": "7d2aa8bbd0a074a8b53f0749a9f8682cd8d00f8ae9c1fd93fa8e1f4b0855f089",
+      "releases_sha256": "a47f8a89d34bfd9c2eb5769519324a78bc14dfe5dc28c0b9105329321da4415d",
+      "repository_id": 965213930,
+      "repository": "ChaosTheChaotic/Adiman",
+      "release_count": 41,
+      "selected_release": 398606667,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/ChaosTheChaotic/Adiman/releases/assets/596362353",
+        "id": 596362353,
+        "node_id": "RA_kwDOOYf-6s4ji8Rx",
+        "name": "Adiman-x86_64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 24828408,
+        "digest": "sha256:55ee9c1687941df5eb449e0c2b75f8a6a3bc2b3b8555f4e18fe69d52821b0ed0",
+        "download_count": 22,
+        "created_at": "2026-09-28T20:38:51Z",
+        "updated_at": "2026-09-28T20:38:53Z",
+        "browser_download_url": "https://github.com/ChaosTheChaotic/Adiman/releases/download/v1.3.7/Adiman-x86_64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/ChaosTheChaotic/Adiman/releases/download/v1.3.7/Adiman-x86_64.AppImage",
+      "pattern": "^Adiman-x86_64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "adt-studio",
+      "requested_repository": "unicef/adt-studio",
+      "provenance": {
+        "recipe": "programs/x86_64/adt-studio",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "a88ec2cd39304cdba674c67bd414d96668a20fa179c538f83faf9b701350ab2a",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "adt-studio",
+              "unicef/adt-studio",
+              "curl -Ls https://api.github.com/repos/unicef/adt-studio/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "adt-studio",
+              "unicef/adt-studio",
+              "curl -Ls https://api.github.com/repos/unicef/adt-studio/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:52.355711+00:00",
+      "repository_sha256": "c7a5e67421fdb741019a7f35890ce98b0675999311084144b561ae2b96359751",
+      "releases_sha256": "0b9a95be06f7ccecc3c9ad75d788110c291d9dedbf987112eec1d9c5e59d99dc",
+      "repository_id": 1153610647,
+      "repository": "unicef/adt-studio",
+      "release_count": 44,
+      "selected_release": 429746065,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/unicef/adt-studio/releases/assets/694481917",
+        "id": 694481917,
+        "node_id": "RA_kwDORMKzl84pZPP9",
+        "name": "adt-studio-0.9.0.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/vnd.appimage",
+        "state": "uploaded",
+        "size": 165803027,
+        "digest": "sha256:09f48c928308d5f73dc401a529dc3aae8e984ff8c37bfc3d0cbd9de72f6ccbce",
+        "download_count": 18,
+        "created_at": "2026-10-31T05:38:01Z",
+        "updated_at": "2026-10-31T05:38:07Z",
+        "browser_download_url": "https://github.com/unicef/adt-studio/releases/download/v0.9.0/adt-studio-0.9.0.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/unicef/adt-studio/releases/download/v0.9.0/adt-studio-0.9.0.AppImage",
+      "pattern": "^adt-studio-[0-9]+([.][0-9]+)*[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "advanced-rest-client",
+      "requested_repository": "advanced-rest-client/arc-electron",
+      "provenance": {
+        "recipe": "programs/x86_64/advanced-rest-client",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "ca33a83851d3842f9b35a52ff449c39e9bf06ee89ed1aae884a0377b24883aa1",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bb53f3180ec92f862020f8bdccef0f6614015bae:templates/AM-SAMPLE-AppImage",
+            "source_sha256": "1049be481f39bdcdcd3ffa348ac94cdbdaaa65cfe1d341940e4b017963344931",
+            "parameters": [
+              "advanced-rest-client",
+              "advanced-rest-client/arc-electron",
+              "curl -Ls https://api.github.com/repos/advanced-rest-client/arc-electron/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "advanced-rest-client",
+              "advanced-rest-client/arc-electron",
+              "curl -Ls https://api.github.com/repos/advanced-rest-client/arc-electron/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:53.596254+00:00",
+      "repository_sha256": "9fb0e25cfe90fd07cf39db8412e14c7fa5179fb538e811b5f2eeb3b0b24b28be",
+      "releases_sha256": "702a563d791eaf0d4b6dfcf4dc4b92747c62cb0b5a9b96213602e2f607e8dc91",
+      "repository_id": 105956507,
+      "repository": "advanced-rest-client/arc-electron",
+      "release_count": 100,
+      "selected_release": 60843719,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/advanced-rest-client/arc-electron/releases/assets/58387461",
+        "id": 58387461,
+        "node_id": "RA_kwDOBlDEm84DeuwF",
+        "name": "arc-linux-17.0.9-x86_64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 126615377,
+        "digest": null,
+        "download_count": 8559,
+        "created_at": "2022-03-02T23:38:57Z",
+        "updated_at": "2022-03-02T23:39:02Z",
+        "browser_download_url": "https://github.com/advanced-rest-client/arc-electron/releases/download/v17.0.9/arc-linux-17.0.9-x86_64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/advanced-rest-client/arc-electron/releases/download/v17.0.9/arc-linux-17.0.9-x86_64.AppImage",
+      "pattern": "^arc-linux-[0-9]+([.][0-9]+)*-x86_64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "adventshow",
+      "requested_repository": "adventtools/adventshow",
+      "provenance": {
+        "recipe": "programs/x86_64/adventshow",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "522eefcad3f63b4d3dc71002c2933e910f3fd754c35c05c4547da6053a4598c6",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "adventshow",
+              "adventtools/adventshow",
+              "curl -Ls https://api.github.com/repos/adventtools/adventshow/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "adventshow",
+              "adventtools/adventshow",
+              "curl -Ls https://api.github.com/repos/adventtools/adventshow/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:53.728535+00:00",
+      "repository_sha256": "6b4e26e7b068f6f7dac1cf51609534e0442452d4ff198e2fef70e684ae1a2d09",
+      "releases_sha256": "f635b3d8d5b1034c63b3d44297da8ed432cb81b3987efaee0833740e545b9e24",
+      "repository_id": 1207343947,
+      "repository": "AdventTools/AdventShow",
+      "release_count": 79,
+      "selected_release": 359724292,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/AdventTools/AdventShow/releases/assets/489332578",
+        "id": 489332578,
+        "node_id": "RA_kwDOR_abS84dKp9i",
+        "name": "AdventShow-Linux.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 155832219,
+        "digest": "sha256:9b7e423c015db0d0b7ff3241f9e7ec9867aae77a371fa8654a9e99ae1630908b",
+        "download_count": 21,
+        "created_at": "2026-07-25T09:31:20Z",
+        "updated_at": "2026-07-25T09:31:25Z",
+        "browser_download_url": "https://github.com/AdventTools/AdventShow/releases/download/v1.3.14/AdventShow-Linux.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/AdventTools/AdventShow/releases/download/v1.3.14/AdventShow-Linux.AppImage",
+      "pattern": "^AdventShow-Linux[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "aero-sync",
+      "requested_repository": "atulsain011/aero_sync",
+      "provenance": {
+        "recipe": "programs/x86_64/aero-sync",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "b8dd59301446bfdd19daebbae09d334213163ed53009e97cbfd3577801936916",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "aero-sync",
+              "atulsain011/aero_sync",
+              "curl -Ls https://api.github.com/repos/atulsain011/aero_sync/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "aero-sync",
+              "atulsain011/aero_sync",
+              "curl -Ls https://api.github.com/repos/atulsain011/aero_sync/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:55.512287+00:00",
+      "repository_sha256": "c8247afcbd2c6eae1c49bb51dea5d8921effd455510a5f93b2c032040df38282",
+      "releases_sha256": "feb6c8fbb6f95785aa73244687dc3ba87e893643d7e51c8d74fc68f32067fc9e",
+      "repository_id": 1336846046,
+      "repository": "Atulsain011/Aero_sync",
+      "release_count": 1,
+      "selected_release": 384556167,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/Atulsain011/Aero_sync/releases/assets/550365537",
+        "id": 550365537,
+        "node_id": "RA_kwDOT66m3s4gzelh",
+        "name": "AeroSync-Linux-x86_64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 3672568,
+        "digest": "sha256:5b48da28e0177a6408e614b06410c376aabf215426a2011f124d512730001ba8",
+        "download_count": 19,
+        "created_at": "2026-09-08T11:23:01Z",
+        "updated_at": "2026-09-08T11:23:01Z",
+        "browser_download_url": "https://github.com/Atulsain011/Aero_sync/releases/download/v1.0.0/AeroSync-Linux-x86_64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/Atulsain011/Aero_sync/releases/download/v1.0.0/AeroSync-Linux-x86_64.AppImage",
+      "pattern": "^AeroSync-Linux-x86_64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "aeroftp",
+      "requested_repository": "axpdev-lab/aeroftp",
+      "provenance": {
+        "recipe": "programs/x86_64/aeroftp",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "ce2608ab20495acff1113d10e258c419267cb856df447c6fb1a367924a4ace8b",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage",
+            "source_sha256": "5353962fac61f7e0f8d3e949a824700c522c6229c6243ab16e2847a4e71edfa2",
+            "parameters": [
+              "aeroftp",
+              "axpdev-lab/aeroftp",
+              "curl -Ls https://api.github.com/repos/axpdev-lab/aeroftp/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "aeroftp",
+              "axpdev-lab/aeroftp",
+              "curl -Ls https://api.github.com/repos/axpdev-lab/aeroftp/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:55.987366+00:00",
+      "repository_sha256": "ab42ee72c86af94cc0d73da09990a26e16145e5819db13ba8cd75ece2bcb31d2",
+      "releases_sha256": "c6f7bb13c76f585b0657dd312e02295fcba0adabbb2315e71ea82d7c071677d8",
+      "repository_id": 1119622081,
+      "repository": "axpdev-lab/aeroftp",
+      "release_count": 100,
+      "selected_release": 434883366,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/axpdev-lab/aeroftp/releases/assets/712452911",
+        "id": 712452911,
+        "node_id": "RA_kwDOQrwTwc4qdysv",
+        "name": "AeroFTP_4.2.6_amd64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 190327288,
+        "digest": "sha256:f9baa275f91631fb97d6bdfdbf5652134b477028c3fedbff0ded2804d80babbb",
+        "download_count": 12,
+        "created_at": "2026-11-05T07:14:28Z",
+        "updated_at": "2026-11-05T07:14:35Z",
+        "browser_download_url": "https://github.com/axpdev-lab/aeroftp/releases/download/v4.2.6/AeroFTP_4.2.6_amd64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/axpdev-lab/aeroftp/releases/download/v4.2.6/AeroFTP_4.2.6_amd64.AppImage",
+      "pattern": "^AeroFTP_[0-9]+([.][0-9]+)*_amd64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "aes-lacrima",
+      "requested_repository": "aruantec/aes_lacrima",
+      "provenance": {
+        "recipe": "programs/x86_64/aes-lacrima",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "153aec44cf2263808d76a726765a52c5b533135b170673df3db0cbbe15a59533",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "aes-lacrima",
+              "aruantec/aes_lacrima",
+              "curl -Ls https://api.github.com/repos/aruantec/aes_lacrima/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "aes-lacrima",
+              "aruantec/aes_lacrima",
+              "curl -Ls https://api.github.com/repos/aruantec/aes_lacrima/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:56.846050+00:00",
+      "repository_sha256": "95dac353131415181479f7f6d0da8eb8e262138e4f55c89d1c69ea0716dfe0d4",
+      "releases_sha256": "608f4278fa1e20ead2f0e172742a7bacf236b8f7bb9f41290bb53336ccb092be",
+      "repository_id": 1150934954,
+      "repository": "aruantec/AES_Lacrima",
+      "release_count": 62,
+      "selected_release": 375227066,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/aruantec/AES_Lacrima/releases/assets/526276558",
+        "id": 526276558,
+        "node_id": "RA_kwDORJnfqs4fXlfO",
+        "name": "AES-Lacrima-Linux-x86_64-AOT.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/vnd.appimage",
+        "state": "uploaded",
+        "size": 181037560,
+        "digest": "sha256:0250286af48b10c51eb398fe1ac2e9fc5ff377a4bb0b3e051cc7345f06fbb0e8",
+        "download_count": 18,
+        "created_at": "2026-08-23T14:01:11Z",
+        "updated_at": "2026-08-23T14:01:16Z",
+        "browser_download_url": "https://github.com/aruantec/AES_Lacrima/releases/download/v0.1.17d/AES-Lacrima-Linux-x86_64-AOT.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/aruantec/AES_Lacrima/releases/download/v0.1.17d/AES-Lacrima-Linux-x86_64-AOT.AppImage",
+      "pattern": "^AES-Lacrima-Linux-x86_64-AOT[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "aether",
+      "requested_repository": "alisawari/aether",
+      "provenance": {
+        "recipe": "programs/x86_64/aether",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "66992e5acffb4234afbc11c468cdee8a3c0c8ee1315ebb23c7afcaa5d69b9d5a",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "aether",
+              "alisawari/aether",
+              "curl -Ls https://api.github.com/repos/alisawari/aether/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "aether",
+              "alisawari/aether",
+              "curl -Ls https://api.github.com/repos/alisawari/aether/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:54:57.244574+00:00",
+      "repository_sha256": "95d3d487e4a45f5e6d94e5501d99e32fd316d72a6d25bec44a2ae653c7996755",
+      "releases_sha256": "efc12d4c277e226abfe2348cb6af7cb62d1a8af1461971fb56e0b7561ab9bdbe",
+      "repository_id": 1300721529,
+      "repository": "AliSawari/aether",
+      "release_count": 1,
+      "selected_release": 354127971,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/AliSawari/aether/releases/assets/477296265",
+        "id": 477296265,
+        "node_id": "RA_kwDOTYdvec4ccvaJ",
+        "name": "Aether_0.1.0_amd64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/vnd.appimage",
+        "state": "uploaded",
+        "size": 82053624,
+        "digest": "sha256:40f1dc9230be7facbc0e5374633a45c483efeb02032ed269ad9124f4c487a725",
+        "download_count": 19,
+        "created_at": "2026-07-14T23:38:53Z",
+        "updated_at": "2026-07-14T23:38:55Z",
+        "browser_download_url": "https://github.com/AliSawari/aether/releases/download/0.1.0/Aether_0.1.0_amd64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/AliSawari/aether/releases/download/0.1.0/Aether_0.1.0_amd64.AppImage",
+      "pattern": "^Aether_[0-9]+([.][0-9]+)*_amd64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "aethersdr",
+      "requested_repository": "aethersdr/aethersdr",
+      "provenance": {
+        "recipe": "programs/x86_64/aethersdr",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "5611690f43ccf07e99fa23b535282fb17ee120a12d1f6c6d942011c6ff944828",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "aethersdr",
+              "aethersdr/aethersdr",
+              "curl -Ls https://api.github.com/repos/aethersdr/aethersdr/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "aethersdr",
+              "aethersdr/aethersdr",
+              "curl -Ls https://api.github.com/repos/aethersdr/aethersdr/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T02:59:29.956424+00:00",
+      "repository_sha256": "644d577bc4fc74602358cf8739e9d5625eef299c0e0a3c29f2308fb6f1592785",
+      "releases_sha256": "bc35dcd9b7b58c63eec564800a05a9dcd8377b672c9dbff16ee42b6da8293004",
+      "repository_id": 1180091786,
+      "repository": "aethersdr/AetherSDR",
+      "release_count": 68,
+      "selected_release": 430911952,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/aethersdr/AetherSDR/releases/assets/699838397",
+        "id": 699838397,
+        "node_id": "RA_kwDORlbFis4ptq-9",
+        "name": "AetherSDR-v26.11.1-x86_64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 146520568,
+        "digest": "sha256:0645adb336422ed7cb243fec504aebdcfee405d28e8cb1bf7b5402b9eab90478",
+        "download_count": 166,
+        "created_at": "2026-11-01T23:29:08Z",
+        "updated_at": "2026-11-01T23:29:16Z",
+        "browser_download_url": "https://github.com/aethersdr/AetherSDR/releases/download/v26.11.1/AetherSDR-v26.11.1-x86_64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/aethersdr/AetherSDR/releases/download/v26.11.1/AetherSDR-v26.11.1-x86_64.AppImage",
+      "pattern": "^AetherSDR-v[0-9]+([.][0-9]+)*-x86_64[.]AppImage$",
+      "strip_no_sandbox": true
+    }
+  ],
+  "exclusions": [
+    {
+      "app": "abundio",
+      "reason": "unsafe/unsupported metadata link"
+    },
+    {
+      "app": "acp-ui",
+      "reason": "unsafe/unsupported metadata link"
+    },
+    {
+      "app": "acreom",
+      "reason": "missing published SHA-256 digest"
+    },
+    {
+      "app": "actone-screenplay",
+      "reason": "distinct additional desktop entries need review"
+    },
+    {
+      "app": "actual",
+      "reason": "missing published SHA-256 digest"
+    },
+    {
+      "app": "adiman",
+      "reason": "missing/multiple Exec"
+    },
+    {
+      "app": "advanced-rest-client",
+      "reason": "missing published SHA-256 digest"
+    },
+    {
+      "app": "aero-sync",
+      "reason": "multiple/missing/hidden root desktops"
+    },
+    {
+      "app": "aes-lacrima",
+      "reason": "distinct additional desktop entries need review"
+    }
+  ],
+  "manifest": {
+    "0x808/extraction.txt": {
+      "bytes": 198,
+      "sha256": "e9b8e6b63380fcb3dde501c1719a34c603c8c4defa2d8430020499718f7d1b42"
+    },
+    "0x808/listing.txt": {
+      "bytes": 21677,
+      "sha256": "e29b4a7646bab268210c39e98d027e6926cc6804aa321ec152729d17dcb285fd"
+    },
+    "0x808/metadata/.DirIcon": {
+      "symlink": "0x808.png"
+    },
+    "0x808/metadata/0x808.desktop": {
+      "bytes": 136,
+      "sha256": "a6aad2762ec15c65648f03b679d4ba88dd715722e6954659a25baea3d490b06a"
+    },
+    "0x808/metadata/0x808.png": {
+      "bytes": 22053,
+      "sha256": "3dbf7d5585c29bd5a61800e9bd722fb9cfc220a1f5821d70c23695570b865d86"
+    },
+    "0x808/metadata/AppRun": {
+      "bytes": 151,
+      "sha256": "21d3ab9b86c56ae35f6040ac69fb27d159235f68d418b4d84877bbb090701cda"
+    },
+    "0x808/metadata/usr/share/applications/0x808.desktop": {
+      "bytes": 136,
+      "sha256": "a6aad2762ec15c65648f03b679d4ba88dd715722e6954659a25baea3d490b06a"
+    },
+    "0x808/metadata-receipt.json": {
+      "bytes": 3547,
+      "sha256": "ab4ed9c163ef4b68787fd43f9dc4f1dfae7ec758dba33245320c71a51f783e95"
+    },
+    "0x808/payload-receipt.json": {
+      "bytes": 452,
+      "sha256": "351bd416c64238f6846ac331fa7bca28656221574d79e82b30fb439df13fa61b"
+    },
+    "0x808/policy.json": {
+      "bytes": 278,
+      "sha256": "17193d11ee00f95968af42b7ade78e3880d2bf13a11805300c90dacaf4a01f64"
+    },
+    "0x808/releases.json": {
+      "bytes": 123357,
+      "sha256": "f87d820e8d25d68e8a3038f4f7f10bf84cde6fbddda390a5dfab599c802b8d40"
+    },
+    "0x808/repository.json": {
+      "bytes": 5598,
+      "sha256": "79bc391d8f7402bdec5ab96f1a5faa16b6f5c84534ca32451489cd9e35c27931"
+    },
+    "0x808/static.json": {
+      "bytes": 1362,
+      "sha256": "0575fe55fb269bb09135c2820943cf867dda419167af98f6450b90039b883483"
+    },
+    "0x808/superblock.txt": {
+      "bytes": 560,
+      "sha256": "838c8cefbafcc6d5b7a085672b855dbe38fbd443bca67bf0ec30f68c1eda41e7"
+    },
+    "0xsynth/extraction.txt": {
+      "bytes": 198,
+      "sha256": "e9b8e6b63380fcb3dde501c1719a34c603c8c4defa2d8430020499718f7d1b42"
+    },
+    "0xsynth/listing.txt": {
+      "bytes": 9233,
+      "sha256": "f6c7a701025a116b37c515eb8a5c5adf9f71ce25b8087a0fed862aeed933e4ab"
+    },
+    "0xsynth/metadata/.DirIcon": {
+      "symlink": "0xsynth.png"
+    },
+    "0xsynth/metadata/0xsynth.desktop": {
+      "bytes": 134,
+      "sha256": "3ae3b5db79206305c89028323e26e5dfb8bfe3271930bbb21a601d68b35a1bd8"
+    },
+    "0xsynth/metadata/0xsynth.png": {
+      "bytes": 6142,
+      "sha256": "1c7ad3cb1edbca0d9c5ca67c8ade1050370e48179850898ce54b8dcd628998ce"
+    },
+    "0xsynth/metadata/AppRun": {
+      "bytes": 153,
+      "sha256": "8c643efceb06e27046fd27dc6ab8096389d4455f85341988732f33361debba9c"
+    },
+    "0xsynth/metadata/usr/share/applications/0xsynth.desktop": {
+      "bytes": 134,
+      "sha256": "3ae3b5db79206305c89028323e26e5dfb8bfe3271930bbb21a601d68b35a1bd8"
+    },
+    "0xsynth/metadata-receipt.json": {
+      "bytes": 3573,
+      "sha256": "364f0f818a3b525c0e0941ca34b668e4334bacfe588f3f155a94960bfca11982"
+    },
+    "0xsynth/payload-receipt.json": {
+      "bytes": 457,
+      "sha256": "08dc98b72ab9a3474242ef609580cb6533ad327a87066016d94bdac386759f52"
+    },
+    "0xsynth/policy.json": {
+      "bytes": 286,
+      "sha256": "8410a6372ca14265bd76ab0436f757c5754c930c771faae4a169a7e4e461f76b"
+    },
+    "0xsynth/releases.json": {
+      "bytes": 30688,
+      "sha256": "bab32ca3704773c9acab07b6d52cee87e9b9922296d4d54d28befadeef354987"
+    },
+    "0xsynth/repository.json": {
+      "bytes": 5508,
+      "sha256": "db388975852d9fc5e9cf68657b1c55a067c70d45ba6fbcc718eda577f5329e75"
+    },
+    "0xsynth/static.json": {
+      "bytes": 1382,
+      "sha256": "b6a018473ba222b0bd818db1c0008d2f914f13c242561636c846f9502354b4e2"
+    },
+    "0xsynth/superblock.txt": {
+      "bytes": 560,
+      "sha256": "457fbccf61b21f43c0bfc663eb12708d55a3e8d72642f5b3456cb135a7de50c4"
+    },
+    "3mf-katalog-manager/extraction.txt": {
+      "bytes": 199,
+      "sha256": "61b03f9e537c334ef42300282be9c5d1f0bb6379d6e3fe5fa7c02397e47d2505"
+    },
+    "3mf-katalog-manager/listing.txt": {
+      "bytes": 40975,
+      "sha256": "1f7dea7b535b842966e1a92ee50dba30045ebd67ef2b077c4eeb052447c5b490"
+    },
+    "3mf-katalog-manager/metadata/.DirIcon": {
+      "symlink": "mf-katalog-manager.png"
+    },
+    "3mf-katalog-manager/metadata/3MF Katalog Manager.desktop": {
+      "symlink": "usr/share/applications/3MF Katalog Manager.desktop"
+    },
+    "3mf-katalog-manager/metadata/AppRun": {
+      "bytes": 274,
+      "sha256": "eb0b254ac0dae6543e6dd7cd02e1baf40a060de95b927313122d6b46323c00aa"
+    },
+    "3mf-katalog-manager/metadata/mf-katalog-manager.png": {
+      "symlink": "usr/share/icons/hicolor/32x32/apps/mf-katalog-manager.png"
+    },
+    "3mf-katalog-manager/metadata/usr/share/applications/3MF Katalog Manager.desktop": {
+      "bytes": 187,
+      "sha256": "42d6e8195c64cb2986c00033bd4a150afa8f1dea03da874c1fbd16b59b4f9f8e"
+    },
+    "3mf-katalog-manager/metadata/usr/share/icons/hicolor/32x32/apps/mf-katalog-manager.png": {
+      "bytes": 1417,
+      "sha256": "715d5ef28c3e8def7c65dd57d5bf12744a4848ee23bd17308fb2427d5fc5c5ee"
+    },
+    "3mf-katalog-manager/metadata-receipt.json": {
+      "bytes": 3826,
+      "sha256": "83cfe96a67884b7e021914529e37406beb5e2f5a456cf7fa37572882cf8103a5"
+    },
+    "3mf-katalog-manager/payload-receipt.json": {
+      "bytes": 497,
+      "sha256": "707f9efbd965adb4314995319623e6c4aa3edc1b8c23951b079bbb8acf3da55e"
+    },
+    "3mf-katalog-manager/policy.json": {
+      "bytes": 338,
+      "sha256": "a3c404d8eb04b9d742b067ac7f11eb4e6f5fb1b44431845cfca53abace19fcbd"
+    },
+    "3mf-katalog-manager/releases.json": {
+      "bytes": 795394,
+      "sha256": "7fda37b3c8c3acee4525bafbe19a1e4db31201855d33709ee70246b598281f51"
+    },
+    "3mf-katalog-manager/repository.json": {
+      "bytes": 6033,
+      "sha256": "7cfd1e74c9d82c009cfad22565dda09a467ecc62e803aa602d757809214960fd"
+    },
+    "3mf-katalog-manager/static.json": {
+      "bytes": 1744,
+      "sha256": "3743d8adee374dbb0b12890e052dabe3f74a9e9aabade6145f018d9f3bfb527f"
+    },
+    "3mf-katalog-manager/superblock.txt": {
+      "bytes": 578,
+      "sha256": "8a2bcaadb49ea32899845108f688e0970ab3fc805457df459f850fdc71a572f3"
+    },
+    "5ire/extraction.txt": {
+      "bytes": 198,
+      "sha256": "f32c6b42b88ff5d25a2f59ec84c8b4d46dee3d6a536521ff1fccc3780d4d530d"
+    },
+    "5ire/listing.txt": {
+      "bytes": 127558,
+      "sha256": "c980d212822d85d0585f85ee088418334c73f0ab8967055784a47941c5aa1c7a"
+    },
+    "5ire/metadata/.DirIcon": {
+      "symlink": "usr/share/icons/hicolor/1024x1024/apps/5ire.png"
+    },
+    "5ire/metadata/5ire.desktop": {
+      "bytes": 252,
+      "sha256": "3c44ff0345c9544995b40504829a81dd4621b03ba9503be4fd5cc8a081b155d2"
+    },
+    "5ire/metadata/AppRun": {
+      "bytes": 2345,
+      "sha256": "8db830bd46b8066b0710462a4845de762530ff94c54583bac498d333089d7444"
+    },
+    "5ire/metadata/usr/share/icons/hicolor/1024x1024/apps/5ire.png": {
+      "bytes": 23995,
+      "sha256": "24e4bd044f6462d310bba5d1215508a2cc8914be8cf7fe3303561d4bf391fd4f"
+    },
+    "5ire/metadata-receipt.json": {
+      "bytes": 3593,
+      "sha256": "f9e5f1c61485a2def2c7fedfd1b0b64169750656186df82a694ccac1ef70e168"
+    },
+    "5ire/payload-receipt.json": {
+      "bytes": 449,
+      "sha256": "ca16b60eb279b45d4278f623c23c044a0e7dda4811d89ef25ace028484218f0e"
+    },
+    "5ire/policy.json": {
+      "bytes": 272,
+      "sha256": "efa5716d0cbd1532efa351201db60f24fb4a46b4443f138d54e75ac9134a359f"
+    },
+    "5ire/releases.json": {
+      "bytes": 583040,
+      "sha256": "a29c1446a347a53d0eee3c1115184896efa78abcf3f839bc17a53157a1ac88e0"
+    },
+    "5ire/repository.json": {
+      "bytes": 5362,
+      "sha256": "4c2d9989697ca5cc037308c71a198e5d747f8d92e0ed8f1a0213b73d4570ea5f"
+    },
+    "5ire/static.json": {
+      "bytes": 1321,
+      "sha256": "c2d652526dcf04ed0b8f445288460a51cb0f5db4c2a2ccd8fbd0316b1d8fd0b0"
+    },
+    "5ire/superblock.txt": {
+      "bytes": 504,
+      "sha256": "7a4196ff0bf19c5c516b2b8c592821a08d6e5bac74515efb6b20e45cc5359eb0"
+    },
+    "6502-emulator/extraction.txt": {
+      "bytes": 198,
+      "sha256": "f32c6b42b88ff5d25a2f59ec84c8b4d46dee3d6a536521ff1fccc3780d4d530d"
+    },
+    "6502-emulator/listing.txt": {
+      "bytes": 18165,
+      "sha256": "257c3276b7f9981c1fe1cfc69b82a7f587e4fca3fceda16664a904b98f36fca0"
+    },
+    "6502-emulator/metadata/.DirIcon": {
+      "symlink": "usr/share/icons/hicolor/512x512/apps/6502-emulator.png"
+    },
+    "6502-emulator/metadata/AppRun": {
+      "bytes": 3488,
+      "sha256": "48c582897bfef92af787366ded1b27ed4e39c2d6b2a5e649ff983976a6ab7e57"
+    },
+    "6502-emulator/metadata/ac6502-emulator.desktop": {
+      "bytes": 275,
+      "sha256": "6d47f5a63d07fa979fa30612c89a937d6fabf1ab90a38dee9c1527732313c27a"
+    },
+    "6502-emulator/metadata/usr/share/icons/hicolor/512x512/apps/6502-emulator.png": {
+      "bytes": 16979,
+      "sha256": "6151ca1790c63e6bd69603ed609a91548103f183153140c47d060b2a823b071c"
+    },
+    "6502-emulator/metadata-receipt.json": {
+      "bytes": 3579,
+      "sha256": "750e2109305b67f249a5921a5e6ac8de4c6f87f3b35dd92be23dff927160f56a"
+    },
+    "6502-emulator/payload-receipt.json": {
+      "bytes": 480,
+      "sha256": "c15549d99816ff6694ef25dd86bf6a4804be639f2345d2e348f31ef19526c59d"
+    },
+    "6502-emulator/policy.json": {
+      "bytes": 316,
+      "sha256": "5a39195549f06c3c52eca59dd012d4856c275a337000c0ba8651228fbf8bef44"
+    },
+    "6502-emulator/releases.json": {
+      "bytes": 448965,
+      "sha256": "950f9e45f97c8967d920f4ca4d985aa6ee0250bb0887f28a58d42a5bab1741ea"
+    },
+    "6502-emulator/repository.json": {
+      "bytes": 5481,
+      "sha256": "8a8ab334e40ca37c1bdd4ccbb8ee4780e07a0ab4a321f85f26d8113a081681e8"
+    },
+    "6502-emulator/static.json": {
+      "bytes": 1417,
+      "sha256": "37d16f1eb441e77dc7698a7cf397b8758ccb33a26acc42301b32511d0caf2de0"
+    },
+    "6502-emulator/superblock.txt": {
+      "bytes": 512,
+      "sha256": "a893671c45a7990263b76705206075665f74bbbe4b905c30ce0d9c8c2a83ac52"
+    },
+    "a0-launcher/extraction.txt": {
+      "bytes": 198,
+      "sha256": "f32c6b42b88ff5d25a2f59ec84c8b4d46dee3d6a536521ff1fccc3780d4d530d"
+    },
+    "a0-launcher/listing.txt": {
+      "bytes": 304187,
+      "sha256": "612555835e46a9065a4e85b4a0b086169b4e4b4fc5c4c3188457e6cc17fb6e91"
+    },
+    "a0-launcher/metadata/.DirIcon": {
+      "symlink": "usr/share/icons/hicolor/960x960/apps/a0-launcher.png"
+    },
+    "a0-launcher/metadata/AppRun": {
+      "bytes": 3486,
+      "sha256": "8e4b29d134cc0f367cd9e8fd07f162dec4895743a80d9ad42cfb0de3d5e087ff"
+    },
+    "a0-launcher/metadata/a0-launcher.desktop": {
+      "bytes": 258,
+      "sha256": "7b127f92a452500f4b3454b83c83a37d32ec9e9cc2157b5836215a478055f7e8"
+    },
+    "a0-launcher/metadata/usr/share/icons/hicolor/960x960/apps/a0-launcher.png": {
+      "bytes": 29027,
+      "sha256": "fac8d1335ef7d9b1dfd85d5e7393e4a26976efc0de214fae2a982bbd1005955e"
+    },
+    "a0-launcher/metadata-receipt.json": {
+      "bytes": 3757,
+      "sha256": "ca3379b2cfca6b9b5ea78b93753160c49eb5f0459bea914b2a81ef7a43414d67"
+    },
+    "a0-launcher/payload-receipt.json": {
+      "bytes": 465,
+      "sha256": "34138695e61aa31a57bc44ca5aa42b2087ad29147c95d102afab8abd53f672aa"
+    },
+    "a0-launcher/policy.json": {
+      "bytes": 290,
+      "sha256": "ecca29e866f00645fe1849d0f3b9fbc2c60c1d8561212e2dbf1159ef5f7759a8"
+    },
+    "a0-launcher/releases.json": {
+      "bytes": 475659,
+      "sha256": "a5ea1e85b266afd55e62a5bc1fc1c3303000b32d1839d7f8983887f7561f4222"
+    },
+    "a0-launcher/repository.json": {
+      "bytes": 6317,
+      "sha256": "898bc417357f70e76b4d10f1c479bb0a96e9e2516d1f8a69945bce64024efc49"
+    },
+    "a0-launcher/static.json": {
+      "bytes": 1376,
+      "sha256": "5752afd7b42d346015c21de19e00666eb1c6d8837621acadf24b6f8a7cd23c0f"
+    },
+    "a0-launcher/superblock.txt": {
+      "bytes": 511,
+      "sha256": "62f41b16ab2ac7733e58f1488c1cb830c133c63d1804d5153ac0d68ef2079901"
+    },
+    "aartiq/extraction.txt": {
+      "bytes": 198,
+      "sha256": "19df318bfa69e05fa79739cce0f0c0a782e1d8e2a589be128e7c78109ab824d6"
+    },
+    "aartiq/listing.txt": {
+      "bytes": 23494,
+      "sha256": "1f3743523e22e8be63a24bcbf30245fe544fa23859ab31e8f4618f11050e7abf"
+    },
+    "aartiq/metadata/.DirIcon": {
+      "symlink": "usr/share/icons/hicolor/1000x1000/apps/aartiq.png"
+    },
+    "aartiq/metadata/AppRun": {
+      "bytes": 3481,
+      "sha256": "5557b655633164c8f7231df886f6c5901c5a747d0f949a60c824d09b13f056f9"
+    },
+    "aartiq/metadata/aartiq.desktop": {
+      "bytes": 432,
+      "sha256": "8a7c94b0fd6b8ecebb1798ad25310c5f4b20636af28d755a24f03d7e9997bf87"
+    },
+    "aartiq/metadata/usr/share/icons/hicolor/1000x1000/apps/aartiq.png": {
+      "bytes": 624401,
+      "sha256": "469098b822cba9f2197c30b8736e38a7bf45c6d4e889f65bf6f74ce7ca9af1be"
+    },
+    "aartiq/metadata-receipt.json": {
+      "bytes": 3656,
+      "sha256": "55531e7abec0e696c180018bf8b339cc2af414e4d987dc88361da71cb97ce43f"
+    },
+    "aartiq/payload-receipt.json": {
+      "bytes": 448,
+      "sha256": "8b6e17b266bc5a997d7ad3bd512d43c6de4e898dde4685ff57b377ad49278863"
+    },
+    "aartiq/policy.json": {
+      "bytes": 266,
+      "sha256": "317ce425153fa2d8c0ce0b670fa87a27eb84f6b87be9bf93c0e26094525f2366"
+    },
+    "aartiq/releases.json": {
+      "bytes": 268321,
+      "sha256": "2f99da5ea1f8e69e6682514611635e1e7e61a4ef26950ab3fd8bb15406fe5e0e"
+    },
+    "aartiq/repository.json": {
+      "bytes": 5427,
+      "sha256": "bcd166f9de8ce619a56ba358614185a4a06877dae031ab2df88d013588b32692"
+    },
+    "aartiq/static.json": {
+      "bytes": 1547,
+      "sha256": "f69d9348ab4a271e54f20c1e7970bf7ea32e5f17046300d81240acba18682de9"
+    },
+    "aartiq/superblock.txt": {
+      "bytes": 505,
+      "sha256": "26baee8493554847d42eac802ea5fe1101572c3e5d2c599f08859a42219d9f84"
+    },
+    "abcarus/extraction.txt": {
+      "bytes": 198,
+      "sha256": "ef44ed36ad03e24b43181b985460690007abb329236b151f3389cfdafe77f5db"
+    },
+    "abcarus/listing.txt": {
+      "bytes": 2334263,
+      "sha256": "e63444c39862bc19a4ba3c2da8e607264035dddd8e0a237334d9ada217bb03ef"
+    },
+    "abcarus/metadata/.DirIcon": {
+      "symlink": "abcarus.png"
+    },
+    "abcarus/metadata/AppRun": {
+      "bytes": 202,
+      "sha256": "943972822c0cc1254bb21f2eaa5a6eb977a042eade642955a8fdabe76dd6387f"
+    },
+    "abcarus/metadata/abcarus.png": {
+      "bytes": 169955,
+      "sha256": "bc5904861c3be9654f1a0b36ea99ef765a7b53806d1e267209294c091f45465b"
+    },
+    "abcarus/metadata/com.abcarus.ABCarus.desktop": {
+      "bytes": 205,
+      "sha256": "867ad80249d14bfebc1cfa8ae80bfc53b17ad8634d54f8fd6f594b5147856aee"
+    },
+    "abcarus/metadata/usr/share/applications/com.abcarus.ABCarus.desktop": {
+      "bytes": 205,
+      "sha256": "867ad80249d14bfebc1cfa8ae80bfc53b17ad8634d54f8fd6f594b5147856aee"
+    },
+    "abcarus/metadata-receipt.json": {
+      "bytes": 3689,
+      "sha256": "e8cbbc82abf4825bdb5a8bf6eafc1bafeea16f5f28514f63d9577e83e70f304d"
+    },
+    "abcarus/payload-receipt.json": {
+      "bytes": 449,
+      "sha256": "ef68beccedbd27645da506eb2f03d9e0235846b6f1e340734ce56f53b3ffdeba"
+    },
+    "abcarus/policy.json": {
+      "bytes": 266,
+      "sha256": "17fc0d158ab2b2b15f8f8ddc1c14d2b780a83867913beb737fd37dd78d738742"
+    },
+    "abcarus/releases.json": {
+      "bytes": 941405,
+      "sha256": "d01d318e4460d4b9843f17a4e711f65e57767cdb1dc51844edd482ed96d7bbfa"
+    },
+    "abcarus/repository.json": {
+      "bytes": 5338,
+      "sha256": "2e36383d4db939667d673274ae878ff43cdf2b2fd043dde952f98dd3add75ded"
+    },
+    "abcarus/static.json": {
+      "bytes": 1543,
+      "sha256": "9b4f4466a79e07d77cf2fab4217b57a4ecc36588bea5f5c0928b28deb3f76204"
+    },
+    "abcarus/superblock.txt": {
+      "bytes": 572,
+      "sha256": "8343ad88905d4d122d62865416091fcda2e93c6e7aaa9d8eed3ed4eeabd334fd"
+    },
+    "abundio/listing.txt": {
+      "bytes": 40191,
+      "sha256": "6d788dc7490d2b9df083f5141b6279feff5b3748e19a84ea536ade17d23cf5f8"
+    },
+    "abundio/metadata-receipt.json": {
+      "bytes": 3696,
+      "sha256": "52394b8e25e2d846d3fd88db23de9a3fe2a32f1386ed7e1bc1e9707ce2db842b"
+    },
+    "abundio/payload-receipt.json": {
+      "bytes": 454,
+      "sha256": "05c19b1d73eab1224c6c14fd7469a682e4cbdab9d6d4b661d4f53b259b504863"
+    },
+    "abundio/policy.json": {
+      "bytes": 276,
+      "sha256": "5f80f6cbe68e6e474087126dd802cf0696504cb5d05325ec2a33793b46d50323"
+    },
+    "abundio/releases.json": {
+      "bytes": 1099362,
+      "sha256": "d5c47c2f8b0f76691416aaeff8a694bf0081d21c45e5864a6b95a5f2129215b7"
+    },
+    "abundio/repository.json": {
+      "bytes": 5632,
+      "sha256": "dd3c89ea8e87944a4e5d8c2333f72547ed6de9ad8ea89b41948ff3959dc4ccb9"
+    },
+    "abundio/static.json": {
+      "bytes": 257,
+      "sha256": "29ec7021804c24eb1e5d431bd95cd62024306ff4b2269e57591dbeaaf93beeea"
+    },
+    "abundio/superblock.txt": {
+      "bytes": 568,
+      "sha256": "d5903c0c43a73aaeae98ced22bffb95b0a911d33c6b4b0985579ac6bcc6f692e"
+    },
+    "accordserver/extraction.txt": {
+      "bytes": 199,
+      "sha256": "0411bab0bea19a10fbcbcb6345329125c26b48c2da05b5379e74db2aed961ccd"
+    },
+    "accordserver/listing.txt": {
+      "bytes": 58165,
+      "sha256": "b6dbab4c8c37e46e78191b3674cdfe57c0c76397c78174e9579af325ab0c532d"
+    },
+    "accordserver/metadata/.DirIcon": {
+      "symlink": "Accord.png"
+    },
+    "accordserver/metadata/Accord.desktop": {
+      "symlink": "usr/share/applications/Accord.desktop"
+    },
+    "accordserver/metadata/Accord.png": {
+      "bytes": 24751,
+      "sha256": "385db643d97d16e1e3b7f63ccec632c24d68e21de7bb97746592a30d1034cccc"
+    },
+    "accordserver/metadata/AppRun": {
+      "bytes": 274,
+      "sha256": "eb0b254ac0dae6543e6dd7cd02e1baf40a060de95b927313122d6b46323c00aa"
+    },
+    "accordserver/metadata/usr/share/applications/Accord.desktop": {
+      "bytes": 197,
+      "sha256": "04a6003c48c4676cb0be148bc255e59098f0dece677da4359d925428a62c79fa"
+    },
+    "accordserver/metadata-receipt.json": {
+      "bytes": 3756,
+      "sha256": "e9e27dd1e7a704acea00def433cd4100f2f45d92de035d0b524f7efe9e05b33a"
+    },
+    "accordserver/payload-receipt.json": {
+      "bytes": 468,
+      "sha256": "b25b2ba5e819a1a86d2d8449443812536400daac78fc125f65e8f541b2b37303"
+    },
+    "accordserver/policy.json": {
+      "bytes": 294,
+      "sha256": "3ecdfc3dd6c0bd50c1c7d74da22fd67b64ca40e26ce754faf350bf903e56dbfc"
+    },
+    "accordserver/releases.json": {
+      "bytes": 391356,
+      "sha256": "31adb53359b472d77f1c17aad89c5ad949524f089d9f68f160d8f3c10d1bce60"
+    },
+    "accordserver/repository.json": {
+      "bytes": 6632,
+      "sha256": "b8f9161831a420eaf1648756f439e8394d933edb15cb57b2df32a142dc5f3833"
+    },
+    "accordserver/static.json": {
+      "bytes": 1403,
+      "sha256": "67f2a8b722ba3160d67a694988beb52c747d68cbcd293e42b536a3bec4d94c0e"
+    },
+    "accordserver/superblock.txt": {
+      "bytes": 573,
+      "sha256": "2798c3f1077536912eda86073e2d4675da5013072c644b72daa2564205bf4101"
+    },
+    "accshift/extraction.txt": {
+      "bytes": 199,
+      "sha256": "0411bab0bea19a10fbcbcb6345329125c26b48c2da05b5379e74db2aed961ccd"
+    },
+    "accshift/listing.txt": {
+      "bytes": 37866,
+      "sha256": "5427fe27327e9237d426365a9f58e1a4c64cf6bc6b630b0b5d4d933e47f3161e"
+    },
+    "accshift/metadata/.DirIcon": {
+      "symlink": "accshift.png"
+    },
+    "accshift/metadata/AppRun": {
+      "bytes": 274,
+      "sha256": "eb0b254ac0dae6543e6dd7cd02e1baf40a060de95b927313122d6b46323c00aa"
+    },
+    "accshift/metadata/accshift.desktop": {
+      "symlink": "usr/share/applications/accshift.desktop"
+    },
+    "accshift/metadata/accshift.png": {
+      "bytes": 6265,
+      "sha256": "af5fe3943a8ff7c3a28e8acb48ed6ae23ab43d0a9cff0813cd06f908d56021c5"
+    },
+    "accshift/metadata/usr/share/applications/accshift.desktop": {
+      "bytes": 259,
+      "sha256": "b42d754d1fb5f3ab992123ee96fa4d58b1de34e3fd940f35e5a273512ea56c01"
+    },
+    "accshift/metadata-receipt.json": {
+      "bytes": 3695,
+      "sha256": "205fe0afe15904f14c5acbee6ee0643dd2f6e15323e93b1146e425c92e359d39"
+    },
+    "accshift/payload-receipt.json": {
+      "bytes": 453,
+      "sha256": "1925be9ce9e0d9a64500279db85f79b678b72130ea49b1b338d7fd24b805e45f"
+    },
+    "accshift/policy.json": {
+      "bytes": 274,
+      "sha256": "53eadfe6d841ed97941277beb2d3e0b110dbee7d1ab3e55a044cf72e9d868cbc"
+    },
+    "accshift/releases.json": {
+      "bytes": 243143,
+      "sha256": "277404669a56a91fb3734032ed2a7079f6be0482091466af3d9c9736408af8c8"
+    },
+    "accshift/repository.json": {
+      "bytes": 5522,
+      "sha256": "00fd06b1675bbed0bb872c8edd74175cef3eb413fd45ffd010432e4edaf2c15a"
+    },
+    "accshift/static.json": {
+      "bytes": 1480,
+      "sha256": "21adbb6183c20c5940985f7e3df1e693880526d04b3d61e79f88124e3992b4a4"
+    },
+    "accshift/superblock.txt": {
+      "bytes": 566,
+      "sha256": "52d0fefb9c80731bbcdebf804058b042d2d249ed39c64a517f6d314586047b33"
+    },
+    "ace-gui/extraction.txt": {
+      "bytes": 198,
+      "sha256": "f32c6b42b88ff5d25a2f59ec84c8b4d46dee3d6a536521ff1fccc3780d4d530d"
+    },
+    "ace-gui/listing.txt": {
+      "bytes": 24302,
+      "sha256": "6f7033b8c6658824bf1b199fbc84bb417b0e94d0d6b0a06339d7c03df0b90956"
+    },
+    "ace-gui/metadata/.DirIcon": {
+      "symlink": "usr/share/icons/hicolor/1024x1024/apps/ace-app.png"
+    },
+    "ace-gui/metadata/AppRun": {
+      "bytes": 2348,
+      "sha256": "0b77bec3149e436d6332d883be49b83f36f2494c52404a2a5e2cae3b190d2a5b"
+    },
+    "ace-gui/metadata/ace-app.desktop": {
+      "bytes": 299,
+      "sha256": "4de41084fbef69fe4e06d182ecc5f920d96d268e650068dea5b5e7877d5b9368"
+    },
+    "ace-gui/metadata/usr/share/icons/hicolor/1024x1024/apps/ace-app.png": {
+      "bytes": 119408,
+      "sha256": "aeb26202ba10d725329cb452215c658b23f1339235fe70cc0278e136cf976197"
+    },
+    "ace-gui/metadata-receipt.json": {
+      "bytes": 3672,
+      "sha256": "40b01fc4ac9e4d97722c31807704a8a927e2ff6600300744b63eee0dbc292381"
+    },
+    "ace-gui/payload-receipt.json": {
+      "bytes": 449,
+      "sha256": "64286ab2186b273987fa2a150dda181d1f53d5e4ef51fa97b109bb43e297a421"
+    },
+    "ace-gui/policy.json": {
+      "bytes": 266,
+      "sha256": "da29a04ff77affb01f9c983afd98d3472a5ba50c4754505a9ef948ac4bf99012"
+    },
+    "ace-gui/releases.json": {
+      "bytes": 248787,
+      "sha256": "4bcb4b0da04c15ad48be43b004ff7953afdce8f527aedbdbebb7bc3646aabf47"
+    },
+    "ace-gui/repository.json": {
+      "bytes": 6159,
+      "sha256": "1e8344443af9ca2959b034f497d6acdecf2c4323e6a2842f77443bde2aafa83b"
+    },
+    "ace-gui/static.json": {
+      "bytes": 1422,
+      "sha256": "e3fd12299a2501dcf26aafd0d2cf4ec72225285ccd871837275aa76717e8bb2e"
+    },
+    "ace-gui/superblock.txt": {
+      "bytes": 506,
+      "sha256": "a7a62f213978528f68b1f309cbda0386edbd221ca45c692ba4eaf310de560298"
+    },
+    "acp-ui/listing.txt": {
+      "bytes": 36520,
+      "sha256": "2607761305f4ee579779c2fd685a63f804a286f2705f783e22512281c4847e09"
+    },
+    "acp-ui/metadata-receipt.json": {
+      "bytes": 3718,
+      "sha256": "43b0742ffd9bc613e4df1ebf94f622b604ad9c45a375fa18ebd1e2833fb0a304"
+    },
+    "acp-ui/payload-receipt.json": {
+      "bytes": 456,
+      "sha256": "455c0d8f6386b08e89844a80bb308fe1346513f4a0578566972c90cd351124c9"
+    },
+    "acp-ui/policy.json": {
+      "bytes": 284,
+      "sha256": "9212baf75edbbe119b1f301f3e6f4de7276cba58f02b104ef7dd5fb2031fed01"
+    },
+    "acp-ui/releases.json": {
+      "bytes": 315946,
+      "sha256": "52de31190e7b3b9e2ed26d61b4ade07ccc198eeb7893357ae6b977a10e4765f7"
+    },
+    "acp-ui/repository.json": {
+      "bytes": 5653,
+      "sha256": "b27da87a0969eed4eea3f3ed57da3c1cfa51ae9198f3b4aed7dc957d2ff535bf"
+    },
+    "acp-ui/static.json": {
+      "bytes": 253,
+      "sha256": "32d8ed2c05fe9dbd5bac9b7909701636ec71864f20552e1388b32c47748a3c9e"
+    },
+    "acp-ui/superblock.txt": {
+      "bytes": 564,
+      "sha256": "9dee0c24d0aae3711b80d8fcd7287e678672a99e178e0cc38701275e009affd6"
+    },
+    "acreom/metadata-receipt.json": {
+      "bytes": 3330,
+      "sha256": "8431e7f2fa636481c7b414b1646d817a5727c7b0c45c4393dbd2647b6b5aa103"
+    },
+    "acreom/payload-receipt.json": {
+      "bytes": 92,
+      "sha256": "2e74648f7a461c63969516ed7bcf306e82260161ead45dc26b359583ab94e974"
+    },
+    "acreom/policy.json": {
+      "bytes": 262,
+      "sha256": "87ca22711257a528bb494ade43bbee1281c6198d74cd1db4d78e317cee56919f"
+    },
+    "acreom/releases.json": {
+      "bytes": 1950345,
+      "sha256": "ad7308cf24be7aa39166e1ec1e819ce680fd40724b3df26c9923fc8bd8352d12"
+    },
+    "acreom/repository.json": {
+      "bytes": 5955,
+      "sha256": "51ff84cfa3b9b2662c1848161c786cd9b12d9ff535aadd236776c46965a99009"
+    },
+    "actiona/extraction.txt": {
+      "bytes": 199,
+      "sha256": "61b03f9e537c334ef42300282be9c5d1f0bb6379d6e3fe5fa7c02397e47d2505"
+    },
+    "actiona/listing.txt": {
+      "bytes": 48028,
+      "sha256": "0c271c667cff04f0758f187940ef88f8a4c2cbd1a0e6d28c3285ddfd16bcd776"
+    },
+    "actiona/metadata/.DirIcon": {
+      "symlink": "actiona.png"
+    },
+    "actiona/metadata/AppRun": {
+      "bytes": 278,
+      "sha256": "c100ea59f7d7d3a926d49f0d55148aa0cd5831147c822d5a361f6234d1a59b6e"
+    },
+    "actiona/metadata/actiona.desktop": {
+      "symlink": "usr/share/applications/actiona.desktop"
+    },
+    "actiona/metadata/actiona.png": {
+      "symlink": "usr/share/icons/hicolor/48x48/apps/actiona.png"
+    },
+    "actiona/metadata/usr/share/applications/actiona.desktop": {
+      "bytes": 415,
+      "sha256": "80a639490da44278da8a3767817917a812676b776963ea628d4ab5c2c6fd8dbd"
+    },
+    "actiona/metadata/usr/share/icons/hicolor/48x48/apps/actiona.png": {
+      "bytes": 3119,
+      "sha256": "3c7c640644ee550965082f75a1be52c439b160c0d9662e9f009e974c9ee3f29b"
+    },
+    "actiona/metadata-receipt.json": {
+      "bytes": 3362,
+      "sha256": "d33cbedcd8f04d9652006432e35873fcef16cabbb7dfeed343637d5ec1f46854"
+    },
+    "actiona/payload-receipt.json": {
+      "bytes": 451,
+      "sha256": "c03dc877b0c84ffc4d015f2d5f1913fb45c3e9f8b7d835b7f79163ea007ed226"
+    },
+    "actiona/policy.json": {
+      "bytes": 272,
+      "sha256": "f893473d8461c5152e54d9b00aecdce2ef78443a79278976bb91401b48382efb"
+    },
+    "actiona/releases.json": {
+      "bytes": 63382,
+      "sha256": "0f13edee5f16992360aadd4fad5bab3e561b182a4600f64358aabeaa678ff288"
+    },
+    "actiona/repository.json": {
+      "bytes": 5024,
+      "sha256": "a8dfecd06638a151e34f45e459d69a683f147e963dd68ea07c2144f7221bc4e1"
+    },
+    "actiona/static.json": {
+      "bytes": 1826,
+      "sha256": "7d2dfa07cbbd6d6b7c4ed372baef9befb2b5330f0dc64e2d5bee504d859c9400"
+    },
+    "actiona/superblock.txt": {
+      "bytes": 565,
+      "sha256": "f48e5365f164e4b5e9475a3314a431b5df46478120764718a7e520d3076554f4"
+    },
+    "actone-screenplay/extraction.txt": {
+      "bytes": 199,
+      "sha256": "c4f44e554984b1e131382afc6cc43f5339d1717bea7891872da5db8695db3fed"
+    },
+    "actone-screenplay/listing.txt": {
+      "bytes": 41715,
+      "sha256": "5cbb16e7bccdd59b510b57816c36cc64c3061c566009075ba8592008b402c25c"
+    },
+    "actone-screenplay/metadata/.DirIcon": {
+      "bytes": 11379,
+      "sha256": "078486e0e6ce803f5b82be57962a5e27deeca14f0f94bae8f2e5759c823d5080"
+    },
+    "actone-screenplay/metadata/ActOne Screenplay.desktop": {
+      "bytes": 226,
+      "sha256": "a18985c85d61ad4078d715fb4b9d632d4c4bdc1af5b738e171c4e0d63106b8e3"
+    },
+    "actone-screenplay/metadata/AppRun": {
+      "bytes": 274,
+      "sha256": "eb0b254ac0dae6543e6dd7cd02e1baf40a060de95b927313122d6b46323c00aa"
+    },
+    "actone-screenplay/metadata/usr/share/applications/ActOne Screenplay.desktop": {
+      "bytes": 201,
+      "sha256": "2188fafc06b6d9eb4208f2b9b33a3e6fe2d197b4697a3b8deef289ea9303888a"
+    },
+    "actone-screenplay/metadata-receipt.json": {
+      "bytes": 3799,
+      "sha256": "8d815b30b7e82f8f0287d68f2f1239c266b7b38a35af415b8d134768ee8fd160"
+    },
+    "actone-screenplay/payload-receipt.json": {
+      "bytes": 485,
+      "sha256": "69b07b99238c1d00ff347cdacfb2a8f55c60afc6c46452a50538813e5cc6d86d"
+    },
+    "actone-screenplay/policy.json": {
+      "bytes": 318,
+      "sha256": "46719a37ad5827feaf113a012862c84d30193b7906e5b8b4208b0f6f3bc5ff55"
+    },
+    "actone-screenplay/releases.json": {
+      "bytes": 78971,
+      "sha256": "b5e47cf3b1f836fb041ce459ad91afc03bd0d71450748eafe74fdf84ade273bb"
+    },
+    "actone-screenplay/repository.json": {
+      "bytes": 5979,
+      "sha256": "f5c612b686e6beb451d455cd369c7faa6e4c609e8d64916420b2ae8361eddeb4"
+    },
+    "actone-screenplay/static.json": {
+      "bytes": 312,
+      "sha256": "1fcec6c25d4288636db46ef32124d7b3db7c114ec5a51fc664aef39e0466daf5"
+    },
+    "actone-screenplay/superblock.txt": {
+      "bytes": 578,
+      "sha256": "0d6780f7428db8c524b6f25997153a8866a0265489824d88f3761ceac55c3c42"
+    },
+    "actual/metadata-receipt.json": {
+      "bytes": 3415,
+      "sha256": "ed32879f63b9a802ffd583c1bbeb9bee33bf0168d2d863de17e83cd0f24144c9"
+    },
+    "actual/payload-receipt.json": {
+      "bytes": 92,
+      "sha256": "83ce8c9874c31bbab914991962293aeca69256fa1283d4d7768ead0b1eb31c93"
+    },
+    "actual/policy.json": {
+      "bytes": 290,
+      "sha256": "8107a0f366737abc88bb5f6ba3e6e478500c8aac10e7cf9a419a3d40353d75da"
+    },
+    "actual/releases.json": {
+      "bytes": 992479,
+      "sha256": "569a6e9ad9c5b305901ff08fd1a5918b907c9b121f616f5e9e5bbb901cb3ada8"
+    },
+    "actual/repository.json": {
+      "bytes": 6391,
+      "sha256": "1e75dff69e5fc5d1a161f3652e801bb7ccadfa5fe6fce02f76d3cbf23e378706"
+    },
+    "ada/extraction.txt": {
+      "bytes": 198,
+      "sha256": "f32c6b42b88ff5d25a2f59ec84c8b4d46dee3d6a536521ff1fccc3780d4d530d"
+    },
+    "ada/listing.txt": {
+      "bytes": 2784120,
+      "sha256": "35cfb32db55c602f713a9aaaf874bfceb3880c860beef2a0e091ddf242cce8d2"
+    },
+    "ada/metadata/.DirIcon": {
+      "symlink": "usr/share/icons/hicolor/512x512/apps/ada-app.png"
+    },
+    "ada/metadata/AppRun": {
+      "bytes": 3482,
+      "sha256": "6799e9ceab2fdd6534223ae3dce930d20fbe26bbbbe89e6d9243ef64c178a692"
+    },
+    "ada/metadata/ada-app.desktop": {
+      "bytes": 207,
+      "sha256": "42333a18bdd2a2c213e6b328414cae84b25074880aae749ceedf0ca88c27018c"
+    },
+    "ada/metadata/usr/share/icons/hicolor/512x512/apps/ada-app.png": {
+      "bytes": 17383,
+      "sha256": "fcc5ed8ec68c116e7288cc59bfd307cab0c79de97f12c2b4e27ce85d6edecf0f"
+    },
+    "ada/metadata-receipt.json": {
+      "bytes": 3596,
+      "sha256": "8a75dc2586f025e26b2ae881fcb9e6d174a09093157ce549a5011c4f963398c0"
+    },
+    "ada/payload-receipt.json": {
+      "bytes": 449,
+      "sha256": "ecc8788ebf966ead5a47203f3e164fc4805f8605fe167edc69256f5097e57dad"
+    },
+    "ada/policy.json": {
+      "bytes": 274,
+      "sha256": "908f20e24ac18a6ce8dec620ac25e7e0a00cb170fb7c51bad10626a212d07cc0"
+    },
+    "ada/releases.json": {
+      "bytes": 1126408,
+      "sha256": "dc2d49e7553894302346d34a5f0ed9d1cf0a92e6c255044d22c8d03bee20886d"
+    },
+    "ada/repository.json": {
+      "bytes": 5434,
+      "sha256": "9db0e108712c87b977c69b862ca9a1fd6a8637cbc7272e79bb0880f5fe8ef2c5"
+    },
+    "ada/static.json": {
+      "bytes": 1320,
+      "sha256": "99ade7661887d6dcbf4ec72b53456517b45039b921e0bb91ca98c550c1217b65"
+    },
+    "ada/superblock.txt": {
+      "bytes": 504,
+      "sha256": "02ccc1d068b1381b52262bd79005dd45323df5d740d87ebb1bab8832bfaf046b"
+    },
+    "adbkit/extraction.txt": {
+      "bytes": 197,
+      "sha256": "eaf6cecfdc917c82063c3b66987d3939f7c5116a395e5fa764a66a15f744e468"
+    },
+    "adbkit/listing.txt": {
+      "bytes": 1323,
+      "sha256": "c4ecae3592a93932515a88e52dd6c7772c2cadff3a70464a910e52cfa71263fe"
+    },
+    "adbkit/metadata/.DirIcon": {
+      "symlink": "ADBKit.png"
+    },
+    "adbkit/metadata/ADBKit.desktop": {
+      "bytes": 155,
+      "sha256": "0080e3a66f83fe112188b486ada36f11d097bce39a13dcd004506ffa0796522b"
+    },
+    "adbkit/metadata/ADBKit.png": {
+      "bytes": 1176476,
+      "sha256": "361ba8acdb76388ce821b65066912d04fa29ab4c2a4f2a4b6e8608728e7d6263"
+    },
+    "adbkit/metadata/AppRun": {
+      "bytes": 196,
+      "sha256": "1d5a60b1d88973cdc01721eedbf498fa27b51ee897d7447ad4c7bb7a4a6cbf2c"
+    },
+    "adbkit/metadata-receipt.json": {
+      "bytes": 3518,
+      "sha256": "27c6f933e48fc500e8b40211b2bbcacfae9db658d0166912dc427244117be8a1"
+    },
+    "adbkit/payload-receipt.json": {
+      "bytes": 461,
+      "sha256": "234cc75998d7ccfa583635b4fd37612678e2cc4209f8b2be5eefc0ba0d08d624"
+    },
+    "adbkit/policy.json": {
+      "bytes": 296,
+      "sha256": "2f5d7bde880d8eaeb32a233112296449989141ff9b467108c34c77075bd950ca"
+    },
+    "adbkit/releases.json": {
+      "bytes": 103784,
+      "sha256": "29bf777d5ea78a5a41f0f09ac7cd6ac95bacb68c326b8afdfc5ee58fcd5637ff"
+    },
+    "adbkit/repository.json": {
+      "bytes": 5170,
+      "sha256": "8d8e0e74a96fcb30779d6cb77368fa09d753dd3f4c7279d891d5ae7f113bd851"
+    },
+    "adbkit/static.json": {
+      "bytes": 1137,
+      "sha256": "389fa8ac2c17259493cd109232ce300411b3aeb625e00f724b06b7075ce48652"
+    },
+    "adbkit/superblock.txt": {
+      "bytes": 559,
+      "sha256": "435f013baf47b9a715d6aab5db9a028d3ee7d386231e6246918ede8d5cdcd36c"
+    },
+    "adelie/extraction.txt": {
+      "bytes": 198,
+      "sha256": "f32c6b42b88ff5d25a2f59ec84c8b4d46dee3d6a536521ff1fccc3780d4d530d"
+    },
+    "adelie/listing.txt": {
+      "bytes": 190832,
+      "sha256": "96aa818d4306ad1b39b54adcf4ee44216ec259583d335444f3536c13354e3e70"
+    },
+    "adelie/metadata/.DirIcon": {
+      "symlink": "usr/share/icons/hicolor/512x512/apps/adelie.png"
+    },
+    "adelie/metadata/AppRun": {
+      "bytes": 3481,
+      "sha256": "9885d30a175a5b0ceb9929f12c2c04031224723410f930a60bf70569f8d63e1f"
+    },
+    "adelie/metadata/adelie.desktop": {
+      "bytes": 325,
+      "sha256": "dc001a5c730645b8254ab515f390f248985a000784c904eda70e47b38c2036e4"
+    },
+    "adelie/metadata/usr/share/icons/hicolor/512x512/apps/adelie.png": {
+      "bytes": 53625,
+      "sha256": "5868d2e53fdf41f0f34cf4704bfcfd360d1111e439b44581a43a25c135d63c70"
+    },
+    "adelie/metadata-receipt.json": {
+      "bytes": 3526,
+      "sha256": "13a134df655893c76b8d77f272891eebab546508a6f8ccc1b9da30e583ab4c9d"
+    },
+    "adelie/payload-receipt.json": {
+      "bytes": 459,
+      "sha256": "0c55e97674ba186583012792caa6444cf585160286d9190aea100b9a90a73048"
+    },
+    "adelie/policy.json": {
+      "bytes": 288,
+      "sha256": "26362095548a0e1fca0951eed5b17b565b6697775bae7b05e3129d3cc898ae70"
+    },
+    "adelie/releases.json": {
+      "bytes": 859028,
+      "sha256": "dfa85757c0b48fcc0d29d8f0e341ab5328553115204890e4594b6e9c09b76384"
+    },
+    "adelie/repository.json": {
+      "bytes": 5295,
+      "sha256": "7387031bcd21fe8a2aef227c72011825e31f7aa6bae2f0d51e77cb07ee53ca87"
+    },
+    "adelie/static.json": {
+      "bytes": 1431,
+      "sha256": "b2402acbb892eb8712d3ea5e65dd50734df43eb6b9227c5972e23c5743195604"
+    },
+    "adelie/superblock.txt": {
+      "bytes": 506,
+      "sha256": "d7ae4b0675e086e87b0616b5029bee9f40db1437970467d2ff8a5f81b04af9b8"
+    },
+    "adiman/extraction.txt": {
+      "bytes": 196,
+      "sha256": "6b0f09ff1dd62780463649a63c32ef9ba7bed9437434867371da96788decd77f"
+    },
+    "adiman/listing.txt": {
+      "bytes": 4124,
+      "sha256": "6a67898fe3dabb1fd5d9ca38b777f4b52bdc0bfb65a403947a13885f6394c74a"
+    },
+    "adiman/metadata/.DirIcon": {
+      "symlink": "Adiman.png"
+    },
+    "adiman/metadata/Adiman.desktop": {
+      "bytes": 164,
+      "sha256": "98cbc90fa486a3ada141c39ecf7294d55811aa9991af831bd81308afca188bb5"
+    },
+    "adiman/metadata/Adiman.png": {
+      "bytes": 53192,
+      "sha256": "d99cfb1382cdaee15f99d7857f765259066eefba661830430bbba6289981549f"
+    },
+    "adiman/metadata/AppRun": {
+      "bytes": 138,
+      "sha256": "0917946a5916cee07d52e6b42c7ef19f01bc0f594c1aea79b7e20515dc2f9be8"
+    },
+    "adiman/metadata-receipt.json": {
+      "bytes": 3728,
+      "sha256": "1f1c9af87ef84815a09cdaeea629f13b7310488a6e2c0b17794879281d36a25b"
+    },
+    "adiman/payload-receipt.json": {
+      "bytes": 451,
+      "sha256": "9d7f2ea32154b12e18441f4a6c7a58e2d8c960da3569924bfaedc671016f606e"
+    },
+    "adiman/policy.json": {
+      "bytes": 274,
+      "sha256": "3085b8168a5d6f503e412df77f17dbf03927047c3fa3e2723d642e5dbba1e066"
+    },
+    "adiman/releases.json": {
+      "bytes": 179809,
+      "sha256": "a47f8a89d34bfd9c2eb5769519324a78bc14dfe5dc28c0b9105329321da4415d"
+    },
+    "adiman/repository.json": {
+      "bytes": 5786,
+      "sha256": "7d2aa8bbd0a074a8b53f0749a9f8682cd8d00f8ae9c1fd93fa8e1f4b0855f089"
+    },
+    "adiman/static.json": {
+      "bytes": 521,
+      "sha256": "b119e486314accba51aba243924b2da7b2765f603a101430d66b30849a1b9eaa"
+    },
+    "adiman/superblock.txt": {
+      "bytes": 562,
+      "sha256": "3bc8b1618d28c16638f446c930e7c3b8039a2ddace49dfc572b0b4bab8aec3ee"
+    },
+    "adt-studio/extraction.txt": {
+      "bytes": 198,
+      "sha256": "dcbb5f391d8d2ab818662bb47a58d7b21a9f376061badc958fa3d2cdd94eae08"
+    },
+    "adt-studio/listing.txt": {
+      "bytes": 381997,
+      "sha256": "2613622eac06beb0ead44c896ec9b956e686acef3ed46db03b7a4fbdd4d1c5ab"
+    },
+    "adt-studio/metadata/.DirIcon": {
+      "symlink": "usr/share/icons/hicolor/512x512/apps/@adtdesktop.png"
+    },
+    "adt-studio/metadata/@adtdesktop.desktop": {
+      "bytes": 226,
+      "sha256": "c201e9b2b055590e2d4792d4e8e0a104a722a301b8656c0abcdcd382a8e48ad7"
+    },
+    "adt-studio/metadata/AppRun": {
+      "bytes": 2352,
+      "sha256": "6c63d9e41382dcc2c163b427921a724f18213d83a0b3643afe432864e8e0fdf9"
+    },
+    "adt-studio/metadata/usr/share/icons/hicolor/512x512/apps/@adtdesktop.png": {
+      "bytes": 165917,
+      "sha256": "df56a261f7cd6456c1eb13329609ca8259c937ad5bf004af3413ecf77b735e02"
+    },
+    "adt-studio/metadata-receipt.json": {
+      "bytes": 3664,
+      "sha256": "e3cf1cbe66fa162171c57edf1684628abee01f1b5c735a56baacff5693def7c0"
+    },
+    "adt-studio/payload-receipt.json": {
+      "bytes": 454,
+      "sha256": "e8df4a68b7fb80772b4f22fe177750618500bc0a8219de1191cc36d9f8bb830f"
+    },
+    "adt-studio/policy.json": {
+      "bytes": 270,
+      "sha256": "50f937014e595b4cf1ad35da7cc39c0e2cdfea085ea27d2a24d6074caaeeae5f"
+    },
+    "adt-studio/releases.json": {
+      "bytes": 816963,
+      "sha256": "0b9a95be06f7ccecc3c9ad75d788110c291d9dedbf987112eec1d9c5e59d99dc"
+    },
+    "adt-studio/repository.json": {
+      "bytes": 6338,
+      "sha256": "c7a5e67421fdb741019a7f35890ce98b0675999311084144b561ae2b96359751"
+    },
+    "adt-studio/static.json": {
+      "bytes": 1373,
+      "sha256": "1ba5df80d1ee139c1061f5859a3e0ecd93224f52d340e926bfefb4737dfc55d4"
+    },
+    "adt-studio/superblock.txt": {
+      "bytes": 510,
+      "sha256": "94d7b7059004117ec6ceb0f17b2542bdf643cad7d6c89e5a2a428d0463054498"
+    },
+    "advanced-rest-client/metadata-receipt.json": {
+      "bytes": 3740,
+      "sha256": "69ecd22dd5b6805ba3499634c06ac66d26329aa7d26d9f2abb55a557be348059"
+    },
+    "advanced-rest-client/payload-receipt.json": {
+      "bytes": 106,
+      "sha256": "8032fffed1e8bae04c14152bbe0594209bbbfb0d88ff965e9862249f361db2a4"
+    },
+    "advanced-rest-client/policy.json": {
+      "bytes": 318,
+      "sha256": "72e6e25c583e2a6d97b7e2a4aadde0e5b3570d30d774c6a41c7c4a9c7e2fb5a6"
+    },
+    "advanced-rest-client/releases.json": {
+      "bytes": 2707559,
+      "sha256": "702a563d791eaf0d4b6dfcf4dc4b92747c62cb0b5a9b96213602e2f607e8dc91"
+    },
+    "advanced-rest-client/repository.json": {
+      "bytes": 7256,
+      "sha256": "9fb0e25cfe90fd07cf39db8412e14c7fa5179fb538e811b5f2eeb3b0b24b28be"
+    },
+    "adventshow/extraction.txt": {
+      "bytes": 198,
+      "sha256": "f32c6b42b88ff5d25a2f59ec84c8b4d46dee3d6a536521ff1fccc3780d4d530d"
+    },
+    "adventshow/listing.txt": {
+      "bytes": 22010,
+      "sha256": "8c8d4af7b8e9d57435d6928c15b5dc4e90584b3f6cc4f4b73ed3044f6d6a7feb"
+    },
+    "adventshow/metadata/.DirIcon": {
+      "symlink": "usr/share/icons/hicolor/1024x1024/apps/adventshow.png"
+    },
+    "adventshow/metadata/AppRun": {
+      "bytes": 2351,
+      "sha256": "9e97efac683cec54a0cf6a38caa1bfcb68c495d32a2e3f2373b238f47017bfcf"
+    },
+    "adventshow/metadata/adventshow.desktop": {
+      "bytes": 269,
+      "sha256": "2d4a5a9c59f194f1c467186acc4db201434a8b6b897bb9bb43ab44d6fb82e238"
+    },
+    "adventshow/metadata/usr/share/icons/hicolor/1024x1024/apps/adventshow.png": {
+      "bytes": 66648,
+      "sha256": "73c097665dd67db36e704d20194896766bcda8e884d1a12d1fcbf2f25bebaf94"
+    },
+    "adventshow/metadata-receipt.json": {
+      "bytes": 3753,
+      "sha256": "7f88c8f20e3f492d83fff05d8b5d11f0fde53c2ce46c62444f7126da00a4a657"
+    },
+    "adventshow/payload-receipt.json": {
+      "bytes": 460,
+      "sha256": "94a3374d138640f1226f2661f17f263876c3de7c7c4bac00d64cacb704a4c49e"
+    },
+    "adventshow/policy.json": {
+      "bytes": 282,
+      "sha256": "96513c1390cf72dccd116180a52c5f9f3cb5ae0c35b76c866bf4d53bc3eb3e39"
+    },
+    "adventshow/releases.json": {
+      "bytes": 750831,
+      "sha256": "f635b3d8d5b1034c63b3d44297da8ed432cb81b3987efaee0833740e545b9e24"
+    },
+    "adventshow/repository.json": {
+      "bytes": 6327,
+      "sha256": "6b4e26e7b068f6f7dac1cf51609534e0442452d4ff198e2fef70e684ae1a2d09"
+    },
+    "adventshow/static.json": {
+      "bytes": 1413,
+      "sha256": "ccce1ace34a954b59ead8db60495d80fa34f35975eb87fa227d3e716d962ad86"
+    },
+    "adventshow/superblock.txt": {
+      "bytes": 509,
+      "sha256": "ecf567df9390c20657fe540d04d20fa6e1693d1f0785aefe5f8085ac0129ec20"
+    },
+    "aero-sync/listing.txt": {
+      "bytes": 4068,
+      "sha256": "72c74f4394e8503f42689b0d9165a090ae204976ff6d568e862bc6b91e32b480"
+    },
+    "aero-sync/metadata-receipt.json": {
+      "bytes": 3699,
+      "sha256": "3001828346a72bcebd43bd0ce1dd5595fde52263ec2ebb4bc37e95f76bb29b5d"
+    },
+    "aero-sync/payload-receipt.json": {
+      "bytes": 460,
+      "sha256": "343bd67aca0a30738edd2627c775661d7e0a624bed06156f53a507e04cc7c30e"
+    },
+    "aero-sync/policy.json": {
+      "bytes": 288,
+      "sha256": "8269c471679202f80c8e9546c387d19e4910195771385b9800f47a60d021d0fe"
+    },
+    "aero-sync/releases.json": {
+      "bytes": 19725,
+      "sha256": "feb6c8fbb6f95785aa73244687dc3ba87e893643d7e51c8d74fc68f32067fc9e"
+    },
+    "aero-sync/repository.json": {
+      "bytes": 5571,
+      "sha256": "c8247afcbd2c6eae1c49bb51dea5d8921effd455510a5f93b2c032040df38282"
+    },
+    "aero-sync/static.json": {
+      "bytes": 311,
+      "sha256": "1531bc2d017f4d43b68f94983f6f48230f3fd07309c08f94a95a8b894d93c7ba"
+    },
+    "aero-sync/superblock.txt": {
+      "bytes": 562,
+      "sha256": "ad8a7566dcfd4d685f8c49e18027b1a2d29964413e3bddb29d90c9005d60bb52"
+    },
+    "aeroftp/extraction.txt": {
+      "bytes": 198,
+      "sha256": "e9b8e6b63380fcb3dde501c1719a34c603c8c4defa2d8430020499718f7d1b42"
+    },
+    "aeroftp/listing.txt": {
+      "bytes": 42407,
+      "sha256": "192109311f8737b6082e0f0c3e97416c5111d2ab71b4d672620c3a90629e004c"
+    },
+    "aeroftp/metadata/.DirIcon": {
+      "symlink": "AeroFTP.png"
+    },
+    "aeroftp/metadata/AeroFTP.desktop": {
+      "bytes": 294,
+      "sha256": "dd0277582af76c7cb5a7744be3625646c62db93f487727572117c74bb3626832"
+    },
+    "aeroftp/metadata/AeroFTP.png": {
+      "bytes": 28648,
+      "sha256": "ad97cb0f23b32b80e77f9242fcd709cfbc9ffa0373200ee00681e57b18cab912"
+    },
+    "aeroftp/metadata/AppRun": {
+      "bytes": 333,
+      "sha256": "16a36f90f640ce5d6d48b4eba97dbca211c3b12544a8d219d6a942425a935c02"
+    },
+    "aeroftp/metadata/usr/share/applications/AeroFTP.desktop": {
+      "bytes": 294,
+      "sha256": "dd0277582af76c7cb5a7744be3625646c62db93f487727572117c74bb3626832"
+    },
+    "aeroftp/metadata-receipt.json": {
+      "bytes": 3666,
+      "sha256": "a6fdbdfc9c0ccee55a9481e6dffcde26e74ae19366efb61dc97297938f43ec2a"
+    },
+    "aeroftp/payload-receipt.json": {
+      "bytes": 455,
+      "sha256": "df849812ac9124973972477c54ed36960d4ec7869ce6865e5a67b7a856b62529"
+    },
+    "aeroftp/policy.json": {
+      "bytes": 278,
+      "sha256": "564972bf34620037a9300ed1a2368caf25eca1d73e2f1bf9cd55b799382cd8b9"
+    },
+    "aeroftp/releases.json": {
+      "bytes": 3642150,
+      "sha256": "c6f7bb13c76f585b0657dd312e02295fcba0adabbb2315e71ea82d7c071677d8"
+    },
+    "aeroftp/repository.json": {
+      "bytes": 6678,
+      "sha256": "ab42ee72c86af94cc0d73da09990a26e16145e5819db13ba8cd75ece2bcb31d2"
+    },
+    "aeroftp/static.json": {
+      "bytes": 1550,
+      "sha256": "cb796a105e5fa4525a5e871a78434469c02c0b0f236fcb2f9a011ca3c1b4d782"
+    },
+    "aeroftp/superblock.txt": {
+      "bytes": 568,
+      "sha256": "86f22a7f10c1916b4030d9b92f74dced3d0faced5be7f75719506a10a07d3778"
+    },
+    "aes-lacrima/extraction.txt": {
+      "bytes": 198,
+      "sha256": "ef44ed36ad03e24b43181b985460690007abb329236b151f3389cfdafe77f5db"
+    },
+    "aes-lacrima/listing.txt": {
+      "bytes": 13690,
+      "sha256": "3e75f3ffe0209152368c9151a5494f33a8a5a71f8094672bc3ac42d62d195cf0"
+    },
+    "aes-lacrima/metadata/.DirIcon": {
+      "symlink": "aes-lacrima.png"
+    },
+    "aes-lacrima/metadata/AppRun": {
+      "bytes": 208,
+      "sha256": "b8274a64a851a9769e93463fb1e5a241adfff8b91f3436bba6da4e6dfc1b2db5"
+    },
+    "aes-lacrima/metadata/aes-lacrima.desktop": {
+      "bytes": 258,
+      "sha256": "c0e36bdb4b375956080f980b0a12b13485d4c1645aa6a1ad2d11b16b8f91e6a8"
+    },
+    "aes-lacrima/metadata/aes-lacrima.png": {
+      "bytes": 135178,
+      "sha256": "37260eddecbc16e111d54995373387aeb48e03b64dffc06a1c8b6b957c0d990e"
+    },
+    "aes-lacrima/metadata/usr/share/applications/aes-lacrima.desktop": {
+      "bytes": 230,
+      "sha256": "339033243e3bd967177cdd1c50818ae25c809245320e48cb5064b9236a28f51c"
+    },
+    "aes-lacrima/metadata-receipt.json": {
+      "bytes": 3766,
+      "sha256": "28e9c72aa386507063bca3cadddc9c5d5bdd5c178ce601a4e5baf13ad08a6560"
+    },
+    "aes-lacrima/payload-receipt.json": {
+      "bytes": 472,
+      "sha256": "b8b69855bffb958caec6fc16af938bb3431c97576c91bd0df4cee5dfdfbd1234"
+    },
+    "aes-lacrima/policy.json": {
+      "bytes": 304,
+      "sha256": "fcead6b2212b9a8da6ca1c9c172d7757d0208686e383e53ebde78c2e9308222f"
+    },
+    "aes-lacrima/releases.json": {
+      "bytes": 1089703,
+      "sha256": "608f4278fa1e20ead2f0e172742a7bacf236b8f7bb9f41290bb53336ccb092be"
+    },
+    "aes-lacrima/repository.json": {
+      "bytes": 5363,
+      "sha256": "95dac353131415181479f7f6d0da8eb8e262138e4f55c89d1c69ea0716dfe0d4"
+    },
+    "aes-lacrima/static.json": {
+      "bytes": 288,
+      "sha256": "6ba60a3d5e04eaf8ae22c45a0ac47a412b5005de90ebcd36507fcc3a12e0b151"
+    },
+    "aes-lacrima/superblock.txt": {
+      "bytes": 571,
+      "sha256": "19693aa8708fc9d6bfeb890d64de0f45e2cd0da8f4576f03d6ef38f7354dfa5d"
+    },
+    "aether/extraction.txt": {
+      "bytes": 199,
+      "sha256": "0411bab0bea19a10fbcbcb6345329125c26b48c2da05b5379e74db2aed961ccd"
+    },
+    "aether/listing.txt": {
+      "bytes": 37316,
+      "sha256": "090bc2aba71647cbb20e35c748911fa8e88162af7fead28a335ba0e81a3e2620"
+    },
+    "aether/metadata/.DirIcon": {
+      "symlink": "Aether.png"
+    },
+    "aether/metadata/Aether.desktop": {
+      "symlink": "usr/share/applications/Aether.desktop"
+    },
+    "aether/metadata/Aether.png": {
+      "bytes": 1630,
+      "sha256": "eff71036f5fca6d85a78ed369e43204a5391c5fd7277195ea9751af9386300e2"
+    },
+    "aether/metadata/AppRun": {
+      "bytes": 274,
+      "sha256": "eb0b254ac0dae6543e6dd7cd02e1baf40a060de95b927313122d6b46323c00aa"
+    },
+    "aether/metadata/usr/share/applications/Aether.desktop": {
+      "bytes": 166,
+      "sha256": "bbf14707de82a041db8250db2b92574a42053b264cf0e635cdb1a1007b7b1bc3"
+    },
+    "aether/metadata-receipt.json": {
+      "bytes": 3641,
+      "sha256": "e430b20187daae7da2208720dbf2c91efebc474c9ce1e5caf5da68f0e983a8cf"
+    },
+    "aether/payload-receipt.json": {
+      "bytes": 449,
+      "sha256": "62e7179c10c5191385804dc85a7297d57f4ea28aae935c52ab2007e982a4a905"
+    },
+    "aether/policy.json": {
+      "bytes": 270,
+      "sha256": "419c20e570ef4ffe6ab2207f2cd49585116af8a7cde3db3c3c4d6fd87e9bdfb0"
+    },
+    "aether/releases.json": {
+      "bytes": 9256,
+      "sha256": "efc12d4c277e226abfe2348cb6af7cb62d1a8af1461971fb56e0b7561ab9bdbe"
+    },
+    "aether/repository.json": {
+      "bytes": 5162,
+      "sha256": "95d3d487e4a45f5e6d94e5501d99e32fd316d72a6d25bec44a2ae653c7996755"
+    },
+    "aether/static.json": {
+      "bytes": 1356,
+      "sha256": "ca1d3ff9b21667293669f51f4a9559f75acc65779ebeee731fe6ba716b637421"
+    },
+    "aether/superblock.txt": {
+      "bytes": 564,
+      "sha256": "bd94062b3a22e0315fa64c469e39e67ea6a4011bb6d8c82c5579e5df63f958f4"
+    },
+    "aethersdr/extraction.txt": {
+      "bytes": 199,
+      "sha256": "c9223d0e6a5430f5deeffb82514fc41e514eaa20afbc6a5fd226608a74be34e1"
+    },
+    "aethersdr/listing.txt": {
+      "bytes": 44804,
+      "sha256": "3729e5a506dd79cb9a5007e5db5ea6eddebd65eb9f0038233f38c2070e434667"
+    },
+    "aethersdr/metadata/.DirIcon": {
+      "symlink": "aethersdr.png"
+    },
+    "aethersdr/metadata/AetherSDR.desktop": {
+      "symlink": "usr/share/applications/AetherSDR.desktop"
+    },
+    "aethersdr/metadata/aethersdr.png": {
+      "symlink": "usr/share/icons/hicolor/256x256/apps/aethersdr.png"
+    },
+    "aethersdr/metadata/usr/share/applications/AetherSDR.desktop": {
+      "bytes": 247,
+      "sha256": "ac4bc30f897ddf5383183cb7f3eafad1d5bf0ce386f5d29500917580e8cd881c"
+    },
+    "aethersdr/metadata/usr/share/icons/hicolor/256x256/apps/aethersdr.png": {
+      "bytes": 60122,
+      "sha256": "2d59ff36d9c7737be8088696e776e34bdff061bfeafc28ec79fa109a64aaba4e"
+    },
+    "aethersdr/metadata-receipt.json": {
+      "bytes": 3745,
+      "sha256": "c569ce2cc2536f8268f7c6acb1ed1ac5cd1bb933fa58c7998f6f5e663784a601"
+    },
+    "aethersdr/payload-receipt.json": {
+      "bytes": 466,
+      "sha256": "244f6bbe1142c28cf5d7e457a7d0635ae4110249e4e7cc8bccd7576e13368044"
+    },
+    "aethersdr/policy.json": {
+      "bytes": 296,
+      "sha256": "f206d87bf86bca6730d1b11793cedadc069a389feb625f9f72589e730cd6c9fe"
+    },
+    "aethersdr/releases.json": {
+      "bytes": 1345831,
+      "sha256": "bc35dcd9b7b58c63eec564800a05a9dcd8377b672c9dbff16ee42b6da8293004"
+    },
+    "aethersdr/repository.json": {
+      "bytes": 6602,
+      "sha256": "644d577bc4fc74602358cf8739e9d5625eef299c0e0a3c29f2308fb6f1592785"
+    },
+    "aethersdr/static.json": {
+      "bytes": 1548,
+      "sha256": "f7957b1bbcaf75f6428ad270086c2eac05a730baddb83b365d5b1756187b52b1"
+    },
+    "aethersdr/superblock.txt": {
+      "bytes": 570,
+      "sha256": "46c9795978391ad03ee8f5a1d3b073f668552d62139b58a3b055b39dd817bb54"
+    },
+    "scripts/metadata.py": {
+      "bytes": 2098,
+      "sha256": "19a73dad383ea2f14ac7516bf49314a7dfe960566344722ad2fe7ca145054a99"
+    },
+    "scripts/metadata-extra.py": {
+      "bytes": 2147,
+      "sha256": "44391d9849f206e787026e1e434c87e7d6e5af5d50ecbac3d1f9025c54c1154b"
+    },
+    "scripts/prepare.py": {
+      "bytes": 2751,
+      "sha256": "2ab5a81e0290b30994feb5c195fb0f310f6fc122796afa5ee76d6c996a9473e9"
+    },
+    "scripts/acquire.py": {
+      "bytes": 1872,
+      "sha256": "16bceba8183d420efc69d633d08a93e953f02e264988d26a36312c2aafeae065"
+    },
+    "scripts/acquire-extra.py": {
+      "bytes": 1882,
+      "sha256": "379a3969d0e319ee21a5cd73af8e416e284ce20c510dbfced8426dcdd3764e69"
+    },
+    "scripts/static_payload.py": {
+      "bytes": 4713,
+      "sha256": "f14948e9e4cc33a7c1f3bbb75d28977f964e58f284540a56e2df189268b88e8c"
+    },
+    "scripts/policies.py": {
+      "bytes": 2490,
+      "sha256": "ce95aa30a2205822efb7565cf6416c66bc1301de1f7cb24da06869565734e602"
+    },
+    "scripts/convert.py": {
+      "bytes": 3762,
+      "sha256": "ef05c38a1d6de23493f5d53f9c062910c8f4975ec1db9af67450c6a4e1f90afd"
+    },
+    "scripts/screening.json": {
+      "bytes": 121721,
+      "sha256": "617c296527ed9e0809f4f0c156b4ad67d5deafc6f7558b279a3b99d189dcb38b"
+    },
+    "scripts/candidates.json": {
+      "bytes": 39318,
+      "sha256": "faca1ffc4f289ec73641c45d40c2ce983ecb03e0afbbb3194ce76f9628084dd7"
+    },
+    "scripts/tools.txt": {
+      "bytes": 574,
+      "sha256": "b51af2f266d4f670f9c12b0ca8f06852e7587d372c797bb8223896e5d5cfd885"
+    }
+  },
+  "collection_enrollment_changed": false,
+  "total_acquired_payload_bytes": 3738516565,
+  "total_verified_payload_bytes": 3473447617,
+  "policy": "publication descending, release numeric ID descending, asset bytewise name then ID; any channel; retained release set; direct acquisition; URL version; ordinary 48-hour freshness and explicit stale acceptance; literal desktop sandbox flag stripping"
+}

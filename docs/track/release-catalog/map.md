@@ -2,7 +2,18 @@
 
 ## Maintained upstream recipe reconstruction
 
-Current result: [132 resolved](issues/132-review-and-deploy-candidate-shared-modules.md)
+Current source result: [133 resolved](issues/133-prepare-large-existing-recipe-batch.md)
+converts twenty more existing AppImage recipes locally after exact provenance,
+first-party identity, selector and full static payload gates.
+[Batch report](research/large-batch-conversion.md) retains compact digest-bound
+evidence and nine unchanged payload exclusions. All 43 focused tests pass,
+including 60 three-awk selections and twenty inert actual-recipe lifecycles.
+Declarations total 43; enrollment stays 23 recipes / 21 sources. No push,
+publication, installed/live change or yadm operation. New declarations require
+separate collection/capacity/publication work before production use.
+
+
+Prior deployed result: [132 resolved](issues/132-review-and-deploy-candidate-shared-modules.md)
 reviews the five pushed commits `a2119bd9f...fa36ebb7e` on independent Standards
 and Spec axes (zero findings each), then refreshes only the two changed live
 shared modules. Installed apps/recipes remain unchanged; 20x/2fac stay uninstalled.

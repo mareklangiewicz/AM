@@ -143,3 +143,16 @@ Upstream remains authoritative. Review a new template/generator revision with
 only with tests, and then update the pinned metadata deliberately. New template
 layouts never silently replace an old family's meaning. Upstream's interactive
 `am -t` is documented in `docs/guides-and-tutorials/template.md`; it is not run.
+
+
+## Twenty-recipe retained batch evidence
+
+Ticket [133](../../docs/track/release-catalog/issues/133-prepare-large-existing-recipe-batch.md)
+adds twenty source conversions with static payload gates and a portable evidence
+archive. `test_large_batch.py` replays exact originals, full saved release-page
+selectors on three awk implementations and actual converted recipes with authored
+inert extractors plus saved desktop/icon data. It never executes downloaded
+AppImage/AppRun bytes. The evidence and source declarations do not enroll these
+apps for collection; production catalog availability is a separate gate. See the
+[batch report](../../docs/track/release-catalog/research/large-batch-conversion.md)
+for policy changes, exclusions and verification limits.
