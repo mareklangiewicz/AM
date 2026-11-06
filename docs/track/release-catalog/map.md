@@ -2,6 +2,16 @@
 
 ## Maintained upstream recipe reconstruction
 
+Current local result: [135 resolved](issues/135-prepare-next-ten-existing-recipes.md)
+converts and locally enrolls ten further existing recipes: **53 recipes / 51
+sources**. [Report](research/next-ten-conversion.md) retains exact Git/API/
+full-payload evidence, two unchanged absolute-icon-link exclusions and a 193-entry
+verified manifest. All 70 focused tests pass. Combined exact-prior-plus-ten saved
+snapshot is 9.66 MB YAML / largest 1.14 MB; recorded response bytes total 56.39 MB.
+This is local preparation, not fresh 51-source transport evidence. No new push,
+publication or live/installed change; operational decision remains with Marek.
+
+
 Current deployed result: [134 resolved](issues/134-enroll-and-publish-twenty-recipe-batch.md)
 enrolls and publishes the twenty converted recipes: **43 recipes / 41 sources**.
 Pushed `743dbf139`; successful [manual run 42156336747](https://github.com/mareklangiewicz/AM/actions/runs/42156336747)

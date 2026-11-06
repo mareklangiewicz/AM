@@ -1,0 +1,3350 @@
+{
+  "ticket": 135,
+  "source_before": "8ca3c1031d269f7f527d4aff25ceb8ead0bacc5d",
+  "observed_at": "2026-11-06T04:00:58.674498+00:00",
+  "evidence_archive": "next-ten-evidence.tar.gz",
+  "evidence_archive_sha256": "883d89018c3bfcfda3b160abfc2f86d6d3115ecf6fa01e32ea6b4ad6bc2f6833",
+  "converted": [
+    "aevum",
+    "afsplug",
+    "ag-repatch",
+    "agaric",
+    "agency-agents-app",
+    "agent-arcade",
+    "agent-buddy",
+    "agent-comm-hub",
+    "agent-launcher",
+    "agent-pulse"
+  ],
+  "candidates": [
+    {
+      "app": "aevum",
+      "requested_repository": "alonera/aevum",
+      "provenance": {
+        "recipe": "programs/x86_64/aevum",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "3f818b587727f1983ab78f0fa878c188b60a67eca5a15970b792de9ea4b535da",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "aevum",
+              "alonera/aevum",
+              "curl -Ls https://api.github.com/repos/alonera/aevum/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "aevum",
+              "alonera/aevum",
+              "curl -Ls https://api.github.com/repos/alonera/aevum/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:01.695332+00:00",
+      "repository_sha256": "05c7b76d0aff21fd0b44309bef84393d5a1d270aa6386b6b5e0c4d429987ad41",
+      "releases_sha256": "7086a7c5c1ca256c0e2eb3a7f20a34f60cb7d30fd1e33ac906e852f0a95e0b8b",
+      "repository_id": 1288679691,
+      "repository": "Alonera/Aevum",
+      "release_count": 8,
+      "selected_release": 384722211,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/Alonera/Aevum/releases/assets/550483765",
+        "id": 550483765,
+        "node_id": "RA_kwDOTM-xC84gz7c1",
+        "name": "Aevum-x86_64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "Alonera",
+          "id": 193606681,
+          "node_id": "U_kgDOC4o0GQ",
+          "avatar_url": "https://avatars.githubusercontent.com/u/193606681?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/Alonera",
+          "html_url": "https://github.com/Alonera",
+          "followers_url": "https://api.github.com/users/Alonera/followers",
+          "following_url": "https://api.github.com/users/Alonera/following{/other_user}",
+          "gists_url": "https://api.github.com/users/Alonera/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/Alonera/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/Alonera/subscriptions",
+          "organizations_url": "https://api.github.com/users/Alonera/orgs",
+          "repos_url": "https://api.github.com/users/Alonera/repos",
+          "events_url": "https://api.github.com/users/Alonera/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/Alonera/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 163432952,
+        "digest": "sha256:519102cf8eb14ad9702bcaa379bb0bdb79f47c5a2d9fdd4b568aeef3676fb8a9",
+        "download_count": 52,
+        "created_at": "2026-09-08T12:44:55Z",
+        "updated_at": "2026-09-08T12:55:48Z",
+        "browser_download_url": "https://github.com/Alonera/Aevum/releases/download/v1.2.7/Aevum-x86_64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/Alonera/Aevum/releases/download/v1.2.7/Aevum-x86_64.AppImage",
+      "pattern": "^Aevum-x86_64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "afsplug",
+      "requested_repository": "zhangxianhe666/afsplug",
+      "provenance": {
+        "recipe": "programs/x86_64/afsplug",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "9f4d6ed202cfe0770c660dd5ed054d778cdcb27f9914c07ab444ef11d7caa435",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "afsplug",
+              "zhangxianhe666/afsplug",
+              "curl -Ls https://api.github.com/repos/zhangxianhe666/afsplug/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "afsplug",
+              "zhangxianhe666/afsplug",
+              "curl -Ls https://api.github.com/repos/zhangxianhe666/afsplug/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:01.696487+00:00",
+      "repository_sha256": "e5bb796f3ccfdfda6fe0aede9b8be6668cb0ea9f1cbac8deab12a62f14c45f09",
+      "releases_sha256": "fb30a675605a5472a82f5cff56d2124823f83a5c0952df31dfd2782e1cb65fe0",
+      "repository_id": 1290784521,
+      "repository": "zhangxianhe666/AFSplug",
+      "release_count": 10,
+      "selected_release": 417227338,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/zhangxianhe666/AFSplug/releases/assets/656119990",
+        "id": 656119990,
+        "node_id": "RA_kwDOTO_PCc4nG5i2",
+        "name": "afs-1.7.0-x86_64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 113911132,
+        "digest": "sha256:5a076dfe0f3c8f1337a23dd5a3382bb38852b6fcbe5a2dc5eb0096d21886a790",
+        "download_count": 12,
+        "created_at": "2026-10-19T11:45:11Z",
+        "updated_at": "2026-10-19T11:45:16Z",
+        "browser_download_url": "https://github.com/zhangxianhe666/AFSplug/releases/download/v1.7.0/afs-1.7.0-x86_64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/zhangxianhe666/AFSplug/releases/download/v1.7.0/afs-1.7.0-x86_64.AppImage",
+      "pattern": "^afs-[0-9]+([.][0-9]+)*-x86_64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "ag-repatch",
+      "requested_repository": "etosheartem/ag-repatch",
+      "provenance": {
+        "recipe": "programs/x86_64/ag-repatch",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "a0c0141928187ca079c71b457f02930c8861581910f4c68fbea7b314c3cd7f51",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage",
+            "source_sha256": "5353962fac61f7e0f8d3e949a824700c522c6229c6243ab16e2847a4e71edfa2",
+            "parameters": [
+              "ag-repatch",
+              "etosheartem/ag-repatch",
+              "curl -Ls https://api.github.com/repos/etosheartem/ag-repatch/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "ag-repatch",
+              "etosheartem/ag-repatch",
+              "curl -Ls https://api.github.com/repos/etosheartem/ag-repatch/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:03.080189+00:00",
+      "repository_sha256": "21fca976d14a0e9e02eaff3ce44c30198e82d960c157037bc33700975d7a6e70",
+      "releases_sha256": "cb78b83cb72adbcd7ecd3ba0c029086f671e6a53441be979268526314c506bc7",
+      "repository_id": 1365153976,
+      "repository": "etosheartem/ag-repatch",
+      "release_count": 6,
+      "selected_release": 410056799,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/etosheartem/ag-repatch/releases/assets/632339461",
+        "id": 632339461,
+        "node_id": "RA_kwDOUV6YuM4lsLwF",
+        "name": "ag-repatch-linux-x64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/vnd.appimage",
+        "state": "uploaded",
+        "size": 78797304,
+        "digest": "sha256:34035e1d25f4528bd4e372074b3e616a8d3272c123d44b9ebd16417c8507229c",
+        "download_count": 18,
+        "created_at": "2026-10-12T01:47:27Z",
+        "updated_at": "2026-10-12T01:47:31Z",
+        "browser_download_url": "https://github.com/etosheartem/ag-repatch/releases/download/v2.1.2/ag-repatch-linux-x64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/etosheartem/ag-repatch/releases/download/v2.1.2/ag-repatch-linux-x64.AppImage",
+      "pattern": "^ag-repatch-linux-x64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "agaric",
+      "requested_repository": "jfolcini/agaric",
+      "provenance": {
+        "recipe": "programs/x86_64/agaric",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "cd8e203fc209d384cea05a6601af1e1f973a25c0bde093336e4bc4f24d3ae49f",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agaric",
+              "jfolcini/agaric",
+              "curl -Ls https://api.github.com/repos/jfolcini/agaric/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "agaric",
+              "jfolcini/agaric",
+              "curl -Ls https://api.github.com/repos/jfolcini/agaric/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:03.176067+00:00",
+      "repository_sha256": "4441dea13af732908f1dc2b38499ca384eff04e66d76193237346d17277a27e8",
+      "releases_sha256": "44db055a87bd7c1613aac30a5b2b1688da12dda4dd00ab488f62a633a8e26141",
+      "repository_id": 1220744390,
+      "repository": "jfolcini/agaric",
+      "release_count": 71,
+      "selected_release": 429986010,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/jfolcini/agaric/releases/assets/695713196",
+        "id": 695713196,
+        "node_id": "RA_kwDOSMMUxs4pd72s",
+        "name": "Agaric_0.22.0_amd64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/vnd.appimage",
+        "state": "uploaded",
+        "size": 113199608,
+        "digest": "sha256:3ef68e4708d060259b204d6ac6c98ef20a2450326d5df56bfce5b2bc42334b4f",
+        "download_count": 4,
+        "created_at": "2026-10-31T15:19:08Z",
+        "updated_at": "2026-10-31T15:19:12Z",
+        "browser_download_url": "https://github.com/jfolcini/agaric/releases/download/0.22.0/Agaric_0.22.0_amd64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/jfolcini/agaric/releases/download/0.22.0/Agaric_0.22.0_amd64.AppImage",
+      "pattern": "^Agaric_[0-9]+([.][0-9]+)*_amd64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "ageha-editor",
+      "requested_repository": "itsuki-maru/ageha-editor",
+      "provenance": {
+        "recipe": "programs/x86_64/ageha-editor",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "35d45b481816dadbf3ffe15657181b5fd081b05ad5d4ee1948811612d0142652",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "ageha-editor",
+              "itsuki-maru/ageha-editor",
+              "curl -Ls https://api.github.com/repos/itsuki-maru/ageha-editor/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "ageha-editor",
+              "itsuki-maru/ageha-editor",
+              "curl -Ls https://api.github.com/repos/itsuki-maru/ageha-editor/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:03.245594+00:00",
+      "repository_sha256": "59f413cac069da126529b602e99afcea310b6e6baff4a9fc57353facbcbddd3a",
+      "releases_sha256": "c55ce3eb9fdc1cda371dfffd8eff9ceaf96a30b0c492df157b01f611275687cd",
+      "repository_id": 1016549971,
+      "repository": "itsuki-maru/Ageha-Editor",
+      "release_count": 9,
+      "selected_release": 436028725,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/itsuki-maru/Ageha-Editor/releases/assets/715608899",
+        "id": 715608899,
+        "node_id": "RA_kwDOPJdSU84qp1ND",
+        "name": "Ageha.Editor_0.6.0_amd64.AppImage",
+        "label": "Ageha Editor_0.6.0_amd64.AppImage",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 92771520,
+        "digest": "sha256:1b3cfd999d163caf61a95850b5268b075b49ef27ff7bf700e2659738fcaa56ed",
+        "download_count": 1,
+        "created_at": "2026-11-06T02:23:45Z",
+        "updated_at": "2026-11-06T02:23:50Z",
+        "browser_download_url": "https://github.com/itsuki-maru/Ageha-Editor/releases/download/v0.6.0/Ageha.Editor_0.6.0_amd64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/itsuki-maru/Ageha-Editor/releases/download/v0.6.0/Ageha.Editor_0.6.0_amd64.AppImage",
+      "pattern": "^Ageha[.]Editor_[0-9]+([.][0-9]+)*_amd64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "agency",
+      "requested_repository": "tennnisai/agency",
+      "provenance": {
+        "recipe": "programs/x86_64/agency",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "d022d043ef5f4af1fa1f51d3a0dee251256f8142cc693e634ae94cff38d61faa",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agency",
+              "tennnisai/agency",
+              "curl -Ls https://api.github.com/repos/tennnisai/agency/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "agency",
+              "tennnisai/agency",
+              "curl -Ls https://api.github.com/repos/tennnisai/agency/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:04.362082+00:00",
+      "repository_sha256": "73a4e80feadb80c5b4a280162f45942a58eabb93b054aa181e77740804134470",
+      "releases_sha256": "49ce2872060eb9962f413c36865ed7e6ef9f4eb170a704c8d57ae01cf11b6ea7",
+      "repository_id": 1359152102,
+      "repository": "TennnisAI/Agency",
+      "release_count": 7,
+      "selected_release": 418616088,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/TennnisAI/Agency/releases/assets/659839074",
+        "id": 659839074,
+        "node_id": "RA_kwDOUQMD5s4nVFhi",
+        "name": "Agency_0.2.5_amd64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 90622456,
+        "digest": "sha256:222432fc0ab64054718e1c45f2bf1947a6061a2bd92e73a309dae192d6821889",
+        "download_count": 8,
+        "created_at": "2026-10-20T16:22:10Z",
+        "updated_at": "2026-10-20T16:22:14Z",
+        "browser_download_url": "https://github.com/TennnisAI/Agency/releases/download/v0.2.5/Agency_0.2.5_amd64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/TennnisAI/Agency/releases/download/v0.2.5/Agency_0.2.5_amd64.AppImage",
+      "pattern": "^Agency_[0-9]+([.][0-9]+)*_amd64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "agency-agents-app",
+      "requested_repository": "msitarzewski/agency-agents-app",
+      "provenance": {
+        "recipe": "programs/x86_64/agency-agents-app",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "fad3b084adfd7ffc4bed054f670f726ae22056e81d77b87d7c15823720d1cfcc",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agency-agents-app",
+              "msitarzewski/agency-agents-app",
+              "curl -Ls https://api.github.com/repos/msitarzewski/agency-agents-app/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "agency-agents-app",
+              "msitarzewski/agency-agents-app",
+              "curl -Ls https://api.github.com/repos/msitarzewski/agency-agents-app/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:04.525887+00:00",
+      "repository_sha256": "9d70447e993094d9d49d85e3ae5392b0019d1176a47085a51e9f3063dcb8a013",
+      "releases_sha256": "607d39fdf4f9395201e2bcc89a64a067494014c5cd552e9b84b3b9147f84b533",
+      "repository_id": 1262882328,
+      "repository": "msitarzewski/agency-agents-app",
+      "release_count": 6,
+      "selected_release": 402574877,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/msitarzewski/agency-agents-app/releases/assets/608053664",
+        "id": 608053664,
+        "node_id": "RA_kwDOS0YOGM4kPimg",
+        "name": "Agency_Agents_0.3.2_amd64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "msitarzewski",
+          "id": 1972242,
+          "node_id": "MDQ6VXNlcjE5NzIyNDI=",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1972242?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/msitarzewski",
+          "html_url": "https://github.com/msitarzewski",
+          "followers_url": "https://api.github.com/users/msitarzewski/followers",
+          "following_url": "https://api.github.com/users/msitarzewski/following{/other_user}",
+          "gists_url": "https://api.github.com/users/msitarzewski/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/msitarzewski/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/msitarzewski/subscriptions",
+          "organizations_url": "https://api.github.com/users/msitarzewski/orgs",
+          "repos_url": "https://api.github.com/users/msitarzewski/repos",
+          "events_url": "https://api.github.com/users/msitarzewski/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/msitarzewski/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 88820216,
+        "digest": "sha256:14b53ecaffde8b3bf3622665bf5dff62626f9f77d21f1cdeb347d4e250f686b2",
+        "download_count": 525,
+        "created_at": "2026-10-03T15:37:28Z",
+        "updated_at": "2026-10-03T15:37:30Z",
+        "browser_download_url": "https://github.com/msitarzewski/agency-agents-app/releases/download/v0.3.2/Agency_Agents_0.3.2_amd64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/msitarzewski/agency-agents-app/releases/download/v0.3.2/Agency_Agents_0.3.2_amd64.AppImage",
+      "pattern": "^Agency_Agents_[0-9]+([.][0-9]+)*_amd64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "agent-arcade",
+      "requested_repository": "danwahlin/agent-arcade",
+      "provenance": {
+        "recipe": "programs/x86_64/agent-arcade",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "607475960c18748296cf980264bafe49e032ed7590f49446a8bb27f4294f21ba",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agent-arcade",
+              "danwahlin/agent-arcade",
+              "curl -Ls https://api.github.com/repos/danwahlin/agent-arcade/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "agent-arcade",
+              "danwahlin/agent-arcade",
+              "curl -Ls https://api.github.com/repos/danwahlin/agent-arcade/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:05.756430+00:00",
+      "repository_sha256": "866fb93ebb0d01612c31e8b2f04e3de3d9adb8263a0aa9667e8aa539459126ae",
+      "releases_sha256": "5a99b1044638128cd9d5682ebc3529b44ef4bf572458ab77a960cf5edf5baca6",
+      "repository_id": 1213992071,
+      "repository": "DanWahlin/agent-arcade",
+      "release_count": 16,
+      "selected_release": 417975630,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/DanWahlin/agent-arcade/releases/assets/658172901",
+        "id": 658172901,
+        "node_id": "RA_kwDOSFwMh84nOuvl",
+        "name": "Agent.Arcade_0.6.4_amd64.AppImage",
+        "label": "Agent Arcade_0.6.4_amd64.AppImage",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 163686904,
+        "digest": "sha256:9098ea2ba06d1c782705e74fc6f7c1219554946040965e3e6f20041ac3d5f19b",
+        "download_count": 8,
+        "created_at": "2026-10-20T03:39:44Z",
+        "updated_at": "2026-10-20T03:39:52Z",
+        "browser_download_url": "https://github.com/DanWahlin/agent-arcade/releases/download/v0.6.4/Agent.Arcade_0.6.4_amd64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/DanWahlin/agent-arcade/releases/download/v0.6.4/Agent.Arcade_0.6.4_amd64.AppImage",
+      "pattern": "^Agent[.]Arcade_[0-9]+([.][0-9]+)*_amd64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "agent-buddy",
+      "requested_repository": "danwahlin/agent-buddy",
+      "provenance": {
+        "recipe": "programs/x86_64/agent-buddy",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "686a92ebdf09a81e910b64a4ba6d11db3b33a2794d9cf5f1202a52f2b56acb64",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage",
+            "source_sha256": "5353962fac61f7e0f8d3e949a824700c522c6229c6243ab16e2847a4e71edfa2",
+            "parameters": [
+              "agent-buddy",
+              "danwahlin/agent-buddy",
+              "curl -Ls https://api.github.com/repos/danwahlin/agent-buddy/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "agent-buddy",
+              "danwahlin/agent-buddy",
+              "curl -Ls https://api.github.com/repos/danwahlin/agent-buddy/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:05.831831+00:00",
+      "repository_sha256": "f15e0868ac160722b1400129c39b5980a34d43002bb9a345212ec1d90eb3bab9",
+      "releases_sha256": "a0430f3e969881eb7d3ac7750f068b4d73b4ddd242ea4a991044da56f9d0ce76",
+      "repository_id": 1365556684,
+      "repository": "DanWahlin/agent-buddy",
+      "release_count": 44,
+      "selected_release": 434642650,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/DanWahlin/agent-buddy/releases/assets/711540246",
+        "id": 711540246,
+        "node_id": "RA_kwDOUWS9zM4qaT4W",
+        "name": "agent-companion-desktop-0.18.1-linux-x86_64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 158280184,
+        "digest": "sha256:3eb0e51bec95e4c35bf94b118e47bff7d8f4eee54a69895e0d095189825cafc2",
+        "download_count": 4,
+        "created_at": "2026-11-05T01:01:29Z",
+        "updated_at": "2026-11-05T01:01:35Z",
+        "browser_download_url": "https://github.com/DanWahlin/agent-buddy/releases/download/v0.18.1/agent-companion-desktop-0.18.1-linux-x86_64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/DanWahlin/agent-buddy/releases/download/v0.18.1/agent-companion-desktop-0.18.1-linux-x86_64.AppImage",
+      "pattern": "^agent-companion-desktop-[0-9]+([.][0-9]+)*-linux-x86_64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "agent-comm-hub",
+      "requested_repository": "jochenyang/agent-comm-hub",
+      "provenance": {
+        "recipe": "programs/x86_64/agent-comm-hub",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "1df98174139550754183eb5b41ac2160709b766b8e7e119486b3ae6767e05420",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agent-comm-hub",
+              "jochenyang/agent-comm-hub",
+              "curl -Ls https://api.github.com/repos/jochenyang/agent-comm-hub/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "agent-comm-hub",
+              "jochenyang/agent-comm-hub",
+              "curl -Ls https://api.github.com/repos/jochenyang/agent-comm-hub/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:06.514950+00:00",
+      "repository_sha256": "ba381639c8ee080aa4a02151d57a97543fc7c7a01b3e1afa9a7d7d9f6babeb74",
+      "releases_sha256": "48a2f1604037062eaab6d84fa3feed00a11e2ff991fc3b30b9acb75f3ddcacf3",
+      "repository_id": 1333821463,
+      "repository": "JochenYang/agent-comm-hub",
+      "release_count": 28,
+      "selected_release": 427571746,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/JochenYang/agent-comm-hub/releases/assets/687738393",
+        "id": 687738393,
+        "node_id": "RA_kwDOT4CAF84o_g4Z",
+        "name": "agent-comm-hub-app_1.7.0_amd64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 82782712,
+        "digest": "sha256:658260cba4537b8dbcfed7e795fccadf81ea4301f40dd135bc810dc7a812e160",
+        "download_count": 2,
+        "created_at": "2026-10-29T07:31:51Z",
+        "updated_at": "2026-10-29T07:31:54Z",
+        "browser_download_url": "https://github.com/JochenYang/agent-comm-hub/releases/download/app-v1.7.0/agent-comm-hub-app_1.7.0_amd64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/JochenYang/agent-comm-hub/releases/download/app-v1.7.0/agent-comm-hub-app_1.7.0_amd64.AppImage",
+      "pattern": "^agent-comm-hub-app_[0-9]+([.][0-9]+)*_amd64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "agent-launcher",
+      "requested_repository": "agent-launch/agent-launcher",
+      "provenance": {
+        "recipe": "programs/x86_64/agent-launcher",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "904332917cecd5863d58d3ebfc5a3a1b4915e117856561dfe120aefa0359168b",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agent-launcher",
+              "agent-launch/agent-launcher",
+              "curl -Ls https://api.github.com/repos/agent-launch/agent-launcher/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "agent-launcher",
+              "agent-launch/agent-launcher",
+              "curl -Ls https://api.github.com/repos/agent-launch/agent-launcher/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:07.393631+00:00",
+      "repository_sha256": "afbddc051dd39bc2900173062016907fbcee49e894aea4647ff5376001c71ae3",
+      "releases_sha256": "f0d902207bf4e1e5bc12072a2786f79a425d9ec9130967d8bc224eb2432c73e7",
+      "repository_id": 1364985464,
+      "repository": "agent-launch/agent-launcher",
+      "release_count": 2,
+      "selected_release": 390519562,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/agent-launch/agent-launcher/releases/assets/569747734",
+        "id": 569747734,
+        "node_id": "RA_kwDOUVwGeM4h9akW",
+        "name": "AgentLauncher-0.1.1-linux-x86_64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 139881831,
+        "digest": "sha256:abfe61d76e287f4b5e6bd34456dd07d7a8aa451e043a5bb45d63ee73fe33debd",
+        "download_count": 43,
+        "created_at": "2026-09-17T07:47:26Z",
+        "updated_at": "2026-09-17T07:47:35Z",
+        "browser_download_url": "https://github.com/agent-launch/agent-launcher/releases/download/v0.1.1/AgentLauncher-0.1.1-linux-x86_64.AppImage"
+      },
+      "prerelease": true,
+      "status": "selected",
+      "old_selected_url": "https://github.com/agent-launch/agent-launcher/releases/download/v0.1.1/AgentLauncher-0.1.1-linux-x86_64.AppImage",
+      "pattern": "^AgentLauncher-[0-9]+([.][0-9]+)*-linux-x86_64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "agent-pulse",
+      "requested_repository": "dipen-dedania/agent-pulse",
+      "provenance": {
+        "recipe": "programs/x86_64/agent-pulse",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "b271382a46eb8bc3f4b0606710108f967ca1c99287846feac466ba30b0ee9fe7",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agent-pulse",
+              "dipen-dedania/agent-pulse",
+              "curl -Ls https://api.github.com/repos/dipen-dedania/agent-pulse/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "agent-pulse",
+              "dipen-dedania/agent-pulse",
+              "curl -Ls https://api.github.com/repos/dipen-dedania/agent-pulse/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:09.943077+00:00",
+      "repository_sha256": "f947e6f296a55704f31a8e31a747e533aca294a401dc90f535992ed2db40458a",
+      "releases_sha256": "8d82ab750ae76e13bee0efb957e61c1f3ae5f80ce71a6a79288bcd7237faeffc",
+      "repository_id": 1211202862,
+      "repository": "Dipen-Dedania/agent-pulse",
+      "release_count": 14,
+      "selected_release": 403662007,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/Dipen-Dedania/agent-pulse/releases/assets/612437755",
+        "id": 612437755,
+        "node_id": "RA_kwDOSDF9Ls4kgQ77",
+        "name": "Agent.Pulse-1.4.0.AppImage",
+        "label": "Agent Pulse-1.4.0.AppImage",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 138581027,
+        "digest": "sha256:f1a4fbb8e7d380a209ae33ef478dacc34eae52e66f21d722174e300fe8d7b833",
+        "download_count": 27,
+        "created_at": "2026-10-05T11:56:09Z",
+        "updated_at": "2026-10-05T11:56:15Z",
+        "browser_download_url": "https://github.com/Dipen-Dedania/agent-pulse/releases/download/v1.4.0/Agent.Pulse-1.4.0.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/Dipen-Dedania/agent-pulse/releases/download/v1.4.0/Agent.Pulse-1.4.0.AppImage",
+      "pattern": "^Agent[.]Pulse-[0-9]+([.][0-9]+)*[.]AppImage$",
+      "strip_no_sandbox": true
+    }
+  ],
+  "exclusions": [
+    {
+      "app": "ageha-editor",
+      "reason": "unsafe/unsupported metadata link"
+    },
+    {
+      "app": "agency",
+      "reason": "unsafe/unsupported metadata link"
+    }
+  ],
+  "manifest": {
+    "aevum/extraction.txt": {
+      "bytes": 198,
+      "sha256": "e9b8e6b63380fcb3dde501c1719a34c603c8c4defa2d8430020499718f7d1b42"
+    },
+    "aevum/listing.txt": {
+      "bytes": 18505,
+      "sha256": "5a64e044e5d4888b2766f9f2e029f4b7267618285b49656233e805265d3d9422"
+    },
+    "aevum/metadata/.DirIcon": {
+      "symlink": "aevum.png"
+    },
+    "aevum/metadata/AppRun": {
+      "bytes": 86,
+      "sha256": "ee7129cd61200fb8338aedd7bdd7820b2f7449a5a8f696cb1ab901d0ede9ca07"
+    },
+    "aevum/metadata/aevum.desktop": {
+      "bytes": 242,
+      "sha256": "b4b04854360f08a59ba7745dd369b7678ab03d0e5d8c4de1a8f1d8278a5cf78b"
+    },
+    "aevum/metadata/aevum.png": {
+      "bytes": 25835,
+      "sha256": "83b62c4d8809fc338aef3cded162523b0296d5416be4f2bef89aa33b9d17c289"
+    },
+    "aevum/metadata/usr/share/applications/aevum.desktop": {
+      "bytes": 242,
+      "sha256": "b4b04854360f08a59ba7745dd369b7678ab03d0e5d8c4de1a8f1d8278a5cf78b"
+    },
+    "aevum/metadata-receipt.json": {
+      "bytes": 3464,
+      "sha256": "a7e2fb6356b6f04bb3060c3a36c741a98bbe0d0d6f553d9f77e1e5568489fa33"
+    },
+    "aevum/payload-receipt.json": {
+      "bytes": 441,
+      "sha256": "8a1fdafeb5af55aedb3e533d5b4b70be515aad9bfb00600fbc5089ca748e30ee"
+    },
+    "aevum/policy.json": {
+      "bytes": 254,
+      "sha256": "e40ddca14a7e3ad5f95211f64db9766f7845e9881a8dd0fd2518d84f1e01dda3"
+    },
+    "aevum/releases.json": {
+      "bytes": 99650,
+      "sha256": "7086a7c5c1ca256c0e2eb3a7f20a34f60cb7d30fd1e33ac906e852f0a95e0b8b"
+    },
+    "aevum/repository.json": {
+      "bytes": 5150,
+      "sha256": "05c7b76d0aff21fd0b44309bef84393d5a1d270aa6386b6b5e0c4d429987ad41"
+    },
+    "aevum/static.json": {
+      "bytes": 1470,
+      "sha256": "94904653c5e141fc3cc1bb0cc1b5437319b0bea377c355166404877ea5333e6e"
+    },
+    "aevum/superblock.txt": {
+      "bytes": 563,
+      "sha256": "d8d165e88febcaf0daef8eefcac13b7650e8f472a3c5d0476db320ad23e0270d"
+    },
+    "affinity/metadata-receipt.json": {
+      "bytes": 3656,
+      "sha256": "24eaf627a2a8d96e17d40d5ad5ca9fd9abb19a168d0a720c453e1949b41de827"
+    },
+    "affinity/releases.json": {
+      "bytes": 48078,
+      "sha256": "a71965958103c406f535c8a11ba81ed8e680b1916761830cb4c2652b3b9b3fec"
+    },
+    "affinity/repository.json": {
+      "bytes": 5891,
+      "sha256": "59f15cc5cef9275cbc4e9cb2b96252e057bfda38c2bd9b2b9b78475f83b1976e"
+    },
+    "afsplug/extraction.txt": {
+      "bytes": 199,
+      "sha256": "1354d4e21fae9f4927b99b61d37011478ba1083da60522f00307196827dbdd48"
+    },
+    "afsplug/listing.txt": {
+      "bytes": 11030,
+      "sha256": "56a085c79c0e412e08d0df374b9aa7e862989bf8ab4b7fbc565d9230820ef5f1"
+    },
+    "afsplug/metadata/.DirIcon": {
+      "symlink": "usr/share/icons/hicolor/1038x1038/apps/chat2api.png"
+    },
+    "afsplug/metadata/AppRun": {
+      "bytes": 2349,
+      "sha256": "eea4ca1983e9fe4571c47d0502cc84ee2bf77c56406ef0482b480ec207dffa87"
+    },
+    "afsplug/metadata/chat2api.desktop": {
+      "bytes": 300,
+      "sha256": "a3820aa0086588ae0dd5b80943c488111626218eadd488ce593b8ec855180c49"
+    },
+    "afsplug/metadata/usr/share/icons/hicolor/1038x1038/apps/chat2api.png": {
+      "bytes": 1218695,
+      "sha256": "7688ac11fe62f14462474840a2e5395dc010820e59f7d903e8deeb5a02da2457"
+    },
+    "afsplug/metadata-receipt.json": {
+      "bytes": 3740,
+      "sha256": "5c15c3c9efb90faa8d03d89f6ac81d03d3de482d3afe69fc64eea7b3186539c2"
+    },
+    "afsplug/payload-receipt.json": {
+      "bytes": 456,
+      "sha256": "c2e4aedf429e1f95697fc67f487c8407083fe45ccd7eaf67414a9978702325b8"
+    },
+    "afsplug/policy.json": {
+      "bytes": 280,
+      "sha256": "5725559827a0c934a8ab491d588c7bc0eab3a5b9d3bce2f00e1faf0e56226949"
+    },
+    "afsplug/releases.json": {
+      "bytes": 272500,
+      "sha256": "fb30a675605a5472a82f5cff56d2124823f83a5c0952df31dfd2782e1cb65fe0"
+    },
+    "afsplug/repository.json": {
+      "bytes": 5525,
+      "sha256": "e5bb796f3ccfdfda6fe0aede9b8be6668cb0ea9f1cbac8deab12a62f14c45f09"
+    },
+    "afsplug/static.json": {
+      "bytes": 1495,
+      "sha256": "d1f0ab44a85e7dc90da5da768895fba65158fcde4cc5051eb30aadb613ceca4c"
+    },
+    "afsplug/superblock.txt": {
+      "bytes": 503,
+      "sha256": "d59925ff33688066487954156f638b5e0b74513ae023c50de057de24bfe4ed4d"
+    },
+    "ag-repatch/extraction.txt": {
+      "bytes": 196,
+      "sha256": "6b0f09ff1dd62780463649a63c32ef9ba7bed9437434867371da96788decd77f"
+    },
+    "ag-repatch/listing.txt": {
+      "bytes": 53446,
+      "sha256": "cf1a7b89f572854a3a1593b4cd834f244f79ae4061d4801a72f7f92500f50cf3"
+    },
+    "ag-repatch/metadata/.DirIcon": {
+      "symlink": "ag-repatch.png"
+    },
+    "ag-repatch/metadata/AppRun": {
+      "bytes": 108,
+      "sha256": "d27db95fe98905cc12b7aa375bd77cf9d15348d2bc08714246dbe6627b3e650a"
+    },
+    "ag-repatch/metadata/ag-repatch.desktop": {
+      "bytes": 253,
+      "sha256": "943769292ae798629c2cfbc17159a83efafd8639f490675d4380d42c1a83865a"
+    },
+    "ag-repatch/metadata/ag-repatch.png": {
+      "bytes": 34728,
+      "sha256": "f262c32ac5164973072fbc981e282e7b03c2c60f64d5bc5f6b22ae1d7d47a347"
+    },
+    "ag-repatch/metadata-receipt.json": {
+      "bytes": 3709,
+      "sha256": "f58739759816827813485a3f6342c7a6f448d02ba22a28401ae1b50d7d84e4b5"
+    },
+    "ag-repatch/payload-receipt.json": {
+      "bytes": 462,
+      "sha256": "791484f7f8ea4da3cb83219ebee8d62fcf43342d102799ad57e23bc86206b016"
+    },
+    "ag-repatch/policy.json": {
+      "bytes": 288,
+      "sha256": "8cefb206d761ea5b40c0459ce1b39facf877a8be7d2c0a9c43cda52739165849"
+    },
+    "ag-repatch/releases.json": {
+      "bytes": 75409,
+      "sha256": "cb78b83cb72adbcd7ecd3ba0c029086f671e6a53441be979268526314c506bc7"
+    },
+    "ag-repatch/repository.json": {
+      "bytes": 5921,
+      "sha256": "21fca976d14a0e9e02eaff3ce44c30198e82d960c157037bc33700975d7a6e70"
+    },
+    "ag-repatch/static.json": {
+      "bytes": 1346,
+      "sha256": "efe6d79ffc24374f0be1258a773d08d123cc78e67c14880f3a41f4094de33c38"
+    },
+    "ag-repatch/superblock.txt": {
+      "bytes": 565,
+      "sha256": "e6c4854a55a1ca14ede948d9eefe73d12818b328f01df42ae6986052577e437f"
+    },
+    "agaric/extraction.txt": {
+      "bytes": 199,
+      "sha256": "0411bab0bea19a10fbcbcb6345329125c26b48c2da05b5379e74db2aed961ccd"
+    },
+    "agaric/listing.txt": {
+      "bytes": 85531,
+      "sha256": "0e4481155cdf0aa8d235e7df9137f9db7f2acd70cbfd559aef462cc441a5cb3d"
+    },
+    "agaric/metadata/.DirIcon": {
+      "symlink": "Agaric.png"
+    },
+    "agaric/metadata/Agaric.desktop": {
+      "symlink": "usr/share/applications/Agaric.desktop"
+    },
+    "agaric/metadata/Agaric.png": {
+      "bytes": 17033,
+      "sha256": "c325a1c57439aa6ced16660e67832fe584e003cc3a56cda32c672f9668ddfa85"
+    },
+    "agaric/metadata/AppRun": {
+      "bytes": 340,
+      "sha256": "a72802cda52048606985d52d68d4888f0f1d03a5284ccc76bc185bec4e500940"
+    },
+    "agaric/metadata/usr/share/applications/Agaric.desktop": {
+      "bytes": 151,
+      "sha256": "8fb07e6d53b2bda0e1e02b66b2d04fdf5366e4e16491aaccfe0b5724beb3bedf"
+    },
+    "agaric/metadata-receipt.json": {
+      "bytes": 3685,
+      "sha256": "fbe6f25a2bee94b9dad4684536eeea4c2812fc0348023b10a39573ae7dc19cbb"
+    },
+    "agaric/payload-receipt.json": {
+      "bytes": 451,
+      "sha256": "0f215f76be78d1446371ac44e787c0d4e757efe1c10a94ccf5515f1dca0400a4"
+    },
+    "agaric/policy.json": {
+      "bytes": 272,
+      "sha256": "7cb22587d8e41da4537304f2fd87a91789bca9c77560331605c45582ef505836"
+    },
+    "agaric/releases.json": {
+      "bytes": 4394662,
+      "sha256": "44db055a87bd7c1613aac30a5b2b1688da12dda4dd00ab488f62a633a8e26141"
+    },
+    "agaric/repository.json": {
+      "bytes": 5240,
+      "sha256": "4441dea13af732908f1dc2b38499ca384eff04e66d76193237346d17277a27e8"
+    },
+    "agaric/static.json": {
+      "bytes": 1343,
+      "sha256": "eb653f1b0d020c365e7b486076e23700a704bacc6e26a89a47c6b9c08c665549"
+    },
+    "agaric/superblock.txt": {
+      "bytes": 565,
+      "sha256": "60cba9a154af6cd3a86e6838f9c05fe597c88ce07a19555cff2e27e6c4d89666"
+    },
+    "ageha-editor/listing.txt": {
+      "bytes": 40253,
+      "sha256": "caca80ba54ac318044b50be824709ff5fa360e0a9fd626d5aa1f61bfc3ba2772"
+    },
+    "ageha-editor/metadata-receipt.json": {
+      "bytes": 3822,
+      "sha256": "3eab41343fa009f8fd648351e257598d641249711974ee51087ac41008a28513"
+    },
+    "ageha-editor/payload-receipt.json": {
+      "bytes": 470,
+      "sha256": "378bfc9fb313df575a0d6856e5d92b8ef39169fd39b86b8175de7593114eea92"
+    },
+    "ageha-editor/policy.json": {
+      "bytes": 300,
+      "sha256": "568f534718da6f7419a3b98f5203fbf3ffcb0a7e19497ac984b08d78bf186855"
+    },
+    "ageha-editor/releases.json": {
+      "bytes": 113680,
+      "sha256": "c55ce3eb9fdc1cda371dfffd8eff9ceaf96a30b0c492df157b01f611275687cd"
+    },
+    "ageha-editor/repository.json": {
+      "bytes": 5566,
+      "sha256": "59f413cac069da126529b602e99afcea310b6e6baff4a9fc57353facbcbddd3a"
+    },
+    "ageha-editor/static.json": {
+      "bytes": 277,
+      "sha256": "4a7109703ae748c79e8da752e5953c5acbb483e773802b3ea90af59f95b9ceb4"
+    },
+    "ageha-editor/superblock.txt": {
+      "bytes": 567,
+      "sha256": "7d3983ee0b5261e00db89456b3d3db07dbbb9fb2c108e770fa93eb52755e0048"
+    },
+    "agency/listing.txt": {
+      "bytes": 40931,
+      "sha256": "7d36b9cf554053f90604b1e95f8a7985936ecae799ab0ee5fd961eb467533c29"
+    },
+    "agency/metadata-receipt.json": {
+      "bytes": 3689,
+      "sha256": "8f320408afa3e98dea385c26eb7a37cc491da8f1ad73a14575a5e48329e204ed"
+    },
+    "agency/payload-receipt.json": {
+      "bytes": 450,
+      "sha256": "87ef27a298cbb218f645d4555e0e74af23e12650a78318ef044cb8f327c47e1e"
+    },
+    "agency/policy.json": {
+      "bytes": 272,
+      "sha256": "ed3cdc2447838d0a8bb7f1481edf83d50282cfa40e6ae8e7203927db5dc6f7fd"
+    },
+    "agency/releases.json": {
+      "bytes": 105332,
+      "sha256": "49ce2872060eb9962f413c36865ed7e6ef9f4eb170a704c8d57ae01cf11b6ea7"
+    },
+    "agency/repository.json": {
+      "bytes": 6347,
+      "sha256": "73a4e80feadb80c5b4a280162f45942a58eabb93b054aa181e77740804134470"
+    },
+    "agency/static.json": {
+      "bytes": 253,
+      "sha256": "04016dad22b8d2138d4cdf0878e76d2544f474d1f78409faa1cc3c86ac1f8f48"
+    },
+    "agency/superblock.txt": {
+      "bytes": 561,
+      "sha256": "9bc6dc922bf9e2f2007dc51dcd51845dff630113ac547c8dc96f7c92eea54eff"
+    },
+    "agency-agents-app/extraction.txt": {
+      "bytes": 199,
+      "sha256": "0411bab0bea19a10fbcbcb6345329125c26b48c2da05b5379e74db2aed961ccd"
+    },
+    "agency-agents-app/listing.txt": {
+      "bytes": 88191,
+      "sha256": "8212681d7b8f63f0c97ca3396ad51462a3d3f00d610e2611d5001cdeac45c5a6"
+    },
+    "agency-agents-app/metadata/.DirIcon": {
+      "symlink": "Agency Agents.png"
+    },
+    "agency-agents-app/metadata/Agency Agents.desktop": {
+      "symlink": "usr/share/applications/Agency Agents.desktop"
+    },
+    "agency-agents-app/metadata/Agency Agents.png": {
+      "bytes": 34470,
+      "sha256": "ade9c25fec2900655f1fa9d1f809604215e00edea2f40d3c45bc71ebad0b59e0"
+    },
+    "agency-agents-app/metadata/AppRun": {
+      "bytes": 274,
+      "sha256": "eb0b254ac0dae6543e6dd7cd02e1baf40a060de95b927313122d6b46323c00aa"
+    },
+    "agency-agents-app/metadata/usr/share/applications/Agency Agents.desktop": {
+      "bytes": 224,
+      "sha256": "91c101d4f2bfe255eb7395926caf788f06d4024a1a1c37cfe87499d7a51a999b"
+    },
+    "agency-agents-app/metadata-receipt.json": {
+      "bytes": 3738,
+      "sha256": "ee78b3dc007dacb518b458af7fc0343822b38280b38d85b290810e955036bfc3"
+    },
+    "agency-agents-app/payload-receipt.json": {
+      "bytes": 482,
+      "sha256": "d11b284528c9f2502b1f1b17ece101807e8a2a8e7855be2e007f00c7856cc6c2"
+    },
+    "agency-agents-app/policy.json": {
+      "bytes": 314,
+      "sha256": "997ec1c711c62e1ee43e7e966cc30d468fa03e54b04885e36cef2d8a3cf37887"
+    },
+    "agency-agents-app/releases.json": {
+      "bytes": 115228,
+      "sha256": "607d39fdf4f9395201e2bcc89a64a067494014c5cd552e9b84b3b9147f84b533"
+    },
+    "agency-agents-app/repository.json": {
+      "bytes": 6003,
+      "sha256": "9d70447e993094d9d49d85e3ae5392b0019d1176a47085a51e9f3063dcb8a013"
+    },
+    "agency-agents-app/static.json": {
+      "bytes": 1518,
+      "sha256": "7b353cc2af80d4de81f4373eb1b173526ef556c83ee36255ca6c8445f934c874"
+    },
+    "agency-agents-app/superblock.txt": {
+      "bytes": 572,
+      "sha256": "8fd3ebdcf04a4d80f1eb3936e3f4294564c57dd2f0ac9c98e4524dee9f46cbc4"
+    },
+    "agent-arcade/extraction.txt": {
+      "bytes": 199,
+      "sha256": "0411bab0bea19a10fbcbcb6345329125c26b48c2da05b5379e74db2aed961ccd"
+    },
+    "agent-arcade/listing.txt": {
+      "bytes": 132065,
+      "sha256": "f7f876a12687211a88b6f8a1b54cc7603723e5edb6deb18984b31bee7d3bb414"
+    },
+    "agent-arcade/metadata/.DirIcon": {
+      "symlink": "Agent Arcade.png"
+    },
+    "agent-arcade/metadata/Agent Arcade.desktop": {
+      "symlink": "usr/share/applications/Agent Arcade.desktop"
+    },
+    "agent-arcade/metadata/Agent Arcade.png": {
+      "bytes": 45171,
+      "sha256": "ea374204619ab5bba0610b9fc8ebb91bf1ae2d8f36bc23580f9b641bcc776e46"
+    },
+    "agent-arcade/metadata/AppRun": {
+      "bytes": 340,
+      "sha256": "a72802cda52048606985d52d68d4888f0f1d03a5284ccc76bc185bec4e500940"
+    },
+    "agent-arcade/metadata/usr/share/applications/Agent Arcade.desktop": {
+      "bytes": 249,
+      "sha256": "b0321052acb49410cb79308ce80d25d6b1ba49684bdd8de483338d06447a4046"
+    },
+    "agent-arcade/metadata-receipt.json": {
+      "bytes": 3808,
+      "sha256": "6152bbe6ee6957ad1274a71ffaeb4fa9bd8eb29269375f5b364b0b225394c492"
+    },
+    "agent-arcade/payload-receipt.json": {
+      "bytes": 469,
+      "sha256": "638493d2ffd95c419e3f26d1d4d41de6d9c1b11d73086368cefd2dabdb3a56ec"
+    },
+    "agent-arcade/policy.json": {
+      "bytes": 296,
+      "sha256": "4c0cca2d89bfd2a4c1f072cbc40d15e7a55dd579126510414530f0340b974680"
+    },
+    "agent-arcade/releases.json": {
+      "bytes": 484932,
+      "sha256": "5a99b1044638128cd9d5682ebc3529b44ef4bf572458ab77a960cf5edf5baca6"
+    },
+    "agent-arcade/repository.json": {
+      "bytes": 5632,
+      "sha256": "866fb93ebb0d01612c31e8b2f04e3de3d9adb8263a0aa9667e8aa539459126ae"
+    },
+    "agent-arcade/static.json": {
+      "bytes": 1522,
+      "sha256": "08b25fb83672b2bd43a0117b3c5a4855bdf7b1c84c561b20360b57619cca6916"
+    },
+    "agent-arcade/superblock.txt": {
+      "bytes": 572,
+      "sha256": "958c84d4d966bf59354f9f80d0495d5805f53b47fa06f3a4e463a6b8d92a98f3"
+    },
+    "agent-buddy/extraction.txt": {
+      "bytes": 199,
+      "sha256": "97583c2bbdd0c230983c95bd40bcf65362ee25a9fff17fa91c71806e3c5ac88f"
+    },
+    "agent-buddy/listing.txt": {
+      "bytes": 170494,
+      "sha256": "d79524323d9682c1d203f2742f15a67062e3a680e67a48cae10a2a844c41c57f"
+    },
+    "agent-buddy/metadata/.DirIcon": {
+      "symlink": "Agent Buddy.png"
+    },
+    "agent-buddy/metadata/Agent Buddy.desktop": {
+      "symlink": "usr/share/applications/Agent Buddy.desktop"
+    },
+    "agent-buddy/metadata/Agent Buddy.png": {
+      "bytes": 163396,
+      "sha256": "fefc3ad22b56728a1af6d5f0ae73320c02239d4cd40362a6ee2bae1bf851f662"
+    },
+    "agent-buddy/metadata/AppRun": {
+      "bytes": 340,
+      "sha256": "a72802cda52048606985d52d68d4888f0f1d03a5284ccc76bc185bec4e500940"
+    },
+    "agent-buddy/metadata/usr/share/applications/Agent Buddy.desktop": {
+      "bytes": 234,
+      "sha256": "7559f4349e4a2c9b30acd4960cab98651bf6391528586995b418049a53225d92"
+    },
+    "agent-buddy/metadata-receipt.json": {
+      "bytes": 3753,
+      "sha256": "b02d9dbf78926166a5abb6021fabfe42a4d1d18e7462a85664a92a43c2f6032e"
+    },
+    "agent-buddy/payload-receipt.json": {
+      "bytes": 487,
+      "sha256": "b0287185ab1cc18d1192cd91b1f67243bb5c6a6fa0aa0016fe66ae43ae5fb211"
+    },
+    "agent-buddy/policy.json": {
+      "bytes": 334,
+      "sha256": "8fc02afe5072035088a3e4a39b11be1e1e5c6affa618a40c7725951db6fe04a0"
+    },
+    "agent-buddy/releases.json": {
+      "bytes": 790394,
+      "sha256": "a0430f3e969881eb7d3ac7750f068b4d73b4ddd242ea4a991044da56f9d0ce76"
+    },
+    "agent-buddy/repository.json": {
+      "bytes": 5473,
+      "sha256": "f15e0868ac160722b1400129c39b5980a34d43002bb9a345212ec1d90eb3bab9"
+    },
+    "agent-buddy/static.json": {
+      "bytes": 1505,
+      "sha256": "9262ca072dd3ac769e2193a10b4eec2e492c370849c742cd85af2dca4cc8a220"
+    },
+    "agent-buddy/superblock.txt": {
+      "bytes": 571,
+      "sha256": "eeb4265fe21700f1907d724407b6fc7f238fc8458772a6fdab9b34a8aa502a43"
+    },
+    "agent-comm-hub/extraction.txt": {
+      "bytes": 199,
+      "sha256": "813ffaaea73a8804eafb378b81f85460d8b7629399be8dd3dfd4f22181ac85d9"
+    },
+    "agent-comm-hub/listing.txt": {
+      "bytes": 37815,
+      "sha256": "8771ee2ded5d35173f5cb3e80adc2b0e497a976028213f7100e96c7df0b3a707"
+    },
+    "agent-comm-hub/metadata/.DirIcon": {
+      "symlink": "agent-comm-hub-app.png"
+    },
+    "agent-comm-hub/metadata/AppRun": {
+      "bytes": 274,
+      "sha256": "eb0b254ac0dae6543e6dd7cd02e1baf40a060de95b927313122d6b46323c00aa"
+    },
+    "agent-comm-hub/metadata/agent-comm-hub-app.desktop": {
+      "symlink": "usr/share/applications/agent-comm-hub-app.desktop"
+    },
+    "agent-comm-hub/metadata/agent-comm-hub-app.png": {
+      "symlink": "usr/share/icons/hicolor/512x512/apps/agent-comm-hub-app.png"
+    },
+    "agent-comm-hub/metadata/usr/share/applications/agent-comm-hub-app.desktop": {
+      "bytes": 217,
+      "sha256": "7b70c790c43098e510c0307640fb2dc7d3a7a50850f8350439459c5e2b7d8c40"
+    },
+    "agent-comm-hub/metadata/usr/share/icons/hicolor/512x512/apps/agent-comm-hub-app.png": {
+      "bytes": 177027,
+      "sha256": "1a57dc4ed96b56c56ff5e8164730b31d018fc1b24ff88271e3772f7f08e1f498"
+    },
+    "agent-comm-hub/metadata-receipt.json": {
+      "bytes": 3822,
+      "sha256": "81c567e5e199c8cf2d53036d29eb32ab295fe01519524603e8e25cf20b881376"
+    },
+    "agent-comm-hub/payload-receipt.json": {
+      "bytes": 483,
+      "sha256": "59e9ebe3a5385deaf78ec0b40ba9abd0b0d4efd6f8869d43027c65d58004d66e"
+    },
+    "agent-comm-hub/policy.json": {
+      "bytes": 322,
+      "sha256": "7e08bc25af1283ed0c372d61adc4821f08e9b1b27ddc3aec0699a04ca91bf562"
+    },
+    "agent-comm-hub/releases.json": {
+      "bytes": 150337,
+      "sha256": "48a2f1604037062eaab6d84fa3feed00a11e2ff991fc3b30b9acb75f3ddcacf3"
+    },
+    "agent-comm-hub/repository.json": {
+      "bytes": 5794,
+      "sha256": "ba381639c8ee080aa4a02151d57a97543fc7c7a01b3e1afa9a7d7d9f6babeb74"
+    },
+    "agent-comm-hub/static.json": {
+      "bytes": 1799,
+      "sha256": "6aec62645a0b4e3f2e336285c0a1c3305d049239c8371bed17dc980a562adfe9"
+    },
+    "agent-comm-hub/superblock.txt": {
+      "bytes": 569,
+      "sha256": "1a7c441d19101735c3df521bc9ce62f2e59e799b0471cc87552faaa4bdec942c"
+    },
+    "agent-desktop/metadata-receipt.json": {
+      "bytes": 3626,
+      "sha256": "b73a0ec5d23413a07ad450a4aaf1ee3e05eb7ebed405628316f759e765162b0d"
+    },
+    "agent-desktop/releases.json": {
+      "bytes": 523011,
+      "sha256": "a0243ec6aa2894826ebcf9f32896e86650524d3f7b58791826f1b90de9328bb1"
+    },
+    "agent-desktop/repository.json": {
+      "bytes": 5661,
+      "sha256": "d57c90095e025b6b8294ea9f372695292ff104f10db9da49e4e76328dbd33e6c"
+    },
+    "agent-launcher/extraction.txt": {
+      "bytes": 198,
+      "sha256": "19df318bfa69e05fa79739cce0f0c0a782e1d8e2a589be128e7c78109ab824d6"
+    },
+    "agent-launcher/listing.txt": {
+      "bytes": 25001,
+      "sha256": "153a24947fb265a89f47c9199d855934ca9e69756697557be095944644c5db87"
+    },
+    "agent-launcher/metadata/.DirIcon": {
+      "symlink": "usr/share/icons/hicolor/1024x1024/apps/agent-launcher.png"
+    },
+    "agent-launcher/metadata/AppRun": {
+      "bytes": 3489,
+      "sha256": "21e6f1b68c88f83bfb63234479c63ae32576420fbfbf306897df0e6a8485cc4d"
+    },
+    "agent-launcher/metadata/agent-launcher.desktop": {
+      "bytes": 268,
+      "sha256": "fc6366d502390fd1a55b7b98baafde17fa5f2f1b7eb491ab0d91682f01c0fc12"
+    },
+    "agent-launcher/metadata/usr/share/icons/hicolor/1024x1024/apps/agent-launcher.png": {
+      "bytes": 533665,
+      "sha256": "eb272c8d0d3329d6eae61fa5c7fe38f3566227a2d855fea9d47838f32fe7ba1b"
+    },
+    "agent-launcher/metadata-receipt.json": {
+      "bytes": 3790,
+      "sha256": "39c2d25d155842e7d99a95cbae8890a652f3bbaff8645224fd9eba809b66fc19"
+    },
+    "agent-launcher/payload-receipt.json": {
+      "bytes": 484,
+      "sha256": "afb89f2b3cd9bafdd3779fab1a60aad6022660591b6db24ddddeb5cf99684021"
+    },
+    "agent-launcher/policy.json": {
+      "bytes": 322,
+      "sha256": "2efaf4285481687f8af74cdd5e242e3f497761b1a21383e8a145373d63bfbeef"
+    },
+    "agent-launcher/releases.json": {
+      "bytes": 52800,
+      "sha256": "f0d902207bf4e1e5bc12072a2786f79a425d9ec9130967d8bc224eb2432c73e7"
+    },
+    "agent-launcher/repository.json": {
+      "bytes": 6877,
+      "sha256": "afbddc051dd39bc2900173062016907fbcee49e894aea4647ff5376001c71ae3"
+    },
+    "agent-launcher/static.json": {
+      "bytes": 1446,
+      "sha256": "d048b1207b99e774f225913f151588d077d792f6780e8d62e5ff5c3fcb8d5a9c"
+    },
+    "agent-launcher/superblock.txt": {
+      "bytes": 510,
+      "sha256": "9d3a491f74a63830710165d5b2abecedda922d8f8d7efa96559a127542726405"
+    },
+    "agent-loom/metadata-receipt.json": {
+      "bytes": 1667,
+      "sha256": "0cfb538263dc0b5a11f1362ec99df246b84e9203cc4f068f3b6cfbab4d1d67a3"
+    },
+    "agent-loom/releases.json": {
+      "bytes": 80933,
+      "sha256": "de04e5242231c3461e60fec6f785af4b49fa1e31a45d45dfca8b972100df7658"
+    },
+    "agent-loom/repository.json": {
+      "bytes": 5138,
+      "sha256": "de90bbdfe735d05094b938dfded311b5fc12b8eeddf7ffcf5d4d23c570fa1116"
+    },
+    "agent-orchestrator/metadata-receipt.json": {
+      "bytes": 1788,
+      "sha256": "811b8da2a3e404b664531654dafb2a2ff8b11c2e6501397bf633f0658f571693"
+    },
+    "agent-orchestrator/releases.json": {
+      "bytes": 3035550,
+      "sha256": "dafffa68b11a4330b79a9c1634e9512ec8ea17c06bc41d7949cbd00f319de89c"
+    },
+    "agent-orchestrator/repository.json": {
+      "bytes": 7588,
+      "sha256": "e6134b16ea80eccdc469bf52d09a6ce0addefaebffdf8a6ab0591875d8517023"
+    },
+    "agent-os/metadata-receipt.json": {
+      "bytes": 3572,
+      "sha256": "56abb4a0ca8d245af2c640575e5cb8eb21a1ebbbee4f8479c941ef7411e9a583"
+    },
+    "agent-os/releases.json": {
+      "bytes": 2919156,
+      "sha256": "3c2a4079aaefc9f23d5590f7f043d0039ee17c58c31ec5b62b3287d167a3f5d0"
+    },
+    "agent-os/repository.json": {
+      "bytes": 6498,
+      "sha256": "84e1d7ef36e46f9cd20c75515ba039e1aada7a73f2ec408acbb600f3394b303d"
+    },
+    "agent-pulse/extraction.txt": {
+      "bytes": 198,
+      "sha256": "dcbb5f391d8d2ab818662bb47a58d7b21a9f376061badc958fa3d2cdd94eae08"
+    },
+    "agent-pulse/listing.txt": {
+      "bytes": 22403,
+      "sha256": "7cf2b7baeaa490b2eff5307efe1be7fe5513afbe9bdbf40f1a4c15e0819b9869"
+    },
+    "agent-pulse/metadata/.DirIcon": {
+      "symlink": "usr/share/icons/hicolor/512x512/apps/agent-pulse.png"
+    },
+    "agent-pulse/metadata/AppRun": {
+      "bytes": 2352,
+      "sha256": "7989a7513d65cddf88972c12da5d6692d51806513e07e4dcc71397901b4329c6"
+    },
+    "agent-pulse/metadata/agent-pulse.desktop": {
+      "bytes": 186,
+      "sha256": "5d066c4705aac89579dbb550beba6cbcf24ea8a4647e5a090857e9e67ff5f5aa"
+    },
+    "agent-pulse/metadata/usr/share/icons/hicolor/512x512/apps/agent-pulse.png": {
+      "bytes": 246464,
+      "sha256": "56929a4df4ac06e3bbc1e739ebb5c68d61d61f4412cbd81a29f36c4b7f618ca6"
+    },
+    "agent-pulse/metadata-receipt.json": {
+      "bytes": 3760,
+      "sha256": "dfcea86cefcc2cf9e0d1c669d482faa73058179426210514e7d9a7bf2c3ae25f"
+    },
+    "agent-pulse/payload-receipt.json": {
+      "bytes": 464,
+      "sha256": "251592cbd363e88ed22343144c0c5c119db75f7836ec140149a45a14074dbaac"
+    },
+    "agent-pulse/policy.json": {
+      "bytes": 288,
+      "sha256": "a938e62e85ecc406b4c0551bbd8a43ead607bb20bf65ac81157c39a4d9191ff1"
+    },
+    "agent-pulse/releases.json": {
+      "bytes": 246052,
+      "sha256": "8d82ab750ae76e13bee0efb957e61c1f3ae5f80ce71a6a79288bcd7237faeffc"
+    },
+    "agent-pulse/repository.json": {
+      "bytes": 5676,
+      "sha256": "f947e6f296a55704f31a8e31a747e533aca294a401dc90f535992ed2db40458a"
+    },
+    "agent-pulse/static.json": {
+      "bytes": 1333,
+      "sha256": "2b29e154fdd473fc2047884efef4ca6e312bb41e73d24ea5a2ec632873683624"
+    },
+    "agent-pulse/superblock.txt": {
+      "bytes": 507,
+      "sha256": "793db3d082313c61397a26a4030a240acb647530ebe7fd1f54c09e658c52f8af"
+    },
+    "agent-skills/metadata-receipt.json": {
+      "bytes": 3747,
+      "sha256": "dc04bce2b63339c91a11f88a25081e58cf14edf53c9f152c305b696d25ab6ab4"
+    },
+    "agent-skills/releases.json": {
+      "bytes": 107490,
+      "sha256": "4818e6f8dd40a2e4836144d0dfe965046319b97934da7a73d742913b18891f0e"
+    },
+    "agent-skills/repository.json": {
+      "bytes": 5602,
+      "sha256": "a7bfeec3e7b9b2f8fde918d4cd246f06dc2f68d52aab4bb23d978ecb7e620035"
+    },
+    "agent-smith/metadata-receipt.json": {
+      "bytes": 3524,
+      "sha256": "8adde17a7f65064d88f91c569bffcfa6af38673d4326a3b4d7d9804bc30054c8"
+    },
+    "agent-smith/releases.json": {
+      "bytes": 5477,
+      "sha256": "47a0e6f05a2d66a945368e6b67ee787fca6e3c17cbcfdb77aa14feb33737d900"
+    },
+    "agent-smith/repository.json": {
+      "bytes": 5309,
+      "sha256": "0ffd7daa9c3ae8f570c0ce6fc68430156262f968d52684642732708f8feab32b"
+    },
+    "agent-switchboard/metadata-receipt.json": {
+      "bytes": 3830,
+      "sha256": "7eaaa8082288a37bfca64ef3ce2fc4b4a4c06753af70a68780f08c9ac5276d73"
+    },
+    "agent-switchboard/releases.json": {
+      "bytes": 617280,
+      "sha256": "0ee85758ace4a11b23c2e96e6b8320a990426067160e9842d0fbcd0acad198cc"
+    },
+    "agent-switchboard/repository.json": {
+      "bytes": 5886,
+      "sha256": "d540f07db63ba99b8d575b706255e2233e769250363d49341f0b20a5da490997"
+    },
+    "agent-teams-ai/metadata-receipt.json": {
+      "bytes": 3796,
+      "sha256": "83a9695f7f12b8d7203483df3712009fa88928dc33d8976c880a7cbe0bec5238"
+    },
+    "agent-teams-ai/releases.json": {
+      "bytes": 2668512,
+      "sha256": "d0330120a6c39b1689408f66c0b41d2caa10950fa2373d3d911cbf485bbc0319"
+    },
+    "agent-teams-ai/repository.json": {
+      "bytes": 6188,
+      "sha256": "8378ebc1dea32e2836315fc3ee2fc19ccfe3e8c86551729273c0da6a4fb02b46"
+    },
+    "agent-toolkit/metadata-receipt.json": {
+      "bytes": 3870,
+      "sha256": "ef005857d4920587315f8c2dfe52c82ec6acbfb5e8fe3d1b0dce41208d6167e8"
+    },
+    "agent-toolkit/releases.json": {
+      "bytes": 2103641,
+      "sha256": "c90400b603e30bcdaaf3d672e35c5595847d118df598302d1c9b2e70517367fa"
+    },
+    "agent-toolkit/repository.json": {
+      "bytes": 6164,
+      "sha256": "496aea93154b8cd6f75bb4bdcd57c5a1330e6f5084512437599f9044f46840f3"
+    },
+    "scripts/metadata.py": {
+      "bytes": 2098,
+      "sha256": "6b47880507861bb112abfcd698553f7d8937af41cc66cd6b55f5bc54cb6b87b2"
+    },
+    "scripts/prepare.py": {
+      "bytes": 2751,
+      "sha256": "d985fd454f69e94448867ec30191c895978fb055626e5467203e749ab1e0eeb4"
+    },
+    "scripts/acquire.py": {
+      "bytes": 1869,
+      "sha256": "9799fe61addd710d2bfd2fbb6dca3e2e07e08b1db62b44f20639eb331af66e03"
+    },
+    "scripts/static_payload.py": {
+      "bytes": 4710,
+      "sha256": "d1b70a34e6eaec74f4791566be11edb88adade56b1cb5176567d9a566d558ba3"
+    },
+    "scripts/policies.py": {
+      "bytes": 2490,
+      "sha256": "948137d9912c2d59310b0ead1a89d6b71544bc7367197360fe68e19da88f1c37"
+    },
+    "scripts/convert.py": {
+      "bytes": 3745,
+      "sha256": "95bd157a672a5eac7e8234532e3c14219ec72a2fd949003246a8659ee45da4e6"
+    },
+    "scripts/screening.json": {
+      "bytes": 83644,
+      "sha256": "b308bd57e04c8f5bc8f2d5b12623190dfbe6d3cb376bd0565a8a43e4b3f73e93"
+    },
+    "scripts/candidates.json": {
+      "bytes": 28666,
+      "sha256": "9d1912b588ebe30cd34393a3e231acffbfd058d0c63d02808f28ebe313f53f47"
+    },
+    "scripts/tools.txt": {
+      "bytes": 574,
+      "sha256": "b51af2f266d4f670f9c12b0ca8f06852e7587d372c797bb8223896e5d5cfd885"
+    },
+    "scripts/capacity.py": {
+      "bytes": 4066,
+      "sha256": "f84661570fddc01adf9f0df070f63dd4dbb33359028ed1bbe34ff013162a7692"
+    }
+  },
+  "collection_enrollment_changed": true,
+  "total_acquired_payload_bytes": 1424767846,
+  "total_verified_payload_bytes": 1424767846,
+  "policy": "publication descending, release numeric ID descending, asset bytewise name then ID; any channel; retained release set; direct acquisition; URL version; ordinary 48-hour freshness and explicit stale acceptance; literal desktop sandbox flag stripping",
+  "screening": [
+    {
+      "app": "aevum",
+      "requested_repository": "alonera/aevum",
+      "provenance": {
+        "recipe": "programs/x86_64/aevum",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "3f818b587727f1983ab78f0fa878c188b60a67eca5a15970b792de9ea4b535da",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "aevum",
+              "alonera/aevum",
+              "curl -Ls https://api.github.com/repos/alonera/aevum/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "aevum",
+              "alonera/aevum",
+              "curl -Ls https://api.github.com/repos/alonera/aevum/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:01.695332+00:00",
+      "repository_sha256": "05c7b76d0aff21fd0b44309bef84393d5a1d270aa6386b6b5e0c4d429987ad41",
+      "releases_sha256": "7086a7c5c1ca256c0e2eb3a7f20a34f60cb7d30fd1e33ac906e852f0a95e0b8b",
+      "repository_id": 1288679691,
+      "repository": "Alonera/Aevum",
+      "release_count": 8,
+      "selected_release": 384722211,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/Alonera/Aevum/releases/assets/550483765",
+        "id": 550483765,
+        "node_id": "RA_kwDOTM-xC84gz7c1",
+        "name": "Aevum-x86_64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "Alonera",
+          "id": 193606681,
+          "node_id": "U_kgDOC4o0GQ",
+          "avatar_url": "https://avatars.githubusercontent.com/u/193606681?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/Alonera",
+          "html_url": "https://github.com/Alonera",
+          "followers_url": "https://api.github.com/users/Alonera/followers",
+          "following_url": "https://api.github.com/users/Alonera/following{/other_user}",
+          "gists_url": "https://api.github.com/users/Alonera/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/Alonera/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/Alonera/subscriptions",
+          "organizations_url": "https://api.github.com/users/Alonera/orgs",
+          "repos_url": "https://api.github.com/users/Alonera/repos",
+          "events_url": "https://api.github.com/users/Alonera/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/Alonera/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 163432952,
+        "digest": "sha256:519102cf8eb14ad9702bcaa379bb0bdb79f47c5a2d9fdd4b568aeef3676fb8a9",
+        "download_count": 52,
+        "created_at": "2026-09-08T12:44:55Z",
+        "updated_at": "2026-09-08T12:55:48Z",
+        "browser_download_url": "https://github.com/Alonera/Aevum/releases/download/v1.2.7/Aevum-x86_64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/Alonera/Aevum/releases/download/v1.2.7/Aevum-x86_64.AppImage",
+      "pattern": "^Aevum-x86_64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "affinity",
+      "requested_repository": "ryzendew/Linux-Affinity-Installer",
+      "provenance": {
+        "recipe": "programs/x86_64/affinity",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "5e19aecb783a33b05e69d4d48ad4023af41c08767fd01dadaf33a0d7fa051302",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bb53f3180ec92f862020f8bdccef0f6614015bae:templates/AM-SAMPLE-AppImage",
+            "source_sha256": "1049be481f39bdcdcd3ffa348ac94cdbdaaa65cfe1d341940e4b017963344931",
+            "parameters": [
+              "affinity",
+              "ryzendew/Linux-Affinity-Installer",
+              "curl -Ls https://api.github.com/repos/ryzendew/Linux-Affinity-Installer/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "affinity",
+              "ryzendew/Linux-Affinity-Installer",
+              "curl -Ls https://api.github.com/repos/ryzendew/Linux-Affinity-Installer/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:01.695577+00:00",
+      "repository_sha256": "59f15cc5cef9275cbc4e9cb2b96252e057bfda38c2bd9b2b9b78475f83b1976e",
+      "releases_sha256": "a71965958103c406f535c8a11ba81ed8e680b1916761830cb4c2652b3b9b3fec",
+      "repository_id": 855364912,
+      "repository": "ryzendew/Linux-Affinity-Installer",
+      "release_count": 5,
+      "selected_release": 417728677,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/ryzendew/Linux-Affinity-Installer/releases/assets/657383618",
+        "id": 657383618,
+        "node_id": "RA_kwDOMvvVMM4nLuDC",
+        "name": "Affinity-3.3.1.4940-x86_64-optimized.AppImage",
+        "label": null,
+        "uploader": {
+          "login": "ryzendew",
+          "id": 84041391,
+          "node_id": "MDQ6VXNlcjg0MDQxMzkx",
+          "avatar_url": "https://avatars.githubusercontent.com/u/84041391?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/ryzendew",
+          "html_url": "https://github.com/ryzendew",
+          "followers_url": "https://api.github.com/users/ryzendew/followers",
+          "following_url": "https://api.github.com/users/ryzendew/following{/other_user}",
+          "gists_url": "https://api.github.com/users/ryzendew/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/ryzendew/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/ryzendew/subscriptions",
+          "organizations_url": "https://api.github.com/users/ryzendew/orgs",
+          "repos_url": "https://api.github.com/users/ryzendew/repos",
+          "events_url": "https://api.github.com/users/ryzendew/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/ryzendew/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 1187439808,
+        "digest": "sha256:bab79bdd10831864708decced0648da32234b7f54a1d99916c667dd0162144e3",
+        "download_count": 2371,
+        "created_at": "2026-10-19T20:40:59Z",
+        "updated_at": "2026-10-19T20:41:37Z",
+        "browser_download_url": "https://github.com/ryzendew/Linux-Affinity-Installer/releases/download/3.3.1/Affinity-3.3.1.4940-x86_64-optimized.AppImage"
+      },
+      "prerelease": false,
+      "status": "excluded",
+      "reason": "payload above per-file cap"
+    },
+    {
+      "app": "afsplug",
+      "requested_repository": "zhangxianhe666/afsplug",
+      "provenance": {
+        "recipe": "programs/x86_64/afsplug",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "9f4d6ed202cfe0770c660dd5ed054d778cdcb27f9914c07ab444ef11d7caa435",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "afsplug",
+              "zhangxianhe666/afsplug",
+              "curl -Ls https://api.github.com/repos/zhangxianhe666/afsplug/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "afsplug",
+              "zhangxianhe666/afsplug",
+              "curl -Ls https://api.github.com/repos/zhangxianhe666/afsplug/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:01.696487+00:00",
+      "repository_sha256": "e5bb796f3ccfdfda6fe0aede9b8be6668cb0ea9f1cbac8deab12a62f14c45f09",
+      "releases_sha256": "fb30a675605a5472a82f5cff56d2124823f83a5c0952df31dfd2782e1cb65fe0",
+      "repository_id": 1290784521,
+      "repository": "zhangxianhe666/AFSplug",
+      "release_count": 10,
+      "selected_release": 417227338,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/zhangxianhe666/AFSplug/releases/assets/656119990",
+        "id": 656119990,
+        "node_id": "RA_kwDOTO_PCc4nG5i2",
+        "name": "afs-1.7.0-x86_64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 113911132,
+        "digest": "sha256:5a076dfe0f3c8f1337a23dd5a3382bb38852b6fcbe5a2dc5eb0096d21886a790",
+        "download_count": 12,
+        "created_at": "2026-10-19T11:45:11Z",
+        "updated_at": "2026-10-19T11:45:16Z",
+        "browser_download_url": "https://github.com/zhangxianhe666/AFSplug/releases/download/v1.7.0/afs-1.7.0-x86_64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/zhangxianhe666/AFSplug/releases/download/v1.7.0/afs-1.7.0-x86_64.AppImage",
+      "pattern": "^afs-[0-9]+([.][0-9]+)*-x86_64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "ag-repatch",
+      "requested_repository": "etosheartem/ag-repatch",
+      "provenance": {
+        "recipe": "programs/x86_64/ag-repatch",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "a0c0141928187ca079c71b457f02930c8861581910f4c68fbea7b314c3cd7f51",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage",
+            "source_sha256": "5353962fac61f7e0f8d3e949a824700c522c6229c6243ab16e2847a4e71edfa2",
+            "parameters": [
+              "ag-repatch",
+              "etosheartem/ag-repatch",
+              "curl -Ls https://api.github.com/repos/etosheartem/ag-repatch/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "ag-repatch",
+              "etosheartem/ag-repatch",
+              "curl -Ls https://api.github.com/repos/etosheartem/ag-repatch/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:03.080189+00:00",
+      "repository_sha256": "21fca976d14a0e9e02eaff3ce44c30198e82d960c157037bc33700975d7a6e70",
+      "releases_sha256": "cb78b83cb72adbcd7ecd3ba0c029086f671e6a53441be979268526314c506bc7",
+      "repository_id": 1365153976,
+      "repository": "etosheartem/ag-repatch",
+      "release_count": 6,
+      "selected_release": 410056799,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/etosheartem/ag-repatch/releases/assets/632339461",
+        "id": 632339461,
+        "node_id": "RA_kwDOUV6YuM4lsLwF",
+        "name": "ag-repatch-linux-x64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/vnd.appimage",
+        "state": "uploaded",
+        "size": 78797304,
+        "digest": "sha256:34035e1d25f4528bd4e372074b3e616a8d3272c123d44b9ebd16417c8507229c",
+        "download_count": 18,
+        "created_at": "2026-10-12T01:47:27Z",
+        "updated_at": "2026-10-12T01:47:31Z",
+        "browser_download_url": "https://github.com/etosheartem/ag-repatch/releases/download/v2.1.2/ag-repatch-linux-x64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/etosheartem/ag-repatch/releases/download/v2.1.2/ag-repatch-linux-x64.AppImage",
+      "pattern": "^ag-repatch-linux-x64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "agaric",
+      "requested_repository": "jfolcini/agaric",
+      "provenance": {
+        "recipe": "programs/x86_64/agaric",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "cd8e203fc209d384cea05a6601af1e1f973a25c0bde093336e4bc4f24d3ae49f",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agaric",
+              "jfolcini/agaric",
+              "curl -Ls https://api.github.com/repos/jfolcini/agaric/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "agaric",
+              "jfolcini/agaric",
+              "curl -Ls https://api.github.com/repos/jfolcini/agaric/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:03.176067+00:00",
+      "repository_sha256": "4441dea13af732908f1dc2b38499ca384eff04e66d76193237346d17277a27e8",
+      "releases_sha256": "44db055a87bd7c1613aac30a5b2b1688da12dda4dd00ab488f62a633a8e26141",
+      "repository_id": 1220744390,
+      "repository": "jfolcini/agaric",
+      "release_count": 71,
+      "selected_release": 429986010,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/jfolcini/agaric/releases/assets/695713196",
+        "id": 695713196,
+        "node_id": "RA_kwDOSMMUxs4pd72s",
+        "name": "Agaric_0.22.0_amd64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/vnd.appimage",
+        "state": "uploaded",
+        "size": 113199608,
+        "digest": "sha256:3ef68e4708d060259b204d6ac6c98ef20a2450326d5df56bfce5b2bc42334b4f",
+        "download_count": 4,
+        "created_at": "2026-10-31T15:19:08Z",
+        "updated_at": "2026-10-31T15:19:12Z",
+        "browser_download_url": "https://github.com/jfolcini/agaric/releases/download/0.22.0/Agaric_0.22.0_amd64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/jfolcini/agaric/releases/download/0.22.0/Agaric_0.22.0_amd64.AppImage",
+      "pattern": "^Agaric_[0-9]+([.][0-9]+)*_amd64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "ageha-editor",
+      "requested_repository": "itsuki-maru/ageha-editor",
+      "provenance": {
+        "recipe": "programs/x86_64/ageha-editor",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "35d45b481816dadbf3ffe15657181b5fd081b05ad5d4ee1948811612d0142652",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "ageha-editor",
+              "itsuki-maru/ageha-editor",
+              "curl -Ls https://api.github.com/repos/itsuki-maru/ageha-editor/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "ageha-editor",
+              "itsuki-maru/ageha-editor",
+              "curl -Ls https://api.github.com/repos/itsuki-maru/ageha-editor/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:03.245594+00:00",
+      "repository_sha256": "59f413cac069da126529b602e99afcea310b6e6baff4a9fc57353facbcbddd3a",
+      "releases_sha256": "c55ce3eb9fdc1cda371dfffd8eff9ceaf96a30b0c492df157b01f611275687cd",
+      "repository_id": 1016549971,
+      "repository": "itsuki-maru/Ageha-Editor",
+      "release_count": 9,
+      "selected_release": 436028725,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/itsuki-maru/Ageha-Editor/releases/assets/715608899",
+        "id": 715608899,
+        "node_id": "RA_kwDOPJdSU84qp1ND",
+        "name": "Ageha.Editor_0.6.0_amd64.AppImage",
+        "label": "Ageha Editor_0.6.0_amd64.AppImage",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 92771520,
+        "digest": "sha256:1b3cfd999d163caf61a95850b5268b075b49ef27ff7bf700e2659738fcaa56ed",
+        "download_count": 1,
+        "created_at": "2026-11-06T02:23:45Z",
+        "updated_at": "2026-11-06T02:23:50Z",
+        "browser_download_url": "https://github.com/itsuki-maru/Ageha-Editor/releases/download/v0.6.0/Ageha.Editor_0.6.0_amd64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/itsuki-maru/Ageha-Editor/releases/download/v0.6.0/Ageha.Editor_0.6.0_amd64.AppImage",
+      "pattern": "^Ageha[.]Editor_[0-9]+([.][0-9]+)*_amd64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "agency",
+      "requested_repository": "tennnisai/agency",
+      "provenance": {
+        "recipe": "programs/x86_64/agency",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "d022d043ef5f4af1fa1f51d3a0dee251256f8142cc693e634ae94cff38d61faa",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agency",
+              "tennnisai/agency",
+              "curl -Ls https://api.github.com/repos/tennnisai/agency/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "agency",
+              "tennnisai/agency",
+              "curl -Ls https://api.github.com/repos/tennnisai/agency/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:04.362082+00:00",
+      "repository_sha256": "73a4e80feadb80c5b4a280162f45942a58eabb93b054aa181e77740804134470",
+      "releases_sha256": "49ce2872060eb9962f413c36865ed7e6ef9f4eb170a704c8d57ae01cf11b6ea7",
+      "repository_id": 1359152102,
+      "repository": "TennnisAI/Agency",
+      "release_count": 7,
+      "selected_release": 418616088,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/TennnisAI/Agency/releases/assets/659839074",
+        "id": 659839074,
+        "node_id": "RA_kwDOUQMD5s4nVFhi",
+        "name": "Agency_0.2.5_amd64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 90622456,
+        "digest": "sha256:222432fc0ab64054718e1c45f2bf1947a6061a2bd92e73a309dae192d6821889",
+        "download_count": 8,
+        "created_at": "2026-10-20T16:22:10Z",
+        "updated_at": "2026-10-20T16:22:14Z",
+        "browser_download_url": "https://github.com/TennnisAI/Agency/releases/download/v0.2.5/Agency_0.2.5_amd64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/TennnisAI/Agency/releases/download/v0.2.5/Agency_0.2.5_amd64.AppImage",
+      "pattern": "^Agency_[0-9]+([.][0-9]+)*_amd64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "agency-agents-app",
+      "requested_repository": "msitarzewski/agency-agents-app",
+      "provenance": {
+        "recipe": "programs/x86_64/agency-agents-app",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "fad3b084adfd7ffc4bed054f670f726ae22056e81d77b87d7c15823720d1cfcc",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agency-agents-app",
+              "msitarzewski/agency-agents-app",
+              "curl -Ls https://api.github.com/repos/msitarzewski/agency-agents-app/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "agency-agents-app",
+              "msitarzewski/agency-agents-app",
+              "curl -Ls https://api.github.com/repos/msitarzewski/agency-agents-app/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:04.525887+00:00",
+      "repository_sha256": "9d70447e993094d9d49d85e3ae5392b0019d1176a47085a51e9f3063dcb8a013",
+      "releases_sha256": "607d39fdf4f9395201e2bcc89a64a067494014c5cd552e9b84b3b9147f84b533",
+      "repository_id": 1262882328,
+      "repository": "msitarzewski/agency-agents-app",
+      "release_count": 6,
+      "selected_release": 402574877,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/msitarzewski/agency-agents-app/releases/assets/608053664",
+        "id": 608053664,
+        "node_id": "RA_kwDOS0YOGM4kPimg",
+        "name": "Agency_Agents_0.3.2_amd64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "msitarzewski",
+          "id": 1972242,
+          "node_id": "MDQ6VXNlcjE5NzIyNDI=",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1972242?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/msitarzewski",
+          "html_url": "https://github.com/msitarzewski",
+          "followers_url": "https://api.github.com/users/msitarzewski/followers",
+          "following_url": "https://api.github.com/users/msitarzewski/following{/other_user}",
+          "gists_url": "https://api.github.com/users/msitarzewski/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/msitarzewski/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/msitarzewski/subscriptions",
+          "organizations_url": "https://api.github.com/users/msitarzewski/orgs",
+          "repos_url": "https://api.github.com/users/msitarzewski/repos",
+          "events_url": "https://api.github.com/users/msitarzewski/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/msitarzewski/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 88820216,
+        "digest": "sha256:14b53ecaffde8b3bf3622665bf5dff62626f9f77d21f1cdeb347d4e250f686b2",
+        "download_count": 525,
+        "created_at": "2026-10-03T15:37:28Z",
+        "updated_at": "2026-10-03T15:37:30Z",
+        "browser_download_url": "https://github.com/msitarzewski/agency-agents-app/releases/download/v0.3.2/Agency_Agents_0.3.2_amd64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/msitarzewski/agency-agents-app/releases/download/v0.3.2/Agency_Agents_0.3.2_amd64.AppImage",
+      "pattern": "^Agency_Agents_[0-9]+([.][0-9]+)*_amd64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "agent-arcade",
+      "requested_repository": "danwahlin/agent-arcade",
+      "provenance": {
+        "recipe": "programs/x86_64/agent-arcade",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "607475960c18748296cf980264bafe49e032ed7590f49446a8bb27f4294f21ba",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agent-arcade",
+              "danwahlin/agent-arcade",
+              "curl -Ls https://api.github.com/repos/danwahlin/agent-arcade/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "agent-arcade",
+              "danwahlin/agent-arcade",
+              "curl -Ls https://api.github.com/repos/danwahlin/agent-arcade/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:05.756430+00:00",
+      "repository_sha256": "866fb93ebb0d01612c31e8b2f04e3de3d9adb8263a0aa9667e8aa539459126ae",
+      "releases_sha256": "5a99b1044638128cd9d5682ebc3529b44ef4bf572458ab77a960cf5edf5baca6",
+      "repository_id": 1213992071,
+      "repository": "DanWahlin/agent-arcade",
+      "release_count": 16,
+      "selected_release": 417975630,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/DanWahlin/agent-arcade/releases/assets/658172901",
+        "id": 658172901,
+        "node_id": "RA_kwDOSFwMh84nOuvl",
+        "name": "Agent.Arcade_0.6.4_amd64.AppImage",
+        "label": "Agent Arcade_0.6.4_amd64.AppImage",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 163686904,
+        "digest": "sha256:9098ea2ba06d1c782705e74fc6f7c1219554946040965e3e6f20041ac3d5f19b",
+        "download_count": 8,
+        "created_at": "2026-10-20T03:39:44Z",
+        "updated_at": "2026-10-20T03:39:52Z",
+        "browser_download_url": "https://github.com/DanWahlin/agent-arcade/releases/download/v0.6.4/Agent.Arcade_0.6.4_amd64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/DanWahlin/agent-arcade/releases/download/v0.6.4/Agent.Arcade_0.6.4_amd64.AppImage",
+      "pattern": "^Agent[.]Arcade_[0-9]+([.][0-9]+)*_amd64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "agent-buddy",
+      "requested_repository": "danwahlin/agent-buddy",
+      "provenance": {
+        "recipe": "programs/x86_64/agent-buddy",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "686a92ebdf09a81e910b64a4ba6d11db3b33a2794d9cf5f1202a52f2b56acb64",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage",
+            "source_sha256": "5353962fac61f7e0f8d3e949a824700c522c6229c6243ab16e2847a4e71edfa2",
+            "parameters": [
+              "agent-buddy",
+              "danwahlin/agent-buddy",
+              "curl -Ls https://api.github.com/repos/danwahlin/agent-buddy/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "agent-buddy",
+              "danwahlin/agent-buddy",
+              "curl -Ls https://api.github.com/repos/danwahlin/agent-buddy/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:05.831831+00:00",
+      "repository_sha256": "f15e0868ac160722b1400129c39b5980a34d43002bb9a345212ec1d90eb3bab9",
+      "releases_sha256": "a0430f3e969881eb7d3ac7750f068b4d73b4ddd242ea4a991044da56f9d0ce76",
+      "repository_id": 1365556684,
+      "repository": "DanWahlin/agent-buddy",
+      "release_count": 44,
+      "selected_release": 434642650,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/DanWahlin/agent-buddy/releases/assets/711540246",
+        "id": 711540246,
+        "node_id": "RA_kwDOUWS9zM4qaT4W",
+        "name": "agent-companion-desktop-0.18.1-linux-x86_64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 158280184,
+        "digest": "sha256:3eb0e51bec95e4c35bf94b118e47bff7d8f4eee54a69895e0d095189825cafc2",
+        "download_count": 4,
+        "created_at": "2026-11-05T01:01:29Z",
+        "updated_at": "2026-11-05T01:01:35Z",
+        "browser_download_url": "https://github.com/DanWahlin/agent-buddy/releases/download/v0.18.1/agent-companion-desktop-0.18.1-linux-x86_64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/DanWahlin/agent-buddy/releases/download/v0.18.1/agent-companion-desktop-0.18.1-linux-x86_64.AppImage",
+      "pattern": "^agent-companion-desktop-[0-9]+([.][0-9]+)*-linux-x86_64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "agent-comm-hub",
+      "requested_repository": "jochenyang/agent-comm-hub",
+      "provenance": {
+        "recipe": "programs/x86_64/agent-comm-hub",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "1df98174139550754183eb5b41ac2160709b766b8e7e119486b3ae6767e05420",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agent-comm-hub",
+              "jochenyang/agent-comm-hub",
+              "curl -Ls https://api.github.com/repos/jochenyang/agent-comm-hub/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "agent-comm-hub",
+              "jochenyang/agent-comm-hub",
+              "curl -Ls https://api.github.com/repos/jochenyang/agent-comm-hub/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:06.514950+00:00",
+      "repository_sha256": "ba381639c8ee080aa4a02151d57a97543fc7c7a01b3e1afa9a7d7d9f6babeb74",
+      "releases_sha256": "48a2f1604037062eaab6d84fa3feed00a11e2ff991fc3b30b9acb75f3ddcacf3",
+      "repository_id": 1333821463,
+      "repository": "JochenYang/agent-comm-hub",
+      "release_count": 28,
+      "selected_release": 427571746,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/JochenYang/agent-comm-hub/releases/assets/687738393",
+        "id": 687738393,
+        "node_id": "RA_kwDOT4CAF84o_g4Z",
+        "name": "agent-comm-hub-app_1.7.0_amd64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 82782712,
+        "digest": "sha256:658260cba4537b8dbcfed7e795fccadf81ea4301f40dd135bc810dc7a812e160",
+        "download_count": 2,
+        "created_at": "2026-10-29T07:31:51Z",
+        "updated_at": "2026-10-29T07:31:54Z",
+        "browser_download_url": "https://github.com/JochenYang/agent-comm-hub/releases/download/app-v1.7.0/agent-comm-hub-app_1.7.0_amd64.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/JochenYang/agent-comm-hub/releases/download/app-v1.7.0/agent-comm-hub-app_1.7.0_amd64.AppImage",
+      "pattern": "^agent-comm-hub-app_[0-9]+([.][0-9]+)*_amd64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "agent-desktop",
+      "requested_repository": "balaurent/agent-desktop",
+      "provenance": {
+        "recipe": "programs/x86_64/agent-desktop",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "ebe88da0e35672612d7d878043e2868f545f0a533eca98dc92e11f1b635cad94",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agent-desktop",
+              "balaurent/agent-desktop",
+              "curl -Ls https://api.github.com/repos/balaurent/agent-desktop/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "agent-desktop",
+              "balaurent/agent-desktop",
+              "curl -Ls https://api.github.com/repos/balaurent/agent-desktop/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:07.330039+00:00",
+      "repository_sha256": "d57c90095e025b6b8294ea9f372695292ff104f10db9da49e4e76328dbd33e6c",
+      "releases_sha256": "a0243ec6aa2894826ebcf9f32896e86650524d3f7b58791826f1b90de9328bb1",
+      "repository_id": 1153091152,
+      "repository": "BaLaurent/agent-desktop",
+      "release_count": 28,
+      "selected_release": 339608686,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/BaLaurent/agent-desktop/releases/assets/448252086",
+        "id": 448252086,
+        "node_id": "RA_kwDORLrGUM4at8i2",
+        "name": "agent-desktop-0.18.0-x86_64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "BaLaurent",
+          "id": 27644308,
+          "node_id": "MDQ6VXNlcjI3NjQ0MzA4",
+          "avatar_url": "https://avatars.githubusercontent.com/u/27644308?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/BaLaurent",
+          "html_url": "https://github.com/BaLaurent",
+          "followers_url": "https://api.github.com/users/BaLaurent/followers",
+          "following_url": "https://api.github.com/users/BaLaurent/following{/other_user}",
+          "gists_url": "https://api.github.com/users/BaLaurent/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/BaLaurent/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/BaLaurent/subscriptions",
+          "organizations_url": "https://api.github.com/users/BaLaurent/orgs",
+          "repos_url": "https://api.github.com/users/BaLaurent/repos",
+          "events_url": "https://api.github.com/users/BaLaurent/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/BaLaurent/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 459930891,
+        "digest": "sha256:aa2734a271e2e07090b46e8d10044579a07e50214e5a9dd4c807a8dcc4538c35",
+        "download_count": 58,
+        "created_at": "2026-06-15T14:30:02Z",
+        "updated_at": "2026-06-15T14:38:27Z",
+        "browser_download_url": "https://github.com/BaLaurent/agent-desktop/releases/download/v0.18.0/agent-desktop-0.18.0-x86_64.AppImage"
+      },
+      "prerelease": false,
+      "status": "excluded",
+      "reason": "payload above per-file cap"
+    },
+    {
+      "app": "agent-launcher",
+      "requested_repository": "agent-launch/agent-launcher",
+      "provenance": {
+        "recipe": "programs/x86_64/agent-launcher",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "904332917cecd5863d58d3ebfc5a3a1b4915e117856561dfe120aefa0359168b",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agent-launcher",
+              "agent-launch/agent-launcher",
+              "curl -Ls https://api.github.com/repos/agent-launch/agent-launcher/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "agent-launcher",
+              "agent-launch/agent-launcher",
+              "curl -Ls https://api.github.com/repos/agent-launch/agent-launcher/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:07.393631+00:00",
+      "repository_sha256": "afbddc051dd39bc2900173062016907fbcee49e894aea4647ff5376001c71ae3",
+      "releases_sha256": "f0d902207bf4e1e5bc12072a2786f79a425d9ec9130967d8bc224eb2432c73e7",
+      "repository_id": 1364985464,
+      "repository": "agent-launch/agent-launcher",
+      "release_count": 2,
+      "selected_release": 390519562,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/agent-launch/agent-launcher/releases/assets/569747734",
+        "id": 569747734,
+        "node_id": "RA_kwDOUVwGeM4h9akW",
+        "name": "AgentLauncher-0.1.1-linux-x86_64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 139881831,
+        "digest": "sha256:abfe61d76e287f4b5e6bd34456dd07d7a8aa451e043a5bb45d63ee73fe33debd",
+        "download_count": 43,
+        "created_at": "2026-09-17T07:47:26Z",
+        "updated_at": "2026-09-17T07:47:35Z",
+        "browser_download_url": "https://github.com/agent-launch/agent-launcher/releases/download/v0.1.1/AgentLauncher-0.1.1-linux-x86_64.AppImage"
+      },
+      "prerelease": true,
+      "status": "selected",
+      "old_selected_url": "https://github.com/agent-launch/agent-launcher/releases/download/v0.1.1/AgentLauncher-0.1.1-linux-x86_64.AppImage",
+      "pattern": "^AgentLauncher-[0-9]+([.][0-9]+)*-linux-x86_64[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "agent-loom",
+      "requested_repository": "alpha-coders/agent-loom",
+      "provenance": {
+        "recipe": "programs/x86_64/agent-loom",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "6a7c3fec49d73dd2f47d7e1a75608f15680a34c4af99fba856b6ae2a5536e252",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage",
+            "source_sha256": "5353962fac61f7e0f8d3e949a824700c522c6229c6243ab16e2847a4e71edfa2",
+            "parameters": [
+              "agent-loom",
+              "alpha-coders/agent-loom",
+              "curl -Ls https://api.github.com/repos/alpha-coders/agent-loom/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "agent-loom",
+              "alpha-coders/agent-loom",
+              "curl -Ls https://api.github.com/repos/alpha-coders/agent-loom/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:07.954414+00:00",
+      "repository_sha256": "de90bbdfe735d05094b938dfded311b5fc12b8eeddf7ffcf5d4d23c570fa1116",
+      "releases_sha256": "de04e5242231c3461e60fec6f785af4b49fa1e31a45d45dfca8b972100df7658",
+      "status": "excluded",
+      "reason": "repository redirect needs review"
+    },
+    {
+      "app": "agent-orchestrator",
+      "requested_repository": "untrivial-ai/agent-orchestrator",
+      "provenance": {
+        "recipe": "programs/x86_64/agent-orchestrator",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "e68c772d1c2c1a235f5128f8bda99a43f3647980c34a74047944b05ad78baa8c",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agent-orchestrator",
+              "untrivial-ai/agent-orchestrator",
+              "curl -Ls https://api.github.com/repos/untrivial-ai/agent-orchestrator/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "agent-orchestrator",
+              "untrivial-ai/agent-orchestrator",
+              "curl -Ls https://api.github.com/repos/untrivial-ai/agent-orchestrator/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:08.713631+00:00",
+      "repository_sha256": "e6134b16ea80eccdc469bf52d09a6ce0addefaebffdf8a6ab0591875d8517023",
+      "releases_sha256": "dafffa68b11a4330b79a9c1634e9512ec8ea17c06bc41d7949cbd00f319de89c",
+      "status": "excluded",
+      "reason": "repository redirect needs review"
+    },
+    {
+      "app": "agent-os",
+      "requested_repository": "desirecore/agent-os",
+      "provenance": {
+        "recipe": "programs/x86_64/agent-os",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "be5de065e36cb21345fb036b5c6f55e539df2a92dbfec7884ea66b23ae2c5d16",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agent-os",
+              "desirecore/agent-os",
+              "curl -Ls https://api.github.com/repos/desirecore/agent-os/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "agent-os",
+              "desirecore/agent-os",
+              "curl -Ls https://api.github.com/repos/desirecore/agent-os/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:09.021112+00:00",
+      "repository_sha256": "84e1d7ef36e46f9cd20c75515ba039e1aada7a73f2ec408acbb600f3394b303d",
+      "releases_sha256": "3c2a4079aaefc9f23d5590f7f043d0039ee17c58c31ec5b62b3287d167a3f5d0",
+      "repository_id": 1174926103,
+      "repository": "desirecore/agent-os",
+      "release_count": 100,
+      "selected_release": 434819502,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/desirecore/agent-os/releases/assets/712881890",
+        "id": 712881890,
+        "node_id": "RA_kwDORgfzF84qfbbi",
+        "name": "DesireCore_x86_64_10.0.200.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "yi-ge",
+          "id": 6657330,
+          "node_id": "MDQ6VXNlcjY2NTczMzA=",
+          "avatar_url": "https://avatars.githubusercontent.com/u/6657330?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/yi-ge",
+          "html_url": "https://github.com/yi-ge",
+          "followers_url": "https://api.github.com/users/yi-ge/followers",
+          "following_url": "https://api.github.com/users/yi-ge/following{/other_user}",
+          "gists_url": "https://api.github.com/users/yi-ge/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/yi-ge/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/yi-ge/subscriptions",
+          "organizations_url": "https://api.github.com/users/yi-ge/orgs",
+          "repos_url": "https://api.github.com/users/yi-ge/repos",
+          "events_url": "https://api.github.com/users/yi-ge/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/yi-ge/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/vnd.appimage",
+        "state": "uploaded",
+        "size": 862809444,
+        "digest": "sha256:514b0956d8ccab69f6167a73f1da07d12644089eb2da68d52165c310a69ab3d6",
+        "download_count": 0,
+        "created_at": "2026-11-05T09:47:20Z",
+        "updated_at": "2026-11-05T09:55:29Z",
+        "browser_download_url": "https://github.com/desirecore/agent-os/releases/download/v10.0.200/DesireCore_x86_64_10.0.200.AppImage"
+      },
+      "prerelease": false,
+      "status": "excluded",
+      "reason": "payload above per-file cap"
+    },
+    {
+      "app": "agent-pulse",
+      "requested_repository": "dipen-dedania/agent-pulse",
+      "provenance": {
+        "recipe": "programs/x86_64/agent-pulse",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "b271382a46eb8bc3f4b0606710108f967ca1c99287846feac466ba30b0ee9fe7",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agent-pulse",
+              "dipen-dedania/agent-pulse",
+              "curl -Ls https://api.github.com/repos/dipen-dedania/agent-pulse/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "agent-pulse",
+              "dipen-dedania/agent-pulse",
+              "curl -Ls https://api.github.com/repos/dipen-dedania/agent-pulse/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:09.943077+00:00",
+      "repository_sha256": "f947e6f296a55704f31a8e31a747e533aca294a401dc90f535992ed2db40458a",
+      "releases_sha256": "8d82ab750ae76e13bee0efb957e61c1f3ae5f80ce71a6a79288bcd7237faeffc",
+      "repository_id": 1211202862,
+      "repository": "Dipen-Dedania/agent-pulse",
+      "release_count": 14,
+      "selected_release": 403662007,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/Dipen-Dedania/agent-pulse/releases/assets/612437755",
+        "id": 612437755,
+        "node_id": "RA_kwDOSDF9Ls4kgQ77",
+        "name": "Agent.Pulse-1.4.0.AppImage",
+        "label": "Agent Pulse-1.4.0.AppImage",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 138581027,
+        "digest": "sha256:f1a4fbb8e7d380a209ae33ef478dacc34eae52e66f21d722174e300fe8d7b833",
+        "download_count": 27,
+        "created_at": "2026-10-05T11:56:09Z",
+        "updated_at": "2026-10-05T11:56:15Z",
+        "browser_download_url": "https://github.com/Dipen-Dedania/agent-pulse/releases/download/v1.4.0/Agent.Pulse-1.4.0.AppImage"
+      },
+      "prerelease": false,
+      "status": "selected",
+      "old_selected_url": "https://github.com/Dipen-Dedania/agent-pulse/releases/download/v1.4.0/Agent.Pulse-1.4.0.AppImage",
+      "pattern": "^Agent[.]Pulse-[0-9]+([.][0-9]+)*[.]AppImage$",
+      "strip_no_sandbox": true
+    },
+    {
+      "app": "agent-skills",
+      "requested_repository": "chrlsio/agent-skills",
+      "provenance": {
+        "recipe": "programs/x86_64/agent-skills",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "a4f25b4d40ff1660dbad92028ee870f3a09ffc9d837587efb82148b168461cb7",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agent-skills",
+              "chrlsio/agent-skills",
+              "curl -Ls https://api.github.com/repos/chrlsio/agent-skills/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "agent-skills",
+              "chrlsio/agent-skills",
+              "curl -Ls https://api.github.com/repos/chrlsio/agent-skills/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:11.352374+00:00",
+      "repository_sha256": "a7bfeec3e7b9b2f8fde918d4cd246f06dc2f68d52aab4bb23d978ecb7e620035",
+      "releases_sha256": "4818e6f8dd40a2e4836144d0dfe965046319b97934da7a73d742913b18891f0e",
+      "repository_id": 1184157221,
+      "repository": "chrlsio/agent-skills",
+      "release_count": 7,
+      "selected_release": 306450511,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/chrlsio/agent-skills/releases/assets/391425017",
+        "id": 391425017,
+        "node_id": "RA_kwDORpTOJc4XVKv5",
+        "name": "AgentSkills_0.1.8_amd64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/zip",
+        "state": "uploaded",
+        "size": 88885752,
+        "digest": "sha256:637d94b49181a89a08d8321d188c1cf3208974d55e40f01335680ab86a4561b5",
+        "download_count": 52,
+        "created_at": "2026-04-08T08:18:09Z",
+        "updated_at": "2026-04-08T08:18:12Z",
+        "browser_download_url": "https://github.com/chrlsio/agent-skills/releases/download/v0.1.8/AgentSkills_0.1.8_amd64.AppImage"
+      },
+      "prerelease": false,
+      "status": "metadata-ready"
+    },
+    {
+      "app": "agent-smith",
+      "requested_repository": "ghostwrk/agent-smith",
+      "provenance": {
+        "recipe": "programs/x86_64/agent-smith",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "518fd8d9245b68b7f222b004e5a7bac477c59c3cd52c358239035842951c1def",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agent-smith",
+              "ghostwrk/agent-smith",
+              "curl -Ls https://api.github.com/repos/ghostwrk/agent-smith/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
+              "agent-smith",
+              "ghostwrk/agent-smith",
+              "curl -Ls https://api.github.com/repos/ghostwrk/agent-smith/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:11.775306+00:00",
+      "repository_sha256": "0ffd7daa9c3ae8f570c0ce6fc68430156262f968d52684642732708f8feab32b",
+      "releases_sha256": "47a0e6f05a2d66a945368e6b67ee787fca6e3c17cbcfdb77aa14feb33737d900",
+      "repository_id": 1279766252,
+      "repository": "GhostWrk/Agent-Smith",
+      "release_count": 1,
+      "selected_release": 345238040,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/GhostWrk/Agent-Smith/releases/assets/467365804",
+        "id": 467365804,
+        "node_id": "RA_kwDOTEeu7M4b22-s",
+        "name": "agent-smith-47.3.0.AppImage",
+        "label": null,
+        "uploader": {
+          "login": "GhostWrk",
+          "id": 212288559,
+          "node_id": "U_kgDODKdELw",
+          "avatar_url": "https://avatars.githubusercontent.com/u/212288559?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/GhostWrk",
+          "html_url": "https://github.com/GhostWrk",
+          "followers_url": "https://api.github.com/users/GhostWrk/followers",
+          "following_url": "https://api.github.com/users/GhostWrk/following{/other_user}",
+          "gists_url": "https://api.github.com/users/GhostWrk/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/GhostWrk/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/GhostWrk/subscriptions",
+          "organizations_url": "https://api.github.com/users/GhostWrk/orgs",
+          "repos_url": "https://api.github.com/users/GhostWrk/repos",
+          "events_url": "https://api.github.com/users/GhostWrk/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/GhostWrk/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/octet-stream",
+        "state": "uploaded",
+        "size": 143286756,
+        "digest": "sha256:2ca9da131c52486bb53b1b13636ca7d4ea6189aa9288beb7ccf4aadf5bddb27f",
+        "download_count": 20,
+        "created_at": "2026-07-05T19:04:25Z",
+        "updated_at": "2026-07-05T19:04:53Z",
+        "browser_download_url": "https://github.com/GhostWrk/Agent-Smith/releases/download/v46.11.0/agent-smith-47.3.0.AppImage"
+      },
+      "prerelease": false,
+      "status": "metadata-ready"
+    },
+    {
+      "app": "agent-switchboard",
+      "requested_repository": "y4nkk/agent-switchboard",
+      "provenance": {
+        "recipe": "programs/x86_64/agent-switchboard",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "03a8dcb3d3f092980126b8ac1459660a33ecd4b4cabc99e67018d6bc27e2cb03",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agent-switchboard",
+              "y4nkk/agent-switchboard",
+              "curl -Ls https://api.github.com/repos/y4nkk/agent-switchboard/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "agent-switchboard",
+              "y4nkk/agent-switchboard",
+              "curl -Ls https://api.github.com/repos/y4nkk/agent-switchboard/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:11.891482+00:00",
+      "repository_sha256": "d540f07db63ba99b8d575b706255e2233e769250363d49341f0b20a5da490997",
+      "releases_sha256": "0ee85758ace4a11b23c2e96e6b8320a990426067160e9842d0fbcd0acad198cc",
+      "repository_id": 1347012905,
+      "repository": "y4Nkk/agent-switchboard",
+      "release_count": 25,
+      "selected_release": 433724644,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/y4Nkk/agent-switchboard/releases/assets/708927296",
+        "id": 708927296,
+        "node_id": "RA_kwDOUEnJKc4qQV9A",
+        "name": "agent-switchboard_0.3.14_linux-x86_64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/vnd.appimage",
+        "state": "uploaded",
+        "size": 106158584,
+        "digest": "sha256:a85b0828319b62907d97ded5308ae1f442691adab5e5408b247f12e887008377",
+        "download_count": 1,
+        "created_at": "2026-11-04T09:14:00Z",
+        "updated_at": "2026-11-04T09:14:06Z",
+        "browser_download_url": "https://github.com/y4Nkk/agent-switchboard/releases/download/v0.3.14/agent-switchboard_0.3.14_linux-x86_64.AppImage"
+      },
+      "prerelease": false,
+      "status": "metadata-ready"
+    },
+    {
+      "app": "agent-teams-ai",
+      "requested_repository": "777genius/agent-teams-ai",
+      "provenance": {
+        "recipe": "programs/x86_64/agent-teams-ai",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "44ceeede96ccb9e4570887c5b0ca81789a732654c67ab9b1f9fdc49ca6218056",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agent-teams-ai",
+              "777genius/agent-teams-ai",
+              "curl -Ls https://api.github.com/repos/777genius/agent-teams-ai/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "agent-teams-ai",
+              "777genius/agent-teams-ai",
+              "curl -Ls https://api.github.com/repos/777genius/agent-teams-ai/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:12.608581+00:00",
+      "repository_sha256": "8378ebc1dea32e2836315fc3ee2fc19ccfe3e8c86551729273c0da6a4fb02b46",
+      "releases_sha256": "d0330120a6c39b1689408f66c0b41d2caa10950fa2373d3d911cbf485bbc0319",
+      "repository_id": 1163183284,
+      "repository": "777genius/agent-teams-ai",
+      "release_count": 34,
+      "selected_release": 434615982,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/777genius/agent-teams-ai/releases/assets/711578314",
+        "id": 711578314,
+        "node_id": "RA_kwDORVTEtM4qadLK",
+        "name": "Agent.Teams.AI-2.18.6.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/vnd.appimage",
+        "state": "uploaded",
+        "size": 401896934,
+        "digest": "sha256:06a2a00b7b25bf59db3d8f8fca3c22973910513c2a75a1d70e91e941cac58012",
+        "download_count": 100,
+        "created_at": "2026-11-05T01:16:34Z",
+        "updated_at": "2026-11-05T01:16:52Z",
+        "browser_download_url": "https://github.com/777genius/agent-teams-ai/releases/download/v2.18.6/Agent.Teams.AI-2.18.6.AppImage"
+      },
+      "prerelease": false,
+      "status": "metadata-ready"
+    },
+    {
+      "app": "agent-toolkit",
+      "requested_repository": "ulises-jeremias/agent-toolkit",
+      "provenance": {
+        "recipe": "programs/x86_64/agent-toolkit",
+        "source_commit": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22",
+        "source_sha256": "422cd9c94d5e725718610867f5784d7d2811a305f209123b62ee47a13fccf195",
+        "migration_action": "review_runtime_policy",
+        "status": "instance",
+        "matches": [
+          {
+            "template": "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22:templates/AM-SAMPLE-AppImage-in-archive",
+            "source_sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+            "parameters": [
+              "agent-toolkit",
+              "ulises-jeremias/agent-toolkit",
+              "curl -Ls https://api.github.com/repos/ulises-jeremias/agent-toolkit/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1",
+              "agent-toolkit",
+              "ulises-jeremias/agent-toolkit",
+              "curl -Ls https://api.github.com/repos/ulises-jeremias/agent-toolkit/releases | sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | grep -i \"appimage$\" | head -1"
+            ],
+            "parameter_review": [],
+            "status": "instance",
+            "compatibility": "unassessed"
+          }
+        ],
+        "templates_checked": 25,
+        "compatibility": "unassessed"
+      },
+      "observed_at": "2026-11-06T03:54:12.951112+00:00",
+      "repository_sha256": "496aea93154b8cd6f75bb4bdcd57c5a1330e6f5084512437599f9044f46840f3",
+      "releases_sha256": "c90400b603e30bcdaaf3d672e35c5595847d118df598302d1c9b2e70517367fa",
+      "repository_id": 1322501176,
+      "repository": "ulises-jeremias/agent-toolkit",
+      "release_count": 84,
+      "selected_release": 423252861,
+      "selected_asset": {
+        "url": "https://api.github.com/repos/ulises-jeremias/agent-toolkit/releases/assets/674550702",
+        "id": 674550702,
+        "node_id": "RA_kwDOTtPEOM4oNNOu",
+        "name": "agent-toolkit-desktop-1.48.0-linux-x86_64.AppImage",
+        "label": "",
+        "uploader": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "content_type": "application/vnd.appimage",
+        "state": "uploaded",
+        "size": 141739556,
+        "digest": "sha256:c852a47e437ea65cabb2cda8528921ed028147ab107c85437f5c84f1ce4405ce",
+        "download_count": 3,
+        "created_at": "2026-10-25T08:51:55Z",
+        "updated_at": "2026-10-25T08:52:03Z",
+        "browser_download_url": "https://github.com/ulises-jeremias/agent-toolkit/releases/download/v1.48.0/agent-toolkit-desktop-1.48.0-linux-x86_64.AppImage"
+      },
+      "prerelease": false,
+      "status": "metadata-ready"
+    }
+  ],
+  "collection_scope_local": {
+    "recipes": 53,
+    "repositories": 51
+  },
+  "production_scope_unchanged": {
+    "recipes": 43,
+    "repositories": 41,
+    "catalog_pin": "daf47edb2b382bc6b7df832b00c43fae12bb73d2"
+  },
+  "scope_note": "Local source conversion and enrollment preparation only; no remote push, publication, installed or live change."
+}

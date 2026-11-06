@@ -94,3 +94,13 @@ maintained declaration/selector policies or collection enrollment. Already-short
 fork declarations are not upstream-template instances; use the explicit `render`
 interface to compare their upstream meaning rather than treating a layout
 nonmatch as evidence of custom shell logic.
+
+
+Saved-batch enrollment tests use one replay implementation with a receipt name
+and the pinned former enrollment Git revision. They read the original collection
+list from `b61eb2733441d2dd5f998f350ce32a3da1ebc2f9` and
+`10a4c03eca229434a346fb3e3303f19621484a80`; those objects must be available for
+local tests. The normal current-workflow test follows the complete present
+configuration. [Ticket 135](../../docs/track/release-catalog/issues/135-prepare-next-ten-existing-recipes.md)
+prepares local 53-recipe/51-source enrollment; production remains the published
+43/41 scope until a separately authorized push and publication.

@@ -42,9 +42,11 @@ def closed_commands(directory):
 
 
 class LargeBatch(unittest.TestCase):
+    receipt_path = RECEIPT
+
     @classmethod
     def setUpClass(cls):
-        cls.receipt = json.loads(RECEIPT.read_text())
+        cls.receipt = json.loads(cls.receipt_path.read_text())
         archive = RESEARCH / cls.receipt['evidence_archive']
         if sha256(archive.read_bytes()) != cls.receipt['evidence_archive_sha256']:
             raise AssertionError('batch evidence archive digest mismatch')

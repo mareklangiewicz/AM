@@ -1,6 +1,12 @@
 # Single-user YAML catalog operation
 
-The collection list contains 43 recipe identities in
+Local ticket [135](track/release-catalog/issues/135-prepare-next-ten-existing-recipes.md)
+prepares ten additional recipes: the local collection list is now 53 recipes /
+51 numeric sources, pending a separate push/publication decision. The deployed
+production scope described below remains 43/41; no live state changed in 135.
+
+
+The published collection contains 43 recipe identities from
 `tools/catalog-collector/collection-recipes.txt` (41 numeric repository identities).
 November 6 manual run [42156336747](https://github.com/mareklangiewicz/AM/actions/runs/42156336747)
 at source `743dbf139` publishes catalog

@@ -156,3 +156,9 @@ AppImage/AppRun bytes. The evidence and source declarations do not enroll these
 apps for collection; production catalog availability is a separate gate. See the
 [batch report](../../docs/track/release-catalog/research/large-batch-conversion.md)
 for policy changes, exclusions and verification limits.
+
+
+The [next ten-recipe batch](../../docs/track/release-catalog/research/next-ten-conversion.md)
+reuses that verification through `LargeBatch.receipt_path` and a small subclass;
+there is one lifecycle/selector implementation for both evidence receipts. Its
+local collection preparation is separate from the prior published 43/41 result.

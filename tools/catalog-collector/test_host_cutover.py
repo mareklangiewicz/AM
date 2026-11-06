@@ -23,9 +23,10 @@ NAMES = dict(zip(
      'zellij-x86_64-unknown-linux-musl.tar.gz','zmx-1.0-linux-x86_64.tar.gz','nvim-linux-x86_64.appimage',
      'nvim-linux-x86_64.appimage','Obsidian-1.0.AppImage','Sunshine_1.0_x86_64.AppImage']))
 NAMES.update({'20x':'20x-linux-x86_64.AppImage', '2fac':'2FAC_0.1.6_amd64.AppImage'})
-BATCH = json.loads((ROOT/'docs/track/release-catalog/research/large-batch-evidence.json').read_text())
-NAMES.update({row['app']: row['selected_asset']['name'] for row in BATCH['candidates']
-              if row['app'] in BATCH['converted']})
+for receipt_name in ('large-batch-evidence.json', 'next-ten-evidence.json'):
+    batch = json.loads((ROOT/'docs/track/release-catalog/research'/receipt_name).read_text())
+    NAMES.update({row['app']:row['selected_asset']['name'] for row in batch['candidates']
+                  if row['app'] in batch['converted']})
 NOW='2026-11-04T12:00:00Z'
 
 class HostCutover(unittest.TestCase):

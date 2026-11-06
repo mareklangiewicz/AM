@@ -1,4 +1,4 @@
-"""Actual configured collection and exact-parent publication from saved pages."""
+"""Pinned batch collection and exact-parent publication from saved pages."""
 import contextlib
 import hashlib
 import io
@@ -18,18 +18,34 @@ from yaml_publication import load_local, publish_local, schema_url
 
 
 class LargeBatchEnrollment(unittest.TestCase):
-    def test_configured_collection_preserves_baseline_and_publishes_twenty_saved_sources(self):
+    receipt_name = 'large-batch-evidence.json'
+    baseline_revision = 'b61eb2733441d2dd5f998f350ce32a3da1ebc2f9'
+
+    def test_configured_collection_preserves_baseline_and_publishes_saved_batch(self):
         research = host_catalog.ROOT/'docs/track/release-catalog/research'
-        receipt = json.loads((research/'large-batch-evidence.json').read_text())
+        receipt = json.loads((research/self.receipt_name).read_text())
         archive = research/receipt['evidence_archive']
         self.assertEqual(hashlib.sha256(archive.read_bytes()).hexdigest(),
                          receipt['evidence_archive_sha256'])
         candidates = {r['app']:r for r in receipt['candidates']
                       if r['app'] in receipt['converted']}
-        rows, sources = host_catalog.configuration()
-        self.assertEqual((len(rows), len(sources)), (43, 41))
-        old_rows = [r for r in rows if r['app'] not in candidates]
-        self.assertEqual((len(old_rows), len({r['repository_id'] for r in old_rows})), (23, 21))
+        configured, _ = host_catalog.configuration()
+        old_list = subprocess.check_output(['git','-C',str(host_catalog.ROOT),'show',
+            self.baseline_revision+':tools/catalog-collector/collection-recipes.txt'],text=True)
+        old_names = {line for line in old_list.splitlines() if line and not line.startswith('#')}
+        new_names = {'x86_64/'+app for app in candidates}
+        self.assertTrue(old_names.isdisjoint(new_names))
+        wanted = old_names | new_names
+        self.assertTrue(wanted <= {r['recipe'] for r in configured})
+        # Retain each batch's exact historical scope as future batches are added.
+        rows = [r for r in configured if r['recipe'] in wanted]
+        sources = {str(r['repository_id']):r['repository'] for r in rows}
+        old_rows = [r for r in rows if r['recipe'] in old_names]
+        old_ids = {r['repository_id'] for r in old_rows}
+        new_ids = {r['repository_id'] for r in rows if r['recipe'] in new_names}
+        self.assertEqual(len(new_ids),len(candidates))
+        self.assertTrue(old_ids.isdisjoint(new_ids))
+        self.assertEqual(len(rows),len(wanted))
         schema = schema_url('a'*40)
         stamp = '2026-11-06T00:00:00Z'
         with tempfile.TemporaryDirectory(prefix='large-enrollment-') as temporary:
@@ -54,13 +70,14 @@ class LargeBatchEnrollment(unittest.TestCase):
                     self.assertEqual(hashlib.sha256(body).hexdigest(), row['releases_sha256'])
                     (evidence/(rid+'-releases.json')).write_bytes(body)
                     (evidence/(rid+'-receipt.txt')).write_text(row['observed_at'][:19]+'Z')
-            with patch('urllib.request.urlopen',side_effect=AssertionError('network')), \
+            with patch.object(host_catalog,'configuration',return_value=(rows,sources)), \
+                    patch('urllib.request.urlopen',side_effect=AssertionError('network')), \
                     contextlib.redirect_stdout(io.StringIO()):
                 tree, report = host_catalog.collect('a'*40,prior,evidence)
             pin = publish_tree(repo,tree,parent)
             apps, repositories = load_local(repo,pin,max_file_bytes=host_catalog.FILE_CAP)
             self.assertEqual(apps,{r['app']:r['repository_id'] for r in rows})
-            self.assertEqual(len(report),41)
+            self.assertEqual(len(report),len(sources))
             self.assertEqual({rid:repositories[rid] for rid in prior},prior)
             self.assertEqual(load_local(repo,parent,max_file_bytes=host_catalog.FILE_CAP)[0],
                              {r['app']:r['repository_id'] for r in old_rows})
@@ -86,6 +103,7 @@ class LargeBatchEnrollment(unittest.TestCase):
             # A malformed newly enrolled source must not advance the exact parent.
             broken = str(next(iter(candidates.values()))['repository_id'])
             (evidence/(broken+'-releases.json')).write_text('[invalid')
-            with contextlib.redirect_stdout(io.StringIO()),self.assertRaises(ValueError):
+            with patch.object(host_catalog,'configuration',return_value=(rows,sources)), \
+                    contextlib.redirect_stdout(io.StringIO()),self.assertRaises(ValueError):
                 host_catalog.collect('a'*40,repositories,evidence)
             self.assertEqual(git(repo,'rev-parse','refs/heads/catalog').decode().strip(),pin)
