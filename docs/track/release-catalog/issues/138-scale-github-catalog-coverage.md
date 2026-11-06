@@ -27,6 +27,14 @@ Acceptance: reproducible verified coverage inventory, bounded collector checks,
 measured preflight at proposed scope, exact-parent publication rehearsal and a
 concrete push/publication package. No installed-host changes implied.
 
+## Migration workflow steering
+
+Catalog enrollment remains independent of recipe migration. For subsequent recipe
+batches, use [family validation and bulk exact-instance translation](../../../../tools/recipe-reconstruction/README.md#current-migration-workflow--family-validation-then-bulk-translation),
+recorded in [141](141-record-family-level-migration-workflow.md). Routine per-app
+payload downloads, static inspection and lifecycle checks are superseded; known
+exceptions and uncovered family behavior still need focused assessment.
+
 ## Initial API constraint check — November 6, 2026
 
 GitHub documents a primary limit of 1,000 requests/hour/repository for the

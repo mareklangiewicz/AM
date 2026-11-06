@@ -87,9 +87,48 @@ recipes during an upstream merge. No recipes, collection lists, registries or
 installed files are written. Summary counts are evidence, not converted apps.
 
 Template recognition does not infer repository numeric identity, catalog channel
-or asset patterns. Conversion must separately review selection/order, direct
+or asset patterns. The translation must account for selection/order, direct
 acquisition versus appimageupdatetool, replacement/backups, desktop behavior and
-host-specific launchers. There is no automatic conversion approval.
+host-specific launchers at the family boundary described below.
+
+## Current migration workflow — family validation, then bulk translation
+
+Marek's November 6 direction supersedes routine per-app payload and lifecycle
+gates in older tickets and reports. Catalog all GitHub-backed apps first;
+catalog-only enrollment does not depend on recipe conversion. Trust matching
+upstream recipes as the baseline. This is an explicit trust assumption; upstream's
+actual per-app review practices have not been investigated.
+
+1. Establish the translation once per pinned template/selector family and target
+   runtime behavior. Record the upstream template/generator identities, relevant
+   shared-runtime revision, literal parameter constraints, focused executable
+   evidence and known behavior differences with their accepted treatment. Whole
+   text reconstruction proves source accounting, not runtime equivalence. Reuse
+   existing assessments and tests where they cover the same contract; identify
+   uncovered differences before calling a family validated.
+2. Migrate exact instances of that validated contract in bulk. Check current
+   before-image hashes, complete reconstruction, installer/updater agreement and
+   preserve literal selector, desktop, sandbox and launcher settings. Use verified
+   repository identities and the established selection policy; do not silently
+   generalize parameters or infer a different package layout. Keep a compact batch
+   manifest linking each path/hash, family evidence and resulting declaration.
+3. Run focused batch checks for exact source matching, declaration compilation,
+   preserved settings and app/source enrollment consistency. Reuse saved metadata
+   where useful. Do not routinely download app payloads, inspect each filesystem
+   or run each recipe's inert lifecycle. Run the relevant full regressions when
+   shared recognition, selection or runtime mechanics change.
+4. Inspect custom logic, ambiguous matches, unsupported literal settings and
+   behavior differences individually. Leave exceptions unchanged while advancing
+   exact matches. Preserve known exclusions (including build-host icon links)
+   until a focused assessment resolves them; the faster policy does not erase
+   observed incompatibilities.
+
+The [candidate assessment](../../docs/track/release-catalog/research/three-candidate-runtime-assessment.md)
+and retained batch tests below supply reusable evidence, with explicit limitations;
+this workflow does not declare every recognized template family validated.
+Revalidate the affected contract when upstream templates/generators or shared
+mechanics change. Source migration, catalog publication and installed-host refresh
+remain separate operations; pushing still needs Marek's call.
 
 ## Existing short-recipe expansion
 
@@ -145,10 +184,10 @@ layouts never silently replace an old family's meaning. Upstream's interactive
 `am -t` is documented in `docs/guides-and-tutorials/template.md`; it is not run.
 
 
-## Twenty-recipe retained batch evidence
+## Historical twenty-recipe retained batch evidence
 
 Ticket [133](../../docs/track/release-catalog/issues/133-prepare-large-existing-recipe-batch.md)
-adds twenty source conversions with static payload gates and a portable evidence
+records twenty source conversions under the earlier static payload gates and a portable evidence
 archive. `test_large_batch.py` replays exact originals, full saved release-page
 selectors on three awk implementations and actual converted recipes with authored
 inert extractors plus saved desktop/icon data. It never executes downloaded

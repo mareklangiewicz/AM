@@ -22,6 +22,13 @@ source migrations; Agent Skills remains catalog-only after an icon-link exclusio
 [140](issues/140-publish-bounded-catalog-expansion.md) is the concrete push/publication
 package, pending Marek's call. Published scope remains 54/52; installed host is unchanged.
 
+[141 resolved](issues/141-record-family-level-migration-workflow.md) records Marek's
+faster workflow: validate translation once per pinned family, migrate exact matches
+in bulk preserving literal settings, and inspect exceptions individually. Routine
+per-app payload inspection and lifecycle checks in historical reports are no longer
+the next-batch policy. Existing evidence is reusable, not blanket family approval.
+Catalog-first coverage remains the priority; 140 still awaits the push/publication call.
+
 ## Maintained upstream recipe reconstruction
 
 Prior deployed recipe-migration result: [136 resolved](issues/136-publish-next-ten-and-refresh-live-policy.md)

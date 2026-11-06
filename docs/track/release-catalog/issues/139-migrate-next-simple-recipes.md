@@ -24,6 +24,15 @@ policies; compile source policy and verify the real saved selectors. Source push
 catalog publication and installed-host policy refresh remain distinct operations.
 No app installation or host refresh is implied by this recipe-source task.
 
+## Workflow update after completion
+
+The per-app payload/selector/lifecycle requirements above record this completed
+batch's earlier procedure. Marek subsequently chose family-level translation
+validation followed by bulk exact-instance migrations, preserving literal settings
+and inspecting exceptions individually. See the [current workflow](../../../../tools/recipe-reconstruction/README.md#current-migration-workflow--family-validation-then-bulk-translation)
+and [141](141-record-family-level-migration-workflow.md). Existing evidence and known
+exclusions remain valid; these older gates are not prerequisites for future batches.
+
 ## Local result
 
 Four recipes converted: **agent-smith, agent-switchboard, agent-teams-ai and
