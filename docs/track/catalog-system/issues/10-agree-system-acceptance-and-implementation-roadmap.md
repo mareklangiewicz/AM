@@ -2,7 +2,8 @@
 
 Type: grilling
 Label: wayfinder:grilling
-Status: open
+Status: claimed
+Assignee: codex-roadmap
 Blocked by: 02, 03, 04, 05, 06, 07, 08, 09, ../../catalog-pages/issues/04-agree-delivery-and-acceptance.md
 
 ## Question
@@ -101,3 +102,111 @@ The two-runs-daily direction and stop-on-quota policy must not be combined with 
 unsupported promise that all thousands refresh within one short job. Any needed
 cadence/pacing-policy change is an explicit material choice for the final review,
 not a silently invented credential entitlement or a new storage backend.
+
+## Final system-target proposal — November 8, 2026
+
+Pending Marek's decision. Browser 04 is now resolved; all prerequisites for this
+final planning decision are accepted. Earlier blocked/pending notes above are
+chronological. The five-slice prepared sequence remains the proposed route; do
+not create implementation tickets until this final decision is accepted.
+
+### Proposed supported workload and refresh objective
+
+Use **5,000 apps and up to 5,000 distinct numeric sources** as the initial
+representative scale target, not an enrollment ceiling. Include the saved real
+500-source cohort with preserved provenance and deterministic synthetic expansion
+for local processing, separately labelled. Exercise 32-plus-stable, rolling-tag
+replacement and the largest supported release/asset/document cases; do not
+manufacture a thousand-source live qualification from duplicated observations.
+Support ordinary full-catalog work without predictable internal cap failures.
+
+Propose **every healthy enrolled source successfully refreshed within 12 hours**
+under the documented ordinary quota and the recorded representative workload.
+This concerns requested one-page source-scope observation, not full upstream
+history or freshness of every unfetched retained release. Upstream/rate/service
+failure or dropped schedules must remain visible exceptions, not fabricated
+success. Track app/source coverage and actual observations, not only attempt age.
+
+To make that objective feasible without a new credential/service, recommend
+**hourly quota-aware oldest-first collection batches**, sized using measured
+transport/CPU/Git costs and live documented quota reserves. This explicitly
+supersedes the earlier twice-daily scheduled-run target if accepted. Retain one
+active collection, manual dispatch, later-run retries, stop-on-auth/403/429 and
+no in-run retry/sleep/journal service. A source batch is intentional requested
+scope, not a falsely labelled full-catalog update; full-refresh coverage is reached
+only when the whole enrolled population has fresh successful source observations.
+Ordinary internal limits must fit each supported scope with headroom; normal
+batching does not authorize unexpected cap stops or silently skipped sources.
+
+At the documented ordinary 1,000-request/hour allowance and the existing reserve,
+thousands of one-request sources cannot all fit in one short acquisition window.
+The saved real 500-source run also received 341,439,276 response bytes, so total
+full-refresh transfer and per-job request count must both be planned. This is
+historical density evidence, not a claim that every future source has that cost.
+Actual headers may guide safe pacing, but an observed 5,000 allowance is not the
+capacity planning premise. Hourly batches avoid a long-running wait/recovery
+mechanism and reuse the maintained oldest-first schedule. If representative
+measurements cannot meet 12 hours with the actual quota/host, stop scale rollout
+and bring the concrete failed resource assumption back for review; do not claim
+qualification or silently reduce scope.
+
+At hourly cadence, the accepted 64-summary/8-detail counts ordinarily cover
+roughly 64 hours and 8 hours, not the earlier twice-daily illustrations; actual
+reported coverage remains explicit. Keep those accepted counts unless a later
+retention decision changes them. The 90 daily records remain daily. Account for
+increased publication opportunities/history churn in the horizon below rather
+than claiming the cadence change is free.
+
+### Proposed headroom and history acceptance
+
+For configurable internal request/byte/time/document/file/object safeguards,
+choose initial values from measured representative normal work with **at least
+25% unused allowance** at the measured peak, also considering normal source/asset
+variation. This is an engineering sizing margin, not another cap against the
+workload. Where host/service hard bounds prevent that margin, reduce per-job scope
+or improve processing and verify the full 12-hour objective still holds; changing
+normal coverage/refresh guarantees requires an explicit decision. Peak RSS must
+be measured for the collector/publisher and included in the recorded runner-memory
+profile rather than assigned an unsupported arbitrary ceiling.
+
+Plan **12 months of catalog and status Git-history growth** at the proposed hourly
+cadence, including temporary dual-format publication, observation timestamp churn,
+64/8/90 current-status retention and realistic stated release/asset change ranges.
+Preserve existing history. The seed-plus-three rehearsal is a behavior/short-run
+measurement; combine it with saved real observations where available and separately
+label synthetic scenarios/annual projections. Do not call the projection a
+12-month test or remote server-storage measurement. Report uncompressed tree,
+local/fetched objects and consistently packed reachable history separately.
+
+Set warning/review points from that projection early enough to leave the 25%
+margin and time to improve processing/packing/settings. A warning does not halt
+normal supported updates, erase history or authorize a new backend. A measured
+host/service hard limit still stops unsafe publication and preserves last-good
+facts. If the projected normal workload would hit a safeguard inside the horizon,
+fix the implementation/settings or bring the measured constraint to the final
+rollout review; do not accept routine stopping as the design.
+
+### Final route and acceptance
+
+After acceptance, create only five implementation tickets from the prepared table:
+contracts/readers/interface; incremental publisher/final health; main-owned browser;
+scale/compatibility/rollback rehearsal; exact rollout package. The first two form
+the small end-to-end slice; browser work consumes them, and shared rehearsal then
+feeds the concrete rollout package. Split further only for an observed independent
+need. Each ticket gets exact dependencies, behavior fixtures and necessary checks;
+reuse passing unchanged-input evidence instead of repeating historical suites.
+
+Include the full named semantic, failure, pin/race, schema, source isolation,
+quota/redirect, reporting-gap, retained-observation, dual-format, actual-browser
+and educational checks already owned by the accepted decisions. Interruption may
+lose unpublished work; test simple rerun and last-good preservation rather than
+resurrecting a checkpoint service. Final acceptance records actual results and
+remaining limitations before explicit push/publication/Pages authorization.
+Installed-host delivery stays separately scoped. This proposal authorizes no
+implementation, acquisition, enrollment, production setting or remote mutation.
+
+Decision requested: accept the five-slice route, 5,000-app/source reference target,
+12-hour healthy-source refresh objective with hourly quota-aware batches, 25%
+measured headroom and 12-month history planning horizon. The schedule change is
+the material amendment; ordinary profile values and fixture mechanics follow
+measurements without another sequence of small approval rounds.

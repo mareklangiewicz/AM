@@ -117,7 +117,12 @@ keeps AM/channel identities separate, searches names globally and release/assets
 within the opened source with explicit scope, and exposes all retained assets
 progressively with bounded/partial history labels. New description/logo acquisition
 is optional follow-up; use verified available metadata or names/initials/upstream
-links. Browser delivery and measured acceptance remain a separate decision.
+links. The [accepted browser delivery targets](../catalog-pages/issues/04-agree-delivery-and-acceptance.md#answer--november-8-2026)
+select explicit refresh/same-pin retries, 150 ms search/view response, 1 second
+directory and 500 ms detail processing after bytes arrive, 5 second cold-directory
+loading on the specified test profile, WCAG 2.2 AA as the accessibility target and
+actual desktop/mobile/fetch/keyboard checks. These targets still need measurement;
+no actual browser conformance or performance acceptance is claimed.
 Maintain Vim-like navigation alongside native keyboard operation.
 
 Offer progressive explanations of upstream source → observed release →

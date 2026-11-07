@@ -2,13 +2,34 @@
 
 Type: grilling
 Label: wayfinder:grilling
-Status: claimed
+Status: resolved
 Assignee: codex-browser-delivery
 Blocked by: 01, 02, 03, 05, ../../catalog-system/issues/02-choose-contextual-education-and-health-navigation.md, ../../catalog-system/issues/03-choose-public-yaml-contracts-and-revision-consistency.md, ../../catalog-system/issues/06-choose-evidence-bound-recipe-classification-and-provenance.md, ../../catalog-system/issues/08-choose-truthful-health-summaries-and-bounded-statistics.md
 
 ## Question
 
 Given the research and accepted experience, what architecture, refresh/recovery behavior, accessibility/performance criteria and implementation milestones make the route ready to execute? Resolve with Marek; specify the separate publication authorization boundary.
+
+## Answer — November 8, 2026
+
+Marek accepted the prepared delivery/acceptance package with “Ok.” Explicit
+snapshot refresh, pin/path cache identity, same-pin retries, navigation restoration
+and truthful failure/confirmation-lag behavior below are selected. Use its named
+saved/synthetic/large-source fixtures and recorded reference profile to test:
+150 ms search/view updates, 1 second directory processing and 500 ms source-detail
+processing after required bytes arrive, and 5 second cold usable-directory loading
+on the specified 10 Mbit/s / 100 ms test network. These are engineering targets,
+not achieved results or third-party network guarantees.
+
+Target applicable WCAG 2.2 AA requirements, native/Vim keyboard operation and the
+actual desktop/mobile/browser, accessibility, fetch/CORS, pin/race and educational
+checks below. The proposal's initial pending wording records its earlier status.
+Implementation must establish results with scoped evidence; no browser test,
+code change, remote deployment or accessibility conformance claim occurs here.
+
+Main-source migration/rollback follows the accepted system cutover. This supplies
+the browser acceptance input to system ticket 10, which owns the consolidated
+implementation roadmap. No separate system implementation route is introduced.
 
 ## Standing direction
 

@@ -120,11 +120,11 @@ branches are not merged or pushed automatically (home push guidance applies).
 
 ## Not yet specified
 
-System decisions 02–09 are resolved. The remaining route to final roadmap readiness
-is the existing browser experience review and browser delivery/acceptance decision,
-then ticket 10's measurable system targets and implementation slices. Preserve the
-browser ticket's claim and all three prototypes; no layout verdict or actual
-browser acceptance follows from these system decisions.
+System decisions 02–09 and browser experience/delivery decisions are resolved.
+The remaining planning work is ticket 10's system capacity/refresh/history targets
+and consolidated implementation slices. Preserve all three prototypes. Browser
+product acceptance is recorded in its own tickets; actual execution/performance/
+accessibility evidence is still required during implementation.
 
 Detailed field names, wire examples and executable schemas implement the accepted
 public, provenance and health contracts. Do not invent a parallel browser model.

@@ -21,8 +21,9 @@ GitHub Pages catalog browser, with no unresolved decisions before implementation
 November 8, 2026: Marek selected A (directory) as the default while keeping B
 (split-pane explorer) and C (release desk) selectable. The existing claimed
 [browser review](issues/03-review-browser-experience.md#accepted-default-view--november-8-2026)
-records the default and accepted first-release experience; actual browser
-verification and delivery acceptance remain outstanding.
+records the default and accepted first-release experience. Delivery targets are
+now accepted in ticket 04; actual browser verification and delivery evidence remain
+outstanding.
 
 Planning with an explicitly authorized public prototype deployment on November 6,
 2026; this does not accept a final design. Live preview: https://mareklangiewicz.pl/AM/ .
@@ -60,12 +61,14 @@ AM pushes and publication remain subject to Marek's separate approval.
 
 - [Choose the catalog browsing experience](issues/03-review-browser-experience.md#answer--november-8-2026): accepted A default with B/C selectable, separate app/channel identities, scoped lazy search/detail, bounded retained history/all assets, and optional verified enrichment with fallbacks.
 
+- [Agree the implementation route and acceptance criteria](issues/04-agree-delivery-and-acceptance.md#answer--november-8-2026): accepted explicit refresh/error behavior, measured processing/loading targets, WCAG 2.2 AA target and real desktop/mobile/keyboard/fetch checks; execution evidence remains required. System ticket 10 owns the shared implementation roadmap.
+
 ## Not yet specified
 
-Operational recovery and stale-site behavior once snapshot delivery is chosen.
-Performance targets and acceptance checks after data/UI approaches are concrete.
-Accessibility details, release grouping and empty/error states after prototype review.
-Implementation milestones and final handoff after the decisions settle.
+Browser experience and delivery decisions are resolved. The final shared roadmap
+is owned by catalog-system ticket 10. Implementation must produce actual browser,
+performance/mobile/accessibility and public-fetch evidence against these decisions;
+planning acceptance is not implementation acceptance.
 
 ## Out of scope
 
