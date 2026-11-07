@@ -26,6 +26,18 @@ No cap increase or storage implementation is authorized by resolving this questi
 
 ## Comments
 
+### Inputs from the resolved progress decision — November 7, 2026
+
+[Durable progress and fair scheduling](../progress-and-scheduling-decision.md)
+requires acknowledged evidence surviving runner loss, bounded raw/normalized
+checkpoint staging and complete-scope replay, durable run registration/order and
+ownership fences. Choose backend/lease/cleanup mechanisms and a measurable
+runner-loss durability experiment. Lease expiry alone cannot transfer remote
+publication authority: coordinate the serialized publication gate and ambiguous
+write reconciliation with the interface decision. Fail closed if a prior publisher
+or write cannot be reconciled. These are requirements, not proof that Git, a cache
+or end-of-job artifacts already satisfy them.
+
 ### Read-only repetition measurement — November 7, 2026
 
 The side conversation inspected the saved published snapshot at

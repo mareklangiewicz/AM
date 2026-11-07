@@ -22,3 +22,13 @@ requirements. Publication must be explicit, never an implicit collection Action
 side effect. Specify a thin custom Action and whether a reusable orchestration
 workflow actually removes duplication. Choose the supported entry points and
 retirement path for any superseded ones with Marek; do not implement them here.
+
+## Comments — progress decision input, November 7, 2026
+
+[Durable progress and fair scheduling](../progress-and-scheduling-decision.md)
+requires an explicit publication gate that validates owner fences, serializes
+write initiation with takeover, persists write intent and reconciles ambiguous
+remote results. A token check followed by an unguarded push is insufficient.
+Coordinate the realization with storage and define how public registration,
+private checkpoints and read-only acquisition use separate permissions. A failed
+public progress projection must not destroy acknowledged private evidence.
