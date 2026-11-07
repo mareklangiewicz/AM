@@ -52,8 +52,9 @@ the newest observed non-prerelease if none of those 32 is non-prerelease (at mos
 falling back to creation time, then numeric release ID, descending. Missing both
 timestamps still needs a bounded rule. A newly observed release replaces any older
 retained record with the same exact tag within that numeric source, even if its
-release ID changed; resolve tag reuse before count-based retention. Conflicting
-same-tag evidence within a collection still needs a validation rule. Apply this
+release ID changed; resolve tag reuse before count-based retention. Different
+release IDs for the same exact tag within one collection invalidate that source's
+collection: preserve its previous published data and report the conflict. Apply this
 after successful source-scope collection and merge, before validation/publication.
 Failed and unattempted sources stay unchanged; retained freshness stays intact.
 The [accepted 32-plus-stable policy](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-32-plus-stable-retention--november-7-2026-side-conversation)

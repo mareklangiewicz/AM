@@ -29,8 +29,11 @@ missing both timestamps still need a rule preserving the count bound. See the
 Marek also accepted one current record per exact tag within each numeric source:
 a newly observed release replaces an older retained incarnation of that tag,
 even if the numeric release ID changed. Keep the observed ID as evidence; apply
-tag replacement before count retention. Distinct tags remain distinct. Conflicting
-same-tag evidence within one collection still needs an explicit validation rule.
+tag replacement before count retention. Distinct tags remain distinct. Different
+release IDs for the same exact tag within one collection invalidate that source's
+collection; preserve its previous published data and report the conflict rather
+than choosing an ID. See the
+[accepted conflict rule](../track/catalog-system/issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-conflicting-same-tag-evidence-rule--november-7-2026).
 See the [accepted exact-tag replacement rule](../track/catalog-system/issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-exact-tag-replacement--november-7-2026-side-conversation).
 Earlier catalog commits preserve metadata, without guaranteeing historical binary
 availability. This amends retention/supersession, not collection scope or freshness.

@@ -28,6 +28,16 @@ No cap increase or storage implementation is authorized by resolving this questi
 
 ## Comments
 
+### Accepted conflicting same-tag evidence rule — November 7, 2026
+
+Marek answered “yes” to treating a source's collection as invalid when that
+collection returns different numeric release IDs for the same exact tag.
+Preserve that source's previous published data and report the conflict; do not
+choose a winning ID or apply replacement/pruning from that invalid collection.
+This concerns conflicting newly collected evidence, not a new observation
+replacing a previously retained incarnation under the accepted exact-tag rule.
+This settles the same-tag validation question left open below. Planning only.
+
 ### Accepted exact-tag replacement — November 7, 2026 side conversation
 
 After discussing Git tags, GitHub release identities and rolling nightlies,
