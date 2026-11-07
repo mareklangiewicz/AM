@@ -27,6 +27,14 @@ No cap increase or storage implementation is authorized by resolving this questi
 
 ## Comments
 
+### Accepted undated-release retention — November 7, 2026
+
+Marek answered “yes” to keeping releases with no publication date as undated,
+outside the five dated releases. An unknown age is not grounds for pruning;
+undated records do not consume the five dated-release slots. This settles the
+missing publication-time retention question left open below. The two-year
+boundary and safe pruning timing remain open. Planning only; no runtime change.
+
 ### Accepted newest-release ordering — November 7, 2026
 
 Marek answered “yes” to using upstream publication time to define “newest” for
