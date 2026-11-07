@@ -29,11 +29,15 @@ quota-reserve and auth/rate-stop protections. The next scheduled run still obeys
 those protections; it is an opportunity to retry, not an unconditional request.
 Do not add the old cooldown counters, jitter or retry-state machinery.
 
-Marek subsequently accepted two scheduled collection runs daily, with additional
-manual workflow dispatch available. This supersedes hourly scheduling as the
-target; exact cron times remain undecided. It does not promise execution of every
-trigger or change the deployed workflow. See the
-[accepted cadence](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-cadence-and-release-retention--november-7-2026-side-conversation).
+Final cadence amendment, November 8, 2026: Marek accepted hourly quota-aware
+oldest-first batches plus manual dispatch in the
+[final roadmap](issues/10-agree-system-acceptance-and-implementation-roadmap.md#answer--november-8-2026),
+superseding the earlier twice-daily target. The reference workload is 5,000 apps/up
+to 5,000 sources, with a 12-hour healthy-source refresh objective to verify under
+actual quota/host constraints. A batch is partial requested scope; no full-catalog
+completion claim until successful source observations cover the population.
+Single-active-run, later-run retry, quota/auth stop and no in-run retry/sleep
+rules remain. Actual production settings do not change with this planning record.
 
 Marek also accepted keeping discovery of new apps manually triggered for now;
 scheduled runs only refresh explicitly enrolled sources. Discovery produces

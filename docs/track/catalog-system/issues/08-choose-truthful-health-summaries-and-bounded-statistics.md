@@ -40,6 +40,10 @@ tree. Show actual retained ranges and gaps. These are intentional retention boun
 not source-count truncation or caps allowed to block normal thousands-of-apps
 updates. Git history remains distinct from current-tree retention.
 
+The final roadmap subsequently selects hourly batches. Keep the accepted counts;
+summary/detail coverage is then roughly 64/8 hours under regular reporting, with
+actual ranges and gaps displayed, not the earlier twice-daily illustrations.
+
 The three initial views are source-freshness buckets, measured resource usage
 against each run's configured budgets, and separately labelled snapshot/Git-history
 growth. Daily aggregates cover reported attempts only. Source freshness does not

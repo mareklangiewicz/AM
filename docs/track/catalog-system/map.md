@@ -12,6 +12,14 @@ contract, storage, compatibility or acceptance decisions.
 
 ## Notes
 
+Planning completed November 8, 2026: Marek accepted the final system targets and
+[five-slice implementation roadmap](issues/10-agree-system-acceptance-and-implementation-roadmap.md#answer--november-8-2026).
+Start with the accepted [system specification](spec.md), then implementation
+11–15 below. No implementation is started by this planning acceptance. Normal
+updates at thousands of sources must fit the measured design with headroom.
+Hourly quota-aware batches explicitly supersede the earlier twice-daily target;
+actual production settings remain unchanged by these documents.
+
 Latest capacity steering, November 8, 2026: normal full-catalog updates at thousands
 of apps must not predictably hit internal resource limits. Size safeguards for the
 supported workload with headroom; existing numerical caps are baselines to reassess,
@@ -65,22 +73,21 @@ Consult wayfinder, grilling and domain-modeling for decision sessions; use
 prototype for human-reviewed experience exploration and research for facts.
 Do not decide architecture by treating a research recommendation as human acceptance.
 
-Start with [the planning brief](spec.md). It separates accepted requirements from
-open designs and defines completion; it is not a finished implementation spec.
-Answers live in their tickets. Update the brief to reference accepted answers as
-the map advances; avoid copying whole resolutions into multiple documents.
-No decision ticket is hand-resolved during charting.
+The [system specification](spec.md) consolidates accepted requirements and links
+the owning decisions; executable field/schema details and measured implementation
+results follow in the implementation tickets. Answers live in their tickets;
+avoid copying whole resolutions into multiple documents.
 
 Marek subsequently accepted name-first app-map references to repository YAML
-files; the examples and remaining contract choices live in
+files; the examples and accepted contract live in
 [Choose public YAML contracts and revision consistency](issues/03-choose-public-yaml-contracts-and-revision-consistency.md#accepted-app-to-file-references--november-7-2026).
-That broader ticket remains open.
+That broader ticket is resolved.
 
 This map coordinates the existing [release-catalog history](../release-catalog/map.md)
 and [browser map](../catalog-pages/map.md); it does not replace their evidence.
 [Choose the catalog browsing experience](../catalog-pages/issues/03-review-browser-experience.md)
 continues to own the app-directory/detail/release layout verdict, A/B/C prototype
-feedback and Vim-like navigation. Its existing claim is preserved.
+feedback and Vim-like navigation. Its accepted result is recorded there.
 [Agree the implementation route and acceptance criteria](../catalog-pages/issues/04-agree-delivery-and-acceptance.md)
 continues to own browser-specific delivery/acceptance decisions; the final system
 ticket consumes its result. New tickets own cross-system and educational decisions,
@@ -118,29 +125,34 @@ branches are not merged or pushed automatically (home push guidance applies).
 
 - [Choose compatibility transition and recovery](issues/09-choose-compatibility-transition-and-recovery.md#answer--november-8-2026): accepted shared-acquisition dual-format transition, main-owned browser activation, separate installed-host delivery, consumer-gated format-2 retirement and pinned/corrective-publication rollback. Remote operations remain separately authorized.
 
-## Not yet specified
+- [Agree system acceptance and implementation roadmap](issues/10-agree-system-acceptance-and-implementation-roadmap.md#answer--november-8-2026): accepted 5,000-app/source reference workload, 12-hour healthy-source refresh through hourly batches, 25% measured headroom and 12-month history horizon; five dependency-linked implementation slices.
 
-System decisions 02–09 and browser experience/delivery decisions are resolved.
-The remaining planning work is ticket 10's system capacity/refresh/history targets
-and consolidated implementation slices. Preserve all three prototypes. Browser
-product acceptance is recorded in its own tickets; actual execution/performance/
-accessibility evidence is still required during implementation.
+## Implementation route
 
-Detailed field names, wire examples and executable schemas implement the accepted
-public, provenance and health contracts. Do not invent a parallel browser model.
+Planning is complete. These tasks are open and unclaimed; execution needs a
+separate start instruction. Routine implementation mechanics follow the accepted
+spec without repeating product interviews. Remote operations keep their explicit
+approval boundaries.
 
-The final design may expose additional failure, credential or checkpoint lifecycle
-questions. Ticket them when precise; interruption before confirmed publication
-may lose runner-local acquisition and require repeating work, as accepted above.
+| Ticket | Depends on | Deliverable |
+| --- | --- | --- |
+| [11](issues/11-implement-contracts-readers-and-collection-interface.md) | 10 | Contracts, strict readers and shared collection/validation interface. |
+| [12](issues/12-implement-incremental-publication-and-final-health.md) | 11 | Incremental Git publication, final health and isolated workflow permissions. |
+| [13](issues/13-integrate-main-owned-catalog-browser.md) | 11, 12 | Main-owned A/B/C browser, context/provenance/health and real-browser checks. |
+| [14](issues/14-verify-scale-compatibility-and-rollback.md) | 11, 12, 13 | Shared scale/history, compatibility and rollback evidence. |
+| [15](issues/15-prepare-reviewed-catalog-rollout-package.md) | 14 | Exact rollout/rollback package for explicit remote-operation review. |
 
-Concrete experiments, measurements and implementation tickets depend on the
-chosen storage and interfaces. Larger verified cohorts and rollout packages follow
-measured compatibility/capacity gates, not an arbitrary target count.
+## Execution evidence and optional follow-ups
 
-Enrichment acquisition/cache/provenance details may need new decisions after the
-educational prototype; existing metadata research remains evidence.
-Search depth, all-releases exploration and chart interactions may expose further
-questions after human prototype review.
+All planning decisions are resolved. Actual processing/capacity, live acquisition,
+workflow/publication, browser/performance/accessibility and educational-comprehension
+claims require the scoped implementation/rollout evidence above. A synthetic count
+alone does not qualify real sources or acquisition capacity.
+
+Executable schemas and wire examples implement the accepted contracts, without a
+parallel browser model. Additional enrichment, deeper global search, guided lessons
+or new charts remain optional follow-ups unless a concrete implementation finding
+requires a material decision. No speculative recovery infrastructure is needed.
 
 ## Out of scope
 

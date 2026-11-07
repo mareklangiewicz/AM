@@ -1,6 +1,7 @@
-# Planning brief: a catalog people can use and understand
+# System specification: a catalog people can use and understand
 
-Status: accepted product requirements; architecture and implementation sequence open.
+Status: accepted system design and implementation roadmap, November 8, 2026.
+Implementation and measured acceptance remain pending.
 Canonical decision index: [Understandable catalog system and educational browser](map.md).
 
 ## Outcome and audience
@@ -17,13 +18,15 @@ overview serve newcomers without obstructing experienced users. Public catalog
 health explains what succeeded, what failed, what remains unattempted and what
 is unknown. Visitors need no GitHub token.
 
-This brief captures Marek's confirmed direction, not acceptance of a particular
-layout, new schema or storage mechanism. The map's questions must settle those.
+This specification consolidates the accepted product, architecture, compatibility
+and acceptance decisions. Owning tickets retain detailed contracts and evidence.
+Executable fields/schemas and verified results follow in the five implementation
+slices; acceptance of this design does not authorize execution or deployment.
 
 Educational placement and content responsibilities are now accepted in
 [Choose contextual education and health navigation](issues/02-choose-contextual-education-and-health-navigation.md#answer--november-7-2026).
-That resolution leaves the browser layout, detailed health semantics and revision
-contracts to their owning decisions.
+Browser layout, health semantics and revision contracts are also resolved in the
+owning decisions linked below.
 
 The target public interface and consistency model are selected in
 [Choose public YAML contracts and revision consistency](issues/03-choose-public-yaml-contracts-and-revision-consistency.md#answer--november-7-2026),
@@ -44,8 +47,12 @@ scheduled run without automatic merging. No public start record or missing-run
 recovery service is required. Detailed metrics, storage and interfaces remain
 with their owning decisions.
 
-The target cadence is now two scheduled collection runs daily plus manual
-workflow dispatch, with exact cron times still open. The storage discussion also
+The accepted target cadence is hourly quota-aware oldest-first batches plus
+manual dispatch, superseding the earlier twice-daily target under the
+[final roadmap decision](issues/10-agree-system-acceptance-and-implementation-roadmap.md#answer--november-8-2026).
+A batch is partial scope; full-refresh coverage requires successful source
+observations across the entire enrolled population. Exact minute/settings follow
+measurement. The storage discussion also
 settled release retention: keep the 32 newest observed releases per source, plus
 the newest observed non-prerelease if none of those 32 is non-prerelease (at most
 33 records). Keep all assets of retained releases. Order by publication time,
@@ -263,8 +270,8 @@ writes and per-operation authorization boundaries apply.
   catalog pin. Generated/copied indexes are not the accepted starting approach.
   If measurement requires revisiting it, do so explicitly.
 - [Choose the catalog browsing experience](../catalog-pages/issues/03-review-browser-experience.md):
-  deployed A/B/C prototype and keyboard iteration are evidence, not a layout verdict
-  or real-browser acceptance result.
+  A-default/B-C-selectable product direction is accepted; prototype receipts do not
+  establish actual browser/mobile/accessibility acceptance.
 - [Catalog operation](../../catalog-operating-policy.md),
   [collector entry points](../../../tools/catalog-collector/README.md),
   [format 2](../../catalog-format-v2.md), and
@@ -292,22 +299,43 @@ documented planning baseline was 1,000/hour; do not infer a durable entitlement.
 The research ticket rechecks official facts before new operating decisions.
 No natural hourly-trigger success is established by these planning reads.
 
-## Completion and handoff
+## Capacity targets and implementation route
 
-The final specification links each accepted design to its owning resolution,
-defines public contracts and consistency, progress/recovery, storage/retention,
-credentials, reader compatibility, browser/learning behavior and recipe provenance.
-It includes realistic successful, partial, failed, stale, unknown and interrupted
-scenarios, plus migration/rollback and exact-parent conflict behavior.
+The [accepted final decision](issues/10-agree-system-acceptance-and-implementation-roadmap.md#answer--november-8-2026)
+sets a 5,000-app/up-to-5,000-source reference workload, not an enrollment ceiling;
+every healthy source refreshed within 12 hours through hourly quota-aware batches;
+at least 25% unused internal resource allowance at measured representative peak;
+and a 12-month catalog/status history planning horizon. Include realistic asset/
+source variation and temporary dual-output cost. These are targets to verify,
+not demonstrated capacity or guarantees of external service/schedule availability.
 
-The roadmap then divides implementation into dependency-linked, independently
-reviewable slices with behavior-based acceptance, evidence needs and rollout gates.
-Prefer a small end-to-end summary/browser slice when decisions support it; do not
-lock that sequence before the interfaces and compatibility are settled.
-Set concrete performance/accessibility/capacity targets with Marek, based on
-measurements rather than invented promises.
+Respect actual quotas, reserve and physical host bounds. Size ordinary safeguards
+for normal supported work with headroom; predictable internal limit failures are
+a setting/design problem. Keep tree/local/fetched/packed history accounting distinct,
+label annual growth projections and review early rather than rewrite history or
+silently shrink coverage. Source-scope freshness does not reobserve unfetched
+retained releases. At hourly reporting, 64 summaries/8 detailed reports ordinarily
+cover roughly 64/8 hours; always show actual ranges/gaps.
 
-A new maintainer should need this brief, the eventual short overview and named
-decision links to understand the system; historical receipts remain drill-down
-evidence rather than required onboarding. Implementation tickets are created after
-their prerequisite decisions; this map initially holds decision tickets only.
+| Implementation slice | Depends on | Result |
+| --- | --- | --- |
+| [11: contracts/readers/interface](issues/11-implement-contracts-readers-and-collection-interface.md) | 10 | Shared live/saved pipeline, executable contracts and strict readers. |
+| [12: incremental publication/health](issues/12-implement-incremental-publication-and-final-health.md) | 11 | Small end-to-end slice, source reuse and final reporting with explicit permissions. |
+| [13: main-owned browser](issues/13-integrate-main-owned-catalog-browser.md) | 11, 12 | Accepted discovery/education/health/provenance and actual browser checks. |
+| [14: shared rehearsal](issues/14-verify-scale-compatibility-and-rollback.md) | 11, 12, 13 | Scale/history, compatibility, recovery and educational evidence. |
+| [15: rollout package](issues/15-prepare-reviewed-catalog-rollout-package.md) | 14 | Exact changes, evidence/limitations and reviewable activation/rollback commands. |
+
+Planning is complete; these tickets are open and unclaimed. Execute only when
+separately started. Reuse unchanged-input evidence and run focused necessary checks.
+Normal failures, interrupted runner loss, quota/redirect limits, isolated sources,
+invalid/schema input, exact-parent/ambiguous writes, identity/freshness preservation,
+status gaps, old pins and format-2 rollback all have named acceptance owners.
+Browser 04 owns reference profiles and measured UI/accessibility targets. The final
+educational review checks coverage/support, freshness/authenticity distinctions
+and whether a maintainer can explain the supported rerun/publication route.
+
+Actual remote acquisition, source push, workflow/publication, Pages activation,
+new enrollment and installed-host delivery keep their explicit authorization
+boundaries. No yadm pointer change belongs to this roadmap. Measurement failure
+that requires changing a material guarantee returns with concrete evidence, not
+a new sequence of routine parameter approvals.

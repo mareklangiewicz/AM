@@ -2,7 +2,7 @@
 
 Type: grilling
 Label: wayfinder:grilling
-Status: claimed
+Status: resolved
 Assignee: codex-roadmap
 Blocked by: 02, 03, 04, 05, 06, 07, 08, 09, ../../catalog-pages/issues/04-agree-delivery-and-acceptance.md
 
@@ -30,6 +30,42 @@ comprehension review: can a newcomer distinguish catalog coverage, AM support,
 upstream assets, freshness and authenticity, and can a maintainer explain/resume
 the supported pipeline from one short overview? Stop planning when the route is
 clear; do not execute the roadmap in this ticket.
+
+## Answer — November 8, 2026
+
+Marek accepted the final package with “ok.” The system and browser decisions now
+form the accepted implementation specification and five-slice roadmap. The final
+proposal below owns the selected targets: 5,000 apps/up to 5,000 distinct sources
+as reference workload rather than ceiling; every healthy source refreshed within
+12 hours through hourly quota-aware oldest-first batches; at least 25% unused
+internal resource allowance at measured representative peak; and a 12-month
+catalog/status Git-history planning horizon. These are acceptance targets and
+projection requirements, not demonstrated capacity or a guarantee of scheduled
+execution/upstream availability.
+
+Hourly scheduling explicitly supersedes the twice-daily target in earlier tickets
+and proposals. Preserve single-active-run/manual dispatch, later-run retries,
+rate/auth stops, exact-parent conflict handling and truthful partial coverage.
+Keep the accepted 64-summary/8-detail/90-daily counts, showing actual coverage;
+hourly runs ordinarily shorten summary/detail coverage to roughly 64/8 hours.
+
+The five implementation tickets are:
+
+1. [Contracts, readers and collection interface](11-implement-contracts-readers-and-collection-interface.md).
+2. [Incremental publication and final health](12-implement-incremental-publication-and-final-health.md), after 11.
+3. [Main-owned browser](13-integrate-main-owned-catalog-browser.md), after 11–12.
+4. [Scale, compatibility and rollback rehearsal](14-verify-scale-compatibility-and-rollback.md), after 11–13.
+5. [Exact rollout package](15-prepare-reviewed-catalog-rollout-package.md), after 14.
+
+Their behavior acceptance and focused evidence implement the owning decisions;
+ordinary flags, fixture mechanics and measured setting choices do not need a new
+product interview. Reopen a material guarantee only for a concrete conflict or
+failed measurement. Retain applicable prior evidence and report limitations.
+
+This completes planning and creates the implementation route. It does not execute
+it, authorize source pushes, workflow dispatch/acquisition, enrollment, public
+publication/Pages deployment, installed-host delivery or yadm changes. The initial
+pending/blocked wording below records earlier discussion and is superseded here.
 
 ## Process steering — November 7, 2026
 

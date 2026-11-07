@@ -41,6 +41,10 @@ attempt a separate final health report. Discovery remains manual and never enrol
 sources automatically. Installed consumers stay shell/awk; no new Lua consumer
 runtime is imposed. Compatibility activation/rollback remains ticket 09.
 
+Cadence amendment: the accepted final roadmap in ticket 10 supersedes the
+proposal's twice-daily schedule with hourly quota-aware batches. All other
+accepted permission/interface and retry/concurrency boundaries remain.
+
 This resolves the interface decision, not implementation or deployment. No CLI,
 workflow, credential, ref, enrollment or installed-host changes are made here.
 

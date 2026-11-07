@@ -16,8 +16,10 @@ Keep immutable release snapshots separate from operational status snapshots.
 Initially use a new `release-catalog-v3` ref for format 3 and `catalog-status-v1`
 for status format 1. These are target names, not refs to create now. Leave the
 deployed `release-catalog` format-2 channel unchanged during compatibility work.
-Both new channels use exact-parent publication. Long-term Git/history policy
-remains a separate storage decision; checkpoint infrastructure is not required.
+Both new channels use exact-parent publication. The resolved
+[storage decision](issues/05-choose-scalable-snapshot-and-history-storage.md#answer--november-8-2026)
+and [final targets](issues/10-agree-system-acceptance-and-implementation-roadmap.md#answer--november-8-2026)
+own Git/history policy; checkpoint infrastructure is not required.
 
 A client resolves each needed ref once to a full commit, C for catalog and S for
 status, then reads only paths at that commit. Catalog-only clients need no status
