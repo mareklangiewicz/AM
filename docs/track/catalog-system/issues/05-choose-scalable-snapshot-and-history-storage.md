@@ -27,6 +27,15 @@ No cap increase or storage implementation is authorized by resolving this questi
 
 ## Comments
 
+### Accepted newest-release ordering — November 7, 2026
+
+Marek answered “yes” to using upstream publication time to define “newest” for
+the five-release minimum and newest non-prerelease protection, with numeric
+release ID breaking ties. Order publication times descending, then numeric IDs
+descending. Editing an old release does not move it ahead of newer publications.
+Missing publication-time behavior, the two-year boundary and pruning timing
+remain open. This records a planning decision only.
+
 ### Accepted cadence and release retention — November 7, 2026 side conversation
 
 Marek explicitly answered “Yes” to this proposed policy:
@@ -43,9 +52,10 @@ Marek explicitly answered “Yes” to this proposed policy:
 This explicitly permits age/count-based removal from the current retained release
 set, amending the previous retain-unfetched-records policy in ADR 0002 for that
 purpose. It does not authorize deletion inferred from absence in a partial fetch,
-or changing retained observations' effective freshness. The exact ordering for
-“newest”, time-boundary rules, missing publication-time behavior, and safe point
-for applying pruning still need specification. No exact cron times were chosen.
+or changing retained observations' effective freshness. Ordering for “newest” is
+settled by the subsequent ordering comment above; time-boundary rules, missing
+publication-time behavior, and safe pruning timing remain open. No exact cron
+times were chosen.
 Translate these choices into the baseline/spec/ADR and implementation roadmap in
 the main planning session; the ticket remains claimed and unresolved because its
 broader storage/read/write and capacity-experiment questions remain open.
