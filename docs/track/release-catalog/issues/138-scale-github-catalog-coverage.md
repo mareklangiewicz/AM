@@ -172,3 +172,16 @@ the 500-source fixture plus published history. This does not remove whole-tree
 materialization, the 1,024-file reader bound or retained growth. Continue verified
 source attribution and measured cohorts up to the ceiling; qualify a broader
 storage/read design before thousands. Selected-release freshness stays 48 hours.
+
+## Next real cohort: 320 verified sources
+
+[147](147-prepare-next-verified-cohort.md) prepares 97 further catalog-only app
+identities, adding 96 numeric sources: 325 apps / 320 sources locally. Verification
+rechecks pinned bindings and public identity/release probes in 198 bounded reads;
+one rename is checked, two candidates excluded. Fresh 320-source collection
+succeeds with zero failures; local exact-pin readback and prior identity/release/
+effective-observation preservation pass. [Measured report](../research/next-320-catalog-expansion.md)
+records transport/density/history limits. [148](148-publish-320-source-cohort.md)
+packages the proposed push/publication; published enrollment stays 224 sources.
+This ticket remains claimed: unsupported bindings, the unverified remaining scan
+queue and whole-snapshot/history scaling still prevent all-GitHub completion.

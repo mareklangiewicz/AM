@@ -2,6 +2,16 @@
 
 ## Active expansion — catalog first, simple recipe migrations first
 
+[147 resolved](issues/147-prepare-next-verified-cohort.md) prepares **325 apps / 320
+sources** locally: 97 verified app additions / 96 new numeric sources, one checked
+rename, two explicit exclusions. Fresh full-scope preflight attempts all 320
+sources successfully; exact-parent candidate/readback preserves prior identities,
+retained releases and effective observations. [Report and receipts](research/next-320-catalog-expansion.md)
+record 240.50 MB response bytes, 44.63 MB YAML and measured local bounds;
+all 159 collector regressions pass.
+Published enrollment remains 228 apps / 224 sources. [148](issues/148-publish-320-source-cohort.md)
+is the proposed push/publication package; no installed-host changes.
+
 [146 resolved](issues/146-roll-out-hourly-metadata-refresh.md) deploys **500/hour**:
 159 full collector tests pass; source `09ae7fe81` and successful run 42366263140
 refresh all actual 224 sources in one batch, zero failures, 205.27 seconds command.
