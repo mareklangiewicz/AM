@@ -2,7 +2,7 @@
 
 Type: grilling
 Label: wayfinder:grilling
-Status: claimed
+Status: resolved
 Assignee: codex-health
 Blocked by: 01, 03, 04
 
@@ -25,6 +25,31 @@ Use the consistency model from the contract ticket; do not invent another schema
 or strengthen timestamps. Allowlist sanitized public fields, not environment/header
 dumps. Decide the few useful initial charts with Marek, measurement definitions
 and drill-down links. Feed these semantics into the educational/browser reviews.
+
+## Answer — November 8, 2026
+
+Marek accepted the prepared health semantics, retention and initial views together
+with “yes.” The proposal below is the selected contract; its initial pending
+wording records its earlier status. Collection, validation and confirmed catalog
+publication remain separate outcomes, with explicit unknowns, exact run/attempt
+and revision bindings, source/app denominators and scoped measurements.
+
+Retain 64 reported-attempt summaries, complete available source detail for the
+latest 8 reported attempts, and 90 daily aggregate records in the current status
+tree. Show actual retained ranges and gaps. These are intentional retention bounds,
+not source-count truncation or caps allowed to block normal thousands-of-apps
+updates. Git history remains distinct from current-tree retention.
+
+The three initial views are source-freshness buckets, measured resource usage
+against each run's configured budgets, and separately labelled snapshot/Git-history
+growth. Daily aggregates cover reported attempts only. Source freshness does not
+replace release freshness; budget charges do not establish received bytes, local
+objects do not establish remote storage, and a local candidate does not establish
+remote publication. The examples and safe-field/finalization rules below apply.
+
+No latest-attempt completeness, public start record or missing-run service is
+introduced. Wire schemas and checks follow in implementation; this decision makes
+no runtime, workflow, browser, remote-ref or installed-host change.
 
 ## Accepted update cadence — November 7, 2026
 

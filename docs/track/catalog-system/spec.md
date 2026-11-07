@@ -221,6 +221,14 @@ report's original timestamp and label it “last reported run”, without implyi
 was the latest attempt. Include links to the specific GitHub Actions run and recent
 collection runs. Actions may require sign-in; the public summary remains readable
 without it. No continuous progress or missing-run reconciliation is required.
+The [accepted health contract](issues/08-choose-truthful-health-summaries-and-bounded-statistics.md#answer--november-8-2026)
+defines stage outcomes, distinct source/app denominators, unknown measurements,
+actual coverage and safe fields. Keep 64 reported-attempt summaries, complete
+available source detail for the latest 8 reports and 90 daily aggregate records in
+the current status tree. Initial views show source freshness, measured resource
+usage versus configured budgets, and separately labelled snapshot/history growth.
+These retention counts do not truncate sources within a full-update report;
+aggregates describe reported attempts only and show gaps.
 
 ## Existing decisions and evidence to preserve
 

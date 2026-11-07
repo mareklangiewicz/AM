@@ -114,6 +114,8 @@ branches are not merged or pushed automatically (home push guidance applies).
 
 - [Choose one reusable collection interface and permissions](issues/07-choose-one-reusable-collection-interface-and-permissions.md#answer--november-8-2026): accepted explicit collect/validate/publish CLI, shared live/offline pipeline, collection-only Action and read-only acquisition plus write-enabled publisher/finalizer jobs.
 
+- [Choose truthful health summaries and bounded statistics](issues/08-choose-truthful-health-summaries-and-bounded-statistics.md#answer--november-8-2026): accepted stage-specific outcomes, explicit unknowns/denominators, 64 summaries / 8 full-detail reports / 90 daily aggregates, and freshness/resource/history views with coverage gaps.
+
 ## Not yet specified
 
 Detailed field names, wire examples and schema documents will follow the public
