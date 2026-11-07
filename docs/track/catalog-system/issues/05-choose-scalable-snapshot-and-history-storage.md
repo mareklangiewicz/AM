@@ -27,6 +27,16 @@ No cap increase or storage implementation is authorized by resolving this questi
 
 ## Comments
 
+### Accepted retention time boundary — November 7, 2026
+
+Marek answered “yes” to defining “within two years” as a rolling 730-day window,
+measured from one fixed UTC timestamp at collection start. Retain a dated release
+when its upstream publication time is at or after that timestamp minus 730 days;
+the exact cutoff is inclusive. Use the same cutoff throughout that collection.
+The five dated-release minimum, newest non-prerelease protection and undated
+retention still apply outside the window. This settles the time-boundary question
+left open below; safe pruning timing remains open. Planning only.
+
 ### Accepted undated-release retention — November 7, 2026
 
 Marek answered “yes” to keeping releases with no publication date as undated,
