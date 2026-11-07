@@ -121,6 +121,10 @@ Bound statistics and show gaps; do not interpolate missing success.
   [collector entry points](../../../tools/catalog-collector/README.md),
   [format 2](../../catalog-format-v2.md), and
   [domain language](../../../GLOSSARY.md) describe the current supported system.
+- [Establish the supported pipeline and operating constraints](issues/01-establish-supported-pipeline-and-operating-constraints.md)
+  links the source-audited short overview and current official constraint table;
+  read its exact report context with git show. Its findings are evidence for the
+  open decisions, not acceptance of the target architecture.
 
 Local planning baseline observed November 7, 2026: clean main-marek at a149fe60a.
 Recorded publication: 509 apps / 500 verified sources at

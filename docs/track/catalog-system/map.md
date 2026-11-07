@@ -60,6 +60,8 @@ branches are not merged or pushed automatically (home push guidance applies).
 
 ## Decisions so far
 
+- [Establish the supported pipeline and operating constraints](issues/01-establish-supported-pipeline-and-operating-constraints.md): source audit identifies reusable seams, missing automatic resume/public failure summaries and official operating constraints; linked report is on an isolated local research branch, not an accepted architecture.
+
 ## Not yet specified
 
 Detailed field names, wire examples and schema documents will follow the public

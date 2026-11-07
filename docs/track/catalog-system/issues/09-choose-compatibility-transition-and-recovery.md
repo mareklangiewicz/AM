@@ -14,6 +14,8 @@ Specify producer/reader compatibility, ordered rollout, old pinned snapshot acce
 checkpoint migration/invalidation, recipe/policy revision handling, concurrent
 publication and rollback/recovery boundaries. Address public operational summaries
 when collection/validation/publication fail independently.
+Include the transition from the separately deployed prototype branch to the
+accepted main-marek website-code home without losing preview/recovery capability.
 Preserve numeric app/source identities, retained release IDs and effective release
 observations. Avoid promising binary rollback from catalog rollback.
 
