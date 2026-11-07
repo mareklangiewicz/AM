@@ -20,6 +20,11 @@ is unknown. Visitors need no GitHub token.
 This brief captures Marek's confirmed direction, not acceptance of a particular
 layout, new schema or storage mechanism. The map's questions must settle those.
 
+Educational placement and content responsibilities are now accepted in
+[Choose contextual education and health navigation](issues/02-choose-contextual-education-and-health-navigation.md#answer--november-7-2026).
+That resolution leaves the browser layout, detailed health semantics and revision
+contracts to their owning decisions.
+
 ## Accepted requirements
 
 ### Browse and learn through real apps

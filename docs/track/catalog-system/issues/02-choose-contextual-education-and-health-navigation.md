@@ -2,7 +2,7 @@
 
 Type: prototype
 Label: wayfinder:prototype
-Status: claimed
+Status: resolved
 Assignee: codex-education
 Blocked by: 01
 
@@ -58,3 +58,35 @@ attempts visible without expansion. The walkthrough ends with three review
 questions. This is an agent proposal, not an accepted answer. Ticket remains
 claimed and unresolved pending Marek's feedback. Preserve the existing browser
 ticket's claim, A/B/C verdict and Vim-navigation ownership.
+
+## Answer — November 7, 2026
+
+Marek accepted the recommendation above with “go ahead” in response to the
+three-part proposal: short explanations beside relevant app/release facts,
+a separate “How it works” overview and “Catalog health” destination, and
+observation age plus known refresh failures visible without expansion.
+
+The accepted learning journey starts with ordinary app discovery. At a relevant
+fact, a visitor can open a short contextual explanation and follow links to deeper
+evidence or the system overview. The overview connects upstream source, observed
+release, client selection and installation recipe through a real app example.
+Catalog health provides a dedicated destination for operational detail; app/release
+context exposes observation age and evidenced refresh failure directly.
+
+Content responsibilities follow that split: contextual text explains the fact
+and its caveat; the overview connects the stages; health explains operational
+outcomes and gaps. An ordered trail or persistent evidence panel is not required
+by this decision. The isolated walkthrough remains supporting proposal material,
+not blanket acceptance of every sample sentence or interaction detail.
+
+The existing requirements for catalog-only/shared/custom/unclassified cases,
+exact-revision recipe review, stale retained observations, usable prior data after
+failure, mobile, keyboard and screen-reader access still apply. Recipe evidence
+predicates/bindings, metric definitions, missing-health behavior and cross-revision
+contracts remain with their owning tickets. Final copy and DOM/accessibility
+behavior require implementation review and real-browser verification.
+
+This resolves educational placement and content responsibilities only. The
+existing browser ticket retains its claim and owns the A/B/C and Vim-navigation
+verdict. No runtime implementation, deployment or push is authorized by this
+planning decision.
