@@ -4,14 +4,19 @@ Design selected November 7, 2026 under Marek's explicit “you decide” delegat
 Owner: [Choose public YAML contracts and revision consistency](issues/03-choose-public-yaml-contracts-and-revision-consistency.md).
 This is the target contract sketch, not an implemented schema or migration.
 
+Recovery amendment, November 7, 2026: Marek explicitly accepted redoing unfinished
+work after runner loss and public health updates only at start/finish. There is
+no separate checkpoint store or cross-run acquisition recovery requirement.
+See the [current recovery baseline](progress-and-scheduling-decision.md#current-accepted-baseline--november-7-2026).
+
 ## Two publication channels
 
 Keep immutable release snapshots separate from operational status snapshots.
 Initially use a new `release-catalog-v3` ref for format 3 and `catalog-status-v1`
 for status format 1. These are target names, not refs to create now. Leave the
 deployed `release-catalog` format-2 channel unchanged during compatibility work.
-Both new channels use exact-parent publication. Internal checkpoint storage and
-long-term Git/history policy remain separate storage decisions.
+Both new channels use exact-parent publication. Long-term Git/history policy
+remains a separate storage decision; checkpoint infrastructure is not required.
 
 A client resolves each needed ref once to a full commit, C for catalog and S for
 status, then reads only paths at that commit. Catalog-only clients need no status
@@ -33,8 +38,8 @@ to publication of new release facts and break the current whitelist.
 | Catalog C | `repositories/<name>.yaml` | One verified numeric GitHub source and retained release/asset observations. |
 | Catalog C | `provenance.yaml` | Revision-bound app/architecture recipe bindings and classification evidence, when available. Unknown classifications remain explicit. |
 | Status S | `status.yaml` | Latest registered attempt, latest finalized attempt and last confirmed successful catalog publication; links to retained run summaries. |
-| Status S | `runs/<run-id>/summary.yaml` | Run inputs, lifecycle/progress, outcome and explicit catalog publication result. |
-| Status S | `runs/<run-id>/sources/<name>.yaml` | Lazy, bounded per-source attempt/progress evidence; absence alone proves nothing. |
+| Status S | `runs/<run-id>/summary.yaml` | Run inputs/start record and, if recorded, final outcome and explicit catalog publication result. No intermediate updates required. |
+| Status S | `runs/<run-id>/sources/<name>.yaml` | Bounded final per-source evidence when available; absence alone proves nothing. No continuous progress feed. |
 | Status S | `statistics.yaml` | Optional bounded aggregates with measurement times and gaps. |
 
 Each document begins with `format`, `schema`, `kind`, in that order. Catalog kinds
@@ -77,21 +82,19 @@ establishes that relationship and its numeric identity agrees. Otherwise show it
 as separately labelled operational context. A known failed attempt based on C may
 explain why C remains usable; failure never changes C's observation timestamps.
 
-Latest attempt ordering uses an explicitly registered run order, not completion
-time or lexicographic timestamps. Run IDs are immutable, path-safe lowercase ASCII
-tokens; registration/order and lifecycle recovery are specified by the progress
-decision. Status publication uses compare-and-swap and revalidates against the
-new parent on conflict: late completion updates its own run, without demoting a
-newer latest attempt or overwriting another confirmed publication. Ordering of
-confirmed publications follows the catalog publication lineage, not run order.
-Unrelated lineage/reset requires explicit transition handling, never a silent merge.
+Attempt a public start record before acquisition and a final summary at finish.
+A start without a finish means “started, no completion recorded”; elapsed time
+alone proves neither outcome nor progress. A run lost before its start record
+is published may be absent from public health. If the final summary cannot be
+published, do not invent one from lost runner-local data.
 
-Register before acquisition. If termination prevents finalization, the last durable
-state remains “in progress as of <time>”; elapsed time alone does not prove failure
-or completion. Reconciliation may later record an interruption using evidence.
-No channel can report a crash before its first durable registration. Unknown
-publication result remains unknown until reconciled by exact remote identity;
-retry/recovery guarantees belong to the progress decision.
+The earlier custom run-order allocator and registration/recovery machinery are
+withdrawn requirements. Minimal run identification, ordering, concurrency and
+behavior when the start update fails remain for the progress/interface decisions,
+using simple existing mechanisms where possible. A late summary must not demote
+a newer attempt or overwrite a confirmed publication. Catalog publication ordering
+follows its lineage. Unknown publication results stay unknown until evidenced;
+no durable publication-intent service is required by this contract.
 
 ## Readable names and rename behavior
 

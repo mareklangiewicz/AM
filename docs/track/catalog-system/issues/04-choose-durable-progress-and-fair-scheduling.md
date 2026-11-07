@@ -17,8 +17,8 @@ must be reconsidered with him. No replacement recovery design is selected yet.
 
 ## Question
 
-What logical queue/checkpoint state and scheduling rules let work resume safely
-without repeating completed successful acquisition or falsifying observations?
+What simple recovery and scheduling rules preserve the last published catalog
+and truthful observations while permitting repeated work after interruption?
 
 Build on existing oldest-attempt batching and discovery checkpoints. Keep discovery,
 verified identity/enrollment and release refresh distinct. Define work identity,
@@ -37,7 +37,7 @@ Set recovery guarantees and bounded retry policy with Marek. This ticket owns
 logical state/semantics; the storage ticket chooses the physical persistence and
 maintenance mechanism. Preserve old retained-release effective observation times.
 
-## Answer — November 7, 2026
+## Historical superseded answer — November 7, 2026
 
 Marek said “go on” after delegating the preceding design choice with “you decide”.
 Continuing that decision delegation, selected
@@ -68,3 +68,17 @@ No runtime implementation/tests, remote operations, schedule/enrollment changes,
 installed-host operations or push accompany this resolution. Planning link/graph
 and whitespace checks apply; the selected retry/fairness values are design policy,
 not measured capacity or an hourly freshness guarantee.
+
+## Accepted simplification — November 7, 2026
+
+Marek answered “yes to both”: a new run may redo unfinished work after runner
+loss, preserving the last published catalog; public health need only update at
+start and finish, with “started, no completion recorded” for a start lacking a
+finish. The [current baseline](../progress-and-scheduling-decision.md#current-accepted-baseline--november-7-2026)
+owns the revised recovery scope. Cross-run durable acquisitions, separate store,
+fencing/lease machinery and continuous progress are no longer requirements.
+
+The earlier Answer is superseded historical context, including its unreviewed
+scheduling/retry choices. This ticket stays claimed until simple scheduling,
+retry and minimal publication/concurrency questions have been answered. Do not
+resolve it from these two recovery answers alone.

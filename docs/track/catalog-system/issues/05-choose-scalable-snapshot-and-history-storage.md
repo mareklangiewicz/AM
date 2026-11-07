@@ -7,7 +7,7 @@ Blocked by: 01, 03, 04
 
 ## Question
 
-Which storage/read/write approach supports durable checkpoints and coverage beyond
+Which simple storage/read/write approach supports bounded reruns and coverage beyond
 500 sources while bounding full-snapshot work, individual documents, readers,
 retained releases and remote history growth?
 
@@ -17,7 +17,7 @@ remote retention. Removing a current-tree file does not purge Git history.
 Honor retained-release semantics; any pruning, reconciliation, depth or freshness
 trade-off must be explicit and agreed, not an incidental optimization.
 
-Define checkpoint survival/recovery/cleanup, public snapshot addressing, lazy
+Define local temporary-evidence cleanup, public snapshot addressing, lazy
 consumer reads, unchanged-source reuse and exact-parent conflict implications.
 Choose what bounded experiment is required before accepting capacity and record
 its decision threshold; do not qualify thousands from a synthetic count alone.
@@ -25,6 +25,16 @@ Preserve shell consumers or define an explicit compatible migration path.
 No cap increase or storage implementation is authorized by resolving this question.
 
 ## Comments
+
+### Accepted simpler recovery scope — November 7, 2026
+
+Marek accepted redoing unfinished work after runner loss and public health updates
+at start and finish only. Preserve the last published catalog; no separate
+checkpoint store or runner-loss survival/replay guarantee is required. The older
+durable-store, lease and publication-gate inputs below are superseded context.
+Keep this storage decision focused on simple public snapshots, bounded reads/
+writes/history and optional local temporary evidence. Recovery scheduling/retry
+choices remain open in the owning ticket.
 
 ### Separate-store proposal withdrawn — November 7, 2026
 
@@ -36,7 +46,7 @@ The recovery ticket is reopened; this ticket returns to blocked/unclaimed until
 the simpler recovery scope is agreed. Its earlier durable-store/gate inputs below
 are historical and under reconsideration, not fixed constraints.
 
-### Inputs from the resolved progress decision — November 7, 2026
+### Historical superseded inputs from the progress decision — November 7, 2026
 
 [Durable progress and fair scheduling](../progress-and-scheduling-decision.md)
 requires acknowledged evidence surviving runner loss, bounded raw/normalized

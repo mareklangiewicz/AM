@@ -5,7 +5,7 @@ Label: wayfinder:map
 ## Destination
 
 An agreed system specification and dependency-linked implementation roadmap for
-one transparent, resumable collection pipeline, a coherent public YAML interface,
+one transparent collection pipeline with simple rerun recovery, a coherent public YAML interface,
 and excellent app browsing that also teaches users how the system works.
 The route is complete when implementation can proceed without unresolved product,
 contract, storage, compatibility or acceptance decisions.
@@ -15,9 +15,12 @@ contract, storage, compatibility or acceptance decisions.
 Latest steering, November 7, 2026: prioritize simplicity of implementation.
 Marek rejected the separate checkpoint-store proposal, permits relaxing recovery
 guarantees, and requests simple questions before further design decisions.
-The recovery ticket is reopened; its prior durability/fencing/gate design is
-historical and under reconsideration. Revisit affected contract requirements
-after that exchange rather than treating previous delegation as blanket approval.
+Marek subsequently accepted redoing unfinished work after runner loss while
+preserving the last published catalog, and public health updates only at start
+and finish (“started, no completion recorded” if unfinished). The recovery ticket
+records this baseline but remains claimed for scheduling/retry questions. Its
+prior separate-store/durability/fencing/gate design is superseded. Ask simple
+questions before deciding the remaining policy.
 
 Marek confirmed this destination and the audience on November 7, 2026:
 app discovery leads; Linux newcomers and experienced AM users are both served;
@@ -82,8 +85,8 @@ Detailed field names, wire examples and schema documents will follow the public
 contract and health-definition decisions. Do not invent a parallel browser model.
 
 The final design may expose additional failure, credential or checkpoint lifecycle
-questions. Ticket them when precise; interruption recovery must include the window
-between durable acquisition and accepted publication.
+questions. Ticket them when precise; interruption before confirmed publication
+may lose runner-local acquisition and require repeating work, as accepted above.
 
 Concrete experiments, measurements and implementation tickets depend on the
 chosen storage and interfaces. Larger verified cohorts and rollout packages follow

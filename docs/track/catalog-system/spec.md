@@ -32,9 +32,10 @@ compatibility gates. This is a design decision; the deployed format remains 2.
 
 Logical progress, recovery, replay and scheduling policy are reopened in
 [Choose durable progress and fair scheduling](issues/04-choose-durable-progress-and-fair-scheduling.md).
-Marek now prioritizes implementation simplicity and permits weaker recovery
-guarantees. Earlier durable-store/fencing/gate requirements and affected contract
-details must be reconsidered with him before implementation.
+Marek accepted redoing unfinished work after runner loss and start/finish-only
+public health, prioritizing implementation simplicity. The linked current baseline
+supersedes cross-run durability/store/fencing/gate requirements; scheduling and
+retry details remain open.
 
 ## Accepted requirements
 
@@ -87,21 +88,23 @@ The existing reader's path whitelist and domain validation are compatibility
 constraints. Separate supported YAML grammar from domain schemas without weakening
 catalog validation. Do not add health files to the publication tree by assumption.
 
-### Collect once, checkpoint and resume
+### Collect bounded batches and preserve the last good publication
 
 Evolve useful existing scheduling, retained merges and discovery checkpoints.
 One supported pipeline must support saved-response replay, collection/preflight
 and explicit publication responsibilities. Publication is not an implicit side
 effect of a general collection action.
 
-Keep discovery/identity verification distinct from release refresh. Persist useful
-progress during a run, recover completed work after ordinary interruption, isolate
-source failures, and apply explicit request/byte/time/document/storage budgets.
+Keep discovery/identity verification distinct from release refresh. Isolate
+source failures and apply explicit request/byte/time/document/storage budgets.
+After runner loss, a new run may repeat any work not incorporated in a confirmed
+publication. Local evidence may be useful but survival/reuse is not required;
+do not add a separate checkpoint store or cross-run journal for recovery.
 Use safe quota reserves, recorded stop outcomes and controlled retry/backoff.
 Define fairness between enrollment discovery and freshness maintenance.
 An enrolled identity is not proof of successful collection or publication.
 
-Choose scalable reads/writes, checkpoint storage and bounded retained/history
+Choose scalable reads/writes and bounded retained/history
 behavior from measurements. Deleting files from a Git tree does not erase history.
 Do not solve capacity by merely raising ceilings. Preserve the last good catalog
 through validation failure and exact-parent publication conflicts.
@@ -109,7 +112,7 @@ through validation failure and exact-parent publication conflicts.
 ### Keep the core understandable and reusable
 
 Target source adapter → normalized records → validation/merge → YAML output,
-with explicit scheduling, budgets, checkpointing, credentials and publication
+with explicit scheduling, budgets, credentials and publication
 boundaries. Reuse core code for local evidence and workflow acquisition.
 Keep GitHub/domain schemas explicit and avoid speculative plugin abstractions.
 After the interface is settled, specify a thin collection Action and consider a
@@ -127,6 +130,9 @@ meaningfully measurable deferred work. Include definitions and measurement times
 Source ages cannot substitute for retained-release freshness.
 Distinguish configured limits, observed usage and unverified capacity.
 Bound statistics and show gaps; do not interpolate missing success.
+Public updates at run start and finish suffice. A start without a recorded finish
+shows “started, no completion recorded”; no continuous progress or inferred
+partial outcome is required.
 
 ## Existing decisions and evidence to preserve
 

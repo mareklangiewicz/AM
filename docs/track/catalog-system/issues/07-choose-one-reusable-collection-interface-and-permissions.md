@@ -23,7 +23,16 @@ side effect. Specify a thin custom Action and whether a reusable orchestration
 workflow actually removes duplication. Choose the supported entry points and
 retirement path for any superseded ones with Marek; do not implement them here.
 
-## Comments — progress decision input, November 7, 2026
+## Current input — accepted simpler recovery, November 7, 2026
+
+Marek accepted redoing unfinished work after runner loss and public health updates
+only at start and finish. No separate store, cross-run acquisition journal, lease
+service or special publication gate is required. Prefer simple existing workflow
+mechanisms; ask before choosing any further concurrency/retry policy. Publication
+still validates its candidate and checks the exact parent. The older input below
+is historical, not an implementation requirement.
+
+## Historical superseded progress input — November 7, 2026
 
 [Durable progress and fair scheduling](../progress-and-scheduling-decision.md)
 requires an explicit publication gate that validates owner fences, serializes

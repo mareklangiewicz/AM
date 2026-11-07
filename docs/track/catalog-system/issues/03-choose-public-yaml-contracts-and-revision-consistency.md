@@ -29,6 +29,16 @@ and compatibility requirements, not production schemas or reader implementation.
 
 ## Comments
 
+### Recovery simplification amendment — November 7, 2026
+
+Marek accepted redoing unfinished work after runner loss and public health updates
+only at start/finish. The linked contract sketch now removes custom run-order
+allocation, continuous progress and cross-run recovery infrastructure as
+requirements. A start without a finish is explicitly incomplete evidence. Exact
+pinning, last-good catalog preservation and independent health reporting remain.
+Minimal ordering/concurrency and failed-start-update handling still need simple
+questions in the remaining decisions; no new machinery is selected here.
+
 ### Accepted app-to-file references — November 7, 2026
 
 Marek accepted using upstream-aligned AM app names as keys and explicit,

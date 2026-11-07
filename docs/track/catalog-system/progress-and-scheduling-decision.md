@@ -1,10 +1,32 @@
 # Durable progress and fair scheduling
 
-Status: reopened November 7, 2026. Marek rejected the complexity exposed by the
-separate-store proposal and requires simpler implementation, allowing weaker
-recovery guarantees. The design below is historical and under reconsideration;
-do not implement it as an accepted requirement. Ask simple questions before
-selecting its replacement; see the owning ticket's reopening note.
+## Current accepted baseline — November 7, 2026
+
+Marek answered “yes to both” to these two choices:
+
+1. If a runner dies, the next run may redo its unfinished work. Preserve the last
+   published catalog and accept repeated requests instead of building cross-run
+   recovery infrastructure. Work acquired but not published may be lost, including
+   complete sources from the interrupted run. No separate checkpoint store,
+   cross-run response-replay guarantee or durable per-request journal is required.
+2. Public health updates at run start and finish. If a run has a start record but
+   no finish record, display “started, no completion recorded”. Do not infer its
+   outcome or partial-source counts. Continuous progress updates are not required.
+
+Previously published observations stay intact until a new candidate passes
+validation and exact-parent publication. A rerun uses actual new response receipt
+times; a failed run does not freshen old data. Existing saved-response replay for
+explicit local evidence remains useful, without becoming automatic crash recovery.
+
+These decisions supersede the historical durability/fencing/gate/minute-update
+design below. The ticket remains claimed: scheduling, retry policy and any
+necessary minimal concurrency/publication handling still need simple questions
+and human answers. The previous 4:1 weighting, cooldowns and 24-hour replay window
+are not accepted requirements. This is planning, with no runtime changes.
+
+## Historical superseded design
+
+Preserved for context only. The following is not implementation authority.
 
 Target design selected November 7, 2026, continuing Marek's “you decide” delegation
 and subsequent “go on”. Owner:
