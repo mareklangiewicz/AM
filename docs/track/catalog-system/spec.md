@@ -25,6 +25,11 @@ Educational placement and content responsibilities are now accepted in
 That resolution leaves the browser layout, detailed health semantics and revision
 contracts to their owning decisions.
 
+The target public interface and consistency model are selected in
+[Choose public YAML contracts and revision consistency](issues/03-choose-public-yaml-contracts-and-revision-consistency.md#answer--november-7-2026),
+with the linked contract sketch owning document boundaries, pins, encodings and
+compatibility gates. This is a design decision; the deployed format remains 2.
+
 ## Accepted requirements
 
 ### Browse and learn through real apps

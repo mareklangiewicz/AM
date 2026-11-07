@@ -2,7 +2,8 @@
 
 Type: grilling
 Label: wayfinder:grilling
-Status: open
+Status: resolved
+Assignee: codex-contracts
 Blocked by: 01
 
 ## Question
@@ -109,3 +110,33 @@ Editor integration reference:
 [YAML language server documentation](https://github.com/redhat-developer/yaml-language-server#readme).
 These are inputs to this still-open decision, not a format migration or authorization
 to change readers, publication or installed consumers.
+
+## Answer — November 7, 2026
+
+Marek explicitly delegated this decision with “you decide” after being told the
+next question was public YAML contracts and revision consistency. This is direct
+decision authority for this ticket, replacing its normal interview requirement;
+it is not fabricated human feedback or authorization for production changes.
+
+Selected [Public YAML contracts and revision consistency](../public-contract-decision.md)
+as the target design. It defines separate exact-pinned catalog and operational
+status channels, format-3 catalog document boundaries, source/recipe/policy pins,
+publication confirmation and lag/race behavior, stable readable source naming,
+lossless asset URL prefixes/full-URL escape hatch, `media_type` defaults/aliases,
+editor schemas, strict per-kind validation and format-2 compatibility gates.
+
+Health can report a failed run independently of last-good release publication.
+Status confirmation is explicitly allowed to lag catalog publication; the UI
+labels mismatched contexts instead of silently combining unrelated revisions.
+The companion contract sketch owns the detailed resolution and examples.
+
+Metric meanings, run registration/recovery, recipe evidence predicates, storage
+retention and rollout timing stay with their existing owning decisions. No new
+ticket is required: the existing questions cover the remaining work. Production
+schemas and exact field-order tables follow those decisions; this resolution
+fixes the contract design, not unimplemented acceptance evidence.
+
+The deployed format-2 specification/readers/files remain unchanged. No external
+research or remote-state claim was needed for these design choices. Documentation
+link/dependency and whitespace checks accompany this planning change; no runtime
+tests, remote refs, deployment, installed changes or push are part of it.
