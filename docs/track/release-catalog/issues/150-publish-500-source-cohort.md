@@ -1,8 +1,8 @@
 # Publish the verified cohort at the 500-source ceiling
 
 Type: task
-Status: open
-Triage: ready-for-human
+Status: claimed
+Triage: ready-for-agent
 Blocked by: 149
 
 After 149's real-cohort density/capacity and preservation checks pass, present the
@@ -21,3 +21,8 @@ cohort or a separately measured proposal; do not silently widen limits.
 
 Preparation: [real-source cohort report](../research/next-500-catalog-expansion.md).
 No push or dispatch is authorized by this ticket alone.
+
+## Authorization
+
+Marek answered “yes” to pushing and publishing the prepared cohort at
+`84d19a4c2`. Proceed with source push, workflow dispatch and exact-pin verification.
