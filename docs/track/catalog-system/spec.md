@@ -77,8 +77,13 @@ storage backends are outside this effort. See the
 
 Use [incremental source processing](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-incremental-source-processing--november-7-2026):
 process selected sources and reuse unchanged Git blobs from the exact prior pin,
-preserving complete-snapshot integrity. Validation/reuse mechanics and measured
-capacity remain to be specified; no limit increase follows from this direction.
+preserving complete-snapshot integrity. Trust unchanged files only from an exact,
+previously validated catalog commit under the same validation rules. Validate
+changed files each run, including applicable root/cross-document identity checks;
+changes to format, schema or validation policy require a full snapshot check.
+The [accepted validation direction](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-validation-for-unchanged-blob-reuse--november-7-2026)
+still needs a concrete mechanism for establishing prior validation and rule
+identity. Measured capacity remains open; no limit increase follows from this.
 
 ## Accepted requirements
 

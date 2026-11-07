@@ -28,6 +28,17 @@ No cap increase or storage implementation is authorized by resolving this questi
 
 ## Comments
 
+### Accepted validation for unchanged-blob reuse — November 7, 2026
+
+Marek answered “yes” to trusting unchanged files only from an exact, previously
+validated catalog commit under the same validation rules. Validate changed files
+each run and preserve applicable root/cross-document identity checks. Changes to
+format, schema or validation policy require a full snapshot check before reuse
+under the new rules. This settles the validation direction left open in the
+incremental-processing comment below; the evidence/mechanism establishing prior
+validation and rule identity must be specified in implementation work. An exact
+commit pin alone is not evidence of prior validation. Planning only.
+
 ### Accepted document-size overflow rule — November 7, 2026
 
 Marek answered “yes” to preserving a source's previous published data and reporting
