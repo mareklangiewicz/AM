@@ -14,14 +14,24 @@ timestamp churn without changing any release's effective freshness; measure Git
 history as well as snapshot size. Implementation and evidence are in ticket 77.
 
 November 7 retention amendment, agreed by Marek: after a source's requested scope
-succeeds, merge fetched releases and apply the explicit age/count retention
+succeeds, merge fetched releases and apply the explicit count-based retention
 policy before candidate validation and publication. This permits removing
 unfetched records under that policy, while partial-fetch absence still never
 establishes upstream deletion. Failed and unattempted sources stay unchanged;
-retained records keep their effective observation times. Keep releases within
-730 days, at least the five newest dated releases, the newest dated non-prerelease,
-and all undated releases. The exact inclusive cutoff, ordering and application
-rules live in the
-[accepted retention policy](../track/catalog-system/issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-pruning-timing-and-current-retention-policy--november-7-2026).
-This amends unconditional retention, not collection scope or freshness semantics.
+retained records keep their effective observation times. Keep the 32 newest
+observed releases and, if none is non-prerelease, the newest observed non-prerelease
+when available (at most 33), including all their assets. Publication time orders
+records, falling back to creation time, then numeric release ID, descending.
+This supersedes the earlier age window and unlimited undated exception; records
+missing both timestamps still need a rule preserving the count bound. See the
+[accepted count policy](../track/catalog-system/issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-32-plus-stable-retention--november-7-2026-side-conversation).
+
+Marek also accepted one current record per exact tag within each numeric source:
+a newly observed release replaces an older retained incarnation of that tag,
+even if the numeric release ID changed. Keep the observed ID as evidence; apply
+tag replacement before count retention. Distinct tags remain distinct. Conflicting
+same-tag evidence within one collection still needs an explicit validation rule.
+See the [accepted exact-tag replacement rule](../track/catalog-system/issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-exact-tag-replacement--november-7-2026-side-conversation).
+Earlier catalog commits preserve metadata, without guaranteeing historical binary
+availability. This amends retention/supersession, not collection scope or freshness.
 Existing Git history stays intact; no runtime change or history rewrite is authorized.

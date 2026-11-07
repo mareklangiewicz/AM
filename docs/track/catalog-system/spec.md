@@ -46,12 +46,21 @@ with their owning decisions.
 
 The target cadence is now two scheduled collection runs daily plus manual
 workflow dispatch, with exact cron times still open. The storage discussion also
-settled release retention: a 730-day window, at least five newest dated releases,
-the newest dated non-prerelease and all undated releases, applied after successful
-source-scope collection and merge, before candidate validation/publication.
+settled release retention: keep the 32 newest observed releases per source, plus
+the newest observed non-prerelease if none of those 32 is non-prerelease (at most
+33 records). Keep all assets of retained releases. Order by publication time,
+falling back to creation time, then numeric release ID, descending. Missing both
+timestamps still needs a bounded rule. A newly observed release replaces any older
+retained record with the same exact tag within that numeric source, even if its
+release ID changed; resolve tag reuse before count-based retention. Conflicting
+same-tag evidence within a collection still needs a validation rule. Apply this
+after successful source-scope collection and merge, before validation/publication.
 Failed and unattempted sources stay unchanged; retained freshness stays intact.
-The [accepted retention policy](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-pruning-timing-and-current-retention-policy--november-7-2026)
-owns exact ordering and boundary rules. Existing Git history stays intact for now.
+The [accepted 32-plus-stable policy](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-32-plus-stable-retention--november-7-2026-side-conversation)
+and [exact-tag replacement rule](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-exact-tag-replacement--november-7-2026-side-conversation)
+supersede the earlier age window, five-release minimum and unlimited undated
+exception. Earlier Git commits preserve metadata observations, not historical
+upstream binary availability. Existing Git history stays intact for now.
 These are planning decisions; the broader storage ticket remains unresolved.
 
 Git is a firm foundation for public snapshots, chosen for transparency, simplicity
