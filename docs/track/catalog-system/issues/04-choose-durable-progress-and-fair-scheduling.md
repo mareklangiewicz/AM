@@ -101,3 +101,12 @@ identity proposals remain separate from explicit enrollment. No mixed-work queue
 4:1 service ratio or persistent fairness state is required. Applicable resource/
 quota limits still apply to manual work. Minimal concurrency/publication handling
 remains open; the ticket stays claimed.
+
+### Accepted single active collection — November 7, 2026
+
+Marek answered “yes” to running one collection at a time and letting the active
+run finish rather than cancelling it when another is triggered. Use ordinary
+workflow concurrency controls shared by scheduled/manual collection. No custom
+lease/fencing service or durable queue is required. No guarantee that every
+pending trigger executes is implied. The current baseline records this choice;
+publication-conflict and failed-start-update handling remain open.

@@ -31,15 +31,22 @@ manual work explicitly bounded under the applicable budget/quota protections.
 No mixed discovery/refresh queue, weighted lanes or fairness counters are needed.
 This concerns maintainer source discovery, not visitors searching the app browser.
 
+Marek accepted running only one collection at a time, allowing the active run to
+finish when another is triggered. Use ordinary workflow concurrency controls with
+no automatic cancellation of the active run; scheduled and manual collection
+must share the same exclusion. No custom lease/fencing service or durable job
+queue is required. This does not promise execution of every queued trigger;
+pending-trigger behavior belongs to the workflow interface, not recovery storage.
+
 Previously published observations stay intact until a new candidate passes
 validation and exact-parent publication. A rerun uses actual new response receipt
 times; a failed run does not freshen old data. Existing saved-response replay for
 explicit local evidence remains useful, without becoming automatic crash recovery.
 
 These decisions supersede the historical durability/fencing/gate/minute-update
-design below. The ticket remains claimed: necessary minimal concurrency/
-publication handling still needs simple questions
-and human answers. The previous 4:1 weighting, cooldowns and 24-hour replay window
+design below. The ticket remains claimed: publication-conflict handling and
+behavior when the public start update fails still need simple questions and human
+answers. The previous 4:1 weighting, cooldowns and 24-hour replay window
 are not accepted requirements. This is planning, with no runtime changes.
 
 ## Historical superseded design

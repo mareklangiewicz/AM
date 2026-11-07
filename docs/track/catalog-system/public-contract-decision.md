@@ -89,9 +89,10 @@ is published may be absent from public health. If the final summary cannot be
 published, do not invent one from lost runner-local data.
 
 The earlier custom run-order allocator and registration/recovery machinery are
-withdrawn requirements. Minimal run identification, ordering, concurrency and
-behavior when the start update fails remain for the progress/interface decisions,
-using simple existing mechanisms where possible. A late summary must not demote
+withdrawn requirements. One collection runs at a time without automatically
+cancelling the active run on a new trigger. Minimal run identification/ordering
+and behavior when the start update fails remain for the progress/interface
+decisions, using existing mechanisms where possible. A late summary must not demote
 a newer attempt or overwrite a confirmed publication. Catalog publication ordering
 follows its lineage. Unknown publication results stay unknown until evidenced;
 no durable publication-intent service is required by this contract.
