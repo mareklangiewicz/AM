@@ -224,3 +224,12 @@ only status above. The 500/hour profile is unchanged and now exercised in CI for
 500 verified real upstreams. No installed-host changes. Broad attribution,
 whole-snapshot/history/reader scaling and discovery transport accounting in 151
 remain; this ticket stays claimed rather than declaring all-GitHub completion.
+
+## Discovery accounting corrected locally
+
+[151 resolved](151-bound-discovery-redirect-request-accounting.md) bounds actual
+discovery transport attempts, including explicit origin-constrained metadata
+redirects, retaining numeric identity and checkpoint gates. Fourteen focused tests
+pass. New receipts identify corrected accounting; old evidence is not rewritten.
+No enrollment or live publication changes. Snapshot/history/reader scaling remains
+the next prerequisite for coverage beyond the deployed 500-source ceiling.

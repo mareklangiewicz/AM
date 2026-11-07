@@ -69,7 +69,13 @@ storage have not been qualified for thousands.
   canonical endpoint, requiring the alias and canonical public numeric IDs to
   agree before probing releases. Default verification still defers redirects.
   Proposal scope is independent of the active enrollment cap; the fixed
-  200-request per-invocation bound remains, and proposals never enroll sources.
+  200-request per-invocation bound counts transport attempts, including explicitly
+  followed metadata redirects. Redirect review allows at most three hops per GET,
+  only to exact HTTPS `api.github.com` repository metadata endpoints; release-probe
+  redirects and unexpected destinations refuse before forwarding credentials.
+  Receipts mark this accounting as `transport_attempts_v1`. Older unmarked
+  discovery receipts counted logical GET calls and do not prove underlying hop
+  counts; their stored evidence is unchanged. Proposals never enroll sources.
 - `recipe_policy_source.py`: regenerate recipe declaration data in
   `modules/catalog-yaml-policy.am`; selector logic remains maintained shell/awk.
 - `recipe_refresh.py`: preview or explicitly apply one installed recipe/source

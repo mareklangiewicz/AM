@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT/'tools/recipe-reconstruction'))
 from originals import Originals, Catalogue
 from bounded import unique_object
-from host_catalog import SOURCE_CAP, configuration, utc
+from host_catalog import SOURCE_CAP, configuration, utc, NoRedirect
 
 REPOSITORY = r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+'
 ALIAS = re.compile(r'https://api[.]github[.]com/repos/('+REPOSITORY+r')/releases')
@@ -97,17 +97,52 @@ def scan(root=ROOT):
         observed_at=utc(), candidates=candidates, ambiguous=ambiguous, unsupported_recipes=excluded)
 
 
-def _get(path):
+class RequestBudgetExhausted(Exception):
+    pass
+
+
+class RedirectRefused(Exception):
+    pass
+
+
+def _open(request):
+    return urllib.request.build_opener(NoRedirect()).open(request, timeout=30)
+
+
+def _get(path, *, redirect_budget, review_redirects=False):
     headers = {'Accept':'application/vnd.github+json', 'User-Agent':'AM-source-review',
                'X-GitHub-Api-Version':'2022-11-28'}
     if os.environ.get('GH_TOKEN'):
         headers['Authorization'] = 'Bearer '+os.environ['GH_TOKEN']
-    request = urllib.request.Request('https://api.github.com/'+path, headers=headers)
-    with urllib.request.urlopen(request, timeout=30) as response:
-        raw = response.read(16*1024*1024+1)
-        if len(raw) > 16*1024*1024:
-            raise ValueError('response allowance')
-        return json.loads(raw, object_pairs_hook=unique_object), hashlib.sha256(raw).hexdigest()
+    url = 'https://api.github.com/'+path
+    metadata = re.fullmatch('repos/'+REPOSITORY, path) is not None
+    for hop in range(4):
+        request = urllib.request.Request(url, headers=headers)
+        try:
+            response = _open(request)
+        except urllib.error.HTTPError as error:
+            if error.code not in (301, 302, 307, 308):
+                raise
+            location = error.headers.get('Location', '')
+            error.close()
+            # Validate before constructing another credential-bearing request.
+            if (not review_redirects or not metadata or hop == 3 or
+                    not isinstance(location, str) or
+                    any(part in ('.', '..') for part in location.split('/')[3:]) or
+                    not re.fullmatch(
+                        r'https://api[.]github[.]com/(?:repositories/[1-9][0-9]*|repos/'+REPOSITORY+')',
+                        location)):
+                raise RedirectRefused() from None
+            redirect_budget()
+            url = location
+            continue
+        with response:
+            if response.status != 200 or response.url != url:
+                raise RedirectRefused()
+            raw = response.read(16*1024*1024+1)
+            if len(raw) > 16*1024*1024:
+                raise ValueError('response allowance')
+            return json.loads(raw, object_pairs_hook=unique_object), hashlib.sha256(raw).hexdigest()
 
 
 def verify(queue, *, max_sources, max_requests, root=ROOT, checkpoint=None, review_redirects=False):
@@ -123,8 +158,17 @@ def verify(queue, *, max_sources, max_requests, root=ROOT, checkpoint=None, revi
     proposals, deferred = [], []
     used = 0
     catalogue = _catalogue(root)
+    def charge():
+        nonlocal used
+        if used >= max_requests:
+            raise RequestBudgetExhausted()
+        used += 1
+    def get(path):
+        charge()
+        return _get(path, redirect_budget=charge, review_redirects=review_redirects)
     def result():
         return dict(source=queue['source'], observed_at=utc(), requests=used,
+            request_accounting="transport_attempts_v1",
             proposed_sources=len(known), proposals=proposals, deferred=deferred,
             note='Review proposals only; collection enrollment and recipe policy are unchanged.')
     # The five already screened simple migration candidates lead this review.
@@ -153,8 +197,7 @@ def verify(queue, *, max_sources, max_requests, root=ROOT, checkpoint=None, revi
         # Metadata is checked even for a shared source: no alias is promoted on
         # the strength of an unverified textual mention or a rename redirect.
         try:
-            used += 1
-            metadata, digest = _get('repos/'+requested)
+            metadata, digest = get('repos/'+requested)
             if metadata.get('private') is not False or not metadata.get('full_name'):
                 deferred.append(dict(app=app, reason='not_public_repository'))
                 continue
@@ -169,8 +212,7 @@ def verify(queue, *, max_sources, max_requests, root=ROOT, checkpoint=None, revi
                 if used >= max_requests:
                     deferred.append(dict(app=app, reason='redirect_review_request_budget'))
                     break
-                used += 1
-                direct, redirect_digest = _get('repos/'+canonical)
+                direct, redirect_digest = get('repos/'+canonical)
                 if (type(metadata.get('id')) is not int or metadata['id'] <= 0 or
                         direct.get('private') is not False or
                         type(direct.get('id')) is not int or
@@ -187,9 +229,9 @@ def verify(queue, *, max_sources, max_requests, root=ROOT, checkpoint=None, revi
             if canonical.lower() in source_names and source_names[canonical.lower()] != rid:
                 raise ValueError('known source identity mismatch')
             if used >= max_requests:
+                deferred.append(dict(app=app, reason='request_budget'))
                 break
-            used += 1
-            releases, release_digest = _get('repositories/'+str(rid)+'/releases?per_page=1&page=1')
+            releases, release_digest = get('repositories/'+str(rid)+'/releases?per_page=1&page=1')
             if not isinstance(releases, list) or not releases or releases[0].get('draft') is not False:
                 deferred.append(dict(app=app, reason='no_public_release_in_probe'))
                 continue
@@ -204,6 +246,11 @@ def verify(queue, *, max_sources, max_requests, root=ROOT, checkpoint=None, revi
             known[str(rid)] = canonical
             source_names[canonical.lower()] = rid
             print(app+': '+canonical, flush=True)
+        except RequestBudgetExhausted:
+            deferred.append(dict(app=app, reason='request_budget'))
+            break
+        except RedirectRefused:
+            deferred.append(dict(app=app, reason='redirect_refused'))
         except urllib.error.HTTPError as error:
             status = error.code
             error.close()
