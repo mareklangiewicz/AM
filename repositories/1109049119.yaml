@@ -1,21 +1,21 @@
 format: 2
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/cf802fced5654bbf85bb5437cb8ae7132667ac38/docs/catalog-format-v2.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/fa5458d9be0efb9d149ebfe3bd5ea76bd39ddf56/docs/catalog-format-v2.md"
 repository_id: 1109049119
 repository: "yetone/alma-releases"
 collection:
-  attempted_at: "2026-11-07T16:58:31Z"
+  attempted_at: "2026-11-07T21:04:03Z"
   page_size: 100
   page_limit: 1
   reconcile: false
   status: "ok"
 last_success:
-  completed_at: "2026-11-07T16:58:32Z"
+  completed_at: "2026-11-07T21:04:04Z"
   page_size: 100
   page_limit: 1
   reconcile: false
   pages_fetched: 1
   history_complete: false
-observed_at: "2026-11-07T16:58:32Z"
+observed_at: "2026-11-07T21:04:04Z"
 releases:
   "430853927":
     observed_at: "2026-11-07T00:54:23Z"
@@ -1368,6 +1368,7 @@ releases:
         content_type: "application/x-apple-diskimage"
         digest: "sha256:e86b3f90523c531db86af3ee63f93411afd6d2b459a289621d3df0d92186f4d6"
   "430974585":
+    observed_at: "2026-11-07T16:58:32Z"
     tag: "v0.4.377"
     title: "Alma v0.4.377"
     url: "https://github.com/yetone/alma-releases/releases/tag/v0.4.377"
@@ -13699,3 +13700,152 @@ releases:
         size: 430362977
         content_type: "application/x-apple-diskimage"
         digest: "sha256:6c4632296b868329479332000222c94af5cc0a402f9d7fd45ef84b5cf6fded69"
+  "437778360":
+    tag: "v0.4.490"
+    title: "Alma v0.4.490"
+    url: "https://github.com/yetone/alma-releases/releases/tag/v0.4.490"
+    created_at: "2026-11-04T15:16:04Z"
+    published_at: "2026-11-07T19:02:21Z"
+    updated_at: "2026-11-07T19:18:57Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/yetone/alma-releases/zipball/v0.4.490"
+    source_tar_url: "https://api.github.com/repos/yetone/alma-releases/tarball/v0.4.490"
+    assets:
+      "721639903":
+        name: "alma-0.4.490-linux-amd64.deb"
+        url: "https://github.com/yetone/alma-releases/releases/download/v0.4.490/alma-0.4.490-linux-amd64.deb"
+        size: 300839768
+        content_type: "application/x-debian-package"
+        digest: "sha256:9bae904c13a9da2f20b9150d22f3b0f1c3f30c7acc70e0b0e2cc67ddbd3d1983"
+      "721639904":
+        name: "alma-0.4.490-linux-aarch64.rpm"
+        url: "https://github.com/yetone/alma-releases/releases/download/v0.4.490/alma-0.4.490-linux-aarch64.rpm"
+        size: 288554809
+        content_type: "application/x-redhat-package-manager"
+        digest: "sha256:1bf8caffed848534ddd305d82c71689f7886d04e45f778fdd8310c6bfcf80a2f"
+      "721639905":
+        name: "alma-0.4.490-linux-x86_64.rpm"
+        url: "https://github.com/yetone/alma-releases/releases/download/v0.4.490/alma-0.4.490-linux-x86_64.rpm"
+        size: 301489221
+        content_type: "application/x-redhat-package-manager"
+        digest: "sha256:057005609bf0d337d2fc30272f93e97e2712b49407869a4695c47e19ca60b30e"
+      "721639906":
+        name: "alma-0.4.490-linux-arm64.AppImage"
+        url: "https://github.com/yetone/alma-releases/releases/download/v0.4.490/alma-0.4.490-linux-arm64.AppImage"
+        size: 506875766
+        content_type: "application/octet-stream"
+        digest: "sha256:cdb3dfe54fbc982077e20d61a85d7d6175fd08c26167e800ccf412bc5813e6d0"
+      "721639907":
+        name: "alma-0.4.490-linux-arm64.deb"
+        url: "https://github.com/yetone/alma-releases/releases/download/v0.4.490/alma-0.4.490-linux-arm64.deb"
+        size: 358531536
+        content_type: "application/x-debian-package"
+        digest: "sha256:13aa66fa9afede95108ec3c0916a4a05d4b1afb059e4ab5c0c96f876967230d6"
+      "721639908":
+        name: "alma-server-0.4.490-linux-arm64.tar.gz"
+        url: "https://github.com/yetone/alma-releases/releases/download/v0.4.490/alma-server-0.4.490-linux-arm64.tar.gz"
+        size: 182072847
+        content_type: "application/gzip"
+        digest: "sha256:60c2accaf7845b0d61d111dc03a90d7222dc6498457645a94072fd196079fd96"
+      "721639909":
+        name: "alma-0.4.490-win-x64.exe"
+        url: "https://github.com/yetone/alma-releases/releases/download/v0.4.490/alma-0.4.490-win-x64.exe"
+        size: 448678697
+        content_type: "application/x-msdos-program"
+        digest: "sha256:df61a9c184ee875421bc6783c0bfbc98c9d912bfd59f27d084ddc542ea09a4aa"
+      "721639910":
+        name: "builder-debug.yml"
+        url: "https://github.com/yetone/alma-releases/releases/download/v0.4.490/builder-debug.yml"
+        size: 2075
+        content_type: "text/yaml"
+        digest: "sha256:e20e64f7de78b762c5c62ad16d6754b18ab90aa05dca8959b02abe8fd8af8b0c"
+      "721639911":
+        name: "latest-linux.yml"
+        url: "https://github.com/yetone/alma-releases/releases/download/v0.4.490/latest-linux.yml"
+        size: 824
+        content_type: "text/yaml"
+        digest: "sha256:62b5bbd5f312dcccf75fc335fecb21922e5579b8d29c1df4c549cfbb94ba37a8"
+      "721639912":
+        name: "alma-0.4.490-win-x64.exe.blockmap"
+        url: "https://github.com/yetone/alma-releases/releases/download/v0.4.490/alma-0.4.490-win-x64.exe.blockmap"
+        size: 458014
+        content_type: "application/octet-stream"
+        digest: "sha256:d594f8b2c5bf4a77d7faa366e9e887630888d94b06ef0bab4ca2e89c83c7f232"
+      "721639914":
+        name: "latest-linux-arm64.yml"
+        url: "https://github.com/yetone/alma-releases/releases/download/v0.4.490/latest-linux-arm64.yml"
+        size: 823
+        content_type: "text/yaml"
+        digest: "sha256:39c6aa7c170a6c24d0a2acf5ddc20cb0be7d474ee1926a228bcdaba03869db00"
+      "721639915":
+        name: "alma-0.4.490-linux-x86_64.AppImage"
+        url: "https://github.com/yetone/alma-releases/releases/download/v0.4.490/alma-0.4.490-linux-x86_64.AppImage"
+        size: 509922594
+        content_type: "application/octet-stream"
+        digest: "sha256:48c43f8e1cad7b9f4a33bfec2311a646dd46f614f4d3ab92b368eee2332845a9"
+      "721639916":
+        name: "alma-server-0.4.490-linux-x64.tar.gz"
+        url: "https://github.com/yetone/alma-releases/releases/download/v0.4.490/alma-server-0.4.490-linux-x64.tar.gz"
+        size: 186141244
+        content_type: "application/gzip"
+        digest: "sha256:a822102b25a0d973aa1db5f9e8a3259dceac282ca86abd1fc60851c4d4fce1cf"
+      "721639917":
+        name: "latest.yml"
+        url: "https://github.com/yetone/alma-releases/releases/download/v0.4.490/latest.yml"
+        size: 460
+        content_type: "text/yaml"
+        digest: "sha256:c746fc77de001c4341c914bfc8e9ca275c2346e9c9c3e16aedcf5c543065e844"
+      "721681688":
+        name: "alma-0.4.490-mac-x64.dmg"
+        url: "https://github.com/yetone/alma-releases/releases/download/v0.4.490/alma-0.4.490-mac-x64.dmg"
+        size: 446515519
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:b6a8321863ad252ded0f5be02e68240fbcfd65c45b20e6ccfa6cacdb51ddad01"
+      "721681689":
+        name: "alma-0.4.490-mac-arm64.dmg"
+        url: "https://github.com/yetone/alma-releases/releases/download/v0.4.490/alma-0.4.490-mac-arm64.dmg"
+        size: 430450355
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:901b3ddc08cfc3f09ff8e7e8ab3fba705a1c3bd07c575b9018cec5bbb6976da5"
+      "721681690":
+        name: "alma-0.4.490-mac-x64.dmg.blockmap"
+        url: "https://github.com/yetone/alma-releases/releases/download/v0.4.490/alma-0.4.490-mac-x64.dmg.blockmap"
+        size: 460259
+        content_type: "application/octet-stream"
+        digest: "sha256:f4c88667130bcf8c01801c31595303be031f6b392531d724ec7b4cd1cddfaeef"
+      "721681691":
+        name: "latest-mac.yml"
+        url: "https://github.com/yetone/alma-releases/releases/download/v0.4.490/latest-mac.yml"
+        size: 929
+        content_type: "text/yaml"
+        digest: "sha256:d5487b0c06a771b88300e59bc1d3db34eccb3b596c14e44aa714b7a7e9596f52"
+      "721681692":
+        name: "alma-0.4.490-mac-arm64.zip"
+        url: "https://github.com/yetone/alma-releases/releases/download/v0.4.490/alma-0.4.490-mac-arm64.zip"
+        size: 413955062
+        content_type: "application/zip"
+        digest: "sha256:0fb98fc9bd0fc2ab0abb61f57016465dae1c96f63500ae1e26b4734bd83a7288"
+      "721681693":
+        name: "alma-0.4.490-mac-arm64.dmg.blockmap"
+        url: "https://github.com/yetone/alma-releases/releases/download/v0.4.490/alma-0.4.490-mac-arm64.dmg.blockmap"
+        size: 441327
+        content_type: "application/octet-stream"
+        digest: "sha256:8b864b7fd247eb3faefbf85fa49dc0bf16ccd97bc2269ddf9863804d54d03157"
+      "721681694":
+        name: "alma-0.4.490-mac-arm64.zip.blockmap"
+        url: "https://github.com/yetone/alma-releases/releases/download/v0.4.490/alma-0.4.490-mac-arm64.zip.blockmap"
+        size: 414780
+        content_type: "application/octet-stream"
+        digest: "sha256:e7c78e43eb58891134f1c7ccadd9bb416a382ae4647d1cc36784fa1df4b965f0"
+      "721681695":
+        name: "alma-0.4.490-mac-x64.zip"
+        url: "https://github.com/yetone/alma-releases/releases/download/v0.4.490/alma-0.4.490-mac-x64.zip"
+        size: 429916761
+        content_type: "application/zip"
+        digest: "sha256:69c5889e383ec8ce1a9524dea14dc98dc50cc19c7ace251cf6962e3ce9e5e992"
+      "721681697":
+        name: "alma-0.4.490-mac-x64.zip.blockmap"
+        url: "https://github.com/yetone/alma-releases/releases/download/v0.4.490/alma-0.4.490-mac-x64.zip.blockmap"
+        size: 432210
+        content_type: "application/octet-stream"
+        digest: "sha256:81e995d5863dbb4e4538484d576d99f2268441c2f6ee8969f7317fd627e7ee72"

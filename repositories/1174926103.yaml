@@ -1,23 +1,24 @@
 format: 2
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/cf802fced5654bbf85bb5437cb8ae7132667ac38/docs/catalog-format-v2.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/fa5458d9be0efb9d149ebfe3bd5ea76bd39ddf56/docs/catalog-format-v2.md"
 repository_id: 1174926103
 repository: "desirecore/agent-os"
 collection:
-  attempted_at: "2026-11-07T16:59:07Z"
+  attempted_at: "2026-11-07T21:04:50Z"
   page_size: 100
   page_limit: 1
   reconcile: false
   status: "ok"
 last_success:
-  completed_at: "2026-11-07T16:59:08Z"
+  completed_at: "2026-11-07T21:04:51Z"
   page_size: 100
   page_limit: 1
   reconcile: false
   pages_fetched: 1
   history_complete: false
-observed_at: "2026-11-07T16:59:08Z"
+observed_at: "2026-11-07T21:04:51Z"
 releases:
   "356990968":
+    observed_at: "2026-11-07T16:59:08Z"
     tag: "v10.0.92"
     title: "DesireCore v10.0.92"
     url: "https://github.com/desirecore/agent-os/releases/tag/v10.0.92"
@@ -7837,3 +7838,20 @@ releases:
         size: 555
         content_type: "application/yaml"
         digest: "sha256:2f379aafd73a715d82bb68caffe050a7a6a4a6bc674c882d2f67b7458b583f80"
+  "437821030":
+    tag: "v10.0.202"
+    title: "DesireCore v10.0.202"
+    url: "https://github.com/desirecore/agent-os/releases/tag/v10.0.202"
+    created_at: "2026-06-28T10:51:30Z"
+    published_at: "2026-11-07T20:24:41Z"
+    updated_at: "2026-11-07T20:50:29Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/desirecore/agent-os/zipball/v10.0.202"
+    source_tar_url: "https://api.github.com/repos/desirecore/agent-os/tarball/v10.0.202"
+    assets:
+      "721894129":
+        name: "DesireCore_amd64_10.0.202.deb"
+        url: "https://github.com/desirecore/agent-os/releases/download/v10.0.202/DesireCore_amd64_10.0.202.deb"
+        size: 724613848
+        content_type: "application/x-debian-package"
+        digest: "sha256:3232ad581ff35439f147be1c9edc633885c3233e1dc8b7aeeaa72ea25edd54dd"

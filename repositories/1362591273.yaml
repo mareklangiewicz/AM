@@ -1,21 +1,21 @@
 format: 2
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/cf802fced5654bbf85bb5437cb8ae7132667ac38/docs/catalog-format-v2.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/fa5458d9be0efb9d149ebfe3bd5ea76bd39ddf56/docs/catalog-format-v2.md"
 repository_id: 1362591273
 repository: "Bexxs75/3mf-katalog-manager"
 collection:
-  attempted_at: "2026-11-07T16:57:23Z"
+  attempted_at: "2026-11-07T21:02:32Z"
   page_size: 100
   page_limit: 1
   reconcile: false
   status: "ok"
 last_success:
-  completed_at: "2026-11-07T16:57:23Z"
+  completed_at: "2026-11-07T21:02:32Z"
   page_size: 100
   page_limit: 1
   reconcile: false
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-07T16:57:23Z"
+observed_at: "2026-11-07T21:02:32Z"
 releases:
   "387826785":
     tag: "v0.6.0"
@@ -1194,17 +1194,17 @@ releases:
     url: "https://github.com/Bexxs75/3mf-katalog-manager/releases/tag/rc"
     created_at: "2026-10-09T09:17:52Z"
     published_at: "2026-10-09T09:57:59Z"
-    updated_at: "2026-11-06T11:45:29Z"
+    updated_at: "2026-11-07T20:11:05Z"
     prerelease: true
     source_zip_url: "https://api.github.com/repos/Bexxs75/3mf-katalog-manager/zipball/rc"
     source_tar_url: "https://api.github.com/repos/Bexxs75/3mf-katalog-manager/tarball/rc"
     assets:
-      "716983025":
+      "721808286":
         name: "latest-rc.json"
         url: "https://github.com/Bexxs75/3mf-katalog-manager/releases/download/rc/latest-rc.json"
         size: 4033
         content_type: "application/json"
-        digest: "sha256:599ec6dc9201f9e1bd8be0ffd1e9f84ef1cc109d05528c08be95d2920683cd59"
+        digest: "sha256:b591244516a629f9ae34d46f2df9eb5bacf2feab5dcd16660a34dea737dffbe7"
   "409094811":
     tag: "v0.15.4"
     title: "v0.15.4 — Large Bambu and Orca projects import / Große Bambu- und Orca-Projekte lassen sich importieren"
@@ -2248,3 +2248,92 @@ releases:
         size: 1437
         content_type: "application/yaml"
         digest: "sha256:52c491ac83209c187ded34ac487a3272955e67eea7c899c667d375eeb3873de1"
+  "437774263":
+    tag: "v0.18.0-6"
+    title: "v0.18.0-6 — Release Candidate 2 / Vorab-Version 2"
+    url: "https://github.com/Bexxs75/3mf-katalog-manager/releases/tag/v0.18.0-6"
+    created_at: "2026-11-07T18:39:48Z"
+    published_at: "2026-11-07T20:10:50Z"
+    updated_at: "2026-11-07T20:16:18Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/Bexxs75/3mf-katalog-manager/zipball/v0.18.0-6"
+    source_tar_url: "https://api.github.com/repos/Bexxs75/3mf-katalog-manager/tarball/v0.18.0-6"
+    assets:
+      "721618941":
+        name: "3MF-Katalog-Manager-0.18.0-6-Windows-x64-Setup.exe.sig"
+        url: "https://github.com/Bexxs75/3mf-katalog-manager/releases/download/v0.18.0-6/3MF-Katalog-Manager-0.18.0-6-Windows-x64-Setup.exe.sig"
+        size: 448
+        content_type: "application/pgp-signature"
+        digest: "sha256:f13b2d6ac79947bc65e5f10f13c62b46d53e33530e29802c8b4a864acc3d9be9"
+      "721618943":
+        name: "3MF-Katalog-Manager-0.18.0-6-Windows-x64.msi"
+        url: "https://github.com/Bexxs75/3mf-katalog-manager/releases/download/v0.18.0-6/3MF-Katalog-Manager-0.18.0-6-Windows-x64.msi"
+        size: 29536256
+        content_type: "application/x-msi"
+        digest: "sha256:9055f297e758058fae93711f55973e36231b87eff30d5ebe36803a5158e93f3b"
+      "721618944":
+        name: "3MF-Katalog-Manager-0.18.0-6-Linux-x86_64.AppImage"
+        url: "https://github.com/Bexxs75/3mf-katalog-manager/releases/download/v0.18.0-6/3MF-Katalog-Manager-0.18.0-6-Linux-x86_64.AppImage"
+        size: 101988856
+        content_type: "application/vnd.appimage"
+        digest: "sha256:09926c8b7c25ee137397980e16e0a37bf9f8927b7b005652fec1baaca8bfdb85"
+      "721618945":
+        name: "3MF-Katalog-Manager-0.18.0-6-Linux-x86_64.AppImage.sig"
+        url: "https://github.com/Bexxs75/3mf-katalog-manager/releases/download/v0.18.0-6/3MF-Katalog-Manager-0.18.0-6-Linux-x86_64.AppImage.sig"
+        size: 448
+        content_type: "application/pgp-signature"
+        digest: "sha256:6887357b6a512f3121ad3c9b742de15597165531fcd857cf60d98c9a0d530bc1"
+      "721618947":
+        name: "3MF-Katalog-Manager-0.18.0-6-Windows-x64-Setup.exe"
+        url: "https://github.com/Bexxs75/3mf-katalog-manager/releases/download/v0.18.0-6/3MF-Katalog-Manager-0.18.0-6-Windows-x64-Setup.exe"
+        size: 21136311
+        content_type: "application/octet-stream"
+        digest: "sha256:39e067d32097a674f9efa51e9a381913e810cdc4a623d114cf7a6f11bfd1e97a"
+      "721618969":
+        name: "3MF-Katalog-Manager-0.18.0-6-macOS-universal.app.tar.gz"
+        url: "https://github.com/Bexxs75/3mf-katalog-manager/releases/download/v0.18.0-6/3MF-Katalog-Manager-0.18.0-6-macOS-universal.app.tar.gz"
+        size: 50563413
+        content_type: "application/x-gtar"
+        digest: "sha256:5f892715fc4eb23922a8dcd5c5a0402dc2e430337d2f4e871435c8905371855b"
+      "721618973":
+        name: "3MF-Katalog-Manager-0.18.0-6-Windows-x64.msi.sig"
+        url: "https://github.com/Bexxs75/3mf-katalog-manager/releases/download/v0.18.0-6/3MF-Katalog-Manager-0.18.0-6-Windows-x64.msi.sig"
+        size: 440
+        content_type: "application/pgp-signature"
+        digest: "sha256:ec99b1fef8c5d3cd5582fff0dfc6432971418a5492595e82b048721f996392d4"
+      "721618993":
+        name: "3MF-Katalog-Manager-0.18.0-6-macOS-universal.app.tar.gz.sig"
+        url: "https://github.com/Bexxs75/3mf-katalog-manager/releases/download/v0.18.0-6/3MF-Katalog-Manager-0.18.0-6-macOS-universal.app.tar.gz.sig"
+        size: 456
+        content_type: "application/pgp-signature"
+        digest: "sha256:66e639f141e4cb2dc6286782f0b7dd2153c32d3687e5ff68724d4d566bed08c4"
+      "721619008":
+        name: "3MF-Katalog-Manager-0.18.0-6-macOS-universal.dmg"
+        url: "https://github.com/Bexxs75/3mf-katalog-manager/releases/download/v0.18.0-6/3MF-Katalog-Manager-0.18.0-6-macOS-universal.dmg"
+        size: 56526110
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:ecde6b4b37f7542a7a4a9ca550d9ac60090afd6624c296640498baa0f26d55a7"
+      "721619064":
+        name: "SHA256SUMS.txt"
+        url: "https://github.com/Bexxs75/3mf-katalog-manager/releases/download/v0.18.0-6/SHA256SUMS.txt"
+        size: 1226
+        content_type: "text/plain; charset=utf-8"
+        digest: "sha256:23f891b4e9a42de45ec771dc6d183c99c2e6077ad620382aad5162a26cd92c2f"
+      "721619070":
+        name: "latest-step.json"
+        url: "https://github.com/Bexxs75/3mf-katalog-manager/releases/download/v0.18.0-6/latest-step.json"
+        size: 4033
+        content_type: "application/json"
+        digest: "sha256:b591244516a629f9ae34d46f2df9eb5bacf2feab5dcd16660a34dea737dffbe7"
+      "721619076":
+        name: "latest.json"
+        url: "https://github.com/Bexxs75/3mf-katalog-manager/releases/download/v0.18.0-6/latest.json"
+        size: 4033
+        content_type: "application/json"
+        digest: "sha256:b591244516a629f9ae34d46f2df9eb5bacf2feab5dcd16660a34dea737dffbe7"
+      "721819715":
+        name: "docker-compose.yml"
+        url: "https://github.com/Bexxs75/3mf-katalog-manager/releases/download/v0.18.0-6/docker-compose.yml"
+        size: 1437
+        content_type: "application/yaml"
+        digest: "sha256:6e0049705245be9f4d2a8496e6b4bf2ed9a98b16e4140c9c3d588742fad7dd75"

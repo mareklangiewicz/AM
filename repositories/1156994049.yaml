@@ -1,21 +1,21 @@
 format: 2
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/cf802fced5654bbf85bb5437cb8ae7132667ac38/docs/catalog-format-v2.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/fa5458d9be0efb9d149ebfe3bd5ea76bd39ddf56/docs/catalog-format-v2.md"
 repository_id: 1156994049
 repository: "OrchestratorInc/agent-orchestrator"
 collection:
-  attempted_at: "2026-11-07T16:58:41Z"
+  attempted_at: "2026-11-07T21:04:17Z"
   page_size: 100
   page_limit: 1
   reconcile: false
   status: "ok"
 last_success:
-  completed_at: "2026-11-07T16:58:42Z"
+  completed_at: "2026-11-07T21:04:18Z"
   page_size: 100
   page_limit: 1
   reconcile: false
   pages_fetched: 1
   history_complete: false
-observed_at: "2026-11-07T16:58:42Z"
+observed_at: "2026-11-07T21:04:18Z"
 releases:
   "397754726":
     observed_at: "2026-11-07T11:43:41Z"
@@ -222,6 +222,7 @@ releases:
         content_type: "application/octet-stream"
         digest: "sha256:a858b693d734ce2f56bad1ed95f074fe2758788351e34fc5c9277bcf476092c7"
   "398090896":
+    observed_at: "2026-11-07T16:58:42Z"
     tag: "v0.13.2-nightly.202609280843"
     title: "v0.13.2-nightly.202609280843"
     url: "https://github.com/OrchestratorInc/agent-orchestrator/releases/tag/v0.13.2-nightly.202609280843"
@@ -10549,3 +10550,104 @@ releases:
         size: 434
         content_type: "application/octet-stream"
         digest: "sha256:21642b10a38f48c9abb73716ed5b8a7285c1177cede7df6033bb5ed1cab81920"
+  "437762658":
+    tag: "v0.14.11-nightly.202611071807"
+    title: "v0.14.11-nightly.202611071807"
+    url: "https://github.com/OrchestratorInc/agent-orchestrator/releases/tag/v0.14.11-nightly.202611071807"
+    created_at: "2026-11-07T13:56:00Z"
+    published_at: "2026-11-07T18:36:20Z"
+    updated_at: "2026-11-07T18:36:20Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/OrchestratorInc/agent-orchestrator/zipball/v0.14.11-nightly.202611071807"
+    source_tar_url: "https://api.github.com/repos/OrchestratorInc/agent-orchestrator/tarball/v0.14.11-nightly.202611071807"
+    assets:
+      "721566182":
+        name: "Agent.Orchestrator-darwin-x64-0.14.11-nightly.202611071807.zip"
+        url: "https://github.com/OrchestratorInc/agent-orchestrator/releases/download/v0.14.11-nightly.202611071807/Agent.Orchestrator-darwin-x64-0.14.11-nightly.202611071807.zip"
+        size: 264677598
+        content_type: "application/zip"
+        digest: "sha256:bcb037bbf4b3af2ada2010e78f7e514563bc02aeb759528deefc8d41070b6b3d"
+      "721566184":
+        name: "Agent.Orchestrator-0.14.11-nightly.202611071807.AppImage"
+        url: "https://github.com/OrchestratorInc/agent-orchestrator/releases/download/v0.14.11-nightly.202611071807/Agent.Orchestrator-0.14.11-nightly.202611071807.AppImage"
+        size: 218920040
+        content_type: "application/octet-stream"
+        digest: "sha256:d4bd80e506c7db3247fb1e937b584f951c40ccb284884bbfd9e3c9d65b514bbc"
+      "721566185":
+        name: "Agent.Orchestrator-0.14.11-nightly.202611071807.AppImage.blockmap"
+        url: "https://github.com/OrchestratorInc/agent-orchestrator/releases/download/v0.14.11-nightly.202611071807/Agent.Orchestrator-0.14.11-nightly.202611071807.AppImage.blockmap"
+        size: 228169
+        content_type: "application/octet-stream"
+        digest: "sha256:8de9145d362a8fa1e730ebc1d651a16dd9585d7dea34fa0b638249c9a4dd3d58"
+      "721566186":
+        name: "Agent.Orchestrator.Setup.0.14.11-nightly.202611071807.exe"
+        url: "https://github.com/OrchestratorInc/agent-orchestrator/releases/download/v0.14.11-nightly.202611071807/Agent.Orchestrator.Setup.0.14.11-nightly.202611071807.exe"
+        size: 192824712
+        content_type: "application/x-msdownload"
+        digest: "sha256:c2ab8ea09848c544ac69924ae93110e0a8eaf001cc16242ad4d61a23d737567e"
+      "721566188":
+        name: "Agent.Orchestrator-darwin-arm64-0.14.11-nightly.202611071807.zip"
+        url: "https://github.com/OrchestratorInc/agent-orchestrator/releases/download/v0.14.11-nightly.202611071807/Agent.Orchestrator-darwin-arm64-0.14.11-nightly.202611071807.zip"
+        size: 250525081
+        content_type: "application/zip"
+        digest: "sha256:6abed7e620dacdcb7441cf1e7f86f65ffe01bff0e205f9eff7e142a9f1e1886b"
+      "721566207":
+        name: "Agent.Orchestrator.Setup.0.14.11-nightly.202611071807.exe.blockmap"
+        url: "https://github.com/OrchestratorInc/agent-orchestrator/releases/download/v0.14.11-nightly.202611071807/Agent.Orchestrator.Setup.0.14.11-nightly.202611071807.exe.blockmap"
+        size: 200611
+        content_type: "application/octet-stream"
+        digest: "sha256:746a98c487aca075381bf11b54c5d5ccbac6748a3d091e0015e79d8b814b778b"
+      "721566245":
+        name: "agent-orchestrator-darwin-arm64.zip"
+        url: "https://github.com/OrchestratorInc/agent-orchestrator/releases/download/v0.14.11-nightly.202611071807/agent-orchestrator-darwin-arm64.zip"
+        size: 250525081
+        content_type: "application/zip"
+        digest: "sha256:6abed7e620dacdcb7441cf1e7f86f65ffe01bff0e205f9eff7e142a9f1e1886b"
+      "721566942":
+        name: "agent-orchestrator-darwin-x64.zip"
+        url: "https://github.com/OrchestratorInc/agent-orchestrator/releases/download/v0.14.11-nightly.202611071807/agent-orchestrator-darwin-x64.zip"
+        size: 264677598
+        content_type: "application/zip"
+        digest: "sha256:bcb037bbf4b3af2ada2010e78f7e514563bc02aeb759528deefc8d41070b6b3d"
+      "721568852":
+        name: "agent-orchestrator-linux-x64.AppImage"
+        url: "https://github.com/OrchestratorInc/agent-orchestrator/releases/download/v0.14.11-nightly.202611071807/agent-orchestrator-linux-x64.AppImage"
+        size: 218920040
+        content_type: "application/octet-stream"
+        digest: "sha256:d4bd80e506c7db3247fb1e937b584f951c40ccb284884bbfd9e3c9d65b514bbc"
+      "721569462":
+        name: "agent-orchestrator-linux-x64.deb"
+        url: "https://github.com/OrchestratorInc/agent-orchestrator/releases/download/v0.14.11-nightly.202611071807/agent-orchestrator-linux-x64.deb"
+        size: 178574050
+        content_type: "application/x-debian-package"
+        digest: "sha256:8519b52d38b8e0a6f0824601b3d3887bb843c74eed8de8b82d1438568b48be76"
+      "721570746":
+        name: "agent-orchestrator-linux-x64.rpm"
+        url: "https://github.com/OrchestratorInc/agent-orchestrator/releases/download/v0.14.11-nightly.202611071807/agent-orchestrator-linux-x64.rpm"
+        size: 176554729
+        content_type: "application/x-rpm"
+        digest: "sha256:5cd9f3a91e585373bacc881577b5b71fcddfca1b5b157a6fcad872228f2ac783"
+      "721571208":
+        name: "agent-orchestrator-win32-x64.exe"
+        url: "https://github.com/OrchestratorInc/agent-orchestrator/releases/download/v0.14.11-nightly.202611071807/agent-orchestrator-win32-x64.exe"
+        size: 192824712
+        content_type: "application/x-msdownload"
+        digest: "sha256:c2ab8ea09848c544ac69924ae93110e0a8eaf001cc16242ad4d61a23d737567e"
+      "721571413":
+        name: "nightly-linux.yml"
+        url: "https://github.com/OrchestratorInc/agent-orchestrator/releases/download/v0.14.11-nightly.202611071807/nightly-linux.yml"
+        size: 432
+        content_type: "application/octet-stream"
+        digest: "sha256:bd897fe1413c5a121b8b96af8183d5369b4428fdf3acd0c133ede5c89ab0fed4"
+      "721571430":
+        name: "nightly-mac.yml"
+        url: "https://github.com/OrchestratorInc/agent-orchestrator/releases/download/v0.14.11-nightly.202611071807/nightly-mac.yml"
+        size: 670
+        content_type: "application/octet-stream"
+        digest: "sha256:c074963e8fdf0a09ed4df236d2f392059613c2741906252eb5b3755722f4b8a4"
+      "721571438":
+        name: "nightly.yml"
+        url: "https://github.com/OrchestratorInc/agent-orchestrator/releases/download/v0.14.11-nightly.202611071807/nightly.yml"
+        size: 434
+        content_type: "application/octet-stream"
+        digest: "sha256:85728f6af0a437143a89488896d78749ade06fab8fc67e7159eb2bb8ced77cec"
