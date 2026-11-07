@@ -2,7 +2,7 @@
 
 Type: grilling
 Label: wayfinder:grilling
-Status: claimed
+Status: resolved
 Assignee: codex-interface
 Blocked by: 03, 04, 05
 
@@ -23,6 +23,26 @@ requirements. Publication must be explicit, never an implicit collection Action
 side effect. Specify a thin custom Action and whether a reusable orchestration
 workflow actually removes duplication. Choose the supported entry points and
 retirement path for any superseded ones with Marek; do not implement them here.
+
+## Answer — November 8, 2026
+
+Marek accepted the complete prepared interface and permission proposal with “yes.”
+The supported target is one maintained `host_catalog.py` CLI with explicit
+`collect`, `validate` and `publish` operations, shared live/offline processing,
+a collection-only thin Action and one orchestration workflow with read-only
+acquisition and a separate write-enabled publisher/finalizer job. No additional
+reusable workflow or generic adapter framework is needed now.
+
+The prepared proposal below owns the accepted responsibilities, validation-evidence
+fallback, bounded untrusted artifact transfer, credential boundaries and entry-point
+retirement path. Its initial pending wording records its earlier proposal status.
+Publication remains explicit and confirms remote acceptance; normal failures still
+attempt a separate final health report. Discovery remains manual and never enrolls
+sources automatically. Installed consumers stay shell/awk; no new Lua consumer
+runtime is imposed. Compatibility activation/rollback remains ticket 09.
+
+This resolves the interface decision, not implementation or deployment. No CLI,
+workflow, credential, ref, enrollment or installed-host changes are made here.
 
 ## Current input — accepted simpler recovery, November 7, 2026
 

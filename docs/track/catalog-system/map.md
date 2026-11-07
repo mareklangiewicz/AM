@@ -112,6 +112,8 @@ branches are not merged or pushed automatically (home push guidance applies).
 
 - [Choose evidence-bound recipe classification and provenance](issues/06-choose-evidence-bound-recipe-classification-and-provenance.md#answer--november-8-2026): accepted four evidence-bound labels, architecture-specific immutable review links and revalidation of changed inputs; enrollment, recipe availability, support and authenticity remain separate.
 
+- [Choose one reusable collection interface and permissions](issues/07-choose-one-reusable-collection-interface-and-permissions.md#answer--november-8-2026): accepted explicit collect/validate/publish CLI, shared live/offline pipeline, collection-only Action and read-only acquisition plus write-enabled publisher/finalizer jobs.
+
 ## Not yet specified
 
 Detailed field names, wire examples and schema documents will follow the public

@@ -177,7 +177,8 @@ on normal exit. Disposable runner teardown handles interrupted workflow runs;
 local interruption does not guarantee cleanup. Save local replay evidence only
 when explicitly requested. See the
 [accepted cleanup policy](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-temporary-evidence-cleanup--november-7-2026).
-Use safe quota reserves, recorded stop outcomes and controlled retry/backoff.
+Use safe quota reserves and recorded stop outcomes; retry on a later scheduled
+run without in-run retry/backoff machinery, as accepted in the recovery decision.
 Keep maintainer discovery manually triggered and scheduled work limited to
 refreshing explicitly enrolled sources; no mixed-work scheduler is required.
 An enrolled identity is not proof of successful collection or publication.
@@ -193,8 +194,13 @@ Target source adapter → normalized records → validation/merge → YAML outpu
 with explicit scheduling, budgets, credentials and publication
 boundaries. Reuse core code for local evidence and workflow acquisition.
 Keep GitHub/domain schemas explicit and avoid speculative plugin abstractions.
-After the interface is settled, specify a thin collection Action and consider a
-reusable orchestration workflow only where it removes duplication.
+The [accepted collection interface](issues/07-choose-one-reusable-collection-interface-and-permissions.md#answer--november-8-2026)
+uses one maintained collect/validate/publish CLI and a thin collection-only Action.
+One workflow separates read-only acquisition from the explicit write-enabled
+publisher/finalizer, validates transferred artifacts and attempts final reporting
+on normal failure. No additional reusable workflow is selected without another
+caller. Local saved-response replay uses the same pipeline without credentials
+or network; publication is always explicit.
 
 Preserve supported shell/Lua consumer requirements; installed AM readers remain
 shell-based without a new Python/jq runtime requirement. No recipe execution or
