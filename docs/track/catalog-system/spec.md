@@ -69,7 +69,9 @@ and [exact-tag replacement rule](issues/05-choose-scalable-snapshot-and-history-
 supersede the earlier age window, five-release minimum and unlimited undated
 exception. Earlier Git commits preserve metadata observations, not historical
 upstream binary availability. Existing Git history stays intact for now.
-These are planning decisions; the broader storage ticket remains unresolved.
+The [storage resolution](issues/05-choose-scalable-snapshot-and-history-storage.md#answer--november-8-2026)
+consolidates this policy with incremental writes, lazy pinned reads, history
+accounting and the future rehearsal. Actual capacity remains unqualified.
 
 Git is a firm foundation for public snapshots, chosen for transparency, simplicity
 and trust. Reuse unchanged source files and read at exact commit pins. Capacity

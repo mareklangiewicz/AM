@@ -2,7 +2,8 @@
 
 Type: grilling
 Label: wayfinder:grilling
-Status: open
+Status: claimed
+Assignee: codex-provenance
 Blocked by: 01, 03
 
 ## Question

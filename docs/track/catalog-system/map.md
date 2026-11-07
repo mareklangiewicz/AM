@@ -32,8 +32,9 @@ authorize implementation, pushes or deployment beyond the existing planning scop
 Git is a firm project foundation for transparency, simplicity and trust. The
 [accepted Git foundation](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-git-foundation--november-7-2026)
 constrains storage/capacity planning to Git-based designs; another backend is not
-an option to revisit after measurements. The storage ticket remains claimed
-while processing, bounds and experiment decisions are settled.
+an option to revisit after measurements. The [storage resolution](issues/05-choose-scalable-snapshot-and-history-storage.md#answer--november-8-2026)
+selects the processing/read/history approach and a small future rehearsal; actual
+capacity and supported operating defaults remain to be measured.
 
 Latest steering, November 7, 2026: prioritize simplicity of implementation.
 Marek rejected the separate checkpoint-store proposal, permits relaxing recovery
@@ -106,6 +107,8 @@ branches are not merged or pushed automatically (home push guidance applies).
 - [Choose contextual education and health navigation](issues/02-choose-contextual-education-and-health-navigation.md#answer--november-7-2026): accepted contextual explanations, a short system overview and dedicated public health destination, with observation age and known refresh failures visible directly.
 - [Choose public YAML contracts and revision consistency](issues/03-choose-public-yaml-contracts-and-revision-consistency.md#answer--november-7-2026): under explicit decision delegation, selected separate pinned catalog/status channels, format-3 boundaries and lossless encodings, revision/race rules, editor schemas and format-2 compatibility gates.
 - [Choose durable progress and fair scheduling](issues/04-choose-durable-progress-and-fair-scheduling.md#answer--simplified-recovery-and-final-reporting-november-7-2026): live answers select simple reruns, oldest-first scheduled refresh, manual discovery, single active collection and stop-on-conflict publication; final summaries describe only the last reported run, with investigation links.
+
+- [Choose scalable snapshot and history storage](issues/05-choose-scalable-snapshot-and-history-storage.md#answer--november-8-2026): exact-parent incremental Git snapshots, lazy pinned reads, accepted source retention and run-local cleanup; seed plus three offline update cases and a later representative scale/history check. Existing numerical caps are baselines, not fixed ceilings; no capacity claim or implementation authorization.
 
 ## Not yet specified
 

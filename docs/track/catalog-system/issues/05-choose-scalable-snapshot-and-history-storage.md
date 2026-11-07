@@ -2,7 +2,7 @@
 
 Type: grilling
 Label: wayfinder:grilling
-Status: claimed
+Status: resolved
 Assignee: codex-storage
 Blocked by: 01, 03, 04
 
@@ -25,6 +25,128 @@ Choose what bounded experiment is required before accepting capacity and record
 its decision threshold; do not qualify thousands from a synthetic count alone.
 Preserve shell consumers or define an explicit compatible migration path.
 No cap increase or storage implementation is authorized by resolving this question.
+
+## Answer — November 8, 2026
+
+The accepted Git foundation, retention, incremental processing, validation,
+cleanup and revised capacity target above/below settle the storage direction.
+The routine rehearsal mechanics selected here complete it; this is not measured
+capacity acceptance or permission to implement/deploy. Historical comments remain
+as discussion, superseded where later accepted answers differ.
+
+### Snapshot writes and reads
+
+Keep the two exact-pinned Git channels selected in the public contract. Build a
+candidate from its exact catalog parent, process selected source documents and
+reuse unchanged blob/index entries. Do not routinely decode or regenerate every
+source merely to change a subset. Full-catalog refresh still processes every
+selected source; incremental machinery reduces unnecessary work, not coverage.
+Retain compact root/identity metadata checks across the complete candidate.
+Whole-tree materialization is a simple reference/full-validation path, not the
+normal incremental path. This extends the existing publisher's blob reuse rather
+than introducing another storage service.
+
+Trust reused bytes only with evidence that the exact prior commit passed the
+same grammar, schema and validation-policy revisions. The implementation must
+bind validation evidence to both commit and rule identity, reject mismatches and
+fully validate when evidence is absent or rules change. An input descriptor or
+commit pin alone is insufficient proof. Stream full checks where practical to
+avoid keeping all decoded sources in memory. Ticket 07 owns the concrete interface
+and validation-evidence mechanism; it must work without requiring successful
+publication of the independent status report. No new durable recovery service.
+
+Resolve a moving ref once, then read document paths at that full commit. Shell
+consumers fetch required roots and the requested source, without downloading Git
+history; the browser loads source detail lazily and isolates status transport
+failure from catalog browsing. Do not preload every source for app discovery.
+Bound requests, document parsing, concurrent loads and cached detail independently
+of catalog source count, sizing them for supported normal inputs. Older metadata
+is accessed by an explicit old pin, not automatic history traversal; unavailable
+old upstream binaries remain unavailable. Shared links retain their pin.
+
+Keep format 2's existing validator/whitelist and installed shell/awk consumers
+until the separately planned format-3 transition. Ticket 09 owns dual-format
+validation, reader delivery and tested rollback; do not solve scale by silently
+requiring a different installed runtime or weakening validation.
+
+### Retention, history and failures
+
+Apply exact-tag replacement and 32-plus-stable retention, preserving all retained
+assets and effective observation times, only after successful source-scope
+collection. Reject missing-both-timestamps/conflicting-same-tag evidence and
+exceptional oversized source candidates as accepted; keep prior source facts.
+Normal supported documents must fit the revised settings with headroom. Candidate
+integrity or exact-parent publication failure preserves the last-good catalog;
+a confirmed conflict stops publication without merge/retry. Temporary files follow
+the accepted run-local cleanup rule. No cross-run acquisition archive.
+
+Keep existing Git history intact. Current release pruning bounds retained records,
+not accumulated commits/objects. Record separately current YAML bytes, local
+object bytes, fetched bytes/history depth and consistently packed reachable
+history bytes. A shallow/local fetch can reduce runner work but says nothing about
+remote retention; a local object guard is not a remote storage quota. Do not make
+routine catalog reads or candidate creation depend on transferring all old history.
+Any shallow-fetch optimization must preserve the exact parent and direct-child
+publication checks. No automatic history rewrite, force-push reclamation or old-pin
+availability guarantee is introduced.
+
+Bound status summaries, source detail and statistics through ticket 08's explicit
+retention/coverage decision; those files use the separate status channel and must
+not consume the catalog's source-file allowance. Ticket 08 must account for their
+Git-history growth as well as current-tree pruning. No duplicate retention count
+is selected here. Ticket 10 owns the measured supported history horizon, growth
+margin and review trigger; an expected steady-state collision with an arbitrary
+local cap is a setting/design failure to fix, not an accepted operating mode.
+
+### First offline rehearsal for the implementation roadmap
+
+Use the saved 500-source catalog at
+`cbda9fb78ce4a6f29bdabd63d57f3c0085e8744f`, preserving its input/provenance.
+Run only after the shared format/retention/incremental slices exist. Work in an
+isolated local publication repository, retaining the saved parent history for
+history measurements; do not mutate the preserved evidence repository. Record
+source/rule revisions, input hashes and the packing procedure. No live requests.
+
+Create one format-3 retained seed, then three update candidates:
+
+1. Replay identical saved evidence with original observation times. Verify source
+   semantic equivalence and unchanged blob reuse; report root-only changes
+   separately instead of claiming the entire commit must be identical.
+2. Apply deterministic synthetic changes to a small named subset: a new version,
+   same-ID edits and a reused rolling tag. Exercise count/stable boundaries and
+   untouched-source blob/observation preservation. In focused refusal fixtures,
+   cover missing timestamps, conflicting same-tag IDs and oversized documents.
+3. Simulate a full-source refresh with deterministic new receipt times and bounded
+   release/asset edits. This tests widespread churn without pretending that a
+   timestamp-only replay models all real history growth.
+
+Saved observations and all fabricated changes must be separately labelled; none
+of the synthetic updates is evidence of real upstream observation or acquisition
+capacity. Reuse existing semantic/refusal fixtures where they cover these rules.
+
+For the seed and each candidate record wall time, peak process RSS (and measurement
+scope), tree/file bytes and counts, changed/reused blobs, local guard accounting,
+and consistently compressed reachable-history size/deltas. Measure seed conversion
+separately from later updates; record any available genuine saved-observation
+comparison separately. Three synthetic updates expose behavior and short-run churn;
+they do not establish a representative long-term arrival rate.
+
+Decision thresholds: every semantic/identity/freshness/round-trip/refusal check must
+pass, unchanged sources must reuse their blobs, and partial/failing updates must
+preserve last-good data. Record crossings of existing numerical caps and identify
+a justified setting change or processing improvement; they are not automatic
+workload rejection gates. Capacity remains unaccepted if normal supported work
+predictably stops, or cannot complete within the chosen host/service budgets and
+refresh objective with headroom. Report memory rather than inventing a memory
+ceiling here. Ticket 10 must set the final quantitative scope, headroom and history
+horizon from the representative measurements before rollout.
+
+The next scale check must cover thousands of apps with distinct-source counts and
+representative document/asset variation, plus history growth, using the same
+pipeline. Synthetic scale qualifies only its stated local processing workload;
+verified enrollment/live acquisition requires separate evidence. The initial
+500-source rehearsal does not qualify thousands. No fourteen-update gate, cap
+increase, enrollment, workflow dispatch or publication is authorized here.
 
 ## Comments
 
