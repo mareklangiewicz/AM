@@ -23,3 +23,39 @@ Choose what bounded experiment is required before accepting capacity and record
 its decision threshold; do not qualify thousands from a synthetic count alone.
 Preserve shell consumers or define an explicit compatible migration path.
 No cap increase or storage implementation is authorized by resolving this question.
+
+## Comments
+
+### Read-only repetition measurement — November 7, 2026
+
+The side conversation inspected the saved published snapshot at
+`cbda9fb78ce4a6f29bdabd63d57f3c0085e8744f` in the preserved local
+`/home/marek/Documents/Codex/am-500-publication-20261107/live-catalog.git`.
+This is historical snapshot analysis, not a fresh remote-head or transfer check.
+Reading its blobs with `git ls-tree` and `git cat-file --batch` measured
+63,690,470 YAML bytes, 16,027 releases and 175,073 assets.
+
+- Asset URL lines: 19,896,191 bytes, including indentation/key/framing.
+- Asset content-type lines: 7,925,271 bytes, including indentation/key/framing.
+  `application/octet-stream` occurs 55,460 times; `application/zip` 40,206 times.
+- Indentation across documents: 8,476,854 bytes. This overlaps the line totals;
+  do not add these categories as independent savings.
+- Grouping asset URL prefixes (everything through the final slash) within each
+  release gives 10,888,367 repeated prefix bytes beyond keeping each distinct
+  prefix once. This is a gross opportunity, before replacement fields/encoding;
+  it is not a measured migrated-format saving.
+- Concatenating the YAML in memory and applying gzip level 6 gives 9,762,495
+  bytes. This is compression potential, not per-file HTTP transfer, browser
+  compatibility, Git pack/history size, or a deployed compression capability.
+
+Most digest bytes are distinct useful information; a large field is not necessarily
+redundant. Full asset coverage serves browsing across platforms. Whether to retain
+every accumulated old release is a separate product/retention decision, not a
+license to drop records during compaction.
+
+[Choose public YAML contracts and revision consistency](03-choose-public-yaml-contracts-and-revision-consistency.md)
+owns Marek's URL-prefix requirement, proposed media-type default/aliases and
+editor-schema requirements. This storage decision should measure those alternatives
+alongside incremental processing and retained/remote-history policy. Compact
+encoding alone does not fix full-snapshot processing or durable progress.
+No files in the preserved catalog or current publication were changed by this analysis.
