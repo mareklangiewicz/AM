@@ -196,3 +196,18 @@ retained-release and effective-observation preservation checks.
 [Publication report/receipt](../research/next-320-publication.md) supersede the
 preceding preparation-only status. The 500/hour profile and installed host are
 unchanged. This ticket remains claimed for remaining attribution and storage scale.
+
+## Real cohort prepared at the deployed 500-source ceiling
+
+[149 resolved](149-prepare-500-source-cohort.md) prepares 184 further catalog-only
+app identities / 180 distinct sources: 509 apps / 500 sources locally. Eight
+renames agree; two ineligible identities stay excluded. Fresh preflight observes
+all 500 successfully with actual redirect-refusing collector requests, passing
+exact-parent publication/readback and identity/release/observation preservation.
+[Report and receipts](../research/next-500-catalog-expansion.md) record real density,
+history/resource measurements and 12 passing focused tests. [150](150-publish-500-source-cohort.md)
+is the concrete push/publication package awaiting Marek's call; live scope stays
+325 apps / 320 sources. [151](151-bound-discovery-redirect-request-accounting.md)
+clarifies discovery's logical-GET counter and records transport accounting work.
+Whole-snapshot/history/reader bounds and remaining attribution still prevent
+qualifying thousands; this ticket stays claimed. No installed-host changes.

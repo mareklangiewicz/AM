@@ -1,0 +1,22 @@
+{
+  "command": "python3 -B -m unittest -v test_catalog_sources test_catalog_only_enrollment test_recipe_declarations test_publication.Publication.test_current_workflow_batch_publish_and_failure_preserves_source_facts",
+  "cwd": "tools/catalog-collector",
+  "tests": 12,
+  "seconds": 327.92,
+  "result": "OK",
+  "log_sha256": "b7ee42c9e905d350e4cfdfbed1f9e2d9b88caff900c899ab8b7bd5a4dd5eda7a",
+  "raw_log": "/home/marek/Documents/Codex/am-500-cohort-20261107/focused-tests.log",
+  "source_base": "0880b2d70521525b6f8d75d4ff542008be342b8c",
+  "working_tree": true,
+  "collection_apps_sha256": "a31574a9ca2defb6d36345cecf3d15b6ec187d9855e1df6e12e02f75c4d81c22",
+  "bindings": {
+    "apps": 509,
+    "sources": 500,
+    "added_apps": 184,
+    "bindings_rechecked": 193,
+    "result": "all proposed bindings match both Git originals and current bytes"
+  },
+  "prior_full_suite": "159 tests passed on the preceding 320-source manifest; not a fresh 159-test result for this cohort",
+  "limitations": "Fresh preflight is separate; no actual 500-source Actions run, browser acceptance, push or installed-host change.",
+  "preflight": "next-500-preflight.json"
+}
