@@ -2,7 +2,8 @@
 
 Type: grilling
 Label: wayfinder:grilling
-Status: open
+Status: claimed
+Assignee: codex-storage
 Blocked by: 01, 03, 04
 
 ## Question
@@ -25,6 +26,17 @@ Preserve shell consumers or define an explicit compatible migration path.
 No cap increase or storage implementation is authorized by resolving this question.
 
 ## Comments
+
+### Planning continuation — November 7, 2026
+
+Claimed after the public-contract and simplified-recovery prerequisites resolved.
+Implementation simplicity remains the priority; no storage backend or retention
+change is accepted. Begin with the product choice of whether automatic removal
+of older retained releases is acceptable. This concerns release records in the
+current catalog, separately from retaining past catalog snapshots in Git history.
+Any removal policy would explicitly amend the retained-release decision; its
+age/count rules and protection for useful older releases remain undecided.
+Await Marek's answer before choosing that policy or downstream storage machinery.
 
 ### Accepted simpler recovery scope — November 7, 2026
 
