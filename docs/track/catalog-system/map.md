@@ -116,10 +116,18 @@ branches are not merged or pushed automatically (home push guidance applies).
 
 - [Choose truthful health summaries and bounded statistics](issues/08-choose-truthful-health-summaries-and-bounded-statistics.md#answer--november-8-2026): accepted stage-specific outcomes, explicit unknowns/denominators, 64 summaries / 8 full-detail reports / 90 daily aggregates, and freshness/resource/history views with coverage gaps.
 
+- [Choose compatibility transition and recovery](issues/09-choose-compatibility-transition-and-recovery.md#answer--november-8-2026): accepted shared-acquisition dual-format transition, main-owned browser activation, separate installed-host delivery, consumer-gated format-2 retirement and pinned/corrective-publication rollback. Remote operations remain separately authorized.
+
 ## Not yet specified
 
-Detailed field names, wire examples and schema documents will follow the public
-contract and health-definition decisions. Do not invent a parallel browser model.
+System decisions 02–09 are resolved. The remaining route to final roadmap readiness
+is the existing browser experience review and browser delivery/acceptance decision,
+then ticket 10's measurable system targets and implementation slices. Preserve the
+browser ticket's claim and all three prototypes; no layout verdict or actual
+browser acceptance follows from these system decisions.
+
+Detailed field names, wire examples and executable schemas implement the accepted
+public, provenance and health contracts. Do not invent a parallel browser model.
 
 The final design may expose additional failure, credential or checkpoint lifecycle
 questions. Ticket them when precise; interruption before confirmed publication

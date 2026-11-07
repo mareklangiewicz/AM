@@ -2,7 +2,7 @@
 
 Type: grilling
 Label: wayfinder:grilling
-Status: claimed
+Status: resolved
 Assignee: codex-compatibility
 Blocked by: 03, 05, 06, 07, 08
 
@@ -30,6 +30,28 @@ Compare a small reversible end-to-end summary/browser slice with alternatives.
 Identify old code and operational procedures that can actually retire, evidence
 that must remain, and unknowns needing a bounded rehearsal. Agree migration gates
 and recovery ownership with Marek. This is a plan, not deployment authorization.
+
+## Answer — November 8, 2026
+
+Marek accepted the prepared migration and rollback plan with “yes.” The complete
+proposal below is selected; its initial pending wording records its earlier status.
+Use a small local end-to-end slice, temporary dual-format output from shared
+acquisition, reviewed main-owned browser activation, separate installed-host
+delivery and consumer-gated format-2 retirement at an agreed date.
+
+Preserve each format's own merge/retention semantics during transition and compare
+common facts losslessly, explicitly reviewing intentional selection differences.
+Publish format 2, then format 3, then final status under separate exact-parent
+checks; this is not atomic. Preserve already accepted writes on later failure.
+Prepare one exact rollout/rollback package, reusing applicable evidence and focused
+checks. Recover through checked pins, retained site/host before-images and validated
+corrective direct-child publications, without history rewrites or binary-rollback
+claims. The detailed gates and recovery ownership below apply.
+
+Browser layout/acceptance and final measured system targets remain with their
+owning tickets. This accepts the migration plan only: source push, remote channel
+creation/publication, Pages activation and installed-host operations still need
+the concrete authorization described in the plan. None occurs in this decision.
 
 ## Process steering — November 7, 2026
 

@@ -230,6 +230,18 @@ usage versus configured budgets, and separately labelled snapshot/history growth
 These retention counts do not truncate sources within a full-update report;
 aggregates describe reported attempts only and show gaps.
 
+### Transition and rollback
+
+The [accepted cutover plan](issues/09-choose-compatibility-transition-and-recovery.md#answer--november-8-2026)
+selects temporary format-2/format-3 output from one acquisition, maintaining each
+format's semantics and explicit parents. Activate the reviewed browser from main,
+retain preview/rollback artifacts and keep installed-host changes separately
+scoped. Retire format-2 publication only after maintained consumers migrate,
+rollback is rehearsed and Marek agrees the date. Recover through checked old pins,
+last-good deployment artifacts and validated corrective direct-child publications;
+metadata rollback does not restore binaries. The plan's focused gates, ordered
+writes and per-operation authorization boundaries apply.
+
 ## Existing decisions and evidence to preserve
 
 - [Publish normalized release facts; clients select releases](../../adr/0001-catalog-facts-and-client-selection.md).

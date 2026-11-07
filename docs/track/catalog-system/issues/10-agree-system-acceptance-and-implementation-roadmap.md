@@ -50,3 +50,34 @@ saved 500-source rehearsal; identify synthetic data and do not present it as rea
 acquisition or verified enrollment. Keep actual service/host constraints explicit.
 A normal budget stop with sources left untouched cannot count as a completed full
 refresh. Choose a small useful set of checks, not a new lengthy approval sequence.
+
+## Readiness check and prepared sequence — November 8, 2026
+
+System decisions 02–09 are accepted. This ticket stays open and blocked by browser
+04, which still depends on the existing claimed browser 03 experience review.
+Do not resolve either browser decision here or create implementation tickets before
+its input arrives. No runtime/capacity/browser acceptance is inferred from planning.
+
+The accepted cutover plan supplies this short sequence for the final roadmap:
+
+| Slice | Depends on | Required result |
+| --- | --- | --- |
+| Shared format-3 contracts/readers and collect/validate interface | Accepted system contracts | Lossless common-fact round trips, exact identity/observation/encoding and unknown/version refusal fixtures; explicit intentional retention/selection differences. |
+| Incremental candidate/publication and final health path | Shared contracts and interface | Pinned parent/rule validation, source isolation, explicit publication/confirmation, truthful final reports on normal failures and safe transferred evidence. |
+| Main-owned browser/health integration | Accepted browser experience and delivery targets, shared contracts | Preserved A/B/C exploration and native/Vim operation, contextual education and exact recipe links; real fetch/DOM/mobile/accessibility checks. |
+| Scale/compatibility and rollback rehearsal | Shared pipeline and browser integration | Saved seed plus three update cases, representative thousands-of-apps/source variation and history growth, dual-output cost, checked old-pin/site recovery. |
+| Reviewable rollout package | Passing relevant checks and final acceptance | Exact source/policy/schema/candidate pins, measured settings/margins and consumer inventory; explicit push/publication/Pages authorization before activation. Installed-host delivery remains separate. |
+
+This is a prepared sequence, not implementation tickets or authorization to execute.
+Reuse existing evidence where the relevant inputs and behavior are unchanged.
+
+Remaining measurable choices for the final review: representative app/source count
+and large-asset cases; full-refresh completion objective under actual quota/runner
+constraints; history horizon and resource margin; browser loading/search/parse/render
+and mobile/keyboard/accessibility targets from browser 04. Set useful values from
+named fixtures/measurements rather than perpetuating old caps or inventing claims.
+The browser review also owns stable/nightly grouping, lazy-search disclosure and
+empty/stale/partial/error states. A final educational check must verify that users
+can distinguish catalog coverage, recipe/support evidence, release freshness and
+binary authenticity, and maintainers can explain the supported rerun/publication
+path from one short overview.
