@@ -28,6 +28,18 @@ No cap increase or storage implementation is authorized by resolving this questi
 
 ## Comments
 
+### Faster migration, less ceremony — November 7, 2026
+
+Marek said the previous migration had too much ceremony and wants this one to
+move substantially faster. The proposed 14-update simulation has not been accepted
+and is not a mandatory gate. Stop asking for individual routine experiment
+parameters: choose and document a bounded rehearsal sufficient to test accepted
+retention/replacement, unchanged-blob reuse and existing resource limits. Reuse
+saved evidence and existing checks; distinguish simulated churn from real history.
+Escalate material behavioral trade-offs or observed capacity failures rather than
+manufacturing a long approval sequence. The accepted first offline experiment
+still stands; this is process steering, not production execution authorization.
+
 ### Accepted first offline capacity experiment — November 7, 2026
 
 Marek answered “yes” to an offline rehearsal using the preserved 500-source data:

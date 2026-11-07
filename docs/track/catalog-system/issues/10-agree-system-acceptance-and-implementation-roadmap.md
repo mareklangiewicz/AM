@@ -29,3 +29,11 @@ comprehension review: can a newcomer distinguish catalog coverage, AM support,
 upstream assets, freshness and authenticity, and can a maintainer explain/resume
 the supported pipeline from one short overview? Stop planning when the route is
 clear; do not execute the roadmap in this ticket.
+
+## Process steering — November 7, 2026
+
+Prioritize a fast migration with less ceremony, as Marek explicitly requested.
+Consolidate a short implementation route and the necessary behavior/compatibility
+checks; reuse passing evidence unless changes invalidate it. Agents choose routine
+parameters and bring material decisions together for review. Do not add speculative
+benchmarks, infrastructure or approval rounds. Deployment remains separately authorized.

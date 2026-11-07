@@ -12,6 +12,14 @@ contract, storage, compatibility or acceptance decisions.
 
 ## Notes
 
+Latest process steering, November 7, 2026: Marek wants this migration substantially
+faster and with less ceremony than the previous one. Agents choose routine
+experiment/implementation mechanics and consolidate reviewable changes; do not
+ask for approval of every small parameter. Ask about material product, contract,
+scope or rollout decisions. Reuse existing evidence and run checks tied to concrete
+risks, without speculative machinery or repeated unrelated suites. This does not
+authorize implementation, pushes or deployment beyond the existing planning scope.
+
 Git is a firm project foundation for transparency, simplicity and trust. The
 [accepted Git foundation](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-git-foundation--november-7-2026)
 constrains storage/capacity planning to Git-based designs; another backend is not

@@ -29,3 +29,11 @@ Compare a small reversible end-to-end summary/browser slice with alternatives.
 Identify old code and operational procedures that can actually retire, evidence
 that must remain, and unknowns needing a bounded rehearsal. Agree migration gates
 and recovery ownership with Marek. This is a plan, not deployment authorization.
+
+## Process steering — November 7, 2026
+
+Marek wants a substantially faster migration with less ceremony. Produce one
+concrete cutover/rollback plan, reusing existing evidence and focused compatibility
+checks. Batch material choices for review; select routine mechanics autonomously.
+Avoid turning every rehearsal parameter into a human approval gate. Preserve
+explicit push/deployment authorization boundaries.
