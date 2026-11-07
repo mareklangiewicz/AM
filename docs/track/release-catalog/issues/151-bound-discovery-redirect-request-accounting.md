@@ -43,3 +43,9 @@ and probe refusals, bounded redirect loops, auth/rate failures and numeric-ID
 mismatch. [Validation receipt](../research/discovery-request-accounting-validation.json)
 records code/log hashes and the absence of live API calls. No enrollment, collector
 refresh limits, installed-host or publication changes. Source-only, not pushed.
+
+## Authorized push
+
+Marek authorized pushing the fix. Source `9a78fc860` is pushed to
+`origin/main-marek`. This supersedes the local-only status above. No catalog
+workflow dispatch, enrollment change or installed-host operation was needed.

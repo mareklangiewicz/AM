@@ -2,13 +2,14 @@
 
 ## Active expansion — catalog first, simple recipe migrations first
 
-[151 resolved locally](issues/151-bound-discovery-redirect-request-accounting.md)
+[151 resolved](issues/151-bound-discovery-redirect-request-accounting.md)
 fixes discovery transport accounting: explicit bounded metadata redirects consume
 one shared attempt budget, unexpected destinations refuse before credentials are
 forwarded, and new receipts mark `transport_attempts_v1`. Fourteen focused tests
 pass; [validation receipt](research/discovery-request-accounting-validation.json)
 records mocked transport checks. Old receipts stay unchanged. No enrollment,
-publication or installed-host changes; source is not pushed. The next scaling
+publication or installed-host changes; authorized source `9a78fc860` is pushed.
+The next scaling
 work in 138 must address snapshot/history/reader bounds beyond 500 sources.
 
 [150 resolved](issues/150-publish-500-source-cohort.md) publishes **509 apps / 500
