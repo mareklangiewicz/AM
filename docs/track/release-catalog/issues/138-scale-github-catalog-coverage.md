@@ -233,3 +233,13 @@ redirects, retaining numeric identity and checkpoint gates. Fourteen focused tes
 pass. New receipts identify corrected accounting; old evidence is not rewritten.
 No enrollment or live publication changes. Snapshot/history/reader scaling remains
 the next prerequisite for coverage beyond the deployed 500-source ceiling.
+
+## Cross-system planning coordination — November 7, 2026
+
+The next snapshot/history/reader and pipeline architecture decisions are now
+coordinated by [Understandable catalog system and educational browser](../../catalog-system/map.md).
+Its linked storage, durable-progress and compatibility questions precede another
+coverage increase. This ticket keeps its existing claim and execution/evidence
+ownership; no broad-coverage completion or new capacity acceptance is implied.
+Use the agreed system roadmap when implementation resumes rather than starting
+a competing storage design from this historical expansion record.

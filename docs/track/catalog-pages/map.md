@@ -2,6 +2,15 @@
 
 Label: wayfinder:map
 
+## Current planning entry point
+
+[Understandable catalog system and educational browser](../catalog-system/map.md)
+coordinates the broader system specification. This browser map retains ownership
+of its existing layout/prototype and browser-delivery decisions. Its historical
+baseline below is not a current coverage claim. Consult the new brief for the
+accepted educational and transparency requirements, without restarting resolved
+hosting choices or treating prototype deployment as design acceptance.
+
 ## Destination
 
 An agreed specification and implementation roadmap for a public, read-only

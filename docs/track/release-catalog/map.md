@@ -1,5 +1,12 @@
 # Release catalog exploration
 
+## Current planning entry point
+
+[Understandable catalog system and educational browser](../catalog-system/map.md)
+coordinates the next collection, YAML, storage, public-health and educational-browser
+decisions. Start there for the new system spec and roadmap. This map retains the
+catalog's execution history and evidence; it is not a second cross-system plan.
+
 ## Active expansion — catalog first, simple recipe migrations first
 
 [151 resolved](issues/151-bound-discovery-redirect-request-accounting.md)
