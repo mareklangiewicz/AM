@@ -22,8 +22,12 @@ retained records keep their effective observation times. Keep the 32 newest
 observed releases and, if none is non-prerelease, the newest observed non-prerelease
 when available (at most 33), including all their assets. Publication time orders
 records, falling back to creation time, then numeric release ID, descending.
-This supersedes the earlier age window and unlimited undated exception; records
-missing both timestamps still need a rule preserving the count bound. See the
+This supersedes the earlier age window and unlimited undated exception. A release
+missing both timestamps invalidates that source's collection; preserve its previous
+published data and report the validation failure, without inventing a timestamp or
+ordering. See the
+[accepted missing-timestamps rule](../track/catalog-system/issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-missing-timestamps-rule--november-7-2026)
+and the
 [accepted count policy](../track/catalog-system/issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-32-plus-stable-retention--november-7-2026-side-conversation).
 
 Marek also accepted one current record per exact tag within each numeric source:

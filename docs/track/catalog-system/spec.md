@@ -49,8 +49,9 @@ workflow dispatch, with exact cron times still open. The storage discussion also
 settled release retention: keep the 32 newest observed releases per source, plus
 the newest observed non-prerelease if none of those 32 is non-prerelease (at most
 33 records). Keep all assets of retained releases. Order by publication time,
-falling back to creation time, then numeric release ID, descending. Missing both
-timestamps still needs a bounded rule. A newly observed release replaces any older
+falling back to creation time, then numeric release ID, descending. A release
+missing both timestamps invalidates that source's collection: preserve its previous
+published data and report the validation failure. A newly observed release replaces any older
 retained record with the same exact tag within that numeric source, even if its
 release ID changed; resolve tag reuse before count-based retention. Different
 release IDs for the same exact tag within one collection invalidate that source's

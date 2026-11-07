@@ -28,6 +28,16 @@ No cap increase or storage implementation is authorized by resolving this questi
 
 ## Comments
 
+### Accepted missing-timestamps rule — November 7, 2026
+
+Marek answered “yes” to treating a source's collection as invalid if a release
+has neither publication time nor creation time. Preserve that source's previous
+published data and report the validation failure; do not invent a timestamp or
+ordering, or apply replacement/pruning from that invalid collection. Publication
+time still falls back to creation time when available. This settles the missing-
+both-timestamps question left open below without adding an unbounded exception
+to the 32-plus-stable policy. Planning only; no runtime change.
+
 ### Accepted conflicting same-tag evidence rule — November 7, 2026
 
 Marek answered “yes” to treating a source's collection as invalid when that
