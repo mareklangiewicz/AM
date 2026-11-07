@@ -30,9 +30,9 @@ The target public interface and consistency model are selected in
 with the linked contract sketch owning document boundaries, pins, encodings and
 compatibility gates. This is a design decision; the deployed format remains 2.
 
-Logical progress, recovery, replay and scheduling policy are reopened in
+Simple recovery and scheduling policy are resolved in
 [Choose durable progress and fair scheduling](issues/04-choose-durable-progress-and-fair-scheduling.md).
-Marek accepted redoing unfinished work after runner loss and start/finish-only
+Marek accepted redoing unfinished work after runner loss and final-summary-only
 public health, prioritizing implementation simplicity. The linked current baseline
 supersedes cross-run durability/store/fencing/gate requirements. Existing oldest-
 first batches and retrying on a later scheduled run, without in-run retries, are
@@ -40,7 +40,9 @@ also accepted. New-source discovery stays manually triggered for now; scheduled
 runs only refresh enrolled sources. Only one collection runs at a time; new
 triggers do not automatically cancel the active run. A publication conflict stops
 the run's publication and leaves the newer catalog intact; retry on a later
-scheduled run without automatic merging. Failed-start-update handling remains open.
+scheduled run without automatic merging. No public start record or missing-run
+recovery service is required. Detailed metrics, storage and interfaces remain
+with their owning decisions.
 
 ## Accepted requirements
 
@@ -83,8 +85,9 @@ See the accepted examples and remaining naming/migration decisions in
 [Choose public YAML contracts and revision consistency](issues/03-choose-public-yaml-contracts-and-revision-consistency.md#accepted-app-to-file-references--november-7-2026).
 This target direction does not alter the deployed numeric map or filenames.
 
-Keep latest attempt, latest successful publication, source collection time and
-individual release observation time distinct. A failed/partial attempt cannot
+Keep the last reported run, latest successful publication known to that report,
+source collection time and individual release observation time distinct. The
+last report need not describe the latest attempt. A failed/partial attempt cannot
 freshen retained data. Make absent, unavailable and unmeasured information explicit.
 A file cannot include its own enclosing commit hash; the consistency decision
 must define pin relationships rather than using a self-reference.
@@ -136,9 +139,13 @@ meaningfully measurable deferred work. Include definitions and measurement times
 Source ages cannot substitute for retained-release freshness.
 Distinguish configured limits, observed usage and unverified capacity.
 Bound statistics and show gaps; do not interpolate missing success.
-Public updates at run start and finish suffice. A start without a recorded finish
-shows “started, no completion recorded”; no continuous progress or inferred
-partial outcome is required.
+No public “run started” update. Attempt a final health summary for every normal
+outcome, including collection, validation and publication failures. Abrupt
+termination or summary publication failure may leave no report. Keep the previous
+report's original timestamp and label it “last reported run”, without implying it
+was the latest attempt. Include links to the specific GitHub Actions run and recent
+collection runs. Actions may require sign-in; the public summary remains readable
+without it. No continuous progress or missing-run reconciliation is required.
 
 ## Existing decisions and evidence to preserve
 

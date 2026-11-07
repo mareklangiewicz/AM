@@ -61,6 +61,13 @@ ticket's claim, A/B/C verdict and Vim-navigation ownership.
 
 ## Answer — November 7, 2026
 
+Reporting amendment: operational caveats refer to the timestamped “last reported
+run”, which may not be the latest attempt. Never present its failure/success as
+the current system state. Link to its specific Actions run and recent collection
+runs for investigation; those links may require sign-in, but the public summary
+does not. Final-summary-only cadence and possible reporting gaps follow the
+[resolved recovery policy](../../catalog-system/issues/04-choose-durable-progress-and-fair-scheduling.md#answer--simplified-recovery-and-final-reporting-november-7-2026).
+
 Marek accepted the recommendation above with “go ahead” in response to the
 three-part proposal: short explanations beside relevant app/release facts,
 a separate “How it works” overview and “Catalog health” destination, and

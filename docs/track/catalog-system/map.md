@@ -15,17 +15,16 @@ contract, storage, compatibility or acceptance decisions.
 Latest steering, November 7, 2026: prioritize simplicity of implementation.
 Marek rejected the separate checkpoint-store proposal, permits relaxing recovery
 guarantees, and requests simple questions before further design decisions.
-Marek subsequently accepted redoing unfinished work after runner loss while
-preserving the last published catalog, and public health updates only at start
-and finish (“started, no completion recorded” if unfinished). The recovery ticket
-records this baseline plus accepted existing oldest-first batching and retries on
-later scheduled runs without in-run retries. Source discovery stays manual for
-now; scheduled runs refresh enrolled sources. One collection runs at a time
-without automatically cancelling the active run for a new trigger. A conflict
-stops publication, preserving the newer catalog for a later scheduled
-retry. The ticket remains claimed for the failed-start-update question. Its
-prior separate-store/durability/fencing/gate design is superseded. Ask simple
-questions before deciding the remaining policy.
+The resolved recovery ticket records Marek's live answers: lost unpublished work
+may repeat; oldest-first batches retry on later scheduled runs; discovery stays
+manual; one collection runs at a time without automatic cancellation; publication
+conflicts stop rather than merge. Public health attempts a final summary for every
+normal outcome, with no public start record. A run or reporting failure may leave
+no report: show the previous timestamped “last reported run”, never imply latest
+attempt coverage. Link to the specific Actions run and recent collection runs;
+Actions may require sign-in, while public summaries do not. Prior separate-store/
+durability/fencing/gate and start/finish designs are superseded. Ask simple questions
+before further decisions; implementation simplicity remains the priority.
 
 Marek confirmed this destination and the audience on November 7, 2026:
 app discovery leads; Linux newcomers and experienced AM users are both served;
@@ -83,6 +82,7 @@ branches are not merged or pushed automatically (home push guidance applies).
 - [Establish the supported pipeline and operating constraints](issues/01-establish-supported-pipeline-and-operating-constraints.md): source audit identifies reusable seams, missing automatic resume/public failure summaries and official operating constraints; linked report is on an isolated local research branch, not an accepted architecture.
 - [Choose contextual education and health navigation](issues/02-choose-contextual-education-and-health-navigation.md#answer--november-7-2026): accepted contextual explanations, a short system overview and dedicated public health destination, with observation age and known refresh failures visible directly.
 - [Choose public YAML contracts and revision consistency](issues/03-choose-public-yaml-contracts-and-revision-consistency.md#answer--november-7-2026): under explicit decision delegation, selected separate pinned catalog/status channels, format-3 boundaries and lossless encodings, revision/race rules, editor schemas and format-2 compatibility gates.
+- [Choose durable progress and fair scheduling](issues/04-choose-durable-progress-and-fair-scheduling.md#answer--simplified-recovery-and-final-reporting-november-7-2026): live answers select simple reruns, oldest-first scheduled refresh, manual discovery, single active collection and stop-on-conflict publication; final summaries describe only the last reported run, with investigation links.
 
 ## Not yet specified
 

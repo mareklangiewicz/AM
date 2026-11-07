@@ -28,13 +28,14 @@ No cap increase or storage implementation is authorized by resolving this questi
 
 ### Accepted simpler recovery scope — November 7, 2026
 
-Marek accepted redoing unfinished work after runner loss and public health updates
-at start and finish only. Preserve the last published catalog; no separate
-checkpoint store or runner-loss survival/replay guarantee is required. The older
+Marek accepted redoing unfinished work after runner loss and final-summary-only
+public health, with no public start record. Preserve the last published catalog;
+no separate checkpoint store or runner-loss survival/replay guarantee is required. The older
 durable-store, lease and publication-gate inputs below are superseded context.
 Keep this storage decision focused on simple public snapshots, bounded reads/
 writes/history and optional local temporary evidence. Recovery scheduling/retry
-choices remain open in the owning ticket.
+policy is now resolved in the owning ticket. Failed summary publication may leave
+the previous timestamped “last reported run”; no durable report-delivery queue.
 
 ### Separate-store proposal withdrawn — November 7, 2026
 

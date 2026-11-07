@@ -25,12 +25,19 @@ retirement path for any superseded ones with Marek; do not implement them here.
 
 ## Current input — accepted simpler recovery, November 7, 2026
 
-Marek accepted redoing unfinished work after runner loss and public health updates
-only at start and finish. No separate store, cross-run acquisition journal, lease
-service or special publication gate is required. Prefer simple existing workflow
-mechanisms; ask before choosing any further concurrency/retry policy. Publication
-still validates its candidate and checks the exact parent. The older input below
-is historical, not an implementation requirement.
+Marek accepted redoing unfinished work after runner loss and final-summary-only
+public health, with no public start update. No separate store, cross-run journal,
+lease service or special publication gate is required. Use the resolved recovery
+ticket's single-active-run, scheduled-retry and stop-on-conflict policy. Publication
+still validates its candidate and checks the exact parent.
+
+Attempt final summary publication after every normal outcome, including collection,
+validation and publication failures. Abrupt termination or summary publication
+failure may leave the previous timestamped “last reported run”; no guaranteed
+delivery queue or public registration. Include links to the specific Actions run
+and recent collection runs. Actions may require sign-in; reading the public summary
+must not. Keep this finalization path small and make unreported outcomes explicit
+as a limitation. The older input below is historical, not a requirement.
 
 ## Historical superseded progress input — November 7, 2026
 

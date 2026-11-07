@@ -29,6 +29,17 @@ and compatibility requirements, not production schemas or reader implementation.
 
 ## Comments
 
+### Current amendment — final-summary-only reporting, November 7, 2026
+
+Marek replaced all public-start requirements with best-effort final summaries for
+every normal outcome, including collection, validation and publication failures.
+Abrupt termination or summary publication failure may leave no report. The
+previous report retains its original timestamp and the label “last reported run”,
+never a latest-attempt assertion. Include the specific Actions run link and recent
+collection runs; Actions may require sign-in, while the public summary must not.
+The linked contract sketch is updated. The earlier start/finish amendment below
+is superseded history; no registration or guaranteed report-delivery service.
+
 ### Recovery simplification amendment — November 7, 2026
 
 Marek accepted redoing unfinished work after runner loss and public health updates

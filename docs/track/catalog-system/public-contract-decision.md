@@ -5,8 +5,9 @@ Owner: [Choose public YAML contracts and revision consistency](issues/03-choose-
 This is the target contract sketch, not an implemented schema or migration.
 
 Recovery amendment, November 7, 2026: Marek explicitly accepted redoing unfinished
-work after runner loss and public health updates only at start/finish. There is
-no separate checkpoint store or cross-run acquisition recovery requirement.
+work after runner loss and final-summary-only public health, with no public start
+record. There is no separate checkpoint store or cross-run acquisition recovery
+requirement.
 See the [current recovery baseline](progress-and-scheduling-decision.md#current-accepted-baseline--november-7-2026).
 
 ## Two publication channels
@@ -37,8 +38,8 @@ to publication of new release facts and break the current whitelist.
 | Catalog C | `apps.yaml` | AM names → explicit `repositories/<name>.yaml` references. |
 | Catalog C | `repositories/<name>.yaml` | One verified numeric GitHub source and retained release/asset observations. |
 | Catalog C | `provenance.yaml` | Revision-bound app/architecture recipe bindings and classification evidence, when available. Unknown classifications remain explicit. |
-| Status S | `status.yaml` | Latest registered attempt, latest finalized attempt and last confirmed successful catalog publication; links to retained run summaries. |
-| Status S | `runs/<run-id>/summary.yaml` | Run inputs/start record and, if recorded, final outcome and explicit catalog publication result. No intermediate updates required. |
+| Status S | `status.yaml` | Last reported run and publication confirmation known to that report; links to retained final summaries. Never an assertion about the latest attempt. |
+| Status S | `runs/<run-id>/summary.yaml` | Final reported outcome, run inputs, original timestamps, explicit catalog publication result and investigation links. No start record or intermediate updates. |
 | Status S | `runs/<run-id>/sources/<name>.yaml` | Bounded final per-source evidence when available; absence alone proves nothing. No continuous progress feed. |
 | Status S | `statistics.yaml` | Optional bounded aggregates with measurement times and gaps. |
 
@@ -82,20 +83,30 @@ establishes that relationship and its numeric identity agrees. Otherwise show it
 as separately labelled operational context. A known failed attempt based on C may
 explain why C remains usable; failure never changes C's observation timestamps.
 
-Attempt a public start record before acquisition and a final summary at finish.
-A start without a finish means “started, no completion recorded”; elapsed time
-alone proves neither outcome nor progress. A run lost before its start record
-is published may be absent from public health. If the final summary cannot be
-published, do not invent one from lost runner-local data.
+No public start record or in-progress report. Attempt a final summary for every
+normal outcome, including collection, validation and publication failures. Abrupt
+termination or failure to publish the summary may leave no public report. Preserve
+the previous report's original timestamps and label it “last reported run”. Do not
+infer that it is the latest attempt, that no newer run exists, or that the system
+is currently healthy/idle. If no report is available, say so without a synthetic
+outcome. A newer catalog C may coexist with an older report S.
 
-The earlier custom run-order allocator and registration/recovery machinery are
-withdrawn requirements. One collection runs at a time without automatically
-cancelling the active run on a new trigger. Minimal run identification/ordering
-and behavior when the start update fails remain for the progress/interface
-decisions, using existing mechanisms where possible. A late summary must not demote
-a newer attempt or overwrite a confirmed publication. Catalog publication ordering
-follows its lineage. Unknown publication results stay unknown until evidenced;
-no durable publication-intent service is required by this contract.
+Every report links to its specific Actions run, using the actual run identity,
+and recent collection runs. For the current workflow these are
+`https://github.com/mareklangiewicz/AM/actions/runs/<run-id>` and
+`https://github.com/mareklangiewicz/AM/actions/workflows/catalog.yml`.
+Keep the recent-runs destination aligned if the collection workflow is renamed.
+Actions pages may require GitHub sign-in; the public YAML and rendered summary
+remain readable without it. Investigation links supplement the public report;
+they do not substitute for its plain-language outcome and available measurements.
+
+Custom run-order allocation, registration and missing-run reconciliation are not
+required. One collection runs at a time without automatically cancelling the active
+run on a new trigger. Use the actual workflow run identity; rerun-attempt metadata
+and exact report fields belong to the health/interface contract. “Last reported”
+only describes recorded summaries, never completeness of attempts. Catalog
+publication confirmation follows its lineage; an ambiguous result stays unknown
+until evidenced. No durable publication-intent service is required.
 
 On a confirmed exact-parent catalog publication conflict, stop that run's
 publication and preserve the newer remote catalog. A later scheduled run starts
@@ -217,10 +228,12 @@ MIME round trips, shell/browser bounded-reader compatibility, actual DOM/fetch
 checks, and tested format-2 rollback. Migration/cutover timing and any dual-channel
 operation must be settled by the compatibility ticket, rather than assumed here.
 
-Acceptance scenarios: failed acquisition leaves C unchanged but can advance S;
-validation failure cannot publish C; publication lease conflict reports refused or
-unknown until reconciled; interruption keeps an unfinished registration; successful
-C publication followed by failed S update leaves an explicitly lagging status;
+Acceptance scenarios: a handled whole-collection failure leaves C unchanged but
+attempts a final S summary; source-isolated partial outcomes report only known facts;
+validation failure cannot publish C and still attempts a final summary; a confirmed
+publication conflict reports refused, while an ambiguous result reports unknown;
+abrupt termination may leave no report; successful C publication followed by failed
+S update leaves the prior “last reported run” with its original timestamps;
 old C links remain internally pinned; unsupported schema versions are refused;
 unavailable S leaves browsing C useful. No production schemas, refs, reader changes,
 publication dispatch or installed-host operations are performed by this decision.

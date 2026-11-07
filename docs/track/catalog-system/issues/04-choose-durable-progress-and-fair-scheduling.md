@@ -2,11 +2,14 @@
 
 Type: grilling
 Label: wayfinder:grilling
-Status: claimed
+Status: resolved
 Assignee: codex-progress
 Blocked by: 01
 
-## Reopened — simplicity correction, November 7, 2026
+Current resolution: [simplified recovery and final reporting](#answer--simplified-recovery-and-final-reporting-november-7-2026).
+The following reopening note and intermediate answers are chronological history.
+
+## Historical reopening — simplicity correction, November 7, 2026
 
 Marek rejected the proposed separate checkpoint store as too complex and requires
 prioritizing simplicity of implementation. He permits relaxing recovery guarantees
@@ -118,3 +121,27 @@ catalog, leaving a later scheduled run to try again rather than automatically
 merging/rebasing/retrying. The newer catalog is preserved; unpublished work need
 not survive. The linked current baseline records this behavior. Failed-start-
 update handling remains the last open recovery-policy question here.
+
+## Answer — simplified recovery and final reporting, November 7, 2026
+
+Marek explicitly replaced the start/finish proposal: no public “run started”
+update. Attempt a final health summary for every normal outcome, including
+collection, validation and publication failures. Abrupt termination or failure
+to publish that summary may leave no report. Show the previous report with its
+original timestamp as “last reported run”, never as proof of the latest attempt.
+Link to the specific Actions run and recent collection runs; Actions may require
+GitHub sign-in, while the public summary remains readable without it.
+
+Together with the preceding live answers, this resolves the recovery/scheduling
+policy: rerun lost unpublished work, retain oldest-first batches, retry only on a
+later scheduled run, keep source discovery manual, allow one active collection
+without automatic cancellation, and stop publication on an exact-parent conflict.
+The [current baseline](../progress-and-scheduling-decision.md#current-accepted-baseline--november-7-2026)
+owns the complete current resolution. Earlier answers and comment sections are
+chronological history; all public-start and cross-run durable-recovery requirements
+are superseded. No separate store, leases, retry queue or reconciliation service.
+
+Implementation simplicity remains the priority. Exact summary semantics/bounds,
+public snapshot storage and workflow interfaces remain with their owning tickets.
+No runtime implementation, deployment, dispatch, push or installed-host changes
+accompany this planning resolution.
