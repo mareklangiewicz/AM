@@ -1,24 +1,29 @@
 # Single-user YAML catalog operation
 
-The published collection contains **228 app identities / 224 repositories**:
-57 migrated recipe identities and 171 catalog-only identities. Source
-`09ae7fe81355a06eabe1c2afc141f22e2d3de675` activates the hourly metadata profile.
-[Run 42366263140](https://github.com/mareklangiewicz/AM/actions/runs/42366263140)
-publishes `59b3f3f398bc1013c7b5caf0f37b19a4f3fc9821`, successfully observing all
-224 enrolled sources in one batch: 224 requests, zero failures/unattempted,
-179,326,726 response bytes and 205.27 seconds command time. Exact-pin bounded
-reader/canonical/reference and identity/release/observation preservation checks
-pass. YAML totals 33,220,878 bytes, largest document 1,159,110 bytes.
-[Rollout report and live receipt](track/release-catalog/research/hourly-refresh-rollout.md).
+The published collection contains **325 app identities / 320 repositories**:
+57 migrated recipe identities and 268 catalog-only identities. Authorized source
+`5d7af43478555f154d4cae99abe9ce30b5e125ad` publishes the next verified cohort.
+[Run 42369094432](https://github.com/mareklangiewicz/AM/actions/runs/42369094432)
+publishes `08a0fbd526156a456a8648e71d9d2be11734bc74`, successfully observing all
+320 sources in one batch: 320 requests, zero failures/unattempted/pending apps,
+240,500,608 response bytes and 343.56 seconds command time. Exact-pin bounded
+reader/canonical/reference and prior identity/release/observation preservation
+checks pass against actual parent `59b3f3f398bc1013c7b5caf0f37b19a4f3fc9821`.
+YAML totals 44,626,132 bytes, largest document 1,372,340 bytes.
+[Publication report and live receipt](track/release-catalog/research/next-320-publication.md).
+Source `09ae7fe81` previously activated the unchanged hourly metadata profile;
+[its rollout report](track/release-catalog/research/hourly-refresh-rollout.md)
+retains historical 224-source operation and quota evidence.
 
 The workflow attempts at most **500 oldest sources hourly**, at minute 17 UTC,
 preserving untouched observations and isolating failures. The enrollment ceiling
-is 500; actual enrollment remains 224 verified sources. New cohorts require
+is 500; actual enrollment is 320 verified sources. New cohorts require
 identity and density/capacity preflight. Bounds are 512 MiB charged response bytes,
 900-second cooperative acquisition, a 30-minute job, 16 MiB/response,
-2 MiB/document, 1,024 reader files and 256 MiB local history. Current history guard
-usage is 88,631,041 bytes; the measured 500-source fixture plus published history
-passes two exact-parent publications at about 141.33 MB. This is intermediate
+2 MiB/document, 1,024 reader files and 256 MiB local history. Current publication
+history guard usage is 100,065,961 bytes. At rollout 146, the measured 500-source
+fixture plus then-published history passed two exact-parent publications at about
+141.33 MB. This is intermediate
 capacity evidence, not qualification for thousands or unbounded retained growth.
 
 The collector reports safe numeric quota headers, request/byte/time/coverage and
@@ -30,9 +35,10 @@ than 24 hours, reporting 24/36/48-hour counts. These source diagnostics do not
 freshen retained releases outside page 1 or replace the client freshness rule.
 
 The conservative quota plan uses the documented ordinary Actions allowance of
-1,000 REST requests/hour/repository. This live run instead reports core limit
-5,000, with 4,852 remaining at the end and a reset change during the run. That
-observation has no established official explanation or durable entitlement;
+1,000 REST requests/hour/repository. The latest live run instead reports core limit
+5,000, with 4,532 remaining at the end. The earlier rollout observed a reset
+change during its run. The larger observed allowance has no established official
+explanation or durable entitlement;
 the report preserves both the documented baseline and measured headers.
 The active hourly cron is verified in source; its first natural hourly trigger
 remains unobserved. The successful run above is manual.
@@ -56,7 +62,7 @@ marked `# AM-RECIPE-DECLARATION 1` own customization and selection settings;
 adding a declaration does not enroll it for collection. The older 50-source design
 manifest and
 format-1 collector experiments are historical evidence, not active publication.
-The deployed source ceiling is 500; actual enrollment is 224. Per-repository YAML
+The deployed source ceiling is 500; actual enrollment is 320. Per-repository YAML
 remains capped at 2 MiB.
 
 [137](track/release-catalog/issues/137-separate-catalog-enrollment-from-recipe-migration.md)

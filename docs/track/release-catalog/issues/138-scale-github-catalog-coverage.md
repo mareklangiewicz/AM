@@ -185,3 +185,14 @@ records transport/density/history limits. [148](148-publish-320-source-cohort.md
 packages the proposed push/publication; published enrollment stays 224 sources.
 This ticket remains claimed: unsupported bindings, the unverified remaining scan
 queue and whole-snapshot/history scaling still prevent all-GitHub completion.
+
+## 320-source cohort published
+
+Marek authorized [148](148-publish-320-source-cohort.md). Source `5d7af4347` is
+pushed; manual run 42369094432 publishes all 325 apps / 320 sources with zero
+failures or pending apps. Exact pin `08a0fbd526156a456a8648e71d9d2be11734bc74`
+and actual parent pass bounded reader/canonical/reference and prior identity,
+retained-release and effective-observation preservation checks.
+[Publication report/receipt](../research/next-320-publication.md) supersede the
+preceding preparation-only status. The 500/hour profile and installed host are
+unchanged. This ticket remains claimed for remaining attribution and storage scale.

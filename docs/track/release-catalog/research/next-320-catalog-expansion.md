@@ -86,3 +86,9 @@ Read-only workflow inspection still finds manual run 42366263140 as the latest
 catalog run; the first natural trigger at the new hourly cadence is unobserved.
 No push, workflow dispatch, installed refresh, app update or yadm pointer operation
 is included in local preparation.
+
+## Subsequent publication
+
+Marek authorized 148; [publication report](next-320-publication.md) records the
+successful 325-app / 320-source rollout. The preparation-only status above is
+historical. Installed host remains unchanged.

@@ -2,6 +2,15 @@
 
 ## Active expansion — catalog first, simple recipe migrations first
 
+[148 resolved](issues/148-publish-320-source-cohort.md) publishes **325 apps /
+320 verified sources**. Authorized source `5d7af4347`, successful manual run
+42369094432 and pin `08a0fbd526156a456a8648e71d9d2be11734bc74` verify all 320
+sources in one batch, zero failures/pending apps. Exact-pin/actual-parent reader,
+canonical/reference and identity/release/observation preservation checks pass.
+[Publication report and receipt](research/next-320-publication.md) record 343.56
+seconds command, 240.50 MB responses and 44.63 MB YAML. The 500/hour profile
+is unchanged; installed host is untouched and broader 138 remains claimed.
+
 [147 resolved](issues/147-prepare-next-verified-cohort.md) prepares **325 apps / 320
 sources** locally: 97 verified app additions / 96 new numeric sources, one checked
 rename, two explicit exclusions. Fresh full-scope preflight attempts all 320
@@ -9,8 +18,8 @@ sources successfully; exact-parent candidate/readback preserves prior identities
 retained releases and effective observations. [Report and receipts](research/next-320-catalog-expansion.md)
 record 240.50 MB response bytes, 44.63 MB YAML and measured local bounds;
 all 159 collector regressions pass.
-Published enrollment remains 228 apps / 224 sources. [148](issues/148-publish-320-source-cohort.md)
-is the proposed push/publication package; no installed-host changes.
+The preparation baseline was 228 apps / 224 sources. [148](issues/148-publish-320-source-cohort.md)
+completes its authorized publication above; no installed-host changes.
 
 [146 resolved](issues/146-roll-out-hourly-metadata-refresh.md) deploys **500/hour**:
 159 full collector tests pass; source `09ae7fe81` and successful run 42366263140
