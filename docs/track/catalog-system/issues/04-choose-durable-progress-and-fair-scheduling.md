@@ -145,3 +145,12 @@ Implementation simplicity remains the priority. Exact summary semantics/bounds,
 public snapshot storage and workflow interfaces remain with their owning tickets.
 No runtime implementation, deployment, dispatch, push or installed-host changes
 accompany this planning resolution.
+
+### Subsequent accepted cadence amendment — November 7, 2026 side conversation
+
+Marek accepted two scheduled collection runs daily with additional manual workflow
+dispatch available when wanted, replacing hourly scheduling as the target.
+The accepted release-retention policy and local history-size evidence are recorded
+in [Choose scalable snapshot and history storage](05-choose-scalable-snapshot-and-history-storage.md#accepted-cadence-and-release-retention--november-7-2026-side-conversation).
+This changes planning only; exact cron times and implementation remain pending.
+Other accepted recovery/concurrency/budget protections remain applicable.

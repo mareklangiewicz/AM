@@ -27,6 +27,71 @@ No cap increase or storage implementation is authorized by resolving this questi
 
 ## Comments
 
+### Accepted cadence and release retention — November 7, 2026 side conversation
+
+Marek explicitly answered “Yes” to this proposed policy:
+
+- Two scheduled collection runs daily, with additional manual workflow dispatch
+  available whenever wanted. This supersedes hourly scheduling as the target;
+  it does not change the deployed workflow or promise that every trigger runs.
+- Keep every release published within the last two years.
+- Also keep at least the five newest releases per source, even when some or all
+  are older than two years.
+- Also protect the newest non-prerelease release regardless of age, so recent
+  prereleases do not evict the last stable release.
+
+This explicitly permits age/count-based removal from the current retained release
+set, amending the previous retain-unfetched-records policy in ADR 0002 for that
+purpose. It does not authorize deletion inferred from absence in a partial fetch,
+or changing retained observations' effective freshness. The exact ordering for
+“newest”, time-boundary rules, missing publication-time behavior, and safe point
+for applying pruning still need specification. No exact cron times were chosen.
+Translate these choices into the baseline/spec/ADR and implementation roadmap in
+the main planning session; the ticket remains claimed and unresolved because its
+broader storage/read/write and capacity-experiment questions remain open.
+
+Marek subsequently agreed to leave existing Git history intact for now after
+asking whether a one-time history prune was warranted. Reconsider only if measured
+history growth makes it worthwhile. No history reset/rewrite or force push is
+authorized. Removing current release records does not erase their Git history.
+
+#### Size evidence and estimates discussed
+
+Read-only local inspection in this side conversation found:
+
+- The preserved catalog-only repository at
+  `/home/marek/Documents/Codex/am-500-publication-20261107/live-catalog.git`
+  is not shallow; its `refs/heads/fetched` at
+  `cbda9fb78ce4a6f29bdabd63d57f3c0085e8744f` has 39 reachable commits.
+  `git count-objects -vH` reports one pack, 59.28 MiB, and no loose objects.
+- The main AM clone's shared object database reports 359.94 MiB packed plus
+  58.24 MiB loose (approximately 418 MiB), including locally held branches.
+  Neither figure is a fresh measurement of GitHub's server-side storage.
+- The saved 500-source snapshot's 63,690,470 YAML bytes / 16,027 releases give
+  approximately 3,974 bytes per release including assets. At unchanged density,
+  1,000 / 5,000 / 10,000 sources extrapolate to 127 MB / 637 MB / 1.27 GB of
+  current uncompressed YAML. These are not measured capacity qualifications.
+- Illustrative no-pruning growth at that density: one new release per source per
+  week adds about 103 MB/year for 500 sources or 1.03 GB/year for 5,000; one daily
+  adds about 725 MB/year or 7.25 GB/year respectively. Actual arrival rates were
+  not measured, and these estimates exclude Git revision overhead/churn.
+- Two daily runs create 12 times fewer scheduled publication opportunities than
+  hourly runs; this is not a measured 12-fold reduction in storage growth.
+  Compressed Git-history growth still needs representative measurement.
+
+GitHub's checked documentation distinguishes recommendations (ideally <1 GB,
+strongly <5 GB; a separate structure guide recommends compressed `.git` <=10 GB)
+from enforced single-file and push limits. Ordinary Git does not use the metered
+Git LFS storage allowance. A history rewrite also cannot guarantee immediate
+server-side reclamation or continued availability of old catalog pins.
+Sources: [large-file guidance](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github),
+[repository limits](https://docs.github.com/en/repositories/creating-and-managing-repositories/repository-limits),
+[Git LFS billing](https://docs.github.com/en/billing/concepts/product-billing/git-lfs),
+[history-rewrite caveats](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository).
+
+This side conversation changes planning records only. No workflow, runtime,
+catalog content, Git history, remote ref, installed host or yadm pointer changed.
+
 ### Planning continuation — November 7, 2026
 
 Claimed after the public-contract and simplified-recovery prerequisites resolved.
