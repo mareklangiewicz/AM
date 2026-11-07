@@ -11,8 +11,9 @@ payload inspection or policy compilation. They do not claim AM installation supp
 App identities must be unique across both lists; sources are deduplicated by
 numeric ID and conflicting names refuse. When a recipe is migrated, move its
 enrollment to `collection-recipes.txt` in the same change, preserving its identity.
-The published union contains 320 verified repositories; the enrollment ceiling is
-500, subject to cohort identity/capacity preflight. Each scheduled run attempts at most
+The published union contains 500 verified repositories; the enrollment ceiling is
+500, now fully enrolled. Further distinct sources require separately measured
+scaling work in 138, alongside identity/capacity preflight. Each scheduled run attempts at most
 500, oldest collection attempt first (never-attempted sources first, numeric ID
 ties). The schedule is hourly, covering the current published scope in one
 full successful run. Transfer/time budgets or source failures can reduce successful coverage;
@@ -42,8 +43,8 @@ sources in batch mode refuses. Source enrollment is still an explicit reviewed
 file change, never automatic URL discovery.
 
 The 16 MiB response, 512 MiB per-run transport, 900-second cooperative acquisition,
-2 MiB document, 1,024-file read and 256 MiB Git-history bounds apply. The 320-source scope is published with exact-pin preservation receipts
-([latest publication](../../docs/track/release-catalog/research/next-320-publication.md)).
+2 MiB document, 1,024-file read and 256 MiB Git-history bounds apply. The real 500-source scope is published with exact-pin preservation receipts
+([latest publication](../../docs/track/release-catalog/research/next-500-publication.md)).
 [The larger-batch assessment](../../docs/track/release-catalog/research/refresh-batch-sizing.md)
 motivates the 500/hour profile; [rollout 146](../../docs/track/release-catalog/issues/146-roll-out-hourly-metadata-refresh.md)
 records validation and operational status. Whole-tree validation and history

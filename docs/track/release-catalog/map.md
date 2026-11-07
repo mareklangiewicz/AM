@@ -2,6 +2,16 @@
 
 ## Active expansion — catalog first, simple recipe migrations first
 
+[150 resolved](issues/150-publish-500-source-cohort.md) publishes **509 apps / 500
+verified real sources**. Authorized source `b2e63b11a`, successful manual run
+42385542750 and exact pin `cbda9fb78ce4a6f29bdabd63d57f3c0085e8744f` observe
+all 500 sources in one batch, zero failures/pending apps. Actual-parent/exact-pin
+reader, canonical/reference and prior identity/release/observation preservation
+checks pass. [Publication report/receipt](research/next-500-publication.md) record
+518.95 seconds command, 341.44 MB responses and 63.69 MB YAML under unchanged
+500/hour bounds. Installed host is untouched; broad 138 and discovery follow-up
+151 remain. This is real 500-source CI evidence, not qualification for thousands.
+
 [149 resolved](issues/149-prepare-500-source-cohort.md) prepares **509 apps / 500
 verified sources** locally: 184 app additions / 180 new numeric sources, eight
 checked renames, two unchanged exclusions. Fresh full-scope local preflight
@@ -9,8 +19,8 @@ observes all 500 successfully, zero failures/pending apps; exact-pin readback an
 prior identity/release/observation preservation pass. [Report/receipts](research/next-500-catalog-expansion.md)
 record 341.44 MB responses, 63.69 MB YAML, 551.56 seconds acquisition, unchanged
 bounds and 12 passing focused regressions. [150](issues/150-publish-500-source-cohort.md)
-is the concrete push/publication package awaiting Marek's call. Published scope
-remains 325 apps / 320 sources; no installed-host change. [151](issues/151-bound-discovery-redirect-request-accounting.md)
+completes the authorized publication above. The preparation baseline was
+325 apps / 320 sources; no installed-host change. [151](issues/151-bound-discovery-redirect-request-accounting.md)
 records that discovery's 383 logical GET calls do not instrument redirect wire
 attempts; the separate collector uses its existing redirect-refusing transport.
 

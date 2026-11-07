@@ -211,3 +211,16 @@ is the concrete push/publication package awaiting Marek's call; live scope stays
 clarifies discovery's logical-GET counter and records transport accounting work.
 Whole-snapshot/history/reader bounds and remaining attribution still prevent
 qualifying thousands; this ticket stays claimed. No installed-host changes.
+
+## Real 500-source cohort published
+
+Marek authorized [150](150-publish-500-source-cohort.md). Source `b2e63b11a` is
+pushed; successful manual run 42385542750 publishes all 509 apps / 500 sources
+with zero failures/unattempted/pending apps. Exact pin
+`cbda9fb78ce4a6f29bdabd63d57f3c0085e8744f` and actual parent pass bounded
+reader/canonical/reference and prior identity/release/observation preservation.
+[Report and receipt](../research/next-500-publication.md) supersede the preparation-
+only status above. The 500/hour profile is unchanged and now exercised in CI for
+500 verified real upstreams. No installed-host changes. Broad attribution,
+whole-snapshot/history/reader scaling and discovery transport accounting in 151
+remain; this ticket stays claimed rather than declaring all-GitHub completion.

@@ -104,3 +104,9 @@ bindings across all four architectures remain before qualifying thousands.
 No all-GitHub completion or browser DOM/CORS/mobile acceptance is claimed.
 No source push, remote publication, installed refresh, app update, recipe migration,
 website rebuild or yadm pointer operation is included in local preparation.
+
+## Subsequent publication
+
+Marek authorized 150. [Publication report](next-500-publication.md) records the
+successful live 509-app / 500-source rollout and exact-pin preservation checks.
+The preparation-only status above is historical; installed host is unchanged.
