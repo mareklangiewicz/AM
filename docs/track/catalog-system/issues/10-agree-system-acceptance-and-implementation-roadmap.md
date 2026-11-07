@@ -81,3 +81,23 @@ empty/stale/partial/error states. A final educational check must verify that use
 can distinguish catalog coverage, recipe/support evidence, release freshness and
 binary authenticity, and maintainers can explain the supported rerun/publication
 path from one short overview.
+
+### Browser input update and quota constraint — November 8, 2026
+
+Browser 03 is now resolved: A default, B/C selectable and the first-release
+behavior are accepted. Browser 04 is claimed with a concrete pending refresh/error,
+performance/accessibility and verification proposal. Earlier readiness notes above
+are chronological; the remaining blocker is browser 04 and this ticket's final
+system targets, not an unresolved default layout.
+
+A November 8 read-only primary-document check still gives ordinary GITHUB_TOKEN
+1,000 requests/hour/repository:
+[GitHub REST rate limits](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api).
+This is an external constraint, not an internal cap to lift. Historical observed
+5,000 headers do not establish a durable allowance. Before choosing a thousands-
+of-distinct-sources full-refresh deadline, account for actual requests/source,
+quota reserve, secondary limits and acquisition/validation/publication time.
+The two-runs-daily direction and stop-on-quota policy must not be combined with an
+unsupported promise that all thousands refresh within one short job. Any needed
+cadence/pacing-policy change is an explicit material choice for the final review,
+not a silently invented credential entitlement or a new storage backend.

@@ -21,8 +21,8 @@ GitHub Pages catalog browser, with no unresolved decisions before implementation
 November 8, 2026: Marek selected A (directory) as the default while keeping B
 (split-pane explorer) and C (release desk) selectable. The existing claimed
 [browser review](issues/03-review-browser-experience.md#accepted-default-view--november-8-2026)
-records this partial decision and the remaining experience proposal; no actual
-browser verification or full experience/delivery acceptance is claimed.
+records the default and accepted first-release experience; actual browser
+verification and delivery acceptance remain outstanding.
 
 Planning with an explicitly authorized public prototype deployment on November 6,
 2026; this does not accept a final design. Live preview: https://mareklangiewicz.pl/AM/ .
@@ -57,6 +57,8 @@ AM pushes and publication remain subject to Marek's separate approval.
 - [Establish app metadata and trustworthy download presentation](issues/02-app-metadata-and-download-semantics.md): existing release facts suffice for browsing; research recommends optional attributed descriptions, icon fallbacks and explicit AM/inferred-match distinction.
 
 - [Choose the Pages home and existing-site coexistence](issues/05-choose-hosting-and-coexistence.md): same repository, code on main-marek, direct JavaScript reads pinned to a release-catalog commit; supersedes generated-index recommendation, pending feasibility prototype.
+
+- [Choose the catalog browsing experience](issues/03-review-browser-experience.md#answer--november-8-2026): accepted A default with B/C selectable, separate app/channel identities, scoped lazy search/detail, bounded retained history/all assets, and optional verified enrichment with fallbacks.
 
 ## Not yet specified
 

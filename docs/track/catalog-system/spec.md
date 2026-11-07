@@ -112,8 +112,12 @@ AM installation support and catalog-only inclusion. Stable/nightly identities
 sharing a numeric source must not be silently collapsed.
 Reuse the existing browser prototypes: Marek selected A (directory) as the default
 on November 8 while retaining B (split-pane explorer) and C (release desk) as
-selectable views. The existing browser review owns the remaining experience and
-acceptance decisions.
+selectable views. The [accepted browser experience](../catalog-pages/issues/03-review-browser-experience.md#answer--november-8-2026)
+keeps AM/channel identities separate, searches names globally and release/assets
+within the opened source with explicit scope, and exposes all retained assets
+progressively with bounded/partial history labels. New description/logo acquisition
+is optional follow-up; use verified available metadata or names/initials/upstream
+links. Browser delivery and measured acceptance remain a separate decision.
 Maintain Vim-like navigation alongside native keyboard operation.
 
 Offer progressive explanations of upstream source → observed release →

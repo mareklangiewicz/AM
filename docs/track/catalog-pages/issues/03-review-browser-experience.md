@@ -2,7 +2,7 @@
 
 Type: prototype
 Label: wayfinder:prototype
-Status: claimed
+Status: resolved
 Assignee: codex
 Blocked by: 01, 02, 05
 
@@ -12,6 +12,23 @@ Which directory, app-detail, release-history and download-selection experience b
 
 Include an explicit product/channel grouping decision for shared stable/nightly
 repositories, and distinguish inferred platform matches from AM-supported choices.
+
+## Answer — November 8, 2026
+
+Marek accepted A (directory) as the default while retaining B and C, then answered
+“yes” to the remaining first-release behavior proposal recorded below. Keep AM
+identities and evidenced channel policies distinct, show same-source relationships,
+search app names globally and release/assets within the opened source with scope
+explicit, expose all retained assets progressively and label bounded/partial
+history. Use verified metadata where available and names/initials/upstream links
+otherwise; no new enrichment acquisition pipeline is a first-release dependency.
+
+The previously accepted native/Vim navigation, pinned share links, education,
+provenance and truthful stale/failed/unknown states remain required. The prepared
+remaining-choice section below now records accepted behavior, superseding its
+initial pending wording. This settles experience/product direction, not visual,
+DOM, CORS, mobile, accessibility or performance test results. Browser 04 owns
+those delivery targets and evidence. No code, site deployment or catalog changed.
 
 ## Accepted starting architecture and prototype gates
 
