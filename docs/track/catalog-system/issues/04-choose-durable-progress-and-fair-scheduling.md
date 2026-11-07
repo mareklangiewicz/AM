@@ -82,3 +82,13 @@ The earlier Answer is superseded historical context, including its unreviewed
 scheduling/retry choices. This ticket stays claimed until simple scheduling,
 retry and minimal publication/concurrency questions have been answered. Do not
 resolve it from these two recovery answers alone.
+
+### Accepted batching and retry policy — November 7, 2026
+
+Marek answered “yes” to keeping existing oldest-first batches and retrying
+failures on the next scheduled run, without automatic retries inside a run.
+The linked current baseline records ordering, one source-scope attempt per run
+and existing budget/quota/auth protections. Published attempt metadata suffices;
+interrupted unpublished work may repeat. No persistent retry counters, jitter or
+cooldown machinery is required. Discovery/refresh allocation and minimal
+concurrency/publication handling remain open; the ticket stays claimed.

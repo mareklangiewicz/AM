@@ -13,13 +13,24 @@ Marek answered “yes to both” to these two choices:
    no finish record, display “started, no completion recorded”. Do not infer its
    outcome or partial-source counts. Continuous progress updates are not required.
 
+Marek then accepted keeping the existing oldest-first batches and retrying failed
+sources on a later scheduled run, without automatic retries inside a run.
+Use the existing ordering: never-attempted first, then oldest recorded attempt,
+then numeric source ID. Use published attempt metadata; no new durable scheduler
+journal is required. If an interrupted run publishes nothing, its work may repeat.
+Each selected source gets one acquisition attempt for its requested scope per run;
+normal pagination is part of that attempt, not a retry. Keep existing budget,
+quota-reserve and auth/rate-stop protections. The next scheduled run still obeys
+those protections; it is an opportunity to retry, not an unconditional request.
+Do not add the old cooldown counters, jitter or retry-state machinery.
+
 Previously published observations stay intact until a new candidate passes
 validation and exact-parent publication. A rerun uses actual new response receipt
 times; a failed run does not freshen old data. Existing saved-response replay for
 explicit local evidence remains useful, without becoming automatic crash recovery.
 
 These decisions supersede the historical durability/fencing/gate/minute-update
-design below. The ticket remains claimed: scheduling, retry policy and any
+design below. The ticket remains claimed: discovery versus refresh scheduling and
 necessary minimal concurrency/publication handling still need simple questions
 and human answers. The previous 4:1 weighting, cooldowns and 24-hour replay window
 are not accepted requirements. This is planning, with no runtime changes.

@@ -34,8 +34,10 @@ Logical progress, recovery, replay and scheduling policy are reopened in
 [Choose durable progress and fair scheduling](issues/04-choose-durable-progress-and-fair-scheduling.md).
 Marek accepted redoing unfinished work after runner loss and start/finish-only
 public health, prioritizing implementation simplicity. The linked current baseline
-supersedes cross-run durability/store/fencing/gate requirements; scheduling and
-retry details remain open.
+supersedes cross-run durability/store/fencing/gate requirements. Existing oldest-
+first batches and retrying on a later scheduled run, without in-run retries, are
+also accepted. Discovery/refresh allocation and minimal concurrency/publication
+handling remain open.
 
 ## Accepted requirements
 
