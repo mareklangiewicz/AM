@@ -28,6 +28,48 @@ No cap increase or storage implementation is authorized by resolving this questi
 
 ## Comments
 
+### Accepted exact-tag replacement — November 7, 2026 side conversation
+
+After discussing Git tags, GitHub release identities and rolling nightlies,
+Marek explicitly accepted the proposed rule and requested this tracker update:
+keep one current release record per exact tag name within each numeric source.
+
+- On successful source-scope collection, a newly observed release using the same
+  exact tag as an older retained release replaces that older record in the current
+  catalog, even when the numeric GitHub release ID changed. Keep the observed
+  numeric release ID as evidence; a tag is not substituted for that identity.
+- Updating the same release ID refreshes its record as before. Resolve tag reuse
+  before applying the accepted 32-plus-stable retention rule, so old incarnations
+  of a rolling tag do not consume retained-release slots or stable protection.
+- Distinct tags such as `v1.2.3` and `v1.2.4` remain distinct releases, subject to
+  the count limit. There is no special interpretation of names such as `nightly`,
+  `stable`, `current` or `latest`; match exact names within the source only.
+- Failed or unattempted source collection does not replace prior release data.
+  Partial-fetch absence alone still does not prove deletion. A positively observed
+  replacement under the same tag is the basis for this explicit supersession rule.
+- Earlier catalog commits preserve previous observations, including older numeric
+  release IDs and asset facts. This archives metadata, not upstream binaries;
+  a reused tag/download URL does not guarantee access to historical asset bytes.
+
+This deliberately replaces historical incarnations of a rolling tag in today's
+catalog, including rolling non-prereleases. It does not discard a distinct
+version-tagged release merely because a newer release becomes stable or “Latest”.
+The main planning session must incorporate this rule alongside 32-plus-stable
+retention in the spec/ADR and roadmap. The discussion of a possible 64-release
+limit was measurement only; the accepted count remains 32 plus stable.
+Ambiguous same-tag evidence within a collection still needs an explicit validation
+rule; do not infer a winning numeric ID without specifying it. The ticket remains
+claimed and unresolved. Planning only; no runtime, catalog or remote changes.
+
+Reference facts: GitHub release publication requires a `tag_name`; release IDs
+and uploaded assets are separate GitHub metadata. GitHub's “Latest” designation
+is separate from a Git tag. Neovim's checked workflow deletes/recreates `nightly`,
+illustrating why ID-only retention accumulates rolling-release incarnations.
+Sources: [release API](https://docs.github.com/en/rest/releases/releases),
+[Neovim release workflow](https://github.com/neovim/neovim/blob/master/.github/workflows/release.yml).
+These references explain the decision; they are not capacity or binary-availability
+guarantees, and the workflow link is mutable.
+
 ### Accepted 32-plus-stable retention — November 7, 2026 side conversation
 
 Marek proposed keeping the 32 newest releases plus the newest observed
