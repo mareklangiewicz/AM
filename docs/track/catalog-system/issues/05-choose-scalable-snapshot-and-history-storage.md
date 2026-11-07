@@ -27,6 +27,35 @@ No cap increase or storage implementation is authorized by resolving this questi
 
 ## Comments
 
+### Accepted pruning timing and current retention policy — November 7, 2026
+
+Marek answered “yes” to pruning only after a source's requested collection scope
+succeeds: merge fetched releases, apply retention, then validate before
+publication. Failed and unattempted sources stay unchanged. The last good
+publication remains intact if candidate validation or publication fails.
+
+Together with the accepted answers below, the current policy is:
+
+- Fix one UTC timestamp at collection start; retain dated releases published at
+  or after that timestamp minus 730 days, inclusive.
+- Also retain the five newest dated releases per source (or all if fewer exist),
+  ordered by publication time descending, then numeric release ID descending.
+- Also protect the newest dated non-prerelease release under that ordering.
+- Keep every undated release outside the five dated-release slots. This also
+  protects undated non-prereleases without inventing an ordering date.
+- Apply these rules to the merged retained set after source-scope success, not
+  just to fetched records. Absence from a partial fetch never proves deletion;
+  removal under this explicit retention policy is independent of such absence.
+- Preserve effective observation times for retained records. Pruning does not
+  establish full upstream coverage or reobserve unfetched releases.
+- Keep existing Git history intact for now; current-record pruning does not
+  erase old snapshots. Reconsider history policy only from measured growth.
+
+This settles the retention details previously left open below. Broader storage,
+read/write and capacity-experiment decisions remain open; this ticket stays
+claimed. The earlier comments are chronological discussion, superseded where
+these accepted answers settle their pending questions. Planning only.
+
 ### Accepted retention time boundary — November 7, 2026
 
 Marek answered “yes” to defining “within two years” as a rolling 730-day window,

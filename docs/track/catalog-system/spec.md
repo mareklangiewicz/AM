@@ -44,6 +44,16 @@ scheduled run without automatic merging. No public start record or missing-run
 recovery service is required. Detailed metrics, storage and interfaces remain
 with their owning decisions.
 
+The target cadence is now two scheduled collection runs daily plus manual
+workflow dispatch, with exact cron times still open. The storage discussion also
+settled release retention: a 730-day window, at least five newest dated releases,
+the newest dated non-prerelease and all undated releases, applied after successful
+source-scope collection and merge, before candidate validation/publication.
+Failed and unattempted sources stay unchanged; retained freshness stays intact.
+The [accepted retention policy](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-pruning-timing-and-current-retention-policy--november-7-2026)
+owns exact ordering and boundary rules. Existing Git history stays intact for now.
+These are planning decisions; the broader storage ticket remains unresolved.
+
 ## Accepted requirements
 
 ### Browse and learn through real apps

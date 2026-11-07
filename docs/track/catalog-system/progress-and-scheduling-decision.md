@@ -29,6 +29,12 @@ quota-reserve and auth/rate-stop protections. The next scheduled run still obeys
 those protections; it is an opportunity to retry, not an unconditional request.
 Do not add the old cooldown counters, jitter or retry-state machinery.
 
+Marek subsequently accepted two scheduled collection runs daily, with additional
+manual workflow dispatch available. This supersedes hourly scheduling as the
+target; exact cron times remain undecided. It does not promise execution of every
+trigger or change the deployed workflow. See the
+[accepted cadence](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-cadence-and-release-retention--november-7-2026-side-conversation).
+
 Marek also accepted keeping discovery of new apps manually triggered for now;
 scheduled runs only refresh explicitly enrolled sources. Discovery produces
 reviewable candidates and identity evidence, not automatic enrollment. Keep
