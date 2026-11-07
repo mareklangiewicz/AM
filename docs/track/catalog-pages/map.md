@@ -18,6 +18,12 @@ GitHub Pages catalog browser, with no unresolved decisions before implementation
 
 ## Notes
 
+November 8, 2026: Marek selected A (directory) as the default while keeping B
+(split-pane explorer) and C (release desk) selectable. The existing claimed
+[browser review](issues/03-review-browser-experience.md#accepted-default-view--november-8-2026)
+records this partial decision and the remaining experience proposal; no actual
+browser verification or full experience/delivery acceptance is claimed.
+
 Planning with an explicitly authorized public prototype deployment on November 6,
 2026; this does not accept a final design. Live preview: https://mareklangiewicz.pl/AM/ .
 See the browsing-experience ticket for the receipt. Marek accepted the destination and product direction on November 6,

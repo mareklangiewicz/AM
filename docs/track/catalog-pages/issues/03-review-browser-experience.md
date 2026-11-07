@@ -112,3 +112,51 @@ HTTPS readback returned 200 and byte-equality for all four files:
 
 No browser was connected for visual/interaction verification. Layout choice and
 browser acceptance remain open. All three variants remain publicly available.
+
+## Accepted default view — November 8, 2026
+
+Marek answered “yes” to A (directory) as the default, with B (split-pane explorer)
+and C (release desk) still selectable. This settles the default and retention of
+all three views; it does not claim real-browser/mobile/accessibility acceptance
+or resolve the remaining product/channel and behavior questions. Preserve the
+existing claim while completing this review. No prototype code or deployment changed.
+
+## Prepared remaining experience choices — November 8, 2026
+
+Pending Marek's decision. Read-only inspection of prototype `e7539f5d2` confirms
+name search, lazy per-source fetches, separate AM identities sharing source facts,
+expandable retained releases/all assets and native/Vim controls as reusable
+starting behavior. Its parser is not full domain validation and it has no pinned
+recipe-support model; source inspection is not DOM/fetch/accessibility verification.
+
+Recommend this first-release behavior alongside the accepted A default:
+
+- Keep one directory entry and shareable app route per AM identity. Show related
+  identities sharing a verified numeric source as “same upstream source”; do not
+  infer one product solely from that ID. Expose evidenced stable/nightly channel
+  differences and their own policy bindings without collapsing entries. Current
+  `programs/x86_64/nvim` and `nvim-nightly` illustrate separate stable/nightly
+  declarations sharing release facts.
+- Make directory search global over app names. Search/filter release and asset
+  facts within the opened source; label this scope explicitly. Do not imply a
+  global release/asset search across sources that have not loaded. Lazy detail
+  stays the default, without a new generated index or eager full-catalog download.
+- Show the retained release set in the accepted date/ID order, distinguish
+  prereleases and show the protected non-prerelease where available. State that
+  retained history is bounded and may be partial. Expand release assets
+  progressively with all retained assets reachable; platform highlighting is
+  inference, while evidenced AM choices use the separate pinned recipe policy.
+- Keep known catalog/recipe/release ages and failed-refresh context visible,
+  unknowns explicit and contextual explanations beside their facts. Share links
+  carry the exact snapshot, app/view and release when selected. Preserve native
+  browser navigation, focus and keyboard behavior when switching/expanding views.
+- For the first release, do not add a new description/logo acquisition pipeline.
+  Show attributed descriptions/logos only when already available with verified
+  provenance/permission; otherwise use app names/initials and upstream links.
+  Keep richer metadata as optional follow-up work, not a gate for the migration.
+
+This retains useful prototype behavior while incorporating accepted provenance,
+health, retention and education contracts. It is a product proposal, not blanket
+acceptance of every current DOM detail or parser behavior. Browser 04 still owns
+measured delivery targets, refresh/error rules and actual-browser acceptance;
+remote deployment remains separately authorized.
