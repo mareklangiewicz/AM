@@ -28,6 +28,52 @@ No cap increase or storage implementation is authorized by resolving this questi
 
 ## Comments
 
+### Accepted 32-plus-stable retention — November 7, 2026 side conversation
+
+Marek proposed keeping the 32 newest releases plus the newest observed
+non-prerelease when all 32 are prereleases, then accepted the clarified policy
+with “Great” and explicitly requested this tracker update.
+
+- Keep the 32 newest observed releases per source, or all if fewer exist.
+- If those contain no non-prerelease, also keep the newest observed
+  non-prerelease, when available. This yields at most 33 releases per source;
+  no additional historical acquisition is required to find an unobserved stable
+  release.
+- Order by publication time descending, falling back to creation time when
+  publication time is absent, then numeric release ID descending to break ties.
+  There is no unlimited undated-release exception. Handling records missing
+  both timestamps still needs specification; it must preserve the count bound.
+- Keep all assets belonging to retained releases.
+- Apply pruning only after successful source-scope collection and merge, before
+  candidate validation/publication. Failed and unattempted sources preserve their
+  previous release data. Retained records keep their effective observation times.
+
+This replaces the 730-day window, five-release minimum and unlimited undated
+retention recorded below. Prior comments remain chronological history; the
+pruning timing, Git foundation, unchanged-blob reuse, twice-daily target cadence
+and decision to leave existing Git history intact still stand. The main planning
+session must update the spec/ADR and roadmap to this replacement policy; their
+earlier age/count text is superseded by this explicit acceptance.
+
+The separate proposal to preserve prior data on document-size overflow has not
+received a yes/no answer; accepting this retention policy does not resolve that
+question or change the existing 2 MiB/document limit. The broader storage ticket
+remains claimed and unresolved. Planning only; no runtime, catalog, workflow,
+history, remote-ref or installed-host changes are authorized here.
+
+#### Supporting read-only measurements
+
+Measured from the preserved 500-source snapshot at
+`cbda9fb78ce4a6f29bdabd63d57f3c0085e8744f`, not a fresh remote-head check:
+source YAML totals 63,676,573 bytes, with median 53,353 bytes, 90th percentile
+352,647, 95th percentile 521,023 and maximum 1,372,340. No source has more than
+109 retained releases, so a hypothetical 200-release cap would remove none.
+The largest source, `any-listen/any-listen-desktop`, contains 100 releases and
+3,635 assets: 94 releases are marked prerelease and six non-prerelease.
+Scaling its average bytes/release to 32 gives roughly 429 KiB, an extrapolation
+only, not the measured size of the selected newest 32 or a capacity guarantee.
+Release-count bounds do not guarantee a byte bound for asset-heavy releases.
+
 ### Accepted incremental source processing — November 7, 2026
 
 Marek answered “yes” to processing only selected sources and reusing unchanged
@@ -59,6 +105,9 @@ intact as agreed. Processing strategy, bounds and the capacity experiment remain
 open; no implementation or backend provisioning is authorized.
 
 ### Accepted pruning timing and current retention policy — November 7, 2026
+
+The retention counts/window in this comment are superseded by the accepted
+32-plus-stable policy above. Its successful-source pruning timing still applies.
 
 Marek answered “yes” to pruning only after a source's requested collection scope
 succeeds: merge fetched releases, apply retention, then validate before
