@@ -38,8 +38,9 @@ supersedes cross-run durability/store/fencing/gate requirements. Existing oldest
 first batches and retrying on a later scheduled run, without in-run retries, are
 also accepted. New-source discovery stays manually triggered for now; scheduled
 runs only refresh enrolled sources. Only one collection runs at a time; new
-triggers do not automatically cancel the active run. Publication-conflict and
-failed-start-update handling remain open.
+triggers do not automatically cancel the active run. A publication conflict stops
+the run's publication and leaves the newer catalog intact; retry on a later
+scheduled run without automatic merging. Failed-start-update handling remains open.
 
 ## Accepted requirements
 

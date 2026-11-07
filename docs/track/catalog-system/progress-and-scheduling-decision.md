@@ -38,15 +38,22 @@ must share the same exclusion. No custom lease/fencing service or durable job
 queue is required. This does not promise execution of every queued trigger;
 pending-trigger behavior belongs to the workflow interface, not recovery storage.
 
+Marek accepted stopping a run on an exact-parent publication conflict. Leave the
+newer remote catalog intact and let a later scheduled run try again from its
+then-current parent. No automatic merge, rebase or publication retry loop is
+required. Unpublished candidate work may be discarded and reacquired later.
+A confirmed conflict is a refused publication; an ambiguous network result must
+remain unknown unless publication is evidenced, rather than being called a conflict.
+
 Previously published observations stay intact until a new candidate passes
 validation and exact-parent publication. A rerun uses actual new response receipt
 times; a failed run does not freshen old data. Existing saved-response replay for
 explicit local evidence remains useful, without becoming automatic crash recovery.
 
 These decisions supersede the historical durability/fencing/gate/minute-update
-design below. The ticket remains claimed: publication-conflict handling and
-behavior when the public start update fails still need simple questions and human
-answers. The previous 4:1 weighting, cooldowns and 24-hour replay window
+design below. The ticket remains claimed: behavior when the public start update
+fails still needs a simple question and human answer.
+The previous 4:1 weighting, cooldowns and 24-hour replay window
 are not accepted requirements. This is planning, with no runtime changes.
 
 ## Historical superseded design

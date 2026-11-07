@@ -110,3 +110,11 @@ workflow concurrency controls shared by scheduled/manual collection. No custom
 lease/fencing service or durable queue is required. No guarantee that every
 pending trigger executes is implied. The current baseline records this choice;
 publication-conflict and failed-start-update handling remain open.
+
+### Accepted stop on publication conflict — November 7, 2026
+
+Marek answered “yes” to stopping a run if publication conflicts with a newer
+catalog, leaving a later scheduled run to try again rather than automatically
+merging/rebasing/retrying. The newer catalog is preserved; unpublished work need
+not survive. The linked current baseline records this behavior. Failed-start-
+update handling remains the last open recovery-policy question here.

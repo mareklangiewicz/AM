@@ -21,8 +21,9 @@ and finish (“started, no completion recorded” if unfinished). The recovery t
 records this baseline plus accepted existing oldest-first batching and retries on
 later scheduled runs without in-run retries. Source discovery stays manual for
 now; scheduled runs refresh enrolled sources. One collection runs at a time
-without automatically cancelling the active run for a new trigger. The ticket
-remains claimed for publication-conflict and failed-start-update questions. Its
+without automatically cancelling the active run for a new trigger. A conflict
+stops publication, preserving the newer catalog for a later scheduled
+retry. The ticket remains claimed for the failed-start-update question. Its
 prior separate-store/durability/fencing/gate design is superseded. Ask simple
 questions before deciding the remaining policy.
 

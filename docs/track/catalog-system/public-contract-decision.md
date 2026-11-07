@@ -97,6 +97,11 @@ a newer attempt or overwrite a confirmed publication. Catalog publication orderi
 follows its lineage. Unknown publication results stay unknown until evidenced;
 no durable publication-intent service is required by this contract.
 
+On a confirmed exact-parent catalog publication conflict, stop that run's
+publication and preserve the newer remote catalog. A later scheduled run starts
+from the current parent; no automatic merge/rebase/retry is required. An ambiguous
+network result remains unknown unless confirmed by evidence.
+
 ## Readable names and rename behavior
 
 Use `[a-z0-9][a-z0-9_.+-]*`, maximum 64 ASCII bytes, for source names, excluding
