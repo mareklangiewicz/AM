@@ -28,6 +28,15 @@ No cap increase or storage implementation is authorized by resolving this questi
 
 ## Comments
 
+### Accepted document-size overflow rule — November 7, 2026
+
+Marek answered “yes” to preserving a source's previous published data and reporting
+the refresh failure if its candidate document exceeds the document-size limit
+after retention. Do not drop additional releases or assets to make it fit, and do
+not raise the limit implicitly. The existing 2 MiB/document limit remains in place.
+This settles the overflow question left open below; it does not establish capacity
+or authorize an implementation or limit increase. Planning only.
+
 ### Accepted missing-timestamps rule — November 7, 2026
 
 Marek answered “yes” to treating a source's collection as invalid if a release

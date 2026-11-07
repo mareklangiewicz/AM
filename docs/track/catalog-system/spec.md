@@ -58,6 +58,10 @@ release IDs for the same exact tag within one collection invalidate that source'
 collection: preserve its previous published data and report the conflict. Apply this
 after successful source-scope collection and merge, before validation/publication.
 Failed and unattempted sources stay unchanged; retained freshness stays intact.
+If a source document exceeds its size limit after retention, preserve that source's
+previous published data and report the refresh failure. Do not discard additional
+releases/assets or implicitly raise the existing 2 MiB/document limit. See the
+[accepted overflow rule](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-document-size-overflow-rule--november-7-2026).
 The [accepted 32-plus-stable policy](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-32-plus-stable-retention--november-7-2026-side-conversation)
 and [exact-tag replacement rule](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-exact-tag-replacement--november-7-2026-side-conversation)
 supersede the earlier age window, five-release minimum and unlimited undated
