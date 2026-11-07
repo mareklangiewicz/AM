@@ -14,7 +14,7 @@ enrollment to `collection-recipes.txt` in the same change, preserving its identi
 The published union contains 224 verified repositories; the enrollment ceiling is
 500, subject to cohort identity/capacity preflight. Each scheduled run attempts at most
 500, oldest collection attempt first (never-attempted sources first, numeric ID
-ties). The prepared schedule is hourly, covering the current published scope in one
+ties). The schedule is hourly, covering the current published scope in one
 full successful run. Transfer/time budgets or source failures can reduce successful coverage;
 the report lists actual attempts and pending app identities. Selected-release
 freshness remains 48 hours, independent of these scheduling attempts.

@@ -1,5 +1,9 @@
 # Larger metadata refresh batches
 
+The proposed profile was subsequently implemented and deployed in
+[146](hourly-refresh-rollout.md), including the measured 256 MiB history allowance.
+The assessment below records the earlier limits and proposal at its original date.
+
 Assessment for [145](../issues/145-assess-larger-metadata-refresh-batches.md),
 November 7, 2026 local time. This is a proposed operating profile, not a deployed
 workflow change. The separately authorized 224-source publication is recorded in

@@ -1,0 +1,3200 @@
+{
+  "run_id": 42366263140,
+  "url": "https://github.com/mareklangiewicz/AM/actions/runs/42366263140",
+  "source": "09ae7fe81355a06eabe1c2afc141f22e2d3de675",
+  "pin": "59b3f3f398bc1013c7b5caf0f37b19a4f3fc9821",
+  "parent": "e992cc2ca3b22c01f2e95e61c404121cbcdbf188",
+  "apps": 228,
+  "sources": 224,
+  "metrics": {
+    "acquisition_cap_seconds": 900,
+    "acquisition_seconds": 166.55312541399996,
+    "attempted_sources": 224,
+    "command_seconds": 205.268369587,
+    "history_cap": 268435456,
+    "history_guard_bytes": 88631041,
+    "history_object_bytes_after": 61614225,
+    "history_object_bytes_before": 55410163,
+    "oldest_source_success": "2026-11-07T11:00:29Z",
+    "primary_reserve": 100,
+    "rate_first": {
+      "limit": 5000,
+      "remaining": 4947,
+      "reset": 1794049288,
+      "resource": "core",
+      "used": 53
+    },
+    "rate_last": {
+      "limit": 5000,
+      "remaining": 4852,
+      "reset": 1794052889,
+      "resource": "core",
+      "used": 148
+    },
+    "request_cap": 500,
+    "requests": 224,
+    "response_byte_cap": 536870912,
+    "response_bytes": 179326726,
+    "selected_sources": 224,
+    "snapshot_yaml_bytes": 33220878,
+    "source_success_age_counts": {
+      "24h": 0,
+      "36h": 0,
+      "48h": 0
+    },
+    "sources_without_success": 0,
+    "stop_reason": "complete",
+    "successful_sources": 224,
+    "unattempted_sources": 0
+  },
+  "prior_identities_and_retained_release_ids_and_effective_observations_preserved": true,
+  "total_yaml_bytes": 33220878,
+  "largest_yaml_bytes": 1159110,
+  "documents": [
+    {
+      "repository_id": 1013014167,
+      "repository": "Amo-Zeng/AITerminal",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:50Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 14063,
+      "sha256": "5f1a27db6140fbc16a83c0fa7464c7ad4ef67694693d17ebd915ad8d245fda0a"
+    },
+    {
+      "repository_id": 1013598819,
+      "repository": "alluno-io/alluno",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:51Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 132006,
+      "sha256": "de4d942cfa16ce0899a8428fd3a38c88e7a6bbdf07266938b997b0df16f7a83e"
+    },
+    {
+      "repository_id": 1016549971,
+      "repository": "itsuki-maru/Ageha-Editor",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:14Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 23355,
+      "sha256": "23ff6ec72847b2ef5ee3598e731fe215d77378f057d23aa0363f3e2bb7e69f42"
+    },
+    {
+      "repository_id": 1027678184,
+      "repository": "zzyil/AIO-Webtoon-Downloader",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:52Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 64824,
+      "sha256": "4941be12d2475bf669511f9e7301169492fd49ebfeef151346d2e6165798ff29"
+    },
+    {
+      "repository_id": 1042273325,
+      "repository": "zxypro1/algolocal",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:53Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 142893,
+      "sha256": "15d934c3360e469f036ce5456cc826cd2e47c570ba7beb99adc9b02152e32b54"
+    },
+    {
+      "repository_id": 1042480540,
+      "repository": "muphy09/3s-PokeMMO-Tool",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:26Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": false
+      },
+      "yaml_bytes": 379540,
+      "sha256": "2761510653f43697f4e880a4ee7b455352961fd68ed704360d24206111538fb2"
+    },
+    {
+      "repository_id": 1046259925,
+      "repository": "iceman1010/ai-opensubtitles-desktop-client",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:54Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": false
+      },
+      "yaml_bytes": 403878,
+      "sha256": "1b5619848fbf3cc61bad67e6664e8a4c21cca0881e857b7f7c673d1c7222fef5"
+    },
+    {
+      "repository_id": 105956507,
+      "repository": "advanced-rest-client/arc-electron",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:18Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": false
+      },
+      "yaml_bytes": 449170,
+      "sha256": "c42f9e4ecfbca916f65f80b35524964fbf986d8e161cbbda711a6d5328898d79"
+    },
+    {
+      "repository_id": 1062422467,
+      "repository": "sh3ll3y/aloe",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:54Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 2016,
+      "sha256": "be29311038f36d88fce287c363dd98c0392abd80d4e7e24cf646654573d682cc"
+    },
+    {
+      "repository_id": 1068030476,
+      "repository": "Shikakiben/AM-GUI",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:55Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 34597,
+      "sha256": "4b7ee9996149e5ff5373843947be4acfb76071bec65a8746c6461670e31ca01e"
+    },
+    {
+      "repository_id": 1073900202,
+      "repository": "neurosnap/zmx",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:15Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 22127,
+      "sha256": "e624d5ce2ed5199d25ef2359fcb57803ad085d0be124c1b994fa3bb0b807e9b4"
+    },
+    {
+      "repository_id": 1078137951,
+      "repository": "tonyantony300/dashbeam",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:55Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 184643,
+      "sha256": "aec4744cc19ce8c18612ca517dc2c30b488c653753cd94982d811f302dde0217"
+    },
+    {
+      "repository_id": 1078931312,
+      "repository": "makoni/actioneer-gtk",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:26Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 65614,
+      "sha256": "0a9fb30abcdc4b05d2802f9b6d4ef5e90edaa674849732f07e222abb6645ed8f"
+    },
+    {
+      "repository_id": 1080244324,
+      "repository": "ahpxex/Aictionary",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:56Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 37775,
+      "sha256": "f4b25f9d314537dbaeb4c03738c686e8b577b6e26d05b797bab67f9fab144afc"
+    },
+    {
+      "repository_id": 1085069421,
+      "repository": "miaotouy/aio-hub",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:57Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 169577,
+      "sha256": "9c968bae6531c6ecd8090fa4c6a47c053d6162411ad814aa350a744f70dafe74"
+    },
+    {
+      "repository_id": 1089623281,
+      "repository": "Drenzzz/ADBKit",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:42Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 20828,
+      "sha256": "4b8c0d98f2b7a82c4e1599e1ffa1987a251c01bcd2c395e47f904f257e61aaa2"
+    },
+    {
+      "repository_id": 1093507301,
+      "repository": "Ma-hiru/AiraMusic",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:57Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 46449,
+      "sha256": "e0edaf23215cbf499881a39d28970e02bf40c4e3c647d87866306850d33ec204"
+    },
+    {
+      "repository_id": 1100653513,
+      "repository": "agent0ai/a0-launcher",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:36Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 94006,
+      "sha256": "2fd1bc82879d3011a560c62bc954f4cdab31fe63ee1a1105b9868ef176d69598"
+    },
+    {
+      "repository_id": 1101947894,
+      "repository": "dmitriyg0r/ai-uml-builder",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:58Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 50687,
+      "sha256": "c00ce06a85c8875077bd8c3cfac445bf941c7ca71ea8ece8d8c0fd16d511e946"
+    },
+    {
+      "repository_id": 1109049119,
+      "repository": "yetone/alma-releases",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:59Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": false
+      },
+      "yaml_bytes": 720573,
+      "sha256": "76db91f1adece9cdfdb138d1457cf72a181fae5aad68b42cf1730c5b556337d0"
+    },
+    {
+      "repository_id": 1119603514,
+      "repository": "Abstrengin/alien-rpg",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:00Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 13618,
+      "sha256": "2002058ce6323a3516d3db2d323b214719a71888116132190d2f80d0b7ef8982"
+    },
+    {
+      "repository_id": 1119622081,
+      "repository": "axpdev-lab/aeroftp",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:45Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": false
+      },
+      "yaml_bytes": 567375,
+      "sha256": "b77108d1dcdbfaa7e074cfff5fe0770bfb92b6f9ade4709d4eb958ef1ebdb096"
+    },
+    {
+      "repository_id": 1120457749,
+      "repository": "uu6-group/ai-account-manager",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:27Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 20408,
+      "sha256": "0098573d28dce7bab8da1fad8691dec9245088b7d10b37b07884db0c71f1402e"
+    },
+    {
+      "repository_id": 1122576268,
+      "repository": "logseq/og",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:05Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 5684,
+      "sha256": "28827c150688da0452f5ccdfeb57e2c1850ec256a6e33e59622b8bf96ce933e5"
+    },
+    {
+      "repository_id": 1124173152,
+      "repository": "NDXDeveloper/3nity-media",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:27Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 14386,
+      "sha256": "b837ecd40606f7ffbf63f1d3691de25fcfaa6ffab39e0bcabdf58bc861c0e6f6"
+    },
+    {
+      "repository_id": 1124235503,
+      "repository": "topchyan/abcarus",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:37Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 183758,
+      "sha256": "4133d1752a7c595aa6e9bd85202bb5a8c3f816398eb9e2deb9c7f298dfc9c068"
+    },
+    {
+      "repository_id": 1127015128,
+      "repository": "coulsontl/ai-toolbox",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:01Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": false
+      },
+      "yaml_bytes": 553072,
+      "sha256": "f4473f4c94afcf6ff0d04bc169928a8cc4c90ddac1c5855aee60b9fc66a39961"
+    },
+    {
+      "repository_id": 1129505172,
+      "repository": "Mutantcat-Working-Group/AIPixel",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:02Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 107874,
+      "sha256": "35d325c3668a5115327538227eb8d22f93b52c126bd8fcefff9717657e271724"
+    },
+    {
+      "repository_id": 1131395604,
+      "repository": "ingel81/3dtd",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:28Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 25709,
+      "sha256": "d13af77c53b9bff5c24db9615577ba075884b8146627f29ea2f12e8615496c25"
+    },
+    {
+      "repository_id": 1134205792,
+      "repository": "BubbleBrainBB/Aegis",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:03Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 414947,
+      "sha256": "9df5abaa97f0630cd812741e808c643c1c28f556ef4b879274e20e70a5e9db49"
+    },
+    {
+      "repository_id": 1136689177,
+      "repository": "dyndynjyxa/aio-coding-hub",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:05Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": false
+      },
+      "yaml_bytes": 901669,
+      "sha256": "dc95575aedf10193e043362740c0448964d5998e250d590ea22f09f838017534"
+    },
+    {
+      "repository_id": 1138924416,
+      "repository": "tangshuang/aicodeswitch",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:06Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 70927,
+      "sha256": "2f33dc43e093e89e1bad3962cb0a80cfb02fd93e3e0c36efc6bbb32f07463ddb"
+    },
+    {
+      "repository_id": 1140627160,
+      "repository": "klNuno/accshift",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:40Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 44867,
+      "sha256": "4d5c39a60ac181469be984d2d5093c0d95bbd770215f8637a9236f3878a84cf6"
+    },
+    {
+      "repository_id": 1141028175,
+      "repository": "dvschultz/algorithmic-filmmaking",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:06Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 53425,
+      "sha256": "1c49cc7ae7e3faa3c7d25cf0c428fbfb4000c81fd93ac43ce63969bb3923e2ec"
+    },
+    {
+      "repository_id": 1142444249,
+      "repository": "pkgforge-dev/2ship2harkinian-AppImage-Enhanced",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:28Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 7392,
+      "sha256": "c5015ffea1540ee41a11bcd8e91012661d5cc6217afdbae94eb4bdc0af147bfb"
+    },
+    {
+      "repository_id": 1145002220,
+      "repository": "nstfn/agent-loom",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:07Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 15116,
+      "sha256": "e5a0fd2d7df04ab7ac967b42d0e163493b601530399dc52b5a5a33c68af18ae6"
+    },
+    {
+      "repository_id": 1145035037,
+      "repository": "macromania/agentop",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:29Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 5127,
+      "sha256": "4ee093c8f9311f0542da56f94167b249e3fb3a75e323c035d226e63bebbffac3"
+    },
+    {
+      "repository_id": 1145199155,
+      "repository": "agentreplay/agentreplay",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:29Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 16393,
+      "sha256": "0b9312508f9dd60f60e66f5e8bcf4d07e0eee709c1a213ed188a02f702245fa4"
+    },
+    {
+      "repository_id": 1146395088,
+      "repository": "sherifconteh-collab/ai-grc-platform",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:07Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 79707,
+      "sha256": "8bd56db045ad6986e15bcaa7dc1e81ec91c7e455ea4894f256be522e382fa9bd"
+    },
+    {
+      "repository_id": 1146506589,
+      "repository": "akrusz/aloud",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:08Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 232751,
+      "sha256": "a9b781b1a51b47e132c3595216f951bcc4ffc4ef0ce249d423363fa56f9ef9a2"
+    },
+    {
+      "repository_id": 1146547653,
+      "repository": "formulahendry/acp-ui",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:30Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 61956,
+      "sha256": "21ff24f1f8e69bb2fa3f7ee19ef6fb836c8642c7255ddd4e5eb56e5c838ce909"
+    },
+    {
+      "repository_id": 115051437,
+      "repository": "AKASHAorg/Community",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:38Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 18461,
+      "sha256": "5ca3923d5ec0be6b77d8798a0791967aa9a5846560508ea5902359f07dbc8558"
+    },
+    {
+      "repository_id": 1150822796,
+      "repository": "mempko/abject",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:31Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": false
+      },
+      "yaml_bytes": 532087,
+      "sha256": "173bd4d53507f1dfc66828d71c6cf709b59bf0944ae1668be81bbb80b09884ff"
+    },
+    {
+      "repository_id": 1150934954,
+      "repository": "aruantec/AES_Lacrima",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:32Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 227677,
+      "sha256": "7f64c331545ce5a88aa9a557ae92c80967d342265171484f69e15fd5e6859354"
+    },
+    {
+      "repository_id": 1151993718,
+      "repository": "zuoliangyu/AI-Session-Viewer",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:10Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 529116,
+      "sha256": "5c7b6a14fd14a0f25273be47979b08506ef45ae6689b04b1ac1b48318814c12a"
+    },
+    {
+      "repository_id": 1152028865,
+      "repository": "peakflo/20x",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:31Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": false
+      },
+      "yaml_bytes": 608940,
+      "sha256": "e8fd7b33d1b3d8bad9029db69e0c84a8acc1a533204f176aef5bac35b1559b0c"
+    },
+    {
+      "repository_id": 1153091152,
+      "repository": "BaLaurent/agent-desktop",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:33Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 105602,
+      "sha256": "50f4f0920b5f6d7a21a960f5b7a6f3e0ec84097ec17461110652726e5132aea6"
+    },
+    {
+      "repository_id": 1153610647,
+      "repository": "unicef/adt-studio",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:43Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 147826,
+      "sha256": "52f77d0cd22e8e2c2d489f7440bce739f376ca46f0ae146245aa1e1370d4e940"
+    },
+    {
+      "repository_id": 1155797140,
+      "repository": "mrmans0n/ai-review",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:10Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 42293,
+      "sha256": "af500d0c0bdfdf709a7e7373a38df1365d318bb57e841f59e5701ee31f835491"
+    },
+    {
+      "repository_id": 1156994049,
+      "repository": "OrchestratorInc/agent-orchestrator",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:12Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": false
+      },
+      "yaml_bytes": 652684,
+      "sha256": "ff674e33d9da971d83c88b42a912497bf4e5c132d6031cb2c5203db9cbbcf8c1"
+    },
+    {
+      "repository_id": 1160442164,
+      "repository": "DaccordProject/accordserver",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:39Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 74772,
+      "sha256": "26c3d96051f9724214c757ba4763450121449abad1f3f0badb6da1bf676ab046"
+    },
+    {
+      "repository_id": 1163183284,
+      "repository": "777genius/agent-teams-ai",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:34Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 533727,
+      "sha256": "08b3e74a21904c95b201cef032ee041ad7a4134b06bc475bb69334583f9312d6"
+    },
+    {
+      "repository_id": 1166443294,
+      "repository": "acwright/6502-EMULATOR",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:38Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 79420,
+      "sha256": "5eef0fb470a0846e52ed1a0c7490deeeb7549232901d1051d7aa362337b9ed86"
+    },
+    {
+      "repository_id": 1166588944,
+      "repository": "shaharia-lab/agento",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:35Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 95752,
+      "sha256": "06e8c21ef81f67c7f5afcd3b0f3dee461e027fc91a69ac40b77964a674e354d2"
+    },
+    {
+      "repository_id": 1168511315,
+      "repository": "altnautica/ADOSMissionControl",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:35Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 80625,
+      "sha256": "96fb47836171dddf7ad759a8b1f5cb5cecb0e375858321bff27ce54b3c470275"
+    },
+    {
+      "repository_id": 1172035222,
+      "repository": "agentmuxai/agentmux",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:40Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": false
+      },
+      "yaml_bytes": 319395,
+      "sha256": "27e3eec45796d247cc4cc47572d617935ba1b8efa25ff4e08400ba43890a8ce1"
+    },
+    {
+      "repository_id": 1173057845,
+      "repository": "algerkong/AlgerClipboard",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:12Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 58130,
+      "sha256": "82712e65e0a8e574eb403f44409de6aeb1bfb4ee376b69d01e6e71bb50bb6d3a"
+    },
+    {
+      "repository_id": 1174900926,
+      "repository": "mosalen/academiaflow",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:40Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 14218,
+      "sha256": "911eb59952c89d78a0176f2185029f835105ba78692c51137cdfae7f0decb07b"
+    },
+    {
+      "repository_id": 1174926103,
+      "repository": "desirecore/agent-os",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:42Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": false
+      },
+      "yaml_bytes": 428442,
+      "sha256": "f0f6903f8014d2ef5dcb9dd39885075b81a4eacf78e6d9b8c05f46602412214d"
+    },
+    {
+      "repository_id": 1177008409,
+      "repository": "bkywksj/aicoder-release",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:13Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 107806,
+      "sha256": "cd3ca8246c78d3d8b7fd91a0beb6df3168499969b7c2ee00d1d1f30e9caef1e4"
+    },
+    {
+      "repository_id": 1179864103,
+      "repository": "stoicsoft/1devtool-releases",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:44Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": false
+      },
+      "yaml_bytes": 419034,
+      "sha256": "353cbd349e081f9776ac04ddf9f0a727991380cc617a5914a94a6edbfc9851be"
+    },
+    {
+      "repository_id": 1180091786,
+      "repository": "aethersdr/AetherSDR",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:47Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 201925,
+      "sha256": "0cbe01c53a8db0a17742ffa55cae277f632883e45eedc8540d0f1966fd6f7528"
+    },
+    {
+      "repository_id": 1180896595,
+      "repository": "averagenative/0x808",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:33Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 21486,
+      "sha256": "7020d3ca013bf849fec285a5b56b252255097a62904ef7d92ee7639c2615ede4"
+    },
+    {
+      "repository_id": 1182510445,
+      "repository": "averagenative/0xSYNTH",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:33Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 5480,
+      "sha256": "9b06046146fb9eebe3b0c279a46917b1c63ff45bcb95bea1c3f6c57880e05763"
+    },
+    {
+      "repository_id": 1182906251,
+      "repository": "AkaraChen/aghub",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:45Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 154235,
+      "sha256": "0a597af34d0d351cb6d4e8cc66621775267650d81a7e1667f4b945a3f2e9a3bf"
+    },
+    {
+      "repository_id": 1184144235,
+      "repository": "Onion99/Agro",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:46Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 17201,
+      "sha256": "f46a6b570a11626ee5f0b8e1dbfeba46f06b97057ea3547e9116df586b520515"
+    },
+    {
+      "repository_id": 1184157221,
+      "repository": "chrlsio/agent-skills",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:46Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 21745,
+      "sha256": "e71e04bd9d4029a2400c4a2b16849ff4fe00b1a3d875f83ad687d08a6f562356"
+    },
+    {
+      "repository_id": 1185866673,
+      "repository": "seastart/aicoder-session-viewer",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:13Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 57774,
+      "sha256": "14ab066ca1cb1d24f2eced642e1cddebbc618c858496388df97e7ec4f2e364ab"
+    },
+    {
+      "repository_id": 1186679146,
+      "repository": "averagenative/0xFX",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:47Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 15719,
+      "sha256": "1cd15c78bde3c2ddcca92b073d3bb7da723b76418740673c8e8f5f873d566210"
+    },
+    {
+      "repository_id": 1187624498,
+      "repository": "mblua/AgentsCommander",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:48Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 216485,
+      "sha256": "6a12c6aa3865e222d70b6956a100d41370602c88d903e24f41ee5a856d6b5138"
+    },
+    {
+      "repository_id": 1189315874,
+      "repository": "pumf/ai-cutout",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:14Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 12811,
+      "sha256": "3fcb466c4b1e519b628ed11f2a421fff7c8b5c416990a44e7e00008a569dec85"
+    },
+    {
+      "repository_id": 1190390511,
+      "repository": "agentrq/agentrq",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:50Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 873285,
+      "sha256": "18adcabd2d547cc00892f5df8e98877db9580bad7f1e5fb3f01372c48d55a4f6"
+    },
+    {
+      "repository_id": 1190857419,
+      "repository": "chadnickbok/ai-canvas",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:14Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 18274,
+      "sha256": "53bf299feed7fab98fac6bc604201406e517586958136c7ca1a95f8ac23cf97a"
+    },
+    {
+      "repository_id": 1194487037,
+      "repository": "emullernl/abundio",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:51Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 203890,
+      "sha256": "a51d178d6b6916ac7016cfbef60a30fcdff79e8f3116ff277c0bd9efbcaba391"
+    },
+    {
+      "repository_id": 1197532619,
+      "repository": "nikoteressi/alpaka-desktop",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:15Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 23604,
+      "sha256": "cf7423a7f7e3382472ee87cd269f0b48108c705390075a1d47be7c046af04c99"
+    },
+    {
+      "repository_id": 1200064848,
+      "repository": "andeya/aineer",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:15Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 36171,
+      "sha256": "bb34340ed89368b49ba4d419c7c1bb8607e475d7d950a96dcd05c4362bf12426"
+    },
+    {
+      "repository_id": 1200402795,
+      "repository": "pkgforge-dev/Satty-AppImage",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:11Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 35121,
+      "sha256": "cafa222ee270203c3e9fc4b1fb45f0ead93f5f6eb3805977f96ae163e4679f81"
+    },
+    {
+      "repository_id": 1200445909,
+      "repository": "funAgent/ai-bubu",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:16Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 134063,
+      "sha256": "51eed7d0d3c609bf1dbf4976258d79ef5905ad056ae19c42708435ff1460791c"
+    },
+    {
+      "repository_id": 1200850367,
+      "repository": "LepistaBioinformatics/agents-room",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:51Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 21643,
+      "sha256": "0ae5abcb0994da5ef1c511873ab91317098b51f63362897c181eb2737c45a403"
+    },
+    {
+      "repository_id": 1207343947,
+      "repository": "AdventTools/AdventShow",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:46Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 156597,
+      "sha256": "e1df982b1d74b34e2117135bd04aec2bec7aaa779a7be94553fb0e4fec2a154e"
+    },
+    {
+      "repository_id": 1207422559,
+      "repository": "timoncool/ACE-Step-Studio",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:52Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 55533,
+      "sha256": "5638df8984daf3653058a22c2f66feab5717ee4bd373c4eb1acd9d535fcbc3de"
+    },
+    {
+      "repository_id": 1207685312,
+      "repository": "jlwebs/AllApiDeck",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:17Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 76995,
+      "sha256": "791551bceba68539af543396d31b4d1137503de0560a5024e8ec209c9ee88cec"
+    },
+    {
+      "repository_id": 1210043887,
+      "repository": "hwwn/aaa-code-release",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:52Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 41074,
+      "sha256": "c1f8247466e505824bb3a6356fb706fa8ada768b38194558d3bdb91928417dfb"
+    },
+    {
+      "repository_id": 1211202862,
+      "repository": "Dipen-Dedania/agent-pulse",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:54Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 48776,
+      "sha256": "a870e7ee4e1e66d4243bc5be017625a91c2375740f0a6e6056bf56435dabe141"
+    },
+    {
+      "repository_id": 1212751728,
+      "repository": "newioapp/acp-inspector",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:53Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 29778,
+      "sha256": "9cc6542a9c99b6226dba2a0bced6feec44fd6080e3fcb5eb300d4f9c46149cec"
+    },
+    {
+      "repository_id": 1213992071,
+      "repository": "DanWahlin/agent-arcade",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:51Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 92265,
+      "sha256": "26ec6a7c19c4b6349582eb890694cc307d99b63d88d2f67627d45c90f66e2e89"
+    },
+    {
+      "repository_id": 1218867656,
+      "repository": "Flex1-tech/AIC-Audio-Intelligence-Companion",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:17Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 4325,
+      "sha256": "ac77916d6527ff6b89e018910823427493bc95f527b07f8ed8d05197a654a976"
+    },
+    {
+      "repository_id": 1220744390,
+      "repository": "jfolcini/agaric",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:51Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 788167,
+      "sha256": "070f29f539d92f7b996462d61790dd6ac396e0e663a1f189fffce8fd31db2fba"
+    },
+    {
+      "repository_id": 1222600140,
+      "repository": "vikingleo/ai-sign-in-gateway",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:18Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 16174,
+      "sha256": "7c8800b259b161ae08043a5de1269e599033ed6f05593fa5fa5e9f0855f14727"
+    },
+    {
+      "repository_id": 1223980906,
+      "repository": "odrasile/ai-usage-widget",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:18Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 6478,
+      "sha256": "95e9ed585613e0fdf57333eb9169f5685f8a3276ccd07f374060bfffbdf588c1"
+    },
+    {
+      "repository_id": 1225768109,
+      "repository": "ivan-hc/am-utils",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:54Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 583984,
+      "sha256": "44639277ffe76f535242fc9260fd3662639a2205b816466f28f4e8e80c439b63"
+    },
+    {
+      "repository_id": 1231231489,
+      "repository": "Synapsr/Aircast",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:18Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 23055,
+      "sha256": "5eb5d34d5c68cf8f06baab34fce21ccaa3c0a24080e076bb85ddcb89be4c108e"
+    },
+    {
+      "repository_id": 1240183493,
+      "repository": "saeedkolivand/ai-job-hunter-app",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:20Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": false
+      },
+      "yaml_bytes": 585518,
+      "sha256": "1042a113e6cad0f7f3c148b0a08929240f1f2b7cc29312c02bc5ebb2cf287f31"
+    },
+    {
+      "repository_id": 1244900075,
+      "repository": "victorbjuliani/agentbrainsystem",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:54Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 11613,
+      "sha256": "72a55f469b0558bd402e77013acfc10fa0fb7ef086718c0874306a37ce94a462"
+    },
+    {
+      "repository_id": 1245849062,
+      "repository": "cyl-castillo/agent-console",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:56Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": false
+      },
+      "yaml_bytes": 611387,
+      "sha256": "332785589f3fadb648db85ca23537f773b6ad82666aa4cda50852e2a42a0662f"
+    },
+    {
+      "repository_id": 1246421831,
+      "repository": "tracy115-ops/ai-station-release",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:21Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 321201,
+      "sha256": "0ef7b4119ed6fc5fdbb89bf98b111ee660893a7d077f19fcc6938e513f485caa"
+    },
+    {
+      "repository_id": 1248267859,
+      "repository": "quanzefeng/AideAgent",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:21Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 106734,
+      "sha256": "fd712917d09a8b2b3e3e89e98e254a1c40601e1869766c2324e68cc080bf5843"
+    },
+    {
+      "repository_id": 1250016835,
+      "repository": "Raines-01/ai-image-studio",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:22Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 3159,
+      "sha256": "616b5e845685526a1f56171d8442a7c23550d44d26994731ff9bc52de3479951"
+    },
+    {
+      "repository_id": 1251860804,
+      "repository": "agentlas-ai/agentlas-desktop",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:57Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 301441,
+      "sha256": "0b896ce11e3b90d9bd9ab8bbb705dcd34049c0c751c2e607328ac67568c8a17e"
+    },
+    {
+      "repository_id": 1251898099,
+      "repository": "renhao-wan/ai-sketch",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:22Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 7486,
+      "sha256": "9f39e29c23d6d338049713522b19e564694faf8f494f5ff70cfece1086c83c21"
+    },
+    {
+      "repository_id": 1254139536,
+      "repository": "stoicsoft/1aivault-releases",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:57Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 182998,
+      "sha256": "513df32e937fb6d2698ef83a36e45243e421cf7d7dd6a0794b9af227c7372079"
+    },
+    {
+      "repository_id": 1255014875,
+      "repository": "ntd4996/agentpet",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:58Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 88358,
+      "sha256": "f5b5f6eb78cddf6e8e7788a1732bb57d9e55fe0190134ee563044110eec81402"
+    },
+    {
+      "repository_id": 1259663663,
+      "repository": "Kellastico/AKA",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:23Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 54182,
+      "sha256": "f50d419b0fa989cc7040fceeafc303be42eeb0c1bd55d3f160eec47bd21c6069"
+    },
+    {
+      "repository_id": 1259792711,
+      "repository": "Awfp1314/AIKeyVault",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:23Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 12769,
+      "sha256": "b5627417ae54d618af9aa7a67616e10bb2afe189cda9e4c3415196c69d38cff3"
+    },
+    {
+      "repository_id": 1261303797,
+      "repository": "t-mercier/ai-agents-orchestrator",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:59Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 171747,
+      "sha256": "49189e426a32192f17265a2f1cbcef2d0bb0f5e8c5e684d488304de4fbc49e86"
+    },
+    {
+      "repository_id": 1262257897,
+      "repository": "saeedkolivand/ai-engineering-hub",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:24Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 35218,
+      "sha256": "2030966ebb07e5de5196194d6f969bcbda9aa76b89443964aca63fc80af48a76"
+    },
+    {
+      "repository_id": 1262882328,
+      "repository": "msitarzewski/agency-agents-app",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:52Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 21849,
+      "sha256": "7f85320a720cabf8807eec15773c5018028556972bd1c7ab6cec10767b848542"
+    },
+    {
+      "repository_id": 1264167528,
+      "repository": "hafgit99/kalderashield",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:24Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 83800,
+      "sha256": "db4567795ffd931e38e983d93f44c735fc9d66a2370066e7c2697d142ca33b9f"
+    },
+    {
+      "repository_id": 1267537189,
+      "repository": "z7ping/agent-lens",
+      "last_success": {
+        "completed_at": "2026-11-07T11:03:00Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 46645,
+      "sha256": "fd85378ac760913aa6705e87ab6da7ece3af4bbcdd76f6710b513c8e06230a0c"
+    },
+    {
+      "repository_id": 1270297029,
+      "repository": "alparlsan88/8voice",
+      "last_success": {
+        "completed_at": "2026-11-07T11:03:00Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 49800,
+      "sha256": "c463b1e9c13e0580d830f80d8c8916b273ae6317dc9685fb81607e2e379c7c08"
+    },
+    {
+      "repository_id": 127176730,
+      "repository": "actualbudget/releases",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:19Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 155776,
+      "sha256": "d310b46c6270c6dc078fb87b130afe54fac848e806ef69c51a89dffa137b0e20"
+    },
+    {
+      "repository_id": 1273861871,
+      "repository": "keerzzz/AigcForge",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:25Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 59713,
+      "sha256": "8913862e39abcf5a4e6fe1bbda856348ad3f2bec70cac669ec2d9c7adb9d6830"
+    },
+    {
+      "repository_id": 1273938223,
+      "repository": "LucasPicoli/8B",
+      "last_success": {
+        "completed_at": "2026-11-07T11:03:01Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 25066,
+      "sha256": "292a8776597879ca5da642a1582bf6d71b3efa88d127810d91d32c4c47b3f4d3"
+    },
+    {
+      "repository_id": 1275798926,
+      "repository": "yb85/aglaia",
+      "last_success": {
+        "completed_at": "2026-11-07T11:03:01Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 44705,
+      "sha256": "bb8783e6d8b2c088b1a329017cd555c2853973ff2f921fcebb714150542cc592"
+    },
+    {
+      "repository_id": 1279766252,
+      "repository": "GhostWrk/Agent-Smith",
+      "last_success": {
+        "completed_at": "2026-11-07T11:03:01Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 1674,
+      "sha256": "c619521a5067b8bb164a30974ea26616cd31fbfa2540281e27a1c1e0c489a6b6"
+    },
+    {
+      "repository_id": 1282960350,
+      "repository": "CaptainYouz/agentdex",
+      "last_success": {
+        "completed_at": "2026-11-07T11:03:02Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 25482,
+      "sha256": "ab9574ee41565e0629ccfa49fdce10c67daf5a09365aa43b1612cf8d4b1709a4"
+    },
+    {
+      "repository_id": 1283243769,
+      "repository": "GigaionLLC/Airclone",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:26Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 320102,
+      "sha256": "8e6152e33400a1b4cec9cc29cdf0061dfa33abbf6d1b87db5797380ae8bcd3fc"
+    },
+    {
+      "repository_id": 1286783339,
+      "repository": "aio-proxy/aio-proxy",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:27Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 130629,
+      "sha256": "aa1d0afc6fedbdfeb92156f325e6d7ac65cd916654c3e75d195a662bb98a67c6"
+    },
+    {
+      "repository_id": 1288679691,
+      "repository": "Alonera/Aevum",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:48Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 14386,
+      "sha256": "777233267862db29368212a93f1a88a0a87b9f0c03446b4402b3016436bc9a43"
+    },
+    {
+      "repository_id": 1288858296,
+      "repository": "aronpc/ai-traffic-lights",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:28Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 67046,
+      "sha256": "13b97cb07c4cafe01ffad6e1ce3d0274bf9fd8a7daa90ec06a40ccd8a192f271"
+    },
+    {
+      "repository_id": 1289277101,
+      "repository": "Latestinssan/Aartiq",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:38Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 37406,
+      "sha256": "228d5408f9a97f7c4d147a54ffb78b3f9b2885c78f3b1328aa35260eca8bfcc3"
+    },
+    {
+      "repository_id": 1289612923,
+      "repository": "SirAllap/agentglass",
+      "last_success": {
+        "completed_at": "2026-11-07T11:03:03Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 87473,
+      "sha256": "29ecca8c5e87aaa4d9e4b7fbb1729f8adb2cebc071e80946597e982c76a28d18"
+    },
+    {
+      "repository_id": 1290784521,
+      "repository": "zhangxianhe666/AFSplug",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:48Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 53575,
+      "sha256": "08e46ab333733d2f48ec3df94a508eb319214350546d0b9c4763ab6a627ef996"
+    },
+    {
+      "repository_id": 1291744940,
+      "repository": "hpcll/ai-check-app",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:28Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 10192,
+      "sha256": "96cc180ff83a2b6a451672e089005634881872c60135c12f0de284ac45e19200"
+    },
+    {
+      "repository_id": 1295876474,
+      "repository": "Gomouu/accord",
+      "last_success": {
+        "completed_at": "2026-11-07T11:03:04Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 266002,
+      "sha256": "d18a064c680c60107beaaac2f0a1fb12b70c0075f56867c926ee16d9fac6a9a5"
+    },
+    {
+      "repository_id": 1296682078,
+      "repository": "Quixomatic/Airwave",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:29Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 371047,
+      "sha256": "78452c5cc8407f90b4470317b83e24134e9f6cae1980fad06757cdfce624e1b0"
+    },
+    {
+      "repository_id": 1300721529,
+      "repository": "AliSawari/aether",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:49Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 1616,
+      "sha256": "4d690d26c941cadcc929f57f75f6e6a2f1416e5090a27c5b12ed480a9d24f9a3"
+    },
+    {
+      "repository_id": 1300909192,
+      "repository": "MatinSenPai/Aether-GUI",
+      "last_success": {
+        "completed_at": "2026-11-07T11:03:04Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 16992,
+      "sha256": "a4e1dc35028be7114a9dc1b17a5092423a875ecfd06cffffa63aaace5f88b7e1"
+    },
+    {
+      "repository_id": 1304946356,
+      "repository": "kadirnar/ai-researcher-roadmap",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:30Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 3613,
+      "sha256": "b5d8874a9603f881b59c98f744a89df2534afaa3481006ea242ee748bed0da7d"
+    },
+    {
+      "repository_id": 1305051933,
+      "repository": "black141312/ada-releases",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:41Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 239732,
+      "sha256": "ade6fe5022d7b3000785204b411d2aa4ec3122c627884040911490bb7f175765"
+    },
+    {
+      "repository_id": 1305069945,
+      "repository": "pdwaldrop/absotui",
+      "last_success": {
+        "completed_at": "2026-11-07T11:03:05Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 220958,
+      "sha256": "c510b09d211822e2876758f36b15d33b6fb6df41b71564e0489fd5512a521bf7"
+    },
+    {
+      "repository_id": 1305177869,
+      "repository": "sambitcreate/aiden-agent",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:30Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 188339,
+      "sha256": "8540489eff6d31fdb880e404c55d5d58164e4044bb31d100335085d9e4fc88b0"
+    },
+    {
+      "repository_id": 1310700974,
+      "repository": "Justin-sky/ai-art-engine",
+      "last_success": {
+        "completed_at": "2026-11-07T11:03:06Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 442137,
+      "sha256": "da9f194c993bad4d5f91809c04c5b55b4e2ec460a017653bafb828654bc8bcbe"
+    },
+    {
+      "repository_id": 1311919641,
+      "repository": "Mun1to/Adeorq-releases",
+      "last_success": {
+        "completed_at": "2026-11-07T11:03:08Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": false
+      },
+      "yaml_bytes": 446532,
+      "sha256": "e3918efd8518326319965af62264827cefc3ff4f25223fb0f408941336e59b41"
+    },
+    {
+      "repository_id": 1311993484,
+      "repository": "nandxorandor/al-muqri",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:31Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 2432,
+      "sha256": "e2c3bd121937259b1188a39fd8a0a2eed3ecf1d351596b66cf6a4e3e9bb9ac03"
+    },
+    {
+      "repository_id": 1313608638,
+      "repository": "nicechencs/AgentHub",
+      "last_success": {
+        "completed_at": "2026-11-07T11:03:09Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 172538,
+      "sha256": "a4852c8cff6b7d0c763927999607be3bb54536bcf953a346eb7b29590e9ff234"
+    },
+    {
+      "repository_id": 1314353937,
+      "repository": "mateovalle/agent-campus",
+      "last_success": {
+        "completed_at": "2026-11-07T11:03:09Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 9110,
+      "sha256": "e8651970820361d25fb7204da26327dfeb70da6b68fec54e411c69d5d53ea403"
+    },
+    {
+      "repository_id": 1316021281,
+      "repository": "LouisonH/airlock-relay",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:31Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 24428,
+      "sha256": "ed32811cc84f08335d5c33e523de0cea0f406b841916974077964c0d393b39f3"
+    },
+    {
+      "repository_id": 1322501176,
+      "repository": "ulises-jeremias/agent-toolkit",
+      "last_success": {
+        "completed_at": "2026-11-07T11:03:11Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 411314,
+      "sha256": "cf548053c22a803bf2f8358286a3c9242602c0dd5895079d9a79fc6d62c13b6c"
+    },
+    {
+      "repository_id": 1326017937,
+      "repository": "infinition/albedo",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:32Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 17298,
+      "sha256": "6f704ff189e8d569663cf0029cda1a734578da4ef85527f4e06b5cf898d5892c"
+    },
+    {
+      "repository_id": 1327325660,
+      "repository": "small-dream/AIProxy",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:33Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 272608,
+      "sha256": "92f2dc749690ba05b7c38a006e11df740240c16fa9dab9bfb43ff53c5345ee53"
+    },
+    {
+      "repository_id": 1329785051,
+      "repository": "BeetleBot/ActOne-Screenplay",
+      "last_success": {
+        "completed_at": "2026-11-07T11:03:11Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 14410,
+      "sha256": "d847629938eb4bb1d457be96023d79340343335e64b8b9c7eb3bc942f7b96c60"
+    },
+    {
+      "repository_id": 1332068659,
+      "repository": "Gx664/AIGC",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:33Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 10542,
+      "sha256": "6d4893e868bcb441f726a6fcef87b55054c01e889b236cb70b2731f4de0fe4fa"
+    },
+    {
+      "repository_id": 1333033450,
+      "repository": "starroyhq/agentkib",
+      "last_success": {
+        "completed_at": "2026-11-07T11:03:12Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 502868,
+      "sha256": "7af994c82e6524cba5b872ddf5fe6e1f5b3297f3064e7c45d8a251ad1a9d0565"
+    },
+    {
+      "repository_id": 1333821463,
+      "repository": "JochenYang/agent-comm-hub",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:53Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 28173,
+      "sha256": "9d5e9037ab9c039e6ecb26f3087da52f2e52864d87915092e4ebd517e0a0261c"
+    },
+    {
+      "repository_id": 1336846046,
+      "repository": "Atulsain011/Aero_sync",
+      "last_success": {
+        "completed_at": "2026-11-07T11:03:13Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 4238,
+      "sha256": "8c5927512c600a0bc1d803e26b9fc67885579c17b02c5b5e8d22a288e9e664a6"
+    },
+    {
+      "repository_id": 1337413368,
+      "repository": "gonemedia/AIPointer",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:34Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 16075,
+      "sha256": "12297efe2329bdb5b35c415874a4ddf5d8c73f0bab3b3eba25fcb6d2faf54292"
+    },
+    {
+      "repository_id": 1337965664,
+      "repository": "jeonjw85/2FAC",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:34Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 20812,
+      "sha256": "b43bb2e6cf8ebf233089f457464c8e077529183bac7f795bcd83a36faf192e6f"
+    },
+    {
+      "repository_id": 1340087791,
+      "repository": "Heromachine/AlienResurrection-Recompilation",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:34Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 4592,
+      "sha256": "1f5542a224a7bedd889e8ded9d50c9f3566bc062c387059caad507ee5ff141c1"
+    },
+    {
+      "repository_id": 134017286,
+      "repository": "jesseduffield/lazygit",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:01Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": false
+      },
+      "yaml_bytes": 427337,
+      "sha256": "03a355e56d9c53f0558e6f12a5c1bd83cb67f636e9a929c198cbf64808d75282"
+    },
+    {
+      "repository_id": 134057106,
+      "repository": "daisy/ace-gui",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:39Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 36721,
+      "sha256": "4e7361298609d9f0574e659e7532ff1db8a41d923a9eb11ed0d4af2a71bc3dca"
+    },
+    {
+      "repository_id": 1343180401,
+      "repository": "Khyretos/3dco-plus",
+      "last_success": {
+        "completed_at": "2026-11-07T11:03:13Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 16889,
+      "sha256": "face302672159d00d37604197dcdf38ca4b459167abf874d821913fea40b77d9"
+    },
+    {
+      "repository_id": 1344650415,
+      "repository": "TED-H-com/ai-security-scanner",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:35Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 364960,
+      "sha256": "30eca9f27e4681d2b764d3ba91e24e3ede5d3936975788e74700bca1b8b0b8fd"
+    },
+    {
+      "repository_id": 1347012905,
+      "repository": "y4Nkk/agent-switchboard",
+      "last_success": {
+        "completed_at": "2026-11-07T11:03:14Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 122988,
+      "sha256": "f269a4b7945c6f7706214f203e4c60d3f5ecfea738a80f221faa6f99b3e1a68b"
+    },
+    {
+      "repository_id": 1356533425,
+      "repository": "Bot-phone/AI_yemot",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:35Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 4807,
+      "sha256": "2a9562b6f0789fb8893bb787c223674d8c03003abdc77b912498787b5d6d716d"
+    },
+    {
+      "repository_id": 1357389191,
+      "repository": "v1xerunt/AgentFlow",
+      "last_success": {
+        "completed_at": "2026-11-07T11:03:14Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 11238,
+      "sha256": "bec0a072ae0af8c1354df2255e0d997411ad9b2f75653bf769b173747bf009e8"
+    },
+    {
+      "repository_id": 1359152102,
+      "repository": "TennnisAI/Agency",
+      "last_success": {
+        "completed_at": "2026-11-07T11:03:15Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 18192,
+      "sha256": "33cb6f8fd62137718fbadedaeba88f246a2b7bfb6f12f18a22c83f1f6c398241"
+    },
+    {
+      "repository_id": 1360648262,
+      "repository": "6Morpheus6/Agent_Smith-Reloaded",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:29Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 9688,
+      "sha256": "e2ad52638c63e45359a028dd6656b2d2d77dd21a2bd52ff0a3667cc41f96f07d"
+    },
+    {
+      "repository_id": 1362591273,
+      "repository": "Bexxs75/3mf-katalog-manager",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:35Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 130317,
+      "sha256": "18d73810b96c57b914f3809b2809321b257d9182eb8edf17b4ff51d1a1deb518"
+    },
+    {
+      "repository_id": 1364985464,
+      "repository": "agent-launch/agent-launcher",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:54Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 11109,
+      "sha256": "ff5eea6642286eb31a422adeaedf76960010d17bc8fcc2f1ecab7bf3fb4f3ff9"
+    },
+    {
+      "repository_id": 1365153976,
+      "repository": "etosheartem/ag-repatch",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:52Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 13856,
+      "sha256": "7ac2589a6d7a3a664e14bfb5118fcd3a3dfdd995dac55ed04ef8ff55b40d931f"
+    },
+    {
+      "repository_id": 1365556684,
+      "repository": "DanWahlin/agent-buddy",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:54Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 137321,
+      "sha256": "2eaeb67aca2e60137ced1683e0458a519f7d4c77a0bcd4841ebab901d2d1113b"
+    },
+    {
+      "repository_id": 1367322726,
+      "repository": "NyckDragon/ai-dock",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:36Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 9829,
+      "sha256": "a7192cd58506bb7be5d3ee4e14c5a01f2c4e952a757fd67e7946ef545f08e6d7"
+    },
+    {
+      "repository_id": 1369771755,
+      "repository": "Technicalflight/AiGuard",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:36Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 6679,
+      "sha256": "bb79835bf8b50076c600e751055218985540774bb65ca0e2fe32d81a7c9c464f"
+    },
+    {
+      "repository_id": 1376379544,
+      "repository": "yeyo11/agentry",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:29Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 67581,
+      "sha256": "b723757b76525e2a0c2da14d40bcaac4336bbdf6682ba3eafa8d824005be8db6"
+    },
+    {
+      "repository_id": 1377070929,
+      "repository": "YeOldPress/alttp-dx",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:37Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 27069,
+      "sha256": "3bf419c242c5963bdabf1f3a826c91392d1b60304b495782b480717abfe86690"
+    },
+    {
+      "repository_id": 1379117882,
+      "repository": "OnlistTeam/ai-manager",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:37Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 45070,
+      "sha256": "b0f70d5f9149deb7be9f55c7024e5b81a9e9c65351d39f04b1bb89e28ad8b684"
+    },
+    {
+      "repository_id": 13807606,
+      "repository": "junegunn/fzf",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:58Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 421089,
+      "sha256": "899010302a1dfa06f9b88b571b5183f1c4bc033fe15de4571caa05adf25584a9"
+    },
+    {
+      "repository_id": 1382509781,
+      "repository": "itsmbaqer/agents-dont-sleep",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:30Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 10403,
+      "sha256": "564f65f8763c2e979df2ec75184eab23badcee13c84400e0065fb5f9962fe7bc"
+    },
+    {
+      "repository_id": 1386170017,
+      "repository": "leciric/agentbox",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:32Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 193108,
+      "sha256": "b614ffee8908973ffdddba91a40e8999a781b6afedd9384294ed145bdbf67e07"
+    },
+    {
+      "repository_id": 1399514605,
+      "repository": "aidogui/aidogui-designer",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:38Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 50627,
+      "sha256": "6c9bb798af124c8e74cc679f2a2db493c6f32a284a1cd1fe43d54691599b630c"
+    },
+    {
+      "repository_id": 1404226270,
+      "repository": "lmliheng/Adelie",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:42Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 150033,
+      "sha256": "80b52c09505fe2c93888880b3192927acb7a16b7d70637a2448bb0f88832a7b0"
+    },
+    {
+      "repository_id": 1404744232,
+      "repository": "efekoca/ai-usage-tracker",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:38Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 113484,
+      "sha256": "25cc3d1b85fa082680bb91c05d10baa76065fc999a5936b64cd4f92913a344ad"
+    },
+    {
+      "repository_id": 1444988103,
+      "repository": "ouyangjiahong26/altgo",
+      "last_success": {
+        "completed_at": "2026-11-07T11:02:39Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 6161,
+      "sha256": "bf2608458804abff6e692de26b40188fefc1a5d01832902546c6d63fddc3cf86"
+    },
+    {
+      "repository_id": 149393019,
+      "repository": "amanharwara/altus",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:39Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": false
+      },
+      "yaml_bytes": 130787,
+      "sha256": "304cb9bd001c6a32b9c10d6b842ca41042996f2b257674ea218828231df88eea"
+    },
+    {
+      "repository_id": 161129978,
+      "repository": "TheLindaProjectInc/Altitude",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:39Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 47679,
+      "sha256": "050d344436325bbc12eca38f9180d5586cfe95d0978cfc01f2709911241f218d"
+    },
+    {
+      "repository_id": 16408992,
+      "repository": "neovim/neovim",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:03Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 184932,
+      "sha256": "fddf4fdb7b7b6e8b0a3949a8a2d1c0ac6f2f5aaddc229fe0653de5d4e3912748"
+    },
+    {
+      "repository_id": 164125101,
+      "repository": "allusion-app/Allusion",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:40Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 56148,
+      "sha256": "8b80ffdad9140db1de8dac5517d4926f752afd31512d21cc393ca44130449948"
+    },
+    {
+      "repository_id": 17803236,
+      "repository": "rclone/rclone",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:07Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": false
+      },
+      "yaml_bytes": 1159110,
+      "sha256": "32350c3a903da6196a0343cfc467352b0521a1383cabc8beb745855766b77201"
+    },
+    {
+      "repository_id": 226408450,
+      "repository": "neovide/neovide",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:04Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 66784,
+      "sha256": "41925cf97cde87fe2179a959bf0418e03dcc7d31fb8f8b7d092479a5e942fbee"
+    },
+    {
+      "repository_id": 2405281,
+      "repository": "Jmgr/actiona",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:40Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 13481,
+      "sha256": "04c9863009185a62e31113b94e31e77e62b7b7af1bd368a91e49d65e802de862"
+    },
+    {
+      "repository_id": 242402791,
+      "repository": "abrignoni/ALEAPP",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:40Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 86331,
+      "sha256": "d58b2da358b6e6e09604444619c643ca782a5b7ac134dc898b0869433cdb80b4"
+    },
+    {
+      "repository_id": 262342594,
+      "repository": "obsidianmd/obsidian-releases",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:05Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": false
+      },
+      "yaml_bytes": 248040,
+      "sha256": "5facd65a4b820ca50120ed048bf9a9ea1a9643fd27b05906cb317074b0834754"
+    },
+    {
+      "repository_id": 265597110,
+      "repository": "Alexsussa/AIDM",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:41Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 4476,
+      "sha256": "301e4a4385bc44abaa58b07de34c59603cf682f1875c4a1f6d710a311f3e4cb0"
+    },
+    {
+      "repository_id": 266231149,
+      "repository": "logseq/logseq",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:03Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": false
+      },
+      "yaml_bytes": 304965,
+      "sha256": "4d1adf54328e3b8bc5ef96404ea3c12ba7959c0d6fc57bd678cf1a34d5143682"
+    },
+    {
+      "repository_id": 271903277,
+      "repository": "AgregoreWeb/agregore-browser",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:20Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 314709,
+      "sha256": "e0c4460adef8972558f6c784489f57a39709a398ba6af2207d5dda52505fd9f8"
+    },
+    {
+      "repository_id": 292014229,
+      "repository": "zellij-org/zellij",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:13Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 186991,
+      "sha256": "9cd9276e14eb8f8d48dcdcbd9c272be0f10f00db740e0e7a1441eb335990b66b"
+    },
+    {
+      "repository_id": 294730173,
+      "repository": "alephium/desktop-wallet",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:41Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 78379,
+      "sha256": "4db4f922af2fe087abd7aee365b5d0a1e460e359f9031dc3d578d551898f83e6"
+    },
+    {
+      "repository_id": 307260205,
+      "repository": "yt-dlp/yt-dlp",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:12Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": false
+      },
+      "yaml_bytes": 452643,
+      "sha256": "7c63c10756c14e38fb00f55e74cdbb58cead97e3d5eb2232ceb80a4dfce86bb7"
+    },
+    {
+      "repository_id": 365005377,
+      "repository": "aristocratos/btop",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:56Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 178187,
+      "sha256": "99c0047eadb048aa8e7e72f32b695e38bad6373cacdd8878d13167e4375ff248"
+    },
+    {
+      "repository_id": 438803890,
+      "repository": "LizardByte/Sunshine",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:10Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 225992,
+      "sha256": "73ef15dc6064ad25ac694da53c28c530ef8995f6c91e17e4049ca9280a50d5b5"
+    },
+    {
+      "repository_id": 440575288,
+      "repository": "Acreom/releases",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:21Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": false
+      },
+      "yaml_bytes": 326812,
+      "sha256": "6561626025807ce63ad777b66af54e242968c485e403adfa1cec2ffb359d4db9"
+    },
+    {
+      "repository_id": 446744280,
+      "repository": "air-controller/air-controller-desktop",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:42Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 9301,
+      "sha256": "d8517b4511ab5af1d6fcf6434e63cf6cf8f550eb315581e913946cf250b9a7f9"
+    },
+    {
+      "repository_id": 461658430,
+      "repository": "rn0x/altaqwaa-desktop",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:42Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 44792,
+      "sha256": "f35158ebc33ceac1307361724765ed985f8bfc607bdafadce1190efa4350189f"
+    },
+    {
+      "repository_id": 490391156,
+      "repository": "KejPi/AbracaDABra",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:22Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 91022,
+      "sha256": "e488932439a0c96f98f67f74ae108282d66d07fb3e67c6118a5e9604ed1cadc8"
+    },
+    {
+      "repository_id": 507449738,
+      "repository": "phil294/AHK_X11",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:22Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 16638,
+      "sha256": "ddc2b461b13b0d2c71453c2057a99d469d9d5883261d00177496895d571c1626"
+    },
+    {
+      "repository_id": 57224308,
+      "repository": "ActivityWatch/activitywatch",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:15Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 259764,
+      "sha256": "02fad4bb416efc5a7b856cce852b667eb729447afeb72fafedd66d95d2194181"
+    },
+    {
+      "repository_id": 658450330,
+      "repository": "AppImage/appimagetool",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:56Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 7444,
+      "sha256": "abeea86e21befc45b602ff25ce14327ae90dffda3dcd5f063c54e3c6bb66365f"
+    },
+    {
+      "repository_id": 658980510,
+      "repository": "akuse-app/akuse",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:43Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 54288,
+      "sha256": "ed2dd8480a0967d2cc170758ed61c36f5cc531e73d844215a24c2c4197ea908e"
+    },
+    {
+      "repository_id": 673781967,
+      "repository": "inulute/ai-gate",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:43Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 24784,
+      "sha256": "4d6fa85a6ae66e3d329d5662eb616588787492b6e2e2202ea1575378cbed093c"
+    },
+    {
+      "repository_id": 67877325,
+      "repository": "CodeDead/Advanced-PassGen",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:16Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 33990,
+      "sha256": "8cafb4dcf19b3e7193b1aed661b91d8ad4c1328176c2f2b3e1e8ef8d0c1f8f65"
+    },
+    {
+      "repository_id": 679532632,
+      "repository": "0xchat-app/0xchat-app-main",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:23Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 56096,
+      "sha256": "ae88da89cc7fe214e384fd5b5046e609cdd549cb0ebd7c44b109fae23f001484"
+    },
+    {
+      "repository_id": 71056775,
+      "repository": "kovidgoyal/kitty",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:00Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": false
+      },
+      "yaml_bytes": 627966,
+      "sha256": "4bd0e49e6381c321052256833b73fd6560c250ef56fb1147b1012223b84d56cc"
+    },
+    {
+      "repository_id": 71763543,
+      "repository": "AlduinApp/alduin",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:36Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 19012,
+      "sha256": "64311276bd47774155dd734859fd823a6e77d07f880bda16d9f47d516cf8fe68"
+    },
+    {
+      "repository_id": 739667828,
+      "repository": "nanbingxyz/5ire",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:34Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 101407,
+      "sha256": "25fce44d2d1bc477cabfa2adb38213bf2ace79ad30ddcf418189aec9e1010001"
+    },
+    {
+      "repository_id": 74284714,
+      "repository": "CodeDead/Advanced-PortChecker",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:16Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 18860,
+      "sha256": "85354a496ab73febf621f4ae15b00a9c1c571e3cf133b01482ede0670705d0e5"
+    },
+    {
+      "repository_id": 767266298,
+      "repository": "BearlySleeping/aikami",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:44Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 27218,
+      "sha256": "e85a01bab37fe09b67b495adbeed0bff1fcd6c9754b970442e1a029d720a8e73"
+    },
+    {
+      "repository_id": 774465294,
+      "repository": "Jun-Murakami/AI-Browser",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:45Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 68985,
+      "sha256": "e4813deafeda41aae053f06f43c77853806ece1cf6244fe6b0810f661331d6ce"
+    },
+    {
+      "repository_id": 778294597,
+      "repository": "arnauda-gh/Alwide",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:45Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 27400,
+      "sha256": "2d8e1fa9d9937ef48df0df550513f7b6b38b7ff03a50cc3e0e4aee4a8110ae37"
+    },
+    {
+      "repository_id": 809764991,
+      "repository": "shibing624/agentica",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:24Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 31521,
+      "sha256": "5ee81106069f95b197f0d6cfc3d9db837ce7ad7e3b2b76aea51289eb20435f6e"
+    },
+    {
+      "repository_id": 836460535,
+      "repository": "pmbstyle/Alice",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:46Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 105433,
+      "sha256": "86369540708a6016ecb7fb84a37c0f31b7995ea33940d083af57f1eb9041dc1f"
+    },
+    {
+      "repository_id": 84325774,
+      "repository": "AppImageCommunity/AppImageUpdate",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:55Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 53353,
+      "sha256": "98f386386ef63ba62321f52fd0066ea3316b81c3df1471e0d322aa0d85282767"
+    },
+    {
+      "repository_id": 855364912,
+      "repository": "ryzendew/Linux-Affinity-Installer",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:24Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 6071,
+      "sha256": "1f74d8ebf827c2b92bfba4d9bcc95f77f573e0cbfab45720d002e6a3a5e1f87e"
+    },
+    {
+      "repository_id": 86188653,
+      "repository": "altair-graphql/altair",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:37Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": false
+      },
+      "yaml_bytes": 447600,
+      "sha256": "5a3ac3c465f264a3ac5c133e1cfe686171dba6a3f1aae7173e7c62727665d559"
+    },
+    {
+      "repository_id": 872860168,
+      "repository": "EmmyLuaLs/emmylua-analyzer-rust",
+      "last_success": {
+        "completed_at": "2026-11-07T11:00:57Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 301309,
+      "sha256": "6a14c514f702f18f67701944c128288357a32900953f45dfea6b3133bf11720e"
+    },
+    {
+      "repository_id": 874718872,
+      "repository": "modstart-lib/aigcpanel",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:46Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 109720,
+      "sha256": "6edecf2b1be0dc1839c9790d21d718c558f22d87ae661448cdadd4734b447398"
+    },
+    {
+      "repository_id": 916015602,
+      "repository": "AkshitIreddy/AI-Desktop-Pet",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:47Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 28182,
+      "sha256": "b74c8221a0775028ecdece39407302e1511b7434eb98dd73e6945ac4a7a6799a"
+    },
+    {
+      "repository_id": 920598633,
+      "repository": "rclone/rclone-ui",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:09Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 685541,
+      "sha256": "279137bfd8b7e2d0b9ce70c360eed5f75b3fc64d80ba237de0efee45d279b10e"
+    },
+    {
+      "repository_id": 944606603,
+      "repository": "codingworkflow/ai-code-fusion",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:47Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 3572,
+      "sha256": "9e404b9ed7bbdeac24ef86342fe1fa456b0b75f1015a2dd6de8a010e087bfc2f"
+    },
+    {
+      "repository_id": 945056392,
+      "repository": "arnyigor/aiprompts",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:48Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 16363,
+      "sha256": "e21a0626ab749aefe7c9ba591b5658d1515a7493eff9c9407d26fe336be84734"
+    },
+    {
+      "repository_id": 965213930,
+      "repository": "ChaosTheChaotic/Adiman",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:24Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 37039,
+      "sha256": "c264d69632c0b0c1109e47cafc1b7b9006203b2abaff64b9d3f7ab540a8654f7"
+    },
+    {
+      "repository_id": 986508161,
+      "repository": "pkgforge-dev/alacritty-AppImage",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:49Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 255453,
+      "sha256": "a50bd5c4175197279d143a7ef53a8680d6b7834e10d526680a27c097c06e8179"
+    },
+    {
+      "repository_id": 993148803,
+      "repository": "Dpro-at/Girru",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:49Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 14932,
+      "sha256": "51f658947f23674e58a191708d9d28d076999d8c361494b50ba9129d9846df63"
+    },
+    {
+      "repository_id": 995129837,
+      "repository": "yarin-zhang/AI-Gist",
+      "last_success": {
+        "completed_at": "2026-11-07T11:01:50Z",
+        "page_size": 100,
+        "page_limit": 1,
+        "reconcile": false,
+        "pages_fetched": 1,
+        "history_complete": true
+      },
+      "yaml_bytes": 194104,
+      "sha256": "a3b34739875b73fde920bdbafdcfcb5b1600792aae63b3fc2e07044eb358e1f7"
+    }
+  ],
+  "log_sha256": "768ebd2edd87c9a064c9671905c76af3b25000f0765c4fb25e49ff741cbfa2cc",
+  "jobs": [
+    {
+      "started_at": "2026-11-07T10:59:55Z",
+      "completed_at": "2026-11-07T11:03:41Z",
+      "conclusion": "success"
+    }
+  ],
+  "installed_host_changed": false
+}

@@ -1,31 +1,48 @@
 # Single-user YAML catalog operation
 
 The published collection contains **228 app identities / 224 repositories**:
-57 migrated recipe identities and 171 catalog-only identities. Authorized source
-`fde55f59883353e5aa27c73d674a57e1e20613c2` and five successful manual batches
-publish `26d82aa94bb5a8f70449e42500dc78a597583ab3` on November 7 local time.
-[Final run 42315622825](https://github.com/mareklangiewicz/AM/actions/runs/42315622825)
-completes successful observations for all 224 sources across the five batches,
-with zero failures. Exact-pin reader/identity/preservation checks pass; final YAML
-is 33,152,148 bytes, largest document 1,159,110 bytes.
-[Publication report and receipt](track/release-catalog/research/next-224-publication.md).
+57 migrated recipe identities and 171 catalog-only identities. Source
+`09ae7fe81355a06eabe1c2afc141f22e2d3de675` activates the hourly metadata profile.
+[Run 42366263140](https://github.com/mareklangiewicz/AM/actions/runs/42366263140)
+publishes `59b3f3f398bc1013c7b5caf0f37b19a4f3fc9821`, successfully observing all
+224 enrolled sources in one batch: 224 requests, zero failures/unattempted,
+179,326,726 response bytes and 205.27 seconds command time. Exact-pin bounded
+reader/canonical/reference and identity/release/observation preservation checks
+pass. YAML totals 33,220,878 bytes, largest document 1,159,110 bytes.
+[Rollout report and live receipt](track/release-catalog/research/hourly-refresh-rollout.md).
 
-The workflow attempts at most 52 oldest sources every three hours, preserving
-untouched observations and isolating source failures. Enrollment is capped at
-224 repositories, with a nominal five-run / 15-hour rotation. This is a measured
-intermediate scope, not qualified support for thousands. The installed host
-remains at 21 apps; this publication includes only 97 new catalog-only app
-identities and snapshot processing changes, with no new recipe migration or
-installed refresh. Broader coverage/scaling remains in
-[138](track/release-catalog/issues/138-scale-github-catalog-coverage.md).
+The workflow attempts at most **500 oldest sources hourly**, at minute 17 UTC,
+preserving untouched observations and isolating failures. The enrollment ceiling
+is 500; actual enrollment remains 224 verified sources. New cohorts require
+identity and density/capacity preflight. Bounds are 512 MiB charged response bytes,
+900-second cooperative acquisition, a 30-minute job, 16 MiB/response,
+2 MiB/document, 1,024 reader files and 256 MiB local history. Current history guard
+usage is 88,631,041 bytes; the measured 500-source fixture plus published history
+passes two exact-parent publications at about 141.33 MB. This is intermediate
+capacity evidence, not qualification for thousands or unbounded retained growth.
 
-[145's larger-batch assessment](track/release-catalog/research/refresh-batch-sizing.md)
-proposes 500 sources hourly against the ordinary 1,000 REST requests/hour Actions
-token quota. The current byte/time/history/read bounds are local limits. Its
-500-source fixture requires a larger transfer allowance and already exceeds the
-128,000,000-byte history guard when combined with measured published history.
-The profile is not deployed; request throughput does not qualify thousands of
-source documents or change the 48-hour selected-release observation rule.
+The collector reports safe numeric quota headers, request/byte/time/coverage and
+history totals, and explicit budget/rate stop reasons. Before another request it
+preserves 100 remaining primary requests until reset; auth/rate failures stop
+immediately, without automatic retry. Redirects are refused before following.
+CI warns about sources without success or successful source observations older
+than 24 hours, reporting 24/36/48-hour counts. These source diagnostics do not
+freshen retained releases outside page 1 or replace the client freshness rule.
+
+The conservative quota plan uses the documented ordinary Actions allowance of
+1,000 REST requests/hour/repository. This live run instead reports core limit
+5,000, with 4,852 remaining at the end and a reset change during the run. That
+observation has no established official explanation or durable entitlement;
+the report preserves both the documented baseline and measured headers.
+The active hourly cron is verified in source; its first natural hourly trigger
+remains unobserved. The successful run above is manual.
+
+This rollout changes metadata collection only. The installed host is untouched;
+no new recipe migration, installed refresh, app installation/update, website
+rebuild or yadm pointer operation occurs. Broader coverage and storage work stays
+with [138](track/release-catalog/issues/138-scale-github-catalog-coverage.md).
+The prior five-batch 224-source publication is preserved in its
+[receipt](track/release-catalog/research/next-224-publication.md).
 
 The prior 131-app / 128-source baseline at
 `e9d713eb74ca02dca24a5269ace5ee9e28466f41` remains a historical
@@ -39,8 +56,8 @@ marked `# AM-RECIPE-DECLARATION 1` own customization and selection settings;
 adding a declaration does not enroll it for collection. The older 50-source design
 manifest and
 format-1 collector experiments are historical evidence, not active publication.
-The deployed source cap is 224. Per-repository YAML
-remains capped at 2 MiB in both.
+The deployed source ceiling is 500; actual enrollment is 224. Per-repository YAML
+remains capped at 2 MiB.
 
 [137](track/release-catalog/issues/137-separate-catalog-enrollment-from-recipe-migration.md)
 adds independent catalog-only identities through `collection-apps.json`.
@@ -48,7 +65,7 @@ Installation preparation excludes catalog-only rows. Further source enrollment
 requires the measured scaling work in 138 rather than raising this cap alone.
 
 `.github/workflows/catalog.yml` collects one page of 100 releases per attempted
-source at 17 minutes past every third hour UTC or on manual dispatch, retains
+source at 17 minutes past every hour UTC or on manual dispatch, retains
 previously observed releases and publishes validated YAML to `release-catalog`.
 Failed source attempts preserve their prior successful observations; failed
 whole-workflow validation/publication leaves the prior published pin in place. The first cutover explicitly replaces the old

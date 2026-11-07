@@ -2,8 +2,8 @@
 
 Implementation for [146](../issues/146-roll-out-hourly-metadata-refresh.md),
 following Marek's “go on” after [145's assessment](refresh-batch-sizing.md).
-The profile is prepared locally; the operational receipt is appended after the
-source push and exact-pin workflow verification.
+The profile is pushed and its first full enrolled-scope manual run is verified.
+Actual enrollment remains 224; the ceiling and hourly schedule are now active.
 
 ## Prepared profile
 
@@ -15,7 +15,7 @@ source push and exact-pin workflow verification.
   HTTP 401/403/429 stops; no automatic retry or sleep. Redirects are refused
   before following them, preventing hidden extra requests/credential forwarding.
 - Report requests, bytes, attempts/success/unattempted counts, explicit stop
-  reason, acquisition/command time, quota endpoints and history consumption.
+  reason, acquisition/command time, first/last quota observations and history usage.
 - Report source-success ages at 24/36/48 hours and never-successful sources;
   emit a CI warning from 24 hours. These are source diagnostics, not permission
   to refresh retained observations outside page 1 or change client selection.
@@ -59,3 +59,56 @@ pre-fix run is retained in the raw evidence. Live workflow verification follows
 the source push. No recipe migration,
 installed file refresh, app update, website rebuild or yadm pointer operation is
 part of this rollout. The 48-hour selected-release observation check is unchanged.
+
+
+## Published operation
+
+Source `09ae7fe81355a06eabe1c2afc141f22e2d3de675` is pushed to `main-marek`.
+[Run 42366263140](https://github.com/mareklangiewicz/AM/actions/runs/42366263140)
+succeeds in a 226-second job. Its maintained command takes 205.27 seconds,
+including 166.55 seconds acquisition/normalization. All **224 sources succeed in
+one batch**, zero failures, zero unattempted, 228 app identities, 179,326,726 charged
+response bytes. Stop reason is `complete`. Source-success age counts at 24/36/48
+hours and never-successful counts are all zero.
+
+Published pin `59b3f3f398bc1013c7b5caf0f37b19a4f3fc9821` is a direct child of
+its actual fetched parent `e992cc2ca3b22c01f2e95e61c404121cbcdbf188`, rather than
+an old rehearsal pin. Both exact pins pass maintained bounded distributed-reader,
+canonical and cross-file validation in an isolated catalog repository. App/source
+identities, retained release IDs and effective observations are preserved. Final
+YAML totals 33,220,878 bytes, largest 1,159,110. Actual pre-publication history
+objects are 55,410,163 bytes; the guard total is 88,631,041 of 268,435,456 bytes.
+Post-publication objects total 61,614,225 bytes.
+[Portable live receipt](hourly-refresh-publication.json) binds exact parents,
+per-source identity/last-success/document hashes, metrics, timings and raw log digest.
+
+### Observed quota versus documented allowance
+
+Live response headers report core `limit=5000`, initially `used=53` /
+`remaining=4947`, finally `used=148` / `remaining=4852`. Reset values change
+from `1794049288` (11:01:28 UTC) to `1794052889` (12:01:29 UTC) during the run.
+Do not subtract endpoint counters to count this run: 224 request attempts and
+224 successful release responses are independently recorded; quota windows and
+other consumers can affect the shared counters.
+
+The source passes `github.token` as `GH_TOKEN`. Official documentation and its
+[first-party source text](https://github.com/github/docs/blob/main/data/reusables/rest-api/primary-rate-limit-github-token-in-actions.md)
+still specify 1,000/hour/repository for ordinary `GITHUB_TOKEN` and 15,000 for
+the documented Enterprise-resource exception. No official explanation was found
+for this run's 5,000 response allowance; do not infer a PAT, cache exemption or
+durable entitlement. Keep the conservative **1,000/hour planning baseline**, while
+using actual response headers to preserve the 100-request reserve. GitHub notes
+that regional processing can affect counters, but that does not explain this
+allowance difference.
+[Official REST limits](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api).
+
+The workflow is active, on the checked default branch `main-marek`; committed
+cron is `17 * * * *`. Its first natural hourly trigger has not been observed;
+the accepted operation above is a manual full-scope run. Cron remains best effort.
+This does not claim live qualification of 500 unique upstream sources: only 224
+are enrolled; the 500 ceiling has local synthetic and history-capacity evidence.
+Further identity enrollment and cohort-specific density/capacity gates remain.
+
+The 48-hour selected-release rule and page-scope observations are unchanged.
+No recipe migration, installed-host refresh, app install/update, website rebuild
+or yadm pointer bump occurs. Broader storage/attribution work remains with 138.

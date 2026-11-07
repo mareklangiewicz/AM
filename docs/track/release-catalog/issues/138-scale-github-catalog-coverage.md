@@ -151,3 +151,24 @@ not merely raise the request constant. GitHub's generated-file repository-health
 guidance belongs in that design discussion; it is not an accepted storage change.
 Preserve selected-record 48-hour freshness, page-scope observations and source
 attribution independently of recipe migration. [Assessment and validation](../research/refresh-batch-sizing.md).
+
+
+## Hourly refresh profile deployed
+
+[146 resolved](146-roll-out-hourly-metadata-refresh.md) implements and publishes
+500 attempts hourly, 512 MiB transfer, 900-second cooperative acquisition,
+30-minute job, safe quota/reserve and source-age/history diagnostics. The measured
+history allowance rises to 256 MiB, enrollment ceiling to 500; actual scope stays
+228 apps / 224 verified sources. Full 159-test collector regression passes.
+Source `09ae7fe81`, successful run 42366263140 and exact pin
+`59b3f3f398bc1013c7b5caf0f37b19a4f3fc9821` verify a full 224-source refresh in
+one command (205.27 seconds, zero failures), preserving identities/releases/
+observations. [Report](../research/hourly-refresh-rollout.md) distinguishes the
+observed core 5,000 allowance from the conservative documented 1,000/hour plan.
+No installed or recipe change; natural hourly cron has not yet been observed.
+
+The earlier 128 MB barrier is now superseded by measured 256 MiB headroom for
+the 500-source fixture plus published history. This does not remove whole-tree
+materialization, the 1,024-file reader bound or retained growth. Continue verified
+source attribution and measured cohorts up to the ceiling; qualify a broader
+storage/read design before thousands. Selected-release freshness stays 48 hours.

@@ -2,11 +2,14 @@
 
 ## Active expansion — catalog first, simple recipe migrations first
 
-[146 claimed](issues/146-roll-out-hourly-metadata-refresh.md) implements the
-500/hour metadata profile, safe quota/reserve and freshness/history diagnostics.
-Actual enrollment stays 224; ceiling is measured at 500, local history at 256 MiB.
-[Rollout report](research/hourly-refresh-rollout.md) records offline checks and
-will record the source push and exact-pin workflow receipt.
+[146 resolved](issues/146-roll-out-hourly-metadata-refresh.md) deploys **500/hour**:
+159 full collector tests pass; source `09ae7fe81` and successful run 42366263140
+refresh all actual 224 sources in one batch, zero failures, 205.27 seconds command.
+Pin `59b3f3f398bc1013c7b5caf0f37b19a4f3fc9821` passes exact-pin preservation.
+Enrollment ceiling is 500, local history 256 MiB; quota/reserve and freshness/
+history diagnostics are active. [Report and live receipt](research/hourly-refresh-rollout.md)
+record actual core headers of 5,000, keeping documented 1,000/hour planning.
+No recipe/installed change; broad attribution/storage remains with 138.
 
 [144 resolved](issues/144-publish-224-source-cohort.md): authorized source
 `fde55f598` is pushed; five successful sequential runs publish **228 apps / 224
@@ -17,9 +20,10 @@ observed, zero failures, exact-pin identity/release/observation preservation pas
 metadata profile against official GitHub quotas and measured local storage limits;
 [report/validation](research/refresh-batch-sizing.md) record successful current
 224-source whole-command and synthetic 500-source retained replays. Published
-history plus the 500 fixture exceeds the local history guard; the reader also
-caps source files at 1,023. The profile is proposed; deployed cadence remains
-52 / three hours. Broad storage/attribution work stays with 138.
+history plus the 500 fixture exceeded the former 128 MB history guard; 146
+subsequently raises it after measurement. The reader still caps source files at
+1,023. At that assessment point the profile was proposed; 146 above deploys it.
+Broad storage/attribution work stays with 138.
 
 [142 resolved](issues/142-reduce-full-snapshot-processing.md) reduces repeated
 snapshot processing: same-evidence 128-source replay passes in 94.51 seconds
