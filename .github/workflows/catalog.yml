@@ -2,7 +2,7 @@ name: YAML release catalog
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 */3 * * *'
+    - cron: '17 * * * *'
 permissions:
   contents: write
 concurrency:
@@ -12,7 +12,7 @@ jobs:
   publish:
     if: github.repository == 'mareklangiewicz/AM' && github.ref == 'refs/heads/main-marek'
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
@@ -33,7 +33,7 @@ jobs:
           parent=$(git rev-parse FETCH_HEAD)
           git push "$pub" "$parent:refs/heads/catalog"
           python3 tools/catalog-collector/host_catalog.py --repo "$pub" --parent "$parent" \
-            --batch-size 52 \
+            --batch-size 500 \
             --report "$RUNNER_TEMP/catalog-report.json"
           pin=$(git --git-dir="$pub" rev-parse refs/heads/catalog)
           git fetch "$pub" "$pin"

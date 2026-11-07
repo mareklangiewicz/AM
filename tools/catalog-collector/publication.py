@@ -15,7 +15,9 @@ import time
 from bounded import require
 
 REF = 'refs/heads/catalog'
-HISTORY_CAP = 128_000_000
+# Intermediate bounded profile: measured published history + 500-source tree is
+# about 141 MB; retain growth headroom without allowing unbounded Git history.
+HISTORY_CAP = 256 * 1024 * 1024
 
 
 def git(repo, *args, data=None, index=None):
@@ -34,15 +36,21 @@ def git(repo, *args, data=None, index=None):
                           stderr=subprocess.PIPE).stdout
 
 
-def publish_tree(repo, tree, expected_parent):
+def publish_tree(repo, tree, expected_parent, *, metrics=None):
     """Commit a caller-validated inert tree and atomically advance a local ref."""
     require(not git(repo, 'remote').strip(), 'remote_publication_not_supported')
     require(expected_parent is None or type(expected_parent) is str and
             re.fullmatch('[0-9a-f]{40}', expected_parent), 'invalid_parent')
     # Refuse unbounded local history before advancing the ref. No GC/rewrites.
     objects = Path(git(repo, 'rev-parse', '--path-format=absolute', '--git-path', 'objects').decode().strip())
-    require(sum(p.stat().st_size for p in objects.rglob('*') if p.is_file()) +
-            sum(map(len, tree.values())) <= HISTORY_CAP, 'history_bound')
+    object_bytes = sum(p.stat().st_size for p in objects.rglob('*') if p.is_file())
+    snapshot_bytes = sum(map(len, tree.values()))
+    if metrics is not None:
+        metrics.update(history_object_bytes_before=object_bytes,
+                       snapshot_yaml_bytes=snapshot_bytes,
+                       history_guard_bytes=object_bytes+snapshot_bytes,
+                       history_cap=HISTORY_CAP)
+    require(object_bytes+snapshot_bytes <= HISTORY_CAP, 'history_bound')
     current = git(repo, 'for-each-ref', '--format=%(objectname)', REF).decode().strip() or None
     require(current == expected_parent, 'stale_parent')
     with tempfile.TemporaryDirectory(prefix='catalog-index-') as scratch:
@@ -77,6 +85,9 @@ def publish_tree(repo, tree, expected_parent):
         commit = git(repo, 'commit-tree', oid, *parent,
                      data=b'Validated local catalog candidate\n').decode().strip()
         git(repo, 'update-ref', REF, commit, current or '0' * 40)
+        if metrics is not None:
+            metrics['history_object_bytes_after'] = sum(
+                p.stat().st_size for p in objects.rglob('*') if p.is_file())
         return commit
 
 

@@ -197,11 +197,18 @@ class Publication(unittest.TestCase):
             schema=schema_url('a'*40),max_file_bytes=2097152,expected_parent=None)
         report = self.path/'report.json'
         args = ['host_catalog.py','--repo',str(self.repo),'--parent',first,
-                '--evidence',str(evidence),'--report',str(report),'--batch-size','52']
+                '--evidence',str(evidence),'--report',str(report),'--batch-size','500']
         with patch.object(sys,'argv',args), patch('urllib.request.urlopen',side_effect=AssertionError('network')), redirect_stdout(io.StringIO()):
             host_catalog.main()
         second = self.tip()
-        self.assertEqual(json.loads(report.read_text())['pin'],second)
+        receipt = json.loads(report.read_text())
+        self.assertEqual(receipt['pin'],second)
+        self.assertEqual(receipt['metrics']['requests'],0)
+        self.assertEqual(receipt['metrics']['attempted_sources'],len(sources))
+        self.assertEqual(receipt['metrics']['successful_sources'],len(sources))
+        self.assertEqual(receipt['metrics']['unattempted_sources'],0)
+        self.assertEqual(receipt['metrics']['stop_reason'],'complete')
+        self.assertLessEqual(receipt['metrics']['history_guard_bytes'],receipt['metrics']['history_cap'])
         apps, observed = load_local(self.repo,second,max_file_bytes=2097152)
         self.assertEqual(len(apps),len(rows));self.assertEqual(set(observed),set(sources))
         # Batch mode isolates a malformed upstream source while preserving that

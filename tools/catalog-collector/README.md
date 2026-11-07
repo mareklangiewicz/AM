@@ -11,10 +11,11 @@ payload inspection or policy compilation. They do not claim AM installation supp
 App identities must be unique across both lists; sources are deduplicated by
 numeric ID and conflicting names refuse. When a recipe is migrated, move its
 enrollment to `collection-recipes.txt` in the same change, preserving its identity.
-The published union is limited to 224 repositories. Each scheduled run attempts at most
-52, oldest collection attempt first (never-attempted sources first, numeric ID
-ties). The schedule is every three hours, nominally covering the published scope in five
-runs. Transfer/time budgets or source failures can reduce successful coverage;
+The published union contains 224 verified repositories; the enrollment ceiling is
+500, subject to cohort identity/capacity preflight. Each scheduled run attempts at most
+500, oldest collection attempt first (never-attempted sources first, numeric ID
+ties). The prepared schedule is hourly, covering the current published scope in one
+full successful run. Transfer/time budgets or source failures can reduce successful coverage;
 the report lists actual attempts and pending app identities. Selected-release
 freshness remains 48 hours, independent of these scheduling attempts.
 
@@ -23,15 +24,28 @@ times. An upstream failure records a failed attempt without changing previous
 release facts or last-success metadata. Auth/rate failures stop further requests
 in that run. A failed partial HTTP read conservatively charges its full remaining
 read allowance, so repeated failures cannot evade the shared byte budget.
+Safe numeric quota headers are reported per response and in the metrics summary.
+Before a subsequent request, stop if the live primary budget has at most 100
+remaining and its reset has not passed. HTTP 401/403/429 still stop immediately;
+there is no automatic retry or sleeping in the request loop. Redirects are refused
+before following them, so a counted request cannot secretly add follow-up calls.
+Reports include request attempts (zero for offline evidence), charged bytes,
+selected/attempted/successful/unattempted counts, budget stop reason, timings,
+source-success age counts at 24/36/48 hours, and history object/snapshot allowance.
+CI warns about sources without successful observations or older than 24 hours.
+These source-success ages do not reobserve retained releases outside page 1 or
+replace the client's own selected-release freshness check.
+
 A new app enters apps.yaml only after successful source collection;
 an enrolled identity is not a claim of successful publication. Removing retained
 sources in batch mode refuses. Source enrollment is still an explicit reviewed
 file change, never automatic URL discovery.
 
-The 16 MiB response, 96 MiB per-run transport, 300-second cooperative acquisition,
-2 MiB document, 1,024-file read and Git-history bounds remain. The 224-source scope is published with exact-pin preservation receipts.
+The 16 MiB response, 512 MiB per-run transport, 900-second cooperative acquisition,
+2 MiB document, 1,024-file read and 256 MiB Git-history bounds apply. The 224-source scope is published with exact-pin preservation receipts.
 [The larger-batch assessment](../../docs/track/release-catalog/research/refresh-batch-sizing.md)
-proposes 500/hour, without deploying it. Whole-tree validation and history
+motivates the 500/hour profile; [rollout 146](../../docs/track/release-catalog/issues/146-roll-out-hourly-metadata-refresh.md)
+records validation and operational status. Whole-tree validation and history
 storage have not been qualified for thousands.
 
 ## Entry points
@@ -39,9 +53,9 @@ storage have not been qualified for thousands.
 - `host_catalog.py`: collect one release-list page per attempted repository,
   normalize/retain facts, validate YAML, and publish to a remote-free local Git
   repository at an exact expected parent. The workflow pushes that candidate with
-  an exact lease. `--batch-size 52` selects bounded collection;
+  an exact lease. `--batch-size 500` selects bounded collection;
   `--evidence DIRECTORY` reads saved responses instead of HTTP. Without a batch
-  size, strict all-or-nothing collection remains available for at most 52 sources.
+  size, strict all-or-nothing collection remains available for at most 500 sources.
 - `catalog_sources.py scan --out FILE`: discover explicit source bindings from
   literal catalog aliases and whole pinned upstream-template instances; do not
   treat arbitrary GitHub links as release sources. `verify --scan FILE --out FILE`

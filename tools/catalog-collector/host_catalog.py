@@ -31,10 +31,21 @@ from recipe_declarations import recipe_rows
 ROOT = Path(__file__).resolve().parents[2]
 FILE_CAP = 2097152
 RESPONSE_CAP = 16 * 1024 * 1024
-TOTAL_CAP = 96 * 1024 * 1024
-SOURCE_CAP = 224
-REQUEST_CAP = 52
-ACQUISITION_SECONDS = 300
+TOTAL_CAP = 512 * 1024 * 1024
+SOURCE_CAP = 500
+REQUEST_CAP = 500
+ACQUISITION_SECONDS = 900
+RATE_RESERVE = 100
+
+
+class NoRedirect(urllib.request.HTTPRedirectHandler):
+    """One counted request must not silently forward credentials or add calls."""
+    def redirect_request(self, request, response, code, message, headers, url):
+        return None
+
+
+def _open(request):
+    return urllib.request.build_opener(NoRedirect()).open(request, timeout=30)
 
 
 class TransferFailure(OSError):
@@ -91,7 +102,23 @@ def installation_configuration():
     return rows, {str(row['repository_id']): row['repository'] for row in rows}
 
 
-def _response(rid, evidence, allowance):
+def rate_headers(headers):
+    """Keep only bounded numeric quota data, never arbitrary upstream headers."""
+    headers = headers or {}
+    result = {}
+    for name in ('limit', 'remaining', 'used', 'reset'):
+        value = headers.get('X-RateLimit-'+name.title(), '')
+        if isinstance(value, str) and re.fullmatch(r'[0-9]{1,20}', value):
+            result[name] = int(value)
+    if headers.get('X-RateLimit-Resource') == 'core':
+        result['resource'] = 'core'
+    value = headers.get('Retry-After', '')
+    if isinstance(value, str) and re.fullmatch(r'[0-9]{1,10}', value):
+        result['retry_after_seconds'] = int(value)
+    return result
+
+
+def _response(rid, evidence, allowance, *, rate=None):
     """Bound response bytes at the transport seam; return inert text and receipt."""
     if evidence:
         path = Path(evidence)/(rid+'-releases.json')
@@ -106,7 +133,9 @@ def _response(rid, evidence, allowance):
     if token:
         headers['Authorization'] = 'Bearer '+token
     request = urllib.request.Request(url, headers=headers)
-    with urllib.request.urlopen(request, timeout=30) as response:
+    with _open(request) as response:
+        if rate is not None:
+            rate.update(rate_headers(response.headers))
         if response.status != 200 or response.url != url:
             raise ValueError('release response identity')
         try:
@@ -119,7 +148,7 @@ def _response(rid, evidence, allowance):
     return body, utc()
 
 
-def collect(revision, previous, evidence=None, *, batch_size=None):
+def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None):
     """Refresh all (strict) or a bounded oldest-attempt-first batch.
 
     Strict mode retains the existing all-or-nothing command. Batch mode reports
@@ -141,6 +170,13 @@ def collect(revision, previous, evidence=None, *, batch_size=None):
     if batch_size is not None:
         selected.sort(key=lambda rid: (previous.get(rid, {}).get('collection', {}).get('attempted_at', ''), int(rid)))
         selected = selected[:batch_size]
+    metrics = metrics if metrics is not None else {}
+    metrics.clear()
+    metrics.update(requests=0, response_bytes=0, selected_sources=len(selected),
+                   stop_reason='request_limit' if len(selected)<len(sources) else 'complete',
+                   request_cap=REQUEST_CAP, response_byte_cap=TOTAL_CAP,
+                   acquisition_cap_seconds=ACQUISITION_SECONDS, primary_reserve=RATE_RESERVE)
+    latest_rate = {}
     schema = schema_url(revision)
     repositories = dict(previous) if batch_size is not None else {}
     used = 0
@@ -148,7 +184,14 @@ def collect(revision, previous, evidence=None, *, batch_size=None):
     started = time.monotonic()
     for rid in selected:
         name = sources[rid]
+        if (not evidence and latest_rate.get('remaining', RATE_RESERVE+1) <= RATE_RESERVE
+                and latest_rate.get('reset', float('inf')) > time.time()):
+            metrics['stop_reason'] = 'primary_rate_reserve'
+            if batch_size is None:
+                raise ValueError('primary rate reserve')
+            break
         if time.monotonic()-started > ACQUISITION_SECONDS or used >= TOTAL_CAP:
+            metrics['stop_reason'] = 'byte_limit' if used >= TOTAL_CAP else 'time_limit'
             if batch_size is not None:
                 break
             raise ValueError('collection elapsed budget')
@@ -157,9 +200,12 @@ def collect(revision, previous, evidence=None, *, batch_size=None):
             repository_id=int(rid), repository=name))
         stop = False
         reason = 'transport'
+        rate = {}
         try:
             allowance = min(RESPONSE_CAP, TOTAL_CAP-used)
-            body, received = _response(rid, evidence, allowance)
+            if not evidence:
+                metrics['requests'] += 1
+            body, received = _response(rid, evidence, allowance, rate=rate)
             used += len(body)
             if evidence:
                 attempted = received
@@ -184,6 +230,7 @@ def collect(revision, previous, evidence=None, *, batch_size=None):
             if isinstance(error, urllib.error.HTTPError):
                 stop = error.code in (401, 403, 429)
                 reason = 'transport'
+                rate.update(rate_headers(error.headers))
                 error.close()
             if isinstance(error, TransferFailure):
                 used += error.budget_bytes
@@ -195,12 +242,16 @@ def collect(revision, previous, evidence=None, *, batch_size=None):
             failure = dict(repository_id=int(rid), repository=name, status='failed', reason=reason)
             if isinstance(error, urllib.error.HTTPError):
                 failure['http_status'] = error.code
+            if rate:
+                failure['rate'] = rate
             if isinstance(error, TransferFailure):
                 failure['response_budget_charge'] = error.budget_bytes
             report.append(failure)
             status = ' HTTP '+str(error.code) if isinstance(error, urllib.error.HTTPError) else ''
             print(name+': failed ('+reason+status+')', flush=True)
+            latest_rate = rate
             if stop:
+                metrics['stop_reason'] = 'http_'+str(error.code)
                 break
             continue
         result['schema'] = schema
@@ -208,7 +259,28 @@ def collect(revision, previous, evidence=None, *, batch_size=None):
         repositories[rid] = result
         report.append(dict(repository_id=int(rid), repository=name, status='ok', observed_at=received,
                            response_sha256=hashlib.sha256(body).hexdigest()))
+        if rate:
+            report[-1]['rate'] = rate
+        latest_rate = rate
         print(name+': '+str(len(records))+' releases', flush=True)
+    if used > TOTAL_CAP:
+        metrics['stop_reason'] = 'byte_limit'
+    metrics.update(response_bytes=used, acquisition_seconds=time.monotonic()-started,
+                   attempted_sources=len(report),
+                   successful_sources=sum(row['status']=='ok' for row in report),
+                   unattempted_sources=len(sources)-len(report))
+    rates = [row['rate'] for row in report if row.get('rate')]
+    if rates:
+        metrics.update(rate_first=rates[0], rate_last=rates[-1])
+    successes = [obj['last_success']['completed_at'] for obj in repositories.values()
+                 if 'last_success' in obj]
+    now = time.time()
+    ages = [now-datetime.fromisoformat(value.replace('Z', '+00:00')).timestamp()
+            for value in successes]
+    metrics.update(oldest_source_success=min(successes) if successes else None,
+                   sources_without_success=len(sources)-len(successes),
+                   source_success_age_counts={str(hours)+'h':sum(age >= hours*3600 for age in ages)
+                                              for hours in (24, 36, 48)})
     apps = {row['app']:row['repository_id'] for row in rows
             if str(row['repository_id']) in repositories and
             (batch_size is None or 'last_success' in repositories[str(row['repository_id'])])}
@@ -222,22 +294,30 @@ def main():
     parser.add_argument('--parent', required=True, help='Existing release-catalog commit')
     parser.add_argument('--evidence', type=Path, help='Saved live responses; no requests')
     parser.add_argument('--report', required=True, type=Path)
-    parser.add_argument('--batch-size', type=int, help='Oldest-attempt-first subset, at most 52 requests')
+    parser.add_argument('--batch-size', type=int, help=f'Oldest-attempt-first subset, at most {REQUEST_CAP} requests')
     args = parser.parse_args()
     revision = subprocess.check_output(['git','-C',str(ROOT),'rev-parse','HEAD'],text=True).strip()
+    started = time.monotonic()
     previous = load_local(args.repo,args.parent,max_file_bytes=FILE_CAP)[1]
-    tree, report = collect(revision, previous, args.evidence, batch_size=args.batch_size)
-    pin = publish_tree(args.repo, tree, args.parent)
+    metrics = {}
+    tree, report = collect(revision, previous, args.evidence, batch_size=args.batch_size, metrics=metrics)
+    pin = publish_tree(args.repo, tree, args.parent, metrics=metrics)
     rows, sources = configuration()
     apps = yaml.safe_load(tree['apps.yaml'])['apps']
     pending = sorted({row['app'] for row in rows}-set(apps))
     args.report.write_text(json.dumps(dict(pin=pin,parent=args.parent,source=revision,
         batch_size=args.batch_size,enrolled_apps=len(rows),enrolled_sources=len(sources),
-        published_apps=len(apps),pending_apps=pending,sources=report),indent=2)+'\n')
+        published_apps=len(apps),pending_apps=pending,sources=report,
+        metrics=dict(metrics, command_seconds=time.monotonic()-started)),indent=2)+'\n')
     failures = sum(row['status']=='failed' for row in report)
     print(f'Catalog apps: {len(apps)} / {len(rows)} enrolled; {len(report)} sources attempted; '
           f'{failures} failed; {len(pending)} apps pending', flush=True)
     print('Catalog commit: '+pin)
+    print('Catalog metrics: '+json.dumps(dict(metrics, command_seconds=time.monotonic()-started),sort_keys=True))
+    if metrics['source_success_age_counts']['24h'] or metrics['sources_without_success']:
+        print('::warning::Catalog source freshness: '+json.dumps(dict(
+            sources_without_success=metrics['sources_without_success'],
+            age_counts=metrics['source_success_age_counts']),sort_keys=True))
 
 
 if __name__=='__main__': main()

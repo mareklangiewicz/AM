@@ -1,0 +1,87 @@
+{
+  "source_base": "723256d1aacbafa8e7bff63632cf81168544a73a",
+  "working_tree_hashes": {
+    ".github/workflows/catalog.yml": "27a2367f96c07a79050bdd2a3e1bcbb430aea04219afe28091912a4e743ae8e9",
+    "tools/catalog-collector/host_catalog.py": "635fc116f8b990a81a04a264348fae19d321502b5bead15a9f8e9970d24a7484",
+    "tools/catalog-collector/publication.py": "46a3525f60b5d5b537044ed6ad595381e3f5221735833e43930951e32f75f223",
+    "tools/catalog-collector/test_batch_collection.py": "4ab489bfb97899d41c6620ca6f050bf231fc84910a5ecbcf6079254ade411dd6",
+    "tools/catalog-collector/test_publication.py": "72dcd8cb7e216ac36b6eb1a367b028dd3a33e34bca450e4b15f39f9599f1e516"
+  },
+  "local_receipts": {
+    "enrolled-224/receipt.json": {
+      "raw_sha256": "b865c8fb97bf369233fb39d9e45686c70d9b6b274e969c80f7203b1f04b4b346",
+      "result": {
+        "pin": "122caffbee2bf6af37a79004ded18be58ee62167",
+        "parent": "26d82aa94bb5a8f70449e42500dc78a597583ab3",
+        "source": "723256d1aacbafa8e7bff63632cf81168544a73a",
+        "batch_size": 500,
+        "enrolled_apps": 228,
+        "enrolled_sources": 224,
+        "published_apps": 228,
+        "pending_apps": [],
+        "metrics": {
+          "requests": 0,
+          "response_bytes": 179239534,
+          "selected_sources": 224,
+          "stop_reason": "complete",
+          "acquisition_seconds": 14.087260885979049,
+          "attempted_sources": 224,
+          "successful_sources": 224,
+          "unattempted_sources": 0,
+          "command_seconds": 150.16104830199038
+        },
+        "response_bytes": 179239534,
+        "seconds": 150.27991555799963,
+        "peak_rss_kib": 284912,
+        "address_space_bytes": 1073741824,
+        "fixture_observation_time": "2026-11-07T10:33:32Z",
+        "note": "Offline whole enrolled-scope main command with explicit synthetic receipt times; new 256 MiB history cap and unchanged document limit. The raw helper note saying unchanged history is a legacy wording error.",
+        "history_object_bytes": 61501697,
+        "history_cap": 268435456
+      }
+    },
+    "history-check.json": {
+      "raw_sha256": "638c5dbd96d34a0fdcc8de5c2041b5b980a3a937db9c38f2f7ea3c007f498132",
+      "result": {
+        "history_cap": 268435456,
+        "snapshot_bytes": 74963368,
+        "existing_object_bytes": 66369871,
+        "second_existing_object_bytes": 66370040,
+        "first_guard_sum": 141333239,
+        "second_guard_sum": 141333408,
+        "parent": "26d82aa94bb5a8f70449e42500dc78a597583ab3",
+        "first_pin": "608fa1bb8c56141d82c05b44ff9e1f566adee34e",
+        "second_pin": "fdff060a30b4a036b565c57c34a4eff6acfc8f0e",
+        "seconds": 3.0399698910187,
+        "peak_rss_kib": 94828,
+        "synthetic_capacity_only": true,
+        "note": "Two real exact-parent publisher operations on an already validated synthetic 500-source tree with published history present. No remote publication; synthetic identities do not constitute source enrollment or preservation of the real catalog map."
+      }
+    }
+  },
+  "tests": {
+    "final-focused-tests.log": {
+      "passed": 21,
+      "sha256": "89457e6af7bd6512824634e34d7496351a60f8f722fc8f14d0e801408866eb7a"
+    },
+    "final-enrollment-tests.log": {
+      "passed": 11,
+      "sha256": "5724522dbfcf3112c4cadcae295e81ca4da406a5b161e81a76e9f1b647b3a217"
+    },
+    "final-workflow-test.log": {
+      "passed": 1,
+      "sha256": "b05f85b9ae71f0733a90bf190f7855676d18936266106610a09cca2546f6cbb0"
+    },
+    "final-batch-tests.log": {
+      "passed": 13,
+      "sha256": "82022061aa646812d15c6c4dbdf3ef4528943193e2efb74e444d6f93ffb61adf"
+    }
+  },
+  "full_regression": "Final run still in progress; prior initial run captured pre-fix header parsing. Final live receipt is separate.",
+  "actual_enrollment": {
+    "apps": 228,
+    "sources": 224
+  },
+  "proposed_enrollment_ceiling": 500,
+  "installed_host_changed": false
+}

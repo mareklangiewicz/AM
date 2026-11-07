@@ -42,7 +42,7 @@ case=OUT
 repo=case/'catalog.git'
 git(repo.parent,'init','--bare','--quiet',str(repo))
 calls=[]
-def response(rid,evidence,allowance):
+def response(rid,evidence,allowance, *, rate=None):
     row=fixtures[int(rid)-1]
     with row['path'].open('rb') as stream: body=stream.read(allowance+1)
     calls.append(dict(repository_id=int(rid),original_repository_id=row['original_repository_id'],bytes=len(body),sha256=hashlib.sha256(body).hexdigest()))

@@ -2,6 +2,12 @@
 
 ## Active expansion — catalog first, simple recipe migrations first
 
+[146 claimed](issues/146-roll-out-hourly-metadata-refresh.md) implements the
+500/hour metadata profile, safe quota/reserve and freshness/history diagnostics.
+Actual enrollment stays 224; ceiling is measured at 500, local history at 256 MiB.
+[Rollout report](research/hourly-refresh-rollout.md) records offline checks and
+will record the source push and exact-pin workflow receipt.
+
 [144 resolved](issues/144-publish-224-source-cohort.md): authorized source
 `fde55f598` is pushed; five successful sequential runs publish **228 apps / 224
 sources**, final pin `26d82aa94bb5a8f70449e42500dc78a597583ab3`. All 224 sources
