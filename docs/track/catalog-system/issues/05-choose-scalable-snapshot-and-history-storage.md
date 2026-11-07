@@ -12,7 +12,8 @@ Which simple storage/read/write approach supports bounded reruns and coverage be
 500 sources while bounding full-snapshot work, individual documents, readers,
 retained releases and remote history growth?
 
-Compare the smallest credible alternatives using measured baseline constraints.
+Compare simple Git-based read/write approaches using measured baseline constraints.
+Git is a firm project constraint; alternative storage backends are out of scope.
 Distinguish current tree size, local Git guard, transferred Git history and durable
 remote retention. Removing a current-tree file does not purge Git history.
 Honor retained-release semantics; any pruning, reconciliation, depth or freshness
@@ -26,6 +27,21 @@ Preserve shell consumers or define an explicit compatible migration path.
 No cap increase or storage implementation is authorized by resolving this question.
 
 ## Comments
+
+### Accepted Git foundation — November 7, 2026
+
+Marek accepted keeping Git as the public snapshot store, reusing unchanged source
+files and reading at exact commit pins. He explicitly strengthened the proposal:
+“we will not consider any another backend.” Leveraging Git for transparency,
+simplicity and trust is a main idea of the project, not a temporary choice pending
+capacity measurements.
+
+Capacity experiments must guide improvements and operating bounds within the
+Git-based design; they are not a gate for switching to another storage backend.
+Keep the selected separate catalog/status Git channels and exact-parent publication
+contract. History-growth measurements still matter, with existing history left
+intact as agreed. Processing strategy, bounds and the capacity experiment remain
+open; no implementation or backend provisioning is authorized.
 
 ### Accepted pruning timing and current retention policy — November 7, 2026
 

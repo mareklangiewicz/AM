@@ -12,6 +12,12 @@ contract, storage, compatibility or acceptance decisions.
 
 ## Notes
 
+Git is a firm project foundation for transparency, simplicity and trust. The
+[accepted Git foundation](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-git-foundation--november-7-2026)
+constrains storage/capacity planning to Git-based designs; another backend is not
+an option to revisit after measurements. The storage ticket remains claimed
+while processing, bounds and experiment decisions are settled.
+
 Latest steering, November 7, 2026: prioritize simplicity of implementation.
 Marek rejected the separate checkpoint-store proposal, permits relaxing recovery
 guarantees, and requests simple questions before further design decisions.

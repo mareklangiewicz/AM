@@ -54,6 +54,12 @@ The [accepted retention policy](issues/05-choose-scalable-snapshot-and-history-s
 owns exact ordering and boundary rules. Existing Git history stays intact for now.
 These are planning decisions; the broader storage ticket remains unresolved.
 
+Git is a firm foundation for public snapshots, chosen for transparency, simplicity
+and trust. Reuse unchanged source files and read at exact commit pins. Capacity
+work must improve the Git-based design and establish operating bounds; alternative
+storage backends are outside this effort. See the
+[accepted Git foundation](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-git-foundation--november-7-2026).
+
 ## Accepted requirements
 
 ### Browse and learn through real apps
