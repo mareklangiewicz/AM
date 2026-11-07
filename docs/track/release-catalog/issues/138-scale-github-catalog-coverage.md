@@ -125,3 +125,29 @@ solely other-architecture recipes. They need explicit attribution work; an
 unmatched template is not proof of a non-GitHub source or custom behavior.
 Whole-snapshot materialization, reader/history bounds and the three-hour schedule
 still constrain broad coverage. No all-GitHub completion claim or new publication.
+
+## 224-source publication and larger refresh assessment
+
+[144 resolved](144-publish-224-source-cohort.md): source `fde55f598` is pushed;
+five successful runs publish all 228 apps / 224 sources, final exact pin
+`26d82aa94bb5a8f70449e42500dc78a597583ab3`. Reader, source identity, retained
+release and effective-observation preservation checks pass, zero source failures.
+[Publication receipt](../research/next-224-publication.md). Installed host unchanged.
+
+[145 resolved](145-assess-larger-metadata-refresh-batches.md) revisits the inherited
+52 ceiling using official quotas and actual one-GET/source use. The proposed
+500/hour profile gives a 14-hour nominal rotation for the existing 6,504-name
+unverified queue (42 hours at three-hour cadence). Full current 224-source offline
+main and synthetic 500-source retained publications pass with larger byte/time
+budgets. Six focused batch regressions pass. The profile remains proposed; the
+deployed workflow remains 52 / three hours.
+
+New quantified storage boundary: a fresh local transfer of published history
+(55,312,540 object bytes) plus the 500 fixture (74,963,368 YAML bytes) exceeds the
+128,000,000-byte history guard; direct publisher refusal preserves the ref.
+The 1,024-file reader also allows only 1,023 source documents. Next broad-coverage
+work must address snapshot materialization/history and measured enrollment,
+not merely raise the request constant. GitHub's generated-file repository-health
+guidance belongs in that design discussion; it is not an accepted storage change.
+Preserve selected-record 48-hour freshness, page-scope observations and source
+attribution independently of recipe migration. [Assessment and validation](../research/refresh-batch-sizing.md).

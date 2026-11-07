@@ -1,13 +1,13 @@
 # Publish the prepared 228-app / 224-source catalog cohort
 
 Type: task
-Status: open
-Triage: ready-for-human
+Status: resolved
+Triage: ready-for-agent
 Blocked by: 142, 143
 
 Prepared source adds 97 catalog-only app identities, reaching 228 apps / 224
 repositories, plus snapshot-processing and explicit rename-verification changes.
-Source push and catalog publication await Marek's call under home guidance.
+Source push and catalog publication are complete under Marek's authorization below.
 
 ## Proposed operation
 
@@ -36,5 +36,24 @@ and the installed 21-app host remain unchanged.
 See the [cohort report](../research/next-224-catalog-expansion.md), its linked
 metadata/preflight/whole-command/parser receipts and
 [snapshot-processing report](../research/snapshot-processing.md). Actual GitHub
-Actions operation at this scope, natural scheduled operation and browser DOM/CORS/
-mobile acceptance remain unobserved until separately performed.
+Actions operation at this scope is now recorded in the Answer; natural scheduled
+operation and browser DOM/CORS/mobile acceptance remain unobserved.
+
+## Comments
+
+Marek authorized “Yes, push and publish” on November 7 local time. Source
+`fde55f598` is pushed; five sequential exact-parent batches and readback are in
+progress. The separate batch-size/quota assessment is tracked in 145.
+
+## Answer
+
+All five authorized runs succeed, with 260 successful attempts / 224 distinct
+sources and zero failures. Final catalog
+`26d82aa94bb5a8f70449e42500dc78a597583ab3` contains 228 apps / 224 sources.
+Each exact pin and parent passes bounded reader/canonical/reference validation;
+prior identities, retained releases and effective observations are preserved.
+Final YAML is 33,152,148 bytes, largest document 1,159,110 bytes.
+[Publication report and portable receipt](../research/next-224-publication.md)
+record source/run/pin/timing/log and preservation evidence. Operating policy is
+updated; installed host, recipes, apps, website and yadm pointers are unchanged.
+The 500/hour proposal is separate; deployed cadence stays 52 / three hours.

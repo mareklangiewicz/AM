@@ -1,0 +1,1326 @@
+{
+  "scope": "Offline synthetic batch-sizing; no new source identity or live 500-source CI qualification",
+  "source_base": "fde55f59883353e5aa27c73d674a57e1e20613c2",
+  "source_working_tree_hashes": {
+    "tools/catalog-collector/host_catalog.py": "935bafbaabd7ce4cd9d4c316152711a8007757f07c0cac9554b34ae56fc852e5",
+    "tools/catalog-collector/yaml_publication.py": "3d487e8b7140c48e9f41bfc061ed3125fbb2117b749eae9ca862f3449a2f3219",
+    "tools/catalog-collector/publication.py": "9e254dad184807da741c8f6fa355b47732b7bd81eafcfd5f5ed95adde7d5e462"
+  },
+  "initial_driver_sha256": "bb03db6c6d7e64c97fdea192e1f3e2dcf95ba3228bcbee009358ab2b57a07e9d",
+  "driver": "refresh-batch-replay.py",
+  "fixture_mapping": "Sort real numeric repository IDs ascending; cycle to requested count, synthetic IDs 1..count, fixture/source-0..count-1 names.",
+  "corpus": [
+    {
+      "repository_id": 2405281,
+      "bytes": 63382,
+      "sha256": "3e9cc278643657e6fd139fed294a86341a216df99024f5f172fc41038206db75"
+    },
+    {
+      "repository_id": 13807606,
+      "bytes": 2412692,
+      "sha256": "7e2b5225736992c817f01136c54f9b0c9ac873a5290951809d2ff5317d2c2f4a"
+    },
+    {
+      "repository_id": 16408992,
+      "bytes": 1270706,
+      "sha256": "17906f60007341a2fc140991f92daaa3f5e64f09c5267ca6cd6ba56c92010573"
+    },
+    {
+      "repository_id": 17803236,
+      "bytes": 6071759,
+      "sha256": "349a9009490d2b410b91357036aea11b427b9d261829316e530db92a8b6694e4"
+    },
+    {
+      "repository_id": 57224308,
+      "bytes": 1779939,
+      "sha256": "ee02ae48adafda5034fde63bc382d367139eb2f0ac3398e781e8e429147bf4ef"
+    },
+    {
+      "repository_id": 67877325,
+      "bytes": 199829,
+      "sha256": "f9ff099f66035b4c775da6e768355a929e01280c7b9157a91e8cb664270ada31"
+    },
+    {
+      "repository_id": 71056775,
+      "bytes": 3617249,
+      "sha256": "b0e5554484411143218608a20601abe45df4c14e94ba2b8c770149244fcd1a47"
+    },
+    {
+      "repository_id": 71763543,
+      "bytes": 110861,
+      "sha256": "73c78343e8d281c63bef33a2a8a6e7b052cdc33c8fa09994288493a52d00de17"
+    },
+    {
+      "repository_id": 74284714,
+      "bytes": 103515,
+      "sha256": "9e4ced947b6beff462e2ce4440916cff6f1f002d7920280622271a2751899b2b"
+    },
+    {
+      "repository_id": 84325774,
+      "bytes": 277756,
+      "sha256": "eb07b82ab7e1c58ea2fd4b4d0bf821c70afc78f8e3d13c4a303bccb9126dbe15"
+    },
+    {
+      "repository_id": 86188653,
+      "bytes": 2814322,
+      "sha256": "f70458cc597869a3fa797ffae1b4d0310622a23f49d593c54505b0755911b9a9"
+    },
+    {
+      "repository_id": 105956507,
+      "bytes": 2707559,
+      "sha256": "52fc085a5fe0b73d6a9800c7ed4d9894336daac77fc6cc9fe3b7e115d02c614a"
+    },
+    {
+      "repository_id": 115051437,
+      "bytes": 119131,
+      "sha256": "38a3bc7811d59349adf4a3949cee27465784329e592bc7bc21107dbb036f8837"
+    },
+    {
+      "repository_id": 127176730,
+      "bytes": 992479,
+      "sha256": "51eacb48526b09e3e9daab210b358111b48d42f7a3f33a71568a5be7fd33c530"
+    },
+    {
+      "repository_id": 134017286,
+      "bytes": 2599482,
+      "sha256": "c7776862df87fe57cdc04bff7be22b4ccc3f68ae2e8e5940784559d29c046ae3"
+    },
+    {
+      "repository_id": 134057106,
+      "bytes": 248787,
+      "sha256": "be21cc74abfff1c445bf504d0936a485a443bcc7f42c1a648affd4580f5f818f"
+    },
+    {
+      "repository_id": 149393019,
+      "bytes": 789071,
+      "sha256": "ad49ab2d0b7b5d1d04c8889eca501c8ec13df01d36b6e3acde4992360f9c2a69"
+    },
+    {
+      "repository_id": 161129978,
+      "bytes": 259981,
+      "sha256": "6331f009418af7c79cac15480bf34dc9cd231bff43dcda214f38fd77ca4f0b24"
+    },
+    {
+      "repository_id": 164125101,
+      "bytes": 371090,
+      "sha256": "2b3a846e3366c86dd45b4fde23a200e9519f6d0ba5bb1674c5ac89b3f3eb7071"
+    },
+    {
+      "repository_id": 226408450,
+      "bytes": 448078,
+      "sha256": "6d886f27321df1e98dec08c52aa6310908c25bc6a4be360f94868241ee5ab684"
+    },
+    {
+      "repository_id": 242402791,
+      "bytes": 539921,
+      "sha256": "32b3dd77d76351127dc5d7b3e35cdc6f4b2519d50695601ae7aeab93e02387f1"
+    },
+    {
+      "repository_id": 262342594,
+      "bytes": 1289518,
+      "sha256": "8b300af4a307ec1d2cd02261473f1d032ef41d470ff5e697e9f04a31ecad5818"
+    },
+    {
+      "repository_id": 265597110,
+      "bytes": 20522,
+      "sha256": "74c4e3523b92381fe74d517bb2cf6b46e5ede53a19b409137fbf44776f785f16"
+    },
+    {
+      "repository_id": 266231149,
+      "bytes": 2141922,
+      "sha256": "c45f84ba873e40cc0f6c50cc9b18c9ea0f7d2186ee8e46b67283bdf7598cc08b"
+    },
+    {
+      "repository_id": 271903277,
+      "bytes": 1819914,
+      "sha256": "caabdb1b3485e52eb7e4013e48fe5b0728332b5fe27d5726e7a24f8a6f57860d"
+    },
+    {
+      "repository_id": 292014229,
+      "bytes": 1200148,
+      "sha256": "e5a90af7ffe10d61f7384cd8a483c7476757d6abeaf3a0f210aa9dafde0ad4d2"
+    },
+    {
+      "repository_id": 294730173,
+      "bytes": 502737,
+      "sha256": "c2dbd01179046687bf8974d33834ec3819253da28563489e0976012346528296"
+    },
+    {
+      "repository_id": 307260205,
+      "bytes": 3676450,
+      "sha256": "b8214abc692a52f075ed64d18fff4a3c4b95c617be2ec9016a1e20203cbd68ab"
+    },
+    {
+      "repository_id": 365005377,
+      "bytes": 1040908,
+      "sha256": "6d912c09044553d5b5126ba75ddf60ec5a9794d96bde136f457a93b3946fe235"
+    },
+    {
+      "repository_id": 438803890,
+      "bytes": 1690093,
+      "sha256": "ba2a2bb79b327b1c7b8922d4c1a04260ebb6cbb160e9f6f40ad17f7b7d81ada7"
+    },
+    {
+      "repository_id": 440575288,
+      "bytes": 1950345,
+      "sha256": "f9bf8b852e7782c7fed9cd47aa03301c8e04322babc5bb531ff0f7d43dc576bb"
+    },
+    {
+      "repository_id": 446744280,
+      "bytes": 49229,
+      "sha256": "9100d75310b8800a27f302065b8a47e32a30c5f02d6931c67ade3809a7e410b0"
+    },
+    {
+      "repository_id": 461658430,
+      "bytes": 250769,
+      "sha256": "b64eae5e7ec6e2c056ce285bc703243858dee8aaf107da2bd508b22a7ddad22a"
+    },
+    {
+      "repository_id": 490391156,
+      "bytes": 463644,
+      "sha256": "25fba9895789fade5fbb07c6c2ad7768f36ad5611f4da7dea8685f14e34846aa"
+    },
+    {
+      "repository_id": 507449738,
+      "bytes": 118275,
+      "sha256": "0b3778a018db4fa56f5a4a31edcfeb417690e26dd95ce91d2e16d570be5f99b1"
+    },
+    {
+      "repository_id": 658450330,
+      "bytes": 28636,
+      "sha256": "da654a2547b98827af6bc5da0c7f6bd7e559df54b117f959f6e398f493cb5306"
+    },
+    {
+      "repository_id": 658980510,
+      "bytes": 321456,
+      "sha256": "0f320240f463221bb5c13e1523a086913275eb7cca6c3eaf2b65db4d6bbb93ad"
+    },
+    {
+      "repository_id": 673781967,
+      "bytes": 148169,
+      "sha256": "cf7aef202dbacc888062211d1d0951d3cebb4d8309906ebf480704000a002612"
+    },
+    {
+      "repository_id": 679532632,
+      "bytes": 273846,
+      "sha256": "406cceffbf772e8e4d3f30692a40e08260f11afcda11899f5f6cc4bef56ffedf"
+    },
+    {
+      "repository_id": 739667828,
+      "bytes": 583040,
+      "sha256": "3e5296f0de94bf9b567e09fb204f7b10bb0a4174de1b3de4b4054943d1624396"
+    },
+    {
+      "repository_id": 767266298,
+      "bytes": 151090,
+      "sha256": "21acd3624b5cd5efbdffc6d742f313f5e4c797993d207a6af9cb1d13817df347"
+    },
+    {
+      "repository_id": 774465294,
+      "bytes": 324740,
+      "sha256": "0a0a86acd9f8352044d5db9d0e303a59318d49f7821b73392a730d151b36eb1a"
+    },
+    {
+      "repository_id": 778294597,
+      "bytes": 141841,
+      "sha256": "6e1f13b70c772fa5a87eabef95bff62d2b6f7a6f651408750ae106a406c81599"
+    },
+    {
+      "repository_id": 809764991,
+      "bytes": 435416,
+      "sha256": "c02b6bf6b5bce28cab75e31f17713d82d92b5ea8f01b0c26e6c75ec3dcd48db2"
+    },
+    {
+      "repository_id": 836460535,
+      "bytes": 585856,
+      "sha256": "e59b997532ec80ab2514bab57be9bbfb222e717fb5d13609faac1d2e8bc6ff27"
+    },
+    {
+      "repository_id": 855364912,
+      "bytes": 48078,
+      "sha256": "052efa0cf988f6900005ef45577805128d38f89b817f0a076288259a11e15f73"
+    },
+    {
+      "repository_id": 872860168,
+      "bytes": 1467099,
+      "sha256": "67972b1238f29c728d1b08e8884d27a395e6057808812a25970c8907e3200d3b"
+    },
+    {
+      "repository_id": 874718872,
+      "bytes": 585494,
+      "sha256": "3830cd969b784e2f0337b16d5130e47c77d4ff96da64fe0ff75bd0238a5b7008"
+    },
+    {
+      "repository_id": 916015602,
+      "bytes": 141595,
+      "sha256": "228d610e12d281da7382a2f88ce62d7e359f0fc09ae0a2f0f9ce4cebe2008d84"
+    },
+    {
+      "repository_id": 920598633,
+      "bytes": 3698725,
+      "sha256": "46bedbbf071602f7c1a8ab34abca59e77100967321d01ba0a98e07166144e59d"
+    },
+    {
+      "repository_id": 944606603,
+      "bytes": 17964,
+      "sha256": "6f5f0cc7533e7180dd6c4767ae63cc14833707be01547f5fbcb700876769f7ac"
+    },
+    {
+      "repository_id": 945056392,
+      "bytes": 83197,
+      "sha256": "9c328c853df58ae23e27c7985cae6d362e1a3c709f253b9932280663c7e18636"
+    },
+    {
+      "repository_id": 965213930,
+      "bytes": 179809,
+      "sha256": "8323164f4ab100825e6b4905030a33d0eec92fd7c0fb7666488b65486060ba17"
+    },
+    {
+      "repository_id": 986508161,
+      "bytes": 1066939,
+      "sha256": "2a701298815f9b17647f82ffaefd8b4fc6a08d53c666b9ee84e4caf7f22e9b0b"
+    },
+    {
+      "repository_id": 993148803,
+      "bytes": 76652,
+      "sha256": "b7410059507d6afacab5e5d63a0894b1293aa8b953dfff9fddb83f58ee937058"
+    },
+    {
+      "repository_id": 995129837,
+      "bytes": 919114,
+      "sha256": "02f5befc09688b64c3e4252fdc178f0eeacb5a4e0d5c70966d56e6c8c0e25f55"
+    },
+    {
+      "repository_id": 1013014167,
+      "bytes": 35943,
+      "sha256": "6132a9f02698a6a2fe5d9ca81de7f4e7919fed02631d910a7c0a87778257ee49"
+    },
+    {
+      "repository_id": 1013598819,
+      "bytes": 680435,
+      "sha256": "fd6d2a21517169b4ec678451fde34a1c567296bf946a4ecddfabbf582dd26a6c"
+    },
+    {
+      "repository_id": 1016549971,
+      "bytes": 113680,
+      "sha256": "5b3f3df75bca79aecc8a66761893cbb403c74c9dd5826dba8545a7c1c7c556cf"
+    },
+    {
+      "repository_id": 1027678184,
+      "bytes": 317892,
+      "sha256": "65db3ee00d567e53f33ad5079eb56e1b241b2fddebee5af2650edd3965e7d896"
+    },
+    {
+      "repository_id": 1042273325,
+      "bytes": 826437,
+      "sha256": "bf10e2ca344a17c52c60047d655ee1901567c29598c7254e75606464443a63d1"
+    },
+    {
+      "repository_id": 1042480540,
+      "bytes": 1914402,
+      "sha256": "b8edcd2775942656c386a0f0a9f7127c8759912b11b1335c55caddc2f9ed5f0e"
+    },
+    {
+      "repository_id": 1046259925,
+      "bytes": 2029915,
+      "sha256": "0789d63ec4048bc16b20bcf20c643d29089d3882436c7e56246921afa315e6e9"
+    },
+    {
+      "repository_id": 1062422467,
+      "bytes": 6367,
+      "sha256": "b03c674838ac8129d9371d774bde4e444c714f7660343d8faa2e1dfe59f1c661"
+    },
+    {
+      "repository_id": 1068030476,
+      "bytes": 150663,
+      "sha256": "0e1197705f3d2f2496abf1189aa63d3fe362dc2d4bd68b0589c12d4ff8b1c727"
+    },
+    {
+      "repository_id": 1073900202,
+      "bytes": 97057,
+      "sha256": "33bcd3136d18a4899e7be5b08124da6f93b2bbcb3de1d3b5f6b0dbf59711ae9a"
+    },
+    {
+      "repository_id": 1078137951,
+      "bytes": 956718,
+      "sha256": "e451d6e81de4a6e5d4a966798f8fff302aab3c62b0a8c562604501364a18deed"
+    },
+    {
+      "repository_id": 1078931312,
+      "bytes": 321523,
+      "sha256": "0294ef833f9bce101c671d146c9d7137c9bc9ae04a54643f5b66f37ccb6c1514"
+    },
+    {
+      "repository_id": 1080244324,
+      "bytes": 196093,
+      "sha256": "6b712a9540cc522834c46fea4e110f60eab8a1508469afe8c0026974113810de"
+    },
+    {
+      "repository_id": 1085069421,
+      "bytes": 1125688,
+      "sha256": "118eae3da5ac9131439c343adf4d49714de85956e3f1ca0750e6d5c834c8a2d4"
+    },
+    {
+      "repository_id": 1089623281,
+      "bytes": 103784,
+      "sha256": "d8a2ab8360f9000189ee63ea0627b54506bd82ea815f55a05f36db9197c943fd"
+    },
+    {
+      "repository_id": 1093507301,
+      "bytes": 218231,
+      "sha256": "cdcf28fb9f94b6bb82ddf0f2a4a6cd7dd3cb0eada7534e8083ffad2095261d3a"
+    },
+    {
+      "repository_id": 1100653513,
+      "bytes": 475660,
+      "sha256": "df2f5874d4cf3d9ad694b08ad3dbdebc33cd6387d916d693f73eed57763be00a"
+    },
+    {
+      "repository_id": 1101947894,
+      "bytes": 254349,
+      "sha256": "ed5884bd4cfa70a106a53c1fb89600d8b19a9a9ff80f89158b869754ba5587b6"
+    },
+    {
+      "repository_id": 1109049119,
+      "bytes": 3421391,
+      "sha256": "1340135e1996798c4e4038bf2d64c0144c5337404ae759c32ea0a47b3c260187"
+    },
+    {
+      "repository_id": 1119603514,
+      "bytes": 61240,
+      "sha256": "cf334fa6d35a0c7ae05fc04f46f551db8922b53a98527448011171e303917dad"
+    },
+    {
+      "repository_id": 1119622081,
+      "bytes": 3642154,
+      "sha256": "7ba7920bc68dddceb016cd9076bbe3450c7f1cc234fc01cbae6505d33f14907d"
+    },
+    {
+      "repository_id": 1120457749,
+      "bytes": 85977,
+      "sha256": "b47ff0a5bc5863d82d171078972df2df327dfcf287e4c6d28c51e6f76d3ea2ce"
+    },
+    {
+      "repository_id": 1122576268,
+      "bytes": 26652,
+      "sha256": "e69f15df13ac92c9c14a7c62d37d2a94731a92105cd384ff134580629275d2b9"
+    },
+    {
+      "repository_id": 1124173152,
+      "bytes": 79116,
+      "sha256": "80288371ab3bdfc0640728241291bbd568e0b9bf43f0b7fb518b3ff058eec143"
+    },
+    {
+      "repository_id": 1124235503,
+      "bytes": 941405,
+      "sha256": "d2649d498bddcae28520d225acdcd5aeb91c851cb1ca831a563cea5473041c5a"
+    },
+    {
+      "repository_id": 1127015128,
+      "bytes": 2807700,
+      "sha256": "b3df155a1cab821f710fa9c8ea64dbd275c5b76bbb7e621e3f9842b0acc7ab4c"
+    },
+    {
+      "repository_id": 1129505172,
+      "bytes": 506325,
+      "sha256": "707393e5d90f6c83b0372d0bd57d6c22b7ee140e56982b2b1aa14bb922e61d48"
+    },
+    {
+      "repository_id": 1131395604,
+      "bytes": 134370,
+      "sha256": "14f6f6f43333fae2d0925e649b4cfa2771be1e269e7c0a8ee6eb72eeab41322d"
+    },
+    {
+      "repository_id": 1134205792,
+      "bytes": 2150152,
+      "sha256": "c992d592fd15683098ab62c518f68dae76d93782756d7c5b8f25aacb9711c531"
+    },
+    {
+      "repository_id": 1136689177,
+      "bytes": 4091814,
+      "sha256": "6bba47e65f436130aea60a57fc20f6d588d6502ad830b5a5a1cd15ce093d5c2b"
+    },
+    {
+      "repository_id": 1138924416,
+      "bytes": 333883,
+      "sha256": "9935ed7edbe5586a64026f0fd52dbc2f48af6749a0a11b022b855e29f1e44483"
+    },
+    {
+      "repository_id": 1140627160,
+      "bytes": 243143,
+      "sha256": "2220d72c3b1af50b714675a83582b61d2e3f0c68aebdf41f55a23767ede19847"
+    },
+    {
+      "repository_id": 1141028175,
+      "bytes": 237570,
+      "sha256": "bf1d81d4d4b9e2d78a440e66a7e43357684ebad530d8c92c1bc9a9fd0c4ae150"
+    },
+    {
+      "repository_id": 1142444249,
+      "bytes": 27780,
+      "sha256": "3da4ef02d1b426097463e8d2347b349af2560f0491d6f040659ee6bd5d9413b6"
+    },
+    {
+      "repository_id": 1145002220,
+      "bytes": 80933,
+      "sha256": "de04e5242231c3461e60fec6f785af4b49fa1e31a45d45dfca8b972100df7658"
+    },
+    {
+      "repository_id": 1145035037,
+      "bytes": 27150,
+      "sha256": "ed7524432f8af9d94a695f87c2c553a484d687d0ec518e080522343460612a2c"
+    },
+    {
+      "repository_id": 1145199155,
+      "bytes": 82548,
+      "sha256": "10db30680b8966cd8781ffbe8b2dfe8044f700d8d6827591b536325a58163c45"
+    },
+    {
+      "repository_id": 1146395088,
+      "bytes": 444252,
+      "sha256": "ca4b198e844c16d5aef55b2ef799bf0d126d58f71539313b4f0653b10fdada27"
+    },
+    {
+      "repository_id": 1146506589,
+      "bytes": 1179090,
+      "sha256": "3346d7c34fd52b9ca847013fdc8d45d3e216e486d852f39c894a3be7f3fe42e0"
+    },
+    {
+      "repository_id": 1146547653,
+      "bytes": 315946,
+      "sha256": "0516b52566d4725b04822366a428f5befa28ebae1396e8eb45d3fb5ece8d104d"
+    },
+    {
+      "repository_id": 1150822796,
+      "bytes": 2811459,
+      "sha256": "ad7ede417113ba44f3b236eecc01389cae2fc0f9f890b9c48f69b6d39e68618c"
+    },
+    {
+      "repository_id": 1150934954,
+      "bytes": 1089703,
+      "sha256": "5236b3e1e971bd4d0fbbaf85c217a5be7cc737806c245a91e5324dfa8c8d5f8b"
+    },
+    {
+      "repository_id": 1151993718,
+      "bytes": 2668414,
+      "sha256": "d66e2f2874746fc9dbbe4c967922752cca2c3524ceba653f0ecaba55b7b29edc"
+    },
+    {
+      "repository_id": 1152028865,
+      "bytes": 3209828,
+      "sha256": "d10e11d28eb87f8efd422b3c639482d678daa748330092a07420cc55798b93c3"
+    },
+    {
+      "repository_id": 1153091152,
+      "bytes": 523012,
+      "sha256": "7c8c9b6c0b6fbaf726b8c3b45434b6293a08e8fc09a651c1a0fc67a36c2d5f8f"
+    },
+    {
+      "repository_id": 1153610647,
+      "bytes": 798479,
+      "sha256": "f4c477bcfe2a078588c1635151eff9941266928fdce1cf9c24cb55599fb7854d"
+    },
+    {
+      "repository_id": 1155797140,
+      "bytes": 230502,
+      "sha256": "34ea977dd80bf16116ac5968240967b06d9871176707dd412a9f96086a5f6b23"
+    },
+    {
+      "repository_id": 1156994049,
+      "bytes": 3057780,
+      "sha256": "0d9aefa72e2b63f8571f0c33f2b01fe53e6446077737f275d21993a070ac4888"
+    },
+    {
+      "repository_id": 1160442164,
+      "bytes": 391356,
+      "sha256": "5faf74b81cb131b86e653bfdcaf47080faaf3c914487b8433de63417cc08e780"
+    },
+    {
+      "repository_id": 1163183284,
+      "bytes": 2668512,
+      "sha256": "2c0df397d61a68489b6b4d3da6432adc4ca9c00ebc9cb97ecfab86dbed77a67b"
+    },
+    {
+      "repository_id": 1166443294,
+      "bytes": 448965,
+      "sha256": "5aed896c0a71f3c02d45e7274606bad1be78e195cafedd3d309015038e4de287"
+    },
+    {
+      "repository_id": 1166588944,
+      "bytes": 529676,
+      "sha256": "856a24afedb96c2f2e049629afcf1776e1b4d49a92fddb4729da7c5e56f503bf"
+    },
+    {
+      "repository_id": 1168511315,
+      "bytes": 615352,
+      "sha256": "6475ccdabf57133265d63f063683f945a70cf7b3ca17e2afda5bde613afaf8cd"
+    },
+    {
+      "repository_id": 1172035222,
+      "bytes": 1972086,
+      "sha256": "6d9e038fdc509efef18144df777dd98be7ce1f2f8375254ee7b7f839ebca17d6"
+    },
+    {
+      "repository_id": 1173057845,
+      "bytes": 298326,
+      "sha256": "b5b9d5b0a3be7257badb67ffe2383633f042af7b422ad03d7a0794c0b972ad39"
+    },
+    {
+      "repository_id": 1174900926,
+      "bytes": 72120,
+      "sha256": "789f51007a2f70221350a5b547d715cc8983fe21246d6c87bb6a94cd0b95552c"
+    },
+    {
+      "repository_id": 1174926103,
+      "bytes": 2901720,
+      "sha256": "f3ce8b6177da2286cdf9ecca9c0ce7380ec50b04d0d12a3d1630d5f777b16eff"
+    },
+    {
+      "repository_id": 1177008409,
+      "bytes": 492283,
+      "sha256": "5fc3e258c7cafa373f56253c9f4340fd585e1a3812e47d0192f52d09879486fb"
+    },
+    {
+      "repository_id": 1179864103,
+      "bytes": 1549535,
+      "sha256": "e319e47b2d9821e6c909d393d198a070db6bbd42b09a49b7c72313d921c70c21"
+    },
+    {
+      "repository_id": 1180091786,
+      "bytes": 1345833,
+      "sha256": "fc175c07e424ed359640f96013310394388cb912f195e07c0529cc622b3031bb"
+    },
+    {
+      "repository_id": 1180896595,
+      "bytes": 123357,
+      "sha256": "bf5ad5bcdeb2e4ee6dabda3daa5c3f644e638711197851c7fd8656d579995bb2"
+    },
+    {
+      "repository_id": 1182510445,
+      "bytes": 30688,
+      "sha256": "1e74fedd12ea9cd816ab00acd45f729ff12d7a4f14d64cf64c040fd679b1012e"
+    },
+    {
+      "repository_id": 1182906251,
+      "bytes": 860348,
+      "sha256": "e6b06c3e3fa3fff06947323d43a03844d8146c0bfa6fd5491a00cd26c2ac014e"
+    },
+    {
+      "repository_id": 1184144235,
+      "bytes": 103503,
+      "sha256": "9e48fb94b627bcf586d836f595acec43bd6d4213938d83a64f75f960606b116b"
+    },
+    {
+      "repository_id": 1184157221,
+      "bytes": 107490,
+      "sha256": "1e8fac063811b9763686b03f53109064cd0232afae76cbd7d6f6be5896587b0a"
+    },
+    {
+      "repository_id": 1185866673,
+      "bytes": 272943,
+      "sha256": "19288a4130006ed31a97705592f4a70447d4b778c1c7f87fc4099b6e92c1bb89"
+    },
+    {
+      "repository_id": 1186679146,
+      "bytes": 87442,
+      "sha256": "d9ac11d0bd19c1cad64b39d17869ea6a4114aeba80d1305c02a9ed4f153fd4cc"
+    },
+    {
+      "repository_id": 1187624498,
+      "bytes": 1280105,
+      "sha256": "ec622614ca2a8aec6a309d8d0e62a579d7699acb20b3ad9bd7accf9f0f149fe3"
+    },
+    {
+      "repository_id": 1189315874,
+      "bytes": 68025,
+      "sha256": "d6de6828f34b3216a8217fcfb2121f73837f58cc40525ae3954c43d525083ca4"
+    },
+    {
+      "repository_id": 1190390511,
+      "bytes": 4562191,
+      "sha256": "d3f409a8087d687bc52d7e7bbc39b0ffd1362eb075e9335f902bb7a1c61c7f61"
+    },
+    {
+      "repository_id": 1190857419,
+      "bytes": 87742,
+      "sha256": "82ce3fe6db708c82de86dee53064ef3bb6ab414a317b53f068800f8fbc6bc58f"
+    },
+    {
+      "repository_id": 1194487037,
+      "bytes": 1099363,
+      "sha256": "3643ae67b1f95f412d8d268ed7e3fef804d392234d7ae68a4cd7f0253a31d0e5"
+    },
+    {
+      "repository_id": 1197532619,
+      "bytes": 128736,
+      "sha256": "4e6f35571da6c22abb3afee077e1ef7fa5e442ca3df99bdc784e7da263fcbbef"
+    },
+    {
+      "repository_id": 1200064848,
+      "bytes": 209625,
+      "sha256": "4a685b9f7bc47c1feb8246bfef94562ef54f7730d2e25b4c2483c6193f5906db"
+    },
+    {
+      "repository_id": 1200402795,
+      "bytes": 144078,
+      "sha256": "5a666c353cefd9796a6abc9afe6111db9ece3470fd9522dc5f60bce3d2ac9f5e"
+    },
+    {
+      "repository_id": 1200445909,
+      "bytes": 693655,
+      "sha256": "fdd046b16b4db4b3a00b31efa438656efbfa6e4c000b660edbfb971a63709b10"
+    },
+    {
+      "repository_id": 1200850367,
+      "bytes": 103299,
+      "sha256": "94bc620865b693a98e7e510204e8f884af2d9a97b10235aaff8a875195b4ccfd"
+    },
+    {
+      "repository_id": 1207343947,
+      "bytes": 750831,
+      "sha256": "16c3edaeb4334401e9012e9cc3c56aa173972ab87e9bc06f88ff9cf0e9f637a6"
+    },
+    {
+      "repository_id": 1207422559,
+      "bytes": 319160,
+      "sha256": "414d99b17aa9ab7a3e4827e59910ab266ae32628846c1652ff45dd45cb00a256"
+    },
+    {
+      "repository_id": 1207685312,
+      "bytes": 429447,
+      "sha256": "d5d9b5caf0c2237b1468d68f124430d53b073ebb60b637d808e11193c623f743"
+    },
+    {
+      "repository_id": 1210043887,
+      "bytes": 175960,
+      "sha256": "7a57d67f4e4154f87e168e232a10eb5510859ec5a03930390066490bd510574f"
+    },
+    {
+      "repository_id": 1211202862,
+      "bytes": 246052,
+      "sha256": "38aa2b0c5259a164d5ea794eba7db377ec247b752efe4cacee889713af8af56e"
+    },
+    {
+      "repository_id": 1212751728,
+      "bytes": 144957,
+      "sha256": "54aeaa8c93cfeb06d76f00869db77b62941deed7ed98358d800ab1c476955551"
+    },
+    {
+      "repository_id": 1213992071,
+      "bytes": 484933,
+      "sha256": "893b58c0d4532ed3aab7489e07b3201c74c46cf162d9c907d32094886b51137c"
+    },
+    {
+      "repository_id": 1218867656,
+      "bytes": 22517,
+      "sha256": "e71a7df9184762f6cb617edf637b46db7a8385f051d8bf8b8ed717e42ded50ed"
+    },
+    {
+      "repository_id": 1220744390,
+      "bytes": 4490125,
+      "sha256": "d400c38757b4e7b9230ad8311ef3d96d5f4d0a024c1c866f69442182a938dd05"
+    },
+    {
+      "repository_id": 1222600140,
+      "bytes": 77003,
+      "sha256": "184e6e859e4dc1ac0ce232274dd0ca3ffa8f8ddd2cc6fe962de1a3411d030aa2"
+    },
+    {
+      "repository_id": 1223980906,
+      "bytes": 28118,
+      "sha256": "09263206560cf43cd45b1534ec04fa127c4954195d131e36bee43614354541de"
+    },
+    {
+      "repository_id": 1225768109,
+      "bytes": 2722292,
+      "sha256": "39e4ad3c096333f15d4e2eee7077ed11b8a537908f364146c8a9570011274952"
+    },
+    {
+      "repository_id": 1231231489,
+      "bytes": 111674,
+      "sha256": "94ae687d8cfb1f3dbef5af623dfeee7ea306ba49584132700f4908b282bf5f1c"
+    },
+    {
+      "repository_id": 1240183493,
+      "bytes": 3011807,
+      "sha256": "24218148130b9e52a9d5c1b0bd652c508c187bbbf41e58fb8d4fe6ad5b974c98"
+    },
+    {
+      "repository_id": 1244900075,
+      "bytes": 54799,
+      "sha256": "c8aa1e3746629eb7bf92382c7b26836adca6f31d02486341d632fa104e7fb8cd"
+    },
+    {
+      "repository_id": 1245849062,
+      "bytes": 2945426,
+      "sha256": "d08939df7987982890dac3b648b600965d7af02ab9be23f577d10efd753f7463"
+    },
+    {
+      "repository_id": 1246421831,
+      "bytes": 1429094,
+      "sha256": "e93fd27d74d8eeef0f3c98e9d9321cc1e7df7d3b617e607021c2370ed664af58"
+    },
+    {
+      "repository_id": 1248267859,
+      "bytes": 529220,
+      "sha256": "f8cec1f9634f51c02be43a0eba77b17f05f8110b759b814d4fb797b4d33cd3f9"
+    },
+    {
+      "repository_id": 1250016835,
+      "bytes": 13957,
+      "sha256": "70a48e39d4d6751144789123e983d17fc7bffab1bb9e2ffb5172d01953295836"
+    },
+    {
+      "repository_id": 1251860804,
+      "bytes": 1447179,
+      "sha256": "55fe550f0245d71766def2a5c5a236b1dd0222707509bdd07c458d31c3f421a1"
+    },
+    {
+      "repository_id": 1251898099,
+      "bytes": 35339,
+      "sha256": "d0491d98be019a6de716142100fcd516e119aeab073278e3d6e03a6971b95847"
+    },
+    {
+      "repository_id": 1254139536,
+      "bytes": 559691,
+      "sha256": "0fd2c995e7dcf1564e1e780a651dfcd51ceee267c647263ff0640635ff8a5511"
+    },
+    {
+      "repository_id": 1255014875,
+      "bytes": 425933,
+      "sha256": "841fb3f955752378ae07f480761190e2034ed5d4930c192b3774cdc28b67101e"
+    },
+    {
+      "repository_id": 1259663663,
+      "bytes": 338274,
+      "sha256": "7a9ed476e0f4420494ab9bdb15ed37cc7bb55eb85ab0a4a413489a14a94d7a12"
+    },
+    {
+      "repository_id": 1259792711,
+      "bytes": 64272,
+      "sha256": "3d89eb99dec0f785e22ffe7327de45c2ef29be382569134caf234b2adfbd3d8b"
+    },
+    {
+      "repository_id": 1261303797,
+      "bytes": 879950,
+      "sha256": "0179e17d50dc144dfb300b962e8eafd88ea3b0bf212345de09a72e967e511345"
+    },
+    {
+      "repository_id": 1262257897,
+      "bytes": 164158,
+      "sha256": "23c5f1c33f98ea23c41998985b90dd9f5f095b36a405b3a4d602016ab3194bd7"
+    },
+    {
+      "repository_id": 1262882328,
+      "bytes": 115228,
+      "sha256": "4430fe202ebbdb709f102db6e7ea2fe9680bdc5084e12f595b785f1c49b9b8cf"
+    },
+    {
+      "repository_id": 1264167528,
+      "bytes": 408257,
+      "sha256": "4c75c76ee88bc64a725fec01e7146d50b9e8b7df52177621459e4bffdc4ac07b"
+    },
+    {
+      "repository_id": 1267537189,
+      "bytes": 261390,
+      "sha256": "18c36237df9bd55f2d5980568daa4ff13b6452b6a4ebe6ab7dcfbac655f6730c"
+    },
+    {
+      "repository_id": 1270297029,
+      "bytes": 254468,
+      "sha256": "2d49fab27316356d9fe8d9a428e1442f68aa5d7410c74f798672f48b8373b578"
+    },
+    {
+      "repository_id": 1273861871,
+      "bytes": 354114,
+      "sha256": "d29a971b8db6d44dfaa26100b1ba7c23828bde1c27a9241e0d444f844a19418d"
+    },
+    {
+      "repository_id": 1273938223,
+      "bytes": 127168,
+      "sha256": "9c7c725f5c24a3895c58bed10ffc04f1d45f6dc08d81a938c02656a2f9221da3"
+    },
+    {
+      "repository_id": 1275798926,
+      "bytes": 264742,
+      "sha256": "18c128486ea8773fbabab43efbad69b63f1b9640bab0d9ce952acc8bb6d9d246"
+    },
+    {
+      "repository_id": 1279766252,
+      "bytes": 5477,
+      "sha256": "077586a92a53aa5a80dbcd6f872e2d71b485e6adca9f38d89da6ecd6a13809f6"
+    },
+    {
+      "repository_id": 1282960350,
+      "bytes": 127110,
+      "sha256": "4d5cd15e72d3ed7fe4ebd4d93601aaf2751e506c2008ad9548da302da9f506cd"
+    },
+    {
+      "repository_id": 1283243769,
+      "bytes": 1737136,
+      "sha256": "37f55912fa88ec14a1a20bcac447e39cc5d0fd0a848f742cd6935c4dab3ee702"
+    },
+    {
+      "repository_id": 1286783339,
+      "bytes": 773689,
+      "sha256": "2c41cfd5fda2c538a4c82a11104ad8f93266273061c3a8a5392db4820380cb25"
+    },
+    {
+      "repository_id": 1288679691,
+      "bytes": 99650,
+      "sha256": "1d38c206b509924d8961129a03e553111593f8abb4870335dc1d8833f535ba34"
+    },
+    {
+      "repository_id": 1288858296,
+      "bytes": 414617,
+      "sha256": "9f4022cb160420fc2e50318dc6332a31dd40e200987eb6549e5883420b6f637d"
+    },
+    {
+      "repository_id": 1289277101,
+      "bytes": 268321,
+      "sha256": "e21fbcf56f64491d7ae5ad58d4b6424d07f9e7275c1fc4f3663f8c9bcc9a1dd3"
+    },
+    {
+      "repository_id": 1289612923,
+      "bytes": 582377,
+      "sha256": "1c329ec1b299a456398220c0a492a0b3466831ae57484abfa7c408f477a6ef87"
+    },
+    {
+      "repository_id": 1290784521,
+      "bytes": 272500,
+      "sha256": "bc8e5ec2b59762ee05405398a0a59bfa19cdef4c3cfffd8223ed7a2ec93efb82"
+    },
+    {
+      "repository_id": 1291744940,
+      "bytes": 52501,
+      "sha256": "e06eb73ebbbe8c5b7d7cccb728cdf9e0f52cd6327bdb290031dd43107dfb6b60"
+    },
+    {
+      "repository_id": 1295876474,
+      "bytes": 1526908,
+      "sha256": "cfd9d05debccb9516e26d6b2ac03aee4c863aaa1138511c54eef68612ad50e5a"
+    },
+    {
+      "repository_id": 1296682078,
+      "bytes": 1872358,
+      "sha256": "e5f8bcc8765f2003c28243317befbe05c9b70f7313f99a968b7afdab3a0d61e0"
+    },
+    {
+      "repository_id": 1300721529,
+      "bytes": 9256,
+      "sha256": "02091d722bdd3efdf2709c713150a27a46fe0e085101dfb3242d81bc5bd894b3"
+    },
+    {
+      "repository_id": 1300909192,
+      "bytes": 90012,
+      "sha256": "409187ead2daf7ac98b6818063bd7f23ed748c28adca691bdeaef87196e1e8b2"
+    },
+    {
+      "repository_id": 1304946356,
+      "bytes": 14057,
+      "sha256": "9d7123df4fe682484cf7955174b3bf986c58f8e35efb9baebf06e0db1d7ebd14"
+    },
+    {
+      "repository_id": 1305051933,
+      "bytes": 1126409,
+      "sha256": "658d595d92bbd5c6cbd78907828404d758d1ed78b57f91b7f1687357147cc11a"
+    },
+    {
+      "repository_id": 1305069945,
+      "bytes": 1130650,
+      "sha256": "e73ddb9f0bf110694a1e40a0c9d64742518ddf0ea6dc9ac38355cb7121afdb26"
+    },
+    {
+      "repository_id": 1305177869,
+      "bytes": 1013755,
+      "sha256": "d80790e181132286729c12e016c5b5393efb1d0e86f3430a688b2c0e14bc3baa"
+    },
+    {
+      "repository_id": 1310700974,
+      "bytes": 2170822,
+      "sha256": "013a7c3afd496663069ac7eb0f97f15810510e80d0e74ea4bb4d72729aba4ed9"
+    },
+    {
+      "repository_id": 1311919641,
+      "bytes": 2516161,
+      "sha256": "972ff9600ed3a71bc3c1c959c412b64ef404d07f9e429857aec4529e6f1c6b30"
+    },
+    {
+      "repository_id": 1311993484,
+      "bytes": 8957,
+      "sha256": "3eb5936cac1663a47943cf369dab10010a63ecf826a9ff404d68107fc5c54223"
+    },
+    {
+      "repository_id": 1313608638,
+      "bytes": 875062,
+      "sha256": "64c643df231fe2e3e120cf3546442e530ba0cf179189b19d932739a492a25d9d"
+    },
+    {
+      "repository_id": 1314353937,
+      "bytes": 57540,
+      "sha256": "204710e8de73de9631cc74cf47d1d79acfb1d6a8a00a2336d2923c12376f9f6e"
+    },
+    {
+      "repository_id": 1316021281,
+      "bytes": 122382,
+      "sha256": "0c089eb519fb689bf130b7b1e7fc6fe931d2a9559740eb01806b038a5664d703"
+    },
+    {
+      "repository_id": 1322501176,
+      "bytes": 2103641,
+      "sha256": "b66c01b43f995bbb1f5637123af8e5399e06af2e09c71cbc83b236ac74a323a6"
+    },
+    {
+      "repository_id": 1326017937,
+      "bytes": 106274,
+      "sha256": "b30c2c739fa809d16b794c1b5b9e0082a74b2e80df676f8849e0602039843aac"
+    },
+    {
+      "repository_id": 1327325660,
+      "bytes": 1501368,
+      "sha256": "d361d23e2cb230b6242d431a53cf13f2b2c8609d47ea49b359e15a9d24e9ef5d"
+    },
+    {
+      "repository_id": 1329785051,
+      "bytes": 78971,
+      "sha256": "8299630a5504cd8af210150ec017b596ad3fd3c36bfe5fd9aacb2cdfa8fb1971"
+    },
+    {
+      "repository_id": 1332068659,
+      "bytes": 75879,
+      "sha256": "4c8e0aa40d0ed1d15d8bb7730ec6ef3fbfd9f0e9a5f50440181746ff15ff3cce"
+    },
+    {
+      "repository_id": 1333033450,
+      "bytes": 2483993,
+      "sha256": "ed3558849a581c8ef759f11c0477340d35d4fbb3f1dfd344c8e5bfcf0dfd4aac"
+    },
+    {
+      "repository_id": 1333821463,
+      "bytes": 150337,
+      "sha256": "2586625bae91e1013d9d0084330a2aefc35bc2e4369a8359f4f8f58ba974d347"
+    },
+    {
+      "repository_id": 1336846046,
+      "bytes": 19725,
+      "sha256": "678b310d8e06a0bdd4ba5c5958cdfcbd27182e2c89218b7062dc2157727239d2"
+    },
+    {
+      "repository_id": 1337413368,
+      "bytes": 91317,
+      "sha256": "57a4e33bcc3b089c621b4cdb13a968a3556ac7964b8a8ce2bd6040cb9aebea28"
+    },
+    {
+      "repository_id": 1337965664,
+      "bytes": 107656,
+      "sha256": "ff4164fe721477174d95e5be2ba0d3c5aeb6e55361ab4f2dbcacc84b741542ee"
+    },
+    {
+      "repository_id": 1340087791,
+      "bytes": 20271,
+      "sha256": "dacb020b4079614231d81e0b0e65b813dcb385d97960283fb158adfd7b7be263"
+    },
+    {
+      "repository_id": 1343180401,
+      "bytes": 117207,
+      "sha256": "3ce65d0bbb69f13bc9948904775b11d2d340d7fe92ad88195d60bd8f26906897"
+    },
+    {
+      "repository_id": 1344650415,
+      "bytes": 1785111,
+      "sha256": "5851974fa17a51299d8e91e7f771af236ea2169b24619db903cca0033ad8f6ee"
+    },
+    {
+      "repository_id": 1347012905,
+      "bytes": 617280,
+      "sha256": "7280d3d4506a07bae93662adb25d853811b3d659e012f7c32a439c866a24770e"
+    },
+    {
+      "repository_id": 1356533425,
+      "bytes": 30742,
+      "sha256": "5613d312b2aa00640eecb966bfde7dff7ce5216cd79e6883670d81b7e99288e2"
+    },
+    {
+      "repository_id": 1357389191,
+      "bytes": 60631,
+      "sha256": "4b6a61140a883fdc7903c8a9e9ef222480b52d4db2b7f679e08d8f91450ba2a0"
+    },
+    {
+      "repository_id": 1359152102,
+      "bytes": 105332,
+      "sha256": "60ba4b516a5a614d110e7bdee4b3254b34ec15788d4c29c23c23df2ad5135588"
+    },
+    {
+      "repository_id": 1360648262,
+      "bytes": 38447,
+      "sha256": "6cf415347aac48cdd0b80e1475dbeb6f434ff8ef18b22958bdf196724b6c38f0"
+    },
+    {
+      "repository_id": 1362591273,
+      "bytes": 934407,
+      "sha256": "02eade35c4d2023fdee3b177d5143426395966677c88c6bd6d00cae82bcce99c"
+    },
+    {
+      "repository_id": 1364985464,
+      "bytes": 52800,
+      "sha256": "feea726267f1de24befa985cb12700e51edff6efd72a0f07a32bd1185f295087"
+    },
+    {
+      "repository_id": 1365153976,
+      "bytes": 75409,
+      "sha256": "b1865581624363e0bc574887dc2f323278800215e8dc7fedf4fa51720caae49f"
+    },
+    {
+      "repository_id": 1365556684,
+      "bytes": 790394,
+      "sha256": "b7c7ae1f2675693eb27146d5d0d7be885b98f75d2dd13efa7bfa9885cefc2b92"
+    },
+    {
+      "repository_id": 1367322726,
+      "bytes": 63122,
+      "sha256": "01d19a550e465bf7a2d4c331c52a61f39f92d272df430bb569aaebd15c4fe50e"
+    },
+    {
+      "repository_id": 1369771755,
+      "bytes": 39259,
+      "sha256": "06184a5bef07c2cad58d6296379e7a646138336685acedd8f088e01565ff8aa2"
+    },
+    {
+      "repository_id": 1376379544,
+      "bytes": 392726,
+      "sha256": "262159321a3d43ad6e14d277a185990ec76210d2b4e05014b8188befb5196ce3"
+    },
+    {
+      "repository_id": 1377070929,
+      "bytes": 163067,
+      "sha256": "7b6e29e08001b7e12b92c14d9713dc99c8d4c1a80b700c6be362c27064e49501"
+    },
+    {
+      "repository_id": 1379117882,
+      "bytes": 219216,
+      "sha256": "a8a8eadc266d968608c538725ccbf917909c19e2a7c02d2a5b9ce260450b0b80"
+    },
+    {
+      "repository_id": 1382509781,
+      "bytes": 48642,
+      "sha256": "d9e67cb7b58b0ee6ac043cb31cb3af4539f27386934248a7741f63adb0a59550"
+    },
+    {
+      "repository_id": 1386170017,
+      "bytes": 1071660,
+      "sha256": "790a1347d2d38e19272be33cbccb4c6784d33a22eb32a2c131b6079da7624038"
+    },
+    {
+      "repository_id": 1399514605,
+      "bytes": 216098,
+      "sha256": "3bec8741a34737c0865f296fba0f08cead9a6cbed0bbdce97c26c40bf5525d5e"
+    },
+    {
+      "repository_id": 1404226270,
+      "bytes": 859028,
+      "sha256": "c6af12cc19aab52592ead774159f6232092fbd67cb8b303bfb41fe30c70a2806"
+    },
+    {
+      "repository_id": 1404744232,
+      "bytes": 561525,
+      "sha256": "d1f2a90825fde1a0767c48be922583f39107152a4d76b6e03caf898382c31fa3"
+    },
+    {
+      "repository_id": 1444988103,
+      "bytes": 28979,
+      "sha256": "0e7b90ae9889e27d2fed1b4d0f6402a2da8362ff1016436e854bf74dd3a833c4"
+    }
+  ],
+  "cases": {
+    "current-budgets/receipt.json": {
+      "raw_sha256": "160847c7c447c3bc88ee48f78b78210ae8de4fb57ce19f61e810c753333a1fc2",
+      "result": {
+        "attempted": 105,
+        "successful": 104,
+        "response_bytes": 100663297,
+        "collection_seconds": 40.65329154499341,
+        "publication_seconds": 0.7688105100241955,
+        "prior_read_seconds": 58.98540826901444,
+        "pin": "f6363f40d89a1fbb4031730d1c5c88a7b0234333",
+        "yaml_bytes": 18108918,
+        "largest_yaml_bytes": 1154440,
+        "published_apps": 104,
+        "published_sources": 105,
+        "local_git_bytes": 3146701,
+        "mode": "current-budgets",
+        "seconds": 100.41444705901085,
+        "peak_rss_kib": 136908,
+        "address_space_bytes": 1073741824,
+        "request_cap": 500,
+        "total_response_cap": 100663296,
+        "acquisition_seconds": 300,
+        "fixture_sources": 500,
+        "distinct_real_response_sources": 224,
+        "synthetic_identity_note": "500 synthetic distinct identities, cycling 224 saved real release responses; no new upstream identity or live API capacity claim.",
+        "fixture_response_bytes": 411527373
+      }
+    },
+    "candidate-512MiB-900s/receipt.json": {
+      "raw_sha256": "1b0877fa3337e168fb4d661a4e8c8a25462950d58051775d2adb3115467efdd9",
+      "result": {
+        "error": "AssertionError: ",
+        "attempted": 500,
+        "response_bytes": 411527373,
+        "mode": "candidate-512MiB-900s",
+        "seconds": 659.0404253519955,
+        "peak_rss_kib": 611900,
+        "address_space_bytes": 1073741824,
+        "request_cap": 500,
+        "total_response_cap": 536870912,
+        "acquisition_seconds": 900,
+        "fixture_sources": 500,
+        "distinct_real_response_sources": 224,
+        "synthetic_identity_note": "500 synthetic distinct identities, cycling 224 saved real release responses; no new upstream identity or live API capacity claim.",
+        "fixture_response_bytes": 411527373
+      }
+    },
+    "candidate-512MiB-900s/verified-result.json": {
+      "raw_sha256": "1593e429925f5ce3b71b83ba125bcda9a15a5af3c9f3fd6788366ad2a9c7b096",
+      "result": {
+        "pin": "d95061185a84fd18857af6e4ef800a908f9e2632",
+        "parent": "428590c3589ca1d9b736e2824162e4d34a01b4a2",
+        "sources": 500,
+        "all_initial_and_retained_statuses_ok": true,
+        "retained_release_ids_and_effective_observations_preserved": true,
+        "app_and_numeric_source_identities_preserved": true,
+        "yaml_bytes": 74963368,
+        "only_changed_field": "collection.attempted_at",
+        "sources_with_changed_attempt_time": 500,
+        "initial_failed_oracle": "Whole-tree byte equality incorrectly disallowed later collection attempt times; independent exact-pin check verifies all other fields are identical. Both real publications completed.",
+        "original_receipt_sha256": "1b0877fa3337e168fb4d661a4e8c8a25462950d58051775d2adb3115467efdd9"
+      }
+    },
+    "candidate-750/history-refusal.json": {
+      "raw_sha256": "fcb6ef3897e8fb59de026361447bfedbf261ae8fc06ea07b4141e3a1a095f73f",
+      "result": {
+        "sources": 750,
+        "snapshot_bytes": 111717518,
+        "existing_object_bytes": 20587206,
+        "guard_sum": 132304724,
+        "history_cap": 128000000,
+        "refusal": "history_bound",
+        "published_pin_unchanged": true,
+        "note": "Retrying the already validated initial 750-source tree through the real publisher; no additional API requests or YAML validation bypass for a new candidate."
+      }
+    },
+    "current-history-500-refusal.json": {
+      "raw_sha256": "bd498610e9ded3cb4c2ad2141bb9ac6a7bd6addbd5a6b3b4b4240f8d62c486df",
+      "result": {
+        "snapshot_bytes": 74963368,
+        "real_catalog_object_bytes": 63288158,
+        "guard_sum": 138251526,
+        "history_cap": 128000000,
+        "refusal": "history_bound",
+        "refs_unchanged": true
+      }
+    },
+    "driver-check/receipt.json": {
+      "raw_sha256": "110fe644c650772d88239bfc4a20781eb70509a0d5a8fb12a950c3bc1ccd0110",
+      "result": {
+        "retained_refresh_seconds": 4.049996443995042,
+        "retained_pin": "bd47823b310492212bbef0bf30f0a44f5ebda773",
+        "retained_release_ids_and_observations_preserved": true,
+        "attempted": 4,
+        "successful": 4,
+        "response_bytes": 9818539,
+        "collection_seconds": 3.5579652460000943,
+        "publication_seconds": 0.0883432769915089,
+        "prior_read_seconds": 3.243602521979483,
+        "pin": "c485fcc17d846ff8a4565f155e48259f47c1d914",
+        "yaml_bytes": 1746721,
+        "largest_yaml_bytes": 1154440,
+        "published_apps": 4,
+        "published_sources": 4,
+        "local_git_bytes": 253171,
+        "source_revision": "fde55f59883353e5aa27c73d674a57e1e20613c2",
+        "source_hashes": {
+          "docs/track/release-catalog/research/refresh-batch-replay.py": "35db506ca3f749f7b697eece7fda2105c49d6314debe67613fa3494c6dc5beb3",
+          "tools/catalog-collector/host_catalog.py": "935bafbaabd7ce4cd9d4c316152711a8007757f07c0cac9554b34ae56fc852e5",
+          "tools/catalog-collector/yaml_publication.py": "3d487e8b7140c48e9f41bfc061ed3125fbb2117b749eae9ca862f3449a2f3219",
+          "tools/catalog-collector/publication.py": "9e254dad184807da741c8f6fa355b47732b7bd81eafcfd5f5ed95adde7d5e462"
+        },
+        "mode": "candidate",
+        "seconds": 11.638508117001038,
+        "peak_rss_kib": 87732,
+        "address_space_bytes": 1073741824,
+        "request_cap": 4,
+        "total_response_cap": 536870912,
+        "acquisition_seconds": 900,
+        "fixture_sources": 4,
+        "distinct_real_response_sources": 224,
+        "synthetic_identity_note": "Synthetic distinct identities cycle saved real release responses; no new upstream identity or live API capacity claim.",
+        "fixture_response_bytes": 9818539
+      }
+    },
+    "fresh-history-500-refusal.json": {
+      "raw_sha256": "9c329a5252ce6cd682c0988b1d54df59a43d3fc7276ffa47ce9dfa18f2a39128",
+      "result": {
+        "snapshot_bytes": 74963368,
+        "fresh_local_fetch_object_bytes": 55312540,
+        "guard_sum": 130275908,
+        "history_cap": 128000000,
+        "refusal": "history_bound",
+        "refs_unchanged": true,
+        "parent": "26d82aa94bb5a8f70449e42500dc78a597583ab3",
+        "note": "Fresh Git transfer of exact published history from local verification repository, rather than its accumulated fetched/loose-object layout. Guard refuses before any candidate write. No CI packing guarantee."
+      }
+    },
+    "enrolled-224/receipt.json": {
+      "raw_sha256": "033b2e50ce2e1535fbf3ea4acccca8eaccb8d55c074ec37ed3898d5daf400db2",
+      "result": {
+        "pin": "223e9f1f6ede5790c482e82f6fae0ef31a43f46f",
+        "parent": "26d82aa94bb5a8f70449e42500dc78a597583ab3",
+        "source": "fde55f59883353e5aa27c73d674a57e1e20613c2",
+        "batch_size": 500,
+        "enrolled_apps": 228,
+        "enrolled_sources": 224,
+        "published_apps": 228,
+        "pending_apps": [],
+        "response_bytes": 179239534,
+        "seconds": 126.34885036098422,
+        "peak_rss_kib": 284692,
+        "address_space_bytes": 1073741824,
+        "fixture_observation_time": "2026-11-07T00:04:07Z",
+        "note": "Offline maintained main command on current exact published 224-source parent and actual enrolled identities. Saved bodies use explicit synthetic receipt time; not a live reobservation. Existing history/document limits unchanged.",
+        "history_object_bytes": 61498746,
+        "prior_identities_retained_release_ids_and_effective_observations_preserved": true,
+        "attempted": 224,
+        "successful": 224
+      }
+    },
+    "candidate-750/receipt.json": {
+      "raw_sha256": "0349034ea34e36289aa6dba73dd39f5fa6885800961ecd144d3dd28e4d263c5d",
+      "result": {
+        "error": "ValueError: history_bound",
+        "attempted": 750,
+        "response_bytes": 610045020,
+        "source_revision": "fde55f59883353e5aa27c73d674a57e1e20613c2",
+        "mode": "candidate",
+        "seconds": 988.0585263879912,
+        "peak_rss_kib": 715988,
+        "address_space_bytes": 1073741824,
+        "request_cap": 750,
+        "total_response_cap": 805306368,
+        "acquisition_seconds": 900,
+        "fixture_sources": 750,
+        "distinct_real_response_sources": 224,
+        "synthetic_identity_note": "Synthetic distinct identities cycle saved real release responses; no new upstream identity or live API capacity claim.",
+        "fixture_response_bytes": 610045020
+      },
+      "qualification": "Exploratory run terminates at history_bound. First publication and the separately captured identical-tree history refusal establish the storage boundary. The second loop uses an old fixed receipt timestamp, so is not accepted as a successful retained-observation test. Generalized driver now uses evidence mode. Its script file was edited while this process ran; runtime core-module hashes remain in initial_source_hashes, and this raw receipt script hash is not a provenance claim for the running driver."
+    }
+  },
+  "tests": {
+    "command": "python3 -m unittest test_batch_collection",
+    "passed": 6,
+    "log_sha256": "2ce00b9b896b3880c62788dbae054a6e5ec609e3c85a48339b23df7e8a24b056"
+  },
+  "workflow_changed": false,
+  "installed_host_changed": false,
+  "enrolled_driver_sha256": "2365a8297be95c567b0dc26be2b205b71b3fce0f1462dac16c32863fcc027277"
+}

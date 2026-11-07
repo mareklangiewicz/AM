@@ -34,6 +34,7 @@ RESPONSE_CAP = 16 * 1024 * 1024
 TOTAL_CAP = 96 * 1024 * 1024
 SOURCE_CAP = 224
 REQUEST_CAP = 52
+ACQUISITION_SECONDS = 300
 
 
 class TransferFailure(OSError):
@@ -147,7 +148,7 @@ def collect(revision, previous, evidence=None, *, batch_size=None):
     started = time.monotonic()
     for rid in selected:
         name = sources[rid]
-        if time.monotonic()-started > 300 or used >= TOTAL_CAP:
+        if time.monotonic()-started > ACQUISITION_SECONDS or used >= TOTAL_CAP:
             if batch_size is not None:
                 break
             raise ValueError('collection elapsed budget')

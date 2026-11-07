@@ -151,6 +151,20 @@ class BatchCollection(unittest.TestCase):
         self.assertEqual(repositories['4'], previous['4'])
         self.assertNotIn('private upstream', output.getvalue())
 
+    def test_elapsed_budget_preserves_sources_that_have_not_been_attempted(self):
+        previous = self.previous(4)
+        calls = []
+        def read(rid, evidence, allowance):
+            calls.append(rid)
+            return b'[]', NEW
+        with patch.object(collector, 'ACQUISITION_SECONDS', 1), \
+                patch.object(collector.time, 'monotonic', side_effect=[0, 0, 2]):
+            tree, report = self.collect(previous, read)
+        _, repositories = tree_documents(tree, LIMITS)
+        self.assertEqual(calls, ['1'])
+        self.assertEqual(len(report), 1)
+        self.assertEqual(repositories['2'], previous['2'])
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -11,9 +11,9 @@ payload inspection or policy compilation. They do not claim AM installation supp
 App identities must be unique across both lists; sources are deduplicated by
 numeric ID and conflicting names refuse. When a recipe is migrated, move its
 enrollment to `collection-recipes.txt` in the same change, preserving its identity.
-The prepared union is limited to 224 repositories (published baseline remains 128 until rollout). Each scheduled run attempts at most
+The published union is limited to 224 repositories. Each scheduled run attempts at most
 52, oldest collection attempt first (never-attempted sources first, numeric ID
-ties). The schedule is every three hours, nominally covering the prepared scope in five
+ties). The schedule is every three hours, nominally covering the published scope in five
 runs. Transfer/time budgets or source failures can reduce successful coverage;
 the report lists actual attempts and pending app identities. Selected-release
 freshness remains 48 hours, independent of these scheduling attempts.
@@ -29,9 +29,10 @@ sources in batch mode refuses. Source enrollment is still an explicit reviewed
 file change, never automatic URL discovery.
 
 The 16 MiB response, 96 MiB per-run transport, 300-second cooperative acquisition,
-2 MiB document, 1,024-file read and Git-history bounds remain. The prior 128-source
-step is published; the next 224-source scope requires its recorded preflight before
-publication. Whole-tree validation has not been qualified for thousands.
+2 MiB document, 1,024-file read and Git-history bounds remain. The 224-source scope is published with exact-pin preservation receipts.
+[The larger-batch assessment](../../docs/track/release-catalog/research/refresh-batch-sizing.md)
+proposes 500/hour, without deploying it. Whole-tree validation and history
+storage have not been qualified for thousands.
 
 ## Entry points
 

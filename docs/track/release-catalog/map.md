@@ -2,6 +2,19 @@
 
 ## Active expansion — catalog first, simple recipe migrations first
 
+[144 resolved](issues/144-publish-224-source-cohort.md): authorized source
+`fde55f598` is pushed; five successful sequential runs publish **228 apps / 224
+sources**, final pin `26d82aa94bb5a8f70449e42500dc78a597583ab3`. All 224 sources
+observed, zero failures, exact-pin identity/release/observation preservation passes.
+[Publication report](research/next-224-publication.md). Installed host unchanged.
+[145 resolved](issues/145-assess-larger-metadata-refresh-batches.md) assesses a 500/hour
+metadata profile against official GitHub quotas and measured local storage limits;
+[report/validation](research/refresh-batch-sizing.md) record successful current
+224-source whole-command and synthetic 500-source retained replays. Published
+history plus the 500 fixture exceeds the local history guard; the reader also
+caps source files at 1,023. The profile is proposed; deployed cadence remains
+52 / three hours. Broad storage/attribution work stays with 138.
+
 [142 resolved](issues/142-reduce-full-snapshot-processing.md) reduces repeated
 snapshot processing: same-evidence 128-source replay passes in 94.51 seconds
 versus the recorded 311.45 seconds, with equivalent output.
@@ -9,9 +22,8 @@ versus the recorded 311.45 seconds, with equivalent output.
 224 sources**, 97 verified additions including eleven checked renames. Five fresh
 batches observe all 224 sources with zero failures; whole-command replay passes
 at 138.57 seconds / 200,208 KiB RSS under 1 GiB. [Report](research/next-224-catalog-expansion.md)
-records raw/portable evidence, validation and limits. [144](issues/144-publish-224-source-cohort.md)
-is the concrete push/publication package, pending Marek's call. Published scope
-remains 131 apps / 128 sources; installed host is unchanged.
+records raw/portable evidence, validation and limits. Its preparation-only scope
+statements precede 144's completed publication above; installed host is unchanged.
 
 [140 resolved](issues/140-publish-bounded-catalog-expansion.md): authorized push
 through `42abcbc8e` and three successful manual batches publish **131 apps /

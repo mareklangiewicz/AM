@@ -1,46 +1,45 @@
 # Single-user YAML catalog operation
 
-The published collection contains **131 app identities / 128 repositories**:
-57 migrated recipe identities and 74 catalog-only identities. Authorized source
-`42abcbc8e71ea2e0ee3000a5815c825976b78f6d` and three successful November 6
-manual batches publish `e9d713eb74ca02dca24a5269ace5ee9e28466f41`.
-[Final run 42294451524](https://github.com/mareklangiewicz/AM/actions/runs/42294451524)
-completes successful observations for all 128 sources across the three batches,
+The published collection contains **228 app identities / 224 repositories**:
+57 migrated recipe identities and 171 catalog-only identities. Authorized source
+`fde55f59883353e5aa27c73d674a57e1e20613c2` and five successful manual batches
+publish `26d82aa94bb5a8f70449e42500dc78a597583ab3` on November 7 local time.
+[Final run 42315622825](https://github.com/mareklangiewicz/AM/actions/runs/42315622825)
+completes successful observations for all 224 sources across the five batches,
 with zero failures. Exact-pin reader/identity/preservation checks pass; final YAML
-is 21,703,160 bytes, largest document 1,159,110 bytes.
-[Publication report and receipt](track/release-catalog/research/bounded-catalog-publication.md).
+is 33,152,148 bytes, largest document 1,159,110 bytes.
+[Publication report and receipt](track/release-catalog/research/next-224-publication.md).
 
 The workflow attempts at most 52 oldest sources every three hours, preserving
 untouched observations and isolating source failures. Enrollment is capped at
-128 repositories; this is a measured intermediate scope, not qualified support
-for thousands. The installed host remains at 21 apps; this publication performed
-no installed policy/module/recipe refresh or app installation. The four new source
-migrations are agent-smith, agent-switchboard, agent-teams-ai and agent-toolkit.
-Agent Skills and Ageha Editor remain catalog-only, without an AM-supported asset
-selection declaration. Broader coverage/scaling remains in
+224 repositories, with a nominal five-run / 15-hour rotation. This is a measured
+intermediate scope, not qualified support for thousands. The installed host
+remains at 21 apps; this publication includes only 97 new catalog-only app
+identities and snapshot processing changes, with no new recipe migration or
+installed refresh. Broader coverage/scaling remains in
 [138](track/release-catalog/issues/138-scale-github-catalog-coverage.md).
 
-Previous published baseline was 54 apps / 52 sources at
-`bcae3298f5ffa1461a74ecab42df1a6c41d68492`, recorded in the
-[earlier receipt](track/release-catalog/research/catalog-only-publication.json).
+[145's larger-batch assessment](track/release-catalog/research/refresh-batch-sizing.md)
+proposes 500 sources hourly against the ordinary 1,000 REST requests/hour Actions
+token quota. The current byte/time/history/read bounds are local limits. Its
+500-source fixture requires a larger transfer allowance and already exceeds the
+128,000,000-byte history guard when combined with measured published history.
+The profile is not deployed; request throughput does not qualify thousands of
+source documents or change the 48-hour selected-release observation rule.
+
+The prior 131-app / 128-source baseline at
+`e9d713eb74ca02dca24a5269ace5ee9e28466f41` remains a historical
+[publication receipt](track/release-catalog/research/bounded-catalog-publication.md).
 Local preparation and its heavier per-app inspection are historical evidence;
 future migrations follow the
 [family-level workflow](../tools/recipe-reconstruction/README.md#current-migration-workflow--family-validation-then-bulk-translation).
-
-Pending local [224-source cohort](track/release-catalog/research/next-224-catalog-expansion.md)
-prepares 228 apps with 97 additional catalog-only identities. Five fresh batches
-and a whole-command replay pass under existing resource bounds. The prepared
-source raises enrollment to 224, keeping 52 attempts every three hours (nominal
-five-run rotation); published scope above remains 128 sources until
-[144](track/release-catalog/issues/144-publish-224-source-cohort.md) is authorized.
-No recipe migration or installed refresh is included.
 
 Collection enrollment is independent of recipe declaration support. Recipe headers
 marked `# AM-RECIPE-DECLARATION 1` own customization and selection settings;
 adding a declaration does not enroll it for collection. The older 50-source design
 manifest and
 format-1 collector experiments are historical evidence, not active publication.
-The deployed source cap is 128. Per-repository YAML
+The deployed source cap is 224. Per-repository YAML
 remains capped at 2 MiB in both.
 
 [137](track/release-catalog/issues/137-separate-catalog-enrollment-from-recipe-migration.md)
