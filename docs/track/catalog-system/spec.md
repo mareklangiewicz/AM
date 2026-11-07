@@ -60,6 +60,11 @@ work must improve the Git-based design and establish operating bounds; alternati
 storage backends are outside this effort. See the
 [accepted Git foundation](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-git-foundation--november-7-2026).
 
+Use [incremental source processing](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-incremental-source-processing--november-7-2026):
+process selected sources and reuse unchanged Git blobs from the exact prior pin,
+preserving complete-snapshot integrity. Validation/reuse mechanics and measured
+capacity remain to be specified; no limit increase follows from this direction.
+
 ## Accepted requirements
 
 ### Browse and learn through real apps

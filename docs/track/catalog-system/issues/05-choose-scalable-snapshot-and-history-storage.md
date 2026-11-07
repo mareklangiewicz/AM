@@ -28,6 +28,21 @@ No cap increase or storage implementation is authorized by resolving this questi
 
 ## Comments
 
+### Accepted incremental source processing — November 7, 2026
+
+Marek answered “yes” to processing only selected sources and reusing unchanged
+Git blobs instead of loading and rewriting every source on each run. Build the
+candidate from the exact prior catalog pin, preserving unselected source records
+and their observations. Changed root documents still need their applicable
+validation and cross-document identity checks; this direction does not waive
+complete-snapshot integrity or the existing exact-parent publication contract.
+
+The implementation roadmap must specify how previously validated unchanged blobs
+are trusted/reused and when full validation is required, especially across format,
+schema or policy transitions. These mechanics and their measurements are not yet
+accepted. This is a processing direction, not proof of capacity or authorization
+to implement or raise limits.
+
 ### Accepted Git foundation — November 7, 2026
 
 Marek accepted keeping Git as the public snapshot store, reusing unchanged source
