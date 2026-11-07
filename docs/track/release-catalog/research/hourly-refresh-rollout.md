@@ -54,7 +54,8 @@ Raw controllers, command logs and receipts are preserved under
 Final focused checks pass: 21 transport/publication tests, 13 final batch tests,
 11 enrollment/source checks and the updated whole-main 500-ceiling test.
 [Portable local validation](hourly-refresh-validation.json) binds source hashes,
-receipts and logs. The complete final collector run and live workflow receipt
-follow after completion. No recipe migration,
+receipts and logs. The complete final collector run passes all 159 tests; the superseded
+pre-fix run is retained in the raw evidence. Live workflow verification follows
+the source push. No recipe migration,
 installed file refresh, app update, website rebuild or yadm pointer operation is
 part of this rollout. The 48-hour selected-release observation check is unchanged.

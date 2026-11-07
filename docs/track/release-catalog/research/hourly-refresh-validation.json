@@ -75,13 +75,18 @@
     "final-batch-tests.log": {
       "passed": 13,
       "sha256": "82022061aa646812d15c6c4dbdf3ef4528943193e2efb74e444d6f93ffb61adf"
+    },
+    "final-collector-tests.log": {
+      "passed": 159,
+      "sha256": "49415f9724a75abdbb8cc5c8be69e24acad868117c08c3cf142acca6a2ee28d4"
     }
   },
-  "full_regression": "Final run still in progress; prior initial run captured pre-fix header parsing. Final live receipt is separate.",
+  "full_regression": "Final complete suite passes. Initial pre-fix run was superseded and stopped after two header-normalization failures were corrected; final batch/main/enrollment checks also pass.",
   "actual_enrollment": {
     "apps": 228,
     "sources": 224
   },
   "proposed_enrollment_ceiling": 500,
-  "installed_host_changed": false
+  "installed_host_changed": false,
+  "superseded_log_sha256": "0006bd6ee12b951d27cc0a0b31eaddd5a0a6647881b76e00729579670d632c63"
 }
