@@ -28,6 +28,28 @@ No cap increase or storage implementation is authorized by resolving this questi
 
 ## Comments
 
+### Accepted first offline capacity experiment — November 7, 2026
+
+Marek answered “yes” to an offline rehearsal using the preserved 500-source data:
+apply the accepted retention rules, replay repeated updates, and measure runtime,
+peak memory, snapshot size and compressed Git-history growth. It must fit existing
+limits before considering expanded coverage. Success does not qualify thousands
+of sources, establish new-source diversity or measure live acquisition capacity.
+
+Use the saved snapshot at
+`cbda9fb78ce4a6f29bdabd63d57f3c0085e8744f` as exact input context, not a fresh
+remote-head assertion. Keep publication local and isolated; no network collection,
+remote publication, enrollment change or cap increase is included. The experiment
+must distinguish genuinely saved observations from simulated update/churn cases;
+replaying identical bytes alone does not measure representative history growth.
+No simulation may be reported as a fresh upstream observation.
+
+The bounded update count, representative scenarios and explicit decision thresholds
+still need to be fixed before this ticket resolves. Peak memory is a measurement
+request, not an already accepted memory ceiling. The rehearsal belongs in the
+implementation roadmap after the relevant format/retention/incremental processing
+slices exist; this planning acceptance does not authorize production implementation.
+
 ### Accepted temporary-evidence cleanup — November 7, 2026
 
 Marek answered “yes” to keeping temporary collection files in the run's temporary
