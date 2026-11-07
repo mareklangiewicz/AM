@@ -2,9 +2,18 @@
 
 Type: grilling
 Label: wayfinder:grilling
-Status: resolved
+Status: claimed
 Assignee: codex-progress
 Blocked by: 01
+
+## Reopened — simplicity correction, November 7, 2026
+
+Marek rejected the proposed separate checkpoint store as too complex and requires
+prioritizing simplicity of implementation. He permits relaxing recovery guarantees
+and asks for simple questions before further decisions. The previous Answer and
+linked design are preserved as historical proposals, not implementation authority.
+Cross-run durable replay, fencing/gates, retry machinery and related requirements
+must be reconsidered with him. No replacement recovery design is selected yet.
 
 ## Question
 

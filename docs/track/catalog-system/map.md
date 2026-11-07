@@ -12,6 +12,13 @@ contract, storage, compatibility or acceptance decisions.
 
 ## Notes
 
+Latest steering, November 7, 2026: prioritize simplicity of implementation.
+Marek rejected the separate checkpoint-store proposal, permits relaxing recovery
+guarantees, and requests simple questions before further design decisions.
+The recovery ticket is reopened; its prior durability/fencing/gate design is
+historical and under reconsideration. Revisit affected contract requirements
+after that exchange rather than treating previous delegation as blanket approval.
+
 Marek confirmed this destination and the audience on November 7, 2026:
 app discovery leads; Linux newcomers and experienced AM users are both served;
 maintainers get deeper explanations. Education follows real app examples, with
@@ -68,7 +75,6 @@ branches are not merged or pushed automatically (home push guidance applies).
 - [Establish the supported pipeline and operating constraints](issues/01-establish-supported-pipeline-and-operating-constraints.md): source audit identifies reusable seams, missing automatic resume/public failure summaries and official operating constraints; linked report is on an isolated local research branch, not an accepted architecture.
 - [Choose contextual education and health navigation](issues/02-choose-contextual-education-and-health-navigation.md#answer--november-7-2026): accepted contextual explanations, a short system overview and dedicated public health destination, with observation age and known refresh failures visible directly.
 - [Choose public YAML contracts and revision consistency](issues/03-choose-public-yaml-contracts-and-revision-consistency.md#answer--november-7-2026): under explicit decision delegation, selected separate pinned catalog/status channels, format-3 boundaries and lossless encodings, revision/race rules, editor schemas and format-2 compatibility gates.
-- [Choose durable progress and fair scheduling](issues/04-choose-durable-progress-and-fair-scheduling.md#answer--november-7-2026): under continuing delegation, selected durable complete-source replay, fenced recovery/publication, bounded retries and 4:1 refresh/discovery request service without observation inflation.
 
 ## Not yet specified
 

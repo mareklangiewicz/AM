@@ -1,5 +1,11 @@
 # Durable progress and fair scheduling
 
+Status: reopened November 7, 2026. Marek rejected the complexity exposed by the
+separate-store proposal and requires simpler implementation, allowing weaker
+recovery guarantees. The design below is historical and under reconsideration;
+do not implement it as an accepted requirement. Ask simple questions before
+selecting its replacement; see the owning ticket's reopening note.
+
 Target design selected November 7, 2026, continuing Marek's “you decide” delegation
 and subsequent “go on”. Owner:
 [Choose durable progress and fair scheduling](issues/04-choose-durable-progress-and-fair-scheduling.md).

@@ -30,10 +30,11 @@ The target public interface and consistency model are selected in
 with the linked contract sketch owning document boundaries, pins, encodings and
 compatibility gates. This is a design decision; the deployed format remains 2.
 
-Logical progress, recovery, replay and scheduling policy are selected in
-[Choose durable progress and fair scheduling](issues/04-choose-durable-progress-and-fair-scheduling.md#answer--november-7-2026).
-The linked resolution defines future behavior; physical persistence, measured
-capacity and operational activation remain separate decisions.
+Logical progress, recovery, replay and scheduling policy are reopened in
+[Choose durable progress and fair scheduling](issues/04-choose-durable-progress-and-fair-scheduling.md).
+Marek now prioritizes implementation simplicity and permits weaker recovery
+guarantees. Earlier durable-store/fencing/gate requirements and affected contract
+details must be reconsidered with him before implementation.
 
 ## Accepted requirements
 

@@ -26,6 +26,16 @@ No cap increase or storage implementation is authorized by resolving this questi
 
 ## Comments
 
+### Separate-store proposal withdrawn — November 7, 2026
+
+During this ticket's discussion the agent proposed a private S3 checkpoint store.
+Marek rejected that complexity and asked to prioritize simple implementation,
+relax recovery guarantees where useful, and ask simple questions before deciding.
+No store was provisioned, implementation written, or storage decision resolved.
+The recovery ticket is reopened; this ticket returns to blocked/unclaimed until
+the simpler recovery scope is agreed. Its earlier durable-store/gate inputs below
+are historical and under reconsideration, not fixed constraints.
+
 ### Inputs from the resolved progress decision — November 7, 2026
 
 [Durable progress and fair scheduling](../progress-and-scheduling-decision.md)
