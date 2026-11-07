@@ -1,8 +1,8 @@
 # Publish the verified 320-source catalog cohort
 
 Type: task
-Status: open
-Triage: ready-for-human
+Status: claimed
+Triage: ready-for-agent
 Blocked by: 147
 
 After 147's recorded preflight passes, ask Marek to authorize pushing its source
@@ -19,3 +19,8 @@ Preserve the 500/hour profile, existing bounds and 48-hour selected-record rule.
 
 Preparation report: [next cohort](../research/next-320-catalog-expansion.md).
 No push/publication is authorized by this ticket itself.
+
+## Authorization
+
+Marek answered “yes” to pushing and publishing the prepared cohort at
+`74289d3ce`. Proceed with source push, workflow dispatch and exact-pin verification.
