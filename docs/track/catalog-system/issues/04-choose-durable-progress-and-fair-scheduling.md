@@ -92,3 +92,12 @@ and existing budget/quota/auth protections. Published attempt metadata suffices;
 interrupted unpublished work may repeat. No persistent retry counters, jitter or
 cooldown machinery is required. Discovery/refresh allocation and minimal
 concurrency/publication handling remain open; the ticket stays claimed.
+
+### Accepted manual discovery — November 7, 2026
+
+Marek answered “yes” to keeping discovery of new apps manually triggered for now,
+while scheduled runs only refresh already-enrolled sources. Discovery and verified
+identity proposals remain separate from explicit enrollment. No mixed-work queue,
+4:1 service ratio or persistent fairness state is required. Applicable resource/
+quota limits still apply to manual work. Minimal concurrency/publication handling
+remains open; the ticket stays claimed.

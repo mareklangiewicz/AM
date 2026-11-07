@@ -36,8 +36,9 @@ Marek accepted redoing unfinished work after runner loss and start/finish-only
 public health, prioritizing implementation simplicity. The linked current baseline
 supersedes cross-run durability/store/fencing/gate requirements. Existing oldest-
 first batches and retrying on a later scheduled run, without in-run retries, are
-also accepted. Discovery/refresh allocation and minimal concurrency/publication
-handling remain open.
+also accepted. New-source discovery stays manually triggered for now; scheduled
+runs only refresh enrolled sources. Minimal concurrency/publication handling
+remains open.
 
 ## Accepted requirements
 
@@ -103,7 +104,8 @@ After runner loss, a new run may repeat any work not incorporated in a confirmed
 publication. Local evidence may be useful but survival/reuse is not required;
 do not add a separate checkpoint store or cross-run journal for recovery.
 Use safe quota reserves, recorded stop outcomes and controlled retry/backoff.
-Define fairness between enrollment discovery and freshness maintenance.
+Keep maintainer discovery manually triggered and scheduled work limited to
+refreshing explicitly enrolled sources; no mixed-work scheduler is required.
 An enrolled identity is not proof of successful collection or publication.
 
 Choose scalable reads/writes and bounded retained/history

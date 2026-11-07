@@ -24,14 +24,21 @@ quota-reserve and auth/rate-stop protections. The next scheduled run still obeys
 those protections; it is an opportunity to retry, not an unconditional request.
 Do not add the old cooldown counters, jitter or retry-state machinery.
 
+Marek also accepted keeping discovery of new apps manually triggered for now;
+scheduled runs only refresh explicitly enrolled sources. Discovery produces
+reviewable candidates and identity evidence, not automatic enrollment. Keep
+manual work explicitly bounded under the applicable budget/quota protections.
+No mixed discovery/refresh queue, weighted lanes or fairness counters are needed.
+This concerns maintainer source discovery, not visitors searching the app browser.
+
 Previously published observations stay intact until a new candidate passes
 validation and exact-parent publication. A rerun uses actual new response receipt
 times; a failed run does not freshen old data. Existing saved-response replay for
 explicit local evidence remains useful, without becoming automatic crash recovery.
 
 These decisions supersede the historical durability/fencing/gate/minute-update
-design below. The ticket remains claimed: discovery versus refresh scheduling and
-necessary minimal concurrency/publication handling still need simple questions
+design below. The ticket remains claimed: necessary minimal concurrency/
+publication handling still needs simple questions
 and human answers. The previous 4:1 weighting, cooldowns and 24-hour replay window
 are not accepted requirements. This is planning, with no runtime changes.
 

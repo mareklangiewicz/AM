@@ -19,8 +19,9 @@ Marek subsequently accepted redoing unfinished work after runner loss while
 preserving the last published catalog, and public health updates only at start
 and finish (“started, no completion recorded” if unfinished). The recovery ticket
 records this baseline plus accepted existing oldest-first batching and retries on
-later scheduled runs without in-run retries. It remains claimed for discovery/
-refresh allocation and minimal concurrency/publication questions. Its
+later scheduled runs without in-run retries. Source discovery stays manual for
+now; scheduled runs refresh enrolled sources. The ticket remains claimed for
+minimal concurrency/publication questions. Its
 prior separate-store/durability/fencing/gate design is superseded. Ask simple
 questions before deciding the remaining policy.
 
