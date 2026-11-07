@@ -3,21 +3,22 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/fde55f59883353e5aa
 repository_id: 1172035222
 repository: "agentmuxai/agentmux"
 collection:
-  attempted_at: "2026-11-06T23:49:10Z"
+  attempted_at: "2026-11-07T10:01:31Z"
   page_size: 100
   page_limit: 1
   reconcile: false
   status: "ok"
 last_success:
-  completed_at: "2026-11-06T23:49:11Z"
+  completed_at: "2026-11-07T10:01:32Z"
   page_size: 100
   page_limit: 1
   reconcile: false
   pages_fetched: 1
   history_complete: false
-observed_at: "2026-11-06T23:49:11Z"
+observed_at: "2026-11-07T10:01:32Z"
 releases:
   "374491622":
+    observed_at: "2026-11-06T23:49:11Z"
     tag: "v0.55.18"
     title: "AgentMux v0.55.18"
     url: "https://github.com/agentmuxai/agentmux/releases/tag/v0.55.18"
@@ -5890,6 +5891,89 @@ releases:
       "718293424":
         name: "install.sh"
         url: "https://github.com/agentmuxai/agentmux/releases/download/v0.60.18/install.sh"
+        size: 16205
+        content_type: "application/x-shellscript"
+        digest: "sha256:cdbb528ad7909acbe19eb8865d43d9c4c244847ad4f93a5a2689dbc0d4e940fa"
+  "437422770":
+    tag: "v0.60.19"
+    title: "AgentMux v0.60.19"
+    url: "https://github.com/agentmuxai/agentmux/releases/tag/v0.60.19"
+    created_at: "2026-11-07T05:41:01Z"
+    published_at: "2026-11-07T07:49:36Z"
+    updated_at: "2026-11-07T07:49:36Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/agentmuxai/agentmux/zipball/v0.60.19"
+    source_tar_url: "https://api.github.com/repos/agentmuxai/agentmux/tarball/v0.60.19"
+    assets:
+      "720020504":
+        name: "AgentMux-0.60.19-envelope.json.sig"
+        url: "https://github.com/agentmuxai/agentmux/releases/download/v0.60.19/AgentMux-0.60.19-envelope.json.sig"
+        size: 92
+        content_type: "application/pgp-signature"
+        digest: "sha256:a47bc2e513beedad63496b99a6e73276a5cc3114b9ba244666891327ca8d139c"
+      "720020505":
+        name: "AgentMux-0.60.19-envelope.json"
+        url: "https://github.com/agentmuxai/agentmux/releases/download/v0.60.19/AgentMux-0.60.19-envelope.json"
+        size: 168
+        content_type: "application/json"
+        digest: "sha256:329cce0f03c98c0aa28d8fc9b8b7675f74fa142647c7c1ba5834821c42346d9d"
+      "720020506":
+        name: "AgentMux-0.60.19-manifest.json"
+        url: "https://github.com/agentmuxai/agentmux/releases/download/v0.60.19/AgentMux-0.60.19-manifest.json"
+        size: 1956
+        content_type: "application/json"
+        digest: "sha256:3d72705a61b3d8ca2e9d4ca33e1ac07466c2dbe0fe316723a506b50ad0892bc7"
+      "720020508":
+        name: "AgentMux-0.60.19-x64-setup.exe"
+        url: "https://github.com/agentmuxai/agentmux/releases/download/v0.60.19/AgentMux-0.60.19-x64-setup.exe"
+        size: 155959407
+        content_type: "application/octet-stream"
+        digest: "sha256:d4398fb3562ec4f32fea7ea62715bb0746356736a16a7191d1d64a94bc558b92"
+      "720020509":
+        name: "AgentMux-0.60.19-1.x86_64.rpm"
+        url: "https://github.com/agentmuxai/agentmux/releases/download/v0.60.19/AgentMux-0.60.19-1.x86_64.rpm"
+        size: 145437061
+        content_type: "application/x-rpm"
+        digest: "sha256:dce416b2a09e34ad6864e0e5cca57de0a8a589171064667f45fd59121785a247"
+      "720020528":
+        name: "AgentMux_0.60.19_amd64-portable.tar.xz"
+        url: "https://github.com/agentmuxai/agentmux/releases/download/v0.60.19/AgentMux_0.60.19_amd64-portable.tar.xz"
+        size: 145930452
+        content_type: "application/x-xz"
+        digest: "sha256:4c6e897fbdf22ed49b662731ca9cca84452ad9d2bc5bc2a429655185750a6e02"
+      "720020531":
+        name: "AgentMux_0.60.19_amd64.deb"
+        url: "https://github.com/agentmuxai/agentmux/releases/download/v0.60.19/AgentMux_0.60.19_amd64.deb"
+        size: 145734560
+        content_type: "application/x-debian-package"
+        digest: "sha256:433d8655caf0af5db568a7fcc3cf9a8a3a0475201bde0dcc650877ac29373810"
+      "720020532":
+        name: "AgentMux_0.60.19_amd64.AppImage"
+        url: "https://github.com/agentmuxai/agentmux/releases/download/v0.60.19/AgentMux_0.60.19_amd64.AppImage"
+        size: 188267000
+        content_type: "application/vnd.appimage"
+        digest: "sha256:923e88637505242b664ec92e555fdb75eb9964687fae565e5f6a8f7b3bc822c4"
+      "720020624":
+        name: "AgentMux_0.60.19_arm64.dmg"
+        url: "https://github.com/agentmuxai/agentmux/releases/download/v0.60.19/AgentMux_0.60.19_arm64.dmg"
+        size: 227145635
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:a6127bf5614bb8134543bd32ec054d02776c8929399202454a3863700f88e0d6"
+      "720020675":
+        name: "AgentMux_0.60.19_x64.msix"
+        url: "https://github.com/agentmuxai/agentmux/releases/download/v0.60.19/AgentMux_0.60.19_x64.msix"
+        size: 220126205
+        content_type: "application/msix"
+        digest: "sha256:6a64f37c565900278dad4846d5001736ac583ce198a6f0cdacc74807ec425340"
+      "720020683":
+        name: "agentmux-0.60.19-x64-portable.7z"
+        url: "https://github.com/agentmuxai/agentmux/releases/download/v0.60.19/agentmux-0.60.19-x64-portable.7z"
+        size: 133489226
+        content_type: "application/x-7z-compressed"
+        digest: "sha256:bd7c033ff55c6efe967cbb7cb5c7a6d951f16ff2c9f615302ee1c8bdee8ce148"
+      "720020698":
+        name: "install.sh"
+        url: "https://github.com/agentmuxai/agentmux/releases/download/v0.60.19/install.sh"
         size: 16205
         content_type: "application/x-shellscript"
         digest: "sha256:cdbb528ad7909acbe19eb8865d43d9c4c244847ad4f93a5a2689dbc0d4e940fa"

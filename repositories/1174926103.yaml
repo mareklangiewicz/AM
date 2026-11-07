@@ -3,19 +3,19 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/fde55f59883353e5aa
 repository_id: 1174926103
 repository: "desirecore/agent-os"
 collection:
-  attempted_at: "2026-11-06T23:49:11Z"
+  attempted_at: "2026-11-07T10:01:32Z"
   page_size: 100
   page_limit: 1
   reconcile: false
   status: "ok"
 last_success:
-  completed_at: "2026-11-06T23:49:13Z"
+  completed_at: "2026-11-07T10:01:33Z"
   page_size: 100
   page_limit: 1
   reconcile: false
   pages_fetched: 1
   history_complete: false
-observed_at: "2026-11-06T23:49:13Z"
+observed_at: "2026-11-07T10:01:33Z"
 releases:
   "356990968":
     tag: "v10.0.92"
@@ -7694,17 +7694,11 @@ releases:
     url: "https://github.com/desirecore/agent-os/releases/tag/v10.0.201"
     created_at: "2026-06-28T10:51:30Z"
     published_at: "2026-11-06T18:34:29Z"
-    updated_at: "2026-11-06T20:04:55Z"
+    updated_at: "2026-11-07T08:34:19Z"
     prerelease: false
     source_zip_url: "https://api.github.com/repos/desirecore/agent-os/zipball/v10.0.201"
     source_tar_url: "https://api.github.com/repos/desirecore/agent-os/tarball/v10.0.201"
     assets:
-      "718141946":
-        name: "builder-debug.yml"
-        url: "https://github.com/desirecore/agent-os/releases/download/v10.0.201/builder-debug.yml"
-        size: 14877
-        content_type: "application/octet-stream"
-        digest: "sha256:a6a6d65afdb5e8b60762d8a2bc21cc82c1867f25bbaa1405877b6acec057d193"
       "718291230":
         name: "DesireCore_amd64_10.0.201.deb"
         url: "https://github.com/desirecore/agent-os/releases/download/v10.0.201/DesireCore_amd64_10.0.201.deb"
@@ -7735,9 +7729,105 @@ releases:
         size: 697884
         content_type: "application/octet-stream"
         digest: "sha256:ed2aefc56e3fa3b4f9d81fb4f6a06c6057d8a6628db4ab81aec506072d5ad1e6"
-      "718398129":
+      "719261785":
+        name: "ffmpeg-7.1.5-dc1-NOTICE.txt"
+        url: "https://github.com/desirecore/agent-os/releases/download/v10.0.201/ffmpeg-7.1.5-dc1-NOTICE.txt"
+        size: 561
+        content_type: "text/plain; charset=utf-8"
+        digest: "sha256:aa5f8d00dbbe3d6e1b589244e23c1192101020757ea0c11c1ee8da60e2518394"
+      "719261840":
+        name: "ffmpeg-7.1.5-dc1-sources.tar.gz"
+        url: "https://github.com/desirecore/agent-os/releases/download/v10.0.201/ffmpeg-7.1.5-dc1-sources.tar.gz"
+        size: 15256385
+        content_type: "application/x-gtar"
+        digest: "sha256:610e7d241eb221d053f0159df9add95f00d2c8ee82ab1b54a59b35e78b5189e1"
+      "719307807":
+        name: "DesireCore_arm64_10.0.201.dmg"
+        url: "https://github.com/desirecore/agent-os/releases/download/v10.0.201/DesireCore_arm64_10.0.201.dmg"
+        size: 788650792
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:80cf39c66d59b5803823bcd4c522eef69f932a799681fee1c29a24c73af06d26"
+      "719345075":
+        name: "DesireCore_arm64_10.0.201.dmg.blockmap"
+        url: "https://github.com/desirecore/agent-os/releases/download/v10.0.201/DesireCore_arm64_10.0.201.dmg.blockmap"
+        size: 807924
+        content_type: "application/octet-stream"
+        digest: "sha256:9f8d014b3c5e2b9abcc424f047ffec193fa2ea48fd297db695093696ccc1b717"
+      "719419894":
+        name: "DesireCore_arm64_10.0.201.exe"
+        url: "https://github.com/desirecore/agent-os/releases/download/v10.0.201/DesireCore_arm64_10.0.201.exe"
+        size: 634554248
+        content_type: "application/x-msdownload"
+        digest: "sha256:5db6685c39517091a79a4d7b117a47fb8002b16ea0f3b21ff991ea9a6ae7a540"
+      "719423320":
         name: "latest.yml"
         url: "https://github.com/desirecore/agent-os/releases/download/v10.0.201/latest.yml"
         size: 514
-        content_type: "application/octet-stream"
+        content_type: "application/yaml"
         digest: "sha256:c2b5497877bbeb4f4d89cf8df0d66d23574c5af2b2b8fdf43d184c521770fb6d"
+      "719542313":
+        name: "DesireCore_arm64_10.0.201.deb"
+        url: "https://github.com/desirecore/agent-os/releases/download/v10.0.201/DesireCore_arm64_10.0.201.deb"
+        size: 664380224
+        content_type: "application/x-debian-package"
+        digest: "sha256:ed8654f992d93714c0113d12c610f67977c103acba1388b4fb25f02abf393bb7"
+      "719613225":
+        name: "DesireCore_arm64_10.0.201.zip"
+        url: "https://github.com/desirecore/agent-os/releases/download/v10.0.201/DesireCore_arm64_10.0.201.zip"
+        size: 768514444
+        content_type: "application/zip"
+        digest: "sha256:2f5d27b85baf5970db49d5400e71aa8c441d57f39892ce91ab9d7018fea53126"
+      "719642911":
+        name: "DesireCore_arm64_10.0.201.zip.blockmap"
+        url: "https://github.com/desirecore/agent-os/releases/download/v10.0.201/DesireCore_arm64_10.0.201.zip.blockmap"
+        size: 778863
+        content_type: "application/octet-stream"
+        digest: "sha256:6f79782681400dea4f5f4413ef063274c3d098cdc9acf7480395fba0ac6a357e"
+      "719774136":
+        name: "DesireCore_x64_10.0.201.dmg"
+        url: "https://github.com/desirecore/agent-os/releases/download/v10.0.201/DesireCore_x64_10.0.201.dmg"
+        size: 777519103
+        content_type: "application/x-apple-diskimage"
+        digest: "sha256:3859e00ebbf5f6805e0b2d8361137a7cd215a2d947a815ecb232bba26ed64d1b"
+      "719783187":
+        name: "DesireCore_x64_10.0.201.dmg.blockmap"
+        url: "https://github.com/desirecore/agent-os/releases/download/v10.0.201/DesireCore_x64_10.0.201.dmg.blockmap"
+        size: 809382
+        content_type: "application/octet-stream"
+        digest: "sha256:20774a191241dbba482b6a8fd7bcc01076396997669f9975842c44388f575ce7"
+      "720029993":
+        name: "latest-linux-arm64.yml"
+        url: "https://github.com/desirecore/agent-os/releases/download/v10.0.201/latest-linux-arm64.yml"
+        size: 553
+        content_type: "application/yaml"
+        digest: "sha256:619852f181a3decc4ebb618f4d7c99a48e3dffee953e73b692c3f94c449acd46"
+      "720030084":
+        name: "latest-linux.yml"
+        url: "https://github.com/desirecore/agent-os/releases/download/v10.0.201/latest-linux.yml"
+        size: 555
+        content_type: "application/yaml"
+        digest: "sha256:2f379aafd73a715d82bb68caffe050a7a6a4a6bc674c882d2f67b7458b583f80"
+      "720045173":
+        name: "DesireCore_x64_10.0.201.zip"
+        url: "https://github.com/desirecore/agent-os/releases/download/v10.0.201/DesireCore_x64_10.0.201.zip"
+        size: 758484253
+        content_type: "application/zip"
+        digest: "sha256:47ea9548bf5f9aa0e82d127b4b91e231084bb176ec31d495ee2e6b37dd5f51c7"
+      "720114445":
+        name: "DesireCore_x64_10.0.201.zip.blockmap"
+        url: "https://github.com/desirecore/agent-os/releases/download/v10.0.201/DesireCore_x64_10.0.201.zip.blockmap"
+        size: 782209
+        content_type: "application/octet-stream"
+        digest: "sha256:be3f33095708036f703b117a754bd29fe97623eb15fa91cc391fb57c9da926fc"
+      "720114800":
+        name: "builder-debug.yml"
+        url: "https://github.com/desirecore/agent-os/releases/download/v10.0.201/builder-debug.yml"
+        size: 7586
+        content_type: "application/octet-stream"
+        digest: "sha256:9081ea78e2ee52ed4ea1fc2150cbcf542174a95e26f915f06c282eefb2e3a0d1"
+      "720114860":
+        name: "latest-mac.yml"
+        url: "https://github.com/desirecore/agent-os/releases/download/v10.0.201/latest-mac.yml"
+        size: 832
+        content_type: "application/octet-stream"
+        digest: "sha256:a9440de6294033fdbff31c50e1f8517a4a909b9e9f93972f5678493a88e553a1"
