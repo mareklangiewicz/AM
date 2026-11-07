@@ -2,7 +2,7 @@
 
 Type: grilling
 Label: wayfinder:grilling
-Status: claimed
+Status: resolved
 Assignee: codex-provenance
 Blocked by: 01, 03
 
@@ -24,6 +24,27 @@ when recipe/catalog revisions diverge or a file moves/disappears. Metadata
 collection must not execute recipes or downloaded app payloads.
 Use real examples and obtain Marek's terminology/contract decision. Link new
 settled domain terms to the glossary only if they are genuinely new concepts.
+
+## Answer — November 8, 2026
+
+Marek explicitly accepted the prepared four-label and revision-contract proposal
+with “I accept.” The proposal below is now the selected contract: **Shared
+installer**, **Template-based recipe**, **Custom recipe**, and **Not yet
+classified**, using its positive evidence predicates and exact recipe/architecture,
+rule, dependency and review-link bindings. Its initial pending wording records the
+proposal's earlier status and is superseded by this answer.
+
+Catalog enrollment, recipe availability, classification, installation selection/
+support and binary authenticity remain distinct. Reuse evidence for identical
+inputs; recheck affected changed inputs, otherwise show unknown for the new
+binding. Historical pinned assertions and links retain their historical context;
+no arbitrary time expiry or inference about installed updater state. Catalog-only
+is not proof that an AM recipe is absent. Template nonrecognition is not custom.
+
+The complete accepted detail and factual examples remain below, rather than being
+copied into a second contract. Implementation must cover these boundaries with
+focused fixtures and must not execute recipes/app payloads for metadata collection.
+No runtime, workflow, browser, installed-host or publication changes are made here.
 
 ## Comments
 

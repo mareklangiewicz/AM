@@ -123,8 +123,14 @@ A shared installer does not establish binary authenticity or safety.
 Recipe presentation must use evidence-bound classification with an explicit
 unknown state. Unknown is not custom. Custom does not mean malicious.
 Custom recipes need a prominent “Review installation recipe” link to the exact
-revision; the provenance decision must settle architecture/path and snapshot
-relationships before any label or review link is asserted.
+revision. The [accepted provenance contract](issues/06-choose-evidence-bound-recipe-classification-and-provenance.md#answer--november-8-2026)
+selects Shared installer, Template-based recipe, Custom recipe and Not yet
+classified, with positive evidence and exact architecture/recipe/rule/dependency
+bindings. Review links use the recipe's own immutable revision. Changed inputs
+require affected evidence to be rechecked or the new binding to remain unknown;
+unchanged pinned evidence does not expire merely with age. Catalog-only enrollment
+does not prove that an AM recipe is absent. Recipe availability, classification,
+installation selection/support and authenticity remain separate facts.
 
 Desktop, mobile, accessibility and keyboard behavior are acceptance dimensions.
 Browser tests must exercise real DOM, fetch/CORS, focus and interactions;

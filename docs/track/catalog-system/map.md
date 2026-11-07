@@ -110,6 +110,8 @@ branches are not merged or pushed automatically (home push guidance applies).
 
 - [Choose scalable snapshot and history storage](issues/05-choose-scalable-snapshot-and-history-storage.md#answer--november-8-2026): exact-parent incremental Git snapshots, lazy pinned reads, accepted source retention and run-local cleanup; seed plus three offline update cases and a later representative scale/history check. Existing numerical caps are baselines, not fixed ceilings; no capacity claim or implementation authorization.
 
+- [Choose evidence-bound recipe classification and provenance](issues/06-choose-evidence-bound-recipe-classification-and-provenance.md#answer--november-8-2026): accepted four evidence-bound labels, architecture-specific immutable review links and revalidation of changed inputs; enrollment, recipe availability, support and authenticity remain separate.
+
 ## Not yet specified
 
 Detailed field names, wire examples and schema documents will follow the public
