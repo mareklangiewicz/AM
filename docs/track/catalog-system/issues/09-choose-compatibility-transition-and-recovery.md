@@ -16,8 +16,14 @@ publication and rollback/recovery boundaries. Address public operational summari
 when collection/validation/publication fail independently.
 Include the transition from the separately deployed prototype branch to the
 accepted main-marek website-code home without losing preview/recovery capability.
-Preserve numeric app/source identities, retained release IDs and effective release
-observations. Avoid promising binary rollback from catalog rollback.
+Preserve AM app identities, numeric source identities, retained release IDs and
+effective release observations. Avoid promising binary rollback from catalog rollback.
+
+Include the accepted app-map transition from numeric values and source filenames
+to explicit readable YAML paths, as recorded in
+[Choose public YAML contracts and revision consistency](03-choose-public-yaml-contracts-and-revision-consistency.md#accepted-app-to-file-references--november-7-2026).
+Cover source/app renames, old numeric-path consumers and old pinned snapshots;
+do not silently require existing installed readers to understand the new map.
 
 Compare a small reversible end-to-end summary/browser slice with alternatives.
 Identify old code and operational procedures that can actually retire, evidence

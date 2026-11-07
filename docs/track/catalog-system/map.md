@@ -33,6 +33,11 @@ Answers live in their tickets. Update the brief to reference accepted answers as
 the map advances; avoid copying whole resolutions into multiple documents.
 No decision ticket is hand-resolved during charting.
 
+Marek subsequently accepted name-first app-map references to repository YAML
+files; the examples and remaining contract choices live in
+[Choose public YAML contracts and revision consistency](issues/03-choose-public-yaml-contracts-and-revision-consistency.md#accepted-app-to-file-references--november-7-2026).
+That broader ticket remains open.
+
 This map coordinates the existing [release-catalog history](../release-catalog/map.md)
 and [browser map](../catalog-pages/map.md); it does not replace their evidence.
 [Choose the catalog browsing experience](../catalog-pages/issues/03-review-browser-experience.md)

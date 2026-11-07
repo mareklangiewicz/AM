@@ -28,6 +28,49 @@ and compatibility requirements, not production schemas or reader implementation.
 
 ## Comments
 
+### Accepted app-to-file references — November 7, 2026
+
+Marek accepted using upstream-aligned AM app names as keys and explicit,
+human-readable repository YAML paths as values in the next catalog contract:
+
+```yaml
+apps:
+  "nvim": "repositories/nvim.yaml"
+  "nvim-nightly": "repositories/nvim.yaml"
+```
+
+The referenced `repositories/nvim.yaml` retains upstream identity metadata:
+
+```yaml
+repository_id: 16408992
+repository: "neovim/neovim"
+```
+
+The two app names directly reference one shared source document; they are not
+aliases for each other's installation/channel policy. Every app-map value has
+the same meaning: a file path, not a mixture of numeric IDs and app aliases.
+Readers follow the explicit path rather than constructing a numeric filename or
+resolving an alias chain. Keep numeric GitHub IDs for source identity verification
+and deduplication; readable filenames do not replace those checks.
+
+Paths are relative to the pinned catalog root and restricted to
+`repositories/<name>.yaml`. Validate that each reference exists in that snapshot,
+that each source name is unique, and that referenced documents have consistent
+numeric/source identities. Reject absolute paths, traversal and external URLs.
+Several app names may intentionally refer to the same document. Require one
+canonical document per numeric source, rather than duplicate release data.
+
+Still decide the precise source-name grammar/allocation and collision policy,
+app/source rename and compatibility behavior, and versioned reader/writer
+migration. A readable source name need not change automatically when a GitHub
+repository is renamed. Preserve the original numeric identity through renames;
+do not silently rebind an existing source to a different repository.
+
+The examples retain the currently supported quoting convention. Ordinary YAML's
+ability to omit quotes is not acceptance of a grammar change. This is accepted
+target direction, not a change to deployed format 2, published files or readers.
+The broader contract/consistency question remains open.
+
 ### Side-conversation requirements and proposals — November 7, 2026
 
 Marek requires avoiding repeated download URL prefixes in the next representation.

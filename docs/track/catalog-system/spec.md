@@ -55,6 +55,12 @@ facts, provenance, limits/policy, job summaries, progress and bounded statistics
 Do not require visitors to scrape logs, supply credentials, or build a competing
 model from unrelated revisions. Publish only sanitized, explicitly allowed fields.
 
+The next app map uses AM names pointing directly to readable repository YAML
+paths, retaining numeric GitHub identity metadata inside source documents.
+See the accepted examples and remaining naming/migration decisions in
+[Choose public YAML contracts and revision consistency](issues/03-choose-public-yaml-contracts-and-revision-consistency.md#accepted-app-to-file-references--november-7-2026).
+This target direction does not alter the deployed numeric map or filenames.
+
 Keep latest attempt, latest successful publication, source collection time and
 individual release observation time distinct. A failed/partial attempt cannot
 freshen retained data. Make absent, unavailable and unmeasured information explicit.
