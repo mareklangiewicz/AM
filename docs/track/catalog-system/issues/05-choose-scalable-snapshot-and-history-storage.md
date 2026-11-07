@@ -28,6 +28,46 @@ No cap increase or storage implementation is authorized by resolving this questi
 
 ## Comments
 
+### Accepted capacity target: normal full-catalog updates — November 8, 2026
+
+Marek clarified: “We shouldn't have limits that we expect to bite us during
+normal full catalog update (thousands of apps).” Size the supported pipeline and
+its safeguards for that workload, with headroom for ordinary release/asset
+variation and accumulated Git history. App count and distinct numeric source
+count must be measured separately because several apps can share one source.
+
+Existing 500-source, 1,024-file, 256 MiB local-history and 2 MiB/document settings
+are historical operating defaults, not fixed acceptance ceilings for the new
+system. Retain explicit resource safeguards where justified, but adjust them or
+improve processing when normal supported work would predictably hit them. Do not
+use routine overflow, skipped sources or preserved-but-aging data as the normal
+way to accommodate the intended catalog. The source-overflow fallback below still
+protects last-good data on exceptional oversized/invalid input; it is not a
+substitute for sizing normal supported documents correctly.
+
+This supersedes the earlier requirement that the offline rehearsal must fit all
+existing limits before expansion can be considered. Measure against those limits
+as a baseline; a crossing identifies a setting or implementation to revise, not an
+automatic rejection of the workload. Choose justified new defaults in implementation
+work from representative measurements and actual host/service constraints. Record
+scope, margin and why each retained bound exists. Do not invent replacement
+numbers without evidence or claim that thousands are already qualified.
+
+Correctness protections, accepted 32-plus-stable retention, Git as the foundation,
+external service quotas and physical host constraints remain applicable. Plan a
+full-catalog refresh that completes within an explicit refresh objective under
+those constraints; a budget stop is partial work, not a completed full refresh.
+Do not silently redefine a full update as the first 500 sources or rely on repeated
+normal budget failures. Workflow/batch mechanics belong to ticket 07 and the final
+acceptance target and representative scale check to ticket 10.
+
+The saved 500-source offline rehearsal remains a useful first regression and
+measurement step, not the final scale acceptance gate. Include a representative
+thousands-of-apps workload and history growth in the implementation roadmap;
+distinguish synthetic scale/churn from verified sources and real acquisition.
+Status/detail retention remains owned by ticket 08. This changes planning only;
+no deployed caps, enrollment, workflows, remote refs or installed hosts change.
+
 ### Faster migration, less ceremony — November 7, 2026
 
 Marek said the previous migration had too much ceremony and wants this one to

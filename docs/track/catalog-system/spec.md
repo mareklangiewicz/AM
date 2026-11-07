@@ -60,7 +60,9 @@ after successful source-scope collection and merge, before validation/publicatio
 Failed and unattempted sources stay unchanged; retained freshness stays intact.
 If a source document exceeds its size limit after retention, preserve that source's
 previous published data and report the refresh failure. Do not discard additional
-releases/assets or implicitly raise the existing 2 MiB/document limit. See the
+releases/assets to force a document to fit. The current 2 MiB/document setting
+is a baseline to reassess under the capacity target below; fallback on exceptional
+overflow remains required. See the
 [accepted overflow rule](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-document-size-overflow-rule--november-7-2026).
 The [accepted 32-plus-stable policy](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-32-plus-stable-retention--november-7-2026-side-conversation)
 and [exact-tag replacement rule](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-exact-tag-replacement--november-7-2026-side-conversation)
@@ -83,7 +85,20 @@ changed files each run, including applicable root/cross-document identity checks
 changes to format, schema or validation policy require a full snapshot check.
 The [accepted validation direction](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-validation-for-unchanged-blob-reuse--november-7-2026)
 still needs a concrete mechanism for establishing prior validation and rule
-identity. Measured capacity remains open; no limit increase follows from this.
+identity. Measured capacity remains open.
+
+Normal full-catalog updates at thousands of apps are the capacity target. Internal
+limits must accommodate the supported workload with headroom, rather than
+predictably stop normal updates. Existing numerical caps are measured baselines,
+not permanent ceilings; adjust justified safeguards or improve processing when
+needed. Account separately for apps, distinct sources, document sizes and growing
+Git history. Respect actual service quotas and host constraints, and define a
+refresh objective that full-catalog work can meet; a budget stop remains partial
+work. The saved 500-source rehearsal is an initial check, followed by representative
+scale/history evidence in the implementation roadmap. Synthetic workloads do not
+qualify real source coverage or acquisition capacity. See the
+[accepted capacity target](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-capacity-target-normal-full-catalog-updates--november-8-2026).
+This is planning guidance, not a deployed limit change.
 
 ## Accepted requirements
 
@@ -224,7 +239,9 @@ This is historical evidence, not a fresh remote-head or health check.
 Recorded profile: 500 attempts hourly; 512 MiB/run; 900-second cooperative
 acquisition; 30-minute job; 16 MiB/response; 2 MiB/document; 1,024 reader
 files; 256 MiB local history guard; 48-hour selected-release freshness.
-Thousands of sources remain unqualified. Quota headers observed 5,000 while the
+These are historical settings to reassess against the accepted thousands-of-apps
+full-update target, not fixed acceptance ceilings. Thousands of sources remain
+unqualified. Quota headers observed 5,000 while the
 documented planning baseline was 1,000/hour; do not infer a durable entitlement.
 The research ticket rechecks official facts before new operating decisions.
 No natural hourly-trigger success is established by these planning reads.

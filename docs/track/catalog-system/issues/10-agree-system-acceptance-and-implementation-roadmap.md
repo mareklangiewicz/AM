@@ -37,3 +37,16 @@ Consolidate a short implementation route and the necessary behavior/compatibilit
 checks; reuse passing evidence unless changes invalidate it. Agents choose routine
 parameters and bring material decisions together for review. Do not add speculative
 benchmarks, infrastructure or approval rounds. Deployment remains separately authorized.
+
+## Capacity acceptance input — November 8, 2026
+
+The [accepted capacity target](05-choose-scalable-snapshot-and-history-storage.md#accepted-capacity-target-normal-full-catalog-updates--november-8-2026)
+is routine full-catalog updates at thousands of apps without predictably hitting
+internal safeguards. Specify representative app/source counts, release/asset
+variation, history horizon, refresh objective and operating headroom in the final
+roadmap. Reassess existing defaults instead of making their current values mandatory
+acceptance ceilings. Include an appropriately scoped scale check after the initial
+saved 500-source rehearsal; identify synthetic data and do not present it as real
+acquisition or verified enrollment. Keep actual service/host constraints explicit.
+A normal budget stop with sources left untouched cannot count as a completed full
+refresh. Choose a small useful set of checks, not a new lengthy approval sequence.

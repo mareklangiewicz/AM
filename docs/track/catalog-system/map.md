@@ -12,6 +12,15 @@ contract, storage, compatibility or acceptance decisions.
 
 ## Notes
 
+Latest capacity steering, November 8, 2026: normal full-catalog updates at thousands
+of apps must not predictably hit internal resource limits. Size safeguards for the
+supported workload with headroom; existing numerical caps are baselines to reassess,
+not fixed design ceilings. Preserve correctness and honor real service/host
+constraints. The [accepted capacity target](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-capacity-target-normal-full-catalog-updates--november-8-2026)
+supersedes requiring every rehearsal to fit today's caps. The saved 500-source
+rehearsal remains useful but cannot alone qualify the intended scale. No production
+limit change or expanded enrollment is authorized by this planning clarification.
+
 Latest process steering, November 7, 2026: Marek wants this migration substantially
 faster and with less ceremony than the previous one. Agents choose routine
 experiment/implementation mechanics and consolidate reviewable changes; do not
