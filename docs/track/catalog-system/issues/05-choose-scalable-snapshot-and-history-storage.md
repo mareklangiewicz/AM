@@ -28,6 +28,16 @@ No cap increase or storage implementation is authorized by resolving this questi
 
 ## Comments
 
+### Accepted temporary-evidence cleanup — November 7, 2026
+
+Marek answered “yes” to keeping temporary collection files in the run's temporary
+directory, removing them on normal exit, and relying on runner disposal after
+interruption. Save local replay evidence only when explicitly requested. This is
+temporary working data, separate from published Git snapshots and final public
+summaries; it introduces no cross-run recovery store or automatic evidence archive.
+Runner disposal applies to disposable workflow runners; interruption of a local
+run does not itself guarantee deletion of its temporary directory. Planning only.
+
 ### Accepted validation for unchanged-blob reuse — November 7, 2026
 
 Marek answered “yes” to trusting unchanged files only from an exact, previously

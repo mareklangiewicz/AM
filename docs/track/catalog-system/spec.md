@@ -149,6 +149,11 @@ source failures and apply explicit request/byte/time/document/storage budgets.
 After runner loss, a new run may repeat any work not incorporated in a confirmed
 publication. Local evidence may be useful but survival/reuse is not required;
 do not add a separate checkpoint store or cross-run journal for recovery.
+Keep temporary collection files in the run's temporary directory and remove them
+on normal exit. Disposable runner teardown handles interrupted workflow runs;
+local interruption does not guarantee cleanup. Save local replay evidence only
+when explicitly requested. See the
+[accepted cleanup policy](issues/05-choose-scalable-snapshot-and-history-storage.md#accepted-temporary-evidence-cleanup--november-7-2026).
 Use safe quota reserves, recorded stop outcomes and controlled retry/backoff.
 Keep maintainer discovery manually triggered and scheduled work limited to
 refreshing explicitly enrolled sources; no mixed-work scheduler is required.
