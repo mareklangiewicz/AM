@@ -199,3 +199,11 @@ so this is a targeted regression test, not claimed real DOM acceptance.
 The Pages trigger now excludes tooling README-only changes, preventing deployment
 receipt commits from rebuilding an otherwise unchanged review snapshot. Browser
 source, workflow, tests and build scripts still trigger review deployment.
+
+Fetch correction deployed successfully in [run 42477378468](https://github.com/mareklangiewicz/AM/actions/runs/42477378468)
+from `d6f967ee9fb4c45dc0c16a92881ceb583f01a464`. Public readback matches the
+four browser source files, the new delivery source revision and available catalog/
+app roots. Receipt: `/home/marek/Documents/Codex/am-browser-review-20261108/fetch-fix-readback.json`.
+The regression test goes from the exact TypeError to passing; real-browser
+verification still requires a connected browser. Opening the IAB was attempted
+and returned `Browser is not available: iab`.
