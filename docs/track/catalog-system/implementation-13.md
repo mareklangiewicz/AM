@@ -319,3 +319,42 @@ were installed in those four public checks. Readback receipt and public browser
 captures are under `navigation-followup/` in the evidence directory above. This
 reuses the existing publication boundary; no collector or installed-host operation
 was performed. This documentation receipt does not require rebuilding the site.
+
+### Firefox, keyboard and parser follow-up — November 8, 2026
+
+The optional pinned Playwright Firefox 159.0 engine passes the same six journeys.
+The complete local run passed 18 checks in 24.3 s (desktop/narrow Chromium plus
+Firefox desktop), including native Tab/Shift-Tab and Vim h/j/k/search/typing guards.
+No physical mobile or screen-reader result is inferred from those checks.
+
+A CPU profile of the known 401,944-byte source under 4× slowdown identified
+per-line TextEncoder allocations as a substantial parsing cost. Reuse one encoder;
+UTF-16 lines of at most 21,845 code units provably fit the 65,536-byte UTF-8 bound,
+so only longer lines need the exact byte allocation/check. No grammar/schema,
+integer, URL, provenance or byte ceiling was relaxed. A boundary check tests exact
+accept/refuse behavior for ASCII, 2-byte/3-byte Unicode and surrogate pairs; all 13
+transport/contract checks and the shared positive/negative fixture parity pass.
+
+The parser-only profiled samples improved from 292–361 ms to 185–226 ms. Final
+full-detail samples were 116–136 ms desktop and 444–502 ms at 390×844, CPU 4×,
+10 Mbit/s and 100 ms latency. The last sample remains 1.7 ms over the 500 ms target;
+do not round that into an unconditional performance pass or repeat runs until
+success. These are small host-sensitive samples, not population percentiles or
+all-supported-document qualification. Directory and interaction timings remain
+recorded in `acceptance-followup/timing.json` beside the existing evidence directory.
+Other speculative parser changes were discarded; only the measured byte-check
+optimization is retained. The original full-detail performance reproduction and
+strict boundary/fixture checks supply the regression loop.
+
+Physical-device and comprehension evidence remain unavailable/unanswered. The
+existing saved seed-plus-three receipt is reused unchanged. Independent scale
+preparation uncovered a [provenance root overflow](preflight-14.md) requiring an
+unreleased layout decision; the question is pending. Ticket 13 remains claimed.
+
+The labelled synthetic 5,000-app directory also passed three narrow/CPU-4×
+samples: 348–422 ms processing after root bytes, 15–19 ms global search, 100-app
+pagination and reachability of the last identity, with zero source fetches during
+discovery. This used a controlled apps HTTP response and native browser fetch;
+it establishes neither cold public network time nor 5,000 real sources. Receipt
+and disposable reproduction script: `acceptance-followup/directory-5000.json` and
+`directory-5000.mjs` in the same evidence directory.

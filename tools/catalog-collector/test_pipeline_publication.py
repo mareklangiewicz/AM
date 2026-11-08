@@ -64,6 +64,30 @@ class Pipeline(unittest.TestCase):
         self.assertEqual(set(result['releases']),{'457'})
         self.assertEqual(result['releases']['457']['tag'],old['releases']['457']['tag'])
 
+    def test_corrective_direct_child_preserves_old_pin_and_observations(self):
+        self.invoke()
+        transport=p.Transport(str(self.remote));ref=p.REFS['format-3']
+        original=transport.fetch(self.stage,ref)
+        parent=Snapshot(self.stage,original)
+        path='repositories/example.yaml';before=c.decode(parent[path])
+        corrected=copy.deepcopy(before)
+        first=next(iter(corrected['releases']))
+        corrected['releases'][first]['title']='Synthetic metadata correction'
+        descriptor=c.decode(parent['catalog.yaml']);descriptor['producer']=dict(id=124,attempt=1)
+        tree=Candidate(parent,{path:c.encode(corrected),'catalog.yaml':c.encode(descriptor)})
+        result=p.publish(self.stage,tree,original,transport,ref)
+        self.assertEqual(result['state'],'confirmed')
+        current=Snapshot(self.stage,result['commit'])
+        self.assertEqual(git(self.stage,'rev-parse',result['commit']+'^').decode().strip(),original)
+        self.assertEqual(c.decode(parent[path]),before)
+        self.assertEqual(c.decode(current[path])['observed_at'],before['observed_at'])
+        self.assertEqual(c.decode(current[path])['collected_at'],before['collected_at'])
+        # An explicit old-pin read remains usable through the maintained shell reader.
+        saved=self.root/'old-pin.yaml';saved.write_bytes(parent[path])
+        read=subprocess.run(['sh',str(c.ROOT/'modules/catalog-contract-reader.am'),'get',str(saved),'releases',first,'title'],capture_output=True)
+        self.assertEqual(read.returncode,0,read.stderr)
+        self.assertNotIn(b'Synthetic metadata correction',read.stdout)
+
     def test_success_and_status_confirmation(self):
         result=self.invoke()
         self.assertTrue(all(row['state']=='confirmed' for row in result['outcomes'].values()))

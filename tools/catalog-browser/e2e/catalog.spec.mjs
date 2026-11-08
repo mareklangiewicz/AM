@@ -52,6 +52,17 @@ test('directory fits the viewport and hides source-only controls',async({page},i
  const box=await page.getByRole('navigation',{name:'Catalog views'}).boundingBox();
  expect(box.x).toBeGreaterThanOrEqual(0);
  expect(box.x+box.width).toBeLessThanOrEqual(page.viewportSize().width+1);
+ await page.keyboard.press('h');
+ const apps=page.locator('#content [data-app]');
+ await expect(apps.nth(0)).toBeFocused();
+ await page.keyboard.press('j');await expect(apps.nth(1)).toBeFocused();
+ await page.keyboard.press('k');await expect(apps.nth(0)).toBeFocused();
+ await page.keyboard.press('/');await expect(page.locator('#search')).toBeFocused();
+ await page.keyboard.type('jk');await expect(page.locator('#search')).toHaveValue('jk');
+ await page.locator('#search').fill('');
+ await page.keyboard.press('Tab');await expect(page.locator('#prev')).toBeFocused();
+ await page.keyboard.press('Shift+Tab');await expect(page.locator('#search')).toBeFocused();
+ await page.keyboard.press('Escape');
  await page.screenshot({path:info.outputPath('directory.png'),fullPage:true});
 });
 

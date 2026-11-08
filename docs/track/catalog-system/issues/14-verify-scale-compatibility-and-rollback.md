@@ -59,3 +59,11 @@ limits defeat accepted normal coverage/refresh/headroom, bring the concrete trad
 for review; do not mark capacity accepted or silently change guarantees. Record
 known gaps for ticket 15. No live collection, remote mutation, enrollment, workflow
 execution, deployment, history rewrite or installed-host change is authorized here.
+
+## Preparatory findings — November 8, 2026
+
+While 13 remains claimed, an independent [root/scheduling/consumer preflight](../preflight-14.md)
+exposes a blocking ordinary-workload provenance-root overflow, records the concrete
+layout proposal pending Marek's decision, inventories current v2 source consumers,
+and checks synthetic oldest-first scheduling plus corrective old-pin recovery.
+This ticket remains open and unclaimed; no full scale/history acceptance is implied.

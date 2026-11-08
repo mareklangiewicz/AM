@@ -5,7 +5,8 @@ const sourceOrder=new WeakMap();
 const bad=message=>{throw Error(`AM contract: ${message}`);};
 const own=(o,k)=>Object.hasOwn(o,k);
 const isMap=o=>o!==null && typeof o==='object';
-const bytes=s=>new TextEncoder().encode(s).length;
+const encoder=new TextEncoder();
+const bytes=s=>encoder.encode(s).length;
 function string(raw) {
  if(raw[0]!=='"'||raw.at(-1)!=='"') bad('quoted string');
  let out='';
@@ -70,7 +71,9 @@ export function parseDocument(text,{maxBytes=2097152}={}) {
  if(typeof text!=='string'||bytes(text)>maxBytes||maxBytes<1||maxBytes>33554432||!text.endsWith('\n')) bad('byte bound/newline');
  const root=Object.create(null), stack=[{depth:-1,value:root}], quotedKeys=new Map();
  for(const line of text.slice(0,-1).split('\n')) {
-  if(!line||bytes(line)>65536||/[\x00-\x1f\x7f-\x9f\u2028\u2029\ufffe\uffff]/.test(line)||line.endsWith(' ')) bad('control/whitespace');
+  // UTF-8 needs at most three bytes per UTF-16 code unit. Short lines fit
+  // without allocating a byte buffer; long lines still get the exact check.
+  if(!line||(line.length>21845&&bytes(line)>65536)||/[\x00-\x1f\x7f-\x9f\u2028\u2029\ufffe\uffff]/.test(line)||line.endsWith(' ')) bad('control/whitespace');
   const m=/^( *)("[a-z0-9][a-z0-9_.+-]*"|[a-z][a-z0-9_]*):(?: (.*))?$/.exec(line);
   if(!m||m[1].length%2) bad('grammar');
   const depth=m[1].length/2;

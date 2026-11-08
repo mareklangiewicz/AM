@@ -102,3 +102,14 @@ CATALOG_BASE_URL=https://mareklangiewicz.pl/AM CATALOG_APP=0x808 npm run test:e2
 The headless test engine is independent of a browser extension or connected tab.
 Mobile viewport emulation is not a physical-device or screen-reader qualification.
 Marek's November 8 steering prioritizes a pleasant practical UI; WCAG is advisory.
+
+For an optional local desktop Firefox check using the same six journeys:
+
+```
+npx playwright install firefox
+CATALOG_FIREFOX=1 npm run test:e2e -- --project=firefox
+```
+
+The default Chromium CI gate stays small. Firefox is an additional recorded engine
+check, not physical mobile or screen-reader evidence. Directory checks also exercise
+Vim h/j/k/search, typing guards and native Tab/Shift-Tab.

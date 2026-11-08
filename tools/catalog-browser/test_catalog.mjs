@@ -86,3 +86,13 @@ test('browser fetch keeps its Window receiver for document and channel reads',as
  assert.equal(await client.resolve('release-catalog-v3'),C);
  assert.equal((await client.doc(C,'apps.yaml')).kind,'apps');
 });
+test('UTF-8 line limit stays exact for ASCII, multibyte and surrogate pairs',async()=>{
+ const {parseDocument}=await import('../catalog-contract/reader.mjs'),original=await fixture('repository');
+ const prefix='    title: "',suffix='"',room=65536-prefix.length-suffix.length;
+ for(const unit of ['a','é','中','🐧']){
+  const count=Math.floor(room/new TextEncoder().encode(unit).length);
+  const text=original.replace(/^    title: .*$/m,prefix+unit.repeat(count)+suffix);
+  assert.doesNotThrow(()=>parseDocument(text));
+  assert.throws(()=>parseDocument(original.replace(/^    title: .*$/m,prefix+unit.repeat(count+1)+suffix)),/control\/whitespace/);
+ }
+});
