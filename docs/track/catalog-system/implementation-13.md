@@ -358,3 +358,15 @@ discovery. This used a controlled apps HTTP response and native browser fetch;
 it establishes neither cold public network time nor 5,000 real sources. Receipt
 and disposable reproduction script: `acceptance-followup/directory-5000.json` and
 `directory-5000.mjs` in the same evidence directory.
+
+
+Source `bc48b66a95dd04b47e81258a66be8dc1e2b46733` deployed successfully in
+[run 42496639918](https://github.com/mareklangiewicz/AM/actions/runs/42496639918).
+CI passed the 12-case Chromium gate and 13 contract/transport checks. Anonymous
+public readback matched seven source files and the delivery source revision.
+The saved review content ID is `4163f4a8bc40922824ead8fab1a49044254e5cc4` (508
+identities / 499 sources, unchanged conflict refusal and original observations).
+The subsequent public browser run passed six checks in 29.1 s across desktop/
+narrow Chromium and desktop Firefox; twelve local-only fixture/failure cases were
+skipped. Receipts and captures are under `acceptance-followup/`. This documentation
+receipt does not trigger another build. No collector/channel activation occurred.

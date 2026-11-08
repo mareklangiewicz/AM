@@ -142,6 +142,14 @@ approval boundaries.
 | [14](issues/14-verify-scale-compatibility-and-rollback.md) | 11, 12, 13 | Shared scale/history, compatibility and rollback evidence. |
 | [15](issues/15-prepare-reviewed-catalog-rollout-package.md) | 14 | Exact rollout/rollback package for explicit remote-operation review. |
 
+Latest implementation evidence, November 8: Chromium desktop/narrow and Firefox
+checks pass; physical-device/comprehension limits remain with 13. Independent
+[scale preflight](preflight-14.md) exposes an oversized central provenance document
+at 5,000 apps, with a per-source partition proposal pending Marek's decision.
+The same preflight records synthetic scheduling, current v2 consumer inventory and
+corrective old-pin recovery. Ticket 14 remains open/unclaimed; these are preparatory
+results rather than full workload/history qualification.
+
 ## Execution evidence and optional follow-ups
 
 All planning decisions are resolved. Actual processing/capacity, live acquisition,

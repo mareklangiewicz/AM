@@ -68,10 +68,10 @@ The normal catalog reader mode remains available with null delivery configuratio
 main-branch deployment still has its separate explicit input/activation gate.
 
 Deployment status, November 8: live at https://mareklangiewicz.pl/AM/ from
-`06bc4bbb8bf9ec6ef65fe9c6fe576e6164906911`. Build/deploy run
-42493953134 succeeded with all 12 Chromium checks and 12 transport/contract checks.
-Public readback matched seven source files and the delivery revision; four public
-Chromium smoke checks passed. Ticket 13 retains scoped performance/device and
+`bc48b66a95dd04b47e81258a66be8dc1e2b46733`. Build/deploy run
+42496639918 succeeded with all 12 Chromium checks and 13 transport/contract checks.
+Public readback matched seven source files and the delivery revision; six public
+smoke checks passed across desktop/narrow Chromium and desktop Firefox. Ticket 13 retains scoped performance/device and
 comprehension limits in `docs/track/catalog-system/implementation-13.md`.
 
 ## Small browser smoke suite
