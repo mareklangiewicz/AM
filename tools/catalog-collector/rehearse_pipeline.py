@@ -29,7 +29,7 @@ def seed_source(old,revision):
         if tag in tags:
             previous=tags[tag]
             old_at=observation(records[previous],old['observed_at'])
-            if at==old_at: raise ValueError('ambiguous historical same-tag observations')
+            if at==old_at: raise ValueError('same_tag_conflict')
             if at<old_at:continue
             records.pop(previous)
         tags[tag]=rid;records[rid]=dict(copy.deepcopy(record),observed_at=at)
@@ -45,18 +45,23 @@ def phase(args):
     before_objects=sum(p.stat().st_size for p in (repo/'objects').rglob('*') if p.is_file())
     parent=git(repo,'rev-parse',REF).decode().strip()
     names=json.loads((c.ROOT/'tools/catalog-collector/source-names.json').read_text())['active']
-    changed={};touched=[];source_hashes={}
+    changed={};touched=[];source_hashes={};refused=[]
     if args.phase=='seed':
         old=Snapshot(repo,args.baseline,'format-2')
         apps=old.metadata['apps.yaml']['apps']
         for path,meta in old.metadata.items():
             if not path.startswith('repositories/'):continue
             raw=old[path];source_hashes[path]=hashlib.sha256(raw).hexdigest()
-            obj=seed_source(decode_fact(path,raw,'format-2')[0],revision)
+            try:
+                obj=seed_source(decode_fact(path,raw,'format-2')[0],revision)
+            except ValueError as error:
+                if str(error)!='same_tag_conflict':raise
+                refused.append(dict(path=path,repository_id=meta['repository_id'],reason='same_tag_conflict'))
+                continue
             changed['repositories/'+names[str(obj['repository_id'])]+'.yaml']=c.encode(obj)
-        app_paths={app:'repositories/'+names[str(rid)]+'.yaml' for app,rid in apps.items()}
+        app_paths={app:'repositories/'+names[str(rid)]+'.yaml' for app,rid in apps.items() if 'repositories/'+names[str(rid)]+'.yaml' in changed}
         changed['apps.yaml']=c.encode(dict(c.header('apps',revision),apps=app_paths))
-        changed['provenance.yaml']=c.encode(dict(c.header('provenance',revision),apps={app:{arch:dict(repository_id=apps[app],availability='unknown',classification='unknown') for arch in ('x86_64','aarch64','i686','armv7l')} for app in apps}))
+        changed['provenance.yaml']=c.encode(dict(c.header('provenance',revision),apps={app:{arch:dict(repository_id=apps[app],availability='unknown',classification='unknown') for arch in ('x86_64','aarch64','i686','armv7l')} for app in app_paths}))
         snapshot=None;baseline_validation=old.validation
     else:
         snapshot=Snapshot(repo,parent)
@@ -118,7 +123,7 @@ def phase(args):
                 touched=touched,parent_validation=baseline_validation,publication_metrics=metrics,
                 object_bytes_before=before_objects,packed_reachable_bytes=packed,
                 packing='git repack -ad --window=10 --depth=50; pack.threads=1; pack.compression=6',
-                seed_document_sha256=source_hashes)
+                seed_document_sha256=source_hashes,refused_sources=refused)
     args.receipt.write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps({k:v for k,v in result.items() if k not in ('seed_document_sha256','touched','parent_validation','publication_metrics')}),flush=True)
 

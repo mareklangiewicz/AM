@@ -114,3 +114,15 @@ The earlier `media_type_literal` proposal is superseded. Implemented writers,
 shell/browser readers, closed schema predicates/examples and explicit round trips
 for `raw`, literal `zip`, repeated/leading `=`, full types, default omission and
 empty strings. Resume the saved seed-plus-three rehearsal under this rule.
+
+### Literal media-type checks
+
+Source `e6163409e` implements Marek's same-field leading-`=` rule. All 10 focused
+contract tests pass in 12.985 seconds, including the 17-case explicit upstream →
+wire → decoded matrix, literal/alias collisions, repeated leading `=`, empty/default
+values, full MIME values, Unicode and escaped newline literals. Shared fixtures
+pass writer/shell/browser/schema checks and mawk/gawk/BusyBox parity. Unknown bare
+aliases still refuse; missing upstream type normalization is unchanged. No separate
+literal field was introduced. Full saved-data rehearsal is running from this
+committed source; prior publication/legacy checks remain applicable to unchanged
+code paths.
