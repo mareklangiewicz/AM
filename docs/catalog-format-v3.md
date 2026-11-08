@@ -137,5 +137,8 @@ DOM/fetch/accessibility qualification belongs to tickets 13–14.
 `host_catalog.py collect` acquires once and writes independent candidates from each
 format's own exact parent. Format 2 retains its historical merge and numeric paths;
 it is never projected from pruned v3 records. `validate` is credential/network free
-and optionally checks expected input pins. Explicit `publish` is reserved for
-ticket 12; legacy workflow invocation is retained until that integration migrates.
+and optionally checks expected input pins. Explicit `publish` validates transferred input/run/parent/hash bindings, confirms
+exact-parent remote outcomes and independently attempts final status publication.
+The prepared workflow now uses these explicit operations, with target channels
+disabled until the separately authorized rollout. The legacy local invocation
+remains compatible for existing maintenance callers.

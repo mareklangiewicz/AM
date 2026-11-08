@@ -3,40 +3,126 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '17 * * * *'
-permissions:
-  contents: write
+permissions: {}
 concurrency:
   group: yaml-release-catalog
   cancel-in-progress: false
 jobs:
-  publish:
+  acquire:
     if: github.repository == 'mareklangiewicz/AM' && github.ref == 'refs/heads/main-marek'
     runs-on: ubuntu-24.04
     timeout-minutes: 30
+    permissions:
+      contents: read
+    outputs:
+      parent: ${{ steps.parents.outputs.parent }}
+      v3-parent: ${{ steps.parents.outputs.v3-parent }}
+      resolved: ${{ steps.parents.outputs.resolved }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.12'
       - run: python3 -m pip install 'PyYAML==6.0.3'
-      - name: Collect and publish YAML facts
+      - name: Read pinned original template inputs
+        run: git fetch --no-tags https://github.com/mareklangiewicz/AM.git bbffd15c19d01ef9124fbf99b5b9c41d2661ea22 bb53f3180ec92f862020f8bdccef0f6614015bae
+      - name: Read exact public parents
+        id: parents
         env:
-          GH_TOKEN: ${{ github.token }}
+          ENABLE_TARGETS: ${{ vars.CATALOG_V3_ENABLED }}
         shell: bash
         run: |
           set -euo pipefail
-          pub="$RUNNER_TEMP/catalog.git"
-          git init --bare "$pub"
-          # Fetch through checkout's authenticated configuration; keep the
-          # publication repository remote-free for the existing local writer.
-          git fetch origin refs/heads/release-catalog
-          parent=$(git rev-parse FETCH_HEAD)
-          git push "$pub" "$parent:refs/heads/catalog"
-          python3 tools/catalog-collector/host_catalog.py --repo "$pub" --parent "$parent" \
-            --batch-size 500 \
-            --report "$RUNNER_TEMP/catalog-report.json"
-          pin=$(git --git-dir="$pub" rev-parse refs/heads/catalog)
-          git fetch "$pub" "$pin"
-          # The candidate is a child of the exact fetched publication. A
-          # concurrent publication refuses rather than overwriting its facts.
-          git push --force-with-lease="refs/heads/release-catalog:$parent" origin "$pin:refs/heads/release-catalog"
+          mkdir -p "$RUNNER_TEMP/am-catalog"
+          for channel in legacy target; do
+            git init --bare --template= "$RUNNER_TEMP/am-catalog/$channel.git"
+          done
+          git -C "$RUNNER_TEMP/am-catalog/legacy.git" fetch --no-tags \
+            https://github.com/mareklangiewicz/AM.git refs/heads/release-catalog
+          parent=$(git -C "$RUNNER_TEMP/am-catalog/legacy.git" rev-parse FETCH_HEAD)
+          echo "parent=$parent" >> "$GITHUB_OUTPUT"
+          if [[ "$ENABLE_TARGETS" == true ]]; then
+            target=$(git ls-remote --refs https://github.com/mareklangiewicz/AM.git refs/heads/release-catalog-v3 | cut -f1)
+            if [[ -n "$target" ]]; then
+              git -C "$RUNNER_TEMP/am-catalog/target.git" fetch --no-tags https://github.com/mareklangiewicz/AM.git "$target"
+              echo "v3-parent=$target" >> "$GITHUB_OUTPUT"
+            fi
+          fi
+          echo 'resolved=true' >> "$GITHUB_OUTPUT"
+      - name: Collect candidates only
+        uses: ./.github/actions/catalog-collect
+        env:
+          GH_TOKEN: ${{ github.token }}
+        with:
+          repo: ${{ runner.temp }}/am-catalog/legacy.git
+          parent: ${{ steps.parents.outputs.parent }}
+          v3-repo: ${{ runner.temp }}/am-catalog/target.git
+          v3-parent: ${{ steps.parents.outputs.v3-parent }}
+          output: ${{ runner.temp }}/am-catalog/candidate
+          batch-size: ${{ vars.CATALOG_BATCH_SIZE || '500' }}
+          request-cap: ${{ vars.CATALOG_REQUEST_CAP || '750' }}
+          total-bytes: ${{ vars.CATALOG_TOTAL_BYTES || '536870912' }}
+      - name: Transfer inert bounded candidates
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: catalog-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/am-catalog/candidate/
+          retention-days: 1
+          if-no-files-found: warn
+      - name: Clean run-local collection files
+        if: always()
+        shell: bash
+        run: rm -rf -- "$RUNNER_TEMP/am-catalog"
+  publish:
+    needs: acquire
+    if: always() && github.repository == 'mareklangiewicz/AM' && github.ref == 'refs/heads/main-marek' && needs.acquire.result != 'skipped'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - run: python3 -m pip install 'PyYAML==6.0.3'
+      - name: Download this run and attempt's data
+        continue-on-error: true
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: catalog-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/am-catalog-candidate
+      - name: Validate, explicitly publish, and attempt final report
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED_PARENT: ${{ needs.acquire.outputs.parent }}
+          EXPECTED_V3_PARENT: ${{ needs.acquire.outputs.v3-parent }}
+          PARENTS_RESOLVED: ${{ needs.acquire.outputs.resolved }}
+          ENABLE_TARGETS: ${{ vars.CATALOG_V3_ENABLED }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          extra=()
+          if [[ -n "$EXPECTED_PARENT" ]]; then extra+=(--expected-v2-parent "$EXPECTED_PARENT"); fi
+          if [[ -n "$EXPECTED_V3_PARENT" ]]; then extra+=(--expected-v3-parent "$EXPECTED_V3_PARENT"); fi
+          if [[ "$PARENTS_RESOLVED" != true ]]; then extra+=(--input-catalog-state unknown); fi
+          if [[ "$ENABLE_TARGETS" == true ]]; then extra+=(--enable-targets); fi
+          python3 -B tools/catalog-collector/host_catalog.py publish \
+            --candidate "$RUNNER_TEMP/am-catalog-candidate" \
+            --remote-url https://github.com/mareklangiewicz/AM.git \
+            --source-revision "$GITHUB_SHA" --run-id "$GITHUB_RUN_ID" --attempt "$GITHUB_RUN_ATTEMPT" \
+            --result "$RUNNER_TEMP/am-catalog-result.json" "${extra[@]}"
+      - name: Clean transferred data
+        if: always()
+        shell: bash
+        run: rm -rf -- "$RUNNER_TEMP/am-catalog-candidate"
+# CATALOG_V3_ENABLED remains unset/false until the separately reviewed rollout.
+# Preparing this source file does not authorize dispatch or channel activation.

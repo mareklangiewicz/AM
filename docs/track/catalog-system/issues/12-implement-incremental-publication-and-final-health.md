@@ -2,7 +2,8 @@
 
 Type: task
 Label: implementation:task
-Status: open
+Status: claimed
+Assignee: codex
 Blocked by: 11
 
 ## Outcome
@@ -53,3 +54,41 @@ Run the accepted saved seed-plus-three rehearsal when these slices are usable;
 share its receipt with ticket 14, do not repeat it merely because tickets differ.
 Code/workflow preparation remains local. No dispatch, fresh acquisition, remote
 write, enrollment, installed-host operation or deployment is authorized here.
+
+## Progress — November 8, 2026
+
+Local incremental/publisher/finalizer implementation and prepared workflow exist.
+17 shared contract/publication tests pass (60.120 seconds), including disposable
+remote publication, v2 success/v3 conflict, ambiguous writes, reporting failure,
+newer C with unchanged older S, artifact refusal, run/input/hash checks, unknown
+counts and 64-summary retention. 30 affected legacy test invocations pass
+(46.293 seconds); workflow/action permissions, pinned Actions, credential
+persistence, concurrency, bash syntax, shellcheck and whitespace checks pass.
+No dispatch, remote write, enrollment or installed-host change occurred.
+
+Parent validation now streams the exact pinned tree and retains source metadata;
+selected sources decode lazily. Candidate validation reuses unchanged blob/metadata
+only under an in-memory exact-parent/rule binding, and checks whole-tree identities.
+A new process streams full validation again; no imported receipt/trust store is
+accepted. Status uses a separate 100,000-file / 32 MiB tree-listing allowance to
+fit complete 8-attempt detail at the intended workload without applying the
+catalog's 20,000-file bound. Representative capacity remains ticket 14 work.
+
+The prepared hourly/manual workflow has contents-read acquisition, a collection-only
+Action, one-day inert artifacts, and separately checked-out contents-write
+publisher/finalizer. `CATALOG_V3_ENABLED` remains unset/false until reviewed rollout.
+Collection profile settings are exposed; existing production source is not pushed.
+Status distinguishes known/absent/unknown input C and counts reports with unknown
+source totals explicitly in daily aggregates. Publication confirms actual remote
+acceptance; local commits and ambiguous results never count as confirmed.
+
+The required saved 500-source seed rehearsal stopped at a real contract conflict:
+[inspection receipt](../mime-conflict-12.json) records **6,691 assets across 10
+sources** whose original `content_type` is the bare literal `raw`. The accepted
+v3 contract refuses unknown bare MIME aliases, so it cannot preserve these facts.
+No replacement MIME or alias expansion was invented. All preserved evidence is
+untouched. Asked Marek whether to add an explicit `media_type_literal` escape
+(recommended, preserving arbitrary original values including alias collisions)
+or keep the current source-refusal policy. Continue the complete saved seed plus
+three updates after this decision; do not claim rehearsal/capacity acceptance now.
+This ticket remains claimed, not resolved. Ticket 13 remains dependent on it.

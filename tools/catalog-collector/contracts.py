@@ -142,7 +142,7 @@ def source(previous, acquired, *, rid, repository, revision):
 
 
 def validate_tree(tree, channel='catalog'):
-    if type(tree) is not dict or sum(map(len,tree.values()))>TREE_CAP or len(tree)>20000:
+    if type(tree) is not dict or sum(map(len,tree.values()))>TREE_CAP or len(tree)>(100000 if channel=='status' else 20000):
         raise ValueError('tree bound')
     docs={}
     ids={}
@@ -204,7 +204,7 @@ def read_directory(directory, channel='catalog'):
         if path.is_file():
             if path.stat().st_size>FILE_CAP: raise ValueError('document bound')
             tree[path.relative_to(directory).as_posix()]=path.read_bytes()
-            if sum(map(len,tree.values()))>TREE_CAP or len(tree)>20000: raise ValueError('tree bound')
+            if sum(map(len,tree.values()))>TREE_CAP or len(tree)>(100000 if channel=='status' else 20000): raise ValueError('tree bound')
     validate_tree(tree,channel)
     return tree
 
@@ -214,7 +214,7 @@ def read_local(repo, commit, channel='catalog'):
     pin(commit)
     def local(*args,cap):
         return bounded(['git','-C',str(repo),'-c','core.hooksPath=/dev/null',*args],env=environment(),cap=cap)
-    listing=local('ls-tree','-rz',commit,cap=4*1024*1024)
+    listing=local('ls-tree','-rz',commit,cap=(32 if channel=='status' else 4)*1024*1024)
     tree={}; total=0
     for row in listing.split(b'\0'):
         if not row: continue
@@ -223,7 +223,7 @@ def read_local(repo, commit, channel='catalog'):
         path=name.decode('ascii')
         size=int(local('cat-file','-s',oid.decode(),cap=64))
         total+=size
-        if size>FILE_CAP or total>TREE_CAP or len(tree)>=20000: raise ValueError('catalog bound')
+        if size>FILE_CAP or total>TREE_CAP or len(tree)>=(100000 if channel=='status' else 20000): raise ValueError('catalog bound')
         tree[path]=local('cat-file','blob',oid.decode(),cap=FILE_CAP)
     validate_tree(tree,channel)
     return tree

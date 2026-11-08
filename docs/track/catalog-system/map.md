@@ -137,7 +137,7 @@ approval boundaries.
 | Ticket | Depends on | Deliverable |
 | --- | --- | --- |
 | [11 resolved](issues/11-implement-contracts-readers-and-collection-interface.md) | 10 | Contracts, strict readers and shared collection/validation interface; [focused local acceptance](implementation-11.md), with format 2 preserved. |
-| [12](issues/12-implement-incremental-publication-and-final-health.md) | 11 | Incremental Git publication, final health and isolated workflow permissions. |
+| [12 claimed](issues/12-implement-incremental-publication-and-final-health.md) | 11 | Incremental Git publication, final health and isolated workflow permissions. |
 | [13](issues/13-integrate-main-owned-catalog-browser.md) | 11, 12 | Main-owned A/B/C browser, context/provenance/health and real-browser checks. |
 | [14](issues/14-verify-scale-compatibility-and-rollback.md) | 11, 12, 13 | Shared scale/history, compatibility and rollback evidence. |
 | [15](issues/15-prepare-reviewed-catalog-rollout-package.md) | 14 | Exact rollout/rollback package for explicit remote-operation review. |

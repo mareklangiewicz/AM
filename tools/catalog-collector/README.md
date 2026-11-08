@@ -219,9 +219,12 @@ unsupported cases remain unknown. Review links use recipe commits, not catalog C
 
 The [format-3](../../docs/catalog-format-v3.md) and
 [status-1](../../docs/catalog-status-v1.md) contracts describe exact fields, grammar,
-encodings and reader APIs. `publish` is an explicit reserved command which refuses
-until ticket 12 implements publisher/finalizer behavior; the workflow and legacy
-command remain operational until that integration. Scale/resource defaults and
+encodings and reader APIs. `publish` is the explicit publisher/finalizer. It revalidates bounded artifacts,
+checks trusted workflow input/run/parent/content bindings, publishes format 2 first,
+then optionally v3/status, confirms remote acceptance and reports ambiguous writes
+as unknown. The prepared workflow uses separate acquisition/publisher jobs; new
+channels remain disabled until reviewed rollout activation. The legacy command
+remains compatible for existing local maintenance callers. Scale/resource defaults and
 real-browser delivery are not qualified by these parser/fixture checks.
 
 Regenerate editor schemas, browser definitions and shell field tables with
@@ -236,3 +239,58 @@ mawk, gawk and BusyBox for portability checks. Installed clients require only
 shell/awk. Browser parsing uses exact BigInts; `releaseFacts` exposes reconstructed
 URLs, media types and effective observations. Parser checks do not establish DOM,
 CORS, performance, accessibility or upstream/binary trust.
+
+
+## Incremental candidates and explicit finalization (ticket 12)
+
+`incremental.Snapshot` streams the exact parent through the maintained readers
+once per process and retains source identity/attempt/success metadata. It keeps
+no full decoded source tree. `Records` loads only selected sources; `Candidate`
+validates changed bytes and whole-tree references, reusing untouched Git blobs.
+Trust is an in-memory object bound to exact parent commit and a digest of all
+validation code/schema inputs. Imported validation receipts never establish trust;
+a new process or changed rules performs full parent validation again. No durable
+checkpoint/trust store is added. Fallback cost is recorded in collection evidence.
+
+New collection flags expose source/request/response/total-byte/time/reserve
+settings. The private command allows 10,000 enrolled sources, default batch 500
+and request allowance 750; actual quota/reserve and byte/time guards still stop
+safely. These settings await ticket-14 representative measurements. A batch is
+requested scope, not a claim that every enrolled source was refreshed. Deployed
+legacy defaults remain unchanged until prepared workflow source is activated.
+
+Explicit publication against a **disposable local test remote**:
+
+```sh
+python3 tools/catalog-collector/host_catalog.py publish   --candidate /tmp/new-candidate --remote-url /tmp/disposable-remote.git   --expected-v2-parent EXACT_FORMAT_2_PARENT --source-revision EXACT_SOURCE_COMMIT   --run-id 123 --attempt 1 --enable-targets --result /tmp/publication-result.json
+```
+
+For an existing target pass `--expected-v3-parent EXACT_TARGET_PARENT`. Without
+`--enable-targets`, only the compatibility channel is written. That switch is an
+explicit write scope, not deployment authorization. Production write/dispatch,
+public-channel activation and installed-host changes need their existing approval.
+A failed/refused/ambiguous stage stops further catalog writes. Final status is
+attempted independently when target channels are enabled. Missing/invalid candidate
+artifacts yield unknown source counts; no fake zeroes or publication pin. The CLI
+returns failure after finalization for invalid or unconfirmed active stages.
+
+Status retains 64 summaries, available source details for 8 reported attempts and
+90 daily aggregates, with original timestamps and explicit unknown-count coverage.
+Source detail includes known selected-unattempted sources. A newer catalog can
+coexist with the unchanged older status report after reporting failure. No public
+start record, automatic merge/write retry or report-delivery queue exists.
+
+The collection-only local Action installs no dependencies or write credentials.
+The prepared hourly/manual workflow checks out exact source with credential
+persistence disabled, installs pinned dependencies before step-scoped tokens,
+transfers one-day-retention data artifacts and uses a separately checked-out
+trusted publisher. Artifact paths, type/size, input/run/parent/hash bindings and
+catalog semantics are checked again; artifact code is never executed. Remote Git
+auth is scoped to the fixed repository URL and HTTP redirects are disabled.
+The prepared workflow keeps `CATALOG_V3_ENABLED` unset/false until rollout review.
+
+`rehearse_pipeline.py` runs the saved retained seed plus replay/subset/full synthetic
+updates in an isolated repo, with separate-process RSS, Git blob reuse and
+consistently packed reachable-history measurements. It never fetches HTTP or
+mutates the preserved evidence repository. The current saved-data MIME conflict
+must be resolved before claiming a complete successful 500-source rehearsal.

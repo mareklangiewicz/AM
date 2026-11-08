@@ -132,6 +132,9 @@ function semantics(doc) {
    }
   }
  }
+ if(doc.kind==='summary'||doc.kind==='source') {
+  if((doc.input_catalog_state==='known')!==own(doc,'input_catalog')) bad('input catalog state');
+ }
  if(doc.kind==='summary') {
   if(doc.started_at>doc.reported_at) bad('run time');
   if(doc.actions_url!==`https://github.com/mareklangiewicz/AM/actions/runs/${doc.run.id}`||doc.recent_runs_url!=='https://github.com/mareklangiewicz/AM/actions/workflows/catalog.yml') bad('investigation links');
@@ -151,7 +154,7 @@ export function releaseFacts(doc,id) {
 }
 export function validateSnapshot(documents,channel='catalog') {
  const docs=new Map(),ids=new Set();
- if(Object.keys(documents).length>20000) bad('tree bound'); let total=0;
+ if(Object.keys(documents).length>(channel==='catalog'?20000:100000)) bad('tree bound'); let total=0;
  for(const [path,text] of Object.entries(documents)) {
   total+=bytes(text); if(total>1073741824) bad('tree bytes');
   const allowed=channel==='catalog'?/^(catalog|apps|provenance)\.yaml$|^repositories\/[a-z0-9][a-z0-9_.+-]{0,63}\.yaml$/:/^(status|statistics)\.yaml$|^runs\/[1-9][0-9]*-[1-9][0-9]*\/(summary\.yaml|sources\/[a-z0-9][a-z0-9_.+-]{0,63}\.yaml)$/;

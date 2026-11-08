@@ -1,0 +1,51 @@
+name: Collect inert catalog candidates
+description: Read-only collection through the maintained CLI; never publishes
+inputs:
+  repo:
+    required: true
+    description: Local format-2 parent object repository
+  parent:
+    required: true
+    description: Exact format-2 parent commit
+  v3-repo:
+    default: ''
+    description: Local format-3 parent object repository
+  v3-parent:
+    default: ''
+    description: Exact format-3 parent commit, if established
+  output:
+    required: true
+    description: New run-local candidate directory
+  batch-size:
+    default: '500'
+    description: Requested oldest-first scope, independent of enrolled count
+  request-cap:
+    default: '750'
+    description: Internal request allowance; live quota reserve still applies
+  total-bytes:
+    default: '536870912'
+    description: Charged response byte allowance, pending scale qualification
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        CATALOG_REPO: ${{ inputs.repo }}
+        CATALOG_PARENT: ${{ inputs.parent }}
+        CATALOG_V3_REPO: ${{ inputs.v3-repo }}
+        CATALOG_V3_PARENT: ${{ inputs.v3-parent }}
+        CATALOG_OUTPUT: ${{ inputs.output }}
+        CATALOG_BATCH: ${{ inputs.batch-size }}
+        CATALOG_REQUEST_CAP: ${{ inputs.request-cap }}
+        CATALOG_BYTE_CAP: ${{ inputs.total-bytes }}
+      run: |
+        set -euo pipefail
+        extra=()
+        if [[ -n "$CATALOG_V3_PARENT" ]]; then
+          extra=(--v3-repo "$CATALOG_V3_REPO" --v3-parent "$CATALOG_V3_PARENT")
+        fi
+        python3 -B tools/catalog-collector/host_catalog.py collect \
+          --repo "$CATALOG_REPO" --parent "$CATALOG_PARENT" \
+          --output "$CATALOG_OUTPUT" --run-id "$GITHUB_RUN_ID" --attempt "$GITHUB_RUN_ATTEMPT" \
+          --batch-size "$CATALOG_BATCH" --request-cap "$CATALOG_REQUEST_CAP" \
+          --total-bytes "$CATALOG_BYTE_CAP" "${extra[@]}"

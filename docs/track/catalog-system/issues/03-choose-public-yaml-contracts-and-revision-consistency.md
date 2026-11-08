@@ -161,3 +161,12 @@ The deployed format-2 specification/readers/files remain unchanged. No external
 research or remote-state claim was needed for these design choices. Documentation
 link/dependency and whitespace checks accompany this planning change; no runtime
 tests, remote refs, deployment, installed changes or push are part of it.
+
+## Implementation conflict for decision — November 8, 2026
+
+Ticket 12's saved-data rehearsal found the original bare content-type value `raw`
+on 6,691 assets in 10 sources. The accepted rule that unknown bare aliases refuse
+cannot represent these facts losslessly. See [inspection evidence](../mime-conflict-12.json)
+and [ticket 12 progress](12-implement-incremental-publication-and-final-health.md#progress--november-8-2026).
+Marek has been asked to choose an explicit `media_type_literal` escape or retaining
+the current refusal policy. No wire-rule amendment has been accepted or applied.

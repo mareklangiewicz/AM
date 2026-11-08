@@ -588,6 +588,11 @@
           "minimum": 0,
           "maximum": 9223372036854775807
         },
+        "unknown_source_count_attempts": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9223372036854775807
+        },
         "successful_sources": {
           "type": "integer",
           "minimum": 0,
@@ -611,6 +616,7 @@
       },
       "required": [
         "reported_attempts",
+        "unknown_source_count_attempts",
         "successful_sources",
         "failed_sources",
         "first_report",
@@ -853,6 +859,14 @@
         "inputs": {
           "$ref": "#/$defs/inputs"
         },
+        "input_catalog_state": {
+          "type": "string",
+          "enum": [
+            "known",
+            "absent",
+            "unknown"
+          ]
+        },
         "input_catalog": {
           "type": "string",
           "pattern": "^[0-9a-f]{40}$"
@@ -899,6 +913,7 @@
         "stop_reason": {
           "type": "string",
           "enum": [
+            "complete",
             "transport",
             "authentication",
             "quota",
@@ -935,7 +950,7 @@
         "kind",
         "run",
         "inputs",
-        "input_catalog",
+        "input_catalog_state",
         "started_at",
         "reported_at",
         "collection",
@@ -969,6 +984,14 @@
         "run": {
           "$ref": "#/$defs/run"
         },
+        "input_catalog_state": {
+          "type": "string",
+          "enum": [
+            "known",
+            "absent",
+            "unknown"
+          ]
+        },
         "input_catalog": {
           "type": "string",
           "pattern": "^[0-9a-f]{40}$"
@@ -994,6 +1017,7 @@
         "reason": {
           "type": "string",
           "enum": [
+            "complete",
             "transport",
             "authentication",
             "quota",
@@ -1029,7 +1053,7 @@
         "schema",
         "kind",
         "run",
-        "input_catalog",
+        "input_catalog_state",
         "repository_id",
         "repository",
         "outcome"
@@ -1090,6 +1114,7 @@
         "rules": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
         "schemas": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
       },
+      "input_catalog_state": "known",
       "input_catalog": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
       "started_at": "2026-11-03T01:00:00Z",
       "reported_at": "2026-11-08T01:00:00Z",

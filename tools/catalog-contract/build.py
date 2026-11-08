@@ -29,7 +29,7 @@ MEASUREMENT=obj('measurement',dict(state=ENUM('known','unknown'),value=N),['stat
 COUNTS=obj('counts',{k:MEASUREMENT for k in ('enrolled','selected','attempted','successful','failed','unknown','unattempted','deferred')})
 STAGE=ENUM('ok','partial','failed','unknown','not_attempted')
 PUB=obj('publication',dict(state=ENUM('confirmed','conflict','failed','unknown','not_attempted'),commit=PIN),['state'])
-REASON=ENUM('transport','authentication','quota','request_budget','byte_budget','time_budget','source_validation','document_overflow','candidate_validation','parent_conflict','publication_transport','internal','unknown')
+REASON=ENUM('complete','transport','authentication','quota','request_budget','byte_budget','time_budget','source_validation','document_overflow','candidate_validation','parent_conflict','publication_transport','internal','unknown')
 ASSET=obj('asset',dict(name=S,url_suffix=S,url=URL,size=N,media_type=scalar('string',default='application/octet-stream',description='Omission is exactly application/octet-stream; zip expands to application/zip, and the empty string preserves an explicit empty upstream value.'),digest=S),['name','size'])
 ASSETS=table('assets','^[1-9][0-9]*$',ASSET)
 RELEASE=obj('release',dict(observed_at=TIME,tag=S,title=S,url=URL,created_at=TIME,published_at=TIME,updated_at=TIME,prerelease=B,source_zip_url=URL,source_tar_url=URL,download_base=URL,assets=ASSETS),['tag','url','prerelease','assets'])
@@ -47,7 +47,7 @@ DETAILS=table('detail_references','^[1-9][0-9]*-[1-9][0-9]*$',TIME)
 METRICS=obj('metrics',{k:MEASUREMENT for k in ('http_attempts','charged_bytes','received_bytes','acquisition_milliseconds','command_milliseconds','tree_bytes','largest_document_bytes','local_object_bytes','packed_history_bytes','remote_storage_bytes','peak_rss_bytes')})
 BUDGETS=obj('budgets',{k:N for k in ('requests','bytes','acquisition_milliseconds','document_bytes')})
 FRESH=obj('freshness',dict(catalog=PIN,evaluated_at=TIME,under_24h=MEASUREMENT,from_24_to_48h=MEASUREMENT,at_least_48h=MEASUREMENT,no_success=MEASUREMENT,unknown=MEASUREMENT))
-DAILY=obj('daily',dict(reported_attempts=N,successful_sources=N,failed_sources=N,first_report=TIME,last_report=TIME))
+DAILY=obj('daily',dict(reported_attempts=N,unknown_source_count_attempts=N,successful_sources=N,failed_sources=N,first_report=TIME,last_report=TIME))
 DAYS=table('days','^[0-9]{4}-[0-9]{2}-[0-9]{2}$',DAILY)
 def root(kind, version, fields):
     return obj(kind,dict(format=scalar('integer',const=version),schema=(SCHEMA(3) if version==3 else scalar('string',pattern='^https://raw\\.githubusercontent\\.com/mareklangiewicz/AM/[0-9a-f]{40}/docs/catalog-status-v1\\.md$')),kind=scalar('string',const=kind),**fields))
@@ -56,9 +56,10 @@ root('apps',3,dict(apps=table('app_paths','^'+NAME+'$',PATH)))
 root('repository',3,dict(repository_id=ID,repository=scalar('string',pattern='^[A-Za-z0-9-]+/[A-Za-z0-9_.-]+$'),collected_at=TIME,scope=SCOPE,observed_at=TIME,releases=RELEASES))
 root('provenance',3,dict(apps=PROVS))
 root('status',1,dict(schemas=PIN,last_report=scalar('string',pattern='^runs/[1-9][0-9]*-[1-9][0-9]*/summary\\.yaml$'),reported_at=TIME,last_confirmed_publication=PUB,summaries=RUNREFS,details=DETAILS))
-root('summary',1,dict(run=RUN,inputs=INPUTS,input_catalog=PIN,started_at=TIME,reported_at=TIME,collection=STAGE,validation=STAGE,publication=PUB,compatibility_publication=PUB,counts=COUNTS,stop_reason=REASON,metrics=METRICS,budgets=BUDGETS,actions_url=URL,recent_runs_url=URL))
-root('source',1,dict(run=RUN,input_catalog=PIN,repository_id=ID,repository=scalar('string',pattern='^[A-Za-z0-9-]+/[A-Za-z0-9_.-]+$'),outcome=ENUM('ok','failed','unknown','unattempted'),reason=REASON,attempted_at=TIME,completed_at=TIME,output_catalog=PIN))
-D['source']['required']=['format','schema','kind','run','input_catalog','repository_id','repository','outcome']
+root('summary',1,dict(run=RUN,inputs=INPUTS,input_catalog_state=ENUM('known','absent','unknown'),input_catalog=PIN,started_at=TIME,reported_at=TIME,collection=STAGE,validation=STAGE,publication=PUB,compatibility_publication=PUB,counts=COUNTS,stop_reason=REASON,metrics=METRICS,budgets=BUDGETS,actions_url=URL,recent_runs_url=URL))
+root('source',1,dict(run=RUN,input_catalog_state=ENUM('known','absent','unknown'),input_catalog=PIN,repository_id=ID,repository=scalar('string',pattern='^[A-Za-z0-9-]+/[A-Za-z0-9_.-]+$'),outcome=ENUM('ok','failed','unknown','unattempted'),reason=REASON,attempted_at=TIME,completed_at=TIME,output_catalog=PIN))
+D['summary']['required'].remove('input_catalog')
+D['source']['required']=['format','schema','kind','run','input_catalog_state','repository_id','repository','outcome']
 root('statistics',1,dict(measured_at=TIME,freshness=FRESH,days=DAYS))
 KINDS=['catalog','apps','repository','provenance','status','summary','source','statistics']
 # Editor schemas supplement exact-byte/domain readers; conditional relationships

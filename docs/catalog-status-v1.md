@@ -15,9 +15,13 @@ Use the [same mapping-only grammar and bounds](catalog-format-v3.md#grammar-and-
 | Path | Kind | Meaning |
 | --- | --- | --- |
 | `status.yaml` | `status` | Schema-set pin, last reported summary/time, last confirmed publication known to the report, retained summary references and detail coverage. |
-| `runs/<id>-<attempt>/summary.yaml` | `summary` | Exact run/attempt and source/policy/recipe/rule/schema inputs, input C, stage outcomes, counts, limits, measured usage, investigation links. |
+| `runs/<id>-<attempt>/summary.yaml` | `summary` | Exact run/attempt and source/policy/recipe/rule/schema inputs, input C state/pin, stage outcomes, counts, limits, measured usage, investigation links. |
 | `runs/<id>-<attempt>/sources/<name>.yaml` | `source` | Available final source result, exact numeric identity, input C and optional confirmed output C/timestamps/reason. Missing detail alone proves nothing. |
 | `statistics.yaml` | `statistics` | Optional stated measurement time, source-age buckets at exact C, daily reported-attempt aggregates and actual coverage. |
+
+An input catalog uses `input_catalog_state: known` with its exact pin, `absent`
+for a verified target-channel bootstrap, or `unknown` when acquisition context is
+unavailable; the latter states forbid an invented input pin.
 
 The public tree allowlist includes only these paths. Summary paths must agree with
 run/attempt identity and root references; source details require declared retained
@@ -51,7 +55,10 @@ byte, acquisition-millisecond and document-byte configured allowances.
 Freshness buckets are disjoint <24h, 24–<48h, >=48h, no successful observation,
 and unknown, evaluated at a stated C/time. They describe successful source scopes,
 not the freshness of every retained release. Daily records describe reported
-attempts only, with first/last original report times. Do not interpolate missing
+attempts only, with first/last original report times. `unknown_source_count_attempts`
+counts reports with unavailable source totals; success/failure sums cover the
+remaining known reports. Earlier retained summaries backfill the first aggregate
+when no prior catalog context was available. Do not interpolate missing
 attempts/days or call absent days zero. Git history is separate from tree retention.
 
 Only closed safe reason codes are allowed: transport, authentication, quota,
@@ -67,5 +74,9 @@ interruption or reporting failure may leave the previous timestamped “last rep
 run”. Do not imply it describes the latest attempt. A newer C may precede status
 confirmation; label that lag without splicing facts from different pins.
 
-This slice implements contracts and validators. Final report creation, retention,
-artifact verification and explicit publication are implemented in ticket 12.
+Ticket 12 implements explicit publication and best-effort finalization, including
+64/8/90 retention and bounded untrusted artifact validation. The status channel
+remains disabled in the prepared workflow until separately authorized activation.
+Status current-tree validation allows 100,000 files (separately from the catalog
+allowance), so 8 complete 5,000-source detail sets are not truncated by a
+20,000-file catalog limit. Capacity qualification remains ticket 14 work.

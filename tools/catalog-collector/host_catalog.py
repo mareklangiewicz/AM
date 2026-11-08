@@ -59,7 +59,8 @@ def utc():
     return datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
 
 
-def configuration():
+def configuration(*, source_cap=None):
+    source_cap=SOURCE_CAP if source_cap is None else source_cap
     declarations = {row['recipe']: row for row in recipe_rows(ROOT)}
     enrolled = [line for line in (ROOT/'tools/catalog-collector/collection-recipes.txt').read_text().splitlines()
                 if line and not line.startswith('#')]
@@ -90,7 +91,7 @@ def configuration():
         if rid in sources and sources[rid] != row['repository']:
             raise ValueError('conflicting repository identity')
         sources[rid] = row['repository']
-    if len(sources) > SOURCE_CAP or len({r['app'] for r in rows}) != len(rows):
+    if len(sources) > source_cap or len({r['app'] for r in rows}) != len(rows):
         raise ValueError('manifest scope')
     return rows, sources
 
@@ -148,50 +149,58 @@ def _response(rid, evidence, allowance, *, rate=None):
     return body, utc()
 
 
-def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None, acquisitions=None):
+def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None, acquisitions=None, incremental=False, profile=None):
     """Refresh all (strict) or a bounded oldest-attempt-first batch.
 
     Strict mode retains the existing all-or-nothing command. Batch mode reports
     failures, preserves old observations and publishes only successfully observed
     new app identities. Unattempted documents retain their original schema too.
     """
-    rows, sources = configuration()
-    if batch_size is not None and (type(batch_size) is not int or not 1 <= batch_size <= REQUEST_CAP):
+    rows,sources=configuration(source_cap=profile['source_cap']) if profile else configuration()
+    request_cap=profile['request_cap'] if profile else REQUEST_CAP
+    total_cap=profile['total_cap'] if profile else TOTAL_CAP
+    seconds_cap=profile['seconds_cap'] if profile else ACQUISITION_SECONDS
+    reserve=profile['reserve'] if profile else RATE_RESERVE
+    response_cap=profile['response_cap'] if profile else RESPONSE_CAP
+    if batch_size is not None and (type(batch_size) is not int or not 1 <= batch_size <= request_cap):
         raise ValueError('batch size')
-    if batch_size is None and len(sources) > REQUEST_CAP:
+    if batch_size is None and len(sources) > request_cap:
         raise ValueError('use bounded batch collection')
     if batch_size is not None and not set(previous) <= set(sources):
         raise ValueError('batch would discard retained sources')
-    for rid, before in previous.items():
+    metadata=getattr(previous,'metadata',None)
+    identities=metadata.items() if metadata is not None else previous.items()
+    for rid, before in identities:
         if rid in sources and (before['repository_id'] != int(rid) or
                                before['repository'].lower() != sources[rid].lower()):
             raise ValueError('retained repository identity mismatch')
     selected = list(sources)
     if batch_size is not None:
-        selected.sort(key=lambda rid: (previous.get(rid, {}).get('collection', {}).get('attempted_at', ''), int(rid)))
+        selected.sort(key=lambda rid: ((metadata.get(rid,{}).get('attempted_at','') if metadata is not None else previous.get(rid, {}).get('collection', {}).get('attempted_at', '')), int(rid)))
         selected = selected[:batch_size]
     metrics = metrics if metrics is not None else {}
     metrics.clear()
     metrics.update(requests=0, response_bytes=0, selected_sources=len(selected),
+                   selected_repository_ids=[int(rid) for rid in selected],
                    stop_reason='request_limit' if len(selected)<len(sources) else 'complete',
-                   request_cap=REQUEST_CAP, response_byte_cap=TOTAL_CAP,
-                   acquisition_cap_seconds=ACQUISITION_SECONDS, primary_reserve=RATE_RESERVE)
+                   request_cap=request_cap, response_byte_cap=total_cap,
+                   acquisition_cap_seconds=seconds_cap, primary_reserve=reserve)
     latest_rate = {}
     schema = schema_url(revision)
-    repositories = dict(previous) if batch_size is not None else {}
+    repositories = dict(previous) if batch_size is not None and not incremental else {}
     used = 0
     report = []
     started = time.monotonic()
     for rid in selected:
         name = sources[rid]
-        if (not evidence and latest_rate.get('remaining', RATE_RESERVE+1) <= RATE_RESERVE
+        if (not evidence and latest_rate.get('remaining', reserve+1) <= reserve
                 and latest_rate.get('reset', float('inf')) > time.time()):
             metrics['stop_reason'] = 'primary_rate_reserve'
             if batch_size is None:
                 raise ValueError('primary rate reserve')
             break
-        if time.monotonic()-started > ACQUISITION_SECONDS or used >= TOTAL_CAP:
-            metrics['stop_reason'] = 'byte_limit' if used >= TOTAL_CAP else 'time_limit'
+        if time.monotonic()-started > seconds_cap or used >= total_cap:
+            metrics['stop_reason'] = 'byte_limit' if used >= total_cap else 'time_limit'
             if batch_size is not None:
                 break
             raise ValueError('collection elapsed budget')
@@ -202,7 +211,7 @@ def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None,
         reason = 'transport'
         rate = {}
         try:
-            allowance = min(RESPONSE_CAP, TOTAL_CAP-used)
+            allowance = min(response_cap, total_cap-used)
             if not evidence:
                 metrics['requests'] += 1
             body, received = _response(rid, evidence, allowance, rate=rate)
@@ -268,7 +277,7 @@ def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None,
             report[-1]['rate'] = rate
         latest_rate = rate
         print(name+': '+str(len(records))+' releases', flush=True)
-    if used > TOTAL_CAP:
+    if used > total_cap:
         metrics['stop_reason'] = 'byte_limit'
     metrics.update(response_bytes=used, acquisition_seconds=time.monotonic()-started,
                    attempted_sources=len(report),
@@ -277,8 +286,9 @@ def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None,
     rates = [row['rate'] for row in report if row.get('rate')]
     if rates:
         metrics.update(rate_first=rates[0], rate_last=rates[-1])
-    successes = [obj['last_success']['completed_at'] for obj in repositories.values()
-                 if 'last_success' in obj]
+    successful_times={rid:meta['completed_at'] for rid,meta in (metadata or {}).items() if meta.get('completed_at')} if incremental else {}
+    successful_times.update({rid:obj['last_success']['completed_at'] for rid,obj in repositories.items() if 'last_success' in obj})
+    successes=list(successful_times.values())
     now = time.time()
     ages = [now-datetime.fromisoformat(value.replace('Z', '+00:00')).timestamp()
             for value in successes]
@@ -287,8 +297,9 @@ def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None,
                    source_success_age_counts={str(hours)+'h':sum(age >= hours*3600 for age in ages)
                                               for hours in (24, 36, 48)})
     apps = {row['app']:row['repository_id'] for row in rows
-            if str(row['repository_id']) in repositories and
-            (batch_size is None or 'last_success' in repositories[str(row['repository_id'])])}
+            if str(row['repository_id']) in successful_times}
+    if incremental:
+        return (apps,repositories),report
     tree = candidate_tree(apps, repositories, schema=schema, max_file_bytes=FILE_CAP)
     return tree, report
 

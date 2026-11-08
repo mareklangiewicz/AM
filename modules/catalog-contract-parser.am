@@ -127,6 +127,9 @@ function semantics( p,r,a,b,k,t,n,seen,stable,count_names,stable_path,stable_tim
             } else if((p "/evidence") in types) fail("evidence with unknown classification")
         }
     }
+    if(values["/kind"]=="summary" || values["/kind"]=="source") {
+        if((values["/input_catalog_state"]=="known") != ("/input_catalog" in types)) fail("input catalog state")
+    }
     if(values["/kind"]=="summary") {
         if(values["/started_at"]>values["/reported_at"]) fail("run time order")
         k="https://github.com/mareklangiewicz/AM/actions/runs/" values["/run/id"]
