@@ -81,16 +81,17 @@ npx playwright install chromium
 npm run test:e2e
 ```
 
-Three journeys run in headless Chromium at desktop 1280×900 and narrow 390×844:
+Six journeys (12 checks) run in headless Chromium at desktop 1280×900 and narrow 390×844:
 browse/search/source filter → app/releases → help/Escape/focus → all A/B/C views
 → Back/theme; directory layout and hidden source controls; source network failure
 and retry at the same URL. Native browser fetch and DOM execute against a staged
 artifact with tiny inert fixtures; no preview fetch wrapper masks receiver errors.
+Three additional controlled-channel journeys cover pinned release links, explicit latest, Back/Forward and missing identities/releases; obsolete source failures; and architecture-specific recipe evidence, shared stable/nightly identities and independent health confirmation/failure. They use the strict normal reader with intercepted HTTP fixture responses and real native fetch, without changing public channels.
 Screenshots cover directory/detail/views/help/dark; traces are kept on failure.
 There are no pixel-baseline updates or accessibility-score gates. CI runs these
 checks before Pages publication and retains screenshots/traces for seven days.
 
-To smoke-test the public site after publication (failure injection is skipped):
+To smoke-test the public site after publication (four checks run; eight local-only failure/channel-fixture cases are skipped):
 
 ```
 CATALOG_BASE_URL=https://mareklangiewicz.pl/AM CATALOG_APP=0x808 npm run test:e2e

@@ -254,3 +254,54 @@ app screenshots were visually inspected; light/dark/view/help captures are saved
 under `/home/marek/Documents/Codex/am-browser-review-20261108/ui-60e7fc2d1/`.
 These are scoped Chromium desktop/mobile-emulation results, not full conformance,
 physical-device, Firefox, capacity or educational-comprehension acceptance.
+
+### Navigation, recipe and health follow-up — November 8, 2026
+
+Marek authorized continuing the remaining scoped journeys while postponing his
+visual review. Added three focused journeys, each at desktop 1280×900 and narrow
+390×844, bringing the small Chromium suite to 12 checks. Normal-channel mode uses
+controlled HTTP fixture responses and native browser fetch, strict parsing and
+actual DOM interactions. These synthetic channel responses do not establish live
+v3 channel availability or physical-device behavior.
+
+Verified pinned release links, explicit latest from C=a to C=b, Back/Forward,
+restored app-identity focus, missing app/release messages with usable directory,
+and an obsolete source request failing after another identity opens. Shared
+stable/nightly entries remain separate. Four recipe classifications, prominent
+custom-recipe review, exact architecture/recipe commit links and explicit unknown
+installation choice/channel policy are checked. The synthetic nightly identity
+has no fabricated recipe link. Health checks cover confirmed/different C/S,
+unknown measurements, unavailable status and continued app browsing.
+
+The new browser checks reproduced two concrete defects before their fixes:
+opening an app focused its heading, but asynchronous recipe/health redraws lost
+that focus; an already open health panel retained the old catalog pin and falsely
+said the new catalog was confirmed after Load latest. Rendering now restores the
+focused content element by ID and updates the panel's catalog pin/confirmation
+against its independently pinned report. No ancestry relationship is inferred.
+All 12 Chromium checks passed locally in 12.4 s; all 12 transport/contract checks,
+app syntax and whitespace checks passed. The new checks run in the existing CI
+gate; public-site mode skips these controlled-channel cases.
+
+A small local timing sample reused the saved 508-identity / 499-source conversion
+without acquisition. Chromium 158.0.8127.18, three fresh contexts per profile,
+HTTP cache disabled, directory readiness and source detail measured through two
+animation frames. The source was the largest saved YAML document,
+`agent-teams-ai.yaml` (401,944 bytes). This is the saved-cohort maximum, not a
+qualification of all supported document sizes. Measurements in milliseconds:
+
+| Profile | Cold directory | Directory after root bytes | Detail after source bytes | Search | A→B switch |
+| --- | --- | --- | --- | --- | --- |
+| Desktop 1280×900, local unthrottled | 111–157 | 48–50 | 149–166 | 20–26 | 20–26 |
+| Narrow 390×844, CPU 4×, 10 Mbit/s, 100 ms latency | 949–1054 | 130–195 | 583–692 | 11–22 | 107–144 |
+
+The narrow largest-source detail sample misses the 500 ms processing target;
+keep that result open rather than claim performance acceptance. This includes
+parse/validation, rendering, scheduling and two animation frames; the sample does
+not isolate a parser regression or justify weakening validation. Directory and
+interaction samples are within their targets, but three local samples are not
+population percentiles, public HTTPS timing, capacity qualification or a physical
+mobile result. Receipts and the disposable measurement script are preserved in
+`/home/marek/Documents/Codex/am-browser-review-20261108/navigation-followup/`.
+Ticket 13 stays claimed; actual mobile/Firefox, comprehension and broader remaining
+journeys/scale evidence are not established by this follow-up.
