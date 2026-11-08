@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   deploy:
-    if: github.repository == 'mareklangiewicz/AM' && (github.ref == 'refs/heads/main-marek' || github.ref == 'refs/heads/prototype/catalog-pages')
+    if: vars.CATALOG_BROWSER_ENABLED != 'true' && github.repository == 'mareklangiewicz/AM' && (github.ref == 'refs/heads/main-marek' || github.ref == 'refs/heads/prototype/catalog-pages')
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:

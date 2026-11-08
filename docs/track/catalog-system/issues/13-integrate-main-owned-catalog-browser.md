@@ -2,7 +2,8 @@
 
 Type: task
 Label: implementation:task
-Status: open
+Status: claimed
+Assignee: codex
 Blocked by: 11, 12
 
 ## Outcome
@@ -52,3 +53,14 @@ Keep code/fixtures and exact browser/profile measurements, limitation notes and
 public payload review locally. Ticket 14 consumes reusable results; ticket 15
 includes the later separately authorized public fetch/CORS/readback checks.
 No push, Pages deployment, source enrollment or installed-host change here.
+
+## Implementation checkpoint — November 8, 2026
+
+Claimed by codex. Main-owned source, strict pinned reads, contextual provenance/
+health, fixture preview and prepared allowlisted deployment are implemented locally.
+[Implementation and focused evidence](../implementation-13.md) records ten passing
+transport/contract checks and the exact remaining acceptance gaps. Connected UI
+inventory has no browser/device, so real-browser/accessibility/performance and
+comprehension checks remain outstanding. Installation-choice/channel-policy display
+also needs the accepted evidence journey checked before resolution. Status stays
+claimed; ticket 14 has not been started. No activation or remote operation occurred.
