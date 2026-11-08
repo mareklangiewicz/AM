@@ -31,7 +31,7 @@ def stage(destination, review_data=None):
         if not re.fullmatch('[0-9a-f]{40}', pin):
             raise ValueError('Invalid review identity')
         for name, digest in metadata['document_sha256'].items():
-            if not re.fullmatch(r'(?:catalog|apps|provenance)\.yaml|repositories/[a-z0-9][a-z0-9_.+-]{0,63}\.yaml', name):
+            if not re.fullmatch(r'(?:catalog|apps)\.yaml|(?:repositories|provenance)/[a-z0-9][a-z0-9_.+-]{0,63}\.yaml', name):
                 raise ValueError('Unexpected review path')
             source = review_data / pin / name
             if source.is_symlink() or hashlib.sha256(source.read_bytes()).hexdigest() != digest:

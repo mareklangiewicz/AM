@@ -47,9 +47,18 @@ required. Shared fixtures deliberately include structurally valid semantic failu
 | `catalog.yaml` | `catalog` | Exact `inputs` revisions for source, policy, recipes, classification rules and schema set; producer run ID/attempt; fixed `32-plus-stable-exact-tag-v1` retention rule. No enclosing commit. |
 | `apps.yaml` | `apps` | AM app names directly to `repositories/<name>.yaml`; stable/nightly remain separate keys. |
 | `repositories/<name>.yaml` | `repository` | Numeric source ID, current verified readable GitHub name, successful scope completion, shared/individual observations and retained release facts. |
-| `provenance.yaml` | `provenance` | App → architecture → source/recipe availability/classification bindings. Required even if no classifications are known. |
+| `provenance/<name>.yaml` | `provenance` | Architecture-specific recipe bindings for exactly the app identities pointing to `repositories/<name>.yaml`. Required for each referenced source, including unknown classifications. |
 
-Only these paths are allowed. Every app must reference an existing source; each
+Only these paths are allowed; the former private global `provenance.yaml` layout
+is no longer accepted. Derive the provenance path by replacing the validated
+`repositories/` prefix with `provenance/`, retaining the same stable source label.
+No second index or moving lookup is needed. Load only that source's provenance at
+C when opening an app. Each partition's app keys must exactly match the identities
+pointing to its source, including distinct stable/nightly identities. Missing,
+misplaced, cross-source or extra provenance documents/bindings refuse a candidate.
+The `provenance` kind and architecture/evidence field schemas are unchanged.
+
+Every app must reference an existing source; each
 numeric source appears once, independently of app aliases. Names match
 `[a-z0-9][a-z0-9_.+-]*`, at most 64 ASCII bytes. No slash, percent escape or
 external URL is a source path. The reviewed [registry](../tools/catalog-collector/source-names.json)

@@ -110,12 +110,12 @@ def collect(args):
     tree['apps.yaml']=contracts.encode(dict(contracts.header('apps',inputs['schemas']),apps=apps))
     evaluator=Evaluator(host.ROOT,inputs,host.utc())
     reviews=json.loads(args.reviews.read_text(),object_pairs_hook=unique_object) if args.reviews else {}
-    old_bindings=prior_docs.get('provenance.yaml',{}).get('apps',{})
+    old_bindings={app:arches for path,doc in prior_docs.items() if path.startswith('provenance/') for app,arches in doc['apps'].items()}
     provenance={row['app']:{arch:evaluator.classify(row['app'],arch,row['repository_id'],
                            prior=old_bindings.get(row['app'],{}).get(arch),
                            review=reviews.get(row['app'],{}).get(arch))
                            for arch in ('x86_64','aarch64','i686','armv7l')} for row in rows if row['app'] in apps}
-    tree['provenance.yaml']=contracts.encode(dict(contracts.header('provenance',inputs['schemas']),apps=provenance))
+    tree.update(contracts.partition_provenance(apps,provenance,inputs['schemas']))
     tree=Candidate(prior,tree)
     write_tree(args.output/'format-2',legacy)
     write_tree(args.output/'format-3',tree)

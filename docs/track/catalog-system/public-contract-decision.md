@@ -247,3 +247,17 @@ S update leaves the prior “last reported run” with its original timestamps;
 old C links remain internally pinned; unsupported schema versions are refused;
 unavailable S leaves browsing C useful. No production schemas, refs, reader changes,
 publication dispatch or installed-host operations are performed by this decision.
+
+## Accepted per-source provenance amendment — November 8, 2026
+
+Marek accepted per-source provenance after the 5,000-app preflight measured the
+central document at 2.30–13.42 MB against the existing 2 MiB allowance. This
+supersedes the global `provenance.yaml` row above. The executable
+[format-3 contract](../../catalog-format-v3.md#documents-at-c) now requires
+`provenance/<source-label>.yaml` for each app-referenced source, containing exactly
+its app/channel identities and their unchanged architecture/evidence bindings.
+Derive its path from the validated source path and read it at the same C.
+No second index, format-2 change or weakened evidence/byte check is introduced.
+[Implementation and measured partition results](preflight-14.md#accepted-correction-and-partition-check--november-8-2026)
+record the scope and remaining qualification limits. Old unpublished candidates
+must be rebuilt. This does not activate collection or public v3/status channels.

@@ -370,3 +370,22 @@ The subsequent public browser run passed six checks in 29.1 s across desktop/
 narrow Chromium and desktop Firefox; twelve local-only fixture/failure cases were
 skipped. Receipts and captures are under `acceptance-followup/`. This documentation
 receipt does not trigger another build. No collector/channel activation occurred.
+
+### Accepted per-source provenance — November 8, 2026
+
+Marek accepted splitting the oversized global provenance root by source. The
+browser derives `provenance/<label>.yaml` from its validated source path, reads it
+at the same C and checks exact alias coverage plus every architecture's numeric
+source/recipe/rule binding. Only the selected app's bindings are displayed. This
+keeps stable/nightly evidence separate while avoiding catalog-wide evidence fetch.
+Whole-tree/incremental/artifact validators, collectors and saved-review delivery
+use the same layout; missing, misplaced and legacy global paths refuse.
+
+The same 18-case local Chromium/Firefox suite passes in 25.9 s. Fourteen Node,
+twelve Python contract and ten publication/recovery checks pass. A first browser
+run exposed an assertion tied to the old missing-binding punctuation; fixtures
+now explicitly represent every alias as required by the accepted contract. The
+corrected assertion checks unknown evidence and the absence of a fabricated
+recipe link. The [5,000-app partition measurement](preflight-14.md#accepted-correction-and-partition-check--november-8-2026)
+removes the measured root overflow without raising its limit. Full tree/history
+capacity and physical-device/comprehension acceptance remain open.

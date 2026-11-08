@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[2]
 PIN = 'a' * 40
 FIXTURES = {
     'catalog.yaml': 'catalog', 'apps.yaml': 'apps',
-    'provenance.yaml': 'provenance', 'repositories/example.yaml': 'repository',
+    'provenance/example.yaml': 'provenance', 'repositories/example.yaml': 'repository',
     'status.yaml': 'status', 'statistics.yaml': 'statistics',
     'runs/123-2/summary.yaml': 'summary', 'runs/123-2/sources/example.yaml': 'source',
 }

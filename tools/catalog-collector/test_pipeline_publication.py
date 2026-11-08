@@ -31,7 +31,7 @@ class Pipeline(unittest.TestCase):
         d=documents();d['catalog']['producer']=self.run;d['repository']['repository_id']=123
         d['apps']['apps']={'example':'repositories/example.yaml'}
         d['provenance']['apps']={'example':{'x86_64':dict(repository_id=123,availability='unknown',classification='unknown')}}
-        self.target={key+'.yaml':c.encode(d[key]) for key in ('catalog','apps','provenance')}
+        self.target={key+'.yaml':c.encode(d[key]) for key in ('catalog','apps')};self.target['provenance/example.yaml']=c.encode(d['provenance'])
         self.target['repositories/example.yaml']=c.encode(d['repository'])
         self.output=self.root/'artifact';self.output.mkdir()
         self.write_artifact()

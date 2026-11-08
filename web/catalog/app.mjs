@@ -99,7 +99,7 @@ async function loadDetail(focus=false){
   const d=await client.source(c,apps[app],root);if(token!==generation)return;source=d;
   if(!release&&releases(d).length)expanded.add(releases(d)[0][0]);
   loading=false;render();checkSourceHealth(token,c,app,d);if(focus)$('app-title')?.focus({preventScroll:true});
-  try{const b=await client.provenance(c,app,apps[app],d,root);if(token!==generation)return;bindings=b;render();}catch(e){if(token===generation)error(e);}
+  try{const b=await client.provenance(c,app,apps[app],d,root,apps);if(token!==generation)return;bindings=b;render();}catch(e){if(token===generation)error(e);}
  }catch(e){if(token===generation){loading=false;error(e);render();}}
 }
 async function checkSourceHealth(token,c,app,d){

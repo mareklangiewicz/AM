@@ -89,12 +89,12 @@ def artifact(directory,*,run,inputs,parents):
         name=path.relative_to(directory).as_posix()
         if path.is_symlink() or not (path.is_file() or path.is_dir()): raise ValueError('artifact file type')
         if path.is_dir():
-            if name not in ('format-2','format-3','format-2/repositories','format-3/repositories'): raise ValueError('artifact directory')
+            if name not in ('format-2','format-3','format-2/repositories','format-3/repositories','format-3/provenance'): raise ValueError('artifact directory')
             continue
         size=path.stat().st_size;total+=size
         cap=16*1024*1024 if name=='report.json' else c.FILE_CAP
         if size>cap or total>2*c.TREE_CAP or len(files)>=40001: raise ValueError('artifact bound')
-        if name!='report.json' and not re.fullmatch(r'format-[23]/(?:catalog\.yaml|apps\.yaml|provenance\.yaml|repositories/'+c.NAME+r'\.yaml)',name): raise ValueError('artifact path')
+        if name!='report.json' and not re.fullmatch(r'(?:format-2/(?:apps\.yaml|repositories/[1-9][0-9]*\.yaml)|format-3/(?:catalog\.yaml|apps\.yaml|(?:repositories|provenance)/'+c.NAME+r'\.yaml))',name): raise ValueError('artifact path')
         files[name]=path.read_bytes()
     report=json.loads(files.pop('report.json'),object_pairs_hook=unique_object)
     allowed_report={'version','started_at','reported_at','run','inputs','parents','collection_mode','sources','selected_sources','target_counts','compatibility_sources','compatibility_metrics','validation','acquisition','hashes'}

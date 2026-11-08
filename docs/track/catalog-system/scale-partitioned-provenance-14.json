@@ -1,0 +1,72 @@
+{
+  "synthetic": true,
+  "live_acquisition": false,
+  "source_count": 5000,
+  "app_count": 5000,
+  "saved_pin": "84a405eb46ae90b9aeac6ae7e14bc27db21b32d0",
+  "saved_baseline": "cbda9fb78ce4a6f29bdabd63d57f3c0085e8744f",
+  "saved_provenance_sha256": "c49f0f71d53f07e09f14ca0af6bf8bf4f7da755b97e54ea3af25bc5059f768de",
+  "shapes": "saved unknown per-architecture bindings; independent fixture with shared/template/custom/unknown architecture evidence",
+  "seconds": 5.559068074973766,
+  "peak_self_rss_kib": 126172,
+  "rows": [
+    {
+      "scenario": "saved_unknown",
+      "path": "provenance/<source>.yaml",
+      "documents": 5000,
+      "total_bytes": 3125000,
+      "largest_bytes": 625,
+      "configured_cap": 2097152,
+      "unused_fraction": 0.999701976776123,
+      "result": "accepted"
+    },
+    {
+      "scenario": "saved_unknown",
+      "path": "apps.yaml",
+      "bytes": 245159,
+      "sha256": "980fa2ff3bcdc17d6b83e69a035d55621dcd6191d12d474d903591d56411928c",
+      "configured_cap": 2097152,
+      "unused_fraction": 0.8830990791320801,
+      "result": "accepted"
+    },
+    {
+      "scenario": "saved_unknown",
+      "path": "provenance.yaml",
+      "bytes": 2300165,
+      "sha256": "fe5d570d3cd56cba30976338e494e7910965788804cbae4bc2c15a947d55990b",
+      "configured_cap": 2097152,
+      "unused_fraction": -0.09680414199829102,
+      "result": "refused",
+      "reason": "document bound"
+    },
+    {
+      "scenario": "three_evidenced_architectures",
+      "path": "provenance/<source>.yaml",
+      "documents": 5000,
+      "total_bytes": 14240000,
+      "largest_bytes": 2848,
+      "configured_cap": 2097152,
+      "unused_fraction": 0.9986419677734375,
+      "result": "accepted"
+    },
+    {
+      "scenario": "three_evidenced_architectures",
+      "path": "apps.yaml",
+      "bytes": 245159,
+      "sha256": "980fa2ff3bcdc17d6b83e69a035d55621dcd6191d12d474d903591d56411928c",
+      "configured_cap": 2097152,
+      "unused_fraction": 0.8830990791320801,
+      "result": "accepted"
+    },
+    {
+      "scenario": "three_evidenced_architectures",
+      "path": "provenance.yaml",
+      "bytes": 13415165,
+      "sha256": "d7fc5a42ac23a89b18cf8c75c4d49865894843578974b2135eb2dd61fa4e7d78",
+      "configured_cap": 2097152,
+      "unused_fraction": -5.396849155426025,
+      "result": "refused",
+      "reason": "document bound"
+    }
+  ]
+}

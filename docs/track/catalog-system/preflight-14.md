@@ -108,3 +108,33 @@ full-validation/incremental/dual-output resource measurements, status retention,
 site restore and the exact rollout package. Live quota/collection/publication
 checks still need their reviewed authorization. This preflight does not resolve
 13, 14 or 15 and does not justify enabling the collector.
+
+## Accepted correction and partition check — November 8, 2026
+
+Marek answered “ok” to the per-source provenance proposal. That accepts the layout
+change above and supersedes its pending wording. Implementation uses
+`provenance/<source-label>.yaml`, exact app-group membership and unchanged evidence
+fields, byte limits, observation semantics and v2 paths. The browser reads one
+source partition at the chosen C; full validators refuse missing/extra/misplaced
+partitions and incorrect source/recipe identities. Collection, incremental parent
+validation, trusted publication, saved-review conversion/staging, fixtures and
+editor associations use the same layout. The former private global path refuses;
+old private candidates need rebuilding rather than permissive fallback.
+
+[Partition-size receipt](scale-partitioned-provenance-14.json) repeats the same
+5,000-app shape comparison. Unknown partitions are 625 bytes each; the evidenced
+scenario is 2,848 bytes each. Total provenance grows slightly with per-document
+headers (3,125,000 / 14,240,000 bytes), but an app opening reads only its source.
+The apps root remains 245,159 bytes. Complete membership/identity and every byte
+size are checked for the generated partitions, and the largest representative of
+each identical evidence shape passes the maintained shell/domain decoder. This
+is not a full 5,000-source Git/publication/live-capacity qualification.
+
+Verification: 14 Node transport/contract checks, 12 Python contract checks
+(including shared shell/browser fixtures and cross-source negative cases), 10
+publication/recovery checks, and 18 browser checks across desktop/narrow Chromium
+and Firefox pass. Browser fixtures now contain explicit unknown bindings for
+all aliases; the nightly journey continues to show unknown without fabricated
+recipe links. The source-local reader also rejects incomplete alias coverage.
+Ticket 13 stays claimed and 14 stays open; remaining device/comprehension and full
+workload/history/consumer-selection evidence are unchanged requirements.

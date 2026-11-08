@@ -2,7 +2,8 @@ import {parseDocument,releaseFacts} from '../../tools/catalog-contract/reader.mj
 export {releaseFacts};
 export const rawURL=(pin,path)=>`https://raw.githubusercontent.com/mareklangiewicz/AM/${pin}/${path}`;
 const commit=/^[a-f0-9]{40}$/;
-const catalogPath=/^(catalog|apps|provenance)\.yaml$|^repositories\/[a-z0-9][a-z0-9_.+-]{0,63}\.yaml$/;
+const catalogPath=/^(catalog|apps)\.yaml$|^(repositories|provenance)\/[a-z0-9][a-z0-9_.+-]{0,63}\.yaml$/;
+export const provenancePath=path=>{if(!/^repositories\/[a-z0-9][a-z0-9_.+-]{0,63}\.yaml$/.test(path))throw Error('Invalid provenance source path');return path.replace('repositories/','provenance/');};
 const statusPath=/^(status|statistics)\.yaml$|^runs\/[1-9][0-9]*-[1-9][0-9]*\/(summary\.yaml|sources\/[a-z0-9][a-z0-9_.+-]{0,63}\.yaml)$/;
 export class Catalog {
  constructor(fetcher=fetch,review=null){this.fetcher=fetcher.bind(globalThis);this.cache=new Map();this.review=review;}
@@ -25,7 +26,7 @@ export class Catalog {
   finally{await reader.cancel();}
   const bytes=new Uint8Array(length);let offset=0;for(const chunk of chunks){bytes.set(chunk,offset);offset+=chunk.length;}
   const d=parseDocument(new TextDecoder('utf-8',{fatal:true}).decode(bytes));
-  const kind=path.includes('/')?(channel==='catalog'?'repository':path.endsWith('/summary.yaml')?'summary':'source'):path.slice(0,-5);
+  const kind=path.includes('/')?(channel==='catalog'?(path.startsWith('provenance/')?'provenance':'repository'):path.endsWith('/summary.yaml')?'summary':'source'):path.slice(0,-5);
   if(d.kind!==kind)throw Error('Path kind mismatch');
   if(this.cache.size>=64)this.cache.delete(this.cache.keys().next().value);
   this.cache.set(key,d);return d;
@@ -36,13 +37,17 @@ export class Catalog {
  }
  binding(doc,root){if(!doc.schema.includes('/'+root.inputs.schemas+'/'))throw Error('Schema input binding mismatch');return doc;}
  async source(pin,path,root){return this.binding(await this.doc(pin,path),root);}
- async provenance(pin,app,path,source,root){
-  const p=this.binding(await this.doc(pin,'provenance.yaml'),root),bindings=p.apps[app]??{};
-  for(const [arch,b] of Object.entries(bindings)){
-   if(b.repository_id!==source.repository_id||b.recipe&&(b.recipe.path!==`programs/${arch}/${app}`||b.recipe.commit!==root.inputs.recipes)||b.evidence&&b.evidence.rules!==root.inputs.rules)throw Error('Provenance binding mismatch');
+ async provenance(pin,app,path,source,root,apps){
+  if(!apps||apps[app]!==path)throw Error('Provenance app source mismatch');
+  const p=this.binding(await this.doc(pin,provenancePath(path)),root);
+  const expected=Object.keys(apps).filter(name=>apps[name]===path).sort();
+  if(JSON.stringify(Object.keys(p.apps).sort())!==JSON.stringify(expected))throw Error('Provenance app coverage mismatch');
+  for(const [name,arches] of Object.entries(p.apps))for(const [arch,b] of Object.entries(arches)){
+   if(b.repository_id!==source.repository_id||b.recipe&&(b.recipe.path!==`programs/${arch}/${name}`||b.recipe.commit!==root.inputs.recipes)||b.evidence&&b.evidence.rules!==root.inputs.rules)throw Error('Provenance binding mismatch');
   }
-  if(!catalogPath.test(path))throw Error('Source path');return bindings;
+  return p.apps[app];
  }
+
  async statistics(pin,report){
   const d=await this.doc(pin,'statistics.yaml','status');
   if(!d.schema.includes('/'+report.root.schemas+'/')||Object.keys(d.days).length>90)throw Error('Statistics binding/retention');

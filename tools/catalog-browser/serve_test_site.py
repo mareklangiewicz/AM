@@ -15,7 +15,7 @@ with TemporaryDirectory(prefix='am-browser-e2e-') as tmp:
     tmp = Path(tmp)
     data = tmp / 'data'
     pin = 'a' * 40
-    files = {'catalog.yaml': 'catalog', 'apps.yaml': 'apps', 'provenance.yaml': 'provenance',
+    files = {'catalog.yaml': 'catalog', 'apps.yaml': 'apps', 'provenance/example.yaml': 'provenance',
              'repositories/example.yaml': 'repository'}
     hashes = {}
     for path, fixture in files.items():

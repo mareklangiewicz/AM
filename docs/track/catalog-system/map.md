@@ -145,8 +145,8 @@ approval boundaries.
 Latest implementation evidence, November 8: Chromium desktop/narrow and Firefox
 checks pass; physical-device/comprehension limits remain with 13. Independent
 [scale preflight](preflight-14.md) exposes an oversized central provenance document
-at 5,000 apps, with a per-source partition proposal pending Marek's decision.
-The same preflight records synthetic scheduling, current v2 consumer inventory and
+at 5,000 apps, corrected by Marek’s accepted per-source partition layout.
+The same preflight records partition-size checks, synthetic scheduling, current v2 consumer inventory and
 corrective old-pin recovery. Ticket 14 remains open/unclaimed; these are preparatory
 results rather than full workload/history qualification.
 

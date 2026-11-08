@@ -43,9 +43,9 @@ def build(repo, baseline, revision, destination):
     mapped = {app: 'repositories/' + names[str(rid)] + '.yaml' for app, rid in apps.items()
               if 'repositories/' + names[str(rid)] + '.yaml' in tree}
     tree['apps.yaml'] = c.encode(dict(c.header('apps', revision), apps=mapped))
-    tree['provenance.yaml'] = c.encode(dict(c.header('provenance', revision), apps={
+    tree.update(c.partition_provenance(mapped, {
         app: {arch: dict(repository_id=apps[app], availability='unknown', classification='unknown')
-              for arch in ('aarch64', 'armv7l', 'i686', 'x86_64')} for app in mapped}))
+              for arch in ('aarch64', 'armv7l', 'i686', 'x86_64')} for app in mapped}, revision))
     tree['catalog.yaml'] = c.encode(dict(c.header('catalog', revision),
         inputs={key: revision for key in ('source', 'policy', 'recipes', 'rules', 'schemas')},
         producer=dict(id=1, attempt=1), retention='32-plus-stable-exact-tag-v1'))
@@ -58,7 +58,7 @@ def build(repo, baseline, revision, destination):
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_bytes(raw)
     metadata = dict(pin=identity, baseline=baseline, source=revision,
-                    sources=len(tree)-3, apps=len(mapped), refused=refused,
+                    sources=sum(path.startswith('repositories/') for path in tree), apps=len(mapped), refused=refused,
                     label='Review snapshot · saved observations', document_sha256=hashes)
     (destination / 'review.json').write_text(json.dumps(metadata, indent=2) + '\n')
     print(json.dumps({k: v for k, v in metadata.items() if k != 'document_sha256'}), flush=True)

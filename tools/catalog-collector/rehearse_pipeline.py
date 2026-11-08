@@ -61,7 +61,7 @@ def phase(args):
             changed['repositories/'+names[str(obj['repository_id'])]+'.yaml']=c.encode(obj)
         app_paths={app:'repositories/'+names[str(rid)]+'.yaml' for app,rid in apps.items() if 'repositories/'+names[str(rid)]+'.yaml' in changed}
         changed['apps.yaml']=c.encode(dict(c.header('apps',revision),apps=app_paths))
-        changed['provenance.yaml']=c.encode(dict(c.header('provenance',revision),apps={app:{arch:dict(repository_id=apps[app],availability='unknown',classification='unknown') for arch in ('x86_64','aarch64','i686','armv7l')} for app in app_paths}))
+        changed.update(c.partition_provenance(app_paths,{app:{arch:dict(repository_id=apps[app],availability='unknown',classification='unknown') for arch in ('x86_64','aarch64','i686','armv7l')} for app in app_paths},revision))
         snapshot=None;baseline_validation=old.validation
     else:
         snapshot=Snapshot(repo,parent)

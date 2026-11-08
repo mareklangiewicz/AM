@@ -37,12 +37,13 @@ test('refuse unsupported/malformed original bytes and oversized streams',async()
  }
 });
 test('positive architecture evidence and changed-input refusal',async()=>{
- const net=transport({'provenance.yaml':await fixture('provenance')}),client=new Catalog(net.fetcher);
+ const net=transport({'provenance/example.yaml':await fixture('provenance')}),client=new Catalog(net.fetcher);
  const source={repository_id:9007199254740993n},root={inputs:{recipes:C,rules:C,schemas:C}};
- const b=await client.provenance(C,'example','repositories/example.yaml',source,root);
+ const apps={...(await import('../catalog-contract/reader.mjs')).parseDocument(await fixture('apps')).apps};
+ const b=await client.provenance(C,'example','repositories/example.yaml',source,root,apps);
  assert.equal(b.aarch64.classification,'shared');assert.equal(b.x86_64.classification,'unknown');
- await assert.rejects(client.provenance(C,'example','repositories/example.yaml',{repository_id:1n},root));
- await assert.rejects(client.provenance(C,'example','repositories/example.yaml',source,{inputs:{recipes:D,rules:C,schemas:C}}));
+ await assert.rejects(client.provenance(C,'example','repositories/example.yaml',{repository_id:1n},root,apps));
+ await assert.rejects(client.provenance(C,'example','repositories/example.yaml',source,{inputs:{recipes:D,rules:C,schemas:C}},apps));
 });
 test('independent last report and invalid run references',async()=>{
  const files={'status.yaml':await fixture('status'),'runs/123-2/summary.yaml':await fixture('summary')};
@@ -95,4 +96,16 @@ test('UTF-8 line limit stays exact for ASCII, multibyte and surrogate pairs',asy
   assert.doesNotThrow(()=>parseDocument(text));
   assert.throws(()=>parseDocument(original.replace(/^    title: .*$/m,prefix+unit.repeat(count+1)+suffix)),/control\/whitespace/);
  }
+});
+test('provenance is source-local and refuses incomplete or misplaced identity groups',async()=>{
+ const files={'provenance/example.yaml':await fixture('provenance')},net=transport(files),client=new Catalog(net.fetcher);
+ const {parseDocument}=await import('../catalog-contract/reader.mjs');
+ const apps=parseDocument(await fixture('apps')).apps,source={repository_id:9007199254740993n},root={inputs:{recipes:C,rules:C,schemas:C}};
+ await client.provenance(C,'example-nightly','repositories/example.yaml',source,root,apps);
+ assert.equal(net.calls.length,1);assert.match(net.calls[0],/\/provenance\/example.yaml$/);
+ await assert.rejects(client.provenance(C,'example','repositories/other.yaml',source,root,apps),/source mismatch/);
+ const missing=files['provenance/example.yaml'].replace('  "example-nightly":','  "other":');
+ await assert.rejects(new Catalog(transport({'provenance/example.yaml':missing}).fetcher).provenance(C,'example','repositories/example.yaml',source,root,apps),/coverage/);
+ await assert.rejects(new Catalog(transport({}).fetcher).provenance(C,'example','repositories/example.yaml',source,root,apps),/Unavailable/);
+ await assert.rejects(client.doc(C,'provenance.yaml'),/path/);
 });

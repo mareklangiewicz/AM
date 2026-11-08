@@ -159,6 +159,36 @@ def source(previous, acquired, *, rid, repository, revision):
     return decode(raw)
 
 
+def provenance_path(source_path):
+    if not re.fullmatch('repositories/'+NAME+r'\.yaml',source_path):
+        raise ValueError('invalid provenance source path')
+    return 'provenance/'+source_path.removeprefix('repositories/')
+
+
+def partition_provenance(apps, bindings, revision):
+    if set(apps)!=set(bindings): raise ValueError('provenance app coverage')
+    groups={}
+    for app,source_path in apps.items():
+        groups.setdefault(provenance_path(source_path),{})[app]=bindings[app]
+    return {path:encode(dict(header('provenance',revision),apps=entries))
+            for path,entries in groups.items()}
+
+
+def provenance_references(apps, sources, provenance):
+    expected={}
+    for app,path in apps.items():
+        if path not in sources: raise ValueError('missing app source')
+        expected.setdefault(provenance_path(path),set()).add(app)
+    if set(provenance)!=set(expected): raise ValueError('provenance document coverage')
+    for path,doc in provenance.items():
+        if set(doc['apps'])!=expected[path]: raise ValueError('provenance app coverage')
+        for app,arches in doc['apps'].items():
+            for arch,binding in arches.items():
+                if sources[apps[app]]!=binding['repository_id']: raise ValueError('provenance source identity')
+                if 'recipe' in binding and binding['recipe']['path']!=f'programs/{arch}/{app}':
+                    raise ValueError('recipe architecture identity')
+
+
 def validate_tree(tree, channel='catalog'):
     if type(tree) is not dict or sum(map(len,tree.values()))>TREE_CAP or len(tree)>(100000 if channel=='status' else 20000):
         raise ValueError('tree bound')
@@ -166,13 +196,13 @@ def validate_tree(tree, channel='catalog'):
     ids={}
     for path,raw in tree.items():
         if channel=='catalog':
-            allowed=path in ('catalog.yaml','apps.yaml','provenance.yaml') or re.fullmatch('repositories/'+NAME+r'\.yaml',path)
+            allowed=path in ('catalog.yaml','apps.yaml') or re.fullmatch('(repositories|provenance)/'+NAME+r'\.yaml',path)
         else:
             allowed=path in ('status.yaml','statistics.yaml') or re.fullmatch(r'runs/[1-9][0-9]*-[1-9][0-9]*/(?:summary\.yaml|sources/'+NAME+r'\.yaml)',path)
         if not allowed:
             raise ValueError('unexpected contract path')
         obj=decode(raw)
-        expected=(path[:-5] if '/' not in path else 'repository' if channel=='catalog' else 'summary' if path.endswith('/summary.yaml') else 'source')
+        expected=(path[:-5] if '/' not in path else ('provenance' if path.startswith('provenance/') else 'repository') if channel=='catalog' else 'summary' if path.endswith('/summary.yaml') else 'source')
         if obj['kind']!=expected:
             raise ValueError('path kind')
         docs[path]=obj
@@ -181,17 +211,12 @@ def validate_tree(tree, channel='catalog'):
             if rid in ids: raise ValueError('duplicate numeric source')
             ids[rid]=path
     if channel=='catalog':
-        if not {'catalog.yaml','apps.yaml','provenance.yaml'}<=docs.keys():
+        if not {'catalog.yaml','apps.yaml'}<=docs.keys():
             raise ValueError('missing catalog roots')
-        for name,path in docs['apps.yaml']['apps'].items():
-            if path not in docs: raise ValueError('missing app source')
-        for app,arches in docs['provenance.yaml']['apps'].items():
-            if app not in docs['apps.yaml']['apps']: raise ValueError('provenance app')
-            for arch,binding in arches.items():
-                if docs[docs['apps.yaml']['apps'][app]]['repository_id']!=binding['repository_id']:
-                    raise ValueError('provenance source identity')
-                if 'recipe' in binding and binding['recipe']['path']!=f'programs/{arch}/{app}':
-                    raise ValueError('recipe architecture identity')
+        provenance_references(docs['apps.yaml']['apps'],
+            {path:doc['repository_id'] for path,doc in docs.items() if doc['kind']=='repository'},
+            {path:doc for path,doc in docs.items() if doc['kind']=='provenance'})
+
     else:
         if 'status.yaml' not in docs: raise ValueError('missing status root')
         status=docs['status.yaml']
@@ -217,7 +242,7 @@ def read_directory(directory, channel='catalog'):
         if path.is_symlink() or not (path.is_file() or path.is_dir()): raise ValueError('candidate file type')
         if path.is_dir():
             name=path.relative_to(directory).as_posix()
-            allowed=(name=='repositories') if channel=='catalog' else bool(name=='runs' or re.fullmatch(r'runs/[1-9][0-9]*-[1-9][0-9]*(/sources)?',name))
+            allowed=(name in ('repositories','provenance')) if channel=='catalog' else bool(name=='runs' or re.fullmatch(r'runs/[1-9][0-9]*-[1-9][0-9]*(/sources)?',name))
             if not allowed: raise ValueError('unexpected candidate directory')
         if path.is_file():
             if path.stat().st_size>FILE_CAP: raise ValueError('document bound')

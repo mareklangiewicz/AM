@@ -16,7 +16,7 @@ async function channels(page,{source,health=false}={}){
   const [pin,...parts]=new URL(r.request().url()).pathname.split('/').slice(3),path=parts.join('/');
   requests.push({pin,path});
   if(path==='repositories/example.yaml'&&source&&await source(r,pin))return;
-  const name={'catalog.yaml':'catalog','apps.yaml':'apps','provenance.yaml':'provenance','repositories/example.yaml':'repository','status.yaml':'status','runs/123-2/summary.yaml':'summary'}[path];
+  const name={'catalog.yaml':'catalog','apps.yaml':'apps','provenance/example.yaml':'provenance','repositories/example.yaml':'repository','status.yaml':'status','runs/123-2/summary.yaml':'summary'}[path];
   if(!name)return r.fulfill({status:404,body:'No fixture'});
   const body=await fixture(name);
   await r.fulfill({contentType:'text/plain',body});
@@ -98,6 +98,6 @@ test('recipe evidence, shared identities and independent health stay distinct',a
  await expect(page.locator('.asset')).toHaveCount(4);
  await page.locator('#content .related [data-app="example-nightly"]').click();
  await expect(page.locator('#app-title')).toHaveText('example-nightly');
- await expect(page.locator('article')).toContainText('AM recipes: Not yet classified');
+ await expect(page.locator('article .recipe-overview')).toContainText('Not yet classified');
  await expect(page.locator('article a[href*="/programs/"]')).toHaveCount(0);
 });

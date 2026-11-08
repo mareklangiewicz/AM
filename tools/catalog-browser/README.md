@@ -113,3 +113,9 @@ CATALOG_FIREFOX=1 npm run test:e2e -- --project=firefox
 The default Chromium CI gate stays small. Firefox is an additional recorded engine
 check, not physical mobile or screen-reader evidence. Directory checks also exercise
 Vim h/j/k/search, typing guards and native Tab/Shift-Tab.
+
+Format-3 recipe evidence is now stored at `provenance/<source-label>.yaml`, derived
+from the selected validated source path and loaded at the same snapshot pin. Each
+partition must cover exactly its source's app/channel identities. The former
+private global provenance path is rejected; regenerate old saved-review candidates
+with the current builder. No document byte allowance was increased.

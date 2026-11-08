@@ -161,24 +161,36 @@ export function validateSnapshot(documents,channel='catalog') {
  if(Object.keys(documents).length>(channel==='catalog'?20000:100000)) bad('tree bound'); let total=0;
  for(const [path,text] of Object.entries(documents)) {
   total+=bytes(text); if(total>1073741824) bad('tree bytes');
-  const allowed=channel==='catalog'?/^(catalog|apps|provenance)\.yaml$|^repositories\/[a-z0-9][a-z0-9_.+-]{0,63}\.yaml$/:/^(status|statistics)\.yaml$|^runs\/[1-9][0-9]*-[1-9][0-9]*\/(summary\.yaml|sources\/[a-z0-9][a-z0-9_.+-]{0,63}\.yaml)$/;
+  const allowed=channel==='catalog'?/^(catalog|apps)\.yaml$|^(repositories|provenance)\/[a-z0-9][a-z0-9_.+-]{0,63}\.yaml$/:/^(status|statistics)\.yaml$|^runs\/[1-9][0-9]*-[1-9][0-9]*\/(summary\.yaml|sources\/[a-z0-9][a-z0-9_.+-]{0,63}\.yaml)$/;
   if(!allowed.test(path)) bad('path');
-  const doc=parseDocument(text), expected=path.includes('/')?(channel==='catalog'?'repository':path.endsWith('/summary.yaml')?'summary':'source'):path.slice(0,-5);
+  const doc=parseDocument(text), expected=path.includes('/')?(channel==='catalog'?(path.startsWith('provenance/')?'provenance':'repository'):path.endsWith('/summary.yaml')?'summary':'source'):path.slice(0,-5);
   if(doc.kind!==expected) bad('path kind');
   if(doc.kind==='repository') {if(ids.has(doc.repository_id)) bad('duplicate source'); ids.add(doc.repository_id);}
   docs.set(path,doc);
  }
  if(channel==='catalog') {
-  if(!['catalog.yaml','apps.yaml','provenance.yaml'].every(path=>docs.has(path))) bad('roots');
-  const apps=docs.get('apps.yaml').apps;
-  for(const path of Object.values(apps)) if(!docs.has(path)) bad('missing source');
-  for(const [app,arches] of Object.entries(docs.get('provenance.yaml').apps)) {
-   if(!own(apps,app)) bad('provenance app');
-   for(const [arch,binding] of Object.entries(arches)) {
-    if(binding.repository_id!==docs.get(apps[app]).repository_id) bad('provenance identity');
-    if(binding.recipe&&binding.recipe.path!==`programs/${arch}/${app}`) bad('recipe identity');
+  if(!['catalog.yaml','apps.yaml'].every(path=>docs.has(path))) bad('roots');
+  const apps=docs.get('apps.yaml').apps,expected=new Map();
+  for(const [app,path] of Object.entries(apps)) {
+   if(docs.get(path)?.kind!=='repository') bad('missing source');
+   const provenance=path.replace('repositories/','provenance/');
+   if(!expected.has(provenance))expected.set(provenance,new Set());
+   expected.get(provenance).add(app);
+  }
+  const actual=[...docs].filter(([,doc])=>doc.kind==='provenance');
+  if(actual.length!==expected.size)bad('provenance document coverage');
+  for(const [path,doc] of actual) {
+   const names=expected.get(path);
+   if(!names||Object.keys(doc.apps).length!==names.size)bad('provenance app coverage');
+   for(const [app,arches] of Object.entries(doc.apps)) {
+    if(!names.has(app))bad('provenance app coverage');
+    for(const [arch,binding] of Object.entries(arches)) {
+     if(binding.repository_id!==docs.get(apps[app]).repository_id)bad('provenance identity');
+     if(binding.recipe&&binding.recipe.path!==`programs/${arch}/${app}`)bad('recipe identity');
+    }
    }
   }
+
  } else {
   const s=docs.get('status.yaml'); if(!s) bad('status root');
   if(Object.keys(s.summaries).length>64||Object.keys(s.details).length>8) bad('retention');

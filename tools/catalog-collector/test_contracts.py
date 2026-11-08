@@ -65,7 +65,7 @@ def documents():
       'catalog':dict(header('catalog',PIN),inputs=inputs,producer=dict(id=123,attempt=2),retention='32-plus-stable-exact-tag-v1'),
       'apps':dict(header('apps',PIN),apps={'1':'repositories/example.yaml','10':'repositories/example.yaml','2':'repositories/example.yaml','example':'repositories/example.yaml','example-nightly':'repositories/example.yaml'}),
       'repository':sample(),
-      'provenance':dict(header('provenance',PIN),apps={'example':{'x86_64':dict(repository_id=9007199254740993,availability='unknown',classification='unknown')}}),
+      'provenance':dict(header('provenance',PIN),apps={app:{'x86_64':dict(repository_id=9007199254740993,availability='unknown',classification='unknown')} for app in ('1','10','2','example','example-nightly')}),
       'summary':dict(header('summary',PIN),run=dict(id=123,attempt=2),inputs=inputs,input_catalog_state='known',input_catalog=PIN,started_at=OLD,reported_at=NEW,collection='partial',validation='ok',publication=dict(state='not_attempted'),compatibility_publication=dict(state='not_attempted'),counts={k:known(v) for k,v in zip(('enrolled','selected','attempted','successful','failed','unknown','unattempted','deferred'),(5,4,3,2,1,0,1,1))},stop_reason='quota',metrics={k:unknown() for k in c.DEFINITIONS['metrics']['properties']},budgets=dict(requests=500,bytes=536870912,acquisition_milliseconds=900000,document_bytes=c.FILE_CAP),actions_url='https://github.com/mareklangiewicz/AM/actions/runs/123',recent_runs_url='https://github.com/mareklangiewicz/AM/actions/workflows/catalog.yml'),
       'status':dict(header('status',PIN),schemas=PIN,last_report='runs/123-2/summary.yaml',reported_at=NEW,last_confirmed_publication=dict(state='confirmed',commit=PIN),summaries={'123-2':'runs/123-2/summary.yaml'},details={'123-2':NEW}),
       'source':dict(header('source',PIN),run=dict(id=123,attempt=2),input_catalog_state='known',input_catalog=PIN,repository_id=9007199254740993,repository='example/app',outcome='failed',reason='source_validation',attempted_at=OLD),
@@ -207,7 +207,7 @@ class Contracts(unittest.TestCase):
             self.assertFalse(marker.exists())
 
     def test_tree_identity_and_channel_whitelists(self):
-        d=documents();tree={k+'.yaml':encode(d[k]) for k in ('catalog','apps','provenance')}
+        d=documents();tree={k+'.yaml':encode(d[k]) for k in ('catalog','apps')};tree['provenance/example.yaml']=encode(d['provenance'])
         tree['repositories/example.yaml']=encode(d['repository'])
         c.validate_tree(tree)
         for path,raw in [('status.yaml',encode(d['status'])),('repositories/../escape.yaml',encode(d['repository'])),('repositories/duplicate.yaml',encode(d['repository']))]:
@@ -218,6 +218,32 @@ class Contracts(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             path=Path(temp);(path/'catalog.yaml').symlink_to('/etc/passwd')
             with self.assertRaises(ValueError):c.read_directory(path)
+
+    def test_partitioned_provenance_coverage_agrees_in_python_browser_and_incremental(self):
+        from incremental import Candidate
+        d=documents();apps={'example':'repositories/example.yaml','example-nightly':'repositories/example.yaml','other':'repositories/other.yaml'}
+        bindings={app:{'x86_64':dict(repository_id=123 if app=='other' else 9007199254740993,availability='unknown',classification='unknown')} for app in apps}
+        tree={'catalog.yaml':encode(d['catalog']),'apps.yaml':encode(dict(header('apps',PIN),apps=apps)),
+              'repositories/example.yaml':encode(d['repository'])}
+        other=copy.deepcopy(d['repository']);other.update(repository_id=123,repository='example/other')
+        tree['repositories/other.yaml']=encode(other)
+        tree.update(c.partition_provenance(apps,bindings,PIN))
+        script="import {validateSnapshot} from './tools/catalog-contract/reader.mjs';let input='';for await(const chunk of process.stdin)input+=chunk;try{validateSnapshot(JSON.parse(input));}catch{process.exit(2);}"
+        def check(candidate,valid):
+            if valid:c.validate_tree(candidate);Candidate(None,candidate)
+            else:
+                with self.assertRaises(ValueError):c.validate_tree(candidate)
+                with self.assertRaises(ValueError):Candidate(None,candidate)
+            browser=subprocess.run(['node','--input-type=module','-e',script],input=json.dumps({p:b.decode() for p,b in candidate.items()}).encode(),cwd=ROOT,capture_output=True)
+            self.assertEqual(browser.returncode,0 if valid else 2,browser.stderr)
+        check(tree,True)
+        check({p:b for p,b in tree.items() if p!='provenance/other.yaml'},False)
+        check(dict(tree,**{'provenance.yaml':tree['provenance/example.yaml']}),False)
+        check(dict(tree,**{'provenance/other.yaml':tree['provenance/example.yaml']}),False)
+        check(dict(tree,**{'provenance/example.yaml':encode(dict(header('provenance',PIN),apps={'example':bindings['example']}))}),False)
+        changed=copy.deepcopy(bindings);changed['example']['x86_64']['repository_id']=123
+        check(dict(tree,**c.partition_provenance(apps,changed,PIN)),False)
+        self.assertEqual(set(c.partition_provenance(apps,bindings,PIN)),{'provenance/example.yaml','provenance/other.yaml'})
 
     def test_collection_one_acquisition_two_independent_parents_no_ref_advance(self):
         with tempfile.TemporaryDirectory() as temp:
@@ -248,7 +274,7 @@ class Contracts(unittest.TestCase):
             v3repo=root/'v3.git';git(root,'init','--bare','--quiet','--template=',str(v3repo))
             previous_doc=sample();previous_doc['repository_id']=123
             current['repositories/example.yaml']=encode(previous_doc)
-            current['provenance.yaml']=encode(dict(header('provenance',PIN),apps={}))
+            current['provenance/example.yaml']=encode(dict(header('provenance',PIN),apps={'example':{'x86_64':dict(repository_id=123,availability='unknown',classification='unknown')}}))
             v3pin=publish_tree(v3repo,current,None)
             with patch.object(interface,'verify_checkout_inputs'),patch.object(host,'configuration',return_value=(rows,{'123':'example/app'})),patch.object(host,'_open',side_effect=AssertionError('offline network')),patch.object(c,'source',side_effect=ValueError('document_overflow')):
                 interface.main(['collect','--repo',str(repo),'--parent',parent,'--v3-repo',str(v3repo),'--v3-parent',v3pin,'--evidence',str(evidence),'--output',str(root/'overflow'),'--registry',str(registry),'--run-id','123'])

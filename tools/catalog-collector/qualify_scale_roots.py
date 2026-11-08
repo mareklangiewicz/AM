@@ -1,7 +1,6 @@
 """Offline reference-workload root check; no enrollment or remote writes.
 
-Synthetic identities reuse saved evidence shapes. This qualifies only the root
-representation; it does not measure collection throughput or complete snapshots.
+Synthetic identities reuse saved evidence shapes. This compares global roots with per-source provenance; it does not measure collection throughput or complete snapshots.
 """
 import argparse
 import copy
@@ -45,6 +44,18 @@ def main():
             'apps.yaml':dict(c.header('apps','a'*40),apps=apps),
             'provenance.yaml':dict(c.header('provenance','a'*40),apps=bindings),
         }
+        partitions=c.partition_provenance(apps,bindings,'a'*40)
+        largest=max(partitions,key=lambda path:len(partitions[path]))
+        # Every generated partition has this same validated evidence shape. Check
+        # complete app/source membership and exact byte bounds for all partitions;
+        # parse the largest representative without pretending this is a full tree.
+        c.provenance_references(apps,{path:1000000000000+index for index,path in enumerate(apps.values())},
+            {path:dict(apps={path.removeprefix('provenance/').removesuffix('.yaml'):bindings[path.removeprefix('provenance/').removesuffix('.yaml')]}) for path in partitions})
+        c.decode(partitions[largest])
+        rows.append(dict(scenario=label,path='provenance/<source>.yaml',documents=len(partitions),
+            total_bytes=sum(map(len,partitions.values())),largest_bytes=len(partitions[largest]),
+            configured_cap=c.FILE_CAP,unused_fraction=1-len(partitions[largest])/c.FILE_CAP,
+            result='accepted' if max(map(len,partitions.values()))<=c.FILE_CAP else 'refused'))
         for name,obj in documents.items():
             body=c.encode(obj)
             row=dict(scenario=label,path=name,bytes=len(body),sha256=hashlib.sha256(body).hexdigest(),

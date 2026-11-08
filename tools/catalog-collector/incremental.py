@@ -35,7 +35,7 @@ def oid(raw):
 def allowed(path,channel):
     if channel=='status-1': return path in ('status.yaml','statistics.yaml') or bool(re.fullmatch(r'runs/[1-9][0-9]*-[1-9][0-9]*/(?:summary\.yaml|sources/'+contracts.NAME+r'\.yaml)',path))
     if channel=='format-2': return path=='apps.yaml' or bool(re.fullmatch(r'repositories/[1-9][0-9]*\.yaml',path))
-    return path in ('catalog.yaml','apps.yaml','provenance.yaml') or bool(re.fullmatch('repositories/'+contracts.NAME+r'\.yaml',path))
+    return path in ('catalog.yaml','apps.yaml') or bool(re.fullmatch('(repositories|provenance)/'+contracts.NAME+r'\.yaml',path))
 
 
 def decode(path,raw,channel):
@@ -56,7 +56,7 @@ def decode(path,raw,channel):
                   completed_at=obj.get('last_success',{}).get('completed_at'))
     else:
         obj=contracts.decode(raw)
-        expected=path[:-5] if '/' not in path else 'repository'
+        expected=path[:-5] if '/' not in path else 'provenance' if path.startswith('provenance/') else 'repository'
         if obj['kind']!=expected: raise ValueError('catalog kind/path')
         if expected!='repository': return obj,dict(root=obj)
         meta=dict(repository_id=obj['repository_id'],repository=obj['repository'],
@@ -90,14 +90,11 @@ def references(metadata,channel):
         apps=metadata['apps.yaml']['apps']
         if any(type(rid) is not int or rid not in ids for rid in apps.values()): raise ValueError('app source identity')
         return
-    if not {'catalog.yaml','provenance.yaml'}<=metadata.keys(): raise ValueError('missing catalog roots')
-    apps=metadata['apps.yaml']['root']['apps']
-    if any(path not in metadata or not path.startswith('repositories/') for path in apps.values()): raise ValueError('missing app source')
-    for app,arches in metadata['provenance.yaml']['root']['apps'].items():
-        if app not in apps: raise ValueError('provenance app')
-        for arch,binding in arches.items():
-            if metadata[apps[app]]['repository_id']!=binding['repository_id']: raise ValueError('provenance numeric identity')
-            if 'recipe' in binding and binding['recipe']['path']!=f'programs/{arch}/{app}': raise ValueError('recipe architecture identity')
+    if 'catalog.yaml' not in metadata: raise ValueError('missing catalog roots')
+    contracts.provenance_references(metadata['apps.yaml']['root']['apps'],
+        {path:meta['repository_id'] for path,meta in metadata.items() if path.startswith('repositories/')},
+        {path:meta['root'] for path,meta in metadata.items() if path.startswith('provenance/')})
+
 
 
 class Snapshot(Mapping):
