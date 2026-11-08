@@ -50,7 +50,7 @@ def main():
         # complete app/source membership and exact byte bounds for all partitions;
         # parse the largest representative without pretending this is a full tree.
         c.provenance_references(apps,{path:1000000000000+index for index,path in enumerate(apps.values())},
-            {path:dict(apps={path.removeprefix('provenance/').removesuffix('.yaml'):bindings[path.removeprefix('provenance/').removesuffix('.yaml')]}) for path in partitions})
+            {path:dict(schema=c.header('provenance','a'*40)['schema'],apps={path.removeprefix('provenance/').removesuffix('.yaml'):bindings[path.removeprefix('provenance/').removesuffix('.yaml')]}) for path in partitions},{key:'a'*40 for key in ('schemas','recipes','rules')})
         c.decode(partitions[largest])
         rows.append(dict(scenario=label,path='provenance/<source>.yaml',documents=len(partitions),
             total_bytes=sum(map(len,partitions.values())),largest_bytes=len(partitions[largest]),

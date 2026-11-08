@@ -93,7 +93,7 @@ def references(metadata,channel):
     if 'catalog.yaml' not in metadata: raise ValueError('missing catalog roots')
     contracts.provenance_references(metadata['apps.yaml']['root']['apps'],
         {path:meta['repository_id'] for path,meta in metadata.items() if path.startswith('repositories/')},
-        {path:meta['root'] for path,meta in metadata.items() if path.startswith('provenance/')})
+        {path:meta['root'] for path,meta in metadata.items() if path.startswith('provenance/')},metadata['catalog.yaml']['root']['inputs'])
 
 
 

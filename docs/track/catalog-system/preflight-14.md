@@ -138,3 +138,12 @@ all aliases; the nightly journey continues to show unknown without fabricated
 recipe links. The source-local reader also rejects incomplete alias coverage.
 Ticket 13 stays claimed and 14 stays open; remaining device/comprehension and full
 workload/history/consumer-selection evidence are unchanged requirements.
+
+The final audit also aligned full-tree/incremental revision checks with the lazy
+browser: every partition's schema must match descriptor inputs, and every recipe
+commit/classification-rule revision must match its own descriptor binding. Added
+cross-validator negatives for mismatched schemas, recipe commits and rule revisions.
+These pass together with the source/alias coverage cases. The collection overflow
+fixture now binds its preserved source/provenance headers to its actual descriptor
+schema revision; it still verifies byte-exact last-good preservation. Ten trusted
+publication/recovery checks pass with these revision checks enabled.

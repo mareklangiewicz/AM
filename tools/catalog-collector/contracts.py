@@ -174,19 +174,22 @@ def partition_provenance(apps, bindings, revision):
             for path,entries in groups.items()}
 
 
-def provenance_references(apps, sources, provenance):
+def provenance_references(apps, sources, provenance, inputs):
     expected={}
     for app,path in apps.items():
         if path not in sources: raise ValueError('missing app source')
         expected.setdefault(provenance_path(path),set()).add(app)
     if set(provenance)!=set(expected): raise ValueError('provenance document coverage')
     for path,doc in provenance.items():
+        if '/'+inputs['schemas']+'/' not in doc['schema']: raise ValueError('provenance schema binding')
         if set(doc['apps'])!=expected[path]: raise ValueError('provenance app coverage')
         for app,arches in doc['apps'].items():
             for arch,binding in arches.items():
                 if sources[apps[app]]!=binding['repository_id']: raise ValueError('provenance source identity')
                 if 'recipe' in binding and binding['recipe']['path']!=f'programs/{arch}/{app}':
                     raise ValueError('recipe architecture identity')
+                if 'recipe' in binding and binding['recipe']['commit']!=inputs['recipes']: raise ValueError('recipe revision binding')
+                if 'evidence' in binding and binding['evidence']['rules']!=inputs['rules']: raise ValueError('rule revision binding')
 
 
 def validate_tree(tree, channel='catalog'):
@@ -215,7 +218,7 @@ def validate_tree(tree, channel='catalog'):
             raise ValueError('missing catalog roots')
         provenance_references(docs['apps.yaml']['apps'],
             {path:doc['repository_id'] for path,doc in docs.items() if doc['kind']=='repository'},
-            {path:doc for path,doc in docs.items() if doc['kind']=='provenance'})
+            {path:doc for path,doc in docs.items() if doc['kind']=='provenance'},docs['catalog.yaml']['inputs'])
 
     else:
         if 'status.yaml' not in docs: raise ValueError('missing status root')

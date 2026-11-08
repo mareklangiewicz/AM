@@ -243,6 +243,15 @@ class Contracts(unittest.TestCase):
         check(dict(tree,**{'provenance/example.yaml':encode(dict(header('provenance',PIN),apps={'example':bindings['example']}))}),False)
         changed=copy.deepcopy(bindings);changed['example']['x86_64']['repository_id']=123
         check(dict(tree,**c.partition_provenance(apps,changed,PIN)),False)
+        wrong_schema=decode(tree['provenance/other.yaml']);wrong_schema['schema']=header('provenance','b'*40)['schema']
+        check(dict(tree,**{'provenance/other.yaml':encode(wrong_schema)}),False)
+        wrong_recipe=copy.deepcopy(bindings)
+        wrong_recipe['other']['x86_64'].update(availability='present',recipe=dict(repository='mareklangiewicz/AM',commit='b'*40,path='programs/x86_64/other',blob=PIN))
+        check(dict(tree,**c.partition_provenance(apps,wrong_recipe,PIN)),False)
+        shared=decode((FIXTURES/'provenance.yaml').read_bytes())['apps']['example']['aarch64']
+        wrong_rules=copy.deepcopy(bindings);wrong_rules['example']['aarch64']=copy.deepcopy(shared)
+        wrong_rules['example']['aarch64']['evidence']['rules']='b'*40
+        check(dict(tree,**c.partition_provenance(apps,wrong_rules,PIN)),False)
         self.assertEqual(set(c.partition_provenance(apps,bindings,PIN)),{'provenance/example.yaml','provenance/other.yaml'})
 
     def test_collection_one_acquisition_two_independent_parents_no_ref_advance(self):
@@ -272,9 +281,10 @@ class Contracts(unittest.TestCase):
             # An exceptional target overflow preserves its own exact prior bytes,
             # independently of the compatibility source result.
             v3repo=root/'v3.git';git(root,'init','--bare','--quiet','--template=',str(v3repo))
-            previous_doc=sample();previous_doc['repository_id']=123
+            schema_revision=decode(current['catalog.yaml'])['inputs']['schemas']
+            previous_doc=sample();previous_doc['repository_id']=123;previous_doc['schema']=header('repository',schema_revision)['schema']
             current['repositories/example.yaml']=encode(previous_doc)
-            current['provenance/example.yaml']=encode(dict(header('provenance',PIN),apps={'example':{'x86_64':dict(repository_id=123,availability='unknown',classification='unknown')}}))
+            current['provenance/example.yaml']=encode(dict(header('provenance',schema_revision),apps={'example':{'x86_64':dict(repository_id=123,availability='unknown',classification='unknown')}}))
             v3pin=publish_tree(v3repo,current,None)
             with patch.object(interface,'verify_checkout_inputs'),patch.object(host,'configuration',return_value=(rows,{'123':'example/app'})),patch.object(host,'_open',side_effect=AssertionError('offline network')),patch.object(c,'source',side_effect=ValueError('document_overflow')):
                 interface.main(['collect','--repo',str(repo),'--parent',parent,'--v3-repo',str(v3repo),'--v3-parent',v3pin,'--evidence',str(evidence),'--output',str(root/'overflow'),'--registry',str(registry),'--run-id','123'])

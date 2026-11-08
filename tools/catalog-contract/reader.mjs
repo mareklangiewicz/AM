@@ -179,14 +179,17 @@ export function validateSnapshot(documents,channel='catalog') {
   }
   const actual=[...docs].filter(([,doc])=>doc.kind==='provenance');
   if(actual.length!==expected.size)bad('provenance document coverage');
+  const inputs=docs.get('catalog.yaml').inputs;
   for(const [path,doc] of actual) {
+   if(!doc.schema.includes('/'+inputs.schemas+'/'))bad('provenance schema binding');
    const names=expected.get(path);
    if(!names||Object.keys(doc.apps).length!==names.size)bad('provenance app coverage');
    for(const [app,arches] of Object.entries(doc.apps)) {
     if(!names.has(app))bad('provenance app coverage');
     for(const [arch,binding] of Object.entries(arches)) {
      if(binding.repository_id!==docs.get(apps[app]).repository_id)bad('provenance identity');
-     if(binding.recipe&&binding.recipe.path!==`programs/${arch}/${app}`)bad('recipe identity');
+     if(binding.recipe&&(binding.recipe.path!==`programs/${arch}/${app}`||binding.recipe.commit!==inputs.recipes))bad('recipe identity/revision');
+     if(binding.evidence&&binding.evidence.rules!==inputs.rules)bad('rule revision binding');
     }
    }
   }
