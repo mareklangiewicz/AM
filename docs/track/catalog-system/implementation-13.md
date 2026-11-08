@@ -96,3 +96,22 @@ is retained in help or collapsed revision details. Native dialogs have named
 triggers, Close/Escape handling and focus restoration; Vim shortcuts defer to the
 context dialog. Syntax, the ten existing transport checks and whitespace pass.
 Real-browser interaction/accessibility acceptance remains outstanding.
+
+## Authorized public iteration route — November 8, 2026
+
+Marek explicitly requested reviewing each iteration through the published live
+version and accepted unfinished/unstable browser deployments. This supersedes
+the browser deployment hold above, including future review iterations; it does
+not authorize collector activation, enrollment or installed-host changes.
+
+Publish exact local source to the `browser-review` branch, leaving remote
+main-marek and its scheduled collection workflow unchanged. A Pages build embeds
+a static, labelled conversion of the saved public 500-input cohort, using the
+accepted converter and full contract validation, with conflict refusals visible.
+No public v3 channel exists yet. Review content IDs are distinct from Git catalog
+commits; static review data does not claim live observations or health.
+
+The artifact allowlist adds delivery configuration and canonical hash-checked
+review YAML. The workflow performs no source acquisition or catalog ref writes.
+Eleven focused checks cover normal and review reader modes. Deployment/readback
+receipt follows after completion; browser acceptance remains separate.

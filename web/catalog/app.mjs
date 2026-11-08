@@ -1,6 +1,7 @@
-import {Catalog,rawURL,releaseFacts} from './catalog.mjs';
+import delivery from './delivery.mjs';
+import {Catalog,releaseFacts} from './catalog.mjs';
 import {installKeyboard} from './keyboard.mjs';
-const $=id=>document.getElementById(id),client=new Catalog(),names={A:'Directory',B:'Explorer',C:'Release desk'};
+const $=id=>document.getElementById(id),client=new Catalog(fetch,delivery),names={A:'Directory',B:'Explorer',C:'Release desk'};
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const link=(url,label)=>/^https:\/\//.test(url??'')?`<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`:esc(label);
 const helpTopics={
@@ -17,6 +18,11 @@ const helpTopics={
  statistics:['Freshness and history','Source-age buckets describe successful source scopes, not the freshness of every retained release. Daily totals cover reported attempts only; missing days and attempts are gaps. Tree retention does not erase Git history.']
 };
 const helpButton=topic=>`<button type="button" class="context-help" data-help="${topic}" aria-label="About ${esc(helpTopics[topic][0].toLowerCase())}" aria-haspopup="dialog">?</button>`;
+if(delivery){
+ $('review-notice').hidden=false;
+ $('review-notice').textContent=`Review snapshot · ${delivery.sources} sources · Saved observations · Recipe evidence and health not published`;
+ helpTopics.snapshot[1]+=` This review uses saved public observations from ${delivery.baseline}. Its snapshot ID identifies bundled content, not a catalog Git commit. ${delivery.refused.length} source was omitted for conflicting saved tag evidence. Recipe evidence is not included; unknown does not mean absent. Load latest selects the snapshot bundled with this site build.`;
+}
 let helpOrigin,sourceHealthContext='Refresh outcome not yet checked.';
 document.addEventListener('click',e=>{
  const button=e.target.closest('[data-help]');if(!button)return;
@@ -51,7 +57,7 @@ function detail(){
  if(!source)return `<article><h2>${esc(selected)}</h2><p>${loading?'Loading source…':'Source unavailable; retry the same snapshot.'}</p></article>`;
  const same=Object.keys(apps).filter(n=>apps[n]===apps[selected]);
  const rs=releases(source).filter(([,r])=>!sourceQuery||`${r.tag} ${r.title??''} ${Object.values(r.assets).map(a=>a.name).join(' ')}`.toLowerCase().includes(sourceQuery));
- return `<article><h2 tabindex="-1" id="app-title">${esc(selected)}</h2><p>${link('https://github.com/'+source.repository,source.repository)} · Source ID ${source.repository_id}</p><p>Collected ${age(source.collected_at)} ${helpButton('freshness')}</p><p>${Object.keys(source.releases).length} retained releases · Bounded, possibly partial history ${helpButton('history')}</p><p>Same upstream source: ${same.map(n=>`<a href="?${new URLSearchParams({pin,variant,app:n})}" data-app="${esc(n)}">${esc(n)}</a>`).join(', ')} ${helpButton('identity')}</p><p>${link(rawURL(pin,apps[selected]),'Pinned source YAML')}</p><p>${esc(sourceHealth)} ${helpButton('refresh')}</p>${provenance()}${release&&!source.releases[release]?'<p role="status">Linked release is absent from this snapshot.</p>':''}${rs.map(([id])=>{
+ return `<article><h2 tabindex="-1" id="app-title">${esc(selected)}</h2><p>${link('https://github.com/'+source.repository,source.repository)} · Source ID ${source.repository_id}</p><p>Collected ${age(source.collected_at)} ${helpButton('freshness')}</p><p>${Object.keys(source.releases).length} retained releases · Bounded, possibly partial history ${helpButton('history')}</p><p>Same upstream source: ${same.map(n=>`<a href="?${new URLSearchParams({pin,variant,app:n})}" data-app="${esc(n)}">${esc(n)}</a>`).join(', ')} ${helpButton('identity')}</p><p>${link(client.url(pin,apps[selected]),'Pinned source YAML')}</p><p>${esc(sourceHealth)} ${helpButton('refresh')}</p>${provenance()}${release&&!source.releases[release]?'<p role="status">Linked release is absent from this snapshot.</p>':''}${rs.map(([id])=>{
  const r=releaseFacts(source,id),assets=Object.entries(r.assets).filter(([,a])=>!sourceQuery||`${r.tag} ${r.title??''} ${a.name}`.toLowerCase().includes(sourceQuery)),limit=limits.get(id)??60,open=expanded.has(id);
  return `<details ${open?'open':''}><summary data-release="${id}">${esc(r.tag)} · ${r.prerelease?'Prerelease':'Non-prerelease'} · ${esc(r.published_at??r.created_at)}</summary>${open?`<p>${link(r.url,'Upstream release')} · Release ID ${id} · Observed ${age(r.observed_at)}</p><p class="muted">Platform: inferred · Authenticity: unverified ${helpButton('platform')}</p>${assets.slice(0,limit).map(([aid,a])=>{const g=guess(a.name),match=($('platform').value==='all'||$('platform').value===g.os)&&($('arch').value==='all'||$('arch').value===g.arch);return `<div class="asset">${link(a.url,a.name)} · ${a.size} bytes<br><small>Asset ${aid} · media type: ${esc(a.media_type)} · inferred ${g.os} / ${g.arch}${match&&($('platform').value!=='all'||$('arch').value!=='all')?' · Possible platform match':''}</small></div>`;}).join('')||'<p>No assets match this source filter.</p>'}${assets.length>limit?`<button data-more="${id}">Show 60 more (${assets.length-limit} remaining)</button>`:''}`:''}</details>`;
  }).join('')}</article>`;
@@ -99,7 +105,7 @@ async function start(latest=false){
  try{
   if(latest||!pin){const c=await client.resolve('release-catalog-v3');if(token!==generation)return;pin=c;save(!latest);}
   const c=pin,result=await client.roots(c);if(token!==generation)return;root=result.root;apps=result.apps;save(true);
-  $('status').textContent=`${Object.keys(apps).length} AM identities · ${new Set(Object.values(apps)).size} sources · Snapshot ${c.slice(0,10)}`;render();if(selected)await loadDetail();
+  $('status').textContent=`${Object.keys(apps).length} AM identities · ${new Set(Object.values(apps)).size} sources · ${delivery?'Review snapshot':'Snapshot'} ${c.slice(0,10)}`;render();if(selected)await loadDetail();
  }catch(e){if(token===generation){$('status').textContent='Catalog unavailable';error(e);}}
 }
 function cycle(d){keyboard.resetScope();variant=['A','B','C'][(['A','B','C'].indexOf(variant)+d+3)%3];save();render();}

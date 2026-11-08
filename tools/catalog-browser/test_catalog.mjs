@@ -68,3 +68,11 @@ test('refuse changed schema input on roots and lazy sources',async()=>{
  const client=new Catalog(transport(files).fetcher);await assert.rejects(client.roots(C),/binding/);
  await assert.rejects(client.source(C,'repositories/example.yaml',{inputs:{schemas:D}}),/binding/);
 });
+test('bundled review uses its own content identity without live channel resolution',async()=>{
+ const calls=[],review={pin:C};
+ const client=new Catalog(async url=>{calls.push(url);return new Response(await fixture('apps'));},review);
+ assert.equal(await client.resolve('release-catalog-v3'),C);
+ await assert.rejects(client.resolve('catalog-status-v1'),/not published/);
+ await client.doc(C,'apps.yaml');assert.match(calls[0],new RegExp('/review-data/'+C+'/apps.yaml$'));
+ await assert.rejects(client.doc(D,'apps.yaml'),/unavailable/);assert.equal(calls.length,1);
+});

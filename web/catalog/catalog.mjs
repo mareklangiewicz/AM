@@ -5,17 +5,20 @@ const commit=/^[a-f0-9]{40}$/;
 const catalogPath=/^(catalog|apps|provenance)\.yaml$|^repositories\/[a-z0-9][a-z0-9_.+-]{0,63}\.yaml$/;
 const statusPath=/^(status|statistics)\.yaml$|^runs\/[1-9][0-9]*-[1-9][0-9]*\/(summary\.yaml|sources\/[a-z0-9][a-z0-9_.+-]{0,63}\.yaml)$/;
 export class Catalog {
- constructor(fetcher=fetch){this.fetcher=fetcher;this.cache=new Map();}
+ constructor(fetcher=fetch,review=null){this.fetcher=fetcher;this.cache=new Map();this.review=review;}
+ url(pin,path){return this.review?new URL(`../../review-data/${pin}/${path}`,import.meta.url).href:rawURL(pin,path);}
  async resolve(ref){
   if(!['release-catalog-v3','catalog-status-v1'].includes(ref))throw Error('Unsupported channel');
+  if(this.review){if(ref==='catalog-status-v1')throw Error('Health is not published for this review snapshot');return this.review.pin;}
   const r=await this.fetcher(`https://api.github.com/repos/mareklangiewicz/AM/git/ref/heads/${ref}`);
   if(!r.ok)throw Error(`Channel unavailable (HTTP ${r.status})`);
   const pin=(await r.json()).object?.sha;if(!commit.test(pin))throw Error('Invalid channel commit');return pin;
  }
  async doc(pin,path,channel='catalog'){
+  if(this.review&&pin!==this.review.pin)throw Error('Review snapshot unavailable in this build; choose Load latest');
   if(!commit.test(pin)||!(channel==='catalog'?catalogPath:statusPath).test(path))throw Error('Invalid pinned path');
   const key=pin+'/'+path;if(this.cache.has(key))return this.cache.get(key);
-  const r=await this.fetcher(rawURL(pin,path));if(!r.ok)throw Error(`Unavailable ${path} (HTTP ${r.status})`);
+  const r=await this.fetcher(this.url(pin,path));if(!r.ok)throw Error(`Unavailable ${path} (HTTP ${r.status})`);
   // Enforce the byte bound before materializing an unbounded response body.
   const reader=r.body.getReader(),chunks=[];let length=0;
   try{for(;;){const {done,value}=await reader.read();if(done)break;length+=value.byteLength;if(length>2097152)throw Error('Document byte bound');chunks.push(value);}}

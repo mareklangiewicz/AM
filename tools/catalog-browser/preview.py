@@ -53,7 +53,7 @@ class Preview(SimpleHTTPRequestHandler):
             self.wfile.write(html.encode())
             return
         # This server deliberately exposes only browser source and strict readers.
-        if path not in {'/web/catalog/' + f for f in ('app.mjs', 'catalog.mjs', 'keyboard.mjs')} | {'/tools/catalog-contract/reader.mjs', '/tools/catalog-contract/definitions.mjs'}:
+        if path not in {'/web/catalog/' + f for f in ('app.mjs', 'catalog.mjs', 'keyboard.mjs', 'delivery.mjs')} | {'/tools/catalog-contract/reader.mjs', '/tools/catalog-contract/definitions.mjs'}:
             self.send_error(404)
             return
         super().do_GET()

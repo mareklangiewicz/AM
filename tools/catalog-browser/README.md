@@ -33,21 +33,36 @@ unchanged. Tests, tracker material, fixtures, preview interception and this READ
 are excluded. Keep the previous deployed artifact for rollback; staging refuses
 to replace any existing output directory.
 
-The prepared `catalog-pages.yml` runs only by manual dispatch on main-marek.
-Deployment additionally requires both explicit `deploy=true` and the separately
-controlled `CATALOG_BROWSER_ENABLED=true` variable. No variable is changed here.
-The prototype worktree/branch and existing public artifact are preserved.
+## Published review iterations
 
-At separately authorized cutover, disable the old workflow repository-wide
-before main deployment (the preserved prototype branch has its own old workflow
-bytes, so a main-only conditional cannot disable those automatically):
+Marek authorized publishing unfinished browser iterations on November 8, 2026.
+Canonical browser source stays on local main-marek. Push that exact revision to
+`browser-review` to deploy; the default remote branch and scheduled collection
+workflow remain unchanged. The Pages environment allows this specific branch.
+The old prototype deployment workflow is disabled repository-wide to prevent it
+replacing the review site. Do not enable target collection channels or mutate the
+default branch merely to publish a browser iteration.
 
 ```
-gh workflow disable catalog-pages-prototype.yml --repo mareklangiewicz/AM
+git push origin HEAD:refs/heads/browser-review
 ```
 
-This command is preparation only; it has not run. The main copy additionally
-skips prototype deployment when the activation variable is true. Review exact
-source revisions, saved last-good artifact, activation/readback and rollback
-commands in ticket 15 before dispatch or variable changes. No automatic public
-activation is part of this implementation.
+The workflow builds a clearly labelled saved-observation review snapshot from
+public baseline `cbda9fb78ce4a6f29bdabd63d57f3c0085e8744f`, using the accepted
+converter and strict whole-tree validation. Tied tag evidence is refused per source.
+Recipe evidence and operational health are not fabricated. Static data lives only
+in the Pages artifact, not a new catalog branch or source index. Its content ID
+is explicitly a review snapshot identity, not a catalog Git commit.
+
+Artifact staging additionally accepts `--review-data <prepared-directory>` and
+copies only hash-checked canonical YAML paths. `delivery.mjs` is the one generated
+configuration file; all other browser/reader source stays byte-identical. The
+review builder and metadata manifest are excluded. The root redirect preserves
+query/hash. Old review IDs refuse in a newer build rather than returning different
+data at the old identity; Load latest selects the bundled review. Long-term Git
+pin retention remains the real catalog channel's responsibility.
+
+The saved data intentionally retains original observation ages. This is UI review,
+not production freshness, scale, recipe-evidence or accessibility acceptance.
+The normal catalog reader mode remains available with null delivery configuration;
+main-branch deployment still has its separate explicit input/activation gate.
