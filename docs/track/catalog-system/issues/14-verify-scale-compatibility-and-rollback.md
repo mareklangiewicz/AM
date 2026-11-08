@@ -46,7 +46,8 @@ Do not turn synthetic processing success into verified enrollment/live capacity.
 - Check v2/v3 common-fact round trips, actual maintained selection fixtures and
   intentional retention/tag differences, old numeric pins/readers, renamed labels,
   unknown/new schemas and recipe/source-policy divergence. Inventory maintained
-  consumers; do not assume unknown external readers have migrated.
+  consumers. Marek confirmed November 9 that there are no unknown external
+  readers/consumers; do not add an external-consumer discovery or waiting gate.
 - Rehearse disposable exact-parent conflicts, ambiguous writes, rerun after loss,
   partial dual-format publication, failed final status, explicit old-pin reader
   recovery, retained site-artifact restore and corrective direct-child publication.

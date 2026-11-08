@@ -157,6 +157,11 @@ parent binding.
 
 ## Execution evidence and optional follow-ups
 
+Consumer scope clarified by Marek, November 9: there are no unknown external
+readers/consumers. V2 retirement depends on maintained-consumer migration and the
+accepted rollback/date decision, with no external discovery, notice or waiting
+gate. Prior inventory limitations do not create such a dependency.
+
 November 9 capacity review: the [operating recommendation](qualification-14.md#capacity-recommendation-for-review--november-9-2026)
 recommends holding current coverage while correcting dual-output history and
 full-path throughput. A narrow v2 packing sample exposes a 92.012 GB annual

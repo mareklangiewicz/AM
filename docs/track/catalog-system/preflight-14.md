@@ -83,8 +83,11 @@ transitional recipes, across x86_64 (309), aarch64 (214), i686 (4), armv7l (2).
 The current enrollment is separately 509 app identities / 500 sources. These
 counts are different denominators; neither proves what is installed on a host.
 The receipt also hashes the maintained reader/parser/policy/acquisition modules
-and shared installer callers. Unknown external readers are not inventoried.
-Consumer migration/selection review is still required before v2 retirement.
+and shared installer callers. The original receipt did not inventory external
+readers; Marek confirmed on November 9 that there are no unknown external
+readers/consumers. That earlier measurement limitation is not a retirement gate.
+Migration/selection review of maintained consumers is still required before v2
+retirement.
 
 ## Additional recovery check
 

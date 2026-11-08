@@ -111,8 +111,10 @@ current installation freshness acceptance. The v2 baseline remains
 `cbda9fb78ce4a6f29bdabd63d57f3c0085e8744f`; all saved content hashes are checked.
 This does not migrate or qualify installed v3 transport. The existing inventory
 of 529 format-2 source recipes (57 declarations / 472 transitional) still describes
-source files, not installed hosts or unknown external readers. Format-2 delivery
-and retirement remain separately scoped.
+source files, not installed hosts. Marek confirmed on November 9 that there are
+no unknown external readers/consumers; no external-consumer discovery, notice or
+waiting period is needed for retirement. Format-2 delivery and retirement remain
+separately scoped.
 
 ## Exact retained site-artifact recovery
 

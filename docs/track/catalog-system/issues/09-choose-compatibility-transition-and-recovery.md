@@ -55,6 +55,13 @@ the concrete authorization described in the plan. None occurs in this decision.
 
 ## Process steering — November 7, 2026
 
+Consumer-scope clarification, November 9, 2026: Marek confirmed that there are no
+unknown external readers/consumers. Retirement concerns the maintained consumers
+only; no external-consumer discovery, compatibility notice or waiting period is
+required. The earlier inventory receipt's external-reader limitation records what
+that source scan measured, not an additional retirement gate. Maintained-consumer
+migration, rollback and the agreed retirement date remain the accepted route.
+
 Marek wants a substantially faster migration with less ceremony. Produce one
 concrete cutover/rollback plan, reusing existing evidence and focused compatibility
 checks. Batch material choices for review; select routine mechanics autonomously.
