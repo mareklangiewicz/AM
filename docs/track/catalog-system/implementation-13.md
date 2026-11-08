@@ -115,3 +115,40 @@ The artifact allowlist adds delivery configuration and canonical hash-checked
 review YAML. The workflow performs no source acquisition or catalog ref writes.
 Eleven focused checks cover normal and review reader modes. Deployment/readback
 receipt follows after completion; browser acceptance remains separate.
+
+### Publication attempt and external blocker
+
+Source `0291e278ac87f51aad7d78322f6e19feae384a22` was pushed to
+`browser-review`. The local saved conversion passed full contract validation:
+499 sources / 508 app identities; source 1245849062 refused for tied exact-tag
+evidence as before. Staging contains 511 allowlisted files, with no tracker or
+preview interception files. Eleven reader checks and syntax/whitespace pass.
+
+The prior four live files were downloaded byte-for-byte with SHA-256 receipts to
+`/home/marek/Documents/Codex/am-browser-review-20261108/last-good/`. Their hashes
+match the November 6 public prototype receipt. The prepared local review artifact
+is `/tmp/am-browser-public-review-20261108/`; its data is generated from the saved
+public baseline, not new collection. The saved review metadata remains in
+`/tmp/am-browser-review-data-20261108/review.json`.
+
+Pages environment rule 65931830 allows exactly browser-review. The superseded
+prototype workflow is disabled repository-wide. Remote main-marek advanced only
+to `03582e8e44c42e11bbd5992bc23646532778cb69`, adding the browser workflow for
+registration; all its other files, including the active collector workflow, remain
+unchanged. That registration commit was merged into local main-marek. The planned
+new collector is still local/review-branch code only; no collector dispatch ran.
+
+**No new site deployed.** Push produced no review workflow run; after registration,
+manual dispatch repeatedly returned HTTP 422: “Actions has been disabled for this
+repository.” Workflow 411091894 is active; Actions permissions report enabled=true
+and allowed_actions=all. Explicit workflow enable and reapplying the existing
+repository enabled setting both succeeded but did not restore dispatch. No budget,
+billing, token or broader allowed-action policy was changed.
+
+GitHub's official [repository Actions settings guidance](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository)
+documents a separate GitHub-controlled disabled state that these settings cannot
+clear and directs affected owners to Support. The exact cause for this account/repo
+is not established here. Resolve that external restriction, then dispatch
+`catalog-pages.yml` with ref browser-review and verify artifact/HTTPS readback.
+The existing live prototype is unchanged; no new browser/CORS/deployment acceptance
+is claimed. Future unfinished browser iteration publishing is already authorized.

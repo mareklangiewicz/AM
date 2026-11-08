@@ -37,8 +37,8 @@ to replace any existing output directory.
 
 Marek authorized publishing unfinished browser iterations on November 8, 2026.
 Canonical browser source stays on local main-marek. Push that exact revision to
-`browser-review` to deploy; the default remote branch and scheduled collection
-workflow remain unchanged. The Pages environment allows this specific branch.
+`browser-review` to deploy; only the browser workflow is registered on the default branch; scheduled collection
+workflow and other default-branch source remain unchanged. The Pages environment allows this specific branch.
 The old prototype deployment workflow is disabled repository-wide to prevent it
 replacing the review site. Do not enable target collection channels or mutate the
 default branch merely to publish a browser iteration.
@@ -66,3 +66,8 @@ The saved data intentionally retains original observation ages. This is UI revie
 not production freshness, scale, recipe-evidence or accessibility acceptance.
 The normal catalog reader mode remains available with null delivery configuration;
 main-branch deployment still has its separate explicit input/activation gate.
+
+Deployment status, November 8: prepared/pushed, but GitHub rejects dispatch with
+HTTP 422 “Actions has been disabled for this repository” despite enabled settings.
+The previous live site remains published. See the ticket-13 checkpoint for receipts
+and the exact retry route once GitHub restores execution.
