@@ -67,3 +67,10 @@ exposes a blocking ordinary-workload provenance-root overflow, records the concr
 layout proposal pending Marek's decision, inventories current v2 source consumers,
 and checks synthetic oldest-first scheduling plus corrective old-pin recovery.
 This ticket remains open and unclaimed; no full scale/history acceptance is implied.
+
+The [schema-transition follow-up](../preflight-14.md#collectorschema-revision-transition--november-8-2026)
+reproduces the handoff's suspected retained-source schema mismatch, aligns collector
+and trusted publisher defaults with the exact parent's schema pin, and adds
+cross-validator/publication refusal checks. This is preparatory compatibility
+evidence; ticket 13's remaining gates and this ticket's workload/history/selection
+requirements remain open.

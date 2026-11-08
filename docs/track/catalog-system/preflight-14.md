@@ -155,3 +155,56 @@ native fetch confirmed one source partition and no global provenance fetch, with
 six public Chromium/Firefox smoke checks passing. Collector activation remains
 outside this browser-review publication; full workload/history qualification is
 still open.
+
+## Collector/schema revision transition — November 8, 2026
+
+The handoff's suspected schema mismatch is reproduced with disposable local Git
+parents and saved empty acquisition. With a newer collector HEAD and an injected
+v3 source overflow, collection preserved the prior source bytes but rebound the
+descriptor and provenance to HEAD. Python whole-tree validation accepted it; a
+fresh maintained `Catalog.source` read failed with `Schema input binding mismatch`.
+The same regression command failed twice before correction:
+
+```
+cd tools/catalog-collector
+python3 -B -m unittest \
+  test_contracts.Contracts.test_collector_revision_change_keeps_retained_source_browsable -v
+```
+
+Subsequent collection now defaults to the validated parent's schema pin and checks
+the relevant checkout bytes against it before acquisition. The immutable contract
+document is included in that checkout scope. Collector-only changes can retain
+source blobs; actual contract/schema/reader changes require an explicit schema
+revision and matching source documents. Python full-tree, incremental and shared
+JavaScript snapshot validation now check every document against the descriptor,
+matching the existing lazy browser refusal. Failed/deferred old-schema sources
+therefore stop an explicit transition before candidate output, without changing
+observations, weakening browser checks or advancing either parent.
+
+Publisher inspection found the same HEAD-only default in its trusted input
+bindings. It now independently fetches/validates the caller's exact expected v3
+parent to derive the default schema pin; the transferred artifact cannot choose
+that authority. Explicit transitions require trusted `publish --schemas-revision`.
+This adds a parent fetch/validation cost that full workload qualification must
+measure. The prepared scheduled workflow uses the parent default; actual schema
+changes need an explicit CLI invocation or reviewed workflow change. No workflow
+was dispatched or changed in this follow-up.
+
+The focused test also covers budget-deferred source reuse and a successful
+all-source explicit revision transition. A separate disposable checkout verifies
+that retaining the schema pin accepts collector-only changes but refuses changed
+contract bytes. Cross-validator negatives now cover descriptor, apps and source
+schema mismatches in addition to provenance. Synthetic pins/receipts and a Node
+invocation of the actual lazy client are local compatibility evidence, not live
+collection, physical-browser or capacity acceptance. Ticket 13 remains claimed;
+14 remains open/unclaimed and its other acceptance work remains required.
+
+Verification: `python3 -B -m unittest test_contracts test_pipeline_publication -v`
+passed the 14 contract and then-existing 10 publication checks (24 total, 95.5 s).
+After completing publisher default/explicit-transition handling, the full
+`python3 -B -m unittest test_pipeline_publication -v` passed all 12 publication
+checks in 64.1 s, including hash-correct mixed-schema refusal before either catalog
+write, independent parent-derived schema reuse, artifact-only transition refusal
+and explicit trusted transition success. `node tools/catalog-browser/test_catalog.mjs`
+passed all 14 checks. `git diff --check` passed. No unaffected browser journeys or
+saved seed-plus-three rehearsal were repeated.

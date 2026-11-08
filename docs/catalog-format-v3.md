@@ -58,6 +58,13 @@ pointing to its source, including distinct stable/nightly identities. Missing,
 misplaced, cross-source or extra provenance documents/bindings refuse a candidate.
 The `provenance` kind and architecture/evidence field schemas are unchanged.
 
+Every catalog document's schema URL must bind the descriptor's `inputs.schemas`,
+including roots and retained source documents. Collector-only updates retain the
+parent's schema pin while its checked-out contract/schema/reader bytes still
+match. An explicit schema revision change requires all source documents to match;
+failed or deferred sources with old bindings refuse the candidate. Preserving
+last-good source bytes does not authorize publishing a mixed-schema snapshot.
+
 Every app must reference an existing source; each
 numeric source appears once, independently of app aliases. Names match
 `[a-z0-9][a-z0-9_.+-]*`, at most 64 ASCII bytes. No slash, percent escape or

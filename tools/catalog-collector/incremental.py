@@ -60,7 +60,7 @@ def decode(path,raw,channel):
         if obj['kind']!=expected: raise ValueError('catalog kind/path')
         if expected!='repository': return obj,dict(root=obj)
         meta=dict(repository_id=obj['repository_id'],repository=obj['repository'],
-                  attempted_at=obj['collected_at'],completed_at=obj['collected_at'])
+                  attempted_at=obj['collected_at'],completed_at=obj['collected_at'],schema=obj['schema'])
     return obj,meta
 
 
@@ -91,6 +91,9 @@ def references(metadata,channel):
         if any(type(rid) is not int or rid not in ids for rid in apps.values()): raise ValueError('app source identity')
         return
     if 'catalog.yaml' not in metadata: raise ValueError('missing catalog roots')
+    revision=metadata['catalog.yaml']['root']['inputs']['schemas']
+    if any('/'+revision+'/' not in (meta['root']['schema'] if 'root' in meta else meta['schema'])
+           for meta in metadata.values()): raise ValueError('catalog schema binding')
     contracts.provenance_references(metadata['apps.yaml']['root']['apps'],
         {path:meta['repository_id'] for path,meta in metadata.items() if path.startswith('repositories/')},
         {path:meta['root'] for path,meta in metadata.items() if path.startswith('provenance/')},metadata['catalog.yaml']['root']['inputs'])

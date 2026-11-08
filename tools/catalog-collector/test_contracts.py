@@ -245,6 +245,9 @@ class Contracts(unittest.TestCase):
         check(dict(tree,**c.partition_provenance(apps,changed,PIN)),False)
         wrong_schema=decode(tree['provenance/other.yaml']);wrong_schema['schema']=header('provenance','b'*40)['schema']
         check(dict(tree,**{'provenance/other.yaml':encode(wrong_schema)}),False)
+        for path in ('catalog.yaml','apps.yaml','repositories/example.yaml'):
+            wrong_schema=decode(tree[path]);wrong_schema['schema']=header(wrong_schema['kind'],'b'*40)['schema']
+            check(dict(tree,**{path:encode(wrong_schema)}),False)
         wrong_recipe=copy.deepcopy(bindings)
         wrong_recipe['other']['x86_64'].update(availability='present',recipe=dict(repository='mareklangiewicz/AM',commit='b'*40,path='programs/x86_64/other',blob=PIN))
         check(dict(tree,**c.partition_provenance(apps,wrong_recipe,PIN)),False)
@@ -297,6 +300,72 @@ class Contracts(unittest.TestCase):
             with self.assertRaises(ValueError):
                 interface.main(['validate','--candidate',str(root/'output/format-3'),'--expected-rules','b'*40])
 
+
+    def test_collector_revision_change_keeps_retained_source_browsable(self):
+        from yaml_publication import candidate_tree,schema_url
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp);repo=root/'legacy.git';v3=root/'v3.git'
+            for path in (repo,v3):git(root,'init','--bare','--quiet','--template=',str(path))
+            parent=publish_tree(repo,candidate_tree({'example':123},{'123':repository()},schema=schema_url(PIN),max_file_bytes=c.FILE_CAP),None)
+            d=documents();d['repository']['repository_id']=123
+            apps={'example':'repositories/example.yaml'}
+            tree={'catalog.yaml':encode(d['catalog']),'apps.yaml':encode(dict(header('apps',PIN),apps=apps)),
+                  'repositories/example.yaml':encode(d['repository'])}
+            tree.update(c.partition_provenance(apps,{'example':{'x86_64':dict(repository_id=123,availability='unknown',classification='unknown')}},PIN))
+            prior=publish_tree(v3,tree,None)
+            saved=root/'saved';saved.mkdir()
+            (saved/'123-releases.json').write_text('[]');(saved/'123-receipt.txt').write_text(NEW)
+            registry=root/'names.json';registry.write_text(json.dumps(dict(active={'123':'example'},retired=[])))
+            rows=[dict(app='example',repository_id=123,repository='example/app')]
+            output=root/'output'
+            command=['collect','--repo',str(repo),'--parent',parent,'--v3-repo',str(v3),'--v3-parent',prior,'--evidence',str(saved),'--registry',str(registry),'--run-id','124']
+            with patch.object(interface,'verify_checkout_inputs'),patch.object(host,'configuration',return_value=(rows,{'123':'example/app'})),patch.object(host,'_open',side_effect=AssertionError('offline network')),patch.object(c,'source',side_effect=ValueError('document_overflow')):
+                interface.main(command+['--output',str(output)])
+                # Explicitly advancing schemas cannot publish a retained old blob.
+                with self.assertRaisesRegex(ValueError,'catalog schema binding'):
+                    interface.main(command+['--output',str(root/'refused'),'--schemas-revision','b'*40])
+                self.assertFalse((root/'refused').exists())
+            result=c.read_directory(output/'format-3')
+            self.assertEqual(result['repositories/example.yaml'],tree['repositories/example.yaml'])
+            script="import {Catalog} from './web/catalog/catalog.mjs';import {readFile} from 'node:fs/promises';const dir=process.argv[1];const client=new Catalog(async url=>new Response(await readFile(dir+'/'+new URL(url).pathname.split('/').slice(4).join('/'))));const {root,apps}=await client.roots('"+PIN+"');await client.source('"+PIN+"',apps.example,root);"
+            read=subprocess.run(['node','--input-type=module','-e',script,str(output/'format-3')],cwd=ROOT,capture_output=True)
+            self.assertEqual(read.returncode,0,read.stderr)
+            self.assertEqual(decode(result['catalog.yaml'])['inputs']['schemas'],PIN)
+            self.assertEqual(git(v3,'rev-parse',REF).decode().strip(),prior)
+
+            # Budget-deferred sources exercise reuse without a failed acquisition.
+            def deferred(*args,metrics,**kwargs):
+                metrics.update(selected_repository_ids=[123],selected_sources=1,requests=0,response_bytes=0,acquisition_seconds=0)
+                return ({'example':123},{}),[]
+            with patch.object(interface,'verify_checkout_inputs'),patch.object(host,'configuration',return_value=(rows,{'123':'example/app'})),patch.object(host,'collect',side_effect=deferred):
+                interface.main(command+['--output',str(root/'deferred')])
+            deferred_tree=c.read_directory(root/'deferred/format-3')
+            self.assertEqual(deferred_tree['repositories/example.yaml'],tree['repositories/example.yaml'])
+            self.assertEqual(decode(deferred_tree['catalog.yaml'])['inputs']['schemas'],PIN)
+            # An explicit revision works when successful acquisition rewrites all sources.
+            with patch.object(interface,'verify_checkout_inputs'),patch.object(host,'configuration',return_value=(rows,{'123':'example/app'})),patch.object(host,'_open',side_effect=AssertionError('offline network')):
+                interface.main(command+['--output',str(root/'upgraded'),'--schemas-revision','b'*40])
+            upgraded=c.read_directory(root/'upgraded/format-3')
+            self.assertEqual(decode(upgraded['repositories/example.yaml'])['schema'],header('repository','b'*40)['schema'])
+            self.assertEqual(git(v3,'rev-parse',REF).decode().strip(),prior)
+
+    def test_retained_schema_pin_requires_identical_checkout(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp);git(root,'init','--quiet','--template=')
+            registry=root/'tools/catalog-collector/source-names.json';registry.parent.mkdir(parents=True)
+            registry.write_text('{"active":{},"retired":[]}')
+            schema=root/'docs/catalog-format-v3.md';schema.parent.mkdir();schema.write_text('fixture contract')
+            git(root,'add','tools','docs');git(root,'commit','-qm','Initial schema')
+            old=git(root,'rev-parse','HEAD').decode().strip()
+            (registry.parent/'collector.py').write_text('collector-only change')
+            git(root,'add','tools');git(root,'commit','-qm','New collector')
+            revision=git(root,'rev-parse','HEAD').decode().strip()
+            inputs={key:revision for key in ('source','policy','recipes','rules','schemas')};inputs['schemas']=old
+            with patch.object(host,'ROOT',root):
+                interface.verify_checkout_inputs(inputs,registry)
+                schema.write_text('changed fixture contract')
+                with self.assertRaisesRegex(ValueError,'checkout differs from schemas input pin'):
+                    interface.verify_checkout_inputs(inputs,registry)
 
     def test_normalization_time_fallback_is_explicit_and_generated_files_are_stable(self):
         from bounded import normalize

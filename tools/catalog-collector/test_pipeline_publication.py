@@ -122,6 +122,51 @@ class Pipeline(unittest.TestCase):
         self.assertEqual(result['outcomes']['format-3']['state'],'conflict')
         self.assertEqual(self.head('format-3'),other)
         self.assertEqual(result['outcomes']['status-1']['state'],'confirmed')
+    def test_mixed_schema_source_refuses_before_either_catalog_write(self):
+        path='repositories/example.yaml'
+        source=c.decode(self.target[path]);source['schema']=c.header('repository','b'*40)['schema']
+        self.target[path]=c.encode(source)
+        self.write_artifact()  # Hashes agree; the cross-document binding must refuse.
+        result=self.invoke()
+        self.assertEqual(result['validation'],'failed')
+        self.assertEqual(self.head('format-2'),self.parent)
+        self.assertIsNone(self.head('format-3'))
+        self.assertEqual(result['outcomes']['status-1']['state'],'confirmed')
+    def test_new_collector_publishes_with_trusted_parent_schema_pin(self):
+        self.invoke()
+        prior=self.head('format-3');self.parent=self.head('format-2')
+        self.run=dict(id=124,attempt=1)
+        revision='b'*40
+        self.inputs={key:revision for key in self.inputs};self.inputs['schemas']=PIN
+        descriptor=c.decode(self.target['catalog.yaml'])
+        descriptor.update(inputs=self.inputs,producer=self.run)
+        self.target['catalog.yaml']=c.encode(descriptor)
+        self.write_artifact()
+        report=json.loads((self.output/'report.json').read_text());report['parents']['format_3']=prior
+        (self.output/'report.json').write_text(json.dumps(report))
+        self.args.source_revision=revision;self.args.run_id=124;self.args.attempt=1
+        self.args.expected_v2_parent=self.parent;self.args.expected_v3_parent=prior
+        result=self.invoke()
+        self.assertEqual(result['validation'],'ok')
+        self.assertEqual(result['outcomes']['format-3']['state'],'confirmed')
+        self.assertEqual(c.decode(c.read_local(self.remote,self.head('format-3'))['catalog.yaml'])['inputs']['schemas'],PIN)
+        self.parent=self.head('format-2');prior=self.head('format-3')
+        self.args.expected_v2_parent=self.parent;self.args.expected_v3_parent=prior
+        self.inputs['schemas']=revision
+        for path,raw in self.target.items():
+            doc=c.decode(raw);doc['schema']=c.header(doc['kind'],revision)['schema']
+            if doc['kind']=='catalog':doc['inputs']=self.inputs
+            self.target[path]=c.encode(doc)
+        self.write_artifact()
+        report=json.loads((self.output/'report.json').read_text());report['parents']['format_3']=prior
+        (self.output/'report.json').write_text(json.dumps(report))
+        # A matching artifact cannot authorize its own schema transition.
+        self.assertEqual(self.invoke()['validation'],'failed')
+        self.assertEqual(self.head('format-3'),prior)
+        self.args.schemas_revision=revision
+        result=self.invoke()
+        self.assertEqual(result['validation'],'ok')
+        self.assertEqual(result['outcomes']['format-3']['state'],'confirmed')
     def test_ambiguous_write_and_summary_failure_leave_confirmed_catalogs(self):
         class Ambiguous(p.Transport):
             def push(inner,repo,ref,parent,commit):

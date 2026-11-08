@@ -255,6 +255,7 @@ def add_arguments(sub):
     parser.add_argument('--input-catalog-state',choices=('known','absent','unknown'))
     parser.add_argument('--expected-v3-parent',type=c.pin)
     parser.add_argument('--source-revision',type=c.pin,required=True)
+    parser.add_argument('--schemas-revision',type=c.pin,help='Explicit trusted schema transition; otherwise retain the exact expected v3 parent binding')
     parser.add_argument('--enable-targets',action='store_true',help='Explicitly publish v3/status channels; activation needs separate authorization')
     parser.add_argument('--result',type=Path,required=True)
 
@@ -289,6 +290,17 @@ def run(args,*,transport=None):
     try:
         from collection_interface import verify_checkout_inputs
         import host_catalog as host
+        schema_revision=getattr(args,'schemas_revision',None)
+        if schema_revision is None and args.expected_v3_parent:
+            # Derive authority from the caller's exact expected parent, never
+            # from an untrusted artifact's requested schema revision.
+            with tempfile.TemporaryDirectory(prefix='am-schema-parent-') as scratch:
+                repo=Path(scratch);git(repo,'init','--bare','--quiet','--template=')
+                fetched=transport.call(repo,'fetch','--no-tags',transport.url,args.expected_v3_parent)
+                if fetched.returncode: raise ValueError('schema parent unavailable')
+                parent=Snapshot(repo,args.expected_v3_parent)
+                schema_revision=parent.metadata['catalog.yaml']['root']['inputs']['schemas']
+        if schema_revision is not None: inputs['schemas']=schema_revision
         verify_checkout_inputs(inputs,host.ROOT/'tools/catalog-collector/source-names.json')
         report,trees,docs=artifact(args.candidate,run=run_id,inputs=inputs,parents=parents)
         rows,names=enrollment()
@@ -300,7 +312,7 @@ def run(args,*,transport=None):
         stop=report['compatibility_metrics']['stop_reason']
         reason={'byte_limit':'byte_budget','time_limit':'time_budget','primary_rate_reserve':'quota','http_401':'authentication','http_403':'quota','http_429':'quota'}.get(stop,'complete')
         if reason=='complete' and report['target_counts']['failed']:reason='source_validation'
-    except (ValueError,KeyError,TypeError,OSError,RecursionError):
+    except (ValueError,KeyError,TypeError,OSError,RecursionError,subprocess.SubprocessError):
         report=None;trees=None;docs={}
     with tempfile.TemporaryDirectory(prefix='am-publisher-') as scratch:
         root=Path(scratch)

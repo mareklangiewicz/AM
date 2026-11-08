@@ -170,6 +170,8 @@ export function validateSnapshot(documents,channel='catalog') {
  }
  if(channel==='catalog') {
   if(!['catalog.yaml','apps.yaml'].every(path=>docs.has(path))) bad('roots');
+  const revision=docs.get('catalog.yaml').inputs.schemas;
+  if([...docs.values()].some(doc=>!doc.schema.includes('/'+revision+'/')))bad('catalog schema binding');
   const apps=docs.get('apps.yaml').apps,expected=new Map();
   for(const [app,path] of Object.entries(apps)) {
    if(docs.get(path)?.kind!=='repository') bad('missing source');

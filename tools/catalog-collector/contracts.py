@@ -216,6 +216,9 @@ def validate_tree(tree, channel='catalog'):
     if channel=='catalog':
         if not {'catalog.yaml','apps.yaml'}<=docs.keys():
             raise ValueError('missing catalog roots')
+        revision=docs['catalog.yaml']['inputs']['schemas']
+        if any('/'+revision+'/' not in doc['schema'] for doc in docs.values()):
+            raise ValueError('catalog schema binding')
         provenance_references(docs['apps.yaml']['apps'],
             {path:doc['repository_id'] for path,doc in docs.items() if doc['kind']=='repository'},
             {path:doc for path,doc in docs.items() if doc['kind']=='provenance'},docs['catalog.yaml']['inputs'])

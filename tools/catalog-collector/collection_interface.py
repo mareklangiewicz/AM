@@ -29,7 +29,7 @@ def verify_checkout_inputs(inputs, registry):
         'policy':['tools/catalog-collector/collection-recipes.txt','tools/catalog-collector/collection-apps.json','tools/catalog-collector/source-names.json'],
         'recipes':['programs'],
         'rules':['tools/catalog-collector/provenance.py','tools/recipe-reconstruction'],
-        'schemas':['schemas/catalog','tools/catalog-contract','modules/catalog-contract-parser.am','modules/catalog-contract-tables.am'],
+        'schemas':['docs/catalog-format-v3.md','schemas/catalog','tools/catalog-contract','modules/catalog-contract-parser.am','modules/catalog-contract-tables.am'],
     }
     for key,paths in scopes.items():
         changed=subprocess.run(['git','-C',str(host.ROOT),'diff','--quiet',inputs[key],'--',*paths]).returncode
@@ -63,13 +63,17 @@ def collect(args):
     revision=subprocess.check_output(['git','-C',str(host.ROOT),'rev-parse','HEAD'],text=True).strip()
     inputs={key:contracts.pin(getattr(args,key+'_revision') or revision)
             for key in ('source','policy','recipes','rules','schemas')}
-    verify_checkout_inputs(inputs,args.registry)
     if args.output.exists(): raise ValueError('output must not exist')
     started_at=host.utc()
     legacy_parent=Snapshot(args.repo,args.parent,'format-2')
     previous=Records(legacy_parent)
     if bool(args.v3_repo)!=bool(args.v3_parent): raise ValueError('v3 parent needs repository and exact pin')
     prior=Snapshot(args.v3_repo,args.v3_parent) if args.v3_parent else None
+    # A collector-only revision must not rebind unchanged source documents.
+    # Verification below refuses reuse if the schema checkout actually changed.
+    if prior and args.schemas_revision is None:
+        inputs['schemas']=prior.metadata['catalog.yaml']['root']['inputs']['schemas']
+    verify_checkout_inputs(inputs,args.registry)
     prior_docs={path:meta['root'] for path,meta in prior.metadata.items() if 'root' in meta} if prior else {}
     profile=dict(source_cap=args.source_cap,request_cap=args.request_cap,total_cap=args.total_bytes,
                  seconds_cap=args.acquisition_seconds,reserve=args.rate_reserve,response_cap=args.response_bytes)

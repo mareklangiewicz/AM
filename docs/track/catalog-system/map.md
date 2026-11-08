@@ -149,6 +149,11 @@ at 5,000 apps, corrected by Marek’s accepted per-source partition layout.
 The same preflight records partition-size checks, synthetic scheduling, current v2 consumer inventory and
 corrective old-pin recovery. Ticket 14 remains open/unclaimed; these are preparatory
 results rather than full workload/history qualification.
+The [schema-transition follow-up](preflight-14.md#collectorschema-revision-transition--november-8-2026)
+also reproduces and fixes a collector/publisher HEAD default that could publish
+retained source documents the lazy browser refused. Mixed bindings now refuse
+before catalog publication; ordinary unchanged-schema runs retain the trusted
+parent binding.
 
 ## Execution evidence and optional follow-ups
 

@@ -206,9 +206,23 @@ It writes `format-2/`, `format-3/` and sanitized `report.json` in a new output
 folder, with exact parents/inputs, run/attempt and content hashes. No raw response,
 credential, executable recipe or temporary recovery store is emitted.
 
-Inputs default to the exact maintained checkout revision; independent
+Inputs default to the exact maintained checkout revision, except that subsequent
+v3 collections retain the validated parent's schema revision by default. The
+schema/reader/contract checkout must still match that pin; collector-only changes
+therefore reuse source blobs without changing their schema binding. Actual schema
+changes refuse that default before acquisition. An explicit `--schemas-revision`
+can advance the binding, but every retained source must then have that revision;
+failed or deferred old-schema sources refuse the entire candidate before output.
+No source observation is rewritten to make a schema transition pass. Independent
 `--source-revision`, `--policy-revision`, `--recipes-revision`, `--rules-revision`
 and `--schemas-revision` must match the actual relevant checked-out bytes.
+The publisher independently derives its default schema pin from its trusted exact
+`--expected-v3-parent`, fetching and validating that parent; artifact contents
+cannot choose it. Explicit transitions also need trusted `publish
+--schemas-revision PIN`. This extra parent validation/fetch is part of the pending
+full workload resource qualification. The prepared scheduled workflow retains
+the parent default; a contract transition requires a separately prepared explicit
+CLI invocation or workflow change.
 Dirty/untracked input files refuse. `--registry` must contain the exact reviewed
 registry from the policy pin; it is not permission to allocate a source implicitly.
 `--reviews` optionally supplies explicit reviewed custom classifications by
