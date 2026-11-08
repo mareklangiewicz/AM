@@ -1,0 +1,35 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/docs/catalog-format-v3.md"
+kind: "repository"
+repository_id: 9007199254740993
+repository: "example/app"
+collected_at: "2026-11-03T01:00:00Z"
+scope:
+  page_size: 100
+  pages_fetched: 1
+  history_complete: false
+observed_at: "2026-11-03T01:00:00Z"
+releases:
+  "9007199254740993":
+    tag: "v2.0.0"
+    title: "Quotes \" and \\; café 中文 🐧\n\r\t\n"
+    url: "https://github.com/example/app/releases/tag/v2.0.0"
+    published_at: "2026-11-02T12:00:00Z"
+    prerelease: false
+    download_base: "https://github.com/example/app/releases/download/v2.0.0/"
+    assets:
+      "789":
+        name: "John's app #1.AppImage"
+        url_suffix: "app?x=a:b#part"
+        size: 0
+        media_type: ""
+      "9007199254740993":
+        name: "中文 \\N?%2F"
+        url_suffix: "中文?x=%2F#y"
+        size: 9223372036854775807
+      "9223372036854775807":
+        name: "last"
+        url: "https://elsewhere.example/exact?x=a%2Fb"
+        size: 0
+        media_type: "zip"
+

@@ -2,7 +2,8 @@
 
 Type: task
 Label: implementation:task
-Status: open
+Status: claimed
+Assignee: codex
 Blocked by: 10
 
 ## Outcome

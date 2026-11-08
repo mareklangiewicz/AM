@@ -64,7 +64,7 @@ def unique_object(pairs):
     return result
 
 
-def normalize(raw, page_size):
+def normalize(raw, page_size, *, allow_missing_published=False):
     if not isinstance(raw, list) or len(raw) > page_size:
         raise ValueError('page shape')
     releases = {}
@@ -81,7 +81,7 @@ def normalize(raw, page_size):
             facts['title'] = string(release['name'])
         facts['url'] = url(release['html_url'])
         for field in ('created_at', 'published_at', 'updated_at'):
-            if field == 'published_at' or release.get(field) is not None:
+            if release.get(field) is not None or (field == 'published_at' and not allow_missing_published):
                 facts[field] = timestamp(release[field])
         facts['prerelease'] = boolean(release['prerelease'])
         for source, target in (('zipball_url', 'source_zip_url'), ('tarball_url', 'source_tar_url')):

@@ -177,3 +177,62 @@ configuration. [Ticket 135](../../docs/track/release-catalog/issues/135-prepare-
 prepares 53-recipe/51-source enrollment;
 [136](../../docs/track/release-catalog/issues/136-publish-next-ten-and-refresh-live-policy.md)
 records its authorized publication and protected compiled-policy deployment.
+
+## Private format-3 candidates (ticket 11)
+
+The deployed workflow still uses the legacy entry point above. New local work uses
+explicit operations, with no publication/ref advancement during collection:
+
+```sh
+python3 tools/catalog-collector/host_catalog.py collect \
+  --repo /tmp/remote-free-legacy.git --parent EXACT_FORMAT_2_COMMIT \
+  --evidence /path/to/explicitly-saved-responses \
+  --run-id 123 --attempt 1 --output /tmp/new-candidate
+python3 tools/catalog-collector/host_catalog.py validate \
+  --candidate /tmp/new-candidate/format-3 --channel format-3 \
+  --expected-source EXACT_MAINTAINED_SOURCE_COMMIT
+python3 tools/catalog-collector/host_catalog.py validate \
+  --candidate /tmp/new-candidate/format-2 --channel format-2
+```
+
+For subsequent target updates supply `--v3-repo REPO --v3-parent EXACT_COMMIT`;
+bootstrap has no prior target facts and does not translate/prune the old channel.
+Each format merges from its own parent. Omit `--evidence` only within separately
+authorized live acquisition scope. Saved mode never reads credentials or calls
+HTTP and keeps original receipts (`<numeric-id>-releases.json`,
+`<numeric-id>-receipt.txt`). Responses are never reacquired for dual output.
+Collection uses one-page/oldest-attempt scheduling and existing bounded transport.
+It writes `format-2/`, `format-3/` and sanitized `report.json` in a new output
+folder, with exact parents/inputs, run/attempt and content hashes. No raw response,
+credential, executable recipe or temporary recovery store is emitted.
+
+Inputs default to the exact maintained checkout revision; independent
+`--source-revision`, `--policy-revision`, `--recipes-revision`, `--rules-revision`
+and `--schemas-revision` must match the actual relevant checked-out bytes.
+Dirty/untracked input files refuse. `--registry` must contain the exact reviewed
+registry from the policy pin; it is not permission to allocate a source implicitly.
+`--reviews` optionally supplies explicit reviewed custom classifications by
+app/architecture, each bound to exact recipe repository/commit/path/blob,
+recipe SHA-256, rules revision, dependencies and description. Classification
+never executes recipes. Whole-wrapper/template recognizers stay conservative;
+unsupported cases remain unknown. Review links use recipe commits, not catalog C.
+
+The [format-3](../../docs/catalog-format-v3.md) and
+[status-1](../../docs/catalog-status-v1.md) contracts describe exact fields, grammar,
+encodings and reader APIs. `publish` is an explicit reserved command which refuses
+until ticket 12 implements publisher/finalizer behavior; the workflow and legacy
+command remain operational until that integration. Scale/resource defaults and
+real-browser delivery are not qualified by these parser/fixture checks.
+
+Regenerate editor schemas, browser definitions and shell field tables with
+`python3 tools/catalog-contract/build.py`. Focused shared checks:
+
+```sh
+python3 -B -m unittest discover -s tools/catalog-collector -p test_contracts.py -v
+```
+
+These require Node and jsonschema in addition to maintainer Python/PyYAML, plus
+mawk, gawk and BusyBox for portability checks. Installed clients require only
+shell/awk. Browser parsing uses exact BigInts; `releaseFacts` exposes reconstructed
+URLs, media types and effective observations. Parser checks do not establish DOM,
+CORS, performance, accessibility or upstream/binary trust.

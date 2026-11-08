@@ -1,0 +1,229 @@
+"""Canonical format-3/status-1 projections and credential-free validation."""
+import copy
+import json
+from pathlib import Path
+import re
+import subprocess
+import tempfile
+import yaml
+from writer import document
+from retention import observation
+from retention_v3 import merge
+
+ROOT = Path(__file__).resolve().parents[2]
+DEFINITIONS = json.loads((ROOT/'tools/catalog-contract/definitions.json').read_text())['definitions']
+FILE_CAP = 2 * 1024 * 1024
+TREE_CAP = 1024 * 1024 * 1024
+NAME = r'[a-z0-9][a-z0-9_.+-]{0,63}'
+
+
+def pin(value):
+    if not isinstance(value, str) or not re.fullmatch('[0-9a-f]{40}', value):
+        raise ValueError('exact revision required')
+    return value
+
+
+def header(kind, revision):
+    version = 3 if kind in ('catalog','apps','repository','provenance') else 1
+    contract = 'catalog-format-v3' if version == 3 else 'catalog-status-v1'
+    return dict(format=version, schema=f'https://raw.githubusercontent.com/mareklangiewicz/AM/{pin(revision)}/docs/{contract}.md', kind=kind)
+
+
+def canonical(obj, typename=None):
+    """Order closed structures and exact decimal keys without interpreting YAML."""
+    typename = typename or obj['kind']
+    schema = DEFINITIONS[typename]
+    if 'properties' in schema:
+        if set(obj)-set(schema['properties']):
+            raise ValueError('unknown field')
+        keys = [k for k in schema['properties'] if k in obj]
+        rules = schema['properties']
+    else:
+        keys = sorted(obj, key=int) if typename in ('releases','assets') else sorted(obj)
+        rules = {k:next(iter(schema['patternProperties'].values())) for k in obj}
+    result = {}
+    for key in keys:
+        value, rule = obj[key], rules[key]
+        result[key] = canonical(value, rule['$ref'].split('/')[-1]) if '$ref' in rule else value
+    return result
+
+
+def emit_contract(obj, typename, depth=0):
+    schema=DEFINITIONS[typename]
+    rules=schema.get('properties')
+    lines=[]
+    for key,value in canonical(obj,typename).items():
+        rule=rules[key] if rules is not None else next(iter(schema['patternProperties'].values()))
+        prefix='  '*depth+(key if rules is not None else json.dumps(key))+':'
+        if '$ref' in rule:
+            lines.append(prefix+('' if value else ' {}'))
+            if value: lines.extend(emit_contract(value,rule['$ref'].split('/')[-1],depth+1))
+        else:
+            text=json.dumps(value,ensure_ascii=False).replace('\u0085','\\N').replace('\u2028','\\L').replace('\u2029','\\P')
+            lines.append(prefix+' '+text)
+    return lines
+
+
+def encode(obj):
+    return ('\n'.join(emit_contract(obj,obj['kind']))+'\n').encode('utf-8')
+
+
+def decode(raw, cap=FILE_CAP):
+    if type(raw) is not bytes or len(raw)>cap:
+        raise ValueError('document bound')
+    with tempfile.TemporaryDirectory(prefix='am-contract-') as scratch:
+        path=Path(scratch)/'document.yaml'; path.write_bytes(raw)
+        result=subprocess.run(['sh',str(ROOT/'modules/catalog-contract-reader.am'),'validate',str(path)],
+                              capture_output=True,env={'PATH':'/usr/bin:/bin','AM_YAML_MAX_INPUT_BYTES':str(cap)})
+        if result.returncode:
+            raise ValueError(result.stderr.decode('utf-8','replace').strip())
+    obj=yaml.safe_load(raw)
+    if encode(obj)!=raw:
+        raise ValueError('noncanonical document')
+    return obj
+
+
+def compact_release(record):
+    """Literal URL factoring; choose actual canonical encoded-byte savings."""
+    release=copy.deepcopy(record)
+    for asset in release['assets'].values():
+        mime=asset.pop('content_type')
+        if mime != 'application/octet-stream':
+            asset['media_type']='zip' if mime=='application/zip' else mime
+    def cost(base):
+        trial=copy.deepcopy(release)
+        if base:
+            trial['download_base']=base
+            for asset in trial['assets'].values():
+                if asset['url'].startswith(base):
+                    asset['url_suffix']=asset.pop('url')[len(base):]
+        return len(document(canonical(trial,'release')).encode()), trial
+    original,_=cost(None)
+    prefixes=set()
+    urls=[asset['url'] for asset in release['assets'].values()]
+    for url in urls:
+        prefixes.update(url[:i+1] for i,c in enumerate(url) if c=='/' and i>=8)
+    choices=[]
+    for base in prefixes:
+        if sum(url.startswith(base) for url in urls)<2:
+            continue
+        size,trial=cost(base)
+        if size<original:
+            choices.append((size,-len(base.encode('utf-8')),base.encode('utf-8'),trial))
+    return min(choices,key=lambda row:row[:3])[3] if choices else release
+
+
+def expand_release(record, default):
+    release=copy.deepcopy(record)
+    base=release.pop('download_base',None)
+    release['observed_at']=observation(release,default)
+    for asset in release['assets'].values():
+        if 'url_suffix' in asset:
+            asset['url']=base+asset.pop('url_suffix')
+        mime=asset.pop('media_type','application/octet-stream')
+        asset['content_type']='application/zip' if mime=='zip' else mime
+    return release
+
+
+def source(previous, acquired, *, rid, repository, revision):
+    """Only successful source observations enter this pure, atomic projection."""
+    previous=copy.deepcopy(previous or {})
+    previous['releases']={key:expand_release(value,previous.get('observed_at'))
+                          for key,value in previous.get('releases',{}).items()}
+    at=acquired['received_at']
+    fetched={key:dict(value,observed_at=at) for key,value in acquired['releases'].items()}
+    records=merge(previous,fetched,completed_at=at)
+    result=dict(header('repository',revision),repository_id=int(rid),repository=repository,
+                collected_at=at,scope=dict(page_size=100,pages_fetched=1,history_complete=acquired['history_complete']),
+                observed_at=at,releases={key:compact_release(value) for key,value in records.items()})
+    raw=encode(result)
+    if len(raw)>FILE_CAP: raise ValueError('document_overflow')
+    return decode(raw)
+
+
+def validate_tree(tree, channel='catalog'):
+    if type(tree) is not dict or sum(map(len,tree.values()))>TREE_CAP or len(tree)>20000:
+        raise ValueError('tree bound')
+    docs={}
+    ids={}
+    for path,raw in tree.items():
+        if channel=='catalog':
+            allowed=path in ('catalog.yaml','apps.yaml','provenance.yaml') or re.fullmatch('repositories/'+NAME+r'\.yaml',path)
+        else:
+            allowed=path in ('status.yaml','statistics.yaml') or re.fullmatch(r'runs/[1-9][0-9]*-[1-9][0-9]*/(?:summary\.yaml|sources/'+NAME+r'\.yaml)',path)
+        if not allowed:
+            raise ValueError('unexpected contract path')
+        obj=decode(raw)
+        expected=(path[:-5] if '/' not in path else 'repository' if channel=='catalog' else 'summary' if path.endswith('/summary.yaml') else 'source')
+        if obj['kind']!=expected:
+            raise ValueError('path kind')
+        docs[path]=obj
+        if obj['kind']=='repository':
+            rid=obj['repository_id']
+            if rid in ids: raise ValueError('duplicate numeric source')
+            ids[rid]=path
+    if channel=='catalog':
+        if not {'catalog.yaml','apps.yaml','provenance.yaml'}<=docs.keys():
+            raise ValueError('missing catalog roots')
+        for name,path in docs['apps.yaml']['apps'].items():
+            if path not in docs: raise ValueError('missing app source')
+        for app,arches in docs['provenance.yaml']['apps'].items():
+            if app not in docs['apps.yaml']['apps']: raise ValueError('provenance app')
+            for arch,binding in arches.items():
+                if docs[docs['apps.yaml']['apps'][app]]['repository_id']!=binding['repository_id']:
+                    raise ValueError('provenance source identity')
+                if 'recipe' in binding and binding['recipe']['path']!=f'programs/{arch}/{app}':
+                    raise ValueError('recipe architecture identity')
+    else:
+        if 'status.yaml' not in docs: raise ValueError('missing status root')
+        status=docs['status.yaml']
+        if len(status['summaries'])>64 or len(status['details'])>8: raise ValueError('status retention')
+        for key,path in status['summaries'].items():
+            if path!=f'runs/{key}/summary.yaml' or path not in docs: raise ValueError('summary reference')
+        if status['last_report'] not in status['summaries'].values(): raise ValueError('last report')
+        for path,obj in docs.items():
+            if obj['kind'] in ('source','summary'):
+                key=str(obj['run']['id'])+'-'+str(obj['run']['attempt'])
+                if not path.startswith('runs/'+key+'/'): raise ValueError('run path identity')
+            if obj['kind']=='source' and key not in status['details']: raise ValueError('detail coverage')
+        if 'statistics.yaml' in docs and len(docs['statistics.yaml']['days'])>90: raise ValueError('daily retention')
+    return docs
+
+
+def read_directory(directory, channel='catalog'):
+    directory=Path(directory)
+    tree={}
+    if directory.is_symlink(): raise ValueError('candidate directory symlink')
+    # Do not follow links or include unexpected files from transferred candidates.
+    for path in directory.rglob('*'):
+        if path.is_symlink() or not (path.is_file() or path.is_dir()): raise ValueError('candidate file type')
+        if path.is_dir():
+            name=path.relative_to(directory).as_posix()
+            allowed=(name=='repositories') if channel=='catalog' else bool(name=='runs' or re.fullmatch(r'runs/[1-9][0-9]*-[1-9][0-9]*(/sources)?',name))
+            if not allowed: raise ValueError('unexpected candidate directory')
+        if path.is_file():
+            if path.stat().st_size>FILE_CAP: raise ValueError('document bound')
+            tree[path.relative_to(directory).as_posix()]=path.read_bytes()
+            if sum(map(len,tree.values()))>TREE_CAP or len(tree)>20000: raise ValueError('tree bound')
+    validate_tree(tree,channel)
+    return tree
+
+
+def read_local(repo, commit, channel='catalog'):
+    from publication import bounded, environment
+    pin(commit)
+    def local(*args,cap):
+        return bounded(['git','-C',str(repo),'-c','core.hooksPath=/dev/null',*args],env=environment(),cap=cap)
+    listing=local('ls-tree','-rz',commit,cap=4*1024*1024)
+    tree={}; total=0
+    for row in listing.split(b'\0'):
+        if not row: continue
+        metadata,name=row.split(b'\t',1); mode,kind,oid=metadata.split(b' ')
+        if mode!=b'100644' or kind!=b'blob': raise ValueError('catalog file type')
+        path=name.decode('ascii')
+        size=int(local('cat-file','-s',oid.decode(),cap=64))
+        total+=size
+        if size>FILE_CAP or total>TREE_CAP or len(tree)>=20000: raise ValueError('catalog bound')
+        tree[path]=local('cat-file','blob',oid.decode(),cap=FILE_CAP)
+    validate_tree(tree,channel)
+    return tree

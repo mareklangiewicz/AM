@@ -1,0 +1,36 @@
+{
+  "yaml.schemas": {
+    "./schemas/catalog/catalog.schema.json": [
+      "**/format-3/catalog.yaml",
+      "tools/catalog-contract/fixtures/catalog.yaml"
+    ],
+    "./schemas/catalog/apps.schema.json": [
+      "**/format-3/apps.yaml",
+      "tools/catalog-contract/fixtures/apps.yaml"
+    ],
+    "./schemas/catalog/repository.schema.json": [
+      "**/format-3/repositories/*.yaml",
+      "tools/catalog-contract/fixtures/repository.yaml"
+    ],
+    "./schemas/catalog/provenance.schema.json": [
+      "**/format-3/provenance.yaml",
+      "tools/catalog-contract/fixtures/provenance.yaml"
+    ],
+    "./schemas/catalog/status.schema.json": [
+      "**/status-1/status.yaml",
+      "tools/catalog-contract/fixtures/status.yaml"
+    ],
+    "./schemas/catalog/summary.schema.json": [
+      "**/status-1/runs/*/summary.yaml",
+      "tools/catalog-contract/fixtures/summary.yaml"
+    ],
+    "./schemas/catalog/source.schema.json": [
+      "**/status-1/runs/*/sources/*.yaml",
+      "tools/catalog-contract/fixtures/source.yaml"
+    ],
+    "./schemas/catalog/statistics.schema.json": [
+      "**/status-1/statistics.yaml",
+      "tools/catalog-contract/fixtures/statistics.yaml"
+    ]
+  }
+}

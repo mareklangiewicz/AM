@@ -1,0 +1,77 @@
+format: 1
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/docs/catalog-status-v1.md"
+kind: "summary"
+run:
+  id: 123
+  attempt: 2
+inputs:
+  source: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  policy: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  recipes: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  rules: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  schemas: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+input_catalog: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+started_at: "2026-11-03T01:00:00Z"
+reported_at: "2026-11-08T01:00:00Z"
+collection: "partial"
+validation: "ok"
+publication:
+  state: "not_attempted"
+compatibility_publication:
+  state: "not_attempted"
+counts:
+  enrolled:
+    state: "known"
+    value: 5
+  selected:
+    state: "known"
+    value: 4
+  attempted:
+    state: "known"
+    value: 9007199254740993
+  successful:
+    state: "known"
+    value: 2
+  failed:
+    state: "known"
+    value: 1
+  unknown:
+    state: "known"
+    value: 0
+  unattempted:
+    state: "known"
+    value: 1
+  deferred:
+    state: "known"
+    value: 1
+stop_reason: "quota"
+metrics:
+  http_attempts:
+    state: "unknown"
+  charged_bytes:
+    state: "unknown"
+  received_bytes:
+    state: "unknown"
+  acquisition_milliseconds:
+    state: "unknown"
+  command_milliseconds:
+    state: "unknown"
+  tree_bytes:
+    state: "unknown"
+  largest_document_bytes:
+    state: "unknown"
+  local_object_bytes:
+    state: "unknown"
+  packed_history_bytes:
+    state: "unknown"
+  remote_storage_bytes:
+    state: "unknown"
+  peak_rss_bytes:
+    state: "unknown"
+budgets:
+  requests: 500
+  bytes: 536870912
+  acquisition_milliseconds: 900000
+  document_bytes: 2097152
+actions_url: "https://github.com/mareklangiewicz/AM/actions/runs/123"
+recent_runs_url: "https://github.com/mareklangiewicz/AM/actions/workflows/catalog.yml"

@@ -148,7 +148,7 @@ def _response(rid, evidence, allowance, *, rate=None):
     return body, utc()
 
 
-def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None):
+def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None, acquisitions=None):
     """Refresh all (strict) or a bounded oldest-attempt-first batch.
 
     Strict mode retains the existing all-or-nothing command. Batch mode reports
@@ -214,7 +214,12 @@ def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None)
                 raise ValueError('collection byte budget')
             reason = 'invalid_response'
             raw = json.loads(body, object_pairs_hook=unique_object)
-            records = normalize(raw, 100)
+            records = normalize(raw, 100, allow_missing_published=acquisitions is not None)
+            if acquisitions is not None:
+                acquisitions[rid] = dict(received_at=received, releases=records,
+                                         history_complete=len(raw)<100)
+                if any('published_at' not in record for record in records.values()):
+                    raise ValueError('format-2 requires publication time')
             response = dict(received_at=received, releases=records, has_next=len(raw)==100,
                             bytes=len(body), seconds=0)
             result = refresh(before, [response], attempted_at=attempted,
@@ -288,7 +293,7 @@ def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None)
     return tree, report
 
 
-def main():
+def legacy_main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--repo', required=True, type=Path, help='Remote-free bare publication repository')
     parser.add_argument('--parent', required=True, help='Existing release-catalog commit')
@@ -318,6 +323,15 @@ def main():
         print('::warning::Catalog source freshness: '+json.dumps(dict(
             sources_without_success=metrics['sources_without_success'],
             age_counts=metrics['source_success_age_counts']),sort_keys=True))
+
+
+def main():
+    import sys
+    if len(sys.argv)>1 and sys.argv[1] in ('collect','validate','publish'):
+        from collection_interface import main as command
+        command(sys.argv[1:])
+    else:
+        legacy_main()
 
 
 if __name__=='__main__': main()

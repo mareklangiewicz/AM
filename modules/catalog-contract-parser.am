@@ -1,0 +1,229 @@
+# AMCLI POSIX awk contract reader. Mapping-only grammar, locally compiled schema tables.
+function fail(message) {
+    print "catalog YAML: line " NR ": " message > "/dev/stderr"
+    invalid=1; exit 2
+}
+function emit(s) {
+    if(output_bytes+length(s)>output_limit) fail("output byte limit")
+    output_bytes+=length(s)
+    printf "%s",s
+}
+function less(a,b) { return length(a)<length(b) || (length(a)==length(b) && "x" a < "x" b) }
+function uint(s) { return s ~ /^(0|[1-9][0-9]*)$/ && !less("9223372036854775807",s) }
+function id(s) { return uint(s) && s!="0" }
+function timestamp(s, y,m,d,h,n,t,days) {
+    if (length(s)!=20 || s !~ /^[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]T[0-9][0-9]:[0-9][0-9]:[0-9][0-9]Z$/) return 0
+    y=substr(s,1,4)+0; m=substr(s,6,2)+0; d=substr(s,9,2)+0
+    h=substr(s,12,2)+0; n=substr(s,15,2)+0; t=substr(s,18,2)+0
+    days=(m==2 ? 28+(y%4==0 && (y%100!=0 || y%400==0)) : (m==4 || m==6 || m==9 || m==11 ? 30 : 31))
+    return y>=1970 && m>=1 && m<=12 && d>=1 && d<=days && h<24 && n<60 && t<60
+}
+function decode(s, out,i,c,e) {
+    if (substr(s,1,1)!="\"" || substr(s,length(s),1)!="\"" || length(s)<2) fail("quoted string required")
+    out=""
+    for (i=2;i<length(s);i++) {
+        c=substr(s,i,1)
+        if (c=="\"") fail("unescaped quote")
+        if (c=="\\") {
+            if (++i>=length(s)) fail("unfinished escape")
+            e=substr(s,i,1)
+            if (e=="n") c="\n"
+            else if (e=="r") c="\r"
+            else if (e=="t") c="\t"
+            else if (e=="N") c="\302\205"
+            else if (e=="L") c="\342\200\250"
+            else if (e=="P") c="\342\200\251"
+            else if (e=="\"" || e=="\\") c=e
+            else fail("unsupported escape")
+        }
+        out=out c
+    }
+    return out
+}
+# Decimal arithmetic avoids rounding source/run counts above 2^53.
+function add_decimal(a,b, out,carry,i,j,n) {
+    out=""; carry=0; i=length(a); j=length(b)
+    while(i>0 || j>0 || carry) {
+        n=(i>0 ? substr(a,i--,1)+0 : 0)+(j>0 ? substr(b,j--,1)+0 : 0)+carry
+        out=(n%10) out; carry=int(n/10)
+    }
+    return out=="" ? "0" : out
+}
+function enum_valid(choices,value, a,n,i) {
+    n=split(choices,a,"\\|"); for(i=1;i<=n;i++) if("x" a[i]=="x" value) return 1
+    return 0
+}
+function required(p, fields, a,n,i) {
+    n=split(fields,a," "); for(i=1;i<=n;i++) if(!((p "/" a[i]) in types)) fail("missing field: " p "/" a[i])
+}
+function check_node(p, t, k,a,n,i) {
+    t=node_type[p]
+    required(p,required_fields[t])
+    if(types[p]=="map" && !children[p]) fail("use {} for empty mapping")
+}
+function parent_path(p, q) { q=p; sub(/\/[^\/]*$/,"",q); return q }
+function check_measurement(p) {
+    if((values[p "/state"]=="known") != ((p "/value") in types)) fail("measurement state/value")
+}
+function semantics( p,r,a,b,k,t,n,seen,stable,count_names) {
+    if(values["/kind"]=="repository") {
+        if(values["/observed_at"]>values["/collected_at"]) fail("observation after collection")
+        for(p in node_type) {
+            t=node_type[p]
+            if(t=="release") {
+                if(!((p "/published_at") in types) && !((p "/created_at") in types)) fail("release timestamp missing")
+                r=values[p "/observed_at"]
+                if((p "/observed_at") in types) {
+                    if(r==values["/observed_at"]) fail("redundant observation override")
+                } else r=values["/observed_at"]
+                if(r>values["/collected_at"]) fail("release observation after collection")
+                if(operation=="get" && query==p "/observed_at") { found=1; emit(r) }
+                k="tag:" values[p "/tag"]
+                if(k in tags) fail("duplicate exact tag")
+                tags[k]=1; releases++
+                if(values[p "/prerelease"]=="false") stable++
+                if((p "/download_base") in types && values[p "/download_base"] !~ /\/$/) fail("download base")
+            }
+            if(t=="asset") {
+                r=parent_path(parent_path(p))
+                a=((p "/url") in types); b=((p "/url_suffix") in types)
+                if(a==b) fail("asset URL choice")
+                if(b) {
+                    if(!((r "/download_base") in types)) fail("suffix without base")
+                    k=values[r "/download_base"] values[p "/url_suffix"]
+                    if(k !~ /^https:\/\/[^\/[:space:]][^[:space:]]*$/ || k ~ /[[:cntrl:]]/) fail("reconstructed URL")
+                } else k=values[p "/url"]
+                if(operation=="get" && query==p "/url") { virtual_url[p]=k }
+                k=((p "/media_type") in types ? values[p "/media_type"] : "application/octet-stream")
+                if(k=="zip") k="application/zip"
+                else if(k!="" && k !~ /^[^[:space:]\/]+\/[^[:space:]\/]+/) fail("unknown MIME alias")
+                if(operation=="get" && (query==p "/media_type" || query==p "/content_type")) { found=1; emit(k) }
+            }
+        }
+        if(releases>33 || (releases==33 && stable!=1)) fail("retention count")
+    }
+    for(p in node_type) {
+        t=node_type[p]
+        if(t=="measurement") check_measurement(p)
+        if(t=="publication" && ((values[p "/state"]=="confirmed") != ((p "/commit") in types))) fail("publication confirmation")
+        if(t=="provenance_binding") {
+            a=values[p "/classification"]; b=values[p "/availability"]
+            if((b=="present") != ((p "/recipe") in types)) fail("recipe availability")
+            if(a!="unknown") {
+                if(b!="present" || !((p "/evidence") in types)) fail("classification evidence")
+                k=values[p "/evidence/method"]
+                if((a=="shared" && k!="whole_wrapper") || (a=="template" && k!="whole_template") || (a=="custom" && k!="reviewed_custom")) fail("classification predicate")
+                if((a=="shared" || a=="template") && !children[p "/evidence/dependencies"]) fail("classification dependencies")
+                if(a=="custom" && !((p "/evidence/description") in types)) fail("custom description")
+            } else if((p "/evidence") in types) fail("evidence with unknown classification")
+        }
+    }
+    if(values["/kind"]=="summary") {
+        if(values["/started_at"]>values["/reported_at"]) fail("run time order")
+        k="https://github.com/mareklangiewicz/AM/actions/runs/" values["/run/id"]
+        if(values["/actions_url"]!=k || values["/recent_runs_url"]!="https://github.com/mareklangiewicz/AM/actions/workflows/catalog.yml") fail("investigation URL")
+        n=split("enrolled selected attempted successful failed unknown unattempted deferred",count_names," "); b=1
+        for(i=1;i<=n;i++) if(values["/counts/" count_names[i] "/state"]!="known") b=0
+        if(b) {
+            if("x" values["/counts/attempted/value"] != "x" add_decimal(add_decimal(values["/counts/successful/value"],values["/counts/failed/value"]),values["/counts/unknown/value"]) ||
+               "x" values["/counts/selected/value"] != "x" add_decimal(values["/counts/attempted/value"],values["/counts/unattempted/value"]) ||
+               less(values["/counts/enrolled/value"],values["/counts/selected/value"]) ||
+               less(values["/counts/unattempted/value"],values["/counts/deferred/value"])) fail("count denominators")
+        }
+    }
+}
+BEGIN {
+    input_limit=ENVIRON["AM_YAML_MAX_INPUT_BYTES"]; if(input_limit=="") input_limit=2097152
+    output_limit=ENVIRON["AM_YAML_MAX_OUTPUT_BYTES"]; if(output_limit=="") output_limit=16777216
+    if(!uint(input_limit) || input_limit+0<1 || input_limit+0>33554432 || !uint(output_limit) || output_limit+0>33554432) fail("reader budgets")
+    operation=ENVIRON["AM_YAML_OPERATION"]; query=ENVIRON["AM_YAML_QUERY"]
+    previous=-1; types[""]="map"
+}
+{
+    bytes+=length($0)+1
+    if(bytes>input_limit || length($0)>65536) fail("size limit")
+    if ($0 ~ /[[:cntrl:]]/ || $0 ~ /\302\200|\302\201|\302\202|\302\203|\302\204|\302\205|\302\206|\302\207|\302\210|\302\211|\302\212|\302\213|\302\214|\302\215|\302\216|\302\217|\302\220|\302\221|\302\222|\302\223|\302\224|\302\225|\302\226|\302\227|\302\230|\302\231|\302\232|\302\233|\302\234|\302\235|\302\236|\302\237|\342\200\250|\342\200\251|\357\277\276|\357\277\277/ || $0 ~ / $/ || $0=="") fail("control, blank line or trailing space")
+    match($0,/^ */); depth=RLENGTH/2
+    if(RLENGTH%2 || depth>12 || depth>previous+1) fail("indentation")
+    for(d=previous;d>=depth;d--) if(stack[d] in node_type) check_node(stack[d])
+    line=substr($0,RLENGTH+1); colon=index(line,":")
+    if(!colon) fail("missing colon")
+    key=substr(line,1,colon-1); raw=substr(line,colon+1)
+    quoted=(key ~ /^"[a-z0-9][a-z0-9_.+-]*"$/)
+    if(quoted) key=substr(key,2,length(key)-2)
+    else if(key !~ /^[a-z][a-z0-9_]*$/) fail("key")
+    p=(depth ? stack[depth-1] : ""); path=p "/" key
+    if(depth && types[p]!="map") fail("child of nonmapping")
+    if(path in types) fail("duplicate key")
+    # The first three fields establish a locally supported kind, never fetched schemas.
+    if(NR==1 && $0 !~ /^format: [13]$/) fail("format")
+    if(NR==2 && key!="schema") fail("schema order")
+    if(NR==3) {
+        if(key!="kind") fail("kind order")
+        root_kind=decode(substr(raw,2))
+        if(!(root_kind in fields) || root_kind !~ /^(catalog|apps|repository|provenance|status|summary|source|statistics)$/) fail("unknown kind")
+        node_type[""]=root_kind
+    }
+    t=node_type[p]
+    if(NR<3) rule="" # first two fields rechecked at END
+    else if(key_pattern[t]!="") {
+        if(!quoted || key !~ key_pattern[t] || length(key)>64 || key=="." || key=="..") fail("table key")
+        if(t=="releases" || t=="assets") {
+            if(!id(key) || (p in last_key && !less(last_key[p],key))) fail("ID order")
+        } else if(p in last_key && "x" last_key[p]>="x" key) fail("table order")
+        last_key[p]=key; rule=t "/*"
+    } else {
+        if(quoted) fail("quoted field")
+        n=split(fields[t],a," "); order=0
+        for(i=1;i<=n;i++) if(a[i]==key) order=i
+        if(!order || order<=last_order[p]) fail("unknown or out-of-order field")
+        last_order[p]=order; rule=t "/" key
+    }
+    if(raw=="") { kind="map"; value="" }
+    else {
+        if(substr(raw,1,1)!=" " || substr(raw,2,1)==" ") fail("scalar spacing")
+        raw=substr(raw,2)
+        if(raw=="{}") { kind="empty"; value="" }
+        else if(substr(raw,1,1)=="\"") { kind="string"; value=decode(raw) }
+        else if(raw=="true" || raw=="false") { kind="boolean"; value=raw }
+        else if(uint(raw)) { kind="integer"; value=raw }
+        else fail("scalar")
+    }
+    if(NR>=3) {
+        if(rule in child_type) {
+            if(kind!="map" && kind!="empty") fail("mapping required")
+            node_type[path]=child_type[rule]
+        } else {
+            if(kind!=scalar_type[rule]) fail("scalar type")
+            if(rule in rule_const && "x" value!="x" rule_const[rule]) fail("constant")
+            if(rule in rule_pattern && value !~ rule_pattern[rule]) fail("pattern")
+            if(t=="app_paths" && length(value)>82) fail("source path length")
+            if(key=="path" && t=="binding") { split(value,parts,"/"); if(length(parts[3])>64) fail("recipe path length") }
+            if(rule in rule_enum && !enum_valid(rule_enum[rule],value)) fail("enum")
+            if(rule in rule_minimum && less(value,rule_minimum[rule])) fail("minimum")
+            if(rule in rule_maximum && less(rule_maximum[rule],value)) fail("maximum")
+            if(rule_format[rule]=="date-time" && !timestamp(value)) fail("timestamp")
+            if((key=="url" || key ~ /_url$/ || key=="download_base") && value ~ /[[:space:][:cntrl:]]/) fail("URL whitespace")
+        }
+    }
+    types[path]=kind; values[path]=value; encoded[path]=raw; children[p]++
+    stack[depth]=path; previous=depth
+    # Query after validation via private shell spool. Defer virtual fields.
+    if(path==query && operation=="get" && key!="observed_at" && key!="media_type" && key!="content_type" && key!="url") {
+        if(kind=="map" || kind=="empty") fail("scalar query")
+        found=1; emit(value)
+    }
+    if((operation=="apps" && p=="/apps") || (operation=="releases" && p=="/releases") || (operation=="assets" && p==query)) { found=1; emit(key "\n") }
+    if(path==query && (kind=="map" || kind=="empty")) found=1
+}
+END {
+    if(invalid) exit 2
+    for(p in node_type) check_node(p)
+    if(NR<3) fail("header")
+    if(values["/format"]!=rule_const[root_kind "/format"] || types["/format"]!="integer" || types["/schema"]!="string" || values["/schema"] !~ rule_pattern[root_kind "/schema"]) fail("version/schema")
+    semantics()
+    if(operation=="get" && !found && query in types) { found=1; emit(values[query]) }
+    if(operation=="get") for(p in virtual_url) if(query==p "/url" && !(query in types)) { found=1; emit(virtual_url[p]) }
+    if(operation=="validate") exit 0
+    if(!found) exit 3
+}
