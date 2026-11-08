@@ -92,3 +92,16 @@ untouched. Asked Marek whether to add an explicit `media_type_literal` escape
 or keep the current source-refusal policy. Continue the complete saved seed plus
 three updates after this decision; do not claim rehearsal/capacity acceptance now.
 This ticket remains claimed, not resolved. Ticket 13 remains dependent on it.
+
+### Committed CLI smoke check
+
+At `d36b16f7beaa75cd645784e825865ad1ab9535df`, the actual unmocked
+`host_catalog.py collect` → `publish --enable-targets` path passed against
+three channels in a disposable local bare remote, with no credentials or HTTP.
+One synthetic saved empty response was selected from the real 500-source
+configuration. Status correctly reports E=500, Q=1, zero HTTP attempts, absent
+input target C and confirmed local v2/v3/status outputs. Target tree is 2,377 bytes;
+its publisher-local object store is 1,581 bytes, explicitly not remote storage.
+Collection left its parent ref unchanged. Temporary data/repos were removed on
+normal exit. This is CLI/protocol wiring evidence, not real acquisition, coverage,
+capacity or public activation. The MIME decision/rehearsal above remains pending.
