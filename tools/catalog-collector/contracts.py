@@ -83,13 +83,30 @@ def decode(raw, cap=FILE_CAP):
     return obj
 
 
+def encode_media_type(value):
+    """None denotes the existing omitted octet-stream representation."""
+    if value=='application/octet-stream': return None
+    if value=='application/zip': return 'zip'
+    if value=='' or (not value.startswith('=') and re.match(r'^[^\s/]+/[^\s/]+',value)):
+        return value
+    return '='+value
+
+
+def decode_media_type(value):
+    """An escape removes one '=' and returns literally, without alias lookup."""
+    if value.startswith('='): return value[1:]
+    if value=='zip': return 'application/zip'
+    if value=='' or re.match(r'^[^\s/]+/[^\s/]+',value): return value
+    raise ValueError('unknown MIME alias')
+
+
 def compact_release(record):
     """Literal URL factoring; choose actual canonical encoded-byte savings."""
     release=copy.deepcopy(record)
     for asset in release['assets'].values():
-        mime=asset.pop('content_type')
-        if mime != 'application/octet-stream':
-            asset['media_type']='zip' if mime=='application/zip' else mime
+        mime=encode_media_type(asset.pop('content_type'))
+        if mime is not None:
+            asset['media_type']=mime
     def cost(base):
         trial=copy.deepcopy(release)
         if base:
@@ -121,7 +138,7 @@ def expand_release(record, default):
         if 'url_suffix' in asset:
             asset['url']=base+asset.pop('url_suffix')
         mime=asset.pop('media_type','application/octet-stream')
-        asset['content_type']='application/zip' if mime=='zip' else mime
+        asset['content_type']=decode_media_type(mime)
     return release
 
 

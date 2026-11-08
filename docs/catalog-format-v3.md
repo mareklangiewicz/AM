@@ -92,11 +92,21 @@ Choose a prefix shared by at least two URLs only when it reduces canonical encod
 bytes including field/base overhead. Maximize savings, then prefix byte length,
 then ASCII byte order. No positive savings means no base.
 
-Omitted media type means exactly `application/octet-stream`; `""` means the actual
-empty upstream string. Only `zip` aliases `application/zip`. Other values preserve
-the original full MIME string, including case and parameters; unknown bare aliases
-fail. Missing upstream content type fails normalization, without inventing a value.
-Readers expose full `url` and expanded `media_type`; `content_type` is an API alias.
+Omitted media type means exactly `application/octet-stream`; `""` preserves the
+actual empty upstream string. Only unescaped `zip` aliases `application/zip`.
+A value beginning with `=` is literal: remove **exactly one** leading `=` and return
+the remainder without alias lookup or another decoding pass. Thus `=raw` → `raw`,
+`=zip` → `zip`, and `==raw` → `=raw`. Even `=` represents the empty literal string;
+the canonical writer keeps the existing `""` representation for empty upstream data.
+
+The writer omits octet-stream, emits `zip` for upstream `application/zip`, keeps
+empty strings and ordinary full media types unchanged, and prefixes `=` for other
+values, including every original value already beginning with `=`. No case or
+parameter normalization occurs. Unescaped unknown bare aliases still fail.
+Missing upstream content type still fails normalization; omission never invents it.
+Readers expose the decoded `media_type`; `content_type` remains an API alias.
+The literal escape stays in the existing compact field; there is no additional
+`media_type_literal` field.
 
 ## Recipe evidence
 

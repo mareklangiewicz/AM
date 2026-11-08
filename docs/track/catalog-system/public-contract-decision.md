@@ -172,12 +172,20 @@ assets:
 
 Use `media_type`, not `type`, for the upstream media-type fact. Omission means
 exactly `application/octet-stream`; empty string preserves an explicit empty
-upstream value. Initial exact alias table: `zip` → `application/zip` only. Other
-values use the original full MIME string without case/parameter normalization.
-Readers reject unrecognized bare aliases; a future alias-table expansion needs a
-versioned contract update. Never infer this field from the filename. Missing
-upstream media type fails normalization unless the acquisition contract supplies
-an explicit evidenced value; omission must not invent the octet-stream default.
+upstream value. Initial exact alias table: unescaped `zip` → `application/zip` only.
+Ordinary full MIME values preserve original case and parameters.
+
+**Accepted literal amendment — November 8, 2026:** Marek selected a leading `=` in
+this same compact field to preserve an upstream value literally. Strip exactly
+one leading `=` and return the rest without applying aliases or recursively
+stripping another escape: `=raw` → `raw`, `=zip` → `zip`, `==raw` → `=raw`.
+The writer prefixes `=` for bare literal values and original values already
+starting with `=`; the existing alias/full-type/omission/empty rules remain.
+Readers still reject unrecognized **unescaped** bare aliases. A future alias-table
+expansion needs a versioned contract update; escaped literals remain unambiguous.
+Never infer media type from the filename. Missing upstream media type fails
+normalization unless the acquisition contract supplies an explicit evidenced value;
+omission must not invent the octet-stream default.
 
 Reader query APIs expose reconstructed full `url` and expanded `media_type`
 values so selection logic need not implement encoding rules. A compatibility

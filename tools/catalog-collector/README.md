@@ -292,5 +292,8 @@ The prepared workflow keeps `CATALOG_V3_ENABLED` unset/false until rollout revie
 `rehearse_pipeline.py` runs the saved retained seed plus replay/subset/full synthetic
 updates in an isolated repo, with separate-process RSS, Git blob reuse and
 consistently packed reachable-history measurements. It never fetches HTTP or
-mutates the preserved evidence repository. The current saved-data MIME conflict
-must be resolved before claiming a complete successful 500-source rehearsal.
+mutates the preserved evidence repository. The saved-data MIME conflict is resolved by the accepted leading-`=` literal
+escape in `media_type`: strip one `=` and return literally before alias handling.
+The writer escapes bare literals and original leading `=` values. Existing default,
+empty, full-type and `zip` alias semantics stay unchanged. Saved rehearsal results
+belong to ticket 12; they do not establish live acquisition or scale qualification.

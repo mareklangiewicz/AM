@@ -36,6 +36,25 @@ def sample():
     return source(None,dict(received_at=OLD,releases={'9007199254740993':record},history_complete=False),rid='9007199254740993',repository='example/app',revision=PIN)
 
 
+# Explicit wire/decoded expectations, including collisions with current aliases.
+MIME_CASES=[
+    ('application/octet-stream',None),('application/zip','zip'),('', ''),
+    ('raw','=raw'),('zip','=zip'),('=raw','==raw'),('=zip','==zip'),
+    ('==raw','===raw'),('=','=='),('text/plain','text/plain'),
+    ('Text/Plain; charset=UTF-8','Text/Plain; charset=UTF-8'),
+    ('=text/plain','==text/plain'),('=application/zip','==application/zip'),
+    ('future-alias','=future-alias'),('not a type','=not a type'),
+    ('raw中文','=raw中文'),('literal\nvalue','=literal\nvalue'),
+]
+
+
+def mime_document():
+    record=repository()['releases']['456'];record.pop('observed_at')
+    record['assets']={str(index):dict(name='asset-'+str(index),url='https://example.org/download/'+str(index),size=0,content_type=value)
+                      for index,(value,_) in enumerate(MIME_CASES,1)}
+    return source(None,dict(received_at=OLD,releases={'456':record},history_complete=True),rid=123,repository='example/app',revision=PIN)
+
+
 def unknown(): return dict(state='unknown')
 def known(value): return dict(state='known',value=value)
 
@@ -108,6 +127,37 @@ class Contracts(unittest.TestCase):
         result=subprocess.run(['node','--input-type=module','-e',js],input=raw,capture_output=True,cwd=ROOT)
         self.assertEqual(result.returncode,0,result.stderr)
         self.assertEqual(result.stdout.decode().splitlines(),['9007199254740993',release['assets'][aid]['url'],'9223372036854775807'])
+
+    def test_literal_media_type_round_trips_across_writer_shell_browser_schema(self):
+        obj=mime_document();raw=encode(obj)
+        self.assertEqual((FIXTURES/'repository-mime-literals.yaml').read_bytes(),raw)
+        expanded=expand_release(obj['releases']['456'],obj['observed_at'])
+        for index,(original,wire) in enumerate(MIME_CASES,1):
+            asset=obj['releases']['456']['assets'][str(index)]
+            with self.subTest(original=original):
+                if wire is None:self.assertNotIn('media_type',asset)
+                else:self.assertEqual(asset['media_type'],wire)
+                self.assertEqual(expanded['assets'][str(index)]['content_type'],original)
+                for key in ('media_type','content_type'):
+                    result=self.shell(raw,'get','releases','456','assets',str(index),key)
+                    self.assertEqual((result.returncode,result.stdout),(0,original.encode()),result.stderr)
+        js="import {parseDocument,releaseFacts} from './tools/catalog-contract/reader.mjs';let s='';for await(const b of process.stdin)s+=b;const r=releaseFacts(parseDocument(s),'456');console.log(JSON.stringify(Object.values(r.assets).map(a=>[a.media_type,a.content_type])));"
+        result=subprocess.run(['node','--input-type=module','-e',js],input=raw,capture_output=True,cwd=ROOT)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertEqual(json.loads(result.stdout),[[value,value] for value,_ in MIME_CASES])
+        # Escapes may explicitly carry empty or full strings; strip once only.
+        for wire,expected in [('=',''),('=application/zip','application/zip'),('===raw','==raw')]:
+            trial=copy.deepcopy(obj);trial['releases']['456']['assets']['1']['media_type']=wire
+            encoded=encode(trial);decode(encoded)
+            self.assertEqual(self.shell(encoded,'get','releases','456','assets','1','media_type').stdout,expected.encode())
+            self.assertEqual(expand_release(trial['releases']['456'],trial['observed_at'])['assets']['1']['content_type'],expected)
+        for alias in ('raw','future-alias'):
+            trial=copy.deepcopy(obj);trial['releases']['456']['assets']['1']['media_type']=alias
+            encoded=encode(trial)
+            self.assertEqual(self.shell(encoded).returncode,2)
+            self.assertEqual(self.browser(encoded).returncode,2)
+            schema=json.loads((ROOT/'schemas/catalog/repository.schema.json').read_text())
+            self.assertFalse(jsonschema.Draft202012Validator(schema).is_valid(trial))
 
     def test_retention_replacement_timestamp_fallback_and_failure_atomicity(self):
         records={str(i):dict(tag='v'+str(i),url='https://example.org/release',created_at=f'2026-10-{i%28+1:02d}T00:00:00Z',prerelease=True,assets={},observed_at=OLD) for i in range(1,41)}

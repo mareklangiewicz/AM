@@ -120,7 +120,7 @@ function semantics(doc) {
     const url=own(asset,'url')?asset.url:own(release,'download_base')?release.download_base+asset.url_suffix:bad('suffix without base');
     if(!/^https:\/\/[^/\s][^\s]*$/.test(url)) bad('reconstructed URL');
     const mime=asset.media_type??'application/octet-stream';
-    if(mime!==''&&mime!=='zip'&&!/^[^\s/]+\/[^\s/]+/.test(mime)) bad('MIME alias');
+    if(!mime.startsWith('=')&&mime!==''&&mime!=='zip'&&!/^[^\s/]+\/[^\s/]+/.test(mime)) bad('MIME alias');
    }
   }
   if(entries.length>33||entries.length===33&&stable!==1) bad('retention');
@@ -148,7 +148,8 @@ export function releaseFacts(doc,id) {
  if(doc.kind!=='repository') bad('repository required');
  const release=doc.releases[id]; if(!release) return undefined;
  return {...release,observed_at:release.observed_at??doc.observed_at,assets:Object.fromEntries(Object.entries(release.assets).map(([id,a])=>{
-  const media_type=a.media_type==='zip'?'application/zip':a.media_type??'application/octet-stream';
+  const encoded=a.media_type??'application/octet-stream';
+  const media_type=encoded.startsWith('=')?encoded.slice(1):encoded==='zip'?'application/zip':encoded;
   return [id,{...a,url:own(a,'url')?a.url:release.download_base+a.url_suffix,media_type,content_type:media_type}];
  }))};
 }

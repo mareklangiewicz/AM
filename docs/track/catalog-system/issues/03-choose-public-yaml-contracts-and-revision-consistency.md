@@ -170,3 +170,16 @@ cannot represent these facts losslessly. See [inspection evidence](../mime-confl
 and [ticket 12 progress](12-implement-incremental-publication-and-final-health.md#progress--november-8-2026).
 Marek has been asked to choose an explicit `media_type_literal` escape or retaining
 the current refusal policy. No wire-rule amendment has been accepted or applied.
+
+## Accepted literal escape — November 8, 2026
+
+Marek explicitly chose a leading `=` in the existing compact `media_type` field:
+`=raw` → `raw`, `=zip` → `zip`, `==raw` → `=raw`. Remove exactly one leading `=`
+and return the literal remainder without alias lookup. Existing unescaped alias,
+full media-type, omission and empty-string semantics remain. Writers escape bare
+literal strings and every upstream value already starting with `=`. Unknown
+unescaped aliases still refuse. This supersedes the pending `media_type_literal`
+proposal above; no new field is introduced. Update the executable contract,
+schemas, shell/browser queries and lossless round-trip fixtures, then resume
+saved-catalog rehearsal in ticket 12. This is local implementation authorization,
+not publication or deployment authorization.

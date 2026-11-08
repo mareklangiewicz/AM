@@ -1,0 +1,104 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/docs/catalog-format-v3.md"
+kind: "repository"
+repository_id: 123
+repository: "example/app"
+collected_at: "2026-11-03T01:00:00Z"
+scope:
+  page_size: 100
+  pages_fetched: 1
+  history_complete: true
+observed_at: "2026-11-03T01:00:00Z"
+releases:
+  "456":
+    tag: "v2.0.0"
+    title: "Quotes \" and \\; café 中文 🐧\n\r\t\n"
+    url: "https://github.com/example/app/releases/tag/v2.0.0"
+    published_at: "2026-11-02T12:00:00Z"
+    prerelease: false
+    download_base: "https://example.org/download/"
+    assets:
+      "1":
+        name: "asset-1"
+        url_suffix: "1"
+        size: 0
+      "2":
+        name: "asset-2"
+        url_suffix: "2"
+        size: 0
+        media_type: "zip"
+      "3":
+        name: "asset-3"
+        url_suffix: "3"
+        size: 0
+        media_type: ""
+      "4":
+        name: "asset-4"
+        url_suffix: "4"
+        size: 0
+        media_type: "=raw"
+      "5":
+        name: "asset-5"
+        url_suffix: "5"
+        size: 0
+        media_type: "=zip"
+      "6":
+        name: "asset-6"
+        url_suffix: "6"
+        size: 0
+        media_type: "==raw"
+      "7":
+        name: "asset-7"
+        url_suffix: "7"
+        size: 0
+        media_type: "==zip"
+      "8":
+        name: "asset-8"
+        url_suffix: "8"
+        size: 0
+        media_type: "===raw"
+      "9":
+        name: "asset-9"
+        url_suffix: "9"
+        size: 0
+        media_type: "=="
+      "10":
+        name: "asset-10"
+        url_suffix: "10"
+        size: 0
+        media_type: "text/plain"
+      "11":
+        name: "asset-11"
+        url_suffix: "11"
+        size: 0
+        media_type: "Text/Plain; charset=UTF-8"
+      "12":
+        name: "asset-12"
+        url_suffix: "12"
+        size: 0
+        media_type: "==text/plain"
+      "13":
+        name: "asset-13"
+        url_suffix: "13"
+        size: 0
+        media_type: "==application/zip"
+      "14":
+        name: "asset-14"
+        url_suffix: "14"
+        size: 0
+        media_type: "=future-alias"
+      "15":
+        name: "asset-15"
+        url_suffix: "15"
+        size: 0
+        media_type: "=not a type"
+      "16":
+        name: "asset-16"
+        url_suffix: "16"
+        size: 0
+        media_type: "=raw中文"
+      "17":
+        name: "asset-17"
+        url_suffix: "17"
+        size: 0
+        media_type: "=literal\nvalue"

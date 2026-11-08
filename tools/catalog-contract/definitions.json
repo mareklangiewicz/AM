@@ -167,8 +167,19 @@
         },
         "media_type": {
           "type": "string",
+          "examples": [
+            "zip",
+            "=zip",
+            "=raw",
+            "==raw",
+            "text/plain",
+            "",
+            "=",
+            "=application/zip"
+          ],
+          "pattern": "^(=|$|zip$|[^\\s/]+/[^\\s/]+)",
           "default": "application/octet-stream",
-          "description": "Omission is exactly application/octet-stream; zip expands to application/zip, and the empty string preserves an explicit empty upstream value."
+          "description": "Omission is exactly application/octet-stream; zip expands to application/zip; an empty string stays empty. A leading = strips exactly one = and returns the rest literally before alias handling: =raw -> raw, =zip -> zip, ==raw -> =raw. Unescaped unknown bare aliases refuse."
         },
         "digest": {
           "type": "string"

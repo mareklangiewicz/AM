@@ -95,7 +95,8 @@ function semantics( p,r,a,b,k,t,n,seen,stable,count_names,stable_path,stable_tim
                 } else k=values[p "/url"]
                 if(operation=="get" && query==p "/url") { virtual_url[p]=k }
                 k=((p "/media_type") in types ? values[p "/media_type"] : "application/octet-stream")
-                if(k=="zip") k="application/zip"
+                if(substr(k,1,1)=="=") k=substr(k,2)
+                else if(k=="zip") k="application/zip"
                 else if(k!="" && k !~ /^[^[:space:]\/]+\/[^[:space:]\/]+/) fail("unknown MIME alias")
                 if(operation=="get" && (query==p "/media_type" || query==p "/content_type")) { found=1; emit(k) }
             }

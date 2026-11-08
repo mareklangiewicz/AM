@@ -53,6 +53,7 @@ BEGIN {
  rule_minimum["asset/size"]="0"
  rule_maximum["asset/size"]="9223372036854775807"
  scalar_type["asset/media_type"]="string"
+ rule_pattern["asset/media_type"]="^(=|$|zip$|[^[:space:]/]+/[^[:space:]/]+)"
  scalar_type["asset/digest"]="string"
  fields["assets"]=""
  required_fields["assets"]=""

@@ -105,3 +105,12 @@ its publisher-local object store is 1,581 bytes, explicitly not remote storage.
 Collection left its parent ref unchanged. Temporary data/repos were removed on
 normal exit. This is CLI/protocol wiring evidence, not real acquisition, coverage,
 capacity or public activation. The MIME decision/rehearsal above remains pending.
+
+### MIME decision accepted — November 8, 2026
+
+Marek chose the [leading-`=` literal escape](03-choose-public-yaml-contracts-and-revision-consistency.md#accepted-literal-escape--november-8-2026)
+in the existing compact field, preserving literal values and alias collisions.
+The earlier `media_type_literal` proposal is superseded. Implemented writers,
+shell/browser readers, closed schema predicates/examples and explicit round trips
+for `raw`, literal `zip`, repeated/leading `=`, full types, default omission and
+empty strings. Resume the saved seed-plus-three rehearsal under this rule.

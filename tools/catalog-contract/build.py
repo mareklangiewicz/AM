@@ -30,7 +30,7 @@ COUNTS=obj('counts',{k:MEASUREMENT for k in ('enrolled','selected','attempted','
 STAGE=ENUM('ok','partial','failed','unknown','not_attempted')
 PUB=obj('publication',dict(state=ENUM('confirmed','conflict','failed','unknown','not_attempted'),commit=PIN),['state'])
 REASON=ENUM('complete','transport','authentication','quota','request_budget','byte_budget','time_budget','source_validation','document_overflow','candidate_validation','parent_conflict','publication_transport','internal','unknown')
-ASSET=obj('asset',dict(name=S,url_suffix=S,url=URL,size=N,media_type=scalar('string',default='application/octet-stream',description='Omission is exactly application/octet-stream; zip expands to application/zip, and the empty string preserves an explicit empty upstream value.'),digest=S),['name','size'])
+ASSET=obj('asset',dict(name=S,url_suffix=S,url=URL,size=N,media_type=scalar('string',examples=['zip','=zip','=raw','==raw','text/plain','','=','=application/zip'],pattern=r'^(=|$|zip$|[^\s/]+/[^\s/]+)',default='application/octet-stream',description='Omission is exactly application/octet-stream; zip expands to application/zip; an empty string stays empty. A leading = strips exactly one = and returns the rest literally before alias handling: =raw -> raw, =zip -> zip, ==raw -> =raw. Unescaped unknown bare aliases refuse.'),digest=S),['name','size'])
 ASSETS=table('assets','^[1-9][0-9]*$',ASSET)
 RELEASE=obj('release',dict(observed_at=TIME,tag=S,title=S,url=URL,created_at=TIME,published_at=TIME,updated_at=TIME,prerelease=B,source_zip_url=URL,source_tar_url=URL,download_base=URL,assets=ASSETS),['tag','url','prerelease','assets'])
 RELEASES=table('releases','^[1-9][0-9]*$',RELEASE)
