@@ -157,6 +157,13 @@ parent binding.
 
 ## Execution evidence and optional follow-ups
 
+November 9 capacity review: the [operating recommendation](qualification-14.md#capacity-recommendation-for-review--november-9-2026)
+recommends holding current coverage while correcting dual-output history and
+full-path throughput. A narrow v2 packing sample exposes a 92.012 GB annual
+dual-output scenario, with explicit nonstationarity and payload/status sensitivities.
+The proposed storage envelope is unaccepted and unqualified; no accepted coverage,
+refresh or compatibility guarantee changes. Ticket 14 remains claimed.
+
 All planning decisions are resolved. Actual processing/capacity, live acquisition,
 workflow/publication, browser/performance/accessibility and educational-comprehension
 claims require the scoped implementation/rollout evidence above. A synthetic count

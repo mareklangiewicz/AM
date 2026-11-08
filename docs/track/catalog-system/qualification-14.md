@@ -214,3 +214,177 @@ remaining rollout evidence. Ticket 15 is not claimed. No live collection, ref
 publication, workflow activation, enrollment, installed-host change or push was
 performed. Expensive completed checks should not be repeated unless affected by
 a subsequent change.
+
+## Capacity recommendation for review — November 9, 2026
+
+**Hold coverage at the existing enrolled scope while retaining the 5,000-source /
+12-hour target. Do not activate the expanded dual-output operating profile yet.**
+Optimize format-2 Git history and the repeated full-validation path before
+expansion, or complete the separately gated consumer migration and retire format
+2 before expanding. Raising the local object cap cannot fix remote history or
+hourly throughput. This is a recommendation, not Marek's acceptance or permission
+to retire compatibility. Ticket 14 stays claimed; 15 stays unclaimed.
+
+### Annual dual-output cost
+
+One additional narrow storage probe supplies the missing format-2 timestamp
+sample, using the existing dual artifact without repeating domain qualification:
+
+```
+python3 -B tools/catalog-collector/qualify_legacy_history.py \
+  --artifact QUALIFIED_DUAL_WORK/artifact --work NEW_DIRECTORY
+```
+
+[Receipt](legacy-history-14.json). Every supplied file is checked against the
+dual artifact report's hashes. A new remote-free repository receives 5,001 files;
+500 numerically ordered sources then receive synthetic attempted/completed/shared
+and explicit release observation timestamps. Release facts stay unchanged.
+Fast-import bypasses the domain validator/publisher: this measures Git storage,
+not successful collection or publication. Consistent single-thread level-6
+packing with window 10/depth 50 produces **102,819,619 seed bytes**, then
+**113,074,880 bytes** after that refresh: **10,255,261 added bytes** in 45.55 s
+for the whole probe. Inputs and the probe script are hash-bound in the receipt.
+Supplied evidence, including the preserved original v2 repository, is untouched.
+
+The much larger v2 delta than v3 is an observed packing result, not an established
+cause or steady-state rate. Repacking can change how existing repeated shapes
+are represented. A one-step difference cannot prove that each subsequent batch
+adds the same amount. It is nevertheless insufficient evidence to approve a
+small annual allowance; do not substitute an assumed ideal delta rate.
+
+[Reproducible arithmetic inputs/results](capacity-scenarios-14.json), decimal GB:
+
+| Component | Per hourly sample | 8,760-run added-history scenario |
+| --- | ---: | ---: |
+| Format 2 timestamps | 10,255,261 B | 89.836 GB |
+| Format 3 timestamps | 200,525 B | 1.757 GB |
+| Status, optimistic constant-pin sample | 29,003 B | 0.254 GB |
+| Separate seeds combined | 165,351,834 B once | 0.165 GB once |
+| Sum including seeds | — | **92.012 GB** |
+
+Formula: seed sum + 8,760 × sum of the three sample deltas. A nominal allowance
+with 25% unused capacity for this scenario alone is ceil(92,012,103,474 / 0.75)
+= **122,682,804,632 bytes**. This is a rejection signal for the profile, not a
+recommended cap. The repositories were packed separately; this excludes existing
+AM history, cross-channel packing interactions, independent real-source diversity,
+new releases, edits and provenance/rule changes. It is neither a measured year
+nor remote reachable-object usage. GitHub's server packing is not controlled by
+these local settings.
+
+Status and release sensitivities make the missing costs explicit rather than
+calling them zero. Assuming 128 KiB of added packed status bytes/run gives
+**1.148 GB/year** instead of the optimistic 0.254 GB. This is an assumed budget
+scenario, not a validated upper bound. The short observed sample's 11 new release
+IDs / 1,169.5067 source-hours extrapolates to roughly 411,969 new IDs/year for
+5,000 sources. At assumed all-channel marginal packed costs of 1 / 16 / 64 KiB
+per new ID, that adds **0.422 / 6.750 / 26.999 GB/year**. These payload costs and
+the annual event rate are assumptions, not forecasts or measured release costs;
+retained-record removal does not erase prior Git observations. Asset-rich releases
+can exceed these scenarios. No finite general history guarantee follows from them.
+
+Temporary compatibility also needs a real cost ceiling: the v2 sample alone
+extrapolates to **0.246 GB/day, 1.723 GB/week, 7.384 GB/30 days**. A casual
+“30-day transition” therefore does not establish headroom. Retirement remains
+consumer-gated and explicitly agreed; expiry must trigger review, never automatic
+cessation of v2 publication. The recommendation is to avoid expanded dual output
+until this cost is corrected, rather than choose a date unsupported by consumers.
+
+### Operating profile and review points
+
+- Preserve 500-source hourly oldest-first batches as the target: ten successful
+  batches cover 5,000 sources, leaving two slots within the conditional 12-hour
+  objective. Existing 750-request / 512 MiB / 900-second acquisition allowances
+  have historical sample headroom, not proof of current quotas or 5,000-source
+  live throughput. Keep the reserve and existing source-failure semantics.
+- Keep the 1 GiB v3 tree / 20,000-file safeguards: the measured 319.4 MB /
+  10,002-file tree has headroom. Treat the 2 MiB boundary source as the explicitly
+  accepted stress case; it does not demonstrate 25% per-document headroom.
+  The 951.6 MB dual artifact is below its separate 2 GiB artifact bound; those
+  tree/artifact allowances say nothing about retained remote history.
+- Keep the 256 MiB object limit identified as a **per-disposable-repository local
+  staging guard**, including fetched objects and new loose objects. Depth-one
+  fetches limit local ancestry; remote commits still retain their parents. Do not
+  use a successful shallow run to assert remote annual capacity. Independent
+  staging scopes also do not bound their simultaneous disk/RSS sum.
+- For review, use **4 GB aggregate packed repository storage** as a proposed
+  planning envelope, with projected peak usage no higher than **3 GB** to leave
+  25% unused. Include all existing reachable history and every output channel.
+  This is an early operational budget, not a service entitlement or a setting
+  change. Even v3-only timestamps consume about 1.819 GB including their seed;
+  adding the 128 KiB status scenario leaves little room for release growth or
+  existing history. Thus this envelope is currently **unqualified**, even after
+  v2 retirement. A bigger number alone is not an accepted solution.
+- Review storage before expansion, then weekly during any authorized transition
+  and monthly thereafter. Trigger review when the revised 12-month projection
+  exceeds 3 GB, or the next 90 days' projected growth would cross it. Track actual
+  aggregate packed reachable history separately from each run's local guard;
+  agree a measurement location/owner in ticket 15 rather than claim unavailable
+  remote disk telemetry. Respond through an explicit operating decision, never
+  history rewrites, silent data loss or automatic compatibility retirement.
+
+Official guidance rechecked November 9: GitHub recommends repositories ideally
+below 1 GB and strongly below 5 GB in its
+[large-file guidance](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github).
+Its separate [repository limits](https://docs.github.com/en/repositories/creating-and-managing-repositories/repository-limits)
+recommend a 10 GB compressed repository maximum and directory width 3,000, without
+guaranteeing supportability below those numbers. The flat 5,000-source directories
+exceed that width recommendation; the 2 MiB boundary exceeds the 1 MB object
+recommendation but is below the enforced object limit. These are explicit health
+risks, not permission to move away from the accepted Git foundation. The proposed
+4 GB envelope leaves room below the stronger 5 GB guidance; it is not approval
+for this workload or a claim of 25% spare capacity against every service limit.
+
+### Workflow timeout and hourly cadence
+
+Both prepared catalog jobs currently have 30-minute timeouts. They have not been
+activated. The acquisition code freshly validates both parents in parallel,
+acquires, constructs/validates candidates and writes both complete artifacts.
+The publisher independently fully validates both transferred channels before
+publication and status retention; trusted in-process reuse does not eliminate
+these fresh-process boundaries.
+
+The 899.731-second dual artifact gate is a useful **proxy**, not a measured
+dual-parent load time. Combining that proxy with the permitted 900-second
+acquisition and the measured v3 90.107-second projection / 32.110-second validation
+already gives **1,921.948 seconds (32.0 minutes)**, before legacy candidate work,
+provenance, writing, setup and upload. Thus the acquisition job cannot be qualified
+against 30 minutes from these inputs. A proposed 40-minute acquisition timeout
+would prevent that particular cutoff but still needs full-path measurement to
+demonstrate 25% unused time; simply extending it does not solve hourly cadence.
+
+On the publication side, dual validation + v3 publication (80.2-second full-tree
+sample) + status execution (115.836 seconds) totals about **1,095.8 seconds**,
+before v2 publication, fetch/push, download/setup and other work. Keep 30 minutes
+only if the complete publisher job measures at most 1,350 seconds, including
+failure reporting. This sum is a planning composition of separate receipts, not
+an end-to-end timing or simultaneous resource measurement.
+
+Together these partial budget compositions already exceed **50 minutes**; hourly
+operation with 25% unused wall-time allowance requires the complete serial path
+to fit **45 minutes**. Substituting the historical 551.564-second acquisition
+sample brings the partial sum near 44.5 minutes before the omitted work. There is
+no qualified hourly headroom. Recommend removing repeated validation/serialization
+cost while preserving the trusted publisher gate, then measuring the affected
+complete path once. Do not rerun unrelated browser/compatibility/recovery suites.
+Timeout increases alone must not be described as acceptance of a 12-hour refresh.
+
+### Concrete alternatives requiring review
+
+1. **Recommended:** keep current coverage and compatibility while correcting
+   history/throughput; retain the accepted 5,000-source / 12-hour destination.
+   Next focused evidence is repeated rotating-batch packing after a scoped fix,
+   variable-pin status/release-payload history and one complete workflow-path
+   timing on the intended host. Reuse all unaffected completed receipts.
+2. Expand v3 after consumer-gated v2 retirement, with the same storage/runtime
+   gates. This reduces measured compatibility pressure but does not itself
+   qualify v3 annual cost or authorize retirement.
+3. Relax coverage or refresh explicitly. Halving cadence would only halve the
+   hourly-history scenario while making ten batches take 20 hours.
+   An aggregate 500-source profile needs one batch per 12 hours for nominal
+   coverage, but has neither 5,000-source coverage nor the two spare slots.
+   These are product changes, not implementation defaults. No such change is made.
+
+Remaining independent gate: published source 1245849062 still refuses conversion.
+No exclusion is assumed. This recommendation completes the requested capacity
+review deliverable; it does not resolve ticket 14, accept a history budget or
+authorize ticket 15 rollout, remote writes, pushes or installed-host changes.

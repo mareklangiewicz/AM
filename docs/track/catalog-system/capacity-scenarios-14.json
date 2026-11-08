@@ -1,0 +1,60 @@
+{
+  "projection_not_measured_year": true,
+  "annual_runs": 8760,
+  "seed_packed_bytes": 165351834,
+  "timestamp_only": {
+    "v2_added_bytes": 89836086360,
+    "v3_added_bytes": 1756599000,
+    "status_optimistic_added_bytes": 254066280,
+    "total_with_seed_bytes": 92012103474,
+    "allowance_for_25_percent_unused_bytes": 122682804632
+  },
+  "status_sensitivity": {
+    "assumed_bytes_per_run": 131072,
+    "annual_bytes": 1148190720
+  },
+  "new_release_sensitivity": {
+    "observed_new_ids": 11,
+    "observed_source_hours": 1169.5066666666667,
+    "assumed_annual_new_ids_at_5000_sources": 411968.5793439969,
+    "scenarios": [
+      {
+        "assumed_added_packed_bytes_per_new_id_all_channels": 1024,
+        "annual_added_bytes": 421855826
+      },
+      {
+        "assumed_added_packed_bytes_per_new_id_all_channels": 16384,
+        "annual_added_bytes": 6749693204
+      },
+      {
+        "assumed_added_packed_bytes_per_new_id_all_channels": 65536,
+        "annual_added_bytes": 26998772816
+      }
+    ]
+  },
+  "compatibility_duration_sensitivity": [
+    {
+      "days": 1,
+      "v2_timestamp_added_bytes": 246126264
+    },
+    {
+      "days": 7,
+      "v2_timestamp_added_bytes": 1722883848
+    },
+    {
+      "days": 30,
+      "v2_timestamp_added_bytes": 7383787920
+    },
+    {
+      "days": 365,
+      "v2_timestamp_added_bytes": 89836086360
+    }
+  ],
+  "limits": [
+    "One-step packed deltas extrapolated linearly, not stable annual rates or remote measurements.",
+    "Separate synthetic repositories; their sum excludes existing AM repository history and cross-channel packing interactions.",
+    "Status optimistic sample uses a constant pin and short IDs; 128 KiB/run is an assumed sensitivity, not measured capacity.",
+    "Release event rate is a short historical sample, not a forecast; payload costs are explicit assumed marginal bytes across all active channels.",
+    "No live settings, safeguards, coverage, refresh guarantees or compatibility retirement changed."
+  ]
+}

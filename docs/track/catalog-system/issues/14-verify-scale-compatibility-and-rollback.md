@@ -92,3 +92,22 @@ site-restore checks. Marek accepted the synthetic 2 MiB timing exception; ordina
 timing targets and recorded misses remain. Annual dual-output capacity and the
 conflicting published source remain explicit unresolved gates. Status stays claimed;
 no activation or remote mutation is implied.
+
+## Capacity recommendation ready for review — November 9, 2026
+
+The [concrete operating-profile recommendation](../qualification-14.md#capacity-recommendation-for-review--november-9-2026)
+adds only a hash-bound v2 Git-storage probe to the completed evidence. Its one-step
+hourly dual-output extrapolation is 92.012 GB/year including synthetic seeds and
+optimistic status, before new-release payloads or existing remote history. This
+is a scenario, not a stationary rate or measured year. Sensitivities explicitly
+price temporary compatibility, variable status and new releases. The prepared
+30-minute acquisition timeout and complete hourly headroom remain unqualified.
+
+Recommendation: hold current coverage while correcting history/throughput;
+preserve the 5,000-source / 12-hour destination. A proposed 4 GB aggregate history
+envelope (3 GB maximum planned usage) is unaccepted and presently unqualified.
+Consumer-gated v2 retirement is an alternative, not implied authorization.
+The recommendation names narrow affected checks and review triggers without
+repeating completed suites. Source 1245849062 remains an independent coverage gate.
+Status stays claimed pending material operating decisions and qualification;
+ticket 15 remains unclaimed. No deployment, push or settings change occurred.
