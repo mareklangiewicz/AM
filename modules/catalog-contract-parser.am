@@ -65,7 +65,7 @@ function parent_path(p, q) { q=p; sub(/\/[^\/]*$/,"",q); return q }
 function check_measurement(p) {
     if((values[p "/state"]=="known") != ((p "/value") in types)) fail("measurement state/value")
 }
-function semantics( p,r,a,b,k,t,n,seen,stable,count_names) {
+function semantics( p,r,a,b,k,t,n,seen,stable,count_names,stable_path,stable_time,other_time,stable_id,other_id) {
     if(values["/kind"]=="repository") {
         if(values["/observed_at"]>values["/collected_at"]) fail("observation after collection")
         for(p in node_type) {
@@ -81,7 +81,7 @@ function semantics( p,r,a,b,k,t,n,seen,stable,count_names) {
                 k="tag:" values[p "/tag"]
                 if(k in tags) fail("duplicate exact tag")
                 tags[k]=1; releases++
-                if(values[p "/prerelease"]=="false") stable++
+                if(values[p "/prerelease"]=="false") { stable++; stable_path=p }
                 if((p "/download_base") in types && values[p "/download_base"] !~ /\/$/) fail("download base")
             }
             if(t=="asset") {
@@ -101,6 +101,15 @@ function semantics( p,r,a,b,k,t,n,seen,stable,count_names) {
             }
         }
         if(releases>33 || (releases==33 && stable!=1)) fail("retention count")
+        if(releases==33) {
+            stable_time=((stable_path "/published_at") in types ? values[stable_path "/published_at"] : values[stable_path "/created_at"])
+            stable_id=substr(stable_path,11)
+            for(p in node_type) if(node_type[p]=="release" && p!=stable_path) {
+                other_time=((p "/published_at") in types ? values[p "/published_at"] : values[p "/created_at"])
+                other_id=substr(p,11)
+                if("x" stable_time>"x" other_time || (stable_time==other_time && less(other_id,stable_id))) fail("unneeded stable exception")
+            }
+        }
     }
     for(p in node_type) {
         t=node_type[p]

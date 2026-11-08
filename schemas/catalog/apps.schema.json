@@ -160,7 +160,9 @@
           "maximum": 9223372036854775807
         },
         "media_type": {
-          "type": "string"
+          "type": "string",
+          "default": "application/octet-stream",
+          "description": "Omission is exactly application/octet-stream; zip expands to application/zip, and the empty string preserves an explicit empty upstream value."
         },
         "digest": {
           "type": "string"
@@ -1071,5 +1073,19 @@
       ],
       "additionalProperties": false
     }
-  }
+  },
+  "examples": [
+    {
+      "format": 3,
+      "schema": "https://raw.githubusercontent.com/mareklangiewicz/AM/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/docs/catalog-format-v3.md",
+      "kind": "apps",
+      "apps": {
+        "1": "repositories/example.yaml",
+        "10": "repositories/example.yaml",
+        "2": "repositories/example.yaml",
+        "example": "repositories/example.yaml",
+        "example-nightly": "repositories/example.yaml"
+      }
+    }
+  ]
 }

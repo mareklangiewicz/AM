@@ -160,7 +160,9 @@
           "maximum": 9223372036854775807
         },
         "media_type": {
-          "type": "string"
+          "type": "string",
+          "default": "application/octet-stream",
+          "description": "Omission is exactly application/octet-stream; zip expands to application/zip, and the empty string preserves an explicit empty upstream value."
         },
         "digest": {
           "type": "string"
@@ -1071,5 +1073,24 @@
       ],
       "additionalProperties": false
     }
-  }
+  },
+  "examples": [
+    {
+      "format": 3,
+      "schema": "https://raw.githubusercontent.com/mareklangiewicz/AM/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/docs/catalog-format-v3.md",
+      "kind": "catalog",
+      "inputs": {
+        "source": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "policy": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "recipes": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "rules": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "schemas": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "producer": {
+        "id": 123,
+        "attempt": 2
+      },
+      "retention": "32-plus-stable-exact-tag-v1"
+    }
+  ]
 }

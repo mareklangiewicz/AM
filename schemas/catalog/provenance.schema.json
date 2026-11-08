@@ -160,7 +160,9 @@
           "maximum": 9223372036854775807
         },
         "media_type": {
-          "type": "string"
+          "type": "string",
+          "default": "application/octet-stream",
+          "description": "Omission is exactly application/octet-stream; zip expands to application/zip, and the empty string preserves an explicit empty upstream value."
         },
         "digest": {
           "type": "string"
@@ -1071,5 +1073,97 @@
       ],
       "additionalProperties": false
     }
-  }
+  },
+  "examples": [
+    {
+      "format": 3,
+      "schema": "https://raw.githubusercontent.com/mareklangiewicz/AM/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/docs/catalog-format-v3.md",
+      "kind": "provenance",
+      "apps": {
+        "example": {
+          "aarch64": {
+            "repository_id": 9007199254740993,
+            "availability": "present",
+            "classification": "shared",
+            "recipe": {
+              "repository": "mareklangiewicz/AM",
+              "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "path": "programs/aarch64/example",
+              "blob": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "evidence": {
+              "method": "whole_wrapper",
+              "evaluated_at": "2026-11-08T01:00:00Z",
+              "recipe_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "rules": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "dependencies": {
+                "module": {
+                  "repository": "mareklangiewicz/AM",
+                  "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                  "path": "modules/",
+                  "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+                }
+              }
+            }
+          },
+          "armv7l": {
+            "repository_id": 9007199254740993,
+            "availability": "present",
+            "classification": "template",
+            "recipe": {
+              "repository": "mareklangiewicz/AM",
+              "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "path": "programs/armv7l/example",
+              "blob": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "evidence": {
+              "method": "whole_template",
+              "evaluated_at": "2026-11-08T01:00:00Z",
+              "recipe_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "rules": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "dependencies": {
+                "module": {
+                  "repository": "mareklangiewicz/AM",
+                  "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                  "path": "modules/",
+                  "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+                }
+              }
+            }
+          },
+          "i686": {
+            "repository_id": 9007199254740993,
+            "availability": "present",
+            "classification": "custom",
+            "recipe": {
+              "repository": "mareklangiewicz/AM",
+              "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "path": "programs/i686/example",
+              "blob": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            },
+            "evidence": {
+              "method": "reviewed_custom",
+              "evaluated_at": "2026-11-08T01:00:00Z",
+              "recipe_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+              "rules": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "dependencies": {
+                "module": {
+                  "repository": "mareklangiewicz/AM",
+                  "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                  "path": "modules/",
+                  "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+                }
+              },
+              "description": "Explicit reviewed custom portion"
+            }
+          },
+          "x86_64": {
+            "repository_id": 9007199254740993,
+            "availability": "unknown",
+            "classification": "unknown"
+          }
+        }
+      }
+    }
+  ]
 }

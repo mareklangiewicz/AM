@@ -160,7 +160,9 @@
           "maximum": 9223372036854775807
         },
         "media_type": {
-          "type": "string"
+          "type": "string",
+          "default": "application/octet-stream",
+          "description": "Omission is exactly application/octet-stream; zip expands to application/zip, and the empty string preserves an explicit empty upstream value."
         },
         "digest": {
           "type": "string"
@@ -1071,5 +1073,41 @@
       ],
       "additionalProperties": false
     }
-  }
+  },
+  "examples": [
+    {
+      "format": 1,
+      "schema": "https://raw.githubusercontent.com/mareklangiewicz/AM/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/docs/catalog-status-v1.md",
+      "kind": "statistics",
+      "measured_at": "2026-11-08T01:00:00Z",
+      "freshness": {
+        "catalog": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "evaluated_at": "2026-11-08T01:00:00Z",
+        "under_24h": {
+          "state": "unknown"
+        },
+        "from_24_to_48h": {
+          "state": "unknown"
+        },
+        "at_least_48h": {
+          "state": "unknown"
+        },
+        "no_success": {
+          "state": "unknown"
+        },
+        "unknown": {
+          "state": "unknown"
+        }
+      },
+      "days": {
+        "2026-11-08": {
+          "reported_attempts": 1,
+          "successful_sources": 2,
+          "failed_sources": 1,
+          "first_report": "2026-11-08T01:00:00Z",
+          "last_report": "2026-11-08T01:00:00Z"
+        }
+      }
+    }
+  ]
 }

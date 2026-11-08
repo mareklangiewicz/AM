@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: claimed
+Status: resolved
 Assignee: codex
 Blocked by: 10
 
@@ -53,3 +53,21 @@ reused evidence. No broad historical per-app lifecycle suite without affected
 behavior. This ticket description is not execution authorization; use the accepted
 local implementation scope when separately started. No push, live acquisition,
 workflow dispatch, enrollment, installed-host change, Pages or remote publication.
+
+## Answer — November 8, 2026
+
+Implemented locally: closed format-3/status-1 contracts and generated editor schemas,
+strict shell/browser readers and fact queries, exact decimal/URL/MIME encodings,
+32-plus-stable/exact-tag merging, stable source labels, pinned recipe predicates,
+and explicit candidate collection/offline validation. Shared acquisition feeds
+independent v2/v3 parent merges; format 2 and the deployed legacy workflow remain
+operational. Publication is explicitly reserved for ticket 12 and refuses here.
+
+[Implementation and acceptance](../implementation-11.md) records 9 focused new
+checks including 33 shared fixtures across shell/browser/schema boundaries and
+mawk/gawk/BusyBox, 71 affected legacy test invocations, shellcheck/whitespace and
+an unmocked committed-CLI synthetic replay with zero HTTP/ref advancement.
+It documents schema-only limits and intentional retention/selection differences.
+No capacity, real-cohort, browser-delivery or deployment qualification is inferred.
+No push, live acquisition, dispatch, enrollment, installed-host/Pages change,
+remote publication or yadm pointer update occurred.

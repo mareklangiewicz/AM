@@ -129,14 +129,14 @@ branches are not merged or pushed automatically (home push guidance applies).
 
 ## Implementation route
 
-Planning is complete. These tasks are open and unclaimed; execution needs a
-separate start instruction. Routine implementation mechanics follow the accepted
+Planning is complete. Marek started local implementation on November 8; ticket 11
+is resolved and ticket 12 is the next unblocked task. Routine implementation mechanics follow the accepted
 spec without repeating product interviews. Remote operations keep their explicit
 approval boundaries.
 
 | Ticket | Depends on | Deliverable |
 | --- | --- | --- |
-| [11](issues/11-implement-contracts-readers-and-collection-interface.md) | 10 | Contracts, strict readers and shared collection/validation interface. |
+| [11 resolved](issues/11-implement-contracts-readers-and-collection-interface.md) | 10 | Contracts, strict readers and shared collection/validation interface; [focused local acceptance](implementation-11.md), with format 2 preserved. |
 | [12](issues/12-implement-incremental-publication-and-final-health.md) | 11 | Incremental Git publication, final health and isolated workflow permissions. |
 | [13](issues/13-integrate-main-owned-catalog-browser.md) | 11, 12 | Main-owned A/B/C browser, context/provenance/health and real-browser checks. |
 | [14](issues/14-verify-scale-compatibility-and-rollback.md) | 11, 12, 13 | Shared scale/history, compatibility and rollback evidence. |

@@ -124,6 +124,13 @@ function semantics(doc) {
    }
   }
   if(entries.length>33||entries.length===33&&stable!==1) bad('retention');
+  if(entries.length===33) {
+   const [stableId,s]=entries.find(([,r])=>!r.prerelease),time=s.published_at??s.created_at;
+   for(const [id,r] of entries) if(id!==stableId) {
+    const other=r.published_at??r.created_at;
+    if(time>other||time===other&&BigInt(stableId)>BigInt(id)) bad('unneeded stable exception');
+   }
+  }
  }
  if(doc.kind==='summary') {
   if(doc.started_at>doc.reported_at) bad('run time');
