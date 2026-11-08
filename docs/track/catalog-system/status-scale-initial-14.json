@@ -1,0 +1,70 @@
+{
+  "synthetic": true,
+  "live_acquisition": false,
+  "population": 5000,
+  "selected_per_report": 500,
+  "source_revision": "2903c25ae4e27291c8cfb362a7fdc45cd93fc9e1",
+  "parent": "50d7dae1f0f71a05b7d321c9a9d45f0daddaca66",
+  "commit": "a1598d9e11c6250ca39c9da7719a15ae3c23bac4",
+  "old_pin_preserved": true,
+  "before_validation": {
+    "changed_documents": 4066,
+    "reused_documents": 0,
+    "tree_bytes": 1922963,
+    "documents": 4066,
+    "rules": "b0f905ab821a6e9cbc13775ee179babec115c89015c9925c67f2277f846b8862"
+  },
+  "parent_validation": {
+    "mode": "full_parent_fallback",
+    "documents": 4066,
+    "bytes": 1922963,
+    "seconds": 282.0324583359761,
+    "rules": "b0f905ab821a6e9cbc13775ee179babec115c89015c9925c67f2277f846b8862",
+    "commit": "50d7dae1f0f71a05b7d321c9a9d45f0daddaca66"
+  },
+  "after_validation": {
+    "changed_documents": 503,
+    "reused_documents": 3563,
+    "tree_bytes": 1923027,
+    "documents": 4066,
+    "rules": "b0f905ab821a6e9cbc13775ee179babec115c89015c9925c67f2277f846b8862"
+  },
+  "summaries": 64,
+  "detail_reports": 8,
+  "daily_records": 90,
+  "source_rows_per_detail": {
+    "58-1": 500,
+    "59-1": 500,
+    "60-1": 500,
+    "61-1": 500,
+    "62-1": 500,
+    "63-1": 500,
+    "64-1": 500,
+    "65-1": 500
+  },
+  "retention_seconds": 52.94711216195719,
+  "publication_metrics": {
+    "history_object_bytes_before": 431879,
+    "snapshot_yaml_bytes": 1923027,
+    "new_blob_storage_upper_bound_bytes": 135834,
+    "tree_commit_storage_upper_bound_bytes": 208240,
+    "history_guard_bytes": 775953,
+    "history_cap": 268435456,
+    "history_object_bytes_after": 582077
+  },
+  "packed_before_bytes": 281163,
+  "packed_after_bytes": 310206,
+  "packed_added_bytes": 29043,
+  "seconds": 696.7695809089928,
+  "peak_self_rss_kib": 44324,
+  "peak_largest_child_rss_kib": 44324,
+  "limits": "Synthetic summaries/details/daily fixture, one retained-tree update with a day gap. Dummy confirmed catalog pin; not real health, missing-run interpolation, live quota or a year of Git history.",
+  "implementation_files_sha256": {
+    "tools/catalog-collector/publication.py": "b95a4f8ced4282454d6f39acc95119db7ee810fc9f0ce7789a5d43bca7deb6b6",
+    "tools/catalog-collector/incremental.py": "c1775dee30526df02d76dcdd8d6899a7213b7ccb41bc1237a53b322d4d5f49fa",
+    "tools/catalog-collector/pipeline_publication.py": "9c8515f765f493cee80e9c3eb42d1b479af21667836c84b7c20fe4fc4ea14ec2",
+    "tools/catalog-collector/contracts.py": "853d18c90256117dd1088cfbe4a6617bf820a0d9a3a37d4c674a8cbd1283018b",
+    "tools/catalog-collector/collection_interface.py": "3bc5d267e62f4cc6fecdce4e382d055752303d73da924334a588a62db697d1a1"
+  },
+  "implementation_note": "Measured working-tree implementation now committed as 93d1e6fea for publication/incremental changes; fixture source_revision records HEAD at start."
+}

@@ -1,0 +1,46 @@
+{
+  "synthetic": true,
+  "live_acquisition": false,
+  "enrollment_changed": false,
+  "remote_publication": false,
+  "source_head": "3076b869bc100cb7dad83118d3fda47d09f39ff2",
+  "implementation_files_sha256": {
+    "pipeline_publication.py": "cd196810622163351e049ff6854007fe3d4587a2f68fd683b49b9e0e47fcdfd3",
+    "incremental.py": "470a1df84bf14d60a1d76898775f2b10eb5d6b90f84cdea0ce37288ca139922a",
+    "contracts.py": "c2b1202046c44d4ae5bb273bc97b675ca9892026118e97c49baf0ad1cda9f126",
+    "wire_validation.py": "010a409a59f9de2f23e9e4f83b2f437e3e1af605f51657073f533e29159adb99",
+    "yaml_publication.py": "3fc8b9e31bb37eaba1faebb960da78e40abbebc631d5b2e3a844562174c708a9"
+  },
+  "preparation": {
+    "synthetic": true,
+    "source_count": 5000,
+    "app_count": 5000,
+    "channel_bytes": {
+      "format-2": 632178575,
+      "format-3": 319417844
+    },
+    "channel_files": {
+      "format-2": 5001,
+      "format-3": 10002
+    },
+    "total_bytes": 951596419,
+    "report_bytes": 1606343,
+    "seconds": 16.94647362298565,
+    "peak_self_rss_kib": 95736
+  },
+  "validation": {
+    "seconds": 899.7311527319835,
+    "validated_files": {
+      "format-2": 5001,
+      "format-3": 10002
+    },
+    "validated_v3_sources": 5000,
+    "peak_self_rss_kib": 1022764,
+    "peak_largest_child_rss_kib": 1022764,
+    "scope": "Actual bounded artifact gate with full parallel channel validation; no checkout/enrollment authority, acquisition or publication."
+  },
+  "zip_bytes": 163552760,
+  "zip_seconds": 21.021607811038848,
+  "address_space_cap_bytes": 2147483648,
+  "limits": "Synthetic repeated saved v2/v3 shapes, one v3 boundary stress source. Zero selected/acquired sources; original observations are not freshened. Separate processes, not an end-to-end collection or installed-host delivery receipt. ZIP-6 is not actual Actions transfer."
+}

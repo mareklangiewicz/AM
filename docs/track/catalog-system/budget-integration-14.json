@@ -1,0 +1,37 @@
+{
+  "reference_sources": 5000,
+  "requested_sources_per_hour": 500,
+  "simulated_batches_for_first_coverage": 10,
+  "coverage_hours_if_one_successful_batch_per_hour": 10,
+  "healthy_refresh_objective_hours": 12,
+  "live_5000_source_capacity_qualified": false,
+  "historical_source_count": 500,
+  "historical_app_count": 509,
+  "historical_catalog": "cbda9fb78ce4a6f29bdabd63d57f3c0085e8744f",
+  "historical_run_id": 42385542750,
+  "historical_observed_token_limit": 5000,
+  "ordinary_hourly_allowance_planning_input": 1000,
+  "configured_reserve": 100,
+  "proposed_limits": {
+    "requests": 750,
+    "response_bytes": 536870912,
+    "acquisition_seconds": 900
+  },
+  "historical_measured_peaks": {
+    "requests": 500,
+    "response_bytes": 341439276,
+    "acquisition_seconds": 551.5637767719745
+  },
+  "unused_fraction_at_historical_peak": {
+    "requests": 0.33333333333333337,
+    "response_bytes": 0.3640197888016701,
+    "acquisition_seconds": 0.3871513591422505
+  },
+  "historical_input_sha256": {
+    "docs/track/release-catalog/research/next-500-publication.json": "099c8a2d316893806238225e89ceb4531cdd5d49abea8fe90aaad83831dd893d",
+    "docs/track/release-catalog/research/next-500-preflight.json": "8ce5aa18a95bf4996818522516f2d84184309e908fcbd34984c5da90071edbd1"
+  },
+  "scheduling_receipt": "docs/track/catalog-system/scheduling-preflight-14.json",
+  "limits_note": "Combines the preserved real 500-source request/charged-body-byte/time sample with synthetic scheduler ordering. The historical token reported 5000, not proof of the current workflow token quota. Received wire bytes, new upstream density, current throughput and schedule reliability are not independently qualified; full validation/dual-output runtime must be added. The 12-hour objective is conditional on successful refreshes and scheduling.",
+  "source_refusal_note": "The historical v2 scope succeeded for 500 sources; later v3 conversion refuses one tied-tag source. This does not qualify complete v3 coverage of those identities."
+}

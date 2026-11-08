@@ -1,0 +1,62 @@
+{
+  "synthetic": true,
+  "live_acquisition": false,
+  "batch_size": 500,
+  "parent": "60d08e9d011e65a3c59f1974a1ae2e4f94e26356",
+  "packing": "git repack -ad --window=10 --depth=50; threads=1; compression=6",
+  "rss_scope": "separate Python process high-water and largest child, not simultaneous aggregate",
+  "packed_before": {
+    "bytes": 62056124,
+    "seconds": 52.62236803903943
+  },
+  "parent_validation": {
+    "mode": "full_parent_fallback",
+    "documents": 10002,
+    "bytes": 319417844,
+    "seconds": 1210.2156944670132,
+    "rules": "b0f905ab821a6e9cbc13775ee179babec115c89015c9925c67f2277f846b8862",
+    "commit": "60d08e9d011e65a3c59f1974a1ae2e4f94e26356"
+  },
+  "metadata_only_candidate": {
+    "seconds": 0.12593345198547468,
+    "changed_documents": 1,
+    "reused_documents": 10001,
+    "tree_bytes": 319417844,
+    "documents": 10002,
+    "rules": "b0f905ab821a6e9cbc13775ee179babec115c89015c9925c67f2277f846b8862"
+  },
+  "projection_seconds": 151.86504949099617,
+  "incremental_validation_seconds": 79.64825962501345,
+  "candidate": {
+    "changed_documents": 501,
+    "reused_documents": 9501,
+    "tree_bytes": 319417724,
+    "documents": 10002,
+    "rules": "b0f905ab821a6e9cbc13775ee179babec115c89015c9925c67f2277f846b8862"
+  },
+  "commit": "409e3f7b9b1d622a53d54146c738631efca0f7e6",
+  "publication_seconds": 5.4083017890225165,
+  "publication_metrics": {
+    "history_object_bytes_before": 62417756,
+    "snapshot_yaml_bytes": 319417724,
+    "new_blob_storage_upper_bound_bytes": 6147358,
+    "tree_commit_storage_upper_bound_bytes": 482059,
+    "history_guard_bytes": 69047173,
+    "history_cap": 268435456,
+    "history_object_bytes_after": 68689553
+  },
+  "publication_parent_blob_reads": 0,
+  "packed_after": {
+    "bytes": 62251044,
+    "seconds": 9.953472098975908
+  },
+  "packed_added_bytes": 194920,
+  "unchanged_documents": 9501,
+  "old_pin_preserved": true,
+  "refresh_note": "Timestamp-only synthetic successful refresh of all retained records in each selected source; no recipe/fact changes or live quota claim.",
+  "seconds": 1509.9223504660185,
+  "peak_self_rss_kib": 93128,
+  "peak_largest_child_rss_kib": 93128,
+  "implementation_commit": "93d1e6fea",
+  "execution_context": "Local full-parent and status qualifications plus focused tests overlapped; wall times are not isolated population percentiles."
+}

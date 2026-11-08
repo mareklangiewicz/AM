@@ -1,0 +1,68 @@
+{
+  "synthetic": true,
+  "live_acquisition": false,
+  "batch_size": 500,
+  "parent": "409e3f7b9b1d622a53d54146c738631efca0f7e6",
+  "source_head": "3076b869bc100cb7dad83118d3fda47d09f39ff2",
+  "implementation_files_sha256": {
+    "publication.py": "b95a4f8ced4282454d6f39acc95119db7ee810fc9f0ce7789a5d43bca7deb6b6",
+    "incremental.py": "470a1df84bf14d60a1d76898775f2b10eb5d6b90f84cdea0ce37288ca139922a",
+    "contracts.py": "f5ef7ef81e3f2ceaf56ee3ab2cb8db4bdf1ce27fd3ae1dd599e75655308085da",
+    "wire_validation.py": "010a409a59f9de2f23e9e4f83b2f437e3e1af605f51657073f533e29159adb99",
+    "yaml_publication.py": "3fc8b9e31bb37eaba1faebb960da78e40abbebc631d5b2e3a844562174c708a9"
+  },
+  "packing": "git repack -ad --window=10 --depth=50; threads=1; compression=6",
+  "rss_scope": "separate Python process high-water and largest child, not simultaneous aggregate",
+  "packed_before": {
+    "bytes": 62251044,
+    "seconds": 0.6713013029657304
+  },
+  "parent_validation": {
+    "mode": "full_parent_fallback",
+    "documents": 10002,
+    "bytes": 319417724,
+    "seconds": 400.99244017497404,
+    "rules": "546b5ab292c0ec4d8ec1b4a4317d53d0e769e588e04d2fcbe92ad2edfb6f6040",
+    "commit": "409e3f7b9b1d622a53d54146c738631efca0f7e6"
+  },
+  "metadata_only_candidate": {
+    "seconds": 0.045183606969658285,
+    "changed_documents": 1,
+    "reused_documents": 10001,
+    "tree_bytes": 319417724,
+    "documents": 10002,
+    "rules": "546b5ab292c0ec4d8ec1b4a4317d53d0e769e588e04d2fcbe92ad2edfb6f6040"
+  },
+  "projection_seconds": 90.10672969795996,
+  "incremental_validation_seconds": 32.11045823903987,
+  "candidate": {
+    "changed_documents": 501,
+    "reused_documents": 9501,
+    "tree_bytes": 319417724,
+    "documents": 10002,
+    "rules": "546b5ab292c0ec4d8ec1b4a4317d53d0e769e588e04d2fcbe92ad2edfb6f6040"
+  },
+  "commit": "3ba22745b5f894ddf1efeab99428a748c126d04a",
+  "publication_seconds": 3.6230054710176773,
+  "publication_metrics": {
+    "history_object_bytes_before": 62630974,
+    "snapshot_yaml_bytes": 319417724,
+    "new_blob_storage_upper_bound_bytes": 6147070,
+    "tree_commit_storage_upper_bound_bytes": 482059,
+    "history_guard_bytes": 69260103,
+    "history_cap": 268435456,
+    "history_object_bytes_after": 68902484
+  },
+  "publication_parent_blob_reads": 0,
+  "packed_after": {
+    "bytes": 62451569,
+    "seconds": 6.214381535013672
+  },
+  "packed_added_bytes": 200525,
+  "unchanged_documents": 9501,
+  "old_pin_preserved": true,
+  "refresh_note": "Timestamp-only synthetic successful refresh of all retained records in each selected source; no recipe/fact changes or live quota claim.",
+  "seconds": 533.7925326800323,
+  "peak_self_rss_kib": 93908,
+  "peak_largest_child_rss_kib": 93908
+}

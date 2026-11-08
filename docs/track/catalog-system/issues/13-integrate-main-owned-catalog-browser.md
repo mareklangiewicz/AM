@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: claimed
+Status: resolved
 Assignee: codex
 Blocked by: 11, 12
 
@@ -64,3 +64,23 @@ inventory has no browser/device, so real-browser/accessibility/performance and
 comprehension checks remain outstanding. Installation-choice/channel-policy display
 also needs the accepted evidence journey checked before resolution. Status stays
 claimed; ticket 14 has not been started. No activation or remote operation occurred.
+
+## Answer — November 8, 2026
+
+Marek explicitly accepted deferring physical-device, screen-reader and human
+comprehension evidence, while retaining measured performance misses, and asked
+to continue qualification. This supersedes those unresolved acceptance gates;
+it does not establish device coverage, comprehension or a timing target pass.
+The [implementation evidence](../implementation-13.md) records actual desktop/
+narrow Chromium and desktop Firefox journeys, strict pinned/native-fetch reads,
+navigation/focus fixes, recipe and independent-health behavior, per-source
+provenance publication/readback and the accepted practical UI priorities.
+
+The saved largest-source detail sample remains 444–502 ms against the 500 ms
+target; physical device/screen-reader/comprehension checks remain deferred. The
+5,000-app directory sample is synthetic; largest-supported-document and complete
+tree/history qualification continue under 14. Installation choice/channel policy
+remains explicitly unavailable rather than inferred from recipe classification.
+Resolve this integration slice with these accepted limitations, preserving all
+earlier measured failures and evidence. No new deployment or collector operation
+is authorized by this resolution.

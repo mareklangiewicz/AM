@@ -1,0 +1,49 @@
+{
+  "projection_not_measured_year": true,
+  "source_count_reference": 5000,
+  "batch_size": 500,
+  "hours": 8760,
+  "prior_evidence": "docs/track/catalog-system/rehearsal-12.json",
+  "prior_evidence_source": "e77d85f0d0003dd56590284047da96cfbb98b0d9",
+  "packing": "git repack -ad --window=10 --depth=50; threads=1; compression=6",
+  "assumptions": [
+    "Each phase packed size is reachable history at its recorded revision, not remote storage.",
+    "Historical v3 global provenance layout; projections do not qualify current per-source layout.",
+    "Linear per-source scaling from one short synthetic change sample; source/release/assets growth outside that sample is not bounded.",
+    "500 successful hourly refreshes generally change timestamps even when release facts are unchanged; saved-receipt replay is only a zero-new-observation control.",
+    "V2 annual churn, independent status history and new 5000-source seed storage still require measurement; totals below are partial v3 projections."
+  ],
+  "existing_history_cap_bytes": 268435456,
+  "scenarios": [
+    {
+      "scenario": "saved_receipt_replay_control",
+      "sample_phase": "replay",
+      "sample_packed_delta_bytes": 363,
+      "sample_changed_sources": 0,
+      "assumed_changed_sources_per_hour": 0,
+      "annual_runs": 8760,
+      "projected_v3_added_packed_bytes": 3179880,
+      "minimum_v3_history_cap_with_25_percent_unused": 95504202
+    },
+    {
+      "scenario": "three_source_fact_edit_each_hour",
+      "sample_phase": "subset",
+      "sample_packed_delta_bytes": 1049,
+      "sample_changed_sources": 3,
+      "assumed_changed_sources_per_hour": 3,
+      "annual_runs": 8760,
+      "projected_v3_added_packed_bytes": 9189240,
+      "minimum_v3_history_cap_with_25_percent_unused": 103516682
+    },
+    {
+      "scenario": "five_hundred_source_wide_edit_each_hour",
+      "sample_phase": "full",
+      "sample_packed_delta_bytes": 228804,
+      "sample_changed_sources": 499,
+      "assumed_changed_sources_per_hour": 500,
+      "annual_runs": 8760,
+      "projected_v3_added_packed_bytes": 2008339720,
+      "minimum_v3_history_cap_with_25_percent_unused": 2769050655
+    }
+  ]
+}

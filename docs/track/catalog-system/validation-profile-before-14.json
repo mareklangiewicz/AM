@@ -1,0 +1,25 @@
+{
+  "fixture": "tools/catalog-contract/fixtures/source.yaml",
+  "comparison": [
+    {
+      "path": "full_decode_shell",
+      "iterations": 30,
+      "seconds": 1.243600037007127,
+      "fixture_bytes": 411
+    },
+    {
+      "path": "same_awk_stdin",
+      "iterations": 30,
+      "seconds": 0.2437145909643732,
+      "fixture_bytes": 411
+    },
+    {
+      "path": "yaml_load_canonical",
+      "iterations": 30,
+      "seconds": 0.010014433995820582,
+      "fixture_bytes": 411
+    }
+  ],
+  "source_module_sha256": "853d18c90256117dd1088cfbe4a6617bf820a0d9a3a37d4c674a8cbd1283018b",
+  "scope": "Thirty local serial samples per path, not end-to-end throughput or browser timing."
+}

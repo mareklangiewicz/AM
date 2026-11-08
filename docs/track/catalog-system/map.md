@@ -130,7 +130,7 @@ branches are not merged or pushed automatically (home push guidance applies).
 ## Implementation route
 
 Planning is complete. Marek started local implementation on November 8; tickets 11–12
-are resolved locally and ticket 13 is claimed with a [local implementation checkpoint](implementation-13.md); real-browser and educational acceptance remain outstanding. Routine implementation mechanics follow the accepted
+are resolved locally, and ticket 13 is resolved with [recorded evidence and accepted limitations](issues/13-integrate-main-owned-catalog-browser.md#answer--november-8-2026). Ticket 14 is claimed for qualification. Routine implementation mechanics follow the accepted
 spec without repeating product interviews. Remote operations keep their explicit
 approval boundaries.
 
@@ -138,8 +138,8 @@ approval boundaries.
 | --- | --- | --- |
 | [11 resolved](issues/11-implement-contracts-readers-and-collection-interface.md) | 10 | Contracts, strict readers and shared collection/validation interface; [focused local acceptance](implementation-11.md), with format 2 preserved. |
 | [12 resolved](issues/12-implement-incremental-publication-and-final-health.md) | 11 | Incremental Git publication, final health and isolated workflow permissions; [local acceptance and shared rehearsal](implementation-12.md), with one explicit saved-source refusal. |
-| [13 claimed](issues/13-integrate-main-owned-catalog-browser.md) | 11, 12 | Main-owned A/B/C browser, context/provenance/health and real-browser checks. |
-| [14](issues/14-verify-scale-compatibility-and-rollback.md) | 11, 12, 13 | Shared scale/history, compatibility and rollback evidence. |
+| [13 resolved](issues/13-integrate-main-owned-catalog-browser.md) | 11, 12 | Main-owned A/B/C browser and real-browser checks; device/comprehension deferred and timing misses retained by Marek's explicit acceptance. |
+| [14 claimed](issues/14-verify-scale-compatibility-and-rollback.md) | 11, 12, 13 | Shared scale/history, compatibility and rollback evidence. |
 | [15](issues/15-prepare-reviewed-catalog-rollout-package.md) | 14 | Exact rollout/rollback package for explicit remote-operation review. |
 
 Latest implementation evidence, November 8: Chromium desktop/narrow and Firefox
@@ -147,7 +147,7 @@ checks pass; physical-device/comprehension limits remain with 13. Independent
 [scale preflight](preflight-14.md) exposes an oversized central provenance document
 at 5,000 apps, corrected by Marek’s accepted per-source partition layout.
 The same preflight records partition-size checks, synthetic scheduling, current v2 consumer inventory and
-corrective old-pin recovery. Ticket 14 remains open/unclaimed; these are preparatory
+corrective old-pin recovery. Ticket 14 was then open/unclaimed; these were preparatory
 results rather than full workload/history qualification.
 The [schema-transition follow-up](preflight-14.md#collectorschema-revision-transition--november-8-2026)
 also reproduces and fixes a collector/publisher HEAD default that could publish

@@ -2,7 +2,8 @@
 
 Type: task
 Label: implementation:task
-Status: open
+Status: claimed
+Assignee: codex
 Blocked by: 11, 12, 13
 
 ## Outcome
@@ -74,3 +75,20 @@ and trusted publisher defaults with the exact parent's schema pin, and adds
 cross-validator/publication refusal checks. This is preparatory compatibility
 evidence; ticket 13's remaining gates and this ticket's workload/history/selection
 requirements remain open.
+
+## Qualification started — November 8, 2026
+
+Claimed after Marek accepted ticket 13's explicit device/comprehension deferrals
+and retained timing misses. Continue from the preserved preflight/rehearsal;
+exercise a complete synthetic 5,000-source tree, then measure affected resource,
+history, maintained-selection and recovery checks. No live capacity claim or
+remote operation follows from this claim.
+
+## Qualification checkpoint — November 9, 2026
+
+The [qualification package](../qualification-14.md) records completed 5,000-source,
+incremental, dual-output, status-retention, maintained-selection and exact retained
+site-restore checks. Marek accepted the synthetic 2 MiB timing exception; ordinary
+timing targets and recorded misses remain. Annual dual-output capacity and the
+conflicting published source remain explicit unresolved gates. Status stays claimed;
+no activation or remote mutation is implied.
