@@ -9,15 +9,11 @@ import time
 
 import host_catalog as host
 import contracts
-from yaml_publication import load_local, tree_documents
 from bounded import unique_object
 from provenance import Evaluator
 from incremental import Snapshot,Records,Candidate
 from writer import document
 from yaml_publication import schema_url
-
-LIMITS=dict(max_file_bytes=host.FILE_CAP,max_files=1024,max_tree_bytes=1024*1024*1024)
-
 
 def verify_checkout_inputs(inputs, registry):
     """Pins describe actual maintained bytes, including independently pinned inputs."""
@@ -158,7 +154,9 @@ def validate(args):
             if path.is_file():
                 if path.stat().st_size>host.FILE_CAP: raise ValueError('document bound')
                 tree[path.relative_to(args.candidate).as_posix()]=path.read_bytes()
-        tree_documents(tree,LIMITS)
+        # Use the same bounded validator as collection and trusted publication;
+        # the older materializing helper's 1,024-file profile cannot fit 5,000 sources.
+        Candidate(None,tree,'format-2')
 
 
 def main(argv=None):

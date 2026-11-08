@@ -367,6 +367,18 @@ class Contracts(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError,'checkout differs from schemas input pin'):
                     interface.verify_checkout_inputs(inputs,registry)
 
+    def test_validate_compatibility_tree_above_old_file_cap(self):
+        from writer import document
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp);(root/'repositories').mkdir()
+            apps={};template=repository();template['releases']={}
+            for rid in range(1,1026):
+                app=f'compat-{rid:04d}';apps[app]=rid
+                obj=dict(template,repository_id=rid,repository='synthetic/'+app)
+                (root/f'repositories/{rid}.yaml').write_text(document(obj))
+            (root/'apps.yaml').write_text(document(dict(format=2,schema=template['schema'],apps=apps)))
+            interface.main(['validate','--candidate',str(root),'--channel','format-2'])
+
     def test_normalization_time_fallback_is_explicit_and_generated_files_are_stable(self):
         from bounded import normalize
         raw=[dict(id=1,draft=False,tag_name='v1',html_url='https://example.org/v1',published_at=None,created_at=OLD,prerelease=False,assets=[])]

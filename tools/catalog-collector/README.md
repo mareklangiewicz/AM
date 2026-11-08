@@ -276,6 +276,12 @@ objects in the disposable staging repository; the last-good ref stays unchanged.
 Logical YAML tree/document bounds remain separate. Passing this guard does not
 establish the pending 12-month history/capacity target.
 
+Explicit `validate --channel format-2` uses that same candidate validator and its
+20,000-document / 1 GiB profile, rather than inheriting the older materializing
+helper's 1,024-file limit. A real 1,025-source compatibility fixture exercises the
+former refusal boundary. The historical `yaml_publication.load_local` helper
+retains its old bounded profile; installed numeric-pin shell reads do not use it.
+
 New collection flags expose source/request/response/total-byte/time/reserve
 settings. The private command allows 10,000 enrolled sources, default batch 500
 and request allowance 750; actual quota/reserve and byte/time guards still stop
