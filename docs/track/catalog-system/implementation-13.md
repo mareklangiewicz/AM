@@ -85,3 +85,14 @@ rollback remain tickets 14–15/rollout evidence. No AM push, acquisition, workf
 dispatch, source enrollment, public channel activation, Pages deployment, installed
 host delivery or yadm pointer change occurred. Ticket-12 saved rehearsal is reused
 unchanged; it was not rerun or upgraded into scale/browser qualification.
+
+## Quieter browsing — November 8, 2026
+
+Marek requested shorter visible copy with longer explanations behind nearby “?”
+buttons. Context help now covers search/platform inference, observation/history,
+identity/recipe evidence, refresh, snapshots and health measurements. Short factual
+labels and failed/unknown/partial states remain visible; exact contextual evidence
+is retained in help or collapsed revision details. Native dialogs have named
+triggers, Close/Escape handling and focus restoration; Vim shortcuts defer to the
+context dialog. Syntax, the ten existing transport checks and whitespace pass.
+Real-browser interaction/accessibility acceptance remains outstanding.

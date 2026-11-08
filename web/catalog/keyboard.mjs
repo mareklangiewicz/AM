@@ -7,6 +7,8 @@ export function installKeyboard({document,window,cycle,help}) {
  function move(step){const items=targets(),i=items.indexOf(document.activeElement);focus(items[i<0?(step>0?0:items.length-1):Math.max(0,Math.min(items.length-1,i+step))]);}
  const handler=e=>{
   if(e.defaultPrevented||e.isComposing)return;
+  // Context dialogs keep native Escape, Tab and button activation.
+  if(e.target.closest('dialog[open]')&&!help.open)return;
   if(help.open){if(e.key==='Escape'){e.preventDefault();help.close();}return;}
   if(e.key==='Escape'){document.activeElement?.blur();scope='all';lastG=0;return;}
   if(e.target.closest('input,select,textarea,[contenteditable]:not([contenteditable="false"])'))return;
