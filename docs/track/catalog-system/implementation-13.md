@@ -305,3 +305,17 @@ mobile result. Receipts and the disposable measurement script are preserved in
 `/home/marek/Documents/Codex/am-browser-review-20261108/navigation-followup/`.
 Ticket 13 stays claimed; actual mobile/Firefox, comprehension and broader remaining
 journeys/scale evidence are not established by this follow-up.
+
+
+Follow-up source `06bc4bbb8bf9ec6ef65fe9c6fe576e6164906911` deployed in
+[run 42493953134](https://github.com/mareklangiewicz/AM/actions/runs/42493953134),
+with both CI gates passing. Public HTTPS readback matched seven browser/reader
+source files byte-for-byte and the delivery configuration's exact source revision.
+The bundled saved review snapshot is `cfff4a97a36a0bf9649d18f76fa0e7ba2211a58a`;
+508 identities / 499 sources, with the same tied-tag refusal and original ages.
+The public-site Chromium run passed four checks in 12.3 s, with eight deliberately
+skipped local-only failure/channel-fixture cases. No controlled HTTP responses
+were installed in those four public checks. Readback receipt and public browser
+captures are under `navigation-followup/` in the evidence directory above. This
+reuses the existing publication boundary; no collector or installed-host operation
+was performed. This documentation receipt does not require rebuilding the site.
