@@ -67,7 +67,7 @@ not production freshness, scale, recipe-evidence or accessibility acceptance.
 The normal catalog reader mode remains available with null delivery configuration;
 main-branch deployment still has its separate explicit input/activation gate.
 
-Deployment status, November 8: prepared/pushed, but GitHub rejects dispatch with
-HTTP 422 “Actions has been disabled for this repository” despite enabled settings.
-The previous live site remains published. See the ticket-13 checkpoint for receipts
-and the exact retry route once GitHub restores execution.
+Deployment status, November 8: live at https://mareklangiewicz.pl/AM/ from
+`d4dcb80f45f67b520de599e71a5b3b10d1a3c36a`, after Marek enabled fork Actions.
+Build/deploy run 42476898945 succeeded; anonymous public readback matched source
+and sampled saved-data hashes. DOM/accessibility/performance acceptance is pending.

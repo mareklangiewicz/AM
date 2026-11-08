@@ -152,3 +152,31 @@ is not established here. Resolve that external restriction, then dispatch
 `catalog-pages.yml` with ref browser-review and verify artifact/HTTPS readback.
 The existing live prototype is unchanged; no new browser/CORS/deployment acceptance
 is claimed. Future unfinished browser iteration publishing is already authorized.
+
+### Public review deployed — November 8, 2026
+
+Marek enabled Actions through GitHub's fork opt-in UI. He reported the generic
+notice about avoiding wasted compute on forks. That points to the fork activation
+gate rather than observed rate-limit enforcement; the earlier contradictory REST
+state is not explained by the available evidence. No volume penalty is established.
+The subsequent browser-review dispatch was accepted.
+
+[Pages run 42476898945](https://github.com/mareklangiewicz/AM/actions/runs/42476898945)
+completed build and deploy successfully from source
+`d4dcb80f45f67b520de599e71a5b3b10d1a3c36a`. Live URL:
+https://mareklangiewicz.pl/AM/ (redirects to web/catalog/ with query/hash retained).
+The labelled review snapshot is `c8f35a86d93e286e05b5816b1712e8f3ebaeefc9`, with
+508 identities / 499 sources and explicit refusal of source 1245849062.
+
+Anonymous HTTPS readback checked 12 files: root, six byte-identical browser/reader
+source files, generated delivery configuration, three catalog roots and source
+0x808. Configuration matches the deployed revision; the four fetched YAML files
+match hashes predicted from the checked local saved conversion with the deployed
+schema/input revision. Receipt:
+`/home/marek/Documents/Codex/am-browser-review-20261108/public-readback.json`.
+This establishes deployment/source/data delivery, not DOM execution, actual browser
+CORS, keyboard, mobile, accessibility or performance acceptance. Those remain open.
+
+Only YAML release catalog and browser-review workflows are active; all previously
+disabled unrelated workflows and the old prototype deployer remain disabled.
+No collector dispatch, enrollment or installed-host change occurred.
