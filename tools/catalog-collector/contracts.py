@@ -7,6 +7,7 @@ import subprocess
 import tempfile
 import yaml
 from writer import document
+from yaml_publication import SAFE_LOADER
 from retention import observation
 from retention_v3 import merge
 
@@ -77,7 +78,7 @@ def decode(raw, cap=FILE_CAP):
                               capture_output=True,env={'PATH':'/usr/bin:/bin','AM_YAML_MAX_INPUT_BYTES':str(cap)})
         if result.returncode:
             raise ValueError(result.stderr.decode('utf-8','replace').strip())
-    obj=yaml.safe_load(raw)
+    obj=yaml.load(raw,Loader=SAFE_LOADER)
     if encode(obj)!=raw:
         raise ValueError('noncanonical document')
     return obj

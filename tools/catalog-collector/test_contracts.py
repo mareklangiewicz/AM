@@ -103,6 +103,18 @@ class Contracts(unittest.TestCase):
                         schema=json.loads((ROOT/'schemas/catalog'/f'{kind}.schema.json').read_text())
                         self.assertFalse(jsonschema.Draft202012Validator(schema).is_valid(obj))
 
+    def test_safe_loader_implementations_preserve_validated_values(self):
+        import yaml
+        compiled=getattr(yaml,'CSafeLoader',yaml.SafeLoader)
+        for path in sorted(FIXTURES.glob('*.yaml')):
+            if path.name.startswith('bad-'):continue
+            raw=path.read_bytes()
+            with self.subTest(fixture=path.name):
+                with patch.object(c,'SAFE_LOADER',yaml.SafeLoader):python=decode(raw)
+                with patch.object(c,'SAFE_LOADER',compiled):fast=decode(raw)
+                self.assertEqual(fast,python)
+                self.assertEqual(encode(fast),raw)
+
     def test_portable_awk_fixture_parity(self):
         for command in (['mawk'],['gawk'],['busybox','awk']):
             self.assertIsNotNone(shutil.which(command[0]))
