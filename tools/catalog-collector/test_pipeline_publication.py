@@ -88,6 +88,24 @@ class Pipeline(unittest.TestCase):
         self.assertEqual(read.returncode,0,read.stderr)
         self.assertNotIn(b'Synthetic metadata correction',read.stdout)
 
+    def test_shallow_parent_publication_preserves_remote_history_and_old_pin(self):
+        self.invoke();transport=p.Transport(str(self.remote));ref=p.REFS['format-3']
+        first=self.head('format-3');before=c.read_local(self.remote,first)
+        git(self.stage,'fetch','--no-tags',str(self.remote),first)
+        snapshot=Snapshot(self.stage,first)
+        descriptor=c.decode(snapshot['catalog.yaml']);descriptor['producer']=dict(id=124,attempt=1)
+        second=p.publish(self.stage,Candidate(snapshot,{'catalog.yaml':c.encode(descriptor)}),first,transport,ref)['commit']
+        fresh=self.root/'shallow.git';git(self.root,'init','--bare','--quiet','--template=',str(fresh))
+        self.assertEqual(transport.fetch(fresh,ref),second)
+        self.assertEqual(git(fresh,'rev-parse','--is-shallow-repository').decode().strip(),'true')
+        with self.assertRaises(subprocess.CalledProcessError):git(fresh,'cat-file','-e',first)
+        parent=Snapshot(fresh,second)
+        descriptor=c.decode(parent['catalog.yaml']);descriptor['producer']=dict(id=125,attempt=1)
+        result=p.publish(fresh,Candidate(parent,{'catalog.yaml':c.encode(descriptor)}),second,transport,ref)
+        self.assertEqual(result['state'],'confirmed')
+        self.assertEqual(git(self.remote,'rev-parse',result['commit']+'^').decode().strip(),second)
+        self.assertEqual(c.read_local(self.remote,first),before)
+
     def test_success_and_status_confirmation(self):
         result=self.invoke()
         self.assertTrue(all(row['state']=='confirmed' for row in result['outcomes'].values()))
@@ -127,6 +145,14 @@ class Pipeline(unittest.TestCase):
         source=c.decode(self.target[path]);source['schema']=c.header('repository','b'*40)['schema']
         self.target[path]=c.encode(source)
         self.write_artifact()  # Hashes agree; the cross-document binding must refuse.
+        result=self.invoke()
+        self.assertEqual(result['validation'],'failed')
+        self.assertEqual(self.head('format-2'),self.parent)
+        self.assertIsNone(self.head('format-3'))
+        self.assertEqual(result['outcomes']['status-1']['state'],'confirmed')
+    def test_invalid_compatibility_artifact_blocks_both_parallel_channel_writes(self):
+        self.legacy['apps.yaml']=b'invalid compatibility bytes\n'
+        self.write_artifact()  # Matching hashes cannot bypass either domain validator.
         result=self.invoke()
         self.assertEqual(result['validation'],'failed')
         self.assertEqual(self.head('format-2'),self.parent)

@@ -53,6 +53,7 @@ jobs:
           python-version: '3.12'
       - run: python3 -m pip install 'PyYAML==6.0.3'
       - name: Prepare saved public observations for browser review
+        if: github.ref == 'refs/heads/browser-review'
         shell: bash
         run: |
           set -euo pipefail
@@ -61,9 +62,13 @@ jobs:
           python3 -B tools/catalog-browser/review_snapshot.py --repo . --baseline "$baseline" \
             --source "$GITHUB_SHA" --destination "$RUNNER_TEMP/review-data"
           python3 tools/catalog-browser/stage.py "$RUNNER_TEMP/catalog-pages" --review-data "$RUNNER_TEMP/review-data"
+      - name: Prepare the main-owned live-channel browser
+        if: github.ref == 'refs/heads/main-marek'
+        run: python3 tools/catalog-browser/stage.py "$RUNNER_TEMP/catalog-pages"
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
         with:
           path: ${{ runner.temp }}/catalog-pages
+          retention-days: 30
   deploy:
     needs: build
     if: github.ref == 'refs/heads/browser-review' || (inputs.deploy && vars.CATALOG_BROWSER_ENABLED == 'true')

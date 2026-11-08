@@ -1,21 +1,15 @@
 """Validate, publish and read the maintained YAML catalog at exact Git commits."""
-import os
-import pathlib
 import re
-import subprocess
-import tempfile
 
 import yaml
 
 # The distributed reader validates the grammar before either safe loader runs.
 SAFE_LOADER = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
 from writer import document
+from wire_validation import validate_wire
 
 from bounded import require
 from publication import REF, git  # Reuse existing isolated local Git invocation.
-
-HERE = pathlib.Path(__file__).resolve().parent
-
 
 def check_references(apps, repositories):
     for rid, repository in repositories.items():
@@ -31,14 +25,7 @@ def decode_document(raw, max_file_bytes):
     """Validate the original bytes before a general YAML parser can normalize them."""
     if len(raw) > max_file_bytes:
         raise ValueError('file allowance')
-    with tempfile.TemporaryDirectory(prefix='yaml-validate-') as directory:
-        path = pathlib.Path(directory)/'document.yaml'
-        path.write_bytes(raw)
-        env = dict(os.environ, AM_YAML_MAX_INPUT_BYTES=str(max_file_bytes))
-        run = subprocess.run(['sh', str(HERE.parent.parent/'modules/catalog-yaml-reader.am'), 'validate', str(path)],
-                             env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        if run.returncode:
-            raise ValueError(run.stderr.decode('utf-8', errors='replace'))
+    validate_wire(raw,max_file_bytes)
     return yaml.load(raw, Loader=SAFE_LOADER)
 
 

@@ -6,6 +6,7 @@ from pathlib import Path
 import re
 import subprocess
 import time
+from concurrent.futures import ThreadPoolExecutor
 
 import host_catalog as host
 import contracts
@@ -61,10 +62,13 @@ def collect(args):
             for key in ('source','policy','recipes','rules','schemas')}
     if args.output.exists(): raise ValueError('output must not exist')
     started_at=host.utc()
-    legacy_parent=Snapshot(args.repo,args.parent,'format-2')
-    previous=Records(legacy_parent)
     if bool(args.v3_repo)!=bool(args.v3_parent): raise ValueError('v3 parent needs repository and exact pin')
-    prior=Snapshot(args.v3_repo,args.v3_parent) if args.v3_parent else None
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        legacy_future=pool.submit(Snapshot,args.repo,args.parent,'format-2')
+        target_future=pool.submit(Snapshot,args.v3_repo,args.v3_parent) if args.v3_parent else None
+        legacy_parent=legacy_future.result()
+        prior=target_future.result() if target_future else None
+    previous=Records(legacy_parent)
     # A collector-only revision must not rebind unchanged source documents.
     # Verification below refuses reuse if the schema checkout actually changed.
     if prior and args.schemas_revision is None:
@@ -185,11 +189,16 @@ def main(argv=None):
     v=sub.add_parser('validate')
     v.add_argument('--candidate',type=Path,required=True)
     v.add_argument('--channel',choices=('format-2','format-3','status-1'),default='format-3')
+    schema=sub.add_parser('schema-revision',help='Read the schema pin from one exact bounded catalog descriptor; no network')
+    schema.add_argument('--repo',type=Path,required=True)
+    schema.add_argument('--parent',type=contracts.pin,required=True)
     for key in ('source','policy','recipes','rules','schemas'):
         v.add_argument('--expected-'+key,type=contracts.pin)
     from pipeline_publication import add_arguments
     add_arguments(sub)
     args=parser.parse_args(argv)
+    if args.operation=='schema-revision':
+        print(contracts.schema_revision(args.repo,args.parent));return
     if args.operation=='publish':
         from pipeline_publication import run
         result=run(args)

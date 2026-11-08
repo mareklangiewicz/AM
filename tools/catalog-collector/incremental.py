@@ -19,6 +19,7 @@ _TRUST=object()
 
 def rules():
     paths=['tools/catalog-collector/incremental.py','tools/catalog-collector/contracts.py',
+           'tools/catalog-collector/wire_validation.py',
            'tools/catalog-collector/writer.py','tools/catalog-contract/definitions.json',
            'modules/catalog-contract-parser.am','modules/catalog-contract-tables.am',
            'modules/catalog-contract-reader.am','modules/catalog-yaml-reader.am','modules/catalog-yaml-parser.am']

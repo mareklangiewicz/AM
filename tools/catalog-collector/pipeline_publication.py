@@ -15,10 +15,11 @@ import re
 import subprocess
 import tempfile
 import time
+from concurrent.futures import ThreadPoolExecutor
 
 import contracts as c
 from bounded import unique_object
-from publication import git,environment,bounded,publish_tree,REF
+from publication import git,environment,publish_tree,REF
 from incremental import Snapshot,Candidate,decode as decode_fact
 from yaml_publication import tree_documents
 
@@ -56,7 +57,7 @@ class Transport:
     def fetch(self,repo,ref):
         commit=self.head(repo,ref)
         if commit is not None:
-            result=self.call(repo,'fetch','--no-tags',self.url,commit)
+            result=self.call(repo,'fetch','--no-tags','--depth=1',self.url,commit)
             if result.returncode: raise ValueError('remote parent unavailable')
         return commit
     def push(self,repo,ref,parent,commit):
@@ -106,8 +107,11 @@ def artifact(directory,*,run,inputs,parents):
     if report['hashes']!=expected: raise ValueError('artifact content hash')
     trees={channel:{name.split('/',1)[1]:raw for name,raw in files.items() if name.startswith(channel+'/')} for channel in expected}
     # Revalidate in the trusted publisher; the artifact's validation receipts are ignored.
-    Candidate(None,trees['format-2'],'format-2')
-    checked=Candidate(None,trees['format-3'])
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        legacy=pool.submit(Candidate,None,trees['format-2'],'format-2')
+        target=pool.submit(Candidate,None,trees['format-3'])
+        legacy.result()
+        checked=target.result()
     docs={path:(meta['root'] if 'root' in meta else dict(kind='repository',repository_id=meta['repository_id'],
               repository=meta['repository'],collected_at=meta['completed_at'])) for path,meta in checked.metadata.items()}
     if docs['catalog.yaml']['inputs']!=inputs or docs['catalog.yaml']['producer']!=run: raise ValueError('descriptor binding')
@@ -296,14 +300,11 @@ def run(args,*,transport=None):
             # from an untrusted artifact's requested schema revision.
             with tempfile.TemporaryDirectory(prefix='am-schema-parent-') as scratch:
                 repo=Path(scratch);git(repo,'init','--bare','--quiet','--template=')
-                fetched=transport.call(repo,'fetch','--no-tags',transport.url,args.expected_v3_parent)
+                fetched=transport.call(repo,'fetch','--no-tags','--depth=1',transport.url,args.expected_v3_parent)
                 if fetched.returncode: raise ValueError('schema parent unavailable')
                 # Only this exact root supplies the schema authority. Candidate
                 # data is fully revalidated below; no parent blob trust is imported.
-                descriptor=c.decode(bounded(['git','-C',str(repo),'-c','core.hooksPath=/dev/null',
-                    'show',args.expected_v3_parent+':catalog.yaml'],env=environment(),cap=c.FILE_CAP))
-                if descriptor['kind']!='catalog':raise ValueError('schema parent descriptor kind')
-                schema_revision=descriptor['inputs']['schemas']
+                schema_revision=c.schema_revision(repo,args.expected_v3_parent)
         if schema_revision is not None: inputs['schemas']=schema_revision
         verify_checkout_inputs(inputs,host.ROOT/'tools/catalog-collector/source-names.json')
         report,trees,docs=artifact(args.candidate,run=run_id,inputs=inputs,parents=parents)

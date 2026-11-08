@@ -3,6 +3,7 @@ import copy
 import hashlib
 import json
 import os
+import io
 import shutil
 from pathlib import Path
 import subprocess
@@ -366,6 +367,30 @@ class Contracts(unittest.TestCase):
                 schema.write_text('changed fixture contract')
                 with self.assertRaisesRegex(ValueError,'checkout differs from schemas input pin'):
                     interface.verify_checkout_inputs(inputs,registry)
+            shallow=root/'shallow'
+            git(root,'clone','--quiet','--depth=1','--no-tags','file://'+str(root),str(shallow))
+            with patch.object(host,'ROOT',shallow):
+                with self.assertRaisesRegex(ValueError,'checkout differs from schemas input pin'):
+                    interface.verify_checkout_inputs(inputs,shallow/'tools/catalog-collector/source-names.json')
+                git(shallow,'fetch','--quiet','--no-tags','--depth=1',str(root),old)
+                interface.verify_checkout_inputs(inputs,shallow/'tools/catalog-collector/source-names.json')
+
+    def test_schema_revision_cli_reads_only_the_exact_bounded_descriptor(self):
+        with tempfile.TemporaryDirectory() as temp:
+            repo=Path(temp);git(repo,'init','--bare','--quiet','--template=')
+            descriptor=documents()['catalog']
+            parent=publish_tree(repo,{'catalog.yaml':encode(descriptor),'repositories/unread.yaml':b'invalid source'},None)
+            with patch.object(c,'decode',wraps=c.decode) as decoder:
+                self.assertEqual(c.schema_revision(repo,parent),PIN)
+                self.assertEqual(decoder.call_count,1)
+            with patch('sys.stdout',new_callable=io.StringIO) as output:
+                interface.main(['schema-revision','--repo',str(repo),'--parent',parent])
+            self.assertEqual(output.getvalue(),PIN+'\n')
+            descriptor['inputs']['schemas']='b'*40
+            bad=publish_tree(repo,{'catalog.yaml':encode(descriptor)},parent)
+            with self.assertRaisesRegex(ValueError,'schema parent descriptor binding'):c.schema_revision(repo,bad)
+            wrong=publish_tree(repo,{'catalog.yaml':encode(documents()['apps'])},bad)
+            with self.assertRaisesRegex(ValueError,'schema parent descriptor kind'):c.schema_revision(repo,wrong)
 
     def test_validate_compatibility_tree_above_old_file_cap(self):
         from writer import document

@@ -338,7 +338,7 @@ def legacy_main():
 
 def main():
     import sys
-    if len(sys.argv)>1 and sys.argv[1] in ('collect','validate','publish'):
+    if len(sys.argv)>1 and sys.argv[1] in ('collect','validate','publish','schema-revision'):
         from collection_interface import main as command
         command(sys.argv[1:])
     else:

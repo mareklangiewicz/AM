@@ -18,6 +18,7 @@ jobs:
       parent: ${{ steps.parents.outputs.parent }}
       v3-parent: ${{ steps.parents.outputs.v3-parent }}
       resolved: ${{ steps.parents.outputs.resolved }}
+      schemas: ${{ steps.parents.outputs.schemas }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
@@ -28,7 +29,7 @@ jobs:
           python-version: '3.12'
       - run: python3 -m pip install 'PyYAML==6.0.3'
       - name: Read pinned original template inputs
-        run: git fetch --no-tags https://github.com/mareklangiewicz/AM.git bbffd15c19d01ef9124fbf99b5b9c41d2661ea22 bb53f3180ec92f862020f8bdccef0f6614015bae
+        run: git fetch --no-tags --depth=1 https://github.com/mareklangiewicz/AM.git bbffd15c19d01ef9124fbf99b5b9c41d2661ea22 bb53f3180ec92f862020f8bdccef0f6614015bae
       - name: Read exact public parents
         id: parents
         env:
@@ -40,15 +41,19 @@ jobs:
           for channel in legacy target; do
             git init --bare --template= "$RUNNER_TEMP/am-catalog/$channel.git"
           done
-          git -C "$RUNNER_TEMP/am-catalog/legacy.git" fetch --no-tags \
+          git -C "$RUNNER_TEMP/am-catalog/legacy.git" fetch --no-tags --depth=1 \
             https://github.com/mareklangiewicz/AM.git refs/heads/release-catalog
           parent=$(git -C "$RUNNER_TEMP/am-catalog/legacy.git" rev-parse FETCH_HEAD)
           echo "parent=$parent" >> "$GITHUB_OUTPUT"
           if [[ "$ENABLE_TARGETS" == true ]]; then
             target=$(git ls-remote --refs https://github.com/mareklangiewicz/AM.git refs/heads/release-catalog-v3 | cut -f1)
             if [[ -n "$target" ]]; then
-              git -C "$RUNNER_TEMP/am-catalog/target.git" fetch --no-tags https://github.com/mareklangiewicz/AM.git "$target"
+              git -C "$RUNNER_TEMP/am-catalog/target.git" fetch --no-tags --depth=1 https://github.com/mareklangiewicz/AM.git "$target"
               echo "v3-parent=$target" >> "$GITHUB_OUTPUT"
+              schemas=$(python3 -B tools/catalog-collector/host_catalog.py schema-revision \
+                --repo "$RUNNER_TEMP/am-catalog/target.git" --parent "$target")
+              git fetch --no-tags --depth=1 https://github.com/mareklangiewicz/AM.git "$schemas"
+              echo "schemas=$schemas" >> "$GITHUB_OUTPUT"
             fi
           fi
           echo 'resolved=true' >> "$GITHUB_OUTPUT"
@@ -94,6 +99,16 @@ jobs:
         with:
           python-version: '3.12'
       - run: python3 -m pip install 'PyYAML==6.0.3'
+      - name: Read retained schema input without changing the checkout
+        if: needs.acquire.outputs.schemas != ''
+        continue-on-error: true
+        env:
+          SCHEMAS: ${{ needs.acquire.outputs.schemas }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$SCHEMAS" =~ ^[0-9a-f]{40}$ ]]
+          git fetch --no-tags --depth=1 https://github.com/mareklangiewicz/AM.git "$SCHEMAS"
       - name: Download this run and attempt's data
         continue-on-error: true
         uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093

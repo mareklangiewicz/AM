@@ -3,13 +3,12 @@ import copy
 import json
 from pathlib import Path
 import re
-import subprocess
-import tempfile
 import yaml
 from writer import document
 from yaml_publication import SAFE_LOADER
 from retention import observation
 from retention_v3 import merge
+from wire_validation import validate_wire
 
 ROOT = Path(__file__).resolve().parents[2]
 DEFINITIONS = json.loads((ROOT/'tools/catalog-contract/definitions.json').read_text())['definitions']
@@ -72,12 +71,7 @@ def encode(obj):
 def decode(raw, cap=FILE_CAP):
     if type(raw) is not bytes or len(raw)>cap:
         raise ValueError('document bound')
-    with tempfile.TemporaryDirectory(prefix='am-contract-') as scratch:
-        path=Path(scratch)/'document.yaml'; path.write_bytes(raw)
-        result=subprocess.run(['sh',str(ROOT/'modules/catalog-contract-reader.am'),'validate',str(path)],
-                              capture_output=True,env={'PATH':'/usr/bin:/bin','AM_YAML_MAX_INPUT_BYTES':str(cap)})
-        if result.returncode:
-            raise ValueError(result.stderr.decode('utf-8','replace').strip())
+    validate_wire(raw,cap,contract=True)
     obj=yaml.load(raw,Loader=SAFE_LOADER)
     if encode(obj)!=raw:
         raise ValueError('noncanonical document')
@@ -276,3 +270,16 @@ def read_local(repo, commit, channel='catalog'):
         tree[path]=local('cat-file','blob',oid.decode(),cap=FILE_CAP)
     validate_tree(tree,channel)
     return tree
+
+
+def schema_revision(repo,commit):
+    """Read only the bounded authority root; do not trust other parent blobs."""
+    from publication import bounded,environment
+    pin(commit)
+    raw=bounded(['git','-C',str(repo),'-c','core.hooksPath=/dev/null','show',commit+':catalog.yaml'],
+                env=environment(),cap=FILE_CAP)
+    descriptor=decode(raw)
+    if descriptor['kind']!='catalog':raise ValueError('schema parent descriptor kind')
+    revision=descriptor['inputs']['schemas']
+    if '/'+revision+'/' not in descriptor['schema']:raise ValueError('schema parent descriptor binding')
+    return revision
