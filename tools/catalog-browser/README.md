@@ -27,9 +27,9 @@ Stage the public artifact into a **new** directory:
 python3 tools/catalog-browser/stage.py /tmp/am-catalog-public
 ```
 
-The artifact contains exactly six source files at their original relative paths,
-plus a root redirect preserving query/hash and `.nojekyll`. Source bytes are
-unchanged. Tests, tracker material, fixtures, preview interception and this README
+The artifact copies the explicit browser, stylesheet and strict-reader allowlist
+at their original relative paths, plus a root redirect preserving query/hash and
+`.nojekyll`. Source bytes are unchanged except the review delivery configuration. Tests, tracker material, fixtures, preview interception and this README
 are excluded. Keep the previous deployed artifact for rollback; staging refuses
 to replace any existing output directory.
 

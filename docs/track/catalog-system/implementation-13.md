@@ -241,3 +241,16 @@ and failure traces for seven days. It adds no public test payload or dependency
 to the site. Mobile emulation is not a physical-device, Firefox or screen-reader
 qualification. Remaining ticket-13 evidence beyond this scoped UI change stays
 open; no broad automated accessibility or pixel-baseline suite was added.
+
+UI iteration `60e7fc2d1df909277ccf564a7516cf75fc91d538` deployed successfully in
+[run 42479212507](https://github.com/mareklangiewicz/AM/actions/runs/42479212507).
+The hosted six-case browser gate passed. The same headless browser suite then ran
+against https://mareklangiewicz.pl/AM/ with real app 0x808: four live checks passed
+in 10.2 seconds; two failure-injection cases were deliberately skipped on public
+data. No fetch wrapper/interception was used for those public journeys. Actual
+public DOM/native fetch, search/source filter, assets, A/B/C navigation, help focus,
+Back/theme and viewport fit were exercised. Live desktop directory and narrow
+app screenshots were visually inspected; light/dark/view/help captures are saved
+under `/home/marek/Documents/Codex/am-browser-review-20261108/ui-60e7fc2d1/`.
+These are scoped Chromium desktop/mobile-emulation results, not full conformance,
+physical-device, Firefox, capacity or educational-comprehension acceptance.
