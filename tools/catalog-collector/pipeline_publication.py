@@ -18,7 +18,7 @@ import time
 
 import contracts as c
 from bounded import unique_object
-from publication import git,environment,publish_tree,REF
+from publication import git,environment,bounded,publish_tree,REF
 from incremental import Snapshot,Candidate,decode as decode_fact
 from yaml_publication import tree_documents
 
@@ -298,8 +298,12 @@ def run(args,*,transport=None):
                 repo=Path(scratch);git(repo,'init','--bare','--quiet','--template=')
                 fetched=transport.call(repo,'fetch','--no-tags',transport.url,args.expected_v3_parent)
                 if fetched.returncode: raise ValueError('schema parent unavailable')
-                parent=Snapshot(repo,args.expected_v3_parent)
-                schema_revision=parent.metadata['catalog.yaml']['root']['inputs']['schemas']
+                # Only this exact root supplies the schema authority. Candidate
+                # data is fully revalidated below; no parent blob trust is imported.
+                descriptor=c.decode(bounded(['git','-C',str(repo),'-c','core.hooksPath=/dev/null',
+                    'show',args.expected_v3_parent+':catalog.yaml'],env=environment(),cap=c.FILE_CAP))
+                if descriptor['kind']!='catalog':raise ValueError('schema parent descriptor kind')
+                schema_revision=descriptor['inputs']['schemas']
         if schema_revision is not None: inputs['schemas']=schema_revision
         verify_checkout_inputs(inputs,host.ROOT/'tools/catalog-collector/source-names.json')
         report,trees,docs=artifact(args.candidate,run=run_id,inputs=inputs,parents=parents)

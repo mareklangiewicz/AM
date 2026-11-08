@@ -237,6 +237,27 @@ class Pipeline(unittest.TestCase):
         self.assertEqual(Snapshot(self.stage,parent).validation['mode'],'full_parent_fallback')
         records=Records(Snapshot(self.stage,self.parent,'format-2'))
         self.assertEqual(records.metadata['123']['completed_at'],OLD)
+
+    def test_incremental_publication_does_not_read_unchanged_source_blobs(self):
+        parent=publish_tree(self.stage,self.target,self.parent)
+        snap=Snapshot(self.stage,parent)
+        descriptor=c.decode(snap['catalog.yaml']);descriptor['producer']['attempt']=3
+        candidate=Candidate(snap,{'catalog.yaml':c.encode(descriptor)})
+        with patch('incremental.rules',return_value='changed'):
+            with self.assertRaisesRegex(ValueError,'validation rules changed before publication'):
+                publish_tree(self.stage,candidate,parent)
+        self.assertEqual(git(self.stage,'rev-parse',REF).decode().strip(),parent)
+        reads=[];original=Snapshot.__getitem__
+        def record(snapshot,path):
+            reads.append(path)
+            return original(snapshot,path)
+        with patch.object(Snapshot,'__getitem__',record):
+            commit=publish_tree(self.stage,candidate,parent)
+        self.assertEqual(reads,[])
+        self.assertEqual(git(self.stage,'rev-parse',commit+'^').decode().strip(),parent)
+        with self.assertRaisesRegex(ValueError,'publication parent differs from validated snapshot'):
+            publish_tree(self.stage,candidate,commit)
+        self.assertEqual(git(self.stage,'rev-parse',REF).decode().strip(),commit)
     def test_status_retention_coverage_unknowns_and_newer_catalog_lag(self):
         previous={};d=documents();docs={'repositories/example.yaml':d['repository']}
         identities={123:('example','example/app')}

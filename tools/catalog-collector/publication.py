@@ -11,12 +11,12 @@ import select
 import subprocess
 import tempfile
 import time
+import zlib
 
 from bounded import require
 
 REF = 'refs/heads/catalog'
-# Intermediate bounded profile: measured published history + 500-source tree is
-# about 141 MB; retain growth headroom without allowing unbounded Git history.
+# Physical Git object-storage safeguard, still subject to annual qualification.
 HISTORY_CAP = 256 * 1024 * 1024
 
 
@@ -31,7 +31,8 @@ def git(repo, *args, data=None, index=None):
                GIT_COMMITTER_NAME='Catalog staging', GIT_COMMITTER_EMAIL='catalog@invalid')
     if index is not None:
         env['GIT_INDEX_FILE'] = str(index)
-    return subprocess.run(['git', '-C', str(repo), '-c', 'core.hooksPath=/dev/null', *args],
+    return subprocess.run(['git', '-C', str(repo), '-c', 'core.hooksPath=/dev/null',
+                           '-c', 'core.looseCompression=6', *args],
                           input=data, env=env, check=True, stdout=subprocess.PIPE,
                           stderr=subprocess.PIPE).stdout
 
@@ -44,13 +45,7 @@ def publish_tree(repo, tree, expected_parent, *, metrics=None):
     # Refuse unbounded local history before advancing the ref. No GC/rewrites.
     objects = Path(git(repo, 'rev-parse', '--path-format=absolute', '--git-path', 'objects').decode().strip())
     object_bytes = sum(p.stat().st_size for p in objects.rglob('*') if p.is_file())
-    snapshot_bytes = sum(map(len, tree.values()))
-    if metrics is not None:
-        metrics.update(history_object_bytes_before=object_bytes,
-                       snapshot_yaml_bytes=snapshot_bytes,
-                       history_guard_bytes=object_bytes+snapshot_bytes,
-                       history_cap=HISTORY_CAP)
-    require(object_bytes+snapshot_bytes <= HISTORY_CAP, 'history_bound')
+    require(object_bytes <= HISTORY_CAP, 'history_bound')
     current = git(repo, 'for-each-ref', '--format=%(objectname)', REF).decode().strip() or None
     require(current == expected_parent, 'stale_parent')
     with tempfile.TemporaryDirectory(prefix='catalog-index-') as scratch:
@@ -67,16 +62,43 @@ def publish_tree(repo, tree, expected_parent, *, metrics=None):
             git(repo, 'read-tree', current, index=index)
         else:
             git(repo, 'read-tree', '--empty', index=index)
+        # Charge compressed new blobs, not the whole uncompressed logical tree.
+        # Git uses the same pinned zlib level for loose writes. Count a full set
+        # of trees plus commit conservatively, even when Git reuses those too.
+        changes={};directories={'':set()};snapshot_bytes=0;blob_bytes=0
+        from incremental import Candidate
+        validated=tree.publication_entries(current) if isinstance(tree,Candidate) else None
+        entries=validated.items() if validated is not None else ((path,(None,len(raw))) for path,raw in tree.items())
+        for path,(known_oid,size) in entries:
+            snapshot_bytes+=size
+            parts=path.split('/')
+            for depth,part in enumerate(parts):
+                directory='/'.join(parts[:depth]);directories.setdefault(directory,set()).add(part)
+            if known_oid is not None and existing.get(path)==(b'100644',b'blob',known_oid):
+                continue
+            raw=tree[path]
+            framed=b'blob '+str(len(raw)).encode()+b'\0'+raw
+            oid=hashlib.sha1(framed).hexdigest()
+            require(known_oid is None or (known_oid==oid and len(raw)==size),'blob_identity')
+            if existing.get(path)!=(b'100644',b'blob',oid):
+                changes[path]=(oid,raw)
+                blob_bytes+=len(zlib.compress(framed,6))
+        tree_bytes=0
+        for children in directories.values():
+            raw_bound=sum(32+len(name.encode('utf-8')) for name in children)
+            tree_bytes+=raw_bound+raw_bound//1000+128
+        guard=object_bytes+blob_bytes+tree_bytes+1024
+        if metrics is not None:
+            metrics.update(history_object_bytes_before=object_bytes,snapshot_yaml_bytes=snapshot_bytes,
+                           new_blob_storage_upper_bound_bytes=blob_bytes,
+                           tree_commit_storage_upper_bound_bytes=tree_bytes+1024,
+                           history_guard_bytes=guard,history_cap=HISTORY_CAP)
+        require(guard<=HISTORY_CAP,'history_bound')
         updates = bytearray()
         for path in sorted(existing.keys() - tree.keys()):
             updates.extend(b'0 '+b'0'*40+b'\t'+path.encode('utf-8')+b'\0')
-        for path, raw in sorted(tree.items()):
-            # Catalog pins and publication use Git's SHA-1 object format. Hash the
-            # blob framing too; content digests alone are not Git object IDs.
-            oid = hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
-            if existing.get(path) == (b'100644', b'blob', oid):
-                continue
-            oid = git(repo, 'hash-object', '-w', '--stdin', data=raw).decode().strip()
+        for path,(oid,raw) in sorted(changes.items()):
+            require(git(repo,'hash-object','-w','--stdin',data=raw).decode().strip()==oid,'blob_identity')
             updates.extend(b'100644 '+oid.encode()+b'\t'+path.encode('utf-8')+b'\0')
         if updates:
             git(repo, 'update-index', '-z', '--index-info', data=bytes(updates), index=index)
@@ -84,10 +106,13 @@ def publish_tree(repo, tree, expected_parent, *, metrics=None):
         parent = ['-p', current] if current else []
         commit = git(repo, 'commit-tree', oid, *parent,
                      data=b'Validated local catalog candidate\n').decode().strip()
+        after=sum(p.stat().st_size for p in objects.rglob('*') if p.is_file())
+        # Final actual-size check precedes the only ref advance. A refusal may
+        # leave unreachable staging objects, never a changed last-good ref.
+        require(after<=HISTORY_CAP,'history_bound')
         git(repo, 'update-ref', REF, commit, current or '0' * 40)
         if metrics is not None:
-            metrics['history_object_bytes_after'] = sum(
-                p.stat().st_size for p in objects.rglob('*') if p.is_file())
+            metrics['history_object_bytes_after'] = after
         return commit
 
 

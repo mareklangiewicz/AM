@@ -266,6 +266,16 @@ validation code/schema inputs. Imported validation receipts never establish trus
 a new process or changed rules performs full parent validation again. No durable
 checkpoint/trust store is added. Fallback cost is recorded in collection evidence.
 
+Publication uses the same-process validated candidate's blob IDs/sizes to avoid
+reading or hashing unchanged source bodies again. It checks the exact validated
+parent and current rules before using that metadata. The 256 MiB history guard
+counts existing physical object bytes plus compressed changed-blob growth and
+conservative tree/commit space, with loose compression pinned to level 6. A final
+actual object-size check runs before the ref advance. Failure may leave unreachable
+objects in the disposable staging repository; the last-good ref stays unchanged.
+Logical YAML tree/document bounds remain separate. Passing this guard does not
+establish the pending 12-month history/capacity target.
+
 New collection flags expose source/request/response/total-byte/time/reserve
 settings. The private command allows 10,000 enrolled sources, default batch 500
 and request allowance 750; actual quota/reserve and byte/time guards still stop

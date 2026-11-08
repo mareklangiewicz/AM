@@ -174,6 +174,12 @@ class Candidate(Mapping):
         unchanged=sum(parent.entries.get(path)==entry for path,entry in self.entries.items()) if parent else 0
         self.validation=dict(changed_documents=decoded,reused_documents=unchanged,
                              tree_bytes=sum(size for _,size in self.entries.values()),documents=len(self.entries),rules=rules())
+    def publication_entries(self,expected_parent):
+        """Same-process validated blob metadata; never import receipt trust."""
+        if self.validation['rules']!=rules():raise ValueError('validation rules changed before publication')
+        if self.parent is not None and (not self.parent.trusted() or self.parent.commit!=expected_parent):
+            raise ValueError('publication parent differs from validated snapshot')
+        return self.entries
     def __iter__(self): return iter(self.entries)
     def __len__(self): return len(self.entries)
     def __getitem__(self,path):

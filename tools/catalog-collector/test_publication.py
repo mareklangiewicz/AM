@@ -96,6 +96,30 @@ class Publication(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'yaml_prior_byte_bound'):
             load_local(self.repo, first, max_file_bytes=1)
 
+    def test_history_guard_counts_compressed_growth_and_preserves_tip_on_overflow(self):
+        publication.git(self.repo,'config','core.looseCompression','0')
+        tree={'apps.yaml':b'a'*65536,'repositories/1.yaml':b'b'*65536}
+        metrics={}
+        with patch.object(publication,'HISTORY_CAP',32768):
+            first=publication.publish_tree(self.repo,tree,None,metrics=metrics)
+            self.assertGreater(metrics['snapshot_yaml_bytes'],metrics['history_cap'])
+            self.assertLessEqual(metrics['history_object_bytes_after'],metrics['history_guard_bytes'])
+            self.assertLessEqual(metrics['history_guard_bytes'],metrics['history_cap'])
+            before=metrics['history_object_bytes_after']
+            # A no-op tree reuses its blobs instead of charging them again.
+            replay={}
+            second=publication.publish_tree(self.repo,tree,first,metrics=replay)
+            self.assertEqual(replay['new_blob_storage_upper_bound_bytes'],0)
+            self.assertGreaterEqual(replay['history_object_bytes_after'],before)
+            with self.assertRaisesRegex(ValueError,'history_bound'):
+                publication.publish_tree(self.repo,dict(tree,**{'repositories/2.yaml':os.urandom(32768)}),second)
+            self.assertEqual(self.tip(),second)
+            # Even a faulty estimate cannot authorize an over-cap ref advance.
+            with patch.object(publication.zlib,'compress',return_value=b''):
+                with self.assertRaisesRegex(ValueError,'history_bound'):
+                    publication.publish_tree(self.repo,dict(tree,**{'repositories/2.yaml':os.urandom(32768)}),second)
+            self.assertEqual(self.tip(),second)
+
     def test_git_environment_ignores_injected_repository_config_and_credentials(self):
         with patch.dict(os.environ, {'GIT_DIR':'/not-the-repository',
                 'GIT_INDEX_FILE':'/not-the-index','GIT_CONFIG_COUNT':'1',
