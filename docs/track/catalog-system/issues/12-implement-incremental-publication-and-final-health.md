@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: claimed
+Status: resolved
 Assignee: codex
 Blocked by: 11
 
@@ -126,3 +126,26 @@ aliases still refuse; missing upstream type normalization is unchanged. No separ
 literal field was introduced. Full saved-data rehearsal is running from this
 committed source; prior publication/legacy checks remain applicable to unchanged
 code paths.
+
+## Answer — November 8, 2026
+
+Implemented incremental candidate validation/blob reuse, explicit exact-parent
+publication, independent best-effort final health and prepared read/write-isolated
+workflow/Action. Marek's leading-`=` literal media-type amendment is implemented
+across the contract, schemas, writer and shell/browser readers. All 175,073 saved
+asset media types round-trip, including the formerly refused `raw` values.
+
+[Local acceptance](../implementation-12.md) records 11 contract tests, 9 publication
+checks, reused legacy/protocol evidence and the completed saved seed-plus-three
+rehearsal. All 499 valid source blobs survive identical replay exactly; subset and
+full synthetic updates pass. One of 500 original sources is correctly refused for
+tied exact-tag evidence, preserving its old format-2 facts/history rather than
+inventing a target result. This partial seed is explicitly reported, not called
+500-source success or 5,000-source capacity qualification. Ticket 14 reuses the
+receipt and owns scale/history/compatibility/rollback qualification.
+
+No push, live acquisition, workflow dispatch, enrollment, installed-host, Pages,
+public channel or yadm pointer change occurred. Target activation remains disabled.
+Ticket 13 is now unblocked; it owns browser integration and real-browser checks.
+Earlier pending progress notes above are chronological and superseded by this
+accepted literal rule and completed local implementation evidence.
