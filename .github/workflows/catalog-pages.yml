@@ -4,7 +4,8 @@ on:
     branches: [browser-review]
     paths:
       - web/catalog/**
-      - tools/catalog-browser/**
+      - tools/catalog-browser/*.py
+      - tools/catalog-browser/test_catalog.mjs
       - tools/catalog-contract/**
       - tools/catalog-collector/**
       - .github/workflows/catalog-pages.yml

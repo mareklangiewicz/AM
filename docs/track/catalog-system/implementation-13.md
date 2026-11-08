@@ -180,3 +180,22 @@ CORS, keyboard, mobile, accessibility or performance acceptance. Those remain op
 Only YAML release catalog and browser-review workflows are active; all previously
 disabled unrelated workflows and the old prototype deployer remain disabled.
 No collector dispatch, enrollment or installed-host change occurred.
+
+### Browser fetch receiver correction — November 8, 2026
+
+Marek reported `Failed to execute 'fetch' on 'Window': Illegal invocation` on the
+published page. The injected fetch function was stored directly and invoked as
+`this.fetcher(...)`, passing Catalog as its receiver. Browser fetch requires its
+Window receiver; prior arrow-function transports and HTTP byte checks missed this.
+
+A new receiver-sensitive transport test drives actual Catalog channel/document
+reads. `node tools/catalog-browser/test_catalog.mjs` first reproduced the exact
+reported TypeError (11 pass / 1 fail). Binding the injected/default transport to
+globalThis fixes both paths (12 pass). No parser/domain behavior changed. The
+receiver-specific reproduction isolates the cause; broader speculative hypotheses
+and instrumentation were unnecessary. Connected UI inventory still has no browsers,
+so this is a targeted regression test, not claimed real DOM acceptance.
+
+The Pages trigger now excludes tooling README-only changes, preventing deployment
+receipt commits from rebuilding an otherwise unchanged review snapshot. Browser
+source, workflow, tests and build scripts still trigger review deployment.

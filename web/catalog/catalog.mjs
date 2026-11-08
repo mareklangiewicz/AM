@@ -5,7 +5,7 @@ const commit=/^[a-f0-9]{40}$/;
 const catalogPath=/^(catalog|apps|provenance)\.yaml$|^repositories\/[a-z0-9][a-z0-9_.+-]{0,63}\.yaml$/;
 const statusPath=/^(status|statistics)\.yaml$|^runs\/[1-9][0-9]*-[1-9][0-9]*\/(summary\.yaml|sources\/[a-z0-9][a-z0-9_.+-]{0,63}\.yaml)$/;
 export class Catalog {
- constructor(fetcher=fetch,review=null){this.fetcher=fetcher;this.cache=new Map();this.review=review;}
+ constructor(fetcher=fetch,review=null){this.fetcher=fetcher.bind(globalThis);this.cache=new Map();this.review=review;}
  url(pin,path){return this.review?new URL(`../../review-data/${pin}/${path}`,import.meta.url).href:rawURL(pin,path);}
  async resolve(ref){
   if(!['release-catalog-v3','catalog-status-v1'].includes(ref))throw Error('Unsupported channel');

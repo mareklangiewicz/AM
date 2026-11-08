@@ -76,3 +76,13 @@ test('bundled review uses its own content identity without live channel resoluti
  await client.doc(C,'apps.yaml');assert.match(calls[0],new RegExp('/review-data/'+C+'/apps.yaml$'));
  await assert.rejects(client.doc(D,'apps.yaml'),/unavailable/);assert.equal(calls.length,1);
 });
+test('browser fetch keeps its Window receiver for document and channel reads',async()=>{
+ function browserFetch(url){
+  if(this!==globalThis)throw new TypeError("Failed to execute 'fetch' on 'Window': Illegal invocation");
+  return Promise.resolve(new Response(url.includes('api.github.com')?JSON.stringify({object:{sha:C}}):body));
+ }
+ const body=await fixture('apps');
+ const client=new Catalog(browserFetch);
+ assert.equal(await client.resolve('release-catalog-v3'),C);
+ assert.equal((await client.doc(C,'apps.yaml')).kind,'apps');
+});
