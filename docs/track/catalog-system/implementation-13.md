@@ -389,3 +389,22 @@ corrected assertion checks unknown evidence and the absence of a fabricated
 recipe link. The [5,000-app partition measurement](preflight-14.md#accepted-correction-and-partition-check--november-8-2026)
 removes the measured root overflow without raising its limit. Full tree/history
 capacity and physical-device/comprehension acceptance remain open.
+
+
+Final per-source provenance revision `2d2f7fbeceaef17a48a47bd203677aeb4ebdd231`
+deployed in [run 42501013188](https://github.com/mareklangiewicz/AM/actions/runs/42501013188).
+CI passed 14 Node checks and the 12-case Chromium gate. Public readback matched
+seven source files and the exact delivery revision. Review content ID:
+`6c2e2f8ba29754ab2f4e257d8115c9d6004f13ea`, with the same 508 app identities /
+499 valid saved sources and explicit tied-tag refusal.
+
+An extra anonymous native-browser check opened 0x808, observed HTTP 200 at the
+same bundled pin's `provenance/0x808.yaml`, waited for validated architecture
+recipe details and an empty error area, and confirmed exactly one provenance
+partition request and no global provenance request. The unchanged public smoke
+journeys passed six checks in 29.6 s across desktop/narrow Chromium and Firefox;
+twelve local-only cases were deliberately skipped. Receipts, reproduction and
+narrow screenshot: `/home/marek/Documents/Codex/am-browser-review-20261108/partitioned-provenance/`.
+No collection, catalog/status channel activation, enrollment or installed-host
+operation occurred. This closes the measured provenance-root overflow; it does
+not resolve full workload/history or physical-device/comprehension acceptance.

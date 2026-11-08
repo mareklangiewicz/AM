@@ -147,3 +147,11 @@ These pass together with the source/alias coverage cases. The collection overflo
 fixture now binds its preserved source/provenance headers to its actual descriptor
 schema revision; it still verifies byte-exact last-good preservation. Ten trusted
 publication/recovery checks pass with these revision checks enabled.
+
+
+The accepted partition layout is live for saved-data review from
+`2d2f7fbeceaef17a48a47bd203677aeb4ebdd231` (Pages run 42501013188). Actual public
+native fetch confirmed one source partition and no global provenance fetch, with
+six public Chromium/Firefox smoke checks passing. Collector activation remains
+outside this browser-review publication; full workload/history qualification is
+still open.
