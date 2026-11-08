@@ -339,3 +339,12 @@ new enrollment and installed-host delivery keep their explicit authorization
 boundaries. No yadm pointer change belongs to this roadmap. Measurement failure
 that requires changing a material guarantee returns with concrete evidence, not
 a new sequence of routine parameter approvals.
+
+## UI priority update — November 8, 2026
+
+Marek prioritizes a pleasant UI for typical users and explicitly relaxed WCAG
+conformance from a hard requirement to advisory guidance. Keep useful keyboard,
+focus, semantic-control and readable-layout basics; no compliance gate should
+override visual quality. Use a small set of real browser smoke checks for core
+journeys and desktop/narrow-screen layout. This supersedes earlier wording that
+would require WCAG qualification before publishing a review iteration.

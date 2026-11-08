@@ -207,3 +207,37 @@ app roots. Receipt: `/home/marek/Documents/Codex/am-browser-review-20261108/fetc
 The regression test goes from the exact TypeError to passing; real-browser
 verification still requires a connected browser. Opening the IAB was attempted
 and returned `Browser is not available: iab`.
+
+### Practical UI and small real-browser suite — November 8, 2026
+
+Marek requested modest end-to-end coverage and a nicer typical-user UI, explicitly
+relaxing WCAG from a hard gate to guidance. The spec and browser-delivery owner
+record that steering. No standards compliance claim is required for this iteration.
+
+Installed a pinned Playwright test dependency (1.65.0) and its headless Chromium
+158 test engine. This operates independently of connected tabs/extensions. The
+new three-journey suite runs at 1280×900 and 390×844: actual staged-page startup and
+native fetch, name/source search, release/assets, contextual help/Escape/focus,
+all A/B/C views, Back/theme; directory fit and hidden source controls; failed
+source fetch with usable directory and same-URL retry. First run reproduced
+visible source-only controls on both sizes. The repaired suite passes six checks
+in 7.2 seconds locally; 12 contract/transport checks also pass.
+
+A mutation check temporarily removed the fetch binding, ran the actual Chromium
+journey and reproduced Illegal invocation in the rendered error context. The
+source was restored automatically; final tests use the corrected transport. This
+confirms the new suite catches the previously shipped browser-only regression.
+
+Replaced conflicting inline positioning with a small stylesheet: normal toolbar
+view controls, prominent app search, compact cards, source filters only after
+selection, retry only on errors, and a shorter detail header. Grouped/collapsed
+recipe/source/asset metadata keeps release downloads reachable; custom recipe
+review links remain prominent and unknown/partial states stay visible. Native
+keyboard/focus behavior is retained. Inspected desktop/mobile light and desktop
+dark screenshots; screenshots/traces are disposable test output.
+
+CI runs these six browser checks before staging/deployment and stores screenshots
+and failure traces for seven days. It adds no public test payload or dependency
+to the site. Mobile emulation is not a physical-device, Firefox or screen-reader
+qualification. Remaining ticket-13 evidence beyond this scoped UI change stays
+open; no broad automated accessibility or pixel-baseline suite was added.

@@ -150,3 +150,12 @@ recipe execution and authenticity, using the accepted app examples.
 Decision requested: accept explicit-refresh/error behavior and these performance/
 accessibility/browser-check targets. Implementation measurements must establish
 whether they are met; remote publishing remains separately authorized.
+
+## UI priority update — November 8, 2026
+
+Marek prioritizes a pleasant UI for typical users and explicitly relaxed WCAG
+conformance from a hard requirement to advisory guidance. Keep useful keyboard,
+focus, semantic-control and readable-layout basics; no compliance gate should
+override visual quality. Use a small set of real browser smoke checks for core
+journeys and desktop/narrow-screen layout. This supersedes earlier wording that
+would require WCAG qualification before publishing a review iteration.

@@ -9,7 +9,7 @@ import re
 
 ROOT = Path(__file__).resolve().parents[2]
 FILES = (
-    'web/catalog/index.html', 'web/catalog/app.mjs',
+    'web/catalog/index.html', 'web/catalog/style.css', 'web/catalog/app.mjs',
     'web/catalog/catalog.mjs', 'web/catalog/keyboard.mjs', 'web/catalog/delivery.mjs',
     'tools/catalog-contract/reader.mjs', 'tools/catalog-contract/definitions.mjs',
 )

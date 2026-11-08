@@ -6,6 +6,9 @@ on:
       - web/catalog/**
       - tools/catalog-browser/*.py
       - tools/catalog-browser/test_catalog.mjs
+      - tools/catalog-browser/e2e/**
+      - tools/catalog-browser/playwright.config.mjs
+      - tools/catalog-browser/package*.json
       - tools/catalog-contract/**
       - tools/catalog-collector/**
       - .github/workflows/catalog-pages.yml
@@ -30,6 +33,21 @@ jobs:
         with:
           persist-credentials: false
       - run: node tools/catalog-browser/test_catalog.mjs
+      - name: Install browser smoke-test tools
+        working-directory: tools/catalog-browser
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+      - name: Run desktop and narrow-screen browser smoke checks
+        working-directory: tools/catalog-browser
+        run: npm run test:e2e
+      - name: Save browser screenshots and failure traces
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: catalog-browser-checks
+          path: tools/catalog-browser/test-results/
+          retention-days: 7
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.12'

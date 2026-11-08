@@ -71,3 +71,31 @@ Deployment status, November 8: live at https://mareklangiewicz.pl/AM/ from
 `d4dcb80f45f67b520de599e71a5b3b10d1a3c36a`, after Marek enabled fork Actions.
 Build/deploy run 42476898945 succeeded; anonymous public readback matched source
 and sampled saved-data hashes. DOM/accessibility/performance acceptance is pending.
+
+## Small browser smoke suite
+
+```
+cd tools/catalog-browser
+npm ci
+npx playwright install chromium
+npm run test:e2e
+```
+
+Three journeys run in headless Chromium at desktop 1280×900 and narrow 390×844:
+browse/search/source filter → app/releases → help/Escape/focus → all A/B/C views
+→ Back/theme; directory layout and hidden source controls; source network failure
+and retry at the same URL. Native browser fetch and DOM execute against a staged
+artifact with tiny inert fixtures; no preview fetch wrapper masks receiver errors.
+Screenshots cover directory/detail/views/help/dark; traces are kept on failure.
+There are no pixel-baseline updates or accessibility-score gates. CI runs these
+checks before Pages publication and retains screenshots/traces for seven days.
+
+To smoke-test the public site after publication (failure injection is skipped):
+
+```
+CATALOG_BASE_URL=https://mareklangiewicz.pl/AM CATALOG_APP=0x808 npm run test:e2e
+```
+
+The headless test engine is independent of a browser extension or connected tab.
+Mobile viewport emulation is not a physical-device or screen-reader qualification.
+Marek's November 8 steering prioritizes a pleasant practical UI; WCAG is advisory.
