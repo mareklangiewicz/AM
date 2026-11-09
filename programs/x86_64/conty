@@ -1,4 +1,14 @@
 #!/bin/sh
+# AM-CATALOG-RECIPE 1
+CATALOG_FORMAT=3
+AMREPO=${AMREPO-}
+export AMREPO
+if [ -z "${AM_CATALOG_SESSION-}" ]; then
+    AM_CATALOG_SESSION=$(mktemp -d) || exit 1
+    export AM_CATALOG_SESSION
+    trap 'rm -rf -- "$AM_CATALOG_SESSION"' 0
+    trap 'exit 1' HUP INT TERM
+fi
 
 # AM INSTALL SCRIPT VERSION 3.5
 set -u
@@ -38,7 +48,7 @@ elif echo "$response" | grep -q "^3"; then
 fi
 [ -z "$RELEASE" ] && exit 0
 
-version=$(curl -Ls https://api.github.com/repos/Kron4ek/Conty/releases | sed 's/[()",{} ]/\n/g' | grep -io "https.*download.*$RELEASE.sh$" | head -1)
+version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/conty --url --url-filter i "$RELEASE.sh$" "$@") || exit 1
 if [ -z "$version" ]; then
 	printf "\n 💀 ERROR: it seems that upstream removed %b, please retry\n" "$RELEASE" && exit 1
 else
@@ -58,11 +68,21 @@ ln -s "/opt/$APP/$APP" "/usr/local/bin/$APP"
 # SCRIPT TO UPDATE THE PROGRAM
 cat >> ./AM-updater << 'EOF'
 #!/bin/sh
+# AM-CATALOG-RECIPE 1
+CATALOG_FORMAT=3
+AMREPO=${AMREPO-}
+export AMREPO
+if [ -z "${AM_CATALOG_SESSION-}" ]; then
+    AM_CATALOG_SESSION=$(mktemp -d) || exit 1
+    export AM_CATALOG_SESSION
+    trap 'rm -rf -- "$AM_CATALOG_SESSION"' 0
+    trap 'exit 1' HUP INT TERM
+fi
 set -u
 APP=conty
 SITE="Kron4ek/Conty"
 version0=$(cat "/opt/$APP/version")
-version=$(curl -Ls https://api.github.com/repos/Kron4ek/Conty/releases | sed 's/[()",{} ]/\n/g' | grep -io "https.*download.*REPLACETHIS.sh$" | head -1)
+version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/conty --url --url-filter i "REPLACETHIS.sh$" "$@") || exit 1
 [ -n "$version" ] || { echo "Error getting link"; exit 1; }
 if [ "$version" != "$version0" ] || [ -e /opt/"$APP"/*.zsync ]; then
 	mkdir "/opt/$APP/tmp" && cd "/opt/$APP/tmp" || exit 1

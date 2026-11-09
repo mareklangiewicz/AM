@@ -15,12 +15,13 @@ class HostPolicySource(unittest.TestCase):
             root = Path(temporary)
             (root/'modules').mkdir()
             recipes = root/'programs/x86_64'
-            recipes.mkdir(parents=True)
-            for row in recipe_rows(compiler.ROOT):
-                shutil.copy2(compiler.ROOT/'programs/x86_64'/row['app'],recipes/row['app'])
+            shutil.copytree(compiler.ROOT/'programs',root/'programs',symlinks=True)
+            registry=root/'tools/catalog-collector/recipe-url-policies.json'
+            registry.parent.mkdir(parents=True)
+            shutil.copy2(compiler.ROOT/'tools/catalog-collector/recipe-url-policies.json',registry)
             policy = root/'modules/catalog-yaml-policy.am'
             shutil.copy2(compiler.ROOT/'modules/catalog-yaml-policy.am', policy)
-            before={p.name:p.read_bytes() for p in recipes.iterdir()}
+            before={p:p.read_bytes() for p in (root/'programs').rglob('*') if p.is_file()}
             with patch.object(compiler, 'ROOT', root):
                 compiler.generate()
                 first=policy.read_bytes()
@@ -37,8 +38,8 @@ class HostPolicySource(unittest.TestCase):
                 self.assertEqual(row['archive']['launchers'],['emmylua_ls:emmylua_ls','luafmt:luafmt'])
                 self.assertIn('recipes_tools["x86_64/emmylua"]="emmylua_ls luafmt"',policy.read_text())
                 self.assertEqual(recipe.read_text().count('emmylua_ls luafmt'),1)
-            for path in recipes.iterdir():
-                if path.name!='emmylua':self.assertEqual(before[path.name],path.read_bytes())
+            for path,raw in before.items():
+                if path!=recipes/'emmylua':self.assertEqual(raw,path.read_bytes())
 
 
     def test_nonliteral_and_inconsistent_headers_refuse(self):

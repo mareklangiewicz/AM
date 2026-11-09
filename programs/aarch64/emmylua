@@ -1,4 +1,14 @@
 #!/bin/sh
+# AM-CATALOG-RECIPE 1
+CATALOG_FORMAT=3
+AMREPO=${AMREPO-}
+export AMREPO
+if [ -z "${AM_CATALOG_SESSION-}" ]; then
+    AM_CATALOG_SESSION=$(mktemp -d) || exit 1
+    export AM_CATALOG_SESSION
+    trap 'rm -rf -- "$AM_CATALOG_SESSION"' 0
+    trap 'exit 1' HUP INT TERM
+fi
 
 # AM INSTALL SCRIPT VERSION 3.5
 set -u
@@ -16,7 +26,7 @@ chmod a+x ../remove || exit 1
 
 # DOWNLOAD AND PREPARE THE APP, $version is also used for updates
 # $version is emmylua_ls's asset URL; its directory serves the other tools of the same release.
-version=$(curl -Ls https://api.github.com/repos/"$SITE"/releases/latest | sed 's/[()",{} ]/\n/g' | grep -oi "https.*/emmylua_ls-$ASSET$" | head -1)
+version=$(sh "/opt/am/modules/catalog-yaml.am" aarch64/emmylua --url "$@") || exit 1
 [ -n "$version" ] || { echo "Error getting link"; exit 1; }
 for bin in $BINS; do
 	wget "${version%/*}/$bin-$ASSET" && tar fx ./"$bin-$ASSET" && rm -f ./"$bin-$ASSET" || exit 1
@@ -33,13 +43,23 @@ for bin in $BINS; do ln -s "/opt/$APP/$bin" "/usr/local/bin/$bin"; done
 # SCRIPT TO UPDATE THE PROGRAM
 cat >> ./AM-updater << 'EOF'
 #!/bin/sh
+# AM-CATALOG-RECIPE 1
+CATALOG_FORMAT=3
+AMREPO=${AMREPO-}
+export AMREPO
+if [ -z "${AM_CATALOG_SESSION-}" ]; then
+    AM_CATALOG_SESSION=$(mktemp -d) || exit 1
+    export AM_CATALOG_SESSION
+    trap 'rm -rf -- "$AM_CATALOG_SESSION"' 0
+    trap 'exit 1' HUP INT TERM
+fi
 set -u
 APP=emmylua
 SITE="EmmyLuaLs/emmylua-analyzer-rust"
 BINS="emmylua_ls emmylua_check emmylua_doc_cli luafmt"
 ASSET="linux-aarch64-glibc.2.17.tar.gz"
 version0=$(cat "/opt/$APP/version")
-version=$(curl -Ls https://api.github.com/repos/"$SITE"/releases/latest | sed 's/[()",{} ]/\n/g' | grep -oi "https.*/emmylua_ls-$ASSET$" | head -1)
+version=$(sh "/opt/am/modules/catalog-yaml.am" aarch64/emmylua --url "$@") || exit 1
 [ -n "$version" ] || { echo "Error getting link"; exit 1; }
 if [ "$version" != "$version0" ]; then
 	mkdir "/opt/$APP/tmp" && cd "/opt/$APP/tmp" || exit 1

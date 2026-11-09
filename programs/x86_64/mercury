@@ -1,4 +1,14 @@
 #!/bin/sh
+# AM-CATALOG-RECIPE 1
+CATALOG_FORMAT=3
+AMREPO=${AMREPO-}
+export AMREPO
+if [ -z "${AM_CATALOG_SESSION-}" ]; then
+    AM_CATALOG_SESSION=$(mktemp -d) || exit 1
+    export AM_CATALOG_SESSION
+    trap 'rm -rf -- "$AM_CATALOG_SESSION"' 0
+    trap 'exit 1' HUP INT TERM
+fi
 
 # AM INSTALL SCRIPT VERSION 3.5
 set -u
@@ -37,7 +47,7 @@ elif echo "$response" | grep -q "^5"; then
 fi
 [ -z "$RELEASE" ] && exit 0
 
-version=$(curl -Ls https://api.github.com/repos/Alex313031/Mercury/releases | sed 's/[()",{} ]/\n/g' | grep -oi "https.*mercury.*linux.*zip$" | grep -i "$RELEASE" | head -1)
+version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/mercury --url --url-filter i "$RELEASE" "$@") || exit 1
 if [ -z "$version" ]; then
 	printf "\n 💀 ERROR: it seems that upstream removed %b, please retry\n" "$RELEASE" && exit 1
 else
@@ -58,11 +68,21 @@ ln -s "/opt/$APP/MERCURY_PORTABLE" "/usr/local/bin/$APP"
 # SCRIPT TO UPDATE THE PROGRAM
 cat >> ./AM-updater << 'EOF'
 #!/bin/sh
+# AM-CATALOG-RECIPE 1
+CATALOG_FORMAT=3
+AMREPO=${AMREPO-}
+export AMREPO
+if [ -z "${AM_CATALOG_SESSION-}" ]; then
+    AM_CATALOG_SESSION=$(mktemp -d) || exit 1
+    export AM_CATALOG_SESSION
+    trap 'rm -rf -- "$AM_CATALOG_SESSION"' 0
+    trap 'exit 1' HUP INT TERM
+fi
 set -u
 APP=mercury
 SITE="Alex313031/Mercury"
 version0=$(cat "/opt/$APP/version")
-version=$(curl -Ls https://api.github.com/repos/Alex313031/Mercury/releases | sed 's/[()",{} ]/\n/g' | grep -oi "https.*mercury.*linux.*zip$" | grep -i "TYPE" | head -1)
+version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/mercury --url --url-filter i "TYPE" "$@") || exit 1
 [ -n "$version" ] || { echo "Error getting link"; exit 1; }
 if [ "$version" != "$version0" ]; then
 	mkdir "/opt/$APP/tmp" && cd "/opt/$APP/tmp" || exit 1

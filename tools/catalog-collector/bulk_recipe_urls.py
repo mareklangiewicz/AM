@@ -136,7 +136,7 @@ def apply(result, *, append_sha256=None):
             raise ValueError('stale recipe: '+name)
         if hashlib.sha256(row['after'].encode()).hexdigest()!=row['after_sha256']:
             raise ValueError('migration after-image hash')
-        shell='bash' if row['after'].startswith('#!/bin/bash') else 'sh'
+        shell='bash' if 'bash' in row['after'].splitlines()[0] else 'sh'
         if subprocess.run([shell,'-n'],input=row['after'],text=True,capture_output=True).returncode:
             raise ValueError('translated shell syntax')
     # Compile against the proposed source bytes. A duplicate policy, hash drift,

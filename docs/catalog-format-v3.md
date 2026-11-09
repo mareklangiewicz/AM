@@ -31,10 +31,13 @@ Strings are double quoted UTF-8, with only `\"`, `\\`, `\n`, `\r`, `\t`, `\N`,
 `\L` and `\P` escapes. The final three encode NEL, line separator and paragraph
 separator without YAML folding. Unknown escapes, including general `\u`, fail.
 Timestamps are real UTC seconds from 1970, `YYYY-MM-DDTHH:MM:SSZ`.
-The default document allowance is 2 MiB, line allowance 65,536 bytes, depth 12,
+The default document allowance is 2 MiB, ordinary line allowance 65,536 bytes, depth 12,
 complete candidate allowance 1 GiB and 20,000 documents. These are implementation
 safeguards awaiting the ticket-14 capacity measurements, not qualified operating
-ceilings. Never trim a source's assets or additional releases to fit.
+ceilings. A repository file's `content` scalar may exceed the ordinary line
+allowance within the same 2 MiB document cap; its decoded UTF-8 content is bounded
+to 1 MiB. Other fields retain the ordinary line allowance. Never trim a source's
+assets, file contents or additional releases to fit.
 
 Structural editor schemas cannot enforce original-byte grammar/order, duplicate
 keys already lost by a YAML loader, exact arithmetic in a rounding editor, calendar
@@ -168,7 +171,7 @@ as full 40-character lowercase Git object IDs.
 Each reference has `name`, `commit` and `observed_at`. Tags have a zero-based
 `position` in the observed API order: positions are unique and contiguous, with
 at most 100 tags. Branches may have up to four `files`, keyed by the SHA-256 of
-the UTF-8 path. Each file has `path`, exact `content` (at most 8 KiB), Git `blob`
+the UTF-8 path. Each file has `path`, exact `content` (at most 1 MiB), Git `blob`
 identity and `observed_at`. Absolute/traversing paths refuse. File observations
 cannot precede their branch observation or follow successful scope completion.
 
@@ -184,10 +187,17 @@ commit, observation time, tag position and optional file path/blob/content after
 the reference key. `release_facts` emits release metadata even without assets.
 `catalog-yaml.am` policies declare asset, release, Git tag, branch or file
 selection. Non-asset selections require a fresh observation and explicit output
-such as `--tag`, `--published-at`, `--git-commit`, `--git-file` or `--git-snapshot`.
+such as `--tag`, `--published-at`, `--updated-at`, `--release-url`,
+`--release-id`, `--source-tar-url`, `--source-zip-url`, `--git-commit`, `--git-file`
+or `--git-snapshot`.
 The snapshot output is commit, newline, then exact file content. JuNest consumes
 this once for both VERSION and the commit archive URL. Each command pins all
-catalog reads to one publication commit.
+catalog reads to one publication commit. Custom recipes establish a private
+command session for multi-step standalone updates too. Source archive URLs remain
+release facts, never synthetic assets. `--version-url` orders eligible URLs with
+`sort -V` and then freshness-checks that exact winner against the same facts.
+`--urls` lists eligible records without hiding old choices; a URL menu must pass
+its selected URL back through `--selected-url ... --url` before download.
 
 ## Reader and collection APIs
 
@@ -202,9 +212,8 @@ The browser [reader](../tools/catalog-contract/reader.mjs) exports `parseDocumen
 expand the same compact fields. Callers must keep reads/caches bound to C. Real
 DOM/fetch/accessibility qualification belongs to tickets 13–14.
 
-`host_catalog.py collect` acquires once and writes independent candidates from each
-format's own exact parent. Format 2 retains its historical merge and numeric paths;
-it is never projected from pruned v3 records. `validate` is credential/network free
+`host_catalog.py collect` acquires once and prepares a format-3 candidate from its
+exact parent. The production workflow has no format-2 fallback. `validate` is credential/network free
 and optionally checks expected input pins. Explicit `publish` validates transferred input/run/parent/hash bindings, confirms
 exact-parent remote outcomes and independently attempts final status publication.
 The prepared workflow now uses these explicit operations, with target channels

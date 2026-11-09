@@ -1,4 +1,14 @@
 #!/bin/sh
+# AM-CATALOG-RECIPE 1
+CATALOG_FORMAT=3
+AMREPO=${AMREPO-}
+export AMREPO
+if [ -z "${AM_CATALOG_SESSION-}" ]; then
+    AM_CATALOG_SESSION=$(mktemp -d) || exit 1
+    export AM_CATALOG_SESSION
+    trap 'rm -rf -- "$AM_CATALOG_SESSION"' 0
+    trap 'exit 1' HUP INT TERM
+fi
 
 # AM INSTALL SCRIPT VERSION 3.5
 set -u
@@ -12,7 +22,8 @@ printf '\n%s' "rm -f /usr/local/share/applications/$APP-AM.desktop" >> ../remove
 chmod a+x ../remove || exit 1
 
 # DOWNLOAD AND PREPARE THE APP, $version is also used for updates
-version=$(curl -Ls "https://raw.githubusercontent.com/oslook/cursor-ai-downloads/main/version-history.json" | tr '">< ' '\n' | grep -i "^http.*x86_64.*appimage$" | head -1)
+metadata=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/cursor --git-file "$@") || exit 1
+version=$(printf '%s\n' "$metadata" | tr '">< ' '\n' | grep -i "^http.*x86_64.*appimage$" | head -1)
 wget "$version" || exit 1
 # Keep this space in sync with other installation scripts
 # Use tar fx ./*tar* here for example in this line in case a compressed file is downloaded.
@@ -29,16 +40,23 @@ ln -s "/opt/$APP/$APP" "/usr/local/bin/$APP"
 # SCRIPT TO UPDATE THE PROGRAM
 cat >> ./AM-updater << 'EOF'
 #!/bin/sh
+# AM-CATALOG-RECIPE 1
+CATALOG_FORMAT=3
+AMREPO=${AMREPO-}
+export AMREPO
+if [ -z "${AM_CATALOG_SESSION-}" ]; then
+    AM_CATALOG_SESSION=$(mktemp -d) || exit 1
+    export AM_CATALOG_SESSION
+    trap 'rm -rf -- "$AM_CATALOG_SESSION"' 0
+    trap 'exit 1' HUP INT TERM
+fi
 set -u
 APP=cursor
 SITE="https://www.cursor.com"
 version0=$(cat "/opt/$APP/version")
-version=$(curl -Ls "https://raw.githubusercontent.com/oslook/cursor-ai-downloads/main/version-history.json" | tr '">< ' '\n' | grep -i "^http.*x86_64.*appimage$" | head -1)
+metadata=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/cursor --git-file "$@") || exit 1
+version=$(printf '%s\n' "$metadata" | tr '">< ' '\n' | grep -i "^http.*x86_64.*appimage$" | head -1)
 [ -n "$version" ] || { echo "Error getting link"; exit 1; }
-if command -v appimageupdatetool >/dev/null 2>&1; then
-	cd "/opt/$APP" || exit 1
-	appimageupdatetool -Or ./"$APP" && chmod a+x ./"$APP" && echo "$version" > ./version && exit 0
-fi
 if [ "$version" != "$version0" ]; then
 	mkdir "/opt/$APP/tmp" && cd "/opt/$APP/tmp" || exit 1
 	notify-send "A new version of $APP is available, please wait"

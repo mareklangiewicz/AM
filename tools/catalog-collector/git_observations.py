@@ -65,8 +65,8 @@ def collect(scope,fetch):
         for path in files:
             file,observed=get('file-'+key(name+'\0'+path),'contents/'+quote(path,safe='/')+'?ref='+commit)
             if (file.get('type')!='file' or file.get('path')!=path or file.get('encoding')!='base64' or
-                    type(file.get('size')) is not int or not 0<=file['size']<=8192 or
-                    not isinstance(file.get('content'),str) or len(file['content'])>12000 or
+                    type(file.get('size')) is not int or not 0<=file['size']<=1048576 or
+                    not isinstance(file.get('content'),str) or len(file['content'])>1500000 or
                     not re.fullmatch('[0-9a-f]{40}',file.get('sha',''))):
                 raise ValueError('Git file identity/size')
             try:raw=base64.b64decode(file['content'].replace('\n',''),validate=True)

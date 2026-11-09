@@ -1,4 +1,14 @@
 #!/usr/bin/env bash
+# AM-CATALOG-RECIPE 1
+CATALOG_FORMAT=3
+AMREPO=${AMREPO-}
+export AMREPO
+if [ -z "${AM_CATALOG_SESSION-}" ]; then
+    AM_CATALOG_SESSION=$(mktemp -d) || exit 1
+    export AM_CATALOG_SESSION
+    trap 'rm -rf -- "$AM_CATALOG_SESSION"' 0
+    trap 'exit 1' HUP INT TERM
+fi
 
 # AM INSTALL SCRIPT VERSION 3.5
 set -u
@@ -12,10 +22,11 @@ printf '\n%s' "rm -f /usr/local/share/applications/$APP-AM.desktop" >> ../remove
 chmod a+x ../remove || exit 1
 
 # DOWNLOAD AND PREPARE THE APP, $version is also used for updates
-wine_args=$(curl -Ls https://api.github.com/repos/mmtrt/WINE_AppImage/releases | sed 's/[()",{} ]/\n/g' | grep -oi "https.*x86_64.*mage$" | sort -u | uniq)
+wine_args=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/wine --urls "$@") || exit 1
 printf "Select a URL from this menu (read carefully) or any other key to abort:\n-----------------------------------------------------------------------\n"; sleep 1
 	select version in $wine_args; do [ -n "$version" ] && break || echo ">>> Invalid Selection, aborted!" && exit 0
 done
+version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/wine --url --selected-url "$version" "$@") || exit 1
 wget "$version" || exit 1
 cd ..
 mv ./tmp/*mage ./"$APP"
@@ -29,16 +40,22 @@ ln -s "/opt/$APP/$APP" "/usr/local/bin/$APP"; ln -s "/usr/local/bin/$APP" "/usr/
 # SCRIPT TO UPDATE THE PROGRAM
 cat >> ./AM-updater << 'EOF'
 #!/bin/sh
+# AM-CATALOG-RECIPE 1
+CATALOG_FORMAT=3
+AMREPO=${AMREPO-}
+export AMREPO
+if [ -z "${AM_CATALOG_SESSION-}" ]; then
+    AM_CATALOG_SESSION=$(mktemp -d) || exit 1
+    export AM_CATALOG_SESSION
+    trap 'rm -rf -- "$AM_CATALOG_SESSION"' 0
+    trap 'exit 1' HUP INT TERM
+fi
 set -u
 APP=wine
 SITE="mmtrt/WINE_AppImage"
 version0=$(cat "/opt/$APP/version"); tag=$(echo "$version0" | tr '/' '\n' | tail -2 | head -1)
-version=$(curl -Ls https://api.github.com/repos/mmtrt/WINE_AppImage/releases | sed 's/[()",{} ]/\n/g' | grep -oi "https.*/download/$tag/.*x86_64.*mage$" | head -1)
+version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/wine --url --url-contains "/download/$tag/" "$@") || exit 1
 [ -n "$version" ] || { echo "Error getting link"; exit 1; }
-if command -v appimageupdatetool >/dev/null 2>&1; then
-	cd "/opt/$APP" || exit 1
-	appimageupdatetool -Or ./"$APP" && chmod a+x ./"$APP" && echo "$version" > ./version && exit 0
-fi
 if [ "$version" != "$version0" ]; then
 	mkdir "/opt/$APP/tmp" && cd "/opt/$APP/tmp" || exit 1
 	notify-send "A new version of $APP is available, please wait"

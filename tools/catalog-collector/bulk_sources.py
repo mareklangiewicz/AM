@@ -18,6 +18,12 @@ from host_catalog import utc
 BATCH = 25
 
 
+def literal_sites(source):
+    """Read standalone literal SITE assignments, including same-line variants."""
+    pattern=r"(?:^|[ ;\t])SITE[123]?=(?:\"("+REPOSITORY+r")\"|'("+REPOSITORY+r")'|("+REPOSITORY+r"))(?=[;\s]|$)"
+    return sorted({next(value for value in match if value) for match in re.findall(pattern,source,re.M)})
+
+
 def inventory(scan):
     """Extend installer-ready discovery with explicit primary catalog sources.
 
@@ -45,6 +51,8 @@ def inventory(scan):
                 +REPOSITORY+r''')/releases(?:[/?"'\s|]|$)''',text)))
             primary+=re.findall(r'''(?m)^[ \t]*version=.*?https://(?:api[.]github[.]com/repos|github[.]com)/('''
                 +REPOSITORY+r''')/releases(?:[/?"'\s|]|$)''',text)
+            if re.search(r'''https://api[.]github[.]com/repos/["']?\$(?:RELEASE|SITE)["']?/releases''',text):
+                primary+=literal_sites(text)
             if re.search(r'''https://api[.]github[.]com/repos/["']?\$RELEASE["']?/releases''',text):
                 for line in text.splitlines():
                     if not re.match(r'^SITE[123]?=',line):continue

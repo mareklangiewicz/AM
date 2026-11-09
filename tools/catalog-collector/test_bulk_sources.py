@@ -57,5 +57,15 @@ class BulkSources(unittest.TestCase):
             self.assertEqual(result['candidates'],[])
             self.assertEqual(result['unresolved'][0]['reason'],'primary_source_review')
 
+    def test_literal_site_endpoint_includes_same_line_source_variants(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root=Path(temporary);path=root/'programs/x86_64/example';path.parent.mkdir(parents=True)
+            path.write_text('APP=example\nSITE1="owner/first"; SITE2="owner/second"\nSITE="$SITE1"\nversion=$(curl -Ls https://api.github.com/repos/"$SITE"/releases | head -1)\n')
+            scan=dict(source='a'*40,candidates=[],ambiguous=[],unsupported_recipes=['programs/x86_64/example'])
+            with patch.object(b,'ROOT',root):result=b.inventory(scan)
+            self.assertEqual({r['repository'] for r in result['ambiguous'][0]['bindings']},
+                             {'owner/first','owner/second'})
+            self.assertEqual(b.literal_sites('SITE="$(touch /tmp/forbidden)"'),[])
+
 
 if __name__=='__main__':unittest.main()

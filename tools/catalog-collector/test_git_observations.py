@@ -3,6 +3,7 @@ import copy
 import base64
 import hashlib
 import json
+import os
 import subprocess
 import unittest
 import tempfile
@@ -42,6 +43,30 @@ class GitContract(unittest.TestCase):
             self.assertEqual(result.returncode,0 if valid else 2,(command,result.stderr))
 
     def test_tag_and_commit_pinned_file_observations(self):self.check(self.document())
+
+    def test_chunk_boundaries_preserve_escaped_file_output_in_every_native_reader(self):
+        doc=self.document();content=('x'*4094+'\\"\n')*18
+        doc['git_refs'][key('refs/heads/master')]['files'][key('VERSION')]['content']=content
+        raw=c.encode(doc)
+        for command in (['mawk'],['gawk'],['busybox','awk']):
+            env=dict(os.environ,LC_ALL='C',AM_YAML_OPERATION='git_facts',
+                AM_YAML_RECIPE='x86_64/junest',AM_YAML_REPOSITORY='25396290',
+                AM_YAML_OUTPUT='git-file',AM_YAML_NOW=doc['collected_at'],AM_YAML_PIN='a'*40)
+            facts=subprocess.run([*command,'-f',str(c.ROOT/'modules/catalog-contract-tables.am'),
+                '-f',str(c.ROOT/'modules/catalog-contract-parser.am')],input=raw,capture_output=True,env=env)
+            self.assertEqual(facts.returncode,0,facts.stderr)
+            result=subprocess.run([*command,'-f',str(c.ROOT/'modules/catalog-yaml-policy.am')],input=facts.stdout,capture_output=True,env=env)
+            self.assertEqual(result.returncode,0,result.stderr)
+            self.assertEqual(result.stdout.decode(),content)
+
+    def test_large_file_content_has_its_own_bound_without_relaxing_other_lines(self):
+        doc=self.document();file=doc['git_refs'][key('refs/heads/master')]['files'][key('VERSION')]
+        file['content']='x'*70000
+        self.check(doc)
+        bad=copy.deepcopy(doc);bad['releases'][next(iter(bad['releases']))]['title']='x'*70000
+        self.check(bad,False)
+        file['content']='x'*1048577
+        self.check(doc,False)
 
     def test_incomplete_or_inconsistent_scope_and_time_refuse(self):
         original=self.document()

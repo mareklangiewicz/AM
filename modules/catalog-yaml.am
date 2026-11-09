@@ -8,15 +8,16 @@ fail() { printf 'AM YAML catalog: %s\n' "$*" >&2; exit 1; }
 AM_YAML_RECIPE=$1; shift
 app=${AM_YAML_RECIPE#*/}
 pin='' AM_YAML_ACCEPT='' AM_YAML_TOOL='' AM_YAML_INCLUDE_PUBLICATION='' AM_YAML_SOURCE_REPOSITORY='' url_only=false
-AM_YAML_OUTPUT='' AM_YAML_LIST_URLS='' AM_YAML_URL_FILTER='' AM_YAML_URL_PATTERN='' AM_YAML_URL_CONTAINS='' AM_YAML_SELECTED_URL=''
+AM_YAML_OUTPUT='' AM_YAML_LIST_URLS='' AM_YAML_URL_FILTER='' AM_YAML_URL_PATTERN='' AM_YAML_URL_CONTAINS='' AM_YAML_SELECTED_URL='' version_url=false
 hex() { [ "${#1}" -eq 40 ] && case $1 in *[!0-9a-f]*) return 1;; esac; }
 while [ "$#" -gt 0 ]; do
     case $1 in
         --tool) [ "$#" -ge 2 ] && [ -z "$AM_YAML_TOOL" ] || fail 'missing or repeated tool'; AM_YAML_TOOL=$2; shift 2 ;;
         --with-published-at) AM_YAML_INCLUDE_PUBLICATION=1; shift ;;
         --url) [ "$url_only" = false ] || fail 'repeated URL option'; url_only=true; shift ;;
+        --version-url) [ "$version_url" = false ] || fail 'repeated version URL option'; version_url=true; url_only=true; shift ;;
         --urls) [ -z "$AM_YAML_LIST_URLS" ] || fail 'repeated URL list'; AM_YAML_LIST_URLS=1; shift ;;
-        --tag|--published-at|--asset-id|--git-commit|--git-file|--git-snapshot)
+        --tag|--published-at|--release-url|--release-id|--updated-at|--source-tar-url|--source-zip-url|--asset-id|--git-commit|--git-file|--git-snapshot)
             [ -z "$AM_YAML_OUTPUT" ] || fail 'repeated output field'; AM_YAML_OUTPUT=${1#--}; shift ;;
         --url-filter)
             [ "$#" -ge 3 ] && [ -z "$AM_YAML_URL_FILTER" ] || fail 'missing or repeated URL filter'
@@ -58,7 +59,7 @@ app=$(printf '%s\n' "$policy_info" | sed -n '1p')
 selection=$(printf '%s\n' "$policy_info" | sed -n '2p')
 printf '%s\n' "$app" | grep -Eq '^[a-z0-9][a-z0-9_.+-]{0,63}$' || fail 'invalid catalog app identity'
 case $selection:$AM_YAML_OUTPUT in
-    asset:|asset:tag|asset:published-at|asset:asset-id|release:tag|release:published-at|git-tag:tag|git-branch:git-commit|git-file:git-commit|git-file:git-file|git-file:git-snapshot) ;;
+    asset:|asset:tag|asset:published-at|asset:asset-id|release:tag|release:published-at|release:release-url|release:release-id|release:updated-at|release:source-tar-url|release:source-zip-url|git-tag:tag|git-branch:git-commit|git-file:git-commit|git-file:git-file|git-file:git-snapshot) ;;
     *) fail 'unsupported policy output field';;
 esac
 if [ "$selection" != asset ]; then
@@ -165,6 +166,13 @@ AM_YAML_PIN=$pin AM_YAML_STALE_OPTION=release
 export AM_YAML_STALE_OPTION
 export AM_YAML_RECIPE AM_YAML_ACCEPT AM_YAML_REPOSITORY AM_YAML_NOW AM_YAML_PIN AM_YAML_TOOL AM_YAML_INCLUDE_PUBLICATION AM_YAML_SOURCE_REPOSITORY
 export AM_YAML_OUTPUT AM_YAML_LIST_URLS AM_YAML_URL_FILTER AM_YAML_URL_PATTERN AM_YAML_URL_CONTAINS AM_YAML_SELECTED_URL
+if [ "$version_url" = true ]; then
+    [ -z "$AM_YAML_SELECTED_URL" ] || fail 'conflicting selected URL'
+    AM_YAML_LIST_URLS=1 awk -f "$here/catalog-yaml-policy.am" "$scratch/facts" > "$scratch/urls" || exit 1
+    AM_YAML_SELECTED_URL=$(sort -V "$scratch/urls" | tail -1)
+    [ -n "$AM_YAML_SELECTED_URL" ] || fail 'no matching version URL'
+    export AM_YAML_SELECTED_URL
+fi
 awk -f "$here/catalog-yaml-policy.am" "$scratch/facts" > "$scratch/result" || exit 1
 check_clock
 # Recheck the same selected facts at the final clock before output.

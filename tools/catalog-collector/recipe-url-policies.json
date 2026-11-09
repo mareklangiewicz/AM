@@ -249803,5 +249803,2664 @@
     "selection": "git-tag",
     "tag_pattern": "^v[0-9]",
     "tag_exclude": "alpha|next"
+  },
+  {
+    "recipe": "x86_64/appimg",
+    "source_recipe": "x86_64/appimg",
+    "source_sha256": "a3785c98ffcaad19f67abee7e3cd2cdcca2b87043388fe0f6381d3006dacfe99",
+    "repository_id": 1101416118,
+    "repository": "pmnzt/appimage-manager",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": ".",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "appimg",
+    "dispatch_recipe": "x86_64/appimg",
+    "source_aliases": [
+      "pmnzt/appimage-manager"
+    ],
+    "selection": "release"
+  },
+  {
+    "recipe": "x86_64/code",
+    "source_recipe": "x86_64/code",
+    "source_sha256": "464db1fc96c05a7bfdf9bfaa1865d1057240d6cfe05ca00d41616c09006bd402",
+    "repository_id": 41881900,
+    "repository": "microsoft/vscode",
+    "channel": "stable",
+    "url_rules": [
+      {
+        "pattern": ".",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "code",
+    "dispatch_recipe": "x86_64/code",
+    "source_aliases": [
+      "microsoft/vscode"
+    ],
+    "selection": "release"
+  },
+  {
+    "recipe": "x86_64/nerdfetch",
+    "source_recipe": "x86_64/nerdfetch",
+    "source_sha256": "a766a47958a53bff6249f62f0e877885ae996c74c4f127e2cd9ae1c3a67b6897",
+    "repository_id": 293167169,
+    "repository": "ThatOneCalculator/NerdFetch",
+    "channel": "stable",
+    "url_rules": [
+      {
+        "pattern": ".",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "nerdfetch",
+    "dispatch_recipe": "x86_64/nerdfetch",
+    "source_aliases": [
+      "ThatOneCalculator/NerdFetch"
+    ],
+    "selection": "release"
+  },
+  {
+    "recipe": "x86_64/qflipper",
+    "source_recipe": "x86_64/qflipper",
+    "source_sha256": "c86be9c03b698afefb8df2de0aeea812f4567acbb814f9632e8bf82e7c06795c",
+    "repository_id": 367434816,
+    "repository": "flipperdevices/qFlipper",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": ".",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "qflipper",
+    "dispatch_recipe": "x86_64/qflipper",
+    "source_aliases": [
+      "flipperdevices/qFlipper"
+    ],
+    "selection": "release",
+    "tag_pattern": "[0-9]$"
+  },
+  {
+    "recipe": "x86_64/shutter-encoder",
+    "source_recipe": "x86_64/shutter-encoder",
+    "source_sha256": "330f1239a3a27fb2ab6c94c3f5f4f558870ba83ea55bf5ea9c98dc267a00debd",
+    "repository_id": 262382962,
+    "repository": "paulpacifico/shutter-encoder",
+    "channel": "stable",
+    "url_rules": [
+      {
+        "pattern": ".",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "shutter-encoder",
+    "dispatch_recipe": "x86_64/shutter-encoder",
+    "source_aliases": [
+      "paulpacifico/shutter-encoder"
+    ],
+    "selection": "release",
+    "tag_pattern": "^[0-9.]+$"
+  },
+  {
+    "recipe": "x86_64/leapp",
+    "source_recipe": "x86_64/leapp",
+    "source_sha256": "2137416591ae997f1653dc852f240db7168375e56fa7a5b2da1e0386ea8db422",
+    "repository_id": 283141462,
+    "repository": "Noovolari/leapp",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": ".",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "leapp",
+    "dispatch_recipe": "x86_64/leapp",
+    "source_aliases": [
+      "Noovolari/leapp"
+    ],
+    "selection": "release"
+  },
+  {
+    "recipe": "x86_64/mycrypto",
+    "source_recipe": "x86_64/mycrypto",
+    "source_sha256": "f419278c039e0ac529bed857a12f737741905d292b1b6c6a78c3d5fe126a2cfb",
+    "repository_id": 75510908,
+    "repository": "MyCryptoHQ/MyCrypto",
+    "channel": "stable",
+    "url_rules": [
+      {
+        "pattern": ".",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "mycrypto",
+    "dispatch_recipe": "x86_64/mycrypto",
+    "source_aliases": [
+      "MyCryptoHQ/MyCrypto"
+    ],
+    "selection": "release"
+  },
+  {
+    "recipe": "x86_64/cccp",
+    "source_recipe": "x86_64/cccp",
+    "source_sha256": "5c5a368481107c70a7594dd3e4a2d6212fb6219de1908e20ccbc08592b55d464",
+    "repository_id": 737927989,
+    "repository": "cortex-command-community/Cortex-Command-Community-Project",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": ".",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "cccp",
+    "dispatch_recipe": "x86_64/cccp",
+    "source_aliases": [
+      "cortex-command-community/Cortex-Command-Community-Project"
+    ],
+    "selection": "release",
+    "tag_pattern": "[0-9]$"
+  },
+  {
+    "recipe": "x86_64/cccp.select-2",
+    "source_recipe": "x86_64/cccp",
+    "source_sha256": "5c5a368481107c70a7594dd3e4a2d6212fb6219de1908e20ccbc08592b55d464",
+    "repository_id": 737927989,
+    "repository": "cortex-command-community/Cortex-Command-Community-Project",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*linux[.]zip$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "cccp",
+    "dispatch_recipe": "x86_64/cccp.select-2",
+    "source_aliases": [
+      "cortex-command-community/Cortex-Command-Community-Project"
+    ],
+    "selection": "asset",
+    "tag_pattern": "[0-9]$"
+  },
+  {
+    "recipe": "x86_64/dbeaver-ce",
+    "source_recipe": "x86_64/dbeaver-ce",
+    "source_sha256": "406e71794ea9056620902939448e145f3d0292512dbce48ca46b946d5d73d4b2",
+    "repository_id": 532555933,
+    "repository": "valicm/dbeaver-ce-appimage",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": ".",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "dbeaver-ce",
+    "dispatch_recipe": "x86_64/dbeaver-ce",
+    "source_aliases": [
+      "valicm/dbeaver-ce-appimage"
+    ],
+    "selection": "release",
+    "tag_pattern": "^[vV]?[0-9].*[.].*[0-9]$"
+  },
+  {
+    "recipe": "x86_64/dbeaver-ce.select-2",
+    "source_recipe": "x86_64/dbeaver-ce",
+    "source_sha256": "406e71794ea9056620902939448e145f3d0292512dbce48ca46b946d5d73d4b2",
+    "repository_id": 532555933,
+    "repository": "valicm/dbeaver-ce-appimage",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "dbeaver-ce",
+    "dispatch_recipe": "x86_64/dbeaver-ce.select-2",
+    "source_aliases": [
+      "valicm/dbeaver-ce-appimage"
+    ],
+    "selection": "asset",
+    "tag_pattern": "^[vV]?[0-9].*[.].*[0-9]$"
+  },
+  {
+    "recipe": "x86_64/doublecmd-gtk",
+    "source_recipe": "x86_64/doublecmd-gtk",
+    "source_sha256": "f2f6800dfcdb9cd178dd34864e16c1a561fceb118402c0f2cb63e4e3404b9f6e",
+    "repository_id": 122294881,
+    "repository": "doublecmd/doublecmd",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": ".",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "doublecmd-gtk",
+    "dispatch_recipe": "x86_64/doublecmd-gtk",
+    "source_aliases": [
+      "doublecmd/doublecmd"
+    ],
+    "selection": "release"
+  },
+  {
+    "recipe": "x86_64/doublecmd-gtk.select-2",
+    "source_recipe": "x86_64/doublecmd-gtk",
+    "source_sha256": "f2f6800dfcdb9cd178dd34864e16c1a561fceb118402c0f2cb63e4e3404b9f6e",
+    "repository_id": 122294881,
+    "repository": "doublecmd/doublecmd",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*gtk.*x86_64.*appimage",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "doublecmd-gtk",
+    "dispatch_recipe": "x86_64/doublecmd-gtk.select-2",
+    "source_aliases": [
+      "doublecmd/doublecmd"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/doublecmd-qt",
+    "source_recipe": "x86_64/doublecmd-qt",
+    "source_sha256": "5a11a0da5fe17bc180dcaeb0254de156490e7b372fb269e617988469383747eb",
+    "repository_id": 122294881,
+    "repository": "doublecmd/doublecmd",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": ".",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "doublecmd-qt",
+    "dispatch_recipe": "x86_64/doublecmd-qt",
+    "source_aliases": [
+      "doublecmd/doublecmd"
+    ],
+    "selection": "release"
+  },
+  {
+    "recipe": "x86_64/doublecmd-qt.select-2",
+    "source_recipe": "x86_64/doublecmd-qt",
+    "source_sha256": "5a11a0da5fe17bc180dcaeb0254de156490e7b372fb269e617988469383747eb",
+    "repository_id": 122294881,
+    "repository": "doublecmd/doublecmd",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*qt.*x86_64.*appimage",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "doublecmd-qt",
+    "dispatch_recipe": "x86_64/doublecmd-qt.select-2",
+    "source_aliases": [
+      "doublecmd/doublecmd"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/duckstation",
+    "source_recipe": "x86_64/duckstation",
+    "source_sha256": "9c42197bab4f54244b4764512bb4c9213553294dc5c926ce4f3dc4a83337e058",
+    "repository_id": 207245092,
+    "repository": "stenzek/duckstation",
+    "channel": "stable",
+    "url_rules": [
+      {
+        "pattern": ".",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "duckstation",
+    "dispatch_recipe": "x86_64/duckstation",
+    "source_aliases": [
+      "stenzek/duckstation"
+    ],
+    "selection": "release"
+  },
+  {
+    "recipe": "x86_64/duckstation.select-2",
+    "source_recipe": "x86_64/duckstation",
+    "source_sha256": "9c42197bab4f54244b4764512bb4c9213553294dc5c926ce4f3dc4a83337e058",
+    "repository_id": 207245092,
+    "repository": "stenzek/duckstation",
+    "channel": "stable",
+    "url_rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm|sse",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "duckstation",
+    "dispatch_recipe": "x86_64/duckstation.select-2",
+    "source_aliases": [
+      "stenzek/duckstation"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/python",
+    "source_recipe": "x86_64/python",
+    "source_sha256": "4b8e64f233e4147c103b2364ba221a7b779d1082e7b1f0ab5dde054f28396d4c",
+    "repository_id": 251001753,
+    "repository": "niess/python-appimage",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "python",
+    "dispatch_recipe": "x86_64/python",
+    "source_aliases": [
+      "niess/python-appimage"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "aarch64/python",
+    "source_recipe": "aarch64/python",
+    "source_sha256": "b3cff8e4cfb9874f545c47b724a5ff7c72c0812e83289aaa690ccd98ebe5bdf2",
+    "repository_id": 251001753,
+    "repository": "niess/python-appimage",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*aarch64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "python",
+    "dispatch_recipe": "aarch64/python",
+    "source_aliases": [
+      "niess/python-appimage"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/postman",
+    "source_recipe": "x86_64/postman",
+    "source_sha256": "e6f6c7f9208f88a1d9af84ec985d1301c88efb43dad97daf95753b7145fa8ec9",
+    "repository_id": 119932003,
+    "repository": "suciptoid/postman-appimage",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*postman-[0-9].*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "postman",
+    "dispatch_recipe": "x86_64/postman",
+    "source_aliases": [
+      "showcheap/postman-appimage",
+      "suciptoid/postman-appimage"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/mattermost-desktop",
+    "source_recipe": "x86_64/mattermost-desktop",
+    "source_sha256": "2c7e18d1859859c946f398df9489d8001feb9fb0b96a2672285deb17d128ad1c",
+    "repository_id": 43964563,
+    "repository": "mattermost/desktop",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "mattermost-desktop",
+    "dispatch_recipe": "x86_64/mattermost-desktop",
+    "source_aliases": [
+      "mattermost/desktop"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/mcpelauncher",
+    "source_recipe": "x86_64/mcpelauncher",
+    "source_sha256": "60b4d0024094e05abdda88e7d630231acb3b320292db1fa6724b6e484146d681",
+    "repository_id": 219839944,
+    "repository": "minecraft-linux/appimage-builder",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*launcher-x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "mcpelauncher",
+    "dispatch_recipe": "x86_64/mcpelauncher",
+    "source_aliases": [
+      "minecraft-linux/appimage-builder"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/voicevox",
+    "source_recipe": "x86_64/voicevox",
+    "source_sha256": "42c890c17685778805df846d94ad3809dd4bb95c4311c40132041a354b33ee27",
+    "repository_id": 389984027,
+    "repository": "VOICEVOX/voicevox",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*voicevox.appimage.7z.001$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "voicevox",
+    "dispatch_recipe": "x86_64/voicevox",
+    "source_aliases": [
+      "VOICEVOX/voicevox"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/voicevox.select-2",
+    "source_recipe": "x86_64/voicevox",
+    "source_sha256": "42c890c17685778805df846d94ad3809dd4bb95c4311c40132041a354b33ee27",
+    "repository_id": 389984027,
+    "repository": "VOICEVOX/voicevox",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*voicevox.appimage.7z.002$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "voicevox",
+    "dispatch_recipe": "x86_64/voicevox.select-2",
+    "source_aliases": [
+      "VOICEVOX/voicevox"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/voicevox.select-3",
+    "source_recipe": "x86_64/voicevox",
+    "source_sha256": "42c890c17685778805df846d94ad3809dd4bb95c4311c40132041a354b33ee27",
+    "repository_id": 389984027,
+    "repository": "VOICEVOX/voicevox",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*voicevox.appimage.7z.003$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "voicevox",
+    "dispatch_recipe": "x86_64/voicevox.select-3",
+    "source_aliases": [
+      "VOICEVOX/voicevox"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "aarch64/logseq-app-db-nightly",
+    "source_recipe": "aarch64/logseq-app-db-nightly",
+    "source_sha256": "08170f35064dad08d16a324dc685ae0a5a9f814cc83601e2c1c602b7a9a798ef",
+    "repository_id": 266231149,
+    "repository": "logseq/logseq",
+    "channel": "nightly",
+    "url_rules": [
+      {
+        "pattern": "https.*(aarch64|arm64).*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "logseq-app-db-nightly",
+    "dispatch_recipe": "aarch64/logseq-app-db-nightly",
+    "source_aliases": [
+      "logseq/logseq"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/wezterm-nightly",
+    "source_recipe": "x86_64/wezterm-nightly",
+    "source_sha256": "9b98ae861f3dc42cba171f2eb0b0b1c011587a494e50b69c9b55430202fd860e",
+    "repository_id": 120568143,
+    "repository": "wezterm/wezterm",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*nightly.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "wezterm-nightly",
+    "dispatch_recipe": "x86_64/wezterm-nightly",
+    "source_aliases": [
+      "wez/wezterm",
+      "wezterm/wezterm"
+    ],
+    "selection": "asset",
+    "tag_pattern": "^nightly$"
+  },
+  {
+    "recipe": "x86_64/vita3k",
+    "source_recipe": "x86_64/vita3k",
+    "source_sha256": "9f64deb409823205b0bd532fcef6ad8f9afafdb736ccb00c7adfb4ccc7547d2a",
+    "repository_id": 119111364,
+    "repository": "Vita3K/Vita3K",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": ".",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "vita3k",
+    "dispatch_recipe": "x86_64/vita3k",
+    "source_aliases": [
+      "Vita3K/Vita3K"
+    ],
+    "selection": "release",
+    "tag_pattern": "^continuous$"
+  },
+  {
+    "recipe": "x86_64/bambustudio",
+    "source_recipe": "x86_64/bambustudio",
+    "source_sha256": "83f5ade58faee4977b745d260f281b30ed341c9712d1a6b404f3ebe067448a1d",
+    "repository_id": 511797274,
+    "repository": "bambulab/BambuStudio",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "bambustudio",
+    "dispatch_recipe": "x86_64/bambustudio",
+    "source_aliases": [
+      "bambulab/BambuStudio"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/conty",
+    "source_recipe": "x86_64/conty",
+    "source_sha256": "43bd49956ac57870e639cb7254d6532ab6e802b28b6ef8819771f20116a480c2",
+    "repository_id": 351854144,
+    "repository": "Kron4ek/Conty",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*download.*[.]sh$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "conty",
+    "dispatch_recipe": "x86_64/conty",
+    "source_aliases": [
+      "Kron4ek/Conty"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/mercury",
+    "source_recipe": "x86_64/mercury",
+    "source_sha256": "02add675065d94a3281349bfb4e78b3c09eaac4ba7edc7251b77f02018570852",
+    "repository_id": 510134922,
+    "repository": "Alex313031/Mercury",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*mercury.*linux.*zip$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "mercury",
+    "dispatch_recipe": "x86_64/mercury",
+    "source_aliases": [
+      "Alex313031/Mercury"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/thorium",
+    "source_recipe": "x86_64/thorium",
+    "source_sha256": "e298e5360605026b32d19841fd67de41f8b8eb10d8b481af0b461c145d67c451",
+    "repository_id": 418377492,
+    "repository": "Alex313031/thorium",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "thorium",
+    "dispatch_recipe": "x86_64/thorium",
+    "source_aliases": [
+      "Alex313031/thorium"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/vkdt",
+    "source_recipe": "x86_64/vkdt",
+    "source_sha256": "cd6f991e35305b5e7ca32e3996f2c9758b278481cd72ddc811c167ff1eead085",
+    "repository_id": 196389968,
+    "repository": "hanatos/vkdt",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l|armhf|nightly",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "vkdt",
+    "dispatch_recipe": "x86_64/vkdt",
+    "source_aliases": [
+      "hanatos/vkdt"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/uzdoom",
+    "source_recipe": "x86_64/uzdoom",
+    "source_sha256": "f786d47b519a53b0ddec7040e55b7496b7c1d9ee60b8121adaed3a3bdd3f3ece",
+    "repository_id": 1076246580,
+    "repository": "UZDoom/UZDoom",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "uzdoom",
+    "dispatch_recipe": "x86_64/uzdoom",
+    "source_aliases": [
+      "UZDoom/UZDoom"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/torzu",
+    "source_recipe": "x86_64/torzu",
+    "source_sha256": "8979f45f49f879a1a41d32312894760df09efa530e3f0350d8f9fefbcda29166",
+    "repository_id": 921475979,
+    "repository": "pkgforge-dev/Torzu-AppImage",
+    "channel": "stable",
+    "url_rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "torzu",
+    "dispatch_recipe": "x86_64/torzu",
+    "source_aliases": [
+      "pkgforge-dev/Torzu-AppImage"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/darktable",
+    "source_recipe": "x86_64/darktable",
+    "source_sha256": "a1aabc72957392bc5be47ecd1d1de7ac8f7fc3df4ad3ece878e4ce3e0babd13b",
+    "repository_id": 3791835,
+    "repository": "darktable-org/darktable",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l|nightly|rc|candidate",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "darktable",
+    "dispatch_recipe": "x86_64/darktable",
+    "source_aliases": [
+      "darktable-org/darktable"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/gale",
+    "source_recipe": "x86_64/gale",
+    "source_sha256": "3f916c97eedfe351f7303a5037b3df95808ef4ff14b8f5c04e4e0a4773a4d176",
+    "repository_id": 777939498,
+    "repository": "Kesomannen/gale",
+    "channel": "stable",
+    "url_rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "amd64|x86_64",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "gale",
+    "dispatch_recipe": "x86_64/gale",
+    "source_aliases": [
+      "Kesomannen/gale"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/cemu",
+    "source_recipe": "x86_64/cemu",
+    "source_sha256": "54d5d12c3d852d3d2386329c05327d7d29bae68ed76a3333ae7a21d4c997cba7",
+    "repository_id": 527719753,
+    "repository": "cemu-project/Cemu",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*cemu.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "cemu",
+    "dispatch_recipe": "x86_64/cemu",
+    "source_aliases": [
+      "cemu-project/Cemu"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/cemu.select-2",
+    "source_recipe": "x86_64/cemu",
+    "source_sha256": "54d5d12c3d852d3d2386329c05327d7d29bae68ed76a3333ae7a21d4c997cba7",
+    "repository_id": 1077216377,
+    "repository": "pkgforge-dev/Cemu-AppImage-Enhanced",
+    "channel": "stable",
+    "url_rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "cemu.src-1077216377",
+    "dispatch_recipe": "x86_64/cemu.select-2",
+    "source_aliases": [
+      "pkgforge-dev/Cemu-AppImage-Enhanced"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/obs-studio",
+    "source_recipe": "x86_64/obs-studio",
+    "source_sha256": "618513e6e5c5a273a7d4cee389d5ce5b5de15b8657916a05def315ca8c866467",
+    "repository_id": 884764593,
+    "repository": "pkgforge-dev/OBS-Studio-AppImage",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "obs-studio.src-884764593",
+    "dispatch_recipe": "x86_64/obs-studio",
+    "source_aliases": [
+      "pkgforge-dev/OBS-Studio-AppImage"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/obs-studio.select-2",
+    "source_recipe": "x86_64/obs-studio",
+    "source_sha256": "618513e6e5c5a273a7d4cee389d5ce5b5de15b8657916a05def315ca8c866467",
+    "repository_id": 650885621,
+    "repository": "ivan-hc/OBS-Studio-appimage",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "obs-studio",
+    "dispatch_recipe": "x86_64/obs-studio",
+    "source_aliases": [
+      "ivan-hc/OBS-Studio-appimage"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/gimp",
+    "source_recipe": "x86_64/gimp",
+    "source_sha256": "eced911a1b1a8c308452358c43c3cfa7b9a669b4bd7e5313534d431f6af28fea",
+    "repository_id": 450522288,
+    "repository": "ivan-hc/GIMP-appimage",
+    "channel": "stable",
+    "url_rules": [
+      {
+        "pattern": "download.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "gimp",
+    "dispatch_recipe": "x86_64/gimp",
+    "source_aliases": [
+      "ivan-hc/GIMP-appimage"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/gimp.select-2",
+    "source_recipe": "x86_64/gimp",
+    "source_sha256": "eced911a1b1a8c308452358c43c3cfa7b9a669b4bd7e5313534d431f6af28fea",
+    "repository_id": 886379602,
+    "repository": "pkgforge-dev/GIMP-and-PhotoGIMP-AppImage",
+    "channel": "stable",
+    "url_rules": [
+      {
+        "pattern": "download.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "gimp.src-886379602",
+    "dispatch_recipe": "x86_64/gimp",
+    "source_aliases": [
+      "pkgforge-dev/GIMP-and-PhotoGIMP-AppImage"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/uad-ng",
+    "source_recipe": "x86_64/uad-ng",
+    "source_sha256": "09566bcfd6fe13493ceb8bcf54c31e07a4727b0d4bc8ddb50a626f6eb1c04da1",
+    "repository_id": 710425233,
+    "repository": "Universal-Debloater-Alliance/universal-android-debloater-next-generation",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*uad.*noself.*linux.*zip$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "uad-ng.src-710425233",
+    "dispatch_recipe": "x86_64/uad-ng",
+    "source_aliases": [
+      "Universal-Debloater-Alliance/universal-android-debloater-next-generation"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/uad-ng.select-2",
+    "source_recipe": "x86_64/uad-ng",
+    "source_sha256": "09566bcfd6fe13493ceb8bcf54c31e07a4727b0d4bc8ddb50a626f6eb1c04da1",
+    "repository_id": 1079286910,
+    "repository": "pkgforge-dev/uad-ng-AppImage",
+    "channel": "stable",
+    "url_rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "uad-ng",
+    "dispatch_recipe": "x86_64/uad-ng.select-2",
+    "source_aliases": [
+      "pkgforge-dev/uad-ng-AppImage"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/zalo",
+    "source_recipe": "x86_64/zalo",
+    "source_sha256": "818b3b32636d024654d849bca2371f9097c8b7c0341476ee81dddfbd8664114b",
+    "repository_id": 1000119671,
+    "repository": "VN-Linux-Family/zalo-for-linux",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*download.*ZaDark.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l|armhf",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "zalo",
+    "dispatch_recipe": "x86_64/zalo",
+    "source_aliases": [
+      "VN-Linux-Family/zalo-for-linux"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/zalo.select-2",
+    "source_recipe": "x86_64/zalo",
+    "source_sha256": "818b3b32636d024654d849bca2371f9097c8b7c0341476ee81dddfbd8664114b",
+    "repository_id": 1000119671,
+    "repository": "VN-Linux-Family/zalo-for-linux",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "%2BZaDark|i386|i686|aarch64|arm64|armv7l|armhf",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "zalo",
+    "dispatch_recipe": "x86_64/zalo.select-2",
+    "source_aliases": [
+      "VN-Linux-Family/zalo-for-linux"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "aarch64/zalo",
+    "source_recipe": "aarch64/zalo",
+    "source_sha256": "530c1018fb2bcfec7af267a7974a3a7f258643c9523fb548716549955eb8cf58",
+    "repository_id": 1000119671,
+    "repository": "VN-Linux-Family/zalo-for-linux",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*download.*ZaDark.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "zalo",
+    "dispatch_recipe": "aarch64/zalo",
+    "source_aliases": [
+      "VN-Linux-Family/zalo-for-linux"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "aarch64/zalo.select-2",
+    "source_recipe": "aarch64/zalo",
+    "source_sha256": "530c1018fb2bcfec7af267a7974a3a7f258643c9523fb548716549955eb8cf58",
+    "repository_id": 1000119671,
+    "repository": "VN-Linux-Family/zalo-for-linux",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*download.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "%2BZaDark",
+        "ignore_case": true,
+        "exclude": true
+      },
+      {
+        "pattern": "aarch64|arm64",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "zalo",
+    "dispatch_recipe": "aarch64/zalo.select-2",
+    "source_aliases": [
+      "VN-Linux-Family/zalo-for-linux"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/wine",
+    "source_recipe": "x86_64/wine",
+    "source_sha256": "d98a3c54dd9c074821e9fa94f6a422edd88fd26544557948013c0377f40faf5d",
+    "repository_id": 298360082,
+    "repository": "mmtrt/WINE_AppImage",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "wine",
+    "dispatch_recipe": "x86_64/wine",
+    "source_aliases": [
+      "mmtrt/WINE_AppImage"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/anything-llm",
+    "source_recipe": "x86_64/anything-llm",
+    "source_sha256": "d4a03d3383ebefd49f7c659301b3ceed5563a91bbda356d725517992a8a74d62",
+    "repository_id": 649170660,
+    "repository": "Mintplex-Labs/anything-llm",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": ".",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "anything-llm",
+    "dispatch_recipe": "x86_64/anything-llm",
+    "source_aliases": [
+      "Mintplex-Labs/anything-llm"
+    ],
+    "selection": "release"
+  },
+  {
+    "recipe": "x86_64/anything-llm.select-2",
+    "source_recipe": "x86_64/anything-llm",
+    "source_sha256": "d4a03d3383ebefd49f7c659301b3ceed5563a91bbda356d725517992a8a74d62",
+    "repository_id": 649170660,
+    "repository": "Mintplex-Labs/anything-llm",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": ".",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "anything-llm",
+    "dispatch_recipe": "x86_64/anything-llm.select-2",
+    "source_aliases": [
+      "Mintplex-Labs/anything-llm"
+    ],
+    "selection": "git-file",
+    "git_ref": "refs/heads/desktop",
+    "git_file": "linux_installer.sh"
+  },
+  {
+    "recipe": "x86_64/nitch",
+    "source_recipe": "x86_64/nitch",
+    "source_sha256": "2e8cac93296b14eaca292c8a5e45d51f24b9bd48be739de1bd56238846538348",
+    "repository_id": 511540716,
+    "repository": "ssleert/nitch",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*nitch.*nerd$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "apple|windows|darwin|aarch64",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "nitch",
+    "dispatch_recipe": "x86_64/nitch",
+    "source_aliases": [
+      "ssleert/nitch"
+    ]
+  },
+  {
+    "recipe": "x86_64/archimede",
+    "source_recipe": "x86_64/archimede",
+    "source_sha256": "f6850426c9dcc3b957a8ed6120ca2f7c3f13888a928d2ae1e7f8350d8192166d",
+    "repository_id": 372167647,
+    "repository": "gennaro-tedesco/archimede",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*archimede.*linux-amd64$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "apple|windows|darwin",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "archimede",
+    "dispatch_recipe": "x86_64/archimede",
+    "source_aliases": [
+      "gennaro-tedesco/archimede"
+    ]
+  },
+  {
+    "recipe": "x86_64/vhs",
+    "source_recipe": "x86_64/vhs",
+    "source_sha256": "21ed137a855896ac52fb47a141dee477e62302fcae30b06bfb19371f31ad2cba",
+    "repository_id": 515619101,
+    "repository": "charmbracelet/vhs",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*vhs.*linux.*x86_64.*gz$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "vhs",
+    "dispatch_recipe": "x86_64/vhs",
+    "source_aliases": [
+      "charmbracelet/vhs"
+    ]
+  },
+  {
+    "recipe": "x86_64/htop",
+    "source_recipe": "x86_64/htop",
+    "source_sha256": "9444c0fb4d5c18b5b3c9e34c3aa0c580cd3d6730d77ffae72ce6f4ad2e02fc61",
+    "repository_id": 789213175,
+    "repository": "pkgforge-dev/htop-AppImage",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*htop.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "htop",
+    "dispatch_recipe": "x86_64/htop",
+    "source_aliases": [
+      "Samueru-sama/htop-AppImage",
+      "pkgforge-dev/htop-AppImage"
+    ]
+  },
+  {
+    "recipe": "x86_64/android-tools",
+    "source_recipe": "x86_64/android-tools",
+    "source_sha256": "8a1e0586331466c7daaaabb11abfad576319688ce4a41aae9095fb0827fb62b2",
+    "repository_id": 785025676,
+    "repository": "pkgforge-dev/android-tools-AppImage",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*android-tools.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "android-tools",
+    "dispatch_recipe": "x86_64/android-tools",
+    "source_aliases": [
+      "Samueru-sama/android-tools-AppImage",
+      "pkgforge-dev/android-tools-AppImage"
+    ]
+  },
+  {
+    "recipe": "x86_64/zoxide",
+    "source_recipe": "x86_64/zoxide",
+    "source_sha256": "ae7ade72d17c029a63c125abd240c5102727d23550a2f005c403f55026c07e48",
+    "repository_id": 245166720,
+    "repository": "ajeetdsouza/zoxide",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*x86_64.*unknown.*linux.*musl.*gz$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "zoxide",
+    "dispatch_recipe": "x86_64/zoxide",
+    "source_aliases": [
+      "ajeetdsouza/zoxide"
+    ]
+  },
+  {
+    "recipe": "x86_64/dunst",
+    "source_recipe": "x86_64/dunst",
+    "source_sha256": "01de788a73e6c12f5666f51ef8b04ab4be22b966b5706f856daee93b3039ea6a",
+    "repository_id": 804783544,
+    "repository": "pkgforge-dev/dunst-AppImage",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*dunst.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "dunst",
+    "dispatch_recipe": "x86_64/dunst",
+    "source_aliases": [
+      "Samueru-sama/dunst-AppImage",
+      "pkgforge-dev/dunst-AppImage"
+    ]
+  },
+  {
+    "recipe": "x86_64/hyperfine",
+    "source_recipe": "x86_64/hyperfine",
+    "source_sha256": "4222471dfb34be89b551343bc95fd00743e4a4966d0aa5ca9663a8a61962f9a1",
+    "repository_id": 117356231,
+    "repository": "sharkdp/hyperfine",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*x86_64.*unknown.*linux.*musl.*gz$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "hyperfine",
+    "dispatch_recipe": "x86_64/hyperfine",
+    "source_aliases": [
+      "sharkdp/hyperfine"
+    ]
+  },
+  {
+    "recipe": "x86_64/zenity",
+    "source_recipe": "x86_64/zenity",
+    "source_sha256": "42e3d9fae6b1d0d37caec52210ede2ff49e11a394bc690117de0337bccbd8455",
+    "repository_id": 789187664,
+    "repository": "pkgforge-dev/Zenity-GTK3-AppImage",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*zenity.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "zenity",
+    "dispatch_recipe": "x86_64/zenity",
+    "source_aliases": [
+      "Samueru-sama/Zenity-GTK3-AppImage",
+      "pkgforge-dev/Zenity-GTK3-AppImage"
+    ]
+  },
+  {
+    "recipe": "x86_64/eza",
+    "source_recipe": "x86_64/eza",
+    "source_sha256": "1041c43c4ffc73b6e291a1813e4eadc05d243f3b56e9da1e76a5005d4d17aa0a",
+    "repository_id": 671832156,
+    "repository": "eza-community/eza",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*x86_64.*unknown.*linux.*musl.*gz$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "eza",
+    "dispatch_recipe": "x86_64/eza",
+    "source_aliases": [
+      "eza-community/eza"
+    ]
+  },
+  {
+    "recipe": "x86_64/koboldcpp",
+    "source_recipe": "x86_64/koboldcpp",
+    "source_sha256": "bb925c67cf6e72fb4e7b982ed4aa4e35e6b0fd7affcf2829f85d9fe87256c5ca",
+    "repository_id": 614637892,
+    "repository": "LostRuins/koboldcpp",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*koboldcpp.*(x|d|86_)64.*nocuda$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "apple|windows|darwin",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "koboldcpp",
+    "dispatch_recipe": "x86_64/koboldcpp",
+    "source_aliases": [
+      "LostRuins/koboldcpp"
+    ]
+  },
+  {
+    "recipe": "x86_64/mangal",
+    "source_recipe": "x86_64/mangal",
+    "source_sha256": "041bdc5ad42c448fdb359c416007f76a96c54304ac15a85ad4ec198c6ed2c840",
+    "repository_id": 494733737,
+    "repository": "metafates/mangal",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*mangal.*(x|d|86_)64.*(z$|ip$|mangal$)",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "apple|windows|darwin",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "mangal",
+    "dispatch_recipe": "x86_64/mangal",
+    "source_aliases": [
+      "metafates/mangal"
+    ]
+  },
+  {
+    "recipe": "x86_64/toipe",
+    "source_recipe": "x86_64/toipe",
+    "source_sha256": "7d855622ddf8cbe7eb807c3020082f2e8c01e397143475ae78af77e2f78350fc",
+    "repository_id": 446434329,
+    "repository": "Samyak2/toipe",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*toipe.*(x|d|86_)64.*(z$|ip$|toipe$)",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "apple|windows|darwin",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "toipe",
+    "dispatch_recipe": "x86_64/toipe",
+    "source_aliases": [
+      "Samyak2/toipe"
+    ]
+  },
+  {
+    "recipe": "x86_64/lf",
+    "source_recipe": "x86_64/lf",
+    "source_sha256": "4428d1ce8c9b6d2bab9f48673edc1c47c18623e4d751abd42cccb327cadc3de4",
+    "repository_id": 65616765,
+    "repository": "gokcehan/lf",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*lf.*linux.*amd64.*gz$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "lf",
+    "dispatch_recipe": "x86_64/lf",
+    "source_aliases": [
+      "gokcehan/lf"
+    ]
+  },
+  {
+    "recipe": "x86_64/freshfetch",
+    "source_recipe": "x86_64/freshfetch",
+    "source_sha256": "e6bc2d73611c17e32aac3b353d97326eeff93134e3223d67cf13e769fe95cb8f",
+    "repository_id": 286113027,
+    "repository": "K4rakara/freshfetch",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*freshfetch.*(z$|ip$|freshfetch$)",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "apple|windows|darwin|aarch64",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "freshfetch",
+    "dispatch_recipe": "x86_64/freshfetch",
+    "source_aliases": [
+      "K4rakara/freshfetch"
+    ]
+  },
+  {
+    "recipe": "x86_64/nap",
+    "source_recipe": "x86_64/nap",
+    "source_sha256": "8321bbd1a685997da573b632486c03b2d3cb308e5626a62b206cdd4229fd43d0",
+    "repository_id": 565010765,
+    "repository": "maaslalani/nap",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*nap.*(x|d|86_)64.*(z$|ip$|nap$)",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "apple|windows|darwin",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "nap",
+    "dispatch_recipe": "x86_64/nap",
+    "source_aliases": [
+      "maaslalani/nap"
+    ]
+  },
+  {
+    "recipe": "x86_64/fixit",
+    "source_recipe": "x86_64/fixit",
+    "source_sha256": "ccb3de6c296371dd9e59a0c713e5ad1b9d7e7d642e59a485f21aa7b26b5df88a",
+    "repository_id": 813825047,
+    "repository": "eugene-babichenko/fixit",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*fixit.*(x|d|86_)64.*(z$|ip$|fixit$)",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "apple|windows|darwin",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "fixit",
+    "dispatch_recipe": "x86_64/fixit",
+    "source_aliases": [
+      "eugene-babichenko/fixit"
+    ]
+  },
+  {
+    "recipe": "x86_64/i3-auto-layout",
+    "source_recipe": "x86_64/i3-auto-layout",
+    "source_sha256": "6c73957a52cf8b311473e4bf61bfd866c0c9aab2f66b1c663460556974535982",
+    "repository_id": 797626600,
+    "repository": "pando85/i3-auto-layout",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*i3-auto-layout.*tar.gz$",
+        "ignore_case": false,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "i3-auto-layout",
+    "dispatch_recipe": "x86_64/i3-auto-layout",
+    "source_aliases": [
+      "pando85/i3-auto-layout"
+    ]
+  },
+  {
+    "recipe": "x86_64/doggo",
+    "source_recipe": "x86_64/doggo",
+    "source_sha256": "85f6a377eeada0a0772896e61eeebcffebb9585ab65d1a58eb52dbad88bde9c9",
+    "repository_id": 319848237,
+    "repository": "mr-karan/doggo",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*doggo.*linux.*amd64.*gz$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "doggo",
+    "dispatch_recipe": "x86_64/doggo",
+    "source_aliases": [
+      "mr-karan/doggo"
+    ]
+  },
+  {
+    "recipe": "x86_64/zapzap",
+    "source_recipe": "x86_64/zapzap",
+    "source_sha256": "8fb2876148464cbc2230692bc5509b363bf66298f58a0e29acef29656c8bf0a7",
+    "repository_id": 443556270,
+    "repository": "rafatosta/zapzap",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "i386|i686|aarch64|arm64|armv7l",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "zapzap",
+    "dispatch_recipe": "x86_64/zapzap",
+    "source_aliases": [
+      "rafatosta/zapzap"
+    ]
+  },
+  {
+    "recipe": "x86_64/solidping",
+    "source_recipe": "x86_64/solidping",
+    "source_sha256": "dc1fd122639eb2357f498d6a7467f2f995baaaccb79cc785f0ca2e92215b674e",
+    "repository_id": 1189028253,
+    "repository": "fclairamb/solidping",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*/solidping-linux-amd64\\.gz$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "solidping",
+    "dispatch_recipe": "x86_64/solidping",
+    "source_aliases": [
+      "fclairamb/solidping"
+    ]
+  },
+  {
+    "recipe": "x86_64/fastcompmgr",
+    "source_recipe": "x86_64/fastcompmgr",
+    "source_sha256": "8d59570803cb36bf3ad53338dc01f31334e8b59437959bb698b3d9e201279574",
+    "repository_id": 796064162,
+    "repository": "tycho-kirchner/fastcompmgr",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*fastcompmgr$",
+        "ignore_case": false,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "fastcompmgr",
+    "dispatch_recipe": "x86_64/fastcompmgr",
+    "source_aliases": [
+      "tycho-kirchner/fastcompmgr"
+    ]
+  },
+  {
+    "recipe": "x86_64/playerctl",
+    "source_recipe": "x86_64/playerctl",
+    "source_sha256": "76a343cc81411425658062b14b4ca192fee02f625acdddb9c1a8186936dbf878",
+    "repository_id": 802331806,
+    "repository": "pkgforge-dev/playerctl-AppImage",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*playerctl.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "playerctl",
+    "dispatch_recipe": "x86_64/playerctl",
+    "source_aliases": [
+      "Samueru-sama/playerctl-AppImage",
+      "pkgforge-dev/playerctl-AppImage"
+    ]
+  },
+  {
+    "recipe": "x86_64/toru",
+    "source_recipe": "x86_64/toru",
+    "source_sha256": "195b6fada53dfeabf51963a17be9f4080c8f32f233bc91fb0100f049109c1acd",
+    "repository_id": 753931918,
+    "repository": "sweetbbak/toru",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*toru.*(x|d|86_)64.*(z$|ip$|toru$)",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "apple|windows|darwin",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "toru",
+    "dispatch_recipe": "x86_64/toru",
+    "source_aliases": [
+      "sweetbbak/toru"
+    ]
+  },
+  {
+    "recipe": "x86_64/fd",
+    "source_recipe": "x86_64/fd",
+    "source_sha256": "09200e92884ac8ba10fa747da22c66f7a4c7ebcbcb625b1ae2d4270f922ef767",
+    "repository_id": 90793418,
+    "repository": "sharkdp/fd",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*x86_64.*unknown.*linux.*musl.*gz$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "fd",
+    "dispatch_recipe": "x86_64/fd",
+    "source_aliases": [
+      "sharkdp/fd"
+    ]
+  },
+  {
+    "recipe": "x86_64/bottom",
+    "source_recipe": "x86_64/bottom",
+    "source_sha256": "7fcaf8261f70fbd7c9f62a98f3b6d7367667246c65dc4bb797191494ba8930c3",
+    "repository_id": 205042455,
+    "repository": "ClementTsang/bottom",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*x86_64.*unknown.*linux.*musl.*gz$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "bottom",
+    "dispatch_recipe": "x86_64/bottom",
+    "source_aliases": [
+      "ClementTsang/bottom"
+    ]
+  },
+  {
+    "recipe": "x86_64/bunnyfetch",
+    "source_recipe": "x86_64/bunnyfetch",
+    "source_sha256": "99a3049f90e50a72b227b6b303065680a7a2c24b344319f0bda40624962570a5",
+    "repository_id": 298659447,
+    "repository": "sammy-ette/bunnyfetch",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*bunnyfetch.*(x|d|86_)64.*(z$|ip$|bunnyfetch$)",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "apple|windows|darwin",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "bunnyfetch",
+    "dispatch_recipe": "x86_64/bunnyfetch",
+    "source_aliases": [
+      "Rosettea/bunnyfetch",
+      "sammy-ette/bunnyfetch"
+    ]
+  },
+  {
+    "recipe": "x86_64/bat-extras",
+    "source_recipe": "x86_64/bat-extras",
+    "source_sha256": "b1e2f0ce35ea8282251b62c3534dab026c74afe14557dc669483e93380034683",
+    "repository_id": 192805440,
+    "repository": "eth-p/bat-extras",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*bat-extras.*zip$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "bat-extras",
+    "dispatch_recipe": "x86_64/bat-extras",
+    "source_aliases": [
+      "eth-p/bat-extras"
+    ]
+  },
+  {
+    "recipe": "x86_64/freeze",
+    "source_recipe": "x86_64/freeze",
+    "source_sha256": "9f01102f8f92285d446152af86fa1b25df21f5198c9355c27b1f77315084418b",
+    "repository_id": 741230168,
+    "repository": "charmbracelet/freeze",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*freeze.*linux.*x86_64.*gz$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "freeze",
+    "dispatch_recipe": "x86_64/freeze",
+    "source_aliases": [
+      "charmbracelet/freeze"
+    ]
+  },
+  {
+    "recipe": "x86_64/zramen",
+    "source_recipe": "x86_64/zramen",
+    "source_sha256": "9c13f43292b918224a1eed8f4565493bbf7d12ed87f64ac24e5c93fcf4f239d0",
+    "repository_id": 153996841,
+    "repository": "atweiden/zramen",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*zramen.*tar.gz$",
+        "ignore_case": false,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "zramen",
+    "dispatch_recipe": "x86_64/zramen",
+    "source_aliases": [
+      "atweiden/zramen"
+    ]
+  },
+  {
+    "recipe": "x86_64/superfile",
+    "source_recipe": "x86_64/superfile",
+    "source_sha256": "6a8d44dfd033a9af4357b03f0b145c8a76d831f4d29ac2661b1f7b008eadcc1d",
+    "repository_id": 774468912,
+    "repository": "yorukot/superfile",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*linux.*amd64.*tar.gz$",
+        "ignore_case": false,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "superfile",
+    "dispatch_recipe": "x86_64/superfile",
+    "source_aliases": [
+      "yorukot/superfile"
+    ]
+  },
+  {
+    "recipe": "x86_64/soft-serve",
+    "source_recipe": "x86_64/soft-serve",
+    "source_sha256": "ffc0a722f51ef517bb5568ea96a29c69431f109577d7b31a9db2f0632b4b0ab8",
+    "repository_id": 391209033,
+    "repository": "charmbracelet/soft-serve",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*soft-serve.*linux.*x86_64.*gz$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "soft-serve",
+    "dispatch_recipe": "x86_64/soft-serve",
+    "source_aliases": [
+      "charmbracelet/soft-serve"
+    ]
+  },
+  {
+    "recipe": "x86_64/goto",
+    "source_recipe": "x86_64/goto",
+    "source_sha256": "31e7de2b056be076d7eb6444c56102e0166f44fc3b287853ec030f66660ed143",
+    "repository_id": 706943442,
+    "repository": "grafviktor/goto",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*goto.*(z$|ip$|goto$)",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "apple|windows|darwin|aarch64",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "goto",
+    "dispatch_recipe": "x86_64/goto",
+    "source_aliases": [
+      "grafviktor/goto"
+    ]
+  },
+  {
+    "recipe": "x86_64/gh-eco",
+    "source_recipe": "x86_64/gh-eco",
+    "source_sha256": "0f1da659ab5f53a0b2f1ed49ec7698445bd88e8fbde25c4d51880d9531130ce8",
+    "repository_id": 491784345,
+    "repository": "jrnxf/gh-eco",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*gh-eco.*linux.*amd64$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "apple|windows|darwin",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "gh-eco",
+    "dispatch_recipe": "x86_64/gh-eco",
+    "source_aliases": [
+      "jrnxf/gh-eco"
+    ]
+  },
+  {
+    "recipe": "x86_64/i3",
+    "source_recipe": "x86_64/i3",
+    "source_sha256": "c6970f2909611f5f72c35e7c08575025db966824a08a1102aea3cd3c19ff6625",
+    "repository_id": 805090724,
+    "repository": "Samueru-sama/i3-AppImage",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*continuous.*i3.*86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "i3",
+    "dispatch_recipe": "x86_64/i3",
+    "source_aliases": [
+      "Samueru-sama/i3-AppImage"
+    ]
+  },
+  {
+    "recipe": "x86_64/ripgrep-all",
+    "source_recipe": "x86_64/ripgrep-all",
+    "source_sha256": "56b20041e8ebef0c9d0e193af17becba1aceca1b228ed4d81fb6f1fdf885db07",
+    "repository_id": 190254663,
+    "repository": "phiresky/ripgrep-all",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*x86_64.*unknown.*linux.*musl.*gz$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "ripgrep-all",
+    "dispatch_recipe": "x86_64/ripgrep-all",
+    "source_aliases": [
+      "phiresky/ripgrep-all"
+    ]
+  },
+  {
+    "recipe": "x86_64/i3lock-color",
+    "source_recipe": "x86_64/i3lock-color",
+    "source_sha256": "b3fc891843e886caa2ebead1663b3c796b4e8673f78363cf40889900991b5ea2",
+    "repository_id": 51324168,
+    "repository": "Raymo111/i3lock-color",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*i3lock$",
+        "ignore_case": false,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "i3lock-color",
+    "dispatch_recipe": "x86_64/i3lock-color",
+    "source_aliases": [
+      "Raymo111/i3lock-color"
+    ]
+  },
+  {
+    "recipe": "x86_64/gping",
+    "source_recipe": "x86_64/gping",
+    "source_sha256": "b655661c972b0a6f71c1456b970d34342f040e82ad9852e95904fac30c2e515b",
+    "repository_id": 44440501,
+    "repository": "orf/gping",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*x86_64.*unknown.*linux.*musl.*gz$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "gping",
+    "dispatch_recipe": "x86_64/gping",
+    "source_aliases": [
+      "orf/gping"
+    ]
+  },
+  {
+    "recipe": "x86_64/lexido",
+    "source_recipe": "x86_64/lexido",
+    "source_sha256": "36e233fff9936b6d8f5a338b9c577dcf2e8ad8c0ae983f99cf293ae7ea7fe219",
+    "repository_id": 762788071,
+    "repository": "micr0-dev/lexido",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*lexido.*linux.*amd64",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "lexido",
+    "dispatch_recipe": "x86_64/lexido",
+    "source_aliases": [
+      "micr0-dev/lexido"
+    ]
+  },
+  {
+    "recipe": "x86_64/typioca",
+    "source_recipe": "x86_64/typioca",
+    "source_sha256": "2ae0dba4dd889ebaf1a1e9219e5af1955179185ce47e12969c50dabf888fb408",
+    "repository_id": 473981351,
+    "repository": "bloznelis/typioca",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*typioca.*linux.*amd64$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "typioca",
+    "dispatch_recipe": "x86_64/typioca",
+    "source_aliases": [
+      "bloznelis/typioca"
+    ]
+  },
+  {
+    "recipe": "x86_64/spotify-tui",
+    "source_recipe": "x86_64/spotify-tui",
+    "source_sha256": "75b6414608bf51e4df89134be13683bf5a4be27c1e760a796992b4ca35fd21f9",
+    "repository_id": 202787876,
+    "repository": "Rigellute/spotify-tui",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*spotify-tui.*(z$|ip$|spotify-tui$)",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "apple|windows|darwin|aarch64",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "spotify-tui",
+    "dispatch_recipe": "x86_64/spotify-tui",
+    "source_aliases": [
+      "Rigellute/spotify-tui"
+    ]
+  },
+  {
+    "recipe": "x86_64/dust",
+    "source_recipe": "x86_64/dust",
+    "source_sha256": "83aa91d40fc2ce857f29f5206a49441c985540bff0e7d37269ef29eabf5f241f",
+    "repository_id": 125563061,
+    "repository": "bootandy/dust",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*x86_64.*unknown.*linux.*musl.*gz$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "dust",
+    "dispatch_recipe": "x86_64/dust",
+    "source_aliases": [
+      "bootandy/dust"
+    ]
+  },
+  {
+    "recipe": "x86_64/bat",
+    "source_recipe": "x86_64/bat",
+    "source_sha256": "3913c7486e167e84f30faa5107006a7a20ac54c45ce5f36614fd1d71562407a8",
+    "repository_id": 130464961,
+    "repository": "sharkdp/bat",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*x86_64.*unknown.*linux.*musl.*gz$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "bat",
+    "dispatch_recipe": "x86_64/bat",
+    "source_aliases": [
+      "sharkdp/bat"
+    ]
+  },
+  {
+    "recipe": "x86_64/procs",
+    "source_recipe": "x86_64/procs",
+    "source_sha256": "39fa1b4f10c1ffad73ae41efb0cefd7bab6a9185c1e295f8e5693c767484b792",
+    "repository_id": 167957539,
+    "repository": "dalance/procs",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*x86_64.*linux.*zip$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "procs",
+    "dispatch_recipe": "x86_64/procs",
+    "source_aliases": [
+      "dalance/procs"
+    ]
+  },
+  {
+    "recipe": "x86_64/nyaa",
+    "source_recipe": "x86_64/nyaa",
+    "source_sha256": "f0b0bef116e257775e109f29cbacc2de9294279caa125ed7fddbdd9d405ad412",
+    "repository_id": 522965684,
+    "repository": "Beastwick18/nyaa",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*nyaa.*(x|d|86_)64.*gnu$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "apple|windows|darwin",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "nyaa",
+    "dispatch_recipe": "x86_64/nyaa",
+    "source_aliases": [
+      "Beastwick18/nyaa"
+    ]
+  },
+  {
+    "recipe": "x86_64/lsd",
+    "source_recipe": "x86_64/lsd",
+    "source_sha256": "47e81527b50519cfdaf42649dd3b086a92cfcc6df5aea8e8e00ac39f28bbfe5f",
+    "repository_id": 158927812,
+    "repository": "lsd-rs/lsd",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*x86_64.*unknown.*linux.*musl.*gz$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "lsd",
+    "dispatch_recipe": "x86_64/lsd",
+    "source_aliases": [
+      "lsd-rs/lsd"
+    ]
+  },
+  {
+    "recipe": "x86_64/polybar",
+    "source_recipe": "x86_64/polybar",
+    "source_sha256": "66475e088841e8667831386e28778c62867ef4bccccd43c14caf0ea636c409d6",
+    "repository_id": 802209456,
+    "repository": "pkgforge-dev/Polybar-AppImage",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*polybar.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "polybar",
+    "dispatch_recipe": "x86_64/polybar",
+    "source_aliases": [
+      "Samueru-sama/polybar-AppImage",
+      "pkgforge-dev/Polybar-AppImage"
+    ]
+  },
+  {
+    "recipe": "x86_64/yazi",
+    "source_recipe": "x86_64/yazi",
+    "source_sha256": "c9d8596b658e70a8c9bc2f505de5fd788832dde134e81933b8b9999431fc6757",
+    "repository_id": 663900193,
+    "repository": "sxyazi/yazi",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*x86_64.*linux.*gnu.*zip$",
+        "ignore_case": false,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "yazi",
+    "dispatch_recipe": "x86_64/yazi",
+    "source_aliases": [
+      "sxyazi/yazi"
+    ]
+  },
+  {
+    "recipe": "x86_64/gron",
+    "source_recipe": "x86_64/gron",
+    "source_sha256": "3d2ad56a22ebc68764cc66e604019a3db0a74f828a65aa7104f14aa57fcdc437",
+    "repository_id": 5724223,
+    "repository": "tomnomnom/gron",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*gron.*linux-amd64.*gz$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "gron",
+    "dispatch_recipe": "x86_64/gron",
+    "source_aliases": [
+      "tomnomnom/gron"
+    ]
+  },
+  {
+    "recipe": "x86_64/macchina",
+    "source_recipe": "x86_64/macchina",
+    "source_sha256": "ad02888161eb919e3b1e10fe28b69785e3a187eab17ad6b9f8230fe532e26edf",
+    "repository_id": 328027219,
+    "repository": "Macchina-CLI/macchina",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*macchina.*x86_64$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "apple|windows|darwin|aarch64",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "macchina",
+    "dispatch_recipe": "x86_64/macchina",
+    "source_aliases": [
+      "Macchina-CLI/macchina"
+    ]
+  },
+  {
+    "recipe": "x86_64/ripgrep",
+    "source_recipe": "x86_64/ripgrep",
+    "source_sha256": "718febb6aa716a934c7802a08984caeb3ef74fd2f7e68fb907d1efe103e3294c",
+    "repository_id": 53631945,
+    "repository": "BurntSushi/ripgrep",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*x86_64.*unknown.*linux.*musl.*gz$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "ripgrep",
+    "dispatch_recipe": "x86_64/ripgrep",
+    "source_aliases": [
+      "BurntSushi/ripgrep"
+    ]
+  },
+  {
+    "recipe": "x86_64/cpu-x",
+    "source_recipe": "x86_64/cpu-x",
+    "source_sha256": "dfdcb23067a0003104e37449aca27d0525e4f1f91f2baf0da257ffeb10fedfbb",
+    "repository_id": 24292801,
+    "repository": "TheTumultuousUnicornOfDarkness/CPU-X",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*releases.*cpu-x.*x86_64.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "continuous",
+        "ignore_case": false,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "cpu-x",
+    "dispatch_recipe": "x86_64/cpu-x",
+    "source_aliases": [
+      "TheTumultuousUnicornOfDarkness/CPU-X"
+    ]
+  },
+  {
+    "recipe": "x86_64/cheat",
+    "source_recipe": "x86_64/cheat",
+    "source_sha256": "0bccc73f276905711400cd57289e5ab6c8c3913ab794b10f8ff736ccc16077ba",
+    "repository_id": 11753762,
+    "repository": "cheat/cheat",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*cheat.*linux.*amd64.*gz$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "cheat",
+    "dispatch_recipe": "x86_64/cheat",
+    "source_aliases": [
+      "cheat/cheat"
+    ]
+  },
+  {
+    "recipe": "x86_64/glow",
+    "source_recipe": "x86_64/glow",
+    "source_sha256": "150f8bbbfff5b9de6f14e9e48535fdf32f2f8d6f0c7c5a05926a3930b7f9f7eb",
+    "repository_id": 219616873,
+    "repository": "charmbracelet/glow",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*glow.*linux.*x86_64.*gz$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "glow",
+    "dispatch_recipe": "x86_64/glow",
+    "source_aliases": [
+      "charmbracelet/glow"
+    ]
+  },
+  {
+    "recipe": "x86_64/genact",
+    "source_recipe": "x86_64/genact",
+    "source_sha256": "319c0df2cd4913ef69228b2d1c2d4ac44594462c2a3bf18b3cf08d099103da1c",
+    "repository_id": 1345495,
+    "repository": "svenstaro/genact",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*genact.*x86_64.*linux.*musl$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "apple|windows|darwin",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "genact",
+    "dispatch_recipe": "x86_64/genact",
+    "source_aliases": [
+      "svenstaro/genact"
+    ]
+  },
+  {
+    "recipe": "aarch64/zmx",
+    "source_recipe": "aarch64/zmx",
+    "source_sha256": "62586cf620c7d73143baf9295fab4d20dcafa479aa2ffdadb073ce9cb4493dae",
+    "repository_id": 1073900202,
+    "repository": "neurosnap/zmx",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*zmx.*(aarch64|arm64).*(z$|ip$|zmx$)",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "apple|windows|darwin|macos",
+        "ignore_case": true,
+        "exclude": true
+      }
+    ],
+    "catalog_app": "zmx",
+    "dispatch_recipe": "aarch64/zmx",
+    "source_aliases": [
+      "neurosnap/zmx"
+    ]
+  },
+  {
+    "recipe": "aarch64/appimageupdatetool",
+    "source_recipe": "aarch64/appimageupdatetool",
+    "source_sha256": "3f1be6b950832326a36e4798650f13cd2ac027b41fbdb5105b8ad54f5dadf27d",
+    "repository_id": 84325774,
+    "repository": "AppImageCommunity/AppImageUpdate",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*appimageupdatetool.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "appimageupdatetool",
+    "dispatch_recipe": "aarch64/appimageupdatetool",
+    "source_aliases": [
+      "AppImageCommunity/AppImageUpdate"
+    ]
+  },
+  {
+    "recipe": "aarch64/zapzap",
+    "source_recipe": "aarch64/zapzap",
+    "source_sha256": "c021dc370e142c1ee91415e6612295f3e6b933342e60437bbf51a195f32ae8c0",
+    "repository_id": 443556270,
+    "repository": "rafatosta/zapzap",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      },
+      {
+        "pattern": "aarch64|arm64",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "zapzap",
+    "dispatch_recipe": "aarch64/zapzap",
+    "source_aliases": [
+      "rafatosta/zapzap"
+    ]
+  },
+  {
+    "recipe": "aarch64/fzf",
+    "source_recipe": "aarch64/fzf",
+    "source_sha256": "4c7b1652d3ada092e67adb08b70bf1534cf29355912a0d45d3679e2feb7dd144",
+    "repository_id": 13807606,
+    "repository": "junegunn/fzf",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*linux.*arm64.*gz$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "fzf",
+    "dispatch_recipe": "aarch64/fzf",
+    "source_aliases": [
+      "junegunn/fzf"
+    ]
+  },
+  {
+    "recipe": "aarch64/zramen",
+    "source_recipe": "aarch64/zramen",
+    "source_sha256": "5b6e3903152ee52e5871970dd375e6dc005ee29fbd93eaf1a7c3a572bbd53b50",
+    "repository_id": 153996841,
+    "repository": "atweiden/zramen",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*zramen.*tar.gz$",
+        "ignore_case": false,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "zramen",
+    "dispatch_recipe": "aarch64/zramen",
+    "source_aliases": [
+      "atweiden/zramen"
+    ]
+  },
+  {
+    "recipe": "aarch64/yazi",
+    "source_recipe": "aarch64/yazi",
+    "source_sha256": "bcae98af914dfb9b505fda65fea13bcc3d269e6d0db28b584aa92ffec74f7e9d",
+    "repository_id": 663900193,
+    "repository": "sxyazi/yazi",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*aarch64.*linux.*gnu.*zip$",
+        "ignore_case": false,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "yazi",
+    "dispatch_recipe": "aarch64/yazi",
+    "source_aliases": [
+      "sxyazi/yazi"
+    ]
+  },
+  {
+    "recipe": "x86_64/xdg-ninja",
+    "source_recipe": "x86_64/xdg-ninja",
+    "source_sha256": "ca74cbfdc686e05e981c69e08a6bc612b1cf492f799312124290897826f82aed",
+    "repository_id": 491527855,
+    "repository": "b3nj5m1n/xdg-ninja",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": ".",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "xdg-ninja",
+    "dispatch_recipe": "x86_64/xdg-ninja",
+    "source_aliases": [
+      "b3nj5m1n/xdg-ninja"
+    ],
+    "selection": "release"
+  },
+  {
+    "recipe": "aarch64/xdg-ninja",
+    "source_recipe": "aarch64/xdg-ninja",
+    "source_sha256": "9f293dccb1bb0e003de117b9f59252a583f4e256a9d20fc3cc732d3d1089792c",
+    "repository_id": 491527855,
+    "repository": "b3nj5m1n/xdg-ninja",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": ".",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "xdg-ninja",
+    "dispatch_recipe": "aarch64/xdg-ninja",
+    "source_aliases": [
+      "b3nj5m1n/xdg-ninja"
+    ],
+    "selection": "release"
+  },
+  {
+    "recipe": "aarch64/emmylua",
+    "source_recipe": "aarch64/emmylua",
+    "source_sha256": "841a988ac4bb9eab27cb6f6728890f3e1121a38145d131d05bb1131576b62599",
+    "repository_id": 872860168,
+    "repository": "EmmyLuaLs/emmylua-analyzer-rust",
+    "channel": "stable",
+    "url_rules": [
+      {
+        "pattern": "https.*/emmylua_ls-linux-aarch64-glibc.2.17.tar.gz$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "emmylua",
+    "dispatch_recipe": "aarch64/emmylua",
+    "source_aliases": [
+      "EmmyLuaLs/emmylua-analyzer-rust"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/libreoffice",
+    "source_recipe": "x86_64/libreoffice",
+    "source_sha256": "c83e329d2659c47bb29fa64ff4fb37c6b0b8f2428a724db9574dafea0f95695f",
+    "repository_id": 1188822609,
+    "repository": "Portable-Linux-Apps/LibreOffice-appimage",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "libreoffice",
+    "dispatch_recipe": "x86_64/libreoffice",
+    "source_aliases": [
+      "Portable-Linux-Apps/LibreOffice-appimage"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/libreoffice.select-2",
+    "source_recipe": "x86_64/libreoffice",
+    "source_sha256": "c83e329d2659c47bb29fa64ff4fb37c6b0b8f2428a724db9574dafea0f95695f",
+    "repository_id": 979466408,
+    "repository": "ivan-hc/LibreOffice-appimage",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": "https.*mage$",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "libreoffice.src-979466408",
+    "dispatch_recipe": "x86_64/libreoffice",
+    "source_aliases": [
+      "ivan-hc/LibreOffice-appimage"
+    ],
+    "selection": "asset"
+  },
+  {
+    "recipe": "x86_64/cursor",
+    "source_recipe": "x86_64/cursor",
+    "source_sha256": "4b52e683185d37f2b8ede96d5b7b5209a2725ce8d40f33fd1b1abe4738c01596",
+    "repository_id": 903233225,
+    "repository": "oslook/cursor-ai-downloads",
+    "channel": "any",
+    "url_rules": [
+      {
+        "pattern": ".",
+        "ignore_case": true,
+        "exclude": false
+      }
+    ],
+    "catalog_app": "cursor",
+    "dispatch_recipe": "x86_64/cursor",
+    "source_aliases": [
+      "oslook/cursor-ai-downloads"
+    ],
+    "selection": "git-file",
+    "git_ref": "refs/heads/main",
+    "git_file": "version-history.json"
   }
 ]

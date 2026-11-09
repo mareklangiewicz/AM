@@ -73,7 +73,7 @@ export function parseDocument(text,{maxBytes=2097152}={}) {
  for(const line of text.slice(0,-1).split('\n')) {
   // UTF-8 needs at most three bytes per UTF-16 code unit. Short lines fit
   // without allocating a byte buffer; long lines still get the exact check.
-  if(!line||(line.length>21845&&bytes(line)>65536)||/[\x00-\x1f\x7f-\x9f\u2028\u2029\ufffe\uffff]/.test(line)||line.endsWith(' ')) bad('control/whitespace');
+  if(!line||(line.length>21845&&bytes(line)>65536&&!/^        content: "/.test(line))||/[\x00-\x1f\x7f-\x9f\u2028\u2029\ufffe\uffff]/.test(line)||line.endsWith(' ')) bad('control/whitespace');
   const m=/^( *)("[a-z0-9][a-z0-9_.+-]*"|[a-z][a-z0-9_]*):(?: (.*))?$/.exec(line);
   if(!m||m[1].length%2) bad('grammar');
   const depth=m[1].length/2;
@@ -126,7 +126,7 @@ function semantics(doc) {
     const paths=new Set();
     for(const file of Object.values(ref.files??{})) {
      if(!file.path||bytes(file.path)>1024||file.path.startsWith('/')||/[\x00-\x1f\x7f]/.test(file.path)||file.path.split('/').some(p=>p==='.'||p==='..')||paths.has(file.path)) bad('Git file path');
-     paths.add(file.path);if(bytes(file.content)>8192||file.observed_at<ref.observed_at||file.observed_at>doc.collected_at) bad('Git file observation');
+     paths.add(file.path);if(bytes(file.content)>1048576||file.observed_at<ref.observed_at||file.observed_at>doc.collected_at) bad('Git file observation');
     }
    }
    if(tags>100||branches!==Object.keys(scope.branches).length) bad('Git count');

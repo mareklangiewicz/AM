@@ -146,3 +146,62 @@ changed registry, duplicate policy, ambiguous dispatch or hash drift refuses.
 Six bulk URL groups pass, including actual manager integration and an append
 regression verifying refusal leaves both recipe and registry unchanged.
 Fifteen publication groups also pass after the schema workflow change.
+
+## Completed recipe preparation — November 9 continuation
+
+The local recipe inventory now has **10,392 v3 recipes**, **49 explicit
+unverified-source refusals**, and **275 other recipes**. Enrollment is **8,670
+app identities / 8,313 numeric sources**. These are prepared source bindings,
+not newly published source coverage or proof of usable assets for every app.
+
+All 38 originally listed custom selectors are adapted. Release-only metadata
+keeps tag/URL/publication/update identities separate from download URLs; mutable
+releases use observed update/asset identities where the old checks used page
+text or unrelated events. Runtime source/build choices remain explicit policies
+and filters; standalone multi-read adapters share one catalog session. Wine's
+menu lists retained eligible choices and revalidates the selected URL's freshness
+before downloading. Version-sorted selectors choose their URL first and validate
+that exact winner. The old Voicevox updater's inconsistent primary segment,
+WezTerm's duplicated wget and Gale's malformed substitution were corrected while
+adapting their selectors.
+
+The old attribution scan missed literal SITE-backed API reads. The follow-up
+finds and converts **65 additional recipes**, with **58 newly queried public
+repository identities verified**. The scanner now recognizes literal SITE
+assignments, including multiple assignments on one line. LibreOffice keeps its
+source/edition choice; xdg-ninja consumes an actual release source-archive fact;
+aarch64 EmmyLua retains its fixed common release archive suffix. The official
+portable UAD source was independently verified and enrolled with a source alias.
+There are **zero remaining recipe curl/wget reads of the GitHub API**.
+
+Cursor adds a commit-pinned manifest observation. Its current 607,223-byte file
+requires a 1 MiB decoded file-content bound. Only repository-file content can
+exceed the ordinary 65,536-byte line bound, within the unchanged 2 MiB document
+cap and shared request/byte/time budgets. Native decoding works in small input
+chunks: validation of this saved manifest took 0.166 s mawk / 0.198 s gawk /
+1.401 s BusyBox awk after removing repeated scans of long operands. Chunk-boundary
+escape/output and file/ordinary-line bounds are covered by seven passing Git
+observation test groups.
+
+The same **38 repository names / 49 recipe bindings** still return 404 on an
+independent identity recheck. This establishes unavailable public verification,
+not deletion. Their recipes now refuse explicitly before network or installation
+writes, without invented IDs or a live API fallback. Their original bodies remain
+at the recorded pre-migration commit. All 49 refusal scripts pass the family
+check. AUR/Nix metadata for non-GitHub app sources remains outside this app-source
+migration boundary, including Exodus as established at handoff.
+
+Portable supplementary evidence:
+
+- [Custom receipt](github-custom-recipes-16.json.gz): 38 recipe hashes/policy keys.
+- [SITE receipt](github-site-recipes-16.json.gz): 65 recipe hashes and identity bindings.
+- [Cursor receipt](github-cursor-recipe-16.json.gz): manifest adapter hashes.
+- [SITE identity responses](github-site-identities-16.json): 58 public repository responses.
+- [Identity recheck](github-identity-recheck-16.json): the unverified names and official UAD identity.
+- [Cursor identity](cursor-source-identity-16.json).
+- [Unverified recipe registry](../../../tools/catalog-collector/unavailable-github-recipes.json): exact old/new hashes and original source revision.
+
+All 153 recipes changed in this continuation and their 104 quoted updater bodies
+pass shell syntax. Fifteen browser checks pass after the larger-file reader
+change. The broader runtime/collector validation and final rollout package are
+being completed; this source checkpoint is not permission to push or publish.

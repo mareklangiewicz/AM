@@ -1,4 +1,14 @@
 #!/bin/sh
+# AM-CATALOG-RECIPE 1
+CATALOG_FORMAT=3
+AMREPO=${AMREPO-}
+export AMREPO
+if [ -z "${AM_CATALOG_SESSION-}" ]; then
+    AM_CATALOG_SESSION=$(mktemp -d) || exit 1
+    export AM_CATALOG_SESSION
+    trap 'rm -rf -- "$AM_CATALOG_SESSION"' 0
+    trap 'exit 1' HUP INT TERM
+fi
 
 # AM INSTALL SCRIPT VERSION 3.6
 set -u
@@ -28,11 +38,11 @@ read -r -p "
 case "$response" in
 	1) rm -f /opt/"$APP"/version
 	UPDATER=1
-	version=$(curl -Ls https://api.github.com/repos/VN-Linux-Family/zalo-for-linux/releases | sed 's/[()",{} ]/\n/g' | grep -oi "https.*download.*ZaDark.*mage$" | grep -vi "i386\|i686\|armhf\|aarch64\|arm64\|armv7l" | head -1)
+	version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/zalo --url "$@") || exit 1
 	wget "$version"
 	echo "$version" >> /opt/$APP/version;;
 	2) rm -f /opt/"$APP"/version
-	version=$(curl -Ls https://api.github.com/repos/VN-Linux-Family/zalo-for-linux/releases | sed 's/[()",{} ]/\n/g' | grep -oi "https.*download.*mage$" | grep -vi "i386\|i686\|armhf\|aarch64\|arm64\|armv7l" | grep -vi "%2BZaDark" | head -1)
+	version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/zalo.select-2 --url "$@") || exit 1
 	UPDATER=2
 	wget "$version"
 	echo "$version" >> /opt/$APP/version;;
@@ -54,16 +64,22 @@ ln -s "/opt/$APP/$APP" "/usr/local/bin/$APP"
 # SCRIPT TO UPDATE THE PROGRAM
 cat >> ./AM-updater << 'EOF'
 #!/bin/sh
+# AM-CATALOG-RECIPE 1
+CATALOG_FORMAT=3
+AMREPO=${AMREPO-}
+export AMREPO
+if [ -z "${AM_CATALOG_SESSION-}" ]; then
+    AM_CATALOG_SESSION=$(mktemp -d) || exit 1
+    export AM_CATALOG_SESSION
+    trap 'rm -rf -- "$AM_CATALOG_SESSION"' 0
+    trap 'exit 1' HUP INT TERM
+fi
 set -u
 APP=zalo
 SITE="VN-Linux-Family/zalo-for-linux"
 version0=$(cat "/opt/$APP/version")
-version=$($LINK)
+version=$(sh "/opt/am/modules/catalog-yaml.am" AM_ZALO_POLICY --url "$@") || exit 1
 [ -n "$version" ] || { echo "Error getting link"; exit 1; }
-if command -v appimageupdatetool >/dev/null 2>&1; then
-	cd "/opt/$APP" || exit 1
-	appimageupdatetool -Or ./"$APP" && chmod a+x ./"$APP" && echo "$version" > ./version && exit 0
-fi
 if [ "$version" != "$version0" ]; then
 	mkdir "/opt/$APP/tmp" && cd "/opt/$APP/tmp" || exit 1
 	notify-send "A new version of $APP is available, please wait"
@@ -80,9 +96,9 @@ else
 fi
 EOF
 if [ "$UPDATER" = "1" ]; then
-    sed -i 's#$LINK#curl -Ls https://api.github.com/repos/VN-Linux-Family/zalo-for-linux/releases | sed '"'"'s/[()",{} ]/\\n/g'"'"' | grep -oi "https.*download.*ZaDark.*mage$" | grep -vi "i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l" | head -1#g' /opt/"$APP"/AM-updater
+    sed -i 's#AM_ZALO_POLICY#x86_64/zalo#g' /opt/"$APP"/AM-updater
 elif [ "$UPDATER" = "2" ]; then
-    sed -i 's#$LINK#curl -Ls https://api.github.com/repos/VN-Linux-Family/zalo-for-linux/releases | sed '"'"'s/[()",{} ]/\\n/g'"'"' | grep -oi "https.*download.*mage$" | grep -vi "i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l" | grep -vi "%2BZaDark" | head -1#g' /opt/"$APP"/AM-updater
+    sed -i 's#AM_ZALO_POLICY#x86_64/zalo.select-2#g' /opt/"$APP"/AM-updater
 fi
 chmod a+x ./AM-updater || exit 1
 
