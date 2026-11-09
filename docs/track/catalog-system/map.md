@@ -173,6 +173,15 @@ parent binding.
 
 ## Execution evidence and optional follow-ups
 
+Latest executed state, November 9: [myxps direct-v3 migration is complete](myxps-cutover-result-15.json).
+Main source `f05e85926` is pushed, all 21 installed recipes use v3, the native
+browser is deployed, and the 500-source hourly schedule is enabled. The first
+run published v3/status with 498 successful refreshes and two isolated failures
+(agent-console validation, Axe-OS-Multitool transport). All installed dependencies
+pass current freshness. V2 is frozen with history retained; no app binaries,
+other hosts, yadm or expansion were changed. The earlier preparation notes below
+are historical checkpoints; future v3 expansion remains deferred to 16.
+
 Latest November 9 result: [the direct-v3 cutover package](myxps-cutover-15.md)
 supersedes the earlier expanded dual-output operating recommendation below.
 All 529 maintained declarations are v3; native selection parity passes 57/57 and

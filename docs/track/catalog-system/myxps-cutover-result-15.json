@@ -1,0 +1,827 @@
+{
+  "authorized_by": "Marek: migrate without any unnecessary steps",
+  "checked_at": "2026-11-09T00:45:41.963846+00:00",
+  "host": "myxps",
+  "source_pushed": "f05e85926e662f2736907d814b065406f3e8c654",
+  "historical_v2_frozen": "f98e2285e9348541cd00df74eb9ab570aa96b11e",
+  "initial_v3": "e481f033692f589c7230fd655e66a3a180e2e01a",
+  "installed": {
+    "recipes": 21,
+    "files": 50,
+    "unchanged_updaters": 21,
+    "hashes_verified": true,
+    "application_binaries_updated": false
+  },
+  "live_fresh_selections": {
+    "catalog": "e481f033692f589c7230fd655e66a3a180e2e01a",
+    "freshness": "ordinary current wall clock; no stale consent",
+    "recipes": 21,
+    "selections": 24,
+    "seconds": 35.75874550797744,
+    "rows": [
+      {
+        "recipe": "x86_64/appimagetool",
+        "tool": "appimagetool",
+        "fields": [
+          "e481f033692f589c7230fd655e66a3a180e2e01a",
+          "658450330",
+          "435944148",
+          "715388534",
+          "2026-11-07T21:02:54Z",
+          "https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage",
+          "2026-11-06T00:48:33Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/appimageupdatetool",
+        "tool": "appimageupdatetool",
+        "fields": [
+          "e481f033692f589c7230fd655e66a3a180e2e01a",
+          "84325774",
+          "255554215",
+          "305898886",
+          "2026-11-07T21:02:51Z",
+          "https://github.com/AppImageCommunity/AppImageUpdate/releases/download/2.0.0-alpha-1-20251018/appimageupdatetool-x86_64.AppImage",
+          "2025-10-18T19:47:45Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/btop",
+        "tool": "btop",
+        "fields": [
+          "e481f033692f589c7230fd655e66a3a180e2e01a",
+          "365005377",
+          "423236326",
+          "674452462",
+          "2026-11-07T21:02:53Z",
+          "https://github.com/aristocratos/btop/releases/download/v1.4.8/btop-x86_64-unknown-linux-musl.tar.gz",
+          "2026-10-25T08:02:10Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/emmylua",
+        "tool": "emmylua_ls",
+        "fields": [
+          "e481f033692f589c7230fd655e66a3a180e2e01a",
+          "872860168",
+          "370562083",
+          "514398178",
+          "2026-11-07T21:02:55Z",
+          "https://github.com/EmmyLuaLs/emmylua-analyzer-rust/releases/download/0.25.1/emmylua_ls-linux-musl.tar.gz",
+          "2026-08-14T12:33:31Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/emmylua",
+        "tool": "emmylua_check",
+        "fields": [
+          "e481f033692f589c7230fd655e66a3a180e2e01a",
+          "872860168",
+          "370562083",
+          "514398181",
+          "2026-11-07T21:02:55Z",
+          "https://github.com/EmmyLuaLs/emmylua-analyzer-rust/releases/download/0.25.1/emmylua_check-linux-musl.tar.gz",
+          "2026-08-14T12:33:31Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/emmylua",
+        "tool": "emmylua_doc_cli",
+        "fields": [
+          "e481f033692f589c7230fd655e66a3a180e2e01a",
+          "872860168",
+          "370562083",
+          "514398191",
+          "2026-11-07T21:02:55Z",
+          "https://github.com/EmmyLuaLs/emmylua-analyzer-rust/releases/download/0.25.1/emmylua_doc_cli-linux-musl.tar.gz",
+          "2026-08-14T12:33:31Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/emmylua",
+        "tool": "luafmt",
+        "fields": [
+          "e481f033692f589c7230fd655e66a3a180e2e01a",
+          "872860168",
+          "370562083",
+          "514398164",
+          "2026-11-07T21:02:55Z",
+          "https://github.com/EmmyLuaLs/emmylua-analyzer-rust/releases/download/0.25.1/luafmt-linux-musl.tar.gz",
+          "2026-08-14T12:33:31Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/fzf",
+        "tool": "fzf",
+        "fields": [
+          "e481f033692f589c7230fd655e66a3a180e2e01a",
+          "13807606",
+          "437549791",
+          "720590794",
+          "2026-11-07T21:02:56Z",
+          "https://github.com/junegunn/fzf/releases/download/v0.75.0/fzf-0.75.0-linux_amd64.tar.gz",
+          "2026-11-07T12:03:59Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/kitty",
+        "tool": "kitty",
+        "fields": [
+          "e481f033692f589c7230fd655e66a3a180e2e01a",
+          "71056775",
+          "432765152",
+          "705794258",
+          "2026-11-07T21:02:58Z",
+          "https://github.com/kovidgoyal/kitty/releases/download/v0.50.0/kitty-0.50.0-x86_64.txz",
+          "2026-11-03T13:56:09Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/lazygit",
+        "tool": "lazygit",
+        "fields": [
+          "e481f033692f589c7230fd655e66a3a180e2e01a",
+          "134017286",
+          "414774906",
+          "646837723",
+          "2026-11-07T21:02:59Z",
+          "https://github.com/jesseduffield/lazygit/releases/download/v0.66.2/lazygit_0.66.2_linux_x86_64.tar.gz",
+          "2026-10-16T09:33:06Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/logseq-app-db-nightly",
+        "tool": "logseq-app-db-nightly",
+        "fields": [
+          "e481f033692f589c7230fd655e66a3a180e2e01a",
+          "266231149",
+          "248188362",
+          "674292431",
+          "2026-11-07T21:03:00Z",
+          "https://github.com/logseq/logseq/releases/download/nightly/Logseq-linux-x86_64-2.0.2.AppImage",
+          "2026-10-25T06:33:22Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/logseq-app-og",
+        "tool": "logseq-app-og",
+        "fields": [
+          "e481f033692f589c7230fd655e66a3a180e2e01a",
+          "1122576268",
+          "308380300",
+          "395466833",
+          "2026-11-07T21:03:09Z",
+          "https://github.com/logseq/og/releases/download/1.0.0/Logseq-OG-linux-x64-1.0.0.AppImage",
+          "2026-04-15T18:15:22Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/neovide",
+        "tool": "neovide",
+        "fields": [
+          "e481f033692f589c7230fd655e66a3a180e2e01a",
+          "226408450",
+          "433915670",
+          "709497924",
+          "2026-11-07T21:03:02Z",
+          "https://github.com/neovide/neovide/releases/download/0.17.2/neovide.AppImage",
+          "2026-11-04T12:59:20Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/neovide-nightly",
+        "tool": "neovide-nightly",
+        "fields": [
+          "e481f033692f589c7230fd655e66a3a180e2e01a",
+          "226408450",
+          "434806746",
+          "712169725",
+          "2026-11-07T21:03:02Z",
+          "https://github.com/neovide/neovide/releases/download/nightly/neovide.AppImage",
+          "2026-11-05T05:33:12Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/nvim",
+        "tool": "nvim",
+        "fields": [
+          "e481f033692f589c7230fd655e66a3a180e2e01a",
+          "16408992",
+          "408064517",
+          "625399159",
+          "2026-11-07T21:03:02Z",
+          "https://github.com/neovim/neovim/releases/download/v0.12.6/nvim-linux-x86_64.appimage",
+          "2026-10-09T15:43:25Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/nvim-nightly",
+        "tool": "nvim-nightly",
+        "fields": [
+          "e481f033692f589c7230fd655e66a3a180e2e01a",
+          "16408992",
+          "437355377",
+          "719699977",
+          "2026-11-07T21:03:02Z",
+          "https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.appimage",
+          "2026-11-07T05:17:04Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/obsidian",
+        "tool": "obsidian",
+        "fields": [
+          "e481f033692f589c7230fd655e66a3a180e2e01a",
+          "262342594",
+          "429462128",
+          "693342770",
+          "2026-11-07T21:03:03Z",
+          "https://github.com/obsidianmd/obsidian-releases/releases/download/v1.15.0/Obsidian-1.15.0.AppImage",
+          "2026-11-02T15:39:05Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/rclone",
+        "tool": "rclone",
+        "fields": [
+          "e481f033692f589c7230fd655e66a3a180e2e01a",
+          "17803236",
+          "436721871",
+          "717751926",
+          "2026-11-07T21:03:05Z",
+          "https://github.com/rclone/rclone/releases/download/v1.76.0/rclone-v1.76.0-linux-amd64.zip",
+          "2026-11-06T16:29:59Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/rclone-ui",
+        "tool": "rclone-ui",
+        "fields": [
+          "e481f033692f589c7230fd655e66a3a180e2e01a",
+          "920598633",
+          "391817129",
+          "579192916",
+          "2026-11-07T21:03:08Z",
+          "https://github.com/rclone/rclone-ui/releases/download/v3.7.5/Rclone.UI_amd64.AppImage",
+          "2026-09-18T22:42:05Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/satty",
+        "tool": "satty",
+        "fields": [
+          "e481f033692f589c7230fd655e66a3a180e2e01a",
+          "1200402795",
+          "430774771",
+          "699162221",
+          "2026-11-07T21:03:12Z",
+          "https://github.com/pkgforge-dev/Satty-AppImage/releases/download/0.22.0-1%402026-11-01_1793557911/Satty-0.22.0-1-anylinux-x86_64.AppImage",
+          "2026-11-01T18:31:52Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/sunshine",
+        "tool": "sunshine",
+        "fields": [
+          "e481f033692f589c7230fd655e66a3a180e2e01a",
+          "438803890",
+          "437811202",
+          "721795632",
+          "2026-11-07T21:03:09Z",
+          "https://github.com/LizardByte/Sunshine/releases/download/v2026.1107.185223/Sunshine_2026.1107.185223_x86_64.AppImage",
+          "2026-11-07T20:05:19Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/yt-dlp",
+        "tool": "yt-dlp",
+        "fields": [
+          "e481f033692f589c7230fd655e66a3a180e2e01a",
+          "307260205",
+          "424834875",
+          "679669642",
+          "2026-11-07T21:03:11Z",
+          "https://github.com/yt-dlp/yt-dlp/releases/download/2026.10.26/yt-dlp_linux",
+          "2026-10-26T22:25:26Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/zellij",
+        "tool": "zellij",
+        "fields": [
+          "e481f033692f589c7230fd655e66a3a180e2e01a",
+          "292014229",
+          "378361654",
+          "533538763",
+          "2026-11-07T21:03:12Z",
+          "https://github.com/zellij-org/zellij/releases/download/v0.45.1/zellij-x86_64-unknown-linux-musl.tar.gz",
+          "2026-08-28T09:21:44Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/zmx",
+        "tool": "zmx",
+        "fields": [
+          "e481f033692f589c7230fd655e66a3a180e2e01a",
+          "1073900202",
+          "437020660",
+          "718527455",
+          "2026-11-07T21:03:17Z",
+          "https://github.com/neurosnap/zmx/releases/download/v1.0.1/zmx-1.0.1-linux-x86_64.tar.gz",
+          "2026-11-06T20:53:13Z"
+        ]
+      }
+    ]
+  },
+  "browser": {
+    "url": "http://mareklangiewicz.pl/AM/web/catalog/?variant=A&pin=e481f033692f589c7230fd655e66a3a180e2e01a&app=obsidian",
+    "title": "obsidian",
+    "assets": 9,
+    "errors": [],
+    "requests": [
+      {
+        "url": "https://raw.githubusercontent.com/mareklangiewicz/AM/e481f033692f589c7230fd655e66a3a180e2e01a/catalog.yaml",
+        "status": 200
+      },
+      {
+        "url": "https://raw.githubusercontent.com/mareklangiewicz/AM/e481f033692f589c7230fd655e66a3a180e2e01a/apps.yaml",
+        "status": 200
+      },
+      {
+        "url": "https://raw.githubusercontent.com/mareklangiewicz/AM/e481f033692f589c7230fd655e66a3a180e2e01a/repositories/obsidian.yaml",
+        "status": 200
+      },
+      {
+        "url": "https://raw.githubusercontent.com/mareklangiewicz/AM/e481f033692f589c7230fd655e66a3a180e2e01a/provenance/obsidian.yaml",
+        "status": 200
+      }
+    ]
+  },
+  "pages_run": 42541108432,
+  "collection_run": 42541004615,
+  "collection_result": "success; partial source collection with confirmed v3 and status publication",
+  "hourly_schedule": {
+    "enabled": true,
+    "source": "f05e85926e662f2736907d814b065406f3e8c654",
+    "scope": 500
+  },
+  "catalog": "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+  "status": "cbacd32922c8da8fdcd9706e4a12c966453ef9e7",
+  "live_current_selections": {
+    "catalog": "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+    "freshness": "ordinary current wall clock; no stale consent",
+    "runtime": "/opt/am/modules/catalog-yaml.am",
+    "recipes": 21,
+    "selections": 24,
+    "seconds": 47.23502347501926,
+    "rows": [
+      {
+        "recipe": "x86_64/appimagetool",
+        "tool": "appimagetool",
+        "fields": [
+          "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+          "658450330",
+          "435944148",
+          "715388534",
+          "2026-11-09T00:39:04Z",
+          "https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage",
+          "2026-11-06T00:48:33Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/appimageupdatetool",
+        "tool": "appimageupdatetool",
+        "fields": [
+          "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+          "84325774",
+          "255554215",
+          "305898886",
+          "2026-11-09T00:39:02Z",
+          "https://github.com/AppImageCommunity/AppImageUpdate/releases/download/2.0.0-alpha-1-20251018/appimageupdatetool-x86_64.AppImage",
+          "2025-10-18T19:47:45Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/btop",
+        "tool": "btop",
+        "fields": [
+          "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+          "365005377",
+          "423236326",
+          "674452462",
+          "2026-11-09T00:39:04Z",
+          "https://github.com/aristocratos/btop/releases/download/v1.4.8/btop-x86_64-unknown-linux-musl.tar.gz",
+          "2026-10-25T08:02:10Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/emmylua",
+        "tool": "emmylua_ls",
+        "fields": [
+          "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+          "872860168",
+          "370562083",
+          "514398178",
+          "2026-11-09T00:39:05Z",
+          "https://github.com/EmmyLuaLs/emmylua-analyzer-rust/releases/download/0.25.1/emmylua_ls-linux-musl.tar.gz",
+          "2026-08-14T12:33:31Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/emmylua",
+        "tool": "emmylua_check",
+        "fields": [
+          "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+          "872860168",
+          "370562083",
+          "514398181",
+          "2026-11-09T00:39:05Z",
+          "https://github.com/EmmyLuaLs/emmylua-analyzer-rust/releases/download/0.25.1/emmylua_check-linux-musl.tar.gz",
+          "2026-08-14T12:33:31Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/emmylua",
+        "tool": "emmylua_doc_cli",
+        "fields": [
+          "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+          "872860168",
+          "370562083",
+          "514398191",
+          "2026-11-09T00:39:05Z",
+          "https://github.com/EmmyLuaLs/emmylua-analyzer-rust/releases/download/0.25.1/emmylua_doc_cli-linux-musl.tar.gz",
+          "2026-08-14T12:33:31Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/emmylua",
+        "tool": "luafmt",
+        "fields": [
+          "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+          "872860168",
+          "370562083",
+          "514398164",
+          "2026-11-09T00:39:05Z",
+          "https://github.com/EmmyLuaLs/emmylua-analyzer-rust/releases/download/0.25.1/luafmt-linux-musl.tar.gz",
+          "2026-08-14T12:33:31Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/fzf",
+        "tool": "fzf",
+        "fields": [
+          "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+          "13807606",
+          "437549791",
+          "720590794",
+          "2026-11-09T00:39:06Z",
+          "https://github.com/junegunn/fzf/releases/download/v0.75.0/fzf-0.75.0-linux_amd64.tar.gz",
+          "2026-11-07T12:03:59Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/kitty",
+        "tool": "kitty",
+        "fields": [
+          "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+          "71056775",
+          "432765152",
+          "705794258",
+          "2026-11-09T00:39:08Z",
+          "https://github.com/kovidgoyal/kitty/releases/download/v0.50.0/kitty-0.50.0-x86_64.txz",
+          "2026-11-03T13:56:09Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/lazygit",
+        "tool": "lazygit",
+        "fields": [
+          "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+          "134017286",
+          "437910742",
+          "722268995",
+          "2026-11-09T00:39:09Z",
+          "https://github.com/jesseduffield/lazygit/releases/download/v0.66.3/lazygit_0.66.3_linux_x86_64.tar.gz",
+          "2026-11-07T23:26:48Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/logseq-app-db-nightly",
+        "tool": "logseq-app-db-nightly",
+        "fields": [
+          "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+          "266231149",
+          "248188362",
+          "674292431",
+          "2026-11-09T00:39:10Z",
+          "https://github.com/logseq/logseq/releases/download/nightly/Logseq-linux-x86_64-2.0.2.AppImage",
+          "2026-10-25T06:33:22Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/logseq-app-og",
+        "tool": "logseq-app-og",
+        "fields": [
+          "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+          "1122576268",
+          "308380300",
+          "395466833",
+          "2026-11-09T00:39:17Z",
+          "https://github.com/logseq/og/releases/download/1.0.0/Logseq-OG-linux-x64-1.0.0.AppImage",
+          "2026-04-15T18:15:22Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/neovide",
+        "tool": "neovide",
+        "fields": [
+          "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+          "226408450",
+          "433915670",
+          "709497924",
+          "2026-11-09T00:39:11Z",
+          "https://github.com/neovide/neovide/releases/download/0.17.2/neovide.AppImage",
+          "2026-11-04T12:59:20Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/neovide-nightly",
+        "tool": "neovide-nightly",
+        "fields": [
+          "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+          "226408450",
+          "434806746",
+          "712169725",
+          "2026-11-09T00:39:11Z",
+          "https://github.com/neovide/neovide/releases/download/nightly/neovide.AppImage",
+          "2026-11-05T05:33:12Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/nvim",
+        "tool": "nvim",
+        "fields": [
+          "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+          "16408992",
+          "408064517",
+          "625399159",
+          "2026-11-09T00:39:11Z",
+          "https://github.com/neovim/neovim/releases/download/v0.12.6/nvim-linux-x86_64.appimage",
+          "2026-10-09T15:43:25Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/nvim-nightly",
+        "tool": "nvim-nightly",
+        "fields": [
+          "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+          "16408992",
+          "438048869",
+          "722971384",
+          "2026-11-09T00:39:11Z",
+          "https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.appimage",
+          "2026-11-08T05:16:13Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/obsidian",
+        "tool": "obsidian",
+        "fields": [
+          "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+          "262342594",
+          "429462128",
+          "693342770",
+          "2026-11-09T00:39:12Z",
+          "https://github.com/obsidianmd/obsidian-releases/releases/download/v1.15.0/Obsidian-1.15.0.AppImage",
+          "2026-11-02T15:39:05Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/rclone",
+        "tool": "rclone",
+        "fields": [
+          "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+          "17803236",
+          "436721871",
+          "717751926",
+          "2026-11-09T00:39:14Z",
+          "https://github.com/rclone/rclone/releases/download/v1.76.0/rclone-v1.76.0-linux-amd64.zip",
+          "2026-11-06T16:29:59Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/rclone-ui",
+        "tool": "rclone-ui",
+        "fields": [
+          "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+          "920598633",
+          "391817129",
+          "579192916",
+          "2026-11-09T00:39:16Z",
+          "https://github.com/rclone/rclone-ui/releases/download/v3.7.5/Rclone.UI_amd64.AppImage",
+          "2026-09-18T22:42:05Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/satty",
+        "tool": "satty",
+        "fields": [
+          "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+          "1200402795",
+          "430774771",
+          "699162221",
+          "2026-11-09T00:39:19Z",
+          "https://github.com/pkgforge-dev/Satty-AppImage/releases/download/0.22.0-1%402026-11-01_1793557911/Satty-0.22.0-1-anylinux-x86_64.AppImage",
+          "2026-11-01T18:31:52Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/sunshine",
+        "tool": "sunshine",
+        "fields": [
+          "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+          "438803890",
+          "437811202",
+          "721795632",
+          "2026-11-09T00:39:16Z",
+          "https://github.com/LizardByte/Sunshine/releases/download/v2026.1107.185223/Sunshine_2026.1107.185223_x86_64.AppImage",
+          "2026-11-07T20:05:19Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/yt-dlp",
+        "tool": "yt-dlp",
+        "fields": [
+          "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+          "307260205",
+          "424834875",
+          "679669642",
+          "2026-11-09T00:39:18Z",
+          "https://github.com/yt-dlp/yt-dlp/releases/download/2026.10.26/yt-dlp_linux",
+          "2026-10-26T22:25:26Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/zellij",
+        "tool": "zellij",
+        "fields": [
+          "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+          "292014229",
+          "378361654",
+          "533538763",
+          "2026-11-09T00:39:19Z",
+          "https://github.com/zellij-org/zellij/releases/download/v0.45.1/zellij-x86_64-unknown-linux-musl.tar.gz",
+          "2026-08-28T09:21:44Z"
+        ]
+      },
+      {
+        "recipe": "x86_64/zmx",
+        "tool": "zmx",
+        "fields": [
+          "3b779ba31e70f470fd83889069e3e8e0cb0a889d",
+          "1073900202",
+          "437020660",
+          "718527455",
+          "2026-11-09T00:39:23Z",
+          "https://github.com/neurosnap/zmx/releases/download/v1.0.1/zmx-1.0.1-linux-x86_64.tar.gz",
+          "2026-11-06T20:53:13Z"
+        ]
+      }
+    ]
+  },
+  "counts": {
+    "enrolled": 500,
+    "selected": 500,
+    "attempted": 500,
+    "successful": 498,
+    "failed": 2,
+    "unattempted": 0
+  },
+  "source_failures": [
+    {
+      "repository": "cyl-castillo/agent-console",
+      "reason": "source_validation",
+      "previous_v3_record": false
+    },
+    {
+      "repository": "ShaeOJ/Axe-OS-Multitool",
+      "reason": "transport",
+      "previous_v3_record": true
+    }
+  ],
+  "pages_result": "success",
+  "reported_run_summary": {
+    "format": 1,
+    "schema": "https://raw.githubusercontent.com/mareklangiewicz/AM/5429e09d97486cbdf9681f329bee7ed850cdd250/docs/catalog-status-v1.md",
+    "kind": "summary",
+    "run": {
+      "id": 42541004615,
+      "attempt": 1
+    },
+    "inputs": {
+      "source": "f05e85926e662f2736907d814b065406f3e8c654",
+      "policy": "f05e85926e662f2736907d814b065406f3e8c654",
+      "recipes": "f05e85926e662f2736907d814b065406f3e8c654",
+      "rules": "f05e85926e662f2736907d814b065406f3e8c654",
+      "schemas": "5429e09d97486cbdf9681f329bee7ed850cdd250"
+    },
+    "input_catalog_state": "known",
+    "input_catalog": "e481f033692f589c7230fd655e66a3a180e2e01a",
+    "started_at": "2026-11-09T00:35:39Z",
+    "reported_at": "2026-11-09T00:42:57Z",
+    "collection": "partial",
+    "validation": "ok",
+    "publication": {
+      "state": "confirmed",
+      "commit": "3b779ba31e70f470fd83889069e3e8e0cb0a889d"
+    },
+    "compatibility_publication": {
+      "state": "not_attempted"
+    },
+    "counts": {
+      "enrolled": {
+        "state": "known",
+        "value": 500
+      },
+      "selected": {
+        "state": "known",
+        "value": 500
+      },
+      "attempted": {
+        "state": "known",
+        "value": 500
+      },
+      "successful": {
+        "state": "known",
+        "value": 498
+      },
+      "failed": {
+        "state": "known",
+        "value": 2
+      },
+      "unknown": {
+        "state": "known",
+        "value": 0
+      },
+      "unattempted": {
+        "state": "known",
+        "value": 0
+      },
+      "deferred": {
+        "state": "known",
+        "value": 0
+      }
+    },
+    "stop_reason": "source_validation",
+    "metrics": {
+      "http_attempts": {
+        "state": "known",
+        "value": 500
+      },
+      "charged_bytes": {
+        "state": "known",
+        "value": 342682597
+      },
+      "received_bytes": {
+        "state": "unknown"
+      },
+      "acquisition_milliseconds": {
+        "state": "known",
+        "value": 313098
+      },
+      "command_milliseconds": {
+        "state": "known",
+        "value": 385369
+      },
+      "tree_bytes": {
+        "state": "known",
+        "value": 32360945
+      },
+      "largest_document_bytes": {
+        "state": "known",
+        "value": 401944
+      },
+      "local_object_bytes": {
+        "state": "known",
+        "value": 12754616
+      },
+      "packed_history_bytes": {
+        "state": "unknown"
+      },
+      "remote_storage_bytes": {
+        "state": "unknown"
+      },
+      "peak_rss_bytes": {
+        "state": "unknown"
+      }
+    },
+    "budgets": {
+      "requests": 750,
+      "bytes": 536870912,
+      "acquisition_milliseconds": 900000,
+      "document_bytes": 2097152
+    },
+    "actions_url": "https://github.com/mareklangiewicz/AM/actions/runs/42541004615",
+    "recent_runs_url": "https://github.com/mareklangiewicz/AM/actions/workflows/catalog.yml"
+  }
+}

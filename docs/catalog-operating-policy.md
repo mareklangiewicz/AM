@@ -2,19 +2,26 @@
 
 ## Direct v3 operating path — November 9, 2026
 
-Marek superseded temporary dual output. He is the only user, only myxps has these
-changes, and there are no external consumers. The maintained source now produces
-only format 3 plus independent status 1. All 529 recipe declarations use v3;
-myxps's 21 installed v2 declarations are prepared for a metadata-only migration.
-No application binary update, other-host delivery, automatic rollback machinery
-or v2 publication for recovery is intended. Historical commits/snapshots remain.
+Marek authorized and completed direct v3 migration on myxps. He is the only user;
+there are no external consumers. Main source `f05e85926` is pushed. V3 and status
+are live; v2 publication is stopped and its historical ref/snapshots are preserved.
+All 529 maintained source declarations and myxps's 21 installed declarations use
+v3. The 50-file runtime/metadata delivery passed hashes and all 24 installed tool
+selections passed ordinary freshness against the live v3 catalog. Application
+binaries, versions, launchers, configuration and data were not updated.
 
-Current enrollment stays 509 apps / 500 sources. Complete the direct migration
-before expansion; the broader 5,000-source target is deferred. Follow the
-[maintained CLI/runtime documentation](../tools/catalog-collector/README.md) and
-[exact myxps cutover](track/catalog-system/myxps-cutover-15.md). Remote push,
-activation/deployment, fresh acquisition/publication and installed writes await
-specific final authorization. Preparing and committing source performs none.
+The main-owned browser is deployed and a native anonymous browser journey passed.
+Hourly collection is enabled for the unchanged 509-app / 500-source enrollment.
+The first run refreshed 498 sources; agent-console failed validation and
+Axe-OS-Multitool failed transport, preserving its prior data. Both remain enrolled.
+Failures retry through normal later scheduled runs; there is no automatic rollback
+or continued v2 output. Mylenovo, mypi and yadm were untouched.
+
+See the [execution receipt](track/catalog-system/myxps-cutover-result-15.json),
+[cutover record](track/catalog-system/issues/15-prepare-reviewed-catalog-rollout-package.md)
+and [maintained CLI/runtime documentation](../tools/catalog-collector/README.md).
+Larger v3 coverage/annual capacity remains deferred; this migration does not
+qualify the 5,000-source target.
 
 ## Historical operational checkpoints
 

@@ -79,3 +79,29 @@ live collection, installed metadata delivery, Pages deployment and resuming the
 reviewed hourly schedule await final specific authorization. No binaries, other
 hosts or yadm pointers are in that action scope. Record actual live results here
 after authorization; no production success is claimed in advance.
+
+## Executed — November 9, 2026
+
+Marek authorized execution with “migrate without any unnecessary steps.”
+[Actual receipt](../myxps-cutover-result-15.json): pushed main at `f05e85926`,
+created the reviewed v3 seed, and completed
+[the first native v3 run](https://github.com/mareklangiewicz/AM/actions/runs/42541004615).
+It attempted all 500 sources: 498 succeeded, agent-console failed source validation,
+and Axe-OS-Multitool had a transport failure with its old source preserved.
+V3 `3b779ba31e70f470fd83889069e3e8e0cb0a889d` and status
+`cbacd32922c8da8fdcd9706e4a12c966453ef9e7` are confirmed. V2 remains frozen at
+`f98e2285e9348541cd00df74eb9ab570aa96b11e`; no v2 write was attempted.
+
+Delivered all 50 named myxps files; 21 installed declarations are v3 and all 21
+updaters are unchanged. Hashes passed. All 21 installed recipes / 24 tool
+selections passed ordinary wall-clock freshness with the delivered runtime
+against the new live catalog, without stale waivers or app payload execution.
+Application binaries, versions, launchers/data, other hosts and yadm were untouched.
+
+[Main-owned browser deployment](https://github.com/mareklangiewicz/AM/actions/runs/42541108432)
+succeeded. A native anonymous Chromium journey opened Obsidian with nine assets,
+no browser errors and successful pinned catalog/map/source/provenance fetches.
+Resumed the existing hourly scope by setting the schedule revision to the exact
+pushed main tip. Prototype deployment remains disabled. No extra rollback system
+or expanded dual-output qualification was introduced. The remaining two source
+failures are normal reported deferred work, not a reason to resume v2 production.
