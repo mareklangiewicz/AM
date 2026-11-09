@@ -49,3 +49,13 @@ Marek then explicitly chose to extend v3 for non-release sources. Preserve Git
 reference/file observations as their own facts rather than inventing release or
 asset IDs. [Local release-backed bulk checkpoint](../github-migration-16.md)
 records the initial applied scope and portable identity/recipe evidence.
+
+## Local rollout package — November 9 continuation
+
+Recipe preparation now includes custom, non-release and missed literal SITE
+sources, plus explicit refusal for identities that remain unverified. The
+[migration report](../github-migration-16.md) owns the counts and portable evidence.
+The [rollout package](../github-rollout-16.md) specifies the reviewed contract pin,
+schedule transition, bounded acquisition/publication and five-file shared runtime
+delivery. Work remains claimed pending Marek's required push approval and actual
+publication results; no expanded successful acquisition is implied by enrollment.

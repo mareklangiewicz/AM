@@ -226,3 +226,38 @@ eight-column asset rows. All 23 affected bulk/declaration/policy/custom groups
 then pass. The policy compilation fixture now preserves all architectures and
 the complete source-bound registry. All 15 browser transport groups and all 14
 desktop/narrow Chromium smoke checks pass.
+
+## Ready for rollout approval
+
+The [rollout package](github-rollout-16.md) is prepared. Its final contract/runtime
+authority is `040614f86cbbf31fc19596c8d32225c82de77acf`; keep that schema authority
+stable when the final evidence/package commit becomes the pushed schedule tip.
+
+The affected 81-case collector/selector set is covered by the main run and passing
+regression reruns. All 20 focused Git/custom/file consumer groups pass. All 29
+shared manager/AppImage/AM-Utils/selection groups pass, including actual inert
+installers/updaters, saved AppImage matches and the 356-policy utility registry.
+Fifteen browser checks and all 14 desktop/narrow Chromium smoke checks pass.
+These sets overlap; they are not a summed coverage count.
+
+[Real transition evidence](schema-transition-evidence-16.json.gz) verifies all
+499 sources / 1,000 documents (32,392,538 bytes) from exact public parent
+`263ee9e67ffbc11c66edd0f502981942b7e3e87d` against the final schema authority.
+Every retained source differs only in its schema header. No fact, observation or
+collection time changes. Whole-parent and candidate validation pass; nothing was
+published. The final pass took 197.8 seconds, not a capacity qualification for the
+8,313-source enrollment.
+
+[Installed selection comparison](installed-policy-comparison-16.json) verifies
+identical old/new choices for 21 managed apps / 24 asset/tool selections against
+that same exact snapshot. [Runtime delivery manifest](runtime-delivery-16.json)
+records the five required shared-module before/after hashes. Exact staged bytes
+are under `/home/marek/Documents/Codex/am-full-github-rollout-20261109/`; current
+live before-hashes were rechecked. APP-MANAGER and appimage.am match live and need
+no delivery. No installed files or yadm state were written.
+
+The final read-only remote survey still found main/schedule at `90a9f01b09`, v3
+parent `263ee9e67f`, status parent `6d63147e07`, v3 enabled and no explicit schema
+variable. The workflow must resolve parents again at execution. Initial bounded
+acquisition/publication, expanded successful coverage, schedule/schema variable
+writes and five-module runtime delivery remain pending Marek's approval.
