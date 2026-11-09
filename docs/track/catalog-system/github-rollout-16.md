@@ -1,6 +1,62 @@
 # Full GitHub v3 rollout package
 
-## November 9 approved attempt — correction awaiting push approval
+## November 9 approved retry — published and runtime delivered
+
+Marek approved the ArduLoops correction with “go ahead.” Source and schedule now
+pin `5be202a7376aa9c1349046cb4180e6152602fd41`; schema/runtime authority remains
+`040614f86cbbf31fc19596c8d32225c82de77acf`.
+[Run 42715139284](https://github.com/mareklangiewicz/AM/actions/runs/42715139284)
+succeeded, publishing catalog `6baf50c003b2de25f31107e82e3f2742adcde43b` and status
+`cef10df754f736ce3d734c38f9b729a669512c17`. Exact published catalog inputs and
+producer match those pins and this run. Collection was **partial**: 500 selected,
+120 attempted, 119 successful, one failed, 380 selected but deferred. This used
+121 HTTP requests and 90,950,036 charged response bytes; the source-response bound
+stopped collection before the shared 512 MiB budget or API quota was exhausted.
+
+The published snapshot has **618 sources**: 617 collected within 24 hours, one at
+least 48 hours old, and **7,695 enrolled sources without successful data**. Neither
+successful collection nor enrollment proves every recipe has a usable payload.
+[Result and installed hashes](github-rollout-success-16.json), the exact
+[published summary](github-rollout-success-summary-16.yaml), and the compressed
+[acquisition report](github-rollout-acquisition-16.json.gz) preserve the evidence.
+
+After confirmed publication, all five shared runtime modules were replaced on
+myxps after checking every before-hash, staged after-hash and committed authority.
+Final hashes/modes, native validation of the exact catalog, shell syntax and
+actual AM help passed. Before-images are under
+`/home/marek/Documents/Codex/am-full-github-rollout-20261109/runtime-before-42715139284/`.
+The delivery receipt is committed in the result above. No app payload was
+downloaded/executed, installed recipe/updater replaced, or yadm operation run.
+**Delivery is complete: do not reapply the original before-hash manifest.**
+
+### Further rotation — local correction awaiting push approval
+
+The failed source is `wekan/wekan` (repository 16089035). A single response larger
+than the 16 MiB response bound incorrectly ends the whole batch. Since a failed
+new source has no catalog document, it remains first in the next rotation; an
+offline two-run reproduction confirms starvation of later sources. This is a
+coverage blocker despite successful publication and the enabled hourly schedule.
+
+The local correction keeps the response bound and charged bytes, records the
+oversized source as failed (`source_validation` in published status), and continues
+when shared bytes remain. Exhausting shared bytes still stops acquisition. It
+does not advertise Wekan as collected. Replay of all 618 published source
+identities selects Wekan then BORIS; with authored 4/20-byte response/shared bounds,
+the corrected collector refuses Wekan and successfully reaches BORIS. The
+[published-metadata replay](github-rollout-rotation-replay-16.json) is portable;
+no network or app payload is involved. All 55 affected batch, Git observation,
+contract and publication tests pass, including repeated rotations and refusal
+when the shared byte budget is exhausted.
+
+After approval, re-read remote main, push the new reviewed correction tip, repin
+only `CATALOG_SCHEDULE_REVISION` to that tip, and dispatch a bounded run. Keep the
+schema/runtime authority above; runtime redelivery is unnecessary. Inspect the
+actual new source counts and failures before claiming further expansion. Ticket
+16 remains claimed; capacity targets and full source/payload coverage are still
+unqualified. The successful rollout does not establish working rotation until
+this further correction is published and verified.
+
+## Initial approved attempt — historical failure
 
 Marek approved this package with “go on.” The reviewed tip
 `51c862f1ed0e1d45849e2a9e08b05100511b9273` was pushed, the schema pin was set to

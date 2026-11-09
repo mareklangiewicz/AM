@@ -1,0 +1,125 @@
+{
+  "run": {
+    "id": 42715139284,
+    "attempt": 1,
+    "url": "https://github.com/mareklangiewicz/AM/actions/runs/42715139284",
+    "conclusion": "success"
+  },
+  "source_revision": "5be202a7376aa9c1349046cb4180e6152602fd41",
+  "schema_revision": "040614f86cbbf31fc19596c8d32225c82de77acf",
+  "schedule_revision": "5be202a7376aa9c1349046cb4180e6152602fd41",
+  "catalog_before": "263ee9e67ffbc11c66edd0f502981942b7e3e87d",
+  "catalog_after": "6baf50c003b2de25f31107e82e3f2742adcde43b",
+  "status_after": "cef10df754f736ce3d734c38f9b729a669512c17",
+  "collection": "partial",
+  "validation": "ok",
+  "target_counts": {
+    "enrolled": 8313,
+    "selected": 500,
+    "attempted": 120,
+    "successful": 119,
+    "failed": 1,
+    "unknown": 0,
+    "unattempted": 380
+  },
+  "freshness": {
+    "catalog": "6baf50c003b2de25f31107e82e3f2742adcde43b",
+    "evaluated_at": "2026-11-09T22:53:17Z",
+    "under_24h": {
+      "state": "known",
+      "value": 617
+    },
+    "from_24_to_48h": {
+      "state": "known",
+      "value": 0
+    },
+    "at_least_48h": {
+      "state": "known",
+      "value": 1
+    },
+    "no_success": {
+      "state": "known",
+      "value": 7695
+    },
+    "unknown": {
+      "state": "known",
+      "value": 0
+    }
+  },
+  "acquisition": {
+    "http_attempts": 121,
+    "charged_response_bytes": 90950036,
+    "received_response_bytes_state": "unknown",
+    "seconds": 92.69895103300001,
+    "command_seconds": 201.33995093299998
+  },
+  "stop_reason": "byte_budget",
+  "failed_sources": [
+    {
+      "repository_id": 16089035,
+      "status": "failed",
+      "reason": "byte_budget"
+    }
+  ],
+  "runtime_delivery": {
+    "run": {
+      "id": 42715139284,
+      "attempt": 1
+    },
+    "catalog": "6baf50c003b2de25f31107e82e3f2742adcde43b",
+    "runtime_revision": "040614f86cbbf31fc19596c8d32225c82de77acf",
+    "host": "myxps",
+    "backup": "/home/marek/Documents/Codex/am-full-github-rollout-20261109/runtime-before-42715139284",
+    "files": [
+      {
+        "target": "/opt/am/modules/catalog-yaml.am",
+        "sha256": "8d504a85a806974273b7b478ece944547273a5cdbc9cb3ad8af6c33e1df4ffe5",
+        "mode": "0o664"
+      },
+      {
+        "target": "/opt/am/modules/catalog-yaml-policy.am",
+        "sha256": "a0e295a522b3bc6d8cae3def7dd54de099042510df0509dd99a91d7bdc023f83",
+        "mode": "0o664"
+      },
+      {
+        "target": "/opt/am/modules/catalog-contract-reader.am",
+        "sha256": "2cf6cef92c593995cfdda5cb56c3e1142e760736ae66cbc097263feb5b4f0283",
+        "mode": "0o644"
+      },
+      {
+        "target": "/opt/am/modules/catalog-contract-parser.am",
+        "sha256": "1643d9b4f01da8588c5f21accda4be3aee6a7a55088c27e03b522e53a145f10a",
+        "mode": "0o644"
+      },
+      {
+        "target": "/opt/am/modules/catalog-contract-tables.am",
+        "sha256": "42f7f28cc62bcf0a8571f3845a2b4160188911115b966fd30bcf345a4798b693",
+        "mode": "0o644"
+      }
+    ]
+  },
+  "manager_help": {
+    "exit_code": 0,
+    "rendered_bytes": 17920,
+    "sandbox": "outside sandbox; read-only /opt inside sandbox triggers AppMan fallback"
+  },
+  "installed_native_catalog_validation": "passed",
+  "installed_after_hashes": "all five passed",
+  "rotation_blocker": {
+    "repository_id": 16089035,
+    "repository": "wekan/wekan",
+    "cause": "per-response bound incorrectly stops whole batch; failed new source remains first on next rotation",
+    "correction": "local, pending push approval; keeps existing bounds and charged bytes",
+    "local_validation": {
+      "tests": 55,
+      "suites": [
+        "test_batch_collection",
+        "test_git_observations",
+        "test_contracts",
+        "test_pipeline_publication"
+      ],
+      "result": "passed",
+      "published_metadata_replay": "github-rollout-rotation-replay-16.json"
+    }
+  }
+}

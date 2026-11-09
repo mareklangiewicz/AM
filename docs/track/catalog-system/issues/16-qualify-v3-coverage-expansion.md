@@ -70,3 +70,21 @@ pending successful publication. The narrowly reviewed transfer correction passes
 14 batch tests and replay against the exact public parent. Its source push needs
 approval; [rollout outcome and next steps](../github-rollout-16.md) and
 [portable result](../github-rollout-result-16.json) record the concrete state.
+
+## Approved retry and installed runtime — November 9
+
+Marek approved the ArduLoops correction push. Source/schedule pin is
+`5be202a7376aa9c1349046cb4180e6152602fd41`; run 42715139284 confirmed catalog and
+status publication. The five shared runtime modules were delivered with verified
+hashes, native catalog validation and actual manager help. The snapshot has 618
+sources; 7,695 enrolled sources still lack successful data. This run collected 119
+successfully, failed one and deferred 380 of its selected 500.
+
+Wekan's oversized single response ended the batch and would starve later new
+sources on each rotation. A local correction now isolates that failure while
+preserving per-response/shared bounds and charging; shared-budget exhaustion
+still stops. Two-run regression and exact published-metadata replay cover the
+failure. Further source push approval and actual rotation results are required;
+do not resolve this ticket or claim complete coverage. See the latest
+[rollout result and next steps](../github-rollout-16.md) and
+[portable success/delivery evidence](../github-rollout-success-16.json).

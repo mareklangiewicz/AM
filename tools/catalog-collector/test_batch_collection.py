@@ -168,6 +168,37 @@ class BatchCollection(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, 'identity mismatch'):
                     collector.collect('b'*40, previous, batch_size=1, native_v3=True)
 
+    def test_native_oversized_response_does_not_starve_later_sources(self):
+        configuration = self.configuration(2)
+        for total, expected in ((20, ['1', '2']), (5, ['1'])):
+            with self.subTest(total=total):
+                calls = []
+                def read(rid, evidence, allowance, *, rate=None):
+                    calls.append(rid)
+                    self.assertEqual(allowance, 4)
+                    return (b'xxxxx' if rid == '1' else b'[]'), NEW
+                with patch.object(collector, 'configuration', return_value=configuration), \
+                        patch.object(collector, '_response', side_effect=read), \
+                        patch.object(collector, 'RESPONSE_CAP', 4), \
+                        patch.object(collector, 'TOTAL_CAP', total), \
+                        contextlib.redirect_stdout(io.StringIO()):
+                    # No document is created for a failed new source, so the
+                    # same source leads the following rotation too (live Wekan).
+                    for attempt in range(2):
+                        calls.clear()
+                        acquired = {}; metrics = {}
+                        _, report = collector.collect('b'*40, {}, batch_size=2,
+                            incremental=True, native_v3=True, acquisitions=acquired, metrics=metrics)
+                        self.assertEqual(calls, expected)
+                        self.assertNotIn('1', acquired)
+                        self.assertEqual(metrics['response_bytes'], 7 if total == 20 else 5)
+                        if total == 20:
+                            self.assertIn('2', acquired)
+                            self.assertEqual(report[0]['reason'], 'invalid_response')
+                        else:
+                            self.assertEqual(acquired, {})
+                            self.assertEqual(metrics['stop_reason'], 'byte_limit')
+
     def test_partial_transport_failures_cannot_bypass_the_shared_response_budget(self):
         previous = self.previous(4)
         class Reply:

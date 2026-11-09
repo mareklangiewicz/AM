@@ -62,6 +62,10 @@ class TransferFailure(OSError):
         self.budget_bytes = budget_bytes
 
 
+class ResponseLimit(ValueError):
+    """A source response exceeded its own bound while shared bytes remain."""
+
+
 class CollectionStop(ValueError):
     def __init__(self,reason):
         super().__init__('collection allowance');self.reason=reason
@@ -242,7 +246,10 @@ def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None,
             else:body,at=_response(rid,evidence,allowance,rate=rate,endpoint=endpoint,kind=kind)
             used+=len(body)
             if rate:latest_rate=dict(rate)
-            if len(body)>allowance:raise CollectionStop('byte_limit')
+            if len(body)>allowance:
+                if native_v3 and allowance==response_cap and used<total_cap:
+                    raise ResponseLimit()
+                raise CollectionStop('byte_limit')
             return body,at
         try:
             body, received = fetch()
@@ -282,6 +289,8 @@ def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None,
                 error.close()
             if isinstance(error, TransferFailure):
                 used += error.budget_bytes
+            if isinstance(error,ResponseLimit):
+                reason='invalid_response'
             if isinstance(error,CollectionStop):
                 stop=True;metrics['stop_reason']=error.reason
                 reason={'request_limit':'request_budget','byte_limit':'byte_budget',
