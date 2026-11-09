@@ -1,0 +1,70 @@
+format: 1
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-status-v1.md"
+kind: "summary"
+run:
+  id: 42701570728
+  attempt: 1
+inputs:
+  source: "51c862f1ed0e1d45849e2a9e08b05100511b9273"
+  policy: "51c862f1ed0e1d45849e2a9e08b05100511b9273"
+  recipes: "51c862f1ed0e1d45849e2a9e08b05100511b9273"
+  rules: "51c862f1ed0e1d45849e2a9e08b05100511b9273"
+  schemas: "040614f86cbbf31fc19596c8d32225c82de77acf"
+input_catalog_state: "known"
+input_catalog: "263ee9e67ffbc11c66edd0f502981942b7e3e87d"
+started_at: "2026-11-09T21:21:43Z"
+reported_at: "2026-11-09T21:21:44Z"
+collection: "unknown"
+validation: "failed"
+publication:
+  state: "not_attempted"
+compatibility_publication:
+  state: "not_attempted"
+counts:
+  enrolled:
+    state: "unknown"
+  selected:
+    state: "unknown"
+  attempted:
+    state: "unknown"
+  successful:
+    state: "unknown"
+  failed:
+    state: "unknown"
+  unknown:
+    state: "unknown"
+  unattempted:
+    state: "unknown"
+  deferred:
+    state: "unknown"
+stop_reason: "candidate_validation"
+metrics:
+  http_attempts:
+    state: "unknown"
+  charged_bytes:
+    state: "unknown"
+  received_bytes:
+    state: "unknown"
+  acquisition_milliseconds:
+    state: "unknown"
+  command_milliseconds:
+    state: "unknown"
+  tree_bytes:
+    state: "unknown"
+  largest_document_bytes:
+    state: "unknown"
+  local_object_bytes:
+    state: "unknown"
+  packed_history_bytes:
+    state: "unknown"
+  remote_storage_bytes:
+    state: "unknown"
+  peak_rss_bytes:
+    state: "unknown"
+budgets:
+  requests: 0
+  bytes: 0
+  acquisition_milliseconds: 0
+  document_bytes: 2097152
+actions_url: "https://github.com/mareklangiewicz/AM/actions/runs/42701570728"
+recent_runs_url: "https://github.com/mareklangiewicz/AM/actions/workflows/catalog.yml"

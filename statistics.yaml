@@ -1,30 +1,25 @@
 format: 1
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/5429e09d97486cbdf9681f329bee7ed850cdd250/docs/catalog-status-v1.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-status-v1.md"
 kind: "statistics"
-measured_at: "2026-11-09T18:59:59Z"
+measured_at: "2026-11-09T21:21:44Z"
 freshness:
   catalog: "263ee9e67ffbc11c66edd0f502981942b7e3e87d"
-  evaluated_at: "2026-11-09T18:59:59Z"
+  evaluated_at: "2026-11-09T21:21:44Z"
   under_24h:
-    state: "known"
-    value: 498
+    state: "unknown"
   from_24_to_48h:
-    state: "known"
-    value: 1
+    state: "unknown"
   at_least_48h:
-    state: "known"
-    value: 0
+    state: "unknown"
   no_success:
-    state: "known"
-    value: 1
+    state: "unknown"
   unknown:
-    state: "known"
-    value: 0
+    state: "unknown"
 days:
   "2026-11-09":
-    reported_attempts: 3
-    unknown_source_count_attempts: 0
+    reported_attempts: 4
+    unknown_source_count_attempts: 1
     successful_sources: 1494
     failed_sources: 6
     first_report: "2026-11-09T00:42:57Z"
-    last_report: "2026-11-09T18:59:59Z"
+    last_report: "2026-11-09T21:21:44Z"
