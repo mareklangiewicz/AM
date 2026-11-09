@@ -21,18 +21,18 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
         path: "programs/x86_64/agent-buddy"
         blob: "a463a2df58eef494354874c6dbb3b865ac270176"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-09T00:41:47Z"
+        evaluated_at: "2026-11-09T18:58:46Z"
         recipe_sha256: "ad9df1f7814b9ae6d33a01d5042362da9b83edc5db6133c88a96af9efbb28ed6"
-        rules: "f05e85926e662f2736907d814b065406f3e8c654"
+        rules: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "f05e85926e662f2736907d814b065406f3e8c654"
+            commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
             path: "modules/"
             sha256: "c106eca4bfc5254da9cbd788cd4245342772b59049c5e3b6df73629faac6b656"
   "agent-companion":
@@ -54,14 +54,14 @@ apps:
       classification: "template"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
         path: "programs/x86_64/agent-companion"
         blob: "9a8da9dc49447607fe5c41d977117ca31f68c3e5"
       evidence:
         method: "whole_template"
-        evaluated_at: "2026-11-09T00:41:47Z"
+        evaluated_at: "2026-11-09T18:58:46Z"
         recipe_sha256: "14de71d129a79be5165de9add6dcb052c17940ced6f415ff400a14c630b662bf"
-        rules: "f05e85926e662f2736907d814b065406f3e8c654"
+        rules: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
         dependencies:
           "generator":
             repository: "mareklangiewicz/AM"
