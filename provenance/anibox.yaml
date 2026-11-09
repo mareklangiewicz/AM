@@ -5,17 +5,27 @@ apps:
   "anibox":
     "aarch64":
       repository_id: 1362367741
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/aarch64/anibox"
+        blob: "09366c720564418bae91ec46b231d201bcf6b356"
     "armv7l":
       repository_id: 1362367741
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 1362367741
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 1362367741
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/anibox"
+        blob: "9582ccaade74a02ee20462e64aa1cdce131ebcb1"

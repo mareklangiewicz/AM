@@ -5,17 +5,38 @@ apps:
   "apkinfotool":
     "aarch64":
       repository_id: 670562441
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "armv7l":
       repository_id: 670562441
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 670562441
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 670562441
-      availability: "unknown"
-      classification: "unknown"
+      availability: "present"
+      classification: "template"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/apkinfotool"
+        blob: "c9fdee491e3653b8e07029535d8de0e06702867e"
+      evidence:
+        method: "whole_template"
+        evaluated_at: "2026-11-09T00:41:47Z"
+        recipe_sha256: "7428b30fa5416ebe79157788d6b2c9b39eb272b341949f1170a3150397cdfb03"
+        rules: "f05e85926e662f2736907d814b065406f3e8c654"
+        dependencies:
+          "generator":
+            repository: "mareklangiewicz/AM"
+            commit: "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22"
+            path: "modules/template.am"
+            sha256: "48652a23fb28e8d912ed36ba40c8db6db9365d8ea3dc6bc7a77df39cfad3b12e"
+          "template":
+            repository: "mareklangiewicz/AM"
+            commit: "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22"
+            path: "templates/AM-SAMPLE-AppImage-in-archive"
+            sha256: "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119"

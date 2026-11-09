@@ -5,17 +5,27 @@ apps:
   "ani-mime":
     "aarch64":
       repository_id: 1198043951
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/aarch64/ani-mime"
+        blob: "c0c6139650c2fa02f5baa0b83b10c47ae3a19e99"
     "armv7l":
       repository_id: 1198043951
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 1198043951
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 1198043951
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/ani-mime"
+        blob: "d5ba83d40d484d6c11b8a0e5428d2f2352f26736"

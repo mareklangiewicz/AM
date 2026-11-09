@@ -5,17 +5,38 @@ apps:
   "ashirt":
     "aarch64":
       repository_id: 273363921
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "armv7l":
       repository_id: 273363921
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 273363921
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 273363921
-      availability: "unknown"
-      classification: "unknown"
+      availability: "present"
+      classification: "template"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/ashirt"
+        blob: "6685cbd9c97dbbbf8d8122076edeb6b8e3bf8b2f"
+      evidence:
+        method: "whole_template"
+        evaluated_at: "2026-11-09T00:41:47Z"
+        recipe_sha256: "2b622095baf5047547d10b7932fd8107883d5298a8de6b3f829a78a3415ad9ec"
+        rules: "f05e85926e662f2736907d814b065406f3e8c654"
+        dependencies:
+          "generator":
+            repository: "mareklangiewicz/AM"
+            commit: "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22"
+            path: "modules/template.am"
+            sha256: "48652a23fb28e8d912ed36ba40c8db6db9365d8ea3dc6bc7a77df39cfad3b12e"
+          "template":
+            repository: "mareklangiewicz/AM"
+            commit: "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22"
+            path: "templates/AM-SAMPLE-AppImage-in-archive"
+            sha256: "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119"

@@ -5,17 +5,27 @@ apps:
   "airamusic":
     "aarch64":
       repository_id: 1093507301
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/aarch64/airamusic"
+        blob: "bc20d42a83f8a6c0e9afbab0c6dbf76758de5843"
     "armv7l":
       repository_id: 1093507301
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 1093507301
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 1093507301
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/airamusic"
+        blob: "3e7de847722f7f5ce26462497910b926acccbe57"

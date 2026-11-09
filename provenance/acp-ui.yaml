@@ -5,17 +5,43 @@ apps:
   "acp-ui":
     "aarch64":
       repository_id: 1146547653
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/aarch64/acp-ui"
+        blob: "c180841ede3f010b80f1538f1ea055732c1be714"
     "armv7l":
       repository_id: 1146547653
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 1146547653
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 1146547653
-      availability: "unknown"
-      classification: "unknown"
+      availability: "present"
+      classification: "template"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/acp-ui"
+        blob: "9fa6dec62d3727330e1fa327aee407f06676c771"
+      evidence:
+        method: "whole_template"
+        evaluated_at: "2026-11-09T00:41:47Z"
+        recipe_sha256: "22810029eed1db6d5615e3be88e3b62b9c9e2950e8746b6f38eb6af33d71a16b"
+        rules: "f05e85926e662f2736907d814b065406f3e8c654"
+        dependencies:
+          "generator":
+            repository: "mareklangiewicz/AM"
+            commit: "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22"
+            path: "modules/template.am"
+            sha256: "48652a23fb28e8d912ed36ba40c8db6db9365d8ea3dc6bc7a77df39cfad3b12e"
+          "template":
+            repository: "mareklangiewicz/AM"
+            commit: "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22"
+            path: "templates/AM-SAMPLE-AppImage-in-archive"
+            sha256: "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119"

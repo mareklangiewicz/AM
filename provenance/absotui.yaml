@@ -5,17 +5,27 @@ apps:
   "absotui":
     "aarch64":
       repository_id: 1305069945
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/aarch64/absotui"
+        blob: "4b7f48355407e0221dcb66632b430b5960b1680a"
     "armv7l":
       repository_id: 1305069945
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 1305069945
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 1305069945
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/absotui"
+        blob: "a5dd976516d378e4cdf73a4e6892c701fcc16e5b"

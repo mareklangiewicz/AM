@@ -5,34 +5,66 @@ apps:
   "neovide":
     "aarch64":
       repository_id: 226408450
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "armv7l":
       repository_id: 226408450
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 226408450
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 226408450
-      availability: "unknown"
-      classification: "unknown"
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/neovide"
+        blob: "c21fd9d13db92ec765c7e168edb5732a3cbf3a04"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-09T00:41:47Z"
+        recipe_sha256: "0c25c0d9d07406a20813da73a93ef4a4c3e6442f1890af5230d6ffd28322bf32"
+        rules: "f05e85926e662f2736907d814b065406f3e8c654"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "f05e85926e662f2736907d814b065406f3e8c654"
+            path: "modules/"
+            sha256: "c106eca4bfc5254da9cbd788cd4245342772b59049c5e3b6df73629faac6b656"
   "neovide-nightly":
     "aarch64":
       repository_id: 226408450
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "armv7l":
       repository_id: 226408450
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 226408450
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 226408450
-      availability: "unknown"
-      classification: "unknown"
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/neovide-nightly"
+        blob: "609738a458a30ef87d6db35f1da5e372e442ba22"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-09T00:41:47Z"
+        recipe_sha256: "4fcbef11fd51d1e15901375631cf5450eff369a5625faac6779ac68708adbff4"
+        rules: "f05e85926e662f2736907d814b065406f3e8c654"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "f05e85926e662f2736907d814b065406f3e8c654"
+            path: "modules/"
+            sha256: "c106eca4bfc5254da9cbd788cd4245342772b59049c5e3b6df73629faac6b656"

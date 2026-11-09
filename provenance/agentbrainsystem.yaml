@@ -5,17 +5,38 @@ apps:
   "agentbrainsystem":
     "aarch64":
       repository_id: 1244900075
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "armv7l":
       repository_id: 1244900075
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 1244900075
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 1244900075
-      availability: "unknown"
-      classification: "unknown"
+      availability: "present"
+      classification: "template"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/agentbrainsystem"
+        blob: "05bfcacaa2c75ff73965369ac78c4b4424bc75d0"
+      evidence:
+        method: "whole_template"
+        evaluated_at: "2026-11-09T00:41:47Z"
+        recipe_sha256: "bc6ea04c4253f8e6961f9b80853290240d48c173c93e7b733763086281283e86"
+        rules: "f05e85926e662f2736907d814b065406f3e8c654"
+        dependencies:
+          "generator":
+            repository: "mareklangiewicz/AM"
+            commit: "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22"
+            path: "modules/template.am"
+            sha256: "48652a23fb28e8d912ed36ba40c8db6db9365d8ea3dc6bc7a77df39cfad3b12e"
+          "template":
+            repository: "mareklangiewicz/AM"
+            commit: "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22"
+            path: "templates/AM-SAMPLE-AppImage"
+            sha256: "5353962fac61f7e0f8d3e949a824700c522c6229c6243ab16e2847a4e71edfa2"

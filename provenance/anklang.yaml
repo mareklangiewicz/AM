@@ -5,17 +5,38 @@ apps:
   "anklang":
     "aarch64":
       repository_id: 315066706
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "armv7l":
       repository_id: 315066706
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 315066706
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 315066706
-      availability: "unknown"
-      classification: "unknown"
+      availability: "present"
+      classification: "template"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/anklang"
+        blob: "b6fa9ad405e6edc0db288cd08f3b9f82c059452b"
+      evidence:
+        method: "whole_template"
+        evaluated_at: "2026-11-09T00:41:47Z"
+        recipe_sha256: "f2b1c730a99e3b6ff9eb891b2cabc5c5e0754b4578a32ffc32bca18c72d7206b"
+        rules: "f05e85926e662f2736907d814b065406f3e8c654"
+        dependencies:
+          "generator":
+            repository: "mareklangiewicz/AM"
+            commit: "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22"
+            path: "modules/template.am"
+            sha256: "48652a23fb28e8d912ed36ba40c8db6db9365d8ea3dc6bc7a77df39cfad3b12e"
+          "template":
+            repository: "mareklangiewicz/AM"
+            commit: "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22"
+            path: "templates/AM-SAMPLE-AppImage-in-archive"
+            sha256: "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119"

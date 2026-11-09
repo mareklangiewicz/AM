@@ -5,17 +5,33 @@ apps:
   "0x808":
     "aarch64":
       repository_id: 1180896595
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "armv7l":
       repository_id: 1180896595
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 1180896595
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 1180896595
-      availability: "unknown"
-      classification: "unknown"
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/0x808"
+        blob: "b10d62c032fc072f68d35b6d5a47fde8d8be0ab5"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-09T00:41:47Z"
+        recipe_sha256: "52f8546749444adb25e5efa3cf0f29dea03d46e7cbd6c75de8dad0830df10546"
+        rules: "f05e85926e662f2736907d814b065406f3e8c654"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "f05e85926e662f2736907d814b065406f3e8c654"
+            path: "modules/"
+            sha256: "c106eca4bfc5254da9cbd788cd4245342772b59049c5e3b6df73629faac6b656"

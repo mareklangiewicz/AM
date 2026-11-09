@@ -5,17 +5,22 @@ apps:
   "ark.desktop.wallet":
     "aarch64":
       repository_id: 73618120
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "armv7l":
       repository_id: 73618120
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 73618120
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 73618120
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/ark.desktop.wallet"
+        blob: "d5106855753bac80bed3254c75d768e7618b554d"

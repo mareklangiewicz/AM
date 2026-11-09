@@ -5,17 +5,27 @@ apps:
   "any-listen-desktop":
     "aarch64":
       repository_id: 1060978442
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/aarch64/any-listen-desktop"
+        blob: "85f585b0a617e4edf8533a1ee13cc6e1639b183d"
     "armv7l":
       repository_id: 1060978442
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 1060978442
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 1060978442
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/any-listen-desktop"
+        blob: "1762a8689add26d2ad9e0059d6368ef81a6b369b"

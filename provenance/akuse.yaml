@@ -5,17 +5,38 @@ apps:
   "akuse":
     "aarch64":
       repository_id: 658980510
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "armv7l":
       repository_id: 658980510
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 658980510
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 658980510
-      availability: "unknown"
-      classification: "unknown"
+      availability: "present"
+      classification: "template"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/akuse"
+        blob: "90f409d1fc34608bffde412d753212ec3d532643"
+      evidence:
+        method: "whole_template"
+        evaluated_at: "2026-11-09T00:41:47Z"
+        recipe_sha256: "ffc1a136060a1d4cec10e994ea399ebd53e85d88e444f82c3a338575e488b796"
+        rules: "f05e85926e662f2736907d814b065406f3e8c654"
+        dependencies:
+          "generator":
+            repository: "mareklangiewicz/AM"
+            commit: "bb53f3180ec92f862020f8bdccef0f6614015bae"
+            path: "modules/template.am"
+            sha256: "9608ffd7d6ea2637b064a9ea5aafe2e3aa18e46b4acfd8194b46b82dc65fe474"
+          "template":
+            repository: "mareklangiewicz/AM"
+            commit: "bb53f3180ec92f862020f8bdccef0f6614015bae"
+            path: "templates/AM-SAMPLE-AppImage"
+            sha256: "1049be481f39bdcdcd3ffa348ac94cdbdaaa65cfe1d341940e4b017963344931"

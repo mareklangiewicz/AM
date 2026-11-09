@@ -5,17 +5,33 @@ apps:
   "agency-agents-app":
     "aarch64":
       repository_id: 1262882328
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "armv7l":
       repository_id: 1262882328
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 1262882328
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 1262882328
-      availability: "unknown"
-      classification: "unknown"
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/agency-agents-app"
+        blob: "6c4ff809a5c4cb807870bce6781dade5e046b647"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-09T00:41:47Z"
+        recipe_sha256: "7a3754f580b59a3606e6fb86a3207d331b375b77363420a02ece1d6e64d954a2"
+        rules: "f05e85926e662f2736907d814b065406f3e8c654"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "f05e85926e662f2736907d814b065406f3e8c654"
+            path: "modules/"
+            sha256: "c106eca4bfc5254da9cbd788cd4245342772b59049c5e3b6df73629faac6b656"

@@ -5,17 +5,27 @@ apps:
   "alacritty":
     "aarch64":
       repository_id: 986508161
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/aarch64/alacritty"
+        blob: "33d28ade0500d178ee9e933887c8d519b0d5fd1d"
     "armv7l":
       repository_id: 986508161
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 986508161
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 986508161
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/alacritty"
+        blob: "b0e83f033281e089718dbc72646a2908c5640d2f"

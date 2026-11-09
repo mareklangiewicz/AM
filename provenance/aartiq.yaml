@@ -5,17 +5,38 @@ apps:
   "aartiq":
     "aarch64":
       repository_id: 1289277101
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/aarch64/aartiq"
+        blob: "51fee593500bd5a3bf359b68d74f5cb9c4a3cacd"
     "armv7l":
       repository_id: 1289277101
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 1289277101
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 1289277101
-      availability: "unknown"
-      classification: "unknown"
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/aartiq"
+        blob: "f95177167e4bf732d1758af829b715beba0d4086"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-09T00:41:47Z"
+        recipe_sha256: "b49d2b28014e7c0e6520ca1581c894d4c8859b43ab4bd3569fb646b149dcedd7"
+        rules: "f05e85926e662f2736907d814b065406f3e8c654"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "f05e85926e662f2736907d814b065406f3e8c654"
+            path: "modules/"
+            sha256: "c106eca4bfc5254da9cbd788cd4245342772b59049c5e3b6df73629faac6b656"

@@ -5,17 +5,33 @@ apps:
   "obsidian":
     "aarch64":
       repository_id: 262342594
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "armv7l":
       repository_id: 262342594
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 262342594
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 262342594
-      availability: "unknown"
-      classification: "unknown"
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/obsidian"
+        blob: "f31a749ee1ffa43c01d569062d944d0e77c85bbb"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-09T00:41:47Z"
+        recipe_sha256: "29aa037ab1c1c6f451918b140390c560df6a3fb266db64ec33059157c20989e5"
+        rules: "f05e85926e662f2736907d814b065406f3e8c654"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "f05e85926e662f2736907d814b065406f3e8c654"
+            path: "modules/"
+            sha256: "c106eca4bfc5254da9cbd788cd4245342772b59049c5e3b6df73629faac6b656"

@@ -5,17 +5,27 @@ apps:
   "armagetronad":
     "aarch64":
       repository_id: 164471642
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "armv7l":
       repository_id: 164471642
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 164471642
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/i686/armagetronad"
+        blob: "02cafe5e8686f4c9ea80b229703a7fd1c2052eb7"
     "x86_64":
       repository_id: 164471642
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/armagetronad"
+        blob: "c731740d2d37f8477d28e322d2d178aae9ef8a6a"

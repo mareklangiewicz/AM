@@ -5,17 +5,27 @@ apps:
   "advanced-portchecker":
     "aarch64":
       repository_id: 74284714
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/aarch64/advanced-portchecker"
+        blob: "b92704f256e4f664d8a95ff29db615d37b336d83"
     "armv7l":
       repository_id: 74284714
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 74284714
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 74284714
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/advanced-portchecker"
+        blob: "bd49f58da1e5e75ba3fcd07c55e810db07ae65c5"

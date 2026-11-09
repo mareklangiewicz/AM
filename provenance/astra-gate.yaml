@@ -5,17 +5,27 @@ apps:
   "astra-gate":
     "aarch64":
       repository_id: 1409040467
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/aarch64/astra-gate"
+        blob: "3dea21f5bd2d45459edb3b52900d9e4a2e594d65"
     "armv7l":
       repository_id: 1409040467
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 1409040467
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 1409040467
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/astra-gate"
+        blob: "6157763ce544b714a6df182f1a293a7e484378b3"

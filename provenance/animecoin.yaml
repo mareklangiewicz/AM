@@ -5,17 +5,38 @@ apps:
   "animecoin":
     "aarch64":
       repository_id: 16257369
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "armv7l":
       repository_id: 16257369
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 16257369
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 16257369
-      availability: "unknown"
-      classification: "unknown"
+      availability: "present"
+      classification: "template"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/animecoin"
+        blob: "4ffc9a98d4f68cda50c7ef586f72868d73b651fd"
+      evidence:
+        method: "whole_template"
+        evaluated_at: "2026-11-09T00:41:47Z"
+        recipe_sha256: "c755635f9a50e1e5b4c8264a3118e05d64908b8fd87dbba5812342e224be84da"
+        rules: "f05e85926e662f2736907d814b065406f3e8c654"
+        dependencies:
+          "generator":
+            repository: "mareklangiewicz/AM"
+            commit: "bb53f3180ec92f862020f8bdccef0f6614015bae"
+            path: "modules/template.am"
+            sha256: "9608ffd7d6ea2637b064a9ea5aafe2e3aa18e46b4acfd8194b46b82dc65fe474"
+          "template":
+            repository: "mareklangiewicz/AM"
+            commit: "bb53f3180ec92f862020f8bdccef0f6614015bae"
+            path: "templates/AM-SAMPLE-AppImage"
+            sha256: "1049be481f39bdcdcd3ffa348ac94cdbdaaa65cfe1d341940e4b017963344931"

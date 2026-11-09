@@ -5,17 +5,27 @@ apps:
   "ball":
     "aarch64":
       repository_id: 31041375
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/aarch64/ball"
+        blob: "cc03844e44cdf88c4f09a3cd39d5cb1b8a8fb2a3"
     "armv7l":
       repository_id: 31041375
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 31041375
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 31041375
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/ball"
+        blob: "e89a340764f45619b5d49e68bdb52993629cd98b"

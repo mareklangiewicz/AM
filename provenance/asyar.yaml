@@ -5,17 +5,27 @@ apps:
   "asyar":
     "aarch64":
       repository_id: 935067865
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/aarch64/asyar"
+        blob: "245d8169099569d7b53cc14b92512a55597b36f7"
     "armv7l":
       repository_id: 935067865
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 935067865
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 935067865
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/asyar"
+        blob: "0eec107ffb2bee87584d6d13948be5767c349579"

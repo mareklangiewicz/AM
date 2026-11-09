@@ -5,17 +5,27 @@ apps:
   "appimagelauncher":
     "aarch64":
       repository_id: 125722945
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "armv7l":
       repository_id: 125722945
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 125722945
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/i686/appimagelauncher"
+        blob: "8222e6b5219c3128fc10be5b17dca95e3ad43627"
     "x86_64":
       repository_id: 125722945
-      availability: "unknown"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/appimagelauncher"
+        blob: "058d06646eae86ffbb3735b6e7f3a79f4543a375"

@@ -5,17 +5,38 @@ apps:
   "aya":
     "aarch64":
       repository_id: 872380225
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "armv7l":
       repository_id: 872380225
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 872380225
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 872380225
-      availability: "unknown"
-      classification: "unknown"
+      availability: "present"
+      classification: "template"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/aya"
+        blob: "84c62ad9a4c159ea5ba5877fd3725a8dab3bec3d"
+      evidence:
+        method: "whole_template"
+        evaluated_at: "2026-11-09T00:41:47Z"
+        recipe_sha256: "2470bd1d869cd4241a5af636f2a8894d4107920f51b52b3cf0c8caaaf7013a97"
+        rules: "f05e85926e662f2736907d814b065406f3e8c654"
+        dependencies:
+          "generator":
+            repository: "mareklangiewicz/AM"
+            commit: "bb53f3180ec92f862020f8bdccef0f6614015bae"
+            path: "modules/template.am"
+            sha256: "9608ffd7d6ea2637b064a9ea5aafe2e3aa18e46b4acfd8194b46b82dc65fe474"
+          "template":
+            repository: "mareklangiewicz/AM"
+            commit: "bb53f3180ec92f862020f8bdccef0f6614015bae"
+            path: "templates/AM-SAMPLE-AppImage"
+            sha256: "1049be481f39bdcdcd3ffa348ac94cdbdaaa65cfe1d341940e4b017963344931"

@@ -5,17 +5,38 @@ apps:
   "appium-inspector":
     "aarch64":
       repository_id: 355277962
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "armv7l":
       repository_id: 355277962
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "i686":
       repository_id: 355277962
-      availability: "unknown"
+      availability: "absent"
       classification: "unknown"
     "x86_64":
       repository_id: 355277962
-      availability: "unknown"
-      classification: "unknown"
+      availability: "present"
+      classification: "template"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "f05e85926e662f2736907d814b065406f3e8c654"
+        path: "programs/x86_64/appium-inspector"
+        blob: "4c3689cbf65f14470609816259e6183f59ae613b"
+      evidence:
+        method: "whole_template"
+        evaluated_at: "2026-11-09T00:41:47Z"
+        recipe_sha256: "1cc48b0c35616e893322f643ae633ef65df47039e3a71a42d97b2198944b1a26"
+        rules: "f05e85926e662f2736907d814b065406f3e8c654"
+        dependencies:
+          "generator":
+            repository: "mareklangiewicz/AM"
+            commit: "bb53f3180ec92f862020f8bdccef0f6614015bae"
+            path: "modules/template.am"
+            sha256: "9608ffd7d6ea2637b064a9ea5aafe2e3aa18e46b4acfd8194b46b82dc65fe474"
+          "template":
+            repository: "mareklangiewicz/AM"
+            commit: "bb53f3180ec92f862020f8bdccef0f6614015bae"
+            path: "templates/AM-SAMPLE-AppImage"
+            sha256: "1049be481f39bdcdcd3ffa348ac94cdbdaaa65cfe1d341940e4b017963344931"
