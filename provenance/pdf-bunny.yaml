@@ -1,0 +1,53 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "gospel":
+    "aarch64":
+      repository_id: 89720952
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 89720952
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 89720952
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 89720952
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/gospel"
+        blob: "1caa318f3c693020a00fe05860f781ec130b02e9"
+  "pdf-bunny":
+    "aarch64":
+      repository_id: 89720952
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/pdf-bunny"
+        blob: "83cd28cb9364b4f648ac5b14c6a9ff99d0b96e6b"
+    "armv7l":
+      repository_id: 89720952
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 89720952
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 89720952
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/pdf-bunny"
+        blob: "442143b616027619ddcc1dd9232762724e110212"

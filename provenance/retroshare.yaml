@@ -1,0 +1,37 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "retroshare":
+    "aarch64":
+      repository_id: 40011265
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 40011265
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 40011265
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 40011265
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/retroshare"
+        blob: "30c21996948531b60fbf6dd31386bb4d8d040cc4"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-09T23:14:42Z"
+        recipe_sha256: "38bc6d13f8bfa4cca8b2bd348b09bd5b79b1c88b91cbc93ba03c3050f9c00c95"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

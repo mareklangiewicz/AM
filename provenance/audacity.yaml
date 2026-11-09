@@ -1,0 +1,53 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "audacity":
+    "aarch64":
+      repository_id: 32921736
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/audacity"
+        blob: "660749b2975e877834d481467406144b1cb1a680"
+    "armv7l":
+      repository_id: 32921736
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 32921736
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 32921736
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/audacity"
+        blob: "2c8eafb23b9a2f4e07e85e8abec0c915fcfc006a"
+  "audacity-dev":
+    "aarch64":
+      repository_id: 32921736
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 32921736
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 32921736
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 32921736
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/audacity-dev"
+        blob: "a8eb1dc3f4fd917ccd69cad7a5fb040939a6a348"

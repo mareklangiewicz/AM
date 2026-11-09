@@ -1,0 +1,59 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "dwarf-fortress":
+    "aarch64":
+      repository_id: 54834227
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 54834227
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 54834227
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 54834227
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/dwarf-fortress"
+        blob: "5d1344caa0a3db9e3e7d0cbad2c8fde9fb88f490"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-09T23:14:42Z"
+        recipe_sha256: "2311d144472981430ceb6b110cc745a5e27258ab4c8a78575241bd5b060aea55"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"
+  "dwarffortress":
+    "aarch64":
+      repository_id: 54834227
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 54834227
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 54834227
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 54834227
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/dwarffortress"
+        blob: "89e86c55bc43bc3ddd07bcc3cc228948e03c87fb"

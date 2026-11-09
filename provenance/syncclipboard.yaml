@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "syncclipboard":
+    "aarch64":
+      repository_id: 91249910
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/syncclipboard"
+        blob: "627a1cc9bd39830937a3ed52f45f59c61e521545"
+    "armv7l":
+      repository_id: 91249910
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 91249910
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 91249910
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/syncclipboard"
+        blob: "5c213f8199c52eedca1d794be6dfced0b5c3c18c"

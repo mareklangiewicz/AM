@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "kiwix-js-pwa":
+    "aarch64":
+      repository_id: 94360913
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/kiwix-js-pwa"
+        blob: "c989fe619d14e6eab03d458fdf0d538ea9c8daf6"
+    "armv7l":
+      repository_id: 94360913
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 94360913
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 94360913
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/kiwix-js-pwa"
+        blob: "9a70f5162181879326aeb2c3402929a6744039f9"

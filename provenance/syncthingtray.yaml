@@ -1,0 +1,48 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "syncthingctl":
+    "aarch64":
+      repository_id: 66505150
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 66505150
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 66505150
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 66505150
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/syncthingctl"
+        blob: "561ce892a2fd2bf3f76a4618150df808e17c690f"
+  "syncthingtray":
+    "aarch64":
+      repository_id: 66505150
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 66505150
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 66505150
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 66505150
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/syncthingtray"
+        blob: "c8c81efcfa37d4a3694708351b24a0cdeebf1836"

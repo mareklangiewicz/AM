@@ -1,0 +1,37 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "onlyoffice":
+    "aarch64":
+      repository_id: 69867298
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 69867298
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 69867298
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 69867298
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/onlyoffice"
+        blob: "19a8350fee7b4a315c72675937532a1418154628"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-09T23:14:42Z"
+        recipe_sha256: "dc18401b7a684696f358c67c02b06b04bec9ec4a6868f53ab7588425c23d0a7c"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"
