@@ -87,3 +87,20 @@ partial acquisition, duplicate tags). `test_batch_collection.py` passes thirteen
 legacy batch regressions after preserving its transport/time semantics. Native
 projection/mode integration and the broader post-extension checks remain to run.
 The previous broad runtime test counts above predate this WIP extension.
+
+## Git consumers — local continuation
+
+JuNest now selects VERSION and its archive commit through one `--git-snapshot`
+read. Both installer and updater download the commit archive, so a branch move
+cannot combine different versions and payloads. trans and watched obtain their
+existing tag-based version checks from Git observations; their independent vendor
+payload endpoints remain unchanged. These three exact recipe hashes have trusted
+selection profiles in the policy registry.
+
+Three new `test_git_consumers.py` groups exercise actual shell acquisition against
+local Git publications, tag filtering/order, scalar outputs, a moving publication
+ref during acquisition, stale refusal without output/download and projections
+under mawk/gawk/BusyBox awk. All pass; the five Git observation groups pass too.
+The multi-tag fixture exposed a native lexical comparison of position against
+100; the validator now compares numerically. This remains a local checkpoint,
+with custom selectors, schema transition and rollout still unfinished.

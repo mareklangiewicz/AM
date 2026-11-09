@@ -1,4 +1,8 @@
 #!/bin/sh
+# AM-CATALOG-RECIPE 1
+CATALOG_FORMAT=3
+AMREPO=${AMREPO-}
+export AMREPO
 
 # AM INSTALL SCRIPT VERSION 3.5
 set -u
@@ -12,8 +16,11 @@ printf "#!/bin/sh\nset -e\nrm -f /usr/local/bin/$APP /usr/local/bin/sudoj\nrm -R
 chmod a+x ../remove || exit 1
 
 # DOWNLOAD AND PREPARE THE APP, $version is also used for updates
-version=$(curl -Ls https://raw.githubusercontent.com/fsquillace/junest/master/VERSION)
-wget https://github.com/fsquillace/junest/archive/refs/heads/master.zip || exit 1
+snapshot=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/junest --git-snapshot "$@") || exit 1
+commit=$(printf '%s\n' "$snapshot" | sed -n '1p')
+version=$(printf '%s\n' "$snapshot" | sed '1d')
+[ -n "$version" ] || exit 1
+wget "https://github.com/fsquillace/junest/archive/$commit.zip" || exit 1
 [ -e ./*7z ] && 7z x ./*7z && rm -f ./*7z
 [ -e ./*tar.* ] && tar fx ./*tar.* && rm -f ./*tar.*
 [ -e ./*zip ] && unzip -qq ./*zip 1>/dev/null && rm -f ./*zip
@@ -31,16 +38,23 @@ ln -s "/opt/$APP/sudoj" "/usr/local/bin/sudoj"
 # SCRIPT TO UPDATE THE PROGRAM
 cat >> ./AM-updater << 'EOF'
 #!/bin/sh
+# AM-CATALOG-RECIPE 1
+CATALOG_FORMAT=3
+AMREPO=${AMREPO-}
+export AMREPO
 set -u
 APP=junest
 SITE="fsquillace/junest"
 version0=$(cat "/opt/$APP/version")
-version=$(curl -Ls https://raw.githubusercontent.com/fsquillace/junest/master/VERSION)
+snapshot=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/junest --git-snapshot "$@") || exit 1
+commit=$(printf '%s\n' "$snapshot" | sed -n '1p')
+version=$(printf '%s\n' "$snapshot" | sed '1d')
+[ -n "$version" ] || exit 1
 [ -n "$version" ] || { echo "Error getting link"; exit 1; }
 if [ "$version" != "$version0" ]; then
 	mkdir "/opt/$APP/tmp" && cd "/opt/$APP/tmp" || exit 1
 	notify-send "A new version of $APP is available, please wait"
-	wget https://github.com/fsquillace/junest/archive/refs/heads/master.zip || exit 1
+	wget "https://github.com/fsquillace/junest/archive/$commit.zip" || exit 1
 	[ -e ./*7z ] && 7z x ./*7z && rm -f ./*7z
 	[ -e ./*tar.* ] && tar fx ./*tar.* && rm -f ./*tar.*
 	[ -e ./*zip ] && unzip -qq ./*zip 1>/dev/null && rm -f ./*zip

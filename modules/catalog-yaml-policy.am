@@ -82001,6 +82001,38 @@ BEGIN {
     recipes_source_policy["x86_64/zynkbot","mskill1/zynkbot"]="x86_64/zynkbot"
     recipes_source_policy["x86_64/zynkbot","mskill1/zynkbot"]="x86_64/zynkbot"
     recipes_url_group["x86_64/zynkbot"]=12
+    recipes_repository["x86_64/junest"]="25396290"
+    recipes_channel["x86_64/junest"]="any"
+    recipes_pattern["x86_64/junest"]="^.*$"
+    recipes_tools["x86_64/junest"]=""
+    recipes_tool_suffix["x86_64/junest"]=""
+    recipes_fresh_only["x86_64/junest"]=0
+    recipes_selection["x86_64/junest"]="git-file"
+    recipes_git_ref["x86_64/junest"]="refs/heads/master"
+    recipes_git_file["x86_64/junest"]="VERSION"
+    recipes_source_policy["x86_64/junest","fsquillace/junest"]="x86_64/junest"
+    recipes_url_group["x86_64/junest"]=440
+    recipes_repository["x86_64/trans"]="7997994"
+    recipes_channel["x86_64/trans"]="any"
+    recipes_pattern["x86_64/trans"]="^.*$"
+    recipes_tools["x86_64/trans"]=""
+    recipes_tool_suffix["x86_64/trans"]=""
+    recipes_fresh_only["x86_64/trans"]=0
+    recipes_selection["x86_64/trans"]="git-tag"
+    recipes_tag_pattern["x86_64/trans"]="v[0-9]"
+    recipes_source_policy["x86_64/trans","soimort/translate-shell"]="x86_64/trans"
+    recipes_url_group["x86_64/trans"]=440
+    recipes_repository["x86_64/watched"]="372085438"
+    recipes_channel["x86_64/watched"]="any"
+    recipes_pattern["x86_64/watched"]="^.*$"
+    recipes_tools["x86_64/watched"]=""
+    recipes_tool_suffix["x86_64/watched"]=""
+    recipes_fresh_only["x86_64/watched"]=0
+    recipes_selection["x86_64/watched"]="git-tag"
+    recipes_tag_pattern["x86_64/watched"]="^v[0-9]"
+    recipes_tag_exclude["x86_64/watched"]="alpha|next"
+    recipes_source_policy["x86_64/watched","mediaurl/mediaurl-js"]="x86_64/watched"
+    recipes_url_group["x86_64/watched"]=440
     url_rule_count[1]=2
     url_rule_exclude[1,1]=0
     url_rule_ignore_case[1,1]=1
@@ -85674,6 +85706,10 @@ BEGIN {
     url_rule_exclude[439,2]=1
     url_rule_ignore_case[439,2]=1
     url_rule_pattern[439,2]="i386|i686|aarch64|arm64|armv7l"
+    url_rule_count[440]=1
+    url_rule_exclude[440,1]=0
+    url_rule_ignore_case[440,1]=0
+    url_rule_pattern[440,1]="."
 }
 # END recipe declarations
 # Maintained selection logic; generated declarations above contain data only.

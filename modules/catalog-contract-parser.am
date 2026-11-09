@@ -81,7 +81,7 @@ function git_semantics( p,r,k,name,position,tags,branches,files,path) {
         k=substr(p,length("/git_refs/")+1)
         if(name ~ /^refs\/tags\//) {
             tags++;position=values[p "/position"]
-            if(values["/git_scope/tags"]!="true" || !((p "/position") in types) || position>=100 || git_positions[position]++ || ((p "/files") in types)) fail("Git tag position/scope")
+            if(values["/git_scope/tags"]!="true" || !((p "/position") in types) || position+0>=100 || git_positions[position]++ || ((p "/files") in types)) fail("Git tag position/scope")
         } else {
             branches++
             if(((p "/position") in types) || values["/git_scope/branches/" k]!=name || children[p "/files"]>4) fail("Git branch scope/files")
