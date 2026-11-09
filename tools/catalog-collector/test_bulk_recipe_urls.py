@@ -70,6 +70,37 @@ class BodyMigration(unittest.TestCase):
             path.write_text(changed+'# drift\n')
             with patch.object(compiler,'ROOT',root),self.assertRaises(ValueError):compiler.generate()
 
+    def test_explicit_registry_append_validates_before_any_write(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root=Path(temporary);(root/'modules').mkdir();(root/'tools/catalog-collector').mkdir(parents=True)
+            folder=root/'programs/x86_64';folder.mkdir(parents=True)
+            (folder/'20x').write_bytes((b.host.ROOT/'programs/x86_64/20x').read_bytes())
+            shutil.copy2(b.host.ROOT/'modules/catalog-yaml-policy.am',root/'modules/catalog-yaml-policy.am')
+            registry=root/'tools/catalog-collector/recipe-url-policies.json'
+            def proposal(app):
+                original=self.source().replace('APP=1aivault','APP='+app)
+                (folder/app).write_text(original)
+                changed,rows,_=b.translate(original,'x86_64/'+app,[dict(self.bindings()[0],catalog_app=app)])
+                return dict(ready=[dict(recipe='programs/x86_64/'+app,
+                    before_sha256=hashlib.sha256(original.encode()).hexdigest(),
+                    after_sha256=hashlib.sha256(changed.encode()).hexdigest(),after=changed)],policies=rows)
+            first=proposal('first');second=proposal('second')
+            with patch.object(b.host,'ROOT',root):
+                b.apply(first)
+                before=registry.read_bytes();source=(folder/'second').read_bytes()
+                with self.assertRaisesRegex(ValueError,'explicit merge'):b.apply(second)
+                with self.assertRaisesRegex(ValueError,'registry changed'):b.apply(second,append_sha256='0'*64)
+                self.assertEqual(registry.read_bytes(),before)
+                self.assertEqual((folder/'second').read_bytes(),source)
+                digest=hashlib.sha256(before).hexdigest()
+                bad=dict(second,policies=second['policies']+first['policies'])
+                with self.assertRaises(ValueError):b.apply(bad,append_sha256=digest)
+                self.assertEqual(registry.read_bytes(),before)
+                self.assertEqual((folder/'second').read_bytes(),source)
+                b.apply(second,append_sha256=digest)
+                self.assertEqual([r['recipe'] for r in json.loads(registry.read_text())],
+                                 ['x86_64/first','x86_64/second'])
+
 
 class BodyManager(unittest.TestCase):
     setUp=integration.YAMLManager.setUp

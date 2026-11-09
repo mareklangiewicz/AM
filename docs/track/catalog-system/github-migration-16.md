@@ -129,3 +129,20 @@ including script-like content escaping and layout bounds. The positive template
 classification fixture now uses its original recipe revision because the live
 recipe was converted by the bulk migration. Custom selectors and operational
 acquisition/publication remain outstanding; no deployment occurred.
+
+## Real Git acquisition and append tooling
+
+[Portable Git acquisition evidence](git-acquisition-16.tar.gz) records successful
+live acquisition of JuNest, trans and watched at source `49409dbb4`: seven shared
+budget requests / 84,811 response bytes, all three successful. Saved API responses,
+per-response times/hashes, canonical sources and native selections are included.
+All three selections agree under mawk, gawk and BusyBox awk. No application
+payload was downloaded or executed, and no catalog was published.
+
+The bulk URL tool now has an explicit `--append-policies-sha256` path. It checks
+the existing registry and exact before/after hashes, shell syntax and the complete
+proposed merged policy compilation in a staging tree before source writes. A
+changed registry, duplicate policy, ambiguous dispatch or hash drift refuses.
+Six bulk URL groups pass, including actual manager integration and an append
+regression verifying refusal leaves both recipe and registry unchanged.
+Fifteen publication groups also pass after the schema workflow change.
