@@ -67,7 +67,7 @@ def prepare(source, pin, recipe, installation):
         raise ValueError('unsupported source ownership')
     body = subprocess.check_output(['git', '-C', str(source), 'show', pin+':programs/'+recipe])
     lines = body.decode().splitlines()
-    if '# AM-RECIPE-DECLARATION 1' not in lines or 'CATALOG_FORMAT=2' not in lines:
+    if '# AM-RECIPE-DECLARATION 1' not in lines or 'CATALOG_FORMAT=3' not in lines:
         raise ValueError('complete YAML declaration required')
     # Parse declarations from the pinned source, not an unrelated working tree.
     with tempfile.TemporaryDirectory(prefix='am-refresh-source-') as temporary:

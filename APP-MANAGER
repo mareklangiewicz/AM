@@ -139,8 +139,9 @@ CATALOG_MODULE="catalog.am"
 APPIMAGE_MODULE="appimage.am"
 # Shared YAML runtime files use .am so ordinary module sync/cleanup retains them.
 YAML_CATALOG_MODULE="catalog-yaml.am"
-YAML_READER_MODULE="catalog-yaml-reader.am"
-YAML_PARSER_MODULE="catalog-yaml-parser.am"
+YAML_READER_MODULE="catalog-contract-reader.am"
+YAML_PARSER_MODULE="catalog-contract-parser.am"
+YAML_TABLES_MODULE="catalog-contract-tables.am"
 YAML_POLICY_MODULE="catalog-yaml-policy.am"
 
 # ALTERNATE CURL AND WGET

@@ -75,6 +75,25 @@ def documents():
 
 
 class Contracts(unittest.TestCase):
+    def test_native_asset_facts_preserve_exact_values_order_and_refuse_bad_suffix(self):
+        obj=sample();raw=encode(obj)
+        read=self.shell(raw,'asset_facts')
+        self.assertEqual(read.returncode,0,read.stderr)
+        rows=[line.split('\t') for line in read.stdout.decode().splitlines()]
+        release=c.expand_release(obj['releases']['9007199254740993'],obj['observed_at'])
+        self.assertEqual([row[1] for row in rows],sorted(release['assets'],key=int))
+        for row in rows:
+            self.assertEqual(row[0],'9007199254740993')
+            self.assertEqual(json.loads(row[2]),release['observed_at'])
+            self.assertEqual(json.loads(row[6]),release['assets'][row[1]]['url'])
+            self.assertEqual(json.loads(row[5]),release['assets'][row[1]]['name'])
+        bad=self.shell(raw+b'unknown: true\n','asset_facts')
+        self.assertNotEqual(bad.returncode,0)
+        self.assertEqual(bad.stdout,b'')
+        wrong=self.shell(encode(documents()['apps']),'asset_facts')
+        self.assertNotEqual(wrong.returncode,0)
+        self.assertEqual(wrong.stdout,b'')
+
     def shell(self,raw,operation='validate',*keys):
         with tempfile.NamedTemporaryFile() as f:
             f.write(raw);f.flush()
@@ -258,7 +277,7 @@ class Contracts(unittest.TestCase):
         check(dict(tree,**c.partition_provenance(apps,wrong_rules,PIN)),False)
         self.assertEqual(set(c.partition_provenance(apps,bindings,PIN)),{'provenance/example.yaml','provenance/other.yaml'})
 
-    def test_collection_one_acquisition_two_independent_parents_no_ref_advance(self):
+    def test_v3_bootstrap_and_failed_refresh_preserve_parent_no_ref_advance(self):
         with tempfile.TemporaryDirectory() as temp:
             root=Path(temp);repo=root/'repo';git(root,'init','--bare','--quiet','--template=',str(repo))
             old=repository();old['repository_id']=123
@@ -270,20 +289,17 @@ class Contracts(unittest.TestCase):
             registry=root/'names.json';registry.write_text(json.dumps(dict(active={'123':'example'},retired=[])))
             rows=[dict(app='example',repository_id=123,repository='example/app')]
             with patch.object(interface,'verify_checkout_inputs'),patch.object(host,'configuration',return_value=(rows,{'123':'example/app'})),patch.object(host,'_open',side_effect=AssertionError('offline network')):
-                interface.main(['collect','--repo',str(repo),'--parent',parent,'--evidence',str(evidence),'--output',str(root/'output'),'--registry',str(registry),'--run-id','123'])
+                interface.main(['collect','--evidence',str(evidence),'--output',str(root/'output'),'--registry',str(registry),'--run-id','123'])
             self.assertEqual(git(repo,'rev-parse',REF).decode().strip(),parent)
             self.assertEqual(json.loads((root/'output/report.json').read_text())['acquisition']['http_attempts'],0)
-            for channel in ('format-2','format-3'):
+            for channel in ('format-3',):
                 interface.main(['validate','--candidate',str(root/'output'/channel),'--channel',channel])
             current=c.read_directory(root/'output/format-3')
             self.assertEqual(decode(current['repositories/example.yaml'])['observed_at'],NEW)
-            # Empty successful new scope retains no prior v3 records at bootstrap;
-            # the independent v2 parent still contains its unfetched release.
+            # Empty successful bootstrap has no prior retained records.
             self.assertEqual(decode(current['repositories/example.yaml'])['releases'],{})
-            import yaml
-            self.assertIn('456',yaml.safe_load((root/'output/format-2/repositories/123.yaml').read_bytes())['releases'])
-            # An exceptional target overflow preserves its own exact prior bytes,
-            # independently of the compatibility source result.
+            self.assertFalse((root/'output/format-2').exists())
+            # Exceptional overflow preserves exact prior v3 bytes.
             v3repo=root/'v3.git';git(root,'init','--bare','--quiet','--template=',str(v3repo))
             schema_revision=decode(current['catalog.yaml'])['inputs']['schemas']
             previous_doc=sample();previous_doc['repository_id']=123;previous_doc['schema']=header('repository',schema_revision)['schema']
@@ -291,7 +307,7 @@ class Contracts(unittest.TestCase):
             current['provenance/example.yaml']=encode(dict(header('provenance',schema_revision),apps={'example':{'x86_64':dict(repository_id=123,availability='unknown',classification='unknown')}}))
             v3pin=publish_tree(v3repo,current,None)
             with patch.object(interface,'verify_checkout_inputs'),patch.object(host,'configuration',return_value=(rows,{'123':'example/app'})),patch.object(host,'_open',side_effect=AssertionError('offline network')),patch.object(c,'source',side_effect=ValueError('document_overflow')):
-                interface.main(['collect','--repo',str(repo),'--parent',parent,'--v3-repo',str(v3repo),'--v3-parent',v3pin,'--evidence',str(evidence),'--output',str(root/'overflow'),'--registry',str(registry),'--run-id','123'])
+                interface.main(['collect','--repo',str(v3repo),'--parent',v3pin,'--evidence',str(evidence),'--output',str(root/'overflow'),'--registry',str(registry),'--run-id','123'])
             result=c.read_directory(root/'overflow/format-3')
             self.assertEqual(result['repositories/example.yaml'],current['repositories/example.yaml'])
             outcome=json.loads((root/'overflow/report.json').read_text())
@@ -319,7 +335,7 @@ class Contracts(unittest.TestCase):
             registry=root/'names.json';registry.write_text(json.dumps(dict(active={'123':'example'},retired=[])))
             rows=[dict(app='example',repository_id=123,repository='example/app')]
             output=root/'output'
-            command=['collect','--repo',str(repo),'--parent',parent,'--v3-repo',str(v3),'--v3-parent',prior,'--evidence',str(saved),'--registry',str(registry),'--run-id','124']
+            command=['collect','--repo',str(v3),'--parent',prior,'--evidence',str(saved),'--registry',str(registry),'--run-id','124']
             with patch.object(interface,'verify_checkout_inputs'),patch.object(host,'configuration',return_value=(rows,{'123':'example/app'})),patch.object(host,'_open',side_effect=AssertionError('offline network')),patch.object(c,'source',side_effect=ValueError('document_overflow')):
                 interface.main(command+['--output',str(output)])
                 # Explicitly advancing schemas cannot publish a retained old blob.

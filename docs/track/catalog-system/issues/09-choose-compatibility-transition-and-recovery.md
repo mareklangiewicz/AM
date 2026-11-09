@@ -1,5 +1,20 @@
 # Choose compatibility transition and recovery
 
+## Direct v3 cutover — accepted November 9, 2026
+
+Marek explicitly superseded the temporary dual-output migration plan: he is the
+only user, there are no external consumers, and only myxps uses these changes.
+Mylenovo and mypi have not pulled them. Complete maintained v3 readers/consumers
+and remove active v2 production from the intended operating path. Git history
+and manual recovery suffice; preserve historical snapshots/commits without new
+rollback machinery or continued v2 publication for recovery. Prioritize the
+current enrolled scope before coverage expansion; expanded dual-output
+qualification is stopped. Reuse completed evidence and check actual migration
+changes only. Prepare a concrete myxps cutover and commit locally; only final
+specific push/deployment or installed-host actions need separate authorization.
+Earlier dual-publication, consumer waiting/date and extra rollback requirements
+are superseded wherever they conflict.
+
 Type: grilling
 Label: wayfinder:grilling
 Status: resolved

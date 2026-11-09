@@ -10,7 +10,8 @@ import unittest
 import test_yaml_manager_integration as integration
 from fixture_manager import ROOT
 from fixture_am_utils import RID, fixture
-from yaml_publication import git, publish_local, candidate_tree
+from yaml_publication import git, candidate_tree
+from fixture_v3 import publish_local
 from reference_policies import AM_UTILS, matches, select_cohort
 from fixture_facts import utc
 from test_yaml_reader import SCHEMA
@@ -126,7 +127,7 @@ class AMUtils(unittest.TestCase):
         # Explicit disposable rehearsal, not an automatic production migrator.
         app = self.install('x86_64/7z');recipe = app/'recipe.am';candidate = recipe.read_bytes()
         old = b'\n'.join(line for line in candidate.split(b'\n')
-                         if line != b'CATALOG_FORMAT=2' and not line.startswith(b'CATALOG_RECIPE='))
+                         if line != b'CATALOG_FORMAT=3' and not line.startswith(b'CATALOG_RECIPE='))
         recipe.write_bytes(old);before = self.snapshot()
         binary = (app/'7z').read_bytes();version = (app/'version').read_bytes()
         backup = self.path/'recipe.backup';backup.write_bytes(old)

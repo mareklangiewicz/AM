@@ -13,7 +13,8 @@ import tempfile
 
 from host_catalog import installation_configuration, ROOT, FILE_CAP
 from installed_recipe import bound_recipe, managed_updater
-from yaml_publication import load_local
+from incremental import Snapshot
+import contracts
 
 
 def run(*args, **options):
@@ -21,18 +22,19 @@ def run(*args, **options):
 
 
 def select(rows, repo, pin):
-    apps, repositories = load_local(repo,pin,max_file_bytes=FILE_CAP)
+    snapshot=Snapshot(repo,pin)
+    apps=snapshot.metadata['apps.yaml']['root']['apps']
     results = {}
     now = subprocess.check_output(['date','-u','+%Y-%m-%dT%H:%M:%SZ'],text=True).strip()
     with tempfile.TemporaryDirectory(prefix='am-host-select-') as scratch:
         for row in rows:
             app=row['app'];rid=str(row['repository_id'])
-            if apps.get(app)!=row['repository_id']:
+            if app not in apps or snapshot.metadata[apps[app]]['repository_id']!=row['repository_id']:
                 raise ValueError('catalog source mismatch: '+app)
             document=Path(scratch)/(rid+'.yaml')
             if not document.exists():
-                document.write_bytes(subprocess.check_output(['git','-C',str(repo),'show',pin+':repositories/'+rid+'.yaml']))
-            facts=subprocess.check_output(['sh',str(ROOT/'modules/catalog-yaml-reader.am'),'asset_facts',str(document)])
+                document.write_bytes(snapshot[apps[app]])
+            facts=subprocess.check_output(['sh',str(ROOT/'modules/catalog-contract-reader.am'),'asset_facts',str(document)])
             tools=row.get('tools', [app])
             selections={}
             for tool in tools:

@@ -80,7 +80,7 @@ am_package() (
 	case ${DESKTOP_STRIP_NO_SANDBOX-false} in true|false) ;; *) echo 'Invalid desktop sandbox argument setting' >&2; exit 1;; esac
 	case $APP in ''|.*|*[!a-z0-9.+_-]*) echo 'Invalid app identity' >&2; exit 1;; esac
 	case $PACKAGE_KIND in appimage|executable) ;; *) exit 1;; esac
-	[ "${CATALOG_FORMAT-1}" = 2 ] || {
+	[ "${CATALOG_FORMAT-1}" = 3 ] || {
 		echo 'This fork uses YAML catalogs only; this recipe needs conversion.' >&2; exit 3;
 	}
 	am_archive_configure "$layout" "$APP" || exit 3

@@ -3,7 +3,7 @@
 # AM-CATALOG-RECIPE 1
 set -eu
 APP=exsplode.re
-CATALOG_FORMAT=2
+CATALOG_FORMAT=3
 CATALOG_RECIPE="x86_64/exsplode.re"
 CATALOG_ALIAS="https://api.github.com/repos/AmarOk1412/Eksplode.re/releases"
 

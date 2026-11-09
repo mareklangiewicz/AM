@@ -6,15 +6,12 @@ from pathlib import Path
 import re
 import subprocess
 import time
-from concurrent.futures import ThreadPoolExecutor
 
 import host_catalog as host
 import contracts
 from bounded import unique_object
 from provenance import Evaluator
 from incremental import Snapshot,Records,Candidate
-from writer import document
-from yaml_publication import schema_url
 
 def verify_checkout_inputs(inputs, registry):
     """Pins describe actual maintained bytes, including independently pinned inputs."""
@@ -62,13 +59,9 @@ def collect(args):
             for key in ('source','policy','recipes','rules','schemas')}
     if args.output.exists(): raise ValueError('output must not exist')
     started_at=host.utc()
-    if bool(args.v3_repo)!=bool(args.v3_parent): raise ValueError('v3 parent needs repository and exact pin')
-    with ThreadPoolExecutor(max_workers=2) as pool:
-        legacy_future=pool.submit(Snapshot,args.repo,args.parent,'format-2')
-        target_future=pool.submit(Snapshot,args.v3_repo,args.v3_parent) if args.v3_parent else None
-        legacy_parent=legacy_future.result()
-        prior=target_future.result() if target_future else None
-    previous=Records(legacy_parent)
+    if args.parent and not args.repo: raise ValueError('parent requires local repository')
+    prior=Snapshot(args.repo,args.parent) if args.parent else None
+    previous=Records(prior) if prior else {}
     # A collector-only revision must not rebind unchanged source documents.
     # Verification below refuses reuse if the schema checkout actually changed.
     if prior and args.schemas_revision is None:
@@ -84,11 +77,8 @@ def collect(args):
         if path.startswith('repositories/') and names.get(str(obj['repository_id']))+'.yaml'!=path.removeprefix('repositories/'):
             raise ValueError('source registry changed identity')
     acquired={}; metrics={}
-    legacy,legacy_report=host.collect(revision,previous,args.evidence,batch_size=args.batch_size,
-                                      metrics=metrics,acquisitions=acquired,incremental=True,profile=profile)
-    legacy_apps,legacy_changed=legacy
-    legacy=Candidate(legacy_parent,dict({'apps.yaml':document(dict(format=2,schema=schema_url(revision),apps=dict(sorted(legacy_apps.items())))).encode()},
-                     **{'repositories/'+rid+'.yaml':document(obj).encode() for rid,obj in legacy_changed.items()}),'format-2')
+    _,acquisition_report=host.collect(revision,previous,args.evidence,batch_size=args.batch_size,
+                                      metrics=metrics,acquisitions=acquired,incremental=True,profile=profile,native_v3=True)
     tree={}
     report=[]
     for rid,acquisition in acquired.items():
@@ -101,7 +91,7 @@ def collect(args):
             reason='document_overflow' if str(error)=='document_overflow' else 'source_validation'
             report.append(dict(repository_id=int(rid),status='failed',reason=reason))
     recorded={row['repository_id'] for row in report}
-    for row in legacy_report:
+    for row in acquisition_report:
         if row['repository_id'] not in recorded:
             reason={'invalid_response':'source_validation','transport':'transport','collection_limit':'byte_budget'}.get(row.get('reason'),'unknown')
             if row.get('http_status')==401: reason='authentication'
@@ -121,24 +111,22 @@ def collect(args):
                            for arch in ('x86_64','aarch64','i686','armv7l')} for row in rows if row['app'] in apps}
     tree.update(contracts.partition_provenance(apps,provenance,inputs['schemas']))
     tree=Candidate(prior,tree)
-    write_tree(args.output/'format-2',legacy)
     write_tree(args.output/'format-3',tree)
     evidence=dict(version=1,started_at=started_at,reported_at=host.utc(),run=dict(id=args.run_id,attempt=args.attempt),inputs=inputs,
-                  parents=dict(format_2=args.parent,format_3=args.v3_parent),
+                  parents=dict(format_3=args.parent),
                   collection_mode='saved' if args.evidence else 'live',sources=report,
                   selected_sources=metrics['selected_repository_ids'],
                   target_counts=dict(enrolled=len(sources),selected=metrics['selected_sources'],attempted=len(report),
                                      successful=sum(row['status']=='ok' for row in report),
                                      failed=sum(row['status']=='failed' for row in report),unknown=0,
                                      unattempted=metrics['selected_sources']-len(report)),
-                  compatibility_sources=legacy_report,compatibility_metrics=metrics,
-                  validation=dict(format_2=legacy.validation,format_3=tree.validation,
-                                  format_2_parent=legacy_parent.validation,format_3_parent=prior.validation if prior else None),
+                  collection_metrics=metrics,
+                  validation=dict(format_3=tree.validation,format_3_parent=prior.validation if prior else None),
                   acquisition=dict(http_attempts=metrics['requests'],charged_response_bytes=metrics['response_bytes'],
                                    received_response_bytes_state='unknown',seconds=metrics['acquisition_seconds'],
                                    command_seconds=time.monotonic()-command_started),
                   hashes={channel:{name:hashlib.sha256(raw).hexdigest() for name,raw in content.items()}
-                          for channel,content in (('format-2',legacy),('format-3',tree))})
+                          for channel,content in (('format-3',tree),)})
     (args.output/'report.json').write_text(json.dumps(evidence,indent=2)+'\n')
 
 
@@ -167,10 +155,8 @@ def main(argv=None):
     parser=argparse.ArgumentParser(description=__doc__)
     sub=parser.add_subparsers(dest='operation',required=True)
     c=sub.add_parser('collect')
-    c.add_argument('--repo',type=Path,required=True)
-    c.add_argument('--parent',type=contracts.pin,required=True)
-    c.add_argument('--v3-repo',type=Path)
-    c.add_argument('--v3-parent',type=contracts.pin)
+    c.add_argument('--repo',type=Path,help='Local format-3 parent object repository')
+    c.add_argument('--parent',type=contracts.pin,help='Exact v3 parent; omit for empty-channel bootstrap')
     c.add_argument('--evidence',type=Path)
     c.add_argument('--reviews',type=Path,help='Explicit exact-input custom classification reviews')
     c.add_argument('--output',type=Path,required=True)
@@ -202,7 +188,7 @@ def main(argv=None):
     if args.operation=='publish':
         from pipeline_publication import run
         result=run(args)
-        active=('format-2','format-3','status-1') if args.enable_targets else ('format-2',)
+        active=('format-3','status-1')
         if result['validation']!='ok' or any(result['outcomes'][key]['state']!='confirmed' for key in active):
             raise SystemExit(1)
         return result

@@ -9,14 +9,13 @@ concurrency:
   cancel-in-progress: false
 jobs:
   acquire:
-    if: github.repository == 'mareklangiewicz/AM' && github.ref == 'refs/heads/main-marek'
+    if: github.repository == 'mareklangiewicz/AM' && github.ref == 'refs/heads/main-marek' && vars.CATALOG_V3_ENABLED == 'true'
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     permissions:
       contents: read
     outputs:
       parent: ${{ steps.parents.outputs.parent }}
-      v3-parent: ${{ steps.parents.outputs.v3-parent }}
       resolved: ${{ steps.parents.outputs.resolved }}
       schemas: ${{ steps.parents.outputs.schemas }}
     steps:
@@ -32,29 +31,19 @@ jobs:
         run: git fetch --no-tags --depth=1 https://github.com/mareklangiewicz/AM.git bbffd15c19d01ef9124fbf99b5b9c41d2661ea22 bb53f3180ec92f862020f8bdccef0f6614015bae
       - name: Read exact public parents
         id: parents
-        env:
-          ENABLE_TARGETS: ${{ vars.CATALOG_V3_ENABLED }}
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p "$RUNNER_TEMP/am-catalog"
-          for channel in legacy target; do
-            git init --bare --template= "$RUNNER_TEMP/am-catalog/$channel.git"
-          done
-          git -C "$RUNNER_TEMP/am-catalog/legacy.git" fetch --no-tags --depth=1 \
-            https://github.com/mareklangiewicz/AM.git refs/heads/release-catalog
-          parent=$(git -C "$RUNNER_TEMP/am-catalog/legacy.git" rev-parse FETCH_HEAD)
-          echo "parent=$parent" >> "$GITHUB_OUTPUT"
-          if [[ "$ENABLE_TARGETS" == true ]]; then
-            target=$(git ls-remote --refs https://github.com/mareklangiewicz/AM.git refs/heads/release-catalog-v3 | cut -f1)
-            if [[ -n "$target" ]]; then
-              git -C "$RUNNER_TEMP/am-catalog/target.git" fetch --no-tags --depth=1 https://github.com/mareklangiewicz/AM.git "$target"
-              echo "v3-parent=$target" >> "$GITHUB_OUTPUT"
-              schemas=$(python3 -B tools/catalog-collector/host_catalog.py schema-revision \
-                --repo "$RUNNER_TEMP/am-catalog/target.git" --parent "$target")
-              git fetch --no-tags --depth=1 https://github.com/mareklangiewicz/AM.git "$schemas"
-              echo "schemas=$schemas" >> "$GITHUB_OUTPUT"
-            fi
+          git init --bare --template= "$RUNNER_TEMP/am-catalog/target.git"
+          target=$(git ls-remote --refs https://github.com/mareklangiewicz/AM.git refs/heads/release-catalog-v3 | cut -f1)
+          if [[ -n "$target" ]]; then
+            git -C "$RUNNER_TEMP/am-catalog/target.git" fetch --no-tags --depth=1 https://github.com/mareklangiewicz/AM.git "$target"
+            echo "parent=$target" >> "$GITHUB_OUTPUT"
+            schemas=$(python3 -B tools/catalog-collector/host_catalog.py schema-revision \
+              --repo "$RUNNER_TEMP/am-catalog/target.git" --parent "$target")
+            git fetch --no-tags --depth=1 https://github.com/mareklangiewicz/AM.git "$schemas"
+            echo "schemas=$schemas" >> "$GITHUB_OUTPUT"
           fi
           echo 'resolved=true' >> "$GITHUB_OUTPUT"
       - name: Collect candidates only
@@ -62,10 +51,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         with:
-          repo: ${{ runner.temp }}/am-catalog/legacy.git
+          repo: ${{ runner.temp }}/am-catalog/target.git
           parent: ${{ steps.parents.outputs.parent }}
-          v3-repo: ${{ runner.temp }}/am-catalog/target.git
-          v3-parent: ${{ steps.parents.outputs.v3-parent }}
           output: ${{ runner.temp }}/am-catalog/candidate
           batch-size: ${{ vars.CATALOG_BATCH_SIZE || '500' }}
           request-cap: ${{ vars.CATALOG_REQUEST_CAP || '750' }}
@@ -119,17 +106,13 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           EXPECTED_PARENT: ${{ needs.acquire.outputs.parent }}
-          EXPECTED_V3_PARENT: ${{ needs.acquire.outputs.v3-parent }}
           PARENTS_RESOLVED: ${{ needs.acquire.outputs.resolved }}
-          ENABLE_TARGETS: ${{ vars.CATALOG_V3_ENABLED }}
         shell: bash
         run: |
           set -euo pipefail
           extra=()
-          if [[ -n "$EXPECTED_PARENT" ]]; then extra+=(--expected-v2-parent "$EXPECTED_PARENT"); fi
-          if [[ -n "$EXPECTED_V3_PARENT" ]]; then extra+=(--expected-v3-parent "$EXPECTED_V3_PARENT"); fi
+          if [[ -n "$EXPECTED_PARENT" ]]; then extra+=(--expected-v3-parent "$EXPECTED_PARENT"); fi
           if [[ "$PARENTS_RESOLVED" != true ]]; then extra+=(--input-catalog-state unknown); fi
-          if [[ "$ENABLE_TARGETS" == true ]]; then extra+=(--enable-targets); fi
           python3 -B tools/catalog-collector/host_catalog.py publish \
             --candidate "$RUNNER_TEMP/am-catalog-candidate" \
             --remote-url https://github.com/mareklangiewicz/AM.git \
@@ -139,5 +122,5 @@ jobs:
         if: always()
         shell: bash
         run: rm -rf -- "$RUNNER_TEMP/am-catalog-candidate"
-# CATALOG_V3_ENABLED remains unset/false until the separately reviewed rollout.
+# CATALOG_V3_ENABLED gates only v3/status production; there is no v2 fallback.
 # Preparing this source file does not authorize dispatch or channel activation.

@@ -149,7 +149,7 @@ def _response(rid, evidence, allowance, *, rate=None):
     return body, utc()
 
 
-def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None, acquisitions=None, incremental=False, profile=None):
+def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None, acquisitions=None, incremental=False, profile=None, native_v3=False):
     """Refresh all (strict) or a bounded oldest-attempt-first batch.
 
     Strict mode retains the existing all-or-nothing command. Batch mode reports
@@ -206,7 +206,7 @@ def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None,
             raise ValueError('collection elapsed budget')
         attempted = utc()
         before = previous.get(rid, dict(format=2, schema=schema,
-            repository_id=int(rid), repository=name))
+            repository_id=int(rid), repository=name)) if not native_v3 else None
         stop = False
         reason = 'transport'
         rate = {}
@@ -227,8 +227,13 @@ def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None,
             if acquisitions is not None:
                 acquisitions[rid] = dict(received_at=received, releases=records,
                                          history_complete=len(raw)<100)
-                if any('published_at' not in record for record in records.values()):
+                if not native_v3 and any('published_at' not in record for record in records.values()):
                     raise ValueError('format-2 requires publication time')
+            if native_v3:
+                report.append(dict(repository_id=int(rid), repository=name, status='ok', observed_at=received))
+                if rate: report[-1]['rate'] = rate
+                latest_rate = rate
+                continue
             response = dict(received_at=received, releases=records, has_next=len(raw)==100,
                             bytes=len(body), seconds=0)
             result = refresh(before, [response], attempted_at=attempted,
@@ -248,11 +253,12 @@ def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None,
                 error.close()
             if isinstance(error, TransferFailure):
                 used += error.budget_bytes
-            result = refresh(before, [dict(error=reason, releases={}, bytes=0,
-                seconds=0, received_at=attempted, has_next=False)],
-                attempted_at=attempted, page_size=100, page_limit=1,
-                max_catalog_bytes=FILE_CAP)
-            repositories[rid] = result
+            if not native_v3:
+                result = refresh(before, [dict(error=reason, releases={}, bytes=0,
+                    seconds=0, received_at=attempted, has_next=False)],
+                    attempted_at=attempted, page_size=100, page_limit=1,
+                    max_catalog_bytes=FILE_CAP)
+                repositories[rid] = result
             failure = dict(repository_id=int(rid), repository=name, status='failed', reason=reason)
             if isinstance(error, urllib.error.HTTPError):
                 failure['http_status'] = error.code
@@ -286,6 +292,8 @@ def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None,
     rates = [row['rate'] for row in report if row.get('rate')]
     if rates:
         metrics.update(rate_first=rates[0], rate_last=rates[-1])
+    if native_v3:
+        return None, report
     successful_times={rid:meta['completed_at'] for rid,meta in (metadata or {}).items() if meta.get('completed_at')} if incremental else {}
     successful_times.update({rid:obj['last_success']['completed_at'] for rid,obj in repositories.items() if 'last_success' in obj})
     successes=list(successful_times.values())
@@ -342,7 +350,7 @@ def main():
         from collection_interface import main as command
         command(sys.argv[1:])
     else:
-        legacy_main()
+        raise SystemExit('Use collect, validate, publish or schema-revision; active format-2 production is retired.')
 
 
 if __name__=='__main__': main()

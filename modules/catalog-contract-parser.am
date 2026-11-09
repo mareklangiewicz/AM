@@ -65,7 +65,7 @@ function parent_path(p, q) { q=p; sub(/\/[^\/]*$/,"",q); return q }
 function check_measurement(p) {
     if((values[p "/state"]=="known") != ((p "/value") in types)) fail("measurement state/value")
 }
-function semantics( p,r,a,b,k,t,n,seen,stable,count_names,stable_path,stable_time,other_time,stable_id,other_id) {
+function semantics( p,r,a,b,k,t,n,seen,stable,count_names,stable_path,stable_time,other_time,stable_id,other_id,parts,url_fact,observed,published) {
     if(values["/kind"]=="repository") {
         if(values["/observed_at"]>values["/collected_at"]) fail("observation after collection")
         for(p in node_type) {
@@ -93,6 +93,15 @@ function semantics( p,r,a,b,k,t,n,seen,stable,count_names,stable_path,stable_tim
                     k=values[r "/download_base"] values[p "/url_suffix"]
                     if(k !~ /^https:\/\/[^\/[:space:]][^[:space:]]*$/ || k ~ /[[:cntrl:]]/) fail("reconstructed URL")
                 } else k=values[p "/url"]
+                if(operation=="asset_facts") {
+                    split(p,parts,"/")
+                    observed=((r "/observed_at") in types ? encoded[r "/observed_at"] : encoded["/observed_at"])
+                    # Missing publication times remain explicit empty strings;
+                    # existing published-time policies refuse rather than invent one.
+                    published=((r "/published_at") in types ? encoded[r "/published_at"] : "\"\"")
+                    url_fact=(a ? encoded[p "/url"] : substr(encoded[r "/download_base"],1,length(encoded[r "/download_base"])-1) substr(encoded[p "/url_suffix"],2))
+                    fact_rows[p]=parts[3] "\t" parts[5] "\t" observed "\t" published "\t" encoded[r "/tag"] "\t" encoded[p "/name"] "\t" url_fact "\t" encoded[r "/prerelease"] "\n"
+                }
                 if(operation=="get" && query==p "/url") { virtual_url[p]=k }
                 k=((p "/media_type") in types ? values[p "/media_type"] : "application/octet-stream")
                 if(substr(k,1,1)=="=") k=substr(k,2)
@@ -206,6 +215,7 @@ BEGIN {
         if(rule in child_type) {
             if(kind!="map" && kind!="empty") fail("mapping required")
             node_type[path]=child_type[rule]
+            if(node_type[path]=="asset") asset_paths[++asset_count]=path
         } else {
             if(kind!=scalar_type[rule]) fail("scalar type")
             if(rule in rule_const && "x" value!="x" rule_const[rule]) fail("constant")
@@ -237,6 +247,8 @@ END {
     semantics()
     if(operation=="get" && !found && query in types) { found=1; emit(values[query]) }
     if(operation=="get") for(p in virtual_url) if(query==p "/url" && !(query in types)) { found=1; emit(virtual_url[p]) }
-    if(operation=="validate") exit 0
+    if(operation=="asset_facts" && values["/kind"]!="repository") fail("repository facts required")
+    if(operation=="asset_facts") for(i=1;i<=asset_count;i++) emit(fact_rows[asset_paths[i]])
+    if(operation=="validate" || operation=="asset_facts") exit 0
     if(!found) exit 3
 }

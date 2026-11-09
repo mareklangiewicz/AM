@@ -12,11 +12,12 @@ import unittest
 
 import fixture_manager as harness
 from fixture_manager import ROOT, NOW
-from yaml_publication import git, publish_local
+from yaml_publication import git
+from fixture_v3 import publish_local
 from test_yaml_reader import SCHEMA
 
 SOURCE='https://raw.githubusercontent.com/selected-owner/selected.repo/feature/catalog'
-RUNTIME=('catalog-yaml.am','catalog-yaml-reader.am','catalog-yaml-parser.am','catalog-yaml-policy.am')
+RUNTIME=('catalog-yaml.am','catalog-contract-reader.am','catalog-contract-parser.am','catalog-contract-tables.am','catalog-yaml-policy.am')
 
 
 class YAMLManager(unittest.TestCase):
@@ -56,10 +57,10 @@ assert not any('Authorization' in a for a in args)
 def git(*a):
  return subprocess.run(['/usr/bin/git','-C',os.environ['REMOTE'],*a],capture_output=True,check=True).stdout
 expected=os.environ.get('EXPECTED_REPOSITORY','selected-owner/selected.repo')
-if url=='https://api.github.com/repos/'+expected+'/commits/heads/release-catalog':
+if url=='https://api.github.com/repos/'+expected+'/commits/heads/release-catalog-v3':
  raw=(p/'ref').read_bytes() if (p/'ref').exists() else (os.environ['PIN']+'\\n').encode()
 else:
- match=re.fullmatch(r'https://raw.githubusercontent.com/'+expected+r'/([0-9a-f]{40})/(apps\\.yaml|repositories/[0-9]+\\.yaml)',url)
+ match=re.fullmatch(r'https://raw.githubusercontent.com/'+expected+r'/([0-9a-f]{40})/(catalog\\.yaml|apps\\.yaml|repositories/[a-z0-9_.+-]+\\.yaml)',url)
  assert match,url
  pin,name=match.groups(); raw=git('show',pin+':'+name)
  if name=='apps.yaml' and (p/'move-to').exists():
@@ -117,21 +118,21 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\napp=${0##
             with self.subTest(recipe=recipe):
                 app=self.install(recipe)
                 installed=(app/'recipe.am').read_text()
-                self.assertIn('CATALOG_FORMAT=2',installed)
+                self.assertIn('CATALOG_FORMAT=3',installed)
                 self.assertIn(str(self.module_dir/'catalog-yaml.am'),installed)
                 self.assertIn('AMREPO=${AMREPO-"'+SOURCE+'"}',installed)
                 self.assertTrue((app/'version').read_text().startswith('https://github.com/'))
                 env=self.env();env.pop('AMREPO')
                 r=self.standalone(app/'AM-updater',env=env)
                 self.assertEqual(r.returncode,0,r.stderr)
-                self.assertEqual(len(self.calls()),3)
+                self.assertEqual(len(self.calls()),4)
                 before=self.snapshot()
                 r=self.standalone(app/'AM-updater',env={**env,'AMREPO':''})
                 self.assertNotEqual(r.returncode,0);self.assertEqual(self.snapshot(),before)
                 self.assertEqual(self.calls(),[])
 
     def test_missing_runtime_refuses_before_installation_and_appman_paths(self):
-        parser=self.module_dir/'catalog-yaml-parser.am'; original=parser.read_bytes();parser.unlink()
+        parser=self.module_dir/'catalog-contract-parser.am'; original=parser.read_bytes();parser.unlink()
         before=self.snapshot()
         r=self.run_manager_install(amrepo=SOURCE)
         self.assertNotEqual(r.returncode,0); self.assertFalse(self.app.exists())
@@ -147,7 +148,7 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\napp=${0##
         self.assertEqual(r.returncode,0,r.stderr)
         self.assertIn(b'obsidian: unchanged',r.stdout);self.assertIn(b'nvim: unchanged',r.stdout)
         self.assertIn(b'legacy: updated',r.stdout)
-        self.assertEqual(len(self.calls()),4) # ref + apps + two repository documents
+        self.assertEqual(len(self.calls()),5) # ref + descriptor + apps + two sources
         self.clock='2026-11-04T12:00:00Z'
         from reference_policies import select_cohort
         selected=select_cohort('x86_64/obsidian',self.repositories['262342594'],self.pin,
@@ -159,7 +160,7 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\napp=${0##
         self.assertNotEqual(r.returncode,0)
         self.assertIn(b'obsidian: unchanged',r.stdout);self.assertIn(b'nvim: refused',r.stderr)
         self.assertIn(b'legacy: unchanged',r.stdout)
-        self.assertEqual(len(self.calls()),3)
+        self.assertEqual(len(self.calls()),4)
         self.assertEqual({p.name:p.read_bytes() for p in nvim.iterdir() if p.is_file()},before)
 
     def test_bad_transport_latches_batch_and_preserves_incomplete_install(self):
@@ -227,7 +228,7 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\napp=${0##
         harness=self.path/'sync-runtime'
         harness.write_text(cleanup+'\n'+sync+'\n_use_online_downloader() { cp "$SOURCE_MODULES/${1##*/}" "$2"; }\n_use_online_reading_tool() { cat "$SOURCE_MODULES/${1##*/}"; }\nAMCLI_ONLINE_CONTENT=$(cat "$MANAGER_SOURCE")\n_sync_modules\n')
         obsolete=self.module_dir/'obsolete.am';obsolete.write_text('old')
-        (self.module_dir/'catalog-yaml-parser.am').unlink()
+        (self.module_dir/'catalog-contract-parser.am').unlink()
         (self.module_dir/'catalog-yaml-policy.am').write_text('# AMCLI old\n')
         (self.module_dir/'appimage.am').write_text('# AMCLI stale installer\n')
         env={**self.env(),'SOURCE_MODULES':str(ROOT/'modules'),'MANAGER_SOURCE':str(ROOT/'APP-MANAGER'),
@@ -251,13 +252,13 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\napp=${0##
         r=subprocess.run(['/bin/sh',str(helper),'x86_64/obsidian'],env=self.env(),capture_output=True)
         self.assertEqual(r.returncode,0,r.stderr)
         self.assertEqual(r.stdout.decode().splitlines()[0],self.pin)
-        self.assertEqual(len(self.calls()),3)
+        self.assertEqual(len(self.calls()),4)
         self.assertTrue(all('/'+self.pin+'/' in c[-1] for c in self.calls()[1:]))
         (self.path/'ref').unlink()
         self.install('x86_64/nvim');self.install('x86_64/nvim-nightly')
         r=self.manager(['-u','nvim','nvim-nightly'],source=SOURCE)
         self.assertEqual(r.returncode,0,r.stderr)
-        self.assertEqual(len(self.calls()),3) # ref/apps/one shared repository
+        self.assertEqual(len(self.calls()),4) # ref/apps/one shared repository
         self.assertIn(b'nvim: unchanged',r.stdout)
         self.assertIn(b'nvim-nightly: updated',r.stdout)
 

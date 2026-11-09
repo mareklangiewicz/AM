@@ -13,7 +13,7 @@ def bound_recipe(body, source_url, paths, modules):
     entry = '. "/opt/am/modules/appimage.am"'
     if text.splitlines().count(entry) != 1 or '# AM-CATALOG-RECIPE 1' not in text.splitlines():
         raise ValueError('unsupported compact recipe')
-    helper = 'catalog-yaml.am' if 'CATALOG_FORMAT=2' in text.splitlines() else 'catalog.am'
+    helper = 'catalog-yaml.am' if 'CATALOG_FORMAT=3' in text.splitlines() else 'catalog.am'
     binding = 'AMREPO=${AMREPO-'+quote(source_url)+'}\n'
     binding += ''.join(name+'='+quote(paths[name])+'\n' for name in
                        ('APPS_DIR','BIN_DIR','DESKTOP_DIR'))

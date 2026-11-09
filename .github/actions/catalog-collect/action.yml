@@ -3,16 +3,10 @@ description: Read-only collection through the maintained CLI; never publishes
 inputs:
   repo:
     required: true
-    description: Local format-2 parent object repository
-  parent:
-    required: true
-    description: Exact format-2 parent commit
-  v3-repo:
-    default: ''
     description: Local format-3 parent object repository
-  v3-parent:
+  parent:
     default: ''
-    description: Exact format-3 parent commit, if established
+    description: Exact format-3 parent commit, empty for initial bootstrap
   output:
     required: true
     description: New run-local candidate directory
@@ -32,8 +26,6 @@ runs:
       env:
         CATALOG_REPO: ${{ inputs.repo }}
         CATALOG_PARENT: ${{ inputs.parent }}
-        CATALOG_V3_REPO: ${{ inputs.v3-repo }}
-        CATALOG_V3_PARENT: ${{ inputs.v3-parent }}
         CATALOG_OUTPUT: ${{ inputs.output }}
         CATALOG_BATCH: ${{ inputs.batch-size }}
         CATALOG_REQUEST_CAP: ${{ inputs.request-cap }}
@@ -41,11 +33,11 @@ runs:
       run: |
         set -euo pipefail
         extra=()
-        if [[ -n "$CATALOG_V3_PARENT" ]]; then
-          extra=(--v3-repo "$CATALOG_V3_REPO" --v3-parent "$CATALOG_V3_PARENT")
+        if [[ -n "$CATALOG_PARENT" ]]; then
+          extra=(--parent "$CATALOG_PARENT")
         fi
         python3 -B tools/catalog-collector/host_catalog.py collect \
-          --repo "$CATALOG_REPO" --parent "$CATALOG_PARENT" \
+          --repo "$CATALOG_REPO" \
           --output "$CATALOG_OUTPUT" --run-id "$GITHUB_RUN_ID" --attempt "$GITHUB_RUN_ATTEMPT" \
           --batch-size "$CATALOG_BATCH" --request-cap "$CATALOG_REQUEST_CAP" \
           --total-bytes "$CATALOG_BYTE_CAP" "${extra[@]}"

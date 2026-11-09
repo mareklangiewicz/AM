@@ -25,7 +25,7 @@ class Pipeline(unittest.TestCase):
         self.stage=self.root/'seed.git';git(self.root,'init','--bare','--quiet','--template=',str(self.stage))
         self.legacy=candidate_tree({'example':123},{'123':repository()},schema=schema_url(PIN),max_file_bytes=c.FILE_CAP)
         self.parent=publish_tree(self.stage,self.legacy,None)
-        git(self.stage,'push',str(self.remote),self.parent+':'+p.REFS['format-2'])
+        git(self.stage,'push',str(self.remote),self.parent+':'+'refs/heads/release-catalog')
         self.inputs={key:PIN for key in ('source','policy','recipes','rules','schemas')}
         self.run=dict(id=123,attempt=2)
         d=documents();d['catalog']['producer']=self.run;d['repository']['repository_id']=123
@@ -38,21 +38,21 @@ class Pipeline(unittest.TestCase):
         self.args=argparse.Namespace(candidate=self.output,remote_url=str(self.remote),run_id=123,attempt=2,source_revision=PIN,expected_v2_parent=self.parent,expected_v3_parent=None,enable_targets=True,result=self.root/'result.json')
     def tearDown(self):self.temp.cleanup()
     def write_artifact(self):
-        trees={'format-2':self.legacy,'format-3':self.target}
+        trees={'format-3':self.target}
         for channel,tree in trees.items():
             for name,raw in tree.items():
                 path=self.output/channel/name;path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(raw)
-        report=dict(version=1,run=self.run,inputs=self.inputs,parents=dict(format_2=self.parent,format_3=None),
+        report=dict(version=1,run=self.run,inputs=self.inputs,parents=dict(format_3=None),
                     started_at=OLD,reported_at=NEW,selected_sources=[123],sources=[dict(repository_id=123,status='ok')],
                     target_counts=dict(enrolled=1,selected=1,attempted=1,successful=1,failed=0,unknown=0,unattempted=0),
-                    compatibility_metrics=dict(request_cap=500,response_byte_cap=536870912,acquisition_cap_seconds=900,stop_reason='complete'),
+                    collection_metrics=dict(request_cap=500,response_byte_cap=536870912,acquisition_cap_seconds=900,stop_reason='complete'),
                     acquisition=dict(http_attempts=0,charged_response_bytes=2,seconds=0),
                     hashes={channel:{name:hashlib.sha256(raw).hexdigest() for name,raw in tree.items()} for channel,tree in trees.items()})
         (self.output/'report.json').write_text(json.dumps(report))
     def invoke(self,transport=None):
         with patch('collection_interface.verify_checkout_inputs'),patch.object(p,'enrollment',return_value=([dict(app='example',repository_id=123,repository='example/app')],{'123':'example'})):
             return p.run(self.args,transport=transport)
-    def head(self,channel):return p.Transport(str(self.remote)).head(self.stage,p.REFS[channel])
+    def head(self,channel):return p.Transport(str(self.remote)).head(self.stage,'refs/heads/release-catalog' if channel=='format-2' else p.REFS[channel])
     def test_retained_seed_refuses_tied_tags_and_preserves_original(self):
         from rehearse_pipeline import seed_source
         old=repository();old['releases']['457']=copy.deepcopy(old['releases']['456'])
@@ -132,15 +132,16 @@ class Pipeline(unittest.TestCase):
         summary=c.decode(status['runs/123-2/summary.yaml'])
         self.assertEqual(summary['counts']['attempted'],dict(state='unknown'))
         self.assertEqual(summary['validation'],'failed')
-    def test_v2_success_then_v3_parent_conflict_still_reports(self):
+    def test_frozen_v2_and_v3_parent_conflict_still_reports(self):
         other=publish_tree(self.stage,self.target,self.parent)
         git(self.stage,'push',str(self.remote),other+':'+p.REFS['format-3'])
         result=self.invoke()
-        self.assertEqual(result['outcomes']['format-2']['state'],'confirmed')
+        self.assertNotIn('format-2',result['outcomes'])
+        self.assertEqual(self.head('format-2'),self.parent)
         self.assertEqual(result['outcomes']['format-3']['state'],'conflict')
         self.assertEqual(self.head('format-3'),other)
         self.assertEqual(result['outcomes']['status-1']['state'],'confirmed')
-    def test_mixed_schema_source_refuses_before_either_catalog_write(self):
+    def test_mixed_schema_source_refuses_before_catalog_write(self):
         path='repositories/example.yaml'
         source=c.decode(self.target[path]);source['schema']=c.header('repository','b'*40)['schema']
         self.target[path]=c.encode(source)
@@ -150,9 +151,9 @@ class Pipeline(unittest.TestCase):
         self.assertEqual(self.head('format-2'),self.parent)
         self.assertIsNone(self.head('format-3'))
         self.assertEqual(result['outcomes']['status-1']['state'],'confirmed')
-    def test_invalid_compatibility_artifact_blocks_both_parallel_channel_writes(self):
-        self.legacy['apps.yaml']=b'invalid compatibility bytes\n'
-        self.write_artifact()  # Matching hashes cannot bypass either domain validator.
+    def test_legacy_artifact_is_rejected_and_old_ref_stays_frozen(self):
+        (self.output/'format-2').mkdir()
+        (self.output/'format-2/apps.yaml').write_bytes(self.legacy['apps.yaml'])
         result=self.invoke()
         self.assertEqual(result['validation'],'failed')
         self.assertEqual(self.head('format-2'),self.parent)
@@ -202,7 +203,8 @@ class Pipeline(unittest.TestCase):
                 if ref==p.REFS['status-1']:raise OSError('report lost')
                 return super().push(repo,ref,parent,commit)
         result=self.invoke(Ambiguous(str(self.remote)))
-        self.assertEqual(result['outcomes']['format-2']['state'],'confirmed')
+        self.assertNotIn('format-2',result['outcomes'])
+        self.assertEqual(self.head('format-2'),self.parent)
         self.assertEqual(result['outcomes']['format-3']['state'],'unknown')
         self.assertIsNotNone(self.head('format-3'))
         self.assertIsNone(self.head('status-1'))

@@ -1,6 +1,8 @@
 # AM catalog format 3
 
-Private implementation contract; the deployed format-2 channel remains supported.
+Intended sole production contract after the explicitly authorized myxps cutover.
+Format-2 commits/snapshots remain historical; active v2 production is retired in
+the prepared source. Deployment and installed-host changes are separately authorized.
 Resolve the catalog ref once to a full SHA-1 commit C. Read every required document
 at C. Neither a descriptor nor a local candidate establishes remote publication.
 See [revision consistency](track/catalog-system/public-contract-decision.md) and

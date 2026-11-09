@@ -71,7 +71,7 @@ jobs:
           retention-days: 30
   deploy:
     needs: build
-    if: github.ref == 'refs/heads/browser-review' || (inputs.deploy && vars.CATALOG_BROWSER_ENABLED == 'true')
+    if: github.ref == 'refs/heads/main-marek' && inputs.deploy && vars.CATALOG_BROWSER_ENABLED == 'true'
     runs-on: ubuntu-24.04
     permissions:
       pages: write

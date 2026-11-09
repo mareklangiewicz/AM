@@ -1,5 +1,5 @@
 #!/bin/sh
-# AMCLI format-2 acquisition/selection candidate. No Git/Python/jq on clients.
+# AMCLI format-3 acquisition/selection. No Git/Python/jq on clients.
 # Named policies and --accept-stale-release are proposed, not rollout acceptance.
 set -eu
 export LC_ALL=C
@@ -27,8 +27,8 @@ printf '%s\n' "$source" | grep -Eq '^https://raw\.githubusercontent\.com/[A-Za-z
 repository=${source#https://raw.githubusercontent.com/}
 owner=${repository%%/*}; repository=${repository#*/}; repository=$owner/${repository%%/*}
 here=$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd)
-reader=$here/catalog-yaml-reader.am
-for module in catalog-yaml-reader.am catalog-yaml-parser.am catalog-yaml-policy.am; do
+reader=$here/catalog-contract-reader.am
+for module in catalog-contract-reader.am catalog-contract-parser.am catalog-contract-tables.am catalog-yaml-policy.am; do
     [ -r "$here/$module" ] || fail "missing module: $module"
 done
 # Validate against trusted selection declarations/policies before HTTP.
@@ -68,12 +68,11 @@ fetch() {
     [ "$code" = 200 ] && [ "$(wc -c < "$3")" -le "$2" ] || fail 'catalog response refused'
     check_clock
 }
-# Separate namespace permits mixed format-1/2 code in the source rehearsal.
-# It does not make a mixed-format publication/rollout operationally valid.
+# Command cache binds all source reads to one exact format-3 pin.
 session=${AM_CATALOG_SESSION-}
 if [ -n "$session" ]; then
     [ -d "$session" ] && [ -w "$session" ] && [ ! -L "$session" ] || fail 'invalid command session'
-    cache=$session/yaml-v2
+    cache=$session/yaml-v3
     if [ -d "$cache" ]; then
         [ "$(cat "$cache/source")" = "$source" ] || fail 'command source changed'
         [ ! -f "$cache/failed" ] || fail 'command catalog acquisition already refused'
@@ -91,7 +90,7 @@ else
     mkdir "$cache"
 fi
 if [ -z "$pin" ]; then
-    fetch "https://api.github.com/repos/$repository/commits/heads/release-catalog" 128 "$scratch/ref" 'application/vnd.github.sha'
+    fetch "https://api.github.com/repos/$repository/commits/heads/release-catalog-v3" 128 "$scratch/ref" 'application/vnd.github.sha'
     pin=$(cat "$scratch/ref")
     hex "$pin" || fail 'invalid publication ref'
 fi
@@ -107,16 +106,26 @@ acquire() {
         cp "$scratch/document" "$target"
     fi
 }
+acquire catalog.yaml
+[ "$(sh "$reader" get "$cache/catalog.yaml" kind)" = catalog ] || fail 'invalid descriptor kind'
+schemas=$(sh "$reader" get "$cache/catalog.yaml" inputs schemas) || fail 'invalid schema binding'
 acquire apps.yaml
+[ "$(sh "$reader" get "$cache/apps.yaml" kind)" = apps ] || fail 'invalid map kind'
+expected_schema=$(sh "$reader" get "$cache/catalog.yaml" schema) || fail 'invalid descriptor schema'
+case $expected_schema in */"$schemas"/docs/catalog-format-v3.md) ;; *) fail 'descriptor schema mismatch';; esac
+[ "$(sh "$reader" get "$cache/apps.yaml" schema)" = "$expected_schema" ] || fail 'map schema mismatch'
 printf '%s\n' "$pin" > "$cache/pin"
 # Revalidate cached bytes before each selection; never cache acceptance.
 AM_YAML_REPOSITORY=$(sh "$reader" get "$cache/apps.yaml" apps "$app") || fail 'unknown app or invalid app map'
-case $AM_YAML_REPOSITORY in ''|*[!0-9]*) fail 'invalid repository ID';; esac
+source_path=$AM_YAML_REPOSITORY
+printf '%s\n' "$source_path" | grep -Eq '^repositories/[a-z0-9][a-z0-9_.+-]{0,63}[.]yaml$' || fail 'invalid source path'
 mkdir -p "$cache/repositories"
-acquire "repositories/$AM_YAML_REPOSITORY.yaml"
-file=$cache/repositories/$AM_YAML_REPOSITORY.yaml
-actual=$(sh "$reader" get "$file" repository_id) || fail 'invalid repository document'
-[ "$actual" = "$AM_YAML_REPOSITORY" ] || fail 'repository identity mismatch'
+acquire "$source_path"
+file=$cache/$source_path
+AM_YAML_REPOSITORY=$(sh "$reader" get "$file" repository_id) || fail 'invalid repository document'
+case $AM_YAML_REPOSITORY in ''|*[!0-9]*) fail 'invalid repository ID';; esac
+[ "$(sh "$reader" get "$file" kind)" = repository ] || fail 'invalid source kind'
+[ "$(sh "$reader" get "$file" schema)" = "$expected_schema" ] || fail 'source schema mismatch'
 sh "$reader" asset_facts "$file" > "$scratch/facts" || fail 'invalid repository facts'
 rm -f "$cache/failed"
 check_clock

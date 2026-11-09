@@ -15,15 +15,13 @@ import re
 import subprocess
 import tempfile
 import time
-from concurrent.futures import ThreadPoolExecutor
 
 import contracts as c
 from bounded import unique_object
 from publication import git,environment,publish_tree,REF
-from incremental import Snapshot,Candidate,decode as decode_fact
-from yaml_publication import tree_documents
+from incremental import Snapshot,Candidate
 
-REFS={'format-2':'refs/heads/release-catalog','format-3':'refs/heads/release-catalog-v3','status-1':'refs/heads/catalog-status-v1'}
+REFS={'format-3':'refs/heads/release-catalog-v3','status-1':'refs/heads/catalog-status-v1'}
 
 
 def utc(): return datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
@@ -90,28 +88,24 @@ def artifact(directory,*,run,inputs,parents):
         name=path.relative_to(directory).as_posix()
         if path.is_symlink() or not (path.is_file() or path.is_dir()): raise ValueError('artifact file type')
         if path.is_dir():
-            if name not in ('format-2','format-3','format-2/repositories','format-3/repositories','format-3/provenance'): raise ValueError('artifact directory')
+            if name not in ('format-3','format-3/repositories','format-3/provenance'): raise ValueError('artifact directory')
             continue
         size=path.stat().st_size;total+=size
         cap=16*1024*1024 if name=='report.json' else c.FILE_CAP
         if size>cap or total>2*c.TREE_CAP or len(files)>=40001: raise ValueError('artifact bound')
-        if name!='report.json' and not re.fullmatch(r'(?:format-2/(?:apps\.yaml|repositories/[1-9][0-9]*\.yaml)|format-3/(?:catalog\.yaml|apps\.yaml|(?:repositories|provenance)/'+c.NAME+r'\.yaml))',name): raise ValueError('artifact path')
+        if name!='report.json' and not re.fullmatch(r'format-3/(?:catalog\.yaml|apps\.yaml|(?:repositories|provenance)/'+c.NAME+r'\.yaml)',name): raise ValueError('artifact path')
         files[name]=path.read_bytes()
     report=json.loads(files.pop('report.json'),object_pairs_hook=unique_object)
-    allowed_report={'version','started_at','reported_at','run','inputs','parents','collection_mode','sources','selected_sources','target_counts','compatibility_sources','compatibility_metrics','validation','acquisition','hashes'}
+    allowed_report={'version','started_at','reported_at','run','inputs','parents','collection_mode','sources','selected_sources','target_counts','collection_metrics','validation','acquisition','hashes'}
     if set(report)-allowed_report: raise ValueError('unexpected report fields')
     if report['version']!=1 or report['run']!=run or report['inputs']!=inputs or report['parents']!=parents: raise ValueError('artifact binding')
-    expected={'format-2':{},'format-3':{}}
+    expected={'format-3':{}}
     for name,raw in files.items():
         channel,path=name.split('/',1);expected[channel][path]=hashlib.sha256(raw).hexdigest()
     if report['hashes']!=expected: raise ValueError('artifact content hash')
     trees={channel:{name.split('/',1)[1]:raw for name,raw in files.items() if name.startswith(channel+'/')} for channel in expected}
     # Revalidate in the trusted publisher; the artifact's validation receipts are ignored.
-    with ThreadPoolExecutor(max_workers=2) as pool:
-        legacy=pool.submit(Candidate,None,trees['format-2'],'format-2')
-        target=pool.submit(Candidate,None,trees['format-3'])
-        legacy.result()
-        checked=target.result()
+    checked=Candidate(None,trees['format-3'])
     docs={path:(meta['root'] if 'root' in meta else dict(kind='repository',repository_id=meta['repository_id'],
               repository=meta['repository'],collected_at=meta['completed_at'])) for path,meta in checked.metadata.items()}
     if docs['catalog.yaml']['inputs']!=inputs or docs['catalog.yaml']['producer']!=run: raise ValueError('descriptor binding')
@@ -127,7 +121,7 @@ def artifact(directory,*,run,inputs,parents):
     if counts['attempted']!=len(report['sources']) or counts['successful']!=sum(r['status']=='ok' for r in report['sources']) or counts['failed']!=sum(r['status']=='failed' for r in report['sources']) or counts['unknown']!=0 or counts['selected']!=counts['attempted']+counts['unattempted'] or counts['selected']>counts['enrolled']: raise ValueError('count relationship')
     selected=report['selected_sources']
     if not isinstance(selected,list) or any(type(rid) is not int or rid<=0 for rid in selected) or len(set(selected))!=len(selected) or len(selected)!=counts['selected'] or not seen<=set(selected): raise ValueError('selected scope identity')
-    acquisition=report['acquisition'];limits=report['compatibility_metrics']
+    acquisition=report['acquisition'];limits=report['collection_metrics']
     for value in (acquisition['http_attempts'],acquisition['charged_response_bytes'],limits['request_cap'],limits['response_byte_cap'],limits['acquisition_cap_seconds']):
         if type(value) is not int or not 0<=value<=9223372036854775807: raise ValueError('measurement evidence')
     if type(acquisition['seconds']) not in (int,float) or not math.isfinite(acquisition['seconds']) or not 0<=acquisition['seconds']<86400: raise ValueError('duration evidence')
@@ -147,7 +141,7 @@ def summary(run,inputs,parent,report,outcomes,*,started_at,validation,reason,pub
         counts={name:known(raw[name]) for name in raw}
         counts['deferred']=known(raw['unattempted'])
         collection='ok' if raw['successful']==raw['selected'] else 'partial' if raw['successful'] else 'failed'
-        acquisition=report['acquisition'];metrics=report['compatibility_metrics']
+        acquisition=report['acquisition'];metrics=report['collection_metrics']
         measurements['http_attempts']=known(acquisition['http_attempts'])
         measurements['charged_bytes']=known(acquisition['charged_response_bytes'])
         measurements['acquisition_milliseconds']=known(int(acquisition['seconds']*1000))
@@ -160,7 +154,7 @@ def summary(run,inputs,parent,report,outcomes,*,started_at,validation,reason,pub
         if 'largest_document_bytes' in values:measurements['largest_document_bytes']=known(values['largest_document_bytes'])
     result=dict(c.header('summary',inputs['schemas']),run=run,inputs=inputs,
                 input_catalog_state='known' if parent else 'absent',started_at=started_at,reported_at=utc(),
-                collection=collection,validation=validation,publication=outcomes['format-3'],compatibility_publication=outcomes['format-2'],
+                collection=collection,validation=validation,publication=outcomes['format-3'],compatibility_publication=dict(state='not_attempted'),
                 counts=counts,stop_reason=reason,metrics=measurements,budgets=budgets,
                 actions_url=f"https://github.com/mareklangiewicz/AM/actions/runs/{run['id']}",
                 recent_runs_url='https://github.com/mareklangiewicz/AM/actions/workflows/catalog.yml')
@@ -255,12 +249,10 @@ def add_arguments(sub):
     parser.add_argument('--remote-url',required=True)
     parser.add_argument('--run-id',type=int,required=True)
     parser.add_argument('--attempt',type=int,default=1)
-    parser.add_argument('--expected-v2-parent',type=c.pin)
     parser.add_argument('--input-catalog-state',choices=('known','absent','unknown'))
     parser.add_argument('--expected-v3-parent',type=c.pin)
     parser.add_argument('--source-revision',type=c.pin,required=True)
     parser.add_argument('--schemas-revision',type=c.pin,help='Explicit trusted schema transition; otherwise retain the exact expected v3 parent binding')
-    parser.add_argument('--enable-targets',action='store_true',help='Explicitly publish v3/status channels; activation needs separate authorization')
     parser.add_argument('--result',type=Path,required=True)
 
 
@@ -274,9 +266,6 @@ def enrollment():
 
 def check_enrollment(trees,docs,rows,names):
     apps={row['app']:row['repository_id'] for row in rows}
-    legacy=decode_fact('apps.yaml',trees['format-2']['apps.yaml'],'format-2')[0]['apps']
-    for app,rid in legacy.items():
-        if apps.get(app)!=rid: raise ValueError('compatibility enrollment identity')
     for app,path in docs['apps.yaml']['apps'].items():
         if apps.get(app)!=docs[path]['repository_id'] or path!='repositories/'+names[str(apps[app])]+'.yaml': raise ValueError('target enrollment identity')
     for path,obj in docs.items():
@@ -287,7 +276,7 @@ def run(args,*,transport=None):
     transport=transport or Transport(args.remote_url)
     inputs={name:args.source_revision for name in ('source','policy','recipes','rules','schemas')}
     run_id=dict(id=args.run_id,attempt=args.attempt)
-    parents=dict(format_2=args.expected_v2_parent,format_3=args.expected_v3_parent)
+    parents=dict(format_3=args.expected_v3_parent)
     outcomes={key:dict(state='not_attempted') for key in REFS}
     publication_metrics={}
     report=None;trees=None;docs={};identities={};validation='failed';reason='candidate_validation';started=utc()
@@ -314,15 +303,15 @@ def run(args,*,transport=None):
         if report['target_counts']['enrolled']!=len(enrolled) or not set(report['selected_sources'])<=enrolled: raise ValueError('enrollment denominator')
         identities={row['repository_id']:(names[str(row['repository_id'])],row['repository']) for row in rows}
         validation='ok';started=report['started_at']
-        stop=report['compatibility_metrics']['stop_reason']
+        stop=report['collection_metrics']['stop_reason']
         reason={'byte_limit':'byte_budget','time_limit':'time_budget','primary_rate_reserve':'quota','http_401':'authentication','http_403':'quota','http_429':'quota'}.get(stop,'complete')
         if reason=='complete' and report['target_counts']['failed']:reason='source_validation'
     except (ValueError,KeyError,TypeError,OSError,RecursionError,subprocess.SubprocessError):
         report=None;trees=None;docs={}
     with tempfile.TemporaryDirectory(prefix='am-publisher-') as scratch:
         root=Path(scratch)
-        for channel in ('format-2','format-3'):
-            if trees is None or (channel=='format-3' and not args.enable_targets):break
+        for channel in ('format-3',):
+            if trees is None:break
             repo=root/channel;git(root,'init','--bare','--quiet','--template=',str(repo))
             parent=parents[channel.replace('-','_')]
             try:
@@ -340,14 +329,13 @@ def run(args,*,transport=None):
         if state is not None:
             final['input_catalog_state']=state
             c.decode(c.encode(final))
-        if args.enable_targets:
-            repo=root/'status-1';git(root,'init','--bare','--quiet','--template=',str(repo))
-            try:
-                parent=transport.fetch(repo,REFS['status-1'])
-                previous=Snapshot(repo,parent,'status-1') if parent else {}
-                tree=status_tree(previous,final,report,docs,identities)
-                outcomes['status-1']=publish(repo,tree,parent,transport,REFS['status-1'])
-            except (ValueError,KeyError,TypeError,OSError,subprocess.SubprocessError):outcomes['status-1']=dict(state='failed')
+        repo=root/'status-1';git(root,'init','--bare','--quiet','--template=',str(repo))
+        try:
+            parent=transport.fetch(repo,REFS['status-1'])
+            previous=Snapshot(repo,parent,'status-1') if parent else {}
+            tree=status_tree(previous,final,report,docs,identities)
+            outcomes['status-1']=publish(repo,tree,parent,transport,REFS['status-1'])
+        except (ValueError,KeyError,TypeError,OSError,subprocess.SubprocessError):outcomes['status-1']=dict(state='failed')
     result=dict(run=run_id,outcomes=outcomes,validation=validation,publication_metrics=publication_metrics)
     args.result.write_text(json.dumps(result,indent=2)+'\n')
     return result

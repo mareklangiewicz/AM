@@ -127,7 +127,7 @@ def from_short(source, identity):
         if len(words) > 1 or not (literal == shlex.quote(value) or double or literal == ''):
             raise Unsupported('nonliteral setting: '+name)
         settings[name] = value
-    if (settings.get('CATALOG_FORMAT') != '2'
+    if (settings.get('CATALOG_FORMAT') != '3'
             or settings.get('CATALOG_RECIPE') != 'x86_64/'+settings.get('APP', '')
             or settings.get('PACKAGE_KIND', 'appimage') != 'appimage'
             or settings.get('PACKAGE_LAYOUT', 'raw') not in ('raw', 'appimage')):

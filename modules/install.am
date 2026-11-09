@@ -249,15 +249,15 @@ _install_script_retry() {
 }
 
 _install_arg() {
-	if grep -qx '# AM-CATALOG-RECIPE 1' ./"$arg" && ! grep -qx 'CATALOG_FORMAT=2' ./"$arg"; then
+	if grep -qx '# AM-CATALOG-RECIPE 1' ./"$arg" && ! grep -qx 'CATALOG_FORMAT=3' ./"$arg"; then
 		echo 'This catalog recipe is retired; convert it to YAML before installation.' >&2
 		return 1
 	fi
 	local catalog_executable=false
 	# This function is needed to parse the installation script and then execute it
 	APPNAME=$(echo "\"$pure_arg\"" | tr '[:lower:]' '[:upper:]')
-	if grep -qx 'CATALOG_FORMAT=2' ./"$arg" && echo "$FLAGS" | grep -q -- '--force-latest'; then
-		echo 'Named format-2 policy does not support --force-latest' >&2; exit 1
+	if grep -qx 'CATALOG_FORMAT=3' ./"$arg" && echo "$FLAGS" | grep -q -- '--force-latest'; then
+		echo 'Named format-3 policy does not support --force-latest' >&2; exit 1
 	fi
 	chmod a+x ./"$arg"
 	_check_if_optional_dependences_are_needed || return 1
@@ -277,7 +277,7 @@ APPS_DIR="/opt/"\
 BIN_DIR="/usr/local/bin"\
 DESKTOP_DIR="/usr/local/share/applications"\
 CATALOG_HELPER="/opt/am/modules/catalog.am"' ./"$arg" || exit 1
-		if grep -qx 'CATALOG_FORMAT=2' ./"$arg"; then
+		if grep -qx 'CATALOG_FORMAT=3' ./"$arg"; then
 			sed -i 's|^CATALOG_HELPER="/opt/am/modules/catalog.am"$|CATALOG_YAML_HELPER="/opt/am/modules/catalog-yaml.am"|' ./"$arg" || exit 1
 		fi
 	fi
@@ -309,8 +309,8 @@ CATALOG_HELPER="/opt/am/modules/catalog.am"' ./"$arg" || exit 1
 	# Embed the AM/AppMan-owned module location in both recipe and updater.
 	if grep -qx '# AM-CATALOG-RECIPE 1' ./"$arg"; then
 		local managed_modules="catalog.am appimage.am"
-		if grep -qx 'CATALOG_FORMAT=2' ./"$arg"; then
-			managed_modules="catalog-yaml.am catalog-yaml-reader.am catalog-yaml-parser.am catalog-yaml-policy.am appimage.am"
+		if grep -qx 'CATALOG_FORMAT=3' ./"$arg"; then
+			managed_modules="catalog-yaml.am catalog-contract-reader.am catalog-contract-parser.am catalog-contract-tables.am catalog-yaml-policy.am appimage.am"
 		fi
 		for managed_module in $managed_modules; do
 			[ -r "$MODULES_PATH/$managed_module" ] || { echo "Missing $managed_module; synchronize AM modules." >&2; exit 1; }

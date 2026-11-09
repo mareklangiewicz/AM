@@ -38,7 +38,7 @@ def recipe_rows(root):
                     'CATALOG_REPOSITORY', 'CATALOG_CHANNEL', 'CATALOG_ASSET_PATTERN')
         if any(not settings.get(key) for key in required):
             raise ValueError('missing recipe declaration: '+str(path))
-        if settings['CATALOG_FORMAT'] != '2':
+        if settings['CATALOG_FORMAT'] != '3':
             raise ValueError('unsupported declaration format: '+str(path))
         if (not re.fullmatch(r'[1-9][0-9]*', settings['CATALOG_REPOSITORY_ID']) or
                 not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', settings['CATALOG_REPOSITORY'])):

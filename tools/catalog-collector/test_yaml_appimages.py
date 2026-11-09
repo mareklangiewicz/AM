@@ -12,7 +12,8 @@ import test_yaml_manager_integration as integration
 from fixture_manager import ROOT
 from fixture_appimages import fixtures
 from appimage_policy_source import compile_source, START, END, POLICIES
-from yaml_publication import git, publish_local
+from yaml_publication import git
+from fixture_v3 import publish_local
 from reference_policies import APPIMAGES, matches, select_cohort
 from fixture_facts import utc
 from test_yaml_reader import SCHEMA
@@ -62,13 +63,13 @@ class AppImages(unittest.TestCase):
         self.assertEqual(len(APPIMAGES),115)
         for row in json.loads(POLICIES.read_text()):
             recipe = row['recipe']; text=(ROOT/'programs'/recipe).read_text()
-            self.assertIn('CATALOG_FORMAT=2\nCATALOG_RECIPE="'+recipe+'"\n',text)
+            self.assertIn('CATALOG_FORMAT=3\nCATALOG_RECIPE="'+recipe+'"\n',text)
             # Complete declarations supersede historical legacy-body hashes.
             # Their current source/selection contract is covered by declaration
             # compiler checks and the all-installed-recipes lifecycle tests.
             if '# AM-RECIPE-DECLARATION 1' in text.splitlines():
                 continue
-            before='\n'.join(l for l in text.split('\n') if l!='CATALOG_FORMAT=2' and not l.startswith('CATALOG_RECIPE='))
+            before='\n'.join(l for l in text.split('\n') if l!='CATALOG_FORMAT=3' and not l.startswith('CATALOG_RECIPE='))
             self.assertEqual(hashlib.sha256(before.encode()).hexdigest(),row['source_sha256'])
         for recipe in (*APPIMAGES,'x86_64/unknown','x86_64/sqlitebrowser/extra','i686/sqlitebrowser'):
             r = subprocess.run(['awk','-f',str(ROOT/'modules/catalog-yaml-policy.am')],input=b'',
@@ -124,7 +125,7 @@ class AppImages(unittest.TestCase):
                 if target.exists(): shutil.rmtree(target)
                 app=self.install(recipe)
                 self.assertEqual((app/'version').read_text().strip(),selection['asset']['url'])
-                self.assertIn('CATALOG_FORMAT=2',(app/'recipe.am').read_text())
+                self.assertIn('CATALOG_FORMAT=3',(app/'recipe.am').read_text())
                 result=self.standalone(app/'AM-updater')
                 self.assertEqual(result.returncode,0,result.stderr)
                 self.assertIn(b'Update not needed!',result.stdout)
