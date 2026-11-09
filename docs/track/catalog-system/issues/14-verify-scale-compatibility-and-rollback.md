@@ -17,7 +17,7 @@ are superseded wherever they conflict.
 
 Type: task
 Label: implementation:task
-Status: claimed
+Status: resolved
 Assignee: codex
 Blocked by: 11, 12, 13
 
@@ -127,3 +127,20 @@ The recommendation names narrow affected checks and review triggers without
 repeating completed suites. Source 1245849062 remains an independent coverage gate.
 Status stays claimed pending material operating decisions and qualification;
 ticket 15 remains unclaimed. No deployment, push or settings change occurred.
+
+## Answer — current-scope direct v3 migration, November 9, 2026
+
+Resolved for the superseding current-scope migration, not the original expanded
+dual-output qualification. The [cutover package](../myxps-cutover-15.md) records
+native shell reader/consumer migration, v3-only artifact/publication, frozen-v2
+ref checks, current-scope seed and focused test results. All 57 maintained
+declaration selections and all 21 installed recipe dependencies / 24 tool members
+pass on saved evidence using explicit original clocks. Fresh live checks and the
+50-file myxps delivery are prepared, not performed.
+
+The seed preserves valid observations for 508 apps / 499 sources; agent-console
+remains enrolled with explicitly refused conflicting evidence. This is not full
+conversion or an exclusion. No installed dependency uses that source. The original
+5,000-source / annual v3 capacity target is retained in
+[deferred expansion](16-qualify-v3-coverage-expansion.md), without another dual-output
+campaign. No remote or installed-host write is implied by this resolution.

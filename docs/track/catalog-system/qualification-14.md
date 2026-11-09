@@ -1,5 +1,30 @@
 # Scale, compatibility and recovery qualification
 
+## Current result — direct v3 migration, November 9, 2026
+
+Marek superseded temporary dual output and expanded dual-output qualification.
+Only myxps is affected; there are no external consumers. Current-scope offline
+migration checks are complete; see the [concrete cutover package](myxps-cutover-15.md)
+for exact commits, evidence and remaining authorized-live checks. All 529
+maintained recipe declarations use v3, with native shell acquisition/fact expansion
+and v3-only production. The old v2 ref/history is preserved, without active output
+or new rollback machinery. The former recommendation to optimize expanded v2
+history before expansion is superseded by direct retirement.
+
+[Native reader parity](native-v3-selections-14.json) passes all 57 declarations /
+55 saved sources. The exact latest-published-snapshot import yields
+[508 apps / 499 sources](myxps-seed-15.json), preserving valid saved observations;
+agent-console remains enrolled but its tied-tag evidence refuses conversion.
+[All 21 installed recipe dependencies / 24 tool selections](myxps-seed-selections-15.json)
+work against that exact seed at original observation clocks. Freshness, real
+acquisition/publication and installed delivery remain final cutover actions, not
+offline claims. The 5,000-source annual v3 target remains deferred and unqualified.
+
+The sections below retain the earlier receipts and decisions as historical
+checkpoints. Their dual-output requirements, claimed status and extra recovery
+gates are superseded where they conflict with the direct-v3 decision above.
+Reuse unaffected receipts; do not resume expanded dual qualification.
+
 November 8, 2026. Ticket 13 is resolved with Marek's explicit device/screen-reader/
 comprehension deferrals and the recorded timing misses preserved. Ticket 14 is
 claimed, not resolved. These checks do not activate collection, enroll sources,

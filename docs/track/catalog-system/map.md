@@ -145,7 +145,7 @@ branches are not merged or pushed automatically (home push guidance applies).
 ## Implementation route
 
 Planning is complete. Marek started local implementation on November 8; tickets 11–12
-are resolved locally, and ticket 13 is resolved with [recorded evidence and accepted limitations](issues/13-integrate-main-owned-catalog-browser.md#answer--november-8-2026). Ticket 14 is claimed for qualification. Routine implementation mechanics follow the accepted
+are resolved locally, and ticket 13 is resolved with [recorded evidence and accepted limitations](issues/13-integrate-main-owned-catalog-browser.md#answer--november-8-2026). Ticket 14 is resolved for current-scope direct-v3 checks; ticket 15's exact cutover package is prepared and awaits final operational authorization. Routine implementation mechanics follow the accepted
 spec without repeating product interviews. Remote operations keep their explicit
 approval boundaries.
 
@@ -154,8 +154,9 @@ approval boundaries.
 | [11 resolved](issues/11-implement-contracts-readers-and-collection-interface.md) | 10 | Contracts, strict readers and shared collection/validation interface; [focused local acceptance](implementation-11.md), with format 2 preserved. |
 | [12 resolved](issues/12-implement-incremental-publication-and-final-health.md) | 11 | Incremental Git publication, final health and isolated workflow permissions; [local acceptance and shared rehearsal](implementation-12.md), with one explicit saved-source refusal. |
 | [13 resolved](issues/13-integrate-main-owned-catalog-browser.md) | 11, 12 | Main-owned A/B/C browser and real-browser checks; device/comprehension deferred and timing misses retained by Marek's explicit acceptance. |
-| [14 claimed](issues/14-verify-scale-compatibility-and-rollback.md) | 11, 12, 13 | Shared scale/history, compatibility and rollback evidence. |
-| [15](issues/15-prepare-reviewed-catalog-rollout-package.md) | 14 | Exact rollout/rollback package for explicit remote-operation review. |
+| [14 resolved](issues/14-verify-scale-compatibility-and-rollback.md) | 11, 12, 13 | Current-scope direct-v3 migration checks; prior expanded evidence retained with limits. |
+| [15 prepared](issues/15-prepare-reviewed-catalog-rollout-package.md) | 14 | [Exact myxps cutover](myxps-cutover-15.md), awaiting specific operational authorization. |
+| [16 deferred](issues/16-qualify-v3-coverage-expansion.md) | Current-scope cutover | V3-only expansion/capacity qualification; unclaimed, no enrollment change. |
 
 Latest implementation evidence, November 8: Chromium desktop/narrow and Firefox
 checks pass; physical-device/comprehension limits remain with 13. Independent
@@ -171,6 +172,16 @@ before catalog publication; ordinary unchanged-schema runs retain the trusted
 parent binding.
 
 ## Execution evidence and optional follow-ups
+
+Latest November 9 result: [the direct-v3 cutover package](myxps-cutover-15.md)
+supersedes the earlier expanded dual-output operating recommendation below.
+All 529 maintained declarations are v3; native selection parity passes 57/57 and
+the exact prepared seed serves all 21 installed recipe dependencies / 24 tools at
+original clocks. Host delivery is staged as 50 named metadata/runtime files.
+The seed contains 508 apps / 499 sources, with agent-console still enrolled and
+explicitly refused for conflicting evidence. Tickets 14/15 are resolved for local
+checks/preparation; actual live actions remain unperformed and need authorization.
+Expanded v3 capacity is deferred to 16. No new rollback machinery is added.
 
 Consumer scope clarified by Marek, November 9: there are no unknown external
 readers/consumers. V2 retirement depends on maintained-consumer migration and the
