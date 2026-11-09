@@ -576,11 +576,25 @@ function declaration_recipe(recipe) {
     declaration_tools=recipes_tools[recipe]
     declaration_tool_suffix=recipes_tool_suffix[recipe]
     declaration_fresh_only=recipes_fresh_only[recipe]
+    declaration_url_group=recipes_url_group[recipe]
     return 1
 }
-function declaration_eligible(name, tag, preview, tool, lower) {
+function declaration_url_eligible(url, group, i, value, matches) {
+    group=declaration_url_group
+    for(i=1;i<=url_rule_count[group];i++) {
+        value=(url_rule_ignore_case[group,i] ? tolower(url) : url)
+        matches=(value ~ url_rule_pattern[group,i])
+        if(matches==url_rule_exclude[group,i]) return 0
+    }
+    return url_rule_count[group]>0
+}
+function declaration_eligible(name, tag, preview, url, tool, lower) {
     if(declaration_channel=="stable" && (preview!="false" || tag=="nightly")) return 0
     if(declaration_channel=="nightly" && tag!="nightly") return 0
+    # Explicit migrated URL predicates retain their literal positive/negative
+    # architecture filters, including repository/tag components. They operate
+    # solely on structured asset URLs, never arbitrary release-body text.
+    if(declaration_url_group) return declaration_url_eligible(url)
     lower=tolower(name)
     if(lower ~ /macos|darwin|windows/) return 0
     # armhf alone does not establish ARMv7; only an explicit armv7 label
@@ -597,7 +611,13 @@ function declaration_eligible(name, tag, preview, tool, lower) {
     return name ~ declaration_pattern
 }
 BEGIN {
-    recipe=ENVIRON["AM_YAML_RECIPE"]; split(recipe,r,"/"); arch=r[1]; app=r[2]
+    recipe=ENVIRON["AM_YAML_RECIPE"]
+    if(ENVIRON["AM_YAML_SOURCE_REPOSITORY"]!="") {
+        selected=recipes_source_policy[recipe,tolower(ENVIRON["AM_YAML_SOURCE_REPOSITORY"])]
+        if(selected=="") refuse("unsupported_recipe_source")
+        recipe=selected
+    }
+    split(recipe,r,"/"); arch=r[1]; app=r[2]
     declared=declaration_recipe(recipe)
     utility=am_utils_recipe(recipe)
     image=appimage_recipe(recipe)
@@ -606,7 +626,11 @@ BEGIN {
     if(!known) refuse("unsupported_recipe_policy")
     check_only=(ENVIRON["AM_YAML_CHECK_RECIPE"]=="1")
     if(declaration_fresh_only && ENVIRON["AM_YAML_ACCEPT"]!="") refuse("toolset requires fresh observations; refresh the catalog")
-    if(check_only) exit
+    if(check_only) {
+        if(ENVIRON["AM_YAML_APP_NAME"]=="1")
+            print (recipes_catalog_app[recipe]!="" ? recipes_catalog_app[recipe] : app)
+        exit
+    }
     if(!timestamp(ENVIRON["AM_YAML_NOW"])) refuse("utc_now_required")
     if(declared && ENVIRON["AM_YAML_REPOSITORY"]!=declaration_repository) refuse("declaration_repository_mismatch")
     if(!declared && utility && ENVIRON["AM_YAML_REPOSITORY"]!="1225768109") refuse("am_utils_repository_mismatch")
@@ -618,7 +642,7 @@ BEGIN {
     release_id=$1; asset_id=$2; observed=decode($3); published=decode($4)
     tag=decode($5); name=decode($6); url=decode($7)
     if(declared) {
-        eligible=declaration_eligible(name,tag,$8)
+        eligible=declaration_eligible(name,tag,$8,url)
     } else if(image) {
         eligible=appimage_eligible(url)
         if(image_stable && $8!="false") eligible=0

@@ -234,12 +234,14 @@ class Contracts(unittest.TestCase):
             recipe=root/'programs/x86_64/example';recipe.parent.mkdir(parents=True)
             marker=root/'executed'
             recipe.write_text('#!/bin/sh\ntouch '+str(marker)+'\n')
+            recipe.chmod(0o755)
             (root/'modules').mkdir();(root/'modules/test.am').write_text('inert dependency\n')
             git(root,'add','programs','modules');git(root,'commit','-qm','Fixture')
             revision=git(root,'rev-parse','HEAD').decode().strip()
             inputs={key:revision for key in ('source','policy','recipes','rules','schemas')}
             evaluator=Evaluator(root,inputs,NEW)
             unknown=evaluator.classify('example','x86_64',1)
+            self.assertEqual(unknown['availability'],'present')
             self.assertEqual(unknown['classification'],'unknown')
             review=dict(recipe=unknown['recipe'],recipe_sha256=hashlib.sha256(recipe.read_bytes()).hexdigest(),rules=revision,description='Reviewed custom fixture',dependencies={})
             custom=evaluator.classify('example','x86_64',1,review=review)

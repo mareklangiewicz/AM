@@ -2,7 +2,8 @@
 
 Type: task
 Label: implementation:task
-Status: open
+Status: claimed
+Assignee: codex
 Blocked by: 15
 
 ## Outcome
@@ -22,3 +23,24 @@ automatic enrollment or assumption of new live quotas. Present a concrete
 coverage/refresh/storage tradeoff if required, preserving historical snapshots.
 
 This ticket is unclaimed and authorizes no work or enrollment expansion now.
+
+## Scope reopened — November 9, 2026
+
+Marek requested full migration of all apps, then clarified **all GitHub-backed
+apps**. This supersedes the deferral above and authorizes implementation toward
+complete GitHub source coverage and v3 recipe conversion. Reuse ticket 138's
+discovery evidence and the established family-validation/bulk-translation
+workflow. Include explicit accounting for ambiguous, unavailable, no-release and
+custom recipes; do not count enrollment or declarations as successful collection.
+Preserve ordinary installed selections and retain the schedule pin whenever a
+subsequent source push is authorized. Other-host adapters and installed-host
+changes are outside this scope. Home guidance still requires asking before a
+new push.
+
+Further live clarification: make all GitHub-backed coverage consistent as soon
+as practical; the 500-source enrollment was temporary. Freshness is not an
+optimization target regardless of cost, and the 48-hour selection rule or similar
+operating rules may be adjusted if needed. Use one v3 catalog for verified sources,
+with quota-bounded acquisition, rather than requiring further freshness/capacity
+optimization before coverage can proceed. Do not claim the older 12-hour/annual
+capacity targets have thereby been measured.

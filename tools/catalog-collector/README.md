@@ -132,6 +132,38 @@ service, automated restoration or continued v2 publication is part of the plan.
 
 ## Preparing recipe migrations
 
+Marek reopened full GitHub-backed migration on November 9. The temporary
+500-source enrollment ceiling is replaced by a 9,000-source safety allowance;
+acquisition still uses quota-bounded batches into one v3 catalog. Broad enrollment
+does not imply that every source has already been successfully collected.
+Consistency takes priority over further freshness optimization; the selected-record
+48-hour rule remains unchanged unless actual operation requires adjustment.
+
+`bulk_sources.py --inventory` extends the existing hash-bound source scan with
+literal primary sources and explicit variants, independently of installer shape.
+`--work` verifies public numeric identities in small GraphQL batches and retains
+checkpointed responses. NOT_FOUND, no-release and successful probes remain distinct.
+The [GitHub query limits](https://docs.github.com/en/graphql/overview/rate-limits-and-query-limits-for-the-graphql-api)
+apply; discovery never enrolls or executes recipes.
+
+`bulk_enrollment.py` prepares the unified enrollment and preserves allocated
+source paths. Different sources under one installed app name get catalog aliases;
+the recipe's installed APP name is preserved. `bulk_recipes.py` converts legacy
+shared wrappers to v3 declarations with literal URL predicates. `bulk_recipe_urls.py`
+preserves long installer bodies while replacing recognized release-selection
+pipelines and removing the exact native-update bypass. Unrecognized expressions
+stay in its explicit exceptions. Each tool previews by default and requires
+`--apply` for source writes; no tool performs a remote publication or host delivery.
+
+Native `catalog-yaml.am --url` returns only the URL after ordinary pinned validation
+and selected-record freshness checks. `--source-repository` accepts only source
+variants bound in trusted policy data. `CATALOG_APP` selects an architecture/source
+alias without renaming the installed application. Long recipe policies live in
+`recipe-url-policies.json`, bound to their exact recipe hashes and compiled by
+`recipe_policy_source.py`; catalog content never supplies executable selectors.
+All rules match structured asset URLs, retaining literal positive/negative URL
+filters while applying the established published-release/name ordering.
+
 Use the shared [upstream template recognizer](../recipe-reconstruction/README.md)
 to inventory a pinned upstream recipe tree before selecting conversion batches:
 

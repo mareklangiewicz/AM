@@ -7,12 +7,16 @@ fail() { printf 'AM YAML catalog: %s\n' "$*" >&2; exit 1; }
 [ "$#" -gt 0 ] || fail 'missing recipe'
 AM_YAML_RECIPE=$1; shift
 app=${AM_YAML_RECIPE#*/}
-pin='' AM_YAML_ACCEPT='' AM_YAML_TOOL='' AM_YAML_INCLUDE_PUBLICATION=''
+pin='' AM_YAML_ACCEPT='' AM_YAML_TOOL='' AM_YAML_INCLUDE_PUBLICATION='' AM_YAML_SOURCE_REPOSITORY='' url_only=false
 hex() { [ "${#1}" -eq 40 ] && case $1 in *[!0-9a-f]*) return 1;; esac; }
 while [ "$#" -gt 0 ]; do
     case $1 in
         --tool) [ "$#" -ge 2 ] && [ -z "$AM_YAML_TOOL" ] || fail 'missing or repeated tool'; AM_YAML_TOOL=$2; shift 2 ;;
         --with-published-at) AM_YAML_INCLUDE_PUBLICATION=1; shift ;;
+        --url) [ "$url_only" = false ] || fail 'repeated URL option'; url_only=true; shift ;;
+        --source-repository)
+            [ "$#" -ge 2 ] && [ -z "$AM_YAML_SOURCE_REPOSITORY" ] || fail 'missing or repeated recipe source'
+            AM_YAML_SOURCE_REPOSITORY=$2; shift 2 ;;
         --commit) [ "$#" -ge 2 ] && [ -z "$pin" ] || fail 'missing or repeated commit'; pin=$2; shift 2 ;;
         --accept-stale-release)
             [ "$#" -ge 6 ] && [ -z "$AM_YAML_ACCEPT" ] || fail 'missing or repeated selected-release tuple'
@@ -33,8 +37,9 @@ for module in catalog-contract-reader.am catalog-contract-parser.am catalog-cont
 done
 # Validate against trusted selection declarations/policies before HTTP.
 # Collection enrollment is a separate publication choice.
-AM_YAML_RECIPE=$AM_YAML_RECIPE AM_YAML_ACCEPT=$AM_YAML_ACCEPT AM_YAML_CHECK_RECIPE=1 \
-    awk -f "$here/catalog-yaml-policy.am" </dev/null || fail 'unsupported recipe policy'
+app=$(AM_YAML_RECIPE=$AM_YAML_RECIPE AM_YAML_ACCEPT=$AM_YAML_ACCEPT AM_YAML_SOURCE_REPOSITORY=$AM_YAML_SOURCE_REPOSITORY AM_YAML_CHECK_RECIPE=1 AM_YAML_APP_NAME=1 \
+    awk -f "$here/catalog-yaml-policy.am" </dev/null) || fail 'unsupported recipe policy'
+printf '%s\n' "$app" | grep -Eq '^[a-z0-9][a-z0-9_.+-]{0,63}$' || fail 'invalid catalog app identity'
 # Fixed trial budgets shared with the source candidate. No optional consumer workers.
 AM_YAML_MAX_INPUT_BYTES=2097152 AM_YAML_MAX_OUTPUT_BYTES=2097152
 export AM_YAML_MAX_INPUT_BYTES AM_YAML_MAX_OUTPUT_BYTES
@@ -132,10 +137,12 @@ rm -f "$cache/failed"
 check_clock
 AM_YAML_PIN=$pin AM_YAML_STALE_OPTION=release
 export AM_YAML_STALE_OPTION
-export AM_YAML_RECIPE AM_YAML_ACCEPT AM_YAML_REPOSITORY AM_YAML_NOW AM_YAML_PIN AM_YAML_TOOL AM_YAML_INCLUDE_PUBLICATION
+export AM_YAML_RECIPE AM_YAML_ACCEPT AM_YAML_REPOSITORY AM_YAML_NOW AM_YAML_PIN AM_YAML_TOOL AM_YAML_INCLUDE_PUBLICATION AM_YAML_SOURCE_REPOSITORY
 awk -f "$here/catalog-yaml-policy.am" "$scratch/facts" > "$scratch/result" || exit 1
 check_clock
 # Recheck the same selected facts at the final clock before output.
 export AM_YAML_NOW
 awk -f "$here/catalog-yaml-policy.am" "$scratch/facts" > "$scratch/result" || exit 1
-cat "$scratch/result"
+if [ "$url_only" = true ]; then sed -n '6p' "$scratch/result"
+else cat "$scratch/result"
+fi

@@ -1,8 +1,49 @@
 """Read literal declarations from recipe declaration headers, without executing shell."""
+import json
+import hashlib
 import re
 import shlex
 
 MARKER = '# AM-RECIPE-DECLARATION 1\n'
+
+
+def validate_url_rules(rules):
+    if (not isinstance(rules,list) or not 1<=len(rules)<=16 or any(
+            not isinstance(rule,dict) or set(rule)!={'pattern','ignore_case','exclude'} or
+            not isinstance(rule['pattern'],str) or not 1<=len(rule['pattern'])<=512 or
+            any(ord(c)<32 for c in rule['pattern']) or
+            type(rule['ignore_case']) is not bool or type(rule['exclude']) is not bool
+            for rule in rules)):
+        raise ValueError('invalid literal URL rules')
+    return rules
+
+
+def url_policy_rows(root):
+    path=root/'tools/catalog-collector/recipe-url-policies.json'
+    if not path.exists():return []
+    rows=json.loads(path.read_text());result=[];seen=set()
+    if not isinstance(rows,list):raise ValueError('URL policy registry')
+    for row in rows:
+        if set(row)!={'recipe','source_recipe','source_sha256','repository_id','repository','channel','url_rules','catalog_app','dispatch_recipe','source_aliases'}:
+            raise ValueError('URL policy fields')
+        for key in ('recipe','source_recipe','dispatch_recipe'):
+            if not re.fullmatch(r'(x86_64|aarch64|i686|armv7l)/[a-z0-9][a-z0-9_.+-]*',row[key]):
+                raise ValueError('URL policy recipe')
+        source=root/'programs'/row['source_recipe']
+        if source.is_symlink() or hashlib.sha256(source.read_bytes()).hexdigest()!=row['source_sha256']:
+            raise ValueError('URL policy source changed: '+row['source_recipe'])
+        if (row['recipe'] in seen or type(row['repository_id']) is not int or row['repository_id']<1 or
+                not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+',row['repository']) or
+                row['channel'] not in ('any','stable','nightly') or
+                not re.fullmatch(r'[a-z0-9][a-z0-9_.+-]{0,63}',row['catalog_app'])):
+            raise ValueError('URL policy identity')
+        seen.add(row['recipe']);validate_url_rules(row['url_rules'])
+        if (not isinstance(row['source_aliases'],list) or not row['source_aliases'] or any(
+                not isinstance(alias,str) or not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+',alias)
+                for alias in row['source_aliases'])):
+            raise ValueError('URL policy source aliases')
+        result.append(dict(row,app=row['recipe'].split('/')[1],asset_pattern='^.*$',fresh_only=False))
+    return result
 
 
 def recipe_rows(root):
@@ -48,6 +89,9 @@ def recipe_rows(root):
             raise ValueError('invalid app identity: '+str(path))
         if app != path.name or settings['CATALOG_RECIPE'] != path.parent.name+'/'+app:
             raise ValueError('recipe identity mismatch: '+str(path))
+        catalog_app=settings.get('CATALOG_APP',app)
+        if not re.fullmatch(r'[a-z0-9][a-z0-9_.+-]{0,63}',catalog_app):
+            raise ValueError('catalog app identity: '+str(path))
         tools = settings.get('PACKAGE_TOOLS', '').split()
         kind = settings.get('PACKAGE_KIND', 'appimage')
         layout = settings.get('PACKAGE_LAYOUT', 'raw' if kind == 'executable' else 'appimage')
@@ -67,6 +111,10 @@ def recipe_rows(root):
                    refresh_always=settings.get('REFRESH_ALWAYS', 'false') == 'true',
                    fresh_only=settings.get('CATALOG_FRESH_ONLY', 'false') == 'true',
                    settings=settings)
+        row['catalog_app']=catalog_app
+        if 'CATALOG_URL_RULES' in settings:
+            rules=json.loads(settings['CATALOG_URL_RULES'])
+            row['url_rules']=validate_url_rules(rules)
         if tools:
             row.update(tools=tools, tool_asset_suffix=settings['CATALOG_TOOL_ASSET_SUFFIX'])
         if layout in ('tar', 'zip', 'toolset'):
@@ -79,9 +127,9 @@ def recipe_rows(root):
         rid, repository = row['repository_id'], row['repository'].lower()
         if rid in repositories and repositories[rid] != repository:
             raise ValueError('conflicting repository identity: '+str(path))
-        if app in apps and apps[app] != rid:
+        if catalog_app in apps and apps[catalog_app] != rid:
             raise ValueError('conflicting app identity: '+str(path))
-        repositories[rid], apps[app] = repository, rid
+        repositories[rid], apps[catalog_app] = repository, rid
         rows.append(row)
     if not rows:
         raise ValueError('no recipe declaration headers')

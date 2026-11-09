@@ -22,16 +22,34 @@ class Evaluator:
         for row in git(repo,'ls-tree','-rz',self.recipe_pin,'--','programs/').split(b'\0'):
             if row:
                 metadata,path=row.split(b'\t',1); mode,kind,oid=metadata.split(b' ')
-                if mode==b'100644' and kind==b'blob': self.paths[path.decode()]=oid.decode()
+                if mode in (b'100644',b'100755') and kind==b'blob': self.paths[path.decode()]=oid.decode()
         self.originals=Originals(repo); self._catalogue=None
+        # One bounded-by-the-pinned-tree Git read, rather than a child process
+        # per architecture/app. Keep executable recipes as inert blob bytes too.
+        self.blobs={};self.dependencies={}
+        objects=list(dict.fromkeys(self.paths.values()))
+        if objects:
+            packed=git(repo,'cat-file','--batch',data=('\n'.join(objects)+'\n').encode())
+            cursor=0
+            for expected in objects:
+                end=packed.index(b'\n',cursor)
+                oid,kind,size=packed[cursor:end].split();size=int(size)
+                start=end+1;cursor=start+size+1
+                if oid.decode()!=expected or kind!=b'blob' or packed[cursor-1:cursor]!=b'\n':
+                    raise ValueError('recipe blob batch identity')
+                if size<=1024*1024:self.blobs[expected]=packed[start:start+size]
+            if cursor!=len(packed):raise ValueError('recipe blob batch suffix')
         # Bind the complete module/policy tree, including transitive helper inputs.
         module_tree=git(repo,'ls-tree','-rz',inputs['policy'],'--','modules/')
         self.shared_dependencies={'modules':dict(repository='mareklangiewicz/AM',commit=inputs['policy'],
                                                    path='modules/',sha256=hashlib.sha256(module_tree).hexdigest())}
 
     def dependency(self, commit, path):
-        raw=git(self.repo,'show',pin(commit)+':'+path)
-        return dict(repository='mareklangiewicz/AM',commit=commit,path=path,sha256=hashlib.sha256(raw).hexdigest())
+        key=(pin(commit),path)
+        if key not in self.dependencies:
+            raw=git(self.repo,'show',commit+':'+path)
+            self.dependencies[key]=dict(repository='mareklangiewicz/AM',commit=commit,path=path,sha256=hashlib.sha256(raw).hexdigest())
+        return dict(self.dependencies[key])
 
     def classify(self, app, arch, rid, *, prior=None, review=None):
         result=dict(repository_id=rid,availability='absent',classification='unknown')
@@ -39,8 +57,8 @@ class Evaluator:
         blob=self.paths.get(path)
         if blob is None: return result
         result.update(availability='present',recipe=dict(repository='mareklangiewicz/AM',commit=self.recipe_pin,path=path,blob=blob))
-        raw=git(self.repo,'cat-file','blob',blob)
-        if len(raw)>1024*1024: return result
+        raw=self.blobs.get(blob)
+        if raw is None: return result
         digest=hashlib.sha256(raw).hexdigest()
         try: text=raw.decode('utf-8')
         except UnicodeDecodeError: return result

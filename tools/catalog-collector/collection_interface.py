@@ -20,7 +20,7 @@ def verify_checkout_inputs(inputs, registry):
         raise ValueError('source registry differs from policy pin')
     scopes={
         'source':['tools/catalog-collector','tools/catalog-contract','modules/catalog-contract-reader.am','modules/catalog-contract-parser.am','modules/catalog-contract-tables.am'],
-        'policy':['tools/catalog-collector/collection-recipes.txt','tools/catalog-collector/collection-apps.json','tools/catalog-collector/source-names.json'],
+        'policy':['tools/catalog-collector/collection-recipes.txt','tools/catalog-collector/collection-apps.json','tools/catalog-collector/source-names.json','tools/catalog-collector/recipe-url-policies.json'],
         'recipes':['programs'],
         'rules':['tools/catalog-collector/provenance.py','tools/recipe-reconstruction'],
         'schemas':['docs/catalog-format-v3.md','schemas/catalog','tools/catalog-contract','modules/catalog-contract-parser.am','modules/catalog-contract-tables.am'],
