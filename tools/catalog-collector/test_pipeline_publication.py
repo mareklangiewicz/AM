@@ -35,7 +35,7 @@ class Pipeline(unittest.TestCase):
         self.target['repositories/example.yaml']=c.encode(d['repository'])
         self.output=self.root/'artifact';self.output.mkdir()
         self.write_artifact()
-        self.args=argparse.Namespace(candidate=self.output,remote_url=str(self.remote),run_id=123,attempt=2,source_revision=PIN,expected_v2_parent=self.parent,expected_v3_parent=None,enable_targets=True,result=self.root/'result.json')
+        self.args=argparse.Namespace(candidate=self.output,remote_url=str(self.remote),run_id=123,attempt=2,source_revision=PIN,expected_v3_parent=None,result=self.root/'result.json')
     def tearDown(self):self.temp.cleanup()
     def write_artifact(self):
         trees={'format-3':self.target}
@@ -172,13 +172,13 @@ class Pipeline(unittest.TestCase):
         report=json.loads((self.output/'report.json').read_text());report['parents']['format_3']=prior
         (self.output/'report.json').write_text(json.dumps(report))
         self.args.source_revision=revision;self.args.run_id=124;self.args.attempt=1
-        self.args.expected_v2_parent=self.parent;self.args.expected_v3_parent=prior
+        self.args.expected_v3_parent=prior
         result=self.invoke()
         self.assertEqual(result['validation'],'ok')
         self.assertEqual(result['outcomes']['format-3']['state'],'confirmed')
         self.assertEqual(c.decode(c.read_local(self.remote,self.head('format-3'))['catalog.yaml'])['inputs']['schemas'],PIN)
         self.parent=self.head('format-2');prior=self.head('format-3')
-        self.args.expected_v2_parent=self.parent;self.args.expected_v3_parent=prior
+        self.args.expected_v3_parent=prior
         self.inputs['schemas']=revision
         for path,raw in self.target.items():
             doc=c.decode(raw);doc['schema']=c.header(doc['kind'],revision)['schema']
@@ -236,7 +236,7 @@ class Pipeline(unittest.TestCase):
         self.write_artifact()
         report=json.loads((self.output/'report.json').read_text());report['parents']['format_3']=old_catalog
         (self.output/'report.json').write_text(json.dumps(report))
-        self.args.expected_v2_parent=self.parent;self.args.expected_v3_parent=old_catalog;self.args.attempt=3
+        self.args.expected_v3_parent=old_catalog;self.args.attempt=3
         class LostStatus(p.Transport):
             def push(inner,repo,ref,parent,commit):
                 if ref==p.REFS['status-1']:raise OSError('unavailable')

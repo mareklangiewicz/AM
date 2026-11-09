@@ -162,7 +162,7 @@ def main(argv=None):
     c.add_argument('--output',type=Path,required=True)
     c.add_argument('--registry',type=Path,default=host.ROOT/'tools/catalog-collector/source-names.json')
     c.add_argument('--batch-size',type=int,default=500)
-    c.add_argument('--source-cap',type=int,default=10000)
+    c.add_argument('--source-cap',type=int,default=host.SOURCE_CAP)
     c.add_argument('--request-cap',type=int,default=750)
     c.add_argument('--total-bytes',type=int,default=host.TOTAL_CAP)
     c.add_argument('--response-bytes',type=int,default=host.RESPONSE_CAP)

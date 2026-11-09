@@ -259,7 +259,7 @@ def add_arguments(sub):
 def enrollment():
     import host_catalog as host
     from collection_interface import registry_names
-    rows,_=host.configuration(source_cap=10000)
+    rows,_=host.configuration()
     names=registry_names(rows,host.ROOT/'tools/catalog-collector/source-names.json')
     return rows,names
 
