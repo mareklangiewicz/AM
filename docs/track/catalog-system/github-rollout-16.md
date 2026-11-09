@@ -1,5 +1,43 @@
 # Full GitHub v3 rollout package
 
+## Approved rotation correction — November 9, 23:16 UTC
+
+Marek approved pushing the prepared correction, repinning the schedule and one
+bounded acquisition. Remote main, schedule, schema and published parents matched
+the handoff before the ordinary fast-forward push. Source and schedule now pin
+`47211b286188113e6111033e9f17f8a7315d16bd`; schema/runtime remains
+`040614f86cbbf31fc19596c8d32225c82de77acf`.
+[Run 42717775918](https://github.com/mareklangiewicz/AM/actions/runs/42717775918)
+succeeded and published catalog `fae6affff829614525d8203a4fa65e4c5ae44835`
+and status `3fc848289501fc00e4797b937fc467189007be9e`.
+
+All 500 selected sources were attempted: **498 successful, two failed, zero
+selected sources deferred**. Wekan remained refused as `source_validation`, while
+BORIS immediately after it succeeded; Nuclear also failed `source_validation`.
+The source failure no longer stops later acquisition. The snapshot gained 498
+source documents, retaining the previous 618 unchanged, for **1,116 / 8,313**
+enrolled sources with successful data; **7,197** still have none. The exact
+published statistics report 1,115 under 24 hours old and one at least 48 hours old.
+Collection remains partial; this proves progress beyond the blocker, not complete
+GitHub coverage or usable payload coverage for every recipe.
+
+This run used 502 HTTP requests and 373,699,196 charged response bytes against
+the unchanged 750-request / 512 MiB / 900-second acquisition limits. The published
+summary reports `source_validation`; the raw acquisition metric's `request_limit`
+label does not mean that the 750-request allowance was exhausted. Final published
+target counts own successful/failed coverage, including validation after receipt.
+[Result and verification](github-rollout-rotation-success-16.json),
+[exact published summary](github-rollout-rotation-summary-16.yaml), and
+[compressed acquisition report](github-rollout-rotation-acquisition-16.json.gz)
+preserve the evidence, including exact candidate/published hash matching.
+
+Runtime redelivery was unnecessary and was not performed. Ticket 16 remains
+claimed. The existing hourly schedule retains the approved source pin; inspect
+later actual publications for continued coverage progress. No additional manual
+run, source push, schema change, installed-app change or yadm operation was made.
+The prior local-correction approval boundary below is historical and is satisfied
+by this approved run. Capacity targets remain unqualified.
+
 ## November 9 approved retry — published and runtime delivered
 
 Marek approved the ArduLoops correction with “go ahead.” Source and schedule now

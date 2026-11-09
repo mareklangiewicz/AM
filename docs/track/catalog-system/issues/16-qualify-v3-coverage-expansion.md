@@ -88,3 +88,22 @@ failure. Further source push approval and actual rotation results are required;
 do not resolve this ticket or claim complete coverage. See the latest
 [rollout result and next steps](../github-rollout-16.md) and
 [portable success/delivery evidence](../github-rollout-success-16.json).
+
+## Approved rotation correction — November 9, 23:16 UTC
+
+Marek approved the prepared rotation fix push, schedule repin and one bounded run.
+Source/schedule now pin `47211b286188113e6111033e9f17f8a7315d16bd` with the
+existing schema/runtime authority retained. Run 42717775918 succeeded, publishing
+catalog `fae6affff829614525d8203a4fa65e4c5ae44835` and status
+`3fc848289501fc00e4797b937fc467189007be9e`.
+
+All 500 selected sources were attempted: 498 succeeded, Wekan and Nuclear failed
+source validation, and none of the selected sources were deferred. BORIS after
+Wekan succeeded, verifying progress beyond the oversized-response blocker.
+The published snapshot retains the old 618 source documents unchanged and adds
+498, reaching **1,116 / 8,313** enrolled sources; **7,197** still lack successful
+data. Runtime redelivery was unnecessary. Leave this ticket claimed: hourly
+rotation remains enabled at the approved source pin, while complete source and
+usable payload coverage and the older capacity targets remain unqualified.
+See the latest [rollout evidence](../github-rollout-16.md) and
+[portable result](../github-rollout-rotation-success-16.json).
