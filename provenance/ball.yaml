@@ -1,5 +1,5 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/5429e09d97486cbdf9681f329bee7ed850cdd250/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
 kind: "provenance"
 apps:
   "ball":
@@ -9,9 +9,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
         path: "programs/aarch64/ball"
-        blob: "cc03844e44cdf88c4f09a3cd39d5cb1b8a8fb2a3"
+        blob: "4d475c028cb1a1aa6120d8831c6476addcfc85c2"
     "armv7l":
       repository_id: 31041375
       availability: "absent"
@@ -23,9 +23,20 @@ apps:
     "x86_64":
       repository_id: 31041375
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
         path: "programs/x86_64/ball"
-        blob: "e89a340764f45619b5d49e68bdb52993629cd98b"
+        blob: "dd41e61066bfab956c1d32a24f24886f861a48c3"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-09T22:51:04Z"
+        recipe_sha256: "97b3ca5644c81cec03ff2bf0c9fe35731b6153d71a423c96e1f7326cd0291dd8"
+        rules: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

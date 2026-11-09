@@ -1,5 +1,5 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/5429e09d97486cbdf9681f329bee7ed850cdd250/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
 kind: "provenance"
 apps:
   "aperant":
@@ -18,25 +18,31 @@ apps:
     "x86_64":
       repository_id: 1110222585
       availability: "present"
-      classification: "template"
+      classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
         path: "programs/x86_64/aperant"
-        blob: "466952ca026bcdf507b506e949142c625514169d"
-      evidence:
-        method: "whole_template"
-        evaluated_at: "2026-11-09T18:58:46Z"
-        recipe_sha256: "f4241dc5374545929137dd6140d7645e32804706f4051a05e078f5d099fb95e1"
-        rules: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
-        dependencies:
-          "generator":
-            repository: "mareklangiewicz/AM"
-            commit: "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22"
-            path: "modules/template.am"
-            sha256: "48652a23fb28e8d912ed36ba40c8db6db9365d8ea3dc6bc7a77df39cfad3b12e"
-          "template":
-            repository: "mareklangiewicz/AM"
-            commit: "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22"
-            path: "templates/AM-SAMPLE-AppImage"
-            sha256: "5353962fac61f7e0f8d3e949a824700c522c6229c6243ab16e2847a4e71edfa2"
+        blob: "65e58a669d10b86b8d0ed81fb1b707c7a3097a54"
+  "auto-claude":
+    "aarch64":
+      repository_id: 1110222585
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 1110222585
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1110222585
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1110222585
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        path: "programs/x86_64/auto-claude"
+        blob: "f7d182ebe630dc7cd3f1c967ced679a265c42907"

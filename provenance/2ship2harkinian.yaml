@@ -1,5 +1,5 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/5429e09d97486cbdf9681f329bee7ed850cdd250/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
 kind: "provenance"
 apps:
   "2ship2harkinian":
@@ -9,9 +9,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
         path: "programs/aarch64/2ship2harkinian"
-        blob: "0715d46a7ec98b76b529b092303f32c9b35c28b3"
+        blob: "717d9e47a13174dd719c5fbde91496605e783220"
     "armv7l":
       repository_id: 1142444249
       availability: "absent"
@@ -23,25 +23,9 @@ apps:
     "x86_64":
       repository_id: 1142444249
       availability: "present"
-      classification: "template"
+      classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
         path: "programs/x86_64/2ship2harkinian"
-        blob: "c90598382e3177a53b29b2450a332cda76992683"
-      evidence:
-        method: "whole_template"
-        evaluated_at: "2026-11-09T18:58:46Z"
-        recipe_sha256: "95c3bf10dc248aaed47220ee5ac2453c3195b3f044f5bc8fcc0048f03afc92bd"
-        rules: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
-        dependencies:
-          "generator":
-            repository: "mareklangiewicz/AM"
-            commit: "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22"
-            path: "modules/template.am"
-            sha256: "48652a23fb28e8d912ed36ba40c8db6db9365d8ea3dc6bc7a77df39cfad3b12e"
-          "template":
-            repository: "mareklangiewicz/AM"
-            commit: "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22"
-            path: "templates/AM-SAMPLE-AppImage-in-archive"
-            sha256: "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119"
+        blob: "85fe4731b6afef8710ed0b6f66aab56a2270d835"

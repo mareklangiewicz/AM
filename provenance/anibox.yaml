@@ -1,5 +1,5 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/5429e09d97486cbdf9681f329bee7ed850cdd250/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
 kind: "provenance"
 apps:
   "anibox":
@@ -9,9 +9,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
         path: "programs/aarch64/anibox"
-        blob: "09366c720564418bae91ec46b231d201bcf6b356"
+        blob: "22d92c1e22f4fb342a9369ce404b9bfc4172e929"
     "armv7l":
       repository_id: 1362367741
       availability: "absent"
@@ -23,9 +23,58 @@ apps:
     "x86_64":
       repository_id: 1362367741
       availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        path: "programs/x86_64/anibox"
+        blob: "5a5fcd288c5d984e266f301e8c11665cde9fb2d8"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-09T22:51:04Z"
+        recipe_sha256: "ae72550dc9e6de1a426a3a7cabeb22601be3620eb02ba8f68e8f8f46731783f4"
+        rules: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"
+  "fntv-plus":
+    "aarch64":
+      repository_id: 1362367741
+      availability: "present"
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
-        path: "programs/x86_64/anibox"
-        blob: "9582ccaade74a02ee20462e64aa1cdce131ebcb1"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        path: "programs/aarch64/fntv-plus"
+        blob: "564d24311867c6661ca0368de7f068166c17d429"
+    "armv7l":
+      repository_id: 1362367741
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1362367741
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1362367741
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        path: "programs/x86_64/fntv-plus"
+        blob: "e73bb7cf66c33687c071661b24dae7224d2e9a52"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-09T22:51:04Z"
+        recipe_sha256: "56d1e01d41a407b55c9da4580822f718844de6b37b513afa988c2605e6176880"
+        rules: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

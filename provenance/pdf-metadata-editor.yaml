@@ -1,0 +1,42 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "pdf-metadata-editor":
+    "aarch64":
+      repository_id: 3477786
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        path: "programs/aarch64/pdf-metadata-editor"
+        blob: "4f344e9a98bdc44b32375921ca828e489db5fbc3"
+    "armv7l":
+      repository_id: 3477786
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 3477786
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 3477786
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        path: "programs/x86_64/pdf-metadata-editor"
+        blob: "7c3cd30c24ac675887e93cfac39f218fc71531e3"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-09T22:51:04Z"
+        recipe_sha256: "ab3893791cba40512b453858d97141ded40a11876368d2aa53d83fe558efab77"
+        rules: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

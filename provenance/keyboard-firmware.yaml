@@ -1,0 +1,26 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "keyboardclient":
+    "aarch64":
+      repository_id: 5219902
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 5219902
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 5219902
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 5219902
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        path: "programs/x86_64/keyboardclient"
+        blob: "0fbffc9af9bb0bb696eaa2ee63167b72c8147b0d"

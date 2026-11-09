@@ -1,5 +1,5 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/5429e09d97486cbdf9681f329bee7ed850cdd250/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
 kind: "provenance"
 apps:
   "apla":
@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 120083694
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
         path: "programs/x86_64/apla"
-        blob: "53f57bafc8818972a9af7c82a2ac0c317a658d69"
+        blob: "d01092a572430a55215f078fee72b59b310f5093"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-09T22:51:04Z"
+        recipe_sha256: "5b6dbd74592b0ef114f66954f7b3896c157c4956f78689feb1bbaf70c0acf9a6"
+        rules: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

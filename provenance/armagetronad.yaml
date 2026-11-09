@@ -1,5 +1,5 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/5429e09d97486cbdf9681f329bee7ed850cdd250/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
 kind: "provenance"
 apps:
   "armagetronad":
@@ -17,15 +17,26 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
         path: "programs/i686/armagetronad"
-        blob: "02cafe5e8686f4c9ea80b229703a7fd1c2052eb7"
+        blob: "25c49494b554102194f065f34361094c78052b8a"
     "x86_64":
       repository_id: 164471642
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
         path: "programs/x86_64/armagetronad"
-        blob: "c731740d2d37f8477d28e322d2d178aae9ef8a6a"
+        blob: "ecbb1d080752aa8cee7e9e61eaeabf4810f1bfef"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-09T22:51:04Z"
+        recipe_sha256: "abb7045fc805f07f259a7ef1c4c00826f686f566907cda4092ceacff96e15ef9"
+        rules: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

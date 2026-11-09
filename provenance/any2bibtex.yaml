@@ -1,5 +1,5 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/5429e09d97486cbdf9681f329bee7ed850cdd250/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
 kind: "provenance"
 apps:
   "any2bibtex":
@@ -9,9 +9,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
         path: "programs/aarch64/any2bibtex"
-        blob: "aeeee3a275e192552a9e14d3c26cd8d3762af93e"
+        blob: "81dcf7fcc4fe2be9677daf5fa0f47f6f936f2327"
     "armv7l":
       repository_id: 1144414067
       availability: "absent"
@@ -23,25 +23,9 @@ apps:
     "x86_64":
       repository_id: 1144414067
       availability: "present"
-      classification: "template"
+      classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
         path: "programs/x86_64/any2bibtex"
-        blob: "7b1d4f5dbcbea5959d3aa3eb41d4050baf968b00"
-      evidence:
-        method: "whole_template"
-        evaluated_at: "2026-11-09T18:58:46Z"
-        recipe_sha256: "391c584c9fb37d4797cc289ed364191edada96480061374bbc4facb860e8a05b"
-        rules: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
-        dependencies:
-          "generator":
-            repository: "mareklangiewicz/AM"
-            commit: "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22"
-            path: "modules/template.am"
-            sha256: "48652a23fb28e8d912ed36ba40c8db6db9365d8ea3dc6bc7a77df39cfad3b12e"
-          "template":
-            repository: "mareklangiewicz/AM"
-            commit: "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22"
-            path: "templates/AM-SAMPLE-AppImage-in-archive"
-            sha256: "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119"
+        blob: "3c9c71c743582df08c0d7eb007f9b72b965573fc"

@@ -1,5 +1,5 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/5429e09d97486cbdf9681f329bee7ed850cdd250/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
 kind: "provenance"
 apps:
   "appimageupdatetool":
@@ -9,9 +9,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
         path: "programs/aarch64/appimageupdatetool"
-        blob: "593f7c18168a20645626728d3256f24a9a445ace"
+        blob: "1e6d6bd657995b8a20b6b6feaa9777c99ab67b2f"
     "armv7l":
       repository_id: 84325774
       availability: "absent"
@@ -22,26 +22,26 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
         path: "programs/i686/appimageupdatetool"
-        blob: "b21c9b2e3d45f233d60fafd9c0e0edd24c831be2"
+        blob: "7c6aa8c1c45739723806f5959688c57e7742f401"
     "x86_64":
       repository_id: 84325774
       availability: "present"
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
         path: "programs/x86_64/appimageupdatetool"
         blob: "f3b01e0ed7c36e43f72b2d54c308b3206286c3e0"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-09T18:58:46Z"
+        evaluated_at: "2026-11-09T22:51:04Z"
         recipe_sha256: "19741fbd443fd95d0d7a6e353e2721276d04cd1df17d35d508e0b0a8cdcd5bea"
-        rules: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
+        rules: "5be202a7376aa9c1349046cb4180e6152602fd41"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
+            commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
             path: "modules/"
-            sha256: "c106eca4bfc5254da9cbd788cd4245342772b59049c5e3b6df73629faac6b656"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

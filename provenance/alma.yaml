@@ -1,5 +1,5 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/5429e09d97486cbdf9681f329bee7ed850cdd250/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
 kind: "provenance"
 apps:
   "alma":
@@ -18,25 +18,9 @@ apps:
     "x86_64":
       repository_id: 1109049119
       availability: "present"
-      classification: "template"
+      classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
         path: "programs/x86_64/alma"
-        blob: "9687ecc5454108c54891574a06762ff03e56ddac"
-      evidence:
-        method: "whole_template"
-        evaluated_at: "2026-11-09T18:58:46Z"
-        recipe_sha256: "70158fcc62086604f1bd9b7e247918e9b0b95114bc629984a22cb424154825c5"
-        rules: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
-        dependencies:
-          "generator":
-            repository: "mareklangiewicz/AM"
-            commit: "bb53f3180ec92f862020f8bdccef0f6614015bae"
-            path: "modules/template.am"
-            sha256: "9608ffd7d6ea2637b064a9ea5aafe2e3aa18e46b4acfd8194b46b82dc65fe474"
-          "template":
-            repository: "mareklangiewicz/AM"
-            commit: "bb53f3180ec92f862020f8bdccef0f6614015bae"
-            path: "templates/AM-SAMPLE-AppImage"
-            sha256: "1049be481f39bdcdcd3ffa348ac94cdbdaaa65cfe1d341940e4b017963344931"
+        blob: "65e69ec2a4d4bb841481637cd3b0aa0713b62270"

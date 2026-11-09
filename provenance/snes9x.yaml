@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "snes9x":
+    "aarch64":
+      repository_id: 938908
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        path: "programs/aarch64/snes9x"
+        blob: "f33da53f857c628b5d1cd9fe83dda856cf3717c5"
+    "armv7l":
+      repository_id: 938908
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 938908
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 938908
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        path: "programs/x86_64/snes9x"
+        blob: "ec908362e18578fa66fb82653baa59d3928db403"

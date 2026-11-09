@@ -1,0 +1,37 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "cool-retro-term":
+    "aarch64":
+      repository_id: 14614344
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 14614344
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 14614344
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 14614344
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        path: "programs/x86_64/cool-retro-term"
+        blob: "2623073a028462928f41f83763d085e7a5526591"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-09T22:51:04Z"
+        recipe_sha256: "d220a060b02b53db6c54830e68c0eccb64e3a4e0b985e3dddf35d3fb532b8f93"
+        rules: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

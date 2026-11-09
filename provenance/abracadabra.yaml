@@ -1,12 +1,17 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/5429e09d97486cbdf9681f329bee7ed850cdd250/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
 kind: "provenance"
 apps:
   "abracadabra":
     "aarch64":
       repository_id: 490391156
-      availability: "absent"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        path: "programs/aarch64/abracadabra"
+        blob: "e00733e1ecdb07a899d54ee8891ff6b424764f3e"
     "armv7l":
       repository_id: 490391156
       availability: "absent"
@@ -17,5 +22,10 @@ apps:
       classification: "unknown"
     "x86_64":
       repository_id: 490391156
-      availability: "absent"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        path: "programs/x86_64/abracadabra"
+        blob: "f342f39c1fdca74d8869f185af53b540e908208b"

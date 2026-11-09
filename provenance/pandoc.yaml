@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "pandoc":
+    "aarch64":
+      repository_id: 571770
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        path: "programs/aarch64/pandoc"
+        blob: "d54ff2df7b7a10abf7cad5da9ea1ba0bd93a4ee9"
+    "armv7l":
+      repository_id: 571770
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 571770
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 571770
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        path: "programs/x86_64/pandoc"
+        blob: "b873573199dc186b8ecd30a5602bfe415b4fc907"

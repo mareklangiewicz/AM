@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "tiddlydesktop":
+    "aarch64":
+      repository_id: 15743523
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        path: "programs/aarch64/tiddlydesktop"
+        blob: "9cc53c96a91b1a3f109fc83db4a6c23bd0f8b6dc"
+    "armv7l":
+      repository_id: 15743523
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 15743523
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 15743523
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        path: "programs/x86_64/tiddlydesktop"
+        blob: "a013d7c4cf675bfb8ea3709684052bb65ea9e28f"

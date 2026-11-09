@@ -1,5 +1,5 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/5429e09d97486cbdf9681f329bee7ed850cdd250/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
 kind: "provenance"
 apps:
   "armcord":
@@ -18,25 +18,36 @@ apps:
     "x86_64":
       repository_id: 313312687
       availability: "present"
-      classification: "template"
+      classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
         path: "programs/x86_64/armcord"
-        blob: "6cce4423e8d59cbd518898e39dfbae10a3879237"
-      evidence:
-        method: "whole_template"
-        evaluated_at: "2026-11-09T18:58:46Z"
-        recipe_sha256: "ea7f7b9e27297b5fa6ff17ba22db9b21d7e6b38cf60b34e6bb5de45939287124"
-        rules: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
-        dependencies:
-          "generator":
-            repository: "mareklangiewicz/AM"
-            commit: "bb53f3180ec92f862020f8bdccef0f6614015bae"
-            path: "modules/template.am"
-            sha256: "9608ffd7d6ea2637b064a9ea5aafe2e3aa18e46b4acfd8194b46b82dc65fe474"
-          "template":
-            repository: "mareklangiewicz/AM"
-            commit: "bb53f3180ec92f862020f8bdccef0f6614015bae"
-            path: "templates/AM-SAMPLE-AppImage"
-            sha256: "1049be481f39bdcdcd3ffa348ac94cdbdaaa65cfe1d341940e4b017963344931"
+        blob: "647756ce5f2346bf922f2cd30c99f70b3ec6ee05"
+  "legcord":
+    "aarch64":
+      repository_id: 313312687
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        path: "programs/aarch64/legcord"
+        blob: "19bf33f3d652ca9f82448117ead830bba9a71e25"
+    "armv7l":
+      repository_id: 313312687
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 313312687
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 313312687
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        path: "programs/x86_64/legcord"
+        blob: "f4fa8a776945535262de01c3528ea782daa17ab1"

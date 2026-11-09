@@ -1,5 +1,5 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/5429e09d97486cbdf9681f329bee7ed850cdd250/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
 kind: "provenance"
 apps:
   "agent-buddy":
@@ -21,20 +21,20 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
         path: "programs/x86_64/agent-buddy"
         blob: "a463a2df58eef494354874c6dbb3b865ac270176"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-09T18:58:46Z"
+        evaluated_at: "2026-11-09T22:51:04Z"
         recipe_sha256: "ad9df1f7814b9ae6d33a01d5042362da9b83edc5db6133c88a96af9efbb28ed6"
-        rules: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
+        rules: "5be202a7376aa9c1349046cb4180e6152602fd41"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
+            commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
             path: "modules/"
-            sha256: "c106eca4bfc5254da9cbd788cd4245342772b59049c5e3b6df73629faac6b656"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"
   "agent-companion":
     "aarch64":
       repository_id: 1365556684
@@ -51,25 +51,9 @@ apps:
     "x86_64":
       repository_id: 1365556684
       availability: "present"
-      classification: "template"
+      classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
         path: "programs/x86_64/agent-companion"
-        blob: "9a8da9dc49447607fe5c41d977117ca31f68c3e5"
-      evidence:
-        method: "whole_template"
-        evaluated_at: "2026-11-09T18:58:46Z"
-        recipe_sha256: "14de71d129a79be5165de9add6dcb052c17940ced6f415ff400a14c630b662bf"
-        rules: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
-        dependencies:
-          "generator":
-            repository: "mareklangiewicz/AM"
-            commit: "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22"
-            path: "modules/template.am"
-            sha256: "48652a23fb28e8d912ed36ba40c8db6db9365d8ea3dc6bc7a77df39cfad3b12e"
-          "template":
-            repository: "mareklangiewicz/AM"
-            commit: "bbffd15c19d01ef9124fbf99b5b9c41d2661ea22"
-            path: "templates/AM-SAMPLE-AppImage-in-archive"
-            sha256: "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119"
+        blob: "da0bdc3cb6cdbe30bc7d67b8bb63424afc9b5532"

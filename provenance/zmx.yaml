@@ -1,12 +1,17 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/5429e09d97486cbdf9681f329bee7ed850cdd250/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
 kind: "provenance"
 apps:
   "zmx":
     "aarch64":
       repository_id: 1073900202
-      availability: "absent"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        path: "programs/aarch64/zmx"
+        blob: "0a86211f46da0469cd12d282a6338378ecbe206a"
     "armv7l":
       repository_id: 1073900202
       availability: "absent"
@@ -17,5 +22,10 @@ apps:
       classification: "unknown"
     "x86_64":
       repository_id: 1073900202
-      availability: "absent"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        path: "programs/x86_64/zmx"
+        blob: "3626b3dbc8d91127fe6a688577637f4c039ad937"

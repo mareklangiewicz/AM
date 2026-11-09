@@ -1,5 +1,5 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/5429e09d97486cbdf9681f329bee7ed850cdd250/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
 kind: "provenance"
 apps:
   "ani-mime":
@@ -9,9 +9,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
         path: "programs/aarch64/ani-mime"
-        blob: "c0c6139650c2fa02f5baa0b83b10c47ae3a19e99"
+        blob: "6db366ec5ad0bbb9c31f480382b924ca0176a74a"
     "armv7l":
       repository_id: 1198043951
       availability: "absent"
@@ -23,9 +23,20 @@ apps:
     "x86_64":
       repository_id: 1198043951
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "90a9f01b09f8262b38710d01f7d2b7ee510af525"
+        commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
         path: "programs/x86_64/ani-mime"
-        blob: "d5ba83d40d484d6c11b8a0e5428d2f2352f26736"
+        blob: "5d3f5e4743353043c0bc9f86ad53bc1e00bbc556"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-09T22:51:04Z"
+        recipe_sha256: "6b0e3a78d8b20093c76138b1ae0372f585db8a5cc47bcd22a9b801c7df0067b2"
+        rules: "5be202a7376aa9c1349046cb4180e6152602fd41"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "5be202a7376aa9c1349046cb4180e6152602fd41"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"
