@@ -104,3 +104,28 @@ under mawk/gawk/BusyBox awk. All pass; the five Git observation groups pass too.
 The multi-tag fixture exposed a native lexical comparison of position against
 100; the validator now compares numerically. This remains a local checkpoint,
 with custom selectors, schema transition and rollout still unfinished.
+
+## Schema transition and Git presentation — local continuation
+
+Collection accepts an explicit reviewed schema revision, revalidates retained
+source documents and changes only their schema headers when needed. Failed or
+budget-deferred acquisitions retain every fact and time. Ordinary source changes
+continue to retain the previous schema pin and exact unchanged source bytes.
+The workflow reads `CATALOG_SCHEMA_REVISION`, fetches that object in collection
+and publication checkouts, and passes the same authority through both operations.
+Candidate artifacts cannot choose that authority. Set this variable to the
+reviewed contract commit as part of rollout; keep it stable until the next
+contract change. No live variable was changed here.
+
+The format documents Git scope/reference/file identities, bounds, times, atomic
+acquisition and native outputs. The glossary follows ADR 0004. The browser shows
+Git references, immutable commit links, exact escaped file content and separate
+observation times, including a source with zero releases.
+
+All 18 contract groups pass, including failed/deferred retained-source schema
+transitions and unchanged-source reuse. Fifteen browser transport/projection
+groups pass. The added browser test passes in desktop and narrow Chromium,
+including script-like content escaping and layout bounds. The positive template
+classification fixture now uses its original recipe revision because the live
+recipe was converted by the bulk migration. Custom selectors and operational
+acquisition/publication remain outstanding; no deployment occurred.

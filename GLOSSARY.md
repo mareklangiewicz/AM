@@ -9,10 +9,10 @@ An observation of the commit identified by a named branch or tag, with its own o
 The exact contents and blob identity of a repository file at a particular commit.
 
 **Catalog**:
-Published release facts offered to clients, without choosing which release a client should use.
+Published release, Git reference and repository file facts offered to clients, without making their selections.
 
 **Client selection**:
-A client's choice of release and assets for installation, browsing, presentation, or another purpose.
+A client's choice of catalog facts for installation, browsing, presentation, or another purpose.
 
 **Asset acquisition**:
 Obtaining the bytes of the release asset chosen by client selection, through a full transfer or reconstruction from existing bytes.

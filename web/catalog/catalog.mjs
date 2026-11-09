@@ -1,5 +1,12 @@
 import {parseDocument,releaseFacts} from '../../tools/catalog-contract/reader.mjs';
 export {releaseFacts};
+export function gitFacts(source,query='') {
+ const needle=query.toLowerCase();
+ return Object.values(source.git_refs??{}).sort((a,b)=>{
+  const at=a.name.startsWith('refs/tags/'),bt=b.name.startsWith('refs/tags/');
+  return at&&bt?Number(a.position-b.position):at!==bt?(at?1:-1):a.name.localeCompare(b.name);
+ }).filter(ref=>!needle||[ref.name,ref.commit,...Object.values(ref.files??{}).map(f=>f.path)].join(' ').toLowerCase().includes(needle));
+}
 export const rawURL=(pin,path)=>`https://raw.githubusercontent.com/mareklangiewicz/AM/${pin}/${path}`;
 const commit=/^[a-f0-9]{40}$/;
 const catalogPath=/^(catalog|apps)\.yaml$|^(repositories|provenance)\/[a-z0-9][a-z0-9_.+-]{0,63}\.yaml$/;

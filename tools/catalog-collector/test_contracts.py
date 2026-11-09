@@ -362,10 +362,13 @@ class Contracts(unittest.TestCase):
             command=['collect','--repo',str(v3),'--parent',prior,'--evidence',str(saved),'--registry',str(registry),'--run-id','124']
             with patch.object(interface,'verify_checkout_inputs'),patch.object(host,'configuration',return_value=(rows,{'123':'example/app'})),patch.object(host,'_open',side_effect=AssertionError('offline network')),patch.object(c,'source',side_effect=ValueError('document_overflow')):
                 interface.main(command+['--output',str(output)])
-                # Explicitly advancing schemas cannot publish a retained old blob.
-                with self.assertRaisesRegex(ValueError,'catalog schema binding'):
-                    interface.main(command+['--output',str(root/'refused'),'--schemas-revision','b'*40])
-                self.assertFalse((root/'refused').exists())
+                # An explicit transition rebinds retained facts even if refresh failed.
+                interface.main(command+['--output',str(root/'rebound'),'--schemas-revision','b'*40])
+                rebound=c.read_directory(root/'rebound/format-3')
+                expected=decode(tree['repositories/example.yaml'])
+                expected['schema']=header('repository','b'*40)['schema']
+                self.assertEqual(decode(rebound['repositories/example.yaml']),expected)
+                self.assertEqual(decode(rebound['catalog.yaml'])['inputs']['schemas'],'b'*40)
             result=c.read_directory(output/'format-3')
             self.assertEqual(result['repositories/example.yaml'],tree['repositories/example.yaml'])
             script="import {Catalog} from './web/catalog/catalog.mjs';import {readFile} from 'node:fs/promises';const dir=process.argv[1];const client=new Catalog(async url=>new Response(await readFile(dir+'/'+new URL(url).pathname.split('/').slice(4).join('/'))));const {root,apps}=await client.roots('"+PIN+"');await client.source('"+PIN+"',apps.example,root);"
@@ -380,10 +383,15 @@ class Contracts(unittest.TestCase):
                 return ({'example':123},{}),[]
             with patch.object(interface,'verify_checkout_inputs'),patch.object(host,'configuration',return_value=(rows,{'123':'example/app'})),patch.object(host,'collect',side_effect=deferred):
                 interface.main(command+['--output',str(root/'deferred')])
+                interface.main(command+['--output',str(root/'deferred-rebound'),'--schemas-revision','b'*40])
             deferred_tree=c.read_directory(root/'deferred/format-3')
             self.assertEqual(deferred_tree['repositories/example.yaml'],tree['repositories/example.yaml'])
             self.assertEqual(decode(deferred_tree['catalog.yaml'])['inputs']['schemas'],PIN)
-            # An explicit revision works when successful acquisition rewrites all sources.
+            rebound=c.read_directory(root/'deferred-rebound/format-3')
+            expected=decode(tree['repositories/example.yaml'])
+            expected['schema']=header('repository','b'*40)['schema']
+            self.assertEqual(decode(rebound['repositories/example.yaml']),expected)
+            # Successful acquisition also uses the explicit revision.
             with patch.object(interface,'verify_checkout_inputs'),patch.object(host,'configuration',return_value=(rows,{'123':'example/app'})),patch.object(host,'_open',side_effect=AssertionError('offline network')):
                 interface.main(command+['--output',str(root/'upgraded'),'--schemas-revision','b'*40])
             upgraded=c.read_directory(root/'upgraded/format-3')
@@ -465,7 +473,9 @@ class Contracts(unittest.TestCase):
         shared=evaluator.classify('20x','x86_64',1152028865)
         self.assertEqual(shared['classification'],'shared')
         self.assertIn('/blob/'+revision+'/programs/x86_64/20x',review_url(shared))
-        template=evaluator.classify('actual','x86_64',0)
+        # The live recipe is migrated; keep the positive template fixture pinned.
+        legacy=dict(evaluator.inputs,recipes='90a9f01b09f8262b38710d01f7d2b7ee510af525')
+        template=Evaluator(ROOT,legacy,NEW).classify('actual','x86_64',0)
         self.assertEqual(template['classification'],'template')
         existing=evaluator.classify('ageha-editor','x86_64',1016549971)
         self.assertEqual(existing['availability'],'present')

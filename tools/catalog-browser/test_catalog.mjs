@@ -1,7 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {Catalog,releaseFacts} from '../../web/catalog/catalog.mjs';
+import {Catalog,releaseFacts,gitFacts} from '../../web/catalog/catalog.mjs';
 const C='a'.repeat(40),D='b'.repeat(40);
 const fixture=name=>readFile(new URL(`../catalog-contract/fixtures/${name}.yaml`,import.meta.url),'utf8');
 function transport(files){const calls=[];return {calls,fetcher:async url=>{calls.push(url);const path=new URL(url).pathname.split('/').slice(4).join('/');return new Response(files[path]??'',{status:Object.hasOwn(files,path)?200:404});}};}
@@ -108,4 +108,15 @@ test('provenance is source-local and refuses incomplete or misplaced identity gr
  await assert.rejects(new Catalog(transport({'provenance/example.yaml':missing}).fetcher).provenance(C,'example','repositories/example.yaml',source,root,apps),/coverage/);
  await assert.rejects(new Catalog(transport({}).fetcher).provenance(C,'example','repositories/example.yaml',source,root,apps),/Unavailable/);
  await assert.rejects(client.doc(C,'provenance.yaml'),/path/);
+});
+
+test('Git observations preserve branch/file facts and observed tag positions',()=>{
+ const branch={name:'refs/heads/master',commit:'b'.repeat(40),observed_at:'2026-11-09T12:00:00Z',files:{key:{path:'VERSION',content:'1.2\n',blob:'c'.repeat(40)}}};
+ const tag=(name,position)=>({name:'refs/tags/'+name,position:BigInt(position)});
+ const source={git_refs:{last:tag('v1',2),branch,first:tag('v3',0),middle:tag('v2',1)}};
+ assert.deepEqual(gitFacts(source).map(r=>r.name),['refs/heads/master','refs/tags/v3','refs/tags/v2','refs/tags/v1']);
+ assert.deepEqual(gitFacts(source,'version'),[branch]);
+ assert.deepEqual(gitFacts(source,'unknown'),[]);
+ assert.equal(gitFacts(source,'MASTER')[0].files.key.content,'1.2\n');
+ assert.deepEqual(gitFacts({}),[]);
 });

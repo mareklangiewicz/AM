@@ -32,8 +32,11 @@ jobs:
       - name: Read exact public parents
         id: parents
         shell: bash
+        env:
+          REVIEWED_SCHEMAS: ${{ vars.CATALOG_SCHEMA_REVISION }}
         run: |
           set -euo pipefail
+          schemas=''
           mkdir -p "$RUNNER_TEMP/am-catalog"
           git init --bare --template= "$RUNNER_TEMP/am-catalog/target.git"
           target=$(git ls-remote --refs https://github.com/mareklangiewicz/AM.git refs/heads/release-catalog-v3 | cut -f1)
@@ -42,6 +45,10 @@ jobs:
             echo "parent=$target" >> "$GITHUB_OUTPUT"
             schemas=$(python3 -B tools/catalog-collector/host_catalog.py schema-revision \
               --repo "$RUNNER_TEMP/am-catalog/target.git" --parent "$target")
+          fi
+          if [[ -n "$REVIEWED_SCHEMAS" ]]; then schemas=$REVIEWED_SCHEMAS; fi
+          if [[ -n "$schemas" ]]; then
+            [[ "$schemas" =~ ^[0-9a-f]{40}$ ]]
             git fetch --no-tags --depth=1 https://github.com/mareklangiewicz/AM.git "$schemas"
             echo "schemas=$schemas" >> "$GITHUB_OUTPUT"
           fi
@@ -53,6 +60,7 @@ jobs:
         with:
           repo: ${{ runner.temp }}/am-catalog/target.git
           parent: ${{ steps.parents.outputs.parent }}
+          schemas-revision: ${{ steps.parents.outputs.schemas }}
           output: ${{ runner.temp }}/am-catalog/candidate
           batch-size: ${{ vars.CATALOG_BATCH_SIZE || '500' }}
           request-cap: ${{ vars.CATALOG_REQUEST_CAP || '750' }}
@@ -106,12 +114,14 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           EXPECTED_PARENT: ${{ needs.acquire.outputs.parent }}
+          SCHEMAS: ${{ needs.acquire.outputs.schemas }}
           PARENTS_RESOLVED: ${{ needs.acquire.outputs.resolved }}
         shell: bash
         run: |
           set -euo pipefail
           extra=()
           if [[ -n "$EXPECTED_PARENT" ]]; then extra+=(--expected-v3-parent "$EXPECTED_PARENT"); fi
+          if [[ -n "$SCHEMAS" ]]; then extra+=(--schemas-revision "$SCHEMAS"); fi
           if [[ "$PARENTS_RESOLVED" != true ]]; then extra+=(--input-catalog-state unknown); fi
           python3 -B tools/catalog-collector/host_catalog.py publish \
             --candidate "$RUNNER_TEMP/am-catalog-candidate" \

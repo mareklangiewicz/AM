@@ -7,6 +7,9 @@ inputs:
   parent:
     default: ''
     description: Exact format-3 parent commit, empty for initial bootstrap
+  schemas-revision:
+    default: ''
+    description: Reviewed schema transition revision; empty retains the parent binding
   output:
     required: true
     description: New run-local candidate directory
@@ -26,6 +29,7 @@ runs:
       env:
         CATALOG_REPO: ${{ inputs.repo }}
         CATALOG_PARENT: ${{ inputs.parent }}
+        CATALOG_SCHEMAS: ${{ inputs.schemas-revision }}
         CATALOG_OUTPUT: ${{ inputs.output }}
         CATALOG_BATCH: ${{ inputs.batch-size }}
         CATALOG_REQUEST_CAP: ${{ inputs.request-cap }}
@@ -36,6 +40,7 @@ runs:
         if [[ -n "$CATALOG_PARENT" ]]; then
           extra=(--parent "$CATALOG_PARENT")
         fi
+        if [[ -n "$CATALOG_SCHEMAS" ]]; then extra+=(--schemas-revision "$CATALOG_SCHEMAS"); fi
         python3 -B tools/catalog-collector/host_catalog.py collect \
           --repo "$CATALOG_REPO" \
           --output "$CATALOG_OUTPUT" --run-id "$GITHUB_RUN_ID" --attempt "$GITHUB_RUN_ATTEMPT" \

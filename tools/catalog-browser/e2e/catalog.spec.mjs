@@ -80,3 +80,24 @@ test('source fetch failure keeps directory usable and retry stays at the same UR
  await expect(page.locator('.asset').first()).toBeVisible();
  await expect(page.locator('#error')).toBeEmpty();
 });
+
+test('source without releases shows pinned Git files safely',async({page})=>{
+ const {createHash}=await import('node:crypto');
+ const name='refs/heads/master',key=createHash('sha256').update(name).digest('hex');
+ const fileKey=createHash('sha256').update('VERSION').digest('hex');
+ await page.route('**/repositories/example.yaml',async route=>{
+  const response=await route.fetch(),raw=await response.text();
+  const at=raw.match(/collected_at: "([^"]+)"/)[1];
+  const body=raw.split('\nreleases:')[0]+'\nreleases: {}\ngit_scope:\n  tags: false\n  tags_history_complete: false\n  branches:\n    "'+key+'": "'+name+'"\ngit_refs:\n  "'+key+'":\n    name: "'+name+'"\n    commit: "'+'b'.repeat(40)+'"\n    observed_at: "'+at+'"\n    files:\n      "'+fileKey+'":\n        path: "VERSION"\n        blob: "'+'c'.repeat(40)+'"\n        observed_at: "'+at+'"\n        content: "<script>bad()</script>\\n1.2\\n"\n';
+  await route.fulfill({response,body});
+ });
+ await page.goto('web/catalog/?app=example');
+ await expect(page.locator('.git-observations h3')).toHaveText('Git observations');
+ await page.getByText('refs/heads/master',{exact:true}).click();
+ await expect(page.locator('.git-observations a')).toHaveAttribute('href',/\/tree\/b{40}$/);
+ await page.getByText('VERSION',{exact:true}).click();
+ await expect(page.locator('.git-observations pre')).toHaveText('<script>bad()</script>\n1.2\n');
+ await expect(page.locator('.git-observations script')).toHaveCount(0);
+ await expect(page.locator('#error')).toBeEmpty();
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+});

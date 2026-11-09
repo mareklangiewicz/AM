@@ -52,6 +52,24 @@ def write_tree(directory, tree):
         path=directory/name; path.parent.mkdir(parents=True,exist_ok=True); path.write_bytes(body)
 
 
+def rebind_retained_sources(prior, changed, revision):
+    """An explicit schema transition preserves every retained fact and timestamp.
+
+    Decode/re-encode under the checked-out contract: incompatible retained facts
+    refuse the entire candidate rather than publishing mixed schema bindings.
+    Ordinary collections leave unchanged documents byte-for-byte intact.
+    """
+    if prior is None or prior.metadata['catalog.yaml']['root']['inputs']['schemas']==revision:
+        return
+    for path in prior:
+        if path.startswith('repositories/') and path not in changed:
+            doc=contracts.decode(prior[path])
+            doc['schema']=contracts.header('repository',revision)['schema']
+            raw=contracts.encode(doc)
+            contracts.decode(raw)
+            changed[path]=raw
+
+
 def collect(args):
     command_started=time.monotonic()
     revision=subprocess.check_output(['git','-C',str(host.ROOT),'rev-parse','HEAD'],text=True).strip()
@@ -111,6 +129,7 @@ def collect(args):
                            review=reviews.get(row['app'],{}).get(arch))
                            for arch in ('x86_64','aarch64','i686','armv7l')} for row in rows if row['app'] in apps}
     tree.update(contracts.partition_provenance(apps,provenance,inputs['schemas']))
+    rebind_retained_sources(prior,tree,inputs['schemas'])
     tree=Candidate(prior,tree)
     write_tree(args.output/'format-3',tree)
     evidence=dict(version=1,started_at=started_at,reported_at=host.utc(),run=dict(id=args.run_id,attempt=args.attempt),inputs=inputs,

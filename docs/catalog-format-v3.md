@@ -63,9 +63,15 @@ The `provenance` kind and architecture/evidence field schemas are unchanged.
 Every catalog document's schema URL must bind the descriptor's `inputs.schemas`,
 including roots and retained source documents. Collector-only updates retain the
 parent's schema pin while its checked-out contract/schema/reader bytes still
-match. An explicit schema revision change requires all source documents to match;
-failed or deferred sources with old bindings refuse the candidate. Preserving
-last-good source bytes does not authorize publishing a mixed-schema snapshot.
+match. An explicit `--schemas-revision` transition revalidates retained source
+documents under the new contract and changes their schema binding only. Release,
+Git and file facts and every observation/collection time remain unchanged for
+failed or deferred sources. Incompatible facts refuse the whole candidate.
+Mixed-schema snapshots always refuse. The workflow accepts reviewed authority
+from `CATALOG_SCHEMA_REVISION`, validates its full commit spelling, fetches that
+object in both shallow checkouts, and passes the same revision to collection and
+publication. An artifact cannot authorize its own transition. Keep that authority
+pin stable on unrelated source/docs changes.
 
 Every app must reference an existing source; each
 numeric source appears once, independently of app aliases. Names match
@@ -148,6 +154,40 @@ Review links use the recipe's own commit/path:
 Custom recipes require a prominent review link. These labels establish neither
 binary authenticity nor installation selection/support or installed-updater state.
 Do not equate unknown with custom, absent, unsupported or false.
+
+## Git reference and repository file observations
+
+A source may include `git_scope` and `git_refs` together. Neither fabricates a
+release or asset identity. `git_scope.tags` records whether tags were requested;
+`tags_history_complete` means the bounded first page ended, and must be false
+when tags were not requested. `branches` maps the SHA-256 of each full branch
+reference name to that name (up to four branches). `git_refs` is keyed by the
+SHA-256 of the UTF-8 full reference name, with unique names and commits expressed
+as full 40-character lowercase Git object IDs.
+
+Each reference has `name`, `commit` and `observed_at`. Tags have a zero-based
+`position` in the observed API order: positions are unique and contiguous, with
+at most 100 tags. Branches may have up to four `files`, keyed by the SHA-256 of
+the UTF-8 path. Each file has `path`, exact `content` (at most 8 KiB), Git `blob`
+identity and `observed_at`. Absolute/traversing paths refuse. File observations
+cannot precede their branch observation or follow successful scope completion.
+
+Acquisition resolves the branch first and reads each file at that exact commit,
+verifying its reported size and Git blob hash. Release and additional Git reads
+share the same request, byte, time and quota budgets. Any partial source failure
+produces no successful acquisition; prior successful facts remain retained.
+Git observations have their own times; collecting releases or publishing a new
+snapshot does not make old Git observations fresh.
+
+The native `git_facts` projection emits tab-separated quoted reference name,
+commit, observation time, tag position and optional file path/blob/content after
+the reference key. `release_facts` emits release metadata even without assets.
+`catalog-yaml.am` policies declare asset, release, Git tag, branch or file
+selection. Non-asset selections require a fresh observation and explicit output
+such as `--tag`, `--published-at`, `--git-commit`, `--git-file` or `--git-snapshot`.
+The snapshot output is commit, newline, then exact file content. JuNest consumes
+this once for both VERSION and the commit archive URL. Each command pins all
+catalog reads to one publication commit.
 
 ## Reader and collection APIs
 
