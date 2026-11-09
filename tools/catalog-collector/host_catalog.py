@@ -37,6 +37,13 @@ REQUEST_CAP = 500
 ACQUISITION_SECONDS = 900
 RATE_RESERVE = 100
 
+# Reviewed against GitHub's numeric repository endpoint on 2026-11-09.
+# This permits retaining the old name until a successful new observation;
+# it does not authorize arbitrary name drift or alter retained facts/times.
+REVIEWED_REPOSITORY_TRANSFERS = {
+    '1369127769': ('alex-pokydin/arduloops', 'arduloops/arduloops'),
+}
+
 
 class NoRedirect(urllib.request.HTTPRedirectHandler):
     """One counted request must not silently forward credentials or add calls."""
@@ -177,8 +184,10 @@ def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None,
     metadata=getattr(previous,'metadata',None)
     identities=metadata.items() if metadata is not None else previous.items()
     for rid, before in identities:
+        names=(before['repository'].lower(), sources[rid].lower()) if rid in sources else None
+        reviewed_transfer=native_v3 and names==REVIEWED_REPOSITORY_TRANSFERS.get(rid)
         if rid in sources and (before['repository_id'] != int(rid) or
-                               before['repository'].lower() != sources[rid].lower()):
+                               (names[0] != names[1] and not reviewed_transfer)):
             raise ValueError('retained repository identity mismatch')
     selected = list(sources)
     if batch_size is not None:

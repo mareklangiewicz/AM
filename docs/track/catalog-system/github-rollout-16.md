@@ -1,4 +1,36 @@
-# Full GitHub v3 rollout package — awaiting Marek's approval
+# Full GitHub v3 rollout package
+
+## November 9 approved attempt — correction awaiting push approval
+
+Marek approved this package with “go on.” The reviewed tip
+`51c862f1ed0e1d45849e2a9e08b05100511b9273` was pushed, the schema pin was set to
+`040614f86cbbf31fc19596c8d32225c82de77acf`, and the schedule pin was set to that
+pushed tip. [Run 42701570728](https://github.com/mareklangiewicz/AM/actions/runs/42701570728)
+failed before upstream acquisition: `retained repository identity mismatch`.
+No candidate artifact or new catalog was published. The catalog remains
+`263ee9e67ffbc11c66edd0f502981942b7e3e87d`; independent failure reporting advanced
+status to `5c77c8f2a6a150847539690a2c360bcf0446e1ce`.
+[Recorded result](github-rollout-result-16.json) and the exact
+[published summary](github-rollout-failure-summary-16.yaml) preserve that outcome.
+
+The sole mismatch is numeric repository **1369127769**: retained facts name
+`alex-pokydin/ArduLoops`, while enrollment names `ArduLoops/ArduLoops`.
+GitHub's numeric repository endpoint confirms the latter name with the same ID.
+The local correction explicitly permits only this directional ID/name transfer;
+all other mismatches still refuse. Retained names, facts and times remain intact
+until successful acquisition produces a new observation. The 14 batch tests pass,
+including failure preservation, wrong-ID/name rejection and reverse-transfer
+rejection. Replaying the exact validated 499-source parent with one inert
+response now passes the original failing collector path.
+
+All five installed before-hashes and staged authority/after-hashes matched.
+Runtime delivery remains pending successful publication. The schema/runtime
+authority is unchanged. After approval of the correction push, capture the new
+final tip, recheck remote main, push, repin **only the schedule revision** to that
+tip, then dispatch and follow the publication/runtime checks below. The current
+schedule still points to the failed source tip and will retry it on its ordinary
+hourly schedule until a correction is pushed and repinned. Expanded coverage
+remains unestablished; ticket 16 remains claimed.
 
 The prepared migration binds **10,392 recipes** to v3 and enrolls **8,670 app
 identities / 8,313 verified numeric sources**. **49 recipes** with unverified

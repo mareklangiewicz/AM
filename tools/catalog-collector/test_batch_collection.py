@@ -128,6 +128,46 @@ class BatchCollection(unittest.TestCase):
         self.assertEqual(metrics['response_bytes'], 2)
         self.assertEqual(metrics['unattempted_sources'], 3)
 
+    def test_reviewed_arduloops_transfer_keeps_numeric_identity_and_retained_facts(self):
+        # Real rollout parent: Records exposes repository identity as metadata.
+        rid = '1369127769'
+        before = dict(repository_id=int(rid), repository='alex-pokydin/ArduLoops',
+                      attempted_at=OLD)
+        original = copy.deepcopy(before)
+        class Retained(dict):
+            metadata = {rid: before}
+        previous = Retained({rid: before})
+        current = 'ArduLoops/ArduLoops'
+        configuration = ([dict(app='arduloops', repository_id=int(rid), repository=current)],
+                         {rid: current})
+        with patch.object(collector, 'configuration', return_value=configuration), \
+                patch.object(collector, '_response', return_value=(b'[]', NEW)) as read:
+            acquired = {}
+            _, report = collector.collect('b'*40, previous, batch_size=1,
+                                          incremental=True, native_v3=True, acquisitions=acquired)
+            self.assertEqual(read.call_args.args[0], rid)
+            self.assertEqual(report[0]['status'], 'ok')
+            self.assertIn(rid, acquired)
+            self.assertEqual(previous[rid], original)
+            read.side_effect = OSError('upstream unavailable')
+            acquired = {}
+            with contextlib.redirect_stdout(io.StringIO()):
+                _, report = collector.collect('b'*40, previous, batch_size=1,
+                                              incremental=True, native_v3=True, acquisitions=acquired)
+            self.assertEqual(report[0]['status'], 'failed')
+            self.assertEqual(acquired, {})
+            self.assertEqual(previous[rid], original)
+            # The approval is directional and specific to this ID and pair.
+            for bad in (dict(before, repository_id=1),
+                        dict(before, repository='unverified/ArduLoops')):
+                previous.metadata = {rid: bad}
+                with self.assertRaisesRegex(ValueError, 'identity mismatch'):
+                    collector.collect('b'*40, previous, batch_size=1, native_v3=True)
+            previous.metadata = {rid: dict(before, repository=current)}
+            with patch.object(collector, 'configuration', return_value=([], {rid: before['repository']})):
+                with self.assertRaisesRegex(ValueError, 'identity mismatch'):
+                    collector.collect('b'*40, previous, batch_size=1, native_v3=True)
+
     def test_partial_transport_failures_cannot_bypass_the_shared_response_budget(self):
         previous = self.previous(4)
         class Reply:

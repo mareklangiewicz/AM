@@ -59,3 +59,14 @@ The [rollout package](../github-rollout-16.md) specifies the reviewed contract p
 schedule transition, bounded acquisition/publication and five-file shared runtime
 delivery. Work remains claimed pending Marek's required push approval and actual
 publication results; no expanded successful acquisition is implied by enrollment.
+
+## Approved rollout attempt — November 9
+
+Marek approved the prepared package. Source push and schema/schedule pins were
+applied, but the initial run failed before acquisition on a retained ArduLoops
+repository-name transfer with unchanged numeric ID. The catalog did not advance;
+independent status publication recorded the failure. Runtime delivery remains
+pending successful publication. The narrowly reviewed transfer correction passes
+14 batch tests and replay against the exact public parent. Its source push needs
+approval; [rollout outcome and next steps](../github-rollout-16.md) and
+[portable result](../github-rollout-result-16.json) record the concrete state.
