@@ -1,13 +1,17 @@
 #!/bin/sh
 # AM INSTALL SCRIPT VERSION 3.5
 # AM-CATALOG-RECIPE 1
+# AM-RECIPE-DECLARATION 1
 set -eu
 APP=odicto
-CATALOG_ALIAS="https://api.github.com/repos/aandrew-me/odicto/releases"
-
-select_asset() {
-	sed 's/[()",{} ]/\n/g' | grep -oi "https.*$APP.*amd64.*mage$" | head -1
-}
+CATALOG_ALIAS=https://api.github.com/repos/aandrew-me/odicto/releases
+CATALOG_FORMAT=3
+CATALOG_RECIPE=x86_64/odicto
+CATALOG_REPOSITORY_ID=587204007
+CATALOG_REPOSITORY=aandrew-me/odicto
+CATALOG_CHANNEL=any
+CATALOG_ASSET_PATTERN='^.*$'
+CATALOG_URL_RULES='[{"pattern":"https.*$APP.*amd64.*mage$","ignore_case":true,"exclude":false}]'
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

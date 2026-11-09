@@ -1,13 +1,17 @@
 #!/bin/sh
 # AM INSTALL SCRIPT VERSION 3.5
 # AM-CATALOG-RECIPE 1
+# AM-RECIPE-DECLARATION 1
 set -eu
 APP=crossmobile
-CATALOG_ALIAS="https://api.github.com/repos/crossmob/CrossMobile/releases"
-
-select_asset() {
-	sed 's/[()",{} ]/\n/g' | grep -oi "https.*mage$" | grep -i "x86_64" | head -1
-}
+CATALOG_ALIAS=https://api.github.com/repos/crossmob/CrossMobile/releases
+CATALOG_FORMAT=3
+CATALOG_RECIPE=x86_64/crossmobile
+CATALOG_REPOSITORY_ID=184477043
+CATALOG_REPOSITORY=crossmob/CrossMobile
+CATALOG_CHANNEL=any
+CATALOG_ASSET_PATTERN='^.*$'
+CATALOG_URL_RULES='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"x86_64","ignore_case":true,"exclude":false}]'
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

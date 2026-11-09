@@ -1,13 +1,17 @@
 #!/bin/sh
 # AM INSTALL SCRIPT VERSION 3.5
 # AM-CATALOG-RECIPE 1
+# AM-RECIPE-DECLARATION 1
 set -eu
 APP=neosurf
-CATALOG_ALIAS="https://api.github.com/repos/CobaltBSD/neosurf/releases"
-
-select_asset() {
-	sed 's/[()",{} ]/\n/g' | grep -oi "https.*mage$" | grep -vi "aarch64\|arm64\|armv7l\|i386\|i686" | head -1
-}
+CATALOG_ALIAS=https://api.github.com/repos/CobaltBSD/neosurf/releases
+CATALOG_FORMAT=3
+CATALOG_RECIPE=x86_64/neosurf
+CATALOG_REPOSITORY_ID=613039444
+CATALOG_REPOSITORY=CobaltBSD/neosurf
+CATALOG_CHANNEL=any
+CATALOG_ASSET_PATTERN='^.*$'
+CATALOG_URL_RULES='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"aarch64|arm64|armv7l|i386|i686","ignore_case":true,"exclude":true}]'
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

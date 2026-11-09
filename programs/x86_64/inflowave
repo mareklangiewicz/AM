@@ -1,4 +1,8 @@
 #!/bin/sh
+# AM-CATALOG-RECIPE 1
+CATALOG_FORMAT=3
+AMREPO=${AMREPO-}
+export AMREPO
 
 # AM INSTALL SCRIPT VERSION 3.6
 set -u
@@ -12,7 +16,7 @@ printf '\n%s' "rm -f /usr/local/share/applications/$APP-AM.desktop" >> ../remove
 chmod a+x ../remove || exit 1
 
 # DOWNLOAD AND PREPARE THE APP, $version is also used for updates
-version=$(curl -Ls https://api.github.com/repos/chenqi92/inflowave/releases | sed 's/[()",{} ]/\n/g' | grep -oi "https.*download.*" | grep -vi "i386\|i686\|armhf\|aarch64\|arm64\|armv7l" | grep -i "appimage$" | head -1)
+version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/inflowave --url "$@") || exit 1
 wget "$version" || exit 1
 [ -e ./*7z ] && 7z x ./*7z && rm -f ./*7z
 [ -e ./*tar.* ] && tar fx ./*tar.* && rm -f ./*tar.*
@@ -29,16 +33,16 @@ ln -s "/opt/$APP/$APP" "/usr/local/bin/$APP"
 # SCRIPT TO UPDATE THE PROGRAM
 cat >> ./AM-updater << 'EOF'
 #!/bin/sh
+# AM-CATALOG-RECIPE 1
+CATALOG_FORMAT=3
+AMREPO=${AMREPO-}
+export AMREPO
 set -u
 APP=inflowave
 SITE="chenqi92/inflowave"
 version0=$(cat "/opt/$APP/version")
-version=$(curl -Ls https://api.github.com/repos/chenqi92/inflowave/releases | sed 's/[()",{} ]/\n/g' | grep -oi "https.*download.*" | grep -vi "i386\|i686\|armhf\|aarch64\|arm64\|armv7l" | grep -i "appimage$" | head -1)
+version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/inflowave --url "$@") || exit 1
 [ -n "$version" ] || { echo "Error getting link"; exit 1; }
-if command -v appimageupdatetool >/dev/null 2>&1; then
-	cd "/opt/$APP" || exit 1
-	appimageupdatetool -Or ./"$APP" && chmod a+x ./"$APP" && echo "$version" > ./version && exit 0
-fi
 if [ "$version" != "$version0" ]; then
 	mkdir "/opt/$APP/tmp" && cd "/opt/$APP/tmp" || exit 1
 	notify-send "A new version of $APP is available, please wait"

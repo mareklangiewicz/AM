@@ -1,13 +1,17 @@
 #!/bin/sh
 # AM INSTALL SCRIPT VERSION 3.5
 # AM-CATALOG-RECIPE 1
+# AM-RECIPE-DECLARATION 1
 set -eu
 APP=twetter
-CATALOG_ALIAS="https://api.github.com/repos/NiewidzialnyCzlowiek/pubsub-webapp/releases"
-
-select_asset() {
-	sed 's/[()",{} ]/\n/g' | grep -oi "https.*64.*mage$" | grep -vi "i386\|i686\|aarch64\|arm64\|armv7l" | head -1
-}
+CATALOG_ALIAS=https://api.github.com/repos/NiewidzialnyCzlowiek/pubsub-webapp/releases
+CATALOG_FORMAT=3
+CATALOG_RECIPE=x86_64/twetter
+CATALOG_REPOSITORY_ID=155561509
+CATALOG_REPOSITORY=NiewidzialnyCzlowiek/Twetter
+CATALOG_CHANNEL=any
+CATALOG_ASSET_PATTERN='^.*$'
+CATALOG_URL_RULES='[{"pattern":"https.*64.*mage$","ignore_case":true,"exclude":false},{"pattern":"i386|i686|aarch64|arm64|armv7l","ignore_case":true,"exclude":true}]'
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

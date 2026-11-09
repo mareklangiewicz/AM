@@ -1,13 +1,17 @@
 #!/bin/sh
 # AM INSTALL SCRIPT VERSION 3.5
 # AM-CATALOG-RECIPE 1
+# AM-RECIPE-DECLARATION 1
 set -eu
 APP=skyport
-CATALOG_ALIAS="https://api.github.com/repos/starsphere-1024/skyport/releases"
-
-select_asset() {
-	sed 's/[()",{} ]/\n/g' | grep -oi "https.*download.*mage$" |  grep -i "aarch64\|arm64" | head -1
-}
+CATALOG_ALIAS=https://api.github.com/repos/starsphere-1024/skyport/releases
+CATALOG_FORMAT=3
+CATALOG_RECIPE=aarch64/skyport
+CATALOG_REPOSITORY_ID=1060199867
+CATALOG_REPOSITORY=StarSphere-1024/SkyPort
+CATALOG_CHANNEL=any
+CATALOG_ASSET_PATTERN='^.*$'
+CATALOG_URL_RULES='[{"pattern":"https.*download.*mage$","ignore_case":true,"exclude":false},{"pattern":"aarch64|arm64","ignore_case":true,"exclude":false}]'
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

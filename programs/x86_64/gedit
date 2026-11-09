@@ -1,4 +1,8 @@
 #!/bin/sh
+# AM-CATALOG-RECIPE 1
+CATALOG_FORMAT=3
+AMREPO=${AMREPO-}
+export AMREPO
 
 # AM INSTALL SCRIPT VERSION 3.5
 set -u
@@ -33,7 +37,7 @@ elif [ -z "$SITE1" ] || echo "$response" | grep -q "^2"; then
 fi
 [ -z "$RELEASE" ] && exit 0
 
-version=$(curl -Ls https://api.github.com/repos/"$RELEASE"/releases | sed 's/[()",{} ]/\n/g' | grep -io 'https.*x86_64.*mage$' | grep -i "$APP" | head -1)
+version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/gedit --source-repository "$RELEASE" --url "$@") || exit 1
 if [ -z "$version" ]; then
 	printf "\n 💀 ERROR: it seems that upstream removed %b, please retry\n" "$RELEASE" && exit 1
 else
@@ -52,16 +56,16 @@ ln -s "/opt/$APP/$APP" "/usr/local/bin/$APP"
 # SCRIPT TO UPDATE THE PROGRAM
 cat >> ./AM-updater << 'EOF'
 #!/bin/sh
+# AM-CATALOG-RECIPE 1
+CATALOG_FORMAT=3
+AMREPO=${AMREPO-}
+export AMREPO
 set -u
 APP=gedit
 SITE="REPLACETHIS"
 version0=$(cat "/opt/$APP/version")
-version=$(curl -Ls https://api.github.com/repos/REPLACETHIS/releases | sed 's/[()",{} ]/\n/g' | grep -io 'https.*x86_64.*mage$' | grep -i "$APP" | head -1)
+version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/gedit --source-repository REPLACETHIS --url "$@") || exit 1
 [ -n "$version" ] || { echo "Error getting link"; exit 1; }
-if command -v appimageupdatetool >/dev/null 2>&1; then
-	cd "/opt/$APP" || exit 1
-	appimageupdatetool -Or ./"$APP" && chmod a+x ./"$APP" && echo "$version" > ./version && exit 0
-fi
 if [ "$version" != "$version0" ]; then
 	mkdir "/opt/$APP/tmp" && cd "/opt/$APP/tmp" || exit 1
 	notify-send "A new version of $APP is available, please wait"

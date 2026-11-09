@@ -1,4 +1,8 @@
 #!/bin/sh
+# AM-CATALOG-RECIPE 1
+CATALOG_FORMAT=3
+AMREPO=${AMREPO-}
+export AMREPO
 
 # AM INSTALL SCRIPT VERSION 3.6
 set -u
@@ -41,11 +45,11 @@ fi
 
 case "$RELEASE" in
 	"allkern/iris")
-	version=$(curl -Ls https://api.github.com/repos/allkern/iris/releases | sed 's/[()",{} ]/\n/g' | grep -oi "https.*" | grep -vi "i386\|i686\|armhf\|aarch64\|arm64\|armv7l" | grep -i "download.*linux.*mage" | head -1)
+	version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/iris --url "$@") || exit 1
 	wget "$version" || exit 1
 	;;
 	*)
-	version=$(curl -Ls https://api.github.com/repos/pkgforge-dev/Iris-AppImage-Enhanced/releases/latest | sed 's/[()",{} ]/\n/g' | grep -oi "https.*mage$" | grep -vi "i386\|i686\|aarch64\|arm64\|armv7l" | head -1)
+	version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/iris.select-2 --url "$@") || exit 1
 	wget "$version" || exit 1
 	;;
 esac
@@ -68,23 +72,23 @@ ln -s "/opt/$APP/$APP" "/usr/local/bin/$APP"
 # SCRIPT TO UPDATE THE PROGRAM
 cat >> ./AM-updater << 'EOF'
 #!/bin/sh
+# AM-CATALOG-RECIPE 1
+CATALOG_FORMAT=3
+AMREPO=${AMREPO-}
+export AMREPO
 set -u
 APP=iris
 SITE="REPLACETHIS"
 version0=$(cat "/opt/$APP/version")
 case "$SITE" in
 	"allkern/iris")
-	version=$(curl -Ls https://api.github.com/repos/allkern/iris/releases | sed 's/[()",{} ]/\n/g' | grep -oi "https.*" | grep -vi "i386\|i686\|armhf\|aarch64\|arm64\|armv7l" | grep -i "download.*linux.*mage" | head -1)
+	version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/iris --url "$@") || exit 1
 	;;
 	*)
-	version=$(curl -Ls https://api.github.com/repos/pkgforge-dev/Iris-AppImage-Enhanced/releases/latest | sed 's/[()",{} ]/\n/g' | grep -oi "https.*mage$" | grep -vi "i386\|i686\|aarch64\|arm64\|armv7l" | head -1)
+	version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/iris.select-2 --url "$@") || exit 1
 	;;
 esac
 [ -n "$version" ] || { echo "Error getting link"; exit 1; }
-if command -v appimageupdatetool >/dev/null 2>&1; then
-	cd "/opt/$APP" || exit 1
-	appimageupdatetool -Or ./"$APP" && chmod a+x ./"$APP" && echo "$version" > ./version && exit 0
-fi
 if [ "$version" != "$version0" ]; then
 	mkdir "/opt/$APP/tmp" && cd "/opt/$APP/tmp" || exit 1
 	notify-send "A new version of $APP is available, please wait"

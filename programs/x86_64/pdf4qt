@@ -1,13 +1,17 @@
 #!/bin/sh
 # AM INSTALL SCRIPT VERSION 3.5
 # AM-CATALOG-RECIPE 1
+# AM-RECIPE-DECLARATION 1
 set -eu
 APP=pdf4qt
-CATALOG_ALIAS="https://api.github.com/repos/JakubMelka/PDF4QT/releases"
-
-select_asset() {
-	sed 's/[()",{} ]/\n/g' | grep -oi "https.*$APP.*x86_64.*mage$" | head -1
-}
+CATALOG_ALIAS=https://api.github.com/repos/JakubMelka/PDF4QT/releases
+CATALOG_FORMAT=3
+CATALOG_RECIPE=x86_64/pdf4qt
+CATALOG_REPOSITORY_ID=194901823
+CATALOG_REPOSITORY=JakubMelka/PDF4QT
+CATALOG_CHANNEL=any
+CATALOG_ASSET_PATTERN='^.*$'
+CATALOG_URL_RULES='[{"pattern":"https.*$APP.*x86_64.*mage$","ignore_case":true,"exclude":false}]'
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

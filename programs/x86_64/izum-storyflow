@@ -1,13 +1,17 @@
 #!/bin/sh
 # AM INSTALL SCRIPT VERSION 3.5
 # AM-CATALOG-RECIPE 1
+# AM-RECIPE-DECLARATION 1
 set -eu
 APP=izum-storyflow
-CATALOG_ALIAS="https://api.github.com/repos/izum-vinipuhov/izum-storyflow/releases"
-
-select_asset() {
-	sed 's/[()",{} ]/\n/g' | grep -oi "https.*download.*mage$" | grep -vi "i386\|i686\|armhf\|aarch64\|arm64\|armv7l" | head -1
-}
+CATALOG_ALIAS=https://api.github.com/repos/izum-vinipuhov/izum-storyflow/releases
+CATALOG_FORMAT=3
+CATALOG_RECIPE=x86_64/izum-storyflow
+CATALOG_REPOSITORY_ID=1338878533
+CATALOG_REPOSITORY=izum-vinipuhov/Izum-StoryFlow
+CATALOG_CHANNEL=any
+CATALOG_ASSET_PATTERN='^.*$'
+CATALOG_URL_RULES='[{"pattern":"https.*download.*mage$","ignore_case":true,"exclude":false},{"pattern":"i386|i686|armhf|aarch64|arm64|armv7l","ignore_case":true,"exclude":true}]'
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

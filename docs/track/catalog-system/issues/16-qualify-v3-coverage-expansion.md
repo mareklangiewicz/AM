@@ -44,3 +44,8 @@ operating rules may be adjusted if needed. Use one v3 catalog for verified sourc
 with quota-bounded acquisition, rather than requiring further freshness/capacity
 optimization before coverage can proceed. Do not claim the older 12-hour/annual
 capacity targets have thereby been measured.
+
+Marek then explicitly chose to extend v3 for non-release sources. Preserve Git
+reference/file observations as their own facts rather than inventing release or
+asset IDs. [Local release-backed bulk checkpoint](../github-migration-16.md)
+records the initial applied scope and portable identity/recipe evidence.

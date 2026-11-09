@@ -1,4 +1,8 @@
 #!/bin/sh
+# AM-CATALOG-RECIPE 1
+CATALOG_FORMAT=3
+AMREPO=${AMREPO-}
+export AMREPO
 
 # AM INSTALL SCRIPT VERSION 3.5
 set -u
@@ -12,7 +16,7 @@ printf "#!/bin/sh\nset -e\nrm -f /usr/local/bin/$APP /usr/local/bin/$APP-lua /us
 chmod a+x ../remove || exit 1
 
 # DOWNLOAD AND PREPARE THE APP, $version is also used for updates
-version=$(curl -Ls https://api.github.com/repos/jgm/pandoc/releases | sed 's/[()",{} ]/\n/g' | grep -oi "https.*download.*" | grep -vi "i386\|i686\|armhf\|aarch64\|arm64\|armv7l" | grep -i "linux.*tar" | head -1)
+version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/pandoc --url "$@") || exit 1
 wget "$version" || exit 1
 [ -e ./*7z ] && 7z x ./*7z && rm -f ./*7z
 [ -e ./*tar.* ] && tar fx ./*tar.* && rm -f ./*tar.*
@@ -31,11 +35,15 @@ ln -s "/opt/$APP/bin/$APP-server" "/usr/local/bin/$APP-server"
 # SCRIPT TO UPDATE THE PROGRAM
 cat >> ./AM-updater << 'EOF'
 #!/bin/sh
+# AM-CATALOG-RECIPE 1
+CATALOG_FORMAT=3
+AMREPO=${AMREPO-}
+export AMREPO
 set -u
 APP=pandoc
 SITE="jgm/pandoc"
 version0=$(cat "/opt/$APP/version")
-version=$(curl -Ls https://api.github.com/repos/jgm/pandoc/releases | sed 's/[()",{} ]/\n/g' | grep -oi "https.*download.*" | grep -vi "i386\|i686\|armhf\|aarch64\|arm64\|armv7l" | grep -i "linux.*tar" | head -1)
+version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/pandoc --url "$@") || exit 1
 [ -n "$version" ] || { echo "Error getting link"; exit 1; }
 if [ "$version" != "$version0" ]; then
 	mkdir "/opt/$APP/tmp" && cd "/opt/$APP/tmp" || exit 1

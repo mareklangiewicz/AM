@@ -1,13 +1,17 @@
 #!/bin/sh
 # AM INSTALL SCRIPT VERSION 3.5
 # AM-CATALOG-RECIPE 1
+# AM-RECIPE-DECLARATION 1
 set -eu
 APP=isle-portable
-CATALOG_ALIAS="https://api.github.com/repos/pkgforge-dev/isle-portable-AppImage-Enhanced/releases"
-
-select_asset() {
-	sed 's/[()",{} ]/\n/g' | grep -io 'https.*x86_64.*mage$' | head -1
-}
+CATALOG_ALIAS=https://api.github.com/repos/pkgforge-dev/isle-portable-AppImage-Enhanced/releases
+CATALOG_FORMAT=3
+CATALOG_RECIPE=x86_64/isle-portable
+CATALOG_REPOSITORY_ID=1143828172
+CATALOG_REPOSITORY=pkgforge-dev/isle-portable-AppImage-Enhanced
+CATALOG_CHANNEL=any
+CATALOG_ASSET_PATTERN='^.*$'
+CATALOG_URL_RULES='[{"pattern":"https.*x86_64.*mage$","ignore_case":true,"exclude":false}]'
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

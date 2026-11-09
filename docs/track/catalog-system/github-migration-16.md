@@ -1,0 +1,67 @@
+# Full GitHub migration — local checkpoint
+
+November 9, 2026. Marek reopened full GitHub-backed migration, prioritizing one
+consistent v3 catalog over further freshness optimization. He subsequently
+requested extending v3 for non-release GitHub observations too. Work remains
+claimed; this checkpoint is not a complete migration or a remote rollout claim.
+
+The initial recipe source is `90a9f01b09f8262b38710d01f7d2b7ee510af525`.
+Tools are committed at `8d77a4390`; all source writes below are local. No push,
+workflow dispatch, schedule repin, installed-host write or yadm operation occurred.
+
+## Applied release-backed bulk
+
+- One prepared enrollment: **8,607 app identities / 8,251 numeric sources**.
+  Existing collection names/identities and source paths are retained. Fifty-one
+  explicit aliases distinguish different repositories under one installed app
+  name; installed APP names are unchanged. Seven bindings have an empty release
+  probe, which is not usable release/asset coverage. A currently unavailable
+  previously enrolled source retains its known identity and prior facts.
+- **986** old shared wrappers become v3 declarations, preserving their literal
+  positive/negative URL predicates and existing shared installation lifecycle.
+- **8,770** long recipes retain their package/desktop bodies while release
+  selection calls become native v3 lookups. Only the exact legacy native-update
+  bypass is removed, so the catalog-selected asset controls acquisition.
+- **10,285 / 10,716** recipe files now carry v3 bindings. There are **38** custom
+  release-backed cases still to adapt and **49** unavailable-source recipe
+  bindings without a current verifiable public identity. The other 344 files
+  lack a release-source attribution; most are non-GitHub apps. JuNest, trans and
+  watched require the separately authorized non-release extension. Exodus's
+  incidental AUR dependency reference is not a GitHub release source for Exodus.
+
+These are source/identity counts, not freshly collected catalog coverage.
+Remote production still uses the earlier 500-source enrollment until a source
+push is authorized. Expanded sources enter the public app map only when a source
+document exists. The 9,000-source allowance does not increase per-run request,
+transfer or elapsed budgets, or claim annual history capacity/12-hour refresh.
+
+## Portable evidence
+
+[Identity archive](github-migration-identities-16.tar.gz) contains the original and
+attributed scans, exact enrollment/bindings and every successful checkpointed
+GraphQL response/report. SHA-256:
+`09cba9896fea97e61151c97873b96aec83f33e9b2706e364c07c07911ef40f5e`.
+
+[Recipe receipt](github-migration-recipes-16.json.gz) records every converted
+path/before/after hash, original selection expressions, policies, aliases,
+unavailable bindings and remaining exceptions. SHA-256:
+`6dd60e5511407d53301c5c368ade796e3317c07b35352cd2870d9fe9698d13d0`.
+Before-images are available at the pinned source above. The long recipe policy
+registry separately binds each current source hash; compilation refuses drift.
+
+## Checks and operating boundary
+
+Every changed long recipe passes shell syntax and the complete policy registry
+compiles. Fifteen focused bulk tests include actual manager installation with an
+authored inert extractor, persisted helper/source bindings, standalone updater,
+stale refusal with installed-file preservation, source-variant dispatch and
+unknown-source refusal. Eighteen contract tests, forty-four reconstruction tests,
+eleven existing manager tests, five existing AppImage groups (including all saved
+policies/installations), seven selection tests and three declaration groups pass
+at the tooling checkpoint. Later contract/selector changes require affected checks.
+No real app payloads were downloaded or executed for this migration.
+
+The future push package must deliberately set `CATALOG_SCHEDULE_REVISION` to the
+new published main tip, preserving the schedule gate. Re-read remote parents for
+publication; do not reuse old expected heads. Keep failed-source and non-release
+work explicit, rather than silently claiming complete fresh or usable coverage.

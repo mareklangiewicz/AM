@@ -1,13 +1,17 @@
 #!/bin/sh
 # AM INSTALL SCRIPT VERSION 3.5
 # AM-CATALOG-RECIPE 1
+# AM-RECIPE-DECLARATION 1
 set -eu
 APP=ferrumpix
-CATALOG_ALIAS="https://api.github.com/repos/Bitpainter75/FerrumPix/releases"
-
-select_asset() {
-	sed 's/[()",{} ]/\n/g' | grep -oi "https.*download.*mage$" | grep -vi "i386\|i686\|armhf\|aarch64\|arm64\|armv7l" | head -1
-}
+CATALOG_ALIAS=https://api.github.com/repos/Bitpainter75/FerrumPix/releases
+CATALOG_FORMAT=3
+CATALOG_RECIPE=x86_64/ferrumpix
+CATALOG_REPOSITORY_ID=1289448348
+CATALOG_REPOSITORY=Bitpainter75/FerrumPix
+CATALOG_CHANNEL=any
+CATALOG_ASSET_PATTERN='^.*$'
+CATALOG_URL_RULES='[{"pattern":"https.*download.*mage$","ignore_case":true,"exclude":false},{"pattern":"i386|i686|armhf|aarch64|arm64|armv7l","ignore_case":true,"exclude":true}]'
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

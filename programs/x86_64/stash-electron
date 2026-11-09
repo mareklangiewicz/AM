@@ -1,13 +1,17 @@
 #!/bin/sh
 # AM INSTALL SCRIPT VERSION 3.5
 # AM-CATALOG-RECIPE 1
+# AM-RECIPE-DECLARATION 1
 set -eu
 APP=stash-electron
-CATALOG_ALIAS="https://api.github.com/repos/Doccrazy/stash-electron/releases"
-
-select_asset() {
-	sed 's/[()",{} ]/\n/g' | grep -oi "https.*mage$" | grep -vi "i386\|i686\|aarch64\|arm64\|armv7l" | head -1
-}
+CATALOG_ALIAS=https://api.github.com/repos/Doccrazy/stash-electron/releases
+CATALOG_FORMAT=3
+CATALOG_RECIPE=x86_64/stash-electron
+CATALOG_REPOSITORY_ID=114991309
+CATALOG_REPOSITORY=Doccrazy/stash-electron
+CATALOG_CHANNEL=any
+CATALOG_ASSET_PATTERN='^.*$'
+CATALOG_URL_RULES='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"i386|i686|aarch64|arm64|armv7l","ignore_case":true,"exclude":true}]'
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

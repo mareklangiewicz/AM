@@ -1,13 +1,17 @@
 #!/bin/sh
 # AM INSTALL SCRIPT VERSION 3.5
 # AM-CATALOG-RECIPE 1
+# AM-RECIPE-DECLARATION 1
 set -eu
 APP=freac
-CATALOG_ALIAS="https://api.github.com/repos/enzo1982/freac/releases/latest"
-
-select_asset() {
-	sed 's/[()",{} ]/\n/g' | grep -oi "https.*mage$" | grep -i "aarch64" | head -1
-}
+CATALOG_ALIAS=https://api.github.com/repos/enzo1982/freac/releases/latest
+CATALOG_FORMAT=3
+CATALOG_RECIPE=aarch64/freac
+CATALOG_REPOSITORY_ID=100884109
+CATALOG_REPOSITORY=enzo1982/freac
+CATALOG_CHANNEL=stable
+CATALOG_ASSET_PATTERN='^.*$'
+CATALOG_URL_RULES='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"aarch64","ignore_case":true,"exclude":false}]'
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

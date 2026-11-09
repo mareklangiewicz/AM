@@ -1,5 +1,15 @@
 # Understandable catalog system and educational browser
 
+## Full GitHub migration — reopened November 9, 2026
+
+Marek now requests migration of all GitHub-backed apps into one consistent v3
+catalog, and explicitly includes non-release GitHub observations. Freshness is
+not an optimization target regardless of cost; operating rules may be adjusted
+when needed. [Ticket 16](issues/16-qualify-v3-coverage-expansion.md) is claimed.
+The [local bulk checkpoint](github-migration-16.md) prepares 8,607 identities /
+8,251 sources and applies 9,756 recipe conversions; custom/non-release work and
+publication remain unfinished. This supersedes the former coverage deferral.
+
 ## Direct v3 cutover — accepted November 9, 2026
 
 Marek explicitly superseded the temporary dual-output migration plan: he is the
@@ -156,7 +166,7 @@ approval boundaries.
 | [13 resolved](issues/13-integrate-main-owned-catalog-browser.md) | 11, 12 | Main-owned A/B/C browser and real-browser checks; device/comprehension deferred and timing misses retained by Marek's explicit acceptance. |
 | [14 resolved](issues/14-verify-scale-compatibility-and-rollback.md) | 11, 12, 13 | Current-scope direct-v3 migration checks; prior expanded evidence retained with limits. |
 | [15 prepared](issues/15-prepare-reviewed-catalog-rollout-package.md) | 14 | [Exact myxps cutover](myxps-cutover-15.md), awaiting specific operational authorization. |
-| [16 deferred](issues/16-qualify-v3-coverage-expansion.md) | Current-scope cutover | V3-only expansion/capacity qualification; unclaimed, no enrollment change. |
+| [16 claimed](issues/16-qualify-v3-coverage-expansion.md) | Current-scope cutover | Full GitHub v3 migration, including explicitly requested non-release sources; [local checkpoint](github-migration-16.md). |
 
 Latest implementation evidence, November 8: Chromium desktop/narrow and Firefox
 checks pass; physical-device/comprehension limits remain with 13. Independent
