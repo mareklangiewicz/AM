@@ -116,9 +116,9 @@ function project_facts( p,r,q,k,n,position,prefix,found,observed,published) {
         prefix=substr(p,length("/git_refs/")+1) "\t" encoded[p "/name"] "\t" encoded[p "/commit"] "\t" encoded[p "/observed_at"] "\t" position "\t"
         found=0
         for(q in node_type) if(node_type[q]=="git_file" && parent_path(parent_path(q))==p) {
-            found=1;emit(prefix encoded[q "/path"] "\t" encoded[q "/blob"] "\t" encoded[q "/content"] "\n")
+            found=1;emit(prefix encoded[q "/path"] "\t" encoded[q "/blob"] "\t" encoded[q "/content"] "\t" encoded[q "/observed_at"] "\n")
         }
-        if(!found) emit(prefix "\"\"\t\"\"\t\"\"\n")
+        if(!found) emit(prefix "\"\"\t\"\"\t\"\"\t\"\"\n")
     }
 }
 function semantics( p,r,a,b,k,t,n,seen,stable,count_names,stable_path,stable_time,other_time,stable_id,other_id,parts,url_fact,observed,published) {

@@ -78,6 +78,17 @@ class GitConsumers(unittest.TestCase):
             self.assertEqual(result.stdout,'');self.assertIn('fresh_non_asset_observation_required',result.stderr)
         self.assertFalse((self.path/'downloads').exists())
 
+    def test_future_file_time_refuses_even_if_its_branch_was_observed_in_the_past(self):
+        self.prepare();tree=self.snapshot()
+        doc=c.decode(tree['repositories/junest.yaml'])
+        doc['collected_at']='2026-11-09T12:01:00Z'
+        doc['git_refs'][key('refs/heads/master')]['files'][key('VERSION')]['observed_at']='2026-11-09T12:00:30Z'
+        tree['repositories/junest.yaml']=c.encode(doc)
+        self.pin=publish_tree(self.repo,tree,self.pin)
+        result=self.read('junest','--git-snapshot')
+        self.assertNotEqual(result.returncode,0);self.assertEqual(result.stdout,'')
+        self.assertIn('future_file_observation',result.stderr)
+
     def test_native_git_and_release_projections_across_awk_implementations(self):
         self.prepare();path=self.path/'source.yaml';path.write_bytes(self.tree['repositories/junest.yaml'])
         for command in (['mawk'],['gawk'],['busybox','awk']):
@@ -90,7 +101,7 @@ class GitConsumers(unittest.TestCase):
                 else:
                     fields=result.stdout.rstrip('\n').split('\t')
                     self.assertEqual(fields[1:4],['"refs/heads/master"','"'+'b'*40+'"','"'+AT+'"'])
-                    self.assertEqual(fields[5:],[ '"VERSION"','"'+'c'*40+'"','"1.2\\n"'])
+                    self.assertEqual(fields[5:],[ '"VERSION"','"'+'c'*40+'"','"1.2\\n"','"'+AT+'"'])
 
 
 if __name__=='__main__':unittest.main()

@@ -87256,6 +87256,7 @@ BEGIN {
         if(better) {
             chosen=1;best_position=$5+0;best_tag=git_tag;best_commit=git_commit
             best_content=decode($8);best_observed=observed
+            if(declaration_selection=="git-file") best_file_observed=decode($9)
         }
         next
     }
@@ -87310,6 +87311,7 @@ END {
     age=seconds(ENVIRON["AM_YAML_NOW"])-seconds(best_observed)
     token=ENVIRON["AM_YAML_PIN"] ":" ENVIRON["AM_YAML_REPOSITORY"] ":" best_release ":" best_asset ":" best_observed
     if(age<0) refuse("future_release_observation")
+    if(declaration_selection=="git-file" && seconds(best_file_observed)>seconds(ENVIRON["AM_YAML_NOW"])) refuse("future_file_observation")
     if(declaration_selection!="asset" && (ENVIRON["AM_YAML_ACCEPT"]!="" || age>172800)) refuse("fresh_non_asset_observation_required")
     if(age>172800 && ENVIRON["AM_YAML_ACCEPT"]!=token) {
         if(ENVIRON["AM_YAML_STALE_OPTION"]=="release")

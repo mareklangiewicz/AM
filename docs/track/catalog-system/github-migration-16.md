@@ -205,3 +205,24 @@ All 153 recipes changed in this continuation and their 104 quoted updater bodies
 pass shell syntax. Fifteen browser checks pass after the larger-file reader
 change. The broader runtime/collector validation and final rollout package are
 being completed; this source checkpoint is not permission to push or publish.
+
+## Validation follow-up
+
+[Saved live file acquisition](git-file-acquisition-16.tar.gz) includes AnythingLLM
+and Cursor responses, receipt times/hashes and an offline replay at clean source
+`d75927434859a2100c161f728ad8a60bb5c2a590`. The original six-request / 1,344,696-byte
+acquisition ran in the in-flight worktree; its report names that base honestly.
+Both sources replay successfully without network. Release-tag and exact file
+outputs agree under all three awks; the saved files are 6,759 and 607,223 bytes.
+
+The actual shell helper also reads both saved files byte-for-byte under mawk,
+gawk and BusyBox awk, with no payload download. A follow-up extends the Git
+projection with each file's own time and refuses a future file observation even
+when the branch observation is already in the past. Twenty focused Git/custom/
+file consumer groups pass, including that temporal regression.
+
+The broader validation exposed and fixed optional metadata decoding for ordinary
+eight-column asset rows. All 23 affected bulk/declaration/policy/custom groups
+then pass. The policy compilation fixture now preserves all architectures and
+the complete source-bound registry. All 15 browser transport groups and all 14
+desktop/narrow Chromium smoke checks pass.

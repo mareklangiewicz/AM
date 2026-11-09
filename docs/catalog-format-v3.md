@@ -183,10 +183,11 @@ Git observations have their own times; collecting releases or publishing a new
 snapshot does not make old Git observations fresh.
 
 The native `git_facts` projection emits tab-separated quoted reference name,
-commit, observation time, tag position and optional file path/blob/content after
+commit, observation time, tag position and optional file path/blob/content/observation time after
 the reference key. `release_facts` emits release metadata even without assets.
 `catalog-yaml.am` policies declare asset, release, Git tag, branch or file
-selection. Non-asset selections require a fresh observation and explicit output
+selection. File selection validates both branch and file times, refusing a future
+file observation even when its branch was observed earlier. Non-asset selections require a fresh observation and explicit output
 such as `--tag`, `--published-at`, `--updated-at`, `--release-url`,
 `--release-id`, `--source-tar-url`, `--source-zip-url`, `--git-commit`, `--git-file`
 or `--git-snapshot`.
