@@ -93,7 +93,8 @@ def collect(args):
     recorded={row['repository_id'] for row in report}
     for row in acquisition_report:
         if row['repository_id'] not in recorded:
-            reason={'invalid_response':'source_validation','transport':'transport','collection_limit':'byte_budget'}.get(row.get('reason'),'unknown')
+            reason={'invalid_response':'source_validation','transport':'transport','collection_limit':'byte_budget',
+                    **{name:name for name in ('request_budget','byte_budget','time_budget','quota')}}.get(row.get('reason'),'unknown')
             if row.get('http_status')==401: reason='authentication'
             elif row.get('http_status') in (403,429): reason='quota'
             report.append(dict(repository_id=row['repository_id'],status='failed',reason=reason))

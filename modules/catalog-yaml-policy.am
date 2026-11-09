@@ -85686,9 +85686,21 @@ function declaration_recipe(recipe) {
     declaration_tool_suffix=recipes_tool_suffix[recipe]
     declaration_fresh_only=recipes_fresh_only[recipe]
     declaration_url_group=recipes_url_group[recipe]
+    declaration_selection=recipes_selection[recipe]
+    if(declaration_selection=="") declaration_selection="asset"
+    declaration_tag_pattern=recipes_tag_pattern[recipe]
+    declaration_tag_exclude=recipes_tag_exclude[recipe]
+    declaration_git_ref=recipes_git_ref[recipe]
+    declaration_git_file=recipes_git_file[recipe]
     return 1
 }
 function declaration_url_eligible(url, group, i, value, matches) {
+    if(ENVIRON["AM_YAML_URL_FILTER"]!="") {
+        matches=(tolower(url) ~ tolower(ENVIRON["AM_YAML_URL_PATTERN"]))
+        if(matches==(ENVIRON["AM_YAML_URL_FILTER"]=="vi")) return 0
+    }
+    if(ENVIRON["AM_YAML_URL_CONTAINS"]!="" && index(url,ENVIRON["AM_YAML_URL_CONTAINS"])==0) return 0
+    if(ENVIRON["AM_YAML_SELECTED_URL"]!="" && url!=ENVIRON["AM_YAML_SELECTED_URL"]) return 0
     group=declaration_url_group
     for(i=1;i<=url_rule_count[group];i++) {
         value=(url_rule_ignore_case[group,i] ? tolower(url) : url)
@@ -85719,6 +85731,10 @@ function declaration_eligible(name, tag, preview, url, tool, lower) {
     }
     return name ~ declaration_pattern
 }
+function tag_eligible(tag) {
+    return (declaration_tag_pattern=="" || tag ~ declaration_tag_pattern) &&
+        (declaration_tag_exclude=="" || tag !~ declaration_tag_exclude)
+}
 BEGIN {
     recipe=ENVIRON["AM_YAML_RECIPE"]
     if(ENVIRON["AM_YAML_SOURCE_REPOSITORY"]!="") {
@@ -85728,6 +85744,7 @@ BEGIN {
     }
     split(recipe,r,"/"); arch=r[1]; app=r[2]
     declared=declaration_recipe(recipe)
+    if(!declared) declaration_selection="asset"
     utility=am_utils_recipe(recipe)
     image=appimage_recipe(recipe)
     known=(declared || utility || image || recipe=="x86_64/obsidian" || recipe=="x86_64/nvim" ||
@@ -85738,6 +85755,7 @@ BEGIN {
     if(check_only) {
         if(ENVIRON["AM_YAML_APP_NAME"]=="1")
             print (recipes_catalog_app[recipe]!="" ? recipes_catalog_app[recipe] : app)
+        if(ENVIRON["AM_YAML_POLICY_INFO"]=="1") print declaration_selection
         exit
     }
     if(!timestamp(ENVIRON["AM_YAML_NOW"])) refuse("utc_now_required")
@@ -85748,9 +85766,30 @@ BEGIN {
 }
 
 {
+    if(declaration_selection ~ /^git-/) {
+        git_name=decode($2);git_commit=decode($3);observed=decode($4)
+        if(declaration_selection=="git-tag") {
+            if(index(git_name,"refs/tags/")!=1) next
+            git_tag=substr(git_name,11);if(!tag_eligible(git_tag)) next
+            better=(!chosen || $5+0<best_position)
+        } else {
+            if(git_name!=declaration_git_ref) next
+            if(declaration_selection=="git-file" && decode($6)!=declaration_git_file) next
+            git_tag="";better=!chosen
+        }
+        if(better) {
+            chosen=1;best_position=$5+0;best_tag=git_tag;best_commit=git_commit
+            best_content=decode($8);best_observed=observed
+        }
+        next
+    }
     release_id=$1; asset_id=$2; observed=decode($3); published=decode($4)
     tag=decode($5); name=decode($6); url=decode($7)
-    if(declared) {
+    if(declaration_selection=="release") {
+        eligible=tag_eligible(tag)
+        if(declaration_channel=="stable" && ($8!="false" || tag=="nightly")) eligible=0
+        if(declaration_channel=="nightly" && tag!="nightly") eligible=0
+    } else if(declared) {
         eligible=declaration_eligible(name,tag,$8,url)
     } else if(image) {
         eligible=appimage_eligible(url)
@@ -85776,26 +85815,36 @@ BEGIN {
         else if(tag=="nightly" || index(url,"nightly")!=0) eligible=0
     }
     if(!eligible) next
+    if(ENVIRON["AM_YAML_LIST_URLS"]=="1") { listed_urls[url]=1;next }
     better=(!chosen || published>best_published || (published==best_published && less(best_release,release_id)))
     if(chosen && "x" release_id=="x" best_release)
         better=("x" name<"x" best_name || ("x" name=="x" best_name && less(asset_id,best_asset)))
     if(better) {
         chosen=1; best_release=release_id; best_asset=asset_id; best_published=published
-        best_name=name; best_url=url; best_observed=observed
+        best_name=name; best_url=url; best_observed=observed;best_tag=tag
     }
 }
 END {
     if(failed) exit 3
     if(check_only) exit 0
+    if(ENVIRON["AM_YAML_LIST_URLS"]=="1") { for(url in listed_urls) print url;exit 0 }
     if(!chosen) refuse("no_matching_asset")
     age=seconds(ENVIRON["AM_YAML_NOW"])-seconds(best_observed)
     token=ENVIRON["AM_YAML_PIN"] ":" ENVIRON["AM_YAML_REPOSITORY"] ":" best_release ":" best_asset ":" best_observed
     if(age<0) refuse("future_release_observation")
+    if(declaration_selection!="asset" && (ENVIRON["AM_YAML_ACCEPT"]!="" || age>172800)) refuse("fresh_non_asset_observation_required")
     if(age>172800 && ENVIRON["AM_YAML_ACCEPT"]!=token) {
         if(ENVIRON["AM_YAML_STALE_OPTION"]=="release")
             refuse("stale; retry with --commit " ENVIRON["AM_YAML_PIN"] " --accept-stale-release " ENVIRON["AM_YAML_PIN"] " " ENVIRON["AM_YAML_REPOSITORY"] " " best_release " " best_asset " " best_observed)
         refuse("stale_release_acceptance_required " token)
     }
+    output=ENVIRON["AM_YAML_OUTPUT"]
+    if(output=="tag") { print best_tag;exit 0 }
+    if(output=="published-at") { if(best_published=="") refuse("publication_time_required");print best_published;exit 0 }
+    if(output=="asset-id") { print best_asset;exit 0 }
+    if(output=="git-commit") { print best_commit;exit 0 }
+    if(output=="git-file") { printf "%s",best_content;exit 0 }
+    if(output=="git-snapshot") { print best_commit;printf "%s",best_content;exit 0 }
     # Fixed line protocol: no eval or shell interpretation; URL has no whitespace.
     print ENVIRON["AM_YAML_PIN"]
     print ENVIRON["AM_YAML_REPOSITORY"]

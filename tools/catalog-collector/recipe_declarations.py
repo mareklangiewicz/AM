@@ -24,7 +24,9 @@ def url_policy_rows(root):
     rows=json.loads(path.read_text());result=[];seen=set()
     if not isinstance(rows,list):raise ValueError('URL policy registry')
     for row in rows:
-        if set(row)!={'recipe','source_recipe','source_sha256','repository_id','repository','channel','url_rules','catalog_app','dispatch_recipe','source_aliases'}:
+        required={'recipe','source_recipe','source_sha256','repository_id','repository','channel','url_rules','catalog_app','dispatch_recipe','source_aliases'}
+        optional={'selection','tag_pattern','tag_exclude','git_ref','git_file'}
+        if not required<=set(row) or set(row)-required-optional:
             raise ValueError('URL policy fields')
         for key in ('recipe','source_recipe','dispatch_recipe'):
             if not re.fullmatch(r'(x86_64|aarch64|i686|armv7l)/[a-z0-9][a-z0-9_.+-]*',row[key]):
@@ -38,6 +40,16 @@ def url_policy_rows(root):
                 not re.fullmatch(r'[a-z0-9][a-z0-9_.+-]{0,63}',row['catalog_app'])):
             raise ValueError('URL policy identity')
         seen.add(row['recipe']);validate_url_rules(row['url_rules'])
+        if row.get('selection','asset') not in ('asset','release','git-tag','git-branch','git-file'):
+            raise ValueError('selection kind')
+        for field in ('tag_pattern','tag_exclude','git_ref','git_file'):
+            if field in row and (not isinstance(row[field],str) or len(row[field].encode())>1024 or
+                    any(ord(c)<32 for c in row[field])):raise ValueError('selection literal')
+        if row.get('selection') in ('git-branch','git-file'):
+            from git_observations import valid_ref,valid_path
+            if not valid_ref(row.get('git_ref','')) or not row['git_ref'].startswith('refs/heads/'):
+                raise ValueError('branch selection')
+            if row['selection']=='git-file' and not valid_path(row.get('git_file','')):raise ValueError('file selection')
         if (not isinstance(row['source_aliases'],list) or not row['source_aliases'] or any(
                 not isinstance(alias,str) or not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+',alias)
                 for alias in row['source_aliases'])):

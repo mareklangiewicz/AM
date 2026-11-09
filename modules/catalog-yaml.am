@@ -8,12 +8,27 @@ fail() { printf 'AM YAML catalog: %s\n' "$*" >&2; exit 1; }
 AM_YAML_RECIPE=$1; shift
 app=${AM_YAML_RECIPE#*/}
 pin='' AM_YAML_ACCEPT='' AM_YAML_TOOL='' AM_YAML_INCLUDE_PUBLICATION='' AM_YAML_SOURCE_REPOSITORY='' url_only=false
+AM_YAML_OUTPUT='' AM_YAML_LIST_URLS='' AM_YAML_URL_FILTER='' AM_YAML_URL_PATTERN='' AM_YAML_URL_CONTAINS='' AM_YAML_SELECTED_URL=''
 hex() { [ "${#1}" -eq 40 ] && case $1 in *[!0-9a-f]*) return 1;; esac; }
 while [ "$#" -gt 0 ]; do
     case $1 in
         --tool) [ "$#" -ge 2 ] && [ -z "$AM_YAML_TOOL" ] || fail 'missing or repeated tool'; AM_YAML_TOOL=$2; shift 2 ;;
         --with-published-at) AM_YAML_INCLUDE_PUBLICATION=1; shift ;;
         --url) [ "$url_only" = false ] || fail 'repeated URL option'; url_only=true; shift ;;
+        --urls) [ -z "$AM_YAML_LIST_URLS" ] || fail 'repeated URL list'; AM_YAML_LIST_URLS=1; shift ;;
+        --tag|--published-at|--asset-id|--git-commit|--git-file|--git-snapshot)
+            [ -z "$AM_YAML_OUTPUT" ] || fail 'repeated output field'; AM_YAML_OUTPUT=${1#--}; shift ;;
+        --url-filter)
+            [ "$#" -ge 3 ] && [ -z "$AM_YAML_URL_FILTER" ] || fail 'missing or repeated URL filter'
+            case $2 in i|vi) ;; *) fail 'unsupported URL filter mode';; esac
+            [ "${#3}" -le 1024 ] || fail 'URL filter bound'
+            AM_YAML_URL_FILTER=$2 AM_YAML_URL_PATTERN=$3; shift 3 ;;
+        --url-contains)
+            [ "$#" -ge 2 ] && [ -z "$AM_YAML_URL_CONTAINS" ] || fail 'missing or repeated URL substring'
+            AM_YAML_URL_CONTAINS=$2; shift 2 ;;
+        --selected-url)
+            [ "$#" -ge 2 ] && [ -z "$AM_YAML_SELECTED_URL" ] || fail 'missing or repeated selected URL'
+            AM_YAML_SELECTED_URL=$2; shift 2 ;;
         --source-repository)
             [ "$#" -ge 2 ] && [ -z "$AM_YAML_SOURCE_REPOSITORY" ] || fail 'missing or repeated recipe source'
             AM_YAML_SOURCE_REPOSITORY=$2; shift 2 ;;
@@ -37,9 +52,19 @@ for module in catalog-contract-reader.am catalog-contract-parser.am catalog-cont
 done
 # Validate against trusted selection declarations/policies before HTTP.
 # Collection enrollment is a separate publication choice.
-app=$(AM_YAML_RECIPE=$AM_YAML_RECIPE AM_YAML_ACCEPT=$AM_YAML_ACCEPT AM_YAML_SOURCE_REPOSITORY=$AM_YAML_SOURCE_REPOSITORY AM_YAML_CHECK_RECIPE=1 AM_YAML_APP_NAME=1 \
+policy_info=$(AM_YAML_RECIPE=$AM_YAML_RECIPE AM_YAML_ACCEPT=$AM_YAML_ACCEPT AM_YAML_SOURCE_REPOSITORY=$AM_YAML_SOURCE_REPOSITORY AM_YAML_CHECK_RECIPE=1 AM_YAML_APP_NAME=1 AM_YAML_POLICY_INFO=1 \
     awk -f "$here/catalog-yaml-policy.am" </dev/null) || fail 'unsupported recipe policy'
+app=$(printf '%s\n' "$policy_info" | sed -n '1p')
+selection=$(printf '%s\n' "$policy_info" | sed -n '2p')
 printf '%s\n' "$app" | grep -Eq '^[a-z0-9][a-z0-9_.+-]{0,63}$' || fail 'invalid catalog app identity'
+case $selection:$AM_YAML_OUTPUT in
+    asset:|asset:tag|asset:published-at|asset:asset-id|release:tag|release:published-at|git-tag:tag|git-branch:git-commit|git-file:git-commit|git-file:git-file|git-file:git-snapshot) ;;
+    *) fail 'unsupported policy output field';;
+esac
+if [ "$selection" != asset ]; then
+    [ "$url_only" = false ] && [ -z "$AM_YAML_LIST_URLS$AM_YAML_URL_FILTER$AM_YAML_URL_CONTAINS$AM_YAML_SELECTED_URL" ] || fail 'asset options require an asset policy'
+fi
+[ "$url_only" = false ] || [ -z "$AM_YAML_OUTPUT$AM_YAML_LIST_URLS" ] || fail 'conflicting output options'
 # Fixed trial budgets shared with the source candidate. No optional consumer workers.
 AM_YAML_MAX_INPUT_BYTES=2097152 AM_YAML_MAX_OUTPUT_BYTES=2097152
 export AM_YAML_MAX_INPUT_BYTES AM_YAML_MAX_OUTPUT_BYTES
@@ -132,17 +157,20 @@ AM_YAML_REPOSITORY=$(sh "$reader" get "$file" repository_id) || fail 'invalid re
 case $AM_YAML_REPOSITORY in ''|*[!0-9]*) fail 'invalid repository ID';; esac
 [ "$(sh "$reader" get "$file" kind)" = repository ] || fail 'invalid source kind'
 [ "$(sh "$reader" get "$file" schema)" = "$expected_schema" ] || fail 'source schema mismatch'
-sh "$reader" asset_facts "$file" > "$scratch/facts" || fail 'invalid repository facts'
+case $selection in asset) operation=asset_facts;; release) operation=release_facts;; git-*) operation=git_facts;; esac
+sh "$reader" "$operation" "$file" > "$scratch/facts" || fail 'invalid repository facts'
 rm -f "$cache/failed"
 check_clock
 AM_YAML_PIN=$pin AM_YAML_STALE_OPTION=release
 export AM_YAML_STALE_OPTION
 export AM_YAML_RECIPE AM_YAML_ACCEPT AM_YAML_REPOSITORY AM_YAML_NOW AM_YAML_PIN AM_YAML_TOOL AM_YAML_INCLUDE_PUBLICATION AM_YAML_SOURCE_REPOSITORY
+export AM_YAML_OUTPUT AM_YAML_LIST_URLS AM_YAML_URL_FILTER AM_YAML_URL_PATTERN AM_YAML_URL_CONTAINS AM_YAML_SELECTED_URL
 awk -f "$here/catalog-yaml-policy.am" "$scratch/facts" > "$scratch/result" || exit 1
 check_clock
 # Recheck the same selected facts at the final clock before output.
 export AM_YAML_NOW
 awk -f "$here/catalog-yaml-policy.am" "$scratch/facts" > "$scratch/result" || exit 1
-if [ "$url_only" = true ]; then sed -n '6p' "$scratch/result"
+if [ "$AM_YAML_LIST_URLS" = 1 ]; then sort -u "$scratch/result"
+elif [ "$url_only" = true ]; then sed -n '6p' "$scratch/result"
 else cat "$scratch/result"
 fi

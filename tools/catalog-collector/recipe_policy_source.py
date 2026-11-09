@@ -23,6 +23,8 @@ def generate():
                       fresh_only=int(row['fresh_only']))
         for name, value in fields.items():
             lines.append('    recipes_'+name+'['+key+']='+json.dumps(value))
+        for name in ('selection','tag_pattern','tag_exclude','git_ref','git_file'):
+            if name in row:lines.append('    recipes_'+name+'['+key+']='+json.dumps(row[name]))
         if row['catalog_app']!=row['app']:
             lines.append('    recipes_catalog_app['+key+']='+json.dumps(row['catalog_app']))
         for alias in row.get('source_aliases',[]):

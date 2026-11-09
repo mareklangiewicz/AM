@@ -293,6 +293,111 @@
       ],
       "additionalProperties": false
     },
+    "git_file": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "blob": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+        },
+        "content": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "blob",
+        "observed_at",
+        "content"
+      ],
+      "additionalProperties": false
+    },
+    "git_files": {
+      "type": "object",
+      "patternProperties": {
+        "^[0-9a-f]{64}$": {
+          "$ref": "#/$defs/git_file"
+        }
+      },
+      "additionalProperties": false
+    },
+    "git_ref": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+        },
+        "position": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9223372036854775807
+        },
+        "files": {
+          "$ref": "#/$defs/git_files"
+        }
+      },
+      "required": [
+        "name",
+        "commit",
+        "observed_at"
+      ],
+      "additionalProperties": false
+    },
+    "git_refs": {
+      "type": "object",
+      "patternProperties": {
+        "^[0-9a-f]{64}$": {
+          "$ref": "#/$defs/git_ref"
+        }
+      },
+      "additionalProperties": false
+    },
+    "git_branches": {
+      "type": "object",
+      "patternProperties": {
+        "^[0-9a-f]{64}$": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "git_scope": {
+      "type": "object",
+      "properties": {
+        "tags": {
+          "type": "boolean"
+        },
+        "tags_history_complete": {
+          "type": "boolean"
+        },
+        "branches": {
+          "$ref": "#/$defs/git_branches"
+        }
+      },
+      "required": [
+        "tags",
+        "tags_history_complete",
+        "branches"
+      ],
+      "additionalProperties": false
+    },
     "binding": {
       "type": "object",
       "properties": {
@@ -762,6 +867,12 @@
         },
         "releases": {
           "$ref": "#/$defs/releases"
+        },
+        "git_scope": {
+          "$ref": "#/$defs/git_scope"
+        },
+        "git_refs": {
+          "$ref": "#/$defs/git_refs"
         }
       },
       "required": [

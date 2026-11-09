@@ -65,8 +65,55 @@ function parent_path(p, q) { q=p; sub(/\/[^\/]*$/,"",q); return q }
 function check_measurement(p) {
     if((values[p "/state"]=="known") != ((p "/value") in types)) fail("measurement state/value")
 }
+function valid_ref(s) {
+    return s ~ /^refs\/(heads|tags)\/[^[:space:]]+$/ && s !~ /[[:cntrl:]~^:?*\\\[]/ &&
+        index(s,"..")==0 && index(s,"@{")==0 && index(s,"//")==0 && s !~ /[\/.]$/ && s !~ /[.]lock$/
+}
+function git_semantics( p,r,k,name,position,tags,branches,files,path) {
+    if(("/git_refs" in types)!=("/git_scope" in types)) fail("Git scope/observations pair")
+    if(!("/git_refs" in types)) return
+    if(children["/git_scope/branches"]>4) fail("Git branch scope")
+    if(values["/git_scope/tags"]=="false" && values["/git_scope/tags_history_complete"]!="false") fail("unrequested tags completeness")
+    for(p in node_type) if(node_type[p]=="git_ref") {
+        name=values[p "/name"]
+        if(!valid_ref(name) || length(name)>1024 || git_seen[name]++) fail("Git reference name")
+        if(values[p "/observed_at"]>values["/collected_at"]) fail("Git observation after collection")
+        k=substr(p,length("/git_refs/")+1)
+        if(name ~ /^refs\/tags\//) {
+            tags++;position=values[p "/position"]
+            if(values["/git_scope/tags"]!="true" || !((p "/position") in types) || position>=100 || git_positions[position]++ || ((p "/files") in types)) fail("Git tag position/scope")
+        } else {
+            branches++
+            if(((p "/position") in types) || values["/git_scope/branches/" k]!=name || children[p "/files"]>4) fail("Git branch scope/files")
+        }
+    }
+    if(tags>100 || branches!=children["/git_scope/branches"]) fail("Git observation count")
+    for(position=0;position<tags;position++) if(!(position in git_positions)) fail("Git tag position gap")
+    for(p in node_type) if(node_type[p]=="git_file") {
+        path=values[p "/path"];r=parent_path(parent_path(p))
+        if(path=="" || length(path)>1024 || path ~ /^\// || path ~ /[[:cntrl:]]/ || path ~ /(^|\/)([.]|[.][.])(\/|$)/ || git_file_seen[r SUBSEP path]++) fail("Git file path")
+        if(length(values[p "/content"])>8192 || values[p "/observed_at"]<values[r "/observed_at"] || values[p "/observed_at"]>values["/collected_at"]) fail("Git file observation")
+    }
+}
+function project_facts( p,r,q,k,n,position,prefix,found,observed,published) {
+    if(operation=="release_facts") for(p in node_type) if(node_type[p]=="release") {
+        observed=((p "/observed_at") in types ? encoded[p "/observed_at"] : encoded["/observed_at"])
+        published=((p "/published_at") in types ? encoded[p "/published_at"] : "\"\"")
+        emit(substr(p,length("/releases/")+1) "\t\t" observed "\t" published "\t" encoded[p "/tag"] "\t\"\"\t\"\"\t" encoded[p "/prerelease"] "\n")
+    }
+    if(operation=="git_facts") for(p in node_type) if(node_type[p]=="git_ref") {
+        position=((p "/position") in types ? encoded[p "/position"] : "")
+        prefix=substr(p,length("/git_refs/")+1) "\t" encoded[p "/name"] "\t" encoded[p "/commit"] "\t" encoded[p "/observed_at"] "\t" position "\t"
+        found=0
+        for(q in node_type) if(node_type[q]=="git_file" && parent_path(parent_path(q))==p) {
+            found=1;emit(prefix encoded[q "/path"] "\t" encoded[q "/blob"] "\t" encoded[q "/content"] "\n")
+        }
+        if(!found) emit(prefix "\"\"\t\"\"\t\"\"\n")
+    }
+}
 function semantics( p,r,a,b,k,t,n,seen,stable,count_names,stable_path,stable_time,other_time,stable_id,other_id,parts,url_fact,observed,published) {
     if(values["/kind"]=="repository") {
+        git_semantics()
         if(values["/observed_at"]>values["/collected_at"]) fail("observation after collection")
         for(p in node_type) {
             t=node_type[p]
@@ -247,8 +294,9 @@ END {
     semantics()
     if(operation=="get" && !found && query in types) { found=1; emit(values[query]) }
     if(operation=="get") for(p in virtual_url) if(query==p "/url" && !(query in types)) { found=1; emit(virtual_url[p]) }
-    if(operation=="asset_facts" && values["/kind"]!="repository") fail("repository facts required")
+    if((operation=="asset_facts" || operation=="release_facts" || operation=="git_facts") && values["/kind"]!="repository") fail("repository facts required")
     if(operation=="asset_facts") for(i=1;i<=asset_count;i++) emit(fact_rows[asset_paths[i]])
-    if(operation=="validate" || operation=="asset_facts") exit 0
+    if(operation=="release_facts" || operation=="git_facts") project_facts()
+    if(operation=="validate" || operation=="asset_facts" || operation=="release_facts" || operation=="git_facts") exit 0
     if(!found) exit 3
 }

@@ -109,6 +109,29 @@ export function parseDocument(text,{maxBytes=2097152}={}) {
 }
 function semantics(doc) {
  if(doc.kind==='repository') {
+  if(own(doc,'git_refs')!==own(doc,'git_scope')) bad('Git scope/observations pair');
+  if(own(doc,'git_refs')) {
+   const scope=doc.git_scope,seen=new Set(),positions=new Set();let tags=0,branches=0;
+   if(Object.keys(scope.branches).length>4||!scope.tags&&scope.tags_history_complete) bad('Git scope');
+   for(const [key,ref] of Object.entries(doc.git_refs)) {
+    const name=ref.name;
+    if(!/^refs\/(heads|tags)\/\S+$/.test(name)||/[\x00-\x1f\x7f~^:?*\\\[]/.test(name)||name.includes('..')||name.includes('@{')||name.includes('//')||/[/.]$/.test(name)||name.endsWith('.lock')||bytes(name)>1024||seen.has(name)) bad('Git reference name');
+    seen.add(name);if(ref.observed_at>doc.collected_at) bad('Git observation');
+    if(name.startsWith('refs/tags/')) {
+     tags++;if(!scope.tags||!own(ref,'position')||ref.position>=100n||positions.has(ref.position)||own(ref,'files')) bad('Git tag scope/position');
+     positions.add(ref.position);
+    } else {
+     branches++;if(own(ref,'position')||scope.branches[key]!==name||Object.keys(ref.files??{}).length>4) bad('Git branch scope');
+    }
+    const paths=new Set();
+    for(const file of Object.values(ref.files??{})) {
+     if(!file.path||bytes(file.path)>1024||file.path.startsWith('/')||/[\x00-\x1f\x7f]/.test(file.path)||file.path.split('/').some(p=>p==='.'||p==='..')||paths.has(file.path)) bad('Git file path');
+     paths.add(file.path);if(bytes(file.content)>8192||file.observed_at<ref.observed_at||file.observed_at>doc.collected_at) bad('Git file observation');
+    }
+   }
+   if(tags>100||branches!==Object.keys(scope.branches).length) bad('Git count');
+   for(let i=0n;i<BigInt(tags);i++)if(!positions.has(i))bad('Git position gap');
+  }
   if(doc.observed_at>doc.collected_at) bad('observation order');
   const entries=Object.entries(doc.releases),tags=new Set(); let stable=0;
   for(const [,release] of entries) {

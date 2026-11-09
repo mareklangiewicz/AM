@@ -65,3 +65,25 @@ The future push package must deliberately set `CATALOG_SCHEDULE_REVISION` to the
 new published main tip, preserving the schedule gate. Re-read remote parents for
 publication; do not reuse old expected heads. Keep failed-source and non-release
 work explicit, rather than silently claiming complete fresh or usable coverage.
+
+## Non-release extension checkpoint — unfinished
+
+Marek explicitly chose “Extend v3 for non-release sources.”
+[ADR 0004](../../adr/0004-include-git-reference-and-file-observations.md) records
+the boundary. The new `git-sources.json` and saved public
+[identity responses](git-source-identities-16/) add JuNest, trans and watched;
+`host_catalog.configuration()` reports **8,610 app identities / 8,254 sources**.
+
+WIP code adds optional `git_scope`/`git_refs`, commit-pinned file observations,
+atomic shared-budget acquisition and release/Git native projections. It adds
+native output/filter/list and selection-kind support, but the new selection
+profiles and recipe adapters are NOT wired yet. The format documentation, browser
+presentation, explicit schema-revision transition/rebinding and operational
+package are unfinished. Do not deploy this checkpoint.
+
+`test_git_observations.py` passes five tests (Python/browser/native schema parity,
+scope/time refusal, pinned file/blob validation, shared request budget with no
+partial acquisition, duplicate tags). `test_batch_collection.py` passes thirteen
+legacy batch regressions after preserving its transport/time semantics. Native
+projection/mode integration and the broader post-extension checks remain to run.
+The previous broad runtime test counts above predate this WIP extension.

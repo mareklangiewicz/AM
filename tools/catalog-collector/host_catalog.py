@@ -55,6 +55,11 @@ class TransferFailure(OSError):
         self.budget_bytes = budget_bytes
 
 
+class CollectionStop(ValueError):
+    def __init__(self,reason):
+        super().__init__('collection allowance');self.reason=reason
+
+
 def utc():
     return datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
 
@@ -119,15 +124,16 @@ def rate_headers(headers):
     return result
 
 
-def _response(rid, evidence, allowance, *, rate=None):
+def _response(rid, evidence, allowance, *, rate=None, endpoint=None, kind='releases'):
     """Bound response bytes at the transport seam; return inert text and receipt."""
     if evidence:
-        path = Path(evidence)/(rid+'-releases.json')
+        path = Path(evidence)/(rid+'-'+kind+'.json')
         with path.open('rb') as stream:
             body = stream.read(allowance+1)
-        received = (Path(evidence)/(rid+'-receipt.txt')).read_text().strip()
+        receipt=rid+('-receipt.txt' if kind=='releases' else '-'+kind+'-receipt.txt')
+        received = (Path(evidence)/receipt).read_text().strip()
         return body, received
-    url = f'https://api.github.com/repositories/{rid}/releases?per_page=100&page=1'
+    url = f'https://api.github.com/repositories/{rid}/'+(endpoint or 'releases?per_page=100&page=1')
     headers = {'Accept':'application/vnd.github+json', 'User-Agent':'AM-YAML-catalog',
                'X-GitHub-Api-Version':'2022-11-28'}
     token = os.environ.get('GH_TOKEN')
@@ -188,11 +194,15 @@ def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None,
     latest_rate = {}
     schema = schema_url(revision)
     repositories = dict(previous) if batch_size is not None and not incremental else {}
-    used = 0
+    used = 0;logical_requests=0
+    from git_observations import configuration as git_configuration,collect as collect_git
+    git_scopes=git_configuration(ROOT) if native_v3 else {}
     report = []
     started = time.monotonic()
     for rid in selected:
         name = sources[rid]
+        if logical_requests>=request_cap:
+            metrics['stop_reason']='request_limit';break
         if (not evidence and latest_rate.get('remaining', reserve+1) <= reserve
                 and latest_rate.get('reset', float('inf')) > time.time()):
             metrics['stop_reason'] = 'primary_rate_reserve'
@@ -210,25 +220,35 @@ def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None,
         stop = False
         reason = 'transport'
         rate = {}
+        def fetch(kind='releases',endpoint=None):
+            nonlocal used,logical_requests,latest_rate
+            if logical_requests>=request_cap:raise CollectionStop('request_limit')
+            if used>=total_cap:raise CollectionStop('byte_limit')
+            if kind!='releases' and time.monotonic()-started>seconds_cap:raise CollectionStop('time_limit')
+            if (not evidence and latest_rate.get('remaining',reserve+1)<=reserve and
+                    latest_rate.get('reset',float('inf'))>time.time()):raise CollectionStop('primary_rate_reserve')
+            allowance=min(response_cap,total_cap-used);logical_requests+=1
+            if not evidence:metrics['requests']+=1
+            if kind=='releases':body,at=_response(rid,evidence,allowance,rate=rate)
+            else:body,at=_response(rid,evidence,allowance,rate=rate,endpoint=endpoint,kind=kind)
+            used+=len(body)
+            if rate:latest_rate=dict(rate)
+            if len(body)>allowance:raise CollectionStop('byte_limit')
+            return body,at
         try:
-            allowance = min(response_cap, total_cap-used)
-            if not evidence:
-                metrics['requests'] += 1
-            body, received = _response(rid, evidence, allowance, rate=rate)
-            used += len(body)
+            body, received = fetch()
             if evidence:
                 attempted = received
             reason = 'collection_limit'
-            if len(body) > allowance:
-                raise ValueError('collection byte budget')
             reason = 'invalid_response'
             raw = json.loads(body, object_pairs_hook=unique_object)
             records = normalize(raw, 100, allow_missing_published=acquisitions is not None)
             if acquisitions is not None:
-                acquisitions[rid] = dict(received_at=received, releases=records,
-                                         history_complete=len(raw)<100)
+                acquired = dict(received_at=received, releases=records,history_complete=len(raw)<100)
                 if not native_v3 and any('published_at' not in record for record in records.values()):
                     raise ValueError('format-2 requires publication time')
+                if rid in git_scopes:acquired.update(collect_git(git_scopes[rid],fetch))
+                acquisitions[rid]=acquired
             if native_v3:
                 report.append(dict(repository_id=int(rid), repository=name, status='ok', observed_at=received))
                 if rate: report[-1]['rate'] = rate
@@ -253,6 +273,10 @@ def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None,
                 error.close()
             if isinstance(error, TransferFailure):
                 used += error.budget_bytes
+            if isinstance(error,CollectionStop):
+                stop=True;metrics['stop_reason']=error.reason
+                reason={'request_limit':'request_budget','byte_limit':'byte_budget',
+                        'time_limit':'time_budget','primary_rate_reserve':'quota'}[error.reason] if native_v3 else 'collection_limit'
             if not native_v3:
                 result = refresh(before, [dict(error=reason, releases={}, bytes=0,
                     seconds=0, received_at=attempted, has_next=False)],
@@ -271,7 +295,7 @@ def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None,
             print(name+': failed ('+reason+status+')', flush=True)
             latest_rate = rate
             if stop:
-                metrics['stop_reason'] = 'http_'+str(error.code)
+                if isinstance(error,urllib.error.HTTPError):metrics['stop_reason'] = 'http_'+str(error.code)
                 break
             continue
         result['schema'] = schema

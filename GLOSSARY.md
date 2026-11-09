@@ -2,6 +2,12 @@
 
 ## Language
 
+**Git reference observation**:
+An observation of the commit identified by a named branch or tag, with its own observation time.
+
+**Repository file observation**:
+The exact contents and blob identity of a repository file at a particular commit.
+
 **Catalog**:
 Published release facts offered to clients, without choosing which release a client should use.
 

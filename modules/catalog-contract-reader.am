@@ -19,13 +19,13 @@ external_tool() {
         [ "$more" = yes ] || return 1
     done
 }
-usage() { echo 'usage: reader.sh validate|releases|apps|asset_facts FILE | assets FILE RELEASE | get FILE KEY...' >&2; exit 2; }
+usage() { echo 'usage: reader.sh validate|releases|apps|asset_facts|release_facts|git_facts FILE | assets FILE RELEASE | get FILE KEY...' >&2; exit 2; }
 [ "$#" -ge 2 ] || usage
 operation=$1 file=$2; shift 2
-case $operation in validate|releases|apps|asset_facts|assets|get) ;; *) usage ;; esac
+case $operation in validate|releases|apps|asset_facts|release_facts|git_facts|assets|get) ;; *) usage ;; esac
 query=''
 case $operation in
-    validate|releases|apps|asset_facts) [ "$#" -eq 0 ] || usage ;;
+    validate|releases|apps|asset_facts|release_facts|git_facts) [ "$#" -eq 0 ] || usage ;;
     assets) [ "$#" -eq 1 ] || usage ;;
     get) [ "$#" -ge 1 ] || usage ;;
     *) usage ;;
