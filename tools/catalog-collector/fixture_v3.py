@@ -7,8 +7,8 @@ from rehearse_pipeline import seed_source
 def publish_local(repo, apps, repositories, *, schema, max_file_bytes, expected_parent):
     revision=schema.split('/')[-3]
     paths={app:'repositories/source-'+str(rid)+'.yaml' for app,rid in apps.items()}
-    tree={path:c.encode(seed_source(repositories[str(rid)],revision))
-          for app,rid in apps.items() for path in (paths[app],)}
+    tree={'repositories/source-'+str(rid)+'.yaml':c.encode(seed_source(repositories[str(rid)],revision))
+          for rid in sorted(set(apps.values()))}
     tree['apps.yaml']=c.encode(dict(c.header('apps',revision),apps=paths))
     tree['catalog.yaml']=c.encode(dict(c.header('catalog',revision),
         inputs={key:revision for key in ('source','policy','recipes','rules','schemas')},
