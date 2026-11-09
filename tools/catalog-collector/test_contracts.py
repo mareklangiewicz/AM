@@ -75,6 +75,28 @@ def documents():
 
 
 class Contracts(unittest.TestCase):
+    def test_v3_only_collection_accepts_created_time_without_legacy_publication_time(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp);saved=root/'saved';saved.mkdir()
+            upstream=[dict(id=1,draft=False,tag_name='v1',html_url='https://example.org/v1',
+                published_at=None,created_at=OLD,prerelease=False,assets=[])]
+            (saved/'123-releases.json').write_text(json.dumps(upstream))
+            (saved/'123-receipt.txt').write_text(NEW)
+            registry=root/'names.json';registry.write_text(json.dumps(dict(active={'123':'example'},retired=[])))
+            rows=[dict(app='example',repository_id=123,repository='example/app')]
+            with patch.object(interface,'verify_checkout_inputs'),patch.object(host,'configuration',return_value=(rows,{'123':'example/app'})),patch.object(host,'_open',side_effect=AssertionError('offline network')):
+                interface.main(['collect','--evidence',str(saved),'--output',str(root/'output'),
+                    '--registry',str(registry),'--run-id','123'])
+            tree=c.read_directory(root/'output/format-3')
+            record=decode(tree['repositories/example.yaml'])['releases']['1']
+            self.assertEqual(record['created_at'],OLD)
+            self.assertNotIn('published_at',record)
+            report=json.loads((root/'output/report.json').read_text())
+            self.assertEqual(report['sources'],[dict(repository_id=123,status='ok')])
+            self.assertEqual(set(report['hashes']),{'format-3'})
+            self.assertEqual(report['parents'],dict(format_3=None))
+            self.assertFalse((root/'output/format-2').exists())
+
     def test_native_asset_facts_preserve_exact_values_order_and_refuse_bad_suffix(self):
         obj=sample();raw=encode(obj)
         read=self.shell(raw,'asset_facts')

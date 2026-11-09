@@ -80,7 +80,7 @@ class AMUtils(unittest.TestCase):
                 r = self.standalone(app/'AM-updater');self.assertEqual(r.returncode,0,r.stderr)
                 self.assertIn(b'Update not needed!',r.stdout)
         r = self.manager(['-u','7z','c++filt','ld.bfd'],source=integration.SOURCE)
-        self.assertEqual(r.returncode,0,r.stderr);self.assertEqual(len(self.calls()),3)
+        self.assertEqual(r.returncode,0,r.stderr);self.assertEqual(len(self.calls()),4)
         for app in ('7z','c++filt','ld.bfd'):
             self.assertIn((app+': unchanged').encode(),r.stdout)
 

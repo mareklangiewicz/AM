@@ -11,10 +11,9 @@ import shutil
 import subprocess
 import tempfile
 
-from host_catalog import installation_configuration, ROOT, FILE_CAP
+from host_catalog import installation_configuration, ROOT
 from installed_recipe import bound_recipe, managed_updater
 from incremental import Snapshot
-import contracts
 
 
 def run(*args, **options):

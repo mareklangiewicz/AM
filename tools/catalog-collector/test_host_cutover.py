@@ -9,7 +9,8 @@ from bounded import normalize
 from retention import refresh
 from installed_recipe import managed_updater
 from host_catalog import installation_configuration as configuration
-from yaml_publication import git, publish_local
+from yaml_publication import git
+from fixture_v3 import publish_local
 from yaml_publication import schema_url
 import test_yaml_manager_integration as integration
 from fixture_manager import ROOT
@@ -106,7 +107,7 @@ else:
 
     def test_obsolete_named_layout_refuses_before_download(self):
         recipe=self.path/'obsolete-recipe'
-        recipe.write_text('APP=kitty\nCATALOG_FORMAT=2\nPACKAGE_LAYOUT=kitty\n. "'+
+        recipe.write_text('APP=kitty\nCATALOG_FORMAT=3\nPACKAGE_LAYOUT=kitty\n. "'+
                           str(ROOT/'modules/appimage.am')+'"\nam_appimage "$0"\n')
         result=subprocess.run(['sh',str(recipe)],env=self.env(),capture_output=True)
         self.assertNotEqual(result.returncode,0)
@@ -226,8 +227,8 @@ else:
     def test_every_tool_requires_fresh_observations_without_consent(self):
         document=self.path/'tool-repository.yaml'
         document.write_bytes(subprocess.check_output(['git','-C',str(self.repo),'show',
-            self.pin+':repositories/872860168.yaml']))
-        facts=subprocess.check_output(['sh',str(ROOT/'modules/catalog-yaml-reader.am'),
+            self.pin+':repositories/source-872860168.yaml']))
+        facts=subprocess.check_output(['sh',str(ROOT/'modules/catalog-contract-reader.am'),
                                        'asset_facts',str(document)])
         tools=next(row['tools'] for row in self.rows if row['app']=='emmylua')
         for tool in tools:

@@ -45,7 +45,7 @@ def declaration(app, repository, number):
 # AM-RECIPE-DECLARATION 1
 set -eu
 APP={app}
-CATALOG_FORMAT=2
+CATALOG_FORMAT=3
 CATALOG_RECIPE=x86_64/{app}
 CATALOG_REPOSITORY_ID={number}
 CATALOG_REPOSITORY={repository}
@@ -312,13 +312,13 @@ esac
     def test_desktop_argument_option_is_scoped_and_validated(self):
         home, recipe, env = self.lifecycle('20x')
         original = recipe.read_text()
-        recipe.write_text(original.replace('CATALOG_FORMAT=2',
-            'DESKTOP_STRIP_NO_SANDBOX=invalid\nCATALOG_FORMAT=2'))
+        recipe.write_text(original.replace('CATALOG_FORMAT=3',
+            'DESKTOP_STRIP_NO_SANDBOX=invalid\nCATALOG_FORMAT=3'))
         result = self.run_recipe(recipe, env)
         self.assertNotEqual(result.returncode, 0)
         self.assertFalse((home/'calls').exists())
-        recipe.write_text(original.replace('CATALOG_FORMAT=2',
-            'DESKTOP_STRIP_NO_SANDBOX=true\nCATALOG_FORMAT=2'))
+        recipe.write_text(original.replace('CATALOG_FORMAT=3',
+            'DESKTOP_STRIP_NO_SANDBOX=true\nCATALOG_FORMAT=3'))
         script(home/'payload', '''[ "$1" = --appimage-extract ] || exit 95
 mkdir -p squashfs-root
 case "$2" in
@@ -343,8 +343,8 @@ esac
         result=self.run_recipe(recipe,env)
         self.assertEqual(result.returncode,0,result.stderr)
         self.assertEqual((home/'apps/20x/20x').read_bytes(),archive.read_bytes())
-        recipe.write_text(recipe.read_text().replace('CATALOG_FORMAT=2',
-            'PACKAGE_LAYOUT=tar\nARCHIVE_ROOT=bundle\nCATALOG_FORMAT=2'))
+        recipe.write_text(recipe.read_text().replace('CATALOG_FORMAT=3',
+            'PACKAGE_LAYOUT=tar\nARCHIVE_ROOT=bundle\nCATALOG_FORMAT=3'))
         result=self.run_recipe(recipe,env)
         self.assertEqual(result.returncode,0,result.stderr)
         self.assertEqual((home/'apps/20x/20x').read_bytes(),payload.read_bytes())

@@ -312,38 +312,6 @@ def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None,
     return tree, report
 
 
-def legacy_main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--repo', required=True, type=Path, help='Remote-free bare publication repository')
-    parser.add_argument('--parent', required=True, help='Existing release-catalog commit')
-    parser.add_argument('--evidence', type=Path, help='Saved live responses; no requests')
-    parser.add_argument('--report', required=True, type=Path)
-    parser.add_argument('--batch-size', type=int, help=f'Oldest-attempt-first subset, at most {REQUEST_CAP} requests')
-    args = parser.parse_args()
-    revision = subprocess.check_output(['git','-C',str(ROOT),'rev-parse','HEAD'],text=True).strip()
-    started = time.monotonic()
-    previous = load_local(args.repo,args.parent,max_file_bytes=FILE_CAP)[1]
-    metrics = {}
-    tree, report = collect(revision, previous, args.evidence, batch_size=args.batch_size, metrics=metrics)
-    pin = publish_tree(args.repo, tree, args.parent, metrics=metrics)
-    rows, sources = configuration()
-    apps = yaml.safe_load(tree['apps.yaml'])['apps']
-    pending = sorted({row['app'] for row in rows}-set(apps))
-    args.report.write_text(json.dumps(dict(pin=pin,parent=args.parent,source=revision,
-        batch_size=args.batch_size,enrolled_apps=len(rows),enrolled_sources=len(sources),
-        published_apps=len(apps),pending_apps=pending,sources=report,
-        metrics=dict(metrics, command_seconds=time.monotonic()-started)),indent=2)+'\n')
-    failures = sum(row['status']=='failed' for row in report)
-    print(f'Catalog apps: {len(apps)} / {len(rows)} enrolled; {len(report)} sources attempted; '
-          f'{failures} failed; {len(pending)} apps pending', flush=True)
-    print('Catalog commit: '+pin)
-    print('Catalog metrics: '+json.dumps(dict(metrics, command_seconds=time.monotonic()-started),sort_keys=True))
-    if metrics['source_success_age_counts']['24h'] or metrics['sources_without_success']:
-        print('::warning::Catalog source freshness: '+json.dumps(dict(
-            sources_without_success=metrics['sources_without_success'],
-            age_counts=metrics['source_success_age_counts']),sort_keys=True))
-
-
 def main():
     import sys
     if len(sys.argv)>1 and sys.argv[1] in ('collect','validate','publish','schema-revision'):

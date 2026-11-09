@@ -1,4 +1,4 @@
-"""Inventory source consumers of format 2 without executing recipes or touching hosts."""
+"""Inventory maintained source consumers of format 3 without executing recipes or touching hosts."""
 import argparse
 from collections import Counter
 import hashlib
@@ -18,14 +18,14 @@ def main():
         for path in sorted((host.ROOT/'programs'/arch).iterdir()):
             if not path.is_file():continue
             raw=path.read_bytes();source=raw.decode()
-            if not re.search(r'^CATALOG_FORMAT=(?:2|"2"|\x272\x27)$',source,re.M):continue
+            if not re.search(r'^CATALOG_FORMAT=(?:3|"3"|\x273\x27)$',source,re.M):continue
             recipes.append(dict(path=path.relative_to(host.ROOT).as_posix(),sha256=hashlib.sha256(raw).hexdigest(),
                 declaration='# AM-RECIPE-DECLARATION 1\n' in source,arch=arch))
-    modules=['modules/catalog-yaml.am','modules/catalog-yaml-reader.am','modules/catalog-yaml-parser.am',
+    modules=['modules/catalog-yaml.am','modules/catalog-contract-reader.am','modules/catalog-contract-parser.am','modules/catalog-contract-tables.am',
         'modules/catalog-yaml-policy.am','modules/appimage.am','modules/install.am']
     rows,sources=host.configuration()
-    result=dict(installed_host_inspected=False,unknown_external_readers_inventoried=False,
-        format_2_recipe_count=len(recipes),declaration_recipe_count=sum(r['declaration'] for r in recipes),
+    result=dict(installed_host_inspected=False,external_consumers=False,
+        format_3_recipe_count=len(recipes),declaration_recipe_count=sum(r['declaration'] for r in recipes),
         transitional_recipe_count=sum(not r['declaration'] for r in recipes),
         architectures=dict(Counter(r['arch'] for r in recipes)),collection_app_identities=len(rows),collection_sources=len(sources),
         modules={p:hashlib.sha256((host.ROOT/p).read_bytes()).hexdigest() for p in modules},recipes=recipes)

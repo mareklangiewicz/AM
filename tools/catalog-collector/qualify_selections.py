@@ -44,6 +44,7 @@ def main():
     parser.add_argument('--saved-data',type=Path,required=True)
     parser.add_argument('--legacy-repo',type=Path,required=True)
     parser.add_argument('--output',type=Path,required=True)
+    parser.add_argument('--native-reader',action='store_true',help='Exercise maintained v3 shell asset_facts instead of the historical Python projection')
     args=parser.parse_args();started=time.monotonic()
     metadata=json.loads((args.saved_data/'review.json').read_text())
     names=json.loads((c.ROOT/'tools/catalog-collector/source-names.json').read_text())['active']
@@ -68,7 +69,13 @@ def main():
                 saved.write(original);saved.flush()
                 old_facts=subprocess.run(['sh',str(c.ROOT/'modules/catalog-yaml-reader.am'),'asset_facts',saved.name],
                     capture_output=True,text=True,check=True).stdout
-            cached[rid]=(target,old_facts,facts(target),len(legacy['releases'])-len(common))
+            if args.native_reader:
+                with tempfile.NamedTemporaryFile() as saved:
+                    saved.write(raw);saved.flush()
+                    new_facts=subprocess.run(['sh',str(c.ROOT/'modules/catalog-contract-reader.am'),'asset_facts',saved.name],
+                        capture_output=True,text=True,check=True).stdout
+            else:new_facts=facts(target)
+            cached[rid]=(target,old_facts,new_facts,len(legacy['releases'])-len(common))
         target,old_facts,new_facts,removed=cached[rid]
         now=target['collected_at']
         old=run_policy(old_facts,row,now);new=run_policy(new_facts,row,now)
@@ -80,7 +87,8 @@ def main():
     result=dict(source_revision=git(c.ROOT,'rev-parse','HEAD').decode().strip(),
         saved_pin=metadata['pin'],legacy_pin=metadata['baseline'],live_acquisition=False,
         installed_host_inspected=False,installed_v3_transport_qualified=False,
-        policy='actual maintained awk; v2 shell asset_facts versus decoded v3 common-fact projection',
+        native_v3_reader=args.native_reader,
+        policy='actual maintained awk; v2 shell asset_facts versus '+('native v3 shell asset_facts' if args.native_reader else 'decoded v3 common-fact projection'),
         clock='each source original successful collection time; not current freshness acceptance',
         maintained_recipes=len(rows),compared_sources=len(cached),seconds=time.monotonic()-started,
         identical_selections=sum(r.get('selection_equal',False) for r in results),rows=results)

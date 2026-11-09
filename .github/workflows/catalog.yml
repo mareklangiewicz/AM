@@ -9,7 +9,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   acquire:
-    if: github.repository == 'mareklangiewicz/AM' && github.ref == 'refs/heads/main-marek' && vars.CATALOG_V3_ENABLED == 'true'
+    if: github.repository == 'mareklangiewicz/AM' && github.ref == 'refs/heads/main-marek' && vars.CATALOG_V3_ENABLED == 'true' && (github.event_name != 'schedule' || vars.CATALOG_SCHEDULE_REVISION == github.sha)
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     permissions:

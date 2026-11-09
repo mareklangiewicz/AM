@@ -24,7 +24,7 @@ class RecipeRefresh(unittest.TestCase):
                       (('APPS_DIR','apps'), ('BIN_DIR','bin'), ('DESKTOP_DIR','desktop'))}
         self.modules = self.root/'manager/modules'
         self.old = bound_recipe(self.body, 'https://raw.githubusercontent.com/other-owner/custom.repo/old-ref',
-                                self.paths, self.modules)
+                                self.paths, self.modules).replace(b'CATALOG_FORMAT=3\n',b'CATALOG_FORMAT=2\n')
         (self.installation/'recipe.am').write_bytes(self.old)
         snapshot = self.installation/'.am-installer/nvim'
         snapshot.parent.mkdir()
@@ -53,6 +53,8 @@ class RecipeRefresh(unittest.TestCase):
         self.assertEqual((backup/'source-recipe').read_bytes(),before['.am-installer/nvim'][0])
         self.assertEqual((self.installation/'.am-installer/nvim').read_bytes(),self.body)
         recipe = (self.installation/'recipe.am').read_bytes()
+        self.assertIn(b'CATALOG_FORMAT=3\n',recipe)
+        self.assertNotIn(b'CATALOG_FORMAT=2\n',recipe)
         self.assertIn(('other-owner/custom.repo/'+self.pin).encode(),recipe)
         self.assertIn(str(self.modules).encode(),recipe)
         for name,(body,mode) in before.items():

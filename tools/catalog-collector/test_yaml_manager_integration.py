@@ -208,7 +208,7 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\napp=${0##
 
     def test_later_app_rechecks_clock_and_manager_current_source_overrides_binding(self):
         self.install();self.install('x86_64/nvim')
-        (self.path/'clock-sequence').write_text(json.dumps([NOW]*6+['2026-11-04T12:00:00Z']*20))
+        (self.path/'clock-sequence').write_text(json.dumps([NOW]*7+['2026-11-04T12:00:00Z']*20))
         r=self.manager(['-u','obsidian','nvim'],source=SOURCE)
         self.assertNotEqual(r.returncode,0)
         self.assertIn(b'obsidian: unchanged',r.stdout);self.assertIn(b'nvim: refused',r.stderr)
@@ -275,7 +275,7 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\napp=${0##
         r=self.run_manager_install(amrepo=SOURCE,flags=flags)
         self.assertEqual(r.returncode,0,r.stderr)
         self.assertTrue((self.app/'version').exists())
-        self.assertEqual(len(self.calls()),2) # explicit pin, no ref resolution
+        self.assertEqual(len(self.calls()),3) # descriptor/map/source at explicit pin
         self.assertFalse((self.root/'opt'/self.pin).exists())
 
     def test_nightly_refresh_repair_failed_download_and_source_override(self):

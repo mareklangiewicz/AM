@@ -1,5 +1,27 @@
 # Single-user YAML catalog operation
 
+## Direct v3 operating path — November 9, 2026
+
+Marek superseded temporary dual output. He is the only user, only myxps has these
+changes, and there are no external consumers. The maintained source now produces
+only format 3 plus independent status 1. All 529 recipe declarations use v3;
+myxps's 21 installed v2 declarations are prepared for a metadata-only migration.
+No application binary update, other-host delivery, automatic rollback machinery
+or v2 publication for recovery is intended. Historical commits/snapshots remain.
+
+Current enrollment stays 509 apps / 500 sources. Complete the direct migration
+before expansion; the broader 5,000-source target is deferred. Follow the
+[maintained CLI/runtime documentation](../tools/catalog-collector/README.md) and
+[exact myxps cutover](track/catalog-system/myxps-cutover-15.md). Remote push,
+activation/deployment, fresh acquisition/publication and installed writes await
+specific final authorization. Preparing and committing source performs none.
+
+## Historical operational checkpoints
+
+The following prior v2 operation, delivery and compatibility checkpoints are
+retained evidence. Their production commands, v2 reader requirements and temporary
+dual-output plans are superseded by the direct v3 path above.
+
 The published collection contains **509 app identities / 500 repositories**:
 57 migrated recipe identities and 452 catalog-only identities. Authorized source
 `b2e63b11a3b37d10378a309cb06fbcfe103fb834` publishes the real 500-source cohort.

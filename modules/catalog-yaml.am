@@ -106,6 +106,7 @@ acquire() {
         cp "$scratch/document" "$target"
     fi
 }
+: > "$cache/failed"
 acquire catalog.yaml
 [ "$(sh "$reader" get "$cache/catalog.yaml" kind)" = catalog ] || fail 'invalid descriptor kind'
 schemas=$(sh "$reader" get "$cache/catalog.yaml" inputs schemas) || fail 'invalid schema binding'
