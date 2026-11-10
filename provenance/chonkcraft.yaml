@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "chonkcraft":
+    "aarch64":
+      repository_id: 1330448062
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/chonkcraft"
+        blob: "80cf494c2628051b4d47e462aeeaf2f16c2f3fbf"
+    "armv7l":
+      repository_id: 1330448062
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1330448062
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1330448062
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/chonkcraft"
+        blob: "254597c9857967d9303d309dae3e66d6398e888d"

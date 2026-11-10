@@ -1,0 +1,42 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "serylane":
+    "aarch64":
+      repository_id: 1355770287
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/serylane"
+        blob: "a44fc817f2276028916fea7ca11531825b952169"
+    "armv7l":
+      repository_id: 1355770287
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1355770287
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1355770287
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/serylane"
+        blob: "65553e43f31662250e7a8b45c02c35b0e2e068b9"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T18:34:26Z"
+        recipe_sha256: "e26f1a6ceecc5f98f96a5eeff4f878cfe357771d1a406eab6e48ea1654397925"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

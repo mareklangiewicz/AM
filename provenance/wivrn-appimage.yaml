@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "wivrn":
+    "aarch64":
+      repository_id: 1351933095
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/wivrn"
+        blob: "d4cbb19aedc77451a45cdad0116392a8d778113a"
+    "armv7l":
+      repository_id: 1351933095
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1351933095
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1351933095
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/wivrn"
+        blob: "799fc3dadcf400e4390982408df266db65cab405"

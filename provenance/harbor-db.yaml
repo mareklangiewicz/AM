@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "harbor-db":
+    "aarch64":
+      repository_id: 1370084562
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/harbor-db"
+        blob: "e42169fa5e8c41995fc2dc709b39c9a6f8ab4be2"
+    "armv7l":
+      repository_id: 1370084562
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1370084562
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1370084562
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/harbor-db"
+        blob: "45fcef37695fb6a6b91f8642789a4d62c830a833"

@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "workbuddy-switch2api":
+    "aarch64":
+      repository_id: 1372545851
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/workbuddy-switch2api"
+        blob: "fc6bdaccac9ca609a470ba8c6fe585556f727d32"
+    "armv7l":
+      repository_id: 1372545851
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1372545851
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1372545851
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/workbuddy-switch2api"
+        blob: "2e7274310e263c949e99d7b153d786490f2f257c"

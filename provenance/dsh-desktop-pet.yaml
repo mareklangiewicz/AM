@@ -1,0 +1,26 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "dsh-desktop-pet":
+    "aarch64":
+      repository_id: 1333741476
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 1333741476
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1333741476
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1333741476
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/dsh-desktop-pet"
+        blob: "4dc02df346acb05dd23f49b5c7fd1e9c88708686"

@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "kraken-player":
+    "aarch64":
+      repository_id: 1372385855
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/kraken-player"
+        blob: "ba6edc109a9682bd4a4c8b729d83f67eb0f8b15c"
+    "armv7l":
+      repository_id: 1372385855
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1372385855
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1372385855
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/kraken-player"
+        blob: "07dbe2cf3a4f88fb3f87cf2e262d5addf41fac48"

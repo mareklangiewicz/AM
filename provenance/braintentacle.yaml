@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "braintentacle":
+    "aarch64":
+      repository_id: 1370966362
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/braintentacle"
+        blob: "a012d9db05b39870d091e5a7230280c77857eb8c"
+    "armv7l":
+      repository_id: 1370966362
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1370966362
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1370966362
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/braintentacle"
+        blob: "b5ac0c8b33074b890d8b687b4d685d8ae434e1bf"

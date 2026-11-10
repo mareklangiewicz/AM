@@ -1,0 +1,42 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "dsh-portable":
+    "aarch64":
+      repository_id: 1333591877
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/dsh-portable"
+        blob: "069ec472c781b256f5ae0121b59828603843a1e4"
+    "armv7l":
+      repository_id: 1333591877
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1333591877
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1333591877
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/dsh-portable"
+        blob: "204bc6c4ed8083accf205510d403bcfa0497cc92"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T18:34:26Z"
+        recipe_sha256: "556f7886b6e32b8cbc04b23379214fae5ba67fdfec4e3c7b2828805d38545461"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

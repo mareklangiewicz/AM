@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "chipass":
+    "aarch64":
+      repository_id: 1359077883
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/chipass"
+        blob: "2a97051ab46439bbd5ef9afbd8e904c8e08c2eea"
+    "armv7l":
+      repository_id: 1359077883
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1359077883
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1359077883
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/chipass"
+        blob: "98a872b52d6987b0e37bdb3d9e784cc5a656b79f"

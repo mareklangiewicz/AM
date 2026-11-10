@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "cataclysm-tlg":
+    "aarch64":
+      repository_id: 1375083257
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/cataclysm-tlg"
+        blob: "e3e00e31313d9a10d2b3c99283bc11d956ff4a54"
+    "armv7l":
+      repository_id: 1375083257
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1375083257
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1375083257
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/cataclysm-tlg"
+        blob: "e3394e978538c940ca03fa2bd32309589a610cb6"

@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "unbox":
+    "aarch64":
+      repository_id: 1344955495
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/unbox"
+        blob: "022473ba09ead6184446d03d0b8e5ab133a09c42"
+    "armv7l":
+      repository_id: 1344955495
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1344955495
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1344955495
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/unbox"
+        blob: "ae0541efe63bbb75d6a5bb9b251f1e886a293bc5"

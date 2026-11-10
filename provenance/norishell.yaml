@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "norishell":
+    "aarch64":
+      repository_id: 1369889541
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/norishell"
+        blob: "ede0f187f08c359d8f932793b0b0722c1fc06b10"
+    "armv7l":
+      repository_id: 1369889541
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1369889541
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1369889541
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/norishell"
+        blob: "7fc7e7235d26cf2344e20c7878bcf6804213c0c2"

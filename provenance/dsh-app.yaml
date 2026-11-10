@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "dsh-app":
+    "aarch64":
+      repository_id: 1340184091
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/dsh-app"
+        blob: "af66c584ba791fd2a930718ae6b81d0bba74dd24"
+    "armv7l":
+      repository_id: 1340184091
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1340184091
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1340184091
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/dsh-app"
+        blob: "bc0a20e6bc36618d90de847affa57f4be4e03d27"

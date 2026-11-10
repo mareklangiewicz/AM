@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "pixeldrain-cli":
+    "aarch64":
+      repository_id: 1335016794
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/pixeldrain-cli"
+        blob: "96d398dc6cc4acdde252347799561331356928ab"
+    "armv7l":
+      repository_id: 1335016794
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1335016794
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1335016794
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/pixeldrain-cli"
+        blob: "a80d817a939ebad141bd2e3694a87b93f0135351"

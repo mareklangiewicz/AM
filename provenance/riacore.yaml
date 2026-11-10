@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "riacore":
+    "aarch64":
+      repository_id: 1333262478
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/riacore"
+        blob: "3e7389da37e6f148f0b4468a33501431a9a383d8"
+    "armv7l":
+      repository_id: 1333262478
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1333262478
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1333262478
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/riacore"
+        blob: "a28634038d7b5e796d33d4d9e5f7745c33d71f28"

@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "carpocalypse2":
+    "aarch64":
+      repository_id: 1342143341
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/carpocalypse2"
+        blob: "fb1e5b0420fb01de65c1a6a0c72a6f7b7af3669f"
+    "armv7l":
+      repository_id: 1342143341
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1342143341
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1342143341
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/carpocalypse2"
+        blob: "004563263293ebc93be5be4134c41b3c5c1b2ea4"

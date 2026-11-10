@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "stackvo":
+    "aarch64":
+      repository_id: 1335643538
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/stackvo"
+        blob: "308b03b7ec27ecdc56a7bc8c16e254b3cba49e97"
+    "armv7l":
+      repository_id: 1335643538
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1335643538
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1335643538
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/stackvo"
+        blob: "81a38ac88ec0cdc91d74eec30a096de4a063d60c"

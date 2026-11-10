@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "devolutions-terminal":
+    "aarch64":
+      repository_id: 1355368494
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/devolutions-terminal"
+        blob: "02bc09e94ce54b2d1d0b9e4513970d2655adeb30"
+    "armv7l":
+      repository_id: 1355368494
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1355368494
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1355368494
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/devolutions-terminal"
+        blob: "0f411f23c2e537844dc102320ea5bb7a0a545e44"

@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "standbye":
+    "aarch64":
+      repository_id: 1355202153
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/standbye"
+        blob: "257c0f1e8f1a3c83fbb1c861da79924e4d19cb9a"
+    "armv7l":
+      repository_id: 1355202153
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1355202153
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1355202153
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/standbye"
+        blob: "d4b93a45a46f65ba355ac1759bfc7a2731f762d3"

@@ -1,0 +1,42 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "usagedeck":
+    "aarch64":
+      repository_id: 1346830103
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/usagedeck"
+        blob: "07ca31a783a6e0575f75e9231dcb3d7da32112fe"
+    "armv7l":
+      repository_id: 1346830103
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1346830103
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1346830103
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/usagedeck"
+        blob: "a69ef82e46866629668c352184443592f342c806"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T18:34:26Z"
+        recipe_sha256: "f3c9a7fe7b426f4bec23e76e41cfc9b205c88277fb1ca7a45214a1629ab63934"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

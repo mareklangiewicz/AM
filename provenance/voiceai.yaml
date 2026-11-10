@@ -1,0 +1,53 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "localflow":
+    "aarch64":
+      repository_id: 1358023485
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/localflow"
+        blob: "bdbc518420c1a9338d5fed7d2746f74b7dbf8b3e"
+    "armv7l":
+      repository_id: 1358023485
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1358023485
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1358023485
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/localflow"
+        blob: "5ee5d2ae2a91b835ca7251d6bc468c1d9cba3833"
+  "voiceai":
+    "aarch64":
+      repository_id: 1358023485
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 1358023485
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1358023485
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1358023485
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/voiceai"
+        blob: "626a45712578bd2710691d53c21596c9263b3525"
