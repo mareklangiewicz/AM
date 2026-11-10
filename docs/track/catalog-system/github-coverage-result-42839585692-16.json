@@ -1,0 +1,122 @@
+{
+  "run": {
+    "id": 42839585692,
+    "attempt": 1
+  },
+  "actions_url": "https://github.com/mareklangiewicz/AM/actions/runs/42839585692",
+  "source_revision": "47211b286188113e6111033e9f17f8a7315d16bd",
+  "schema_revision": "040614f86cbbf31fc19596c8d32225c82de77acf",
+  "catalog_before": "8e0b7f8cc419ea4926f1136fa473ff655b980c16",
+  "catalog_after": "ecedad2a1f5c560ba9a3d0d530431c5130a7c64c",
+  "status_after": "6163144595b408c1af96caed5d785ba1a0208633",
+  "collection": "partial",
+  "validation": "ok",
+  "target_counts": {
+    "enrolled": 8313,
+    "selected": 500,
+    "attempted": 500,
+    "successful": 495,
+    "failed": 5,
+    "unknown": 0,
+    "unattempted": 0
+  },
+  "freshness": {
+    "catalog": "ecedad2a1f5c560ba9a3d0d530431c5130a7c64c",
+    "evaluated_at": "2026-11-10T15:12:01Z",
+    "under_24h": {
+      "state": "known",
+      "value": 2603
+    },
+    "from_24_to_48h": {
+      "state": "known",
+      "value": 0
+    },
+    "at_least_48h": {
+      "state": "known",
+      "value": 1
+    },
+    "no_success": {
+      "state": "known",
+      "value": 5709
+    },
+    "unknown": {
+      "state": "known",
+      "value": 0
+    }
+  },
+  "acquisition": {
+    "http_attempts": 501,
+    "charged_response_bytes": 315087748,
+    "received_response_bytes_state": "unknown",
+    "seconds": 454.23799516400004,
+    "command_seconds": 576.562749121
+  },
+  "collection_metrics": {
+    "requests": 501,
+    "response_bytes": 315087748,
+    "selected_sources": 500,
+    "stop_reason": "request_limit",
+    "request_cap": 750,
+    "response_byte_cap": 536870912,
+    "acquisition_cap_seconds": 900,
+    "primary_reserve": 100,
+    "acquisition_seconds": 454.23799516400004,
+    "attempted_sources": 500,
+    "successful_sources": 497,
+    "unattempted_sources": 7813,
+    "rate_first": {
+      "limit": 5000,
+      "remaining": 4999,
+      "used": 1,
+      "reset": 1794326421,
+      "resource": "core"
+    },
+    "rate_last": {
+      "limit": 5000,
+      "remaining": 4499,
+      "used": 501,
+      "reset": 1794326421,
+      "resource": "core"
+    }
+  },
+  "stop_reason": "source_validation",
+  "failed_sources": [
+    {
+      "repository_id": 68968979,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 202983854,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 16089035,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 144590939,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 403136214,
+      "status": "failed",
+      "reason": "transport"
+    }
+  ],
+  "verification": {
+    "candidate_hashes": "all matched exact published catalog",
+    "before_sources": 2109,
+    "after_sources": 2604,
+    "added_sources": 495,
+    "retained_source_bytes": {
+      "unchanged": 2109,
+      "updated_after_successful_collection": 0
+    }
+  },
+  "run_conclusion": "success",
+  "verified_schedule_revision": "47211b286188113e6111033e9f17f8a7315d16bd"
+}
