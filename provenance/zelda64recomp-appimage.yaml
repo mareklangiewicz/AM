@@ -1,0 +1,58 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "zelda64-recompiled":
+    "aarch64":
+      repository_id: 1176358627
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/zelda64-recompiled"
+        blob: "90dd77950ff0ee1048c57a16299a1eeca50c1258"
+    "armv7l":
+      repository_id: 1176358627
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1176358627
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1176358627
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/zelda64-recompiled"
+        blob: "0e89f2f4fa06df88ca858c65ab6bf8b0b99dd2da"
+  "zelda64recomp":
+    "aarch64":
+      repository_id: 1176358627
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/zelda64recomp"
+        blob: "873920b2e7c3a39fe9a0a219694634dba739635a"
+    "armv7l":
+      repository_id: 1176358627
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1176358627
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1176358627
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/zelda64recomp"
+        blob: "b98cc92d5c10987bd5cac9721867c3e58e035186"

@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "neomist":
+    "aarch64":
+      repository_id: 1186469273
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/neomist"
+        blob: "6a77d4b62ae23cc2f5e9dbe240ed7c79ce75b301"
+    "armv7l":
+      repository_id: 1186469273
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1186469273
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1186469273
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/neomist"
+        blob: "9b00caf1410c66f5c6954e2938db9ec34aafe4cc"

@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "encounty":
+    "aarch64":
+      repository_id: 1178244897
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/encounty"
+        blob: "2f04e1d417386126b89743d0f63727c530d03dd5"
+    "armv7l":
+      repository_id: 1178244897
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1178244897
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1178244897
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/encounty"
+        blob: "c2e41e72ffb0ac171412cb613f229459cad0417f"

@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "one-click-research-agent":
+    "aarch64":
+      repository_id: 1190474287
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/one-click-research-agent"
+        blob: "06640f4057d492f6d2d87a6f222b16ac1ec75037"
+    "armv7l":
+      repository_id: 1190474287
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1190474287
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1190474287
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/one-click-research-agent"
+        blob: "9d7286221a690c8518197a1dd67a58aba1578b09"

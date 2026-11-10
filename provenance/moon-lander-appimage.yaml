@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "moon-lander":
+    "aarch64":
+      repository_id: 1185907531
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/moon-lander"
+        blob: "5b1815a8da176aa5ec81385bc8d5f5a787b6e701"
+    "armv7l":
+      repository_id: 1185907531
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1185907531
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1185907531
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/moon-lander"
+        blob: "f2b62743c8d2767f4cc9ee0029b4843372d68641"

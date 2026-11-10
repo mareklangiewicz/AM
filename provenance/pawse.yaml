@@ -1,0 +1,42 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "pawse":
+    "aarch64":
+      repository_id: 1188969145
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/pawse"
+        blob: "0bf4fefcc01c567a2b1c23a9bb40da488e25d1af"
+    "armv7l":
+      repository_id: 1188969145
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1188969145
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1188969145
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/pawse"
+        blob: "b31896e2d345484e3bbc0a6c91875dfb2ad8f3c9"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T16:52:11Z"
+        recipe_sha256: "506b1067762ebf0532bae9a3535fffffc0d64db5794de7fff70d6698c9dafc46"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

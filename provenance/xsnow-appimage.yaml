@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "xsnow":
+    "aarch64":
+      repository_id: 1187887094
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/xsnow"
+        blob: "e7719d64e13e6c71ba753ca7bec3ebb20af49ba6"
+    "armv7l":
+      repository_id: 1187887094
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1187887094
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1187887094
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/xsnow"
+        blob: "1889d6765db0f1db8fe083bb655b5c56ce91acbb"

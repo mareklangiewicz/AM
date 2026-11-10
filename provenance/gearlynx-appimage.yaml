@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "gearlynx":
+    "aarch64":
+      repository_id: 1187142470
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/gearlynx"
+        blob: "dbcc4e38607ceeff2bd787d275cbc99f3fb20c29"
+    "armv7l":
+      repository_id: 1187142470
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1187142470
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1187142470
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/gearlynx"
+        blob: "91354473f1332b0021c536b97c2de60d837937d2"

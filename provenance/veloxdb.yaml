@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "veloxdb":
+    "aarch64":
+      repository_id: 1184493986
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/veloxdb"
+        blob: "e05902688087ff1bf87b2f8b39e76fe4c7836560"
+    "armv7l":
+      repository_id: 1184493986
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1184493986
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1184493986
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/veloxdb"
+        blob: "c0c1696c22b78ef51c7c9de74e3125ad26e77f54"

@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "doom64exultra":
+    "aarch64":
+      repository_id: 1173364364
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/doom64exultra"
+        blob: "67a96a007a6f825b8a8659bc10066e7e834ed3f5"
+    "armv7l":
+      repository_id: 1173364364
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1173364364
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1173364364
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/doom64exultra"
+        blob: "0bd6f017f345c2c80efe30acf5cc07ddba203990"
