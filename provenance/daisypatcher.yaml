@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "daisypatcher":
+    "aarch64":
+      repository_id: 1215980444
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/daisypatcher"
+        blob: "b4539ffe90a0ce83ed93b5f374d8771a2c1de5e5"
+    "armv7l":
+      repository_id: 1215980444
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1215980444
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1215980444
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/daisypatcher"
+        blob: "12d66a2f5cafca45da4e4288d79a8ee4ab6a8c45"

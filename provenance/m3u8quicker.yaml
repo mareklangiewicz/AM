@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "m3u8quicker":
+    "aarch64":
+      repository_id: 1202396627
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/m3u8quicker"
+        blob: "5ff2eb85de2708b4e36b8e3972070bf455da4e5b"
+    "armv7l":
+      repository_id: 1202396627
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1202396627
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1202396627
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/m3u8quicker"
+        blob: "47509b9b0a19572803db70c4670744a49688a72f"

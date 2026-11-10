@@ -1,0 +1,42 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "coach":
+    "aarch64":
+      repository_id: 1201994712
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/coach"
+        blob: "2681f39b103220524ea92ac805e87ccf374e057b"
+    "armv7l":
+      repository_id: 1201994712
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1201994712
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1201994712
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/coach"
+        blob: "1c77df48388799372a105fdea8b553c8c9822e15"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T17:11:46Z"
+        recipe_sha256: "189e687bda896e6f46a12f242c713ff568f09f87220176b89c929dcc4d1bca3f"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

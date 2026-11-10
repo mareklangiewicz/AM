@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "freemkv":
+    "aarch64":
+      repository_id: 1202469052
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/freemkv"
+        blob: "08949c0213da189f7fd2fa8de115eb3f2a63a62a"
+    "armv7l":
+      repository_id: 1202469052
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1202469052
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1202469052
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/freemkv"
+        blob: "30d70efe1b7cfeb615cebf7ca8cbc637336fddfd"

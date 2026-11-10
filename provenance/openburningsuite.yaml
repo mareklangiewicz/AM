@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "openburningsuite":
+    "aarch64":
+      repository_id: 1203104176
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/openburningsuite"
+        blob: "5e1c1f772c3e4f6cffc7455f45875c9fd095a1cc"
+    "armv7l":
+      repository_id: 1203104176
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1203104176
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1203104176
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/openburningsuite"
+        blob: "7adf4602bfa6cf6b3b0512e83040e2936d4429d1"

@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "open-sstv":
+    "aarch64":
+      repository_id: 1206224252
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/open-sstv"
+        blob: "fa8e7e690555d771dfe96f06e0fdcba12db0f83a"
+    "armv7l":
+      repository_id: 1206224252
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1206224252
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1206224252
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/open-sstv"
+        blob: "a2024184e2b95e28beba9df556103f717843fe02"

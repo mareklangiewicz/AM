@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "virtual-surround-manager":
+    "aarch64":
+      repository_id: 1215453597
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/virtual-surround-manager"
+        blob: "fd15ed5a86252d2c902a32f635cf35428424a148"
+    "armv7l":
+      repository_id: 1215453597
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1215453597
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1215453597
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/virtual-surround-manager"
+        blob: "510c2f56a36b60222ede46e055515cfa6f529b27"

@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "complianceguard":
+    "aarch64":
+      repository_id: 1208102901
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/complianceguard"
+        blob: "19f7e244a86cc18d4b11291997ed05eb4aca14aa"
+    "armv7l":
+      repository_id: 1208102901
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1208102901
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1208102901
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/complianceguard"
+        blob: "b7922b19014e37821b246f6d2269e7cebc8f4576"

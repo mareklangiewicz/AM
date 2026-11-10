@@ -1,0 +1,42 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "tuxlink":
+    "aarch64":
+      repository_id: 1218329994
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/tuxlink"
+        blob: "a6911a389e5bd40a67a517df067c05413692a33e"
+    "armv7l":
+      repository_id: 1218329994
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1218329994
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1218329994
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/tuxlink"
+        blob: "8d094b70d950877008287e1288ed9fd6562c9d47"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T17:11:46Z"
+        recipe_sha256: "19e009ae676811da5d492c9ed9dbb74d585c127785d7a2030cbd6179b0107bb9"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

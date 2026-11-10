@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "llm-wiki":
+    "aarch64":
+      repository_id: 1204828304
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/llm-wiki"
+        blob: "39193318d38898b45599b60b29f391434831adf5"
+    "armv7l":
+      repository_id: 1204828304
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1204828304
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1204828304
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/llm-wiki"
+        blob: "05ea9d9cfa9b8e6c8089f565f23ce38d13e7daa7"

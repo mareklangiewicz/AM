@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "poltertype":
+    "aarch64":
+      repository_id: 1227130117
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/poltertype"
+        blob: "34bd3ba7e534518a1f5d34d207bc7bbcfaab3aa8"
+    "armv7l":
+      repository_id: 1227130117
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1227130117
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1227130117
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/poltertype"
+        blob: "b487114d474749a761ae1df05ce161acda09b455"

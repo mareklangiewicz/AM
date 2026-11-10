@@ -1,0 +1,42 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "gnu-octave":
+    "aarch64":
+      repository_id: 1202389232
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/gnu-octave"
+        blob: "95421b8721378677d142bfcb23407b5c43a1c160"
+    "armv7l":
+      repository_id: 1202389232
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1202389232
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1202389232
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/gnu-octave"
+        blob: "f7f64e66cc8abed29752f7d282fc5df6e5b977f4"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T17:11:46Z"
+        recipe_sha256: "d0d0dbdee96b4fc26efa0e9b7871363573fb1f213afdb468138d809e9272ea32"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

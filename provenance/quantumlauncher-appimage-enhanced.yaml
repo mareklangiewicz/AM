@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "quantumlauncher":
+    "aarch64":
+      repository_id: 1207923885
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/quantumlauncher"
+        blob: "ae1d5794a8424e955ddc2f9e70c4bf5d7a5daee5"
+    "armv7l":
+      repository_id: 1207923885
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1207923885
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1207923885
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/quantumlauncher"
+        blob: "ce797d5fa41bf8e22a1f1f3a03e6ba6e1a1d3f7b"

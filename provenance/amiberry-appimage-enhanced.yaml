@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "amiberry":
+    "aarch64":
+      repository_id: 1201175688
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/amiberry"
+        blob: "1031be6abf6c3cf3e6785045d510378827a181da"
+    "armv7l":
+      repository_id: 1201175688
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1201175688
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1201175688
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/amiberry"
+        blob: "8b51b7a65a5917062fbd8a9bed039717a3f6bca0"

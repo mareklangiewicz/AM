@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "simutrans":
+    "aarch64":
+      repository_id: 1203767751
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/simutrans"
+        blob: "cd8750ebf62d71328a25e0b2bbdf7b78aae36e7c"
+    "armv7l":
+      repository_id: 1203767751
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1203767751
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1203767751
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/simutrans"
+        blob: "002bdc56fbe9586baa298fdf04317a7e3f3cf05e"

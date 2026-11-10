@@ -1,0 +1,26 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "team-x":
+    "aarch64":
+      repository_id: 1204571045
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 1204571045
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1204571045
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1204571045
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/team-x"
+        blob: "132cde71f8e611e65e8e0aa05b5d45022403df19"

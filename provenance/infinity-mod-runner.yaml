@@ -1,0 +1,26 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "infinity-mod-runner":
+    "aarch64":
+      repository_id: 1200911047
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 1200911047
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1200911047
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1200911047
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/infinity-mod-runner"
+        blob: "1ec8f1843f1e9a9d7eb7ba731686f32fe0f33a3d"

@@ -1,0 +1,26 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "v-swift":
+    "aarch64":
+      repository_id: 1218606441
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 1218606441
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1218606441
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1218606441
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/v-swift"
+        blob: "ed21713b2c5ec89339be8d166f4a7e7e588e2c74"

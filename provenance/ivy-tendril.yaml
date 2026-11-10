@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "ivy-tendril":
+    "aarch64":
+      repository_id: 1211796176
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/ivy-tendril"
+        blob: "62b1e0b9ccb76a0054660ee8ff6452a71228b64d"
+    "armv7l":
+      repository_id: 1211796176
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1211796176
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1211796176
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/ivy-tendril"
+        blob: "dbbe7c31357c138cc4e7f373d7cc58a3dc4c8385"

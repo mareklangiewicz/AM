@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "dictus-desktop":
+    "aarch64":
+      repository_id: 1201849472
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/dictus-desktop"
+        blob: "ff025e098fbdd45329a03eb5146378d762ecbff5"
+    "armv7l":
+      repository_id: 1201849472
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1201849472
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1201849472
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/dictus-desktop"
+        blob: "edc3e001cec9f2f9b160a1b6c0163ad52d7143d9"
