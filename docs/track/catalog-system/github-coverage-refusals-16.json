@@ -1,0 +1,953 @@
+{
+  "captured_at": "2026-11-10",
+  "schema_revision": "040614f86cbbf31fc19596c8d32225c82de77acf",
+  "note": "Public upstream metadata captured after scheduled run 42794542725; reproduces current data, not a byte-for-byte replay of that run. No code correction: conflicts and response bound are expected refusals.",
+  "response_bound_bytes": 16777216,
+  "sources": [
+    {
+      "repository_id": 68968979,
+      "repository": "nukeop/nuclear",
+      "response_bytes": 2977086,
+      "response_sha256": "3bb7414d244aaa688005178701fc119a6bd147b63ab9407d131565032892301d",
+      "endpoint": "https://api.github.com/repositories/68968979/releases?per_page=100",
+      "cause": "same_tag_conflict",
+      "tag": "player@1.23.3",
+      "release_ids": [
+        298492443,
+        298492446
+      ],
+      "minimal_acquisition": {
+        "received_at": "2026-11-10T15:00:00Z",
+        "releases": {
+          "298492443": {
+            "tag": "player@1.23.3",
+            "title": "Nuclear Player v1.23.3",
+            "url": "https://github.com/nukeop/nuclear/releases/tag/player%401.23.3",
+            "created_at": "2026-03-18T14:43:01Z",
+            "published_at": "2026-03-18T14:50:17Z",
+            "updated_at": "2026-03-18T14:58:24Z",
+            "prerelease": false,
+            "source_zip_url": "https://api.github.com/repos/nukeop/nuclear/zipball/player@1.23.3",
+            "source_tar_url": "https://api.github.com/repos/nukeop/nuclear/tarball/player@1.23.3",
+            "assets": {
+              "376496884": {
+                "name": "Nuclear_1.23.3_x64.dmg",
+                "url": "https://github.com/nukeop/nuclear/releases/download/player%401.23.3/Nuclear_1.23.3_x64.dmg",
+                "size": 14055993,
+                "content_type": "application/zip",
+                "digest": "sha256:83af223007e86b7f709b94d3f492fb750dc43c5477c1312b920f1dc4143b3dd0"
+              },
+              "376496920": {
+                "name": "Nuclear_x64.app.tar.gz",
+                "url": "https://github.com/nukeop/nuclear/releases/download/player%401.23.3/Nuclear_x64.app.tar.gz",
+                "size": 13063528,
+                "content_type": "application/zip",
+                "digest": "sha256:6cbbb9075958069db38d693a39a9a59f8b5f7a4a41c3abcfc1e50ca55689ec21"
+              },
+              "376496937": {
+                "name": "Nuclear_x64.app.tar.gz.sig",
+                "url": "https://github.com/nukeop/nuclear/releases/download/player%401.23.3/Nuclear_x64.app.tar.gz.sig",
+                "size": 404,
+                "content_type": "application/zip",
+                "digest": "sha256:a4ab9c0de1e6eeb9e0ea5f4b312254d2bc4fa2bf150b9aaddf4ca7c4d2ac7165"
+              },
+              "376498226": {
+                "name": "Nuclear_1.23.3_amd64.deb",
+                "url": "https://github.com/nukeop/nuclear/releases/download/player%401.23.3/Nuclear_1.23.3_amd64.deb",
+                "size": 13033190,
+                "content_type": "application/zip",
+                "digest": "sha256:b57f5262225bada1ce9a94a6575b0e42854dea160a5e10f0185b0f52a10845ce"
+              },
+              "376498244": {
+                "name": "Nuclear_1.23.3_amd64.deb.sig",
+                "url": "https://github.com/nukeop/nuclear/releases/download/player%401.23.3/Nuclear_1.23.3_amd64.deb.sig",
+                "size": 412,
+                "content_type": "application/zip",
+                "digest": "sha256:5467b0320e2e16043613c2025ffbae616016d50ebf64ff62a9ff975a19fb31aa"
+              },
+              "376498248": {
+                "name": "Nuclear-1.23.3-1.x86_64.rpm",
+                "url": "https://github.com/nukeop/nuclear/releases/download/player%401.23.3/Nuclear-1.23.3-1.x86_64.rpm",
+                "size": 13032744,
+                "content_type": "application/zip",
+                "digest": "sha256:af6d0a83d26d2f67d2a9dfe34059a35f895f572582532e68662eb7bac2c4f119"
+              },
+              "376498249": {
+                "name": "Nuclear-1.23.3-1.x86_64.rpm.sig",
+                "url": "https://github.com/nukeop/nuclear/releases/download/player%401.23.3/Nuclear-1.23.3-1.x86_64.rpm.sig",
+                "size": 416,
+                "content_type": "application/zip",
+                "digest": "sha256:4e8b2b3b87435e1bc6bcd0c5bea0d21dbdc137178019ddf6bc11f704681f5acc"
+              },
+              "376498252": {
+                "name": "Nuclear_1.23.3_amd64.AppImage",
+                "url": "https://github.com/nukeop/nuclear/releases/download/player%401.23.3/Nuclear_1.23.3_amd64.AppImage",
+                "size": 100927992,
+                "content_type": "application/zip",
+                "digest": "sha256:9965ab971f3da2722b922d89569e5bbfc70d69b3d953f5ade6d043ed429feb3b"
+              },
+              "376498267": {
+                "name": "Nuclear_1.23.3_amd64.AppImage.sig",
+                "url": "https://github.com/nukeop/nuclear/releases/download/player%401.23.3/Nuclear_1.23.3_amd64.AppImage.sig",
+                "size": 420,
+                "content_type": "application/zip",
+                "digest": "sha256:87df7170fc752a1b8474189f7d580137009962cf190ea8fba843b5aa4d3d88c1"
+              },
+              "376499289": {
+                "name": "Nuclear_1.23.3_x64_en-US.msi",
+                "url": "https://github.com/nukeop/nuclear/releases/download/player%401.23.3/Nuclear_1.23.3_x64_en-US.msi",
+                "size": 11116544,
+                "content_type": "application/zip",
+                "digest": "sha256:9f632f63a5ce472cf03b4f4a7931a9213e303dc5929d6e274cc8cdf7698baa77"
+              },
+              "376499297": {
+                "name": "Nuclear_1.23.3_x64_en-US.msi.sig",
+                "url": "https://github.com/nukeop/nuclear/releases/download/player%401.23.3/Nuclear_1.23.3_x64_en-US.msi.sig",
+                "size": 420,
+                "content_type": "application/zip",
+                "digest": "sha256:3802bf1edf538f99aeea0e14410f104ae0ff0cbdf5f2d3edeead39250c2f9e6d"
+              },
+              "376499299": {
+                "name": "Nuclear_1.23.3_x64-setup.exe",
+                "url": "https://github.com/nukeop/nuclear/releases/download/player%401.23.3/Nuclear_1.23.3_x64-setup.exe",
+                "size": 8821034,
+                "content_type": "application/zip",
+                "digest": "sha256:3de1ad1ff117823dbeae34bfcd2f54cb54559767ab593c7cdd584c5e2097fa03"
+              },
+              "376499305": {
+                "name": "Nuclear_1.23.3_x64-setup.exe.sig",
+                "url": "https://github.com/nukeop/nuclear/releases/download/player%401.23.3/Nuclear_1.23.3_x64-setup.exe.sig",
+                "size": 420,
+                "content_type": "application/zip",
+                "digest": "sha256:8095972fcc8ba67a46634482027d8bbb6bfaa0f37cb35370ec347e0998fb74ef"
+              },
+              "376499325": {
+                "name": "latest.json",
+                "url": "https://github.com/nukeop/nuclear/releases/download/player%401.23.3/latest.json",
+                "size": 8509,
+                "content_type": "application/zip",
+                "digest": "sha256:7d4ad0259ef4a9d61aaed8948d615612944a686ff0fdc3de59ff6b05d547eae5"
+              },
+              "376501002": {
+                "name": "nuclear-music-player.flatpak",
+                "url": "https://github.com/nukeop/nuclear/releases/download/player%401.23.3/nuclear-music-player.flatpak",
+                "size": 9260984,
+                "content_type": "application/vnd.flatpak",
+                "digest": "sha256:2f690801cc6a4ab3b2489ca16bf7d0c411690f46d3b6cdbd419ed990861d348c"
+              }
+            }
+          },
+          "298492446": {
+            "tag": "player@1.23.3",
+            "title": "Nuclear Player v1.23.3",
+            "url": "https://github.com/nukeop/nuclear/releases/tag/player%401.23.3",
+            "created_at": "2026-03-18T14:43:01Z",
+            "published_at": "2026-03-18T14:50:18Z",
+            "updated_at": "2026-03-18T14:50:23Z",
+            "prerelease": false,
+            "source_zip_url": "https://api.github.com/repos/nukeop/nuclear/zipball/player@1.23.3",
+            "source_tar_url": "https://api.github.com/repos/nukeop/nuclear/tarball/player@1.23.3",
+            "assets": {
+              "376496877": {
+                "name": "Nuclear_1.23.3_aarch64.dmg",
+                "url": "https://github.com/nukeop/nuclear/releases/download/player%401.23.3/Nuclear_1.23.3_aarch64.dmg",
+                "size": 13549640,
+                "content_type": "application/zip",
+                "digest": "sha256:0103dc8e2d11c06c35f30f1d7c53dfb674b91ae5629deb64d54a1a891ddb2bcf"
+              },
+              "376496895": {
+                "name": "Nuclear_aarch64.app.tar.gz",
+                "url": "https://github.com/nukeop/nuclear/releases/download/player%401.23.3/Nuclear_aarch64.app.tar.gz",
+                "size": 12629272,
+                "content_type": "application/zip",
+                "digest": "sha256:9255ae208a25b765b3d0f88b18420fe22c64961b43151bb6fd1eeae2b7cef0c5"
+              },
+              "376496913": {
+                "name": "Nuclear_aarch64.app.tar.gz.sig",
+                "url": "https://github.com/nukeop/nuclear/releases/download/player%401.23.3/Nuclear_aarch64.app.tar.gz.sig",
+                "size": 404,
+                "content_type": "application/zip",
+                "digest": "sha256:38abad52fd5e23b796223b91353f1b918da0a662c640c0967c8854615a52eeb9"
+              },
+              "376496917": {
+                "name": "latest.json",
+                "url": "https://github.com/nukeop/nuclear/releases/download/player%401.23.3/latest.json",
+                "size": 1504,
+                "content_type": "application/zip",
+                "digest": "sha256:417bfe92ed1856c50c3b0f3096fc89276f1149fada5a4876df48465293f09294"
+              }
+            }
+          }
+        },
+        "history_complete": true
+      },
+      "single_release_replays": "both passed; pair refused"
+    },
+    {
+      "repository_id": 202983854,
+      "repository": "Orama-Interactive/Pixelorama",
+      "response_bytes": 733040,
+      "response_sha256": "f8201785efd16ba15da76f025e2c7895b9f8b622e670f24b2e8de5a4958b3112",
+      "endpoint": "https://api.github.com/repositories/202983854/releases?per_page=100",
+      "cause": "same_tag_conflict",
+      "tag": "v1.1.10",
+      "release_ids": [
+        315135795,
+        315135796
+      ],
+      "minimal_acquisition": {
+        "received_at": "2026-11-10T15:00:00Z",
+        "releases": {
+          "315135795": {
+            "tag": "v1.1.10",
+            "title": "",
+            "url": "https://github.com/Orama-Interactive/Pixelorama/releases/tag/v1.1.10",
+            "created_at": "2026-04-29T10:37:06Z",
+            "published_at": "2026-04-29T11:12:30Z",
+            "updated_at": "2026-05-24T19:32:35Z",
+            "prerelease": false,
+            "source_zip_url": "https://api.github.com/repos/Orama-Interactive/Pixelorama/zipball/v1.1.10",
+            "source_tar_url": "https://api.github.com/repos/Orama-Interactive/Pixelorama/tarball/v1.1.10",
+            "assets": {
+              "408152903": {
+                "name": "Pixelorama-Linux-ARM64.tar.gz",
+                "url": "https://github.com/Orama-Interactive/Pixelorama/releases/download/v1.1.10/Pixelorama-Linux-ARM64.tar.gz",
+                "size": 29090511,
+                "content_type": "binary/octet-stream",
+                "digest": "sha256:83a747a46e2cc875d7e5a416f7274cc21158f1f4451dc504d6fb3aa0f8920573"
+              },
+              "408152913": {
+                "name": "Pixelorama-Linux-ARM32.tar.gz",
+                "url": "https://github.com/Orama-Interactive/Pixelorama/releases/download/v1.1.10/Pixelorama-Linux-ARM32.tar.gz",
+                "size": 27564040,
+                "content_type": "binary/octet-stream",
+                "digest": "sha256:ac94d06d5d2fb04fce439331347de0d110570c13bcfc09c3013aa0e70d2eb57f"
+              },
+              "408152933": {
+                "name": "Pixelorama-Linux-64bit.tar.gz",
+                "url": "https://github.com/Orama-Interactive/Pixelorama/releases/download/v1.1.10/Pixelorama-Linux-64bit.tar.gz",
+                "size": 29866450,
+                "content_type": "binary/octet-stream",
+                "digest": "sha256:6dac2e5b5280a0bbc20a743ac72dd329aace2424eaada3e1d047d3747280b82b"
+              },
+              "408152943": {
+                "name": "Pixelorama-Linux-32bit.tar.gz",
+                "url": "https://github.com/Orama-Interactive/Pixelorama/releases/download/v1.1.10/Pixelorama-Linux-32bit.tar.gz",
+                "size": 30278962,
+                "content_type": "binary/octet-stream",
+                "digest": "sha256:aa03283bdc2e63923106a4280a3023cce62cbabfd20c2490ae5ae0cbf0d6d74a"
+              },
+              "408153007": {
+                "name": "Pixelorama_v1.1.10_setup.exe",
+                "url": "https://github.com/Orama-Interactive/Pixelorama/releases/download/v1.1.10/Pixelorama_v1.1.10_setup.exe",
+                "size": 78828057,
+                "content_type": "binary/octet-stream",
+                "digest": "sha256:fbec4f4236dc9601af4e01a43aa3e26ed5989ddb53d51379fc7e66634c340a93"
+              },
+              "408153032": {
+                "name": "Pixelorama-Windows-64bit.zip",
+                "url": "https://github.com/Orama-Interactive/Pixelorama/releases/download/v1.1.10/Pixelorama-Windows-64bit.zip",
+                "size": 38669023,
+                "content_type": "binary/octet-stream",
+                "digest": "sha256:994b8a24e4970f5792577ede99845fb7b632c719095082bb094e692556e96f06"
+              },
+              "408153049": {
+                "name": "Pixelorama-Windows-32bit.zip",
+                "url": "https://github.com/Orama-Interactive/Pixelorama/releases/download/v1.1.10/Pixelorama-Windows-32bit.zip",
+                "size": 40311960,
+                "content_type": "binary/octet-stream",
+                "digest": "sha256:7b4b28ec6b9797775384c69ad4a625785498392c7d216d6074cca8bfad166727"
+              },
+              "408156202": {
+                "name": "Pixelorama.apk",
+                "url": "https://github.com/Orama-Interactive/Pixelorama/releases/download/v1.1.10/Pixelorama.apk",
+                "size": 93032300,
+                "content_type": "application/vnd.android.package-archive",
+                "digest": "sha256:6ed97077ac8c90adb8650ae42391f6892a6a946e5cefda82ef43c3689de67b7b"
+              },
+              "428747207": {
+                "name": "Pixelorama-Mac.dmg",
+                "url": "https://github.com/Orama-Interactive/Pixelorama/releases/download/v1.1.10/Pixelorama-Mac.dmg",
+                "size": 73771636,
+                "content_type": "application/x-apple-diskimage",
+                "digest": "sha256:c647b3d24532ffc8fb12367a123773feeba321399a87e458ffc3cc78f30bbf81"
+              }
+            }
+          },
+          "315135796": {
+            "tag": "v1.1.10",
+            "title": "",
+            "url": "https://github.com/Orama-Interactive/Pixelorama/releases/tag/v1.1.10",
+            "created_at": "2026-04-29T10:37:06Z",
+            "published_at": "2026-04-29T11:12:30Z",
+            "updated_at": "2026-04-29T11:12:34Z",
+            "prerelease": false,
+            "source_zip_url": "https://api.github.com/repos/Orama-Interactive/Pixelorama/zipball/v1.1.10",
+            "source_tar_url": "https://api.github.com/repos/Orama-Interactive/Pixelorama/tarball/v1.1.10",
+            "assets": {
+              "408152904": {
+                "name": "Pixelorama-Mac.dmg",
+                "url": "https://github.com/Orama-Interactive/Pixelorama/releases/download/v1.1.10/Pixelorama-Mac.dmg",
+                "size": 73771636,
+                "content_type": "binary/octet-stream",
+                "digest": "sha256:c647b3d24532ffc8fb12367a123773feeba321399a87e458ffc3cc78f30bbf81"
+              }
+            }
+          }
+        },
+        "history_complete": true
+      },
+      "single_release_replays": "both passed; pair refused"
+    },
+    {
+      "repository_id": 144590939,
+      "repository": "VSCodium/vscodium",
+      "response_bytes": 25105372,
+      "response_sha256": "3a938efd63f689504ed91b6fa7ead1276088bb74acfc0462e02f4a88aa07d188",
+      "endpoint": "https://api.github.com/repositories/144590939/releases?per_page=100",
+      "cause": "response exceeds 16 MiB bound",
+      "unbounded_offline_projection": "passed; does not justify bypassing acquisition limit"
+    },
+    {
+      "repository_id": 403136214,
+      "repository": "MTDonovan/Evalit",
+      "cause": "upstream HTTP 404",
+      "evidence_run": 42839585692,
+      "evidence_step": "acquire / Collect candidates only",
+      "evidence_at": "2026-11-10T15:03:05.3617188Z",
+      "sanitized_failure": "MTDonovan/Evalit: failed (transport HTTP 404)"
+    },
+    {
+      "repository_id": 764177895,
+      "repository": "Okabe-Rintarou-0/SJTU-Canvas-Helper",
+      "response_bytes": 4129258,
+      "response_sha256": "3bb6bc0fa1d997b59e9d72509773efe5d493a84d7c69d2fa7269b9131cb49f33",
+      "endpoint": "https://api.github.com/repositories/764177895/releases?per_page=100",
+      "cause": "same_tag_conflict",
+      "tag": "app-v3.0.3",
+      "release_ids": [
+        338692274,
+        338692275
+      ],
+      "minimal_acquisition": {
+        "received_at": "2026-11-10T15:30:00Z",
+        "releases": {
+          "338692274": {
+            "tag": "app-v3.0.3",
+            "title": "App v3.0.3",
+            "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/tag/app-v3.0.3",
+            "created_at": "2026-06-12T16:01:14Z",
+            "published_at": "2026-06-12T16:28:46Z",
+            "updated_at": "2026-06-12T17:40:39Z",
+            "prerelease": false,
+            "source_zip_url": "https://api.github.com/repos/Okabe-Rintarou-0/SJTU-Canvas-Helper/zipball/app-v3.0.3",
+            "source_tar_url": "https://api.github.com/repos/Okabe-Rintarou-0/SJTU-Canvas-Helper/tarball/app-v3.0.3",
+            "assets": {
+              "445891093": {
+                "name": "SJTU.Canvas.Helper_3.0.3_aarch64.dmg",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_3.0.3_aarch64.dmg",
+                "size": 18461467,
+                "content_type": "application/zip",
+                "digest": "sha256:77ad32ee67bde13e42cdd0dba07757500a359f1f6169b4d708642cc362e3102b"
+              },
+              "445891116": {
+                "name": "SJTU.Canvas.Helper_aarch64.app.tar.gz",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_aarch64.app.tar.gz",
+                "size": 18797508,
+                "content_type": "application/zip",
+                "digest": "sha256:02b14b75fa5f297f5aaf8f7e1281766c258519a86bf5018cc12c6ac8855db919"
+              },
+              "445891142": {
+                "name": "SJTU.Canvas.Helper_aarch64.app.tar.gz.sig",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_aarch64.app.tar.gz.sig",
+                "size": 420,
+                "content_type": "application/zip",
+                "digest": "sha256:00e90edd5d1349491087def908896e956df3ddafc0c9dba11d00fbecca0b9f3b"
+              },
+              "445891360": {
+                "name": "SJTU.Canvas.Helper_3.0.3_x64.dmg",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_3.0.3_x64.dmg",
+                "size": 18943380,
+                "content_type": "application/zip",
+                "digest": "sha256:1ffd2d8aa1f9afbce27b11718e19a27b9868c0dae7ec12306dea9f55bdd6f4f9"
+              },
+              "445891384": {
+                "name": "SJTU.Canvas.Helper_x64.app.tar.gz",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_x64.app.tar.gz",
+                "size": 19164964,
+                "content_type": "application/zip",
+                "digest": "sha256:951d35a84b58865eede49082290b45cddbbfe061fff405baded1dec86c199aca"
+              },
+              "445891410": {
+                "name": "SJTU.Canvas.Helper_x64.app.tar.gz.sig",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_x64.app.tar.gz.sig",
+                "size": 420,
+                "content_type": "application/zip",
+                "digest": "sha256:177eb10b8bed00cff3c649d909c7ca5f63481bb73e35ec2ca7e2a62234914780"
+              },
+              "445892166": {
+                "name": "SJTU.Canvas.Helper_3.0.3_amd64.deb",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_3.0.3_amd64.deb",
+                "size": 19771292,
+                "content_type": "application/zip",
+                "digest": "sha256:00b8afe650e176aca8666b6dac1da507e1525c237bc642db37c77ee9a2442573"
+              },
+              "445892179": {
+                "name": "SJTU.Canvas.Helper_3.0.3_amd64.deb.sig",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_3.0.3_amd64.deb.sig",
+                "size": 428,
+                "content_type": "application/zip",
+                "digest": "sha256:02fa82b45611705833d4ed29c49165e5db5383698a79542c11e94fc9392261e0"
+              },
+              "445892181": {
+                "name": "SJTU.Canvas.Helper-3.0.3-1.x86_64.rpm",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper-3.0.3-1.x86_64.rpm",
+                "size": 19771352,
+                "content_type": "application/zip",
+                "digest": "sha256:824dffa925ed8dfdb87fa5895cd8efc8e4b157467333fb13df961c045782edd2"
+              },
+              "445892191": {
+                "name": "SJTU.Canvas.Helper-3.0.3-1.x86_64.rpm.sig",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper-3.0.3-1.x86_64.rpm.sig",
+                "size": 432,
+                "content_type": "application/zip",
+                "digest": "sha256:163a628cbcffcc2f76ddb7b96389754d203ad0b8050550c5f2c2dc9603ac55f0"
+              },
+              "445892195": {
+                "name": "SJTU.Canvas.Helper_3.0.3_amd64.AppImage",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_3.0.3_amd64.AppImage",
+                "size": 99595456,
+                "content_type": "application/zip",
+                "digest": "sha256:eb99f152c9b2bbaf18cde5748a52ab620d6a12214d766d9d3ed8def7388b89d0"
+              },
+              "445892245": {
+                "name": "SJTU.Canvas.Helper_3.0.3_amd64.AppImage.sig",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_3.0.3_amd64.AppImage.sig",
+                "size": 432,
+                "content_type": "application/zip",
+                "digest": "sha256:456b0e8a3b477e9c4f1d03bb095e33bdbf26dc6f9da11438a456dbaf3b440640"
+              },
+              "445892253": {
+                "name": "SJTU.Canvas.Helper_3.0.3_amd64.AppImage.tar.gz",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_3.0.3_amd64.AppImage.tar.gz",
+                "size": 98770421,
+                "content_type": "application/zip",
+                "digest": "sha256:2ff1eac1b805c8fa3019e25f9bb4979fc3090acd35fd586a71b38d0bc8e99eed"
+              },
+              "445892299": {
+                "name": "SJTU.Canvas.Helper_3.0.3_amd64.AppImage.tar.gz.sig",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_3.0.3_amd64.AppImage.tar.gz.sig",
+                "size": 444,
+                "content_type": "application/zip",
+                "digest": "sha256:6537db7d61f2c107e95c9d02c25aa1510dff52a40cf84a68643b3e7a66c488a3"
+              },
+              "445899027": {
+                "name": "SJTU.Canvas.Helper_3.0.3_x64_en-US.msi",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_3.0.3_x64_en-US.msi",
+                "size": 18169856,
+                "content_type": "application/zip",
+                "digest": "sha256:ab9d1d20886026fc4ab6abe2c0faa52f4c5192539285032dfbfe3a4aa5a80d6e"
+              },
+              "445899078": {
+                "name": "SJTU.Canvas.Helper_3.0.3_x64_en-US.msi.sig",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_3.0.3_x64_en-US.msi.sig",
+                "size": 432,
+                "content_type": "application/zip",
+                "digest": "sha256:21a9db107bcd144f78f5a53327a91fa2b2521819305f8a028ae839fe23716103"
+              },
+              "445899099": {
+                "name": "SJTU.Canvas.Helper_3.0.3_x64_en-US.msi.zip",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_3.0.3_x64_en-US.msi.zip",
+                "size": 18170030,
+                "content_type": "application/zip",
+                "digest": "sha256:f6974ffd91f15826853ca5b504b7b516fc14446035dd0af7c9a78cc292cea947"
+              },
+              "445899127": {
+                "name": "SJTU.Canvas.Helper_3.0.3_x64_en-US.msi.zip.sig",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_3.0.3_x64_en-US.msi.zip.sig",
+                "size": 436,
+                "content_type": "application/zip",
+                "digest": "sha256:ea58ee6b6011628a0bc6235a5a906950b6d4b7408d6343a0bd185f588a0a1247"
+              },
+              "445899147": {
+                "name": "SJTU.Canvas.Helper_3.0.3_x64-setup.exe",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_3.0.3_x64-setup.exe",
+                "size": 13815568,
+                "content_type": "application/zip",
+                "digest": "sha256:fd512e7df67415be3d968660f88246487bc8ae2343bac00d38d5cbdcbecee85e"
+              },
+              "445899161": {
+                "name": "SJTU.Canvas.Helper_3.0.3_x64-setup.exe.sig",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_3.0.3_x64-setup.exe.sig",
+                "size": 432,
+                "content_type": "application/zip",
+                "digest": "sha256:6c4a43a0965f874bbc9dc33f29ae77d4e0d80c0e62fb27e77013536a609c411a"
+              },
+              "445899168": {
+                "name": "SJTU.Canvas.Helper_3.0.3_x64-setup.nsis.zip",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_3.0.3_x64-setup.nsis.zip",
+                "size": 13815742,
+                "content_type": "application/zip",
+                "digest": "sha256:0ff0c93358f89677b8cad0f07e29031e8e4c56b0f65a4348de30a698f27f69fc"
+              },
+              "445899184": {
+                "name": "SJTU.Canvas.Helper_3.0.3_x64-setup.nsis.zip.sig",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_3.0.3_x64-setup.nsis.zip.sig",
+                "size": 440,
+                "content_type": "application/zip",
+                "digest": "sha256:93fcdd3bc8bf4057fa7d0a8b72967ce58c318c0d720add8e497c370565c3a9d1"
+              },
+              "445901650": {
+                "name": "SJTU.Canvas.Helper_3.0.3_x86_en-US.msi",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_3.0.3_x86_en-US.msi",
+                "size": 16814080,
+                "content_type": "application/zip",
+                "digest": "sha256:5845146988029882bd7fe59c6a7212057b4b01ec64c3117b43b0b062667ac0ff"
+              },
+              "445901657": {
+                "name": "SJTU.Canvas.Helper_3.0.3_x86_en-US.msi.sig",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_3.0.3_x86_en-US.msi.sig",
+                "size": 432,
+                "content_type": "application/zip",
+                "digest": "sha256:e445f1807214d9d8634438a678faf208993362a30f7f304b3281e929cd87ace3"
+              },
+              "445901662": {
+                "name": "SJTU.Canvas.Helper_3.0.3_x86_en-US.msi.zip",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_3.0.3_x86_en-US.msi.zip",
+                "size": 16814254,
+                "content_type": "application/zip",
+                "digest": "sha256:89fe2955f600d82d33712cc2a5564372167cd5dc714e9e1232a1092fad09b4c6"
+              },
+              "445901683": {
+                "name": "SJTU.Canvas.Helper_3.0.3_x86_en-US.msi.zip.sig",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_3.0.3_x86_en-US.msi.zip.sig",
+                "size": 436,
+                "content_type": "application/zip",
+                "digest": "sha256:30836aff765ad7eefbea25d6a392f53c42ac19a202a207105ecee4aba6cc4c1a"
+              },
+              "445901692": {
+                "name": "SJTU.Canvas.Helper_3.0.3_x86-setup.exe",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_3.0.3_x86-setup.exe",
+                "size": 13045045,
+                "content_type": "application/zip",
+                "digest": "sha256:877ebf27e587c05b2c7451729343a40326e496d8a3f509e4a077359f24cf31a4"
+              },
+              "445901699": {
+                "name": "SJTU.Canvas.Helper_3.0.3_x86-setup.exe.sig",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_3.0.3_x86-setup.exe.sig",
+                "size": 432,
+                "content_type": "application/zip",
+                "digest": "sha256:c1863ae3a6ef6ce9a5d5a4cd1dab815728421f8c524074e752e761df83571673"
+              },
+              "445901708": {
+                "name": "SJTU.Canvas.Helper_3.0.3_x86-setup.nsis.zip",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_3.0.3_x86-setup.nsis.zip",
+                "size": 13045219,
+                "content_type": "application/zip",
+                "digest": "sha256:ede04daf1ac52d7158f839eb67c1c9ea71f6b85c2b7c0ab41baf0d09d3d154cd"
+              },
+              "445901715": {
+                "name": "SJTU.Canvas.Helper_3.0.3_x86-setup.nsis.zip.sig",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_3.0.3_x86-setup.nsis.zip.sig",
+                "size": 440,
+                "content_type": "application/zip",
+                "digest": "sha256:7ece6b93e26ee97466707e91538d3ffe72b2a8cb5b74988b185e677961afcbf4"
+              },
+              "445901729": {
+                "name": "latest.json",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/latest.json",
+                "size": 8885,
+                "content_type": "application/zip",
+                "digest": "sha256:9190ecc278643ca4863177f2470ecaaa95190cf70f7d41cc4a4655b736db612b"
+              }
+            }
+          },
+          "338692275": {
+            "tag": "app-v3.0.3",
+            "title": "App v3.0.3",
+            "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/tag/app-v3.0.3",
+            "created_at": "2026-06-12T16:01:14Z",
+            "published_at": "2026-06-12T16:28:46Z",
+            "updated_at": "2026-06-12T16:28:52Z",
+            "prerelease": false,
+            "source_zip_url": "https://api.github.com/repos/Okabe-Rintarou-0/SJTU-Canvas-Helper/zipball/app-v3.0.3",
+            "source_tar_url": "https://api.github.com/repos/Okabe-Rintarou-0/SJTU-Canvas-Helper/tarball/app-v3.0.3",
+            "assets": {
+              "445847392": {
+                "name": "SJTU.Canvas.Helper_3.0.3_x64.dmg",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_3.0.3_x64.dmg",
+                "size": 18943099,
+                "content_type": "application/zip",
+                "digest": "sha256:62ce6fba1d308bcdc7539ae3b13df835661c9444f406e7eb10ace2a188a1476c"
+              },
+              "445847499": {
+                "name": "SJTU.Canvas.Helper_x64.app.tar.gz",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_x64.app.tar.gz",
+                "size": 19165164,
+                "content_type": "application/zip",
+                "digest": "sha256:a0fd8285ab7ca662c6cfeddbcdd07bc82dcea987b3c93abaad689a7b4ce3941a"
+              },
+              "445847518": {
+                "name": "SJTU.Canvas.Helper_x64.app.tar.gz.sig",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/SJTU.Canvas.Helper_x64.app.tar.gz.sig",
+                "size": 420,
+                "content_type": "application/zip",
+                "digest": "sha256:ac26823810595c6425ef42be609fbcb4b57de17c4437895152513e008304b3a1"
+              },
+              "445847528": {
+                "name": "latest.json",
+                "url": "https://github.com/Okabe-Rintarou-0/SJTU-Canvas-Helper/releases/download/app-v3.0.3/latest.json",
+                "size": 1370,
+                "content_type": "application/zip",
+                "digest": "sha256:7f26d59d77a49c9de1db21092f1d32da36144cc862023741f53b7c1653606a1b"
+              }
+            }
+          }
+        },
+        "history_complete": true
+      },
+      "single_release_replays": "both passed; pair refused"
+    },
+    {
+      "repository_id": 875733267,
+      "repository": "cebby2420/via-desktop",
+      "response_bytes": 1148018,
+      "response_sha256": "7ca75236095c7469b54c968cc907b30cc5a4cc94b259fd1c516d20c35314a343",
+      "endpoint": "https://api.github.com/repositories/875733267/releases?per_page=100",
+      "cause": "same_tag_conflict",
+      "tag": "v2024.11.18",
+      "release_ids": [
+        185933811,
+        185933812
+      ],
+      "minimal_acquisition": {
+        "received_at": "2026-11-10T15:45:16Z",
+        "releases": {
+          "185933811": {
+            "tag": "v2024.11.18",
+            "title": "v2024.11.18",
+            "url": "https://github.com/cebby2420/via-desktop/releases/tag/v2024.11.18",
+            "created_at": "2024-11-11T20:21:23Z",
+            "published_at": "2024-11-18T12:27:59Z",
+            "updated_at": "2024-11-18T12:28:04Z",
+            "prerelease": false,
+            "source_zip_url": "https://api.github.com/repos/cebby2420/via-desktop/zipball/v2024.11.18",
+            "source_tar_url": "https://api.github.com/repos/cebby2420/via-desktop/tarball/v2024.11.18",
+            "assets": {
+              "207321492": {
+                "name": "via-desktop-2024.11.18-x64.dmg",
+                "url": "https://github.com/cebby2420/via-desktop/releases/download/v2024.11.18/via-desktop-2024.11.18-x64.dmg",
+                "size": 109736436,
+                "content_type": "application/x-apple-diskimage"
+              }
+            }
+          },
+          "185933812": {
+            "tag": "v2024.11.18",
+            "title": "v2024.11.18",
+            "url": "https://github.com/cebby2420/via-desktop/releases/tag/v2024.11.18",
+            "created_at": "2024-11-11T20:21:23Z",
+            "published_at": "2024-11-18T12:27:59Z",
+            "updated_at": "2024-11-18T12:31:43Z",
+            "prerelease": false,
+            "source_zip_url": "https://api.github.com/repos/cebby2420/via-desktop/zipball/v2024.11.18",
+            "source_tar_url": "https://api.github.com/repos/cebby2420/via-desktop/tarball/v2024.11.18",
+            "assets": {
+              "207321491": {
+                "name": "via-desktop-2024.11.18-arm64.dmg",
+                "url": "https://github.com/cebby2420/via-desktop/releases/download/v2024.11.18/via-desktop-2024.11.18-arm64.dmg",
+                "size": 105120946,
+                "content_type": "application/x-apple-diskimage"
+              },
+              "207321748": {
+                "name": "via-desktop-2024.11.18-1.x86_64.rpm",
+                "url": "https://github.com/cebby2420/via-desktop/releases/download/v2024.11.18/via-desktop-2024.11.18-1.x86_64.rpm",
+                "size": 91587321,
+                "content_type": "application/x-redhat-package-manager"
+              },
+              "207321750": {
+                "name": "via-desktop_2024.11.18_amd64.deb",
+                "url": "https://github.com/cebby2420/via-desktop/releases/download/v2024.11.18/via-desktop_2024.11.18_amd64.deb",
+                "size": 87796794,
+                "content_type": "application/x-debian-package"
+              },
+              "207322079": {
+                "name": "RELEASES",
+                "url": "https://github.com/cebby2420/via-desktop/releases/download/v2024.11.18/RELEASES",
+                "size": 87,
+                "content_type": "application/octet-stream"
+              },
+              "207322080": {
+                "name": "via_desktop-2024.11.18-full.nupkg",
+                "url": "https://github.com/cebby2420/via-desktop/releases/download/v2024.11.18/via_desktop-2024.11.18-full.nupkg",
+                "size": 118071596,
+                "content_type": "application/octet-stream"
+              },
+              "207322081": {
+                "name": "via-desktop-2024.11.18.Setup.exe",
+                "url": "https://github.com/cebby2420/via-desktop/releases/download/v2024.11.18/via-desktop-2024.11.18.Setup.exe",
+                "size": 118741504,
+                "content_type": "application/x-msdos-program"
+              }
+            }
+          }
+        },
+        "history_complete": true
+      },
+      "single_release_replays": "both passed; pair refused"
+    },
+    {
+      "repository_id": 992424531,
+      "repository": "donutbrowser/donutbrowser",
+      "response_bytes": 2380335,
+      "response_sha256": "b8fc6e49dc61acb68bf96193e2ff66f9306f710ca7cc79ed014ec1f882c53349",
+      "endpoint": "https://api.github.com/repositories/992424531/releases?per_page=100",
+      "cause": "same_tag_conflict",
+      "tag": "nightly-2026-11-01-7ff2687",
+      "release_ids": [
+        430570842,
+        430570841
+      ],
+      "minimal_acquisition": {
+        "received_at": "2026-11-10T16:02:33Z",
+        "releases": {
+          "430570842": {
+            "tag": "nightly-2026-11-01-7ff2687",
+            "title": "Donut Browser Nightly (Build 2026-11-01-7ff2687)",
+            "url": "https://github.com/donutbrowser/donutbrowser/releases/tag/nightly-2026-11-01-7ff2687",
+            "created_at": "2026-11-01T10:14:25Z",
+            "published_at": "2026-11-01T12:29:12Z",
+            "updated_at": "2026-11-01T12:29:21Z",
+            "prerelease": true,
+            "source_zip_url": "https://api.github.com/repos/donutbrowser/donutbrowser/zipball/nightly-2026-11-01-7ff2687",
+            "source_tar_url": "https://api.github.com/repos/donutbrowser/donutbrowser/tarball/nightly-2026-11-01-7ff2687",
+            "assets": {
+              "698285582": {
+                "name": "Donut_0.36.0_amd64.deb",
+                "url": "https://github.com/donutbrowser/donutbrowser/releases/download/nightly-2026-11-01-7ff2687/Donut_0.36.0_amd64.deb",
+                "size": 41426154,
+                "content_type": "application/zip",
+                "digest": "sha256:087c20ddbd2f08447f9b5ef09e42e61d0d5399f96fc73b310a6c2a403cf7dc02"
+              },
+              "698285643": {
+                "name": "Donut-0.36.0-1.x86_64.rpm",
+                "url": "https://github.com/donutbrowser/donutbrowser/releases/download/nightly-2026-11-01-7ff2687/Donut-0.36.0-1.x86_64.rpm",
+                "size": 41426608,
+                "content_type": "application/zip",
+                "digest": "sha256:3bfcb3ca051f8ca51095a7554612f0d8727346b6b2fe78a26b8eba03d3610892"
+              },
+              "698285704": {
+                "name": "Donut_0.36.0_amd64.AppImage",
+                "url": "https://github.com/donutbrowser/donutbrowser/releases/download/nightly-2026-11-01-7ff2687/Donut_0.36.0_amd64.AppImage",
+                "size": 117811704,
+                "content_type": "application/zip",
+                "digest": "sha256:ec79016bf4fce8971fbb86ac9f9d1d8ca87014c2a67692ad2863e9f6ee14d4e2"
+              }
+            }
+          },
+          "430570841": {
+            "tag": "nightly-2026-11-01-7ff2687",
+            "title": "Donut Browser Nightly (Build 2026-11-01-7ff2687)",
+            "url": "https://github.com/donutbrowser/donutbrowser/releases/tag/nightly-2026-11-01-7ff2687",
+            "created_at": "2026-11-01T10:14:25Z",
+            "published_at": "2026-11-01T12:29:12Z",
+            "updated_at": "2026-11-01T12:29:20Z",
+            "prerelease": true,
+            "source_zip_url": "https://api.github.com/repos/donutbrowser/donutbrowser/zipball/nightly-2026-11-01-7ff2687",
+            "source_tar_url": "https://api.github.com/repos/donutbrowser/donutbrowser/tarball/nightly-2026-11-01-7ff2687",
+            "assets": {
+              "698285577": {
+                "name": "Donut_0.36.0_arm64.deb",
+                "url": "https://github.com/donutbrowser/donutbrowser/releases/download/nightly-2026-11-01-7ff2687/Donut_0.36.0_arm64.deb",
+                "size": 38287308,
+                "content_type": "application/zip",
+                "digest": "sha256:f022137ac7e37765f37a8a9e28c01491a69e9c4ae7dd21995906243ed405f9cb"
+              },
+              "698285640": {
+                "name": "Donut-0.36.0-1.aarch64.rpm",
+                "url": "https://github.com/donutbrowser/donutbrowser/releases/download/nightly-2026-11-01-7ff2687/Donut-0.36.0-1.aarch64.rpm",
+                "size": 38291274,
+                "content_type": "application/zip",
+                "digest": "sha256:8a0ab4d4b48502a374e5e6c68bd926a61bb0432a1187b0278f0edefb809d83ed"
+              },
+              "698285684": {
+                "name": "Donut_0.36.0_aarch64.AppImage",
+                "url": "https://github.com/donutbrowser/donutbrowser/releases/download/nightly-2026-11-01-7ff2687/Donut_0.36.0_aarch64.AppImage",
+                "size": 112609800,
+                "content_type": "application/zip",
+                "digest": "sha256:275030d41512e0cfc12d62148316b3199ad1f9a1ed9d4a790a155f09398eeb62"
+              }
+            }
+          }
+        },
+        "history_complete": true
+      },
+      "single_release_replays": "both passed; pair refused"
+    },
+    {
+      "repository_id": 1078432229,
+      "repository": "777genius/voice-to-text",
+      "response_bytes": 1588827,
+      "response_sha256": "62261136fc0a40ebd7a9d1a3ad08efebf9e4d2b6f5e5b9abbd1ed5cbf4f5890b",
+      "endpoint": "https://api.github.com/repositories/1078432229/releases?per_page=100",
+      "cause": "same_tag_conflict",
+      "tag": "v0.10.15",
+      "release_ids": [
+        323852516,
+        323852517
+      ],
+      "minimal_acquisition": {
+        "received_at": "2026-11-10T16:02:34Z",
+        "releases": {
+          "323852516": {
+            "tag": "v0.10.15",
+            "title": "VoicetextAI v0.10.15",
+            "url": "https://github.com/777genius/voice-to-text/releases/tag/v0.10.15",
+            "created_at": "2026-05-17T08:50:01Z",
+            "published_at": "2026-05-17T08:57:50Z",
+            "updated_at": "2026-05-17T09:27:15Z",
+            "prerelease": false,
+            "source_zip_url": "https://api.github.com/repos/777genius/voice-to-text/zipball/v0.10.15",
+            "source_tar_url": "https://api.github.com/repos/777genius/voice-to-text/tarball/v0.10.15",
+            "assets": {
+              "422401928": {
+                "name": "VoicetextAI_0.10.15_amd64.deb",
+                "url": "https://github.com/777genius/voice-to-text/releases/download/v0.10.15/VoicetextAI_0.10.15_amd64.deb",
+                "size": 11993172,
+                "content_type": "application/zip",
+                "digest": "sha256:17e8c8e92eb715d28ed9b40aacbb783014581a8b05b794eda8b605e168501cfd"
+              },
+              "422401938": {
+                "name": "VoicetextAI_0.10.15_amd64.deb.sig",
+                "url": "https://github.com/777genius/voice-to-text/releases/download/v0.10.15/VoicetextAI_0.10.15_amd64.deb.sig",
+                "size": 420,
+                "content_type": "application/zip",
+                "digest": "sha256:4792f6865675790ac3eb7ea312596299f49da4fa5ee41db3e3dcc400eba4d6d0"
+              },
+              "422401947": {
+                "name": "VoicetextAI_0.10.15_amd64.AppImage",
+                "url": "https://github.com/777genius/voice-to-text/releases/download/v0.10.15/VoicetextAI_0.10.15_amd64.AppImage",
+                "size": 87898616,
+                "content_type": "application/zip",
+                "digest": "sha256:581f4afebd985cd2c699465bad5e3d226344650f88b04a45f996d1b721a580e1"
+              },
+              "422401966": {
+                "name": "VoicetextAI_0.10.15_amd64.AppImage.sig",
+                "url": "https://github.com/777genius/voice-to-text/releases/download/v0.10.15/VoicetextAI_0.10.15_amd64.AppImage.sig",
+                "size": 428,
+                "content_type": "application/zip",
+                "digest": "sha256:a8abef611b97a87771c28725ead0132d704a2ecc669233d9539c169571bcd1f7"
+              },
+              "422402097": {
+                "name": "VoicetextAI_0.10.15_x64.dmg",
+                "url": "https://github.com/777genius/voice-to-text/releases/download/v0.10.15/VoicetextAI_0.10.15_x64.dmg",
+                "size": 15234164,
+                "content_type": "application/zip",
+                "digest": "sha256:597899fb8141dfb7f62713883996aa153218eb3de9d06c16f4b8c8624fe3c50d"
+              },
+              "422402118": {
+                "name": "VoicetextAI_x64.app.tar.gz",
+                "url": "https://github.com/777genius/voice-to-text/releases/download/v0.10.15/VoicetextAI_x64.app.tar.gz",
+                "size": 13478489,
+                "content_type": "application/zip",
+                "digest": "sha256:7d5413a9adf67a739d29fa21ff86d27945e011c9a0a3126743bfdee4f1a9067a"
+              },
+              "422402120": {
+                "name": "VoicetextAI_x64.app.tar.gz.sig",
+                "url": "https://github.com/777genius/voice-to-text/releases/download/v0.10.15/VoicetextAI_x64.app.tar.gz.sig",
+                "size": 412,
+                "content_type": "application/zip",
+                "digest": "sha256:86a3ea1b1650b34f1a8c3437b45d91eb12fc705dc252ccde29da1e8ce8fe602b"
+              },
+              "422403597": {
+                "name": "VoicetextAI_0.10.15_x64_en-US.msi",
+                "url": "https://github.com/777genius/voice-to-text/releases/download/v0.10.15/VoicetextAI_0.10.15_x64_en-US.msi",
+                "size": 10838016,
+                "content_type": "application/zip",
+                "digest": "sha256:f0cacccbc296dbd84eabadcb0889c8b29f861d5eecac63c448674c56ea617a7c"
+              },
+              "422403609": {
+                "name": "VoicetextAI_0.10.15_x64_en-US.msi.sig",
+                "url": "https://github.com/777genius/voice-to-text/releases/download/v0.10.15/VoicetextAI_0.10.15_x64_en-US.msi.sig",
+                "size": 424,
+                "content_type": "application/zip",
+                "digest": "sha256:309c15dc5a3f48c7cdeae24364583c5caeb2065c111b10326321e0262c939612"
+              },
+              "422412561": {
+                "name": "VoicetextAI_0.10.15_aarch64.dmg",
+                "url": "https://github.com/777genius/voice-to-text/releases/download/v0.10.15/VoicetextAI_0.10.15_aarch64.dmg",
+                "size": 14627963,
+                "content_type": "application/zip",
+                "digest": "sha256:faf0e0907b5ecba61b95141c1f95a165ce59683cc40ff68c2142374cf8c9b770"
+              },
+              "422412568": {
+                "name": "VoicetextAI_aarch64.app.tar.gz",
+                "url": "https://github.com/777genius/voice-to-text/releases/download/v0.10.15/VoicetextAI_aarch64.app.tar.gz",
+                "size": 12960343,
+                "content_type": "application/zip",
+                "digest": "sha256:754846c2ae05672c6c181d21a65120d0c58d4fa9d9e333c5cec7f5d53fbb0b40"
+              },
+              "422412571": {
+                "name": "VoicetextAI_aarch64.app.tar.gz.sig",
+                "url": "https://github.com/777genius/voice-to-text/releases/download/v0.10.15/VoicetextAI_aarch64.app.tar.gz.sig",
+                "size": 412,
+                "content_type": "application/zip",
+                "digest": "sha256:172810c38a639d3d2ff007f7ccc074f4cbc6944c56bc6fafa91e7d5e9f2879bd"
+              },
+              "422412581": {
+                "name": "latest.json",
+                "url": "https://github.com/777genius/voice-to-text/releases/download/v0.10.15/latest.json",
+                "size": 5913,
+                "content_type": "application/zip",
+                "digest": "sha256:e4786861462e52fafdc20895bf84d46f09a2c32803aae4853c7ebcd30057b756"
+              }
+            }
+          },
+          "323852517": {
+            "tag": "v0.10.15",
+            "title": "VoicetextAI v0.10.15",
+            "url": "https://github.com/777genius/voice-to-text/releases/tag/v0.10.15",
+            "created_at": "2026-05-17T08:50:01Z",
+            "published_at": "2026-05-17T08:57:50Z",
+            "updated_at": "2026-05-17T08:57:54Z",
+            "prerelease": false,
+            "source_zip_url": "https://api.github.com/repos/777genius/voice-to-text/zipball/v0.10.15",
+            "source_tar_url": "https://api.github.com/repos/777genius/voice-to-text/tarball/v0.10.15",
+            "assets": {
+              "422401929": {
+                "name": "VoicetextAI_0.10.15_aarch64.dmg",
+                "url": "https://github.com/777genius/voice-to-text/releases/download/v0.10.15/VoicetextAI_0.10.15_aarch64.dmg",
+                "size": 14627944,
+                "content_type": "application/zip",
+                "digest": "sha256:fc0f3956525b348abd84fb54886a42038361bd6e1dace9b4e93c674b82a4d5cd"
+              },
+              "422401939": {
+                "name": "VoicetextAI_aarch64.app.tar.gz",
+                "url": "https://github.com/777genius/voice-to-text/releases/download/v0.10.15/VoicetextAI_aarch64.app.tar.gz",
+                "size": 12960345,
+                "content_type": "application/zip",
+                "digest": "sha256:367cbdf870bc28d5b65e275567ceeb33d0cff4ce5dd2624e7b73d8ec20571eb5"
+              },
+              "422401952": {
+                "name": "VoicetextAI_aarch64.app.tar.gz.sig",
+                "url": "https://github.com/777genius/voice-to-text/releases/download/v0.10.15/VoicetextAI_aarch64.app.tar.gz.sig",
+                "size": 412,
+                "content_type": "application/zip",
+                "digest": "sha256:735e429e77c0d1cf8aa163a215a2524464f645a8a6fe0273f1ae9ff512dd0553"
+              },
+              "422401954": {
+                "name": "latest.json",
+                "url": "https://github.com/777genius/voice-to-text/releases/download/v0.10.15/latest.json",
+                "size": 1757,
+                "content_type": "application/zip",
+                "digest": "sha256:1fa620cb580e6938646b56f8c0b29f9ebc1ece51aa724b6543135bbd166d13bb"
+              }
+            }
+          }
+        },
+        "history_complete": true
+      },
+      "single_release_replays": "both passed; pair refused"
+    }
+  ]
+}

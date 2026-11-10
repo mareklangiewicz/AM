@@ -1,5 +1,32 @@
 # Full GitHub v3 rollout package
 
+## November 10 continuation — acquisition in progress
+
+Marek requested continuation. Scheduled runs 42740899290 and 42794542725 had
+already raised successful source coverage from 1,116 to 1,613 and then 2,109.
+The first continued manual run, 42839585692, published successfully and added 495
+sources, reaching **2,604 / 8,313**, with **5,709** lacking successful data.
+Its 500 selected sources were all attempted; five failed. Every previous source
+document remained unchanged. The [continuation ledger](github-coverage-continuation-16.json)
+links each further run's exact published counts, summary, statistics and candidate
+hash/retention verification. Sequential acquisition retains the existing bounds
+and pins and stops on failed publication, changed authority or no added sources.
+No further source push, schema/runtime change or installed delivery is involved.
+
+The recurring refusals are not all collector defects. Current public metadata
+reproduces Nuclear's exact-tag conflict (`player@1.23.3`, release IDs 298492443 and
+298492446) and Pixelorama's (`v1.1.10`, 315135795 and 315135796). Each two-release
+fixture fails `same_tag_conflict`; either release alone passes. ADR 0002 requires
+refusal rather than choosing an ID. VSCodium's captured response is 25,105,372
+bytes, exceeding the unchanged 16 MiB response bound; its unbounded offline
+projection passes, which does not authorize bypassing acquisition limits. Wekan's
+oversized-response refusal was already established. Evalit failed HTTP 404 in the
+first continued run. [Portable refusal evidence](github-coverage-refusals-16.json)
+contains minimized fixtures, public response hashes/sizes and sanitized run evidence.
+These captures explain current upstream data, not an exact replay of earlier
+network bytes. No code fix is indicated by these reproductions; accepted conflict
+and resource-bound behavior remains intact. Ticket 16 stays claimed.
+
 ## Approved rotation correction — November 9, 23:16 UTC
 
 Marek approved pushing the prepared correction, repinning the schedule and one
