@@ -1,0 +1,37 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "commander-wars":
+    "aarch64":
+      repository_id: 177397640
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 177397640
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 177397640
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 177397640
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/commander-wars"
+        blob: "750c01c54cfc3e2ce33cce89ea642b4a97c0091e"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T02:17:08Z"
+        recipe_sha256: "d93c63beb1eb1adfb293c0cc8d9ed89caf02666e70c0e1b55938c654ec5fddf2"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

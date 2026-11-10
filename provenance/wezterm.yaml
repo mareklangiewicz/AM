@@ -1,0 +1,48 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "wezterm":
+    "aarch64":
+      repository_id: 120568143
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 120568143
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 120568143
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 120568143
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/wezterm"
+        blob: "0b0f358249dfb8ffe01a09c3482bc29bb7f28023"
+  "wezterm-nightly":
+    "aarch64":
+      repository_id: 120568143
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 120568143
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 120568143
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 120568143
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/wezterm-nightly"
+        blob: "b5c0fcc3f1b13ab1c2f7db7e531ca62a659a7255"

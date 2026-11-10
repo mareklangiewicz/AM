@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "zramen":
+    "aarch64":
+      repository_id: 153996841
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/zramen"
+        blob: "537db33b32f8607aa000fc61745c91561e8c61ca"
+    "armv7l":
+      repository_id: 153996841
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 153996841
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 153996841
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/zramen"
+        blob: "a095618ce05f73aa117b48ebdd14063d13adbe7f"

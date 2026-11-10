@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "synthmultiviewer":
+    "aarch64":
+      repository_id: 137976643
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/synthmultiviewer"
+        blob: "4ddeddd307a9bea9dfc00002c51477a3733e4218"
+    "armv7l":
+      repository_id: 137976643
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 137976643
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 137976643
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/synthmultiviewer"
+        blob: "f25c2dceba25d1904a826f9a7655e53fcdf2e640"

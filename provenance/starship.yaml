@@ -1,0 +1,36 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "starship":
+    "aarch64":
+      repository_id: 178991158
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/starship"
+        blob: "dfbcbbb5c4a5f88d03457206e1b6603c1879de12"
+    "armv7l":
+      repository_id: 178991158
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 178991158
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/i686/starship"
+        blob: "c8271726e9347ea299253d02de4d8a1df7e86c3e"
+    "x86_64":
+      repository_id: 178991158
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/starship"
+        blob: "c15691b4dd669620f05abe666ba2a78b1e7d1591"

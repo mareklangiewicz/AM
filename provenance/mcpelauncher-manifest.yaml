@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "mcpelauncher-manifest":
+    "aarch64":
+      repository_id: 137065390
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/mcpelauncher-manifest"
+        blob: "f80679bfa0e350fa11f01a1282034ba05061a22c"
+    "armv7l":
+      repository_id: 137065390
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 137065390
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 137065390
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/mcpelauncher-manifest"
+        blob: "5cde85233f763708f9b14416620d11601185f555"

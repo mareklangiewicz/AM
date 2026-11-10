@@ -1,0 +1,70 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "moonlight":
+    "aarch64":
+      repository_id: 131449222
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 131449222
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 131449222
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 131449222
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/moonlight"
+        blob: "74fff16d57409aafe40512ca1d5cfa8a69eb729a"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T02:17:08Z"
+        recipe_sha256: "859ad0c7ef39bb64b98099a33bc1c625e325f6721a58721a8394b2687530407f"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"
+  "moonlight-qt":
+    "aarch64":
+      repository_id: 131449222
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 131449222
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 131449222
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 131449222
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/moonlight-qt"
+        blob: "aefdf90d1696b4181f5020a9c3220d00ff207568"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T02:17:08Z"
+        recipe_sha256: "1b8753cf25374a1b47ed1b9e3d25925f614aa0cf9dfedbcf731c7bf136aa67be"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

@@ -1,0 +1,42 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "calendar":
+    "aarch64":
+      repository_id: 168494175
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/calendar"
+        blob: "d8ea656b8739da899969d89088520cc7d7824925"
+    "armv7l":
+      repository_id: 168494175
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 168494175
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 168494175
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/calendar"
+        blob: "868c7f3474ad2de3ce80f0e55fb08ccb12667173"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T02:17:08Z"
+        recipe_sha256: "de83814e78bcd6934d003a9bfdd2e6b86649f185bcf47bcdcc78e3cfb602d44c"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"
