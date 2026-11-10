@@ -1,0 +1,86 @@
+format: 1
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-status-v1.md"
+kind: "summary"
+run:
+  id: 42923285919
+  attempt: 1
+inputs:
+  source: "6277377aeb91daff3bed22f98bea39ba67a4b2c3"
+  policy: "6277377aeb91daff3bed22f98bea39ba67a4b2c3"
+  recipes: "6277377aeb91daff3bed22f98bea39ba67a4b2c3"
+  rules: "6277377aeb91daff3bed22f98bea39ba67a4b2c3"
+  schemas: "040614f86cbbf31fc19596c8d32225c82de77acf"
+input_catalog_state: "known"
+input_catalog: "0cbe19cdc61f9f594971d830e99a0b9893a11fc9"
+started_at: "2026-11-10T23:26:24Z"
+reported_at: "2026-11-10T23:49:15Z"
+collection: "partial"
+validation: "ok"
+publication:
+  state: "confirmed"
+  commit: "0819a95e270995e3f0a5dea2d759d7bfb6281516"
+compatibility_publication:
+  state: "not_attempted"
+counts:
+  enrolled:
+    state: "known"
+    value: 8313
+  selected:
+    state: "known"
+    value: 500
+  attempted:
+    state: "known"
+    value: 500
+  successful:
+    state: "known"
+    value: 479
+  failed:
+    state: "known"
+    value: 21
+  unknown:
+    state: "known"
+    value: 0
+  unattempted:
+    state: "known"
+    value: 0
+  deferred:
+    state: "known"
+    value: 0
+stop_reason: "source_validation"
+metrics:
+  http_attempts:
+    state: "known"
+    value: 501
+  charged_bytes:
+    state: "known"
+    value: 399157891
+  received_bytes:
+    state: "unknown"
+  acquisition_milliseconds:
+    state: "known"
+    value: 357299
+  command_milliseconds:
+    state: "known"
+    value: 963334
+  tree_bytes:
+    state: "known"
+    value: 446172338
+  largest_document_bytes:
+    state: "known"
+    value: 912011
+  local_object_bytes:
+    state: "known"
+    value: 95725795
+  packed_history_bytes:
+    state: "unknown"
+  remote_storage_bytes:
+    state: "unknown"
+  peak_rss_bytes:
+    state: "unknown"
+budgets:
+  requests: 750
+  bytes: 536870912
+  acquisition_milliseconds: 900000
+  document_bytes: 2097152
+actions_url: "https://github.com/mareklangiewicz/AM/actions/runs/42923285919"
+recent_runs_url: "https://github.com/mareklangiewicz/AM/actions/workflows/catalog.yml"
