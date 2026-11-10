@@ -948,6 +948,143 @@
         "history_complete": true
       },
       "single_release_replays": "both passed; pair refused"
+    },
+    {
+      "repository_id": 1155919438,
+      "repository": "silent-rs/Tiangong",
+      "response_bytes": 1839236,
+      "response_sha256": "631786eec5ec11bc47843c2230117072b72b93263939f24fb45e8ccf9e492362",
+      "endpoint": "https://api.github.com/repositories/1155919438/releases?per_page=100",
+      "cause": "same_tag_conflict",
+      "tag": "v0.17.2",
+      "release_ids": [
+        412504462,
+        412504461
+      ],
+      "minimal_acquisition": {
+        "received_at": "2026-11-10T16:40:15Z",
+        "releases": {
+          "412504462": {
+            "tag": "v0.17.2",
+            "title": "\u5929\u5de5 v0.17.2",
+            "url": "https://github.com/silent-rs/Tiangong/releases/tag/v0.17.2",
+            "created_at": "2026-10-14T08:26:22Z",
+            "published_at": "2026-10-14T08:44:02Z",
+            "updated_at": "2026-10-14T08:44:14Z",
+            "prerelease": false,
+            "source_zip_url": "https://api.github.com/repos/silent-rs/Tiangong/zipball/v0.17.2",
+            "source_tar_url": "https://api.github.com/repos/silent-rs/Tiangong/tarball/v0.17.2",
+            "assets": {
+              "639781689": {
+                "name": "Tiangong_0.17.2_linux_amd64.deb",
+                "url": "https://github.com/silent-rs/Tiangong/releases/download/v0.17.2/Tiangong_0.17.2_linux_amd64.deb",
+                "size": 26972296,
+                "content_type": "application/zip",
+                "digest": "sha256:d11a5957f86f425a87a1c3d5d92414acb18686d927a710a76791c945abbe45b1"
+              },
+              "639781737": {
+                "name": "Tiangong_0.17.2_linux_amd64.deb.sig",
+                "url": "https://github.com/silent-rs/Tiangong/releases/download/v0.17.2/Tiangong_0.17.2_linux_amd64.deb.sig",
+                "size": 436,
+                "content_type": "application/zip",
+                "digest": "sha256:e9ab0440125b5367680b8c115e7876051a991ea8cf1ea23707585ffc3e77aff4"
+              },
+              "639781750": {
+                "name": "Tiangong_0.17.2_linux_x86_64.rpm",
+                "url": "https://github.com/silent-rs/Tiangong/releases/download/v0.17.2/Tiangong_0.17.2_linux_x86_64.rpm",
+                "size": 26971050,
+                "content_type": "application/zip",
+                "digest": "sha256:03306226fc10f9b683e7cd8ce957244ce07de3ef38c7d45845b7f8709820ff3f"
+              },
+              "639781797": {
+                "name": "Tiangong_0.17.2_linux_x86_64.rpm.sig",
+                "url": "https://github.com/silent-rs/Tiangong/releases/download/v0.17.2/Tiangong_0.17.2_linux_x86_64.rpm.sig",
+                "size": 440,
+                "content_type": "application/zip",
+                "digest": "sha256:12835174440f3634892675ec473b0356950b2c777ad99d75738ebad38a0754d3"
+              },
+              "639781815": {
+                "name": "Tiangong_0.17.2_linux_amd64.AppImage",
+                "url": "https://github.com/silent-rs/Tiangong/releases/download/v0.17.2/Tiangong_0.17.2_linux_amd64.AppImage",
+                "size": 102111736,
+                "content_type": "application/zip",
+                "digest": "sha256:7f01f3b399bc4434e87dcde8a727af06f706cc1b7ae8b9cd41cb295a0a690ade"
+              },
+              "639781989": {
+                "name": "Tiangong_0.17.2_linux_amd64.AppImage.sig",
+                "url": "https://github.com/silent-rs/Tiangong/releases/download/v0.17.2/Tiangong_0.17.2_linux_amd64.AppImage.sig",
+                "size": 440,
+                "content_type": "application/zip",
+                "digest": "sha256:608660f34ff67ce3852950d4183c5b7f217ac814a3c539861caf0db5ff19b713"
+              },
+              "639782024": {
+                "name": "latest.json",
+                "url": "https://github.com/silent-rs/Tiangong/releases/download/v0.17.2/latest.json",
+                "size": 3247,
+                "content_type": "application/zip",
+                "digest": "sha256:cf7f74dce1fcb876c78b7e73211aed7c69d691095637a585014dd1061e18ca79"
+              }
+            }
+          },
+          "412504461": {
+            "tag": "v0.17.2",
+            "title": "\u5929\u5de5 v0.17.2",
+            "url": "https://github.com/silent-rs/Tiangong/releases/tag/v0.17.2",
+            "created_at": "2026-10-14T08:26:22Z",
+            "published_at": "2026-10-14T08:44:02Z",
+            "updated_at": "2026-10-14T08:48:17Z",
+            "prerelease": false,
+            "source_zip_url": "https://api.github.com/repos/silent-rs/Tiangong/zipball/v0.17.2",
+            "source_tar_url": "https://api.github.com/repos/silent-rs/Tiangong/tarball/v0.17.2",
+            "assets": {
+              "639781705": {
+                "name": "Tiangong_0.17.2_darwin_aarch64.dmg",
+                "url": "https://github.com/silent-rs/Tiangong/releases/download/v0.17.2/Tiangong_0.17.2_darwin_aarch64.dmg",
+                "size": 27189341,
+                "content_type": "application/zip",
+                "digest": "sha256:37785bb0accdd50bb74220e57a4cbc42f4f3d88e770c5968004e5cf8ed8c40bc"
+              },
+              "639781753": {
+                "name": "Tiangong_0.17.2_darwin_aarch64.app.tar.gz",
+                "url": "https://github.com/silent-rs/Tiangong/releases/download/v0.17.2/Tiangong_0.17.2_darwin_aarch64.app.tar.gz",
+                "size": 25673961,
+                "content_type": "application/zip",
+                "digest": "sha256:a600096df33bee4465dab6965ce7f04c44eaaf8495b543fc01ddc48e65a33daa"
+              },
+              "639781807": {
+                "name": "Tiangong_0.17.2_darwin_aarch64.app.tar.gz.sig",
+                "url": "https://github.com/silent-rs/Tiangong/releases/download/v0.17.2/Tiangong_0.17.2_darwin_aarch64.app.tar.gz.sig",
+                "size": 424,
+                "content_type": "application/zip",
+                "digest": "sha256:c790ad3060ee86bca7b3ffc90e53c2e5ab8f2ddd62da88e3f1f3c368535b83e3"
+              },
+              "639792149": {
+                "name": "Tiangong_0.17.2_windows_x64-setup.exe",
+                "url": "https://github.com/silent-rs/Tiangong/releases/download/v0.17.2/Tiangong_0.17.2_windows_x64-setup.exe",
+                "size": 15407399,
+                "content_type": "application/zip",
+                "digest": "sha256:b31515d74d52b8d94dc9e41ea4e5d12d4fc70d15aec97578773ea4e677453403"
+              },
+              "639792215": {
+                "name": "Tiangong_0.17.2_windows_x64-setup.exe.sig",
+                "url": "https://github.com/silent-rs/Tiangong/releases/download/v0.17.2/Tiangong_0.17.2_windows_x64-setup.exe.sig",
+                "size": 440,
+                "content_type": "application/zip",
+                "digest": "sha256:ec9bfdd524df739e1818fd28d937cdc180d217e621e0f2e04bdef41b66f917cc"
+              },
+              "639792308": {
+                "name": "latest.json",
+                "url": "https://github.com/silent-rs/Tiangong/releases/download/v0.17.2/latest.json",
+                "size": 3240,
+                "content_type": "application/zip",
+                "digest": "sha256:bab133912cbbc54f166019d75f6d4ad74ce3f3d3bbb925931c5034779edbfec7"
+              }
+            }
+          }
+        },
+        "history_complete": true
+      },
+      "single_release_replays": "both passed; pair refused"
     }
   ]
 }
