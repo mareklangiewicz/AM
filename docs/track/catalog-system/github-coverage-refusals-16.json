@@ -1085,6 +1085,853 @@
         "history_complete": true
       },
       "single_release_replays": "both passed; pair refused"
+    },
+    {
+      "repository_id": 1207529787,
+      "repository": "freecodetiger/PRAW",
+      "response_bytes": 653141,
+      "response_sha256": "60ffdd15024909772f4ce7c5215ebc5d8a39265171c0ca73c53927c3e9fc4ccf",
+      "endpoint": "https://api.github.com/repositories/1207529787/releases?per_page=100",
+      "cause": "same_tag_conflict",
+      "tag": "main-build-0.1.0-e31d50448125",
+      "release_ids": [
+        310274491,
+        310274493
+      ],
+      "minimal_acquisition": {
+        "received_at": "2026-11-10T21:05:29Z",
+        "releases": {
+          "310274491": {
+            "tag": "main-build-0.1.0-e31d50448125",
+            "title": "PRAW main build 0.1.0 (e31d50448125)",
+            "url": "https://github.com/freecodetiger/PRAW/releases/tag/main-build-0.1.0-e31d50448125",
+            "created_at": "2026-04-17T10:06:37Z",
+            "published_at": "2026-04-17T10:11:40Z",
+            "updated_at": "2026-04-17T10:14:14Z",
+            "prerelease": true,
+            "source_zip_url": "https://api.github.com/repos/freecodetiger/PRAW/zipball/main-build-0.1.0-e31d50448125",
+            "source_tar_url": "https://api.github.com/repos/freecodetiger/PRAW/tarball/main-build-0.1.0-e31d50448125",
+            "assets": {
+              "398503475": {
+                "name": "PRAW_0.1.0_aarch64.dmg",
+                "url": "https://github.com/freecodetiger/PRAW/releases/download/main-build-0.1.0-e31d50448125/PRAW_0.1.0_aarch64.dmg",
+                "size": 9638588,
+                "content_type": "application/zip",
+                "digest": "sha256:f6f37b012e3299e9de8f203371ed69e59188e1bfe82c6a2d74b8b9eb31eae411"
+              },
+              "398503491": {
+                "name": "PRAW_aarch64.app.tar.gz",
+                "url": "https://github.com/freecodetiger/PRAW/releases/download/main-build-0.1.0-e31d50448125/PRAW_aarch64.app.tar.gz",
+                "size": 8829745,
+                "content_type": "application/zip",
+                "digest": "sha256:8fffddf4c203e294beca9aab3b4904f78fcc44616e5edfc7c85e667e7a66aa44"
+              },
+              "398504875": {
+                "name": "PRAW_0.1.0_amd64.deb",
+                "url": "https://github.com/freecodetiger/PRAW/releases/download/main-build-0.1.0-e31d50448125/PRAW_0.1.0_amd64.deb",
+                "size": 9425388,
+                "content_type": "application/zip",
+                "digest": "sha256:b0cc4fd5582106644f14afe10d8a75300cb8ae2679a01de1acd6fc63fa91bf4c"
+              },
+              "398504883": {
+                "name": "PRAW-0.1.0-1.x86_64.rpm",
+                "url": "https://github.com/freecodetiger/PRAW/releases/download/main-build-0.1.0-e31d50448125/PRAW-0.1.0-1.x86_64.rpm",
+                "size": 9425574,
+                "content_type": "application/zip",
+                "digest": "sha256:32c4dc07310f673ce66459c82334400c5bd1c1107e39841e69ca29eb43da5134"
+              },
+              "398504889": {
+                "name": "PRAW_0.1.0_amd64.AppImage",
+                "url": "https://github.com/freecodetiger/PRAW/releases/download/main-build-0.1.0-e31d50448125/PRAW_0.1.0_amd64.AppImage",
+                "size": 86641144,
+                "content_type": "application/zip",
+                "digest": "sha256:78339422aceae76c999bb75b2340af33a0bfa6c1dc3589e7134d515e1bf0a47e"
+              }
+            }
+          },
+          "310274493": {
+            "tag": "main-build-0.1.0-e31d50448125",
+            "title": "PRAW main build 0.1.0 (e31d50448125)",
+            "url": "https://github.com/freecodetiger/PRAW/releases/tag/main-build-0.1.0-e31d50448125",
+            "created_at": "2026-04-17T10:06:37Z",
+            "published_at": "2026-04-17T10:11:40Z",
+            "updated_at": "2026-04-17T10:11:43Z",
+            "prerelease": true,
+            "source_zip_url": "https://api.github.com/repos/freecodetiger/PRAW/zipball/main-build-0.1.0-e31d50448125",
+            "source_tar_url": "https://api.github.com/repos/freecodetiger/PRAW/tarball/main-build-0.1.0-e31d50448125",
+            "assets": {
+              "398503483": {
+                "name": "PRAW_0.1.0_x64.dmg",
+                "url": "https://github.com/freecodetiger/PRAW/releases/download/main-build-0.1.0-e31d50448125/PRAW_0.1.0_x64.dmg",
+                "size": 9900932,
+                "content_type": "application/zip",
+                "digest": "sha256:4d3641bdd7a747936d87b3b1231503c62403317f26299ab36ee33952280097ce"
+              },
+              "398503493": {
+                "name": "PRAW_x64.app.tar.gz",
+                "url": "https://github.com/freecodetiger/PRAW/releases/download/main-build-0.1.0-e31d50448125/PRAW_x64.app.tar.gz",
+                "size": 9116049,
+                "content_type": "application/zip",
+                "digest": "sha256:ddfe45e8143cd51a6f77cec536dc3d71d32275a44172411b0ca89a8b21796c0e"
+              }
+            }
+          }
+        },
+        "history_complete": true
+      },
+      "single_release_replays": "both passed; pair refused"
+    },
+    {
+      "repository_id": 1209344251,
+      "repository": "voidcraft-dev/memory-forge-rs",
+      "response_bytes": 334277,
+      "response_sha256": "aa856aeaea02aca2e7af501511ceddb3fcfd82458664d3638f36125da99e419c",
+      "endpoint": "https://api.github.com/repositories/1209344251/releases?per_page=100",
+      "cause": "same_tag_conflict",
+      "tag": "v3.3.4",
+      "release_ids": [
+        329971164,
+        329971170
+      ],
+      "minimal_acquisition": {
+        "received_at": "2026-11-10T21:05:30Z",
+        "releases": {
+          "329971164": {
+            "tag": "v3.3.4",
+            "title": "Memory Forge v3.3.4",
+            "url": "https://github.com/voidcraft-dev/memory-forge-rs/releases/tag/v3.3.4",
+            "created_at": "2026-05-27T06:49:10Z",
+            "published_at": "2026-05-27T07:04:58Z",
+            "updated_at": "2026-05-27T07:39:48Z",
+            "prerelease": false,
+            "source_zip_url": "https://api.github.com/repos/voidcraft-dev/memory-forge-rs/zipball/v3.3.4",
+            "source_tar_url": "https://api.github.com/repos/voidcraft-dev/memory-forge-rs/tarball/v3.3.4",
+            "assets": {
+              "430873440": {
+                "name": "Memory.Forge_3.3.4_universal.dmg",
+                "url": "https://github.com/voidcraft-dev/memory-forge-rs/releases/download/v3.3.4/Memory.Forge_3.3.4_universal.dmg",
+                "size": 13336327,
+                "content_type": "application/zip",
+                "digest": "sha256:e66b8513d5185f5fbc59daaaebd038a5b6d91bbcd7c5ef2fe81a7fd8d6b0b7fb"
+              },
+              "430873461": {
+                "name": "Memory.Forge_universal.app.tar.gz",
+                "url": "https://github.com/voidcraft-dev/memory-forge-rs/releases/download/v3.3.4/Memory.Forge_universal.app.tar.gz",
+                "size": 13213633,
+                "content_type": "application/zip",
+                "digest": "sha256:1bd7182d7884c1a3ab1f20546045212b09491d0743522c93288f45ac76212ed3"
+              },
+              "430873504": {
+                "name": "Memory.Forge_3.3.4_amd64.deb",
+                "url": "https://github.com/voidcraft-dev/memory-forge-rs/releases/download/v3.3.4/Memory.Forge_3.3.4_amd64.deb",
+                "size": 7873084,
+                "content_type": "application/zip",
+                "digest": "sha256:7bbd3027afda1c3794874e56e3fc3fe0f07de7a884830d98987ebe259d9f1392"
+              },
+              "430873517": {
+                "name": "Memory.Forge-3.3.4-1.x86_64.rpm",
+                "url": "https://github.com/voidcraft-dev/memory-forge-rs/releases/download/v3.3.4/Memory.Forge-3.3.4-1.x86_64.rpm",
+                "size": 7874135,
+                "content_type": "application/zip",
+                "digest": "sha256:53f2646fc03b9ad83bdd710978d128e2a8dd7ee88fce722fab19051ae8e5956c"
+              },
+              "430873525": {
+                "name": "Memory.Forge_3.3.4_amd64.AppImage",
+                "url": "https://github.com/voidcraft-dev/memory-forge-rs/releases/download/v3.3.4/Memory.Forge_3.3.4_amd64.AppImage",
+                "size": 86936056,
+                "content_type": "application/zip",
+                "digest": "sha256:6ec50c07a3cc1809c32b6c07790a9dff26c12229b160d49412feebe924bd2220"
+              },
+              "430895327": {
+                "name": "Memory.Forge_3.3.4_x64_en-US.msi",
+                "url": "https://github.com/voidcraft-dev/memory-forge-rs/releases/download/v3.3.4/Memory.Forge_3.3.4_x64_en-US.msi",
+                "size": 6262784,
+                "content_type": "application/octet-stream",
+                "digest": "sha256:1618bb941169ea4f317db9eabf47496b97d331f794a449db6d3c58170edc7485"
+              },
+              "430895328": {
+                "name": "Memory.Forge_v3.3.4_x64-portable.zip",
+                "url": "https://github.com/voidcraft-dev/memory-forge-rs/releases/download/v3.3.4/Memory.Forge_v3.3.4_x64-portable.zip",
+                "size": 6226565,
+                "content_type": "application/zip",
+                "digest": "sha256:6ce9f2610fb0ba33c84383aa20a669746640a2ffacc7c7fb39c6f2c6d32dfdef"
+              },
+              "430895341": {
+                "name": "Memory.Forge_3.3.4_x64-setup.exe",
+                "url": "https://github.com/voidcraft-dev/memory-forge-rs/releases/download/v3.3.4/Memory.Forge_3.3.4_x64-setup.exe",
+                "size": 4365329,
+                "content_type": "application/x-msdownload",
+                "digest": "sha256:a1e7d82eb6214621ec3759fdb355567b27430a42a71c1f7a1cbf9653a2bfcd88"
+              }
+            }
+          },
+          "329971170": {
+            "tag": "v3.3.4",
+            "title": "Memory Forge v3.3.4",
+            "url": "https://github.com/voidcraft-dev/memory-forge-rs/releases/tag/v3.3.4",
+            "created_at": "2026-05-27T06:49:10Z",
+            "published_at": "2026-05-27T07:04:59Z",
+            "updated_at": "2026-05-27T07:05:02Z",
+            "prerelease": false,
+            "source_zip_url": "https://api.github.com/repos/voidcraft-dev/memory-forge-rs/zipball/v3.3.4",
+            "source_tar_url": "https://api.github.com/repos/voidcraft-dev/memory-forge-rs/tarball/v3.3.4",
+            "assets": {
+              "430873446": {
+                "name": "Memory.Forge_3.3.4_x64_en-US.msi",
+                "url": "https://github.com/voidcraft-dev/memory-forge-rs/releases/download/v3.3.4/Memory.Forge_3.3.4_x64_en-US.msi",
+                "size": 6279168,
+                "content_type": "application/zip",
+                "digest": "sha256:786de5e2b8ed33a11d4183da1e22f3b829dc959e3601eedf61a383346e6001b6"
+              },
+              "430873458": {
+                "name": "Memory.Forge_3.3.4_x64-setup.exe",
+                "url": "https://github.com/voidcraft-dev/memory-forge-rs/releases/download/v3.3.4/Memory.Forge_3.3.4_x64-setup.exe",
+                "size": 4375061,
+                "content_type": "application/zip",
+                "digest": "sha256:1cc2641a092cf710e4438d315b9e259521bbbd1d5ba16795c87d21f99b02b0d1"
+              }
+            }
+          }
+        },
+        "history_complete": true
+      },
+      "single_release_replays": "both passed; pair refused"
+    },
+    {
+      "repository_id": 1238297155,
+      "repository": "juddisjudd/exilecompass",
+      "response_bytes": 1244710,
+      "response_sha256": "7e44be9fd2f9bff6f92dc123887418338b60a9fede68be5af00cdcdffacbe0c6",
+      "endpoint": "https://api.github.com/repositories/1238297155/releases?per_page=100",
+      "cause": "same_tag_conflict",
+      "tag": "v0.2.7",
+      "release_ids": [
+        342751856,
+        342751857
+      ],
+      "minimal_acquisition": {
+        "received_at": "2026-11-10T21:05:30Z",
+        "releases": {
+          "342751856": {
+            "tag": "v0.2.7",
+            "title": "ExileCompass v0.2.7",
+            "url": "https://github.com/juddisjudd/exilecompass/releases/tag/v0.2.7",
+            "created_at": "2026-06-22T07:57:34Z",
+            "published_at": "2026-06-22T08:04:39Z",
+            "updated_at": "2026-06-22T08:04:46Z",
+            "prerelease": false,
+            "source_zip_url": "https://api.github.com/repos/juddisjudd/exilecompass/zipball/v0.2.7",
+            "source_tar_url": "https://api.github.com/repos/juddisjudd/exilecompass/tarball/v0.2.7",
+            "assets": {
+              "454363116": {
+                "name": "ExileCompass_0.2.7_amd64.deb",
+                "url": "https://github.com/juddisjudd/exilecompass/releases/download/v0.2.7/ExileCompass_0.2.7_amd64.deb",
+                "size": 8075626,
+                "content_type": "application/zip",
+                "digest": "sha256:c4b49879539f39f528ffb2a9925f1bbbb80d51d1c9021ef90c5ad273a4f5087b"
+              },
+              "454363126": {
+                "name": "ExileCompass_0.2.7_amd64.deb.sig",
+                "url": "https://github.com/juddisjudd/exilecompass/releases/download/v0.2.7/ExileCompass_0.2.7_amd64.deb.sig",
+                "size": 420,
+                "content_type": "application/zip",
+                "digest": "sha256:7915daf4cfcf5cb11272d3f93a03069c15de09745de38902ce47f3b479a42fbe"
+              },
+              "454363131": {
+                "name": "ExileCompass_0.2.7_amd64.AppImage",
+                "url": "https://github.com/juddisjudd/exilecompass/releases/download/v0.2.7/ExileCompass_0.2.7_amd64.AppImage",
+                "size": 85232120,
+                "content_type": "application/zip",
+                "digest": "sha256:0af439364d619791575d867abefafaf350f1bb43f8746a1361471cd409bf3b11"
+              },
+              "454363156": {
+                "name": "ExileCompass_0.2.7_amd64.AppImage.sig",
+                "url": "https://github.com/juddisjudd/exilecompass/releases/download/v0.2.7/ExileCompass_0.2.7_amd64.AppImage.sig",
+                "size": 424,
+                "content_type": "application/zip",
+                "digest": "sha256:d8b6609d112cd964d309f7c1d880b6ac606c1d808b6bfeeccb3b06c6782a97e3"
+              },
+              "454363170": {
+                "name": "latest.json",
+                "url": "https://github.com/juddisjudd/exilecompass/releases/download/v0.2.7/latest.json",
+                "size": 1943,
+                "content_type": "application/zip",
+                "digest": "sha256:41546c98bee21707c5e0aaef6621e9a69260cf381051ddb306d8f4a5944e94cc"
+              }
+            }
+          },
+          "342751857": {
+            "tag": "v0.2.7",
+            "title": "ExileCompass v0.2.7",
+            "url": "https://github.com/juddisjudd/exilecompass/releases/tag/v0.2.7",
+            "created_at": "2026-06-22T07:57:34Z",
+            "published_at": "2026-06-22T08:04:39Z",
+            "updated_at": "2026-06-22T08:04:42Z",
+            "prerelease": false,
+            "source_zip_url": "https://api.github.com/repos/juddisjudd/exilecompass/zipball/v0.2.7",
+            "source_tar_url": "https://api.github.com/repos/juddisjudd/exilecompass/tarball/v0.2.7",
+            "assets": {
+              "454363115": {
+                "name": "ExileCompass_0.2.7_x64-setup.exe",
+                "url": "https://github.com/juddisjudd/exilecompass/releases/download/v0.2.7/ExileCompass_0.2.7_x64-setup.exe",
+                "size": 4783243,
+                "content_type": "application/zip",
+                "digest": "sha256:aefab4ca93d8b8d08f0f586261ebe2d84471a8e5bfa84688b8afb3e7ae310fd6"
+              },
+              "454363125": {
+                "name": "ExileCompass_0.2.7_x64-setup.exe.sig",
+                "url": "https://github.com/juddisjudd/exilecompass/releases/download/v0.2.7/ExileCompass_0.2.7_x64-setup.exe.sig",
+                "size": 424,
+                "content_type": "application/zip",
+                "digest": "sha256:b4ba219e857e52a6b46a143412d885a05f94404ccc027f80b2acbf0b96d80290"
+              },
+              "454363132": {
+                "name": "latest.json",
+                "url": "https://github.com/juddisjudd/exilecompass/releases/download/v0.2.7/latest.json",
+                "size": 1353,
+                "content_type": "application/zip",
+                "digest": "sha256:214bc7c42726b8377345b81551f9586bf65f8da725757117e8227e18b23b1052"
+              }
+            }
+          }
+        },
+        "history_complete": true
+      },
+      "single_release_replays": "both passed; pair refused"
+    },
+    {
+      "repository_id": 1245849062,
+      "repository": "cyl-castillo/agent-console",
+      "response_bytes": 2945429,
+      "response_sha256": "daea00de7f069ef85a9c18fffb3b99d3bd8dc6149e70f36c6920644faa527816",
+      "endpoint": "https://api.github.com/repositories/1245849062/releases?per_page=100",
+      "cause": "same_tag_conflict",
+      "tag": "v0.41.1",
+      "release_ids": [
+        351689601,
+        351689604
+      ],
+      "minimal_acquisition": {
+        "received_at": "2026-11-10T21:05:30Z",
+        "releases": {
+          "351689601": {
+            "tag": "v0.41.1",
+            "title": "Agent Console v0.41.1",
+            "url": "https://github.com/cyl-castillo/agent-console/releases/tag/v0.41.1",
+            "created_at": "2026-07-09T17:37:41Z",
+            "published_at": "2026-07-09T17:44:51Z",
+            "updated_at": "2026-07-09T17:57:02Z",
+            "prerelease": false,
+            "source_zip_url": "https://api.github.com/repos/cyl-castillo/agent-console/zipball/v0.41.1",
+            "source_tar_url": "https://api.github.com/repos/cyl-castillo/agent-console/tarball/v0.41.1",
+            "assets": {
+              "471583850": {
+                "name": "Agent.Console_0.41.1_aarch64.dmg",
+                "url": "https://github.com/cyl-castillo/agent-console/releases/download/v0.41.1/Agent.Console_0.41.1_aarch64.dmg",
+                "size": 9287145,
+                "content_type": "application/zip",
+                "digest": "sha256:9f08c3ef90ed44c982a0a3acedfa314e1bfe49d307ca10017ca289461f0ae3d9"
+              },
+              "471583881": {
+                "name": "Agent.Console_aarch64.app.tar.gz",
+                "url": "https://github.com/cyl-castillo/agent-console/releases/download/v0.41.1/Agent.Console_aarch64.app.tar.gz",
+                "size": 8251847,
+                "content_type": "application/zip",
+                "digest": "sha256:a19bf2218b9f59d044ba50443e6edca2e0aa22a18c48efe6f3028945f1c827c7"
+              },
+              "471583904": {
+                "name": "Agent.Console_aarch64.app.tar.gz.sig",
+                "url": "https://github.com/cyl-castillo/agent-console/releases/download/v0.41.1/Agent.Console_aarch64.app.tar.gz.sig",
+                "size": 412,
+                "content_type": "application/zip",
+                "digest": "sha256:7ecca0e4fc212ca02fbdf230aecf17b49f423234466f8cd89b2f04447bbd7303"
+              },
+              "471584624": {
+                "name": "Agent.Console_0.41.1_amd64.deb",
+                "url": "https://github.com/cyl-castillo/agent-console/releases/download/v0.41.1/Agent.Console_0.41.1_amd64.deb",
+                "size": 9080216,
+                "content_type": "application/zip",
+                "digest": "sha256:1a744003436d15211b8bcb9e75fbbc9f6d291904e56a0d6b0192f7535fa30a75"
+              },
+              "471584652": {
+                "name": "Agent.Console_0.41.1_amd64.deb.sig",
+                "url": "https://github.com/cyl-castillo/agent-console/releases/download/v0.41.1/Agent.Console_0.41.1_amd64.deb.sig",
+                "size": 420,
+                "content_type": "application/zip",
+                "digest": "sha256:ae770b5364b98f2d705bab18a36cea0856744116e80f5bcff23e17ea56a9b4cd"
+              },
+              "471584670": {
+                "name": "Agent.Console-0.41.1-1.x86_64.rpm",
+                "url": "https://github.com/cyl-castillo/agent-console/releases/download/v0.41.1/Agent.Console-0.41.1-1.x86_64.rpm",
+                "size": 9079694,
+                "content_type": "application/zip",
+                "digest": "sha256:3db30256b6d9e849a4a83cd407ef9442168db9c87188aacc48b8332703138c8e"
+              },
+              "471584685": {
+                "name": "Agent.Console-0.41.1-1.x86_64.rpm.sig",
+                "url": "https://github.com/cyl-castillo/agent-console/releases/download/v0.41.1/Agent.Console-0.41.1-1.x86_64.rpm.sig",
+                "size": 424,
+                "content_type": "application/zip",
+                "digest": "sha256:c2a71eee789c517a88ddf2401a630901ea676c25f2c045d89fd9e5358259edac"
+              },
+              "471584689": {
+                "name": "Agent.Console_0.41.1_amd64.AppImage",
+                "url": "https://github.com/cyl-castillo/agent-console/releases/download/v0.41.1/Agent.Console_0.41.1_amd64.AppImage",
+                "size": 85993976,
+                "content_type": "application/zip",
+                "digest": "sha256:cd9b1e060020a42206b3f23419444a594ec891bf939610ff50714ee47fdb8dd8"
+              },
+              "471584735": {
+                "name": "Agent.Console_0.41.1_amd64.AppImage.sig",
+                "url": "https://github.com/cyl-castillo/agent-console/releases/download/v0.41.1/Agent.Console_0.41.1_amd64.AppImage.sig",
+                "size": 428,
+                "content_type": "application/zip",
+                "digest": "sha256:5f8b3b23257b15e42c7e90a0ebdd23ee9f91a2826c5af98c8402218d5d3eb066"
+              },
+              "471594481": {
+                "name": "Agent.Console_0.41.1_x64_en-US.msi",
+                "url": "https://github.com/cyl-castillo/agent-console/releases/download/v0.41.1/Agent.Console_0.41.1_x64_en-US.msi",
+                "size": 6991872,
+                "content_type": "application/zip",
+                "digest": "sha256:f36b67dcce151ff255ca1b6ec6cbed728c51a4a64bdca042ff8859bb03f71207"
+              },
+              "471594498": {
+                "name": "Agent.Console_0.41.1_x64_en-US.msi.sig",
+                "url": "https://github.com/cyl-castillo/agent-console/releases/download/v0.41.1/Agent.Console_0.41.1_x64_en-US.msi.sig",
+                "size": 428,
+                "content_type": "application/zip",
+                "digest": "sha256:01de21d33e6472cf52bf982c228cca96de65fc93088f078c8d3c6288ab369147"
+              },
+              "471594504": {
+                "name": "Agent.Console_0.41.1_x64-setup.exe",
+                "url": "https://github.com/cyl-castillo/agent-console/releases/download/v0.41.1/Agent.Console_0.41.1_x64-setup.exe",
+                "size": 4792541,
+                "content_type": "application/zip",
+                "digest": "sha256:a2f18c0b3bd80506c54b75f222bc18a1781e5cf1ea534bb7496c5b8f90496f74"
+              },
+              "471594517": {
+                "name": "Agent.Console_0.41.1_x64-setup.exe.sig",
+                "url": "https://github.com/cyl-castillo/agent-console/releases/download/v0.41.1/Agent.Console_0.41.1_x64-setup.exe.sig",
+                "size": 428,
+                "content_type": "application/zip",
+                "digest": "sha256:f398480a6cb22a4ebf6bc34a6807b9f60f90329e183d2e65d4e31ff86408e652"
+              },
+              "471594548": {
+                "name": "latest.json",
+                "url": "https://github.com/cyl-castillo/agent-console/releases/download/v0.41.1/latest.json",
+                "size": 5510,
+                "content_type": "application/zip",
+                "digest": "sha256:b0d3e51aa6ec574992628c4803f4e381b9808977df51ded9dc0fee10d23a0d03"
+              }
+            }
+          },
+          "351689604": {
+            "tag": "v0.41.1",
+            "title": "Agent Console v0.41.1",
+            "url": "https://github.com/cyl-castillo/agent-console/releases/tag/v0.41.1",
+            "created_at": "2026-07-09T17:37:41Z",
+            "published_at": "2026-07-09T17:44:52Z",
+            "updated_at": "2026-07-09T17:44:56Z",
+            "prerelease": false,
+            "source_zip_url": "https://api.github.com/repos/cyl-castillo/agent-console/zipball/v0.41.1",
+            "source_tar_url": "https://api.github.com/repos/cyl-castillo/agent-console/tarball/v0.41.1",
+            "assets": {
+              "471582655": {
+                "name": "Agent.Console_0.41.1_x64_en-US.msi",
+                "url": "https://github.com/cyl-castillo/agent-console/releases/download/v0.41.1/Agent.Console_0.41.1_x64_en-US.msi",
+                "size": 6991872,
+                "content_type": "application/zip",
+                "digest": "sha256:b7766eabd383f0fc92c18e4f239bdcf09e70b0979bb36853e9917e70e7d16e05"
+              },
+              "471582698": {
+                "name": "Agent.Console_0.41.1_x64_en-US.msi.sig",
+                "url": "https://github.com/cyl-castillo/agent-console/releases/download/v0.41.1/Agent.Console_0.41.1_x64_en-US.msi.sig",
+                "size": 428,
+                "content_type": "application/zip",
+                "digest": "sha256:32dafdc10ecb3d4a2f520cc13d2e23d3c3c68adc9c24ae69bc5eebd230348bf1"
+              },
+              "471582707": {
+                "name": "Agent.Console_0.41.1_x64-setup.exe",
+                "url": "https://github.com/cyl-castillo/agent-console/releases/download/v0.41.1/Agent.Console_0.41.1_x64-setup.exe",
+                "size": 4790650,
+                "content_type": "application/zip",
+                "digest": "sha256:1bcfd29b299002b8a0ee34d16cee6e932cf4913b29ec3abdbcf3b4b184495f8f"
+              },
+              "471582722": {
+                "name": "Agent.Console_0.41.1_x64-setup.exe.sig",
+                "url": "https://github.com/cyl-castillo/agent-console/releases/download/v0.41.1/Agent.Console_0.41.1_x64-setup.exe.sig",
+                "size": 428,
+                "content_type": "application/zip",
+                "digest": "sha256:730dbedcf76fc9a7b40280106dfa527a7ba1b9cfab0239815c299fc58a0b175e"
+              },
+              "471582743": {
+                "name": "latest.json",
+                "url": "https://github.com/cyl-castillo/agent-console/releases/download/v0.41.1/latest.json",
+                "size": 1924,
+                "content_type": "application/zip",
+                "digest": "sha256:8017f5ea3dba3be30dee68d6b5b403ab366e064afa7bf710987c4f9bc2967480"
+              }
+            }
+          }
+        },
+        "history_complete": true
+      },
+      "single_release_replays": "both passed; pair refused"
+    },
+    {
+      "repository_id": 1234036192,
+      "repository": "typeward/typeward",
+      "cause": "upstream HTTP 404",
+      "evidence_run": 42867126541,
+      "evidence_step": "acquire / Collect candidates only",
+      "evidence_at": "2026-11-10T17:44:10.2405587Z",
+      "sanitized_failure": "typeward/typeward: failed (transport HTTP 404)"
+    },
+    {
+      "repository_id": 1310162837,
+      "repository": "RongleCat/grok-app",
+      "response_bytes": 3290033,
+      "response_sha256": "f8423ace5748f44c17d51fff79d7a46b5c373594f5e631a2348aeafee62625db",
+      "endpoint": "https://api.github.com/repositories/1310162837/releases?per_page=100",
+      "cause": "same_tag_conflict",
+      "tag": "v0.2.24",
+      "release_ids": [
+        374161412,
+        374161410
+      ],
+      "minimal_acquisition": {
+        "received_at": "2026-11-10T21:06:36Z",
+        "releases": {
+          "374161412": {
+            "tag": "v0.2.24",
+            "title": "Grok App v0.2.24",
+            "url": "https://github.com/RongleCat/grok-app/releases/tag/v0.2.24",
+            "created_at": "2026-08-21T03:41:55Z",
+            "published_at": "2026-08-21T03:56:38Z",
+            "updated_at": "2026-08-21T03:56:42Z",
+            "prerelease": false,
+            "source_zip_url": "https://api.github.com/repos/RongleCat/grok-app/zipball/v0.2.24",
+            "source_tar_url": "https://api.github.com/repos/RongleCat/grok-app/tarball/v0.2.24",
+            "assets": {
+              "523193327": {
+                "name": "Grok_0.2.24_aarch64.dmg",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/Grok_0.2.24_aarch64.dmg",
+                "size": 16366414,
+                "content_type": "application/zip",
+                "digest": "sha256:079543036be86fb861ca4c6d669eed751ea331e1f5cf09db95f6b1457ac93df2"
+              },
+              "523193347": {
+                "name": "Grok_aarch64.app.tar.gz",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/Grok_aarch64.app.tar.gz",
+                "size": 16595490,
+                "content_type": "application/zip",
+                "digest": "sha256:6dd862147f08a08495c77de9fa9e218ba886e5fbb4c2ba8d2037ddd0d3ceb781"
+              },
+              "523193375": {
+                "name": "Grok_aarch64.app.tar.gz.sig",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/Grok_aarch64.app.tar.gz.sig",
+                "size": 400,
+                "content_type": "application/zip",
+                "digest": "sha256:02ae84891d64c3b7ee34f4d04ad3738e53d9b7046b41a15bc40774e64d2568cd"
+              }
+            }
+          },
+          "374161410": {
+            "tag": "v0.2.24",
+            "title": "Grok App v0.2.24",
+            "url": "https://github.com/RongleCat/grok-app/releases/tag/v0.2.24",
+            "created_at": "2026-08-21T03:41:55Z",
+            "published_at": "2026-08-21T03:56:38Z",
+            "updated_at": "2026-08-21T04:09:42Z",
+            "prerelease": false,
+            "source_zip_url": "https://api.github.com/repos/RongleCat/grok-app/zipball/v0.2.24",
+            "source_tar_url": "https://api.github.com/repos/RongleCat/grok-app/tarball/v0.2.24",
+            "assets": {
+              "523193325": {
+                "name": "Grok_0.2.24_x64.dmg",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/Grok_0.2.24_x64.dmg",
+                "size": 17607072,
+                "content_type": "application/zip",
+                "digest": "sha256:e3b2e1cda92b788f94addd4601110a2d4de91f800b283e8b96978c3ab7d4fe90"
+              },
+              "523193349": {
+                "name": "Grok_x64.app.tar.gz",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/Grok_x64.app.tar.gz",
+                "size": 17682556,
+                "content_type": "application/zip",
+                "digest": "sha256:48b9dc42ac4b48cb571574d307c829f25b73ac7a33055d63b8407e88bcaeff89"
+              },
+              "523193369": {
+                "name": "Grok_x64.app.tar.gz.sig",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/Grok_x64.app.tar.gz.sig",
+                "size": 400,
+                "content_type": "application/zip",
+                "digest": "sha256:e37badfcbc1527cea2aa823af6556dae416f3fabbd7b0008137db0de7870fb9a"
+              },
+              "523193404": {
+                "name": "Grok_0.2.24_x64.app.tar.gz.sig",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/Grok_0.2.24_x64.app.tar.gz.sig",
+                "size": 400,
+                "content_type": "application/pgp-signature",
+                "digest": "sha256:e37badfcbc1527cea2aa823af6556dae416f3fabbd7b0008137db0de7870fb9a"
+              },
+              "523193405": {
+                "name": "Grok_0.2.24_x64.app.tar.gz",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/Grok_0.2.24_x64.app.tar.gz",
+                "size": 17682556,
+                "content_type": "application/x-gtar",
+                "digest": "sha256:48b9dc42ac4b48cb571574d307c829f25b73ac7a33055d63b8407e88bcaeff89"
+              },
+              "523193407": {
+                "name": "Grok_0.2.24_aarch64.app.tar.gz",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/Grok_0.2.24_aarch64.app.tar.gz",
+                "size": 16595490,
+                "content_type": "application/x-gtar",
+                "digest": "sha256:6dd862147f08a08495c77de9fa9e218ba886e5fbb4c2ba8d2037ddd0d3ceb781"
+              },
+              "523193411": {
+                "name": "Grok_0.2.24_aarch64.app.tar.gz.sig",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/Grok_0.2.24_aarch64.app.tar.gz.sig",
+                "size": 400,
+                "content_type": "application/pgp-signature",
+                "digest": "sha256:02ae84891d64c3b7ee34f4d04ad3738e53d9b7046b41a15bc40774e64d2568cd"
+              },
+              "523197794": {
+                "name": "Grok_0.2.24_amd64.deb",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/Grok_0.2.24_amd64.deb",
+                "size": 18527334,
+                "content_type": "application/zip",
+                "digest": "sha256:0beb14da4afa6a0869e715a5c086dc929f04d64a8ad105c3e53c183ebc1733ac"
+              },
+              "523197813": {
+                "name": "Grok_0.2.24_amd64.deb.sig",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/Grok_0.2.24_amd64.deb.sig",
+                "size": 408,
+                "content_type": "application/zip",
+                "digest": "sha256:3fdd59912165b774e8d263c0516b367fcec852d80060980b418553e5ff2f4405"
+              },
+              "523197817": {
+                "name": "Grok-0.2.24-1.x86_64.rpm",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/Grok-0.2.24-1.x86_64.rpm",
+                "size": 18528430,
+                "content_type": "application/zip",
+                "digest": "sha256:eae18ea483e20a767803d6bbcd075465d02a2ad9b0d008f3e2e441a708091152"
+              },
+              "523197850": {
+                "name": "Grok-0.2.24-1.x86_64.rpm.sig",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/Grok-0.2.24-1.x86_64.rpm.sig",
+                "size": 412,
+                "content_type": "application/zip",
+                "digest": "sha256:b857fd7c4b2ce904e179129dbc9834c003a97721b9e35f258a1a33f492feb37e"
+              },
+              "523197854": {
+                "name": "Grok_0.2.24_amd64.AppImage",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/Grok_0.2.24_amd64.AppImage",
+                "size": 94951928,
+                "content_type": "application/zip",
+                "digest": "sha256:fc82cc7f131a7176b2bafc2a01082b9df6c9e10b6e3d27abfbe9d85eaef1b801"
+              },
+              "523197899": {
+                "name": "Grok_0.2.24_amd64.AppImage.sig",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/Grok_0.2.24_amd64.AppImage.sig",
+                "size": 416,
+                "content_type": "application/zip",
+                "digest": "sha256:e4bf5e23a047d55f88c77b96cc14460a0b6de052b7b910d89f0d9009fd20d1a1"
+              },
+              "523202125": {
+                "name": "Grok_0.2.24_x64-setup.exe",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/Grok_0.2.24_x64-setup.exe",
+                "size": 14038468,
+                "content_type": "application/zip",
+                "digest": "sha256:5d29500027b46cb9abdbf400db8b85c6042e0c5322e458ca23fc2ffb0c9fe714"
+              },
+              "523202150": {
+                "name": "Grok_0.2.24_x64-setup.exe.sig",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/Grok_0.2.24_x64-setup.exe.sig",
+                "size": 416,
+                "content_type": "application/zip",
+                "digest": "sha256:af853aca9be58a55449735652784e1ba189cd4473a029d96178dd2fc482b3a24"
+              },
+              "523202242": {
+                "name": "Grok_0.2.24_x64-portable.zip",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/Grok_0.2.24_x64-portable.zip",
+                "size": 18710934,
+                "content_type": "application/zip",
+                "digest": "sha256:db77a393d7603e5c9156a0450f2b2c916c5a74069df746c51b702941471c7c22"
+              },
+              "523205065": {
+                "name": "latest.json",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/latest.json",
+                "size": 2436,
+                "content_type": "application/json",
+                "digest": "sha256:bb4bbe99ead68c87f8b53bfc31fe772821b14311505522402ec1ddf16d5cf6a2"
+              },
+              "523205359": {
+                "name": "Grok_windows_x64-setup.exe",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/Grok_windows_x64-setup.exe",
+                "size": 14038468,
+                "content_type": "application/octet-stream",
+                "digest": "sha256:5d29500027b46cb9abdbf400db8b85c6042e0c5322e458ca23fc2ffb0c9fe714"
+              },
+              "523205360": {
+                "name": "SHA256SUMS",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/SHA256SUMS",
+                "size": 2180,
+                "content_type": "application/octet-stream",
+                "digest": "sha256:5cf8c7b396018adc53d967bd5ab96428b84fa72c344e25f025113209844c6360"
+              },
+              "523205361": {
+                "name": "Grok_windows_x64-portable.zip",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/Grok_windows_x64-portable.zip",
+                "size": 18710934,
+                "content_type": "application/zip",
+                "digest": "sha256:db77a393d7603e5c9156a0450f2b2c916c5a74069df746c51b702941471c7c22"
+              },
+              "523205362": {
+                "name": "Grok_mac_x64.dmg",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/Grok_mac_x64.dmg",
+                "size": 17607072,
+                "content_type": "application/x-apple-diskimage",
+                "digest": "sha256:e3b2e1cda92b788f94addd4601110a2d4de91f800b283e8b96978c3ab7d4fe90"
+              },
+              "523205363": {
+                "name": "downloads.json",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/downloads.json",
+                "size": 3825,
+                "content_type": "application/json",
+                "digest": "sha256:cd16b80e007f20a866cea2916474c3e44c28b193cb3e35bac8eaf7a934bd5c02"
+              },
+              "523205369": {
+                "name": "Grok_linux_x64.AppImage",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/Grok_linux_x64.AppImage",
+                "size": 94951928,
+                "content_type": "application/vnd.appimage",
+                "digest": "sha256:fc82cc7f131a7176b2bafc2a01082b9df6c9e10b6e3d27abfbe9d85eaef1b801"
+              },
+              "523205370": {
+                "name": "Grok_linux_x64.deb",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/Grok_linux_x64.deb",
+                "size": 18527334,
+                "content_type": "application/x-debian-package",
+                "digest": "sha256:0beb14da4afa6a0869e715a5c086dc929f04d64a8ad105c3e53c183ebc1733ac"
+              },
+              "523205384": {
+                "name": "Grok_linux_x64.rpm",
+                "url": "https://github.com/RongleCat/grok-app/releases/download/v0.2.24/Grok_linux_x64.rpm",
+                "size": 18528430,
+                "content_type": "application/x-rpm",
+                "digest": "sha256:eae18ea483e20a767803d6bbcd075465d02a2ad9b0d008f3e2e441a708091152"
+              }
+            }
+          }
+        },
+        "history_complete": true
+      },
+      "single_release_replays": "both passed; pair refused"
+    },
+    {
+      "repository_id": 1312837813,
+      "repository": "Oublie-le/iTerm",
+      "response_bytes": 145756,
+      "response_sha256": "39ec068f20003d771e967f893e3b004a5a3800cb589a06b87716fc00dcb83635",
+      "endpoint": "https://api.github.com/repositories/1312837813/releases?per_page=100",
+      "cause": "same_tag_conflict",
+      "tag": "v0.7.0",
+      "release_ids": [
+        360239288,
+        360239290
+      ],
+      "minimal_acquisition": {
+        "received_at": "2026-11-10T21:06:37Z",
+        "releases": {
+          "360239288": {
+            "tag": "v0.7.0",
+            "title": "iTerm v0.7.0",
+            "url": "https://github.com/Oublie-le/iTerm/releases/tag/v0.7.0",
+            "created_at": "2026-07-27T06:27:08Z",
+            "published_at": "2026-07-27T06:30:47Z",
+            "updated_at": "2026-07-27T06:56:52Z",
+            "prerelease": false,
+            "source_zip_url": "https://api.github.com/repos/Oublie-le/iTerm/zipball/v0.7.0",
+            "source_tar_url": "https://api.github.com/repos/Oublie-le/iTerm/tarball/v0.7.0",
+            "assets": {
+              "491125187": {
+                "name": "iTerm_0.7.0_aarch64.dmg",
+                "url": "https://github.com/Oublie-le/iTerm/releases/download/v0.7.0/iTerm_0.7.0_aarch64.dmg",
+                "size": 4714428,
+                "content_type": "application/zip",
+                "digest": "sha256:53351dff1ee0cef22fe671d82d7e7a08f0dc09aba280d4804e36f3bc01d5f8e5"
+              },
+              "491126253": {
+                "name": "iTerm_0.7.0_x64.dmg",
+                "url": "https://github.com/Oublie-le/iTerm/releases/download/v0.7.0/iTerm_0.7.0_x64.dmg",
+                "size": 4855758,
+                "content_type": "application/zip",
+                "digest": "sha256:d6c9cf7ab1d5fa636a84c82cb6a1190c2a945020f96a060678bb48683e9a1321"
+              },
+              "491127402": {
+                "name": "iTerm_0.7.0_amd64.deb",
+                "url": "https://github.com/Oublie-le/iTerm/releases/download/v0.7.0/iTerm_0.7.0_amd64.deb",
+                "size": 5049920,
+                "content_type": "application/zip",
+                "digest": "sha256:c9f58fb93ac4e3e8dba125000aa98ab4c38d7369262143b1308ccfc26193549a"
+              },
+              "491127407": {
+                "name": "iTerm_0.7.0_amd64.AppImage",
+                "url": "https://github.com/Oublie-le/iTerm/releases/download/v0.7.0/iTerm_0.7.0_amd64.AppImage",
+                "size": 82450936,
+                "content_type": "application/zip",
+                "digest": "sha256:ea96e754cd6eb19c8fd5e63c350241b04674de658b86b6b059bdcda8ec9418ac"
+              },
+              "491128595": {
+                "name": "iTerm_0.7.0_x64-setup.exe",
+                "url": "https://github.com/Oublie-le/iTerm/releases/download/v0.7.0/iTerm_0.7.0_x64-setup.exe",
+                "size": 3437386,
+                "content_type": "application/zip",
+                "digest": "sha256:6ed9799f9dd64f756b047d31e02290b4d6a54fd8ccc6de3fd477b4ff8fc8eb0c"
+              },
+              "491128978": {
+                "name": "iTerm-v0.7.0.cdx.json",
+                "url": "https://github.com/Oublie-le/iTerm/releases/download/v0.7.0/iTerm-v0.7.0.cdx.json",
+                "size": 279052,
+                "content_type": "application/json",
+                "digest": "sha256:30d77967274364ef80e42ec8b04288f36677f3e6d637e763e2b64154e5075940"
+              }
+            }
+          },
+          "360239290": {
+            "tag": "v0.7.0",
+            "title": "iTerm v0.7.0",
+            "url": "https://github.com/Oublie-le/iTerm/releases/tag/v0.7.0",
+            "created_at": "2026-07-27T06:27:08Z",
+            "published_at": "2026-07-27T06:30:47Z",
+            "updated_at": "2026-07-27T06:30:49Z",
+            "prerelease": false,
+            "source_zip_url": "https://api.github.com/repos/Oublie-le/iTerm/zipball/v0.7.0",
+            "source_tar_url": "https://api.github.com/repos/Oublie-le/iTerm/tarball/v0.7.0",
+            "assets": {
+              "491108024": {
+                "name": "iTerm_0.7.0_aarch64.dmg",
+                "url": "https://github.com/Oublie-le/iTerm/releases/download/v0.7.0/iTerm_0.7.0_aarch64.dmg",
+                "size": 4714424,
+                "content_type": "application/zip",
+                "digest": "sha256:a631daf5bc8f9119f4f6c33a2c4ca1cf7d56e386855cceeae4da71254a62b7c9"
+              }
+            }
+          }
+        },
+        "history_complete": true
+      },
+      "single_release_replays": "both passed; pair refused"
+    },
+    {
+      "repository_id": 1344297039,
+      "repository": "Bees-bot/bees-desktop",
+      "cause": "upstream HTTP 404",
+      "evidence_run": 42870336181,
+      "evidence_step": "acquire / Collect candidates only",
+      "evidence_at": "2026-11-10T18:30:33.5333775Z",
+      "sanitized_failure": "Bees-bot/bees-desktop: failed (transport HTTP 404)"
     }
   ]
 }
