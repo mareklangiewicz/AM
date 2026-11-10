@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "manul":
+    "aarch64":
+      repository_id: 1406304269
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/manul"
+        blob: "dc7b0fa898a1cf6e2add551808bcc0b78eb0934c"
+    "armv7l":
+      repository_id: 1406304269
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1406304269
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1406304269
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/manul"
+        blob: "098c6733e9bf8317fac24132c8cd85fb44bf1078"

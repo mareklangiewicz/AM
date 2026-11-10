@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "composa":
+    "aarch64":
+      repository_id: 1379964980
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/composa"
+        blob: "813e294da4a672abe5f6f73ecc3f5c4c4eb6cf51"
+    "armv7l":
+      repository_id: 1379964980
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1379964980
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1379964980
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/composa"
+        blob: "95adbe577742a6a3265326de895eb19e3c931d3e"

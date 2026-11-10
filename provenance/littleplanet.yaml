@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "littleplanet":
+    "aarch64":
+      repository_id: 1413888285
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/littleplanet"
+        blob: "ca90b595266005d3a2ba19fae2f6b84ce5c69374"
+    "armv7l":
+      repository_id: 1413888285
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1413888285
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1413888285
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/littleplanet"
+        blob: "605dc3e167dc84aa392eea7fa5c5ecf949d2f9cb"

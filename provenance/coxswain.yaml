@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "coxswain":
+    "aarch64":
+      repository_id: 1387640973
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/coxswain"
+        blob: "566e8aa9abc531d0e79f356f2b6b60234feff431"
+    "armv7l":
+      repository_id: 1387640973
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1387640973
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1387640973
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/coxswain"
+        blob: "85401b5584eaf67588dae2637f3de7db38f2708d"

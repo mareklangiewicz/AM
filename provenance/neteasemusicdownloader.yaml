@@ -1,0 +1,42 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "neteasemusicdownloader":
+    "aarch64":
+      repository_id: 1397205991
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/neteasemusicdownloader"
+        blob: "c6b8998521bb9bb5ebaefa11e70cbed61934286b"
+    "armv7l":
+      repository_id: 1397205991
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1397205991
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1397205991
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/neteasemusicdownloader"
+        blob: "9c05b162b8bf9601c21d57f82a3d014057747893"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T21:19:42Z"
+        recipe_sha256: "39f71d5ea8c675cdf4e82ce29aa478664c1a298a53e1a24d75544ad62bdf580d"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

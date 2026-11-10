@@ -1,0 +1,26 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "bk-study-desk":
+    "aarch64":
+      repository_id: 1400677492
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 1400677492
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1400677492
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1400677492
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/bk-study-desk"
+        blob: "244157ac67287f0215e7b81b3d8f83afd26cef11"

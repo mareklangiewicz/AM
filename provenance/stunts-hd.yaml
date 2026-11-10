@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "stunts-hd":
+    "aarch64":
+      repository_id: 1413080005
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/stunts-hd"
+        blob: "fe90ee850d2e0ca4bb051eabe3dd7d8256b43e45"
+    "armv7l":
+      repository_id: 1413080005
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1413080005
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1413080005
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/stunts-hd"
+        blob: "00604cd46c373bb5818a060ea5865f1ec9656415"

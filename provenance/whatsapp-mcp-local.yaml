@@ -1,0 +1,42 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "whatsapp-mcp-local":
+    "aarch64":
+      repository_id: 1397155479
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/whatsapp-mcp-local"
+        blob: "2db0f516200c8b4ffd68d7a54ff87b6c72eaa3fe"
+    "armv7l":
+      repository_id: 1397155479
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1397155479
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1397155479
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/whatsapp-mcp-local"
+        blob: "e1c930dbcf64633aa3462ab4f7a5cf4dd1172c35"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T21:19:42Z"
+        recipe_sha256: "150ed1d6a4164b6fcc0db6a41243f4a57ddb9d87c15d5089a5617d7a57192bba"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

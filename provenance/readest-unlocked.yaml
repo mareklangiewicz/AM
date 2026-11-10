@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "readest-unlocked":
+    "aarch64":
+      repository_id: 1406842037
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/readest-unlocked"
+        blob: "0971891847a0ce9b72f05a0d2b5bc2b22b04fff7"
+    "armv7l":
+      repository_id: 1406842037
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1406842037
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1406842037
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/readest-unlocked"
+        blob: "27a14882ebfa8c8fbbb5a617e97b3f506b77a9b5"

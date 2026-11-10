@@ -1,0 +1,716 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "repository"
+repository_id: 1384781498
+repository: "melo-foundation/melo"
+collected_at: "2026-11-10T21:13:29Z"
+scope:
+  page_size: 100
+  pages_fetched: 1
+  history_complete: true
+observed_at: "2026-11-10T21:13:29Z"
+releases:
+  "395909614":
+    tag: "alpha-1"
+    title: "Alpha 1"
+    url: "https://github.com/melo-foundation/melo/releases/tag/alpha-1"
+    created_at: "2026-09-24T17:00:23Z"
+    published_at: "2026-09-24T17:33:29Z"
+    updated_at: "2026-09-24T17:33:29Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/melo-foundation/melo/zipball/alpha-1"
+    source_tar_url: "https://api.github.com/repos/melo-foundation/melo/tarball/alpha-1"
+    download_base: "https://github.com/melo-foundation/melo/releases/download/alpha-1/"
+    assets:
+      "586442789":
+        name: "melo-x86_64.rpm"
+        url_suffix: "melo-x86_64.rpm"
+        size: 25374808
+        media_type: "application/x-rpm"
+        digest: "sha256:ba35e1e64d3de34d750de60da14f7f855cb46e540f769380f22366f49add5c37"
+      "586442791":
+        name: "melo-lite-x86_64.AppImage"
+        url_suffix: "melo-lite-x86_64.AppImage"
+        size: 20011512
+        media_type: "application/vnd.appimage"
+        digest: "sha256:3626a42a362e18b36115b84436bbe542da1525489a48202591f0523ac395ad74"
+      "586442793":
+        name: "melo-amd64.deb"
+        url_suffix: "melo-amd64.deb"
+        size: 24094484
+        media_type: "application/x-debian-package"
+        digest: "sha256:31469069ce9b8a9a23b0c185dbe02fa788d41affa32d7e3bef04a83ac707c226"
+      "586442794":
+        name: "melo-x86_64.AppImage"
+        url_suffix: "melo-x86_64.AppImage"
+        size: 58809851
+        media_type: "application/vnd.appimage"
+        digest: "sha256:a24a3d0981f088a25d4c5b6ec83cfd6b7ee410f6073c0512a44f7e1b006cdd92"
+      "586442798":
+        name: "melo-x86_64.pkg.tar.zst"
+        url_suffix: "melo-x86_64.pkg.tar.zst"
+        size: 22611348
+        media_type: "application/zstd"
+        digest: "sha256:ab455c77d2c62dbacec2d30f7983c885d6069b57e04918f8cd71021c9a192912"
+      "586442844":
+        name: "melo-sources.tar"
+        url_suffix: "melo-sources.tar"
+        size: 304363520
+        media_type: "application/x-tar"
+        digest: "sha256:ef930a24a4b5600726fa16c612476818812e837d249ecfd916db5ad6191aba79"
+  "395926113":
+    tag: "nightly"
+    title: "Nightly"
+    url: "https://github.com/melo-foundation/melo/releases/tag/nightly"
+    created_at: "2026-10-31T05:38:48Z"
+    published_at: "2026-09-24T17:46:03Z"
+    updated_at: "2026-11-01T09:52:08Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/melo-foundation/melo/zipball/nightly"
+    source_tar_url: "https://api.github.com/repos/melo-foundation/melo/tarball/nightly"
+    download_base: "https://github.com/melo-foundation/melo/releases/download/nightly/"
+    assets:
+      "697927118":
+        name: "melo-x86_64.AppImage"
+        url_suffix: "melo-x86_64.AppImage"
+        size: 68368888
+        media_type: "application/vnd.appimage"
+        digest: "sha256:478acf2e3476d563641734224f831931c27d090dc4def35799c3cea2b46165a8"
+      "697927120":
+        name: "melo-x86_64.AppImage.zsync"
+        url_suffix: "melo-x86_64.AppImage.zsync"
+        size: 233899
+        digest: "sha256:d070d6b52c7846f2d9c3b2144eff5309316d21e95809db09919faa07896eedd2"
+      "697927121":
+        name: "melo-anylinux-x86_64.AppImage"
+        url_suffix: "melo-anylinux-x86_64.AppImage"
+        size: 131378976
+        media_type: "application/vnd.appimage"
+        digest: "sha256:19a20670c63b03dbd94e67d3e102cc7615c90d9ea3f757313c9e066f96731a89"
+      "697927123":
+        name: "melo-anylinux-x86_64.AppImage.zsync"
+        url_suffix: "melo-anylinux-x86_64.AppImage.zsync"
+        size: 385253
+        digest: "sha256:775bbfefa65f66543af41389d39670ef4355534053fa4213e55626ad4c8f961a"
+      "697927125":
+        name: "melo-lite-x86_64.AppImage"
+        url_suffix: "melo-lite-x86_64.AppImage"
+        size: 21895672
+        media_type: "application/vnd.appimage"
+        digest: "sha256:25b3e2fe90730d155b4008b4e10c5bde92924a1978b6d32acd7af225c45d236c"
+      "697927163":
+        name: "melo-0.4.3+git20261101.a095612-1.x86_64.rpm"
+        url_suffix: "melo-0.4.3%2Bgit20261101.a095612-1.x86_64.rpm"
+        size: 54775924
+        media_type: "application/x-rpm"
+        digest: "sha256:848a64598e78052530bc859eabdc94382c63d5f472c3f5c4c0c61843af2e3496"
+      "697927173":
+        name: "melo-lite-x86_64.AppImage.zsync"
+        url_suffix: "melo-lite-x86_64.AppImage.zsync"
+        size: 75065
+        digest: "sha256:456a353250c6f986c980afc61e0afc5e8731e0bd8dc22a437e44e1e309a7e7db"
+      "697927193":
+        name: "melo_0.4.3+git20261101.a095612_amd64.deb"
+        url_suffix: "melo_0.4.3%2Bgit20261101.a095612_amd64.deb"
+        size: 54519306
+        media_type: "application/x-debian-package"
+        digest: "sha256:60566682bc75c709b5ed7e7c2846e89181017e22967b3f92e3e4228d562064cf"
+      "697927209":
+        name: "melo-x86_64.pkg.tar.zst"
+        url_suffix: "melo-x86_64.pkg.tar.zst"
+        size: 24760090
+        media_type: "application/zstd"
+        digest: "sha256:73559ece2826cb2e7cf4867cfac8b5e2094f1c92a8381ae80bcd4602db8accf8"
+  "398203052":
+    tag: "alpha-2"
+    title: "Alpha 2"
+    url: "https://github.com/melo-foundation/melo/releases/tag/alpha-2"
+    created_at: "2026-09-28T11:32:18Z"
+    published_at: "2026-09-28T12:06:00Z"
+    updated_at: "2026-09-28T12:06:00Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/melo-foundation/melo/zipball/alpha-2"
+    source_tar_url: "https://api.github.com/repos/melo-foundation/melo/tarball/alpha-2"
+    download_base: "https://github.com/melo-foundation/melo/releases/download/alpha-2/"
+    assets:
+      "595297571":
+        name: "melo-x86_64.AppImage"
+        url_suffix: "melo-x86_64.AppImage"
+        size: 60387761
+        media_type: "application/vnd.appimage"
+        digest: "sha256:e144ea16564b979cefc9d9e188b22371ea7c4bfc3f9a1f93d2c207196d348e4b"
+      "595297572":
+        name: "melo-x86_64.rpm"
+        url_suffix: "melo-x86_64.rpm"
+        size: 52885380
+        media_type: "application/x-rpm"
+        digest: "sha256:39c761b89fa7e3b03d6dd6c95fede1fb2915eb1e9ef9f80a53ba8f638f777e28"
+      "595297573":
+        name: "melo-amd64.deb"
+        url_suffix: "melo-amd64.deb"
+        size: 52639436
+        media_type: "application/x-debian-package"
+        digest: "sha256:3279392a434c3b664f84e8f8f8acdf59004a5d3075aa78b1dc1153782c216e60"
+      "595297574":
+        name: "melo-x86_64.pkg.tar.zst"
+        url_suffix: "melo-x86_64.pkg.tar.zst"
+        size: 22777646
+        media_type: "application/zstd"
+        digest: "sha256:c10814db03c289baf6e66a25f85892b6b3b2057f69f75ae5f6783d3ea9d7311b"
+      "595297575":
+        name: "melo-lite-x86_64.AppImage"
+        url_suffix: "melo-lite-x86_64.AppImage"
+        size: 20089336
+        media_type: "application/vnd.appimage"
+        digest: "sha256:ca2260239ba72c64b4f5fc5f1ed1704f3bf350878bbbd28a30bf5f17a0e7f3b0"
+      "595297630":
+        name: "melo-sources.tar"
+        url_suffix: "melo-sources.tar"
+        size: 304363520
+        media_type: "application/x-tar"
+        digest: "sha256:72dbf1b8482b0dd76bb6da31e51777112d454c94826a572dc0890ad9757cfd2a"
+  "398281468":
+    tag: "alpha-2.1"
+    title: "Alpha 2.1 (hotfix)"
+    url: "https://github.com/melo-foundation/melo/releases/tag/alpha-2.1"
+    created_at: "2026-09-28T13:13:33Z"
+    published_at: "2026-09-28T13:36:43Z"
+    updated_at: "2026-09-28T13:36:43Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/melo-foundation/melo/zipball/alpha-2.1"
+    source_tar_url: "https://api.github.com/repos/melo-foundation/melo/tarball/alpha-2.1"
+    download_base: "https://github.com/melo-foundation/melo/releases/download/alpha-2.1/"
+    assets:
+      "595488930":
+        name: "melo-x86_64.AppImage"
+        url_suffix: "melo-x86_64.AppImage"
+        size: 64068088
+        media_type: "application/vnd.appimage"
+        digest: "sha256:20b52531521740c3717652e1e55047a344c1fb174d7bc17c32ad44c1f261b9f1"
+      "595488931":
+        name: "melo-lite-x86_64.AppImage"
+        url_suffix: "melo-lite-x86_64.AppImage"
+        size: 20089336
+        media_type: "application/vnd.appimage"
+        digest: "sha256:0c8b577711b77d640f4a0e82da65d7e380a1bc0f3e96349e5e999b2649c611d0"
+      "595488932":
+        name: "melo-x86_64.rpm"
+        url_suffix: "melo-x86_64.rpm"
+        size: 52885184
+        media_type: "application/x-rpm"
+        digest: "sha256:33b5f6bdf71085643e54db525dfc6eab17de525186118993bd168b91a9eb7ec1"
+      "595488933":
+        name: "melo-amd64.deb"
+        url_suffix: "melo-amd64.deb"
+        size: 52639250
+        media_type: "application/x-debian-package"
+        digest: "sha256:40241d1419197f7008b59802bfefb784ee80203300d8146632b56083b6a268ee"
+      "595488935":
+        name: "melo-x86_64.pkg.tar.zst"
+        url_suffix: "melo-x86_64.pkg.tar.zst"
+        size: 22777035
+        media_type: "application/zstd"
+        digest: "sha256:619e5d87c84e28d7ce4515ec3c2e8a8eca8baa892c6bee3ff5772a80d0c00986"
+      "595488995":
+        name: "melo-sources.tar"
+        url_suffix: "melo-sources.tar"
+        size: 304363520
+        media_type: "application/x-tar"
+        digest: "sha256:510fcbd903d6d06cb71895d2361588370e73b05c5cd7cfff6d1b9b454d7504b1"
+  "400275766":
+    tag: "alpha-2.2"
+    title: "Alpha 2.2 (hotfix)"
+    url: "https://github.com/melo-foundation/melo/releases/tag/alpha-2.2"
+    created_at: "2026-09-30T16:57:50Z"
+    published_at: "2026-09-30T17:31:49Z"
+    updated_at: "2026-09-30T17:35:42Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/melo-foundation/melo/zipball/alpha-2.2"
+    source_tar_url: "https://api.github.com/repos/melo-foundation/melo/tarball/alpha-2.2"
+    download_base: "https://github.com/melo-foundation/melo/releases/download/alpha-2.2/"
+    assets:
+      "601440256":
+        name: "melo-lite-x86_64.AppImage"
+        url_suffix: "melo-lite-x86_64.AppImage"
+        size: 20089336
+        media_type: "application/vnd.appimage"
+        digest: "sha256:657fd57674a28bf39a8c4b8dcafd4b4490c917064f04337644dea02311ee14c1"
+      "601440257":
+        name: "melo-lite-x86_64.AppImage.zsync"
+        url_suffix: "melo-lite-x86_64.AppImage.zsync"
+        size: 68891
+        digest: "sha256:27b4b09468261b187adcbc1bf7ade86649a493a65fcc4ac7bd2f254705a162e7"
+      "601440258":
+        name: "melo-x86_64.rpm"
+        url_suffix: "melo-x86_64.rpm"
+        size: 52886204
+        media_type: "application/x-rpm"
+        digest: "sha256:2116e7cd52a3fffe038e8743a6d6c8a84ec1f210c4e4f4ab0543cacb2bce38a5"
+      "601440259":
+        name: "melo-x86_64.AppImage"
+        url_suffix: "melo-x86_64.AppImage"
+        size: 64121336
+        media_type: "application/vnd.appimage"
+        digest: "sha256:58932012fa0357490466b17e8cec89613f69b5f373b36ed46dc8d4840ca8d125"
+      "601440261":
+        name: "melo-x86_64.AppImage.zsync"
+        url_suffix: "melo-x86_64.AppImage.zsync"
+        size: 219381
+        digest: "sha256:2ddd43608f2ee7eb7d41916506d747e347f642abcc395a9f5abf9b4a2a456061"
+      "601440264":
+        name: "melo-amd64.deb"
+        url_suffix: "melo-amd64.deb"
+        size: 52640238
+        media_type: "application/x-debian-package"
+        digest: "sha256:c9e6ffd9178ed8dad0b79dec516b234bb16131ba08481f6e0b70a5b8fb2d6b60"
+      "601440265":
+        name: "melo-x86_64.pkg.tar.zst"
+        url_suffix: "melo-x86_64.pkg.tar.zst"
+        size: 22779108
+        media_type: "application/zstd"
+        digest: "sha256:5f3ab98196094eb780fd1ad4f41baa79e464112c4bb6f743b6725ebab7711e4d"
+      "601440283":
+        name: "melo-sources.tar"
+        url_suffix: "melo-sources.tar"
+        size: 308930560
+        media_type: "application/x-tar"
+        digest: "sha256:238c220002c0857982b39fca1f3ae73a7b716284a9836d5319b7e9f9bef154ab"
+  "403030821":
+    tag: "alpha-3"
+    title: "Alpha 3"
+    url: "https://github.com/melo-foundation/melo/releases/tag/alpha-3"
+    created_at: "2026-10-04T13:03:09Z"
+    published_at: "2026-10-04T13:21:41Z"
+    updated_at: "2026-10-04T13:21:41Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/melo-foundation/melo/zipball/alpha-3"
+    source_tar_url: "https://api.github.com/repos/melo-foundation/melo/tarball/alpha-3"
+    download_base: "https://github.com/melo-foundation/melo/releases/download/alpha-3/"
+    assets:
+      "609887807":
+        name: "melo-x86_64.AppImage.zsync"
+        url_suffix: "melo-x86_64.AppImage.zsync"
+        size: 222055
+        digest: "sha256:c27567f8bdbbc10c721cc1ab262b09a4d035ac3f1fe10460ae48d2d7071d90fb"
+      "609887808":
+        name: "melo-x86_64.AppImage"
+        url_suffix: "melo-x86_64.AppImage"
+        size: 64903672
+        media_type: "application/vnd.appimage"
+        digest: "sha256:f063b00d0da821080bb3a3a87f5ae7dac1631155fdbf8b31fe2c68c36d461e67"
+      "609887810":
+        name: "melo-lite-x86_64.AppImage"
+        url_suffix: "melo-lite-x86_64.AppImage"
+        size: 20871672
+        media_type: "application/vnd.appimage"
+        digest: "sha256:619be7959e28a1751b6d6b3ba0a09a1ab453b42c12fc6e9ba22374052bcd072b"
+      "609887811":
+        name: "melo-0.3.0-1.x86_64.rpm"
+        url_suffix: "melo-0.3.0-1.x86_64.rpm"
+        size: 53658116
+        media_type: "application/x-rpm"
+        digest: "sha256:f90245966363fa2e93bf81004167a51965979a2e6149b964b101b629540dd183"
+      "609887812":
+        name: "melo-lite-x86_64.AppImage.zsync"
+        url_suffix: "melo-lite-x86_64.AppImage.zsync"
+        size: 71565
+        digest: "sha256:5a19e1f02b8a6e973ca2c42f23a28c76f3012b630668ebb3f49e39165ce204a5"
+      "609887826":
+        name: "melo-x86_64.pkg.tar.zst"
+        url_suffix: "melo-x86_64.pkg.tar.zst"
+        size: 23543826
+        media_type: "application/zstd"
+        digest: "sha256:a9168e0d6a161d778b7542140d0a6226e446df831e86ad5a12231af88bd437b1"
+      "609887827":
+        name: "melo_0.3.0_amd64.deb"
+        url_suffix: "melo_0.3.0_amd64.deb"
+        size: 53399972
+        media_type: "application/x-debian-package"
+        digest: "sha256:3ba315ed5fc9f5207f1bd1df0b42f6a8e302eaeae194bc7d67bb1503c0f5d351"
+      "609887880":
+        name: "melo-sources.tar"
+        url_suffix: "melo-sources.tar"
+        size: 308940800
+        media_type: "application/x-tar"
+        digest: "sha256:d4822f1069f06895a79e1919898ec600a6a78f5e1c01329f2222b048281bef70"
+  "403079485":
+    tag: "alpha-3.1"
+    title: "Alpha 3.1 (hotfix)"
+    url: "https://github.com/melo-foundation/melo/releases/tag/alpha-3.1"
+    created_at: "2026-10-04T15:03:55Z"
+    published_at: "2026-10-04T15:25:29Z"
+    updated_at: "2026-10-04T15:25:29Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/melo-foundation/melo/zipball/alpha-3.1"
+    source_tar_url: "https://api.github.com/repos/melo-foundation/melo/tarball/alpha-3.1"
+    download_base: "https://github.com/melo-foundation/melo/releases/download/alpha-3.1/"
+    assets:
+      "610080390":
+        name: "melo-0.3.1-1.x86_64.rpm"
+        url_suffix: "melo-0.3.1-1.x86_64.rpm"
+        size: 53658460
+        media_type: "application/x-rpm"
+        digest: "sha256:607b7235265bd18029f0ee38ca4d33c060ac7eff73c8d489b68cc42e97e32592"
+      "610080391":
+        name: "melo-x86_64.AppImage.zsync"
+        url_suffix: "melo-x86_64.AppImage.zsync"
+        size: 222055
+        digest: "sha256:ef56b9ea198819b35f6ee7b948e11c9e757d3296791c20329ddc456107d8417f"
+      "610080392":
+        name: "melo-lite-x86_64.AppImage"
+        url_suffix: "melo-lite-x86_64.AppImage"
+        size: 20871672
+        media_type: "application/vnd.appimage"
+        digest: "sha256:03b4a8ba2c582f0070304af8c28f17921d5a8b2f51d1cf60fe26632818088cb7"
+      "610080393":
+        name: "melo-lite-x86_64.AppImage.zsync"
+        url_suffix: "melo-lite-x86_64.AppImage.zsync"
+        size: 71565
+        digest: "sha256:ca478ae5d37e66bb8e519a4e3abbeb84056793de726670d857675468c234843a"
+      "610080395":
+        name: "melo-x86_64.AppImage"
+        url_suffix: "melo-x86_64.AppImage"
+        size: 64903672
+        media_type: "application/vnd.appimage"
+        digest: "sha256:72ad92e74da288b7987a9460481e75e7a8c61c61ca7db7d1d61c486ba65164db"
+      "610080410":
+        name: "melo_0.3.1_amd64.deb"
+        url_suffix: "melo_0.3.1_amd64.deb"
+        size: 53400374
+        media_type: "application/x-debian-package"
+        digest: "sha256:33d2b53240b3bc97b8b2648b307ea90f15f55c9c073f2bcda7dc7908a7f800f1"
+      "610080416":
+        name: "melo-x86_64.pkg.tar.zst"
+        url_suffix: "melo-x86_64.pkg.tar.zst"
+        size: 23543205
+        media_type: "application/zstd"
+        digest: "sha256:ea25c3ddbf1363e0738f186b07299d2898505d8690f2f112c947be968ef42419"
+      "610080459":
+        name: "melo-sources.tar"
+        url_suffix: "melo-sources.tar"
+        size: 308940800
+        media_type: "application/x-tar"
+        digest: "sha256:19d6ed4908fc8ca427674176ab7ed4ef776c93af08c1e15667ed82ed6c51a3c2"
+  "420610595":
+    tag: "alpha-3.2"
+    title: "Alpha 3.2 (hotfix)"
+    url: "https://github.com/melo-foundation/melo/releases/tag/alpha-3.2"
+    created_at: "2026-10-22T09:30:12Z"
+    published_at: "2026-10-22T11:15:59Z"
+    updated_at: "2026-10-22T11:40:24Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/melo-foundation/melo/zipball/alpha-3.2"
+    source_tar_url: "https://api.github.com/repos/melo-foundation/melo/tarball/alpha-3.2"
+    download_base: "https://github.com/melo-foundation/melo/releases/download/alpha-3.2/"
+    assets:
+      "665574125":
+        name: "melo-lite-x86_64.AppImage"
+        url_suffix: "melo-lite-x86_64.AppImage"
+        size: 20945400
+        media_type: "application/vnd.appimage"
+        digest: "sha256:21faa1075f4ba8da515c5151f39c398d4d3f5f700c4d0172fccdcd857ff9e7cc"
+      "665574128":
+        name: "melo-x86_64.AppImage.zsync"
+        url_suffix: "melo-x86_64.AppImage.zsync"
+        size: 222433
+        digest: "sha256:c3274e7cfa29e934c731bc0bd594550b8e8765a439e031de25c992a9a705de8a"
+      "665574129":
+        name: "melo-x86_64.AppImage"
+        url_suffix: "melo-x86_64.AppImage"
+        size: 65014264
+        media_type: "application/vnd.appimage"
+        digest: "sha256:5000fbed7a08a2ec16ed59b2d88017d76b14b936ab7d71a30ed41b1ded1349bf"
+      "665574130":
+        name: "melo-0.3.2-1.x86_64.rpm"
+        url_suffix: "melo-0.3.2-1.x86_64.rpm"
+        size: 53734576
+        media_type: "application/x-rpm"
+        digest: "sha256:40996636a0469ff40619c9cf5cb9585300f7f3ca548c7a0942427bcb48b12f6c"
+      "665574131":
+        name: "melo-lite-x86_64.AppImage.zsync"
+        url_suffix: "melo-lite-x86_64.AppImage.zsync"
+        size: 71817
+        digest: "sha256:2f424341dbfc334ffa79a7ab9749398197fcb78c4f0f5ee1260aa0f103cb366e"
+      "665574148":
+        name: "melo_0.3.2_amd64.deb"
+        url_suffix: "melo_0.3.2_amd64.deb"
+        size: 53476470
+        media_type: "application/x-debian-package"
+        digest: "sha256:61d85f6392495d6806b6da8fa790fa789b6e502eae52a997114ed91f13e5833f"
+      "665574153":
+        name: "melo-x86_64.pkg.tar.zst"
+        url_suffix: "melo-x86_64.pkg.tar.zst"
+        size: 23608083
+        media_type: "application/zstd"
+        digest: "sha256:4576888a59e3a666aba7e8149a1c7170f8e6571bd0866acf891111804b30bc6f"
+      "665574181":
+        name: "melo-sources.tar"
+        url_suffix: "melo-sources.tar"
+        size: 308940800
+        media_type: "application/x-tar"
+        digest: "sha256:34c8318c82c70a1744cc7d515a6e881acbb6f34e444cbbcf403b2853d4362167"
+  "421463647":
+    tag: "alpha-4"
+    title: "Alpha 4"
+    url: "https://github.com/melo-foundation/melo/releases/tag/alpha-4"
+    created_at: "2026-10-23T02:53:39Z"
+    published_at: "2026-10-23T05:02:19Z"
+    updated_at: "2026-10-23T05:02:19Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/melo-foundation/melo/zipball/alpha-4"
+    source_tar_url: "https://api.github.com/repos/melo-foundation/melo/tarball/alpha-4"
+    download_base: "https://github.com/melo-foundation/melo/releases/download/alpha-4/"
+    assets:
+      "668009906":
+        name: "melo-x86_64.AppImage"
+        url_suffix: "melo-x86_64.AppImage"
+        size: 68356600
+        media_type: "application/vnd.appimage"
+        digest: "sha256:b3afa9060f62ba51237687354be102c836e92fffdf76344cd42a03fcb0f98a91"
+      "668009907":
+        name: "melo-lite-x86_64.AppImage"
+        url_suffix: "melo-lite-x86_64.AppImage"
+        size: 21887480
+        media_type: "application/vnd.appimage"
+        digest: "sha256:4818bdaee67271ffd673881fb9ab0dc508bb201a88105f4e79f7da4f57295712"
+      "668009908":
+        name: "melo-x86_64.AppImage.zsync"
+        url_suffix: "melo-x86_64.AppImage.zsync"
+        size: 233857
+        digest: "sha256:e8515e57ad622498317769d7147866ee6c4a66e7b0b9129c9ab0b1b99c7b7796"
+      "668009926":
+        name: "melo-lite-x86_64.AppImage.zsync"
+        url_suffix: "melo-lite-x86_64.AppImage.zsync"
+        size: 75037
+        digest: "sha256:2fa62f8df9fb40793c2db3ec5a7c36dda21535a9a96eaf928b90cb73e1b3b961"
+      "668009927":
+        name: "melo-0.4.0-1.x86_64.rpm"
+        url_suffix: "melo-0.4.0-1.x86_64.rpm"
+        size: 54771160
+        media_type: "application/x-rpm"
+        digest: "sha256:706af82c209f6a207b405d9878908572efd33e861533d865ac60a3ccc3a2c3b9"
+      "668009950":
+        name: "melo_0.4.0_amd64.deb"
+        url_suffix: "melo_0.4.0_amd64.deb"
+        size: 54515004
+        media_type: "application/x-debian-package"
+        digest: "sha256:acdc24c02c7a704b167e6512a268535b9be200676b4186f01c4d52e095993609"
+      "668009984":
+        name: "melo-x86_64.pkg.tar.zst"
+        url_suffix: "melo-x86_64.pkg.tar.zst"
+        size: 24744232
+        media_type: "application/zstd"
+        digest: "sha256:fb67733cd93261fcf3cc8dedb5485fe93d83876cd4cec805ec91021c4810a829"
+      "668010035":
+        name: "melo-sources.tar"
+        url_suffix: "melo-sources.tar"
+        size: 757002240
+        media_type: "application/x-tar"
+        digest: "sha256:d06f0148562c01aa9fc2d4a4e0032ae5f99bf59e42971c0aafaa62a14c6f4654"
+  "423372127":
+    tag: "alpha-4.1"
+    title: "Alpha 4.1 (hotfix)"
+    url: "https://github.com/melo-foundation/melo/releases/tag/alpha-4.1"
+    created_at: "2026-10-25T11:27:21Z"
+    published_at: "2026-10-26T03:52:05Z"
+    updated_at: "2026-10-26T03:53:46Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/melo-foundation/melo/zipball/alpha-4.1"
+    source_tar_url: "https://api.github.com/repos/melo-foundation/melo/tarball/alpha-4.1"
+    download_base: "https://github.com/melo-foundation/melo/releases/download/alpha-4.1/"
+    assets:
+      "674926179":
+        name: "melo-x86_64.AppImage.zsync"
+        url_suffix: "melo-x86_64.AppImage.zsync"
+        size: 233913
+        digest: "sha256:46dd5beeb826c42477e75c55e4dc290ea5aadd90016b792f8851ee5239028b87"
+      "674926180":
+        name: "melo-x86_64.AppImage"
+        url_suffix: "melo-x86_64.AppImage"
+        size: 68372984
+        media_type: "application/vnd.appimage"
+        digest: "sha256:fbf55897d822776894449627d6d1cf6a3c405fd657be7b2f9a3e8ac341233bb0"
+      "674926181":
+        name: "melo-anylinux-x86_64.AppImage"
+        url_suffix: "melo-anylinux-x86_64.AppImage"
+        size: 131391264
+        media_type: "application/vnd.appimage"
+        digest: "sha256:5ef43c04aaa09f816cf1b34491cd822174877afdfe449a1e7cd7bb34ccea3e0a"
+      "674926182":
+        name: "melo-lite-x86_64.AppImage"
+        url_suffix: "melo-lite-x86_64.AppImage"
+        size: 21899768
+        media_type: "application/vnd.appimage"
+        digest: "sha256:0a7a268cd4089063a46f0d3f67b0a619562908abf889399cdfdb16fe16ab21f4"
+      "674926183":
+        name: "melo-anylinux-x86_64.AppImage.zsync"
+        url_suffix: "melo-anylinux-x86_64.AppImage.zsync"
+        size: 385289
+        digest: "sha256:16d43b36256102f8bb617541f1006aa9540f55f1ec1ad4cb1c670b503e29e509"
+      "674926198":
+        name: "melo-lite-x86_64.AppImage.zsync"
+        url_suffix: "melo-lite-x86_64.AppImage.zsync"
+        size: 75079
+        digest: "sha256:5de1de1d0b023c542634c88b3dc0d7dccf2a286a99008b4f6f896ea219cd261d"
+      "674926204":
+        name: "melo-0.4.1-1.x86_64.rpm"
+        url_suffix: "melo-0.4.1-1.x86_64.rpm"
+        size: 54774688
+        media_type: "application/x-rpm"
+        digest: "sha256:7e2b4ec7f1dc970f28909ec02633617f6a9cb5aa0977b76f2faf318cbad8ff9a"
+      "674926217":
+        name: "melo_0.4.1_amd64.deb"
+        url_suffix: "melo_0.4.1_amd64.deb"
+        size: 54517638
+        media_type: "application/x-debian-package"
+        digest: "sha256:802bcde144d8c3cdabb248e4a304b2ebe729bde8b75d035bf7e3a72286f771d1"
+      "674926221":
+        name: "melo-x86_64.pkg.tar.zst"
+        url_suffix: "melo-x86_64.pkg.tar.zst"
+        size: 24758526
+        media_type: "application/zstd"
+        digest: "sha256:3be7f144c8315c5fe36d42cd1a0448efe05b769f2b13676e852f39e4c54f9c44"
+      "674926250":
+        name: "melo-sources.tar"
+        url_suffix: "melo-sources.tar"
+        size: 759101440
+        media_type: "application/x-tar"
+        digest: "sha256:2661e1af6c070511645ba8b5eedb5d5088c45ec5d1fed832823eed260e56f058"
+  "424218857":
+    tag: "alpha-4.2"
+    title: "Alpha 4.2 (hotfix)"
+    url: "https://github.com/melo-foundation/melo/releases/tag/alpha-4.2"
+    created_at: "2026-10-26T11:52:58Z"
+    published_at: "2026-10-26T12:39:50Z"
+    updated_at: "2026-10-26T12:39:50Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/melo-foundation/melo/zipball/alpha-4.2"
+    source_tar_url: "https://api.github.com/repos/melo-foundation/melo/tarball/alpha-4.2"
+    download_base: "https://github.com/melo-foundation/melo/releases/download/alpha-4.2/"
+    assets:
+      "678090765":
+        name: "melo-lite-x86_64.AppImage"
+        url_suffix: "melo-lite-x86_64.AppImage"
+        size: 21891576
+        media_type: "application/vnd.appimage"
+        digest: "sha256:2457feddc4d5997fd4e0eeb519d870ae38f6e6779693a6dfd6f99482d7092255"
+      "678090766":
+        name: "melo-x86_64.AppImage.zsync"
+        url_suffix: "melo-x86_64.AppImage.zsync"
+        size: 233885
+        digest: "sha256:67382670c7be46a7d913ba44e3e8c31a9787185484b1ce468de67a5ac1c276dd"
+      "678090767":
+        name: "melo-anylinux-x86_64.AppImage.zsync"
+        url_suffix: "melo-anylinux-x86_64.AppImage.zsync"
+        size: 385253
+        digest: "sha256:cbfa2dbf4ccdabdbcd736c67d2292c58b32e7d86390b4fc594dd7dd61db10c13"
+      "678090768":
+        name: "melo-anylinux-x86_64.AppImage"
+        url_suffix: "melo-anylinux-x86_64.AppImage"
+        size: 131378976
+        media_type: "application/vnd.appimage"
+        digest: "sha256:87fde6329e11e3b62bcc224e72ec7a5bc04372723f1cc04ca05d930c93a4e24b"
+      "678090769":
+        name: "melo-x86_64.AppImage"
+        url_suffix: "melo-x86_64.AppImage"
+        size: 68364792
+        media_type: "application/vnd.appimage"
+        digest: "sha256:001e3a2327b960d59bf051c5bfca9dc84bd1adabd5bea9359824c609b8a9b584"
+      "678090790":
+        name: "melo-0.4.2-1.x86_64.rpm"
+        url_suffix: "melo-0.4.2-1.x86_64.rpm"
+        size: 54774120
+        media_type: "application/x-rpm"
+        digest: "sha256:d64cadddcda8c3cfbc4d750b5547e295a3b2caab90f0ff76f9450bcb6cfc4acc"
+      "678090792":
+        name: "melo-lite-x86_64.AppImage.zsync"
+        url_suffix: "melo-lite-x86_64.AppImage.zsync"
+        size: 75051
+        digest: "sha256:42432b18d393566815a9d27da80340adb13b09ad624ca940a8320f3e9406daf1"
+      "678090813":
+        name: "melo_0.4.2_amd64.deb"
+        url_suffix: "melo_0.4.2_amd64.deb"
+        size: 54517736
+        media_type: "application/x-debian-package"
+        digest: "sha256:1b5b11a7bca9749b4efd49f01e7c6fba73e522fe6042838bb2a93fc91beb86de"
+      "678090824":
+        name: "melo-x86_64.pkg.tar.zst"
+        url_suffix: "melo-x86_64.pkg.tar.zst"
+        size: 24756305
+        media_type: "application/zstd"
+        digest: "sha256:898ce62ca3032f0b09963c718a8151aca77cc4070b30f016819f671e51441a38"
+      "678090868":
+        name: "melo-sources.tar"
+        url_suffix: "melo-sources.tar"
+        size: 759101440
+        media_type: "application/x-tar"
+        digest: "sha256:60527eea3f001e293d357d9ed248dd2910788fa865aefc4aafbb298cce8d3b06"
+  "429874070":
+    tag: "alpha-4.3"
+    title: "Alpha 4.3 (hotfix)"
+    url: "https://github.com/melo-foundation/melo/releases/tag/alpha-4.3"
+    created_at: "2026-10-31T10:21:29Z"
+    published_at: "2026-10-31T11:38:27Z"
+    updated_at: "2026-10-31T11:38:27Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/melo-foundation/melo/zipball/alpha-4.3"
+    source_tar_url: "https://api.github.com/repos/melo-foundation/melo/tarball/alpha-4.3"
+    download_base: "https://github.com/melo-foundation/melo/releases/download/alpha-4.3/"
+    assets:
+      "695112500":
+        name: "melo-x86_64.AppImage"
+        url_suffix: "melo-x86_64.AppImage"
+        size: 68364792
+        media_type: "application/vnd.appimage"
+        digest: "sha256:d3d5b85e63256bf4eba784745264e7e2c24c0865550f52bc39c359333ac86f57"
+      "695112503":
+        name: "melo-anylinux-x86_64.AppImage.zsync"
+        url_suffix: "melo-anylinux-x86_64.AppImage.zsync"
+        size: 385253
+        digest: "sha256:0dcd8e4bbc138b2a4e88e56b65b1fca08bdb0e936e6b92654c35abcb6655577e"
+      "695112506":
+        name: "melo-anylinux-x86_64.AppImage"
+        url_suffix: "melo-anylinux-x86_64.AppImage"
+        size: 131378976
+        media_type: "application/vnd.appimage"
+        digest: "sha256:0cf2334c2db0c1b5d0840f1fb944c00758b39d9e05e15a1ae31fa21cef34dc01"
+      "695112509":
+        name: "melo-x86_64.AppImage.zsync"
+        url_suffix: "melo-x86_64.AppImage.zsync"
+        size: 233885
+        digest: "sha256:08dfcce28b80a4fd102f0c1d4c50985990c9d5da4cbafffe911193454635d8a7"
+      "695112511":
+        name: "melo-lite-x86_64.AppImage"
+        url_suffix: "melo-lite-x86_64.AppImage"
+        size: 21891576
+        media_type: "application/vnd.appimage"
+        digest: "sha256:d95e892e2c3d3d0530f9ce69fe4efb2a6fef1ebbdd7134d6a4ce04eda4cd6cd6"
+      "695112542":
+        name: "melo-lite-x86_64.AppImage.zsync"
+        url_suffix: "melo-lite-x86_64.AppImage.zsync"
+        size: 75051
+        digest: "sha256:b4f1434af3d7e0ff0dbd6760eca37f4fc0641ed559cf56f7c61b764fc34657a7"
+      "695112549":
+        name: "melo-0.4.3-1.x86_64.rpm"
+        url_suffix: "melo-0.4.3-1.x86_64.rpm"
+        size: 54775860
+        media_type: "application/x-rpm"
+        digest: "sha256:33937bf8e3f638532e180edd4e818a8ce0ad17c0eb364243bf79024b434e9f7f"
+      "695112566":
+        name: "melo_0.4.3_amd64.deb"
+        url_suffix: "melo_0.4.3_amd64.deb"
+        size: 54519320
+        media_type: "application/x-debian-package"
+        digest: "sha256:63cfb2c0b6eec96ec211b14321ba99d50ed0741271e0bd061e499fb71bccfcf7"
+      "695112593":
+        name: "melo-x86_64.pkg.tar.zst"
+        url_suffix: "melo-x86_64.pkg.tar.zst"
+        size: 24761136
+        media_type: "application/zstd"
+        digest: "sha256:ab728854bd849dd68c81ee44d62576d967db11bf3fad8197a61a00c042c35b7a"
+      "695112693":
+        name: "melo-sources.tar"
+        url_suffix: "melo-sources.tar"
+        size: 759101440
+        media_type: "application/x-tar"
+        digest: "sha256:35d71094513fa2209ee4e2e7c3f5bbe08e24b32ff00b65bd68ff9473be47aad6"

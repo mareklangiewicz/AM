@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "opsdeck":
+    "aarch64":
+      repository_id: 1392183103
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/opsdeck"
+        blob: "d9c509f1b8d44049b8dacd921978f2f7f6c20815"
+    "armv7l":
+      repository_id: 1392183103
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1392183103
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1392183103
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/opsdeck"
+        blob: "eab4a63e3c4827943fba94289f2597031e5d619c"

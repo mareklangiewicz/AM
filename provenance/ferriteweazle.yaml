@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "ferriteweazle":
+    "aarch64":
+      repository_id: 1396236902
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/ferriteweazle"
+        blob: "90f7826f3aeb5060e9faf115cf1346b268e4eecd"
+    "armv7l":
+      repository_id: 1396236902
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1396236902
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1396236902
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/ferriteweazle"
+        blob: "c67ad6e5f91cb02e61adb0434634cd7328e03ebe"

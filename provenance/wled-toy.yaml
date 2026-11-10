@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "wled-toy":
+    "aarch64":
+      repository_id: 1380196932
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/wled-toy"
+        blob: "dc5f81cf50fc939cfbb12e50a68896bfef8260e1"
+    "armv7l":
+      repository_id: 1380196932
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1380196932
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1380196932
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/wled-toy"
+        blob: "779749441f4069f49a0300d4693064963f3dbee6"
