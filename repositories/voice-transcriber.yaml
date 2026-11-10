@@ -1,0 +1,156 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "repository"
+repository_id: 968565535
+repository: "jjamesmartiin/voice-transcriber"
+collected_at: "2026-11-10T15:36:33Z"
+scope:
+  page_size: 100
+  pages_fetched: 1
+  history_complete: true
+observed_at: "2026-11-10T15:36:33Z"
+releases:
+  "411225481":
+    tag: "PREREQUISITES"
+    title: "Prerequisites (model weights and formatter backend)"
+    url: "https://github.com/jjamesmartiin/voice-transcriber/releases/tag/PREREQUISITES"
+    created_at: "2026-10-13T03:02:03Z"
+    published_at: "2026-10-13T03:22:44Z"
+    updated_at: "2026-10-13T03:39:26Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/jjamesmartiin/voice-transcriber/zipball/PREREQUISITES"
+    source_tar_url: "https://api.github.com/repos/jjamesmartiin/voice-transcriber/tarball/PREREQUISITES"
+    download_base: "https://github.com/jjamesmartiin/voice-transcriber/releases/download/PREREQUISITES/"
+    assets:
+      "635750728":
+        name: "cohere-transcribe-499888924f5f1313b48ab0686c8f3a94178a4709.part1.xz"
+        url_suffix: "cohere-transcribe-499888924f5f1313b48ab0686c8f3a94178a4709.part1.xz"
+        size: 1458806112
+        media_type: "application/x-xz"
+        digest: "sha256:4a5f073acbe9eeee1c3ca72a105488a970aa4b09481c3cc2d6af702c625bfbd7"
+      "635765110":
+        name: "cohere-transcribe-499888924f5f1313b48ab0686c8f3a94178a4709.part2.xz"
+        url_suffix: "cohere-transcribe-499888924f5f1313b48ab0686c8f3a94178a4709.part2.xz"
+        size: 1456452916
+        media_type: "application/x-xz"
+        digest: "sha256:42772518278d0aaca29fdb87215a120ab95557b8d357e0e2ba495aea032aa8ba"
+      "635777459":
+        name: "cohere-transcribe-499888924f5f1313b48ab0686c8f3a94178a4709.SHA256SUMS"
+        url_suffix: "cohere-transcribe-499888924f5f1313b48ab0686c8f3a94178a4709.SHA256SUMS"
+        size: 268
+        digest: "sha256:3bec14d4fd10f6f9c3241dfc65a8b30be91c589d5ab558b7c53ee82886971f37"
+      "635777869":
+        name: "s1-mini-34add00a48a2e5d24e5a4ee5405a99620a3a240c.part1.xz"
+        url_suffix: "s1-mini-34add00a48a2e5d24e5a4ee5405a99620a3a240c.part1.xz"
+        size: 232480680
+        media_type: "application/x-xz"
+        digest: "sha256:253044281e359b2cc303bba3cd96b8424ed72cf26f5f25753818ba68b961e1a4"
+      "635779859":
+        name: "s1-mini-34add00a48a2e5d24e5a4ee5405a99620a3a240c.part2.xz"
+        url_suffix: "s1-mini-34add00a48a2e5d24e5a4ee5405a99620a3a240c.part2.xz"
+        size: 238192136
+        media_type: "application/x-xz"
+        digest: "sha256:a346ca42693b42aebe66e126a6e122a4ed28bc261c1aa74f63e5dcd9e4852db5"
+      "635781610":
+        name: "s1-mini-34add00a48a2e5d24e5a4ee5405a99620a3a240c.SHA256SUMS"
+        url_suffix: "s1-mini-34add00a48a2e5d24e5a4ee5405a99620a3a240c.SHA256SUMS"
+        size: 248
+        digest: "sha256:02dcb82061c7637926781959c9f8e43f842d463484dbc72963b0d3f797843396"
+      "635781729":
+        name: "diarization-24615ee884c897d9d2ba09bb4d30da6bb1b15e685065962db5b02e76e4996488.part1.xz"
+        url_suffix: "diarization-24615ee884c897d9d2ba09bb4d30da6bb1b15e685065962db5b02e76e4996488.part1.xz"
+        size: 14940332
+        media_type: "application/x-xz"
+        digest: "sha256:4851888a57dbd94f4dd34ba69039e08fd63b60153088eec757ed805a3563d49c"
+      "635781944":
+        name: "diarization-24615ee884c897d9d2ba09bb4d30da6bb1b15e685065962db5b02e76e4996488.part2.xz"
+        url_suffix: "diarization-24615ee884c897d9d2ba09bb4d30da6bb1b15e685065962db5b02e76e4996488.part2.xz"
+        size: 14987060
+        media_type: "application/x-xz"
+        digest: "sha256:ace9aa82c963a804717020c096adfd0eedb1e767c61e29cc6225c4a45d03ba9c"
+      "635782154":
+        name: "diarization-24615ee884c897d9d2ba09bb4d30da6bb1b15e685065962db5b02e76e4996488.SHA256SUMS"
+        url_suffix: "diarization-24615ee884c897d9d2ba09bb4d30da6bb1b15e685065962db5b02e76e4996488.SHA256SUMS"
+        size: 304
+        digest: "sha256:db32e9ad9d8078e41c341211ce30cfc2138be4685c56566459580a31464d03e3"
+      "635782448":
+        name: "llama-b11429-bin-win-cpu-x64.zip"
+        url_suffix: "llama-b11429-bin-win-cpu-x64.zip"
+        size: 19398918
+        media_type: "zip"
+        digest: "sha256:1283323272b04cd07905816a597a0da810918102de958f4ff6f7bbaa70ed2efe"
+      "635782735":
+        name: "llama-b11429-bin-win-cpu-x64.zip.SHA256SUMS"
+        url_suffix: "llama-b11429-bin-win-cpu-x64.zip.SHA256SUMS"
+        size: 99
+        digest: "sha256:29619780d054ba909e93b10b56629c68f3cb003f8a81ef9cdacc4bbb06e0c6aa"
+  "411242091":
+    tag: "v1.4.4"
+    title: "v1.4.4"
+    url: "https://github.com/jjamesmartiin/voice-transcriber/releases/tag/v1.4.4"
+    created_at: "2026-10-13T03:44:15Z"
+    published_at: "2026-10-13T03:49:21Z"
+    updated_at: "2026-10-13T03:54:18Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/jjamesmartiin/voice-transcriber/zipball/v1.4.4"
+    source_tar_url: "https://api.github.com/repos/jjamesmartiin/voice-transcriber/tarball/v1.4.4"
+    download_base: "https://github.com/jjamesmartiin/voice-transcriber/releases/download/v1.4.4/"
+    assets:
+      "635803383":
+        name: "REQUIREMENTS.txt"
+        url_suffix: "REQUIREMENTS.txt"
+        size: 3400
+        media_type: "text/plain"
+        digest: "sha256:18462494e4e5eeeb5ed25ad7b57c172b18619d4e170111cb82a0157507b15e95"
+      "635803402":
+        name: "vt-x86_64.AppImage"
+        url_suffix: "vt-x86_64.AppImage"
+        size: 1136630304
+        digest: "sha256:eb22736ca25fd09e64565e60cdea65ca35a67f6b4d66e93cfc142560656be4cc"
+      "635814807":
+        name: "VoiceTranscriber-windows-x86_64.zip"
+        url_suffix: "VoiceTranscriber-windows-x86_64.zip"
+        size: 391701545
+        media_type: "zip"
+        digest: "sha256:d4654226a6f45363041a4cca199afe4a57e172f0098376c0e1d94fef5b2106e3"
+      "635814809":
+        name: "VoiceTranscriber-windows-x86_64-setup.exe"
+        url_suffix: "VoiceTranscriber-windows-x86_64-setup.exe"
+        size: 272077471
+        media_type: "application/x-msdos-program"
+        digest: "sha256:9c0edaf2e035319c3d2ba297a00e05f51c3989a611f7e6646eb7fd13022df92d"
+  "435356558":
+    tag: "v1.5.0"
+    title: "v1.5.0"
+    url: "https://github.com/jjamesmartiin/voice-transcriber/releases/tag/v1.5.0"
+    created_at: "2026-11-05T15:03:49Z"
+    published_at: "2026-11-05T15:09:26Z"
+    updated_at: "2026-11-05T15:12:28Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/jjamesmartiin/voice-transcriber/zipball/v1.5.0"
+    source_tar_url: "https://api.github.com/repos/jjamesmartiin/voice-transcriber/tarball/v1.5.0"
+    download_base: "https://github.com/jjamesmartiin/voice-transcriber/releases/download/v1.5.0/"
+    assets:
+      "713804167":
+        name: "REQUIREMENTS.txt"
+        url_suffix: "REQUIREMENTS.txt"
+        size: 3905
+        media_type: "text/plain"
+        digest: "sha256:3b19681ef06ba16e28a079a30a7df259c2f4e6975a591c6bdcdef39389a9ae03"
+      "713804169":
+        name: "vt-x86_64.AppImage"
+        url_suffix: "vt-x86_64.AppImage"
+        size: 1136663072
+        digest: "sha256:591d8c6fd665aff94c250510e77ac976d95a19b52c266fb97de4fda7b8b3854f"
+      "713814055":
+        name: "VoiceTranscriber-windows-x86_64-setup.exe"
+        url_suffix: "VoiceTranscriber-windows-x86_64-setup.exe"
+        size: 269935986
+        media_type: "application/x-msdos-program"
+        digest: "sha256:4b168eba2b5878bc15b06d7c7bda2a4ab3a31eefcc9d72d9179d6841ea0d2050"
+      "713814060":
+        name: "VoiceTranscriber-windows-x86_64.zip"
+        url_suffix: "VoiceTranscriber-windows-x86_64.zip"
+        size: 388005207
+        media_type: "zip"
+        digest: "sha256:ea5a3855b4d73770a0dd6c5a5ab30681d83ffdca566e309310ad848fb9fc15c2"

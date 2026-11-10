@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "honeycomb":
+    "aarch64":
+      repository_id: 920009325
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/honeycomb"
+        blob: "6938b5e20d01542b25424f393273d508ba07bc38"
+    "armv7l":
+      repository_id: 920009325
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 920009325
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 920009325
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/honeycomb"
+        blob: "8489c40d4e9cd58ffbaa931c4c2b2226d2e74542"

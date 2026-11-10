@@ -1,0 +1,26 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "objection-lol-recorder":
+    "aarch64":
+      repository_id: 954232137
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 954232137
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 954232137
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 954232137
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/objection-lol-recorder"
+        blob: "77b6c3af11ac0905c7eddd5be145639cf5866c1a"

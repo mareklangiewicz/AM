@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "claude-desktop":
+    "aarch64":
+      repository_id: 908658171
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/claude-desktop"
+        blob: "c95941029100e6472ae308e1e20d9ea4a839a2bb"
+    "armv7l":
+      repository_id: 908658171
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 908658171
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 908658171
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/claude-desktop"
+        blob: "9fc5976e3946c88efc7bdd02e85761f6657c2744"

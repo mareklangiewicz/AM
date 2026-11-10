@@ -1,0 +1,42 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "ultra-tracker":
+    "aarch64":
+      repository_id: 789209901
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/ultra-tracker"
+        blob: "d742ab33f836e591a83b4892b5305c140584c5ef"
+    "armv7l":
+      repository_id: 789209901
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 789209901
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 789209901
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/ultra-tracker"
+        blob: "add7e952bdb761188e0bc825a55d4314f67457d4"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T15:38:12Z"
+        recipe_sha256: "61312d2290b0cd1ad2c6303439b94a3684565f6b89265de69637d42c0f9b1077"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

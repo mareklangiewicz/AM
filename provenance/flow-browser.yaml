@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "flow-browser":
+    "aarch64":
+      repository_id: 949433844
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/flow-browser"
+        blob: "130ac7b0fae2eb9fed99ecdcf7f99516e6386e78"
+    "armv7l":
+      repository_id: 949433844
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 949433844
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 949433844
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/flow-browser"
+        blob: "31cf08c644368526aa5cb9c768ab7f9605c5ab90"

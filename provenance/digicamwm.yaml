@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "digicamwm":
+    "aarch64":
+      repository_id: 959263734
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/digicamwm"
+        blob: "906551ee98f78596c1917f3bd172bb681c90f5fa"
+    "armv7l":
+      repository_id: 959263734
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 959263734
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 959263734
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/digicamwm"
+        blob: "eb5adea5c70588cb44e0af7d78080194c74b7cdc"

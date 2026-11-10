@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "mitan":
+    "aarch64":
+      repository_id: 781398359
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/mitan"
+        blob: "96a98701fbf6de348566b6ab5720712889548f8b"
+    "armv7l":
+      repository_id: 781398359
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 781398359
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 781398359
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/mitan"
+        blob: "9acac12649b8709eb44b7e9490909ce576b3fa5c"

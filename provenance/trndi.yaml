@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "trndi":
+    "aarch64":
+      repository_id: 916073717
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/trndi"
+        blob: "30f7184113bbf711ce11958445f847f1805a55ef"
+    "armv7l":
+      repository_id: 916073717
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 916073717
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 916073717
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/trndi"
+        blob: "a2541eaf64274eb10825f93c55f301d5e1db0969"

@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "ynodesktop":
+    "aarch64":
+      repository_id: 814216994
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/ynodesktop"
+        blob: "1937edbbd17f2b19cddd4003ac914f98187a2b05"
+    "armv7l":
+      repository_id: 814216994
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 814216994
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 814216994
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/ynodesktop"
+        blob: "c4dba3dd1fcb9c405e1594a18d3ebe4176d1e5a3"

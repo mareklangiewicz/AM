@@ -1,0 +1,26 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "rme-control-gui":
+    "aarch64":
+      repository_id: 828146855
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 828146855
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 828146855
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 828146855
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/rme-control-gui"
+        blob: "4de520e71574f9637687f85357141a2b5524d3b9"

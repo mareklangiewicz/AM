@@ -1,0 +1,70 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "thunderbird":
+    "aarch64":
+      repository_id: 986688857
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 986688857
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 986688857
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 986688857
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/thunderbird"
+        blob: "2349996a5f60fcd4f7c1c5bbc35df55ab0b8c609"
+  "thunderbird-beta":
+    "aarch64":
+      repository_id: 986688857
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 986688857
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 986688857
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 986688857
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/thunderbird-beta"
+        blob: "97f22c7445f088661946ea586393780ff834945f"
+  "thunderbird-nightly":
+    "aarch64":
+      repository_id: 986688857
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 986688857
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 986688857
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 986688857
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/thunderbird-nightly"
+        blob: "04fd348cf2f3c2b5d8a313c2f3deb86efe592960"

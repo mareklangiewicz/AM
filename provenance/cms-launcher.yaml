@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "cms-launcher":
+    "aarch64":
+      repository_id: 926838344
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/cms-launcher"
+        blob: "4cbb3ab7558e28e22786daaa34f0e07a0ac83e5e"
+    "armv7l":
+      repository_id: 926838344
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 926838344
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 926838344
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/cms-launcher"
+        blob: "cb5f287c18128dc10bd7ea9915f302d70bbaf3d1"

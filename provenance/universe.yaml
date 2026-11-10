@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "tari-universe":
+    "aarch64":
+      repository_id: 833493800
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/tari-universe"
+        blob: "f327e8e4c02b33b658680140abcdc00f1b52d314"
+    "armv7l":
+      repository_id: 833493800
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 833493800
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 833493800
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/tari-universe"
+        blob: "901fbe6b244db71a8e8feeaad94bd0c617f498d6"

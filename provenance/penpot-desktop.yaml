@@ -1,0 +1,42 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "penpot":
+    "aarch64":
+      repository_id: 871632980
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/penpot"
+        blob: "7b9d012faf9d4468015d11b26387089dc99a9a2e"
+    "armv7l":
+      repository_id: 871632980
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 871632980
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 871632980
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/penpot"
+        blob: "e4960b048a8fb61a5d0fc98770daa8b3325c68b1"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T15:38:12Z"
+        recipe_sha256: "293fabb5f04773ac246316a9576d19db659e4c3f87e6cbc63b0cb74313deeef9"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

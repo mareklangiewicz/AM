@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "carvera-controller":
+    "aarch64":
+      repository_id: 882176752
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/carvera-controller"
+        blob: "56e847e372edf773066798d403569210d7ee1a13"
+    "armv7l":
+      repository_id: 882176752
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 882176752
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 882176752
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/carvera-controller"
+        blob: "e6d5f9ad9608e5a16841be46c9f1ef89c0afa6d5"

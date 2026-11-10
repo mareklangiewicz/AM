@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "deepchat":
+    "aarch64":
+      repository_id: 932490533
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/deepchat"
+        blob: "2d953377d6a9a1f13b3292043b6b8c214d9c07be"
+    "armv7l":
+      repository_id: 932490533
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 932490533
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 932490533
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/deepchat"
+        blob: "37e9f11ccb50460c23f153793273fde82c2f8ec4"

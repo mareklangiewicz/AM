@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "rhyolite":
+    "aarch64":
+      repository_id: 904347772
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/rhyolite"
+        blob: "9e9c67622b41fbc8270f1e7d343a29e480e57381"
+    "armv7l":
+      repository_id: 904347772
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 904347772
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 904347772
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/rhyolite"
+        blob: "96e7f1a7bceb2fe66c7807c189d5b151ee12b6ce"

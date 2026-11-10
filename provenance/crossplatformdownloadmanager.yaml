@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "crossplatformdownloadmanager":
+    "aarch64":
+      repository_id: 843713102
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/crossplatformdownloadmanager"
+        blob: "d2bf9f893d3679780187ac3e6d63fdd39c2188c6"
+    "armv7l":
+      repository_id: 843713102
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 843713102
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 843713102
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/crossplatformdownloadmanager"
+        blob: "aad40a94865c6169eb195f23c3759761129d1ef9"
