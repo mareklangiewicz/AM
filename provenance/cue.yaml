@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "cue":
+    "aarch64":
+      repository_id: 1302077273
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/cue"
+        blob: "03755bf81e16e857c2488e7de770b31159f18a1f"
+    "armv7l":
+      repository_id: 1302077273
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1302077273
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1302077273
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/cue"
+        blob: "852664d45a7b01758954c3756ceabcf81e00a2e4"

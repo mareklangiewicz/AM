@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "omt-community-tools":
+    "aarch64":
+      repository_id: 1329182194
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/omt-community-tools"
+        blob: "cc6e62f1010d1d13bd79c4299e77731e55035903"
+    "armv7l":
+      repository_id: 1329182194
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1329182194
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1329182194
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/omt-community-tools"
+        blob: "a9c6b9d6cf1bf6499a6a2e565a938c75575b7761"

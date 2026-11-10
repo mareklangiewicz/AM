@@ -1,0 +1,26 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "busca-vagas":
+    "aarch64":
+      repository_id: 1311189470
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 1311189470
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1311189470
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1311189470
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/busca-vagas"
+        blob: "6d84e2b1e20d94f5d410d80b0c649965bee41497"

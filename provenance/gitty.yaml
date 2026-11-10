@@ -1,0 +1,42 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "gitty":
+    "aarch64":
+      repository_id: 1323970464
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/gitty"
+        blob: "a6245abb2f865d3a553a61295e5e95b36b915fc6"
+    "armv7l":
+      repository_id: 1323970464
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1323970464
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1323970464
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/gitty"
+        blob: "8025d7da1a0bff81072d0500a95d13781e945d54"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T18:13:14Z"
+        recipe_sha256: "b4f5f49ddf6e56117b02cb4438cb467e73c1cac6476d494b8926acca0209b0b9"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "codex-pro-max":
+    "aarch64":
+      repository_id: 1322284570
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/codex-pro-max"
+        blob: "5c3218cb384feadcc63244b5e94fe24f91b04deb"
+    "armv7l":
+      repository_id: 1322284570
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1322284570
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1322284570
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/codex-pro-max"
+        blob: "7cbc33bec4a0ac82874a3d8ebb8322291cd9c6b6"

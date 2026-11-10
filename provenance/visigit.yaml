@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "visigit":
+    "aarch64":
+      repository_id: 1306113600
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/visigit"
+        blob: "5ae67e5eb9d29d772c87523acbbe4f66ab9c0e38"
+    "armv7l":
+      repository_id: 1306113600
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1306113600
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1306113600
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/visigit"
+        blob: "b0c0e1366e6f83d93c9515f35c5b94bc678f5303"

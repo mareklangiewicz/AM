@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "musepi":
+    "aarch64":
+      repository_id: 1306983212
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/musepi"
+        blob: "a39c2dc716dd59bd15643daf3c41836ae81b27b4"
+    "armv7l":
+      repository_id: 1306983212
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1306983212
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1306983212
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/musepi"
+        blob: "7bc84b1840b3f301574fdf9fa3d96058f861e973"

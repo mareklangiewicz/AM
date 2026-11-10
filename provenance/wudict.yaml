@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "wudict":
+    "aarch64":
+      repository_id: 1319331753
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/wudict"
+        blob: "126762e791558689f51b6042b6cacf68e4897052"
+    "armv7l":
+      repository_id: 1319331753
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1319331753
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1319331753
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/wudict"
+        blob: "d2d012a49a8623d697159503816c599d573f369a"

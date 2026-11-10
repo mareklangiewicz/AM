@@ -1,0 +1,42 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "voidstrap":
+    "aarch64":
+      repository_id: 1314960368
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/voidstrap"
+        blob: "7e2d4789e2caf23fa3be0c64f28c8f3b1be7c421"
+    "armv7l":
+      repository_id: 1314960368
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1314960368
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1314960368
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/voidstrap"
+        blob: "6810dcd9dbf08f0b3b713916374646559d232775"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T18:13:14Z"
+        recipe_sha256: "9cec0636b75fb889930a9a932bb0b082d6814eddd740ed27b99b4e3ae04ad949"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

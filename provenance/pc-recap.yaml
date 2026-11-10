@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "pc-recap":
+    "aarch64":
+      repository_id: 1328444144
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/pc-recap"
+        blob: "ff9a34009ae7f249d2d054ff2f144b29f58261cd"
+    "armv7l":
+      repository_id: 1328444144
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1328444144
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1328444144
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/pc-recap"
+        blob: "e7919177aea792a2c91e3a02698fbe5fd0ff9caa"

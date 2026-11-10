@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "open-doctrines":
+    "aarch64":
+      repository_id: 1307712970
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/open-doctrines"
+        blob: "bee9820c9f68683f23924ad51ea3289f119ae275"
+    "armv7l":
+      repository_id: 1307712970
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1307712970
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1307712970
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/open-doctrines"
+        blob: "2efdfe1bab374292262a2908648b71c587f85e2d"

@@ -1,0 +1,26 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "bearings":
+    "aarch64":
+      repository_id: 1305389709
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 1305389709
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1305389709
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1305389709
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/bearings"
+        blob: "7e03740bd87f981eecaab5d387e98755a8322e9f"

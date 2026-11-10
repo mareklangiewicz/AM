@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "purevox":
+    "aarch64":
+      repository_id: 1326222384
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/purevox"
+        blob: "05829e449d0048f85e144629164da57358975a8b"
+    "armv7l":
+      repository_id: 1326222384
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1326222384
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1326222384
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/purevox"
+        blob: "440bd75c256bbb2caea236268a3c579870d3af9a"

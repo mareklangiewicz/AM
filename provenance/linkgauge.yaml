@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "linkgauge":
+    "aarch64":
+      repository_id: 1321225532
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/linkgauge"
+        blob: "512e148cc64ef66b3db370cac9d17e3402aa0a4c"
+    "armv7l":
+      repository_id: 1321225532
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1321225532
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1321225532
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/linkgauge"
+        blob: "3ab4a20347d4eafb359ae06aac351b24335f89aa"

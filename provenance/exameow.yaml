@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "exameow":
+    "aarch64":
+      repository_id: 1310629295
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/exameow"
+        blob: "e9b5292c785a19a5c787e6a55b9d5e5975050bd8"
+    "armv7l":
+      repository_id: 1310629295
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1310629295
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1310629295
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/exameow"
+        blob: "ff653bf6c9b5f35335b43b8b1fc9f3d19ed38eea"

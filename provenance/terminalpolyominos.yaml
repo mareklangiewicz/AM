@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "terminalpolyominos":
+    "aarch64":
+      repository_id: 1298989088
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/terminalpolyominos"
+        blob: "63f1f2bf081144079469a0cec1c6d055c574fa6f"
+    "armv7l":
+      repository_id: 1298989088
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1298989088
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1298989088
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/terminalpolyominos"
+        blob: "d61e5c9210eb5a061f1852c575d67b64a6714d49"

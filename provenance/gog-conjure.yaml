@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "gog-conjure":
+    "aarch64":
+      repository_id: 1305996617
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/gog-conjure"
+        blob: "9d9ca7174d486ed4cbe12c5f5846ada55f2b6593"
+    "armv7l":
+      repository_id: 1305996617
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1305996617
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1305996617
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/gog-conjure"
+        blob: "801668a6cc1ddbff4b29577e8b46addcc8a202f4"

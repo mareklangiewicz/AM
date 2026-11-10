@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "emrg":
+    "aarch64":
+      repository_id: 1304491731
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/emrg"
+        blob: "6e592d9a7ea1849c9d5fbbb38bfb8a30f6dd26ab"
+    "armv7l":
+      repository_id: 1304491731
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1304491731
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1304491731
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/emrg"
+        blob: "c264729df6dda9d43090ca6780985c315c90b942"
