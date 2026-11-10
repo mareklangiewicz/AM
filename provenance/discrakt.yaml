@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "discrakt":
+    "aarch64":
+      repository_id: 352812989
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/discrakt"
+        blob: "b74353b292529f2f84dea1f775d9bcd82f2e794c"
+    "armv7l":
+      repository_id: 352812989
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 352812989
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 352812989
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/discrakt"
+        blob: "5c02b5d81ae9f5b14f2b1b72072c620a56feedfd"

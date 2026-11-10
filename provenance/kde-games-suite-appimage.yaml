@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "kdegames":
+    "aarch64":
+      repository_id: 472189279
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 472189279
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 472189279
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/i686/kdegames"
+        blob: "2c0125964906d949f0a1ee953b765f4b6c4c8ae2"
+    "x86_64":
+      repository_id: 472189279
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/kdegames"
+        blob: "780982ae2debe9ab7945aafff55e67a1175af59b"

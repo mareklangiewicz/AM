@@ -1,0 +1,37 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "dotto":
+    "aarch64":
+      repository_id: 442568755
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 442568755
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 442568755
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 442568755
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/dotto"
+        blob: "8b21be02c21fdd21be10b7248ed0d9ebb8b29253"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T15:08:25Z"
+        recipe_sha256: "ad5dd92d28b8bbc3ef99a37a2aa2542b31cf6f8f26e00748114a7c98fecd54cd"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

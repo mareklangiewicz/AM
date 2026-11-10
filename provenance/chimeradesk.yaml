@@ -1,0 +1,70 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "chimeradesk":
+    "aarch64":
+      repository_id: 392371201
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 392371201
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 392371201
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 392371201
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/chimeradesk"
+        blob: "9d1481e310c8e0adf1d43ce1460e62edeb175a44"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T15:08:25Z"
+        recipe_sha256: "13f2e6afca500f330dbf6f95b1ae01bbe9d58a24b46b0ec5356fda2af955bb24"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"
+  "chimeradesk-kvm":
+    "aarch64":
+      repository_id: 392371201
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 392371201
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 392371201
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 392371201
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/chimeradesk-kvm"
+        blob: "acc014d353e40fb4b6e1345a4a8c6bf8081401a7"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T15:08:25Z"
+        recipe_sha256: "64348be64ee8ef7fe8fdb5e393de0013cd3630e292d9f37c1db43921f0ab3cab"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

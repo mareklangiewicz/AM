@@ -1,0 +1,26 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "neanes":
+    "aarch64":
+      repository_id: 441606931
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 441606931
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 441606931
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 441606931
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/neanes"
+        blob: "ce96674b13d542e47f1c0d8c6da1a9a9797ccc1e"

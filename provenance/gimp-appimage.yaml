@@ -1,0 +1,97 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "gimp":
+    "aarch64":
+      repository_id: 450522288
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 450522288
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 450522288
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/i686/gimp"
+        blob: "eaf3a57702dc593bd50affc499305dc661828c28"
+    "x86_64":
+      repository_id: 450522288
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/gimp"
+        blob: "93eef35644de3932a92e8ab55aaed71237a9761b"
+  "gimp-git":
+    "aarch64":
+      repository_id: 450522288
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 450522288
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 450522288
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 450522288
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/gimp-git"
+        blob: "91abe2587e841bed2d7b41b921c93041551b4aca"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T15:08:25Z"
+        recipe_sha256: "d0052784d213acac261952d4ea1a9bba9bc7ca7e263215394b1410c71e15b5fc"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"
+  "gimp-hybrid":
+    "aarch64":
+      repository_id: 450522288
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 450522288
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 450522288
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 450522288
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/gimp-hybrid"
+        blob: "44183127a7d63e63195d6ca7dc7d3455213dadac"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T15:08:25Z"
+        recipe_sha256: "1cfb1026271697326d6be3d8fe1e59128f79daa79fd731ab78ecbd4a350063bb"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

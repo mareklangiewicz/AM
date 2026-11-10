@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "stremio-enhanced":
+    "aarch64":
+      repository_id: 522049414
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/stremio-enhanced"
+        blob: "d9fc84874dbfe0869249856dc469bd602941ccf7"
+    "armv7l":
+      repository_id: 522049414
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 522049414
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 522049414
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/stremio-enhanced"
+        blob: "fcb7dadb0384f5b6651ec5b791659d598f709439"

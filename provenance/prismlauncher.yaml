@@ -1,0 +1,53 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "prismlauncher":
+    "aarch64":
+      repository_id: 553135896
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/prismlauncher"
+        blob: "859c8a9f4cfdcdcc64a7dcb80f5e4bf27de6238e"
+    "armv7l":
+      repository_id: 553135896
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 553135896
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 553135896
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/prismlauncher"
+        blob: "d69f71163cb33f5de1a6c7f5e7558f19ef4e9a3b"
+  "prismlauncher-qt5":
+    "aarch64":
+      repository_id: 553135896
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 553135896
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 553135896
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 553135896
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/prismlauncher-qt5"
+        blob: "22f5599f8352402ed77086a756c07c361566a452"

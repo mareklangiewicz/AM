@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "eve-intel-checker":
+    "aarch64":
+      repository_id: 526886149
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/eve-intel-checker"
+        blob: "1b5c1a33d6555b9f63939b78681d46eb34c0cef4"
+    "armv7l":
+      repository_id: 526886149
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 526886149
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 526886149
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/eve-intel-checker"
+        blob: "078383b0b2189306d255a3b4984ceaf3d7b823f2"

@@ -1,0 +1,70 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "microsoft-edge":
+    "aarch64":
+      repository_id: 553923012
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 553923012
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 553923012
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 553923012
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/microsoft-edge"
+        blob: "78378c9ad6511637a6822503e56a34faf49aa1b9"
+  "microsoft-edge-beta":
+    "aarch64":
+      repository_id: 553923012
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 553923012
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 553923012
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 553923012
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/microsoft-edge-beta"
+        blob: "70edcfe0df10b96472b0487ffb2dc1ef8048dc6e"
+  "microsoft-edge-dev":
+    "aarch64":
+      repository_id: 553923012
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 553923012
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 553923012
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 553923012
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/microsoft-edge-dev"
+        blob: "17c735eff765c7a012a7af94da3f2d6dfc6c42f1"

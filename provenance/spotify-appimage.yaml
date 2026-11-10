@@ -1,0 +1,70 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "spotify":
+    "aarch64":
+      repository_id: 404008386
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 404008386
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 404008386
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 404008386
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/spotify"
+        blob: "6a18f32d6702203bb7029b70e53e5a35e220371a"
+  "spotify-candidate":
+    "aarch64":
+      repository_id: 404008386
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 404008386
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 404008386
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 404008386
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/spotify-candidate"
+        blob: "4413b95bf9dd90cf558e1854549f21ae6bea326b"
+  "spotify-edge":
+    "aarch64":
+      repository_id: 404008386
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 404008386
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 404008386
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 404008386
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/spotify-edge"
+        blob: "70039a2adccb056da20aa6b6833058c8f4299eb6"

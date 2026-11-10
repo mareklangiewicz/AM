@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "sbom-workbench":
+    "aarch64":
+      repository_id: 375663611
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/sbom-workbench"
+        blob: "a32ecc903bdcb3dd7fd92f4133813be0c4445f66"
+    "armv7l":
+      repository_id: 375663611
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 375663611
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 375663611
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/sbom-workbench"
+        blob: "f1bd2d878568b0aa4b3b535b2de14ffeb6fd407a"

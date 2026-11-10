@@ -1,0 +1,42 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "plainmerge":
+    "aarch64":
+      repository_id: 391518566
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/plainmerge"
+        blob: "2104307d035525b13a1400ba48e862ae68a72600"
+    "armv7l":
+      repository_id: 391518566
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 391518566
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 391518566
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/plainmerge"
+        blob: "54e0888feb06f68a24ef904d4a86ee53824cebb5"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T15:08:25Z"
+        recipe_sha256: "0f26de4eda9a78eddf2ee211909d8aabccc42dce1cb02b1baa50c9ac3c2e1f15"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

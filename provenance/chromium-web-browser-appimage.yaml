@@ -1,0 +1,97 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "chromium":
+    "aarch64":
+      repository_id: 544492820
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 544492820
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 544492820
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/i686/chromium"
+        blob: "03d44d74b08865e9136b732bc3ab337dcff33af0"
+    "x86_64":
+      repository_id: 544492820
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/chromium"
+        blob: "c5c8c8b7015928239f113f04fdc7c4d68213ba72"
+  "chromium-beta":
+    "aarch64":
+      repository_id: 544492820
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 544492820
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 544492820
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 544492820
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/chromium-beta"
+        blob: "1ef1371fcc7dd30fbc1c1988600d9eeabc04554c"
+  "chromium-edge":
+    "aarch64":
+      repository_id: 544492820
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 544492820
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 544492820
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 544492820
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/chromium-edge"
+        blob: "398802e82ccbcf87166d44262592d53ae9b34e9b"
+  "chromium-rc":
+    "aarch64":
+      repository_id: 544492820
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 544492820
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 544492820
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 544492820
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/chromium-rc"
+        blob: "2d6f09dc000af635ffaf21d9377337af60d34b64"

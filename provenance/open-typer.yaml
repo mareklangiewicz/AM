@@ -1,0 +1,37 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "open-typer":
+    "aarch64":
+      repository_id: 410367874
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 410367874
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 410367874
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 410367874
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/open-typer"
+        blob: "330b2e7bf84559a29ddab7cb8d7a9208d7b7c2db"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T15:08:25Z"
+        recipe_sha256: "b0595d6b10d2277587e7f7a74ec603ac2c2388f646f86a072e6811b30cc5f218"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

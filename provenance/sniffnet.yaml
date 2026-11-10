@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "sniffnet":
+    "aarch64":
+      repository_id: 519895363
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/sniffnet"
+        blob: "2a1d1da4b73e51cf6dfedd3b083d426f79ac8cb0"
+    "armv7l":
+      repository_id: 519895363
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 519895363
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 519895363
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/sniffnet"
+        blob: "e606356350c68238663e8cf959fadc05b8cf093b"

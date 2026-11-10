@@ -1,0 +1,70 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "serioussamtfe-vk":
+    "aarch64":
+      repository_id: 494448514
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 494448514
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 494448514
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 494448514
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/serioussamtfe-vk"
+        blob: "6c1919ced82d16dfa992347e7d2fa4c036133db8"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T15:08:25Z"
+        recipe_sha256: "3a8a05c11454ab6816dd82caafab1b81e75d66dab1607799d9a7e46c3bdc4912"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"
+  "serioussamtse-vk":
+    "aarch64":
+      repository_id: 494448514
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 494448514
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 494448514
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 494448514
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/serioussamtse-vk"
+        blob: "4a1f5cc181aa44970162311b274c8b120139cfde"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T15:08:25Z"
+        recipe_sha256: "1066c5dc0aecbbf0de949d892002591d073339b8e430b1b30a9b65d40289f6fa"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"
