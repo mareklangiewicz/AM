@@ -1932,6 +1932,128 @@
       "evidence_step": "acquire / Collect candidates only",
       "evidence_at": "2026-11-10T18:30:33.5333775Z",
       "sanitized_failure": "Bees-bot/bees-desktop: failed (transport HTTP 404)"
+    },
+    {
+      "repository_id": 1380381406,
+      "repository": "kachakaran6/beacon",
+      "response_bytes": 127952,
+      "response_sha256": "5ba0505a6ac971b8bfd109643165ffa121ad69f5c7ff19b5e8af76e4f41c7baa",
+      "endpoint": "https://api.github.com/repositories/1380381406/releases?per_page=100",
+      "cause": "same_tag_conflict",
+      "tag": "v2.1.8",
+      "release_ids": [
+        397747229,
+        397747228
+      ],
+      "minimal_acquisition": {
+        "received_at": "2026-11-10T21:25:26Z",
+        "releases": {
+          "397747229": {
+            "tag": "v2.1.8",
+            "title": "2.1.8",
+            "url": "https://github.com/kachakaran6/beacon/releases/tag/v2.1.8",
+            "created_at": "2026-09-27T17:40:10Z",
+            "published_at": "2026-09-27T17:42:53Z",
+            "updated_at": "2026-09-27T17:42:56Z",
+            "prerelease": false,
+            "source_zip_url": "https://api.github.com/repos/kachakaran6/beacon/zipball/v2.1.8",
+            "source_tar_url": "https://api.github.com/repos/kachakaran6/beacon/tarball/v2.1.8",
+            "assets": {
+              "593431905": {
+                "name": "Beacon-2.1.8-portable.exe",
+                "url": "https://github.com/kachakaran6/beacon/releases/download/v2.1.8/Beacon-2.1.8-portable.exe",
+                "size": 106706837,
+                "content_type": "application/octet-stream",
+                "digest": "sha256:ff92d41f4663193056d8d8cf2314fb9b5692d0936e3abbeeb7edc2333817841f"
+              },
+              "593431906": {
+                "name": "Beacon-Setup-2.1.8.exe",
+                "url": "https://github.com/kachakaran6/beacon/releases/download/v2.1.8/Beacon-Setup-2.1.8.exe",
+                "size": 107019990,
+                "content_type": "application/octet-stream",
+                "digest": "sha256:ddf7741ab6fa31db54b6d3204e01bee8fc0f8aacc1efdc94195a395fc0d1e601"
+              },
+              "593431968": {
+                "name": "latest.yml",
+                "url": "https://github.com/kachakaran6/beacon/releases/download/v2.1.8/latest.yml",
+                "size": 341,
+                "content_type": "text/yaml",
+                "digest": "sha256:0b9ff6ae5e676b611d42ddf4263a6d112116b1699287a8f5f076dfdfaee6d327"
+              }
+            }
+          },
+          "397747228": {
+            "tag": "v2.1.8",
+            "title": "2.1.8",
+            "url": "https://github.com/kachakaran6/beacon/releases/tag/v2.1.8",
+            "created_at": "2026-09-27T17:40:10Z",
+            "published_at": "2026-09-27T17:42:53Z",
+            "updated_at": "2026-09-27T17:45:47Z",
+            "prerelease": false,
+            "source_zip_url": "https://api.github.com/repos/kachakaran6/beacon/zipball/v2.1.8",
+            "source_tar_url": "https://api.github.com/repos/kachakaran6/beacon/tarball/v2.1.8",
+            "assets": {
+              "593431904": {
+                "name": "Beacon-Setup-2.1.8.exe.blockmap",
+                "url": "https://github.com/kachakaran6/beacon/releases/download/v2.1.8/Beacon-Setup-2.1.8.exe.blockmap",
+                "size": 113022,
+                "content_type": "application/octet-stream",
+                "digest": "sha256:c4d828bba756fce0f503f585ad5a5bac95a24fc74aaf09841b93b663c419c8de"
+              },
+              "593434108": {
+                "name": "Beacon-2.1.8.AppImage",
+                "url": "https://github.com/kachakaran6/beacon/releases/download/v2.1.8/Beacon-2.1.8.AppImage",
+                "size": 131909512,
+                "content_type": "application/octet-stream",
+                "digest": "sha256:92dbef5d20a407e2db04fac8b8f272460e6d2b8bce8d8aaa168066dbd731ff17"
+              },
+              "593436508": {
+                "name": "Beacon-2.1.8.deb",
+                "url": "https://github.com/kachakaran6/beacon/releases/download/v2.1.8/Beacon-2.1.8.deb",
+                "size": 101858796,
+                "content_type": "application/octet-stream",
+                "digest": "sha256:fd6ebff611775c6b8622f80ad65a8c8bf62d3f53b7e1fd841545498b2cf79870"
+              },
+              "593436630": {
+                "name": "latest-linux.yml",
+                "url": "https://github.com/kachakaran6/beacon/releases/download/v2.1.8/latest-linux.yml",
+                "size": 511,
+                "content_type": "text/yaml",
+                "digest": "sha256:bfe76c054ef81f5619a5356b2d345c3ea32411e14a67c122f48a9c8033786f35"
+              }
+            }
+          }
+        },
+        "history_complete": true
+      },
+      "single_release_replays": "both passed; pair refused"
+    },
+    {
+      "repository_id": 1408126036,
+      "repository": "molodoy01/XMSGi-Studio",
+      "cause": "upstream HTTP 404",
+      "evidence_run": 42901472181,
+      "evidence_step": "acquire / Collect candidates only",
+      "evidence_at": "2026-11-10T21:15:17.7759072Z",
+      "sanitized_failure": "molodoy01/XMSGi-Studio: failed (transport HTTP 404)"
+    },
+    {
+      "repository_id": 1042891096,
+      "repository": "ShaeOJ/Axe-OS-Multitool",
+      "cause": "upstream HTTP 404",
+      "evidence_run": 42901472181,
+      "evidence_step": "acquire / Collect candidates only",
+      "evidence_at": "2026-11-10T21:16:32.2298485Z",
+      "sanitized_failure": "ShaeOJ/Axe-OS-Multitool: failed (transport HTTP 404)",
+      "coverage_note": "Already has retained successful data; this refresh failure does not add a missing source."
+    },
+    {
+      "repository_id": 16089035,
+      "repository": "wekan/wekan",
+      "endpoint": "https://api.github.com/repositories/16089035/releases?per_page=100",
+      "response_bytes": 17444724,
+      "response_sha256": "15644d92db193cdd771d9b09c865f56f0b3e3c8f3c1170fa861a19fb2f4c8b7f",
+      "cause": "response exceeds 16 MiB bound"
     }
   ]
 }

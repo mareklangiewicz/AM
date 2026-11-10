@@ -107,3 +107,29 @@ rotation remains enabled at the approved source pin, while complete source and
 usable payload coverage and the older capacity targets remain unqualified.
 See the latest [rollout evidence](../github-rollout-16.md) and
 [portable result](../github-rollout-rotation-success-16.json).
+
+## November 10 final source accounting
+
+Marek explicitly requested continued bounded acquisition while coverage increased.
+Twelve continued manual runs and three scheduled publications raised coverage
+from the previously reported 1,116 sources to **8,293 / 8,313**. Final run
+42901472181 confirmed catalog `0cbe19cdc61f9f594971d830e99a0b9893a11fc9` and
+status `c4bc2cd82aabc2154a9ce2c226d4f32146da89a5`, adding 317 sources and
+retaining all 7,976 previous source identities. Every candidate hash, input/run
+binding and coverage count passed verification.
+
+All **20** remaining missing sources were attempted and failed in the final run:
+14 exact-tag conflicts, two oversized responses and four HTTP 404s. No
+unattempted source remains. Dispatch ended after this source-by-source audit;
+no zero-growth replay or policy relaxation was performed. One other HTTP 404
+affected an already covered source's refresh; its last successful data remains.
+The [final audit](../github-coverage-final-audit-16.json),
+[continuation ledger](../github-coverage-continuation-16.json) and
+[refusal evidence](../github-coverage-refusals-16.json) preserve exact accounting.
+
+Leave this ticket claimed for the remaining refusals and unqualified usable
+payload/capacity coverage. The reviewed source/schedule and schema/runtime pins
+are unchanged. Evidence commits await push approval; no runtime redelivery,
+installed-app change or yadm operation was made. The local artifact disk-quota
+failure was recovered after successful publication, as recorded in the latest
+[rollout outcome](../github-rollout-16.md).

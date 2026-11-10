@@ -1,6 +1,54 @@
 # Full GitHub v3 rollout package
 
-## November 10 continuation — acquisition in progress
+## November 10 final source audit — 8,293 successful, 20 refused
+
+Marek explicitly selected continued sequential bounded runs while coverage
+increased. Twelve continued manual runs and three scheduled publications advanced
+the previously reported 1,116 sources to **8,293 / 8,313**. Every enrolled source
+now has successful retained data or a recorded refusal in the final run; no
+unattempted source remains. The [final source-by-source audit](github-coverage-final-audit-16.json)
+accounts for all **20** missing sources: **14 exact-tag conflicts, two responses
+over the 16 MiB bound, and four upstream HTTP 404s**. Minimized conflict fixtures,
+response sizes/hashes and sanitized transport evidence are in the
+[refusal evidence](github-coverage-refusals-16.json).
+
+[Final run 42901472181](https://github.com/mareklangiewicz/AM/actions/runs/42901472181)
+published catalog `0cbe19cdc61f9f594971d830e99a0b9893a11fc9` and status
+`c4bc2cd82aabc2154a9ce2c226d4f32146da89a5`. All 500 selected sources were
+attempted: 479 succeeded and 21 failed. The snapshot added **317** sources and
+retained all 7,976 previous sources: 7,814 byte-identical and 162 updated after
+successful collection. One failed refresh, Axe-OS Multitool (HTTP 404), retained
+its previous successful data and adds no missing source. All candidate hashes,
+run/input bindings, published counts and retained source identities passed
+verification. The [continuation ledger](github-coverage-continuation-16.json)
+links the exact results, summaries, statistics and compressed acquisition reports.
+
+Final collection used 500 HTTP attempts and 286,516,589 charged response bytes.
+The existing 500-selected / 750-request / 512 MiB / 900-second acquisition bounds
+were retained; acquisition took 378.296 seconds. Conflict and size rules were
+preserved. Acquisition dispatch ended after the final audit established that
+every remaining gap had failed in this run. No zero-growth replay was dispatched.
+Further progress for these sources requires corrected upstream data or an
+explicitly reviewed scope/policy change; usable payload coverage and the older
+capacity targets remain unqualified. Ticket 16 stays claimed.
+
+An intervening scheduled publication, run 42869466420, advanced 7,011 to 7,494
+sources before manual run 42870336181 read its actual parent. That manual run
+then published 7,976 sources successfully. Its later **local** artifact extraction
+failed on disk quota; publication had succeeded. Recovery extracted only the
+report from a compressed archive on physical disk and checked every candidate
+hash against the published Git tree. Further evidence retrieval used this method.
+The earlier temporary automatic-approval usage-limit failure was resolved before
+the live recovery checks; neither event changed catalog facts or runtime files.
+
+Remote source and hourly schedule remain pinned to
+`47211b286188113e6111033e9f17f8a7315d16bd`; schema/runtime authority remains
+`040614f86cbbf31fc19596c8d32225c82de77acf`. Runtime redelivery, installed-app
+changes and yadm operations were unnecessary. The new evidence commits are local
+and require Marek's push approval. A documentation push must also repin the
+schedule to its new tip so the existing schedule gate continues to run.
+
+## November 10 continuation — initial checkpoint
 
 Marek requested continuation. Scheduled runs 42740899290 and 42794542725 had
 already raised successful source coverage from 1,116 to 1,613 and then 2,109.
