@@ -1,0 +1,187 @@
+{
+  "run": {
+    "id": 42870336181,
+    "attempt": 1
+  },
+  "actions_url": "https://github.com/mareklangiewicz/AM/actions/runs/42870336181",
+  "source_revision": "47211b286188113e6111033e9f17f8a7315d16bd",
+  "schema_revision": "040614f86cbbf31fc19596c8d32225c82de77acf",
+  "catalog_before": "d572bcd9976013a6ae75355c35da86bcbcde0df4",
+  "catalog_after": "f69d51b0a8ad09490ac500977a79401b31faf4c8",
+  "status_after": "b895ebaca00d5f83d74392aadab7d559494cf924",
+  "collection": "partial",
+  "validation": "ok",
+  "target_counts": {
+    "enrolled": 8313,
+    "selected": 500,
+    "attempted": 500,
+    "successful": 482,
+    "failed": 18,
+    "unknown": 0,
+    "unattempted": 0
+  },
+  "freshness": {
+    "catalog": "f69d51b0a8ad09490ac500977a79401b31faf4c8",
+    "evaluated_at": "2026-11-10T18:41:27Z",
+    "under_24h": {
+      "state": "known",
+      "value": 7975
+    },
+    "from_24_to_48h": {
+      "state": "known",
+      "value": 0
+    },
+    "at_least_48h": {
+      "state": "known",
+      "value": 1
+    },
+    "no_success": {
+      "state": "known",
+      "value": 337
+    },
+    "unknown": {
+      "state": "known",
+      "value": 0
+    }
+  },
+  "acquisition": {
+    "http_attempts": 500,
+    "charged_response_bytes": 291487204,
+    "received_response_bytes_state": "unknown",
+    "seconds": 356.58360448,
+    "command_seconds": 828.3739628010001
+  },
+  "collection_metrics": {
+    "requests": 500,
+    "response_bytes": 291487204,
+    "selected_sources": 500,
+    "stop_reason": "request_limit",
+    "request_cap": 750,
+    "response_byte_cap": 536870912,
+    "acquisition_cap_seconds": 900,
+    "primary_reserve": 100,
+    "acquisition_seconds": 356.58360448,
+    "attempted_sources": 500,
+    "successful_sources": 495,
+    "unattempted_sources": 7813,
+    "rate_first": {
+      "limit": 5000,
+      "remaining": 4508,
+      "used": 492,
+      "reset": 1794337489,
+      "resource": "core"
+    },
+    "rate_last": {
+      "limit": 5000,
+      "remaining": 4779,
+      "used": 221,
+      "reset": 1794337489,
+      "resource": "core"
+    }
+  },
+  "stop_reason": "source_validation",
+  "failed_sources": [
+    {
+      "repository_id": 68968979,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 202983854,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 764177895,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 875733267,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 992424531,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 1078432229,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 1155919438,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 1207529787,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 1209344251,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 1238297155,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 1245849062,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 1310162837,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 1312837813,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 16089035,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 144590939,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 403136214,
+      "status": "failed",
+      "reason": "transport"
+    },
+    {
+      "repository_id": 1234036192,
+      "status": "failed",
+      "reason": "transport"
+    },
+    {
+      "repository_id": 1344297039,
+      "status": "failed",
+      "reason": "transport"
+    }
+  ],
+  "verification": {
+    "candidate_hashes": "all matched exact published catalog",
+    "before_sources": 7494,
+    "after_sources": 7976,
+    "added_sources": 482,
+    "retained_source_bytes": {
+      "unchanged": 7494,
+      "updated_after_successful_collection": 0
+    }
+  },
+  "run_conclusion": "success",
+  "verified_schedule_revision": "47211b286188113e6111033e9f17f8a7315d16bd"
+}
