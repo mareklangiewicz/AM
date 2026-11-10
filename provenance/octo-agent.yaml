@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "octo-agent":
+    "aarch64":
+      repository_id: 1248766276
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/octo-agent"
+        blob: "2ace40d3fdb261936289d8c41ac98943781a8883"
+    "armv7l":
+      repository_id: 1248766276
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1248766276
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1248766276
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/octo-agent"
+        blob: "9975667f626e42461cde7197b70567d12a522eb6"

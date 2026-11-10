@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "pideck":
+    "aarch64":
+      repository_id: 1255122629
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/pideck"
+        blob: "cf883c1a6d635c707421feb5159758a6484f7c55"
+    "armv7l":
+      repository_id: 1255122629
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1255122629
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1255122629
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/pideck"
+        blob: "403657a6c23d7fd17fc18dcbb59e1716f4e6dc7d"

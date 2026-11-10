@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "respeaker-console":
+    "aarch64":
+      repository_id: 1233677021
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/respeaker-console"
+        blob: "bac4299332c9ddcfad0debb0949ed6d6e354aa73"
+    "armv7l":
+      repository_id: 1233677021
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1233677021
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1233677021
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/respeaker-console"
+        blob: "25d74469f60df2ffac464d8274dc8c6ffa490972"

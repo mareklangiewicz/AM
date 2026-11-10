@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "kun":
+    "aarch64":
+      repository_id: 1245699721
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/kun"
+        blob: "4a5b0466dcef588d72ae5f369d54cce746f6d3f1"
+    "armv7l":
+      repository_id: 1245699721
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1245699721
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1245699721
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/kun"
+        blob: "db004049b41d48f24e2aa5b4befed08bb51b1c65"

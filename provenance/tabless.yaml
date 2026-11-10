@@ -1,0 +1,70 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "heap":
+    "aarch64":
+      repository_id: 1240001279
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 1240001279
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1240001279
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1240001279
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/heap"
+        blob: "ad68a73672199f47b3a8f099c1a31de0fb755c2f"
+  "lowkey":
+    "aarch64":
+      repository_id: 1240001279
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 1240001279
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1240001279
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1240001279
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/lowkey"
+        blob: "8dd4d04a9617ce955e59398e97ed26f40764a734"
+  "tabless":
+    "aarch64":
+      repository_id: 1240001279
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 1240001279
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1240001279
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1240001279
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/tabless"
+        blob: "6dd97b864a4d92b1320e5fcf1db471fa9efdc412"

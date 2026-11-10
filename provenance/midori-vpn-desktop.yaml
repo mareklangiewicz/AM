@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "midori-vpn-desktop":
+    "aarch64":
+      repository_id: 1229292421
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/midori-vpn-desktop"
+        blob: "0bc3c2129a7794b8080143d54f75a10f423e2bab"
+    "armv7l":
+      repository_id: 1229292421
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1229292421
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1229292421
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/midori-vpn-desktop"
+        blob: "664ea4c523d7d1522c947b2acfdc71b4979bd236"

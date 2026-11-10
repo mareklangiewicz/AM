@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "claude-code-provider-gateway":
+    "aarch64":
+      repository_id: 1233553764
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/claude-code-provider-gateway"
+        blob: "73d60278f6c24540ab016188ad5b5fbb9c86dc05"
+    "armv7l":
+      repository_id: 1233553764
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1233553764
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1233553764
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/claude-code-provider-gateway"
+        blob: "94245aa6f9f47e39ab237666d75ac32f82fa7cb9"

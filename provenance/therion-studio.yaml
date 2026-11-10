@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "therion-studio":
+    "aarch64":
+      repository_id: 1248595245
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/therion-studio"
+        blob: "f64866d4d2795f8491b27eda92b946c7dd7c9595"
+    "armv7l":
+      repository_id: 1248595245
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1248595245
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1248595245
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/therion-studio"
+        blob: "8a124a9fa9a2a6460a11ed46aa5c3d16f334d577"

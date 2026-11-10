@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "turnout":
+    "aarch64":
+      repository_id: 1247511350
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/turnout"
+        blob: "c40a38380ec01bd109aebf649158a21f4911b1ae"
+    "armv7l":
+      repository_id: 1247511350
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1247511350
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1247511350
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/turnout"
+        blob: "8718203c083611206950d36317b0d4880e68be58"

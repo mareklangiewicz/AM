@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "ecu-studio-suite":
+    "aarch64":
+      repository_id: 1254563414
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/ecu-studio-suite"
+        blob: "bbfc3eb0f922784737c3df3d0449a1c64d99a9db"
+    "armv7l":
+      repository_id: 1254563414
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1254563414
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1254563414
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/ecu-studio-suite"
+        blob: "5fe1b90183a45d1ad796135d1ea0977077d065dc"

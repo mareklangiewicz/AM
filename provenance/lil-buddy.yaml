@@ -1,0 +1,26 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "lil-buddy":
+    "aarch64":
+      repository_id: 1244118610
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 1244118610
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1244118610
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1244118610
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/lil-buddy"
+        blob: "bcf9b312e6ac79473b2c0fad067c736af69491e2"

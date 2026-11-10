@@ -1,0 +1,3670 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "repository"
+repository_id: 1248766276
+repository: "open-octo/octo-agent"
+collected_at: "2026-11-10T17:28:29Z"
+scope:
+  page_size: 100
+  pages_fetched: 1
+  history_complete: false
+observed_at: "2026-11-10T17:28:29Z"
+releases:
+  "383797476":
+    tag: "v1.16.14"
+    title: "v1.16.14"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.16.14"
+    created_at: "2026-09-07T02:29:27Z"
+    published_at: "2026-09-07T02:33:16Z"
+    updated_at: "2026-09-07T02:36:15Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.16.14"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.16.14"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.16.14/"
+    assets:
+      "548024203":
+        name: "octo_1.16.14_linux_arm64.tar.gz"
+        url_suffix: "octo_1.16.14_linux_arm64.tar.gz"
+        size: 15801956
+        media_type: "application/gzip"
+        digest: "sha256:767c32fbf024d070225bcf443a9eba04b2fedc9f5ebb6a96e069b06a51150bd1"
+      "548024227":
+        name: "octo_1.16.14_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.16.14_darwin_amd64.tar.gz"
+        size: 16850843
+        media_type: "application/gzip"
+        digest: "sha256:263466b03ad41166490588d3ed1be11aedf9047b0cd3d1bedadcb382315942f1"
+      "548024235":
+        name: "octo_1.16.14_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.16.14_darwin_arm64.tar.gz"
+        size: 16205043
+        media_type: "application/gzip"
+        digest: "sha256:b1f8785317c56fc585463487089a9768f03750c9bc08d9b0609ec7edd587a89b"
+      "548024257":
+        name: "octo_1.16.14_windows_amd64.zip"
+        url_suffix: "octo_1.16.14_windows_amd64.zip"
+        size: 16901166
+        media_type: "zip"
+        digest: "sha256:1b9902b56e7b2b2f89b9c3a4e91cd5c24acd2da021a6628f7d7a7d1344ade2e3"
+      "548024284":
+        name: "octo_1.16.14_windows_arm64.zip"
+        url_suffix: "octo_1.16.14_windows_arm64.zip"
+        size: 14079908
+        media_type: "zip"
+        digest: "sha256:11a45784efbd57e2c98e5ac7f8be5450ea65b1d5c41010c6e627c718d5f6ff14"
+      "548024326":
+        name: "octo_1.16.14_darwin_all.tar.gz"
+        url_suffix: "octo_1.16.14_darwin_all.tar.gz"
+        size: 33049997
+        media_type: "application/gzip"
+        digest: "sha256:94fcdbc0fc1ac352ace184c019004264a3ecc6805c969a09f93f5fb8a7c16add"
+      "548024361":
+        name: "octo_1.16.14_linux_amd64.tar.gz"
+        url_suffix: "octo_1.16.14_linux_amd64.tar.gz"
+        size: 17079642
+        media_type: "application/gzip"
+        digest: "sha256:b6405c05187e5a5d059e69a5dca0a98da57a83f69187c023c903f2bc76816d8a"
+      "548024392":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 685
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:5175c02dfe48535b44151f3344f4d67edda553f957e290c325c7c6fd43b09b4b"
+      "548025580":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 60512760
+        media_type: "application/vnd.appimage"
+        digest: "sha256:7d5c25ede9e45ea865564b35d2d9f6d4a3752530ed316c369653364ebe500d8d"
+      "548025874":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 56314376
+        media_type: "application/vnd.appimage"
+        digest: "sha256:1d05ed7cb4e5fed0a7bb1e818e6300e568b279d03429d6be2ecc5e9ccd52633d"
+      "548025966":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 122757490
+        media_type: "zip"
+        digest: "sha256:bddee33013263727d0abcb66f8fbe47f91cba73e399b4c546a7d2734163c0ea8"
+      "548025967":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 122776391
+        digest: "sha256:a0de6583ae48275769167963d372d900889d6772a546ab324bc22be8a236ed30"
+      "548027798":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 50336768
+        media_type: "application/x-msdownload"
+        digest: "sha256:6a17556c8ef1364310c9458e2105058ffe206603745a41c77aaa60407a65a9e1"
+      "548027799":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 49011723
+        media_type: "application/x-msdownload"
+        digest: "sha256:6d4ca98912b150903231a3ada17f1e36646af467771d976e80290e30720eb39e"
+      "548028258":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 47774720
+        media_type: "application/x-msdownload"
+        digest: "sha256:d3c26f2898a4c80fcdccc9ed3a74333bf4ef1b5a28205bad5b6292d27f2b1043"
+      "548028260":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 44249269
+        media_type: "application/x-msdownload"
+        digest: "sha256:af45ccb72070cb2cc762692b6f3c8520af6b623f228387b604034ad6cc61bf6f"
+      "548028559":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:cf275e86a47febbfeb0a7825b43fe809026630dc20a20a41f5b35c1aba3d24a5"
+  "384501107":
+    tag: "v1.16.15"
+    title: "v1.16.15"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.16.15"
+    created_at: "2026-09-08T06:48:05Z"
+    published_at: "2026-09-08T06:52:19Z"
+    updated_at: "2026-09-08T06:55:26Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.16.15"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.16.15"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.16.15/"
+    assets:
+      "550019998":
+        name: "octo_1.16.15_linux_arm64.tar.gz"
+        url_suffix: "octo_1.16.15_linux_arm64.tar.gz"
+        size: 15832139
+        media_type: "application/gzip"
+        digest: "sha256:3b955c10839d7618bfae950c730e201517e6c4f3351f6b063f0391b37f39c969"
+      "550020019":
+        name: "octo_1.16.15_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.16.15_darwin_amd64.tar.gz"
+        size: 16869313
+        media_type: "application/gzip"
+        digest: "sha256:606e94865be983edffb37428bb9b410547e901a518e94542e878765b3762cc48"
+      "550020033":
+        name: "octo_1.16.15_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.16.15_darwin_arm64.tar.gz"
+        size: 16236822
+        media_type: "application/gzip"
+        digest: "sha256:15e18b78b18b59437542ec76f83474f85f7828fc408fa9701e31a6e1d7d8d675"
+      "550020051":
+        name: "octo_1.16.15_windows_amd64.zip"
+        url_suffix: "octo_1.16.15_windows_amd64.zip"
+        size: 16937498
+        media_type: "zip"
+        digest: "sha256:0a402ca234c72b1afd62debecbe447098b62e9d434a63ad202612b6bf166f93e"
+      "550020072":
+        name: "octo_1.16.15_windows_arm64.zip"
+        url_suffix: "octo_1.16.15_windows_arm64.zip"
+        size: 14085660
+        media_type: "zip"
+        digest: "sha256:ecc10cb1fb331f84957cbd128e330ebe676631e1990d3f09683a7ed4f2811fff"
+      "550020087":
+        name: "octo_1.16.15_darwin_all.tar.gz"
+        url_suffix: "octo_1.16.15_darwin_all.tar.gz"
+        size: 33092802
+        media_type: "application/gzip"
+        digest: "sha256:30a77800269796abafd6116e361fb851da671905a82caebad8e90519e215ac1c"
+      "550020111":
+        name: "octo_1.16.15_linux_amd64.tar.gz"
+        url_suffix: "octo_1.16.15_linux_amd64.tar.gz"
+        size: 17107856
+        media_type: "application/gzip"
+        digest: "sha256:321bc30664d67c8d19c9f27be7e9f785eea94c981f0dcbf8ef912082700bd0f0"
+      "550020153":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 685
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:a6316c547c751885beb3cc980777cca6154f3eeda0aa5a0379d351dbbfce1662"
+      "550021307":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 60561912
+        media_type: "application/vnd.appimage"
+        digest: "sha256:ba665f130ce289cd3dc5701e1289cb7dbad19030fd4ed51b7186b4df0c2a9454"
+      "550021814":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 56367624
+        media_type: "application/vnd.appimage"
+        digest: "sha256:ae32d6ec6f2700b4d31f1908eec6525397c0460bc41fee4037d483a7368e0e15"
+      "550021926":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 122887423
+        media_type: "zip"
+        digest: "sha256:af71b32b1333698dffacf7f196987493fc66061c4eacfc05da6bbdb780aaf147"
+      "550021927":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 122902763
+        digest: "sha256:f9d3a8d6836e223c9af5a95e6115c08cdf24fd137be6e6a6a9e098103c4e77e5"
+      "550023294":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 49075658
+        media_type: "application/x-msdownload"
+        digest: "sha256:e58795ed1b8b18320929f949349ab48b85dd3bb8ffce0fc6bd1b53822ae7a3a8"
+      "550023295":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 50412032
+        media_type: "application/x-msdownload"
+        digest: "sha256:c767661e2003d3ce5249d4e9cc9a73c0b780029a2be608f03b43b9d66cc0a3b5"
+      "550023322":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 47846400
+        media_type: "application/x-msdownload"
+        digest: "sha256:5abde4d91ae73bd173de8ae2e4fdc08fd99cbf3e53dcd874ab99d834d1faec9d"
+      "550023324":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 44297096
+        media_type: "application/x-msdownload"
+        digest: "sha256:07dab38dcf894e06995d2277fe5942ac327f691ac41ef2687fae02723ce7b334"
+      "550023715":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:f878e551025fbfcb9b3ab7327a2a0f97980a9407b8ee15a0c9cfc97ef245ee61"
+  "385387038":
+    tag: "v1.16.16"
+    title: "v1.16.16"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.16.16"
+    created_at: "2026-09-09T09:31:01Z"
+    published_at: "2026-09-09T09:35:06Z"
+    updated_at: "2026-09-09T09:40:50Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.16.16"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.16.16"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.16.16/"
+    assets:
+      "552445889":
+        name: "octo_1.16.16_windows_arm64.zip"
+        url_suffix: "octo_1.16.16_windows_arm64.zip"
+        size: 14095235
+        media_type: "zip"
+        digest: "sha256:f402efabc55a3a8a382b2fe1a3af0fc215178ff821154b33eaf15224d30f8789"
+      "552445939":
+        name: "octo_1.16.16_darwin_all.tar.gz"
+        url_suffix: "octo_1.16.16_darwin_all.tar.gz"
+        size: 33097818
+        media_type: "application/gzip"
+        digest: "sha256:2bd97cde558c2ab512ac1b864453be64ec6b97e88fe46a48aa33528e4bd3fc36"
+      "552445978":
+        name: "octo_1.16.16_linux_amd64.tar.gz"
+        url_suffix: "octo_1.16.16_linux_amd64.tar.gz"
+        size: 17109643
+        media_type: "application/gzip"
+        digest: "sha256:6f5f6556de74d3f66f6c371ef61811061ba64ff3849889d7d6afa0d2bf8e22e6"
+      "552446033":
+        name: "octo_1.16.16_linux_arm64.tar.gz"
+        url_suffix: "octo_1.16.16_linux_arm64.tar.gz"
+        size: 15844733
+        media_type: "application/gzip"
+        digest: "sha256:2e4b3eecfc19768e709f48949395292dc99fe0e43ff89982a65e764f60dc2437"
+      "552446084":
+        name: "octo_1.16.16_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.16.16_darwin_amd64.tar.gz"
+        size: 16875616
+        media_type: "application/gzip"
+        digest: "sha256:91780ff883a86ec42ad9ede0eaf6fff744195aa3823e5e810809db1b1bf496a7"
+      "552446130":
+        name: "octo_1.16.16_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.16.16_darwin_arm64.tar.gz"
+        size: 16243418
+        media_type: "application/gzip"
+        digest: "sha256:a3bc2a375c73f7a804c7860ebb03a1170ff81ee663602f30a5f13949ffe01c5b"
+      "552446166":
+        name: "octo_1.16.16_windows_amd64.zip"
+        url_suffix: "octo_1.16.16_windows_amd64.zip"
+        size: 16947812
+        media_type: "zip"
+        digest: "sha256:f5909719fc6de584f59b696521de800df7d763543ab38926c22ce7836087ced1"
+      "552446203":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 685
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:111325472a7911f36b5daf30bfb37bc0e695da17ea7a978e7e3db9636d58f1c7"
+      "552448289":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 56371720
+        media_type: "application/vnd.appimage"
+        digest: "sha256:bbf0a58fa3cd80c0f6600a18c475d6bde8fd24ff1359cfa975b55d3ad524c7f1"
+      "552448590":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 60631544
+        media_type: "application/vnd.appimage"
+        digest: "sha256:85c97ba8d6684c5cd9d1dd20fa8125afadef5b3f2e030b23db7f8060616885a9"
+      "552451680":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 44309595
+        media_type: "application/x-msdownload"
+        digest: "sha256:24751735b659bf974380113f8d25194e52ddd18d12b385d4c1f28ad3dcb8303f"
+      "552451681":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 47873536
+        media_type: "application/x-msdownload"
+        digest: "sha256:f4d3b092ca177d52b149aaaa03833f8c78f68e4404c99e859296799e60c8e0e9"
+      "552451770":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 122934607
+        media_type: "zip"
+        digest: "sha256:07e8effa00ee3a1a5cff2a1f0519bd2334034bc6c69c4db0df0a48575c0dfc35"
+      "552451771":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 122940903
+        digest: "sha256:230ae5c79420ba1c5c7db9f720e3631afddb108c9a00601c9c6b959bdc363f2f"
+      "552455521":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 49084797
+        media_type: "application/x-msdownload"
+        digest: "sha256:80aa7878d8e9145e0686d44c8074a669e57265f56a451dd2f2a84a84aa68b6a7"
+      "552455522":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 50443264
+        media_type: "application/x-msdownload"
+        digest: "sha256:8d02daf410f2e34c8a16dd2961c0265455b78437e0c1307ce1dc002e073b440f"
+      "552456186":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:55d3ab3038fe80695e10c90c0b285505bf5de72cbe9200a16c8044775fd35936"
+  "386153665":
+    tag: "v1.16.17"
+    title: "v1.16.17"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.16.17"
+    created_at: "2026-09-10T09:30:05Z"
+    published_at: "2026-09-10T09:34:18Z"
+    updated_at: "2026-09-10T09:37:47Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.16.17"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.16.17"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.16.17/"
+    assets:
+      "554698636":
+        name: "octo_1.16.17_darwin_all.tar.gz"
+        url_suffix: "octo_1.16.17_darwin_all.tar.gz"
+        size: 33095121
+        media_type: "application/gzip"
+        digest: "sha256:f6f21ffefea616c02ce59ba0639611c66bd7fc5999b7fa686cdf68bb75d00ac4"
+      "554698681":
+        name: "octo_1.16.17_linux_amd64.tar.gz"
+        url_suffix: "octo_1.16.17_linux_amd64.tar.gz"
+        size: 17110408
+        media_type: "application/gzip"
+        digest: "sha256:f589a9caafe5b4d3698e7db92e981348ad15245de82a701aeffc0a585c7c9b9b"
+      "554698725":
+        name: "octo_1.16.17_linux_arm64.tar.gz"
+        url_suffix: "octo_1.16.17_linux_arm64.tar.gz"
+        size: 15847771
+        media_type: "application/gzip"
+        digest: "sha256:c5ce1e3f3a645e9f9cf1b5d4844ef26bd2621e9f47954266d2533c6322ec5444"
+      "554698803":
+        name: "octo_1.16.17_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.16.17_darwin_amd64.tar.gz"
+        size: 16875999
+        media_type: "application/gzip"
+        digest: "sha256:52b609033bbabc4e192cc635f7fe9cb8f4ef99fa3ea2e7e3de2e1deda18c0df9"
+      "554698838":
+        name: "octo_1.16.17_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.16.17_darwin_arm64.tar.gz"
+        size: 16244822
+        media_type: "application/gzip"
+        digest: "sha256:9091eedede85ee94c26d59cbf6980312467772b8042c15f8b04cd59fb8f66484"
+      "554698886":
+        name: "octo_1.16.17_windows_amd64.zip"
+        url_suffix: "octo_1.16.17_windows_amd64.zip"
+        size: 16951203
+        media_type: "zip"
+        digest: "sha256:125f21b367db26ae98206cd76e9d3cc8e059b1426e2ef487d8c7c3207d44ee79"
+      "554698918":
+        name: "octo_1.16.17_windows_arm64.zip"
+        url_suffix: "octo_1.16.17_windows_arm64.zip"
+        size: 14096856
+        media_type: "zip"
+        digest: "sha256:0fce4104b490bb9cd137a6f3b4833ff85871117e32bdc45d109ec2d8497ad830"
+      "554698963":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 685
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:ef7a237d6356244061bb7de5a67196cf3d9328b7ee40c6672a1bcebff329f3f7"
+      "554700786":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 56375816
+        media_type: "application/vnd.appimage"
+        digest: "sha256:85b9becab6f2261ad983439dc431c8193754c02230ac23847158746fe7be0dd7"
+      "554701942":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 60631544
+        media_type: "application/vnd.appimage"
+        digest: "sha256:aeaec5a40df1d2ebd46c5d8e19066af0e0b88dbb3c909e58a5823172e23bc5b2"
+      "554702372":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 122962550
+        digest: "sha256:0f076963eec0c1e88cd94887e28921244773958d184747550fb6db1917a1d3f4"
+      "554702375":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 122951819
+        media_type: "zip"
+        digest: "sha256:4a3f4df349dd782dd5829f30239c2735d7bbfe8159b1dfcf22c2141ff9677858"
+      "554703788":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 49081508
+        media_type: "application/x-msdownload"
+        digest: "sha256:7736d955a61c1ac540d91d4911145aae94e40b5348968f13be8f49317d1fd0b4"
+      "554703789":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 50448384
+        media_type: "application/x-msdownload"
+        digest: "sha256:3c1707f37c684f1414cdadf100a81e47ae502f11c2aef2bf56ac47908c48097c"
+      "554703897":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 47877120
+        media_type: "application/x-msdownload"
+        digest: "sha256:4079a9fc587058b548dc9cae8aa13b9b8c96b83f73af47e822eb66126a239c67"
+      "554703903":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 44309278
+        media_type: "application/x-msdownload"
+        digest: "sha256:58b85ee40a641b0e877a25e7bc7405610999c101a508eb6ff729ed773823eb0e"
+      "554704298":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:dbc4e3465eeea49390d4f7e5b683782c932267b3fe3acac36b3cf7db4c7dc7da"
+  "387791604":
+    tag: "v1.16.18"
+    title: "v1.16.18"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.16.18"
+    created_at: "2026-09-13T04:22:50Z"
+    published_at: "2026-09-13T04:29:03Z"
+    updated_at: "2026-09-13T04:33:00Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.16.18"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.16.18"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.16.18/"
+    assets:
+      "560552133":
+        name: "octo_1.16.18_darwin_all.tar.gz"
+        url_suffix: "octo_1.16.18_darwin_all.tar.gz"
+        size: 32937775
+        media_type: "application/gzip"
+        digest: "sha256:e1878f82894bd74e3e3ec3ca1f562fd859b70fe2fc38642be61c19b2e17e2161"
+      "560552201":
+        name: "octo_1.16.18_linux_amd64.tar.gz"
+        url_suffix: "octo_1.16.18_linux_amd64.tar.gz"
+        size: 17132778
+        media_type: "application/gzip"
+        digest: "sha256:dbc8d47c34311f8a992ab4b8446a36abaf1c05713fac6a03345e0e54058b48a1"
+      "560552232":
+        name: "octo_1.16.18_linux_arm64.tar.gz"
+        url_suffix: "octo_1.16.18_linux_arm64.tar.gz"
+        size: 15853409
+        media_type: "application/gzip"
+        digest: "sha256:1baecfb56d13de29ba902a439e1dff3792b4f06fcfec8ea0630b57a40e23f1c2"
+      "560552278":
+        name: "octo_1.16.18_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.16.18_darwin_amd64.tar.gz"
+        size: 16795666
+        media_type: "application/gzip"
+        digest: "sha256:a643987cf2b2dd15a6e42499ac620405d5b8e2c7ed35c55a8dbc6e6e474fd501"
+      "560552307":
+        name: "octo_1.16.18_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.16.18_darwin_arm64.tar.gz"
+        size: 16152459
+        media_type: "application/gzip"
+        digest: "sha256:559eca0aac1282e419660c40ad22c8950a7c04a4b9af9d37a9bac88c6fc4d707"
+      "560552337":
+        name: "octo_1.16.18_windows_amd64.zip"
+        url_suffix: "octo_1.16.18_windows_amd64.zip"
+        size: 17009262
+        media_type: "zip"
+        digest: "sha256:7b88615605910973ffd273c54ce845fb6ddc54f77c87a59c4c642fa983a74c42"
+      "560552387":
+        name: "octo_1.16.18_windows_arm64.zip"
+        url_suffix: "octo_1.16.18_windows_arm64.zip"
+        size: 14153784
+        media_type: "zip"
+        digest: "sha256:c791fe2398a60ed0ec0be6fb3a84c3a26e8c0ccb1c21fb295c9982ab2104b3eb"
+      "560552435":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 685
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:602874813e29c75dd149fa7ebc9bb31627bf1572abe0e183be8c10c1fa0edb72"
+      "560553995":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 56408584
+        media_type: "application/vnd.appimage"
+        digest: "sha256:34335796801c543e15e773d3756d9542e54a87feb5321e8bd548b7535969a1c9"
+      "560554073":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 60664312
+        media_type: "application/vnd.appimage"
+        digest: "sha256:e8365f6924744be0cb6412955fb44143ed46b7399366464bad772ef5a37ee717"
+      "560555927":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 44435004
+        media_type: "application/x-msdownload"
+        digest: "sha256:a4a47192ba8459dd6e9a9e6d486065e6394ee8c86a4c3bb3000554fae2d62b43"
+      "560555928":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 48059904
+        media_type: "application/x-msdownload"
+        digest: "sha256:0e8920b63d46e576e318522d28a0d68913189e2b417bf6eb2953a5ebca8078b8"
+      "560556135":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 49214425
+        media_type: "application/x-msdownload"
+        digest: "sha256:51c8e1f0acc0543826eb0de01ee50e60eb42be5b4d928dcf0b85d696309c25e7"
+      "560556136":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 50643456
+        media_type: "application/x-msdownload"
+        digest: "sha256:5015155525c45c16a7a0536936e218e1632ef78a1451d17744d6562d1e5c23ed"
+      "560557048":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 122975966
+        media_type: "zip"
+        digest: "sha256:8c1a0f2412a31a1cb00b644bb9695fc4ca35eb036c52fef272bff84292461c56"
+      "560557049":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 122982342
+        digest: "sha256:60a79d4b6b586816283f0869b46e80fa9d34ed1b1b9cf2e257462a021b90b910"
+      "560557612":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:b92c8857932c19e4302044a266c72a3e059770736c11c11fb3d98b6e5a47cd74"
+  "388105613":
+    tag: "v1.16.19"
+    title: "v1.16.19"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.16.19"
+    created_at: "2026-09-14T01:53:09Z"
+    published_at: "2026-09-14T01:56:23Z"
+    updated_at: "2026-09-14T02:01:19Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.16.19"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.16.19"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.16.19/"
+    assets:
+      "562336674":
+        name: "octo_1.16.19_linux_amd64.tar.gz"
+        url_suffix: "octo_1.16.19_linux_amd64.tar.gz"
+        size: 17133065
+        media_type: "application/gzip"
+        digest: "sha256:1e1a2625e85d46b40570963e8eaeb6b72913097e9a75340432338cb2a4ee4a61"
+      "562336735":
+        name: "octo_1.16.19_linux_arm64.tar.gz"
+        url_suffix: "octo_1.16.19_linux_arm64.tar.gz"
+        size: 15854113
+        media_type: "application/gzip"
+        digest: "sha256:ea0f3da97be84f558120b4a3055e268d8c4df12bf99d9dfa3dc40f6e26537188"
+      "562336759":
+        name: "octo_1.16.19_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.16.19_darwin_amd64.tar.gz"
+        size: 16796146
+        media_type: "application/gzip"
+        digest: "sha256:46b61ecc6ee98552468316a74f668142865f6d22ad35f98484429e59a09adc0a"
+      "562336803":
+        name: "octo_1.16.19_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.16.19_darwin_arm64.tar.gz"
+        size: 16153424
+        media_type: "application/gzip"
+        digest: "sha256:658ae42ad430363cff54dc601407c3e8d8e8514ba36919da170b78492d823a82"
+      "562336838":
+        name: "octo_1.16.19_windows_amd64.zip"
+        url_suffix: "octo_1.16.19_windows_amd64.zip"
+        size: 17009856
+        media_type: "zip"
+        digest: "sha256:ea43f2e3c18df0bbad76f30f45de982baf18fad8fa9b1be9204f54b9e36b5215"
+      "562336873":
+        name: "octo_1.16.19_windows_arm64.zip"
+        url_suffix: "octo_1.16.19_windows_arm64.zip"
+        size: 14154590
+        media_type: "zip"
+        digest: "sha256:4e7254fbf7b61c667a417bb04960e2caa4423d4c9a3b12229dfbdf3c1d61e559"
+      "562336904":
+        name: "octo_1.16.19_darwin_all.tar.gz"
+        url_suffix: "octo_1.16.19_darwin_all.tar.gz"
+        size: 32942557
+        media_type: "application/gzip"
+        digest: "sha256:b1ccb10afece676ce505b34bdc108916d18de9252458cd41788fab68e948a0e4"
+      "562336957":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 685
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:b03ddec94059f45448e7754dab500379350701c08396231dca5b522a2a668e22"
+      "562338659":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 60668408
+        media_type: "application/vnd.appimage"
+        digest: "sha256:484a8a8681500e6bdd52b14b508ff78734d213d70d7cd3f009be4049d091eca6"
+      "562338926":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 56412680
+        media_type: "application/vnd.appimage"
+        digest: "sha256:40fd50c8780266eadcfcdbe25873dc37efa926359aff368a51adedb4342d8bd0"
+      "562340683":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 49208303
+        media_type: "application/x-msdownload"
+        digest: "sha256:e01ccec1b45e5e71297c7b49aefb569c951291ab0dddc02a62d066ad7f3c585e"
+      "562340684":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 50644480
+        media_type: "application/x-msdownload"
+        digest: "sha256:7ebbddb3345a4711094933019defd9ecd79390a7bba0bec0b20f659c5efd4fc9"
+      "562340951":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 44431130
+        media_type: "application/x-msdownload"
+        digest: "sha256:65a7448acdf14cb4d90ce385a7d11f5ec8d5fcae15117f55383608ef1b31c4b5"
+      "562340952":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 48061440
+        media_type: "application/x-msdownload"
+        digest: "sha256:20b7ce60e08c1879834980019804d26d2cc2cf203e44879fe92f165a2c081a45"
+      "562343498":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 122985850
+        digest: "sha256:0ac47c4114c8942855b3705c8b0b908813a459821708cc8eac32dca669ef2de4"
+      "562343501":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 122977527
+        media_type: "zip"
+        digest: "sha256:8039bff6487e7e1f7503398fc239e2fface5e556c7a858a6ae0c63ddaabe08e9"
+      "562344023":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:1fecf81455b11b3379fe679c2bf4293f0f8a3466cab6483399a185d3ec5d296d"
+  "388287542":
+    tag: "v1.16.20"
+    title: "v1.16.20"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.16.20"
+    created_at: "2026-09-14T09:40:11Z"
+    published_at: "2026-09-14T09:45:34Z"
+    updated_at: "2026-09-14T09:50:32Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.16.20"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.16.20"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.16.20/"
+    assets:
+      "563083637":
+        name: "octo_1.16.20_linux_arm64.tar.gz"
+        url_suffix: "octo_1.16.20_linux_arm64.tar.gz"
+        size: 15879468
+        media_type: "application/gzip"
+        digest: "sha256:044487074abeb5662a9408e99f18b8697d4e65cbe294ef7732aa4a7620b4bb2d"
+      "563083688":
+        name: "octo_1.16.20_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.16.20_darwin_amd64.tar.gz"
+        size: 16815641
+        media_type: "application/gzip"
+        digest: "sha256:f411a44d0c2d7343a03d939cd75d51964600f713b82cb5954964c7ebaa05353d"
+      "563083732":
+        name: "octo_1.16.20_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.16.20_darwin_arm64.tar.gz"
+        size: 16175535
+        media_type: "application/gzip"
+        digest: "sha256:8d2c1173f3ed3f1ffc3a34cee34d81967f7ba06b508c72f4caf71f215635381f"
+      "563083792":
+        name: "octo_1.16.20_windows_amd64.zip"
+        url_suffix: "octo_1.16.20_windows_amd64.zip"
+        size: 17034925
+        media_type: "zip"
+        digest: "sha256:7981d73f1ba01676f99244d1a9ecc1b60e469c58e29031f561b6646c2042df8e"
+      "563083843":
+        name: "octo_1.16.20_windows_arm64.zip"
+        url_suffix: "octo_1.16.20_windows_arm64.zip"
+        size: 14182916
+        media_type: "zip"
+        digest: "sha256:55c4a9227bdb26b1f96a9d832003d12bfb88c950986eb5d3ee48a907c1d602bc"
+      "563083897":
+        name: "octo_1.16.20_darwin_all.tar.gz"
+        url_suffix: "octo_1.16.20_darwin_all.tar.gz"
+        size: 32973283
+        media_type: "application/gzip"
+        digest: "sha256:4e0e293823630d6f5411cc4215364adc05a20eec41aeb24251aa30735ac7f6b5"
+      "563083957":
+        name: "octo_1.16.20_linux_amd64.tar.gz"
+        url_suffix: "octo_1.16.20_linux_amd64.tar.gz"
+        size: 17161720
+        media_type: "application/gzip"
+        digest: "sha256:f72b7d1ec7fa0d133f800b99ef2bf6fde1ee6b5df4f10227de17f59c98ec471c"
+      "563084021":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 685
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:77783e8e840fa45b4682f5a2852dee8a1265d517b82364ee976fe45ccec289fb"
+      "563086220":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 56453640
+        media_type: "application/vnd.appimage"
+        digest: "sha256:3833275466cbd8ac3287dfa710fb2f4a78c0b65ac3dbba2d12749e70ae02f68f"
+      "563086917":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 60684792
+        media_type: "application/vnd.appimage"
+        digest: "sha256:9b0a695ed4bd945bd9f85ec365820c5102bc74e71b832fbbb7da64c3ee61767d"
+      "563088297":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 49243414
+        media_type: "application/x-msdownload"
+        digest: "sha256:5cbe9646f376fcb9a12a2bab13b044c7a3b6b7e1b9d05a94d968cf03888c7787"
+      "563088298":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 50696704
+        media_type: "application/x-msdownload"
+        digest: "sha256:a686d30b32c98876e216719e8346d33e732e8afbd2c5f269c0f81ca0b3532bd7"
+      "563088767":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 44459586
+        media_type: "application/x-msdownload"
+        digest: "sha256:e980ee3177cda91a6437d2d425b1b9934a665f647f44f1dce00b60f6b1f15558"
+      "563088768":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 48111616
+        media_type: "application/x-msdownload"
+        digest: "sha256:9053b04b86c9b5c44d946750648ad015b969f6f3e80d798b74407c83d87af305"
+      "563092101":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 123065937
+        media_type: "zip"
+        digest: "sha256:35498c632c50392d9aa2831af37885f7dbf99d7d32cf29e462ff56aea0825c12"
+      "563092102":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 123080254
+        digest: "sha256:5dfd407da212f0674edb68d945b06c139596bdcbbc8650a8ee5e720487fa2da4"
+      "563092579":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:3474a91af2e332237d38faf92e842634cf88e50be7ec5c65c1c41ff038f9313f"
+  "389787240":
+    tag: "v1.16.21"
+    title: "v1.16.21"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.16.21"
+    created_at: "2026-09-16T09:22:05Z"
+    published_at: "2026-09-16T09:29:52Z"
+    updated_at: "2026-09-16T09:35:24Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.16.21"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.16.21"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.16.21/"
+    assets:
+      "567631132":
+        name: "octo_1.16.21_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.16.21_darwin_arm64.tar.gz"
+        size: 16174255
+        media_type: "application/gzip"
+        digest: "sha256:e01607688986578264aa3c70e55397fce5096e49448be0f07c29283389865eda"
+      "567631175":
+        name: "octo_1.16.21_windows_amd64.zip"
+        url_suffix: "octo_1.16.21_windows_amd64.zip"
+        size: 17035479
+        media_type: "zip"
+        digest: "sha256:82eb8d1bf13782db4fb84e74a3e06449f92c47eecdc0e400ffcd45c475bc8b34"
+      "567631233":
+        name: "octo_1.16.21_windows_arm64.zip"
+        url_suffix: "octo_1.16.21_windows_arm64.zip"
+        size: 14184349
+        media_type: "zip"
+        digest: "sha256:fde618e04bb3897185f864063e8baa945747a5d645f10ff7b5cc2b9bec467fc6"
+      "567631294":
+        name: "octo_1.16.21_darwin_all.tar.gz"
+        url_suffix: "octo_1.16.21_darwin_all.tar.gz"
+        size: 32976250
+        media_type: "application/gzip"
+        digest: "sha256:c46dfe6a6e219484c769fc4a651eaa82ecad9fbaf0797a4b1873573410f9bfba"
+      "567631367":
+        name: "octo_1.16.21_linux_amd64.tar.gz"
+        url_suffix: "octo_1.16.21_linux_amd64.tar.gz"
+        size: 17162802
+        media_type: "application/gzip"
+        digest: "sha256:7537c8e57a9ed159c2e4e3cb3ba050d08d76ec4b0432955d3dc0269231f5e6d0"
+      "567631436":
+        name: "octo_1.16.21_linux_arm64.tar.gz"
+        url_suffix: "octo_1.16.21_linux_arm64.tar.gz"
+        size: 15881388
+        media_type: "application/gzip"
+        digest: "sha256:bec8a5bede0aaf2171db9fa802234fe5ef9f747d78d6ed495fea6c20b7c4ef51"
+      "567631511":
+        name: "octo_1.16.21_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.16.21_darwin_amd64.tar.gz"
+        size: 16817365
+        media_type: "application/gzip"
+        digest: "sha256:ef59d12772bee10c1e8034cd2be0a13638cc1219af0f0ea370c377bf795628b1"
+      "567631573":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 685
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:6dc5d7a42316bc6bf26e936d7283e5d76c738ccc056c42388c709567d6cb44ad"
+      "567633440":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 56482312
+        media_type: "application/vnd.appimage"
+        digest: "sha256:3e0e165e9247271f9a01926f910c386c99a74d09d07274a189a7e0e7a0df9afd"
+      "567634069":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 60680696
+        media_type: "application/vnd.appimage"
+        digest: "sha256:1b0026326cfd975063d0ae24a51f43aac2b39131e5e210906739f76a0ac3fb53"
+      "567635859":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 48154624
+        media_type: "application/x-msdownload"
+        digest: "sha256:599b6d492d4f4f40fe343f45a51ac546c8d9590486fff0ab46e573ddf6187f9d"
+      "567635860":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 44468130
+        media_type: "application/x-msdownload"
+        digest: "sha256:ca345b53e568eda5a4f7edafd0f8566c6d2045b35deba573ca44603784fbe68a"
+      "567636346":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 49271809
+        media_type: "application/x-msdownload"
+        digest: "sha256:00a7bbe408de8c89d4c61903aa232d0f434ddd6e29ceba969c88ea1ad40e6c28"
+      "567636347":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 50740736
+        media_type: "application/x-msdownload"
+        digest: "sha256:08422160482fa1347834f1e63f7dd0159f2ac10adb0b4d154473fab71d8bb41c"
+      "567639924":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 123106341
+        media_type: "zip"
+        digest: "sha256:87d10e7f91614f569ec246f3f2a80997e346d82e6bd2036645ae336041c440d3"
+      "567639926":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 123118311
+        digest: "sha256:7b443624bb06f9ab457511a2ac7354705f8b0e21ffcc641bc4823f3f01dc6f57"
+      "567640402":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:47fef890440f26062d05edf18ef96b9827885c8cc37cccf0df3807c614288f2c"
+  "390075627":
+    tag: "v1.17.0"
+    title: "v1.17.0"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.17.0"
+    created_at: "2026-09-16T16:02:43Z"
+    published_at: "2026-09-16T16:07:20Z"
+    updated_at: "2026-09-16T16:14:20Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.17.0"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.17.0"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.17.0/"
+    assets:
+      "568313533":
+        name: "octo_1.17.0_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.17.0_darwin_arm64.tar.gz"
+        size: 16871889
+        media_type: "application/gzip"
+        digest: "sha256:c18fae6a6f5c1e78553a6e03a80486709c5dd8500399ee1e3a68a281149e5e15"
+      "568313584":
+        name: "octo_1.17.0_windows_amd64.zip"
+        url_suffix: "octo_1.17.0_windows_amd64.zip"
+        size: 17710021
+        media_type: "zip"
+        digest: "sha256:c157ff83d99b2299289a93dbff9eccca36791e519f3eb298290239ad04e1cda3"
+      "568313629":
+        name: "octo_1.17.0_windows_arm64.zip"
+        url_suffix: "octo_1.17.0_windows_arm64.zip"
+        size: 14856043
+        media_type: "zip"
+        digest: "sha256:dede7695e278e4ae20aa33e379e7aeb786e1947e9c09275ee4594dbd3adf4fc7"
+      "568313678":
+        name: "octo_1.17.0_darwin_all.tar.gz"
+        url_suffix: "octo_1.17.0_darwin_all.tar.gz"
+        size: 34349875
+        media_type: "application/gzip"
+        digest: "sha256:24f899b6a1da8ad4e1df0368aa7d73a7cb106db90dff16fdf3fc86bdf291c6ee"
+      "568313762":
+        name: "octo_1.17.0_linux_amd64.tar.gz"
+        url_suffix: "octo_1.17.0_linux_amd64.tar.gz"
+        size: 17837049
+        media_type: "application/gzip"
+        digest: "sha256:1f6a6b2da69cdb7c30f8da8d9c3744725fc127d939ebf4c6b59643b956c6f858"
+      "568313802":
+        name: "octo_1.17.0_linux_arm64.tar.gz"
+        url_suffix: "octo_1.17.0_linux_arm64.tar.gz"
+        size: 16560110
+        media_type: "application/gzip"
+        digest: "sha256:2f3f0523c50dea7175125830ca44510a77f627645d878d41e34fc714167d9c7e"
+      "568313854":
+        name: "octo_1.17.0_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.17.0_darwin_amd64.tar.gz"
+        size: 17502401
+        media_type: "application/gzip"
+        digest: "sha256:1aaf941de8e60ca29a16f5cf4f8d2678d0dcca8685c49642a35a2ce71cd11e3f"
+      "568313917":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 678
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:bad4ea5d86b34c3a706451b0d1189a897abad44a4abbc7e8eec7ccb9e28c713d"
+      "568316355":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 57702920
+        media_type: "application/vnd.appimage"
+        digest: "sha256:29b0f4adf3f651eab941196ef69d1cc1941dfb72c112dfa4955176d5a824fc95"
+      "568317311":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 61925880
+        media_type: "application/vnd.appimage"
+        digest: "sha256:89905d994910e4cdd1429f7a3e1b0f4f67ba188465e99f5e8407df650a621af5"
+      "568319403":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 50045952
+        media_type: "application/x-msdownload"
+        digest: "sha256:bd4ed133802ca14c4b077c35b9d2c68839210d089f11d98d860bfed0e84216df"
+      "568319405":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 45492197
+        media_type: "application/x-msdownload"
+        digest: "sha256:fb7d4a744b216239e269e54f6980558f22d9ae406d9dfb474bb7d3b56f50dbf8"
+      "568320562":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 52637696
+        media_type: "application/x-msdownload"
+        digest: "sha256:634f792f096e8c4987cc67f57477e4e72b49fb121c8d2a0b2a77e2e2381d4531"
+      "568320563":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 50277148
+        media_type: "application/x-msdownload"
+        digest: "sha256:af66e5c1dddf1c98311abc8e6d76b4d20643e25bad61bf4f346a3ae75302be29"
+      "568325320":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 125846713
+        media_type: "zip"
+        digest: "sha256:c7be4f776c5f83b9b809131e074af8f723fac7c69f987bb211d9de68920f7e87"
+      "568325322":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 125871292
+        digest: "sha256:4f2171084fe349f828ba98dee1f037e211b78e221279d832cf19eced29f5e04f"
+      "568326032":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:94ca02085f6cfd5c3416cd471567536e387c4168c2cf07979754f4fbd0007989"
+  "390618520":
+    tag: "v1.17.1"
+    title: "v1.17.1"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.17.1"
+    created_at: "2026-09-17T10:23:22Z"
+    published_at: "2026-09-17T10:27:16Z"
+    updated_at: "2026-09-17T10:32:34Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.17.1"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.17.1"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.17.1/"
+    assets:
+      "570023272":
+        name: "octo_1.17.1_windows_amd64.zip"
+        url_suffix: "octo_1.17.1_windows_amd64.zip"
+        size: 17756234
+        media_type: "zip"
+        digest: "sha256:d3a6d47feeb0723811860e4fe70f701d6d63309d975c7ad8e7104546450bc5d8"
+      "570023364":
+        name: "octo_1.17.1_windows_arm64.zip"
+        url_suffix: "octo_1.17.1_windows_arm64.zip"
+        size: 14894786
+        media_type: "zip"
+        digest: "sha256:8e58b450499a3f3ad373a09fc8f05dab61b126631b32aa8104720b24e06030d8"
+      "570023414":
+        name: "octo_1.17.1_darwin_all.tar.gz"
+        url_suffix: "octo_1.17.1_darwin_all.tar.gz"
+        size: 34436470
+        media_type: "application/gzip"
+        digest: "sha256:07a3ea8020d4da4a9be8cb1c31390bae1b62d13173928af646528afe00504404"
+      "570023463":
+        name: "octo_1.17.1_linux_amd64.tar.gz"
+        url_suffix: "octo_1.17.1_linux_amd64.tar.gz"
+        size: 17877182
+        media_type: "application/gzip"
+        digest: "sha256:b3f264b5609c83479ed4cb2930e2f0cc865f594c55497aa0921536a8c21e8936"
+      "570023507":
+        name: "octo_1.17.1_linux_arm64.tar.gz"
+        url_suffix: "octo_1.17.1_linux_arm64.tar.gz"
+        size: 16596962
+        media_type: "application/gzip"
+        digest: "sha256:63b701befcc232cb0adbb36825f68ec43a34220f43ba8e1c13275cdf163a6679"
+      "570023550":
+        name: "octo_1.17.1_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.17.1_darwin_amd64.tar.gz"
+        size: 17542138
+        media_type: "application/gzip"
+        digest: "sha256:73307068fb693bc0ef214f7cebf4578a07041d919a2bd259523cd27a315119e1"
+      "570023598":
+        name: "octo_1.17.1_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.17.1_darwin_arm64.tar.gz"
+        size: 16909344
+        media_type: "application/gzip"
+        digest: "sha256:5c192a610ecf2c3c613959fa05f1182f075e0b6ac4ef52837c87fffd3a004074"
+      "570023657":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 678
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:995fd946082c48289f5eebd89fee27673612119ba5705c46b114742d66f6b643"
+      "570025839":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 62069240
+        media_type: "application/vnd.appimage"
+        digest: "sha256:7fb0dc700055b4f69ffda88525c02e9c1f5cc4cf9d7208625e5dd2c75eee0218"
+      "570026935":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 57838088
+        media_type: "application/vnd.appimage"
+        digest: "sha256:0648a33fff803ad0b9923f1c71e6db6668003de57ef7f0640c94bb977f325d62"
+      "570029087":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 50362058
+        media_type: "application/x-msdownload"
+        digest: "sha256:0f92dbb89c1a13e8227d9eb11748205ca6d4cb5a25d4404a4838d44332747a32"
+      "570029088":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 52769280
+        media_type: "application/x-msdownload"
+        digest: "sha256:327036842f281e0ffb55657d1fbe0121838f01c27224ac852ea6087e7957db9d"
+      "570029343":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 50176000
+        media_type: "application/x-msdownload"
+        digest: "sha256:5e9b1b5249813f50edd58d4fafa60774e35236e55761fea236ff348820ac781c"
+      "570029344":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 45568960
+        media_type: "application/x-msdownload"
+        digest: "sha256:52183e0d14692db8a5002b5d617cddfe913ee283bb4e255c610299772c1a20fd"
+      "570032784":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 126045313
+        digest: "sha256:17ef246e73ff93a346dd2c8f9e85e0d023f29ce495d7cf0a9466811a06dcd1dd"
+      "570032805":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 126040419
+        media_type: "zip"
+        digest: "sha256:f30b2c9eaf68008c06e0b4ac8eff01ac7feb39f4b2a86087f919765045dbd0a2"
+      "570033575":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:98de42d46324f13ee32dabafc86a0a091f3fc2981d444627e683ca305b859187"
+  "391308267":
+    tag: "v1.17.2"
+    title: "v1.17.2"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.17.2"
+    created_at: "2026-09-18T08:58:49Z"
+    published_at: "2026-09-18T08:09:50Z"
+    updated_at: "2026-09-18T09:12:17Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.17.2"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.17.2"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.17.2/"
+    assets:
+      "572240609":
+        name: "octo_1.17.2_linux_arm64.tar.gz"
+        url_suffix: "octo_1.17.2_linux_arm64.tar.gz"
+        size: 16645968
+        media_type: "application/gzip"
+        digest: "sha256:f72a54953ffbdee9e1731147042ffadba2b52d334ba65554b81f1cec471d2869"
+      "572240684":
+        name: "octo_1.17.2_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.17.2_darwin_amd64.tar.gz"
+        size: 17597225
+        media_type: "application/gzip"
+        digest: "sha256:6eef2e7f3d3de9abb02b727d0ebafa84c0d3f756fe60c4fb3ac3c5a3a25a0917"
+      "572240761":
+        name: "octo_1.17.2_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.17.2_darwin_arm64.tar.gz"
+        size: 16948374
+        media_type: "application/gzip"
+        digest: "sha256:31311fb8e2cad302ef6498b161589a5ad496db646ff7f3f5c7ef0063785465d7"
+      "572244109":
+        name: "octo_1.17.2_windows_amd64.zip"
+        url_suffix: "octo_1.17.2_windows_amd64.zip"
+        size: 17800409
+        media_type: "zip"
+        digest: "sha256:f9000cd89256d10bb312105eb3e6dc6c38da4a933a564abf6c59e9eab7f570fe"
+      "572244190":
+        name: "octo_1.17.2_windows_arm64.zip"
+        url_suffix: "octo_1.17.2_windows_arm64.zip"
+        size: 14942284
+        media_type: "zip"
+        digest: "sha256:2ebba6d0ea7a14ffce6702e2098368281f7b0edfc3cb6895d2c25f016bf0e24f"
+      "572244305":
+        name: "octo_1.17.2_darwin_all.tar.gz"
+        url_suffix: "octo_1.17.2_darwin_all.tar.gz"
+        size: 34531713
+        media_type: "application/gzip"
+        digest: "sha256:d27f9bf665e542fe233a1051ab347d13bf0a4827701176cccfb8895a2aa0b213"
+      "572247643":
+        name: "octo_1.17.2_linux_amd64.tar.gz"
+        url_suffix: "octo_1.17.2_linux_amd64.tar.gz"
+        size: 17926158
+        media_type: "application/gzip"
+        digest: "sha256:bdcab98e03f6ad6739d1cd27c0197019a03141c54f1dfdf86f36b444bd4a10ad"
+      "572247756":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 678
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:a05dcb79d1f5e9cbd65713d30f70e06197fc9784e915b4888b20e48c2c09ba1a"
+      "572249761":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 62167544
+        media_type: "application/vnd.appimage"
+        digest: "sha256:c89e835817070e25aac1c1a24e992e6d2e314433b3fc7821a7ab15558f8ea0a4"
+      "572251063":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 57879048
+        media_type: "application/vnd.appimage"
+        digest: "sha256:c8e3a6e828c8734ebff5086ab4ef254c2c2463e4aa052d0d8301f2e05199a995"
+      "572253890":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 50442280
+        media_type: "application/x-msdownload"
+        digest: "sha256:0964319785a587529bf90a44e1f56388f039c8e123c74c3300f1195a4bd4259d"
+      "572253893":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 52897280
+        media_type: "application/x-msdownload"
+        digest: "sha256:0182a4275d6fc012a4fc6856f1b597809d14e34adef7864ced519179c2774160"
+      "572255563":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 45646270
+        media_type: "application/x-msdownload"
+        digest: "sha256:91a3b9d2ba6f1ec9712119b86f11b73bced554c47678235034d4336cbc1ea794"
+      "572255564":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 50291200
+        media_type: "application/x-msdownload"
+        digest: "sha256:bd4b021d5ff0da33bc02efd36e63f44f3775d953619953859d5001f3aa442689"
+      "572255881":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 126261558
+        media_type: "zip"
+        digest: "sha256:780e34ff1a54034ed5531aa5eba699cb1510894ddcea4ce6076e722bff8225cb"
+      "572255883":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 126260768
+        digest: "sha256:26f9c12ed904daa229f1ea13a3f2c84e0de3633fda6aba17fec855cb83dbbd2e"
+      "572256497":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:ecc1ec223fba9742ff02c60a1c8e252a852c281cec87bc0ce8ed318b6d0f23b6"
+  "391896500":
+    tag: "v1.17.3"
+    title: "v1.17.3"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.17.3"
+    created_at: "2026-09-19T02:44:25Z"
+    published_at: "2026-09-19T03:13:33Z"
+    updated_at: "2026-09-19T03:18:17Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.17.3"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.17.3"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.17.3/"
+    assets:
+      "573963965":
+        name: "octo_1.17.3_darwin_all.tar.gz"
+        url_suffix: "octo_1.17.3_darwin_all.tar.gz"
+        size: 34530848
+        media_type: "application/gzip"
+        digest: "sha256:78a967da99c51f25273ef4b1df9e1512a39a5ec094b46732e6c5ee4664f3b797"
+      "573964009":
+        name: "octo_1.17.3_linux_amd64.tar.gz"
+        url_suffix: "octo_1.17.3_linux_amd64.tar.gz"
+        size: 17926708
+        media_type: "application/gzip"
+        digest: "sha256:5aa96b859ca9345eb13d659064ea2abcd0e87c64f0f610608775b0caaae7864a"
+      "573964048":
+        name: "octo_1.17.3_linux_arm64.tar.gz"
+        url_suffix: "octo_1.17.3_linux_arm64.tar.gz"
+        size: 16646933
+        media_type: "application/gzip"
+        digest: "sha256:ed46c8ffd54f31650f4024742982e7f6edbd05d5c397af8ace24e8b5c9d19831"
+      "573964073":
+        name: "octo_1.17.3_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.17.3_darwin_amd64.tar.gz"
+        size: 17596512
+        media_type: "application/gzip"
+        digest: "sha256:3dd459af4cfdc397bbdf63e07a900632d3c041403f1d96cec4feafd76f3a28cb"
+      "573964109":
+        name: "octo_1.17.3_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.17.3_darwin_arm64.tar.gz"
+        size: 16949107
+        media_type: "application/gzip"
+        digest: "sha256:fd4fba96268971f1b382ac7413976b5e02542a8d46ca565128d8e96f3e3f5d8a"
+      "573964138":
+        name: "octo_1.17.3_windows_amd64.zip"
+        url_suffix: "octo_1.17.3_windows_amd64.zip"
+        size: 17801741
+        media_type: "zip"
+        digest: "sha256:4db11e6dd83e7e55a9d2cedec6f01303cfc057b2dc98c6cb3b617dff4cb119ac"
+      "573964182":
+        name: "octo_1.17.3_windows_arm64.zip"
+        url_suffix: "octo_1.17.3_windows_arm64.zip"
+        size: 14943314
+        media_type: "zip"
+        digest: "sha256:200516f5d4d65f6a2a2810820326c78d31a5d33d004b5ce9a2ebbf9f231781ec"
+      "573964214":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 678
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:e4301fc388ee198f5e13f1ff458c0b58ebf24f2a8bd9c1fef4ed70f649ff6166"
+      "573965924":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 57883144
+        media_type: "application/vnd.appimage"
+        digest: "sha256:8d43ba8fac1306ce64517021e5afa3fee9f78786babc92c5b22efc2bc78fa6f4"
+      "573966529":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 62163448
+        media_type: "application/vnd.appimage"
+        digest: "sha256:248f1b1b49aafa8cf92b32788cb04ed0df3e5fae0cd5e3b3eac2b11bae0d262e"
+      "573967448":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 50441698
+        media_type: "application/x-msdownload"
+        digest: "sha256:4c3a8282b9d7173f0b38584dbf42674b19b088040f400d3728fd6126c7f118fb"
+      "573967449":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 52899328
+        media_type: "application/x-msdownload"
+        digest: "sha256:95767a4116fdf590d2f8d2e845eb37bd11db58f6776d4a3754f91d081ba77630"
+      "573967539":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 50296832
+        media_type: "application/x-msdownload"
+        digest: "sha256:e044c6cdccf4cef0a3b87c6b82cb7f622cc876f974cf448a8db0b4b7ae68dc7d"
+      "573967540":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 45646437
+        media_type: "application/x-msdownload"
+        digest: "sha256:26e0b09c6c8f61b95e12716da73dd8acfd107094c5cf4cab008d23f6f7802a37"
+      "573969657":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 126269074
+        digest: "sha256:53bf0afeed894d9e6ea65c1603331af36c2d8be7a0d59c14e0ddba43b9649983"
+      "573969660":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 126263771
+        media_type: "zip"
+        digest: "sha256:779477ed3d268712b564b735553fd4c2787bf70204b8d3d3ea4e7ee5ee11e47d"
+      "573970073":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:463df4736ae263b294ee36b89c95e271a5cc775a3e6e45460bd858c67d75deba"
+  "392020316":
+    tag: "v1.17.4"
+    title: "v1.17.4"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.17.4"
+    created_at: "2026-09-20T02:27:12Z"
+    published_at: "2026-09-19T09:57:59Z"
+    updated_at: "2026-09-20T02:42:23Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.17.4"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.17.4"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.17.4/"
+    assets:
+      "575943141":
+        name: "octo_1.17.4_linux_amd64.tar.gz"
+        url_suffix: "octo_1.17.4_linux_amd64.tar.gz"
+        size: 17927313
+        media_type: "application/gzip"
+        digest: "sha256:23a66835f40ad66e103ec577659d82afcaf24b93d84038dba403f1160de68470"
+      "575945792":
+        name: "octo_1.17.4_linux_arm64.tar.gz"
+        url_suffix: "octo_1.17.4_linux_arm64.tar.gz"
+        size: 16647673
+        media_type: "application/gzip"
+        digest: "sha256:94f4ee72ecb33326cf834ff23473293cde9ede6e2f92d845f2f6e6aa2006c7ad"
+      "575945861":
+        name: "octo_1.17.4_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.17.4_darwin_amd64.tar.gz"
+        size: 17598068
+        media_type: "application/gzip"
+        digest: "sha256:841fa65fa6b9b241d1dfa65c124c89faf8cc2276a73585805beff5fe1b0a1a18"
+      "575945931":
+        name: "octo_1.17.4_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.17.4_darwin_arm64.tar.gz"
+        size: 16949736
+        media_type: "application/gzip"
+        digest: "sha256:704ebaae7177150b8fa2f6eb46f5e5ee30f98a2291cc9c04f12bc397085bd3b1"
+      "575946033":
+        name: "octo_1.17.4_windows_amd64.zip"
+        url_suffix: "octo_1.17.4_windows_amd64.zip"
+        size: 17802144
+        media_type: "zip"
+        digest: "sha256:e1b5b2ed06fe005f41e050566c1a4b4aad4b2d401429ed54d4b62af7d64d7ef4"
+      "575946098":
+        name: "octo_1.17.4_windows_arm64.zip"
+        url_suffix: "octo_1.17.4_windows_arm64.zip"
+        size: 14944629
+        media_type: "zip"
+        digest: "sha256:18853e424d2c70589118a4eeddbb5b87e8736516ab0932d18532b00bdd158a6c"
+      "575948893":
+        name: "octo_1.17.4_darwin_all.tar.gz"
+        url_suffix: "octo_1.17.4_darwin_all.tar.gz"
+        size: 34534485
+        media_type: "application/gzip"
+        digest: "sha256:2d81b7ff1d76c7dc601de028a449b429f5203295ad0bb2ba42dcf262bbd2b61d"
+      "575948998":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 678
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:fd6c43597bd33e9599c361cf83153abd41dae4fcdf7f8a0bbe83cb0eae601438"
+      "575951152":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 62167544
+        media_type: "application/vnd.appimage"
+        digest: "sha256:f071b868e3ee310869acc88918180bcc8772b51538ed7aa11f4926d6be21552a"
+      "575951375":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 57895432
+        media_type: "application/vnd.appimage"
+        digest: "sha256:f521de3e9cc6e487d7589fe6dcc037732381665fe0c55c78bb17911a59ab2b15"
+      "575952987":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 52909568
+        media_type: "application/x-msdownload"
+        digest: "sha256:6b7fe3e72ffd9b332b9d9eb851b26a1121a8f7e0e28acb7e4d968266dcd0e600"
+      "575952991":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 50460899
+        media_type: "application/x-msdownload"
+        digest: "sha256:ecf540e6ab42d73286eb5d9f2efebdeb5fb0a0fe62bd56d9273f151f7a95b941"
+      "575953989":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 50304512
+        media_type: "application/x-msdownload"
+        digest: "sha256:7ffa0458c5cf8e90c69a4e91b124a86278b52ff3fbe949536fb8660710e1df75"
+      "575953991":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 45653532
+        media_type: "application/x-msdownload"
+        digest: "sha256:e83f5d2a0e97be9426d9a2c6eec257858f55df7c9c3cbd19aec7af34ce76183f"
+      "575956165":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 126277024
+        media_type: "zip"
+        digest: "sha256:2d2216126d92b13ba46d69a637a018c7ae540be45c915d9d19c2791e252b09ff"
+      "575956168":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 126275599
+        digest: "sha256:01664dcf385a9da832ec51c4fe5aed2ed808cc17a6d6806a5b061793cc472f15"
+      "575956492":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:336b7329ee52f1c6acbc1926e5058c1506ea1e45452956b289e5f0b8d0b33691"
+  "392297797":
+    tag: "v1.17.5"
+    title: "v1.17.5"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.17.5"
+    created_at: "2026-09-20T03:17:02Z"
+    published_at: "2026-09-20T03:20:10Z"
+    updated_at: "2026-09-20T03:25:38Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.17.5"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.17.5"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.17.5/"
+    assets:
+      "576010106":
+        name: "octo_1.17.5_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.17.5_darwin_amd64.tar.gz"
+        size: 17599031
+        media_type: "application/gzip"
+        digest: "sha256:6b21e34984093531fb0b3525c426c96ba6492fe80c55173bdbca51413bf39eeb"
+      "576010155":
+        name: "octo_1.17.5_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.17.5_darwin_arm64.tar.gz"
+        size: 16949661
+        media_type: "application/gzip"
+        digest: "sha256:3efd0030b0bfdc39956e49f1df1a422ae22ac027d67600cf1fdbb0ba23801357"
+      "576010194":
+        name: "octo_1.17.5_windows_amd64.zip"
+        url_suffix: "octo_1.17.5_windows_amd64.zip"
+        size: 17802115
+        media_type: "zip"
+        digest: "sha256:089049948d97ad0ea0cdc7e6944b5f8843268f28d83d091cf698821509a6eacb"
+      "576010232":
+        name: "octo_1.17.5_windows_arm64.zip"
+        url_suffix: "octo_1.17.5_windows_arm64.zip"
+        size: 14944601
+        media_type: "zip"
+        digest: "sha256:0e16c7d9fca57d126f618bc9a600d7b2fc1ef399fe6158ac8a494f33365e7168"
+      "576010266":
+        name: "octo_1.17.5_darwin_all.tar.gz"
+        url_suffix: "octo_1.17.5_darwin_all.tar.gz"
+        size: 34537251
+        media_type: "application/gzip"
+        digest: "sha256:7cea309ffd0268e6cda7dacecc493c38eee948b4449e090d21cfb96307c9c9ff"
+      "576010331":
+        name: "octo_1.17.5_linux_amd64.tar.gz"
+        url_suffix: "octo_1.17.5_linux_amd64.tar.gz"
+        size: 17927711
+        media_type: "application/gzip"
+        digest: "sha256:95a90268f054aa06986b0b6d6fccb027c40af4364ccb187c5b18cef3ab40f1c3"
+      "576010362":
+        name: "octo_1.17.5_linux_arm64.tar.gz"
+        url_suffix: "octo_1.17.5_linux_arm64.tar.gz"
+        size: 16648165
+        media_type: "application/gzip"
+        digest: "sha256:877027d36a2ed2fdd1f51ce9d16f5f08755794f4351da1d887b9e8c1fb401e7b"
+      "576010407":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 678
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:f83f500df3c5c6ca362e322b11cfefa831d78e19573afa277905800b3a5131c2"
+      "576012388":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 57891336
+        media_type: "application/vnd.appimage"
+        digest: "sha256:69c05ddf20507621c190b6d462cf7d40c7acfdb9d91d40eedbe51e8ed714f4c6"
+      "576012541":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 62159352
+        media_type: "application/vnd.appimage"
+        digest: "sha256:b28b0442a4ce52cc8381b1e588c6feb701c3473061004a301a1c9ac76fed4874"
+      "576013630":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 50299392
+        media_type: "application/x-msdownload"
+        digest: "sha256:776df584b31366c251fd3cf13f1407125d28f5d4e134e1cf7b48d2b6298177aa"
+      "576013632":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 45648569
+        media_type: "application/x-msdownload"
+        digest: "sha256:856b93a5478181e2c0c9523b2e0f9b3d9794c6e0894499fa823acd81ab3f4156"
+      "576014424":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 50445667
+        media_type: "application/x-msdownload"
+        digest: "sha256:a7f67c07bd9b9165585c340e7e38ea04b4e5121439ce4fcb7fd360f9a0f1fe80"
+      "576014425":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 52903424
+        media_type: "application/x-msdownload"
+        digest: "sha256:f231209830760e19a7433915fc05c013c59315708394f9c0c10e8a11f9f31f0a"
+      "576017100":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 126277218
+        digest: "sha256:551d96ad63e585be85fd6b3ba4abbd74c82674224be17c6a98a44a64ca078075"
+      "576017101":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 126276351
+        media_type: "zip"
+        digest: "sha256:114d96df1d520c210e53dc43b102f0970158b8a08f505def8db55ff953cb5884"
+      "576017579":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:f45855005be63ce1a47c0edfcfa8a48f0e0cf560dc985850764a6680c34f8bb4"
+  "392986712":
+    tag: "v1.17.6"
+    title: "v1.17.6"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.17.6"
+    created_at: "2026-09-21T13:26:49Z"
+    published_at: "2026-09-21T13:32:14Z"
+    updated_at: "2026-09-21T13:37:19Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.17.6"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.17.6"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.17.6/"
+    assets:
+      "579103937":
+        name: "octo_1.17.6_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.17.6_darwin_amd64.tar.gz"
+        size: 17573957
+        media_type: "application/gzip"
+        digest: "sha256:9b12491fa394f58f6cbf1ab65a11fd9a04402ad34b5968385fa8ed7e5c28f60d"
+      "579103974":
+        name: "octo_1.17.6_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.17.6_darwin_arm64.tar.gz"
+        size: 16919666
+        media_type: "application/gzip"
+        digest: "sha256:f7fa2af80dec013bf1fb8ae750b30cf0f9a9a30974efc7bd29040c6ed4f6741d"
+      "579104021":
+        name: "octo_1.17.6_windows_amd64.zip"
+        url_suffix: "octo_1.17.6_windows_amd64.zip"
+        size: 17769173
+        media_type: "zip"
+        digest: "sha256:25d44219d91535d6610b4cf7e3b1e702eaf43a4a914933ff317d2b37f7bf4ac1"
+      "579104073":
+        name: "octo_1.17.6_windows_arm64.zip"
+        url_suffix: "octo_1.17.6_windows_arm64.zip"
+        size: 14916320
+        media_type: "zip"
+        digest: "sha256:b4cb9d8d726412c66a4a727e7f427bc65b7bc6d9ef39ce1bd9a308227b69dfdc"
+      "579104110":
+        name: "octo_1.17.6_darwin_all.tar.gz"
+        url_suffix: "octo_1.17.6_darwin_all.tar.gz"
+        size: 34478557
+        media_type: "application/gzip"
+        digest: "sha256:b7f6c4ee5c9835e7ce810e276a783589294018987011eaf06a7dce9b15a70097"
+      "579104173":
+        name: "octo_1.17.6_linux_amd64.tar.gz"
+        url_suffix: "octo_1.17.6_linux_amd64.tar.gz"
+        size: 17897613
+        media_type: "application/gzip"
+        digest: "sha256:53ff06076b37eed3da03afabc24279fd5449ea33c5abff0cfa95bdead366b4b6"
+      "579104233":
+        name: "octo_1.17.6_linux_arm64.tar.gz"
+        url_suffix: "octo_1.17.6_linux_arm64.tar.gz"
+        size: 16624197
+        media_type: "application/gzip"
+        digest: "sha256:dc279943629ce440b6991491e5aa81c3a293d1afc3ca783b87493bed7d5ab38e"
+      "579104279":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 678
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:3d28baa5d94890f89af3adc3d1f21e3666728abada8a256e7e00cbd0f5dcbab8"
+      "579106888":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 57879048
+        media_type: "application/vnd.appimage"
+        digest: "sha256:516e26bf7dc317f9bdee1a048d934dd52bc0bcfe5003c8fa9aa9729059a126f1"
+      "579107284":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 62134776
+        media_type: "application/vnd.appimage"
+        digest: "sha256:1c1aa2827fad7f9a4543641025b8a65918bef5cc4de18d7368ee81d4e6ce23bc"
+      "579108930":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 52921856
+        media_type: "application/x-msdownload"
+        digest: "sha256:c4af46964507340a6d6c1a9bb2969bdbc6497df518a56d72528c3e0ce4d19fe7"
+      "579108932":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 50395876
+        media_type: "application/x-msdownload"
+        digest: "sha256:25eb20c89100cb3381dc814b045376d8e01e3dacf3c3302f83c31b13939673aa"
+      "579109462":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 50312704
+        media_type: "application/x-msdownload"
+        digest: "sha256:445b2bddfbf434be0e67d4a1fbbcf8718c3f0bc64ba51d0dad1542c60f1c68dc"
+      "579109463":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 45602633
+        media_type: "application/x-msdownload"
+        digest: "sha256:b81ce49cafb90459812ba6aa889314f1985a35354e066529e67af538935feaf1"
+      "579112387":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 126193760
+        media_type: "zip"
+        digest: "sha256:7532efe96894bd0f8d332d8e88b1687e0b3b8fbf983c5a9f4df6a305a1cafc2f"
+      "579112393":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 126204063
+        digest: "sha256:6c98b880b006a71a8e940fdfeabd8c922ff9526a088f20ae1c7ca822b218f1f3"
+      "579113021":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:2457587794b3cf830938f1f2c0db9bc31d4fa5e68cacb9330b024f8df1d1b7b3"
+  "394404107":
+    tag: "v1.17.7"
+    title: "v1.17.7"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.17.7"
+    created_at: "2026-09-23T07:35:23Z"
+    published_at: "2026-09-23T07:40:24Z"
+    updated_at: "2026-09-23T07:45:36Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.17.7"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.17.7"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.17.7/"
+    assets:
+      "583255485":
+        name: "octo_1.17.7_linux_amd64.tar.gz"
+        url_suffix: "octo_1.17.7_linux_amd64.tar.gz"
+        size: 17898118
+        media_type: "application/gzip"
+        digest: "sha256:5a6e9825159a3e9d72c500736c009b8b2787294c4bf52c403cc898a559b091da"
+      "583255519":
+        name: "octo_1.17.7_linux_arm64.tar.gz"
+        url_suffix: "octo_1.17.7_linux_arm64.tar.gz"
+        size: 16619160
+        media_type: "application/gzip"
+        digest: "sha256:6d15df937bed826de1113a55422fd9367e79c8ee4352b202d9893c827db523f9"
+      "583255551":
+        name: "octo_1.17.7_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.17.7_darwin_amd64.tar.gz"
+        size: 17572934
+        media_type: "application/gzip"
+        digest: "sha256:150a70c9f12517e8e833ec1db78530e68a30b7cfb4dc0bc392caeb90a37a9c91"
+      "583255618":
+        name: "octo_1.17.7_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.17.7_darwin_arm64.tar.gz"
+        size: 16917934
+        media_type: "application/gzip"
+        digest: "sha256:ebd596d0b3ac098a1c586f76eb0ebe0d17aadd6e9fa65cfdbf4fefd0f2ea7c99"
+      "583255662":
+        name: "octo_1.17.7_windows_amd64.zip"
+        url_suffix: "octo_1.17.7_windows_amd64.zip"
+        size: 17766328
+        media_type: "zip"
+        digest: "sha256:cd5824d27faa9442650a53a376dac37520bb0005d0125587f349924770dd96ca"
+      "583255696":
+        name: "octo_1.17.7_windows_arm64.zip"
+        url_suffix: "octo_1.17.7_windows_arm64.zip"
+        size: 14920663
+        media_type: "zip"
+        digest: "sha256:485a4d7c593b2b4fe46fe092d2201c630c14b5490d4225a43c4148c2b0484995"
+      "583255758":
+        name: "octo_1.17.7_darwin_all.tar.gz"
+        url_suffix: "octo_1.17.7_darwin_all.tar.gz"
+        size: 34480195
+        media_type: "application/gzip"
+        digest: "sha256:04c4b4fa7da41ff874ee49d3ba3295c3ebe0b26697448a139239e0ccfcbcbf5c"
+      "583255826":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 678
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:2719f6d6ebb7aee60b9e7e9846181e7ac57a6ec59c102cb884d825a10f2e3c04"
+      "583258057":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 57846280
+        media_type: "application/vnd.appimage"
+        digest: "sha256:7be4dcb5c3185c2db9cc881e18caf0864a5f189e0186bf4522820db9b79bbf43"
+      "583258435":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 62130680
+        media_type: "application/vnd.appimage"
+        digest: "sha256:1a0423f7a97b713e96fca5203ee1c3de64e87d2d0fdfbc9a2a2fe13486414a51"
+      "583260564":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 50310144
+        media_type: "application/x-msdownload"
+        digest: "sha256:1148e6103d638cfba59e747a3b4db1d8d32c9901ce62e25786b845db90c137a3"
+      "583260566":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 45597271
+        media_type: "application/x-msdownload"
+        digest: "sha256:d1c6310626fc540ef4ee7602028f46252a96500cb087dd6a787b75be1c6ef570"
+      "583260855":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 50386983
+        media_type: "application/x-msdownload"
+        digest: "sha256:4a0ba400ce5f2a17bfc8dff25f0249d211c4f7988465fd02ec2d19a5ee5bfa16"
+      "583260856":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 52918784
+        media_type: "application/x-msdownload"
+        digest: "sha256:8c88049e91dcad820eb8c80a13e54cf700845151f4328b305c405e63f9cabeac"
+      "583264697":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 126192960
+        digest: "sha256:0852cb43c9c1cd04e187dcad43850434008876324ef761b1e6d0101cb8bff8a5"
+      "583264698":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 126183428
+        media_type: "zip"
+        digest: "sha256:0e1267b4caed2a9cefe4064fc758d59bc7acacf6d82d6331cffc85570471c222"
+      "583265248":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8e9253be30a03e2fd67b40bc3de12bbeca075fb9926ab7f1b92f84a14479e786"
+  "395307182":
+    tag: "v1.17.8"
+    title: "v1.17.8"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.17.8"
+    created_at: "2026-09-24T06:32:00Z"
+    published_at: "2026-09-24T03:55:44Z"
+    updated_at: "2026-09-24T06:44:58Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.17.8"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.17.8"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.17.8/"
+    assets:
+      "585323469":
+        name: "octo_1.17.8_darwin_all.tar.gz"
+        url_suffix: "octo_1.17.8_darwin_all.tar.gz"
+        size: 38169389
+        media_type: "application/gzip"
+        digest: "sha256:58bb54b8c27a16d93e687391a2b174d035d9cf6f2256039df8fbd20135d84ed1"
+      "585323544":
+        name: "octo_1.17.8_linux_amd64.tar.gz"
+        url_suffix: "octo_1.17.8_linux_amd64.tar.gz"
+        size: 19784195
+        media_type: "application/gzip"
+        digest: "sha256:9b5b5c6441293d417154d71a8fcacd23fe723e9fc4f8d5bb4e93afb4db232a86"
+      "585329294":
+        name: "octo_1.17.8_linux_arm64.tar.gz"
+        url_suffix: "octo_1.17.8_linux_arm64.tar.gz"
+        size: 18475654
+        media_type: "application/gzip"
+        digest: "sha256:e55d2cfa3c2df4f8fe17262bc1b1cd536259b7dbc9de15db07f7017dfa83de0b"
+      "585329347":
+        name: "octo_1.17.8_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.17.8_darwin_amd64.tar.gz"
+        size: 19407567
+        media_type: "application/gzip"
+        digest: "sha256:6f0d7fa8450c4d72f5a457160b61ca9fb167ad1ae3595b2d331cab4d8af57106"
+      "585329424":
+        name: "octo_1.17.8_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.17.8_darwin_arm64.tar.gz"
+        size: 18776395
+        media_type: "application/gzip"
+        digest: "sha256:9ce166dde9c7f2f292319643275bdb62b77d0fa0758c8cad8e837c06277556c3"
+      "585329503":
+        name: "octo_1.17.8_windows_amd64.zip"
+        url_suffix: "octo_1.17.8_windows_amd64.zip"
+        size: 19600151
+        media_type: "zip"
+        digest: "sha256:21c155ef439f89b1b7fe08951ef691236a8ad759345240530426bab80b8fbd98"
+      "585329610":
+        name: "octo_1.17.8_windows_arm64.zip"
+        url_suffix: "octo_1.17.8_windows_arm64.zip"
+        size: 16697289
+        media_type: "zip"
+        digest: "sha256:1e61d4d6062966b3b31a3c7729853b526e69ad28690bfe748037edfe928a19b5"
+      "585329673":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 678
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:b0a81765ef457336d6facd0a4663b88d337e895e02e8b1a5baa88c545b3719fe"
+      "585331127":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 67250680
+        media_type: "application/vnd.appimage"
+        digest: "sha256:5c26efacc5cdf7690d64fbc26db16cc721b1ff173f03f380051851ff96e1ff06"
+      "585331545":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 137450315
+        media_type: "zip"
+        digest: "sha256:8359bab21ea5c33405322d182f1b1e7e2a54c929e45338580be3864b42116fc6"
+      "585331546":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 137454267
+        digest: "sha256:5b740b6386c3789f8616bd224a8def5816351590ac33c7baedfb7bcd4c9ea196"
+      "585331750":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 62822920
+        media_type: "application/vnd.appimage"
+        digest: "sha256:8a3527a44f489408706d052d2dbf33455c427697c259b88fc93b4646673812b4"
+      "585333012":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 49949077
+        media_type: "application/x-msdownload"
+        digest: "sha256:90aadb2b56040e1ddeb92ef2fce13d2612c3fe294904d3033f43f42369edbfba"
+      "585333013":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 56379392
+        media_type: "application/x-msdownload"
+        digest: "sha256:392f712cfac8e3e285268f20bcb63f3817d21200adea8ce75fcee9c0ea1ac209"
+      "585333233":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 59119104
+        media_type: "application/x-msdownload"
+        digest: "sha256:f14778ad4fdd5d4f91f3bb73c2a9f739e80693541fad03b2e0b31eb6ee08a396"
+      "585333235":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 55005287
+        media_type: "application/x-msdownload"
+        digest: "sha256:256b35e26445a99c0aa20793425546626ee25439eff944007ff42fa8e7a39ad8"
+      "585333722":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:872dfe8ace7ccac099ad6b014b6592b854f40b37b37f116d228b2d372b07d3e3"
+  "395467673":
+    tag: "v1.17.9"
+    title: "v1.17.9"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.17.9"
+    created_at: "2026-09-24T08:03:04Z"
+    published_at: "2026-09-24T08:10:44Z"
+    updated_at: "2026-09-24T08:17:21Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.17.9"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.17.9"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.17.9/"
+    assets:
+      "585468825":
+        name: "octo_1.17.9_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.17.9_darwin_arm64.tar.gz"
+        size: 18776405
+        media_type: "application/gzip"
+        digest: "sha256:1dba3b1ac6787689709df2e058264627f9216ba1eb99ffc974fd535082ac6c1c"
+      "585468864":
+        name: "octo_1.17.9_windows_amd64.zip"
+        url_suffix: "octo_1.17.9_windows_amd64.zip"
+        size: 19600769
+        media_type: "zip"
+        digest: "sha256:e77800c78ac320e7013493a5f7ac3356c4c663b0b5a788df07c0ae1acb8bc5bc"
+      "585468904":
+        name: "octo_1.17.9_windows_arm64.zip"
+        url_suffix: "octo_1.17.9_windows_arm64.zip"
+        size: 16697416
+        media_type: "zip"
+        digest: "sha256:40b440d9bc76a00c04c5992fdd8b621ec40809b8a111c0177cf17be005007ca0"
+      "585468983":
+        name: "octo_1.17.9_darwin_all.tar.gz"
+        url_suffix: "octo_1.17.9_darwin_all.tar.gz"
+        size: 38169402
+        media_type: "application/gzip"
+        digest: "sha256:43b497549d84eb03a49b05ef82a4deda9f440e9e23302346102d2262dfdef7f5"
+      "585469090":
+        name: "octo_1.17.9_linux_amd64.tar.gz"
+        url_suffix: "octo_1.17.9_linux_amd64.tar.gz"
+        size: 19784193
+        media_type: "application/gzip"
+        digest: "sha256:30d93de37b5bca24b4371c6cb8a368b02e4b3bfc1d2266d11b2e4a580beb8be0"
+      "585469144":
+        name: "octo_1.17.9_linux_arm64.tar.gz"
+        url_suffix: "octo_1.17.9_linux_arm64.tar.gz"
+        size: 18475657
+        media_type: "application/gzip"
+        digest: "sha256:f4e7eaeaea6b4ffc007e461138daaf0e5eb7f7c486684f27e39c4b55b8c88a4f"
+      "585469183":
+        name: "octo_1.17.9_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.17.9_darwin_amd64.tar.gz"
+        size: 19407582
+        media_type: "application/gzip"
+        digest: "sha256:5b78901efb9fca61a50395f244948c0631b250c7d645d8320bea37834fb958dd"
+      "585469258":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 678
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:e52987f4c2f6f0f19c2316889b23d8c1e30f32e341d020858d65e6388362847d"
+      "585471729":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 67250680
+        media_type: "application/vnd.appimage"
+        digest: "sha256:7908688ad31137a422300b15b02711d2bf53c3e3496a6b365ae09c6cf37e99dc"
+      "585472742":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 137454278
+        digest: "sha256:89a9993db4007239ba7207c716baae761b782fb90f918b8445c5482db22b1f9a"
+      "585472744":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 137450375
+        media_type: "zip"
+        digest: "sha256:1f99c314f98faefdd2a2c47541d6cb3cd4242c3b4e5e31fd0886e7363ea87914"
+      "585474107":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 55012166
+        media_type: "application/x-msdownload"
+        digest: "sha256:01903367b1840608872f590422797e852c5637bfca9d24bd2b46146b9f61e8c3"
+      "585474108":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 59119104
+        media_type: "application/x-msdownload"
+        digest: "sha256:521b22fc550b4a111bf9fa54955c11ea509d36998827a03a3a9668f33728c741"
+      "585475275":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 56379904
+        media_type: "application/x-msdownload"
+        digest: "sha256:a7517fa491123ef67fb190b714a8b83c484a1c40c192fb1dddc0dfd83879bfb5"
+      "585475276":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 49951108
+        media_type: "application/x-msdownload"
+        digest: "sha256:ebc65006d7270a680579a815fe5122995a76c7adf75e8f32de50d1022f388e38"
+      "585479931":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 62822920
+        media_type: "application/vnd.appimage"
+        digest: "sha256:b521a7e054e45955d08af1589edaf1cae3321e78bef7d8856cbffcf81188398c"
+      "585480298":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:9c31b2a1baeeb511f4baf94b428021c973d8dd94b268f4451ce597b7b47f2c24"
+  "399822440":
+    tag: "v1.17.10"
+    title: "v1.17.10"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.17.10"
+    created_at: "2026-09-30T07:45:50Z"
+    published_at: "2026-09-30T07:51:56Z"
+    updated_at: "2026-09-30T07:55:56Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.17.10"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.17.10"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.17.10/"
+    assets:
+      "600344319":
+        name: "octo_1.17.10_windows_amd64.zip"
+        url_suffix: "octo_1.17.10_windows_amd64.zip"
+        size: 19608397
+        media_type: "zip"
+        digest: "sha256:884b3432951bef98007957e01ae8918d7321272b466f77a300f3a0352b72d5a1"
+      "600344531":
+        name: "octo_1.17.10_windows_arm64.zip"
+        url_suffix: "octo_1.17.10_windows_arm64.zip"
+        size: 16703752
+        media_type: "zip"
+        digest: "sha256:e3d8a648c1db43872e208c2aed3801765ed97e289edbd391bf18d4e3e5683803"
+      "600344639":
+        name: "octo_1.17.10_darwin_all.tar.gz"
+        url_suffix: "octo_1.17.10_darwin_all.tar.gz"
+        size: 38167226
+        media_type: "application/gzip"
+        digest: "sha256:7bd926a006f595311443b05559965cdc57f3e48d74e46338fb444c03086bdf8f"
+      "600344809":
+        name: "octo_1.17.10_linux_amd64.tar.gz"
+        url_suffix: "octo_1.17.10_linux_amd64.tar.gz"
+        size: 19788796
+        media_type: "application/gzip"
+        digest: "sha256:39db242c6a10eb60f988382ceabd8cbb85d18c662c97d3d63e8307b8b1b417e4"
+      "600344951":
+        name: "octo_1.17.10_linux_arm64.tar.gz"
+        url_suffix: "octo_1.17.10_linux_arm64.tar.gz"
+        size: 18483127
+        media_type: "application/gzip"
+        digest: "sha256:bd351520eb2c45753e70af63cd57c33d22c26ee52ea10c4edc3e1d675967809a"
+      "600345012":
+        name: "octo_1.17.10_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.17.10_darwin_amd64.tar.gz"
+        size: 19412645
+        media_type: "application/gzip"
+        digest: "sha256:5afa7440c8cdd09e7a42685ed5d75de5c365a913532071d27cdec5f23a24fe3c"
+      "600345095":
+        name: "octo_1.17.10_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.17.10_darwin_arm64.tar.gz"
+        size: 18783029
+        media_type: "application/gzip"
+        digest: "sha256:86e084da9988ac6963f5db5915473aa2d7c3ecffbf111435bc9760a97b8f467b"
+      "600345134":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 685
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:190a66f44005fefae911c8b0a7b96d6e5a10f07cb82b88e6a82de0f829f3eab6"
+      "600347817":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 62806536
+        media_type: "application/vnd.appimage"
+        digest: "sha256:73bf846af28a4410a3930a29213329fbf6b89dd897b059f1bd8b1b0c1a8b3c53"
+      "600348596":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 67246584
+        media_type: "application/vnd.appimage"
+        digest: "sha256:7f980508db0f60d02bfc4001ce06cf1830791c59669433d9e37f22da502b0dd8"
+      "600350831":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 56403968
+        media_type: "application/x-msdownload"
+        digest: "sha256:4cfebe02b2c0a0e609d90d4ded3e5e6c43f950727e1e427b90ce49bd0a7e453e"
+      "600350832":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 49963687
+        media_type: "application/x-msdownload"
+        digest: "sha256:c1e2d65f698da43f88af56b8087686eb05c64033d0d845bd7df2d405ca49e15d"
+      "600351199":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 55026450
+        media_type: "application/x-msdownload"
+        digest: "sha256:dd5c4c0d254d3640b8e2b3508b66ea8a593aa2b37eee771434d8c3ecdaf4505a"
+      "600351200":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 59145216
+        media_type: "application/x-msdownload"
+        digest: "sha256:cb693318b1eaf8e51ec6d297ed121a0c5fbc23e1faaaace5721060a86943389e"
+      "600351874":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 137493612
+        digest: "sha256:df12ae5aa761e9775d5f9fed2954dfdcc6e79ea951ef093c4f46337c74941f8c"
+      "600351878":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 137483524
+        media_type: "zip"
+        digest: "sha256:7ac2a9987ba3911fbc5c12dd29b6d99982d393ef4234d6daa909a52d4bd28ff5"
+      "600352770":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:397f7e2aa5e2ff1f6d1b463747b9b59e53886ccd2ce2c333145cb09b8decd9d2"
+  "407704617":
+    tag: "v1.17.11"
+    title: "v1.17.11"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.17.11"
+    created_at: "2026-10-09T08:17:35Z"
+    published_at: "2026-10-09T08:23:16Z"
+    updated_at: "2026-10-09T08:26:23Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.17.11"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.17.11"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.17.11/"
+    assets:
+      "624359113":
+        name: "octo_1.17.11_windows_arm64.zip"
+        url_suffix: "octo_1.17.11_windows_arm64.zip"
+        size: 16713159
+        media_type: "zip"
+        digest: "sha256:b9ec9c004ae4f5fdd4f41b0f2a18fe7e7dffc19da6de1a6af306334470ef5c14"
+      "624359169":
+        name: "octo_1.17.11_darwin_all.tar.gz"
+        url_suffix: "octo_1.17.11_darwin_all.tar.gz"
+        size: 38181285
+        media_type: "application/gzip"
+        digest: "sha256:05b4e0c0a54fa18c55c9e09218a178aa4e26d2ec2d33d1ca74c2829f90377b95"
+      "624359295":
+        name: "octo_1.17.11_linux_amd64.tar.gz"
+        url_suffix: "octo_1.17.11_linux_amd64.tar.gz"
+        size: 19797541
+        media_type: "application/gzip"
+        digest: "sha256:70696ed43fc56d86e3a1980daacb2a25b24630debe51c5f626c04249e23e7fe8"
+      "624359368":
+        name: "octo_1.17.11_linux_arm64.tar.gz"
+        url_suffix: "octo_1.17.11_linux_arm64.tar.gz"
+        size: 18490843
+        media_type: "application/gzip"
+        digest: "sha256:c92e7d71cfa8baf4e87e63800a584063bbfa2274b458ffe3f6b218afc0cdfacd"
+      "624359446":
+        name: "octo_1.17.11_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.17.11_darwin_amd64.tar.gz"
+        size: 19417434
+        media_type: "application/gzip"
+        digest: "sha256:c8760a83c472e042b3f716a638de47453ff32ea68ffa5c0b12bca7fd10fb53a7"
+      "624359514":
+        name: "octo_1.17.11_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.17.11_darwin_arm64.tar.gz"
+        size: 18788372
+        media_type: "application/gzip"
+        digest: "sha256:0e5080b941e0f331fab3e34e66ff9e4127259b5e4becfda5b575492169930f86"
+      "624359577":
+        name: "octo_1.17.11_windows_amd64.zip"
+        url_suffix: "octo_1.17.11_windows_amd64.zip"
+        size: 19621417
+        media_type: "zip"
+        digest: "sha256:ce0c26bf0c7359d56c817b32ad3cdb107ff06ad3063593e7829e35ff5e690fd6"
+      "624359649":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 685
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:1151caa66f492a126dbbc433b326c2f43bac6a810c227f3c2d798a25f8d96a79"
+      "624362162":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 67299832
+        media_type: "application/vnd.appimage"
+        digest: "sha256:c09f1a2e95e7f8d8de62edc6d628dae5ff98bbad8561496427abc807986ec89e"
+      "624362571":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 62847496
+        media_type: "application/vnd.appimage"
+        digest: "sha256:4dbd8a720026a399c0b50bddc1dbbafa18ec3429dc9938304ad5f663b718cbf2"
+      "624364573":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 137545407
+        media_type: "zip"
+        digest: "sha256:26e9b263cc1ef4a262b45d8c0bedccc0d73125171b9562eb6bcabd402d747a9b"
+      "624364574":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 137559348
+        digest: "sha256:31858284dcab113186b828d8517202ba2638c260b7cfebfe74ff41a7db7e6454"
+      "624365266":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 50022794
+        media_type: "application/x-msdownload"
+        digest: "sha256:df99c4b9df7b39a1b18e561fa59cf1d46103e73aca75d86c3fa222276270ed95"
+      "624365272":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 56590848
+        media_type: "application/x-msdownload"
+        digest: "sha256:cce01114e0fd06ccc6daf3c54b11af1428db8c8e788dff8b1c22174fd08f0d8a"
+      "624365474":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 55089849
+        media_type: "application/x-msdownload"
+        digest: "sha256:cd7aad029c69d7aab7ccb4dcbfccba18dca3efce3e1bb9a1c67dbdde09f4493a"
+      "624365482":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 59338752
+        media_type: "application/x-msdownload"
+        digest: "sha256:98e61b970599362d1474e210db05ae1ac05e86b6cb86f1440b50e0b90a651407"
+      "624366153":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:066ac3c5f945a2a695aa43b44cd7dcdfd2c32d4ab9028028be1f4359b9113a24"
+  "408599232":
+    tag: "v1.17.12"
+    title: "v1.17.12"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.17.12"
+    created_at: "2026-10-10T03:28:48Z"
+    published_at: "2026-10-10T03:32:38Z"
+    updated_at: "2026-10-10T03:36:14Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.17.12"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.17.12"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.17.12/"
+    assets:
+      "626899632":
+        name: "octo_1.17.12_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.17.12_darwin_amd64.tar.gz"
+        size: 19418182
+        media_type: "application/gzip"
+        digest: "sha256:e452e03c540cc7332c67030368953ac3e762e2f53e47ac1fc9c6f3f3ab8a1da5"
+      "626899667":
+        name: "octo_1.17.12_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.17.12_darwin_arm64.tar.gz"
+        size: 18791077
+        media_type: "application/gzip"
+        digest: "sha256:6fb74b6b8d91e9f904dc6fef94d2aaec6688007acd6e43a27f1b63aee3ddb942"
+      "626899719":
+        name: "octo_1.17.12_windows_amd64.zip"
+        url_suffix: "octo_1.17.12_windows_amd64.zip"
+        size: 19623076
+        media_type: "zip"
+        digest: "sha256:06980c5e88df352f7ca3b7e7193232a15a81a04dcab0a98d0363807c719dfcd4"
+      "626899748":
+        name: "octo_1.17.12_windows_arm64.zip"
+        url_suffix: "octo_1.17.12_windows_arm64.zip"
+        size: 16713860
+        media_type: "zip"
+        digest: "sha256:86cdcf3ec9773a3042e4f95a8bcbe34d539754b86475cbca840653882311f516"
+      "626899783":
+        name: "octo_1.17.12_darwin_all.tar.gz"
+        url_suffix: "octo_1.17.12_darwin_all.tar.gz"
+        size: 38184606
+        media_type: "application/gzip"
+        digest: "sha256:39fe404e0cf16699e7c2db009fa59dd85f36ea08e7a219317acb120b5bfcff17"
+      "626899847":
+        name: "octo_1.17.12_linux_amd64.tar.gz"
+        url_suffix: "octo_1.17.12_linux_amd64.tar.gz"
+        size: 19798337
+        media_type: "application/gzip"
+        digest: "sha256:c763c1b79b7f738e5c43a253d333d6ceabbc9d0fe5294a34dd26d2cf6d75808b"
+      "626899929":
+        name: "octo_1.17.12_linux_arm64.tar.gz"
+        url_suffix: "octo_1.17.12_linux_arm64.tar.gz"
+        size: 18492384
+        media_type: "application/gzip"
+        digest: "sha256:2c8a899820f9ecb71f87aa47a08d2151e31fd10c04dab64b5d4bf0c29044d848"
+      "626899981":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 685
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:47bb0c024bc028fd85a0a51f7cb30402a7938044f668b66a275746b32242f904"
+      "626902144":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 67291640
+        media_type: "application/vnd.appimage"
+        digest: "sha256:5dd8af5bf23c74f7d92125d3481b2cc7536f438f1ac1cb2c204a17917551c5c9"
+      "626902185":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 62839304
+        media_type: "application/vnd.appimage"
+        digest: "sha256:c69305d1c69a6e11026c327ae8390112e83fbb50f3d69dc48740a2307459b140"
+      "626903197":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 137546092
+        media_type: "zip"
+        digest: "sha256:be1c1da522e4c53c12204c7d3176dbe25c832d838eb520bb7a0025f680e395df"
+      "626903198":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 137547470
+        digest: "sha256:438a712af6bc3b7bb93aad790aa2dbf27b4fd36ac38ebfbff08ad2ea4afa2b4c"
+      "626904580":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 55094190
+        media_type: "application/x-msdownload"
+        digest: "sha256:1ed0a1c2922950134073bd60d14719a481829613b9cd79200c6a56f4e427106a"
+      "626904581":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 59341824
+        media_type: "application/x-msdownload"
+        digest: "sha256:f45e5926b85f0dc2c9e142cd7c92c89144b1ae480a324868b679125ca8ab4351"
+      "626905085":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 50032680
+        media_type: "application/x-msdownload"
+        digest: "sha256:211ba74fe501136a7ab0858dbf41aee42750956f9955c47f819f5b63117c8a8f"
+      "626905087":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 56595456
+        media_type: "application/x-msdownload"
+        digest: "sha256:ccdcd1bba1331b9f0893a2799c3b9c8a5753be0448c406a30754d1e947c6df7a"
+      "626905512":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:fe431e24472c9910b74d0429670c029a4c6b089bb16c732f7d2bef6b550a65de"
+  "410154826":
+    tag: "v1.17.13"
+    title: "v1.17.13"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.17.13"
+    created_at: "2026-10-12T04:10:47Z"
+    published_at: "2026-10-12T04:17:12Z"
+    updated_at: "2026-10-12T04:20:35Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.17.13"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.17.13"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.17.13/"
+    assets:
+      "632634957":
+        name: "octo_1.17.13_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.17.13_darwin_amd64.tar.gz"
+        size: 19450035
+        media_type: "application/gzip"
+        digest: "sha256:62b9da3c9a5b6939b9502572e61adc35c893b9ff33a0f5279ebeaa2fb998d20e"
+      "632635021":
+        name: "octo_1.17.13_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.17.13_darwin_arm64.tar.gz"
+        size: 18812140
+        media_type: "application/gzip"
+        digest: "sha256:c37502f91ced3821f5042ab40952c9361637d0a72c386db49447c7d9c1a5e3ea"
+      "632635076":
+        name: "octo_1.17.13_windows_amd64.zip"
+        url_suffix: "octo_1.17.13_windows_amd64.zip"
+        size: 19656961
+        media_type: "zip"
+        digest: "sha256:68d5bcd080ed33440e9f2fa423a62c2f49dabf79a0e9ce9d0c066c8d89389480"
+      "632635118":
+        name: "octo_1.17.13_windows_arm64.zip"
+        url_suffix: "octo_1.17.13_windows_arm64.zip"
+        size: 16734793
+        media_type: "zip"
+        digest: "sha256:8ecdff05de5bea5acceee2ac29ea120b1a98ce9bcd25e4e2608c2852b4f85e01"
+      "632635170":
+        name: "octo_1.17.13_darwin_all.tar.gz"
+        url_suffix: "octo_1.17.13_darwin_all.tar.gz"
+        size: 38253992
+        media_type: "application/gzip"
+        digest: "sha256:7a615ac92db7878461ba52cb8de73a7878275264f50e354bca6b1f90425f6e86"
+      "632635217":
+        name: "octo_1.17.13_linux_amd64.tar.gz"
+        url_suffix: "octo_1.17.13_linux_amd64.tar.gz"
+        size: 19832033
+        media_type: "application/gzip"
+        digest: "sha256:46275483f84a8df5d45d0fe5bc4415c2260ef0e37637ff8196d62f954e675fdf"
+      "632635257":
+        name: "octo_1.17.13_linux_arm64.tar.gz"
+        url_suffix: "octo_1.17.13_linux_arm64.tar.gz"
+        size: 18520941
+        media_type: "application/gzip"
+        digest: "sha256:dfd9278ed4c67c55b53d8a51d12b93b9edb3e9c63e14e5915bf4237c2e1b6aa5"
+      "632635295":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 685
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:21c15ab216ff6490bbc9d8b7b8d335d835485b224970c72bd0b271245f87a85b"
+      "632637419":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 67389944
+        media_type: "application/vnd.appimage"
+        digest: "sha256:b63a7c160dfac1246f9a6b2c7cd67e8428c8063a25095f4a970f7bc9e16d3eb8"
+      "632638108":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 62949896
+        media_type: "application/vnd.appimage"
+        digest: "sha256:a878f7a1bc632ba2b6f8f82ab16f8e4778ce398fdaf0ae5878e5c33f5579c055"
+      "632640630":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 59470848
+        media_type: "application/x-msdownload"
+        digest: "sha256:d96641d4ae29508aab414adfcfc15cbd5a66bdf3be266b6d4b06f06229a3ba02"
+      "632640631":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 55193071
+        media_type: "application/x-msdownload"
+        digest: "sha256:5b1bafcad966b20aa2e71b04eec763db3838c9d6a7f9d623fcd311eaff8e534f"
+      "632640860":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 137740860
+        media_type: "zip"
+        digest: "sha256:f7e039d092f38c3f077a714b8912cd3e95b3875a63c03256b889bb9b31389c1d"
+      "632640861":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 137746920
+        digest: "sha256:a997bb86601e9c78bf821003f3cbc28b5447e509ef015b6d5f1c010eee2d303c"
+      "632641428":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 50103286
+        media_type: "application/x-msdownload"
+        digest: "sha256:66fc324056f9d44661ba4fab82a64520e1a0129971120a25e186899da586d8db"
+      "632641430":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 56713728
+        media_type: "application/x-msdownload"
+        digest: "sha256:de26359a7ad8634395d0097cb0cdb06de61eeefc252dacc449a7605d943ca5a1"
+      "632641908":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d0edcb49dc56daba5685c153f12c344e7f8ea23d0f361bec1512e9be73a7f96e"
+  "410290430":
+    tag: "v1.17.14"
+    title: "v1.17.14"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.17.14"
+    created_at: "2026-10-12T06:55:00Z"
+    published_at: "2026-10-12T07:02:25Z"
+    updated_at: "2026-10-12T07:06:05Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.17.14"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.17.14"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.17.14/"
+    assets:
+      "632968051":
+        name: "octo_1.17.14_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.17.14_darwin_arm64.tar.gz"
+        size: 18813968
+        media_type: "application/gzip"
+        digest: "sha256:ac60f94b6054c5426f3f63108be35f6b6ff63cb9eea9a0b8af95504044d71be6"
+      "632968194":
+        name: "octo_1.17.14_windows_amd64.zip"
+        url_suffix: "octo_1.17.14_windows_amd64.zip"
+        size: 19657405
+        media_type: "zip"
+        digest: "sha256:248f825675760f9931aace112a538036ef7294c1eee4483547f9494521ad2736"
+      "632968264":
+        name: "octo_1.17.14_windows_arm64.zip"
+        url_suffix: "octo_1.17.14_windows_arm64.zip"
+        size: 16735688
+        media_type: "zip"
+        digest: "sha256:b780b067a734c6f816154c6b338bd1a4e538d290f42793331a3465512c70b6a3"
+      "632968338":
+        name: "octo_1.17.14_darwin_all.tar.gz"
+        url_suffix: "octo_1.17.14_darwin_all.tar.gz"
+        size: 38255405
+        media_type: "application/gzip"
+        digest: "sha256:bb1dc859962a72db4751d9670867b9add442e0feed6c18d37eff4a0397d1c602"
+      "632968441":
+        name: "octo_1.17.14_linux_amd64.tar.gz"
+        url_suffix: "octo_1.17.14_linux_amd64.tar.gz"
+        size: 19833984
+        media_type: "application/gzip"
+        digest: "sha256:93ffc0c1ef431750007c8b39e126121187faa70c5c6c697ed7bf8e7df2def22f"
+      "632968528":
+        name: "octo_1.17.14_linux_arm64.tar.gz"
+        url_suffix: "octo_1.17.14_linux_arm64.tar.gz"
+        size: 18523432
+        media_type: "application/gzip"
+        digest: "sha256:e86ec38fa43f29b649572437236e8744d0d73172ceb47ab4eae3e865850977d6"
+      "632968609":
+        name: "octo_1.17.14_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.17.14_darwin_amd64.tar.gz"
+        size: 19451065
+        media_type: "application/gzip"
+        digest: "sha256:886530ce989a94f77d0cbc95b33fc99d3e96e54d6ddca19e9ea4889f52985ea8"
+      "632968700":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 685
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:3efbd3a77c968c6259ccf03baefe054fc29429dfcc6c75e8e19c16be7a143931"
+      "632971402":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 62953992
+        media_type: "application/vnd.appimage"
+        digest: "sha256:fecfb32d62ea67c7bf12d6cb741f5d825f9398ac7f9923cc29613191517d3d38"
+      "632971674":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 67414520
+        media_type: "application/vnd.appimage"
+        digest: "sha256:6e4e39be721c3c486634500e7960fb9b48e0dcd71bb696c6aa53722afeb06cb2"
+      "632972633":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 137756746
+        digest: "sha256:0285c29e4497aa11ec87c5c7494e4545f47e428381c9ace854a640d6ddd7db1f"
+      "632972638":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 137743338
+        media_type: "zip"
+        digest: "sha256:cb3191c311a623a78657200a1977d062a3da76db57b1732e75e8ad436d6453e9"
+      "632974892":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 59474944
+        media_type: "application/x-msdownload"
+        digest: "sha256:2357dc35933a8cbe1a133351ac7065417286db4e7b45fd4e45a10d0361f64e9e"
+      "632974893":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 55172727
+        media_type: "application/x-msdownload"
+        digest: "sha256:237507dae8bd0fbb77c752fed730847d28cb21d0de2b2154dc2a82a78b7bebe0"
+      "632976502":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 50101142
+        media_type: "application/x-msdownload"
+        digest: "sha256:5ee5d63512d6b639272c2c518a56c501124e05589856610c98c6976530a06059"
+      "632976503":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 56719360
+        media_type: "application/x-msdownload"
+        digest: "sha256:4c80008ab66506db7bc143c78f77de33763db343527d999905b01cddc050bddc"
+      "632977057":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:06ce8d0cbf062f0d330bfdd4052d98102f280b2f563411f5c5593ecd664374ef"
+  "410481202":
+    tag: "v1.17.15"
+    title: "v1.17.15"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.17.15"
+    created_at: "2026-10-12T10:20:39Z"
+    published_at: "2026-10-12T10:25:06Z"
+    updated_at: "2026-10-12T10:28:52Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.17.15"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.17.15"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.17.15/"
+    assets:
+      "633437948":
+        name: "octo_1.17.15_windows_amd64.zip"
+        url_suffix: "octo_1.17.15_windows_amd64.zip"
+        size: 19658981
+        media_type: "zip"
+        digest: "sha256:608bb75ce79433670f788b1ec9013d738d901d17a3bd84d3f3fec33575150ffd"
+      "633438013":
+        name: "octo_1.17.15_windows_arm64.zip"
+        url_suffix: "octo_1.17.15_windows_arm64.zip"
+        size: 16734379
+        media_type: "zip"
+        digest: "sha256:85fc9fc39a91722af2a994f7b718698f4ad4eec2f3502371de725aedae6c42d9"
+      "633438071":
+        name: "octo_1.17.15_darwin_all.tar.gz"
+        url_suffix: "octo_1.17.15_darwin_all.tar.gz"
+        size: 38256081
+        media_type: "application/gzip"
+        digest: "sha256:228fec4828716daace0fa0175c92e9e3a1b28ade196672ba2da5f30958f2bdd7"
+      "633438160":
+        name: "octo_1.17.15_linux_amd64.tar.gz"
+        url_suffix: "octo_1.17.15_linux_amd64.tar.gz"
+        size: 19833615
+        media_type: "application/gzip"
+        digest: "sha256:3115247436d2149014c363f9e05f3ce097c1e888e80007762af04dce0bd419d2"
+      "633438247":
+        name: "octo_1.17.15_linux_arm64.tar.gz"
+        url_suffix: "octo_1.17.15_linux_arm64.tar.gz"
+        size: 18523886
+        media_type: "application/gzip"
+        digest: "sha256:d0d21a13df6d1894745ba1878cd741966fc5e5a5e7247500d315dd314b73d18e"
+      "633438340":
+        name: "octo_1.17.15_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.17.15_darwin_amd64.tar.gz"
+        size: 19451296
+        media_type: "application/gzip"
+        digest: "sha256:3e5325e1c24e49e5bcc8647fbef99aa94735644d440b7f1e7f344fde1f9013ee"
+      "633438423":
+        name: "octo_1.17.15_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.17.15_darwin_arm64.tar.gz"
+        size: 18815558
+        media_type: "application/gzip"
+        digest: "sha256:fe48bccac412b8ad20aec4ea58fb8ce1d500762b86c299ea74404f721da1b4d3"
+      "633438504":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 685
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:75e016706a909b90177fcdc80a921eb37b43f8cd0c65347913f3b293545cb05f"
+      "633442751":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 62949896
+        media_type: "application/vnd.appimage"
+        digest: "sha256:d58f3e95e194f6af044e6306d24d1c75006c43bf0e7f8f9fe7feecc7018c0f14"
+      "633443301":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 67402232
+        media_type: "application/vnd.appimage"
+        digest: "sha256:83a122ffb483715f00ebfaf64a3a4f5ddb0cd64d56d372b94981431399121ecf"
+      "633445214":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 137743162
+        media_type: "zip"
+        digest: "sha256:c8767e762ed3a35412f15772b280e677ce935ec37f53128b4adbbb5121b3a992"
+      "633445215":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 137757198
+        digest: "sha256:664e90fe9f1263e3e6bcdc42ca3babd47751e4953b73f4210783d80703876ff6"
+      "633445733":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 59476480
+        media_type: "application/x-msdownload"
+        digest: "sha256:669f703101e375332a3b592162319279096a6979cff147d27972420dee9bab48"
+      "633445734":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 55189497
+        media_type: "application/x-msdownload"
+        digest: "sha256:aae9541ad902ddba31c55194f3c035090ce44ead64e612a9e299e181eeec8e42"
+      "633447463":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 50099678
+        media_type: "application/x-msdownload"
+        digest: "sha256:1cfbc1ecb7b1af7c6c8d13c3d190355fdce740426ece037639158f54d503fcfe"
+      "633447464":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 56720896
+        media_type: "application/x-msdownload"
+        digest: "sha256:c93812bd2f6bb1ce3e1cd7f28d1b220c35446688e9ebb002b255ecae6e379524"
+      "633448216":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d5c77861b73c832ac922cb7c9fe8a32e31607ac2dceb2b1f35c1cfb31c079687"
+  "412628031":
+    tag: "v1.17.16"
+    title: "v1.17.16"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.17.16"
+    created_at: "2026-10-14T11:07:29Z"
+    published_at: "2026-10-14T11:13:47Z"
+    updated_at: "2026-10-14T11:18:07Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.17.16"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.17.16"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.17.16/"
+    assets:
+      "640138440":
+        name: "octo_1.17.16_linux_amd64.tar.gz"
+        url_suffix: "octo_1.17.16_linux_amd64.tar.gz"
+        size: 19835641
+        media_type: "application/gzip"
+        digest: "sha256:cbee89d5e30873afd8f4486a98268d8744bb8dae3f9bfad062739a2dd8cc1a24"
+      "640138513":
+        name: "octo_1.17.16_linux_arm64.tar.gz"
+        url_suffix: "octo_1.17.16_linux_arm64.tar.gz"
+        size: 18524502
+        media_type: "application/gzip"
+        digest: "sha256:61be06a70be72fbf40b7062e2441d188917b819f7ba81cda9463bf14053a9588"
+      "640138650":
+        name: "octo_1.17.16_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.17.16_darwin_amd64.tar.gz"
+        size: 19452949
+        media_type: "application/gzip"
+        digest: "sha256:62a3c9f493e38104bf38d0d94151175383b913870581b32646d531575ffbea2c"
+      "640138745":
+        name: "octo_1.17.16_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.17.16_darwin_arm64.tar.gz"
+        size: 18817231
+        media_type: "application/gzip"
+        digest: "sha256:c0b18c136c8d79a691b6a34ec51d2a5d6b60ff6a830d591d6f282100e2b8b9d3"
+      "640138821":
+        name: "octo_1.17.16_windows_amd64.zip"
+        url_suffix: "octo_1.17.16_windows_amd64.zip"
+        size: 19660191
+        media_type: "zip"
+        digest: "sha256:09666b1a2a7d7abc5d5149e068966fd704e37471dc6e84060049a62465a6957f"
+      "640138916":
+        name: "octo_1.17.16_windows_arm64.zip"
+        url_suffix: "octo_1.17.16_windows_arm64.zip"
+        size: 16739185
+        media_type: "zip"
+        digest: "sha256:751da41bfe9a17a5772e97cb205d24481fee8901f48b1e53d08402170efc9077"
+      "640139011":
+        name: "octo_1.17.16_darwin_all.tar.gz"
+        url_suffix: "octo_1.17.16_darwin_all.tar.gz"
+        size: 38258496
+        media_type: "application/gzip"
+        digest: "sha256:cd11d9c528082ecfc1d5524e21c33b43f3a4685b18cf8fb59cdc18118b4727b9"
+      "640139120":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 685
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:b3840ed388e6ac0750dbadfe440bf3a4b6660a0efb674bdf1794ac0e3b8f3576"
+      "640142450":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 67418616
+        media_type: "application/vnd.appimage"
+        digest: "sha256:9c45a8a0e56055fe962eedd2fff4d261fd77d04bb98e01a89e0df9ca9bf77d8d"
+      "640143483":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 62958088
+        media_type: "application/vnd.appimage"
+        digest: "sha256:371de7ba39496ed037ce21cc86e3cbc24ed08a3ef7f3de45c644672606dc8f31"
+      "640145955":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 137757052
+        digest: "sha256:73c284f7d7029f4fc50fca9c93b0bc95aa49f8af330cb10db07d2913c723eae9"
+      "640145960":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 137748747
+        media_type: "zip"
+        digest: "sha256:fc9ad67f2c3f0258e4820dddb9c29a23559e54d6d6bfe6dc2c3670577ded43dc"
+      "640146840":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 56726016
+        media_type: "application/x-msdownload"
+        digest: "sha256:7b095ab96e1ad9b3af6d670ffb5c1c1b1ddf97e4cc79bfc2b594ac1f962fffa9"
+      "640146841":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 50107323
+        media_type: "application/x-msdownload"
+        digest: "sha256:c0b00286f78652ed6d230e905fd2c1ed5b5e30e13209fc3933d0995aa271a3bf"
+      "640147988":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 59482112
+        media_type: "application/x-msdownload"
+        digest: "sha256:bb6133a842ce308a434523146117556a4cda31ce5665ab3f95d8d35523c28b61"
+      "640147991":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 55193226
+        media_type: "application/x-msdownload"
+        digest: "sha256:38457fac36c4a0fdbbb47d6b4683799f4b2e9e66accf6a80712cb3d07c34b725"
+      "640148997":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:adcdf2198dcd928a8ee62884d2731b8cf5788852f56b6ce9d2995b0669310abc"
+  "418131591":
+    tag: "v1.17.17"
+    title: "v1.17.17"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.17.17"
+    created_at: "2026-10-20T07:45:17Z"
+    published_at: "2026-10-20T07:51:18Z"
+    updated_at: "2026-10-20T07:55:08Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.17.17"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.17.17"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.17.17/"
+    assets:
+      "658649227":
+        name: "octo_1.17.17_windows_arm64.zip"
+        url_suffix: "octo_1.17.17_windows_arm64.zip"
+        size: 16691786
+        media_type: "zip"
+        digest: "sha256:47e4315aa5d10480d37503343c5978e5435ab83fea6479c9e3f1ea9b81c06f95"
+      "658649288":
+        name: "octo_1.17.17_darwin_all.tar.gz"
+        url_suffix: "octo_1.17.17_darwin_all.tar.gz"
+        size: 38126351
+        media_type: "application/gzip"
+        digest: "sha256:aa56a65fb4267b2af1c5f87849bc58a8458e3f606d2c0e3fbc4e6fe731e3ec00"
+      "658649378":
+        name: "octo_1.17.17_linux_amd64.tar.gz"
+        url_suffix: "octo_1.17.17_linux_amd64.tar.gz"
+        size: 19768358
+        media_type: "application/gzip"
+        digest: "sha256:9311846f779d43c22917c9a7b2226bac2e4518f1c084965a316fe6b609aba8a3"
+      "658649476":
+        name: "octo_1.17.17_linux_arm64.tar.gz"
+        url_suffix: "octo_1.17.17_linux_arm64.tar.gz"
+        size: 18471543
+        media_type: "application/gzip"
+        digest: "sha256:04cfd37e7e44842f6d863e1e7c0eed384a38d3676bb64a6b72198aa01939e1b1"
+      "658649545":
+        name: "octo_1.17.17_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.17.17_darwin_amd64.tar.gz"
+        size: 19381906
+        media_type: "application/gzip"
+        digest: "sha256:db5775c88cd18dc2355b48586f05e8374a491a286abb8a09e6a3288b8956a3c5"
+      "658649631":
+        name: "octo_1.17.17_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.17.17_darwin_arm64.tar.gz"
+        size: 18767052
+        media_type: "application/gzip"
+        digest: "sha256:1e1a42e3a9a437560088bb5dd8f0823a76e3ecbaddd171f523f5058f3a57987d"
+      "658649703":
+        name: "octo_1.17.17_windows_amd64.zip"
+        url_suffix: "octo_1.17.17_windows_amd64.zip"
+        size: 19585055
+        media_type: "zip"
+        digest: "sha256:8f43966985578dc68f62f821b8384c769607fd2bcd87a4ed4dfa8cb2c43d5717"
+      "658649754":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 685
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:cc8052f0e037851f07453db7e3d05348479173a92aefea7e9cc3b6cdd9c4970d"
+      "658653018":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 67316216
+        media_type: "application/vnd.appimage"
+        digest: "sha256:272345a59115de73229be3b26ce44e0aff75195d97e0f388cff422c3306b6b79"
+      "658653368":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 62913032
+        media_type: "application/vnd.appimage"
+        digest: "sha256:fbfe2905c5c520e99b845011ac610d2659ce25bb61cd6e002b4fc65a2e2bd05f"
+      "658654545":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 137668503
+        digest: "sha256:2980d21507eabcaf51b16b6d1b6375dcfe1c686701a674ae96ec3a233a63c68d"
+      "658654550":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 137655377
+        media_type: "zip"
+        digest: "sha256:6bb20d569d389b397646610ba0533688c011536530248937ba650e74540f1c5a"
+      "658654614":
+        name: "octo-android.apk"
+        url_suffix: "octo-android.apk"
+        size: 5124769
+        media_type: "application/vnd.android.package-archive"
+        digest: "sha256:f0957befac49d6cf492d985d689ac668bf3aae936ab53b7f063b8012158686f3"
+      "658654839":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 50085975
+        media_type: "application/x-msdownload"
+        digest: "sha256:b50e5dd929e0504a037836d006fe21a0691b443fc3eb55cb4a15ace1a090752e"
+      "658654841":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 56765952
+        media_type: "application/x-msdownload"
+        digest: "sha256:901e902929c0001d04902f7e00473b66d73cb67cae85c03b83db7ad48ff62f28"
+      "658657220":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 59525120
+        media_type: "application/x-msdownload"
+        digest: "sha256:e10114a13525f5c7b5389eabdfd8a235137ff371a3bdbf03e896460d39de2bed"
+      "658657221":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 55141256
+        media_type: "application/x-msdownload"
+        digest: "sha256:ea1bc8db5419d0f3b9e6e66ef54d84ea86b447886a8fde167e7afbb78518e182"
+      "658657782":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:7479a3bc3e0d343f68d5637d8b0a43edd144adf0d89f35aeb4e4e28ef3ba022a"
+  "418359340":
+    tag: "v1.17.18"
+    title: "v1.17.18"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.17.18"
+    created_at: "2026-10-20T12:06:08Z"
+    published_at: "2026-10-20T12:13:11Z"
+    updated_at: "2026-10-20T12:17:57Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.17.18"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.17.18"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.17.18/"
+    assets:
+      "659236787":
+        name: "octo_1.17.18_linux_arm64.tar.gz"
+        url_suffix: "octo_1.17.18_linux_arm64.tar.gz"
+        size: 18478038
+        media_type: "application/gzip"
+        digest: "sha256:256de3a42e3b807ae76ef6727c7d2853eea65a1852f49ddefb736fc97fb91294"
+      "659236901":
+        name: "octo_1.17.18_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.17.18_darwin_amd64.tar.gz"
+        size: 19395094
+        media_type: "application/gzip"
+        digest: "sha256:2ecb7b0b9f2effc9663ccb68897207f2c15660e7f6e0163c49695fb67ff84f50"
+      "659236978":
+        name: "octo_1.17.18_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.17.18_darwin_arm64.tar.gz"
+        size: 18783086
+        media_type: "application/gzip"
+        digest: "sha256:84e88dd7c66649439051b760cc44298d9ebb35f395787f5276a487a186a5a2fa"
+      "659237045":
+        name: "octo_1.17.18_windows_amd64.zip"
+        url_suffix: "octo_1.17.18_windows_amd64.zip"
+        size: 19596721
+        media_type: "zip"
+        digest: "sha256:9b905a1866703bb856b79d50a60c6a42b076f4106b9082f8c7c4e97f8e1f2426"
+      "659237104":
+        name: "octo_1.17.18_windows_arm64.zip"
+        url_suffix: "octo_1.17.18_windows_arm64.zip"
+        size: 16704227
+        media_type: "zip"
+        digest: "sha256:a036c975550f4388af4b1a21165fbe4ab1f2372086c94bbd87e00d7dfb06fcad"
+      "659237163":
+        name: "octo_1.17.18_darwin_all.tar.gz"
+        url_suffix: "octo_1.17.18_darwin_all.tar.gz"
+        size: 38163230
+        media_type: "application/gzip"
+        digest: "sha256:532dc0d171c610217590bef8ebc32c1d9eaf13f1e7496446c6a265d886d96cf8"
+      "659237235":
+        name: "octo_1.17.18_linux_amd64.tar.gz"
+        url_suffix: "octo_1.17.18_linux_amd64.tar.gz"
+        size: 19779870
+        media_type: "application/gzip"
+        digest: "sha256:c396df750118b51861dc939920cb05fec9d88cf58b04217678812df05dd01231"
+      "659237285":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 685
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:2bde1ad301d4c15d756ff2dd7ef61eee3a609a3adaedd74d8c5ae9a80d87731a"
+      "659240639":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 67348984
+        media_type: "application/vnd.appimage"
+        digest: "sha256:fb6b4bf82eb6391b1deb394021bbbe8a4a0e270785aaf5cce7cae0a810455532"
+      "659241164":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 62933512
+        media_type: "application/vnd.appimage"
+        digest: "sha256:ea4c36972a01fb02e4a827bfc049ff346a3eb349356cd449cd3e142d631dc9db"
+      "659242119":
+        name: "octo-android.apk"
+        url_suffix: "octo-android.apk"
+        size: 5124769
+        media_type: "application/vnd.android.package-archive"
+        digest: "sha256:35c99fd7c7a7ac4238dd86b62cc363945bc27440d64aab4844c9094f259b2e3d"
+      "659242222":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 137740096
+        media_type: "zip"
+        digest: "sha256:ee57d6143359df0e8ad49b479c84cb88d6df88f8eb29d85c85f6952068e4db0a"
+      "659242227":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 137735819
+        digest: "sha256:2cea26446a42420b8ec97b20c88849039fa510e3d05982caef7cf9c372dd3d29"
+      "659245006":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 50106313
+        media_type: "application/x-msdownload"
+        digest: "sha256:8837abaf75de459140526e3bcd289c3d976dadf9e323a00e746c9d4ffb77252d"
+      "659245007":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 56809984
+        media_type: "application/x-msdownload"
+        digest: "sha256:68284e25946a58a28857861efca02089175d67446e3669f6eb28dbc16f775110"
+      "659247766":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 59574784
+        media_type: "application/x-msdownload"
+        digest: "sha256:858617a9ba94faccb2d213fc47431ea275588888d468b17e8f7aba09ca89138e"
+      "659247771":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 55183911
+        media_type: "application/x-msdownload"
+        digest: "sha256:6b878d8b0112bba2af6088501700dd4c8122a2d939beafa75d1aac5539121f8f"
+      "659248837":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:a9b7770b6bc869f232c90c19d294ffa74ffa3c3cbe051eb8acf8a44c6f25324b"
+  "420270008":
+    tag: "v1.17.19"
+    title: "v1.17.19"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.17.19"
+    created_at: "2026-10-22T03:03:42Z"
+    published_at: "2026-10-22T03:15:46Z"
+    updated_at: "2026-10-22T03:27:36Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.17.19"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.17.19"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.17.19/"
+    assets:
+      "664525104":
+        name: "octo_1.17.19_linux_amd64.tar.gz"
+        url_suffix: "octo_1.17.19_linux_amd64.tar.gz"
+        size: 19785406
+        media_type: "application/gzip"
+        digest: "sha256:429babe5d3b3f6ee9d4ed6fe714d1c7bdd97dbf8b7e6e84ce61dad19e9f4b439"
+      "664525153":
+        name: "octo_1.17.19_linux_arm64.tar.gz"
+        url_suffix: "octo_1.17.19_linux_arm64.tar.gz"
+        size: 18484563
+        media_type: "application/gzip"
+        digest: "sha256:11c9d3acd151ce5947f6b47096efa7e90b4bb37bafd1cfd6dda478ab3c7992b8"
+      "664525191":
+        name: "octo_1.17.19_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.17.19_darwin_amd64.tar.gz"
+        size: 19405476
+        media_type: "application/gzip"
+        digest: "sha256:3ef07c9c8f179bc200978534e2aa717fec1a98e7930747a85a733beb4ef0f2cc"
+      "664525245":
+        name: "octo_1.17.19_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.17.19_darwin_arm64.tar.gz"
+        size: 18786088
+        media_type: "application/gzip"
+        digest: "sha256:291a06a5a0f150b640c6cf16314fad56394b65136088e16e28a5e75110607d27"
+      "664525288":
+        name: "octo_1.17.19_windows_amd64.zip"
+        url_suffix: "octo_1.17.19_windows_amd64.zip"
+        size: 19599279
+        media_type: "zip"
+        digest: "sha256:c93a0fcc6f5a56037a0460870db7b6c819746725f3a3ff09c5ec4ca2fdbbd73a"
+      "664525353":
+        name: "octo_1.17.19_windows_arm64.zip"
+        url_suffix: "octo_1.17.19_windows_arm64.zip"
+        size: 16711724
+        media_type: "zip"
+        digest: "sha256:c46e21d8ffa2844134de823c7a6fe21d7142d5b5999036265e90d3016e81f11a"
+      "664525388":
+        name: "octo_1.17.19_darwin_all.tar.gz"
+        url_suffix: "octo_1.17.19_darwin_all.tar.gz"
+        size: 38178995
+        media_type: "application/gzip"
+        digest: "sha256:660935690e7b544242a384119cf121246c671519b14623b38d04661108ca6913"
+      "664525473":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 685
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d10a2674125410d88c42e70d3512026a7f41f581489cde9ac66b91f58a1405e4"
+      "664530721":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 59623424
+        media_type: "application/x-msdownload"
+        digest: "sha256:77a85842a031b5b83bcc0fdc617d3ff9f69f1b4a0ba76440d14c3ca6bb8cf8e5"
+      "664530723":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 55186216
+        media_type: "application/x-msdownload"
+        digest: "sha256:7aba929c699f3afdfc110d5f5fa8a829d2cba841d12442b9925dc2d48e41b0f0"
+      "664531147":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 50120245
+        media_type: "application/x-msdownload"
+        digest: "sha256:02b6144f8ccc30d78ff101db4350f6a8671e79d741071d0317bd7d4aa1279b17"
+      "664531148":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 56857600
+        media_type: "application/x-msdownload"
+        digest: "sha256:6f593f27e84d37cce6cc3aef5bdccae04cb01369406d73c816574fda1ab17ecf"
+      "664537473":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 62966280
+        media_type: "application/vnd.appimage"
+        digest: "sha256:40151a793e9714e22eef45f83e9590c48666e67e4fee5c25ff7760efff6e65de"
+      "664540111":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 137762329
+        digest: "sha256:80586bfdf70a6898efec6a18e2a98409db978c4a50be0a82fcb1c1814891027f"
+      "664540112":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 137751947
+        media_type: "zip"
+        digest: "sha256:899e11afea054a271bcb3a7ff09326aeb883b1624eaa1552027884e6408938a4"
+      "664541170":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 67394040
+        media_type: "application/vnd.appimage"
+        digest: "sha256:7f8d39965a93ac87c017bb4aadebf205463a3ff9302f9011e1bc4c428fbd2dd6"
+      "664541510":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:0f580b3933dc98a20ba08925cc08c206c91fb9ed88490ba6994f152d808a3c48"
+      "664548113":
+        name: "octo-android.apk"
+        url_suffix: "octo-android.apk"
+        size: 5128687
+        media_type: "application/vnd.android.package-archive"
+        digest: "sha256:3a1b4ce0f37fa3f4d7c68e15c90c24b3a4c00c5794516acc3b1124e396063be2"
+  "423844041":
+    tag: "v1.17.20"
+    title: "v1.17.20"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.17.20"
+    created_at: "2026-10-26T03:52:10Z"
+    published_at: "2026-10-26T03:56:45Z"
+    updated_at: "2026-10-26T04:00:10Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.17.20"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.17.20"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.17.20/"
+    assets:
+      "676937978":
+        name: "octo_1.17.20_darwin_all.tar.gz"
+        url_suffix: "octo_1.17.20_darwin_all.tar.gz"
+        size: 38176453
+        media_type: "application/gzip"
+        digest: "sha256:d373c75a54e7cb890c38d3ef87cb3daf35f5e7e94fdcb55bd17518947ae0317e"
+      "676938079":
+        name: "octo_1.17.20_linux_amd64.tar.gz"
+        url_suffix: "octo_1.17.20_linux_amd64.tar.gz"
+        size: 19786642
+        media_type: "application/gzip"
+        digest: "sha256:0df234cf4f3033156648983dd029e5353c0af07b94d5cdc5e1edf7561651e67c"
+      "676938149":
+        name: "octo_1.17.20_linux_arm64.tar.gz"
+        url_suffix: "octo_1.17.20_linux_arm64.tar.gz"
+        size: 18485765
+        media_type: "application/gzip"
+        digest: "sha256:49afb717c45c44b2298e01cd060418362cff1ea321c83a202be07346ab3f2c36"
+      "676938224":
+        name: "octo_1.17.20_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.17.20_darwin_amd64.tar.gz"
+        size: 19404828
+        media_type: "application/gzip"
+        digest: "sha256:af1f081df6e4a5380ebd1d7fc40e1c980c90543441a90bb98deab0857191d123"
+      "676938299":
+        name: "octo_1.17.20_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.17.20_darwin_arm64.tar.gz"
+        size: 18785586
+        media_type: "application/gzip"
+        digest: "sha256:ebabc0927aa3c9794ef0e7612686437cb4ec9ca410e5a3c9212e544e2980b1a4"
+      "676938353":
+        name: "octo_1.17.20_windows_amd64.zip"
+        url_suffix: "octo_1.17.20_windows_amd64.zip"
+        size: 19600045
+        media_type: "zip"
+        digest: "sha256:196a9adc133bf8c1a0a61b1ab592cde80d84be45338c2134b5e4b736e866fa94"
+      "676938428":
+        name: "octo_1.17.20_windows_arm64.zip"
+        url_suffix: "octo_1.17.20_windows_arm64.zip"
+        size: 16713000
+        media_type: "zip"
+        digest: "sha256:9e1c0e478c8c0a5b576e3eb219c9bb83a3917077a9909efc57be294aeba784bd"
+      "676938503":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 685
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:9958d87781982582bf6f76fc7d07f7610a81507d79e9b26e1f1e491acb49d1ae"
+      "676941343":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 62966280
+        media_type: "application/vnd.appimage"
+        digest: "sha256:544605a21c6c07f83cf8f167eed6917232219fe43ec51d13719e2397bfdf868b"
+      "676942800":
+        name: "octo-android.apk"
+        url_suffix: "octo-android.apk"
+        size: 5128687
+        media_type: "application/vnd.android.package-archive"
+        digest: "sha256:c1fd828ce702af85d96959e3bf2cca42518a840a9b13d9341fee19ed193684fc"
+      "676944247":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 67410424
+        media_type: "application/vnd.appimage"
+        digest: "sha256:1f7cc12a214147ade314db9f5386481d868923a3c1ab8ce4dbae378a45226f3e"
+      "676945256":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 137760316
+        digest: "sha256:d816f8a3cfb7a6ee6610ecd69118bf70b8f06748deec6990384a44c94d4689f2"
+      "676945257":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 137749477
+        media_type: "zip"
+        digest: "sha256:5ae67999f2c7ed3e1610c401ba1b34b40f251dce1be80d838b3099cf212563d8"
+      "676945515":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 55186367
+        media_type: "application/x-msdownload"
+        digest: "sha256:e3d8fdfeccc2ee6501a6fb6ffa6d2720a769e2c98aaf1129803978ca6a3bb15a"
+      "676945516":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 59622912
+        media_type: "application/x-msdownload"
+        digest: "sha256:4405bb345eeb97f1cba6bb88c3e8976008533891f951c22350236228b5b14cc2"
+      "676945538":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 56857600
+        media_type: "application/x-msdownload"
+        digest: "sha256:50a9c6e267c7b3f18f2812704234092f5825e33ee281faf5decdfbce11250bd0"
+      "676945540":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 50116128
+        media_type: "application/x-msdownload"
+        digest: "sha256:f04fa820ffb6a3cc43c20f170289edfc5ac945833792e87b7c332b7d01376290"
+      "676946061":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:b938c909178256744776b487593522b1162088c806b8152b81a0dcc779bd5908"
+  "425015225":
+    tag: "v1.17.21"
+    title: "v1.17.21"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.17.21"
+    created_at: "2026-10-27T03:42:43Z"
+    published_at: "2026-10-27T03:49:04Z"
+    updated_at: "2026-10-27T03:53:27Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.17.21"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.17.21"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.17.21/"
+    assets:
+      "680354959":
+        name: "octo_1.17.21_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.17.21_darwin_arm64.tar.gz"
+        size: 18787681
+        media_type: "application/gzip"
+        digest: "sha256:a6f06903e3debebf69bb69fb09df0a72cb678cb59c77afff190bef6e4068fac9"
+      "680355028":
+        name: "octo_1.17.21_windows_amd64.zip"
+        url_suffix: "octo_1.17.21_windows_amd64.zip"
+        size: 19600210
+        media_type: "zip"
+        digest: "sha256:52cfc29fb6bc1b5bf791a8a430264b1a690d2e054a4e4d18a361170a23e47504"
+      "680355094":
+        name: "octo_1.17.21_windows_arm64.zip"
+        url_suffix: "octo_1.17.21_windows_arm64.zip"
+        size: 16713867
+        media_type: "zip"
+        digest: "sha256:2611f3945a66cfcdd6439786b9196dae00bd44e19681790534e2a23480dd5176"
+      "680355157":
+        name: "octo_1.17.21_darwin_all.tar.gz"
+        url_suffix: "octo_1.17.21_darwin_all.tar.gz"
+        size: 38179795
+        media_type: "application/gzip"
+        digest: "sha256:929331b9f47864dde12f57f84f6fd26d27e3569772f6dfa8cb90ea5f8b524b71"
+      "680355267":
+        name: "octo_1.17.21_linux_amd64.tar.gz"
+        url_suffix: "octo_1.17.21_linux_amd64.tar.gz"
+        size: 19787820
+        media_type: "application/gzip"
+        digest: "sha256:513b797e5104f8cf20fe9aa2d10feec7e18b091fcd205f490aaa6d3e3141e79e"
+      "680355330":
+        name: "octo_1.17.21_linux_arm64.tar.gz"
+        url_suffix: "octo_1.17.21_linux_arm64.tar.gz"
+        size: 18487039
+        media_type: "application/gzip"
+        digest: "sha256:1d05bdb960f021a90da9d060a498eb0e4b42af2f76f4512d1343c660ec4396b7"
+      "680355399":
+        name: "octo_1.17.21_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.17.21_darwin_amd64.tar.gz"
+        size: 19406078
+        media_type: "application/gzip"
+        digest: "sha256:85c48fd7bdb5bb373d4f199066337f8d245812288dab8e5b12afa1d257fe2306"
+      "680355477":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 685
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:e2201102578854ee24321258724053bcf4db2dc9b5c5769c17bda11bc431bbe7"
+      "680359189":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 62970376
+        media_type: "application/vnd.appimage"
+        digest: "sha256:fe6bdae43911257701e72d4c3b1cba1718442f8eac0c0a67b5ca016184f8cf80"
+      "680359531":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 67398136
+        media_type: "application/vnd.appimage"
+        digest: "sha256:53220d6d1fba9ef4487d717c9a67208267059f9c245968ab34b330762aaec497"
+      "680360068":
+        name: "octo-android.apk"
+        url_suffix: "octo-android.apk"
+        size: 5128687
+        media_type: "application/vnd.android.package-archive"
+        digest: "sha256:7f3c5b9637ef03051f80e33693885265f2c05ce9a1eb722dc2bfa0646da91ccd"
+      "680360721":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 56862208
+        media_type: "application/x-msdownload"
+        digest: "sha256:126b742a4aebc7e1d67a268dbbf46c7ff49d01678b068a4c7737c3c840b95f8e"
+      "680360723":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 50127273
+        media_type: "application/x-msdownload"
+        digest: "sha256:33740318ff84b3f5fb6374b476ecb8fd3789636ea4169ee5c65323c81ae67758"
+      "680361379":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 59627520
+        media_type: "application/x-msdownload"
+        digest: "sha256:eda4f2dd2801c9199ad132f9d52203474a81d4d47d53f839c79df41b257bc160"
+      "680361380":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 55198190
+        media_type: "application/x-msdownload"
+        digest: "sha256:8cde9aa116a943ec44bec3bbb3842b9ed1182f5812215b0468ec6d037a4caa3d"
+      "680362602":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 137750902
+        media_type: "zip"
+        digest: "sha256:9f7c106c950e1147354fac242e3e4d5eb7bcc0d49b95f8b6667be8b5f4778d4d"
+      "680362603":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 137760903
+        digest: "sha256:894aea66e6f5a404fbfda542308f0169cc41598e8a82e10b33b28b6269677de8"
+      "680363554":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:a235589ddb8a85b78908d319a4e37ba4c0be4f065369174485b78071c435b141"
+  "431325723":
+    tag: "v1.17.22"
+    title: "v1.17.22"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.17.22"
+    created_at: "2026-11-02T10:21:38Z"
+    published_at: "2026-11-02T10:27:53Z"
+    updated_at: "2026-11-02T10:33:42Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.17.22"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.17.22"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.17.22/"
+    assets:
+      "701361308":
+        name: "octo_1.17.22_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.17.22_darwin_arm64.tar.gz"
+        size: 18788686
+        media_type: "application/gzip"
+        digest: "sha256:a444790fad505a5a62a26b305a99231218ba480a5c0a8f49b8f8131c1b27cc05"
+      "701361431":
+        name: "octo_1.17.22_windows_amd64.zip"
+        url_suffix: "octo_1.17.22_windows_amd64.zip"
+        size: 19601345
+        media_type: "zip"
+        digest: "sha256:9463eb49bd789ab6d085834f99d9377b71560d0ef4470c9e5ff5d946b48798ba"
+      "701361541":
+        name: "octo_1.17.22_windows_arm64.zip"
+        url_suffix: "octo_1.17.22_windows_arm64.zip"
+        size: 16715174
+        media_type: "zip"
+        digest: "sha256:ab31365ef8ca20eafeef68490462743ea26b131dd576d077511fbe23d9072e18"
+      "701361638":
+        name: "octo_1.17.22_darwin_all.tar.gz"
+        url_suffix: "octo_1.17.22_darwin_all.tar.gz"
+        size: 38181715
+        media_type: "application/gzip"
+        digest: "sha256:bc935681f3957bfca739d29c9ca13fa98e14fe759f8288844186283fc5ea0885"
+      "701361751":
+        name: "octo_1.17.22_linux_amd64.tar.gz"
+        url_suffix: "octo_1.17.22_linux_amd64.tar.gz"
+        size: 19788575
+        media_type: "application/gzip"
+        digest: "sha256:953b9933533a205c2c7280077861b0205998699c80ea85968d6fb3b61eb4181f"
+      "701361828":
+        name: "octo_1.17.22_linux_arm64.tar.gz"
+        url_suffix: "octo_1.17.22_linux_arm64.tar.gz"
+        size: 18488272
+        media_type: "application/gzip"
+        digest: "sha256:01b99748e0c0e2193fb7c454e9df5a9ac2fb056c6008431fa00888df1b7ec4a0"
+      "701361926":
+        name: "octo_1.17.22_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.17.22_darwin_amd64.tar.gz"
+        size: 19406292
+        media_type: "application/gzip"
+        digest: "sha256:86fa0e75f482627d36bc6416893fd27b53ba9b40d7103f3e0256240d6523339c"
+      "701362038":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 685
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:35a7810ce789605187fe6b306401aa8190d979b74da7a61addc5bdfd306c8a69"
+      "701366095":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 67414520
+        media_type: "application/vnd.appimage"
+        digest: "sha256:9b1bb8bc21f14b39138c7e89b269b9b34504d74272bccba6d5c6780ec026d87e"
+      "701367323":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 62958088
+        media_type: "application/vnd.appimage"
+        digest: "sha256:01187731e31aff5b8568823e1ff718c8857a1967cc75ccf03de29ab2f2fde619"
+      "701368291":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 137754939
+        media_type: "zip"
+        digest: "sha256:ad5ba8ff0c6a09f2babcbe9110766cd793638fda463d03d06f0ba41ab4da9e28"
+      "701368292":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 137769601
+        digest: "sha256:fdc9c8d331650ea1b7aa219b088d2a795f5b75c983d67e97b2c122301cbf308e"
+      "701368809":
+        name: "octo-android.apk"
+        url_suffix: "octo-android.apk"
+        size: 5128687
+        media_type: "application/vnd.android.package-archive"
+        digest: "sha256:00b958d816aeda5a136e48e4b3ee4b56b0e6c79a3bdd81c41ac2c970f8b92ccd"
+      "701372318":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 59631104
+        media_type: "application/x-msdownload"
+        digest: "sha256:8edc5b4ba156c0441e0e403cc398589beb9a3b8dc65a5103b569a438a9020c5a"
+      "701372320":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 55185414
+        media_type: "application/x-msdownload"
+        digest: "sha256:66ae1c6cfd70d0970adc576d9cc92fe26cf16910fb56bc7cb3e3011b6fe158ce"
+      "701377336":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 50123009
+        media_type: "application/x-msdownload"
+        digest: "sha256:6cdbb63c04fb0f27738eb1cf84c0f7f39c2e53bb55f769671246d3718efcc5b5"
+      "701377338":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 56865280
+        media_type: "application/x-msdownload"
+        digest: "sha256:bb3730d637b2395d049b781afffc61793b21a24bbf1368c876b2c255d9aea2dc"
+      "701379642":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:0a2ceb26654e166aab36efb390112c69598b38f7de2cac4f1f3215e4f925cd06"
+  "438919468":
+    tag: "v1.17.23"
+    title: "v1.17.23"
+    url: "https://github.com/open-octo/octo-agent/releases/tag/v1.17.23"
+    created_at: "2026-11-09T09:04:18Z"
+    published_at: "2026-11-09T09:09:48Z"
+    updated_at: "2026-11-09T09:14:46Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-octo/octo-agent/zipball/v1.17.23"
+    source_tar_url: "https://api.github.com/repos/open-octo/octo-agent/tarball/v1.17.23"
+    download_base: "https://github.com/open-octo/octo-agent/releases/download/v1.17.23/"
+    assets:
+      "726862630":
+        name: "octo_1.17.23_windows_arm64.zip"
+        url_suffix: "octo_1.17.23_windows_arm64.zip"
+        size: 16715308
+        media_type: "zip"
+        digest: "sha256:eaf329bf82469c1f22cf8ce6c40b46973dcf39563f426f5398367c42ce03226e"
+      "726862712":
+        name: "octo_1.17.23_darwin_all.tar.gz"
+        url_suffix: "octo_1.17.23_darwin_all.tar.gz"
+        size: 38182704
+        media_type: "application/gzip"
+        digest: "sha256:cc75ffa0f4c3c1d79d3756cd9d745260ab028af87f4c64f813b4a1db9871778c"
+      "726862803":
+        name: "octo_1.17.23_linux_amd64.tar.gz"
+        url_suffix: "octo_1.17.23_linux_amd64.tar.gz"
+        size: 19789448
+        media_type: "application/gzip"
+        digest: "sha256:f1d9cdcf062507ae31108d90c7b4c275db741f63ab05d76a743ea117bb222515"
+      "726862873":
+        name: "octo_1.17.23_linux_arm64.tar.gz"
+        url_suffix: "octo_1.17.23_linux_arm64.tar.gz"
+        size: 18488817
+        media_type: "application/gzip"
+        digest: "sha256:5d32668b1c6a40b44d2417c5687d7117edc21b8796b9906c83f8059a9d9d17f2"
+      "726862961":
+        name: "octo_1.17.23_darwin_amd64.tar.gz"
+        url_suffix: "octo_1.17.23_darwin_amd64.tar.gz"
+        size: 19407286
+        media_type: "application/gzip"
+        digest: "sha256:02d76fde159d89cf36ec7095104f91b3b8accc6459180c572769b9542b9f5862"
+      "726863061":
+        name: "octo_1.17.23_darwin_arm64.tar.gz"
+        url_suffix: "octo_1.17.23_darwin_arm64.tar.gz"
+        size: 18789980
+        media_type: "application/gzip"
+        digest: "sha256:c5469994924d21125cc64e59f6f99df40912a209bc183f3044669814d9fa3886"
+      "726863163":
+        name: "octo_1.17.23_windows_amd64.zip"
+        url_suffix: "octo_1.17.23_windows_amd64.zip"
+        size: 19601351
+        media_type: "zip"
+        digest: "sha256:156b466e55f8f90e38d0c543da63de4a649ec7486b3bc78686d626add6f86c48"
+      "726863252":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 685
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:f458956d7db382465e4d2f9c89c37623b5dfc48005d771322795088ab61db2bb"
+      "726866842":
+        name: "Octo-x86_64.AppImage"
+        url_suffix: "Octo-x86_64.AppImage"
+        size: 67418616
+        media_type: "application/vnd.appimage"
+        digest: "sha256:df4ed643a21110c0eb133ec87d5ed57bffd721630fd0be88061c5d97e3f2136f"
+      "726867066":
+        name: "Octo-aarch64.AppImage"
+        url_suffix: "Octo-aarch64.AppImage"
+        size: 62953992
+        media_type: "application/vnd.appimage"
+        digest: "sha256:7913e1ea11ea4c9364e65403f229cef077fee476d5de784bcd33ccc6a903e8d0"
+      "726868726":
+        name: "octo-android.apk"
+        url_suffix: "octo-android.apk"
+        size: 5128687
+        media_type: "application/vnd.android.package-archive"
+        digest: "sha256:8848e0b10200c85e2b51e0ef34edd6b93baa808b5dfd9928cae68e7f0f089cd2"
+      "726869601":
+        name: "octo-desktop-windows-amd64.exe"
+        url_suffix: "octo-desktop-windows-amd64.exe"
+        size: 59632640
+        media_type: "application/x-msdownload"
+        digest: "sha256:8cedc74db1e8aa2f18dc0d64933eb7e3410a404250227fd39e2950ca553f0875"
+      "726869603":
+        name: "octo-setup.exe"
+        url_suffix: "octo-setup.exe"
+        size: 55197806
+        media_type: "application/x-msdownload"
+        digest: "sha256:bfa72a35aa2091f0386bf40cd74f65ba9bf35b5298e5222e8994437402e19133"
+      "726871059":
+        name: "octo-setup-arm64.exe"
+        url_suffix: "octo-setup-arm64.exe"
+        size: 50120604
+        media_type: "application/x-msdownload"
+        digest: "sha256:09bf1a335624a7d7366c5d07fe7851dd7814ae3b6bb7fafc060e115f0a6c1468"
+      "726871061":
+        name: "octo-desktop-windows-arm64.exe"
+        url_suffix: "octo-desktop-windows-arm64.exe"
+        size: 56866816
+        media_type: "application/x-msdownload"
+        digest: "sha256:0cade5c5e9ecb0f5298619f00b0206f700f08a53d806f9a491be7831ace5d61f"
+      "726876193":
+        name: "Octo-darwin-universal.zip"
+        url_suffix: "Octo-darwin-universal.zip"
+        size: 137758931
+        media_type: "zip"
+        digest: "sha256:f1f8131e685caeed0d42897a32cf120b1c26f4badaf1e6f5d2e4f44bc88ced02"
+      "726876194":
+        name: "octo-setup.pkg"
+        url_suffix: "octo-setup.pkg"
+        size: 137775763
+        digest: "sha256:189be1544713821a74cdd614bdefd87838d69a9634b8a87bf47a4d3ea952a2ef"
+      "726877350":
+        name: "desktop-checksums.txt"
+        url_suffix: "desktop-checksums.txt"
+        size: 461
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:f9498a457ed59e22ad5f62ddf420f6f6bb21ee2d6b493582c30ed613fa035dfd"

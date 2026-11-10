@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "local-lake-notes":
+    "aarch64":
+      repository_id: 1228738731
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/local-lake-notes"
+        blob: "1bde26959033df4e1fad9aa6f12876b2c5f58d7c"
+    "armv7l":
+      repository_id: 1228738731
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1228738731
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1228738731
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/local-lake-notes"
+        blob: "103998b97d9e4f5414111bf2b48b7faacd597f9e"
