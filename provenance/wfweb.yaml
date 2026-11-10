@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "wfweb":
+    "aarch64":
+      repository_id: 1163603499
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/wfweb"
+        blob: "dda636e69eba4dcd29261d0cc94b6aba565e3703"
+    "armv7l":
+      repository_id: 1163603499
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1163603499
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1163603499
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/wfweb"
+        blob: "803a56cb8ddb167b99434390644f2d692fd712f5"

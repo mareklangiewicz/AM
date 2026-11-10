@@ -1,0 +1,878 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "repository"
+repository_id: 1159181655
+repository: "jkrperson/tentacles"
+collected_at: "2026-11-10T16:29:44Z"
+scope:
+  page_size: 100
+  pages_fetched: 1
+  history_complete: true
+observed_at: "2026-11-10T16:29:44Z"
+releases:
+  "292954135":
+    tag: "v0.0.1"
+    title: "v0.0.1"
+    url: "https://github.com/jkrperson/tentacles/releases/tag/v0.0.1"
+    created_at: "2026-03-04T16:13:35Z"
+    published_at: "2026-03-04T16:19:48Z"
+    updated_at: "2026-03-04T16:19:48Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/jkrperson/tentacles/zipball/v0.0.1"
+    source_tar_url: "https://api.github.com/repos/jkrperson/tentacles/tarball/v0.0.1"
+    download_base: "https://github.com/jkrperson/tentacles/releases/download/v0.0.1/"
+    assets:
+      "366747932":
+        name: "Tentacles-Windows-0.0.1-Setup.exe.blockmap"
+        url_suffix: "Tentacles-Windows-0.0.1-Setup.exe.blockmap"
+        size: 99629
+        digest: "sha256:70cb64ef2fa48811c8db990850c1b1a8f8589f884e2c3867e79304340b263abe"
+      "366747933":
+        name: "Tentacles-Mac-0.0.1-x64.zip.blockmap"
+        url_suffix: "Tentacles-Mac-0.0.1-x64.zip.blockmap"
+        size: 121584
+        digest: "sha256:3ad07eeff7d063ce7ac9e9177a89cf768918ac158bf6cc92786591fe1476ad13"
+      "366747934":
+        name: "Tentacles-Mac-0.0.1-arm64.zip"
+        url_suffix: "Tentacles-Mac-0.0.1-arm64.zip"
+        size: 109201351
+        media_type: "zip"
+        digest: "sha256:66ffc6583d599f995cd198b9235884466663fd5328f92bf4adc69dc3fde7cf0f"
+      "366747935":
+        name: "Tentacles-Mac-0.0.1-x64.zip"
+        url_suffix: "Tentacles-Mac-0.0.1-x64.zip"
+        size: 114780738
+        media_type: "zip"
+        digest: "sha256:d96aff8d575f1a91cd84092e9949341ffb5b517f9b56ab6cb31a0fbdd29e2afe"
+      "366747937":
+        name: "Tentacles-Mac-0.0.1-x64.dmg.blockmap"
+        url_suffix: "Tentacles-Mac-0.0.1-x64.dmg.blockmap"
+        size: 123827
+        digest: "sha256:a5afe65448cfd8ef415d675a0098292e1af8febd84b286487c755a26ef04ed65"
+      "366747942":
+        name: "Tentacles-Mac-0.0.1-arm64.dmg.blockmap"
+        url_suffix: "Tentacles-Mac-0.0.1-arm64.dmg.blockmap"
+        size: 120113
+        digest: "sha256:c0d717f74a85fade4e2726952b45e0b8d08df790bceebed104cc0b5de6bde5ad"
+      "366747953":
+        name: "Tentacles-Mac-0.0.1-arm64.zip.blockmap"
+        url_suffix: "Tentacles-Mac-0.0.1-arm64.zip.blockmap"
+        size: 116108
+        digest: "sha256:11a0e380ba3b38efd6eaf6a470bc0a6209f241adab23a1a00414ebf2901cbae2"
+      "366872198":
+        name: "elevate.exe"
+        url_suffix: "elevate.exe"
+        size: 107520
+        media_type: "application/x-msdos-program"
+        digest: "sha256:9b1fbf0c11c520ae714af8aa9af12cfd48503eedecd7398d8992ee94d1b4dc37"
+      "366872204":
+        name: "Tentacles.exe"
+        url_suffix: "Tentacles.exe"
+        size: 177056256
+        media_type: "application/x-msdos-program"
+        digest: "sha256:4f73470f9452b8d57894cf8ecae2c16fa222abbd0a78616c7f3710d6f49e0847"
+      "366872206":
+        name: "OpenConsole.exe"
+        url_suffix: "OpenConsole.exe"
+        size: 1148448
+        media_type: "application/x-msdos-program"
+        digest: "sha256:d1fe7faa62f9e955e2ac2371f95d7e5513df4d496255097158f979c94782c5fc"
+      "366876496":
+        name: "latest.yml"
+        url_suffix: "latest.yml"
+        size: 362
+        media_type: "text/yaml"
+        digest: "sha256:9dbc658598bbbf2c0d74faa01dc0bd4f605cf670a32b26596ea958835550d209"
+      "366876497":
+        name: "Tentacles-Linux-0.0.1.AppImage"
+        url_suffix: "Tentacles-Linux-0.0.1.AppImage"
+        size: 124624772
+        digest: "sha256:390cfed07bf24b93dba47716bca0c7cdb2381ad034f6dbc06db76b4a47f04be3"
+      "366876498":
+        name: "Tentacles-Mac-0.0.1-x64.dmg"
+        url_suffix: "Tentacles-Mac-0.0.1-x64.dmg"
+        size: 118901565
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:2562208fd9ac5542feabd73715cbef1645b975db70057327fe5c95687c10e819"
+      "366876499":
+        name: "latest-mac.yml"
+        url_suffix: "latest-mac.yml"
+        size: 513
+        media_type: "text/yaml"
+        digest: "sha256:26abf080810412eccaed6cdb7ca4bcbfabb4c4b50b22545e1bf3d20cbe2ccfbe"
+      "366876500":
+        name: "Tentacles-Mac-0.0.1-arm64.dmg"
+        url_suffix: "Tentacles-Mac-0.0.1-arm64.dmg"
+        size: 113394935
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:205926d55f78397336881ae496d2c774e0d91d8dcb2fb2bff67b3f8c131de1e3"
+      "366876501":
+        name: "latest-linux.yml"
+        url_suffix: "latest-linux.yml"
+        size: 382
+        media_type: "text/yaml"
+        digest: "sha256:ea12da78e3febd4eeb73d39bce41cdc15e306ff29341547fb0bc91edc7fd74b3"
+      "366876503":
+        name: "Tentacles-Windows-0.0.1-Setup.exe"
+        url_suffix: "Tentacles-Windows-0.0.1-Setup.exe"
+        size: 95388603
+        media_type: "application/x-msdos-program"
+        digest: "sha256:45a551e4ad94147f91eb5f9d5049f76254dfc1a973d6903b19c333196dba2cd4"
+  "299109863":
+    tag: "v0.0.2"
+    title: "v0.0.2"
+    url: "https://github.com/jkrperson/tentacles/releases/tag/v0.0.2"
+    created_at: "2026-03-19T19:03:02Z"
+    published_at: "2026-03-19T19:11:56Z"
+    updated_at: "2026-03-19T19:15:42Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/jkrperson/tentacles/zipball/v0.0.2"
+    source_tar_url: "https://api.github.com/repos/jkrperson/tentacles/tarball/v0.0.2"
+    download_base: "https://github.com/jkrperson/tentacles/releases/download/v0.0.2/"
+    assets:
+      "377403103":
+        name: "Tentacles-Mac-arm64.dmg.blockmap"
+        url_suffix: "Tentacles-Mac-arm64.dmg.blockmap"
+        size: 121925
+        digest: "sha256:29c10137804a24b295598ea5734863e81815c1003cdeded9f6bfa78798250e9f"
+      "377403107":
+        name: "Tentacles-Mac-x64.dmg.blockmap"
+        url_suffix: "Tentacles-Mac-x64.dmg.blockmap"
+        size: 129793
+        digest: "sha256:009a496253271c3c8f8f1988b303dc693b855b2ce0f664fc6fe6df4de9bd1e61"
+      "377408473":
+        name: "Tentacles-Linux.AppImage"
+        url_suffix: "Tentacles-Linux.AppImage"
+        size: 127753507
+        digest: "sha256:33c98701d192d91341f5de4e50f9bbf26fd3b5f3f1334d5956978c94386301f5"
+      "377408474":
+        name: "latest.yml"
+        url_suffix: "latest.yml"
+        size: 350
+        media_type: "text/yaml"
+        digest: "sha256:bd992dcc7da8648ce692b9347b08a08f7bc450ba66daa2e4175f3f9171c1e665"
+      "377408475":
+        name: "Tentacles-Windows-Setup.exe"
+        url_suffix: "Tentacles-Windows-Setup.exe"
+        size: 97210500
+        media_type: "application/x-msdos-program"
+        digest: "sha256:fca201e7134db3284094c82adc1df5cd60539efbf70da29431a4e8b9812d18dd"
+      "377408476":
+        name: "latest-linux.yml"
+        url_suffix: "latest-linux.yml"
+        size: 370
+        media_type: "text/yaml"
+        digest: "sha256:86b554eb84bf9909c8b93ca1a58c4bcc184c7fbb6a8eec8f424c90421596550e"
+      "377408479":
+        name: "latest-mac.yml"
+        url_suffix: "latest-mac.yml"
+        size: 495
+        media_type: "text/yaml"
+        digest: "sha256:d4e397e93e707ac92028fa3caf29caf341e42cd99410f90915cae2c74332db02"
+      "377408480":
+        name: "Tentacles-Mac-x64.dmg"
+        url_suffix: "Tentacles-Mac-x64.dmg"
+        size: 122018333
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:28b44fd548d152913e63037671486216ec45b38038443bf6b6c702e1ec1c7054"
+      "377408481":
+        name: "Tentacles-Mac-arm64.dmg"
+        url_suffix: "Tentacles-Mac-arm64.dmg"
+        size: 116470105
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:cd3a0e7c9eccc77df39e915794fed7eea03ed9d231d1769771b5a177ec1207a0"
+  "300335889":
+    tag: "v0.0.3"
+    title: "v0.0.3"
+    url: "https://github.com/jkrperson/tentacles/releases/tag/v0.0.3"
+    created_at: "2026-03-23T17:54:08Z"
+    published_at: "2026-03-23T17:59:20Z"
+    updated_at: "2026-03-23T17:59:20Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/jkrperson/tentacles/zipball/v0.0.3"
+    source_tar_url: "https://api.github.com/repos/jkrperson/tentacles/tarball/v0.0.3"
+    download_base: "https://github.com/jkrperson/tentacles/releases/download/v0.0.3/"
+    assets:
+      "379891215":
+        name: "latest.yml"
+        url_suffix: "latest.yml"
+        size: 350
+        media_type: "text/yaml"
+        digest: "sha256:a8aa33e918105c7b0eafb134168469467060d8e5adef3e4a24c50f265a889df0"
+      "379891216":
+        name: "latest-linux.yml"
+        url_suffix: "latest-linux.yml"
+        size: 370
+        media_type: "text/yaml"
+        digest: "sha256:eff84c6914b80a63d042987c4799a3f49632ce52848244026219a86ecac07893"
+      "379891217":
+        name: "Tentacles-Windows-Setup.exe"
+        url_suffix: "Tentacles-Windows-Setup.exe"
+        size: 97206649
+        media_type: "application/x-msdos-program"
+        digest: "sha256:8b442209b8c19859cf47ae2ddc139f3533036a3a706ba4058efc3f3794a88af2"
+      "379891218":
+        name: "latest-mac.yml"
+        url_suffix: "latest-mac.yml"
+        size: 801
+        media_type: "text/yaml"
+        digest: "sha256:7102d4e6322bd25baebc73bd5b79e63b47a01d3817fc95023bfe0ff61365c40b"
+      "379891219":
+        name: "Tentacles-Linux.AppImage"
+        url_suffix: "Tentacles-Linux.AppImage"
+        size: 127772807
+        digest: "sha256:9bc650a897e79b9c02af9b7560e2e664caea5dcac5ebf003cf4867db4cb78284"
+      "379891221":
+        name: "Tentacles-Mac-arm64.dmg"
+        url_suffix: "Tentacles-Mac-arm64.dmg"
+        size: 116341505
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:f7562916f74ff92a79ab37b1f71d7721692a309d53b0a61d8ae5517052d76733"
+      "379891222":
+        name: "Tentacles-Mac-x64.dmg"
+        url_suffix: "Tentacles-Mac-x64.dmg"
+        size: 121869652
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:f666583b0876d4c07501cf197c66f08613121122a843b43406b4a46eeee4eec4"
+  "303134630":
+    tag: "v0.0.4"
+    title: "v0.0.4"
+    url: "https://github.com/jkrperson/tentacles/releases/tag/v0.0.4"
+    created_at: "2026-03-30T11:28:22Z"
+    published_at: "2026-03-30T11:29:00Z"
+    updated_at: "2026-03-30T11:33:16Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/jkrperson/tentacles/zipball/v0.0.4"
+    source_tar_url: "https://api.github.com/repos/jkrperson/tentacles/tarball/v0.0.4"
+    download_base: "https://github.com/jkrperson/tentacles/releases/download/v0.0.4/"
+    assets:
+      "384677893":
+        name: "Tentacles-Linux.AppImage"
+        url_suffix: "Tentacles-Linux.AppImage"
+        size: 128052712
+        digest: "sha256:40cdcc2e383a5fe919b6c5192d0bc0e6127b98ec385515918149440fce038c92"
+      "384677894":
+        name: "Tentacles-Windows-Setup.exe"
+        url_suffix: "Tentacles-Windows-Setup.exe"
+        size: 97486543
+        media_type: "application/x-msdos-program"
+        digest: "sha256:4c799f17f9b8fbbc37384f9301d3144749c4c402562492232d5b00a7fe47e202"
+      "384677895":
+        name: "latest.yml"
+        url_suffix: "latest.yml"
+        size: 350
+        media_type: "text/yaml"
+        digest: "sha256:637fc649ebd6286d41e7700a4748cd080b3f678ed4cfdda30b2a661c12905c65"
+      "384677896":
+        name: "latest-linux.yml"
+        url_suffix: "latest-linux.yml"
+        size: 370
+        media_type: "text/yaml"
+        digest: "sha256:4c876dbeef4b700e2ef7359bc936d1b44dc333c64d5dcb60870a360960f965a2"
+      "384677897":
+        name: "Tentacles-Mac-x64.dmg"
+        url_suffix: "Tentacles-Mac-x64.dmg"
+        size: 122394268
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:12578807d45d91fadc544087b80a9ba831e20df75c0c11b607d3a272c248cd06"
+      "384677898":
+        name: "Tentacles-Mac-arm64.dmg"
+        url_suffix: "Tentacles-Mac-arm64.dmg"
+        size: 116820829
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:a94926938073606f1faa312d00cecbb299a34093dbfc2a41fa4b17285a2ae685"
+      "384677899":
+        name: "latest-mac.yml"
+        url_suffix: "latest-mac.yml"
+        size: 801
+        media_type: "text/yaml"
+        digest: "sha256:129df4fd0ffdff13a2088313638fc2c4eb18a4a18c532728965c2a437833835a"
+  "303725538":
+    tag: "v0.0.5"
+    title: "v0.0.5"
+    url: "https://github.com/jkrperson/tentacles/releases/tag/v0.0.5"
+    created_at: "2026-03-31T13:55:54Z"
+    published_at: "2026-03-31T14:04:37Z"
+    updated_at: "2026-03-31T14:09:23Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/jkrperson/tentacles/zipball/v0.0.5"
+    source_tar_url: "https://api.github.com/repos/jkrperson/tentacles/tarball/v0.0.5"
+    download_base: "https://github.com/jkrperson/tentacles/releases/download/v0.0.5/"
+    assets:
+      "385577177":
+        name: "Tentacles-Mac-arm64.dmg"
+        url_suffix: "Tentacles-Mac-arm64.dmg"
+        size: 116809460
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:094130e20d09b7944f21b1efe8a750a6d5162b4f56367f3c74a5c301aba7bc93"
+      "385577178":
+        name: "Tentacles-Linux.AppImage"
+        url_suffix: "Tentacles-Linux.AppImage"
+        size: 128052787
+        digest: "sha256:7c44c932afb7409cbacfc2dbcf050daf38296ccdd771b8eec367bc7745d21344"
+      "385577179":
+        name: "Tentacles-Mac-x64.dmg"
+        url_suffix: "Tentacles-Mac-x64.dmg"
+        size: 122399932
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:4c2d7e7dd6cfe082bcaf82d30c8c2c22e08d9118a1c3127874158e9a69fe42ce"
+      "385577180":
+        name: "latest-linux.yml"
+        url_suffix: "latest-linux.yml"
+        size: 370
+        media_type: "text/yaml"
+        digest: "sha256:2bc3f183fe3cf57cd316676434b5c75b6125231986996a639d7d43be874850fd"
+      "385577181":
+        name: "latest-mac.yml"
+        url_suffix: "latest-mac.yml"
+        size: 801
+        media_type: "text/yaml"
+        digest: "sha256:345045e217587673a3ab8e7ff5c8eed9f54cea2d8de17527cf6f6797d2884642"
+      "385577182":
+        name: "Tentacles-Windows-Setup.exe"
+        url_suffix: "Tentacles-Windows-Setup.exe"
+        size: 97486486
+        media_type: "application/x-msdos-program"
+        digest: "sha256:e1adee384edf52b9392000935fb89751d9e1feedf5fb03d1d15c3b57e961faec"
+      "385577183":
+        name: "latest.yml"
+        url_suffix: "latest.yml"
+        size: 350
+        media_type: "text/yaml"
+        digest: "sha256:360895a2df317f4841454096ef6f6e3c249ade46c4a2749800a32b46f795ee50"
+  "304266521":
+    tag: "v0.0.6"
+    title: "v0.0.6"
+    url: "https://github.com/jkrperson/tentacles/releases/tag/v0.0.6"
+    created_at: "2026-04-01T13:33:46Z"
+    published_at: "2026-04-01T15:33:14Z"
+    updated_at: "2026-04-01T15:38:11Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/jkrperson/tentacles/zipball/v0.0.6"
+    source_tar_url: "https://api.github.com/repos/jkrperson/tentacles/tarball/v0.0.6"
+    download_base: "https://github.com/jkrperson/tentacles/releases/download/v0.0.6/"
+    assets:
+      "386366314":
+        name: "latest.yml"
+        url_suffix: "latest.yml"
+        size: 351
+        media_type: "text/yaml"
+        digest: "sha256:9897d451f4b1118634e8eaf304eb36dc5d7956bb3b065a953bff6b6b59bbe26a"
+      "386366315":
+        name: "latest-mac.yml"
+        url_suffix: "latest-mac.yml"
+        size: 801
+        media_type: "text/yaml"
+        digest: "sha256:0d6a6c1bfd044e371119ac7182e65ba2384278c36faf01cbcefe1806050768ca"
+      "386366316":
+        name: "latest-linux.yml"
+        url_suffix: "latest-linux.yml"
+        size: 370
+        media_type: "text/yaml"
+        digest: "sha256:293a18a353fbc3b958f3b3592fa8b25a779a91606c34db0e5152cb7a1516aaae"
+      "386366317":
+        name: "Tentacles-Mac-arm64.dmg"
+        url_suffix: "Tentacles-Mac-arm64.dmg"
+        size: 130791911
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:749ea6b0d1255ec02a28b324ae18ac0a4242b83330d0e07a2dd1f95abd7dbe68"
+      "386366318":
+        name: "Tentacles-Windows-Setup.exe"
+        url_suffix: "Tentacles-Windows-Setup.exe"
+        size: 106618599
+        media_type: "application/x-msdos-program"
+        digest: "sha256:89f59a90acfb78e29607a61dc19bc5e3aca02bd34e3b41e93900b9327b6d5025"
+      "386366319":
+        name: "Tentacles-Mac-x64.dmg"
+        url_suffix: "Tentacles-Mac-x64.dmg"
+        size: 136328257
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:e7cea6443bce624d67bfa886c1d1aef4491ce0442b6223c0c44de3a0e2344746"
+      "386366320":
+        name: "Tentacles-Linux.AppImage"
+        url_suffix: "Tentacles-Linux.AppImage"
+        size: 142402900
+        digest: "sha256:006e06035516697265136115bf73478684672d20d5c73277541d28b69d8364a8"
+  "305405493":
+    tag: "v0.0.7"
+    title: "v0.0.7"
+    url: "https://github.com/jkrperson/tentacles/releases/tag/v0.0.7"
+    created_at: "2026-04-05T10:26:20Z"
+    published_at: "2026-04-05T10:38:31Z"
+    updated_at: "2026-04-05T10:43:30Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/jkrperson/tentacles/zipball/v0.0.7"
+    source_tar_url: "https://api.github.com/repos/jkrperson/tentacles/tarball/v0.0.7"
+    download_base: "https://github.com/jkrperson/tentacles/releases/download/v0.0.7/"
+    assets:
+      "389295027":
+        name: "Tentacles-Mac-x64.zip"
+        url_suffix: "Tentacles-Mac-x64.zip"
+        size: 137913018
+        media_type: "zip"
+        digest: "sha256:60c6552789ea52ab7eaa8b8236bf92e5e94b490474b1fe56a3e52f66748fb87e"
+      "389295030":
+        name: "Tentacles-Mac-arm64.zip"
+        url_suffix: "Tentacles-Mac-arm64.zip"
+        size: 132333631
+        media_type: "zip"
+        digest: "sha256:0531ace6343537bea391f64e2e8eb1d0bd8cee71299fc4345246a15666d12b85"
+      "389300507":
+        name: "latest.yml"
+        url_suffix: "latest.yml"
+        size: 351
+        media_type: "text/yaml"
+        digest: "sha256:ff7c1e391461e2c716ad1040faf95a11e3f950f4cdb82764ed052aee286bf91c"
+      "389300508":
+        name: "Tentacles-Windows-Setup.exe"
+        url_suffix: "Tentacles-Windows-Setup.exe"
+        size: 111610200
+        media_type: "application/x-msdos-program"
+        digest: "sha256:612725e02ae9f35e994810c32fd7819a1aa59f758724bbb190cf6e8d1fe71473"
+      "389300509":
+        name: "latest-mac.yml"
+        url_suffix: "latest-mac.yml"
+        size: 801
+        media_type: "text/yaml"
+        digest: "sha256:2269865069fe832166a80a290cbabd27c0dc2bae58493a2b6983c96c1cdd9cc5"
+      "389300510":
+        name: "latest-linux.yml"
+        url_suffix: "latest-linux.yml"
+        size: 370
+        media_type: "text/yaml"
+        digest: "sha256:74b122b0d3f2a1e57b09c2a9be3da336021b0e822b6a0010a401eea003b4da8c"
+      "389300511":
+        name: "Tentacles-Linux.AppImage"
+        url_suffix: "Tentacles-Linux.AppImage"
+        size: 148820827
+        digest: "sha256:37ef9957a84a12f05195311a311758edc1eb6d09eb11966005abc4d7a3a62c64"
+      "389300512":
+        name: "Tentacles-Mac-x64.dmg"
+        url_suffix: "Tentacles-Mac-x64.dmg"
+        size: 142973735
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:977a62d8f65f011373e86813ea2db321be8fb39b4a0ccc06833e582ada9583a7"
+      "389300513":
+        name: "Tentacles-Mac-arm64.dmg"
+        url_suffix: "Tentacles-Mac-arm64.dmg"
+        size: 137405375
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:708a5fb9ee920fbd84ffe3a746ea5bc23b2ce821cf4736dd3e4c657b2539f94a"
+  "308254439":
+    tag: "v0.0.8"
+    title: "v0.0.8"
+    url: "https://github.com/jkrperson/tentacles/releases/tag/v0.0.8"
+    created_at: "2026-04-13T09:43:19Z"
+    published_at: "2026-04-13T09:51:12Z"
+    updated_at: "2026-04-13T09:56:20Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/jkrperson/tentacles/zipball/v0.0.8"
+    source_tar_url: "https://api.github.com/repos/jkrperson/tentacles/tarball/v0.0.8"
+    download_base: "https://github.com/jkrperson/tentacles/releases/download/v0.0.8/"
+    assets:
+      "395299143":
+        name: "latest-linux.yml"
+        url_suffix: "latest-linux.yml"
+        size: 370
+        media_type: "text/yaml"
+        digest: "sha256:8ef71d1d971c2ef2ab60fd6b2ebd810654e75ae8043530159a5146dfa13c6c23"
+      "395299144":
+        name: "latest.yml"
+        url_suffix: "latest.yml"
+        size: 351
+        media_type: "text/yaml"
+        digest: "sha256:8ea12ab05d36a40c224c0fa2df054171e2c8868109c9ddaa42b58219df6a3e5b"
+      "395299145":
+        name: "Tentacles-Mac-x64.dmg"
+        url_suffix: "Tentacles-Mac-x64.dmg"
+        size: 143028062
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:5fd8f25d085c5bcc068f19935df158d303185215158d12de151e288f35bf2373"
+      "395299146":
+        name: "Tentacles-Windows-Setup.exe"
+        url_suffix: "Tentacles-Windows-Setup.exe"
+        size: 111644552
+        media_type: "application/x-msdos-program"
+        digest: "sha256:fb5eb20cf1e8ff9117023c7da10d8265c951e50c21be23d5995c70fe64d10e1a"
+      "395299147":
+        name: "latest-mac.yml"
+        url_suffix: "latest-mac.yml"
+        size: 801
+        media_type: "text/yaml"
+        digest: "sha256:d79570a07947e66143aaa9af36b732a970a47609f234882a0204fad9f1fb81e6"
+      "395299148":
+        name: "Tentacles-Linux.AppImage"
+        url_suffix: "Tentacles-Linux.AppImage"
+        size: 148874273
+        digest: "sha256:f16f6f2912d3a791630160d87cd2ea6561cd350b7c9534f62e53b31d90dff6c1"
+      "395299149":
+        name: "Tentacles-Mac-arm64.dmg"
+        url_suffix: "Tentacles-Mac-arm64.dmg"
+        size: 137466375
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:f774329aa385220f45141a5b9f8d29765b86324468854d9acbdfb98d37042e42"
+  "313536096":
+    tag: "v0.0.10"
+    title: "v0.0.10"
+    url: "https://github.com/jkrperson/tentacles/releases/tag/v0.0.10"
+    created_at: "2026-04-25T06:57:30Z"
+    published_at: "2026-04-25T07:05:20Z"
+    updated_at: "2026-04-25T07:05:20Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/jkrperson/tentacles/zipball/v0.0.10"
+    source_tar_url: "https://api.github.com/repos/jkrperson/tentacles/tarball/v0.0.10"
+    download_base: "https://github.com/jkrperson/tentacles/releases/download/v0.0.10/"
+    assets:
+      "405201228":
+        name: "latest-linux.yml"
+        url_suffix: "latest-linux.yml"
+        size: 371
+        media_type: "text/yaml"
+        digest: "sha256:d57366a785530df48ab0d0e25cf169a221dee362418347c8ce80340733428210"
+      "405201229":
+        name: "latest-mac.yml"
+        url_suffix: "latest-mac.yml"
+        size: 802
+        media_type: "text/yaml"
+        digest: "sha256:cf1279df4f1b0ee8b033cad2216b6e9caa234ed7a1ab63d5392735d92b132b7c"
+      "405201230":
+        name: "Tentacles-Windows-Setup.exe"
+        url_suffix: "Tentacles-Windows-Setup.exe"
+        size: 111706320
+        media_type: "application/x-msdos-program"
+        digest: "sha256:5f8c30473d01701d078e8d0ba6cb0fd0e14547c7ed59a6b650fa4159df975cea"
+      "405201231":
+        name: "latest.yml"
+        url_suffix: "latest.yml"
+        size: 352
+        media_type: "text/yaml"
+        digest: "sha256:e044111e5e4a9053095697bc3bc7a8e9828ab755af85d85ae7b36d4095c69c63"
+      "405201232":
+        name: "Tentacles-Mac-arm64.dmg"
+        url_suffix: "Tentacles-Mac-arm64.dmg"
+        size: 137959854
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:ae9a4cb1f1984cf9b5dfd2e3d0a73e2bce6ac814ecf9a1f92975c19fd6aa75d7"
+      "405201233":
+        name: "Tentacles-Mac-x64.dmg"
+        url_suffix: "Tentacles-Mac-x64.dmg"
+        size: 144977148
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:0c387291afaf3258d7400a311c2627c509a0ddbf19d50ac2f76200e32a7fcae9"
+      "405201234":
+        name: "Tentacles-Mac-arm64.zip"
+        url_suffix: "Tentacles-Mac-arm64.zip"
+        size: 132051871
+        media_type: "zip"
+        digest: "sha256:20c76badcd919c3e5ca0eca9f833868c4ca20242067273d3370911083add10b6"
+      "405201235":
+        name: "Tentacles-Linux.AppImage"
+        url_suffix: "Tentacles-Linux.AppImage"
+        size: 148877571
+        digest: "sha256:bd8068b9613ee59ba10898cae8bcab633988c6dcd0d673a99b18d635b731d21e"
+      "405201236":
+        name: "Tentacles-Mac-x64.zip"
+        url_suffix: "Tentacles-Mac-x64.zip"
+        size: 139079055
+        media_type: "zip"
+        digest: "sha256:10b134bab3a1e03c0108d564c0735569c9eb0de44804e539a7cffdf33b2de5d7"
+  "313541300":
+    tag: "v0.0.11"
+    title: "v0.0.11"
+    url: "https://github.com/jkrperson/tentacles/releases/tag/v0.0.11"
+    created_at: "2026-04-25T07:42:28Z"
+    published_at: "2026-04-25T07:49:08Z"
+    updated_at: "2026-04-25T07:49:08Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/jkrperson/tentacles/zipball/v0.0.11"
+    source_tar_url: "https://api.github.com/repos/jkrperson/tentacles/tarball/v0.0.11"
+    download_base: "https://github.com/jkrperson/tentacles/releases/download/v0.0.11/"
+    assets:
+      "405216916":
+        name: "latest.yml"
+        url_suffix: "latest.yml"
+        size: 352
+        media_type: "text/yaml"
+        digest: "sha256:72b19ebab21ed74dc2039b2407e5b69cf53d4a3c9bf8eb3efd84bca1686910a6"
+      "405216917":
+        name: "latest-linux.yml"
+        url_suffix: "latest-linux.yml"
+        size: 371
+        media_type: "text/yaml"
+        digest: "sha256:aecb4514d539b1b15f64263d22ced38ec675acd91acb0a2f70b1ec539d8613d3"
+      "405216918":
+        name: "latest-mac.yml"
+        url_suffix: "latest-mac.yml"
+        size: 802
+        media_type: "text/yaml"
+        digest: "sha256:be2da0fac98b5115a3bcd0350849fb53db9c9862a3dfe55facef64e2e03d7312"
+      "405216919":
+        name: "Tentacles-Windows-Setup.exe"
+        url_suffix: "Tentacles-Windows-Setup.exe"
+        size: 111707856
+        media_type: "application/x-msdos-program"
+        digest: "sha256:7eac257be9baf72887a8835e8ed32cc185939199b8192419cecbf3e64b6298f7"
+      "405216920":
+        name: "Tentacles-Mac-arm64.dmg"
+        url_suffix: "Tentacles-Mac-arm64.dmg"
+        size: 137967319
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:d311c8de04ea47f15ecf5727c64f093dc3885b2b7dd33c85b7bf08fe7ebbaf19"
+      "405216921":
+        name: "Tentacles-Mac-x64.dmg"
+        url_suffix: "Tentacles-Mac-x64.dmg"
+        size: 144979230
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:8007666fe387238ea12ed2fa1e75355d66b494b2040c90809c17c402232f1f17"
+      "405216922":
+        name: "Tentacles-Mac-arm64.zip"
+        url_suffix: "Tentacles-Mac-arm64.zip"
+        size: 132052013
+        media_type: "zip"
+        digest: "sha256:0764249dcf7c8c91b73800a2d169d3e7b4d8412c986739d33b628fd9c78c9bc3"
+      "405216923":
+        name: "Tentacles-Mac-x64.zip"
+        url_suffix: "Tentacles-Mac-x64.zip"
+        size: 139079139
+        media_type: "zip"
+        digest: "sha256:7f4b9ad21258d3d0f67e35072a6ec9fd4a6d71fee5486e6ad8d975e4b6dc9d65"
+      "405216924":
+        name: "Tentacles-Linux.AppImage"
+        url_suffix: "Tentacles-Linux.AppImage"
+        size: 148876760
+        digest: "sha256:db6d47fa0f6c33d9bb03eaf555706a434cbc1fa596e46b357be73ea9459f61cb"
+  "313568781":
+    tag: "v0.0.12"
+    title: "v0.0.12"
+    url: "https://github.com/jkrperson/tentacles/releases/tag/v0.0.12"
+    created_at: "2026-04-25T11:28:54Z"
+    published_at: "2026-04-25T11:37:40Z"
+    updated_at: "2026-04-25T11:44:50Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/jkrperson/tentacles/zipball/v0.0.12"
+    source_tar_url: "https://api.github.com/repos/jkrperson/tentacles/tarball/v0.0.12"
+    download_base: "https://github.com/jkrperson/tentacles/releases/download/v0.0.12/"
+    assets:
+      "405292705":
+        name: "Tentacles-Mac-arm64.zip.blockmap"
+        url_suffix: "Tentacles-Mac-arm64.zip.blockmap"
+        size: 139117
+        digest: "sha256:6ed7b579a386f8efb5d2af5f119d3e0771e31b276ad45379c5e5379b69799978"
+      "405292706":
+        name: "Tentacles-Mac-arm64.dmg.blockmap"
+        url_suffix: "Tentacles-Mac-arm64.dmg.blockmap"
+        size: 145811
+        digest: "sha256:f9940a2c90b552cacb2811d639fff25597368e51419b14f9c3c1ad878cb0d474"
+      "405292711":
+        name: "Tentacles-Mac-x64.dmg.blockmap"
+        url_suffix: "Tentacles-Mac-x64.dmg.blockmap"
+        size: 152327
+        digest: "sha256:ddecf23e9338ebe714f1d5ced9eb8ba6ba12f991a8378238401298a220889b2c"
+      "405292715":
+        name: "Tentacles-Mac-x64.zip.blockmap"
+        url_suffix: "Tentacles-Mac-x64.zip.blockmap"
+        size: 147649
+        digest: "sha256:2c42f902ad96c62ff86d097ecc31a563023c5d63a2ea09223cb1bbaa8e2f7870"
+      "405295280":
+        name: "Tentacles-Windows-Setup.exe"
+        url_suffix: "Tentacles-Windows-Setup.exe"
+        size: 111707824
+        media_type: "application/x-msdos-program"
+        digest: "sha256:f21a8294346d7fd4479c96fd332a46dccccf529586dec1d498aa0431a8009bb1"
+      "405295281":
+        name: "Tentacles-Linux.AppImage"
+        url_suffix: "Tentacles-Linux.AppImage"
+        size: 148886473
+        digest: "sha256:fcec15a7cdd1f975d63f6bae89cda1f7b29697fc8aa2464b755d9e85606cb5da"
+      "405295282":
+        name: "latest.yml"
+        url_suffix: "latest.yml"
+        size: 352
+        media_type: "text/yaml"
+        digest: "sha256:8550d5129c46a1f6c6eed1699f02522cc12ba8b8055ab876f293fbe242762d0f"
+      "405295283":
+        name: "latest-linux.yml"
+        url_suffix: "latest-linux.yml"
+        size: 371
+        media_type: "text/yaml"
+        digest: "sha256:c4f37c83ea1ed62860eebccb9a7f4c739a6c42af9cae74d6de9e16d051587ce6"
+      "405295284":
+        name: "Tentacles-Mac-arm64.zip"
+        url_suffix: "Tentacles-Mac-arm64.zip"
+        size: 132054031
+        media_type: "zip"
+        digest: "sha256:25ed2db235fc254c7381c3d59502d97af19477861116806175ffb389e9ae150d"
+      "405295285":
+        name: "Tentacles-Mac-x64.dmg"
+        url_suffix: "Tentacles-Mac-x64.dmg"
+        size: 144961859
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:78be5bd529a227de0ce7393862419c4ed23dc06277b1671319953eb603a8cbea"
+      "405295286":
+        name: "latest-mac.yml"
+        url_suffix: "latest-mac.yml"
+        size: 802
+        media_type: "text/yaml"
+        digest: "sha256:93737f2b818deff53de182402d26e1246e0ace3667b2daeccd68ad56a81136f8"
+      "405295287":
+        name: "Tentacles-Mac-x64.zip"
+        url_suffix: "Tentacles-Mac-x64.zip"
+        size: 139081210
+        media_type: "zip"
+        digest: "sha256:b453f05e87614b2db7e51008e27f63b65fe9c606013d3d467d38fcb3caeb2980"
+      "405295288":
+        name: "Tentacles-Mac-arm64.dmg"
+        url_suffix: "Tentacles-Mac-arm64.dmg"
+        size: 137956579
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:87a752e570c5a2b602b43c42feb4ba37a1ef4719b29c1cecaef66d30b6ea5ffa"
+  "313781393":
+    tag: "v0.0.13"
+    title: "v0.0.13"
+    url: "https://github.com/jkrperson/tentacles/releases/tag/v0.0.13"
+    created_at: "2026-04-26T16:34:00Z"
+    published_at: "2026-04-26T16:50:07Z"
+    updated_at: "2026-04-26T16:57:42Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/jkrperson/tentacles/zipball/v0.0.13"
+    source_tar_url: "https://api.github.com/repos/jkrperson/tentacles/tarball/v0.0.13"
+    download_base: "https://github.com/jkrperson/tentacles/releases/download/v0.0.13/"
+    assets:
+      "405995863":
+        name: "Tentacles-Mac-arm64.dmg.blockmap"
+        url_suffix: "Tentacles-Mac-arm64.dmg.blockmap"
+        size: 148562
+        digest: "sha256:2eff87c7dfd0dc7154032c676416bc204b09efbc50e379c8da59827e98dfd489"
+      "405995875":
+        name: "Tentacles-Mac-arm64.zip.blockmap"
+        url_suffix: "Tentacles-Mac-arm64.zip.blockmap"
+        size: 141397
+        digest: "sha256:7352b0dc6d5e878331be6f8b435b1120648414f5ca11cd33165982243efb9e1d"
+      "405995886":
+        name: "Tentacles-Mac-x64.dmg.blockmap"
+        url_suffix: "Tentacles-Mac-x64.dmg.blockmap"
+        size: 155443
+        digest: "sha256:832492c1dcf0f31ad7f46abb393c8d0772e120b244633a1263fd96c832e0690f"
+      "405995894":
+        name: "Tentacles-Mac-x64.zip.blockmap"
+        url_suffix: "Tentacles-Mac-x64.zip.blockmap"
+        size: 149306
+        digest: "sha256:6c8d00d2fe4f1f2d93393309b8a0763fa4e18d72881da9e060ec0d5d69011ae8"
+      "406003252":
+        name: "latest-linux.yml"
+        url_suffix: "latest-linux.yml"
+        size: 371
+        media_type: "text/yaml"
+        digest: "sha256:d27aacf5c48910477db749b781d619aeeb4e2ae9d1dba1cef38c681f75c936dc"
+      "406003253":
+        name: "Tentacles-Windows-Setup.exe"
+        url_suffix: "Tentacles-Windows-Setup.exe"
+        size: 111715568
+        media_type: "application/x-msdos-program"
+        digest: "sha256:dd5a22354e6c52dcbc9b1aed29623393e6cea7c2585dd0c584e4cdb186628da1"
+      "406003254":
+        name: "latest.yml"
+        url_suffix: "latest.yml"
+        size: 352
+        media_type: "text/yaml"
+        digest: "sha256:00135f7da1c128fa4429546af632ced252db2cfe9ab7602bb8bdcec8b6cf768a"
+      "406003255":
+        name: "Tentacles-Linux.AppImage"
+        url_suffix: "Tentacles-Linux.AppImage"
+        size: 148906241
+        digest: "sha256:920d8ed75fd53f6543c6100c5bb792d9150152382739641b347ce3655819cfb4"
+      "406003256":
+        name: "latest-mac.yml"
+        url_suffix: "latest-mac.yml"
+        size: 802
+        media_type: "text/yaml"
+        digest: "sha256:f710f73eddb543dc2c505f801dd1f63ac56f37ca8cc54ed0d705dd5bc2e0a0be"
+      "406003257":
+        name: "Tentacles-Mac-x64.zip"
+        url_suffix: "Tentacles-Mac-x64.zip"
+        size: 139125599
+        media_type: "zip"
+        digest: "sha256:ec2ee06cd322a2ea3f78a8373d6531bd866d154de2435858b87f74d890ea0ab8"
+      "406003258":
+        name: "Tentacles-Mac-arm64.dmg"
+        url_suffix: "Tentacles-Mac-arm64.dmg"
+        size: 137993566
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:40da7dbc8602e485395f67f2cfe8261ac96f3dfc93fffa0f9e0f55bcb86c5602"
+      "406003259":
+        name: "Tentacles-Mac-arm64.zip"
+        url_suffix: "Tentacles-Mac-arm64.zip"
+        size: 132098398
+        media_type: "zip"
+        digest: "sha256:940c1b4b6e6dcc30ed57768be3f90e3bcb1f0a8485dbd8fdac9dfd3552ce7117"
+      "406003260":
+        name: "Tentacles-Mac-x64.dmg"
+        url_suffix: "Tentacles-Mac-x64.dmg"
+        size: 144990159
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:3f037f06c1d9c34be59f227a23c00345b33a8e17ab06f9afbddad334d59af74c"
+  "315651064":
+    tag: "v0.0.14"
+    title: "v0.0.14"
+    url: "https://github.com/jkrperson/tentacles/releases/tag/v0.0.14"
+    created_at: "2026-04-30T07:48:38Z"
+    published_at: "2026-04-30T07:50:36Z"
+    updated_at: "2026-04-30T07:58:33Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/jkrperson/tentacles/zipball/v0.0.14"
+    source_tar_url: "https://api.github.com/repos/jkrperson/tentacles/tarball/v0.0.14"
+    download_base: "https://github.com/jkrperson/tentacles/releases/download/v0.0.14/"
+    assets:
+      "408871074":
+        name: "latest-mac.yml"
+        url_suffix: "latest-mac.yml"
+        size: 802
+        media_type: "text/yaml"
+        digest: "sha256:ff5236aeadef7b0ac452f033d903a63ca546283c5c7e8bd2388649810ffafce3"
+      "408871075":
+        name: "latest.yml"
+        url_suffix: "latest.yml"
+        size: 352
+        media_type: "text/yaml"
+        digest: "sha256:5dd7a11d3d268deec15682fa17c302b4b6ce9d688f81c701d82eab9799d96daf"
+      "408871076":
+        name: "Tentacles-Mac-arm64.dmg"
+        url_suffix: "Tentacles-Mac-arm64.dmg"
+        size: 138011864
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:e5107b960e630d1cebe82a0db78975c9e2680da8144b3b9b76feee2c434720e8"
+      "408871077":
+        name: "latest-linux.yml"
+        url_suffix: "latest-linux.yml"
+        size: 371
+        media_type: "text/yaml"
+        digest: "sha256:fe8e6d2288d4e7b26463b255c991fb0484344e2e352a97ebe0c542e128f1388e"
+      "408871078":
+        name: "Tentacles-Mac-x64.zip"
+        url_suffix: "Tentacles-Mac-x64.zip"
+        size: 139125980
+        media_type: "zip"
+        digest: "sha256:bfc8281fe5cf87b4833f45a56d81810c12231cca916dae9e5af71da8f0500aeb"
+      "408871079":
+        name: "Tentacles-Mac-arm64.zip"
+        url_suffix: "Tentacles-Mac-arm64.zip"
+        size: 132098799
+        media_type: "zip"
+        digest: "sha256:881c3884b7e5205d4cbcb24d7eb3e96104d4b4b515c1909dc29fbf2e53c0e630"
+      "408871080":
+        name: "Tentacles-Mac-x64.dmg"
+        url_suffix: "Tentacles-Mac-x64.dmg"
+        size: 145024388
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:7111fd25a59a91a44f202209f5f5d369f915e43950e7f2cb79a9c0730c584a56"
+      "408871081":
+        name: "Tentacles-Windows-Setup.exe"
+        url_suffix: "Tentacles-Windows-Setup.exe"
+        size: 111716696
+        media_type: "application/x-msdos-program"
+        digest: "sha256:47a6be02d38111d9dff681448593884e4550c7abc3c59e3fe08d0c568b2455ea"
+      "408871082":
+        name: "Tentacles-Linux.AppImage"
+        url_suffix: "Tentacles-Linux.AppImage"
+        size: 148906430
+        digest: "sha256:956ff829d1ecf99e4bf8bdf683adb20c154056ec155dc708100408d0ee79cab0"

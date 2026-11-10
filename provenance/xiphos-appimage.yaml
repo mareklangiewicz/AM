@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "xiphos":
+    "aarch64":
+      repository_id: 1168330728
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/xiphos"
+        blob: "1ea478a6b8e622cd8f33f35a0f91522f813b9984"
+    "armv7l":
+      repository_id: 1168330728
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1168330728
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1168330728
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/xiphos"
+        blob: "c65e9a60510bd3e335c57bb2a0b9813b468220cd"

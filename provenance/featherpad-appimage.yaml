@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "featherpad":
+    "aarch64":
+      repository_id: 1167886672
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/featherpad"
+        blob: "5b8ae79c589baa9be94db9b1cbb2ba7f79d59aa8"
+    "armv7l":
+      repository_id: 1167886672
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1167886672
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1167886672
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/featherpad"
+        blob: "baa382e9f7d3bc035702b4da0aad463aff5ae806"

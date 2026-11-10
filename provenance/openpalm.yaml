@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "openpalm":
+    "aarch64":
+      repository_id: 1159761516
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/openpalm"
+        blob: "dd043d49c4537339ca2d18c2218c0903706f708d"
+    "armv7l":
+      repository_id: 1159761516
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1159761516
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1159761516
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/openpalm"
+        blob: "17a334ad49c352ba40085da6e70e1e41dc40bbf3"

@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "hatari":
+    "aarch64":
+      repository_id: 1168149029
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/hatari"
+        blob: "4e026890970b0619d7f3f76fba298723741e2e80"
+    "armv7l":
+      repository_id: 1168149029
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1168149029
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1168149029
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/hatari"
+        blob: "b46aa1ae2cb1e8804b106dce496c46f57d0c05c2"

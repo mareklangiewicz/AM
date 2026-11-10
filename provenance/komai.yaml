@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "komai":
+    "aarch64":
+      repository_id: 1160129837
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/komai"
+        blob: "8fe6e345713829b27aa3c625b0e8c247a8ec77ef"
+    "armv7l":
+      repository_id: 1160129837
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1160129837
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1160129837
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/komai"
+        blob: "3b52d3d74786bca08b0cda69c995b7aed87085c8"

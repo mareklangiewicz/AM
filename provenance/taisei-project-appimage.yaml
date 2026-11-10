@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "taisei-project":
+    "aarch64":
+      repository_id: 1153414853
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/taisei-project"
+        blob: "e50e7a193b7e69ec5db3b0c1620bc2c041f0a93d"
+    "armv7l":
+      repository_id: 1153414853
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1153414853
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1153414853
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/taisei-project"
+        blob: "69fa691e9e766c51ac0aa61ec444534aaa2ea9c7"

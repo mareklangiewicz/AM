@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "mini-vmac":
+    "aarch64":
+      repository_id: 1141730794
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/mini-vmac"
+        blob: "acd1c8740436a46d7ac753db8e4bcd37a663f74d"
+    "armv7l":
+      repository_id: 1141730794
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1141730794
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1141730794
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/mini-vmac"
+        blob: "ab03f69bcea05057d773242cbfaee459c359365e"

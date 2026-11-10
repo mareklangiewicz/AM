@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "potacat":
+    "aarch64":
+      repository_id: 1155899745
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/potacat"
+        blob: "545fd3fcd55121696b1775378d6f0c9be82ada57"
+    "armv7l":
+      repository_id: 1155899745
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1155899745
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1155899745
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/potacat"
+        blob: "de46abd20b91ff367949824b7aef0edc478f852a"

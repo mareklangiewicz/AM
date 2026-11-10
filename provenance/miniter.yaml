@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "miniter":
+    "aarch64":
+      repository_id: 1166687211
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/miniter"
+        blob: "b9b876982654b8ce2d5de6c8821fca168a05027a"
+    "armv7l":
+      repository_id: 1166687211
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1166687211
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1166687211
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/miniter"
+        blob: "16dcf41ab47cd6172c2453a2d19b322abd2790b9"

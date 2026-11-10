@@ -1,0 +1,42 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "mister-companion":
+    "aarch64":
+      repository_id: 1160338204
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/mister-companion"
+        blob: "535a29666cd04e5573f33eb7f86de3ff557362e1"
+    "armv7l":
+      repository_id: 1160338204
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1160338204
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1160338204
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/mister-companion"
+        blob: "1fe1aa6b3927537558ee2f9c0ab6fd7517acf47d"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T16:33:24Z"
+        recipe_sha256: "1442d04a82ce0789d5660a3c27446d01e49d1e5980829c6772cc73326b246157"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

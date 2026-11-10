@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "harnss":
+    "aarch64":
+      repository_id: 1161409602
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/harnss"
+        blob: "2ca0d5a68004de30562f19887bc9c7fe248b885c"
+    "armv7l":
+      repository_id: 1161409602
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1161409602
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1161409602
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/harnss"
+        blob: "e7d929eb95f47e885cc989e4be71c97575fdc10d"

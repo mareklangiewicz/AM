@@ -1,0 +1,48 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "go-todo":
+    "aarch64":
+      repository_id: 1143517523
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 1143517523
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1143517523
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1143517523
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/go-todo"
+        blob: "25008353971e7ec9204b518cb0c582c3d95cf003"
+  "tada":
+    "aarch64":
+      repository_id: 1143517523
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 1143517523
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1143517523
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1143517523
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/tada"
+        blob: "4c4642c022565bf0af896091984f601ad53854c2"

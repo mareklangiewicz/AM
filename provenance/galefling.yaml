@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "galefling":
+    "aarch64":
+      repository_id: 1157754004
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/galefling"
+        blob: "7d5c982d604c1af66dcb464f875115e8831324e9"
+    "armv7l":
+      repository_id: 1157754004
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1157754004
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1157754004
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/galefling"
+        blob: "2451f0ba09726fe13e0c7ab0a6523f05d2090317"

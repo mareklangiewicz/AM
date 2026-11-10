@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "smartswitch-explorer":
+    "aarch64":
+      repository_id: 1155129660
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/smartswitch-explorer"
+        blob: "50e48fe952d05b43a6706136f00e2187109fead3"
+    "armv7l":
+      repository_id: 1155129660
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1155129660
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1155129660
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/smartswitch-explorer"
+        blob: "a2935a92de45ec341b87877d85902cf6eec67ebd"

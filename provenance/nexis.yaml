@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "nexis":
+    "aarch64":
+      repository_id: 1150170059
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/nexis"
+        blob: "27359b58520ae027a5d31620c7fee09cb0cc3981"
+    "armv7l":
+      repository_id: 1150170059
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1150170059
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1150170059
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/nexis"
+        blob: "b6ac5de0d183b943e27cf01396e038cc150338aa"

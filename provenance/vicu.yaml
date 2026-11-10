@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "vicu":
+    "aarch64":
+      repository_id: 1159941368
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/vicu"
+        blob: "95fa61bec2768c13a950e5aca04a9c2393601782"
+    "armv7l":
+      repository_id: 1159941368
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1159941368
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1159941368
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/vicu"
+        blob: "6eacfba0f05bc59d470835606fd492ea4e1b40cd"

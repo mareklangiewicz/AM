@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "uefitool":
+    "aarch64":
+      repository_id: 1155254903
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/uefitool"
+        blob: "04f46d11c5bb31b7f338f718a2356d98991af9db"
+    "armv7l":
+      repository_id: 1155254903
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1155254903
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1155254903
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/uefitool"
+        blob: "d83f8d6d7d92476c10379c6e73bb1f80e9136e94"

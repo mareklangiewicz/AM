@@ -1,0 +1,26 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "runekit-reforged":
+    "aarch64":
+      repository_id: 1153168195
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 1153168195
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1153168195
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1153168195
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/runekit-reforged"
+        blob: "6516cc030f04a98c366922e9c274a433ad3e06e5"

@@ -1,0 +1,42 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "gradia":
+    "aarch64":
+      repository_id: 1142026015
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/gradia"
+        blob: "0a26f9a6645e059e4ead099dac7fa1453aa85e1a"
+    "armv7l":
+      repository_id: 1142026015
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1142026015
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1142026015
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/gradia"
+        blob: "8bfd981e018a1cacb68ed67a136b87f03d630bb8"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T16:33:24Z"
+        recipe_sha256: "54d8b57c4726ecf04d2d65effdee8bc61fbce707103f1d65697a30242e2c63ac"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

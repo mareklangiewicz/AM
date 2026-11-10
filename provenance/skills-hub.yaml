@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "skills-hub":
+    "aarch64":
+      repository_id: 1141582887
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/skills-hub"
+        blob: "67ecf3c0093c56676a9aec40bb89c2dbf196de9f"
+    "armv7l":
+      repository_id: 1141582887
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1141582887
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1141582887
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/skills-hub"
+        blob: "45675378051d6351a1d03b9a05b76f6737cc5f59"

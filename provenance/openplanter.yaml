@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "openplanter":
+    "aarch64":
+      repository_id: 1162194563
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/openplanter"
+        blob: "695107eda3b37dfcd91fec714a3381079d1e6de5"
+    "armv7l":
+      repository_id: 1162194563
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1162194563
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1162194563
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/openplanter"
+        blob: "9b2c4fb4fd2b16bc7fa2155b1f87d8607de6d8eb"

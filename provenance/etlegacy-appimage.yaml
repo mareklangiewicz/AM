@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "etlegacy":
+    "aarch64":
+      repository_id: 1169053806
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/etlegacy"
+        blob: "71f492b6e68a1040d6903c7cd652874cf2580182"
+    "armv7l":
+      repository_id: 1169053806
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1169053806
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1169053806
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/etlegacy"
+        blob: "f2b53e9bdadada3441238b745d6048d6ad455315"

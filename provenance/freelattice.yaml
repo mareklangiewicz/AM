@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "freelattice":
+    "aarch64":
+      repository_id: 1161025088
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/freelattice"
+        blob: "57059fa7defa8053c3cc7e3dab077c42cc43e819"
+    "armv7l":
+      repository_id: 1161025088
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1161025088
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1161025088
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/freelattice"
+        blob: "fcf8c26927fe530e8062f7c636f3d3969ab0f6f2"

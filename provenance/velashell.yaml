@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "velashell":
+    "aarch64":
+      repository_id: 1159468295
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/velashell"
+        blob: "51c42a8dab61ce31e574fa80c4cb24a4c73c9fb4"
+    "armv7l":
+      repository_id: 1159468295
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1159468295
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1159468295
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/velashell"
+        blob: "f27ff3ac80f936c702186eef8c58e9078fd2faf1"
