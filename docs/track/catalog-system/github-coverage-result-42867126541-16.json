@@ -1,0 +1,172 @@
+{
+  "run": {
+    "id": 42867126541,
+    "attempt": 1
+  },
+  "actions_url": "https://github.com/mareklangiewicz/AM/actions/runs/42867126541",
+  "source_revision": "47211b286188113e6111033e9f17f8a7315d16bd",
+  "schema_revision": "040614f86cbbf31fc19596c8d32225c82de77acf",
+  "catalog_before": "4cd1137fa81251e89ce2ec8d2e58b26e5c8a2d0e",
+  "catalog_after": "c67724263f9f983cffc02b95f52303a37dfe5990",
+  "status_after": "52cccfd8b61d640f840903984dc3212e3090b1ba",
+  "collection": "partial",
+  "validation": "ok",
+  "target_counts": {
+    "enrolled": 8313,
+    "selected": 500,
+    "attempted": 500,
+    "successful": 485,
+    "failed": 15,
+    "unknown": 0,
+    "unattempted": 0
+  },
+  "freshness": {
+    "catalog": "c67724263f9f983cffc02b95f52303a37dfe5990",
+    "evaluated_at": "2026-11-10T17:57:05Z",
+    "under_24h": {
+      "state": "known",
+      "value": 7010
+    },
+    "from_24_to_48h": {
+      "state": "known",
+      "value": 0
+    },
+    "at_least_48h": {
+      "state": "known",
+      "value": 1
+    },
+    "no_success": {
+      "state": "known",
+      "value": 1302
+    },
+    "unknown": {
+      "state": "known",
+      "value": 0
+    }
+  },
+  "acquisition": {
+    "http_attempts": 500,
+    "charged_response_bytes": 317272024,
+    "received_response_bytes_state": "unknown",
+    "seconds": 404.260384656,
+    "command_seconds": 715.8037381510001
+  },
+  "collection_metrics": {
+    "requests": 500,
+    "response_bytes": 317272024,
+    "selected_sources": 500,
+    "stop_reason": "request_limit",
+    "request_cap": 750,
+    "response_byte_cap": 536870912,
+    "acquisition_cap_seconds": 900,
+    "primary_reserve": 100,
+    "acquisition_seconds": 404.260384656,
+    "attempted_sources": 500,
+    "successful_sources": 496,
+    "unattempted_sources": 7813,
+    "rate_first": {
+      "limit": 5000,
+      "remaining": 3999,
+      "used": 1001,
+      "reset": 1794333888,
+      "resource": "core"
+    },
+    "rate_last": {
+      "limit": 5000,
+      "remaining": 3500,
+      "used": 1500,
+      "reset": 1794333888,
+      "resource": "core"
+    }
+  },
+  "stop_reason": "source_validation",
+  "failed_sources": [
+    {
+      "repository_id": 68968979,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 202983854,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 764177895,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 875733267,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 992424531,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 1078432229,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 1155919438,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 1207529787,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 1209344251,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 1238297155,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 1245849062,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 16089035,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 144590939,
+      "status": "failed",
+      "reason": "source_validation"
+    },
+    {
+      "repository_id": 403136214,
+      "status": "failed",
+      "reason": "transport"
+    },
+    {
+      "repository_id": 1234036192,
+      "status": "failed",
+      "reason": "transport"
+    }
+  ],
+  "verification": {
+    "candidate_hashes": "all matched exact published catalog",
+    "before_sources": 6526,
+    "after_sources": 7011,
+    "added_sources": 485,
+    "retained_source_bytes": {
+      "unchanged": 6526,
+      "updated_after_successful_collection": 0
+    }
+  },
+  "run_conclusion": "success",
+  "verified_schedule_revision": "47211b286188113e6111033e9f17f8a7315d16bd"
+}
