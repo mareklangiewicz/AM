@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "cannonball":
+    "aarch64":
+      repository_id: 1139849808
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/cannonball"
+        blob: "93ec38f278926c55f4531c54e2e3d3bde22da795"
+    "armv7l":
+      repository_id: 1139849808
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1139849808
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1139849808
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/cannonball"
+        blob: "9b465f34e90273b6b9f7e2df5ccc02f9f36df4ca"

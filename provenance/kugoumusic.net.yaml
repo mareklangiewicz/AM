@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "kugoumusic-net":
+    "aarch64":
+      repository_id: 1138989560
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/kugoumusic-net"
+        blob: "f28c080561befe975cde0f185b77d2b107d514db"
+    "armv7l":
+      repository_id: 1138989560
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1138989560
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1138989560
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/kugoumusic-net"
+        blob: "bcc50b0a79d08f1d989e79f28e89da1b82f2ac13"

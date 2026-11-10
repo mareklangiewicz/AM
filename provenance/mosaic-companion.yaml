@@ -1,0 +1,42 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "mosaic-companion":
+    "aarch64":
+      repository_id: 1112727653
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/mosaic-companion"
+        blob: "b674ec869cc74516babca175d4f96ed0b0af2cd1"
+    "armv7l":
+      repository_id: 1112727653
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1112727653
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1112727653
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/mosaic-companion"
+        blob: "36bcc00f1dfe52dc4ecfb805d8fba39d3946e13d"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T16:14:01Z"
+        recipe_sha256: "2e593385c9e0acb6362e5ec654ed36015607b76ca0683edda1578bdbebd31a59"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

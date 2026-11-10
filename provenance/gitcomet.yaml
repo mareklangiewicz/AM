@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "gitcomet":
+    "aarch64":
+      repository_id: 1138555358
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/gitcomet"
+        blob: "36ea5814332a3056ee3618dc127ff17fbf1c98db"
+    "armv7l":
+      repository_id: 1138555358
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1138555358
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1138555358
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/gitcomet"
+        blob: "8d08a9cac74cf320e9b8918cf5c295896c5d790b"

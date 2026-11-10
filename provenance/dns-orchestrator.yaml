@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "dns-orchestrator":
+    "aarch64":
+      repository_id: 1107466209
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/dns-orchestrator"
+        blob: "31f5439c76dcb4ba1d2223a7f0c09164d36bc4de"
+    "armv7l":
+      repository_id: 1107466209
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1107466209
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1107466209
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/dns-orchestrator"
+        blob: "b90c125f04095b09d7a5a40ebbbf2d2bf735241c"

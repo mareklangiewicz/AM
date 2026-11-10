@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "electron-kvm-rdev":
+    "aarch64":
+      repository_id: 1109899514
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/electron-kvm-rdev"
+        blob: "d3c9a3f83f6fd89af8991b9da3c1d66289133414"
+    "armv7l":
+      repository_id: 1109899514
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1109899514
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1109899514
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/electron-kvm-rdev"
+        blob: "a8946d0aa1e5c751f94265e6075d87a0473720d0"

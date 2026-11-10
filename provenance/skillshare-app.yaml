@@ -1,0 +1,26 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "skillshare-app":
+    "aarch64":
+      repository_id: 1113285467
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 1113285467
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1113285467
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1113285467
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/skillshare-app"
+        blob: "2b881ff1c2b7614932216708f4d9a94a194963b4"

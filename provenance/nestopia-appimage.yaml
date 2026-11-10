@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "nestopia":
+    "aarch64":
+      repository_id: 1141478873
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/nestopia"
+        blob: "27c3c88a16a47560fbad9191e93310d1cc11ddbd"
+    "armv7l":
+      repository_id: 1141478873
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1141478873
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1141478873
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/nestopia"
+        blob: "5c2b5af124b7fdf75690348a5df8be4807b5b048"

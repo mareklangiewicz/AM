@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "cursor-token-manager":
+    "aarch64":
+      repository_id: 1110221225
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/cursor-token-manager"
+        blob: "6a89791dabfd8f8612df150f5961ad15d0827c15"
+    "armv7l":
+      repository_id: 1110221225
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1110221225
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1110221225
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/cursor-token-manager"
+        blob: "954b8d42fb8f93e645ec296e1195eecb9e8907a5"

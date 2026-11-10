@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "rsdkv3":
+    "aarch64":
+      repository_id: 1139766679
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/rsdkv3"
+        blob: "1e325fcb8fbb1f75be1fdee7893e0b49fcf8eab9"
+    "armv7l":
+      repository_id: 1139766679
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1139766679
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1139766679
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/rsdkv3"
+        blob: "47a1bef45decc74b9079bf308e62849bc9bb088c"

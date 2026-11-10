@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "discord-quest-helper":
+    "aarch64":
+      repository_id: 1118852021
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/discord-quest-helper"
+        blob: "aee5174dfab4a8e71afc3d13e03165c82f0512cd"
+    "armv7l":
+      repository_id: 1118852021
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1118852021
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1118852021
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/discord-quest-helper"
+        blob: "4d1f3a587033dc2f0a36c1753a963e9d08197cba"

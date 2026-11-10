@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "exogui":
+    "aarch64":
+      repository_id: 1109795904
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/exogui"
+        blob: "82eb6cb9a986367a1cbcfcd0475753fde40c2f9b"
+    "armv7l":
+      repository_id: 1109795904
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1109795904
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1109795904
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/exogui"
+        blob: "cef090a74cfbfc8d2f9a3c35ee42393becd14141"

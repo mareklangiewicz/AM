@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "ymir":
+    "aarch64":
+      repository_id: 1138047518
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/ymir"
+        blob: "bc4d28c0a80b64a9236151c6d0f5b4f433c55c6a"
+    "armv7l":
+      repository_id: 1138047518
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1138047518
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1138047518
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/ymir"
+        blob: "29341488a65b0c3720bae1218daa98d39482f512"

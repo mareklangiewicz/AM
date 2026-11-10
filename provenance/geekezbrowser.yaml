@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "geekezbrowser":
+    "aarch64":
+      repository_id: 1102879199
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/geekezbrowser"
+        blob: "9c2267c29ac6b93ab706c36fe4c12b4c75f9a3d1"
+    "armv7l":
+      repository_id: 1102879199
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1102879199
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1102879199
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/geekezbrowser"
+        blob: "737e326a35471775c0251521fdbec8b87b57317b"

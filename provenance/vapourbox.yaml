@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "vapourbox":
+    "aarch64":
+      repository_id: 1136110458
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/vapourbox"
+        blob: "7d823dca2b08ecfdce55f5d0016a4b6c5deda459"
+    "armv7l":
+      repository_id: 1136110458
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1136110458
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1136110458
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/vapourbox"
+        blob: "9c1a49c5f8c1e4443862c4efbba4ce51d8632bb3"

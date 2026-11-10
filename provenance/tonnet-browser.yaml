@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "tonnet-browser":
+    "aarch64":
+      repository_id: 1126156189
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/tonnet-browser"
+        blob: "6b6cc9a6da6b06b57c18c49cc7b1ed6873946dd4"
+    "armv7l":
+      repository_id: 1126156189
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1126156189
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1126156189
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/tonnet-browser"
+        blob: "3f28e66269a859a811c19e7476da3dcca44939be"

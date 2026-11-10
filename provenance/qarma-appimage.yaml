@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "qarma":
+    "aarch64":
+      repository_id: 1134534160
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/qarma"
+        blob: "7cdf6658b192675f5d8cf86c8f25dc34801922e9"
+    "armv7l":
+      repository_id: 1134534160
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1134534160
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1134534160
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/qarma"
+        blob: "2d731bf65383b043f2fb772e4ac2360a0dc3409c"

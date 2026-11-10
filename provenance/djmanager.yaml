@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "djmanager":
+    "aarch64":
+      repository_id: 1141256983
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/djmanager"
+        blob: "437972b2f1e5fa4c2c8fd02e967757241514d4b8"
+    "armv7l":
+      repository_id: 1141256983
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1141256983
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1141256983
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/djmanager"
+        blob: "c847e166f56dbc547bbd40481e91a7ca58ca30b3"

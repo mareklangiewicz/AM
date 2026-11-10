@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "okteta":
+    "aarch64":
+      repository_id: 1120647909
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/okteta"
+        blob: "92a5ff3bf58d4c4ad9861f856bac633fdfe1117e"
+    "armv7l":
+      repository_id: 1120647909
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1120647909
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1120647909
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/okteta"
+        blob: "cc475b2e971443f271567066f16e229a777d8e5a"

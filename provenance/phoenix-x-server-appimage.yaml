@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "phoenix-x-server":
+    "aarch64":
+      repository_id: 1125025063
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/phoenix-x-server"
+        blob: "3ab48b0b4fa145ddf1bd366968cb40f95954161f"
+    "armv7l":
+      repository_id: 1125025063
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1125025063
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1125025063
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/phoenix-x-server"
+        blob: "e109e21ed639bd18953ca7e33be5bff3e0db3f67"
