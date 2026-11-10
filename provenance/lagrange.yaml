@@ -1,0 +1,48 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "clagrange":
+    "aarch64":
+      repository_id: 295608796
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 295608796
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 295608796
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 295608796
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/clagrange"
+        blob: "c743a31502ddbc2bad9080670dddc213f3f07181"
+  "lagrange":
+    "aarch64":
+      repository_id: 295608796
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 295608796
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 295608796
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 295608796
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/lagrange"
+        blob: "0b62bc903784dcb48cff4bd6c5ead88f41912bba"

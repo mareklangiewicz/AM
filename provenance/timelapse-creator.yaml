@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "timelapse-creator":
+    "aarch64":
+      repository_id: 262583552
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/timelapse-creator"
+        blob: "785cf65083298c717c5d3d75c7b398bc54e2d081"
+    "armv7l":
+      repository_id: 262583552
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 262583552
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 262583552
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/timelapse-creator"
+        blob: "331396ef9171c7e979aeca50d7db676335a0b90a"

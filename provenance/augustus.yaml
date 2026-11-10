@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "augustus":
+    "aarch64":
+      repository_id: 234331549
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/augustus"
+        blob: "85fbf518dbf46ef304960a58de2e8f871bf26cf0"
+    "armv7l":
+      repository_id: 234331549
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 234331549
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 234331549
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/augustus"
+        blob: "51590259eb391b6205fe3eddfe0821141d1dcf9c"

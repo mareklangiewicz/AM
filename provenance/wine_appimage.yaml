@@ -1,0 +1,114 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "wine":
+    "aarch64":
+      repository_id: 298360082
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 298360082
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 298360082
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 298360082
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/wine"
+        blob: "063f4bdaad00e682b2b2056637596b01de122971"
+  "wine-devel":
+    "aarch64":
+      repository_id: 298360082
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 298360082
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 298360082
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 298360082
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/wine-devel"
+        blob: "de17bd0a3abcb3eed48e626b070aa150a564db94"
+  "wine-stable":
+    "aarch64":
+      repository_id: 298360082
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 298360082
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 298360082
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 298360082
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/wine-stable"
+        blob: "497de023d1a401e92f5e658b1817f160614b5ede"
+  "wine-staging":
+    "aarch64":
+      repository_id: 298360082
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 298360082
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 298360082
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 298360082
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/wine-staging"
+        blob: "04477d850638e3aba23fdf107f6708a803c1b684"
+  "wine-staging-ge-proton":
+    "aarch64":
+      repository_id: 298360082
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 298360082
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 298360082
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 298360082
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/wine-staging-ge-proton"
+        blob: "6e68ead7ee5fa15741a11472937d2441e4cd57b9"

@@ -1,0 +1,36 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "ventoy":
+    "aarch64":
+      repository_id: 246335987
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/ventoy"
+        blob: "42d4136d5411514052a1505c7d07b5ba43411322"
+    "armv7l":
+      repository_id: 246335987
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 246335987
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/i686/ventoy"
+        blob: "95dcd95a1b020ed2dcf2fb9c3d7d19408bccd4c4"
+    "x86_64":
+      repository_id: 246335987
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/ventoy"
+        blob: "724a207040075b64916d5b47942436e8e1ab9be8"

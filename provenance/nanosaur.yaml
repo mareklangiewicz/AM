@@ -1,0 +1,42 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "nanosaur":
+    "aarch64":
+      repository_id: 312043462
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/nanosaur"
+        blob: "12ae24c4cf40d328efd666644475759f4a26dc60"
+    "armv7l":
+      repository_id: 312043462
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 312043462
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 312043462
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/nanosaur"
+        blob: "caa0c5fb7d97a4a24479d191e2b1610d65daf4ab"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T10:01:23Z"
+        recipe_sha256: "2c0149294262a7488e93bc024cb8bd294c567d2dbb7dd92629815c36c0b3d30b"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

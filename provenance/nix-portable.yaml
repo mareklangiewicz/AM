@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "nix-portable":
+    "aarch64":
+      repository_id: 336990093
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/nix-portable"
+        blob: "69d9d806fd8e77ae16e8dabd0e852bff407340ed"
+    "armv7l":
+      repository_id: 336990093
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 336990093
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 336990093
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/nix-portable"
+        blob: "c25c4896e445b241742b964a4c8a6b8f96b3814c"

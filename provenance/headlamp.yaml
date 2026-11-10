@@ -1,0 +1,36 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "headlamp":
+    "aarch64":
+      repository_id: 220546758
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/headlamp"
+        blob: "0e8f520f376c62fe70deec521923c2901251c559"
+    "armv7l":
+      repository_id: 220546758
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/armv7l/headlamp"
+        blob: "4979dd29f9daaea36906a5d073a3724cf7ab6f51"
+    "i686":
+      repository_id: 220546758
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 220546758
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/headlamp"
+        blob: "70c9fa7e156d24cb88c43ff511c7f74b588e3356"

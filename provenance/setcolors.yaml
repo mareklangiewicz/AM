@@ -1,0 +1,37 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "setcolors":
+    "aarch64":
+      repository_id: 314414489
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 314414489
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 314414489
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 314414489
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/setcolors"
+        blob: "cc2d6ffb895260824e87dad269319a7d0562ea6c"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T10:01:23Z"
+        recipe_sha256: "a498133a6382821311fda81847d95b35bc4f4f6a61b618556545dcd4ba3f6a6a"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

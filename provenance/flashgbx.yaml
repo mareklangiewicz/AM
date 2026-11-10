@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "flashgbx":
+    "aarch64":
+      repository_id: 298530818
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/flashgbx"
+        blob: "3daf3e012bd1b90205f24d481e95fdb762af74fd"
+    "armv7l":
+      repository_id: 298530818
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 298530818
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 298530818
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/flashgbx"
+        blob: "86613b8394e6d7977bbdb2cf7906219884928c2d"
