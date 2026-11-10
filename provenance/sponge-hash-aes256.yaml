@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "sponge-hash-aes256":
+    "aarch64":
+      repository_id: 1065490216
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/sponge-hash-aes256"
+        blob: "229d7a65c0dbfe8bef55ac2e66c114def3b0040b"
+    "armv7l":
+      repository_id: 1065490216
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1065490216
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1065490216
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/sponge-hash-aes256"
+        blob: "0abc261fc8674d19160bbbc6d091d736066119cf"

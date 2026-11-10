@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "loukai":
+    "aarch64":
+      repository_id: 1053098315
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/loukai"
+        blob: "d0cac7ff77827f35c77083607e5fd5e464aba74f"
+    "armv7l":
+      repository_id: 1053098315
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1053098315
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1053098315
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/loukai"
+        blob: "140ed2f4b0ca7a2c4320eacdea0bb49c63b2c6ea"

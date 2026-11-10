@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "newsflash":
+    "aarch64":
+      repository_id: 1092768912
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/newsflash"
+        blob: "52f0fb7d436108b1c4e1104805ad0a8fc3538a0b"
+    "armv7l":
+      repository_id: 1092768912
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1092768912
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1092768912
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/newsflash"
+        blob: "46a9db80f74e4348a9f6e5b797a91a50bb6a3068"

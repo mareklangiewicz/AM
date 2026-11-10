@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "video-trimmer":
+    "aarch64":
+      repository_id: 1098446813
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/video-trimmer"
+        blob: "e2bec1c9b203519e9fb88b248c85450f20125b80"
+    "armv7l":
+      repository_id: 1098446813
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1098446813
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1098446813
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/video-trimmer"
+        blob: "1e44d047dedcae39cc2b5ad5ba5a11dc4ab16351"

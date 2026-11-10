@@ -1,0 +1,26 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "slideflow":
+    "aarch64":
+      repository_id: 1099246141
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 1099246141
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1099246141
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1099246141
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/slideflow"
+        blob: "124320daeb8d9b9bb4081091f3b74c25b1b5e8d8"

@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "pika-backup":
+    "aarch64":
+      repository_id: 1100402077
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/pika-backup"
+        blob: "b39f21c96110c15073819545701078c5240e4bab"
+    "armv7l":
+      repository_id: 1100402077
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1100402077
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1100402077
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/pika-backup"
+        blob: "c17a4e1b723034f987def14729d62df3942f1e59"

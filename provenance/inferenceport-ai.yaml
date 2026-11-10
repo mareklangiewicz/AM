@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "inferenceport-ai":
+    "aarch64":
+      repository_id: 1038278665
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/inferenceport-ai"
+        blob: "b1db893cf0c5db3e1890115b53a52ebc2e5fb3ac"
+    "armv7l":
+      repository_id: 1038278665
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1038278665
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1038278665
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/inferenceport-ai"
+        blob: "388ec16e6f20ddf6d1218188dffce12570b8c3f1"

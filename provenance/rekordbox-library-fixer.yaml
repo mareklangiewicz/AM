@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "rekordbox-library-fixer":
+    "aarch64":
+      repository_id: 1044119924
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/rekordbox-library-fixer"
+        blob: "9fe9ed4e3116c344d2c08e9da43bb3401ac75c89"
+    "armv7l":
+      repository_id: 1044119924
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1044119924
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1044119924
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/rekordbox-library-fixer"
+        blob: "f6598a07bf32f3e78c87cddfafb847ace698545a"

@@ -1,0 +1,37 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "cursor-account-switcher":
+    "aarch64":
+      repository_id: 1081882021
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 1081882021
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1081882021
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1081882021
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/cursor-account-switcher"
+        blob: "fc0931a6b1bc29b74233de45e2a563e0ac1627dd"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T15:54:50Z"
+        recipe_sha256: "bba7a1355018e43c9ea6bc8bc6bc9a3176c37b199f095611b9df57a6b5892965"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "rapidcmi5":
+    "aarch64":
+      repository_id: 1096582673
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/rapidcmi5"
+        blob: "06dd9aa5b5ac75425ff7689a9d49e25eced6b4ec"
+    "armv7l":
+      repository_id: 1096582673
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1096582673
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1096582673
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/rapidcmi5"
+        blob: "34058d393172e2befaae8ff61bb5a76e94c49eee"

@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "zlang":
+    "aarch64":
+      repository_id: 1034110206
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/zlang"
+        blob: "0c9840ee4ebc917909fc7452c312f6697a064b8a"
+    "armv7l":
+      repository_id: 1034110206
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1034110206
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1034110206
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/zlang"
+        blob: "9714c4d1c2ff75c17b26bd63686ae7c11bf39281"

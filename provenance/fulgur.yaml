@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "fulgur":
+    "aarch64":
+      repository_id: 1090441880
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/fulgur"
+        blob: "05a5516ae8b009be02997c7c90361f7568173023"
+    "armv7l":
+      repository_id: 1090441880
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1090441880
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1090441880
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/fulgur"
+        blob: "2d0f46575d0f0bd2a1745d38cbc96bc98d9dbbef"

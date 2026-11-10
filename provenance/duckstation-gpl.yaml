@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "duckstation-gpl":
+    "aarch64":
+      repository_id: 1028948018
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/duckstation-gpl"
+        blob: "c358d68d8bd395191d46d8e80199e0383cf18f3e"
+    "armv7l":
+      repository_id: 1028948018
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1028948018
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1028948018
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/duckstation-gpl"
+        blob: "f3daa8861f1c56621073b0a241b233414f7bdf0c"
