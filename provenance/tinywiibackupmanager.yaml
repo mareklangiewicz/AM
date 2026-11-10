@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "tinywiibackupmanager":
+    "aarch64":
+      repository_id: 698333082
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/tinywiibackupmanager"
+        blob: "2e13c1b78880cc8e5df8f03ed4f442f1716c5011"
+    "armv7l":
+      repository_id: 698333082
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 698333082
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 698333082
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/tinywiibackupmanager"
+        blob: "0d0aaa10c4f3ac7601b73001f1ab347cc8f91f6c"

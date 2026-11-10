@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "nx-optimizer":
+    "aarch64":
+      repository_id: 652501895
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/nx-optimizer"
+        blob: "f4ea4e40b5273a53c951a07a39232584ffd91c7d"
+    "armv7l":
+      repository_id: 652501895
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 652501895
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 652501895
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/nx-optimizer"
+        blob: "27f41b41311e91ba60da957268c6036514cd77fa"

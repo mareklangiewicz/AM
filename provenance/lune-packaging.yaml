@@ -1,0 +1,69 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "lune":
+    "aarch64":
+      repository_id: 671808526
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/lune"
+        blob: "8f0af19d25dc0ecc3c862ee4c50d3f40fe713863"
+    "armv7l":
+      repository_id: 671808526
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 671808526
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 671808526
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/lune"
+        blob: "ceebf6ce45b14720e4c6e9442f35791f5b653134"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T15:23:44Z"
+        recipe_sha256: "65711ac508a48d76e512fe9247a8fc321b7dc3cdbeff82ad76ab889a0b26a922"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"
+  "lune-packaging":
+    "aarch64":
+      repository_id: 671808526
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/lune-packaging"
+        blob: "4bce3208816c180060a78e7339f76eb323c95518"
+    "armv7l":
+      repository_id: 671808526
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 671808526
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 671808526
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/lune-packaging"
+        blob: "7fa5fec7788efeed07f9d42986832de0bdae7731"

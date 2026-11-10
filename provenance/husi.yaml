@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "husi":
+    "aarch64":
+      repository_id: 735230186
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/husi"
+        blob: "1e621597aad45c2910610c22be6c37f69c7d1a52"
+    "armv7l":
+      repository_id: 735230186
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 735230186
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 735230186
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/husi"
+        blob: "cdbac42b0f615d5446df3783fb02c69a5d9d29c3"

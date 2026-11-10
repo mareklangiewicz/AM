@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "whistle-client":
+    "aarch64":
+      repository_id: 663776272
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/whistle-client"
+        blob: "657fd46f4f0eb8193718932273ea3e6efe2f6ce0"
+    "armv7l":
+      repository_id: 663776272
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 663776272
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 663776272
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/whistle-client"
+        blob: "aed557af3f26c049b8e076137544db1f45431955"

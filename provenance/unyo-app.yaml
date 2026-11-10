@@ -1,0 +1,59 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "unyo":
+    "aarch64":
+      repository_id: 776821095
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 776821095
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 776821095
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 776821095
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/unyo"
+        blob: "c6e62d19a88f91ca866f56af06943cd8249f9711"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T15:23:44Z"
+        recipe_sha256: "73ba5b487f7bb5e7e4f58a9014051bffac149627da82d94c81c1b8747d98cb74"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"
+  "unyo-app":
+    "aarch64":
+      repository_id: 776821095
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 776821095
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 776821095
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 776821095
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/unyo-app"
+        blob: "49414f47f773f42061164b0d76452b126d24c77f"

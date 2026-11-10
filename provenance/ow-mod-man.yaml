@@ -1,0 +1,59 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "outer-wilds-mod-manager":
+    "aarch64":
+      repository_id: 592635586
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 592635586
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 592635586
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 592635586
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/outer-wilds-mod-manager"
+        blob: "0b001114238333e963f33698aad6e488f8f152df"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T15:23:44Z"
+        recipe_sha256: "a64030be605054f28f79fc6c57cc3e6a9056b95f2f1b16e47411c6903c8022c5"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"
+  "ow-mod-man":
+    "aarch64":
+      repository_id: 592635586
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 592635586
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 592635586
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 592635586
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/ow-mod-man"
+        blob: "55f581094837f76b8c151dce8e7188736cb8e0b4"

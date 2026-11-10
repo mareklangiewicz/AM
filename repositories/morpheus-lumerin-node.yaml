@@ -1,0 +1,3031 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "repository"
+repository_id: 767770799
+repository: "MorpheusAIs/Morpheus-Lumerin-Node"
+collected_at: "2026-11-10T15:22:35Z"
+scope:
+  page_size: 100
+  pages_fetched: 1
+  history_complete: false
+observed_at: "2026-11-10T15:22:35Z"
+releases:
+  "376715715":
+    tag: "v7.10.0"
+    title: "Release v7.10.0"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.10.0"
+    created_at: "2026-08-25T20:45:03Z"
+    published_at: "2026-08-25T21:03:23Z"
+    updated_at: "2026-08-25T21:03:23Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.10.0"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.10.0"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.10.0/"
+    assets:
+      "529779672":
+        name: "linux-arm64-morpheus-router-7.10.0"
+        url_suffix: "linux-arm64-morpheus-router-7.10.0"
+        size: 60227768
+        digest: "sha256:e74c42a2d279820e9b26271977bff5bb86a8184cbc318d1cf33de633f3886b9c"
+      "529779673":
+        name: "linux-arm64-morpheus-cli-7.10.0"
+        url_suffix: "linux-arm64-morpheus-cli-7.10.0"
+        size: 13065636
+        digest: "sha256:658c90d73ad5068fd7b517995e10154b9e17a96829361bf78a7ed0cba03d10b9"
+      "529779674":
+        name: "linux-x86_64-morpheus-app-7.10.0.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.10.0.AppImage"
+        size: 150136932
+        media_type: "application/vnd.appimage"
+        digest: "sha256:459479421a117a57425b8a8a1cb50569098a368dc7fe9512dcfd3ad8c47ac355"
+      "529779675":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1936
+        media_type: "application/yaml"
+        digest: "sha256:e4b6e827c900efdbae70b3164142b1457a715d0c6abea500ed8cf378bd2413ba"
+      "529779679":
+        name: "linux-arm64-morpheus-app-7.10.0.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.10.0.AppImage"
+        size: 150249585
+        media_type: "application/vnd.appimage"
+        digest: "sha256:ca82579253f56529fb4cfc26fd3ad2b6aa795a72cdb1b19f57b85e6494b88d83"
+      "529779689":
+        name: "linux-x86_64-morpheus-cli-7.10.0"
+        url_suffix: "linux-x86_64-morpheus-cli-7.10.0"
+        size: 13974210
+        digest: "sha256:f3378f65a3e705bc39ed85feeea8c82e1c3332786eae24aa3cd8e6b917ef6286"
+      "529779701":
+        name: "linux-x86_64-morpheus-router-7.10.0"
+        url_suffix: "linux-x86_64-morpheus-router-7.10.0"
+        size: 64254920
+        digest: "sha256:7f7dcd2c484d7d42ba8ce2b0f88e0540b01b91ec54c6f95dcc3347919d28af25"
+      "529779712":
+        name: "mac-arm64-morpheus-app-7.10.0.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.10.0.dmg"
+        size: 140171958
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:9ff55a210da748c631daf591b93fe4f8364f92f41da8559d5268f0ccb56dcd93"
+      "529779749":
+        name: "mac-arm64-morpheus-cli-7.10.0"
+        url_suffix: "mac-arm64-morpheus-cli-7.10.0"
+        size: 13422594
+        digest: "sha256:7089d68ab154927786153056dfbf318c5e55cf879537dba81f09e74d82d6c6ae"
+      "529779791":
+        name: "mac-arm64-morpheus-router-7.10.0"
+        url_suffix: "mac-arm64-morpheus-router-7.10.0"
+        size: 63815234
+        digest: "sha256:fc3a7149a5db80d8b76f4e2420ba03f452ea5ff8bbb06b9a6258926b9d83b688"
+      "529779806":
+        name: "mac-x64-morpheus-app-7.10.0.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.10.0.dmg"
+        size: 145251259
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:40a3fdc80ac411cbe2af5c7f92680a520ea1c83b70fdfa2973b8fe0fc3b40410"
+      "529779844":
+        name: "mac-x64-morpheus-cli-7.10.0"
+        url_suffix: "mac-x64-morpheus-cli-7.10.0"
+        size: 14170608
+        digest: "sha256:b28c75dd7388295970bc79371b2d581a4cf5b06e8d856ceed558c2ef77654ead"
+      "529779847":
+        name: "mac-x64-morpheus-router-7.10.0"
+        url_suffix: "mac-x64-morpheus-router-7.10.0"
+        size: 66093920
+        digest: "sha256:ee5e3ea12856c2be8686cfffff83d884f9b9f1c5e02e9b68695b77f68d158d16"
+      "529779850":
+        name: "win-x64-morpheus-app-7.10.0.exe"
+        url_suffix: "win-x64-morpheus-app-7.10.0.exe"
+        size: 93267968
+        digest: "sha256:a7bc34df1596a95551995654aecf67ee30e4f8874016322fe42c7003d43eb07f"
+      "529779887":
+        name: "win-x64-morpheus-cli-7.10.0.exe"
+        url_suffix: "win-x64-morpheus-cli-7.10.0.exe"
+        size: 14075904
+        digest: "sha256:a5d23faf3cc46437c1a809cee339195593e98d2b2b65110b6de1814a6de492b6"
+      "529779898":
+        name: "win-x64-morpheus-router-7.10.0.exe"
+        url_suffix: "win-x64-morpheus-router-7.10.0.exe"
+        size: 64474624
+        digest: "sha256:0dec6c0e655a7061e7b1760c1311b40229b86fb9d769521832e100d4fd72d068"
+  "385533806":
+    tag: "v7.10.5-test"
+    title: "Pre-release v7.10.5-test"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.10.5-test"
+    created_at: "2026-08-25T20:45:03Z"
+    published_at: "2026-09-09T13:20:56Z"
+    updated_at: "2026-09-09T13:20:56Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.10.5-test"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.10.5-test"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.10.5-test/"
+    assets:
+      "552808731":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1936
+        media_type: "application/yaml"
+        digest: "sha256:a3fe49530fa7dd9d1205206593daf73217c0ee5ac860cbf48b0f9b9d8a49c3e3"
+      "552808732":
+        name: "linux-arm64-morpheus-cli-7.10.5"
+        url_suffix: "linux-arm64-morpheus-cli-7.10.5"
+        size: 13065636
+        digest: "sha256:658c90d73ad5068fd7b517995e10154b9e17a96829361bf78a7ed0cba03d10b9"
+      "552808733":
+        name: "linux-arm64-morpheus-router-7.10.5"
+        url_suffix: "linux-arm64-morpheus-router-7.10.5"
+        size: 60227768
+        digest: "sha256:133fcf9c6469c554e261d617308930effdf0dbe7e429db221850c9c9b23ef310"
+      "552808735":
+        name: "linux-x86_64-morpheus-app-7.10.5.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.10.5.AppImage"
+        size: 150136800
+        media_type: "application/vnd.appimage"
+        digest: "sha256:0528f88a761434c898cb9082d9bca7b1cc806eb2089b3f867d39aaff67fecee6"
+      "552808743":
+        name: "linux-arm64-morpheus-app-7.10.5.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.10.5.AppImage"
+        size: 150249537
+        media_type: "application/vnd.appimage"
+        digest: "sha256:a2eab50e07708918c71d5dfed3ee7a297116383ec62584c4abbafa88aaca1a58"
+      "552808756":
+        name: "linux-x86_64-morpheus-cli-7.10.5"
+        url_suffix: "linux-x86_64-morpheus-cli-7.10.5"
+        size: 13974210
+        digest: "sha256:f3378f65a3e705bc39ed85feeea8c82e1c3332786eae24aa3cd8e6b917ef6286"
+      "552808790":
+        name: "linux-x86_64-morpheus-router-7.10.5"
+        url_suffix: "linux-x86_64-morpheus-router-7.10.5"
+        size: 64275464
+        digest: "sha256:178b66e45dfe3aaedb7c4c67b50a165614347f9c3bcdd246d9b36636731893b1"
+      "552808802":
+        name: "mac-arm64-morpheus-app-7.10.5.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.10.5.dmg"
+        size: 140144774
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:d986e19b0ccb6f7ef51464fb2a39edcb87a759f82c67ebb1862f363ebf658167"
+      "552808842":
+        name: "mac-arm64-morpheus-cli-7.10.5"
+        url_suffix: "mac-arm64-morpheus-cli-7.10.5"
+        size: 13422594
+        digest: "sha256:7089d68ab154927786153056dfbf318c5e55cf879537dba81f09e74d82d6c6ae"
+      "552808865":
+        name: "mac-arm64-morpheus-router-7.10.5"
+        url_suffix: "mac-arm64-morpheus-router-7.10.5"
+        size: 63815618
+        digest: "sha256:bf002320c54d199eee3ee26a65c95272ef3111495bc714e9e71fdaaa21bed9b9"
+      "552808901":
+        name: "mac-x64-morpheus-app-7.10.5.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.10.5.dmg"
+        size: 145219602
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:847ab3ab1a732f41bfd37023ba570120bb17b8a478e1c8a0d2493f5adc3e9e8b"
+      "552808976":
+        name: "mac-x64-morpheus-cli-7.10.5"
+        url_suffix: "mac-x64-morpheus-cli-7.10.5"
+        size: 14170608
+        digest: "sha256:b28c75dd7388295970bc79371b2d581a4cf5b06e8d856ceed558c2ef77654ead"
+      "552808982":
+        name: "win-x64-morpheus-cli-7.10.5.exe"
+        url_suffix: "win-x64-morpheus-cli-7.10.5.exe"
+        size: 14075904
+        digest: "sha256:a5d23faf3cc46437c1a809cee339195593e98d2b2b65110b6de1814a6de492b6"
+      "552808983":
+        name: "mac-x64-morpheus-router-7.10.5"
+        url_suffix: "mac-x64-morpheus-router-7.10.5"
+        size: 66114848
+        digest: "sha256:fe256d8c6165bd3c8911c70f12bf2472ca2c3f1c4de3afb40c9e26a3d216162b"
+      "552808984":
+        name: "win-x64-morpheus-app-7.10.5.exe"
+        url_suffix: "win-x64-morpheus-app-7.10.5.exe"
+        size: 93267713
+        digest: "sha256:22614f2ed2cb3394cbe8afa53cfa49226e7ef4ce1d58f6695da73eaa3ed73778"
+      "552809017":
+        name: "win-x64-morpheus-router-7.10.5.exe"
+        url_suffix: "win-x64-morpheus-router-7.10.5.exe"
+        size: 64493056
+        digest: "sha256:48ed0ad3c4474640af48907635719802b94f4bf4874982a670d663109dc18dc2"
+  "385593471":
+    tag: "v7.11.0"
+    title: "Release v7.11.0"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.11.0"
+    created_at: "2026-09-09T13:55:19Z"
+    published_at: "2026-09-09T14:33:46Z"
+    updated_at: "2026-09-09T14:33:46Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.11.0"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.11.0"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.11.0/"
+    assets:
+      "552941346":
+        name: "linux-x86_64-morpheus-app-7.11.0.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.11.0.AppImage"
+        size: 150136957
+        media_type: "application/vnd.appimage"
+        digest: "sha256:8ef474553ca1ee64cdb54ba5d75f7c7120775879bb770a1e49a7e45b785bc58f"
+      "552941347":
+        name: "linux-arm64-morpheus-cli-7.11.0"
+        url_suffix: "linux-arm64-morpheus-cli-7.11.0"
+        size: 13065636
+        digest: "sha256:658c90d73ad5068fd7b517995e10154b9e17a96829361bf78a7ed0cba03d10b9"
+      "552941350":
+        name: "linux-arm64-morpheus-app-7.11.0.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.11.0.AppImage"
+        size: 150249583
+        media_type: "application/vnd.appimage"
+        digest: "sha256:d3b36024f17cbcda6d7feb27d62e4c33db8dcad22a8ebb946e05f49cf3c4fb9f"
+      "552941351":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1936
+        media_type: "application/yaml"
+        digest: "sha256:91f515b65722ef2e546904743c56340feb425b092386f99712b2213d38935a0e"
+      "552941353":
+        name: "linux-arm64-morpheus-router-7.11.0"
+        url_suffix: "linux-arm64-morpheus-router-7.11.0"
+        size: 60227768
+        digest: "sha256:465a66d1f2bec76db2e670a381d902a3ffa0eaaae6f2b8b47a8cf8f5f6eb7cad"
+      "552941370":
+        name: "linux-x86_64-morpheus-cli-7.11.0"
+        url_suffix: "linux-x86_64-morpheus-cli-7.11.0"
+        size: 13974210
+        digest: "sha256:f3378f65a3e705bc39ed85feeea8c82e1c3332786eae24aa3cd8e6b917ef6286"
+      "552941409":
+        name: "linux-x86_64-morpheus-router-7.11.0"
+        url_suffix: "linux-x86_64-morpheus-router-7.11.0"
+        size: 64275464
+        digest: "sha256:b0839ff2a80cc7b1ab07a1c63489462a1366021b089d99e7c31fce06ce9431b7"
+      "552941419":
+        name: "mac-arm64-morpheus-app-7.11.0.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.11.0.dmg"
+        size: 140157390
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:f1355e75337b9f6abe935b01e291c7e6973044af90ffe9f546f6878f45b56a83"
+      "552941530":
+        name: "mac-arm64-morpheus-cli-7.11.0"
+        url_suffix: "mac-arm64-morpheus-cli-7.11.0"
+        size: 13422594
+        digest: "sha256:7089d68ab154927786153056dfbf318c5e55cf879537dba81f09e74d82d6c6ae"
+      "552941541":
+        name: "mac-arm64-morpheus-router-7.11.0"
+        url_suffix: "mac-arm64-morpheus-router-7.11.0"
+        size: 63815618
+        digest: "sha256:757d6abc0c5a5ea149d80b0e945a790d375421f6e1ceb2fb6456d51fe4ab08e2"
+      "552941565":
+        name: "mac-x64-morpheus-app-7.11.0.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.11.0.dmg"
+        size: 145244051
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:d140d82787dada506b4ac1e8377edaccac1ade072374dc65f914c4352240a12b"
+      "552941675":
+        name: "mac-x64-morpheus-cli-7.11.0"
+        url_suffix: "mac-x64-morpheus-cli-7.11.0"
+        size: 14170608
+        digest: "sha256:b28c75dd7388295970bc79371b2d581a4cf5b06e8d856ceed558c2ef77654ead"
+      "552941687":
+        name: "mac-x64-morpheus-router-7.11.0"
+        url_suffix: "mac-x64-morpheus-router-7.11.0"
+        size: 66114848
+        digest: "sha256:b47ede66778450cdc178ac53c967d8c7d380dde764f4c4057fe48062c01a5dfb"
+      "552941769":
+        name: "win-x64-morpheus-app-7.11.0.exe"
+        url_suffix: "win-x64-morpheus-app-7.11.0.exe"
+        size: 93268290
+        digest: "sha256:290c61d1ee5a9827ae27f35f32c10a14e866d9a92233ec975f0895c34d9859dc"
+      "552941839":
+        name: "win-x64-morpheus-cli-7.11.0.exe"
+        url_suffix: "win-x64-morpheus-cli-7.11.0.exe"
+        size: 14075904
+        digest: "sha256:a5d23faf3cc46437c1a809cee339195593e98d2b2b65110b6de1814a6de492b6"
+      "552941851":
+        name: "win-x64-morpheus-router-7.11.0.exe"
+        url_suffix: "win-x64-morpheus-router-7.11.0.exe"
+        size: 64493056
+        digest: "sha256:111643b7c48a71e4955aa22607f9e42395fcdb3cccbe8bb844d15cf9fce63aa3"
+  "394038514":
+    tag: "v7.11.6-test"
+    title: "Pre-release v7.11.6-test"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.11.6-test"
+    created_at: "2026-09-09T13:55:19Z"
+    published_at: "2026-09-22T19:07:24Z"
+    updated_at: "2026-09-22T19:07:24Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.11.6-test"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.11.6-test"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.11.6-test/"
+    assets:
+      "582053283":
+        name: "linux-arm64-morpheus-router-7.11.6"
+        url_suffix: "linux-arm64-morpheus-router-7.11.6"
+        size: 60293304
+        digest: "sha256:31c8163efc7e189aa6067c5ff6bdfa7b0cda11423edb1a4259b8a0e0b874cb1b"
+      "582053284":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1936
+        media_type: "application/yaml"
+        digest: "sha256:9730c10f95ab8dba24a834e1e3b7caef38ae9fa7d0b935200490455c91c64b10"
+      "582053285":
+        name: "linux-arm64-morpheus-cli-7.11.6"
+        url_suffix: "linux-arm64-morpheus-cli-7.11.6"
+        size: 13065636
+        digest: "sha256:658c90d73ad5068fd7b517995e10154b9e17a96829361bf78a7ed0cba03d10b9"
+      "582053286":
+        name: "linux-x86_64-morpheus-app-7.11.6.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.11.6.AppImage"
+        size: 150136803
+        media_type: "application/vnd.appimage"
+        digest: "sha256:10b7f427c19671f5b810286a98fb5bb63d37f5d89579b797b53ffe2db371feae"
+      "582053287":
+        name: "linux-arm64-morpheus-app-7.11.6.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.11.6.AppImage"
+        size: 150249522
+        media_type: "application/vnd.appimage"
+        digest: "sha256:af89698520992dbfec68d92b23d0110ba6e6f3046bb25e7ae69a006d0ae7abb1"
+      "582053299":
+        name: "linux-x86_64-morpheus-cli-7.11.6"
+        url_suffix: "linux-x86_64-morpheus-cli-7.11.6"
+        size: 13974210
+        digest: "sha256:f3378f65a3e705bc39ed85feeea8c82e1c3332786eae24aa3cd8e6b917ef6286"
+      "582053325":
+        name: "linux-x86_64-morpheus-router-7.11.6"
+        url_suffix: "linux-x86_64-morpheus-router-7.11.6"
+        size: 64320520
+        digest: "sha256:478e19745877706a3bba09887d39eb3158ecc08fbfdbdbeccd79dd99db95083f"
+      "582053327":
+        name: "mac-arm64-morpheus-app-7.11.6.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.11.6.dmg"
+        size: 140144230
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:d74fab139520f424beda2068c9d48a13cdd332d663e957c239aaac9c8ccf5223"
+      "582053383":
+        name: "mac-arm64-morpheus-cli-7.11.6"
+        url_suffix: "mac-arm64-morpheus-cli-7.11.6"
+        size: 13422594
+        digest: "sha256:7089d68ab154927786153056dfbf318c5e55cf879537dba81f09e74d82d6c6ae"
+      "582053430":
+        name: "mac-arm64-morpheus-router-7.11.6"
+        url_suffix: "mac-arm64-morpheus-router-7.11.6"
+        size: 63865714
+        digest: "sha256:6f7096a7868ef3d4042ea37c87dae6c0399d288e8d2a43693628b35233e640ab"
+      "582053435":
+        name: "mac-x64-morpheus-app-7.11.6.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.11.6.dmg"
+        size: 145227201
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:a3174b33b1bec6a9205e17792ccac11ac8933b228ce3f0dd40f2fc463b51703f"
+      "582053476":
+        name: "mac-x64-morpheus-cli-7.11.6"
+        url_suffix: "mac-x64-morpheus-cli-7.11.6"
+        size: 14170608
+        digest: "sha256:b28c75dd7388295970bc79371b2d581a4cf5b06e8d856ceed558c2ef77654ead"
+      "582053479":
+        name: "mac-x64-morpheus-router-7.11.6"
+        url_suffix: "mac-x64-morpheus-router-7.11.6"
+        size: 66160464
+        digest: "sha256:7717ef736e6d021c91e3a36d4dcea564088981c980f0af23ec8431f2ada15201"
+      "582053491":
+        name: "win-x64-morpheus-app-7.11.6.exe"
+        url_suffix: "win-x64-morpheus-app-7.11.6.exe"
+        size: 93267456
+        digest: "sha256:e378b0685d9e1e5da49aa161c01cce67c9e3c5e32cce40f5e0fefb1db4f93b0a"
+      "582053495":
+        name: "win-x64-morpheus-cli-7.11.6.exe"
+        url_suffix: "win-x64-morpheus-cli-7.11.6.exe"
+        size: 14075904
+        digest: "sha256:a5d23faf3cc46437c1a809cee339195593e98d2b2b65110b6de1814a6de492b6"
+      "582053497":
+        name: "win-x64-morpheus-router-7.11.6.exe"
+        url_suffix: "win-x64-morpheus-router-7.11.6.exe"
+        size: 64539136
+        digest: "sha256:5c678c05646e429170f54aa17d43b9c986465a6a25a267fb8bb80f0f53d82672"
+  "395818362":
+    tag: "v7.11.7-test"
+    title: "Pre-release v7.11.7-test"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.11.7-test"
+    created_at: "2026-09-09T13:55:19Z"
+    published_at: "2026-09-24T15:21:43Z"
+    updated_at: "2026-09-24T15:21:43Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.11.7-test"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.11.7-test"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.11.7-test/"
+    assets:
+      "586235717":
+        name: "linux-arm64-morpheus-app-7.11.7.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.11.7.AppImage"
+        size: 150249533
+        media_type: "application/vnd.appimage"
+        digest: "sha256:64610fb919fb5fedd9adcbeea8b901877f976a5559a83492ee687e66febf27f1"
+      "586235719":
+        name: "linux-x86_64-morpheus-app-7.11.7.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.11.7.AppImage"
+        size: 150136829
+        media_type: "application/vnd.appimage"
+        digest: "sha256:6db5b8be87d12faea19eac6496ea41d124300e0f7233d43ff78e16b1a01824e4"
+      "586235721":
+        name: "linux-arm64-morpheus-cli-7.11.7"
+        url_suffix: "linux-arm64-morpheus-cli-7.11.7"
+        size: 13065636
+        digest: "sha256:658c90d73ad5068fd7b517995e10154b9e17a96829361bf78a7ed0cba03d10b9"
+      "586235722":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1936
+        media_type: "application/yaml"
+        digest: "sha256:3f805b19a37dd4cca954911d4ee836ba4bf36ef69bb2b97b8ef9560666dcb203"
+      "586235723":
+        name: "linux-arm64-morpheus-router-7.11.7"
+        url_suffix: "linux-arm64-morpheus-router-7.11.7"
+        size: 60358840
+        digest: "sha256:04b957e3a776752cb623e7ab28d557083eff4749896d7f5fadebb1eba1c462d8"
+      "586235737":
+        name: "linux-x86_64-morpheus-cli-7.11.7"
+        url_suffix: "linux-x86_64-morpheus-cli-7.11.7"
+        size: 13974210
+        digest: "sha256:f3378f65a3e705bc39ed85feeea8c82e1c3332786eae24aa3cd8e6b917ef6286"
+      "586235745":
+        name: "linux-x86_64-morpheus-router-7.11.7"
+        url_suffix: "linux-x86_64-morpheus-router-7.11.7"
+        size: 64373864
+        digest: "sha256:48bbddcad6dc3d5dcf56243c55c1c3c979ab1fb03205a98c0b73511156ff0525"
+      "586235759":
+        name: "mac-arm64-morpheus-app-7.11.7.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.11.7.dmg"
+        size: 140144071
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:b82931ef4c20d1e6cbebecc82507e2c472934ca58d0527a45633e17084a76c49"
+      "586235776":
+        name: "mac-arm64-morpheus-cli-7.11.7"
+        url_suffix: "mac-arm64-morpheus-cli-7.11.7"
+        size: 13422594
+        digest: "sha256:7089d68ab154927786153056dfbf318c5e55cf879537dba81f09e74d82d6c6ae"
+      "586235816":
+        name: "mac-arm64-morpheus-router-7.11.7"
+        url_suffix: "mac-arm64-morpheus-router-7.11.7"
+        size: 63916274
+        digest: "sha256:0f95dfaec57096347e8133e7cee0066000cdbb3b986e2d76be77b478e1e85722"
+      "586235832":
+        name: "mac-x64-morpheus-app-7.11.7.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.11.7.dmg"
+        size: 145229314
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:99b7e8fe88a99b7274bb443afd1936a6b3c2b845714f469e022e18b7e8104295"
+      "586235855":
+        name: "mac-x64-morpheus-cli-7.11.7"
+        url_suffix: "mac-x64-morpheus-cli-7.11.7"
+        size: 14170608
+        digest: "sha256:b28c75dd7388295970bc79371b2d581a4cf5b06e8d856ceed558c2ef77654ead"
+      "586235873":
+        name: "mac-x64-morpheus-router-7.11.7"
+        url_suffix: "mac-x64-morpheus-router-7.11.7"
+        size: 66214736
+        digest: "sha256:786831d30ca754e1d5c3134f8e64aa5ce8783a4ec9b104594ed2cbb03570066d"
+      "586235885":
+        name: "win-x64-morpheus-app-7.11.7.exe"
+        url_suffix: "win-x64-morpheus-app-7.11.7.exe"
+        size: 93267964
+        digest: "sha256:8ccf01a39ff4689d5ed1e08f4e9040d5ac50890f11611b91b8086c1cb0fdd0af"
+      "586235890":
+        name: "win-x64-morpheus-cli-7.11.7.exe"
+        url_suffix: "win-x64-morpheus-cli-7.11.7.exe"
+        size: 14075904
+        digest: "sha256:a5d23faf3cc46437c1a809cee339195593e98d2b2b65110b6de1814a6de492b6"
+      "586235891":
+        name: "win-x64-morpheus-router-7.11.7.exe"
+        url_suffix: "win-x64-morpheus-router-7.11.7.exe"
+        size: 64592896
+        digest: "sha256:90055de0e8addf552bfdc0484e814f4018883c8884d64973b66932354f57af26"
+  "396700949":
+    tag: "v7.12.0"
+    title: "Release v7.12.0"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.12.0"
+    created_at: "2026-09-25T14:28:53Z"
+    published_at: "2026-09-25T14:58:49Z"
+    updated_at: "2026-09-25T14:58:49Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.12.0"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.12.0"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.12.0/"
+    assets:
+      "588588680":
+        name: "linux-x86_64-morpheus-app-7.12.0.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.12.0.AppImage"
+        size: 150136936
+        media_type: "application/vnd.appimage"
+        digest: "sha256:53c7c2a35cb1b30ff87db2d8690e0f223033e53a1b6827e924c58e475a97d812"
+      "588588681":
+        name: "linux-arm64-morpheus-cli-7.12.0"
+        url_suffix: "linux-arm64-morpheus-cli-7.12.0"
+        size: 13065636
+        digest: "sha256:658c90d73ad5068fd7b517995e10154b9e17a96829361bf78a7ed0cba03d10b9"
+      "588588682":
+        name: "linux-arm64-morpheus-app-7.12.0.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.12.0.AppImage"
+        size: 150249562
+        media_type: "application/vnd.appimage"
+        digest: "sha256:770c2da528ca551159ee49ec8da617555614785f5a782df04e1fd4cdf2069941"
+      "588588683":
+        name: "linux-arm64-morpheus-router-7.12.0"
+        url_suffix: "linux-arm64-morpheus-router-7.12.0"
+        size: 60358840
+        digest: "sha256:222eb9ce0073ab494ebbf76034ae91aef918b635c122d3342a92a49ab9c409a2"
+      "588588687":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1936
+        media_type: "application/yaml"
+        digest: "sha256:f079f49739e4e542cc390be21fbd01b4fd18e670abdafcd213f0f9f0bbe0c768"
+      "588588725":
+        name: "linux-x86_64-morpheus-cli-7.12.0"
+        url_suffix: "linux-x86_64-morpheus-cli-7.12.0"
+        size: 13974210
+        digest: "sha256:f3378f65a3e705bc39ed85feeea8c82e1c3332786eae24aa3cd8e6b917ef6286"
+      "588588731":
+        name: "linux-x86_64-morpheus-router-7.12.0"
+        url_suffix: "linux-x86_64-morpheus-router-7.12.0"
+        size: 64373864
+        digest: "sha256:f69ea62313c696a896a7e3c2ff5b82e470320cf787bb973cfa28496bb33ed593"
+      "588588758":
+        name: "mac-arm64-morpheus-app-7.12.0.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.12.0.dmg"
+        size: 140171302
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:d5181948a767115e4cac9b4f37d8d4bd6e2e16daf6da761692267ca0a6b5da2f"
+      "588588796":
+        name: "mac-arm64-morpheus-cli-7.12.0"
+        url_suffix: "mac-arm64-morpheus-cli-7.12.0"
+        size: 13422594
+        digest: "sha256:7089d68ab154927786153056dfbf318c5e55cf879537dba81f09e74d82d6c6ae"
+      "588588825":
+        name: "mac-arm64-morpheus-router-7.12.0"
+        url_suffix: "mac-arm64-morpheus-router-7.12.0"
+        size: 63916274
+        digest: "sha256:f03223c26fbfbc004bf32cf071bb47cb89b6942db1fe69497b1e6dcc060339e6"
+      "588588835":
+        name: "mac-x64-morpheus-app-7.12.0.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.12.0.dmg"
+        size: 145229172
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:0515c04177f8c50374919552dd4d8eecb240b8a3b2ef8f8f5c9c12acf1e81341"
+      "588588864":
+        name: "mac-x64-morpheus-cli-7.12.0"
+        url_suffix: "mac-x64-morpheus-cli-7.12.0"
+        size: 14170608
+        digest: "sha256:b28c75dd7388295970bc79371b2d581a4cf5b06e8d856ceed558c2ef77654ead"
+      "588588884":
+        name: "mac-x64-morpheus-router-7.12.0"
+        url_suffix: "mac-x64-morpheus-router-7.12.0"
+        size: 66214736
+        digest: "sha256:7fad075ba6d0551d861e34da748eb104a06917b0b3908860971fe0064d53b632"
+      "588588890":
+        name: "win-x64-morpheus-app-7.12.0.exe"
+        url_suffix: "win-x64-morpheus-app-7.12.0.exe"
+        size: 93267443
+        digest: "sha256:185ca38820f7967338a99449c254ca07719479f1caa81de0802c3344dc9f18a9"
+      "588588891":
+        name: "win-x64-morpheus-cli-7.12.0.exe"
+        url_suffix: "win-x64-morpheus-cli-7.12.0.exe"
+        size: 14075904
+        digest: "sha256:a5d23faf3cc46437c1a809cee339195593e98d2b2b65110b6de1814a6de492b6"
+      "588588903":
+        name: "win-x64-morpheus-router-7.12.0.exe"
+        url_suffix: "win-x64-morpheus-router-7.12.0.exe"
+        size: 64592896
+        digest: "sha256:967916b4bf5db082a0b07ac0be0eefe784a5425abb4cb5f45c73efcec7857efc"
+  "398247103":
+    tag: "v7.12.52-test"
+    title: "Pre-release v7.12.52-test"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.12.52-test"
+    created_at: "2026-09-25T14:28:53Z"
+    published_at: "2026-09-28T12:51:32Z"
+    updated_at: "2026-09-28T12:51:32Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.12.52-test"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.12.52-test"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.12.52-test/"
+    assets:
+      "595405178":
+        name: "linux-x86_64-morpheus-cli-7.12.52"
+        url_suffix: "linux-x86_64-morpheus-cli-7.12.52"
+        size: 13974210
+        digest: "sha256:f3378f65a3e705bc39ed85feeea8c82e1c3332786eae24aa3cd8e6b917ef6286"
+      "595405179":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1936
+        media_type: "application/yaml"
+        digest: "sha256:10f7b99be3a3cc25b3dad0ad6b345406871827c6201757d60097e573e3f908e0"
+      "595405180":
+        name: "linux-arm64-morpheus-router-7.12.52"
+        url_suffix: "linux-arm64-morpheus-router-7.12.52"
+        size: 60489912
+        digest: "sha256:d13ff7441e96808d6d4959dc046eaef2f6741fb2224d093f64ceecc4b10529cc"
+      "595405182":
+        name: "linux-x86_64-morpheus-router-7.12.52"
+        url_suffix: "linux-x86_64-morpheus-router-7.12.52"
+        size: 64480648
+        digest: "sha256:44147408e67e6f14e21043ccc275afb124535186e3dc4a2184f2c98f422a8bc1"
+      "595405184":
+        name: "linux-arm64-morpheus-cli-7.12.52"
+        url_suffix: "linux-arm64-morpheus-cli-7.12.52"
+        size: 13065636
+        digest: "sha256:658c90d73ad5068fd7b517995e10154b9e17a96829361bf78a7ed0cba03d10b9"
+      "595405198":
+        name: "mac-arm64-morpheus-cli-7.12.52"
+        url_suffix: "mac-arm64-morpheus-cli-7.12.52"
+        size: 13422594
+        digest: "sha256:7089d68ab154927786153056dfbf318c5e55cf879537dba81f09e74d82d6c6ae"
+      "595405230":
+        name: "mac-x64-morpheus-cli-7.12.52"
+        url_suffix: "mac-x64-morpheus-cli-7.12.52"
+        size: 14170608
+        digest: "sha256:b28c75dd7388295970bc79371b2d581a4cf5b06e8d856ceed558c2ef77654ead"
+      "595405231":
+        name: "mac-arm64-morpheus-router-7.12.52"
+        url_suffix: "mac-arm64-morpheus-router-7.12.52"
+        size: 64018274
+        digest: "sha256:a4956497e217a65d04560dddd902755a1ccf906cd0871cd007be017d37f9c9f2"
+      "595405236":
+        name: "mac-x64-morpheus-router-7.12.52"
+        url_suffix: "mac-x64-morpheus-router-7.12.52"
+        size: 66328224
+        digest: "sha256:0469d2a58d0ecff42ab19ec0d0e8702c89a366219d9f81d3f7617243b5b3f830"
+      "595405304":
+        name: "win-x64-morpheus-cli-7.12.52.exe"
+        url_suffix: "win-x64-morpheus-cli-7.12.52.exe"
+        size: 14075904
+        digest: "sha256:a5d23faf3cc46437c1a809cee339195593e98d2b2b65110b6de1814a6de492b6"
+      "595405375":
+        name: "win-x64-morpheus-router-7.12.52.exe"
+        url_suffix: "win-x64-morpheus-router-7.12.52.exe"
+        size: 64704512
+        digest: "sha256:f249f12a61f7d78de49fb40d14852889aa9be698ecede30755d4f00ca88aa17b"
+  "398369955":
+    tag: "v7.12.53-test"
+    title: "Pre-release v7.12.53-test"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.12.53-test"
+    created_at: "2026-09-25T14:28:53Z"
+    published_at: "2026-09-28T15:15:10Z"
+    updated_at: "2026-09-28T15:15:10Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.12.53-test"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.12.53-test"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.12.53-test/"
+    assets:
+      "595707173":
+        name: "linux-x86_64-morpheus-app-7.12.53.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.12.53.AppImage"
+        size: 199905210
+        media_type: "application/vnd.appimage"
+        digest: "sha256:dd564307139ea8e7a2aeaeff037df95ec1880b1fc8e62945b39a8e540bc8f3f7"
+      "595707175":
+        name: "mac-x64-morpheus-app-7.12.53.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.12.53.dmg"
+        size: 181388988
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:e2077ec821a58dc651350d4ebbd8702a519bed3d826010a3306e8f47b577ce44"
+      "595707176":
+        name: "linux-arm64-morpheus-app-7.12.53.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.12.53.AppImage"
+        size: 200026281
+        media_type: "application/vnd.appimage"
+        digest: "sha256:81b0b0277f6576bb5388ac77020646b9d8d72bf4ad7e7b92eb8284430c59d9a7"
+      "595707177":
+        name: "mac-arm64-morpheus-app-7.12.53.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.12.53.dmg"
+        size: 175156824
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:75fe483a47476a11e5bf528e3bbe54735d6d114949cc01f0c8e4aff08e46c490"
+      "595707181":
+        name: "win-x64-morpheus-app-7.12.53.exe"
+        url_suffix: "win-x64-morpheus-app-7.12.53.exe"
+        size: 109827212
+        digest: "sha256:dfd146ba3e9edf61165dc1aa4f338097a9d83b4b0020fd9908b672a1f70bb591"
+  "398643797":
+    tag: "v7.13.0"
+    title: "Release v7.13.0"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.13.0"
+    created_at: "2026-09-28T21:08:57Z"
+    published_at: "2026-09-28T21:34:34Z"
+    updated_at: "2026-09-28T21:34:34Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.13.0"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.13.0"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.13.0/"
+    assets:
+      "596467213":
+        name: "linux-arm64-morpheus-router-7.13.0"
+        url_suffix: "linux-arm64-morpheus-router-7.13.0"
+        size: 60489912
+        digest: "sha256:a38044714d63683fcdf299a17f4559de435b503cf724f3e7fdd54c40a8e90a25"
+      "596467215":
+        name: "linux-arm64-morpheus-app-7.13.0.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.13.0.AppImage"
+        size: 200026151
+        media_type: "application/vnd.appimage"
+        digest: "sha256:0ea0fe96bc1af8111143722ee26ea789db64485d164f3189252e6949a11688ac"
+      "596467219":
+        name: "linux-x86_64-morpheus-app-7.13.0.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.13.0.AppImage"
+        size: 199905363
+        media_type: "application/vnd.appimage"
+        digest: "sha256:cd2dfe0a6e5a5a6f9371699ee7e7ce61f0036fee88f2511db34b077b4324c2ae"
+      "596467222":
+        name: "linux-arm64-morpheus-cli-7.13.0"
+        url_suffix: "linux-arm64-morpheus-cli-7.13.0"
+        size: 13065636
+        digest: "sha256:658c90d73ad5068fd7b517995e10154b9e17a96829361bf78a7ed0cba03d10b9"
+      "596467223":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1936
+        media_type: "application/yaml"
+        digest: "sha256:90dfbbace760bf82fdd1ecd7fd9756235d80197191a3df5e9cfe0adc8d6700d2"
+      "596467240":
+        name: "linux-x86_64-morpheus-cli-7.13.0"
+        url_suffix: "linux-x86_64-morpheus-cli-7.13.0"
+        size: 13974210
+        digest: "sha256:f3378f65a3e705bc39ed85feeea8c82e1c3332786eae24aa3cd8e6b917ef6286"
+      "596467286":
+        name: "linux-x86_64-morpheus-router-7.13.0"
+        url_suffix: "linux-x86_64-morpheus-router-7.13.0"
+        size: 64480648
+        digest: "sha256:c93bba2d95e30dc04d73bf8b5eec2eee725e4760f996ecceae09e7ea3204c03d"
+      "596467290":
+        name: "mac-arm64-morpheus-app-7.13.0.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.13.0.dmg"
+        size: 175121347
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:43bf7ff07a6887b7e4a9350b5f498ece5735fc677e2a986901648b5b441244b0"
+      "596467378":
+        name: "mac-arm64-morpheus-cli-7.13.0"
+        url_suffix: "mac-arm64-morpheus-cli-7.13.0"
+        size: 13422594
+        digest: "sha256:7089d68ab154927786153056dfbf318c5e55cf879537dba81f09e74d82d6c6ae"
+      "596467382":
+        name: "mac-arm64-morpheus-router-7.13.0"
+        url_suffix: "mac-arm64-morpheus-router-7.13.0"
+        size: 64018274
+        digest: "sha256:d4cec660275cdb79f4cdca512bf45545983a7cfa0c6c265a3c6e2c47fb6330bf"
+      "596467409":
+        name: "mac-x64-morpheus-app-7.13.0.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.13.0.dmg"
+        size: 181403723
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:011d0d53b7af336f7cda87cbe9504a700911aae462573f87eb78638794d99042"
+      "596467533":
+        name: "mac-x64-morpheus-cli-7.13.0"
+        url_suffix: "mac-x64-morpheus-cli-7.13.0"
+        size: 14170608
+        digest: "sha256:b28c75dd7388295970bc79371b2d581a4cf5b06e8d856ceed558c2ef77654ead"
+      "596467566":
+        name: "mac-x64-morpheus-router-7.13.0"
+        url_suffix: "mac-x64-morpheus-router-7.13.0"
+        size: 66328224
+        digest: "sha256:57fbe2b66e5d8ef0a5d45e71a6f9f2b78a68e7146e9dc6c4f323b6b318c07bef"
+      "596467586":
+        name: "win-x64-morpheus-app-7.13.0.exe"
+        url_suffix: "win-x64-morpheus-app-7.13.0.exe"
+        size: 109827512
+        digest: "sha256:f67a3484e150a80364d1a91c13a281139bc338a32af3748a904b6360ea01a997"
+      "596467614":
+        name: "win-x64-morpheus-cli-7.13.0.exe"
+        url_suffix: "win-x64-morpheus-cli-7.13.0.exe"
+        size: 14075904
+        digest: "sha256:a5d23faf3cc46437c1a809cee339195593e98d2b2b65110b6de1814a6de492b6"
+      "596467619":
+        name: "win-x64-morpheus-router-7.13.0.exe"
+        url_suffix: "win-x64-morpheus-router-7.13.0.exe"
+        size: 64704512
+        digest: "sha256:5d684d720f02c6d23504f4ecd142915f848abbc82eaf0ba2607e8eb1ff34d05f"
+  "399286232":
+    tag: "v7.13.35-test"
+    title: "Pre-release v7.13.35-test"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.13.35-test"
+    created_at: "2026-09-28T21:08:57Z"
+    published_at: "2026-09-29T15:32:14Z"
+    updated_at: "2026-09-29T15:32:14Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.13.35-test"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.13.35-test"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.13.35-test/"
+    assets:
+      "598552796":
+        name: "linux-arm64-morpheus-router-7.13.35"
+        url_suffix: "linux-arm64-morpheus-router-7.13.35"
+        size: 60620984
+        digest: "sha256:447e9e384063510b5047049eedc6ffbe27d30bdde4186683c92e2b7868f8d5d2"
+      "598552800":
+        name: "linux-arm64-morpheus-cli-7.13.35"
+        url_suffix: "linux-arm64-morpheus-cli-7.13.35"
+        size: 13065636
+        digest: "sha256:658c90d73ad5068fd7b517995e10154b9e17a96829361bf78a7ed0cba03d10b9"
+      "598552804":
+        name: "linux-x86_64-morpheus-app-7.13.35.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.13.35.AppImage"
+        size: 199905206
+        media_type: "application/vnd.appimage"
+        digest: "sha256:a3e1862f2aa17fceaabfc8f7f8a7bf2bb2e5e126836b92b13b07f7056e3237d8"
+      "598552805":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1936
+        media_type: "application/yaml"
+        digest: "sha256:42133a413dbea69ee42b045328c34ab28da1ffef2f5a164469876301f0c31227"
+      "598552807":
+        name: "linux-arm64-morpheus-app-7.13.35.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.13.35.AppImage"
+        size: 200026300
+        media_type: "application/vnd.appimage"
+        digest: "sha256:beafef5d8e29ead3d2fa50aa6351cc76229dc57be7045463be9b23ff81a9a67b"
+      "598552824":
+        name: "linux-x86_64-morpheus-cli-7.13.35"
+        url_suffix: "linux-x86_64-morpheus-cli-7.13.35"
+        size: 13974210
+        digest: "sha256:f3378f65a3e705bc39ed85feeea8c82e1c3332786eae24aa3cd8e6b917ef6286"
+      "598552847":
+        name: "linux-x86_64-morpheus-router-7.13.35"
+        url_suffix: "linux-x86_64-morpheus-router-7.13.35"
+        size: 64654408
+        digest: "sha256:0a139636d65234a563bf99d9e4bb0eb4508afb2daefdd5d55a4109ad6fb8cbde"
+      "598552859":
+        name: "mac-arm64-morpheus-app-7.13.35.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.13.35.dmg"
+        size: 175157656
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:c41f53beb2a9ad1bc6e4b60945fa050c07853c77c0980c764698c11bcf5a0a4e"
+      "598552943":
+        name: "mac-arm64-morpheus-cli-7.13.35"
+        url_suffix: "mac-arm64-morpheus-cli-7.13.35"
+        size: 13422594
+        digest: "sha256:7089d68ab154927786153056dfbf318c5e55cf879537dba81f09e74d82d6c6ae"
+      "598552968":
+        name: "mac-arm64-morpheus-router-7.13.35"
+        url_suffix: "mac-arm64-morpheus-router-7.13.35"
+        size: 64186290
+        digest: "sha256:840d68548912545d2481afb369b3e26a8bbde726fb239d3b9a94bd2e0d3d9f4a"
+      "598553000":
+        name: "mac-x64-morpheus-app-7.13.35.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.13.35.dmg"
+        size: 181374259
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:a97c9aa24ab5432ae9f8603bceb909ddbea19bec775ee20162591af50922ed81"
+      "598553074":
+        name: "mac-x64-morpheus-cli-7.13.35"
+        url_suffix: "mac-x64-morpheus-cli-7.13.35"
+        size: 14170608
+        digest: "sha256:b28c75dd7388295970bc79371b2d581a4cf5b06e8d856ceed558c2ef77654ead"
+      "598553109":
+        name: "mac-x64-morpheus-router-7.13.35"
+        url_suffix: "mac-x64-morpheus-router-7.13.35"
+        size: 66499040
+        digest: "sha256:3f9ecb7c78cd42ddab0a2505e789330b48f96002e74c9a25210b3665d7685a47"
+      "598553120":
+        name: "win-x64-morpheus-app-7.13.35.exe"
+        url_suffix: "win-x64-morpheus-app-7.13.35.exe"
+        size: 109827012
+        digest: "sha256:15555c8be0b7d68b645c41f8d3161c1fbdf192ab9d8f022425e1c36d186b007b"
+      "598553174":
+        name: "win-x64-morpheus-cli-7.13.35.exe"
+        url_suffix: "win-x64-morpheus-cli-7.13.35.exe"
+        size: 14075904
+        digest: "sha256:a5d23faf3cc46437c1a809cee339195593e98d2b2b65110b6de1814a6de492b6"
+      "598553204":
+        name: "win-x64-morpheus-router-7.13.35.exe"
+        url_suffix: "win-x64-morpheus-router-7.13.35.exe"
+        size: 64878592
+        digest: "sha256:d9401b0293f11b728475d1f1e948777c76af4bacb3e28c7a96c12f432c837a7b"
+  "401324546":
+    tag: "v7.13.41-test"
+    title: "Pre-release v7.13.41-test"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.13.41-test"
+    created_at: "2026-09-28T21:08:57Z"
+    published_at: "2026-10-01T20:24:17Z"
+    updated_at: "2026-10-01T20:24:17Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.13.41-test"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.13.41-test"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.13.41-test/"
+    assets:
+      "604068993":
+        name: "linux-arm64-morpheus-router-7.13.41"
+        url_suffix: "linux-arm64-morpheus-router-7.13.41"
+        size: 60620984
+        digest: "sha256:d3639fb51c657d47f471019b7ac97f356823d88084b1f03703ba740593f9da89"
+      "604068995":
+        name: "linux-arm64-morpheus-app-7.13.41.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.13.41.AppImage"
+        size: 200026322
+        media_type: "application/vnd.appimage"
+        digest: "sha256:0d85c5661ad2e281b1b907da7878887a5f909934eaf4e0950eda4caea89a2f28"
+      "604068997":
+        name: "linux-x86_64-morpheus-app-7.13.41.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.13.41.AppImage"
+        size: 199905255
+        media_type: "application/vnd.appimage"
+        digest: "sha256:ee561aac3f5dce96cd9e9bc9e3586617b097ad1fcceaec30463d831673114a8e"
+      "604069000":
+        name: "linux-arm64-morpheus-cli-7.13.41"
+        url_suffix: "linux-arm64-morpheus-cli-7.13.41"
+        size: 13065636
+        digest: "sha256:658c90d73ad5068fd7b517995e10154b9e17a96829361bf78a7ed0cba03d10b9"
+      "604069004":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1936
+        media_type: "application/yaml"
+        digest: "sha256:e6f94cb426a6c48a4506ae6a616101be68c0712bc23344e2f0384a44e3db4b86"
+      "604069030":
+        name: "linux-x86_64-morpheus-cli-7.13.41"
+        url_suffix: "linux-x86_64-morpheus-cli-7.13.41"
+        size: 13974210
+        digest: "sha256:f3378f65a3e705bc39ed85feeea8c82e1c3332786eae24aa3cd8e6b917ef6286"
+      "604069059":
+        name: "linux-x86_64-morpheus-router-7.13.41"
+        url_suffix: "linux-x86_64-morpheus-router-7.13.41"
+        size: 64670792
+        digest: "sha256:468a133f1c68beed6f082928652fe9ee395e0829287d969a70dd059670544699"
+      "604069080":
+        name: "mac-arm64-morpheus-app-7.13.41.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.13.41.dmg"
+        size: 175076104
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:cc171ae6c55e136ef0e8194826ab15bf4c4c54513d281bf2fe9653eca30c419c"
+      "604069210":
+        name: "mac-arm64-morpheus-cli-7.13.41"
+        url_suffix: "mac-arm64-morpheus-cli-7.13.41"
+        size: 13422594
+        digest: "sha256:7089d68ab154927786153056dfbf318c5e55cf879537dba81f09e74d82d6c6ae"
+      "604069216":
+        name: "mac-arm64-morpheus-router-7.13.41"
+        url_suffix: "mac-arm64-morpheus-router-7.13.41"
+        size: 64202866
+        digest: "sha256:38dd4122d2469a925bc28e05b4fa4365b7aa5677a4a721f2f7ae56e08d5046bb"
+      "604069288":
+        name: "mac-x64-morpheus-app-7.13.41.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.13.41.dmg"
+        size: 181407791
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:2f8848d2ba3238314e586bedece7dea8000ab7177329df5335aaef03937ba4f4"
+      "604069388":
+        name: "mac-x64-morpheus-cli-7.13.41"
+        url_suffix: "mac-x64-morpheus-cli-7.13.41"
+        size: 14170608
+        digest: "sha256:b28c75dd7388295970bc79371b2d581a4cf5b06e8d856ceed558c2ef77654ead"
+      "604069420":
+        name: "mac-x64-morpheus-router-7.13.41"
+        url_suffix: "mac-x64-morpheus-router-7.13.41"
+        size: 66519584
+        digest: "sha256:bcd4591a4ddaf863c57627762d5d92932c3e67b9cd642e16d8fb24cb48e9e3be"
+      "604069424":
+        name: "win-x64-morpheus-app-7.13.41.exe"
+        url_suffix: "win-x64-morpheus-app-7.13.41.exe"
+        size: 109828078
+        digest: "sha256:0669a6c777bda1233b9a96aad60fd911fa86ccffda64ea09864232cf0f6f5864"
+      "604069557":
+        name: "win-x64-morpheus-cli-7.13.41.exe"
+        url_suffix: "win-x64-morpheus-cli-7.13.41.exe"
+        size: 14075904
+        digest: "sha256:a5d23faf3cc46437c1a809cee339195593e98d2b2b65110b6de1814a6de492b6"
+      "604069589":
+        name: "win-x64-morpheus-router-7.13.41.exe"
+        url_suffix: "win-x64-morpheus-router-7.13.41.exe"
+        size: 64896000
+        digest: "sha256:cfa49daa5d290dc052bba3a7314fd0ccc80ba1607681e98cc26433221bfdcbba"
+  "401357760":
+    tag: "v7.13.42-test"
+    title: "Pre-release v7.13.42-test"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.13.42-test"
+    created_at: "2026-09-28T21:08:57Z"
+    published_at: "2026-10-01T21:08:46Z"
+    updated_at: "2026-10-01T21:08:46Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.13.42-test"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.13.42-test"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.13.42-test/"
+    assets:
+      "604140997":
+        name: "linux-arm64-morpheus-app-7.13.42.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.13.42.AppImage"
+        size: 200026319
+        media_type: "application/vnd.appimage"
+        digest: "sha256:81cccb02af7f4eb39d783fb4f7043cf008f88f4dfaabaf9c40f0b60f9e67bd70"
+      "604140998":
+        name: "linux-x86_64-morpheus-app-7.13.42.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.13.42.AppImage"
+        size: 199905214
+        media_type: "application/vnd.appimage"
+        digest: "sha256:085d7195c3a5afc95dbef437e1db7c78eba8cd0c60cc13ba36e858b5ecad9da8"
+      "604140999":
+        name: "linux-arm64-morpheus-cli-7.13.42"
+        url_suffix: "linux-arm64-morpheus-cli-7.13.42"
+        size: 13065636
+        digest: "sha256:658c90d73ad5068fd7b517995e10154b9e17a96829361bf78a7ed0cba03d10b9"
+      "604141000":
+        name: "linux-arm64-morpheus-router-7.13.42"
+        url_suffix: "linux-arm64-morpheus-router-7.13.42"
+        size: 60620984
+        digest: "sha256:8f69ddf79ebc5bbb2c520a29533fd1550ffc3e357397fade9e547048ce415b9d"
+      "604141001":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 2145
+        media_type: "application/yaml"
+        digest: "sha256:7a1437406689f90fdeadeaa91039c7b152075cf99adf85b6feddfad451699912"
+      "604141023":
+        name: "linux-x86_64-morpheus-cli-7.13.42"
+        url_suffix: "linux-x86_64-morpheus-cli-7.13.42"
+        size: 13974210
+        digest: "sha256:f3378f65a3e705bc39ed85feeea8c82e1c3332786eae24aa3cd8e6b917ef6286"
+      "604141036":
+        name: "linux-x86_64-morpheus-router-7.13.42"
+        url_suffix: "linux-x86_64-morpheus-router-7.13.42"
+        size: 64670792
+        digest: "sha256:ed5cba04fdfcf099a1fad553ef9c449033663f81c6425f2cc3b89df4776d005e"
+      "604141049":
+        name: "mac-arm64-morpheus-app-7.13.42.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.13.42.dmg"
+        size: 175164564
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:302e272cdee5579994c7dad50cd0cb4d1cc27c4925fa083c3864048e951d284d"
+      "604141067":
+        name: "mac-arm64-morpheus-cli-7.13.42"
+        url_suffix: "mac-arm64-morpheus-cli-7.13.42"
+        size: 13422594
+        digest: "sha256:7089d68ab154927786153056dfbf318c5e55cf879537dba81f09e74d82d6c6ae"
+      "604141136":
+        name: "mac-arm64-morpheus-router-7.13.42"
+        url_suffix: "mac-arm64-morpheus-router-7.13.42"
+        size: 64202866
+        digest: "sha256:ccbfb41bf242de3b45033cafc9de89c530ebf7f6a0ae16597053f61cded095e6"
+      "604141144":
+        name: "mac-x64-morpheus-app-7.13.42.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.13.42.dmg"
+        size: 181378520
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:eded4a525076a20bbd909f91a643a0dfc3a21f4c93bca0a2fe9ce641770cdb5c"
+      "604141190":
+        name: "mac-x64-morpheus-cli-7.13.42"
+        url_suffix: "mac-x64-morpheus-cli-7.13.42"
+        size: 14170608
+        digest: "sha256:b28c75dd7388295970bc79371b2d581a4cf5b06e8d856ceed558c2ef77654ead"
+      "604141200":
+        name: "mac-x64-morpheus-router-7.13.42"
+        url_suffix: "mac-x64-morpheus-router-7.13.42"
+        size: 66519584
+        digest: "sha256:d64b49b3ef5caff44d8eeee69ef2f29138370976ff5a10285407035e4fb6c8ef"
+      "604141206":
+        name: "win-x64-morpheus-app-7.13.42.exe"
+        url_suffix: "win-x64-morpheus-app-7.13.42.exe"
+        size: 109826896
+        digest: "sha256:a16ec6b0631e6c8df026ef37a90dd839cee348243de9ac23bcb382eb3db33265"
+      "604141216":
+        name: "win-x64-morpheus-cli-7.13.42.exe"
+        url_suffix: "win-x64-morpheus-cli-7.13.42.exe"
+        size: 14075904
+        digest: "sha256:a5d23faf3cc46437c1a809cee339195593e98d2b2b65110b6de1814a6de492b6"
+      "604141218":
+        name: "win-x64-morpheus-router-7.13.42.exe"
+        url_suffix: "win-x64-morpheus-router-7.13.42.exe"
+        size: 64896000
+        digest: "sha256:aebb0b2ddff59b3820c0e5aad62462360101931c895ea20d3d5165b87fe1d0f6"
+  "401818246":
+    tag: "v7.13.44-test"
+    title: "Pre-release v7.13.44-test"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.13.44-test"
+    created_at: "2026-09-28T21:08:57Z"
+    published_at: "2026-10-02T12:55:32Z"
+    updated_at: "2026-10-02T12:55:32Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.13.44-test"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.13.44-test"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.13.44-test/"
+    assets:
+      "605614786":
+        name: "linux-arm64-morpheus-cli-7.13.44"
+        url_suffix: "linux-arm64-morpheus-cli-7.13.44"
+        size: 13065636
+        digest: "sha256:658c90d73ad5068fd7b517995e10154b9e17a96829361bf78a7ed0cba03d10b9"
+      "605614787":
+        name: "linux-x86_64-morpheus-app-7.13.44.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.13.44.AppImage"
+        size: 199905207
+        media_type: "application/vnd.appimage"
+        digest: "sha256:4e1b2bca9d63e41017feabb6a967afb2b4dbe252eeaebf2f2a3b7b85e7228d4b"
+      "605614788":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 2145
+        media_type: "application/yaml"
+        digest: "sha256:bd87719b760f42461b1031fc11b843ef68c197f3923c7f0853be2b96ed131a4f"
+      "605614789":
+        name: "linux-arm64-morpheus-app-7.13.44.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.13.44.AppImage"
+        size: 200026327
+        media_type: "application/vnd.appimage"
+        digest: "sha256:63e4efbdbed191af9b033e056a4bd29279b99a2f12956f766ee658b367457b33"
+      "605614790":
+        name: "linux-arm64-morpheus-router-7.13.44"
+        url_suffix: "linux-arm64-morpheus-router-7.13.44"
+        size: 60620984
+        digest: "sha256:2a0b2389cc8ad1fc77d4713c7bd75640fc4c4490e8ff87b50cfafb0b0861857b"
+      "605614804":
+        name: "linux-x86_64-morpheus-cli-7.13.44"
+        url_suffix: "linux-x86_64-morpheus-cli-7.13.44"
+        size: 13974210
+        digest: "sha256:f3378f65a3e705bc39ed85feeea8c82e1c3332786eae24aa3cd8e6b917ef6286"
+      "605614820":
+        name: "linux-x86_64-morpheus-router-7.13.44"
+        url_suffix: "linux-x86_64-morpheus-router-7.13.44"
+        size: 64670792
+        digest: "sha256:f3689b1431c454d57682d73d8acba1d1d9a133efc9982d2b578bd5e35bbc6e29"
+      "605614834":
+        name: "mac-arm64-morpheus-app-7.13.44.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.13.44.dmg"
+        size: 175098507
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:ceda6a09780db7d1854cbc32ff450878f850aad0633389094e779f7937e56f4a"
+      "605614863":
+        name: "mac-arm64-morpheus-cli-7.13.44"
+        url_suffix: "mac-arm64-morpheus-cli-7.13.44"
+        size: 13422594
+        digest: "sha256:7089d68ab154927786153056dfbf318c5e55cf879537dba81f09e74d82d6c6ae"
+      "605614887":
+        name: "mac-arm64-morpheus-router-7.13.44"
+        url_suffix: "mac-arm64-morpheus-router-7.13.44"
+        size: 64202866
+        digest: "sha256:46d0ccf8a0503a43b3e65de1eb29e2d66241c6b98d5d9fd2e687d0a9676150af"
+      "605614900":
+        name: "mac-x64-morpheus-app-7.13.44.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.13.44.dmg"
+        size: 181397526
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:d47cf88cb1ef0649a7406cea8e8f13b41a97c1c5e8f999f6bcb1f11fd37ef41d"
+      "605614975":
+        name: "mac-x64-morpheus-cli-7.13.44"
+        url_suffix: "mac-x64-morpheus-cli-7.13.44"
+        size: 14170608
+        digest: "sha256:b28c75dd7388295970bc79371b2d581a4cf5b06e8d856ceed558c2ef77654ead"
+      "605615004":
+        name: "mac-x64-morpheus-router-7.13.44"
+        url_suffix: "mac-x64-morpheus-router-7.13.44"
+        size: 66519584
+        digest: "sha256:f3abfbd220750835cd6cd742e45dbed15f19a58a1ba03a948aa701c0d7c54e5b"
+      "605615011":
+        name: "win-x64-morpheus-app-7.13.44.exe"
+        url_suffix: "win-x64-morpheus-app-7.13.44.exe"
+        size: 109823894
+        digest: "sha256:53688b86399a7dec3c564ea9aad9b62618639ad3fc5e33c10f147584eda52de0"
+      "605615022":
+        name: "win-x64-morpheus-cli-7.13.44.exe"
+        url_suffix: "win-x64-morpheus-cli-7.13.44.exe"
+        size: 14075904
+        digest: "sha256:a5d23faf3cc46437c1a809cee339195593e98d2b2b65110b6de1814a6de492b6"
+      "605615025":
+        name: "win-x64-morpheus-router-7.13.44.exe"
+        url_suffix: "win-x64-morpheus-router-7.13.44.exe"
+        size: 64895488
+        digest: "sha256:99f3d7d2fd092b779a8f36d53a4f31ffc6d0503f73ba349b1b62e154b508f394"
+  "401915809":
+    tag: "v7.13.45-test"
+    title: "Pre-release v7.13.45-test"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.13.45-test"
+    created_at: "2026-09-28T21:08:57Z"
+    published_at: "2026-10-02T15:02:51Z"
+    updated_at: "2026-10-02T15:02:51Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.13.45-test"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.13.45-test"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.13.45-test/"
+    assets:
+      "605846458":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1952
+        media_type: "application/yaml"
+        digest: "sha256:ad748d0582dfc10ad82f9d0dcff26bc1a3ec33fc966578e1767996c63c2c6b35"
+      "605846459":
+        name: "linux-x86_64-morpheus-app-7.13.45.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.13.45.AppImage"
+        size: 199905229
+        media_type: "application/vnd.appimage"
+        digest: "sha256:534983a88e9040040b50672f94d91b933f57c2fa403852478ed27ac29405c9e1"
+      "605846460":
+        name: "linux-arm64-morpheus-router-7.13.45"
+        url_suffix: "linux-arm64-morpheus-router-7.13.45"
+        size: 60620984
+        digest: "sha256:3a1f6e0408a667c3f3b262277585740e0e4ca61a85614eeebfd87faf1e63b021"
+      "605846463":
+        name: "linux-arm64-morpheus-app-7.13.45.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.13.45.AppImage"
+        size: 200026281
+        media_type: "application/vnd.appimage"
+        digest: "sha256:529e3cc7d61222bbb46b321da89c61a2171032c373ba7eacb6853574e4f07d28"
+      "605846465":
+        name: "linux-arm64-morpheus-cli-7.13.45"
+        url_suffix: "linux-arm64-morpheus-cli-7.13.45"
+        size: 13065636
+        digest: "sha256:658c90d73ad5068fd7b517995e10154b9e17a96829361bf78a7ed0cba03d10b9"
+      "605846478":
+        name: "linux-x86_64-morpheus-cli-7.13.45"
+        url_suffix: "linux-x86_64-morpheus-cli-7.13.45"
+        size: 13974210
+        digest: "sha256:f3378f65a3e705bc39ed85feeea8c82e1c3332786eae24aa3cd8e6b917ef6286"
+      "605846523":
+        name: "linux-x86_64-morpheus-router-7.13.45"
+        url_suffix: "linux-x86_64-morpheus-router-7.13.45"
+        size: 64670792
+        digest: "sha256:1d09cc885f0e1d5582cc79ef2298d9af9aa102e16e16fe4a9ad833853a58f888"
+      "605846564":
+        name: "mac-arm64-morpheus-app-7.13.45.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.13.45.dmg"
+        size: 175154700
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:db5092936a2d0cbb4fb0ec2431bca3f9be6307f8211e0b4561bbd364ea03fe0f"
+      "605846675":
+        name: "mac-arm64-morpheus-cli-7.13.45"
+        url_suffix: "mac-arm64-morpheus-cli-7.13.45"
+        size: 13422594
+        digest: "sha256:7089d68ab154927786153056dfbf318c5e55cf879537dba81f09e74d82d6c6ae"
+      "605846694":
+        name: "mac-arm64-morpheus-router-7.13.45"
+        url_suffix: "mac-arm64-morpheus-router-7.13.45"
+        size: 64202866
+        digest: "sha256:bf2ba06fee26187e64330b4c522130fe3a424be9e6e6df3a2dc69b5327bc7cc8"
+      "605846729":
+        name: "mac-x64-morpheus-app-7.13.45.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.13.45.dmg"
+        size: 181388552
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:815dd767425c76570f45eba84c0ee0fff9b42d59602e9530a8d05032cdc634d2"
+      "605846885":
+        name: "mac-x64-morpheus-cli-7.13.45"
+        url_suffix: "mac-x64-morpheus-cli-7.13.45"
+        size: 14170608
+        digest: "sha256:b28c75dd7388295970bc79371b2d581a4cf5b06e8d856ceed558c2ef77654ead"
+      "605846959":
+        name: "mac-x64-morpheus-router-7.13.45"
+        url_suffix: "mac-x64-morpheus-router-7.13.45"
+        size: 66519584
+        digest: "sha256:0bfcfd5ea99eab64e8204d53c92f6e79b784d9ce923e6973a90649ce82c56c2a"
+      "605846980":
+        name: "win-x64-morpheus-app-7.13.45.exe"
+        url_suffix: "win-x64-morpheus-app-7.13.45.exe"
+        size: 109827050
+        digest: "sha256:8139aaf928bc9abe0fd3668078ebf39ff57caa9aa0bb5d0d1c009d75a5ef132a"
+      "605847112":
+        name: "win-x64-morpheus-cli-7.13.45.exe"
+        url_suffix: "win-x64-morpheus-cli-7.13.45.exe"
+        size: 14075904
+        digest: "sha256:a5d23faf3cc46437c1a809cee339195593e98d2b2b65110b6de1814a6de492b6"
+      "605847116":
+        name: "win-x64-morpheus-router-7.13.45.exe"
+        url_suffix: "win-x64-morpheus-router-7.13.45.exe"
+        size: 64895488
+        digest: "sha256:d425471f4c0abe8a5733bf4d5a64d0963ffd79c329cd9b4348dda2089c01f2b0"
+  "401966711":
+    tag: "v7.14.0"
+    title: "Release v7.14.0"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.14.0"
+    created_at: "2026-10-02T15:46:07Z"
+    published_at: "2026-10-02T16:10:50Z"
+    updated_at: "2026-10-02T16:10:50Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.14.0"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.14.0"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.14.0/"
+    assets:
+      "605976518":
+        name: "linux-x86_64-morpheus-app-7.14.0.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.14.0.AppImage"
+        size: 199905337
+        media_type: "application/vnd.appimage"
+        digest: "sha256:bab776182671171c6592c36f892c636a692106e64897233bfe1cfbe3e33cc053"
+      "605976521":
+        name: "linux-arm64-morpheus-cli-7.14.0"
+        url_suffix: "linux-arm64-morpheus-cli-7.14.0"
+        size: 13065636
+        digest: "sha256:658c90d73ad5068fd7b517995e10154b9e17a96829361bf78a7ed0cba03d10b9"
+      "605976522":
+        name: "linux-arm64-morpheus-router-7.14.0"
+        url_suffix: "linux-arm64-morpheus-router-7.14.0"
+        size: 60489912
+        digest: "sha256:8ade2ea500d451329da28f3dab4dfabe613a09f80d7a35391c1668443831a04a"
+      "605976523":
+        name: "linux-arm64-morpheus-app-7.14.0.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.14.0.AppImage"
+        size: 200026150
+        media_type: "application/vnd.appimage"
+        digest: "sha256:ddb67028a96e6bcfd7aae35a874bb62f76d031b4e5f4c64a862cbceb0d363308"
+      "605976525":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1952
+        media_type: "application/yaml"
+        digest: "sha256:12605322e29edcda41348c973fcc5e44f5fef26c87c39ec53a5a209f6062e58c"
+      "605976538":
+        name: "linux-x86_64-morpheus-cli-7.14.0"
+        url_suffix: "linux-x86_64-morpheus-cli-7.14.0"
+        size: 13974210
+        digest: "sha256:f3378f65a3e705bc39ed85feeea8c82e1c3332786eae24aa3cd8e6b917ef6286"
+      "605976564":
+        name: "linux-x86_64-morpheus-router-7.14.0"
+        url_suffix: "linux-x86_64-morpheus-router-7.14.0"
+        size: 64497032
+        digest: "sha256:722a5b73fae079b5d06ad8dada396d835b4b49fbb8e93f091453a52e36d9f42d"
+      "605976566":
+        name: "mac-arm64-morpheus-app-7.14.0.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.14.0.dmg"
+        size: 175124818
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:c3661f8e395f7645422fc58b8780cb254017c01920e2f5e73b7b1e44f6cd09bb"
+      "605976652":
+        name: "mac-arm64-morpheus-cli-7.14.0"
+        url_suffix: "mac-arm64-morpheus-cli-7.14.0"
+        size: 13422594
+        digest: "sha256:7089d68ab154927786153056dfbf318c5e55cf879537dba81f09e74d82d6c6ae"
+      "605976664":
+        name: "mac-arm64-morpheus-router-7.14.0"
+        url_suffix: "mac-arm64-morpheus-router-7.14.0"
+        size: 64051378
+        digest: "sha256:dfa47fe7c21a851ebbde353f6a00bbca92ef342890ebd572d37cc313c8d1adfb"
+      "605976691":
+        name: "mac-x64-morpheus-app-7.14.0.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.14.0.dmg"
+        size: 181377663
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:14b679b9d7cf9fc7a37b779c69e366a87ca9f1daf56bc871265b0b7480618ead"
+      "605976756":
+        name: "mac-x64-morpheus-cli-7.14.0"
+        url_suffix: "mac-x64-morpheus-cli-7.14.0"
+        size: 14170608
+        digest: "sha256:b28c75dd7388295970bc79371b2d581a4cf5b06e8d856ceed558c2ef77654ead"
+      "605976782":
+        name: "mac-x64-morpheus-router-7.14.0"
+        url_suffix: "mac-x64-morpheus-router-7.14.0"
+        size: 66340592
+        digest: "sha256:e338831da8b43c7d7901395107af7813d6821bdcf2980f8e25e4b032c34f83ac"
+      "605976839":
+        name: "win-x64-morpheus-app-7.14.0.exe"
+        url_suffix: "win-x64-morpheus-app-7.14.0.exe"
+        size: 109826612
+        digest: "sha256:5be5cc18acc543e9c3d492aedbb8c97def8870e148d819fa1e53ae12e4221976"
+      "605976880":
+        name: "win-x64-morpheus-cli-7.14.0.exe"
+        url_suffix: "win-x64-morpheus-cli-7.14.0.exe"
+        size: 14075904
+        digest: "sha256:a5d23faf3cc46437c1a809cee339195593e98d2b2b65110b6de1814a6de492b6"
+      "605976884":
+        name: "win-x64-morpheus-router-7.14.0.exe"
+        url_suffix: "win-x64-morpheus-router-7.14.0.exe"
+        size: 64721408
+        digest: "sha256:ade086da1bae8f0d9f34148944e668e8b0a1f5b4793b222328d21a9cadbcc5c1"
+  "403931248":
+    tag: "v7.14.43-test"
+    title: "Pre-release v7.14.43-test"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.14.43-test"
+    created_at: "2026-10-02T15:46:07Z"
+    published_at: "2026-10-05T16:47:59Z"
+    updated_at: "2026-10-05T16:47:59Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.14.43-test"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.14.43-test"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.14.43-test/"
+    assets:
+      "613129601":
+        name: "linux-arm64-morpheus-cli-7.14.43"
+        url_suffix: "linux-arm64-morpheus-cli-7.14.43"
+        size: 13065636
+        digest: "sha256:658c90d73ad5068fd7b517995e10154b9e17a96829361bf78a7ed0cba03d10b9"
+      "613129602":
+        name: "linux-x86_64-morpheus-app-7.14.43.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.14.43.AppImage"
+        size: 199905214
+        media_type: "application/vnd.appimage"
+        digest: "sha256:cdc9219b39f444e3272200c2ac1dcac99051c70db0e658f071ab4ddf710b0cb0"
+      "613129605":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1952
+        media_type: "application/yaml"
+        digest: "sha256:87c4dbb3a178901adeaf333cf3fad90aaf87408ddc9190fb98afe3e6f757e115"
+      "613129607":
+        name: "linux-arm64-morpheus-router-7.14.43"
+        url_suffix: "linux-arm64-morpheus-router-7.14.43"
+        size: 60620984
+        digest: "sha256:a90a4209326e63ff78cebdec1e0b83653a3083bf0c9bcc07fb47db1a7662ceac"
+      "613129610":
+        name: "linux-arm64-morpheus-app-7.14.43.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.14.43.AppImage"
+        size: 200026303
+        media_type: "application/vnd.appimage"
+        digest: "sha256:5beac955011b1d04b6095e2d71f4de2a84f718453d685c2a67cd83aeb3672243"
+      "613129625":
+        name: "linux-x86_64-morpheus-cli-7.14.43"
+        url_suffix: "linux-x86_64-morpheus-cli-7.14.43"
+        size: 13974210
+        digest: "sha256:f3378f65a3e705bc39ed85feeea8c82e1c3332786eae24aa3cd8e6b917ef6286"
+      "613129662":
+        name: "linux-x86_64-morpheus-router-7.14.43"
+        url_suffix: "linux-x86_64-morpheus-router-7.14.43"
+        size: 64682984
+        digest: "sha256:7bb4833e356c454cb8baaa3725453afc265ee67fa0cd2fb31e2fed85d4e0822d"
+      "613129667":
+        name: "mac-arm64-morpheus-app-7.14.43.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.14.43.dmg"
+        size: 175079703
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:34b9f2e58db6e1dfc25641d01b381501aa485366f56c0d1d80bf128b2d92d5c8"
+      "613129863":
+        name: "mac-arm64-morpheus-cli-7.14.43"
+        url_suffix: "mac-arm64-morpheus-cli-7.14.43"
+        size: 13422594
+        digest: "sha256:7089d68ab154927786153056dfbf318c5e55cf879537dba81f09e74d82d6c6ae"
+      "613129870":
+        name: "mac-arm64-morpheus-router-7.14.43"
+        url_suffix: "mac-arm64-morpheus-router-7.14.43"
+        size: 64202834
+        digest: "sha256:bad3a336d6a520161a15fb78c525c023ab3cc042ea4a992b6ff4c69400913d99"
+      "613129929":
+        name: "mac-x64-morpheus-app-7.14.43.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.14.43.dmg"
+        size: 181396937
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:283386b4b8e5a61dc89e6c87bdbc5a2f4142d96476db472bce6e31d094d2b0e7"
+      "613130053":
+        name: "mac-x64-morpheus-cli-7.14.43"
+        url_suffix: "mac-x64-morpheus-cli-7.14.43"
+        size: 14170608
+        digest: "sha256:b28c75dd7388295970bc79371b2d581a4cf5b06e8d856ceed558c2ef77654ead"
+      "613130115":
+        name: "mac-x64-morpheus-router-7.14.43"
+        url_suffix: "mac-x64-morpheus-router-7.14.43"
+        size: 66535936
+        digest: "sha256:82f002277f0b0c8d0877709ffb2777b5963fbc4b15cfda8107866b642a6abaf6"
+      "613130124":
+        name: "win-x64-morpheus-app-7.14.43.exe"
+        url_suffix: "win-x64-morpheus-app-7.14.43.exe"
+        size: 109829002
+        digest: "sha256:3807955a310505bc15b1ef6c4c743169a876aed2a3c4e64e1c9baa6c20054e72"
+      "613130405":
+        name: "win-x64-morpheus-cli-7.14.43.exe"
+        url_suffix: "win-x64-morpheus-cli-7.14.43.exe"
+        size: 14075904
+        digest: "sha256:a5d23faf3cc46437c1a809cee339195593e98d2b2b65110b6de1814a6de492b6"
+      "613130473":
+        name: "win-x64-morpheus-router-7.14.43.exe"
+        url_suffix: "win-x64-morpheus-router-7.14.43.exe"
+        size: 64910848
+        digest: "sha256:cd0a755be849e12e68f0129db8d77d2e6c5011d9748dbecd29096f7d256d646e"
+  "410834768":
+    tag: "v7.14.48-test"
+    title: "Pre-release v7.14.48-test"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.14.48-test"
+    created_at: "2026-10-02T15:46:07Z"
+    published_at: "2026-10-12T17:06:26Z"
+    updated_at: "2026-10-12T17:06:26Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.14.48-test"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.14.48-test"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.14.48-test/"
+    assets:
+      "634412965":
+        name: "linux-arm64-morpheus-router-7.14.48"
+        url_suffix: "linux-arm64-morpheus-router-7.14.48"
+        size: 60620984
+        digest: "sha256:046f2dad1b676ce6cc2d5b6eb705b49f5bf093a8d0c0f1c677d116f8a9ba6d67"
+      "634412969":
+        name: "linux-x86_64-morpheus-app-7.14.48.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.14.48.AppImage"
+        size: 199905252
+        media_type: "application/vnd.appimage"
+        digest: "sha256:110dde0fff50433961bbe61ec7ce8d2e224c03b445ce366eb2970c91676abfb4"
+      "634412970":
+        name: "linux-arm64-morpheus-cli-7.14.48"
+        url_suffix: "linux-arm64-morpheus-cli-7.14.48"
+        size: 13065636
+        digest: "sha256:658c90d73ad5068fd7b517995e10154b9e17a96829361bf78a7ed0cba03d10b9"
+      "634412972":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1952
+        media_type: "application/yaml"
+        digest: "sha256:92e4742588e9916c92d5be5566072d37ccbe7ce971155ac246da4877036673f7"
+      "634412975":
+        name: "linux-arm64-morpheus-app-7.14.48.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.14.48.AppImage"
+        size: 200026300
+        media_type: "application/vnd.appimage"
+        digest: "sha256:ff7c63ff50978d3937e52faa34c06c14ddbe1090f86a7470c0c082ef69ff0dbf"
+      "634412993":
+        name: "linux-x86_64-morpheus-cli-7.14.48"
+        url_suffix: "linux-x86_64-morpheus-cli-7.14.48"
+        size: 13974210
+        digest: "sha256:f3378f65a3e705bc39ed85feeea8c82e1c3332786eae24aa3cd8e6b917ef6286"
+      "634413028":
+        name: "linux-x86_64-morpheus-router-7.14.48"
+        url_suffix: "linux-x86_64-morpheus-router-7.14.48"
+        size: 64724072
+        digest: "sha256:d5803d4072c74ae658a85bdade475d5fbe7481dcc350fb2046f005735958c1bc"
+      "634413053":
+        name: "mac-arm64-morpheus-app-7.14.48.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.14.48.dmg"
+        size: 175084548
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:91891c404f864f877dd5535002d932ba729aba65b15bb53d02ca0f1d5db37202"
+      "634413212":
+        name: "mac-arm64-morpheus-cli-7.14.48"
+        url_suffix: "mac-arm64-morpheus-cli-7.14.48"
+        size: 13422594
+        digest: "sha256:7089d68ab154927786153056dfbf318c5e55cf879537dba81f09e74d82d6c6ae"
+      "634413250":
+        name: "mac-arm64-morpheus-router-7.14.48"
+        url_suffix: "mac-arm64-morpheus-router-7.14.48"
+        size: 64252626
+        digest: "sha256:065046ef2fa01862dd16090b76f6c05dbf0be99ecfb6f9fbf03eb54a95b7e1c4"
+      "634413260":
+        name: "mac-x64-morpheus-app-7.14.48.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.14.48.dmg"
+        size: 181408384
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:50be79617d99982757b9f01d4c6bf13c8fa42c62758097f01332e2f6e676d860"
+      "634413346":
+        name: "mac-x64-morpheus-cli-7.14.48"
+        url_suffix: "mac-x64-morpheus-cli-7.14.48"
+        size: 14170608
+        digest: "sha256:b28c75dd7388295970bc79371b2d581a4cf5b06e8d856ceed558c2ef77654ead"
+      "634413396":
+        name: "mac-x64-morpheus-router-7.14.48"
+        url_suffix: "mac-x64-morpheus-router-7.14.48"
+        size: 66568928
+        digest: "sha256:4fc7a0b4a302faea13806193f3c78bd4cd67147b57e3d75f91cf75f382567b87"
+      "634413455":
+        name: "win-x64-morpheus-app-7.14.48.exe"
+        url_suffix: "win-x64-morpheus-app-7.14.48.exe"
+        size: 109826908
+        digest: "sha256:d946e8954c465868442cc720bc672e2364fd4e1fc4d36380f92d92e1e7def25b"
+      "634413510":
+        name: "win-x64-morpheus-cli-7.14.48.exe"
+        url_suffix: "win-x64-morpheus-cli-7.14.48.exe"
+        size: 14075904
+        digest: "sha256:a5d23faf3cc46437c1a809cee339195593e98d2b2b65110b6de1814a6de492b6"
+      "634413549":
+        name: "win-x64-morpheus-router-7.14.48.exe"
+        url_suffix: "win-x64-morpheus-router-7.14.48.exe"
+        size: 64953344
+        digest: "sha256:1394fcdabfa172cfc415edc6ebd3e9309fbe6f49124f585d71c93da152c84cb8"
+  "410918964":
+    tag: "v7.14.49-test"
+    title: "Pre-release v7.14.49-test"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.14.49-test"
+    created_at: "2026-10-02T15:46:07Z"
+    published_at: "2026-10-12T19:05:20Z"
+    updated_at: "2026-10-12T19:05:20Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.14.49-test"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.14.49-test"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.14.49-test/"
+    assets:
+      "634703206":
+        name: "linux-arm64-morpheus-router-7.14.49"
+        url_suffix: "linux-arm64-morpheus-router-7.14.49"
+        size: 60686520
+        digest: "sha256:820bb7fe9deee72d867183d4aa890ca0d56dcbb8a27c64bbbb887628cd9f9f02"
+      "634703208":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1952
+        media_type: "application/yaml"
+        digest: "sha256:53f2c5ac71c9e8d4a61b36b086a3bd56f7598d554ced02401525c8ae7506ac6c"
+      "634703211":
+        name: "linux-x86_64-morpheus-app-7.14.49.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.14.49.AppImage"
+        size: 199905228
+        media_type: "application/vnd.appimage"
+        digest: "sha256:d43bd4e2c6d83f62172b0f806a07f536312097b1b2731568be895536e671ba65"
+      "634703215":
+        name: "linux-arm64-morpheus-cli-7.14.49"
+        url_suffix: "linux-arm64-morpheus-cli-7.14.49"
+        size: 13065636
+        digest: "sha256:658c90d73ad5068fd7b517995e10154b9e17a96829361bf78a7ed0cba03d10b9"
+      "634703221":
+        name: "linux-arm64-morpheus-app-7.14.49.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.14.49.AppImage"
+        size: 200026283
+        media_type: "application/vnd.appimage"
+        digest: "sha256:311912942fab0c7e1c9d30663e01feed89cbb5f8a5b86304d675a4bc8bf70379"
+      "634703229":
+        name: "linux-x86_64-morpheus-cli-7.14.49"
+        url_suffix: "linux-x86_64-morpheus-cli-7.14.49"
+        size: 13974210
+        digest: "sha256:f3378f65a3e705bc39ed85feeea8c82e1c3332786eae24aa3cd8e6b917ef6286"
+      "634703246":
+        name: "linux-x86_64-morpheus-router-7.14.49"
+        url_suffix: "linux-x86_64-morpheus-router-7.14.49"
+        size: 64740488
+        digest: "sha256:b41da475ae87b8dd0109acb77623d4a25a0c8e339ef95a9f73612ec37d4516ae"
+      "634703257":
+        name: "mac-arm64-morpheus-app-7.14.49.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.14.49.dmg"
+        size: 175142699
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:5ef7dcf889896f7bdc2b4886c804fb69813f071f51d6db20c11615470e3701c1"
+      "634703277":
+        name: "mac-arm64-morpheus-cli-7.14.49"
+        url_suffix: "mac-arm64-morpheus-cli-7.14.49"
+        size: 13422594
+        digest: "sha256:7089d68ab154927786153056dfbf318c5e55cf879537dba81f09e74d82d6c6ae"
+      "634703321":
+        name: "mac-arm64-morpheus-router-7.14.49"
+        url_suffix: "mac-arm64-morpheus-router-7.14.49"
+        size: 64252850
+        digest: "sha256:9d9dc21c3e32b6a794643b23410530053bc81b691244b776e28f2f03f8b0a468"
+      "634703352":
+        name: "mac-x64-morpheus-app-7.14.49.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.14.49.dmg"
+        size: 181388502
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:ac925be8f80f8d6391104b45c3497a872354c805086f5b7b6c4b9a0a853eae14"
+      "634703417":
+        name: "mac-x64-morpheus-cli-7.14.49"
+        url_suffix: "mac-x64-morpheus-cli-7.14.49"
+        size: 14170608
+        digest: "sha256:b28c75dd7388295970bc79371b2d581a4cf5b06e8d856ceed558c2ef77654ead"
+      "634703478":
+        name: "mac-x64-morpheus-router-7.14.49"
+        url_suffix: "mac-x64-morpheus-router-7.14.49"
+        size: 66585552
+        digest: "sha256:a15e8f4101fb87ff4439c79891a54d21e47ff91506978510399b48b3063a59bc"
+      "634703514":
+        name: "win-x64-morpheus-app-7.14.49.exe"
+        url_suffix: "win-x64-morpheus-app-7.14.49.exe"
+        size: 109826378
+        digest: "sha256:c5a578fab36147b3948f29f9d474f1dff6900c592c0193393e634fc13ce3fd66"
+      "634703593":
+        name: "win-x64-morpheus-cli-7.14.49.exe"
+        url_suffix: "win-x64-morpheus-cli-7.14.49.exe"
+        size: 14075904
+        digest: "sha256:a5d23faf3cc46437c1a809cee339195593e98d2b2b65110b6de1814a6de492b6"
+      "634703599":
+        name: "win-x64-morpheus-router-7.14.49.exe"
+        url_suffix: "win-x64-morpheus-router-7.14.49.exe"
+        size: 64966144
+        digest: "sha256:37396b261d1d32ac44f08422d2fa6efec264bcb1e54c859ad59269fe2f5d20e0"
+  "411998295":
+    tag: "v7.14.50-test"
+    title: "Pre-release v7.14.50-test"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.14.50-test"
+    created_at: "2026-10-02T15:46:07Z"
+    published_at: "2026-10-13T18:46:43Z"
+    updated_at: "2026-10-13T18:46:43Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.14.50-test"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.14.50-test"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.14.50-test/"
+    assets:
+      "637931207":
+        name: "linux-arm64-morpheus-router-7.14.50"
+        url_suffix: "linux-arm64-morpheus-router-7.14.50"
+        size: 60686520
+        digest: "sha256:94fdd950a4786b54bc64c2cdbda236341fe3c95adbb366ae99e188167b33610e"
+      "637931208":
+        name: "linux-arm64-morpheus-app-7.14.50.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.14.50.AppImage"
+        size: 200026280
+        media_type: "application/vnd.appimage"
+        digest: "sha256:fcb04cc02abac2254f13cbe6552fc193db9cb8ef31274bbd684594544014f2f7"
+      "637931209":
+        name: "linux-arm64-morpheus-cli-7.14.50"
+        url_suffix: "linux-arm64-morpheus-cli-7.14.50"
+        size: 13065636
+        digest: "sha256:658c90d73ad5068fd7b517995e10154b9e17a96829361bf78a7ed0cba03d10b9"
+      "637931214":
+        name: "linux-x86_64-morpheus-app-7.14.50.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.14.50.AppImage"
+        size: 199905224
+        media_type: "application/vnd.appimage"
+        digest: "sha256:91ca98ecf9edee4d2a74cf4e194bea78a3f9544f3edbe90d5ceaab9d2fb67479"
+      "637931216":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1952
+        media_type: "application/yaml"
+        digest: "sha256:b900ba9f44cb5c45a678bd12d0f82a3fe10c24a27b1acb0d135e95e834bc001d"
+      "637931239":
+        name: "linux-x86_64-morpheus-cli-7.14.50"
+        url_suffix: "linux-x86_64-morpheus-cli-7.14.50"
+        size: 13974210
+        digest: "sha256:f3378f65a3e705bc39ed85feeea8c82e1c3332786eae24aa3cd8e6b917ef6286"
+      "637931267":
+        name: "linux-x86_64-morpheus-router-7.14.50"
+        url_suffix: "linux-x86_64-morpheus-router-7.14.50"
+        size: 64740488
+        digest: "sha256:1ff4ff643fc62746d37b94fc8f02af205c49cd2e9ccd08bab9919fbf97a49630"
+      "637931303":
+        name: "mac-arm64-morpheus-app-7.14.50.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.14.50.dmg"
+        size: 175110705
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:af49bc61f4312a38dcf3cae48c2ffa803b282a38f0bdf3fc1ce8cd22d8e0645a"
+      "637931391":
+        name: "mac-arm64-morpheus-cli-7.14.50"
+        url_suffix: "mac-arm64-morpheus-cli-7.14.50"
+        size: 13422594
+        digest: "sha256:7089d68ab154927786153056dfbf318c5e55cf879537dba81f09e74d82d6c6ae"
+      "637931399":
+        name: "mac-arm64-morpheus-router-7.14.50"
+        url_suffix: "mac-arm64-morpheus-router-7.14.50"
+        size: 64252850
+        digest: "sha256:437512127616e5ea8507bb712d2f0ecf0c590e297ef5b6eac23597abfcfc7466"
+      "637931453":
+        name: "mac-x64-morpheus-app-7.14.50.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.14.50.dmg"
+        size: 181425064
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:7c60aedc3cae10c05aa83eea84abefb090161396844826409ccbb3bfbdae6ccd"
+      "637931520":
+        name: "mac-x64-morpheus-cli-7.14.50"
+        url_suffix: "mac-x64-morpheus-cli-7.14.50"
+        size: 14170608
+        digest: "sha256:b28c75dd7388295970bc79371b2d581a4cf5b06e8d856ceed558c2ef77654ead"
+      "637931619":
+        name: "mac-x64-morpheus-router-7.14.50"
+        url_suffix: "mac-x64-morpheus-router-7.14.50"
+        size: 66585552
+        digest: "sha256:ad3c960eb749b53aa2b6fef72c2b70e35822cfb5ef1b391906bfdb54d72dcc5d"
+      "637931664":
+        name: "win-x64-morpheus-app-7.14.50.exe"
+        url_suffix: "win-x64-morpheus-app-7.14.50.exe"
+        size: 109822816
+        digest: "sha256:04f49be034491d63a48564800f6717b21db2ea273461375e1b686eda97603d0d"
+      "637931765":
+        name: "win-x64-morpheus-cli-7.14.50.exe"
+        url_suffix: "win-x64-morpheus-cli-7.14.50.exe"
+        size: 14075904
+        digest: "sha256:a5d23faf3cc46437c1a809cee339195593e98d2b2b65110b6de1814a6de492b6"
+      "637931775":
+        name: "win-x64-morpheus-router-7.14.50.exe"
+        url_suffix: "win-x64-morpheus-router-7.14.50.exe"
+        size: 64968704
+        digest: "sha256:213f0ad0783a8a59b75a96a22a54153a73537133ae87ac4d400931017f349583"
+  "412876014":
+    tag: "v7.14.59-test"
+    title: "Pre-release v7.14.59-test"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.14.59-test"
+    created_at: "2026-10-13T20:52:43Z"
+    published_at: "2026-10-14T15:27:38Z"
+    updated_at: "2026-10-14T15:27:38Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.14.59-test"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.14.59-test"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.14.59-test/"
+    assets:
+      "640792823":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1952
+        media_type: "application/yaml"
+        digest: "sha256:7e753208f6db2b3e85b597310bc19172ad27e61c00cf105c9bbca2a2428b6b50"
+      "640792824":
+        name: "linux-arm64-morpheus-router-7.14.59"
+        url_suffix: "linux-arm64-morpheus-router-7.14.59"
+        size: 60686520
+        digest: "sha256:429e1621497fa90485d283a6e61161a32b5247fd3bc79c56779f288061bd4682"
+      "640792825":
+        name: "linux-arm64-morpheus-cli-7.14.59"
+        url_suffix: "linux-arm64-morpheus-cli-7.14.59"
+        size: 13065636
+        digest: "sha256:658c90d73ad5068fd7b517995e10154b9e17a96829361bf78a7ed0cba03d10b9"
+      "640792826":
+        name: "linux-arm64-morpheus-app-7.14.59.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.14.59.AppImage"
+        size: 200026303
+        media_type: "application/vnd.appimage"
+        digest: "sha256:f4d70951e684223fe4c5fbc6556d36c6c4c684bb31b2dfce25c51fbb45f62461"
+      "640792832":
+        name: "linux-x86_64-morpheus-app-7.14.59.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.14.59.AppImage"
+        size: 199905188
+        media_type: "application/vnd.appimage"
+        digest: "sha256:8613c5c28e9fd2c1c6c265834e4d8eac1efe4b9f22a47f176c062d23fc9f20b2"
+      "640792861":
+        name: "linux-x86_64-morpheus-cli-7.14.59"
+        url_suffix: "linux-x86_64-morpheus-cli-7.14.59"
+        size: 13974210
+        digest: "sha256:f3378f65a3e705bc39ed85feeea8c82e1c3332786eae24aa3cd8e6b917ef6286"
+      "640792881":
+        name: "linux-x86_64-morpheus-router-7.14.59"
+        url_suffix: "linux-x86_64-morpheus-router-7.14.59"
+        size: 64740488
+        digest: "sha256:730b3b458b74bd0feafc38f2707806a0353a8fd32f68eaa258b1801357eedbd4"
+      "640792939":
+        name: "mac-arm64-morpheus-app-7.14.59.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.14.59.dmg"
+        size: 175145866
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:2a6dbe4cca51813e92eee5a02c27fb6ca9f9921b20f751be1eda97440da84d32"
+      "640792962":
+        name: "mac-arm64-morpheus-cli-7.14.59"
+        url_suffix: "mac-arm64-morpheus-cli-7.14.59"
+        size: 13422594
+        digest: "sha256:7089d68ab154927786153056dfbf318c5e55cf879537dba81f09e74d82d6c6ae"
+      "640792995":
+        name: "mac-arm64-morpheus-router-7.14.59"
+        url_suffix: "mac-arm64-morpheus-router-7.14.59"
+        size: 64252850
+        digest: "sha256:e793e31ae2353a7dda50a48ff023cb2524cc6d132d330993cc1d6b7d46918595"
+      "640793021":
+        name: "mac-x64-morpheus-app-7.14.59.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.14.59.dmg"
+        size: 181363786
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:80234c1767911d67cbc76fe7f2dc043814415e055e2728947e73a51c4f37ad3e"
+      "640793119":
+        name: "mac-x64-morpheus-cli-7.14.59"
+        url_suffix: "mac-x64-morpheus-cli-7.14.59"
+        size: 14170608
+        digest: "sha256:b28c75dd7388295970bc79371b2d581a4cf5b06e8d856ceed558c2ef77654ead"
+      "640793170":
+        name: "mac-x64-morpheus-router-7.14.59"
+        url_suffix: "mac-x64-morpheus-router-7.14.59"
+        size: 66585552
+        digest: "sha256:2206b4925d7048e3533c10c44cbda8c954aebe9e7944a22e07f7137d00851c6f"
+      "640793180":
+        name: "win-x64-morpheus-app-7.14.59.exe"
+        url_suffix: "win-x64-morpheus-app-7.14.59.exe"
+        size: 109826108
+        digest: "sha256:2189aaa06763cb981406bfb80702796f9c57188940e2a0af0de653e981ac7c54"
+      "640793192":
+        name: "win-x64-morpheus-router-7.14.59.exe"
+        url_suffix: "win-x64-morpheus-router-7.14.59.exe"
+        size: 64968704
+        digest: "sha256:e0fa6f848ff3bad63dcaa1c30e6c7b310ab31093beaa3dca972b81c2d0240a6d"
+      "640793193":
+        name: "win-x64-morpheus-cli-7.14.59.exe"
+        url_suffix: "win-x64-morpheus-cli-7.14.59.exe"
+        size: 14075904
+        digest: "sha256:a5d23faf3cc46437c1a809cee339195593e98d2b2b65110b6de1814a6de492b6"
+  "412942191":
+    tag: "v7.15.0"
+    title: "Release v7.15.0"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.15.0"
+    created_at: "2026-10-14T16:03:55Z"
+    published_at: "2026-10-14T16:32:55Z"
+    updated_at: "2026-10-14T16:32:55Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.15.0"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.15.0"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.15.0/"
+    assets:
+      "640962928":
+        name: "linux-arm64-morpheus-cli-7.15.0"
+        url_suffix: "linux-arm64-morpheus-cli-7.15.0"
+        size: 13065636
+        digest: "sha256:658c90d73ad5068fd7b517995e10154b9e17a96829361bf78a7ed0cba03d10b9"
+      "640962935":
+        name: "linux-arm64-morpheus-app-7.15.0.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.15.0.AppImage"
+        size: 200026143
+        media_type: "application/vnd.appimage"
+        digest: "sha256:d8999ed880b67fd866d29485805c4b4846490a989ca1920c73f29bc6c201f2e4"
+      "640962936":
+        name: "linux-arm64-morpheus-router-7.15.0"
+        url_suffix: "linux-arm64-morpheus-router-7.15.0"
+        size: 60686520
+        digest: "sha256:eb9dab0b453c392290ba713b27790a90e97ad3f723f1ac8f4267b44ba3490281"
+      "640962937":
+        name: "linux-x86_64-morpheus-app-7.15.0.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.15.0.AppImage"
+        size: 199905338
+        media_type: "application/vnd.appimage"
+        digest: "sha256:cc132e3fb36716a85aa73f97000932cf979c479606d2836a73eb8946f68bf403"
+      "640962938":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1952
+        media_type: "application/yaml"
+        digest: "sha256:79788f7d99b668b9d1800334114e213c1bbe3b883b7e4403070275169bbfc846"
+      "640962975":
+        name: "linux-x86_64-morpheus-cli-7.15.0"
+        url_suffix: "linux-x86_64-morpheus-cli-7.15.0"
+        size: 13974210
+        digest: "sha256:f3378f65a3e705bc39ed85feeea8c82e1c3332786eae24aa3cd8e6b917ef6286"
+      "640963077":
+        name: "linux-x86_64-morpheus-router-7.15.0"
+        url_suffix: "linux-x86_64-morpheus-router-7.15.0"
+        size: 64740488
+        digest: "sha256:18e7cbb8f6117c0e29ad04f01a6aad580f6b71a07847c647c4235f1f22e767fd"
+      "640963094":
+        name: "mac-arm64-morpheus-app-7.15.0.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.15.0.dmg"
+        size: 175118117
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:1db5aab7f638ba8aa1cac66c6d30b5a54309d410723f35cacc6f2acea464966f"
+      "640963281":
+        name: "mac-arm64-morpheus-cli-7.15.0"
+        url_suffix: "mac-arm64-morpheus-cli-7.15.0"
+        size: 13422594
+        digest: "sha256:7089d68ab154927786153056dfbf318c5e55cf879537dba81f09e74d82d6c6ae"
+      "640963286":
+        name: "mac-arm64-morpheus-router-7.15.0"
+        url_suffix: "mac-arm64-morpheus-router-7.15.0"
+        size: 64252850
+        digest: "sha256:45091303485c2f0117b9ddb6da6a2b5a5ab7634d14f48eff7997a19940ab40e8"
+      "640963335":
+        name: "mac-x64-morpheus-app-7.15.0.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.15.0.dmg"
+        size: 181392152
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:5d4da1011c5a96846b38f9ebaae770802bee49faa974f9f89f165b3d7facc89d"
+      "640963449":
+        name: "mac-x64-morpheus-cli-7.15.0"
+        url_suffix: "mac-x64-morpheus-cli-7.15.0"
+        size: 14170608
+        digest: "sha256:b28c75dd7388295970bc79371b2d581a4cf5b06e8d856ceed558c2ef77654ead"
+      "640963469":
+        name: "mac-x64-morpheus-router-7.15.0"
+        url_suffix: "mac-x64-morpheus-router-7.15.0"
+        size: 66585552
+        digest: "sha256:13f790bda69d8b7e79a7aab5b97326acce082744dbe3842b1fa1fcd98228a9a8"
+      "640963522":
+        name: "win-x64-morpheus-app-7.15.0.exe"
+        url_suffix: "win-x64-morpheus-app-7.15.0.exe"
+        size: 109825343
+        digest: "sha256:69191d01789d5049e5e2bb62f93261522e3470b7e6f7b2683f09ddb5421dfd56"
+      "640963688":
+        name: "win-x64-morpheus-cli-7.15.0.exe"
+        url_suffix: "win-x64-morpheus-cli-7.15.0.exe"
+        size: 14075904
+        digest: "sha256:a5d23faf3cc46437c1a809cee339195593e98d2b2b65110b6de1814a6de492b6"
+      "640963749":
+        name: "win-x64-morpheus-router-7.15.0.exe"
+        url_suffix: "win-x64-morpheus-router-7.15.0.exe"
+        size: 64968704
+        digest: "sha256:43ef8341c159e1a4eb2443ea27416ac532089a3e06a70224563139d2a124c661"
+  "417687929":
+    tag: "v7.15.100-test"
+    title: "Pre-release v7.15.100-test"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.15.100-test"
+    created_at: "2026-10-14T16:03:55Z"
+    published_at: "2026-10-19T19:57:17Z"
+    updated_at: "2026-10-19T19:57:17Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.15.100-test"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.15.100-test"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.15.100-test/"
+    assets:
+      "657281441":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1952
+        media_type: "application/yaml"
+        digest: "sha256:fafa566b83f10688ecbc8b823dbcb70764512c5b52236c8b9ef355c8471640bd"
+      "657281443":
+        name: "linux-arm64-morpheus-router-7.15.100"
+        url_suffix: "linux-arm64-morpheus-router-7.15.100"
+        size: 61800632
+        digest: "sha256:25903e6945d44c9fe44646b4be9e2033fc1b687a3ede47856b3af4df6f5c687d"
+      "657281448":
+        name: "linux-x86_64-morpheus-app-7.15.100.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.15.100.AppImage"
+        size: 199905183
+        media_type: "application/vnd.appimage"
+        digest: "sha256:d0b45bf2627dae2181d41fec17e26114fb73315fc9176dd57ff13dab83bd2964"
+      "657281450":
+        name: "linux-arm64-morpheus-cli-7.15.100"
+        url_suffix: "linux-arm64-morpheus-cli-7.15.100"
+        size: 13067119
+        digest: "sha256:fb56564eb785cedd67c0a5a2dda54c022200f1c805aebc7636f0087191c2fee1"
+      "657281451":
+        name: "linux-arm64-morpheus-app-7.15.100.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.15.100.AppImage"
+        size: 200026207
+        media_type: "application/vnd.appimage"
+        digest: "sha256:7b7ec41c21f822fbc04db460da74eca0b83b863a63f72486ba5458b093bad9fc"
+      "657281482":
+        name: "linux-x86_64-morpheus-cli-7.15.100"
+        url_suffix: "linux-x86_64-morpheus-cli-7.15.100"
+        size: 13975677
+        digest: "sha256:ad9fb26bc0ce03f90b53c96210fa8e728650a2b80a687e568f7e55d01e7c7861"
+      "657281536":
+        name: "linux-x86_64-morpheus-router-7.15.100"
+        url_suffix: "linux-x86_64-morpheus-router-7.15.100"
+        size: 65887656
+        digest: "sha256:58f3b18530ad2a0322878f52e9dd3fabac9c068a586c4ddd7423cfccedebe922"
+      "657281555":
+        name: "mac-arm64-morpheus-app-7.15.100.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.15.100.dmg"
+        size: 175135559
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:1382005dc29eeee823e33e1fa7575dfb4dcddfb10adfbdb38544652c48296c3d"
+      "657281634":
+        name: "mac-arm64-morpheus-cli-7.15.100"
+        url_suffix: "mac-arm64-morpheus-cli-7.15.100"
+        size: 13439570
+        digest: "sha256:05b1e5d808fc9c2cbe2ed6443b95d03a404c2c62ea29f0c74e7b164c80558d36"
+      "657281678":
+        name: "mac-arm64-morpheus-router-7.15.100"
+        url_suffix: "mac-arm64-morpheus-router-7.15.100"
+        size: 65552066
+        digest: "sha256:b661d840be6dfe5071114d5d1c6261000479a2a7fcbd97e24aed95c0468e9e1b"
+      "657281713":
+        name: "mac-x64-morpheus-app-7.15.100.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.15.100.dmg"
+        size: 181398711
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:2ad1200ac8341d91948faaf7b333d8a871ad8358d1f416f1b0cb282b3f54fc7c"
+      "657281824":
+        name: "mac-x64-morpheus-cli-7.15.100"
+        url_suffix: "mac-x64-morpheus-cli-7.15.100"
+        size: 14183360
+        digest: "sha256:87913e379c358360a0c20867f87873c110ec434a173a1455d6c07f8f5d946fcc"
+      "657281853":
+        name: "mac-x64-morpheus-router-7.15.100"
+        url_suffix: "mac-x64-morpheus-router-7.15.100"
+        size: 67891072
+        digest: "sha256:59c20932e733fcb55aa0e80325f8d1f525e57973706e5d91a473ee860c945454"
+      "657281904":
+        name: "win-x64-morpheus-app-7.15.100.exe"
+        url_suffix: "win-x64-morpheus-app-7.15.100.exe"
+        size: 109825449
+        digest: "sha256:409125d8dd0d896e9b3973aa7ce22677fe1232098328a6c78d903c471e2d058a"
+      "657281922":
+        name: "win-x64-morpheus-cli-7.15.100.exe"
+        url_suffix: "win-x64-morpheus-cli-7.15.100.exe"
+        size: 14084096
+        digest: "sha256:fe929630704af01a13d789bef011a08c2d5837414c26b391e20d4e42b951f2a3"
+      "657281958":
+        name: "win-x64-morpheus-router-7.15.100.exe"
+        url_suffix: "win-x64-morpheus-router-7.15.100.exe"
+        size: 66172928
+        digest: "sha256:ab39a14a3685bd4d6a6cb6426eb862097a0b516c1ca33a45fd80cdb971065c80"
+  "418488197":
+    tag: "v7.15.105-test"
+    title: "Pre-release v7.15.105-test"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.15.105-test"
+    created_at: "2026-10-14T16:03:55Z"
+    published_at: "2026-10-20T14:21:23Z"
+    updated_at: "2026-10-20T14:21:23Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.15.105-test"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.15.105-test"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.15.105-test/"
+    assets:
+      "659533461":
+        name: "linux-arm64-morpheus-app-7.15.105.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.15.105.AppImage"
+        size: 200026230
+        media_type: "application/vnd.appimage"
+        digest: "sha256:8e3ab181edb143556c2e2a3a93d2075da6fdba3c46e6b1ff4101c75ab2b212d3"
+      "659533464":
+        name: "linux-x86_64-morpheus-app-7.15.105.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.15.105.AppImage"
+        size: 199905200
+        media_type: "application/vnd.appimage"
+        digest: "sha256:35837ec905836335c83f8e88b8046e6083ace2646fdeb884e1d94c05d3835581"
+      "659533465":
+        name: "linux-arm64-morpheus-cli-7.15.105"
+        url_suffix: "linux-arm64-morpheus-cli-7.15.105"
+        size: 13067119
+        digest: "sha256:fb56564eb785cedd67c0a5a2dda54c022200f1c805aebc7636f0087191c2fee1"
+      "659533466":
+        name: "linux-arm64-morpheus-router-7.15.105"
+        url_suffix: "linux-arm64-morpheus-router-7.15.105"
+        size: 61800632
+        digest: "sha256:012f4053e1b461082029d8ed2ed0208b2d6d6c5fd05c88b8ab0ee24681396cad"
+      "659533467":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1952
+        media_type: "application/yaml"
+        digest: "sha256:db4a54c983285a2c27132bc9189eb4c091724e985e4d0a5db4eee979cc60ba5b"
+      "659533519":
+        name: "linux-x86_64-morpheus-cli-7.15.105"
+        url_suffix: "linux-x86_64-morpheus-cli-7.15.105"
+        size: 13975677
+        digest: "sha256:ad9fb26bc0ce03f90b53c96210fa8e728650a2b80a687e568f7e55d01e7c7861"
+      "659533531":
+        name: "linux-x86_64-morpheus-router-7.15.105"
+        url_suffix: "linux-x86_64-morpheus-router-7.15.105"
+        size: 65899944
+        digest: "sha256:62d387cb4198ce14176d538138dfd8ea73df51af9cdf8fe769b51addb189d13e"
+      "659533593":
+        name: "mac-arm64-morpheus-app-7.15.105.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.15.105.dmg"
+        size: 175080343
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:148f2fc35b694a467ee37859d400f68c6ff74912c8bfe60e27c860c6a819e264"
+      "659533637":
+        name: "mac-arm64-morpheus-cli-7.15.105"
+        url_suffix: "mac-arm64-morpheus-cli-7.15.105"
+        size: 13439570
+        digest: "sha256:05b1e5d808fc9c2cbe2ed6443b95d03a404c2c62ea29f0c74e7b164c80558d36"
+      "659533698":
+        name: "mac-arm64-morpheus-router-7.15.105"
+        url_suffix: "mac-arm64-morpheus-router-7.15.105"
+        size: 65552082
+        digest: "sha256:12f69d7302092202beebdac39744b901b83cb0a3bf9819786f8764fee55b2f55"
+      "659533716":
+        name: "mac-x64-morpheus-app-7.15.105.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.15.105.dmg"
+        size: 181392890
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:b4538819069ec3eeb2e7a5b45236cfdcd7a13db1fca4f4ab6af77cca6b805134"
+      "659533857":
+        name: "mac-x64-morpheus-cli-7.15.105"
+        url_suffix: "mac-x64-morpheus-cli-7.15.105"
+        size: 14183360
+        digest: "sha256:87913e379c358360a0c20867f87873c110ec434a173a1455d6c07f8f5d946fcc"
+      "659533866":
+        name: "mac-x64-morpheus-router-7.15.105"
+        url_suffix: "mac-x64-morpheus-router-7.15.105"
+        size: 67907472
+        digest: "sha256:837643e4a0146afa61eaf58a2f24f0cb46295c7c8a6883bd08b0af5f169c021c"
+      "659533867":
+        name: "win-x64-morpheus-app-7.15.105.exe"
+        url_suffix: "win-x64-morpheus-app-7.15.105.exe"
+        size: 109826312
+        digest: "sha256:58bb7ff8fdf1abf5a621e882b3d47db298327de64a776815b0db6b225238c92b"
+      "659533929":
+        name: "win-x64-morpheus-cli-7.15.105.exe"
+        url_suffix: "win-x64-morpheus-cli-7.15.105.exe"
+        size: 14084096
+        digest: "sha256:fe929630704af01a13d789bef011a08c2d5837414c26b391e20d4e42b951f2a3"
+      "659533986":
+        name: "win-x64-morpheus-router-7.15.105.exe"
+        url_suffix: "win-x64-morpheus-router-7.15.105.exe"
+        size: 66185216
+        digest: "sha256:7606edc605bf7d8a522818526a543a5ea6856db9121988abe4f23a659d377053"
+  "420806805":
+    tag: "v7.16.0"
+    title: "Release v7.16.0"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.16.0"
+    created_at: "2026-10-22T13:52:58Z"
+    published_at: "2026-10-22T14:11:31Z"
+    updated_at: "2026-10-22T14:11:31Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.16.0"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.16.0"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.16.0/"
+    assets:
+      "666068256":
+        name: "linux-arm64-morpheus-cli-7.16.0"
+        url_suffix: "linux-arm64-morpheus-cli-7.16.0"
+        size: 13067119
+        digest: "sha256:fb56564eb785cedd67c0a5a2dda54c022200f1c805aebc7636f0087191c2fee1"
+      "666068258":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1952
+        media_type: "application/yaml"
+        digest: "sha256:0051cc804a7b3c666d6ecfc6615901c61bf2b6abeb0a014d4af045d7ae5b2046"
+      "666068259":
+        name: "linux-arm64-morpheus-app-7.16.0.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.16.0.AppImage"
+        size: 200026167
+        media_type: "application/vnd.appimage"
+        digest: "sha256:994c8a5b9397b6eb6f31c610e4e6f0ca2cc8d12bce9898e048799b77ad6ace66"
+      "666068261":
+        name: "linux-arm64-morpheus-router-7.16.0"
+        url_suffix: "linux-arm64-morpheus-router-7.16.0"
+        size: 61800632
+        digest: "sha256:c96cab46411d0b8c90fecbda317fe737b49cc76ac906c11eff400520e5492b62"
+      "666068264":
+        name: "linux-x86_64-morpheus-app-7.16.0.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.16.0.AppImage"
+        size: 199905318
+        media_type: "application/vnd.appimage"
+        digest: "sha256:120fe446a9c7e4ee8a326460ce2018378e60271d02bd8b12c8e8946d74355084"
+      "666068281":
+        name: "linux-x86_64-morpheus-cli-7.16.0"
+        url_suffix: "linux-x86_64-morpheus-cli-7.16.0"
+        size: 13975677
+        digest: "sha256:ad9fb26bc0ce03f90b53c96210fa8e728650a2b80a687e568f7e55d01e7c7861"
+      "666068303":
+        name: "linux-x86_64-morpheus-router-7.16.0"
+        url_suffix: "linux-x86_64-morpheus-router-7.16.0"
+        size: 65899944
+        digest: "sha256:f27067a32b2c838d487d5085687e6a9b136957231eadf4525f3329c6253fd8d5"
+      "666068315":
+        name: "mac-arm64-morpheus-app-7.16.0.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.16.0.dmg"
+        size: 175083383
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:187c606e4a64ca1ff516ed00148eac00a1be3c29c32652b9d976049a8eaf5d97"
+      "666068424":
+        name: "mac-arm64-morpheus-cli-7.16.0"
+        url_suffix: "mac-arm64-morpheus-cli-7.16.0"
+        size: 13439570
+        digest: "sha256:05b1e5d808fc9c2cbe2ed6443b95d03a404c2c62ea29f0c74e7b164c80558d36"
+      "666068463":
+        name: "mac-arm64-morpheus-router-7.16.0"
+        url_suffix: "mac-arm64-morpheus-router-7.16.0"
+        size: 65552082
+        digest: "sha256:f4d02aa165e88308538f1b021e421668f92589ea01b56d7773cab227d90c4bb9"
+      "666068485":
+        name: "mac-x64-morpheus-app-7.16.0.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.16.0.dmg"
+        size: 181414060
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:c1bc07f7f138a58a8b017a6a47b428784a34a9e71afb321bfae71db1ce21118e"
+      "666068609":
+        name: "mac-x64-morpheus-cli-7.16.0"
+        url_suffix: "mac-x64-morpheus-cli-7.16.0"
+        size: 14183360
+        digest: "sha256:87913e379c358360a0c20867f87873c110ec434a173a1455d6c07f8f5d946fcc"
+      "666068628":
+        name: "mac-x64-morpheus-router-7.16.0"
+        url_suffix: "mac-x64-morpheus-router-7.16.0"
+        size: 67907472
+        digest: "sha256:bd7f7af04ffc9b748fb46a8ee35c57e19ec8b78053e196596663a4cf4052a981"
+      "666068647":
+        name: "win-x64-morpheus-app-7.16.0.exe"
+        url_suffix: "win-x64-morpheus-app-7.16.0.exe"
+        size: 109826707
+        digest: "sha256:57f85b15cfc49aa277510ebfd698338f24577913b930438dd6cb19b1d97a50ed"
+      "666068682":
+        name: "win-x64-morpheus-cli-7.16.0.exe"
+        url_suffix: "win-x64-morpheus-cli-7.16.0.exe"
+        size: 14084096
+        digest: "sha256:fe929630704af01a13d789bef011a08c2d5837414c26b391e20d4e42b951f2a3"
+      "666068684":
+        name: "win-x64-morpheus-router-7.16.0.exe"
+        url_suffix: "win-x64-morpheus-router-7.16.0.exe"
+        size: 66185216
+        digest: "sha256:acc7e2b791613141d23d77b1ddfcb403b878a164cd3f21cc41ad3253dfe30efd"
+  "421263173":
+    tag: "v7.16.3-test"
+    title: "Pre-release v7.16.3-test"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.16.3-test"
+    created_at: "2026-10-22T13:52:58Z"
+    published_at: "2026-10-22T22:26:51Z"
+    updated_at: "2026-10-22T22:26:51Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.16.3-test"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.16.3-test"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.16.3-test/"
+    assets:
+      "667263806":
+        name: "linux-arm64-morpheus-router-7.16.3"
+        url_suffix: "linux-arm64-morpheus-router-7.16.3"
+        size: 61800632
+        digest: "sha256:1e149f6a604c9cfd8bebbd93ca00374ed85176e9cdf771289ee9f9d9477eacb6"
+      "667263807":
+        name: "linux-arm64-morpheus-app-7.16.3.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.16.3.AppImage"
+        size: 200026224
+        media_type: "application/vnd.appimage"
+        digest: "sha256:eafedbbab3e6227f548a166943544ae72fe4198105ad445c803fc8111f5ab003"
+      "667263810":
+        name: "linux-x86_64-morpheus-app-7.16.3.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.16.3.AppImage"
+        size: 199905220
+        media_type: "application/vnd.appimage"
+        digest: "sha256:af14e5d65710641afa70f2b659f7e229aadcbb51b44c35b29caeea467aee0eb2"
+      "667263812":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1952
+        media_type: "application/yaml"
+        digest: "sha256:332adc6a768d003b1bcaedc01f18be9509c45d739bd1d5981849fa84d7f50cf1"
+      "667263813":
+        name: "linux-arm64-morpheus-cli-7.16.3"
+        url_suffix: "linux-arm64-morpheus-cli-7.16.3"
+        size: 13067119
+        digest: "sha256:fb56564eb785cedd67c0a5a2dda54c022200f1c805aebc7636f0087191c2fee1"
+      "667263820":
+        name: "linux-x86_64-morpheus-cli-7.16.3"
+        url_suffix: "linux-x86_64-morpheus-cli-7.16.3"
+        size: 13975677
+        digest: "sha256:ad9fb26bc0ce03f90b53c96210fa8e728650a2b80a687e568f7e55d01e7c7861"
+      "667263840":
+        name: "linux-x86_64-morpheus-router-7.16.3"
+        url_suffix: "linux-x86_64-morpheus-router-7.16.3"
+        size: 65899944
+        digest: "sha256:88a2342f34e5d310820bac521079eac1db58b7762a452ba2dc15df60340b791b"
+      "667263863":
+        name: "mac-arm64-morpheus-app-7.16.3.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.16.3.dmg"
+        size: 175128396
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:6850d33164d294c256071b6b88f0cd62c8d3290ac00dcbfa0eac71e63bb7cd8f"
+      "667263902":
+        name: "mac-arm64-morpheus-cli-7.16.3"
+        url_suffix: "mac-arm64-morpheus-cli-7.16.3"
+        size: 13439570
+        digest: "sha256:05b1e5d808fc9c2cbe2ed6443b95d03a404c2c62ea29f0c74e7b164c80558d36"
+      "667263948":
+        name: "mac-arm64-morpheus-router-7.16.3"
+        url_suffix: "mac-arm64-morpheus-router-7.16.3"
+        size: 65552082
+        digest: "sha256:0822539aba15478c2fe44d044c35665c4c625a6b28203d03809d8202fdcb5c62"
+      "667263954":
+        name: "mac-x64-morpheus-app-7.16.3.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.16.3.dmg"
+        size: 181353848
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:ef7780e149d1507ccf067ba1d650be8976e37334956193ebced31e88bf214601"
+      "667264040":
+        name: "mac-x64-morpheus-cli-7.16.3"
+        url_suffix: "mac-x64-morpheus-cli-7.16.3"
+        size: 14183360
+        digest: "sha256:87913e379c358360a0c20867f87873c110ec434a173a1455d6c07f8f5d946fcc"
+      "667264051":
+        name: "mac-x64-morpheus-router-7.16.3"
+        url_suffix: "mac-x64-morpheus-router-7.16.3"
+        size: 67907472
+        digest: "sha256:7e5c55a7a39533a105c3a408f5d39ce8c916498574b4f2d3e493ee7ff1a55b21"
+      "667264061":
+        name: "win-x64-morpheus-app-7.16.3.exe"
+        url_suffix: "win-x64-morpheus-app-7.16.3.exe"
+        size: 109827527
+        digest: "sha256:53e7efc19654bea1ee87c471a38b32765416fcf2a187264be6de014e4c1034c3"
+      "667264084":
+        name: "win-x64-morpheus-cli-7.16.3.exe"
+        url_suffix: "win-x64-morpheus-cli-7.16.3.exe"
+        size: 14084096
+        digest: "sha256:fe929630704af01a13d789bef011a08c2d5837414c26b391e20d4e42b951f2a3"
+      "667264096":
+        name: "win-x64-morpheus-router-7.16.3.exe"
+        url_suffix: "win-x64-morpheus-router-7.16.3.exe"
+        size: 66185216
+        digest: "sha256:9f5e080066ae56d06f3f4ea63b8dceebb7b7050e61fc9c598d1ae9c7c5bd2641"
+  "422790758":
+    tag: "v7.17.0"
+    title: "Release v7.17.0"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.17.0"
+    created_at: "2026-10-24T14:18:52Z"
+    published_at: "2026-10-24T14:48:35Z"
+    updated_at: "2026-10-24T14:48:35Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.17.0"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.17.0"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.17.0/"
+    assets:
+      "672518382":
+        name: "linux-arm64-morpheus-router-7.17.0"
+        url_suffix: "linux-arm64-morpheus-router-7.17.0"
+        size: 61800632
+        digest: "sha256:162d6f04f78c4a949c9be5e4f809fb32129fd973cb0b04054064c52fa96122ca"
+      "672518383":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1952
+        media_type: "application/yaml"
+        digest: "sha256:65b6f1f05d98dcdb58b7151437cb51a50ae07689d2e8e562743e8988d2a937c7"
+      "672518384":
+        name: "linux-x86_64-morpheus-app-7.17.0.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.17.0.AppImage"
+        size: 199905345
+        media_type: "application/vnd.appimage"
+        digest: "sha256:2c7ec000073543378226d137088653ef753f944a653e615a7cb78e44f8635121"
+      "672518385":
+        name: "linux-arm64-morpheus-app-7.17.0.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.17.0.AppImage"
+        size: 200026128
+        media_type: "application/vnd.appimage"
+        digest: "sha256:9859718a8774511e4c0159fd921261392e970ff6984c387efae441a8cbcbefa7"
+      "672518386":
+        name: "linux-arm64-morpheus-cli-7.17.0"
+        url_suffix: "linux-arm64-morpheus-cli-7.17.0"
+        size: 13067119
+        digest: "sha256:fb56564eb785cedd67c0a5a2dda54c022200f1c805aebc7636f0087191c2fee1"
+      "672518403":
+        name: "linux-x86_64-morpheus-cli-7.17.0"
+        url_suffix: "linux-x86_64-morpheus-cli-7.17.0"
+        size: 13975677
+        digest: "sha256:ad9fb26bc0ce03f90b53c96210fa8e728650a2b80a687e568f7e55d01e7c7861"
+      "672518424":
+        name: "linux-x86_64-morpheus-router-7.17.0"
+        url_suffix: "linux-x86_64-morpheus-router-7.17.0"
+        size: 65899944
+        digest: "sha256:57b08f9b14e441ca04751932fea6b832326703d0e832c0901f56ef3fb654ee4e"
+      "672518443":
+        name: "mac-arm64-morpheus-app-7.17.0.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.17.0.dmg"
+        size: 175101199
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:16d70d9ba047a117b93618e082d5528444ef07dfde7e98821b23472626c14c66"
+      "672518475":
+        name: "mac-arm64-morpheus-cli-7.17.0"
+        url_suffix: "mac-arm64-morpheus-cli-7.17.0"
+        size: 13439570
+        digest: "sha256:05b1e5d808fc9c2cbe2ed6443b95d03a404c2c62ea29f0c74e7b164c80558d36"
+      "672518511":
+        name: "mac-arm64-morpheus-router-7.17.0"
+        url_suffix: "mac-arm64-morpheus-router-7.17.0"
+        size: 65552082
+        digest: "sha256:134c396b51ba94327e9a786901caee2a421f840997f28fb4e5cbf162b44df951"
+      "672518518":
+        name: "mac-x64-morpheus-app-7.17.0.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.17.0.dmg"
+        size: 181435301
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:4eba5e6fe98a4930e4a6420697677062bd287fdcaa82ae7c0c57c03d26d9acf8"
+      "672518574":
+        name: "mac-x64-morpheus-cli-7.17.0"
+        url_suffix: "mac-x64-morpheus-cli-7.17.0"
+        size: 14183360
+        digest: "sha256:87913e379c358360a0c20867f87873c110ec434a173a1455d6c07f8f5d946fcc"
+      "672518582":
+        name: "mac-x64-morpheus-router-7.17.0"
+        url_suffix: "mac-x64-morpheus-router-7.17.0"
+        size: 67907472
+        digest: "sha256:eb4a5e0179c4064fe5bbaa15ef3c23fe63efae09cdb63dfd5bcb0cba4c9b16c2"
+      "672518595":
+        name: "win-x64-morpheus-app-7.17.0.exe"
+        url_suffix: "win-x64-morpheus-app-7.17.0.exe"
+        size: 109826686
+        digest: "sha256:637bda57fa024ab6a933fbd26e52d510c1855a5166ae58eeaea9fed021b91616"
+      "672518623":
+        name: "win-x64-morpheus-cli-7.17.0.exe"
+        url_suffix: "win-x64-morpheus-cli-7.17.0.exe"
+        size: 14084096
+        digest: "sha256:fe929630704af01a13d789bef011a08c2d5837414c26b391e20d4e42b951f2a3"
+      "672518634":
+        name: "win-x64-morpheus-router-7.17.0.exe"
+        url_suffix: "win-x64-morpheus-router-7.17.0.exe"
+        size: 66185216
+        digest: "sha256:da811d2b20cd6fa399be84b346867077e3a3678ccc5946a1e2805475a6a78d30"
+  "425459287":
+    tag: "v7.17.8-test"
+    title: "Pre-release v7.17.8-test"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.17.8-test"
+    created_at: "2026-10-24T14:18:52Z"
+    published_at: "2026-10-27T12:55:48Z"
+    updated_at: "2026-10-27T12:55:48Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.17.8-test"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.17.8-test"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.17.8-test/"
+    assets:
+      "681599476":
+        name: "linux-arm64-morpheus-app-7.17.8.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.17.8.AppImage"
+        size: 226312975
+        media_type: "application/vnd.appimage"
+        digest: "sha256:a777354a45d114c4aade7ba090a25dea4eb524df48f4625901081debeb3346ec"
+      "681599477":
+        name: "linux-x86_64-morpheus-app-7.17.8.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.17.8.AppImage"
+        size: 225153851
+        media_type: "application/vnd.appimage"
+        digest: "sha256:49dd0a0090d31211ad7eb9c8f67da908d6ff41da63faaa3ce3d69689cfe150c8"
+      "681599479":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1952
+        media_type: "application/yaml"
+        digest: "sha256:6f6a09577f2834309607212897a4f244e5043f084f372e60a99b8540bd0a90db"
+      "681599480":
+        name: "linux-arm64-morpheus-router-7.17.8"
+        url_suffix: "linux-arm64-morpheus-router-7.17.8"
+        size: 58589346
+        digest: "sha256:6c92cc858bb761b8cad7565ba1c2e92ae15212684a9f65b3d2930b9de63930a4"
+      "681599481":
+        name: "linux-arm64-morpheus-cli-7.17.8"
+        url_suffix: "linux-arm64-morpheus-cli-7.17.8"
+        size: 13381293
+        digest: "sha256:3e64155624cca579d76ab9b13f7d77e686f4a6e65cde1d827578104cc72c4271"
+      "681599506":
+        name: "linux-x86_64-morpheus-cli-7.17.8"
+        url_suffix: "linux-x86_64-morpheus-cli-7.17.8"
+        size: 14385953
+        digest: "sha256:fb476ea8fa634362d32806c01a43732f6f5f9edcd3452df56106e6af4cf0e917"
+      "681599525":
+        name: "linux-x86_64-morpheus-router-7.17.8"
+        url_suffix: "linux-x86_64-morpheus-router-7.17.8"
+        size: 62757688
+        digest: "sha256:29ba9c2df520a4adcb348af075ed78d7f4553a09915afbbca0c9515be3688430"
+      "681599547":
+        name: "mac-arm64-morpheus-app-7.17.8.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.17.8.dmg"
+        size: 202660905
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:bddc12dbdf6a3e52996588b40ee4b642b59584f05c83d61c681bdc85a7f989f7"
+      "681599573":
+        name: "mac-arm64-morpheus-cli-7.17.8"
+        url_suffix: "mac-arm64-morpheus-cli-7.17.8"
+        size: 13742210
+        digest: "sha256:b568ab24c17fe5d197c168146189620c26f11e09c74248a53e914fa39e157b57"
+      "681599642":
+        name: "mac-arm64-morpheus-router-7.17.8"
+        url_suffix: "mac-arm64-morpheus-router-7.17.8"
+        size: 62279778
+        digest: "sha256:496273c51313408c291464ddc5c77bd67eaa510580e6e20c83d499ae599d1924"
+      "681599652":
+        name: "mac-x64-morpheus-app-7.17.8.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.17.8.dmg"
+        size: 207660936
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:41b8c57ddf50179e1532f1e984500824b199f816052a91368502e02a430c2196"
+      "681599751":
+        name: "mac-x64-morpheus-cli-7.17.8"
+        url_suffix: "mac-x64-morpheus-cli-7.17.8"
+        size: 14592176
+        digest: "sha256:9ecf9d123334deb736ca192b7673712de7b138d3205f21a9eb48e4620f24e337"
+      "681599808":
+        name: "mac-x64-morpheus-router-7.17.8"
+        url_suffix: "mac-x64-morpheus-router-7.17.8"
+        size: 64648832
+        digest: "sha256:9decfa37eae864a3d0a875c58eaf9efc6d173906a26456823a84ace6e00c8c17"
+      "681599868":
+        name: "win-x64-morpheus-app-7.17.8.exe"
+        url_suffix: "win-x64-morpheus-app-7.17.8.exe"
+        size: 136748402
+        digest: "sha256:590415456aed5c3c7dc89dd474ee18472a71e03c6fd59f5aca08f2b005c76dab"
+      "681599891":
+        name: "win-x64-morpheus-cli-7.17.8.exe"
+        url_suffix: "win-x64-morpheus-cli-7.17.8.exe"
+        size: 14490112
+        digest: "sha256:75480f747057f3ecd78bd5accd09389dd5502ef018df8b6d8873c03469b89de1"
+      "681599937":
+        name: "win-x64-morpheus-router-7.17.8.exe"
+        url_suffix: "win-x64-morpheus-router-7.17.8.exe"
+        size: 62896640
+        digest: "sha256:742ec17a287426e8d05cc3e2718fb8f973c60a434ced54ffb924b016c256a3ab"
+  "427025299":
+    tag: "v7.18.0"
+    title: "Release v7.18.0"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.18.0"
+    created_at: "2026-10-28T17:56:33Z"
+    published_at: "2026-10-28T18:15:09Z"
+    updated_at: "2026-10-28T18:15:09Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.18.0"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.18.0"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.18.0/"
+    assets:
+      "685900013":
+        name: "linux-arm64-morpheus-app-7.18.0.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.18.0.AppImage"
+        size: 226312939
+        media_type: "application/vnd.appimage"
+        digest: "sha256:9473383f28cef4f369a77c64a68fbd8d860120e89ab56508c26d277adfb3b1cd"
+      "685900017":
+        name: "linux-x86_64-morpheus-app-7.18.0.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.18.0.AppImage"
+        size: 225153877
+        media_type: "application/vnd.appimage"
+        digest: "sha256:caac632c6d6056d0829825a5ce61e65513c9f4c87bdae18a1be4a583b2d41932"
+      "685900018":
+        name: "linux-arm64-morpheus-router-7.18.0"
+        url_suffix: "linux-arm64-morpheus-router-7.18.0"
+        size: 58589346
+        digest: "sha256:b91fec3e12a63764e63dec930f192c77500b481f821256144a46ac282673de9c"
+      "685900019":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1952
+        media_type: "application/yaml"
+        digest: "sha256:382cf005bcf9496eb4e243100f41b0c1a62bcf593f6d84cab6b6ed2c05581dc5"
+      "685900020":
+        name: "linux-arm64-morpheus-cli-7.18.0"
+        url_suffix: "linux-arm64-morpheus-cli-7.18.0"
+        size: 13381293
+        digest: "sha256:3e64155624cca579d76ab9b13f7d77e686f4a6e65cde1d827578104cc72c4271"
+      "685900069":
+        name: "linux-x86_64-morpheus-cli-7.18.0"
+        url_suffix: "linux-x86_64-morpheus-cli-7.18.0"
+        size: 14385953
+        digest: "sha256:fb476ea8fa634362d32806c01a43732f6f5f9edcd3452df56106e6af4cf0e917"
+      "685900082":
+        name: "linux-x86_64-morpheus-router-7.18.0"
+        url_suffix: "linux-x86_64-morpheus-router-7.18.0"
+        size: 62757656
+        digest: "sha256:548ddbd456ffa44341c8fbae03b94e67b12caf0a106b05d81900ca7e0d19ef44"
+      "685900111":
+        name: "mac-arm64-morpheus-app-7.18.0.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.18.0.dmg"
+        size: 202666769
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:7f6c58d89bff43fd15e591d5c1da49d274605e522e84256ab48f36b0471c9a92"
+      "685900209":
+        name: "mac-arm64-morpheus-cli-7.18.0"
+        url_suffix: "mac-arm64-morpheus-cli-7.18.0"
+        size: 13742210
+        digest: "sha256:b568ab24c17fe5d197c168146189620c26f11e09c74248a53e914fa39e157b57"
+      "685900228":
+        name: "mac-arm64-morpheus-router-7.18.0"
+        url_suffix: "mac-arm64-morpheus-router-7.18.0"
+        size: 62279778
+        digest: "sha256:d80be25bef5b16ae4bb3637196e932791c2b86dad093169895a0653b4278a52b"
+      "685900277":
+        name: "mac-x64-morpheus-app-7.18.0.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.18.0.dmg"
+        size: 207647259
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:1088da39cb18f5d624d1e23d365bd7828cbea73eaa203b6a38b5b51c5cf1f65b"
+      "685900409":
+        name: "mac-x64-morpheus-cli-7.18.0"
+        url_suffix: "mac-x64-morpheus-cli-7.18.0"
+        size: 14592176
+        digest: "sha256:9ecf9d123334deb736ca192b7673712de7b138d3205f21a9eb48e4620f24e337"
+      "685900470":
+        name: "mac-x64-morpheus-router-7.18.0"
+        url_suffix: "mac-x64-morpheus-router-7.18.0"
+        size: 64648832
+        digest: "sha256:27268b0649291879e8a805ecbbe2ba6b4164f3569a1c9b23780c32b3810e1fe3"
+      "685900600":
+        name: "win-x64-morpheus-app-7.18.0.exe"
+        url_suffix: "win-x64-morpheus-app-7.18.0.exe"
+        size: 136749278
+        digest: "sha256:4b661a8d4fef00aa15c50a29b135ebe9c52c728a9dc41159714ebdd59026152e"
+      "685900633":
+        name: "win-x64-morpheus-cli-7.18.0.exe"
+        url_suffix: "win-x64-morpheus-cli-7.18.0.exe"
+        size: 14490112
+        digest: "sha256:75480f747057f3ecd78bd5accd09389dd5502ef018df8b6d8873c03469b89de1"
+      "685900690":
+        name: "win-x64-morpheus-router-7.18.0.exe"
+        url_suffix: "win-x64-morpheus-router-7.18.0.exe"
+        size: 62896640
+        digest: "sha256:058f5d39fe2eaf81e4bda2a364604eb6282c719bcffd5735862efd037053145e"
+  "429140395":
+    tag: "v7.18.12-test"
+    title: "Pre-release v7.18.12-test"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.18.12-test"
+    created_at: "2026-10-28T17:56:33Z"
+    published_at: "2026-10-30T14:42:07Z"
+    updated_at: "2026-10-30T14:42:07Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.18.12-test"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.18.12-test"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.18.12-test/"
+    assets:
+      "692402805":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1952
+        media_type: "application/yaml"
+        digest: "sha256:dad8e5f97f9d47b8f14dd995a29cde65aaa4f0fa194315e133fff267d3cda750"
+      "692402807":
+        name: "linux-arm64-morpheus-app-7.18.12.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.18.12.AppImage"
+        size: 226317431
+        media_type: "application/vnd.appimage"
+        digest: "sha256:92ce8c9fe28c269316d5b314cf3367bd547860c79f295b4ab925f97e41a72b19"
+      "692402811":
+        name: "linux-x86_64-morpheus-app-7.18.12.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.18.12.AppImage"
+        size: 225154040
+        media_type: "application/vnd.appimage"
+        digest: "sha256:48d0ba0e312fbbe57d94de42fb10a97eaeeddad65d2d65328602611a8c7cb015"
+      "692402816":
+        name: "linux-arm64-morpheus-router-7.18.12"
+        url_suffix: "linux-arm64-morpheus-router-7.18.12"
+        size: 58654882
+        digest: "sha256:a264554af331d0399108d5f249ef39bcdc5dc53007846aa369e215ed92a6b19f"
+      "692402819":
+        name: "linux-arm64-morpheus-cli-7.18.12"
+        url_suffix: "linux-arm64-morpheus-cli-7.18.12"
+        size: 13386973
+        digest: "sha256:1ed60a5a4611a7714431a7e95c77b15b6deb165a9b44d5899252522537fe73c9"
+      "692402864":
+        name: "linux-x86_64-morpheus-cli-7.18.12"
+        url_suffix: "linux-x86_64-morpheus-cli-7.18.12"
+        size: 14422601
+        digest: "sha256:1f412ed468ab59dfb7343fcf9872c667ea690fbcb53f87c1500771c858704ac3"
+      "692402937":
+        name: "linux-x86_64-morpheus-router-7.18.12"
+        url_suffix: "linux-x86_64-morpheus-router-7.18.12"
+        size: 62778168
+        digest: "sha256:cd0ba19cf2af20e6abc5633bc00af79cf6d5aee488b8d8592cf5125337d738d2"
+      "692402954":
+        name: "mac-arm64-morpheus-app-7.18.12.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.18.12.dmg"
+        size: 202685103
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:a1f8dfbe94db8fbddbc6f1de7d775fb9364cbd3cebe7b67842f54b2ced0f96e1"
+      "692403098":
+        name: "mac-arm64-morpheus-cli-7.18.12"
+        url_suffix: "mac-arm64-morpheus-cli-7.18.12"
+        size: 13776674
+        digest: "sha256:a79c8c03a933e62a91b0bc5249eaed7f217d59e5c537d551c4706e21bf01d217"
+      "692403123":
+        name: "mac-arm64-morpheus-router-7.18.12"
+        url_suffix: "mac-arm64-morpheus-router-7.18.12"
+        size: 62296610
+        digest: "sha256:cde757474bdb2005ef632781c0c2bb544332cc751aa613a45267a026c73fdad7"
+      "692403148":
+        name: "mac-x64-morpheus-app-7.18.12.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.18.12.dmg"
+        size: 207661206
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:6ad6945896fd4fd80c1d5a69e0996dc0963f512a3a432a06e688e4503600481a"
+      "692403277":
+        name: "mac-x64-morpheus-cli-7.18.12"
+        url_suffix: "mac-x64-morpheus-cli-7.18.12"
+        size: 14630432
+        digest: "sha256:69cd63b367e01efe146c42c6b96f3ea3ce435d56e786834b2d3455295137d121"
+      "692403349":
+        name: "mac-x64-morpheus-router-7.18.12"
+        url_suffix: "mac-x64-morpheus-router-7.18.12"
+        size: 64669648
+        digest: "sha256:bcb8af89bf63622aa880af62cb3e56099f62c491aa80c7a7e769940c63cd1d24"
+      "692403539":
+        name: "win-x64-morpheus-app-7.18.12.exe"
+        url_suffix: "win-x64-morpheus-app-7.18.12.exe"
+        size: 136748958
+        digest: "sha256:6a294b8b1877fe59bdd6671fd9834f6ecd67ba4bc3ba2f999b69a60c77cfab32"
+      "692403608":
+        name: "win-x64-morpheus-cli-7.18.12.exe"
+        url_suffix: "win-x64-morpheus-cli-7.18.12.exe"
+        size: 14531584
+        digest: "sha256:3aa7a652cffcb20b4cca9b6c0e0879b696695cc3c9efec13b6949fbe60fa9fb2"
+      "692403630":
+        name: "win-x64-morpheus-router-7.18.12.exe"
+        url_suffix: "win-x64-morpheus-router-7.18.12.exe"
+        size: 62916096
+        digest: "sha256:7e62d4ce4c999d3f37dc1886e09f71fb10501069ee114ce511c8c40dda993716"
+  "429402332":
+    tag: "v7.18.13-test"
+    title: "Pre-release v7.18.13-test"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.18.13-test"
+    created_at: "2026-10-28T17:56:33Z"
+    published_at: "2026-10-30T19:17:43Z"
+    updated_at: "2026-10-30T19:17:43Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.18.13-test"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.18.13-test"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.18.13-test/"
+    assets:
+      "693151126":
+        name: "linux-x86_64-morpheus-app-7.18.13.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.18.13.AppImage"
+        size: 225154038
+        media_type: "application/vnd.appimage"
+        digest: "sha256:2cd946b864c432b1e12739a2774592de12d5ad29ef053b41efe4a526adffba96"
+      "693151127":
+        name: "linux-arm64-morpheus-router-7.18.13"
+        url_suffix: "linux-arm64-morpheus-router-7.18.13"
+        size: 58654882
+        digest: "sha256:b10469955de0da532e1c9bb67623af3ed999effe675fdb6adf3cebfc94d7029d"
+      "693151128":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1952
+        media_type: "application/yaml"
+        digest: "sha256:c0cf0c8b6e5d56739d4c49cce393d549cde2a1d35b8a641498630b9c9e034021"
+      "693151129":
+        name: "linux-arm64-morpheus-app-7.18.13.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.18.13.AppImage"
+        size: 226317437
+        media_type: "application/vnd.appimage"
+        digest: "sha256:c5bc23ed7d19f5f9a3f2e05464ab1430cb668226015e8162b529f80c093bb4ff"
+      "693151135":
+        name: "linux-arm64-morpheus-cli-7.18.13"
+        url_suffix: "linux-arm64-morpheus-cli-7.18.13"
+        size: 13386973
+        digest: "sha256:1ed60a5a4611a7714431a7e95c77b15b6deb165a9b44d5899252522537fe73c9"
+      "693151145":
+        name: "linux-x86_64-morpheus-cli-7.18.13"
+        url_suffix: "linux-x86_64-morpheus-cli-7.18.13"
+        size: 14422601
+        digest: "sha256:1f412ed468ab59dfb7343fcf9872c667ea690fbcb53f87c1500771c858704ac3"
+      "693151205":
+        name: "linux-x86_64-morpheus-router-7.18.13"
+        url_suffix: "linux-x86_64-morpheus-router-7.18.13"
+        size: 62778168
+        digest: "sha256:4177fac414b881103f4975131f11bd979dfb0cca522a433760f438499b2a858b"
+      "693151218":
+        name: "mac-arm64-morpheus-app-7.18.13.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.18.13.dmg"
+        size: 202660941
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:a57460cc36793301b0299fd60dc911bd08791a37f1a3e0ba117bb85ba360d516"
+      "693151293":
+        name: "mac-arm64-morpheus-cli-7.18.13"
+        url_suffix: "mac-arm64-morpheus-cli-7.18.13"
+        size: 13776674
+        digest: "sha256:a79c8c03a933e62a91b0bc5249eaed7f217d59e5c537d551c4706e21bf01d217"
+      "693151345":
+        name: "mac-arm64-morpheus-router-7.18.13"
+        url_suffix: "mac-arm64-morpheus-router-7.18.13"
+        size: 62296610
+        digest: "sha256:fe5205d39a2e256f4e80a53ec110fb2d64cc8a12c8fe821d291b41503b90886b"
+      "693151360":
+        name: "mac-x64-morpheus-app-7.18.13.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.18.13.dmg"
+        size: 207642164
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:2f38aeadc943a80beb4135e1c5895c4528697ed10b6e1dfc1b5dc62e893e55b2"
+      "693151419":
+        name: "mac-x64-morpheus-cli-7.18.13"
+        url_suffix: "mac-x64-morpheus-cli-7.18.13"
+        size: 14630432
+        digest: "sha256:69cd63b367e01efe146c42c6b96f3ea3ce435d56e786834b2d3455295137d121"
+      "693151473":
+        name: "mac-x64-morpheus-router-7.18.13"
+        url_suffix: "mac-x64-morpheus-router-7.18.13"
+        size: 64673744
+        digest: "sha256:3540e9c86d2d4f7507b1eef2226468c8c07c8eda51bfa56e2279dfddc5a997b4"
+      "693151483":
+        name: "win-x64-morpheus-cli-7.18.13.exe"
+        url_suffix: "win-x64-morpheus-cli-7.18.13.exe"
+        size: 14531584
+        digest: "sha256:3aa7a652cffcb20b4cca9b6c0e0879b696695cc3c9efec13b6949fbe60fa9fb2"
+      "693151485":
+        name: "win-x64-morpheus-app-7.18.13.exe"
+        url_suffix: "win-x64-morpheus-app-7.18.13.exe"
+        size: 136747990
+        digest: "sha256:79ce5e0665feaf911d2a0da390d236791f2ac4f9610514d4903c76bc1b528096"
+      "693151511":
+        name: "win-x64-morpheus-router-7.18.13.exe"
+        url_suffix: "win-x64-morpheus-router-7.18.13.exe"
+        size: 62917120
+        digest: "sha256:824c0ab924ff31baaf2727113bc96000b99c6be308885db6963d151fd3666d18"
+  "431779330":
+    tag: "v7.19.0"
+    title: "Release v7.19.0"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.19.0"
+    created_at: "2026-11-02T17:21:54Z"
+    published_at: "2026-11-02T17:46:52Z"
+    updated_at: "2026-11-02T17:46:52Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.19.0"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.19.0"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.19.0/"
+    assets:
+      "702631989":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1952
+        media_type: "application/yaml"
+        digest: "sha256:2075fa5ba6e199c5a2013e74f1bfde068752ca25d0091f66d5ba2e6e512dada9"
+      "702631991":
+        name: "linux-arm64-morpheus-app-7.19.0.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.19.0.AppImage"
+        size: 226317374
+        media_type: "application/vnd.appimage"
+        digest: "sha256:6789c09f33bbc6b105544b18566df6ca710bfb0fc72fc021997b08e6e8bc209e"
+      "702631995":
+        name: "linux-x86_64-morpheus-app-7.19.0.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.19.0.AppImage"
+        size: 225154139
+        media_type: "application/vnd.appimage"
+        digest: "sha256:ffb6e0bfa51836670946dc0488da6ad122e900e80d0eeb1ecbd9954c95997fd0"
+      "702631996":
+        name: "linux-arm64-morpheus-router-7.19.0"
+        url_suffix: "linux-arm64-morpheus-router-7.19.0"
+        size: 58654882
+        digest: "sha256:f0d525e989d27057565d36d14b80e6e7e0316fd1d61a03ed0a4653adece9d4e1"
+      "702632000":
+        name: "linux-arm64-morpheus-cli-7.19.0"
+        url_suffix: "linux-arm64-morpheus-cli-7.19.0"
+        size: 13386973
+        digest: "sha256:1ed60a5a4611a7714431a7e95c77b15b6deb165a9b44d5899252522537fe73c9"
+      "702632016":
+        name: "linux-x86_64-morpheus-cli-7.19.0"
+        url_suffix: "linux-x86_64-morpheus-cli-7.19.0"
+        size: 14422601
+        digest: "sha256:1f412ed468ab59dfb7343fcf9872c667ea690fbcb53f87c1500771c858704ac3"
+      "702632081":
+        name: "linux-x86_64-morpheus-router-7.19.0"
+        url_suffix: "linux-x86_64-morpheus-router-7.19.0"
+        size: 62778136
+        digest: "sha256:52348d790c608f89cada4b80360b59fedba30df2f5b22784d9ee17cd45833ca8"
+      "702632101":
+        name: "mac-arm64-morpheus-app-7.19.0.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.19.0.dmg"
+        size: 202652058
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:2180fab83ddda89128954769e08c2279b34199a6a080703f3f81b7ab28e55531"
+      "702632194":
+        name: "mac-arm64-morpheus-cli-7.19.0"
+        url_suffix: "mac-arm64-morpheus-cli-7.19.0"
+        size: 13776674
+        digest: "sha256:a79c8c03a933e62a91b0bc5249eaed7f217d59e5c537d551c4706e21bf01d217"
+      "702632254":
+        name: "mac-arm64-morpheus-router-7.19.0"
+        url_suffix: "mac-arm64-morpheus-router-7.19.0"
+        size: 62296610
+        digest: "sha256:039ee2ea0bcd153d9689cf64958d498173a5a5ac302456a237cf14aa1911cfa9"
+      "702632275":
+        name: "mac-x64-morpheus-app-7.19.0.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.19.0.dmg"
+        size: 207678321
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:1771764b90af511e78a4ced12ec4eb19a8afbd7e990f374d5e4e1500cdf01890"
+      "702632406":
+        name: "mac-x64-morpheus-cli-7.19.0"
+        url_suffix: "mac-x64-morpheus-cli-7.19.0"
+        size: 14630432
+        digest: "sha256:69cd63b367e01efe146c42c6b96f3ea3ce435d56e786834b2d3455295137d121"
+      "702632473":
+        name: "mac-x64-morpheus-router-7.19.0"
+        url_suffix: "mac-x64-morpheus-router-7.19.0"
+        size: 64673744
+        digest: "sha256:37829bb3cf5bcc8bf3c306327f550126845872af24afe3c7c3bdeec965a6f322"
+      "702632671":
+        name: "win-x64-morpheus-app-7.19.0.exe"
+        url_suffix: "win-x64-morpheus-app-7.19.0.exe"
+        size: 136749962
+        digest: "sha256:49e2d3fffbbf38402d95f475ad6e1a98999bf64e203fe9902f86e088da9659cd"
+      "702632690":
+        name: "win-x64-morpheus-cli-7.19.0.exe"
+        url_suffix: "win-x64-morpheus-cli-7.19.0.exe"
+        size: 14531584
+        digest: "sha256:3aa7a652cffcb20b4cca9b6c0e0879b696695cc3c9efec13b6949fbe60fa9fb2"
+      "702632729":
+        name: "win-x64-morpheus-router-7.19.0.exe"
+        url_suffix: "win-x64-morpheus-router-7.19.0.exe"
+        size: 62917120
+        digest: "sha256:49a1d26d2bd76c71f4fb96bf9ff3779ec9473ec72c563b480d812afea0959338"
+  "432837074":
+    tag: "v7.19.10-test"
+    title: "Pre-release v7.19.10-test"
+    url: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/tag/v7.19.10-test"
+    created_at: "2026-11-02T17:21:54Z"
+    published_at: "2026-11-03T14:56:34Z"
+    updated_at: "2026-11-03T14:56:34Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/zipball/v7.19.10-test"
+    source_tar_url: "https://api.github.com/repos/MorpheusAIs/Morpheus-Lumerin-Node/tarball/v7.19.10-test"
+    download_base: "https://github.com/MorpheusAIs/Morpheus-Lumerin-Node/releases/download/v7.19.10-test/"
+    assets:
+      "705980220":
+        name: "linux-x86_64-morpheus-app-7.19.10.AppImage"
+        url_suffix: "linux-x86_64-morpheus-app-7.19.10.AppImage"
+        size: 225690874
+        media_type: "application/vnd.appimage"
+        digest: "sha256:2fde3f880429d05e7bb279b36ffe2865e59a75292c276e8c7294fe48c5ca10b7"
+      "705980222":
+        name: "linux-arm64-morpheus-app-7.19.10.AppImage"
+        url_suffix: "linux-arm64-morpheus-app-7.19.10.AppImage"
+        size: 226853996
+        media_type: "application/vnd.appimage"
+        digest: "sha256:bfc47bfa24f62ca75da0e60168f111f5dfddb2f9fae2646ccc36709b14f764f2"
+      "705980225":
+        name: "docker-compose.tee.deployed.yml"
+        url_suffix: "docker-compose.tee.deployed.yml"
+        size: 1952
+        media_type: "application/yaml"
+        digest: "sha256:b3324171f89936a75ad9e2cb405a0bfa0d3e8d47ee07ee4176123f9c01d9628f"
+      "705980227":
+        name: "linux-arm64-morpheus-cli-7.19.10"
+        url_suffix: "linux-arm64-morpheus-cli-7.19.10"
+        size: 13386973
+        digest: "sha256:1ed60a5a4611a7714431a7e95c77b15b6deb165a9b44d5899252522537fe73c9"
+      "705980228":
+        name: "linux-arm64-morpheus-router-7.19.10"
+        url_suffix: "linux-arm64-morpheus-router-7.19.10"
+        size: 58851490
+        digest: "sha256:3fe507cdbc602661298277e0c0232c4b779aa5a7e89537503a8221bb8c14c96a"
+      "705980296":
+        name: "linux-x86_64-morpheus-cli-7.19.10"
+        url_suffix: "linux-x86_64-morpheus-cli-7.19.10"
+        size: 14422601
+        digest: "sha256:1f412ed468ab59dfb7343fcf9872c667ea690fbcb53f87c1500771c858704ac3"
+      "705980408":
+        name: "mac-arm64-morpheus-app-7.19.10.dmg"
+        url_suffix: "mac-arm64-morpheus-app-7.19.10.dmg"
+        size: 203161702
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:46ebc5f58ef33200a61e11019c6facb967bdacce54772f7de0b4be3acf928b94"
+      "705980412":
+        name: "linux-x86_64-morpheus-router-7.19.10"
+        url_suffix: "linux-x86_64-morpheus-router-7.19.10"
+        size: 63049144
+        digest: "sha256:563940868b93197497b6dd5b8a15d8a096987213b1f7054a8a537474c4e350b4"
+      "705980919":
+        name: "mac-arm64-morpheus-cli-7.19.10"
+        url_suffix: "mac-arm64-morpheus-cli-7.19.10"
+        size: 13776674
+        digest: "sha256:a79c8c03a933e62a91b0bc5249eaed7f217d59e5c537d551c4706e21bf01d217"
+      "705980959":
+        name: "mac-arm64-morpheus-router-7.19.10"
+        url_suffix: "mac-arm64-morpheus-router-7.19.10"
+        size: 62550978
+        digest: "sha256:cd78371a72cf8e348b4fa077ad5d6c812f41407644c4535ab9e156b2ba08dabe"
+      "705981050":
+        name: "mac-x64-morpheus-app-7.19.10.dmg"
+        url_suffix: "mac-x64-morpheus-app-7.19.10.dmg"
+        size: 208193626
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:33eb0eb41895dcb9124ce2586ddbab75e899dfb965a46f13a31eb8d713b5b933"
+      "705981436":
+        name: "mac-x64-morpheus-cli-7.19.10"
+        url_suffix: "mac-x64-morpheus-cli-7.19.10"
+        size: 14630432
+        digest: "sha256:69cd63b367e01efe146c42c6b96f3ea3ce435d56e786834b2d3455295137d121"
+      "705981605":
+        name: "mac-x64-morpheus-router-7.19.10"
+        url_suffix: "mac-x64-morpheus-router-7.19.10"
+        size: 64946624
+        digest: "sha256:a892441d9c11108aeb796b6b84809dff6db454f20ab9a32dc574bbbca65567eb"
+      "705982055":
+        name: "win-x64-morpheus-app-7.19.10.exe"
+        url_suffix: "win-x64-morpheus-app-7.19.10.exe"
+        size: 136698418
+        digest: "sha256:4176a0cbf2eb8908f372b00048004bb6d82787ba6937a43d6e8a578aed01870e"
+      "705982397":
+        name: "win-x64-morpheus-cli-7.19.10.exe"
+        url_suffix: "win-x64-morpheus-cli-7.19.10.exe"
+        size: 14531584
+        digest: "sha256:3aa7a652cffcb20b4cca9b6c0e0879b696695cc3c9efec13b6949fbe60fa9fb2"
+      "705982422":
+        name: "win-x64-morpheus-router-7.19.10.exe"
+        url_suffix: "win-x64-morpheus-router-7.19.10.exe"
+        size: 63192064
+        digest: "sha256:31cce9daaf35cd362e02001dc65e363e24a3b8f1105a233728f16dcb757640a3"

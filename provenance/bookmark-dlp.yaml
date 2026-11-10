@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "bookmark-dlp":
+    "aarch64":
+      repository_id: 637086541
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/bookmark-dlp"
+        blob: "c416ee3e1ff2bfa0c01da772038485f61886b3cc"
+    "armv7l":
+      repository_id: 637086541
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 637086541
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 637086541
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/bookmark-dlp"
+        blob: "ffd64f9e42a37f94905371486af1e0ac7eb8028a"

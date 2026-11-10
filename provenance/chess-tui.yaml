@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "chess-tui":
+    "aarch64":
+      repository_id: 718789585
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/chess-tui"
+        blob: "64ee01ffe093fe9b01368e92b4a5250cec1564c4"
+    "armv7l":
+      repository_id: 718789585
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 718789585
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 718789585
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/chess-tui"
+        blob: "812bdfdd9924f7380abe35444303c58b4926bd32"

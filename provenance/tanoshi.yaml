@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "tanoshi":
+    "aarch64":
+      repository_id: 665400463
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/tanoshi"
+        blob: "8ac61379ceb481a539f9fe1b818d3c3c0505b3df"
+    "armv7l":
+      repository_id: 665400463
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 665400463
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 665400463
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/tanoshi"
+        blob: "4ab513f432011ba0b22379de280f0f75eb954061"

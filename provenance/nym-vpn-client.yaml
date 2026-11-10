@@ -1,0 +1,64 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "nym-vpn":
+    "aarch64":
+      repository_id: 725184343
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 725184343
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 725184343
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 725184343
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/nym-vpn"
+        blob: "0dc20924d8014c46c0603b0953db507bfe0f2393"
+  "nym-vpn-client":
+    "aarch64":
+      repository_id: 725184343
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/nym-vpn-client"
+        blob: "015b69df0f163ec0136cd5961fb4ce52b3bb0873"
+    "armv7l":
+      repository_id: 725184343
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 725184343
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 725184343
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/nym-vpn-client"
+        blob: "09bc54f917825127a06128eaf03a8a20cffea3f6"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T15:23:44Z"
+        recipe_sha256: "3faa33b2db2e1aecde1a897492af1fb115b572470234b8310bc1f13f98367e88"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

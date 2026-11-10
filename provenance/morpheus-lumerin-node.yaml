@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "morpheus-lumerin-node":
+    "aarch64":
+      repository_id: 767770799
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/morpheus-lumerin-node"
+        blob: "1a2bc0ce0e9c211bf18461d456b0e2101f4774b3"
+    "armv7l":
+      repository_id: 767770799
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 767770799
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 767770799
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/morpheus-lumerin-node"
+        blob: "16bd2a454a263f3ef0e6b47500a0d6d663e3f09c"

@@ -1,0 +1,26 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "anydesk":
+    "aarch64":
+      repository_id: 652421519
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 652421519
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 652421519
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 652421519
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/anydesk"
+        blob: "5eeee4415879dbde09f5c00658879f63242b42b0"

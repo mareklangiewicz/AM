@@ -1,0 +1,53 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "dolphin-emu":
+    "aarch64":
+      repository_id: 707886912
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 707886912
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 707886912
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 707886912
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/dolphin-emu"
+        blob: "57aad465e8b14dc8bbbf43a0797f7d36642a1423"
+  "dolphin-emu-nightly":
+    "aarch64":
+      repository_id: 707886912
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/dolphin-emu-nightly"
+        blob: "c6d85c8c926f7535fbb7f6c391acb05dea97e825"
+    "armv7l":
+      repository_id: 707886912
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 707886912
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 707886912
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/dolphin-emu-nightly"
+        blob: "b1a7f31ec09c2a5bc59a8db3b7e64afe035d6385"

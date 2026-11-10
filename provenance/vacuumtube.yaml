@@ -1,0 +1,42 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "vacuumtube":
+    "aarch64":
+      repository_id: 776609232
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/vacuumtube"
+        blob: "8e12129ffc95c86cbcd8b35a80ee42863e55e48a"
+    "armv7l":
+      repository_id: 776609232
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 776609232
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 776609232
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/vacuumtube"
+        blob: "6a1ea42a7a56df184c7fbe2f2efd4fc5b1a93019"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T15:23:44Z"
+        recipe_sha256: "7bac823b8e19fe79a58b05344ee48ac9dae93fffe65d53dbd73f93e5f14871b3"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

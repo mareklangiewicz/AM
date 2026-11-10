@@ -1,0 +1,58 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "vivaldi-snapshot":
+    "aarch64":
+      repository_id: 656906008
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/vivaldi-snapshot"
+        blob: "2e8a47c41aec157dcd5db4f61ddbf0379ca7d7f1"
+    "armv7l":
+      repository_id: 656906008
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 656906008
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 656906008
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/vivaldi-snapshot"
+        blob: "bb573b705968bc15f1e2d88ffed126a8c1f5a9f4"
+  "vivaldi-stable":
+    "aarch64":
+      repository_id: 656906008
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/vivaldi-stable"
+        blob: "ed41377366cf6387f728b9a602268b2eae4bdb8f"
+    "armv7l":
+      repository_id: 656906008
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 656906008
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 656906008
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/vivaldi-stable"
+        blob: "cb8c2cd07054eef59c89ada925c435ee8917ae68"

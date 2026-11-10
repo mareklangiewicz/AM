@@ -1,0 +1,37 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "gpt-anywhere":
+    "aarch64":
+      repository_id: 609969814
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 609969814
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 609969814
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 609969814
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/gpt-anywhere"
+        blob: "9d3b8e28ecbd9587791c8e237e177176c395cbd2"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T15:23:44Z"
+        recipe_sha256: "f3db4d8df28269cc7315f3caaf0bc3f67a232f16eebc4a1b0e9fe4e13f75dc65"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"
