@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "diffforge-client":
+    "aarch64":
+      repository_id: 1292812031
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/diffforge-client"
+        blob: "7cbdd0091003c3ad76f9cbfa02b6a37799a35277"
+    "armv7l":
+      repository_id: 1292812031
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1292812031
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1292812031
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/diffforge-client"
+        blob: "81cbec0352dd2fc330b360c66d1e5d414bf832c4"

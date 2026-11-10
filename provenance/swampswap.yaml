@@ -1,0 +1,42 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "swampswap":
+    "aarch64":
+      repository_id: 1277531711
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/swampswap"
+        blob: "d0cf0f80632303826665551f3bd10a1ed9e6bcdb"
+    "armv7l":
+      repository_id: 1277531711
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1277531711
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1277531711
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/swampswap"
+        blob: "ee2b23466bc8d1f0eab914ffb4d50305fb9e6706"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T17:51:08Z"
+        recipe_sha256: "eefb28f9b48ab7b2670d5f78c13bd88b65e69b2421561db828c0928a93d1d73e"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

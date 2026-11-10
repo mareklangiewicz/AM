@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "kotodama":
+    "aarch64":
+      repository_id: 1275902483
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/kotodama"
+        blob: "5572c9d0481b9ad80bee873f877d2f8d16c7a05a"
+    "armv7l":
+      repository_id: 1275902483
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1275902483
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1275902483
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/kotodama"
+        blob: "8377797a3f54da798d4d17e0437cd0db1a6b1313"

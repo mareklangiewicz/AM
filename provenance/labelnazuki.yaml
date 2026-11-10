@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "labelnazuki":
+    "aarch64":
+      repository_id: 1288336601
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/labelnazuki"
+        blob: "73dab1bffff8ae2b716ba864b3f26f93c3289743"
+    "armv7l":
+      repository_id: 1288336601
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1288336601
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1288336601
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/labelnazuki"
+        blob: "e817d9d2d4b0df53fb11728fc9f9c10b697007e4"

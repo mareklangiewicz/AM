@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "dpcc-harness":
+    "aarch64":
+      repository_id: 1271811091
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/dpcc-harness"
+        blob: "7c3fc03eb37191946c57c14fdce3de8ccee18f5d"
+    "armv7l":
+      repository_id: 1271811091
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1271811091
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1271811091
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/dpcc-harness"
+        blob: "bab7657c845fed415c8706a073a8902766cb3100"

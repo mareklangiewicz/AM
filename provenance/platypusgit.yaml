@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "platypusgit":
+    "aarch64":
+      repository_id: 1283024205
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/platypusgit"
+        blob: "6028034f0e003009b06c97810d05668fe5324d93"
+    "armv7l":
+      repository_id: 1283024205
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1283024205
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1283024205
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/platypusgit"
+        blob: "da0214f1e60f5b124e37dc5cc65de926a82bd8e6"

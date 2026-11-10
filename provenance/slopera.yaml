@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "slopera":
+    "aarch64":
+      repository_id: 1280330755
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/slopera"
+        blob: "abf5de03dd18c951370681983214674fa263e26c"
+    "armv7l":
+      repository_id: 1280330755
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1280330755
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1280330755
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/slopera"
+        blob: "47dd015a1555a2218efa745d15ae6bfe6d698f75"

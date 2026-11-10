@@ -1,0 +1,42 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "renpy-translator":
+    "aarch64":
+      repository_id: 1272378195
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/renpy-translator"
+        blob: "fc8bc9a37d15466b35058420496d503901e185b2"
+    "armv7l":
+      repository_id: 1272378195
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1272378195
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1272378195
+      availability: "present"
+      classification: "shared"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/renpy-translator"
+        blob: "3e8ed8ae46f242144c1ee3a8058f020afda4bf42"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-10T17:51:08Z"
+        recipe_sha256: "f3fad06e0ed2859fddaca277681f8de2159b69779283a7d9fd89accc69cf2ed3"
+        rules: "47211b286188113e6111033e9f17f8a7315d16bd"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+            path: "modules/"
+            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"

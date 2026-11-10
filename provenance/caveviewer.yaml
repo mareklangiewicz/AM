@@ -1,0 +1,26 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "caveviewer":
+    "aarch64":
+      repository_id: 1285599500
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 1285599500
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1285599500
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1285599500
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/caveviewer"
+        blob: "71a14b3935ca9ca98bd2851d2a367be0b0d0a9b6"

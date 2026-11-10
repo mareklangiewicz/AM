@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "zerowhats":
+    "aarch64":
+      repository_id: 1285514680
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/zerowhats"
+        blob: "a8b965ef43988140aa6e72cf337af4946dbd1e91"
+    "armv7l":
+      repository_id: 1285514680
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1285514680
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1285514680
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/zerowhats"
+        blob: "fd5863907b6c0b0a6c35f6d7feb28f398199f10a"

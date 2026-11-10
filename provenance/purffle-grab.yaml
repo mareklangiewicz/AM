@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "purffle-grab":
+    "aarch64":
+      repository_id: 1282429323
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/purffle-grab"
+        blob: "aeed1c2fdf8446b2ca246ec17d9f519dcf6468ed"
+    "armv7l":
+      repository_id: 1282429323
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1282429323
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1282429323
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/purffle-grab"
+        blob: "2ab422d8434f6ff18e9a656f41473c1b39e1528a"

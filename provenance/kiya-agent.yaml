@@ -1,0 +1,26 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "kiya-agent":
+    "aarch64":
+      repository_id: 1291155173
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 1291155173
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1291155173
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1291155173
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/kiya-agent"
+        blob: "9c0acde2b48f9bd309b56627c3ba530241539469"

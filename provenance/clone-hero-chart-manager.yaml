@@ -1,0 +1,26 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "clone-hero-chart-manager":
+    "aarch64":
+      repository_id: 1290101074
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 1290101074
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1290101074
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1290101074
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/clone-hero-chart-manager"
+        blob: "5d7d501821420ad81ef412f4fcbdeb371773103d"

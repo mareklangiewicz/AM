@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "oleafly":
+    "aarch64":
+      repository_id: 1289704847
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/oleafly"
+        blob: "65b6703b44f9e3979915c2c10771b5a39c7f45e6"
+    "armv7l":
+      repository_id: 1289704847
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1289704847
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1289704847
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/oleafly"
+        blob: "cbd3940a5578bdf573668edc0fb4aff0efefb53b"

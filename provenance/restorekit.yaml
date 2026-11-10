@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "restorekit":
+    "aarch64":
+      repository_id: 1287858626
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/restorekit"
+        blob: "7711e497a87971b995e22ec05cd78107729ba9c5"
+    "armv7l":
+      repository_id: 1287858626
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1287858626
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1287858626
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/restorekit"
+        blob: "d9afb526394a7350cd87d2caa3a47fec758df6ad"

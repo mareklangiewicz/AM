@@ -1,0 +1,26 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "sollin-music-desktop":
+    "aarch64":
+      repository_id: 1262999985
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 1262999985
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1262999985
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1262999985
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/sollin-music-desktop"
+        blob: "ddd8fe03dff312fc07f261bbfe5d4a7361caaa5f"

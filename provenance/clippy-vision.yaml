@@ -1,0 +1,26 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "clippy-vision":
+    "aarch64":
+      repository_id: 1277662921
+      availability: "absent"
+      classification: "unknown"
+    "armv7l":
+      repository_id: 1277662921
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1277662921
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1277662921
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/clippy-vision"
+        blob: "a5cb25084ff0d1c24c33ea08f00eae22c2c3f729"

@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "ldoce5viewerx":
+    "aarch64":
+      repository_id: 1287946721
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/ldoce5viewerx"
+        blob: "b7be8fc0a2d58e774a73e90b143e5db299afae52"
+    "armv7l":
+      repository_id: 1287946721
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1287946721
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1287946721
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/ldoce5viewerx"
+        blob: "b241d51ff9f6cf209ba6adb5ba412803ad5e7b9b"

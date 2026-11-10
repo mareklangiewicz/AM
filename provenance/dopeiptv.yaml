@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "dopeiptv":
+    "aarch64":
+      repository_id: 1289812729
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/dopeiptv"
+        blob: "c8bbc02f5bdad4d6d645a300e2151e4a1beac7a8"
+    "armv7l":
+      repository_id: 1289812729
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1289812729
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1289812729
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/dopeiptv"
+        blob: "4b774a881d85a4f28aba3745e296f0e92d4a5d32"

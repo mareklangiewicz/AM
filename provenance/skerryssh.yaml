@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "skerryssh":
+    "aarch64":
+      repository_id: 1266546091
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/skerryssh"
+        blob: "2cd6f5395d5ca8c5bf27d933c7ae9069d0a00fb4"
+    "armv7l":
+      repository_id: 1266546091
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1266546091
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1266546091
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/skerryssh"
+        blob: "09f39d67812a5dd37ab68d2ca5d4bedba77b6512"

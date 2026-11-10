@@ -1,0 +1,31 @@
+format: 3
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+kind: "provenance"
+apps:
+  "chacrypt":
+    "aarch64":
+      repository_id: 1265741872
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/aarch64/chacrypt"
+        blob: "49bd05c0c50c787b2bc11bd4ee0fa7acb40b45e5"
+    "armv7l":
+      repository_id: 1265741872
+      availability: "absent"
+      classification: "unknown"
+    "i686":
+      repository_id: 1265741872
+      availability: "absent"
+      classification: "unknown"
+    "x86_64":
+      repository_id: 1265741872
+      availability: "present"
+      classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "47211b286188113e6111033e9f17f8a7315d16bd"
+        path: "programs/x86_64/chacrypt"
+        blob: "d4f084a241a38207bf9443d8b97a24be5c47bc1c"
