@@ -3,61 +3,13 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 232312458
 repository: "nymtech/nym"
-collected_at: "2026-11-10T09:57:34Z"
+collected_at: "2026-11-11T22:12:39Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: false
-observed_at: "2026-11-10T09:57:34Z"
+observed_at: "2026-11-11T22:12:39Z"
 releases:
-  "247568654":
-    tag: "nym-binaries-v2025.16-halloumi"
-    title: "Nym Binaries v2025.16-halloumi"
-    url: "https://github.com/nymtech/nym/releases/tag/nym-binaries-v2025.16-halloumi"
-    created_at: "2025-09-16T09:41:49Z"
-    published_at: "2025-09-16T09:42:57Z"
-    updated_at: "2025-09-16T11:48:24Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/nymtech/nym/zipball/nym-binaries-v2025.16-halloumi"
-    source_tar_url: "https://api.github.com/repos/nymtech/nym/tarball/nym-binaries-v2025.16-halloumi"
-    download_base: "https://github.com/nymtech/nym/releases/download/nym-binaries-v2025.16-halloumi/"
-    assets:
-      "293778850":
-        name: "nym-client"
-        url_suffix: "nym-client"
-        size: 24872936
-        digest: "sha256:b62659d6dd2ab8fd5ef871bcb91752f84e1c47639168e7265539548808c7857e"
-      "293778851":
-        name: "nym-api"
-        url_suffix: "nym-api"
-        size: 45064344
-        digest: "sha256:109cc28858a5fdecdf2b9004ce3aa260645e2c1380ad3a6bd9e84b7297576edc"
-      "293778852":
-        name: "nym-cli"
-        url_suffix: "nym-cli"
-        size: 22773104
-        digest: "sha256:a5672408b040fd0fef657ebd8a331dd15484b3817e79e91d0d5c334d59421480"
-      "293778853":
-        name: "nymvisor"
-        url_suffix: "nymvisor"
-        size: 10312496
-        digest: "sha256:3488626de34911d6a9a1c7a668c08b53e414c3f13631919a151432a616dddb51"
-      "293778854":
-        name: "nym-network-requester"
-        url_suffix: "nym-network-requester"
-        size: 25178728
-        digest: "sha256:981c7da8c5d9fabe4765508d863638e6dde675ea2f821509a48efff1b819ec2f"
-      "293778855":
-        name: "nym-socks5-client"
-        url_suffix: "nym-socks5-client"
-        size: 25336288
-        digest: "sha256:8c793a0ee23f2d1853dc5b86cd1ddf464f0b0042044ded749e86a644b940f0bb"
-      "293778951":
-        name: "hashes.json"
-        url_suffix: "hashes.json"
-        size: 4095
-        media_type: "application/json; charset=utf-8"
-        digest: "sha256:b80fb2a24541ec1a43eb82609559b3673b97e0157e3ea7a29b22f2bb7060e50c"
   "251378173":
     tag: "nym-binaries-v2025.17-isabirra"
     title: "Nym Binaries v2025.17-isabirra"
@@ -1791,3 +1743,56 @@ releases:
         size: 4768
         media_type: "application/json; charset=utf-8"
         digest: "sha256:401d77058fbe42599b55d7c1cabda3c2c0ff6e241b76790a2fb751f28d161ba9"
+  "441508067":
+    tag: "nym-binaries-v2026.22-istanbul"
+    title: "Nym Binaries v2026.22-istanbul"
+    url: "https://github.com/nymtech/nym/releases/tag/nym-binaries-v2026.22-istanbul"
+    created_at: "2026-11-11T09:54:26Z"
+    published_at: "2026-11-11T09:57:00Z"
+    updated_at: "2026-11-11T10:00:26Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/nymtech/nym/zipball/nym-binaries-v2026.22-istanbul"
+    source_tar_url: "https://api.github.com/repos/nymtech/nym/tarball/nym-binaries-v2026.22-istanbul"
+    download_base: "https://github.com/nymtech/nym/releases/download/nym-binaries-v2026.22-istanbul/"
+    assets:
+      "735008867":
+        name: "nym-socks5-client"
+        url_suffix: "nym-socks5-client"
+        size: 29870048
+        digest: "sha256:d7d39f6a7fe331db6ac24503da54e195d960c93fed60313876bc7c1e34266f30"
+      "735008868":
+        name: "nym-api"
+        url_suffix: "nym-api"
+        size: 54701528
+        digest: "sha256:71418ad9da65582556558ffd25ecccb1acbb5b2386f98dc764e35b9a5342f29c"
+      "735008869":
+        name: "nym-client"
+        url_suffix: "nym-client"
+        size: 29622000
+        digest: "sha256:10062b442f782860e3ffbc679315065615ff156b47fa2093e9e99fcd52d08a7b"
+      "735008871":
+        name: "nym-node"
+        url_suffix: "nym-node"
+        size: 73394480
+        digest: "sha256:b941c7e3e6feb0c9713532de003083d04a97301cd2c3fdec1bf4a0732250e536"
+      "735008872":
+        name: "nym-cli"
+        url_suffix: "nym-cli"
+        size: 28144984
+        digest: "sha256:d1754b5b84e187a306be2e0314a9acc975927ffaef40ef1eb65c89388fa90189"
+      "735008873":
+        name: "nym-network-requester"
+        url_suffix: "nym-network-requester"
+        size: 30096312
+        digest: "sha256:780957d780358da7ea2c786ffa288d41255de51cccd852fc1a85170f2cc71782"
+      "735008875":
+        name: "nymvisor"
+        url_suffix: "nymvisor"
+        size: 11255208
+        digest: "sha256:7d75ecd11c8bb35a6617e53740d25b6848a6094edd56ba525d1d7a03a40b2a28"
+      "735010804":
+        name: "hashes.json"
+        url_suffix: "hashes.json"
+        size: 4798
+        media_type: "application/json; charset=utf-8"
+        digest: "sha256:25e8e3262cb0462f22ac0ca71394aafd77250df18b5f87807f6718e45dea7ee8"
