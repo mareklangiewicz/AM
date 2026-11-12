@@ -3,36 +3,13 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 964931785
 repository: "VocaHQ/vocalinux"
-collected_at: "2026-11-10T15:36:26Z"
+collected_at: "2026-11-12T20:09:06Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-10T15:36:26Z"
+observed_at: "2026-11-12T20:09:06Z"
 releases:
-  "280998849":
-    tag: "v0.4.1-alpha"
-    title: "v0.4.1-alpha"
-    url: "https://github.com/VocaHQ/vocalinux/releases/tag/v0.4.1-alpha"
-    created_at: "2026-01-29T08:13:34Z"
-    published_at: "2026-01-29T08:14:41Z"
-    updated_at: "2026-01-29T08:18:50Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/VocaHQ/vocalinux/zipball/v0.4.1-alpha"
-    source_tar_url: "https://api.github.com/repos/VocaHQ/vocalinux/tarball/v0.4.1-alpha"
-    download_base: "https://github.com/VocaHQ/vocalinux/releases/download/v0.4.1-alpha/"
-    assets:
-      "347570100":
-        name: "vocalinux-0.4.1a0-py3-none-any.whl"
-        url_suffix: "vocalinux-0.4.1a0-py3-none-any.whl"
-        size: 871413
-        digest: "sha256:b9e4418d580346e85d643436b2f983b94f63f3714fda0a1235b5049c4edbf48d"
-      "347570101":
-        name: "vocalinux-0.4.1a0.tar.gz"
-        url_suffix: "vocalinux-0.4.1a0.tar.gz"
-        size: 775706
-        media_type: "application/gzip"
-        digest: "sha256:6015ca8955e208dde39feb222548ff5120dec11303015fd512240ca55e86be5b"
   "283595933":
     tag: "v0.5.0-beta"
     title: "v0.5.0-beta"
@@ -1185,6 +1162,7 @@ releases:
         size: 1063
         digest: "sha256:b5fab5ef1b28de9e0cc4a01b44e35a9862b0b73867707b190e01145b013caefa"
   "438938088":
+    observed_at: "2026-11-10T15:36:26Z"
     tag: "nightly-2026-11-09"
     title: "Nightly Build - 0.18.6.dev20261109+5648785"
     url: "https://github.com/VocaHQ/vocalinux/releases/tag/nightly-2026-11-09"
@@ -1220,6 +1198,7 @@ releases:
         media_type: "application/vnd.appimage"
         digest: "sha256:3893bf8d54e14eb1c94547b67b3fffe17e778310b7684023c5b266bf243d1d8c"
   "440163964":
+    observed_at: "2026-11-10T15:36:26Z"
     tag: "nightly-2026-11-10"
     title: "Nightly Build - 0.18.6.dev20261110+5648785"
     url: "https://github.com/VocaHQ/vocalinux/releases/tag/nightly-2026-11-10"
@@ -1254,3 +1233,38 @@ releases:
         size: 102513160
         media_type: "application/vnd.appimage"
         digest: "sha256:a009477c081c8e88cea5bbb6bb11adc23a978cadff3cc7d25ce616e8569812b1"
+  "442734421":
+    tag: "nightly-2026-11-12"
+    title: "Nightly Build - 0.18.6.dev20261112+5648785"
+    url: "https://github.com/VocaHQ/vocalinux/releases/tag/nightly-2026-11-12"
+    created_at: "2026-11-08T22:52:14Z"
+    published_at: "2026-11-12T09:33:55Z"
+    updated_at: "2026-11-12T09:36:31Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/VocaHQ/vocalinux/zipball/nightly-2026-11-12"
+    source_tar_url: "https://api.github.com/repos/VocaHQ/vocalinux/tarball/nightly-2026-11-12"
+    download_base: "https://github.com/VocaHQ/vocalinux/releases/download/nightly-2026-11-12/"
+    assets:
+      "738878773":
+        name: "vocalinux-0.18.6.dev20261112+5648785-py3-none-any.whl"
+        url_suffix: "vocalinux-0.18.6.dev20261112%2B5648785-py3-none-any.whl"
+        size: 3090063
+        digest: "sha256:75d1d336b9a2c01c31895f115dc7b5bc98b159f9c45884c971c870d51ccd9a1a"
+      "738878780":
+        name: "Vocalinux-0.18.6.dev20261112+5648785-x86_64.AppImage"
+        url_suffix: "Vocalinux-0.18.6.dev20261112%2B5648785-x86_64.AppImage"
+        size: 110524920
+        media_type: "application/vnd.appimage"
+        digest: "sha256:fce7f1c30fd06e057bfd95ac8ca049544b11e9f9c91ab8198c400a0c0859c321"
+      "738878781":
+        name: "vocalinux-0.18.6.dev20261112+5648785.tar.gz"
+        url_suffix: "vocalinux-0.18.6.dev20261112%2B5648785.tar.gz"
+        size: 4240343
+        media_type: "application/x-gtar"
+        digest: "sha256:abe9aabde5ceb828df40377e36fcccf981ab3cfc71cc5c6029c1fa7f9b5a8cc5"
+      "738886228":
+        name: "Vocalinux-0.18.6.dev20261112+5648785-aarch64.AppImage"
+        url_suffix: "Vocalinux-0.18.6.dev20261112%2B5648785-aarch64.AppImage"
+        size: 102513160
+        media_type: "application/vnd.appimage"
+        digest: "sha256:873407a99ab9f548560acdebc9591d4a4b403dcf7d7063df8e63b922927a2346"
