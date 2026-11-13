@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1158198234
 repository: "open-jarvis/OpenJarvis"
-collected_at: "2026-11-10T16:29:28Z"
+collected_at: "2026-11-13T16:41:56Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-10T16:29:28Z"
+observed_at: "2026-11-13T16:41:56Z"
 releases:
   "295953825":
     tag: "desktop-v0.0.1-rc1"
@@ -201,7 +201,7 @@ releases:
     url: "https://github.com/open-jarvis/OpenJarvis/releases/tag/desktop-latest"
     created_at: "2026-02-27T19:50:27Z"
     published_at: "2026-05-25T23:27:49Z"
-    updated_at: "2026-05-25T23:31:57Z"
+    updated_at: "2026-11-11T03:16:24Z"
     prerelease: true
     source_zip_url: "https://api.github.com/repos/open-jarvis/OpenJarvis/zipball/desktop-latest"
     source_tar_url: "https://api.github.com/repos/open-jarvis/OpenJarvis/tarball/desktop-latest"
@@ -285,99 +285,260 @@ releases:
         size: 424
         media_type: "zip"
         digest: "sha256:66922c3b226841f6e7229d01ca7b2a1dc504fffb952a7e377c4f550b684b0327"
-      "429728244":
+      "733938610":
         name: "latest.json"
         url_suffix: "latest.json"
-        size: 6699
+        size: 8949
         media_type: "application/json"
-        digest: "sha256:34c2ab397f39be95bd38c6e0af0fb5152d6f41fd9dc80975ebd2035ccde89b32"
+        digest: "sha256:6fbafca64d399bd1926279de828b973930101c210724a09d7645e07cd567f754"
   "329107578":
     tag: "desktop-edge"
     title: "Desktop (Edge Build)"
     url: "https://github.com/open-jarvis/OpenJarvis/releases/tag/desktop-edge"
     created_at: "2026-05-25T23:41:08Z"
     published_at: "2026-05-25T23:48:25Z"
-    updated_at: "2026-11-08T20:38:11Z"
+    updated_at: "2026-11-11T03:40:11Z"
     prerelease: true
     source_zip_url: "https://api.github.com/repos/open-jarvis/OpenJarvis/zipball/desktop-edge"
     source_tar_url: "https://api.github.com/repos/open-jarvis/OpenJarvis/tarball/desktop-edge"
     download_base: "https://github.com/open-jarvis/OpenJarvis/releases/download/desktop-edge/"
     assets:
-      "725116113":
-        name: "OpenJarvis_1.0.5-1320_amd64.deb"
-        url_suffix: "OpenJarvis_1.0.5-1320_amd64.deb"
-        size: 28931160
+      "733976424":
+        name: "OpenJarvis_1.0.5-1319_x64_en-US.msi"
+        url_suffix: "OpenJarvis_1.0.5-1319_x64_en-US.msi"
+        size: 24694784
         media_type: "zip"
-        digest: "sha256:773acfdb1f1acb1c0c18573cc9831343985a7ec3f2b3349d36fc9a88a08a2c33"
-      "725116161":
-        name: "OpenJarvis_1.0.5-1320_amd64.deb.sig"
-        url_suffix: "OpenJarvis_1.0.5-1320_amd64.deb.sig"
+        digest: "sha256:0aa7ea32a5db9a1bfdf628b38bdb9707ab9ad4a1a0fd8ac43c35a3683cf87c47"
+      "733976531":
+        name: "OpenJarvis_1.0.5-1319_x64_en-US.msi.sig"
+        url_suffix: "OpenJarvis_1.0.5-1319_x64_en-US.msi.sig"
+        size: 452
+        media_type: "zip"
+        digest: "sha256:69c5efd2c435c3a78601096502d3a90dee7e261122d1d07544b9647e7bf6b373"
+      "733976559":
+        name: "OpenJarvis_1.0.5-1319_x64-setup.exe"
+        url_suffix: "OpenJarvis_1.0.5-1319_x64-setup.exe"
+        size: 18035707
+        media_type: "zip"
+        digest: "sha256:d2d5f077063d3c66c9f540d86aa3e7bc96d69baea5ba7df668a5bf21c23cb45c"
+      "733976633":
+        name: "OpenJarvis_1.0.5-1319_x64-setup.exe.sig"
+        url_suffix: "OpenJarvis_1.0.5-1319_x64-setup.exe.sig"
+        size: 452
+        media_type: "zip"
+        digest: "sha256:86e6b94a491e9229d1cb5bc090ed09e35cb74fd52a1af9893ce73d75e1b04753"
+      "733978919":
+        name: "OpenJarvis_1.0.5-1319_amd64.deb"
+        url_suffix: "OpenJarvis_1.0.5-1319_amd64.deb"
+        size: 28979682
+        media_type: "zip"
+        digest: "sha256:8ccf59ddb3049ca3b1f2fe3f850d2b006f6d2345d1ee9a92b3e2ca4b067975f8"
+      "733979007":
+        name: "OpenJarvis_1.0.5-1319_amd64.deb.sig"
+        url_suffix: "OpenJarvis_1.0.5-1319_amd64.deb.sig"
         size: 448
         media_type: "zip"
-        digest: "sha256:61d7cdf7a875bfc021bb8cf004220d77361241fc8412d3352705d8df7788bfae"
-      "725116181":
-        name: "OpenJarvis-1.0.5-1320-1.x86_64.rpm"
-        url_suffix: "OpenJarvis-1.0.5-1320-1.x86_64.rpm"
-        size: 28929277
+        digest: "sha256:d2adb9205a65061117cca8a6855be6e7f0669e1fdaab47999665837cb902f919"
+      "733979029":
+        name: "OpenJarvis-1.0.5-1319-1.x86_64.rpm"
+        url_suffix: "OpenJarvis-1.0.5-1319-1.x86_64.rpm"
+        size: 28982153
         media_type: "zip"
-        digest: "sha256:487e3c0b3a83490965099fa5c86f908656467e4fb8d7240183b980dd94321c8e"
-      "725116214":
-        name: "OpenJarvis-1.0.5-1320-1.x86_64.rpm.sig"
-        url_suffix: "OpenJarvis-1.0.5-1320-1.x86_64.rpm.sig"
+        digest: "sha256:9695bcf1d2444b738341c6de485999c7f593d4bd8888751a98f08125c6a07fa1"
+      "733979126":
+        name: "OpenJarvis-1.0.5-1319-1.x86_64.rpm.sig"
+        url_suffix: "OpenJarvis-1.0.5-1319-1.x86_64.rpm.sig"
         size: 452
         media_type: "zip"
-        digest: "sha256:5f5e07962e7187c06920a9b80dffd44bb92c806d8de3555357bdf4e169397481"
-      "725116270":
-        name: "OpenJarvis_1.0.5-1320_amd64.AppImage"
-        url_suffix: "OpenJarvis_1.0.5-1320_amd64.AppImage"
-        size: 104733176
+        digest: "sha256:4eeb91f4de56e21ee4b2313317ec926d181443bd61224a9761f075505a5b195f"
+      "733979171":
+        name: "OpenJarvis_1.0.5-1319_amd64.AppImage"
+        url_suffix: "OpenJarvis_1.0.5-1319_amd64.AppImage"
+        size: 104790520
         media_type: "zip"
-        digest: "sha256:08ff82ebeef78b3bc5bfcb6e882bda853a63fc2745836605ebe0a8bccfc098bc"
-      "725116476":
-        name: "OpenJarvis_1.0.5-1320_amd64.AppImage.sig"
-        url_suffix: "OpenJarvis_1.0.5-1320_amd64.AppImage.sig"
+        digest: "sha256:4860fd6a3127dbf4abbc3d0315d3daf1414d60841ebc0b28f1705cdc7f75dd07"
+      "733979450":
+        name: "OpenJarvis_1.0.5-1319_amd64.AppImage.sig"
+        url_suffix: "OpenJarvis_1.0.5-1319_amd64.AppImage.sig"
         size: 456
         media_type: "zip"
-        digest: "sha256:fe7031ea402b9bc144d7f120a2b10e8f0a13032374ecbe3bc5a49b573d9649a6"
-      "725120927":
-        name: "OpenJarvis_1.0.5-1320_x64_en-US.msi"
-        url_suffix: "OpenJarvis_1.0.5-1320_x64_en-US.msi"
-        size: 24649728
+        digest: "sha256:61248b1c35f5f3c4eaed41e2da0431c63e1b07e680fb9280b1c42902ec743291"
+      "733985716":
+        name: "OpenJarvis_1.0.5-1319_universal.dmg"
+        url_suffix: "OpenJarvis_1.0.5-1319_universal.dmg"
+        size: 53666211
         media_type: "zip"
-        digest: "sha256:c51495affc395324bb682a2bea6c1290713db18d9836f1cbdb3fe6f3aa0b8d7e"
-      "725121018":
-        name: "OpenJarvis_1.0.5-1320_x64_en-US.msi.sig"
-        url_suffix: "OpenJarvis_1.0.5-1320_x64_en-US.msi.sig"
-        size: 452
+        digest: "sha256:44ab97f5ff4c4adb8aedf10f2867688bf8ffd7ed90af689fad255562bc6d9616"
+      "733985786":
+        name: "OpenJarvis_1.0.5-1319_universal.app.tar.gz"
+        url_suffix: "OpenJarvis_1.0.5-1319_universal.app.tar.gz"
+        size: 52265737
         media_type: "zip"
-        digest: "sha256:41492b9fd4ef28280b73d164be5cad824da5eaee818f5e67ea702bfd5a0d059b"
-      "725121040":
-        name: "OpenJarvis_1.0.5-1320_x64-setup.exe"
-        url_suffix: "OpenJarvis_1.0.5-1320_x64-setup.exe"
-        size: 18000776
+        digest: "sha256:f3fbeee27109abaf62004f293b43fd6e1631df86cb6126c1efcbf4b99c73f5ec"
+      "733985897":
+        name: "OpenJarvis_1.0.5-1319_universal.app.tar.gz.sig"
+        url_suffix: "OpenJarvis_1.0.5-1319_universal.app.tar.gz.sig"
+        size: 436
         media_type: "zip"
-        digest: "sha256:daa01a239a4ed7b4e4a07358877ef3f3316c70aeac7693de4ee915a799c26f33"
-      "725121078":
-        name: "OpenJarvis_1.0.5-1320_x64-setup.exe.sig"
-        url_suffix: "OpenJarvis_1.0.5-1320_x64-setup.exe.sig"
-        size: 452
+        digest: "sha256:57a3abb107c70d02994f673ac3204892ebba240af8ffdc54594f67938c9641d7"
+      "734002070":
+        name: "OpenJarvis_1.0.5-1319_arm64-setup.exe"
+        url_suffix: "OpenJarvis_1.0.5-1319_arm64-setup.exe"
+        size: 370686447
         media_type: "zip"
-        digest: "sha256:155cc0032b89ebc18de5aa16e6d2a40a173fe5f1401befd2b2362f09d8936dc3"
-      "725130237":
-        name: "OpenJarvis_1.0.5-1320_arm64-setup.exe"
-        url_suffix: "OpenJarvis_1.0.5-1320_arm64-setup.exe"
-        size: 204723854
-        media_type: "zip"
-        digest: "sha256:ebe4b576a9b0a46cb3232e4972391f63668aac4683314853fd436328a6e27577"
-      "725130512":
-        name: "OpenJarvis_1.0.5-1320_arm64-setup.exe.sig"
-        url_suffix: "OpenJarvis_1.0.5-1320_arm64-setup.exe.sig"
+        digest: "sha256:22c7befd6612d77336779560d83677066ee59efbd8de328d4f77a5b901b8b8ac"
+      "734002712":
+        name: "OpenJarvis_1.0.5-1319_arm64-setup.exe.sig"
+        url_suffix: "OpenJarvis_1.0.5-1319_arm64-setup.exe.sig"
         size: 456
         media_type: "zip"
-        digest: "sha256:96d3f899bf459b148751f5d9d54dd5d3ae420740d2f8e0cfd0c95d9750c6bb90"
-      "725130567":
+        digest: "sha256:aa89804b5b841033a4819056e3efac20a6aab96d6ebc1e474ec4b89724be5f9f"
+      "734002777":
         name: "latest.json"
         url_suffix: "latest.json"
-        size: 5606
+        size: 9118
         media_type: "zip"
-        digest: "sha256:005e62ca757de7523d755a6e335b23a0b8b03614a76bff61a718989746ed4482"
+        digest: "sha256:2b26a81cfd2388e95b9d9c311a37c94f908c41cce7a7e8088d45e2184ec8bcb0"
+  "441183559":
+    tag: "desktop-v1.0.5"
+    title: "OpenJarvis Desktop 1.0.5"
+    url: "https://github.com/open-jarvis/OpenJarvis/releases/tag/desktop-v1.0.5"
+    created_at: "2026-11-11T02:52:45Z"
+    published_at: "2026-11-11T03:16:02Z"
+    updated_at: "2026-11-11T03:16:02Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/open-jarvis/OpenJarvis/zipball/desktop-v1.0.5"
+    source_tar_url: "https://api.github.com/repos/open-jarvis/OpenJarvis/tarball/desktop-v1.0.5"
+    download_base: "https://github.com/open-jarvis/OpenJarvis/releases/download/desktop-v1.0.5/"
+    assets:
+      "733911673":
+        name: "OpenJarvis_1.0.5_amd64.deb"
+        url_suffix: "OpenJarvis_1.0.5_amd64.deb"
+        size: 28979758
+        media_type: "zip"
+        digest: "sha256:abea3b3744953ee1801185345e6e2be1107a86e90a1fc3265558a5f5f31e71f1"
+      "733911746":
+        name: "OpenJarvis_1.0.5_amd64.deb.sig"
+        url_suffix: "OpenJarvis_1.0.5_amd64.deb.sig"
+        size: 436
+        media_type: "zip"
+        digest: "sha256:dcf2f52da2979767b872009feed5994a9e4c90c923b70659b122f44096417fb3"
+      "733911769":
+        name: "OpenJarvis-1.0.5-1.x86_64.rpm"
+        url_suffix: "OpenJarvis-1.0.5-1.x86_64.rpm"
+        size: 28982190
+        media_type: "zip"
+        digest: "sha256:a01b71e1ada37d606e3b0ac04817b309f1506f469df6f3789b8f7cd615d29787"
+      "733911848":
+        name: "OpenJarvis-1.0.5-1.x86_64.rpm.sig"
+        url_suffix: "OpenJarvis-1.0.5-1.x86_64.rpm.sig"
+        size: 440
+        media_type: "zip"
+        digest: "sha256:d3b3275798bd0972bb2633a54730d3dcb88a20477dd1bd4c41a3830ef851a94e"
+      "733911914":
+        name: "OpenJarvis_1.0.5_amd64.AppImage"
+        url_suffix: "OpenJarvis_1.0.5_amd64.AppImage"
+        size: 104794616
+        media_type: "zip"
+        digest: "sha256:636b924664a6972648c2dd02e0eff04884dcf0cec472b475418200e2a9fa2a1a"
+      "733912092":
+        name: "OpenJarvis_1.0.5_amd64.AppImage.sig"
+        url_suffix: "OpenJarvis_1.0.5_amd64.AppImage.sig"
+        size: 440
+        media_type: "zip"
+        digest: "sha256:8c35c969044281f5cabb7c9ff0fdd6ffabc77112151c9ac70bf9348b930e5e5a"
+      "733914130":
+        name: "OpenJarvis_1.0.5_universal.dmg"
+        url_suffix: "OpenJarvis_1.0.5_universal.dmg"
+        size: 53665525
+        media_type: "zip"
+        digest: "sha256:13f3c363f40be87c2183debb5fbfcdc869a6ec8fb758324b013a6d63c47829a9"
+      "733914219":
+        name: "OpenJarvis_1.0.5_universal.app.tar.gz"
+        url_suffix: "OpenJarvis_1.0.5_universal.app.tar.gz"
+        size: 52265384
+        media_type: "zip"
+        digest: "sha256:cc503aa792c4bcf3978d2a8f41ffbb59b17126a26f7262e8f1a1add7d36abd92"
+      "733914338":
+        name: "OpenJarvis_1.0.5_universal.app.tar.gz.sig"
+        url_suffix: "OpenJarvis_1.0.5_universal.app.tar.gz.sig"
+        size: 428
+        media_type: "zip"
+        digest: "sha256:6a3b7eff861a8be32a97431aee8765218b04adc0e1164d8319ed8f7be65dfa0a"
+      "733914912":
+        name: "OpenJarvis_1.0.5_x64_en-US.msi"
+        url_suffix: "OpenJarvis_1.0.5_x64_en-US.msi"
+        size: 24694784
+        media_type: "zip"
+        digest: "sha256:9577e4a007a0d336cedb2214ced437ebdddbc8b04c7a5503370189da2373c98a"
+      "733914977":
+        name: "OpenJarvis_1.0.5_x64_en-US.msi.sig"
+        url_suffix: "OpenJarvis_1.0.5_x64_en-US.msi.sig"
+        size: 440
+        media_type: "zip"
+        digest: "sha256:e3efec8f26a7475b2628f34970849f64585b72743bb5f21c32f2be612f84ea4f"
+      "733915000":
+        name: "OpenJarvis_1.0.5_x64-setup.exe"
+        url_suffix: "OpenJarvis_1.0.5_x64-setup.exe"
+        size: 18038959
+        media_type: "zip"
+        digest: "sha256:6d68581a4d4c07cc5b4e0f79bbd08dc64691ebb5ecbac50ccb8589df0ef35b14"
+      "733915070":
+        name: "OpenJarvis_1.0.5_x64-setup.exe.sig"
+        url_suffix: "OpenJarvis_1.0.5_x64-setup.exe.sig"
+        size: 440
+        media_type: "zip"
+        digest: "sha256:3a7e9e0dbb706585e20b479a3fb4a09f3177369a4f7892eeec02eccea85372c9"
+      "733925938":
+        name: "OpenJarvis_1.0.5_arm64-setup.exe"
+        url_suffix: "OpenJarvis_1.0.5_arm64-setup.exe"
+        size: 370680435
+        media_type: "zip"
+        digest: "sha256:37b919bea7b2dc94926e9448f7b5e492c5c32b954bfd2f256552b92d992ab399"
+      "733926477":
+        name: "OpenJarvis_1.0.5_arm64-setup.exe.sig"
+        url_suffix: "OpenJarvis_1.0.5_arm64-setup.exe.sig"
+        size: 444
+        media_type: "zip"
+        digest: "sha256:a8d04347744e6b16d554f7b10dd0708ebe931a02fb3d552b85cc782b8230f2a7"
+      "733926535":
+        name: "latest.json"
+        url_suffix: "latest.json"
+        size: 8949
+        media_type: "zip"
+        digest: "sha256:6fbafca64d399bd1926279de828b973930101c210724a09d7645e07cd567f754"
+      "733930870":
+        name: "OpenJarvis_universal.dmg"
+        url_suffix: "OpenJarvis_universal.dmg"
+        size: 53665525
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:13f3c363f40be87c2183debb5fbfcdc869a6ec8fb758324b013a6d63c47829a9"
+      "733931517":
+        name: "OpenJarvis_x64-setup.exe"
+        url_suffix: "OpenJarvis_x64-setup.exe"
+        size: 18038959
+        media_type: "application/x-msdownload"
+        digest: "sha256:6d68581a4d4c07cc5b4e0f79bbd08dc64691ebb5ecbac50ccb8589df0ef35b14"
+      "733932827":
+        name: "OpenJarvis_arm64-setup.exe"
+        url_suffix: "OpenJarvis_arm64-setup.exe"
+        size: 370680435
+        media_type: "application/x-msdownload"
+        digest: "sha256:37b919bea7b2dc94926e9448f7b5e492c5c32b954bfd2f256552b92d992ab399"
+      "733935079":
+        name: "OpenJarvis_amd64.deb"
+        url_suffix: "OpenJarvis_amd64.deb"
+        size: 28979758
+        media_type: "application/x-debian-package"
+        digest: "sha256:abea3b3744953ee1801185345e6e2be1107a86e90a1fc3265558a5f5f31e71f1"
+      "733935637":
+        name: "OpenJarvis_x86_64.rpm"
+        url_suffix: "OpenJarvis_x86_64.rpm"
+        size: 28982190
+        media_type: "application/x-rpm"
+        digest: "sha256:a01b71e1ada37d606e3b0ac04817b309f1506f469df6f3789b8f7cd615d29787"
+      "733936520":
+        name: "OpenJarvis_amd64.AppImage"
+        url_suffix: "OpenJarvis_amd64.AppImage"
+        size: 104794616
+        digest: "sha256:636b924664a6972648c2dd02e0eff04884dcf0cec472b475418200e2a9fa2a1a"
