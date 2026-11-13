@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1092839234
 repository: "vicanso/zedis"
-collected_at: "2026-11-10T15:53:13Z"
+collected_at: "2026-11-13T08:07:45Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-10T15:53:13Z"
+observed_at: "2026-11-13T08:07:45Z"
 releases:
   "342176434":
     tag: "v0.4.4"
@@ -3532,165 +3532,171 @@ releases:
         size: 8887
         media_type: "application/json"
         digest: "sha256:d682f2d83483b3ef1c75b86e0bf9fd875cba71c0e5bf66604db7b35283f42e4d"
-  "438537876":
+  "443613658":
     tag: "nightly"
     title: "Development Build (Nightly)"
     url: "https://github.com/vicanso/zedis/releases/tag/nightly"
-    created_at: "2026-11-08T03:26:05Z"
-    published_at: "2026-11-08T21:35:36Z"
-    updated_at: "2026-11-08T22:09:10Z"
+    created_at: "2026-11-12T12:30:32Z"
+    published_at: "2026-11-12T23:06:28Z"
+    updated_at: "2026-11-12T23:44:18Z"
     prerelease: true
     source_zip_url: "https://api.github.com/repos/vicanso/zedis/zipball/nightly"
     source_tar_url: "https://api.github.com/repos/vicanso/zedis/tarball/nightly"
     download_base: "https://github.com/vicanso/zedis/releases/download/nightly/"
     assets:
-      "725304685":
-        name: "zedis-linux-x86_64.tar.gz"
-        url_suffix: "zedis-linux-x86_64.tar.gz"
-        size: 25918403
-        media_type: "application/gzip"
-        digest: "sha256:cd27ff01b4e3e3fefbd85f6710c7df30882d51d723d063f1ae1cd4efe601c90a"
-      "725304688":
-        name: "zedis-linux-x86_64.rpm"
-        url_suffix: "zedis-linux-x86_64.rpm"
-        size: 18751342
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:1eaba78fb5e5e514e1a70984a3bc994fed2b41fb4663953f25ea930074d60ac3"
-      "725304691":
-        name: "zedis-x86_64.AppImage.tar.gz"
-        url_suffix: "zedis-x86_64.AppImage.tar.gz"
-        size: 24210882
-        media_type: "application/gzip"
-        digest: "sha256:0818c6b1e597aada811265a5895c768f6cb9801ce2a3efc9fa02eaebaac1cdba"
-      "725304693":
-        name: "zedis-linux-x86_64.deb"
-        url_suffix: "zedis-linux-x86_64.deb"
-        size: 17813280
-        media_type: "application/x-debian-package"
-        digest: "sha256:f68c20557a046210b6acb733407258794c992f479eb4838036f1640fb9eeeeb0"
-      "725305250":
+      "741459596":
         name: "Zedis-aarch64.dmg"
         url_suffix: "Zedis-aarch64.dmg"
-        size: 18583460
+        size: 18606402
         media_type: "application/x-apple-diskimage"
-        digest: "sha256:b8cbd238a5d0a35d7d2ea3721194b593311e347acf491c92dccb69c5cc8e554d"
-      "725307963":
-        name: "zedis-windows-x86_64.msi"
-        url_suffix: "zedis-windows-x86_64.msi"
-        size: 20238336
-        media_type: "application/x-msdownload"
-        digest: "sha256:fc4b7be757c7fa64e66786a4eedacd24458d324ef50d24629416bd4060e34113"
-      "725307966":
-        name: "zedis-windows-x86_64.zip"
-        url_suffix: "zedis-windows-x86_64.zip"
-        size: 19606330
-        media_type: "zip"
-        digest: "sha256:32b24ed190ac5c329398a968dccd797563ae914241626e84e9f58e37e116fed9"
-      "725307967":
-        name: "zedis-windows-x86_64.msi.zip"
-        url_suffix: "zedis-windows-x86_64.msi.zip"
-        size: 19709967
-        media_type: "zip"
-        digest: "sha256:87e7fa8585d207a141e3d6dedca14d51a5e615d009a2bab81120b30ed840d138"
-      "725315962":
-        name: "zedis-linux-aarch64.deb"
-        url_suffix: "zedis-linux-aarch64.deb"
-        size: 16061060
-        media_type: "application/x-debian-package"
-        digest: "sha256:aaf6d910411bbef2034a83bbaa6d53a56ab750218dc4e546e3dba85c7b0a8f6e"
-      "725315963":
-        name: "zedis-linux-aarch64.rpm"
-        url_suffix: "zedis-linux-aarch64.rpm"
-        size: 18436654
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:81f7c2d9b94e1a35eba50716d8f47db54f424334e551d4056b051a5f58352c81"
-      "725315964":
-        name: "zedis-aarch64.AppImage.tar.gz"
-        url_suffix: "zedis-aarch64.AppImage.tar.gz"
-        size: 23521680
-        media_type: "application/gzip"
-        digest: "sha256:068c702c6a1afd0c03de302fb2d3381d99a3b537966c80f2319e5d5ee2d25466"
-      "725315965":
-        name: "zedis-linux-aarch64.tar.gz"
-        url_suffix: "zedis-linux-aarch64.tar.gz"
-        size: 25018656
-        media_type: "application/gzip"
-        digest: "sha256:c16a9b090432bdeb99449e8e7589b3fef086ae8e3a321b3362b94c9f86d4a09a"
-      "725316580":
-        name: "zedis-linux-aarch64-fast.tar.gz"
-        url_suffix: "zedis-linux-aarch64-fast.tar.gz"
-        size: 26756146
-        media_type: "application/gzip"
-        digest: "sha256:ace11d0ea1fdee2b86f073acbf5c0ad5da6680da4b1d53c6ac6d546300b990ff"
-      "725316581":
-        name: "zedis-aarch64-fast.AppImage.tar.gz"
-        url_suffix: "zedis-aarch64-fast.AppImage.tar.gz"
-        size: 24974801
-        media_type: "application/gzip"
-        digest: "sha256:9501b8493a2ff6910866473438fd2b76babf80d09a38cee628868a7121ef1f24"
-      "725317598":
-        name: "zedis-windows-aarch64-fast.msi"
-        url_suffix: "zedis-windows-aarch64-fast.msi"
-        size: 21327872
-        media_type: "application/x-msdownload"
-        digest: "sha256:8aac5102a56b2123d2209c9beec09e54c60af12c22e90ff4871b074743c216af"
-      "725317599":
+        digest: "sha256:232a878eba0370e82ddbb4db80f9223cd1e0f402a70cd5fede1f677752b368bb"
+      "741473501":
         name: "zedis-windows-aarch64-fast.zip"
         url_suffix: "zedis-windows-aarch64-fast.zip"
-        size: 20639574
+        size: 20723202
         media_type: "zip"
-        digest: "sha256:159c45dfe7863a0d8d43fdb97b16845444b7e81eebd2bac9d6bd6b7984e9f2c3"
-      "725317926":
-        name: "zedis-windows-x86_64-fast.zip"
-        url_suffix: "zedis-windows-x86_64-fast.zip"
-        size: 21225177
-        media_type: "zip"
-        digest: "sha256:8ef873d38fdc6953a8322a2e29cbc1a958e613a68bcee2daeb3de62560ad803d"
-      "725317927":
-        name: "zedis-windows-x86_64-fast.msi"
-        url_suffix: "zedis-windows-x86_64-fast.msi"
-        size: 21843968
+        digest: "sha256:56fb03f64e289bf9e34dc365baa1df9dac11deaf864613ae8d043fc4b67c9b0e"
+      "741473502":
+        name: "zedis-windows-aarch64-fast.msi"
+        url_suffix: "zedis-windows-aarch64-fast.msi"
+        size: 21413888
         media_type: "application/x-msdownload"
-        digest: "sha256:6de0d40133a2cfacdb1be0598baafbccd9065b5e6f9af14c3e5ed40a65e284a4"
-      "725326636":
-        name: "zedis-x86_64-fast.AppImage.tar.gz"
-        url_suffix: "zedis-x86_64-fast.AppImage.tar.gz"
-        size: 25657588
+        digest: "sha256:64487f7d826ccd80e5642ddd42a7d8e12d5a6ede731a03b916d4a106b79a5765"
+      "741474811":
+        name: "zedis-linux-aarch64.tar.gz"
+        url_suffix: "zedis-linux-aarch64.tar.gz"
+        size: 25041113
         media_type: "application/gzip"
-        digest: "sha256:2293d1f8acd0cefa3e7ae37b9759ed4a8f55740aa0b787473adca07f0402df27"
-      "725326640":
+        digest: "sha256:25b1e20aa6c76eeb480489527dbc38e888037249e8145a23ff6ea3cf8a1bec57"
+      "741474812":
+        name: "zedis-linux-aarch64.deb"
+        url_suffix: "zedis-linux-aarch64.deb"
+        size: 16073656
+        media_type: "application/x-debian-package"
+        digest: "sha256:7308c431336fcbb2bea4f628e1eb4bebd28dbf95657ad104ae016d28df3a7f90"
+      "741474813":
+        name: "zedis-aarch64.AppImage.tar.gz"
+        url_suffix: "zedis-aarch64.AppImage.tar.gz"
+        size: 23557540
+        media_type: "application/gzip"
+        digest: "sha256:03efca38d8f6c8d6f8399ca4a7dddebbe139a6e3d2f5a493b85a3d05cf6b8f2d"
+      "741474817":
+        name: "zedis-linux-aarch64.rpm"
+        url_suffix: "zedis-linux-aarch64.rpm"
+        size: 18453959
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:ede701eae9f1b16e9fcc3b0d18055ee9ce190ba26685397b8d310313a41808eb"
+      "741474878":
+        name: "zedis-linux-aarch64-fast.tar.gz"
+        url_suffix: "zedis-linux-aarch64-fast.tar.gz"
+        size: 26828218
+        media_type: "application/gzip"
+        digest: "sha256:8dec52776348620c6e6f801fc8e2f6611540b4769b20c418f0dc58b9a19b09dc"
+      "741474880":
+        name: "zedis-aarch64-fast.AppImage.tar.gz"
+        url_suffix: "zedis-aarch64-fast.AppImage.tar.gz"
+        size: 25041204
+        media_type: "application/gzip"
+        digest: "sha256:d862aff579d9ec06c332fa9ad0a463969453045a9f6bce8bbc7fa061fd80c228"
+      "741475515":
         name: "zedis-linux-x86_64-fast.tar.gz"
         url_suffix: "zedis-linux-x86_64-fast.tar.gz"
-        size: 27617923
+        size: 27733813
         media_type: "application/gzip"
-        digest: "sha256:8afd86d95ecb097dadc02e3cfab6fe156babb781723998e3ac094fac5be06a2d"
-      "725337093":
-        name: "Zedis-aarch64-fast.dmg"
-        url_suffix: "Zedis-aarch64-fast.dmg"
-        size: 20125397
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:41f2ccd2e3814f4b6ae2709c021e25ec860e7cb3c99f5c18b528110ffcf792b5"
-      "725342603":
+        digest: "sha256:e48953b1c1c6f28e5b2bbcddb617149a876f58a2961b1613384c79dff55bc61d"
+      "741475520":
+        name: "zedis-x86_64-fast.AppImage.tar.gz"
+        url_suffix: "zedis-x86_64-fast.AppImage.tar.gz"
+        size: 25751865
+        media_type: "application/gzip"
+        digest: "sha256:4a9af32812ed14979597f4e68088f827739f2032245047b8443e1989b079890e"
+      "741478186":
         name: "zedis-windows-aarch64.zip"
         url_suffix: "zedis-windows-aarch64.zip"
-        size: 19012492
+        size: 19055513
         media_type: "zip"
-        digest: "sha256:32e2a6d18c30d8b55f155f4d95e495330d2223c9cdab0197127ff925534f4902"
-      "725342604":
-        name: "zedis-windows-aarch64.msi"
-        url_suffix: "zedis-windows-aarch64.msi"
-        size: 19697664
-        media_type: "application/x-msdownload"
-        digest: "sha256:56408c34893794fd51f87d138501de88982cda280a3acc3c0dab78a16f85a0de"
-      "725342606":
+        digest: "sha256:eb321028b0fbbd484f46c48c94940801a1153f92668546ccf119a9fe4e71e313"
+      "741478189":
         name: "zedis-windows-aarch64.msi.zip"
         url_suffix: "zedis-windows-aarch64.msi.zip"
-        size: 19165039
+        size: 19204764
         media_type: "zip"
-        digest: "sha256:ef9ce54bfee922eba388b76dd42a2693864d969b37f0c771972d9bebc23c2a56"
-      "725352781":
+        digest: "sha256:3f379b45e154b00220fdc013e475a6d89c5b69775c98e35750897b6aab08edcc"
+      "741478190":
+        name: "zedis-windows-aarch64.msi"
+        url_suffix: "zedis-windows-aarch64.msi"
+        size: 19734528
+        media_type: "application/x-msdownload"
+        digest: "sha256:436e14dc53f3a9afa2424db3890296b059f5335df21e0e3a2c0b68d358ce8543"
+      "741484512":
+        name: "zedis-x86_64.AppImage.tar.gz"
+        url_suffix: "zedis-x86_64.AppImage.tar.gz"
+        size: 24246974
+        media_type: "application/gzip"
+        digest: "sha256:3a9e257c2ceb5d29cd0581732e9bccddb4a4bc925c6e8f8085ca673b020f2ad3"
+      "741484514":
+        name: "zedis-linux-x86_64.tar.gz"
+        url_suffix: "zedis-linux-x86_64.tar.gz"
+        size: 25966722
+        media_type: "application/gzip"
+        digest: "sha256:dc70d5f53935d74863e4f2f418fac25167802ab494473e3061fc79146bdeaee1"
+      "741484515":
+        name: "zedis-linux-x86_64.rpm"
+        url_suffix: "zedis-linux-x86_64.rpm"
+        size: 18779868
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:68efe7eb37c80b8bd972f9ebf2786f1195319cf25347bef5977760c9dcd3b86d"
+      "741484516":
+        name: "zedis-linux-x86_64.deb"
+        url_suffix: "zedis-linux-x86_64.deb"
+        size: 17843200
+        media_type: "application/x-debian-package"
+        digest: "sha256:d3ecdbca1950fddc703cc33e99fcab28ac5a0263c4df025eb93ddaaab9236ff7"
+      "741492528":
+        name: "zedis-windows-x86_64-fast.msi"
+        url_suffix: "zedis-windows-x86_64-fast.msi"
+        size: 21979136
+        media_type: "application/x-msdownload"
+        digest: "sha256:3d6b87315656f90084d119269b0f5fc829d7af8225971e24fd9f8db9690a8cee"
+      "741492530":
+        name: "zedis-windows-x86_64-fast.zip"
+        url_suffix: "zedis-windows-x86_64-fast.zip"
+        size: 21361348
+        media_type: "zip"
+        digest: "sha256:422d54c73bc9a03245e90a5a356010daa84f587cb110ec3ffc73e6a083f8e739"
+      "741502166":
+        name: "zedis-windows-x86_64.zip"
+        url_suffix: "zedis-windows-x86_64.zip"
+        size: 19678144
+        media_type: "zip"
+        digest: "sha256:5ba33e1e23493b4a286a3e7ab19ed292b986d15ea7a638b8db157dfc1a6a6704"
+      "741502167":
+        name: "zedis-windows-x86_64.msi.zip"
+        url_suffix: "zedis-windows-x86_64.msi.zip"
+        size: 19780992
+        media_type: "zip"
+        digest: "sha256:60322808018144a5f9de3ee04e7da4e44f2b378d339659fb0835c58f86b77af9"
+      "741502169":
+        name: "zedis-windows-x86_64.msi"
+        url_suffix: "zedis-windows-x86_64.msi"
+        size: 20303872
+        media_type: "application/x-msdownload"
+        digest: "sha256:6b3f2fc0e128e15930419dc042064a848fa20123e79e849bac1fac021a85960b"
+      "741504181":
+        name: "Zedis-x86_64-fast.dmg"
+        url_suffix: "Zedis-x86_64-fast.dmg"
+        size: 22229577
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:534c86254ebeea4a3509a3566108e6980b9a6091cebd8ceb3ba824f937ee88a3"
+      "741519231":
         name: "Zedis-x86_64.dmg"
         url_suffix: "Zedis-x86_64.dmg"
-        size: 20436086
+        size: 20449839
         media_type: "application/x-apple-diskimage"
-        digest: "sha256:5368d8e2de57f1cc883b1d636d622394c46e3fa57f7ee0092b9fcd9518d48eab"
+        digest: "sha256:3bd84ba0a4befd7d9763b652e79ec318220b129dc3d9b76803e77aaaffffbed6"
+      "741525295":
+        name: "Zedis-aarch64-fast.dmg"
+        url_suffix: "Zedis-aarch64-fast.dmg"
+        size: 20178990
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:954d0be779793af596d20deb09126bf3b4af04c294f3d0d83ca719ce40c2a7eb"
