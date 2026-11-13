@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 968663381
 repository: "obbyworld/obby"
-collected_at: "2026-11-10T15:36:35Z"
+collected_at: "2026-11-13T01:14:51Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-10T15:36:35Z"
+observed_at: "2026-11-13T01:14:51Z"
 releases:
   "220922094":
     tag: "v0.0.2"
@@ -2158,19 +2158,106 @@ releases:
     tag: "v0.4.1-pre"
     title: "Obby v0.4.1-pre"
     url: "https://github.com/obbyworld/obby/releases/tag/v0.4.1-pre"
-    created_at: "2026-11-04T18:22:27Z"
+    created_at: "2026-11-12T18:58:27Z"
     published_at: "2026-10-30T19:21:44Z"
-    updated_at: "2026-11-04T18:24:32Z"
+    updated_at: "2026-11-12T19:14:37Z"
     prerelease: true
     source_zip_url: "https://api.github.com/repos/obbyworld/obby/zipball/v0.4.1-pre"
     source_tar_url: "https://api.github.com/repos/obbyworld/obby/tarball/v0.4.1-pre"
+    download_base: "https://github.com/obbyworld/obby/releases/download/v0.4.1-pre/"
     assets:
-      "710475250":
+      "740706802":
         name: "Obby-0.4.1-web.zip"
-        url: "https://github.com/obbyworld/obby/releases/download/v0.4.1-pre/Obby-0.4.1-web.zip"
+        url_suffix: "Obby-0.4.1-web.zip"
         size: 3611001
         media_type: "zip"
-        digest: "sha256:51839984fb8b63f24d33cf13101ad80ff19a218f540c9224c8aa86abf3b0d74d"
+        digest: "sha256:01d9cc424bfdb14f1d61437f678fa84dcdb833684b86891129e8608d133aed9c"
+      "740729738":
+        name: "Obby-0.4.1-1.aarch64.rpm"
+        url_suffix: "Obby-0.4.1-1.aarch64.rpm"
+        size: 11568388
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:cc4322644ee5e8ef16f9fbb1b2101b09e89c5b5f4a54301f28968a25b3b546ba"
+      "740729740":
+        name: "Obby_0.4.1_aarch64.AppImage.zsync"
+        url_suffix: "Obby_0.4.1_aarch64.AppImage.zsync"
+        size: 334868
+        digest: "sha256:77030aeb814dd0fc88a1c4ea80c966d00da2f65d5916dce1ec393bd8161a38c3"
+      "740729742":
+        name: "Obby_0.4.1_arm64.deb"
+        url_suffix: "Obby_0.4.1_arm64.deb"
+        size: 11562050
+        media_type: "application/x-debian-package"
+        digest: "sha256:90157ba0ae4f5af906a0605c8d9e783ceea458f24895bfcf1685d6e62ae017e3"
+      "740729746":
+        name: "Obby_0.4.1_aarch64.AppImage"
+        url_suffix: "Obby_0.4.1_aarch64.AppImage"
+        size: 97892872
+        digest: "sha256:4521243c1f85475cf0c3f15dcb9ff79c25e7ee21be97b782baadf98d8680889e"
+      "740734473":
+        name: "Obby_0.4.1_amd64.deb"
+        url_suffix: "Obby_0.4.1_amd64.deb"
+        size: 11360940
+        media_type: "zip"
+        digest: "sha256:51dca31dca567e4dc0e372c3e44755c502fbcf3db260dea2c6dc5dca4348bdab"
+      "740734588":
+        name: "Obby-0.4.1-1.x86_64.rpm"
+        url_suffix: "Obby-0.4.1-1.x86_64.rpm"
+        size: 11366584
+        media_type: "zip"
+        digest: "sha256:0a1d5457bbe79a96b9f246b2d3c6acb7db132d159b0b79eead20968d3a239614"
+      "740734676":
+        name: "Obby_0.4.1_amd64.AppImage"
+        url_suffix: "Obby_0.4.1_amd64.AppImage"
+        size: 100465144
+        media_type: "zip"
+        digest: "sha256:8e005f9067d9ebcba614ab7408571ba2dfc8a5807f01bfe1c019cab44a0f8292"
+      "740735018":
+        name: "Obby_0.4.1_amd64.AppImage.zsync"
+        url_suffix: "Obby_0.4.1_amd64.AppImage.zsync"
+        size: 171961
+        digest: "sha256:d7e9e0c9430d722b9a40a1a7e04b9b79a1caa1484aa0fc72bd6abf5bab8226d2"
+      "740735245":
+        name: "Obby_0.4.1_x64.dmg"
+        url_suffix: "Obby_0.4.1_x64.dmg"
+        size: 10220519
+        media_type: "zip"
+        digest: "sha256:97681c0169af74c0340578280d0d1dc2b580782fa04db6889a4361c662389f17"
+      "740735306":
+        name: "Obby_0.4.1_x64.app.tar.gz"
+        url_suffix: "Obby_0.4.1_x64.app.tar.gz"
+        size: 9521720
+        media_type: "zip"
+        digest: "sha256:619f5be83c598d3e4ad11d060fa765d5ef677a8a955d5bb21a0a963631ce47cc"
+      "740738767":
+        name: "Obby-0.4.1-unsigned.ipa"
+        url_suffix: "Obby-0.4.1-unsigned.ipa"
+        size: 11789312
+        digest: "sha256:b93db05556b8259cb59a741b343755d6d94d7a1e848ea2a68239e3af0955227e"
+      "740750701":
+        name: "Obby_0.4.1_aarch64.dmg"
+        url_suffix: "Obby_0.4.1_aarch64.dmg"
+        size: 10086709
+        media_type: "zip"
+        digest: "sha256:349fd6b0579d047e92f4bf14ead2d405628204fedce57fd2eca3aec721f728f6"
+      "740750763":
+        name: "Obby_0.4.1_aarch64.app.tar.gz"
+        url_suffix: "Obby_0.4.1_aarch64.app.tar.gz"
+        size: 9384324
+        media_type: "zip"
+        digest: "sha256:6c455dc29ffcc89c296551ffc18bcca368a47d70aea8ea1e01216544a74ef42c"
+      "740751310":
+        name: "Obby-0.4.1.aab"
+        url_suffix: "Obby-0.4.1.aab"
+        size: 37117321
+        media_type: "application/x-authorware-bin"
+        digest: "sha256:e9b56658500c0cb6a200c92767b857faa8c1ead80ffc37abff45584780c2dcb4"
+      "740751312":
+        name: "Obby-0.4.1.apk"
+        url_suffix: "Obby-0.4.1.apk"
+        size: 80094976
+        media_type: "application/vnd.android.package-archive"
+        digest: "sha256:62e988f6c27fdb23603a65ad21616140b38340b3e596a50330159946f1f849dc"
   "429407236":
     tag: "v0.4.0"
     title: "Obby v0.4.0"
