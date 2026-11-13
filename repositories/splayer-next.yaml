@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1182488900
 repository: "SPlayer-Dev/SPlayer-Next"
-collected_at: "2026-11-10T16:47:53Z"
+collected_at: "2026-11-13T22:53:04Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-10T16:47:53Z"
+observed_at: "2026-11-13T22:53:04Z"
 releases:
   "368676059":
     tag: "v1.0.0"
@@ -1078,171 +1078,363 @@ releases:
         size: 97055809
         media_type: "application/x-rpm"
         digest: "sha256:f99cd6515ee7eed33a5b7b1a2a19b4c62af07b99f36935ceeae8ba2a59b9875d"
-  "437146002":
+  "442331394":
     tag: "nightly"
-    title: "v1.2.1-nightly.1076"
+    title: "v1.2.1-nightly.1079"
     url: "https://github.com/SPlayer-Dev/SPlayer-Next/releases/tag/nightly"
-    created_at: "2026-11-05T15:48:30Z"
-    published_at: "2026-11-06T23:00:08Z"
-    updated_at: "2026-11-06T23:00:08Z"
+    created_at: "2026-11-11T16:30:04Z"
+    published_at: "2026-11-12T00:10:46Z"
+    updated_at: "2026-11-12T00:10:46Z"
     prerelease: true
     source_zip_url: "https://api.github.com/repos/SPlayer-Dev/SPlayer-Next/zipball/nightly"
     source_tar_url: "https://api.github.com/repos/SPlayer-Dev/SPlayer-Next/tarball/nightly"
     download_base: "https://github.com/SPlayer-Dev/SPlayer-Next/releases/download/nightly/"
     assets:
-      "718858081":
-        name: "SPlayer-Next-1.2.1-nightly.1076-arm64.dmg"
-        url_suffix: "SPlayer-Next-1.2.1-nightly.1076-arm64.dmg"
-        size: 119905543
+      "737386364":
+        name: "SPlayer-Next-1.2.1-nightly.1079-arm64.dmg.blockmap"
+        url_suffix: "SPlayer-Next-1.2.1-nightly.1079-arm64.dmg.blockmap"
+        size: 128678
+        digest: "sha256:3166cd04146fd4c5db00d850db0247db37a85eeef7be9dba9a4a2cd96bdc702c"
+      "737386365":
+        name: "SPlayer-Next-1.2.1-nightly.1079-arm64-setup.exe.blockmap"
+        url_suffix: "SPlayer-Next-1.2.1-nightly.1079-arm64-setup.exe.blockmap"
+        size: 121883
+        digest: "sha256:404f9ab5b1e675b3e0b09f425f78c651363448ac0948560872cc81c08e2ada44"
+      "737386366":
+        name: "SPlayer-Next-1.2.1-nightly.1079-arm64.dmg"
+        url_suffix: "SPlayer-Next-1.2.1-nightly.1079-arm64.dmg"
+        size: 119908518
         media_type: "application/x-apple-diskimage"
-        digest: "sha256:4ed0d789b00832e098b8dab45951426e21a9e2b57dff9605473a7855864864d2"
-      "718858085":
-        name: "SPlayer-Next-1.2.1-nightly.1076-arm64-setup.exe.blockmap"
-        url_suffix: "SPlayer-Next-1.2.1-nightly.1076-arm64-setup.exe.blockmap"
-        size: 122066
-        digest: "sha256:b110e1eb8b1f85888920d90b32faa4365e3507913f0b9db284206797a8904fc0"
-      "718858087":
-        name: "SPlayer-Next-1.2.1-nightly.1076-arm64-setup.exe"
-        url_suffix: "SPlayer-Next-1.2.1-nightly.1076-arm64-setup.exe"
-        size: 116558004
-        digest: "sha256:c8c0bc36ec5faf7d9f0b28cf9a03baf79a0fe013b23a56be1b32a69202ee60bb"
-      "718858088":
-        name: "SPlayer-Next-1.2.1-nightly.1076-arm64.dmg.blockmap"
-        url_suffix: "SPlayer-Next-1.2.1-nightly.1076-arm64.dmg.blockmap"
-        size: 126060
-        digest: "sha256:5a10aed67c9563dd0f2ebd402012855d4bfadc3257bba23c23faa6331288a579"
-      "718858089":
-        name: "SPlayer-Next-1.2.1-nightly.1076-arm64-portable.exe"
-        url_suffix: "SPlayer-Next-1.2.1-nightly.1076-arm64-portable.exe"
-        size: 105507682
-        digest: "sha256:916103fcb7ca42b682c318fab17b78d6fc42c282f4c422b22a6f9c802c08e2c2"
-      "718858108":
-        name: "SPlayer-Next-1.2.1-nightly.1076-arm64.zip"
-        url_suffix: "SPlayer-Next-1.2.1-nightly.1076-arm64.zip"
-        size: 126792055
+        digest: "sha256:586d6817975c1e5716727a9d24217bb6b61a2d8f12767715b968b72c0fb3f523"
+      "737386367":
+        name: "SPlayer-Next-1.2.1-nightly.1079-arm64-portable.exe"
+        url_suffix: "SPlayer-Next-1.2.1-nightly.1079-arm64-portable.exe"
+        size: 105511835
+        digest: "sha256:05f80cc34215cff4d3bfbf9afe6ddf3844a0eeaded36d45d2a9605b9da471e23"
+      "737386368":
+        name: "SPlayer-Next-1.2.1-nightly.1079-arm64-setup.exe"
+        url_suffix: "SPlayer-Next-1.2.1-nightly.1079-arm64-setup.exe"
+        size: 116562853
+        digest: "sha256:23e56731240021a44ffec8aeb84e5037f51f8c22cc94c49bc6836c39ad1a05fa"
+      "737386379":
+        name: "SPlayer-Next-1.2.1-nightly.1079-arm64.zip.blockmap"
+        url_suffix: "SPlayer-Next-1.2.1-nightly.1079-arm64.zip.blockmap"
+        size: 133884
+        digest: "sha256:d80d9bc1c7c1683b74c1b97b0df7876c13f2cacf297a467e12c67b1ad1645b6c"
+      "737386381":
+        name: "SPlayer-Next-1.2.1-nightly.1079-arm64.zip"
+        url_suffix: "SPlayer-Next-1.2.1-nightly.1079-arm64.zip"
+        size: 126800007
         media_type: "zip"
-        digest: "sha256:eed1f67fe844897f65f2f4aedd6852f4a18db359d7002b8392548203471665b2"
-      "718858121":
-        name: "SPlayer-Next-1.2.1-nightly.1076-arm64.zip.blockmap"
-        url_suffix: "SPlayer-Next-1.2.1-nightly.1076-arm64.zip.blockmap"
-        size: 133498
-        digest: "sha256:888cbad42825effed110a2d14602c398702249e1ba4f5bcaf4c12bb4e28a17ae"
-      "718858162":
-        name: "SPlayer-Next-1.2.1-nightly.1076-x64-portable.exe"
-        url_suffix: "SPlayer-Next-1.2.1-nightly.1076-x64-portable.exe"
-        size: 110691730
-        digest: "sha256:b31f47add2c97faef5460899c2694318c1b98c340fb2034327a3bbb6c8511691"
-      "718858592":
-        name: "SPlayer-Next-1.2.1-nightly.1076-x64-setup.exe"
-        url_suffix: "SPlayer-Next-1.2.1-nightly.1076-x64-setup.exe"
-        size: 122398012
-        digest: "sha256:6fd80a8a1e40c2ade478d70551fd3be5b4b6e8248b79a6d58a72af413a6e736b"
-      "718858633":
-        name: "SPlayer-Next-1.2.1-nightly.1076-x64-setup.exe.blockmap"
-        url_suffix: "SPlayer-Next-1.2.1-nightly.1076-x64-setup.exe.blockmap"
-        size: 129178
-        digest: "sha256:c0710f7f84230f11fff0443d4198a1674155112c3e3c2bc7bd9fb72fae97d1b9"
-      "718858650":
-        name: "SPlayer-Next-1.2.1-nightly.1076-x64.dmg"
-        url_suffix: "SPlayer-Next-1.2.1-nightly.1076-x64.dmg"
-        size: 122818153
+        digest: "sha256:8b60b3d2979c92ee9484275a368d386b8be2e8f7de7100ef8d852737247d6b8f"
+      "737386400":
+        name: "SPlayer-Next-1.2.1-nightly.1079-x64-portable.exe"
+        url_suffix: "SPlayer-Next-1.2.1-nightly.1079-x64-portable.exe"
+        size: 110690755
+        digest: "sha256:e8521c07c50ad1f5efe361487fb64e83df59d2fe834ff4666575284e44b0148b"
+      "737386557":
+        name: "SPlayer-Next-1.2.1-nightly.1079-x64-setup.exe"
+        url_suffix: "SPlayer-Next-1.2.1-nightly.1079-x64-setup.exe"
+        size: 122403086
+        digest: "sha256:baef03bb7e07143ff88c0d70fa7489badc0f51f38d5fdcf6dd8c11c09725d6fb"
+      "737386574":
+        name: "SPlayer-Next-1.2.1-nightly.1079-x64-setup.exe.blockmap"
+        url_suffix: "SPlayer-Next-1.2.1-nightly.1079-x64-setup.exe.blockmap"
+        size: 129348
+        digest: "sha256:3019aa3bd1130c94d4f9a6fcf175906392a847dd26b49928b3fbd40f991439e1"
+      "737386576":
+        name: "SPlayer-Next-1.2.1-nightly.1079-x64.dmg"
+        url_suffix: "SPlayer-Next-1.2.1-nightly.1079-x64.dmg"
+        size: 122828853
         media_type: "application/x-apple-diskimage"
-        digest: "sha256:7ad6375b11fbbb9f862919be371689e3ac83e442ecaa2baa8c0e62f4b64e4c80"
-      "718858659":
-        name: "SPlayer-Next-1.2.1-nightly.1076-x64.dmg.blockmap"
-        url_suffix: "SPlayer-Next-1.2.1-nightly.1076-x64.dmg.blockmap"
-        size: 128536
-        digest: "sha256:989293eca8df516bb78966a52b3f4b0230d6f831933990373102e0a36eb5678c"
-      "718858667":
-        name: "SPlayer-Next-1.2.1-nightly.1076-x64.zip"
-        url_suffix: "SPlayer-Next-1.2.1-nightly.1076-x64.zip"
-        size: 130866236
+        digest: "sha256:80419b9a2ad6bec76b798a8f880bc3f41953226be61253ebcdc9098bd24ee943"
+      "737386587":
+        name: "SPlayer-Next-1.2.1-nightly.1079-x64.dmg.blockmap"
+        url_suffix: "SPlayer-Next-1.2.1-nightly.1079-x64.dmg.blockmap"
+        size: 129173
+        digest: "sha256:44a713ca19488cca8b0857d673bc37f498155313368b5d7a9ed8ef32eb4245d3"
+      "737386588":
+        name: "SPlayer-Next-1.2.1-nightly.1079-x64.zip"
+        url_suffix: "SPlayer-Next-1.2.1-nightly.1079-x64.zip"
+        size: 130874188
         media_type: "zip"
-        digest: "sha256:382b524d5832fe3c165fd42b4005524f7e53e4878558e550417d2d73fd73aadc"
-      "718858691":
-        name: "SPlayer-Next-1.2.1-nightly.1076-x64.zip.blockmap"
-        url_suffix: "SPlayer-Next-1.2.1-nightly.1076-x64.zip.blockmap"
-        size: 137288
-        digest: "sha256:b764ad35e052832b79456db4d2243727a8a5e96b0f178a8d9dc74bb636aef213"
-      "718858695":
+        digest: "sha256:ce6753b344974d3edfd92038e14648af4ad2956b6eab3a64f8808e47116aad71"
+      "737386595":
+        name: "SPlayer-Next-1.2.1-nightly.1079-x64.zip.blockmap"
+        url_suffix: "SPlayer-Next-1.2.1-nightly.1079-x64.zip.blockmap"
+        size: 137622
+        digest: "sha256:651794dcac92e97bcecd75714cb0c1c43d2640be09bfda15e64b3ad08ea18f40"
+      "737386604":
         name: "nightly-linux-arm64.yml"
         url_suffix: "nightly-linux-arm64.yml"
-        size: 1486
+        size: 1663
         media_type: "application/yaml"
-        digest: "sha256:b70e45a0fb08429ce9eccf1ef2de2ac988fa473dfa510e8d47fe6b71caecb3a2"
-      "718858717":
+        digest: "sha256:85eefaf5c93f69ede3bb9d52707058984acf66ee7b81080bb37b229e72dd26ea"
+      "737386610":
         name: "nightly-linux.yml"
         url_suffix: "nightly-linux.yml"
-        size: 1484
+        size: 1661
         media_type: "application/yaml"
-        digest: "sha256:69b34d5e86d7ee4507c4a955383afd6bfe22b4582ab5130462dfb2eef65e2cb0"
-      "718858719":
+        digest: "sha256:9a3740569fdf4c5729c6863ed6c41f16400d59f199770b89d244c008ba893f87"
+      "737386625":
         name: "nightly-mac.yml"
         url_suffix: "nightly-mac.yml"
-        size: 1440
+        size: 1617
         media_type: "application/yaml"
-        digest: "sha256:ef4748c4477d6f16083fa81b81a1120b65c82888f2b90dd47136fad9e9556778"
-      "718858752":
+        digest: "sha256:51b2ee924cc17ffaecbd28f65c2a14ab7e38061beeea08b7eab1c24e81691bc6"
+      "737386638":
         name: "nightly.yml"
         url_suffix: "nightly.yml"
-        size: 1116
+        size: 1293
         media_type: "application/yaml"
-        digest: "sha256:d7dac3a6b54791bde2d85ea945efce5066104d3c948614563c5db9833f65ae84"
-      "718858758":
-        name: "splayer-next-1.2.1-nightly.1076-aarch64.pacman"
-        url_suffix: "splayer-next-1.2.1-nightly.1076-aarch64.pacman"
-        size: 94030096
-        digest: "sha256:900cce7c56939aee126d7e1ee3e5f752cee25516f49454158f84bcb69f3f7ff9"
-      "718858784":
-        name: "splayer-next-1.2.1-nightly.1076-aarch64.rpm"
-        url_suffix: "splayer-next-1.2.1-nightly.1076-aarch64.rpm"
-        size: 91593149
+        digest: "sha256:82698f20c6584ca91cde65e81418e5bf8bb048ae5a43c8f0a390e105fa82198c"
+      "737386646":
+        name: "splayer-next-1.2.1-nightly.1079-aarch64.pacman"
+        url_suffix: "splayer-next-1.2.1-nightly.1079-aarch64.pacman"
+        size: 94056664
+        digest: "sha256:d90ab94b354e8c37e9b15fccc4b05634d1c22a7ad7c618f6f162af973798a08c"
+      "737386656":
+        name: "splayer-next-1.2.1-nightly.1079-aarch64.rpm"
+        url_suffix: "splayer-next-1.2.1-nightly.1079-aarch64.rpm"
+        size: 91585313
         media_type: "application/x-rpm"
-        digest: "sha256:0021280f102d2692044a68af78d95a6ce6e65fbd2638bfb232df95f3d928e56f"
-      "718858873":
-        name: "splayer-next-1.2.1-nightly.1076-amd64.deb"
-        url_suffix: "splayer-next-1.2.1-nightly.1076-amd64.deb"
-        size: 109175760
+        digest: "sha256:fc57bd5e143e8be9a5119c56e08114ae5b22e8abd4e5af5eb4a306cb538d43ff"
+      "737386722":
+        name: "splayer-next-1.2.1-nightly.1079-amd64.deb"
+        url_suffix: "splayer-next-1.2.1-nightly.1079-amd64.deb"
+        size: 109180748
         media_type: "application/x-debian-package"
-        digest: "sha256:e48bda2ce82473ce7aa76ff60d48cc4db68faa552aed0782c99163bb28f19bd8"
-      "718859123":
-        name: "splayer-next-1.2.1-nightly.1076-arm64.AppImage"
-        url_suffix: "splayer-next-1.2.1-nightly.1076-arm64.AppImage"
-        size: 103033677
+        digest: "sha256:19347f01563309176569d89d7c226f986c3184eaf9baff2e2a07d9d3fa519956"
+      "737386762":
+        name: "splayer-next-1.2.1-nightly.1079-arm64.AppImage"
+        url_suffix: "splayer-next-1.2.1-nightly.1079-arm64.AppImage"
+        size: 103037983
         media_type: "application/vnd.appimage"
-        digest: "sha256:24d97a397443ceac4dfaddfe57368264740585adbed9ccf280ae9bc05412c68f"
-      "718859140":
-        name: "splayer-next-1.2.1-nightly.1076-arm64.deb"
-        url_suffix: "splayer-next-1.2.1-nightly.1076-arm64.deb"
-        size: 103251688
+        digest: "sha256:9b2722283f9564592f47502178f1f9294ccf630e9537f0e64bd8a1e72a402545"
+      "737386779":
+        name: "splayer-next-1.2.1-nightly.1079-arm64.deb"
+        url_suffix: "splayer-next-1.2.1-nightly.1079-arm64.deb"
+        size: 103257112
         media_type: "application/x-debian-package"
-        digest: "sha256:1056d1dcfe1a60e0f80f0ba734c121050637dce32a6c97a1594256fabbd86162"
-      "718859194":
-        name: "splayer-next-1.2.1-nightly.1076-arm64.tar.gz"
-        url_suffix: "splayer-next-1.2.1-nightly.1076-arm64.tar.gz"
-        size: 131991593
+        digest: "sha256:1cfde8f39072e72504a0cbf1c6c7796670ee5227d393bd0804f16b3e2ae9b451"
+      "737386785":
+        name: "splayer-next-1.2.1-nightly.1079-arm64.tar.gz"
+        url_suffix: "splayer-next-1.2.1-nightly.1079-arm64.tar.gz"
+        size: 131999986
         media_type: "application/x-gtar"
-        digest: "sha256:0e5c7a4f372421454eb0a801294dff31f92c986e1a8e0fa2f48473f62b93c1a1"
-      "718859214":
-        name: "splayer-next-1.2.1-nightly.1076-x64.pacman"
-        url_suffix: "splayer-next-1.2.1-nightly.1076-x64.pacman"
-        size: 100107532
-        digest: "sha256:8dac3e9a4c806ca1749506da88a0fc7ba388c5b50b62498bd8a2a0e22838e72a"
-      "718859221":
-        name: "splayer-next-1.2.1-nightly.1076-x64.tar.gz"
-        url_suffix: "splayer-next-1.2.1-nightly.1076-x64.tar.gz"
-        size: 131759060
+        digest: "sha256:27093a0286e81e0b190d9c5b324e9be587f512a52271ca3e39ed22348c95764f"
+      "737386806":
+        name: "splayer-next-1.2.1-nightly.1079-x64.pacman"
+        url_suffix: "splayer-next-1.2.1-nightly.1079-x64.pacman"
+        size: 100094388
+        digest: "sha256:0c1d695a9c99499b018e1e2a8edba5b97136d2da84d92cd0c11714c6b771aa6e"
+      "737386827":
+        name: "splayer-next-1.2.1-nightly.1079-x64.tar.gz"
+        url_suffix: "splayer-next-1.2.1-nightly.1079-x64.tar.gz"
+        size: 131764330
         media_type: "application/x-gtar"
-        digest: "sha256:c99baf7ce9972a6e853545f8689f42928483d72d4f13f7f5d0186003cd68c869"
-      "718859594":
-        name: "splayer-next-1.2.1-nightly.1076-x86_64.AppImage"
-        url_suffix: "splayer-next-1.2.1-nightly.1076-x86_64.AppImage"
-        size: 109511179
+        digest: "sha256:187a02fcd0e060d94b482a080b32546dea1e65db378720356213634028b941dd"
+      "737386875":
+        name: "splayer-next-1.2.1-nightly.1079-x86_64.AppImage"
+        url_suffix: "splayer-next-1.2.1-nightly.1079-x86_64.AppImage"
+        size: 109519561
         media_type: "application/vnd.appimage"
-        digest: "sha256:926509b805dc38935e31fd63b817035bd6ae28072606ac99093d2b334362fa16"
-      "718859665":
-        name: "splayer-next-1.2.1-nightly.1076-x86_64.rpm"
-        url_suffix: "splayer-next-1.2.1-nightly.1076-x86_64.rpm"
-        size: 97049001
+        digest: "sha256:3c4949d161de222f58f6cc574c6b990c85c9b7715df9ed157da78038c05fb752"
+      "737386922":
+        name: "splayer-next-1.2.1-nightly.1079-x86_64.rpm"
+        url_suffix: "splayer-next-1.2.1-nightly.1079-x86_64.rpm"
+        size: 97048977
         media_type: "application/x-rpm"
-        digest: "sha256:046b9ff39f6dd55ffbd098fa4285661c7c9995dcd30341e4a98a8e4bd594e40e"
+        digest: "sha256:ec134a3c7ec2bdbcc2a649b4a223a66f0a5413774c9f4e10f9ef8028f5c8fe97"
+  "444203465":
+    tag: "v1.2.1-beta.2"
+    title: "v1.2.1-beta.2"
+    url: "https://github.com/SPlayer-Dev/SPlayer-Next/releases/tag/v1.2.1-beta.2"
+    created_at: "2026-11-11T16:30:04Z"
+    published_at: "2026-11-13T12:28:35Z"
+    updated_at: "2026-11-13T12:28:35Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/SPlayer-Dev/SPlayer-Next/zipball/v1.2.1-beta.2"
+    source_tar_url: "https://api.github.com/repos/SPlayer-Dev/SPlayer-Next/tarball/v1.2.1-beta.2"
+    download_base: "https://github.com/SPlayer-Dev/SPlayer-Next/releases/download/v1.2.1-beta.2/"
+    assets:
+      "743578345":
+        name: "SPlayer-Next-1.2.1-beta.2-arm64-portable.exe"
+        url_suffix: "SPlayer-Next-1.2.1-beta.2-arm64-portable.exe"
+        size: 105552353
+        digest: "sha256:e4c1a65f49d186d605efc8ecf5bc10c7eb8b76aad2ab08c4c98a835e5c79e186"
+      "743578347":
+        name: "SPlayer-Next-1.2.1-beta.2-arm64-setup.exe.blockmap"
+        url_suffix: "SPlayer-Next-1.2.1-beta.2-arm64-setup.exe.blockmap"
+        size: 121970
+        digest: "sha256:f69bfe84f7d4c8db0be167465834c072238aec39fb1dc3b8e0032f1979e80e8a"
+      "743578350":
+        name: "SPlayer-Next-1.2.1-beta.2-arm64-setup.exe"
+        url_suffix: "SPlayer-Next-1.2.1-beta.2-arm64-setup.exe"
+        size: 116632793
+        digest: "sha256:3a84c9224d39dcaac23bfbb5a759ebf6c9426c1c516b09a07082f6fdbd52062e"
+      "743578351":
+        name: "SPlayer-Next-1.2.1-beta.2-arm64.dmg"
+        url_suffix: "SPlayer-Next-1.2.1-beta.2-arm64.dmg"
+        size: 119920159
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:3c24941c943d1bd84a1f920cbd36a199aeb8e586c1f50673411b78f3b3f9b59b"
+      "743578352":
+        name: "SPlayer-Next-1.2.1-beta.2-arm64.dmg.blockmap"
+        url_suffix: "SPlayer-Next-1.2.1-beta.2-arm64.dmg.blockmap"
+        size: 127019
+        digest: "sha256:0db8ef06bd41e5c894cf1cb9b042e88630aa786b8e7257474689d792607a9658"
+      "743578375":
+        name: "SPlayer-Next-1.2.1-beta.2-arm64.zip"
+        url_suffix: "SPlayer-Next-1.2.1-beta.2-arm64.zip"
+        size: 126806988
+        media_type: "zip"
+        digest: "sha256:727325a4cd8855aac7ebb4833abb2e8ea9d14e071c3bc4709e7bb3b4d2b15a30"
+      "743578390":
+        name: "SPlayer-Next-1.2.1-beta.2-arm64.zip.blockmap"
+        url_suffix: "SPlayer-Next-1.2.1-beta.2-arm64.zip.blockmap"
+        size: 133490
+        digest: "sha256:d8323b63d3d7d51904e1ddfe3d38316540804a645edd2adeee4d6098df5cd0bd"
+      "743578419":
+        name: "SPlayer-Next-1.2.1-beta.2-x64-portable.exe"
+        url_suffix: "SPlayer-Next-1.2.1-beta.2-x64-portable.exe"
+        size: 110750626
+        digest: "sha256:27ba84ea4b4e3820822231c1850885c3b32ae8edc6e1c6a61583b41662ac27ef"
+      "743578616":
+        name: "SPlayer-Next-1.2.1-beta.2-x64-setup.exe"
+        url_suffix: "SPlayer-Next-1.2.1-beta.2-x64-setup.exe"
+        size: 122427980
+        digest: "sha256:ba009e3f9a1f4225f387dcfeee90d686d34cfa2eec1b019438a4cc9633bbdd61"
+      "743578624":
+        name: "SPlayer-Next-1.2.1-beta.2-x64-setup.exe.blockmap"
+        url_suffix: "SPlayer-Next-1.2.1-beta.2-x64-setup.exe.blockmap"
+        size: 129154
+        digest: "sha256:289d0bdb1c5b44559b56543b35b0d7a598b910483c8481af13e85549bf999db9"
+      "743578656":
+        name: "SPlayer-Next-1.2.1-beta.2-x64.dmg"
+        url_suffix: "SPlayer-Next-1.2.1-beta.2-x64.dmg"
+        size: 122814371
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:003f028e108f984088f45b4c13296041aa91fd616c8f0d79fbc990231a95febb"
+      "743578666":
+        name: "SPlayer-Next-1.2.1-beta.2-x64.dmg.blockmap"
+        url_suffix: "SPlayer-Next-1.2.1-beta.2-x64.dmg.blockmap"
+        size: 131137
+        digest: "sha256:9cf47d51c25628175cf7ea06ba4be99a09ffb71dd2396a021dab48a3731a5fba"
+      "743578667":
+        name: "SPlayer-Next-1.2.1-beta.2-x64.zip"
+        url_suffix: "SPlayer-Next-1.2.1-beta.2-x64.zip"
+        size: 130897260
+        media_type: "zip"
+        digest: "sha256:6fec89435f837d3641f985015c0008d79dab08cc8d7a1a37121aef6951b7e354"
+      "743578691":
+        name: "SPlayer-Next-1.2.1-beta.2-x64.zip.blockmap"
+        url_suffix: "SPlayer-Next-1.2.1-beta.2-x64.zip.blockmap"
+        size: 137406
+        digest: "sha256:afc52d70017049bc7cee817fe7be32882fe6b723bab873230a0fff3d7c39ec96"
+      "743578696":
+        name: "alpha-linux-arm64.yml"
+        url_suffix: "alpha-linux-arm64.yml"
+        size: 912
+        media_type: "application/yaml"
+        digest: "sha256:d708dff19395f9d917cc1e59b4f50df73f4ef8dfb2e358bc48bfdb9b762e6ab4"
+      "743578724":
+        name: "alpha-linux.yml"
+        url_suffix: "alpha-linux.yml"
+        size: 910
+        media_type: "application/yaml"
+        digest: "sha256:551a9daee9dc5b4eb8513344d16cbc889ba3081041a00f6f175936ece844c3eb"
+      "743578743":
+        name: "alpha-mac.yml"
+        url_suffix: "alpha-mac.yml"
+        size: 866
+        media_type: "application/yaml"
+        digest: "sha256:fec8a8e9cd94fd1a8bbb96e2ef861670f5b7f625a79198472688168853050abf"
+      "743578745":
+        name: "alpha.yml"
+        url_suffix: "alpha.yml"
+        size: 554
+        media_type: "application/yaml"
+        digest: "sha256:298c1c1e9a129c590478198dfdeefcd0bd7edbc3ea1fe3c249e26c7e3954326d"
+      "743578766":
+        name: "beta-linux-arm64.yml"
+        url_suffix: "beta-linux-arm64.yml"
+        size: 912
+        media_type: "application/yaml"
+        digest: "sha256:d708dff19395f9d917cc1e59b4f50df73f4ef8dfb2e358bc48bfdb9b762e6ab4"
+      "743578796":
+        name: "beta-linux.yml"
+        url_suffix: "beta-linux.yml"
+        size: 910
+        media_type: "application/yaml"
+        digest: "sha256:551a9daee9dc5b4eb8513344d16cbc889ba3081041a00f6f175936ece844c3eb"
+      "743578799":
+        name: "beta-mac.yml"
+        url_suffix: "beta-mac.yml"
+        size: 866
+        media_type: "application/yaml"
+        digest: "sha256:fec8a8e9cd94fd1a8bbb96e2ef861670f5b7f625a79198472688168853050abf"
+      "743578832":
+        name: "beta.yml"
+        url_suffix: "beta.yml"
+        size: 554
+        media_type: "application/yaml"
+        digest: "sha256:298c1c1e9a129c590478198dfdeefcd0bd7edbc3ea1fe3c249e26c7e3954326d"
+      "743578838":
+        name: "splayer-next-1.2.1-beta.2-aarch64.pacman"
+        url_suffix: "splayer-next-1.2.1-beta.2-aarch64.pacman"
+        size: 94586976
+        digest: "sha256:2fda0099a88393502f256e2a62e4a148bd16d8791c05201ea27891e823f85398"
+      "743578857":
+        name: "splayer-next-1.2.1-beta.2-aarch64.rpm"
+        url_suffix: "splayer-next-1.2.1-beta.2-aarch64.rpm"
+        size: 91636017
+        media_type: "application/x-rpm"
+        digest: "sha256:e1e87ee805b354b67a83589faddf4bff2092c46185f7f533b83b85d4f8e2f0ef"
+      "743578864":
+        name: "splayer-next-1.2.1-beta.2-amd64.deb"
+        url_suffix: "splayer-next-1.2.1-beta.2-amd64.deb"
+        size: 109163260
+        media_type: "application/x-debian-package"
+        digest: "sha256:118c489516791db26a3d87a7b1f7437b57bf7aea4384b928b099ec4dcfcfa985"
+      "743578868":
+        name: "splayer-next-1.2.1-beta.2-arm64.AppImage"
+        url_suffix: "splayer-next-1.2.1-beta.2-arm64.AppImage"
+        size: 103074159
+        media_type: "application/vnd.appimage"
+        digest: "sha256:5640db54d9784973454f7fc09e9f0ce4d838d72d00e410f9f697bcbd4fd535d9"
+      "743578907":
+        name: "splayer-next-1.2.1-beta.2-arm64.deb"
+        url_suffix: "splayer-next-1.2.1-beta.2-arm64.deb"
+        size: 103661020
+        media_type: "application/x-debian-package"
+        digest: "sha256:96cc8dc71b1d1e32dd43fea95fe5c70efc2fe89dfe8ff306a466b980cf201fcb"
+      "743578975":
+        name: "splayer-next-1.2.1-beta.2-arm64.tar.gz"
+        url_suffix: "splayer-next-1.2.1-beta.2-arm64.tar.gz"
+        size: 132041855
+        media_type: "application/x-gtar"
+        digest: "sha256:56c396ff9b9fe01b9a67f682ee22235a780f87d182171c6913336c0a1e7af038"
+      "743578985":
+        name: "splayer-next-1.2.1-beta.2-x64.pacman"
+        url_suffix: "splayer-next-1.2.1-beta.2-x64.pacman"
+        size: 100088092
+        digest: "sha256:2029e09e31e27a5c188143d3ae0d13c8ca7561c3fa2d2eb70c08102a3dc63ef5"
+      "743578996":
+        name: "splayer-next-1.2.1-beta.2-x64.tar.gz"
+        url_suffix: "splayer-next-1.2.1-beta.2-x64.tar.gz"
+        size: 131757858
+        media_type: "application/x-gtar"
+        digest: "sha256:1c7990a05efba6cbcbdcd74dc162bfad8045cbf63f02bd605b567a773f9ecea7"
+      "743579000":
+        name: "splayer-next-1.2.1-beta.2-x86_64.AppImage"
+        url_suffix: "splayer-next-1.2.1-beta.2-x86_64.AppImage"
+        size: 109499183
+        media_type: "application/vnd.appimage"
+        digest: "sha256:91561427d9b45a9abc01720c01d795eeb10fde88ad7f6299099f9def6f1600c6"
+      "743579014":
+        name: "splayer-next-1.2.1-beta.2-x86_64.rpm"
+        url_suffix: "splayer-next-1.2.1-beta.2-x86_64.rpm"
+        size: 97032117
+        media_type: "application/x-rpm"
+        digest: "sha256:0982342c70463f106291e6e429757eb7d574f52a70f893008c3735daf8532ad1"
