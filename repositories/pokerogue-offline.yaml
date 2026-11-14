@@ -3,47 +3,13 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1199956447
 repository: "PokeRogue-Offline/pokerogue-offline"
-collected_at: "2026-11-10T17:05:35Z"
+collected_at: "2026-11-14T03:29:36Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-10T17:05:35Z"
+observed_at: "2026-11-14T03:29:36Z"
 releases:
-  "329133011":
-    tag: "v1.11.19-184"
-    title: "v1.11.19"
-    url: "https://github.com/PokeRogue-Offline/pokerogue-offline/releases/tag/v1.11.19-184"
-    created_at: "2026-05-26T00:32:53Z"
-    published_at: "2026-05-26T01:04:19Z"
-    updated_at: "2026-07-01T02:03:56Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/PokeRogue-Offline/pokerogue-offline/zipball/v1.11.19-184"
-    source_tar_url: "https://api.github.com/repos/PokeRogue-Offline/pokerogue-offline/tarball/v1.11.19-184"
-    download_base: "https://github.com/PokeRogue-Offline/pokerogue-offline/releases/download/v1.11.19-184/"
-    assets:
-      "429783569":
-        name: "PokeRogueOffline.exe"
-        url_suffix: "PokeRogueOffline.exe"
-        size: 689669423
-        media_type: "application/x-msdos-program"
-        digest: "sha256:da78ce5e5dcb997e874831396303c6965baece68f56d2a7f4c05ab3249049cc7"
-      "429783570":
-        name: "PokeRogueOffline.AppImage"
-        url_suffix: "PokeRogueOffline.AppImage"
-        size: 805465458
-        digest: "sha256:109e1e36336850b866353a9eba07612a74f65aa25d97fd76339589a642ba927e"
-      "429783571":
-        name: "PokeRogueOffline.ipa"
-        url_suffix: "PokeRogueOffline.ipa"
-        size: 526946261
-        digest: "sha256:b87ecb528d46c4b5a4c954eecabe8a703588ed90ecb0a1f08e1afdbcbfe1d71d"
-      "429783572":
-        name: "PokeRogueOffline.apk"
-        url_suffix: "PokeRogueOffline.apk"
-        size: 551499962
-        media_type: "application/vnd.android.package-archive"
-        digest: "sha256:82e8c0bce7328b97c80ed0a4b6555e58a006903f1d4e09bfbd925079677a26c6"
   "329199861":
     tag: "v1.11.20-185"
     title: "v1.11.20"
@@ -1694,61 +1660,185 @@ releases:
         size: 1551
         media_type: "text/plain"
         digest: "sha256:4b5449ed8bc4cd1fc7cb5d278fde964c75124297cff43a0add8ec46022badff8"
-  "439841874":
+  "443254124":
+    tag: "dev-v1.12.2.6-376"
+    title: "***DEV*** v1.12.2.6"
+    url: "https://github.com/PokeRogue-Offline/pokerogue-offline/releases/tag/dev-v1.12.2.6-376"
+    created_at: "2026-11-12T16:05:34Z"
+    published_at: "2026-11-12T16:59:32Z"
+    updated_at: "2026-11-12T17:00:31Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/PokeRogue-Offline/pokerogue-offline/zipball/dev-v1.12.2.6-376"
+    source_tar_url: "https://api.github.com/repos/PokeRogue-Offline/pokerogue-offline/tarball/dev-v1.12.2.6-376"
+    download_base: "https://github.com/PokeRogue-Offline/pokerogue-offline/releases/download/dev-v1.12.2.6-376/"
+    assets:
+      "740302697":
+        name: "PokeRogueOffline-dev-x64.dmg"
+        url_suffix: "PokeRogueOffline-dev-x64.dmg"
+        size: 834042801
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:5b1f651c8eb78fe78c6cf0753adc0f4bc7a1170d805d80839dbbee8aa351a286"
+      "740302698":
+        name: "PokeRogueOffline-dev.ipa"
+        url_suffix: "PokeRogueOffline-dev.ipa"
+        size: 551849956
+        digest: "sha256:c1012c0fa2717f86780479c106c2eae907131ec7d05ce2d800c82c03e184b12f"
+      "740302699":
+        name: "PokeRogueOffline-dev-x64.app.tar.gz"
+        url_suffix: "PokeRogueOffline-dev-x64.app.tar.gz"
+        size: 817001819
+        media_type: "application/gzip"
+        digest: "sha256:e07b5557eab7f22b368eb0367de835d279794728efbcc9310f430a52af2e3080"
+      "740302700":
+        name: "PokeRogueOffline-dev.AppImage"
+        url_suffix: "PokeRogueOffline-dev.AppImage"
+        size: 844372331
+        digest: "sha256:4e992ff35a9473cf2b0cc63586e5f8353b8c1d569aed0ff27afb15daf3d2c9b2"
+      "740302702":
+        name: "PokeRogueOffline-dev-arm64.dmg"
+        url_suffix: "PokeRogueOffline-dev-arm64.dmg"
+        size: 830205902
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:d5e9a7cedb934efc4705852c22b0e43f457dc254d02796526562655d30b6979b"
+      "740302703":
+        name: "PokeRogueOffline-dev.exe"
+        url_suffix: "PokeRogueOffline-dev.exe"
+        size: 709746748
+        media_type: "application/x-msdos-program"
+        digest: "sha256:d091bba2fa526858ba1f19690f5c00f1bbd239f142717f207c36f3ed5bbd9511"
+      "740302704":
+        name: "PokeRogueOffline-dev-arm64.app.tar.gz"
+        url_suffix: "PokeRogueOffline-dev-arm64.app.tar.gz"
+        size: 813084997
+        media_type: "application/gzip"
+        digest: "sha256:993f264f7b59678a5da2c755afb23e140ad08612706829044e407554a900abdb"
+      "740302705":
+        name: "PokeRogueOffline-dev.apk"
+        url_suffix: "PokeRogueOffline-dev.apk"
+        size: 573722480
+        media_type: "application/vnd.android.package-archive"
+        digest: "sha256:1d60e307c12fc3f9f3b1dc329006704c87a4efae9fdde696488091548f49f71f"
+      "740302707":
+        name: "SHA256SUMS.txt"
+        url_suffix: "SHA256SUMS.txt"
+        size: 1583
+        media_type: "text/plain"
+        digest: "sha256:c0f8784a364a5373655bd44ff38e53b653f331e7542327ddb41008f26f09deaf"
+      "740302709":
+        name: "PokeRogueOffline-iOS-ota-manifest.json"
+        url_suffix: "PokeRogueOffline-iOS-ota-manifest.json"
+        size: 924
+        media_type: "application/json"
+        digest: "sha256:d29207e56da02da280035451bea72c7b59b31d13fdb089bd675f729e9e0f41da"
+      "740302710":
+        name: "PokeRogueOffline-iOS-ota-code.zip"
+        url_suffix: "PokeRogueOffline-iOS-ota-code.zip"
+        size: 7400117
+        media_type: "zip"
+        digest: "sha256:a842566253ccb0f676453c21e0f57cef402fd23483594cccbccb6963943d5d12"
+      "740302712":
+        name: "PokeRogueOffline-iOS-ota-locales.zip"
+        url_suffix: "PokeRogueOffline-iOS-ota-locales.zip"
+        size: 3947565
+        media_type: "zip"
+        digest: "sha256:2dd1df9d6c040c6fb6fe68ac25518d9a5d10f68d9646a1af9cea704a0fa8e3ce"
+      "740302713":
+        name: "PokeRogueOffline-Android-ota-manifest.json"
+        url_suffix: "PokeRogueOffline-Android-ota-manifest.json"
+        size: 924
+        media_type: "application/json"
+        digest: "sha256:90ad8108b06d298f92f3cc3ffde5395d93dec565392e97f3921ff5c9a00531e8"
+      "740302714":
+        name: "PokeRogueOffline-iOS-ota.zip"
+        url_suffix: "PokeRogueOffline-iOS-ota.zip"
+        size: 542209219
+        media_type: "zip"
+        digest: "sha256:ff7b47dd3e22eca1ef1794aa2e528fd527305a79128e0f913be6c8ac9627a7b7"
+      "740302715":
+        name: "PokeRogueOffline-Android-ota-assets.zip"
+        url_suffix: "PokeRogueOffline-Android-ota-assets.zip"
+        size: 531002139
+        media_type: "zip"
+        digest: "sha256:f665487715d6d4476f37d2b367a8ef3f593780e35d19ffb2372fa883f8eb7ff7"
+      "740302716":
+        name: "PokeRogueOffline-Android-ota-code.zip"
+        url_suffix: "PokeRogueOffline-Android-ota-code.zip"
+        size: 7401935
+        media_type: "zip"
+        digest: "sha256:3cd178bc68fcf520697676ff9af839c08c30029acafba1311623d98cf4b837c3"
+      "740302717":
+        name: "PokeRogueOffline-Android-ota-locales.zip"
+        url_suffix: "PokeRogueOffline-Android-ota-locales.zip"
+        size: 3947565
+        media_type: "zip"
+        digest: "sha256:7bc51153452687d21d17dec93ac958907891d7e5a893ee0da75064b49bf1cc7f"
+      "740302719":
+        name: "PokeRogueOffline-Android-ota.zip"
+        url_suffix: "PokeRogueOffline-Android-ota.zip"
+        size: 542211037
+        media_type: "zip"
+        digest: "sha256:0c5161f66388d4ee1fb895d4ef91158a4b8915edc0924ae18f7f28f28b50e9c8"
+      "740302720":
+        name: "PokeRogueOffline-iOS-ota-assets.zip"
+        url_suffix: "PokeRogueOffline-iOS-ota-assets.zip"
+        size: 531002139
+        media_type: "zip"
+        digest: "sha256:d354e0c09abe8de9bffc0d45ca0498843546a48ef74650c2820a66895bab6f05"
+  "444922629":
     tag: "nightly"
     title: "Nightly build (beta branch)"
     url: "https://github.com/PokeRogue-Offline/pokerogue-offline/releases/tag/nightly"
-    created_at: "2026-11-05T00:08:22Z"
-    published_at: "2026-11-10T01:31:59Z"
-    updated_at: "2026-11-10T01:31:59Z"
+    created_at: "2026-11-13T01:05:43Z"
+    published_at: "2026-11-14T01:34:47Z"
+    updated_at: "2026-11-14T01:34:47Z"
     prerelease: true
     source_zip_url: "https://api.github.com/repos/PokeRogue-Offline/pokerogue-offline/zipball/nightly"
     source_tar_url: "https://api.github.com/repos/PokeRogue-Offline/pokerogue-offline/tarball/nightly"
     download_base: "https://github.com/PokeRogue-Offline/pokerogue-offline/releases/download/nightly/"
     assets:
-      "729667934":
-        name: "PokeRogueOffline-dev.ipa"
-        url_suffix: "PokeRogueOffline-dev.ipa"
-        size: 551842375
-        digest: "sha256:bb4243a99a23aab36dc9215fc106782fe483e169dc0034e23d004db8e205d075"
-      "729667935":
-        name: "PokeRogueOffline-dev.exe"
-        url_suffix: "PokeRogueOffline-dev.exe"
-        size: 709720552
-        digest: "sha256:03792705f47ff257e90ce4804c235433858a212c698ee440911162b6e1ae5f54"
-      "729667936":
-        name: "PokeRogueOffline-dev.AppImage"
-        url_suffix: "PokeRogueOffline-dev.AppImage"
-        size: 844379354
-        media_type: "application/vnd.appimage"
-        digest: "sha256:300584afabd57dd8f4d21c0e9130ba4b9a9d1f0fa0c87556c8c30c8a32bd859e"
-      "729667937":
+      "745885472":
         name: "PokeRogueOffline-dev.apk"
         url_suffix: "PokeRogueOffline-dev.apk"
-        size: 573713448
+        size: 573713872
         media_type: "application/vnd.android.package-archive"
-        digest: "sha256:799425e40a99e6b04260eaf146b120781f01ce87f34cbfda075f8c627644b7cc"
-      "729667938":
+        digest: "sha256:87bf8261a1f611d970355cbe03729857f806343c6b9dba597525f0821088c21f"
+      "745885474":
         name: "PokeRogueOffline-dev-arm64.app.tar.gz"
         url_suffix: "PokeRogueOffline-dev-arm64.app.tar.gz"
-        size: 813084699
+        size: 813083527
         media_type: "application/x-gtar"
-        digest: "sha256:7ee3a72f10ebb02bd95e84c2d1818e70ff846b072b4017138d10b9602ae52cc7"
-      "729668787":
+        digest: "sha256:c57ffc324a9f06a331a170ded2f2402ef9c511d9303358d4c65dcaa080302c36"
+      "745885475":
+        name: "PokeRogueOffline-dev.ipa"
+        url_suffix: "PokeRogueOffline-dev.ipa"
+        size: 551842731
+        digest: "sha256:cbd1d9bdf97979758de51eecde92e084537370de9e63d24eef254ca1d810c012"
+      "745885477":
+        name: "PokeRogueOffline-dev.exe"
+        url_suffix: "PokeRogueOffline-dev.exe"
+        size: 709732384
+        digest: "sha256:83af3e27293e0519b61b301a4cf21d01007378d72704a29fabd6188012819c45"
+      "745885478":
+        name: "PokeRogueOffline-dev.AppImage"
+        url_suffix: "PokeRogueOffline-dev.AppImage"
+        size: 844375355
+        media_type: "application/vnd.appimage"
+        digest: "sha256:1d8fffe763e77d4429bf9db2c7a2ce6fa88738cb666ae4a2e89bd83337a7ae11"
+      "745886659":
         name: "PokeRogueOffline-dev-arm64.dmg"
         url_suffix: "PokeRogueOffline-dev-arm64.dmg"
-        size: 830208976
+        size: 830205411
         media_type: "application/x-apple-diskimage"
-        digest: "sha256:b704320c5f35bda4ee16673d44e59f346579b3164564284cf6a81f0321220265"
-      "729668919":
+        digest: "sha256:db0d3b0125f7809ffba10544f8a1d7b399421817dafcaf92f9c27a652b902c4f"
+      "745886709":
         name: "PokeRogueOffline-dev-x64.app.tar.gz"
         url_suffix: "PokeRogueOffline-dev-x64.app.tar.gz"
-        size: 817001959
+        size: 817002009
         media_type: "application/x-gtar"
-        digest: "sha256:95bd34d25baa5d0d8d6ccd80ee93828af3e0cc6d7f4cfddfcf35e32d87a3e456"
-      "729669197":
+        digest: "sha256:1d5d677f24e4cd7ab307c017c3e1393e125c609cf8a288a58774749e8a4a2d6a"
+      "745886888":
         name: "PokeRogueOffline-dev-x64.dmg"
         url_suffix: "PokeRogueOffline-dev-x64.dmg"
-        size: 834045781
+        size: 834043041
         media_type: "application/x-apple-diskimage"
-        digest: "sha256:59477c994d357405d74a78d9a36ad5e39c09558223d05891b7d4aed0db314d23"
+        digest: "sha256:72f4083628a19d91481e471d8d13d11958fc5c364e1a87472e9bfa3acaa9d622"
