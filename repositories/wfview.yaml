@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1257568821
 repository: "wf-group/wfview"
-collected_at: "2026-11-10T17:29:59Z"
+collected_at: "2026-11-14T18:13:45Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-10T17:29:59Z"
+observed_at: "2026-11-14T18:13:45Z"
 releases:
   "333390251":
     tag: "v2.23"
@@ -261,38 +261,86 @@ releases:
     url: "https://github.com/wf-group/wfview/releases/tag/v2.25"
     created_at: "2026-09-27T18:15:41Z"
     published_at: "2026-09-27T18:37:57Z"
-    updated_at: "2026-09-27T18:37:57Z"
+    updated_at: "2026-11-12T04:39:51Z"
     prerelease: false
     source_zip_url: "https://api.github.com/repos/wf-group/wfview/zipball/v2.25"
     source_tar_url: "https://api.github.com/repos/wf-group/wfview/tarball/v2.25"
     download_base: "https://github.com/wf-group/wfview/releases/download/v2.25/"
     assets:
-      "593523409":
+      "738086359":
         name: "wfview-linux-arm64-bookworm.AppImage"
         url_suffix: "wfview-linux-arm64-bookworm.AppImage"
         size: 44808712
-        digest: "sha256:27ce9332b1a2284eb7b0a6b07016e2c0d8ae63fb15fba23c1f80188d43d08895"
-      "593523410":
+        digest: "sha256:7123b6cc08d309187a430262c60dee9547293c844a51361b9b9218e7beecd40a"
+      "738086360":
         name: "wfview-windows-x86-setup.exe"
         url_suffix: "wfview-windows-x86-setup.exe"
-        size: 63831905
+        size: 63830472
         media_type: "application/x-msdos-program"
-        digest: "sha256:586a2df693edfd04be7ee96e8bfa73f5a8effba191783c349b9a1e74ecaf58f0"
-      "593523411":
-        name: "wfview-macos.dmg"
-        url_suffix: "wfview-macos.dmg"
-        size: 56230867
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:9b55676fb5a56356104039dc4e59071c0cb46b085eca832d30dd8d4fd4de2e73"
-      "593523412":
+        digest: "sha256:76dc93420eec6bd17ac32a4aafbe6c29904766d7e87d8cfbac47a8397aa8560e"
+      "738086361":
         name: "wfview-linux-installer.sh"
         url_suffix: "wfview-linux-installer.sh"
-        size: 42818220
+        size: 42819030
         media_type: "application/x-sh"
-        digest: "sha256:1b84b6c8e0fb78aa2d8edd9b832b3dbefb26c2ce6cbd99d3767555ea2f3ef04c"
-      "593523413":
+        digest: "sha256:cdfdfba2ca5b6d82ee114e3029407e39b4ec4e97633252b3f688cf2d56cba36f"
+      "738086362":
+        name: "wfview-macos.dmg"
+        url_suffix: "wfview-macos.dmg"
+        size: 56233757
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:733ae8fb1ac74cf68e1092cea9555d1db4442736ce45ab6d64e6b5473bb23714"
+      "738086363":
         name: "wfview-windows-x64-setup.exe"
         url_suffix: "wfview-windows-x64-setup.exe"
-        size: 89200398
+        size: 89228032
         media_type: "application/x-msdos-program"
-        digest: "sha256:52cb240437d4c64b7da4bc07be91dae0d068be3472130a0ebfed58a47553959b"
+        digest: "sha256:45d924cfa09e10febc0f13a5a043eb5096a5d4f99b762074e285ebe68d08c9ed"
+  "444582254":
+    tag: "v3.0-beta2"
+    title: "wfview v3.0-beta2"
+    url: "https://github.com/wf-group/wfview/releases/tag/v3.0-beta2"
+    created_at: "2026-11-13T17:30:30Z"
+    published_at: "2026-11-13T18:19:08Z"
+    updated_at: "2026-11-13T18:19:15Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/wf-group/wfview/zipball/v3.0-beta2"
+    source_tar_url: "https://api.github.com/repos/wf-group/wfview/tarball/v3.0-beta2"
+    download_base: "https://github.com/wf-group/wfview/releases/download/v3.0-beta2/"
+    assets:
+      "744688495":
+        name: "wfview-macos-legacy-intel.dmg"
+        url_suffix: "wfview-macos-legacy-intel.dmg"
+        size: 30187148
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:4f052e51941b98986c119139918ad28cdba5a23f31e9301dad75893cefd949ca"
+      "744688496":
+        name: "wfview-windows-x64-setup.exe"
+        url_suffix: "wfview-windows-x64-setup.exe"
+        size: 98000680
+        media_type: "application/x-msdos-program"
+        digest: "sha256:16657501b289d6672efdd989a27a1b0ffedeab78a0cfe53294978b7b8861757e"
+      "744688497":
+        name: "wfview-linux-installer.sh"
+        url_suffix: "wfview-linux-installer.sh"
+        size: 61529302
+        media_type: "application/x-sh"
+        digest: "sha256:e498af43f9dc0cbaf094135de79bbc0f9a84cdef70563b114c48ad697f268049"
+      "744688499":
+        name: "wfview-macos.dmg"
+        url_suffix: "wfview-macos.dmg"
+        size: 80857402
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:9099e0a81ede1d95f215f0308ebf4a03dbb19afd97d28dc389c8cc4c16f2bdf5"
+      "744688501":
+        name: "wfview-windows-x86-setup.exe"
+        url_suffix: "wfview-windows-x86-setup.exe"
+        size: 71339038
+        media_type: "application/x-msdos-program"
+        digest: "sha256:f624ba38a401448bf9259184d8f541ca7e18f622142399a8af11a0c8cc539ace"
+      "744688502":
+        name: "wfview-linux-arm64-installer.sh"
+        url_suffix: "wfview-linux-arm64-installer.sh"
+        size: 60606345
+        media_type: "application/x-sh"
+        digest: "sha256:002e4ce73263cae3359e3fdf1eac15f303f7dbcf5c89447a8cf29330a6676d27"
