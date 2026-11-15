@@ -3,35 +3,13 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 7885934
 repository: "xLightsSequencer/xLights"
-collected_at: "2026-11-10T23:38:30Z"
+collected_at: "2026-11-15T22:59:13Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: false
-observed_at: "2026-11-10T23:38:30Z"
+observed_at: "2026-11-15T22:59:13Z"
 releases:
-  "204370212":
-    tag: "2025.04"
-    title: "2025.04"
-    url: "https://github.com/xLightsSequencer/xLights/releases/tag/2025.04"
-    created_at: "2025-03-07T13:11:49Z"
-    published_at: "2025-03-07T13:35:49Z"
-    updated_at: "2025-03-07T13:51:54Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/xLightsSequencer/xLights/zipball/2025.04"
-    source_tar_url: "https://api.github.com/repos/xLightsSequencer/xLights/tarball/2025.04"
-    download_base: "https://github.com/xLightsSequencer/xLights/releases/download/2025.04/"
-    assets:
-      "235471287":
-        name: "xLights-2025.04-x86_64.AppImage"
-        url_suffix: "xLights-2025.04-x86_64.AppImage"
-        size: 94315248
-        media_type: "=raw"
-      "235475573":
-        name: "xLights64_2025_4.exe"
-        url_suffix: "xLights64_2025_4.exe"
-        size: 114745441
-        media_type: "=raw"
   "212264213":
     tag: "2025.05"
     title: "2025.05"
@@ -937,35 +915,64 @@ releases:
         url_suffix: "xLights-macOS-2026.19.zip"
         size: 83683759
         digest: "sha256:de29d7a567a31e8a1ff0205264de758c38e4226bbb0ff901c2ef2213e62c7700"
-  "439991795":
+  "443293413":
+    tag: "2026.20"
+    title: "2026.20"
+    url: "https://github.com/xLightsSequencer/xLights/releases/tag/2026.20"
+    created_at: "2026-11-12T16:56:06Z"
+    published_at: "2026-11-12T17:43:13Z"
+    updated_at: "2026-11-13T04:49:46Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/xLightsSequencer/xLights/zipball/2026.20"
+    source_tar_url: "https://api.github.com/repos/xLightsSequencer/xLights/tarball/2026.20"
+    download_base: "https://github.com/xLightsSequencer/xLights/releases/download/2026.20/"
+    assets:
+      "740415800":
+        name: "xLights64_2026_20.exe"
+        url_suffix: "xLights64_2026_20.exe"
+        size: 107135064
+        media_type: "=raw"
+        digest: "sha256:66495ff8f41df43b584142f55f96ede31663e2b30eb44f2dd76630763271c14b"
+      "740416053":
+        name: "xLights-2026.20-win64.map"
+        url_suffix: "xLights-2026.20-win64.map"
+        size: 109585772
+        media_type: "=raw"
+        digest: "sha256:c80089ff2c67f8d341f355ec55aba6d2f03cb60c27f01b0b91c0f14c37afff0c"
+      "742310041":
+        name: "xLights-macOS-2026.20.zip"
+        url_suffix: "xLights-macOS-2026.20.zip"
+        size: 84733597
+        digest: "sha256:ddf85e1f5845b2053a6464bb67ea747b670127b87cbc50ab06dea0d5ef85434c"
+  "443863778":
     tag: "nightly"
     title: "nightly"
     url: "https://github.com/xLightsSequencer/xLights/releases/tag/nightly"
-    created_at: "2026-11-09T15:07:45Z"
-    published_at: "2026-11-10T05:47:15Z"
-    updated_at: "2026-11-10T22:09:56Z"
+    created_at: "2026-11-13T01:15:16Z"
+    published_at: "2026-11-13T05:47:29Z"
+    updated_at: "2026-11-15T08:46:49Z"
     prerelease: true
     source_zip_url: "https://api.github.com/repos/xLightsSequencer/xLights/zipball/nightly"
     source_tar_url: "https://api.github.com/repos/xLightsSequencer/xLights/tarball/nightly"
     download_base: "https://github.com/xLightsSequencer/xLights/releases/download/nightly/"
     assets:
-      "730279287":
-        name: "xLights64_2026_19_nightly-44b4300.exe"
-        url_suffix: "xLights64_2026_19_nightly-44b4300.exe"
-        size: 107011840
-        digest: "sha256:4685f8929633dd408825a80bbf6481a83764bc2ba7d2b49b1c378c93fac5ab65"
-      "730279704":
+      "742454594":
+        name: "xLights64_2026_20_nightly-cbbb140.exe"
+        url_suffix: "xLights64_2026_20_nightly-cbbb140.exe"
+        size: 107135040
+        digest: "sha256:bff886bc1d3dd565a57e47f23d6618675f6119b3c22292a76d753a32f6b25087"
+      "742454929":
         name: "xLights.appinstaller"
         url_suffix: "xLights.appinstaller"
         size: 738
-        digest: "sha256:09bc42585275163ef4f1e0f5275b538a4a302040cc6316c63a2d7ae16b8ab12e"
-      "730279705":
+        digest: "sha256:6a70ac8b8742b3b105306948151d96488152aac7659cc5f6258df67b6daf795c"
+      "742454930":
         name: "xLights-x64.msix"
         url_suffix: "xLights-x64.msix"
-        size: 119197284
-        digest: "sha256:894cad09f5fe73c14685c30ae055a26d59fa911d9c614cfa9119d3ecd57d9750"
-      "733148861":
+        size: 119220918
+        digest: "sha256:d0449c710b2e26c41bd2017dc0f74723cb1dd9a3096649bef13c567ffff4c717"
+      "750386301":
         name: "xLights-macOS-nightly.zip"
         url_suffix: "xLights-macOS-nightly.zip"
-        size: 84717693
-        digest: "sha256:4e0debd00ab3d6e660f89b7b28a042a6502a1736e5e37ea9a2aa70939c6000d5"
+        size: 84742858
+        digest: "sha256:fd59cbe88262a727a69595d6cc0c0c458781fde4ee64157b1012029add379bf6"
