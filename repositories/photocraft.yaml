@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1398080271
 repository: "storytold/photocraft"
-collected_at: "2026-11-10T21:14:28Z"
+collected_at: "2026-11-15T11:06:21Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-10T21:14:28Z"
+observed_at: "2026-11-15T11:06:21Z"
 releases:
   "401243608":
     tag: "v0.1.0"
@@ -4521,6 +4521,650 @@ releases:
         media_type: "zip"
         digest: "sha256:597c4ffc54eca20d944a292b54ef7b6a3a1fd20725c42396eee00adebef3ebd9"
       "727380159":
+        name: "release-signing-key.asc"
+        url_suffix: "release-signing-key.asc"
+        size: 803
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8e6925a173d6a7134118da099948de4d9eeec7c1c0770998aec33c9d3f484740"
+  "442232444":
+    tag: "v0.23.0"
+    title: "PhotoCraft v0.23.0"
+    url: "https://github.com/storytold/photocraft/releases/tag/v0.23.0"
+    created_at: "2026-11-11T19:53:46Z"
+    published_at: "2026-11-11T21:59:33Z"
+    updated_at: "2026-11-11T21:59:33Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/storytold/photocraft/zipball/v0.23.0"
+    source_tar_url: "https://api.github.com/repos/storytold/photocraft/tarball/v0.23.0"
+    download_base: "https://github.com/storytold/photocraft/releases/download/v0.23.0/"
+    assets:
+      "737043903":
+        name: "photocraft-0.23.0-freebsd-aarch64.tar.gz"
+        url_suffix: "photocraft-0.23.0-freebsd-aarch64.tar.gz"
+        size: 130952067
+        media_type: "application/x-gtar"
+        digest: "sha256:84dcf35a1000950a6b10312064de69a18e2e761c6f8a969c75ad121c0e6773ef"
+      "737043904":
+        name: "photocraft-0.23.0-linux-aarch64.AppImage"
+        url_suffix: "photocraft-0.23.0-linux-aarch64.AppImage"
+        size: 126609928
+        media_type: "application/vnd.appimage"
+        digest: "sha256:b76cdd4bcf0b27e7128d9035c5e2aaff5128198e0606870d0dd948be99c43664"
+      "737043905":
+        name: "SHA256SUMS.txt.asc"
+        url_suffix: "SHA256SUMS.txt.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:c7346033522331fc5651481403e289d0678c8c1ad99a2fea6eae6440512519c4"
+      "737043906":
+        name: "photocraft-0.23.0-freebsd-x86_64.tar.gz"
+        url_suffix: "photocraft-0.23.0-freebsd-x86_64.tar.gz"
+        size: 138480224
+        media_type: "application/x-gtar"
+        digest: "sha256:7cb40f76c2197bf924db7e9d807916a2664c58f36450a8b2439d3be0fec6bd2d"
+      "737043907":
+        name: "SHA256SUMS.txt"
+        url_suffix: "SHA256SUMS.txt"
+        size: 5341
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8eaf0613d88ed884633b98c16464eefae5d94a4529ce3b0927bbb9d25bb82896"
+      "737043944":
+        name: "photocraft-0.23.0-linux-aarch64.AppImage.asc"
+        url_suffix: "photocraft-0.23.0-linux-aarch64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:f5e424f489f7e41f2a89237859f4774b57f8f479d88c9363287b81b306a41377"
+      "737043948":
+        name: "photocraft-0.23.0-linux-aarch64.AppImage.zsync"
+        url_suffix: "photocraft-0.23.0-linux-aarch64.AppImage.zsync"
+        size: 216629
+        digest: "sha256:66dc37c5f6a159697e47ce5d13bde7a5d00927ef24b1fb29fd883e53ad69303a"
+      "737043966":
+        name: "photocraft-0.23.0-linux-aarch64.deb"
+        url_suffix: "photocraft-0.23.0-linux-aarch64.deb"
+        size: 137007506
+        media_type: "application/x-debian-package"
+        digest: "sha256:97c207a0efbfa0813663aec1b4c16cca25bb61a6cf38de122e6c68c5162b0fdb"
+      "737043967":
+        name: "photocraft-0.23.0-linux-aarch64.AppImage.zsync.asc"
+        url_suffix: "photocraft-0.23.0-linux-aarch64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:c792181de1eee349038aeb5dbae4e27ac8243454bb542eea40bf0676e8666944"
+      "737043999":
+        name: "photocraft-0.23.0-linux-aarch64.deb.asc"
+        url_suffix: "photocraft-0.23.0-linux-aarch64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:91009db6628d40d90ea1a8a8a2ce079849981e72343be59c18d4d74648b4fda5"
+      "737044022":
+        name: "photocraft-0.23.0-linux-aarch64.flatpak"
+        url_suffix: "photocraft-0.23.0-linux-aarch64.flatpak"
+        size: 97807328
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:0732e567bd84d5db41b06577a3c66e78b5f971222b29fde5a2714211753e86d3"
+      "737044241":
+        name: "photocraft-0.23.0-linux-aarch64.flatpak.asc"
+        url_suffix: "photocraft-0.23.0-linux-aarch64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:be7d0241fbed35c7e4a990f81606b84ac8eeb13a0b8f75a8d352eac678175542"
+      "737044243":
+        name: "photocraft-0.23.0-linux-aarch64.oci-manifest.json"
+        url_suffix: "photocraft-0.23.0-linux-aarch64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:8bdfea0a3fb0617218d326f8d95fada5c6c9a4cf645bb76a2a79e231300a6589"
+      "737044248":
+        name: "photocraft-0.23.0-linux-aarch64.oci.sig"
+        url_suffix: "photocraft-0.23.0-linux-aarch64.oci.sig"
+        size: 389
+        media_type: "application/pgp-signature"
+        digest: "sha256:119d55dc60f38b4252076d7af4c2938d1403bf6d4b6544580e63587f5c53be06"
+      "737044282":
+        name: "photocraft-0.23.0-linux-aarch64.pkg.tar.zst"
+        url_suffix: "photocraft-0.23.0-linux-aarch64.pkg.tar.zst"
+        size: 107148786
+        media_type: "application/zstd"
+        digest: "sha256:9abb247b6a52e136bb68049158a078f8b74a5cbc2f61cd391f1113061676f1d6"
+      "737044291":
+        name: "photocraft-0.23.0-linux-aarch64.rpm.asc"
+        url_suffix: "photocraft-0.23.0-linux-aarch64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:c94d44c36ff22cee4cd4199518ef469bb0c2c9c4a2f9407a3da2c742fd3c14b0"
+      "737044292":
+        name: "photocraft-0.23.0-linux-aarch64.rpm"
+        url_suffix: "photocraft-0.23.0-linux-aarch64.rpm"
+        size: 135793495
+        media_type: "application/x-rpm"
+        digest: "sha256:7f765cb0f9c6be7e20f3c47fb3f370a5237a051a4e5f924296ba1cd8b513e370"
+      "737044293":
+        name: "photocraft-0.23.0-linux-aarch64.pkg.tar.zst.sig"
+        url_suffix: "photocraft-0.23.0-linux-aarch64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:2f3b760762cd93e839754010f863a1d821dd269c05b924ab57189c32fa746774"
+      "737044324":
+        name: "photocraft-0.23.0-linux-aarch64.tar.gz.asc"
+        url_suffix: "photocraft-0.23.0-linux-aarch64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:f746b6785a8abce00ddce38cf5571dc164cde3707e8e764d615d3e8aac0e3670"
+      "737044327":
+        name: "photocraft-0.23.0-linux-aarch64.tar.gz"
+        url_suffix: "photocraft-0.23.0-linux-aarch64.tar.gz"
+        size: 133361996
+        media_type: "application/x-gtar"
+        digest: "sha256:2ce8978292d3148e18526b540b6d0cf5ea9b9a4b782d345cca4d3c03e8ba751c"
+      "737044345":
+        name: "photocraft-0.23.0-linux-riscv64.deb"
+        url_suffix: "photocraft-0.23.0-linux-riscv64.deb"
+        size: 138480264
+        media_type: "application/x-debian-package"
+        digest: "sha256:62bfde49979f0ac13f939d1d8aeae9c43c00513d8633d9b12c0884ca291e8ba2"
+      "737044348":
+        name: "photocraft-0.23.0-linux-riscv64.deb.asc"
+        url_suffix: "photocraft-0.23.0-linux-riscv64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:edfd3c9a1e30edd7698a7c9d4e29104796ce677e7068dc4baa3914bcc175fa3c"
+      "737044363":
+        name: "photocraft-0.23.0-linux-riscv64.rpm"
+        url_suffix: "photocraft-0.23.0-linux-riscv64.rpm"
+        size: 137821789
+        media_type: "application/x-rpm"
+        digest: "sha256:580074d7279ffa515a8c4c4959bb1d99cefabead58457ff2fed940b193dc61c1"
+      "737044499":
+        name: "photocraft-0.23.0-linux-riscv64.rpm.asc"
+        url_suffix: "photocraft-0.23.0-linux-riscv64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:61697b87e44a7c97b16018b7fcb6a9bf8196888f5ec977c6de4fe647316c6b00"
+      "737044530":
+        name: "photocraft-0.23.0-linux-riscv64.tar.gz"
+        url_suffix: "photocraft-0.23.0-linux-riscv64.tar.gz"
+        size: 136569776
+        media_type: "application/x-gtar"
+        digest: "sha256:79e065c5dbe8362a792a0239310bbbb66a5e64d88c43a24c8be7e46161e613d7"
+      "737044577":
+        name: "photocraft-0.23.0-linux-riscv64.tar.gz.asc"
+        url_suffix: "photocraft-0.23.0-linux-riscv64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:65085c6759bf3dccccd0820298098251bed55c3631b8361c75475158f12eb3a9"
+      "737044594":
+        name: "photocraft-0.23.0-linux-x86_64.AppImage"
+        url_suffix: "photocraft-0.23.0-linux-x86_64.AppImage"
+        size: 132078072
+        media_type: "application/vnd.appimage"
+        digest: "sha256:2419663622c98f16c461dafabeb4df7923d2ec4e4a6c7e001a1df8a2804d93c3"
+      "737044595":
+        name: "photocraft-0.23.0-linux-x86_64.AppImage.asc"
+        url_suffix: "photocraft-0.23.0-linux-x86_64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:87d850c827ac5230892961ead86d52a785ca99dbc4cde9636b7949179fad9f00"
+      "737044600":
+        name: "photocraft-0.23.0-linux-x86_64.AppImage.zsync"
+        url_suffix: "photocraft-0.23.0-linux-x86_64.AppImage.zsync"
+        size: 225972
+        digest: "sha256:49b3af4c5374e18ee23ee8cfdf909e51ac071c150f172704ea2c82dcb93a7e9b"
+      "737044619":
+        name: "photocraft-0.23.0-linux-x86_64.AppImage.zsync.asc"
+        url_suffix: "photocraft-0.23.0-linux-x86_64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:9cdfa5a12df641e74b7b941db04a50e371f9a51fb3d5acb0f11079cda09cf7a6"
+      "737044623":
+        name: "photocraft-0.23.0-linux-x86_64.deb"
+        url_suffix: "photocraft-0.23.0-linux-x86_64.deb"
+        size: 141548538
+        media_type: "application/x-debian-package"
+        digest: "sha256:f23c8f9e71ec991702f6286f3025a53360f200b6c85a219efb8d84eaf3c1d6c1"
+      "737044636":
+        name: "photocraft-0.23.0-linux-x86_64.deb.asc"
+        url_suffix: "photocraft-0.23.0-linux-x86_64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:11f9803c8d51041ec87ce4664352b9f8be5b6bb7c1b7450ee5bd99b293449478"
+      "737044650":
+        name: "photocraft-0.23.0-linux-x86_64.flatpak"
+        url_suffix: "photocraft-0.23.0-linux-x86_64.flatpak"
+        size: 104503608
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:bbb7ce7707f93b85b253b3fd8a09608c4e8cc56ca9418eb7ef881187053db291"
+      "737044670":
+        name: "photocraft-0.23.0-linux-x86_64.flatpak.asc"
+        url_suffix: "photocraft-0.23.0-linux-x86_64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:60720af0772fc27e7eec7cb1cb2d4e8a6a764da4e2f4a29ee90ca8ae71e32e96"
+      "737044694":
+        name: "photocraft-0.23.0-linux-x86_64.oci-manifest.json"
+        url_suffix: "photocraft-0.23.0-linux-x86_64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:307b5ddcfd792225fa2d77533bf0c39e05354da89445c206cd970e76240f221f"
+      "737044696":
+        name: "photocraft-0.23.0-linux-x86_64.oci.sig"
+        url_suffix: "photocraft-0.23.0-linux-x86_64.oci.sig"
+        size: 383
+        media_type: "application/pgp-signature"
+        digest: "sha256:679e932a5be3e8156178d3f1547dc2f2330b5da45fb4b0a98f037750d08c3460"
+      "737044706":
+        name: "photocraft-0.23.0-linux-x86_64.pkg.tar.zst"
+        url_suffix: "photocraft-0.23.0-linux-x86_64.pkg.tar.zst"
+        size: 111041418
+        media_type: "application/zstd"
+        digest: "sha256:74179d3d3ce9098b0cfe10f09a05144a9ae1f226fdb3777e0624351124ed846d"
+      "737044711":
+        name: "photocraft-0.23.0-linux-x86_64.pkg.tar.zst.sig"
+        url_suffix: "photocraft-0.23.0-linux-x86_64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:c104c24199ce93a3a0caec1641bbe3d2713acd5b67164538f82b7db3d17dca73"
+      "737044747":
+        name: "photocraft-0.23.0-linux-x86_64.rpm"
+        url_suffix: "photocraft-0.23.0-linux-x86_64.rpm"
+        size: 140572461
+        media_type: "application/x-rpm"
+        digest: "sha256:5641651c10215cd8ca701154bed36a7d5fd76721af72bf7b3250fd9af49b4602"
+      "737044835":
+        name: "photocraft-0.23.0-linux-x86_64.rpm.asc"
+        url_suffix: "photocraft-0.23.0-linux-x86_64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:33d3d74ae4d52b585b08bf0d3ba2bc388df30a382d1c924062a375e26f24c4ed"
+      "737044849":
+        name: "photocraft-0.23.0-linux-x86_64.tar.gz"
+        url_suffix: "photocraft-0.23.0-linux-x86_64.tar.gz"
+        size: 139403559
+        media_type: "application/x-gtar"
+        digest: "sha256:9858ee234854f7c390f3eab4734aea53100cc912c2c8dceaa029427b75dd22f8"
+      "737044857":
+        name: "photocraft-0.23.0-linux-x86_64.tar.gz.asc"
+        url_suffix: "photocraft-0.23.0-linux-x86_64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:cb3b4736b259d5ab92bc3eca6df8b6c1f6d51aafb282590e432134efd18b78cd"
+      "737044882":
+        name: "photocraft-0.23.0-macos-universal.dmg"
+        url_suffix: "photocraft-0.23.0-macos-universal.dmg"
+        size: 274134041
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:8ca761f3e9af4d932cc6efdd6ecbfa22128153ba30cce955547ca6256e61516d"
+      "737044886":
+        name: "photocraft-0.23.0-windows-arm64-portable.zip"
+        url_suffix: "photocraft-0.23.0-windows-arm64-portable.zip"
+        size: 136321892
+        media_type: "zip"
+        digest: "sha256:6337b01f504f259d839184e9be805f1a243f21aa592274af0da1a6802fdd1d84"
+      "737045026":
+        name: "photocraft-0.23.0-windows-arm64-symbols.zip"
+        url_suffix: "photocraft-0.23.0-windows-arm64-symbols.zip"
+        size: 6759624
+        media_type: "zip"
+        digest: "sha256:2302f42ff4282158d52ca3a6580c510349d3a5723cdbad920b1d1c0df6f99dbe"
+      "737045068":
+        name: "photocraft-0.23.0-windows-arm64.msi"
+        url_suffix: "photocraft-0.23.0-windows-arm64.msi"
+        size: 111538176
+        media_type: "application/x-msi"
+        digest: "sha256:e262ca15dd0d51521526785e9de7c6ea1fffa07db2d0c20e269cf84bc9e2dbc2"
+      "737045089":
+        name: "photocraft-0.23.0-windows-x64-portable.zip"
+        url_suffix: "photocraft-0.23.0-windows-x64-portable.zip"
+        size: 143076507
+        media_type: "zip"
+        digest: "sha256:36ba00f818f5ce307478242bae577d747e7a09d47a9a7316cce834e37a9049fd"
+      "737045175":
+        name: "photocraft-0.23.0-windows-x64-symbols.zip"
+        url_suffix: "photocraft-0.23.0-windows-x64-symbols.zip"
+        size: 7259461
+        media_type: "zip"
+        digest: "sha256:951840bfb4dacf1eb841e340def133f85927a01ce6b0226b248c4956b7ddb044"
+      "737045212":
+        name: "photocraft-0.23.0-windows-x64.msi"
+        url_suffix: "photocraft-0.23.0-windows-x64.msi"
+        size: 118390784
+        media_type: "application/x-msi"
+        digest: "sha256:eac24e0e5a675c3cb50d25752138d63c405f0fb9482163968f0553d04653c789"
+      "737045218":
+        name: "photocraft-cli-0.23.0-macos-universal.zip"
+        url_suffix: "photocraft-cli-0.23.0-macos-universal.zip"
+        size: 120430132
+        media_type: "zip"
+        digest: "sha256:4b5ce645ce682960afbbece76d188f51ec58500f3ed52f1beb0d8d5121f0f977"
+      "737045341":
+        name: "photocraft-web-0.23.0.zip"
+        url_suffix: "photocraft-web-0.23.0.zip"
+        size: 16041654
+        media_type: "zip"
+        digest: "sha256:363cb0c04462f277012d603b4ce5d18cae9f841a2398546142230e86b365b7bc"
+      "737045412":
+        name: "release-signing-key.asc"
+        url_suffix: "release-signing-key.asc"
+        size: 803
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8e6925a173d6a7134118da099948de4d9eeec7c1c0770998aec33c9d3f484740"
+  "442467332":
+    tag: "v0.23.1"
+    title: "PhotoCraft v0.23.1"
+    url: "https://github.com/storytold/photocraft/releases/tag/v0.23.1"
+    created_at: "2026-11-12T02:55:05Z"
+    published_at: "2026-11-12T05:07:51Z"
+    updated_at: "2026-11-12T05:07:51Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/storytold/photocraft/zipball/v0.23.1"
+    source_tar_url: "https://api.github.com/repos/storytold/photocraft/tarball/v0.23.1"
+    download_base: "https://github.com/storytold/photocraft/releases/download/v0.23.1/"
+    assets:
+      "737932407":
+        name: "photocraft-0.23.1-freebsd-x86_64.tar.gz"
+        url_suffix: "photocraft-0.23.1-freebsd-x86_64.tar.gz"
+        size: 138556397
+        media_type: "application/x-gtar"
+        digest: "sha256:75ab8fd294fb82b88d36e48e237297f07bb410a3004206adeca71118ad5b2eeb"
+      "737932409":
+        name: "SHA256SUMS.txt.asc"
+        url_suffix: "SHA256SUMS.txt.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:e7f0c8b42029056d6fd27207a2829a3aae9dbd26d7a2b4a9f2b75b41214f294d"
+      "737932410":
+        name: "photocraft-0.23.1-linux-aarch64.AppImage"
+        url_suffix: "photocraft-0.23.1-linux-aarch64.AppImage"
+        size: 126708232
+        media_type: "application/vnd.appimage"
+        digest: "sha256:e43d4debbe66cf0ea27626097f2756848176a5540a3de59252c85dd3c7698246"
+      "737932411":
+        name: "photocraft-0.23.1-freebsd-aarch64.tar.gz"
+        url_suffix: "photocraft-0.23.1-freebsd-aarch64.tar.gz"
+        size: 131007095
+        media_type: "application/x-gtar"
+        digest: "sha256:4eb051274dd320dee65cbba8c0337ac02571fedbcbd242385cc96fe30e94bfc4"
+      "737932412":
+        name: "SHA256SUMS.txt"
+        url_suffix: "SHA256SUMS.txt"
+        size: 5341
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:622c58e89cff28c32946d6acdba1a2a22e009c86813a8e094ef0391fe4b72b88"
+      "737932417":
+        name: "photocraft-0.23.1-linux-aarch64.AppImage.asc"
+        url_suffix: "photocraft-0.23.1-linux-aarch64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:3cc051c0ceb53214f8d597d29b7ee4a633ab16bfc0bc4222d25e252aa9361c27"
+      "737932425":
+        name: "photocraft-0.23.1-linux-aarch64.AppImage.zsync"
+        url_suffix: "photocraft-0.23.1-linux-aarch64.AppImage.zsync"
+        size: 216797
+        digest: "sha256:2efbd42dec446b8bab9791d5c20716d270de89ec50fa96447ba4364621ba51c5"
+      "737932435":
+        name: "photocraft-0.23.1-linux-aarch64.AppImage.zsync.asc"
+        url_suffix: "photocraft-0.23.1-linux-aarch64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:1edd7e6c1ae2c087ee6b7a99bcdd25665e48dc80c0ab771cc23eb380603b8982"
+      "737932451":
+        name: "photocraft-0.23.1-linux-aarch64.deb"
+        url_suffix: "photocraft-0.23.1-linux-aarch64.deb"
+        size: 137080668
+        media_type: "application/x-debian-package"
+        digest: "sha256:ee297409f1efc0a0b648eb0b44b0c879e3cc5408dc149ffda1e630a5a204f388"
+      "737932465":
+        name: "photocraft-0.23.1-linux-aarch64.deb.asc"
+        url_suffix: "photocraft-0.23.1-linux-aarch64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:16092c9f98bbea70c1b3ede200765396b5302544822104af9ee9a160a695e80f"
+      "737932481":
+        name: "photocraft-0.23.1-linux-aarch64.flatpak"
+        url_suffix: "photocraft-0.23.1-linux-aarch64.flatpak"
+        size: 97849408
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:0f1ac08924c876b86e093ada9e8693f95b55be613d5ee7896d4d3d72c5d66786"
+      "737932756":
+        name: "photocraft-0.23.1-linux-aarch64.flatpak.asc"
+        url_suffix: "photocraft-0.23.1-linux-aarch64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:6bf5a56226a1790cfb84aa99bae80d1af9dcb2126fdbe7e6cc5190fc29a04427"
+      "737932762":
+        name: "photocraft-0.23.1-linux-aarch64.oci-manifest.json"
+        url_suffix: "photocraft-0.23.1-linux-aarch64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:b6e98ea0be894bbd2c9a35acbed1a6aa2cbc87294f9f9cc1010efad4bdbda93c"
+      "737932777":
+        name: "photocraft-0.23.1-linux-aarch64.oci.sig"
+        url_suffix: "photocraft-0.23.1-linux-aarch64.oci.sig"
+        size: 389
+        media_type: "application/pgp-signature"
+        digest: "sha256:021d76288734aeb0d189f454a222401c0b905b7d67b076e5ca29ea9827728a3f"
+      "737932787":
+        name: "photocraft-0.23.1-linux-aarch64.pkg.tar.zst"
+        url_suffix: "photocraft-0.23.1-linux-aarch64.pkg.tar.zst"
+        size: 107196318
+        media_type: "application/zstd"
+        digest: "sha256:3acff2bd3c7e815496d505fb463f540ea3124557a32fbbaeb13942cc80e900f8"
+      "737932793":
+        name: "photocraft-0.23.1-linux-aarch64.pkg.tar.zst.sig"
+        url_suffix: "photocraft-0.23.1-linux-aarch64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:30216a0bceb0d98da40e09475dadf7531c8208686d359ee570299bc7ca04a6e8"
+      "737932807":
+        name: "photocraft-0.23.1-linux-aarch64.rpm"
+        url_suffix: "photocraft-0.23.1-linux-aarch64.rpm"
+        size: 135862759
+        media_type: "application/x-rpm"
+        digest: "sha256:10349d21e52c62cd847a6992c306f123913beeaf25217c9b817a038f96734716"
+      "737932823":
+        name: "photocraft-0.23.1-linux-aarch64.rpm.asc"
+        url_suffix: "photocraft-0.23.1-linux-aarch64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:44bce8a6ab3d7b7ec7034124ca4e090c7f300b6c585dc83104caf16d73689fcf"
+      "737932825":
+        name: "photocraft-0.23.1-linux-aarch64.tar.gz"
+        url_suffix: "photocraft-0.23.1-linux-aarch64.tar.gz"
+        size: 133431133
+        media_type: "application/x-gtar"
+        digest: "sha256:fcc81c38ae62c72fa9f4fd1ec3d18396493ba261662792d6995cc35905ce71d2"
+      "737932846":
+        name: "photocraft-0.23.1-linux-aarch64.tar.gz.asc"
+        url_suffix: "photocraft-0.23.1-linux-aarch64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:5a6204e045b334c8531fa3ab15cd5db08e13f980c8ca6df5203f4e65404aeb68"
+      "737932865":
+        name: "photocraft-0.23.1-linux-riscv64.deb"
+        url_suffix: "photocraft-0.23.1-linux-riscv64.deb"
+        size: 138559646
+        media_type: "application/x-debian-package"
+        digest: "sha256:b3adf0584865cd8722bd0c48f30273f38ab4234f6326ee1aff17e18e883b7a62"
+      "737932868":
+        name: "photocraft-0.23.1-linux-riscv64.deb.asc"
+        url_suffix: "photocraft-0.23.1-linux-riscv64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:5f3e072b1fd9c440904ac95da8c1f6b21a7277978cd8d003edf275d433cf6123"
+      "737932894":
+        name: "photocraft-0.23.1-linux-riscv64.rpm"
+        url_suffix: "photocraft-0.23.1-linux-riscv64.rpm"
+        size: 137901665
+        media_type: "application/x-rpm"
+        digest: "sha256:2df8f0eeb540634bb26f64382e35a547417080d8e360c57b398ac270f652ff57"
+      "737933045":
+        name: "photocraft-0.23.1-linux-riscv64.rpm.asc"
+        url_suffix: "photocraft-0.23.1-linux-riscv64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:76f367ca86ab10c813b1293329186db4afb35eac42621adb102c4b2c31fbc4ce"
+      "737933049":
+        name: "photocraft-0.23.1-linux-riscv64.tar.gz"
+        url_suffix: "photocraft-0.23.1-linux-riscv64.tar.gz"
+        size: 136638574
+        media_type: "application/x-gtar"
+        digest: "sha256:35e370e3672631d8e73930cc66916009c95d084b6e877866a161c70e0dc77d79"
+      "737933072":
+        name: "photocraft-0.23.1-linux-riscv64.tar.gz.asc"
+        url_suffix: "photocraft-0.23.1-linux-riscv64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:5a35cd6af78342493edb768738bbbeff9ead53a1e18ea511c6fe344b2c9a5ade"
+      "737933109":
+        name: "photocraft-0.23.1-linux-x86_64.AppImage"
+        url_suffix: "photocraft-0.23.1-linux-x86_64.AppImage"
+        size: 132164088
+        media_type: "application/vnd.appimage"
+        digest: "sha256:05747b3e527e1e0a0c1de39970361cf38c8fca7e8d3e3601ef2082fb0e6dd17f"
+      "737933175":
+        name: "photocraft-0.23.1-linux-x86_64.AppImage.asc"
+        url_suffix: "photocraft-0.23.1-linux-x86_64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:4fda29f0c784094c89e3d8ddb8cc319cb5bdd4d8af9f9302ad9f793713b93425"
+      "737933186":
+        name: "photocraft-0.23.1-linux-x86_64.AppImage.zsync.asc"
+        url_suffix: "photocraft-0.23.1-linux-x86_64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:a57e518992327e5b62e56a0b15e656996cc23443652c2740b013558b7afb8d45"
+      "737933188":
+        name: "photocraft-0.23.1-linux-x86_64.AppImage.zsync"
+        url_suffix: "photocraft-0.23.1-linux-x86_64.AppImage.zsync"
+        size: 226119
+        digest: "sha256:58898af5629e782298045a83a74b9b5801806f17f3300a04dcd42db88f937d15"
+      "737933194":
+        name: "photocraft-0.23.1-linux-x86_64.deb"
+        url_suffix: "photocraft-0.23.1-linux-x86_64.deb"
+        size: 141624678
+        media_type: "application/x-debian-package"
+        digest: "sha256:baabdcdbe46df2f72ccf6ecc2e98be00fbc33dbd4c1cd9426362a89a4b95f673"
+      "737933209":
+        name: "photocraft-0.23.1-linux-x86_64.deb.asc"
+        url_suffix: "photocraft-0.23.1-linux-x86_64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:88e96d6b732d1863b0e63668bf1ededdaae8ed7cfb6ab4f751fbb3e44acdb5ea"
+      "737933211":
+        name: "photocraft-0.23.1-linux-x86_64.flatpak"
+        url_suffix: "photocraft-0.23.1-linux-x86_64.flatpak"
+        size: 104570384
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:5c9deb58f07bd54f323a5d985bed295b4c5b15789e02651e2f203d5e8ef211a5"
+      "737933232":
+        name: "photocraft-0.23.1-linux-x86_64.flatpak.asc"
+        url_suffix: "photocraft-0.23.1-linux-x86_64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:3aea55a4751eb05f9d2649a9d50bd13b44fd2c0fe70390f0d99d8be2213445b8"
+      "737933254":
+        name: "photocraft-0.23.1-linux-x86_64.oci-manifest.json"
+        url_suffix: "photocraft-0.23.1-linux-x86_64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:2f3c5c19f988bbc78e910e1904eb1b537bd3092a54dc2a0e12513710923ec8c9"
+      "737933269":
+        name: "photocraft-0.23.1-linux-x86_64.oci.sig"
+        url_suffix: "photocraft-0.23.1-linux-x86_64.oci.sig"
+        size: 386
+        media_type: "application/pgp-signature"
+        digest: "sha256:75f08c561476887c6d6c9293a8fa8e715ffd7f261304df5c2f2dcf23a6baeef5"
+      "737933280":
+        name: "photocraft-0.23.1-linux-x86_64.pkg.tar.zst"
+        url_suffix: "photocraft-0.23.1-linux-x86_64.pkg.tar.zst"
+        size: 111090110
+        media_type: "application/zstd"
+        digest: "sha256:6f55b05a7880a6db38374ac7985730304bcc9b499dae0f18f9d2dbd6bbb8d201"
+      "737933294":
+        name: "photocraft-0.23.1-linux-x86_64.pkg.tar.zst.sig"
+        url_suffix: "photocraft-0.23.1-linux-x86_64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:fbb0a056363e497ba8555b6645abf45690c5e97972383154657b321f7d84cb9d"
+      "737933309":
+        name: "photocraft-0.23.1-linux-x86_64.rpm"
+        url_suffix: "photocraft-0.23.1-linux-x86_64.rpm"
+        size: 140658662
+        media_type: "application/x-rpm"
+        digest: "sha256:6de9029b7ae426e3fff794840095b47471b16e0937086da22aa6178466c15636"
+      "737933312":
+        name: "photocraft-0.23.1-linux-x86_64.rpm.asc"
+        url_suffix: "photocraft-0.23.1-linux-x86_64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:08bc044e2907e41f86e7e154d7c64905860f9b78059da23661488922b716fe20"
+      "737933345":
+        name: "photocraft-0.23.1-linux-x86_64.tar.gz"
+        url_suffix: "photocraft-0.23.1-linux-x86_64.tar.gz"
+        size: 139481224
+        media_type: "application/x-gtar"
+        digest: "sha256:4383aef67a07cc370ad250a6ed60015205d3e6c463faf3ff4b0f67b8178ccfc8"
+      "737933447":
+        name: "photocraft-0.23.1-linux-x86_64.tar.gz.asc"
+        url_suffix: "photocraft-0.23.1-linux-x86_64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:ce93bd2ca30585c7ecc9c7a9484c9c89a564a03f5eb281d66a5cc885486de42d"
+      "737933457":
+        name: "photocraft-0.23.1-macos-universal.dmg"
+        url_suffix: "photocraft-0.23.1-macos-universal.dmg"
+        size: 274188048
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:606a52917188c65dc71709781180a0e3244e0f3b7f40b2f5b80170e87364420d"
+      "737933472":
+        name: "photocraft-0.23.1-windows-arm64-portable.zip"
+        url_suffix: "photocraft-0.23.1-windows-arm64-portable.zip"
+        size: 136391920
+        media_type: "zip"
+        digest: "sha256:f02f0e754072836355b4aa8c46496fb0acff18a5fc780084bb4a40a2d9e1ab76"
+      "737933529":
+        name: "photocraft-0.23.1-windows-arm64-symbols.zip"
+        url_suffix: "photocraft-0.23.1-windows-arm64-symbols.zip"
+        size: 6801101
+        media_type: "zip"
+        digest: "sha256:5542e387a5f35b22e60544ff38e3485bbebe480af3775d9c4d0b9a909ba70526"
+      "737933574":
+        name: "photocraft-0.23.1-windows-arm64.msi"
+        url_suffix: "photocraft-0.23.1-windows-arm64.msi"
+        size: 111599616
+        media_type: "application/x-msi"
+        digest: "sha256:d5fb081eaab54316b224cc1518e6ebace96b711b059828f4b397cc04e530611c"
+      "737933580":
+        name: "photocraft-0.23.1-windows-x64-portable.zip"
+        url_suffix: "photocraft-0.23.1-windows-x64-portable.zip"
+        size: 143135209
+        media_type: "zip"
+        digest: "sha256:6317e764ecfa804227c38079311bea489283ab383ef040c81ef2fd6d86bd60b1"
+      "737933643":
+        name: "photocraft-0.23.1-windows-x64-symbols.zip"
+        url_suffix: "photocraft-0.23.1-windows-x64-symbols.zip"
+        size: 7248801
+        media_type: "zip"
+        digest: "sha256:61ceb478aa01d4dee19cb9fe2e1fe6367ca1a5974a20771c954885c21ba2bdd5"
+      "737933692":
+        name: "photocraft-0.23.1-windows-x64.msi"
+        url_suffix: "photocraft-0.23.1-windows-x64.msi"
+        size: 118427648
+        media_type: "application/x-msi"
+        digest: "sha256:de757802d8a12a41718ba24248c281d83f3bbecd64c5230f46f10c7f62070671"
+      "737933773":
+        name: "photocraft-cli-0.23.1-macos-universal.zip"
+        url_suffix: "photocraft-cli-0.23.1-macos-universal.zip"
+        size: 120474491
+        media_type: "zip"
+        digest: "sha256:a6ecdc6d4add02881642bda0a0b191b4974118651f2ec5641dc71b2c3ff4b752"
+      "737933950":
+        name: "photocraft-web-0.23.1.zip"
+        url_suffix: "photocraft-web-0.23.1.zip"
+        size: 16064050
+        media_type: "zip"
+        digest: "sha256:3a498eb517bca6cec89f9c6b1fc6448269a05428c8a3a4637c16817da157f03c"
+      "737933962":
         name: "release-signing-key.asc"
         url_suffix: "release-signing-key.asc"
         size: 803

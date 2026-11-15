@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1398091865
 repository: "storytold/filmcraft"
-collected_at: "2026-11-10T21:14:30Z"
+collected_at: "2026-11-15T11:06:23Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-10T21:14:30Z"
+observed_at: "2026-11-15T11:06:23Z"
 releases:
   "402106416":
     tag: "v0.1.0"
@@ -3781,6 +3781,626 @@ releases:
         media_type: "zip"
         digest: "sha256:3215de38749b38126e5c12ace0cbb6ab8412cd59a6773f4d302bf9ff09edb22a"
       "727309309":
+        name: "release-signing-key.asc"
+        url_suffix: "release-signing-key.asc"
+        size: 803
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8e6925a173d6a7134118da099948de4d9eeec7c1c0770998aec33c9d3f484740"
+  "441942006":
+    tag: "v0.20.0"
+    title: "FilmCraft v0.20.0"
+    url: "https://github.com/storytold/filmcraft/releases/tag/v0.20.0"
+    created_at: "2026-11-11T16:02:02Z"
+    published_at: "2026-11-11T16:35:54Z"
+    updated_at: "2026-11-11T16:35:54Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/storytold/filmcraft/zipball/v0.20.0"
+    source_tar_url: "https://api.github.com/repos/storytold/filmcraft/tarball/v0.20.0"
+    download_base: "https://github.com/storytold/filmcraft/releases/download/v0.20.0/"
+    assets:
+      "736149396":
+        name: "filmcraft-0.20.0-freebsd-x86_64.tar.gz"
+        url_suffix: "filmcraft-0.20.0-freebsd-x86_64.tar.gz"
+        size: 111258391
+        media_type: "application/x-gtar"
+        digest: "sha256:a2e1d30278cc1e339b041cadb92956c20a49be40f3e377b02ac3b9a4e13c94bc"
+      "736149397":
+        name: "filmcraft-0.20.0-freebsd-aarch64.tar.gz"
+        url_suffix: "filmcraft-0.20.0-freebsd-aarch64.tar.gz"
+        size: 106451946
+        media_type: "application/x-gtar"
+        digest: "sha256:d34fe41bed022b702a447f60888f68375f35c3c39066a71f92ebf494ed2b85a8"
+      "736149398":
+        name: "SHA256SUMS.txt.asc"
+        url_suffix: "SHA256SUMS.txt.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8ef6d991f73e91776c959d7bf7ccdab8522025f0c411c4d1d815f52344478f4e"
+      "736149399":
+        name: "filmcraft-0.20.0-linux-aarch64.AppImage"
+        url_suffix: "filmcraft-0.20.0-linux-aarch64.AppImage"
+        size: 102930952
+        media_type: "application/vnd.appimage"
+        digest: "sha256:ffe145c391c92610df127673f1f68d94549eb32e29fbe5454fc8f5fe546e1287"
+      "736149400":
+        name: "SHA256SUMS.txt"
+        url_suffix: "SHA256SUMS.txt"
+        size: 5076
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:35d07dc9515334c7d2d96a78457155afab395ce8d7212e5e522d971e366a08c4"
+      "736149428":
+        name: "filmcraft-0.20.0-linux-aarch64.AppImage.asc"
+        url_suffix: "filmcraft-0.20.0-linux-aarch64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:05c310ab192fb2946ea7a2080a1b71032f2b0baa5b8bae9f70e2c336a63baba7"
+      "736149430":
+        name: "filmcraft-0.20.0-linux-aarch64.AppImage.zsync"
+        url_suffix: "filmcraft-0.20.0-linux-aarch64.AppImage.zsync"
+        size: 176160
+        digest: "sha256:453ec633f69cb05b85890a81a90a7ea19128ba77cf3ae29499818b8d9104691d"
+      "736149454":
+        name: "filmcraft-0.20.0-linux-aarch64.AppImage.zsync.asc"
+        url_suffix: "filmcraft-0.20.0-linux-aarch64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:49ca45584ed68a9ab767ea0043431a8778c2b02fed34b6cac04d813440ea13a9"
+      "736149456":
+        name: "filmcraft-0.20.0-linux-aarch64.deb"
+        url_suffix: "filmcraft-0.20.0-linux-aarch64.deb"
+        size: 110878110
+        media_type: "application/x-debian-package"
+        digest: "sha256:f1fedadddf960d74669507209caeaa74d2f5573d39101674b172af929413e8e0"
+      "736149482":
+        name: "filmcraft-0.20.0-linux-aarch64.deb.asc"
+        url_suffix: "filmcraft-0.20.0-linux-aarch64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:07bd66ab7b756c3c29b43bb114853c38d75fe69541cc6fa5a158b69f841d6a42"
+      "736149510":
+        name: "filmcraft-0.20.0-linux-aarch64.flatpak"
+        url_suffix: "filmcraft-0.20.0-linux-aarch64.flatpak"
+        size: 78099104
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:55507fc31e3f4401d61eb99db267e170eeec7d4bccd070d262710f524273dfe1"
+      "736149554":
+        name: "filmcraft-0.20.0-linux-aarch64.flatpak.asc"
+        url_suffix: "filmcraft-0.20.0-linux-aarch64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:ef89f819b22ee08da5b4e05461b6cee058c4c09c698469133ad3eddb294e9100"
+      "736149570":
+        name: "filmcraft-0.20.0-linux-aarch64.oci-manifest.json"
+        url_suffix: "filmcraft-0.20.0-linux-aarch64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:758e948b3e844d03b9f34daac7c7c45dd1b2bae47e6dc028642f7200c75e7e9c"
+      "736149581":
+        name: "filmcraft-0.20.0-linux-aarch64.oci.sig"
+        url_suffix: "filmcraft-0.20.0-linux-aarch64.oci.sig"
+        size: 387
+        media_type: "application/pgp-signature"
+        digest: "sha256:d38fd2cc2440e4a1c185862e14ba74b61ef946ee6b6fb8af0034376bef7a9164"
+      "736149602":
+        name: "filmcraft-0.20.0-linux-aarch64.pkg.tar.zst"
+        url_suffix: "filmcraft-0.20.0-linux-aarch64.pkg.tar.zst"
+        size: 86372859
+        media_type: "application/zstd"
+        digest: "sha256:98ae4bae77e19dacdd5db3d65e2c58945c2201a7336a6e3b913c85e022153dec"
+      "736149613":
+        name: "filmcraft-0.20.0-linux-aarch64.pkg.tar.zst.sig"
+        url_suffix: "filmcraft-0.20.0-linux-aarch64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:afa5a4999a139c106c949076bb22ed550fc5dc18f498711691d9e3dcc8caeb11"
+      "736149623":
+        name: "filmcraft-0.20.0-linux-aarch64.rpm"
+        url_suffix: "filmcraft-0.20.0-linux-aarch64.rpm"
+        size: 110021676
+        media_type: "application/x-rpm"
+        digest: "sha256:7885cd361f26a3bdf2ff735cc20a42ad0e281c04ef2aa4c7fb8911cb1c4d45a8"
+      "736149643":
+        name: "filmcraft-0.20.0-linux-aarch64.rpm.asc"
+        url_suffix: "filmcraft-0.20.0-linux-aarch64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:25fd7cb6945252bfcca5deb88204396a0c6a8d01076b97616dbbdd054faf5488"
+      "736149645":
+        name: "filmcraft-0.20.0-linux-aarch64.tar.gz"
+        url_suffix: "filmcraft-0.20.0-linux-aarch64.tar.gz"
+        size: 108225353
+        media_type: "application/x-gtar"
+        digest: "sha256:c29d5d531807a155125f2526a7a960966b086ee7574be5d35d717349714038c0"
+      "736149655":
+        name: "filmcraft-0.20.0-linux-aarch64.tar.gz.asc"
+        url_suffix: "filmcraft-0.20.0-linux-aarch64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d9f54f5c8ef66ad1bb1233acdd2ac19d2c2b53434a77930fd2ced45f429873d7"
+      "736149670":
+        name: "filmcraft-0.20.0-linux-riscv64.deb"
+        url_suffix: "filmcraft-0.20.0-linux-riscv64.deb"
+        size: 108595160
+        media_type: "application/x-debian-package"
+        digest: "sha256:8cefb014e436294f0c7b27c9c981a1754d37a553201ec0845b2fea557f639756"
+      "736149699":
+        name: "filmcraft-0.20.0-linux-riscv64.deb.asc"
+        url_suffix: "filmcraft-0.20.0-linux-riscv64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:7ce3dabe6efda620d947eb628da7c3b65aa77b70021f20c822339c44fed7019a"
+      "736149735":
+        name: "filmcraft-0.20.0-linux-riscv64.rpm"
+        url_suffix: "filmcraft-0.20.0-linux-riscv64.rpm"
+        size: 108132442
+        media_type: "application/x-rpm"
+        digest: "sha256:7ea716dfdf51438bd86f96ec03823c7b9d5cbe6b2009ef32f276aa0cba6c3521"
+      "736149824":
+        name: "filmcraft-0.20.0-linux-riscv64.rpm.asc"
+        url_suffix: "filmcraft-0.20.0-linux-riscv64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:2ba2638257b5aea440ea38d4046ae76b3093b42670eeba71d9973d2bf0412f8b"
+      "736149831":
+        name: "filmcraft-0.20.0-linux-riscv64.tar.gz.asc"
+        url_suffix: "filmcraft-0.20.0-linux-riscv64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:1b4781c435fd5544d8e9d53c9fcfc1bfe855eadb96b2283ce53f308c78946644"
+      "736149832":
+        name: "filmcraft-0.20.0-linux-riscv64.tar.gz"
+        url_suffix: "filmcraft-0.20.0-linux-riscv64.tar.gz"
+        size: 107246196
+        media_type: "application/x-gtar"
+        digest: "sha256:96c3789cb84c8302051a76122844eccb58387bb29f8846610b9a5a3e6113e22f"
+      "736149853":
+        name: "filmcraft-0.20.0-linux-x86_64.AppImage"
+        url_suffix: "filmcraft-0.20.0-linux-x86_64.AppImage"
+        size: 106260984
+        media_type: "application/vnd.appimage"
+        digest: "sha256:f5d996f673879147852a184f90039cc414a66fcd905a49f9c05b35266b9ea75b"
+      "736149854":
+        name: "filmcraft-0.20.0-linux-x86_64.AppImage.asc"
+        url_suffix: "filmcraft-0.20.0-linux-x86_64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8717a7120fcd81216dd206794c2bba4a951b9178aaad3e87e86b371df29924c7"
+      "736149860":
+        name: "filmcraft-0.20.0-linux-x86_64.AppImage.zsync"
+        url_suffix: "filmcraft-0.20.0-linux-x86_64.AppImage.zsync"
+        size: 181849
+        digest: "sha256:98415b75e4c5d31c16052afc9b999542c9557d817d02fd79a10c7cfdb0c61973"
+      "736149877":
+        name: "filmcraft-0.20.0-linux-x86_64.AppImage.zsync.asc"
+        url_suffix: "filmcraft-0.20.0-linux-x86_64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:85f553fd136a48e42e85b67eb18451502cdeb926be0d5109ced02ff23053bff4"
+      "736149909":
+        name: "filmcraft-0.20.0-linux-x86_64.deb"
+        url_suffix: "filmcraft-0.20.0-linux-x86_64.deb"
+        size: 113601244
+        media_type: "application/x-debian-package"
+        digest: "sha256:5c2a0c81769ecf54db5e9d11886e8ba08d705b9bc3a8cb9ede4d23955b21aa85"
+      "736149913":
+        name: "filmcraft-0.20.0-linux-x86_64.deb.asc"
+        url_suffix: "filmcraft-0.20.0-linux-x86_64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:f563a67f787e867c496b576d910f126282b0ede335cdde7adf18156d23beb490"
+      "736149933":
+        name: "filmcraft-0.20.0-linux-x86_64.flatpak"
+        url_suffix: "filmcraft-0.20.0-linux-x86_64.flatpak"
+        size: 82209408
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:e911b344025c4cd6509a6e013b50d193ca0ba47dc19f8a4a59f5015caef2e442"
+      "736150001":
+        name: "filmcraft-0.20.0-linux-x86_64.flatpak.asc"
+        url_suffix: "filmcraft-0.20.0-linux-x86_64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:9116cc474f8751f67bb6585eb4ad1ed10bb3ec79927de0c022633702ea63355b"
+      "736150003":
+        name: "filmcraft-0.20.0-linux-x86_64.oci-manifest.json"
+        url_suffix: "filmcraft-0.20.0-linux-x86_64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:45617ff188a562ea7f9ababba775138f8b62fabcc315201216ca2a07825d9fe7"
+      "736150044":
+        name: "filmcraft-0.20.0-linux-x86_64.oci.sig"
+        url_suffix: "filmcraft-0.20.0-linux-x86_64.oci.sig"
+        size: 385
+        media_type: "application/pgp-signature"
+        digest: "sha256:336edc34133764347cf6c6a1450f9e52c31aef02a86be2b5cf364a47489afd59"
+      "736150046":
+        name: "filmcraft-0.20.0-linux-x86_64.pkg.tar.zst"
+        url_suffix: "filmcraft-0.20.0-linux-x86_64.pkg.tar.zst"
+        size: 88598049
+        media_type: "application/zstd"
+        digest: "sha256:46b3fc5f4ba04ea1ea5131f77fdb2c1d99fd0fc891fade52478384b40fa54ca0"
+      "736150081":
+        name: "filmcraft-0.20.0-linux-x86_64.pkg.tar.zst.sig"
+        url_suffix: "filmcraft-0.20.0-linux-x86_64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:92b7ce8958bfb9eb4ff7a39b1c8c2d04d3b21a3e014828474cb8f5f63587c711"
+      "736150090":
+        name: "filmcraft-0.20.0-linux-x86_64.rpm"
+        url_suffix: "filmcraft-0.20.0-linux-x86_64.rpm"
+        size: 112918634
+        media_type: "application/x-rpm"
+        digest: "sha256:171be88a0a58fec9b644cc15c91461e1dde4a3b77b624e121cbb0f4900bf346f"
+      "736150104":
+        name: "filmcraft-0.20.0-linux-x86_64.tar.gz"
+        url_suffix: "filmcraft-0.20.0-linux-x86_64.tar.gz"
+        size: 112075855
+        media_type: "application/x-gtar"
+        digest: "sha256:35465d71bde189f50cacaf3e4fd89c4ca6377faf8eb48eaa2f065b8e54593236"
+      "736150105":
+        name: "filmcraft-0.20.0-linux-x86_64.rpm.asc"
+        url_suffix: "filmcraft-0.20.0-linux-x86_64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:69959b521d83bf0acce573f3e646d1fa6c6518b81e0cf9c8efc1d3e3f107fbb0"
+      "736150142":
+        name: "filmcraft-0.20.0-linux-x86_64.tar.gz.asc"
+        url_suffix: "filmcraft-0.20.0-linux-x86_64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:489fd8c27166bc1b42a2821c8f6e524d1c6c1e62475cdeb08f732ad79a6aff32"
+      "736150164":
+        name: "filmcraft-0.20.0-macos-universal.dmg"
+        url_suffix: "filmcraft-0.20.0-macos-universal.dmg"
+        size: 118619822
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:6cceaa0e6a5f7a6848c128b13be1b669bc0e5a69f4aeb362d97120c7cca2cc88"
+      "736150208":
+        name: "filmcraft-0.20.0-windows-arm64-portable.zip"
+        url_suffix: "filmcraft-0.20.0-windows-arm64-portable.zip"
+        size: 108978611
+        media_type: "zip"
+        digest: "sha256:6ffdd4aefd77971782087c30574801d1c770cb2b1bf1d32f64cc357d7edb4863"
+      "736150283":
+        name: "filmcraft-0.20.0-windows-arm64.msi"
+        url_suffix: "filmcraft-0.20.0-windows-arm64.msi"
+        size: 89034752
+        media_type: "application/x-msi"
+        digest: "sha256:881f9fa044e095690e03b2726590074f007cc2f05bb01fb9481358a5a98f15c2"
+      "736150309":
+        name: "filmcraft-0.20.0-windows-x64-portable.zip"
+        url_suffix: "filmcraft-0.20.0-windows-x64-portable.zip"
+        size: 113362703
+        media_type: "zip"
+        digest: "sha256:41c758e08646e488f2693747ed39b6e20ff4ae54c78497a87882c4f3aec74fad"
+      "736150317":
+        name: "filmcraft-0.20.0-windows-x64.msi"
+        url_suffix: "filmcraft-0.20.0-windows-x64.msi"
+        size: 93343744
+        media_type: "application/x-msi"
+        digest: "sha256:10d3b7748b609e5a90d07c4f16ff4be9dc579ebc2d6e77fceeb7cf2e7b3a1dc8"
+      "736150338":
+        name: "filmcraft-cli-0.20.0-macos-universal.zip"
+        url_suffix: "filmcraft-cli-0.20.0-macos-universal.zip"
+        size: 99992052
+        media_type: "zip"
+        digest: "sha256:e8db902a73241949aa92d0bc38efd3ff3757db7401e55b9e03068d8c940c55c1"
+      "736150397":
+        name: "filmcraft-web-0.20.0.zip"
+        url_suffix: "filmcraft-web-0.20.0.zip"
+        size: 15613833
+        media_type: "zip"
+        digest: "sha256:c1c6f0b438a9b42ad358099d0445bf045b0ffdd10b3d6f1dcc69d600b1fbf15c"
+      "736150451":
+        name: "release-signing-key.asc"
+        url_suffix: "release-signing-key.asc"
+        size: 803
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8e6925a173d6a7134118da099948de4d9eeec7c1c0770998aec33c9d3f484740"
+  "442340656":
+    tag: "v0.20.1"
+    title: "FilmCraft v0.20.1"
+    url: "https://github.com/storytold/filmcraft/releases/tag/v0.20.1"
+    created_at: "2026-11-11T23:53:04Z"
+    published_at: "2026-11-12T00:26:09Z"
+    updated_at: "2026-11-12T00:26:09Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/storytold/filmcraft/zipball/v0.20.1"
+    source_tar_url: "https://api.github.com/repos/storytold/filmcraft/tarball/v0.20.1"
+    download_base: "https://github.com/storytold/filmcraft/releases/download/v0.20.1/"
+    assets:
+      "737425235":
+        name: "filmcraft-0.20.1-linux-aarch64.AppImage"
+        url_suffix: "filmcraft-0.20.1-linux-aarch64.AppImage"
+        size: 102885896
+        media_type: "application/vnd.appimage"
+        digest: "sha256:487c1750281285de67f68752e1154332b08993c95aee2b4271e4164ec3c33365"
+      "737425236":
+        name: "SHA256SUMS.txt"
+        url_suffix: "SHA256SUMS.txt"
+        size: 5076
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:bd183d255069cd6c6f229e17d9ce683f103533a7249e6b8b3de9b8eb2c2800fb"
+      "737425237":
+        name: "filmcraft-0.20.1-freebsd-x86_64.tar.gz"
+        url_suffix: "filmcraft-0.20.1-freebsd-x86_64.tar.gz"
+        size: 111331334
+        media_type: "application/x-gtar"
+        digest: "sha256:afa42abef34d0e52199a388e5c409a44840c4c22abb4a8de927f3372ca240612"
+      "737425238":
+        name: "SHA256SUMS.txt.asc"
+        url_suffix: "SHA256SUMS.txt.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:eac0b748730d544c957e093f41a963842421bfbd5fbfc9fd0bfdea7614f8b7f9"
+      "737425243":
+        name: "filmcraft-0.20.1-freebsd-aarch64.tar.gz"
+        url_suffix: "filmcraft-0.20.1-freebsd-aarch64.tar.gz"
+        size: 106507033
+        media_type: "application/x-gtar"
+        digest: "sha256:7acedf07cccc0034caa1817c00414564b0284afc0762bb065d62a9dbc096c017"
+      "737425261":
+        name: "filmcraft-0.20.1-linux-aarch64.AppImage.asc"
+        url_suffix: "filmcraft-0.20.1-linux-aarch64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:3cc82ed8c5efaf5a1d614550a085946ca957bf84d4eee45d9451b21f20be64f5"
+      "737425264":
+        name: "filmcraft-0.20.1-linux-aarch64.AppImage.zsync"
+        url_suffix: "filmcraft-0.20.1-linux-aarch64.AppImage.zsync"
+        size: 176083
+        digest: "sha256:42d28a5867379860c99790d131e816e914e8e4e78a04e86984121df1edf9db1f"
+      "737425297":
+        name: "filmcraft-0.20.1-linux-aarch64.AppImage.zsync.asc"
+        url_suffix: "filmcraft-0.20.1-linux-aarch64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:29aa7da7ecbcd0cb83b7ff8a3e9cf25e92c33cbfaaf4d749bf752d48e042887d"
+      "737425302":
+        name: "filmcraft-0.20.1-linux-aarch64.deb"
+        url_suffix: "filmcraft-0.20.1-linux-aarch64.deb"
+        size: 110959010
+        media_type: "application/x-debian-package"
+        digest: "sha256:2cd2d9601a80c6496ccdecd289723ab4b98f24159fc9bb524b5b333a8e79dee4"
+      "737425324":
+        name: "filmcraft-0.20.1-linux-aarch64.deb.asc"
+        url_suffix: "filmcraft-0.20.1-linux-aarch64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:915916f91b4659acde8bce3ec6e236d3b56fb7f15e722d29a69e2583eeed9b8c"
+      "737425356":
+        name: "filmcraft-0.20.1-linux-aarch64.flatpak"
+        url_suffix: "filmcraft-0.20.1-linux-aarch64.flatpak"
+        size: 78140616
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:ec4393b71707f04ca976c009172f40469557959d58147b7baa0e73fb16aeb760"
+      "737425501":
+        name: "filmcraft-0.20.1-linux-aarch64.flatpak.asc"
+        url_suffix: "filmcraft-0.20.1-linux-aarch64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:89558b55db69c7baf1a4e78c27c4ef94b0de233abfd35f0fb7971ecd8f7d3a36"
+      "737425506":
+        name: "filmcraft-0.20.1-linux-aarch64.oci-manifest.json"
+        url_suffix: "filmcraft-0.20.1-linux-aarch64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:2998414d158457ea94b48031cba3c7c679e905d882ac49564b10afc1fb68068d"
+      "737425515":
+        name: "filmcraft-0.20.1-linux-aarch64.oci.sig"
+        url_suffix: "filmcraft-0.20.1-linux-aarch64.oci.sig"
+        size: 388
+        media_type: "application/pgp-signature"
+        digest: "sha256:1e43d64064e58d3978df9e8c4f492cdd0b72f7fecef455ee5a0db18dc6b9953b"
+      "737425535":
+        name: "filmcraft-0.20.1-linux-aarch64.pkg.tar.zst"
+        url_suffix: "filmcraft-0.20.1-linux-aarch64.pkg.tar.zst"
+        size: 86427305
+        media_type: "application/zstd"
+        digest: "sha256:03506b023a736dd47f78ecdaabdba039d734650964fb5f74a7bcdb997e0293e6"
+      "737425544":
+        name: "filmcraft-0.20.1-linux-aarch64.rpm"
+        url_suffix: "filmcraft-0.20.1-linux-aarch64.rpm"
+        size: 110112992
+        media_type: "application/x-rpm"
+        digest: "sha256:c896707ea158842e32a7aa82a7e3721cde9592688f2a0ba99dcf0d8416de2077"
+      "737425546":
+        name: "filmcraft-0.20.1-linux-aarch64.tar.gz"
+        url_suffix: "filmcraft-0.20.1-linux-aarch64.tar.gz"
+        size: 108309163
+        media_type: "application/x-gtar"
+        digest: "sha256:cdce3d832620c7cf7150e6609fd98ad9702e7d4c57f827aab562e87d816ea13f"
+      "737425550":
+        name: "filmcraft-0.20.1-linux-aarch64.rpm.asc"
+        url_suffix: "filmcraft-0.20.1-linux-aarch64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:841147211cd40e8dd861e34267f5de987b0447b129dd7040730a80df50675fdc"
+      "737425557":
+        name: "filmcraft-0.20.1-linux-aarch64.pkg.tar.zst.sig"
+        url_suffix: "filmcraft-0.20.1-linux-aarch64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:9baff13ff4989024c5c994567b5a5de49ed3f5a853241b90f35ab0a7957bbd6f"
+      "737425572":
+        name: "filmcraft-0.20.1-linux-aarch64.tar.gz.asc"
+        url_suffix: "filmcraft-0.20.1-linux-aarch64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:2221b393b3a091644c4bf85d665be2210e464a3fd8fe6b9dcefbfb0a25a5c5f5"
+      "737425582":
+        name: "filmcraft-0.20.1-linux-riscv64.deb"
+        url_suffix: "filmcraft-0.20.1-linux-riscv64.deb"
+        size: 108687382
+        media_type: "application/x-debian-package"
+        digest: "sha256:990b47657806da9aeed0ccc68d51df49f9e37a3cc471fbf8655b541aedf90f80"
+      "737425588":
+        name: "filmcraft-0.20.1-linux-riscv64.deb.asc"
+        url_suffix: "filmcraft-0.20.1-linux-riscv64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d795687f0ab676752f9a4f4862de63b4752fbc926949ea080d4f4bda82af49c4"
+      "737425611":
+        name: "filmcraft-0.20.1-linux-riscv64.rpm"
+        url_suffix: "filmcraft-0.20.1-linux-riscv64.rpm"
+        size: 108215598
+        media_type: "application/x-rpm"
+        digest: "sha256:3631dae059a1facdacff625d00159ebc759e4d154ac45dec859d311ae9463083"
+      "737425759":
+        name: "filmcraft-0.20.1-linux-riscv64.rpm.asc"
+        url_suffix: "filmcraft-0.20.1-linux-riscv64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:4086ffb5089d61d0c358b08d5d567534bb7f5bbb370ebab1fa5e8bed2407aea1"
+      "737425779":
+        name: "filmcraft-0.20.1-linux-riscv64.tar.gz"
+        url_suffix: "filmcraft-0.20.1-linux-riscv64.tar.gz"
+        size: 107338020
+        media_type: "application/x-gtar"
+        digest: "sha256:575b6a4b626fbf90c468aaafc9540f93c3cbcee641c0eaffc15fbb9dd1bdc713"
+      "737425803":
+        name: "filmcraft-0.20.1-linux-riscv64.tar.gz.asc"
+        url_suffix: "filmcraft-0.20.1-linux-riscv64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:46b4e085edc67a54d7f0a639531bd2b9b786625495e0848b93fdd4366ea253e8"
+      "737425817":
+        name: "filmcraft-0.20.1-linux-x86_64.AppImage"
+        url_suffix: "filmcraft-0.20.1-linux-x86_64.AppImage"
+        size: 106338808
+        media_type: "application/vnd.appimage"
+        digest: "sha256:4a25aecb2e9481b65e7353528bca9e4a8c5388dd55f1486ffe64502e08bdfa02"
+      "737425822":
+        name: "filmcraft-0.20.1-linux-x86_64.AppImage.asc"
+        url_suffix: "filmcraft-0.20.1-linux-x86_64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:0bc392087104ca313d677a2f2e098b1af9d66c31bf97e3ca1c12deacd5be1e05"
+      "737425839":
+        name: "filmcraft-0.20.1-linux-x86_64.AppImage.zsync"
+        url_suffix: "filmcraft-0.20.1-linux-x86_64.AppImage.zsync"
+        size: 181982
+        digest: "sha256:dba7d4e7933eb93ccb225ee16d5eb3619f6584eb17b46a25cb260f87d5083dbc"
+      "737425846":
+        name: "filmcraft-0.20.1-linux-x86_64.AppImage.zsync.asc"
+        url_suffix: "filmcraft-0.20.1-linux-x86_64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:6335369bf4385670b1f3f594d92c6a33765ee5cad5520348eddb44eaa085a6df"
+      "737425871":
+        name: "filmcraft-0.20.1-linux-x86_64.deb"
+        url_suffix: "filmcraft-0.20.1-linux-x86_64.deb"
+        size: 113697526
+        media_type: "application/x-debian-package"
+        digest: "sha256:5667c7505c91d2ad9de3c4acb15cb02fc9f138fae74dce9c7c5f08bc29edb3a8"
+      "737425874":
+        name: "filmcraft-0.20.1-linux-x86_64.deb.asc"
+        url_suffix: "filmcraft-0.20.1-linux-x86_64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:1bbb222214a370036f2f2219f08aed24684299b6450dd0e38f09bdf4c7e5a306"
+      "737425895":
+        name: "filmcraft-0.20.1-linux-x86_64.flatpak"
+        url_suffix: "filmcraft-0.20.1-linux-x86_64.flatpak"
+        size: 82272360
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:646ee627b39b93fe69c7ecb44725fc964fd43660ef8cf2884b3fb48e759ac0f8"
+      "737425907":
+        name: "filmcraft-0.20.1-linux-x86_64.flatpak.asc"
+        url_suffix: "filmcraft-0.20.1-linux-x86_64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:4dbd2e6bffd4ad0260f130a3f7eab43959a162123dbf793058de67b26add938c"
+      "737425925":
+        name: "filmcraft-0.20.1-linux-x86_64.oci-manifest.json"
+        url_suffix: "filmcraft-0.20.1-linux-x86_64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:9deced2d7c08842bb9cfd6e8164228e9ba85952c8239eb89396fd507a292e04e"
+      "737425934":
+        name: "filmcraft-0.20.1-linux-x86_64.oci.sig"
+        url_suffix: "filmcraft-0.20.1-linux-x86_64.oci.sig"
+        size: 387
+        media_type: "application/pgp-signature"
+        digest: "sha256:baa94d12e6c4fbe1d1d43a6667041bfd851b90b02a9c2b64f86c7e8a13ff83ec"
+      "737425950":
+        name: "filmcraft-0.20.1-linux-x86_64.pkg.tar.zst"
+        url_suffix: "filmcraft-0.20.1-linux-x86_64.pkg.tar.zst"
+        size: 88661522
+        media_type: "application/zstd"
+        digest: "sha256:bbdee1fe9e8671094e4e548d3920a808b7c7411a802d743b19158753d951d722"
+      "737425962":
+        name: "filmcraft-0.20.1-linux-x86_64.pkg.tar.zst.sig"
+        url_suffix: "filmcraft-0.20.1-linux-x86_64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:bb11fbfe07fb11dd02604401062e9e0f6883ad7d695ef731aea992ffeb07422e"
+      "737425974":
+        name: "filmcraft-0.20.1-linux-x86_64.rpm"
+        url_suffix: "filmcraft-0.20.1-linux-x86_64.rpm"
+        size: 113005344
+        media_type: "application/x-rpm"
+        digest: "sha256:aaeba6517c0d2a1fd97bcaa6debc433945ba82236ea56666b147b265bb04d890"
+      "737425984":
+        name: "filmcraft-0.20.1-linux-x86_64.rpm.asc"
+        url_suffix: "filmcraft-0.20.1-linux-x86_64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:9ca06ecadfc174330324527fc51c7bba93915609cd1965d369f34084967a7bbb"
+      "737426000":
+        name: "filmcraft-0.20.1-linux-x86_64.tar.gz"
+        url_suffix: "filmcraft-0.20.1-linux-x86_64.tar.gz"
+        size: 112162847
+        media_type: "application/x-gtar"
+        digest: "sha256:3e4fea3cb8d473e68f189a0a8792ba46160fab507adab3ab8920073fd41f24fa"
+      "737426005":
+        name: "filmcraft-0.20.1-linux-x86_64.tar.gz.asc"
+        url_suffix: "filmcraft-0.20.1-linux-x86_64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:98d3dc9f6dc5aa91e4b42676fabed9264121b5b4bc98e1dba93ad94c4d80e086"
+      "737426014":
+        name: "filmcraft-0.20.1-macos-universal.dmg"
+        url_suffix: "filmcraft-0.20.1-macos-universal.dmg"
+        size: 118788917
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:5722f0f21ca96583ee27dfd88bae23e0a4a6ab87862a6c00082c88c5c759e75e"
+      "737426041":
+        name: "filmcraft-0.20.1-windows-arm64-portable.zip"
+        url_suffix: "filmcraft-0.20.1-windows-arm64-portable.zip"
+        size: 109053960
+        media_type: "zip"
+        digest: "sha256:4b20b604d3c2227d052b4b055c78b455ecd404988bdb63c6de1db4e82dfb3806"
+      "737426075":
+        name: "filmcraft-0.20.1-windows-arm64.msi"
+        url_suffix: "filmcraft-0.20.1-windows-arm64.msi"
+        size: 89071616
+        media_type: "application/x-msi"
+        digest: "sha256:bf7ff5fea491e3ffd91af251c4b9d916b59c43e860a260561745307c1f4a71da"
+      "737426146":
+        name: "filmcraft-0.20.1-windows-x64-portable.zip"
+        url_suffix: "filmcraft-0.20.1-windows-x64-portable.zip"
+        size: 113447048
+        media_type: "zip"
+        digest: "sha256:bfb00e2089df5f13e6f76aab117a4572a8d005d009c5818989688b140a502710"
+      "737426168":
+        name: "filmcraft-0.20.1-windows-x64.msi"
+        url_suffix: "filmcraft-0.20.1-windows-x64.msi"
+        size: 93388800
+        media_type: "application/x-msi"
+        digest: "sha256:165c0f333d995ced16c0b0ebc0b29cc9b7ad358bc812c705659d78e59aa25449"
+      "737426246":
+        name: "filmcraft-cli-0.20.1-macos-universal.zip"
+        url_suffix: "filmcraft-cli-0.20.1-macos-universal.zip"
+        size: 100056028
+        media_type: "zip"
+        digest: "sha256:1651d9defb54f853cbd69016428bb9f72a7bf26d56e4755b8e2a79535fd0ac82"
+      "737426250":
+        name: "filmcraft-web-0.20.1.zip"
+        url_suffix: "filmcraft-web-0.20.1.zip"
+        size: 15630847
+        media_type: "zip"
+        digest: "sha256:1cf3072e3f3b6535fcd024d6f6ab2a16cf7776345d868037dc630de0ad0dbbb8"
+      "737426276":
         name: "release-signing-key.asc"
         url_suffix: "release-signing-key.asc"
         size: 803

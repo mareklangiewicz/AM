@@ -3,797 +3,13 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1361470425
 repository: "profullstack/nixamp"
-collected_at: "2026-11-10T18:32:26Z"
+collected_at: "2026-11-15T11:04:25Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: false
-observed_at: "2026-11-10T18:32:26Z"
+observed_at: "2026-11-15T11:04:25Z"
 releases:
-  "419401787":
-    tag: "v0.63.2"
-    title: "v0.63.2"
-    url: "https://github.com/profullstack/nixamp/releases/tag/v0.63.2"
-    created_at: "2026-10-21T09:58:19Z"
-    published_at: "2026-10-21T10:02:51Z"
-    updated_at: "2026-10-21T10:02:51Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/profullstack/nixamp/zipball/v0.63.2"
-    source_tar_url: "https://api.github.com/repos/profullstack/nixamp/tarball/v0.63.2"
-    download_base: "https://github.com/profullstack/nixamp/releases/download/v0.63.2/"
-    assets:
-      "662075972":
-        name: "openstream-report-0.63.2.md"
-        url_suffix: "openstream-report-0.63.2.md"
-        size: 2018
-        media_type: "text/markdown"
-        digest: "sha256:d69f3a7b27016dde3889ebf2967f2b06dd8055068e0ee2fd6a9f0fd1eb28b717"
-      "662075973":
-        name: "nixamp-cli-0.63.2.tar.gz"
-        url_suffix: "nixamp-cli-0.63.2.tar.gz"
-        size: 6645361
-        media_type: "application/gzip"
-        digest: "sha256:551ab4f90e7b45f6f5a8b74ef5643cb99444adbf636e361b3138879c60e87e59"
-      "662075977":
-        name: "nixamp-0.63.2-mac-x64.dmg"
-        url_suffix: "nixamp-0.63.2-mac-x64.dmg"
-        size: 135568779
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:799fcc20bdeae06b326a75eff8f4f8b79d4bf3eaf553768e4f6e6fc6c4eb1cf4"
-      "662075978":
-        name: "nixamp-0.63.2-win-arm64.zip"
-        url_suffix: "nixamp-0.63.2-win-arm64.zip"
-        size: 155431335
-        media_type: "zip"
-        digest: "sha256:369391920562275658ed9427890fb096a5fbfa0ed2ceae986267026a0ed1d08c"
-      "662075979":
-        name: "nixamp-0.63.2-linux-arm64.deb"
-        url_suffix: "nixamp-0.63.2-linux-arm64.deb"
-        size: 98002352
-        media_type: "application/x-debian-package"
-        digest: "sha256:6988c384fa2518e115e36bf4f64e6495b5da23585301249e51e07b0973d2ef33"
-      "662075980":
-        name: "nixamp-0.63.2-linux-x86_64.AppImage"
-        url_suffix: "nixamp-0.63.2-linux-x86_64.AppImage"
-        size: 129257520
-        digest: "sha256:aa9ed9d59c98e835c601a4ccc7fe5cd16e981362f6b8171e219fd9b196e10c2d"
-      "662075981":
-        name: "openstream-report-0.63.2.json"
-        url_suffix: "openstream-report-0.63.2.json"
-        size: 20851
-        media_type: "application/json"
-        digest: "sha256:1d24f59122252ac6f072155390232b943801edf258b8e5ff511b024546f42d61"
-      "662075982":
-        name: "nixamp-0.63.2-win-arm64.exe"
-        url_suffix: "nixamp-0.63.2-win-arm64.exe"
-        size: 109161162
-        media_type: "application/x-msdos-program"
-        digest: "sha256:2101a60296cae0a7db241ca0fa53383b712c740ffc1d6a6964a7c547118fe34f"
-      "662075983":
-        name: "nixamp-0.63.2-win-x64.exe"
-        url_suffix: "nixamp-0.63.2-win-x64.exe"
-        size: 115457044
-        media_type: "application/x-msdos-program"
-        digest: "sha256:2bfc7d132c1427af4976a3f4da12abd20b33736be729e005968966dec940cdd5"
-      "662075984":
-        name: "nixamp-0.63.2-mac-arm64.zip"
-        url_suffix: "nixamp-0.63.2-mac-arm64.zip"
-        size: 132179818
-        media_type: "zip"
-        digest: "sha256:d918e6f4b782f0b0ae8bb13af4f4e268402d3e823ffd1a5f4e6f491b3ebc63ae"
-      "662075986":
-        name: "nixamp-0.63.2-mac-arm64.dmg"
-        url_suffix: "nixamp-0.63.2-mac-arm64.dmg"
-        size: 131844521
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:0b3a9d94199e294dde64aa71295aa1f986b2f502ea809fd651410ebfba177b64"
-      "662075987":
-        name: "nixamp-0.63.2-linux-amd64.deb"
-        url_suffix: "nixamp-0.63.2-linux-amd64.deb"
-        size: 102806848
-        media_type: "application/x-debian-package"
-        digest: "sha256:fa676c9c66a813f91e68b2282f4828f0907e426f2c0b6ca77b2345a917d21fe6"
-      "662075988":
-        name: "nixamp-0.63.2-linux-x64.tar.gz"
-        url_suffix: "nixamp-0.63.2-linux-x64.tar.gz"
-        size: 122933822
-        media_type: "application/gzip"
-        digest: "sha256:ee80ab6e699e2bbc8468d770df658666d95ec923ff6db229e32011edfc3e7195"
-      "662075989":
-        name: "nixamp-0.63.2-linux-arm64.tar.gz"
-        url_suffix: "nixamp-0.63.2-linux-arm64.tar.gz"
-        size: 123873885
-        media_type: "application/gzip"
-        digest: "sha256:d7c4edfa35b4c5bcc9a5d1c7042d19fd93ce5cafb93bfbf2efdb777f86b17420"
-      "662075990":
-        name: "nixamp-0.63.2-linux-arm64.AppImage"
-        url_suffix: "nixamp-0.63.2-linux-arm64.AppImage"
-        size: 130579405
-        digest: "sha256:5b42c99157db02c470de5ed5bff15d68a34a783848fd1530530c32cc1a2a8ed8"
-      "662075991":
-        name: "nixamp-0.63.2-win-x64.zip"
-        url_suffix: "nixamp-0.63.2-win-x64.zip"
-        size: 157419806
-        media_type: "zip"
-        digest: "sha256:188e910cd5a7d96273ab34b8e232216cd53177fa293c266a24398ec5b818c685"
-      "662075992":
-        name: "nixamp-0.63.2-mac-x64.zip"
-        url_suffix: "nixamp-0.63.2-mac-x64.zip"
-        size: 135910038
-        media_type: "zip"
-        digest: "sha256:98661764c01e8895149bb3f0e3cea3f5ccf59c98e487df57f86b5667d7104894"
-  "419421064":
-    tag: "v0.63.3"
-    title: "v0.63.3"
-    url: "https://github.com/profullstack/nixamp/releases/tag/v0.63.3"
-    created_at: "2026-10-21T10:20:13Z"
-    published_at: "2026-10-21T10:24:44Z"
-    updated_at: "2026-10-21T10:24:44Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/profullstack/nixamp/zipball/v0.63.3"
-    source_tar_url: "https://api.github.com/repos/profullstack/nixamp/tarball/v0.63.3"
-    download_base: "https://github.com/profullstack/nixamp/releases/download/v0.63.3/"
-    assets:
-      "662127513":
-        name: "nixamp-cli-0.63.3.tar.gz"
-        url_suffix: "nixamp-cli-0.63.3.tar.gz"
-        size: 6646436
-        media_type: "application/gzip"
-        digest: "sha256:78cbfd52245193620130ca71fc191231abdc4c7e4b44b22f44f00089d689916c"
-      "662127515":
-        name: "openstream-report-0.63.3.md"
-        url_suffix: "openstream-report-0.63.3.md"
-        size: 2023
-        media_type: "text/markdown"
-        digest: "sha256:ad69a590a93407536667eb2f08f3f83f86ca857b233a3c7d0608929e60e8f1ff"
-      "662127516":
-        name: "nixamp-0.63.3-mac-x64.dmg"
-        url_suffix: "nixamp-0.63.3-mac-x64.dmg"
-        size: 135542746
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:76a3505afd011736fb9b2d5f13a9f292cd7a3ccbcb2d0016988052d556960eda"
-      "662127517":
-        name: "nixamp-0.63.3-win-x64.zip"
-        url_suffix: "nixamp-0.63.3-win-x64.zip"
-        size: 157420083
-        media_type: "zip"
-        digest: "sha256:db25428149a3978e1b19ca0a6b921ceb453f5c45bee51b25897c662cd802e343"
-      "662127519":
-        name: "nixamp-0.63.3-mac-arm64.zip"
-        url_suffix: "nixamp-0.63.3-mac-arm64.zip"
-        size: 132180132
-        media_type: "zip"
-        digest: "sha256:e3c8751a46bf19466bb6ee4d47d0ab2b3d7dca13c96634ea49f349e7015d083c"
-      "662127520":
-        name: "nixamp-0.63.3-win-x64.exe"
-        url_suffix: "nixamp-0.63.3-win-x64.exe"
-        size: 115457341
-        media_type: "application/x-msdos-program"
-        digest: "sha256:0e234badc930e796e67e7676f43ab874adb260674b293f44ee3c23b1cdd8f80d"
-      "662127521":
-        name: "nixamp-0.63.3-win-arm64.zip"
-        url_suffix: "nixamp-0.63.3-win-arm64.zip"
-        size: 155431595
-        media_type: "zip"
-        digest: "sha256:7bd7aab448913504e0342df03917554eb6fec7b5f5e7ad162383722e00841005"
-      "662127522":
-        name: "openstream-report-0.63.3.json"
-        url_suffix: "openstream-report-0.63.3.json"
-        size: 20856
-        media_type: "application/json"
-        digest: "sha256:71b1d4c5ab728f5f5a7f9089d556fff673398381407b2387648d4c2c07d6ec77"
-      "662127523":
-        name: "nixamp-0.63.3-linux-amd64.deb"
-        url_suffix: "nixamp-0.63.3-linux-amd64.deb"
-        size: 102847784
-        media_type: "application/x-debian-package"
-        digest: "sha256:81356c14a5b0b36896c8514ac19bdf1373534013c18310d9ee6f5b0dcb753a22"
-      "662127524":
-        name: "nixamp-0.63.3-win-arm64.exe"
-        url_suffix: "nixamp-0.63.3-win-arm64.exe"
-        size: 109161168
-        media_type: "application/x-msdos-program"
-        digest: "sha256:8521090a1bea282731b2911b8bc0198d1d38bf312b653e8d898019f982b3be7e"
-      "662127525":
-        name: "nixamp-0.63.3-linux-arm64.tar.gz"
-        url_suffix: "nixamp-0.63.3-linux-arm64.tar.gz"
-        size: 123874150
-        media_type: "application/gzip"
-        digest: "sha256:b82651ee84d94dedded8bc3981252d54b0315392c2be4c5fb10297dccf3211f3"
-      "662127526":
-        name: "nixamp-0.63.3-linux-x86_64.AppImage"
-        url_suffix: "nixamp-0.63.3-linux-x86_64.AppImage"
-        size: 129257527
-        digest: "sha256:36da7492676734048d49ee21e7b0c108531bdd83cedc62cc046e844da69eadbd"
-      "662127527":
-        name: "nixamp-0.63.3-mac-x64.zip"
-        url_suffix: "nixamp-0.63.3-mac-x64.zip"
-        size: 135910351
-        media_type: "zip"
-        digest: "sha256:08c49956ca9e08bb28a40843d14b33f98f42f72920ed469c5bc7224781f8384b"
-      "662127528":
-        name: "nixamp-0.63.3-linux-x64.tar.gz"
-        url_suffix: "nixamp-0.63.3-linux-x64.tar.gz"
-        size: 122933827
-        media_type: "application/gzip"
-        digest: "sha256:74e9aa02af305da781cbe6a20758b8c71de2ed8a97baf9895616f621a7576209"
-      "662127529":
-        name: "nixamp-0.63.3-linux-arm64.deb"
-        url_suffix: "nixamp-0.63.3-linux-arm64.deb"
-        size: 97953328
-        media_type: "application/x-debian-package"
-        digest: "sha256:980b1aec519a705c95d0da44a646853111c0473e3c6da00d44d08ee0abd089b4"
-      "662127530":
-        name: "nixamp-0.63.3-linux-arm64.AppImage"
-        url_suffix: "nixamp-0.63.3-linux-arm64.AppImage"
-        size: 130579416
-        digest: "sha256:b4e63a367e466e56b8bb33a0bd1c3db53931b571e6ac3fac59c5b15436f6098d"
-      "662127531":
-        name: "nixamp-0.63.3-mac-arm64.dmg"
-        url_suffix: "nixamp-0.63.3-mac-arm64.dmg"
-        size: 131841124
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:29cdeb13e272022e6cdcfcd5905797ad76e9436a3a3e3220c5d73ded621c11e6"
-  "419504073":
-    tag: "v0.65.0"
-    title: "v0.65.0"
-    url: "https://github.com/profullstack/nixamp/releases/tag/v0.65.0"
-    created_at: "2026-10-21T11:55:31Z"
-    published_at: "2026-10-21T11:59:48Z"
-    updated_at: "2026-10-21T11:59:48Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/profullstack/nixamp/zipball/v0.65.0"
-    source_tar_url: "https://api.github.com/repos/profullstack/nixamp/tarball/v0.65.0"
-    download_base: "https://github.com/profullstack/nixamp/releases/download/v0.65.0/"
-    assets:
-      "662362177":
-        name: "openstream-report-0.65.0.md"
-        url_suffix: "openstream-report-0.65.0.md"
-        size: 2020
-        media_type: "text/markdown"
-        digest: "sha256:9b79f98b6505b8d21112fd426e7d267e88debe6e1434563544a45d7c0511e32b"
-      "662362179":
-        name: "openstream-report-0.65.0.json"
-        url_suffix: "openstream-report-0.65.0.json"
-        size: 20855
-        media_type: "application/json"
-        digest: "sha256:979864b3a3fbe8886e313694cedced7700758ffaf622b402f439edfeb8953f00"
-      "662362182":
-        name: "nixamp-0.65.0-win-x64.exe"
-        url_suffix: "nixamp-0.65.0-win-x64.exe"
-        size: 115470910
-        media_type: "application/x-msdos-program"
-        digest: "sha256:d43d215f48467d7d57206dba0cb4ed05fd1baed20b79b637ac70753dc2bdb5e2"
-      "662362183":
-        name: "nixamp-0.65.0-linux-arm64.AppImage"
-        url_suffix: "nixamp-0.65.0-linux-arm64.AppImage"
-        size: 130595866
-        digest: "sha256:38ee269bc6ea3859b77bbe2818b5d146973746ef1ffacd7bbe4673f70df8ad94"
-      "662362184":
-        name: "nixamp-0.65.0-win-arm64.zip"
-        url_suffix: "nixamp-0.65.0-win-arm64.zip"
-        size: 155446859
-        media_type: "zip"
-        digest: "sha256:dd7bf5f32640680518ba33df1cf960dd368ed2094408ec51b0feeea66c18d235"
-      "662362185":
-        name: "nixamp-0.65.0-linux-arm64.tar.gz"
-        url_suffix: "nixamp-0.65.0-linux-arm64.tar.gz"
-        size: 123886336
-        media_type: "application/gzip"
-        digest: "sha256:c1317b4b4f9cedd899f6a9fd908365b4bdfb28096c53e83843bf02322b57d95c"
-      "662362186":
-        name: "nixamp-0.65.0-mac-x64.zip"
-        url_suffix: "nixamp-0.65.0-mac-x64.zip"
-        size: 135926367
-        media_type: "zip"
-        digest: "sha256:5da6edd08be767579e1e4827de72449c26cf55e655474f86b5f42ff4058a7c21"
-      "662362187":
-        name: "nixamp-0.65.0-win-arm64.exe"
-        url_suffix: "nixamp-0.65.0-win-arm64.exe"
-        size: 109174938
-        media_type: "application/x-msdos-program"
-        digest: "sha256:21e5baf3714395b3e2c7fe44be38f1ec69c2df019b0ff2d3901bc514f6fa5319"
-      "662362188":
-        name: "nixamp-0.65.0-linux-x86_64.AppImage"
-        url_suffix: "nixamp-0.65.0-linux-x86_64.AppImage"
-        size: 129273998
-        digest: "sha256:b192ce97f6bae8f9da92149102f1ec5b9c7e6cc56a64a63ac43aee6921798074"
-      "662362189":
-        name: "nixamp-0.65.0-mac-x64.dmg"
-        url_suffix: "nixamp-0.65.0-mac-x64.dmg"
-        size: 135535210
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:15082758b5b46d87006d8ca77ec6385211d839a4f072b2d6a608af38427542be"
-      "662362190":
-        name: "nixamp-0.65.0-mac-arm64.zip"
-        url_suffix: "nixamp-0.65.0-mac-arm64.zip"
-        size: 132196148
-        media_type: "zip"
-        digest: "sha256:e7d590409199f79ea9aab81bb47f22f0fb5f34fa03f5b5cae2a99c3d920f84a0"
-      "662362191":
-        name: "nixamp-0.65.0-linux-x64.tar.gz"
-        url_suffix: "nixamp-0.65.0-linux-x64.tar.gz"
-        size: 122929227
-        media_type: "application/gzip"
-        digest: "sha256:22f94f7c17ab7f49770c8abd027182e877ee1c774e2ef0432e00d60423d0585e"
-      "662362193":
-        name: "nixamp-0.65.0-linux-arm64.deb"
-        url_suffix: "nixamp-0.65.0-linux-arm64.deb"
-        size: 97965448
-        media_type: "application/x-debian-package"
-        digest: "sha256:684d90942e08b6e357477f273056c1765ae9211a115c366797e5c2d2aa4cb450"
-      "662362194":
-        name: "nixamp-cli-0.65.0.tar.gz"
-        url_suffix: "nixamp-cli-0.65.0.tar.gz"
-        size: 6666160
-        media_type: "application/gzip"
-        digest: "sha256:2461e79dff987639585df1a54d37154e2b5d0c6d92e5009ebd977042e06a9b31"
-      "662362197":
-        name: "nixamp-0.65.0-win-x64.zip"
-        url_suffix: "nixamp-0.65.0-win-x64.zip"
-        size: 157435334
-        media_type: "zip"
-        digest: "sha256:99db4e623db1793eaf5436f4e49e9dbcdaa5605b7ac4a7841afc13ba2198383c"
-      "662362198":
-        name: "nixamp-0.65.0-linux-amd64.deb"
-        url_suffix: "nixamp-0.65.0-linux-amd64.deb"
-        size: 102857512
-        media_type: "application/x-debian-package"
-        digest: "sha256:b8f0534dcd235a56419a4e87f4b3449b1ad75dbbbecbabe6cd9dc4dab2316009"
-      "662362199":
-        name: "nixamp-0.65.0-mac-arm64.dmg"
-        url_suffix: "nixamp-0.65.0-mac-arm64.dmg"
-        size: 131859292
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:6fcf25d62823ec455a13ab2551bdf2e5d1f67ff8f387ffbe6da79865c1971901"
-  "419508397":
-    tag: "v0.65.1"
-    title: "v0.65.1"
-    url: "https://github.com/profullstack/nixamp/releases/tag/v0.65.1"
-    created_at: "2026-10-21T12:00:39Z"
-    published_at: "2026-10-21T12:04:46Z"
-    updated_at: "2026-10-21T12:04:46Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/profullstack/nixamp/zipball/v0.65.1"
-    source_tar_url: "https://api.github.com/repos/profullstack/nixamp/tarball/v0.65.1"
-    download_base: "https://github.com/profullstack/nixamp/releases/download/v0.65.1/"
-    assets:
-      "662375563":
-        name: "nixamp-0.65.1-win-arm64.zip"
-        url_suffix: "nixamp-0.65.1-win-arm64.zip"
-        size: 155447039
-        media_type: "zip"
-        digest: "sha256:2a28bc512986fd928307e8e90a065c68b62c5d7fe2db0af46b8b9c4efcd7314b"
-      "662375564":
-        name: "nixamp-cli-0.65.1.tar.gz"
-        url_suffix: "nixamp-cli-0.65.1.tar.gz"
-        size: 6667431
-        media_type: "application/gzip"
-        digest: "sha256:e372e4d7cb6de17b531877d431739f1965d2a93541c1a707ea35b26b7359541e"
-      "662375565":
-        name: "nixamp-0.65.1-linux-x86_64.AppImage"
-        url_suffix: "nixamp-0.65.1-linux-x86_64.AppImage"
-        size: 129274047
-        digest: "sha256:39e5cd58f0be51d08de3fa009672a2085460afa384c9e3b3c5fb10a76d33e2df"
-      "662375566":
-        name: "nixamp-0.65.1-win-x64.zip"
-        url_suffix: "nixamp-0.65.1-win-x64.zip"
-        size: 157435515
-        media_type: "zip"
-        digest: "sha256:2696d75f956431653dada9762394054734df56f128eeef8522e936704102ca6a"
-      "662375568":
-        name: "nixamp-0.65.1-mac-x64.zip"
-        url_suffix: "nixamp-0.65.1-mac-x64.zip"
-        size: 135926588
-        media_type: "zip"
-        digest: "sha256:9dfee933a359e41121e05e30890b0ecf3f4d0dbd13749bca1ece46bc01b33ae4"
-      "662375569":
-        name: "openstream-report-0.65.1.json"
-        url_suffix: "openstream-report-0.65.1.json"
-        size: 20872
-        media_type: "application/json"
-        digest: "sha256:d4349b20b0fcd40f958dfb798eb8e9eaef66a161cb9b0c1fae84dc230efe2282"
-      "662375570":
-        name: "openstream-report-0.65.1.md"
-        url_suffix: "openstream-report-0.65.1.md"
-        size: 2038
-        media_type: "text/markdown"
-        digest: "sha256:10662ed05553276a7d16f255c04255aba9c4ad3d86bc9ba5b5d3a59367a576a0"
-      "662375571":
-        name: "nixamp-0.65.1-mac-x64.dmg"
-        url_suffix: "nixamp-0.65.1-mac-x64.dmg"
-        size: 135536896
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:04ec5c44a99c6f737265ec9b9db36a1b40dff7db16d711f2a519461e33f418eb"
-      "662375572":
-        name: "nixamp-0.65.1-linux-amd64.deb"
-        url_suffix: "nixamp-0.65.1-linux-amd64.deb"
-        size: 102859152
-        media_type: "application/x-debian-package"
-        digest: "sha256:65a13a80b5a3c863097c9e54bc59c4ccdba54deea2ed397fa50661a4d4c26ee4"
-      "662375573":
-        name: "nixamp-0.65.1-win-arm64.exe"
-        url_suffix: "nixamp-0.65.1-win-arm64.exe"
-        size: 109175179
-        media_type: "application/x-msdos-program"
-        digest: "sha256:a5c44fe6941e107e8184e6a1ba36bdfed60386dec08a7a29cff1267fefcf22ed"
-      "662375575":
-        name: "nixamp-0.65.1-win-x64.exe"
-        url_suffix: "nixamp-0.65.1-win-x64.exe"
-        size: 115471042
-        media_type: "application/x-msdos-program"
-        digest: "sha256:18002a9ccbafbe05ad9490c725502f9d40fb10b75ebc4c6c0b31e64f8d9e05c1"
-      "662375576":
-        name: "nixamp-0.65.1-linux-arm64.AppImage"
-        url_suffix: "nixamp-0.65.1-linux-arm64.AppImage"
-        size: 130595903
-        digest: "sha256:7c00c31731fe5ed3d358f4ca965ee2142bdc8df7f498776e87b59d0ff2b30d67"
-      "662375577":
-        name: "nixamp-0.65.1-mac-arm64.dmg"
-        url_suffix: "nixamp-0.65.1-mac-arm64.dmg"
-        size: 131860093
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:da87d718973ad23910caf5058ac2d1fc6d2a4087533d9e9df97929e7efda7be0"
-      "662375578":
-        name: "nixamp-0.65.1-linux-x64.tar.gz"
-        url_suffix: "nixamp-0.65.1-linux-x64.tar.gz"
-        size: 122929669
-        media_type: "application/gzip"
-        digest: "sha256:8d592e5f0cd8a0ca85634d12bbd94e7d861d285fb744e78317d3529a93b253b5"
-      "662375580":
-        name: "nixamp-0.65.1-linux-arm64.tar.gz"
-        url_suffix: "nixamp-0.65.1-linux-arm64.tar.gz"
-        size: 123885571
-        media_type: "application/gzip"
-        digest: "sha256:b70a3f8b788d445e834330237e31d8302f909b207559c9020502cbf1ecd1a45c"
-      "662375581":
-        name: "nixamp-0.65.1-mac-arm64.zip"
-        url_suffix: "nixamp-0.65.1-mac-arm64.zip"
-        size: 132196369
-        media_type: "zip"
-        digest: "sha256:13f928fedc56fa071f6222825d130a397206168429680e8ed4487d68b774b3be"
-      "662375582":
-        name: "nixamp-0.65.1-linux-arm64.deb"
-        url_suffix: "nixamp-0.65.1-linux-arm64.deb"
-        size: 98014348
-        media_type: "application/x-debian-package"
-        digest: "sha256:7a3f42fddef63fc1e24ad25992433b843ac50b4f5e948451f96f846053406e3a"
-  "419555923":
-    tag: "v0.66.3"
-    title: "v0.66.3"
-    url: "https://github.com/profullstack/nixamp/releases/tag/v0.66.3"
-    created_at: "2026-10-21T12:43:46Z"
-    published_at: "2026-10-21T12:53:49Z"
-    updated_at: "2026-10-21T12:53:49Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/profullstack/nixamp/zipball/v0.66.3"
-    source_tar_url: "https://api.github.com/repos/profullstack/nixamp/tarball/v0.66.3"
-    download_base: "https://github.com/profullstack/nixamp/releases/download/v0.66.3/"
-    assets:
-      "662506356":
-        name: "openstream-report-0.66.3.md"
-        url_suffix: "openstream-report-0.66.3.md"
-        size: 2021
-        media_type: "text/markdown"
-        digest: "sha256:e909149c11c53f94283d4d2436d2467b7abf5160b56a7bbec074b5453c85053b"
-      "662506357":
-        name: "nixamp-0.66.3-linux-arm64.AppImage"
-        url_suffix: "nixamp-0.66.3-linux-arm64.AppImage"
-        size: 130599938
-        digest: "sha256:7741ba58e5705d4d54ba7ac0ea0b3140151860df457f92347edfae20f57a2a7c"
-      "662506358":
-        name: "nixamp-0.66.3-win-arm64.zip"
-        url_suffix: "nixamp-0.66.3-win-arm64.zip"
-        size: 155451687
-        media_type: "zip"
-        digest: "sha256:71b4d629f436a86eb9171e074e64e62283c80c8d09c14ea8d39dd62655d0b2a2"
-      "662506360":
-        name: "nixamp-0.66.3-mac-arm64.zip"
-        url_suffix: "nixamp-0.66.3-mac-arm64.zip"
-        size: 132201156
-        media_type: "zip"
-        digest: "sha256:9210451c3bdbf27d4242a353476ef519b7076a8bb16370edaa3c5b58c592c322"
-      "662506362":
-        name: "nixamp-0.66.3-linux-arm64.tar.gz"
-        url_suffix: "nixamp-0.66.3-linux-arm64.tar.gz"
-        size: 123889589
-        media_type: "application/gzip"
-        digest: "sha256:3c5da3c79b1c674b92016eae56d144b7f12f81c721d85ca2add5ba094a6e04d9"
-      "662506363":
-        name: "nixamp-0.66.3-mac-x64.dmg"
-        url_suffix: "nixamp-0.66.3-mac-x64.dmg"
-        size: 135534494
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:9f7bfff67ac078862730bdb3e221185bcbd42786488519d3f4735ef0e0b74d57"
-      "662506364":
-        name: "nixamp-0.66.3-win-x64.exe"
-        url_suffix: "nixamp-0.66.3-win-x64.exe"
-        size: 115475516
-        media_type: "application/x-msdos-program"
-        digest: "sha256:b9acba0252df9d01f5dafdf888efeb7e6ecf86428b15a9e69d2f4de6d60d5fee"
-      "662506365":
-        name: "nixamp-0.66.3-mac-x64.zip"
-        url_suffix: "nixamp-0.66.3-mac-x64.zip"
-        size: 135931377
-        media_type: "zip"
-        digest: "sha256:5dfaba49606a03f157f26dfa8ff8c90fa3e4f1bd175635bc45a99cd4885585c9"
-      "662506366":
-        name: "nixamp-0.66.3-win-x64.zip"
-        url_suffix: "nixamp-0.66.3-win-x64.zip"
-        size: 157440163
-        media_type: "zip"
-        digest: "sha256:5e90561c1a97f9716b0f6cab32be1b87cb3ce8b680c2fcd9f5043fc15c88f6ee"
-      "662506367":
-        name: "nixamp-0.66.3-win-arm64.exe"
-        url_suffix: "nixamp-0.66.3-win-arm64.exe"
-        size: 109179612
-        media_type: "application/x-msdos-program"
-        digest: "sha256:1032bec3436f63b88073e97b23bc0f32d7108c29c7a8b2feade7caf54b7e3667"
-      "662506369":
-        name: "nixamp-0.66.3-linux-amd64.deb"
-        url_suffix: "nixamp-0.66.3-linux-amd64.deb"
-        size: 102823024
-        media_type: "application/x-debian-package"
-        digest: "sha256:ec3bca372ca1500d72ccf625ada7c0ac0e78e72404e3f9cbbdf074736aa1330b"
-      "662506370":
-        name: "openstream-report-0.66.3.json"
-        url_suffix: "openstream-report-0.66.3.json"
-        size: 20856
-        media_type: "application/json"
-        digest: "sha256:14f6f478ae10892395633e94be6c818f000bcb01591cc4cbe08e5e1d8493734e"
-      "662506371":
-        name: "nixamp-0.66.3-linux-arm64.deb"
-        url_suffix: "nixamp-0.66.3-linux-arm64.deb"
-        size: 97969928
-        media_type: "application/x-debian-package"
-        digest: "sha256:e95798aa850f937e1891877bc3f62f6efc71b066bfc6e63223dc72e07e08ec95"
-      "662506372":
-        name: "nixamp-0.66.3-mac-arm64.dmg"
-        url_suffix: "nixamp-0.66.3-mac-arm64.dmg"
-        size: 131862581
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:0b851e04c038a043b28860232bc01917bf07c3038d063ab2b9e4d782a8d24677"
-      "662506373":
-        name: "nixamp-cli-0.66.3.tar.gz"
-        url_suffix: "nixamp-cli-0.66.3.tar.gz"
-        size: 6678894
-        media_type: "application/gzip"
-        digest: "sha256:be3e47638424a0338e5bc5b6de1dcd448cddada7a4cec4b1d36027d42c7b7e24"
-      "662506374":
-        name: "nixamp-0.66.3-linux-x86_64.AppImage"
-        url_suffix: "nixamp-0.66.3-linux-x86_64.AppImage"
-        size: 129278062
-        digest: "sha256:0dda416615cdac39279631d2cbda84139d4abd15e44fb46020536861daf763e1"
-      "662506377":
-        name: "nixamp-0.66.3-linux-x64.tar.gz"
-        url_suffix: "nixamp-0.66.3-linux-x64.tar.gz"
-        size: 122925822
-        media_type: "application/gzip"
-        digest: "sha256:218bee179f5d8424890e3f574a465326e0dd9caa76034085a750717eef67eddc"
-  "419577497":
-    tag: "v0.67.0"
-    title: "v0.67.0"
-    url: "https://github.com/profullstack/nixamp/releases/tag/v0.67.0"
-    created_at: "2026-10-21T13:05:44Z"
-    published_at: "2026-10-21T13:14:20Z"
-    updated_at: "2026-10-21T13:14:20Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/profullstack/nixamp/zipball/v0.67.0"
-    source_tar_url: "https://api.github.com/repos/profullstack/nixamp/tarball/v0.67.0"
-    download_base: "https://github.com/profullstack/nixamp/releases/download/v0.67.0/"
-    assets:
-      "662559784":
-        name: "nixamp-0.67.0-mac-arm64.zip"
-        url_suffix: "nixamp-0.67.0-mac-arm64.zip"
-        size: 132202198
-        media_type: "zip"
-        digest: "sha256:947766f50a06c46e8c0f20e99dc1cc3ddc20bbb7db3a453958eec502e64bb166"
-      "662559786":
-        name: "openstream-report-0.67.0.md"
-        url_suffix: "openstream-report-0.67.0.md"
-        size: 2019
-        media_type: "text/markdown"
-        digest: "sha256:7ceff7e4db86d9da9d06a3dc143761e598d8a6cfbfc99fcab50e622c8f135244"
-      "662559787":
-        name: "nixamp-0.67.0-win-x64.zip"
-        url_suffix: "nixamp-0.67.0-win-x64.zip"
-        size: 157441205
-        media_type: "zip"
-        digest: "sha256:7fd564119224000e21fa88ccaf24e976d76f69fc24c39eec20cf32cd2c75efb9"
-      "662559789":
-        name: "nixamp-0.67.0-win-arm64.zip"
-        url_suffix: "nixamp-0.67.0-win-arm64.zip"
-        size: 155452727
-        media_type: "zip"
-        digest: "sha256:fb2fe82f122dd4f3fa93f0bd3b46a13857f59586c1a6bf887d0374147cc5c9dc"
-      "662559790":
-        name: "nixamp-0.67.0-linux-x64.tar.gz"
-        url_suffix: "nixamp-0.67.0-linux-x64.tar.gz"
-        size: 122926962
-        media_type: "application/gzip"
-        digest: "sha256:462f9e26660fe87b85f4e859c8a94dc7abe0ced21b309e2748f233f6e017c9f0"
-      "662559791":
-        name: "nixamp-0.67.0-mac-x64.zip"
-        url_suffix: "nixamp-0.67.0-mac-x64.zip"
-        size: 135932418
-        media_type: "zip"
-        digest: "sha256:79c8c438623fd61dc9a5d97ea072a7835650706fe0a188a053a7ff7c47c05d54"
-      "662559792":
-        name: "nixamp-cli-0.67.0.tar.gz"
-        url_suffix: "nixamp-cli-0.67.0.tar.gz"
-        size: 6677451
-        media_type: "application/gzip"
-        digest: "sha256:228cbb431667f91aa1c3f506381b6bf4963b4d1dd3d043242e1cd1bbcba27baf"
-      "662559794":
-        name: "nixamp-0.67.0-linux-x86_64.AppImage"
-        url_suffix: "nixamp-0.67.0-linux-x86_64.AppImage"
-        size: 129278088
-        digest: "sha256:5e457b929bb79c85d7cc99cdc3f869e722623612c723538ee9ac4ebceae8450b"
-      "662559795":
-        name: "nixamp-0.67.0-mac-x64.dmg"
-        url_suffix: "nixamp-0.67.0-mac-x64.dmg"
-        size: 135533097
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:8efd7a1d81ec2deb5d618f6d97905d7b1941c6696830d51c0f1a005a5a036121"
-      "662559797":
-        name: "nixamp-0.67.0-win-arm64.exe"
-        url_suffix: "nixamp-0.67.0-win-arm64.exe"
-        size: 109180311
-        media_type: "application/x-msdos-program"
-        digest: "sha256:8e71fd9be9785571d968aadc9ffedf857a0b2195506258e1f322e2c4a123e4c5"
-      "662559798":
-        name: "nixamp-0.67.0-linux-arm64.AppImage"
-        url_suffix: "nixamp-0.67.0-linux-arm64.AppImage"
-        size: 130599963
-        digest: "sha256:9fe4dfee608b4c9c940926243c83303d866d5a5c7c2d80d2c9f65043f89f06d1"
-      "662559799":
-        name: "nixamp-0.67.0-mac-arm64.dmg"
-        url_suffix: "nixamp-0.67.0-mac-arm64.dmg"
-        size: 131866280
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:069f093d2d2ac716674ff64667dc6d7f2627969e97eebd85708a9bf691d82f03"
-      "662559800":
-        name: "openstream-report-0.67.0.json"
-        url_suffix: "openstream-report-0.67.0.json"
-        size: 20853
-        media_type: "application/json"
-        digest: "sha256:127d51520b28a25ce7ddd4ef31edeb187a93ffd3a90cb8c6ab3c37dbd6773922"
-      "662559801":
-        name: "nixamp-0.67.0-win-x64.exe"
-        url_suffix: "nixamp-0.67.0-win-x64.exe"
-        size: 115476364
-        media_type: "application/x-msdos-program"
-        digest: "sha256:281a278808f3c6ffc6331f1bfc28b30f031b0337ec844162689310d984b11aff"
-      "662559803":
-        name: "nixamp-0.67.0-linux-arm64.tar.gz"
-        url_suffix: "nixamp-0.67.0-linux-arm64.tar.gz"
-        size: 123891176
-        media_type: "application/gzip"
-        digest: "sha256:157d286a2a49803023e0a9a1d7ab15524e35741206d4ed0bc65ad22ac32755de"
-      "662559806":
-        name: "nixamp-0.67.0-linux-arm64.deb"
-        url_suffix: "nixamp-0.67.0-linux-arm64.deb"
-        size: 98016772
-        media_type: "application/x-debian-package"
-        digest: "sha256:d156109acf04d88e6b85449e73cf903338106c748d99b8fdc7eef6d0da3dc0ba"
-      "662559807":
-        name: "nixamp-0.67.0-linux-amd64.deb"
-        url_suffix: "nixamp-0.67.0-linux-amd64.deb"
-        size: 102864024
-        media_type: "application/x-debian-package"
-        digest: "sha256:98941b52cf48729c15f336c70388bf21df564fc7bde5b6ecffd778487c601333"
-  "419585687":
-    tag: "v0.67.1"
-    title: "v0.67.1"
-    url: "https://github.com/profullstack/nixamp/releases/tag/v0.67.1"
-    created_at: "2026-10-21T13:17:31Z"
-    published_at: "2026-10-21T13:21:40Z"
-    updated_at: "2026-10-21T13:21:40Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/profullstack/nixamp/zipball/v0.67.1"
-    source_tar_url: "https://api.github.com/repos/profullstack/nixamp/tarball/v0.67.1"
-    download_base: "https://github.com/profullstack/nixamp/releases/download/v0.67.1/"
-    assets:
-      "662581321":
-        name: "nixamp-0.67.1-mac-x64.zip"
-        url_suffix: "nixamp-0.67.1-mac-x64.zip"
-        size: 135932449
-        media_type: "zip"
-        digest: "sha256:73855f318de0bf9113e424ac5b31cfdaa2f17d0ceeb38be48fec5ab1288a6b39"
-      "662581323":
-        name: "nixamp-0.67.1-win-x64.zip"
-        url_suffix: "nixamp-0.67.1-win-x64.zip"
-        size: 157441221
-        media_type: "zip"
-        digest: "sha256:8b0c70fb0523508c37872bb418d5885f56714e151071fb95804c5f125ebfa2ae"
-      "662581326":
-        name: "nixamp-0.67.1-linux-x86_64.AppImage"
-        url_suffix: "nixamp-0.67.1-linux-x86_64.AppImage"
-        size: 129278081
-        digest: "sha256:8fa19455d2b62c0707b5c232a306a70fd3238a401f06b0cb98e3cf4e249cefb1"
-      "662581327":
-        name: "nixamp-0.67.1-win-arm64.zip"
-        url_suffix: "nixamp-0.67.1-win-arm64.zip"
-        size: 155452732
-        media_type: "zip"
-        digest: "sha256:f85c9f16c1f6091d1bf7f624030eb3c8e528d1dd4b7d537915055c7417bbc5fb"
-      "662581328":
-        name: "nixamp-0.67.1-win-arm64.exe"
-        url_suffix: "nixamp-0.67.1-win-arm64.exe"
-        size: 109180317
-        media_type: "application/x-msdos-program"
-        digest: "sha256:4bfd58c02c7e21edbb2580468e041bf3dbd35b718d38415ffc398b5650d914b7"
-      "662581329":
-        name: "nixamp-cli-0.67.1.tar.gz"
-        url_suffix: "nixamp-cli-0.67.1.tar.gz"
-        size: 6678442
-        media_type: "application/gzip"
-        digest: "sha256:8b4dd0f24b07223cab5933229b203edddb482c916e4126f5c39dae6ac8a6db47"
-      "662581330":
-        name: "nixamp-0.67.1-win-x64.exe"
-        url_suffix: "nixamp-0.67.1-win-x64.exe"
-        size: 115476484
-        media_type: "application/x-msdos-program"
-        digest: "sha256:ce7acd3609b05d3f72d4e7d4e18b866d8cc3a48af518616c0229d90fda06a49d"
-      "662581331":
-        name: "openstream-report-0.67.1.json"
-        url_suffix: "openstream-report-0.67.1.json"
-        size: 20861
-        media_type: "application/json"
-        digest: "sha256:b58cb3f5b58e4081b0b502427fe9a063c376a73b7cc4feff8cefd0044d97672a"
-      "662581332":
-        name: "nixamp-0.67.1-linux-arm64.deb"
-        url_suffix: "nixamp-0.67.1-linux-arm64.deb"
-        size: 98015612
-        media_type: "application/x-debian-package"
-        digest: "sha256:002fddd865dff7bc7482901e54ead465cbff9dcef03dcc03744142577170b9b9"
-      "662581333":
-        name: "nixamp-0.67.1-linux-x64.tar.gz"
-        url_suffix: "nixamp-0.67.1-linux-x64.tar.gz"
-        size: 122927095
-        media_type: "application/gzip"
-        digest: "sha256:3d231512d2541ecf94be085e3ce3d4f3bfb7d43f2d9dc6d71291c8f5a234f973"
-      "662581334":
-        name: "nixamp-0.67.1-linux-arm64.AppImage"
-        url_suffix: "nixamp-0.67.1-linux-arm64.AppImage"
-        size: 130599960
-        digest: "sha256:bb875cda86eaa7f8452ce61fff1ae6ff7c653ee3932ed7e25abba7d9d216534c"
-      "662581337":
-        name: "nixamp-0.67.1-mac-x64.dmg"
-        url_suffix: "nixamp-0.67.1-mac-x64.dmg"
-        size: 135535395
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:0d30b5288803d9ec1d1cdbf901f0599d1d053671d686357ed0dd9f6f884d140f"
-      "662581338":
-        name: "nixamp-0.67.1-mac-arm64.zip"
-        url_suffix: "nixamp-0.67.1-mac-arm64.zip"
-        size: 132202228
-        media_type: "zip"
-        digest: "sha256:be7c9340ebd0ec9d8b730346375523b581e6e9334b0dee8f699e81ea86ef47b0"
-      "662581343":
-        name: "openstream-report-0.67.1.md"
-        url_suffix: "openstream-report-0.67.1.md"
-        size: 2023
-        media_type: "text/markdown"
-        digest: "sha256:33c30243a2a949b7ab27893682ff564c9b251859b5d82543446b3283a292d246"
-      "662581344":
-        name: "nixamp-0.67.1-linux-arm64.tar.gz"
-        url_suffix: "nixamp-0.67.1-linux-arm64.tar.gz"
-        size: 123891181
-        media_type: "application/gzip"
-        digest: "sha256:5c42c5b633a2550935478d11151579c09b6496f103d832dc20bbab876bae275c"
-      "662581346":
-        name: "nixamp-0.67.1-mac-arm64.dmg"
-        url_suffix: "nixamp-0.67.1-mac-arm64.dmg"
-        size: 131868529
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:1d73981c20f9432a3e78c0067517b2be5dee0e71ca45456f3492d9624cd2ba1a"
-      "662581347":
-        name: "nixamp-0.67.1-linux-amd64.deb"
-        url_suffix: "nixamp-0.67.1-linux-amd64.deb"
-        size: 102864140
-        media_type: "application/x-debian-package"
-        digest: "sha256:1616b5fbc3e2fd704b40130e8dce9fd36a70066e69e80eec7a95d76a2529f04a"
   "419616596":
     tag: "v0.67.3"
     title: "v0.67.3"
@@ -3594,3 +2810,787 @@ releases:
         size: 20864
         media_type: "application/json"
         digest: "sha256:45fce90dd176a9164bb8d15e28f6d6bea785df46c57b76957617ac7222877d52"
+  "440951068":
+    tag: "v0.80.1"
+    title: "v0.80.1"
+    url: "https://github.com/profullstack/nixamp/releases/tag/v0.80.1"
+    created_at: "2026-11-10T21:36:12Z"
+    published_at: "2026-11-10T21:47:11Z"
+    updated_at: "2026-11-10T21:47:11Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/profullstack/nixamp/zipball/v0.80.1"
+    source_tar_url: "https://api.github.com/repos/profullstack/nixamp/tarball/v0.80.1"
+    download_base: "https://github.com/profullstack/nixamp/releases/download/v0.80.1/"
+    assets:
+      "733069895":
+        name: "nixamp-0.80.1-linux-x86_64.AppImage"
+        url_suffix: "nixamp-0.80.1-linux-x86_64.AppImage"
+        size: 219818273
+        digest: "sha256:b5023efe2ab21e27813d712162eccf3994d7221dc1760983fc5b18804bca303b"
+      "733069897":
+        name: "nixamp-0.80.1-mac-x64.zip"
+        url_suffix: "nixamp-0.80.1-mac-x64.zip"
+        size: 223152481
+        media_type: "zip"
+        digest: "sha256:1518daa3ec659e1d02c139ab39640a1e2bbdb96d6f3239e4fa5891f3820444bb"
+      "733069901":
+        name: "nixamp-0.80.1-win-x64.zip"
+        url_suffix: "nixamp-0.80.1-win-x64.zip"
+        size: 310914075
+        media_type: "zip"
+        digest: "sha256:3d7d7cc88e2711e1f95d203499395350e0c90313cba3013a4a9f88e0f4bc952d"
+      "733069902":
+        name: "nixamp-0.80.1-win-arm64.exe"
+        url_suffix: "nixamp-0.80.1-win-arm64.exe"
+        size: 231880275
+        media_type: "application/x-msdos-program"
+        digest: "sha256:bc4e1f90d0ffb1cd4db6ae65ac37f3d54622eed0aa8482cf335f2210c5054493"
+      "733069903":
+        name: "nixamp-0.80.1-mac-arm64.zip"
+        url_suffix: "nixamp-0.80.1-mac-arm64.zip"
+        size: 218201221
+        media_type: "zip"
+        digest: "sha256:d8218371f6e07536fee1e0807b423b0b07e3699900cb1cfe51303f2cf7db4cbb"
+      "733069908":
+        name: "nixamp-0.80.1-linux-x64.tar.gz"
+        url_suffix: "nixamp-0.80.1-linux-x64.tar.gz"
+        size: 220606165
+        media_type: "application/gzip"
+        digest: "sha256:e607c9c08b1f77f05213faefe5fc328e8ce3f7026811fb89bec869d640197f4c"
+      "733069909":
+        name: "nixamp-0.80.1-mac-x64.dmg"
+        url_suffix: "nixamp-0.80.1-mac-x64.dmg"
+        size: 229937379
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:f3a29ce8f37ffae311fb02800d43fdf44df6f84b2bf0357dc84b708cd0d7dd3f"
+      "733069910":
+        name: "nixamp-0.80.1-win-x64.exe"
+        url_suffix: "nixamp-0.80.1-win-x64.exe"
+        size: 237763504
+        media_type: "application/x-msdos-program"
+        digest: "sha256:c63e641367dfa108cf1fa976d7d4966520112539265b56bd5c15ee3a9e86d33e"
+      "733069912":
+        name: "nixamp-cli-0.80.1.tar.gz"
+        url_suffix: "nixamp-cli-0.80.1.tar.gz"
+        size: 7064827
+        media_type: "application/gzip"
+        digest: "sha256:9a161e1a78a06c47db7f7de1b6a6eadd43fbd76993c7ddc8b6631abca313d33a"
+      "733069913":
+        name: "openstream-report-0.80.1.json"
+        url_suffix: "openstream-report-0.80.1.json"
+        size: 20855
+        media_type: "application/json"
+        digest: "sha256:79d8c07fa443ce1c0d07bf3e89389568ee289eabfe0909560bf8f6e9b07440df"
+      "733069915":
+        name: "nixamp-0.80.1-linux-arm64.tar.gz"
+        url_suffix: "nixamp-0.80.1-linux-arm64.tar.gz"
+        size: 221636743
+        media_type: "application/gzip"
+        digest: "sha256:6fe38c9b22c444c4149aaeb09fa323f3def1995b667d64cd7abcedf19ebde2bf"
+      "733069917":
+        name: "nixamp-0.80.1-mac-arm64.dmg"
+        url_suffix: "nixamp-0.80.1-mac-arm64.dmg"
+        size: 224963949
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:831578565fbc76de638a5e4e58aa6ac4ee7e5a3be8144c9a2f69e2f6e688e81a"
+      "733069919":
+        name: "nixamp-0.80.1-linux-arm64.AppImage"
+        url_suffix: "nixamp-0.80.1-linux-arm64.AppImage"
+        size: 221201916
+        digest: "sha256:f2ac7b705216dea1c0543ae1d664956ec25bec7aab8ffc3e5d014ef04df3f427"
+      "733069922":
+        name: "nixamp-0.80.1-linux-arm64.deb"
+        url_suffix: "nixamp-0.80.1-linux-arm64.deb"
+        size: 171249680
+        media_type: "application/x-debian-package"
+        digest: "sha256:27031857ccc92ff54012ba58e481d46a51cc53f78b5a79f4f9eb23bf8884b290"
+      "733069923":
+        name: "nixamp-0.80.1-win-arm64.zip"
+        url_suffix: "nixamp-0.80.1-win-arm64.zip"
+        size: 308644375
+        media_type: "zip"
+        digest: "sha256:b8ef10e51932b21edcbdbc12746d92f3ddc69d0b26f3a0b3ad39d28dea8f479d"
+      "733069925":
+        name: "nixamp-0.80.1-linux-amd64.deb"
+        url_suffix: "nixamp-0.80.1-linux-amd64.deb"
+        size: 176345604
+        media_type: "application/x-debian-package"
+        digest: "sha256:ed6cd95ba1b799b13444385e2aa11d7d5f1851c3036509ad00294658c1c8b878"
+      "733069928":
+        name: "openstream-report-0.80.1.md"
+        url_suffix: "openstream-report-0.80.1.md"
+        size: 2021
+        media_type: "text/markdown"
+        digest: "sha256:83d604668e77d19716ed33a503dab378011164714b400bd049d887ca6f447848"
+  "440966388":
+    tag: "v0.80.2"
+    title: "v0.80.2"
+    url: "https://github.com/profullstack/nixamp/releases/tag/v0.80.2"
+    created_at: "2026-11-10T21:55:03Z"
+    published_at: "2026-11-10T22:03:28Z"
+    updated_at: "2026-11-10T22:03:28Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/profullstack/nixamp/zipball/v0.80.2"
+    source_tar_url: "https://api.github.com/repos/profullstack/nixamp/tarball/v0.80.2"
+    download_base: "https://github.com/profullstack/nixamp/releases/download/v0.80.2/"
+    assets:
+      "733124527":
+        name: "openstream-report-0.80.2.md"
+        url_suffix: "openstream-report-0.80.2.md"
+        size: 2022
+        media_type: "text/markdown"
+        digest: "sha256:90766bc5a7f54b3b5b5b838d6ee0e79c8a54016832a8209b82cc4bf44b1556cc"
+      "733124528":
+        name: "nixamp-0.80.2-mac-arm64.zip"
+        url_suffix: "nixamp-0.80.2-mac-arm64.zip"
+        size: 218201268
+        media_type: "zip"
+        digest: "sha256:d4e29c23aa0e52c07b6c908f7fd0e80ded98cad890a31b686951153998e3da39"
+      "733124529":
+        name: "openstream-report-0.80.2.json"
+        url_suffix: "openstream-report-0.80.2.json"
+        size: 20861
+        media_type: "application/json"
+        digest: "sha256:dbb15e1a83c59e32a6b8fa89b1aeb9b792068b5db247cf66e529e9d14c56a031"
+      "733124530":
+        name: "nixamp-0.80.2-mac-arm64.dmg"
+        url_suffix: "nixamp-0.80.2-mac-arm64.dmg"
+        size: 224966779
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:aa035fd59e767d3ce394850e3881b5ac788288fd1197398b2b90e0b07f706f3d"
+      "733124531":
+        name: "nixamp-0.80.2-mac-x64.dmg"
+        url_suffix: "nixamp-0.80.2-mac-x64.dmg"
+        size: 229939855
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:e5c102ca75542e675ba6e4d5cadeb20597abc5b1e272b3280f5a4a73908169b4"
+      "733124532":
+        name: "nixamp-0.80.2-linux-arm64.tar.gz"
+        url_suffix: "nixamp-0.80.2-linux-arm64.tar.gz"
+        size: 221636922
+        media_type: "application/gzip"
+        digest: "sha256:fa0ad30d93a115303626b46dd319b0970a6a01e3534a881d9c62088261a78998"
+      "733124533":
+        name: "nixamp-0.80.2-win-arm64.zip"
+        url_suffix: "nixamp-0.80.2-win-arm64.zip"
+        size: 308644501
+        media_type: "zip"
+        digest: "sha256:ccd7ec3b217bb46e901005c0383083dd80a8a58cb921c30017c56e1528ffa194"
+      "733124534":
+        name: "nixamp-cli-0.80.2.tar.gz"
+        url_suffix: "nixamp-cli-0.80.2.tar.gz"
+        size: 7062874
+        media_type: "application/gzip"
+        digest: "sha256:d3bcc6d44730100dcd8add1bc0b8f70813756dbbacfea82e2e8480919fec16f2"
+      "733124537":
+        name: "nixamp-0.80.2-mac-x64.zip"
+        url_suffix: "nixamp-0.80.2-mac-x64.zip"
+        size: 223152534
+        media_type: "zip"
+        digest: "sha256:e690c4d722b42a9556641a71e2cf2179faea5e93d3b27bc608da6e7e948c0cd8"
+      "733124538":
+        name: "nixamp-0.80.2-win-x64.zip"
+        url_suffix: "nixamp-0.80.2-win-x64.zip"
+        size: 310914199
+        media_type: "zip"
+        digest: "sha256:10c992f25b566c3420f5779cb75a7282476dad86c3929e0753112ab1ae0d5990"
+      "733124539":
+        name: "nixamp-0.80.2-win-arm64.exe"
+        url_suffix: "nixamp-0.80.2-win-arm64.exe"
+        size: 231880121
+        media_type: "application/x-msdos-program"
+        digest: "sha256:672c8ded5e00ab8dccd64eaccef5ed3167569915fbff6576b5b9cc98813b5c8c"
+      "733124540":
+        name: "nixamp-0.80.2-linux-x64.tar.gz"
+        url_suffix: "nixamp-0.80.2-linux-x64.tar.gz"
+        size: 220606140
+        media_type: "application/gzip"
+        digest: "sha256:2dbc6812163a69ceb679598ab2ba9dbc9b6eb628c3ccff8a01af364c7a6fe61a"
+      "733124541":
+        name: "nixamp-0.80.2-linux-amd64.deb"
+        url_suffix: "nixamp-0.80.2-linux-amd64.deb"
+        size: 176345448
+        media_type: "application/x-debian-package"
+        digest: "sha256:3433f9b1a706924e6c67f95f1cef244a74f0ff360c917ebcec502e1b31ae8ef5"
+      "733124542":
+        name: "nixamp-0.80.2-win-x64.exe"
+        url_suffix: "nixamp-0.80.2-win-x64.exe"
+        size: 237763552
+        media_type: "application/x-msdos-program"
+        digest: "sha256:2638383c91d5bfb5117c880cbcf94a37376255672c1debc7d8b85b571da47a67"
+      "733124544":
+        name: "nixamp-0.80.2-linux-arm64.deb"
+        url_suffix: "nixamp-0.80.2-linux-arm64.deb"
+        size: 171249560
+        media_type: "application/x-debian-package"
+        digest: "sha256:d93a17c2c12cf1a20a62d0920b4753b068fb260101ebb516eb6f80428414b959"
+      "733124548":
+        name: "nixamp-0.80.2-linux-x86_64.AppImage"
+        url_suffix: "nixamp-0.80.2-linux-x86_64.AppImage"
+        size: 219818277
+        digest: "sha256:2688e9699eb7298fbed866bc51c512b326de0836ef700bd6d3046bbe6c6362f5"
+      "733124590":
+        name: "nixamp-0.80.2-linux-arm64.AppImage"
+        url_suffix: "nixamp-0.80.2-linux-arm64.AppImage"
+        size: 221201893
+        digest: "sha256:d08f4d17d3d208f5215cb2039a26ef46db498fbbe1475b4b522ab990158f740f"
+  "441600065":
+    tag: "v0.80.3"
+    title: "v0.80.3"
+    url: "https://github.com/profullstack/nixamp/releases/tag/v0.80.3"
+    created_at: "2026-11-11T08:28:57Z"
+    published_at: "2026-11-11T11:26:28Z"
+    updated_at: "2026-11-11T11:26:28Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/profullstack/nixamp/zipball/v0.80.3"
+    source_tar_url: "https://api.github.com/repos/profullstack/nixamp/tarball/v0.80.3"
+    download_base: "https://github.com/profullstack/nixamp/releases/download/v0.80.3/"
+    assets:
+      "735269156":
+        name: "nixamp-0.80.3-win-arm64.exe"
+        url_suffix: "nixamp-0.80.3-win-arm64.exe"
+        size: 231881428
+        media_type: "application/x-msdos-program"
+        digest: "sha256:165ab84f1cf31d57accc65daae9ef4780acc0e3d8cbb1d1c37da848a5537f494"
+      "735269157":
+        name: "openstream-report-0.80.3.md"
+        url_suffix: "openstream-report-0.80.3.md"
+        size: 2024
+        media_type: "text/markdown"
+        digest: "sha256:f3fa8094079f239b5183250f74e8d861419789d9b83f54020e51feec888551dd"
+      "735269159":
+        name: "nixamp-0.80.3-win-x64.zip"
+        url_suffix: "nixamp-0.80.3-win-x64.zip"
+        size: 310915385
+        media_type: "zip"
+        digest: "sha256:c58c328c45428239a325ea7988677791b9da6ffd6fefd84ace6fa26bcc82718a"
+      "735269160":
+        name: "nixamp-0.80.3-mac-x64.dmg"
+        url_suffix: "nixamp-0.80.3-mac-x64.dmg"
+        size: 229943774
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:0d6b86c0c0d72aede80453b90ccf5dbbe738f21c2af4fee4937ad00570482279"
+      "735269161":
+        name: "nixamp-0.80.3-mac-x64.zip"
+        url_suffix: "nixamp-0.80.3-mac-x64.zip"
+        size: 223153792
+        media_type: "zip"
+        digest: "sha256:a0130e56a69b3466cc4091dc584cdad93cac4dfa16e4f1a10eeb7f275c2ab940"
+      "735269163":
+        name: "nixamp-0.80.3-linux-x86_64.AppImage"
+        url_suffix: "nixamp-0.80.3-linux-x86_64.AppImage"
+        size: 219818284
+        digest: "sha256:acc7453a13638decc648c35bdc53ee200585c7a305cabe441dd91528e9ab2411"
+      "735269164":
+        name: "nixamp-0.80.3-win-x64.exe"
+        url_suffix: "nixamp-0.80.3-win-x64.exe"
+        size: 237764917
+        media_type: "application/x-msdos-program"
+        digest: "sha256:d93f54690d6ddbc83211db7daf5ca2615deb35d4dbf2056cc8f2c8d8349a5674"
+      "735269166":
+        name: "nixamp-cli-0.80.3.tar.gz"
+        url_suffix: "nixamp-cli-0.80.3.tar.gz"
+        size: 7067251
+        media_type: "application/gzip"
+        digest: "sha256:a15172e87344bba376d2b5a3574d9f0ffdd0d69e1392bb348d7bf8cf6ab2ce81"
+      "735269167":
+        name: "nixamp-0.80.3-mac-arm64.zip"
+        url_suffix: "nixamp-0.80.3-mac-arm64.zip"
+        size: 218202528
+        media_type: "zip"
+        digest: "sha256:97466fe5d845545b4d1d60030829e96cc59f370364702048bb17bfc74ec857b5"
+      "735269169":
+        name: "openstream-report-0.80.3.json"
+        url_suffix: "openstream-report-0.80.3.json"
+        size: 20862
+        media_type: "application/json"
+        digest: "sha256:7374108f35388167dd4a629509723fc66edc0236dc15cc78a689ab18d8ec7b99"
+      "735269171":
+        name: "nixamp-0.80.3-win-arm64.zip"
+        url_suffix: "nixamp-0.80.3-win-arm64.zip"
+        size: 308645685
+        media_type: "zip"
+        digest: "sha256:603cce61e1781e42014b30ec98c915ecb0b88bb0c4ac2dcbd168b42f27afc69f"
+      "735269172":
+        name: "nixamp-0.80.3-mac-arm64.dmg"
+        url_suffix: "nixamp-0.80.3-mac-arm64.dmg"
+        size: 224969953
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:1bf0e56c93aacad63435194add7060ba3254cd7b791f42cebae12a9482ac3fec"
+      "735269173":
+        name: "nixamp-0.80.3-linux-arm64.tar.gz"
+        url_suffix: "nixamp-0.80.3-linux-arm64.tar.gz"
+        size: 221638136
+        media_type: "application/gzip"
+        digest: "sha256:d0bd3bbf92a94d4abbcec6a534fa4ff1bfa928858c96b6c4bbaa486f63783c06"
+      "735269174":
+        name: "nixamp-0.80.3-linux-x64.tar.gz"
+        url_suffix: "nixamp-0.80.3-linux-x64.tar.gz"
+        size: 220587335
+        media_type: "application/gzip"
+        digest: "sha256:28f543b65f07a93ed81ec97fa07ce10538dd48d3e3374097d57049e62fea9e9f"
+      "735269175":
+        name: "nixamp-0.80.3-linux-amd64.deb"
+        url_suffix: "nixamp-0.80.3-linux-amd64.deb"
+        size: 176346168
+        media_type: "application/x-debian-package"
+        digest: "sha256:0f7eb818b0b9ad0e1b36df5009569df872491799f0d5ea5d9d5e53f112841833"
+      "735269176":
+        name: "nixamp-0.80.3-linux-arm64.deb"
+        url_suffix: "nixamp-0.80.3-linux-arm64.deb"
+        size: 171247652
+        media_type: "application/x-debian-package"
+        digest: "sha256:34dcdee5c7d78ddeeb8f451ded43318a18de84956e768cf11e7cac2fb97b4dcc"
+      "735269180":
+        name: "nixamp-0.80.3-linux-arm64.AppImage"
+        url_suffix: "nixamp-0.80.3-linux-arm64.AppImage"
+        size: 221201908
+        digest: "sha256:cf496ea29397b29b6a53b27d1699c0326fc1db6eb481d23d86ee68333f6350bf"
+  "445256951":
+    tag: "v0.80.5"
+    title: "v0.80.5"
+    url: "https://github.com/profullstack/nixamp/releases/tag/v0.80.5"
+    created_at: "2026-11-14T11:18:52Z"
+    published_at: "2026-11-14T11:47:19Z"
+    updated_at: "2026-11-14T11:47:19Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/profullstack/nixamp/zipball/v0.80.5"
+    source_tar_url: "https://api.github.com/repos/profullstack/nixamp/tarball/v0.80.5"
+    download_base: "https://github.com/profullstack/nixamp/releases/download/v0.80.5/"
+    assets:
+      "747322876":
+        name: "openstream-report-0.80.5.md"
+        url_suffix: "openstream-report-0.80.5.md"
+        size: 2026
+        media_type: "text/markdown"
+        digest: "sha256:85e37b8b8ef51afeccbe6339596fae39589c09e95f87ae1aa8dbac9a8b3a2e87"
+      "747322877":
+        name: "nixamp-cli-0.80.5.tar.gz"
+        url_suffix: "nixamp-cli-0.80.5.tar.gz"
+        size: 7099181
+        media_type: "application/gzip"
+        digest: "sha256:daaeffb05e26a10bf27c121bea3607f7381e6db564c140825ff531c716e7af57"
+      "747322878":
+        name: "openstream-report-0.80.5.json"
+        url_suffix: "openstream-report-0.80.5.json"
+        size: 20863
+        media_type: "application/json"
+        digest: "sha256:283f137c251ac038fa75177516b221450d1490b804d625c32951cb0e78b80098"
+      "747322879":
+        name: "nixamp-0.80.5-win-arm64.zip"
+        url_suffix: "nixamp-0.80.5-win-arm64.zip"
+        size: 308672100
+        media_type: "zip"
+        digest: "sha256:d6c5a12fefe95eeda5dbc5e369d6552fa73ce8010b7b976c13c762690f71008d"
+      "747322880":
+        name: "nixamp-0.80.5-win-x64.exe"
+        url_suffix: "nixamp-0.80.5-win-x64.exe"
+        size: 237787532
+        media_type: "application/x-msdos-program"
+        digest: "sha256:2bed11e14bb274aa69cd8e2c2e8f10214daa36ca4f035902bf8c5a5a7b4979f7"
+      "747322881":
+        name: "nixamp-0.80.5-mac-arm64.zip"
+        url_suffix: "nixamp-0.80.5-mac-arm64.zip"
+        size: 218228492
+        media_type: "zip"
+        digest: "sha256:84990fc42bcc39af665481d2a242fc702d0c79e3329df16ff384a197368e610a"
+      "747322882":
+        name: "nixamp-0.80.5-win-arm64.exe"
+        url_suffix: "nixamp-0.80.5-win-arm64.exe"
+        size: 231904035
+        media_type: "application/x-msdos-program"
+        digest: "sha256:4b6b8e8fbaaaf5cf89457c6bc9ef7de4572e1064eba401dc7532eb3a963bdcc5"
+      "747322883":
+        name: "nixamp-0.80.5-mac-x64.dmg"
+        url_suffix: "nixamp-0.80.5-mac-x64.dmg"
+        size: 230004829
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:0a2bb53bb7b2a5ca397b130fab4fb37f97ad6f915640c7bba639dff43e344d9a"
+      "747322884":
+        name: "nixamp-0.80.5-linux-x86_64.AppImage"
+        url_suffix: "nixamp-0.80.5-linux-x86_64.AppImage"
+        size: 219879962
+        digest: "sha256:9f8182f6b127c75a3e924fddb923744bb4b3151863fe95dd471d68ba53929691"
+      "747322885":
+        name: "nixamp-0.80.5-linux-x64.tar.gz"
+        url_suffix: "nixamp-0.80.5-linux-x64.tar.gz"
+        size: 220603413
+        media_type: "application/gzip"
+        digest: "sha256:ff91c3abf711a41863acd51b3ffbe66d766333e6af2871ae32c839bb579d24ef"
+      "747322886":
+        name: "nixamp-0.80.5-mac-x64.zip"
+        url_suffix: "nixamp-0.80.5-mac-x64.zip"
+        size: 223179750
+        media_type: "zip"
+        digest: "sha256:c432bbf634349ac852671071b4f2462250e6656948d95658fd024862930f9c92"
+      "747322887":
+        name: "nixamp-0.80.5-mac-arm64.dmg"
+        url_suffix: "nixamp-0.80.5-mac-arm64.dmg"
+        size: 224997372
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:8363a45469bd2e644f345ed9ea8b880b7ecf0468c9a47be5a0175f24df0d3c80"
+      "747322888":
+        name: "nixamp-0.80.5-win-x64.zip"
+        url_suffix: "nixamp-0.80.5-win-x64.zip"
+        size: 310941807
+        media_type: "zip"
+        digest: "sha256:d125c732b59848097647cd0e4882330a5dd64a22c43bd3ae0faea6285bb4e995"
+      "747322889":
+        name: "nixamp-0.80.5-linux-arm64.deb"
+        url_suffix: "nixamp-0.80.5-linux-arm64.deb"
+        size: 171255148
+        media_type: "application/x-debian-package"
+        digest: "sha256:68f201a43bc3d30f7b46917e0257410c04bd842b0093059a4747ff97f0da1afd"
+      "747322890":
+        name: "nixamp-0.80.5-linux-amd64.deb"
+        url_suffix: "nixamp-0.80.5-linux-amd64.deb"
+        size: 178456188
+        media_type: "application/x-debian-package"
+        digest: "sha256:ff3f920098ef2762b38da64d0ff07d5924849c4e3cb2ae1ae6c93ae6b5c3f9b3"
+      "747322892":
+        name: "nixamp-0.80.5-linux-arm64.tar.gz"
+        url_suffix: "nixamp-0.80.5-linux-arm64.tar.gz"
+        size: 221642987
+        media_type: "application/gzip"
+        digest: "sha256:5601c1878976a537bd03d54dff7dbcbcf1219db5f1eca8c0197f3d6ee2f1fab1"
+      "747322893":
+        name: "nixamp-0.80.5-linux-arm64.AppImage"
+        url_suffix: "nixamp-0.80.5-linux-arm64.AppImage"
+        size: 221202361
+        digest: "sha256:b7f898219d7e1a1b6154916e3f25993c597478bbf89ac3a9ba1dbd14b62c1e8c"
+  "445276986":
+    tag: "v0.80.6"
+    title: "v0.80.6"
+    url: "https://github.com/profullstack/nixamp/releases/tag/v0.80.6"
+    created_at: "2026-11-14T12:08:13Z"
+    published_at: "2026-11-14T12:22:17Z"
+    updated_at: "2026-11-14T12:22:17Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/profullstack/nixamp/zipball/v0.80.6"
+    source_tar_url: "https://api.github.com/repos/profullstack/nixamp/tarball/v0.80.6"
+    download_base: "https://github.com/profullstack/nixamp/releases/download/v0.80.6/"
+    assets:
+      "747405668":
+        name: "openstream-report-0.80.6.md"
+        url_suffix: "openstream-report-0.80.6.md"
+        size: 2025
+        media_type: "text/markdown"
+        digest: "sha256:99a2fbba4ea93c773f6f64864bc76fa92611d7561375ff760003125159c5a0d2"
+      "747405670":
+        name: "openstream-report-0.80.6.json"
+        url_suffix: "openstream-report-0.80.6.json"
+        size: 20867
+        media_type: "application/json"
+        digest: "sha256:8b4413d8ce836255ddab3bf3aed4f6a6a44c1cc5937f5e336916be48b260d41a"
+      "747405672":
+        name: "nixamp-cli-0.80.6.tar.gz"
+        url_suffix: "nixamp-cli-0.80.6.tar.gz"
+        size: 7102650
+        media_type: "application/gzip"
+        digest: "sha256:9dfe4588d044a7bd49659dc7ef6231ababb48df9268b21ab7e4b3a4304d5a778"
+      "747405673":
+        name: "nixamp-0.80.6-win-arm64.zip"
+        url_suffix: "nixamp-0.80.6-win-arm64.zip"
+        size: 308676536
+        media_type: "zip"
+        digest: "sha256:b66fcf0a69fcbcb1c00f0a5866870d607587a53675214375e501862cc93eff0f"
+      "747405674":
+        name: "nixamp-0.80.6-win-x64.zip"
+        url_suffix: "nixamp-0.80.6-win-x64.zip"
+        size: 310946234
+        media_type: "zip"
+        digest: "sha256:365c25756bc2f21f9ce61e435de2c49f4c72922e4efad22c6dd5e8110b413d5d"
+      "747405675":
+        name: "nixamp-0.80.6-mac-x64.zip"
+        url_suffix: "nixamp-0.80.6-mac-x64.zip"
+        size: 223183973
+        media_type: "zip"
+        digest: "sha256:d077fa1b68908cfb16261586766ca494cc5c2b5b0f3716a808ba3fc9ecf3d52d"
+      "747405677":
+        name: "nixamp-0.80.6-mac-arm64.zip"
+        url_suffix: "nixamp-0.80.6-mac-arm64.zip"
+        size: 218232565
+        media_type: "zip"
+        digest: "sha256:0fba3c29e757ee938e433f4f74256b62358dfbd1be7327db190534096d087ac1"
+      "747405678":
+        name: "nixamp-0.80.6-linux-x86_64.AppImage"
+        url_suffix: "nixamp-0.80.6-linux-x86_64.AppImage"
+        size: 219884028
+        digest: "sha256:a63cb54e505acf92f5d3dd6db1b2e6bfd9cf0b6f1ac168e5d0a8dace3609fd85"
+      "747405680":
+        name: "nixamp-0.80.6-mac-x64.dmg"
+        url_suffix: "nixamp-0.80.6-mac-x64.dmg"
+        size: 229959892
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:e3bd4d5f5b52e968b5f0b0352a98bb1501f230966d4098e1de201f07b1b3d739"
+      "747405681":
+        name: "nixamp-0.80.6-win-arm64.exe"
+        url_suffix: "nixamp-0.80.6-win-arm64.exe"
+        size: 231907705
+        media_type: "application/x-msdos-program"
+        digest: "sha256:af6e980c6ac49a1e2294d6b4e40b41e37cf6efa23f4ef24d36a057cadf2b79d4"
+      "747405682":
+        name: "nixamp-0.80.6-linux-x64.tar.gz"
+        url_suffix: "nixamp-0.80.6-linux-x64.tar.gz"
+        size: 220624280
+        media_type: "application/gzip"
+        digest: "sha256:6d10a71d0531d569a5d2c804f1a9fcc1dfc92a710b1a700f41c3da49fbd3acc9"
+      "747405683":
+        name: "nixamp-0.80.6-win-x64.exe"
+        url_suffix: "nixamp-0.80.6-win-x64.exe"
+        size: 237791063
+        media_type: "application/x-msdos-program"
+        digest: "sha256:b2b1d719ee61f43e5f4d293b6b1ff42be97f8ce8add213fca34513751b8c742e"
+      "747405684":
+        name: "nixamp-0.80.6-linux-amd64.deb"
+        url_suffix: "nixamp-0.80.6-linux-amd64.deb"
+        size: 178454316
+        media_type: "application/x-debian-package"
+        digest: "sha256:f1dfbf82de26c80b42f3091b70e8a498b6238e74f58495075bc9d4db810af319"
+      "747405685":
+        name: "nixamp-0.80.6-linux-arm64.AppImage"
+        url_suffix: "nixamp-0.80.6-linux-arm64.AppImage"
+        size: 221206336
+        digest: "sha256:4f0b0069ed0cd2e38b97f420a10fcdf2069ff870990a4366faed1af82fd799ab"
+      "747405686":
+        name: "nixamp-0.80.6-linux-arm64.tar.gz"
+        url_suffix: "nixamp-0.80.6-linux-arm64.tar.gz"
+        size: 221677437
+        media_type: "application/gzip"
+        digest: "sha256:984d90aadc2a2580bf394737b0280962a6e3f9d7ca67daa0f1af988f112b8ad7"
+      "747405687":
+        name: "nixamp-0.80.6-linux-arm64.deb"
+        url_suffix: "nixamp-0.80.6-linux-arm64.deb"
+        size: 171258020
+        media_type: "application/x-debian-package"
+        digest: "sha256:933d06165e00a6b58a23ea81de7a09083d35df479be18ec861bf2d7eab9b6770"
+      "747405688":
+        name: "nixamp-0.80.6-mac-arm64.dmg"
+        url_suffix: "nixamp-0.80.6-mac-arm64.dmg"
+        size: 225028925
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:f00c1bac2f22d920d94b88fb69959b65bd959777ea6ae93ffd4c551b1e9fe0d6"
+  "445300718":
+    tag: "v0.80.7"
+    title: "v0.80.7"
+    url: "https://github.com/profullstack/nixamp/releases/tag/v0.80.7"
+    created_at: "2026-11-14T12:52:49Z"
+    published_at: "2026-11-14T13:04:04Z"
+    updated_at: "2026-11-14T13:04:04Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/profullstack/nixamp/zipball/v0.80.7"
+    source_tar_url: "https://api.github.com/repos/profullstack/nixamp/tarball/v0.80.7"
+    download_base: "https://github.com/profullstack/nixamp/releases/download/v0.80.7/"
+    assets:
+      "747512925":
+        name: "openstream-report-0.80.7.md"
+        url_suffix: "openstream-report-0.80.7.md"
+        size: 2023
+        media_type: "text/markdown"
+        digest: "sha256:816b4fb9ad5ca8d75bb0cdfc24e8b6d9af4c5e08ad4d18ba19c1c3a850ebae1f"
+      "747512926":
+        name: "nixamp-0.80.7-win-arm64.exe"
+        url_suffix: "nixamp-0.80.7-win-arm64.exe"
+        size: 231907952
+        media_type: "application/x-msdos-program"
+        digest: "sha256:f210ebfc257520322a4584dd40587469e517563e3a23e69b74fb20215b57742a"
+      "747512927":
+        name: "nixamp-0.80.7-win-x64.zip"
+        url_suffix: "nixamp-0.80.7-win-x64.zip"
+        size: 310946570
+        media_type: "zip"
+        digest: "sha256:8c940e797a2651b127a020e07d7cd071b88b4c97e8a87f6c38c040cdef34bf8a"
+      "747512928":
+        name: "nixamp-cli-0.80.7.tar.gz"
+        url_suffix: "nixamp-cli-0.80.7.tar.gz"
+        size: 7102070
+        media_type: "application/gzip"
+        digest: "sha256:9c67fb654827ae291b406139ba93d6f64eda7af4dc64f8a85d294a7bc413cc5c"
+      "747512929":
+        name: "openstream-report-0.80.7.json"
+        url_suffix: "openstream-report-0.80.7.json"
+        size: 20864
+        media_type: "application/json"
+        digest: "sha256:9e404ddecefa3518e297dc66547f1097b66a5706f6bc2bbc6feba023e9effcc1"
+      "747512930":
+        name: "nixamp-0.80.7-win-x64.exe"
+        url_suffix: "nixamp-0.80.7-win-x64.exe"
+        size: 237791450
+        media_type: "application/x-msdos-program"
+        digest: "sha256:df26a9da6a6719679155356bf0f37e5779013340d69214034f7b98d6a1cb3be0"
+      "747512931":
+        name: "nixamp-0.80.7-linux-x86_64.AppImage"
+        url_suffix: "nixamp-0.80.7-linux-x86_64.AppImage"
+        size: 219888135
+        digest: "sha256:ef1a2e03cf827b90f9f178a0abed2ef4bba1e145eea0ddefd7e5a37d3d0bea09"
+      "747512932":
+        name: "nixamp-0.80.7-mac-arm64.zip"
+        url_suffix: "nixamp-0.80.7-mac-arm64.zip"
+        size: 218232950
+        media_type: "zip"
+        digest: "sha256:57cba7b05a19104041e44e0cdec1097e32bde5bf0643cbe9db8103b572362b5b"
+      "747512933":
+        name: "nixamp-0.80.7-mac-arm64.dmg"
+        url_suffix: "nixamp-0.80.7-mac-arm64.dmg"
+        size: 225029024
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:0b9492854c0df46cc140db0bc4ae81b41b1d0b14202f28ed7329b90c6bbca220"
+      "747512934":
+        name: "nixamp-0.80.7-linux-arm64.AppImage"
+        url_suffix: "nixamp-0.80.7-linux-arm64.AppImage"
+        size: 221206299
+        digest: "sha256:3ced8eb97b2cdf674b19b88e25a5f279075338dfb76ba3b4ad628dc2a0d9cbc7"
+      "747512936":
+        name: "nixamp-0.80.7-win-arm64.zip"
+        url_suffix: "nixamp-0.80.7-win-arm64.zip"
+        size: 308676869
+        media_type: "zip"
+        digest: "sha256:b87a090480f9978f2b9f3c16c7db23dab1dc09eb221ced40ee97b51a7f8df4b9"
+      "747512937":
+        name: "nixamp-0.80.7-linux-arm64.deb"
+        url_suffix: "nixamp-0.80.7-linux-arm64.deb"
+        size: 171257432
+        media_type: "application/x-debian-package"
+        digest: "sha256:15f6139f17b1820a85756e88673f44a518e8f1e862dead341df11208b1bad29c"
+      "747512938":
+        name: "nixamp-0.80.7-mac-x64.zip"
+        url_suffix: "nixamp-0.80.7-mac-x64.zip"
+        size: 223184355
+        media_type: "zip"
+        digest: "sha256:809cc4b7af6ccd613f7269f11a49437de4c554d55d6f3d12d6f48b28d3f65bba"
+      "747512940":
+        name: "nixamp-0.80.7-linux-amd64.deb"
+        url_suffix: "nixamp-0.80.7-linux-amd64.deb"
+        size: 178456816
+        media_type: "application/x-debian-package"
+        digest: "sha256:e8ce19f1cee1981feb7a37ddba48cbe797d23ba796c7e8fec88619f09ebd13fa"
+      "747512941":
+        name: "nixamp-0.80.7-linux-x64.tar.gz"
+        url_suffix: "nixamp-0.80.7-linux-x64.tar.gz"
+        size: 220624363
+        media_type: "application/gzip"
+        digest: "sha256:e97fa7aa21db94e24f0c1c48798fef262cb003c37f71b7674ca650204daeca2b"
+      "747512943":
+        name: "nixamp-0.80.7-linux-arm64.tar.gz"
+        url_suffix: "nixamp-0.80.7-linux-arm64.tar.gz"
+        size: 221677432
+        media_type: "application/gzip"
+        digest: "sha256:bb5c8c6eb6e0a5b9a3a5ba2098cd4e7df93f133c43a62b1848df89e865630e71"
+      "747512959":
+        name: "nixamp-0.80.7-mac-x64.dmg"
+        url_suffix: "nixamp-0.80.7-mac-x64.dmg"
+        size: 229960539
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:d9803568ff15c073186314c38b6711b3211f19bb38dd702e4e429cb810e4d463"
+  "445777097":
+    tag: "v0.80.8"
+    title: "v0.80.8"
+    url: "https://github.com/profullstack/nixamp/releases/tag/v0.80.8"
+    created_at: "2026-11-15T03:04:02Z"
+    published_at: "2026-11-15T03:11:31Z"
+    updated_at: "2026-11-15T03:11:31Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/profullstack/nixamp/zipball/v0.80.8"
+    source_tar_url: "https://api.github.com/repos/profullstack/nixamp/tarball/v0.80.8"
+    download_base: "https://github.com/profullstack/nixamp/releases/download/v0.80.8/"
+    assets:
+      "749649429":
+        name: "nixamp-0.80.8-win-x64.zip"
+        url_suffix: "nixamp-0.80.8-win-x64.zip"
+        size: 310946720
+        media_type: "zip"
+        digest: "sha256:0127244a815e503d3dd8131297ba8f8afedf6b6eb21b27f90feb060ee84e18db"
+      "749649430":
+        name: "openstream-report-0.80.8.md"
+        url_suffix: "openstream-report-0.80.8.md"
+        size: 2010
+        media_type: "text/markdown"
+        digest: "sha256:491105b817bbedb942d8111d2dd9a337f60d1d4774743e4f2698d9a9e6874c12"
+      "749649431":
+        name: "nixamp-0.80.8-win-arm64.zip"
+        url_suffix: "nixamp-0.80.8-win-arm64.zip"
+        size: 308677020
+        media_type: "zip"
+        digest: "sha256:6db7c24725f1311181d96514e1d75bb958e255e75c3da5992631e8d79597e590"
+      "749649432":
+        name: "nixamp-cli-0.80.8.tar.gz"
+        url_suffix: "nixamp-cli-0.80.8.tar.gz"
+        size: 7095191
+        media_type: "application/gzip"
+        digest: "sha256:efedcec39da9543c59ebc94e556e70d7bacb2e8cece5b850cc299e310e0a5eb1"
+      "749649433":
+        name: "openstream-report-0.80.8.json"
+        url_suffix: "openstream-report-0.80.8.json"
+        size: 20846
+        media_type: "application/json"
+        digest: "sha256:5517266ac91d9ee57959c2b98f3069393d036341735e671cb1731695650d7356"
+      "749649434":
+        name: "nixamp-0.80.8-win-x64.exe"
+        url_suffix: "nixamp-0.80.8-win-x64.exe"
+        size: 237791475
+        media_type: "application/x-msdos-program"
+        digest: "sha256:8e8d537fff5bf23d6d4e81f9ac1e019979b57ae93bb06e3a6158a910ff061b87"
+      "749649436":
+        name: "nixamp-0.80.8-win-arm64.exe"
+        url_suffix: "nixamp-0.80.8-win-arm64.exe"
+        size: 231908053
+        media_type: "application/x-msdos-program"
+        digest: "sha256:33c8762c10a54e5596fef8e9fdd0aaa43284324bb7fd2e5d172ac6a8c474975a"
+      "749649437":
+        name: "nixamp-0.80.8-linux-arm64.tar.gz"
+        url_suffix: "nixamp-0.80.8-linux-arm64.tar.gz"
+        size: 221676934
+        media_type: "application/gzip"
+        digest: "sha256:c94595a8b24acd07fbe2c45cec48ff750084e829659ebbc5916dbb658fb22124"
+      "749649438":
+        name: "nixamp-0.80.8-linux-x64.tar.gz"
+        url_suffix: "nixamp-0.80.8-linux-x64.tar.gz"
+        size: 220623695
+        media_type: "application/gzip"
+        digest: "sha256:c77307223bc215a0703dfafc5370208f72c4ffb6eb27b1d79081a38c43ee8505"
+      "749649439":
+        name: "nixamp-0.80.8-linux-amd64.deb"
+        url_suffix: "nixamp-0.80.8-linux-amd64.deb"
+        size: 178454476
+        media_type: "application/x-debian-package"
+        digest: "sha256:f19dbc334ed34d99fd6095a591cf97af70bc7b8e4433701f96cc021722bdaa0d"
+      "749649440":
+        name: "nixamp-0.80.8-mac-arm64.dmg"
+        url_suffix: "nixamp-0.80.8-mac-arm64.dmg"
+        size: 225030702
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:5dc7f0686c22b5415dd782ac8134f1a1388649910c077ab42f1a7bc8dfd50596"
+      "749649441":
+        name: "nixamp-0.80.8-linux-arm64.deb"
+        url_suffix: "nixamp-0.80.8-linux-arm64.deb"
+        size: 171257504
+        media_type: "application/x-debian-package"
+        digest: "sha256:374ae6acd724be6ed139e0fd75892c3609be757ceda55aee52aa4443a7ef43c3"
+      "749649442":
+        name: "nixamp-0.80.8-linux-arm64.AppImage"
+        url_suffix: "nixamp-0.80.8-linux-arm64.AppImage"
+        size: 221206260
+        digest: "sha256:d6bf8fc9e5c32c6c28b376cd218bf9c8e07d87b782f54dffe513e1156944cacb"
+      "749649443":
+        name: "nixamp-0.80.8-mac-x64.dmg"
+        url_suffix: "nixamp-0.80.8-mac-x64.dmg"
+        size: 229962045
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:fb044700f3a27ad9a2876d31de62c5c989f37816fdd97b7850405d26eeb2e32e"
+      "749649444":
+        name: "nixamp-0.80.8-linux-x86_64.AppImage"
+        url_suffix: "nixamp-0.80.8-linux-x86_64.AppImage"
+        size: 219888150
+        digest: "sha256:968f2d9505f4903535ff4c5c9773a333472341ec1959e98a30848539d539c1d1"
+      "749649445":
+        name: "nixamp-0.80.8-mac-arm64.zip"
+        url_suffix: "nixamp-0.80.8-mac-arm64.zip"
+        size: 218232912
+        media_type: "zip"
+        digest: "sha256:52c83f6a630b7e094829794cd5001cb6c801986724a351678a1bfdf4cf8f92f1"
+      "749649446":
+        name: "nixamp-0.80.8-mac-x64.zip"
+        url_suffix: "nixamp-0.80.8-mac-x64.zip"
+        size: 223184168
+        media_type: "zip"
+        digest: "sha256:2af64b6a1365c4df52aff3853bde01c7e8c1aa6053eb5c19e9099d7b395cf5ef"

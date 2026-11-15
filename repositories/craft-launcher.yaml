@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1412548284
 repository: "storytold/craft-launcher"
-collected_at: "2026-11-10T21:15:50Z"
+collected_at: "2026-11-15T11:07:16Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-10T21:15:50Z"
+observed_at: "2026-11-15T11:07:16Z"
 releases:
   "408573247":
     tag: "v0.1.0"
@@ -4934,6 +4934,918 @@ releases:
         media_type: "zip"
         digest: "sha256:0d579dbc229ee00875f0ae02c40f4101c9734b2a3be395c2804f765caafa6baa"
       "730872759":
+        name: "release-signing-key.asc"
+        url_suffix: "release-signing-key.asc"
+        size: 803
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8e6925a173d6a7134118da099948de4d9eeec7c1c0770998aec33c9d3f484740"
+  "441151340":
+    tag: "v0.19.0"
+    title: "ArtCraft Launcher v0.19.0"
+    url: "https://github.com/storytold/craft-launcher/releases/tag/v0.19.0"
+    created_at: "2026-11-11T01:46:53Z"
+    published_at: "2026-11-11T02:02:35Z"
+    updated_at: "2026-11-11T02:02:35Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/storytold/craft-launcher/zipball/v0.19.0"
+    source_tar_url: "https://api.github.com/repos/storytold/craft-launcher/tarball/v0.19.0"
+    download_base: "https://github.com/storytold/craft-launcher/releases/download/v0.19.0/"
+    assets:
+      "733747438":
+        name: "artcraft-launcher-0.19.0-linux-aarch64.AppImage"
+        url_suffix: "artcraft-launcher-0.19.0-linux-aarch64.AppImage"
+        size: 12745224
+        media_type: "application/vnd.appimage"
+        digest: "sha256:6a8b14e2aafabb52af0fbc537be63ec1853ca8819eed6984588a67a8e5c8bc87"
+      "733747439":
+        name: "SHA256SUMS.txt.asc"
+        url_suffix: "SHA256SUMS.txt.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:441ff09531ff15559593996efa8e1afd086c4cf830ec03412e7a3c9a56dba03a"
+      "733747440":
+        name: "SHA256SUMS.txt"
+        url_suffix: "SHA256SUMS.txt"
+        size: 5337
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:19b0fafa295a54f38773a74a8280d53ce0e7daa7631ae931cd43c03a20e23af8"
+      "733747441":
+        name: "artcraft-launcher-0.19.0-freebsd-aarch64.tar.gz"
+        url_suffix: "artcraft-launcher-0.19.0-freebsd-aarch64.tar.gz"
+        size: 12449795
+        media_type: "application/x-gtar"
+        digest: "sha256:df7df756715afc9f43958b0b61dda4232b8c5b4e6a117ddd158243eca456c7f7"
+      "733747444":
+        name: "artcraft-launcher-0.19.0-freebsd-x86_64.tar.gz"
+        url_suffix: "artcraft-launcher-0.19.0-freebsd-x86_64.tar.gz"
+        size: 13460667
+        media_type: "application/x-gtar"
+        digest: "sha256:917c4690c75bc6dc0e5b49f27958c31566b3469d8fcf86842c4c4e6ed8cc8cdc"
+      "733747469":
+        name: "artcraft-launcher-0.19.0-linux-aarch64.AppImage.asc"
+        url_suffix: "artcraft-launcher-0.19.0-linux-aarch64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:72c230022ad90dfecfd6d76303a553c7477adf43304e3f4ae32bece0667a59d0"
+      "733747471":
+        name: "artcraft-launcher-0.19.0-linux-aarch64.AppImage.zsync"
+        url_suffix: "artcraft-launcher-0.19.0-linux-aarch64.AppImage.zsync"
+        size: 43833
+        digest: "sha256:ba9e0e25666485103e69f0dd27839bb145cf6ee2db96be3aec2b7fa2d450f705"
+      "733747488":
+        name: "artcraft-launcher-0.19.0-linux-aarch64.AppImage.zsync.asc"
+        url_suffix: "artcraft-launcher-0.19.0-linux-aarch64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d4a02b769a616839d1ca98c11118c77e06d8c5e5fec4b789239603417bb2c7cd"
+      "733747491":
+        name: "artcraft-launcher-0.19.0-linux-aarch64.deb"
+        url_suffix: "artcraft-launcher-0.19.0-linux-aarch64.deb"
+        size: 13403274
+        media_type: "application/x-debian-package"
+        digest: "sha256:1ed991b464390b55a9cc95eca0076230f7e1cd79ca2fef43181ae3ad308741fb"
+      "733747492":
+        name: "artcraft-launcher-0.19.0-linux-aarch64.deb.asc"
+        url_suffix: "artcraft-launcher-0.19.0-linux-aarch64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:5a93e7ffba8697fcc5eaef26bc203c7e1fa80e6017ad48c94943a7fc1ea2e039"
+      "733747494":
+        name: "artcraft-launcher-0.19.0-linux-aarch64.flatpak"
+        url_suffix: "artcraft-launcher-0.19.0-linux-aarch64.flatpak"
+        size: 8641824
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:4ba6ede636144b2f83c2f52d3ff056681c7f92f9e8f8fcaf684fcd964e5c8678"
+      "733747512":
+        name: "artcraft-launcher-0.19.0-linux-aarch64.flatpak.asc"
+        url_suffix: "artcraft-launcher-0.19.0-linux-aarch64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:08d60001f93403a4129273a644a87dcf8ac7712b265b5998a9ef6d89445856c6"
+      "733747516":
+        name: "artcraft-launcher-0.19.0-linux-aarch64.oci-manifest.json"
+        url_suffix: "artcraft-launcher-0.19.0-linux-aarch64.oci-manifest.json"
+        size: 493
+        media_type: "application/json"
+        digest: "sha256:105dd5f999df12091784988fcfbb380cbbed4fe6893d2cbca52c27b43dabb3ad"
+      "733747519":
+        name: "artcraft-launcher-0.19.0-linux-aarch64.oci.sig"
+        url_suffix: "artcraft-launcher-0.19.0-linux-aarch64.oci.sig"
+        size: 385
+        media_type: "application/pgp-signature"
+        digest: "sha256:ac1dd1ac9b29e1d4af358f50e1492259b70d06c2b508ae6e3ba511b36230d8f4"
+      "733747540":
+        name: "artcraft-launcher-0.19.0-linux-aarch64.pkg.tar.zst"
+        url_suffix: "artcraft-launcher-0.19.0-linux-aarch64.pkg.tar.zst"
+        size: 9872744
+        media_type: "application/zstd"
+        digest: "sha256:ef8b2481e063fc3b92012b4d7c8385dc2128363c279c9018ca0398203c2d7ed7"
+      "733747552":
+        name: "artcraft-launcher-0.19.0-linux-aarch64.pkg.tar.zst.sig"
+        url_suffix: "artcraft-launcher-0.19.0-linux-aarch64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:2a825164a4af68174da18011d7dfffe2fe8393e8704f69c509573c9b7e2a66ca"
+      "733747553":
+        name: "artcraft-launcher-0.19.0-linux-aarch64.rpm"
+        url_suffix: "artcraft-launcher-0.19.0-linux-aarch64.rpm"
+        size: 13280444
+        media_type: "application/x-rpm"
+        digest: "sha256:6aa8692bd6fc4015dfd446ef7170e11967926386be8dd28036b155df1f511e63"
+      "733747556":
+        name: "artcraft-launcher-0.19.0-linux-aarch64.rpm.asc"
+        url_suffix: "artcraft-launcher-0.19.0-linux-aarch64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:2737a29b11df44fa76d928f46aff46866ab9004a1e4dfa91fab1651a5145c119"
+      "733747561":
+        name: "artcraft-launcher-0.19.0-linux-aarch64.tar.gz"
+        url_suffix: "artcraft-launcher-0.19.0-linux-aarch64.tar.gz"
+        size: 12853388
+        media_type: "application/x-gtar"
+        digest: "sha256:a0fd3a4f0225aedbb6191e4b615a6a77bbf26a614f8861fbe4a118f14555801a"
+      "733747579":
+        name: "artcraft-launcher-0.19.0-linux-riscv64.deb"
+        url_suffix: "artcraft-launcher-0.19.0-linux-riscv64.deb"
+        size: 13859534
+        media_type: "application/x-debian-package"
+        digest: "sha256:2be4658bc3501dbd07b47584f39bfe85c86ec2c2f70d70e39d8418352761fcd0"
+      "733747580":
+        name: "artcraft-launcher-0.19.0-linux-aarch64.tar.gz.asc"
+        url_suffix: "artcraft-launcher-0.19.0-linux-aarch64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:6193b2cd312f553ef8a649cc5f24fa86908538de8866f1a2e0f4fe04ca8c7d38"
+      "733747607":
+        name: "artcraft-launcher-0.19.0-linux-riscv64.deb.asc"
+        url_suffix: "artcraft-launcher-0.19.0-linux-riscv64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:e12e5321c784d53b2de411545ac9b91114d300d2fe9e5a1350e106969748d83b"
+      "733747610":
+        name: "artcraft-launcher-0.19.0-linux-riscv64.rpm"
+        url_suffix: "artcraft-launcher-0.19.0-linux-riscv64.rpm"
+        size: 13826550
+        media_type: "application/x-rpm"
+        digest: "sha256:27ede074bb172bf4228a54c5b95b89896805907f2f289ad16d25faa673467560"
+      "733747615":
+        name: "artcraft-launcher-0.19.0-linux-riscv64.rpm.asc"
+        url_suffix: "artcraft-launcher-0.19.0-linux-riscv64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:5299c9ea5df0b618938cc29036904e99a74b61380107eaf5a4a9062ab6529f10"
+      "733747619":
+        name: "artcraft-launcher-0.19.0-linux-riscv64.tar.gz"
+        url_suffix: "artcraft-launcher-0.19.0-linux-riscv64.tar.gz"
+        size: 13565157
+        media_type: "application/x-gtar"
+        digest: "sha256:74613cc476c4c9f748129aa10b9353e83cf3dcfa7d6aa529d36690578a19b549"
+      "733747635":
+        name: "artcraft-launcher-0.19.0-linux-riscv64.tar.gz.asc"
+        url_suffix: "artcraft-launcher-0.19.0-linux-riscv64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:ca1445998aeccd471e585d8a9d3ab78b0e090831e5e7c1ff4b66a0b2aeadcd51"
+      "733747637":
+        name: "artcraft-launcher-0.19.0-linux-x86_64.AppImage"
+        url_suffix: "artcraft-launcher-0.19.0-linux-x86_64.AppImage"
+        size: 13470200
+        media_type: "application/vnd.appimage"
+        digest: "sha256:64197858d155f447ae323f905015116d848f1375675d731eb08d5708f8722e9b"
+      "733747642":
+        name: "artcraft-launcher-0.19.0-linux-x86_64.AppImage.asc"
+        url_suffix: "artcraft-launcher-0.19.0-linux-x86_64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:bebd4f67f554e21976d059f6ac36408138cbcc2a0f8bbaa7d72dfcdb4fe58c8e"
+      "733747667":
+        name: "artcraft-launcher-0.19.0-linux-x86_64.AppImage.zsync"
+        url_suffix: "artcraft-launcher-0.19.0-linux-x86_64.AppImage.zsync"
+        size: 46309
+        digest: "sha256:a778d96d951177f0a537e47d7dc86b561b82e526d2bc2114beee63d1714568e4"
+      "733747677":
+        name: "artcraft-launcher-0.19.0-linux-x86_64.AppImage.zsync.asc"
+        url_suffix: "artcraft-launcher-0.19.0-linux-x86_64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:f625f638abacb1c73388812d3303b984fe0923ed3c0a9dda27ddc3fec5e8e093"
+      "733747680":
+        name: "artcraft-launcher-0.19.0-linux-x86_64.deb"
+        url_suffix: "artcraft-launcher-0.19.0-linux-x86_64.deb"
+        size: 13952944
+        media_type: "application/x-debian-package"
+        digest: "sha256:d34f394a9e171ef774a773a708bdd27ee5da7ad245e3089ade853cbe25c35f77"
+      "733747681":
+        name: "artcraft-launcher-0.19.0-linux-x86_64.deb.asc"
+        url_suffix: "artcraft-launcher-0.19.0-linux-x86_64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:3f98069fc58ddc0beb8e809c8af3d9828ed188220614c41e3478ec179d13a91d"
+      "733747696":
+        name: "artcraft-launcher-0.19.0-linux-x86_64.flatpak"
+        url_suffix: "artcraft-launcher-0.19.0-linux-x86_64.flatpak"
+        size: 9628800
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:e93e993281e274ddfd6bd82972e20f7a9e3880db2842361870dd360932c1b914"
+      "733747699":
+        name: "artcraft-launcher-0.19.0-linux-x86_64.flatpak.asc"
+        url_suffix: "artcraft-launcher-0.19.0-linux-x86_64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:451bf1b166f6cba2fc039acf048ae43a8742f3f9bfbeaa4ffcea04275ab163dd"
+      "733747709":
+        name: "artcraft-launcher-0.19.0-linux-x86_64.oci-manifest.json"
+        url_suffix: "artcraft-launcher-0.19.0-linux-x86_64.oci-manifest.json"
+        size: 493
+        media_type: "application/json"
+        digest: "sha256:29088165a67b5f132e9f269d53a444ac6c794a53d058a4a5dcf003c77c73c3cc"
+      "733747713":
+        name: "artcraft-launcher-0.19.0-linux-x86_64.oci.sig"
+        url_suffix: "artcraft-launcher-0.19.0-linux-x86_64.oci.sig"
+        size: 388
+        media_type: "application/pgp-signature"
+        digest: "sha256:24eb5e242b3de4585ca53caaa15ddc93198c28d992e7fc02709ee2a91a8c7dba"
+      "733747725":
+        name: "artcraft-launcher-0.19.0-linux-x86_64.pkg.tar.zst"
+        url_suffix: "artcraft-launcher-0.19.0-linux-x86_64.pkg.tar.zst"
+        size: 10354686
+        media_type: "application/zstd"
+        digest: "sha256:d7041cf89e928f85239662d2a04a67273a8361a2484ec1ad1a35a15862168a8b"
+      "733747728":
+        name: "artcraft-launcher-0.19.0-linux-x86_64.pkg.tar.zst.sig"
+        url_suffix: "artcraft-launcher-0.19.0-linux-x86_64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:ec4d005e14c2fcc0b6d429dfae7d782261796a1ae48b155b067f6db41490cf0b"
+      "733747740":
+        name: "artcraft-launcher-0.19.0-linux-x86_64.rpm"
+        url_suffix: "artcraft-launcher-0.19.0-linux-x86_64.rpm"
+        size: 13869016
+        media_type: "application/x-rpm"
+        digest: "sha256:1fb61730f3614e7eed9e92bae3b0bccf5eeadb861d86acf35b229dca384033e9"
+      "733747742":
+        name: "artcraft-launcher-0.19.0-linux-x86_64.rpm.asc"
+        url_suffix: "artcraft-launcher-0.19.0-linux-x86_64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:25f538e92c35f901de708e6cea9ecea6f3954878ee5e1d20f2359b49eadf1052"
+      "733747745":
+        name: "artcraft-launcher-0.19.0-linux-x86_64.tar.gz"
+        url_suffix: "artcraft-launcher-0.19.0-linux-x86_64.tar.gz"
+        size: 13646888
+        media_type: "application/x-gtar"
+        digest: "sha256:512b3e11c8a27566dea6e4149693ca66fe3f08f6eac501471d5407b635a68342"
+      "733747752":
+        name: "artcraft-launcher-0.19.0-linux-x86_64.tar.gz.asc"
+        url_suffix: "artcraft-launcher-0.19.0-linux-x86_64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:49ec7cb06f8417da18091b4d8ed6c57b7994c32f00e393c0982dd4e22b0d11b7"
+      "733747773":
+        name: "artcraft-launcher-0.19.0-macos-universal.dmg"
+        url_suffix: "artcraft-launcher-0.19.0-macos-universal.dmg"
+        size: 21687536
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:142aa0afd159fba13739a0c410aaca54078861f914c1880cef726e8d97c1e1c0"
+      "733747778":
+        name: "artcraft-launcher-0.19.0-windows-arm64.msi"
+        url_suffix: "artcraft-launcher-0.19.0-windows-arm64.msi"
+        size: 9428992
+        media_type: "application/x-msi"
+        digest: "sha256:6334b5a94c43222594e10602b14ca95731b505586c516133ae1e5db1aa0c99b2"
+      "733747781":
+        name: "artcraft-launcher-0.19.0-windows-arm64-portable.zip"
+        url_suffix: "artcraft-launcher-0.19.0-windows-arm64-portable.zip"
+        size: 10592825
+        media_type: "zip"
+        digest: "sha256:6ce0fa4eabc9138367682f4b53bb3333c8caee834e41a5ead56abd53a1c94dbd"
+      "733747821":
+        name: "artcraft-launcher-0.19.0-windows-x64-portable.zip"
+        url_suffix: "artcraft-launcher-0.19.0-windows-x64-portable.zip"
+        size: 11323940
+        media_type: "zip"
+        digest: "sha256:376d477ff726fa0c2fb333190142387624e1c56e8a183b17ff407014e4b656c3"
+      "733747829":
+        name: "artcraft-launcher-0.19.0-windows-x64.msi"
+        url_suffix: "artcraft-launcher-0.19.0-windows-x64.msi"
+        size: 10182656
+        media_type: "application/x-msi"
+        digest: "sha256:ffe30715f8d83c88f66c4938054b436f0603cc169115a6e3b63eaa073022655a"
+      "733747844":
+        name: "artcraft-launcher-web-0.19.0.zip"
+        url_suffix: "artcraft-launcher-web-0.19.0.zip"
+        size: 4584097
+        media_type: "zip"
+        digest: "sha256:2e73aeb8fb7c0de99538ee298d2f13b46df124efc103782b1aa86de0992faac4"
+      "733747849":
+        name: "release-signing-key.asc"
+        url_suffix: "release-signing-key.asc"
+        size: 803
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8e6925a173d6a7134118da099948de4d9eeec7c1c0770998aec33c9d3f484740"
+  "442330981":
+    tag: "v0.19.1"
+    title: "ArtCraft Launcher v0.19.1"
+    url: "https://github.com/storytold/craft-launcher/releases/tag/v0.19.1"
+    created_at: "2026-11-11T23:54:57Z"
+    published_at: "2026-11-12T00:16:13Z"
+    updated_at: "2026-11-12T00:16:13Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/storytold/craft-launcher/zipball/v0.19.1"
+    source_tar_url: "https://api.github.com/repos/storytold/craft-launcher/tarball/v0.19.1"
+    download_base: "https://github.com/storytold/craft-launcher/releases/download/v0.19.1/"
+    assets:
+      "737384884":
+        name: "SHA256SUMS.txt"
+        url_suffix: "SHA256SUMS.txt"
+        size: 5337
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:dacee9898104c8150135e4bea7eec97badd7d8d84d787c5e3e209463bedacf33"
+      "737384885":
+        name: "artcraft-launcher-0.19.1-freebsd-aarch64.tar.gz"
+        url_suffix: "artcraft-launcher-0.19.1-freebsd-aarch64.tar.gz"
+        size: 12624487
+        media_type: "application/x-gtar"
+        digest: "sha256:f655a610bac89d5002d37e09e1d9e4a6178b3468f171e03d0069a320bb0d484d"
+      "737384886":
+        name: "artcraft-launcher-0.19.1-freebsd-x86_64.tar.gz"
+        url_suffix: "artcraft-launcher-0.19.1-freebsd-x86_64.tar.gz"
+        size: 13674373
+        media_type: "application/x-gtar"
+        digest: "sha256:70e9da8c0c38a03dd47cf0ef07edb6ccdbfbc242a9a2b0964942aeac27bbac03"
+      "737384887":
+        name: "artcraft-launcher-0.19.1-linux-aarch64.AppImage"
+        url_suffix: "artcraft-launcher-0.19.1-linux-aarch64.AppImage"
+        size: 12929544
+        media_type: "application/vnd.appimage"
+        digest: "sha256:73bb14822797a16b9c5b0a0ba96a6a71081d556abfae86ec860b3520ba7147ea"
+      "737384890":
+        name: "SHA256SUMS.txt.asc"
+        url_suffix: "SHA256SUMS.txt.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:21063c69a9adcd06f825255a707ad55f409c5546d60b07a1516a1e12328392dd"
+      "737384909":
+        name: "artcraft-launcher-0.19.1-linux-aarch64.AppImage.asc"
+        url_suffix: "artcraft-launcher-0.19.1-linux-aarch64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:f66172f822c4e13db0a572bd343c671e996b06cfcbcb3ad594027cd84c83c16b"
+      "737384920":
+        name: "artcraft-launcher-0.19.1-linux-aarch64.AppImage.zsync"
+        url_suffix: "artcraft-launcher-0.19.1-linux-aarch64.AppImage.zsync"
+        size: 44463
+        digest: "sha256:9565eb95dae2e808471fb6d3a49ce0879bb4b88c2150ede88a181d46e00bdce2"
+      "737384939":
+        name: "artcraft-launcher-0.19.1-linux-aarch64.AppImage.zsync.asc"
+        url_suffix: "artcraft-launcher-0.19.1-linux-aarch64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:bbe2495063370b41b8919070de27845dfa68facf00a3c4fc02351810547a142a"
+      "737384942":
+        name: "artcraft-launcher-0.19.1-linux-aarch64.deb"
+        url_suffix: "artcraft-launcher-0.19.1-linux-aarch64.deb"
+        size: 13613902
+        media_type: "application/x-debian-package"
+        digest: "sha256:87c713ee590792464da61435345bb9bc670ce75fe63735fab13dd1607b946ce6"
+      "737384947":
+        name: "artcraft-launcher-0.19.1-linux-aarch64.flatpak"
+        url_suffix: "artcraft-launcher-0.19.1-linux-aarch64.flatpak"
+        size: 8784168
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:0770384d722ff8f95c5b499b0ea48f87a099fdd132151696e007aed373d51380"
+      "737384953":
+        name: "artcraft-launcher-0.19.1-linux-aarch64.deb.asc"
+        url_suffix: "artcraft-launcher-0.19.1-linux-aarch64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:0844612ca7e9ed79f061fa3fcdb531e2a25ced1dfa359bbe522e0de2e62fa5dc"
+      "737384955":
+        name: "artcraft-launcher-0.19.1-linux-aarch64.flatpak.asc"
+        url_suffix: "artcraft-launcher-0.19.1-linux-aarch64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:2c8ff72c0e94f9a8027a4d73a0f222737ed7f464fb8aee93c7582446dba652ab"
+      "737384982":
+        name: "artcraft-launcher-0.19.1-linux-aarch64.oci-manifest.json"
+        url_suffix: "artcraft-launcher-0.19.1-linux-aarch64.oci-manifest.json"
+        size: 493
+        media_type: "application/json"
+        digest: "sha256:ca24746d4d9579202ffc94b0319f57d818993eda8486f42955d47f7901e122dd"
+      "737384988":
+        name: "artcraft-launcher-0.19.1-linux-aarch64.pkg.tar.zst"
+        url_suffix: "artcraft-launcher-0.19.1-linux-aarch64.pkg.tar.zst"
+        size: 10032444
+        media_type: "application/zstd"
+        digest: "sha256:af6e9c73345fe95ba853bc1a60ce6d436f3f7445255ad3b041bcb9ef799a4cb4"
+      "737384990":
+        name: "artcraft-launcher-0.19.1-linux-aarch64.oci.sig"
+        url_suffix: "artcraft-launcher-0.19.1-linux-aarch64.oci.sig"
+        size: 393
+        media_type: "application/pgp-signature"
+        digest: "sha256:426feccbce8018d042f7a25d1024d1506f3131ac415dce660a47e32589c1f4ce"
+      "737385004":
+        name: "artcraft-launcher-0.19.1-linux-aarch64.pkg.tar.zst.sig"
+        url_suffix: "artcraft-launcher-0.19.1-linux-aarch64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:085ba8c4e068ffb936da9d60066e47337d6c4c41a56e89e1b8dbd573e8a42d4f"
+      "737385005":
+        name: "artcraft-launcher-0.19.1-linux-aarch64.rpm"
+        url_suffix: "artcraft-launcher-0.19.1-linux-aarch64.rpm"
+        size: 13489126
+        media_type: "application/x-rpm"
+        digest: "sha256:1250cb0708cb200456b0148141a8bb1226ca0f32e4948a626b3d0265670d4b60"
+      "737385015":
+        name: "artcraft-launcher-0.19.1-linux-aarch64.rpm.asc"
+        url_suffix: "artcraft-launcher-0.19.1-linux-aarch64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:75f6565a83e18311cefc29c88a42e45bea29e219924f7871cfecb92575a93eda"
+      "737385016":
+        name: "artcraft-launcher-0.19.1-linux-aarch64.tar.gz"
+        url_suffix: "artcraft-launcher-0.19.1-linux-aarch64.tar.gz"
+        size: 13049642
+        media_type: "application/x-gtar"
+        digest: "sha256:c6c40c691148743e4af2e75581ea343170f5e1b71aeabfe273692870f8529b1b"
+      "737385033":
+        name: "artcraft-launcher-0.19.1-linux-aarch64.tar.gz.asc"
+        url_suffix: "artcraft-launcher-0.19.1-linux-aarch64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:6c4109b68cbe15a14c869f9603a6330281ac922a46a09feb07afc7f8567dfad0"
+      "737385035":
+        name: "artcraft-launcher-0.19.1-linux-riscv64.deb"
+        url_suffix: "artcraft-launcher-0.19.1-linux-riscv64.deb"
+        size: 14065752
+        media_type: "application/x-debian-package"
+        digest: "sha256:a0ae9bbe58853f9a0cb9dddba6427aa3fa6b41a66c082ebc24dad5c91677afdd"
+      "737385043":
+        name: "artcraft-launcher-0.19.1-linux-riscv64.deb.asc"
+        url_suffix: "artcraft-launcher-0.19.1-linux-riscv64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d07b6be9dc2b53a4263e1b7533d85979c508ddeddb34270c80c7ac99f138767e"
+      "737385071":
+        name: "artcraft-launcher-0.19.1-linux-riscv64.rpm"
+        url_suffix: "artcraft-launcher-0.19.1-linux-riscv64.rpm"
+        size: 14040115
+        media_type: "application/x-rpm"
+        digest: "sha256:5907859e005c41b54411952afffb282b943b2e81dea08186ad37534ef776e158"
+      "737385083":
+        name: "artcraft-launcher-0.19.1-linux-riscv64.rpm.asc"
+        url_suffix: "artcraft-launcher-0.19.1-linux-riscv64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:84052aec7216047062a38b56b985555096ab2c6a8fc09e38d061591b67efd3fb"
+      "737385084":
+        name: "artcraft-launcher-0.19.1-linux-riscv64.tar.gz"
+        url_suffix: "artcraft-launcher-0.19.1-linux-riscv64.tar.gz"
+        size: 13772877
+        media_type: "application/x-gtar"
+        digest: "sha256:7c1f91f1088d2d7b732f1595cd477250b0045a36454a0c3ee7eb06c868a1e870"
+      "737385097":
+        name: "artcraft-launcher-0.19.1-linux-riscv64.tar.gz.asc"
+        url_suffix: "artcraft-launcher-0.19.1-linux-riscv64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:c0d054ac91a364bfb2c2300e4c616419f324f62b9cb249f95f66ff27efb10fb4"
+      "737385116":
+        name: "artcraft-launcher-0.19.1-linux-x86_64.AppImage"
+        url_suffix: "artcraft-launcher-0.19.1-linux-x86_64.AppImage"
+        size: 13699576
+        media_type: "application/vnd.appimage"
+        digest: "sha256:212d4856843dc50c27002dd8816fd700d5b8b8f616a6c5705a573bceb9d96a53"
+      "737385117":
+        name: "artcraft-launcher-0.19.1-linux-x86_64.AppImage.asc"
+        url_suffix: "artcraft-launcher-0.19.1-linux-x86_64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:729a939f8ffa63f236b0edf2f29d8eda1818ace1fc68b0426dcc0e4e3284ff08"
+      "737385127":
+        name: "artcraft-launcher-0.19.1-linux-x86_64.AppImage.zsync"
+        url_suffix: "artcraft-launcher-0.19.1-linux-x86_64.AppImage.zsync"
+        size: 47093
+        digest: "sha256:ed4cb7ab22920737d30052373c323dbb5bbaaa0a34119bd66e6664b13b958c93"
+      "737385152":
+        name: "artcraft-launcher-0.19.1-linux-x86_64.deb"
+        url_suffix: "artcraft-launcher-0.19.1-linux-x86_64.deb"
+        size: 14189900
+        media_type: "application/x-debian-package"
+        digest: "sha256:ebc3b0d67dc190130804d4d8e2dcef4102dec0aaea0e0553957e72d69525149b"
+      "737385153":
+        name: "artcraft-launcher-0.19.1-linux-x86_64.AppImage.zsync.asc"
+        url_suffix: "artcraft-launcher-0.19.1-linux-x86_64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:bc5562f334d1c128dfe2f28de89413bccedcf8986990fcc5569dac7def97999c"
+      "737385159":
+        name: "artcraft-launcher-0.19.1-linux-x86_64.deb.asc"
+        url_suffix: "artcraft-launcher-0.19.1-linux-x86_64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:2bdfb47664311afe1796e7bc166f81063b3384492ac328ad7b80bae70d573a41"
+      "737385161":
+        name: "artcraft-launcher-0.19.1-linux-x86_64.flatpak"
+        url_suffix: "artcraft-launcher-0.19.1-linux-x86_64.flatpak"
+        size: 9798080
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:5971e8ef7be8424e1434d6193a9b9d9f5f661e26f450b3c1538c019c699903a1"
+      "737385194":
+        name: "artcraft-launcher-0.19.1-linux-x86_64.oci-manifest.json"
+        url_suffix: "artcraft-launcher-0.19.1-linux-x86_64.oci-manifest.json"
+        size: 493
+        media_type: "application/json"
+        digest: "sha256:0c0e6e0ea7f500583f19c8f137c682e1cb636695f04b5db28f03f02bff7aca62"
+      "737385197":
+        name: "artcraft-launcher-0.19.1-linux-x86_64.flatpak.asc"
+        url_suffix: "artcraft-launcher-0.19.1-linux-x86_64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:0dc5e9d2b984955fdb4097f28b3c9b4c2e05f9c6fad4e94408ade6492181cc7a"
+      "737385201":
+        name: "artcraft-launcher-0.19.1-linux-x86_64.oci.sig"
+        url_suffix: "artcraft-launcher-0.19.1-linux-x86_64.oci.sig"
+        size: 387
+        media_type: "application/pgp-signature"
+        digest: "sha256:6371f625e93babf0d9ebced8784f2d4f91a235d9464deebc2f8a49f38d935de7"
+      "737385232":
+        name: "artcraft-launcher-0.19.1-linux-x86_64.pkg.tar.zst"
+        url_suffix: "artcraft-launcher-0.19.1-linux-x86_64.pkg.tar.zst"
+        size: 10537003
+        media_type: "application/zstd"
+        digest: "sha256:97e066c14e47902fc9edcda6c6a723dbffbb2afb1aa8000416fd71047ef174a2"
+      "737385234":
+        name: "artcraft-launcher-0.19.1-linux-x86_64.rpm"
+        url_suffix: "artcraft-launcher-0.19.1-linux-x86_64.rpm"
+        size: 14106368
+        media_type: "application/x-rpm"
+        digest: "sha256:5f4326834b544f4aa10f86a7a4729efe46365dc40b5845b81bb547f856fa8e95"
+      "737385239":
+        name: "artcraft-launcher-0.19.1-linux-x86_64.pkg.tar.zst.sig"
+        url_suffix: "artcraft-launcher-0.19.1-linux-x86_64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:b2c62f6d624d06e57fdb04baaedc91f488c58f7e324837e97fac2de1f41418a5"
+      "737385245":
+        name: "artcraft-launcher-0.19.1-linux-x86_64.rpm.asc"
+        url_suffix: "artcraft-launcher-0.19.1-linux-x86_64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:50d0d60e6d8348d6f334c3a8704e6f3fcf700d1bd784954c8365d5805cde3e5c"
+      "737385247":
+        name: "artcraft-launcher-0.19.1-linux-x86_64.tar.gz"
+        url_suffix: "artcraft-launcher-0.19.1-linux-x86_64.tar.gz"
+        size: 13876801
+        media_type: "application/x-gtar"
+        digest: "sha256:85ff0d2e07553597c3d0ee506fd18ae2a468406d3491fbe3719fa5b6bc9e3ca3"
+      "737385264":
+        name: "artcraft-launcher-0.19.1-linux-x86_64.tar.gz.asc"
+        url_suffix: "artcraft-launcher-0.19.1-linux-x86_64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d06b72ec3cb6ff6bbd1ea4e7f78c04754d0222bc807f7b9cabbb71a27eca353f"
+      "737385268":
+        name: "artcraft-launcher-0.19.1-macos-universal.dmg"
+        url_suffix: "artcraft-launcher-0.19.1-macos-universal.dmg"
+        size: 21897527
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:a0ba6ce95a20edf7672672376cb2c0e547d34b1a8677c7a5206cfdf7ef03ff63"
+      "737385283":
+        name: "artcraft-launcher-0.19.1-windows-arm64-portable.zip"
+        url_suffix: "artcraft-launcher-0.19.1-windows-arm64-portable.zip"
+        size: 10784021
+        media_type: "zip"
+        digest: "sha256:820f20116c99eb24357fc4fdff7bd4fb8253dae4eb2556b6ef05d06516d689de"
+      "737385284":
+        name: "artcraft-launcher-0.19.1-windows-arm64.msi"
+        url_suffix: "artcraft-launcher-0.19.1-windows-arm64.msi"
+        size: 9576448
+        media_type: "application/x-msi"
+        digest: "sha256:9883d80d110913312ec7c20eed8428fb07becb69014ec7c66bee97b05ed43722"
+      "737385295":
+        name: "artcraft-launcher-0.19.1-windows-x64-portable.zip"
+        url_suffix: "artcraft-launcher-0.19.1-windows-x64-portable.zip"
+        size: 11541466
+        media_type: "zip"
+        digest: "sha256:d75ccf8e9c5bc5740dbe4fae759db88223ba903b874c2c84a57a5b8545de8765"
+      "737385298":
+        name: "artcraft-launcher-0.19.1-windows-x64.msi"
+        url_suffix: "artcraft-launcher-0.19.1-windows-x64.msi"
+        size: 10375168
+        media_type: "application/x-msi"
+        digest: "sha256:432a86bab7ac9a2c9b6335adcf065875539e276a1141b7a2a7fd90977f05b942"
+      "737385318":
+        name: "artcraft-launcher-web-0.19.1.zip"
+        url_suffix: "artcraft-launcher-web-0.19.1.zip"
+        size: 4688392
+        media_type: "zip"
+        digest: "sha256:7f08f92bec3bf5031b9c056e9393de00be0965bc161a4cb1170f50d8a587c17a"
+      "737385336":
+        name: "release-signing-key.asc"
+        url_suffix: "release-signing-key.asc"
+        size: 803
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8e6925a173d6a7134118da099948de4d9eeec7c1c0770998aec33c9d3f484740"
+  "442390094":
+    tag: "v0.19.2"
+    title: "ArtCraft Launcher v0.19.2"
+    url: "https://github.com/storytold/craft-launcher/releases/tag/v0.19.2"
+    created_at: "2026-11-12T01:29:10Z"
+    published_at: "2026-11-12T01:41:25Z"
+    updated_at: "2026-11-12T01:41:25Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/storytold/craft-launcher/zipball/v0.19.2"
+    source_tar_url: "https://api.github.com/repos/storytold/craft-launcher/tarball/v0.19.2"
+    download_base: "https://github.com/storytold/craft-launcher/releases/download/v0.19.2/"
+    assets:
+      "737623525":
+        name: "artcraft-launcher-0.19.2-freebsd-aarch64.tar.gz"
+        url_suffix: "artcraft-launcher-0.19.2-freebsd-aarch64.tar.gz"
+        size: 12624809
+        media_type: "application/x-gtar"
+        digest: "sha256:d87d14bb13eeb39c768bc073290d374f4a65aee814c662a5cec82f568440e95f"
+      "737623530":
+        name: "artcraft-launcher-0.19.2-freebsd-x86_64.tar.gz"
+        url_suffix: "artcraft-launcher-0.19.2-freebsd-x86_64.tar.gz"
+        size: 13673640
+        media_type: "application/x-gtar"
+        digest: "sha256:9a7572509f7790d9c1d5bbad70939a247e76d732aa739ac0e8eb483fe38247b0"
+      "737623531":
+        name: "SHA256SUMS.txt.asc"
+        url_suffix: "SHA256SUMS.txt.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:ce8144a3c1365ffcdce85b63efc8e5751290b38120a446cdbd0a5173fb20b47f"
+      "737623532":
+        name: "SHA256SUMS.txt"
+        url_suffix: "SHA256SUMS.txt"
+        size: 5337
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:11c2dcd6d8ddb6643698636fbf752dff24f672140a9e70e3b99284ed2e59a6ca"
+      "737623533":
+        name: "artcraft-launcher-0.19.2-linux-aarch64.AppImage"
+        url_suffix: "artcraft-launcher-0.19.2-linux-aarch64.AppImage"
+        size: 12933640
+        media_type: "application/vnd.appimage"
+        digest: "sha256:da29d90ae4d6883936fc80c8f839571ff12e145d3d798a4a5e61fbca1ad33ec8"
+      "737623560":
+        name: "artcraft-launcher-0.19.2-linux-aarch64.AppImage.asc"
+        url_suffix: "artcraft-launcher-0.19.2-linux-aarch64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:be1a7b099570d05a48635c094534b6739188885c3318cfa5d22712d8916d07b1"
+      "737623562":
+        name: "artcraft-launcher-0.19.2-linux-aarch64.AppImage.zsync"
+        url_suffix: "artcraft-launcher-0.19.2-linux-aarch64.AppImage.zsync"
+        size: 44477
+        digest: "sha256:3aa62e398c14c4ba1459ba7ba6b59be3e3b8887c672c2b6945b24e3490cbec6b"
+      "737623579":
+        name: "artcraft-launcher-0.19.2-linux-aarch64.AppImage.zsync.asc"
+        url_suffix: "artcraft-launcher-0.19.2-linux-aarch64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:b21a2bb2bad409ce11bb3b448119fe840f34c3cd0da5ba5b17bbaef1869c7362"
+      "737623586":
+        name: "artcraft-launcher-0.19.2-linux-aarch64.deb"
+        url_suffix: "artcraft-launcher-0.19.2-linux-aarch64.deb"
+        size: 13614746
+        media_type: "application/x-debian-package"
+        digest: "sha256:07ad98ff4a2bccc118e3d4c6d5df0a84ec8081e8620072d89348f98fc95599bc"
+      "737623593":
+        name: "artcraft-launcher-0.19.2-linux-aarch64.deb.asc"
+        url_suffix: "artcraft-launcher-0.19.2-linux-aarch64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:2bd753dc95d946214bda1e8ed8b9eeaec427882914acf48fec3560157aa399f7"
+      "737623595":
+        name: "artcraft-launcher-0.19.2-linux-aarch64.flatpak"
+        url_suffix: "artcraft-launcher-0.19.2-linux-aarch64.flatpak"
+        size: 8784624
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:eee1ed94aafc2f87d779ed81dc0a4dac8a829e5a0f10e9f5b5eedc08bd1466e6"
+      "737623599":
+        name: "artcraft-launcher-0.19.2-linux-aarch64.flatpak.asc"
+        url_suffix: "artcraft-launcher-0.19.2-linux-aarch64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:6d6ea0a2f45911cb841bd168e48ca559ce04c96ee8be7de04ce90c4ff5f46597"
+      "737623600":
+        name: "artcraft-launcher-0.19.2-linux-aarch64.oci-manifest.json"
+        url_suffix: "artcraft-launcher-0.19.2-linux-aarch64.oci-manifest.json"
+        size: 493
+        media_type: "application/json"
+        digest: "sha256:8ac2e0158ada8879ea9082b6ea373154abbaef745a64bcbe2dd93c1623c4169e"
+      "737623617":
+        name: "artcraft-launcher-0.19.2-linux-aarch64.oci.sig"
+        url_suffix: "artcraft-launcher-0.19.2-linux-aarch64.oci.sig"
+        size: 392
+        media_type: "application/pgp-signature"
+        digest: "sha256:4c8c7c7ed2b8cb1ce9c2670d3cf4f9951b9b128b7c5b32683a725026452c16b3"
+      "737623622":
+        name: "artcraft-launcher-0.19.2-linux-aarch64.pkg.tar.zst"
+        url_suffix: "artcraft-launcher-0.19.2-linux-aarch64.pkg.tar.zst"
+        size: 10032801
+        media_type: "application/zstd"
+        digest: "sha256:f3e02a845703c753f0e2f332b3ffe5856c0b2ae11cd0c3a151271d0b1cffde49"
+      "737623624":
+        name: "artcraft-launcher-0.19.2-linux-aarch64.pkg.tar.zst.sig"
+        url_suffix: "artcraft-launcher-0.19.2-linux-aarch64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:dc42540c17391fa82951617ca6aed128999c67554de1b289d6d8b983e2173d72"
+      "737623635":
+        name: "artcraft-launcher-0.19.2-linux-aarch64.rpm"
+        url_suffix: "artcraft-launcher-0.19.2-linux-aarch64.rpm"
+        size: 13488262
+        media_type: "application/x-rpm"
+        digest: "sha256:d8f348fd3a498f75a034fb12f074fad12bbc8493408f0847f2cf091146913b32"
+      "737623642":
+        name: "artcraft-launcher-0.19.2-linux-aarch64.rpm.asc"
+        url_suffix: "artcraft-launcher-0.19.2-linux-aarch64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:5a50c10780fe69cf128c5bb161c45e87eee63ed258004635ce41cb98775b5dcb"
+      "737623646":
+        name: "artcraft-launcher-0.19.2-linux-aarch64.tar.gz"
+        url_suffix: "artcraft-launcher-0.19.2-linux-aarch64.tar.gz"
+        size: 13048942
+        media_type: "application/x-gtar"
+        digest: "sha256:a92aca8456624a10f14398a4309e4d424d1a98203993a2a2d9484104d7d6e2dd"
+      "737623659":
+        name: "artcraft-launcher-0.19.2-linux-aarch64.tar.gz.asc"
+        url_suffix: "artcraft-launcher-0.19.2-linux-aarch64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:69cf2d19b348f5889a392f4c78e3f37bbd981d60716838facf1c6c4881895fdc"
+      "737623670":
+        name: "artcraft-launcher-0.19.2-linux-riscv64.deb"
+        url_suffix: "artcraft-launcher-0.19.2-linux-riscv64.deb"
+        size: 14065616
+        media_type: "application/x-debian-package"
+        digest: "sha256:eb22dd20ce26004acacab47cbd43c7f594d364f4456bed0bc4342886c44650d0"
+      "737623681":
+        name: "artcraft-launcher-0.19.2-linux-riscv64.deb.asc"
+        url_suffix: "artcraft-launcher-0.19.2-linux-riscv64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:f872d35c3a9dfb248a2e15695e6c7c017fb4f9b02906d4104354ced6945fa0fb"
+      "737623686":
+        name: "artcraft-launcher-0.19.2-linux-riscv64.rpm"
+        url_suffix: "artcraft-launcher-0.19.2-linux-riscv64.rpm"
+        size: 14040107
+        media_type: "application/x-rpm"
+        digest: "sha256:05e46ac07d39c9630fb5d3c914dc5af826bc608c49ef29bb3143f17d847c195a"
+      "737623698":
+        name: "artcraft-launcher-0.19.2-linux-riscv64.rpm.asc"
+        url_suffix: "artcraft-launcher-0.19.2-linux-riscv64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:36f9544a9f99914d46745d825415f5188a83bc88eeee5c4137d7e33dbdd66dde"
+      "737623705":
+        name: "artcraft-launcher-0.19.2-linux-riscv64.tar.gz"
+        url_suffix: "artcraft-launcher-0.19.2-linux-riscv64.tar.gz"
+        size: 13772797
+        media_type: "application/x-gtar"
+        digest: "sha256:adce8c7197e28030aba7221f8e37b3183a6ce6817ceb857d0cf434d4fccf7e9c"
+      "737623709":
+        name: "artcraft-launcher-0.19.2-linux-riscv64.tar.gz.asc"
+        url_suffix: "artcraft-launcher-0.19.2-linux-riscv64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d990cef2ce028ce675c9bfb204d914834d4eaf220358c0b52dfaaecc54f55b2e"
+      "737623722":
+        name: "artcraft-launcher-0.19.2-linux-x86_64.AppImage"
+        url_suffix: "artcraft-launcher-0.19.2-linux-x86_64.AppImage"
+        size: 13699576
+        media_type: "application/vnd.appimage"
+        digest: "sha256:0218089916d60b4d288825d1542f13cb2ca5fb691418f4102201f43a84d1be7b"
+      "737623744":
+        name: "artcraft-launcher-0.19.2-linux-x86_64.AppImage.asc"
+        url_suffix: "artcraft-launcher-0.19.2-linux-x86_64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d704753edcbff17f00b5a2e248d12f8e6a3069351c74dd793be9dde87678fb49"
+      "737623749":
+        name: "artcraft-launcher-0.19.2-linux-x86_64.AppImage.zsync"
+        url_suffix: "artcraft-launcher-0.19.2-linux-x86_64.AppImage.zsync"
+        size: 47093
+        digest: "sha256:5f65852aabe5d07ceac080195758828ee9683b06b06df512df15bbdb94003d96"
+      "737623756":
+        name: "artcraft-launcher-0.19.2-linux-x86_64.AppImage.zsync.asc"
+        url_suffix: "artcraft-launcher-0.19.2-linux-x86_64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:1a4288040185160ff3b5329cb77af87a0b58a61dd01eb8b98f2454aea3910ae9"
+      "737623765":
+        name: "artcraft-launcher-0.19.2-linux-x86_64.deb"
+        url_suffix: "artcraft-launcher-0.19.2-linux-x86_64.deb"
+        size: 14190708
+        media_type: "application/x-debian-package"
+        digest: "sha256:9442fd85938b314e3118e65c913c709d4fb05c1677c70668aaea09fe14a4bb02"
+      "737623766":
+        name: "artcraft-launcher-0.19.2-linux-x86_64.deb.asc"
+        url_suffix: "artcraft-launcher-0.19.2-linux-x86_64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:c24c9f093974359c415e7541d66e62be472d8ec47ec1a452f82aef266825e310"
+      "737623792":
+        name: "artcraft-launcher-0.19.2-linux-x86_64.flatpak"
+        url_suffix: "artcraft-launcher-0.19.2-linux-x86_64.flatpak"
+        size: 9799568
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:238825b7ad3f1b16374428357d2acc7c97c7dbc5d36b1d53123d604a969969bd"
+      "737623794":
+        name: "artcraft-launcher-0.19.2-linux-x86_64.flatpak.asc"
+        url_suffix: "artcraft-launcher-0.19.2-linux-x86_64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:b795f5895ac27d1dcc2a4223edaf845ab75edbe772fc79532eeff883def8142b"
+      "737623801":
+        name: "artcraft-launcher-0.19.2-linux-x86_64.oci-manifest.json"
+        url_suffix: "artcraft-launcher-0.19.2-linux-x86_64.oci-manifest.json"
+        size: 493
+        media_type: "application/json"
+        digest: "sha256:b2c0d455b7c8ed9df44e7c2620d95ffa7c78ccb209d52f2d5a6b0256323fe0ae"
+      "737623803":
+        name: "artcraft-launcher-0.19.2-linux-x86_64.oci.sig"
+        url_suffix: "artcraft-launcher-0.19.2-linux-x86_64.oci.sig"
+        size: 392
+        media_type: "application/pgp-signature"
+        digest: "sha256:e9dfffaf0d1946908cee7748aa20b0f6e3fd2be081f52adbeb867986bd72d8c7"
+      "737623822":
+        name: "artcraft-launcher-0.19.2-linux-x86_64.pkg.tar.zst"
+        url_suffix: "artcraft-launcher-0.19.2-linux-x86_64.pkg.tar.zst"
+        size: 10538156
+        media_type: "application/zstd"
+        digest: "sha256:280be78be718d1c4297500dfc68c5c74c342e2b2077b5794c9d7749aa9661359"
+      "737623825":
+        name: "artcraft-launcher-0.19.2-linux-x86_64.pkg.tar.zst.sig"
+        url_suffix: "artcraft-launcher-0.19.2-linux-x86_64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:f5f30889a0629660ac379f66270788d4fbd5df5425811edb91bb16eeb99ca76b"
+      "737623830":
+        name: "artcraft-launcher-0.19.2-linux-x86_64.rpm"
+        url_suffix: "artcraft-launcher-0.19.2-linux-x86_64.rpm"
+        size: 14107184
+        media_type: "application/x-rpm"
+        digest: "sha256:b13a87f2410df322b1bb53036cb1bcde0a3e15e9922d8c7b077a2d9d8853a266"
+      "737623840":
+        name: "artcraft-launcher-0.19.2-linux-x86_64.rpm.asc"
+        url_suffix: "artcraft-launcher-0.19.2-linux-x86_64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:0a58873784b9f1bf3faeaa066a6489ce7684355c87b6df0fc08d151d88460199"
+      "737623852":
+        name: "artcraft-launcher-0.19.2-linux-x86_64.tar.gz"
+        url_suffix: "artcraft-launcher-0.19.2-linux-x86_64.tar.gz"
+        size: 13877728
+        media_type: "application/x-gtar"
+        digest: "sha256:39a9aeb77f85ab06d65540b194f1582ec8c26529f7e10a8c9d6c07ff2180b66d"
+      "737623855":
+        name: "artcraft-launcher-0.19.2-linux-x86_64.tar.gz.asc"
+        url_suffix: "artcraft-launcher-0.19.2-linux-x86_64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:6a53f7ef5e595d829f26f66cae83d6ac027a01fe52a8395c590030abe11d6d0c"
+      "737623869":
+        name: "artcraft-launcher-0.19.2-macos-universal.dmg"
+        url_suffix: "artcraft-launcher-0.19.2-macos-universal.dmg"
+        size: 21898455
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:be0e99010ba560dae33993619673d031683e35b21f0b36bd68dee990e21fd7cb"
+      "737623876":
+        name: "artcraft-launcher-0.19.2-windows-arm64-portable.zip"
+        url_suffix: "artcraft-launcher-0.19.2-windows-arm64-portable.zip"
+        size: 10784107
+        media_type: "zip"
+        digest: "sha256:c5d9264cfce5c9e0270b1129f162d14d2a12a6cb496c272754a5702681c5735f"
+      "737623880":
+        name: "artcraft-launcher-0.19.2-windows-arm64.msi"
+        url_suffix: "artcraft-launcher-0.19.2-windows-arm64.msi"
+        size: 9576448
+        media_type: "application/x-msi"
+        digest: "sha256:0ffb4dd11a8ede39911126dc6673a26fce89484318ee12dc68952af20a9d0516"
+      "737623896":
+        name: "artcraft-launcher-0.19.2-windows-x64-portable.zip"
+        url_suffix: "artcraft-launcher-0.19.2-windows-x64-portable.zip"
+        size: 11541199
+        media_type: "zip"
+        digest: "sha256:e33396214ccba39534531e467515c0ccc3cedf1ff5b0d0d7ba2c22b0ccd3bd3c"
+      "737623901":
+        name: "artcraft-launcher-0.19.2-windows-x64.msi"
+        url_suffix: "artcraft-launcher-0.19.2-windows-x64.msi"
+        size: 10375168
+        media_type: "application/x-msi"
+        digest: "sha256:fa73b211cf0a7c377f35fc998582eaa7c9f62013a1236ee4fd16204669b5bbfa"
+      "737623925":
+        name: "artcraft-launcher-web-0.19.2.zip"
+        url_suffix: "artcraft-launcher-web-0.19.2.zip"
+        size: 4688318
+        media_type: "zip"
+        digest: "sha256:e71260a99c1bd90dc0b379f5a455314d55e5aff7d372ffce5c6bbaec36d71c64"
+      "737623935":
         name: "release-signing-key.asc"
         url_suffix: "release-signing-key.asc"
         size: 803

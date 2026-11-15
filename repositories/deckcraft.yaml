@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1408294296
 repository: "storytold/deckcraft"
-collected_at: "2026-11-10T21:15:21Z"
+collected_at: "2026-11-15T11:06:56Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-10T21:15:21Z"
+observed_at: "2026-11-15T11:06:56Z"
 releases:
   "405606152":
     tag: "v0.1.0"
@@ -3291,6 +3291,626 @@ releases:
         media_type: "zip"
         digest: "sha256:bd7bef54b3ef1be3e408e8bdcf291aaf9ad0ee298ea6bb22e1b5b3fc4a72eaba"
       "727310623":
+        name: "release-signing-key.asc"
+        url_suffix: "release-signing-key.asc"
+        size: 803
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8e6925a173d6a7134118da099948de4d9eeec7c1c0770998aec33c9d3f484740"
+  "441922834":
+    tag: "v0.18.0"
+    title: "DeckCraft v0.18.0"
+    url: "https://github.com/storytold/deckcraft/releases/tag/v0.18.0"
+    created_at: "2026-11-11T15:35:50Z"
+    published_at: "2026-11-11T16:16:55Z"
+    updated_at: "2026-11-11T16:16:55Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/storytold/deckcraft/zipball/v0.18.0"
+    source_tar_url: "https://api.github.com/repos/storytold/deckcraft/tarball/v0.18.0"
+    download_base: "https://github.com/storytold/deckcraft/releases/download/v0.18.0/"
+    assets:
+      "736097715":
+        name: "deckcraft-0.18.0-linux-aarch64.AppImage"
+        url_suffix: "deckcraft-0.18.0-linux-aarch64.AppImage"
+        size: 96315912
+        media_type: "application/vnd.appimage"
+        digest: "sha256:146d63a830618e8a946c0eaddc7a3e5aee17a31d34ea0b37351923ec1fed412f"
+      "736097718":
+        name: "SHA256SUMS.txt"
+        url_suffix: "SHA256SUMS.txt"
+        size: 5076
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:c4f7b41241eaae44b104b0f4a692a1bee98684e631f70ae8169fecbd4dc7f92e"
+      "736097719":
+        name: "SHA256SUMS.txt.asc"
+        url_suffix: "SHA256SUMS.txt.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:ad7cf18c0cb86e00e8617ab290b0db264672eb94ff21227696b010132faa16c1"
+      "736097720":
+        name: "deckcraft-0.18.0-freebsd-x86_64.tar.gz"
+        url_suffix: "deckcraft-0.18.0-freebsd-x86_64.tar.gz"
+        size: 104645792
+        media_type: "application/x-gtar"
+        digest: "sha256:2d0a7fa85e142f08c34c216a4c3b03e9c0354c4996a6c25bfa70730764044dd7"
+      "736097722":
+        name: "deckcraft-0.18.0-freebsd-aarch64.tar.gz"
+        url_suffix: "deckcraft-0.18.0-freebsd-aarch64.tar.gz"
+        size: 101397303
+        media_type: "application/x-gtar"
+        digest: "sha256:1e0e0b8976557cc31b1cf3112c05d7efb45e9db452ecd8033723c0e0eb910612"
+      "736097740":
+        name: "deckcraft-0.18.0-linux-aarch64.AppImage.asc"
+        url_suffix: "deckcraft-0.18.0-linux-aarch64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:58849e3483ef9d5ec443f312b5fe9991b455a4f38c1006c04750353edff1e709"
+      "736097745":
+        name: "deckcraft-0.18.0-linux-aarch64.AppImage.zsync"
+        url_suffix: "deckcraft-0.18.0-linux-aarch64.AppImage.zsync"
+        size: 329459
+        digest: "sha256:1f4671c8d90b259c0b981c166d495cafb6a9c0db24fd6e31d8d62ad24811e7f6"
+      "736097815":
+        name: "deckcraft-0.18.0-linux-aarch64.AppImage.zsync.asc"
+        url_suffix: "deckcraft-0.18.0-linux-aarch64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:1b604a0c6bee844c3cab23f371736b197a55f70dc4800eeb66c310029796580f"
+      "736097825":
+        name: "deckcraft-0.18.0-linux-aarch64.deb"
+        url_suffix: "deckcraft-0.18.0-linux-aarch64.deb"
+        size: 103962718
+        media_type: "application/x-debian-package"
+        digest: "sha256:2ac59fcf43d606914c4a9868db9c98e3400ee8e735e7d747b606654f2f062898"
+      "736097846":
+        name: "deckcraft-0.18.0-linux-aarch64.deb.asc"
+        url_suffix: "deckcraft-0.18.0-linux-aarch64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:0759468e1aa2401b6706e7548ee09b08c227dd60955087c3a71097582742e130"
+      "736097880":
+        name: "deckcraft-0.18.0-linux-aarch64.flatpak"
+        url_suffix: "deckcraft-0.18.0-linux-aarch64.flatpak"
+        size: 69933984
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:5f453c42c0bd252215fe4d8a312b6d9f518c44629eefdf78970b6f0d9aff4992"
+      "736097990":
+        name: "deckcraft-0.18.0-linux-aarch64.flatpak.asc"
+        url_suffix: "deckcraft-0.18.0-linux-aarch64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:4e7f61c139f86342e5cb1d9c54b37b0c65feaaf85fdc699446cf8e464d3623e5"
+      "736098013":
+        name: "deckcraft-0.18.0-linux-aarch64.oci-manifest.json"
+        url_suffix: "deckcraft-0.18.0-linux-aarch64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:9a2e582c1587cde6b11461cd589575e9befcb324d125592b60bd233cf7768572"
+      "736098019":
+        name: "deckcraft-0.18.0-linux-aarch64.oci.sig"
+        url_suffix: "deckcraft-0.18.0-linux-aarch64.oci.sig"
+        size: 383
+        media_type: "application/pgp-signature"
+        digest: "sha256:4c6e2c98a9497c1d1f7ace26670ec568c5e362d0d43ed053074e1ce748f60310"
+      "736098024":
+        name: "deckcraft-0.18.0-linux-aarch64.pkg.tar.zst"
+        url_suffix: "deckcraft-0.18.0-linux-aarch64.pkg.tar.zst"
+        size: 76182963
+        media_type: "application/zstd"
+        digest: "sha256:afcef837e58c6f9472e05a7183657228c151e2712034dca7bc6e7869fda82c71"
+      "736098034":
+        name: "deckcraft-0.18.0-linux-aarch64.pkg.tar.zst.sig"
+        url_suffix: "deckcraft-0.18.0-linux-aarch64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:c78e8644425494006162e1d1c19ced4fb01ec16bf0ed62dd8fd8d5f5c12f93bf"
+      "736098036":
+        name: "deckcraft-0.18.0-linux-aarch64.rpm"
+        url_suffix: "deckcraft-0.18.0-linux-aarch64.rpm"
+        size: 103411205
+        media_type: "application/x-rpm"
+        digest: "sha256:abee200cfbabf32a2d82eab8a94051e2f43ffcca59c91d4bbc6878e0745fce3a"
+      "736098053":
+        name: "deckcraft-0.18.0-linux-aarch64.rpm.asc"
+        url_suffix: "deckcraft-0.18.0-linux-aarch64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:48f8b3397d22c16f0889b4eb336678e6fc27aefb851b08bf233bce8d61b92f35"
+      "736098070":
+        name: "deckcraft-0.18.0-linux-aarch64.tar.gz"
+        url_suffix: "deckcraft-0.18.0-linux-aarch64.tar.gz"
+        size: 102075745
+        media_type: "application/x-gtar"
+        digest: "sha256:b76c4a0c09f2205d4a6c8a669e9fb36fe36bd54f4897c91fee1a8e34951efe21"
+      "736098085":
+        name: "deckcraft-0.18.0-linux-aarch64.tar.gz.asc"
+        url_suffix: "deckcraft-0.18.0-linux-aarch64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:cfa442c5c1566e41f593b8cb3cb0c7953d0d082bfa25cff34ad97eade41abf12"
+      "736098086":
+        name: "deckcraft-0.18.0-linux-riscv64.deb"
+        url_suffix: "deckcraft-0.18.0-linux-riscv64.deb"
+        size: 104936698
+        media_type: "application/x-debian-package"
+        digest: "sha256:93883dd6018b134e7aeb3db5fca538a7948aa726b3d38cd1e0338adc93159175"
+      "736098104":
+        name: "deckcraft-0.18.0-linux-riscv64.deb.asc"
+        url_suffix: "deckcraft-0.18.0-linux-riscv64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:6ed8db8c8e13d7fecaa69b015bb01278af434576b075fc41dd8ab58fec2deefe"
+      "736098123":
+        name: "deckcraft-0.18.0-linux-riscv64.rpm"
+        url_suffix: "deckcraft-0.18.0-linux-riscv64.rpm"
+        size: 104669342
+        media_type: "application/x-rpm"
+        digest: "sha256:11c6d325458b0367bfca782c6697b354fb57ae15b0b52104ed940aa7e9556291"
+      "736098194":
+        name: "deckcraft-0.18.0-linux-riscv64.rpm.asc"
+        url_suffix: "deckcraft-0.18.0-linux-riscv64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:aeba23efff7fc156e189b97cd83660816c8a0009e7d86a26b778367ca345557c"
+      "736098218":
+        name: "deckcraft-0.18.0-linux-riscv64.tar.gz"
+        url_suffix: "deckcraft-0.18.0-linux-riscv64.tar.gz"
+        size: 103906238
+        media_type: "application/x-gtar"
+        digest: "sha256:f6657ca12b1482764d9ba1234204088c07e8e5338db03405f2a05a2e43918fcd"
+      "736098230":
+        name: "deckcraft-0.18.0-linux-riscv64.tar.gz.asc"
+        url_suffix: "deckcraft-0.18.0-linux-riscv64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:37e63e53c1d8b83561bc6724f265d2ed75b3dcc604fb794dddde1049672a82fa"
+      "736098254":
+        name: "deckcraft-0.18.0-linux-x86_64.AppImage"
+        url_suffix: "deckcraft-0.18.0-linux-x86_64.AppImage"
+        size: 98904568
+        media_type: "application/vnd.appimage"
+        digest: "sha256:27303555d559244f48a916d26deb28bc34b8b44f955ff88a00ca15c2345f0eac"
+      "736098263":
+        name: "deckcraft-0.18.0-linux-x86_64.AppImage.asc"
+        url_suffix: "deckcraft-0.18.0-linux-x86_64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8d34a69a9d664aef574946360bf1e597681862acf9cdf6a1cf345eca75b788be"
+      "736098278":
+        name: "deckcraft-0.18.0-linux-x86_64.AppImage.zsync"
+        url_suffix: "deckcraft-0.18.0-linux-x86_64.AppImage.zsync"
+        size: 338305
+        digest: "sha256:ef632e17891aff39ab8f72aeee783fd95317f755d371e2b754256c9ec44d5a57"
+      "736098313":
+        name: "deckcraft-0.18.0-linux-x86_64.AppImage.zsync.asc"
+        url_suffix: "deckcraft-0.18.0-linux-x86_64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:40f3fd1d484bd70633fb6c879c9443d6239231fc7f578a389fcbb12f6ac97962"
+      "736098317":
+        name: "deckcraft-0.18.0-linux-x86_64.deb"
+        url_suffix: "deckcraft-0.18.0-linux-x86_64.deb"
+        size: 106018208
+        media_type: "application/x-debian-package"
+        digest: "sha256:a24b8e8f76c1aee1f31bd43ab8782281618715c6cd22440f5e756d0488e8ba15"
+      "736098332":
+        name: "deckcraft-0.18.0-linux-x86_64.deb.asc"
+        url_suffix: "deckcraft-0.18.0-linux-x86_64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:dfca828b0fa51f690d2f9a13a09568cbdb4055eaef1df0482109f4bf5a784e57"
+      "736098356":
+        name: "deckcraft-0.18.0-linux-x86_64.flatpak"
+        url_suffix: "deckcraft-0.18.0-linux-x86_64.flatpak"
+        size: 72788392
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:3dc711a5b622292322d04e7a4a4d9977fdd50e1915f7cb2c187f95646be083cd"
+      "736098367":
+        name: "deckcraft-0.18.0-linux-x86_64.flatpak.asc"
+        url_suffix: "deckcraft-0.18.0-linux-x86_64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8da2c602226e43e2090f6ae9a3fc0c6e4e5c4206f125b8823ea89b5c9caeec44"
+      "736098381":
+        name: "deckcraft-0.18.0-linux-x86_64.oci-manifest.json"
+        url_suffix: "deckcraft-0.18.0-linux-x86_64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:874c7ff85d86d566e68b7451ad25e654086bdbe6e7bdf4a07fa609b50be5b1b6"
+      "736098402":
+        name: "deckcraft-0.18.0-linux-x86_64.oci.sig"
+        url_suffix: "deckcraft-0.18.0-linux-x86_64.oci.sig"
+        size: 389
+        media_type: "application/pgp-signature"
+        digest: "sha256:8d375a5f5eaf3c58cf26022cb077dd1d31d90e132aa1460e1ac787136c2ab747"
+      "736098412":
+        name: "deckcraft-0.18.0-linux-x86_64.pkg.tar.zst"
+        url_suffix: "deckcraft-0.18.0-linux-x86_64.pkg.tar.zst"
+        size: 77921504
+        media_type: "application/zstd"
+        digest: "sha256:57fa04a5a797bba8e9f25d5f8ff29ed3be8198ccd54a87dce18d590e774ccc5d"
+      "736098421":
+        name: "deckcraft-0.18.0-linux-x86_64.pkg.tar.zst.sig"
+        url_suffix: "deckcraft-0.18.0-linux-x86_64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:1834ef39b3ba8f63b0c7767db940e01dfc65bd582bdc280abf1d823222ef9db6"
+      "736098444":
+        name: "deckcraft-0.18.0-linux-x86_64.rpm"
+        url_suffix: "deckcraft-0.18.0-linux-x86_64.rpm"
+        size: 105570972
+        media_type: "application/x-rpm"
+        digest: "sha256:38f1a37595728002b91fb827b2e41dba38fa5ab421416b15b75951ea3d4924a6"
+      "736098451":
+        name: "deckcraft-0.18.0-linux-x86_64.rpm.asc"
+        url_suffix: "deckcraft-0.18.0-linux-x86_64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:ca8e2a1cfd4b8e7d61cc58b07cee0210f4c3032228ae4e4866cfe8b509a38180"
+      "736098586":
+        name: "deckcraft-0.18.0-linux-x86_64.tar.gz"
+        url_suffix: "deckcraft-0.18.0-linux-x86_64.tar.gz"
+        size: 104857552
+        media_type: "application/x-gtar"
+        digest: "sha256:d1f129af8c12f1250bcc17dbcdbaac380900c91381c84a4ada6ee7b480a4db06"
+      "736098601":
+        name: "deckcraft-0.18.0-linux-x86_64.tar.gz.asc"
+        url_suffix: "deckcraft-0.18.0-linux-x86_64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:f3bde040b4bad6026c69f6f57b380a4c613f6d25f0633cd84c76e3fbd8fbadb9"
+      "736098639":
+        name: "deckcraft-0.18.0-macos-universal.dmg"
+        url_suffix: "deckcraft-0.18.0-macos-universal.dmg"
+        size: 112497362
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:e790955126ec57bbba64495892586f5c1c94489bfc6649381292b4b50077d3c9"
+      "736098658":
+        name: "deckcraft-0.18.0-windows-arm64-portable.zip"
+        url_suffix: "deckcraft-0.18.0-windows-arm64-portable.zip"
+        size: 101275800
+        media_type: "zip"
+        digest: "sha256:281788c82d3f72d542604104cce6c253cde1a87b837afee568199c0b06b3ff8d"
+      "736098675":
+        name: "deckcraft-0.18.0-windows-arm64.msi"
+        url_suffix: "deckcraft-0.18.0-windows-arm64.msi"
+        size: 79908864
+        media_type: "application/x-msi"
+        digest: "sha256:99245c554762bd8a95b9e0bc9319e37da5366a3d67a1d84528333c25b3c950f2"
+      "736098712":
+        name: "deckcraft-0.18.0-windows-x64-portable.zip"
+        url_suffix: "deckcraft-0.18.0-windows-x64-portable.zip"
+        size: 104327727
+        media_type: "zip"
+        digest: "sha256:ededed1f9056c726fe88dfced16bb3328f0aeccf8189a0c83ac2e2342df1ad72"
+      "736098790":
+        name: "deckcraft-0.18.0-windows-x64.msi"
+        url_suffix: "deckcraft-0.18.0-windows-x64.msi"
+        size: 82915328
+        media_type: "application/x-msi"
+        digest: "sha256:90d0a3528bf1a0ca02636c0163e6280db9be10d38d1cbc8284ffe0e0e8f298dc"
+      "736098961":
+        name: "deckcraft-cli-0.18.0-macos-universal.zip"
+        url_suffix: "deckcraft-cli-0.18.0-macos-universal.zip"
+        size: 94210443
+        media_type: "zip"
+        digest: "sha256:098258617ee3aa56c3a1017d2b33dc30d076e1a9bba341a743c163a21dfac99f"
+      "736098967":
+        name: "deckcraft-web-0.18.0.zip"
+        url_suffix: "deckcraft-web-0.18.0.zip"
+        size: 11872028
+        media_type: "zip"
+        digest: "sha256:8afdb2c3f2929afcf9f14ee2bd4e7634b1fdf75ba45be049f998e304a15cb411"
+      "736098993":
+        name: "release-signing-key.asc"
+        url_suffix: "release-signing-key.asc"
+        size: 803
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8e6925a173d6a7134118da099948de4d9eeec7c1c0770998aec33c9d3f484740"
+  "442140748":
+    tag: "v0.18.1"
+    title: "DeckCraft v0.18.1"
+    url: "https://github.com/storytold/deckcraft/releases/tag/v0.18.1"
+    created_at: "2026-11-11T23:40:26Z"
+    published_at: "2026-11-12T00:07:42Z"
+    updated_at: "2026-11-12T00:07:42Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/storytold/deckcraft/zipball/v0.18.1"
+    source_tar_url: "https://api.github.com/repos/storytold/deckcraft/tarball/v0.18.1"
+    download_base: "https://github.com/storytold/deckcraft/releases/download/v0.18.1/"
+    assets:
+      "737376073":
+        name: "deckcraft-0.18.1-linux-aarch64.AppImage"
+        url_suffix: "deckcraft-0.18.1-linux-aarch64.AppImage"
+        size: 96410120
+        media_type: "application/vnd.appimage"
+        digest: "sha256:894cb1dc7946918ffe6f0cdce32d9e2157d149faea6737638164083d5e562615"
+      "737376074":
+        name: "SHA256SUMS.txt"
+        url_suffix: "SHA256SUMS.txt"
+        size: 5076
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:07812846fc2a6446a032e4435e68576460bc5e14b6b8e55c69623e7dec0d3f5c"
+      "737376076":
+        name: "deckcraft-0.18.1-freebsd-aarch64.tar.gz"
+        url_suffix: "deckcraft-0.18.1-freebsd-aarch64.tar.gz"
+        size: 101491870
+        media_type: "application/x-gtar"
+        digest: "sha256:cd2cea15b078e9a2c317f42a3e1c6f883abd815310ebba0ad15af44e7431adbc"
+      "737376077":
+        name: "SHA256SUMS.txt.asc"
+        url_suffix: "SHA256SUMS.txt.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:2b5686f9202f424a4daafe42f7633264509a422fff37e90429349b1b27f8a15e"
+      "737376078":
+        name: "deckcraft-0.18.1-freebsd-x86_64.tar.gz"
+        url_suffix: "deckcraft-0.18.1-freebsd-x86_64.tar.gz"
+        size: 104710263
+        media_type: "application/x-gtar"
+        digest: "sha256:a8920b3aadc574d30a0a6a750df09c2b06bab168848505573926610e078a95f5"
+      "737376122":
+        name: "deckcraft-0.18.1-linux-aarch64.AppImage.zsync"
+        url_suffix: "deckcraft-0.18.1-linux-aarch64.AppImage.zsync"
+        size: 329781
+        digest: "sha256:86c4dd62be6c4c974baa603b04320510c9fc283131fdfb3004f8108a47b2eda3"
+      "737376123":
+        name: "deckcraft-0.18.1-linux-aarch64.AppImage.asc"
+        url_suffix: "deckcraft-0.18.1-linux-aarch64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:ddb4d8826ee4666b3cdc1c52a37840ab711035bde478dd04c371b99bb4084cbe"
+      "737376156":
+        name: "deckcraft-0.18.1-linux-aarch64.AppImage.zsync.asc"
+        url_suffix: "deckcraft-0.18.1-linux-aarch64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:adfde94423f88083414967ccbda8e6ffa02485bbf91e24bcbd6373c66539e225"
+      "737376158":
+        name: "deckcraft-0.18.1-linux-aarch64.deb"
+        url_suffix: "deckcraft-0.18.1-linux-aarch64.deb"
+        size: 104076250
+        media_type: "application/x-debian-package"
+        digest: "sha256:1c76f4f8c14ab61cc06e38be746f6bd7c69284dd47568455aad8c2b4103a8626"
+      "737376184":
+        name: "deckcraft-0.18.1-linux-aarch64.deb.asc"
+        url_suffix: "deckcraft-0.18.1-linux-aarch64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:5d7015922ad4f37a6036d2346aa01907591e39c321173bf34e498adb4f2ed239"
+      "737376215":
+        name: "deckcraft-0.18.1-linux-aarch64.flatpak"
+        url_suffix: "deckcraft-0.18.1-linux-aarch64.flatpak"
+        size: 69992736
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:7edc3206b8e1606350438050635ba4dbcc9287cbe89049fdddb7c997f55e8c10"
+      "737376346":
+        name: "deckcraft-0.18.1-linux-aarch64.flatpak.asc"
+        url_suffix: "deckcraft-0.18.1-linux-aarch64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d7894867ce9f2175419b8d928b24bd7e70090393998c3fa03e41ab1d459e9826"
+      "737376367":
+        name: "deckcraft-0.18.1-linux-aarch64.oci-manifest.json"
+        url_suffix: "deckcraft-0.18.1-linux-aarch64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:091459173fba222570dc1b6b62998f7cb0626fd5537e982e2af6ceab4e34ff25"
+      "737376369":
+        name: "deckcraft-0.18.1-linux-aarch64.pkg.tar.zst"
+        url_suffix: "deckcraft-0.18.1-linux-aarch64.pkg.tar.zst"
+        size: 76250144
+        media_type: "application/zstd"
+        digest: "sha256:535d6848fa09ce4d51fc501e93b8418b2266becad1d474c22d75fa9ca1535bca"
+      "737376372":
+        name: "deckcraft-0.18.1-linux-aarch64.oci.sig"
+        url_suffix: "deckcraft-0.18.1-linux-aarch64.oci.sig"
+        size: 385
+        media_type: "application/pgp-signature"
+        digest: "sha256:f1f1a16411b77fc810d8caa27013a3dcbb88a49b04aa5a0db5eab3fa6b617add"
+      "737376404":
+        name: "deckcraft-0.18.1-linux-aarch64.pkg.tar.zst.sig"
+        url_suffix: "deckcraft-0.18.1-linux-aarch64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:ee97efaffecadde35297356fb341e443d510bbcfa5050d68f5ada645c6232975"
+      "737376409":
+        name: "deckcraft-0.18.1-linux-aarch64.rpm"
+        url_suffix: "deckcraft-0.18.1-linux-aarch64.rpm"
+        size: 103533818
+        media_type: "application/x-rpm"
+        digest: "sha256:a5aef5ba0a8b7444fbc3af443b116285121deccddfd9c2887207485532605ea2"
+      "737376412":
+        name: "deckcraft-0.18.1-linux-aarch64.rpm.asc"
+        url_suffix: "deckcraft-0.18.1-linux-aarch64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:b3c480ea8e3a3967210f463708877cad9953138767954a618e3b32c16127be04"
+      "737376424":
+        name: "deckcraft-0.18.1-linux-aarch64.tar.gz"
+        url_suffix: "deckcraft-0.18.1-linux-aarch64.tar.gz"
+        size: 102184591
+        media_type: "application/x-gtar"
+        digest: "sha256:3fbd005ce382c853ad056dca7b937802fc0ef6b8564eca5a99a52b670c159e94"
+      "737376437":
+        name: "deckcraft-0.18.1-linux-aarch64.tar.gz.asc"
+        url_suffix: "deckcraft-0.18.1-linux-aarch64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:4e1f476af7e31b0def7db0c3e475b8e756ab050c3f3a28c4b8343331621e19c2"
+      "737376476":
+        name: "deckcraft-0.18.1-linux-riscv64.deb"
+        url_suffix: "deckcraft-0.18.1-linux-riscv64.deb"
+        size: 105042354
+        media_type: "application/x-debian-package"
+        digest: "sha256:82faf22da0c81775c8a8008c75d79476c0d360ef0b18d9923d4e72bb674afcf7"
+      "737376490":
+        name: "deckcraft-0.18.1-linux-riscv64.deb.asc"
+        url_suffix: "deckcraft-0.18.1-linux-riscv64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:0dfc3d74cdff9e1a1a14a5cfd7b3e63f3e9b99c2871d4fed64e6571f4b8b2601"
+      "737376512":
+        name: "deckcraft-0.18.1-linux-riscv64.rpm"
+        url_suffix: "deckcraft-0.18.1-linux-riscv64.rpm"
+        size: 104780760
+        media_type: "application/x-rpm"
+        digest: "sha256:0bf38d68a83a15ac336134f071ee79e6cbe3cb281b9f74cbf60148231cd8b877"
+      "737376594":
+        name: "deckcraft-0.18.1-linux-riscv64.rpm.asc"
+        url_suffix: "deckcraft-0.18.1-linux-riscv64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:c3466a9effecd01011ceb0b7adfe9c7e03dd694f31f25894d45032b1d9b09b25"
+      "737376625":
+        name: "deckcraft-0.18.1-linux-riscv64.tar.gz"
+        url_suffix: "deckcraft-0.18.1-linux-riscv64.tar.gz"
+        size: 104007901
+        media_type: "application/x-gtar"
+        digest: "sha256:1734f05511919d02c1fb78928931fb5b38079c1cda31305edafef3f7ba7c2c8f"
+      "737376704":
+        name: "deckcraft-0.18.1-linux-riscv64.tar.gz.asc"
+        url_suffix: "deckcraft-0.18.1-linux-riscv64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:3a66fb21227fc6e57582603794d85098c6a34491596c610c4f579296298c4d81"
+      "737376707":
+        name: "deckcraft-0.18.1-linux-x86_64.AppImage"
+        url_suffix: "deckcraft-0.18.1-linux-x86_64.AppImage"
+        size: 98990584
+        media_type: "application/vnd.appimage"
+        digest: "sha256:68df9f040d3f6c4ce4a904aadec633961fa199248f0a1aa366fa64597ae09867"
+      "737376729":
+        name: "deckcraft-0.18.1-linux-x86_64.AppImage.asc"
+        url_suffix: "deckcraft-0.18.1-linux-x86_64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:191b389018d69f059d9a85e4bef15b861a2e80d5bead97bd09e53d5cd7dd5524"
+      "737376741":
+        name: "deckcraft-0.18.1-linux-x86_64.AppImage.zsync"
+        url_suffix: "deckcraft-0.18.1-linux-x86_64.AppImage.zsync"
+        size: 338599
+        digest: "sha256:834d0fcab2c0318d65b8217ad1559140e6e157c2020584eff0d88b835d1ecf64"
+      "737376765":
+        name: "deckcraft-0.18.1-linux-x86_64.AppImage.zsync.asc"
+        url_suffix: "deckcraft-0.18.1-linux-x86_64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:a574dbeaa5488866187a49d881f9b8e3332ad3917a69976c4253e4f803862e1c"
+      "737376781":
+        name: "deckcraft-0.18.1-linux-x86_64.deb"
+        url_suffix: "deckcraft-0.18.1-linux-x86_64.deb"
+        size: 106105064
+        media_type: "application/x-debian-package"
+        digest: "sha256:59801c24ef5bdaf01a6a465f0e1d5f59aba36ad1e723cb833304b22d98c3f909"
+      "737376792":
+        name: "deckcraft-0.18.1-linux-x86_64.deb.asc"
+        url_suffix: "deckcraft-0.18.1-linux-x86_64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:ea12a9bbeed8b6a16a10dffbe350df5001e9ee9922ba6ed74ff49915bf8a4e2d"
+      "737376811":
+        name: "deckcraft-0.18.1-linux-x86_64.flatpak"
+        url_suffix: "deckcraft-0.18.1-linux-x86_64.flatpak"
+        size: 72863288
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:080cd8a4d2f74ca9ef554125476e6d2aa80eb8dc72eab5d41247a7b17f2d6c2d"
+      "737376837":
+        name: "deckcraft-0.18.1-linux-x86_64.flatpak.asc"
+        url_suffix: "deckcraft-0.18.1-linux-x86_64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:6093d9492a5012f7a05221d9aaf61103b3086aedce52f6acd8b989bd66cf7866"
+      "737376891":
+        name: "deckcraft-0.18.1-linux-x86_64.oci-manifest.json"
+        url_suffix: "deckcraft-0.18.1-linux-x86_64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:0d72c4c9d4be62efb939aa66ab54cd8bc0c23b96260904adf1f8b48b452287c8"
+      "737376913":
+        name: "deckcraft-0.18.1-linux-x86_64.oci.sig"
+        url_suffix: "deckcraft-0.18.1-linux-x86_64.oci.sig"
+        size: 385
+        media_type: "application/pgp-signature"
+        digest: "sha256:c3d0733c83708af1eac7b65250e1261b71fb7b643981a214340ff139d90e17c0"
+      "737376931":
+        name: "deckcraft-0.18.1-linux-x86_64.pkg.tar.zst"
+        url_suffix: "deckcraft-0.18.1-linux-x86_64.pkg.tar.zst"
+        size: 78004065
+        media_type: "application/zstd"
+        digest: "sha256:ecd7d10ac3792ea9e0949baab81c264b2fe615d5c1e2b5a85b9611ac9c7d4d1b"
+      "737376949":
+        name: "deckcraft-0.18.1-linux-x86_64.pkg.tar.zst.sig"
+        url_suffix: "deckcraft-0.18.1-linux-x86_64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:6bbca2684721dcd80805e578dae38f01f11bfe334856a03259533598f2e4a54e"
+      "737376980":
+        name: "deckcraft-0.18.1-linux-x86_64.rpm"
+        url_suffix: "deckcraft-0.18.1-linux-x86_64.rpm"
+        size: 105656071
+        media_type: "application/x-rpm"
+        digest: "sha256:b2808c4bbaf33b9b21dccf89fea7b56dc976ae4f9609a176886b9691ca52ea1b"
+      "737377002":
+        name: "deckcraft-0.18.1-linux-x86_64.rpm.asc"
+        url_suffix: "deckcraft-0.18.1-linux-x86_64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:c31fe42ca2b5c7e279115c520018408f38e51a0743ed34974846aff1c6a28174"
+      "737377025":
+        name: "deckcraft-0.18.1-linux-x86_64.tar.gz"
+        url_suffix: "deckcraft-0.18.1-linux-x86_64.tar.gz"
+        size: 104936063
+        media_type: "application/x-gtar"
+        digest: "sha256:5bae7d5566638624411ef968f2532ab3358dc280884144583e497c5631db8a26"
+      "737377042":
+        name: "deckcraft-0.18.1-linux-x86_64.tar.gz.asc"
+        url_suffix: "deckcraft-0.18.1-linux-x86_64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:6f13768c3797efc567818c80c36d0f356b626d334c39e9d9c52f44062704f26d"
+      "737377047":
+        name: "deckcraft-0.18.1-macos-universal.dmg"
+        url_suffix: "deckcraft-0.18.1-macos-universal.dmg"
+        size: 112719319
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:3321d11f6353b3ff9de328f21407d7527f1f9029c83dab4e3ab734f516d3a055"
+      "737377071":
+        name: "deckcraft-0.18.1-windows-arm64-portable.zip"
+        url_suffix: "deckcraft-0.18.1-windows-arm64-portable.zip"
+        size: 101361385
+        media_type: "zip"
+        digest: "sha256:3ff8bbaf98568d3a5ab2fc932dacf410d0b2c0b0da5fd4d063ed0d42bc40789b"
+      "737377183":
+        name: "deckcraft-0.18.1-windows-arm64.msi"
+        url_suffix: "deckcraft-0.18.1-windows-arm64.msi"
+        size: 80003072
+        media_type: "application/x-msi"
+        digest: "sha256:550d7ec20042e02e4afde64d1499f40decbbf010fd92463530f1c8fbdc70270f"
+      "737377241":
+        name: "deckcraft-0.18.1-windows-x64-portable.zip"
+        url_suffix: "deckcraft-0.18.1-windows-x64-portable.zip"
+        size: 104449748
+        media_type: "zip"
+        digest: "sha256:6df6f60b2182065c427fe4c3fe1b5d74b92706b238c6f35f3f91e5f359042e99"
+      "737377282":
+        name: "deckcraft-0.18.1-windows-x64.msi"
+        url_suffix: "deckcraft-0.18.1-windows-x64.msi"
+        size: 82989056
+        media_type: "application/x-msi"
+        digest: "sha256:a8553fc7400c8087d55ace4e17ad00148646ba970c7a4749e718ca2f77384e13"
+      "737377347":
+        name: "deckcraft-cli-0.18.1-macos-universal.zip"
+        url_suffix: "deckcraft-cli-0.18.1-macos-universal.zip"
+        size: 94288920
+        media_type: "zip"
+        digest: "sha256:10992f73c88a4c0361dd0fec3a4d7490731ffb3ea9658ee2274b396e3341af00"
+      "737377356":
+        name: "deckcraft-web-0.18.1.zip"
+        url_suffix: "deckcraft-web-0.18.1.zip"
+        size: 11910503
+        media_type: "zip"
+        digest: "sha256:3196e537fcfab538aaa2e88584bc74e29bb584459b916ab584ac22fbafe32db5"
+      "737377381":
         name: "release-signing-key.asc"
         url_suffix: "release-signing-key.asc"
         size: 803

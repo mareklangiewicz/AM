@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1412112308
 repository: "storytold/figcraft"
-collected_at: "2026-11-10T21:15:47Z"
+collected_at: "2026-11-15T11:07:14Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-10T21:15:47Z"
+observed_at: "2026-11-15T11:07:14Z"
 releases:
   "408557561":
     tag: "v0.2.0"
@@ -3719,6 +3719,674 @@ releases:
         media_type: "zip"
         digest: "sha256:3d6410b7b12ae000b2f062855dc0e80fcc7c09f41d5d03a938636cf9dcce0145"
       "727386995":
+        name: "release-signing-key.asc"
+        url_suffix: "release-signing-key.asc"
+        size: 803
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8e6925a173d6a7134118da099948de4d9eeec7c1c0770998aec33c9d3f484740"
+  "442266175":
+    tag: "v0.18.0"
+    title: "FigCraft v0.18.0"
+    url: "https://github.com/storytold/figcraft/releases/tag/v0.18.0"
+    created_at: "2026-11-11T22:11:57Z"
+    published_at: "2026-11-11T22:40:28Z"
+    updated_at: "2026-11-11T22:40:28Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/storytold/figcraft/zipball/v0.18.0"
+    source_tar_url: "https://api.github.com/repos/storytold/figcraft/tarball/v0.18.0"
+    download_base: "https://github.com/storytold/figcraft/releases/download/v0.18.0/"
+    assets:
+      "737158742":
+        name: "figcraft-0.18.0-linux-aarch64.AppImage"
+        url_suffix: "figcraft-0.18.0-linux-aarch64.AppImage"
+        size: 92600840
+        media_type: "application/vnd.appimage"
+        digest: "sha256:4d920f4ac8a76f708a8eaa29a1caa373b3633c73ae5cedddb297a319bca16072"
+      "737158744":
+        name: "SHA256SUMS.txt.asc"
+        url_suffix: "SHA256SUMS.txt.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:203c201b622dfbf521c7eb748a5f43d8585f9edb14cedbb7c193ecc2fe71a013"
+      "737158745":
+        name: "figcraft-0.18.0-freebsd-aarch64.tar.gz"
+        url_suffix: "figcraft-0.18.0-freebsd-aarch64.tar.gz"
+        size: 97101108
+        media_type: "application/x-gtar"
+        digest: "sha256:e8bd126947efdfdce6df1e9c9d8666fe3bb3283ccc36662977640928212d020f"
+      "737158746":
+        name: "figcraft-0.18.0-freebsd-x86_64.tar.gz"
+        url_suffix: "figcraft-0.18.0-freebsd-x86_64.tar.gz"
+        size: 101749836
+        media_type: "application/x-gtar"
+        digest: "sha256:18ede571974988199f980fe88a887ab2a6ee8c7522f6af3b7eb268eec93eae2b"
+      "737158747":
+        name: "SHA256SUMS.txt"
+        url_suffix: "SHA256SUMS.txt"
+        size: 5475
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:0568c2e377b5a1be5bc4ca795c71fe20b0e2025f80fcb8f05463d508cc4e6c48"
+      "737158770":
+        name: "figcraft-0.18.0-linux-aarch64.AppImage.asc"
+        url_suffix: "figcraft-0.18.0-linux-aarch64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:82b2f9c27b4e8a015f8e0798d67f5f9cdf6689d5d8610ce9c47ba0dbb896c8cd"
+      "737158771":
+        name: "figcraft-0.18.0-linux-aarch64.AppImage.zsync"
+        url_suffix: "figcraft-0.18.0-linux-aarch64.AppImage.zsync"
+        size: 316759
+        digest: "sha256:0722508d590c27fb6c3e2337ccd527250387a1f49260b62cac2ecd44eb6703ea"
+      "737158813":
+        name: "figcraft-0.18.0-linux-aarch64.AppImage.zsync.asc"
+        url_suffix: "figcraft-0.18.0-linux-aarch64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:de81dc1fb08a4e93b688dc8732b9a779969ac0d5f9564b6a97d91f77f7eda536"
+      "737158814":
+        name: "figcraft-0.18.0-linux-aarch64.deb"
+        url_suffix: "figcraft-0.18.0-linux-aarch64.deb"
+        size: 101137078
+        media_type: "application/x-debian-package"
+        digest: "sha256:3dc02c643a3f0969fd53cc66ae77462eb3ac08b0aa2d77889e10d8e575087bb1"
+      "737158832":
+        name: "figcraft-0.18.0-linux-aarch64.deb.asc"
+        url_suffix: "figcraft-0.18.0-linux-aarch64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:c1a4bb596bf05b96119481f6455bc1a90ea4062e6681e808b651fd654c497ced"
+      "737158850":
+        name: "figcraft-0.18.0-linux-aarch64.flatpak"
+        url_suffix: "figcraft-0.18.0-linux-aarch64.flatpak"
+        size: 67706128
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:c8acc5338ba89f17e1341d57dfc97dabdf9a25afbad4999a9a68074df48d4e74"
+      "737158906":
+        name: "figcraft-0.18.0-linux-aarch64.flatpak.asc"
+        url_suffix: "figcraft-0.18.0-linux-aarch64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:9aa01056b02cc9b5b963653d1dd7244c2b2b5676d1d0ad75e6786a2d003c022b"
+      "737158921":
+        name: "figcraft-0.18.0-linux-aarch64.oci-manifest.json"
+        url_suffix: "figcraft-0.18.0-linux-aarch64.oci-manifest.json"
+        size: 493
+        media_type: "application/json"
+        digest: "sha256:6ac4d0a32e4348becec604b7f783c8781a1b3e7d979917f5c96cbc336b82dd79"
+      "737158927":
+        name: "figcraft-0.18.0-linux-aarch64.oci.sig"
+        url_suffix: "figcraft-0.18.0-linux-aarch64.oci.sig"
+        size: 386
+        media_type: "application/pgp-signature"
+        digest: "sha256:f46a26cdab2db1982128e95b047dcc1e8821213df5791d2e7e213f50411ddfcf"
+      "737158941":
+        name: "figcraft-0.18.0-linux-aarch64.pkg.tar.zst"
+        url_suffix: "figcraft-0.18.0-linux-aarch64.pkg.tar.zst"
+        size: 74593759
+        media_type: "application/zstd"
+        digest: "sha256:ed7d369194447457a8cdc883eb352fe186e299b38d8b455725956cd161e68be0"
+      "737158962":
+        name: "figcraft-0.18.0-linux-aarch64.pkg.tar.zst.sig"
+        url_suffix: "figcraft-0.18.0-linux-aarch64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:ac46679a511a9e2c93988ab4c9a3cf4e6917a041bf546d1f1ff247321f7086be"
+      "737158963":
+        name: "figcraft-0.18.0-linux-aarch64.rpm"
+        url_suffix: "figcraft-0.18.0-linux-aarch64.rpm"
+        size: 100437877
+        media_type: "application/x-rpm"
+        digest: "sha256:09cd2223b375cd7f9d28725f7771d2173f49e3986e49d19c5ed4d1b58a855ca3"
+      "737158981":
+        name: "figcraft-0.18.0-linux-aarch64.rpm.asc"
+        url_suffix: "figcraft-0.18.0-linux-aarch64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:4daaf17c0e0648ae67d9be5fba238ee41d4f62bdf93d73e082f8a926adcfa6e0"
+      "737158990":
+        name: "figcraft-0.18.0-linux-aarch64.tar.gz"
+        url_suffix: "figcraft-0.18.0-linux-aarch64.tar.gz"
+        size: 98679485
+        media_type: "application/x-gtar"
+        digest: "sha256:bb4fe51b4424962deb175030cd05485b1238d133ddc09f117caee068707a2ea6"
+      "737159017":
+        name: "figcraft-0.18.0-linux-aarch64.tar.gz.asc"
+        url_suffix: "figcraft-0.18.0-linux-aarch64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:739d9085edd57aade2d2b338f5a23b6bf7004fa694677462b7dcddb29817b851"
+      "737159025":
+        name: "figcraft-0.18.0-linux-riscv64.deb"
+        url_suffix: "figcraft-0.18.0-linux-riscv64.deb"
+        size: 101719122
+        media_type: "application/x-debian-package"
+        digest: "sha256:6a51e3a55a1f5074c4f33cede7508d7bed3be51c4c98108ec5185d0eaa8aa497"
+      "737159034":
+        name: "figcraft-0.18.0-linux-riscv64.deb.asc"
+        url_suffix: "figcraft-0.18.0-linux-riscv64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:ab2cfb39f2447f099526b53e13e2705d50fb9fd98766db576893743a1f6003ba"
+      "737159048":
+        name: "figcraft-0.18.0-linux-riscv64.rpm"
+        url_suffix: "figcraft-0.18.0-linux-riscv64.rpm"
+        size: 101414621
+        media_type: "application/x-rpm"
+        digest: "sha256:62372e6d1e63506ae24efab408c73e0004e51b669b937e1db55ef5add3db211f"
+      "737159064":
+        name: "figcraft-0.18.0-linux-riscv64.rpm.asc"
+        url_suffix: "figcraft-0.18.0-linux-riscv64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:82d71cc297e9fc213ddda40abb35177a70c4fae322e1d147d3a196b83f6557bc"
+      "737159087":
+        name: "figcraft-0.18.0-linux-riscv64.tar.gz"
+        url_suffix: "figcraft-0.18.0-linux-riscv64.tar.gz"
+        size: 100386244
+        media_type: "application/x-gtar"
+        digest: "sha256:80c5a8951fa9548034622304561736934a403c31f31202884bc546f0614c45c1"
+      "737159095":
+        name: "figcraft-0.18.0-linux-riscv64.tar.gz.asc"
+        url_suffix: "figcraft-0.18.0-linux-riscv64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:cd40293de7ac0f31de873cedc7e9ceb0b6044b221657c4ea19a6255027996b4d"
+      "737159107":
+        name: "figcraft-0.18.0-linux-x86_64.AppImage"
+        url_suffix: "figcraft-0.18.0-linux-x86_64.AppImage"
+        size: 95820280
+        media_type: "application/vnd.appimage"
+        digest: "sha256:0b7ae3c415598a5762c57f5fed01b7737f487d9bcf53995968a5b65a254df22d"
+      "737159135":
+        name: "figcraft-0.18.0-linux-x86_64.AppImage.asc"
+        url_suffix: "figcraft-0.18.0-linux-x86_64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:3ab4af7d438fece7440dd9c73ba0521c2900fe9b2847974ee524726c7e94bfef"
+      "737159155":
+        name: "figcraft-0.18.0-linux-x86_64.AppImage.zsync"
+        url_suffix: "figcraft-0.18.0-linux-x86_64.AppImage.zsync"
+        size: 327761
+        digest: "sha256:65f796e4374ab4f94a65fcb0e9bfc28766920362b7b5b0c52c3110928524a366"
+      "737159169":
+        name: "figcraft-0.18.0-linux-x86_64.AppImage.zsync.asc"
+        url_suffix: "figcraft-0.18.0-linux-x86_64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:477a578caacf30ec7ea02afa582926fc3e144e9af4d4f799d267bf663ef24cf5"
+      "737159180":
+        name: "figcraft-0.18.0-linux-x86_64.deb"
+        url_suffix: "figcraft-0.18.0-linux-x86_64.deb"
+        size: 103587606
+        media_type: "application/x-debian-package"
+        digest: "sha256:0fa73a89790c0dfe283f974b23e792ecf1f4ebb7f0e974e75eef8e6c619b9c0d"
+      "737159189":
+        name: "figcraft-0.18.0-linux-x86_64.deb.asc"
+        url_suffix: "figcraft-0.18.0-linux-x86_64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:58a32dbe9656ae619753f77024749d7c177f205023969986ed745fd059a59155"
+      "737159191":
+        name: "figcraft-0.18.0-linux-x86_64.flatpak"
+        url_suffix: "figcraft-0.18.0-linux-x86_64.flatpak"
+        size: 71872696
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:4a78e7cade092eb25b7198943cb9f1c680e4dd5f5d0ad3342cf41ddfd10f85ec"
+      "737159224":
+        name: "figcraft-0.18.0-linux-x86_64.flatpak.asc"
+        url_suffix: "figcraft-0.18.0-linux-x86_64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:981fa8ebc8ab2418ef1334d1fffd9ef79ad2a94a7930b2d3d32144cf363be565"
+      "737159228":
+        name: "figcraft-0.18.0-linux-x86_64.oci-manifest.json"
+        url_suffix: "figcraft-0.18.0-linux-x86_64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:9ecd024d25107ae5c8308b9cfa6d3010683867a80b726bb43c8f227be03b26a1"
+      "737159243":
+        name: "figcraft-0.18.0-linux-x86_64.oci.sig"
+        url_suffix: "figcraft-0.18.0-linux-x86_64.oci.sig"
+        size: 387
+        media_type: "application/pgp-signature"
+        digest: "sha256:efdad1b2d0114554182b09cdf7ed5dba3f4ef6a3a8ccde38d4d790ddaa7dd746"
+      "737159256":
+        name: "figcraft-0.18.0-linux-x86_64.pkg.tar.zst"
+        url_suffix: "figcraft-0.18.0-linux-x86_64.pkg.tar.zst"
+        size: 77059205
+        media_type: "application/zstd"
+        digest: "sha256:fe9e661fee08ba1d9880aa93ed2bb151856d3dcd2d720e98839b030eb7c92ac5"
+      "737159272":
+        name: "figcraft-0.18.0-linux-x86_64.pkg.tar.zst.sig"
+        url_suffix: "figcraft-0.18.0-linux-x86_64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:cb572bf8fff3cc8941c364ca5502f3a5a668cfaba70aa074ac10b44832d35441"
+      "737159276":
+        name: "figcraft-0.18.0-linux-x86_64.rpm"
+        url_suffix: "figcraft-0.18.0-linux-x86_64.rpm"
+        size: 103058723
+        media_type: "application/x-rpm"
+        digest: "sha256:9ce6db68875e8acfe2ae8fcb890e822c279aba364b7408809807006564b45be3"
+      "737159283":
+        name: "figcraft-0.18.0-linux-x86_64.rpm.asc"
+        url_suffix: "figcraft-0.18.0-linux-x86_64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:f8afd30e27b92f61f19777714335e19fadc9af36e3ae3f8ec25de11815890959"
+      "737159288":
+        name: "figcraft-0.18.0-linux-x86_64.tar.gz"
+        url_suffix: "figcraft-0.18.0-linux-x86_64.tar.gz"
+        size: 102091624
+        media_type: "application/x-gtar"
+        digest: "sha256:8c764aa57958aa4634c3fd2d68793a7f88d0b3266d1f4a487b78a707ad3b2513"
+      "737159297":
+        name: "figcraft-0.18.0-linux-x86_64.tar.gz.asc"
+        url_suffix: "figcraft-0.18.0-linux-x86_64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:f831f5153c6bae01b0b4ec22268ce343f87b5503c38fffb628e73f0cbfbaac00"
+      "737159313":
+        name: "figcraft-0.18.0-macos-universal.dmg"
+        url_suffix: "figcraft-0.18.0-macos-universal.dmg"
+        size: 111451767
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:bc0fd41e20156c4dfcf1b91c05776e6d5600959958ffdd03b801edda4d1277e5"
+      "737159328":
+        name: "figcraft-0.18.0-windows-arm64-portable.zip"
+        url_suffix: "figcraft-0.18.0-windows-arm64-portable.zip"
+        size: 98389988
+        media_type: "zip"
+        digest: "sha256:afe17925fe2ecdcbc1b91f4252790d09c64840caafbd9c78cee74177097bfd85"
+      "737159341":
+        name: "figcraft-0.18.0-windows-arm64.msi"
+        url_suffix: "figcraft-0.18.0-windows-arm64.msi"
+        size: 77537280
+        media_type: "application/x-msi"
+        digest: "sha256:480cccfa7d339b2b278997f14a9bcb7c952118373e476fd8d0acf359ad03901c"
+      "737159405":
+        name: "figcraft-0.18.0-windows-x64-portable.zip"
+        url_suffix: "figcraft-0.18.0-windows-x64-portable.zip"
+        size: 102125445
+        media_type: "zip"
+        digest: "sha256:e1d3e89333f843233b397e30a6f437ace6dab8057ae6444c7bf8965d2fb62e42"
+      "737159434":
+        name: "figcraft-0.18.0-windows-x64.msi"
+        url_suffix: "figcraft-0.18.0-windows-x64.msi"
+        size: 81408000
+        media_type: "application/x-msi"
+        digest: "sha256:2cace2cd43a4a0eba989525045a4dfe6077faebfa354dce235a7c0a461993053"
+      "737159448":
+        name: "figcraft-cli-0.18.0-macos-universal.zip"
+        url_suffix: "figcraft-cli-0.18.0-macos-universal.zip"
+        size: 90622363
+        media_type: "zip"
+        digest: "sha256:f84c299353df0626c093d2a03cca58ae55a89d76e1ce83a989ff65fac8ddeaa3"
+      "737159495":
+        name: "figcraft-server-0.18.0-linux-aarch64.tar.gz"
+        url_suffix: "figcraft-server-0.18.0-linux-aarch64.tar.gz"
+        size: 4174073
+        media_type: "application/x-gtar"
+        digest: "sha256:505a444b38e2b4efba3e35f1469f4c15c7ec247661e843c954601dec8453b8fe"
+      "737159528":
+        name: "figcraft-server-0.18.0-linux-aarch64.tar.gz.asc"
+        url_suffix: "figcraft-server-0.18.0-linux-aarch64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:74e882a51ae61bd7089bc6229b28ce1b9c04711b1a3fed4b09d92c1db4b98c9f"
+      "737159530":
+        name: "figcraft-server-0.18.0-linux-x86_64.tar.gz"
+        url_suffix: "figcraft-server-0.18.0-linux-x86_64.tar.gz"
+        size: 4554873
+        media_type: "application/x-gtar"
+        digest: "sha256:b68173a7425d429e3b92de96c4bac3e3d3328b3b81f9ed49f70f78a8efe5a210"
+      "737159536":
+        name: "figcraft-server-0.18.0-linux-x86_64.tar.gz.asc"
+        url_suffix: "figcraft-server-0.18.0-linux-x86_64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:5cc97d42c3fde36443a92494a0c32ce2789c8abef210eeec67fde3957e196745"
+      "737159551":
+        name: "figcraft-web-0.18.0.zip"
+        url_suffix: "figcraft-web-0.18.0.zip"
+        size: 10517290
+        media_type: "zip"
+        digest: "sha256:786bc4defa2730d68c76cee9b6c58ac3a929b5bd1cc6e03e019a8fe90066f828"
+      "737159565":
+        name: "release-signing-key.asc"
+        url_suffix: "release-signing-key.asc"
+        size: 803
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8e6925a173d6a7134118da099948de4d9eeec7c1c0770998aec33c9d3f484740"
+  "442367292":
+    tag: "v0.18.1"
+    title: "FigCraft v0.18.1"
+    url: "https://github.com/storytold/figcraft/releases/tag/v0.18.1"
+    created_at: "2026-11-12T00:38:58Z"
+    published_at: "2026-11-12T01:20:50Z"
+    updated_at: "2026-11-12T01:20:50Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/storytold/figcraft/zipball/v0.18.1"
+    source_tar_url: "https://api.github.com/repos/storytold/figcraft/tarball/v0.18.1"
+    download_base: "https://github.com/storytold/figcraft/releases/download/v0.18.1/"
+    assets:
+      "737530374":
+        name: "figcraft-0.18.1-linux-aarch64.AppImage"
+        url_suffix: "figcraft-0.18.1-linux-aarch64.AppImage"
+        size: 92543496
+        media_type: "application/vnd.appimage"
+        digest: "sha256:8fdd9f7f9f0e38fdef7a7c9d30498451677f481a38e1d184b18a5df85799edf7"
+      "737530375":
+        name: "figcraft-0.18.1-freebsd-x86_64.tar.gz"
+        url_suffix: "figcraft-0.18.1-freebsd-x86_64.tar.gz"
+        size: 101735927
+        media_type: "application/x-gtar"
+        digest: "sha256:a55c264e7e4978e17e6954684ef32e991a714d48c845020144b1625875d36ccf"
+      "737530377":
+        name: "SHA256SUMS.txt.asc"
+        url_suffix: "SHA256SUMS.txt.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:f3817e3fa0738aa3dc5d44ce90aa601423b90a39f7d295aa357a0f1144cbd483"
+      "737530380":
+        name: "SHA256SUMS.txt"
+        url_suffix: "SHA256SUMS.txt"
+        size: 5475
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:75d33f6252e6c61916223cf4ef07c4f9f5a3293a1804749590f74b74a734edb8"
+      "737530382":
+        name: "figcraft-0.18.1-freebsd-aarch64.tar.gz"
+        url_suffix: "figcraft-0.18.1-freebsd-aarch64.tar.gz"
+        size: 97087926
+        media_type: "application/x-gtar"
+        digest: "sha256:2bde1585d56fce69f1ae2d5c5b7a24a61e4d6d19ee5bfdcc32923648e2201664"
+      "737530409":
+        name: "figcraft-0.18.1-linux-aarch64.AppImage.asc"
+        url_suffix: "figcraft-0.18.1-linux-aarch64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:22e06a1899bb35b7b5902758679e45b2dcfc10514e34fc52c627614335b56bb3"
+      "737530412":
+        name: "figcraft-0.18.1-linux-aarch64.AppImage.zsync"
+        url_suffix: "figcraft-0.18.1-linux-aarch64.AppImage.zsync"
+        size: 316563
+        digest: "sha256:156baa5e8284f7ec3e4745deaebea90851c9d08dc58fbfc46d860d128077db4c"
+      "737530460":
+        name: "figcraft-0.18.1-linux-aarch64.AppImage.zsync.asc"
+        url_suffix: "figcraft-0.18.1-linux-aarch64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:40288ba55c1324c2d1a50b41940e2b3a3fd11d391ca1f5c6c172d21c99e423c0"
+      "737530464":
+        name: "figcraft-0.18.1-linux-aarch64.deb"
+        url_suffix: "figcraft-0.18.1-linux-aarch64.deb"
+        size: 101144582
+        media_type: "application/x-debian-package"
+        digest: "sha256:63b3366e30f2a3bf514ee8fd182fb14140ca25ad490c52c28bdd63f3bf419338"
+      "737530493":
+        name: "figcraft-0.18.1-linux-aarch64.deb.asc"
+        url_suffix: "figcraft-0.18.1-linux-aarch64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:95ee55ce6cf1f38854007cf12bd8139c3933841613e503e8d5bec78d081c7cde"
+      "737530531":
+        name: "figcraft-0.18.1-linux-aarch64.flatpak"
+        url_suffix: "figcraft-0.18.1-linux-aarch64.flatpak"
+        size: 67748784
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:4259b3ac48c8611854f7dde5c4be32bd12de9a9b4d7b517d78c47baeed40c8eb"
+      "737530643":
+        name: "figcraft-0.18.1-linux-aarch64.flatpak.asc"
+        url_suffix: "figcraft-0.18.1-linux-aarch64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:7a494a51e52ed26355febdcaa65732d1f93bd9ba1a53b0b12f26529fcc255290"
+      "737530651":
+        name: "figcraft-0.18.1-linux-aarch64.oci-manifest.json"
+        url_suffix: "figcraft-0.18.1-linux-aarch64.oci-manifest.json"
+        size: 493
+        media_type: "application/json"
+        digest: "sha256:5ebdebd80cedc2cb9ea77de3db1802afe2d46a7b287e077506f6d6655694e794"
+      "737530667":
+        name: "figcraft-0.18.1-linux-aarch64.pkg.tar.zst"
+        url_suffix: "figcraft-0.18.1-linux-aarch64.pkg.tar.zst"
+        size: 74605947
+        media_type: "application/zstd"
+        digest: "sha256:ac05abc4fd889c0a94078c77bd4a086bca17d42f54bf90e1c57019909b6404a8"
+      "737530668":
+        name: "figcraft-0.18.1-linux-aarch64.oci.sig"
+        url_suffix: "figcraft-0.18.1-linux-aarch64.oci.sig"
+        size: 384
+        media_type: "application/pgp-signature"
+        digest: "sha256:dde1453037e6a1e7628fb01bbcb391ad2566f8b9eb318d5633e799266d2f4659"
+      "737530675":
+        name: "figcraft-0.18.1-linux-aarch64.pkg.tar.zst.sig"
+        url_suffix: "figcraft-0.18.1-linux-aarch64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:c60efffef443c5e7f3035f435b47b33c249ea7cca3452e07d009635cd48c10bd"
+      "737530683":
+        name: "figcraft-0.18.1-linux-aarch64.rpm"
+        url_suffix: "figcraft-0.18.1-linux-aarch64.rpm"
+        size: 100477992
+        media_type: "application/x-rpm"
+        digest: "sha256:926cdf76f942f60ae464ab654d066eb6f23ccc77255fca4b9a494ef051198c7e"
+      "737530701":
+        name: "figcraft-0.18.1-linux-aarch64.rpm.asc"
+        url_suffix: "figcraft-0.18.1-linux-aarch64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:67ec40d4f245e2338829f619c40763d56e2f2ebce4d0b3f82f592c5b9a08fc19"
+      "737530703":
+        name: "figcraft-0.18.1-linux-aarch64.tar.gz"
+        url_suffix: "figcraft-0.18.1-linux-aarch64.tar.gz"
+        size: 98693364
+        media_type: "application/x-gtar"
+        digest: "sha256:b27dee10be5db50def03dee3be470bc2f9ce508be1690e75b4765354d2b89c88"
+      "737530727":
+        name: "figcraft-0.18.1-linux-aarch64.tar.gz.asc"
+        url_suffix: "figcraft-0.18.1-linux-aarch64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:1365016ec4bbd6b71ac1ab08b5d0c0aea92fa68016779741d3593d60c8618419"
+      "737530753":
+        name: "figcraft-0.18.1-linux-riscv64.deb"
+        url_suffix: "figcraft-0.18.1-linux-riscv64.deb"
+        size: 101942556
+        media_type: "application/x-debian-package"
+        digest: "sha256:c7c55d2007adb84eb6c2e9b242cfab5a932e1233800c5720c582a488a9379509"
+      "737530801":
+        name: "figcraft-0.18.1-linux-riscv64.deb.asc"
+        url_suffix: "figcraft-0.18.1-linux-riscv64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:461eca412f39b3fd96b8e3969406976c353754749fac40f8607eeab1af6236bb"
+      "737530842":
+        name: "figcraft-0.18.1-linux-riscv64.rpm"
+        url_suffix: "figcraft-0.18.1-linux-riscv64.rpm"
+        size: 101627783
+        media_type: "application/x-rpm"
+        digest: "sha256:37b8d84174b2e4a8d8a7ccb6bb88997216ba0485532fb0d0374869a01bbcf80d"
+      "737530850":
+        name: "figcraft-0.18.1-linux-riscv64.rpm.asc"
+        url_suffix: "figcraft-0.18.1-linux-riscv64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:7c795e7bef89c1455c4fbda670629d0f4137e9a40a439a906209b9dcf6258243"
+      "737530903":
+        name: "figcraft-0.18.1-linux-riscv64.tar.gz"
+        url_suffix: "figcraft-0.18.1-linux-riscv64.tar.gz"
+        size: 100604866
+        media_type: "application/x-gtar"
+        digest: "sha256:412e5206e44aed7d45e1f0b17963f201024acea9856a20ba18f0d5640972df37"
+      "737530934":
+        name: "figcraft-0.18.1-linux-riscv64.tar.gz.asc"
+        url_suffix: "figcraft-0.18.1-linux-riscv64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:af331eac6c43c9d71791ec230c82ffe466c0082a21e115701500a1065b494114"
+      "737530964":
+        name: "figcraft-0.18.1-linux-x86_64.AppImage"
+        url_suffix: "figcraft-0.18.1-linux-x86_64.AppImage"
+        size: 95914488
+        media_type: "application/vnd.appimage"
+        digest: "sha256:9586942dd631b96b4c5522988e9e80213907b8022ffafbca624a3fc11ae7a9e9"
+      "737530968":
+        name: "figcraft-0.18.1-linux-x86_64.AppImage.asc"
+        url_suffix: "figcraft-0.18.1-linux-x86_64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:94eaa287517712768c8c438acda97247f44a430b7eb803546489c42eeba53f0e"
+      "737530970":
+        name: "figcraft-0.18.1-linux-x86_64.AppImage.zsync"
+        url_suffix: "figcraft-0.18.1-linux-x86_64.AppImage.zsync"
+        size: 328083
+        digest: "sha256:371ba09eff1a91da51324060d7274e2229a113a9faa529ec24ee7a2907fca0d5"
+      "737531004":
+        name: "figcraft-0.18.1-linux-x86_64.AppImage.zsync.asc"
+        url_suffix: "figcraft-0.18.1-linux-x86_64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:f93904935a2a2ec4a6cccf9b8c02d2ac55f699f7c91ce25550d22d0e043d6c73"
+      "737531018":
+        name: "figcraft-0.18.1-linux-x86_64.deb"
+        url_suffix: "figcraft-0.18.1-linux-x86_64.deb"
+        size: 103654584
+        media_type: "application/x-debian-package"
+        digest: "sha256:ed9abee9a02cf8ce1feb1a1de10e5c04148c4d1f7b9128080d7fe6cdb1f0efb4"
+      "737531046":
+        name: "figcraft-0.18.1-linux-x86_64.deb.asc"
+        url_suffix: "figcraft-0.18.1-linux-x86_64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d423df39c3b0e03256ed97fce74510146ef97577992ebc025228e7fee312c81c"
+      "737531074":
+        name: "figcraft-0.18.1-linux-x86_64.flatpak"
+        url_suffix: "figcraft-0.18.1-linux-x86_64.flatpak"
+        size: 71898704
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:2bd3b9080df4b098964eb02c25fbc2ef680b32a6aa83e3a33743890779043bc3"
+      "737531078":
+        name: "figcraft-0.18.1-linux-x86_64.flatpak.asc"
+        url_suffix: "figcraft-0.18.1-linux-x86_64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:9a2c6fc3cd1007cdb974a86ec6c38cdf2f349bd924fcb00393ef41b92e4fffac"
+      "737531106":
+        name: "figcraft-0.18.1-linux-x86_64.oci-manifest.json"
+        url_suffix: "figcraft-0.18.1-linux-x86_64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:f40e017aba2d7cbc238edbd856810e4a16aac950e3c583bae5897306d14e8b7c"
+      "737531141":
+        name: "figcraft-0.18.1-linux-x86_64.oci.sig"
+        url_suffix: "figcraft-0.18.1-linux-x86_64.oci.sig"
+        size: 386
+        media_type: "application/pgp-signature"
+        digest: "sha256:59b89a7784460bfc691538dc4bee18e00ed21c3ae878e72635ebb2780fc424d7"
+      "737531161":
+        name: "figcraft-0.18.1-linux-x86_64.pkg.tar.zst"
+        url_suffix: "figcraft-0.18.1-linux-x86_64.pkg.tar.zst"
+        size: 77065953
+        media_type: "application/zstd"
+        digest: "sha256:d2b37692cd25f883dac9eb363ae319dd9de350f8e4640e7c219348d0f8eca2cf"
+      "737531165":
+        name: "figcraft-0.18.1-linux-x86_64.pkg.tar.zst.sig"
+        url_suffix: "figcraft-0.18.1-linux-x86_64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:3f7312a1f695160ad12e458a60b3ac5d984cdc9d6c2c7a725a6fa2e55b8cc922"
+      "737531186":
+        name: "figcraft-0.18.1-linux-x86_64.rpm"
+        url_suffix: "figcraft-0.18.1-linux-x86_64.rpm"
+        size: 103120074
+        media_type: "application/x-rpm"
+        digest: "sha256:8d9cfefe25f989f3050187c44ab93961926ecd67ff963c0d5135f48c11f83d69"
+      "737531202":
+        name: "figcraft-0.18.1-linux-x86_64.rpm.asc"
+        url_suffix: "figcraft-0.18.1-linux-x86_64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:a72b44c3d0fb340c360fe92da4b47fb197b110c3230486a2d5c89510b825438a"
+      "737531213":
+        name: "figcraft-0.18.1-linux-x86_64.tar.gz"
+        url_suffix: "figcraft-0.18.1-linux-x86_64.tar.gz"
+        size: 102146855
+        media_type: "application/x-gtar"
+        digest: "sha256:8276d2ac55c6f77f7af3a411a9b00415d3feb0b59607a54523311340e653fc19"
+      "737531233":
+        name: "figcraft-0.18.1-linux-x86_64.tar.gz.asc"
+        url_suffix: "figcraft-0.18.1-linux-x86_64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:ca8707705eb8553f4541788b8ca50106fd602091f61167ca7e118179275ca8ec"
+      "737531250":
+        name: "figcraft-0.18.1-macos-universal.dmg"
+        url_suffix: "figcraft-0.18.1-macos-universal.dmg"
+        size: 111559702
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:de7bc22fb363c57a350927f5ca009bd444b19993bdeb2863b564e99f3fbae230"
+      "737531261":
+        name: "figcraft-0.18.1-windows-arm64-portable.zip"
+        url_suffix: "figcraft-0.18.1-windows-arm64-portable.zip"
+        size: 98521019
+        media_type: "zip"
+        digest: "sha256:0be46bc30645d2366465d35026204cc32b5eaecde90454dbceb85781891533ac"
+      "737531311":
+        name: "figcraft-0.18.1-windows-arm64.msi"
+        url_suffix: "figcraft-0.18.1-windows-arm64.msi"
+        size: 77635584
+        media_type: "application/x-msi"
+        digest: "sha256:1257d6a62cd951e432b6ee37fefbfcf0d90970cdf01cdc8ba7cad5e6514a5ca7"
+      "737531372":
+        name: "figcraft-0.18.1-windows-x64-portable.zip"
+        url_suffix: "figcraft-0.18.1-windows-x64-portable.zip"
+        size: 102176915
+        media_type: "zip"
+        digest: "sha256:158563f240eea42b939c328569dcf0d1b55545d89cbf035bfd5d354f351b0762"
+      "737531428":
+        name: "figcraft-0.18.1-windows-x64.msi"
+        url_suffix: "figcraft-0.18.1-windows-x64.msi"
+        size: 81408000
+        media_type: "application/x-msi"
+        digest: "sha256:ac443eae9751cb129e030f2d5ee1bf5cc1fbd8c0da1650bbfe590a928a01971e"
+      "737531520":
+        name: "figcraft-cli-0.18.1-macos-universal.zip"
+        url_suffix: "figcraft-cli-0.18.1-macos-universal.zip"
+        size: 90711341
+        media_type: "zip"
+        digest: "sha256:87efbca334e0925fce328ede159faef2df781b2a167d573888044127bfd4b0de"
+      "737531526":
+        name: "figcraft-server-0.18.1-linux-aarch64.tar.gz"
+        url_suffix: "figcraft-server-0.18.1-linux-aarch64.tar.gz"
+        size: 4175939
+        media_type: "application/x-gtar"
+        digest: "sha256:7f99397ac3d28458fb5a0970d35d771fb5c3bb5c41e6405533196692ce1cbd7d"
+      "737531527":
+        name: "figcraft-server-0.18.1-linux-aarch64.tar.gz.asc"
+        url_suffix: "figcraft-server-0.18.1-linux-aarch64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:03c55f1d44a78f832c0e1c2276b1766c833048b69ae4f26222b170714975f1d2"
+      "737531552":
+        name: "figcraft-server-0.18.1-linux-x86_64.tar.gz"
+        url_suffix: "figcraft-server-0.18.1-linux-x86_64.tar.gz"
+        size: 4555600
+        media_type: "application/x-gtar"
+        digest: "sha256:215b61e5b1dd5b4b4d193509b7be54010e3b929dd19b9a3a85fb1357539cdcd8"
+      "737531571":
+        name: "figcraft-server-0.18.1-linux-x86_64.tar.gz.asc"
+        url_suffix: "figcraft-server-0.18.1-linux-x86_64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8707eae2a7d9b01661d2a067a482afbe55bdddbb1e0108140ea80354edbe3535"
+      "737531590":
+        name: "figcraft-web-0.18.1.zip"
+        url_suffix: "figcraft-web-0.18.1.zip"
+        size: 10534024
+        media_type: "zip"
+        digest: "sha256:2fbeb93f5022b0a7cc9d8528f1ed7e2b54c94d213ef79e65128aa898c399f02b"
+      "737531604":
         name: "release-signing-key.asc"
         url_suffix: "release-signing-key.asc"
         size: 803

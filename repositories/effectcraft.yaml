@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1400136506
 repository: "storytold/effectcraft"
-collected_at: "2026-11-10T21:14:45Z"
+collected_at: "2026-11-15T11:06:33Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-10T21:14:45Z"
+observed_at: "2026-11-15T11:06:33Z"
 releases:
   "402139175":
     tag: "v0.1.0"
@@ -4497,6 +4497,626 @@ releases:
         media_type: "zip"
         digest: "sha256:de8bc2116ae87beeabddb756397e825a556939f326ae9907c3bf29c49d8ea2ee"
       "729558436":
+        name: "release-signing-key.asc"
+        url_suffix: "release-signing-key.asc"
+        size: 803
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8e6925a173d6a7134118da099948de4d9eeec7c1c0770998aec33c9d3f484740"
+  "441969306":
+    tag: "v0.24.0"
+    title: "EffectCraft v0.24.0"
+    url: "https://github.com/storytold/effectcraft/releases/tag/v0.24.0"
+    created_at: "2026-11-11T15:57:24Z"
+    published_at: "2026-11-11T17:01:40Z"
+    updated_at: "2026-11-11T17:01:40Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/storytold/effectcraft/zipball/v0.24.0"
+    source_tar_url: "https://api.github.com/repos/storytold/effectcraft/tarball/v0.24.0"
+    download_base: "https://github.com/storytold/effectcraft/releases/download/v0.24.0/"
+    assets:
+      "736229530":
+        name: "effectcraft-0.24.0-linux-aarch64.AppImage"
+        url_suffix: "effectcraft-0.24.0-linux-aarch64.AppImage"
+        size: 70068744
+        media_type: "application/vnd.appimage"
+        digest: "sha256:e9b316af90390eada040a9c3d092c8eb6c5aa73f6615fc5641d5bbb98a335601"
+      "736229533":
+        name: "effectcraft-0.24.0-freebsd-aarch64.tar.gz"
+        url_suffix: "effectcraft-0.24.0-freebsd-aarch64.tar.gz"
+        size: 78252277
+        media_type: "application/x-gtar"
+        digest: "sha256:ad58caf3f989d5268c751f4cc47d8760e2d3ce312f314d2b01fd7ca309bee460"
+      "736229535":
+        name: "SHA256SUMS.txt"
+        url_suffix: "SHA256SUMS.txt"
+        size: 5170
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:6e8bec6a1fb28443673b41bd424d1a4e10b492c2f5b2fed92e827b2ef3c2d3b6"
+      "736229536":
+        name: "effectcraft-0.24.0-freebsd-x86_64.tar.gz"
+        url_suffix: "effectcraft-0.24.0-freebsd-x86_64.tar.gz"
+        size: 80950760
+        media_type: "application/x-gtar"
+        digest: "sha256:f7aa215b4da07e39e6d6f246110625184eb2cec21a2b827529277e5e9529a8e9"
+      "736229537":
+        name: "SHA256SUMS.txt.asc"
+        url_suffix: "SHA256SUMS.txt.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:cb92a03753110771b1edad6c18597dda749597c4ddfb2c333df88fcb7bd8af6f"
+      "736229574":
+        name: "effectcraft-0.24.0-linux-aarch64.AppImage.zsync"
+        url_suffix: "effectcraft-0.24.0-linux-aarch64.AppImage.zsync"
+        size: 239751
+        digest: "sha256:b409310a5b12f3c2b45684273d089b59cb8a14195c02022cc148b191e590f3da"
+      "736229576":
+        name: "effectcraft-0.24.0-linux-aarch64.AppImage.asc"
+        url_suffix: "effectcraft-0.24.0-linux-aarch64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:fb028cc72248e55434558410880b86fad4d575eddc454375d6e13fda4de7e230"
+      "736229624":
+        name: "effectcraft-0.24.0-linux-aarch64.AppImage.zsync.asc"
+        url_suffix: "effectcraft-0.24.0-linux-aarch64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:fb28e8484aa9ee6e20caf157f92e5c0a06957ae03164ab76f49892e6b29fd272"
+      "736229625":
+        name: "effectcraft-0.24.0-linux-aarch64.deb"
+        url_suffix: "effectcraft-0.24.0-linux-aarch64.deb"
+        size: 79583226
+        media_type: "application/x-debian-package"
+        digest: "sha256:b3c8d151cbfb26229980cb85d43dd691271a04e9eb4f93942a1e1c3f4ef293a4"
+      "736229696":
+        name: "effectcraft-0.24.0-linux-aarch64.deb.asc"
+        url_suffix: "effectcraft-0.24.0-linux-aarch64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:9b15cc7cbcde1bf32aee54f016b2e7d57357f0aa54be29f8249ee9ab718120f4"
+      "736229797":
+        name: "effectcraft-0.24.0-linux-aarch64.flatpak"
+        url_suffix: "effectcraft-0.24.0-linux-aarch64.flatpak"
+        size: 46455600
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:541e0a0721132f5d4c783467f3ce99123a99db08cc1b458b60fce553f74a24b8"
+      "736230018":
+        name: "effectcraft-0.24.0-linux-aarch64.flatpak.asc"
+        url_suffix: "effectcraft-0.24.0-linux-aarch64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:a5022641fb4efdd5ccd576dc894a6e1275c0e58a073275d8bb6680d03b991896"
+      "736230053":
+        name: "effectcraft-0.24.0-linux-aarch64.oci-manifest.json"
+        url_suffix: "effectcraft-0.24.0-linux-aarch64.oci-manifest.json"
+        size: 493
+        media_type: "application/json"
+        digest: "sha256:cc8d57406166990b18b002193f35fce79c939260d232ae45a03aae3e43f4f1db"
+      "736230099":
+        name: "effectcraft-0.24.0-linux-aarch64.oci.sig"
+        url_suffix: "effectcraft-0.24.0-linux-aarch64.oci.sig"
+        size: 383
+        media_type: "application/pgp-signature"
+        digest: "sha256:f09744db2e1024afa0560cfb8614ff78261b45ef6b939227684a2da97305929b"
+      "736230105":
+        name: "effectcraft-0.24.0-linux-aarch64.pkg.tar.zst"
+        url_suffix: "effectcraft-0.24.0-linux-aarch64.pkg.tar.zst"
+        size: 53656288
+        media_type: "application/zstd"
+        digest: "sha256:d024ef257f9ade3c793b629b42de3d1981247f5cefd625670eb08994b7d5815a"
+      "736230116":
+        name: "effectcraft-0.24.0-linux-aarch64.pkg.tar.zst.sig"
+        url_suffix: "effectcraft-0.24.0-linux-aarch64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:076aaf772c3e064ed22a47eb5d75e0e5f590b226be9ca9cfcf3d94681e6ecc26"
+      "736230128":
+        name: "effectcraft-0.24.0-linux-aarch64.rpm.asc"
+        url_suffix: "effectcraft-0.24.0-linux-aarch64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:f5a0e9566d5734c4d78e4bff5c2e386d526f0066c5e2d9b5c55ea89a3757aefc"
+      "736230131":
+        name: "effectcraft-0.24.0-linux-aarch64.rpm"
+        url_suffix: "effectcraft-0.24.0-linux-aarch64.rpm"
+        size: 78778025
+        media_type: "application/x-rpm"
+        digest: "sha256:5492272481d02570a5a8e422fdb3aafcde8cab8169f8424cd72fce281433bfc9"
+      "736230142":
+        name: "effectcraft-0.24.0-linux-aarch64.tar.gz"
+        url_suffix: "effectcraft-0.24.0-linux-aarch64.tar.gz"
+        size: 75963129
+        media_type: "application/x-gtar"
+        digest: "sha256:ca3799f172316628b661a7111a39e393454ea1dc386260e8e872884bee7d706c"
+      "736230164":
+        name: "effectcraft-0.24.0-linux-aarch64.tar.gz.asc"
+        url_suffix: "effectcraft-0.24.0-linux-aarch64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:b8e170dcac0624fd0bc74089a3358dfaa52a1d6ca8b4ecfc9978f4ee44ef13a8"
+      "736230167":
+        name: "effectcraft-0.24.0-linux-riscv64.deb"
+        url_suffix: "effectcraft-0.24.0-linux-riscv64.deb"
+        size: 80865112
+        media_type: "application/x-debian-package"
+        digest: "sha256:800d3243b03c66dcf19b8585d7783f796d9074990c4c508a32d6240dea090c38"
+      "736230212":
+        name: "effectcraft-0.24.0-linux-riscv64.deb.asc"
+        url_suffix: "effectcraft-0.24.0-linux-riscv64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:2247101ba1e0bc1f465622218f34f0719f7fa35274080927ae3fe1d894a97f15"
+      "736230246":
+        name: "effectcraft-0.24.0-linux-riscv64.rpm"
+        url_suffix: "effectcraft-0.24.0-linux-riscv64.rpm"
+        size: 80665654
+        media_type: "application/x-rpm"
+        digest: "sha256:7726472c573a5f3dc335ac4f26279f4ddc7082d3cd45f23d4ec824fe333d6650"
+      "736230440":
+        name: "effectcraft-0.24.0-linux-riscv64.rpm.asc"
+        url_suffix: "effectcraft-0.24.0-linux-riscv64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:3bc4b7553bd3ad891c491efeaab6bf189dd52fe73e4a0fefbecd08f55ba5b91b"
+      "736230479":
+        name: "effectcraft-0.24.0-linux-riscv64.tar.gz"
+        url_suffix: "effectcraft-0.24.0-linux-riscv64.tar.gz"
+        size: 79187347
+        media_type: "application/x-gtar"
+        digest: "sha256:bb6ff8af8ff3735595ed3caddfb3c7844635d14a91037da05168cce7a2fe9a56"
+      "736230522":
+        name: "effectcraft-0.24.0-linux-riscv64.tar.gz.asc"
+        url_suffix: "effectcraft-0.24.0-linux-riscv64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:4aeac4a35666bec162544ff7435b6ca4e7f376c9eb1b6ee02966c3225bceea26"
+      "736230523":
+        name: "effectcraft-0.24.0-linux-x86_64.AppImage"
+        url_suffix: "effectcraft-0.24.0-linux-x86_64.AppImage"
+        size: 75319800
+        media_type: "application/vnd.appimage"
+        digest: "sha256:4d3332ed41a1b63aa8131295ae2e4aa9d4fc01dc84f750d805c79a4e8bd01a9e"
+      "736230593":
+        name: "effectcraft-0.24.0-linux-x86_64.AppImage.asc"
+        url_suffix: "effectcraft-0.24.0-linux-x86_64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:efba73fdba9ef50ed9d3470b82c7761b6d514ddbb75d39ce4349b51a89853922"
+      "736230633":
+        name: "effectcraft-0.24.0-linux-x86_64.AppImage.zsync"
+        url_suffix: "effectcraft-0.24.0-linux-x86_64.AppImage.zsync"
+        size: 257697
+        digest: "sha256:0a94ee39a11c4e3d9a312cb162bfe8f5a4d3fbb174717105605add6440bb2f21"
+      "736230658":
+        name: "effectcraft-0.24.0-linux-x86_64.AppImage.zsync.asc"
+        url_suffix: "effectcraft-0.24.0-linux-x86_64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:a082b49e350aebf1bd0a632c22eaf05a9dea1baace35f950894c447a46484e90"
+      "736230691":
+        name: "effectcraft-0.24.0-linux-x86_64.deb"
+        url_suffix: "effectcraft-0.24.0-linux-x86_64.deb"
+        size: 83529746
+        media_type: "application/x-debian-package"
+        digest: "sha256:68466bee45ab463b580f7f4e081e6945d85c723c7bd4cc69484400747f1298b4"
+      "736230699":
+        name: "effectcraft-0.24.0-linux-x86_64.deb.asc"
+        url_suffix: "effectcraft-0.24.0-linux-x86_64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:c2a754ead29edb34f94be1514c2eab271a12858306ca5e9a15c12e508b744351"
+      "736230720":
+        name: "effectcraft-0.24.0-linux-x86_64.flatpak"
+        url_suffix: "effectcraft-0.24.0-linux-x86_64.flatpak"
+        size: 52757648
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:84f93fada4f5f52665373bbd40833fcf77dc09b877ccd9abe194224171296d96"
+      "736230752":
+        name: "effectcraft-0.24.0-linux-x86_64.flatpak.asc"
+        url_suffix: "effectcraft-0.24.0-linux-x86_64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:80524f8fad47cf2d6df18df9daa0c6ed3b30fe5ca968bd485197a06d1665d938"
+      "736230815":
+        name: "effectcraft-0.24.0-linux-x86_64.oci-manifest.json"
+        url_suffix: "effectcraft-0.24.0-linux-x86_64.oci-manifest.json"
+        size: 493
+        media_type: "application/json"
+        digest: "sha256:2cf96ddc03ea195615636b4224b45935788a148a21bb4ac5377252f31c0f1c9e"
+      "736230828":
+        name: "effectcraft-0.24.0-linux-x86_64.oci.sig"
+        url_suffix: "effectcraft-0.24.0-linux-x86_64.oci.sig"
+        size: 387
+        media_type: "application/pgp-signature"
+        digest: "sha256:861033720aba828f0a573e5852dda25f9d0bcd5e4f19a7b70124c81e16ebdb12"
+      "736230846":
+        name: "effectcraft-0.24.0-linux-x86_64.pkg.tar.zst"
+        url_suffix: "effectcraft-0.24.0-linux-x86_64.pkg.tar.zst"
+        size: 57051012
+        media_type: "application/zstd"
+        digest: "sha256:e8506270e07854ba4c06e9cc2ad955b2e08062f98eb7fb4773deac42b37281fe"
+      "736230867":
+        name: "effectcraft-0.24.0-linux-x86_64.pkg.tar.zst.sig"
+        url_suffix: "effectcraft-0.24.0-linux-x86_64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:e6b77a3ac75d3a049fa37974b969c7ddf068664c5cc4541a96420d2ac730ca80"
+      "736230890":
+        name: "effectcraft-0.24.0-linux-x86_64.rpm"
+        url_suffix: "effectcraft-0.24.0-linux-x86_64.rpm"
+        size: 82991197
+        media_type: "application/x-rpm"
+        digest: "sha256:33472a8715857e147d6e9dd3227894aa6085327562b7bc1ae4934d7a66c17f18"
+      "736230935":
+        name: "effectcraft-0.24.0-linux-x86_64.rpm.asc"
+        url_suffix: "effectcraft-0.24.0-linux-x86_64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8a804c156b2deb51e787d040245fa0e7a1ccf10440769927c49b10458ab620e8"
+      "736230983":
+        name: "effectcraft-0.24.0-linux-x86_64.tar.gz"
+        url_suffix: "effectcraft-0.24.0-linux-x86_64.tar.gz"
+        size: 81636192
+        media_type: "application/x-gtar"
+        digest: "sha256:97b5ace9b8cbe38a85fe4edd02e47ebdf42729330bd280ba2074c089b96b5022"
+      "736230985":
+        name: "effectcraft-0.24.0-linux-x86_64.tar.gz.asc"
+        url_suffix: "effectcraft-0.24.0-linux-x86_64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:e74a61065495db6d772f7661678bbadb63068e8be16ab8482fb2faa5ac9129a2"
+      "736231035":
+        name: "effectcraft-0.24.0-macos-universal.dmg"
+        url_suffix: "effectcraft-0.24.0-macos-universal.dmg"
+        size: 82340133
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:7e4aa622b1d367cbe6369d358390c903ee10eff11ee83064ef42164028a1522e"
+      "736231045":
+        name: "effectcraft-0.24.0-windows-arm64-portable.zip"
+        url_suffix: "effectcraft-0.24.0-windows-arm64-portable.zip"
+        size: 78094189
+        media_type: "zip"
+        digest: "sha256:ceef6c4c09333031ca3431c6fb242bb6b23ce5d83b2251f46483a4fc82418243"
+      "736231136":
+        name: "effectcraft-0.24.0-windows-arm64.msi"
+        url_suffix: "effectcraft-0.24.0-windows-arm64.msi"
+        size: 57081856
+        media_type: "application/x-msi"
+        digest: "sha256:6447524f40e7c487fac74b20027013b9f3421f39507b8f36cb5f6250c4247d12"
+      "736231244":
+        name: "effectcraft-0.24.0-windows-x64-portable.zip"
+        url_suffix: "effectcraft-0.24.0-windows-x64-portable.zip"
+        size: 84921870
+        media_type: "zip"
+        digest: "sha256:b517f5fd6376983ffa89471c12a9c0aee6a3f27cd5135990214bd92bbf85029c"
+      "736231410":
+        name: "effectcraft-0.24.0-windows-x64.msi"
+        url_suffix: "effectcraft-0.24.0-windows-x64.msi"
+        size: 64024576
+        media_type: "application/x-msi"
+        digest: "sha256:6556f19dff15142b432852301b39c698bd2f0e619177cb60a360caf8b9f40314"
+      "736231454":
+        name: "effectcraft-cli-0.24.0-macos-universal.zip"
+        url_suffix: "effectcraft-cli-0.24.0-macos-universal.zip"
+        size: 77063156
+        media_type: "zip"
+        digest: "sha256:55bcf8f96f7bf7e50300977cfceff19938f1d22009af0239b3fdac9ded74553c"
+      "736231513":
+        name: "effectcraft-web-0.24.0.zip"
+        url_suffix: "effectcraft-web-0.24.0.zip"
+        size: 22485013
+        media_type: "zip"
+        digest: "sha256:b11770478f4e43306bd4fbd6b0ec48150206d6883d8c833d7760760f7f2c017a"
+      "736231529":
+        name: "release-signing-key.asc"
+        url_suffix: "release-signing-key.asc"
+        size: 803
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8e6925a173d6a7134118da099948de4d9eeec7c1c0770998aec33c9d3f484740"
+  "442335992":
+    tag: "v0.24.1"
+    title: "EffectCraft v0.24.1"
+    url: "https://github.com/storytold/effectcraft/releases/tag/v0.24.1"
+    created_at: "2026-11-11T23:37:33Z"
+    published_at: "2026-11-12T00:23:40Z"
+    updated_at: "2026-11-12T00:23:40Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/storytold/effectcraft/zipball/v0.24.1"
+    source_tar_url: "https://api.github.com/repos/storytold/effectcraft/tarball/v0.24.1"
+    download_base: "https://github.com/storytold/effectcraft/releases/download/v0.24.1/"
+    assets:
+      "737403829":
+        name: "effectcraft-0.24.1-linux-aarch64.AppImage"
+        url_suffix: "effectcraft-0.24.1-linux-aarch64.AppImage"
+        size: 70253064
+        media_type: "application/vnd.appimage"
+        digest: "sha256:89898fa346ee5c59b3815f24db318178ca23a4b593769bdd840da81f72f4d06f"
+      "737403830":
+        name: "effectcraft-0.24.1-freebsd-aarch64.tar.gz"
+        url_suffix: "effectcraft-0.24.1-freebsd-aarch64.tar.gz"
+        size: 78295637
+        media_type: "application/x-gtar"
+        digest: "sha256:809028ee00659a7c8b4b678fa40c03f79d7b2d4d6090a05f1a0c32eb39c2c207"
+      "737403831":
+        name: "SHA256SUMS.txt.asc"
+        url_suffix: "SHA256SUMS.txt.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:88caf8324ecc4023430a9e9e3921876d97d420e90e8438cfb58b8fff0e619212"
+      "737403832":
+        name: "effectcraft-0.24.1-freebsd-x86_64.tar.gz"
+        url_suffix: "effectcraft-0.24.1-freebsd-x86_64.tar.gz"
+        size: 81121593
+        media_type: "application/x-gtar"
+        digest: "sha256:00abb1ee7bbdff5f0f5591d404caacaf573750a9e65d0f486fcffe8700b38c77"
+      "737403833":
+        name: "SHA256SUMS.txt"
+        url_suffix: "SHA256SUMS.txt"
+        size: 5170
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d732696ce893151f74447ea690fb0f01827b8fd72def9bdd7864f312f845541b"
+      "737403858":
+        name: "effectcraft-0.24.1-linux-aarch64.AppImage.asc"
+        url_suffix: "effectcraft-0.24.1-linux-aarch64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:f409716c89ecba32376fb1608f97fee731843adcd20c32a1048c3207a945e62a"
+      "737403860":
+        name: "effectcraft-0.24.1-linux-aarch64.AppImage.zsync"
+        url_suffix: "effectcraft-0.24.1-linux-aarch64.AppImage.zsync"
+        size: 240381
+        digest: "sha256:53f82cadd356644606d04069892f3a02274bf7a56db1dbea1c314589ba295f2d"
+      "737403878":
+        name: "effectcraft-0.24.1-linux-aarch64.deb"
+        url_suffix: "effectcraft-0.24.1-linux-aarch64.deb"
+        size: 79750278
+        media_type: "application/x-debian-package"
+        digest: "sha256:03182aab1c234a14072aa957f3f74fa6578ac23cf5865bdd030b3ee9704f6e27"
+      "737403879":
+        name: "effectcraft-0.24.1-linux-aarch64.AppImage.zsync.asc"
+        url_suffix: "effectcraft-0.24.1-linux-aarch64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:80aa3e482e1a0616f28be33530d0e0931c1d605512ef3dcd0fa70d11d43504d0"
+      "737403906":
+        name: "effectcraft-0.24.1-linux-aarch64.deb.asc"
+        url_suffix: "effectcraft-0.24.1-linux-aarch64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:0f52372730837d6cb611efedb74f1459eacaf5a08554ff70106666b6887425b9"
+      "737403929":
+        name: "effectcraft-0.24.1-linux-aarch64.flatpak"
+        url_suffix: "effectcraft-0.24.1-linux-aarch64.flatpak"
+        size: 46539896
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:0b3bd18d12a3b5c1444329093966cd12ccea2798bec168e7cf23b774d5abae71"
+      "737403974":
+        name: "effectcraft-0.24.1-linux-aarch64.flatpak.asc"
+        url_suffix: "effectcraft-0.24.1-linux-aarch64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:0664e33674044f865051fbe43e9c1fb516f0e530591ac2bab9b2853591c1606f"
+      "737403984":
+        name: "effectcraft-0.24.1-linux-aarch64.oci-manifest.json"
+        url_suffix: "effectcraft-0.24.1-linux-aarch64.oci-manifest.json"
+        size: 493
+        media_type: "application/json"
+        digest: "sha256:705021bf0c267843a760ac74d0c6f2e689479e08b4222b7ee7a154240510c73e"
+      "737403995":
+        name: "effectcraft-0.24.1-linux-aarch64.oci.sig"
+        url_suffix: "effectcraft-0.24.1-linux-aarch64.oci.sig"
+        size: 389
+        media_type: "application/pgp-signature"
+        digest: "sha256:81fa3e8a9862261410d91f851beb3795aab3cce24012b827e88a9cf88baef96b"
+      "737403999":
+        name: "effectcraft-0.24.1-linux-aarch64.pkg.tar.zst"
+        url_suffix: "effectcraft-0.24.1-linux-aarch64.pkg.tar.zst"
+        size: 53744247
+        media_type: "application/zstd"
+        digest: "sha256:8e5059f2f51e750cb3c6793860f1e693c8fcfabac58ccf73a264be7761802c78"
+      "737404013":
+        name: "effectcraft-0.24.1-linux-aarch64.pkg.tar.zst.sig"
+        url_suffix: "effectcraft-0.24.1-linux-aarch64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:53d10e5ce33634606155a30c3d04bca7b519fe267c1812800c69ed8d7d971062"
+      "737404018":
+        name: "effectcraft-0.24.1-linux-aarch64.rpm"
+        url_suffix: "effectcraft-0.24.1-linux-aarch64.rpm"
+        size: 78934353
+        media_type: "application/x-rpm"
+        digest: "sha256:f6817270c4d62f8adba0fb88a057f21e3b34974a1e2d5d59d0ba3643478b993a"
+      "737404022":
+        name: "effectcraft-0.24.1-linux-aarch64.rpm.asc"
+        url_suffix: "effectcraft-0.24.1-linux-aarch64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:7ee80a6f1d8d043c679072bcbd8cf102720b58617f472a3acd1dbc10d1394e2d"
+      "737404033":
+        name: "effectcraft-0.24.1-linux-aarch64.tar.gz"
+        url_suffix: "effectcraft-0.24.1-linux-aarch64.tar.gz"
+        size: 76125337
+        media_type: "application/x-gtar"
+        digest: "sha256:ad10c445065681760de9353117c6e2c45167eabcccf0ed19bde2f5c5ac908695"
+      "737404052":
+        name: "effectcraft-0.24.1-linux-aarch64.tar.gz.asc"
+        url_suffix: "effectcraft-0.24.1-linux-aarch64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:971e0cbd4f6eb253201a699d9fd46fe3dbf71f6d5c5e0b16820091ad25ab39ff"
+      "737404054":
+        name: "effectcraft-0.24.1-linux-riscv64.deb"
+        url_suffix: "effectcraft-0.24.1-linux-riscv64.deb"
+        size: 81054826
+        media_type: "application/x-debian-package"
+        digest: "sha256:1a8c0594fa25cb8a60d25880c3e574a072514db0087aae79f2b31ba4c4eadb97"
+      "737404074":
+        name: "effectcraft-0.24.1-linux-riscv64.deb.asc"
+        url_suffix: "effectcraft-0.24.1-linux-riscv64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:af767defc06e950bd8c7f48f54cfb5dd105fc383442653209b284dc2d8450013"
+      "737404092":
+        name: "effectcraft-0.24.1-linux-riscv64.rpm"
+        url_suffix: "effectcraft-0.24.1-linux-riscv64.rpm"
+        size: 80841249
+        media_type: "application/x-rpm"
+        digest: "sha256:f6a376a39c93f0c4a7844429f108401287653ab678565bf555f3a077cc02e7a8"
+      "737404120":
+        name: "effectcraft-0.24.1-linux-riscv64.rpm.asc"
+        url_suffix: "effectcraft-0.24.1-linux-riscv64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:e5de5ccddb20b5671dfc154f82c4e7ee1c8e834c3f36c0d256f980d7dd1d09b5"
+      "737404144":
+        name: "effectcraft-0.24.1-linux-riscv64.tar.gz"
+        url_suffix: "effectcraft-0.24.1-linux-riscv64.tar.gz"
+        size: 79369851
+        media_type: "application/x-gtar"
+        digest: "sha256:d52910d8a4fa67fcf5ada75f34a520cda1ef6238c9117fbd191e4eef8a98b178"
+      "737404179":
+        name: "effectcraft-0.24.1-linux-riscv64.tar.gz.asc"
+        url_suffix: "effectcraft-0.24.1-linux-riscv64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:c06391025fa43cfbbd6784c9b996a82dc91f84326a07e897563ad417c208c5c2"
+      "737404188":
+        name: "effectcraft-0.24.1-linux-x86_64.AppImage"
+        url_suffix: "effectcraft-0.24.1-linux-x86_64.AppImage"
+        size: 75471352
+        media_type: "application/vnd.appimage"
+        digest: "sha256:9f8a16cf74147c9e2ac3b65fa6f5be96a3e10ead92ddf08d544f5d3990ad64dc"
+      "737404199":
+        name: "effectcraft-0.24.1-linux-x86_64.AppImage.asc"
+        url_suffix: "effectcraft-0.24.1-linux-x86_64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:5a38848564a034ceb646b77bc3790d7fa69dbda66e8db07223c6388baad58417"
+      "737404201":
+        name: "effectcraft-0.24.1-linux-x86_64.AppImage.zsync"
+        url_suffix: "effectcraft-0.24.1-linux-x86_64.AppImage.zsync"
+        size: 258215
+        digest: "sha256:7cf44a6dbf49671490efddb12f37dc8010f1530268a326f7e02897628e5f52d7"
+      "737404223":
+        name: "effectcraft-0.24.1-linux-x86_64.deb"
+        url_suffix: "effectcraft-0.24.1-linux-x86_64.deb"
+        size: 83726180
+        media_type: "application/x-debian-package"
+        digest: "sha256:731f1e37aa872c35a6accfab9fa98a16674db5f9a588eb68804e006a442fbd59"
+      "737404227":
+        name: "effectcraft-0.24.1-linux-x86_64.AppImage.zsync.asc"
+        url_suffix: "effectcraft-0.24.1-linux-x86_64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:99e3d0aa78c122789776baf4ac09f515bdb776674fbe82d0525dd079090b901a"
+      "737404235":
+        name: "effectcraft-0.24.1-linux-x86_64.deb.asc"
+        url_suffix: "effectcraft-0.24.1-linux-x86_64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:b8029fb7bfc06f463dbec589abe3aa130d043e2c51e061e9316a110ae9ca416c"
+      "737404248":
+        name: "effectcraft-0.24.1-linux-x86_64.flatpak"
+        url_suffix: "effectcraft-0.24.1-linux-x86_64.flatpak"
+        size: 52884688
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:a2f7d1fe089a3e580ad4c84e1f8dd983e071e12e041122f25a820a51bfb31f0a"
+      "737404250":
+        name: "effectcraft-0.24.1-linux-x86_64.flatpak.asc"
+        url_suffix: "effectcraft-0.24.1-linux-x86_64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:fdedf69329e8ca37393fe1b0f115a2f6efab1008ec94eb5b1bdd995b9b8c4650"
+      "737404263":
+        name: "effectcraft-0.24.1-linux-x86_64.oci-manifest.json"
+        url_suffix: "effectcraft-0.24.1-linux-x86_64.oci-manifest.json"
+        size: 493
+        media_type: "application/json"
+        digest: "sha256:6c061033c704961dbe454973b524313662441b00adf6b65f5c47ce43299c8d98"
+      "737404272":
+        name: "effectcraft-0.24.1-linux-x86_64.oci.sig"
+        url_suffix: "effectcraft-0.24.1-linux-x86_64.oci.sig"
+        size: 389
+        media_type: "application/pgp-signature"
+        digest: "sha256:ccc01c73d24db05dd92e32887d79798d34b6014330bb43746b0fba86c27c0f86"
+      "737404276":
+        name: "effectcraft-0.24.1-linux-x86_64.pkg.tar.zst"
+        url_suffix: "effectcraft-0.24.1-linux-x86_64.pkg.tar.zst"
+        size: 57154304
+        media_type: "application/zstd"
+        digest: "sha256:438cec894542593369b90ddc6842501e12fb39ee34a5f210f09e93255417eed4"
+      "737404294":
+        name: "effectcraft-0.24.1-linux-x86_64.pkg.tar.zst.sig"
+        url_suffix: "effectcraft-0.24.1-linux-x86_64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:0be70169e717ea55cdddc11c937cababefb7f2fb8def17483dda6a82b04f76d6"
+      "737404307":
+        name: "effectcraft-0.24.1-linux-x86_64.rpm"
+        url_suffix: "effectcraft-0.24.1-linux-x86_64.rpm"
+        size: 83183975
+        media_type: "application/x-rpm"
+        digest: "sha256:d89272d3d4e90c103bbd2c7903d67fdc054f76911c9693033d332c9dc0e41f9f"
+      "737404325":
+        name: "effectcraft-0.24.1-linux-x86_64.rpm.asc"
+        url_suffix: "effectcraft-0.24.1-linux-x86_64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:32eef1db99513aa4b24caa853de6820bc3a031c9277dafdc0282091ef99f2d78"
+      "737404345":
+        name: "effectcraft-0.24.1-linux-x86_64.tar.gz"
+        url_suffix: "effectcraft-0.24.1-linux-x86_64.tar.gz"
+        size: 81826579
+        media_type: "application/x-gtar"
+        digest: "sha256:5ce0393690144227fa9186e82308ad638a6ef6d9f976c996e6d03b5b51b65a7b"
+      "737404349":
+        name: "effectcraft-0.24.1-macos-universal.dmg"
+        url_suffix: "effectcraft-0.24.1-macos-universal.dmg"
+        size: 82579624
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:22d0111d1daaa7142ee6266a2b8174d2f4d375c4c12e0dfc40a04db3dfb35851"
+      "737404350":
+        name: "effectcraft-0.24.1-linux-x86_64.tar.gz.asc"
+        url_suffix: "effectcraft-0.24.1-linux-x86_64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d49f31773351709bb47aebaf3567fd553fe32497ae9030c2d74b3ebc88025321"
+      "737404369":
+        name: "effectcraft-0.24.1-windows-arm64-portable.zip"
+        url_suffix: "effectcraft-0.24.1-windows-arm64-portable.zip"
+        size: 78234941
+        media_type: "zip"
+        digest: "sha256:b4eadf1d19f55cf69aa6ec6076ad754b3ff6bf6210f32811cff40a573b068041"
+      "737404397":
+        name: "effectcraft-0.24.1-windows-arm64.msi"
+        url_suffix: "effectcraft-0.24.1-windows-arm64.msi"
+        size: 57184256
+        media_type: "application/x-msi"
+        digest: "sha256:5e05fba4c194c0060e593276de8e468a21808fbd69099f3a6e29506fd1d90ef8"
+      "737404464":
+        name: "effectcraft-0.24.1-windows-x64-portable.zip"
+        url_suffix: "effectcraft-0.24.1-windows-x64-portable.zip"
+        size: 85071674
+        media_type: "zip"
+        digest: "sha256:707bb7480783904e153fd71fd43ffaaf806fbbaa7f803090c2d32f5d920bd996"
+      "737404507":
+        name: "effectcraft-0.24.1-windows-x64.msi"
+        url_suffix: "effectcraft-0.24.1-windows-x64.msi"
+        size: 64159744
+        media_type: "application/x-msi"
+        digest: "sha256:4bda68bafb4325f96e794b81819a1e6c4b2a42c012c3c82aa2ce8a668b70b295"
+      "737404509":
+        name: "effectcraft-cli-0.24.1-macos-universal.zip"
+        url_suffix: "effectcraft-cli-0.24.1-macos-universal.zip"
+        size: 77299801
+        media_type: "zip"
+        digest: "sha256:2781eda194372ad47f4c0c7df8b1d38501a3e90bb499282f57e9598a85958673"
+      "737404529":
+        name: "effectcraft-web-0.24.1.zip"
+        url_suffix: "effectcraft-web-0.24.1.zip"
+        size: 22524556
+        media_type: "zip"
+        digest: "sha256:8adc985f345d73207abc69a27938905aba1729b63c6c9b332d0244a7567424f1"
+      "737404537":
         name: "release-signing-key.asc"
         url_suffix: "release-signing-key.asc"
         size: 803

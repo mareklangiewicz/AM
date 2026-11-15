@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1400018213
 repository: "storytold/designcraft"
-collected_at: "2026-11-10T21:14:43Z"
+collected_at: "2026-11-15T11:06:32Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-10T21:14:43Z"
+observed_at: "2026-11-15T11:06:32Z"
 releases:
   "402120764":
     tag: "v0.1.0"
@@ -3995,6 +3995,626 @@ releases:
         media_type: "zip"
         digest: "sha256:8be4be372788990fb83f77704c78b90c72230a04f49b11c3061e7358f74d2fe2"
       "727331351":
+        name: "release-signing-key.asc"
+        url_suffix: "release-signing-key.asc"
+        size: 803
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8e6925a173d6a7134118da099948de4d9eeec7c1c0770998aec33c9d3f484740"
+  "441940576":
+    tag: "v0.20.0"
+    title: "DesignCraft v0.20.0"
+    url: "https://github.com/storytold/designcraft/releases/tag/v0.20.0"
+    created_at: "2026-11-11T15:40:29Z"
+    published_at: "2026-11-11T16:35:00Z"
+    updated_at: "2026-11-11T16:35:00Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/storytold/designcraft/zipball/v0.20.0"
+    source_tar_url: "https://api.github.com/repos/storytold/designcraft/tarball/v0.20.0"
+    download_base: "https://github.com/storytold/designcraft/releases/download/v0.20.0/"
+    assets:
+      "736145239":
+        name: "SHA256SUMS.txt"
+        url_suffix: "SHA256SUMS.txt"
+        size: 5170
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:9ced21d1655ee00c7c4dbdaced682a125cf3122b62da36ccf4974a22599597af"
+      "736145240":
+        name: "SHA256SUMS.txt.asc"
+        url_suffix: "SHA256SUMS.txt.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:805c6182654c0091d02ee66ec2a7187d9b3334eba14ebe66baa629f3219cb4f4"
+      "736145242":
+        name: "designcraft-0.20.0-freebsd-aarch64.tar.gz"
+        url_suffix: "designcraft-0.20.0-freebsd-aarch64.tar.gz"
+        size: 119196087
+        media_type: "application/x-gtar"
+        digest: "sha256:837a14bdbdab16c0f37cb92315a39d6891c7f3b3b6f78ac980afb3b3a8c4847b"
+      "736145243":
+        name: "designcraft-0.20.0-freebsd-x86_64.tar.gz"
+        url_suffix: "designcraft-0.20.0-freebsd-x86_64.tar.gz"
+        size: 124665913
+        media_type: "application/x-gtar"
+        digest: "sha256:78617610b6feb5173473180bf49b3a4124546fb3aae55fb96693a529a20b317d"
+      "736145245":
+        name: "designcraft-0.20.0-linux-aarch64.AppImage"
+        url_suffix: "designcraft-0.20.0-linux-aarch64.AppImage"
+        size: 114108936
+        media_type: "application/vnd.appimage"
+        digest: "sha256:639c59db0079621b02b80a6d60962c291b1f4910b5ea27c56dc2eade013d214c"
+      "736145265":
+        name: "designcraft-0.20.0-linux-aarch64.AppImage.asc"
+        url_suffix: "designcraft-0.20.0-linux-aarch64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:373d46191c408c95b7c6e6eaae28afd4e170c8d31ee98ffe92489357a170b3b2"
+      "736145270":
+        name: "designcraft-0.20.0-linux-aarch64.AppImage.zsync"
+        url_suffix: "designcraft-0.20.0-linux-aarch64.AppImage.zsync"
+        size: 195267
+        digest: "sha256:e50de482b9a836ce6e1aa54da9c827bf9e4fb6e67b24387413c7e776deca7c0d"
+      "736145295":
+        name: "designcraft-0.20.0-linux-aarch64.AppImage.zsync.asc"
+        url_suffix: "designcraft-0.20.0-linux-aarch64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:6b778f984d4acc7a3a2c597a6d26b441c8ac78780d4c838154683dca19f48431"
+      "736145301":
+        name: "designcraft-0.20.0-linux-aarch64.deb"
+        url_suffix: "designcraft-0.20.0-linux-aarch64.deb"
+        size: 123504762
+        media_type: "application/x-debian-package"
+        digest: "sha256:e50f78c3ccdfc2495064bd3c29d5c0d5b0b87aa1d8144f36709b9e861e25dc94"
+      "736145335":
+        name: "designcraft-0.20.0-linux-aarch64.deb.asc"
+        url_suffix: "designcraft-0.20.0-linux-aarch64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:6b233355658f775b28bbeeebfb3b4811c828096134724119140e8f334fa35177"
+      "736145353":
+        name: "designcraft-0.20.0-linux-aarch64.flatpak"
+        url_suffix: "designcraft-0.20.0-linux-aarch64.flatpak"
+        size: 83812368
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:c228a3aa15bec793aa7aed24488afee19bf0a9c86b8f865764d549452c926316"
+      "736145524":
+        name: "designcraft-0.20.0-linux-aarch64.oci-manifest.json"
+        url_suffix: "designcraft-0.20.0-linux-aarch64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:d0db8b5a7b1ea95a8477c4949584fc4cd7db574f7a6adfef3a265bd18df6f6e8"
+      "736145525":
+        name: "designcraft-0.20.0-linux-aarch64.flatpak.asc"
+        url_suffix: "designcraft-0.20.0-linux-aarch64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:6286a9081edca6a05b40256f41cf9aa8cc92e326e2adde48c37af3a9db0fe403"
+      "736145557":
+        name: "designcraft-0.20.0-linux-aarch64.oci.sig"
+        url_suffix: "designcraft-0.20.0-linux-aarch64.oci.sig"
+        size: 381
+        media_type: "application/pgp-signature"
+        digest: "sha256:8858011c6b3d15d4c0b752a73dac1efe187d6c1a28f87f6b4682e39f285355e2"
+      "736145562":
+        name: "designcraft-0.20.0-linux-aarch64.pkg.tar.zst"
+        url_suffix: "designcraft-0.20.0-linux-aarch64.pkg.tar.zst"
+        size: 91413039
+        media_type: "application/zstd"
+        digest: "sha256:c6933d1c78a78926065a60787cd8720e928b9186d3d03eeec60933716dd6def9"
+      "736145569":
+        name: "designcraft-0.20.0-linux-aarch64.pkg.tar.zst.sig"
+        url_suffix: "designcraft-0.20.0-linux-aarch64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:87ce6cf46f55eb4e32cbe4e51547a231bb6daf0f5950b102763cbc30709e1a49"
+      "736145570":
+        name: "designcraft-0.20.0-linux-aarch64.rpm"
+        url_suffix: "designcraft-0.20.0-linux-aarch64.rpm"
+        size: 122723632
+        media_type: "application/x-rpm"
+        digest: "sha256:e324d7dd58798417b38348342dbf2349e4e76dcde14c3494d2b735086384fcaa"
+      "736145588":
+        name: "designcraft-0.20.0-linux-aarch64.rpm.asc"
+        url_suffix: "designcraft-0.20.0-linux-aarch64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:6774c5ab205fb9031185d27d5a9177a6ad5179a5047e6a1528d4cc7869d1a720"
+      "736145601":
+        name: "designcraft-0.20.0-linux-aarch64.tar.gz"
+        url_suffix: "designcraft-0.20.0-linux-aarch64.tar.gz"
+        size: 120771623
+        media_type: "application/x-gtar"
+        digest: "sha256:d4f12d02f7aad652d193e4036f5526739e9db1b3ebd2a771987078996a3cc8cb"
+      "736145609":
+        name: "designcraft-0.20.0-linux-aarch64.tar.gz.asc"
+        url_suffix: "designcraft-0.20.0-linux-aarch64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:b782b935d97714e931713bfdeae059daa3c4e4312dcbf62f868bba2c705a7169"
+      "736145614":
+        name: "designcraft-0.20.0-linux-riscv64.deb"
+        url_suffix: "designcraft-0.20.0-linux-riscv64.deb"
+        size: 124795588
+        media_type: "application/x-debian-package"
+        digest: "sha256:b52d2f5b253f32625338b955e7aa43e60ff5e5c95d0bf9e5b6c420dfa21f8966"
+      "736145662":
+        name: "designcraft-0.20.0-linux-riscv64.deb.asc"
+        url_suffix: "designcraft-0.20.0-linux-riscv64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:5969917d4fd793e61fe7261d7726f425fed325c5536cd5b4c414922b888b7a70"
+      "736145690":
+        name: "designcraft-0.20.0-linux-riscv64.rpm"
+        url_suffix: "designcraft-0.20.0-linux-riscv64.rpm"
+        size: 124397810
+        media_type: "application/x-rpm"
+        digest: "sha256:8d19719b3e2cfba11a7abea66c8b896d888ad0bbeacc3332941dea6583b7eb76"
+      "736145795":
+        name: "designcraft-0.20.0-linux-riscv64.rpm.asc"
+        url_suffix: "designcraft-0.20.0-linux-riscv64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:13ebeda3e56df1b4bd09e37242077c2e6cbdcfc80c9d1279ac38a893cc8e4413"
+      "736145836":
+        name: "designcraft-0.20.0-linux-riscv64.tar.gz"
+        url_suffix: "designcraft-0.20.0-linux-riscv64.tar.gz"
+        size: 123310583
+        media_type: "application/x-gtar"
+        digest: "sha256:2c66e786409ec88a7cc5e5dd999eb91e8838efaa5bcb818f9a8ea869da5688ad"
+      "736145922":
+        name: "designcraft-0.20.0-linux-riscv64.tar.gz.asc"
+        url_suffix: "designcraft-0.20.0-linux-riscv64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:03c91beb24b02adf99a18929ac88441cdfef9c276c5ca50004217ea400d4e43b"
+      "736145925":
+        name: "designcraft-0.20.0-linux-x86_64.AppImage"
+        url_suffix: "designcraft-0.20.0-linux-x86_64.AppImage"
+        size: 118135288
+        media_type: "application/vnd.appimage"
+        digest: "sha256:55ca6e4d9a21a77d3c2446bd0f56cb525356741a8d4260bcbfedbbb0c748f925"
+      "736145941":
+        name: "designcraft-0.20.0-linux-x86_64.AppImage.asc"
+        url_suffix: "designcraft-0.20.0-linux-x86_64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:22cf2539fd300e6bf4e456dd52c750da6f11cb48969ecafe3c6eb2eb246c8f15"
+      "736145943":
+        name: "designcraft-0.20.0-linux-x86_64.AppImage.zsync"
+        url_suffix: "designcraft-0.20.0-linux-x86_64.AppImage.zsync"
+        size: 202146
+        digest: "sha256:a39ffed667cb9ef60f23f085d3ca3b4984e6c893e354f5192b4d56702a21f6c1"
+      "736145951":
+        name: "designcraft-0.20.0-linux-x86_64.AppImage.zsync.asc"
+        url_suffix: "designcraft-0.20.0-linux-x86_64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:a21c77c1d7988bb95b5bf8a78108c01f493b6117a8adbe9bc1cda860abbaf470"
+      "736145961":
+        name: "designcraft-0.20.0-linux-x86_64.deb.asc"
+        url_suffix: "designcraft-0.20.0-linux-x86_64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:962ee8120abe1da7a45850fec0c07230a1f99cf1cbef936c1601661c6d3a65e9"
+      "736145962":
+        name: "designcraft-0.20.0-linux-x86_64.deb"
+        url_suffix: "designcraft-0.20.0-linux-x86_64.deb"
+        size: 126742140
+        media_type: "application/x-debian-package"
+        digest: "sha256:ef202ed6c99865ade00cb566e7280f9453110fd9e6f185e90ddc1663fa3e7695"
+      "736145972":
+        name: "designcraft-0.20.0-linux-x86_64.flatpak"
+        url_suffix: "designcraft-0.20.0-linux-x86_64.flatpak"
+        size: 87995840
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:816646db6c38c228e4437ddedf06a8658693cd894592bbe94860c6de87e17b4c"
+      "736145979":
+        name: "designcraft-0.20.0-linux-x86_64.flatpak.asc"
+        url_suffix: "designcraft-0.20.0-linux-x86_64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:92dfbcb0b94e087e10d83f5d47f97e45f4e6cf2efb38aab51f6f25876b4a82eb"
+      "736146020":
+        name: "designcraft-0.20.0-linux-x86_64.oci-manifest.json"
+        url_suffix: "designcraft-0.20.0-linux-x86_64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:b0e19eebbedf13597e1e6ad3b6cdb3903954e725a668c9e91c96118b3a9ee560"
+      "736146068":
+        name: "designcraft-0.20.0-linux-x86_64.oci.sig"
+        url_suffix: "designcraft-0.20.0-linux-x86_64.oci.sig"
+        size: 379
+        media_type: "application/pgp-signature"
+        digest: "sha256:1d063eeb64b52b497d023fc8ec19b6a1858f0443f080b58011268194324e045d"
+      "736146069":
+        name: "designcraft-0.20.0-linux-x86_64.pkg.tar.zst"
+        url_suffix: "designcraft-0.20.0-linux-x86_64.pkg.tar.zst"
+        size: 94164724
+        media_type: "application/zstd"
+        digest: "sha256:dc30d0d96b322aa4a019838e40c151dc66002864d1677b3654c13e78c2aac49d"
+      "736146085":
+        name: "designcraft-0.20.0-linux-x86_64.pkg.tar.zst.sig"
+        url_suffix: "designcraft-0.20.0-linux-x86_64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:fbc543d05f70987356a59383ef22f37192d8f4dbcfbee2c5bcd1935e4a44a1d3"
+      "736146125":
+        name: "designcraft-0.20.0-linux-x86_64.rpm"
+        url_suffix: "designcraft-0.20.0-linux-x86_64.rpm"
+        size: 126092539
+        media_type: "application/x-rpm"
+        digest: "sha256:5b5528d6ea54853318b9a1408f4b0b4d415ee22010cb30ffc9b0b55f74bf9a82"
+      "736146238":
+        name: "designcraft-0.20.0-linux-x86_64.rpm.asc"
+        url_suffix: "designcraft-0.20.0-linux-x86_64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:44f335eaf8617902a385e3eac872fc339ba3715a7d0cf6c6b4af3e8faadd8f25"
+      "736146246":
+        name: "designcraft-0.20.0-linux-x86_64.tar.gz"
+        url_suffix: "designcraft-0.20.0-linux-x86_64.tar.gz"
+        size: 125043568
+        media_type: "application/x-gtar"
+        digest: "sha256:6f72103b6fa23dcb77bed794b7a301189a2a77a48cb6305a76dbd33169a6e8de"
+      "736146258":
+        name: "designcraft-0.20.0-linux-x86_64.tar.gz.asc"
+        url_suffix: "designcraft-0.20.0-linux-x86_64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:77d8b4ef862662dcb64d7d45ec6fd5815f99defc143e9f60905f6d5e542b8ee8"
+      "736146264":
+        name: "designcraft-0.20.0-macos-universal.dmg"
+        url_suffix: "designcraft-0.20.0-macos-universal.dmg"
+        size: 249016194
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:afaf516fd738128d8e5570664acfb02f2606ff49ba0203b59dfdeabd1b1c0d43"
+      "736146280":
+        name: "designcraft-0.20.0-windows-arm64-portable.zip"
+        url_suffix: "designcraft-0.20.0-windows-arm64-portable.zip"
+        size: 120786423
+        media_type: "zip"
+        digest: "sha256:efa244a763617cf490470013e868a3c1a01472568501453d222a1680a5061fb1"
+      "736146293":
+        name: "designcraft-0.20.0-windows-arm64.msi"
+        url_suffix: "designcraft-0.20.0-windows-arm64.msi"
+        size: 94932992
+        media_type: "application/x-msi"
+        digest: "sha256:3c19802baa822401afadd75cb82f5e8aa07f7d84c828cf1e8ed0aa74fa1bc220"
+      "736146403":
+        name: "designcraft-0.20.0-windows-x64-portable.zip"
+        url_suffix: "designcraft-0.20.0-windows-x64-portable.zip"
+        size: 125627022
+        media_type: "zip"
+        digest: "sha256:0442082e3201b795ee8182c7cbae84ca766fe173a6a6474c8f4a2bb3c40e56d4"
+      "736146491":
+        name: "designcraft-0.20.0-windows-x64.msi"
+        url_suffix: "designcraft-0.20.0-windows-x64.msi"
+        size: 99549184
+        media_type: "application/x-msi"
+        digest: "sha256:acbbdfe92cebb96edd85282929d20aabf2ffadcb3495286d50570af6b24039f8"
+      "736146664":
+        name: "designcraft-cli-0.20.0-macos-universal.zip"
+        url_suffix: "designcraft-cli-0.20.0-macos-universal.zip"
+        size: 110496901
+        media_type: "zip"
+        digest: "sha256:5b0c94af5d0710f1f53a98c6b3f50819881002cac1b7263cc22d4150e4a131dd"
+      "736146708":
+        name: "designcraft-web-0.20.0.zip"
+        url_suffix: "designcraft-web-0.20.0.zip"
+        size: 27231403
+        media_type: "zip"
+        digest: "sha256:dedf82a2ebc9340754fb5d99ffcb7d6f7a7994976c829d6c2075a507559f9223"
+      "736146822":
+        name: "release-signing-key.asc"
+        url_suffix: "release-signing-key.asc"
+        size: 803
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8e6925a173d6a7134118da099948de4d9eeec7c1c0770998aec33c9d3f484740"
+  "442150501":
+    tag: "v0.20.1"
+    title: "DesignCraft v0.20.1"
+    url: "https://github.com/storytold/designcraft/releases/tag/v0.20.1"
+    created_at: "2026-11-11T23:37:32Z"
+    published_at: "2026-11-12T00:16:10Z"
+    updated_at: "2026-11-12T00:16:10Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/storytold/designcraft/zipball/v0.20.1"
+    source_tar_url: "https://api.github.com/repos/storytold/designcraft/tarball/v0.20.1"
+    download_base: "https://github.com/storytold/designcraft/releases/download/v0.20.1/"
+    assets:
+      "737382270":
+        name: "designcraft-0.20.1-freebsd-x86_64.tar.gz"
+        url_suffix: "designcraft-0.20.1-freebsd-x86_64.tar.gz"
+        size: 124755377
+        media_type: "application/x-gtar"
+        digest: "sha256:f19cd093cb9550e12e91faf565c0847908e737f93ec8ff0bf1d60e8add2cbd6a"
+      "737382271":
+        name: "designcraft-0.20.1-freebsd-aarch64.tar.gz"
+        url_suffix: "designcraft-0.20.1-freebsd-aarch64.tar.gz"
+        size: 119271291
+        media_type: "application/x-gtar"
+        digest: "sha256:1461b2a67d53dfa7dc4c209125a46de67c3228308a83d56bb3cc9dd80f8a4dc9"
+      "737382272":
+        name: "designcraft-0.20.1-linux-aarch64.AppImage"
+        url_suffix: "designcraft-0.20.1-linux-aarch64.AppImage"
+        size: 114104840
+        media_type: "application/vnd.appimage"
+        digest: "sha256:14e6412cc8b15633571c0b09869b89f23ea2ac61b3e6819b3b26284e92b68693"
+      "737382273":
+        name: "SHA256SUMS.txt"
+        url_suffix: "SHA256SUMS.txt"
+        size: 5170
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:e99174326d2e492311d8d784936f7fe6847f6cb609d00421e93c29c3a667558b"
+      "737382279":
+        name: "SHA256SUMS.txt.asc"
+        url_suffix: "SHA256SUMS.txt.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:093ef35b73e50f2034d0053e598f67e3caf1859bc8267e86617a3eef4e703563"
+      "737382316":
+        name: "designcraft-0.20.1-linux-aarch64.AppImage.asc"
+        url_suffix: "designcraft-0.20.1-linux-aarch64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:ee4bcaa0eea23b659cfa7988a8efc89a116ff2d1682a704dfd418045a6531af2"
+      "737382320":
+        name: "designcraft-0.20.1-linux-aarch64.AppImage.zsync"
+        url_suffix: "designcraft-0.20.1-linux-aarch64.AppImage.zsync"
+        size: 195260
+        digest: "sha256:7ad22ceba2db98ab02c64c875297e5b0b5dc1bf6c3bcf8eded20c69d8c5ff4cc"
+      "737382343":
+        name: "designcraft-0.20.1-linux-aarch64.AppImage.zsync.asc"
+        url_suffix: "designcraft-0.20.1-linux-aarch64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:899a33314ac4723c042315618abc2e977888d1b5b0769ed2809bb1b7a23814e8"
+      "737382347":
+        name: "designcraft-0.20.1-linux-aarch64.deb"
+        url_suffix: "designcraft-0.20.1-linux-aarch64.deb"
+        size: 123481272
+        media_type: "application/x-debian-package"
+        digest: "sha256:fc6747d7e1026e6ae69af063058252dbd46c7ffbe9631c4007a58f5877f858f9"
+      "737382371":
+        name: "designcraft-0.20.1-linux-aarch64.deb.asc"
+        url_suffix: "designcraft-0.20.1-linux-aarch64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:1cfa0086d0b872a5d7d7f4aae3197401ac3462d77af9202aca7975923d9e15cf"
+      "737382394":
+        name: "designcraft-0.20.1-linux-aarch64.flatpak"
+        url_suffix: "designcraft-0.20.1-linux-aarch64.flatpak"
+        size: 83809752
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:94e50a0b3508ace258c7a5cebc4af74bbb9a8e5e23a1f17f8c84e9da43a9566b"
+      "737382519":
+        name: "designcraft-0.20.1-linux-aarch64.flatpak.asc"
+        url_suffix: "designcraft-0.20.1-linux-aarch64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:3dd440d6834c0ea617826e7afbc77bd83b57be0ec124768f331ef44da8ce4eaa"
+      "737382549":
+        name: "designcraft-0.20.1-linux-aarch64.oci-manifest.json"
+        url_suffix: "designcraft-0.20.1-linux-aarch64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:e65c1381740757c5b9854c80fed05c28ed40b969ea9bb58909d41db1c24cd7a6"
+      "737382551":
+        name: "designcraft-0.20.1-linux-aarch64.oci.sig"
+        url_suffix: "designcraft-0.20.1-linux-aarch64.oci.sig"
+        size: 382
+        media_type: "application/pgp-signature"
+        digest: "sha256:3e4096236979206bfc79570d8607a60b84d868f4e467a0fe0b7a25308e494dad"
+      "737382563":
+        name: "designcraft-0.20.1-linux-aarch64.pkg.tar.zst"
+        url_suffix: "designcraft-0.20.1-linux-aarch64.pkg.tar.zst"
+        size: 91424022
+        media_type: "application/zstd"
+        digest: "sha256:727678c35cae5c9587b5876e1ea848a7a88001fb7531c27829dbdd5cb45f7f08"
+      "737382581":
+        name: "designcraft-0.20.1-linux-aarch64.pkg.tar.zst.sig"
+        url_suffix: "designcraft-0.20.1-linux-aarch64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:71c9bb23c245f480a16f89d5ca62da408476be6593d94fc4e106a1a22932ea92"
+      "737382584":
+        name: "designcraft-0.20.1-linux-aarch64.rpm"
+        url_suffix: "designcraft-0.20.1-linux-aarch64.rpm"
+        size: 122697228
+        media_type: "application/x-rpm"
+        digest: "sha256:e666b33ebb98d4c6c1607fe603ea0e0c3a485f11f4c662fd5205976e6c8c29bc"
+      "737382587":
+        name: "designcraft-0.20.1-linux-aarch64.rpm.asc"
+        url_suffix: "designcraft-0.20.1-linux-aarch64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:68e7088c3c9d6bca79e9a98df9c2a33d5d18b47268f94e1b18451f7953252f1a"
+      "737382616":
+        name: "designcraft-0.20.1-linux-aarch64.tar.gz"
+        url_suffix: "designcraft-0.20.1-linux-aarch64.tar.gz"
+        size: 120758359
+        media_type: "application/x-gtar"
+        digest: "sha256:208c3cf73565fa765c47eeb601f94fec425e817d15cc2131dfa1c1ebe2d06620"
+      "737382624":
+        name: "designcraft-0.20.1-linux-aarch64.tar.gz.asc"
+        url_suffix: "designcraft-0.20.1-linux-aarch64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:4d9d7d289e0e640330cd7d8494028dd9f46f2ad4c6910693d8cf89606d1a5e3f"
+      "737382625":
+        name: "designcraft-0.20.1-linux-riscv64.deb"
+        url_suffix: "designcraft-0.20.1-linux-riscv64.deb"
+        size: 124875438
+        media_type: "application/x-debian-package"
+        digest: "sha256:f40fcd2a644d08a45e28d2d2aefada3078cc8999dda10a229aa0cf37e1f3d440"
+      "737382661":
+        name: "designcraft-0.20.1-linux-riscv64.deb.asc"
+        url_suffix: "designcraft-0.20.1-linux-riscv64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d1f4f2735d1907ada05bf27f4c7a718a14e695d74521de1208a0d463ade07219"
+      "737382691":
+        name: "designcraft-0.20.1-linux-riscv64.rpm"
+        url_suffix: "designcraft-0.20.1-linux-riscv64.rpm"
+        size: 124474563
+        media_type: "application/x-rpm"
+        digest: "sha256:5d20cd0773716b2cd32376655e2fe031413efa1e2c69a88bbb3d2e7c501fb87c"
+      "737382736":
+        name: "designcraft-0.20.1-linux-riscv64.rpm.asc"
+        url_suffix: "designcraft-0.20.1-linux-riscv64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:79aaf594a64c13884391619261653eb605869507effcef1085786e2cff97150e"
+      "737382749":
+        name: "designcraft-0.20.1-linux-riscv64.tar.gz"
+        url_suffix: "designcraft-0.20.1-linux-riscv64.tar.gz"
+        size: 123385724
+        media_type: "application/x-gtar"
+        digest: "sha256:2c4784fa011a84e1ffd5dd55f8a1ac2aa634c713db160506aec00967a1c946a9"
+      "737382815":
+        name: "designcraft-0.20.1-linux-riscv64.tar.gz.asc"
+        url_suffix: "designcraft-0.20.1-linux-riscv64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:0b8cea7da726ff49ea7ef08f80babd7c05bcd20b9319d8dc0cecca881e05044e"
+      "737382834":
+        name: "designcraft-0.20.1-linux-x86_64.AppImage"
+        url_suffix: "designcraft-0.20.1-linux-x86_64.AppImage"
+        size: 118155768
+        media_type: "application/vnd.appimage"
+        digest: "sha256:f9d6fd6bb1a421850243c0d4be44235713a9ec5b26f8bf1d5ba87afcf8f91534"
+      "737382839":
+        name: "designcraft-0.20.1-linux-x86_64.AppImage.asc"
+        url_suffix: "designcraft-0.20.1-linux-x86_64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:3c17f170a5e6ea25db208f3be0827a2595afb4a56455caaf47c70cc1cf02ffca"
+      "737382852":
+        name: "designcraft-0.20.1-linux-x86_64.AppImage.zsync"
+        url_suffix: "designcraft-0.20.1-linux-x86_64.AppImage.zsync"
+        size: 202181
+        digest: "sha256:6def410529cdc9e7f03bfbc6359b39d25b95aaa860a33465fa442b018b1df329"
+      "737382866":
+        name: "designcraft-0.20.1-linux-x86_64.AppImage.zsync.asc"
+        url_suffix: "designcraft-0.20.1-linux-x86_64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:796849a3e7606bed613e012490af4b2c686b271b0bf8e590c10629561d70d74d"
+      "737382876":
+        name: "designcraft-0.20.1-linux-x86_64.deb"
+        url_suffix: "designcraft-0.20.1-linux-x86_64.deb"
+        size: 126829130
+        media_type: "application/x-debian-package"
+        digest: "sha256:a4b50ceffd33a13d2d52e01530f6de3236d50ada02a7cf0c8946de3195057b0f"
+      "737382888":
+        name: "designcraft-0.20.1-linux-x86_64.deb.asc"
+        url_suffix: "designcraft-0.20.1-linux-x86_64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:e88ba5d8fb45c2c3812c74757b6502022762099660e46e2d71b48f3fdfa268eb"
+      "737382895":
+        name: "designcraft-0.20.1-linux-x86_64.flatpak"
+        url_suffix: "designcraft-0.20.1-linux-x86_64.flatpak"
+        size: 88719280
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:c628192174776fd4766ef342d5c4495e8787b53e26a4f0136c48bd46c13bada4"
+      "737382910":
+        name: "designcraft-0.20.1-linux-x86_64.flatpak.asc"
+        url_suffix: "designcraft-0.20.1-linux-x86_64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:11d3825c015149d81f427a25a1c6f5ffd22338883628c44bd9522d87933631a1"
+      "737382927":
+        name: "designcraft-0.20.1-linux-x86_64.oci-manifest.json"
+        url_suffix: "designcraft-0.20.1-linux-x86_64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:2dfa3a7266600fa54b6a14bbffcf2e5a51dcbe708ab1e2b560655693adbee52e"
+      "737382935":
+        name: "designcraft-0.20.1-linux-x86_64.oci.sig"
+        url_suffix: "designcraft-0.20.1-linux-x86_64.oci.sig"
+        size: 380
+        media_type: "application/pgp-signature"
+        digest: "sha256:76dbf45b85abcbef62ea80d513cfe258a8cb5fac834eb430f191c5d7ad0428c0"
+      "737382951":
+        name: "designcraft-0.20.1-linux-x86_64.pkg.tar.zst"
+        url_suffix: "designcraft-0.20.1-linux-x86_64.pkg.tar.zst"
+        size: 94180802
+        media_type: "application/zstd"
+        digest: "sha256:50744692323feb1805ffe2bab1dc30af3d5d958e88b94cc9f36959bbb46fac67"
+      "737382969":
+        name: "designcraft-0.20.1-linux-x86_64.pkg.tar.zst.sig"
+        url_suffix: "designcraft-0.20.1-linux-x86_64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:37f207571aa5ff32bf1697d6148f668a9b834efe082b7320bc6edee78292265b"
+      "737382990":
+        name: "designcraft-0.20.1-linux-x86_64.rpm"
+        url_suffix: "designcraft-0.20.1-linux-x86_64.rpm"
+        size: 126172059
+        media_type: "application/x-rpm"
+        digest: "sha256:356e3c93af4cef8cbf6684eeec5718872d6c8750894b7bd901eb6b22f5acce30"
+      "737383003":
+        name: "designcraft-0.20.1-linux-x86_64.rpm.asc"
+        url_suffix: "designcraft-0.20.1-linux-x86_64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:264d363893186c8010fab59f5d6c0548a6d58e00531d92cde65975c8cd1188b9"
+      "737383033":
+        name: "designcraft-0.20.1-linux-x86_64.tar.gz"
+        url_suffix: "designcraft-0.20.1-linux-x86_64.tar.gz"
+        size: 125121650
+        media_type: "application/x-gtar"
+        digest: "sha256:e91630d4cdf578ccb1e2f39f88e24e8520f1482d51ae4714657ee471e2237f44"
+      "737383040":
+        name: "designcraft-0.20.1-macos-universal.dmg"
+        url_suffix: "designcraft-0.20.1-macos-universal.dmg"
+        size: 249161928
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:f45b2bf5543c1d8c37d09a971e99420d6ef3d97b6ebe33e31b36d2a3c39eb0c2"
+      "737383042":
+        name: "designcraft-0.20.1-linux-x86_64.tar.gz.asc"
+        url_suffix: "designcraft-0.20.1-linux-x86_64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:1140f8b2652dc45df9e186677da454eb00e17dbfcf5cbcd0b201251506cc7d3f"
+      "737383068":
+        name: "designcraft-0.20.1-windows-arm64-portable.zip"
+        url_suffix: "designcraft-0.20.1-windows-arm64-portable.zip"
+        size: 120658250
+        media_type: "zip"
+        digest: "sha256:cf108db85a3dcad655805372a8679475ea6b0b6cf4a4a28ac729e7764881e507"
+      "737383128":
+        name: "designcraft-0.20.1-windows-arm64.msi"
+        url_suffix: "designcraft-0.20.1-windows-arm64.msi"
+        size: 94887936
+        media_type: "application/x-msi"
+        digest: "sha256:da2b0b8aa57e51c6219efe68be0f7dcd14f93988884dbe15888a64941c2d343d"
+      "737383198":
+        name: "designcraft-0.20.1-windows-x64-portable.zip"
+        url_suffix: "designcraft-0.20.1-windows-x64-portable.zip"
+        size: 125666312
+        media_type: "zip"
+        digest: "sha256:178bd5ed8c518dfd85ed1677857c57a812d816c5ca552aa546cd55e0cab8c1ac"
+      "737383227":
+        name: "designcraft-0.20.1-windows-x64.msi"
+        url_suffix: "designcraft-0.20.1-windows-x64.msi"
+        size: 99581952
+        media_type: "application/x-msi"
+        digest: "sha256:358fcfb94311dec9a3fabe5c437ca732de8c46ba7b6fd27a7be3e5dfe017175a"
+      "737383245":
+        name: "designcraft-cli-0.20.1-macos-universal.zip"
+        url_suffix: "designcraft-cli-0.20.1-macos-universal.zip"
+        size: 110569975
+        media_type: "zip"
+        digest: "sha256:a178783b31e1af48f7af2b516568ec85537a484dfbcc5057b0f03cadee90c0ab"
+      "737383270":
+        name: "designcraft-web-0.20.1.zip"
+        url_suffix: "designcraft-web-0.20.1.zip"
+        size: 27265672
+        media_type: "zip"
+        digest: "sha256:50fb2bebce1f48065318953393626b84b25cd1736c556e523275dadc46ae6906"
+      "737383356":
         name: "release-signing-key.asc"
         url_suffix: "release-signing-key.asc"
         size: 803

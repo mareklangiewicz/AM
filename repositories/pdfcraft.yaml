@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1398086162
 repository: "storytold/pdfcraft"
-collected_at: "2026-11-10T21:14:29Z"
+collected_at: "2026-11-15T11:06:22Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-10T21:14:29Z"
+observed_at: "2026-11-15T11:06:22Z"
 releases:
   "402114842":
     tag: "v0.1.0"
@@ -4419,6 +4419,674 @@ releases:
         media_type: "zip"
         digest: "sha256:5cd9da8025e5e4c587069f9ee5fbfeeb859f8fbc35bfdb0c63fc1f139d7240e6"
       "727355213":
+        name: "release-signing-key.asc"
+        url_suffix: "release-signing-key.asc"
+        size: 803
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8e6925a173d6a7134118da099948de4d9eeec7c1c0770998aec33c9d3f484740"
+  "442006433":
+    tag: "v0.21.0"
+    title: "PdfCraft v0.21.0"
+    url: "https://github.com/storytold/pdfcraft/releases/tag/v0.21.0"
+    created_at: "2026-11-11T16:58:38Z"
+    published_at: "2026-11-11T17:39:29Z"
+    updated_at: "2026-11-11T17:39:29Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/storytold/pdfcraft/zipball/v0.21.0"
+    source_tar_url: "https://api.github.com/repos/storytold/pdfcraft/tarball/v0.21.0"
+    download_base: "https://github.com/storytold/pdfcraft/releases/download/v0.21.0/"
+    assets:
+      "736341784":
+        name: "pdfcraft-0.21.0-freebsd-x86_64.tar.gz"
+        url_suffix: "pdfcraft-0.21.0-freebsd-x86_64.tar.gz"
+        size: 120544465
+        media_type: "application/x-gtar"
+        digest: "sha256:628d374a804a3b073a6dc10205ae321f254564bf0961da27cd4dc4bf80d1759e"
+      "736341785":
+        name: "SHA256SUMS.txt"
+        url_suffix: "SHA256SUMS.txt"
+        size: 5463
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:4031a6ea1f08f9a4288b4e1adbe081e63f444559632a00e745fedd2afd7182e5"
+      "736341788":
+        name: "pdfcraft-0.21.0-linux-aarch64.AppImage"
+        url_suffix: "pdfcraft-0.21.0-linux-aarch64.AppImage"
+        size: 110750216
+        media_type: "application/vnd.appimage"
+        digest: "sha256:f3a677bdbc487aba3881f3af93be50a45310c784db8d08992d0c9e7b552e55cc"
+      "736341791":
+        name: "SHA256SUMS.txt.asc"
+        url_suffix: "SHA256SUMS.txt.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:30f387247497043c74dd385575bc13272ca39fe52b739f127341035d01e30d5c"
+      "736341794":
+        name: "pdfcraft-0.21.0-freebsd-aarch64.tar.gz"
+        url_suffix: "pdfcraft-0.21.0-freebsd-aarch64.tar.gz"
+        size: 115227741
+        media_type: "application/x-gtar"
+        digest: "sha256:d1c33f16d939e32c0eb84a907cf3c2a07841b98f0fd49fa2d1c01d42a2ac6290"
+      "736341842":
+        name: "pdfcraft-0.21.0-linux-aarch64.AppImage.zsync"
+        url_suffix: "pdfcraft-0.21.0-linux-aarch64.AppImage.zsync"
+        size: 189521
+        digest: "sha256:a1d1b69c75044879859b2eecbdc126ed750f0908731c99d0a884583493cdb8d6"
+      "736341843":
+        name: "pdfcraft-0.21.0-linux-aarch64.AppImage.asc"
+        url_suffix: "pdfcraft-0.21.0-linux-aarch64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:469e9874cabb2e8d3ee4dc9354a2e8fd8564e5319d4001cd2ea7b6df20a6a2e6"
+      "736341889":
+        name: "pdfcraft-0.21.0-linux-aarch64.AppImage.zsync.asc"
+        url_suffix: "pdfcraft-0.21.0-linux-aarch64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d3d24d8491fe35d04c3496332c7fc827b7de0166a8885f69354b28890cde720c"
+      "736341893":
+        name: "pdfcraft-0.21.0-linux-aarch64.deb"
+        url_suffix: "pdfcraft-0.21.0-linux-aarch64.deb"
+        size: 119043120
+        media_type: "application/x-debian-package"
+        digest: "sha256:f5a0f70fac13cf7e1438d7a68215b553ccd655777b50453d54e52c8969026c76"
+      "736341933":
+        name: "pdfcraft-0.21.0-linux-aarch64.deb.asc"
+        url_suffix: "pdfcraft-0.21.0-linux-aarch64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:190e4921c40db995c4032e5d0bd21bda73b10a99db0e7f4d69c90cea946e08ce"
+      "736341974":
+        name: "pdfcraft-0.21.0-linux-aarch64.flatpak"
+        url_suffix: "pdfcraft-0.21.0-linux-aarch64.flatpak"
+        size: 85331448
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:d495f016550c91f38a1a923d9ed9e520cea9e45b7cc3b3d5960f6ced99f9976f"
+      "736342124":
+        name: "pdfcraft-0.21.0-linux-aarch64.flatpak.asc"
+        url_suffix: "pdfcraft-0.21.0-linux-aarch64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:46fd194edfeacd37c1a6790ad79e248eb6e96372de3584b43fc21794362cd75a"
+      "736342185":
+        name: "pdfcraft-0.21.0-linux-aarch64.oci-manifest.json"
+        url_suffix: "pdfcraft-0.21.0-linux-aarch64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:25a1c2b1709ac0ed82428bba92bfd6decb56e814648021335a346ec532927ec4"
+      "736342190":
+        name: "pdfcraft-0.21.0-linux-aarch64.oci.sig"
+        url_suffix: "pdfcraft-0.21.0-linux-aarch64.oci.sig"
+        size: 384
+        media_type: "application/pgp-signature"
+        digest: "sha256:8c7022abf90e7c8c77e0a5ce173402b5eb53d0c21f60a8683142988dbff52320"
+      "736342208":
+        name: "pdfcraft-0.21.0-linux-aarch64.pkg.tar.zst"
+        url_suffix: "pdfcraft-0.21.0-linux-aarch64.pkg.tar.zst"
+        size: 90896635
+        media_type: "application/zstd"
+        digest: "sha256:76c61ead80f60f7fbb7910efd1719e9b8e38883a34411988d464ecf4fa800dc9"
+      "736342238":
+        name: "pdfcraft-0.21.0-linux-aarch64.pkg.tar.zst.sig"
+        url_suffix: "pdfcraft-0.21.0-linux-aarch64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:1df0074b18ce42e31d0e47464ff4bd3b3251adc78367af6a274cf96c9f065e8f"
+      "736342241":
+        name: "pdfcraft-0.21.0-linux-aarch64.rpm"
+        url_suffix: "pdfcraft-0.21.0-linux-aarch64.rpm"
+        size: 118270559
+        media_type: "application/x-rpm"
+        digest: "sha256:05f051aaa9ae6a972e49555a7a6fc59aaff5bc2bc4fa60bd0e2676db9a786ac7"
+      "736342244":
+        name: "pdfcraft-0.21.0-linux-aarch64.rpm.asc"
+        url_suffix: "pdfcraft-0.21.0-linux-aarch64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:f605615edd620d2155b095e0caff872831dacef5d6a09dc4afd3b1b1a9aa93ff"
+      "736342257":
+        name: "pdfcraft-0.21.0-linux-aarch64.tar.gz"
+        url_suffix: "pdfcraft-0.21.0-linux-aarch64.tar.gz"
+        size: 116743461
+        media_type: "application/x-gtar"
+        digest: "sha256:1cd79a184d58aa2392fbdc007560e3939878d96f12b2c06c96f4f385fc613d09"
+      "736342300":
+        name: "pdfcraft-0.21.0-linux-aarch64.tar.gz.asc"
+        url_suffix: "pdfcraft-0.21.0-linux-aarch64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d46d0a6a7adca7517cf5ff2a4e8ba59aafcb57cc1c27fb9d69f1b7f7ab3d2d51"
+      "736342306":
+        name: "pdfcraft-0.21.0-linux-riscv64.deb"
+        url_suffix: "pdfcraft-0.21.0-linux-riscv64.deb"
+        size: 119450512
+        media_type: "application/x-debian-package"
+        digest: "sha256:3faf7a5135ab544c8e02bc27e79424f2e0d626f3481da23dbb7c8bc0c575a35d"
+      "736342345":
+        name: "pdfcraft-0.21.0-linux-riscv64.deb.asc"
+        url_suffix: "pdfcraft-0.21.0-linux-riscv64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:0ae2bd0d4693e751ef868fe5b11270d78c3b02c44641e912e3bcdd5e96bb010d"
+      "736342385":
+        name: "pdfcraft-0.21.0-linux-riscv64.rpm"
+        url_suffix: "pdfcraft-0.21.0-linux-riscv64.rpm"
+        size: 119070674
+        media_type: "application/x-rpm"
+        digest: "sha256:5df3562d7d7dd4017bac104ab69ebd0fbb6b4b5928e5b782b4eb785b746548ab"
+      "736342484":
+        name: "pdfcraft-0.21.0-linux-riscv64.rpm.asc"
+        url_suffix: "pdfcraft-0.21.0-linux-riscv64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:ec96f88dba5467e9c36110597079eb707b9fb5eb16e10dc1a78f96aa4660d1d2"
+      "736342506":
+        name: "pdfcraft-0.21.0-linux-riscv64.tar.gz"
+        url_suffix: "pdfcraft-0.21.0-linux-riscv64.tar.gz"
+        size: 118428401
+        media_type: "application/x-gtar"
+        digest: "sha256:38a32af6999e7497326172b52d575ea7abe33dd4f7e723e6adf7e6750c7d541a"
+      "736342568":
+        name: "pdfcraft-0.21.0-linux-riscv64.tar.gz.asc"
+        url_suffix: "pdfcraft-0.21.0-linux-riscv64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:bea0ad8bc0c0f7d58ce0489d2419113e68a42b3e9f948a5fe0e0788ffa52774a"
+      "736342589":
+        name: "pdfcraft-0.21.0-linux-x86_64.AppImage"
+        url_suffix: "pdfcraft-0.21.0-linux-x86_64.AppImage"
+        size: 114985464
+        media_type: "application/vnd.appimage"
+        digest: "sha256:44980b57de0fe8634be5609d6d7440718342c9b861fe3ff21512a08d7b73c347"
+      "736342621":
+        name: "pdfcraft-0.21.0-linux-x86_64.AppImage.zsync"
+        url_suffix: "pdfcraft-0.21.0-linux-x86_64.AppImage.zsync"
+        size: 196757
+        digest: "sha256:2a4146516fb1ed5f2acc9736023748ab13045e184d3be339b8421595d418d12b"
+      "736342622":
+        name: "pdfcraft-0.21.0-linux-x86_64.AppImage.asc"
+        url_suffix: "pdfcraft-0.21.0-linux-x86_64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:b0a270b0d8c2d6324da3c7f97b47f8c44a56f0196feaf51c6ad93252bfc0fa46"
+      "736342635":
+        name: "pdfcraft-0.21.0-linux-x86_64.AppImage.zsync.asc"
+        url_suffix: "pdfcraft-0.21.0-linux-x86_64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:02578b56f9c434ba20d1c34caa12c67c74a7df9d301d0f9fe65e3c450e0a063f"
+      "736342650":
+        name: "pdfcraft-0.21.0-linux-x86_64.deb"
+        url_suffix: "pdfcraft-0.21.0-linux-x86_64.deb"
+        size: 122419744
+        media_type: "application/x-debian-package"
+        digest: "sha256:c83f77076867c66b19e90b25ada0a81066856cfccf3545c2962b672d99d5c0e9"
+      "736342652":
+        name: "pdfcraft-0.21.0-linux-x86_64.deb.asc"
+        url_suffix: "pdfcraft-0.21.0-linux-x86_64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:42e17776807c47cc7eef57967cc97476cc9336c48dd5998fd6a11ad7fb5b4d9e"
+      "736342662":
+        name: "pdfcraft-0.21.0-linux-x86_64.flatpak"
+        url_suffix: "pdfcraft-0.21.0-linux-x86_64.flatpak"
+        size: 90238024
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:3b90431b815fb6521b231c87673ec7ffeac6806742c0754ea1440b4d1bfbe4c2"
+      "736342671":
+        name: "pdfcraft-0.21.0-linux-x86_64.flatpak.asc"
+        url_suffix: "pdfcraft-0.21.0-linux-x86_64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:6fb86d66ce2f9677e613d4b9a623937abda95b350bf2a4d96c300c6dbc7edcca"
+      "736342703":
+        name: "pdfcraft-0.21.0-linux-x86_64.oci-manifest.json"
+        url_suffix: "pdfcraft-0.21.0-linux-x86_64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:ddc53555963fcd5f2e6d1397083fe2db4de9d70e3cba5e7f4c3e7f94f4080fff"
+      "736342718":
+        name: "pdfcraft-0.21.0-linux-x86_64.oci.sig"
+        url_suffix: "pdfcraft-0.21.0-linux-x86_64.oci.sig"
+        size: 383
+        media_type: "application/pgp-signature"
+        digest: "sha256:dfd01a1e5472253c166eed3fdea39e323d1541f5d6639f304778187b9bb3416b"
+      "736342739":
+        name: "pdfcraft-0.21.0-linux-x86_64.pkg.tar.zst"
+        url_suffix: "pdfcraft-0.21.0-linux-x86_64.pkg.tar.zst"
+        size: 93834534
+        media_type: "application/zstd"
+        digest: "sha256:38bbcb437aeb373bc80db095e899c503c22a57ddfc50a3dab268ca4b8ed68619"
+      "736342781":
+        name: "pdfcraft-0.21.0-linux-x86_64.pkg.tar.zst.sig"
+        url_suffix: "pdfcraft-0.21.0-linux-x86_64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:b2004ffb4c11f46f3750e0ffc25e4e5bf89c984ec65ae0521e8deb51769a944a"
+      "736342807":
+        name: "pdfcraft-0.21.0-linux-x86_64.rpm"
+        url_suffix: "pdfcraft-0.21.0-linux-x86_64.rpm"
+        size: 121815661
+        media_type: "application/x-rpm"
+        digest: "sha256:c71da42d80aaae6e5c1873a0badc652fffb0bb7073f104eae440aedeef16646b"
+      "736342831":
+        name: "pdfcraft-0.21.0-linux-x86_64.rpm.asc"
+        url_suffix: "pdfcraft-0.21.0-linux-x86_64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:6834d9c942a5cb3353a93c620dab893c72cf495424e14d4f730c12f57de223af"
+      "736342840":
+        name: "pdfcraft-0.21.0-linux-x86_64.tar.gz"
+        url_suffix: "pdfcraft-0.21.0-linux-x86_64.tar.gz"
+        size: 121173300
+        media_type: "application/x-gtar"
+        digest: "sha256:79a8c76e23ad6e671de3b856a476936afc000f8aa7fefff190d43de62fa35ba1"
+      "736342886":
+        name: "pdfcraft-0.21.0-linux-x86_64.tar.gz.asc"
+        url_suffix: "pdfcraft-0.21.0-linux-x86_64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:f009ed6c919c81596437d653a724ba67aebd2ae2f4ddf362643f1334904c4a15"
+      "736342913":
+        name: "pdfcraft-0.21.0-macos-universal.dmg"
+        url_suffix: "pdfcraft-0.21.0-macos-universal.dmg"
+        size: 135311183
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:c18c13ea4edaefdbf3cf231f851231a8ae51cf1507772eda693b59174cbaa6af"
+      "736342920":
+        name: "pdfcraft-0.21.0-windows-arm64-portable.zip"
+        url_suffix: "pdfcraft-0.21.0-windows-arm64-portable.zip"
+        size: 117717498
+        media_type: "zip"
+        digest: "sha256:f5bbc0320880a0fbc34589233697de549ecdfa8d41cab050902f305d4877ea69"
+      "736342934":
+        name: "pdfcraft-0.21.0-windows-arm64.msi"
+        url_suffix: "pdfcraft-0.21.0-windows-arm64.msi"
+        size: 94978048
+        media_type: "application/x-msi"
+        digest: "sha256:34df5999027edeb05d0ec64919f5f1f363b30f0c6f72272a9f36b7ee590dd19f"
+      "736343005":
+        name: "pdfcraft-0.21.0-windows-x64-portable.zip"
+        url_suffix: "pdfcraft-0.21.0-windows-x64-portable.zip"
+        size: 123022393
+        media_type: "zip"
+        digest: "sha256:cad666b17c7e81a0a51e3b68f6d0265b95bcf735f0aabff1303d500119987535"
+      "736343100":
+        name: "pdfcraft-0.21.0-windows-x64.msi"
+        url_suffix: "pdfcraft-0.21.0-windows-x64.msi"
+        size: 99917824
+        media_type: "application/x-msi"
+        digest: "sha256:acce7eff1d23b96ff09d89b6d31d5b6b8335f3bdae62656f8ea62f09e7c84cbb"
+      "736343145":
+        name: "pdfcraft-cli-0.21.0-linux-aarch64.tar.gz"
+        url_suffix: "pdfcraft-cli-0.21.0-linux-aarch64.tar.gz"
+        size: 44040864
+        media_type: "application/x-gtar"
+        digest: "sha256:31800992ef472c962bc9fad582c901765b26e07bc1c6fc62ba3c03494040858f"
+      "736343151":
+        name: "pdfcraft-cli-0.21.0-linux-aarch64.tar.gz.asc"
+        url_suffix: "pdfcraft-cli-0.21.0-linux-aarch64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:c47f4535dbda6dc013131eb55d37635a4548fb8903e229c4b191df46d6199835"
+      "736343155":
+        name: "pdfcraft-cli-0.21.0-linux-x86_64.tar.gz"
+        url_suffix: "pdfcraft-cli-0.21.0-linux-x86_64.tar.gz"
+        size: 45866505
+        media_type: "application/x-gtar"
+        digest: "sha256:65c5d320eefe9c329a082f37a93991d07cb7d992f29a8ff2933a83ae81a70b21"
+      "736343190":
+        name: "pdfcraft-cli-0.21.0-linux-x86_64.tar.gz.asc"
+        url_suffix: "pdfcraft-cli-0.21.0-linux-x86_64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:b24deceec5730867a7a67275167b223ec976e935d78b57058997d187b24fcc5a"
+      "736343209":
+        name: "pdfcraft-cli-0.21.0-macos-universal.zip"
+        url_suffix: "pdfcraft-cli-0.21.0-macos-universal.zip"
+        size: 92279243
+        media_type: "zip"
+        digest: "sha256:c57dea74cd83290e5a9b67036a804f46dda765bf3eabf9befb9314913372e83d"
+      "736343272":
+        name: "pdfcraft-web-0.21.0.zip"
+        url_suffix: "pdfcraft-web-0.21.0.zip"
+        size: 34351637
+        media_type: "zip"
+        digest: "sha256:44cf5715a3458d5a1f9dab748178b84e34169f743012b6210714c224e79e97c3"
+      "736343276":
+        name: "release-signing-key.asc"
+        url_suffix: "release-signing-key.asc"
+        size: 803
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8e6925a173d6a7134118da099948de4d9eeec7c1c0770998aec33c9d3f484740"
+  "442416291":
+    tag: "v0.21.1"
+    title: "PdfCraft v0.21.1"
+    url: "https://github.com/storytold/pdfcraft/releases/tag/v0.21.1"
+    created_at: "2026-11-12T01:40:29Z"
+    published_at: "2026-11-12T02:18:37Z"
+    updated_at: "2026-11-12T02:18:37Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/storytold/pdfcraft/zipball/v0.21.1"
+    source_tar_url: "https://api.github.com/repos/storytold/pdfcraft/tarball/v0.21.1"
+    download_base: "https://github.com/storytold/pdfcraft/releases/download/v0.21.1/"
+    assets:
+      "737718273":
+        name: "pdfcraft-0.21.1-freebsd-aarch64.tar.gz"
+        url_suffix: "pdfcraft-0.21.1-freebsd-aarch64.tar.gz"
+        size: 115293279
+        media_type: "application/x-gtar"
+        digest: "sha256:c0c367aa338543df178f39cc6665c7fa1bae878f61238e1c6b4db3f18df38fae"
+      "737718275":
+        name: "pdfcraft-0.21.1-freebsd-x86_64.tar.gz"
+        url_suffix: "pdfcraft-0.21.1-freebsd-x86_64.tar.gz"
+        size: 120608596
+        media_type: "application/x-gtar"
+        digest: "sha256:f1c7b10adf2ca20369a5d7800f69b4196e94526a63cbdfe8d0f529c0153979cb"
+      "737718278":
+        name: "pdfcraft-0.21.1-linux-aarch64.AppImage"
+        url_suffix: "pdfcraft-0.21.1-linux-aarch64.AppImage"
+        size: 110869000
+        media_type: "application/vnd.appimage"
+        digest: "sha256:e34a136f1f9a3feabdb5a4ea8f8fba1bb3e5ac54f3962490e7e041fdcf58df5f"
+      "737718279":
+        name: "SHA256SUMS.txt.asc"
+        url_suffix: "SHA256SUMS.txt.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:f32ec392bcc5f59c8db4c6efc1c3f68c9cac5cd425d611cfe6b0c00b9e8b5152"
+      "737718280":
+        name: "SHA256SUMS.txt"
+        url_suffix: "SHA256SUMS.txt"
+        size: 5463
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:1d698e33bdb3b1443979e984e7a3728b0d09b11790427fcc291cb2305edca5ea"
+      "737718300":
+        name: "pdfcraft-0.21.1-linux-aarch64.AppImage.zsync"
+        url_suffix: "pdfcraft-0.21.1-linux-aarch64.AppImage.zsync"
+        size: 189724
+        digest: "sha256:7f1696282fc7a01d250e07224d3fdb3f16f7415691ad327951d31b2c578e03fd"
+      "737718303":
+        name: "pdfcraft-0.21.1-linux-aarch64.AppImage.asc"
+        url_suffix: "pdfcraft-0.21.1-linux-aarch64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:3b5482c734eda4edc9a2a43f3467f16a221ec81db3c0380b9348dcde5bfa3889"
+      "737718336":
+        name: "pdfcraft-0.21.1-linux-aarch64.AppImage.zsync.asc"
+        url_suffix: "pdfcraft-0.21.1-linux-aarch64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:4e1bca37a9c86fb196fa66f26ec6e3767a271173bb365c36f0bb97ed6e15d261"
+      "737718338":
+        name: "pdfcraft-0.21.1-linux-aarch64.deb"
+        url_suffix: "pdfcraft-0.21.1-linux-aarch64.deb"
+        size: 119129158
+        media_type: "application/x-debian-package"
+        digest: "sha256:2e1816b167a3678a7da984c3bd7cb7e43227ef35e1ba0f93c5234ac3e8edda86"
+      "737718356":
+        name: "pdfcraft-0.21.1-linux-aarch64.deb.asc"
+        url_suffix: "pdfcraft-0.21.1-linux-aarch64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:71d8f706761a568ce1e8ab849433db6e4f47be636710a287c056ec3309720447"
+      "737718378":
+        name: "pdfcraft-0.21.1-linux-aarch64.flatpak"
+        url_suffix: "pdfcraft-0.21.1-linux-aarch64.flatpak"
+        size: 85045248
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:a8e8908e28229461661814375d4b48c0692c336c69a91d1de9d01d4668b70c42"
+      "737718535":
+        name: "pdfcraft-0.21.1-linux-aarch64.flatpak.asc"
+        url_suffix: "pdfcraft-0.21.1-linux-aarch64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d22990fbf1ecb24c3df834b669964cac06cc21e53304aab5419a89a103395a2e"
+      "737718536":
+        name: "pdfcraft-0.21.1-linux-aarch64.oci-manifest.json"
+        url_suffix: "pdfcraft-0.21.1-linux-aarch64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:6e77d10bf48503c8addacb7c2c53cf45a8bc1f6a910bcb97dc2e031d0f51c08e"
+      "737718537":
+        name: "pdfcraft-0.21.1-linux-aarch64.oci.sig"
+        url_suffix: "pdfcraft-0.21.1-linux-aarch64.oci.sig"
+        size: 384
+        media_type: "application/pgp-signature"
+        digest: "sha256:a1ca69bbeb367cf85ccc51c4d6778b57ac08f04b163e6596ddfb223b4a9bbd7e"
+      "737718546":
+        name: "pdfcraft-0.21.1-linux-aarch64.pkg.tar.zst"
+        url_suffix: "pdfcraft-0.21.1-linux-aarch64.pkg.tar.zst"
+        size: 90941492
+        media_type: "application/zstd"
+        digest: "sha256:abb5aa13f3640f6a9c1046776032afda868bdfa9a7395fecf8ef9e3551b4c18c"
+      "737718555":
+        name: "pdfcraft-0.21.1-linux-aarch64.pkg.tar.zst.sig"
+        url_suffix: "pdfcraft-0.21.1-linux-aarch64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:5bdb499a5ee97f41189f9fb562f4200beb206540b6cce2e48e2efa20faf2df27"
+      "737718557":
+        name: "pdfcraft-0.21.1-linux-aarch64.rpm.asc"
+        url_suffix: "pdfcraft-0.21.1-linux-aarch64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:00a902df6a5491fbe3c59641cbad9958d63b7de8855a4f04c1ecc6f5cdb63116"
+      "737718559":
+        name: "pdfcraft-0.21.1-linux-aarch64.rpm"
+        url_suffix: "pdfcraft-0.21.1-linux-aarch64.rpm"
+        size: 118341236
+        media_type: "application/x-rpm"
+        digest: "sha256:a781e04e4cf3d94390e0721603fa836960271d745521af643559b15f3c973bea"
+      "737718574":
+        name: "pdfcraft-0.21.1-linux-aarch64.tar.gz"
+        url_suffix: "pdfcraft-0.21.1-linux-aarch64.tar.gz"
+        size: 116826393
+        media_type: "application/x-gtar"
+        digest: "sha256:b08efe416c1da450b04b3e4ec5f0389d71d7580f4398f9eda06d33d04713c770"
+      "737718575":
+        name: "pdfcraft-0.21.1-linux-aarch64.tar.gz.asc"
+        url_suffix: "pdfcraft-0.21.1-linux-aarch64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:16927a6f2c30dce38bfef566bca70597d1cd536a3a074ce364e053fa497e9fef"
+      "737718580":
+        name: "pdfcraft-0.21.1-linux-riscv64.deb"
+        url_suffix: "pdfcraft-0.21.1-linux-riscv64.deb"
+        size: 119532074
+        media_type: "application/x-debian-package"
+        digest: "sha256:330a0c4b43841070f8808c7fa6c1b2968d9476a5b43bee78ee92f060c243962c"
+      "737718596":
+        name: "pdfcraft-0.21.1-linux-riscv64.deb.asc"
+        url_suffix: "pdfcraft-0.21.1-linux-riscv64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:1ff6320b722188abaa8284615feed344a57d206376c93de0ecd8b466964243d7"
+      "737718614":
+        name: "pdfcraft-0.21.1-linux-riscv64.rpm"
+        url_suffix: "pdfcraft-0.21.1-linux-riscv64.rpm"
+        size: 119146325
+        media_type: "application/x-rpm"
+        digest: "sha256:9ad500ada67ea5cc00715c262ed3e3bca62df205b59e8751d2b20c5155f1e659"
+      "737718647":
+        name: "pdfcraft-0.21.1-linux-riscv64.rpm.asc"
+        url_suffix: "pdfcraft-0.21.1-linux-riscv64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:51b878450d3de9f24d03403031099dc1477d25d29ed2440fc112e8b54a92c6e5"
+      "737718670":
+        name: "pdfcraft-0.21.1-linux-riscv64.tar.gz"
+        url_suffix: "pdfcraft-0.21.1-linux-riscv64.tar.gz"
+        size: 118506737
+        media_type: "application/x-gtar"
+        digest: "sha256:bb4f2a7cacb469013c7b3cb25e4d6690aa8d400832966d35ba5790702f254f15"
+      "737718699":
+        name: "pdfcraft-0.21.1-linux-riscv64.tar.gz.asc"
+        url_suffix: "pdfcraft-0.21.1-linux-riscv64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:3395e76f446319f1bf9cbe054a2c7046de4a1d271f8faf070a49dcf4bea1efc9"
+      "737718713":
+        name: "pdfcraft-0.21.1-linux-x86_64.AppImage"
+        url_suffix: "pdfcraft-0.21.1-linux-x86_64.AppImage"
+        size: 115087864
+        media_type: "application/vnd.appimage"
+        digest: "sha256:730276cda9addb3d48f26c602686d18fc5bc0ebe360a60a2f522d70cfd428d21"
+      "737718748":
+        name: "pdfcraft-0.21.1-linux-x86_64.AppImage.asc"
+        url_suffix: "pdfcraft-0.21.1-linux-x86_64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d46dee38e7e581b3354f3221970510678c521fc80028f3b2b6f26b1a064523f2"
+      "737718755":
+        name: "pdfcraft-0.21.1-linux-x86_64.AppImage.zsync.asc"
+        url_suffix: "pdfcraft-0.21.1-linux-x86_64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:b338e61b36aebe7fa30ee64d145518b16674938f97cd3fa7c44d0458c15c6b6b"
+      "737718756":
+        name: "pdfcraft-0.21.1-linux-x86_64.AppImage.zsync"
+        url_suffix: "pdfcraft-0.21.1-linux-x86_64.AppImage.zsync"
+        size: 196932
+        digest: "sha256:b8fc3c7a45ee074d5367502b289f8f549b81fdc5de4a758791664b7d6f314e82"
+      "737718786":
+        name: "pdfcraft-0.21.1-linux-x86_64.deb"
+        url_suffix: "pdfcraft-0.21.1-linux-x86_64.deb"
+        size: 122486546
+        media_type: "application/x-debian-package"
+        digest: "sha256:e87baa0ef638be6ea97b521883e912318012028a80dbe1359f93cd21437be253"
+      "737718795":
+        name: "pdfcraft-0.21.1-linux-x86_64.deb.asc"
+        url_suffix: "pdfcraft-0.21.1-linux-x86_64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:978d0c9f881c8b763ca7812bc54a0ec4afaa3c0e2dd664d02c8e9bd2f8cb3536"
+      "737718797":
+        name: "pdfcraft-0.21.1-linux-x86_64.flatpak.asc"
+        url_suffix: "pdfcraft-0.21.1-linux-x86_64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:51c06b89cfe26a0b16929c93c126844dd1f1387c3913b70003f924f63dc0ef0c"
+      "737718799":
+        name: "pdfcraft-0.21.1-linux-x86_64.flatpak"
+        url_suffix: "pdfcraft-0.21.1-linux-x86_64.flatpak"
+        size: 90284152
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:4f126ff718e851ba54ee0207c4b6ce9eebddfdd72d1124531d215cc0f8937daf"
+      "737718822":
+        name: "pdfcraft-0.21.1-linux-x86_64.oci-manifest.json"
+        url_suffix: "pdfcraft-0.21.1-linux-x86_64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:0289852f09b56ebfa58bdf26671a798be40e60f5d799674a8496261827bb2675"
+      "737718826":
+        name: "pdfcraft-0.21.1-linux-x86_64.oci.sig"
+        url_suffix: "pdfcraft-0.21.1-linux-x86_64.oci.sig"
+        size: 387
+        media_type: "application/pgp-signature"
+        digest: "sha256:2e81db5806bbc15ce715bd027b72258b3d52b3aa521435a4386164e258515bb1"
+      "737718837":
+        name: "pdfcraft-0.21.1-linux-x86_64.pkg.tar.zst"
+        url_suffix: "pdfcraft-0.21.1-linux-x86_64.pkg.tar.zst"
+        size: 93893317
+        media_type: "application/zstd"
+        digest: "sha256:1fb565339968cb12947544ec3b74472ef4ea196c308ea3c0efdaf1ca566046e5"
+      "737718846":
+        name: "pdfcraft-0.21.1-linux-x86_64.pkg.tar.zst.sig"
+        url_suffix: "pdfcraft-0.21.1-linux-x86_64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:5dd22b465c1b002df3203fce2daf0bd6987dde856844d6ca9a4936dbe0a60dd9"
+      "737718861":
+        name: "pdfcraft-0.21.1-linux-x86_64.rpm"
+        url_suffix: "pdfcraft-0.21.1-linux-x86_64.rpm"
+        size: 121887045
+        media_type: "application/x-rpm"
+        digest: "sha256:74a954087e53f234c0c5b160c156d52e0f0b7bf23529c6e41d4b879eee351c55"
+      "737718868":
+        name: "pdfcraft-0.21.1-linux-x86_64.rpm.asc"
+        url_suffix: "pdfcraft-0.21.1-linux-x86_64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:9c39c5bec30509b1a66922772ed7ba753c48fb8acddff627ea911302ecfc0d0f"
+      "737718881":
+        name: "pdfcraft-0.21.1-linux-x86_64.tar.gz"
+        url_suffix: "pdfcraft-0.21.1-linux-x86_64.tar.gz"
+        size: 121246319
+        media_type: "application/x-gtar"
+        digest: "sha256:c2919e9044effde318e66807ad2a21bbb74a9555b3c0b99f9ad0c40cf61ce25e"
+      "737718963":
+        name: "pdfcraft-0.21.1-linux-x86_64.tar.gz.asc"
+        url_suffix: "pdfcraft-0.21.1-linux-x86_64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:ea601f89ca67af859bef08f59abde78745cfc9106684cdc22c7351d75b5596f5"
+      "737718991":
+        name: "pdfcraft-0.21.1-macos-universal.dmg"
+        url_suffix: "pdfcraft-0.21.1-macos-universal.dmg"
+        size: 135468910
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:1adc9bf3d319e707e9247004db05a32a059634e3710fe79bc14f92f689ca4d4a"
+      "737719034":
+        name: "pdfcraft-0.21.1-windows-arm64-portable.zip"
+        url_suffix: "pdfcraft-0.21.1-windows-arm64-portable.zip"
+        size: 117779362
+        media_type: "zip"
+        digest: "sha256:fca99edb0b3c0e12b057c0487dbff9585141d478ca3f60e22a50e553f3b2e42a"
+      "737719037":
+        name: "pdfcraft-0.21.1-windows-arm64.msi"
+        url_suffix: "pdfcraft-0.21.1-windows-arm64.msi"
+        size: 95019008
+        media_type: "application/x-msi"
+        digest: "sha256:030614d549bbb2c23dfde5e6f42b7a8f963b8c3500b55b06022a6a484f1cebbc"
+      "737719129":
+        name: "pdfcraft-0.21.1-windows-x64-portable.zip"
+        url_suffix: "pdfcraft-0.21.1-windows-x64-portable.zip"
+        size: 123073914
+        media_type: "zip"
+        digest: "sha256:dcbcc2ddc019d85cca90a8242d5e4dc380f1ff6bfb6b951a89152d1dbae14cb4"
+      "737719141":
+        name: "pdfcraft-0.21.1-windows-x64.msi"
+        url_suffix: "pdfcraft-0.21.1-windows-x64.msi"
+        size: 99958784
+        media_type: "application/x-msi"
+        digest: "sha256:b28c4c8aa88910293f7a09a82e893db74759b9afc7860fc114c0cba56cf0830a"
+      "737719339":
+        name: "pdfcraft-cli-0.21.1-linux-aarch64.tar.gz"
+        url_suffix: "pdfcraft-cli-0.21.1-linux-aarch64.tar.gz"
+        size: 44065328
+        media_type: "application/x-gtar"
+        digest: "sha256:e41fc6d757eb6e0b4b6f6d9115a3efa530785c092fc9a5be914893416da6c9f3"
+      "737719362":
+        name: "pdfcraft-cli-0.21.1-linux-aarch64.tar.gz.asc"
+        url_suffix: "pdfcraft-cli-0.21.1-linux-aarch64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:4fee677b23d114b8e5ec890803aebe76fc9314364d0626644f9637f6466f8f0a"
+      "737719392":
+        name: "pdfcraft-cli-0.21.1-linux-x86_64.tar.gz"
+        url_suffix: "pdfcraft-cli-0.21.1-linux-x86_64.tar.gz"
+        size: 45892085
+        media_type: "application/x-gtar"
+        digest: "sha256:a97b2e789d214360424f19814bc66f3eaf6d04ef5e42e472b46f7b9ddceea5c8"
+      "737719471":
+        name: "pdfcraft-cli-0.21.1-linux-x86_64.tar.gz.asc"
+        url_suffix: "pdfcraft-cli-0.21.1-linux-x86_64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:e1773ee4a8538a8515247e13a7864ec4c7859ae83639721cced6fdafc633b274"
+      "737719474":
+        name: "pdfcraft-cli-0.21.1-macos-universal.zip"
+        url_suffix: "pdfcraft-cli-0.21.1-macos-universal.zip"
+        size: 92333447
+        media_type: "zip"
+        digest: "sha256:337a9f644744b57e10de41c57366e53c5ccf8840a4d5dc7322b17b9b83fdc2fa"
+      "737719488":
+        name: "pdfcraft-web-0.21.1.zip"
+        url_suffix: "pdfcraft-web-0.21.1.zip"
+        size: 34367297
+        media_type: "zip"
+        digest: "sha256:fe9708d46af191aebb56f70eb32cf8b112b0b9452d17ae6ba3a8c4a8665fe748"
+      "737719496":
         name: "release-signing-key.asc"
         url_suffix: "release-signing-key.asc"
         size: 803

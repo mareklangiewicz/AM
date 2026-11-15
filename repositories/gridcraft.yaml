@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1408285582
 repository: "storytold/gridcraft"
-collected_at: "2026-11-10T21:15:19Z"
+collected_at: "2026-11-15T11:06:55Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-10T21:15:19Z"
+observed_at: "2026-11-15T11:06:55Z"
 releases:
   "405606212":
     tag: "v0.1.0"
@@ -3481,6 +3481,626 @@ releases:
         media_type: "zip"
         digest: "sha256:39c3236a3ac6c3607a4126c5ae40491069f5e1c28ccaac1bb884ddc9d294e4c0"
       "727301506":
+        name: "release-signing-key.asc"
+        url_suffix: "release-signing-key.asc"
+        size: 803
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8e6925a173d6a7134118da099948de4d9eeec7c1c0770998aec33c9d3f484740"
+  "441960987":
+    tag: "v0.19.0"
+    title: "GridCraft v0.19.0"
+    url: "https://github.com/storytold/gridcraft/releases/tag/v0.19.0"
+    created_at: "2026-11-11T16:35:47Z"
+    published_at: "2026-11-11T16:54:48Z"
+    updated_at: "2026-11-11T16:54:48Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/storytold/gridcraft/zipball/v0.19.0"
+    source_tar_url: "https://api.github.com/repos/storytold/gridcraft/tarball/v0.19.0"
+    download_base: "https://github.com/storytold/gridcraft/releases/download/v0.19.0/"
+    assets:
+      "736202340":
+        name: "gridcraft-0.19.0-freebsd-aarch64.tar.gz"
+        url_suffix: "gridcraft-0.19.0-freebsd-aarch64.tar.gz"
+        size: 49926196
+        media_type: "application/x-gtar"
+        digest: "sha256:fa3527d6cdbf8fe55791f4585e7835c47af2dd41e428b861492e45cb0fc90ab5"
+      "736202341":
+        name: "gridcraft-0.19.0-linux-aarch64.AppImage"
+        url_suffix: "gridcraft-0.19.0-linux-aarch64.AppImage"
+        size: 48347656
+        media_type: "application/vnd.appimage"
+        digest: "sha256:5bb4039b484abaaac8888737282203c3dcaafa914704378ff82422532aec8259"
+      "736202343":
+        name: "SHA256SUMS.txt"
+        url_suffix: "SHA256SUMS.txt"
+        size: 5076
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d8b6c55b0396947de33fd977776fa6db905df7d73cd797dacb44ff4b7b5d9351"
+      "736202344":
+        name: "gridcraft-0.19.0-freebsd-x86_64.tar.gz"
+        url_suffix: "gridcraft-0.19.0-freebsd-x86_64.tar.gz"
+        size: 52381704
+        media_type: "application/x-gtar"
+        digest: "sha256:1929efcba87af1c4c2be335ce5af81d87a22ff64548e192215483983402479ed"
+      "736202345":
+        name: "SHA256SUMS.txt.asc"
+        url_suffix: "SHA256SUMS.txt.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:219aae9aa85ef8e4b3066d104de0f85b6c5a8b41b287ea2c3f6543fda2bf3c8f"
+      "736202364":
+        name: "gridcraft-0.19.0-linux-aarch64.AppImage.asc"
+        url_suffix: "gridcraft-0.19.0-linux-aarch64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:ee399ddea6f4413ab9b19d09bee62db2d0d662c1d9a7ab86c65adc95d41f32dd"
+      "736202374":
+        name: "gridcraft-0.19.0-linux-aarch64.AppImage.zsync"
+        url_suffix: "gridcraft-0.19.0-linux-aarch64.AppImage.zsync"
+        size: 165505
+        digest: "sha256:105e29e920b2ad7f7fa896f08bd25ae36c1ee35625ccc1c5c56815c6bcf00259"
+      "736202382":
+        name: "gridcraft-0.19.0-linux-aarch64.AppImage.zsync.asc"
+        url_suffix: "gridcraft-0.19.0-linux-aarch64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:9072f946c4d9e7d5d004117b4e2822847c853628633e6679f06332aaad68b11e"
+      "736202388":
+        name: "gridcraft-0.19.0-linux-aarch64.deb"
+        url_suffix: "gridcraft-0.19.0-linux-aarch64.deb"
+        size: 52153074
+        media_type: "application/x-debian-package"
+        digest: "sha256:c65ce7d452c047e396d02ad023ee10592a4c1c8d4ae2a3ef4839114ee8a67bf6"
+      "736202416":
+        name: "gridcraft-0.19.0-linux-aarch64.deb.asc"
+        url_suffix: "gridcraft-0.19.0-linux-aarch64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8e762c07770fff5d0f9dbdebd7c2c47084ee62d2a1ddac1e5fa3ace5cc3dfb9a"
+      "736202425":
+        name: "gridcraft-0.19.0-linux-aarch64.flatpak"
+        url_suffix: "gridcraft-0.19.0-linux-aarch64.flatpak"
+        size: 36113008
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:e3b39ac4b0bcd45ffbe0c10fed609c35ee7c018943676d01134e641b8a5adc19"
+      "736202430":
+        name: "gridcraft-0.19.0-linux-aarch64.flatpak.asc"
+        url_suffix: "gridcraft-0.19.0-linux-aarch64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:4dce3b93c3e5707b84b6bb3c02c61d6a726076cb8339c12091b4cdd4faa29b11"
+      "736202434":
+        name: "gridcraft-0.19.0-linux-aarch64.oci-manifest.json"
+        url_suffix: "gridcraft-0.19.0-linux-aarch64.oci-manifest.json"
+        size: 493
+        media_type: "application/json"
+        digest: "sha256:b03297c0c81221eef6877fff32f2deb32d4c373f9bd90e8e0255fadf106b4669"
+      "736202438":
+        name: "gridcraft-0.19.0-linux-aarch64.oci.sig"
+        url_suffix: "gridcraft-0.19.0-linux-aarch64.oci.sig"
+        size: 387
+        media_type: "application/pgp-signature"
+        digest: "sha256:33c439b83e021d4da8177d5f2993057aaf2c02b3cd2fba4e4e3279c68beff6fa"
+      "736202455":
+        name: "gridcraft-0.19.0-linux-aarch64.pkg.tar.zst"
+        url_suffix: "gridcraft-0.19.0-linux-aarch64.pkg.tar.zst"
+        size: 38229982
+        media_type: "application/zstd"
+        digest: "sha256:c916da264b0ff54ba00cbac8c99e99dde8db8826d0c64843a8f68a6027694905"
+      "736202461":
+        name: "gridcraft-0.19.0-linux-aarch64.rpm"
+        url_suffix: "gridcraft-0.19.0-linux-aarch64.rpm"
+        size: 51767043
+        media_type: "application/x-rpm"
+        digest: "sha256:ac72c5388d9b62dd2c1c3b9171efb5399bd714c83db873d674228601e2e2d768"
+      "736202465":
+        name: "gridcraft-0.19.0-linux-aarch64.pkg.tar.zst.sig"
+        url_suffix: "gridcraft-0.19.0-linux-aarch64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:5a7164d2ca4f4bd453b225d92105d7ced09048cbcb6b7dd709162df0f6f0b0b6"
+      "736202477":
+        name: "gridcraft-0.19.0-linux-aarch64.rpm.asc"
+        url_suffix: "gridcraft-0.19.0-linux-aarch64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:517a337537ff680fcc53507bbc97e99ea61c58f6f136c90a54bfa8c83efb5703"
+      "736202493":
+        name: "gridcraft-0.19.0-linux-aarch64.tar.gz"
+        url_suffix: "gridcraft-0.19.0-linux-aarch64.tar.gz"
+        size: 50917763
+        media_type: "application/x-gtar"
+        digest: "sha256:1ca454bb73813dbcd8b704e11983ce1fed559b63cb9418ec07bcd971401206d4"
+      "736202501":
+        name: "gridcraft-0.19.0-linux-aarch64.tar.gz.asc"
+        url_suffix: "gridcraft-0.19.0-linux-aarch64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:ea57352c2d67612d7eb6dff250b32cb7345abb3fa70859bfa1b77b98163ae2a6"
+      "736202507":
+        name: "gridcraft-0.19.0-linux-riscv64.deb"
+        url_suffix: "gridcraft-0.19.0-linux-riscv64.deb"
+        size: 52408890
+        media_type: "application/x-debian-package"
+        digest: "sha256:096fd92edc08173a163d36968d95f914b4beda3a32555f4c793b84d96f117f60"
+      "736202526":
+        name: "gridcraft-0.19.0-linux-riscv64.deb.asc"
+        url_suffix: "gridcraft-0.19.0-linux-riscv64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8c68c591e9e2c6080551b4cc4932b800bf030a7726f6402455f32f70c875e613"
+      "736202542":
+        name: "gridcraft-0.19.0-linux-riscv64.rpm"
+        url_suffix: "gridcraft-0.19.0-linux-riscv64.rpm"
+        size: 52267146
+        media_type: "application/x-rpm"
+        digest: "sha256:d3c819a572ea38af359863c3a7fa593c688a02ff243a8d38975a60cac7bf595d"
+      "736202553":
+        name: "gridcraft-0.19.0-linux-riscv64.rpm.asc"
+        url_suffix: "gridcraft-0.19.0-linux-riscv64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:784db012ee652f4ea7c1f79aed5c895bb9cded3144371b9ba0d0a987f393b8e6"
+      "736202572":
+        name: "gridcraft-0.19.0-linux-riscv64.tar.gz"
+        url_suffix: "gridcraft-0.19.0-linux-riscv64.tar.gz"
+        size: 51845912
+        media_type: "application/x-gtar"
+        digest: "sha256:7bc932e5f2748116eaf414de4610d78935a285b05d5aea2ab591eecbf55a98b2"
+      "736202574":
+        name: "gridcraft-0.19.0-linux-riscv64.tar.gz.asc"
+        url_suffix: "gridcraft-0.19.0-linux-riscv64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:e5efd62301a3398e161d490c46c4f6f97bdb87c465ff0f42cb7aac6b8b149274"
+      "736202596":
+        name: "gridcraft-0.19.0-linux-x86_64.AppImage"
+        url_suffix: "gridcraft-0.19.0-linux-x86_64.AppImage"
+        size: 50219512
+        media_type: "application/vnd.appimage"
+        digest: "sha256:ad2f7ec7df71eebbf5c6845d823891842586e60f2456e0f581433b1203c7d1e0"
+      "736202603":
+        name: "gridcraft-0.19.0-linux-x86_64.AppImage.asc"
+        url_suffix: "gridcraft-0.19.0-linux-x86_64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d453ce555b56d666c0041cd423d8fa57a5031edba278ef1d5f496377ad4b4588"
+      "736202604":
+        name: "gridcraft-0.19.0-linux-x86_64.AppImage.zsync"
+        url_suffix: "gridcraft-0.19.0-linux-x86_64.AppImage.zsync"
+        size: 171901
+        digest: "sha256:06d7a6dfd6d3a98b507d4ab42152c68e02b1612c912175ae2b01c44be29d8d6f"
+      "736202623":
+        name: "gridcraft-0.19.0-linux-x86_64.AppImage.zsync.asc"
+        url_suffix: "gridcraft-0.19.0-linux-x86_64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:cfc5345b276b17e0241732dc58cb0b092529405ed7dea39a1fe9685508fb0ace"
+      "736202634":
+        name: "gridcraft-0.19.0-linux-x86_64.deb"
+        url_suffix: "gridcraft-0.19.0-linux-x86_64.deb"
+        size: 53632162
+        media_type: "application/x-debian-package"
+        digest: "sha256:625f54efb46e9a0693a51b27059ee177501f80cffa12a5edbc470ca2bc58abba"
+      "736202640":
+        name: "gridcraft-0.19.0-linux-x86_64.deb.asc"
+        url_suffix: "gridcraft-0.19.0-linux-x86_64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d2d614229286f04c2442614f89aa54a0bf732e2ce8c76cc4aa07c9cffdf3174b"
+      "736202648":
+        name: "gridcraft-0.19.0-linux-x86_64.flatpak"
+        url_suffix: "gridcraft-0.19.0-linux-x86_64.flatpak"
+        size: 38568728
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:82d19d67892e96b811054423ca97b229b3465e4af0c52e042c07d66115acbfa4"
+      "736202656":
+        name: "gridcraft-0.19.0-linux-x86_64.flatpak.asc"
+        url_suffix: "gridcraft-0.19.0-linux-x86_64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:50358c92885ee8c4e6c4c17d7a7f63415e6aee75b2e4bb2905554f4d54f903ab"
+      "736202672":
+        name: "gridcraft-0.19.0-linux-x86_64.oci-manifest.json"
+        url_suffix: "gridcraft-0.19.0-linux-x86_64.oci-manifest.json"
+        size: 493
+        media_type: "application/json"
+        digest: "sha256:ab112aed3dd95a5bc05ba6498844b704c88a9f681793a702fc30b0aedbfe0bf9"
+      "736202685":
+        name: "gridcraft-0.19.0-linux-x86_64.pkg.tar.zst"
+        url_suffix: "gridcraft-0.19.0-linux-x86_64.pkg.tar.zst"
+        size: 38607571
+        media_type: "application/zstd"
+        digest: "sha256:0a38e713404f7b6c0f27007df03ce983845db51c1ce47792d118a3a92dce4f1b"
+      "736202686":
+        name: "gridcraft-0.19.0-linux-x86_64.oci.sig"
+        url_suffix: "gridcraft-0.19.0-linux-x86_64.oci.sig"
+        size: 382
+        media_type: "application/pgp-signature"
+        digest: "sha256:0b48510c1ae9cf6b14463e7dd56eafe0da7f061f2f99c7a8ea8fae245827e048"
+      "736202711":
+        name: "gridcraft-0.19.0-linux-x86_64.pkg.tar.zst.sig"
+        url_suffix: "gridcraft-0.19.0-linux-x86_64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:91cf0f6098127fb5162270d9cd5c328e69bf8db4ad8ee19736d9e9afd2f075a9"
+      "736202719":
+        name: "gridcraft-0.19.0-linux-x86_64.rpm"
+        url_suffix: "gridcraft-0.19.0-linux-x86_64.rpm"
+        size: 53332349
+        media_type: "application/x-rpm"
+        digest: "sha256:d265639683874e71de39a6c5b49500c6090727246ff03b4d0aedd5b56f91fcb3"
+      "736202731":
+        name: "gridcraft-0.19.0-linux-x86_64.rpm.asc"
+        url_suffix: "gridcraft-0.19.0-linux-x86_64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8e386aa1215f33b57ea1007ad4c24b275f93f65088db9f6260042864f71cc3be"
+      "736202732":
+        name: "gridcraft-0.19.0-linux-x86_64.tar.gz"
+        url_suffix: "gridcraft-0.19.0-linux-x86_64.tar.gz"
+        size: 52947675
+        media_type: "application/x-gtar"
+        digest: "sha256:e3b1cf4a926e2afa7e8ac22e908b7cdf7baf6103bb444f996bfa0bc3d889adb6"
+      "736202750":
+        name: "gridcraft-0.19.0-linux-x86_64.tar.gz.asc"
+        url_suffix: "gridcraft-0.19.0-linux-x86_64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:63f3b7d2780630d05e2658aaf4958a5ad4ceb7029e57ab119b51bde28a33e9fa"
+      "736202751":
+        name: "gridcraft-0.19.0-macos-universal.dmg"
+        url_suffix: "gridcraft-0.19.0-macos-universal.dmg"
+        size: 86497531
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:ae2660fbb228cb9a19a3fe5f710d36ba8216159177b0d259eeaa0859dabe1462"
+      "736202769":
+        name: "gridcraft-0.19.0-windows-arm64-portable.zip"
+        url_suffix: "gridcraft-0.19.0-windows-arm64-portable.zip"
+        size: 50118359
+        media_type: "zip"
+        digest: "sha256:56c81c69639fe5750384316f7bf14a17e1b3a60a5167281b74a489088e414dad"
+      "736202784":
+        name: "gridcraft-0.19.0-windows-arm64.msi"
+        url_suffix: "gridcraft-0.19.0-windows-arm64.msi"
+        size: 39579648
+        media_type: "application/x-msi"
+        digest: "sha256:c54b7bc784bfa2a6eda9be0c190144cd9cd815ac0c99a5a2154591de2acc696b"
+      "736202814":
+        name: "gridcraft-0.19.0-windows-x64-portable.zip"
+        url_suffix: "gridcraft-0.19.0-windows-x64-portable.zip"
+        size: 52148060
+        media_type: "zip"
+        digest: "sha256:24441d2666a329b2cc80e68a077f2ed81cfe1179888c512c4d68fa0f0bd638e2"
+      "736202831":
+        name: "gridcraft-0.19.0-windows-x64.msi"
+        url_suffix: "gridcraft-0.19.0-windows-x64.msi"
+        size: 41930752
+        media_type: "application/x-msi"
+        digest: "sha256:cdd95bbf515c0477644038d769ecab5adc8b615d2d46307c6514c459e28fa8c9"
+      "736202868":
+        name: "gridcraft-cli-0.19.0-macos-universal.zip"
+        url_suffix: "gridcraft-cli-0.19.0-macos-universal.zip"
+        size: 16004147
+        media_type: "zip"
+        digest: "sha256:2e113c5fd0b7e891283f42a5f91f0ec1a08b69a4d2899fb107ef16948e6fbf69"
+      "736202877":
+        name: "gridcraft-web-0.19.0.zip"
+        url_suffix: "gridcraft-web-0.19.0.zip"
+        size: 9679289
+        media_type: "zip"
+        digest: "sha256:312ca53d94ba393dd841a7b2781b1f66fb58b61c33d2cae9c55db736f1beff80"
+      "736202901":
+        name: "release-signing-key.asc"
+        url_suffix: "release-signing-key.asc"
+        size: 803
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8e6925a173d6a7134118da099948de4d9eeec7c1c0770998aec33c9d3f484740"
+  "442141790":
+    tag: "v0.19.1"
+    title: "GridCraft v0.19.1"
+    url: "https://github.com/storytold/gridcraft/releases/tag/v0.19.1"
+    created_at: "2026-11-11T20:25:59Z"
+    published_at: "2026-11-12T00:06:29Z"
+    updated_at: "2026-11-12T00:06:29Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/storytold/gridcraft/zipball/v0.19.1"
+    source_tar_url: "https://api.github.com/repos/storytold/gridcraft/tarball/v0.19.1"
+    download_base: "https://github.com/storytold/gridcraft/releases/download/v0.19.1/"
+    assets:
+      "737372912":
+        name: "gridcraft-0.19.1-freebsd-x86_64.tar.gz"
+        url_suffix: "gridcraft-0.19.1-freebsd-x86_64.tar.gz"
+        size: 52419213
+        media_type: "application/x-gtar"
+        digest: "sha256:a88fd638eb48c90aff85123c44c13ccec1c05bc9fb0a9018b0ffa81b103ee02b"
+      "737372914":
+        name: "gridcraft-0.19.1-linux-aarch64.AppImage"
+        url_suffix: "gridcraft-0.19.1-linux-aarch64.AppImage"
+        size: 48400904
+        media_type: "application/vnd.appimage"
+        digest: "sha256:f2ffccb29d0b7c37053fc7bd06bffbf4e2907cb2df2e4f593cf1dfd051e0bd5e"
+      "737372915":
+        name: "gridcraft-0.19.1-freebsd-aarch64.tar.gz"
+        url_suffix: "gridcraft-0.19.1-freebsd-aarch64.tar.gz"
+        size: 49938902
+        media_type: "application/x-gtar"
+        digest: "sha256:362a4954fb0ca04dd4bc89400033a74431dd915359bb75b95221ba29a5b906fd"
+      "737372921":
+        name: "SHA256SUMS.txt.asc"
+        url_suffix: "SHA256SUMS.txt.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:39c9e25bd35ff4a95b4ec35e947c6d1f9121465ed5b426d3f8f99c06c9310701"
+      "737372922":
+        name: "SHA256SUMS.txt"
+        url_suffix: "SHA256SUMS.txt"
+        size: 5076
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:c932e2d2df29a2b182e90b373ef25dd70436ffe22d0b39ebb432fc3fbb565ff6"
+      "737372952":
+        name: "gridcraft-0.19.1-linux-aarch64.AppImage.asc"
+        url_suffix: "gridcraft-0.19.1-linux-aarch64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:ef781a697baa995ec8ce08c3d68043b400acec66b2e3266432c0c4d8b832e3c2"
+      "737372954":
+        name: "gridcraft-0.19.1-linux-aarch64.AppImage.zsync"
+        url_suffix: "gridcraft-0.19.1-linux-aarch64.AppImage.zsync"
+        size: 165687
+        digest: "sha256:8a9f8a87f0430c353dfad05e6e98386a99e068eddf7355389a761a3fcd744610"
+      "737372989":
+        name: "gridcraft-0.19.1-linux-aarch64.AppImage.zsync.asc"
+        url_suffix: "gridcraft-0.19.1-linux-aarch64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8bf93b2c4f2ab14f8a0ae24671b673508abb04c7dc0b1c44de287deb516bcb95"
+      "737372995":
+        name: "gridcraft-0.19.1-linux-aarch64.deb"
+        url_suffix: "gridcraft-0.19.1-linux-aarch64.deb"
+        size: 52200946
+        media_type: "application/x-debian-package"
+        digest: "sha256:e029015bf646f05937f49c4c205fae75aabde73484967580b438a77e144e764f"
+      "737373029":
+        name: "gridcraft-0.19.1-linux-aarch64.deb.asc"
+        url_suffix: "gridcraft-0.19.1-linux-aarch64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:260b7cd6a7dabe60ba4ad57d416712e41370af8a544c19a568402882be39fdca"
+      "737373042":
+        name: "gridcraft-0.19.1-linux-aarch64.flatpak"
+        url_suffix: "gridcraft-0.19.1-linux-aarch64.flatpak"
+        size: 36133456
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:fae8b77cbcc860496e2565df67e35d221e305e1e45375326559fd75b4d2007a0"
+      "737373044":
+        name: "gridcraft-0.19.1-linux-aarch64.flatpak.asc"
+        url_suffix: "gridcraft-0.19.1-linux-aarch64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:774a54e62db821593d5a071211eeb40a2900275304c4054a0734810b2169812f"
+      "737373058":
+        name: "gridcraft-0.19.1-linux-aarch64.oci-manifest.json"
+        url_suffix: "gridcraft-0.19.1-linux-aarch64.oci-manifest.json"
+        size: 493
+        media_type: "application/json"
+        digest: "sha256:890d11ceec9430d772e964ad4246d8f9ea3f651ac9db846a38a3f26a2259fadc"
+      "737373065":
+        name: "gridcraft-0.19.1-linux-aarch64.oci.sig"
+        url_suffix: "gridcraft-0.19.1-linux-aarch64.oci.sig"
+        size: 382
+        media_type: "application/pgp-signature"
+        digest: "sha256:7a3891d755b953f7e912fed11464dac7ed7c0a1488a318c4fe35a8b74d13a8e6"
+      "737373067":
+        name: "gridcraft-0.19.1-linux-aarch64.pkg.tar.zst"
+        url_suffix: "gridcraft-0.19.1-linux-aarch64.pkg.tar.zst"
+        size: 38269417
+        media_type: "application/zstd"
+        digest: "sha256:faa92aff2f9475ee8b7e37e61ef96b95bf5f090ffcaad5c8549551abc9338946"
+      "737373069":
+        name: "gridcraft-0.19.1-linux-aarch64.pkg.tar.zst.sig"
+        url_suffix: "gridcraft-0.19.1-linux-aarch64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:4f1c5da43beb38ee3a0088b7e6964fdeb7efb0931bace3b8cb5f042a6a88a743"
+      "737373076":
+        name: "gridcraft-0.19.1-linux-aarch64.rpm"
+        url_suffix: "gridcraft-0.19.1-linux-aarch64.rpm"
+        size: 51815451
+        media_type: "application/x-rpm"
+        digest: "sha256:fd7ac04f55273281a71579aeeb1a2abd2d9803d41e5b4248c9a6ba183dc2712f"
+      "737373086":
+        name: "gridcraft-0.19.1-linux-aarch64.rpm.asc"
+        url_suffix: "gridcraft-0.19.1-linux-aarch64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:e3b3e4917f5094272c5f8379df369f7e1b96681fda48bdd8e4c2e6e964a7f5dd"
+      "737373096":
+        name: "gridcraft-0.19.1-linux-aarch64.tar.gz"
+        url_suffix: "gridcraft-0.19.1-linux-aarch64.tar.gz"
+        size: 50966013
+        media_type: "application/x-gtar"
+        digest: "sha256:c05373a366e6dded3201380cb82b3a0a137569a1b122d37c1b0ecf01cbd46b75"
+      "737373101":
+        name: "gridcraft-0.19.1-linux-aarch64.tar.gz.asc"
+        url_suffix: "gridcraft-0.19.1-linux-aarch64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:ca4a4dc1cbe06638571e917b8c317971f201d369e240eb80c4bdae25902645b2"
+      "737373102":
+        name: "gridcraft-0.19.1-linux-riscv64.deb"
+        url_suffix: "gridcraft-0.19.1-linux-riscv64.deb"
+        size: 52455940
+        media_type: "application/x-debian-package"
+        digest: "sha256:6f3b23dad6bef711605548ace26bc29c57792cb743d648f05ed84c218755b1e9"
+      "737373138":
+        name: "gridcraft-0.19.1-linux-riscv64.deb.asc"
+        url_suffix: "gridcraft-0.19.1-linux-riscv64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:ccc211c31a55d4bc842fbd3a48275724620b153842c74c531b1e3ebe8a363372"
+      "737373151":
+        name: "gridcraft-0.19.1-linux-riscv64.rpm"
+        url_suffix: "gridcraft-0.19.1-linux-riscv64.rpm"
+        size: 52298152
+        media_type: "application/x-rpm"
+        digest: "sha256:a147ca046ee67c4a7b545e897e31a59552a429c7a38c26d7857e1a0ea3824c44"
+      "737373161":
+        name: "gridcraft-0.19.1-linux-riscv64.rpm.asc"
+        url_suffix: "gridcraft-0.19.1-linux-riscv64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:cf77dd25f2b50c7789ec0f507dc2c5b08365705354baa2acfb32bcc497494df5"
+      "737373193":
+        name: "gridcraft-0.19.1-linux-riscv64.tar.gz"
+        url_suffix: "gridcraft-0.19.1-linux-riscv64.tar.gz"
+        size: 51879583
+        media_type: "application/x-gtar"
+        digest: "sha256:8053db0960d17fbfc2a8cfbb359cf52420f0b0d39bacb2969b545fb1d8cb6a3c"
+      "737373198":
+        name: "gridcraft-0.19.1-linux-riscv64.tar.gz.asc"
+        url_suffix: "gridcraft-0.19.1-linux-riscv64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:7785ae0e35ac02843253bd09cdd534d5ac33de212e76aaca03d52936834ff573"
+      "737373220":
+        name: "gridcraft-0.19.1-linux-x86_64.AppImage"
+        url_suffix: "gridcraft-0.19.1-linux-x86_64.AppImage"
+        size: 50297336
+        media_type: "application/vnd.appimage"
+        digest: "sha256:5b1ce10ad6c7a2d389249dfd259010014a85fce1aa42c627fc4cda571671e221"
+      "737373227":
+        name: "gridcraft-0.19.1-linux-x86_64.AppImage.asc"
+        url_suffix: "gridcraft-0.19.1-linux-x86_64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:1a854bb94ae73b32a0f9150db411f9ade6a82a70c9337e8759aef5218684d1e7"
+      "737373236":
+        name: "gridcraft-0.19.1-linux-x86_64.AppImage.zsync"
+        url_suffix: "gridcraft-0.19.1-linux-x86_64.AppImage.zsync"
+        size: 172167
+        digest: "sha256:5c5cedd024a561fd60f9ff3f62fb4235971bdc046bb93f81ec3cba177a686b12"
+      "737373272":
+        name: "gridcraft-0.19.1-linux-x86_64.AppImage.zsync.asc"
+        url_suffix: "gridcraft-0.19.1-linux-x86_64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d0733a240e1c4a5111e4b6547a313b782dc286cd25b508dbe9267eed88ca56d2"
+      "737373278":
+        name: "gridcraft-0.19.1-linux-x86_64.deb"
+        url_suffix: "gridcraft-0.19.1-linux-x86_64.deb"
+        size: 53695106
+        media_type: "application/x-debian-package"
+        digest: "sha256:3e9b093ee3bed8b1f008ea56c8d60e6a96890e24317be2bbb93e431f3c9d8112"
+      "737373279":
+        name: "gridcraft-0.19.1-linux-x86_64.deb.asc"
+        url_suffix: "gridcraft-0.19.1-linux-x86_64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:7ea9f3b0db3ec351683bd2e7283f94a4177b5fb622b9ac68fc6aec8a59d6089a"
+      "737373288":
+        name: "gridcraft-0.19.1-linux-x86_64.flatpak"
+        url_suffix: "gridcraft-0.19.1-linux-x86_64.flatpak"
+        size: 38604040
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:535289047c3891e5a238feaa186096ca3c0c283cdfde1e0fff72240f5f475d02"
+      "737373292":
+        name: "gridcraft-0.19.1-linux-x86_64.flatpak.asc"
+        url_suffix: "gridcraft-0.19.1-linux-x86_64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:90a7c298c489b12a04303714ded3324a41ab20ec89e86ad452a4321854c02a97"
+      "737373301":
+        name: "gridcraft-0.19.1-linux-x86_64.oci-manifest.json"
+        url_suffix: "gridcraft-0.19.1-linux-x86_64.oci-manifest.json"
+        size: 493
+        media_type: "application/json"
+        digest: "sha256:4a01a7b0e7baeb00b649bb9d370929e040a7b5f39fb32e29456abb61f507274c"
+      "737373313":
+        name: "gridcraft-0.19.1-linux-x86_64.oci.sig"
+        url_suffix: "gridcraft-0.19.1-linux-x86_64.oci.sig"
+        size: 388
+        media_type: "application/pgp-signature"
+        digest: "sha256:633523c12c0fa0611ed19551e7887bdeeeae1e3101ba2a1b1198d61b5f746467"
+      "737373316":
+        name: "gridcraft-0.19.1-linux-x86_64.pkg.tar.zst"
+        url_suffix: "gridcraft-0.19.1-linux-x86_64.pkg.tar.zst"
+        size: 38643788
+        media_type: "application/zstd"
+        digest: "sha256:ab8f44806b81e79ead6d408bf8f9f63bb896330380ec30a71b70359edcf66d44"
+      "737373330":
+        name: "gridcraft-0.19.1-linux-x86_64.pkg.tar.zst.sig"
+        url_suffix: "gridcraft-0.19.1-linux-x86_64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:0e52cfbe9f5481894b5bf2027ab25105abc1cc09f55d445c27f7fff0686f31a3"
+      "737373336":
+        name: "gridcraft-0.19.1-linux-x86_64.rpm"
+        url_suffix: "gridcraft-0.19.1-linux-x86_64.rpm"
+        size: 53406154
+        media_type: "application/x-rpm"
+        digest: "sha256:35f79163cab6d8a3ab2639e1bc6278f7bc9db7720b21c83822e98d086a2ebbba"
+      "737373347":
+        name: "gridcraft-0.19.1-linux-x86_64.rpm.asc"
+        url_suffix: "gridcraft-0.19.1-linux-x86_64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:69d1e1423ec0b5f13c05c0bf497789904e0f00874eab832473a41ed9d849f870"
+      "737373349":
+        name: "gridcraft-0.19.1-linux-x86_64.tar.gz"
+        url_suffix: "gridcraft-0.19.1-linux-x86_64.tar.gz"
+        size: 53007583
+        media_type: "application/x-gtar"
+        digest: "sha256:8d97bba2d5bb00fd69ed55064852c1fd914de40d5ecd55ca01c8df81b828946d"
+      "737373352":
+        name: "gridcraft-0.19.1-linux-x86_64.tar.gz.asc"
+        url_suffix: "gridcraft-0.19.1-linux-x86_64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:97474a06554e13038ed8e0ffafd9a5183e7422a8197955a3725d08734121c425"
+      "737373375":
+        name: "gridcraft-0.19.1-macos-universal.dmg"
+        url_suffix: "gridcraft-0.19.1-macos-universal.dmg"
+        size: 86664178
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:d50165e78b8e35abbe68aa7c6f36c290023dec650d8aa797ac2347a930f6c197"
+      "737373386":
+        name: "gridcraft-0.19.1-windows-arm64-portable.zip"
+        url_suffix: "gridcraft-0.19.1-windows-arm64-portable.zip"
+        size: 50125599
+        media_type: "zip"
+        digest: "sha256:d47a284ebbf12a92880bbb4900277aaf7309ec7c62a9e4d2197484350ad9fdaf"
+      "737373390":
+        name: "gridcraft-0.19.1-windows-arm64.msi"
+        url_suffix: "gridcraft-0.19.1-windows-arm64.msi"
+        size: 39583744
+        media_type: "application/x-msi"
+        digest: "sha256:0abe35b53a9dca7a01070292cb3703ea80894c6541b77f2269b2310977ef1b98"
+      "737373470":
+        name: "gridcraft-0.19.1-windows-x64-portable.zip"
+        url_suffix: "gridcraft-0.19.1-windows-x64-portable.zip"
+        size: 52149109
+        media_type: "zip"
+        digest: "sha256:0b4bf8535f4904fac654326a360ff6d74ea6f4d184a8257c106388fafe74c9ac"
+      "737373487":
+        name: "gridcraft-0.19.1-windows-x64.msi"
+        url_suffix: "gridcraft-0.19.1-windows-x64.msi"
+        size: 41926656
+        media_type: "application/x-msi"
+        digest: "sha256:a6d8532feefeb012167b5adeda39db6ade454a732e2c5b2daf4fe30ce074609c"
+      "737373489":
+        name: "gridcraft-cli-0.19.1-macos-universal.zip"
+        url_suffix: "gridcraft-cli-0.19.1-macos-universal.zip"
+        size: 16006487
+        media_type: "zip"
+        digest: "sha256:7c2895ebad0bbd92b65c622ba7e22ada56e0498065dfdbd433111ba1e225eb8a"
+      "737373568":
+        name: "gridcraft-web-0.19.1.zip"
+        url_suffix: "gridcraft-web-0.19.1.zip"
+        size: 9679862
+        media_type: "zip"
+        digest: "sha256:48c5d1b101befebb3c5ba3b7a14914f01c3207934813ed07dc4251b7ae116a78"
+      "737373606":
         name: "release-signing-key.asc"
         url_suffix: "release-signing-key.asc"
         size: 803

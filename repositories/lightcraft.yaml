@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1398185212
 repository: "storytold/lightcraft"
-collected_at: "2026-11-10T21:14:33Z"
+collected_at: "2026-11-15T11:06:25Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-10T21:14:33Z"
+observed_at: "2026-11-15T11:06:25Z"
 releases:
   "402100015":
     tag: "v0.1.0"
@@ -3935,6 +3935,626 @@ releases:
         media_type: "zip"
         digest: "sha256:720087af36cd56800974012a35badae0d235fc132dc414d1366a52e7f40b783f"
       "727317088":
+        name: "release-signing-key.asc"
+        url_suffix: "release-signing-key.asc"
+        size: 803
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8e6925a173d6a7134118da099948de4d9eeec7c1c0770998aec33c9d3f484740"
+  "442202133":
+    tag: "v0.21.0"
+    title: "LightCraft v0.21.0"
+    url: "https://github.com/storytold/lightcraft/releases/tag/v0.21.0"
+    created_at: "2026-11-11T19:51:13Z"
+    published_at: "2026-11-11T21:33:13Z"
+    updated_at: "2026-11-11T21:33:13Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/storytold/lightcraft/zipball/v0.21.0"
+    source_tar_url: "https://api.github.com/repos/storytold/lightcraft/tarball/v0.21.0"
+    download_base: "https://github.com/storytold/lightcraft/releases/download/v0.21.0/"
+    assets:
+      "736947642":
+        name: "SHA256SUMS.txt.asc"
+        url_suffix: "SHA256SUMS.txt.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:66b730a66df6fc323a3d3db4ae0b0ea8f2b2fcff3a4909a6a4d887cc15829f6b"
+      "736947643":
+        name: "lightcraft-0.21.0-linux-aarch64.AppImage"
+        url_suffix: "lightcraft-0.21.0-linux-aarch64.AppImage"
+        size: 110590472
+        media_type: "application/vnd.appimage"
+        digest: "sha256:026842f690848af3588d2879f4bc8e626bd965462f2fd924e64db9d179e57ab8"
+      "736947646":
+        name: "lightcraft-0.21.0-freebsd-x86_64.tar.gz"
+        url_suffix: "lightcraft-0.21.0-freebsd-x86_64.tar.gz"
+        size: 121886309
+        media_type: "application/x-gtar"
+        digest: "sha256:da8317ce0f04767e5861a456192ee004573bf16b85022cb445824d0d277f43b4"
+      "736947647":
+        name: "lightcraft-0.21.0-freebsd-aarch64.tar.gz"
+        url_suffix: "lightcraft-0.21.0-freebsd-aarch64.tar.gz"
+        size: 116029267
+        media_type: "application/x-gtar"
+        digest: "sha256:fbddf0d8b91f42f455d9d64f661cd9b18601df00eff3abe2dcc25fde8989a8dc"
+      "736947648":
+        name: "SHA256SUMS.txt"
+        url_suffix: "SHA256SUMS.txt"
+        size: 5123
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:f84105abca4f3ff9d3c5f15b6f0f77d9f6464ff030893578b945dbaf33b23d83"
+      "736947666":
+        name: "lightcraft-0.21.0-linux-aarch64.AppImage.asc"
+        url_suffix: "lightcraft-0.21.0-linux-aarch64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:7b99fa39a76c984448de1ca118b67d10d8b6307f807ec9742fb38377cb03b8db"
+      "736947673":
+        name: "lightcraft-0.21.0-linux-aarch64.AppImage.zsync"
+        url_suffix: "lightcraft-0.21.0-linux-aarch64.AppImage.zsync"
+        size: 189252
+        digest: "sha256:72f05910147af7f4b0207f3d1803a95eb985b87450803a49bf4d06561fb95224"
+      "736947692":
+        name: "lightcraft-0.21.0-linux-aarch64.AppImage.zsync.asc"
+        url_suffix: "lightcraft-0.21.0-linux-aarch64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:518831290f0406805842327012e0a34614e9c3b8da09ebc6f70a7723853100b1"
+      "736947695":
+        name: "lightcraft-0.21.0-linux-aarch64.deb"
+        url_suffix: "lightcraft-0.21.0-linux-aarch64.deb"
+        size: 119855320
+        media_type: "application/x-debian-package"
+        digest: "sha256:0031241de69276f83a21e1c810f846e584f6042bddda0a227771bbf14f50a44b"
+      "736947722":
+        name: "lightcraft-0.21.0-linux-aarch64.deb.asc"
+        url_suffix: "lightcraft-0.21.0-linux-aarch64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:3485f1334cbd283495b18e25ca1e79142dd655a2de8fc2d13f070e6b1c4679a2"
+      "736947744":
+        name: "lightcraft-0.21.0-linux-aarch64.flatpak"
+        url_suffix: "lightcraft-0.21.0-linux-aarch64.flatpak"
+        size: 82357472
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:fb1b38ae22eafb2825b71de9d8872a55f96b9d463971c36ae4c74071f0506d0d"
+      "736947799":
+        name: "lightcraft-0.21.0-linux-aarch64.flatpak.asc"
+        url_suffix: "lightcraft-0.21.0-linux-aarch64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:952ba59c38fa9b487473d5507c926086885ceca61d841cba416c5256d62de253"
+      "736947829":
+        name: "lightcraft-0.21.0-linux-aarch64.oci-manifest.json"
+        url_suffix: "lightcraft-0.21.0-linux-aarch64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:efc60479d43b36fd441c743aca636d2be4aa035d78191f7d000091aa7da7dbfc"
+      "736947887":
+        name: "lightcraft-0.21.0-linux-aarch64.oci.sig"
+        url_suffix: "lightcraft-0.21.0-linux-aarch64.oci.sig"
+        size: 383
+        media_type: "application/pgp-signature"
+        digest: "sha256:fe898737d3d061da4499a84bcf5a19cc1412c4a204408f409a266aeeefb9a0b0"
+      "736947896":
+        name: "lightcraft-0.21.0-linux-aarch64.pkg.tar.zst"
+        url_suffix: "lightcraft-0.21.0-linux-aarch64.pkg.tar.zst"
+        size: 91165024
+        media_type: "application/zstd"
+        digest: "sha256:9f5e4e2a57527a0e54039619bb5db67724d442c3af7f3dfabfa992035d86cf9b"
+      "736947924":
+        name: "lightcraft-0.21.0-linux-aarch64.pkg.tar.zst.sig"
+        url_suffix: "lightcraft-0.21.0-linux-aarch64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:f01b5cf2657cffaafa54c89c37eac214887893cf44e20fc0d75e16881435b56b"
+      "736947936":
+        name: "lightcraft-0.21.0-linux-aarch64.rpm"
+        url_suffix: "lightcraft-0.21.0-linux-aarch64.rpm"
+        size: 118991634
+        media_type: "application/x-rpm"
+        digest: "sha256:0c2c6a2780d10afa1914bef497db551b8dea877c3b66ebcda51d4e44e8df2a1c"
+      "736947949":
+        name: "lightcraft-0.21.0-linux-aarch64.rpm.asc"
+        url_suffix: "lightcraft-0.21.0-linux-aarch64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:6aaf9d36a2371a96cbf3ff8838cf50f984d93c4204db7bcb13b5cdf895231666"
+      "736947955":
+        name: "lightcraft-0.21.0-linux-aarch64.tar.gz"
+        url_suffix: "lightcraft-0.21.0-linux-aarch64.tar.gz"
+        size: 116940522
+        media_type: "application/x-gtar"
+        digest: "sha256:23471d75f49814fa734d94a990d1e6c61441aef0403e7b94571b09e9fb18f51b"
+      "736947964":
+        name: "lightcraft-0.21.0-linux-aarch64.tar.gz.asc"
+        url_suffix: "lightcraft-0.21.0-linux-aarch64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:38198ed3850a69c9059e44b5f8cf232f0e1a94a828e497a096d8ebb13dfb0c2e"
+      "736948003":
+        name: "lightcraft-0.21.0-linux-riscv64.deb"
+        url_suffix: "lightcraft-0.21.0-linux-riscv64.deb"
+        size: 120799704
+        media_type: "application/x-debian-package"
+        digest: "sha256:dff9dfed7f8167ae7bbf957d0440f5cfd06e74210925ccfd343d443d144a5e3c"
+      "736948024":
+        name: "lightcraft-0.21.0-linux-riscv64.deb.asc"
+        url_suffix: "lightcraft-0.21.0-linux-riscv64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:372fb01b8791a49858b806aa6f45be799a7232c0203429a5db31a9d0bcd18e3a"
+      "736948052":
+        name: "lightcraft-0.21.0-linux-riscv64.rpm"
+        url_suffix: "lightcraft-0.21.0-linux-riscv64.rpm"
+        size: 120334694
+        media_type: "application/x-rpm"
+        digest: "sha256:6867ef3983085f912a40260eaa0e5e25e0480ef2334bb3539d973b5c4c9d2c7f"
+      "736948111":
+        name: "lightcraft-0.21.0-linux-riscv64.rpm.asc"
+        url_suffix: "lightcraft-0.21.0-linux-riscv64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:3dc2b85822b864b4caa3462236b8078e552295ee9bf2407cdc2aa1a9a783f5f8"
+      "736948141":
+        name: "lightcraft-0.21.0-linux-riscv64.tar.gz"
+        url_suffix: "lightcraft-0.21.0-linux-riscv64.tar.gz"
+        size: 119220706
+        media_type: "application/x-gtar"
+        digest: "sha256:2c2c7284c6409b3a3f9e84b0681b69c4709fbf2622b661bc90a7056759c1edfb"
+      "736948181":
+        name: "lightcraft-0.21.0-linux-riscv64.tar.gz.asc"
+        url_suffix: "lightcraft-0.21.0-linux-riscv64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:26922dd01a22e0cca5a555d88a364db623fa761b79e65359a0876a24a65f55d2"
+      "736948183":
+        name: "lightcraft-0.21.0-linux-x86_64.AppImage"
+        url_suffix: "lightcraft-0.21.0-linux-x86_64.AppImage"
+        size: 115657208
+        media_type: "application/vnd.appimage"
+        digest: "sha256:c3dea6f5c75b55d8023937c0965b5b7612533131da7d56e550a4ef0688faf1d6"
+      "736948198":
+        name: "lightcraft-0.21.0-linux-x86_64.AppImage.zsync"
+        url_suffix: "lightcraft-0.21.0-linux-x86_64.AppImage.zsync"
+        size: 197909
+        digest: "sha256:c9ff6d63521af0c4322babdd0e00ab900cce05a10e969fa41e248b0c5e16443e"
+      "736948202":
+        name: "lightcraft-0.21.0-linux-x86_64.AppImage.asc"
+        url_suffix: "lightcraft-0.21.0-linux-x86_64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:9bfe3ca6d9ada13f0566cf154f45c881455376d838e3fa25234ec3d5f14efe6e"
+      "736948222":
+        name: "lightcraft-0.21.0-linux-x86_64.AppImage.zsync.asc"
+        url_suffix: "lightcraft-0.21.0-linux-x86_64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:1f993b9138afe66786d966c7966580607b191f5b89690ee7b24b263b0d8b5069"
+      "736948224":
+        name: "lightcraft-0.21.0-linux-x86_64.deb"
+        url_suffix: "lightcraft-0.21.0-linux-x86_64.deb"
+        size: 124344178
+        media_type: "application/x-debian-package"
+        digest: "sha256:07e46260fdd109f732d0a0dbb53f018cf903f11a99fd6a4d84f042724ebe4725"
+      "736948238":
+        name: "lightcraft-0.21.0-linux-x86_64.deb.asc"
+        url_suffix: "lightcraft-0.21.0-linux-x86_64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:98bfa3d106444dfaa9db78c7431eddca9688633e9672de1aa1395aeb82290969"
+      "736948246":
+        name: "lightcraft-0.21.0-linux-x86_64.flatpak"
+        url_suffix: "lightcraft-0.21.0-linux-x86_64.flatpak"
+        size: 87955720
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:fb64b5ef2573780bafffb3bca48cd568f4717cf1ed3f4a9fcfb128c5489e3166"
+      "736948253":
+        name: "lightcraft-0.21.0-linux-x86_64.flatpak.asc"
+        url_suffix: "lightcraft-0.21.0-linux-x86_64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:13f259223e448aa5c00da0d3196a54fafba1d4a1e0cddc84e0ea2f53c72ca08d"
+      "736948291":
+        name: "lightcraft-0.21.0-linux-x86_64.oci-manifest.json"
+        url_suffix: "lightcraft-0.21.0-linux-x86_64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:6c17ca9f9cd4da89305dd1af0527e20704a7b405878613dba3445bc5edf07ea3"
+      "736948318":
+        name: "lightcraft-0.21.0-linux-x86_64.oci.sig"
+        url_suffix: "lightcraft-0.21.0-linux-x86_64.oci.sig"
+        size: 389
+        media_type: "application/pgp-signature"
+        digest: "sha256:195a13efeb72bdc393497150544e86854a93cfc6f3cd6538ee6817ae28ec2fbf"
+      "736948330":
+        name: "lightcraft-0.21.0-linux-x86_64.pkg.tar.zst"
+        url_suffix: "lightcraft-0.21.0-linux-x86_64.pkg.tar.zst"
+        size: 94961797
+        media_type: "application/zstd"
+        digest: "sha256:8a953bf0bbfc9dfcc405358aa462909494bf8aca5848ac56e8c36d9a6b258d7c"
+      "736948341":
+        name: "lightcraft-0.21.0-linux-x86_64.pkg.tar.zst.sig"
+        url_suffix: "lightcraft-0.21.0-linux-x86_64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:007a5b808b4627a811ba855aafd28f594f6313a86e9d7af29a660a7afebba61b"
+      "736948360":
+        name: "lightcraft-0.21.0-linux-x86_64.rpm"
+        url_suffix: "lightcraft-0.21.0-linux-x86_64.rpm"
+        size: 123624399
+        media_type: "application/x-rpm"
+        digest: "sha256:088d7542ef7111439928d39fcfb62558e2a918e81944293882d128c24d85571b"
+      "736948368":
+        name: "lightcraft-0.21.0-linux-x86_64.rpm.asc"
+        url_suffix: "lightcraft-0.21.0-linux-x86_64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:7eb0d8d5055a86b15544fb8f5165b350d6c8fa6c4818bb61a9ba6fc706ff2bba"
+      "736948380":
+        name: "lightcraft-0.21.0-linux-x86_64.tar.gz"
+        url_suffix: "lightcraft-0.21.0-linux-x86_64.tar.gz"
+        size: 122561046
+        media_type: "application/x-gtar"
+        digest: "sha256:7e7da553dea100268a058f135c7c4ad1f4fb76b4d8242e14f70f16ed89259580"
+      "736948398":
+        name: "lightcraft-0.21.0-linux-x86_64.tar.gz.asc"
+        url_suffix: "lightcraft-0.21.0-linux-x86_64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:a5219afd81d8e98309232d74fc47af0782a886d1904c949247c9cd2a765ef9b6"
+      "736948426":
+        name: "lightcraft-0.21.0-macos-universal.dmg"
+        url_suffix: "lightcraft-0.21.0-macos-universal.dmg"
+        size: 127258006
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:dd3cd5b54df0d7d7a457e00f3fad7e550813d4df8a8cdaa1a6bdcf7021fb2b3d"
+      "736948459":
+        name: "lightcraft-0.21.0-windows-arm64-portable.zip"
+        url_suffix: "lightcraft-0.21.0-windows-arm64-portable.zip"
+        size: 117829475
+        media_type: "zip"
+        digest: "sha256:a0bb4cee17ec5e0bffff29c1f70ea79722bd2660d758417a8aa485e2828153ce"
+      "736948577":
+        name: "lightcraft-0.21.0-windows-arm64.msi"
+        url_suffix: "lightcraft-0.21.0-windows-arm64.msi"
+        size: 95682560
+        media_type: "application/x-msi"
+        digest: "sha256:183affa845c584578367d05cad767bfb6d0d925adf5072a71e2bf8036a0d688b"
+      "736948598":
+        name: "lightcraft-0.21.0-windows-x64-portable.zip"
+        url_suffix: "lightcraft-0.21.0-windows-x64-portable.zip"
+        size: 122886896
+        media_type: "zip"
+        digest: "sha256:4ed5ef94c357c5af60d4f52ba338331c4bbdeaee94ddd30beb09e7761ee74c57"
+      "736948610":
+        name: "lightcraft-0.21.0-windows-x64.msi"
+        url_suffix: "lightcraft-0.21.0-windows-x64.msi"
+        size: 99975168
+        media_type: "application/x-msi"
+        digest: "sha256:e900ac8e70b2212c71b85190e4e1f75111e48c4f776b28d93963eac5c807d7ef"
+      "736948688":
+        name: "lightcraft-cli-0.21.0-macos-universal.zip"
+        url_suffix: "lightcraft-cli-0.21.0-macos-universal.zip"
+        size: 121466894
+        media_type: "zip"
+        digest: "sha256:7a974c00254d2a909fc3c63133fd78ae16ad2ab5039a1269858eb50a53e0ebca"
+      "736948710":
+        name: "lightcraft-web-0.21.0.zip"
+        url_suffix: "lightcraft-web-0.21.0.zip"
+        size: 74571781
+        media_type: "zip"
+        digest: "sha256:5d032efb28c2859ac86e72ff592b5dcef8014dd63a7a9744d952e291e7c7f63f"
+      "736948770":
+        name: "release-signing-key.asc"
+        url_suffix: "release-signing-key.asc"
+        size: 803
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8e6925a173d6a7134118da099948de4d9eeec7c1c0770998aec33c9d3f484740"
+  "442458936":
+    tag: "v0.21.1"
+    title: "LightCraft v0.21.1"
+    url: "https://github.com/storytold/lightcraft/releases/tag/v0.21.1"
+    created_at: "2026-11-12T02:55:05Z"
+    published_at: "2026-11-12T05:08:23Z"
+    updated_at: "2026-11-12T05:08:23Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/storytold/lightcraft/zipball/v0.21.1"
+    source_tar_url: "https://api.github.com/repos/storytold/lightcraft/tarball/v0.21.1"
+    download_base: "https://github.com/storytold/lightcraft/releases/download/v0.21.1/"
+    assets:
+      "737896298":
+        name: "lightcraft-0.21.1-freebsd-aarch64.tar.gz"
+        url_suffix: "lightcraft-0.21.1-freebsd-aarch64.tar.gz"
+        size: 116026086
+        media_type: "application/x-gtar"
+        digest: "sha256:d15851e4495a02fd4ef34be0bd8657b976a7c9f12e02d30ca3fed3319af10c9b"
+      "737896303":
+        name: "lightcraft-0.21.1-freebsd-x86_64.tar.gz"
+        url_suffix: "lightcraft-0.21.1-freebsd-x86_64.tar.gz"
+        size: 121884242
+        media_type: "application/x-gtar"
+        digest: "sha256:60da6d6905545c20e78632e2525ff8f543de16d45dbce6c3921ce264ee96bf56"
+      "737896304":
+        name: "SHA256SUMS.txt"
+        url_suffix: "SHA256SUMS.txt"
+        size: 5123
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:ae822d2f689bd1ec616895f62e32852446a4149828e858a7d35f5a4fdbd63c41"
+      "737896307":
+        name: "SHA256SUMS.txt.asc"
+        url_suffix: "SHA256SUMS.txt.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:2156d03d05fded2edbd01e816dae4c230300c989c738cd0d90ccb2f79ca49eca"
+      "737896308":
+        name: "lightcraft-0.21.1-linux-aarch64.AppImage"
+        url_suffix: "lightcraft-0.21.1-linux-aarch64.AppImage"
+        size: 110561800
+        media_type: "application/vnd.appimage"
+        digest: "sha256:b446816baa6bc41501e9e705c6e757a859bc103a6348aec13e838cb376dc6e22"
+      "737896334":
+        name: "lightcraft-0.21.1-linux-aarch64.AppImage.zsync"
+        url_suffix: "lightcraft-0.21.1-linux-aarch64.AppImage.zsync"
+        size: 189203
+        digest: "sha256:00e2dd85cc4ba5b39e5057608db718b4a445fe1b20753d422bdf1c55d37e7e49"
+      "737896336":
+        name: "lightcraft-0.21.1-linux-aarch64.AppImage.asc"
+        url_suffix: "lightcraft-0.21.1-linux-aarch64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:b8dcf9592284f0960de4f2f1214e2bfe6a9e22d99ae227530e5754555c6b83bd"
+      "737896360":
+        name: "lightcraft-0.21.1-linux-aarch64.AppImage.zsync.asc"
+        url_suffix: "lightcraft-0.21.1-linux-aarch64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:085526d1d23fb0a0a9c20d420bf133ed4012159fff5af0e034ec372777b53552"
+      "737896369":
+        name: "lightcraft-0.21.1-linux-aarch64.deb"
+        url_suffix: "lightcraft-0.21.1-linux-aarch64.deb"
+        size: 119870256
+        media_type: "application/x-debian-package"
+        digest: "sha256:815f9b7ea3fc96b2dc9cac5934f299ceab349b8ba95d7daf9c40543ae1e8437c"
+      "737896395":
+        name: "lightcraft-0.21.1-linux-aarch64.deb.asc"
+        url_suffix: "lightcraft-0.21.1-linux-aarch64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:bb1628fe4c6af19757c93e43ab74e43432671c64c5f409ddace26a34980b821a"
+      "737896421":
+        name: "lightcraft-0.21.1-linux-aarch64.flatpak"
+        url_suffix: "lightcraft-0.21.1-linux-aarch64.flatpak"
+        size: 82664608
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:fe835c300dd1495a843da5529a57fbb9e6116f0e7a65828c1fdf4ae87e4e92e6"
+      "737896576":
+        name: "lightcraft-0.21.1-linux-aarch64.flatpak.asc"
+        url_suffix: "lightcraft-0.21.1-linux-aarch64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d38cb0fbd067f21fa089e8e2ee2df3ceb89683aa6f6b883869414469ff146b29"
+      "737896599":
+        name: "lightcraft-0.21.1-linux-aarch64.oci-manifest.json"
+        url_suffix: "lightcraft-0.21.1-linux-aarch64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:0d7c59956d4c02728c5360599e79df29ad12957bec5f7dfb8ac28760c6f21dc9"
+      "737896622":
+        name: "lightcraft-0.21.1-linux-aarch64.pkg.tar.zst"
+        url_suffix: "lightcraft-0.21.1-linux-aarch64.pkg.tar.zst"
+        size: 91525499
+        media_type: "application/zstd"
+        digest: "sha256:97b1f980cbaa0ff57519822f145bd7c31dadafd6d2d1d1970168e504af5843f9"
+      "737896623":
+        name: "lightcraft-0.21.1-linux-aarch64.oci.sig"
+        url_suffix: "lightcraft-0.21.1-linux-aarch64.oci.sig"
+        size: 386
+        media_type: "application/pgp-signature"
+        digest: "sha256:9a0b595a5860265bd1e055e334155d0caba9b84bc05b3ba722f683e569218aae"
+      "737896635":
+        name: "lightcraft-0.21.1-linux-aarch64.pkg.tar.zst.sig"
+        url_suffix: "lightcraft-0.21.1-linux-aarch64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:adbb9efa4a8d0f8d71694987122e092c75b02dc177e7eb05619f29746e6c3ff8"
+      "737896641":
+        name: "lightcraft-0.21.1-linux-aarch64.rpm"
+        url_suffix: "lightcraft-0.21.1-linux-aarch64.rpm"
+        size: 118997760
+        media_type: "application/x-rpm"
+        digest: "sha256:7cf846d291cfe0790a3b910517ca8b56bcf76e4a010d4277c99d8fc2a1dd455c"
+      "737896649":
+        name: "lightcraft-0.21.1-linux-aarch64.rpm.asc"
+        url_suffix: "lightcraft-0.21.1-linux-aarch64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:e4ae1ac513f524dfb3d870685d6c272183bb083aef0f0aeb0527be7ae441768e"
+      "737896655":
+        name: "lightcraft-0.21.1-linux-aarch64.tar.gz"
+        url_suffix: "lightcraft-0.21.1-linux-aarch64.tar.gz"
+        size: 116958383
+        media_type: "application/x-gtar"
+        digest: "sha256:ae8c557ef7028cbfaefe105c27c30cef9490d25c199803c3f1cbe072bc39d7b6"
+      "737896686":
+        name: "lightcraft-0.21.1-linux-aarch64.tar.gz.asc"
+        url_suffix: "lightcraft-0.21.1-linux-aarch64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:4830224229fcdf0dc63eb9c46cedb309ab2036472eca51656e9f62e64767dd6f"
+      "737896698":
+        name: "lightcraft-0.21.1-linux-riscv64.deb"
+        url_suffix: "lightcraft-0.21.1-linux-riscv64.deb"
+        size: 120788414
+        media_type: "application/x-debian-package"
+        digest: "sha256:fd7b41ec586f753d72e4cf7559f6f41ee59d1dc83dde75f8dea74cdbebd93343"
+      "737896707":
+        name: "lightcraft-0.21.1-linux-riscv64.deb.asc"
+        url_suffix: "lightcraft-0.21.1-linux-riscv64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:9f79d35d014b4daa63045569af871324d32c25ac79ef8cd2d210f872ba365d58"
+      "737896727":
+        name: "lightcraft-0.21.1-linux-riscv64.rpm"
+        url_suffix: "lightcraft-0.21.1-linux-riscv64.rpm"
+        size: 120332442
+        media_type: "application/x-rpm"
+        digest: "sha256:b27cd8b3e63eda945df2989534cbd9cd7cf0cd339fe8a86c3376c69128b9de15"
+      "737896883":
+        name: "lightcraft-0.21.1-linux-riscv64.rpm.asc"
+        url_suffix: "lightcraft-0.21.1-linux-riscv64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:289011a6f0e04d67899a745989ee89344c8abca63768eca63114bf4d475be3af"
+      "737896903":
+        name: "lightcraft-0.21.1-linux-riscv64.tar.gz"
+        url_suffix: "lightcraft-0.21.1-linux-riscv64.tar.gz"
+        size: 119202780
+        media_type: "application/x-gtar"
+        digest: "sha256:949c0d2c221a47314916c937072b4210b045bcf145d7b973459f1c26db3a42a4"
+      "737896909":
+        name: "lightcraft-0.21.1-linux-riscv64.tar.gz.asc"
+        url_suffix: "lightcraft-0.21.1-linux-riscv64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:b00923db608a2362325f54fb29e653ac08da8ecd054f0abf779485977ab9ed92"
+      "737896930":
+        name: "lightcraft-0.21.1-linux-x86_64.AppImage"
+        url_suffix: "lightcraft-0.21.1-linux-x86_64.AppImage"
+        size: 115673592
+        media_type: "application/vnd.appimage"
+        digest: "sha256:c4212da22777a0000d9eb66c85b7865e9e9911f47a60207d7852b7c063ada8a9"
+      "737896939":
+        name: "lightcraft-0.21.1-linux-x86_64.AppImage.asc"
+        url_suffix: "lightcraft-0.21.1-linux-x86_64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:012748795f9e7b8dc59e74674b9a8337cdea15914cee22c123b44fcac70721dc"
+      "737896942":
+        name: "lightcraft-0.21.1-linux-x86_64.AppImage.zsync"
+        url_suffix: "lightcraft-0.21.1-linux-x86_64.AppImage.zsync"
+        size: 197937
+        digest: "sha256:dbae6577e024d991dc1cde31d4709ce7231192b4adbfe82b417a68262e6c0e16"
+      "737896969":
+        name: "lightcraft-0.21.1-linux-x86_64.AppImage.zsync.asc"
+        url_suffix: "lightcraft-0.21.1-linux-x86_64.AppImage.zsync.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:ff9c04a9e09ffa8394db1bdb73b01f3c6caef3707e3d2802d0b80e35defbd734"
+      "737896973":
+        name: "lightcraft-0.21.1-linux-x86_64.deb"
+        url_suffix: "lightcraft-0.21.1-linux-x86_64.deb"
+        size: 124351728
+        media_type: "application/x-debian-package"
+        digest: "sha256:c91ef47bec44995d99ce58e6c748af9fa6ab1ff1c11de9e290e0b8231176dad1"
+      "737896991":
+        name: "lightcraft-0.21.1-linux-x86_64.deb.asc"
+        url_suffix: "lightcraft-0.21.1-linux-x86_64.deb.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:caaf246795ef7ca03c5d47b1bbd1b7e10cacdd2a950ca985491027b85def892f"
+      "737897023":
+        name: "lightcraft-0.21.1-linux-x86_64.flatpak"
+        url_suffix: "lightcraft-0.21.1-linux-x86_64.flatpak"
+        size: 87712072
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:3a9aeb896dfb7b8ba1f6c86e7733912fb7aedf29b1a99eee8fe95839951f769c"
+      "737897034":
+        name: "lightcraft-0.21.1-linux-x86_64.flatpak.asc"
+        url_suffix: "lightcraft-0.21.1-linux-x86_64.flatpak.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:026bb86b50c6d3b32bf1d3665726f9bc860773caeef6907ae947e78f689423dc"
+      "737897062":
+        name: "lightcraft-0.21.1-linux-x86_64.oci-manifest.json"
+        url_suffix: "lightcraft-0.21.1-linux-x86_64.oci-manifest.json"
+        size: 494
+        media_type: "application/json"
+        digest: "sha256:86bc65d80bf367aef0399876640fb78bc02bd8c743d3a9e383335345621c41f1"
+      "737897089":
+        name: "lightcraft-0.21.1-linux-x86_64.oci.sig"
+        url_suffix: "lightcraft-0.21.1-linux-x86_64.oci.sig"
+        size: 382
+        media_type: "application/pgp-signature"
+        digest: "sha256:92982df39dc2f63dc409ceaf8e93390eba7c9bd3b57b86bf2473140f0616c1ea"
+      "737897112":
+        name: "lightcraft-0.21.1-linux-x86_64.pkg.tar.zst"
+        url_suffix: "lightcraft-0.21.1-linux-x86_64.pkg.tar.zst"
+        size: 94672688
+        media_type: "application/zstd"
+        digest: "sha256:84c8ac2a29611665f7e4b1078b7b1503b0564225f4ab1285448963aa92f4fec0"
+      "737897176":
+        name: "lightcraft-0.21.1-linux-x86_64.pkg.tar.zst.sig"
+        url_suffix: "lightcraft-0.21.1-linux-x86_64.pkg.tar.zst.sig"
+        size: 119
+        media_type: "application/pgp-signature"
+        digest: "sha256:bc328a97e2e88c973964d3b4ffc7cf2c42884b0d775b5e03ce1531ede89182a9"
+      "737897177":
+        name: "lightcraft-0.21.1-linux-x86_64.rpm"
+        url_suffix: "lightcraft-0.21.1-linux-x86_64.rpm"
+        size: 123629139
+        media_type: "application/x-rpm"
+        digest: "sha256:7867ec9d1a6ea42aec6e2bccc5bd8119b0500bef706ff190a3da4162656f7825"
+      "737897204":
+        name: "lightcraft-0.21.1-linux-x86_64.rpm.asc"
+        url_suffix: "lightcraft-0.21.1-linux-x86_64.rpm.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:0537b79c9db0842fc06c46606c9aeba1d4e0c72953c0771084f5d1da0d3ee45a"
+      "737897211":
+        name: "lightcraft-0.21.1-linux-x86_64.tar.gz"
+        url_suffix: "lightcraft-0.21.1-linux-x86_64.tar.gz"
+        size: 122565778
+        media_type: "application/x-gtar"
+        digest: "sha256:b123de16915809a79e64ba4ee3aee9e1cded6ef23b737c06f81cdc7e2f286d62"
+      "737897227":
+        name: "lightcraft-0.21.1-linux-x86_64.tar.gz.asc"
+        url_suffix: "lightcraft-0.21.1-linux-x86_64.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:3222b47d2281a67ad5f8e0780a890c5caf7bafbdcfdf9cb4fdf8b87b28691f92"
+      "737897229":
+        name: "lightcraft-0.21.1-macos-universal.dmg"
+        url_suffix: "lightcraft-0.21.1-macos-universal.dmg"
+        size: 127261345
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:b70f46cac01390154c9adfa06822e6691b95fc270c507b0ed220a00dc588bb1e"
+      "737897244":
+        name: "lightcraft-0.21.1-windows-arm64-portable.zip"
+        url_suffix: "lightcraft-0.21.1-windows-arm64-portable.zip"
+        size: 117844886
+        media_type: "zip"
+        digest: "sha256:ba7af25ccb555f72747c5b52c57518e57c45e846de19267a3633acabc8d5976f"
+      "737897288":
+        name: "lightcraft-0.21.1-windows-arm64.msi"
+        url_suffix: "lightcraft-0.21.1-windows-arm64.msi"
+        size: 95531008
+        media_type: "application/x-msi"
+        digest: "sha256:0b5ffa35171b8433af7d9112b2e1be7e87996b8e4222eb10859541f336061459"
+      "737897418":
+        name: "lightcraft-0.21.1-windows-x64-portable.zip"
+        url_suffix: "lightcraft-0.21.1-windows-x64-portable.zip"
+        size: 122883614
+        media_type: "zip"
+        digest: "sha256:c2f195a4611bd7a314675c090b71e46e14001a232ba825edd5b6ea0ea7f616da"
+      "737897515":
+        name: "lightcraft-0.21.1-windows-x64.msi"
+        url_suffix: "lightcraft-0.21.1-windows-x64.msi"
+        size: 99999744
+        media_type: "application/x-msi"
+        digest: "sha256:16b8f4e12c93120b2db5a5f567798d1d1f33e2f55ddee901f1c8c0f072558a25"
+      "737897537":
+        name: "lightcraft-cli-0.21.1-macos-universal.zip"
+        url_suffix: "lightcraft-cli-0.21.1-macos-universal.zip"
+        size: 121480540
+        media_type: "zip"
+        digest: "sha256:58086b9d224d02b5ec9ed08e76da04ba1dc5d51d3c285cdea417358fa7ea06e2"
+      "737897561":
+        name: "lightcraft-web-0.21.1.zip"
+        url_suffix: "lightcraft-web-0.21.1.zip"
+        size: 74569049
+        media_type: "zip"
+        digest: "sha256:57147383a46eaab3b0cc036acf9443b221450c6a19f5dc303ae165bb9678b8cb"
+      "737897565":
         name: "release-signing-key.asc"
         url_suffix: "release-signing-key.asc"
         size: 803

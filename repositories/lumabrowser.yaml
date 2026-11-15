@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1412027069
 repository: "amurgola/LumaBrowser"
-collected_at: "2026-11-10T21:15:45Z"
+collected_at: "2026-11-15T11:07:12Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-10T21:15:45Z"
+observed_at: "2026-11-15T11:07:12Z"
 releases:
   "408391656":
     tag: "v2.0.0"
@@ -1722,3 +1722,700 @@ releases:
         url_suffix: "LumaBrowser-2.1.4-portable.exe"
         size: 152556565
         digest: "sha256:075a99d990434a5fab38fce92192f17bb6d160637acd183c2190e3b6a1dce60e"
+  "441321574":
+    tag: "v2.1.5"
+    title: "Better model grouping, Minimax h3 image improvements, and fixing a regression regarding long conversations and tool calling history"
+    url: "https://github.com/amurgola/LumaBrowser/releases/tag/v2.1.5"
+    created_at: "2026-11-11T06:44:09Z"
+    published_at: "2026-11-11T06:45:45Z"
+    updated_at: "2026-11-11T07:01:25Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/amurgola/LumaBrowser/zipball/v2.1.5"
+    source_tar_url: "https://api.github.com/repos/amurgola/LumaBrowser/tarball/v2.1.5"
+    download_base: "https://github.com/amurgola/LumaBrowser/releases/download/v2.1.5/"
+    assets:
+      "734504285":
+        name: "LumaBrowser.Setup.2.1.5-arm64.exe"
+        url_suffix: "LumaBrowser.Setup.2.1.5-arm64.exe"
+        size: 143020052
+        digest: "sha256:9d4c72682b8d67fad97dc9a63a03389f062b05a9acf2750408f900b8779fb5df"
+      "734504287":
+        name: "LumaBrowser-2.1.5.AppImage"
+        url_suffix: "LumaBrowser-2.1.5.AppImage"
+        size: 184569740
+        media_type: "application/vnd.appimage"
+        digest: "sha256:395e0d3802eb5847e037fb93f5df0664d26fe9315da1c365071b5d2b61426cd0"
+      "734504291":
+        name: "latest-linux.yml"
+        url_suffix: "latest-linux.yml"
+        size: 727
+        media_type: "application/yaml"
+        digest: "sha256:cb60ab92890592a277b04f016bd789df97528e144f6a5702930a7862c249093b"
+      "734504292":
+        name: "LumaBrowser.Setup.2.1.5-arm64.exe.blockmap"
+        url_suffix: "LumaBrowser.Setup.2.1.5-arm64.exe.blockmap"
+        size: 149748
+        digest: "sha256:9b405a2965bb523bdbec2ba4bda339e0287d55bc0d1b5b287e2c2c5742e85f68"
+      "734504293":
+        name: "LumaBrowser-2.1.5-arm64-portable.exe"
+        url_suffix: "LumaBrowser-2.1.5-arm64-portable.exe"
+        size: 142776635
+        digest: "sha256:b3d88dd34dfd78438613479feb9b3ea90498d61516752b07ba1f9161b09e5524"
+      "734504326":
+        name: "latest-mac.yml"
+        url_suffix: "latest-mac.yml"
+        size: 712
+        media_type: "application/yaml"
+        digest: "sha256:6a24bedd48ee299e03042ff20b447b1f8323cb3a17d600da8dcc2aed02fdc24b"
+      "734504338":
+        name: "LumaBrowser-2.1.5-arm64-mac.zip.blockmap"
+        url_suffix: "LumaBrowser-2.1.5-arm64-mac.zip.blockmap"
+        size: 177424
+        digest: "sha256:a8352f4dcdd54a944c3303d3c87bc23d0c99c8d23f6dfa3696343eed90da9d22"
+      "734504355":
+        name: "LumaBrowser-2.1.5-arm64.dmg.blockmap"
+        url_suffix: "LumaBrowser-2.1.5-arm64.dmg.blockmap"
+        size: 182390
+        digest: "sha256:78f7e1c69a725c1ceab764e94537a3bcecf349adcd191342a5b9172fd551299c"
+      "734504365":
+        name: "LumaBrowser-2.1.5-arm64-mac.zip"
+        url_suffix: "LumaBrowser-2.1.5-arm64-mac.zip"
+        size: 167950251
+        media_type: "zip"
+        digest: "sha256:c04983cb96b4c98d0d37274321295a2c4aa979fcead7f20a5aa40692a3c3ddfa"
+      "734504373":
+        name: "LumaBrowser-2.1.5-arm64.dmg"
+        url_suffix: "LumaBrowser-2.1.5-arm64.dmg"
+        size: 174323106
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:7baefd468b68c026cda5bda63a09982c2c30d43541e91278dc5eb2030fdd105f"
+      "734504720":
+        name: "index.json"
+        url_suffix: "index.json"
+        size: 3297
+        media_type: "application/json"
+        digest: "sha256:6b9d01d714c88ef535be294e88b220be8699ff704a1c1fdd592bb24c1338377d"
+      "734504729":
+        name: "ninfer-runtime.zip"
+        url_suffix: "ninfer-runtime.zip"
+        size: 21657
+        media_type: "zip"
+        digest: "sha256:510cc72bcd4e4f6d80eb08882898b5a9eb97f79e08be9b65ed8f272d52b9a4f0"
+      "734504743":
+        name: "chatterbox-voice.zip"
+        url_suffix: "chatterbox-voice.zip"
+        size: 37555
+        media_type: "zip"
+        digest: "sha256:00304448d88890114d29b64f8b9ec22a41a43a346dad8cf48ab9cecf86650550"
+      "734504746":
+        name: "ik-llama-runtime.zip"
+        url_suffix: "ik-llama-runtime.zip"
+        size: 6252
+        media_type: "zip"
+        digest: "sha256:5d5083b4cb9dd1bcc8dec949e321ae13b35a6b0e74b5471f4bb3f46c6cb2812b"
+      "734504762":
+        name: "anima-model.zip"
+        url_suffix: "anima-model.zip"
+        size: 2756
+        media_type: "zip"
+        digest: "sha256:65eae851dcd65ad732e51e4ca1c35dd4e97a035d086cafcc4e9b80ed000701d2"
+      "734504772":
+        name: "roleplay-mode.zip"
+        url_suffix: "roleplay-mode.zip"
+        size: 252702
+        media_type: "zip"
+        digest: "sha256:09f4fe0cc64055584e646e4f650f50e514d4bf37129593a8a53258afdeb512b9"
+      "734504777":
+        name: "tab-share.zip"
+        url_suffix: "tab-share.zip"
+        size: 40637
+        media_type: "zip"
+        digest: "sha256:0b77054cbe767f63355ec8542ab4c1846310cec180d38d14209270a447095d4e"
+      "734504779":
+        name: "LumaBrowser-2.1.5-portable.exe"
+        url_suffix: "LumaBrowser-2.1.5-portable.exe"
+        size: 152599510
+        digest: "sha256:7ec437fb76b9e2d9460a97af4ee66c70f928fd22ad9a169fefabeccb5fbcd905"
+      "734504788":
+        name: "latest.yml"
+        url_suffix: "latest.yml"
+        size: 710
+        media_type: "application/yaml"
+        digest: "sha256:6d43f348a6271b59e29951a02eefa2636e20508d3c9ea8a25d1435069e391ebe"
+      "734504801":
+        name: "LumaBrowser.Setup.2.1.5.exe"
+        url_suffix: "LumaBrowser.Setup.2.1.5.exe"
+        size: 152843476
+        digest: "sha256:2abfa2d9182edcfbb855fbabcd26408c677bd7e40b495100f5521fb53a0c6383"
+      "734504810":
+        name: "LumaBrowser.Setup.2.1.5.exe.blockmap"
+        url_suffix: "LumaBrowser.Setup.2.1.5.exe.blockmap"
+        size: 161320
+        digest: "sha256:e5c556516a8bcd385dfde775570ac75ede7964fc4ba5f7d904989fe6c27e4e79"
+  "441808616":
+    tag: "v2.1.6"
+    title: "More updates to better handle context growth in longer conversations..."
+    url: "https://github.com/amurgola/LumaBrowser/releases/tag/v2.1.6"
+    created_at: "2026-11-11T14:31:53Z"
+    published_at: "2026-11-11T14:32:52Z"
+    updated_at: "2026-11-11T17:08:13Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/amurgola/LumaBrowser/zipball/v2.1.6"
+    source_tar_url: "https://api.github.com/repos/amurgola/LumaBrowser/tarball/v2.1.6"
+    download_base: "https://github.com/amurgola/LumaBrowser/releases/download/v2.1.6/"
+    assets:
+      "736257742":
+        name: "LumaBrowser-2.1.6-arm64-portable.exe"
+        url_suffix: "LumaBrowser-2.1.6-arm64-portable.exe"
+        size: 142785164
+        digest: "sha256:59c65ba7ab071c35892d1f54fe130a29e32f1bb73cb58af6d99137098ce9817c"
+      "736257743":
+        name: "LumaBrowser.Setup.2.1.6-arm64.exe.blockmap"
+        url_suffix: "LumaBrowser.Setup.2.1.6-arm64.exe.blockmap"
+        size: 149875
+        digest: "sha256:92b1042b382b9ed24f397c95d61f8815bda783345fc667a70b27b414a964c446"
+      "736257747":
+        name: "LumaBrowser-2.1.6.AppImage"
+        url_suffix: "LumaBrowser-2.1.6.AppImage"
+        size: 184578176
+        media_type: "application/vnd.appimage"
+        digest: "sha256:86ee4f0dfda9fc3623df5f040200c5f0bfdc0f306b7903389ecb69e12fb275ea"
+      "736257751":
+        name: "latest-linux.yml"
+        url_suffix: "latest-linux.yml"
+        size: 727
+        media_type: "application/yaml"
+        digest: "sha256:752c22cda02061999c3059a736b41a6be5aef03a0396d280c1d5e9fa977edfff"
+      "736257752":
+        name: "LumaBrowser.Setup.2.1.6-arm64.exe"
+        url_suffix: "LumaBrowser.Setup.2.1.6-arm64.exe"
+        size: 143028618
+        digest: "sha256:f409eea52dbe0c2b474269713d0dbb71d6c7715e63ccb85eb4a3d893f9d1ffcd"
+      "736257780":
+        name: "latest-mac.yml"
+        url_suffix: "latest-mac.yml"
+        size: 712
+        media_type: "application/yaml"
+        digest: "sha256:12e4c6abed70d50f8d6f7ce857e0be77cdbcf92e94d5f96f411257d31d755918"
+      "736257783":
+        name: "LumaBrowser-2.1.6-arm64-mac.zip.blockmap"
+        url_suffix: "LumaBrowser-2.1.6-arm64-mac.zip.blockmap"
+        size: 177284
+        digest: "sha256:fb7033c925e122d16189b707d0490e7052bb5581d822a65938594f569d992d27"
+      "736257813":
+        name: "LumaBrowser-2.1.6-arm64-mac.zip"
+        url_suffix: "LumaBrowser-2.1.6-arm64-mac.zip"
+        size: 167960296
+        media_type: "zip"
+        digest: "sha256:588188d38ec7c6a563900765424169d242d12ce799f2b26cc16d8d75e141c78d"
+      "736257815":
+        name: "LumaBrowser-2.1.6-arm64.dmg"
+        url_suffix: "LumaBrowser-2.1.6-arm64.dmg"
+        size: 174325724
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:d71f941c0ceb66a5a365ec661d3d3232c12ef8a9afb7ec0d2875a9f9a89b2321"
+      "736258177":
+        name: "LumaBrowser-2.1.6-arm64.dmg.blockmap"
+        url_suffix: "LumaBrowser-2.1.6-arm64.dmg.blockmap"
+        size: 181019
+        digest: "sha256:6f870bf7ded0725e944d5c1fd04860e21876d81a2317e2271eae5f7f644465ad"
+      "736258210":
+        name: "ninfer-runtime.zip"
+        url_suffix: "ninfer-runtime.zip"
+        size: 21657
+        media_type: "zip"
+        digest: "sha256:53459057c7fbbf7f88e13bd0929387f7860420745872de04adb745a8ee9358f8"
+      "736258211":
+        name: "index.json"
+        url_suffix: "index.json"
+        size: 3297
+        media_type: "application/json"
+        digest: "sha256:7e2806cb66b1281d6cd6ded3f805858900a825a679d4bb30e6ac97c0b31c77b3"
+      "736258247":
+        name: "chatterbox-voice.zip"
+        url_suffix: "chatterbox-voice.zip"
+        size: 37555
+        media_type: "zip"
+        digest: "sha256:f2a82f4d4381b29e05385b8b5e6dff4e9d9bdefd9a528e8021bf6ac5365babb0"
+      "736258253":
+        name: "ik-llama-runtime.zip"
+        url_suffix: "ik-llama-runtime.zip"
+        size: 6252
+        media_type: "zip"
+        digest: "sha256:7fd1263711087e48685b248f866458159b55d067800287e840cf5995691e5f1a"
+      "736258254":
+        name: "anima-model.zip"
+        url_suffix: "anima-model.zip"
+        size: 2756
+        media_type: "zip"
+        digest: "sha256:9c1a4fb731a28c8e0c223ab1d2494fbf96ad016d0daf595ebb3fbfae1a8496ab"
+      "736258284":
+        name: "roleplay-mode.zip"
+        url_suffix: "roleplay-mode.zip"
+        size: 253242
+        media_type: "zip"
+        digest: "sha256:3eb36aa07691b8904325aa8522eda56e5649f3d401a9661eaeb1121524040ae5"
+      "736258300":
+        name: "tab-share.zip"
+        url_suffix: "tab-share.zip"
+        size: 40637
+        media_type: "zip"
+        digest: "sha256:891d96b145ac7780bcaf4fa214fad7568688b147f0467dc1daa1c6d854e9c99f"
+      "736258304":
+        name: "LumaBrowser.Setup.2.1.6.exe"
+        url_suffix: "LumaBrowser.Setup.2.1.6.exe"
+        size: 152850459
+        digest: "sha256:c72cfffaf690308ac2397ddc846757e05ee38d4b2b979018134428dca85a376a"
+      "736258327":
+        name: "LumaBrowser-2.1.6-portable.exe"
+        url_suffix: "LumaBrowser-2.1.6-portable.exe"
+        size: 152606561
+        digest: "sha256:a879d6cd11662884a7136422cb4947e72f8a588023f7ced4931299fb89db6486"
+      "736258347":
+        name: "LumaBrowser.Setup.2.1.6.exe.blockmap"
+        url_suffix: "LumaBrowser.Setup.2.1.6.exe.blockmap"
+        size: 160786
+        digest: "sha256:8297b1dee9224c901dd3b2038099d05682565f2f070e55b654da3ce0fef5f356"
+      "736258350":
+        name: "latest.yml"
+        url_suffix: "latest.yml"
+        size: 710
+        media_type: "application/yaml"
+        digest: "sha256:06c6f630b927cf226b4ee309d218f4bedbc1a4e802017ebe8ec7c7913372a8fe"
+  "443555418":
+    tag: "v2.1.7"
+    title: "Updates to dashboard, more roleplay work, upgrades to image editing"
+    url: "https://github.com/amurgola/LumaBrowser/releases/tag/v2.1.7"
+    created_at: "2026-11-12T21:54:11Z"
+    published_at: "2026-11-12T21:55:57Z"
+    updated_at: "2026-11-12T22:12:56Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/amurgola/LumaBrowser/zipball/v2.1.7"
+    source_tar_url: "https://api.github.com/repos/amurgola/LumaBrowser/tarball/v2.1.7"
+    download_base: "https://github.com/amurgola/LumaBrowser/releases/download/v2.1.7/"
+    assets:
+      "741284809":
+        name: "LumaBrowser-2.1.7-arm64-portable.exe"
+        url_suffix: "LumaBrowser-2.1.7-arm64-portable.exe"
+        size: 142876021
+        digest: "sha256:47cb0c6fad09de9971db84af8927de138ef79664dcf79b37c79d8021d942b39a"
+      "741284811":
+        name: "latest-linux.yml"
+        url_suffix: "latest-linux.yml"
+        size: 727
+        media_type: "application/yaml"
+        digest: "sha256:fc81901634dab8785f528543cf15323b57dc7b7f6ea79d9683972782681fbc96"
+      "741284812":
+        name: "LumaBrowser.Setup.2.1.7-arm64.exe"
+        url_suffix: "LumaBrowser.Setup.2.1.7-arm64.exe"
+        size: 143119446
+        digest: "sha256:dd2daeb5677c0dd08f7be384b8752e24f1154398e3840d3dd2914a04a7a2f374"
+      "741284813":
+        name: "LumaBrowser-2.1.7.AppImage"
+        url_suffix: "LumaBrowser-2.1.7.AppImage"
+        size: 184766861
+        media_type: "application/vnd.appimage"
+        digest: "sha256:4a08b4f4b70ea50a256e9427b81a48d0a640d880c68cc6d38f78a1b87404171e"
+      "741284815":
+        name: "LumaBrowser.Setup.2.1.7-arm64.exe.blockmap"
+        url_suffix: "LumaBrowser.Setup.2.1.7-arm64.exe.blockmap"
+        size: 150216
+        digest: "sha256:be740decda64324b9b33fb06b55a1fdc08636c27e216ceb30550aa396c5849b8"
+      "741284840":
+        name: "LumaBrowser-2.1.7-arm64.dmg.blockmap"
+        url_suffix: "LumaBrowser-2.1.7-arm64.dmg.blockmap"
+        size: 183107
+        digest: "sha256:8850f4d7b8d4909783ceeb7df952620740d0f72ab159f54ddd09c90cf0850b95"
+      "741284846":
+        name: "LumaBrowser-2.1.7-arm64-mac.zip"
+        url_suffix: "LumaBrowser-2.1.7-arm64-mac.zip"
+        size: 168112205
+        media_type: "zip"
+        digest: "sha256:4d81f4f0613a515e55501de2b78afa3651194799f2bdb9ac137e9240be51bd98"
+      "741284883":
+        name: "latest-mac.yml"
+        url_suffix: "latest-mac.yml"
+        size: 712
+        media_type: "application/yaml"
+        digest: "sha256:cdb4054ad6f5237808196b0819c27f05229af65445943ad912a049528bd3e214"
+      "741284920":
+        name: "LumaBrowser-2.1.7-arm64.dmg"
+        url_suffix: "LumaBrowser-2.1.7-arm64.dmg"
+        size: 174488799
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:622639d07c3acbd6f7c5bcadfec7a7908f841815f22777a2f61ff37ba0d502e8"
+      "741285256":
+        name: "LumaBrowser-2.1.7-arm64-mac.zip.blockmap"
+        url_suffix: "LumaBrowser-2.1.7-arm64-mac.zip.blockmap"
+        size: 177642
+        digest: "sha256:88278cb930fd0ad98dc06d55aadfe05c81fd588ce741a9f9a3c2c8089ff83488"
+      "741285290":
+        name: "index.json"
+        url_suffix: "index.json"
+        size: 3297
+        media_type: "application/json"
+        digest: "sha256:5f0146928f9000536e3b3691ae1c2f9d1f66ba88e14c419d2a67a78e3cb3beaa"
+      "741285295":
+        name: "ninfer-runtime.zip"
+        url_suffix: "ninfer-runtime.zip"
+        size: 21657
+        media_type: "zip"
+        digest: "sha256:af717978bcf1a674992d18c68fd9b4900f93b72bb44a81e2676c4b07b3341035"
+      "741285306":
+        name: "chatterbox-voice.zip"
+        url_suffix: "chatterbox-voice.zip"
+        size: 37555
+        media_type: "zip"
+        digest: "sha256:69cdaa51fdceb0e11ecbc27c3ca721eda1dcfffeb27665854dcc41495263a647"
+      "741285322":
+        name: "ik-llama-runtime.zip"
+        url_suffix: "ik-llama-runtime.zip"
+        size: 6252
+        media_type: "zip"
+        digest: "sha256:661992c63012833f48b3c1885d54cbd4350a5c17e1205becb801ebcf65efe8ab"
+      "741285331":
+        name: "anima-model.zip"
+        url_suffix: "anima-model.zip"
+        size: 2756
+        media_type: "zip"
+        digest: "sha256:3c04e2a33ec81afb8f54300a5d53db8d98f3217adc6a7e09bd29452d9475b095"
+      "741285344":
+        name: "roleplay-mode.zip"
+        url_suffix: "roleplay-mode.zip"
+        size: 290297
+        media_type: "zip"
+        digest: "sha256:fc5699688329cdff5e01fd56792be8855a5c83b5d8e9a70bcec7a7bcee445043"
+      "741285354":
+        name: "tab-share.zip"
+        url_suffix: "tab-share.zip"
+        size: 40637
+        media_type: "zip"
+        digest: "sha256:ee96c368df2279d2173ab9ed28204e3493c6cde1a3472334d611289a19405c91"
+      "741285356":
+        name: "LumaBrowser.Setup.2.1.7.exe"
+        url_suffix: "LumaBrowser.Setup.2.1.7.exe"
+        size: 152939689
+        digest: "sha256:d13ab0b21daedf7db406d10960bfb18e2a16499ff0f12a1c04ae563002f11ebf"
+      "741285358":
+        name: "LumaBrowser.Setup.2.1.7.exe.blockmap"
+        url_suffix: "LumaBrowser.Setup.2.1.7.exe.blockmap"
+        size: 161228
+        digest: "sha256:313c35ac4d288d9f419729f3d1b51168409732f877294571a69e80f8c50ab4a3"
+      "741285364":
+        name: "latest.yml"
+        url_suffix: "latest.yml"
+        size: 710
+        media_type: "application/yaml"
+        digest: "sha256:d225346df25962ac9f4adbbace41b69a2bfce8783b2b544c5d32f3c53b1a9905"
+      "741285377":
+        name: "LumaBrowser-2.1.7-portable.exe"
+        url_suffix: "LumaBrowser-2.1.7-portable.exe"
+        size: 152695785
+        digest: "sha256:6215828eef9025e5058bc5b99817916576c4dc47a43cebe50a2f7a3cf70170a5"
+      "741285384":
+        name: "latest-linux-arm64.yml"
+        url_suffix: "latest-linux-arm64.yml"
+        size: 739
+        media_type: "application/yaml"
+        digest: "sha256:502a8fd94ef288c607f0ce389dba5a1302348873428a5fa21a2819028e90c1c6"
+      "741285388":
+        name: "LumaBrowser-2.1.7-arm64.AppImage"
+        url_suffix: "LumaBrowser-2.1.7-arm64.AppImage"
+        size: 184193832
+        media_type: "application/vnd.appimage"
+        digest: "sha256:0c411992eb5fd4d478e66c839dcc3e789b79062b2189ac786d0b3e273689fcf2"
+  "445594742":
+    tag: "v2.1.9"
+    title: "Mostly a ton of bug fixes and refinements around existing features found while making our informational video"
+    url: "https://github.com/amurgola/LumaBrowser/releases/tag/v2.1.9"
+    created_at: "2026-11-14T21:09:30Z"
+    published_at: "2026-11-14T21:15:09Z"
+    updated_at: "2026-11-14T21:15:09Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/amurgola/LumaBrowser/zipball/v2.1.9"
+    source_tar_url: "https://api.github.com/repos/amurgola/LumaBrowser/tarball/v2.1.9"
+    assets: {}
+  "445736527":
+    tag: "v2.2.0"
+    title: "Electron 45, more fixes from feedback"
+    url: "https://github.com/amurgola/LumaBrowser/releases/tag/v2.2.0"
+    created_at: "2026-11-15T01:12:20Z"
+    published_at: "2026-11-15T01:36:29Z"
+    updated_at: "2026-11-15T01:51:53Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/amurgola/LumaBrowser/zipball/v2.2.0"
+    source_tar_url: "https://api.github.com/repos/amurgola/LumaBrowser/tarball/v2.2.0"
+    download_base: "https://github.com/amurgola/LumaBrowser/releases/download/v2.2.0/"
+    assets:
+      "749456984":
+        name: "LumaBrowser-2.2.0-arm64-portable.exe"
+        url_suffix: "LumaBrowser-2.2.0-arm64-portable.exe"
+        size: 150523572
+        digest: "sha256:e8028d1bb1041fc73e3af73a6482241827633403648672ae85fc1302d4e24c31"
+      "749456985":
+        name: "latest-linux.yml"
+        url_suffix: "latest-linux.yml"
+        size: 727
+        media_type: "application/yaml"
+        digest: "sha256:1223f16621699d2df3aee733af333534ebd1773a99dc312dfe123916bc1fa054"
+      "749456986":
+        name: "LumaBrowser.Setup.2.2.0-arm64.exe.blockmap"
+        url_suffix: "LumaBrowser.Setup.2.2.0-arm64.exe.blockmap"
+        size: 158597
+        digest: "sha256:921607ada6a4b0e6e4dbc437d4f6e8a42984a26041f48816022f2aefb09a1f19"
+      "749456988":
+        name: "LumaBrowser.Setup.2.2.0-arm64.exe"
+        url_suffix: "LumaBrowser.Setup.2.2.0-arm64.exe"
+        size: 150766986
+        digest: "sha256:54896f775f97903f446028be07ca8f822f6149b6d5166db9db70e194245f5dbf"
+      "749456989":
+        name: "LumaBrowser-2.2.0.AppImage"
+        url_suffix: "LumaBrowser-2.2.0.AppImage"
+        size: 181344109
+        media_type: "application/vnd.appimage"
+        digest: "sha256:d5a3aace968662432211f5215af5ff83f2d4fe091954bdeb538152881db152d8"
+      "749457011":
+        name: "LumaBrowser-2.2.0-arm64-mac.zip"
+        url_suffix: "LumaBrowser-2.2.0-arm64-mac.zip"
+        size: 166462293
+        media_type: "zip"
+        digest: "sha256:ce626f7ffa77b0cdf0e1477ddea03a9f7a203be3be4c14d28e8cd8d88de9c46b"
+      "749457012":
+        name: "LumaBrowser-2.2.0-arm64.dmg"
+        url_suffix: "LumaBrowser-2.2.0-arm64.dmg"
+        size: 172329303
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:04db224a1a83731e2ef86e1639c8afbc33f7558e4df3d5e6d3ef8d7d8801982a"
+      "749457150":
+        name: "LumaBrowser-2.2.0-arm64.dmg.blockmap"
+        url_suffix: "LumaBrowser-2.2.0-arm64.dmg.blockmap"
+        size: 180050
+        digest: "sha256:30483c9c8cd6682b335fe32a1dd4908642b185e722a5754ebb29601610969b7f"
+      "749457162":
+        name: "latest-mac.yml"
+        url_suffix: "latest-mac.yml"
+        size: 712
+        media_type: "application/yaml"
+        digest: "sha256:3c3821e857ec96706390d10358146924cf1931926d65aab4a587ebbef043750b"
+      "749457180":
+        name: "LumaBrowser-2.2.0-arm64-mac.zip.blockmap"
+        url_suffix: "LumaBrowser-2.2.0-arm64-mac.zip.blockmap"
+        size: 175366
+        digest: "sha256:75a19f0cd660f076ecb51506c46065b0703302b7174f039808470a20d8287a6b"
+      "749457181":
+        name: "index.json"
+        url_suffix: "index.json"
+        size: 3297
+        media_type: "application/json"
+        digest: "sha256:1536e081c1c3eddbbdbf05af16fda80857007925e8d949aacdee35454099ceb9"
+      "749457193":
+        name: "ninfer-runtime.zip"
+        url_suffix: "ninfer-runtime.zip"
+        size: 21657
+        media_type: "zip"
+        digest: "sha256:51f4e5c9e828ddb5f014bfec929e443256b575906263a64ad5f3767c4e97f341"
+      "749457198":
+        name: "chatterbox-voice.zip"
+        url_suffix: "chatterbox-voice.zip"
+        size: 37555
+        media_type: "zip"
+        digest: "sha256:fdb3cba96f33915182164f4e39b59198bedd1536b6fa395cdfc14cb77b43837c"
+      "749457200":
+        name: "ik-llama-runtime.zip"
+        url_suffix: "ik-llama-runtime.zip"
+        size: 6252
+        media_type: "zip"
+        digest: "sha256:4be1ba7c0665be45be0d4df2ada1b6e6a6f56497b9791b23c969a88d6d5b2d29"
+      "749457201":
+        name: "anima-model.zip"
+        url_suffix: "anima-model.zip"
+        size: 2756
+        media_type: "zip"
+        digest: "sha256:2cda1ea57d28b3b18969375b8d4d91d5a69fab70f425cc832f4eb8a15e3c5c65"
+      "749457216":
+        name: "roleplay-mode.zip"
+        url_suffix: "roleplay-mode.zip"
+        size: 290297
+        media_type: "zip"
+        digest: "sha256:653e013c84ab8de80a8f33afec4d115bea5bea872815b85059f4aca4c52583ea"
+      "749457219":
+        name: "LumaBrowser.Setup.2.2.0.exe.blockmap"
+        url_suffix: "LumaBrowser.Setup.2.2.0.exe.blockmap"
+        size: 168680
+        digest: "sha256:6ed9645875524445b7275f50751053f87e4a2b6f8ad1ed75a7541276ace1e3c1"
+      "749457223":
+        name: "LumaBrowser-2.2.0-portable.exe"
+        url_suffix: "LumaBrowser-2.2.0-portable.exe"
+        size: 161131501
+        digest: "sha256:ed86cdde426055ca11da097047eda9cdfded1ef67d30eb316f04f9fbab21ef45"
+      "749457228":
+        name: "tab-share.zip"
+        url_suffix: "tab-share.zip"
+        size: 40728
+        media_type: "zip"
+        digest: "sha256:bab1beec39104eb065a1421e3556c2805a54e34901f2118352b71cf8c1f8e016"
+      "749457246":
+        name: "latest-linux-arm64.yml"
+        url_suffix: "latest-linux-arm64.yml"
+        size: 739
+        media_type: "application/yaml"
+        digest: "sha256:b994df1841a755d0c55877886de29483a40574c0627350dca7b4f2a384b75b08"
+      "749457248":
+        name: "latest.yml"
+        url_suffix: "latest.yml"
+        size: 710
+        media_type: "application/yaml"
+        digest: "sha256:f6ecfa6a514bbd9db0a2fa5aee252239a8a8282473466031a59761d2293ebf2d"
+      "749457251":
+        name: "LumaBrowser.Setup.2.2.0.exe"
+        url_suffix: "LumaBrowser.Setup.2.2.0.exe"
+        size: 161375408
+        digest: "sha256:371a7c287222b8e59f91101e10c2d34ac0b03f78f4f91689fdbb7ba1bc14e681"
+      "749457260":
+        name: "LumaBrowser-2.2.0-arm64.AppImage"
+        url_suffix: "LumaBrowser-2.2.0-arm64.AppImage"
+        size: 180890748
+        media_type: "application/vnd.appimage"
+        digest: "sha256:f1f7c0b9877b829634771b3e7a3b8431949f53c40c88d83aa8469da98eb00dd6"
+  "445773207":
+    tag: "v2.2.1"
+    title: "One last quick update tonight, roleplay mode fixes"
+    url: "https://github.com/amurgola/LumaBrowser/releases/tag/v2.2.1"
+    created_at: "2026-11-15T03:01:09Z"
+    published_at: "2026-11-15T03:01:41Z"
+    updated_at: "2026-11-15T03:17:22Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/amurgola/LumaBrowser/zipball/v2.2.1"
+    source_tar_url: "https://api.github.com/repos/amurgola/LumaBrowser/tarball/v2.2.1"
+    download_base: "https://github.com/amurgola/LumaBrowser/releases/download/v2.2.1/"
+    assets:
+      "749660460":
+        name: "LumaBrowser.Setup.2.2.1-arm64.exe.blockmap"
+        url_suffix: "LumaBrowser.Setup.2.2.1-arm64.exe.blockmap"
+        size: 159354
+        digest: "sha256:c5799401d94dcdf557fe4bceb127d9988c2c6d56c8922a8d1021fe89d14ad175"
+      "749660466":
+        name: "LumaBrowser-2.2.1.AppImage"
+        url_suffix: "LumaBrowser-2.2.1.AppImage"
+        size: 181364950
+        media_type: "application/vnd.appimage"
+        digest: "sha256:a03b36c736fe8919d0b1942767fec8adef2b91e638ea0a8a5fd9f29e98b7016a"
+      "749660467":
+        name: "latest-linux.yml"
+        url_suffix: "latest-linux.yml"
+        size: 727
+        media_type: "application/yaml"
+        digest: "sha256:12ccb70f53f6f306b09721a2f42a4a7ef71fd10eb1b8bf27ccaa408a98c8dcb1"
+      "749660469":
+        name: "LumaBrowser.Setup.2.2.1-arm64.exe"
+        url_suffix: "LumaBrowser.Setup.2.2.1-arm64.exe"
+        size: 150786847
+        digest: "sha256:a82b3a37674b682fd0254f3fa90f525ce455a101c2265f8a4397393fcf8ee20a"
+      "749660472":
+        name: "LumaBrowser-2.2.1-arm64-portable.exe"
+        url_suffix: "LumaBrowser-2.2.1-arm64-portable.exe"
+        size: 150543430
+        digest: "sha256:039daf0bdfbb7c5159f52122865968a62f56c31893dd5d0b5cd7b45a84593d16"
+      "749660493":
+        name: "latest-mac.yml"
+        url_suffix: "latest-mac.yml"
+        size: 712
+        media_type: "application/yaml"
+        digest: "sha256:cef2f004ed3d204210ac1d1078961c9ac1cd36b1a5ed062188954f31f0774088"
+      "749660495":
+        name: "LumaBrowser-2.2.1-arm64-mac.zip.blockmap"
+        url_suffix: "LumaBrowser-2.2.1-arm64-mac.zip.blockmap"
+        size: 175390
+        digest: "sha256:b0a417916f99249207c3999bf788b0fe7b17e3004de3e55829715a00c55a4de5"
+      "749660513":
+        name: "LumaBrowser-2.2.1-arm64-mac.zip"
+        url_suffix: "LumaBrowser-2.2.1-arm64-mac.zip"
+        size: 166487441
+        media_type: "zip"
+        digest: "sha256:4808b76c0644ecbf21c34318ff6054f67115a474f832daef91dbf0f37793ee3a"
+      "749660514":
+        name: "LumaBrowser-2.2.1-arm64.dmg"
+        url_suffix: "LumaBrowser-2.2.1-arm64.dmg"
+        size: 172340161
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:273ab2dbb08efbb623cff8f4a1f10bb21ad3e385d8e600e72a9745da14404a41"
+      "749660807":
+        name: "LumaBrowser-2.2.1-arm64.dmg.blockmap"
+        url_suffix: "LumaBrowser-2.2.1-arm64.dmg.blockmap"
+        size: 181938
+        digest: "sha256:0eb87d131bf4ea8220f77be177f672989214844f5e48dbf9ff598e181a788f05"
+      "749660826":
+        name: "index.json"
+        url_suffix: "index.json"
+        size: 3297
+        media_type: "application/json"
+        digest: "sha256:77ba96d1e1ad21c093d6e0cf508a2918f909ee190cf96cb5384716c84741b8e1"
+      "749660829":
+        name: "ninfer-runtime.zip"
+        url_suffix: "ninfer-runtime.zip"
+        size: 21657
+        media_type: "zip"
+        digest: "sha256:4cb987162a0e96bf39391ae786c1840d2db01ad0605e20f9b682ab087626e7d8"
+      "749660844":
+        name: "ik-llama-runtime.zip"
+        url_suffix: "ik-llama-runtime.zip"
+        size: 6252
+        media_type: "zip"
+        digest: "sha256:5e2260902f4096756dc9435c318d795fe32906d829780a7e8ec7a9e49e7bb21e"
+      "749660846":
+        name: "chatterbox-voice.zip"
+        url_suffix: "chatterbox-voice.zip"
+        size: 37555
+        media_type: "zip"
+        digest: "sha256:9b01e24fb7ad494044d5b49fda1d764500318e5dd5f0d57a690abd545c867442"
+      "749660862":
+        name: "anima-model.zip"
+        url_suffix: "anima-model.zip"
+        size: 2756
+        media_type: "zip"
+        digest: "sha256:953b9a99bda96c2aa2d916ce6335907cbbd22cfe66aaf6fea5fd7d440b2dc2d8"
+      "749660865":
+        name: "roleplay-mode.zip"
+        url_suffix: "roleplay-mode.zip"
+        size: 291349
+        media_type: "zip"
+        digest: "sha256:2a64387c44fe0f0a33fb5ad79536fc1271d3b891c81ba4271996c4237721c18b"
+      "749660879":
+        name: "tab-share.zip"
+        url_suffix: "tab-share.zip"
+        size: 40728
+        media_type: "zip"
+        digest: "sha256:a979e91adac811c42905e95e51c02d6d801700a42350e4bc03d644e51b9a53ec"
+      "749660885":
+        name: "LumaBrowser.Setup.2.2.1.exe"
+        url_suffix: "LumaBrowser.Setup.2.2.1.exe"
+        size: 161393481
+        digest: "sha256:1b7b6b4d1b7c215d54aa0a6ef5881e99e2fc47c80f1e567c8301b7b1d2d5634a"
+      "749660897":
+        name: "LumaBrowser.Setup.2.2.1.exe.blockmap"
+        url_suffix: "LumaBrowser.Setup.2.2.1.exe.blockmap"
+        size: 168382
+        digest: "sha256:4af7b1a034a8b09bb566235560f12b13f98aba5966f8d05a106810b774e13108"
+      "749660898":
+        name: "latest.yml"
+        url_suffix: "latest.yml"
+        size: 710
+        media_type: "application/yaml"
+        digest: "sha256:e557c33fef6e3839334bb153405dec46e8a068eb8d9af460d6ff9e17fa4d2022"
+      "749660911":
+        name: "latest-linux-arm64.yml"
+        url_suffix: "latest-linux-arm64.yml"
+        size: 739
+        media_type: "application/yaml"
+        digest: "sha256:59d250bc3a1a5e41d46ab4a549983c487c2cd7f0a04977ce0f2cc7a8f2f9d031"
+      "749660914":
+        name: "LumaBrowser-2.2.1-portable.exe"
+        url_suffix: "LumaBrowser-2.2.1-portable.exe"
+        size: 161149565
+        digest: "sha256:613814eb18f7e465d843662f2764d74252f744aa87d8b0a6d739df57bf06984c"
+      "749660920":
+        name: "LumaBrowser-2.2.1-arm64.AppImage"
+        url_suffix: "LumaBrowser-2.2.1-arm64.AppImage"
+        size: 180911060
+        media_type: "application/vnd.appimage"
+        digest: "sha256:1358b8f35c37c3c7500ab6e6c3a2f648a45130df8acb749cf313c959bfdbf602"
