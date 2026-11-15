@@ -3,14 +3,15 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1340169807
 repository: "NickYCLin/lattice-term"
-collected_at: "2026-11-10T18:29:55Z"
+collected_at: "2026-11-15T02:50:06Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-10T18:29:55Z"
+observed_at: "2026-11-15T02:50:06Z"
 releases:
   "434515839":
+    observed_at: "2026-11-10T18:29:55Z"
     tag: "v2026.11.5"
     title: "LatticeTerm v2026.11.5 - 版本更新"
     url: "https://github.com/NickYCLin/lattice-term/releases/tag/v2026.11.5"
@@ -149,6 +150,7 @@ releases:
         media_type: "application/json"
         digest: "sha256:1af5597743b9048718e4f6d18138917ebf4a402430e61b29ac117e059868749a"
   "436074913":
+    observed_at: "2026-11-10T18:29:55Z"
     tag: "v2026.11.6"
     title: "LatticeTerm v2026.11.6 - database"
     url: "https://github.com/NickYCLin/lattice-term/releases/tag/v2026.11.6"
@@ -287,6 +289,7 @@ releases:
         media_type: "application/json"
         digest: "sha256:fb0bdc6f85fea1f140a1a546543bbb9829dc887d854bf88177c54085dfad851a"
   "440178245":
+    observed_at: "2026-11-10T18:29:55Z"
     tag: "v2026.11.10"
     title: "LatticeTerm v2026.11.10 - database、agent與 remote"
     url: "https://github.com/NickYCLin/lattice-term/releases/tag/v2026.11.10"
@@ -424,3 +427,417 @@ releases:
         size: 9217
         media_type: "application/json"
         digest: "sha256:563b6b1c3cb794737129eea3483d311b2362e6ef5f780484dd88e22e6d0628f6"
+  "443581190":
+    tag: "v2026.11.13"
+    title: "LatticeTerm v2026.11.13 - cliproxy與 database"
+    url: "https://github.com/NickYCLin/lattice-term/releases/tag/v2026.11.13"
+    created_at: "2026-11-12T22:24:56Z"
+    published_at: "2026-11-12T23:01:54Z"
+    updated_at: "2026-11-12T23:01:54Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/NickYCLin/lattice-term/zipball/v2026.11.13"
+    source_tar_url: "https://api.github.com/repos/NickYCLin/lattice-term/tarball/v2026.11.13"
+    download_base: "https://github.com/NickYCLin/lattice-term/releases/download/v2026.11.13/"
+    assets:
+      "741360766":
+        name: "LatticeTerm_2026.11.13_arm64.deb"
+        url_suffix: "LatticeTerm_2026.11.13_arm64.deb"
+        size: 37515756
+        media_type: "zip"
+        digest: "sha256:db62aee11ed0314bf34af28babd9dd589eb27da8400d21a50e7bbce5a0dd27c0"
+      "741360882":
+        name: "LatticeTerm_2026.11.13_arm64.deb.sig"
+        url_suffix: "LatticeTerm_2026.11.13_arm64.deb.sig"
+        size: 448
+        media_type: "zip"
+        digest: "sha256:71d990ca1cc48518d05826d3f8a5ce40c9a2aa88b6e0e341aec12fd9075ae9ba"
+      "741360905":
+        name: "LatticeTerm-2026.11.13-1.aarch64.rpm"
+        url_suffix: "LatticeTerm-2026.11.13-1.aarch64.rpm"
+        size: 37519395
+        media_type: "zip"
+        digest: "sha256:09a30e7b84388f402cb172b8ae8a085f88aada499d6aa049fdbeb4dba6f05c8c"
+      "741361000":
+        name: "LatticeTerm-2026.11.13-1.aarch64.rpm.sig"
+        url_suffix: "LatticeTerm-2026.11.13-1.aarch64.rpm.sig"
+        size: 456
+        media_type: "zip"
+        digest: "sha256:f97e0fff80dbb56b9839a8e375d1bbbfa6e95e18f3f81b021c42af9ddf6cc2ec"
+      "741361025":
+        name: "LatticeTerm_2026.11.13_aarch64.AppImage"
+        url_suffix: "LatticeTerm_2026.11.13_aarch64.AppImage"
+        size: 109558280
+        media_type: "zip"
+        digest: "sha256:7d9c932536734a9453692f4998247ac091cfc291e916f8993336b19a99c2771d"
+      "741361293":
+        name: "LatticeTerm_2026.11.13_aarch64.AppImage.sig"
+        url_suffix: "LatticeTerm_2026.11.13_aarch64.AppImage.sig"
+        size: 460
+        media_type: "zip"
+        digest: "sha256:51b2c82a318a4d8174463ee3e8cb44649365889428c64b88e2232ef737dac502"
+      "741365546":
+        name: "LatticeTerm_2026.11.13_aarch64.dmg"
+        url_suffix: "LatticeTerm_2026.11.13_aarch64.dmg"
+        size: 32617990
+        media_type: "zip"
+        digest: "sha256:e8de8abbc10a78c9c8970ddbb6283b5ade945e8fed2312dfac6f0d89f9d63dc7"
+      "741365639":
+        name: "LatticeTerm_2026.11.13_aarch64.app.tar.gz"
+        url_suffix: "LatticeTerm_2026.11.13_aarch64.app.tar.gz"
+        size: 32929498
+        media_type: "zip"
+        digest: "sha256:002ff4a3801756b1a205bc86cdeb70b5d4c367421cffd75f4b575894fc8ec824"
+      "741365718":
+        name: "LatticeTerm_2026.11.13_aarch64.app.tar.gz.sig"
+        url_suffix: "LatticeTerm_2026.11.13_aarch64.app.tar.gz.sig"
+        size: 436
+        media_type: "zip"
+        digest: "sha256:93c91d30ebb4d4c5665d0761738e95b7bf0e8d9c672ed691b946e02d9e6e8111"
+      "741371727":
+        name: "LatticeTerm_2026.11.13_amd64.deb"
+        url_suffix: "LatticeTerm_2026.11.13_amd64.deb"
+        size: 37108088
+        media_type: "zip"
+        digest: "sha256:397e46785b5b64b4d010142f40bb338d8a31d9e117931392a9746c49bb4c3b9d"
+      "741372056":
+        name: "LatticeTerm_2026.11.13_amd64.deb.sig"
+        url_suffix: "LatticeTerm_2026.11.13_amd64.deb.sig"
+        size: 448
+        media_type: "zip"
+        digest: "sha256:c63c54e43dfe0536a46d25a9cf88ec364dca263690bcbb3ca9780a005460de75"
+      "741372086":
+        name: "LatticeTerm-2026.11.13-1.x86_64.rpm"
+        url_suffix: "LatticeTerm-2026.11.13-1.x86_64.rpm"
+        size: 37107902
+        media_type: "zip"
+        digest: "sha256:10ff566f1151da94c84c9c81cbd53bd1f0db3662fb83e824e1747b0b85216002"
+      "741372164":
+        name: "LatticeTerm-2026.11.13-1.x86_64.rpm.sig"
+        url_suffix: "LatticeTerm-2026.11.13-1.x86_64.rpm.sig"
+        size: 452
+        media_type: "zip"
+        digest: "sha256:0da49430c7a7756e9f551c0fe9d5b29e09a3f38cc7618007489f242ece18a1f5"
+      "741372181":
+        name: "LatticeTerm_2026.11.13_amd64.AppImage"
+        url_suffix: "LatticeTerm_2026.11.13_amd64.AppImage"
+        size: 111389176
+        media_type: "zip"
+        digest: "sha256:13b9abf27564e6b8a1b4c66e1b8b2922b0e4563b93fc75e7af34c0d659933b2c"
+      "741372575":
+        name: "LatticeTerm_2026.11.13_amd64.AppImage.sig"
+        url_suffix: "LatticeTerm_2026.11.13_amd64.AppImage.sig"
+        size: 456
+        media_type: "zip"
+        digest: "sha256:766e19848328616c841aaecd6ac846048f934b8c509ed218627f6c3ba8dc840b"
+      "741396692":
+        name: "LatticeTerm_2026.11.13_x64-setup.exe"
+        url_suffix: "LatticeTerm_2026.11.13_x64-setup.exe"
+        size: 20880561
+        media_type: "zip"
+        digest: "sha256:046b2eb01aa30dc93751f55c1b2f9168fd2d0089dee2e6fbd8ebd291df2c3583"
+      "741396727":
+        name: "LatticeTerm_2026.11.13_x64-setup.exe.sig"
+        url_suffix: "LatticeTerm_2026.11.13_x64-setup.exe.sig"
+        size: 456
+        media_type: "zip"
+        digest: "sha256:006bf34a3713bd4581cd6aa0a3b20739e53ccd0a198a4dcb91cd41ab111bf3a8"
+      "741402646":
+        name: "LatticeTerm_2026.11.13_x64.dmg"
+        url_suffix: "LatticeTerm_2026.11.13_x64.dmg"
+        size: 34095248
+        media_type: "zip"
+        digest: "sha256:53922771d6d89551a46575dbc502c7bdf1f59c26d07acaae62e216382015d040"
+      "741402772":
+        name: "LatticeTerm_2026.11.13_x64.app.tar.gz"
+        url_suffix: "LatticeTerm_2026.11.13_x64.app.tar.gz"
+        size: 34083920
+        media_type: "zip"
+        digest: "sha256:95abe308773472a3c8a65af28f7f3417d2383e5c724cf56981bd68931e1052bc"
+      "741402895":
+        name: "LatticeTerm_2026.11.13_x64.app.tar.gz.sig"
+        url_suffix: "LatticeTerm_2026.11.13_x64.app.tar.gz.sig"
+        size: 436
+        media_type: "zip"
+        digest: "sha256:00f32a2cb9d70753368cd5f861869f109fcbc1eb316b8f47222d732db7cd08d3"
+      "741414958":
+        name: "latest.json"
+        url_suffix: "latest.json"
+        size: 8647
+        media_type: "application/json"
+        digest: "sha256:1f0d396aafe0bf7c6417b71ec71a523c0374f5f00548189deb80cc0ac0c08069"
+  "444793087":
+    tag: "v2026.11.14"
+    title: "LatticeTerm v2026.11.14 - connections、accounts與 agents"
+    url: "https://github.com/NickYCLin/lattice-term/releases/tag/v2026.11.14"
+    created_at: "2026-11-13T22:14:01Z"
+    published_at: "2026-11-13T22:28:46Z"
+    updated_at: "2026-11-13T22:28:46Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/NickYCLin/lattice-term/zipball/v2026.11.14"
+    source_tar_url: "https://api.github.com/repos/NickYCLin/lattice-term/tarball/v2026.11.14"
+    download_base: "https://github.com/NickYCLin/lattice-term/releases/download/v2026.11.14/"
+    assets:
+      "745389607":
+        name: "LatticeTerm_2026.11.14_amd64.deb"
+        url_suffix: "LatticeTerm_2026.11.14_amd64.deb"
+        size: 37105690
+        media_type: "zip"
+        digest: "sha256:a3f82e1323f395fb74e5022d6440cbbb3dbd3b61e4a8903022fdab427d6b4ba5"
+      "745389723":
+        name: "LatticeTerm_2026.11.14_amd64.deb.sig"
+        url_suffix: "LatticeTerm_2026.11.14_amd64.deb.sig"
+        size: 448
+        media_type: "zip"
+        digest: "sha256:14b6b9382f6054f02cd1d10e0316bf5ae84c91e1a8d4e4381673761cccad4237"
+      "745389751":
+        name: "LatticeTerm-2026.11.14-1.x86_64.rpm"
+        url_suffix: "LatticeTerm-2026.11.14-1.x86_64.rpm"
+        size: 37105937
+        media_type: "zip"
+        digest: "sha256:9ad36ba1d928dc7558d515b3a0eaf7bfd88fd914b441e6ab4e2b9248429d0067"
+      "745389835":
+        name: "LatticeTerm-2026.11.14-1.x86_64.rpm.sig"
+        url_suffix: "LatticeTerm-2026.11.14-1.x86_64.rpm.sig"
+        size: 452
+        media_type: "zip"
+        digest: "sha256:4f54ce474d141149b244ae810cbc0c44757066a0a3a64761466b5c72f92e1cb5"
+      "745389843":
+        name: "LatticeTerm_2026.11.14_amd64.AppImage"
+        url_suffix: "LatticeTerm_2026.11.14_amd64.AppImage"
+        size: 111352312
+        media_type: "zip"
+        digest: "sha256:3b3494bafc68b0d544d0c3a9dd6f9c7536ba1a8c6cd9a1ec83691b2f49856f62"
+      "745389989":
+        name: "LatticeTerm_2026.11.14_amd64.AppImage.sig"
+        url_suffix: "LatticeTerm_2026.11.14_amd64.AppImage.sig"
+        size: 456
+        media_type: "zip"
+        digest: "sha256:8673481946015c477e6722420c2912f74aa6275097cda3dd37584205dea5863e"
+      "745399859":
+        name: "LatticeTerm_2026.11.14_aarch64.dmg"
+        url_suffix: "LatticeTerm_2026.11.14_aarch64.dmg"
+        size: 32614483
+        media_type: "zip"
+        digest: "sha256:f8631ed1142b31dffebd1534cefc0c0971ca47dd31fee2f7c97160cf8ee96da8"
+      "745399949":
+        name: "LatticeTerm_2026.11.14_aarch64.app.tar.gz"
+        url_suffix: "LatticeTerm_2026.11.14_aarch64.app.tar.gz"
+        size: 32928740
+        media_type: "zip"
+        digest: "sha256:3c792e09b21b4c4dc9282286a24e97e5e7be49c3033769af09702ba24a26d642"
+      "745400039":
+        name: "LatticeTerm_2026.11.14_aarch64.app.tar.gz.sig"
+        url_suffix: "LatticeTerm_2026.11.14_aarch64.app.tar.gz.sig"
+        size: 436
+        media_type: "zip"
+        digest: "sha256:b15161dace23e8e9d74e8dac1a63752e856ba2201629089fba891a7b60aeafec"
+      "745404778":
+        name: "LatticeTerm_2026.11.14_x64-setup.exe"
+        url_suffix: "LatticeTerm_2026.11.14_x64-setup.exe"
+        size: 20923166
+        media_type: "zip"
+        digest: "sha256:8220f77e2e17c910ced8f3d6b5901a37163d2f593ec038425af15682cca12dee"
+      "745404893":
+        name: "LatticeTerm_2026.11.14_x64-setup.exe.sig"
+        url_suffix: "LatticeTerm_2026.11.14_x64-setup.exe.sig"
+        size: 456
+        media_type: "zip"
+        digest: "sha256:fadbd3a2b1777d4d859cb98d6f750e85d679714bb11c92623036d13579a5ba73"
+      "745413069":
+        name: "LatticeTerm_2026.11.14_arm64.deb"
+        url_suffix: "LatticeTerm_2026.11.14_arm64.deb"
+        size: 37511274
+        media_type: "zip"
+        digest: "sha256:eb2043fb1efe3f52a59210be22a488ed989dd4699f64771c504c96e88affa8b7"
+      "745413204":
+        name: "LatticeTerm_2026.11.14_arm64.deb.sig"
+        url_suffix: "LatticeTerm_2026.11.14_arm64.deb.sig"
+        size: 448
+        media_type: "zip"
+        digest: "sha256:19c32ae87b9e8289e810efb472f97d35da709bd639a27e7ce0a2eedf98d341f6"
+      "745413243":
+        name: "LatticeTerm-2026.11.14-1.aarch64.rpm"
+        url_suffix: "LatticeTerm-2026.11.14-1.aarch64.rpm"
+        size: 37518018
+        media_type: "zip"
+        digest: "sha256:78b05fa9d3f232f25a0d32c4b45e04476e5b2f5c9a56300f6443726f84cbf1eb"
+      "745413392":
+        name: "LatticeTerm-2026.11.14-1.aarch64.rpm.sig"
+        url_suffix: "LatticeTerm-2026.11.14-1.aarch64.rpm.sig"
+        size: 456
+        media_type: "zip"
+        digest: "sha256:eeb63846b2d56a1822f32da36e001fffaeb109da38e4c8ae4232c261dd021d01"
+      "745413425":
+        name: "LatticeTerm_2026.11.14_aarch64.AppImage"
+        url_suffix: "LatticeTerm_2026.11.14_aarch64.AppImage"
+        size: 109582856
+        media_type: "zip"
+        digest: "sha256:c328c335dd4c3dc742523a169a2af737c1031713589069a1e0db3adbeddf9b43"
+      "745413627":
+        name: "LatticeTerm_2026.11.14_aarch64.AppImage.sig"
+        url_suffix: "LatticeTerm_2026.11.14_aarch64.AppImage.sig"
+        size: 460
+        media_type: "zip"
+        digest: "sha256:6bcf2d62f2d05f815de3948b741c462e6954d000c517a4326b24ad4e5d51cf09"
+      "745413731":
+        name: "LatticeTerm_2026.11.14_x64.dmg"
+        url_suffix: "LatticeTerm_2026.11.14_x64.dmg"
+        size: 34092106
+        media_type: "zip"
+        digest: "sha256:57a4828bcfecadad42a9e067c474dfca02c0f5ab7523969dbaf4296d59272536"
+      "745413843":
+        name: "LatticeTerm_2026.11.14_x64.app.tar.gz"
+        url_suffix: "LatticeTerm_2026.11.14_x64.app.tar.gz"
+        size: 34084041
+        media_type: "zip"
+        digest: "sha256:6a951ea9a074739c0fe81cabf64225d8847d51443589017c583fee14371cd0d2"
+      "745413968":
+        name: "LatticeTerm_2026.11.14_x64.app.tar.gz.sig"
+        url_suffix: "LatticeTerm_2026.11.14_x64.app.tar.gz.sig"
+        size: 436
+        media_type: "zip"
+        digest: "sha256:b23745fd2c4dba106f287dbd5b8dde7f3795f6d60b432d4f0e3d7f354fe1c2e8"
+      "745415131":
+        name: "latest.json"
+        url_suffix: "latest.json"
+        size: 9558
+        media_type: "application/json"
+        digest: "sha256:3df7a55ebacf9ce4de83bfa987bd0fdc141857fbdd6e761a2fd2cfb40b5501d4"
+  "445626538":
+    tag: "v2026.11.15"
+    title: "LatticeTerm v2026.11.15 - 版本更新"
+    url: "https://github.com/NickYCLin/lattice-term/releases/tag/v2026.11.15"
+    created_at: "2026-11-14T22:14:23Z"
+    published_at: "2026-11-14T22:45:49Z"
+    updated_at: "2026-11-14T22:45:49Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/NickYCLin/lattice-term/zipball/v2026.11.15"
+    source_tar_url: "https://api.github.com/repos/NickYCLin/lattice-term/tarball/v2026.11.15"
+    download_base: "https://github.com/NickYCLin/lattice-term/releases/download/v2026.11.15/"
+    assets:
+      "748974505":
+        name: "LatticeTerm_2026.11.15_arm64.deb"
+        url_suffix: "LatticeTerm_2026.11.15_arm64.deb"
+        size: 37614966
+        media_type: "zip"
+        digest: "sha256:9abcac724e79c35ccd92c958e8c5fb8fb87e3baff92a13d3336ec9cbaa13a33c"
+      "748974581":
+        name: "LatticeTerm_2026.11.15_arm64.deb.sig"
+        url_suffix: "LatticeTerm_2026.11.15_arm64.deb.sig"
+        size: 448
+        media_type: "zip"
+        digest: "sha256:2137aacd5add8206ffd413518a5235676fe3d892cd20bab75d181b633ba40fcd"
+      "748974614":
+        name: "LatticeTerm-2026.11.15-1.aarch64.rpm"
+        url_suffix: "LatticeTerm-2026.11.15-1.aarch64.rpm"
+        size: 37618726
+        media_type: "zip"
+        digest: "sha256:7bbd9c4863af7e7d0f528f856fde9ec38d7c5307be3c27e04d6d88d24187ddb4"
+      "748974671":
+        name: "LatticeTerm-2026.11.15-1.aarch64.rpm.sig"
+        url_suffix: "LatticeTerm-2026.11.15-1.aarch64.rpm.sig"
+        size: 456
+        media_type: "zip"
+        digest: "sha256:bbeea8a9ab9a6bcb09c8b41cac226598a8f383024d96287ecb16cb332745c8da"
+      "748974707":
+        name: "LatticeTerm_2026.11.15_aarch64.AppImage"
+        url_suffix: "LatticeTerm_2026.11.15_aarch64.AppImage"
+        size: 109672968
+        media_type: "zip"
+        digest: "sha256:2f1ab32a241100bdf993f623727ab4b786bab03713242d5e0da9b5dc106e86ae"
+      "748974913":
+        name: "LatticeTerm_2026.11.15_aarch64.AppImage.sig"
+        url_suffix: "LatticeTerm_2026.11.15_aarch64.AppImage.sig"
+        size: 460
+        media_type: "zip"
+        digest: "sha256:99a4c057238a5d4bc42bfcb8112e448b4b9e90541567c563236d3a313f7bad9d"
+      "748977786":
+        name: "LatticeTerm_2026.11.15_amd64.deb"
+        url_suffix: "LatticeTerm_2026.11.15_amd64.deb"
+        size: 37213718
+        media_type: "zip"
+        digest: "sha256:7404043cc8f082e0a95e9256ce8753f81e9b519f8ba83ccc76fea6a823d40469"
+      "748977888":
+        name: "LatticeTerm_2026.11.15_amd64.deb.sig"
+        url_suffix: "LatticeTerm_2026.11.15_amd64.deb.sig"
+        size: 448
+        media_type: "zip"
+        digest: "sha256:4c2c52aadc2ba585a4b5d828951d3abcbaf37236697d54bb38a650a03ada2dae"
+      "748977916":
+        name: "LatticeTerm-2026.11.15-1.x86_64.rpm"
+        url_suffix: "LatticeTerm-2026.11.15-1.x86_64.rpm"
+        size: 37216534
+        media_type: "zip"
+        digest: "sha256:e0ec141ceb4fe52d029d68de876629bf57ea95f7bf4541d2a66aae15c6f27f5e"
+      "748977995":
+        name: "LatticeTerm-2026.11.15-1.x86_64.rpm.sig"
+        url_suffix: "LatticeTerm-2026.11.15-1.x86_64.rpm.sig"
+        size: 452
+        media_type: "zip"
+        digest: "sha256:c44fbaae0632d65d906715efe0e182aeea9a6fc4cde359b4cfe201953048d59d"
+      "748978015":
+        name: "LatticeTerm_2026.11.15_amd64.AppImage"
+        url_suffix: "LatticeTerm_2026.11.15_amd64.AppImage"
+        size: 111495672
+        media_type: "zip"
+        digest: "sha256:087bbaee6965eddd3c519877f4c49d0e4d58d11aef9181b2c6df28e5072c5f13"
+      "748978185":
+        name: "LatticeTerm_2026.11.15_amd64.AppImage.sig"
+        url_suffix: "LatticeTerm_2026.11.15_amd64.AppImage.sig"
+        size: 456
+        media_type: "zip"
+        digest: "sha256:83d16598faad20493eef51f09aa595032265c19dec5517c7d991b7b9b110bfaf"
+      "748990809":
+        name: "LatticeTerm_2026.11.15_x64-setup.exe"
+        url_suffix: "LatticeTerm_2026.11.15_x64-setup.exe"
+        size: 20907858
+        media_type: "zip"
+        digest: "sha256:b9dd3a6154a1404d869be9c01c0305b19752064c7bc2d430dba3e2d4b75aff55"
+      "748990906":
+        name: "LatticeTerm_2026.11.15_x64-setup.exe.sig"
+        url_suffix: "LatticeTerm_2026.11.15_x64-setup.exe.sig"
+        size: 456
+        media_type: "zip"
+        digest: "sha256:ba8acadb8842ac4aa88470151c260d168ea152ff3155557d975a374d4a920882"
+      "748993261":
+        name: "LatticeTerm_2026.11.15_aarch64.dmg"
+        url_suffix: "LatticeTerm_2026.11.15_aarch64.dmg"
+        size: 32662072
+        media_type: "zip"
+        digest: "sha256:457c2adb96ffcde4aa633fc52f9b4e107a5f0787d450d68bed18bc145566595a"
+      "748993377":
+        name: "LatticeTerm_2026.11.15_aarch64.app.tar.gz"
+        url_suffix: "LatticeTerm_2026.11.15_aarch64.app.tar.gz"
+        size: 32956381
+        media_type: "zip"
+        digest: "sha256:3e367a43f1df5a60603c2b9c69fdded0aa6895760348ad6e72889ec92a25e598"
+      "748993501":
+        name: "LatticeTerm_2026.11.15_aarch64.app.tar.gz.sig"
+        url_suffix: "LatticeTerm_2026.11.15_aarch64.app.tar.gz.sig"
+        size: 436
+        media_type: "zip"
+        digest: "sha256:712f618e5e74c854257b31b47b732cbe750f1b326aef390e8c68095bac4ab93f"
+      "749010301":
+        name: "LatticeTerm_2026.11.15_x64.dmg"
+        url_suffix: "LatticeTerm_2026.11.15_x64.dmg"
+        size: 34231003
+        media_type: "zip"
+        digest: "sha256:ecd205cb7b321e4336a062aa5af64e747b0dc4cd081450b873b442a474d26491"
+      "749010421":
+        name: "LatticeTerm_2026.11.15_x64.app.tar.gz"
+        url_suffix: "LatticeTerm_2026.11.15_x64.app.tar.gz"
+        size: 34226939
+        media_type: "zip"
+        digest: "sha256:b80f4cd05053c570dc3a427318dc65096b96db5d3ff649846f5af7c424288966"
+      "749010557":
+        name: "LatticeTerm_2026.11.15_x64.app.tar.gz.sig"
+        url_suffix: "LatticeTerm_2026.11.15_x64.app.tar.gz.sig"
+        size: 436
+        media_type: "zip"
+        digest: "sha256:bc683b1d746ed9a2adef70f8863db6f90d0e89b9495c4597a17138990a67806b"
+      "749017922":
+        name: "latest.json"
+        url_suffix: "latest.json"
+        size: 9551
+        media_type: "application/json"
+        digest: "sha256:e29faa052d08bb97f18be5922758063d7c6be0a7f1ff08c13da72761ef7f3a9e"
