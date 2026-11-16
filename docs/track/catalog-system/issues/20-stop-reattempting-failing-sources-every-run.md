@@ -1,0 +1,49 @@
+# Stop re-attempting permanently failing sources in every run
+
+Type: task
+Label: implementation:task
+Status: open
+Blocked by: none
+
+## Outcome
+
+A source that keeps failing is attempted at a bounded rate instead of in every
+run, and the two refusal classes that are the fork's own choice (same-tag
+conflicts, the 16 MiB response bound) each have a recorded decision.
+
+## Why
+
+Batch selection sorts sources by the `attempted_at` of their retained document
+(`host_catalog.collect`). A failed attempt writes no document, so a source that
+never succeeded sorts first forever, and one that starts failing keeps its last
+successful time and drifts to the front. Measured on the status branch for
+runs 43771598884, 43794093773 and 43857712579 (November 15 to 16, 2026): the
+same 26 sources failed in all three, 26 of each run's 500 attempts.
+
+| Sources | Cause | Note |
+| --- | --- | --- |
+| 14 | `same_tag_conflict`: GitHub returns two releases with one tag | Refused by the collector's own rule |
+| 2 | Response over the 16 MiB bound (`VSCodium/vscodium`, `wekan/wekan`) | Refused by the collector's own bound |
+| 10 | HTTP 404 | 8 are in the first upstream merge's `sources_to_retire`; `Odrannnn/MetroidPrimePort` and `xxx-holic/wishtoken-desktop` are not |
+
+Twenty of the 26 never had a successful collection
+([final audit](../github-coverage-final-audit-16.json)); six succeeded once and
+have failed since. The set only grows as repositories disappear.
+
+## Scope
+
+- Record the time of a failed attempt where selection can see it, so a failing
+  source rotates with the rest or backs off. Failure must still leave the
+  retained facts and their times untouched.
+- Decide the same-tag rule with Marek: keep refusing the whole source, or keep
+  both releases under their own release ids (the format already keys releases
+  by id) and let client selection choose.
+- Decide the two oversized sources with Marek: raise the bound for named
+  sources, collect fewer pages for them, or leave them out.
+
+Pushing, the schedule pin and any change of the published format need Marek's
+authorization.
+
+## Comments
+
+November 16, 2026: opened from the ticket 16 review.

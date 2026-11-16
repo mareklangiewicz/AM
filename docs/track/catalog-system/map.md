@@ -5,7 +5,7 @@
 Marek now requests migration of all GitHub-backed apps into one consistent v3
 catalog, and explicitly includes non-release GitHub observations. Freshness is
 not an optimization target regardless of cost; operating rules may be adjusted
-when needed. [Ticket 16](issues/16-qualify-v3-coverage-expansion.md) is claimed.
+when needed. [Ticket 16](issues/16-qualify-v3-coverage-expansion.md) is resolved (November 16).
 The [local bulk checkpoint](github-migration-16.md) prepares 8,607 identities /
 8,251 sources and applies 9,756 recipe conversions; custom/non-release work and
 publication remain unfinished. This supersedes the former coverage deferral.
@@ -166,9 +166,13 @@ approval boundaries.
 | [13 resolved](issues/13-integrate-main-owned-catalog-browser.md) | 11, 12 | Main-owned A/B/C browser and real-browser checks; device/comprehension deferred and timing misses retained by Marek's explicit acceptance. |
 | [14 resolved](issues/14-verify-scale-compatibility-and-rollback.md) | 11, 12, 13 | Current-scope direct-v3 migration checks; prior expanded evidence retained with limits. |
 | [15 prepared](issues/15-prepare-reviewed-catalog-rollout-package.md) | 14 | [Exact myxps cutover](myxps-cutover-15.md), awaiting specific operational authorization. |
-| [16 claimed](issues/16-qualify-v3-coverage-expansion.md) | Current-scope cutover | Full GitHub v3 migration, including explicitly requested non-release sources; [local checkpoint](github-migration-16.md). |
+| [16 resolved](issues/16-qualify-v3-coverage-expansion.md) | Current-scope cutover | Full GitHub v3 migration: 8,293 of 8,313 sources collected; [review and usable-selection measurement](issues/16-qualify-v3-coverage-expansion.md#answer--november-16-2026): 44% of policy keys select without a stale override. |
 | [17 resolved](issues/17-plan-upstream-merge-after-recipe-conversion.md) | none | Upstream-merge strategy after the recipe conversion (a trial merge reports 986 conflicts): [upstream stays authoritative, converted forms are re-derived by a tool](issues/17-plan-upstream-merge-after-recipe-conversion.md#answer--november-16-2026); [ADR 0005](../../adr/0005-upstream-authoritative-converted-recipes-derived.md). |
-| [18 open](issues/18-build-upstream-merge-tool-and-run-first-merge.md) | 16 | Maintained upstream merge tool with receipt and dry run, then the first merge. |
+| [18 claimed](issues/18-build-upstream-merge-tool-and-run-first-merge.md) | 16 | Maintained upstream merge tool with receipt and dry run, then the first merge. |
+| [19 open](issues/19-decide-freshness-rule-against-real-rotation.md) | none | Client 48-hour freshness limit against a 4.9-day collection round; Marek decides. |
+| [20 open](issues/20-stop-reattempting-failing-sources-every-run.md) | none | 26 failing sources re-attempted every run; same-tag and 16 MiB refusals. |
+| [21 open](issues/21-retire-catalog-sources.md) | 18 | Collector support for retiring a source; retire the merge's list and am-utils. |
+| [22 open](issues/22-keep-collection-running-across-doc-pushes.md) | none | Schedule pin pauses collection on any push. |
 
 Latest implementation evidence, November 8: Chromium desktop/narrow and Firefox
 checks pass; physical-device/comprehension limits remain with 13. Independent

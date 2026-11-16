@@ -191,3 +191,15 @@ configuration. [Ticket 135](../../docs/track/release-catalog/issues/135-prepare-
 prepares 53-recipe/51-source enrollment;
 [136](../../docs/track/release-catalog/issues/136-publish-next-ten-and-refresh-live-policy.md)
 records its authorized publication and protected compiled-policy deployment.
+
+## Usable selections
+
+```sh
+python3 -B tools/catalog-collector/qualify_usable_selections.py --out /tmp/usable.json
+```
+
+Runs the real client once per policy key against a local copy of one published
+catalog commit (default `origin/release-catalog-v3`) at the current clock, and
+counts its outcomes: selected, stale, or the refusal text. No network. About
+100 minutes for 10,000 keys on five jobs; `--limit N` gives a quick trial.
+Leave `modules/catalog-yaml-policy.am` alone while it runs.

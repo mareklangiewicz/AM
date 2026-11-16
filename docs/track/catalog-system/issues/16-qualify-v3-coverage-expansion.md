@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: claimed
+Status: resolved
 Assignee: claude
 Blocked by: 15
 
@@ -138,4 +138,71 @@ failure was recovered after successful publication, as recorded in the latest
 
 Marek reassigned this ticket from Codex to Claude with the instruction to
 review Codex's work and take the ticket over. The review and its measurements
-follow below once complete; nothing above is changed.
+follow below; nothing above is changed.
+
+## Answer — November 16, 2026
+
+The full GitHub migration Marek reopened this ticket for is committed,
+published and collecting: 8,293 of 8,313 enrolled sources have data, and every
+remaining source has an explained refusal. The older capacity targets in the
+Outcome (5,000 sources, 12-hour refresh, 25% allowance, 12 months of history)
+are not met and are no longer pursued: Marek said on November 9 that freshness
+is not a target. What is still wrong is concrete and moved to its own tickets.
+
+### What the review checked
+
+| Claim in this ticket | Check | Result |
+| --- | --- | --- |
+| Conversion committed and published | `git status`, `origin/main-marek` | `6277377ae` pushed November 10; nothing left uncommitted in the checkout |
+| Scheduled collection works | `gh run list --workflow catalog.yml`, status branch | Every scheduled run since November 10 succeeded and published; 3 to 4 start per day |
+| 8,293 / 8,313 sources | `statistics.yaml` at catalog `9e653dd32` | `no_success: 20`, unchanged |
+| Reconstruction tests pass | `unittest discover -s tools/recipe-reconstruction` | 44 pass |
+| Collector tests pass | `unittest discover -s tools/catalog-collector` on a clean clone of `ae2c2d2c5` | 234 of 236 pass; 2 error |
+| The bulk conversion is what the tools produce | `tools/recipe-conversion` corpus tests, from the merge-base originals | 984 declarations and 8,770 long recipes rebuilt byte for byte |
+
+The two erroring tests were in `test_publication.py` and exercised the retired
+format-2 production path; they had been broken since the v3 cutover. Removed
+in `842a54d0c`.
+
+### Usable selections
+
+`tools/catalog-collector/qualify_usable_selections.py` runs the real client
+(`modules/catalog-yaml.am`) once per policy key against a local copy of one
+published catalog commit, with no network. Result for catalog `9e653dd32`,
+evaluated 14:08 to 15:50 UTC ([evidence](../usable-selections-16.json)):
+
+| Outcome | Policy keys |
+| --- | --- |
+| selected an asset or value | 4,497 |
+| refused as stale (asset observed over 48 hours ago) | 5,528 |
+| refused as stale, release or Git selection, no override | 12 |
+| no matching asset among the collected releases | 51 |
+| source has no collected data | 26 |
+| total | 10,114 |
+
+So 44% of policy keys could install or update without a manual override at
+that moment. The 51 with no matching asset are listed in the evidence file;
+several belong to recipes upstream has since deleted.
+
+### Findings and where each went
+
+- The client's 48-hour limit against a collection round of about 4.9 days:
+  [ticket 19](19-decide-freshness-rule-against-real-rotation.md), for Marek.
+- The same 26 sources fail in every run and are re-attempted every run; the
+  same-tag and 16 MiB refusals need a decision:
+  [ticket 20](20-stop-reattempting-failing-sources-every-run.md).
+- A source cannot be un-enrolled:
+  [ticket 21](21-retire-catalog-sources.md).
+- Any push pauses scheduled collection until the schedule variable is
+  repinned. It happened on November 16 (repinned with Marek's approval, no run
+  lost): [ticket 22](22-keep-collection-running-across-doc-pushes.md).
+- `x86_64/odicto` and `x86_64/pdf4qt` were published with a URL pattern that
+  matches nothing (`$APP` kept as text). Fixed in `0ae2468fe`; the corrected
+  policy module is not yet delivered to `/opt/am/modules` on any host.
+- One client selection costs about 3 CPU seconds here, most of it awk reading
+  the 87,000-line policy module three times. Not acted on.
+
+Not verified: the installed runtime on myxps, any other host, and real payload
+downloads. The 49 recipes with unverifiable sources were not rechecked;
+upstream has deleted or replaced all of them, so the first upstream merge
+([ticket 18](18-build-upstream-merge-tool-and-run-first-merge.md)) removes them.
