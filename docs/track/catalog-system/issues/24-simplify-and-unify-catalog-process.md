@@ -2,7 +2,7 @@
 
 Type: grilling
 Label: wayfinder:grilling
-Status: open
+Status: resolved
 Blocked by: none
 
 ## Outcome
@@ -45,3 +45,53 @@ Observed during the first merge (ticket 18), as questions, not proposals:
 ## Comments
 
 November 16, 2026: opened after the first merge, as Marek asked.
+
+## Answer — November 16, 2026
+
+Grilled with Marek in two rounds. Decisions:
+
+1. **Target.** An upstream merge is one command plus the hand-merge of the
+   three runtime files, needs no test edits and takes under about 15 attended
+   minutes. Each change below is judged against that.
+2. **Breadth stays.** ADR 0005 stands: upstream is authoritative and
+   conversion runs at scale. Conversion is automatic (`apply` took 44 s); the
+   cost is in committed derived files, pinned tests and the slow suite.
+3. **Forms stay; the declaration is preferred.** Marek rejected retiring the
+   recipe declaration: short declarative recipes can be trusted more easily
+   and are one of the fork's main advantages. The long recipe is the fallback
+   until a reviewed template covers a recipe. Recorded as
+   [ADR 0006](../../../adr/0006-recipe-declaration-is-the-preferred-form.md).
+   The unnamed fifth form ("other converted" in `merge.py`) goes once none
+   remain.
+4. **More declarations.** Count recipes per upstream template before a second
+   template is reviewed: [ticket 31](31-count-recipes-per-upstream-template.md).
+5. **Derived files.** Commit only what is a source of truth or what a client
+   fetches; generate the rest: [ticket 29](29-sort-and-generate-derived-catalog-files.md).
+6. **Tests.** Frozen fixtures instead of pinned live counts and recipe names;
+   whole-tree invariants move into `merge.py gate`:
+   [ticket 28](28-unpin-tests-from-live-recipes.md).
+7. **CI.** A fast tier on every push that reports and blocks nothing; the full
+   collector suite and e2e on demand and before each upstream merge:
+   [ticket 30](30-add-ci-fast-test-tier.md).
+8. **Merge tool.** Drops the `installed_here_*` host check with no
+   replacement ([ticket 26](26-drop-host-check-from-merge-tool.md)); the
+   committed receipt shrinks to counts and `attention`
+   ([ticket 27](27-shrink-committed-merge-receipt.md)).
+9. **Format-2 modules** are removed with their tests:
+   [ticket 25](25-remove-format-2-reader-modules.md).
+10. Tickets 19 to 22 stay as they are.
+
+The task tickets are ordered smallest first; each shortens the next merge by
+itself.
+
+Corrections made during the session, kept so nobody repeats them:
+
+- The tree holds 984 recipe declarations and 8,770 long recipes
+  (`tools/recipe-conversion/README.md`). The 37 declarations and 450 long
+  recipes in the first merge's receipt are only the recipes that merge
+  touched.
+- `recipe-url-policies.json` holds the verified source identities that
+  re-conversion reads back, so it is not purely derived.
+
+Not checked: where the collector suite's 18 to 47 minutes go, and whether any
+fifth-form recipes remain. Each is the first step of its task ticket.
