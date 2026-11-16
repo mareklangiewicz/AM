@@ -168,11 +168,13 @@ approval boundaries.
 | [15 prepared](issues/15-prepare-reviewed-catalog-rollout-package.md) | 14 | [Exact myxps cutover](myxps-cutover-15.md), awaiting specific operational authorization. |
 | [16 resolved](issues/16-qualify-v3-coverage-expansion.md) | Current-scope cutover | Full GitHub v3 migration: 8,293 of 8,313 sources collected; [review and usable-selection measurement](issues/16-qualify-v3-coverage-expansion.md#answer--november-16-2026): 44% of policy keys select without a stale override. |
 | [17 resolved](issues/17-plan-upstream-merge-after-recipe-conversion.md) | none | Upstream-merge strategy after the recipe conversion (a trial merge reports 986 conflicts): [upstream stays authoritative, converted forms are re-derived by a tool](issues/17-plan-upstream-merge-after-recipe-conversion.md#answer--november-16-2026); [ADR 0005](../../adr/0005-upstream-authoritative-converted-recipes-derived.md). |
-| [18 claimed](issues/18-build-upstream-merge-tool-and-run-first-merge.md) | 16 | Maintained upstream merge tool with receipt and dry run, then the first merge. |
+| [18 resolved](issues/18-build-upstream-merge-tool-and-run-first-merge.md) | 16 | Upstream merge tool and [the first merge](issues/18-build-upstream-merge-tool-and-run-first-merge.md#answer--november-16-2026): `ba061a639` in commit `8f3bd0cf3`, unpushed; [receipt](upstream-merge-20261116.json). |
 | [19 open](issues/19-decide-freshness-rule-against-real-rotation.md) | none | Client 48-hour freshness limit against a 4.9-day collection round; Marek decides. |
 | [20 open](issues/20-stop-reattempting-failing-sources-every-run.md) | none | 26 failing sources re-attempted every run; same-tag and 16 MiB refusals. |
 | [21 open](issues/21-retire-catalog-sources.md) | 18 | Collector support for retiring a source; retire the merge's list and am-utils. |
 | [22 open](issues/22-keep-collection-running-across-doc-pushes.md) | none | Schedule pin pauses collection on any push. |
+| [23 open](issues/23-repair-offline-e2e-after-v3-cutover.md) | none | Offline e2e suite fails 27 tests before and after the merge. |
+| [24 open](issues/24-simplify-and-unify-catalog-process.md) | none | Grilling: simplify and unify the catalog and merge process. |
 
 Latest implementation evidence, November 8: Chromium desktop/narrow and Firefox
 checks pass; physical-device/comprehension limits remain with 13. Independent

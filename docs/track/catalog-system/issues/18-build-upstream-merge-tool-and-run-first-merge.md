@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: claimed
+Status: resolved
 Assignee: claude
 Blocked by: 16
 
@@ -90,3 +90,40 @@ Found while building, each changing the scope written above:
   recipes (moved to "am-extras", upstream `0a221879c`) and all 49 recipes in
   `unavailable-github-recipes.json`. Their tests have to be retired or
   re-pinned in the merge commit.
+
+## Answer — November 16, 2026
+
+`main-marek` holds `upstream/main` `ba061a639` through merge commit
+`8f3bd0cf3` (parents `cf9b5cc9b`, `ba061a639`), made with
+`tools/upstream-merge/merge.py apply`. Not pushed; the push, the
+`CATALOG_SCHEDULE_REVISION` repin and delivering the recompiled
+`modules/catalog-yaml-policy.am` to `/opt/am/modules` wait for Marek.
+
+Receipt: [upstream-merge-20261116.json](../upstream-merge-20261116.json).
+1,591 taken from upstream, 486 re-converted, 30 fell back, 512 deleted, 9
+fork-owned kept, 9,674 untouched; 34 sources to retire
+([ticket 21](21-retire-catalog-sources.md)).
+
+Decided by Marek for this merge: nothing was added to `fork-owned.txt`. The
+three recipes installed on myxps that fell back (`x86_64/appimagetool`,
+`x86_64/appimageupdatetool`, `x86_64/satty`) are upstream's originals again.
+Consequence for `x86_64/appimageupdatetool`: a fresh install or reinstall asks
+for the source again and offers the pkgforge build first; the installed copy
+and its updater are not changed by the merge.
+
+Hand-merged files were taken from the rehearsal branch; upstream did not touch
+them between `448123c0a` and `ba061a639`.
+
+Tests changed in the merge commit: `test_yaml_am_utils.py` and
+`fixture_am_utils.py` removed; the `mercury` and `obs-studio.select-2`
+consumer tests removed; AppImage policy count 115 to 105; unavailable recipes
+49 to 0; the two enrollment replays leave the three fallen-back recipes out of
+their former scope.
+
+Checked on the merged tree: merge gate; collector suite 226 of 226;
+recipe-conversion 15, recipe-reconstruction 44, upstream-merge 15.
+
+Not passing, and not caused by the merge: `./test/e2e/run` fails 27 tests with
+1 error on debian and fedora, identically on `cf9b5cc9b` and on the merged
+tree ([ticket 23](23-repair-offline-e2e-after-v3-cutover.md)). `regress/` was
+not run; it needs the pushed branch.
