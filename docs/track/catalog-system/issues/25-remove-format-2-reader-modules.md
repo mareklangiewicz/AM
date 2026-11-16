@@ -3,7 +3,6 @@
 Type: task
 Label: implementation:task
 Status: open
-Triage: needs-info
 Blocked by: none
 
 ## Outcome
@@ -56,3 +55,40 @@ So the real change is "retire format 2 from the collector": `writer.py`,
 `collect`, the `qualify_*` and rehearsal scripts that compare against format
 2, and their tests. That touches the live collection path and needs Marek's
 go-ahead as a scope, not as a two-file deletion. Nothing was changed.
+
+November 16, 2026: Marek approved the wider scope ("retire format 2 from the
+collector"). Import map read at `8c39bf0a7`; format 2 is in four layers, and
+the two modules can only go last:
+
+1. **Live path.** `host_catalog.collect(native_v3=False)` still builds a
+   format-2 tree; `collection_interface.py` always passes `native_v3=True`.
+   `validate --channel format-2` and the `format-2` channel of
+   `incremental.py` are the other entry points.
+2. **Shared helpers that are not format-2 specific** but live in format-2
+   files: `writer.document` and `retention.observation` are imported by
+   `contracts.py` (format 3); `yaml_publication` also carries `SAFE_LOADER`,
+   `schema_url` and a re-exported `git`.
+3. **Test fixtures are authored in format 2.** `fixture_v3.publish_local`
+   turns saved format-2 documents into format 3 through
+   `rehearse_pipeline.seed_source`; `fixture_appimages`, `fixture_recipes`,
+   `fixture_manager` and `fixture_facts` feed it. `test_yaml_reader.py` is the
+   helper 14 files import.
+4. **One-off scripts**: 13 `qualify_*.py` and `rehearse_pipeline.py`, written
+   for tickets 14 to 16, several comparing format 2 with format 3. Nothing
+   imports the `qualify_*` files.
+
+Proposed order, each step leaving the suite green:
+
+- A. Move the shared helpers of layer 2 to a neutral module.
+- B. Make `native_v3` the only behaviour of `collect`; drop the format-2
+  channel and `validate --channel format-2`; port or retire the tests that
+  drive the old path (most of `test_batch_collection.py`,
+  `test_publication.py`, `test_large_batch_enrollment.py`).
+- C. Save the fixtures as format-3 facts, so `seed_source` and format-2
+  loading leave the test stack.
+- D. Delete `yaml_publication.py`, `writer.py`, format-2 `retention.py`
+  leftovers, the format-2 `qualify_*` scripts, `test_yaml_reader.py`,
+  `test/e2e/test_reader_portability.py` and the two modules.
+
+Step B changes what scheduled collection runs, so it is pushed alone with a
+repin and one observed scheduled run before C and D. Nothing done yet.
