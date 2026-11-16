@@ -97,6 +97,12 @@ def translate(source,recipe,identity):
         if any(c in decoded for c in '$`\\\n\r\0'):
             raise ValueError('nonliteral wrapper setting')
         settings[key]=decoded
+    return declare(settings,selector.strip(),recipe,identity)
+
+
+def declare(settings,selector,recipe,identity):
+    """Emit a recipe declaration from literal settings and one release selector."""
+    settings=dict(settings)
     if settings.get('APP')!=recipe.split('/')[1]:raise ValueError('app identity')
     if identity['status'] not in ('verified','no_public_release','retained_identity'):
         raise ValueError('source has no verified public identity')
@@ -104,7 +110,7 @@ def translate(source,recipe,identity):
     endpoint=re.fullmatch(r'https://api[.]github[.]com/repos/([A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+)/releases(/latest)?(?:\?per_page=100)?',settings.get('CATALOG_ALIAS',''))
     if not endpoint or endpoint[1].lower()!=requested.lower():
         raise ValueError('source alias mismatch')
-    rules=url_rules(selector.strip())
+    rules=url_rules(selector)
     settings.update(CATALOG_FORMAT='3',CATALOG_RECIPE=recipe,
         CATALOG_REPOSITORY_ID=str(identity['repository_id']),CATALOG_REPOSITORY=identity['repository'],
         CATALOG_CHANNEL='stable' if endpoint[2] else 'any',CATALOG_ASSET_PATTERN='^.*$',
