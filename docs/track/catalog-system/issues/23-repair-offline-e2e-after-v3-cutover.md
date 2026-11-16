@@ -2,7 +2,8 @@
 
 Type: task
 Label: implementation:task
-Status: open
+Status: claimed
+Assignee: claude
 Blocked by: none
 
 ## Outcome
