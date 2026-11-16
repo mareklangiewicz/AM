@@ -2,7 +2,8 @@
 
 Type: task
 Label: implementation:task
-Status: open
+Status: claimed
+Assignee: claude
 Blocked by: 16
 
 ## Outcome
@@ -46,3 +47,46 @@ November 16, 2026: opened from ticket 17's answer. Unassigned.
 November 16, 2026: Marek decided the conversion tool must be solid, especially
 original recipe to recipe declaration. The earlier "find out whether" item is
 replaced by that requirement in Scope.
+
+November 16, 2026, takeover session: Marek asked Claude to take over ticket 16
+and continue here. The tools were built ahead of the merge itself, which still
+waits for ticket 16:
+
+- `tools/recipe-conversion/` ([README](../../../../tools/recipe-conversion/README.md)):
+  one entry point, `convert.py`, for both forms, with the direct
+  original-to-declaration path. Its corpus tests rebuild the published bulk
+  conversion from the merge-base originals byte for byte: 984 recipe
+  declarations and 8,770 long recipes with their policies.
+- `tools/upstream-merge/` ([README](../../../../tools/upstream-merge/README.md)):
+  `merge.py plan | apply | gate` and `fork-owned.txt` (the eight fork-only
+  recipes and `aarch64/appimageupdatetool`, the one recipe with a `MAREK-FORK`
+  mark).
+- Receipt outcomes: the five from ticket 17 plus `untouched`, for a recipe
+  upstream did not change. A re-conversion that lands in a lower form (long
+  instead of declaration) counts as `fell back`.
+
+Found while building, each changing the scope written above:
+
+- Un-enrolling a deleted recipe's source is not a file edit. The collector
+  refuses a batch that would drop a source the published catalog retains
+  (`host_catalog.collect`: "batch would discard retained sources"). The merge
+  leaves those sources enrolled and lists them in the receipt under
+  `sources_to_retire`; retiring them is collector work in
+  [ticket 21](21-retire-catalog-sources.md).
+- The wrapper translator kept a selector's shell expansions as pattern text.
+  `x86_64/odicto` and `x86_64/pdf4qt` were published with
+  `https.*$APP.*...mage$`, which matches nothing. Fixed in both recipes and in
+  the translator (commit `0ae2468fe`): a literal `$APP` is written out, any
+  other expansion refuses.
+- A long recipe that picks its repository at run time (`"$RELEASE"`) was
+  converted with policies for the given identities only, so a variant upstream
+  adds later would refuse at install time. The conversion now refuses unless
+  every offered `SITEn` has an identity (`appimagetool` hits this).
+- `regress/` installs real apps from the network through the pushed `AMREPO`
+  branch, so it cannot test an unpushed merge. The fork's offline container
+  suite `test/e2e/run` is the whole-command check before the push; `regress/`
+  can only follow it.
+- Upstream deleted whole families the tool tests are pinned to: the am-utils
+  recipes (moved to "am-extras", upstream `0a221879c`) and all 49 recipes in
+  `unavailable-github-recipes.json`. Their tests have to be retired or
+  re-pinned in the merge commit.
