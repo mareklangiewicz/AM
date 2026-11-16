@@ -12,9 +12,8 @@ ROOT=Path(__file__).resolve().parents[2]
 class Unavailable(unittest.TestCase):
     def test_all_unverified_bindings_are_hash_bound_and_fail_before_side_effects(self):
         receipt=json.loads((ROOT/'tools/catalog-collector/unavailable-github-recipes.json').read_text())
-        # Upstream deleted or replaced all 49 by 448123c0a; the registry stays
-        # for the next recipe whose source cannot be verified.
-        self.assertEqual(len(receipt['recipes']),0)
+        # Every entry is checked, however many there are; upstream deleted or
+        # replaced the first 49 by 448123c0a and the list may be empty.
         with tempfile.TemporaryDirectory() as temporary:
             directory=Path(temporary)
             for row in receipt['recipes']:

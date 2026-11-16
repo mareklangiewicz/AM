@@ -48,3 +48,9 @@ Already pinned to Git objects and fine: `test_bulk_recipes.py`,
 `test_recipe_refresh.py`, parts of `test_bulk_recipe_urls.py` and
 `test_catalog_sources.py`. Not yet looked at: tests that read the fork-side
 derived files, and `test/e2e`.
+
+November 16, 2026: the two pure count pins are gone: `len(APPIMAGES)==105`
+is now "not empty", and the unavailable-recipes test checks every entry
+without asserting how many there are. The named live recipes and the
+whole-tree loops remain; see the tier proposal on
+[ticket 30](30-add-ci-fast-test-tier.md).

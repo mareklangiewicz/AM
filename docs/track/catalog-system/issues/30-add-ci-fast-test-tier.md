@@ -33,3 +33,28 @@ hooks. Decided in
   demand.
 
 ## Comments
+
+November 16, 2026: suite timed at `479574930` with
+`python3 -B -m unittest discover -s tools/catalog-collector -p 'test_*.py' --durations 0`:
+226 tests, 1,045 s, all pass.
+
+| Seconds | Where |
+| --- | --- |
+| 415 | `test_yaml_appimages` `test_actual_manager_all_saved_matches_and_generated_updaters`: runs the real manager for every recipe in the live AppImage policy table |
+| 205 | `test_host_cutover` `test_all_host_recipes_manager_install_and_standalone_update` |
+| 58 | `test_yaml_appimages` `test_adversarial_url_rules_on_three_awk_tools` |
+| 526 | `test_yaml_appimages`, whole file |
+| 240 | `test_host_cutover`, whole file |
+| 80 | `test_yaml_manager_integration`, whole file |
+| 199 | the other 30 or so files together |
+
+Two tests are 59% of the run and three files are 81%. The two slowest are
+also whole-tree checks over live recipes, which
+[ticket 28](28-unpin-tests-from-live-recipes.md) wants out of the unit suite.
+
+Proposal, not yet agreed: name the tier by file. Whole-tree and
+real-manager-over-every-recipe checks move to `tree_*.py` files, run with
+`-p 'tree_*.py'` before an upstream merge and on demand; `test_*.py` stays the
+fast tier (about 3 to 7 minutes depending on how much of the manager
+integration stays) and is what CI runs. No skip flags, so nothing is silently
+off.
