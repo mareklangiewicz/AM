@@ -43,3 +43,28 @@ A collection observation acquired by reaching the end of the source's published 
 
 **Reconciliation**:
 Removal of retained releases absent from a successfully completed full-history collection, according to an explicit deletion policy. Absence from a partial collection is not grounds for reconciliation.
+
+## Recipes
+
+**Original recipe**:
+Upstream's full install script for one app and architecture, exactly as upstream publishes it.
+_Avoid_: Upstream script, legacy recipe
+
+**Recipe declaration**:
+The fork's short form of a recipe: literal settings that name the app, its catalog source and its packaging, with no install steps of its own.
+_Avoid_: Short recipe, wrapper
+
+**Long recipe**:
+An original recipe whose install steps are kept, with its release selection replaced by a catalog lookup.
+_Avoid_: Patched recipe, bound recipe
+
+**Conversion**:
+Turning an original recipe into a long recipe or a recipe declaration.
+_Avoid_: Migration, translation
+
+**Binding**:
+The link from a recipe to its catalog source, carried by long recipes and recipe declarations.
+
+**Fork-owned recipe**:
+A recipe the fork maintains itself, either absent upstream or deliberately different from upstream's, which an upstream merge never overwrites.
+_Avoid_: Custom recipe, local recipe
