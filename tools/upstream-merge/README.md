@@ -74,9 +74,6 @@ a scratch tree; a declaration or policy they do not support refuses there.
 - `fell_back`: each with its refusal reasons. A new upstream template version
   shows up here until it is reviewed into
   `tools/recipe-conversion/layouts.json`.
-- `installed_here_deleted` / `installed_here_fell_back`: affected apps that
-  `am` has installed on the machine running the plan (`/opt/*/remove`). Other
-  machines are not checked.
 - `fork_owned_upstream_changes`: upstream moved under a fork-owned recipe.
 - `sources_to_retire`: catalog sources no surviving recipe selects from. The
   merge leaves them enrolled: the collector refuses to drop a source the

@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: open
+Status: resolved
 Blocked by: none
 
 ## Outcome
@@ -20,3 +20,12 @@ nothing replaces the check for now. Decided in
 [ticket 24](24-simplify-and-unify-catalog-process.md#answer--november-16-2026).
 
 ## Comments
+
+## Answer — November 16, 2026
+
+`merge.py` no longer has `installed()`, the `apps_directory` and `host_arch`
+parameters of `prepare`, or the two `installed_here_*` attention keys; the
+README entry is gone. `unittest discover -s tools/upstream-merge` passes (15
+tests); no test referenced the check. The committed receipt of the first merge
+keeps its two keys as history. `plan` was not re-run against a new upstream
+revision.

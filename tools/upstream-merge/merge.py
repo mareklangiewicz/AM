@@ -268,13 +268,7 @@ def stage(root,ours_revision,rows,files):
         return (tree/POLICY).read_text()
 
 
-def installed(directory):
-    """App names `am` installed on this host: read-only, names only."""
-    if not directory.is_dir():return set()
-    return {entry.name for entry in directory.iterdir() if (entry/'remove').is_file()}
-
-
-def prepare(root,upstream,ours_revision='HEAD',apps_directory=Path('/opt'),host_arch=None):
+def prepare(root,upstream,ours_revision='HEAD'):
     """Everything `plan` reports and `apply` writes, with nothing changed."""
     upstream=git(root,'rev-parse','--verify',upstream+'^{commit}').stdout.decode().strip()
     ours_revision=git(root,'rev-parse','--verify',ours_revision+'^{commit}').stdout.decode().strip()
@@ -290,18 +284,12 @@ def prepare(root,upstream,ours_revision='HEAD',apps_directory=Path('/opt'),host_
         if any(version.returncode for version in versions):continue
         b,o,t=(version.stdout.decode() for version in versions)
         if o!=b and t!=b:files[path]=merge_list(b,o,t)
-    host_arch=host_arch or subprocess.check_output(['uname','-m'],text=True).strip()
-    here=installed(apps_directory)
     attention=dict(
         fell_back=[dict(path=row['path'],form_before=row['form_before'],form_after=row['form_after'],
                         refusals=row['refusals']) for row in rows if row['outcome']=='fell back'],
         hand_edits_ended=[row['path'] for row in rows if row['outcome'] in ('re-converted','fell back')
                           and row['form_before'] in convert.FORMS and not row['fork_form_reproduced']],
         fork_owned_upstream_changes=[dict(path=row['path'],upstream=row['upstream']) for row in rows if row.get('upstream')],
-        installed_here_deleted=[row['path'] for row in rows if row['outcome']=='deleted'
-                                and row['path'].split('/')[1]==host_arch and row['path'].split('/')[2] in here],
-        installed_here_fell_back=[row['path'] for row in rows if row['outcome']=='fell back'
-                                  and row['path'].split('/')[1]==host_arch and row['path'].split('/')[2] in here],
         sources_to_retire=[dict(repository_id=rid,repository=name) for rid,name in sorted(retire.items())])
     receipt=dict(format=1,ours=ours_revision,upstream=upstream,base=base,
         counts=dict(Counter(row['outcome'] for row in rows)),

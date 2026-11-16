@@ -175,8 +175,8 @@ approval boundaries.
 | [22 open](issues/22-keep-collection-running-across-doc-pushes.md) | none | Schedule pin pauses collection on any push. |
 | [23 resolved](issues/23-repair-offline-e2e-after-v3-cutover.md) | none | Offline e2e suite [ported to the format-3 client](issues/23-repair-offline-e2e-after-v3-cutover.md#answer--november-16-2026); debian, fedora and termux pass on the merged tree. |
 | [24 resolved](issues/24-simplify-and-unify-catalog-process.md) | none | Simplification [agreed](issues/24-simplify-and-unify-catalog-process.md#answer--november-16-2026): forms stay and the recipe declaration is preferred ([ADR 0006](../../adr/0006-recipe-declaration-is-the-preferred-form.md)); tickets 25 to 31 carry the changes. |
-| [25 open](issues/25-remove-format-2-reader-modules.md) | none | Remove the two format-2 reader modules and their tests. |
-| [26 open](issues/26-drop-host-check-from-merge-tool.md) | none | Merge tool stops reading the host's installed apps. |
+| [25 open](issues/25-remove-format-2-reader-modules.md) | none | Remove the two format-2 reader modules. Needs info: the collector still has a format-2 path, so the real scope is retiring format 2 from the collector. |
+| [26 resolved](issues/26-drop-host-check-from-merge-tool.md) | none | Merge tool [no longer reads the host's installed apps](issues/26-drop-host-check-from-merge-tool.md#answer--november-16-2026). |
 | [27 open](issues/27-shrink-committed-merge-receipt.md) | 26 | Committed receipt holds counts and `attention` only. |
 | [28 open](issues/28-unpin-tests-from-live-recipes.md) | none | Tests use frozen fixtures; tree invariants move to the gate. |
 | [29 open](issues/29-sort-and-generate-derived-catalog-files.md) | 28 | Classify the five fork-side files; generate the derived ones. |
