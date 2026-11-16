@@ -39,10 +39,18 @@ def compile_source():
     return '\n'.join(lines)
 
 
-if __name__ == '__main__':
-    path = ROOT/'modules/catalog-yaml-policy.am'
+def generate(root=ROOT, policies=None):
+    """Write the compiled policies into a tree's policy module."""
+    global POLICIES
+    saved = POLICIES
+    if policies is not None:
+        POLICIES = Path(policies)
+    try:
+        generated = compile_source()
+    finally:
+        POLICIES = saved
+    path = Path(root)/'modules/catalog-yaml-policy.am'
     source = path.read_text()
-    generated = compile_source()
     if START in source:
         before, rest = source.split(START, 1)
         _, after = rest.split(END, 1)
@@ -50,3 +58,7 @@ if __name__ == '__main__':
     else:
         source = source.replace('BEGIN {\n', generated + 'BEGIN {\n', 1)
     path.write_text(source)
+
+
+if __name__ == '__main__':
+    generate()

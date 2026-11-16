@@ -33,6 +33,7 @@ import host_catalog
 from collection_interface import registry_names
 from recipe_declarations import MARKER,recipe_rows,url_policy_rows
 from recipe_policy_source import generate
+import appimage_policy_source
 
 ARCHES=('x86_64','aarch64','i686','armv7l')
 RECIPE=re.compile(r'programs/('+'|'.join(ARCHES)+r')/[^/]+')
@@ -45,6 +46,7 @@ ENROLLED=COLLECTOR+'collection-recipes.txt'
 CATALOG_ONLY=COLLECTOR+'collection-apps.json'
 UNAVAILABLE=COLLECTOR+'unavailable-github-recipes.json'
 NAMES=COLLECTOR+'source-names.json'
+APPIMAGES=COLLECTOR+'test-data/appimage-policies.json'
 POLICY='modules/catalog-yaml-policy.am'
 OUTCOMES=('taken from upstream','re-converted','fell back','deleted','fork-owned kept','untouched')
 
@@ -221,6 +223,9 @@ def derive(root,ours_revision,rows):
     unavailable=json.loads(text(root,ours_revision,UNAVAILABLE))
     gone={row['path'] for row in rows if row['outcome'] not in ('untouched','fork-owned kept')}
     unavailable['recipes']=[entry for entry in unavailable['recipes'] if entry['recipe'] not in gone]
+    # The older explicit AppImage policies are bound to their recipe's text.
+    appimages=[policy for policy in json.loads(text(root,ours_revision,APPIMAGES))
+               if 'programs/'+policy['recipe'] not in gone]
     # Sources no surviving recipe selects from. Retiring them is a separate
     # collector step; this merge only names them.
     bound={policy['repository_id'] for policy in registry}
@@ -236,7 +241,8 @@ def derive(root,ours_revision,rows):
             if identity['repository_id'] not in bound:retire[identity['repository_id']]=identity['repository']
     return {REGISTRY:json.dumps(registry,indent=2)+'\n',ENROLLED:'\n'.join(kept)+'\n',
             CATALOG_ONLY:json.dumps(catalog_only,indent=2)+'\n',
-            UNAVAILABLE:json.dumps(unavailable,indent=2)+'\n'},retire
+            UNAVAILABLE:json.dumps(unavailable,indent=2)+'\n',
+            APPIMAGES:json.dumps(appimages,indent=2)+'\n'},retire
 
 
 def stage(root,ours_revision,rows,files):
@@ -253,8 +259,10 @@ def stage(root,ours_revision,rows,files):
         for path in (POLICY,NAMES):
             (tree/path).parent.mkdir(parents=True,exist_ok=True)
             (tree/path).write_text(text(root,ours_revision,path))
-        for path,content in files.items():(tree/path).write_text(content)
+        for path,content in files.items():
+            (tree/path).parent.mkdir(parents=True,exist_ok=True);(tree/path).write_text(content)
         generate(tree)
+        appimage_policy_source.generate(tree,tree/APPIMAGES)
         with patch.object(host_catalog,'ROOT',tree):enrollment,_=host_catalog.configuration()
         registry_names(enrollment,tree/NAMES)
         return (tree/POLICY).read_text()
