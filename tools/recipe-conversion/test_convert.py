@@ -111,6 +111,16 @@ class Long(unittest.TestCase):
         with self.assertRaisesRegex(c.Refusal,'unverified selection source: pkgforge-dev/86box-AppImage-Enhanced'):
             c.convert(source,'aarch64/86box','long',[main])
 
+    def test_run_time_source_choice_needs_an_identity_for_every_offered_repository(self):
+        source=show(BASE,'x86_64/mpv')
+        offered=c.SITE.findall(source)
+        self.assertGreater(len(offered),1)
+        self.assertRegex(source,c.bulk_recipe_urls.DYNAMIC)
+        found=[dict(repository_id=index+1,repository=name) for index,name in enumerate(offered)]
+        self.assertEqual(c.convert(source,'x86_64/mpv','long',found)['form'],'long')
+        with self.assertRaisesRegex(c.Refusal,'no verified identity for source: '+offered[-1]):
+            c.convert(source,'x86_64/mpv','long',found[:-1])
+
     def test_declaration_refusal_does_not_decide_the_long_form(self):
         source=show(BASE,'x86_64/1devtool')
         found=[dict(repository_id=1179864103,repository='stoicsoft/1devtool-releases')]

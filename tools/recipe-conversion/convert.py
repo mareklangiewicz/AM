@@ -28,6 +28,7 @@ FORMS=('declaration','long')
 RECIPE=r'(x86_64|aarch64|i686|armv7l)/[a-z0-9][a-z0-9_.+-]*'
 REPOSITORY=r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+'
 LAYOUTS=Path(__file__).with_name('layouts.json')
+SITE=re.compile(r'''\bSITE[0-9]+=["']('''+REPOSITORY+r''')["']''')
 SELECTION=re.compile(r'curl -Ls\s+(?P<quote>["\']?)(?P<url>https://api[.]github[.]com/repos/(?P<site>'+REPOSITORY
     +r')/releases(?:/latest)?(?:\?per_page=100)?)(?P=quote)\s*\|\s*(?P<selector>[^\n]+)')
 # The same literal written with other quotes. Upstream's generator writes
@@ -90,6 +91,13 @@ def to_long(source,recipe,identities):
                      catalog_app=identity.get('catalog_app',recipe.split('/')[1]))
         if 'requested_repository' in identity:binding['requested_repository']=identity['requested_repository']
         bindings.append(binding)
+    # A recipe that picks its repository at run time reads "$RELEASE"; the
+    # policies then cover only the identities given. Every repository it
+    # offers (SITE1, SITE2, ...) must be among them, or a choice would refuse
+    # at install time instead of here.
+    known={name.lower() for binding in bindings for name in (binding['repository'],binding.get('requested_repository',''))}
+    for site in SITE.findall(source) if bulk_recipe_urls.DYNAMIC.search(source) else ():
+        if site.lower() not in known:raise Refusal('no verified identity for source: '+site)
     try:
         text,policies,_=bulk_recipe_urls.translate(source,recipe,bindings)
     except ValueError as error:raise Refusal(str(error)) from error

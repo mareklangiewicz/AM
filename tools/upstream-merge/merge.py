@@ -193,8 +193,15 @@ def derive(root,ours_revision,rows):
     registry=json.loads(text(root,ours_revision,REGISTRY))
     changed={row['path'].removeprefix('programs/') for row in rows
              if row['outcome'] in ('taken from upstream','re-converted','fell back','deleted')}
-    registry=[policy for policy in registry if policy['source_recipe'] not in changed]
-    for row in rows:registry.extend(row.get('policies',[]))
+    # New policies take their recipe's old place, so the registry and the
+    # compiled module change only where a recipe did.
+    replacement={row['path'].removeprefix('programs/'):row.get('policies',[]) for row in rows}
+    previous,registry=registry,[]
+    for policy in previous:
+        recipe=policy['source_recipe']
+        if recipe not in changed:registry.append(policy)
+        else:registry.extend(replacement.pop(recipe,[]))
+    for recipe in sorted(replacement):registry.extend(replacement[recipe])
     # An enrolled declaration that is no longer one keeps its source enrolled
     # as catalog-only: the collector refuses to drop a source it retains.
     enrolled=text(root,ours_revision,ENROLLED).splitlines()
