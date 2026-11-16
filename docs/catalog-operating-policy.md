@@ -120,7 +120,7 @@ release publication timestamp as its version and retains the actual download URL
 separately. Other apps compare selected URLs. Changed bytes behind an unchanged
 URL otherwise require an explicit reinstall (or checksum-repair flag).
 
-The selected release observation must be no older than 48 hours, independent of
+The selected release observation must be no older than seven days (48 hours until November 16, 2026), independent of
 publication time. The helper prints an exact `--commit`/`--accept-stale-release`
 retry tuple when a single asset is stale. EmmyLua is deliberately fresh-only:
 all four musl tools must be fresh, distinct catalog assets of the same release

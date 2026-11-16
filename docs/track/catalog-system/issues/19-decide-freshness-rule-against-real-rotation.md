@@ -2,8 +2,7 @@
 
 Type: grilling
 Label: wayfinder:grilling
-Status: open
-Triage: ready-for-human
+Status: resolved
 Blocked by: none
 
 ## Question
@@ -50,3 +49,24 @@ rule may be adjusted. That points to option 1; option 2 can follow.
 ## Comments
 
 November 16, 2026: opened from the ticket 16 review.
+
+## Answer — November 16, 2026
+
+Marek chose option 1: the client limit is seven days. `age>604800` in both
+places of `modules/catalog-yaml-policy.am`; the Python reference model
+(`reference_selection.py`) follows. A collection round of about 4.9 days now
+fits inside the limit. Option 2 (starting runs from outside GitHub's
+scheduler) was not taken up.
+
+Unchanged on purpose: the status format's buckets `under_24h`,
+`from_24_to_48h` and `at_least_48h`, which are published field names, and
+the rule that release and Git selections have no stale override.
+
+Checked: eleven collector test cases had stale fixtures between two and seven
+days old; they are moved past seven days. Collector fast tier 221 tests and
+whole-tree tier 5 tests pass; e2e debian 21, fedora 21 (with the boundary test
+at exactly seven days), termux 14.
+
+Not done: delivering the changed policy module to any installed host (`am -s`
+on each machine), which needs Marek's authorization. Until then a host still
+applies 48 hours.

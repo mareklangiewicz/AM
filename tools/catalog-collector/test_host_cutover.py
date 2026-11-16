@@ -30,7 +30,8 @@ for receipt_name in ('large-batch-evidence.json', 'next-ten-evidence.json', 'sim
                   if row['app'] in batch['converted']})
 NOW='2026-11-04T12:00:00Z'
 
-class HostCutover(unittest.TestCase):
+class HostCutoverCase(unittest.TestCase):
+    """The published fixture snapshot and manager helpers; `tree_host_cutover.py` shares them."""
     script=integration.YAMLManager.script
     env=integration.YAMLManager.env
     stage=integration.YAMLManager.stage
@@ -91,20 +92,8 @@ else:
 
     # Deliberately collect only this subclass's tests; inherited historical
     # rollout assertions belong to their original format-1/2 source revisions.
-    def test_all_host_recipes_manager_install_and_standalone_update(self):
-        for row in self.rows:
-            with self.subTest(app=row['app']):
-                app=self.install('x86_64/'+row['app'])
-                self.assertEqual((app/'AM-updater').read_bytes(), managed_updater(app/'recipe.am'))
-                self.assertEqual((app/'version').read_text().strip(),'2026-11-02T00:00:00Z' if row['app']=='logseq-app-db-nightly' else (app/'download-url').read_text().strip())
-                result=self.standalone(app/'AM-updater')
-                self.assertEqual(result.returncode,0,result.stderr)
-                if row['app']=='emmylua':
-                    for tool in ('emmylua_ls','emmylua_check','emmylua_doc_cli','luafmt'):
-                        self.assertEqual((app/tool).read_bytes(),b'tool')
-                        self.assertTrue((self.root/'usr/local/bin'/tool).is_symlink())
-                if row['app']=='kitty':self.assertTrue((self.root/'usr/local/bin/kitten').is_symlink())
 
+class HostCutover(HostCutoverCase):
     def test_obsolete_named_layout_refuses_before_download(self):
         recipe=self.path/'obsolete-recipe'
         recipe.write_text('APP=kitty\nCATALOG_FORMAT=3\nPACKAGE_LAYOUT=kitty\n. "'+
@@ -237,7 +226,7 @@ else:
                     input=facts,capture_output=True,env={**self.env(),
                         'AM_YAML_RECIPE':'x86_64/emmylua','AM_YAML_TOOL':tool,
                         'AM_YAML_REPOSITORY':'872860168','AM_YAML_PIN':self.pin,
-                        'AM_YAML_NOW':'2026-11-07T12:00:00Z','AM_YAML_ACCEPT':''})
+                        'AM_YAML_NOW':'2026-11-12T12:00:00Z','AM_YAML_ACCEPT':''})
                 self.assertNotEqual(result.returncode,0)
                 self.assertIn(b'stale_release_acceptance_required',result.stderr)
                 self.assertEqual(result.stdout,b'')

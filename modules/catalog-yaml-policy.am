@@ -86170,8 +86170,8 @@ END {
     token=ENVIRON["AM_YAML_PIN"] ":" ENVIRON["AM_YAML_REPOSITORY"] ":" best_release ":" best_asset ":" best_observed
     if(age<0) refuse("future_release_observation")
     if(declaration_selection=="git-file" && seconds(best_file_observed)>seconds(ENVIRON["AM_YAML_NOW"])) refuse("future_file_observation")
-    if(declaration_selection!="asset" && (ENVIRON["AM_YAML_ACCEPT"]!="" || age>172800)) refuse("fresh_non_asset_observation_required")
-    if(age>172800 && ENVIRON["AM_YAML_ACCEPT"]!=token) {
+    if(declaration_selection!="asset" && (ENVIRON["AM_YAML_ACCEPT"]!="" || age>604800)) refuse("fresh_non_asset_observation_required")
+    if(age>604800 && ENVIRON["AM_YAML_ACCEPT"]!=token) {
         if(ENVIRON["AM_YAML_STALE_OPTION"]=="release")
             refuse("stale; retry with --commit " ENVIRON["AM_YAML_PIN"] " --accept-stale-release " ENVIRON["AM_YAML_PIN"] " " ENVIRON["AM_YAML_REPOSITORY"] " " best_release " " best_asset " " best_observed)
         refuse("stale_release_acceptance_required " token)

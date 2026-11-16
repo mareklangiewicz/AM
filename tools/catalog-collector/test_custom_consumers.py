@@ -68,7 +68,7 @@ class CustomConsumers(unittest.TestCase):
         result=self.read('python','--version-url')
         self.assertEqual(result.returncode,0,result.stderr)
         self.assertEqual(result.stdout,highest['assets']['1']['url']+'\n')
-        self.clock='2026-11-12T12:00:00Z'
+        self.clock='2026-11-17T12:00:00Z'
         result=self.read('python','--version-url')
         self.assertNotEqual(result.returncode,0);self.assertEqual(result.stdout,'')
         self.assertIn('stale',result.stderr)
@@ -83,7 +83,7 @@ class CustomConsumers(unittest.TestCase):
     def test_url_menu_lists_old_records_but_chosen_url_must_be_fresh(self):
         r=self.release()
         r['assets']={'1':dict(name='wine-x86_64.AppImage',url='https://example.org/wine-x86_64.AppImage',size=1,content_type='application/octet-stream')}
-        self.prepare('wine',{'1':r});self.clock='2026-11-12T12:00:00Z'
+        self.prepare('wine',{'1':r});self.clock='2026-11-17T12:00:00Z'
         result=self.read('wine','--urls');self.assertEqual(result.returncode,0,result.stderr)
         self.assertEqual(result.stdout,r['assets']['1']['url']+'\n')
         result=self.read('wine','--url','--selected-url',r['assets']['1']['url'])

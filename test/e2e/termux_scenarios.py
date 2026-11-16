@@ -125,7 +125,7 @@ class TermuxCLI(unittest.TestCase):
         self.command('-u','sqlitebrowser','--commit',PIN,executable=executable)
         self.assertEqual((app/'version').read_text().strip(),SQLITE)
         before=snapshot_tree(app)
-        self.configure(clock='1793500000.000000')
+        self.configure(clock='1793800000.000000')
         self.command('-u','sqlitebrowser','--commit',PIN,executable=executable,success=False)
         self.assertEqual(snapshot_tree(app),before)
 

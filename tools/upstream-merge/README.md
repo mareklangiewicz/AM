@@ -90,7 +90,9 @@ a scratch tree; a declaration or policy they do not support refuses there.
 
 ## What the gate does not cover
 
-Tool tests and `regress/` are run by hand after the gate. Tests pinned to a
+Tool tests and `regress/` are run by hand after the gate, including the
+collector's whole-tree tier (`-p 'tree_*.py'`, see
+`tools/catalog-collector/README.md`). Tests pinned to a
 recipe family upstream deleted have to be retired in the same merge. Pushing,
 the schedule pin (`CATALOG_SCHEDULE_REVISION`) and any installed-host change
 need Marek's authorization.

@@ -54,3 +54,11 @@ is now "not empty", and the unavailable-recipes test checks every entry
 without asserting how many there are. The named live recipes and the
 whole-tree loops remain; see the tier proposal on
 [ticket 30](30-add-ci-fast-test-tier.md).
+
+November 16, 2026: the whole-tree checks moved out of the unit suite into
+`tree_*.py` (see [ticket 30](30-add-ci-fast-test-tier.md)):
+`tree_appimages.py`, `tree_host_cutover.py`, `tree_host_policy_source.py`,
+`tree_unavailable_recipes.py`. Still open here: the fast tier reads named live
+recipes (`20x`, `nvim`, `obsidian`, `0xfx`, `emmylua` and the enrolled rows in
+`test_recipe_declarations.py`), so an upstream change to one of those can
+still fail a `test_*.py`; and nothing was moved into `merge.py gate`.

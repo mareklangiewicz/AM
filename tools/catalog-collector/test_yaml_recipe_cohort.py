@@ -73,7 +73,7 @@ class Cohort(unittest.TestCase):
         self.assertEqual(selected['asset_id'], '9007199254740992')
 
     def test_selected_observation_waiver_no_fresh_substitution(self):
-        self.repository['releases']['1']['observed_at'] = '2026-11-01T00:00:00Z'
+        self.repository['releases']['1']['observed_at'] = '2026-10-27T00:00:00Z'
         self.repository['releases']['2'] = release(published='2026-10-30T00:00:00Z')
         with self.assertRaises(StaleSelection) as caught:
             self.choose()
@@ -81,7 +81,7 @@ class Cohort(unittest.TestCase):
         self.assertTrue(self.choose(accept_stale=acceptance)['stale'])
         with self.assertRaises(StaleSelection):
             self.choose(accept_stale=dict(acceptance, asset_id='2'))
-        self.repository['releases']['1']['observed_at'] = '2026-11-02T12:00:00Z'
+        self.repository['releases']['1']['observed_at'] = '2026-10-28T12:00:00Z'
         self.assertFalse(self.choose()['stale'])
         self.repository['releases']['1']['observed_at'] = '2026-11-04T12:00:01Z'
         with self.assertRaisesRegex(ValueError, 'future_release_observation'):

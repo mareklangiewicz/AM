@@ -72,7 +72,7 @@ class GitConsumers(unittest.TestCase):
                             if 'raw.githubusercontent.com' in call[-1]))
 
     def test_stale_git_observation_refuses_without_payload_or_output(self):
-        self.prepare();self.clock='2026-11-12T12:00:00Z'
+        self.prepare();self.clock='2026-11-17T12:00:00Z'
         for app,option in [('junest','--git-snapshot'),('trans','--tag'),('watched','--tag')]:
             result=self.read(app,option);self.assertNotEqual(result.returncode,0)
             self.assertEqual(result.stdout,'');self.assertIn('fresh_non_asset_observation_required',result.stderr)

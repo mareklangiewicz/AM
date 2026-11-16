@@ -58,3 +58,15 @@ real-manager-over-every-recipe checks move to `tree_*.py` files, run with
 fast tier (about 3 to 7 minutes depending on how much of the manager
 integration stays) and is what CI runs. No skip flags, so nothing is silently
 off.
+
+November 16, 2026: Marek agreed the tier-by-file proposal and it is in.
+Fast tier `-p 'test_*.py'`: 221 tests in 486 s. Whole-tree tier
+`-p 'tree_*.py'`: 5 tests in 815 s, measured while the e2e suite ran beside
+it (the same five took about 655 s in the baseline). Both READMEs say when to
+run which. The fast tier is slower than the 3 to 7 minutes proposed: the
+manager integration file (80 s) and the adversarial awk test (58 s) stayed in
+it.
+
+Still open: the GitHub Actions workflow that runs the fast tier on every
+push. It needs the Git objects `7b4f831e6` and `6277377ae`, `mawk`, `gawk`,
+`busybox` and PyYAML in the runner, and it can only be proven by pushing.

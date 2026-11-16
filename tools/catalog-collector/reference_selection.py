@@ -77,7 +77,7 @@ def accept_selection(app, rid, repository, release_id, release, asset_id, asset,
     require(age >= 0, 'future_release_observation')
     acceptance = dict(commit=commit,repository_id=rid,release_id=release_id,
                       asset_id=asset_id,observed_at=observed)
-    stale = age > 48*3600
+    stale = age > 7*86400
     if stale and accept_stale != acceptance:
         raise StaleSelection(acceptance)
     return dict(app=app,**acceptance,tag=release['tag'],published_at=release['published_at'],

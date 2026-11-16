@@ -10,38 +10,6 @@ from recipe_declarations import recipe_rows
 
 
 class HostPolicySource(unittest.TestCase):
-    def test_recipes_are_authoritative_and_compilation_is_repeatable(self):
-        with tempfile.TemporaryDirectory() as temporary:
-            root = Path(temporary)
-            (root/'modules').mkdir()
-            recipes = root/'programs/x86_64'
-            shutil.copytree(compiler.ROOT/'programs',root/'programs',symlinks=True)
-            registry=root/'tools/catalog-collector/recipe-url-policies.json'
-            registry.parent.mkdir(parents=True)
-            shutil.copy2(compiler.ROOT/'tools/catalog-collector/recipe-url-policies.json',registry)
-            policy = root/'modules/catalog-yaml-policy.am'
-            shutil.copy2(compiler.ROOT/'modules/catalog-yaml-policy.am', policy)
-            before={p:p.read_bytes() for p in (root/'programs').rglob('*') if p.is_file()}
-            with patch.object(compiler, 'ROOT', root):
-                compiler.generate()
-                first=policy.read_bytes()
-                compiler.generate()
-                self.assertEqual(first,policy.read_bytes())
-                self.assertEqual(first,(Path(__file__).resolve().parents[2]/'modules/catalog-yaml-policy.am').read_bytes())
-                # A recipe edit survives regeneration and controls both consumers.
-                recipe=recipes/'emmylua'
-                recipe.write_text(recipe.read_text().replace(
-                    'emmylua_ls emmylua_check emmylua_doc_cli luafmt', 'emmylua_ls luafmt'))
-                compiler.generate()
-                row=next(r for r in recipe_rows(root) if r['app']=='emmylua')
-                self.assertEqual(row['tools'],['emmylua_ls','luafmt'])
-                self.assertEqual(row['archive']['launchers'],['emmylua_ls:emmylua_ls','luafmt:luafmt'])
-                self.assertIn('recipes_tools["x86_64/emmylua"]="emmylua_ls luafmt"',policy.read_text())
-                self.assertEqual(recipe.read_text().count('emmylua_ls luafmt'),1)
-            for path,raw in before.items():
-                if path!=recipes/'emmylua':self.assertEqual(raw,path.read_bytes())
-
-
     def test_nonliteral_and_inconsistent_headers_refuse(self):
         with tempfile.TemporaryDirectory() as temporary:
             root=Path(temporary)

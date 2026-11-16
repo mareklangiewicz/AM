@@ -249,7 +249,7 @@ esac
         self.command('--commit',PIN,executable=str(nightly/'AM-updater'))
         calls=read_transport_records(self.fixture/'calls', excluding=previous)
         self.assertTrue(any(c['tool']=='wget' and c['url'].endswith('/nightly/nvim-linux-x86_64.appimage') for c in calls))
-        self.configure(clock='1793500000.000000')
+        self.configure(clock='1793800000.000000')
         before_app=snapshot_tree(nightly)
         self.command('-u','nvim-nightly','--commit',PIN,success=False)
         self.assertEqual(snapshot_tree(nightly),before_app)
@@ -379,13 +379,13 @@ esac
         self.assertTrue(any(url.startswith('https://raw.githubusercontent.com/e2e-selected/AM/'+PIN+'/') for url in calls))
         self.assertFalse(any('e2e-alternate' in url for url in calls))
 
-    def test_exact_48_hour_cli_freshness_boundary(self):
+    def test_exact_seven_day_cli_freshness_boundary(self):
         self.command('-i','obsidian')
         app=Path('/opt/obsidian')
         alias='https://api.github.com/repos/obsidianmd/obsidian-releases/releases'
         rid='262342594'
         checked=Decimal('1793114400')
-        boundary=checked+Decimal(172800)
+        boundary=checked+Decimal(604800)
         before=snapshot_tree(app)
         self.configure(clock=f'{boundary:.6f}')
         result=self.command('-u','obsidian','--commit',PIN)
@@ -519,7 +519,7 @@ esac
         self.assertIn('obsidian: refused',result.stderr)
         self.assertEqual(snapshot_tree(app),before)
         body.write_bytes(self.tree[f'repositories/source-{rid}.yaml'])
-        self.configure(clock='1793500000.000000')
+        self.configure(clock='1793800000.000000')
         result=self.command('-u','obsidian','--commit',PIN,success=False)
         self.assertIn('stale',result.stderr)
         self.assertEqual(snapshot_tree(app),before)
@@ -528,7 +528,7 @@ esac
         self.assertEqual((app/'tmp/retained').read_text(),'interrupted work\n')
 
     def test_install_refusal_creates_no_app_or_launcher(self):
-        self.configure(clock='1793500000.000000')
+        self.configure(clock='1793800000.000000')
         result=self.command('-i','obsidian',success=False)
         self.assertIn('stale',result.stderr)
         self.assertFalse(Path('/opt/obsidian').exists())

@@ -169,7 +169,7 @@ approval boundaries.
 | [16 resolved](issues/16-qualify-v3-coverage-expansion.md) | Current-scope cutover | Full GitHub v3 migration: 8,293 of 8,313 sources collected; [review and usable-selection measurement](issues/16-qualify-v3-coverage-expansion.md#answer--november-16-2026): 44% of policy keys select without a stale override. |
 | [17 resolved](issues/17-plan-upstream-merge-after-recipe-conversion.md) | none | Upstream-merge strategy after the recipe conversion (a trial merge reports 986 conflicts): [upstream stays authoritative, converted forms are re-derived by a tool](issues/17-plan-upstream-merge-after-recipe-conversion.md#answer--november-16-2026); [ADR 0005](../../adr/0005-upstream-authoritative-converted-recipes-derived.md). |
 | [18 resolved](issues/18-build-upstream-merge-tool-and-run-first-merge.md) | 16 | Upstream merge tool and [the first merge](issues/18-build-upstream-merge-tool-and-run-first-merge.md#answer--november-16-2026): `ba061a639` in commit `8f3bd0cf3`, unpushed; [receipt](upstream-merge-20261116.json). |
-| [19 open](issues/19-decide-freshness-rule-against-real-rotation.md) | none | Client 48-hour freshness limit against a 4.9-day collection round; Marek decides. |
+| [19 resolved](issues/19-decide-freshness-rule-against-real-rotation.md) | none | Client freshness limit [raised to seven days](issues/19-decide-freshness-rule-against-real-rotation.md#answer--november-16-2026); not yet delivered to installed hosts. |
 | [20 open](issues/20-stop-reattempting-failing-sources-every-run.md) | none | 26 failing sources re-attempted every run; same-tag and 16 MiB refusals. |
 | [21 open](issues/21-retire-catalog-sources.md) | 18 | Collector support for retiring a source; retire the merge's list and am-utils. |
 | [22 open](issues/22-keep-collection-running-across-doc-pushes.md) | none | Schedule pin pauses collection on any push. |
@@ -178,9 +178,9 @@ approval boundaries.
 | [25 open](issues/25-remove-format-2-reader-modules.md) | none | Retire format 2 from the collector (scope approved November 16); four steps planned on the ticket, the two reader modules go last. |
 | [26 resolved](issues/26-drop-host-check-from-merge-tool.md) | none | Merge tool [no longer reads the host's installed apps](issues/26-drop-host-check-from-merge-tool.md#answer--november-16-2026). |
 | [27 resolved](issues/27-shrink-committed-merge-receipt.md) | 26 | Committed receipt [holds counts, file hashes and `attention`](issues/27-shrink-committed-merge-receipt.md#answer--november-16-2026); the per-recipe listing stays in the Git directory. |
-| [28 open](issues/28-unpin-tests-from-live-recipes.md) | none | Tests use frozen fixtures; tree invariants move to the gate. |
+| [28 open](issues/28-unpin-tests-from-live-recipes.md) | none | Tests use frozen fixtures; tree invariants move to the gate. Count pins gone and whole-tree checks moved to `tree_*.py`; named live recipes remain. |
 | [29 open](issues/29-sort-and-generate-derived-catalog-files.md) | 28 | Classify the five fork-side files; generate the derived ones. |
-| [30 open](issues/30-add-ci-fast-test-tier.md) | 28 | Fast test tier on every push, reporting only. |
+| [30 open](issues/30-add-ci-fast-test-tier.md) | 28 | Fast test tier on every push, reporting only. Tiers exist (`test_*.py` 221 tests, `tree_*.py` 5); the CI workflow remains. |
 | [31 open](issues/31-count-recipes-per-upstream-template.md) | none | Research: recipes per upstream template, to pick the next shared installer. |
 
 Latest implementation evidence, November 8: Chromium desktop/narrow and Firefox

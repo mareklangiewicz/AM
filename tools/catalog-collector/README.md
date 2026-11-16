@@ -109,6 +109,18 @@ capacity targets remain deferred, not silently accepted by this migration.
 
 ## Focused verification and maintenance
 
+Two tiers, named by file:
+
+```sh
+python3 -B -m unittest discover -s tools/catalog-collector -p 'test_*.py'   # fast tier
+python3 -B -m unittest discover -s tools/catalog-collector -p 'tree_*.py'   # whole-tree tier
+```
+
+`test_*.py` is the fast tier. `tree_*.py` holds the checks that walk every
+live recipe or run the real manager for each one; they are slow and follow
+whatever the tree holds, so run them before an upstream merge and on demand.
+A single file:
+
 ```sh
 python3 -B -m unittest discover -s tools/catalog-collector -p test_contracts.py
 python3 -B -m unittest discover -s tools/catalog-collector -p test_pipeline_publication.py

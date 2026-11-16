@@ -1,7 +1,7 @@
 """Single-user YAML catalog: bounded release-list collection and retained facts.
 
 Collection combines reviewed recipe declarations and catalog-only identities.
-One page of 100 releases per attempted source; clients enforce 48-hour selected
+One page of 100 releases per attempted source; clients enforce seven-day selected
 record freshness. Batches preserve untouched facts and isolate source failures.
 No latest endpoint, consumer version choice or pruning.
 """

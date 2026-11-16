@@ -58,7 +58,7 @@ class Selection(unittest.TestCase):
 
     def test_stale_selected_record_is_not_rescued_by_recent_collection(self):
         release = self.repo['releases']['456']
-        release['observed_at'] = '2026-10-31T00:00:00Z'
+        release['observed_at'] = '2026-10-26T00:00:00Z'
         with self.assertRaises(StaleSelection) as caught:
             self.choose()
         acceptance = caught.exception.acceptance
@@ -74,9 +74,9 @@ class Selection(unittest.TestCase):
         with self.assertRaises(StaleSelection): self.choose()
 
     def test_freshness_boundary_future_and_failed_collection(self):
-        self.repo['observed_at'] = '2026-11-02T13:00:00Z'
+        self.repo['observed_at'] = '2026-10-28T13:00:00Z'
         self.assertFalse(self.choose()['stale'])
-        self.repo['observed_at'] = '2026-11-02T12:59:59Z'
+        self.repo['observed_at'] = '2026-10-28T12:59:59Z'
         with self.assertRaises(StaleSelection): self.choose()
         self.repo['observed_at'] = '2026-11-04T13:00:01Z'
         with self.assertRaisesRegex(ValueError,'future_release_observation'): self.choose()
