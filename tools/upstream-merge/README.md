@@ -18,7 +18,8 @@ python3 tools/upstream-merge/merge.py gate  --receipt docs/track/<effort>/upstre
 ```
 
 - `plan` is the dry run. It reads Git objects only and changes nothing. It
-  prints the counts and writes the full receipt.
+  prints the counts and writes the receipt. `--recipes FILE` also writes the
+  outcome of every recipe.
 - `apply` needs a clean checkout. It starts `git merge --no-commit --no-ff`,
   writes every recipe and the fork-side files that follow from them, stages
   them, and stops. Only the three hand-merged files are left in conflict. It
@@ -26,11 +27,19 @@ python3 tools/upstream-merge/merge.py gate  --receipt docs/track/<effort>/upstre
 - `gate` checks the merge as it stands (in progress or committed) against the
   receipt. It exits 1 and lists every disagreement.
 
+The receipt you commit holds the parents, the counts, the hashes of the
+fork-side files and the `attention` section. The outcome of every recipe is a
+long list nobody reads as a record: `apply` leaves it in the Git directory
+(`.git/upstream-merge-recipes.json`), where `gate` finds it and checks it
+against the hash in the receipt. To gate somewhere else, pass the same file
+with `--recipes`. A receipt from before November 16, 2026 carries the list
+itself and gates as before.
+
 Merge, never rebase: `am` reads this branch live.
 
 ## What happens to each recipe
 
-Every recipe path in either parent gets exactly one outcome in the receipt.
+Every recipe path in either parent gets exactly one outcome.
 
 | Outcome | When | Result |
 | --- | --- | --- |

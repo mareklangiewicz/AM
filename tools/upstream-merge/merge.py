@@ -291,12 +291,34 @@ def prepare(root,upstream,ours_revision='HEAD'):
                           and row['form_before'] in convert.FORMS and not row['fork_form_reproduced']],
         fork_owned_upstream_changes=[dict(path=row['path'],upstream=row['upstream']) for row in rows if row.get('upstream')],
         sources_to_retire=[dict(repository_id=rid,repository=name) for rid,name in sorted(retire.items())])
-    receipt=dict(format=1,ours=ours_revision,upstream=upstream,base=base,
+    receipt=dict(format=2,ours=ours_revision,upstream=upstream,base=base,
         counts=dict(Counter(row['outcome'] for row in rows)),
         files={path:hashlib.sha256(content.encode()).hexdigest() for path,content in sorted(files.items())},
-        hand_merged=list(HAND),attention=attention,
-        recipes=[{key:value for key,value in row.items() if key not in ('data','policies','identities')} for row in rows])
+        hand_merged=list(HAND),attention=attention,recipes_sha256=listing_digest(listing(rows)))
     return receipt,rows,files
+
+
+def listing(rows):
+    """The per-recipe outcomes without their bytes: what the gate checks a merge against."""
+    return [{key:value for key,value in row.items() if key not in ('data','policies','identities')} for row in rows]
+
+
+def listing_digest(recipes):
+    return hashlib.sha256(json.dumps(recipes,sort_keys=True).encode()).hexdigest()
+
+
+def listing_path(root):
+    """Where `apply` leaves the listing: inside the Git directory, so it is never committed."""
+    return Path(git(root,'rev-parse','--absolute-git-dir').stdout.decode().strip())/'upstream-merge-recipes.json'
+
+
+def with_listing(receipt,path):
+    """The receipt with its per-recipe listing, read from `path` unless the receipt carries it (format 1)."""
+    if 'recipes' in receipt:return receipt
+    if not path.is_file():raise Problem('no per-recipe listing at '+str(path)+'; run apply here, or pass --recipes')
+    recipes=json.loads(path.read_text())
+    if listing_digest(recipes)!=receipt['recipes_sha256']:raise Problem(str(path)+' is not the listing of this receipt')
+    return dict(receipt,recipes=recipes)
 
 
 def summary(receipt):
@@ -311,7 +333,7 @@ def unmerged(root):
     return sorted(set(git(root,'diff','--name-only','--diff-filter=U').stdout.decode().splitlines()))
 
 
-def apply(root,upstream,receipt_path):
+def apply(root,upstream,receipt_path,recipes_path=None):
     if git(root,'status','--porcelain').stdout.strip():raise Problem('the checkout has uncommitted or untracked changes')
     if git(root,'rev-parse','-q','--verify','MERGE_HEAD',check=False).returncode==0:raise Problem('a merge is already in progress')
     receipt,rows,files=prepare(root,upstream)
@@ -327,6 +349,7 @@ def apply(root,upstream,receipt_path):
     git(root,'add','-A','--',*present,*files)
     receipt['unmerged_after_apply']=unmerged(root)
     receipt_path.write_text(json.dumps(receipt,indent=1)+'\n')
+    (recipes_path or listing_path(root)).write_text(json.dumps(listing(rows),indent=1)+'\n')
     return receipt
 
 
@@ -387,19 +410,21 @@ def main(argv=None):
         command=commands.add_parser(name)
         command.add_argument('--receipt',type=Path,required=True)
         command.add_argument('--repo',type=Path,default=ROOT)
+        command.add_argument('--recipes',type=Path,help='per-recipe listing; apply and gate default to a file inside the Git directory')
         if name!='gate':command.add_argument('--upstream',required=True)
     args=parser.parse_args(argv)
     try:
         if args.command=='gate':
-            failures=gate(args.repo,json.loads(args.receipt.read_text()))
+            failures=gate(args.repo,with_listing(json.loads(args.receipt.read_text()),args.recipes or listing_path(args.repo)))
             print('\n'.join(failures) if failures else 'gate: recipes, fork files and fork marks agree with the receipt')
             return 1 if failures else 0
         if args.command=='plan':
             if args.receipt.exists():raise Problem('receipt already exists: '+str(args.receipt))
-            receipt,_,_=prepare(args.repo,args.upstream)
+            receipt,rows,_=prepare(args.repo,args.upstream)
             args.receipt.write_text(json.dumps(receipt,indent=1)+'\n')
+            if args.recipes:args.recipes.write_text(json.dumps(listing(rows),indent=1)+'\n')
         else:
-            receipt=apply(args.repo,args.upstream,args.receipt)
+            receipt=apply(args.repo,args.upstream,args.receipt,args.recipes)
             print('merge started, not committed; hand-merge then run gate. Still unmerged: '
                   +(', '.join(receipt['unmerged_after_apply']) or 'nothing'))
         print(summary(receipt))

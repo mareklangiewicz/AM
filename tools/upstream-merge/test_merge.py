@@ -204,6 +204,16 @@ class Gate(unittest.TestCase):
             self.receipt=receipt
         self.assertEqual(m.gate(self.root,self.receipt),[])
 
+    def test_a_receipt_without_its_listing_reads_it_from_the_git_directory(self):
+        recipes=self.receipt.pop('recipes');self.receipt['recipes_sha256']=m.listing_digest(recipes)
+        path=m.listing_path(self.root)
+        self.assertEqual(path.parent,(self.root/'.git').resolve())
+        with self.assertRaisesRegex(m.Problem,'no per-recipe listing'):m.with_listing(self.receipt,path)
+        path.write_text(json.dumps(recipes[:-1]))
+        with self.assertRaisesRegex(m.Problem,'not the listing of this receipt'):m.with_listing(self.receipt,path)
+        path.write_text(json.dumps(recipes))
+        self.assertEqual(m.gate(self.root,m.with_listing(self.receipt,path)),[])
+
     def test_a_row_must_mean_what_its_outcome_says(self):
         self.write({'programs/x86_64/plain':'neither\n'})
         self.receipt['recipes'][2]['sha256']=m.digest(b'neither\n')
