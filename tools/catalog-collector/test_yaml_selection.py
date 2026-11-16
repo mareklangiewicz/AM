@@ -6,7 +6,8 @@ import tempfile
 import unittest
 
 from test_yaml_reader import repository
-from yaml_publication import git,publish_local
+from publication import git
+from yaml_publication import publish_local
 from reference_selection import select,select_local,StaleSelection
 
 PIN = 'a'*40

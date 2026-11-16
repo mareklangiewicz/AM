@@ -12,7 +12,7 @@ import unittest
 
 import fixture_manager as harness
 from fixture_manager import ROOT, NOW
-from yaml_publication import git
+from publication import git
 from fixture_v3 import publish_local
 from test_yaml_reader import SCHEMA
 

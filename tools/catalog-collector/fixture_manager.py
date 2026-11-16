@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 import subprocess
 from fixture_recipes import fixtures
-from yaml_publication import git
+from publication import git
 from fixture_v3 import publish_local
 from test_yaml_reader import SCHEMA
 

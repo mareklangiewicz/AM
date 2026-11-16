@@ -70,3 +70,9 @@ it.
 Still open: the GitHub Actions workflow that runs the fast tier on every
 push. It needs the Git objects `7b4f831e6` and `6277377ae`, `mawk`, `gawk`,
 `busybox` and PyYAML in the runner, and it can only be proven by pushing.
+
+November 16, 2026: `.github/workflows/tests.yml` added. On every push to
+`main-marek` and on dispatch it runs the recipe-conversion,
+recipe-reconstruction, upstream-merge and e2e helper suites, then the
+collector fast tier. `fetch-depth: 0` gives it the pinned commits, which are
+all ancestors of the branch. Not yet seen running.

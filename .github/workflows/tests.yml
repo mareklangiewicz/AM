@@ -1,0 +1,38 @@
+name: Fast tests
+# Reports only: `am` reads main-marek live, so nothing here can gate a push.
+# The whole-tree tier (tree_*.py) and test/e2e/run stay on demand; see
+# tools/catalog-collector/README.md.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main-marek]
+permissions: {}
+concurrency:
+  group: fast-tests-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  fast:
+    if: github.repository == 'mareklangiewicz/AM'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          # Tests read recipes from pinned commits in this branch's history.
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - run: python3 -m pip install 'PyYAML==6.0.3'
+      - run: sudo apt-get install --yes --no-install-recommends mawk gawk busybox
+      - name: Tool suites
+        run: |
+          set -euo pipefail
+          for suite in tools/recipe-conversion tools/recipe-reconstruction tools/upstream-merge test/e2e; do
+            python3 -B -m unittest discover -s "$suite" -p 'test_*.py'
+          done
+      - name: Collector fast tier
+        run: python3 -B -m unittest discover -s tools/catalog-collector -p 'test_*.py'

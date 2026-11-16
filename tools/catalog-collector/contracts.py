@@ -5,11 +5,12 @@ from pathlib import Path
 import re
 import yaml
 from writer import document
-from yaml_publication import SAFE_LOADER
 from retention import observation
 from retention_v3 import merge
 from wire_validation import validate_wire
 
+# The distributed reader validates the grammar before either safe loader runs.
+SAFE_LOADER = getattr(yaml, 'CSafeLoader', yaml.SafeLoader)
 ROOT = Path(__file__).resolve().parents[2]
 DEFINITIONS = json.loads((ROOT/'tools/catalog-contract/definitions.json').read_text())['definitions']
 FILE_CAP = 2 * 1024 * 1024

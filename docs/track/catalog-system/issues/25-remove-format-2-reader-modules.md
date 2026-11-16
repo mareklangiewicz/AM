@@ -92,3 +92,12 @@ Proposed order, each step leaving the suite green:
 
 Step B changes what scheduled collection runs, so it is pushed alone with a
 repin and one observed scheduled run before C and D. Nothing done yet.
+
+November 16, 2026: step A done, smaller than planned. `SAFE_LOADER` now
+lives in `contracts.py`; five test and fixture files import `git` from
+`publication` instead of through `yaml_publication`; `writer.py` is described
+as what it is, the YAML emitter both formats share, and stays.
+`retention.observation` stays where it is until step D: moving it now makes
+an import cycle (`retention` to `retention_v3` to `bounded` to `retention`).
+`schema_url` belongs to the format-2 path and goes with step B. Fast tier:
+221 tests pass.

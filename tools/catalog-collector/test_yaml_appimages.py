@@ -12,7 +12,7 @@ import test_yaml_manager_integration as integration
 from fixture_manager import ROOT
 from fixture_appimages import fixtures
 from appimage_policy_source import compile_source, START, END, POLICIES
-from yaml_publication import git
+from publication import git
 from fixture_v3 import publish_local
 from reference_policies import APPIMAGES, matches, select_cohort
 from fixture_facts import utc

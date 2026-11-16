@@ -9,7 +9,7 @@ from bounded import normalize
 from retention import refresh
 from installed_recipe import managed_updater
 from host_catalog import installation_configuration as configuration
-from yaml_publication import git
+from publication import git
 from fixture_v3 import publish_local
 from yaml_publication import schema_url
 import test_yaml_manager_integration as integration

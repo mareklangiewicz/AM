@@ -3,8 +3,7 @@ import re
 
 import yaml
 
-# The distributed reader validates the grammar before either safe loader runs.
-SAFE_LOADER = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
+from contracts import SAFE_LOADER
 from writer import document
 from wire_validation import validate_wire
 

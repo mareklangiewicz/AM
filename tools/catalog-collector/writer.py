@@ -1,4 +1,4 @@
-"""Canonical format-2 emitter, extracted from the original reader experiment."""
+"""Canonical YAML emitter shared by format 2 and format 3."""
 import json
 
 
