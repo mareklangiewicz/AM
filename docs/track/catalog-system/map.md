@@ -167,6 +167,7 @@ approval boundaries.
 | [14 resolved](issues/14-verify-scale-compatibility-and-rollback.md) | 11, 12, 13 | Current-scope direct-v3 migration checks; prior expanded evidence retained with limits. |
 | [15 prepared](issues/15-prepare-reviewed-catalog-rollout-package.md) | 14 | [Exact myxps cutover](myxps-cutover-15.md), awaiting specific operational authorization. |
 | [16 claimed](issues/16-qualify-v3-coverage-expansion.md) | Current-scope cutover | Full GitHub v3 migration, including explicitly requested non-release sources; [local checkpoint](github-migration-16.md). |
+| [17 open](issues/17-plan-upstream-merge-after-recipe-conversion.md) | none | Upstream-merge strategy after the recipe conversion: a trial merge of `upstream/main` reports 986 conflicts, 983 under `programs/`. |
 
 Latest implementation evidence, November 8: Chromium desktop/narrow and Firefox
 checks pass; physical-device/comprehension limits remain with 13. Independent
