@@ -5,6 +5,7 @@ import json
 import os
 from pathlib import Path
 import pwd
+import re
 import shutil
 import signal
 import subprocess
@@ -19,7 +20,8 @@ if not Path('/run/am-e2e-container').is_file() or not Path('/src/APP-MANAGER').i
 sys.path.insert(0, '/src/tools/catalog-collector')
 from bounded import normalize
 from retention import refresh
-from writer import document
+import contracts
+from rehearse_pipeline import seed_source
 from filesystem import fingerprint_files, snapshot_tree
 from transport_records import read_transport_records
 
@@ -51,9 +53,17 @@ def catalog_tree():
         repositories[str(rid)] = refresh(previous,[dict(received_at=OBSERVED,
             releases=normalize(releases,100),has_next=False,bytes=100,seconds=0)],
             attempted_at=OBSERVED,max_catalog_bytes=2097152)
-    tree = {'apps.yaml': document(dict(format=2,schema=SCHEMA,apps={
-        'nvim':16408992,'nvim-nightly':16408992,'obsidian':262342594,'sqlitebrowser':19416551})).encode()}
-    tree.update({'repositories/'+rid+'.yaml':document(repo).encode() for rid,repo in repositories.items()})
+    # The client reads format 3; build it from the format-2 facts the same way
+    # tools/catalog-collector/fixture_v3.py does for the collector tests.
+    apps = {'nvim':16408992,'nvim-nightly':16408992,'obsidian':262342594,'sqlitebrowser':19416551}
+    revision = 'a'*40
+    paths = {app:'repositories/source-'+str(rid)+'.yaml' for app,rid in apps.items()}
+    tree = {'repositories/source-'+rid+'.yaml':contracts.encode(seed_source(repo,revision))
+            for rid,repo in repositories.items()}
+    tree['apps.yaml'] = contracts.encode(dict(contracts.header('apps',revision),apps=paths))
+    tree['catalog.yaml'] = contracts.encode(dict(contracts.header('catalog',revision),
+        inputs={key:revision for key in ('source','policy','recipes','rules','schemas')},
+        producer=dict(id=1,attempt=1),retention='32-plus-stable-exact-tag-v1'))
     return tree
 
 
@@ -69,8 +79,11 @@ class InstalledCLI(unittest.TestCase):
             os.chown(path, USER.pw_uid, USER.pw_gid)
         Path('/usr/local/bin/am').symlink_to(manager/'APP-MANAGER')
         cls.manager_hash = fingerprint_files(Path('/src'), ['APP-MANAGER'])['APP-MANAGER']
+        # A real sync deletes every module APP-MANAGER does not name (the
+        # format-2 reader and parser), so only the named ones must survive.
+        named = set(re.findall(r'"([^"]*[a-z][.]am)"', Path('/src/APP-MANAGER').read_text()))
         cls.module_hashes = fingerprint_files(Path('/src/modules'),
-                                            [p.name for p in Path('/src/modules').glob('*.am')])
+            sorted(p.name for p in Path('/src/modules').glob('*.am') if p.name in named))
         inputs=['test/e2e/scenarios.py','test/e2e/external.py','test/e2e/run',
                 'test/e2e/filesystem.py','test/e2e/transport_args.py','test/e2e/transport_records.py',
                 'test/e2e/container-test.sh','test/e2e/fixtures/e2e-legacy',
@@ -78,7 +91,7 @@ class InstalledCLI(unittest.TestCase):
                 'APP-MANAGER','programs/x86_64/nvim','programs/x86_64/nvim-nightly',
                 'programs/x86_64/obsidian','programs/x86_64/sqlitebrowser']
         inputs += ['tools/catalog-collector/bounded.py','tools/catalog-collector/retention.py',
-                   'tools/catalog-collector/writer.py']
+                   'tools/catalog-collector/contracts.py','tools/catalog-collector/rehearse_pipeline.py']
         (OUT/'tested-source.json').write_text(json.dumps({
             'inputs':fingerprint_files(Path('/src'), inputs),
             'modules':cls.module_hashes},indent=2)+'\n')
@@ -500,12 +513,12 @@ esac
         before=snapshot_tree(app)
         alias='https://api.github.com/repos/obsidianmd/obsidian-releases/releases'
         rid='262342594'
-        body=self.fixture/'tree/repositories'/f'{rid}.yaml'
+        body=self.fixture/'tree/repositories'/f'source-{rid}.yaml'
         body.write_bytes(b'[]')
         result=self.command('-u','obsidian','--commit',PIN,success=False)
         self.assertIn('obsidian: refused',result.stderr)
         self.assertEqual(snapshot_tree(app),before)
-        body.write_bytes(self.tree[f'repositories/{rid}.yaml'])
+        body.write_bytes(self.tree[f'repositories/source-{rid}.yaml'])
         self.configure(clock='1793500000.000000')
         result=self.command('-u','obsidian','--commit',PIN,success=False)
         self.assertIn('stale',result.stderr)
@@ -527,7 +540,7 @@ esac
         before=snapshot_tree(app)
         alias='https://api.github.com/repos/obsidianmd/obsidian-releases/releases'
         rid='262342594'
-        (self.fixture/'tree/repositories'/f'{rid}.yaml').write_bytes(b'[]')
+        (self.fixture/'tree/repositories'/f'source-{rid}.yaml').write_bytes(b'[]')
         previous=set((self.fixture/'calls').iterdir())
         result=self.command('-u','obsidian','e2e-legacy','sqlitebrowser',success=False)
         self.assertIn('obsidian: refused',result.stderr)
@@ -550,7 +563,7 @@ esac
         before=snapshot_tree(app)
         alias='https://api.github.com/repos/obsidianmd/obsidian-releases/releases'
         rid='262342594'
-        body=self.fixture/'tree/repositories'/f'{rid}.yaml'
+        body=self.fixture/'tree/repositories'/f'source-{rid}.yaml'
         original=body.read_bytes();body.write_bytes(b'[]')
         previous=set((self.fixture/'calls').iterdir())
         result=self.command('-u','obsidian','e2e-legacy','sqlitebrowser',
