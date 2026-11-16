@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 196389968
 repository: "hanatos/vkdt"
-collected_at: "2026-11-11T22:10:43Z"
+collected_at: "2026-11-16T11:34:38Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-11T22:10:43Z"
+observed_at: "2026-11-16T11:34:38Z"
 releases:
   "87628860":
     tag: "0.5.0"
@@ -316,49 +316,44 @@ releases:
         digest: "sha256:f9b261a51f6d76c3e8b1bbabea293a1291710b54bfd35a1c5596e451276c66dc"
   "436944498":
     tag: "nightly"
-    title: "vkdt nightly build 20261110"
+    title: "vkdt nightly build 20261115"
     url: "https://github.com/hanatos/vkdt/releases/tag/nightly"
-    created_at: "2026-11-10T18:37:24Z"
-    published_at: "2026-11-10T18:47:34Z"
-    updated_at: "2026-11-10T18:47:39Z"
+    created_at: "2026-11-15T18:03:28Z"
+    published_at: "2026-11-15T18:17:25Z"
+    updated_at: "2026-11-15T18:17:29Z"
     prerelease: true
     source_zip_url: "https://api.github.com/repos/hanatos/vkdt/zipball/nightly"
     source_tar_url: "https://api.github.com/repos/hanatos/vkdt/tarball/nightly"
     download_base: "https://github.com/hanatos/vkdt/releases/download/nightly/"
     assets:
-      "732552451":
-        name: "vkdt-rawler-1.0.99-774-gea3deef7-win64.zip"
-        url_suffix: "vkdt-rawler-1.0.99-774-gea3deef7-win64.zip"
-        size: 84346032
+      "751895551":
+        name: "vkdt-armv8-a-rawler-glfw3.5.1-1.0.99-839-gcf79d0a5-aarch64.AppImage"
+        url_suffix: "vkdt-armv8-a-rawler-glfw3.5.1-1.0.99-839-gcf79d0a5-aarch64.AppImage"
+        size: 16009736
+        digest: "sha256:ac983839471babb3aba0cafbaeade043c5920a5e4dd9cd05cb506e47fd294998"
+      "751895553":
+        name: "vkdt-1.0.99-839-gcf79d0a5-macos-15.dmg"
+        url_suffix: "vkdt-1.0.99-839-gcf79d0a5-macos-15.dmg"
+        size: 12101792
+        digest: "sha256:fda019931d8cc24e847d96a69fe71d1a5e0587af8017d7d5d5657fe1e622a048"
+      "751895555":
+        name: "vkdt-rawler-1.0.99-839-gcf79d0a5-win64.zip"
+        url_suffix: "vkdt-rawler-1.0.99-839-gcf79d0a5-win64.zip"
+        size: 84523011
         media_type: "zip"
-        digest: "sha256:235e72c1446c9c86786701d31e74c62a14700937776cc48ce6f5653d5992e151"
-      "732552454":
-        name: "vkdt-1.0.99-774-gea3deef7-macos-15.dmg"
-        url_suffix: "vkdt-1.0.99-774-gea3deef7-macos-15.dmg"
-        size: 23556756
-        digest: "sha256:928365d928f899b17afb35b3eaf65bfd1e8aeb8bb5eabcb504e5987ca4cea1be"
-      "732552456":
-        name: "vkdt-x86-64-rawler-pentablet-1.0.99-774-gea3deef7-x86_64.AppImage"
-        url_suffix: "vkdt-x86-64-rawler-pentablet-1.0.99-774-gea3deef7-x86_64.AppImage"
-        size: 16132600
-        digest: "sha256:ae89ba0062ce9d62619b7c0314702d821ea5e8f38d007768375d3a4402b3f893"
-      "732552459":
-        name: "vkdt-armv8-a-rawler-glfw3.4-1.0.99-774-gea3deef7-aarch64.AppImage"
-        url_suffix: "vkdt-armv8-a-rawler-glfw3.4-1.0.99-774-gea3deef7-aarch64.AppImage"
-        size: 15804936
-        digest: "sha256:f0a30dbd7615460d75b24807518e54e2fcc48a8960232292cccaf63ba4a2a7dc"
-      "732552461":
-        name: "vkdt-x86-64-rawler-glfw3.4-1.0.99-774-gea3deef7-x86_64.AppImage"
-        url_suffix: "vkdt-x86-64-rawler-glfw3.4-1.0.99-774-gea3deef7-x86_64.AppImage"
-        size: 16132600
-        digest: "sha256:cecc187ee83bcf5f51ba68d58237a4c1930f5ca71d50350a10648f3d7a2ff926"
-      "732552466":
-        name: "vkdt-armv8-a-rawler-pentablet-1.0.99-774-gea3deef7-aarch64.AppImage"
-        url_suffix: "vkdt-armv8-a-rawler-pentablet-1.0.99-774-gea3deef7-aarch64.AppImage"
-        size: 15804936
-        digest: "sha256:ffdd1284efaec9b8582d2f7c25e725c20b842666f59db0824ace9d46fcf3d3e4"
-      "732552469":
-        name: "vkdt-1.0.99-774-gea3deef7-macos-15-intel.dmg"
-        url_suffix: "vkdt-1.0.99-774-gea3deef7-macos-15-intel.dmg"
-        size: 26660550
-        digest: "sha256:222acc7882656750059531b613f9914cbdbf8c29b228dc34aa1a2b15e851a63f"
+        digest: "sha256:177c317db9657bf4b654a68b0ec5a046adb1632051f625a302a1ae49b304ebbb"
+      "751895557":
+        name: "vkdt-armv8-a-rawler-pentablet-1.0.99-839-gcf79d0a5-aarch64.AppImage"
+        url_suffix: "vkdt-armv8-a-rawler-pentablet-1.0.99-839-gcf79d0a5-aarch64.AppImage"
+        size: 16005640
+        digest: "sha256:b3f694aea0a1b89d63e099f37d01e2623649c880fb16a6f425cd147862eb2fa7"
+      "751895559":
+        name: "vkdt-x86-64-rawler-pentablet-1.0.99-839-gcf79d0a5-x86_64.AppImage"
+        url_suffix: "vkdt-x86-64-rawler-pentablet-1.0.99-839-gcf79d0a5-x86_64.AppImage"
+        size: 16312824
+        digest: "sha256:ecd732c3d10788d1f730c5dceb6332dde8f295ec45a87901f5802e038dc30b55"
+      "751895564":
+        name: "vkdt-x86-64-rawler-glfw3.5.1-1.0.99-839-gcf79d0a5-x86_64.AppImage"
+        url_suffix: "vkdt-x86-64-rawler-glfw3.5.1-1.0.99-839-gcf79d0a5-x86_64.AppImage"
+        size: 16316920
+        digest: "sha256:9a157888ea3be23fcdd564bcf95a4bdc7941910f3305e00e47607567fe6799a9"
