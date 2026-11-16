@@ -27,8 +27,12 @@ and the same tool can repeat it at the next sync.
 - A dry run that reports conflicts, fallbacks, deletions, installed apps among
   the deletions, and collisions with fork-owned recipes, without changing
   anything.
-- Find out whether an original recipe can be converted straight to a recipe
-  declaration; if not, say what the ladder's first rung costs to build.
+- A solid maintained conversion tool is part of this work, not an optional
+  extra: one entry point that converts an original recipe to a long recipe or
+  to a recipe declaration, with the direct original-to-declaration path built
+  (today declarations only come through an intermediate wrapper form). It
+  refuses what it cannot account for, has its own tests, and is what the merge
+  tool calls for every rung of the ladder.
 - Hand-merge `APP-MANAGER`, `modules/install.am` and `README.md`.
 - The four-part gate from ticket 17, decision 7.
 
@@ -38,3 +42,7 @@ authorization. Merge, never rebase.
 ## Comments
 
 November 16, 2026: opened from ticket 17's answer. Unassigned.
+
+November 16, 2026: Marek decided the conversion tool must be solid, especially
+original recipe to recipe declaration. The earlier "find out whether" item is
+replaced by that requirement in Scope.

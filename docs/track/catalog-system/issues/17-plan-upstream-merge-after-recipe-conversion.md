@@ -118,3 +118,6 @@ Left for [ticket 18](18-build-upstream-merge-tool-and-run-first-merge.md): no
 single tool was found that converts an original recipe straight to a recipe
 declaration (declarations came through an intermediate wrapper form), so "same
 form" on the ladder may need one built, or fall to a long recipe at first.
+
+November 16, 2026, later: Marek decided that tool must exist and be solid;
+ticket 18's scope now requires the direct original-to-declaration conversion.
