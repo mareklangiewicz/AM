@@ -47,6 +47,10 @@ class Declaration(unittest.TestCase):
             expected=show(FORK,recipe)
             self.assertEqual(self.convert(show(BASE,recipe),recipe,c.declaration_identities(expected))['text'],expected)
 
+    def test_literal_app_variable_in_a_selector_is_written_out(self):
+        source=show(BASE,'x86_64/0xfx').replace('grep -oi "https.*download.*mage$"','grep -oi "https.*download.*$APP.*mage$"')
+        self.assertIn('"pattern":"https.*download.*0xfx.*mage$"',self.convert(source)['text'])
+
     def test_anything_outside_the_template_refuses(self):
         source=show(BASE,'x86_64/0xfx')
         updater=source.index('cat >> ./AM-updater')
@@ -57,6 +61,8 @@ class Declaration(unittest.TestCase):
                 (source.replace('SITE="averagenative/0xfx"','SITE="other/project"'),'different repositories'),
                 (source.replace('https://api.github.com/repos/averagenative/0xfx/releases','https://example.org/releases'),'not one GitHub releases read'),
                 (source.replace('| head -1','| head -1; touch /tmp/unwanted'),'unsupported selector'),
+                (source.replace('grep -oi "https.*download.*mage$"','grep -oi "https.*$(uname -m).*mage$"'),'dynamic selector'),
+                (source.replace('grep -oi "https.*download.*mage$"','grep -oi "https.*$ARCH.*mage$"'),'dynamic selector'),
                 (source.replace('grep -oi "https.*download.*mage$"','grep -oi "https.*download.*zip$"'),'direct AppImage suffix')):
             self.assertNotEqual(changed,source)
             with self.assertRaisesRegex(c.Refusal,reason):self.convert(changed)
@@ -161,11 +167,17 @@ class Corpus(unittest.TestCase):
                 result=c.convert(self.base[path],path.removeprefix('programs/'),'declaration',c.declaration_identities(expected),TEMPLATES)
             except c.Refusal as refusal:
                 refused.append((path,str(refusal)));continue
+            if path=='programs/x86_64/pdf4qt':
+                # Published with the selector's $APP kept as pattern text, which
+                # matches nothing; the conversion writes the app name out.
+                self.assertEqual(result['text'],expected.replace('https.*$APP.*x86_64','https.*pdf4qt.*x86_64'))
+                self.assertNotEqual(result['text'],expected)
+                continue
             self.assertEqual(result['text'],expected,path)
             identical+=1
         # odicto's original carries a hand-edited comment line, so it is not a
         # template instance; its declaration came through the old wrapper form.
-        self.assertEqual((identical,refused),(985,[('programs/x86_64/odicto',
+        self.assertEqual((identical,refused),(984,[('programs/x86_64/odicto',
             'not an instance of a reviewed AppImage template')]))
 
     def test_long_recipes(self):

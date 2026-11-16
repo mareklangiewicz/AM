@@ -11,7 +11,7 @@ CATALOG_REPOSITORY_ID=587204007
 CATALOG_REPOSITORY=aandrew-me/odicto
 CATALOG_CHANNEL=any
 CATALOG_ASSET_PATTERN='^.*$'
-CATALOG_URL_RULES='[{"pattern":"https.*$APP.*amd64.*mage$","ignore_case":true,"exclude":false}]'
+CATALOG_URL_RULES='[{"pattern":"https.*odicto.*amd64.*mage$","ignore_case":true,"exclude":false}]'
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

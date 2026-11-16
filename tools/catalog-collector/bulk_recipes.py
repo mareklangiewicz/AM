@@ -37,6 +37,21 @@ def ere(bre):
     return result
 
 
+def literal_selector(selector,app):
+    """The selector with its only allowed variable, a literal APP, written out.
+
+    A predicate becomes inert pattern data, so any other expansion would be
+    kept as text and silently stop meaning what the shell meant.
+    """
+    selector=selector.replace('${APP}','$APP')
+    if re.search(r'\$[A-Za-z_{(0-9@*?#$!]',selector.replace('$APP','')) or '`' in selector:
+        raise ValueError('dynamic selector')
+    if '$APP' in selector:
+        if not app:raise ValueError('dynamic APP selector')
+        selector=selector.replace('$APP',app)
+    return selector
+
+
 def url_rules(selector,*,require_appimage=True):
     lexer=shlex.shlex(selector,posix=True,punctuation_chars='|');lexer.whitespace_split=True;lexer.commenters=''
     tokens=list(lexer)
@@ -110,7 +125,7 @@ def declare(settings,selector,recipe,identity):
     endpoint=re.fullmatch(r'https://api[.]github[.]com/repos/([A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+)/releases(/latest)?(?:\?per_page=100)?',settings.get('CATALOG_ALIAS',''))
     if not endpoint or endpoint[1].lower()!=requested.lower():
         raise ValueError('source alias mismatch')
-    rules=url_rules(selector)
+    rules=url_rules(literal_selector(selector,settings['APP']))
     settings.update(CATALOG_FORMAT='3',CATALOG_RECIPE=recipe,
         CATALOG_REPOSITORY_ID=str(identity['repository_id']),CATALOG_REPOSITORY=identity['repository'],
         CATALOG_CHANNEL='stable' if endpoint[2] else 'any',CATALOG_ASSET_PATTERN='^.*$',

@@ -15,7 +15,7 @@ import shutil
 import tempfile
 
 import host_catalog as host
-from bulk_recipes import url_rules
+from bulk_recipes import literal_selector,url_rules
 from recipe_policy_source import generate
 
 REPOSITORY=r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+'
@@ -39,16 +39,11 @@ def translate(source,recipe,bindings):
         if row.get('requested_repository'):known[row['requested_repository'].lower()]=row
     policies={};changes=[]
     def predicates(selector):
-        selector=selector.replace('${APP}','$APP')
-        if re.search(r'\$[A-Za-z_{(0-9@*?#$!]',selector.replace('$APP','')) or '`' in selector:
-            raise ValueError('dynamic selector')
         # Only a literal, repeated APP may parameterize a URL predicate.
         from catalog_sources import literals
         apps=literals(source,'APP')
-        if '$APP' in selector:
-            if not apps or len(set(apps))!=1:raise ValueError('dynamic APP selector')
-            selector=selector.replace('$APP',apps[0])
-        return url_rules(selector,require_appimage=False)
+        app=apps[0] if apps and len(set(apps))==1 else None
+        return url_rules(literal_selector(selector,app),require_appimage=False)
     def policy(binding,channel,rules,requested):
         identity=json.dumps([binding['repository_id'],channel,rules],sort_keys=True)
         if identity not in policies:

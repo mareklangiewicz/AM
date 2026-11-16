@@ -11,7 +11,7 @@ CATALOG_REPOSITORY_ID=194901823
 CATALOG_REPOSITORY=JakubMelka/PDF4QT
 CATALOG_CHANNEL=any
 CATALOG_ASSET_PATTERN='^.*$'
-CATALOG_URL_RULES='[{"pattern":"https.*$APP.*x86_64.*mage$","ignore_case":true,"exclude":false}]'
+CATALOG_URL_RULES='[{"pattern":"https.*pdf4qt.*x86_64.*mage$","ignore_case":true,"exclude":false}]'
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"
