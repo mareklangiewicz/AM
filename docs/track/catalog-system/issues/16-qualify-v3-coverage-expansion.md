@@ -3,7 +3,7 @@
 Type: task
 Label: implementation:task
 Status: claimed
-Assignee: codex
+Assignee: claude
 Blocked by: 15
 
 ## Outcome
@@ -133,3 +133,9 @@ are unchanged. Evidence commits await push approval; no runtime redelivery,
 installed-app change or yadm operation was made. The local artifact disk-quota
 failure was recovered after successful publication, as recorded in the latest
 [rollout outcome](../github-rollout-16.md).
+
+## Takeover — November 16, 2026
+
+Marek reassigned this ticket from Codex to Claude with the instruction to
+review Codex's work and take the ticket over. The review and its measurements
+follow below once complete; nothing above is changed.
