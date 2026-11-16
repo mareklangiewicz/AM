@@ -29,3 +29,22 @@ baselines. Decided in
   (`7b4f831e6`, `6277377ae`), not the live tree; leave them.
 
 ## Comments
+November 16, 2026: first pass, read only (`grep programs` over
+`tools/catalog-collector/test_*.py` and `fixture_*.py` at `7ce058b06`). Tests
+that read recipes from the live tree, as opposed to a pinned Git object or a
+recipe they write themselves:
+
+| File | Reads live |
+| --- | --- |
+| `test_yaml_appimages.py` | every recipe in the AppImage policy table, and pins its length (105) |
+| `test_host_policy_source.py` | copies the whole `programs/` tree; `emmylua` |
+| `test_recipe_declarations.py` | `20x`, `nvim`, and each enrolled recipe row |
+| `test_bulk_recipe_urls.py` | `20x` (as a stand-in declaration) |
+| `test_catalog_sources.py` | `0xfx` |
+| `fixture_manager.py`, `test_yaml_manager_integration.py` | `obsidian` and the recipes it installs |
+| `test_unavailable_recipes.py` | pins the length of `unavailable-github-recipes.json` (0) |
+
+Already pinned to Git objects and fine: `test_bulk_recipes.py`,
+`test_recipe_refresh.py`, parts of `test_bulk_recipe_urls.py` and
+`test_catalog_sources.py`. Not yet looked at: tests that read the fork-side
+derived files, and `test/e2e`.
