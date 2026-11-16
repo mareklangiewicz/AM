@@ -17,13 +17,8 @@ apps:
       classification: "unknown"
     "x86_64":
       repository_id: 313312687
-      availability: "present"
+      availability: "absent"
       classification: "unknown"
-      recipe:
-        repository: "mareklangiewicz/AM"
-        commit: "6277377aeb91daff3bed22f98bea39ba67a4b2c3"
-        path: "programs/x86_64/armcord"
-        blob: "647756ce5f2346bf922f2cd30c99f70b3ec6ee05"
   "legcord":
     "aarch64":
       repository_id: 313312687
@@ -31,7 +26,7 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "6277377aeb91daff3bed22f98bea39ba67a4b2c3"
+        commit: "8c39bf0a78a511250881e72411941c45258bfc4b"
         path: "programs/aarch64/legcord"
         blob: "19bf33f3d652ca9f82448117ead830bba9a71e25"
     "armv7l":
@@ -48,6 +43,6 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "6277377aeb91daff3bed22f98bea39ba67a4b2c3"
+        commit: "8c39bf0a78a511250881e72411941c45258bfc4b"
         path: "programs/x86_64/legcord"
         blob: "f4fa8a776945535262de01c3528ea782daa17ab1"

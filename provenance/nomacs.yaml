@@ -9,7 +9,7 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "6277377aeb91daff3bed22f98bea39ba67a4b2c3"
+        commit: "8c39bf0a78a511250881e72411941c45258bfc4b"
         path: "programs/aarch64/nomacs"
         blob: "560380df82ebf07e131e49f249eaf76e399a8a22"
     "armv7l":
@@ -26,9 +26,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "6277377aeb91daff3bed22f98bea39ba67a4b2c3"
+        commit: "8c39bf0a78a511250881e72411941c45258bfc4b"
         path: "programs/x86_64/nomacs"
-        blob: "f7c5bcf6c972023f3a553a980121031cb0cced73"
+        blob: "c280fdb3b3031b0781a4d0f84c2ded803ccabdd2"
   "nomacs-dev":
     "aarch64":
       repository_id: 12585625
@@ -44,10 +44,5 @@ apps:
       classification: "unknown"
     "x86_64":
       repository_id: 12585625
-      availability: "present"
+      availability: "absent"
       classification: "unknown"
-      recipe:
-        repository: "mareklangiewicz/AM"
-        commit: "6277377aeb91daff3bed22f98bea39ba67a4b2c3"
-        path: "programs/x86_64/nomacs-dev"
-        blob: "67666997d69688b3c2f6234fe9c0428bc7a5dacf"

@@ -5,8 +5,13 @@ apps:
   "koreader":
     "aarch64":
       repository_id: 8986217
-      availability: "absent"
+      availability: "present"
       classification: "unknown"
+      recipe:
+        repository: "mareklangiewicz/AM"
+        commit: "8c39bf0a78a511250881e72411941c45258bfc4b"
+        path: "programs/aarch64/koreader"
+        blob: "379241838b0e943c02edacf5d1188dedfb2fdf9f"
     "armv7l":
       repository_id: 8986217
       availability: "absent"
@@ -21,6 +26,6 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "6277377aeb91daff3bed22f98bea39ba67a4b2c3"
+        commit: "8c39bf0a78a511250881e72411941c45258bfc4b"
         path: "programs/x86_64/koreader"
-        blob: "adaa690bfc76ef12748c56faac61287fa258ea55"
+        blob: "8006f8b82564eaae85fd8f91497edc7bdee75242"

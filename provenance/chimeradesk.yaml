@@ -21,20 +21,20 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "6277377aeb91daff3bed22f98bea39ba67a4b2c3"
+        commit: "8c39bf0a78a511250881e72411941c45258bfc4b"
         path: "programs/x86_64/chimeradesk"
-        blob: "9d1481e310c8e0adf1d43ce1460e62edeb175a44"
+        blob: "a940e56ae3f0e3a4547dbaa189f8d85cc9c8c3d9"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-10T23:40:55Z"
-        recipe_sha256: "13f2e6afca500f330dbf6f95b1ae01bbe9d58a24b46b0ec5356fda2af955bb24"
-        rules: "6277377aeb91daff3bed22f98bea39ba67a4b2c3"
+        evaluated_at: "2026-11-16T22:21:47Z"
+        recipe_sha256: "1702b95bb611aacfcaac13ad1cf7fa56f688e2a537e20ced2111bb99602724b8"
+        rules: "8c39bf0a78a511250881e72411941c45258bfc4b"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "6277377aeb91daff3bed22f98bea39ba67a4b2c3"
+            commit: "8c39bf0a78a511250881e72411941c45258bfc4b"
             path: "modules/"
-            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"
+            sha256: "c5bf75dd16eb8df12d7d73f81fd4ee661b5f446c5b6512b80d76dd887d0f03d5"
   "chimeradesk-kvm":
     "aarch64":
       repository_id: 392371201
@@ -54,17 +54,17 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "6277377aeb91daff3bed22f98bea39ba67a4b2c3"
+        commit: "8c39bf0a78a511250881e72411941c45258bfc4b"
         path: "programs/x86_64/chimeradesk-kvm"
         blob: "acc014d353e40fb4b6e1345a4a8c6bf8081401a7"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-10T23:40:55Z"
+        evaluated_at: "2026-11-16T22:21:47Z"
         recipe_sha256: "64348be64ee8ef7fe8fdb5e393de0013cd3630e292d9f37c1db43921f0ab3cab"
-        rules: "6277377aeb91daff3bed22f98bea39ba67a4b2c3"
+        rules: "8c39bf0a78a511250881e72411941c45258bfc4b"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "6277377aeb91daff3bed22f98bea39ba67a4b2c3"
+            commit: "8c39bf0a78a511250881e72411941c45258bfc4b"
             path: "modules/"
-            sha256: "e87ccbd408504cdcaf10636e9ccef4c9b77fff1e02cb0b9e294abf62101b120d"
+            sha256: "c5bf75dd16eb8df12d7d73f81fd4ee661b5f446c5b6512b80d76dd887d0f03d5"

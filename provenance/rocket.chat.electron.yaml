@@ -17,13 +17,8 @@ apps:
       classification: "unknown"
     "x86_64":
       repository_id: 38767563
-      availability: "present"
+      availability: "absent"
       classification: "unknown"
-      recipe:
-        repository: "mareklangiewicz/AM"
-        commit: "6277377aeb91daff3bed22f98bea39ba67a4b2c3"
-        path: "programs/x86_64/rocket-chat-electron"
-        blob: "e3bb9f503c5f3c464bda9c19a6901b46b689bd95"
   "rocketchat":
     "aarch64":
       repository_id: 38767563
@@ -43,6 +38,6 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "6277377aeb91daff3bed22f98bea39ba67a4b2c3"
+        commit: "8c39bf0a78a511250881e72411941c45258bfc4b"
         path: "programs/x86_64/rocketchat"
         blob: "d6467cd70e2e9c7d829fa287cf6ebd2aa8b7097a"

@@ -5,13 +5,8 @@ apps:
   "solidcraft-perf":
     "aarch64":
       repository_id: 1415610890
-      availability: "present"
+      availability: "absent"
       classification: "unknown"
-      recipe:
-        repository: "mareklangiewicz/AM"
-        commit: "6277377aeb91daff3bed22f98bea39ba67a4b2c3"
-        path: "programs/aarch64/solidcraft-perf"
-        blob: "e2addf3a81ef257ee3df38de9061c38b468b633c"
     "armv7l":
       repository_id: 1415610890
       availability: "absent"
@@ -22,10 +17,5 @@ apps:
       classification: "unknown"
     "x86_64":
       repository_id: 1415610890
-      availability: "present"
+      availability: "absent"
       classification: "unknown"
-      recipe:
-        repository: "mareklangiewicz/AM"
-        commit: "6277377aeb91daff3bed22f98bea39ba67a4b2c3"
-        path: "programs/x86_64/solidcraft-perf"
-        blob: "0926a33378bd03f8459b9744d59f1b9f9dafab25"

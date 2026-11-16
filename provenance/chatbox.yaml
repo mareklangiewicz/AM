@@ -17,13 +17,8 @@ apps:
       classification: "unknown"
     "x86_64":
       repository_id: 610260322
-      availability: "present"
+      availability: "absent"
       classification: "unknown"
-      recipe:
-        repository: "mareklangiewicz/AM"
-        commit: "6277377aeb91daff3bed22f98bea39ba67a4b2c3"
-        path: "programs/x86_64/chatbox"
-        blob: "49efcc997f92d98ea7854a2b33c59a1307f19423"
   "chatboxai":
     "aarch64":
       repository_id: 610260322
@@ -31,7 +26,7 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "6277377aeb91daff3bed22f98bea39ba67a4b2c3"
+        commit: "8c39bf0a78a511250881e72411941c45258bfc4b"
         path: "programs/aarch64/chatboxai"
         blob: "cff8c9c5d8bd46afbdd3059e2cabd13f484dac97"
     "armv7l":
@@ -48,6 +43,6 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "6277377aeb91daff3bed22f98bea39ba67a4b2c3"
+        commit: "8c39bf0a78a511250881e72411941c45258bfc4b"
         path: "programs/x86_64/chatboxai"
         blob: "daf122df9edaf5fd1ed8f6caf39e52aea7151ad7"
