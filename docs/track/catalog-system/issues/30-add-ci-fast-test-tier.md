@@ -76,3 +76,6 @@ November 16, 2026: `.github/workflows/tests.yml` added. On every push to
 recipe-reconstruction, upstream-merge and e2e helper suites, then the
 collector fast tier. `fetch-depth: 0` gives it the pinned commits, which are
 all ancestors of the branch. Not yet seen running.
+
+November 16, 2026: first run 43982956903 reached the tool suites and failed
+on a real miss (see ticket 19's comment), so the collector tier was skipped.

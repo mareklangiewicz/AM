@@ -101,3 +101,12 @@ as what it is, the YAML emitter both formats share, and stays.
 an import cycle (`retention` to `retention_v3` to `bounded` to `retention`).
 `schema_url` belongs to the format-2 path and goes with step B. Fast tier:
 221 tests pass.
+
+November 16, 2026: step B sized, not started. About 25 tests call
+`host_catalog.collect` without `native_v3` (`test_batch_collection.py`,
+`test_large_batch_enrollment.py`, `test_catalog_only_enrollment.py`); they
+cover batch selection, budgets and the rate reserve, which the format-3 path
+shares, so each needs porting, not deleting. The published status format
+also still names a `format-2` outcome (`test_pipeline_publication.py`,
+`pipeline_publication.py`); removing that is a status-format change and is
+not part of step B.

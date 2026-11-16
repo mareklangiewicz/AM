@@ -70,3 +70,12 @@ at exactly seven days), termux 14.
 Not done: delivering the changed policy module to any installed host (`am -s`
 on each machine), which needs Marek's authorization. Until then a host still
 applies 48 hours.
+
+## Comments after the Answer
+
+November 16, 2026: the Answer's "Checked" list missed a suite. The first run
+of the fast-tests workflow (43982956903) failed
+`test_candidate_runtime.test_selection_refuses_stale_and_wrong_repository` in
+`tools/recipe-reconstruction`: its stale clock was three days after the
+observation. Moved to eight days; recipe-conversion 15, recipe-reconstruction
+44, upstream-merge 16 and e2e helper 11 tests pass locally.

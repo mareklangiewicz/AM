@@ -189,7 +189,7 @@ cp "$ASSESS_PAYLOAD" "$2"
         for app in CANDIDATES:
             with self.subTest(app=app):
                 self.assertIsNone(self.new_select(app, releases,
-                    AM_YAML_NOW='2026-11-09T12:00:00Z'))
+                    AM_YAML_NOW='2026-11-14T12:00:00Z'))
                 self.assertIsNone(self.new_select(app, releases, AM_YAML_REPOSITORY='999'))
 
     def run_recipe(self, recipe, env, *args):
