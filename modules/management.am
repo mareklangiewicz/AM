@@ -200,7 +200,14 @@ _downgrade() {
 		return 1
 	fi
 	cd "$argpath" || return 1
-	entries_list=$(_downgrade_entries_filter | _alt_gh_filter)
+	GH_API_REMAINING=$(_use_online_reading_tool "https://api.github.com/rate_limit" | tr '{,' '\n' | grep -i remaining | tail -1 | grep -Eo "[0-9]*")
+	wait
+	if [ -z "$HeaderAuthWithGITPAT" ] && [ -n "$GH_API_REMAINING" ] && [ "$GH_API_REMAINING" -le 10 ]; then
+		_proxy_enabled_msg
+		entries_list=$(_downgrade_entries_filter | _alt_gh_filter)
+	else
+		entries_list=$(_downgrade_entries_filter)
+	fi
 	urls="$(eval "$entries_list" 2>/dev/null | grep -vi "zsync$")"
 
 	# Try to avoid multiple snapshots of the same version
@@ -565,7 +572,6 @@ _check_installed_arg() {
 	if [ "${#DID_YOU_MEAN_CANDIDATES[@]}" -gt 0 ]; then
 		_select_did_you_mean_candidate || return 1
 	elif [ -n "$DID_YOU_MEAN" ]; then
-		local yn_abort
 		_read $" Use \"$DID_YOU_MEAN\" instead? (Y/n) " yn_abort
 		echo ""
 		echo "$yn_abort" | grep -qi '^n' && return 1
@@ -712,7 +718,7 @@ case "$1" in
 		echo "$DIVIDING_LINE"
 		;;
 
-	'lock')
+	'lock'|'--lock')
 		# Lock the version of an installed app
 		_determine_args
 		entries="$(echo "$@" | cut -f2- -d ' ')"
@@ -723,7 +729,7 @@ case "$1" in
 		done
 		;;
 
-	'unlock')
+	'unlock'|'--unlock')
 		# Unlock the version of an installed app
 		_determine_args
 		entries="$(echo "$@" | cut -f2- -d ' ')"

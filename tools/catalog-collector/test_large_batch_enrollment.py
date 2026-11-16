@@ -20,6 +20,7 @@ from yaml_publication import load_local, publish_local, schema_url
 class LargeBatchEnrollment(unittest.TestCase):
     receipt_name = 'large-batch-evidence.json'
     baseline_revision = 'b61eb2733441d2dd5f998f350ce32a3da1ebc2f9'
+    fell_back = {'x86_64/appimagetool','x86_64/appimageupdatetool','x86_64/satty'}
 
     def test_configured_collection_preserves_baseline_and_publishes_saved_batch(self):
         research = host_catalog.ROOT/'docs/track/release-catalog/research'
@@ -33,6 +34,10 @@ class LargeBatchEnrollment(unittest.TestCase):
         old_list = subprocess.check_output(['git','-C',str(host_catalog.ROOT),'show',
             self.baseline_revision+':tools/catalog-collector/collection-recipes.txt'],text=True)
         old_names = {line for line in old_list.splitlines() if line and not line.startswith('#')}
+        # The upstream merge of 2026-11-16 returned these to upstream's originals;
+        # their sources stay enrolled as catalog-only, outside this recipe scope.
+        self.assertTrue(self.fell_back <= old_names)
+        old_names -= self.fell_back
         new_names = {'x86_64/'+app for app in candidates}
         self.assertTrue(old_names.isdisjoint(new_names))
         wanted = old_names | new_names

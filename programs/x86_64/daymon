@@ -1,8 +1,0 @@
-#!/bin/sh
-# AM-CATALOG-UNAVAILABLE 1
-# Original recipe: 90a9f01b09f8262b38710d01f7d2b7ee510af525:programs/x86_64/daymon
-APP=daymon
-CATALOG_FORMAT=3
-CATALOG_UNVERIFIED_REPOSITORY=daymonio/daymon
-printf 'AM v3: %s: cannot verify GitHub source %s; catalog selection is unavailable.\n' "$APP" "$CATALOG_UNVERIFIED_REPOSITORY" >&2
-exit 1

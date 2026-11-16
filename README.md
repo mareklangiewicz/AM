@@ -359,7 +359,7 @@ The value of `$appman_location` can be a full path or the name of a directory (w
 "AM" installs, removes, updates and manages only standalone programs, ie those programs that can be run from a single directory in which they are contained.
 
 1. **PORTABLE PROGRAMS** from official sources (see Firefox, Thunderbird, NodeJS, Platform Tools...), extracted from official .deb/tar/zip packages.
-2. **APPIMAGES**, from both official and unofficial sources (I also create unofficial AppImages), or compiled on-the-fly with [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit), like an AUR helper, from official archives.
+2. **APPIMAGES**, from both official and unofficial sources (I also create unofficial AppImages), or compiled on-the-fly with [portable2appimage](https://github.com/ivan-hc/portable2appimage), like an AUR helper, from official archives.
 3. **THIRD-PARTY LIBRARIES** if they are missing in your repositories.
 
 The database aims to be a reference point where you can download all the AppImage packages scattered around the web, otherwise unobtainable, as you would expect from any package manager, through specific installation scripts for each application, as happens with the AUR PKGBUILDs, on Arch Linux. You can see all of them [here](https://github.com/ivan-hc/AM/tree/main/programs), divided by architecture.
@@ -393,6 +393,7 @@ Because of this, I have made some essential variables "customizable":
 - `APPSDBLIST`, i.e. the list of applications available for that architecture (default value *https://raw.githubusercontent.com/ivan-hc/AM/main/programs/$ARCH-apps*), this is used every time lists are updated, for example in `-l`, `-q` and `-s`/`-u`
 - `APPIMAGES_LIST`, i.e. the list of AppImages available in the database (default value *https://raw.githubusercontent.com/Portable-Linux-Apps/Portable-Linux-Apps.github.io/main/x86_64-appimages*), used in `-ia` and `-l`/`-q` with the `--appimages` flag
 - `AMCATALOGUEMARKDOWNS`, i.e. the pages in plain text format from the catalog of applications available in this database (default value *https://raw.githubusercontent.com/Portable-Linux-Apps/Portable-Linux-Apps.github.io/refs/heads/main/apps*, add an appname to see the content of one file), this is used in `-a`
+- `AMCATALOGUETERMNFO`, i.e. the pre-rendered pages of the catalog of applications available in this database (default value *https://portable-linux-apps.github.io/termnfo*, add an appname to see the content of one file), this is used in `-a` with the `-m`/`--markdown` suboption
 - `AMCATALOGUEICONS`, i.e. the icons in .png format available in the catalog of applications available in this database (default value *https://raw.githubusercontent.com/Portable-Linux-Apps/Portable-Linux-Apps.github.io/main/icons*, add an appname with extension .png to see one file), this is used in `-i`, in case the installation script fails to get an icon for the application
 - `AMSYNC`, if set to "1" prevents AM from updating itself and updating modules when running `-s` or `-u`
 
@@ -413,7 +414,7 @@ am -i appimageupdatetool
 ```
 
 ### *2) `appimagetool`*
-[**appimagetool**](https://github.com/AppImage/appimagetool) is a tool used to create AppImage packages from AppDirs. "AM" uses this to convert old AppImages and remove their dependency on libfuse2 or to assemble AppImage packages on the fly from portable archives, like in an AUR helper (*see "[Convert Type2 AppImages requiring libfuse2 to New Generation AppImages](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/nolibfuse.md)" and "[Option One: "build AppImages on-the-fly](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/template.md#option-one-build-appimages-on-the-fly)"*)
+**appimagetool** is a tool used to create AppImage packages from AppDirs. "AM" uses this to convert old AppImages and remove their dependency on libfuse2 or to assemble AppImage packages on the fly from portable archives, like in an AUR helper (*see "[Convert Type2 AppImages requiring libfuse2 to New Generation AppImages](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/nolibfuse.md)" and "[Option One: "build AppImages on-the-fly](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/template.md#option-one-build-appimages-on-the-fly)"*)
 ```
 am -i appimagetool
 ```
@@ -553,10 +554,11 @@ Visit [github.com/topgrade-rs/topgrade](https://github.com/topgrade-rs/topgrade)
 ### `about`, `-a`
 
 		am -a {PROGRAM}
+		am -a -m, --markdown {PROGRAM}
 
 **Description**:
 
-Shows more info about one or more apps.
+Shows more info about one or more apps. Add `-m` or `--markdown` to see the markdown version. Requires the terminal to be at least 80 columns wide.
 
 ------------------------------------------------------------------------
 ### `apikey`
@@ -739,7 +741,7 @@ Same as "install" (see above) but for AppImages only.  Option "`-ias`" (aka Inst
 Shows the list of all the apps available. Without flags only shows the apps in the "AM" database, add the "`--appimages`" to show only the AppImages or "`--portable`" to show other formats from the "AM" database. The "`--all`" flag allows you to consult the set of all supported third-party databases. It can also be extended with additional flags.
 
 ------------------------------------------------------------------------
-### `lock`
+### `lock`, `--lock`
 
 		am lock {PROGRAM}
 
@@ -792,7 +794,7 @@ Overwrite apps with snapshots saved previously (see "`-b`").
 Search for keywords in the list of available applications, add the "`--appimages`" option to list only the AppImages, "`--portable`" option to list only the portable apps or add "`--pkg`" to list multiple programs at once. The "`--all`" flag allows you to consult the set of all supported databases.
 
 ------------------------------------------------------------------------
-### `reinstall`
+### `reinstall`, `--reinstall`
 
  		am reinstall
  		am reinstall --all
@@ -886,7 +888,7 @@ See **[translations/README.md](translations/README.md)** for more information.
 Allow a hidden app to be shown and managed again (nulls "`hide`").
 
 ------------------------------------------------------------------------
-### `unlock`
+### `unlock`, `--unlock`
 
 		am unlock {PROGRAM}
 
@@ -1199,7 +1201,7 @@ Below you can access documentation pages for common issues and frequently asked 
 
 #### External tools and forks used in this project
 - *[aisap](https://github.com/mgord9518/aisap) and [sas](https://github.com/Samueru-sama/simple-appimage-sandbox), sandboxing solutions for AppImages, see sandboxing options above*
-- *[appimagetool](https://github.com/AppImage/appimagetool), get rid of libfuse2 from old AppImages (option `nolibfuse`) and create AppImages on the fly*
+- *[appimagetool](https://github.com/ivan-hc/appimagetool) (fork), to get rid of libfuse2 from old AppImages (option `nolibfuse`)*
 
 #### Organizations and their affiliates that actively contribute to this project
 - *[Package Forge](https://github.com/pkgforge), Improving Package Management & Security for Linux systems*

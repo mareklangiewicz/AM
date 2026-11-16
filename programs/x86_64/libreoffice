@@ -1,14 +1,4 @@
 #!/bin/sh
-# AM-CATALOG-RECIPE 1
-CATALOG_FORMAT=3
-AMREPO=${AMREPO-}
-export AMREPO
-if [ -z "${AM_CATALOG_SESSION-}" ]; then
-    AM_CATALOG_SESSION=$(mktemp -d) || exit 1
-    export AM_CATALOG_SESSION
-    trap 'rm -rf -- "$AM_CATALOG_SESSION"' 0
-    trap 'exit 1' HUP INT TERM
-fi
 
 # AM INSTALL SCRIPT VERSION 3. 
 set -u
@@ -30,7 +20,7 @@ echo "   === Available editions ===
    1. \"LibreOffice Still\" is slightly older but tested longer (default).
    2. \"LibreOffice Fresh\" includes all the latest features.
 "
-read -r -p "   Type 2 for \"Fresh\", or any other key for \"Still\": " response
+printf '%s' "   Type 2 for \"Fresh\", or any other key for \"Still\": " >&2 && read -r response
 case "$response" in
 	'2') edition="fresh";;
 	''|*) edition="still";;
@@ -41,18 +31,18 @@ echo "
    1. AppImage, classic, built on top of the official packages (default).
    2. Archimage, container-based AppImage that works also on musl systems.
 "
-read -r -p "   Type 2 for the Archimage, or leave blank: " response
+printf '%s' "   Type 2 for the Archimage, or leave blank: " >&2 && read -r response
 case "$response" in
 	2)
 		SITE="$SITE2"
 		printf "\n   === Available languages ===\n\n"
-		printf "1. base (default)\n2. italian\n3. european\n4. standard\n5. full\n\n" | _fit
-		read -r -p "   Choose a language or leave blank: " response
+		printf "1. base (default)\n2. italian\n3. european\n4. standard\n5. all\n\n" | _fit
+		printf '%s' "   Choose a language or leave blank: " >&2 && read -r response
 		case "$response" in
 			'2') edition="$edition.*italian.*archimage";;
 			'3') edition="$edition.*european.*archimage";;
 			'4') edition="$edition.*standard.*archimage";;
-			'5') edition="$edition.*full.*archimage";;
+			'5') edition="$edition.*all.*archimage";;
 			''|*) edition="$edition.*base.*archimage";;
 		esac
 		;;
@@ -66,7 +56,7 @@ case "$response" in
 			i=$((i + 1))
 		done)" | _fit
 		printf "\n"
-		read -r -p "   Choose a language by number or leave blank for \"en-GB\" (default): " response
+		printf '%s' "   Choose a language by number or leave blank for \"en-GB\" (default): " >&2 && read -r response
 		if [ -z "$response" ]; then
 			edition="$edition.*-en-GB.help"
 		else
@@ -75,7 +65,7 @@ case "$response" in
 		fi
 		# Offline documentation
 		printf "\n"
-		read -r -p "   === Want to include offline documentation? (N,y) " response
+		printf '%s' "   === Want to include offline documentation? (N,y) " >&2 && read -r response
 		case "$response" in
 			'Y'|'y') edition="$edition";;
 			''|*) edition=$(echo "$edition" | sed -- 's/\.help/-x/g');;
@@ -83,7 +73,7 @@ case "$response" in
 		;;
 esac; printf "\n"
 
-version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/libreoffice --url --source-repository "$SITE" --url-filter i "$edition" "$@") || exit 1
+version=$(curl -Ls https://api.github.com/repos/"$SITE"/releases | sed 's/[()",{} ]/\n/g' | grep -oi "https.*$edition.*mage$" | head -1)
 wget "$version" || exit 1
 cd ..
 mv ./tmp/*mage ./"$APP"
@@ -98,21 +88,19 @@ ln -s "/opt/$APP/$APP" "/usr/local/bin/$APP"
 # SCRIPT TO UPDATE THE PROGRAM
 cat >> "/opt/$APP/AM-updater" << 'EOF'
 #!/bin/sh
-# AM-CATALOG-RECIPE 1
-CATALOG_FORMAT=3
-AMREPO=${AMREPO-}
-export AMREPO
-if [ -z "${AM_CATALOG_SESSION-}" ]; then
-    AM_CATALOG_SESSION=$(mktemp -d) || exit 1
-    export AM_CATALOG_SESSION
-    trap 'rm -rf -- "$AM_CATALOG_SESSION"' 0
-    trap 'exit 1' HUP INT TERM
-fi
 set -u
 APP=libreoffice
-SITE="SITEREF"
+SITE="REPLACETHIS"
 version0=$(cat "/opt/$APP/version")
-version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/libreoffice --url --source-repository "$SITE" --url-filter i "AM_LO_EDITION" "$@") || exit 1
+EOF
+cat >> "/opt/$APP/AM-updater" << EOF
+version=\$(curl -Ls https://api.github.com/repos/$SITE/releases | sed 's/[()",{} ]/\n/g' | grep -oi "https.*$edition.*mage$" | head -1)
+EOF
+cat >> "/opt/$APP/AM-updater" << 'EOF'
+if command -v appimageupdatetool >/dev/null 2>&1; then
+	cd "/opt/$APP" || exit 1
+	appimageupdatetool -Or ./"$APP" && chmod a+x ./"$APP" && echo "$version" > ./version && exit 0
+fi
 if [ "$version" != "$version0" ]; then
 	mkdir "/opt/$APP/tmp" && cd "/opt/$APP/tmp" || exit 1
 	notify-send "A new version of $APP is available, please wait"
@@ -128,7 +116,7 @@ else
 	echo "Update not needed!"
 fi
 EOF
-sed -i "s#SITEREF#$SITE#g; s#AM_LO_EDITION#$edition#g" "/opt/$APP/AM-updater"
+sed -i "s#REPLACETHIS#$SITE#g" "/opt/$APP/AM-updater"
 chmod a+x "/opt/$APP/AM-updater"
 
 # LAUNCHER & ICON

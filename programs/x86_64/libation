@@ -11,7 +11,7 @@ CATALOG_REPOSITORY_ID=1139263464
 CATALOG_REPOSITORY=pkgforge-dev/Libation-AppImage
 CATALOG_CHANNEL=any
 CATALOG_ASSET_PATTERN='^.*$'
-CATALOG_URL_RULES='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"i386|i686|aarch64|arm64|armv7l","ignore_case":true,"exclude":true}]'
+CATALOG_URL_RULES='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"amd64|x86_64|x64|x86-64","ignore_case":true,"exclude":false}]'
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

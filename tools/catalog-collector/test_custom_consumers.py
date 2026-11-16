@@ -80,27 +80,6 @@ class CustomConsumers(unittest.TestCase):
         self.assertEqual(result.returncode,0,result.stderr)
         self.assertEqual(result.stdout,r['source_tar_url']+'\n')
 
-    def test_runtime_filter_selects_variant_within_trusted_url_predicates(self):
-        r=self.release()
-        for n in ['avx','sse']:
-            r['assets'][str(len(r['assets'])+1)]=dict(name='mercury-linux-'+n+'.zip',
-                url='https://example.org/mercury-linux-'+n+'.zip',size=1,content_type='application/zip')
-        self.prepare('mercury',{'1':r})
-        result=self.read('mercury','--url','--url-filter','i','sse')
-        self.assertEqual(result.returncode,0,result.stderr)
-        self.assertEqual(result.stdout,'https://example.org/mercury-linux-sse.zip\n')
-
-    def test_source_dispatch_and_variant_filter_agree_for_obs(self):
-        r=self.release()
-        r['assets']={'1':dict(name='obs-full-x86_64.AppImage',
-            url='https://example.org/obs-full-x86_64.AppImage',size=1,content_type='application/octet-stream')}
-        self.prepare('obs-studio',{'1':r},policy_name='x86_64/obs-studio.select-2')
-        result=self.read('obs-studio','--url','--source-repository','ivan-hc/OBS-Studio-appimage','--url-filter','i','full')
-        self.assertEqual(result.returncode,0,result.stderr)
-        self.assertEqual(result.stdout,r['assets']['1']['url']+'\n')
-        result=self.read('obs-studio','--url','--source-repository','unknown/project')
-        self.assertNotEqual(result.returncode,0)
-
     def test_url_menu_lists_old_records_but_chosen_url_must_be_fresh(self):
         r=self.release()
         r['assets']={'1':dict(name='wine-x86_64.AppImage',url='https://example.org/wine-x86_64.AppImage',size=1,content_type='application/octet-stream')}

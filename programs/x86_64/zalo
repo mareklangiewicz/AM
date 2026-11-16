@@ -1,14 +1,4 @@
 #!/bin/sh
-# AM-CATALOG-RECIPE 1
-CATALOG_FORMAT=3
-AMREPO=${AMREPO-}
-export AMREPO
-if [ -z "${AM_CATALOG_SESSION-}" ]; then
-    AM_CATALOG_SESSION=$(mktemp -d) || exit 1
-    export AM_CATALOG_SESSION
-    trap 'rm -rf -- "$AM_CATALOG_SESSION"' 0
-    trap 'exit 1' HUP INT TERM
-fi
 
 # AM INSTALL SCRIPT VERSION 3.6
 set -u
@@ -21,36 +11,25 @@ printf "#!/bin/sh\nset -e\nrm -f /usr/local/bin/$APP\nrm -R -f /opt/$APP" > ../r
 printf '\n%s' "rm -f /usr/local/share/applications/$APP-AM.desktop" >> ../remove
 chmod a+x ../remove || exit 1
 
-# CHOOSE A VERSION, DOWNLOAD AND PREPARE THE APP, $version is also used for updates
-read -r -p "
- Choose which variant of Zalo AppImage to use:
+# DOWNLOAD AND PREPARE THE APP, $version is also used for updates
+printf '%s' "
+ Choose which version of $APP AppImage to use:
 
- 1. With ZaDark (helps you experience Zalo more privately and more personalized)
+ 1) ZaDark (helps you experience Zalo more privately and more personalized)
+ 2) Original variant
 
-    Filename: Zalo-<ver>+ZaDark-<zadark_ver>-<commit_hash>-x86_64.AppImage
+ Which version you choose (type a number and press ENTER)?" >&2 && read -r response
+RELEASE=""
+[ "$response" = "1" ] && RELEASE="ZaDark"
+[ "$response" = "2" ] && RELEASE="Original"
+[ -z "$RELEASE" ] && exit 1
 
- 2. Original variant
-
-	Filename: Zalo-<ver>-Original-<commit_hash>-x86_64.AppImage
-
- Which variant you choose (type a number and press ENTER)?" response
-
-case "$response" in
-	1) rm -f /opt/"$APP"/version
-	UPDATER=1
-	version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/zalo --url "$@") || exit 1
-	wget "$version"
-	echo "$version" >> /opt/$APP/version;;
-	2) rm -f /opt/"$APP"/version
-	version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/zalo.select-2 --url "$@") || exit 1
-	UPDATER=2
-	wget "$version"
-	echo "$version" >> /opt/$APP/version;;
-	*) /opt/"$APP"/remove && exit;;
-esac
-
-# Keep this space in sync with other installation scripts
-# Use tar fx ./*tar* here for example in this line in case a compressed file is downloaded.
+version=$(curl -Ls https://api.github.com/repos/"$SITE"/releases | sed 's/[()",{} ]/\n/g' | grep -oi "https.*mage$" | grep -i "x86_64\|amd64" | grep -i "$RELEASE" | head -1)
+if [ -z "$version" ]; then
+	printf "\n 💀 ERROR: it seems that upstream removed %b, please retry\n" "$RELEASE" && exit 1
+else
+	wget "$version" || exit 1
+fi
 cd ..
 mv ./tmp/*mage ./"$APP"
 # Keep this space in sync with other installation scripts
@@ -64,22 +43,16 @@ ln -s "/opt/$APP/$APP" "/usr/local/bin/$APP"
 # SCRIPT TO UPDATE THE PROGRAM
 cat >> ./AM-updater << 'EOF'
 #!/bin/sh
-# AM-CATALOG-RECIPE 1
-CATALOG_FORMAT=3
-AMREPO=${AMREPO-}
-export AMREPO
-if [ -z "${AM_CATALOG_SESSION-}" ]; then
-    AM_CATALOG_SESSION=$(mktemp -d) || exit 1
-    export AM_CATALOG_SESSION
-    trap 'rm -rf -- "$AM_CATALOG_SESSION"' 0
-    trap 'exit 1' HUP INT TERM
-fi
 set -u
 APP=zalo
 SITE="VN-Linux-Family/zalo-for-linux"
 version0=$(cat "/opt/$APP/version")
-version=$(sh "/opt/am/modules/catalog-yaml.am" AM_ZALO_POLICY --url "$@") || exit 1
+version=$(curl -Ls https://api.github.com/repos/"$SITE"/releases | sed 's/[()",{} ]/\n/g' | grep -oi "https.*mage$" | grep -i "x86_64\|amd64" | grep -i "REPLACETHIS" | head -1)
 [ -n "$version" ] || { echo "Error getting link"; exit 1; }
+if command -v appimageupdatetool >/dev/null 2>&1; then
+	cd "/opt/$APP" || exit 1
+	appimageupdatetool -Or ./"$APP" && chmod a+x ./"$APP" && echo "$version" > ./version && exit 0
+fi
 if [ "$version" != "$version0" ]; then
 	mkdir "/opt/$APP/tmp" && cd "/opt/$APP/tmp" || exit 1
 	notify-send "A new version of $APP is available, please wait"
@@ -95,12 +68,8 @@ else
 	echo "Update not needed!"
 fi
 EOF
-if [ "$UPDATER" = "1" ]; then
-    sed -i 's#AM_ZALO_POLICY#x86_64/zalo#g' /opt/"$APP"/AM-updater
-elif [ "$UPDATER" = "2" ]; then
-    sed -i 's#AM_ZALO_POLICY#x86_64/zalo.select-2#g' /opt/"$APP"/AM-updater
-fi
 chmod a+x ./AM-updater || exit 1
+sed -i "s/REPLACETHIS/$RELEASE/g" /opt/"$APP"/AM-updater
 
 # LAUNCHER & ICON
 ./"$APP" --appimage-extract *.desktop 1>/dev/null

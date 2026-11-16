@@ -12,7 +12,9 @@ ROOT=Path(__file__).resolve().parents[2]
 class Unavailable(unittest.TestCase):
     def test_all_unverified_bindings_are_hash_bound_and_fail_before_side_effects(self):
         receipt=json.loads((ROOT/'tools/catalog-collector/unavailable-github-recipes.json').read_text())
-        self.assertEqual(len(receipt['recipes']),49)
+        # Upstream deleted or replaced all 49 by 448123c0a; the registry stays
+        # for the next recipe whose source cannot be verified.
+        self.assertEqual(len(receipt['recipes']),0)
         with tempfile.TemporaryDirectory() as temporary:
             directory=Path(temporary)
             for row in receipt['recipes']:

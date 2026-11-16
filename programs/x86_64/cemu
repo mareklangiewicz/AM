@@ -1,14 +1,4 @@
 #!/bin/sh
-# AM-CATALOG-RECIPE 1
-CATALOG_FORMAT=3
-AMREPO=${AMREPO-}
-export AMREPO
-if [ -z "${AM_CATALOG_SESSION-}" ]; then
-    AM_CATALOG_SESSION=$(mktemp -d) || exit 1
-    export AM_CATALOG_SESSION
-    trap 'rm -rf -- "$AM_CATALOG_SESSION"' 0
-    trap 'exit 1' HUP INT TERM
-fi
 
 # AM INSTALL SCRIPT VERSION 3.6
 set -u
@@ -24,7 +14,7 @@ printf '\n%s' "rm -f /usr/local/share/applications/$APP-AM.desktop" >> ../remove
 chmod a+x ../remove || exit 1
 
 # DOWNLOAD AND PREPARE THE APP, $version is also used for updates
-read -r -p "
+printf '%s' "
  Choose which version of cemu to use:
 
  1. Official upstream AppImage.
@@ -36,7 +26,7 @@ read -r -p "
 
     Source: https://github.com/$SITE2
 
- Which version you choose (type a number and press ENTER)?" response
+ Which version you choose (type a number and press ENTER)?" >&2 && read -r response
 RELEASE=""
 if echo "$response" | grep -q "^1"; then
 	RELEASE="$SITE1"
@@ -50,8 +40,8 @@ if [ -z "$RELEASE" ]; then
 fi
 
 case "$RELEASE" in
-	"cemu-project/Cemu") version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/cemu --url "$@") || exit 1;;
-	*) version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/cemu.select-2 --url "$@") || exit 1;;
+	"cemu-project/Cemu") version=$(curl -Ls https://api.github.com/repos/cemu-project/Cemu/releases | sed 's/[()",{}]/ /g; s/ /\n/g' | grep -oi "https.*$APP.*x86_64.*mage$" | head -1);;
+	*) version=$(curl -Ls https://api.github.com/repos/pkgforge-dev/Cemu-AppImage-Enhanced/releases/latest | sed 's/[()",{} ]/\n/g' | grep -oi "https.*mage$" | grep -i "amd64\|x86_64\|x64\|x86-64" | head -1);;
 esac
 if [ -z "$version" ]; then
 	printf "\n 💀 ERROR: it seems that upstream removed %b, please retry\n" "$RELEASE" && exit 1
@@ -71,25 +61,19 @@ ln -s "/opt/$APP/$APP" "/usr/local/bin/$APP"
 # SCRIPT TO UPDATE THE PROGRAM
 cat >> ./AM-updater << 'EOF'
 #!/bin/sh
-# AM-CATALOG-RECIPE 1
-CATALOG_FORMAT=3
-AMREPO=${AMREPO-}
-export AMREPO
-if [ -z "${AM_CATALOG_SESSION-}" ]; then
-    AM_CATALOG_SESSION=$(mktemp -d) || exit 1
-    export AM_CATALOG_SESSION
-    trap 'rm -rf -- "$AM_CATALOG_SESSION"' 0
-    trap 'exit 1' HUP INT TERM
-fi
 set -u
 APP=cemu
 SITE="REPLACETHIS"
 version0=$(cat "/opt/$APP/version")
 case "$SITE" in
-	"cemu-project/Cemu") version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/cemu --url "$@") || exit 1;;
-	*) version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/cemu.select-2 --url "$@") || exit 1;;
+	"cemu-project/Cemu") version=$(curl -Ls https://api.github.com/repos/"$SITE"/releases | sed 's/[()",{}]/ /g; s/ /\n/g' | grep -oi "https.*$APP.*x86_64.*mage$" | head -1);;
+	*) version=$(curl -Ls https://api.github.com/repos/pkgforge-dev/Cemu-AppImage-Enhanced/releases/latest | sed 's/[()",{} ]/\n/g' | grep -oi "https.*mage$" | grep -i "amd64\|x86_64\|x64\|x86-64" | head -1);;
 esac
 [ -n "$version" ] || { echo "Error getting link"; exit 1; }
+if command -v appimageupdatetool >/dev/null 2>&1; then
+	cd "/opt/$APP" || exit 1
+	appimageupdatetool -Or ./"$APP" && chmod a+x ./"$APP" && echo "$version" > ./version && exit 0
+fi
 if [ "$version" != "$version0" ]; then
 	mkdir "/opt/$APP/tmp" && cd "/opt/$APP/tmp" || exit 1
 	notify-send "A new version of $APP is available, please wait"

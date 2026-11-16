@@ -345,26 +345,6 @@
     "release_rule": "published_desc"
   },
   {
-    "recipe": "x86_64/chatterino2-nightly",
-    "repository_id": 77624593,
-    "endpoint": "list",
-    "source_sha256": "f7708be0db7ea9663edda9238e85e1e192117aa238c171037d8ff23c26b0ed9a",
-    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1",
-    "rules": [
-      {
-        "pattern": "https.*mage$",
-        "ignore_case": true,
-        "exclude": false
-      },
-      {
-        "pattern": "i386|i686|aarch64|arm64|armv7l",
-        "ignore_case": true,
-        "exclude": true
-      }
-    ],
-    "release_rule": "published_desc"
-  },
-  {
     "recipe": "x86_64/criteria-geo",
     "repository_id": 286458735,
     "endpoint": "list",
@@ -510,26 +490,6 @@
     "release_rule": "published_desc"
   },
   {
-    "recipe": "x86_64/exsplode.re",
-    "repository_id": 261333718,
-    "endpoint": "list",
-    "source_sha256": "87d7a6869c77dae0f0f1cff7bede52956279078cfa420580ff6203d0ff050467",
-    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1",
-    "rules": [
-      {
-        "pattern": "https.*mage$",
-        "ignore_case": true,
-        "exclude": false
-      },
-      {
-        "pattern": "i386|i686|aarch64|arm64|armv7l",
-        "ignore_case": true,
-        "exclude": true
-      }
-    ],
-    "release_rule": "published_desc"
-  },
-  {
     "recipe": "x86_64/floorp",
     "repository_id": 984423768,
     "endpoint": "list",
@@ -585,26 +545,6 @@
         "pattern": "main",
         "ignore_case": true,
         "exclude": false
-      }
-    ],
-    "release_rule": "published_desc"
-  },
-  {
-    "recipe": "x86_64/ghostty-nightly",
-    "repository_id": 912943674,
-    "endpoint": "list",
-    "source_sha256": "d15e1ee581ace6cf9566ad021cbba22964d506e1c253dcb0875b6d987f4b0518",
-    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*tip.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1",
-    "rules": [
-      {
-        "pattern": "https.*tip.*mage$",
-        "ignore_case": true,
-        "exclude": false
-      },
-      {
-        "pattern": "i386|i686|aarch64|arm64|armv7l",
-        "ignore_case": true,
-        "exclude": true
       }
     ],
     "release_rule": "published_desc"
@@ -749,26 +689,6 @@
     "repository_id": 669697660,
     "endpoint": "list",
     "source_sha256": "962af960617293b93609ebe46ce257c152676b9404cb973c036d70b7ae9e73da",
-    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
-    "rules": [
-      {
-        "pattern": "https.*download.*mage$",
-        "ignore_case": true,
-        "exclude": false
-      },
-      {
-        "pattern": "i386|i686|armhf|aarch64|arm64|armv7l",
-        "ignore_case": true,
-        "exclude": true
-      }
-    ],
-    "release_rule": "published_desc"
-  },
-  {
-    "recipe": "x86_64/kkedit-qt",
-    "repository_id": 464169731,
-    "endpoint": "list",
-    "source_sha256": "f919a25d7ac67fd97324e3c68393e11e0f2bd8a25c4c99034f950c33b7bf9915",
     "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*download.*mage$\" | grep -vi \"i386\\|i686\\|armhf\\|aarch64\\|arm64\\|armv7l\" | head -1",
     "rules": [
       {
@@ -1060,26 +980,6 @@
     "release_rule": "published_desc"
   },
   {
-    "recipe": "x86_64/opera",
-    "repository_id": 656834791,
-    "endpoint": "list",
-    "source_sha256": "53ac1b916f42c837cdf98560ca396cb9b3590b64a6934a803fc4b507d53bc6b7",
-    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386|i686|aarch64|arm64|armv7l\\|beta\\|dev\" | head -1",
-    "rules": [
-      {
-        "pattern": "https.*mage$",
-        "ignore_case": true,
-        "exclude": false
-      },
-      {
-        "pattern": "i386[|]i686[|]aarch64[|]arm64[|]armv7l|beta|dev",
-        "ignore_case": true,
-        "exclude": true
-      }
-    ],
-    "release_rule": "published_desc"
-  },
-  {
     "recipe": "x86_64/opera-beta",
     "repository_id": 656834791,
     "endpoint": "list",
@@ -1250,26 +1150,6 @@
     "release_rule": "published_desc"
   },
   {
-    "recipe": "x86_64/soil-editor",
-    "repository_id": 286458735,
-    "endpoint": "list",
-    "source_sha256": "ba7ce7b1d118efad2bb7043fb9c61fc3eb21f57d5092f4023e031bb2e91f5db8",
-    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386\\|i686\\|aarch64\\|arm64\\|armv7l\" | head -1",
-    "rules": [
-      {
-        "pattern": "https.*mage$",
-        "ignore_case": true,
-        "exclude": false
-      },
-      {
-        "pattern": "i386|i686|aarch64|arm64|armv7l",
-        "ignore_case": true,
-        "exclude": true
-      }
-    ],
-    "release_rule": "published_desc"
-  },
-  {
     "recipe": "x86_64/sqlitebrowser",
     "repository_id": 19416551,
     "endpoint": "list",
@@ -1395,106 +1275,6 @@
         "pattern": "aarch64|arm64|armv7l|i386|i686",
         "ignore_case": true,
         "exclude": true
-      }
-    ],
-    "release_rule": "published_desc"
-  },
-  {
-    "recipe": "x86_64/wine-devel",
-    "repository_id": 298360082,
-    "endpoint": "list",
-    "source_sha256": "8871c424643c2aaec3f48432aba21edb7b600422189ddd56aad6ef6585c504d5",
-    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386|i686|aarch64|arm64|armv7l\\|v8\" | grep -i \"devel\" | head -1",
-    "rules": [
-      {
-        "pattern": "https.*mage$",
-        "ignore_case": true,
-        "exclude": false
-      },
-      {
-        "pattern": "i386[|]i686[|]aarch64[|]arm64[|]armv7l|v8",
-        "ignore_case": true,
-        "exclude": true
-      },
-      {
-        "pattern": "devel",
-        "ignore_case": true,
-        "exclude": false
-      }
-    ],
-    "release_rule": "published_desc"
-  },
-  {
-    "recipe": "x86_64/wine-stable",
-    "repository_id": 298360082,
-    "endpoint": "list",
-    "source_sha256": "a3b7714d507dc44c958168130e4b5026270fdaa85d8b7a483052ed55ab072491",
-    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386|i686|aarch64|arm64|armv7l\\|v8\" | grep -i \"stable\" | head -1",
-    "rules": [
-      {
-        "pattern": "https.*mage$",
-        "ignore_case": true,
-        "exclude": false
-      },
-      {
-        "pattern": "i386[|]i686[|]aarch64[|]arm64[|]armv7l|v8",
-        "ignore_case": true,
-        "exclude": true
-      },
-      {
-        "pattern": "stable",
-        "ignore_case": true,
-        "exclude": false
-      }
-    ],
-    "release_rule": "published_desc"
-  },
-  {
-    "recipe": "x86_64/wine-staging",
-    "repository_id": 298360082,
-    "endpoint": "list",
-    "source_sha256": "9fed82b6cfef03c44dfa999984555d6a1d0a606966de97540e2c99cb11054065",
-    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386|i686|aarch64|arm64|armv7l\\|proton\\|v8\" | grep -i \"staging\" | head -1",
-    "rules": [
-      {
-        "pattern": "https.*mage$",
-        "ignore_case": true,
-        "exclude": false
-      },
-      {
-        "pattern": "i386[|]i686[|]aarch64[|]arm64[|]armv7l|proton|v8",
-        "ignore_case": true,
-        "exclude": true
-      },
-      {
-        "pattern": "staging",
-        "ignore_case": true,
-        "exclude": false
-      }
-    ],
-    "release_rule": "published_desc"
-  },
-  {
-    "recipe": "x86_64/wine-staging-ge-proton",
-    "repository_id": 298360082,
-    "endpoint": "list",
-    "source_sha256": "6fb1da7b010459943b46df7a3c0906c4a1bc69999a4b296802799c5f0711e989",
-    "selector": "sed 's/[()\",{} ]/\\n/g' | grep -oi \"https.*mage$\" | grep -vi \"i386|i686|aarch64|arm64|armv7l\\|v8\" | grep -i \"proton\" | head -1",
-    "rules": [
-      {
-        "pattern": "https.*mage$",
-        "ignore_case": true,
-        "exclude": false
-      },
-      {
-        "pattern": "i386[|]i686[|]aarch64[|]arm64[|]armv7l|v8",
-        "ignore_case": true,
-        "exclude": true
-      },
-      {
-        "pattern": "proton",
-        "ignore_case": true,
-        "exclude": false
       }
     ],
     "release_rule": "published_desc"
