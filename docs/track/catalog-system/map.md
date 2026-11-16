@@ -173,7 +173,7 @@ approval boundaries.
 | [20 open](issues/20-stop-reattempting-failing-sources-every-run.md) | none | 26 failing sources re-attempted every run; same-tag and 16 MiB refusals. |
 | [21 open](issues/21-retire-catalog-sources.md) | 18 | Collector support for retiring a source; retire the merge's list and am-utils. |
 | [22 open](issues/22-keep-collection-running-across-doc-pushes.md) | none | Schedule pin pauses collection on any push. |
-| [23 claimed](issues/23-repair-offline-e2e-after-v3-cutover.md) | none | Offline e2e suite fails 27 tests before and after the merge. |
+| [23 resolved](issues/23-repair-offline-e2e-after-v3-cutover.md) | none | Offline e2e suite [ported to the format-3 client](issues/23-repair-offline-e2e-after-v3-cutover.md#answer--november-16-2026); debian, fedora and termux pass on the merged tree. |
 | [24 open](issues/24-simplify-and-unify-catalog-process.md) | none | Grilling: simplify and unify the catalog and merge process. |
 
 Latest implementation evidence, November 8: Chromium desktop/narrow and Firefox

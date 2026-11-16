@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: claimed
+Status: resolved
 Assignee: claude
 Blocked by: none
 
@@ -38,3 +38,30 @@ timeout.
 ## Comments
 
 November 16, 2026: opened from the first upstream merge (ticket 18).
+
+## Answer — November 16, 2026
+
+Fixed in the commit "Repair the offline e2e suite for the format-3 catalog
+client". `./test/e2e/run` passes on the merged tree: debian 21, fedora 21,
+`./test/e2e/run termux` 14.
+
+The suite had not followed the v3 cutover. Four causes, all on the test side:
+
+- the fixture published a format-2 tree; the client reads format 3;
+- the adapter answered the `release-catalog` ref, the client asks for
+  `release-catalog-v3` (the cause named when this ticket was opened; the
+  45-second timeout was the same refusal);
+- scenarios that corrupt a source document wrote
+  `repositories/<id>.yaml`, a path the format-3 tree does not have;
+- the module check expected every file under `modules/` to survive a sync,
+  but a real sync deletes what `APP-MANAGER` does not name.
+
+No manager or module code changed. The images now need PyYAML (`python3-yaml`,
+`python3-pyyaml`, `pip install pyyaml` on Termux), so they rebuild once.
+
+Left open, for [ticket 24](24-simplify-and-unify-catalog-process.md):
+
+- `modules/catalog-yaml-reader.am` and `modules/catalog-yaml-parser.am` are
+  format-2 modules the manager deletes on sync; only collector tests still use
+  them.
+- Nothing runs this suite automatically.

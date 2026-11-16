@@ -34,9 +34,12 @@ Observed during the first merge (ticket 18), as questions, not proposals:
 - Tests pin counts and named recipes (115 policies, 49 unavailable recipes,
   `mercury`, `obs-studio`, enrollment baselines), so every upstream change of
   a pinned recipe breaks a test by hand.
-- The collector suite takes 18 to 47 minutes; the e2e suite is broken
-  ([ticket 23](23-repair-offline-e2e-after-v3-cutover.md)) and nothing runs
-  either automatically.
+- The collector suite takes 18 to 47 minutes. The e2e suite went unnoticed
+  broken from the v3 cutover until
+  [ticket 23](23-repair-offline-e2e-after-v3-cutover.md). Nothing runs either
+  automatically.
+- `modules/catalog-yaml-reader.am` and `modules/catalog-yaml-parser.am` are
+  format-2 modules the manager deletes on sync; only collector tests use them.
 - Open operational follow-ups already ticketed: 19, 20, 21, 22.
 
 ## Comments
