@@ -1,0 +1,12 @@
+# Fork-owned recipes: an upstream merge never overwrites these (ADR 0005).
+# One programs/ARCH/APP path per line. Fork-only recipes and every recipe
+# carrying a MAREK-FORK mark belong here.
+programs/aarch64/appimageupdatetool
+programs/aarch64/emmylua
+programs/aarch64/fzf
+programs/aarch64/logseq-app-db-nightly
+programs/aarch64/zmx
+programs/x86_64/emmylua
+programs/x86_64/logseq-app-db-nightly
+programs/x86_64/logseq-app-og
+programs/x86_64/zmx
