@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1261663145
 repository: "alphaXiv/OpenResearch"
-collected_at: "2026-11-14T18:14:26Z"
+collected_at: "2026-11-17T22:44:51Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: false
-observed_at: "2026-11-14T18:14:26Z"
+observed_at: "2026-11-17T22:44:51Z"
 releases:
   "382916031":
     tag: "v0.1.120"
@@ -3006,9 +3006,9 @@ releases:
     tag: "canary"
     title: "Canary"
     url: "https://github.com/alphaXiv/OpenResearch/releases/tag/canary"
-    created_at: "2026-11-13T05:12:26Z"
+    created_at: "2026-11-17T21:58:04Z"
     published_at: "2026-10-27T23:45:10Z"
-    updated_at: "2026-11-13T05:51:23Z"
+    updated_at: "2026-11-17T22:17:22Z"
     prerelease: true
     source_zip_url: "https://api.github.com/repos/alphaXiv/OpenResearch/zipball/canary"
     source_tar_url: "https://api.github.com/repos/alphaXiv/OpenResearch/tarball/canary"
@@ -3020,384 +3020,516 @@ releases:
         size: 25311
         media_type: "application/json"
         digest: "sha256:99525ad3698385591f709b43a76c56dd86476eed96414f4a9a39391c9caed760"
-      "741784060":
-        name: "canary-20261113.1--OpenResearch-Canary-orx.exe"
-        url_suffix: "canary-20261113.1--OpenResearch-Canary-orx.exe"
-        size: 72222496
-        digest: "sha256:1491ca2d3fefc135c31a585ee0ca36b0a81c51a0d52cd65421e5d5c2d73e8d71"
-      "741784252":
-        name: "canary-20261113.1--OpenResearch-Setup.exe"
-        url_suffix: "canary-20261113.1--OpenResearch-Setup.exe"
-        size: 20382336
-        digest: "sha256:1e3ce4cf8f059c1ced183213d51300207efefd212732020d41c116b1d8606f67"
-      "741784325":
-        name: "canary-20261113.1--OpenResearch-aarch64.AppImage"
-        url_suffix: "canary-20261113.1--OpenResearch-aarch64.AppImage"
-        size: 100624904
+      "757183352":
+        name: "canary-20261117.4--OpenResearch-Canary-orx.exe"
+        url_suffix: "canary-20261117.4--OpenResearch-Canary-orx.exe"
+        size: 74956064
+        digest: "sha256:b0bb0ae6053fb2adf91dddc454344de7c7e37b942be0c445f0aaa2d987e9c009"
+      "757183536":
+        name: "canary-20261117.4--OpenResearch-Setup.exe"
+        url_suffix: "canary-20261117.4--OpenResearch-Setup.exe"
+        size: 21050648
+        digest: "sha256:256670878d6d1dea2882be1f836e8879cebcdab7c79b77e425741d7972087433"
+      "757183670":
+        name: "canary-20261117.4--OpenResearch-aarch64.AppImage"
+        url_suffix: "canary-20261117.4--OpenResearch-aarch64.AppImage"
+        size: 101059080
         media_type: "application/vnd.appimage"
-        digest: "sha256:d3e43dc002f30eb9623e667520244c99abd0db681fe8d908ddbf76b39cb7d0df"
-      "741784525":
-        name: "canary-20261113.1--OpenResearch-x86_64.AppImage"
-        url_suffix: "canary-20261113.1--OpenResearch-x86_64.AppImage"
-        size: 103422456
+        digest: "sha256:84688e82de03a4bd5ea164bfdf9a20bc08b535d645d182e5d85bdc339483d8aa"
+      "757183825":
+        name: "canary-20261117.4--OpenResearch-cli-aarch64-apple-darwin.tar.gz"
+        url_suffix: "canary-20261117.4--OpenResearch-cli-aarch64-apple-darwin.tar.gz"
+        size: 27775786
+        media_type: "application/x-gtar"
+        digest: "sha256:a83e6d26f489cec795ec1304a880cff5d0899188a0e68bc520cb9e08d1466328"
+      "757183912":
+        name: "canary-20261117.4--OpenResearch-cli-aarch64-apple-darwin.tar.gz.sha256"
+        url_suffix: "canary-20261117.4--OpenResearch-cli-aarch64-apple-darwin.tar.gz.sha256"
+        size: 65
+        digest: "sha256:a18186d7a6928bd188cdd053f6186eed2e9a07639b14e61483e08ea7490cb8f1"
+      "757183955":
+        name: "canary-20261117.4--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz"
+        url_suffix: "canary-20261117.4--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz"
+        size: 26096420
+        media_type: "application/x-gtar"
+        digest: "sha256:aae8904c178e10c1de340133aa3d0cab858fd19ac14cdfb8bb77c93d6613fbe2"
+      "757184027":
+        name: "canary-20261117.4--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz.sha256"
+        url_suffix: "canary-20261117.4--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz.sha256"
+        size: 65
+        digest: "sha256:a8b38db9bc6db323115585b07074638913af132fd3fdf98504abe9638fab136d"
+      "757184072":
+        name: "canary-20261117.4--OpenResearch-cli-x86_64-apple-darwin.tar.gz"
+        url_suffix: "canary-20261117.4--OpenResearch-cli-x86_64-apple-darwin.tar.gz"
+        size: 29465453
+        media_type: "application/x-gtar"
+        digest: "sha256:70f25fae8867cef0c28841eb4e50e5c446e2ac2ad8be3bc4ce34a77f6992caf8"
+      "757184205":
+        name: "canary-20261117.4--OpenResearch-cli-x86_64-apple-darwin.tar.gz.sha256"
+        url_suffix: "canary-20261117.4--OpenResearch-cli-x86_64-apple-darwin.tar.gz.sha256"
+        size: 65
+        digest: "sha256:7acc81bad8126b06a16104cfa33e0d2e311f35331dbf0f04246ee1954e3694a5"
+      "757184269":
+        name: "canary-20261117.4--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz"
+        url_suffix: "canary-20261117.4--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz"
+        size: 27238317
+        media_type: "application/x-gtar"
+        digest: "sha256:003a83905f945a1172bd81cf30c06a6f422fbc7229bda06bcb0f3aa9899444fb"
+      "757184374":
+        name: "canary-20261117.4--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz.sha256"
+        url_suffix: "canary-20261117.4--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz.sha256"
+        size: 65
+        digest: "sha256:a4f2a5df8ccf60725dfb23267a183f70501387fcc5d166d1a6945e278f03fe48"
+      "757184406":
+        name: "canary-20261117.4--OpenResearch-x86_64.AppImage"
+        url_suffix: "canary-20261117.4--OpenResearch-x86_64.AppImage"
+        size: 103827960
         media_type: "application/vnd.appimage"
-        digest: "sha256:ed89c8de8a8b3db3277b0e31887beb0a9951fbde132c793d8298d3ba31f1909b"
-      "741784660":
-        name: "canary-20261113.1--OpenResearch.dmg"
-        url_suffix: "canary-20261113.1--OpenResearch.dmg"
-        size: 55662131
+        digest: "sha256:c235652adc98fc608f0f57a6ee4393098014b998923a4421b9fe085926be50c4"
+      "757184640":
+        name: "canary-20261117.4--OpenResearch.dmg"
+        url_suffix: "canary-20261117.4--OpenResearch.dmg"
+        size: 57194423
         media_type: "application/x-apple-diskimage"
-        digest: "sha256:1b25668a204c27409c4678ce3c1d95b936a1941e742ddca9b3b52a462f85400f"
-      "741830199":
-        name: "canary-20261113.2--OpenResearch-Canary-orx.exe"
-        url_suffix: "canary-20261113.2--OpenResearch-Canary-orx.exe"
-        size: 72261920
-        digest: "sha256:5dd28f6c047710fc511385fc2e35bb9ad57c080502f2c3afcacc594d8a5efccc"
-      "741830365":
-        name: "canary-20261113.2--OpenResearch-Setup.exe"
-        url_suffix: "canary-20261113.2--OpenResearch-Setup.exe"
-        size: 20401696
-        digest: "sha256:9db603da4447c8fae22eccb2088574bf7ff4508c67b63a00164701b08d17df3b"
-      "741830484":
-        name: "canary-20261113.2--OpenResearch-aarch64.AppImage"
-        url_suffix: "canary-20261113.2--OpenResearch-aarch64.AppImage"
-        size: 100612616
+        digest: "sha256:b195b2ab96167106ba574573a87795e726eed756fa620e6ea00c1878484fb9c9"
+      "757300890":
+        name: "canary-20261117.5--OpenResearch-Canary-orx.exe"
+        url_suffix: "canary-20261117.5--OpenResearch-Canary-orx.exe"
+        size: 74842912
+        digest: "sha256:037ec4ed2f86445e65a49a2bdc0dcb413f84975892428540d87abb88d22c7c13"
+      "757301003":
+        name: "canary-20261117.5--OpenResearch-Setup.exe"
+        url_suffix: "canary-20261117.5--OpenResearch-Setup.exe"
+        size: 20867848
+        digest: "sha256:1352669749441a94f08e6e908381b0ac6c18a86597a16b77015951dcd4ad118f"
+      "757301074":
+        name: "canary-20261117.5--OpenResearch-aarch64.AppImage"
+        url_suffix: "canary-20261117.5--OpenResearch-aarch64.AppImage"
+        size: 101198344
         media_type: "application/vnd.appimage"
-        digest: "sha256:9ff355b0ec22ec14c7cc7d28ee7d849fc99dcde7d40088264f05e7e1f42ccec2"
-      "741830680":
-        name: "canary-20261113.2--OpenResearch-x86_64.AppImage"
-        url_suffix: "canary-20261113.2--OpenResearch-x86_64.AppImage"
-        size: 103406072
+        digest: "sha256:fb21b091df6223c033346dcecf3a50b37dd6acd25ee007e4eb4d2772bb92a288"
+      "757301263":
+        name: "canary-20261117.5--OpenResearch-cli-aarch64-apple-darwin.tar.gz"
+        url_suffix: "canary-20261117.5--OpenResearch-cli-aarch64-apple-darwin.tar.gz"
+        size: 27779926
+        media_type: "application/x-gtar"
+        digest: "sha256:dede86ace5d0dc569f5b8968f08781a5c2d91a782940ea896f98466f2b1e7607"
+      "757301384":
+        name: "canary-20261117.5--OpenResearch-cli-aarch64-apple-darwin.tar.gz.sha256"
+        url_suffix: "canary-20261117.5--OpenResearch-cli-aarch64-apple-darwin.tar.gz.sha256"
+        size: 65
+        digest: "sha256:a037395082480f5ba90911f19d1c4c6a13ac6fcc0197d22bf5bea21707d11eb7"
+      "757301415":
+        name: "canary-20261117.5--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz"
+        url_suffix: "canary-20261117.5--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz"
+        size: 26162913
+        media_type: "application/x-gtar"
+        digest: "sha256:3c4bcbad40e27add35d5cfeb0e6a93b37d7c23053e9305fa4e30a35b29070004"
+      "757301493":
+        name: "canary-20261117.5--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz.sha256"
+        url_suffix: "canary-20261117.5--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz.sha256"
+        size: 65
+        digest: "sha256:720e2f18d10298bb30ce8bc122d9bbde2b832d32233e28ee99283ecd700d7e15"
+      "757301541":
+        name: "canary-20261117.5--OpenResearch-cli-x86_64-apple-darwin.tar.gz"
+        url_suffix: "canary-20261117.5--OpenResearch-cli-x86_64-apple-darwin.tar.gz"
+        size: 29482607
+        media_type: "application/x-gtar"
+        digest: "sha256:af3a520b5b3b19111b54da21d1eacfec61091f71930a58e91421fffd84fabb92"
+      "757301652":
+        name: "canary-20261117.5--OpenResearch-cli-x86_64-apple-darwin.tar.gz.sha256"
+        url_suffix: "canary-20261117.5--OpenResearch-cli-x86_64-apple-darwin.tar.gz.sha256"
+        size: 65
+        digest: "sha256:b92f43ea183881523a1a8285f45e5840d3ce31e90f6864914d8d5318b4aedeef"
+      "757301684":
+        name: "canary-20261117.5--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz"
+        url_suffix: "canary-20261117.5--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz"
+        size: 27290117
+        media_type: "application/x-gtar"
+        digest: "sha256:b61e55c1cf911917cf7950834f307fe7ea018c3096e65b2e7a0a7c62000bd7c4"
+      "757301762":
+        name: "canary-20261117.5--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz.sha256"
+        url_suffix: "canary-20261117.5--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz.sha256"
+        size: 65
+        digest: "sha256:126195b674439a4109202de2ee165b8bd1f23ebfa048dce9de77b3f421a39452"
+      "757301842":
+        name: "canary-20261117.5--OpenResearch-x86_64.AppImage"
+        url_suffix: "canary-20261117.5--OpenResearch-x86_64.AppImage"
+        size: 104036856
         media_type: "application/vnd.appimage"
-        digest: "sha256:f8c12ceb57680a3d484b8264a8caa91b7e3600cf1bfad00cc4f965cb44e2ba75"
-      "741830887":
-        name: "canary-20261113.2--OpenResearch.dmg"
-        url_suffix: "canary-20261113.2--OpenResearch.dmg"
-        size: 55629061
+        digest: "sha256:ad479e1eac145ae17ddc2380fca1a344db658f1468f3dff5b9e56c347811b19d"
+      "757302055":
+        name: "canary-20261117.5--OpenResearch.dmg"
+        url_suffix: "canary-20261117.5--OpenResearch.dmg"
+        size: 57228410
         media_type: "application/x-apple-diskimage"
-        digest: "sha256:ba9e32583fa66aeed8b349c64a321a15e64d1b4af5351a0eb2a655445adae662"
-      "741909252":
-        name: "canary-20261113.3--OpenResearch-Canary-orx.exe"
-        url_suffix: "canary-20261113.3--OpenResearch-Canary-orx.exe"
-        size: 72261920
-        digest: "sha256:5997430d499583ab11def18f0a8c9273e96c148c1077669a7eac457e683f1991"
-      "741909363":
-        name: "canary-20261113.3--OpenResearch-Setup.exe"
-        url_suffix: "canary-20261113.3--OpenResearch-Setup.exe"
-        size: 20398752
-        digest: "sha256:b3b187b4749bd97b4af1c51113ca24380ba3766bd3ad34e48b9c228354dd2c27"
-      "741909427":
-        name: "canary-20261113.3--OpenResearch-aarch64.AppImage"
-        url_suffix: "canary-20261113.3--OpenResearch-aarch64.AppImage"
-        size: 100608520
+        digest: "sha256:d63dfdeffee72db6320f6ea215e2c4ee1b58ccec39900ce4890fa074b286c376"
+      "757359569":
+        name: "canary-20261117.6--OpenResearch-Canary-orx.exe"
+        url_suffix: "canary-20261117.6--OpenResearch-Canary-orx.exe"
+        size: 74842912
+        digest: "sha256:876abb3d820c9bb4dfef67eb1a4f741314ef73eea6c26e4f33ba9a80f047c2f5"
+      "757359662":
+        name: "canary-20261117.6--OpenResearch-Setup.exe"
+        url_suffix: "canary-20261117.6--OpenResearch-Setup.exe"
+        size: 20865000
+        digest: "sha256:014e5a52d5a45aad922279d9dbc067cb06dd6fbfa248e6abff546d199370f03c"
+      "757359761":
+        name: "canary-20261117.6--OpenResearch-aarch64.AppImage"
+        url_suffix: "canary-20261117.6--OpenResearch-aarch64.AppImage"
+        size: 101190152
         media_type: "application/vnd.appimage"
-        digest: "sha256:8da803025b99531649e21b02b9b9e50de7df51edaf5ddb4a2f2d16a2035d3709"
-      "741909599":
-        name: "canary-20261113.3--OpenResearch-x86_64.AppImage"
-        url_suffix: "canary-20261113.3--OpenResearch-x86_64.AppImage"
-        size: 103406072
+        digest: "sha256:0867c77923d5d1592ad1b6aeeba438893d32ff4ff74ef28d25918441a6438f6a"
+      "757360005":
+        name: "canary-20261117.6--OpenResearch-cli-aarch64-apple-darwin.tar.gz"
+        url_suffix: "canary-20261117.6--OpenResearch-cli-aarch64-apple-darwin.tar.gz"
+        size: 27780217
+        media_type: "application/x-gtar"
+        digest: "sha256:25d472ef16b20d0fe008501111eaaa8f23ed5a40e7a597e1305f15426af3d0b1"
+      "757360115":
+        name: "canary-20261117.6--OpenResearch-cli-aarch64-apple-darwin.tar.gz.sha256"
+        url_suffix: "canary-20261117.6--OpenResearch-cli-aarch64-apple-darwin.tar.gz.sha256"
+        size: 65
+        digest: "sha256:ce1f249af6a1a074bd2ed89fdc344946d01ae5db03260d23016189618c2a4e0d"
+      "757360160":
+        name: "canary-20261117.6--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz"
+        url_suffix: "canary-20261117.6--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz"
+        size: 26161115
+        media_type: "application/x-gtar"
+        digest: "sha256:ee1bd688806465b1aece6769d6b445a804a2614445628971e09532ec1b22ab9b"
+      "757360264":
+        name: "canary-20261117.6--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz.sha256"
+        url_suffix: "canary-20261117.6--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz.sha256"
+        size: 65
+        digest: "sha256:65a44cdfe3d87f29ca6ab703ded8b9cdeba09a3f7f5f68b15263f2fb257c08c7"
+      "757360338":
+        name: "canary-20261117.6--OpenResearch-cli-x86_64-apple-darwin.tar.gz"
+        url_suffix: "canary-20261117.6--OpenResearch-cli-x86_64-apple-darwin.tar.gz"
+        size: 29482230
+        media_type: "application/x-gtar"
+        digest: "sha256:7f063a434497d18004370314eb17526fa04ad009f0f44682c2be28040735ff14"
+      "757360433":
+        name: "canary-20261117.6--OpenResearch-cli-x86_64-apple-darwin.tar.gz.sha256"
+        url_suffix: "canary-20261117.6--OpenResearch-cli-x86_64-apple-darwin.tar.gz.sha256"
+        size: 65
+        digest: "sha256:8cc81cd0e5f7b18ee83ddbbf50a486c53a294495bd72c41929bff4dc5354f552"
+      "757360477":
+        name: "canary-20261117.6--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz"
+        url_suffix: "canary-20261117.6--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz"
+        size: 27290137
+        media_type: "application/x-gtar"
+        digest: "sha256:c3f8146fbb7eafddabb2ca7402f9fc357e49cfb7485b7d0ea68d71d9330acb87"
+      "757360563":
+        name: "canary-20261117.6--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz.sha256"
+        url_suffix: "canary-20261117.6--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz.sha256"
+        size: 65
+        digest: "sha256:74d850dfe0180a3b107e8e22a2f6b20727e2124c6468a12b10361557d41ee191"
+      "757360635":
+        name: "canary-20261117.6--OpenResearch-x86_64.AppImage"
+        url_suffix: "canary-20261117.6--OpenResearch-x86_64.AppImage"
+        size: 104032760
         media_type: "application/vnd.appimage"
-        digest: "sha256:20c597941d5d8c8fa38fef33d0363f28ba689872f401248ec53a47296953de79"
-      "741909773":
-        name: "canary-20261113.3--OpenResearch.dmg"
-        url_suffix: "canary-20261113.3--OpenResearch.dmg"
-        size: 55638914
+        digest: "sha256:f28c9eef1db4b2a3726f02e7b44f24cc433afa1c85afedc5dcae70f759f1f9af"
+      "757360855":
+        name: "canary-20261117.6--OpenResearch.dmg"
+        url_suffix: "canary-20261117.6--OpenResearch.dmg"
+        size: 57228009
         media_type: "application/x-apple-diskimage"
-        digest: "sha256:bc08e04bafa255452810fda86ab28ca1351dcabd35af5ed5df536f1f556d78e0"
-      "742086640":
-        name: "canary-20261113.4--OpenResearch-Canary-orx.exe"
-        url_suffix: "canary-20261113.4--OpenResearch-Canary-orx.exe"
-        size: 72592152
-        digest: "sha256:e74b28580553ea1abe2bc4bf0f599872ba8cecbb4896ddb2dd9a0c0c1429c28b"
-      "742086724":
-        name: "canary-20261113.4--OpenResearch-Setup.exe"
-        url_suffix: "canary-20261113.4--OpenResearch-Setup.exe"
-        size: 20284392
-        digest: "sha256:a615bd6fed9fe921449d6ab3c0e280595c297a0e7ff4d5640a59259b610e8158"
-      "742086807":
-        name: "canary-20261113.4--OpenResearch-aarch64.AppImage"
-        url_suffix: "canary-20261113.4--OpenResearch-aarch64.AppImage"
-        size: 100686344
+        digest: "sha256:8fa703ddb98b40308ef87436bb01f9d32774275ba1d1e9a28b8ff317730b87bf"
+      "757511075":
+        name: "canary-20261117.7--OpenResearch-Canary-orx.exe"
+        url_suffix: "canary-20261117.7--OpenResearch-Canary-orx.exe"
+        size: 74510624
+        digest: "sha256:7075f7012335470e35bc90e4793e4139adc2acd0399cbdc0f398d2f579f2e7d0"
+      "757511166":
+        name: "canary-20261117.7--OpenResearch-Setup.exe"
+        url_suffix: "canary-20261117.7--OpenResearch-Setup.exe"
+        size: 20909952
+        digest: "sha256:e78e2defa9105e312c06d40a4ec5cb7ebd42639582359f3dfc1488a15ca0403c"
+      "757511221":
+        name: "canary-20261117.7--OpenResearch-aarch64.AppImage"
+        url_suffix: "canary-20261117.7--OpenResearch-aarch64.AppImage"
+        size: 101161480
         media_type: "application/vnd.appimage"
-        digest: "sha256:c646668f77b235ad60b34492d0c60845733a0e24b6279769279afb347704b62b"
-      "742086941":
-        name: "canary-20261113.4--OpenResearch-cli-aarch64-apple-darwin.tar.gz"
-        url_suffix: "canary-20261113.4--OpenResearch-cli-aarch64-apple-darwin.tar.gz"
-        size: 27243410
+        digest: "sha256:b7dce344bb16bbd407f8751e5a91d42a6c1f1eba598bdf3c70552dabb19fc06b"
+      "757511357":
+        name: "canary-20261117.7--OpenResearch-cli-aarch64-apple-darwin.tar.gz"
+        url_suffix: "canary-20261117.7--OpenResearch-cli-aarch64-apple-darwin.tar.gz"
+        size: 27765843
         media_type: "application/x-gtar"
-        digest: "sha256:957674e718f174adacf62178515ed9eef644d97d1bc8915946e6cde02ae8ee94"
-      "742087012":
-        name: "canary-20261113.4--OpenResearch-cli-aarch64-apple-darwin.tar.gz.sha256"
-        url_suffix: "canary-20261113.4--OpenResearch-cli-aarch64-apple-darwin.tar.gz.sha256"
+        digest: "sha256:495ae4564fd0a9da39ed9f31c5340c653c2a12ca492a5deaca97f95512706fef"
+      "757511420":
+        name: "canary-20261117.7--OpenResearch-cli-aarch64-apple-darwin.tar.gz.sha256"
+        url_suffix: "canary-20261117.7--OpenResearch-cli-aarch64-apple-darwin.tar.gz.sha256"
         size: 65
-        digest: "sha256:6e3df9d40719d6ddfcb056fb677c2b13e73d2755ea04bffdbc6ba8be4bbc7699"
-      "742087039":
-        name: "canary-20261113.4--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz"
-        url_suffix: "canary-20261113.4--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz"
-        size: 25522100
+        digest: "sha256:6bed79f0901af3dd3985994453238fb292f32508f5bdfda30039dd01af58fa3c"
+      "757511443":
+        name: "canary-20261117.7--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz"
+        url_suffix: "canary-20261117.7--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz"
+        size: 25982344
         media_type: "application/x-gtar"
-        digest: "sha256:28206d4777af2f7efd56b404374c658c139498b34a872b17414351357bb1ea23"
-      "742087088":
-        name: "canary-20261113.4--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz.sha256"
-        url_suffix: "canary-20261113.4--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz.sha256"
+        digest: "sha256:4fb36d3002aedf7948315bb82c73f358739d5e0f3c0a43160ad35ab565ef9838"
+      "757511527":
+        name: "canary-20261117.7--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz.sha256"
+        url_suffix: "canary-20261117.7--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz.sha256"
         size: 65
-        digest: "sha256:5ade6f20572c4ea4fb14f791d441053bc5daa6265de4505f144583936e835403"
-      "742087116":
-        name: "canary-20261113.4--OpenResearch-cli-x86_64-apple-darwin.tar.gz"
-        url_suffix: "canary-20261113.4--OpenResearch-cli-x86_64-apple-darwin.tar.gz"
-        size: 28779726
+        digest: "sha256:ffb3ff4cdc1ce447f85eb9faa1d9fcaeedafa2d90951540bd409ce0f8505196c"
+      "757511546":
+        name: "canary-20261117.7--OpenResearch-cli-x86_64-apple-darwin.tar.gz"
+        url_suffix: "canary-20261117.7--OpenResearch-cli-x86_64-apple-darwin.tar.gz"
+        size: 29374856
         media_type: "application/x-gtar"
-        digest: "sha256:827b4940b4966211590308f8990aaa7ee365cd7b11af48d3753e1c56cdb866fd"
-      "742087200":
-        name: "canary-20261113.4--OpenResearch-cli-x86_64-apple-darwin.tar.gz.sha256"
-        url_suffix: "canary-20261113.4--OpenResearch-cli-x86_64-apple-darwin.tar.gz.sha256"
+        digest: "sha256:b9654ae31660dbf190733fdcbfe8f6f95dad317e017b6e0380e5b2502d99b01e"
+      "757511611":
+        name: "canary-20261117.7--OpenResearch-cli-x86_64-apple-darwin.tar.gz.sha256"
+        url_suffix: "canary-20261117.7--OpenResearch-cli-x86_64-apple-darwin.tar.gz.sha256"
         size: 65
-        digest: "sha256:9d70b3a4203e81a564efc784957561e2ce4fe5078d1f424a46d3ab3f2747e09a"
-      "742087218":
-        name: "canary-20261113.4--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz"
-        url_suffix: "canary-20261113.4--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz"
-        size: 26548039
+        digest: "sha256:95b7f819be28c0daf78d96defc783f75b5c0d6016c212cc058852080850062fd"
+      "757511636":
+        name: "canary-20261117.7--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz"
+        url_suffix: "canary-20261117.7--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz"
+        size: 27198263
         media_type: "application/x-gtar"
-        digest: "sha256:6c34e7ec3d1889bc4a6ddd217ea4e3534d2095d3112839f29dc1bc39e278ffc5"
-      "742087302":
-        name: "canary-20261113.4--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz.sha256"
-        url_suffix: "canary-20261113.4--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz.sha256"
+        digest: "sha256:e6ded5b4306081c3ed0cf5bd25555699c5b4de441fc463ac37d0fe54bf9dc6cb"
+      "757511704":
+        name: "canary-20261117.7--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz.sha256"
+        url_suffix: "canary-20261117.7--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz.sha256"
         size: 65
-        digest: "sha256:59422d6ca2c9fd0c360b16570f67d5d7d4cb93fc2aaf5bc867f21197e6a39123"
-      "742087336":
-        name: "canary-20261113.4--OpenResearch-x86_64.AppImage"
-        url_suffix: "canary-20261113.4--OpenResearch-x86_64.AppImage"
-        size: 103397880
+        digest: "sha256:9beff8835a4ab752221509c2f392e4713f861be1c46d16fb58d211a06198d65c"
+      "757511727":
+        name: "canary-20261117.7--OpenResearch-x86_64.AppImage"
+        url_suffix: "canary-20261117.7--OpenResearch-x86_64.AppImage"
+        size: 103827960
         media_type: "application/vnd.appimage"
-        digest: "sha256:c69c0696a0bbbc3a1e5633661440a5b80dc10e2070933a84a73fa37eedbc2c6b"
-      "742087481":
-        name: "canary-20261113.4--OpenResearch.dmg"
-        url_suffix: "canary-20261113.4--OpenResearch.dmg"
-        size: 55982278
+        digest: "sha256:34434613d958db0df9731c7c4f4c4f6e3be215ac6db49f12f38a4a6a467f6503"
+      "757511871":
+        name: "canary-20261117.7--OpenResearch.dmg"
+        url_suffix: "canary-20261117.7--OpenResearch.dmg"
+        size: 57101027
         media_type: "application/x-apple-diskimage"
-        digest: "sha256:0d8761e6b5464d0a6b9d78ac8082bb9a0bdf10b0029d24cdfe66f5424956a95c"
-      "742180551":
-        name: "canary-20261113.5--OpenResearch-Canary-orx.exe"
-        url_suffix: "canary-20261113.5--OpenResearch-Canary-orx.exe"
-        size: 72710432
-        digest: "sha256:b4bdd187c9f50387a27fbf31e75ae83d18972c25a2b58515027884e491648eaf"
-      "742180673":
-        name: "canary-20261113.5--OpenResearch-Setup.exe"
-        url_suffix: "canary-20261113.5--OpenResearch-Setup.exe"
-        size: 20274472
-        digest: "sha256:3f24d43baed9a99d542b565af6772c3df243d70d373e1a47da888ab3d1e138e3"
-      "742180749":
-        name: "canary-20261113.5--OpenResearch-aarch64.AppImage"
-        url_suffix: "canary-20261113.5--OpenResearch-aarch64.AppImage"
-        size: 100772360
+        digest: "sha256:eafc13dd1f0ea3337193236c2dd044bef5bcd0d061f75120dd6b44d46e9c19e5"
+      "760321169":
+        name: "canary-20261117.8--OpenResearch-Canary-orx.exe"
+        url_suffix: "canary-20261117.8--OpenResearch-Canary-orx.exe"
+        size: 74501400
+        digest: "sha256:aadc9989f6136ed56a0b8c19b869402050262c756c689ad0d5f9c59a682b9748"
+      "760321302":
+        name: "canary-20261117.8--OpenResearch-Setup.exe"
+        url_suffix: "canary-20261117.8--OpenResearch-Setup.exe"
+        size: 20670112
+        digest: "sha256:2d88fe53ebf2092f515d984a2037e153df9acd157024b507b4952280e109e203"
+      "760321364":
+        name: "canary-20261117.8--OpenResearch-aarch64.AppImage"
+        url_suffix: "canary-20261117.8--OpenResearch-aarch64.AppImage"
+        size: 101173768
         media_type: "application/vnd.appimage"
-        digest: "sha256:3bbc4f85f58f5da03d9828b085638c4cd2915ea1d789f5d337034469400df441"
-      "742180917":
-        name: "canary-20261113.5--OpenResearch-cli-aarch64-apple-darwin.tar.gz"
-        url_suffix: "canary-20261113.5--OpenResearch-cli-aarch64-apple-darwin.tar.gz"
-        size: 27192316
+        digest: "sha256:2d9de6744a52bc37271688e7daac33ade138041dde5f941b802b218c039a459d"
+      "760321580":
+        name: "canary-20261117.8--OpenResearch-cli-aarch64-apple-darwin.tar.gz"
+        url_suffix: "canary-20261117.8--OpenResearch-cli-aarch64-apple-darwin.tar.gz"
+        size: 27767038
         media_type: "application/x-gtar"
-        digest: "sha256:2950ddc7a47157a3ddc99c04d76fcb7cfa6fbf0338bd4a888612ddae66f3c922"
-      "742180977":
-        name: "canary-20261113.5--OpenResearch-cli-aarch64-apple-darwin.tar.gz.sha256"
-        url_suffix: "canary-20261113.5--OpenResearch-cli-aarch64-apple-darwin.tar.gz.sha256"
+        digest: "sha256:91189bf437c4f07fda95a3e69d66064d137a513c260bfd8e44e285034c943b0b"
+      "760321640":
+        name: "canary-20261117.8--OpenResearch-cli-aarch64-apple-darwin.tar.gz.sha256"
+        url_suffix: "canary-20261117.8--OpenResearch-cli-aarch64-apple-darwin.tar.gz.sha256"
         size: 65
-        digest: "sha256:29049f2a29a5020fe72f917940d90abce770de2a8eeef437ee8fd31929a10e66"
-      "742181004":
-        name: "canary-20261113.5--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz"
-        url_suffix: "canary-20261113.5--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz"
-        size: 25586851
+        digest: "sha256:c566c7c4cfb2afc379c748bb54ceeca23daf4a824e5aab04dfa175edb94feb0c"
+      "760321682":
+        name: "canary-20261117.8--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz"
+        url_suffix: "canary-20261117.8--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz"
+        size: 25983776
         media_type: "application/x-gtar"
-        digest: "sha256:c50a33e6f39274e56ac8b202a5a887a25512ae407fbed9782d031a03f4adaf1d"
-      "742181049":
-        name: "canary-20261113.5--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz.sha256"
-        url_suffix: "canary-20261113.5--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz.sha256"
+        digest: "sha256:b2618260edbd8acbcfdabccb31beda06365a2dbf0195ae34f05a613cbdada7cb"
+      "760321789":
+        name: "canary-20261117.8--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz.sha256"
+        url_suffix: "canary-20261117.8--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz.sha256"
         size: 65
-        digest: "sha256:52a8addead5b465bb74c9a860e6d18719e8376c31b8af0784d624971edf0e670"
-      "742181080":
-        name: "canary-20261113.5--OpenResearch-cli-x86_64-apple-darwin.tar.gz"
-        url_suffix: "canary-20261113.5--OpenResearch-cli-x86_64-apple-darwin.tar.gz"
-        size: 28750671
+        digest: "sha256:6411de172adc3072e1421c6d24d0c51771a2a90337e213788609184d8be1d75f"
+      "760321822":
+        name: "canary-20261117.8--OpenResearch-cli-x86_64-apple-darwin.tar.gz"
+        url_suffix: "canary-20261117.8--OpenResearch-cli-x86_64-apple-darwin.tar.gz"
+        size: 29374950
         media_type: "application/x-gtar"
-        digest: "sha256:730012b14cdac3dae550291b19c7e68716ecce8ad485bd0fe77bba0cda0ae670"
-      "742181159":
-        name: "canary-20261113.5--OpenResearch-cli-x86_64-apple-darwin.tar.gz.sha256"
-        url_suffix: "canary-20261113.5--OpenResearch-cli-x86_64-apple-darwin.tar.gz.sha256"
+        digest: "sha256:50cda5e02614a68c39548d4858c69bf6a2a82f8b98e7f012fc1761bc76e78ea1"
+      "760321936":
+        name: "canary-20261117.8--OpenResearch-cli-x86_64-apple-darwin.tar.gz.sha256"
+        url_suffix: "canary-20261117.8--OpenResearch-cli-x86_64-apple-darwin.tar.gz.sha256"
         size: 65
-        digest: "sha256:48fc263511f3066b74a2ea5298e04309057bfe2b31ce0c16e040c18f8c3e69a9"
-      "742181206":
-        name: "canary-20261113.5--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz"
-        url_suffix: "canary-20261113.5--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz"
-        size: 26547763
+        digest: "sha256:8782d5e3c53a3c1455d2efbfc884e03807648e8998f8a6c2c06100568d7971d5"
+      "760321976":
+        name: "canary-20261117.8--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz"
+        url_suffix: "canary-20261117.8--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz"
+        size: 27196627
         media_type: "application/x-gtar"
-        digest: "sha256:01a8517cbb8e55a44ef2181e932f72f20dcb9b74d237af85821c0b66cf69e2d8"
-      "742181278":
-        name: "canary-20261113.5--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz.sha256"
-        url_suffix: "canary-20261113.5--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz.sha256"
+        digest: "sha256:057abb9db0618c785c7e16e59a9465cba1814225dfc5702a12a73c1a301aac84"
+      "760322059":
+        name: "canary-20261117.8--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz.sha256"
+        url_suffix: "canary-20261117.8--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz.sha256"
         size: 65
-        digest: "sha256:da25187c2e98b455baf64fb0eede53795c8c30e347344304beee0d9cc043ac95"
-      "742181303":
-        name: "canary-20261113.5--OpenResearch-x86_64.AppImage"
-        url_suffix: "canary-20261113.5--OpenResearch-x86_64.AppImage"
-        size: 103438840
+        digest: "sha256:54278e6a8ee8ca9c7724408d6e9b4fdf81e805619fe535b4ffe6b30b92f5c639"
+      "760322096":
+        name: "canary-20261117.8--OpenResearch-x86_64.AppImage"
+        url_suffix: "canary-20261117.8--OpenResearch-x86_64.AppImage"
+        size: 103836152
         media_type: "application/vnd.appimage"
-        digest: "sha256:6c87cfe6058bd73208a29c975cf3174725c48d3f1e6301e7f2106ed7a056c347"
-      "742181430":
-        name: "canary-20261113.5--OpenResearch.dmg"
-        url_suffix: "canary-20261113.5--OpenResearch.dmg"
-        size: 55893005
+        digest: "sha256:f7a71e72d7bafe6a49f6ec887ae3cbd6d543d34e535c2317c059516ec43e1599"
+      "760322249":
+        name: "canary-20261117.8--OpenResearch.dmg"
+        url_suffix: "canary-20261117.8--OpenResearch.dmg"
+        size: 57104249
         media_type: "application/x-apple-diskimage"
-        digest: "sha256:9dcf0cad4093db4c5f4808e0f3f0f043e1438e559019e35396a13fc481967f95"
-      "742414378":
-        name: "canary-20261113.6--OpenResearch-Canary-orx.exe"
-        url_suffix: "canary-20261113.6--OpenResearch-Canary-orx.exe"
-        size: 72710424
-        digest: "sha256:455d732c7f1bd4e0c8e627de213b76cdc56a4d7c6bf80ebefc4af6214bba15a0"
-      "742414485":
-        name: "canary-20261113.6--OpenResearch-Setup.exe"
-        url_suffix: "canary-20261113.6--OpenResearch-Setup.exe"
-        size: 20272936
-        digest: "sha256:ef495b5a6ecd7653d5bcb1c3b46f67951839f87bc8380a48cc1b9069e7e668a5"
-      "742414541":
-        name: "canary-20261113.6--OpenResearch-aarch64.AppImage"
-        url_suffix: "canary-20261113.6--OpenResearch-aarch64.AppImage"
-        size: 100772360
+        digest: "sha256:7169e63ba36357f2dadb255b18e35c46b17e08faf01cb30ba4b0589bcc1a50d7"
+      "760644116":
+        name: "canary-20261117.9--OpenResearch-Canary-orx.exe"
+        url_suffix: "canary-20261117.9--OpenResearch-Canary-orx.exe"
+        size: 74498328
+        digest: "sha256:df6d6e7e19b4c861d7765e8978eeabc6e45f0e419a02786d2e62d02b8cf27d32"
+      "760644355":
+        name: "canary-20261117.9--OpenResearch-Setup.exe"
+        url_suffix: "canary-20261117.9--OpenResearch-Setup.exe"
+        size: 20679536
+        digest: "sha256:91d4516203dccbf817503eec9d722cd0d9778e9c59fc90e1071468184cb3810f"
+      "760644448":
+        name: "canary-20261117.9--OpenResearch-aarch64.AppImage"
+        url_suffix: "canary-20261117.9--OpenResearch-aarch64.AppImage"
+        size: 101157384
         media_type: "application/vnd.appimage"
-        digest: "sha256:6e395f8e5b2275488b646f90534c0899e708cac42523579ae72e5f1b3492e223"
-      "742414740":
-        name: "canary-20261113.6--OpenResearch-cli-aarch64-apple-darwin.tar.gz"
-        url_suffix: "canary-20261113.6--OpenResearch-cli-aarch64-apple-darwin.tar.gz"
-        size: 27192322
+        digest: "sha256:8d25e3a4dd91cf8cb4940b0e645fa3c343dbefb4467c505e258b39c3f211b0dd"
+      "760644663":
+        name: "canary-20261117.9--OpenResearch-cli-aarch64-apple-darwin.tar.gz"
+        url_suffix: "canary-20261117.9--OpenResearch-cli-aarch64-apple-darwin.tar.gz"
+        size: 27766236
         media_type: "application/x-gtar"
-        digest: "sha256:0d07e195d14ed0fdf308c4a74e674026a1a7860745cddce93ba65917c309a585"
-      "742414838":
-        name: "canary-20261113.6--OpenResearch-cli-aarch64-apple-darwin.tar.gz.sha256"
-        url_suffix: "canary-20261113.6--OpenResearch-cli-aarch64-apple-darwin.tar.gz.sha256"
+        digest: "sha256:5b83607ce1c247f0134d5030de47603c6b3d6b7bb155ec7cea5618f54fb145d9"
+      "760644784":
+        name: "canary-20261117.9--OpenResearch-cli-aarch64-apple-darwin.tar.gz.sha256"
+        url_suffix: "canary-20261117.9--OpenResearch-cli-aarch64-apple-darwin.tar.gz.sha256"
         size: 65
-        digest: "sha256:9f2c1521eba2e3d24ee12ab651f59c0d2e94e7434246e7cf62762659408b849b"
-      "742414889":
-        name: "canary-20261113.6--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz"
-        url_suffix: "canary-20261113.6--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz"
-        size: 25586909
+        digest: "sha256:04f9cc55d3c0cd7adc24c5c8e5dd4086e6f4c0c23c860d36e6143f36975fe655"
+      "760644853":
+        name: "canary-20261117.9--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz"
+        url_suffix: "canary-20261117.9--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz"
+        size: 25990222
         media_type: "application/x-gtar"
-        digest: "sha256:40b31e79d3ee83926c8d446b0605746fcc534559d6bf3e503de940cf4ddcfcce"
-      "742414949":
-        name: "canary-20261113.6--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz.sha256"
-        url_suffix: "canary-20261113.6--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz.sha256"
+        digest: "sha256:474030df6085273517cd022ef072047f32acedf256ed27052dff4e8fa5701a66"
+      "760644995":
+        name: "canary-20261117.9--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz.sha256"
+        url_suffix: "canary-20261117.9--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz.sha256"
         size: 65
-        digest: "sha256:ad9cbfb1d2cf7f4745cb86b583c71625f77851b8d6bb40b59073161c844da1cd"
-      "742414994":
-        name: "canary-20261113.6--OpenResearch-cli-x86_64-apple-darwin.tar.gz"
-        url_suffix: "canary-20261113.6--OpenResearch-cli-x86_64-apple-darwin.tar.gz"
-        size: 28750669
+        digest: "sha256:ad4ab38900355233e1c86440c9d52e3e21c842a1f86bbef25a9fc519f9e057bd"
+      "760645045":
+        name: "canary-20261117.9--OpenResearch-cli-x86_64-apple-darwin.tar.gz"
+        url_suffix: "canary-20261117.9--OpenResearch-cli-x86_64-apple-darwin.tar.gz"
+        size: 29382487
         media_type: "application/x-gtar"
-        digest: "sha256:5b0f3e5f4f6a7aa4f9944d6fe07b4891092212ee1d71cc55a1ab2457bf047721"
-      "742415054":
-        name: "canary-20261113.6--OpenResearch-cli-x86_64-apple-darwin.tar.gz.sha256"
-        url_suffix: "canary-20261113.6--OpenResearch-cli-x86_64-apple-darwin.tar.gz.sha256"
+        digest: "sha256:6e50e0be82cb190d1a709f310b698ac42ad7da1b9b42905f8203230e66217ccc"
+      "760645131":
+        name: "canary-20261117.9--OpenResearch-cli-x86_64-apple-darwin.tar.gz.sha256"
+        url_suffix: "canary-20261117.9--OpenResearch-cli-x86_64-apple-darwin.tar.gz.sha256"
         size: 65
-        digest: "sha256:c1e45f4b1b04e4e2cb6cf1a2dcc90a105916d255cd11692c82bd38e77dd7c1a0"
-      "742415076":
-        name: "canary-20261113.6--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz"
-        url_suffix: "canary-20261113.6--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz"
-        size: 26548069
+        digest: "sha256:c9b0927bec2989190645f26e0a7aacbc78b5288a38a089220e635f18aff73c5b"
+      "760645188":
+        name: "canary-20261117.9--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz"
+        url_suffix: "canary-20261117.9--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz"
+        size: 27071231
         media_type: "application/x-gtar"
-        digest: "sha256:8756204888201b41c0f307997972d04d3a089c3dc1edb09c4d0910ba4ca7fcf0"
-      "742415157":
-        name: "canary-20261113.6--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz.sha256"
-        url_suffix: "canary-20261113.6--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz.sha256"
+        digest: "sha256:eaf96574932109932944b3c6c4d67504db6c26f7d5b8be4adbc9832e2c69a9ff"
+      "760645306":
+        name: "canary-20261117.9--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz.sha256"
+        url_suffix: "canary-20261117.9--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz.sha256"
         size: 65
-        digest: "sha256:182eef33300694cab7e95351d13455f1b5e8c2f9d078a0a5bbbb0e067607b28d"
-      "742415197":
-        name: "canary-20261113.6--OpenResearch-x86_64.AppImage"
-        url_suffix: "canary-20261113.6--OpenResearch-x86_64.AppImage"
-        size: 103438840
+        digest: "sha256:accf27cdeaddd716e8a4a7926394941e09b0ffb87a90604bcbd001f09505e91e"
+      "760645348":
+        name: "canary-20261117.9--OpenResearch-x86_64.AppImage"
+        url_suffix: "canary-20261117.9--OpenResearch-x86_64.AppImage"
+        size: 103946744
         media_type: "application/vnd.appimage"
-        digest: "sha256:ff40e1fe4bb733e35cabbfc675bb7b9116ced533f2936b82e9409d1bfa81937e"
-      "742415353":
-        name: "canary-20261113.6--OpenResearch.dmg"
-        url_suffix: "canary-20261113.6--OpenResearch.dmg"
-        size: 55893019
+        digest: "sha256:bb7ece5ec04f65fd3eb33811ea71a548d0dd98c93c66949edd89f245572a8768"
+      "760645618":
+        name: "canary-20261117.9--OpenResearch.dmg"
+        url_suffix: "canary-20261117.9--OpenResearch.dmg"
+        size: 57101078
         media_type: "application/x-apple-diskimage"
-        digest: "sha256:1b4a4d72aa224c550248e41c70d8b2462d27e829cb682e00c74ae206b334d6d7"
-      "742462409":
-        name: "canary-20261113.7--OpenResearch-Canary-orx.exe"
-        url_suffix: "canary-20261113.7--OpenResearch-Canary-orx.exe"
-        size: 72930592
-        digest: "sha256:2038c725e8dd4846e3736e5d7c41002de6e6ed74cb36fd05aac593ca8344ed48"
-      "742462547":
-        name: "canary-20261113.7--OpenResearch-Setup.exe"
-        url_suffix: "canary-20261113.7--OpenResearch-Setup.exe"
-        size: 20337832
-        digest: "sha256:f7dfe9a3df0c58a8198e9b376ed1b2b939753b694d5a3015b347a23b9634374c"
-      "742462618":
-        name: "canary-20261113.7--OpenResearch-aarch64.AppImage"
-        url_suffix: "canary-20261113.7--OpenResearch-aarch64.AppImage"
-        size: 100751880
+        digest: "sha256:84424b9a1dc169be00aa8cd0d389e4dc74987b703369a5843f418a6aac208b07"
+      "760850713":
+        name: "canary-20261117.10--OpenResearch-Canary-orx.exe"
+        url_suffix: "canary-20261117.10--OpenResearch-Canary-orx.exe"
+        size: 74498328
+        digest: "sha256:b39c2fd7e34ed70f565029f3dd535a0ae4a2736cbeeefdefbf96d4360fede71b"
+      "760850841":
+        name: "canary-20261117.10--OpenResearch-Setup.exe"
+        url_suffix: "canary-20261117.10--OpenResearch-Setup.exe"
+        size: 20674064
+        digest: "sha256:0577f47b9eec4df5ad129adb6f76dd52ddd91912a0b00641a925f972899f8c4b"
+      "760850916":
+        name: "canary-20261117.10--OpenResearch-aarch64.AppImage"
+        url_suffix: "canary-20261117.10--OpenResearch-aarch64.AppImage"
+        size: 101181960
         media_type: "application/vnd.appimage"
-        digest: "sha256:3dea5564381eb01ea911d8fa285e81df32000631d5391b135dbc662a1b1001cd"
-      "742462746":
-        name: "canary-20261113.7--OpenResearch-cli-aarch64-apple-darwin.tar.gz"
-        url_suffix: "canary-20261113.7--OpenResearch-cli-aarch64-apple-darwin.tar.gz"
-        size: 27316517
+        digest: "sha256:d87c535ba22bece23aceac4731f39647ffdea5a802a8f09aa589358d09d1650c"
+      "760851133":
+        name: "canary-20261117.10--OpenResearch-cli-aarch64-apple-darwin.tar.gz"
+        url_suffix: "canary-20261117.10--OpenResearch-cli-aarch64-apple-darwin.tar.gz"
+        size: 27767038
         media_type: "application/x-gtar"
-        digest: "sha256:9960d7649993365f31099105a4d252260a7b68f7108b70fd899b93a3a3420d50"
-      "742462804":
-        name: "canary-20261113.7--OpenResearch-cli-aarch64-apple-darwin.tar.gz.sha256"
-        url_suffix: "canary-20261113.7--OpenResearch-cli-aarch64-apple-darwin.tar.gz.sha256"
+        digest: "sha256:8c6e153bb028281d40d09a63e3253ff128ce5b0c9b21bfc0752906b53a8d4335"
+      "760851290":
+        name: "canary-20261117.10--OpenResearch-cli-aarch64-apple-darwin.tar.gz.sha256"
+        url_suffix: "canary-20261117.10--OpenResearch-cli-aarch64-apple-darwin.tar.gz.sha256"
         size: 65
-        digest: "sha256:0eea8f34805cfb891e398f43c1b915c1397724bf3ee1aeaabb2b5ee306394f63"
-      "742462839":
-        name: "canary-20261113.7--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz"
-        url_suffix: "canary-20261113.7--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz"
-        size: 25625011
+        digest: "sha256:f8208c7983144c3cb7b12607bb2376d07e8ac7ff6e9300cb4159de904addb3b9"
+      "760851395":
+        name: "canary-20261117.10--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz"
+        url_suffix: "canary-20261117.10--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz"
+        size: 25992574
         media_type: "application/x-gtar"
-        digest: "sha256:002f3479e7da819d7d9b6f07829a8c46ad80eafd73db1fb20f10d86c0fc90332"
-      "742462937":
-        name: "canary-20261113.7--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz.sha256"
-        url_suffix: "canary-20261113.7--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz.sha256"
+        digest: "sha256:81de19da189bc0c3e0e0ac08000fe1bc361f879c671b6f40b39c48e79bb16d0f"
+      "760851501":
+        name: "canary-20261117.10--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz.sha256"
+        url_suffix: "canary-20261117.10--OpenResearch-cli-aarch64-unknown-linux-musl.tar.gz.sha256"
         size: 65
-        digest: "sha256:164206f1cad3f48a03be2a51b1dcd2ce1f1fc7ee9c99cc0349c18cd27bffb8cf"
-      "742462971":
-        name: "canary-20261113.7--OpenResearch-cli-x86_64-apple-darwin.tar.gz"
-        url_suffix: "canary-20261113.7--OpenResearch-cli-x86_64-apple-darwin.tar.gz"
-        size: 28926140
+        digest: "sha256:03cbcceaffb8502f277084e2be9f6a310e542f27a16ecba84dae5fa6ce49d409"
+      "760851563":
+        name: "canary-20261117.10--OpenResearch-cli-x86_64-apple-darwin.tar.gz"
+        url_suffix: "canary-20261117.10--OpenResearch-cli-x86_64-apple-darwin.tar.gz"
+        size: 29383388
         media_type: "application/x-gtar"
-        digest: "sha256:4fb41207ab8416f663b152ee27a26f3e18ddd2e312a43d14eb2481c473bee3fe"
-      "742463068":
-        name: "canary-20261113.7--OpenResearch-cli-x86_64-apple-darwin.tar.gz.sha256"
-        url_suffix: "canary-20261113.7--OpenResearch-cli-x86_64-apple-darwin.tar.gz.sha256"
+        digest: "sha256:d4680973a3364ffc74556e660b2fadd514835683c62f9c378b4867ba49fd5137"
+      "760851751":
+        name: "canary-20261117.10--OpenResearch-cli-x86_64-apple-darwin.tar.gz.sha256"
+        url_suffix: "canary-20261117.10--OpenResearch-cli-x86_64-apple-darwin.tar.gz.sha256"
         size: 65
-        digest: "sha256:922561dd52e313d7f86f86c9960e967f5bb4fb4564560ff2c1c93586fea67139"
-      "742463110":
-        name: "canary-20261113.7--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz"
-        url_suffix: "canary-20261113.7--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz"
-        size: 26722859
+        digest: "sha256:e44363a0c5af368272cf828481cf0542a1edf36857e453ae3cf3b00cabdbbed7"
+      "760851812":
+        name: "canary-20261117.10--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz"
+        url_suffix: "canary-20261117.10--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz"
+        size: 27071161
         media_type: "application/x-gtar"
-        digest: "sha256:7eebb499d61c48b33ddb66d4f0a06190e177581ad3299c41e9ce0c5c1e3eacfd"
-      "742463215":
-        name: "canary-20261113.7--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz.sha256"
-        url_suffix: "canary-20261113.7--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz.sha256"
+        digest: "sha256:16f52f8108365253b018aaa16718e7dcc8536f3a743eef021f4530aaa4170de1"
+      "760851932":
+        name: "canary-20261117.10--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz.sha256"
+        url_suffix: "canary-20261117.10--OpenResearch-cli-x86_64-unknown-linux-musl.tar.gz.sha256"
         size: 65
-        digest: "sha256:0dd6b020b64e425075804dfec6c57787acc3a1e643a29373215e5557c56a5c4c"
-      "742463234":
-        name: "canary-20261113.7--OpenResearch-x86_64.AppImage"
-        url_suffix: "canary-20261113.7--OpenResearch-x86_64.AppImage"
-        size: 103541240
+        digest: "sha256:774bc5659b2492ab6e6682087ca0a498e11810da0cb8f394380b9b288180d77c"
+      "760851983":
+        name: "canary-20261117.10--OpenResearch-x86_64.AppImage"
+        url_suffix: "canary-20261117.10--OpenResearch-x86_64.AppImage"
+        size: 103942648
         media_type: "application/vnd.appimage"
-        digest: "sha256:f9da0c529ae1f3c3d72fc893478a28974139eb33977153fcd4feba46ee8874f8"
-      "742463370":
-        name: "canary-20261113.7--OpenResearch.dmg"
-        url_suffix: "canary-20261113.7--OpenResearch.dmg"
-        size: 56199588
+        digest: "sha256:11e897dbe8540b5b9f20cf5f9b7244994397246e9f92b852a587b2b7d24498dc"
+      "760852143":
+        name: "canary-20261117.10--OpenResearch.dmg"
+        url_suffix: "canary-20261117.10--OpenResearch.dmg"
+        size: 57098491
         media_type: "application/x-apple-diskimage"
-        digest: "sha256:8259b8edf846b8293e222fe091f60297d39f3d412b9f80e9a91873d96e58a620"
-      "742463586":
+        digest: "sha256:75803bfc4a92b5e904e23336ab003b8cddeedad2d2730b9808fd61aed8025e3a"
+      "760852572":
         name: "desktop-canary-v2.json"
         url_suffix: "desktop-canary-v2.json"
-        size: 32897
+        size: 39126
         media_type: "application/json"
-        digest: "sha256:b6929562477c988da6bc44203dd2746e515cd86b96a9d6b01c5ea0d7f490f7a9"
+        digest: "sha256:ac3c99c24b00abda3acfa481588cda187f201dbaaa7099d44f15879202fe01ba"
   "426169511":
     tag: "v0.2.22"
     title: "v0.2.22"

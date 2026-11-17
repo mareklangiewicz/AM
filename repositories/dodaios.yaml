@@ -3,1193 +3,13 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1255092568
 repository: "Dodaios/Dodaios"
-collected_at: "2026-11-14T18:13:19Z"
+collected_at: "2026-11-17T22:43:38Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-14T18:13:19Z"
+observed_at: "2026-11-17T22:43:38Z"
 releases:
-  "372684396":
-    tag: "v1.4.0"
-    title: "v1.4.0"
-    url: "https://github.com/Dodaios/Dodaios/releases/tag/v1.4.0"
-    created_at: "2026-08-18T22:22:29Z"
-    published_at: "2026-08-18T22:22:43Z"
-    updated_at: "2026-10-27T16:38:19Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/Dodaios/Dodaios/zipball/v1.4.0"
-    source_tar_url: "https://api.github.com/repos/Dodaios/Dodaios/tarball/v1.4.0"
-    download_base: "https://github.com/Dodaios/Dodaios/releases/download/v1.4.0/"
-    assets:
-      "520049518":
-        name: "install.sh.bundle"
-        url_suffix: "install.sh.bundle"
-        size: 9049
-        digest: "sha256:a7fe6ec02b881fe0f187d60fe55567133d0c185197fa8e74d66c7215148089f2"
-      "520049519":
-        name: "install.sh.sig"
-        url_suffix: "install.sh.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:4d5c6d034443a9bbc3815cb4204d3214b6246b7edde6dc5ef748dd9f6dbd3966"
-      "520049520":
-        name: "install.sh.cosign.sig"
-        url_suffix: "install.sh.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:514ee6bae39803483b37447d8301a0500b305cf9a8983af77f4d1b52f31c5c77"
-      "520049521":
-        name: "install.ps1.sig"
-        url_suffix: "install.ps1.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:5a0d49e1080f23d0901871a09a7919e7ff41498297e8eb5af43b9510359b286a"
-      "520049523":
-        name: "installer.py.pem"
-        url_suffix: "installer.py.pem"
-        size: 3524
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:3bdf037e9a8377d7f180836ce32a31a4aa74269fcd04092d0ffa90ee7ae2e766"
-      "520049524":
-        name: "install.ps1.pem"
-        url_suffix: "install.ps1.pem"
-        size: 3520
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:f909321608de8b1780f31ae349c0a01379d3479f3c65fb21052ea7572673bdd7"
-      "520049525":
-        name: "install-verify.sh.sig"
-        url_suffix: "install-verify.sh.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:803b981edd49e65fe92494f52bdd3346f1679a2c5cefe101f566b9dc6d2b976f"
-      "520049526":
-        name: "installer.py.bundle"
-        url_suffix: "installer.py.bundle"
-        size: 9061
-        digest: "sha256:f55cdc96a9a5f3e6997ec2042a8615608436f307f5104828cddd27b92fb32a2a"
-      "520049527":
-        name: "install.ps1.cosign.sig"
-        url_suffix: "install.ps1.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:06feb89733526358352929a21db66be4684d1cce4f5cdf2fb6d6988bed1ee702"
-      "520049528":
-        name: "installer.py.sig"
-        url_suffix: "installer.py.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:6f9f8230198ce6d8b1ae11df77d25a4eeb9ce448220a4d594d62a9bb7b6e3a51"
-      "520049529":
-        name: "installer.py"
-        url_suffix: "installer.py"
-        size: 38991
-        digest: "sha256:9d5836f542cfef2d216d2431d1a3f5db0423d9dd89975e7022dc5037bbad26a9"
-      "520049531":
-        name: "install-verify.ps1.bundle"
-        url_suffix: "install-verify.ps1.bundle"
-        size: 9049
-        digest: "sha256:a33b5eca1e8fd3a19cab3c5cbfe122e7fef48de12e6413521fc55a1341e74338"
-      "520049532":
-        name: "installer.py.cosign.sig"
-        url_suffix: "installer.py.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:4189f697a44b3e3d5f587d3dd47a9c3fc13840df5b9250e3c4f27c2d0d04421e"
-      "520049533":
-        name: "install-verify.ps1.pem"
-        url_suffix: "install-verify.ps1.pem"
-        size: 3520
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:056b57b2a989efe38d8d4932698d0594e0ef8a8a7a9f889a1fcda8e1ab7d9b6b"
-      "520049534":
-        name: "install.sh"
-        url_suffix: "install.sh"
-        size: 61947
-        media_type: "application/x-sh"
-        digest: "sha256:b64d7a115ea6f5cc95598157c5dfcf5bc05f2aca6d613a6142a3ddb477f31088"
-      "520049535":
-        name: "install.ps1"
-        url_suffix: "install.ps1"
-        size: 42266
-        digest: "sha256:04414fa00ed82a02d01d87b3984830c0ece086886022945d5315e3c4027fc71e"
-      "520049536":
-        name: "installer.py.mldsa.sig"
-        url_suffix: "installer.py.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:4eed3d233abe9de4595eba7c50a67f991b9a36adb227e0bd6e5d6f00ed88ae0c"
-      "520049537":
-        name: "install-verify.ps1.cosign.sig"
-        url_suffix: "install-verify.ps1.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:2ee079142a45c3fac1e831046d1a7b678458a2b3440916bf291495c6c398df01"
-      "520049538":
-        name: "install.sh.pem"
-        url_suffix: "install.sh.pem"
-        size: 3520
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:3463b60f5781e977180231d25b47578b7cea4fb24b0e75fefebbd8ec88906ab8"
-      "520049539":
-        name: "checksums.txt"
-        url_suffix: "checksums.txt"
-        size: 486
-        media_type: "text/plain"
-        digest: "sha256:06ce13acf87dd47214ea6cddb57ac7495857fdc769f7151ed93ef2dd50129d6d"
-      "520049540":
-        name: "install-verify.ps1.mldsa.sig"
-        url_suffix: "install-verify.ps1.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:f2e562f7a32b49a7e5bec339208f9d49300d0f0997790470fdf99f17dca230d3"
-      "520049541":
-        name: "install-verify.ps1"
-        url_suffix: "install-verify.ps1"
-        size: 65041
-        digest: "sha256:04510bcb4cd2c350695081027898ec80caa977f48918acf8761f1b6c64370630"
-      "520049542":
-        name: "requirements.txt.mldsa.sig"
-        url_suffix: "requirements.txt.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:e8a9b55eeda8fe9fc2573b9ba625a8ce3474591d6f673b1fa04a963068be4246"
-      "520049543":
-        name: "install-verify.sh.pem"
-        url_suffix: "install-verify.sh.pem"
-        size: 3524
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:df5f4fbdd8899d3f441efe7a2f67419ea5be0ebbcc4e285dbd42bc73be17b523"
-      "520049544":
-        name: "install-verify.sh.cosign.sig"
-        url_suffix: "install-verify.sh.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:c3d91207715e02b2ac191d994ad4da5663a952f5819614a1ca4cd3b8036237f2"
-      "520049545":
-        name: "hashes-cross-runner-verified.json"
-        url_suffix: "hashes-cross-runner-verified.json"
-        size: 978
-        media_type: "application/json"
-        digest: "sha256:d8c52fdc845061fc3b9fc449080b5ad907804f22a73348506a2a6e727b9b29bb"
-      "520049546":
-        name: "install-verify.sh.bundle"
-        url_suffix: "install-verify.sh.bundle"
-        size: 9061
-        digest: "sha256:de73e74e8c5e6fcccb12ff0dae7f33862740915d4c587a9f43d3abea8e15eff1"
-      "520049547":
-        name: "payload-commit.txt.sig"
-        url_suffix: "payload-commit.txt.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:12bc8c9a3265440d0c4fe2ed6cd82618be3e777a808deb047eca8738d287449f"
-      "520049548":
-        name: "requirements.txt"
-        url_suffix: "requirements.txt"
-        size: 180912
-        media_type: "text/plain"
-        digest: "sha256:eb0cd1a387ffcc6bc662fa4082cf8c45639c7c92017718d825e11a5109aee27f"
-      "520049549":
-        name: "requirements.txt.bundle"
-        url_suffix: "requirements.txt.bundle"
-        size: 9049
-        digest: "sha256:744ad9c223bc9c09230e66fa01555debb54c986a5fc5d6b0ead2ee7e19ebe022"
-      "520049550":
-        name: "payload-commit.txt.bundle"
-        url_suffix: "payload-commit.txt.bundle"
-        size: 9061
-        digest: "sha256:24d6dbee080885246bc4397992cfcc07bedae81444f63b3a1776d8719ef9725d"
-      "520049551":
-        name: "install.ps1.bundle"
-        url_suffix: "install.ps1.bundle"
-        size: 9049
-        digest: "sha256:0762504df91a5806d6696c737068ac2179c5b040dfb08974267288a64c8244a7"
-      "520049552":
-        name: "pq-mldsa65.pub.pem"
-        url_suffix: "pq-mldsa65.pub.pem"
-        size: 2726
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:0f14c17d2a7c978d4d8ae129ac73bd5c47d02ba264ab99c0c92b3289a29d9bae"
-      "520049553":
-        name: "install-verify.ps1.sig"
-        url_suffix: "install-verify.ps1.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:d89bc5b81b606d39e783ed08079a238f2bb339f62ad36444511d3d33d67844c1"
-      "520049554":
-        name: "requirements.txt.cosign.sig"
-        url_suffix: "requirements.txt.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:7b360b9db12a51afcfcd201dad442dc415339ce5826717d93a57d459e26af7ae"
-      "520049555":
-        name: "payload-commit.txt.mldsa.sig"
-        url_suffix: "payload-commit.txt.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:2f4ec0c781c4c177b0677b3b16b4e04aea5b6d1999178b93a8d45f08be11b29b"
-      "520049556":
-        name: "layout-content-anchor.json"
-        url_suffix: "layout-content-anchor.json"
-        size: 4980
-        media_type: "application/json"
-        digest: "sha256:1a2090dcc4a54674c3386df6d48570fab4bdeb3363e4259dd654e7d933e40045"
-      "520049557":
-        name: "install.sh.mldsa.sig"
-        url_suffix: "install.sh.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:200d692dd5dca7afca45959beab4b82be1edd9ae38a093b852258ee87385ab05"
-      "520049558":
-        name: "payload-commit.txt"
-        url_suffix: "payload-commit.txt"
-        size: 41
-        media_type: "text/plain"
-        digest: "sha256:deac6f69e4db03d6f81bc95f721dfc6b9528e1a6efd6fda3db33de234a5d1193"
-      "520049559":
-        name: "install.ps1.mldsa.sig"
-        url_suffix: "install.ps1.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:f1acd2981ee0c94fc4e42e004a184a6e2c4437daa8e9e452fbca47260d828f40"
-      "520049560":
-        name: "install-verify.sh"
-        url_suffix: "install-verify.sh"
-        size: 69616
-        media_type: "application/x-sh"
-        digest: "sha256:2710d85a7e42c225c83f9f9786f2541fcbc3b33e743bd74796a8e2ee2e68eec7"
-      "520049561":
-        name: "install-verify.sh.mldsa.sig"
-        url_suffix: "install-verify.sh.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:1fd2dbe6a1ef5588563e5e1fdb815ba11f115e570dfe3e3b3f1d2fc7329ee307"
-      "520049562":
-        name: "requirements.txt.sig"
-        url_suffix: "requirements.txt.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:b70680105e32229e3fa0104ff4e593f28de121f8cfe52f32fb5ce33921207c8f"
-      "520049563":
-        name: "offline-ceremony.pub"
-        url_suffix: "offline-ceremony.pub"
-        size: 113
-        media_type: "application/x-mspublisher"
-        digest: "sha256:b5aa9937249792ee11486bd9053abd5c5215dbcaf7036bbe4d54c3a11fa45c67"
-      "520049564":
-        name: "requirements.txt.pem"
-        url_suffix: "requirements.txt.pem"
-        size: 3520
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:4961e6c25a0c4b901e55b65baefd98711af3339850ec7d450cdbc737f173c0f3"
-      "520049565":
-        name: "payload-commit.txt.cosign.sig"
-        url_suffix: "payload-commit.txt.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:fa78b74da3d654a7b2d3e0ef29225abe62dc277e4ee6fc719be0ee3ea5ec8943"
-      "520049566":
-        name: "payload-commit.txt.pem"
-        url_suffix: "payload-commit.txt.pem"
-        size: 3524
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:0b05fb07027b3d94b9a3b83b3c74ce8ab7b6683e38ccbbc7f52af9e1efa0f6ba"
-      "520050418":
-        name: "personal-jarvis.intoto.jsonl"
-        url_suffix: "personal-jarvis.intoto.jsonl"
-        size: 25131
-        digest: "sha256:2410ee760a969486c40bff354e8c84925143f40b2c4ecc5f43de09a70323dcbf"
-      "520600512":
-        name: "personal-jarvis-src.tar.gz"
-        url_suffix: "personal-jarvis-src.tar.gz"
-        size: 66744282
-        media_type: "application/x-gtar"
-        digest: "sha256:e78609c6cfb6129426529ddcae0ab7e48beb44c8007403d9d25971f92a306d47"
-  "373913994":
-    tag: "v1.5.0"
-    title: "v1.5.0"
-    url: "https://github.com/Dodaios/Dodaios/releases/tag/v1.5.0"
-    created_at: "2026-08-20T19:06:10Z"
-    published_at: "2026-08-20T17:35:27Z"
-    updated_at: "2026-10-27T16:38:21Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/Dodaios/Dodaios/zipball/v1.5.0"
-    source_tar_url: "https://api.github.com/repos/Dodaios/Dodaios/tarball/v1.5.0"
-    download_base: "https://github.com/Dodaios/Dodaios/releases/download/v1.5.0/"
-    assets:
-      "522674242":
-        name: "installer.py.bundle"
-        url_suffix: "installer.py.bundle"
-        size: 9061
-        digest: "sha256:4aadbdd801e099c5ab9edadb10cf704b2f65039d88ed4e0e039c337da932ab8a"
-      "522674243":
-        name: "install-verify.ps1.cosign.sig"
-        url_suffix: "install-verify.ps1.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:2ee079142a45c3fac1e831046d1a7b678458a2b3440916bf291495c6c398df01"
-      "522674244":
-        name: "install.sh.sig"
-        url_suffix: "install.sh.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:321d696231a6c8d9e0a7a8352d90a8ce66ec182e89facb239e1b8209b7542b9e"
-      "522674245":
-        name: "install.sh.bundle"
-        url_suffix: "install.sh.bundle"
-        size: 9061
-        digest: "sha256:33214d778d99b254e9a3deb7dc1541792de564873efa299853ec2f4a2575d586"
-      "522674246":
-        name: "installer.py.sig"
-        url_suffix: "installer.py.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:d850e9d5f41eb609349900392f3c678f03f69d5c9476488d870096755491245e"
-      "522674247":
-        name: "install.sh.mldsa.sig"
-        url_suffix: "install.sh.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:46242d75f33711afef65ebbae982b46b9f241eaa53aac895235394c1c2ba9b33"
-      "522674248":
-        name: "install-verify.ps1.sig"
-        url_suffix: "install-verify.ps1.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:c88f7b7b74257ae9d11dd8f855cd3fcacee25b523bfc484757d92f1bf87d0444"
-      "522674249":
-        name: "install-verify.ps1.mldsa.sig"
-        url_suffix: "install-verify.ps1.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:9b32ec3ba182790538dde03ea7665b089c4b8d373194feccde9aa674c6cc3a38"
-      "522674250":
-        name: "install.sh.pem"
-        url_suffix: "install.sh.pem"
-        size: 3524
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:7b8aab3e59a479bdc3be64d5c08995b0838a23c1ba83dcd90940992db10e6abc"
-      "522674251":
-        name: "install-verify.sh.bundle"
-        url_suffix: "install-verify.sh.bundle"
-        size: 9061
-        digest: "sha256:de77e7427b3b8617b15e169475eeb4dab9b921c3e15581da3a791e69e98d707c"
-      "522674253":
-        name: "install.sh"
-        url_suffix: "install.sh"
-        size: 61947
-        media_type: "application/x-sh"
-        digest: "sha256:b64d7a115ea6f5cc95598157c5dfcf5bc05f2aca6d613a6142a3ddb477f31088"
-      "522674254":
-        name: "payload-commit.txt.pem"
-        url_suffix: "payload-commit.txt.pem"
-        size: 3524
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:8d0f87ddb9291eb9db2cc8ab28d9f78435afada209cb37df6f2a07ac4c2a1229"
-      "522674255":
-        name: "install.ps1"
-        url_suffix: "install.ps1"
-        size: 42266
-        digest: "sha256:04414fa00ed82a02d01d87b3984830c0ece086886022945d5315e3c4027fc71e"
-      "522674256":
-        name: "install.ps1.pem"
-        url_suffix: "install.ps1.pem"
-        size: 3524
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:66662cfc744008a62b18566a6332efb78d73573416dc98fd963dd623db525948"
-      "522674257":
-        name: "checksums.txt"
-        url_suffix: "checksums.txt"
-        size: 486
-        media_type: "text/plain"
-        digest: "sha256:06ce13acf87dd47214ea6cddb57ac7495857fdc769f7151ed93ef2dd50129d6d"
-      "522674258":
-        name: "requirements.txt"
-        url_suffix: "requirements.txt"
-        size: 180912
-        media_type: "text/plain"
-        digest: "sha256:eb0cd1a387ffcc6bc662fa4082cf8c45639c7c92017718d825e11a5109aee27f"
-      "522674259":
-        name: "install-verify.ps1"
-        url_suffix: "install-verify.ps1"
-        size: 65041
-        digest: "sha256:04510bcb4cd2c350695081027898ec80caa977f48918acf8761f1b6c64370630"
-      "522674260":
-        name: "payload-commit.txt.bundle"
-        url_suffix: "payload-commit.txt.bundle"
-        size: 9061
-        digest: "sha256:aafdd383b1663f621731081ea1db67496fa3afcdbd70e6aa75c3ceda29f91f83"
-      "522674261":
-        name: "requirements.txt.sig"
-        url_suffix: "requirements.txt.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:5819dbd319e4508c39e4e1b86e28387b5313dc513e32fc4dba9fe988a71ee10c"
-      "522674263":
-        name: "payload-commit.txt.mldsa.sig"
-        url_suffix: "payload-commit.txt.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:d023635b9feb60c7cfa5939a1fedfb9cb6633f4c20cda68b6507b6578e7b7ca7"
-      "522674264":
-        name: "hashes-cross-runner-verified.json"
-        url_suffix: "hashes-cross-runner-verified.json"
-        size: 978
-        media_type: "application/json"
-        digest: "sha256:02d2eeaded8d298cdd3407e4ab6420217458362912f27737fbe15cf5d296a08b"
-      "522674265":
-        name: "install-verify.sh.cosign.sig"
-        url_suffix: "install-verify.sh.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:c3d91207715e02b2ac191d994ad4da5663a952f5819614a1ca4cd3b8036237f2"
-      "522674266":
-        name: "install.sh.cosign.sig"
-        url_suffix: "install.sh.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:514ee6bae39803483b37447d8301a0500b305cf9a8983af77f4d1b52f31c5c77"
-      "522674267":
-        name: "installer.py.cosign.sig"
-        url_suffix: "installer.py.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:4189f697a44b3e3d5f587d3dd47a9c3fc13840df5b9250e3c4f27c2d0d04421e"
-      "522674269":
-        name: "payload-commit.txt.sig"
-        url_suffix: "payload-commit.txt.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:7ca7fe4df6a4a0ce5f13a95af9f786b476e2f341f0e121bb11a35f1504c98883"
-      "522674270":
-        name: "install-verify.ps1.bundle"
-        url_suffix: "install-verify.ps1.bundle"
-        size: 9061
-        digest: "sha256:b0d3e4809c62e0714b929c6f487aca39ea68ece9cf90872ff4b10f30bd8c93fc"
-      "522674271":
-        name: "layout-content-anchor.json"
-        url_suffix: "layout-content-anchor.json"
-        size: 4980
-        media_type: "application/json"
-        digest: "sha256:1a2090dcc4a54674c3386df6d48570fab4bdeb3363e4259dd654e7d933e40045"
-      "522674272":
-        name: "pq-mldsa65.pub.pem"
-        url_suffix: "pq-mldsa65.pub.pem"
-        size: 2726
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:0f14c17d2a7c978d4d8ae129ac73bd5c47d02ba264ab99c0c92b3289a29d9bae"
-      "522674273":
-        name: "install-verify.ps1.pem"
-        url_suffix: "install-verify.ps1.pem"
-        size: 3524
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:88d5aa5b96aa52e71e8e2d666e101eafad0e4436fc63242f5bf9cd3c6f62289a"
-      "522674275":
-        name: "install.ps1.mldsa.sig"
-        url_suffix: "install.ps1.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:482961a2cbe8a1cbd54c31f4f62260f196e1403815e51447de39159d5e25ac50"
-      "522674276":
-        name: "install.ps1.bundle"
-        url_suffix: "install.ps1.bundle"
-        size: 9061
-        digest: "sha256:fb6f85257628c1ef5b35030674fe3c8c1627a9f7c11e2766b18c67ea8f46190b"
-      "522674277":
-        name: "requirements.txt.pem"
-        url_suffix: "requirements.txt.pem"
-        size: 3520
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:81028c01c47032b6fc14f4c934770c0e04aaaa416d5454bfaa168b5e001932fa"
-      "522674278":
-        name: "install.ps1.cosign.sig"
-        url_suffix: "install.ps1.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:06feb89733526358352929a21db66be4684d1cce4f5cdf2fb6d6988bed1ee702"
-      "522674279":
-        name: "offline-ceremony.pub"
-        url_suffix: "offline-ceremony.pub"
-        size: 113
-        media_type: "application/x-mspublisher"
-        digest: "sha256:b5aa9937249792ee11486bd9053abd5c5215dbcaf7036bbe4d54c3a11fa45c67"
-      "522674280":
-        name: "install-verify.sh.pem"
-        url_suffix: "install-verify.sh.pem"
-        size: 3524
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:099df43b236ba39106039fa2280fcaf6f6842c2ca71063ae4e147861a1c991df"
-      "522674281":
-        name: "installer.py.pem"
-        url_suffix: "installer.py.pem"
-        size: 3524
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:788cdd5beeaa199c90e5fd59eb7a210b7028663c743a01bc25a002e816160eba"
-      "522674282":
-        name: "installer.py.mldsa.sig"
-        url_suffix: "installer.py.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:7acb78999f8b33708a16001ee6f67ee825cd392f57819cf5207f02945d791116"
-      "522674283":
-        name: "payload-commit.txt.cosign.sig"
-        url_suffix: "payload-commit.txt.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:846be55455019875851f2c325408f4506b802e4e758fcad01acf78f0ac76c506"
-      "522674284":
-        name: "installer.py"
-        url_suffix: "installer.py"
-        size: 38991
-        digest: "sha256:9d5836f542cfef2d216d2431d1a3f5db0423d9dd89975e7022dc5037bbad26a9"
-      "522674286":
-        name: "payload-commit.txt"
-        url_suffix: "payload-commit.txt"
-        size: 41
-        media_type: "text/plain"
-        digest: "sha256:f3b51fd1915537c00a82bce1f6aed72785291c8e92405979ba3a350707918b9e"
-      "522674287":
-        name: "install.ps1.sig"
-        url_suffix: "install.ps1.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:779bc0df56d7d0ae3b90814fae429f4dc9e7162336db36b8025d2bfaa052de13"
-      "522674289":
-        name: "requirements.txt.mldsa.sig"
-        url_suffix: "requirements.txt.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:3d63019668797c48738b52de13caf2838f10eb0668abc167845bf95e38c0e7df"
-      "522674290":
-        name: "requirements.txt.bundle"
-        url_suffix: "requirements.txt.bundle"
-        size: 9049
-        digest: "sha256:0babd6f0cdad157694417110fe73fccbd1873e1aca1c36e38c1e85435be10cbc"
-      "522674291":
-        name: "requirements.txt.cosign.sig"
-        url_suffix: "requirements.txt.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:7b360b9db12a51afcfcd201dad442dc415339ce5826717d93a57d459e26af7ae"
-      "522674292":
-        name: "install-verify.sh"
-        url_suffix: "install-verify.sh"
-        size: 69616
-        media_type: "application/x-sh"
-        digest: "sha256:2710d85a7e42c225c83f9f9786f2541fcbc3b33e743bd74796a8e2ee2e68eec7"
-      "522674293":
-        name: "install-verify.sh.mldsa.sig"
-        url_suffix: "install-verify.sh.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:cc2149e25305431b9ac99e374a1e01858e78c1d7dc54569352845a6e884028c9"
-      "522674296":
-        name: "install-verify.sh.sig"
-        url_suffix: "install-verify.sh.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:4e9cba67bef7e9a1e0e29ebd625bde679ce0cf3bf37627fc668b08ad7d874c0e"
-      "522674937":
-        name: "personal-jarvis.intoto.jsonl"
-        url_suffix: "personal-jarvis.intoto.jsonl"
-        size: 24839
-        digest: "sha256:948f0f6cf68311f59572117f01f4a6dfad406a4dfeeb16a6e460d8759f3ea332"
-      "522676124":
-        name: "personal-jarvis-src.tar.gz"
-        url_suffix: "personal-jarvis-src.tar.gz"
-        size: 61927632
-        media_type: "application/x-gtar"
-        digest: "sha256:3200f7b65854fa5b2e779566677c88cc9c86b929f62aa0c801655869c6630351"
-  "374502656":
-    tag: "v1.5.1"
-    title: "v1.5.1"
-    url: "https://github.com/Dodaios/Dodaios/releases/tag/v1.5.1"
-    created_at: "2026-08-21T15:31:35Z"
-    published_at: "2026-08-21T15:32:08Z"
-    updated_at: "2026-10-27T16:38:23Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/Dodaios/Dodaios/zipball/v1.5.1"
-    source_tar_url: "https://api.github.com/repos/Dodaios/Dodaios/tarball/v1.5.1"
-    download_base: "https://github.com/Dodaios/Dodaios/releases/download/v1.5.1/"
-    assets:
-      "523919046":
-        name: "install.sh.cosign.sig"
-        url_suffix: "install.sh.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:514ee6bae39803483b37447d8301a0500b305cf9a8983af77f4d1b52f31c5c77"
-      "523919047":
-        name: "installer.py.cosign.sig"
-        url_suffix: "installer.py.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:4189f697a44b3e3d5f587d3dd47a9c3fc13840df5b9250e3c4f27c2d0d04421e"
-      "523919048":
-        name: "installer.py.sig"
-        url_suffix: "installer.py.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:1513aab3f1eac28a241f953289528d8037f349c2f37aea297b4830a779e5b0bc"
-      "523919049":
-        name: "install.sh.sig"
-        url_suffix: "install.sh.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:aeafca97f671de92c2baeee14ceebd43bae14d98707325761d5dc8c7b87a862a"
-      "523919050":
-        name: "installer.py.bundle"
-        url_suffix: "installer.py.bundle"
-        size: 9061
-        digest: "sha256:09cf1f531fc0d83a07b9384d885f6d2903c0f87048b3b16c012ea8f64b241dc7"
-      "523919051":
-        name: "install.sh.bundle"
-        url_suffix: "install.sh.bundle"
-        size: 9049
-        digest: "sha256:4050d414b50d2d2be609b93b3d0f1c996bff188e5468ce0d2b619ac4267eb9b6"
-      "523919052":
-        name: "install.sh"
-        url_suffix: "install.sh"
-        size: 61947
-        media_type: "application/x-sh"
-        digest: "sha256:b64d7a115ea6f5cc95598157c5dfcf5bc05f2aca6d613a6142a3ddb477f31088"
-      "523919053":
-        name: "install.ps1.sig"
-        url_suffix: "install.ps1.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:9b0f751e48f42452b402075684c78ffcb3186c7c7fa48940e30b89e2415ef106"
-      "523919054":
-        name: "install.ps1.cosign.sig"
-        url_suffix: "install.ps1.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:06feb89733526358352929a21db66be4684d1cce4f5cdf2fb6d6988bed1ee702"
-      "523919055":
-        name: "install.ps1.bundle"
-        url_suffix: "install.ps1.bundle"
-        size: 9061
-        digest: "sha256:ed75d955f02b78bc5f2bbbd60ee833352a91302ce953092d22b00cbbaca6b047"
-      "523919056":
-        name: "install-verify.sh.pem"
-        url_suffix: "install-verify.sh.pem"
-        size: 3520
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:8ea58ea8a4e6c70c610ac65a5f4b27859468d665c65d4afd691658f956274dd7"
-      "523919057":
-        name: "install.ps1"
-        url_suffix: "install.ps1"
-        size: 42266
-        digest: "sha256:04414fa00ed82a02d01d87b3984830c0ece086886022945d5315e3c4027fc71e"
-      "523919058":
-        name: "install-verify.sh.sig"
-        url_suffix: "install-verify.sh.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:9aab4030545790fd177cf1ca08f78dd56f4612309ef18c41a0e28a7ff4f4f9dc"
-      "523919059":
-        name: "install-verify.sh.bundle"
-        url_suffix: "install-verify.sh.bundle"
-        size: 9049
-        digest: "sha256:caad90e85a38c2935bfff15583f2d4691dc8a649044040000a9724cf7b902199"
-      "523919060":
-        name: "install.sh.pem"
-        url_suffix: "install.sh.pem"
-        size: 3520
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:6633b32bc9348158e25a2f923bb69be472d803b2cd8bff1d52ea71604af2d929"
-      "523919061":
-        name: "install-verify.ps1.cosign.sig"
-        url_suffix: "install-verify.ps1.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:2ee079142a45c3fac1e831046d1a7b678458a2b3440916bf291495c6c398df01"
-      "523919062":
-        name: "install-verify.ps1.sig"
-        url_suffix: "install-verify.ps1.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:6d0613bebcd413b412136cd503dc6f0cafd0c43376e4e39805e5ebde18a17129"
-      "523919063":
-        name: "install.ps1.pem"
-        url_suffix: "install.ps1.pem"
-        size: 3524
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:72ab0df1e063aa7799370b73a78e8736be2098d1eb7dce614c735fbbee21c4a3"
-      "523919064":
-        name: "installer.py.pem"
-        url_suffix: "installer.py.pem"
-        size: 3524
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:cc05104a12ecc81e7a56e80e1ccf83cc888c2bed69581148f5994ad508da3ac4"
-      "523919065":
-        name: "install-verify.sh.cosign.sig"
-        url_suffix: "install-verify.sh.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:c3d91207715e02b2ac191d994ad4da5663a952f5819614a1ca4cd3b8036237f2"
-      "523919066":
-        name: "layout-content-anchor.json"
-        url_suffix: "layout-content-anchor.json"
-        size: 4980
-        media_type: "application/json"
-        digest: "sha256:1a2090dcc4a54674c3386df6d48570fab4bdeb3363e4259dd654e7d933e40045"
-      "523919067":
-        name: "install-verify.ps1.bundle"
-        url_suffix: "install-verify.ps1.bundle"
-        size: 9061
-        digest: "sha256:b4a59f683faf8bb3531a340ca637e945e7601eab9077d037ade2c25c7178470d"
-      "523919068":
-        name: "installer.py"
-        url_suffix: "installer.py"
-        size: 38991
-        digest: "sha256:9d5836f542cfef2d216d2431d1a3f5db0423d9dd89975e7022dc5037bbad26a9"
-      "523919070":
-        name: "install-verify.ps1.pem"
-        url_suffix: "install-verify.ps1.pem"
-        size: 3524
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:cbff4c6c1a7ab1d5a339a5d027fbff721d92745ea01a482284b8b5bc6bfe8b91"
-      "523919071":
-        name: "install.sh.mldsa.sig"
-        url_suffix: "install.sh.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:91825b4280992bdca2968e4a6e227227bb0a2d7909345c303f371e746acb64a0"
-      "523919072":
-        name: "install-verify.sh"
-        url_suffix: "install-verify.sh"
-        size: 69616
-        media_type: "application/x-sh"
-        digest: "sha256:2710d85a7e42c225c83f9f9786f2541fcbc3b33e743bd74796a8e2ee2e68eec7"
-      "523919073":
-        name: "checksums.txt"
-        url_suffix: "checksums.txt"
-        size: 486
-        media_type: "text/plain"
-        digest: "sha256:06ce13acf87dd47214ea6cddb57ac7495857fdc769f7151ed93ef2dd50129d6d"
-      "523919074":
-        name: "install.ps1.mldsa.sig"
-        url_suffix: "install.ps1.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:f6643a8079973cb1137ca1fe83aea70a952a5727fe1483f355f01d333a4f5c9b"
-      "523919075":
-        name: "install-verify.sh.mldsa.sig"
-        url_suffix: "install-verify.sh.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:ee1eaee584bf5bca6bbcbf23ecd35ef653f100323064475c6904d1afb77f1b47"
-      "523919076":
-        name: "install-verify.ps1"
-        url_suffix: "install-verify.ps1"
-        size: 65041
-        digest: "sha256:04510bcb4cd2c350695081027898ec80caa977f48918acf8761f1b6c64370630"
-      "523919077":
-        name: "install-verify.ps1.mldsa.sig"
-        url_suffix: "install-verify.ps1.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:30b74acfbd2ec1f04490521c8a574513619b579bd5a7d0c53da8c1767dfb3c62"
-      "523919078":
-        name: "payload-commit.txt.bundle"
-        url_suffix: "payload-commit.txt.bundle"
-        size: 9061
-        digest: "sha256:35f9bfaac66002a1d622331964dec16a95159c08942be310b9119b11dcd938d1"
-      "523919079":
-        name: "payload-commit.txt"
-        url_suffix: "payload-commit.txt"
-        size: 41
-        media_type: "text/plain"
-        digest: "sha256:32630bf47042905143ef16415b14980fc590d45f9e93b233d52590ca9b3d45c1"
-      "523919080":
-        name: "pq-mldsa65.pub.pem"
-        url_suffix: "pq-mldsa65.pub.pem"
-        size: 2726
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:0f14c17d2a7c978d4d8ae129ac73bd5c47d02ba264ab99c0c92b3289a29d9bae"
-      "523919081":
-        name: "payload-commit.txt.mldsa.sig"
-        url_suffix: "payload-commit.txt.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:f612d1835deea40229a42a7e90df31902e01af25ae2a30adec94a054dac6422f"
-      "523919082":
-        name: "requirements.txt.bundle"
-        url_suffix: "requirements.txt.bundle"
-        size: 9061
-        digest: "sha256:de47d90d4f6ed3dbc6ec0adb28864ff522e9222646036ce77610daf207325151"
-      "523919083":
-        name: "requirements.txt.mldsa.sig"
-        url_suffix: "requirements.txt.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:4e8ece74696686b8be793157409bd52b360b3f9c83ae48bac54883e26e6b2498"
-      "523919084":
-        name: "offline-ceremony.pub"
-        url_suffix: "offline-ceremony.pub"
-        size: 113
-        media_type: "application/x-mspublisher"
-        digest: "sha256:b5aa9937249792ee11486bd9053abd5c5215dbcaf7036bbe4d54c3a11fa45c67"
-      "523919085":
-        name: "payload-commit.txt.pem"
-        url_suffix: "payload-commit.txt.pem"
-        size: 3524
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:a0b44cfcd6e070c1b0910b3a8dde035ad450c7a61e03e4d61bec00211b714b94"
-      "523919086":
-        name: "payload-commit.txt.cosign.sig"
-        url_suffix: "payload-commit.txt.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:2df7b453c0fcadba245f2883db28cca902ef348bacb1350caead6de51556d087"
-      "523919087":
-        name: "payload-commit.txt.sig"
-        url_suffix: "payload-commit.txt.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:e83ef0a501ce82a5d021d297f0799aef959d99e573521ff24dc2ffeb40834447"
-      "523919088":
-        name: "installer.py.mldsa.sig"
-        url_suffix: "installer.py.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:02bca8cb932b4f4ac986a0f2e2d6384ed93447c2f991688db07cde6129c1119e"
-      "523919089":
-        name: "requirements.txt.pem"
-        url_suffix: "requirements.txt.pem"
-        size: 3524
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:25933eb86d39937e23cfb6d279fb7cf92663a130533961c9a2e0ec75c1ec8b95"
-      "523919090":
-        name: "requirements.txt.cosign.sig"
-        url_suffix: "requirements.txt.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:7b360b9db12a51afcfcd201dad442dc415339ce5826717d93a57d459e26af7ae"
-      "523919091":
-        name: "requirements.txt"
-        url_suffix: "requirements.txt"
-        size: 180912
-        media_type: "text/plain"
-        digest: "sha256:eb0cd1a387ffcc6bc662fa4082cf8c45639c7c92017718d825e11a5109aee27f"
-      "523919093":
-        name: "requirements.txt.sig"
-        url_suffix: "requirements.txt.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:f1ccb7ec51bf8d3e318b73088ae537ab93537943f4b3c58640006a2efe26a349"
-      "523919147":
-        name: "hashes-cross-runner-verified.json"
-        url_suffix: "hashes-cross-runner-verified.json"
-        size: 978
-        media_type: "application/json"
-        digest: "sha256:20d85df80da89ffd7d3b399eeb7dc18f5366105dc084753da33672fcc80f2f5f"
-      "523919721":
-        name: "personal-jarvis.intoto.jsonl"
-        url_suffix: "personal-jarvis.intoto.jsonl"
-        size: 24383
-        digest: "sha256:fcf03a567099952bf0ede5b5e22d13c5ce8ea212b6d303f91e916bb37c0e5217"
-      "523928157":
-        name: "personal-jarvis-src.tar.gz"
-        url_suffix: "personal-jarvis-src.tar.gz"
-        size: 61903709
-        media_type: "application/x-gtar"
-        digest: "sha256:fefbc09e22f2e8a157aaa1f9b6e4b775443810607dacce6f69a1636511ca1939"
-  "374868021":
-    tag: "v1.5.3"
-    title: "v1.5.3"
-    url: "https://github.com/Dodaios/Dodaios/releases/tag/v1.5.3"
-    created_at: "2026-08-22T07:54:57Z"
-    published_at: "2026-08-22T07:55:11Z"
-    updated_at: "2026-10-27T16:38:26Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/Dodaios/Dodaios/zipball/v1.5.3"
-    source_tar_url: "https://api.github.com/repos/Dodaios/Dodaios/tarball/v1.5.3"
-    download_base: "https://github.com/Dodaios/Dodaios/releases/download/v1.5.3/"
-    assets:
-      "524809998":
-        name: "personal-jarvis-src.tar.gz"
-        url_suffix: "personal-jarvis-src.tar.gz"
-        size: 61958584
-        media_type: "application/x-gtar"
-        digest: "sha256:df8bd01753fe2f2326f915626fe1281ffd868767d68815e5890f62efa0e4f94b"
-      "524811509":
-        name: "install.sh.pem"
-        url_suffix: "install.sh.pem"
-        size: 3524
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:0acc8c643ec1e3b1394ed6b5b57e1f4d432fd0c3f1ba59ba232070366ecc581f"
-      "524811510":
-        name: "install.ps1.pem"
-        url_suffix: "install.ps1.pem"
-        size: 3524
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:4bb3fb558f3e246a925fdda48bb7e291b348cf804056ccd9a390e18efb62d25f"
-      "524811511":
-        name: "install.sh"
-        url_suffix: "install.sh"
-        size: 61947
-        media_type: "application/x-sh"
-        digest: "sha256:b64d7a115ea6f5cc95598157c5dfcf5bc05f2aca6d613a6142a3ddb477f31088"
-      "524811512":
-        name: "install.ps1"
-        url_suffix: "install.ps1"
-        size: 42266
-        digest: "sha256:04414fa00ed82a02d01d87b3984830c0ece086886022945d5315e3c4027fc71e"
-      "524811513":
-        name: "install.ps1.sig"
-        url_suffix: "install.ps1.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:c77d1178f9936d7b9cbd14c667ed18a1a8ed3d2258e25b2b374c13d1774d4487"
-      "524811514":
-        name: "install.sh.cosign.sig"
-        url_suffix: "install.sh.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:514ee6bae39803483b37447d8301a0500b305cf9a8983af77f4d1b52f31c5c77"
-      "524811515":
-        name: "installer.py"
-        url_suffix: "installer.py"
-        size: 38991
-        digest: "sha256:9d5836f542cfef2d216d2431d1a3f5db0423d9dd89975e7022dc5037bbad26a9"
-      "524811516":
-        name: "install.ps1.cosign.sig"
-        url_suffix: "install.ps1.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:06feb89733526358352929a21db66be4684d1cce4f5cdf2fb6d6988bed1ee702"
-      "524811517":
-        name: "installer.py.sig"
-        url_suffix: "installer.py.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:ae98588358c78c8b4f1cdb3be356122aad6e9c2c739c12c26c200b3c68b8dcb0"
-      "524811518":
-        name: "install.sh.bundle"
-        url_suffix: "install.sh.bundle"
-        size: 9061
-        digest: "sha256:d90e1fefa8b387e84243a4bb2b5685f5b22a33859d73fa877aa65baa7ac1e50d"
-      "524811519":
-        name: "install-verify.sh.sig"
-        url_suffix: "install-verify.sh.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:4e44a6300dc83d6ffe887d32e66a4ac25517d0a2a298b10f8756a8044652ee45"
-      "524811520":
-        name: "install.sh.sig"
-        url_suffix: "install.sh.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:6ad1b06549fc6f6b90a782619d18863f24a59ba0f10bbd2d722cab1046cf4691"
-      "524811521":
-        name: "install-verify.sh.pem"
-        url_suffix: "install-verify.sh.pem"
-        size: 3520
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:5cb8c26b63987340859d62919b2b9660962bec0eb646e60381e38759961c61e6"
-      "524811522":
-        name: "install-verify.sh.bundle"
-        url_suffix: "install-verify.sh.bundle"
-        size: 9049
-        digest: "sha256:280dc37d87244975f93f71358971075f385918880c94c07a570d49e333153c90"
-      "524811523":
-        name: "install-verify.sh.cosign.sig"
-        url_suffix: "install-verify.sh.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:c3d91207715e02b2ac191d994ad4da5663a952f5819614a1ca4cd3b8036237f2"
-      "524811524":
-        name: "install.ps1.bundle"
-        url_suffix: "install.ps1.bundle"
-        size: 9061
-        digest: "sha256:c3cb559ef60ddb1ecc4e32e056961524ed335a0a74e7290541815d71c0e15c0b"
-      "524811525":
-        name: "installer.py.pem"
-        url_suffix: "installer.py.pem"
-        size: 3524
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:95a8b640ba30aabac5af0efc5506ebbd21debdc7f25a64c45e6265b7e6242895"
-      "524811526":
-        name: "install-verify.sh"
-        url_suffix: "install-verify.sh"
-        size: 69616
-        media_type: "application/x-sh"
-        digest: "sha256:2710d85a7e42c225c83f9f9786f2541fcbc3b33e743bd74796a8e2ee2e68eec7"
-      "524811527":
-        name: "install-verify.sh.mldsa.sig"
-        url_suffix: "install-verify.sh.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:42be2ebd4cd89b26977d214f3e175b96f3c1743f2cafdbd175e86d4590dba775"
-      "524811528":
-        name: "installer.py.mldsa.sig"
-        url_suffix: "installer.py.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:b58e8db849430a2c6e06e8caaf0bc36eb04e626d392ee180e877f49456923478"
-      "524811529":
-        name: "install-verify.ps1"
-        url_suffix: "install-verify.ps1"
-        size: 65041
-        digest: "sha256:04510bcb4cd2c350695081027898ec80caa977f48918acf8761f1b6c64370630"
-      "524811530":
-        name: "installer.py.bundle"
-        url_suffix: "installer.py.bundle"
-        size: 9061
-        digest: "sha256:d9706f3f6a6fffd40de209ac60dc178e26a29ea69d30772c978b60eecaf032f3"
-      "524811531":
-        name: "install.sh.mldsa.sig"
-        url_suffix: "install.sh.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:58afc23c0921515150b764bed5f4fc8ec8ec1877d650a906a6cf4970360946f1"
-      "524811532":
-        name: "layout-content-anchor.json"
-        url_suffix: "layout-content-anchor.json"
-        size: 4980
-        media_type: "application/json"
-        digest: "sha256:1a2090dcc4a54674c3386df6d48570fab4bdeb3363e4259dd654e7d933e40045"
-      "524811533":
-        name: "install-verify.ps1.sig"
-        url_suffix: "install-verify.ps1.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:82dbcabf196affb7673865138bc588e006bc35a88723845e4ec9367eab9fc1b9"
-      "524811534":
-        name: "install-verify.ps1.pem"
-        url_suffix: "install-verify.ps1.pem"
-        size: 3524
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:5bb99bc5193a8644b54ba67623efa877b3c8838d3a44b4682eeabff8acaf3fff"
-      "524811535":
-        name: "install.ps1.mldsa.sig"
-        url_suffix: "install.ps1.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:f1e4f4b93c6ffb46e88b6fddadb804388877647c2ed71e1e2963600d63c534d3"
-      "524811536":
-        name: "pq-mldsa65.pub.pem"
-        url_suffix: "pq-mldsa65.pub.pem"
-        size: 2726
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:0f14c17d2a7c978d4d8ae129ac73bd5c47d02ba264ab99c0c92b3289a29d9bae"
-      "524811537":
-        name: "checksums.txt"
-        url_suffix: "checksums.txt"
-        size: 486
-        media_type: "text/plain"
-        digest: "sha256:06ce13acf87dd47214ea6cddb57ac7495857fdc769f7151ed93ef2dd50129d6d"
-      "524811538":
-        name: "payload-commit.txt.pem"
-        url_suffix: "payload-commit.txt.pem"
-        size: 3524
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:6736dfdcdde07cea1d15487c82a8ffba9ed900681cd2b29645975288f6fecda2"
-      "524811539":
-        name: "install-verify.ps1.mldsa.sig"
-        url_suffix: "install-verify.ps1.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:b3411f206ba4c0a6a71addd1061ec7c8900f55258fa42590afdbcf595fc835fc"
-      "524811540":
-        name: "payload-commit.txt.cosign.sig"
-        url_suffix: "payload-commit.txt.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:4c3e22d71f0ec55651e3a63c6e5d9d3b77f3b978e8e7ebedf1c71040e050fddf"
-      "524811541":
-        name: "payload-commit.txt.sig"
-        url_suffix: "payload-commit.txt.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:ec752811b98ff518395165951958a981fd7edcf7b3c4f28b4fe0a40a2b6444fa"
-      "524811542":
-        name: "payload-commit.txt.bundle"
-        url_suffix: "payload-commit.txt.bundle"
-        size: 9061
-        digest: "sha256:026c8a7b2931fae83a0c5bef51e86b0d3ac305f938453502d3dba3dcd1a3caf2"
-      "524811543":
-        name: "payload-commit.txt"
-        url_suffix: "payload-commit.txt"
-        size: 41
-        media_type: "text/plain"
-        digest: "sha256:2289e20ea8d4ff4d088e969bf8a4718c23dd373232791d95527ad0fcd4f9fd9f"
-      "524811544":
-        name: "requirements.txt.bundle"
-        url_suffix: "requirements.txt.bundle"
-        size: 9049
-        digest: "sha256:4fb2824e26b08b2166f604717212acf9cf46751716b044fcbb29f09639e201df"
-      "524811545":
-        name: "installer.py.cosign.sig"
-        url_suffix: "installer.py.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:4189f697a44b3e3d5f587d3dd47a9c3fc13840df5b9250e3c4f27c2d0d04421e"
-      "524811546":
-        name: "requirements.txt.cosign.sig"
-        url_suffix: "requirements.txt.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:7b360b9db12a51afcfcd201dad442dc415339ce5826717d93a57d459e26af7ae"
-      "524811547":
-        name: "requirements.txt.pem"
-        url_suffix: "requirements.txt.pem"
-        size: 3520
-        media_type: "application/x-x509-ca-cert"
-        digest: "sha256:d9dd9d2ecf7deb1ed5e3cf3deae690371f5ee6957d68cfa0c51fd1061fd208f6"
-      "524811548":
-        name: "requirements.txt.sig"
-        url_suffix: "requirements.txt.sig"
-        size: 96
-        media_type: "application/pgp-signature"
-        digest: "sha256:d537bdfdf23c532956fa6cdbbd2d3d6a50dc8e79d0583eac4759cb0bfe8bab66"
-      "524811549":
-        name: "payload-commit.txt.mldsa.sig"
-        url_suffix: "payload-commit.txt.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:2a0e4630a1687d81e7dad4097b05d2b95f2835cdb68767578c7fe89f55fa6a87"
-      "524811550":
-        name: "offline-ceremony.pub"
-        url_suffix: "offline-ceremony.pub"
-        size: 113
-        media_type: "application/x-mspublisher"
-        digest: "sha256:b5aa9937249792ee11486bd9053abd5c5215dbcaf7036bbe4d54c3a11fa45c67"
-      "524811551":
-        name: "requirements.txt.mldsa.sig"
-        url_suffix: "requirements.txt.mldsa.sig"
-        size: 3309
-        media_type: "application/pgp-signature"
-        digest: "sha256:13d19da54444da237313be5d0a310c87f297f1417a6849a777ad87cb48615b74"
-      "524811552":
-        name: "install-verify.ps1.bundle"
-        url_suffix: "install-verify.ps1.bundle"
-        size: 9061
-        digest: "sha256:8b4048ec0e7a8a800f622ec53035daa9e0f4309a46644bc90a058b0cb3986a6f"
-      "524811553":
-        name: "requirements.txt"
-        url_suffix: "requirements.txt"
-        size: 180912
-        media_type: "text/plain"
-        digest: "sha256:eb0cd1a387ffcc6bc662fa4082cf8c45639c7c92017718d825e11a5109aee27f"
-      "524811554":
-        name: "install-verify.ps1.cosign.sig"
-        url_suffix: "install-verify.ps1.cosign.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:2ee079142a45c3fac1e831046d1a7b678458a2b3440916bf291495c6c398df01"
-      "524811555":
-        name: "hashes-cross-runner-verified.json"
-        url_suffix: "hashes-cross-runner-verified.json"
-        size: 978
-        media_type: "application/json"
-        digest: "sha256:b3774f2a2a216f1efa45ff7a078c60d45116df8db302741a4dd254d29ecd3104"
-      "524811873":
-        name: "personal-jarvis.intoto.jsonl"
-        url_suffix: "personal-jarvis.intoto.jsonl"
-        size: 26103
-        digest: "sha256:e63ba56152aa92d91a3fbf7c7efd1a96bb1585757611cb04485ef1058bf6c908"
   "376572396":
     tag: "v1.6.0"
     title: "v1.6.0"
@@ -9258,3 +8078,1523 @@ releases:
         size: 178
         media_type: "text/plain; charset=utf-8"
         digest: "sha256:369370a1dd2d274bd5273cbb771301b75409c7e0e515774f440f3a50a8b5b922"
+  "445550806":
+    tag: "v5.3.2"
+    title: "v5.3.2"
+    url: "https://github.com/Dodaios/Dodaios/releases/tag/v5.3.2"
+    created_at: "2026-11-14T19:52:57Z"
+    published_at: "2026-11-14T21:12:04Z"
+    updated_at: "2026-11-14T21:12:04Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/Dodaios/Dodaios/zipball/v5.3.2"
+    source_tar_url: "https://api.github.com/repos/Dodaios/Dodaios/tarball/v5.3.2"
+    download_base: "https://github.com/Dodaios/Dodaios/releases/download/v5.3.2/"
+    assets:
+      "748685400":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 486
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:da62d42534602ad716a2b6bad227f254f008c372138d4ac665a6353c495822bf"
+      "748685434":
+        name: "hashes-cross-runner-verified.json"
+        url_suffix: "hashes-cross-runner-verified.json"
+        size: 978
+        media_type: "application/json"
+        digest: "sha256:cdb646763bab4f1e0d6dc6eb9cb740df3138b871b599d5b66d1ae70b02e9966c"
+      "748685473":
+        name: "install-verify.ps1"
+        url_suffix: "install-verify.ps1"
+        size: 64599
+        media_type: "application/x-powershell"
+        digest: "sha256:7d2d9993ce33558df7dc2e137b341a1f481ec3f111eb58c5e10a711defc78eb2"
+      "748685501":
+        name: "install-verify.ps1.bundle"
+        url_suffix: "install-verify.ps1.bundle"
+        size: 8741
+        digest: "sha256:9db910e72365d74f6b549068c8cbf31590b3a5619a784231e54a623e822aee5c"
+      "748685526":
+        name: "install-verify.ps1.cosign.sig"
+        url_suffix: "install-verify.ps1.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:2326b3e10c260447fb9d47a7a7017bddcc2cb594861009949ef6ca829eeb5ffe"
+      "748685572":
+        name: "install-verify.ps1.mldsa.sig"
+        url_suffix: "install-verify.ps1.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:7550aac779e8f35084e6a5972c0659beb36af84b550d1890e27510904ef2a66a"
+      "748685604":
+        name: "install-verify.ps1.pem"
+        url_suffix: "install-verify.ps1.pem"
+        size: 3388
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:92b0aef40498653cca9ef848605a5878637f4752fd422baece1e6d7b5c46cd3c"
+      "748685642":
+        name: "install-verify.ps1.sig"
+        url_suffix: "install-verify.ps1.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:060a141f93c04afe4df9546c07c1f94cb0888e2770a564671315002e63a5c1f8"
+      "748685683":
+        name: "install-verify.sh"
+        url_suffix: "install-verify.sh"
+        size: 69122
+        media_type: "application/x-shellscript"
+        digest: "sha256:9db29fd96f1898f930ab5d8ad1affd833212b4bed867afb10d0ba81ef6f54465"
+      "748685733":
+        name: "install-verify.sh.bundle"
+        url_suffix: "install-verify.sh.bundle"
+        size: 8741
+        digest: "sha256:b942178999c5e85579a05cd8a4c07442df95a77bb0f0484e13d91c9aae849daf"
+      "748685786":
+        name: "install-verify.sh.cosign.sig"
+        url_suffix: "install-verify.sh.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:4dcf1e6242c8f22469a0382b828e936a6f59f7f2cadf9a9fe13c00e927220f06"
+      "748685834":
+        name: "install-verify.sh.mldsa.sig"
+        url_suffix: "install-verify.sh.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:ab0d24b597fb6fd343e4147f830cd0470a048ff58b02370208dfe61fd84577d5"
+      "748685879":
+        name: "install-verify.sh.pem"
+        url_suffix: "install-verify.sh.pem"
+        size: 3388
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:edd37e1df25b83577cdd6c163a2593356b4fad76e0bef1db51f723dfbe44f0aa"
+      "748685921":
+        name: "install-verify.sh.sig"
+        url_suffix: "install-verify.sh.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:703a7a3cd1e3f161ef02af53c7f6ffe66a2ec48b1f790dda019379fa164f194f"
+      "748685959":
+        name: "install.ps1"
+        url_suffix: "install.ps1"
+        size: 62805
+        media_type: "application/x-powershell"
+        digest: "sha256:8f40fd7cdef65df32c9afbca4f71dea0e8480ef25d05a236408add7702c1dd10"
+      "748685992":
+        name: "install.ps1.bundle"
+        url_suffix: "install.ps1.bundle"
+        size: 8741
+        digest: "sha256:0926b3e87c65fa91ac317b544eacb8125654ac7838a478af8f65acd07efb5748"
+      "748686023":
+        name: "install.ps1.cosign.sig"
+        url_suffix: "install.ps1.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:b440f7e67262bb3185cf4376fd88a3f23a26e7700b7ffceb98a0a150fb881c6a"
+      "748686070":
+        name: "install.ps1.mldsa.sig"
+        url_suffix: "install.ps1.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:a30c71e5f39ed14069f81982fd83cba8845ae2943560b9d1b6b6056886b8afa5"
+      "748686108":
+        name: "install.ps1.pem"
+        url_suffix: "install.ps1.pem"
+        size: 3388
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:7891522b6c862aab9bccd3df4d8bff2aaad9b07b57e37e28c67e087e90ec11e5"
+      "748686156":
+        name: "install.ps1.sig"
+        url_suffix: "install.ps1.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:16b0cd9e0907648ac13fa6fd57ecdd855fe96a8ad92a34983901de8fb481a731"
+      "748686212":
+        name: "install.sh"
+        url_suffix: "install.sh"
+        size: 75943
+        media_type: "application/x-shellscript"
+        digest: "sha256:eecce4b3d68a2022eb86a2d370658c25e4c5a1df0e516b1dcfdfe13d917f2d17"
+      "748686252":
+        name: "install.sh.bundle"
+        url_suffix: "install.sh.bundle"
+        size: 8733
+        digest: "sha256:9f8113da57d4d3d1162e3af901469e5244afe067af5373e0938654464c17727e"
+      "748686310":
+        name: "install.sh.cosign.sig"
+        url_suffix: "install.sh.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:37f672f68eef935c8205079a05adba1f7f17b487a1686ab2c095f5f3ebb02c83"
+      "748686358":
+        name: "install.sh.mldsa.sig"
+        url_suffix: "install.sh.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:b601d5b3cf49e5b16e1b21677ea0287acc3c3b4dafb24e2093b42e479bff90e2"
+      "748686395":
+        name: "install.sh.pem"
+        url_suffix: "install.sh.pem"
+        size: 3384
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:239e076383e8865b3fe133e9f6fe482ff9f6d61b334d206eb461902515d7c9e4"
+      "748686430":
+        name: "install.sh.sig"
+        url_suffix: "install.sh.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:958234a5b49690ad17d17cb37bcf2cb4295bb40d6f22c0f13ea2f86a1a668602"
+      "748686478":
+        name: "installer.py"
+        url_suffix: "installer.py"
+        size: 59513
+        media_type: "text/x-python; charset=utf-8"
+        digest: "sha256:2ae5c98512da39e79a57dcabf22eb5b7fb6644ed10c3f87c8d00656393fff627"
+      "748686509":
+        name: "installer.py.bundle"
+        url_suffix: "installer.py.bundle"
+        size: 8741
+        digest: "sha256:8ffb9757e5d42d6df758102b8ad76405ee08e1b7be768c8f256e266bb361ca3c"
+      "748686554":
+        name: "installer.py.cosign.sig"
+        url_suffix: "installer.py.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:1ac6c74f9349e5bb59f1c8354df001ebc41a0756183e75f4ca8129b8bda7bd39"
+      "748686578":
+        name: "installer.py.mldsa.sig"
+        url_suffix: "installer.py.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:a4c338148cc1f38728ccc06c9333844269086445634a5ca12a5b0ff1b4232420"
+      "748686608":
+        name: "installer.py.pem"
+        url_suffix: "installer.py.pem"
+        size: 3388
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:bcb9c5efdcbe6d516319d67343ba009bc92b8f32e1c365be144d013f254e6058"
+      "748686637":
+        name: "installer.py.sig"
+        url_suffix: "installer.py.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:f7455864bdc1fec881e675ed4ba9fef82ff694670be5b5712402691e4821738b"
+      "748686662":
+        name: "layout-content-anchor.json"
+        url_suffix: "layout-content-anchor.json"
+        size: 4938
+        media_type: "application/json"
+        digest: "sha256:354cdf4612e6226bc295668e55edf1143afa6961c2631b71fc6c9f34b617017d"
+      "748686685":
+        name: "offline-ceremony.pub"
+        url_suffix: "offline-ceremony.pub"
+        size: 113
+        media_type: "application/vnd.ms-publisher"
+        digest: "sha256:b5aa9937249792ee11486bd9053abd5c5215dbcaf7036bbe4d54c3a11fa45c67"
+      "748686707":
+        name: "payload-commit.txt"
+        url_suffix: "payload-commit.txt"
+        size: 41
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:004fc4b1b00674d09f5c09ac504447d8fc80a7e8352ca5369730a2479a567b6a"
+      "748686734":
+        name: "payload-commit.txt.bundle"
+        url_suffix: "payload-commit.txt.bundle"
+        size: 8741
+        digest: "sha256:90dfc92a09a91d8f2a03cf62fe751567b2acd1ebafb76a248a356be459fbb6ca"
+      "748686754":
+        name: "payload-commit.txt.cosign.sig"
+        url_suffix: "payload-commit.txt.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:12e48ce595e1f18012bc38816107c707ed6b6804e984971ed4b63bb9b590434b"
+      "748686796":
+        name: "payload-commit.txt.mldsa.sig"
+        url_suffix: "payload-commit.txt.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:5348b375aab85ea6dcad40b7448ecce3d1bd8d9e45bbea0bf79ff4e07b156088"
+      "748686822":
+        name: "payload-commit.txt.pem"
+        url_suffix: "payload-commit.txt.pem"
+        size: 3388
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:5d3e87f989c024d83fe328187c78f0af3099cbcff3b19d91b3e43dd8874a42f3"
+      "748686852":
+        name: "payload-commit.txt.sig"
+        url_suffix: "payload-commit.txt.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:4a8ad1613645c924ce081e0097f7e0b42e513120b7d0a54bf419e6ded8587104"
+      "748686887":
+        name: "personal-jarvis.intoto.jsonl"
+        url_suffix: "personal-jarvis.intoto.jsonl"
+        size: 23867
+        digest: "sha256:c6da6aee6cbd8a1812fe942b595ddfd7c10eb231c84fbbc5dc2f1cb60edd6e55"
+      "748686928":
+        name: "pq-mldsa65.pub.pem"
+        url_suffix: "pq-mldsa65.pub.pem"
+        size: 2726
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:0f14c17d2a7c978d4d8ae129ac73bd5c47d02ba264ab99c0c92b3289a29d9bae"
+      "748686967":
+        name: "requirements.txt"
+        url_suffix: "requirements.txt"
+        size: 178414
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:b34b1defa72c427501d5c180e9946293d18881fdf52c8d0c24d7a389cd126bff"
+      "748686999":
+        name: "requirements.txt.bundle"
+        url_suffix: "requirements.txt.bundle"
+        size: 8741
+        digest: "sha256:17e55f82202eb899a521f1afd530edf00027c7654773a8fadb35d550b8e7b8fb"
+      "748687039":
+        name: "requirements.txt.cosign.sig"
+        url_suffix: "requirements.txt.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:24d30c2263d0480124d0486f61a98eba931fda1e727b6f07c7e02ecc69913322"
+      "748687064":
+        name: "requirements.txt.mldsa.sig"
+        url_suffix: "requirements.txt.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:61374f17c170f8fd38a306de4c1bf2fab8cf9e3015fcedbb814102491e877d59"
+      "748687123":
+        name: "requirements.txt.pem"
+        url_suffix: "requirements.txt.pem"
+        size: 3388
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:c06ff06a3583355ebb0a07c4d7674ae4a34cf678f22cfdee12b55856946b968b"
+      "748687147":
+        name: "requirements.txt.sig"
+        url_suffix: "requirements.txt.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:649bfdfd78d423f9d2cebebd92999aef0abe3a56ef027a2b6491fcfcb0967e13"
+      "748780575":
+        name: "Dodaios-Linux-x86_64.AppImage"
+        url_suffix: "Dodaios-Linux-x86_64.AppImage"
+        size: 301865464
+        media_type: "application/vnd.appimage"
+        digest: "sha256:ebc0d03317988d7e21b66313d3c4d0176d97d7aaedbf412e1377f5bdcbda20e9"
+      "748780912":
+        name: "Dodaios-Setup-x64.exe"
+        url_suffix: "Dodaios-Setup-x64.exe"
+        size: 398329210
+        digest: "sha256:9ec5d5961625481666f690047ae28b04a6a10d7f5f375f69c9f01b7b87b7bc8c"
+      "748781429":
+        name: "Dodaios-macOS-arm64.dmg"
+        url_suffix: "Dodaios-macOS-arm64.dmg"
+        size: 425959911
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:8a3e078306ef617bd73aea5214d4d2d7d7f08e847e7da5645a1010e84f607164"
+      "748782034":
+        name: "Dodaios-macOS-x64.dmg"
+        url_suffix: "Dodaios-macOS-x64.dmg"
+        size: 438090049
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:74bb0ce56f8384f32c148f1e5f847410cedfa12fb805b7fd3e170d2258d9122a"
+      "748782711":
+        name: "PersonalJarvis-Linux-x86_64.AppImage"
+        url_suffix: "PersonalJarvis-Linux-x86_64.AppImage"
+        size: 301865464
+        media_type: "application/vnd.appimage"
+        digest: "sha256:ebc0d03317988d7e21b66313d3c4d0176d97d7aaedbf412e1377f5bdcbda20e9"
+      "748783188":
+        name: "PersonalJarvis-Setup-x64.exe"
+        url_suffix: "PersonalJarvis-Setup-x64.exe"
+        size: 398329210
+        digest: "sha256:9ec5d5961625481666f690047ae28b04a6a10d7f5f375f69c9f01b7b87b7bc8c"
+      "748783870":
+        name: "PersonalJarvis-macOS-arm64.dmg"
+        url_suffix: "PersonalJarvis-macOS-arm64.dmg"
+        size: 425959911
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:8a3e078306ef617bd73aea5214d4d2d7d7f08e847e7da5645a1010e84f607164"
+      "748784710":
+        name: "PersonalJarvis-macOS-x64.dmg"
+        url_suffix: "PersonalJarvis-macOS-x64.dmg"
+        size: 438090049
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:74bb0ce56f8384f32c148f1e5f847410cedfa12fb805b7fd3e170d2258d9122a"
+      "748785487":
+        name: "dodaios_5.3.2_amd64.deb"
+        url_suffix: "dodaios_5.3.2_amd64.deb"
+        size: 426318604
+        media_type: "application/x-debian-package"
+        digest: "sha256:40a1c0e70de47815ffd8eb9d24343d66dd83a9ce16ed112923d0bd8c37663995"
+      "748786082":
+        name: "installers-SHA256SUMS.txt"
+        url_suffix: "installers-SHA256SUMS.txt"
+        size: 842
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:28db80eb0d9fa537d7a25568e975d72d9d8ac43ecb9496c82883459592387f29"
+      "748786151":
+        name: "installers-update-manifest.json"
+        url_suffix: "installers-update-manifest.json"
+        size: 157
+        media_type: "application/json"
+        digest: "sha256:935f38fcec1f21fbce8771dc2aa37e28f74782efdebd4ba8f0ece442951211ce"
+      "748786212":
+        name: "installers-update-manifest.json.sig"
+        url_suffix: "installers-update-manifest.json.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:4468a8608c52de54f568a902d66bde50a400f42a74ef65794e40d06adbbde520"
+      "748788703":
+        name: "personal-jarvis-src.tar.gz"
+        url_suffix: "personal-jarvis-src.tar.gz"
+        size: 92706863
+        media_type: "application/x-gtar"
+        digest: "sha256:16d830ea5d1e850c8018abaa9f6a1f05c4bbc5c351054b8dd81ec4fe6f6574f3"
+      "748788706":
+        name: "source-SHA256SUMS.txt"
+        url_suffix: "source-SHA256SUMS.txt"
+        size: 178
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:135b52dad8dee22b007fc57a14edca0fc3593ccf9e211ffdb0e07683ae921ad5"
+      "748788707":
+        name: "dodaios-src.tar.gz"
+        url_suffix: "dodaios-src.tar.gz"
+        size: 92703823
+        media_type: "application/x-gtar"
+        digest: "sha256:86ef486ac7a41d5a6b4cae06bf1991ca8d12d51af94d7f487a37404b8fb10c03"
+  "446197032":
+    tag: "v5.3.4"
+    title: "v5.3.4"
+    url: "https://github.com/Dodaios/Dodaios/releases/tag/v5.3.4"
+    created_at: "2026-11-15T16:31:30Z"
+    published_at: "2026-11-15T17:40:10Z"
+    updated_at: "2026-11-15T17:40:10Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/Dodaios/Dodaios/zipball/v5.3.4"
+    source_tar_url: "https://api.github.com/repos/Dodaios/Dodaios/tarball/v5.3.4"
+    download_base: "https://github.com/Dodaios/Dodaios/releases/download/v5.3.4/"
+    assets:
+      "751734981":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 486
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:da62d42534602ad716a2b6bad227f254f008c372138d4ac665a6353c495822bf"
+      "751735058":
+        name: "hashes-cross-runner-verified.json"
+        url_suffix: "hashes-cross-runner-verified.json"
+        size: 978
+        media_type: "application/json"
+        digest: "sha256:2818513e64760a265d46c7dc7638b05d8150a11a1bb371efe4dc109794f09d0b"
+      "751735123":
+        name: "install-verify.ps1"
+        url_suffix: "install-verify.ps1"
+        size: 64599
+        media_type: "application/x-powershell"
+        digest: "sha256:7d2d9993ce33558df7dc2e137b341a1f481ec3f111eb58c5e10a711defc78eb2"
+      "751735160":
+        name: "install-verify.ps1.bundle"
+        url_suffix: "install-verify.ps1.bundle"
+        size: 8741
+        digest: "sha256:5a0d7eb19afab2b47dd9d3cebed3c0564c4d0c61db02c1350ce09eb162e82d8f"
+      "751735225":
+        name: "install-verify.ps1.cosign.sig"
+        url_suffix: "install-verify.ps1.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:2326b3e10c260447fb9d47a7a7017bddcc2cb594861009949ef6ca829eeb5ffe"
+      "751735278":
+        name: "install-verify.ps1.mldsa.sig"
+        url_suffix: "install-verify.ps1.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:5ff1c12ab1fc2df6c8e708525b876ddd4c97f104cb75954afbc583ee6f11f2d4"
+      "751735331":
+        name: "install-verify.ps1.pem"
+        url_suffix: "install-verify.ps1.pem"
+        size: 3388
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:4c30ca1e3cad64d24355bfb43906bad95132dde897b402547add6a86a69365cc"
+      "751735368":
+        name: "install-verify.ps1.sig"
+        url_suffix: "install-verify.ps1.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:85bda91b29914e8cabe9493e2642db81267646d91722a8e32867f52537d40b76"
+      "751735426":
+        name: "install-verify.sh"
+        url_suffix: "install-verify.sh"
+        size: 69122
+        media_type: "application/x-shellscript"
+        digest: "sha256:9db29fd96f1898f930ab5d8ad1affd833212b4bed867afb10d0ba81ef6f54465"
+      "751735467":
+        name: "install-verify.sh.bundle"
+        url_suffix: "install-verify.sh.bundle"
+        size: 8741
+        digest: "sha256:b7d2287e37608c378b6db00f5ea0fe7e1a4d4233f38c6642bdf87ff64ffaf02f"
+      "751735522":
+        name: "install-verify.sh.cosign.sig"
+        url_suffix: "install-verify.sh.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:4dcf1e6242c8f22469a0382b828e936a6f59f7f2cadf9a9fe13c00e927220f06"
+      "751735567":
+        name: "install-verify.sh.mldsa.sig"
+        url_suffix: "install-verify.sh.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:5721784fcd4525fa4fa5bbde11d1d707ee91aac278c7f45e4a1b10516b1c0556"
+      "751735635":
+        name: "install-verify.sh.pem"
+        url_suffix: "install-verify.sh.pem"
+        size: 3388
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:338d7c5592f75a4906bdb156c1149da5002ab2e75ad0edeabaa96613100e2d60"
+      "751735690":
+        name: "install-verify.sh.sig"
+        url_suffix: "install-verify.sh.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:7672d243780c08003668011afdbb5cdf3b0f9f3d3e364f5c8e950810595c3059"
+      "751735745":
+        name: "install.ps1"
+        url_suffix: "install.ps1"
+        size: 62805
+        media_type: "application/x-powershell"
+        digest: "sha256:8f40fd7cdef65df32c9afbca4f71dea0e8480ef25d05a236408add7702c1dd10"
+      "751735815":
+        name: "install.ps1.bundle"
+        url_suffix: "install.ps1.bundle"
+        size: 8741
+        digest: "sha256:0eb1d4891b09bd507edd06fbac82a7b8be83999367d1b6d5f9893cb3ffc57420"
+      "751735896":
+        name: "install.ps1.cosign.sig"
+        url_suffix: "install.ps1.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:b440f7e67262bb3185cf4376fd88a3f23a26e7700b7ffceb98a0a150fb881c6a"
+      "751735966":
+        name: "install.ps1.mldsa.sig"
+        url_suffix: "install.ps1.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:35c7f562df6a21d6a67e042909782b2c1b0ac22d54500a01e0d29db42df7f286"
+      "751736034":
+        name: "install.ps1.pem"
+        url_suffix: "install.ps1.pem"
+        size: 3388
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:0b13da11b54bcecc56bac6a79ce3a2b2d777e75406c72353fbd19df84941fa3d"
+      "751736107":
+        name: "install.ps1.sig"
+        url_suffix: "install.ps1.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:a07a00846804c361e0f84b1cbb0d8671ca4113fd2b86081e0d08b30d0896f7d5"
+      "751736190":
+        name: "install.sh"
+        url_suffix: "install.sh"
+        size: 75943
+        media_type: "application/x-shellscript"
+        digest: "sha256:eecce4b3d68a2022eb86a2d370658c25e4c5a1df0e516b1dcfdfe13d917f2d17"
+      "751736786":
+        name: "install.sh.bundle"
+        url_suffix: "install.sh.bundle"
+        size: 8741
+        digest: "sha256:21adf79dcbdc0af24ad8ea37862c2b1a3abdcd8c56c4e0885379f6b567fd3116"
+      "751736868":
+        name: "install.sh.cosign.sig"
+        url_suffix: "install.sh.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:37f672f68eef935c8205079a05adba1f7f17b487a1686ab2c095f5f3ebb02c83"
+      "751736955":
+        name: "install.sh.mldsa.sig"
+        url_suffix: "install.sh.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:ae034850d53b82d2e100eed2832b3a0f17452579aa7aee43780eed77eac350d0"
+      "751737043":
+        name: "install.sh.pem"
+        url_suffix: "install.sh.pem"
+        size: 3388
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:f84abdf662fce5fdc8aaaf677b09d4c2d13a0c4707b28ec9b9a92b706bb14069"
+      "751737116":
+        name: "install.sh.sig"
+        url_suffix: "install.sh.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:0bde3f52fd9d041e7375bf877e1388b32fc4518c2495624cb5ec5b7fc76066f6"
+      "751737169":
+        name: "installer.py"
+        url_suffix: "installer.py"
+        size: 59513
+        media_type: "text/x-python; charset=utf-8"
+        digest: "sha256:2ae5c98512da39e79a57dcabf22eb5b7fb6644ed10c3f87c8d00656393fff627"
+      "751737254":
+        name: "installer.py.bundle"
+        url_suffix: "installer.py.bundle"
+        size: 8741
+        digest: "sha256:7519e29e4c37eb8b75a56eda381678d3733c37678d45d440928b112c8b540e74"
+      "751737310":
+        name: "installer.py.cosign.sig"
+        url_suffix: "installer.py.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:1ac6c74f9349e5bb59f1c8354df001ebc41a0756183e75f4ca8129b8bda7bd39"
+      "751737390":
+        name: "installer.py.mldsa.sig"
+        url_suffix: "installer.py.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:c74591ca23e3e1062d99a72d8302931b0a54acb0059b3a6fd52644cd507ef5ce"
+      "751737462":
+        name: "installer.py.pem"
+        url_suffix: "installer.py.pem"
+        size: 3388
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:a404807eb25f1d5558123b6dee98de34d0ee350b549e1ca3d91350623d66afa1"
+      "751737565":
+        name: "installer.py.sig"
+        url_suffix: "installer.py.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:064acefe3602b58a23c2d136aff7f89ab5a6d1ba36980821eac4a2db1c3b52fa"
+      "751737657":
+        name: "layout-content-anchor.json"
+        url_suffix: "layout-content-anchor.json"
+        size: 4938
+        media_type: "application/json"
+        digest: "sha256:354cdf4612e6226bc295668e55edf1143afa6961c2631b71fc6c9f34b617017d"
+      "751737744":
+        name: "offline-ceremony.pub"
+        url_suffix: "offline-ceremony.pub"
+        size: 113
+        media_type: "application/vnd.ms-publisher"
+        digest: "sha256:b5aa9937249792ee11486bd9053abd5c5215dbcaf7036bbe4d54c3a11fa45c67"
+      "751737815":
+        name: "payload-commit.txt"
+        url_suffix: "payload-commit.txt"
+        size: 41
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:ea00c409b4820ec87be83dcfda1724e0f08841abb0ae5e6591daa5a9fb33ddb3"
+      "751737906":
+        name: "payload-commit.txt.bundle"
+        url_suffix: "payload-commit.txt.bundle"
+        size: 8741
+        digest: "sha256:0eacd9b9860535e41125707064704bac3204cdf3325ae769327851d0cad7fea2"
+      "751737995":
+        name: "payload-commit.txt.cosign.sig"
+        url_suffix: "payload-commit.txt.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:2012a634f056fb089775423aa7d023f3de053d866feaaf0a8fb8578f6e301734"
+      "751738072":
+        name: "payload-commit.txt.mldsa.sig"
+        url_suffix: "payload-commit.txt.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:50995192797abd59d1a0431d9af200a2866a517fea04adea19daac3b0b7d341d"
+      "751738145":
+        name: "payload-commit.txt.pem"
+        url_suffix: "payload-commit.txt.pem"
+        size: 3388
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:467c51f82633dac51569cfc0c86eea0d24fb738d7e10c28c719660dd4f89f422"
+      "751738220":
+        name: "payload-commit.txt.sig"
+        url_suffix: "payload-commit.txt.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:0f8871bea8e8e687a74fd690d8d9a24b15dbbb08e20c3cf4991207a1ad45940e"
+      "751738308":
+        name: "personal-jarvis.intoto.jsonl"
+        url_suffix: "personal-jarvis.intoto.jsonl"
+        size: 24179
+        digest: "sha256:abb77ec7e10a204f814f2e81eb36c9ca68d0486db51e11985a0281b9012c80d9"
+      "751738378":
+        name: "pq-mldsa65.pub.pem"
+        url_suffix: "pq-mldsa65.pub.pem"
+        size: 2726
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:0f14c17d2a7c978d4d8ae129ac73bd5c47d02ba264ab99c0c92b3289a29d9bae"
+      "751738478":
+        name: "requirements.txt"
+        url_suffix: "requirements.txt"
+        size: 178414
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:b34b1defa72c427501d5c180e9946293d18881fdf52c8d0c24d7a389cd126bff"
+      "751738539":
+        name: "requirements.txt.bundle"
+        url_suffix: "requirements.txt.bundle"
+        size: 8729
+        digest: "sha256:9edce03aa04b258066f4b3051633d70205d4c39a92013b33150416e2c1a52dab"
+      "751738599":
+        name: "requirements.txt.cosign.sig"
+        url_suffix: "requirements.txt.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:24d30c2263d0480124d0486f61a98eba931fda1e727b6f07c7e02ecc69913322"
+      "751738690":
+        name: "requirements.txt.mldsa.sig"
+        url_suffix: "requirements.txt.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:f71e17b1d132f8e309d839a5428f0d75031572aa438034bd47a04fdfbc4f6a09"
+      "751738782":
+        name: "requirements.txt.pem"
+        url_suffix: "requirements.txt.pem"
+        size: 3384
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:7a0912dc6d189c44c63fbf5f7f24d078eee7355f2195d06e3d3b71bdd850e2aa"
+      "751738877":
+        name: "requirements.txt.sig"
+        url_suffix: "requirements.txt.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:7c7a9a1985fb7754faeb6ffa4fce52b99deed9435e7036a824e082eeca71e936"
+      "751785917":
+        name: "Dodaios-Linux-x86_64.AppImage"
+        url_suffix: "Dodaios-Linux-x86_64.AppImage"
+        size: 313809400
+        media_type: "application/vnd.appimage"
+        digest: "sha256:c95f299e7d25ba3986cd9e76702b71672d904189d6c525dc27dce3499223fbda"
+      "751786500":
+        name: "Dodaios-Setup-x64.exe"
+        url_suffix: "Dodaios-Setup-x64.exe"
+        size: 411710828
+        digest: "sha256:03c0398995c5781ad7067383206a86f498d4f9f2c4399a37e6c1adb73b4f9b50"
+      "751787502":
+        name: "Dodaios-macOS-arm64.dmg"
+        url_suffix: "Dodaios-macOS-arm64.dmg"
+        size: 438580223
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:f8bf5b36e8f7996dfd2b93ab75b9f6e679f556f416dfce117927bad1dca80b73"
+      "751788123":
+        name: "Dodaios-macOS-x64.dmg"
+        url_suffix: "Dodaios-macOS-x64.dmg"
+        size: 450554460
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:80824120d8e50ee61533494842ed56efd4a0f23a837fdad8abc50fe104f8db79"
+      "751789023":
+        name: "PersonalJarvis-Linux-x86_64.AppImage"
+        url_suffix: "PersonalJarvis-Linux-x86_64.AppImage"
+        size: 313809400
+        media_type: "application/vnd.appimage"
+        digest: "sha256:c95f299e7d25ba3986cd9e76702b71672d904189d6c525dc27dce3499223fbda"
+      "751789556":
+        name: "PersonalJarvis-Setup-x64.exe"
+        url_suffix: "PersonalJarvis-Setup-x64.exe"
+        size: 411710828
+        digest: "sha256:03c0398995c5781ad7067383206a86f498d4f9f2c4399a37e6c1adb73b4f9b50"
+      "751790442":
+        name: "PersonalJarvis-macOS-arm64.dmg"
+        url_suffix: "PersonalJarvis-macOS-arm64.dmg"
+        size: 438580223
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:f8bf5b36e8f7996dfd2b93ab75b9f6e679f556f416dfce117927bad1dca80b73"
+      "751791032":
+        name: "PersonalJarvis-macOS-x64.dmg"
+        url_suffix: "PersonalJarvis-macOS-x64.dmg"
+        size: 450554460
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:80824120d8e50ee61533494842ed56efd4a0f23a837fdad8abc50fe104f8db79"
+      "751791734":
+        name: "dodaios_5.3.4_amd64.deb"
+        url_suffix: "dodaios_5.3.4_amd64.deb"
+        size: 438754974
+        media_type: "application/x-debian-package"
+        digest: "sha256:1651e71e7b45881459fe6f6384deac346fbde04d95ad3f055235bbafdb400f0e"
+      "751792455":
+        name: "installers-SHA256SUMS.txt"
+        url_suffix: "installers-SHA256SUMS.txt"
+        size: 842
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:3cd86e747d35b2cb778ce364a947020bae9eafc484eb95be2dc244c41da8d940"
+      "751792546":
+        name: "installers-update-manifest.json"
+        url_suffix: "installers-update-manifest.json"
+        size: 157
+        media_type: "application/json"
+        digest: "sha256:16d1defb2487a8763b2621645ceed024afade2497ef320322b4f4c424ea8069e"
+      "751792577":
+        name: "installers-update-manifest.json.sig"
+        url_suffix: "installers-update-manifest.json.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:20973b9ff8283677f18e83567f270298999228fb8c065bf6bba1433ffdb7ee68"
+      "751795132":
+        name: "dodaios-src.tar.gz"
+        url_suffix: "dodaios-src.tar.gz"
+        size: 104828831
+        media_type: "application/x-gtar"
+        digest: "sha256:4461b26207b6ac79c9832eb75fdae11f60c5bd3a31a58ef7c78cc8e3efafeaf9"
+      "751795133":
+        name: "source-SHA256SUMS.txt"
+        url_suffix: "source-SHA256SUMS.txt"
+        size: 178
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:3aba5c7a419be4367311aa3611c512ff05a144949d0a8892b2a51f6d384e8f71"
+      "751795135":
+        name: "personal-jarvis-src.tar.gz"
+        url_suffix: "personal-jarvis-src.tar.gz"
+        size: 104830236
+        media_type: "application/x-gtar"
+        digest: "sha256:4b9b72090887a6993177e4ad432d5408d3dbb3a234c7bcc028f52253b63a39cd"
+  "447378386":
+    tag: "v5.5.1"
+    title: "v5.5.1"
+    url: "https://github.com/Dodaios/Dodaios/releases/tag/v5.5.1"
+    created_at: "2026-11-16T17:42:29Z"
+    published_at: "2026-11-16T22:00:11Z"
+    updated_at: "2026-11-16T22:00:11Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/Dodaios/Dodaios/zipball/v5.5.1"
+    source_tar_url: "https://api.github.com/repos/Dodaios/Dodaios/tarball/v5.5.1"
+    download_base: "https://github.com/Dodaios/Dodaios/releases/download/v5.5.1/"
+    assets:
+      "756542780":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 486
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:da62d42534602ad716a2b6bad227f254f008c372138d4ac665a6353c495822bf"
+      "756542826":
+        name: "hashes-cross-runner-verified.json"
+        url_suffix: "hashes-cross-runner-verified.json"
+        size: 978
+        media_type: "application/json"
+        digest: "sha256:c3dc4dd5e3aa0e4d9a397478675434c44d6aaadba110c72c2d9c0b46abe681dd"
+      "756542868":
+        name: "install-verify.ps1"
+        url_suffix: "install-verify.ps1"
+        size: 64599
+        media_type: "application/x-powershell"
+        digest: "sha256:7d2d9993ce33558df7dc2e137b341a1f481ec3f111eb58c5e10a711defc78eb2"
+      "756542908":
+        name: "install-verify.ps1.bundle"
+        url_suffix: "install-verify.ps1.bundle"
+        size: 8741
+        digest: "sha256:3c62181dad8cf9d3cce3745c3f3355f83cd663cd1dea9670c2a26a5d89ffc04d"
+      "756542937":
+        name: "install-verify.ps1.cosign.sig"
+        url_suffix: "install-verify.ps1.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:2326b3e10c260447fb9d47a7a7017bddcc2cb594861009949ef6ca829eeb5ffe"
+      "756542966":
+        name: "install-verify.ps1.mldsa.sig"
+        url_suffix: "install-verify.ps1.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:c5396f84bc19517ecedce2271e9831f6a504d90b866aeab460de786c3f1aa918"
+      "756543009":
+        name: "install-verify.ps1.pem"
+        url_suffix: "install-verify.ps1.pem"
+        size: 3388
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:5e130b473a746434f7006c203676836f59324a2b957bbee1125f999ca7f164e0"
+      "756543053":
+        name: "install-verify.ps1.sig"
+        url_suffix: "install-verify.ps1.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:9b61aeb0450cc2aec77bfe8c28e1ce75b26a59297f1d5bba30cabc80ed4fdbc9"
+      "756543090":
+        name: "install-verify.sh"
+        url_suffix: "install-verify.sh"
+        size: 69122
+        media_type: "application/x-shellscript"
+        digest: "sha256:9db29fd96f1898f930ab5d8ad1affd833212b4bed867afb10d0ba81ef6f54465"
+      "756543129":
+        name: "install-verify.sh.bundle"
+        url_suffix: "install-verify.sh.bundle"
+        size: 8741
+        digest: "sha256:daaafe1e26fe7947ed0177d3df68ba41e9bede2db520f6ed3a11647e4129a656"
+      "756543171":
+        name: "install-verify.sh.cosign.sig"
+        url_suffix: "install-verify.sh.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:4dcf1e6242c8f22469a0382b828e936a6f59f7f2cadf9a9fe13c00e927220f06"
+      "756543193":
+        name: "install-verify.sh.mldsa.sig"
+        url_suffix: "install-verify.sh.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:b25fac0f569ce8503fafb045e44041ff8b06e261cdb55483840f752eda7a43ad"
+      "756543227":
+        name: "install-verify.sh.pem"
+        url_suffix: "install-verify.sh.pem"
+        size: 3388
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:4e6f6ff1a5cbab96465c8dab73143ca454c2ceaba70da1c53b3d7ed546380926"
+      "756543270":
+        name: "install-verify.sh.sig"
+        url_suffix: "install-verify.sh.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:90465a9e4abb750a91bd20c4bc046eb07bb5f204c29cf3d0a01d715cd5601df5"
+      "756543307":
+        name: "install.ps1"
+        url_suffix: "install.ps1"
+        size: 62805
+        media_type: "application/x-powershell"
+        digest: "sha256:8f40fd7cdef65df32c9afbca4f71dea0e8480ef25d05a236408add7702c1dd10"
+      "756543463":
+        name: "install.ps1.bundle"
+        url_suffix: "install.ps1.bundle"
+        size: 8733
+        digest: "sha256:7f8492b2c31513443e03fb9bbca2ad9d3f2b2c0c4c6f50130a4441c988611184"
+      "756543506":
+        name: "install.ps1.cosign.sig"
+        url_suffix: "install.ps1.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:b440f7e67262bb3185cf4376fd88a3f23a26e7700b7ffceb98a0a150fb881c6a"
+      "756543559":
+        name: "install.ps1.mldsa.sig"
+        url_suffix: "install.ps1.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:61e13e270f9b025417bfff2335a89481ef745c6c89470048bdab6feda948d9bb"
+      "756543616":
+        name: "install.ps1.pem"
+        url_suffix: "install.ps1.pem"
+        size: 3384
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:6add0376be9628f7456ee10f4a97d51cf9dcf821d178a02596b4a12c05109d88"
+      "756543660":
+        name: "install.ps1.sig"
+        url_suffix: "install.ps1.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:13007988f9ae7220faa00678796591c67a3ec6cf350137951df7c09a83f80cf2"
+      "756543858":
+        name: "install.sh"
+        url_suffix: "install.sh"
+        size: 75943
+        media_type: "application/x-shellscript"
+        digest: "sha256:eecce4b3d68a2022eb86a2d370658c25e4c5a1df0e516b1dcfdfe13d917f2d17"
+      "756543919":
+        name: "install.sh.bundle"
+        url_suffix: "install.sh.bundle"
+        size: 8741
+        digest: "sha256:341ff36c9971c7191d59c91cec1b93d328345834c49d065bb8abcf6344f731b0"
+      "756543970":
+        name: "install.sh.cosign.sig"
+        url_suffix: "install.sh.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:37f672f68eef935c8205079a05adba1f7f17b487a1686ab2c095f5f3ebb02c83"
+      "756544050":
+        name: "install.sh.mldsa.sig"
+        url_suffix: "install.sh.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:7f68f215d56008d43f69716add01b62886e105ed1348cd5c0a01844b00a92e64"
+      "756544084":
+        name: "install.sh.pem"
+        url_suffix: "install.sh.pem"
+        size: 3388
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:38b80e2eae59ad6fe07c0d213b9b55a1575515ae024ea623e80e4904e4dcc874"
+      "756544137":
+        name: "install.sh.sig"
+        url_suffix: "install.sh.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:5cb0cdf0010eba6a9bd5620abb003a56df1639ba02511522e1f394269088f3df"
+      "756544168":
+        name: "installer.py"
+        url_suffix: "installer.py"
+        size: 59513
+        media_type: "text/x-python; charset=utf-8"
+        digest: "sha256:2ae5c98512da39e79a57dcabf22eb5b7fb6644ed10c3f87c8d00656393fff627"
+      "756544192":
+        name: "installer.py.bundle"
+        url_suffix: "installer.py.bundle"
+        size: 8741
+        digest: "sha256:fc1978d026c4ba488ff172c35b3b3bb2289ce6ca56c037ce42119b32cf8a24d5"
+      "756544242":
+        name: "installer.py.cosign.sig"
+        url_suffix: "installer.py.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:1ac6c74f9349e5bb59f1c8354df001ebc41a0756183e75f4ca8129b8bda7bd39"
+      "756544315":
+        name: "installer.py.mldsa.sig"
+        url_suffix: "installer.py.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:bf33f496ef4abf5c5d5b216a238237d2edcc3dabf5360cabc4f8dff4cc1e2bc9"
+      "756544353":
+        name: "installer.py.pem"
+        url_suffix: "installer.py.pem"
+        size: 3388
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:cafe92c5c802c866dd55f7556d190d680761b04dae64a9a34939c47dc254cd95"
+      "756544389":
+        name: "installer.py.sig"
+        url_suffix: "installer.py.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:197bdec64621644b6bb523ca59bcdeb3860e33635e5cd0215a1aed97f8b27363"
+      "756544423":
+        name: "layout-content-anchor.json"
+        url_suffix: "layout-content-anchor.json"
+        size: 4938
+        media_type: "application/json"
+        digest: "sha256:354cdf4612e6226bc295668e55edf1143afa6961c2631b71fc6c9f34b617017d"
+      "756544455":
+        name: "offline-ceremony.pub"
+        url_suffix: "offline-ceremony.pub"
+        size: 113
+        media_type: "application/vnd.ms-publisher"
+        digest: "sha256:b5aa9937249792ee11486bd9053abd5c5215dbcaf7036bbe4d54c3a11fa45c67"
+      "756544489":
+        name: "payload-commit.txt"
+        url_suffix: "payload-commit.txt"
+        size: 41
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:51bcdb6014eaccb1deaa574fdc5bc1833479ac932672a3956df04bd9f54c3153"
+      "756544531":
+        name: "payload-commit.txt.bundle"
+        url_suffix: "payload-commit.txt.bundle"
+        size: 8733
+        digest: "sha256:b9b768eb56f75bfe65ad6237e40af61f04395f2028a016a39d83bb8706ada132"
+      "756544561":
+        name: "payload-commit.txt.cosign.sig"
+        url_suffix: "payload-commit.txt.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:85fda7ae61410f2b207fd5dee730d7bc5b61af85c39bbb58f9ca4db53752572f"
+      "756544601":
+        name: "payload-commit.txt.mldsa.sig"
+        url_suffix: "payload-commit.txt.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:9e8287d36e4d8f3381c43045c82ffdfb60661cafd254e184aa8958bdfcc62e6c"
+      "756544631":
+        name: "payload-commit.txt.pem"
+        url_suffix: "payload-commit.txt.pem"
+        size: 3384
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:603941297f54497e94eb3a7a77c55be2dc02139cb2692ab330d47383f3fda953"
+      "756544668":
+        name: "payload-commit.txt.sig"
+        url_suffix: "payload-commit.txt.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:07b0c1d9711877bec2b6b95398b85b135700c0d4d2f1407c2d9d43c25e3f93f2"
+      "756544708":
+        name: "personal-jarvis.intoto.jsonl"
+        url_suffix: "personal-jarvis.intoto.jsonl"
+        size: 24167
+        digest: "sha256:cc7d161478fa9d30667365a942bb644740aa4067d01b26e2cf1803d3cee60929"
+      "756544771":
+        name: "pq-mldsa65.pub.pem"
+        url_suffix: "pq-mldsa65.pub.pem"
+        size: 2726
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:0f14c17d2a7c978d4d8ae129ac73bd5c47d02ba264ab99c0c92b3289a29d9bae"
+      "756544822":
+        name: "requirements.txt"
+        url_suffix: "requirements.txt"
+        size: 178414
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:b34b1defa72c427501d5c180e9946293d18881fdf52c8d0c24d7a389cd126bff"
+      "756544885":
+        name: "requirements.txt.bundle"
+        url_suffix: "requirements.txt.bundle"
+        size: 8741
+        digest: "sha256:413fae41a1b8beabf1639d4cc961548970c6f828bc3e18512c833dab1876e0b2"
+      "756544956":
+        name: "requirements.txt.cosign.sig"
+        url_suffix: "requirements.txt.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:24d30c2263d0480124d0486f61a98eba931fda1e727b6f07c7e02ecc69913322"
+      "756545014":
+        name: "requirements.txt.mldsa.sig"
+        url_suffix: "requirements.txt.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:fba3ca3a42d0600df461c74c1ffe72e59afbe62d6d80e9da9dce8a80967a0da0"
+      "756545069":
+        name: "requirements.txt.pem"
+        url_suffix: "requirements.txt.pem"
+        size: 3388
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:d47558cee8fbaae648792438c19132f809c0fd144088b1161273bb7b293bd5fc"
+      "756545108":
+        name: "requirements.txt.sig"
+        url_suffix: "requirements.txt.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:cef65213c651161a24bf9a5348361e180495b146e11fd5f29775d179ade2c307"
+      "756596346":
+        name: "Dodaios-Linux-x86_64.AppImage"
+        url_suffix: "Dodaios-Linux-x86_64.AppImage"
+        size: 314366456
+        media_type: "application/vnd.appimage"
+        digest: "sha256:e5ae052015a19365538a7b138f8fb22ded50b74efa5b4210f4e875525e864355"
+      "756596983":
+        name: "Dodaios-Setup-x64.exe"
+        url_suffix: "Dodaios-Setup-x64.exe"
+        size: 413646456
+        digest: "sha256:8f963c68c9df5d98a15a6cf8f550bae616cee8c9fb7fd5f35af47b90a22e5b26"
+      "756597580":
+        name: "Dodaios-macOS-arm64.dmg"
+        url_suffix: "Dodaios-macOS-arm64.dmg"
+        size: 440753907
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:80b4bcf66c2dec3176d85344eb588eded9d1b8746c0e08c9f5260e601ce89e4b"
+      "756598656":
+        name: "Dodaios-macOS-x64.dmg"
+        url_suffix: "Dodaios-macOS-x64.dmg"
+        size: 452777265
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:2762e970f3a012a648512053ce27c71ee7362a61b54474c94c7e70daabac11c0"
+      "756599370":
+        name: "PersonalJarvis-Linux-x86_64.AppImage"
+        url_suffix: "PersonalJarvis-Linux-x86_64.AppImage"
+        size: 314366456
+        media_type: "application/vnd.appimage"
+        digest: "sha256:e5ae052015a19365538a7b138f8fb22ded50b74efa5b4210f4e875525e864355"
+      "756599908":
+        name: "PersonalJarvis-Setup-x64.exe"
+        url_suffix: "PersonalJarvis-Setup-x64.exe"
+        size: 413646456
+        digest: "sha256:8f963c68c9df5d98a15a6cf8f550bae616cee8c9fb7fd5f35af47b90a22e5b26"
+      "756600707":
+        name: "PersonalJarvis-macOS-arm64.dmg"
+        url_suffix: "PersonalJarvis-macOS-arm64.dmg"
+        size: 440753907
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:80b4bcf66c2dec3176d85344eb588eded9d1b8746c0e08c9f5260e601ce89e4b"
+      "756601642":
+        name: "PersonalJarvis-macOS-x64.dmg"
+        url_suffix: "PersonalJarvis-macOS-x64.dmg"
+        size: 452777265
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:2762e970f3a012a648512053ce27c71ee7362a61b54474c94c7e70daabac11c0"
+      "756602873":
+        name: "dodaios_5.5.1_amd64.deb"
+        url_suffix: "dodaios_5.5.1_amd64.deb"
+        size: 440886890
+        media_type: "application/x-debian-package"
+        digest: "sha256:c9272e47bfd7d7e2bf22b8a2893b55974fbd5a61a4452bd32085c7600f169349"
+      "756603983":
+        name: "installers-SHA256SUMS.txt"
+        url_suffix: "installers-SHA256SUMS.txt"
+        size: 842
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:02288ae3e97839bcb2f4812fac5aedab7adcacf4d229ec19d387f2a9e30ffe9d"
+      "756604069":
+        name: "installers-update-manifest.json"
+        url_suffix: "installers-update-manifest.json"
+        size: 157
+        media_type: "application/json"
+        digest: "sha256:d99ea9aaf05a5ed5b30dc4d64467b04086b7bedd586fe353cdfe19878255a579"
+      "756604162":
+        name: "installers-update-manifest.json.sig"
+        url_suffix: "installers-update-manifest.json.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:5b243b5ec16bc28fb23b4a0ca802df8efa2fa59b2342c02f6a652724edc8400f"
+      "756606907":
+        name: "source-SHA256SUMS.txt"
+        url_suffix: "source-SHA256SUMS.txt"
+        size: 178
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:11774cbdbcafa2e16124301e2d13a2e19f4580f82f793075cc798b28943225c7"
+      "756606908":
+        name: "personal-jarvis-src.tar.gz"
+        url_suffix: "personal-jarvis-src.tar.gz"
+        size: 105040229
+        media_type: "application/x-gtar"
+        digest: "sha256:850b1a84850ae97f90dde8370ad65bf231c044f4c6832f4a7bb736cdb3c64998"
+      "756606909":
+        name: "dodaios-src.tar.gz"
+        url_suffix: "dodaios-src.tar.gz"
+        size: 105036028
+        media_type: "application/x-gtar"
+        digest: "sha256:4e6ef755ef1ec362998ec45603b3957c1decfda06801be6dbec7a58195067e89"
+  "449205109":
+    tag: "v5.6.0"
+    title: "v5.6.0"
+    url: "https://github.com/Dodaios/Dodaios/releases/tag/v5.6.0"
+    created_at: "2026-11-17T21:13:35Z"
+    published_at: "2026-11-17T22:00:29Z"
+    updated_at: "2026-11-17T22:00:29Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/Dodaios/Dodaios/zipball/v5.6.0"
+    source_tar_url: "https://api.github.com/repos/Dodaios/Dodaios/tarball/v5.6.0"
+    download_base: "https://github.com/Dodaios/Dodaios/releases/download/v5.6.0/"
+    assets:
+      "760742005":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 486
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:da62d42534602ad716a2b6bad227f254f008c372138d4ac665a6353c495822bf"
+      "760742072":
+        name: "hashes-cross-runner-verified.json"
+        url_suffix: "hashes-cross-runner-verified.json"
+        size: 978
+        media_type: "application/json"
+        digest: "sha256:94448078d571a3a443de23c99b89f0a6980be19565b3749dae252e3752bee22a"
+      "760742118":
+        name: "install-verify.ps1"
+        url_suffix: "install-verify.ps1"
+        size: 64599
+        media_type: "application/x-powershell"
+        digest: "sha256:7d2d9993ce33558df7dc2e137b341a1f481ec3f111eb58c5e10a711defc78eb2"
+      "760742154":
+        name: "install-verify.ps1.bundle"
+        url_suffix: "install-verify.ps1.bundle"
+        size: 8741
+        digest: "sha256:58e167938d90414ff391380e54158fd609a7cf05af11de58e0d2fe596a19c384"
+      "760742202":
+        name: "install-verify.ps1.cosign.sig"
+        url_suffix: "install-verify.ps1.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:2326b3e10c260447fb9d47a7a7017bddcc2cb594861009949ef6ca829eeb5ffe"
+      "760742255":
+        name: "install-verify.ps1.mldsa.sig"
+        url_suffix: "install-verify.ps1.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:e46cd87bc2768d6da5d559665f60b1afc0fddfd12bc4e6b9b7b8518496f098f8"
+      "760742313":
+        name: "install-verify.ps1.pem"
+        url_suffix: "install-verify.ps1.pem"
+        size: 3388
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:e2760d91577a0ba07e095ff4b87f0550a8235f7e12d110fd07b6df62deb2b5af"
+      "760742358":
+        name: "install-verify.ps1.sig"
+        url_suffix: "install-verify.ps1.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:e1055379222e6c8e9a0b57bd68d4be272a97090e0882b82d9981108d50a38a55"
+      "760742390":
+        name: "install-verify.sh"
+        url_suffix: "install-verify.sh"
+        size: 69122
+        media_type: "application/x-shellscript"
+        digest: "sha256:9db29fd96f1898f930ab5d8ad1affd833212b4bed867afb10d0ba81ef6f54465"
+      "760742451":
+        name: "install-verify.sh.bundle"
+        url_suffix: "install-verify.sh.bundle"
+        size: 8741
+        digest: "sha256:360a6ae6745d300036a2662781daf5438119b1c538d763d373ef6715b4d318c7"
+      "760742511":
+        name: "install-verify.sh.cosign.sig"
+        url_suffix: "install-verify.sh.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:4dcf1e6242c8f22469a0382b828e936a6f59f7f2cadf9a9fe13c00e927220f06"
+      "760742591":
+        name: "install-verify.sh.mldsa.sig"
+        url_suffix: "install-verify.sh.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:982858e75290755f4deb5a9eb85f4d4616149435509fe7635b82e1efab900f54"
+      "760742655":
+        name: "install-verify.sh.pem"
+        url_suffix: "install-verify.sh.pem"
+        size: 3388
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:f0849253af2ee87c391e53441f176c52a5492ded7f659be476047647e472579e"
+      "760742711":
+        name: "install-verify.sh.sig"
+        url_suffix: "install-verify.sh.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:9d05d41427266e503605eeac8eadf30404aef9d16063464266360f95ebdebc7f"
+      "760742756":
+        name: "install.ps1"
+        url_suffix: "install.ps1"
+        size: 62805
+        media_type: "application/x-powershell"
+        digest: "sha256:8f40fd7cdef65df32c9afbca4f71dea0e8480ef25d05a236408add7702c1dd10"
+      "760742797":
+        name: "install.ps1.bundle"
+        url_suffix: "install.ps1.bundle"
+        size: 8741
+        digest: "sha256:50ff2225600dcc7200e229b8a9adae2e1ffc55cd1b69239806b85c4daed0be8e"
+      "760742866":
+        name: "install.ps1.cosign.sig"
+        url_suffix: "install.ps1.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:b440f7e67262bb3185cf4376fd88a3f23a26e7700b7ffceb98a0a150fb881c6a"
+      "760742916":
+        name: "install.ps1.mldsa.sig"
+        url_suffix: "install.ps1.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:7cb0de055702f567a04b999657322cbe493c0d6100e05e08a0783ad345a41053"
+      "760742951":
+        name: "install.ps1.pem"
+        url_suffix: "install.ps1.pem"
+        size: 3388
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:c04e48f8e4f6a91da5cbdd8f469375e05115449fc8d19cdfd5fe3c6bb9950662"
+      "760743008":
+        name: "install.ps1.sig"
+        url_suffix: "install.ps1.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:23d156ae6dc341dc383e695f8689b9bcf2789f8d78bfac231fe408978f24fbdc"
+      "760743064":
+        name: "install.sh"
+        url_suffix: "install.sh"
+        size: 75943
+        media_type: "application/x-shellscript"
+        digest: "sha256:eecce4b3d68a2022eb86a2d370658c25e4c5a1df0e516b1dcfdfe13d917f2d17"
+      "760743113":
+        name: "install.sh.bundle"
+        url_suffix: "install.sh.bundle"
+        size: 8741
+        digest: "sha256:8d24b7aca05bf5d8b7d18bf60a8ab0a40db7fe1915b819acd2d329cb9d32e22e"
+      "760743181":
+        name: "install.sh.cosign.sig"
+        url_suffix: "install.sh.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:37f672f68eef935c8205079a05adba1f7f17b487a1686ab2c095f5f3ebb02c83"
+      "760743243":
+        name: "install.sh.mldsa.sig"
+        url_suffix: "install.sh.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:c43232264a6fe254449f3637472fe09eec4a3b52a529ffda4c5dbcf9f9693f10"
+      "760743334":
+        name: "install.sh.pem"
+        url_suffix: "install.sh.pem"
+        size: 3388
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:794ce6c6980c6f3d2c71772d6c49e0a71f5222db5460de13bc13cec14284eaee"
+      "760743380":
+        name: "install.sh.sig"
+        url_suffix: "install.sh.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:8fa7a79786da94dceb5efa8b903e1264560e39fb9f38b6887a78b67f503ff4c8"
+      "760743424":
+        name: "installer.py"
+        url_suffix: "installer.py"
+        size: 59513
+        media_type: "text/x-python; charset=utf-8"
+        digest: "sha256:2ae5c98512da39e79a57dcabf22eb5b7fb6644ed10c3f87c8d00656393fff627"
+      "760743491":
+        name: "installer.py.bundle"
+        url_suffix: "installer.py.bundle"
+        size: 8741
+        digest: "sha256:d5a0cd320362195e97043b4840e614a648c685f376f321df7efe4f6af3877d35"
+      "760743553":
+        name: "installer.py.cosign.sig"
+        url_suffix: "installer.py.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:1ac6c74f9349e5bb59f1c8354df001ebc41a0756183e75f4ca8129b8bda7bd39"
+      "760743607":
+        name: "installer.py.mldsa.sig"
+        url_suffix: "installer.py.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:a251657f7fa881e4ec15a8c101f32259d2879127e310f0d1f753b8eb1a79da8b"
+      "760743648":
+        name: "installer.py.pem"
+        url_suffix: "installer.py.pem"
+        size: 3388
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:cb1141e482848d15c3f8204c41881564868823e66d0c1c24ff138df19d2ad9c2"
+      "760743693":
+        name: "installer.py.sig"
+        url_suffix: "installer.py.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:0258698faf75414958bc4e88616c459f5d9797864f7e4b81ef5bd83dee49eabc"
+      "760743746":
+        name: "layout-content-anchor.json"
+        url_suffix: "layout-content-anchor.json"
+        size: 4938
+        media_type: "application/json"
+        digest: "sha256:354cdf4612e6226bc295668e55edf1143afa6961c2631b71fc6c9f34b617017d"
+      "760743783":
+        name: "offline-ceremony.pub"
+        url_suffix: "offline-ceremony.pub"
+        size: 113
+        media_type: "application/vnd.ms-publisher"
+        digest: "sha256:b5aa9937249792ee11486bd9053abd5c5215dbcaf7036bbe4d54c3a11fa45c67"
+      "760743844":
+        name: "payload-commit.txt"
+        url_suffix: "payload-commit.txt"
+        size: 41
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:9b355a5cb002f801804930a0ad1813ab70cfe7343729f840bd856b7df4618a74"
+      "760743906":
+        name: "payload-commit.txt.bundle"
+        url_suffix: "payload-commit.txt.bundle"
+        size: 8733
+        digest: "sha256:e0e93d60e13679a45161d806d2ce1b218d6d2c0482d7c2f8a99bf19036bdeb45"
+      "760743988":
+        name: "payload-commit.txt.cosign.sig"
+        url_suffix: "payload-commit.txt.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:6927c0b20cad3ed9123da161d93cb813c2fca8bba77de0af09f729fdf17074af"
+      "760744035":
+        name: "payload-commit.txt.mldsa.sig"
+        url_suffix: "payload-commit.txt.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:525e01ac52eabb7040f3013d3cbddf9a2ceec60c701500f24e440eb17d38d5d7"
+      "760744070":
+        name: "payload-commit.txt.pem"
+        url_suffix: "payload-commit.txt.pem"
+        size: 3384
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:c97d006def6ba52e773c19d86aa4ce99b081771faefcbd6ee2c36329da3d4de3"
+      "760744095":
+        name: "payload-commit.txt.sig"
+        url_suffix: "payload-commit.txt.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:9fb077205e7b4115509e47b54a756834dc2aa5d6648674cb7f2fd10e336c5fcb"
+      "760744132":
+        name: "personal-jarvis.intoto.jsonl"
+        url_suffix: "personal-jarvis.intoto.jsonl"
+        size: 24135
+        digest: "sha256:505293606ec4259a179893d958ca574bb8c1b22b53762b99123f85218134d345"
+      "760744184":
+        name: "pq-mldsa65.pub.pem"
+        url_suffix: "pq-mldsa65.pub.pem"
+        size: 2726
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:0f14c17d2a7c978d4d8ae129ac73bd5c47d02ba264ab99c0c92b3289a29d9bae"
+      "760744217":
+        name: "requirements.txt"
+        url_suffix: "requirements.txt"
+        size: 178414
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:b34b1defa72c427501d5c180e9946293d18881fdf52c8d0c24d7a389cd126bff"
+      "760744250":
+        name: "requirements.txt.bundle"
+        url_suffix: "requirements.txt.bundle"
+        size: 8733
+        digest: "sha256:c702abdb5d9771ba29e1af9396adbc5c86f06591619180686db7c2f6939b7d48"
+      "760744274":
+        name: "requirements.txt.cosign.sig"
+        url_suffix: "requirements.txt.cosign.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:24d30c2263d0480124d0486f61a98eba931fda1e727b6f07c7e02ecc69913322"
+      "760744319":
+        name: "requirements.txt.mldsa.sig"
+        url_suffix: "requirements.txt.mldsa.sig"
+        size: 3309
+        media_type: "application/pgp-signature"
+        digest: "sha256:e1077b2a83221771153a38c981ecded47a1c1b8004a417fddae1537cdb77053b"
+      "760744349":
+        name: "requirements.txt.pem"
+        url_suffix: "requirements.txt.pem"
+        size: 3384
+        media_type: "application/x-x509-ca-cert"
+        digest: "sha256:3ef4a347a3cb0b02a8e532ccea96436dfbb15a01f1ad9c45effdd8e73e83a3b9"
+      "760744398":
+        name: "requirements.txt.sig"
+        url_suffix: "requirements.txt.sig"
+        size: 96
+        media_type: "application/pgp-signature"
+        digest: "sha256:b329fdf7fb39800bb9a136f4b44549d8f9880c17ab78be27103258bd76fb707a"
+      "760786663":
+        name: "Dodaios-Linux-x86_64.AppImage"
+        url_suffix: "Dodaios-Linux-x86_64.AppImage"
+        size: 312871416
+        media_type: "application/vnd.appimage"
+        digest: "sha256:a4b8d65457b511cb5421b98fb0c1b2c37b92bda7f4b5b6fb23960656020207c5"
+      "760787549":
+        name: "Dodaios-Setup-x64.exe"
+        url_suffix: "Dodaios-Setup-x64.exe"
+        size: 413424363
+        digest: "sha256:08cf128153273573f6f33b749f871bdb47284c135c40deea963bad28b8d1d530"
+      "760788670":
+        name: "Dodaios-macOS-arm64.dmg"
+        url_suffix: "Dodaios-macOS-arm64.dmg"
+        size: 440596834
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:be342b88ef98f8388702700a3404e9bd2fa141ba817f65efc2deb2b9c24b2919"
+      "760789891":
+        name: "Dodaios-macOS-x64.dmg"
+        url_suffix: "Dodaios-macOS-x64.dmg"
+        size: 452659507
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:f7a2459598b18f7eff9beaaff38d59e6fcc3edcadc85bbb479c54452903b01de"
+      "760790783":
+        name: "PersonalJarvis-Linux-x86_64.AppImage"
+        url_suffix: "PersonalJarvis-Linux-x86_64.AppImage"
+        size: 312871416
+        media_type: "application/vnd.appimage"
+        digest: "sha256:a4b8d65457b511cb5421b98fb0c1b2c37b92bda7f4b5b6fb23960656020207c5"
+      "760791332":
+        name: "PersonalJarvis-Setup-x64.exe"
+        url_suffix: "PersonalJarvis-Setup-x64.exe"
+        size: 413424363
+        digest: "sha256:08cf128153273573f6f33b749f871bdb47284c135c40deea963bad28b8d1d530"
+      "760792190":
+        name: "PersonalJarvis-macOS-arm64.dmg"
+        url_suffix: "PersonalJarvis-macOS-arm64.dmg"
+        size: 440596834
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:be342b88ef98f8388702700a3404e9bd2fa141ba817f65efc2deb2b9c24b2919"
+      "760793169":
+        name: "PersonalJarvis-macOS-x64.dmg"
+        url_suffix: "PersonalJarvis-macOS-x64.dmg"
+        size: 452659507
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:f7a2459598b18f7eff9beaaff38d59e6fcc3edcadc85bbb479c54452903b01de"
+      "760794262":
+        name: "dodaios_5.6.0_amd64.deb"
+        url_suffix: "dodaios_5.6.0_amd64.deb"
+        size: 440417412
+        media_type: "application/x-debian-package"
+        digest: "sha256:e06fa76b1a3f4ccf27a8851514eaef555ce81ccd1464fad0ff4fecde732f9cbd"
+      "760795228":
+        name: "installers-SHA256SUMS.txt"
+        url_suffix: "installers-SHA256SUMS.txt"
+        size: 842
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:2e3020f85c0e54d68be9d81a47fbdd0db5b8ef2277b440d5cc8a2ca55ffa86cf"
+      "760795290":
+        name: "installers-update-manifest.json"
+        url_suffix: "installers-update-manifest.json"
+        size: 157
+        media_type: "application/json"
+        digest: "sha256:17531bfca897698b1e155eb0b7b61dafd4ac02c302bf4694db1ee1a7871d7a64"
+      "760795367":
+        name: "installers-update-manifest.json.sig"
+        url_suffix: "installers-update-manifest.json.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:bf8b0ff38932bf40b36a24b57a2335980adc0574b5a5df2329f63ebbec1ebff8"
+      "760797458":
+        name: "dodaios-src.tar.gz"
+        url_suffix: "dodaios-src.tar.gz"
+        size: 103625790
+        media_type: "application/x-gtar"
+        digest: "sha256:9d16d5e5ee891ea738423d82c2bc1eb734e8758bab43e603116cb5a9b39c7aa2"
+      "760797460":
+        name: "source-SHA256SUMS.txt"
+        url_suffix: "source-SHA256SUMS.txt"
+        size: 178
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:5817396c3245f084b5d03b4eba1e4a7c5eca86d9150ac6954b6473cb84ac0e49"
+      "760797462":
+        name: "personal-jarvis-src.tar.gz"
+        url_suffix: "personal-jarvis-src.tar.gz"
+        size: 103634738
+        media_type: "application/x-gtar"
+        digest: "sha256:d14ebd3e7e493887972f4aa665dbf1b89908fb332f4623191d3338e49f1c3a34"
