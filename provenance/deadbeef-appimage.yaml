@@ -21,18 +21,18 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "38a2ea4880113910567c9f0f871bdaaaceff923a"
+        commit: "3b06bcc2a775774fcaf3573b77ee98bb1215aeac"
         path: "programs/x86_64/deadbeef"
         blob: "df12cd671f06e537f067bea80fb6c2bf3d2a5860"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-17T18:35:25Z"
+        evaluated_at: "2026-11-17T20:57:01Z"
         recipe_sha256: "7a335602d059ae2c0948c25407e49c3942efda7780f7ea03d675b92059312d0e"
-        rules: "38a2ea4880113910567c9f0f871bdaaaceff923a"
+        rules: "3b06bcc2a775774fcaf3573b77ee98bb1215aeac"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "38a2ea4880113910567c9f0f871bdaaaceff923a"
+            commit: "3b06bcc2a775774fcaf3573b77ee98bb1215aeac"
             path: "modules/"
             sha256: "a5916b8e1c74a1817f99472a2e9ab749daeb82b7d419aa1ebe6c023a636fbd97"
   "deadbeef-nightly":
@@ -54,6 +54,6 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "38a2ea4880113910567c9f0f871bdaaaceff923a"
+        commit: "3b06bcc2a775774fcaf3573b77ee98bb1215aeac"
         path: "programs/x86_64/deadbeef-nightly"
         blob: "25e6e350cbd657885a2ef5e49dfa9ac3cfd49927"
