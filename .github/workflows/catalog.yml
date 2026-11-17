@@ -8,8 +8,36 @@ concurrency:
   group: yaml-release-catalog
   cancel-in-progress: false
 jobs:
+  # A scheduled run collects only when the collection inputs equal the reviewed
+  # CATALOG_SCHEDULE_REVISION; otherwise this job fails, so the run is red, not
+  # skipped. The gate code is the pinned commit's, so reviewed code judges the
+  # new commit. Dispatched runs are not gated.
+  gate:
+    if: github.repository == 'mareklangiewicz/AM' && github.ref == 'refs/heads/main-marek' && vars.CATALOG_V3_ENABLED == 'true' && github.event_name == 'schedule'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ vars.CATALOG_SCHEDULE_REVISION }}
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - run: python3 -m pip install 'PyYAML==6.0.3'
+      - name: Collection inputs equal the reviewed pin
+        env:
+          PIN: ${{ vars.CATALOG_SCHEDULE_REVISION }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 https://github.com/mareklangiewicz/AM.git "$GITHUB_SHA"
+          python3 -B tools/catalog-collector/host_catalog.py schedule-gate --pin "$PIN" --head "$GITHUB_SHA"
   acquire:
-    if: github.repository == 'mareklangiewicz/AM' && github.ref == 'refs/heads/main-marek' && vars.CATALOG_V3_ENABLED == 'true' && (github.event_name != 'schedule' || vars.CATALOG_SCHEDULE_REVISION == github.sha)
+    needs: gate
+    if: ${{ !cancelled() && needs.gate.result != 'failure' && github.repository == 'mareklangiewicz/AM' && github.ref == 'refs/heads/main-marek' && vars.CATALOG_V3_ENABLED == 'true' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     permissions:

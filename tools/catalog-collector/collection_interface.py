@@ -13,19 +13,34 @@ from bounded import unique_object
 from provenance import Evaluator
 from incremental import Snapshot,Records,Candidate
 
+INPUT_SCOPES={
+    'source':['tools/catalog-collector','tools/catalog-contract','modules/catalog-contract-reader.am','modules/catalog-contract-parser.am','modules/catalog-contract-tables.am'],
+    'policy':['tools/catalog-collector/collection-recipes.txt','tools/catalog-collector/collection-apps.json','tools/catalog-collector/source-names.json','tools/catalog-collector/recipe-url-policies.json'],
+    'recipes':['programs'],
+    'rules':['tools/catalog-collector/provenance.py','tools/recipe-reconstruction'],
+    'schemas':['docs/catalog-format-v3.md','schemas/catalog','tools/catalog-contract','modules/catalog-contract-parser.am','modules/catalog-contract-tables.am'],
+}
+# What runs collection in CI, on top of what collection reads.
+COLLECTION_RUNNERS=['.github/workflows/catalog.yml','.github/actions/catalog-collect']
+
+
+def schedule_gate_paths():
+    return sorted({path for paths in INPUT_SCOPES.values() for path in paths}|set(COLLECTION_RUNNERS))
+
+
+def schedule_gate(repo, pin, head):
+    """Collection inputs that differ between the reviewed pin and head; empty means a scheduled run may collect."""
+    out=subprocess.check_output(['git','-C',str(repo),'diff','--name-only',contracts.pin(pin),contracts.pin(head),
+                                 '--',*schedule_gate_paths()],text=True)
+    return out.splitlines()
+
+
 def verify_checkout_inputs(inputs, registry):
     """Pins describe actual maintained bytes, including independently pinned inputs."""
     from publication import git
     if Path(registry).read_bytes()!=git(host.ROOT,'show',inputs['policy']+':tools/catalog-collector/source-names.json'):
         raise ValueError('source registry differs from policy pin')
-    scopes={
-        'source':['tools/catalog-collector','tools/catalog-contract','modules/catalog-contract-reader.am','modules/catalog-contract-parser.am','modules/catalog-contract-tables.am'],
-        'policy':['tools/catalog-collector/collection-recipes.txt','tools/catalog-collector/collection-apps.json','tools/catalog-collector/source-names.json','tools/catalog-collector/recipe-url-policies.json'],
-        'recipes':['programs'],
-        'rules':['tools/catalog-collector/provenance.py','tools/recipe-reconstruction'],
-        'schemas':['docs/catalog-format-v3.md','schemas/catalog','tools/catalog-contract','modules/catalog-contract-parser.am','modules/catalog-contract-tables.am'],
-    }
-    for key,paths in scopes.items():
+    for key,paths in INPUT_SCOPES.items():
         changed=subprocess.run(['git','-C',str(host.ROOT),'diff','--quiet',inputs[key],'--',*paths]).returncode
         untracked=subprocess.check_output(['git','-C',str(host.ROOT),'ls-files','--others','--exclude-standard','--',*paths])
         if changed or untracked: raise ValueError('checkout differs from '+key+' input pin')
@@ -190,11 +205,22 @@ def main(argv=None):
     schema.add_argument('--parent',type=contracts.pin,required=True)
     for key in ('source','policy','recipes','rules','schemas'):
         v.add_argument('--expected-'+key,type=contracts.pin)
+    gate=sub.add_parser('schedule-gate',help='Fail unless collection inputs at --head equal the reviewed --pin; no network')
+    gate.add_argument('--repo',type=Path,default=host.ROOT)
+    gate.add_argument('--pin',type=contracts.pin,required=True)
+    gate.add_argument('--head',type=contracts.pin,required=True)
     from pipeline_publication import add_arguments
     add_arguments(sub)
     args=parser.parse_args(argv)
     if args.operation=='schema-revision':
         print(contracts.schema_revision(args.repo,args.parent));return
+    if args.operation=='schedule-gate':
+        changed=schedule_gate(args.repo,args.pin,args.head)
+        if changed:
+            raise SystemExit('collection inputs changed since the reviewed pin '+args.pin+'; review, then set '
+                             'CATALOG_SCHEDULE_REVISION to '+args.head+':\n'+'\n'.join(changed[:50])
+                             +('\n... and '+str(len(changed)-50)+' more' if len(changed)>50 else ''))
+        print('collection inputs at '+args.head+' equal the reviewed pin '+args.pin);return
     if args.operation=='publish':
         from pipeline_publication import run
         result=run(args)

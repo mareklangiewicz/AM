@@ -297,11 +297,11 @@ def collect(retained, evidence=None, *, batch_size=None, metrics=None, acquisiti
 
 def main():
     import sys
-    if len(sys.argv)>1 and sys.argv[1] in ('collect','validate','publish','schema-revision'):
+    if len(sys.argv)>1 and sys.argv[1] in ('collect','validate','publish','schema-revision','schedule-gate'):
         from collection_interface import main as command
         command(sys.argv[1:])
     else:
-        raise SystemExit('Use collect, validate, publish or schema-revision; active format-2 production is retired.')
+        raise SystemExit('Use collect, validate, publish, schema-revision or schedule-gate; active format-2 production is retired.')
 
 
 if __name__=='__main__': main()

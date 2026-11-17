@@ -69,9 +69,14 @@ no active v2 write. Artifacts containing format-2 paths are rejected.
 
 The prepared workflow separates read-only acquisition from its write-enabled
 publisher. `CATALOG_V3_ENABLED=true` enables only v3/status production; false
-skips collection rather than falling back to v2. Scheduled collection additionally
-requires `CATALOG_SCHEDULE_REVISION` to equal the exact workflow source commit,
-so manual verification can precede resuming the hourly schedule. Status retains 64 summaries,
+skips collection rather than falling back to v2. A scheduled run first runs the
+`gate` job: `host_catalog.py schedule-gate`, taken from the commit
+`CATALOG_SCHEDULE_REVISION` names, compares that commit with the pushed one over
+the collection inputs (`collection_interface.INPUT_SCOPES` plus the workflow and
+the collect action). Equal inputs collect; any difference fails the run, red, with
+the changed paths listed, until the change is reviewed and the variable set to the
+new commit. A documentation-only push needs no repin. Dispatched runs are not
+gated. Status retains 64 summaries,
 available detail for eight reports and 90 daily aggregates. Failed reporting may
 leave an older timestamped last report. The workflow does not guarantee schedules,
 refresh coverage or remote history capacity.
