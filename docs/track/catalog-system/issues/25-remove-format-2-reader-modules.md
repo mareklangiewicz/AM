@@ -138,3 +138,12 @@ November 17, 2026: step B done.
 - `qualify_scheduling.py` deleted: a one-off ticket-14 script that drove the
   format-2 path.
 
+November 17, 2026: step B follow-up. The first "Long tests" run on GitHub
+(44071909464, ticket 34) failed the fast tier with three errors that the
+targeted local runs had missed: `test_contracts` mocked `host.collect` with
+the old `(tree, report)` shape, and `test_snapshot_canonicality` borrowed
+format-2 fixtures from the rewritten batch helper (it now builds its own until
+step D). Fixed in `585e01a69`; whole-tree tier and Debian and Fedora e2e passed
+in that run. Step B sits on `ci/format-3-collection`; `main-marek` has not
+moved. Pushing it needs a repin and one observed (dispatched) collection run
+before steps C and D.

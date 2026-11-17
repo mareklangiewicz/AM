@@ -175,7 +175,7 @@ approval boundaries.
 | [22 open](issues/22-keep-collection-running-across-doc-pushes.md) | none | Schedule pin pauses collection on any push. |
 | [23 resolved](issues/23-repair-offline-e2e-after-v3-cutover.md) | none | Offline e2e suite [ported to the format-3 client](issues/23-repair-offline-e2e-after-v3-cutover.md#answer--november-16-2026); debian, fedora and termux pass on the merged tree. |
 | [24 resolved](issues/24-simplify-and-unify-catalog-process.md) | none | Simplification [agreed](issues/24-simplify-and-unify-catalog-process.md#answer--november-16-2026): forms stay and the recipe declaration is preferred ([ADR 0006](../../adr/0006-recipe-declaration-is-the-preferred-form.md)); tickets 25 to 31 carry the changes. |
-| [25 open](issues/25-remove-format-2-reader-modules.md) | none | Retire format 2 from the collector (scope approved November 16); four steps planned on the ticket, the two reader modules go last. |
+| [25 open](issues/25-remove-format-2-reader-modules.md) | none | Retire format 2 from the collector: steps A and B done (B on `ci/format-3-collection`, not yet on `main-marek`); C and D open, the two reader modules go last. |
 | [26 resolved](issues/26-drop-host-check-from-merge-tool.md) | none | Merge tool [no longer reads the host's installed apps](issues/26-drop-host-check-from-merge-tool.md#answer--november-16-2026). |
 | [27 resolved](issues/27-shrink-committed-merge-receipt.md) | 26 | Committed receipt [holds counts, file hashes and `attention`](issues/27-shrink-committed-merge-receipt.md#answer--november-16-2026); the per-recipe listing stays in the Git directory. |
 | [28 open](issues/28-unpin-tests-from-live-recipes.md) | none | Tests use frozen fixtures; tree invariants move to the gate. Count pins gone and whole-tree checks moved to `tree_*.py`; named live recipes remain. |
@@ -184,6 +184,9 @@ approval boundaries.
 | [31 resolved](issues/31-count-recipes-per-upstream-template.md) | none | [Per-template counts](template-instances-31.md): AppImage-in-archive has 6,009 non-declaration instances, unreviewed AppImage `bb53f3180` 1,233, Archive 230; multiple-choice templates match nothing. |
 | [32 resolved](issues/32-declarations-drop-no-sandbox-strip.md) | none | [Layouts carry settings](issues/32-declarations-drop-no-sandbox-strip.md#answer--november-17-2026): 3.6 sets `DESKTOP_STRIP_NO_SANDBOX=true`; 579 declarations re-converted, one added line each. |
 | [33 resolved](issues/33-convert-appimage-bb53f3180-instances.md) | none | AppImage `bb53f3180` reviewed; [1,171 long recipes became declarations](issues/33-convert-appimage-bb53f3180-instances.md#answer--november-17-2026) with identical compiled selection; 3 refuse. |
+| [34 resolved](issues/34-run-long-test-tiers-on-github.md) | none | ["Long tests" workflow](issues/34-run-long-test-tiers-on-github.md#answer--november-17-2026): whole-tree tier and Debian/Fedora e2e on `ci/**` pushes; first run caught step B regressions. |
+| [35 open](issues/35-reconvert-recipes-for-a-reviewed-layout.md) | none | One command re-converts a reviewed layout's recipes and proves unchanged selection; replaces the scratch scripts of tickets 32 and 33. |
+| [36 open](issues/36-check-layout-differences-are-mapped.md) | none | Test that every line a layout differs by is mapped to a setting; ticket 32's bug as a guardrail. |
 
 Latest implementation evidence, November 8: Chromium desktop/narrow and Firefox
 checks pass; physical-device/comprehension limits remain with 13. Independent

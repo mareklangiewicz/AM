@@ -36,3 +36,13 @@ skipped or otherwise, in between, so none was lost that time.
 ## Comments
 
 November 16, 2026: opened from the ticket 16 review.
+
+November 17, 2026: the hourly cron fires far less often than hourly. Scheduled
+runs on November 15 to 17 started at 22:51Z, 02:45Z, 11:26Z, 22:07Z and
+04:30Z (`gh run list --workflow catalog.yml`), so "wait for one scheduled
+run" can cost hours. A dispatched run (`gh workflow run catalog.yml --ref
+main-marek`) runs the same acquire and publish jobs; only the schedule's pin
+check is skipped. It served as the observed run for ticket 33 (run
+44069990694, acquire and publish green). Proposed convention: a dispatched run
+on the pinned commit counts as the observed run. Two manual repins today
+(`34290b8c4`, `082502f64`); the step B push will need a third.

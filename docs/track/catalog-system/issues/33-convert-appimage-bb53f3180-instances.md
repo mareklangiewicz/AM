@@ -80,3 +80,9 @@ alone, `convert.convert(original, recipe, 'declaration', identities, [layout])`;
 then `files=merge.derive(ROOT,'HEAD',rows)`,
 `files[POLICY]=merge.stage(ROOT,'HEAD',rows,files)`, write recipes and files.
 
+November 17, 2026: pushed as `082502f64` with Marek's approval;
+`CATALOG_SCHEDULE_REVISION` repinned (09:53Z). Fast tests 44059702917 passed.
+No scheduled run came within an hour, so a dispatched catalog run served as the
+observed run: 44069990694, acquire and publish both green. Locally before the
+push: tool suites, fast tier (221), whole-tree tier (5), Debian and Fedora e2e
+(21 each) all passed.

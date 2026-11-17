@@ -62,3 +62,9 @@ November 16, 2026: the whole-tree checks moved out of the unit suite into
 recipes (`20x`, `nvim`, `obsidian`, `0xfx`, `emmylua` and the enrolled rows in
 `test_recipe_declarations.py`), so an upstream change to one of those can
 still fail a `test_*.py`; and nothing was moved into `merge.py gate`.
+
+November 17, 2026: another face of the live-recipe coupling. With 579
+recipe edits uncommitted, 17 fast-tier tests errored with "recipe changed since
+discovery" (`catalog_sources.py` compares the working-tree file with the
+same path at a commit). They pass once the change is committed. Until this
+ticket lands, run either tier on a committed tree; CI always does.
