@@ -3,1656 +3,1114 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1212552738
 repository: "Cloudgeni-ai/opengeni"
-collected_at: "2026-11-14T03:31:57Z"
+collected_at: "2026-11-17T21:43:58Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: false
-observed_at: "2026-11-14T03:31:57Z"
+observed_at: "2026-11-17T21:43:58Z"
 releases:
-  "443110518":
-    tag: "agent-v0.1.160"
-    title: "opengeni-agent v0.1.160"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/agent-v0.1.160"
-    created_at: "2026-11-12T13:52:10Z"
-    published_at: "2026-11-12T15:08:32Z"
-    updated_at: "2026-11-12T15:08:32Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/agent-v0.1.160"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/agent-v0.1.160"
-    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/agent-v0.1.160/"
+  "445445463":
+    tag: "opengeni-artifact-runtime-1d7e00791482f333fafde9c4a62bc08b67de618a"
+    title: "Opengeni native artifact runtime 1d7e00791482f333fafde9c4a62bc08b67de618a"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-1d7e00791482f333fafde9c4a62bc08b67de618a"
+    created_at: "2026-11-14T16:24:14Z"
+    published_at: "2026-11-14T16:53:26Z"
+    updated_at: "2026-11-14T16:53:26Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-1d7e00791482f333fafde9c4a62bc08b67de618a"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-1d7e00791482f333fafde9c4a62bc08b67de618a"
+    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-1d7e00791482f333fafde9c4a62bc08b67de618a/"
     assets:
-      "739924032":
-        name: "opengeni-computer-native-x86_64-pc-windows-msvc.exe.sha256"
-        url_suffix: "opengeni-computer-native-x86_64-pc-windows-msvc.exe.sha256"
-        size: 118
-        digest: "sha256:260683e265949fa1f8413118cb75da59dbd638791490a147c45d2a5c57f68442"
-      "739924035":
-        name: "opengeni-computer-native-x86_64-unknown-linux-musl.sha256"
-        url_suffix: "opengeni-computer-native-x86_64-unknown-linux-musl.sha256"
-        size: 117
-        digest: "sha256:eead014151dcb073e15da5c0528e0c31b62d559d47e89fe4466d2f2b35d66fe9"
-      "739924038":
-        name: "opengeni-computer-native-x86_64-pc-windows-msvc.exe.minisig"
-        url_suffix: "opengeni-computer-native-x86_64-pc-windows-msvc.exe.minisig"
-        size: 346
-        digest: "sha256:b67512b6d7c90413d70c6d5e1d486ae600e32f1531badf7c75c75d9708c21e99"
-      "739924039":
-        name: "opengeni-computer-native-x86_64-unknown-linux-musl.minisig"
-        url_suffix: "opengeni-computer-native-x86_64-unknown-linux-musl.minisig"
-        size: 345
-        digest: "sha256:f40be40d0f6975dcc80839093cd1862e00a261ca792de7f07e20b8f994cd78a6"
-      "739924040":
-        name: "opengeni-computer-native-aarch64-pc-windows-msvc.exe.minisig"
-        url_suffix: "opengeni-computer-native-aarch64-pc-windows-msvc.exe.minisig"
-        size: 347
-        digest: "sha256:4307c4e3be6585308d4a805744b1e99f3719de284c31fceea3b93901d619ff43"
-      "739924041":
-        name: "opengeni-browserd-universal-apple-darwin.sha256"
-        url_suffix: "opengeni-browserd-universal-apple-darwin.sha256"
-        size: 107
-        digest: "sha256:634901e42c6e4d702cc2d42c18558cac2546e2d7fff4b3a269ee1603201d61e2"
-      "739924042":
-        name: "opengeni-computer-native-x86_64-unknown-linux-musl"
-        url_suffix: "opengeni-computer-native-x86_64-unknown-linux-musl"
-        size: 6871680
-        digest: "sha256:370e6aff6d6c819c04c2c284886b347bbeb3d4578410caf9c2f7e5d9c8e03ae3"
-      "739924043":
-        name: "opengeni-computer-native-aarch64-pc-windows-msvc.exe.sha256"
-        url_suffix: "opengeni-computer-native-aarch64-pc-windows-msvc.exe.sha256"
-        size: 119
-        digest: "sha256:4f1b869ace031dd76b258a0d6aa74582a5e5644a8e487accb09734304583222a"
-      "739924044":
-        name: "opengeni-browserd-x86_64-unknown-linux-musl.sha256"
-        url_suffix: "opengeni-browserd-x86_64-unknown-linux-musl.sha256"
-        size: 110
-        digest: "sha256:6554b69e0c13dae74e7a5a59930c5f7f896ac5f754d2df47d6fc22599d4dffa3"
-      "739924045":
-        name: "opengeni-computer-native-universal-apple-darwin.minisig"
-        url_suffix: "opengeni-computer-native-universal-apple-darwin.minisig"
-        size: 342
-        digest: "sha256:532e4e4ab930ae4808abdbdd9ae1ef27c2e3b1a13bf5133892c1c9cc23f0575a"
-      "739924048":
-        name: "opengeni-browserd-x86_64-pc-windows-msvc.exe.minisig"
-        url_suffix: "opengeni-browserd-x86_64-pc-windows-msvc.exe.minisig"
-        size: 339
-        digest: "sha256:ea505a033cd899795a288ceee8571da11cd610297882ca48a8ba6e2e79468791"
-      "739924049":
-        name: "opengeni-browserd-x86_64-unknown-linux-musl"
-        url_suffix: "opengeni-browserd-x86_64-unknown-linux-musl"
-        size: 112269488
-        digest: "sha256:122457ec547f264ecb6a5f86ba751721fcaaca971e024a5605b170d6f4d55b95"
-      "739924050":
-        name: "opengeni-computer-native-x86_64-pc-windows-msvc.exe"
-        url_suffix: "opengeni-computer-native-x86_64-pc-windows-msvc.exe"
-        size: 990720
-        media_type: "application/x-msdos-program"
-        digest: "sha256:bdbd65475dec544e2ac58d84df556f5b8d9e010f65ce0653516d36473ab4be1d"
-      "739924051":
-        name: "opengeni-computer-native-universal-apple-darwin"
-        url_suffix: "opengeni-computer-native-universal-apple-darwin"
-        size: 4106240
-        digest: "sha256:f6e0abdd73395fded4032e7081eec26d3efffc592feca48762a1417d4cfdb2f4"
-      "739924052":
-        name: "opengeni-computer-native-aarch64-unknown-linux-musl.sha256"
-        url_suffix: "opengeni-computer-native-aarch64-unknown-linux-musl.sha256"
-        size: 118
-        digest: "sha256:4c0aec24984ea9b3fb03c6b022beab83011d4fca361f1a7bfb6a72bef5082c42"
-      "739924053":
-        name: "opengeni-browserd-x86_64-pc-windows-msvc.exe.sha256"
-        url_suffix: "opengeni-browserd-x86_64-pc-windows-msvc.exe.sha256"
-        size: 111
-        digest: "sha256:ffe85eb353a305a4d8c18e9fb801485bb54714064365dbecbb0178892667ae5f"
-      "739924054":
-        name: "opengeni-computer-native-universal-apple-darwin.sha256"
-        url_suffix: "opengeni-computer-native-universal-apple-darwin.sha256"
-        size: 114
-        digest: "sha256:cd8470e28efe6116ad82e3e009e813c01fd1b027f664215298406308c9438e33"
-      "739924055":
-        name: "opengeni-browserd-universal-apple-darwin.minisig"
-        url_suffix: "opengeni-browserd-universal-apple-darwin.minisig"
-        size: 335
-        digest: "sha256:35f1714b8a26b04bee2f9f32ca9956dfc68350e1cf222541a8bab8cc17c0039a"
-      "739924056":
-        name: "opengeni-browserd-x86_64-unknown-linux-musl.minisig"
-        url_suffix: "opengeni-browserd-x86_64-unknown-linux-musl.minisig"
-        size: 338
-        digest: "sha256:8bc559723d083b0efe7e8830e9daac86e03e00fe48bd19e2de95378779b51b81"
-      "739924057":
-        name: "opengeni-agent-x86_64-pc-windows-msvc.exe.sha256"
-        url_suffix: "opengeni-agent-x86_64-pc-windows-msvc.exe.sha256"
-        size: 108
-        digest: "sha256:640a20d726be7404e621b2c31dbd25ca2fc246e20b0dba0cd17171e2f0bc2976"
-      "739924058":
-        name: "opengeni-computer-native-aarch64-unknown-linux-musl.minisig"
-        url_suffix: "opengeni-computer-native-aarch64-unknown-linux-musl.minisig"
-        size: 346
-        digest: "sha256:7a9f3cd239f302025d42eb2acf95c7f6af54c0b9e227fb5666004790d61a02b7"
-      "739924059":
-        name: "opengeni-computer-native-aarch64-unknown-linux-musl"
-        url_suffix: "opengeni-computer-native-aarch64-unknown-linux-musl"
-        size: 6230896
-        digest: "sha256:d3aca29269cbee2bf125af4335b8be10fdad34adef7d18f712e8f163e2796271"
-      "739924063":
-        name: "opengeni-browserd-x86_64-pc-windows-msvc.exe"
-        url_suffix: "opengeni-browserd-x86_64-pc-windows-msvc.exe"
-        size: 118393856
-        media_type: "application/x-msdos-program"
-        digest: "sha256:24c45e26175e12724becb17ccd8f5d39467646221fda2f427139e920f1d3f818"
-      "739924064":
-        name: "opengeni-agent-aarch64-pc-windows-msvc.exe.sha256"
-        url_suffix: "opengeni-agent-aarch64-pc-windows-msvc.exe.sha256"
-        size: 109
-        digest: "sha256:90bf73903521cb105d9d578dbc6eecefebbcfc08d9e53b2ce25fbc3dfb852e29"
-      "739924065":
-        name: "opengeni-agent-universal-apple-darwin.minisig"
-        url_suffix: "opengeni-agent-universal-apple-darwin.minisig"
-        size: 332
-        digest: "sha256:5ce06b7f18792035faa997be2a3c513dd6816ef9a35f73a3c1585eaf4a2bc787"
-      "739924066":
-        name: "opengeni-agent-aarch64-unknown-linux-musl.minisig"
-        url_suffix: "opengeni-agent-aarch64-unknown-linux-musl.minisig"
-        size: 336
-        digest: "sha256:b2f585d0aca07fa017c7478bdc529352aab12a303185705f72a7ba8bb845735e"
-      "739924067":
-        name: "opengeni-computer-native-aarch64-pc-windows-msvc.exe"
-        url_suffix: "opengeni-computer-native-aarch64-pc-windows-msvc.exe"
-        size: 901632
-        media_type: "application/x-msdos-program"
-        digest: "sha256:e4964ed5c7add23e67ee47da91c8d8a9e22ade2779b9308b849530f5355c4273"
-      "739924068":
-        name: "opengeni-browserd-universal-apple-darwin"
-        url_suffix: "opengeni-browserd-universal-apple-darwin"
-        size: 193130208
-        digest: "sha256:f1e0ee4a7122acd4c3ef24f9ef51a0bea811539fd009ff4756475c4e2144ab78"
-      "739924070":
-        name: "opengeni-agent-aarch64-unknown-linux-musl.sha256"
-        url_suffix: "opengeni-agent-aarch64-unknown-linux-musl.sha256"
-        size: 108
-        digest: "sha256:179e918bfe554b410739a7b3c1b7af07260a041770a344694a6932aa2e277d05"
-      "739924071":
-        name: "opengeni-agent-x86_64-unknown-linux-musl.minisig"
-        url_suffix: "opengeni-agent-x86_64-unknown-linux-musl.minisig"
-        size: 335
-        digest: "sha256:1b5e11f21170fff519cf7b8d2cc19c7fef45e85b9729fa152b87370f517505a7"
-      "739924072":
-        name: "opengeni-browserd-aarch64-unknown-linux-musl.sha256"
-        url_suffix: "opengeni-browserd-aarch64-unknown-linux-musl.sha256"
-        size: 111
-        digest: "sha256:d70cb996052ab7f6c4ee7c7688a9f47a26a65706b690481239397dd5d5eca5cf"
-      "739924073":
-        name: "opengeni-agent-aarch64-pc-windows-msvc.exe.minisig"
-        url_suffix: "opengeni-agent-aarch64-pc-windows-msvc.exe.minisig"
-        size: 337
-        digest: "sha256:8377656389594839cb938f9c7c298ecc07738cb6030da94075785200e2505ebd"
-      "739924074":
-        name: "opengeni-browserd-aarch64-unknown-linux-musl.minisig"
-        url_suffix: "opengeni-browserd-aarch64-unknown-linux-musl.minisig"
-        size: 339
-        digest: "sha256:6d7d6144ef1629a6f58bce9cfe96853e2957087ffb680060bc6cce72a05d293b"
-      "739924075":
-        name: "OpenGeni-Agent.app.zip.sha256"
-        url_suffix: "OpenGeni-Agent.app.zip.sha256"
-        size: 89
-        digest: "sha256:8863be7df1f9510db01e426d9706cb26795ef4e7b3d3c5bf285c6456333b405f"
-      "739924076":
-        name: "opengeni-agent-universal-apple-darwin"
-        url_suffix: "opengeni-agent-universal-apple-darwin"
-        size: 376678736
-        digest: "sha256:fd022da77ea883765e61355ddfc2b39bf0f3c215bae485fb4f01474b36d7eea9"
-      "739924077":
-        name: "opengeni-agent-x86_64-unknown-linux-musl.sha256"
-        url_suffix: "opengeni-agent-x86_64-unknown-linux-musl.sha256"
-        size: 107
-        digest: "sha256:ff82ac47027915bdf0b5955a8a4707c804ccae83fbd55e45e5d0d848003f027c"
-      "739924078":
-        name: "SHA256SUMS"
-        url_suffix: "SHA256SUMS"
-        size: 1650
-        digest: "sha256:22073649317abb7e568295d325608710c707b24482131aa08985903a09125ae4"
-      "739924079":
-        name: "opengeni-agent-aarch64-pc-windows-msvc.exe"
-        url_suffix: "opengeni-agent-aarch64-pc-windows-msvc.exe"
-        size: 15690752
-        media_type: "application/x-msdos-program"
-        digest: "sha256:d24f62a7f92f1d9f241d9d96e17228b81719123c8160fd0976923c6605734be3"
-      "739924080":
-        name: "opengeni-browserd-aarch64-unknown-linux-musl"
-        url_suffix: "opengeni-browserd-aarch64-unknown-linux-musl"
-        size: 112380920
-        digest: "sha256:6d3885f5678b1762c70c4ab0cbce7e802fb439ada326c255858200de1f30078f"
-      "739924081":
-        name: "opengeni-agent-minisign.pub"
-        url_suffix: "opengeni-agent-minisign.pub"
-        size: 114
-        media_type: "application/x-mspublisher"
-        digest: "sha256:7b8055ce212f8a45e1c19d6c13c08ac31ecf932f8b7ef860951066b2ec91bac3"
-      "739924082":
-        name: "opengeni-agent-x86_64-pc-windows-msvc.exe.minisig"
-        url_suffix: "opengeni-agent-x86_64-pc-windows-msvc.exe.minisig"
-        size: 336
-        digest: "sha256:d8703e2a07bc052d713901022d747832f466e11eb7077e4495cce67fcc4c25fd"
-      "739924083":
-        name: "install.ps1"
-        url_suffix: "install.ps1"
-        size: 33652
-        digest: "sha256:23322a1df1011b7fd26648d0a09ce48a9f2019fe24f1a8d5933a128f64021d99"
-      "739924085":
-        name: "SHA256SUMS.minisig"
-        url_suffix: "SHA256SUMS.minisig"
-        size: 310
-        digest: "sha256:ef438b936e73f4172ee899c9ebd7af31d61deec4a76ec9a159bd35bc79f84e56"
-      "739924086":
-        name: "opengeni-agent-universal-apple-darwin.sha256"
-        url_suffix: "opengeni-agent-universal-apple-darwin.sha256"
-        size: 104
-        digest: "sha256:7407c32949b690f446097fa110c1d6d290ede7631d597c137ed923f58cd9d17c"
-      "739924088":
-        name: "opengeni-agent-x86_64-unknown-linux-musl"
-        url_suffix: "opengeni-agent-x86_64-unknown-linux-musl"
-        size: 247335328
-        digest: "sha256:bbcbbd14ded3b08f9057eb3fb81a78d2aea5f7aa0f56f5123fe0eacf913e8334"
-      "739924090":
-        name: "opengeni-agent-x86_64-pc-windows-msvc.exe"
-        url_suffix: "opengeni-agent-x86_64-pc-windows-msvc.exe"
-        size: 206826496
-        media_type: "application/x-msdos-program"
-        digest: "sha256:98262774977e95fe35c750544c860bdd69fe10867c91fd7d8e7cd86f77d812cb"
-      "739924092":
-        name: "OpenGeni-Agent.icns"
-        url_suffix: "OpenGeni-Agent.icns"
-        size: 143600
-        digest: "sha256:1741a452fb5486388e114fcf7bd29e113e80d00f41423f099ad38771691c4bb8"
-      "739924093":
-        name: "manifest.json"
-        url_suffix: "manifest.json"
-        size: 2581
-        media_type: "application/json"
-        digest: "sha256:882d0175ae34a5a6097e9de3c2a355ad8bb4c04654a29da550f0bba95350c637"
-      "739924094":
-        name: "manifest.json.minisig"
-        url_suffix: "manifest.json.minisig"
-        size: 313
-        digest: "sha256:9a1ff576b3f3766b2bd2fd4b4c0c69babd21e030b6eb47345c7719e56385ed07"
-      "739924095":
-        name: "opengeni-agent-aarch64-unknown-linux-musl"
-        url_suffix: "opengeni-agent-aarch64-unknown-linux-musl"
-        size: 237577272
-        digest: "sha256:5f064484dea4c5b01187263527d47ad133c7fec06a20507fc47bb3e76143692d"
-      "739924097":
-        name: "install.sh"
-        url_suffix: "install.sh"
-        size: 57522
-        media_type: "application/x-sh"
-        digest: "sha256:244ee21d0e78c722dede9e4a4e32ca69803f6b55864b54ca3ce58336a8f8eb08"
-      "739924098":
-        name: "uninstall.sh"
-        url_suffix: "uninstall.sh"
-        size: 3672
-        media_type: "application/x-sh"
-        digest: "sha256:8a2f404d1800482602cfdd4d9dabb5ee8589fcb8e17705f223442d9d2e5c1ccb"
-      "739924100":
-        name: "OpenGeni-Agent.app.zip.minisig"
-        url_suffix: "OpenGeni-Agent.app.zip.minisig"
-        size: 317
-        digest: "sha256:1054015db8cebcf90f410514e5a7e5648c359035c1abdf02257f964268809c53"
-      "739924101":
-        name: "OpenGeni-Agent.app.zip"
-        url_suffix: "OpenGeni-Agent.app.zip"
-        size: 241646084
-        media_type: "zip"
-        digest: "sha256:f7d4283b88b7be574223eb7b5f8839199070a39384a8f0b4bb490ebfcacffc62"
-  "443127944":
-    tag: "opengeni-release-head-8f9b0210becbfdbc017000c21ddbd6f3c96ff858"
-    title: "Retained OpenGeni release head 8f9b0210becbfdbc017000c21ddbd6f3c96ff858"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-8f9b0210becbfdbc017000c21ddbd6f3c96ff858"
-    created_at: "2026-11-12T15:19:44Z"
-    published_at: "2026-11-12T15:21:16Z"
-    updated_at: "2026-11-12T15:21:16Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-8f9b0210becbfdbc017000c21ddbd6f3c96ff858"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-8f9b0210becbfdbc017000c21ddbd6f3c96ff858"
-    assets: {}
-  "443128011":
-    tag: "opengeni-release-head-bd21eadb36481a470163f36b790057756aca3285"
-    title: "Retained OpenGeni release head bd21eadb36481a470163f36b790057756aca3285"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-bd21eadb36481a470163f36b790057756aca3285"
-    created_at: "2026-11-12T13:52:10Z"
-    published_at: "2026-11-12T15:21:19Z"
-    updated_at: "2026-11-12T15:21:19Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-bd21eadb36481a470163f36b790057756aca3285"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-bd21eadb36481a470163f36b790057756aca3285"
-    assets: {}
-  "443323961":
-    tag: "opengeni-artifact-runtime-73c3e82d85a05475aca0e782cf7ccedecfe67e97"
-    title: "Opengeni native artifact runtime 73c3e82d85a05475aca0e782cf7ccedecfe67e97"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-73c3e82d85a05475aca0e782cf7ccedecfe67e97"
-    created_at: "2026-11-12T17:10:08Z"
-    published_at: "2026-11-12T18:00:44Z"
-    updated_at: "2026-11-12T18:00:44Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-73c3e82d85a05475aca0e782cf7ccedecfe67e97"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-73c3e82d85a05475aca0e782cf7ccedecfe67e97"
-    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-73c3e82d85a05475aca0e782cf7ccedecfe67e97/"
-    assets:
-      "740511825":
+      "748138409":
         name: "artifact-runtime-provenance.json"
         url_suffix: "artifact-runtime-provenance.json"
         size: 3147
         media_type: "application/json"
-        digest: "sha256:5fcbd49524097c8fff07a46ea3c5d7e8345a563423a45ad474ef0b970c924b74"
-      "740511890":
-        name: "artifact-runtime-target-73c3e82d85a05475aca0e782cf7ccedecfe67e97-darwin-x64.zip"
-        url_suffix: "artifact-runtime-target-73c3e82d85a05475aca0e782cf7ccedecfe67e97-darwin-x64.zip"
+        digest: "sha256:b97c11a19f5980421c9178c0b7aaf0feb129d8d6f91ef3c2d1f8510dc5c7f7cb"
+      "748138438":
+        name: "artifact-runtime-target-1d7e00791482f333fafde9c4a62bc08b67de618a-darwin-x64.zip"
+        url_suffix: "artifact-runtime-target-1d7e00791482f333fafde9c4a62bc08b67de618a-darwin-x64.zip"
         size: 1488063
         media_type: "zip"
-        digest: "sha256:57405722a4b2053db19297ec0e55b2cc35663c383a5988a436c50251865faf92"
-      "740511934":
-        name: "artifact-runtime-target-73c3e82d85a05475aca0e782cf7ccedecfe67e97-darwin-arm64.zip"
-        url_suffix: "artifact-runtime-target-73c3e82d85a05475aca0e782cf7ccedecfe67e97-darwin-arm64.zip"
+        digest: "sha256:879ef6ee4e97f2bff4cdf8aeb8a28b92b9e7eb2add5f10dee4de18c87d1cbfa4"
+      "748138472":
+        name: "artifact-runtime-target-1d7e00791482f333fafde9c4a62bc08b67de618a-darwin-arm64.zip"
+        url_suffix: "artifact-runtime-target-1d7e00791482f333fafde9c4a62bc08b67de618a-darwin-arm64.zip"
         size: 1339190
         media_type: "zip"
-        digest: "sha256:54b61b1718cbf57c82f8d40ae5f2cc707bc3f5593b3615d8c7b04d9c56e2466b"
-      "740512002":
-        name: "artifact-runtime-target-73c3e82d85a05475aca0e782cf7ccedecfe67e97-linux-x64-gnu.zip"
-        url_suffix: "artifact-runtime-target-73c3e82d85a05475aca0e782cf7ccedecfe67e97-linux-x64-gnu.zip"
+        digest: "sha256:e83f6560b2cb08fef3a521a04e35a6acc08be89ac4a7167e172b91c583172ddf"
+      "748138507":
+        name: "artifact-runtime-target-1d7e00791482f333fafde9c4a62bc08b67de618a-linux-x64-gnu.zip"
+        url_suffix: "artifact-runtime-target-1d7e00791482f333fafde9c4a62bc08b67de618a-linux-x64-gnu.zip"
         size: 1549902
         media_type: "zip"
-        digest: "sha256:fc73421303fee32acc5ccf94155af285b6066d21c19bb6fac4ecff453640e21d"
-      "740512062":
-        name: "artifact-runtime-target-73c3e82d85a05475aca0e782cf7ccedecfe67e97-linux-arm64-gnu.zip"
-        url_suffix: "artifact-runtime-target-73c3e82d85a05475aca0e782cf7ccedecfe67e97-linux-arm64-gnu.zip"
+        digest: "sha256:545ba4a322d7e637667bb072f5c00f0634cedd86e940a8ff8d89d75ffb831687"
+      "748138532":
+        name: "artifact-runtime-target-1d7e00791482f333fafde9c4a62bc08b67de618a-linux-arm64-gnu.zip"
+        url_suffix: "artifact-runtime-target-1d7e00791482f333fafde9c4a62bc08b67de618a-linux-arm64-gnu.zip"
         size: 1464119
         media_type: "zip"
-        digest: "sha256:19c7e5237498ea9feaf6ce97270e6fb53c715af99207e427f6dabc2174a1d9c4"
-      "740512109":
-        name: "artifact-runtime-target-73c3e82d85a05475aca0e782cf7ccedecfe67e97-linux-x64-musl.zip"
-        url_suffix: "artifact-runtime-target-73c3e82d85a05475aca0e782cf7ccedecfe67e97-linux-x64-musl.zip"
+        digest: "sha256:c09e22ee46ec550432fdfcf3d540376edd671d6b50a68a72ac69345412fa98c5"
+      "748138577":
+        name: "artifact-runtime-target-1d7e00791482f333fafde9c4a62bc08b67de618a-linux-x64-musl.zip"
+        url_suffix: "artifact-runtime-target-1d7e00791482f333fafde9c4a62bc08b67de618a-linux-x64-musl.zip"
         size: 1561922
         media_type: "zip"
-        digest: "sha256:60c07235a2d016cb99062ac86a8c274c8ffaf1fd47571c45d83474ff2132d62a"
-      "740512189":
-        name: "artifact-runtime-target-73c3e82d85a05475aca0e782cf7ccedecfe67e97-linux-arm64-musl.zip"
-        url_suffix: "artifact-runtime-target-73c3e82d85a05475aca0e782cf7ccedecfe67e97-linux-arm64-musl.zip"
+        digest: "sha256:447620cbab6b913ce8d546cfea844f864791c3ffd31d6e893e33f9738597053b"
+      "748138622":
+        name: "artifact-runtime-target-1d7e00791482f333fafde9c4a62bc08b67de618a-linux-arm64-musl.zip"
+        url_suffix: "artifact-runtime-target-1d7e00791482f333fafde9c4a62bc08b67de618a-linux-arm64-musl.zip"
         size: 1461764
         media_type: "zip"
-        digest: "sha256:6ac7ae234365d6a6cbe96ab38b5a433c0c9a566c686558892fdafd868ffaaae0"
-      "740512236":
-        name: "artifact-runtime-target-73c3e82d85a05475aca0e782cf7ccedecfe67e97-win32-x64-msvc.zip"
-        url_suffix: "artifact-runtime-target-73c3e82d85a05475aca0e782cf7ccedecfe67e97-win32-x64-msvc.zip"
+        digest: "sha256:607d7ba2c58ee63f1531793746041e7800cb43872273770d7e89ad6bb3981ec1"
+      "748138651":
+        name: "artifact-runtime-target-1d7e00791482f333fafde9c4a62bc08b67de618a-win32-x64-msvc.zip"
+        url_suffix: "artifact-runtime-target-1d7e00791482f333fafde9c4a62bc08b67de618a-win32-x64-msvc.zip"
         size: 1310054
         media_type: "zip"
-        digest: "sha256:f19294a87ef2cc6910af8d8af7aa6ad48676d6e2c4cb429b0a07344c3e4447d0"
-  "443349270":
-    tag: "opengeni-artifact-runtime-3b8f7da244e22b831c60ca21455f62272f96067e"
-    title: "Opengeni native artifact runtime 3b8f7da244e22b831c60ca21455f62272f96067e"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-3b8f7da244e22b831c60ca21455f62272f96067e"
-    created_at: "2026-11-12T17:38:10Z"
-    published_at: "2026-11-12T18:25:04Z"
-    updated_at: "2026-11-12T18:25:04Z"
+        digest: "sha256:a1dcbf206abafae30c29ded14f26f8126d546365d39eb1cc3f58aa8ae54401e7"
+  "446227906":
+    tag: "opengeni-artifact-runtime-dd981d42913bdfb6b2ac5593e26221ccdbe75416"
+    title: "Opengeni native artifact runtime dd981d42913bdfb6b2ac5593e26221ccdbe75416"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-dd981d42913bdfb6b2ac5593e26221ccdbe75416"
+    created_at: "2026-11-15T16:27:38Z"
+    published_at: "2026-11-15T17:19:55Z"
+    updated_at: "2026-11-15T17:19:55Z"
     prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-3b8f7da244e22b831c60ca21455f62272f96067e"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-3b8f7da244e22b831c60ca21455f62272f96067e"
-    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-3b8f7da244e22b831c60ca21455f62272f96067e/"
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-dd981d42913bdfb6b2ac5593e26221ccdbe75416"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-dd981d42913bdfb6b2ac5593e26221ccdbe75416"
+    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-dd981d42913bdfb6b2ac5593e26221ccdbe75416/"
     assets:
-      "740592588":
+      "751738353":
         name: "artifact-runtime-provenance.json"
         url_suffix: "artifact-runtime-provenance.json"
         size: 3147
         media_type: "application/json"
-        digest: "sha256:fb01f1906f2fab27d8e79ffd441a79ce5f3f5c53b23797192bac45711402092f"
-      "740592633":
-        name: "artifact-runtime-target-3b8f7da244e22b831c60ca21455f62272f96067e-darwin-x64.zip"
-        url_suffix: "artifact-runtime-target-3b8f7da244e22b831c60ca21455f62272f96067e-darwin-x64.zip"
+        digest: "sha256:210fb0dc6e67ec0699544ddb88851fb624e937ea611ffc8986e72b7d6b52ced9"
+      "751738384":
+        name: "artifact-runtime-target-dd981d42913bdfb6b2ac5593e26221ccdbe75416-darwin-x64.zip"
+        url_suffix: "artifact-runtime-target-dd981d42913bdfb6b2ac5593e26221ccdbe75416-darwin-x64.zip"
         size: 1488063
         media_type: "zip"
-        digest: "sha256:b97424b5c7c9090bffbbabd65d2ce705a0932c2a68230c4d57029767dbfe4f1a"
-      "740592671":
-        name: "artifact-runtime-target-3b8f7da244e22b831c60ca21455f62272f96067e-darwin-arm64.zip"
-        url_suffix: "artifact-runtime-target-3b8f7da244e22b831c60ca21455f62272f96067e-darwin-arm64.zip"
+        digest: "sha256:7ffc12adba18aaf4afda60ef64a6136cebab8cd6cc4450005966f167668bef3f"
+      "751738440":
+        name: "artifact-runtime-target-dd981d42913bdfb6b2ac5593e26221ccdbe75416-darwin-arm64.zip"
+        url_suffix: "artifact-runtime-target-dd981d42913bdfb6b2ac5593e26221ccdbe75416-darwin-arm64.zip"
         size: 1339190
         media_type: "zip"
-        digest: "sha256:2310cbd4d28191698980b6912964976dd6519b76a1b5faf438af777994be09ac"
-      "740592719":
-        name: "artifact-runtime-target-3b8f7da244e22b831c60ca21455f62272f96067e-linux-x64-gnu.zip"
-        url_suffix: "artifact-runtime-target-3b8f7da244e22b831c60ca21455f62272f96067e-linux-x64-gnu.zip"
+        digest: "sha256:d0a9a200904f5733687f2cdc3fea5ab6c5321ee670b4e1e80fe87a0b107f5087"
+      "751738481":
+        name: "artifact-runtime-target-dd981d42913bdfb6b2ac5593e26221ccdbe75416-linux-x64-gnu.zip"
+        url_suffix: "artifact-runtime-target-dd981d42913bdfb6b2ac5593e26221ccdbe75416-linux-x64-gnu.zip"
         size: 1549902
         media_type: "zip"
-        digest: "sha256:c6c6a6cf59eab7561ed8c74e78cada37e4af7ece96367ae84353d82d93576efd"
-      "740592763":
-        name: "artifact-runtime-target-3b8f7da244e22b831c60ca21455f62272f96067e-linux-arm64-gnu.zip"
-        url_suffix: "artifact-runtime-target-3b8f7da244e22b831c60ca21455f62272f96067e-linux-arm64-gnu.zip"
+        digest: "sha256:e372d92545cd9af4bf009ecbc333b4ad59859000e7579dd0e093db99c1849f49"
+      "751738514":
+        name: "artifact-runtime-target-dd981d42913bdfb6b2ac5593e26221ccdbe75416-linux-arm64-gnu.zip"
+        url_suffix: "artifact-runtime-target-dd981d42913bdfb6b2ac5593e26221ccdbe75416-linux-arm64-gnu.zip"
         size: 1464119
         media_type: "zip"
-        digest: "sha256:2ca0698429d3ce96f394496d1dae6aa6874240523e55c5c5293b52d25022693c"
-      "740592812":
-        name: "artifact-runtime-target-3b8f7da244e22b831c60ca21455f62272f96067e-linux-x64-musl.zip"
-        url_suffix: "artifact-runtime-target-3b8f7da244e22b831c60ca21455f62272f96067e-linux-x64-musl.zip"
+        digest: "sha256:73318a4b634debed3fdf636e8845a958af08e9d77f4fdb49f361bd9932016103"
+      "751738553":
+        name: "artifact-runtime-target-dd981d42913bdfb6b2ac5593e26221ccdbe75416-linux-x64-musl.zip"
+        url_suffix: "artifact-runtime-target-dd981d42913bdfb6b2ac5593e26221ccdbe75416-linux-x64-musl.zip"
         size: 1561922
         media_type: "zip"
-        digest: "sha256:b2c509a2c99e8a990f46da815144f16e0660abd88639824723e0031010c04985"
-      "740592857":
-        name: "artifact-runtime-target-3b8f7da244e22b831c60ca21455f62272f96067e-linux-arm64-musl.zip"
-        url_suffix: "artifact-runtime-target-3b8f7da244e22b831c60ca21455f62272f96067e-linux-arm64-musl.zip"
+        digest: "sha256:7fe19bf5639e889d899a2b69d56e6415217b1c8a59648fe8d00a3776774b6e97"
+      "751738578":
+        name: "artifact-runtime-target-dd981d42913bdfb6b2ac5593e26221ccdbe75416-linux-arm64-musl.zip"
+        url_suffix: "artifact-runtime-target-dd981d42913bdfb6b2ac5593e26221ccdbe75416-linux-arm64-musl.zip"
         size: 1461764
         media_type: "zip"
-        digest: "sha256:2d5a62fb193690e8cf312f97e0ae4f04ac6f9ffff9c4afd47625c502e54bba4c"
-      "740592892":
-        name: "artifact-runtime-target-3b8f7da244e22b831c60ca21455f62272f96067e-win32-x64-msvc.zip"
-        url_suffix: "artifact-runtime-target-3b8f7da244e22b831c60ca21455f62272f96067e-win32-x64-msvc.zip"
-        size: 1310052
+        digest: "sha256:e46543ea6b36a172ed833f73defa99baf7d2f488a85a22226597660b275ee7e0"
+      "751738616":
+        name: "artifact-runtime-target-dd981d42913bdfb6b2ac5593e26221ccdbe75416-win32-x64-msvc.zip"
+        url_suffix: "artifact-runtime-target-dd981d42913bdfb6b2ac5593e26221ccdbe75416-win32-x64-msvc.zip"
+        size: 1310054
         media_type: "zip"
-        digest: "sha256:7280e315b42ede341b6d3ab59474de96b82c38c4ed6ac0a8f0382f1e03a86107"
-  "443478814":
-    tag: "opengeni-release-head-9723626d4d9bf3bd259cceb7cff069f117445bc6"
-    title: "Retained OpenGeni release head 9723626d4d9bf3bd259cceb7cff069f117445bc6"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-9723626d4d9bf3bd259cceb7cff069f117445bc6"
-    created_at: "2026-11-12T20:34:07Z"
-    published_at: "2026-11-12T20:35:26Z"
-    updated_at: "2026-11-12T20:35:26Z"
+        digest: "sha256:fe3fafe155351d54a9c8418a6a74bac714600abf1467a2e5e009975d7bdf4f4e"
+  "446233885":
+    tag: "opengeni-release-head-7d5d3ae78c2bb32e2462f7a1dd900a50d6e3a134"
+    title: "Retained OpenGeni release head 7d5d3ae78c2bb32e2462f7a1dd900a50d6e3a134"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-7d5d3ae78c2bb32e2462f7a1dd900a50d6e3a134"
+    created_at: "2026-11-15T17:27:58Z"
+    published_at: "2026-11-15T17:29:28Z"
+    updated_at: "2026-11-15T17:29:28Z"
     prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-9723626d4d9bf3bd259cceb7cff069f117445bc6"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-9723626d4d9bf3bd259cceb7cff069f117445bc6"
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-7d5d3ae78c2bb32e2462f7a1dd900a50d6e3a134"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-7d5d3ae78c2bb32e2462f7a1dd900a50d6e3a134"
     assets: {}
-  "443478868":
-    tag: "opengeni-release-head-89cf4ba3dc77482227d006c62c88f4ac8b4d5ff1"
-    title: "Retained OpenGeni release head 89cf4ba3dc77482227d006c62c88f4ac8b4d5ff1"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-89cf4ba3dc77482227d006c62c88f4ac8b4d5ff1"
-    created_at: "2026-11-12T20:31:42Z"
-    published_at: "2026-11-12T20:35:30Z"
-    updated_at: "2026-11-12T20:35:30Z"
+  "446233914":
+    tag: "opengeni-release-head-dd981d42913bdfb6b2ac5593e26221ccdbe75416"
+    title: "Retained OpenGeni release head dd981d42913bdfb6b2ac5593e26221ccdbe75416"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-dd981d42913bdfb6b2ac5593e26221ccdbe75416"
+    created_at: "2026-11-15T16:27:38Z"
+    published_at: "2026-11-15T17:29:31Z"
+    updated_at: "2026-11-15T17:29:31Z"
     prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-89cf4ba3dc77482227d006c62c88f4ac8b4d5ff1"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-89cf4ba3dc77482227d006c62c88f4ac8b4d5ff1"
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-dd981d42913bdfb6b2ac5593e26221ccdbe75416"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-dd981d42913bdfb6b2ac5593e26221ccdbe75416"
     assets: {}
-  "443683970":
-    tag: "agent-v0.1.161"
-    title: "opengeni-agent v0.1.161"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/agent-v0.1.161"
-    created_at: "2026-11-12T22:59:15Z"
-    published_at: "2026-11-13T00:51:55Z"
-    updated_at: "2026-11-13T00:51:55Z"
+  "446332287":
+    tag: "opengeni-candidate-7d5d3ae78c2bb32e2462f7a1dd900a50d6e3a134"
+    title: "Opengeni release candidate 0.23.25 (7d5d3ae78c2b)"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-candidate-7d5d3ae78c2bb32e2462f7a1dd900a50d6e3a134"
+    created_at: "2026-11-15T17:27:58Z"
+    published_at: "2026-11-15T20:09:20Z"
+    updated_at: "2026-11-15T20:09:20Z"
     prerelease: false
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/agent-v0.1.161"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/agent-v0.1.161"
-    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/agent-v0.1.161/"
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-candidate-7d5d3ae78c2bb32e2462f7a1dd900a50d6e3a134"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-candidate-7d5d3ae78c2bb32e2462f7a1dd900a50d6e3a134"
+    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-candidate-7d5d3ae78c2bb32e2462f7a1dd900a50d6e3a134/"
     assets:
-      "741703336":
-        name: "opengeni-computer-native-x86_64-unknown-linux-musl.minisig"
-        url_suffix: "opengeni-computer-native-x86_64-unknown-linux-musl.minisig"
-        size: 345
-        digest: "sha256:1de5381854f980115e4c05be084fc468ff1983dc9c20925bd9eada9d86f13646"
-      "741703339":
-        name: "opengeni-computer-native-x86_64-pc-windows-msvc.exe.minisig"
-        url_suffix: "opengeni-computer-native-x86_64-pc-windows-msvc.exe.minisig"
-        size: 346
-        digest: "sha256:c81ba4ef09e2bd24948d09137e8007bbee0aa52b20f7b42cb4b4e5a4104fc622"
-      "741703340":
-        name: "opengeni-computer-native-aarch64-unknown-linux-musl.minisig"
-        url_suffix: "opengeni-computer-native-aarch64-unknown-linux-musl.minisig"
-        size: 346
-        digest: "sha256:b9206896e5f6c09e8622e2c97f04d699d909001241e798c5084f0012648e5b6c"
-      "741703341":
-        name: "opengeni-computer-native-x86_64-unknown-linux-musl.sha256"
-        url_suffix: "opengeni-computer-native-x86_64-unknown-linux-musl.sha256"
-        size: 117
-        digest: "sha256:7bc83562854a430f6cc0e3d80c4cc5193175a8c0d35eec36f8e86fb9f4dcdc87"
-      "741703342":
-        name: "opengeni-computer-native-x86_64-pc-windows-msvc.exe.sha256"
-        url_suffix: "opengeni-computer-native-x86_64-pc-windows-msvc.exe.sha256"
-        size: 118
-        digest: "sha256:6ef9245693a202a96ebb04597e6ed5989f987c5e486738d16afd11a0583d3d7b"
-      "741703343":
-        name: "opengeni-computer-native-aarch64-pc-windows-msvc.exe.minisig"
-        url_suffix: "opengeni-computer-native-aarch64-pc-windows-msvc.exe.minisig"
-        size: 347
-        digest: "sha256:f59f7e25f25db50fc37b31ef499a820465fcb2bc99cd0712b6ad84a57501c429"
-      "741703344":
-        name: "opengeni-computer-native-universal-apple-darwin.sha256"
-        url_suffix: "opengeni-computer-native-universal-apple-darwin.sha256"
-        size: 114
-        digest: "sha256:d9f18b3afa14d9d7eba78260cb3206f5b1080a22dac3550172a06ec53766fd4b"
-      "741703345":
-        name: "opengeni-computer-native-aarch64-unknown-linux-musl.sha256"
-        url_suffix: "opengeni-computer-native-aarch64-unknown-linux-musl.sha256"
-        size: 118
-        digest: "sha256:2a92db5503dac03467f90d1a9d6f4ad39fed2f1138e7eed8b0f5ac4a0eae22d9"
-      "741703346":
-        name: "opengeni-browserd-x86_64-pc-windows-msvc.exe.sha256"
-        url_suffix: "opengeni-browserd-x86_64-pc-windows-msvc.exe.sha256"
-        size: 111
-        digest: "sha256:6fa27cc294b89378cb3dfc8e769ca926eecfdc22b5d1402a43183eaed64171d4"
-      "741703347":
-        name: "opengeni-computer-native-universal-apple-darwin"
-        url_suffix: "opengeni-computer-native-universal-apple-darwin"
-        size: 4122752
-        digest: "sha256:26c6ac8964cf53b5108bea187379c89f359d26145d36578e8e91694208304cef"
-      "741703348":
-        name: "opengeni-browserd-x86_64-pc-windows-msvc.exe.minisig"
-        url_suffix: "opengeni-browserd-x86_64-pc-windows-msvc.exe.minisig"
-        size: 339
-        digest: "sha256:8bd17796ad80d7a93f2ccce5e30cca79434cb152be5ff7dbcfbde38808061b01"
-      "741703350":
-        name: "opengeni-browserd-x86_64-unknown-linux-musl.sha256"
-        url_suffix: "opengeni-browserd-x86_64-unknown-linux-musl.sha256"
-        size: 110
-        digest: "sha256:19e576900456cb6aaf7bb00108252f11dc02a7b7cf1c8b25d20358a4e96313b9"
-      "741703351":
-        name: "opengeni-computer-native-x86_64-unknown-linux-musl"
-        url_suffix: "opengeni-computer-native-x86_64-unknown-linux-musl"
-        size: 6880512
-        digest: "sha256:ce82f784e3df7a1f5e83647e601a74979574148541a0e41103ae9b9c38fb9410"
-      "741703352":
-        name: "opengeni-browserd-x86_64-unknown-linux-musl.minisig"
-        url_suffix: "opengeni-browserd-x86_64-unknown-linux-musl.minisig"
-        size: 338
-        digest: "sha256:e8cd3c5366f061c5bf52c2707c2747bf76f259a968b94f88a4afd8773b878fef"
-      "741703353":
-        name: "opengeni-computer-native-aarch64-pc-windows-msvc.exe.sha256"
-        url_suffix: "opengeni-computer-native-aarch64-pc-windows-msvc.exe.sha256"
-        size: 119
-        digest: "sha256:d1a0fa013cbce30da701b3d8a956f6d130534e945a205873f6bca7320e85792c"
-      "741703354":
-        name: "opengeni-agent-x86_64-unknown-linux-musl.minisig"
-        url_suffix: "opengeni-agent-x86_64-unknown-linux-musl.minisig"
-        size: 335
-        digest: "sha256:bdf0bdf5da5ae0b5df2aeffe583f1ab2c5833a76df546242f50e7c8ec138ee95"
-      "741703355":
-        name: "opengeni-browserd-x86_64-unknown-linux-musl"
-        url_suffix: "opengeni-browserd-x86_64-unknown-linux-musl"
-        size: 112273584
-        digest: "sha256:e98ce7054b55c8f133bbdb946cf1b39bf1338a4e7d6c6abf12d5b30567656010"
-      "741703356":
-        name: "opengeni-browserd-aarch64-unknown-linux-musl.minisig"
-        url_suffix: "opengeni-browserd-aarch64-unknown-linux-musl.minisig"
-        size: 339
-        digest: "sha256:d0546d8db6b73bd6167d4addba29f2fc54f056d656cdfcaa15219f1ee6291a90"
-      "741703357":
-        name: "opengeni-computer-native-x86_64-pc-windows-msvc.exe"
-        url_suffix: "opengeni-computer-native-x86_64-pc-windows-msvc.exe"
-        size: 1001472
-        media_type: "application/x-msdos-program"
-        digest: "sha256:54e49c41967f4ff9e5a417ed857ed79830297569d8760b48d371518340c1aff0"
-      "741703358":
-        name: "opengeni-agent-x86_64-unknown-linux-musl.sha256"
-        url_suffix: "opengeni-agent-x86_64-unknown-linux-musl.sha256"
-        size: 107
-        digest: "sha256:686886ec8576563fb713ee7e18889ed9603ac204b74b942d145692685ebb428e"
-      "741703359":
-        name: "opengeni-browserd-universal-apple-darwin.minisig"
-        url_suffix: "opengeni-browserd-universal-apple-darwin.minisig"
-        size: 335
-        digest: "sha256:7fbcef89719ecd6117a3b643b7e9aeceb7ef6f1683d8a952ff3ce4ee3315fc65"
-      "741703360":
-        name: "opengeni-computer-native-aarch64-unknown-linux-musl"
-        url_suffix: "opengeni-computer-native-aarch64-unknown-linux-musl"
-        size: 6239856
-        digest: "sha256:5a27a30c15536d9faddf7d28ece032b7bbccdf81b74193297c16e65078403a29"
-      "741703361":
-        name: "opengeni-browserd-universal-apple-darwin"
-        url_suffix: "opengeni-browserd-universal-apple-darwin"
-        size: 193130208
-        digest: "sha256:56c496d6efae56804712fea5a09a1e8918377690514869870ac13caa0b3694dc"
-      "741703362":
-        name: "opengeni-agent-aarch64-pc-windows-msvc.exe.minisig"
-        url_suffix: "opengeni-agent-aarch64-pc-windows-msvc.exe.minisig"
-        size: 337
-        digest: "sha256:237b1b61bc42343a698da36a3522f587f5cc54e17ca19ede3da0482050293921"
-      "741703363":
-        name: "opengeni-computer-native-aarch64-pc-windows-msvc.exe"
-        url_suffix: "opengeni-computer-native-aarch64-pc-windows-msvc.exe"
-        size: 912896
-        media_type: "application/x-msdos-program"
-        digest: "sha256:f8a6d19edd3b8803ab115a636741fbe0316ed23f72355437280ca95b594fe707"
-      "741703364":
-        name: "opengeni-browserd-universal-apple-darwin.sha256"
-        url_suffix: "opengeni-browserd-universal-apple-darwin.sha256"
-        size: 107
-        digest: "sha256:da2c4dc0b23378d6a80c1fb4d2d439fe221c8c1f4a846640591e1be1de70a9b6"
-      "741703365":
-        name: "uninstall.sh"
-        url_suffix: "uninstall.sh"
-        size: 3672
-        media_type: "application/x-sh"
-        digest: "sha256:8a2f404d1800482602cfdd4d9dabb5ee8589fcb8e17705f223442d9d2e5c1ccb"
-      "741703366":
-        name: "SHA256SUMS"
-        url_suffix: "SHA256SUMS"
-        size: 1650
-        digest: "sha256:7e6d6624fda963538b68a440e9e1e1d94ae85620ac91dc74a9c28185dd97b5f1"
-      "741703367":
-        name: "opengeni-browserd-aarch64-unknown-linux-musl.sha256"
-        url_suffix: "opengeni-browserd-aarch64-unknown-linux-musl.sha256"
-        size: 111
-        digest: "sha256:571d949d40ff3970192906d8129256959bb06cec8167812325ffb789416f3e9a"
-      "741703368":
-        name: "opengeni-agent-aarch64-unknown-linux-musl.sha256"
-        url_suffix: "opengeni-agent-aarch64-unknown-linux-musl.sha256"
-        size: 108
-        digest: "sha256:398ac184adf8845d16ac9ee9cd8823d2b3972f8c0de7809a24fa54f663bf37a2"
-      "741703369":
-        name: "OpenGeni-Agent.app.zip.minisig"
-        url_suffix: "OpenGeni-Agent.app.zip.minisig"
-        size: 317
-        digest: "sha256:14e6717a0f0c5f02cc4667e15b72ec713742fadc634c5061fe430b523eef81f2"
-      "741703370":
-        name: "opengeni-agent-x86_64-pc-windows-msvc.exe.sha256"
-        url_suffix: "opengeni-agent-x86_64-pc-windows-msvc.exe.sha256"
-        size: 108
-        digest: "sha256:ebd06956e6e6eb67d15c9adf32850eecefb595053b9d75f01f0b876299fcf5ae"
-      "741703371":
-        name: "install.sh"
-        url_suffix: "install.sh"
-        size: 57522
-        media_type: "application/x-sh"
-        digest: "sha256:244ee21d0e78c722dede9e4a4e32ca69803f6b55864b54ca3ce58336a8f8eb08"
-      "741703372":
-        name: "SHA256SUMS.minisig"
-        url_suffix: "SHA256SUMS.minisig"
-        size: 310
-        digest: "sha256:b4643de99f9669e0abbf338dde07fd13d70cea20829b93ea0d0101dfad17d8fd"
-      "741703373":
-        name: "opengeni-browserd-x86_64-pc-windows-msvc.exe"
-        url_suffix: "opengeni-browserd-x86_64-pc-windows-msvc.exe"
-        size: 118394368
-        media_type: "application/x-msdos-program"
-        digest: "sha256:1613d5485bc34067d2561c75303e0605b7075f30d98aa091c63bcaa35fb73a53"
-      "741703374":
-        name: "opengeni-browserd-aarch64-unknown-linux-musl"
-        url_suffix: "opengeni-browserd-aarch64-unknown-linux-musl"
-        size: 112380920
-        digest: "sha256:ef676b765be19448de0e1d73172cde39cf2450a6ddf8d61e099a050e71ba4f9a"
-      "741703375":
-        name: "opengeni-agent-aarch64-unknown-linux-musl.minisig"
-        url_suffix: "opengeni-agent-aarch64-unknown-linux-musl.minisig"
-        size: 336
-        digest: "sha256:d3bd1f7a0d4a7dbf504e531887323f0ff8b3dae374d3eef08e53016d06dab5d9"
-      "741703377":
-        name: "manifest.json.minisig"
-        url_suffix: "manifest.json.minisig"
-        size: 313
-        digest: "sha256:7964ec2a4cbf4e49ce3de08b32fc612d90f132f10c784fd23109e6e68d48e3ab"
-      "741703378":
-        name: "opengeni-agent-universal-apple-darwin.minisig"
-        url_suffix: "opengeni-agent-universal-apple-darwin.minisig"
-        size: 332
-        digest: "sha256:16bd4ae68ff1beec56590270a92b43fa8a52eb13f85dbfcdb9f904bcbc0484f0"
-      "741703379":
-        name: "opengeni-agent-universal-apple-darwin.sha256"
-        url_suffix: "opengeni-agent-universal-apple-darwin.sha256"
-        size: 104
-        digest: "sha256:cc71174b234862e1b47db5419e1ccfcdd6c27ddfa21f55ce035a854a53ce1d74"
-      "741703380":
-        name: "manifest.json"
-        url_suffix: "manifest.json"
-        size: 2581
-        media_type: "application/json"
-        digest: "sha256:45e119a148e194e2b8ac82913670541c09a4f3f1906194063534693650d05ed6"
-      "741703381":
-        name: "opengeni-agent-aarch64-pc-windows-msvc.exe.sha256"
-        url_suffix: "opengeni-agent-aarch64-pc-windows-msvc.exe.sha256"
-        size: 109
-        digest: "sha256:63476ad15de94df49d2c594278992126c3682898a80c3b5d4215a9584ee4bf07"
-      "741703382":
-        name: "opengeni-agent-aarch64-pc-windows-msvc.exe"
-        url_suffix: "opengeni-agent-aarch64-pc-windows-msvc.exe"
-        size: 15806464
-        media_type: "application/x-msdos-program"
-        digest: "sha256:a3caa49f38dc55d0cb1835c1004aa3884f624aeb61d7eebec483b081548aa1e0"
-      "741703383":
-        name: "opengeni-agent-x86_64-pc-windows-msvc.exe.minisig"
-        url_suffix: "opengeni-agent-x86_64-pc-windows-msvc.exe.minisig"
-        size: 336
-        digest: "sha256:c73fe6acc668fe00bd84b31b3f580a562d3d08c1a60d92911c5e6831a7354cc9"
-      "741703384":
-        name: "OpenGeni-Agent.app.zip.sha256"
-        url_suffix: "OpenGeni-Agent.app.zip.sha256"
-        size: 89
-        digest: "sha256:7fa6e65cedf824a9d968ffed3fdc3d1836c6ab645f67376bda458f6152275f1c"
-      "741703385":
-        name: "install.ps1"
-        url_suffix: "install.ps1"
-        size: 33652
-        digest: "sha256:23322a1df1011b7fd26648d0a09ce48a9f2019fe24f1a8d5933a128f64021d99"
-      "741703386":
-        name: "opengeni-agent-x86_64-pc-windows-msvc.exe"
-        url_suffix: "opengeni-agent-x86_64-pc-windows-msvc.exe"
-        size: 206961664
-        media_type: "application/x-msdos-program"
-        digest: "sha256:a75db5cc890bf530ef58354223262c8a0fd35035b2acdcee7f9c1dcfec1acc99"
-      "741703387":
-        name: "OpenGeni-Agent.icns"
-        url_suffix: "OpenGeni-Agent.icns"
-        size: 143600
-        digest: "sha256:1741a452fb5486388e114fcf7bd29e113e80d00f41423f099ad38771691c4bb8"
-      "741703388":
-        name: "opengeni-agent-universal-apple-darwin"
-        url_suffix: "opengeni-agent-universal-apple-darwin"
-        size: 376875632
-        digest: "sha256:c969d91a6047c92d5d94fa5aac46e0c76fc4dac4d95230a0ebb918ebe34c6d69"
-      "741703389":
-        name: "opengeni-agent-aarch64-unknown-linux-musl"
-        url_suffix: "opengeni-agent-aarch64-unknown-linux-musl"
-        size: 237604848
-        digest: "sha256:4c9b31d8207548fcbd21e01c76f2662401ea3cf63bc1140b88cc94ce98cb36eb"
-      "741703390":
-        name: "opengeni-computer-native-universal-apple-darwin.minisig"
-        url_suffix: "opengeni-computer-native-universal-apple-darwin.minisig"
-        size: 342
-        digest: "sha256:44702462c8e0dd41bcaef5ceef78aee8e3ddafcd763b14feb3a2102b7fb1d215"
-      "741703391":
-        name: "OpenGeni-Agent.app.zip"
-        url_suffix: "OpenGeni-Agent.app.zip"
-        size: 241707033
-        media_type: "zip"
-        digest: "sha256:8fbd55694aba3df1afbffbb60d7bb22cd4c0397d5d4bd2fb84b53c27b1cdfe1b"
-      "741703397":
-        name: "opengeni-agent-x86_64-unknown-linux-musl"
-        url_suffix: "opengeni-agent-x86_64-unknown-linux-musl"
-        size: 247405992
-        digest: "sha256:7bba39616043fc11965c79aaa550ae8e5540ebf287e00c60ab74d5fbdd3eb4d1"
-      "741703398":
-        name: "opengeni-agent-minisign.pub"
-        url_suffix: "opengeni-agent-minisign.pub"
-        size: 114
-        media_type: "application/x-mspublisher"
-        digest: "sha256:7b8055ce212f8a45e1c19d6c13c08ac31ecf932f8b7ef860951066b2ec91bac3"
-  "443688776":
-    tag: "opengeni-artifact-runtime-0ee4decd0eb696442c37354c277965c07f8c6fb5"
-    title: "Opengeni native artifact runtime 0ee4decd0eb696442c37354c277965c07f8c6fb5"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-0ee4decd0eb696442c37354c277965c07f8c6fb5"
-    created_at: "2026-11-12T21:41:36Z"
-    published_at: "2026-11-13T00:59:28Z"
-    updated_at: "2026-11-13T00:59:28Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-0ee4decd0eb696442c37354c277965c07f8c6fb5"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-0ee4decd0eb696442c37354c277965c07f8c6fb5"
-    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-0ee4decd0eb696442c37354c277965c07f8c6fb5/"
-    assets:
-      "741722215":
-        name: "artifact-runtime-provenance.json"
-        url_suffix: "artifact-runtime-provenance.json"
-        size: 3147
-        media_type: "application/json"
-        digest: "sha256:3a2c7b6b4b05e7384312c7f36dd3b6ea1ef7cec1dc64277d3760b9287ba87a30"
-      "741722259":
-        name: "artifact-runtime-target-0ee4decd0eb696442c37354c277965c07f8c6fb5-darwin-x64.zip"
-        url_suffix: "artifact-runtime-target-0ee4decd0eb696442c37354c277965c07f8c6fb5-darwin-x64.zip"
-        size: 1488063
-        media_type: "zip"
-        digest: "sha256:c78b782416db5f28acfc5849b25d659210ead60cd0441fde954208266991eb8a"
-      "741722301":
-        name: "artifact-runtime-target-0ee4decd0eb696442c37354c277965c07f8c6fb5-darwin-arm64.zip"
-        url_suffix: "artifact-runtime-target-0ee4decd0eb696442c37354c277965c07f8c6fb5-darwin-arm64.zip"
-        size: 1339190
-        media_type: "zip"
-        digest: "sha256:2b46e2286978090f810f89ac0dcc35ac827f680e6eb9808486e70e7198764e47"
-      "741722337":
-        name: "artifact-runtime-target-0ee4decd0eb696442c37354c277965c07f8c6fb5-linux-x64-gnu.zip"
-        url_suffix: "artifact-runtime-target-0ee4decd0eb696442c37354c277965c07f8c6fb5-linux-x64-gnu.zip"
-        size: 1549902
-        media_type: "zip"
-        digest: "sha256:9677944b42e2ec2ead5c58c15869380039b0ab92047d31a23aece2c0b929549d"
-      "741722376":
-        name: "artifact-runtime-target-0ee4decd0eb696442c37354c277965c07f8c6fb5-linux-arm64-gnu.zip"
-        url_suffix: "artifact-runtime-target-0ee4decd0eb696442c37354c277965c07f8c6fb5-linux-arm64-gnu.zip"
-        size: 1464119
-        media_type: "zip"
-        digest: "sha256:dd4dd942da73632014d299910dfb2423fbdc6209b758619ff15bd1dd9549d15c"
-      "741722401":
-        name: "artifact-runtime-target-0ee4decd0eb696442c37354c277965c07f8c6fb5-linux-x64-musl.zip"
-        url_suffix: "artifact-runtime-target-0ee4decd0eb696442c37354c277965c07f8c6fb5-linux-x64-musl.zip"
-        size: 1561922
-        media_type: "zip"
-        digest: "sha256:6613bff54853f6d45e5ac89901488d409b209897125e0eb7293a7bb859954857"
-      "741722432":
-        name: "artifact-runtime-target-0ee4decd0eb696442c37354c277965c07f8c6fb5-linux-arm64-musl.zip"
-        url_suffix: "artifact-runtime-target-0ee4decd0eb696442c37354c277965c07f8c6fb5-linux-arm64-musl.zip"
-        size: 1461764
-        media_type: "zip"
-        digest: "sha256:89ee2f9691e11a3be379f21dee8b7e76b8f3f47f03ba08223d9de26a019bb685"
-      "741722462":
-        name: "artifact-runtime-target-0ee4decd0eb696442c37354c277965c07f8c6fb5-win32-x64-msvc.zip"
-        url_suffix: "artifact-runtime-target-0ee4decd0eb696442c37354c277965c07f8c6fb5-win32-x64-msvc.zip"
-        size: 1310052
-        media_type: "zip"
-        digest: "sha256:a90fe302d23a29c481bc13f73d6fca213de99f2d38b3690a6bc8ba3c78db7a12"
-  "443801199":
-    tag: "opengeni-candidate-0ee4decd0eb696442c37354c277965c07f8c6fb5"
-    title: "Opengeni release candidate 0.23.25 (0ee4decd0eb6)"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-candidate-0ee4decd0eb696442c37354c277965c07f8c6fb5"
-    created_at: "2026-11-12T21:41:36Z"
-    published_at: "2026-11-13T04:04:04Z"
-    updated_at: "2026-11-13T04:04:04Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-candidate-0ee4decd0eb696442c37354c277965c07f8c6fb5"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-candidate-0ee4decd0eb696442c37354c277965c07f8c6fb5"
-    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-candidate-0ee4decd0eb696442c37354c277965c07f8c6fb5/"
-    assets:
-      "742199968":
+      "752204651":
+        name: "release-candidate.sha256"
+        url_suffix: "release-candidate.sha256"
+        size: 98
+        digest: "sha256:ad2babe7ef8d22ff23ec049c45ba0b4c3dd99add5a5e6e0da9ff2f055535c289"
+      "752204652":
         name: "opengeni-0.23.25.tgz"
         url_suffix: "opengeni-0.23.25.tgz"
-        size: 231442
+        size: 231947
         media_type: "application/x-gtar"
-        digest: "sha256:f5a95ef92d7e87048aca76c1b2bfb052fed7b59a845f53ef109cd975ab4355d0"
-      "742199970":
+        digest: "sha256:504b0607d1e02519ea5d23750f13c3c20e9fc0dcf23474667c7eef19484f77c5"
+      "752204653":
+        name: "release-chart.sha256"
+        url_suffix: "release-chart.sha256"
+        size: 103
+        digest: "sha256:dbca79c44ee23d1fa04456c684fbab3f05275c523e590921a4c2d8dd2051474a"
+      "752204661":
         name: "release-candidate.json"
         url_suffix: "release-candidate.json"
         size: 5140
         media_type: "application/json"
-        digest: "sha256:e8fdf514cd576add0ccf0aba7f052f64b15cfa2de7de20e2f19efeeba6fa9cda"
-      "742199971":
+        digest: "sha256:a4e66ef535c1fb419860f942aa3a573634e69282230e20c38ffbf78acabbaa1b"
+  "447054304":
+    tag: "opengeni-release-head-64fb8e79c6ce76cebe802e216a9f761c25480110"
+    title: "Retained OpenGeni release head 64fb8e79c6ce76cebe802e216a9f761c25480110"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-64fb8e79c6ce76cebe802e216a9f761c25480110"
+    created_at: "2026-11-16T13:06:10Z"
+    published_at: "2026-11-16T13:07:31Z"
+    updated_at: "2026-11-16T13:07:31Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-64fb8e79c6ce76cebe802e216a9f761c25480110"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-64fb8e79c6ce76cebe802e216a9f761c25480110"
+    assets: {}
+  "447054389":
+    tag: "opengeni-release-head-0ad29b9c7aa8ac9520c2d7f6c933f23485001d49"
+    title: "Retained OpenGeni release head 0ad29b9c7aa8ac9520c2d7f6c933f23485001d49"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-0ad29b9c7aa8ac9520c2d7f6c933f23485001d49"
+    created_at: "2026-11-16T10:54:21Z"
+    published_at: "2026-11-16T13:07:35Z"
+    updated_at: "2026-11-16T13:07:35Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-0ad29b9c7aa8ac9520c2d7f6c933f23485001d49"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-0ad29b9c7aa8ac9520c2d7f6c933f23485001d49"
+    assets: {}
+  "447293753":
+    tag: "opengeni-artifact-runtime-5fd2c212e54465361f53e835833b406ee2438a61"
+    title: "Opengeni native artifact runtime 5fd2c212e54465361f53e835833b406ee2438a61"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-5fd2c212e54465361f53e835833b406ee2438a61"
+    created_at: "2026-11-16T15:33:08Z"
+    published_at: "2026-11-16T16:26:49Z"
+    updated_at: "2026-11-16T16:26:49Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-5fd2c212e54465361f53e835833b406ee2438a61"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-5fd2c212e54465361f53e835833b406ee2438a61"
+    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-5fd2c212e54465361f53e835833b406ee2438a61/"
+    assets:
+      "755560989":
+        name: "artifact-runtime-provenance.json"
+        url_suffix: "artifact-runtime-provenance.json"
+        size: 3147
+        media_type: "application/json"
+        digest: "sha256:3ad9b68058b36d3d1890599fd8c154910ee6f3452d20cb1f51729b2094ec17aa"
+      "755561035":
+        name: "artifact-runtime-target-5fd2c212e54465361f53e835833b406ee2438a61-darwin-x64.zip"
+        url_suffix: "artifact-runtime-target-5fd2c212e54465361f53e835833b406ee2438a61-darwin-x64.zip"
+        size: 1488063
+        media_type: "zip"
+        digest: "sha256:702c45b35d07eef6814aa162892fced6bf307c9c1bdfa1d127b7bd4de64f961c"
+      "755561143":
+        name: "artifact-runtime-target-5fd2c212e54465361f53e835833b406ee2438a61-darwin-arm64.zip"
+        url_suffix: "artifact-runtime-target-5fd2c212e54465361f53e835833b406ee2438a61-darwin-arm64.zip"
+        size: 1339190
+        media_type: "zip"
+        digest: "sha256:aea77924818620d770b748bb06e27208573f3d1535c2f4599bfcaf65adb5f48d"
+      "755561189":
+        name: "artifact-runtime-target-5fd2c212e54465361f53e835833b406ee2438a61-linux-x64-gnu.zip"
+        url_suffix: "artifact-runtime-target-5fd2c212e54465361f53e835833b406ee2438a61-linux-x64-gnu.zip"
+        size: 1549902
+        media_type: "zip"
+        digest: "sha256:ab4e36131a31254c70c5b640d332288e56fed6077541fa5235d895757cf6fb68"
+      "755561218":
+        name: "artifact-runtime-target-5fd2c212e54465361f53e835833b406ee2438a61-linux-arm64-gnu.zip"
+        url_suffix: "artifact-runtime-target-5fd2c212e54465361f53e835833b406ee2438a61-linux-arm64-gnu.zip"
+        size: 1464119
+        media_type: "zip"
+        digest: "sha256:7a52cbd740fd9e622515add02a1d23ac95cd69621070b18528b939a706f8928f"
+      "755561269":
+        name: "artifact-runtime-target-5fd2c212e54465361f53e835833b406ee2438a61-linux-x64-musl.zip"
+        url_suffix: "artifact-runtime-target-5fd2c212e54465361f53e835833b406ee2438a61-linux-x64-musl.zip"
+        size: 1561922
+        media_type: "zip"
+        digest: "sha256:75b4387fba28209d970d4f3b02fa50e77c59274728039c47628bf851dd8829d0"
+      "755561326":
+        name: "artifact-runtime-target-5fd2c212e54465361f53e835833b406ee2438a61-linux-arm64-musl.zip"
+        url_suffix: "artifact-runtime-target-5fd2c212e54465361f53e835833b406ee2438a61-linux-arm64-musl.zip"
+        size: 1461764
+        media_type: "zip"
+        digest: "sha256:1852694f98a5f070a54cd6f15c97365eb1e9d9c5b1810312001b3355484b94dc"
+      "755561351":
+        name: "artifact-runtime-target-5fd2c212e54465361f53e835833b406ee2438a61-win32-x64-msvc.zip"
+        url_suffix: "artifact-runtime-target-5fd2c212e54465361f53e835833b406ee2438a61-win32-x64-msvc.zip"
+        size: 1310052
+        media_type: "zip"
+        digest: "sha256:a620552e777d9c4166c1e15faf33f90fec2a6bad4e66101c5c3a1a558f4edeb5"
+  "447303676":
+    tag: "opengeni-release-head-465cc9c0b402abd7ed6a16d572a416a96e0b753a"
+    title: "Retained OpenGeni release head 465cc9c0b402abd7ed6a16d572a416a96e0b753a"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-465cc9c0b402abd7ed6a16d572a416a96e0b753a"
+    created_at: "2026-11-16T16:34:01Z"
+    published_at: "2026-11-16T16:35:15Z"
+    updated_at: "2026-11-16T16:35:15Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-465cc9c0b402abd7ed6a16d572a416a96e0b753a"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-465cc9c0b402abd7ed6a16d572a416a96e0b753a"
+    assets: {}
+  "447303770":
+    tag: "opengeni-release-head-f0413921accb02bf42b0b58ba1073d1f60b49d3e"
+    title: "Retained OpenGeni release head f0413921accb02bf42b0b58ba1073d1f60b49d3e"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-f0413921accb02bf42b0b58ba1073d1f60b49d3e"
+    created_at: "2026-11-16T16:22:19Z"
+    published_at: "2026-11-16T16:35:20Z"
+    updated_at: "2026-11-16T16:35:20Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-f0413921accb02bf42b0b58ba1073d1f60b49d3e"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-f0413921accb02bf42b0b58ba1073d1f60b49d3e"
+    assets: {}
+  "447410928":
+    tag: "opengeni-artifact-runtime-f0413921accb02bf42b0b58ba1073d1f60b49d3e"
+    title: "Opengeni native artifact runtime f0413921accb02bf42b0b58ba1073d1f60b49d3e"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-f0413921accb02bf42b0b58ba1073d1f60b49d3e"
+    created_at: "2026-11-16T16:22:19Z"
+    published_at: "2026-11-16T18:13:31Z"
+    updated_at: "2026-11-16T18:13:31Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-f0413921accb02bf42b0b58ba1073d1f60b49d3e"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-f0413921accb02bf42b0b58ba1073d1f60b49d3e"
+    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-f0413921accb02bf42b0b58ba1073d1f60b49d3e/"
+    assets:
+      "755907372":
+        name: "artifact-runtime-provenance.json"
+        url_suffix: "artifact-runtime-provenance.json"
+        size: 3147
+        media_type: "application/json"
+        digest: "sha256:9533fd618b3023f1f8f4a8d484a9b1c37942dce25c8dd4ead7f8eae5b41b583d"
+      "755907420":
+        name: "artifact-runtime-target-f0413921accb02bf42b0b58ba1073d1f60b49d3e-darwin-x64.zip"
+        url_suffix: "artifact-runtime-target-f0413921accb02bf42b0b58ba1073d1f60b49d3e-darwin-x64.zip"
+        size: 1488063
+        media_type: "zip"
+        digest: "sha256:9b22bb39cb92a481b3153bfa363ee022bc55a7325124d8d2f2ee075843670ed9"
+      "755907464":
+        name: "artifact-runtime-target-f0413921accb02bf42b0b58ba1073d1f60b49d3e-darwin-arm64.zip"
+        url_suffix: "artifact-runtime-target-f0413921accb02bf42b0b58ba1073d1f60b49d3e-darwin-arm64.zip"
+        size: 1339190
+        media_type: "zip"
+        digest: "sha256:9f264bdd71cbdb45ce44139867bbadad66883c642e08ea273ae521f98294527c"
+      "755907496":
+        name: "artifact-runtime-target-f0413921accb02bf42b0b58ba1073d1f60b49d3e-linux-x64-gnu.zip"
+        url_suffix: "artifact-runtime-target-f0413921accb02bf42b0b58ba1073d1f60b49d3e-linux-x64-gnu.zip"
+        size: 1549902
+        media_type: "zip"
+        digest: "sha256:34365635161d42db4a49a5ea1483fe15429d260fd444ba7f6155953209b43dee"
+      "755907550":
+        name: "artifact-runtime-target-f0413921accb02bf42b0b58ba1073d1f60b49d3e-linux-arm64-gnu.zip"
+        url_suffix: "artifact-runtime-target-f0413921accb02bf42b0b58ba1073d1f60b49d3e-linux-arm64-gnu.zip"
+        size: 1464119
+        media_type: "zip"
+        digest: "sha256:535d0089460fa89d0f352700ae7361af18ecf785184822abe8f255927010114c"
+      "755907589":
+        name: "artifact-runtime-target-f0413921accb02bf42b0b58ba1073d1f60b49d3e-linux-x64-musl.zip"
+        url_suffix: "artifact-runtime-target-f0413921accb02bf42b0b58ba1073d1f60b49d3e-linux-x64-musl.zip"
+        size: 1561922
+        media_type: "zip"
+        digest: "sha256:9dbfc327392b4e6bd11972ac160b8f1c3241c89e5c08b998e119257142b0e1b0"
+      "755907631":
+        name: "artifact-runtime-target-f0413921accb02bf42b0b58ba1073d1f60b49d3e-linux-arm64-musl.zip"
+        url_suffix: "artifact-runtime-target-f0413921accb02bf42b0b58ba1073d1f60b49d3e-linux-arm64-musl.zip"
+        size: 1461764
+        media_type: "zip"
+        digest: "sha256:99a16f479da78b0fe5fa3aaa099d16987f61576b3dfed76353ace0d7b7a49507"
+      "755907661":
+        name: "artifact-runtime-target-f0413921accb02bf42b0b58ba1073d1f60b49d3e-win32-x64-msvc.zip"
+        url_suffix: "artifact-runtime-target-f0413921accb02bf42b0b58ba1073d1f60b49d3e-win32-x64-msvc.zip"
+        size: 1310053
+        media_type: "zip"
+        digest: "sha256:1367109c204823fdde124215e063d001602b1849f18fb65c051f819ed338983e"
+  "447475121":
+    tag: "opengeni-candidate-465cc9c0b402abd7ed6a16d572a416a96e0b753a"
+    title: "Opengeni release candidate 0.23.25 (465cc9c0b402)"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-candidate-465cc9c0b402abd7ed6a16d572a416a96e0b753a"
+    created_at: "2026-11-16T16:34:01Z"
+    published_at: "2026-11-16T19:11:19Z"
+    updated_at: "2026-11-16T19:11:19Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-candidate-465cc9c0b402abd7ed6a16d572a416a96e0b753a"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-candidate-465cc9c0b402abd7ed6a16d572a416a96e0b753a"
+    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-candidate-465cc9c0b402abd7ed6a16d572a416a96e0b753a/"
+    assets:
+      "756095379":
         name: "release-chart.sha256"
         url_suffix: "release-chart.sha256"
         size: 103
-        digest: "sha256:b05b20f4d948d950013c1e085ba0d52f7729be84875ff01bd983fd0abe29f10d"
-      "742199972":
+        digest: "sha256:365444b5e73a77a410bc36caf542ae1a810deb0eb3a207b5a8db53320af2f12f"
+      "756095380":
+        name: "opengeni-0.23.25.tgz"
+        url_suffix: "opengeni-0.23.25.tgz"
+        size: 231948
+        media_type: "application/x-gtar"
+        digest: "sha256:3308106ce8f14e0e043f574d5a15e05a21fd191ddc08cd99e3b1305908d81c39"
+      "756095381":
         name: "release-candidate.sha256"
         url_suffix: "release-candidate.sha256"
         size: 98
-        digest: "sha256:9ce7e06468fa7db4498203500d40b1cca3520cf02e67b4d89cb92daa8c603969"
-  "443839640":
-    tag: "opengeni-artifact-runtime-d374c99b6e7ab1236482d1eae0f5c707f7c2df51"
-    title: "Opengeni native artifact runtime d374c99b6e7ab1236482d1eae0f5c707f7c2df51"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-d374c99b6e7ab1236482d1eae0f5c707f7c2df51"
-    created_at: "2026-11-13T04:15:04Z"
-    published_at: "2026-11-13T05:10:28Z"
-    updated_at: "2026-11-13T05:10:28Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-d374c99b6e7ab1236482d1eae0f5c707f7c2df51"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-d374c99b6e7ab1236482d1eae0f5c707f7c2df51"
-    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-d374c99b6e7ab1236482d1eae0f5c707f7c2df51/"
-    assets:
-      "742360132":
-        name: "artifact-runtime-provenance.json"
-        url_suffix: "artifact-runtime-provenance.json"
-        size: 3147
-        media_type: "application/json"
-        digest: "sha256:e6865e36751808d37ead5ee5ad52415d868c27ac2ea9e88e1aef623ff5d36e5c"
-      "742360174":
-        name: "artifact-runtime-target-d374c99b6e7ab1236482d1eae0f5c707f7c2df51-darwin-x64.zip"
-        url_suffix: "artifact-runtime-target-d374c99b6e7ab1236482d1eae0f5c707f7c2df51-darwin-x64.zip"
-        size: 1488063
-        media_type: "zip"
-        digest: "sha256:b2e75af1f2de8dd07d4fdcb746a1a3d518a4fcb534b91049341dd1316484804c"
-      "742360200":
-        name: "artifact-runtime-target-d374c99b6e7ab1236482d1eae0f5c707f7c2df51-darwin-arm64.zip"
-        url_suffix: "artifact-runtime-target-d374c99b6e7ab1236482d1eae0f5c707f7c2df51-darwin-arm64.zip"
-        size: 1339190
-        media_type: "zip"
-        digest: "sha256:a8a645714a112f4b5b469d52f83394760546d0d7d035ca23f132624b60bd2ca5"
-      "742360248":
-        name: "artifact-runtime-target-d374c99b6e7ab1236482d1eae0f5c707f7c2df51-linux-x64-gnu.zip"
-        url_suffix: "artifact-runtime-target-d374c99b6e7ab1236482d1eae0f5c707f7c2df51-linux-x64-gnu.zip"
-        size: 1549902
-        media_type: "zip"
-        digest: "sha256:dff467d8be21ab6952cffe20e53aa5802ef3865684e825afc6cf6b73ba93e453"
-      "742360286":
-        name: "artifact-runtime-target-d374c99b6e7ab1236482d1eae0f5c707f7c2df51-linux-arm64-gnu.zip"
-        url_suffix: "artifact-runtime-target-d374c99b6e7ab1236482d1eae0f5c707f7c2df51-linux-arm64-gnu.zip"
-        size: 1464119
-        media_type: "zip"
-        digest: "sha256:4554e8804a1f2173214ac7b35c25dcb6e439adc29ea5c84d0a83f363266550b2"
-      "742360332":
-        name: "artifact-runtime-target-d374c99b6e7ab1236482d1eae0f5c707f7c2df51-linux-x64-musl.zip"
-        url_suffix: "artifact-runtime-target-d374c99b6e7ab1236482d1eae0f5c707f7c2df51-linux-x64-musl.zip"
-        size: 1561922
-        media_type: "zip"
-        digest: "sha256:3a9ae9261fafdf06de1f107f12612c484400f7c9939bced1e775fe76cfa732eb"
-      "742360364":
-        name: "artifact-runtime-target-d374c99b6e7ab1236482d1eae0f5c707f7c2df51-linux-arm64-musl.zip"
-        url_suffix: "artifact-runtime-target-d374c99b6e7ab1236482d1eae0f5c707f7c2df51-linux-arm64-musl.zip"
-        size: 1461764
-        media_type: "zip"
-        digest: "sha256:57dd1d0b0b2c3b5c64cfa20980f8c3ca010a2bdd9f77e8233d2ef56822b92427"
-      "742360392":
-        name: "artifact-runtime-target-d374c99b6e7ab1236482d1eae0f5c707f7c2df51-win32-x64-msvc.zip"
-        url_suffix: "artifact-runtime-target-d374c99b6e7ab1236482d1eae0f5c707f7c2df51-win32-x64-msvc.zip"
-        size: 1310052
-        media_type: "zip"
-        digest: "sha256:652195a12b8024432c01a2e8fe11fd28c58d2e17e06df05205402325528f81e6"
-  "443860291":
-    tag: "opengeni-artifact-runtime-1b6b22f3d3b24d0c00ca9506cad06001857453d8"
-    title: "Opengeni native artifact runtime 1b6b22f3d3b24d0c00ca9506cad06001857453d8"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-1b6b22f3d3b24d0c00ca9506cad06001857453d8"
-    created_at: "2026-11-13T04:48:50Z"
-    published_at: "2026-11-13T05:41:57Z"
-    updated_at: "2026-11-13T05:41:57Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-1b6b22f3d3b24d0c00ca9506cad06001857453d8"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-1b6b22f3d3b24d0c00ca9506cad06001857453d8"
-    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-1b6b22f3d3b24d0c00ca9506cad06001857453d8/"
-    assets:
-      "742440907":
-        name: "artifact-runtime-provenance.json"
-        url_suffix: "artifact-runtime-provenance.json"
-        size: 3147
-        media_type: "application/json"
-        digest: "sha256:4877af3a31680e113a99dff7b6be8b317178d3d3d7fc2042781f576fc16f75cb"
-      "742440931":
-        name: "artifact-runtime-target-1b6b22f3d3b24d0c00ca9506cad06001857453d8-darwin-x64.zip"
-        url_suffix: "artifact-runtime-target-1b6b22f3d3b24d0c00ca9506cad06001857453d8-darwin-x64.zip"
-        size: 1488063
-        media_type: "zip"
-        digest: "sha256:7b7ce46b4c10021ec7de7200c8c17837b57864f962d1fd9d03fe159f1711b467"
-      "742440959":
-        name: "artifact-runtime-target-1b6b22f3d3b24d0c00ca9506cad06001857453d8-darwin-arm64.zip"
-        url_suffix: "artifact-runtime-target-1b6b22f3d3b24d0c00ca9506cad06001857453d8-darwin-arm64.zip"
-        size: 1339190
-        media_type: "zip"
-        digest: "sha256:9366ef4a5bddfebfcdb6903ba5062376aa2d9871b4658e7d35bfc60ee4bac998"
-      "742440988":
-        name: "artifact-runtime-target-1b6b22f3d3b24d0c00ca9506cad06001857453d8-linux-x64-gnu.zip"
-        url_suffix: "artifact-runtime-target-1b6b22f3d3b24d0c00ca9506cad06001857453d8-linux-x64-gnu.zip"
-        size: 1549902
-        media_type: "zip"
-        digest: "sha256:9eb3f5e3a591c70560b762d1f3113ebe1156f74de54180646f0c0f1e5e024207"
-      "742441021":
-        name: "artifact-runtime-target-1b6b22f3d3b24d0c00ca9506cad06001857453d8-linux-arm64-gnu.zip"
-        url_suffix: "artifact-runtime-target-1b6b22f3d3b24d0c00ca9506cad06001857453d8-linux-arm64-gnu.zip"
-        size: 1464119
-        media_type: "zip"
-        digest: "sha256:be12da7359ac4289e8ad5cf96465de9cebdb546efbb16c72f3a798c799f5eac8"
-      "742441049":
-        name: "artifact-runtime-target-1b6b22f3d3b24d0c00ca9506cad06001857453d8-linux-x64-musl.zip"
-        url_suffix: "artifact-runtime-target-1b6b22f3d3b24d0c00ca9506cad06001857453d8-linux-x64-musl.zip"
-        size: 1561922
-        media_type: "zip"
-        digest: "sha256:4f243d70b8c391133d3aadfbcce31cef5f2f2b480b0c3480e64377ca55a2bd8f"
-      "742441087":
-        name: "artifact-runtime-target-1b6b22f3d3b24d0c00ca9506cad06001857453d8-linux-arm64-musl.zip"
-        url_suffix: "artifact-runtime-target-1b6b22f3d3b24d0c00ca9506cad06001857453d8-linux-arm64-musl.zip"
-        size: 1461764
-        media_type: "zip"
-        digest: "sha256:64b53dd087b11632eab2e5e40152d20df3c2ace0e64c83ea7a2ac93d07d0355f"
-      "742441113":
-        name: "artifact-runtime-target-1b6b22f3d3b24d0c00ca9506cad06001857453d8-win32-x64-msvc.zip"
-        url_suffix: "artifact-runtime-target-1b6b22f3d3b24d0c00ca9506cad06001857453d8-win32-x64-msvc.zip"
-        size: 1310053
-        media_type: "zip"
-        digest: "sha256:a5a7823f44fc9ec8c0f8a0be72a4e6199345c67248bf7f6224c985a24344ee3a"
-  "443863044":
-    tag: "opengeni-artifact-runtime-1e29039fe55b2ff53d4d1c8f4e7f370c7ad71441"
-    title: "Opengeni native artifact runtime 1e29039fe55b2ff53d4d1c8f4e7f370c7ad71441"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-1e29039fe55b2ff53d4d1c8f4e7f370c7ad71441"
-    created_at: "2026-11-13T04:32:08Z"
-    published_at: "2026-11-13T05:46:32Z"
-    updated_at: "2026-11-13T05:46:32Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-1e29039fe55b2ff53d4d1c8f4e7f370c7ad71441"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-1e29039fe55b2ff53d4d1c8f4e7f370c7ad71441"
-    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-1e29039fe55b2ff53d4d1c8f4e7f370c7ad71441/"
-    assets:
-      "742452012":
-        name: "artifact-runtime-provenance.json"
-        url_suffix: "artifact-runtime-provenance.json"
-        size: 3147
-        media_type: "application/json"
-        digest: "sha256:8e5956a0b7016fda4d15c434aeb28fb02f7b7838dcaac46e71762a78eb2730d5"
-      "742452036":
-        name: "artifact-runtime-target-1e29039fe55b2ff53d4d1c8f4e7f370c7ad71441-darwin-x64.zip"
-        url_suffix: "artifact-runtime-target-1e29039fe55b2ff53d4d1c8f4e7f370c7ad71441-darwin-x64.zip"
-        size: 1488063
-        media_type: "zip"
-        digest: "sha256:5200c7a2ea9e1cd6b4fd154e29882fb0d62e2a20cbd16bd1b90bfa02bf8b7d74"
-      "742452077":
-        name: "artifact-runtime-target-1e29039fe55b2ff53d4d1c8f4e7f370c7ad71441-darwin-arm64.zip"
-        url_suffix: "artifact-runtime-target-1e29039fe55b2ff53d4d1c8f4e7f370c7ad71441-darwin-arm64.zip"
-        size: 1339190
-        media_type: "zip"
-        digest: "sha256:100827763b26e243318a4f72ea84a5a00f7f5f4aa87ab30d8d7c754b521d768b"
-      "742452121":
-        name: "artifact-runtime-target-1e29039fe55b2ff53d4d1c8f4e7f370c7ad71441-linux-x64-gnu.zip"
-        url_suffix: "artifact-runtime-target-1e29039fe55b2ff53d4d1c8f4e7f370c7ad71441-linux-x64-gnu.zip"
-        size: 1549902
-        media_type: "zip"
-        digest: "sha256:a27c80923340a79c2b09563e7f18df494cd2f0209698786cf7c291906aa0d5ec"
-      "742452158":
-        name: "artifact-runtime-target-1e29039fe55b2ff53d4d1c8f4e7f370c7ad71441-linux-arm64-gnu.zip"
-        url_suffix: "artifact-runtime-target-1e29039fe55b2ff53d4d1c8f4e7f370c7ad71441-linux-arm64-gnu.zip"
-        size: 1464119
-        media_type: "zip"
-        digest: "sha256:11a408a6740e07566a7fb21e444c9b949351d9fd3b8175aa45b60fe7713eec11"
-      "742452189":
-        name: "artifact-runtime-target-1e29039fe55b2ff53d4d1c8f4e7f370c7ad71441-linux-x64-musl.zip"
-        url_suffix: "artifact-runtime-target-1e29039fe55b2ff53d4d1c8f4e7f370c7ad71441-linux-x64-musl.zip"
-        size: 1561922
-        media_type: "zip"
-        digest: "sha256:63aa80d7330d68f0bd03cb54efb22306bbc1dc85fc03a86ce16ed7b42691b64c"
-      "742452214":
-        name: "artifact-runtime-target-1e29039fe55b2ff53d4d1c8f4e7f370c7ad71441-linux-arm64-musl.zip"
-        url_suffix: "artifact-runtime-target-1e29039fe55b2ff53d4d1c8f4e7f370c7ad71441-linux-arm64-musl.zip"
-        size: 1461764
-        media_type: "zip"
-        digest: "sha256:664cc18e3e808966978867cc43ac4c164d5897ffa021b84d2f46271563ead210"
-      "742452238":
-        name: "artifact-runtime-target-1e29039fe55b2ff53d4d1c8f4e7f370c7ad71441-win32-x64-msvc.zip"
-        url_suffix: "artifact-runtime-target-1e29039fe55b2ff53d4d1c8f4e7f370c7ad71441-win32-x64-msvc.zip"
-        size: 1310052
-        media_type: "zip"
-        digest: "sha256:980171c2a2fe52b79eac8b11cbe9210579f269bc9ef750f5a6ed028597ebaf3c"
-  "443909959":
-    tag: "opengeni-artifact-runtime-b349ca04c0bbfed5cc5a2ff9c4d5b6b9b5a8ff0a"
-    title: "Opengeni native artifact runtime b349ca04c0bbfed5cc5a2ff9c4d5b6b9b5a8ff0a"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-b349ca04c0bbfed5cc5a2ff9c4d5b6b9b5a8ff0a"
-    created_at: "2026-11-13T05:52:57Z"
-    published_at: "2026-11-13T06:55:21Z"
-    updated_at: "2026-11-13T06:55:21Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-b349ca04c0bbfed5cc5a2ff9c4d5b6b9b5a8ff0a"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-b349ca04c0bbfed5cc5a2ff9c4d5b6b9b5a8ff0a"
-    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-b349ca04c0bbfed5cc5a2ff9c4d5b6b9b5a8ff0a/"
-    assets:
-      "742624257":
-        name: "artifact-runtime-provenance.json"
-        url_suffix: "artifact-runtime-provenance.json"
-        size: 3147
-        media_type: "application/json"
-        digest: "sha256:84d631f530a1d73456a39b5196cb757a3c8bbe8f3679866c11e782738af4e8ad"
-      "742624293":
-        name: "artifact-runtime-target-b349ca04c0bbfed5cc5a2ff9c4d5b6b9b5a8ff0a-darwin-x64.zip"
-        url_suffix: "artifact-runtime-target-b349ca04c0bbfed5cc5a2ff9c4d5b6b9b5a8ff0a-darwin-x64.zip"
-        size: 1488063
-        media_type: "zip"
-        digest: "sha256:a74f1ea7d45710997572788ef3e2093ee0defbeafd466dfb6aab90ce112dc79c"
-      "742624346":
-        name: "artifact-runtime-target-b349ca04c0bbfed5cc5a2ff9c4d5b6b9b5a8ff0a-darwin-arm64.zip"
-        url_suffix: "artifact-runtime-target-b349ca04c0bbfed5cc5a2ff9c4d5b6b9b5a8ff0a-darwin-arm64.zip"
-        size: 1339190
-        media_type: "zip"
-        digest: "sha256:19f3a2bb969b06052bdfe2e03978efb7a1c0c98f2a1d3c88fae92eaec55d1ae4"
-      "742624371":
-        name: "artifact-runtime-target-b349ca04c0bbfed5cc5a2ff9c4d5b6b9b5a8ff0a-linux-x64-gnu.zip"
-        url_suffix: "artifact-runtime-target-b349ca04c0bbfed5cc5a2ff9c4d5b6b9b5a8ff0a-linux-x64-gnu.zip"
-        size: 1549902
-        media_type: "zip"
-        digest: "sha256:a3605f23d1d4835462ef3a58b4d29f1b76a760226c3f431ca7e7b6e16f135065"
-      "742624410":
-        name: "artifact-runtime-target-b349ca04c0bbfed5cc5a2ff9c4d5b6b9b5a8ff0a-linux-arm64-gnu.zip"
-        url_suffix: "artifact-runtime-target-b349ca04c0bbfed5cc5a2ff9c4d5b6b9b5a8ff0a-linux-arm64-gnu.zip"
-        size: 1464119
-        media_type: "zip"
-        digest: "sha256:c6714a18e9ae0cc49b46c5dbf3d0bc40d78cfd0d9126aa6f27406fd6c1e9164f"
-      "742624439":
-        name: "artifact-runtime-target-b349ca04c0bbfed5cc5a2ff9c4d5b6b9b5a8ff0a-linux-x64-musl.zip"
-        url_suffix: "artifact-runtime-target-b349ca04c0bbfed5cc5a2ff9c4d5b6b9b5a8ff0a-linux-x64-musl.zip"
-        size: 1561922
-        media_type: "zip"
-        digest: "sha256:4f638ea4489a7ca033b54a3c9ed617941e7c9b7387a0cfc7f28d240aeb3cb5ee"
-      "742624469":
-        name: "artifact-runtime-target-b349ca04c0bbfed5cc5a2ff9c4d5b6b9b5a8ff0a-linux-arm64-musl.zip"
-        url_suffix: "artifact-runtime-target-b349ca04c0bbfed5cc5a2ff9c4d5b6b9b5a8ff0a-linux-arm64-musl.zip"
-        size: 1461764
-        media_type: "zip"
-        digest: "sha256:fb897ae860d2d7436eb01769f328eca50a8aa26345ad8ba23f462ce4d768c839"
-      "742624495":
-        name: "artifact-runtime-target-b349ca04c0bbfed5cc5a2ff9c4d5b6b9b5a8ff0a-win32-x64-msvc.zip"
-        url_suffix: "artifact-runtime-target-b349ca04c0bbfed5cc5a2ff9c4d5b6b9b5a8ff0a-win32-x64-msvc.zip"
-        size: 1310055
-        media_type: "zip"
-        digest: "sha256:f60184038fb1818de1669a4bea7804a11bbd5f09c5a131b1e560496225d7505a"
-  "443914987":
-    tag: "opengeni-release-head-05660f4c4ec1da4f81c7f2da830d9f10566b60aa"
-    title: "Retained OpenGeni release head 05660f4c4ec1da4f81c7f2da830d9f10566b60aa"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-05660f4c4ec1da4f81c7f2da830d9f10566b60aa"
-    created_at: "2026-11-13T07:00:28Z"
-    published_at: "2026-11-13T07:02:03Z"
-    updated_at: "2026-11-13T07:02:03Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-05660f4c4ec1da4f81c7f2da830d9f10566b60aa"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-05660f4c4ec1da4f81c7f2da830d9f10566b60aa"
-    assets: {}
-  "443915050":
-    tag: "opengeni-release-head-b349ca04c0bbfed5cc5a2ff9c4d5b6b9b5a8ff0a"
-    title: "Retained OpenGeni release head b349ca04c0bbfed5cc5a2ff9c4d5b6b9b5a8ff0a"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-b349ca04c0bbfed5cc5a2ff9c4d5b6b9b5a8ff0a"
-    created_at: "2026-11-13T05:52:57Z"
-    published_at: "2026-11-13T07:02:07Z"
-    updated_at: "2026-11-13T07:02:07Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-b349ca04c0bbfed5cc5a2ff9c4d5b6b9b5a8ff0a"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-b349ca04c0bbfed5cc5a2ff9c4d5b6b9b5a8ff0a"
-    assets: {}
-  "444002975":
-    tag: "opengeni-artifact-runtime-e37485ba0b206c29ca7282b038a57c200b4d2bba"
-    title: "Opengeni native artifact runtime e37485ba0b206c29ca7282b038a57c200b4d2bba"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-e37485ba0b206c29ca7282b038a57c200b4d2bba"
-    created_at: "2026-11-13T08:11:58Z"
-    published_at: "2026-11-13T08:47:56Z"
-    updated_at: "2026-11-13T08:47:56Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-e37485ba0b206c29ca7282b038a57c200b4d2bba"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-e37485ba0b206c29ca7282b038a57c200b4d2bba"
-    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-e37485ba0b206c29ca7282b038a57c200b4d2bba/"
-    assets:
-      "742946359":
-        name: "artifact-runtime-provenance.json"
-        url_suffix: "artifact-runtime-provenance.json"
-        size: 3147
-        media_type: "application/json"
-        digest: "sha256:33ffb70235887f103684da3e5e80b2554f0a247545db5d72327deac518261f4d"
-      "742946381":
-        name: "artifact-runtime-target-e37485ba0b206c29ca7282b038a57c200b4d2bba-darwin-x64.zip"
-        url_suffix: "artifact-runtime-target-e37485ba0b206c29ca7282b038a57c200b4d2bba-darwin-x64.zip"
-        size: 1488063
-        media_type: "zip"
-        digest: "sha256:a449e27a949f5d334b4cb3dfd4b822219ac91a0264412262c58a74f2bb82797e"
-      "742946396":
-        name: "artifact-runtime-target-e37485ba0b206c29ca7282b038a57c200b4d2bba-darwin-arm64.zip"
-        url_suffix: "artifact-runtime-target-e37485ba0b206c29ca7282b038a57c200b4d2bba-darwin-arm64.zip"
-        size: 1339190
-        media_type: "zip"
-        digest: "sha256:219eeec70cce2a5ca553600934ccdff8a39465ac040cbe204289eaceb63d9e21"
-      "742946411":
-        name: "artifact-runtime-target-e37485ba0b206c29ca7282b038a57c200b4d2bba-linux-x64-gnu.zip"
-        url_suffix: "artifact-runtime-target-e37485ba0b206c29ca7282b038a57c200b4d2bba-linux-x64-gnu.zip"
-        size: 1549902
-        media_type: "zip"
-        digest: "sha256:c2df992c99fe56500e3f0cd80dc341b465c6870a374120b855a3864b0be88464"
-      "742946444":
-        name: "artifact-runtime-target-e37485ba0b206c29ca7282b038a57c200b4d2bba-linux-arm64-gnu.zip"
-        url_suffix: "artifact-runtime-target-e37485ba0b206c29ca7282b038a57c200b4d2bba-linux-arm64-gnu.zip"
-        size: 1464119
-        media_type: "zip"
-        digest: "sha256:7d4cc3dc7710e5bd5b0052b58c4dff8407d81dff594cf14f2c0d72d4a4a4853c"
-      "742946469":
-        name: "artifact-runtime-target-e37485ba0b206c29ca7282b038a57c200b4d2bba-linux-x64-musl.zip"
-        url_suffix: "artifact-runtime-target-e37485ba0b206c29ca7282b038a57c200b4d2bba-linux-x64-musl.zip"
-        size: 1561922
-        media_type: "zip"
-        digest: "sha256:bc0685c13cd0096b0013ce6503f50ca100bf6c113bc0fd8ae144c68ac5e38390"
-      "742946507":
-        name: "artifact-runtime-target-e37485ba0b206c29ca7282b038a57c200b4d2bba-linux-arm64-musl.zip"
-        url_suffix: "artifact-runtime-target-e37485ba0b206c29ca7282b038a57c200b4d2bba-linux-arm64-musl.zip"
-        size: 1461764
-        media_type: "zip"
-        digest: "sha256:b17ee97c4d734278eba65b75098b8d5312417e26fbcf7bb26ee41762a9aa08a5"
-      "742946524":
-        name: "artifact-runtime-target-e37485ba0b206c29ca7282b038a57c200b4d2bba-win32-x64-msvc.zip"
-        url_suffix: "artifact-runtime-target-e37485ba0b206c29ca7282b038a57c200b4d2bba-win32-x64-msvc.zip"
-        size: 1310052
-        media_type: "zip"
-        digest: "sha256:0eddaaea9c32da88dd3ac1dfca8f586bf9cca9448030bc104418ce52c9141246"
-  "444042791":
-    tag: "opengeni-artifact-runtime-58d8bcd91ce4f22a918c296201b519e43aff4774"
-    title: "Opengeni native artifact runtime 58d8bcd91ce4f22a918c296201b519e43aff4774"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-58d8bcd91ce4f22a918c296201b519e43aff4774"
-    created_at: "2026-11-13T08:28:39Z"
-    published_at: "2026-11-13T09:30:45Z"
-    updated_at: "2026-11-13T09:30:45Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-58d8bcd91ce4f22a918c296201b519e43aff4774"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-58d8bcd91ce4f22a918c296201b519e43aff4774"
-    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-58d8bcd91ce4f22a918c296201b519e43aff4774/"
-    assets:
-      "743066427":
-        name: "artifact-runtime-provenance.json"
-        url_suffix: "artifact-runtime-provenance.json"
-        size: 3147
-        media_type: "application/json"
-        digest: "sha256:4cf6289b81a05e7c792b646ddd8bdeb02fed0d15471f451859f8a589459c2f3a"
-      "743066460":
-        name: "artifact-runtime-target-58d8bcd91ce4f22a918c296201b519e43aff4774-darwin-x64.zip"
-        url_suffix: "artifact-runtime-target-58d8bcd91ce4f22a918c296201b519e43aff4774-darwin-x64.zip"
-        size: 1488063
-        media_type: "zip"
-        digest: "sha256:86c7d7788e1654286dcc3cc0a015fe74d29da79b712282f52f5d8504d7940f88"
-      "743066504":
-        name: "artifact-runtime-target-58d8bcd91ce4f22a918c296201b519e43aff4774-darwin-arm64.zip"
-        url_suffix: "artifact-runtime-target-58d8bcd91ce4f22a918c296201b519e43aff4774-darwin-arm64.zip"
-        size: 1339190
-        media_type: "zip"
-        digest: "sha256:64a1568ef2105fc1afc4d74383a0afc03e43b0cbb79605dca31c296847e3bb89"
-      "743066530":
-        name: "artifact-runtime-target-58d8bcd91ce4f22a918c296201b519e43aff4774-linux-x64-gnu.zip"
-        url_suffix: "artifact-runtime-target-58d8bcd91ce4f22a918c296201b519e43aff4774-linux-x64-gnu.zip"
-        size: 1549902
-        media_type: "zip"
-        digest: "sha256:2c25342e8a71e7c5e788024e30b8ec8f75acb70f5515f435f640a4a3bd9abe26"
-      "743066564":
-        name: "artifact-runtime-target-58d8bcd91ce4f22a918c296201b519e43aff4774-linux-arm64-gnu.zip"
-        url_suffix: "artifact-runtime-target-58d8bcd91ce4f22a918c296201b519e43aff4774-linux-arm64-gnu.zip"
-        size: 1464119
-        media_type: "zip"
-        digest: "sha256:d92cc992a7e2993c8ecc9e51356016870bda749c51fa478cc5b1bc3135592d7f"
-      "743066605":
-        name: "artifact-runtime-target-58d8bcd91ce4f22a918c296201b519e43aff4774-linux-x64-musl.zip"
-        url_suffix: "artifact-runtime-target-58d8bcd91ce4f22a918c296201b519e43aff4774-linux-x64-musl.zip"
-        size: 1561922
-        media_type: "zip"
-        digest: "sha256:aa1294707cd29cdb0a3db2fc8bd3d9b83a38cf6c5e9ea06ce826c15a8b17a696"
-      "743066664":
-        name: "artifact-runtime-target-58d8bcd91ce4f22a918c296201b519e43aff4774-linux-arm64-musl.zip"
-        url_suffix: "artifact-runtime-target-58d8bcd91ce4f22a918c296201b519e43aff4774-linux-arm64-musl.zip"
-        size: 1461764
-        media_type: "zip"
-        digest: "sha256:45ebd01e0d78fc0e1dae8ae820420f0f74e289fdf0c1479472210a950a999375"
-      "743066696":
-        name: "artifact-runtime-target-58d8bcd91ce4f22a918c296201b519e43aff4774-win32-x64-msvc.zip"
-        url_suffix: "artifact-runtime-target-58d8bcd91ce4f22a918c296201b519e43aff4774-win32-x64-msvc.zip"
-        size: 1310053
-        media_type: "zip"
-        digest: "sha256:cf1eb046dbdc698b22c47ebfb5d6d7a5ae871a645f2f09e4fcde5e59fa94b8dc"
-  "444152093":
-    tag: "opengeni-release-head-a72aaa5bca652f38a9a7fe8b3f609f1809670ef7"
-    title: "Retained OpenGeni release head a72aaa5bca652f38a9a7fe8b3f609f1809670ef7"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-a72aaa5bca652f38a9a7fe8b3f609f1809670ef7"
-    created_at: "2026-11-13T11:29:30Z"
-    published_at: "2026-11-13T11:33:10Z"
-    updated_at: "2026-11-13T11:33:10Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-a72aaa5bca652f38a9a7fe8b3f609f1809670ef7"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-a72aaa5bca652f38a9a7fe8b3f609f1809670ef7"
-    assets: {}
-  "444152152":
-    tag: "opengeni-release-head-08953beb6b6c768d5f4ff3f35fce3e53d303ecfc"
-    title: "Retained OpenGeni release head 08953beb6b6c768d5f4ff3f35fce3e53d303ecfc"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-08953beb6b6c768d5f4ff3f35fce3e53d303ecfc"
-    created_at: "2026-11-13T11:26:48Z"
-    published_at: "2026-11-13T11:33:13Z"
-    updated_at: "2026-11-13T11:33:13Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-08953beb6b6c768d5f4ff3f35fce3e53d303ecfc"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-08953beb6b6c768d5f4ff3f35fce3e53d303ecfc"
-    assets: {}
-  "444176232":
-    tag: "opengeni-artifact-runtime-52ef65b08ab41ebfb5f7b4b9b86585bd71ed7c17"
-    title: "Opengeni native artifact runtime 52ef65b08ab41ebfb5f7b4b9b86585bd71ed7c17"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-52ef65b08ab41ebfb5f7b4b9b86585bd71ed7c17"
-    created_at: "2026-11-13T10:58:42Z"
-    published_at: "2026-11-13T12:00:19Z"
-    updated_at: "2026-11-13T12:00:19Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-52ef65b08ab41ebfb5f7b4b9b86585bd71ed7c17"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-52ef65b08ab41ebfb5f7b4b9b86585bd71ed7c17"
-    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-52ef65b08ab41ebfb5f7b4b9b86585bd71ed7c17/"
-    assets:
-      "743491087":
-        name: "artifact-runtime-provenance.json"
-        url_suffix: "artifact-runtime-provenance.json"
-        size: 3147
-        media_type: "application/json"
-        digest: "sha256:17dd7bb4470eff037c462fed1a3439a0e7153783d31652d705ae42e4be42efe6"
-      "743491128":
-        name: "artifact-runtime-target-52ef65b08ab41ebfb5f7b4b9b86585bd71ed7c17-darwin-x64.zip"
-        url_suffix: "artifact-runtime-target-52ef65b08ab41ebfb5f7b4b9b86585bd71ed7c17-darwin-x64.zip"
-        size: 1488063
-        media_type: "zip"
-        digest: "sha256:049ed5fcd0742e54a4a42dc42647e77ff28f7b95e62152df68696d42b6154643"
-      "743491195":
-        name: "artifact-runtime-target-52ef65b08ab41ebfb5f7b4b9b86585bd71ed7c17-darwin-arm64.zip"
-        url_suffix: "artifact-runtime-target-52ef65b08ab41ebfb5f7b4b9b86585bd71ed7c17-darwin-arm64.zip"
-        size: 1339190
-        media_type: "zip"
-        digest: "sha256:29c6a57cd344cbc92acd6faa5eca88dd722961beaac02c887d345b2f4207992d"
-      "743491279":
-        name: "artifact-runtime-target-52ef65b08ab41ebfb5f7b4b9b86585bd71ed7c17-linux-x64-gnu.zip"
-        url_suffix: "artifact-runtime-target-52ef65b08ab41ebfb5f7b4b9b86585bd71ed7c17-linux-x64-gnu.zip"
-        size: 1549902
-        media_type: "zip"
-        digest: "sha256:b96dc836e7f01ff4a4cf81d66902d54d9f2e14532b6396cbd8d7d3404e28c13a"
-      "743491340":
-        name: "artifact-runtime-target-52ef65b08ab41ebfb5f7b4b9b86585bd71ed7c17-linux-arm64-gnu.zip"
-        url_suffix: "artifact-runtime-target-52ef65b08ab41ebfb5f7b4b9b86585bd71ed7c17-linux-arm64-gnu.zip"
-        size: 1464119
-        media_type: "zip"
-        digest: "sha256:643f90ee2a6e20e05b242951b4137a1b2c0acbf5d4edc723f58ae38d65a7aac1"
-      "743491378":
-        name: "artifact-runtime-target-52ef65b08ab41ebfb5f7b4b9b86585bd71ed7c17-linux-x64-musl.zip"
-        url_suffix: "artifact-runtime-target-52ef65b08ab41ebfb5f7b4b9b86585bd71ed7c17-linux-x64-musl.zip"
-        size: 1561922
-        media_type: "zip"
-        digest: "sha256:5b1f387cb37e5e0f7f86dbebec8ec19dd107087bf91059ac003915529558b100"
-      "743491425":
-        name: "artifact-runtime-target-52ef65b08ab41ebfb5f7b4b9b86585bd71ed7c17-linux-arm64-musl.zip"
-        url_suffix: "artifact-runtime-target-52ef65b08ab41ebfb5f7b4b9b86585bd71ed7c17-linux-arm64-musl.zip"
-        size: 1461764
-        media_type: "zip"
-        digest: "sha256:ef406fec4ff01ca9bcdcc86c930454cdb02dbdb7a6782a2973008caeaebbaca7"
-      "743491477":
-        name: "artifact-runtime-target-52ef65b08ab41ebfb5f7b4b9b86585bd71ed7c17-win32-x64-msvc.zip"
-        url_suffix: "artifact-runtime-target-52ef65b08ab41ebfb5f7b4b9b86585bd71ed7c17-win32-x64-msvc.zip"
-        size: 1310053
-        media_type: "zip"
-        digest: "sha256:75d7ec094520c86027247be710c554775cfeb8ee76998a1a922d89fe7faff56f"
-  "444231068":
-    tag: "opengeni-release-head-908eb36f2194c4e135c5f5ea4640ecf30ef00b54"
-    title: "Retained OpenGeni release head 908eb36f2194c4e135c5f5ea4640ecf30ef00b54"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-908eb36f2194c4e135c5f5ea4640ecf30ef00b54"
-    created_at: "2026-11-13T12:55:40Z"
-    published_at: "2026-11-13T12:57:00Z"
-    updated_at: "2026-11-13T12:57:00Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-908eb36f2194c4e135c5f5ea4640ecf30ef00b54"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-908eb36f2194c4e135c5f5ea4640ecf30ef00b54"
-    assets: {}
-  "444231135":
-    tag: "opengeni-release-head-f9ddd2a6f1a9fcc46e53b678b0900dd3e8d5552a"
-    title: "Retained OpenGeni release head f9ddd2a6f1a9fcc46e53b678b0900dd3e8d5552a"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-f9ddd2a6f1a9fcc46e53b678b0900dd3e8d5552a"
-    created_at: "2026-11-13T12:50:16Z"
-    published_at: "2026-11-13T12:57:04Z"
-    updated_at: "2026-11-13T12:57:04Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-f9ddd2a6f1a9fcc46e53b678b0900dd3e8d5552a"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-f9ddd2a6f1a9fcc46e53b678b0900dd3e8d5552a"
-    assets: {}
-  "444356198":
-    tag: "opengeni-artifact-runtime-b0968ed4b5f67748f35d93241046e75905ad26af"
-    title: "Opengeni native artifact runtime b0968ed4b5f67748f35d93241046e75905ad26af"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-b0968ed4b5f67748f35d93241046e75905ad26af"
-    created_at: "2026-11-13T13:26:16Z"
-    published_at: "2026-11-13T14:53:13Z"
-    updated_at: "2026-11-13T14:53:13Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-b0968ed4b5f67748f35d93241046e75905ad26af"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-b0968ed4b5f67748f35d93241046e75905ad26af"
-    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-b0968ed4b5f67748f35d93241046e75905ad26af/"
-    assets:
-      "744034518":
-        name: "artifact-runtime-provenance.json"
-        url_suffix: "artifact-runtime-provenance.json"
-        size: 3147
-        media_type: "application/json"
-        digest: "sha256:120ef10a7a9e980c1357c0e0063439ea9aff1f59e43abbdd3845b09eb11fd2a4"
-      "744034549":
-        name: "artifact-runtime-target-b0968ed4b5f67748f35d93241046e75905ad26af-darwin-x64.zip"
-        url_suffix: "artifact-runtime-target-b0968ed4b5f67748f35d93241046e75905ad26af-darwin-x64.zip"
-        size: 1488063
-        media_type: "zip"
-        digest: "sha256:3c45de695f7cfea87a76c6edc50a642badc30aa99470dc4c90e849e75a9ed5e2"
-      "744034602":
-        name: "artifact-runtime-target-b0968ed4b5f67748f35d93241046e75905ad26af-darwin-arm64.zip"
-        url_suffix: "artifact-runtime-target-b0968ed4b5f67748f35d93241046e75905ad26af-darwin-arm64.zip"
-        size: 1339190
-        media_type: "zip"
-        digest: "sha256:191cc80ee0060480b60812bc3428f3e500049cd591489935df2d1865dbaef5f7"
-      "744034638":
-        name: "artifact-runtime-target-b0968ed4b5f67748f35d93241046e75905ad26af-linux-x64-gnu.zip"
-        url_suffix: "artifact-runtime-target-b0968ed4b5f67748f35d93241046e75905ad26af-linux-x64-gnu.zip"
-        size: 1549902
-        media_type: "zip"
-        digest: "sha256:09b93765db6a101ec82cc25d43b545f7235d7919fe73df21a71525f8b5bfcb9b"
-      "744034657":
-        name: "artifact-runtime-target-b0968ed4b5f67748f35d93241046e75905ad26af-linux-arm64-gnu.zip"
-        url_suffix: "artifact-runtime-target-b0968ed4b5f67748f35d93241046e75905ad26af-linux-arm64-gnu.zip"
-        size: 1464119
-        media_type: "zip"
-        digest: "sha256:c58f15845c95986af39bb9a25cea5bd0b0cf8d5288abb68b903c55380a446e83"
-      "744034702":
-        name: "artifact-runtime-target-b0968ed4b5f67748f35d93241046e75905ad26af-linux-x64-musl.zip"
-        url_suffix: "artifact-runtime-target-b0968ed4b5f67748f35d93241046e75905ad26af-linux-x64-musl.zip"
-        size: 1561922
-        media_type: "zip"
-        digest: "sha256:3a5d5c9c6b7e3c9d50e8b35b81d6bcfeb80a1867d5a51afa878c69102b13eee8"
-      "744034751":
-        name: "artifact-runtime-target-b0968ed4b5f67748f35d93241046e75905ad26af-linux-arm64-musl.zip"
-        url_suffix: "artifact-runtime-target-b0968ed4b5f67748f35d93241046e75905ad26af-linux-arm64-musl.zip"
-        size: 1461764
-        media_type: "zip"
-        digest: "sha256:c4302854d1116264135191e51ba54cafcf9344bac26f756899e10768ab41d6b1"
-      "744034781":
-        name: "artifact-runtime-target-b0968ed4b5f67748f35d93241046e75905ad26af-win32-x64-msvc.zip"
-        url_suffix: "artifact-runtime-target-b0968ed4b5f67748f35d93241046e75905ad26af-win32-x64-msvc.zip"
-        size: 1310054
-        media_type: "zip"
-        digest: "sha256:16fb2a6965c2db02cf3fa172b973343674699a5f99d4140b24eacbf3e643d69b"
-  "444465927":
-    tag: "opengeni-candidate-b0968ed4b5f67748f35d93241046e75905ad26af"
-    title: "Opengeni release candidate 0.23.25 (b0968ed4b5f6)"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-candidate-b0968ed4b5f67748f35d93241046e75905ad26af"
-    created_at: "2026-11-13T13:26:16Z"
-    published_at: "2026-11-13T16:33:56Z"
-    updated_at: "2026-11-13T16:33:56Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-candidate-b0968ed4b5f67748f35d93241046e75905ad26af"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-candidate-b0968ed4b5f67748f35d93241046e75905ad26af"
-    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-candidate-b0968ed4b5f67748f35d93241046e75905ad26af/"
-    assets:
-      "744360112":
-        name: "opengeni-0.23.25.tgz"
-        url_suffix: "opengeni-0.23.25.tgz"
-        size: 231444
-        media_type: "application/x-gtar"
-        digest: "sha256:927ae3de02290dd5fb2c7ad5029487af0a21d7462480d6bd1a3c425d7c0d4e9d"
-      "744360114":
-        name: "release-chart.sha256"
-        url_suffix: "release-chart.sha256"
-        size: 103
-        digest: "sha256:a756a2b855eb585b1fbad13ad10453087cc9498af4cfaf268f9c45e81b8912b7"
-      "744360115":
+        digest: "sha256:687e2965858c962680eaadcc81bce7675804423644061b41639d39c27ddcbf2f"
+      "756095382":
         name: "release-candidate.json"
         url_suffix: "release-candidate.json"
         size: 5140
         media_type: "application/json"
-        digest: "sha256:0be7ad4bd7ec4e78bc20b70cbdde26ee1f7afb4b222ff9a68325178846c7d78c"
-      "744360120":
+        digest: "sha256:6f5dc3633f547f24359780b69ee2845e6df99e61300005abb708c7f23fdab579"
+  "447577421":
+    tag: "opengeni-artifact-runtime-bfd2970dbaf8833d4d42031648d59b65282b7d23"
+    title: "Opengeni native artifact runtime bfd2970dbaf8833d4d42031648d59b65282b7d23"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-bfd2970dbaf8833d4d42031648d59b65282b7d23"
+    created_at: "2026-11-16T19:48:21Z"
+    published_at: "2026-11-16T20:31:58Z"
+    updated_at: "2026-11-16T20:31:58Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-bfd2970dbaf8833d4d42031648d59b65282b7d23"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-bfd2970dbaf8833d4d42031648d59b65282b7d23"
+    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-bfd2970dbaf8833d4d42031648d59b65282b7d23/"
+    assets:
+      "756344119":
+        name: "artifact-runtime-provenance.json"
+        url_suffix: "artifact-runtime-provenance.json"
+        size: 3147
+        media_type: "application/json"
+        digest: "sha256:85ffa2254c0b0f9a05d3c24834be6617e2255aabf13c650bed36a8fc3e7c607f"
+      "756344173":
+        name: "artifact-runtime-target-bfd2970dbaf8833d4d42031648d59b65282b7d23-darwin-x64.zip"
+        url_suffix: "artifact-runtime-target-bfd2970dbaf8833d4d42031648d59b65282b7d23-darwin-x64.zip"
+        size: 1488339
+        media_type: "zip"
+        digest: "sha256:a36e588f78c7a74017f97aadaaf9234b57155784c91f8219b458756df3dcfd45"
+      "756344224":
+        name: "artifact-runtime-target-bfd2970dbaf8833d4d42031648d59b65282b7d23-darwin-arm64.zip"
+        url_suffix: "artifact-runtime-target-bfd2970dbaf8833d4d42031648d59b65282b7d23-darwin-arm64.zip"
+        size: 1339467
+        media_type: "zip"
+        digest: "sha256:3fe83de619fc9fd0690f345a3b96b52dde2a1a466a1432dc2b1d256a04193d43"
+      "756344307":
+        name: "artifact-runtime-target-bfd2970dbaf8833d4d42031648d59b65282b7d23-linux-x64-gnu.zip"
+        url_suffix: "artifact-runtime-target-bfd2970dbaf8833d4d42031648d59b65282b7d23-linux-x64-gnu.zip"
+        size: 1550065
+        media_type: "zip"
+        digest: "sha256:755af641e4234b788e358ec01b2ac042f0762e9f4f0ab9f7eaf5dc4d82b0a11d"
+      "756344361":
+        name: "artifact-runtime-target-bfd2970dbaf8833d4d42031648d59b65282b7d23-linux-arm64-gnu.zip"
+        url_suffix: "artifact-runtime-target-bfd2970dbaf8833d4d42031648d59b65282b7d23-linux-arm64-gnu.zip"
+        size: 1464027
+        media_type: "zip"
+        digest: "sha256:ce38f28d29bf99b4c2fe4a3168b46617ebb4823c8ff93630ffae62e1f96975f7"
+      "756344413":
+        name: "artifact-runtime-target-bfd2970dbaf8833d4d42031648d59b65282b7d23-linux-x64-musl.zip"
+        url_suffix: "artifact-runtime-target-bfd2970dbaf8833d4d42031648d59b65282b7d23-linux-x64-musl.zip"
+        size: 1562056
+        media_type: "zip"
+        digest: "sha256:5f31674b6ae9a0685d05940877455eccbb870d071127334b67b51a44a21bffcf"
+      "756344440":
+        name: "artifact-runtime-target-bfd2970dbaf8833d4d42031648d59b65282b7d23-linux-arm64-musl.zip"
+        url_suffix: "artifact-runtime-target-bfd2970dbaf8833d4d42031648d59b65282b7d23-linux-arm64-musl.zip"
+        size: 1461768
+        media_type: "zip"
+        digest: "sha256:e5ff9d2211809423b1862eaa82663f503145cfc20f23caf3e1ef8bed1eca4b80"
+      "756344470":
+        name: "artifact-runtime-target-bfd2970dbaf8833d4d42031648d59b65282b7d23-win32-x64-msvc.zip"
+        url_suffix: "artifact-runtime-target-bfd2970dbaf8833d4d42031648d59b65282b7d23-win32-x64-msvc.zip"
+        size: 1310282
+        media_type: "zip"
+        digest: "sha256:920dfd0fc73a1f11ac8ac50652958296d8855a9fd94b671f664735854d82aed1"
+  "447757476":
+    tag: "opengeni-release-head-513902b795d9fb2d9635063d969df53fa82dc5ba"
+    title: "Retained OpenGeni release head 513902b795d9fb2d9635063d969df53fa82dc5ba"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-513902b795d9fb2d9635063d969df53fa82dc5ba"
+    created_at: "2026-11-16T23:40:24Z"
+    published_at: "2026-11-16T23:41:42Z"
+    updated_at: "2026-11-16T23:41:42Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-513902b795d9fb2d9635063d969df53fa82dc5ba"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-513902b795d9fb2d9635063d969df53fa82dc5ba"
+    assets: {}
+  "447757515":
+    tag: "opengeni-release-head-8072861b7c2b655970a60531ec68990fd6f1aa05"
+    title: "Retained OpenGeni release head 8072861b7c2b655970a60531ec68990fd6f1aa05"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-8072861b7c2b655970a60531ec68990fd6f1aa05"
+    created_at: "2026-11-16T23:22:59Z"
+    published_at: "2026-11-16T23:41:46Z"
+    updated_at: "2026-11-16T23:41:46Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-8072861b7c2b655970a60531ec68990fd6f1aa05"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-8072861b7c2b655970a60531ec68990fd6f1aa05"
+    assets: {}
+  "447843255":
+    tag: "opengeni-artifact-runtime-cfa6002a4e3cd0191ec8973dfe2881c0e9d4c2db"
+    title: "Opengeni native artifact runtime cfa6002a4e3cd0191ec8973dfe2881c0e9d4c2db"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-cfa6002a4e3cd0191ec8973dfe2881c0e9d4c2db"
+    created_at: "2026-11-17T00:06:56Z"
+    published_at: "2026-11-17T00:50:59Z"
+    updated_at: "2026-11-17T00:50:59Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-cfa6002a4e3cd0191ec8973dfe2881c0e9d4c2db"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-cfa6002a4e3cd0191ec8973dfe2881c0e9d4c2db"
+    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-cfa6002a4e3cd0191ec8973dfe2881c0e9d4c2db/"
+    assets:
+      "757060393":
+        name: "artifact-runtime-provenance.json"
+        url_suffix: "artifact-runtime-provenance.json"
+        size: 3147
+        media_type: "application/json"
+        digest: "sha256:32f2b4fbe938c8dc1d622a49489964aaa6bc8526be9db3ffde9210f13866e4d2"
+      "757060436":
+        name: "artifact-runtime-target-cfa6002a4e3cd0191ec8973dfe2881c0e9d4c2db-darwin-x64.zip"
+        url_suffix: "artifact-runtime-target-cfa6002a4e3cd0191ec8973dfe2881c0e9d4c2db-darwin-x64.zip"
+        size: 1488339
+        media_type: "zip"
+        digest: "sha256:ec35e7057cc884495223690933ae70652840508c81b091d3fb9d4b30cbd4a03c"
+      "757060499":
+        name: "artifact-runtime-target-cfa6002a4e3cd0191ec8973dfe2881c0e9d4c2db-darwin-arm64.zip"
+        url_suffix: "artifact-runtime-target-cfa6002a4e3cd0191ec8973dfe2881c0e9d4c2db-darwin-arm64.zip"
+        size: 1339467
+        media_type: "zip"
+        digest: "sha256:8b294652d28a72a1774b2543dc42ab28edeb5780cff5a64c6ab91318f1a39c4f"
+      "757060552":
+        name: "artifact-runtime-target-cfa6002a4e3cd0191ec8973dfe2881c0e9d4c2db-linux-x64-gnu.zip"
+        url_suffix: "artifact-runtime-target-cfa6002a4e3cd0191ec8973dfe2881c0e9d4c2db-linux-x64-gnu.zip"
+        size: 1550065
+        media_type: "zip"
+        digest: "sha256:5ea1e7349beae57ccb5f0ad31ddcf047722e2dcfb18dbed463ed40cd0830d5fe"
+      "757060604":
+        name: "artifact-runtime-target-cfa6002a4e3cd0191ec8973dfe2881c0e9d4c2db-linux-arm64-gnu.zip"
+        url_suffix: "artifact-runtime-target-cfa6002a4e3cd0191ec8973dfe2881c0e9d4c2db-linux-arm64-gnu.zip"
+        size: 1464027
+        media_type: "zip"
+        digest: "sha256:e307c75e1b9f756d2296f4cbaf877a10e94881d9f3749038099fb8b9f5ed6b4b"
+      "757060634":
+        name: "artifact-runtime-target-cfa6002a4e3cd0191ec8973dfe2881c0e9d4c2db-linux-x64-musl.zip"
+        url_suffix: "artifact-runtime-target-cfa6002a4e3cd0191ec8973dfe2881c0e9d4c2db-linux-x64-musl.zip"
+        size: 1562056
+        media_type: "zip"
+        digest: "sha256:fde2f684c1ef69522df77ac7047a2bee9723d7d63f93502756de0cc12d10a820"
+      "757060674":
+        name: "artifact-runtime-target-cfa6002a4e3cd0191ec8973dfe2881c0e9d4c2db-linux-arm64-musl.zip"
+        url_suffix: "artifact-runtime-target-cfa6002a4e3cd0191ec8973dfe2881c0e9d4c2db-linux-arm64-musl.zip"
+        size: 1461768
+        media_type: "zip"
+        digest: "sha256:1e2f3facf785589dd04a6cf0aff82258a23c8efbea40303bbafd6fc8558cfa77"
+      "757060708":
+        name: "artifact-runtime-target-cfa6002a4e3cd0191ec8973dfe2881c0e9d4c2db-win32-x64-msvc.zip"
+        url_suffix: "artifact-runtime-target-cfa6002a4e3cd0191ec8973dfe2881c0e9d4c2db-win32-x64-msvc.zip"
+        size: 1310282
+        media_type: "zip"
+        digest: "sha256:3d2b67217aab09a0271e50f2e1aec6e75b32e30d1f29db3f2dc2ab220a72e3e4"
+  "448067042":
+    tag: "opengeni-candidate-513902b795d9fb2d9635063d969df53fa82dc5ba"
+    title: "Opengeni release candidate 0.23.25 (513902b795d9)"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-candidate-513902b795d9fb2d9635063d969df53fa82dc5ba"
+    created_at: "2026-11-16T23:40:24Z"
+    published_at: "2026-11-17T03:22:23Z"
+    updated_at: "2026-11-17T03:22:23Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-candidate-513902b795d9fb2d9635063d969df53fa82dc5ba"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-candidate-513902b795d9fb2d9635063d969df53fa82dc5ba"
+    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-candidate-513902b795d9fb2d9635063d969df53fa82dc5ba/"
+    assets:
+      "757448274":
+        name: "release-candidate.json"
+        url_suffix: "release-candidate.json"
+        size: 5140
+        media_type: "application/json"
+        digest: "sha256:cf7baf5e58c98e235a7529bda979f42dbe0382ac213e680066c35f6ac8d2a159"
+      "757448275":
         name: "release-candidate.sha256"
         url_suffix: "release-candidate.sha256"
         size: 98
-        digest: "sha256:021c0da5deab378f61abf314d3ea0835d6a22c5f7832503fd0f9f11b49125dc6"
-  "444612578":
-    tag: "opengeni-release-head-4aea9dbaba16979841828dd9d3c64c41a485fb43"
-    title: "Retained OpenGeni release head 4aea9dbaba16979841828dd9d3c64c41a485fb43"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-4aea9dbaba16979841828dd9d3c64c41a485fb43"
-    created_at: "2026-11-13T18:48:42Z"
-    published_at: "2026-11-13T18:50:15Z"
-    updated_at: "2026-11-13T18:50:15Z"
+        digest: "sha256:73194db4f98471d0593ea761e95e9a3e6c32dabb9d306ccaf9c56c238a4c401e"
+      "757448280":
+        name: "opengeni-0.23.25.tgz"
+        url_suffix: "opengeni-0.23.25.tgz"
+        size: 231949
+        media_type: "application/x-gtar"
+        digest: "sha256:bb7c0da201064233337e8ae78783a8174ab79ead4db117dda44923e28a6829ae"
+      "757448282":
+        name: "release-chart.sha256"
+        url_suffix: "release-chart.sha256"
+        size: 103
+        digest: "sha256:99315ad6c7cf85d66c7c798659006c429766e46962388a0f80437415cd299113"
+  "448490052":
+    tag: "opengeni-artifact-runtime-a602e38cfeaad3261125983cd2972fc5e25fd9b9"
+    title: "Opengeni native artifact runtime a602e38cfeaad3261125983cd2972fc5e25fd9b9"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-a602e38cfeaad3261125983cd2972fc5e25fd9b9"
+    created_at: "2026-11-17T10:13:03Z"
+    published_at: "2026-11-17T10:49:10Z"
+    updated_at: "2026-11-17T10:49:10Z"
     prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-4aea9dbaba16979841828dd9d3c64c41a485fb43"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-4aea9dbaba16979841828dd9d3c64c41a485fb43"
-    assets: {}
-  "444612625":
-    tag: "opengeni-release-head-7a9593d3fbd953107406f6a773e7a53f335c6bc4"
-    title: "Retained OpenGeni release head 7a9593d3fbd953107406f6a773e7a53f335c6bc4"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-7a9593d3fbd953107406f6a773e7a53f335c6bc4"
-    created_at: "2026-11-13T18:28:37Z"
-    published_at: "2026-11-13T18:50:19Z"
-    updated_at: "2026-11-13T18:50:19Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-7a9593d3fbd953107406f6a773e7a53f335c6bc4"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-7a9593d3fbd953107406f6a773e7a53f335c6bc4"
-    assets: {}
-  "444616813":
-    tag: "opengeni-artifact-runtime-ce864c0dcf4b7c82e72cd4b28f73b61ae231891d"
-    title: "Opengeni native artifact runtime ce864c0dcf4b7c82e72cd4b28f73b61ae231891d"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-ce864c0dcf4b7c82e72cd4b28f73b61ae231891d"
-    created_at: "2026-11-13T18:11:24Z"
-    published_at: "2026-11-13T18:54:38Z"
-    updated_at: "2026-11-13T18:54:38Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-ce864c0dcf4b7c82e72cd4b28f73b61ae231891d"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-ce864c0dcf4b7c82e72cd4b28f73b61ae231891d"
-    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-ce864c0dcf4b7c82e72cd4b28f73b61ae231891d/"
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-a602e38cfeaad3261125983cd2972fc5e25fd9b9"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-a602e38cfeaad3261125983cd2972fc5e25fd9b9"
+    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-a602e38cfeaad3261125983cd2972fc5e25fd9b9/"
     assets:
-      "744796590":
+      "758666241":
         name: "artifact-runtime-provenance.json"
         url_suffix: "artifact-runtime-provenance.json"
         size: 3147
         media_type: "application/json"
-        digest: "sha256:9935d8e18d4a6495e6d1bd769fdf5188d4b88e476280624f4ec61da0b38c7d44"
-      "744796616":
-        name: "artifact-runtime-target-ce864c0dcf4b7c82e72cd4b28f73b61ae231891d-darwin-x64.zip"
-        url_suffix: "artifact-runtime-target-ce864c0dcf4b7c82e72cd4b28f73b61ae231891d-darwin-x64.zip"
-        size: 1488063
+        digest: "sha256:8dad58d98d1e94fe2bbf609f517a4cbb6c5cd5aec9f1e26478071a4552c69658"
+      "758666269":
+        name: "artifact-runtime-target-a602e38cfeaad3261125983cd2972fc5e25fd9b9-darwin-x64.zip"
+        url_suffix: "artifact-runtime-target-a602e38cfeaad3261125983cd2972fc5e25fd9b9-darwin-x64.zip"
+        size: 1488339
         media_type: "zip"
-        digest: "sha256:6bc8db5b94e266ef569b8915820132480824bd5eb4eba47095595613cffcb8b3"
-      "744796647":
-        name: "artifact-runtime-target-ce864c0dcf4b7c82e72cd4b28f73b61ae231891d-darwin-arm64.zip"
-        url_suffix: "artifact-runtime-target-ce864c0dcf4b7c82e72cd4b28f73b61ae231891d-darwin-arm64.zip"
-        size: 1339190
+        digest: "sha256:2e437421f8fe5402d01a9cba15dc3195620c9905f452e4389076fc861533de10"
+      "758666325":
+        name: "artifact-runtime-target-a602e38cfeaad3261125983cd2972fc5e25fd9b9-darwin-arm64.zip"
+        url_suffix: "artifact-runtime-target-a602e38cfeaad3261125983cd2972fc5e25fd9b9-darwin-arm64.zip"
+        size: 1339467
         media_type: "zip"
-        digest: "sha256:f1bd0469122307c92d6d58442fddb79ae028c3c0b6220313a2f715793860a5f0"
-      "744796678":
-        name: "artifact-runtime-target-ce864c0dcf4b7c82e72cd4b28f73b61ae231891d-linux-x64-gnu.zip"
-        url_suffix: "artifact-runtime-target-ce864c0dcf4b7c82e72cd4b28f73b61ae231891d-linux-x64-gnu.zip"
-        size: 1549902
+        digest: "sha256:cc12b8a590e241fbbcafe5dd6f626da89adf7ea8b9a0d92a8ff66e66578d4dc1"
+      "758666388":
+        name: "artifact-runtime-target-a602e38cfeaad3261125983cd2972fc5e25fd9b9-linux-x64-gnu.zip"
+        url_suffix: "artifact-runtime-target-a602e38cfeaad3261125983cd2972fc5e25fd9b9-linux-x64-gnu.zip"
+        size: 1550065
         media_type: "zip"
-        digest: "sha256:538e30ca2b7fd70dd62288c714514cf9ab547d9cac87ebe313b87191a2a8c73b"
-      "744796708":
-        name: "artifact-runtime-target-ce864c0dcf4b7c82e72cd4b28f73b61ae231891d-linux-arm64-gnu.zip"
-        url_suffix: "artifact-runtime-target-ce864c0dcf4b7c82e72cd4b28f73b61ae231891d-linux-arm64-gnu.zip"
-        size: 1464119
+        digest: "sha256:c657659ff329bffa998cf282d3cd35f9a21418d2c1d6daa04f657df846dd0739"
+      "758666457":
+        name: "artifact-runtime-target-a602e38cfeaad3261125983cd2972fc5e25fd9b9-linux-arm64-gnu.zip"
+        url_suffix: "artifact-runtime-target-a602e38cfeaad3261125983cd2972fc5e25fd9b9-linux-arm64-gnu.zip"
+        size: 1464027
         media_type: "zip"
-        digest: "sha256:d9529c7b6dfc7e413798ddaa13c10d24988f704817bcffe7bb5b7f7876a969da"
-      "744796749":
-        name: "artifact-runtime-target-ce864c0dcf4b7c82e72cd4b28f73b61ae231891d-linux-x64-musl.zip"
-        url_suffix: "artifact-runtime-target-ce864c0dcf4b7c82e72cd4b28f73b61ae231891d-linux-x64-musl.zip"
-        size: 1561922
+        digest: "sha256:8509f5cea88dd4c3c956ef77816f74c663fb992d54f18194b4512fbca64681f5"
+      "758666497":
+        name: "artifact-runtime-target-a602e38cfeaad3261125983cd2972fc5e25fd9b9-linux-x64-musl.zip"
+        url_suffix: "artifact-runtime-target-a602e38cfeaad3261125983cd2972fc5e25fd9b9-linux-x64-musl.zip"
+        size: 1562056
         media_type: "zip"
-        digest: "sha256:12f6ba0a53e122825e590b1ea626ce19d36f86644a3c1ec4eccb13796ae1281e"
-      "744796798":
-        name: "artifact-runtime-target-ce864c0dcf4b7c82e72cd4b28f73b61ae231891d-linux-arm64-musl.zip"
-        url_suffix: "artifact-runtime-target-ce864c0dcf4b7c82e72cd4b28f73b61ae231891d-linux-arm64-musl.zip"
-        size: 1461764
+        digest: "sha256:609aaa8e9becc0bfa9f05b0508ca0f68914b6e5c20f21e465c3f1c4dcda5cf63"
+      "758666549":
+        name: "artifact-runtime-target-a602e38cfeaad3261125983cd2972fc5e25fd9b9-linux-arm64-musl.zip"
+        url_suffix: "artifact-runtime-target-a602e38cfeaad3261125983cd2972fc5e25fd9b9-linux-arm64-musl.zip"
+        size: 1461768
         media_type: "zip"
-        digest: "sha256:4ea6649a92d9f0a1d460b7b9c1a65f29fef0f333719cceb3bcb9dd920edd9ce6"
-      "744796824":
-        name: "artifact-runtime-target-ce864c0dcf4b7c82e72cd4b28f73b61ae231891d-win32-x64-msvc.zip"
-        url_suffix: "artifact-runtime-target-ce864c0dcf4b7c82e72cd4b28f73b61ae231891d-win32-x64-msvc.zip"
-        size: 1310054
+        digest: "sha256:06b4f34a06f19c2dba762bdc6b250093f9967d369ed56537c05421196841dec6"
+      "758666592":
+        name: "artifact-runtime-target-a602e38cfeaad3261125983cd2972fc5e25fd9b9-win32-x64-msvc.zip"
+        url_suffix: "artifact-runtime-target-a602e38cfeaad3261125983cd2972fc5e25fd9b9-win32-x64-msvc.zip"
+        size: 1310283
         media_type: "zip"
-        digest: "sha256:37290731c44aa98506cb12955fca327a9e8f572110041fb2de8a294d647acea0"
-  "444641317":
-    tag: "opengeni-release-head-f7d06fb88377be42383b76fcc87da7331b5849b5"
-    title: "Retained OpenGeni release head f7d06fb88377be42383b76fcc87da7331b5849b5"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-f7d06fb88377be42383b76fcc87da7331b5849b5"
-    created_at: "2026-11-13T19:18:41Z"
-    published_at: "2026-11-13T19:20:04Z"
-    updated_at: "2026-11-13T19:20:04Z"
+        digest: "sha256:f8c53cb8375b783419f6e7772f35eee4e5f391ffa45cf9d8d57c5124e63eb081"
+  "448547817":
+    tag: "opengeni-release-head-3d5dc43880048f0fe7e1a8c70d60ae85959b1d5d"
+    title: "Retained OpenGeni release head 3d5dc43880048f0fe7e1a8c70d60ae85959b1d5d"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-3d5dc43880048f0fe7e1a8c70d60ae85959b1d5d"
+    created_at: "2026-11-17T11:37:37Z"
+    published_at: "2026-11-17T11:39:18Z"
+    updated_at: "2026-11-17T11:39:18Z"
     prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-f7d06fb88377be42383b76fcc87da7331b5849b5"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-f7d06fb88377be42383b76fcc87da7331b5849b5"
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-3d5dc43880048f0fe7e1a8c70d60ae85959b1d5d"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-3d5dc43880048f0fe7e1a8c70d60ae85959b1d5d"
     assets: {}
-  "444641358":
-    tag: "opengeni-release-head-6acbb2457758935eaef1d40303e33a3f65e18880"
-    title: "Retained OpenGeni release head 6acbb2457758935eaef1d40303e33a3f65e18880"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-6acbb2457758935eaef1d40303e33a3f65e18880"
-    created_at: "2026-11-13T19:01:44Z"
-    published_at: "2026-11-13T19:20:07Z"
-    updated_at: "2026-11-13T19:20:07Z"
+  "448547882":
+    tag: "opengeni-release-head-c8efcb005939f6858fd12fcd7763b76aa7b6c744"
+    title: "Retained OpenGeni release head c8efcb005939f6858fd12fcd7763b76aa7b6c744"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-c8efcb005939f6858fd12fcd7763b76aa7b6c744"
+    created_at: "2026-11-17T11:27:07Z"
+    published_at: "2026-11-17T11:39:22Z"
+    updated_at: "2026-11-17T11:39:22Z"
     prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-6acbb2457758935eaef1d40303e33a3f65e18880"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-6acbb2457758935eaef1d40303e33a3f65e18880"
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-c8efcb005939f6858fd12fcd7763b76aa7b6c744"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-c8efcb005939f6858fd12fcd7763b76aa7b6c744"
     assets: {}
-  "444699257":
-    tag: "opengeni-artifact-runtime-6acbb2457758935eaef1d40303e33a3f65e18880"
-    title: "Opengeni native artifact runtime 6acbb2457758935eaef1d40303e33a3f65e18880"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-6acbb2457758935eaef1d40303e33a3f65e18880"
-    created_at: "2026-11-13T19:01:44Z"
-    published_at: "2026-11-13T20:24:03Z"
-    updated_at: "2026-11-13T20:24:03Z"
+  "448630280":
+    tag: "opengeni-artifact-runtime-66c0447a4501ee5009b93451d3420903b8c6cf4d"
+    title: "Opengeni native artifact runtime 66c0447a4501ee5009b93451d3420903b8c6cf4d"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-66c0447a4501ee5009b93451d3420903b8c6cf4d"
+    created_at: "2026-11-17T12:07:06Z"
+    published_at: "2026-11-17T12:54:31Z"
+    updated_at: "2026-11-17T12:54:31Z"
     prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-6acbb2457758935eaef1d40303e33a3f65e18880"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-6acbb2457758935eaef1d40303e33a3f65e18880"
-    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-6acbb2457758935eaef1d40303e33a3f65e18880/"
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-66c0447a4501ee5009b93451d3420903b8c6cf4d"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-66c0447a4501ee5009b93451d3420903b8c6cf4d"
+    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-66c0447a4501ee5009b93451d3420903b8c6cf4d/"
     assets:
-      "745060445":
+      "759064898":
         name: "artifact-runtime-provenance.json"
         url_suffix: "artifact-runtime-provenance.json"
         size: 3147
         media_type: "application/json"
-        digest: "sha256:2364e0845ec47a07cbbbde77bbab09a56849e8891426c74a240e6c6b66cb7699"
-      "745060493":
-        name: "artifact-runtime-target-6acbb2457758935eaef1d40303e33a3f65e18880-darwin-x64.zip"
-        url_suffix: "artifact-runtime-target-6acbb2457758935eaef1d40303e33a3f65e18880-darwin-x64.zip"
-        size: 1488063
+        digest: "sha256:ab3b0b54022c1f813bc8874aa9f7cc33b318ef7dab7a09736d39f0d19f02308f"
+      "759064949":
+        name: "artifact-runtime-target-66c0447a4501ee5009b93451d3420903b8c6cf4d-darwin-x64.zip"
+        url_suffix: "artifact-runtime-target-66c0447a4501ee5009b93451d3420903b8c6cf4d-darwin-x64.zip"
+        size: 1488339
         media_type: "zip"
-        digest: "sha256:5cce10d23d3f5dba575bc305bdfbefa2b203799f944965618fef80a266a2dd3b"
-      "745060522":
-        name: "artifact-runtime-target-6acbb2457758935eaef1d40303e33a3f65e18880-darwin-arm64.zip"
-        url_suffix: "artifact-runtime-target-6acbb2457758935eaef1d40303e33a3f65e18880-darwin-arm64.zip"
-        size: 1339190
+        digest: "sha256:246024c835787f178b30c6114667d1d7f6ea6237c684dea9ef02de7d7c5b1348"
+      "759065025":
+        name: "artifact-runtime-target-66c0447a4501ee5009b93451d3420903b8c6cf4d-darwin-arm64.zip"
+        url_suffix: "artifact-runtime-target-66c0447a4501ee5009b93451d3420903b8c6cf4d-darwin-arm64.zip"
+        size: 1339467
         media_type: "zip"
-        digest: "sha256:ac185421727f022266ff058d0009b1a4f174b8b5c5b7c6cd18e6af09ca09569a"
-      "745060556":
-        name: "artifact-runtime-target-6acbb2457758935eaef1d40303e33a3f65e18880-linux-x64-gnu.zip"
-        url_suffix: "artifact-runtime-target-6acbb2457758935eaef1d40303e33a3f65e18880-linux-x64-gnu.zip"
-        size: 1549902
+        digest: "sha256:17601a5f122b3073e72f836b28cb1e47373235cf6efc8af5347b90153f72e156"
+      "759065084":
+        name: "artifact-runtime-target-66c0447a4501ee5009b93451d3420903b8c6cf4d-linux-x64-gnu.zip"
+        url_suffix: "artifact-runtime-target-66c0447a4501ee5009b93451d3420903b8c6cf4d-linux-x64-gnu.zip"
+        size: 1550065
         media_type: "zip"
-        digest: "sha256:d6660cb2a9decf26f4243982a96c8de980fe4062e590acdd83819e5dca30ff31"
-      "745060596":
-        name: "artifact-runtime-target-6acbb2457758935eaef1d40303e33a3f65e18880-linux-arm64-gnu.zip"
-        url_suffix: "artifact-runtime-target-6acbb2457758935eaef1d40303e33a3f65e18880-linux-arm64-gnu.zip"
-        size: 1464119
+        digest: "sha256:e48448caafa0b2df8297edc7790aeacbee87b8d661c19dbfad5104daf753e8cb"
+      "759065166":
+        name: "artifact-runtime-target-66c0447a4501ee5009b93451d3420903b8c6cf4d-linux-arm64-gnu.zip"
+        url_suffix: "artifact-runtime-target-66c0447a4501ee5009b93451d3420903b8c6cf4d-linux-arm64-gnu.zip"
+        size: 1464027
         media_type: "zip"
-        digest: "sha256:78960942264342562fed1526f35ecd28ef842e3842f3c7147e68beee9193e461"
-      "745060641":
-        name: "artifact-runtime-target-6acbb2457758935eaef1d40303e33a3f65e18880-linux-x64-musl.zip"
-        url_suffix: "artifact-runtime-target-6acbb2457758935eaef1d40303e33a3f65e18880-linux-x64-musl.zip"
-        size: 1561922
+        digest: "sha256:dc349ae7538ed5436060c01bfafdc815596f865872f298fefb92150df33084fc"
+      "759065223":
+        name: "artifact-runtime-target-66c0447a4501ee5009b93451d3420903b8c6cf4d-linux-x64-musl.zip"
+        url_suffix: "artifact-runtime-target-66c0447a4501ee5009b93451d3420903b8c6cf4d-linux-x64-musl.zip"
+        size: 1562056
         media_type: "zip"
-        digest: "sha256:126c847088caeebfe2179786175ac459f26ee18eb222e2b6ed639d88315483fa"
-      "745060666":
-        name: "artifact-runtime-target-6acbb2457758935eaef1d40303e33a3f65e18880-linux-arm64-musl.zip"
-        url_suffix: "artifact-runtime-target-6acbb2457758935eaef1d40303e33a3f65e18880-linux-arm64-musl.zip"
-        size: 1461764
+        digest: "sha256:eed0646cf8616791dee919ff3cbfd4b733f2f2ba895f4b96132b69f99d19d5de"
+      "759065311":
+        name: "artifact-runtime-target-66c0447a4501ee5009b93451d3420903b8c6cf4d-linux-arm64-musl.zip"
+        url_suffix: "artifact-runtime-target-66c0447a4501ee5009b93451d3420903b8c6cf4d-linux-arm64-musl.zip"
+        size: 1461768
         media_type: "zip"
-        digest: "sha256:f4f2eeb7201b74a8ebf8711d886ece44503e0750dfd228935b5da26742c600f5"
-      "745060697":
-        name: "artifact-runtime-target-6acbb2457758935eaef1d40303e33a3f65e18880-win32-x64-msvc.zip"
-        url_suffix: "artifact-runtime-target-6acbb2457758935eaef1d40303e33a3f65e18880-win32-x64-msvc.zip"
-        size: 1310052
+        digest: "sha256:eb55fb44f636104bcca923c4d93028a4fd0bfa37dddc0a77b30592952294d062"
+      "759065354":
+        name: "artifact-runtime-target-66c0447a4501ee5009b93451d3420903b8c6cf4d-win32-x64-msvc.zip"
+        url_suffix: "artifact-runtime-target-66c0447a4501ee5009b93451d3420903b8c6cf4d-win32-x64-msvc.zip"
+        size: 1310282
         media_type: "zip"
-        digest: "sha256:cd13506395132ff806cc0eadc9cfec1136d0448ecbf2a8f55b6fa70f3c95e072"
-  "444872438":
-    tag: "opengeni-artifact-runtime-be3480bbcac198bba3e3332281348e09660b2a06"
-    title: "Opengeni native artifact runtime be3480bbcac198bba3e3332281348e09660b2a06"
-    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-be3480bbcac198bba3e3332281348e09660b2a06"
-    created_at: "2026-11-13T23:47:00Z"
-    published_at: "2026-11-14T00:18:59Z"
-    updated_at: "2026-11-14T00:18:59Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-be3480bbcac198bba3e3332281348e09660b2a06"
-    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-be3480bbcac198bba3e3332281348e09660b2a06"
-    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-be3480bbcac198bba3e3332281348e09660b2a06/"
+        digest: "sha256:ce9ac629f2ba25b4901fb60282bfa63dba16560506e4769b68d50b4150a3a235"
+  "448678049":
+    tag: "opengeni-candidate-3d5dc43880048f0fe7e1a8c70d60ae85959b1d5d"
+    title: "Opengeni release candidate 0.23.25 (3d5dc4388004)"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-candidate-3d5dc43880048f0fe7e1a8c70d60ae85959b1d5d"
+    created_at: "2026-11-17T11:37:37Z"
+    published_at: "2026-11-17T13:35:06Z"
+    updated_at: "2026-11-17T13:35:06Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-candidate-3d5dc43880048f0fe7e1a8c70d60ae85959b1d5d"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-candidate-3d5dc43880048f0fe7e1a8c70d60ae85959b1d5d"
+    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-candidate-3d5dc43880048f0fe7e1a8c70d60ae85959b1d5d/"
     assets:
-      "745696165":
+      "759200337":
+        name: "release-chart.sha256"
+        url_suffix: "release-chart.sha256"
+        size: 103
+        digest: "sha256:b9fbae224cf37b90b43a5ae0ee49bb079b80d062d582d4f7a694536670291c35"
+      "759200344":
+        name: "release-candidate.sha256"
+        url_suffix: "release-candidate.sha256"
+        size: 98
+        digest: "sha256:23fe6208bc482e952b88f26927810cbeeca93e6da5fc213bd13fce3cdf9a25eb"
+      "759200345":
+        name: "release-candidate.json"
+        url_suffix: "release-candidate.json"
+        size: 5140
+        media_type: "application/json"
+        digest: "sha256:fe38bb7163ee21a85cf800b0db092b1158dc90fae710fdfb4f5a684c7cb18714"
+      "759200347":
+        name: "opengeni-0.23.25.tgz"
+        url_suffix: "opengeni-0.23.25.tgz"
+        size: 232137
+        media_type: "application/x-gtar"
+        digest: "sha256:ba8f0f1470bd602c827b8ba52ede37e9ddf63ba467fc5cf406c435bc914b2468"
+  "448759487":
+    tag: "opengeni-artifact-runtime-d51e6e5c9a890fb883a8d62475aabff1dc49e6fb"
+    title: "Opengeni native artifact runtime d51e6e5c9a890fb883a8d62475aabff1dc49e6fb"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-d51e6e5c9a890fb883a8d62475aabff1dc49e6fb"
+    created_at: "2026-11-17T13:11:10Z"
+    published_at: "2026-11-17T14:39:24Z"
+    updated_at: "2026-11-17T14:39:24Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-d51e6e5c9a890fb883a8d62475aabff1dc49e6fb"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-d51e6e5c9a890fb883a8d62475aabff1dc49e6fb"
+    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-d51e6e5c9a890fb883a8d62475aabff1dc49e6fb/"
+    assets:
+      "759412126":
         name: "artifact-runtime-provenance.json"
         url_suffix: "artifact-runtime-provenance.json"
         size: 3147
         media_type: "application/json"
-        digest: "sha256:ebe05eb906d11e0fd5f93e335e61f04b35631541863388378fa3bba3da62c29c"
-      "745696178":
-        name: "artifact-runtime-target-be3480bbcac198bba3e3332281348e09660b2a06-darwin-x64.zip"
-        url_suffix: "artifact-runtime-target-be3480bbcac198bba3e3332281348e09660b2a06-darwin-x64.zip"
-        size: 1488063
+        digest: "sha256:28d3a690cb859899d75252a185d7443b44e183050e3081e485012257e91bde4c"
+      "759412165":
+        name: "artifact-runtime-target-d51e6e5c9a890fb883a8d62475aabff1dc49e6fb-darwin-x64.zip"
+        url_suffix: "artifact-runtime-target-d51e6e5c9a890fb883a8d62475aabff1dc49e6fb-darwin-x64.zip"
+        size: 1488339
         media_type: "zip"
-        digest: "sha256:dbd0c0aac56801f9cbdb81092bdef60c7a005c9fb7cc983e33b9efb13cf90173"
-      "745696212":
-        name: "artifact-runtime-target-be3480bbcac198bba3e3332281348e09660b2a06-darwin-arm64.zip"
-        url_suffix: "artifact-runtime-target-be3480bbcac198bba3e3332281348e09660b2a06-darwin-arm64.zip"
-        size: 1339190
+        digest: "sha256:d4987945b4f1e8e09082d1590a3c0d948a44aefd71cbf67a18e15018c14a8ef7"
+      "759412232":
+        name: "artifact-runtime-target-d51e6e5c9a890fb883a8d62475aabff1dc49e6fb-darwin-arm64.zip"
+        url_suffix: "artifact-runtime-target-d51e6e5c9a890fb883a8d62475aabff1dc49e6fb-darwin-arm64.zip"
+        size: 1339467
         media_type: "zip"
-        digest: "sha256:df03a640d820c1433ca767b1af2228849397dea5662fad8a6af72fc4ef77db64"
-      "745696235":
-        name: "artifact-runtime-target-be3480bbcac198bba3e3332281348e09660b2a06-linux-x64-gnu.zip"
-        url_suffix: "artifact-runtime-target-be3480bbcac198bba3e3332281348e09660b2a06-linux-x64-gnu.zip"
-        size: 1549902
+        digest: "sha256:9659b685f6163ea962b935803445ecc68a9f14497b7e6f1a81b0161dd3063e5c"
+      "759412286":
+        name: "artifact-runtime-target-d51e6e5c9a890fb883a8d62475aabff1dc49e6fb-linux-x64-gnu.zip"
+        url_suffix: "artifact-runtime-target-d51e6e5c9a890fb883a8d62475aabff1dc49e6fb-linux-x64-gnu.zip"
+        size: 1550065
         media_type: "zip"
-        digest: "sha256:cf307d3a6df3e371b525b1df5b5275c7529c2bec49d8b0771a27b5fc33a86a2c"
-      "745696256":
-        name: "artifact-runtime-target-be3480bbcac198bba3e3332281348e09660b2a06-linux-arm64-gnu.zip"
-        url_suffix: "artifact-runtime-target-be3480bbcac198bba3e3332281348e09660b2a06-linux-arm64-gnu.zip"
-        size: 1464119
+        digest: "sha256:185ae121116d946fe8b7927564fd990571906a3805acfcf0c83be386db666993"
+      "759412333":
+        name: "artifact-runtime-target-d51e6e5c9a890fb883a8d62475aabff1dc49e6fb-linux-arm64-gnu.zip"
+        url_suffix: "artifact-runtime-target-d51e6e5c9a890fb883a8d62475aabff1dc49e6fb-linux-arm64-gnu.zip"
+        size: 1464027
         media_type: "zip"
-        digest: "sha256:9ae8c3eeb6b513f369dbd42c283357814c828c9ac45da38a5870f8f140556a16"
-      "745696275":
-        name: "artifact-runtime-target-be3480bbcac198bba3e3332281348e09660b2a06-linux-x64-musl.zip"
-        url_suffix: "artifact-runtime-target-be3480bbcac198bba3e3332281348e09660b2a06-linux-x64-musl.zip"
-        size: 1561922
+        digest: "sha256:245065202199af8352bca5394ba638031f7f74574b67ee96351a1ab985c631f2"
+      "759412390":
+        name: "artifact-runtime-target-d51e6e5c9a890fb883a8d62475aabff1dc49e6fb-linux-x64-musl.zip"
+        url_suffix: "artifact-runtime-target-d51e6e5c9a890fb883a8d62475aabff1dc49e6fb-linux-x64-musl.zip"
+        size: 1562056
         media_type: "zip"
-        digest: "sha256:ca9dfd6ca63bfcdff90ac68ee0241b286c47a03679c1c8db6818ae90799a69d1"
-      "745696308":
-        name: "artifact-runtime-target-be3480bbcac198bba3e3332281348e09660b2a06-linux-arm64-musl.zip"
-        url_suffix: "artifact-runtime-target-be3480bbcac198bba3e3332281348e09660b2a06-linux-arm64-musl.zip"
-        size: 1461764
+        digest: "sha256:847f150eb41f2b5d16d42f9cc8604d26a07abecc24d60a9ab69731441e65012b"
+      "759412450":
+        name: "artifact-runtime-target-d51e6e5c9a890fb883a8d62475aabff1dc49e6fb-linux-arm64-musl.zip"
+        url_suffix: "artifact-runtime-target-d51e6e5c9a890fb883a8d62475aabff1dc49e6fb-linux-arm64-musl.zip"
+        size: 1461768
         media_type: "zip"
-        digest: "sha256:f31072a44fe969e58122f8168de16c69cd0ba12db160c81fdad3036764b33bb8"
-      "745696332":
-        name: "artifact-runtime-target-be3480bbcac198bba3e3332281348e09660b2a06-win32-x64-msvc.zip"
-        url_suffix: "artifact-runtime-target-be3480bbcac198bba3e3332281348e09660b2a06-win32-x64-msvc.zip"
-        size: 1310053
+        digest: "sha256:17647eb0030407273d54c6e7e7aaf7c2dbf86407af881aa6c819a421acd642f1"
+      "759412519":
+        name: "artifact-runtime-target-d51e6e5c9a890fb883a8d62475aabff1dc49e6fb-win32-x64-msvc.zip"
+        url_suffix: "artifact-runtime-target-d51e6e5c9a890fb883a8d62475aabff1dc49e6fb-win32-x64-msvc.zip"
+        size: 1310280
         media_type: "zip"
-        digest: "sha256:1535b15207295e7908d9e14b78cfdef55fc70a392ac0eb4e87403381d9831c8d"
+        digest: "sha256:b913665d44750c4c2a478cb216450965ae89bcd933ee555f57ef5857e1707b05"
+  "448776651":
+    tag: "opengeni-release-head-e13b07d139c3bbf78cebebe5ca12a91774fa6ae3"
+    title: "Retained OpenGeni release head e13b07d139c3bbf78cebebe5ca12a91774fa6ae3"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-e13b07d139c3bbf78cebebe5ca12a91774fa6ae3"
+    created_at: "2026-11-17T14:51:16Z"
+    published_at: "2026-11-17T14:52:45Z"
+    updated_at: "2026-11-17T14:52:45Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-e13b07d139c3bbf78cebebe5ca12a91774fa6ae3"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-e13b07d139c3bbf78cebebe5ca12a91774fa6ae3"
+    assets: {}
+  "448776751":
+    tag: "opengeni-release-head-4befd5532ce0edf4f3c9b60b8b2eae4089731533"
+    title: "Retained OpenGeni release head 4befd5532ce0edf4f3c9b60b8b2eae4089731533"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-4befd5532ce0edf4f3c9b60b8b2eae4089731533"
+    created_at: "2026-11-17T14:35:25Z"
+    published_at: "2026-11-17T14:52:50Z"
+    updated_at: "2026-11-17T14:52:50Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-4befd5532ce0edf4f3c9b60b8b2eae4089731533"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-4befd5532ce0edf4f3c9b60b8b2eae4089731533"
+    assets: {}
+  "448922400":
+    tag: "opengeni-artifact-runtime-5e40d1435b720fc7ab19165ccbaa9ab475e3fc1f"
+    title: "Opengeni native artifact runtime 5e40d1435b720fc7ab19165ccbaa9ab475e3fc1f"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-5e40d1435b720fc7ab19165ccbaa9ab475e3fc1f"
+    created_at: "2026-11-17T15:30:55Z"
+    published_at: "2026-11-17T16:45:45Z"
+    updated_at: "2026-11-17T16:45:45Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-5e40d1435b720fc7ab19165ccbaa9ab475e3fc1f"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-5e40d1435b720fc7ab19165ccbaa9ab475e3fc1f"
+    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-5e40d1435b720fc7ab19165ccbaa9ab475e3fc1f/"
+    assets:
+      "759842777":
+        name: "artifact-runtime-provenance.json"
+        url_suffix: "artifact-runtime-provenance.json"
+        size: 3147
+        media_type: "application/json"
+        digest: "sha256:f6d426f7fb04f7123a44819f32762b62b7437cef2028fe46e2c21a49d904a742"
+      "759842830":
+        name: "artifact-runtime-target-5e40d1435b720fc7ab19165ccbaa9ab475e3fc1f-darwin-x64.zip"
+        url_suffix: "artifact-runtime-target-5e40d1435b720fc7ab19165ccbaa9ab475e3fc1f-darwin-x64.zip"
+        size: 1488339
+        media_type: "zip"
+        digest: "sha256:4889e15fa420cb6ad38b4432a2f55374de7889f1ed8fd9bd9a53d41c0f089b9d"
+      "759842877":
+        name: "artifact-runtime-target-5e40d1435b720fc7ab19165ccbaa9ab475e3fc1f-darwin-arm64.zip"
+        url_suffix: "artifact-runtime-target-5e40d1435b720fc7ab19165ccbaa9ab475e3fc1f-darwin-arm64.zip"
+        size: 1339467
+        media_type: "zip"
+        digest: "sha256:4eda5b5b55972948476543e209f58daf1399b3d60014837fd95a18b90e0abe47"
+      "759842922":
+        name: "artifact-runtime-target-5e40d1435b720fc7ab19165ccbaa9ab475e3fc1f-linux-x64-gnu.zip"
+        url_suffix: "artifact-runtime-target-5e40d1435b720fc7ab19165ccbaa9ab475e3fc1f-linux-x64-gnu.zip"
+        size: 1550065
+        media_type: "zip"
+        digest: "sha256:e78a1954723cd9f327787f5e349bc34b3d8941de140f3df2ab69c833441b990c"
+      "759842973":
+        name: "artifact-runtime-target-5e40d1435b720fc7ab19165ccbaa9ab475e3fc1f-linux-arm64-gnu.zip"
+        url_suffix: "artifact-runtime-target-5e40d1435b720fc7ab19165ccbaa9ab475e3fc1f-linux-arm64-gnu.zip"
+        size: 1464027
+        media_type: "zip"
+        digest: "sha256:ec99a14158e3ee87978a7334cbd9f307f99f31799dcb6eb5f20f433316690074"
+      "759843023":
+        name: "artifact-runtime-target-5e40d1435b720fc7ab19165ccbaa9ab475e3fc1f-linux-x64-musl.zip"
+        url_suffix: "artifact-runtime-target-5e40d1435b720fc7ab19165ccbaa9ab475e3fc1f-linux-x64-musl.zip"
+        size: 1562056
+        media_type: "zip"
+        digest: "sha256:89931e84d93f31dfc06bf1455c4032d8a1e5c0e67d219a275cfdb64a20aaa28e"
+      "759843081":
+        name: "artifact-runtime-target-5e40d1435b720fc7ab19165ccbaa9ab475e3fc1f-linux-arm64-musl.zip"
+        url_suffix: "artifact-runtime-target-5e40d1435b720fc7ab19165ccbaa9ab475e3fc1f-linux-arm64-musl.zip"
+        size: 1461768
+        media_type: "zip"
+        digest: "sha256:470aa0d4b22af51819665c46550b8971bf7f0689abbd2e2376d1b1b15a3c2778"
+      "759843126":
+        name: "artifact-runtime-target-5e40d1435b720fc7ab19165ccbaa9ab475e3fc1f-win32-x64-msvc.zip"
+        url_suffix: "artifact-runtime-target-5e40d1435b720fc7ab19165ccbaa9ab475e3fc1f-win32-x64-msvc.zip"
+        size: 1310280
+        media_type: "zip"
+        digest: "sha256:c700cf82f9711acdd7d8a32ffd6be935f45f7469f0863f2d153390174b842293"
+  "448932434":
+    tag: "opengeni-release-head-8797b14365f8027988310669a9525405be705ead"
+    title: "Retained OpenGeni release head 8797b14365f8027988310669a9525405be705ead"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-8797b14365f8027988310669a9525405be705ead"
+    created_at: "2026-11-17T16:52:19Z"
+    published_at: "2026-11-17T16:53:50Z"
+    updated_at: "2026-11-17T16:53:50Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-8797b14365f8027988310669a9525405be705ead"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-8797b14365f8027988310669a9525405be705ead"
+    assets: {}
+  "448932501":
+    tag: "opengeni-release-head-5c0012e6cc8ce87f9f8e5cd6c35c39a364f1cc4d"
+    title: "Retained OpenGeni release head 5c0012e6cc8ce87f9f8e5cd6c35c39a364f1cc4d"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-release-head-5c0012e6cc8ce87f9f8e5cd6c35c39a364f1cc4d"
+    created_at: "2026-11-17T16:34:49Z"
+    published_at: "2026-11-17T16:53:54Z"
+    updated_at: "2026-11-17T16:53:54Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-release-head-5c0012e6cc8ce87f9f8e5cd6c35c39a364f1cc4d"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-release-head-5c0012e6cc8ce87f9f8e5cd6c35c39a364f1cc4d"
+    assets: {}
+  "449048103":
+    tag: "opengeni-artifact-runtime-d1f3417f8193d5d539c3318beee464d0e87de342"
+    title: "Opengeni native artifact runtime d1f3417f8193d5d539c3318beee464d0e87de342"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-d1f3417f8193d5d539c3318beee464d0e87de342"
+    created_at: "2026-11-17T17:57:21Z"
+    published_at: "2026-11-17T18:41:48Z"
+    updated_at: "2026-11-17T18:41:48Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-d1f3417f8193d5d539c3318beee464d0e87de342"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-d1f3417f8193d5d539c3318beee464d0e87de342"
+    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-d1f3417f8193d5d539c3318beee464d0e87de342/"
+    assets:
+      "760200223":
+        name: "artifact-runtime-provenance.json"
+        url_suffix: "artifact-runtime-provenance.json"
+        size: 3147
+        media_type: "application/json"
+        digest: "sha256:35a0b32c270293d0e0e500f2743bdbb6c3b245dba513f74a2a8fb1ff5ae453ea"
+      "760200267":
+        name: "artifact-runtime-target-d1f3417f8193d5d539c3318beee464d0e87de342-darwin-x64.zip"
+        url_suffix: "artifact-runtime-target-d1f3417f8193d5d539c3318beee464d0e87de342-darwin-x64.zip"
+        size: 1488339
+        media_type: "zip"
+        digest: "sha256:27702187bbd75aa5fb052090904751c08f347021781494437e699cd5916e8807"
+      "760200313":
+        name: "artifact-runtime-target-d1f3417f8193d5d539c3318beee464d0e87de342-darwin-arm64.zip"
+        url_suffix: "artifact-runtime-target-d1f3417f8193d5d539c3318beee464d0e87de342-darwin-arm64.zip"
+        size: 1339467
+        media_type: "zip"
+        digest: "sha256:f335ab43177d9468dbb1da9e8e4aa3641e7f1cab76d258d47fa036575cb3f62b"
+      "760200362":
+        name: "artifact-runtime-target-d1f3417f8193d5d539c3318beee464d0e87de342-linux-x64-gnu.zip"
+        url_suffix: "artifact-runtime-target-d1f3417f8193d5d539c3318beee464d0e87de342-linux-x64-gnu.zip"
+        size: 1550065
+        media_type: "zip"
+        digest: "sha256:8452f68cd94020d6514da0fa39deaa8dfcff8b2e2adb33ca1bd4659bf162f15d"
+      "760200462":
+        name: "artifact-runtime-target-d1f3417f8193d5d539c3318beee464d0e87de342-linux-arm64-gnu.zip"
+        url_suffix: "artifact-runtime-target-d1f3417f8193d5d539c3318beee464d0e87de342-linux-arm64-gnu.zip"
+        size: 1464027
+        media_type: "zip"
+        digest: "sha256:f02d5b12352f05d29cf080b544da4c03b9d679f86c6b9f09ca5c64792cd4431d"
+      "760200541":
+        name: "artifact-runtime-target-d1f3417f8193d5d539c3318beee464d0e87de342-linux-x64-musl.zip"
+        url_suffix: "artifact-runtime-target-d1f3417f8193d5d539c3318beee464d0e87de342-linux-x64-musl.zip"
+        size: 1562056
+        media_type: "zip"
+        digest: "sha256:5c41bc5450e6fe045b916461e0715fe9b504faacdc2d814e0735a236871e698f"
+      "760200601":
+        name: "artifact-runtime-target-d1f3417f8193d5d539c3318beee464d0e87de342-linux-arm64-musl.zip"
+        url_suffix: "artifact-runtime-target-d1f3417f8193d5d539c3318beee464d0e87de342-linux-arm64-musl.zip"
+        size: 1461768
+        media_type: "zip"
+        digest: "sha256:fe325043aa662fe5f65cb59800edf6c889d27539048bdf96a29dd00cb832c2f4"
+      "760200640":
+        name: "artifact-runtime-target-d1f3417f8193d5d539c3318beee464d0e87de342-win32-x64-msvc.zip"
+        url_suffix: "artifact-runtime-target-d1f3417f8193d5d539c3318beee464d0e87de342-win32-x64-msvc.zip"
+        size: 1310281
+        media_type: "zip"
+        digest: "sha256:17003c36faf0c802fc9f0b40a4fea02cf2c6da12969ddacf3a3be2f85c4bc105"
+  "449111294":
+    tag: "opengeni-candidate-8797b14365f8027988310669a9525405be705ead"
+    title: "Opengeni release candidate 0.23.25 (8797b14365f8)"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-candidate-8797b14365f8027988310669a9525405be705ead"
+    created_at: "2026-11-17T16:52:19Z"
+    published_at: "2026-11-17T19:41:33Z"
+    updated_at: "2026-11-17T19:41:33Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-candidate-8797b14365f8027988310669a9525405be705ead"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-candidate-8797b14365f8027988310669a9525405be705ead"
+    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-candidate-8797b14365f8027988310669a9525405be705ead/"
+    assets:
+      "760382511":
+        name: "release-candidate.sha256"
+        url_suffix: "release-candidate.sha256"
+        size: 98
+        digest: "sha256:d4ccfd86d0910a85505854cd9b377149efa96b783b210e301838745ba90be184"
+      "760382513":
+        name: "release-chart.sha256"
+        url_suffix: "release-chart.sha256"
+        size: 103
+        digest: "sha256:bedb47986506aaff0f91b0cddf6fd729361b2515d6be2ecb3c94cfb8de01e436"
+      "760382514":
+        name: "opengeni-0.23.25.tgz"
+        url_suffix: "opengeni-0.23.25.tgz"
+        size: 232137
+        media_type: "application/x-gtar"
+        digest: "sha256:afb32c253973d58172749bc3522b38fbe9c07dcf0560c2557dd27811be04c7a4"
+      "760382516":
+        name: "release-candidate.json"
+        url_suffix: "release-candidate.json"
+        size: 5140
+        media_type: "application/json"
+        digest: "sha256:12332a9e26a03b1ea7a912aa5f25c80a1033cc94b0c84398c0cf75cf1dfb76db"
+  "449136667":
+    tag: "opengeni-artifact-runtime-515bc72633035d9733b3569e5a6ce38186c5ed1d"
+    title: "Opengeni native artifact runtime 515bc72633035d9733b3569e5a6ce38186c5ed1d"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-515bc72633035d9733b3569e5a6ce38186c5ed1d"
+    created_at: "2026-11-17T19:20:05Z"
+    published_at: "2026-11-17T20:06:22Z"
+    updated_at: "2026-11-17T20:06:22Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-515bc72633035d9733b3569e5a6ce38186c5ed1d"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-515bc72633035d9733b3569e5a6ce38186c5ed1d"
+    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-515bc72633035d9733b3569e5a6ce38186c5ed1d/"
+    assets:
+      "760459143":
+        name: "artifact-runtime-provenance.json"
+        url_suffix: "artifact-runtime-provenance.json"
+        size: 3147
+        media_type: "application/json"
+        digest: "sha256:25f6965f751dd954b82be82f018cbeeaed264d6c57358f6ce1260719e00ab978"
+      "760459173":
+        name: "artifact-runtime-target-515bc72633035d9733b3569e5a6ce38186c5ed1d-darwin-x64.zip"
+        url_suffix: "artifact-runtime-target-515bc72633035d9733b3569e5a6ce38186c5ed1d-darwin-x64.zip"
+        size: 1488339
+        media_type: "zip"
+        digest: "sha256:681c7b36553ad8fcceeff8fd162a0d13369a140fb360a02157bb4429fadf2138"
+      "760459210":
+        name: "artifact-runtime-target-515bc72633035d9733b3569e5a6ce38186c5ed1d-darwin-arm64.zip"
+        url_suffix: "artifact-runtime-target-515bc72633035d9733b3569e5a6ce38186c5ed1d-darwin-arm64.zip"
+        size: 1339467
+        media_type: "zip"
+        digest: "sha256:268a404b55a1c79f83e73006d2e5dd95e792bccc5333fabf84805a1cb8b9dfa2"
+      "760459267":
+        name: "artifact-runtime-target-515bc72633035d9733b3569e5a6ce38186c5ed1d-linux-x64-gnu.zip"
+        url_suffix: "artifact-runtime-target-515bc72633035d9733b3569e5a6ce38186c5ed1d-linux-x64-gnu.zip"
+        size: 1550065
+        media_type: "zip"
+        digest: "sha256:616344ae9583424afe99a231ac053153f0f2c9ec31ee750e65413c70679a2a04"
+      "760459301":
+        name: "artifact-runtime-target-515bc72633035d9733b3569e5a6ce38186c5ed1d-linux-arm64-gnu.zip"
+        url_suffix: "artifact-runtime-target-515bc72633035d9733b3569e5a6ce38186c5ed1d-linux-arm64-gnu.zip"
+        size: 1464027
+        media_type: "zip"
+        digest: "sha256:46e9ab4cdff53aa64f3ff3f74c145b13f41c9de3f6a1361b1ed01dde19d24424"
+      "760459346":
+        name: "artifact-runtime-target-515bc72633035d9733b3569e5a6ce38186c5ed1d-linux-x64-musl.zip"
+        url_suffix: "artifact-runtime-target-515bc72633035d9733b3569e5a6ce38186c5ed1d-linux-x64-musl.zip"
+        size: 1562056
+        media_type: "zip"
+        digest: "sha256:4cfc46f166e54624d25efec0b4fe9d26f2c8819ac08b5f184c92401cdcb313c4"
+      "760459410":
+        name: "artifact-runtime-target-515bc72633035d9733b3569e5a6ce38186c5ed1d-linux-arm64-musl.zip"
+        url_suffix: "artifact-runtime-target-515bc72633035d9733b3569e5a6ce38186c5ed1d-linux-arm64-musl.zip"
+        size: 1461768
+        media_type: "zip"
+        digest: "sha256:ff561edfeab52f365421058965f4b8ad384a4ffc47096f7fc677d4d11263c3f3"
+      "760459451":
+        name: "artifact-runtime-target-515bc72633035d9733b3569e5a6ce38186c5ed1d-win32-x64-msvc.zip"
+        url_suffix: "artifact-runtime-target-515bc72633035d9733b3569e5a6ce38186c5ed1d-win32-x64-msvc.zip"
+        size: 1310281
+        media_type: "zip"
+        digest: "sha256:33eb30d64aec443854edd6d4564c5f7f61cc94c5b5b51d89a200a83e482f431e"
+  "449198266":
+    tag: "opengeni-artifact-runtime-4ef5ef6b29f82cc299ebead8880bdbe25523f829"
+    title: "Opengeni native artifact runtime 4ef5ef6b29f82cc299ebead8880bdbe25523f829"
+    url: "https://github.com/Cloudgeni-ai/opengeni/releases/tag/opengeni-artifact-runtime-4ef5ef6b29f82cc299ebead8880bdbe25523f829"
+    created_at: "2026-11-17T20:34:12Z"
+    published_at: "2026-11-17T21:06:48Z"
+    updated_at: "2026-11-17T21:06:48Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/zipball/opengeni-artifact-runtime-4ef5ef6b29f82cc299ebead8880bdbe25523f829"
+    source_tar_url: "https://api.github.com/repos/Cloudgeni-ai/opengeni/tarball/opengeni-artifact-runtime-4ef5ef6b29f82cc299ebead8880bdbe25523f829"
+    download_base: "https://github.com/Cloudgeni-ai/opengeni/releases/download/opengeni-artifact-runtime-4ef5ef6b29f82cc299ebead8880bdbe25523f829/"
+    assets:
+      "760636450":
+        name: "artifact-runtime-provenance.json"
+        url_suffix: "artifact-runtime-provenance.json"
+        size: 3147
+        media_type: "application/json"
+        digest: "sha256:43de41edb89ee43244d446c89b8a34eef66dedfcdc8ad628874a37cd227e1210"
+      "760636480":
+        name: "artifact-runtime-target-4ef5ef6b29f82cc299ebead8880bdbe25523f829-darwin-x64.zip"
+        url_suffix: "artifact-runtime-target-4ef5ef6b29f82cc299ebead8880bdbe25523f829-darwin-x64.zip"
+        size: 1488339
+        media_type: "zip"
+        digest: "sha256:82a7ec845c2ff09799e7da29855b03579787dcae6f264762289b6b735a1a8a2b"
+      "760636511":
+        name: "artifact-runtime-target-4ef5ef6b29f82cc299ebead8880bdbe25523f829-darwin-arm64.zip"
+        url_suffix: "artifact-runtime-target-4ef5ef6b29f82cc299ebead8880bdbe25523f829-darwin-arm64.zip"
+        size: 1339467
+        media_type: "zip"
+        digest: "sha256:788111b1d61466508d5031d4d5022acd9e43204129f1539e96f9888972134053"
+      "760636543":
+        name: "artifact-runtime-target-4ef5ef6b29f82cc299ebead8880bdbe25523f829-linux-x64-gnu.zip"
+        url_suffix: "artifact-runtime-target-4ef5ef6b29f82cc299ebead8880bdbe25523f829-linux-x64-gnu.zip"
+        size: 1550065
+        media_type: "zip"
+        digest: "sha256:45c972ba7bc1232c57ff09de417a917af823d02fcaf9bcd6978b293f74ad570d"
+      "760636599":
+        name: "artifact-runtime-target-4ef5ef6b29f82cc299ebead8880bdbe25523f829-linux-arm64-gnu.zip"
+        url_suffix: "artifact-runtime-target-4ef5ef6b29f82cc299ebead8880bdbe25523f829-linux-arm64-gnu.zip"
+        size: 1464027
+        media_type: "zip"
+        digest: "sha256:a6e290c709ca4553e7b296eecf04a5d01dd967dbb911aecbe5b03efc679e9a62"
+      "760636639":
+        name: "artifact-runtime-target-4ef5ef6b29f82cc299ebead8880bdbe25523f829-linux-x64-musl.zip"
+        url_suffix: "artifact-runtime-target-4ef5ef6b29f82cc299ebead8880bdbe25523f829-linux-x64-musl.zip"
+        size: 1562056
+        media_type: "zip"
+        digest: "sha256:9eb04122d8c2b315842ebab799e16c92e5d26f9a4a71b034063b88299fd88665"
+      "760636667":
+        name: "artifact-runtime-target-4ef5ef6b29f82cc299ebead8880bdbe25523f829-linux-arm64-musl.zip"
+        url_suffix: "artifact-runtime-target-4ef5ef6b29f82cc299ebead8880bdbe25523f829-linux-arm64-musl.zip"
+        size: 1461768
+        media_type: "zip"
+        digest: "sha256:b73466c4e6ae13f259cb1b36d4a1549514a9e8c6de4d2d380fabc5952c9a5485"
+      "760636706":
+        name: "artifact-runtime-target-4ef5ef6b29f82cc299ebead8880bdbe25523f829-win32-x64-msvc.zip"
+        url_suffix: "artifact-runtime-target-4ef5ef6b29f82cc299ebead8880bdbe25523f829-win32-x64-msvc.zip"
+        size: 1310282
+        media_type: "zip"
+        digest: "sha256:148d1ca91a1b4be43951344aacfff675079f717a1c9f1017d055f21f4fdebc75"
