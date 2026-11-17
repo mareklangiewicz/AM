@@ -55,3 +55,9 @@ lines that are neither a setting nor neutral; and the check lives in
 - Writing the 3.6 entries surfaced ticket 37: the shared installer's
   `mv ./squashfs-root/*.desktop` fails outright on an AppImage with two
   top-level desktop files.
+
+November 17, 2026: pushed with Marek's approval as `7569c5526` after Long
+tests run 44125730308 passed on `ci/layout-differences` (fast, tree, Debian
+and Fedora e2e). `CATALOG_SCHEDULE_REVISION` repinned to it; dispatched
+catalog run 44128846771 (acquire, publish) and Fast tests 44128842671 passed.
+Branches `ci/layout-differences` and `ci/format-3-collection` deleted.
