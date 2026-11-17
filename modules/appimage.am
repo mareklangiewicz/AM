@@ -208,35 +208,69 @@ am_package() (
 			fi
 		fi
 	}
-	extract '*.desktop' 1>/dev/null && mv ./squashfs-root/*.desktop ./"$APP".desktop
+	extract '*.desktop' 1>/dev/null || :
 	extract .DirIcon 1>/dev/null && mv ./squashfs-root/.DirIcon ./DirIcon
 	COUNT=0
-	while [ "$COUNT" -lt 10 ]; do # Tries to get the actual icon/desktop if it is a symlink to another symlink
-		if [ -L ./"$APP".desktop ]; then
-			LINKPATH="$(readlink ./"$APP".desktop | sed 's|^\./||' 2>/dev/null)"
-			extract "$LINKPATH" 1>/dev/null && mv ./squashfs-root/"$LINKPATH" ./"$APP".desktop
-		fi
-		if [ -L ./DirIcon ]; then
-			LINKPATH="$(readlink ./DirIcon | sed 's|^\./||' 2>/dev/null)"
-			extract "$LINKPATH" 1>/dev/null && mv ./squashfs-root/"$LINKPATH" ./DirIcon
-		fi
-		[ ! -L ./"$APP".desktop ] && [ ! -L ./DirIcon ] && break
+	while [ -L ./DirIcon ] && [ "$COUNT" -lt 10 ]; do # Tries to get the actual icon if it is a symlink to another symlink
+		LINKPATH="$(readlink ./DirIcon | sed 's|^\./||' 2>/dev/null)"
+		extract "$LINKPATH" 1>/dev/null && mv ./squashfs-root/"$LINKPATH" ./DirIcon
 		COUNT=$((COUNT + 1))
+	done
+	# Every top-level desktop file is a launcher (template 3.6, ticket 37): the
+	# first visible one is $APP-AM.desktop, further ones $APP-2-AM.desktop and
+	# on, NoDisplay=true ones (URL/MIME handlers) $APP-handler[-N]-AM.desktop.
+	# A copy of the main launcher is not installed twice. Symlinks resolve
+	# against the AppImage root, like the icon's. Byte order, in any locale.
+	LC_ALL=C; export LC_ALL
+	rm -R -f ./.am-desktops; mkdir ./.am-desktops
+	main='' extras=1 handlers=0
+	for found in ./squashfs-root/*.desktop; do
+		file=$found COUNT=0
+		while [ -L "$file" ] && [ "$COUNT" -lt 10 ]; do
+			LINKPATH="$(readlink "$file" | sed 's|^\./||' 2>/dev/null)"
+			extract "$LINKPATH" 1>/dev/null || break
+			file=./squashfs-root/$LINKPATH COUNT=$((COUNT + 1))
+		done
+		[ -f "$file" ] && [ ! -L "$file" ] || continue
+		if grep -qi '^NoDisplay=true$' "$file"; then
+			handlers=$((handlers + 1)) name=$APP-handler-AM.desktop
+			[ "$handlers" -eq 1 ] || name=$APP-handler-$handlers-AM.desktop
+		elif [ -z "$main" ]; then
+			name=$APP-AM.desktop main=./.am-desktops/$APP-AM.desktop
+		elif [ "$(sort "$main")" = "$(sort "$file")" ]; then
+			continue
+		else
+			extras=$((extras + 1)) name=$APP-$extras-AM.desktop
+		fi
+		cp "$file" ./.am-desktops/"$name"
 	done
 	icon=$(printf '%s' "$dir/icons/$APP" | sed 's/[\\&#]/\\&/g')
 	[ "$icon_theme" = false ] || icon=$APP
-	sed -i "s#Exec=[^ ]*#Exec=$APP#g; s#Icon=.*#Icon=$icon#g" ./"$APP".desktop
-	# Opt-in legacy compatibility: remove only space-delimited literal flags
-	# on Exec lines, leaving other keys and similarly named arguments intact.
-	if [ "${DESKTOP_STRIP_NO_SANDBOX-false}" = true ]; then
-		sed -i -e '/^Exec=/ {' -e ':strip' -e 's/ --no-sandbox / /' -e 't strip' -e 's/ --no-sandbox$//' -e '}' ./"$APP".desktop
-	fi
-	if [ "${DESKTOP_EXEC-command}" = installed ]; then
-		# Desktop Exec uses its own quoting rules, then sed needs replacement escaping.
-		gui=$(printf '%s' "$dir/$APP" | sed 's/[\\"`$]/\\&/g; s/\\/\\\\/g; s/%/%%/g; s/[\\&#]/\\&/g')
-		sed -i "s#^Exec=$APP#Exec=\"$gui\"#" ./"$APP".desktop
-	fi
-	if command -v appimage_desktop >/dev/null 2>&1; then appimage_desktop ./"$APP".desktop; fi
-	mv ./"$APP".desktop "$DESKTOP_DIR"/"$APP"-AM.desktop && mv ./DirIcon ./icons/"$APP" 1>/dev/null
+	for staged in ./.am-desktops/*.desktop; do
+		[ -f "$staged" ] || continue
+		target=$DESKTOP_DIR/${staged##*/}
+		if [ "$target" != "$DESKTOP_DIR/$APP-AM.desktop" ]; then
+			if [ -e "$target" ] || [ -L "$target" ]; then
+				printf 'Preserving desktop launcher: %s\n' "$target"; continue
+			fi
+			{ printf 'rm -f '; quote "$target"; printf '\n'; } >> "$dir/remove"
+		fi
+		mv "$staged" ./"$APP".desktop
+		sed -i "s#Exec=[^ ]*#Exec=$APP#g; s#Icon=.*#Icon=$icon#g" ./"$APP".desktop
+		# Opt-in legacy compatibility: remove only space-delimited literal flags
+		# on Exec lines, leaving other keys and similarly named arguments intact.
+		if [ "${DESKTOP_STRIP_NO_SANDBOX-false}" = true ]; then
+			sed -i -e '/^Exec=/ {' -e ':strip' -e 's/ --no-sandbox / /' -e 't strip' -e 's/ --no-sandbox$//' -e '}' ./"$APP".desktop
+		fi
+		if [ "${DESKTOP_EXEC-command}" = installed ]; then
+			# Desktop Exec uses its own quoting rules, then sed needs replacement escaping.
+			gui=$(printf '%s' "$dir/$APP" | sed 's/[\\"`$]/\\&/g; s/\\/\\\\/g; s/%/%%/g; s/[\\&#]/\\&/g')
+			sed -i "s#^Exec=$APP#Exec=\"$gui\"#" ./"$APP".desktop
+		fi
+		if command -v appimage_desktop >/dev/null 2>&1; then appimage_desktop ./"$APP".desktop; fi
+		mv ./"$APP".desktop "$target"
+	done
+	rm -R -f ./.am-desktops
+	mv ./DirIcon ./icons/"$APP" 1>/dev/null
 	rm -R -f ./squashfs-root
 )

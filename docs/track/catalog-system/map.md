@@ -187,7 +187,7 @@ approval boundaries.
 | [34 resolved](issues/34-run-long-test-tiers-on-github.md) | none | ["Long tests" workflow](issues/34-run-long-test-tiers-on-github.md#answer--november-17-2026): whole-tree tier and Debian/Fedora e2e on `ci/**` pushes; first run caught step B regressions. |
 | [35 open](issues/35-reconvert-recipes-for-a-reviewed-layout.md) | none | One command re-converts a reviewed layout's recipes and proves unchanged selection; replaces the scratch scripts of tickets 32 and 33. |
 | [36 resolved](issues/36-check-layout-differences-are-mapped.md) | none | [`layouts()` refuses unmapped differences](issues/36-check-layout-differences-are-mapped.md#answer--november-17-2026): each differing line is a setting, neutral, or dropped with a ticket. |
-| [37 open](issues/37-review-template-3-6-multiple-launchers.md) | none | 3.6 installs every launcher, the shared installer one (and fails on two top-level desktop files); setting, installer fix, or policy? |
+| [37 resolved](issues/37-review-template-3-6-multiple-launchers.md) | none | [Shared installer installs every launcher](issues/37-review-template-3-6-multiple-launchers.md#answer--november-17-2026), handlers apart; two top-level desktop files no longer fail the install. |
 
 Latest implementation evidence, November 8: Chromium desktop/narrow and Firefox
 checks pass; physical-device/comprehension limits remain with 13. Independent

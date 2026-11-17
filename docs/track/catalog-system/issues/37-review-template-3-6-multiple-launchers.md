@@ -2,7 +2,7 @@
 
 Type: grilling
 Label: wayfinder:grilling
-Status: open
+Status: resolved
 Blocked by: none
 
 ## Question
@@ -56,3 +56,42 @@ change fixed a real failure, not only added extras.
 3. Accept one launcher and document it as policy.
 
 ## Comments
+
+## Answer — November 17, 2026
+
+Marek chose option 2 in the session: a proper shared-installer fix, every
+declaration, no setting.
+
+- Confirmed through the real install path (the first red test): with two
+  top-level desktop files the old `mv` aborted the whole install with exit 1,
+  after the AppImage, the command link and `remove` were already in place
+  (`am_package` runs under `set -eu`; the `mv` was the last command of an `&&`
+  list).
+- `modules/appimage.am`: every top-level `*.desktop` is a launcher, its
+  symlink chain resolved like the icon's (against the AppImage root, at most
+  10 hops; a copy, so two links to one entry work). The first visible one in
+  byte order is `$APP-AM.desktop`, further ones `$APP-2-AM.desktop` and on,
+  `NoDisplay=true` ones `$APP-handler-AM.desktop`, `-handler-2-` and on. A
+  copy of the main launcher (same sorted lines, as 3.6 compares) is skipped.
+  The existing `Exec`/`Icon` sed, strip, `DESKTOP_EXEC` and `appimage_desktop`
+  hook run per launcher, unchanged. An existing `$APP-AM.desktop` still skips
+  the step; an existing extra is preserved and left out of `remove`; each new
+  extra adds its `rm -f`. No desktop file now installs without a launcher.
+  The section sets `LC_ALL=C`: bash as `sh` sorts globs by locale.
+- Not copied from 3.6: its `$COUNT` is 0 for every extra in the first pass
+  (a third launcher overwrote the second), its `A && B || C && D` appended an
+  `rm` for `$APP-0-AM.desktop` even without one, and two handlers overwrote
+  each other.
+- Tests: `tools/catalog-collector/test_appimage_desktops.py` (8, fast tier)
+  installs a declaration with an authored AppImage. Each rule was mutated away
+  in turn (8 mutations) and a test failed each time; the locale test fails
+  without the `LC_ALL=C` line and skips without bash or `en_US.UTF-8`.
+- `layouts.json`: 3.6's 22 launcher lines move from `dropped` to `neutral`;
+  nothing is dropped now.
+- `docs/catalog-operating-policy.md`, Recipe launcher settings: the rule.
+
+Applies to installs only: an update (`AM-updater`, `--am-update`) exits
+before the desktop step, so installed apps get extra launchers on their next
+reinstall. 3.5-template declarations get the same behavior. For a single
+desktop file it is unchanged unless that entry is `NoDisplay=true`: it now
+installs as `$APP-handler-AM.desktop` (with its `rm -f`), as in 3.6.

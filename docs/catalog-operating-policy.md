@@ -188,6 +188,17 @@ The shared installer creates these links, preserves existing custom launchers,
 and generates removal commands that delete aliases only while they still point
 to that executable. This setting does not describe executables inside archives.
 
+Desktop launchers (catalog-system ticket 37, November 17, 2026): the shared
+installer installs every top-level desktop file an AppImage ships, as upstream
+template 3.6 does. The first visible one in byte order is `$APP-AM.desktop`,
+further ones `$APP-2-AM.desktop` and on, `NoDisplay=true` entries
+`$APP-handler-AM.desktop` (then `-handler-2-` and on); a copy of the main
+launcher is not installed twice. An existing `$APP-AM.desktop` still skips the
+whole desktop step; an existing extra one is preserved and left out of
+`remove`, and each new extra one gets its `rm -f` line there. The settings below apply to
+every launcher. An AppImage without a desktop file installs without one;
+before ticket 37, two top-level desktop files failed the install.
+
 `DESKTOP_EXEC` defaults to `command`, preserving existing desktop behavior.
 `installed` uses the quoted absolute root executable in newly generated desktop
 entries, keeping their arguments and field codes. Existing desktop entries remain

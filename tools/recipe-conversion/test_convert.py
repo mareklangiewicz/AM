@@ -154,14 +154,15 @@ class LayoutDifferences(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'needs one setting, neutral or dropped'):load(rows)
 
     def test_reviewed_layouts_load_with_their_mappings(self):
-        # 3.6's launcher lines are recorded as dropped, not hidden as neutral.
+        # 3.6's launcher lines were dropped until the shared installer took
+        # them over for every declaration (ticket 37); now nothing is dropped.
         layouts={layout.identity:layout for layout in load(self.rows())}
         self.assertEqual(len(layouts),3)
         rows={row['commit'][:9]:row for row in self.rows()}
         self.assertEqual([entry['line'] for entry in rows['bb53f3180']['differences']],[SED_BASE,SED_STRIP])
-        launchers=[entry for entry in rows['cf50304fc']['differences'] if 'dropped' in entry]
-        self.assertTrue(launchers and all(entry['ticket']==37 for entry in launchers))
-        self.assertIn('+\t\tif grep -qi \'^NoDisplay=true$\'',''.join(entry['line'] for entry in launchers))
+        self.assertEqual([entry for row in rows.values() for entry in row.get('differences',[]) if 'dropped' in entry],[])
+        handler=next(entry for entry in rows['cf50304fc']['differences'] if "if grep -qi '^NoDisplay=true$'" in entry['line'])
+        self.assertIn('ticket 37',handler['neutral'])
 
 
 class Long(unittest.TestCase):
