@@ -9,9 +9,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/aarch64/crispy-doom"
-        blob: "c11d298bc31bb659ec2393aa9b423de8a5217ac8"
+        blob: "d65eb6cd5112d13c90f82e00a26de0e7593eac83"
     "armv7l":
       repository_id: 1206906183
       availability: "absent"
@@ -23,9 +23,20 @@ apps:
     "x86_64":
       repository_id: 1206906183
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/crispy-doom"
-        blob: "085648cea3180b2074c682799f44bb0f78a5e0d6"
+        blob: "c9df4b423ccc1936188b4904fa0a060cc5b871bf"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "11429ebf79ba4f52c2e9e5682d3e254548ab716ee54bbb15c4033aca247d4f06"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

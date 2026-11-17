@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 423000691
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/librescore"
-        blob: "f1dcaa0278f8d3db0bd7ea3cff2c6822b4e26d8d"
+        blob: "23de73a89d7800021e8cd145b242ee4c9a750062"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "8b87a11bc0c8b6b39079531546337c023c18e67e11db9ba6ae94d0fea6c8bbf6"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

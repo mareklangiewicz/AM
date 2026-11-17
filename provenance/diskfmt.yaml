@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1103357813
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/diskfmt"
-        blob: "26cf73dfc0012d1adf80053eafd8d7c093400194"
+        blob: "3aee3345171bd7da17bf8255e53c0bc5fcdc5d8c"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "e7d0a8518a1a348e6a2be31dca64321d275b9065eae473e7dc719d0869d0f48e"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

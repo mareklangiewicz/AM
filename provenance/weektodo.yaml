@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 353886295
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/weektodo"
-        blob: "062d2da1ee46eec68e6f54ac305b9986998ad9b2"
+        blob: "0d213736408000559311fa5507b1db9fe6fa282e"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "58236d6c8ab8dc29664110e7f8841b24b9208aa901ffbe0d5c59df8e86962b4f"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

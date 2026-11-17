@@ -9,9 +9,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/aarch64/gearboy"
-        blob: "275b0d8cee5f6ed671fb1100732b2721fb22f7aa"
+        blob: "377bce0cc2f7fa2a99fa947b87ee6d5fb3798f85"
     "armv7l":
       repository_id: 1194342301
       availability: "absent"
@@ -23,9 +23,20 @@ apps:
     "x86_64":
       repository_id: 1194342301
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/gearboy"
-        blob: "be17f798502fafa37d0fedf1b7c1ccde57dec5cc"
+        blob: "5bc23e21c855cf14f5cae4ee4868483b242f79ae"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "88c9a47749e759f1258018483bb02d9386fea4e06fb86c1dd2a52926ff334408"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

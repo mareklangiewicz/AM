@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 311733323
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/flippy-qualitative-testbench"
-        blob: "bfa55cd11e3076bc5a298a29dfeff210db958e49"
+        blob: "9ec17cde08b73a26efb37da3b4dfa338ee970174"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "bcdd8f4c836997babc169a3654a9252184d2d46466fe3b347a272d52c1a8a907"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

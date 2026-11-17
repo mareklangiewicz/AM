@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1109049119
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/alma"
-        blob: "65e69ec2a4d4bb841481637cd3b0aa0713b62270"
+        blob: "df6e964f92854fd65f73fa0ad0eba23526dadc51"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "27f04f5996ae98878ae89aa62abe38ceaef33f0afa9f4852cd8c56d67c5e2968"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

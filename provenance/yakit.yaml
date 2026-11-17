@@ -18,12 +18,23 @@ apps:
     "x86_64":
       repository_id: 416151847
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/yakit"
-        blob: "04b6fc1bfc5c88ff3419333bb111a5bcb6aa6c54"
+        blob: "839944b09dad95a16b0db5e28b65dcda4e70855e"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "60a1d09ea106719d7f0114a4ceb548fd4ad2482254b7ee0fba7e42a4f53a6e50"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"
   "yakit-legacy":
     "aarch64":
       repository_id: 416151847
@@ -40,9 +51,20 @@ apps:
     "x86_64":
       repository_id: 416151847
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/yakit-legacy"
-        blob: "b2f014b4e41efed9854202e23b421c85aed22c8c"
+        blob: "ae7db165c88b5b51a433a737463c022b316b825b"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "7a86603edec72892504f298599974065032c78bca66e8b9b1e57a3b2616b7a07"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

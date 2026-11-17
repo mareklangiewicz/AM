@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 162051905
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/grinplusplus"
-        blob: "1dd8c8a043c4cfff50b3e5ba772c7920ad6e2c10"
+        blob: "4995f4eff1c36fd0d43ba9323463130e50fb8c4f"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "0ca1e58e801465de4a043ed11dbc8a111f7c580b7f7f3925b464545f7909b60e"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

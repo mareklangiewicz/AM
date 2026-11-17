@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 400445007
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/flb"
-        blob: "47e0ea1ce1ed62e9d51d272860bf65345b200a4c"
+        blob: "e1e892cfb01c99b7e9f53c3de6e50e8eaa546566"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "de1ece4323543014238c806f481bb0087f25adc7aa2da962ebb0fb5a5c7ef1ca"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

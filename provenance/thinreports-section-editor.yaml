@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 456086268
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/thinreports-section-editor"
-        blob: "c8dd6ffd6767094bb8f336e8026bfd72cb60c8d6"
+        blob: "d7a63ccd3ac9f1baa5f8c8b6876cc50d3c26d13a"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "e50c8f46a42541a34570fdb8002ec5c682f00af94e350cd3ae7b6db33234969f"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

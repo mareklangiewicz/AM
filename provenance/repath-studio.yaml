@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 374744219
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/repath-studio"
-        blob: "00b39bb2552be8f4a9bdb81df39a024b68f1a7e8"
+        blob: "a1be1555b2b2874ce5b6a612e360c35e60a19972"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "0453ab63f7522cdf615c1166ad7c55d5da73568c8e9db7e4b41842c13459e30c"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

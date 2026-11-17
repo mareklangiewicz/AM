@@ -9,9 +9,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/aarch64/zapfast"
-        blob: "dd6343e064b44b18030deff8bbf2cd8c8394a326"
+        blob: "03c3f4b06c1760c6fd1213b1548c126e674b31e7"
     "armv7l":
       repository_id: 1350713137
       availability: "absent"
@@ -26,17 +26,17 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/zapfast"
-        blob: "063308d6ab78f8706cf133945a9b076200c9d709"
+        blob: "9a55f583c8dc0de724621bd05c08dc6834ba79b0"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-17T04:42:50Z"
-        recipe_sha256: "f16c03ee0873a232780f80f38859f8236c5867db5f1d75565d0d11fa99b88b6f"
-        rules: "d889ad470776e54d18785bb1420976036c179f22"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "da2fd1142d84942ca75d7aed231b81345ba33d3daf63aae0a86f31f4fe54f8d4"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "d889ad470776e54d18785bb1420976036c179f22"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
             path: "modules/"
-            sha256: "d2fff958b96cf7727f9f10e8d134d6c125feddef813e46692417e410b8567c38"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

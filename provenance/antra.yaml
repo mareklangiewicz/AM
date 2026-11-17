@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1200818460
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/antra"
-        blob: "7ba5210959640e34332e188aea6c3e73fca0e992"
+        blob: "9aa794fa9b0b0c77747fe7c4457d9ec2a5af12a7"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "1ba8031a4dd4e834bef366ef540de5ef8c8a7abfd72b4829567ce506f536aa1d"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 645168294
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/openstream-music"
-        blob: "b4b7200b1cfc41c990950414d80c56bd0a0af7e4"
+        blob: "14904e29e22862fd95bccf6e189890f00845ef08"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "99d98799d7af06a9c4e7b45b6b0cf7ba65a7e1edaa1283805b606dafd9679bac"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

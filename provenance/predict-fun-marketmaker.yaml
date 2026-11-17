@@ -9,9 +9,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/aarch64/predict-fun-marketmaker"
-        blob: "720b01ab87bcc6ffdba6d8e0a3802693ffff35e2"
+        blob: "5d24afb710593386125ffd0db1121176c30f5f98"
     "armv7l":
       repository_id: 1152311317
       availability: "absent"
@@ -26,17 +26,17 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/predict-fun-marketmaker"
-        blob: "79d5855072696b19d8061c96979990a266ced1bc"
+        blob: "8f0a74cb0afad33d3cbd60daf4076cb73ee79366"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-17T04:42:50Z"
-        recipe_sha256: "82efd46089dc985db70bd5eb34bd3c2e4188690a04698e6469187735656d0585"
-        rules: "d889ad470776e54d18785bb1420976036c179f22"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "75a83e8459e644c05ab71355f8779410d3d4bef23c9cf832a694c107ec7a6e66"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "d889ad470776e54d18785bb1420976036c179f22"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
             path: "modules/"
-            sha256: "d2fff958b96cf7727f9f10e8d134d6c125feddef813e46692417e410b8567c38"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

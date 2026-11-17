@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 723535263
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/kftray"
-        blob: "482e8d790b0d0645679d0a7704bba759c5efbfff"
+        blob: "c2f8a36d2c63caf671021952145f2204ff447ea7"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "f3705d4ffd606c6cf82ebf8cc564125e0f7e75c5e20337b3055f7f0824cf7ae5"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 407130787
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/bookmarks-manager"
-        blob: "a6c95bc955d4d833bb77658d6be23068a16d3e4f"
+        blob: "1fdd2276a5d76b04bc36f0ebfb7cee167a36f63b"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "c7db07ad01b63419ddf92c78300aafbd793abb790410de10fabfec535be2acad"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

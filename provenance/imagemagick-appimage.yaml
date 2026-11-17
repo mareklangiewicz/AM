@@ -9,9 +9,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/aarch64/imagemagick"
-        blob: "686c1488458e6a8054dde9613c0dde13290cd6b3"
+        blob: "6fc97d410d8a1c4d039f8df8f13faaac0bc07557"
     "armv7l":
       repository_id: 1146601787
       availability: "absent"
@@ -26,17 +26,17 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/imagemagick"
-        blob: "2e0d598e0bf59a5d0b87fcaf5ab128d824aa06e3"
+        blob: "de3882b2063779144a5536979933ce4f754357d6"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-17T04:42:50Z"
-        recipe_sha256: "7b4d2f390267892b7abdb05579cc1e7f956c66d824267112559871c5a2b1aede"
-        rules: "d889ad470776e54d18785bb1420976036c179f22"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "6335f921df29874523bebac0a985ee4383f7f475a784f64cdd1bfc97faf0161b"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "d889ad470776e54d18785bb1420976036c179f22"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
             path: "modules/"
-            sha256: "d2fff958b96cf7727f9f10e8d134d6c125feddef813e46692417e410b8567c38"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

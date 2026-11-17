@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 14284411
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/padloc"
-        blob: "4d0807eabf30da68ba3d3b91a5161dfc2f0e7ce1"
+        blob: "25a8eea54b38eb3b304a58e1cd1c4aad1ce3dc32"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "3b045488e17a20f17e42cf0e0b549c59b9408d788a56081c23424908cc002775"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

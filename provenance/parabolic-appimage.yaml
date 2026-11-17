@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1216566859
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/parabolic"
-        blob: "5f542f7713fb7331e8f72b9b960e5fb99f0aa515"
+        blob: "d1f9ba84d9205c2a4507adb4cdb6c895ecb32a71"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "6e6be1f2c283959477f6f645149ebc89c39c0eba0ff77258cec2aa99eca3463b"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

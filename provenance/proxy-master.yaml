@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1007696286
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/proxy-master"
-        blob: "6b77a6e610ec7a00f22ce797b73a9b673d0027f9"
+        blob: "71d88bc5f5b234bbc67b19947229184a466cacdd"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "5ab3821eb41c6290a5c2cfeb26f3f39a316001ce2aef3823e643998f8657fb59"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

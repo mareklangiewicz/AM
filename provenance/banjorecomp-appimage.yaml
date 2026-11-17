@@ -9,9 +9,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/aarch64/banjo-recompiled"
-        blob: "4dfc22aa95ca4551066ec5510318a99377600827"
+        blob: "12f2b5f58a59e276ca47eb6b195c19b7ff3ff61d"
     "armv7l":
       repository_id: 1174072010
       availability: "absent"
@@ -23,12 +23,23 @@ apps:
     "x86_64":
       repository_id: 1174072010
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/banjo-recompiled"
-        blob: "0d69b026605f916c7eb09a2dd5401e4f01d62f04"
+        blob: "fd7fb54a4298ae2e7a2aa14c89970262df1cc3b2"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "4323dbaf0bda5c243e15582c0eda7a1e5877a19c9f54c884e37eb091eee9f222"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"
   "banjorecomp":
     "aarch64":
       repository_id: 1174072010
@@ -45,9 +56,20 @@ apps:
     "x86_64":
       repository_id: 1174072010
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/banjorecomp"
-        blob: "b6795af51ebe5e0629d47bf99ee57cddd053a739"
+        blob: "7ea052a0e2cfa4210575106b676a0110827e9139"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "8490f5e84b3f2a8cc8716a8f8ab6698161c5291007dba0865c040d3127baccb4"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

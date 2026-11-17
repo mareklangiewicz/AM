@@ -18,12 +18,23 @@ apps:
     "x86_64":
       repository_id: 1242836343
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/palemoon"
-        blob: "c9868804ed0b614583981e16539df6c7a0c5533f"
+        blob: "f67ea90b8a32ff109e004a92ad2474be2efe03eb"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "80f329496c0d515eaf2e4cb1ec7ba6a71e2d3a376c5cfd01aea0864d3abdc9b9"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"
   "palemoon-legacy":
     "aarch64":
       repository_id: 1242836343
@@ -40,9 +51,20 @@ apps:
     "x86_64":
       repository_id: 1242836343
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/palemoon-legacy"
-        blob: "e335cc32b576b4faf9535331abe4221bfb66df88"
+        blob: "c372941f435a514725285137936d3eb764a85258"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "e2a4b0faf11e1f52f7c3bbf9e90e901972fb4143f132d61bbb32b75d942667cd"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

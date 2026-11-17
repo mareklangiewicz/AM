@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1018193668
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/lazytyper"
-        blob: "efc14190f59c52d810b7086bef968ceed8037b52"
+        blob: "71cf60f784eae5f4f6705329feee628db08113f3"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "cb9e5b349d88fe9f5c4e7eab0fe3ec6ebc567f7550e18ae370edb0be93ae51c8"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

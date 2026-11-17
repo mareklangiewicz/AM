@@ -18,12 +18,23 @@ apps:
     "x86_64":
       repository_id: 514553345
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/orcaslicer"
-        blob: "62455a9cd93324e1bb2d6c891f01da5f3ae9dfc0"
+        blob: "29cf2a38480605526ed727269e9a50737d3e6b56"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "a8522252c6e9ef6c0521e025644692763d16daed7ba6560dec9cebf5b79be88c"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"
   "orcaslicer-devel":
     "aarch64":
       repository_id: 514553345
@@ -40,9 +51,20 @@ apps:
     "x86_64":
       repository_id: 514553345
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/orcaslicer-devel"
-        blob: "3ea156159afaac9d176110bf19f022c75ea3a950"
+        blob: "9c39f7512fddf3bbb233aeb263bed31ffaac5da2"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "df18222db0687dca0021cf4dbb5e12f6573d6cc96d318287eeb61e359ceed9d8"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

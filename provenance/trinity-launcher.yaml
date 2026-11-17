@@ -9,9 +9,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/aarch64/trinity-launcher"
-        blob: "4b8e79f2fab139d4011367790380494e1a52b6c7"
+        blob: "d1c0fb406213bd0cfdcfba050e4b2b77c78e1e09"
     "armv7l":
       repository_id: 1100928866
       availability: "absent"
@@ -26,17 +26,17 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/trinity-launcher"
-        blob: "988a5a307a86944591e37e19e4c221c46f73cd1e"
+        blob: "f206c6323969ba24d129aaf6424d99e30951ea24"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-17T04:42:50Z"
-        recipe_sha256: "d8511fcad0748a662ea6f1906187ae5aaee9d21ec104161e6585df7bf149bb20"
-        rules: "d889ad470776e54d18785bb1420976036c179f22"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "0e080e575a770f5cc3128a10f2f4371178e039cee7edd71ad8ae3c0692488956"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "d889ad470776e54d18785bb1420976036c179f22"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
             path: "modules/"
-            sha256: "d2fff958b96cf7727f9f10e8d134d6c125feddef813e46692417e410b8567c38"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

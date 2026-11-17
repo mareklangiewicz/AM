@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 784615413
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/cvrx"
-        blob: "9f656497c75acbd3951ac9c618ad78037b7cd47b"
+        blob: "3e653c4ef817a909d8f528936b5ebcaaa4dcb9a8"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "2aaf16b284424cd13efe2a1ffa18b5382f1f5881c6191b1bee874f4e409fc100"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

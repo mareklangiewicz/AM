@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 425288628
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/ireader"
-        blob: "bc90e1821526c614e6cf2fa48db3afb7ad5ef5e4"
+        blob: "d2ea9e9ec8b8ecfc86d20704c9df8415af5e02b8"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "5ce9a54f1ad5bfcd56fc7729922fb91ba94413c8a6bbe2dba2b88118b500e528"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

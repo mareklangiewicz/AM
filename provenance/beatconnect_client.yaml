@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 188203906
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/beatconnect-client"
-        blob: "efae9372515f6aab275c3b7bd8d97160d9b5cf54"
+        blob: "90eb5ffbd631fce93c55f17bcacad8049d5f27c6"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "c9c84db7a59ac026bb84b6966a2940ede984186ca8aab587807c0c49fc0b2d5b"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

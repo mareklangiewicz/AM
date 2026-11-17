@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 692520491
 repository: "mgrojo/alr2appimage"
-collected_at: "2026-11-12T11:29:24Z"
+collected_at: "2026-11-17T11:07:29Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-12T11:29:24Z"
+observed_at: "2026-11-17T11:07:29Z"
 releases:
   "145742616":
     tag: "v0.9.0"
@@ -73,6 +73,7 @@ releases:
         url: "https://github.com/mgrojo/alr2appimage/releases/download/v1.0.0/alr2appimage-1.0.0-x86_64.AppImage"
         size: 2447864
   "441027101":
+    observed_at: "2026-11-12T11:29:24Z"
     tag: "continuous"
     title: "continuous"
     url: "https://github.com/mgrojo/alr2appimage/releases/tag/continuous"
@@ -101,3 +102,61 @@ releases:
         size: 1169262
         media_type: "application/x-redhat-package-manager"
         digest: "sha256:b9bc524f5f6616bdf85dde474835ef7870314e6f18a8474568555592b9f6d9d7"
+  "445473089":
+    tag: "v1.1.0"
+    title: "v1.1.0: support for RPM and Deb"
+    url: "https://github.com/mgrojo/alr2appimage/releases/tag/v1.1.0"
+    created_at: "2026-11-14T17:34:23Z"
+    published_at: "2026-11-14T17:38:42Z"
+    updated_at: "2026-11-14T17:59:41Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/mgrojo/alr2appimage/zipball/v1.1.0"
+    source_tar_url: "https://api.github.com/repos/mgrojo/alr2appimage/tarball/v1.1.0"
+    download_base: "https://github.com/mgrojo/alr2appimage/releases/download/v1.1.0/"
+    assets:
+      "748259693":
+        name: "alr2appimage-1.1.0-amd64.deb"
+        url_suffix: "alr2appimage-1.1.0-amd64.deb"
+        size: 1911540
+        media_type: "application/x-debian-package"
+        digest: "sha256:988fffdfabfddc3bb1a059305f217cb73580b9ca4562ba5062963ab8118fb7a5"
+      "748259695":
+        name: "alr2appimage-1.1.0-1.x86_64.rpm"
+        url_suffix: "alr2appimage-1.1.0-1.x86_64.rpm"
+        size: 1169831
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:4f8c18021de730894371f898916273b933c06bc49484539442c2f3031a20d46c"
+      "748259696":
+        name: "alr2appimage-1.1.0-x86_64.AppImage"
+        url_suffix: "alr2appimage-1.1.0-x86_64.AppImage"
+        size: 3672568
+        digest: "sha256:679e8f85c870d7b5c5942905c680a6f4688b1c2ee25fbf8880257097fc17f5e9"
+  "446280958":
+    tag: "v1.1.1"
+    title: "v1.1.1: prevent an incorrect exit code"
+    url: "https://github.com/mgrojo/alr2appimage/releases/tag/v1.1.1"
+    created_at: "2026-11-15T18:41:23Z"
+    published_at: "2026-11-15T18:45:28Z"
+    updated_at: "2026-11-15T18:48:41Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/mgrojo/alr2appimage/zipball/v1.1.1"
+    source_tar_url: "https://api.github.com/repos/mgrojo/alr2appimage/tarball/v1.1.1"
+    download_base: "https://github.com/mgrojo/alr2appimage/releases/download/v1.1.1/"
+    assets:
+      "751977854":
+        name: "alr2appimage-1.1.1-1.x86_64.rpm"
+        url_suffix: "alr2appimage-1.1.1-1.x86_64.rpm"
+        size: 1170174
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:f4e336c4c7f994710e6060c2404a992f44c8526350c446ff309902b3e060c5fa"
+      "751977855":
+        name: "alr2appimage-1.1.1-x86_64.AppImage"
+        url_suffix: "alr2appimage-1.1.1-x86_64.AppImage"
+        size: 3668472
+        digest: "sha256:dfb04899f249e4caf087783daa2b29783fc7d4189f49fa728f056eb82bd1a172"
+      "751977857":
+        name: "alr2appimage-1.1.1-amd64.deb"
+        url_suffix: "alr2appimage-1.1.1-amd64.deb"
+        size: 1910498
+        media_type: "application/x-debian-package"
+        digest: "sha256:12c864498c882c1627bc815df08395eccf1c76c03bea3a200cfc03719f494893"

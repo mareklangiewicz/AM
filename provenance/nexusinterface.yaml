@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 137284067
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/nexus-wallet"
-        blob: "db9e285a452743a38b13a3547ac3e2067087dcd8"
+        blob: "67ac150d84e7f2a759d02069016d44c490b3a21f"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "2a4da424dd25b6ef29cdb19e6bf32fda05f93d2060e10228a914b97b3ee1ef6a"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 935875355
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/fchat-horizon"
-        blob: "3f4789b3ac5143f8870c6d98bf1082fcfb10dd29"
+        blob: "87b0c1c80b1e1ac018a744164f21384936df1cbb"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "6ce6ea835b0c222ecbcdeedaa617ba425b95689d28b154bbf35bef47aa2b7b72"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

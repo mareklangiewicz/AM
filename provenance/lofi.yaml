@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 165434192
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/lofi"
-        blob: "7c34605c43fd3eb5df80ef9dd7b37cd1236bf235"
+        blob: "573a634f8aed0baebbc7a6281059aa939d6355fe"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "4b60de4f38ebfea4c9ffdf99506e4e5173731e9fc0c17d91e5b5156e55e43517"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

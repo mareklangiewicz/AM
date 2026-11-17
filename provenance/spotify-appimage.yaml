@@ -18,12 +18,23 @@ apps:
     "x86_64":
       repository_id: 404008386
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/spotify"
-        blob: "6a18f32d6702203bb7029b70e53e5a35e220371a"
+        blob: "34eedc1a9895f3cdb3b4726a3417c0d975cd7fe8"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "484ab7bb8b6ee1d4a474c474c0e7b0437b10cd83dd1baa19127fc51d17581ae8"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"
   "spotify-candidate":
     "aarch64":
       repository_id: 404008386
@@ -40,12 +51,23 @@ apps:
     "x86_64":
       repository_id: 404008386
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/spotify-candidate"
-        blob: "4413b95bf9dd90cf558e1854549f21ae6bea326b"
+        blob: "5ae2d8b77a9f01423f5eb0c87ca68e61beab6ef1"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "ee9f0fb5ab2d9ae11351bb23b104ae74f0dadd1e17fb0daf8d7e16de53038c1b"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"
   "spotify-edge":
     "aarch64":
       repository_id: 404008386
@@ -62,9 +84,20 @@ apps:
     "x86_64":
       repository_id: 404008386
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/spotify-edge"
-        blob: "70039a2adccb056da20aa6b6833058c8f4299eb6"
+        blob: "1dda0f7c8dd463cb4016b3dea1d055315f192fe3"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "5e3cdefda8cc503dede5742708ffe6f5e56a6074dd2000d1e5997c39423acc0b"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

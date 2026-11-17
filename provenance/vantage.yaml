@@ -9,9 +9,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/aarch64/vantage"
-        blob: "583fccbdb25dee863715bfe7666ce6a02a333b4c"
+        blob: "d6b62b379f80147714cbf1e1dadc41088b5e6414"
     "armv7l":
       repository_id: 1174131955
       availability: "absent"
@@ -26,17 +26,17 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/vantage"
-        blob: "21649aa09d75dcb62bc0d04ba7a342e4719173f7"
+        blob: "dcf481ab1c449e14e14fe6805c7d4c5e12f61385"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-17T04:42:50Z"
-        recipe_sha256: "1d81a5f6be61a14c784a5438469d28b02bc9f310117b29396fb281a0369ff5f1"
-        rules: "d889ad470776e54d18785bb1420976036c179f22"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "0f2804a3cbc44d233ce9bee7befc24409fd6ed7d347fbf1d9dfb5336d05349df"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "d889ad470776e54d18785bb1420976036c179f22"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
             path: "modules/"
-            sha256: "d2fff958b96cf7727f9f10e8d134d6c125feddef813e46692417e410b8567c38"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"

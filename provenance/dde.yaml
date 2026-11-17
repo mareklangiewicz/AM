@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 83591700
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "d889ad470776e54d18785bb1420976036c179f22"
+        commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
         path: "programs/x86_64/dexter-dev-env"
-        blob: "a9030c635c37102c898f8316770cf613550f7ce2"
+        blob: "915a5a5c1a4703b7b9f46cfe9e15837723ff3547"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-17T11:13:28Z"
+        recipe_sha256: "b96a167071a1bbda4278454cf723cf16f37ce166ea6bfb82dacf557dd8731d45"
+        rules: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "082502f64c0e8d69a5ff6936c3eb4c7aa3719020"
+            path: "modules/"
+            sha256: "d20f158ff3bef287bb3118a60d909d0342e44bac9c2b0f81539d1b80fe93e35b"
