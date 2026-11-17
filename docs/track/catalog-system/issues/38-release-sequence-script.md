@@ -54,3 +54,17 @@ replies that also fail on any unexpected call; added to the tool suites of
 conclusion, always repin, ignore a failed watched run, or let code through
 without `--ci` each fail them. Run for real: refuses "nothing to ship" on a
 pushed HEAD.
+
+November 17, 2026: first real use shipped this ticket itself. `release.py ship
+--ci release-script --watch 30` after Long tests 44188801014: pushed
+`9f9cfc17f`, repinned from `02c7495d4` (one input changed:
+`tools/catalog-collector/README.md`), dispatched catalog run 44191285057;
+Fast tests 44191275884 and the catalog run both green, exit 0. Two findings:
+
+- Its output is block-buffered when stdout is not a terminal, so a
+  backgrounded run shows nothing until it exits; `print(..., flush=True)`
+  (or `python3 -u`) would fix it.
+- A README edit under `tools/catalog-collector` counts as a collection input
+  (the `source` scope is the whole directory), so it costs a repin and
+  dispatch. Excluding `*.md` from the gate's paths would avoid that; not
+  decided.
