@@ -74,3 +74,10 @@ commit to repin to, acquire and publish are skipped, the run is red.
 - Tests: `tools/catalog-collector/test_schedule_gate.py` (fast tier), on a
   throwaway Git repository; a gate that returns nothing, and one without the
   workflow paths, both fail it.
+
+November 17, 2026: Long tests 44179435023 green on `ci/schedule-gate`
+(`02c7495d4`); pushed to `main-marek` with Marek's approval and repinned
+`CATALOG_SCHEDULE_REVISION` to `02c7495d4` (21:36Z). Fast tests 44181646939
+green. Dispatched catalog run 44181653553: `gate` skipped, acquire and publish
+green, so dispatch stays ungated. Not yet observed: a scheduled run through
+the gate, either passing (inputs equal) or failing red (inputs changed).
