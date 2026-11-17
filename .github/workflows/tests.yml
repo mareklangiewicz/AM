@@ -31,7 +31,7 @@ jobs:
       - name: Tool suites
         run: |
           set -euo pipefail
-          for suite in tools/recipe-conversion tools/recipe-reconstruction tools/upstream-merge test/e2e; do
+          for suite in tools/recipe-conversion tools/recipe-reconstruction tools/upstream-merge tools/release test/e2e; do
             python3 -B -m unittest discover -s "$suite" -p 'test_*.py'
           done
       - name: Collector fast tier

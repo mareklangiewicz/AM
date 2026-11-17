@@ -1,0 +1,152 @@
+"""The main-marek release sequence, against scripted git and gh replies (ticket 38)."""
+import json
+import unittest
+
+import release
+
+HEAD = 'h'*40
+BASE = 'b'*40
+PIN = 'p'*40
+R = ['-R', release.REPO]
+GATE = ['git', 'diff', '--name-only', PIN, HEAD, '--', *release.schedule_gate_paths()]
+
+
+class Fake:
+    """Answers each expected call in order; anything else fails the test."""
+    def __init__(self, script):
+        self.script = list(script)
+        self.calls = []
+
+    def __call__(self, argv):
+        self.calls.append(argv)
+        if not self.script:
+            raise AssertionError('unexpected call '+' '.join(argv))
+        expected, reply = self.script.pop(0)
+        if argv != expected:
+            raise AssertionError('expected '+' '.join(expected)+'\n     got '+' '.join(argv))
+        return reply if isinstance(reply, tuple) else (0, reply)
+
+
+def ok(value):
+    return json.dumps(value)
+
+
+START = [
+    (['git', 'rev-parse', '--abbrev-ref', 'HEAD'], 'main-marek\n'),
+    (['git', 'fetch', '--quiet', 'origin', 'main-marek'], ''),
+    (['git', 'rev-parse', 'HEAD'], HEAD+'\n'),
+    (['git', 'rev-parse', 'origin/main-marek'], BASE+'\n'),
+    (['git', 'merge-base', '--is-ancestor', BASE, HEAD], ''),
+]
+GREEN_CI = [
+    (['git', 'ls-remote', 'origin', 'refs/heads/ci/x'], HEAD+'\trefs/heads/ci/x\n'),
+    (['gh', 'run', 'list', '--workflow', 'long-tests.yml', '--branch', 'ci/x', '--commit', HEAD,
+      '--limit', '1', '--json', 'databaseId,status,conclusion', *R],
+     ok([dict(databaseId=11, status='completed', conclusion='success')])),
+]
+PUSH = [(['git', 'push', 'origin', 'HEAD:refs/heads/main-marek'], '')]
+PIN_READ = [(['gh', 'variable', 'get', 'CATALOG_SCHEDULE_REVISION', *R], PIN+'\n')]
+FAST = [(['gh', 'run', 'list', '--workflow', 'tests.yml', '--event', 'push', '--commit', HEAD,
+          '--limit', '1', '--json', 'databaseId', *R], ok([dict(databaseId=21)]))]
+DISPATCHED = ['gh', 'run', 'list', '--workflow', 'catalog.yml', '--event', 'workflow_dispatch', '--commit', HEAD,
+              '--json', 'databaseId', *R]
+REPIN = [
+    (['gh', 'variable', 'set', 'CATALOG_SCHEDULE_REVISION', '--body', HEAD, *R], ''),
+    (DISPATCHED, ok([dict(databaseId=5)])),
+    (['gh', 'workflow', 'run', 'catalog.yml', '--ref', 'main-marek', *R], ''),
+    (DISPATCHED, ok([dict(databaseId=31), dict(databaseId=5)])),
+]
+
+
+def ship(script, **options):
+    run = Fake(script)
+    lines = []
+    result = release.ship(run, out=lines.append, sleep=lambda s: None, **options)
+    return run, result, lines
+
+
+class Refusals(unittest.TestCase):
+    def refused(self, script, pattern, **options):
+        run = Fake(script)
+        with self.assertRaisesRegex(release.Refused, pattern):
+            release.ship(run, out=lambda line: None, sleep=lambda s: None, **options)
+        self.assertFalse(any(call[:2] == ['git', 'push'] or call[:3] == ['gh', 'variable', 'set']
+                             or call[:3] == ['gh', 'workflow', 'run'] for call in run.calls))
+        self.assertEqual(run.script, [], 'refused before the scripted calls ran out')
+
+    def test_other_branch(self):
+        self.refused([(['git', 'rev-parse', '--abbrev-ref', 'HEAD'], 'ci/x\n')], 'main-marek')
+
+    def test_nothing_to_ship(self):
+        self.refused(START[:3]+[(['git', 'rev-parse', 'origin/main-marek'], HEAD+'\n')], 'nothing')
+
+    def test_not_a_fast_forward(self):
+        self.refused(START[:4]+[(['git', 'merge-base', '--is-ancestor', BASE, HEAD], (1, ''))], 'fast-forward')
+
+    def test_code_change_without_ci(self):
+        self.refused(START+[(['git', 'diff', '--name-only', BASE, HEAD], 'docs/a.md\nmodules/appimage.am\n')],
+                     'modules/appimage.am')
+
+    def test_ci_branch_elsewhere(self):
+        self.refused(START+[(['git', 'ls-remote', 'origin', 'refs/heads/ci/x'], BASE+'\trefs/heads/ci/x\n')],
+                     'ci/x', ci='x')
+
+    def test_ci_branch_missing(self):
+        self.refused(START+[(['git', 'ls-remote', 'origin', 'refs/heads/ci/x'], '')], 'ci/x', ci='x')
+
+    def test_long_tests_not_green(self):
+        for runs in ([], [dict(databaseId=11, status='in_progress', conclusion='')],
+                     [dict(databaseId=11, status='completed', conclusion='failure')]):
+            with self.subTest(runs=runs):
+                self.refused(START+GREEN_CI[:1]+[(GREEN_CI[1][0], ok(runs))], 'Long tests', ci='x')
+
+
+class Ship(unittest.TestCase):
+    def test_tested_change_to_collection_inputs_repins_and_dispatches(self):
+        run, result, lines = ship(START+GREEN_CI+PUSH+PIN_READ+[(GATE, 'programs/x86_64/a\n')]+REPIN+FAST, ci='x')
+        self.assertEqual(run.script, [])
+        self.assertEqual(result, dict(fast=21, catalog=31))
+        self.assertTrue(any('31' in line for line in lines) and any('21' in line for line in lines))
+
+    def test_tested_change_outside_collection_inputs_keeps_the_pin(self):
+        run, result, _ = ship(START+GREEN_CI+PUSH+PIN_READ+[(GATE, '')]+FAST, ci='x')
+        self.assertEqual(run.script, [])
+        self.assertEqual(result, dict(fast=21))
+
+    def test_documentation_only_needs_no_ci(self):
+        run, result, _ = ship(START+[(['git', 'diff', '--name-only', BASE, HEAD], 'docs/a.md\ndocs/track/b.md\n')]
+                              + PUSH+PIN_READ+[(GATE, '')]+FAST)
+        self.assertEqual(run.script, [])
+        self.assertEqual(result, dict(fast=21))
+
+
+def view(run_id, status, conclusion=''):
+    return (['gh', 'run', 'view', str(run_id), '--json', 'status,conclusion', *R],
+            ok(dict(status=status, conclusion=conclusion)))
+
+
+class Watch(unittest.TestCase):
+    def watch(self, script, minutes=10):
+        now = [0.0]
+        run = Fake(script)
+        def sleep(seconds): now[0] += seconds
+        good = release.watch(run, dict(fast=21, catalog=31), minutes, out=lambda line: None,
+                             sleep=sleep, clock=lambda: now[0])
+        self.assertEqual(run.script, [])
+        return good
+
+    def test_all_green(self):
+        self.assertTrue(self.watch([view(21, 'in_progress'), view(31, 'queued'),
+                                    view(21, 'completed', 'success'), view(31, 'completed', 'success')]))
+
+    def test_one_failure(self):
+        self.assertFalse(self.watch([view(21, 'completed', 'failure'), view(31, 'completed', 'success')]))
+
+    def test_deadline(self):
+        polls = int(60/release.POLL_SECONDS)
+        self.assertFalse(self.watch([view(21, 'completed', 'success')]+[view(31, 'in_progress')]*(polls+1),
+                                    minutes=1))
+
+
+if __name__ == '__main__':
+    unittest.main()

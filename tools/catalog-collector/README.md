@@ -127,7 +127,11 @@ whatever the tree holds, so run them before an upstream merge and on demand.
 The "Long tests" workflow (`.github/workflows/long-tests.yml`) runs them, the
 fast tier and the Debian and Fedora container e2e in parallel jobs on any push
 to a `ci/*` branch or on dispatch: push the commit to test as `ci/<name>`
-first, then move `main-marek` once it is green.
+first, then move `main-marek` once it is green with
+`python3 -B tools/release/release.py ship --ci <name> --watch 30`. It refuses
+unless Long tests passed on that exact commit (documentation-only commits need
+no `--ci`), repins `CATALOG_SCHEDULE_REVISION` and dispatches a catalog run
+only when the collection inputs changed, and prints and watches the run ids.
 A single file:
 
 ```sh
