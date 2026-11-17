@@ -34,7 +34,12 @@ def plan(base,ours,theirs,owned=(),registry=()):
 
 class Plan(unittest.TestCase):
     def setUp(self):
-        self.original=show(BASE,DECLARED);self.declaration=show(FORK,DECLARED)
+        self.original=show(BASE,DECLARED)
+        # The fork's declaration as converted since ticket 32: 0xfx is a 3.6
+        # instance, so it opts in to the template's --no-sandbox strip.
+        self.declaration=show(FORK,DECLARED).replace(b'/releases\nCATALOG_FORMAT=',
+            b'/releases\nDESKTOP_STRIP_NO_SANDBOX=true\nCATALOG_FORMAT=',1)
+        assert b'DESKTOP_STRIP_NO_SANDBOX' in self.declaration
         self.base={DECLARED:self.original};self.ours={DECLARED:self.declaration}
 
     def one(self,theirs,**options):

@@ -182,7 +182,7 @@ approval boundaries.
 | [29 open](issues/29-sort-and-generate-derived-catalog-files.md) | 28 | Classify the five fork-side files; generate the derived ones. |
 | [30 resolved](issues/30-add-ci-fast-test-tier.md) | 28 | ["Fast tests" workflow](issues/30-add-ci-fast-test-tier.md#answer--november-17-2026) runs the tool suites and the collector fast tier on every push, reporting only; first green run 5.5 minutes. |
 | [31 resolved](issues/31-count-recipes-per-upstream-template.md) | none | [Per-template counts](template-instances-31.md): AppImage-in-archive has 6,009 non-declaration instances, unreviewed AppImage `bb53f3180` 1,233, Archive 230; multiple-choice templates match nothing. |
-| [32 open](issues/32-declarations-drop-no-sandbox-strip.md) | none | Grilling: 579 declarations from template 3.6 do not set `DESKTOP_STRIP_NO_SANDBOX`, unlike their upstream originals; blocks reviewing AppImage `bb53f3180`. |
+| [32 resolved](issues/32-declarations-drop-no-sandbox-strip.md) | none | [Layouts carry settings](issues/32-declarations-drop-no-sandbox-strip.md#answer--november-17-2026): 3.6 sets `DESKTOP_STRIP_NO_SANDBOX=true`; 579 declarations re-converted, one added line each. |
 
 Latest implementation evidence, November 8: Chromium desktop/narrow and Firefox
 checks pass; physical-device/comprehension limits remain with 13. Independent

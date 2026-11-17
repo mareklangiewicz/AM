@@ -5,6 +5,7 @@
 set -eu
 APP=draw.io
 CATALOG_ALIAS=https://api.github.com/repos/jgraph/drawio-desktop/releases
+DESKTOP_STRIP_NO_SANDBOX=true
 CATALOG_FORMAT=3
 CATALOG_RECIPE=x86_64/draw.io
 CATALOG_REPOSITORY_ID=92443980

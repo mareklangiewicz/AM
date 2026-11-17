@@ -11,6 +11,7 @@ release selector is a literal filter pipeline. A long recipe keeps the
 original's install steps and replaces its release selection.
 """
 import argparse
+from dataclasses import dataclass,field
 import hashlib
 import json
 from pathlib import Path
@@ -41,6 +42,17 @@ class Refusal(ValueError):
     """The conversion cannot account for this original; nothing was produced."""
 
 
+@dataclass
+class Layout(Template):
+    """A reviewed template body and the declaration settings that reproduce
+    what its install steps do beyond the shared installer's defaults."""
+    settings:dict=field(default_factory=dict)
+
+
+# Settings a review may attach to a layout, with their allowed literal values.
+LAYOUT_SETTINGS={'DESKTOP_STRIP_NO_SANDBOX':{'true'}}
+
+
 def layouts(repo=ROOT):
     """Reviewed upstream AppImage template bodies, read from pinned Git objects."""
     originals=Originals(repo);result=[]
@@ -48,7 +60,10 @@ def layouts(repo=ROOT):
         body=originals.read(row['commit'],row['path'])
         if hashlib.sha256(body.encode()).hexdigest()!=row['sha256']:
             raise ValueError('layout differs from its reviewed hash: '+row['commit'])
-        result.append(Template(row['commit'],row['path'],body,''))
+        settings=row.get('settings',{})
+        if any(value not in LAYOUT_SETTINGS.get(key,()) for key,value in settings.items()):
+            raise ValueError('layout setting not supported: '+row['commit'])
+        result.append(Layout(row['commit'],row['path'],body,'',dict(settings)))
     return result
 
 
@@ -68,7 +83,8 @@ def recognize(source,templates):
     selection=SELECTION.fullmatch(function)
     if not selection:raise Refusal('release selection is not one GitHub releases read')
     if selection['site'].lower()!=site.lower():raise Refusal('SITE and the release selection name different repositories')
-    return dict(app=app,site=site,alias=selection['url'],selector=selection['selector'],template=template.identity)
+    return dict(app=app,site=site,alias=selection['url'],selector=selection['selector'],template=template.identity,
+                settings=getattr(template,'settings',{}))
 
 
 def to_declaration(source,recipe,identities,templates):
@@ -79,7 +95,8 @@ def to_declaration(source,recipe,identities,templates):
              requested_repository=identity.get('requested_repository',identity['repository']))
     if 'catalog_app' in identity:row['catalog_app']=identity['catalog_app']
     try:
-        text,_=bulk_recipes.declare(dict(APP=found['app'],CATALOG_ALIAS=found['alias']),found['selector'],recipe,row)
+        text,_=bulk_recipes.declare(dict(APP=found['app'],CATALOG_ALIAS=found['alias'],**found['settings']),
+                                    found['selector'],recipe,row)
     except ValueError as error:raise Refusal(str(error)) from error
     return dict(form='declaration',text=text,policies=[],template=found['template'])
 

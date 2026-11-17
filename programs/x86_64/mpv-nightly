@@ -5,6 +5,7 @@
 set -eu
 APP=mpv-nightly
 CATALOG_ALIAS=https://api.github.com/repos/pkgforge-dev/mpv-AppImage/releases
+DESKTOP_STRIP_NO_SANDBOX=true
 CATALOG_FORMAT=3
 CATALOG_RECIPE=x86_64/mpv-nightly
 CATALOG_REPOSITORY_ID=805307556

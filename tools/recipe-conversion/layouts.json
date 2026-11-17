@@ -9,6 +9,7 @@
     "commit": "cf50304fc627a0c4c60376fbcbfd31b31bb4736f",
     "path": "templates/AM-SAMPLE-AppImage",
     "sha256": "5353962fac61f7e0f8d3e949a824700c522c6229c6243ab16e2847a4e71edfa2",
-    "note": "AppImage template 3.6 with multiple launchers"
+    "note": "AppImage template 3.6 with multiple launchers; its desktop sed removes --no-sandbox (ticket 32)",
+  "settings": {"DESKTOP_STRIP_NO_SANDBOX": "true"}
   }
 ]

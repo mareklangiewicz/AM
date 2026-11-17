@@ -28,6 +28,16 @@ def show(commit,recipe):
     return ORIGINALS.read(commit,'programs/'+recipe)
 
 
+STRIP='DESKTOP_STRIP_NO_SANDBOX=true\n'
+
+
+def stripping(published):
+    """A published 3.6 declaration as converted since ticket 32: the template's
+    desktop sed removes --no-sandbox, so the declaration opts in to the same."""
+    alias=published.index('\n',published.index('\nCATALOG_ALIAS=')+1)+1
+    return published[:alias]+STRIP+published[alias:]
+
+
 def identity(repository_id=1186679146,repository='averagenative/0xFX',requested='averagenative/0xfx'):
     return [dict(repository_id=repository_id,repository=repository,requested_repository=requested)]
 
@@ -38,14 +48,28 @@ class Declaration(unittest.TestCase):
 
     def test_original_becomes_the_published_declaration(self):
         result=self.convert(show(BASE,'x86_64/0xfx'))
-        self.assertEqual(result['text'],show(FORK,'x86_64/0xfx'))
+        self.assertEqual(result['text'],stripping(show(FORK,'x86_64/0xfx')))
         self.assertEqual(result['policies'],[])
         self.assertIn(MARKER,result['text'])
 
     def test_single_quotes_and_spacing_are_the_same_literals(self):
         for recipe in ('aarch64/cc-switch','x86_64/geeqie'):
             expected=show(FORK,recipe)
+            if recipe=='aarch64/cc-switch':expected=stripping(expected)
             self.assertEqual(self.convert(show(BASE,recipe),recipe,c.declaration_identities(expected))['text'],expected)
+
+    def test_template_that_strips_no_sandbox_declares_the_same(self):
+        # 3.6 (cf50304fc) removes --no-sandbox from the desktop entry; 3.5
+        # (b7c72a974) does not. The declaration keeps that behavior.
+        self.assertIn(STRIP,self.convert(show(BASE,'x86_64/0xfx'))['text'])
+        geeqie=show(FORK,'x86_64/geeqie')
+        self.assertNotIn('DESKTOP_STRIP_NO_SANDBOX',
+            self.convert(show(BASE,'x86_64/geeqie'),'x86_64/geeqie',c.declaration_identities(geeqie))['text'])
+
+    def test_each_layout_declares_what_its_desktop_sed_does(self):
+        for template in TEMPLATES:
+            strips='; s# --no-sandbox##g"' in template.body
+            self.assertEqual(template.settings.get('DESKTOP_STRIP_NO_SANDBOX')=='true',strips,template.identity)
 
     def test_literal_app_variable_in_a_selector_is_written_out(self):
         source=show(BASE,'x86_64/0xfx').replace('grep -oi "https.*download.*mage$"','grep -oi "https.*download.*$APP.*mage$"')
@@ -140,7 +164,7 @@ class CommandLine(unittest.TestCase):
             arguments=(original,'--recipe','x86_64/0xfx','--form','declaration','--repository-id',1186679146,
                        '--repository','averagenative/0xFX','--requested-repository','averagenative/0xfx')
             code,out,err=self.run_main(*arguments)
-            self.assertEqual((code,out,err),(0,show(FORK,'x86_64/0xfx'),''))
+            self.assertEqual((code,out,err),(0,stripping(show(FORK,'x86_64/0xfx')),''))
             original.write_text(show(BASE,'x86_64/0xfx')+'touch /tmp/unwanted\n')
             code,out,err=self.run_main(*arguments)
             self.assertEqual((code,out),(2,''))
@@ -170,7 +194,7 @@ class Corpus(unittest.TestCase):
             cls.fork.update(ORIGINALS.recipes(FORK,'programs/'+arch+'/'))
 
     def test_declarations(self):
-        identical=0;refused=[]
+        identical=stripped=0;refused=[]
         for path,expected in sorted(self.fork.items()):
             if MARKER not in expected or 'CATALOG_URL_RULES=' not in expected or path not in self.base:continue
             try:
@@ -183,11 +207,15 @@ class Corpus(unittest.TestCase):
                 self.assertEqual(result['text'],expected.replace('https.*$APP.*x86_64','https.*pdf4qt.*x86_64'))
                 self.assertNotEqual(result['text'],expected)
                 continue
-            self.assertEqual(result['text'],expected,path)
+            if result['text']!=expected:
+                # Ticket 32: the bulk conversion dropped 3.6's --no-sandbox strip.
+                self.assertEqual(result['text'],stripping(expected),path)
+                stripped+=1;continue
             identical+=1
         # odicto's original carries a hand-edited comment line, so it is not a
         # template instance; its declaration came through the old wrapper form.
-        self.assertEqual((identical,refused),(984,[('programs/x86_64/odicto',
+        # 398 are 3.5 instances; 586 are 3.6 instances that now opt in to the strip.
+        self.assertEqual((identical,stripped,refused),(398,586,[('programs/x86_64/odicto',
             'not an instance of a reviewed AppImage template')]))
 
     def test_long_recipes(self):

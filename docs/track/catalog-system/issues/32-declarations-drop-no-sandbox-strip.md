@@ -2,7 +2,7 @@
 
 Type: grilling
 Label: wayfinder:grilling
-Status: open
+Status: resolved
 Blocked by: none
 
 ## Outcome
@@ -62,3 +62,29 @@ Recommendation: option 1. ADR 0005 makes converted forms derived from
 upstream, and the policy doc's own rule is to keep the original's behavior.
 
 ## Comments
+
+## Answer — November 17, 2026
+
+Marek chose option 1 in the session.
+
+- `tools/recipe-conversion/layouts.json`: the 3.6 row carries
+  `"settings": {"DESKTOP_STRIP_NO_SANDBOX": "true"}`. `convert.layouts()`
+  loads it (only that key and value are accepted) and `to_declaration`
+  passes it to `bulk_recipes.declare`, so the line follows `CATALOG_ALIAS`.
+- Tests: a 3.6 instance declares the strip and a 3.5 one does not; every
+  layout declares the strip exactly when its body has the `sed`; the corpus
+  pins 398 identical and 586 declarations differing only by that line from
+  `6277377ae`. The merge test's fixture declaration carries the line.
+- Tree: 579 declarations re-converted from their `upstream/main` originals
+  with their own identities; the diff is 579 identical added lines and
+  nothing else. 395 were already identical. 9 differ for other reasons and
+  were left: 6 hand conversions already set the flag; neovide,
+  neovide-nightly and sunshine are 3.5 instances. 42 refuse (hand
+  conversions, as before).
+- `modules/catalog-yaml-policy.am`'s generated block is unchanged (the flag
+  is not selection data).
+
+Not done: AppImage `bb53f3180` is not yet in `layouts.json`; the payload
+question (how many of the 579 AppImages carry `--no-sandbox`) stays
+unmeasured. Nothing pushed; the change reaches installs only after a push.
+

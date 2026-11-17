@@ -201,7 +201,10 @@ parser; quoted/escaped argument forms require separate review. Other values are
 refused before acquisition and by declaration compilation. Existing desktop files
 remain preserved. 20x and the thirty recipes converted in tickets 133/135 opt in to retain their
 original fork recipe behavior; 2fac and remaining recipes keep the default
-argument-preservation behavior.
+argument-preservation behavior. Since catalog-system ticket 32 (November 17,
+2026) the conversion sets it for every declaration whose upstream original is
+an instance of a template that strips `--no-sandbox` (3.6 and later; see
+`tools/recipe-conversion/layouts.json`): 579 declarations gained it.
 
 20x/2fac declarations and enrollment (tickets 130/131) were pushed November 6.
 [Run 42150558139](https://github.com/mareklangiewicz/AM/actions/runs/42150558139)

@@ -43,6 +43,12 @@ accepted until someone has compared its install steps with
 `modules/appimage.am` and added it here; until then its recipes refuse the
 declaration form and convert to long recipes.
 
+A layout may carry `settings`: declaration settings that reproduce what its
+install steps do beyond the shared installer's defaults. Template 3.6's
+desktop `sed` removes `--no-sandbox`, so its row sets
+`DESKTOP_STRIP_NO_SANDBOX=true` (ticket 32); a test checks that every layout
+whose body has that `sed` declares it and no other does.
+
 ## Tests
 
 ```sh
@@ -52,7 +58,10 @@ python3 -B -m unittest discover -s tools/recipe-conversion -p 'test_*.py'
 They need the upstream merge base `7b4f831e6` and fork commit `6277377ae` as
 local Git objects. The corpus tests convert every original behind the bulk
 conversion published at `6277377ae` and require byte-identical results: 984
-recipe declarations and 8,770 long recipes with their policies. One
+recipe declarations and 8,770 long recipes with their policies. Since ticket
+32 the 586 declarations from template 3.6 must differ from the published text
+by exactly one added `DESKTOP_STRIP_NO_SANDBOX=true` line; the 398 from 3.5
+stay identical. One
 declaration (`odicto`) and 103 long recipes refuse; those were adapted by hand
 and are pinned as refusals. One declaration (`pdf4qt`) is pinned as a
 deliberate difference: it was published with a selector's `$APP` kept as
