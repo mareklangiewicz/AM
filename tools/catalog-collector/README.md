@@ -119,6 +119,10 @@ python3 -B -m unittest discover -s tools/catalog-collector -p 'tree_*.py'   # wh
 `test_*.py` is the fast tier. `tree_*.py` holds the checks that walk every
 live recipe or run the real manager for each one; they are slow and follow
 whatever the tree holds, so run them before an upstream merge and on demand.
+The "Long tests" workflow (`.github/workflows/long-tests.yml`) runs them, the
+fast tier and the Debian and Fedora container e2e in parallel jobs on any push
+to a `ci/*` branch or on dispatch: push the commit to test as `ci/<name>`
+first, then move `main-marek` once it is green.
 A single file:
 
 ```sh
