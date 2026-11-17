@@ -81,3 +81,6 @@ November 17, 2026: Long tests 44179435023 green on `ci/schedule-gate`
 green. Dispatched catalog run 44181653553: `gate` skipped, acquire and publish
 green, so dispatch stays ungated. Not yet observed: a scheduled run through
 the gate, either passing (inputs equal) or failing red (inputs changed).
+
+November 17, 2026: the gate ignores `README.md` files under its paths (ticket
+38 comment); other Markdown such as `docs/catalog-format-v3.md` still counts.

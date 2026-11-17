@@ -43,10 +43,16 @@ class ScheduleGate(unittest.TestCase):
         self.write('docs/notes.md', 'edited\n')
         self.assertEqual(interface.schedule_gate(self.repo, self.pin, self.commit()), [])
 
+    def test_readme_under_an_input_passes(self):
+        self.write('tools/catalog-collector/README.md', 'edited\n')
+        self.write('tools/recipe-reconstruction/README.md', 'edited\n')
+        self.assertEqual(interface.schedule_gate(self.repo, self.pin, self.commit()), [])
+
     def test_each_collection_input_change_is_named(self):
         for path in ('programs/x86_64/example', '.github/workflows/catalog.yml',
                      '.github/actions/catalog-collect/action.yml', 'modules/catalog-contract-tables.am',
-                     'tools/catalog-collector/new.py'):
+                     'tools/catalog-collector/new.py', 'docs/catalog-format-v3.md',
+                     'tools/catalog-collector/notes.md'):
             with self.subTest(path=path):
                 self.write(path, 'unreviewed '+path+'\n')
                 self.assertEqual(interface.schedule_gate(self.repo, self.pin, self.commit()), [path])

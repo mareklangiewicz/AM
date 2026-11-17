@@ -73,7 +73,7 @@ skips collection rather than falling back to v2. A scheduled run first runs the
 `gate` job: `host_catalog.py schedule-gate`, taken from the commit
 `CATALOG_SCHEDULE_REVISION` names, compares that commit with the pushed one over
 the collection inputs (`collection_interface.INPUT_SCOPES` plus the workflow and
-the collect action). Equal inputs collect; any difference fails the run, red, with
+the collect action, minus any `README.md`). Equal inputs collect; any difference fails the run, red, with
 the changed paths listed, until the change is reviewed and the variable set to the
 new commit. A documentation-only push needs no repin. Dispatched runs are not
 gated. Status retains 64 summaries,

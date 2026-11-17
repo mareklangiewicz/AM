@@ -125,6 +125,18 @@ def view(run_id, status, conclusion=''):
             ok(dict(status=status, conclusion=conclusion)))
 
 
+class Output(unittest.TestCase):
+    def test_lines_reach_a_pipe_as_they_happen(self):
+        import io
+        from unittest.mock import patch
+        stream = io.StringIO()
+        flushed = []
+        stream.flush = lambda: flushed.append(stream.getvalue())
+        with patch('sys.stdout', stream):
+            release.say('one')
+        self.assertEqual(flushed, ['one\n'])
+
+
 class Watch(unittest.TestCase):
     def watch(self, script, minutes=10):
         now = [0.0]

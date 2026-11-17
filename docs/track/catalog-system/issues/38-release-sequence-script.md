@@ -68,3 +68,11 @@ Fast tests 44191275884 and the catalog run both green, exit 0. Two findings:
   (the `source` scope is the whole directory), so it costs a repin and
   dispatch. Excluding `*.md` from the gate's paths would avoid that; not
   decided.
+
+November 17, 2026: both findings fixed with Marek's go-ahead. `release.say`
+prints with `flush=True` (test: a line reaches a non-terminal stdout at
+once). The gate drops `README.md` files only (`GATE_IGNORED`,
+`:(exclude,glob)**/README.md`), not every `*.md`: `docs/catalog-format-v3.md`
+is a `schemas` input, and the gate tests now say so. Replayed on
+`02c7495d4..9f9cfc17f`, the new paths find no change, so that push would not
+have repinned.

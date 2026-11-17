@@ -22,10 +22,13 @@ INPUT_SCOPES={
 }
 # What runs collection in CI, on top of what collection reads.
 COLLECTION_RUNNERS=['.github/workflows/catalog.yml','.github/actions/catalog-collect']
+# Inside those, what collection never reads: a README edit needs no repin.
+GATE_IGNORED=[':(exclude,glob)**/README.md']
 
 
 def schedule_gate_paths():
-    return sorted({path for paths in INPUT_SCOPES.values() for path in paths}|set(COLLECTION_RUNNERS))
+    """Git pathspecs: the input scopes and runners, minus GATE_IGNORED."""
+    return sorted({path for paths in INPUT_SCOPES.values() for path in paths}|set(COLLECTION_RUNNERS))+GATE_IGNORED
 
 
 def schedule_gate(repo, pin, head):

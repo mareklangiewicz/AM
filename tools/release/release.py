@@ -29,6 +29,11 @@ class Refused(Exception):
     pass
 
 
+def say(line):
+    """Print now, also when stdout is a pipe or file (a backgrounded run)."""
+    print(line, flush=True)
+
+
 def system(argv):
     done = subprocess.run(argv, capture_output=True, text=True, stdin=subprocess.DEVNULL)
     if done.returncode and argv[:2] != ['git', 'merge-base']:
@@ -60,7 +65,7 @@ def appeared(run, find, sleep, what):
     raise RuntimeError(what+' did not appear within '+str(APPEAR_SECONDS)+' s')
 
 
-def ship(run, ci=None, out=print, sleep=time.sleep):
+def ship(run, ci=None, out=say, sleep=time.sleep):
     """Returns the run ids to watch: always 'fast', 'catalog' when dispatched."""
     if output(run, ['git', 'rev-parse', '--abbrev-ref', 'HEAD']).strip() != BRANCH:
         raise Refused('check out '+BRANCH+' first')
@@ -110,7 +115,7 @@ def ship(run, ci=None, out=print, sleep=time.sleep):
     return result
 
 
-def watch(run, ids, minutes, out=print, sleep=time.sleep, clock=time.monotonic):
+def watch(run, ids, minutes, out=say, sleep=time.sleep, clock=time.monotonic):
     """True when every run completed successfully before the deadline."""
     deadline = clock()+minutes*60
     pending = dict(ids)
