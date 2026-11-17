@@ -63,6 +63,11 @@ upstream, and the policy doc's own rule is to keep the original's behavior.
 
 ## Comments
 
+November 17, 2026: pushed with Marek's approval as `34290b8c4`;
+`CATALOG_SCHEDULE_REVISION` repinned to it (07:54Z). Fast tests run
+44042311371 passed in 4 min 49 s. No scheduled collection run observed on it
+yet; installs pick the strip up only on their next `am -s`/`am -u`.
+
 ## Answer — November 17, 2026
 
 Marek chose option 1 in the session.
