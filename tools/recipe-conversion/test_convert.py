@@ -66,11 +66,6 @@ class Declaration(unittest.TestCase):
         self.assertNotIn('DESKTOP_STRIP_NO_SANDBOX',
             self.convert(show(BASE,'x86_64/geeqie'),'x86_64/geeqie',c.declaration_identities(geeqie))['text'])
 
-    def test_each_layout_declares_what_its_desktop_sed_does(self):
-        for template in TEMPLATES:
-            strips='; s# --no-sandbox##g"' in template.body
-            self.assertEqual(template.settings.get('DESKTOP_STRIP_NO_SANDBOX')=='true',strips,template.identity)
-
     def test_literal_app_variable_in_a_selector_is_written_out(self):
         source=show(BASE,'x86_64/0xfx').replace('grep -oi "https.*download.*mage$"','grep -oi "https.*download.*$APP.*mage$"')
         self.assertIn('"pattern":"https.*download.*0xfx.*mage$"',self.convert(source)['text'])
@@ -111,9 +106,62 @@ class Declaration(unittest.TestCase):
 
     def test_changed_layout_object_refuses_to_load(self):
         rows=json.loads(c.LAYOUTS.read_text());rows[0]['sha256']='0'*64
-        with tempfile.TemporaryDirectory() as temporary:
-            changed=Path(temporary)/'layouts.json';changed.write_text(json.dumps(rows))
-            with patch.object(c,'LAYOUTS',changed),self.assertRaisesRegex(ValueError,'reviewed hash'):c.layouts()
+        with self.assertRaisesRegex(ValueError,'reviewed hash'):load(rows)
+
+
+def load(rows):
+    """c.layouts() over these rows instead of the reviewed layouts.json."""
+    with tempfile.TemporaryDirectory() as temporary:
+        changed=Path(temporary)/'layouts.json';changed.write_text(json.dumps(rows))
+        with patch.object(c,'LAYOUTS',changed):return c.layouts()
+
+
+# bb53f3180 differs from the base b7c72a974 by this one desktop sed line.
+SED='sed -i "s#Exec=[^ ]*#Exec=$APP#g; s#Icon=.*#Icon=/opt/$APP/icons/$APP#g'
+SED_BASE='-'+SED+'" ./"$APP".desktop'
+SED_STRIP='+'+SED+'; s# --no-sandbox##g" ./"$APP".desktop'
+
+
+class LayoutDifferences(unittest.TestCase):
+    """Every line a layout differs by from the base layout is accounted for."""
+
+    def rows(self):
+        return json.loads(c.LAYOUTS.read_text())
+
+    def test_unmapped_differing_line_refuses_to_load(self):
+        rows=self.rows()
+        strip=next(row for row in rows if row['commit'].startswith('bb53f3180'))
+        strip['differences']=[entry for entry in strip['differences'] if entry['line']!=SED_STRIP]
+        with self.assertRaisesRegex(ValueError,'unmapped difference: bb53f3180.*--no-sandbox'):load(rows)
+
+    def test_entry_for_a_line_that_no_longer_differs_refuses(self):
+        rows=self.rows()
+        rows[1]['differences'].append(dict(line='+touch /tmp/unwanted',neutral='stale'))
+        with self.assertRaisesRegex(ValueError,'no longer differs: bb53f3180 [+]touch'):load(rows)
+
+    def test_settings_and_mapped_lines_agree(self):
+        rows=self.rows();strip=rows[1]
+        strip['settings']={}
+        with self.assertRaisesRegex(ValueError,'unset setting: bb53f3180'):load(rows)
+        rows=self.rows();rows[0]['settings']={'DESKTOP_STRIP_NO_SANDBOX':'true'}
+        with self.assertRaisesRegex(ValueError,'not backed by a difference: b7c72a974 DESKTOP_STRIP_NO_SANDBOX'):load(rows)
+
+    def test_each_entry_is_exactly_one_kind_and_dropped_names_its_ticket(self):
+        for change in (lambda entry:entry.update(neutral='also'),
+                       lambda entry:entry.pop('setting'),
+                       lambda entry:entry.update(setting=None,dropped='gone')):
+            rows=self.rows();change(next(entry for entry in rows[1]['differences'] if entry['line']==SED_STRIP))
+            with self.assertRaisesRegex(ValueError,'needs one setting, neutral or dropped'):load(rows)
+
+    def test_reviewed_layouts_load_with_their_mappings(self):
+        # 3.6's launcher lines are recorded as dropped, not hidden as neutral.
+        layouts={layout.identity:layout for layout in load(self.rows())}
+        self.assertEqual(len(layouts),3)
+        rows={row['commit'][:9]:row for row in self.rows()}
+        self.assertEqual([entry['line'] for entry in rows['bb53f3180']['differences']],[SED_BASE,SED_STRIP])
+        launchers=[entry for entry in rows['cf50304fc']['differences'] if 'dropped' in entry]
+        self.assertTrue(launchers and all(entry['ticket']==37 for entry in launchers))
+        self.assertIn('+\t\tif grep -qi \'^NoDisplay=true$\'',''.join(entry['line'] for entry in launchers))
 
 
 class Long(unittest.TestCase):

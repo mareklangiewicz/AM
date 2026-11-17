@@ -11,6 +11,7 @@ release selector is a literal filter pipeline. A long recipe keeps the
 original's install steps and replaces its release selection.
 """
 import argparse
+import difflib
 from dataclasses import dataclass,field
 import hashlib
 import json
@@ -53,9 +54,40 @@ class Layout(Template):
 LAYOUT_SETTINGS={'DESKTOP_STRIP_NO_SANDBOX':{'true'}}
 
 
+def differences(base,body):
+    """The lines body removes ('-') and adds ('+') against base, in order."""
+    old,new=base.splitlines(),body.splitlines();lines=[]
+    for tag,i1,i2,j1,j2 in difflib.SequenceMatcher(None,old,new,autojunk=False).get_opcodes():
+        if tag!='equal':lines+=['-'+line for line in old[i1:i2]]+['+'+line for line in new[j1:j2]]
+    return lines
+
+
+def check_differences(row,base,body):
+    """Every line the layout differs by is mapped to one of its settings, marked
+    neutral, or recorded as dropped with its ticket; every entry still differs;
+    every setting comes from a mapped line."""
+    entries=row.get('differences',[])
+    for entry in entries:
+        kinds=[kind for kind in ('setting','neutral','dropped') if entry.get(kind)]
+        if len(kinds)!=1 or ('dropped' in kinds and not entry.get('ticket')):
+            raise ValueError('difference needs one setting, neutral or dropped (with ticket): '+row['commit'][:9]+' '+entry['line'])
+        if 'setting' in kinds and entry['setting'] not in row.get('settings',{}):
+            raise ValueError('difference maps to an unset setting: '+row['commit'][:9]+' '+entry['line'])
+    mapped={entry['line'] for entry in entries}
+    found=differences(base,body)
+    for line in found:
+        if line not in mapped:raise ValueError('unmapped difference: '+row['commit'][:9]+' '+line)
+    for line in mapped-set(found):raise ValueError('mapped line no longer differs: '+row['commit'][:9]+' '+line)
+    for key in set(row.get('settings',{}))-{entry.get('setting') for entry in entries}:
+        raise ValueError('setting not backed by a difference: '+row['commit'][:9]+' '+key)
+
+
 def layouts(repo=ROOT):
-    """Reviewed upstream AppImage template bodies, read from pinned Git objects."""
-    originals=Originals(repo);result=[]
+    """Reviewed upstream AppImage template bodies, read from pinned Git objects.
+
+    The first row is the base layout; each other row's differences from it
+    must be fully mapped (check_differences)."""
+    originals=Originals(repo);result=[];base=None
     for row in json.loads(LAYOUTS.read_text()):
         body=originals.read(row['commit'],row['path'])
         if hashlib.sha256(body.encode()).hexdigest()!=row['sha256']:
@@ -63,6 +95,8 @@ def layouts(repo=ROOT):
         settings=row.get('settings',{})
         if any(value not in LAYOUT_SETTINGS.get(key,()) for key,value in settings.items()):
             raise ValueError('layout setting not supported: '+row['commit'])
+        if base is None:base=body
+        check_differences(row,base,body)
         result.append(Layout(row['commit'],row['path'],body,'',dict(settings)))
     return result
 

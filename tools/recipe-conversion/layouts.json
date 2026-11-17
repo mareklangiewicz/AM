@@ -10,13 +10,156 @@
     "path": "templates/AM-SAMPLE-AppImage",
     "sha256": "1049be481f39bdcdcd3ffa348ac94cdbdaaa65cfe1d341940e4b017963344931",
     "note": "AppImage template 3.5 whose desktop sed removes --no-sandbox; otherwise identical to b7c72a974 (ticket 33)",
-    "settings": {"DESKTOP_STRIP_NO_SANDBOX": "true"}
+    "settings": {
+      "DESKTOP_STRIP_NO_SANDBOX": "true"
+    },
+    "differences": [
+      {
+        "line": "-sed -i \"s#Exec=[^ ]*#Exec=$APP#g; s#Icon=.*#Icon=/opt/$APP/icons/$APP#g\" ./\"$APP\".desktop",
+        "setting": "DESKTOP_STRIP_NO_SANDBOX"
+      },
+      {
+        "line": "+sed -i \"s#Exec=[^ ]*#Exec=$APP#g; s#Icon=.*#Icon=/opt/$APP/icons/$APP#g; s# --no-sandbox##g\" ./\"$APP\".desktop",
+        "setting": "DESKTOP_STRIP_NO_SANDBOX"
+      }
+    ]
   },
   {
     "commit": "cf50304fc627a0c4c60376fbcbfd31b31bb4736f",
     "path": "templates/AM-SAMPLE-AppImage",
     "sha256": "5353962fac61f7e0f8d3e949a824700c522c6229c6243ab16e2847a4e71edfa2",
     "note": "AppImage template 3.6 with multiple launchers; its desktop sed removes --no-sandbox (ticket 32)",
-    "settings": {"DESKTOP_STRIP_NO_SANDBOX": "true"}
+    "settings": {
+      "DESKTOP_STRIP_NO_SANDBOX": "true"
+    },
+    "differences": [
+      {
+        "line": "-# AM INSTALL SCRIPT VERSION 3.5",
+        "neutral": "Version comment; no install step."
+      },
+      {
+        "line": "+# AM INSTALL SCRIPT VERSION 3.6",
+        "neutral": "Version comment; no install step."
+      },
+      {
+        "line": "-./\"$APP\" --appimage-extract *.desktop 1>/dev/null && mv ./squashfs-root/*.desktop ./\"$APP\".desktop",
+        "dropped": "Installs every launcher the AppImage ships (NoDisplay handler, numbered extras, duplicates removed); the shared installer installs one.",
+        "ticket": 37
+      },
+      {
+        "line": "+./\"$APP\" --appimage-extract *.desktop 1>/dev/null",
+        "dropped": "Installs every launcher the AppImage ships (NoDisplay handler, numbered extras, duplicates removed); the shared installer installs one.",
+        "ticket": 37
+      },
+      {
+        "line": "-\tif [ -L ./\"$APP\".desktop ]; then",
+        "dropped": "Installs every launcher the AppImage ships (NoDisplay handler, numbered extras, duplicates removed); the shared installer installs one.",
+        "ticket": 37
+      },
+      {
+        "line": "-\t\tLINKPATH=\"$(readlink ./\"$APP\".desktop | sed 's|^\\./||' 2>/dev/null)\"",
+        "dropped": "Installs every launcher the AppImage ships (NoDisplay handler, numbered extras, duplicates removed); the shared installer installs one.",
+        "ticket": 37
+      },
+      {
+        "line": "-\t\t./\"$APP\" --appimage-extract \"$LINKPATH\" 1>/dev/null && mv ./squashfs-root/\"$LINKPATH\" ./\"$APP\".desktop",
+        "dropped": "Installs every launcher the AppImage ships (NoDisplay handler, numbered extras, duplicates removed); the shared installer installs one.",
+        "ticket": 37
+      },
+      {
+        "line": "-\tfi",
+        "dropped": "Installs every launcher the AppImage ships (NoDisplay handler, numbered extras, duplicates removed); the shared installer installs one.",
+        "ticket": 37
+      },
+      {
+        "line": "+\tfor f in squashfs-root/*.desktop; do",
+        "dropped": "Installs every launcher the AppImage ships (NoDisplay handler, numbered extras, duplicates removed); the shared installer installs one.",
+        "ticket": 37
+      },
+      {
+        "line": "+\t\tFILE=\"$f\"",
+        "dropped": "Installs every launcher the AppImage ships (NoDisplay handler, numbered extras, duplicates removed); the shared installer installs one.",
+        "ticket": 37
+      },
+      {
+        "line": "+\t\tif [ -L \"$f\" ]; then",
+        "dropped": "Installs every launcher the AppImage ships (NoDisplay handler, numbered extras, duplicates removed); the shared installer installs one.",
+        "ticket": 37
+      },
+      {
+        "line": "+\t\t\tLINKPATH=\"$(readlink \"$f\" | sed 's|^\\./||' 2>/dev/null)\"",
+        "dropped": "Installs every launcher the AppImage ships (NoDisplay handler, numbered extras, duplicates removed); the shared installer installs one.",
+        "ticket": 37
+      },
+      {
+        "line": "+\t\t\t./\"$APP\" --appimage-extract \"$LINKPATH\" 1>/dev/null",
+        "dropped": "Installs every launcher the AppImage ships (NoDisplay handler, numbered extras, duplicates removed); the shared installer installs one.",
+        "ticket": 37
+      },
+      {
+        "line": "+\t\t\tFILE=\"./squashfs-root/$LINKPATH\"",
+        "dropped": "Installs every launcher the AppImage ships (NoDisplay handler, numbered extras, duplicates removed); the shared installer installs one.",
+        "ticket": 37
+      },
+      {
+        "line": "+\t\tfi",
+        "dropped": "Installs every launcher the AppImage ships (NoDisplay handler, numbered extras, duplicates removed); the shared installer installs one.",
+        "ticket": 37
+      },
+      {
+        "line": "+\t\tif grep -qi '^NoDisplay=true$' \"$FILE\" 2>/dev/null; then mv \"$FILE\" ./\"$APP\"-handler-AM.desktop && printf '\\n%s' \"rm -f /usr/local/share/applications/$APP-handler-AM.desktop\" >> ./remove",
+        "dropped": "Installs every launcher the AppImage ships (NoDisplay handler, numbered extras, duplicates removed); the shared installer installs one.",
+        "ticket": 37
+      },
+      {
+        "line": "+\t\telse [ ! -f ./\"$APP\"-AM.desktop ] && mv \"$FILE\" ./\"$APP\"-AM.desktop || mv \"$FILE\" ./\"$APP\"-\"$COUNT\"-AM.desktop && printf '\\n%s' \"rm -f /usr/local/share/applications/$APP-$COUNT-AM.desktop\" >> ./remove",
+        "dropped": "Installs every launcher the AppImage ships (NoDisplay handler, numbered extras, duplicates removed); the shared installer installs one.",
+        "ticket": 37
+      },
+      {
+        "line": "+\t\tfi",
+        "dropped": "Installs every launcher the AppImage ships (NoDisplay handler, numbered extras, duplicates removed); the shared installer installs one.",
+        "ticket": 37
+      },
+      {
+        "line": "+\tdone",
+        "dropped": "Installs every launcher the AppImage ships (NoDisplay handler, numbered extras, duplicates removed); the shared installer installs one.",
+        "ticket": 37
+      },
+      {
+        "line": "-\t[ ! -L ./\"$APP\".desktop ] && [ ! -L ./DirIcon ] && break",
+        "dropped": "Installs every launcher the AppImage ships (NoDisplay handler, numbered extras, duplicates removed); the shared installer installs one.",
+        "ticket": 37
+      },
+      {
+        "line": "+\t[ ! -L ./\"$APP\"-AM.desktop ] && [ ! -L ./DirIcon ] && break",
+        "dropped": "Installs every launcher the AppImage ships (NoDisplay handler, numbered extras, duplicates removed); the shared installer installs one.",
+        "ticket": 37
+      },
+      {
+        "line": "-sed -i \"s#Exec=[^ ]*#Exec=$APP#g; s#Icon=.*#Icon=/opt/$APP/icons/$APP#g\" ./\"$APP\".desktop",
+        "setting": "DESKTOP_STRIP_NO_SANDBOX"
+      },
+      {
+        "line": "-mv ./\"$APP\".desktop /usr/local/share/applications/\"$APP\"-AM.desktop && mv ./DirIcon ./icons/\"$APP\" 1>/dev/null",
+        "dropped": "Installs every launcher the AppImage ships (NoDisplay handler, numbered extras, duplicates removed); the shared installer installs one.",
+        "ticket": 37
+      },
+      {
+        "line": "+for f in ./*-AM.desktop; do [ \"$f\" != ./\"$APP\"-AM.desktop ] && [ -f \"$f\" ] && [ \"$(sort ./\"$APP\"-AM.desktop)\" = \"$(sort \"$f\")\" ] && rm -f \"$f\"; done",
+        "dropped": "Installs every launcher the AppImage ships (NoDisplay handler, numbered extras, duplicates removed); the shared installer installs one.",
+        "ticket": 37
+      },
+      {
+        "line": "+sed -i \"s#Exec=[^ ]*#Exec=$APP#g; s#Icon=.*#Icon=/opt/$APP/icons/$APP#g; s# --no-sandbox##g\" ./*-AM.desktop",
+        "setting": "DESKTOP_STRIP_NO_SANDBOX",
+        "note": "Also globs every launcher; that part is dropped with the launcher lines (ticket 37)."
+      },
+      {
+        "line": "+mv ./*-AM.desktop /usr/local/share/applications/ && mv ./DirIcon ./icons/\"$APP\" 1>/dev/null",
+        "dropped": "Installs every launcher the AppImage ships (NoDisplay handler, numbered extras, duplicates removed); the shared installer installs one.",
+        "ticket": 37
+      }
+    ]
   }
 ]

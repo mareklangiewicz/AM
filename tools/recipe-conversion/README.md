@@ -46,8 +46,18 @@ declaration form and convert to long recipes.
 A layout may carry `settings`: declaration settings that reproduce what its
 install steps do beyond the shared installer's defaults. Template 3.6's and
 `bb53f3180`'s desktop `sed` removes `--no-sandbox`, so their rows set
-`DESKTOP_STRIP_NO_SANDBOX=true` (ticket 32); a test checks that every layout
-whose body has that `sed` declares it and no other does.
+`DESKTOP_STRIP_NO_SANDBOX=true` (ticket 32).
+
+The first row (`b7c72a974`, 3.5) is the base. Every other row lists its
+`differences`: each line its body removes (`-`) or adds (`+`) against the
+base, with exactly one of `setting` (a key in the row's `settings`),
+`neutral` (a reason the line changes no install step) or `dropped` (a reason,
+plus the `ticket` that tracks the behavior declarations do not reproduce).
+`convert.layouts()` refuses to load a layout with an unmapped differing line,
+an entry for a line that no longer differs, or a setting no line maps to
+(ticket 36). Template 3.6's multiple-launcher lines are `dropped` (ticket 37).
+Adding a layout: list its lines with `convert.differences(base, body)` and
+classify each one against `modules/appimage.am`.
 
 ## Tests
 

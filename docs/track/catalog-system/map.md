@@ -186,7 +186,8 @@ approval boundaries.
 | [33 resolved](issues/33-convert-appimage-bb53f3180-instances.md) | none | AppImage `bb53f3180` reviewed; [1,171 long recipes became declarations](issues/33-convert-appimage-bb53f3180-instances.md#answer--november-17-2026) with identical compiled selection; 3 refuse. |
 | [34 resolved](issues/34-run-long-test-tiers-on-github.md) | none | ["Long tests" workflow](issues/34-run-long-test-tiers-on-github.md#answer--november-17-2026): whole-tree tier and Debian/Fedora e2e on `ci/**` pushes; first run caught step B regressions. |
 | [35 open](issues/35-reconvert-recipes-for-a-reviewed-layout.md) | none | One command re-converts a reviewed layout's recipes and proves unchanged selection; replaces the scratch scripts of tickets 32 and 33. |
-| [36 open](issues/36-check-layout-differences-are-mapped.md) | none | Test that every line a layout differs by is mapped to a setting; ticket 32's bug as a guardrail. |
+| [36 resolved](issues/36-check-layout-differences-are-mapped.md) | none | [`layouts()` refuses unmapped differences](issues/36-check-layout-differences-are-mapped.md#answer--november-17-2026): each differing line is a setting, neutral, or dropped with a ticket. |
+| [37 open](issues/37-review-template-3-6-multiple-launchers.md) | none | 3.6 installs every launcher, the shared installer one (and fails on two top-level desktop files); setting, installer fix, or policy? |
 
 Latest implementation evidence, November 8: Chromium desktop/narrow and Firefox
 checks pass; physical-device/comprehension limits remain with 13. Independent
