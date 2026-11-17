@@ -3,443 +3,13 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 593867048
 repository: "xpipe-io/xpipe"
-collected_at: "2026-11-12T11:26:34Z"
+collected_at: "2026-11-17T04:40:14Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: false
-observed_at: "2026-11-12T11:26:34Z"
+observed_at: "2026-11-17T04:40:14Z"
 releases:
-  "330187935":
-    tag: "23.2"
-    title: "23.2"
-    url: "https://github.com/xpipe-io/xpipe/releases/tag/23.2"
-    created_at: "2026-05-27T12:27:36Z"
-    published_at: "2026-05-27T12:57:26Z"
-    updated_at: "2026-05-27T12:57:26Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/xpipe-io/xpipe/zipball/23.2"
-    source_tar_url: "https://api.github.com/repos/xpipe-io/xpipe/tarball/23.2"
-    download_base: "https://github.com/xpipe-io/xpipe/releases/download/23.2/"
-    assets:
-      "431096233":
-        name: "xpipe-portable-windows-x86_64.zip.asc"
-        url_suffix: "xpipe-portable-windows-x86_64.zip.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:cf01f7e410bf17eb500f69adf9e77cd91f22271470c0a7c469165fb8865ad749"
-      "431096249":
-        name: "xpipe-portable-windows-x86_64.zip"
-        url_suffix: "xpipe-portable-windows-x86_64.zip"
-        size: 211480800
-        media_type: "zip"
-        digest: "sha256:a319f1b7ae32f414d405e443d12cc44f602ed9eb9b1faeb20a6fd9fe4edab2f3"
-      "431096409":
-        name: "xpipe-portable-windows-arm64.zip.asc"
-        url_suffix: "xpipe-portable-windows-arm64.zip.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:77a5e7d0879e20759517db582e5eaef224c5ab7ec9cb54cceaadc90e7f749a0d"
-      "431096410":
-        name: "xpipe-portable-windows-arm64.zip"
-        url_suffix: "xpipe-portable-windows-arm64.zip"
-        size: 163299060
-        media_type: "zip"
-        digest: "sha256:9ecb94073b66cd4d0435be1e9b46fcf650a692f5a2ab99afadbe1ecf3c4b3347"
-      "431096452":
-        name: "xpipe-portable-macos-x86_64.dmg.asc"
-        url_suffix: "xpipe-portable-macos-x86_64.dmg.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:2a604d0f5e08ff1c7f85f2df341d23008187bcbc6e56ba21f44e727ac0617ecb"
-      "431096461":
-        name: "xpipe-portable-macos-x86_64.dmg"
-        url_suffix: "xpipe-portable-macos-x86_64.dmg"
-        size: 216280902
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:bcb1a5ff21ae57076c0c4be3d72511a4e62e422a89b7c6c937e76b8de3efa9cd"
-      "431096564":
-        name: "xpipe-portable-macos-arm64.dmg.asc"
-        url_suffix: "xpipe-portable-macos-arm64.dmg.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:237ba4a0a7e3a744e72aa7e47da5c234f3fbcb86d4baefdc1fc2650c591f360a"
-      "431096586":
-        name: "xpipe-portable-macos-arm64.dmg"
-        url_suffix: "xpipe-portable-macos-arm64.dmg"
-        size: 212728625
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:68ee11dd656cf47bd400380301284a2cfd540e52c2944d4ea1450e18cd32db64"
-      "431096686":
-        name: "xpipe-portable-linux-x86_64.tar.gz"
-        url_suffix: "xpipe-portable-linux-x86_64.tar.gz"
-        size: 211827529
-        media_type: "application/gzip"
-        digest: "sha256:53087b3357a692ae99b631fe04d61054570bf10ae95ce4285c824359d7da7d20"
-      "431096758":
-        name: "xpipe-portable-linux-x86_64.AppImage.asc"
-        url_suffix: "xpipe-portable-linux-x86_64.AppImage.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:405916710848e3e4d4ef00561b089774f12c87d8d09724fca8fb37829e3e137e"
-      "431096763":
-        name: "xpipe-portable-linux-x86_64.AppImage"
-        url_suffix: "xpipe-portable-linux-x86_64.AppImage"
-        size: 200456696
-        digest: "sha256:3fe5e9b4a87538b071b228d32ebed5b8613181a9d955b54414da6a58621d4937"
-      "431096812":
-        name: "xpipe-portable-linux-arm64.tar.gz.asc"
-        url_suffix: "xpipe-portable-linux-arm64.tar.gz.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:29a0b08dced8dc32a85d48264c51bffdbb19d883c6dd212a17605ddb493fbab0"
-      "431096818":
-        name: "xpipe-portable-linux-arm64.tar.gz"
-        url_suffix: "xpipe-portable-linux-arm64.tar.gz"
-        size: 208017631
-        media_type: "application/gzip"
-        digest: "sha256:17f834072820bc5da64251ba2b1bade50ba64f932ef274752c58cb04e239317e"
-      "431096864":
-        name: "xpipe-portable-linux-arm64.AppImage.asc"
-        url_suffix: "xpipe-portable-linux-arm64.AppImage.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:df4cc9743b3c28891b4c27ce4ead8020f04c35300cb2cd93650ef47ef0fcaffe"
-      "431096866":
-        name: "xpipe-portable-linux-arm64.AppImage"
-        url_suffix: "xpipe-portable-linux-arm64.AppImage"
-        size: 196217352
-        digest: "sha256:af4ced8d010eaff8b95f9cc53721afe0ea0ed05d3870aaea12af3bc807282f96"
-      "431096919":
-        name: "xpipe-installer-windows-x86_64.msi.asc"
-        url_suffix: "xpipe-installer-windows-x86_64.msi.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:5e56638f306651cc2c0c09775f4b405cec058f505bc1b568a9d4e1a5753e879e"
-      "431096936":
-        name: "xpipe-installer-windows-x86_64.msi"
-        url_suffix: "xpipe-installer-windows-x86_64.msi"
-        size: 192921600
-        media_type: "application/x-msdownload"
-        digest: "sha256:a8e66d9f804f5923b3f6103c6a7cb26cc77635194ec51884a7ddfbc85bdf2a05"
-      "431096983":
-        name: "xpipe-installer-windows-arm64.msi.asc"
-        url_suffix: "xpipe-installer-windows-arm64.msi.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:b9f9f0f102549a811b6c2b656d95b025f4ed04f078942a2c7fe04d4032d7dc41"
-      "431096989":
-        name: "xpipe-installer-windows-arm64.msi"
-        url_suffix: "xpipe-installer-windows-arm64.msi"
-        size: 154648576
-        media_type: "application/x-msdownload"
-        digest: "sha256:6745b9f3547fc3e1448fb3970f1ffc0719cb8f04e4d7b2aa99276d4b7479d421"
-      "431097062":
-        name: "xpipe-installer-macos-x86_64.pkg.asc"
-        url_suffix: "xpipe-installer-macos-x86_64.pkg.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:c626dea13afcb37dc3ab8f78223aa430647a5517e305c33fdb5cc734783afd11"
-      "431097069":
-        name: "xpipe-installer-macos-x86_64.pkg"
-        url_suffix: "xpipe-installer-macos-x86_64.pkg"
-        size: 216242001
-        digest: "sha256:ef51491c8ef8d9b184494dfb997859a9e1dd40eb161c56f9156b21628295ac30"
-      "431097139":
-        name: "xpipe-installer-macos-arm64.pkg.asc"
-        url_suffix: "xpipe-installer-macos-arm64.pkg.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:e89802c13ab423dfcada34a86c958cde7d831abbb0347f36f21aa0f02a151907"
-      "431097146":
-        name: "xpipe-installer-macos-arm64.pkg"
-        url_suffix: "xpipe-installer-macos-arm64.pkg"
-        size: 212498604
-        digest: "sha256:e0b6994cdad39d61e491497357085b1b05e3e7667c3619049ad88869836846d0"
-      "431097232":
-        name: "xpipe-installer-linux-x86_64.rpm.asc"
-        url_suffix: "xpipe-installer-linux-x86_64.rpm.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:2025027b59bf19b0fc9bcf0bcc183075b01a6131b9287bfd0bac117338ece735"
-      "431097243":
-        name: "xpipe-installer-linux-x86_64.rpm"
-        url_suffix: "xpipe-installer-linux-x86_64.rpm"
-        size: 214318358
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:efd41815c485704da86617bebaac420bb07c548a34e9872a2da4d6e670633bbf"
-      "431097328":
-        name: "xpipe-installer-linux-x86_64.deb.asc"
-        url_suffix: "xpipe-installer-linux-x86_64.deb.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:a6af9813a55be4f31f7cadc6b251d6c80b675de00f216573e2dcc9ff27efedb0"
-      "431097332":
-        name: "xpipe-installer-linux-x86_64.deb"
-        url_suffix: "xpipe-installer-linux-x86_64.deb"
-        size: 214287232
-        media_type: "application/x-debian-package"
-        digest: "sha256:31a8f8bbfbd16b8826e75caa709aa70d8f1f318583d1f2fc4026a88b6d909ba6"
-      "431097410":
-        name: "xpipe-installer-linux-arm64.rpm.asc"
-        url_suffix: "xpipe-installer-linux-arm64.rpm.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:58bfc77edc4ead879e059035a4d2af79af513572b2a8555b1a17b8d380761aae"
-      "431097431":
-        name: "xpipe-installer-linux-arm64.rpm"
-        url_suffix: "xpipe-installer-linux-arm64.rpm"
-        size: 210501202
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:a772de37a5636c8d25598a816e59989c6d8f334ad14c34bdb30ddf6df17eeb5c"
-      "431097559":
-        name: "xpipe-installer-linux-arm64.deb.asc"
-        url_suffix: "xpipe-installer-linux-arm64.deb.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:d18788323cbcf06bf3ed7a3e70f7f11a1a39be7093e68eba06d229fb3b5969f4"
-      "431097574":
-        name: "xpipe-installer-linux-arm64.deb"
-        url_suffix: "xpipe-installer-linux-arm64.deb"
-        size: 210487586
-        media_type: "application/x-debian-package"
-        digest: "sha256:3160653fe55ff7064a8c857dc201c60e109df4da32830028a874fb2a9fb9e326"
-      "431097712":
-        name: "sha256sums.txt.asc"
-        url_suffix: "sha256sums.txt.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:9dbc9bf97645355d743bede5f19a34d39a1708ae309963e85f0be32aa60699f1"
-      "431097739":
-        name: "sha256sums.txt"
-        url_suffix: "sha256sums.txt"
-        size: 1575
-        media_type: "text/plain"
-        digest: "sha256:e46fb78ec393f4d146c6c6e11f1751cac8bb5304bb611b5492e4d2b5107c2823"
-      "431097754":
-        name: "changelog_incremental.md"
-        url_suffix: "changelog_incremental.md"
-        size: 297
-        media_type: "text/markdown"
-        digest: "sha256:7063ae3dfbd43eb9e07642dc893fe81c246dc531f34ed93b78ee8a9ce20aa86f"
-  "330877501":
-    tag: "23.3"
-    title: "23.3"
-    url: "https://github.com/xpipe-io/xpipe/releases/tag/23.3"
-    created_at: "2026-05-28T13:32:54Z"
-    published_at: "2026-05-28T14:01:12Z"
-    updated_at: "2026-05-28T14:01:12Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/xpipe-io/xpipe/zipball/23.3"
-    source_tar_url: "https://api.github.com/repos/xpipe-io/xpipe/tarball/23.3"
-    download_base: "https://github.com/xpipe-io/xpipe/releases/download/23.3/"
-    assets:
-      "432137257":
-        name: "xpipe-portable-windows-x86_64.zip.asc"
-        url_suffix: "xpipe-portable-windows-x86_64.zip.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:7a88f01d3dc78d940ee558edcd43d77383d4ec888ed03f554df5b1ba40ba58e2"
-      "432137268":
-        name: "xpipe-portable-windows-x86_64.zip"
-        url_suffix: "xpipe-portable-windows-x86_64.zip"
-        size: 211458112
-        media_type: "zip"
-        digest: "sha256:690e225e0cbc9c152438421fd78da7e0f692927d57c720a92ac22c32c1374b77"
-      "432137389":
-        name: "xpipe-portable-windows-arm64.zip.asc"
-        url_suffix: "xpipe-portable-windows-arm64.zip.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:a5d49e8d5461d8de45fcfd3ff8acdc484babfdd68e17e17f81eaf29e68c63f39"
-      "432137394":
-        name: "xpipe-portable-windows-arm64.zip"
-        url_suffix: "xpipe-portable-windows-arm64.zip"
-        size: 163309166
-        media_type: "zip"
-        digest: "sha256:b5715bbd27b235f6e324573bba54ebaba1db29a8c3ed6cf17a78f14ebfba2e84"
-      "432137485":
-        name: "xpipe-portable-macos-x86_64.dmg.asc"
-        url_suffix: "xpipe-portable-macos-x86_64.dmg.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:d581a540656599b8e348ad140483bbdd29038cf11d6551b680ff892c017df128"
-      "432137497":
-        name: "xpipe-portable-macos-x86_64.dmg"
-        url_suffix: "xpipe-portable-macos-x86_64.dmg"
-        size: 216233254
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:8f3fea52fc27a76dee9228d176ca22f9bcaba3f80958820fe21f651af445e133"
-      "432137608":
-        name: "xpipe-portable-macos-arm64.dmg.asc"
-        url_suffix: "xpipe-portable-macos-arm64.dmg.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:3968d5592d120062dc4b96ca6e6fd7639a9270b12ac9e89fa62a366dacd32fc3"
-      "432137615":
-        name: "xpipe-portable-macos-arm64.dmg"
-        url_suffix: "xpipe-portable-macos-arm64.dmg"
-        size: 212616704
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:f90e501d9e4c08ee84352e8ffb24cb3f4e4b2c056f5b9d457955d3d77a7c71ac"
-      "432137831":
-        name: "xpipe-portable-linux-x86_64.tar.gz.asc"
-        url_suffix: "xpipe-portable-linux-x86_64.tar.gz.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:58c352fba8ec4751842ea629cfa556ec71385e75e112be21220e89063ccf3291"
-      "432137840":
-        name: "xpipe-portable-linux-x86_64.tar.gz"
-        url_suffix: "xpipe-portable-linux-x86_64.tar.gz"
-        size: 211816141
-        media_type: "application/gzip"
-        digest: "sha256:2b4877a8a44a0315636ffa8cdd76ad441c2d6b64d0bdf04a26b8ab1766359d72"
-      "432137949":
-        name: "xpipe-portable-linux-x86_64.AppImage.asc"
-        url_suffix: "xpipe-portable-linux-x86_64.AppImage.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:0d948d78664c3b25750ecc29ce9a4136e8972d3b51166130bfe436b39e197282"
-      "432137953":
-        name: "xpipe-portable-linux-x86_64.AppImage"
-        url_suffix: "xpipe-portable-linux-x86_64.AppImage"
-        size: 200460792
-        digest: "sha256:e75d2277f9c20b9efbf7a8d3a088448fcfd4e720dd81c379194a908cf048442c"
-      "432138010":
-        name: "xpipe-portable-linux-arm64.tar.gz.asc"
-        url_suffix: "xpipe-portable-linux-arm64.tar.gz.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:cca34599b21483de612d93f08514d1dd2dcead915baf1b708fa77cf3bc22f5d9"
-      "432138016":
-        name: "xpipe-portable-linux-arm64.tar.gz"
-        url_suffix: "xpipe-portable-linux-arm64.tar.gz"
-        size: 207965314
-        media_type: "application/gzip"
-        digest: "sha256:9608fc808512226051b6226bcc7684f50024786c809a58207299c3030f39d3f0"
-      "432138149":
-        name: "xpipe-portable-linux-arm64.AppImage.asc"
-        url_suffix: "xpipe-portable-linux-arm64.AppImage.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:b0b454e90fe2803d235dc5b0644714740076fae2d71f4b2bb095dc51ec23ba0c"
-      "432138155":
-        name: "xpipe-portable-linux-arm64.AppImage"
-        url_suffix: "xpipe-portable-linux-arm64.AppImage"
-        size: 196311560
-        digest: "sha256:d589794e9e0392d20eb13c9e4a49bc6a6b43a25b60e5a56ed8f133411e756aac"
-      "432138255":
-        name: "xpipe-installer-windows-x86_64.msi.asc"
-        url_suffix: "xpipe-installer-windows-x86_64.msi.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:62c4fed39457f2c456a45eff123cb532e31a42100fed9c9f57f46ae3cbf8a82e"
-      "432138268":
-        name: "xpipe-installer-windows-x86_64.msi"
-        url_suffix: "xpipe-installer-windows-x86_64.msi"
-        size: 192835584
-        media_type: "application/x-msdownload"
-        digest: "sha256:b09595b279cec96ce8ea1f3e7e815ec76c7835a08c0e8897302f5bed9dab0162"
-      "432138373":
-        name: "xpipe-installer-windows-arm64.msi.asc"
-        url_suffix: "xpipe-installer-windows-arm64.msi.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:95903d7726e19e07adc182c6edb99275f81b9399d13df35672a39297ed8adc75"
-      "432138385":
-        name: "xpipe-installer-windows-arm64.msi"
-        url_suffix: "xpipe-installer-windows-arm64.msi"
-        size: 154660864
-        media_type: "application/x-msdownload"
-        digest: "sha256:265e3153f8fbd342429f524b8f7b931fdef2563fbe4efcefeb05c3554eddddab"
-      "432138483":
-        name: "xpipe-installer-macos-x86_64.pkg.asc"
-        url_suffix: "xpipe-installer-macos-x86_64.pkg.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:ddcd00fad4d83748d5000ffb4b679be7f322b479e2978c452a0b96c24789b2d9"
-      "432138494":
-        name: "xpipe-installer-macos-x86_64.pkg"
-        url_suffix: "xpipe-installer-macos-x86_64.pkg"
-        size: 216191650
-        digest: "sha256:6f86fa7ce5a9ae00cc460f95572576c629f1c4c3a7c5a3c04b442226ac49e1cf"
-      "432138554":
-        name: "xpipe-installer-macos-arm64.pkg.asc"
-        url_suffix: "xpipe-installer-macos-arm64.pkg.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:4a79c57cea0eb066dd25d34b7630d00d8946aa01eeef86db784d910e6493d48a"
-      "432138563":
-        name: "xpipe-installer-macos-arm64.pkg"
-        url_suffix: "xpipe-installer-macos-arm64.pkg"
-        size: 212468348
-        digest: "sha256:32ce915be328ad52413f4f840c73c8827a54ba8d44a35222bc04f7e5bce3d770"
-      "432138641":
-        name: "xpipe-installer-linux-x86_64.rpm.asc"
-        url_suffix: "xpipe-installer-linux-x86_64.rpm.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:e1bcde2894d3cc5749ad085d89368d96c1a6fc6dbf9b2ea48c5874d1de3aeb9c"
-      "432138647":
-        name: "xpipe-installer-linux-x86_64.rpm"
-        url_suffix: "xpipe-installer-linux-x86_64.rpm"
-        size: 214303132
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:7e18cfd3e3b8d7684a9acb96ed0cf7b8a8b1b120fd73dad3cb261cf4b9469e3c"
-      "432138747":
-        name: "xpipe-installer-linux-x86_64.deb.asc"
-        url_suffix: "xpipe-installer-linux-x86_64.deb.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:8bf66017eeb5cfdc2a151c5e0fd1a978b62de4a3b301fdbed340e2698011467f"
-      "432138756":
-        name: "xpipe-installer-linux-x86_64.deb"
-        url_suffix: "xpipe-installer-linux-x86_64.deb"
-        size: 214287510
-        media_type: "application/x-debian-package"
-        digest: "sha256:93cdfe0f8ee4c8f1ca93e39b37202a5ded35519162a59be8df9ffa7f89c46137"
-      "432138876":
-        name: "xpipe-installer-linux-arm64.rpm.asc"
-        url_suffix: "xpipe-installer-linux-arm64.rpm.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:f59b9da4cd6aba37e05cf4e0b79117edbbdb10c3e7d184b420ebbc0c1a11aa29"
-      "432138881":
-        name: "xpipe-installer-linux-arm64.rpm"
-        url_suffix: "xpipe-installer-linux-arm64.rpm"
-        size: 210448635
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:cc01b78006a1a6414bf33198e3a58565de7af7efc72ae1a7b2fa0ca9fbd10491"
-      "432138992":
-        name: "xpipe-installer-linux-arm64.deb.asc"
-        url_suffix: "xpipe-installer-linux-arm64.deb.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:401df8a774b87850ee79a71367f8689deb794fb738ab68ba0a4b29d4c90bd7f9"
-      "432139005":
-        name: "xpipe-installer-linux-arm64.deb"
-        url_suffix: "xpipe-installer-linux-arm64.deb"
-        size: 210438242
-        media_type: "application/x-debian-package"
-        digest: "sha256:dff16bd466e00dc42e25b7cb50da4d856edc1d8e7dc5f50da813972ebb1c58dc"
-      "432139106":
-        name: "sha256sums.txt.asc"
-        url_suffix: "sha256sums.txt.asc"
-        size: 195
-        media_type: "application/pgp-keys"
-        digest: "sha256:0a261d6d11ada037583463314d4f22cd534760c23abd75f8ea5617b9cc5501d1"
-      "432139117":
-        name: "sha256sums.txt"
-        url_suffix: "sha256sums.txt"
-        size: 1575
-        media_type: "text/plain"
-        digest: "sha256:368990e496d1ed3703ad494c2a6db404c79ef603f3921584e50c10460d1447e7"
-      "432139122":
-        name: "changelog_incremental.md"
-        url_suffix: "changelog_incremental.md"
-        size: 170
-        media_type: "text/markdown"
-        digest: "sha256:bc60ddec78ebfd9da448f9c5a73baedd76f51e64ef242d4517a7ec42faa6c496"
   "334172668":
     tag: "23.4"
     title: "23.4"
@@ -7130,3 +6700,461 @@ releases:
         size: 1169
         media_type: "text/markdown"
         digest: "sha256:6c78a451ab0467f7bd4086c2e920ed0bf0b5855ac9e8f772c9cf0dbc939ba13c"
+  "445597905":
+    tag: "24.11"
+    title: "24.11"
+    url: "https://github.com/xpipe-io/xpipe/releases/tag/24.11"
+    created_at: "2026-11-11T14:54:43Z"
+    published_at: "2026-11-14T21:22:40Z"
+    updated_at: "2026-11-14T21:22:40Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/xpipe-io/xpipe/zipball/24.11"
+    source_tar_url: "https://api.github.com/repos/xpipe-io/xpipe/tarball/24.11"
+    download_base: "https://github.com/xpipe-io/xpipe/releases/download/24.11/"
+    assets:
+      "748810538":
+        name: "xpipe-portable-windows-x86_64.zip.asc"
+        url_suffix: "xpipe-portable-windows-x86_64.zip.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:4df8b28144782386835f75ea39f032c7fa02b2facef3e441b3875638503d7b59"
+      "748810577":
+        name: "xpipe-portable-windows-x86_64.zip"
+        url_suffix: "xpipe-portable-windows-x86_64.zip"
+        size: 163147314
+        media_type: "zip"
+        digest: "sha256:23ad2f8ca6d675d7ae5ceaa40d7dcf64ce35fc7041a8a9a7991a846f7d5833d5"
+      "748810775":
+        name: "xpipe-portable-windows-arm64.zip.asc"
+        url_suffix: "xpipe-portable-windows-arm64.zip.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:01e89cc10657da4573c4a794963d6e2d183686e932e0648b80e4fd9ee55af7d7"
+      "748810806":
+        name: "xpipe-portable-windows-arm64.zip"
+        url_suffix: "xpipe-portable-windows-arm64.zip"
+        size: 126744092
+        media_type: "zip"
+        digest: "sha256:7b6accc9bbf2962abb8890ffe3ce2055935e4553102547053c925a5af7d7ba5b"
+      "748810945":
+        name: "xpipe-portable-macos-x86_64.dmg.asc"
+        url_suffix: "xpipe-portable-macos-x86_64.dmg.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:cd89d555d3b3a8b0e70b0d01f0b624fd30dc457b198baccc771587b9ae89af9c"
+      "748810995":
+        name: "xpipe-portable-macos-x86_64.dmg"
+        url_suffix: "xpipe-portable-macos-x86_64.dmg"
+        size: 130217951
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:4255b69186580f7b78d608cd35dfe9ba3fd7cd93ca14b3ecafe7f7511b010900"
+      "748811123":
+        name: "xpipe-portable-macos-arm64.dmg.asc"
+        url_suffix: "xpipe-portable-macos-arm64.dmg.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:1fb9fddb78997a3068a167717451d33d78fa90dfdc8f740d1fbbfdb14e9fc2aa"
+      "748811160":
+        name: "xpipe-portable-macos-arm64.dmg"
+        url_suffix: "xpipe-portable-macos-arm64.dmg"
+        size: 163615246
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:e5e3930a7e749ec6003cecd0e8141a15a39ffc74423ff1622072a05fcf3a40d8"
+      "748811336":
+        name: "xpipe-portable-linux-x86_64.tar.gz.asc"
+        url_suffix: "xpipe-portable-linux-x86_64.tar.gz.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:bb2dea1686a696cc83b37fd202466e8b3c852476fe4fa66655746b0cd4dcdb92"
+      "748811369":
+        name: "xpipe-portable-linux-x86_64.tar.gz"
+        url_suffix: "xpipe-portable-linux-x86_64.tar.gz"
+        size: 162400108
+        media_type: "application/gzip"
+        digest: "sha256:cacdd37bff3eb43c5e441a45442ea45843dbfa8037172447c607000dd0881572"
+      "748811559":
+        name: "xpipe-portable-linux-x86_64.AppImage.asc"
+        url_suffix: "xpipe-portable-linux-x86_64.AppImage.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:56d99b5e03f10c4dae1ba1a62990bbb8e1a2a7118916cbb1a606ffdf2e4ca7ba"
+      "748811615":
+        name: "xpipe-portable-linux-x86_64.AppImage"
+        url_suffix: "xpipe-portable-linux-x86_64.AppImage"
+        size: 146237944
+        digest: "sha256:e5a111ae72f8a45f95f4f7977454f33b74c39c5d4f9e91c569ef3b4179d89d74"
+      "748811749":
+        name: "xpipe-portable-linux-arm64.tar.gz.asc"
+        url_suffix: "xpipe-portable-linux-arm64.tar.gz.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:b208e4aff36b87a6efa37d3ddbb8fde2ec71b43a61acbe46e630e2f8b519ebb3"
+      "748811783":
+        name: "xpipe-portable-linux-arm64.tar.gz"
+        url_suffix: "xpipe-portable-linux-arm64.tar.gz"
+        size: 160116762
+        media_type: "application/gzip"
+        digest: "sha256:4362f11eca99a37b2d7548e1625bdbf60f797627e3670c8d5268c8ae42e22114"
+      "748811945":
+        name: "xpipe-portable-linux-arm64.AppImage.asc"
+        url_suffix: "xpipe-portable-linux-arm64.AppImage.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:b06a25569680a82afe976c3a53cae29cfcfd2b5db27562abc8000b63309ee2cc"
+      "748811977":
+        name: "xpipe-portable-linux-arm64.AppImage"
+        url_suffix: "xpipe-portable-linux-arm64.AppImage"
+        size: 143944200
+        digest: "sha256:6f35e348434cda0036a3ed19cb0cca8e5dfd88c836be3086f5c4c71cd5b34ba0"
+      "748812140":
+        name: "xpipe-installer-windows-x86_64.msi.asc"
+        url_suffix: "xpipe-installer-windows-x86_64.msi.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:9f4b47c514b449d101ccd4eeb8d1a8d55996880f9a54419c393ef07820310340"
+      "748812177":
+        name: "xpipe-installer-windows-x86_64.msi"
+        url_suffix: "xpipe-installer-windows-x86_64.msi"
+        size: 136040448
+        media_type: "application/x-msdownload"
+        digest: "sha256:4fd98137a5f760c94f25fe48c9173f72c80d95c56ba95970be04afb88d79164d"
+      "748812353":
+        name: "xpipe-installer-windows-arm64.msi.asc"
+        url_suffix: "xpipe-installer-windows-arm64.msi.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:4a0e1146fdc1a24d1978e67917d65b0d15d76c3c9def1f67c660d50ce29748ae"
+      "748812374":
+        name: "xpipe-installer-windows-arm64.msi"
+        url_suffix: "xpipe-installer-windows-arm64.msi"
+        size: 105947136
+        media_type: "application/x-msdownload"
+        digest: "sha256:1f5cdedb49d1dc0bb8f15406a672790f007e6b0f6312034790a9cdd4ef33a217"
+      "748812484":
+        name: "xpipe-installer-macos-x86_64.pkg.asc"
+        url_suffix: "xpipe-installer-macos-x86_64.pkg.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:d2f792e96bad5bb400665f95e5f78ec11517d46ba38949f0c0b47a497f7a8e10"
+      "748812514":
+        name: "xpipe-installer-macos-x86_64.pkg"
+        url_suffix: "xpipe-installer-macos-x86_64.pkg"
+        size: 130464516
+        digest: "sha256:54e5500a9ef12672546adfbe34f0e8067dab75ecb26b5ccc02200d6d562ced8c"
+      "748812651":
+        name: "xpipe-installer-macos-arm64.pkg.asc"
+        url_suffix: "xpipe-installer-macos-arm64.pkg.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:9395102673975a8f87014378f54cced1caadfd79af03c38b171b6e03ca2537f2"
+      "748812687":
+        name: "xpipe-installer-macos-arm64.pkg"
+        url_suffix: "xpipe-installer-macos-arm64.pkg"
+        size: 164444901
+        digest: "sha256:04fa420e3ac88f962ebd0f42df42c6a3dbd15d4003ed571f7e1dbf7b9ffd4f58"
+      "748812890":
+        name: "xpipe-installer-linux-x86_64.rpm.asc"
+        url_suffix: "xpipe-installer-linux-x86_64.rpm.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:4810956fcff5b4218b8be460607a3778de6b16d4b160c6f2fa5dc1bd6261990b"
+      "748812941":
+        name: "xpipe-installer-linux-x86_64.rpm"
+        url_suffix: "xpipe-installer-linux-x86_64.rpm"
+        size: 164874335
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:9f213f69609460634795526c111367ba24934b5fcc19bbe2d6276c467ad82327"
+      "748813194":
+        name: "xpipe-installer-linux-x86_64.deb.asc"
+        url_suffix: "xpipe-installer-linux-x86_64.deb.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:980e0c7dfc41ca89ee7d683d167816391ea35f024f3fadca13c38c19cf999b32"
+      "748813245":
+        name: "xpipe-installer-linux-x86_64.deb"
+        url_suffix: "xpipe-installer-linux-x86_64.deb"
+        size: 164878096
+        media_type: "application/x-debian-package"
+        digest: "sha256:2c2a9370a0b38359448eee1a689e611eae3b62eb20ef127f64969550dfdee20f"
+      "748813465":
+        name: "xpipe-installer-linux-arm64.rpm.asc"
+        url_suffix: "xpipe-installer-linux-arm64.rpm.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:b7d3ec1af6d318d0d2e3905b9b505988b1d8370f136da03d113bcfabda0f4888"
+      "748813498":
+        name: "xpipe-installer-linux-arm64.rpm"
+        url_suffix: "xpipe-installer-linux-arm64.rpm"
+        size: 162602573
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:96be8fd34a19fa5293236d05ac68f9ecf6d24e70cc26ad629ef2b0b68652d27b"
+      "748813709":
+        name: "xpipe-installer-linux-arm64.deb.asc"
+        url_suffix: "xpipe-installer-linux-arm64.deb.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:97f18a2a1d7293dfea30b98a1d3fc755a14c7bac30e5722a2a53d55fffdb0d84"
+      "748813746":
+        name: "xpipe-installer-linux-arm64.deb"
+        url_suffix: "xpipe-installer-linux-arm64.deb"
+        size: 162589232
+        media_type: "application/x-debian-package"
+        digest: "sha256:a745b1a07190230af763819cd77c07a28af7dfe4e70f435de5fe2b9c1903541c"
+      "748813943":
+        name: "sha256sums.txt.asc"
+        url_suffix: "sha256sums.txt.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:bf941ac0abca9bd0d9aa4122e397bd4df0cd4ae755d774215f4e3b92365a2ff2"
+      "748813992":
+        name: "sha256sums.txt"
+        url_suffix: "sha256sums.txt"
+        size: 1654
+        media_type: "text/plain"
+        digest: "sha256:787f1e93b5514daa2a516f3ee1f493a3ed6a9646755bf9deeb1c1d180b6f41bf"
+      "748814030":
+        name: "get-xpipe.ps1.asc"
+        url_suffix: "get-xpipe.ps1.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:4287ac02aa29e49a5be1404d02c87eeec6003abdac634c0954ef27282c5ecbe6"
+      "748814063":
+        name: "get-xpipe.ps1"
+        url_suffix: "get-xpipe.ps1"
+        size: 25313
+        digest: "sha256:334970f1c54109c72c94652c5637f8da2237738a573559fad15014e86ed4333d"
+      "748814097":
+        name: "changelog_incremental.md"
+        url_suffix: "changelog_incremental.md"
+        size: 684
+        media_type: "text/markdown"
+        digest: "sha256:d0dc4cf66088c8f1c4311abb94de53999e0a6f5e26930954ab3b7c029c52ba8e"
+  "446427017":
+    tag: "24.12"
+    title: "24.12"
+    url: "https://github.com/xpipe-io/xpipe/releases/tag/24.12"
+    created_at: "2026-11-15T22:30:54Z"
+    published_at: "2026-11-15T22:55:17Z"
+    updated_at: "2026-11-15T22:55:17Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/xpipe-io/xpipe/zipball/24.12"
+    source_tar_url: "https://api.github.com/repos/xpipe-io/xpipe/tarball/24.12"
+    download_base: "https://github.com/xpipe-io/xpipe/releases/download/24.12/"
+    assets:
+      "752619522":
+        name: "xpipe-portable-windows-x86_64.zip.asc"
+        url_suffix: "xpipe-portable-windows-x86_64.zip.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:5f9b0f7a1ee1a9ccc7ab2ce4580576d30590e82e7c75a5791e74bea8d7f27bb5"
+      "752619577":
+        name: "xpipe-portable-windows-x86_64.zip"
+        url_suffix: "xpipe-portable-windows-x86_64.zip"
+        size: 161021872
+        media_type: "zip"
+        digest: "sha256:6b1725de09985bb63d6bd9240a5547698353dca2fed7862636f5c738a79561e0"
+      "752619915":
+        name: "xpipe-portable-windows-arm64.zip.asc"
+        url_suffix: "xpipe-portable-windows-arm64.zip.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:be73b0ec349969da6929ed8019e71cc174028e02246c5b89de28f5ee03dc2889"
+      "752619957":
+        name: "xpipe-portable-windows-arm64.zip"
+        url_suffix: "xpipe-portable-windows-arm64.zip"
+        size: 124476163
+        media_type: "zip"
+        digest: "sha256:1b21b17929b4b8c00ccc0906046f8e5747a1a96faab94eb569e103f88fb466ce"
+      "752620182":
+        name: "xpipe-portable-macos-x86_64.dmg.asc"
+        url_suffix: "xpipe-portable-macos-x86_64.dmg.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:7ab273f131dc3b0ed9b37576af8c81f83e399df2011c5a9ae13aedb4f7d482bd"
+      "752620216":
+        name: "xpipe-portable-macos-x86_64.dmg"
+        url_suffix: "xpipe-portable-macos-x86_64.dmg"
+        size: 129934701
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:0e83f7f263d95ba2183e295b2f24a5a21ac3b591527cbd9c29826b268afa6ae5"
+      "752620449":
+        name: "xpipe-portable-macos-arm64.dmg.asc"
+        url_suffix: "xpipe-portable-macos-arm64.dmg.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:7c4ad6b11541984157c9c0c0cc9cd8708a0bd03c53f863771dddf893eea9ee63"
+      "752620480":
+        name: "xpipe-portable-macos-arm64.dmg"
+        url_suffix: "xpipe-portable-macos-arm64.dmg"
+        size: 161227326
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:8abc4cedd6f8cf4d88e4be7d2614f482fe949e90f67290ef52b14c2a4ecee18c"
+      "752620658":
+        name: "xpipe-portable-linux-x86_64.tar.gz.asc"
+        url_suffix: "xpipe-portable-linux-x86_64.tar.gz.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:1b1d687dda3bc1a67f637059bfd6c71ae0d1bdb9f8fe05c820ef3565535e74bf"
+      "752620673":
+        name: "xpipe-portable-linux-x86_64.tar.gz"
+        url_suffix: "xpipe-portable-linux-x86_64.tar.gz"
+        size: 160120641
+        media_type: "application/gzip"
+        digest: "sha256:cc2f90a99ac4dc07d560ae1cb238e806602b2150825e20300bc438a0c2d843f7"
+      "752621144":
+        name: "xpipe-portable-linux-x86_64.AppImage.asc"
+        url_suffix: "xpipe-portable-linux-x86_64.AppImage.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:b10bf50982b68dff685fe7c689b852c7e8ed5c954c9eb2b40cda9839eb333418"
+      "752621175":
+        name: "xpipe-portable-linux-x86_64.AppImage"
+        url_suffix: "xpipe-portable-linux-x86_64.AppImage"
+        size: 144218616
+        digest: "sha256:d0eb814bbecd236e5e9883a3e6dab3fe10e4032c5b02c9c049a5ec5bf2036f68"
+      "752621407":
+        name: "xpipe-portable-linux-arm64.tar.gz.asc"
+        url_suffix: "xpipe-portable-linux-arm64.tar.gz.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:2bc44aca52bdd6ae7bea4817571bb0b95cf05c762fd86fb024dadaafcb02ec16"
+      "752621462":
+        name: "xpipe-portable-linux-arm64.tar.gz"
+        url_suffix: "xpipe-portable-linux-arm64.tar.gz"
+        size: 157818570
+        media_type: "application/gzip"
+        digest: "sha256:f1de805b637783e31df49352672433b11b4590e7e804ae6e57688637e2a98f0b"
+      "752621680":
+        name: "xpipe-portable-linux-arm64.AppImage.asc"
+        url_suffix: "xpipe-portable-linux-arm64.AppImage.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:d9b0f88358945c869c66ed843bbaf7d874b65e29b93fe92a60ec40909648b49c"
+      "752621722":
+        name: "xpipe-portable-linux-arm64.AppImage"
+        url_suffix: "xpipe-portable-linux-arm64.AppImage"
+        size: 141937160
+        digest: "sha256:0fec067aeddae9d0bde24763664a77cb2304ace60824647ad87e2ad694e1bf42"
+      "752621931":
+        name: "xpipe-installer-windows-x86_64.msi.asc"
+        url_suffix: "xpipe-installer-windows-x86_64.msi.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:203d3e968c727b655892329af590fc52a4426cc9bb50bf2ac73453e27fb765ea"
+      "752621968":
+        name: "xpipe-installer-windows-x86_64.msi"
+        url_suffix: "xpipe-installer-windows-x86_64.msi"
+        size: 134291456
+        media_type: "application/x-msdownload"
+        digest: "sha256:956b3ee92383b707b9fe62f5d206287336eacd2b8e3cfb6aea76c9cd8785e2f7"
+      "752622256":
+        name: "xpipe-installer-windows-arm64.msi.asc"
+        url_suffix: "xpipe-installer-windows-arm64.msi.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:9d1499d86fc7dd7bbeeed6327c2ff9e2aad9aa4ea28e1c79e557857b18b41711"
+      "752622287":
+        name: "xpipe-installer-windows-arm64.msi"
+        url_suffix: "xpipe-installer-windows-arm64.msi"
+        size: 104079360
+        media_type: "application/x-msdownload"
+        digest: "sha256:e361f50d23e3f698a60bd5e2e774b3299d8903e328b31e85a0cfa18afaf8cfff"
+      "752622487":
+        name: "xpipe-installer-macos-x86_64.pkg.asc"
+        url_suffix: "xpipe-installer-macos-x86_64.pkg.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:95c2c11e23330c665237abfe2678fd46a0b84b202ab06d6646e7d61a16fa7049"
+      "752622538":
+        name: "xpipe-installer-macos-x86_64.pkg"
+        url_suffix: "xpipe-installer-macos-x86_64.pkg"
+        size: 130162988
+        digest: "sha256:565df194f02c851bce69f1ed99944839d53efa1bdb6b3520174435aabbbbc557"
+      "752622702":
+        name: "xpipe-installer-macos-arm64.pkg.asc"
+        url_suffix: "xpipe-installer-macos-arm64.pkg.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:f8f7325e5859bd91ed9dc751058d7036b703c1b0ba3ac59491c5abfb16940325"
+      "752622729":
+        name: "xpipe-installer-macos-arm64.pkg"
+        url_suffix: "xpipe-installer-macos-arm64.pkg"
+        size: 162044625
+        digest: "sha256:c692c35c41a14257e98168632c7d47ecc2fe4c77dc38e8dff0fac3c02c32fb96"
+      "752622891":
+        name: "xpipe-installer-linux-x86_64.rpm.asc"
+        url_suffix: "xpipe-installer-linux-x86_64.rpm.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:5f5760fecd89095cd229a8086c611d16df35e1681da939dd556ceabd0a771d89"
+      "752622927":
+        name: "xpipe-installer-linux-x86_64.rpm"
+        url_suffix: "xpipe-installer-linux-x86_64.rpm"
+        size: 162580936
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:326261c528ec667010a65c6f63ca52b640823cee45f1c5d30234f2266eccae94"
+      "752623093":
+        name: "xpipe-installer-linux-x86_64.deb.asc"
+        url_suffix: "xpipe-installer-linux-x86_64.deb.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:48563eaa50ff6ed5770d8e56c85f4f7d0d567cb6da8cb1a08bb918d15c195085"
+      "752623118":
+        name: "xpipe-installer-linux-x86_64.deb"
+        url_suffix: "xpipe-installer-linux-x86_64.deb"
+        size: 162582956
+        media_type: "application/x-debian-package"
+        digest: "sha256:c170558cafc2b276ddd8197c318ff936610472d314eef70f0cb98db0561f8d77"
+      "752623288":
+        name: "xpipe-installer-linux-arm64.rpm.asc"
+        url_suffix: "xpipe-installer-linux-arm64.rpm.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:55cc7aa2fd2dbc94264cd9f0f500a2ee3a67213ac1b43fb3afca19a0702d4e2b"
+      "752623303":
+        name: "xpipe-installer-linux-arm64.rpm"
+        url_suffix: "xpipe-installer-linux-arm64.rpm"
+        size: 160302422
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:458f8819491b58c992ebf08907494a7a1203267e77f52b288672ebda86950e95"
+      "752623460":
+        name: "xpipe-installer-linux-arm64.deb.asc"
+        url_suffix: "xpipe-installer-linux-arm64.deb.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:ec1d6804eb6c0e71ee1af22519688d83d8aa3067da7bc120115c2df833bce3f2"
+      "752623491":
+        name: "xpipe-installer-linux-arm64.deb"
+        url_suffix: "xpipe-installer-linux-arm64.deb"
+        size: 160291672
+        media_type: "application/x-debian-package"
+        digest: "sha256:b8523b7c7bbf99e06b920d6d2362123ffdf516f30ba9c851e9ec8a9a2189e248"
+      "752623774":
+        name: "sha256sums.txt.asc"
+        url_suffix: "sha256sums.txt.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:737525c26ac96b644a149db0ab83e8f0131aed3eeb4c106ea7eafe97457f803a"
+      "752623806":
+        name: "sha256sums.txt"
+        url_suffix: "sha256sums.txt"
+        size: 1654
+        media_type: "text/plain"
+        digest: "sha256:d59aad51bd82512f12f0ebf3ee3168a6348ffb7ddf74e82c8e4570de16ec3c8b"
+      "752623826":
+        name: "get-xpipe.ps1.asc"
+        url_suffix: "get-xpipe.ps1.asc"
+        size: 195
+        media_type: "application/pgp-keys"
+        digest: "sha256:4d7b9918b8079abbb651342865aad7ae1226c5d436a7f18b12dbc4b40368f835"
+      "752623852":
+        name: "get-xpipe.ps1"
+        url_suffix: "get-xpipe.ps1"
+        size: 25313
+        digest: "sha256:2be042b7c6411214463d2d79cca975b8f88fa2f20c84807ac13b27774bdcb144"
+      "752623881":
+        name: "changelog_incremental.md"
+        url_suffix: "changelog_incremental.md"
+        size: 82
+        media_type: "text/markdown"
+        digest: "sha256:700f44f3bff96634b55d4d957bbc5dfc332f10a612d58b14089db04c5cad3612"
