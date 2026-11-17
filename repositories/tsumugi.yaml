@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1289955978
 repository: "onodai145/tsumugi"
-collected_at: "2026-11-14T22:34:05Z"
+collected_at: "2026-11-17T23:03:14Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-14T22:34:05Z"
+observed_at: "2026-11-17T23:03:14Z"
 releases:
   "352518915":
     tag: "v0.1.0"
@@ -1286,33 +1286,93 @@ releases:
         size: 68559784
         media_type: "application/vnd.android.package-archive"
         digest: "sha256:efba4fe72091a27e1edc1dfbba92c05880acb79b75cfac857dcfe48e46741037"
-  "445625360":
+  "447926731":
     tag: "nightly"
-    title: "tsumugi nightly (2026-11-14 @ 7800acd)"
+    title: "tsumugi nightly (2026-11-17 @ e736014)"
     url: "https://github.com/onodai145/tsumugi/releases/tag/nightly"
-    created_at: "2026-11-14T12:13:38Z"
-    published_at: "2026-11-14T22:12:08Z"
-    updated_at: "2026-11-14T22:23:44Z"
+    created_at: "2026-11-16T15:07:14Z"
+    published_at: "2026-11-17T01:47:39Z"
+    updated_at: "2026-11-17T02:46:52Z"
     prerelease: true
     source_zip_url: "https://api.github.com/repos/onodai145/tsumugi/zipball/nightly"
     source_tar_url: "https://api.github.com/repos/onodai145/tsumugi/tarball/nightly"
     download_base: "https://github.com/onodai145/tsumugi/releases/download/nightly/"
     assets:
-      "748960982":
+      "757231126":
         name: "tsumugi-nightly-linux-amd64.deb"
         url_suffix: "tsumugi-nightly-linux-amd64.deb"
-        size: 44659968
+        size: 44651724
         media_type: "zip"
-        digest: "sha256:e9e119438f3fdcf95c159e8b14cf8344df3427d6c9486991cebfb17efcfc6dfd"
-      "748961070":
+        digest: "sha256:0eb376b30bf9f51c48cdc9469173e78ab9f077ddc0cccb28e0a081987c0260da"
+      "757231342":
         name: "tsumugi-nightly-linux-x86_64.rpm"
         url_suffix: "tsumugi-nightly-linux-x86_64.rpm"
-        size: 44665073
+        size: 44656886
         media_type: "zip"
-        digest: "sha256:51a610eefc4f9d46390561debb24b48b7981b1b65a57216861d2f01bfc2919ab"
-      "748961135":
+        digest: "sha256:238697b750c204cdcc9a08b6243730a4983354fe67d6159612ddbb055444607a"
+      "757231445":
         name: "tsumugi-nightly-linux-amd64.AppImage"
         url_suffix: "tsumugi-nightly-linux-amd64.AppImage"
-        size: 121715192
+        size: 121645560
         media_type: "zip"
-        digest: "sha256:812597188712eb60b15292464f89d3ddb5b8ec84224ee5eddf0f3492edb769ec"
+        digest: "sha256:0a48ae43664db3baa764bae7c3db8fc46bdfaca3c463dae6c13591a18e5ab6c7"
+      "757249919":
+        name: "tsumugi-nightly-windows-x64.msi"
+        url_suffix: "tsumugi-nightly-windows-x64.msi"
+        size: 40833024
+        media_type: "zip"
+        digest: "sha256:e641dd3056c565021cd5287e968912323b41269a9049055022fd3a8f457dd0b8"
+      "757250022":
+        name: "tsumugi-nightly-windows-x64-setup.exe"
+        url_suffix: "tsumugi-nightly-windows-x64-setup.exe"
+        size: 35936340
+        media_type: "zip"
+        digest: "sha256:60f7f0952bdeb13801e60f9e2621e03415362dcc5d98eacd0ae1654f3a540e8f"
+      "757250214":
+        name: "tsumugi-nightly-portable-windows-x64.exe"
+        url_suffix: "tsumugi-nightly-portable-windows-x64.exe"
+        size: 70200832
+        media_type: "application/x-msdos-program"
+        digest: "sha256:99e6c7102c02c5b7eebea356a91cadd1b7d209eea9e400893837cb0346017ff4"
+      "757253476":
+        name: "tsumugi-nightly-darwin-universal.dmg"
+        url_suffix: "tsumugi-nightly-darwin-universal.dmg"
+        size: 85287890
+        media_type: "zip"
+        digest: "sha256:56c61311b12cca88d7cbe97683dae3ba5a5debc12449292becec3ea631a16077"
+      "757253647":
+        name: "tsumugi-nightly-darwin-universal.app.tar.gz"
+        url_suffix: "tsumugi-nightly-darwin-universal.app.tar.gz"
+        size: 84561586
+        media_type: "zip"
+        digest: "sha256:4167e43d0656603787595b0f94711189c3ff9baec5b9220eba731714a6703974"
+      "757349798":
+        name: "tsumugi-nightly-android-arm64-v8a.apk"
+        url_suffix: "tsumugi-nightly-android-arm64-v8a.apk"
+        size: 76457480
+        media_type: "application/vnd.android.package-archive"
+        digest: "sha256:e816a3bf21ec1c9cac06798d4edefd7b08ccc663818820761d2c07ba8c393d39"
+      "757349799":
+        name: "tsumugi-nightly-android-x86.apk"
+        url_suffix: "tsumugi-nightly-android-x86.apk"
+        size: 77955382
+        media_type: "application/vnd.android.package-archive"
+        digest: "sha256:3388bab806a73e40d48f326c95eb6d35300ea259c41301ad5b339c8921ddd4fa"
+      "757349800":
+        name: "tsumugi-nightly-android-x86_64.apk"
+        url_suffix: "tsumugi-nightly-android-x86_64.apk"
+        size: 75857845
+        media_type: "application/vnd.android.package-archive"
+        digest: "sha256:a8335b5ad80accd418034351338c392ec2f467331da2c26174f85f591b8bf2cd"
+      "757349801":
+        name: "tsumugi-nightly-android-armeabi-v7a.apk"
+        url_suffix: "tsumugi-nightly-android-armeabi-v7a.apk"
+        size: 63451214
+        media_type: "application/vnd.android.package-archive"
+        digest: "sha256:4bb2595234b2432a45f407a15c8eeaf900a245e7d7558de563c2e0929d225d18"
+      "757349804":
+        name: "tsumugi-nightly-android-universal.apk"
+        url_suffix: "tsumugi-nightly-android-universal.apk"
+        size: 285769880
+        media_type: "application/vnd.android.package-archive"
+        digest: "sha256:dfd045b821f95ec15cf34fb8fb4eb4bc7de74a44bc967d6f8bd908021bddcd64"

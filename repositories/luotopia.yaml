@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1299215799
 repository: "ClosedWHU/Luotopia"
-collected_at: "2026-11-14T22:35:07Z"
+collected_at: "2026-11-17T23:04:21Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-14T22:35:07Z"
+observed_at: "2026-11-17T23:04:21Z"
 releases:
   "354941128":
     tag: "v1.0.0+3"
@@ -1523,14 +1523,120 @@ releases:
     url: "https://github.com/ClosedWHU/Luotopia/releases/tag/v1.4.0%2B20"
     created_at: "2026-11-14T08:50:06Z"
     published_at: "2026-11-14T21:15:20Z"
-    updated_at: "2026-11-14T21:15:46Z"
+    updated_at: "2026-11-15T03:42:06Z"
     prerelease: false
     source_zip_url: "https://api.github.com/repos/ClosedWHU/Luotopia/zipball/v1.4.0+20"
     source_tar_url: "https://api.github.com/repos/ClosedWHU/Luotopia/tarball/v1.4.0+20"
+    download_base: "https://github.com/ClosedWHU/Luotopia/releases/download/v1.4.0%2B20/"
     assets:
       "748798250":
         name: "release-notes-i18n.json"
-        url: "https://github.com/ClosedWHU/Luotopia/releases/download/v1.4.0%2B20/release-notes-i18n.json"
+        url_suffix: "release-notes-i18n.json"
         size: 55438
         media_type: "application/json"
         digest: "sha256:a8b68bb6bf7d1f429a098245aa23c9b36bf05d3d58294a0690d0b72d80593084"
+      "749622010":
+        name: "luotopia-1.4.0-20-linux-arm64.tar.gz"
+        url_suffix: "luotopia-1.4.0-20-linux-arm64.tar.gz"
+        size: 45665966
+        media_type: "application/x-gtar"
+        digest: "sha256:466dd6fec1e33a20c61e49d66ebf0ec33fb5cadbd05e0d0671c81a6b4c91d1ba"
+      "749622011":
+        name: "luotopia-1.4.0-20-linux-arm64.flatpak"
+        url_suffix: "luotopia-1.4.0-20-linux-arm64.flatpak"
+        size: 31266968
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:7954f3f79f7840d162f00a96a7982f8f9c261d91479745fadd45f3340fe63dff"
+      "749622012":
+        name: "luotopia-1.4.0-20-linux-arm64.AppImage"
+        url_suffix: "luotopia-1.4.0-20-linux-arm64.AppImage"
+        size: 42871304
+        media_type: "application/vnd.appimage"
+        digest: "sha256:21dd7e8eff79d83801ebcd04d22c50abc246f94da4b19e58295edd690c51d23f"
+      "749622013":
+        name: "luotopia-1.4.0-20-linux-arm64.deb"
+        url_suffix: "luotopia-1.4.0-20-linux-arm64.deb"
+        size: 37204802
+        media_type: "application/x-debian-package"
+        digest: "sha256:c885e8e56f68279e20329b4544550b0bfba01ddadbf5e4b3b05a5ba08279e957"
+      "749623157":
+        name: "luotopia-1.4.0-20-linux-x64.AppImage"
+        url_suffix: "luotopia-1.4.0-20-linux-x64.AppImage"
+        size: 44673528
+        media_type: "application/vnd.appimage"
+        digest: "sha256:693b82ebe28c3ccfba48e3e1b63d09e42658d05ab92f6d4bb5774274a25cce10"
+      "749623158":
+        name: "luotopia-1.4.0-20-linux-x64.flatpak"
+        url_suffix: "luotopia-1.4.0-20-linux-x64.flatpak"
+        size: 33768608
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:581387ad665c472d3b8930a3bf2396e339c4396abf2f7e55c8a988d34a0f09d8"
+      "749623159":
+        name: "luotopia-1.4.0-20-linux-x64.tar.gz"
+        url_suffix: "luotopia-1.4.0-20-linux-x64.tar.gz"
+        size: 47576921
+        media_type: "application/x-gtar"
+        digest: "sha256:f80cb5ab10ca160f70eb88e87d44e1dddd95ffc7af1667f7d1e59eeead8fe0b1"
+      "749623161":
+        name: "luotopia-1.4.0-20-linux-x64.deb"
+        url_suffix: "luotopia-1.4.0-20-linux-x64.deb"
+        size: 38403216
+        media_type: "application/x-debian-package"
+        digest: "sha256:fde6ace8abe382ce8b341683794c086d8da125b4ac3492248a08d3148bdabce2"
+      "749641089":
+        name: "luotopia-1.4.0-20-windows-x64.zip"
+        url_suffix: "luotopia-1.4.0-20-windows-x64.zip"
+        size: 70691487
+        media_type: "zip"
+        digest: "sha256:85cbe2d634c38ee05837274c6a786da1d67d7228414ff6fb983d04e28ce1dc45"
+      "749641091":
+        name: "winget-ClosedWHU.Luotopia.locale.zh-CN.yaml"
+        url_suffix: "winget-ClosedWHU.Luotopia.locale.zh-CN.yaml"
+        size: 821
+        digest: "sha256:2221869bd96955c2817194a7b4203a9374420997c49edc1b6826de5b2f577d61"
+      "749641093":
+        name: "scoop-luotopia.json"
+        url_suffix: "scoop-luotopia.json"
+        size: 1174
+        media_type: "application/json"
+        digest: "sha256:04f779f6bd826ab00cdc20fb57b289a7e52f08abe8f20749254ef130726447e8"
+      "749641094":
+        name: "winget-ClosedWHU.Luotopia.installer.yaml"
+        url_suffix: "winget-ClosedWHU.Luotopia.installer.yaml"
+        size: 845
+        digest: "sha256:9743b0c98171d6b82d0b3f553dd7a679d3de5af769b484333f31a007dcf5d557"
+      "749641095":
+        name: "winget-ClosedWHU.Luotopia.yaml"
+        url_suffix: "winget-ClosedWHU.Luotopia.yaml"
+        size: 215
+        digest: "sha256:130486861b64124665d540b4d67e759299f765eb5ef8018ec23e3442eab15eae"
+      "749653702":
+        name: "luotopia-1.4.0-20-macos-arm64.dmg"
+        url_suffix: "luotopia-1.4.0-20-macos-arm64.dmg"
+        size: 78319641
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:c57d6da6258a450bf2f04c76f7bd449299fe654c23e6a92f3c66c795313ac2f7"
+      "749655731":
+        name: "luotopia-1.4.0-20-windows-arm64.zip"
+        url_suffix: "luotopia-1.4.0-20-windows-arm64.zip"
+        size: 67763220
+        media_type: "zip"
+        digest: "sha256:0516847fdd30b767956856c36bf70ea200fdf0db1840754cd97fb63b79283196"
+      "749715865":
+        name: "app-armeabi-v7a-direct-release.apk"
+        url_suffix: "app-armeabi-v7a-direct-release.apk"
+        size: 57371299
+        media_type: "application/vnd.android.package-archive"
+        digest: "sha256:8ad29f7602052be82074f1d9e0d4a46e0be46dad2a4398e8583de928278d8b4b"
+      "749715866":
+        name: "app-x86_64-direct-release.apk"
+        url_suffix: "app-x86_64-direct-release.apk"
+        size: 59103340
+        media_type: "application/vnd.android.package-archive"
+        digest: "sha256:53635085708e376a31fd902dd06eb35dd62c7fe377c6a1c69de5deff1264a683"
+      "749715867":
+        name: "app-arm64-v8a-direct-release.apk"
+        url_suffix: "app-arm64-v8a-direct-release.apk"
+        size: 58648805
+        media_type: "application/vnd.android.package-archive"
+        digest: "sha256:671e164e24f975071bcc7210d0bf50098b834b75a9ef3386529c292fcb81091a"
