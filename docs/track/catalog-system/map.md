@@ -180,7 +180,7 @@ approval boundaries.
 | [27 resolved](issues/27-shrink-committed-merge-receipt.md) | 26 | Committed receipt [holds counts, file hashes and `attention`](issues/27-shrink-committed-merge-receipt.md#answer--november-16-2026); the per-recipe listing stays in the Git directory. |
 | [28 open](issues/28-unpin-tests-from-live-recipes.md) | none | Tests use frozen fixtures; tree invariants move to the gate. Count pins gone and whole-tree checks moved to `tree_*.py`; named live recipes remain. |
 | [29 open](issues/29-sort-and-generate-derived-catalog-files.md) | 28 | Classify the five fork-side files; generate the derived ones. |
-| [30 open](issues/30-add-ci-fast-test-tier.md) | 28 | Fast test tier on every push, reporting only. Tiers exist (`test_*.py` 221 tests, `tree_*.py` 5); the CI workflow remains. |
+| [30 resolved](issues/30-add-ci-fast-test-tier.md) | 28 | ["Fast tests" workflow](issues/30-add-ci-fast-test-tier.md#answer--november-17-2026) runs the tool suites and the collector fast tier on every push, reporting only; first green run 5.5 minutes. |
 | [31 open](issues/31-count-recipes-per-upstream-template.md) | none | Research: recipes per upstream template, to pick the next shared installer. |
 
 Latest implementation evidence, November 8: Chromium desktop/narrow and Firefox

@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: open
+Status: resolved
 Blocked by: 28
 
 ## Outcome
@@ -79,3 +79,21 @@ all ancestors of the branch. Not yet seen running.
 
 November 16, 2026: first run 43982956903 reached the tool suites and failed
 on a real miss (see ticket 19's comment), so the collector tier was skipped.
+
+## Answer — November 17, 2026
+
+`.github/workflows/tests.yml` ("Fast tests") runs on every push to
+`main-marek` and on dispatch: recipe-conversion, recipe-reconstruction,
+upstream-merge and e2e helper suites, then the collector fast tier
+(`test_*.py`). It reports and gates nothing. The whole-tree tier
+(`tree_*.py`) and `test/e2e/run` stay on demand and before each upstream
+merge; both READMEs say so.
+
+Run 43984120341 on `d889ad470` passed in 5 minutes 32 seconds: 15, 44, 16
+and 11 tests in the tool suites, 221 collector tests in 257 s. It took three
+runs: the first found a stale fixture the seven-day change had missed
+(ticket 19), the second showed the runner needs `jsonschema`.
+
+Not done: running the offline e2e containers in Actions. The dependency on
+ticket 28 turned out not to hold; that ticket stays open for the named live
+recipes the fast tier still reads.
