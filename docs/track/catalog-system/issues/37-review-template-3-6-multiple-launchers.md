@@ -95,3 +95,9 @@ before the desktop step, so installed apps get extra launchers on their next
 reinstall. 3.5-template declarations get the same behavior. For a single
 desktop file it is unchanged unless that entry is `NoDisplay=true`: it now
 installs as `$APP-handler-AM.desktop` (with its `rm -f`), as in 3.6.
+
+November 17, 2026: pushed with Marek's approval as `38a2ea488` after Long
+tests run 44145434756 passed on `ci/desktop-launchers` (fast, with the locale
+test run, not skipped; tree; Debian and Fedora e2e). `CATALOG_SCHEDULE_REVISION`
+repinned to it; dispatched catalog run 44147378216 (acquire, publish) and
+Fast tests 44147374110 passed. Branch `ci/desktop-launchers` deleted.
