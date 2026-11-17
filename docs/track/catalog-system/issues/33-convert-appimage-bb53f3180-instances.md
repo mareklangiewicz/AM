@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: open
+Status: resolved
 Blocked by: none
 
 ## Outcome
@@ -48,3 +48,35 @@ Still to work out before writing anything:
   matcher; this dry run found 1,178. Not reconciled.
 
 ## Comments
+
+## Answer — November 17, 2026
+
+1,171 long recipes became declarations, converted from their `upstream/main`
+originals with the identities of their own policy rows
+(`convert.policy_identities`). Three refuse and stay long: `aarch64/python`
+and `x86_64/python` (unsupported selector pipeline), `x86_64/deadbeef-nightly`
+(app identity: upstream's `APP` differs from the file name).
+
+The derived files come from the merge tool itself: one row per recipe
+(`re-converted` for the 1,171, `untouched` for the rest) passed to
+`merge.derive` and `merge.stage`, exactly as a merge would. Result:
+`recipe-url-policies.json` loses the 1,171 recipes' rows and
+`modules/catalog-yaml-policy.am` is recompiled (4,661,192 to 4,539,232
+bytes); collection enrollment (`collection-apps.json`,
+`collection-recipes.txt`), `unavailable-github-recipes.json` and the AppImage
+test policies are unchanged; no source to retire. A fresh
+`recipe_policy_source.generate()` on the written tree gives the same module.
+
+Equivalence: for every converted recipe, the compiled selection row before
+(`url_policy_rows`) and after (`recipe_rows`) agrees on repository id and
+name, channel, asset pattern, URL rules, catalog app and fresh-only; every
+other policy row is unchanged (checked in a temporary worktree of the
+written state). Install steps move from the template text to
+`modules/appimage.am` with `DESKTOP_STRIP_NO_SANDBOX=true`, per step 1.
+
+Script (session scratchpad, not kept): for each `long` recipe at HEAD whose
+`upstream/main` original `convert.recognize`s against the `bb53f3180` layout
+alone, `convert.convert(original, recipe, 'declaration', identities, [layout])`;
+then `files=merge.derive(ROOT,'HEAD',rows)`,
+`files[POLICY]=merge.stage(ROOT,'HEAD',rows,files)`, write recipes and files.
+

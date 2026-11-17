@@ -183,7 +183,7 @@ approval boundaries.
 | [30 resolved](issues/30-add-ci-fast-test-tier.md) | 28 | ["Fast tests" workflow](issues/30-add-ci-fast-test-tier.md#answer--november-17-2026) runs the tool suites and the collector fast tier on every push, reporting only; first green run 5.5 minutes. |
 | [31 resolved](issues/31-count-recipes-per-upstream-template.md) | none | [Per-template counts](template-instances-31.md): AppImage-in-archive has 6,009 non-declaration instances, unreviewed AppImage `bb53f3180` 1,233, Archive 230; multiple-choice templates match nothing. |
 | [32 resolved](issues/32-declarations-drop-no-sandbox-strip.md) | none | [Layouts carry settings](issues/32-declarations-drop-no-sandbox-strip.md#answer--november-17-2026): 3.6 sets `DESKTOP_STRIP_NO_SANDBOX=true`; 579 declarations re-converted, one added line each. |
-| [33 open](issues/33-convert-appimage-bb53f3180-instances.md) | none | AppImage `bb53f3180` reviewed into `layouts.json`; converting its 1,171 long recipes to declarations is open. |
+| [33 resolved](issues/33-convert-appimage-bb53f3180-instances.md) | none | AppImage `bb53f3180` reviewed; [1,171 long recipes became declarations](issues/33-convert-appimage-bb53f3180-instances.md#answer--november-17-2026) with identical compiled selection; 3 refuse. |
 
 Latest implementation evidence, November 8: Chromium desktop/narrow and Firefox
 checks pass; physical-device/comprehension limits remain with 13. Independent
