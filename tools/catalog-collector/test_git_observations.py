@@ -107,7 +107,7 @@ class GitAcquisition(unittest.TestCase):
             acquisitions={};metrics={}
             profile=dict(source_cap=1,request_cap=2,total_cap=100000,seconds_cap=900,reserve=100,response_cap=100000)
             with patch.object(host,'ROOT',root),patch.object(host,'configuration',return_value=([dict(app='example')],{'123':'owner/project'})),patch.object(host,'_response',side_effect=response):
-                _,report=host.collect('a'*40,{},batch_size=1,metrics=metrics,acquisitions=acquisitions,native_v3=True,profile=profile)
+                report=host.collect({},batch_size=1,metrics=metrics,acquisitions=acquisitions,profile=profile)
             self.assertEqual(len(calls),2)
             self.assertEqual(acquisitions,{})
             self.assertEqual(report[0]['reason'],'request_budget')

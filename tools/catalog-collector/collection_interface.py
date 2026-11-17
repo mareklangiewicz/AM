@@ -79,7 +79,7 @@ def collect(args):
     started_at=host.utc()
     if args.parent and not args.repo: raise ValueError('parent requires local repository')
     prior=Snapshot(args.repo,args.parent) if args.parent else None
-    previous=Records(prior) if prior else {}
+    retained=Records(prior).metadata if prior else {}
     # A collector-only revision must not rebind unchanged source documents.
     # Verification below refuses reuse if the schema checkout actually changed.
     if prior and args.schemas_revision is None:
@@ -95,8 +95,8 @@ def collect(args):
         if path.startswith('repositories/') and names.get(str(obj['repository_id']))+'.yaml'!=path.removeprefix('repositories/'):
             raise ValueError('source registry changed identity')
     acquired={}; metrics={}
-    _,acquisition_report=host.collect(revision,previous,args.evidence,batch_size=args.batch_size,
-                                      metrics=metrics,acquisitions=acquired,incremental=True,profile=profile,native_v3=True)
+    acquisition_report=host.collect(retained,args.evidence,batch_size=args.batch_size,
+                                    metrics=metrics,acquisitions=acquired,profile=profile)
     tree={}
     report=[]
     for rid,acquisition in acquired.items():
@@ -158,17 +158,7 @@ def validate(args):
             expected=getattr(args,'expected_'+key)
             if expected is not None and descriptor['inputs'][key]!=expected:
                 raise ValueError('candidate input binding')
-    elif args.channel=='status-1': contracts.read_directory(args.candidate,'status')
-    else:
-        tree={}
-        for path in args.candidate.rglob('*'):
-            if path.is_symlink(): raise ValueError('candidate symlink')
-            if path.is_file():
-                if path.stat().st_size>host.FILE_CAP: raise ValueError('document bound')
-                tree[path.relative_to(args.candidate).as_posix()]=path.read_bytes()
-        # Use the same bounded validator as collection and trusted publication;
-        # the older materializing helper's 1,024-file profile cannot fit 5,000 sources.
-        Candidate(None,tree,'format-2')
+    else: contracts.read_directory(args.candidate,'status')
 
 
 def main(argv=None):
@@ -194,7 +184,7 @@ def main(argv=None):
         c.add_argument('--'+key+'-revision',type=contracts.pin)
     v=sub.add_parser('validate')
     v.add_argument('--candidate',type=Path,required=True)
-    v.add_argument('--channel',choices=('format-2','format-3','status-1'),default='format-3')
+    v.add_argument('--channel',choices=('format-3','status-1'),default='format-3')
     schema=sub.add_parser('schema-revision',help='Read the schema pin from one exact bounded catalog descriptor; no network')
     schema.add_argument('--repo',type=Path,required=True)
     schema.add_argument('--parent',type=contracts.pin,required=True)

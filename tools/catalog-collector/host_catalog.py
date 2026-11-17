@@ -7,7 +7,6 @@ No latest endpoint, consumer version choice or pruning.
 """
 import argparse
 from datetime import datetime, timezone
-import hashlib
 import http.client
 import json
 import os
@@ -21,10 +20,6 @@ import urllib.request
 import yaml
 
 from bounded import normalize, unique_object
-from retention import refresh
-from yaml_publication import schema_url
-from yaml_publication import candidate_tree, load_local
-from publication import git, publish_tree
 
 from recipe_declarations import recipe_rows
 
@@ -166,12 +161,13 @@ def _response(rid, evidence, allowance, *, rate=None, endpoint=None, kind='relea
     return body, utc()
 
 
-def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None, acquisitions=None, incremental=False, profile=None, native_v3=False):
-    """Refresh all (strict) or a bounded oldest-attempt-first batch.
+def collect(retained, evidence=None, *, batch_size=None, metrics=None, acquisitions, profile=None):
+    """Acquire release facts for all (strict) or a bounded oldest-attempt-first batch.
 
-    Strict mode retains the existing all-or-nothing command. Batch mode reports
-    failures, preserves old observations and publishes only successfully observed
-    new app identities. Unattempted documents retain their original schema too.
+    `retained` maps each repository id of the parent snapshot to its metadata
+    (repository_id, repository, attempted_at). Successful acquisitions go into
+    `acquisitions`; documents are built by the caller. Strict mode raises on the
+    first failure; batch mode reports failures and stops at a budget.
     """
     rows,sources=configuration(source_cap=profile['source_cap']) if profile else configuration()
     request_cap=profile['request_cap'] if profile else REQUEST_CAP
@@ -183,19 +179,16 @@ def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None,
         raise ValueError('batch size')
     if batch_size is None and len(sources) > request_cap:
         raise ValueError('use bounded batch collection')
-    if batch_size is not None and not set(previous) <= set(sources):
+    if batch_size is not None and not set(retained) <= set(sources):
         raise ValueError('batch would discard retained sources')
-    metadata=getattr(previous,'metadata',None)
-    identities=metadata.items() if metadata is not None else previous.items()
-    for rid, before in identities:
+    for rid, before in retained.items():
         names=(before['repository'].lower(), sources[rid].lower()) if rid in sources else None
-        reviewed_transfer=native_v3 and names==REVIEWED_REPOSITORY_TRANSFERS.get(rid)
         if rid in sources and (before['repository_id'] != int(rid) or
-                               (names[0] != names[1] and not reviewed_transfer)):
+                               (names[0] != names[1] and names != REVIEWED_REPOSITORY_TRANSFERS.get(rid))):
             raise ValueError('retained repository identity mismatch')
     selected = list(sources)
     if batch_size is not None:
-        selected.sort(key=lambda rid: ((metadata.get(rid,{}).get('attempted_at','') if metadata is not None else previous.get(rid, {}).get('collection', {}).get('attempted_at', '')), int(rid)))
+        selected.sort(key=lambda rid: (retained.get(rid,{}).get('attempted_at',''), int(rid)))
         selected = selected[:batch_size]
     metrics = metrics if metrics is not None else {}
     metrics.clear()
@@ -205,11 +198,9 @@ def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None,
                    request_cap=request_cap, response_byte_cap=total_cap,
                    acquisition_cap_seconds=seconds_cap, primary_reserve=reserve)
     latest_rate = {}
-    schema = schema_url(revision)
-    repositories = dict(previous) if batch_size is not None and not incremental else {}
     used = 0;logical_requests=0
     from git_observations import configuration as git_configuration,collect as collect_git
-    git_scopes=git_configuration(ROOT) if native_v3 else {}
+    git_scopes=git_configuration(ROOT)
     report = []
     started = time.monotonic()
     for rid in selected:
@@ -227,9 +218,6 @@ def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None,
             if batch_size is not None:
                 break
             raise ValueError('collection elapsed budget')
-        attempted = utc()
-        before = previous.get(rid, dict(format=2, schema=schema,
-            repository_id=int(rid), repository=name)) if not native_v3 else None
         stop = False
         reason = 'transport'
         rate = {}
@@ -247,36 +235,21 @@ def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None,
             used+=len(body)
             if rate:latest_rate=dict(rate)
             if len(body)>allowance:
-                if native_v3 and allowance==response_cap and used<total_cap:
+                if allowance==response_cap and used<total_cap:
                     raise ResponseLimit()
                 raise CollectionStop('byte_limit')
             return body,at
         try:
             body, received = fetch()
-            if evidence:
-                attempted = received
-            reason = 'collection_limit'
             reason = 'invalid_response'
             raw = json.loads(body, object_pairs_hook=unique_object)
-            records = normalize(raw, 100, allow_missing_published=acquisitions is not None)
-            if acquisitions is not None:
-                acquired = dict(received_at=received, releases=records,history_complete=len(raw)<100)
-                if not native_v3 and any('published_at' not in record for record in records.values()):
-                    raise ValueError('format-2 requires publication time')
-                if rid in git_scopes:acquired.update(collect_git(git_scopes[rid],fetch))
-                acquisitions[rid]=acquired
-            if native_v3:
-                report.append(dict(repository_id=int(rid), repository=name, status='ok', observed_at=received))
-                if rate: report[-1]['rate'] = rate
-                latest_rate = rate
-                continue
-            response = dict(received_at=received, releases=records, has_next=len(raw)==100,
-                            bytes=len(body), seconds=0)
-            result = refresh(before, [response], attempted_at=attempted,
-                page_size=100, page_limit=1, max_catalog_bytes=FILE_CAP)
-            reason = result['collection'].get('reason', 'invalid_response')
-            if result['collection']['status'] != 'ok':
-                raise ValueError('source refused: '+rid)
+            records = normalize(raw, 100, allow_missing_published=True)
+            acquired = dict(received_at=received, releases=records,history_complete=len(raw)<100)
+            if rid in git_scopes:acquired.update(collect_git(git_scopes[rid],fetch))
+            acquisitions[rid]=acquired
+            report.append(dict(repository_id=int(rid), repository=name, status='ok', observed_at=received))
+            if rate: report[-1]['rate'] = rate
+            latest_rate = rate
         except (OSError, http.client.HTTPException, ValueError, KeyError, TypeError) as error:
             if batch_size is None:
                 raise
@@ -294,13 +267,7 @@ def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None,
             if isinstance(error,CollectionStop):
                 stop=True;metrics['stop_reason']=error.reason
                 reason={'request_limit':'request_budget','byte_limit':'byte_budget',
-                        'time_limit':'time_budget','primary_rate_reserve':'quota'}[error.reason] if native_v3 else 'collection_limit'
-            if not native_v3:
-                result = refresh(before, [dict(error=reason, releases={}, bytes=0,
-                    seconds=0, received_at=attempted, has_next=False)],
-                    attempted_at=attempted, page_size=100, page_limit=1,
-                    max_catalog_bytes=FILE_CAP)
-                repositories[rid] = result
+                        'time_limit':'time_budget','primary_rate_reserve':'quota'}[error.reason]
             failure = dict(repository_id=int(rid), repository=name, status='failed', reason=reason)
             if isinstance(error, urllib.error.HTTPError):
                 failure['http_status'] = error.code
@@ -316,15 +283,6 @@ def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None,
                 if isinstance(error,urllib.error.HTTPError):metrics['stop_reason'] = 'http_'+str(error.code)
                 break
             continue
-        result['schema'] = schema
-        result['repository'] = name
-        repositories[rid] = result
-        report.append(dict(repository_id=int(rid), repository=name, status='ok', observed_at=received,
-                           response_sha256=hashlib.sha256(body).hexdigest()))
-        if rate:
-            report[-1]['rate'] = rate
-        latest_rate = rate
-        print(name+': '+str(len(records))+' releases', flush=True)
     if used > total_cap:
         metrics['stop_reason'] = 'byte_limit'
     metrics.update(response_bytes=used, acquisition_seconds=time.monotonic()-started,
@@ -334,24 +292,7 @@ def collect(revision, previous, evidence=None, *, batch_size=None, metrics=None,
     rates = [row['rate'] for row in report if row.get('rate')]
     if rates:
         metrics.update(rate_first=rates[0], rate_last=rates[-1])
-    if native_v3:
-        return None, report
-    successful_times={rid:meta['completed_at'] for rid,meta in (metadata or {}).items() if meta.get('completed_at')} if incremental else {}
-    successful_times.update({rid:obj['last_success']['completed_at'] for rid,obj in repositories.items() if 'last_success' in obj})
-    successes=list(successful_times.values())
-    now = time.time()
-    ages = [now-datetime.fromisoformat(value.replace('Z', '+00:00')).timestamp()
-            for value in successes]
-    metrics.update(oldest_source_success=min(successes) if successes else None,
-                   sources_without_success=len(sources)-len(successes),
-                   source_success_age_counts={str(hours)+'h':sum(age >= hours*3600 for age in ages)
-                                              for hours in (24, 36, 48)})
-    apps = {row['app']:row['repository_id'] for row in rows
-            if str(row['repository_id']) in successful_times}
-    if incremental:
-        return (apps,repositories),report
-    tree = candidate_tree(apps, repositories, schema=schema, max_file_bytes=FILE_CAP)
-    return tree, report
+    return report
 
 
 def main():

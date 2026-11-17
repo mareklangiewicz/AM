@@ -110,3 +110,31 @@ shares, so each needs porting, not deleting. The published status format
 also still names a `format-2` outcome (`test_pipeline_publication.py`,
 `pipeline_publication.py`); removing that is a status-format change and is
 not part of step B.
+
+November 17, 2026: step B done.
+
+- `host_catalog.collect(retained, evidence, *, batch_size, metrics,
+  acquisitions, profile)` is the format-3 acquisition only: it takes the
+  parent snapshot's per-source metadata (`Records(prior).metadata`), fills
+  `acquisitions` and returns the report. The `revision`, `native_v3` and
+  `incremental` parameters, the format-2 refresh, `candidate_tree`, the
+  freshness-age metrics and `response_sha256` (format-2 only) are gone.
+  `collection_interface.collect` is the only production caller.
+- `validate --channel format-2` is gone, with its one test in
+  `test_contracts.py`. The `format-2` channel of `incremental.py` stays: the
+  fixtures still load saved format-2 documents through
+  `rehearse_pipeline.seed_source` (step C), and `incremental.rules()` still
+  hashes the two modules (step D).
+- Tests ported, not deleted: `test_batch_collection.py` (15),
+  `test_large_batch_enrollment.py` (now selects through
+  `catalog-contract-reader.am` and the policy module with mawk, gawk and
+  busybox awk), `test_catalog_only_enrollment.py`, one call in
+  `test_git_observations.py`. Dropped: the freshness-age metrics test
+  (format-2 metric) and the assertion that a failed source moves behind
+  others in the next rotation: in format 3 the caller writes no document for
+  a failed source, so it keeps its place (already recorded by the "live
+  Wekan" test). Mutation check: sorting by id only makes the ordering test
+  fail.
+- `qualify_scheduling.py` deleted: a one-off ticket-14 script that drove the
+  format-2 path.
+

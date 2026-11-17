@@ -10,8 +10,6 @@ import unittest
 from unittest.mock import patch
 
 import host_catalog
-from publication import git, publish_tree
-from yaml_publication import load_local, publish_local, schema_url
 
 
 class CatalogOnlyEnrollment(unittest.TestCase):
@@ -37,13 +35,10 @@ class CatalogOnlyEnrollment(unittest.TestCase):
             with patch.object(host_catalog, 'configuration', return_value=([row], {rid: row['repository']})), \
                     patch('urllib.request.urlopen', side_effect=AssertionError('network')), \
                     contextlib.redirect_stdout(io.StringIO()):
-                tree, report = host_catalog.collect('a'*40, {}, evidence)
-            from yaml_publication import tree_documents
-            apps, documents = tree_documents(tree, dict(max_files=1024,
-                max_tree_bytes=1073741824, max_file_bytes=host_catalog.FILE_CAP))
-            self.assertEqual(apps, {row['app']: row['repository_id']})
-            self.assertEqual(len(documents[rid]['releases']), candidate['release_count'])
-            self.assertEqual(report[0]['response_sha256'], candidate['releases_sha256'])
+                acquired = {}
+                report = host_catalog.collect({}, evidence, acquisitions=acquired)
+            self.assertEqual([(r['repository_id'], r['status']) for r in report], [(row['repository_id'], 'ok')])
+            self.assertEqual(len(acquired[rid]['releases']), candidate['release_count'])
 
     def test_unmigrated_app_shares_source_and_publishes_without_policy(self):
         baseline, sources = host_catalog.configuration()
@@ -68,21 +63,11 @@ class CatalogOnlyEnrollment(unittest.TestCase):
                 (evidence/(rid+'-receipt.txt')).write_text('2026-11-06T12:00:00Z')
                 with patch('urllib.request.urlopen', side_effect=AssertionError('network')), \
                         contextlib.redirect_stdout(io.StringIO()):
-                    tree, report = host_catalog.collect('a'*40, {}, evidence)
+                    acquired = {}
+                    report = host_catalog.collect({}, evidence, acquisitions=acquired)
+                # Both apps share one source: it is fetched once.
                 self.assertEqual(len(report), 1)
-                repo = root/'catalog.git'; repo.mkdir()
-                git(repo, 'init', '--bare', '--quiet', '--template=')
-                # Establish an exact parent with the existing app's collected facts.
-                from yaml_publication import tree_documents
-                _, documents = tree_documents(tree, dict(max_files=1024,
-                    max_tree_bytes=1073741824, max_file_bytes=host_catalog.FILE_CAP))
-                parent = publish_local(repo, {sample['app']: sample['repository_id']},
-                    documents, schema=schema_url('a'*40),
-                    max_file_bytes=host_catalog.FILE_CAP, expected_parent=None)
-                pin = publish_tree(repo, tree, parent)
-                apps, _ = load_local(repo, pin, max_file_bytes=host_catalog.FILE_CAP)
-                self.assertEqual(apps[extra['app']], extra['repository_id'])
-                self.assertEqual(apps[sample['app']], sample['repository_id'])
+                self.assertEqual(set(acquired), {rid})
                 for bad in ([extra, extra], [dict(extra, repository_id=True)],
                             [dict(extra, repository='$(command)/repo')],
                             [dict(extra, repository='different/source')],

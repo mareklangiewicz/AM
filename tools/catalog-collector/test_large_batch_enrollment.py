@@ -1,4 +1,4 @@
-"""Pinned batch collection and exact-parent publication from saved pages."""
+"""Pinned batch collection from saved pages selects the historical assets."""
 import contextlib
 import hashlib
 import io
@@ -11,10 +11,8 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
+import contracts
 import host_catalog
-from publication import git, publish_tree
-from retention import refresh
-from yaml_publication import load_local, publish_local, schema_url
 
 
 class LargeBatchEnrollment(unittest.TestCase):
@@ -51,23 +49,17 @@ class LargeBatchEnrollment(unittest.TestCase):
         self.assertEqual(len(new_ids),len(candidates))
         self.assertTrue(old_ids.isdisjoint(new_ids))
         self.assertEqual(len(rows),len(wanted))
-        schema = schema_url('a'*40)
+        revision = 'a'*40
         stamp = '2026-11-06T00:00:00Z'
         with tempfile.TemporaryDirectory(prefix='large-enrollment-') as temporary:
             home = Path(temporary)
-            repo = home/'catalog.git';repo.mkdir()
-            git(repo,'init','--bare','--quiet','--template=')
             evidence = home/'responses';evidence.mkdir()
-            prior = {}
+            retained = {}
             for row in old_rows:
                 rid = str(row['repository_id'])
-                seed = dict(format=2,schema=schema,repository_id=int(rid),repository=row['repository'])
-                prior[rid] = refresh(seed,[dict(received_at=stamp,releases={},has_next=False,
-                    bytes=2,seconds=0)],attempted_at=stamp,max_catalog_bytes=host_catalog.FILE_CAP)
+                retained[rid] = dict(repository_id=int(rid),repository=row['repository'],attempted_at=stamp)
                 (evidence/(rid+'-releases.json')).write_text('[]')
                 (evidence/(rid+'-receipt.txt')).write_text(stamp)
-            parent = publish_local(repo,{r['app']:r['repository_id'] for r in old_rows},prior,
-                schema=schema,max_file_bytes=host_catalog.FILE_CAP,expected_parent=None)
             with tarfile.open(archive) as saved:
                 for app, row in candidates.items():
                     rid = str(row['repository_id'])
@@ -75,26 +67,20 @@ class LargeBatchEnrollment(unittest.TestCase):
                     self.assertEqual(hashlib.sha256(body).hexdigest(), row['releases_sha256'])
                     (evidence/(rid+'-releases.json')).write_bytes(body)
                     (evidence/(rid+'-receipt.txt')).write_text(row['observed_at'][:19]+'Z')
+            acquired = {}
             with patch.object(host_catalog,'configuration',return_value=(rows,sources)), \
                     patch('urllib.request.urlopen',side_effect=AssertionError('network')), \
                     contextlib.redirect_stdout(io.StringIO()):
-                tree, report = host_catalog.collect('a'*40,prior,evidence)
-            pin = publish_tree(repo,tree,parent)
-            apps, repositories = load_local(repo,pin,max_file_bytes=host_catalog.FILE_CAP)
-            self.assertEqual(apps,{r['app']:r['repository_id'] for r in rows})
+                report = host_catalog.collect(retained,evidence,acquisitions=acquired)
             self.assertEqual(len(report),len(sources))
-            self.assertEqual({rid:repositories[rid] for rid in prior},prior)
-            self.assertEqual(load_local(repo,parent,max_file_bytes=host_catalog.FILE_CAP)[0],
-                             {r['app']:r['repository_id'] for r in old_rows})
+            self.assertEqual(set(acquired),set(sources))
             for app, row in candidates.items():
                 rid = str(row['repository_id'])
-                source = repositories[rid]
-                self.assertEqual(source['collection']['status'],'ok')
-                self.assertEqual(source['last_success']['page_size'],100)
                 raw = json.loads((evidence/(rid+'-releases.json')).read_bytes())
-                self.assertEqual(source['last_success']['history_complete'],len(raw)<100)
-                document = home/(rid+'.yaml');document.write_bytes(tree['repositories/'+rid+'.yaml'])
-                facts = subprocess.run(['sh',str(host_catalog.ROOT/'modules/catalog-yaml-reader.am'),
+                self.assertEqual(acquired[rid]['history_complete'],len(raw)<100)
+                source = contracts.source(None,acquired[rid],rid=rid,repository=sources[rid],revision=revision)
+                document = home/(rid+'.yaml');document.write_bytes(contracts.encode(source))
+                facts = subprocess.run(['sh',str(host_catalog.ROOT/'modules/catalog-contract-reader.am'),
                     'asset_facts',str(document)],capture_output=True,text=True,timeout=30)
                 self.assertEqual(facts.returncode,0,facts.stderr)
                 for command in (['mawk'],['gawk'],['busybox','awk']):
@@ -102,13 +88,16 @@ class LargeBatchEnrollment(unittest.TestCase):
                         selected = subprocess.run([*command,'-f',str(host_catalog.ROOT/'modules/catalog-yaml-policy.am')],
                             input=facts.stdout,text=True,capture_output=True,timeout=15,
                             env=dict(os.environ,LC_ALL='C',AM_YAML_RECIPE='x86_64/'+app,
-                                AM_YAML_REPOSITORY=rid,AM_YAML_NOW=source['observed_at'],AM_YAML_PIN=pin))
+                                AM_YAML_REPOSITORY=rid,AM_YAML_NOW=source['observed_at'],AM_YAML_PIN=revision))
                         self.assertEqual(selected.returncode,0,selected.stderr)
                         self.assertEqual(selected.stdout.splitlines()[-1],row['old_selected_url'])
-            # A malformed newly enrolled source must not advance the exact parent.
+            # Strict collection refuses as a whole when one saved page is malformed.
             broken = str(next(iter(candidates.values()))['repository_id'])
             (evidence/(broken+'-releases.json')).write_text('[invalid')
             with patch.object(host_catalog,'configuration',return_value=(rows,sources)), \
                     contextlib.redirect_stdout(io.StringIO()),self.assertRaises(ValueError):
-                host_catalog.collect('a'*40,repositories,evidence)
-            self.assertEqual(git(repo,'rev-parse','refs/heads/catalog').decode().strip(),pin)
+                host_catalog.collect(retained,evidence,acquisitions={})
+
+
+if __name__ == '__main__':
+    unittest.main()
