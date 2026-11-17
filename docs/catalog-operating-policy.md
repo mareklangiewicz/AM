@@ -214,8 +214,9 @@ remain preserved. 20x and the thirty recipes converted in tickets 133/135 opt in
 original fork recipe behavior; 2fac and remaining recipes keep the default
 argument-preservation behavior. Since catalog-system ticket 32 (November 17,
 2026) the conversion sets it for every declaration whose upstream original is
-an instance of a template that strips `--no-sandbox` (3.6 and later; see
-`tools/recipe-conversion/layouts.json`): 579 declarations gained it.
+an instance of a template body that strips `--no-sandbox` (its row in
+`tools/recipe-conversion/layouts.json` sets it; not the base `b7c72a974`):
+579 declarations gained it then, and the 1,171 converted in ticket 33 carry it.
 
 20x/2fac declarations and enrollment (tickets 130/131) were pushed November 6.
 [Run 42150558139](https://github.com/mareklangiewicz/AM/actions/runs/42150558139)

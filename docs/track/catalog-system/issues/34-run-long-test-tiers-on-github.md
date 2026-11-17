@@ -22,7 +22,7 @@ The collector README says so.
 
 First run 44071909464 on `ci/format-3-collection`: whole-tree tier and both e2e
 targets green; the fast tier found three real step B regressions (ticket 25),
-fixed in `585e01a69`. Rerun 44073540711 in progress at the time of writing.
+fixed in `585e01a69`. Rerun 44073540711 on `585e01a69`: all four jobs green.
 
 Not covered: the Termux e2e target.
 

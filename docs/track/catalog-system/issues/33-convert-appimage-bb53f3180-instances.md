@@ -25,7 +25,7 @@ Three existing declarations match it: `5ire` and `actiona` already set the
 flag; `obsidian` is a deliberate hand conversion (release-catalog ticket 109
 keeps `--no-sandbox %U` and sets `DESKTOP_EXEC=installed`) and was left.
 
-## Step 2, open: convert the long recipes
+## Step 2, done November 17, 2026: convert the long recipes
 
 Dry run at `main-marek` `d85c3851b`, `upstream/main` `ba061a639`: of the
 upstream originals that are exact `bb53f3180` instances, 1,171 long recipes
@@ -45,9 +45,30 @@ Still to work out before writing anything:
   `CATALOG_SCHEDULE_REVISION` and an observed scheduled run (as ticket 25
   step B).
 - Ticket 31 counted 1,236 instances (1,183 long, 50 original) with a looser
-  matcher; this dry run found 1,178. Not reconciled.
+  matcher; this dry run found 1,178. Reconciled below (comment of November 17).
 
 ## Comments
+
+November 17, 2026 (review): the 1,236 vs 1,178 gap reconciled. Both counts use
+the same matcher, `originals.Template.match` after `convert.QUOTING`; the 1,236
+are all its `bb53f3180` matches on `upstream/main` `ba061a639` (1,233 of them
+not yet declarations, the figure in ticket 31's answer and the map). The 1,178
+are the ones `convert.recognize` also accepts. Forms at `d85c3851b` (the same
+as at ticket 31's `36c087049`):
+
+| Form | Instances | `recognize` accepts | Refused by `recognize` |
+| --- | ---: | ---: | --- |
+| long | 1,183 | 1,174 | 9: installer and updater disagree (aarch64 `cartridges`, `extension-manager`, `gearlever`, `varia`; x86_64 `dbgate`, `dbgate-premium`, `gale`), SITE not a literal repository (x86_64 `leapp`, `owncloud`) |
+| original | 50 | 1 (`x86_64/container-desktop`) | 49 |
+| declaration | 3 | 3 (`5ire`, `actiona`, `obsidian`) | 0 |
+| total | 1,236 | 1,178 | 58 |
+
+Of the 1,174 long recipes, 1,171 converted and 3 refused later in
+`convert.convert` (the two `python` ones and `deadbeef-nightly`, as in the
+answer); the one original is the "app identity" refusal of the dry run. At
+`082502f64`: 1,174 declarations (1,171 plus the 3 earlier), 12 long, 50
+originals. The script (session scratchpad, not kept) ran `merge.form` on each
+tree blob and `convert.recognize` against the `bb53f3180` body alone.
 
 ## Answer — November 17, 2026
 

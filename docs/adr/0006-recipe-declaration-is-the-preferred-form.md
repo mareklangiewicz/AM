@@ -19,7 +19,7 @@ property the fork exists to offer.
 
 Consequences:
 
-- Only the plain AppImage template is reviewed today (two versions in
+- Only the plain AppImage template is reviewed today (the versions listed in
   `tools/recipe-conversion/layouts.json`), out of 15 upstream templates. Each
   further template needs its own shared installer module and review; which one
   comes next is decided by a count of the recipes that match it.
