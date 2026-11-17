@@ -380,7 +380,7 @@ class Contracts(unittest.TestCase):
             # Budget-deferred sources exercise reuse without a failed acquisition.
             def deferred(*args,metrics,**kwargs):
                 metrics.update(selected_repository_ids=[123],selected_sources=1,requests=0,response_bytes=0,acquisition_seconds=0)
-                return ({'example':123},{}),[]
+                return []
             with patch.object(interface,'verify_checkout_inputs'),patch.object(host,'configuration',return_value=(rows,{'123':'example/app'})),patch.object(host,'collect',side_effect=deferred):
                 interface.main(command+['--output',str(root/'deferred')])
                 interface.main(command+['--output',str(root/'deferred-rebound'),'--schemas-revision','b'*40])
