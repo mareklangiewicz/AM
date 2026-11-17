@@ -147,3 +147,9 @@ step D). Fixed in `585e01a69`; whole-tree tier and Debian and Fedora e2e passed
 in that run. Step B sits on `ci/format-3-collection`; `main-marek` has not
 moved. Pushing it needs a repin and one observed (dispatched) collection run
 before steps C and D.
+
+November 17, 2026: step B observed. `main-marek` moved to `87c025d48` (pushed
+with Marek's approval, `CATALOG_SCHEDULE_REVISION` repinned to it). Dispatched
+catalog run 44074650774 on it, the first collection through the format-3-only
+`collect`, passed both jobs (acquire, publish); Fast tests 44074645397 passed
+on the same commit. Steps C and D are unblocked.
