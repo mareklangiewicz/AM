@@ -44,8 +44,8 @@ accepted until someone has compared its install steps with
 declaration form and convert to long recipes.
 
 A layout may carry `settings`: declaration settings that reproduce what its
-install steps do beyond the shared installer's defaults. Template 3.6's
-desktop `sed` removes `--no-sandbox`, so its row sets
+install steps do beyond the shared installer's defaults. Template 3.6's and
+`bb53f3180`'s desktop `sed` removes `--no-sandbox`, so their rows set
 `DESKTOP_STRIP_NO_SANDBOX=true` (ticket 32); a test checks that every layout
 whose body has that `sed` declares it and no other does.
 
