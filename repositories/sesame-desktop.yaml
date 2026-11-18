@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1337335482
 repository: "usesesame/sesame-desktop"
-collected_at: "2026-11-15T02:49:53Z"
+collected_at: "2026-11-18T04:35:12Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-15T02:49:53Z"
+observed_at: "2026-11-18T04:35:12Z"
 releases:
   "372533035":
     tag: "v0.1.0"
@@ -1116,17 +1116,17 @@ releases:
     url: "https://github.com/usesesame/sesame-desktop/releases/tag/freshness"
     created_at: "2026-10-25T18:48:40Z"
     published_at: "2026-10-25T18:55:01Z"
-    updated_at: "2026-11-14T11:28:30Z"
+    updated_at: "2026-11-17T13:26:20Z"
     prerelease: true
     source_zip_url: "https://api.github.com/repos/usesesame/sesame-desktop/zipball/freshness"
     source_tar_url: "https://api.github.com/repos/usesesame/sesame-desktop/tarball/freshness"
     assets:
-      "747277104":
+      "759168963":
         name: "freshness.json"
         url: "https://github.com/usesesame/sesame-desktop/releases/download/freshness/freshness.json"
         size: 209
         media_type: "application/json"
-        digest: "sha256:51c21941653b5bdd132fdae97c7f39c6863822c1a869bdd81ff3141cac513c61"
+        digest: "sha256:df31821a38be9e2812911bdcbf07a2c58ec10259fc8c67f2e17f6d64d9eef450"
   "424499634":
     tag: "v0.5.1"
     title: "Sesame v0.5.1"
@@ -1440,6 +1440,165 @@ releases:
         media_type: "application/json"
         digest: "sha256:af666edecbff72c36a3cfc8beb25d00a2406189e25ff4cd7cfeaefd34afe82b3"
       "744662970":
+        name: "verify-sesame-release.ps1"
+        url_suffix: "verify-sesame-release.ps1"
+        size: 4138
+        media_type: "application/x-powershell"
+        digest: "sha256:756c735237827a2758c7084a2a52518b2c9eef61ca3988b47dde45c6cd014953"
+  "446934770":
+    tag: "v0.5.3"
+    title: "Sesame v0.5.3"
+    url: "https://github.com/usesesame/sesame-desktop/releases/tag/v0.5.3"
+    created_at: "2026-11-16T09:21:02Z"
+    published_at: "2026-11-16T12:03:01Z"
+    updated_at: "2026-11-16T12:03:01Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/usesesame/sesame-desktop/zipball/v0.5.3"
+    source_tar_url: "https://api.github.com/repos/usesesame/sesame-desktop/tarball/v0.5.3"
+    download_base: "https://github.com/usesesame/sesame-desktop/releases/download/v0.5.3/"
+    assets:
+      "754550900":
+        name: "Sesame_0.5.3_amd64.AppImage"
+        url_suffix: "Sesame_0.5.3_amd64.AppImage"
+        size: 80382456
+        media_type: "application/vnd.appimage"
+        digest: "sha256:7799054b6e90fbba1d3b0903d9148ae353c674d67852a8002e383b7913351366"
+      "754550901":
+        name: "Sesame_0.5.3_amd64.AppImage.sigstore.json"
+        url_suffix: "Sesame_0.5.3_amd64.AppImage.sigstore.json"
+        size: 10963
+        media_type: "application/json"
+        digest: "sha256:973855eb6b97e2a39ddae73fbd1b7e29cf4d14f1d7a256ba1f8cb0b2dd58e5e0"
+      "754550902":
+        name: "Sesame_0.5.3_amd64.deb"
+        url_suffix: "Sesame_0.5.3_amd64.deb"
+        size: 9269834
+        media_type: "application/x-debian-package"
+        digest: "sha256:95e1a5381c1387c434ae47eeb873c5fee8dacf939463352590bca5a70de1336d"
+      "754550904":
+        name: "Sesame_0.5.3_amd64.deb.sigstore.json"
+        url_suffix: "Sesame_0.5.3_amd64.deb.sigstore.json"
+        size: 10955
+        media_type: "application/json"
+        digest: "sha256:8d3bed522133806d2e9973a0398c7c6df4e1759954d5188f81a8e0a6a6178c57"
+      "754550905":
+        name: "Sesame-0.5.3-1.x86_64.rpm"
+        url_suffix: "Sesame-0.5.3-1.x86_64.rpm"
+        size: 9279573
+        media_type: "application/x-rpm"
+        digest: "sha256:7ed14ae13af2c2d4477b33860d4f023501198b9b2298a4de589533b2c8bdf65c"
+      "754550929":
+        name: "sesame-0.5.3-linux-x86_64.release.json"
+        url_suffix: "sesame-0.5.3-linux-x86_64.release.json"
+        size: 2253
+        media_type: "application/json"
+        digest: "sha256:c4e1855c9729d312bdfe35598e674ac8daf0f7e3be6c9e9a15fb7487c8838bf4"
+      "754550932":
+        name: "Sesame-0.5.3-1.x86_64.rpm.sigstore.json"
+        url_suffix: "Sesame-0.5.3-1.x86_64.rpm.sigstore.json"
+        size: 10907
+        media_type: "application/json"
+        digest: "sha256:8e6344b87f41fdb4beba58b98400cd74172340a8e432b54282a5fcb5f0c936b0"
+      "754550964":
+        name: "sesame-0.5.3-linux-x86_64.release.json.sigstore.json"
+        url_suffix: "sesame-0.5.3-linux-x86_64.release.json.sigstore.json"
+        size: 11015
+        media_type: "application/json"
+        digest: "sha256:7d30a20386194e5e2afbc28ddd4bf5dfbef8b3720e9b44ddfc506306d3b71a38"
+      "754550965":
+        name: "linux-sigstore-evidence.json"
+        url_suffix: "linux-sigstore-evidence.json"
+        size: 1423
+        media_type: "application/json"
+        digest: "sha256:cac3ee1c56129ccea244255c6b0570246259aa40ced116af2e49d6c4949d49fe"
+      "754550966":
+        name: "SHA256SUMS-linux"
+        url_suffix: "SHA256SUMS-linux"
+        size: 750
+        digest: "sha256:d2218ca12e0454742c0891615495b5240de7d840ffad93f36e95b0c3360ed26b"
+      "754550967":
+        name: "sesame-linux.cdx.json"
+        url_suffix: "sesame-linux.cdx.json"
+        size: 296591
+        media_type: "application/json"
+        digest: "sha256:8bd74843d2ee9e95bd4fa887c875b92862bc48793cda4970d3f293a9e9dbd28f"
+      "754550997":
+        name: "linux-shipped-package.json"
+        url_suffix: "linux-shipped-package.json"
+        size: 1328
+        media_type: "application/json"
+        digest: "sha256:6fce593b0729164c49fad2d217624fc29f3e24ceedfc2296dfdda9ebebf162cc"
+      "754551002":
+        name: "linux-rpm-shipped-package.json"
+        url_suffix: "linux-rpm-shipped-package.json"
+        size: 1355
+        media_type: "application/json"
+        digest: "sha256:667e84fef8049d8d741f68755e63747e7eaff5243a9e2e10f66ade3bfc6b2351"
+      "754551005":
+        name: "linux-appimage-shipped-package.json"
+        url_suffix: "linux-appimage-shipped-package.json"
+        size: 1276
+        media_type: "application/json"
+        digest: "sha256:5f4b568800dac70c4bd6e6dbfbcf8b58473e04003fe1084a9453c2b5953d6a12"
+      "754551011":
+        name: "linux-installed-package.json"
+        url_suffix: "linux-installed-package.json"
+        size: 2780
+        media_type: "application/json"
+        digest: "sha256:629f8c2442efdbfde040fb5afdc48368f0099b4fe53754d04c0df44812d184ae"
+      "754554227":
+        name: "Sesame_0.5.3_x64-setup.exe.sig"
+        url_suffix: "Sesame_0.5.3_x64-setup.exe.sig"
+        size: 416
+        media_type: "application/pgp-signature"
+        digest: "sha256:b46ab8b0e112f2fbcfe0c033e3a590fc4f64359a21c5faa548d75fdafeb16b79"
+      "754554228":
+        name: "Sesame_0.5.3_x64-setup.exe"
+        url_suffix: "Sesame_0.5.3_x64-setup.exe"
+        size: 7774505
+        digest: "sha256:da92772e6efdda1cd06fd1df7c2d088380e97916f59480b0f48a4b89ba771804"
+      "754554229":
+        name: "Sesame_0.5.3_x64-setup.exe.sigstore.json"
+        url_suffix: "Sesame_0.5.3_x64-setup.exe.sigstore.json"
+        size: 10855
+        media_type: "application/json"
+        digest: "sha256:ee8096bd7e494c6ef5b40a5cb7ee0b379d965759a3226f4df5a541b4f74c9b2c"
+      "754554230":
+        name: "SHA256SUMS"
+        url_suffix: "SHA256SUMS"
+        size: 467
+        digest: "sha256:007e14a712c2ee8fa894d1cc4835b5760957d57027565f207d69ee7246f95512"
+      "754554232":
+        name: "latest.json"
+        url_suffix: "latest.json"
+        size: 2406
+        media_type: "application/json"
+        digest: "sha256:336a52089dd9fda60b3aac8252ecce4d2d2404a475fe9bea6deaf30231fa73ab"
+      "754554251":
+        name: "sesame-0.5.3-windows-x86_64.release.json"
+        url_suffix: "sesame-0.5.3-windows-x86_64.release.json"
+        size: 2505
+        media_type: "application/json"
+        digest: "sha256:4124512d48910900f8e62a0c18df07ce8e53b48a893722b5bcc2038977e183de"
+      "754554258":
+        name: "sesame-0.5.3-windows-x86_64.release.json.sigstore.json"
+        url_suffix: "sesame-0.5.3-windows-x86_64.release.json.sigstore.json"
+        size: 10903
+        media_type: "application/json"
+        digest: "sha256:ba0421c3bf6e63629c9363849c05579ed3d7e2ffd219c7a5978fe6f66cb0df19"
+      "754554259":
+        name: "sesame-0.5.3.cdx.json"
+        url_suffix: "sesame-0.5.3.cdx.json"
+        size: 296591
+        media_type: "application/json"
+        digest: "sha256:8bd74843d2ee9e95bd4fa887c875b92862bc48793cda4970d3f293a9e9dbd28f"
+      "754554262":
+        name: "sigstore-evidence.json"
+        url_suffix: "sigstore-evidence.json"
+        size: 874
+        media_type: "application/json"
+        digest: "sha256:b93275b7c15b5b475fce180a5de955065cc40d7a4c9710f5b3bea29c42d63778"
+      "754554283":
         name: "verify-sesame-release.ps1"
         url_suffix: "verify-sesame-release.ps1"
         size: 4138

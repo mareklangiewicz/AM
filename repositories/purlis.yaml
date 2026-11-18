@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1374430586
 repository: "purlis/purlis"
-collected_at: "2026-11-15T11:05:08Z"
+collected_at: "2026-11-18T04:38:48Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-15T11:05:08Z"
+observed_at: "2026-11-18T04:38:48Z"
 releases:
   "394323911":
     tag: "dev"
@@ -16,77 +16,242 @@ releases:
     url: "https://github.com/purlis/purlis/releases/tag/dev"
     created_at: "2026-09-23T01:03:54Z"
     published_at: "2026-09-23T05:38:57Z"
-    updated_at: "2026-11-15T09:30:28Z"
+    updated_at: "2026-11-18T02:14:00Z"
     prerelease: true
     source_zip_url: "https://api.github.com/repos/purlis/purlis/zipball/dev"
     source_tar_url: "https://api.github.com/repos/purlis/purlis/tarball/dev"
     download_base: "https://github.com/purlis/purlis/releases/download/dev/"
     assets:
-      "750487076":
+      "759204004":
+        name: "purlis-0.5.2-dev.2330-linux-aarch64"
+        url_suffix: "purlis-0.5.2-dev.2330-linux-aarch64"
+        size: 66172352
+        digest: "sha256:c40781b258be2f33f0dbfde9d407d265e01a82fda73f6de909541893f3d5f5ca"
+      "759204194":
+        name: "purlis-0.5.2-dev.2330-linux-aarch64.sig"
+        url_suffix: "purlis-0.5.2-dev.2330-linux-aarch64.sig"
+        size: 460
+        media_type: "application/pgp-signature"
+        digest: "sha256:3b068b4ddcee176756396727f12549b9dadcf34a504ee76e0c784a1cf837db62"
+      "759204253":
+        name: "purlis-0.5.2-dev.2330-linux-x86_64"
+        url_suffix: "purlis-0.5.2-dev.2330-linux-x86_64"
+        size: 75456880
+        digest: "sha256:0a0e171383681727eac821e250c2c88b7db3410e06f67037ddee7f48b8d698c5"
+      "759204430":
+        name: "purlis-0.5.2-dev.2330-linux-x86_64.sig"
+        url_suffix: "purlis-0.5.2-dev.2330-linux-x86_64.sig"
+        size: 456
+        media_type: "application/pgp-signature"
+        digest: "sha256:901fbe5531409427043849755a2cc8ab60f2a86932779108f563564ae048acc1"
+      "759204486":
+        name: "purlis-0.5.2-dev.2330-macos-arm64"
+        url_suffix: "purlis-0.5.2-dev.2330-macos-arm64"
+        size: 62322320
+        digest: "sha256:ce8187c575a161a5f70310c9da8295bde62cdd9c4f01d2d7740dbe77042227a6"
+      "759204827":
+        name: "purlis-0.5.2-dev.2330-macos-arm64.sig"
+        url_suffix: "purlis-0.5.2-dev.2330-macos-arm64.sig"
+        size: 456
+        media_type: "application/pgp-signature"
+        digest: "sha256:f4028e2ab5aad2a71768ef2ba6a2884a417cdce3f35ea022ae3968aeb4139164"
+      "759719521":
+        name: "purlis-0.5.2-dev.2331-linux-aarch64"
+        url_suffix: "purlis-0.5.2-dev.2331-linux-aarch64"
+        size: 66106944
+        digest: "sha256:17c50617994f641b493a8ea763d4f9a463a68b18756d256aa4f838ca487393ab"
+      "759719750":
+        name: "purlis-0.5.2-dev.2331-linux-aarch64.sig"
+        url_suffix: "purlis-0.5.2-dev.2331-linux-aarch64.sig"
+        size: 460
+        media_type: "application/pgp-signature"
+        digest: "sha256:07d504a6657c0b02ef66046d2b228ff0749d44798de42e17f3d6b9e3130238af"
+      "759719851":
+        name: "purlis-0.5.2-dev.2331-linux-x86_64"
+        url_suffix: "purlis-0.5.2-dev.2331-linux-x86_64"
+        size: 74868080
+        digest: "sha256:dafd7117a699fb4570dfe0b4575c2cd18abdad7f455779e0cc49e10055e7c70c"
+      "759720089":
+        name: "purlis-0.5.2-dev.2331-linux-x86_64.sig"
+        url_suffix: "purlis-0.5.2-dev.2331-linux-x86_64.sig"
+        size: 456
+        media_type: "application/pgp-signature"
+        digest: "sha256:adcd1c735379d329759a49fb2c95e76c99f4da7e3b227ef25a8618d087da0b5f"
+      "759720177":
+        name: "purlis-0.5.2-dev.2331-macos-arm64"
+        url_suffix: "purlis-0.5.2-dev.2331-macos-arm64"
+        size: 62654816
+        digest: "sha256:c55d0703cfe3822bff8f0e51b3e838a33d6dc63cf9ac72d236831cc951593781"
+      "759720416":
+        name: "purlis-0.5.2-dev.2331-macos-arm64.sig"
+        url_suffix: "purlis-0.5.2-dev.2331-macos-arm64.sig"
+        size: 456
+        media_type: "application/pgp-signature"
+        digest: "sha256:41d864b68256b561374f66fc8dc45da88bd51e45047a51aea89b68e18a3a25f7"
+      "760108854":
+        name: "purlis-0.5.2-dev.2334-linux-aarch64"
+        url_suffix: "purlis-0.5.2-dev.2334-linux-aarch64"
+        size: 65648192
+        digest: "sha256:dfe0eff3d4a152da58f60ee1e51c72a3a25808cdc34bf29dfd34f96a6d55569a"
+      "760109024":
+        name: "purlis-0.5.2-dev.2334-linux-aarch64.sig"
+        url_suffix: "purlis-0.5.2-dev.2334-linux-aarch64.sig"
+        size: 460
+        media_type: "application/pgp-signature"
+        digest: "sha256:22a267e1a8ac106ee8a71716d85d587c284a8a21abd7b86f57d573feb5061d2d"
+      "760109076":
+        name: "purlis-0.5.2-dev.2334-linux-x86_64"
+        url_suffix: "purlis-0.5.2-dev.2334-linux-x86_64"
+        size: 75084912
+        digest: "sha256:5e1dab68272cb516ad03cdf9042cdc82fa6cdeac2eafb7d8e469c293f1477395"
+      "760109267":
+        name: "purlis-0.5.2-dev.2334-linux-x86_64.sig"
+        url_suffix: "purlis-0.5.2-dev.2334-linux-x86_64.sig"
+        size: 456
+        media_type: "application/pgp-signature"
+        digest: "sha256:ac5b35eaf4bee173cd4e21d50dc36fd4c0b2bf2ad43b3aec5d06433e8d32f9d5"
+      "760109318":
+        name: "purlis-0.5.2-dev.2334-macos-arm64"
+        url_suffix: "purlis-0.5.2-dev.2334-macos-arm64"
+        size: 62587056
+        digest: "sha256:c179bcbd97ec5dbe350beafcf83a3aab403a784c16faefb83684fc714316f5fa"
+      "760109474":
+        name: "purlis-0.5.2-dev.2334-macos-arm64.sig"
+        url_suffix: "purlis-0.5.2-dev.2334-macos-arm64.sig"
+        size: 456
+        media_type: "application/pgp-signature"
+        digest: "sha256:1b620e24f7b010ccaf48c3f8306acf7f3f23ef83bdadbc98c67ce2c71302f42b"
+      "761110637":
+        name: "purlis-0.5.2-dev.2335-linux-aarch64"
+        url_suffix: "purlis-0.5.2-dev.2335-linux-aarch64"
+        size: 65648192
+        digest: "sha256:d89076b7809605fe8535a784606c9d119d531f7a4f7808761f1e117d2ffeab1d"
+      "761110799":
+        name: "purlis-0.5.2-dev.2335-linux-aarch64.sig"
+        url_suffix: "purlis-0.5.2-dev.2335-linux-aarch64.sig"
+        size: 460
+        media_type: "application/pgp-signature"
+        digest: "sha256:1028ee3a0abe99e7ecc916acf33d1bfe3bafb7c390c32e505563e9a4042166d7"
+      "761110863":
+        name: "purlis-0.5.2-dev.2335-linux-x86_64"
+        url_suffix: "purlis-0.5.2-dev.2335-linux-x86_64"
+        size: 75825648
+        digest: "sha256:837091fcd4fb1a44e34cd860003ba1d71b24f279d0e2c618abd10e4ac165a6ba"
+      "761111052":
+        name: "purlis-0.5.2-dev.2335-linux-x86_64.sig"
+        url_suffix: "purlis-0.5.2-dev.2335-linux-x86_64.sig"
+        size: 456
+        media_type: "application/pgp-signature"
+        digest: "sha256:7fb9ec45a0113d3df339de07b829786b5ba7368279a812b95db91e908eecccb0"
+      "761111104":
+        name: "purlis-0.5.2-dev.2335-macos-arm64"
+        url_suffix: "purlis-0.5.2-dev.2335-macos-arm64"
+        size: 62204928
+        digest: "sha256:dab6ecd48d11701499af6c757b06b09f2982a470eb6c8fe157aaa3854ad09c6d"
+      "761111224":
+        name: "purlis-0.5.2-dev.2335-macos-arm64.sig"
+        url_suffix: "purlis-0.5.2-dev.2335-macos-arm64.sig"
+        size: 456
+        media_type: "application/pgp-signature"
+        digest: "sha256:61570f5ae119671d57fba10cd17e4f2dd34277698ecc5a07282befbd4c16ad4b"
+      "761500629":
+        name: "purlis-0.5.2-dev.2342-linux-aarch64"
+        url_suffix: "purlis-0.5.2-dev.2342-linux-aarch64"
+        size: 66565824
+        digest: "sha256:3ac7ba31665c2e3af53e1dc99d9350c8b59973176fd28630ea22de4c6ece6a78"
+      "761500752":
+        name: "purlis-0.5.2-dev.2342-linux-aarch64.sig"
+        url_suffix: "purlis-0.5.2-dev.2342-linux-aarch64.sig"
+        size: 460
+        media_type: "application/pgp-signature"
+        digest: "sha256:1179c8d0d251f3c039db77c52921e6ed45632a44e68814a3eb981130578b1687"
+      "761500813":
+        name: "purlis-0.5.2-dev.2342-linux-x86_64"
+        url_suffix: "purlis-0.5.2-dev.2342-linux-x86_64"
+        size: 75725928
+        digest: "sha256:4008121448382a91475a36ac74969b1487fa8236abe25f505cb4b0fc41d754e3"
+      "761500970":
+        name: "purlis-0.5.2-dev.2342-linux-x86_64.sig"
+        url_suffix: "purlis-0.5.2-dev.2342-linux-x86_64.sig"
+        size: 456
+        media_type: "application/pgp-signature"
+        digest: "sha256:f8b42ece85fc5ae0fcb50f79fd9e2c8aa744bb227b2dc80b6ffeec1b911c8c85"
+      "761501037":
+        name: "purlis-0.5.2-dev.2342-macos-arm64"
+        url_suffix: "purlis-0.5.2-dev.2342-macos-arm64"
+        size: 62370032
+        digest: "sha256:a0471ded4b13c8a352cd02f1748595e4488246505150ec84887b53ae3a8e1830"
+      "761501180":
+        name: "purlis-0.5.2-dev.2342-macos-arm64.sig"
+        url_suffix: "purlis-0.5.2-dev.2342-macos-arm64.sig"
+        size: 456
+        media_type: "application/pgp-signature"
+        digest: "sha256:56201ee5232a4d02f57212b1dccd7c3b2d17aaa565ecef9fcd492ac64f6d18c7"
+      "761501248":
         name: "purlis-darwin-aarch64.app.tar.gz"
         url_suffix: "purlis-darwin-aarch64.app.tar.gz"
-        size: 86309203
+        size: 87171927
         media_type: "application/x-gtar"
-        digest: "sha256:5d3ce04837db674916bbd9f7866484f7a1de122920c2035c3379b0d16f4395ec"
-      "750487194":
+        digest: "sha256:da2c25ef51ab3eebfa4958a10af12fbf5c00a6d44abdd36e2e7082186e808712"
+      "761501419":
         name: "purlis-darwin-aarch64.app.tar.gz.sig"
         url_suffix: "purlis-darwin-aarch64.app.tar.gz.sig"
         size: 436
         media_type: "application/pgp-signature"
-        digest: "sha256:5e5092b78767dccc58c06eac8737c85a4ed785b83be8acbba7688ed7e2e08149"
-      "750487234":
+        digest: "sha256:c6a111ebfa2b03e8de23ba9e1539609ef7d2cc3cfd50f49823c6ffb44879b935"
+      "761501479":
         name: "purlis-linux-x86_64-appimage.AppImage"
         url_suffix: "purlis-linux-x86_64-appimage.AppImage"
-        size: 201218552
+        size: 202418680
         media_type: "application/vnd.appimage"
-        digest: "sha256:b883ed79b469c9df05e4c6d45aeee19a4b7dfe8c9362a0bc6fcf8e876c4cd687"
-      "750487396":
+        digest: "sha256:5390238a8f55cc487a8b977f58adb3e93e22fa82eb86752fb6899c0c23abd7b0"
+      "761501772":
         name: "purlis-linux-x86_64-appimage.AppImage.sig"
         url_suffix: "purlis-linux-x86_64-appimage.AppImage.sig"
         size: 460
         media_type: "application/pgp-signature"
-        digest: "sha256:ed9409b182b93cfe099bfd2f5561fd17a78bd3221bb9cdff3d0ce93fb7cb00a6"
-      "750487456":
+        digest: "sha256:0287407e88aaf861dc4883c7afc9c071a8714113761a80e02d8d5750952a3fa1"
+      "761501872":
         name: "purlis-linux-x86_64.cdx.json"
         url_suffix: "purlis-linux-x86_64.cdx.json"
-        size: 2927456
+        size: 2940041
         media_type: "application/json"
-        digest: "sha256:36c99a59887031c069db126e94206506337819e4944a3c29661a174cfad2e046"
-      "750487531":
+        digest: "sha256:a16a4fca59d6a4e5b07ea0d4a43a74ef3e0d1f691805cdf64db344a5737cc4ed"
+      "761501961":
         name: "purlis-linux-x86_64.deb"
         url_suffix: "purlis-linux-x86_64.deb"
-        size: 137553692
+        size: 138935178
         media_type: "application/x-debian-package"
-        digest: "sha256:faa94c39c5e53f21dcd5cb98bb9ce508568f59f1b293eae22ec601ed30b54885"
-      "750487690":
+        digest: "sha256:8fe284af7f456df9bebf128cee2cc4097675216e5a1a3550443982087e14f6a0"
+      "761502183":
         name: "purlis-macos-arm64.app.zip"
         url_suffix: "purlis-macos-arm64.app.zip"
-        size: 83560922
+        size: 84390157
         media_type: "zip"
-        digest: "sha256:c8abe4b0766930ed252d0ded5181dcdf93025ce1df334315effa46186430e9bb"
-      "750487834":
+        digest: "sha256:b9929a59c0086c0ff4f7ebfe2d7ac749f695ffd1a0b6604eadb9caf6ad3892c1"
+      "761502372":
         name: "purlis-macos-arm64.cdx.json"
         url_suffix: "purlis-macos-arm64.cdx.json"
-        size: 2767595
+        size: 2776610
         media_type: "application/json"
-        digest: "sha256:62328dabe4c9cac77e390484f45d17db11548f883dc6c1712e25921cef20cea3"
-      "750487907":
+        digest: "sha256:717291c0f29be3924322fa6b84fa9e7dfe81c5cd1304b2ba69043ae87a781033"
+      "761502473":
         name: "purlis.intoto.jsonl"
         url_suffix: "purlis.intoto.jsonl"
-        size: 11843
-        digest: "sha256:7a81fbffcc6b6b1ee5226ba707c69d72d613fc86de62c1ed2b7f6578bc6cc215"
-      "750487957":
+        size: 13197
+        digest: "sha256:e42640716d0f1f8a83fdf4b9d7458f0a75c36d239c5f715a5e2ef66213c6c29a"
+      "761502774":
         name: "dev.json"
         url_suffix: "dev.json"
         size: 1998
         media_type: "application/json"
-        digest: "sha256:2f72821e994bba8e5cde4601798912776dd9bdfea9bf4c569996c877d0646c8d"
-      "750488015":
+        digest: "sha256:bb97d0c7fb8c93efbf4d5eb2e3f2f0651967b6421ab468ab95d076ec17d81d9e"
+      "761502859":
         name: "dev-weekly.json"
         url_suffix: "dev-weekly.json"
         size: 1998
         media_type: "application/json"
-        digest: "sha256:2f72821e994bba8e5cde4601798912776dd9bdfea9bf4c569996c877d0646c8d"
+        digest: "sha256:bb97d0c7fb8c93efbf4d5eb2e3f2f0651967b6421ab468ab95d076ec17d81d9e"
   "394972300":
     tag: "v0.1.0"
     title: "charter 0.1.0"
@@ -453,24 +618,24 @@ releases:
     url: "https://github.com/purlis/purlis/releases/tag/engine-manifest"
     created_at: "2026-10-16T15:31:20Z"
     published_at: "2026-10-16T15:31:54Z"
-    updated_at: "2026-11-14T20:21:16Z"
+    updated_at: "2026-11-17T14:24:40Z"
     prerelease: true
     source_zip_url: "https://api.github.com/repos/purlis/purlis/zipball/engine-manifest"
     source_tar_url: "https://api.github.com/repos/purlis/purlis/tarball/engine-manifest"
     download_base: "https://github.com/purlis/purlis/releases/download/engine-manifest/"
     assets:
-      "748667918":
+      "759359808":
         name: "engine-manifest.json.sigstore.json"
         url_suffix: "engine-manifest.json.sigstore.json"
-        size: 10111
+        size: 10431
         media_type: "application/json"
-        digest: "sha256:5a9f3d87f693c79cca482baaefd9ef502736e70e9276c6e5357405f7a98d1844"
-      "748667966":
+        digest: "sha256:60cda35d48ae6eba77b4e07ac91940a4465380e51c18ebf1bd38a2fbf690a8b4"
+      "759359899":
         name: "engine-manifest.json"
         url_suffix: "engine-manifest.json"
         size: 1064
         media_type: "application/json"
-        digest: "sha256:23a396243921e0ac5843406d9492f6434ec5bb26ee2c29179df2b1e491c4c339"
+        digest: "sha256:f4709bc9e88dbc9b8948ccc0babde9a4823a039b56c8046a7e8d25b6aa776cd0"
   "435963424":
     tag: "v0.5.0"
     title: "purlis 0.5.0"
