@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1411026273
 repository: "peiikai/LASRecomp"
-collected_at: "2026-11-15T11:07:10Z"
+collected_at: "2026-11-18T14:10:34Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-15T11:07:10Z"
+observed_at: "2026-11-18T14:10:34Z"
 releases:
   "422405806":
     tag: "beta_5"
@@ -424,7 +424,7 @@ releases:
     url: "https://github.com/peiikai/LASRecomp/releases/tag/beta_6"
     created_at: "2026-11-15T05:28:26Z"
     published_at: "2026-11-15T06:35:20Z"
-    updated_at: "2026-11-15T06:46:37Z"
+    updated_at: "2026-11-15T20:38:09Z"
     prerelease: false
     source_zip_url: "https://api.github.com/repos/peiikai/LASRecomp/zipball/beta_6"
     source_tar_url: "https://api.github.com/repos/peiikai/LASRecomp/tarball/beta_6"
@@ -469,52 +469,324 @@ releases:
     tag: "nightly"
     title: "Nightly builds"
     url: "https://github.com/peiikai/LASRecomp/releases/tag/nightly"
-    created_at: "2026-11-15T08:03:51Z"
+    created_at: "2026-11-18T08:36:30Z"
     published_at: "2026-11-15T08:12:05Z"
-    updated_at: "2026-11-15T09:05:49Z"
+    updated_at: "2026-11-18T11:28:38Z"
     prerelease: true
     source_zip_url: "https://api.github.com/repos/peiikai/LASRecomp/zipball/nightly"
     source_tar_url: "https://api.github.com/repos/peiikai/LASRecomp/tarball/nightly"
     download_base: "https://github.com/peiikai/LASRecomp/releases/download/nightly/"
     assets:
-      "750311913":
-        name: "LAS.Recomp-nightly-202611150812-7e5f667-linux-x86_64.AppImage"
-        url_suffix: "LAS.Recomp-nightly-202611150812-7e5f667-linux-x86_64.AppImage"
-        size: 113400312
+      "763110853":
+        name: "LAS.Recomp-nightly-202611181119-48a0d1d-linux-aarch64.AppImage"
+        url_suffix: "LAS.Recomp-nightly-202611181119-48a0d1d-linux-aarch64.AppImage"
+        size: 106850824
         media_type: "application/vnd.appimage"
-        digest: "sha256:d74b7e9c3687fc2779d91fed5f53653cd7ec517bce4cab4f757e5d6efeff719a"
-      "750312227":
-        name: "LAS.Recomp-nightly-202611150812-7e5f667-linux-aarch64.AppImage"
-        url_suffix: "LAS.Recomp-nightly-202611150812-7e5f667-linux-aarch64.AppImage"
-        size: 106744328
-        media_type: "application/vnd.appimage"
-        digest: "sha256:296fb197d3742e5853e5041f87cff20cb7d8d6f8f68acca8c176ca06c20256ab"
-      "750312544":
-        name: "LAS.Recomp-nightly-202611150812-7e5f667-android.apk"
-        url_suffix: "LAS.Recomp-nightly-202611150812-7e5f667-android.apk"
-        size: 90551304
+        digest: "sha256:0120c3bbb884661d6232a177067b54bdbc324f58f8976d69727db7169d5f0e4f"
+      "763111175":
+        name: "update-linux-aarch64.txt"
+        url_suffix: "update-linux-aarch64.txt"
+        size: 363
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:154bd3df96ee48c66f69ecf2c28546b07cbfd63afe9d9e21d0945c17f6137b06"
+      "763111289":
+        name: "LAS.Recomp-nightly-202611181119-48a0d1d-android.apk"
+        url_suffix: "LAS.Recomp-nightly-202611181119-48a0d1d-android.apk"
+        size: 90592384
         media_type: "application/vnd.android.package-archive"
-        digest: "sha256:8da3a032ac96c6b6a993017d92c08fbceb7a9fa31ba734990f0720f9d4879ff8"
-      "750313585":
-        name: "LAS.Recomp-nightly-202611150812-7e5f667-macOS.dmg"
-        url_suffix: "LAS.Recomp-nightly-202611150812-7e5f667-macOS.dmg"
-        size: 106857931
+        digest: "sha256:8b74468338c77c78b10f7f91c60ca7f195db6a69537efbba34ee33e9f203fb9c"
+      "763112739":
+        name: "LAS.Recomp-nightly-202611181119-48a0d1d-linux-x86_64.AppImage"
+        url_suffix: "LAS.Recomp-nightly-202611181119-48a0d1d-linux-x86_64.AppImage"
+        size: 113494520
+        media_type: "application/vnd.appimage"
+        digest: "sha256:447e3ce63169170bbc99b0c18c4600b160835ddabd3640e0aa0a6d05bce8ea40"
+      "763113124":
+        name: "update-linux-x86_64.txt"
+        url_suffix: "update-linux-x86_64.txt"
+        size: 361
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:db21ca6296bb8ed9ee79374cd455b5f7543a608f2e3a0355e258cdc2bf1594a5"
+      "763115743":
+        name: "LAS.Recomp-nightly-202611181119-48a0d1d-macOS.dmg"
+        url_suffix: "LAS.Recomp-nightly-202611181119-48a0d1d-macOS.dmg"
+        size: 107835593
         media_type: "application/x-apple-diskimage"
-        digest: "sha256:f663c2ad60620d87dbab1af6dcc349cd2a617304a45f15ffc0f78a1d9c10f47b"
-      "750318525":
-        name: "LAS.Recomp-nightly-202611150812-7e5f667-iOS.laskit"
-        url_suffix: "LAS.Recomp-nightly-202611150812-7e5f667-iOS.laskit"
-        size: 241917599
-        digest: "sha256:41ed8d93c28cad18454c17c81faf2e15fe882712abac15de49a7334edbc96ba3"
-      "750418200":
-        name: "LAS.Recomp-nightly-202611150812-7e5f667-windows.zip"
-        url_suffix: "LAS.Recomp-nightly-202611150812-7e5f667-windows.zip"
-        size: 100813570
+        digest: "sha256:0359e588300ef528ec5a3cae46bcd9991cf5546142e9844cb9c5c1f1d5bd3662"
+      "763115971":
+        name: "appcast-macOS.xml"
+        url_suffix: "appcast-macOS.xml"
+        size: 13443
+        media_type: "application/xml"
+        digest: "sha256:c36fda384a426476b757c55b49673175f44478a200b93c7932166cf94a22f8a9"
+      "763119414":
+        name: "LAS.Recomp-nightly-202611181119-48a0d1d-windows.zip"
+        url_suffix: "LAS.Recomp-nightly-202611181119-48a0d1d-windows.zip"
+        size: 100925998
         media_type: "zip"
-        digest: "sha256:e25b3446e6c85a49bb4c422f19fe8c1cbb0d355c443f2a1516775307a85a7d79"
-      "750431586":
-        name: "LAS.Recomp-nightly-202611150812-7e5f667-windows-arm64.zip"
-        url_suffix: "LAS.Recomp-nightly-202611150812-7e5f667-windows-arm64.zip"
-        size: 93168035
+        digest: "sha256:b977961468a1a6191317edc7ab201e654e902211543c4541cfd1af0d6a9f7416"
+      "763119649":
+        name: "update-windows.txt"
+        url_suffix: "update-windows.txt"
+        size: 42669
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:1133c8b9f88c3a73f54b3fb5842e65103545fadc414b171de454bee411a58e0d"
+      "763120884":
+        name: "LAS.Recomp-nightly-202611181119-48a0d1d-iOS.laskit"
+        url_suffix: "LAS.Recomp-nightly-202611181119-48a0d1d-iOS.laskit"
+        size: 241944281
+        digest: "sha256:6a01e824928d2b8264a95e3554f96263beb126dd3b67d80236d376a2981d5217"
+      "763133624":
+        name: "LAS.Recomp-nightly-202611181119-48a0d1d-windows-arm64.zip"
+        url_suffix: "LAS.Recomp-nightly-202611181119-48a0d1d-windows-arm64.zip"
+        size: 93278736
         media_type: "zip"
-        digest: "sha256:cfcf3707f5f0ddd13d72f2932883360ee7ffa298da84040bd5610fe6996696fe"
+        digest: "sha256:756f2b9476d0e62f7e4fac63b6ade80ead0ee8f787cc72da39d32cf927b7a9f6"
+      "763133928":
+        name: "update-windows-arm64.txt"
+        url_suffix: "update-windows-arm64.txt"
+        size: 42358
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:61bd699d074a90d202f366e8d768a6e6de714a764dac59bbef11a621d35d4d2b"
+  "446085718":
+    tag: "test-arm-779-depthnearest"
+    title: "test-arm-779-depthnearest"
+    url: "https://github.com/peiikai/LASRecomp/releases/tag/test-arm-779-depthnearest"
+    created_at: "2026-11-15T13:24:01Z"
+    published_at: "2026-11-15T13:36:00Z"
+    updated_at: "2026-11-15T13:36:00Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/peiikai/LASRecomp/zipball/test-arm-779-depthnearest"
+    source_tar_url: "https://api.github.com/repos/peiikai/LASRecomp/tarball/test-arm-779-depthnearest"
+    download_base: "https://github.com/peiikai/LASRecomp/releases/download/test-arm-779-depthnearest/"
+    assets:
+      "751113204":
+        name: "LAS.Recomp-test-arm-779-depthnearest-linux-aarch64.AppImage"
+        url_suffix: "LAS.Recomp-test-arm-779-depthnearest-linux-aarch64.AppImage"
+        size: 106756616
+        digest: "sha256:054c5e0a0d54794a85b0fff6d1c007ce4c4c2ffa89444e371e436c559992c0dc"
+      "751113209":
+        name: "LAS.Recomp-test-arm-779-depthnearest-windows-arm64.zip"
+        url_suffix: "LAS.Recomp-test-arm-779-depthnearest-windows-arm64.zip"
+        size: 93178602
+        media_type: "zip"
+        digest: "sha256:550d9c5d1d41306356087bd267ff1a3e98c048013bc76f99fdb3f96ff1e581e5"
+  "446404852":
+    tag: "test-arm-779-d24"
+    title: "test-arm-779-d24"
+    url: "https://github.com/peiikai/LASRecomp/releases/tag/test-arm-779-d24"
+    created_at: "2026-11-15T22:01:11Z"
+    published_at: "2026-11-15T22:12:43Z"
+    updated_at: "2026-11-15T22:12:43Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/peiikai/LASRecomp/zipball/test-arm-779-d24"
+    source_tar_url: "https://api.github.com/repos/peiikai/LASRecomp/tarball/test-arm-779-d24"
+    download_base: "https://github.com/peiikai/LASRecomp/releases/download/test-arm-779-d24/"
+    assets:
+      "752517204":
+        name: "LAS.Recomp-test-arm-779-d24-windows-arm64.zip"
+        url_suffix: "LAS.Recomp-test-arm-779-d24-windows-arm64.zip"
+        size: 93178618
+        media_type: "zip"
+        digest: "sha256:6309ec63b05f18a1d8037d4d1a7889240426ad3ab54e3306382753dae4b968dc"
+      "752517205":
+        name: "LAS.Recomp-test-arm-779-d24-linux-aarch64.AppImage"
+        url_suffix: "LAS.Recomp-test-arm-779-d24-linux-aarch64.AppImage"
+        size: 106756616
+        digest: "sha256:5b1be1339c423c4d665fa071e269977c8e6263c8657933705ca5e2f12bd2aa53"
+  "446427442":
+    tag: "test-arm-779-probe"
+    title: "test-arm-779-probe"
+    url: "https://github.com/peiikai/LASRecomp/releases/tag/test-arm-779-probe"
+    created_at: "2026-11-15T22:42:24Z"
+    published_at: "2026-11-15T22:54:06Z"
+    updated_at: "2026-11-15T22:54:06Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/peiikai/LASRecomp/zipball/test-arm-779-probe"
+    source_tar_url: "https://api.github.com/repos/peiikai/LASRecomp/tarball/test-arm-779-probe"
+    download_base: "https://github.com/peiikai/LASRecomp/releases/download/test-arm-779-probe/"
+    assets:
+      "752621405":
+        name: "LAS.Recomp-test-arm-779-probe-linux-aarch64.AppImage"
+        url_suffix: "LAS.Recomp-test-arm-779-probe-linux-aarch64.AppImage"
+        size: 106760712
+        digest: "sha256:c21815ea741eb39df8ba8047b7e73a79aaed8b414c87bd638bed6aefec1bcfe8"
+      "752621406":
+        name: "LAS.Recomp-test-arm-779-probe-windows-arm64.zip"
+        url_suffix: "LAS.Recomp-test-arm-779-probe-windows-arm64.zip"
+        size: 93180364
+        media_type: "zip"
+        digest: "sha256:f6cbd0cc4bcfad0fc93bb9ef32a2d1867e5a5e340101bd89a1a9477a3043a6ba"
+  "446466006":
+    tag: "test-779-softshadow"
+    title: "test-779-softshadow"
+    url: "https://github.com/peiikai/LASRecomp/releases/tag/test-779-softshadow"
+    created_at: "2026-11-15T23:54:57Z"
+    published_at: "2026-11-16T00:08:00Z"
+    updated_at: "2026-11-16T00:08:00Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/peiikai/LASRecomp/zipball/test-779-softshadow"
+    source_tar_url: "https://api.github.com/repos/peiikai/LASRecomp/tarball/test-779-softshadow"
+    download_base: "https://github.com/peiikai/LASRecomp/releases/download/test-779-softshadow/"
+    assets:
+      "752799116":
+        name: "LAS.Recomp-test-779-softshadow-linux-aarch64.AppImage"
+        url_suffix: "LAS.Recomp-test-779-softshadow-linux-aarch64.AppImage"
+        size: 106752520
+        media_type: "application/vnd.appimage"
+        digest: "sha256:59df5f126b69a38567b443a0a1d35ee252cfabd3f8abb18774f29e77dc1a5674"
+      "752799119":
+        name: "LAS.Recomp-test-779-softshadow-windows-arm64.zip"
+        url_suffix: "LAS.Recomp-test-779-softshadow-windows-arm64.zip"
+        size: 93181968
+        media_type: "zip"
+        digest: "sha256:d729fac2a9ed59078543d260705dc8360e1997ce7b48ec52b97256055e97d4f9"
+  "446501481":
+    tag: "test-779-shadowtest"
+    title: "test-779-shadowtest"
+    url: "https://github.com/peiikai/LASRecomp/releases/tag/test-779-shadowtest"
+    created_at: "2026-11-16T00:54:27Z"
+    published_at: "2026-11-16T01:14:31Z"
+    updated_at: "2026-11-16T01:37:39Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/peiikai/LASRecomp/zipball/test-779-shadowtest"
+    source_tar_url: "https://api.github.com/repos/peiikai/LASRecomp/tarball/test-779-shadowtest"
+    download_base: "https://github.com/peiikai/LASRecomp/releases/download/test-779-shadowtest/"
+    assets:
+      "752959995":
+        name: "LAS.Recomp-test-779-shadowtest-windows-arm64.zip"
+        url_suffix: "LAS.Recomp-test-779-shadowtest-windows-arm64.zip"
+        size: 93178415
+        media_type: "zip"
+        digest: "sha256:b9781530cc523f1b17cee91c33250d8cce80444456ecb91b198ed466beafc384"
+      "752959999":
+        name: "LAS.Recomp-test-779-shadowtest-linux-aarch64.AppImage"
+        url_suffix: "LAS.Recomp-test-779-shadowtest-linux-aarch64.AppImage"
+        size: 106760712
+        media_type: "application/vnd.appimage"
+        digest: "sha256:99c8dabd366989af148a3daf5037c6abffed1f799797004edc210e9dbabab6b8"
+  "446530180":
+    tag: "test-779-shadowtest2"
+    title: "test-779-shadowtest2"
+    url: "https://github.com/peiikai/LASRecomp/releases/tag/test-779-shadowtest2"
+    created_at: "2026-11-16T01:37:15Z"
+    published_at: "2026-11-16T02:08:25Z"
+    updated_at: "2026-11-16T02:08:25Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/peiikai/LASRecomp/zipball/test-779-shadowtest2"
+    source_tar_url: "https://api.github.com/repos/peiikai/LASRecomp/tarball/test-779-shadowtest2"
+    download_base: "https://github.com/peiikai/LASRecomp/releases/download/test-779-shadowtest2/"
+    assets:
+      "753091340":
+        name: "LAS.Recomp-test-779-shadowtest2-linux-aarch64.AppImage"
+        url_suffix: "LAS.Recomp-test-779-shadowtest2-linux-aarch64.AppImage"
+        size: 106764808
+        media_type: "application/vnd.appimage"
+        digest: "sha256:16d79baa541d1983dca01c9bbd9bd1f949cbfdb69b2683f26ca463c4cbf60a44"
+      "753091343":
+        name: "LAS.Recomp-test-779-shadowtest2-windows-arm64.zip"
+        url_suffix: "LAS.Recomp-test-779-shadowtest2-windows-arm64.zip"
+        size: 93183763
+        media_type: "zip"
+        digest: "sha256:f1e7e0c9b33d48b8bf3d14d39526e7708c22f1a669395d86df0386565aa48b6d"
+  "446637899":
+    tag: "test-779-values"
+    title: "test-779-values"
+    url: "https://github.com/peiikai/LASRecomp/releases/tag/test-779-values"
+    created_at: "2026-11-16T05:11:36Z"
+    published_at: "2026-11-16T16:27:19Z"
+    updated_at: "2026-11-16T16:27:19Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/peiikai/LASRecomp/zipball/test-779-values"
+    source_tar_url: "https://api.github.com/repos/peiikai/LASRecomp/tarball/test-779-values"
+    download_base: "https://github.com/peiikai/LASRecomp/releases/download/test-779-values/"
+    assets:
+      "753574099":
+        name: "LAS.Recomp-test-779-values-linux-aarch64.AppImage"
+        url_suffix: "LAS.Recomp-test-779-values-linux-aarch64.AppImage"
+        size: 106756616
+        media_type: "application/vnd.appimage"
+        digest: "sha256:5524fdc5daf3a51b01f134048c91c9e380c655bb43c3723a5435a9146c85419f"
+      "753574102":
+        name: "LAS.Recomp-test-779-values-windows-arm64.zip"
+        url_suffix: "LAS.Recomp-test-779-values-windows-arm64.zip"
+        size: 93183905
+        media_type: "zip"
+        digest: "sha256:8b729b1a400ac3ac7c29dafb07bd8620775b924e5d1372eadfacb037a9acd87f"
+  "447333906":
+    tag: "test-812-values"
+    title: "test-812-values"
+    url: "https://github.com/peiikai/LASRecomp/releases/tag/test-812-values"
+    created_at: "2026-11-16T16:39:18Z"
+    published_at: "2026-11-16T17:01:26Z"
+    updated_at: "2026-11-16T17:01:26Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/peiikai/LASRecomp/zipball/test-812-values"
+    source_tar_url: "https://api.github.com/repos/peiikai/LASRecomp/tarball/test-812-values"
+    assets:
+      "755673190":
+        name: "LAS.Recomp-test-812-values-windows.zip"
+        url: "https://github.com/peiikai/LASRecomp/releases/download/test-812-values/LAS.Recomp-test-812-values-windows.zip"
+        size: 100830672
+        media_type: "zip"
+        digest: "sha256:bc5fb1d4ffb1435819cca78894ec569057bcbf24a82c94d1d363411731ef14ad"
+  "447497101":
+    tag: "test-779-bias"
+    title: "test-779-bias"
+    url: "https://github.com/peiikai/LASRecomp/releases/tag/test-779-bias"
+    created_at: "2026-11-16T19:16:53Z"
+    published_at: "2026-11-16T19:29:18Z"
+    updated_at: "2026-11-16T19:29:18Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/peiikai/LASRecomp/zipball/test-779-bias"
+    source_tar_url: "https://api.github.com/repos/peiikai/LASRecomp/tarball/test-779-bias"
+    download_base: "https://github.com/peiikai/LASRecomp/releases/download/test-779-bias/"
+    assets:
+      "756146974":
+        name: "LAS.Recomp-test-779-bias-linux-aarch64.AppImage"
+        url_suffix: "LAS.Recomp-test-779-bias-linux-aarch64.AppImage"
+        size: 106764808
+        media_type: "application/vnd.appimage"
+        digest: "sha256:4b44ddd67b8540781f6ba70cf56a865c1391c4d675abb0bf8cdc7fa17e86b501"
+      "756146975":
+        name: "LAS.Recomp-test-779-bias-windows.zip"
+        url_suffix: "LAS.Recomp-test-779-bias-windows.zip"
+        size: 100825564
+        media_type: "zip"
+        digest: "sha256:c1b8617e31d0089621a68d7a366bffcc96a96017cc799d9c0b9c6e3de80a9518"
+      "756146978":
+        name: "LAS.Recomp-test-779-bias-windows-arm64.zip"
+        url_suffix: "LAS.Recomp-test-779-bias-windows-arm64.zip"
+        size: 93183963
+        media_type: "zip"
+        digest: "sha256:5cd5b40c5200331b00a8f4e8fd61e64ec404233776bdba173e2581775df837e9"
+  "447548058":
+    tag: "test-779-contours"
+    title: "test-779-contours"
+    url: "https://github.com/peiikai/LASRecomp/releases/tag/test-779-contours"
+    created_at: "2026-11-16T19:56:06Z"
+    published_at: "2026-11-16T20:53:41Z"
+    updated_at: "2026-11-16T20:53:41Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/peiikai/LASRecomp/zipball/test-779-contours"
+    source_tar_url: "https://api.github.com/repos/peiikai/LASRecomp/tarball/test-779-contours"
+    download_base: "https://github.com/peiikai/LASRecomp/releases/download/test-779-contours/"
+    assets:
+      "756265648":
+        name: "LAS.Recomp-test-779-contours-windows-arm64.zip"
+        url_suffix: "LAS.Recomp-test-779-contours-windows-arm64.zip"
+        size: 93183944
+        media_type: "zip"
+        digest: "sha256:743b615fae2b57aa6a83c4ac2cb10ed84904afd41ec17754e3485e34f016d1b1"
+      "756265651":
+        name: "LAS.Recomp-test-779-contours-linux-aarch64.AppImage"
+        url_suffix: "LAS.Recomp-test-779-contours-linux-aarch64.AppImage"
+        size: 106764808
+        media_type: "application/vnd.appimage"
+        digest: "sha256:c81afe6b8d90d6387e7ae8d12711ac1bd54f3d3384815f3318a7f2821220bd3e"
+      "756265664":
+        name: "LAS.Recomp-test-779-contours-windows.zip"
+        url_suffix: "LAS.Recomp-test-779-contours-windows.zip"
+        size: 100830409
+        media_type: "zip"
+        digest: "sha256:f42dd6f39f892f748d7edd498563b41f0e4db699a57761d807b8feb6566156e2"
