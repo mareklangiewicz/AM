@@ -3,36 +3,13 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 1180091786
 repository: "aethersdr/AetherSDR"
-collected_at: "2026-11-15T17:54:48Z"
+collected_at: "2026-11-18T22:08:27Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-15T17:54:48Z"
+observed_at: "2026-11-18T22:08:27Z"
 releases:
-  "346907578":
-    tag: "streamdeck-plugins"
-    title: "Stream Deck Plugins (stable)"
-    url: "https://github.com/aethersdr/AetherSDR/releases/tag/streamdeck-plugins"
-    created_at: "2026-06-30T05:34:16Z"
-    published_at: "2026-06-30T14:52:43Z"
-    updated_at: "2026-06-30T14:52:43Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/aethersdr/AetherSDR/zipball/streamdeck-plugins"
-    source_tar_url: "https://api.github.com/repos/aethersdr/AetherSDR/tarball/streamdeck-plugins"
-    download_base: "https://github.com/aethersdr/AetherSDR/releases/download/streamdeck-plugins/"
-    assets:
-      "462247889":
-        name: "streamcontroller-aethersdr.zip"
-        url_suffix: "streamcontroller-aethersdr.zip"
-        size: 45727
-        media_type: "zip"
-        digest: "sha256:5090e9f916bec8120bde294fbc3c85375b36c746889cf3f51f01a55530e04157"
-      "462247890":
-        name: "com.aethersdr.radio.streamDeckPlugin"
-        url_suffix: "com.aethersdr.radio.streamDeckPlugin"
-        size: 52929
-        digest: "sha256:80daf3faad4610bab882aa0bf0e866a49ada43802d76551cb78bbb0a64970a01"
   "348072331":
     tag: "v26.7.1"
     title: "AetherSDR v26.7.1 — 3D Stacked-Trace FFT Spectrum"
@@ -2894,3 +2871,278 @@ releases:
         url_suffix: "AetherTailnet-0.5.3-native.ssdr_waveform"
         size: 9192923
         digest: "sha256:14f00925b887e0c0cec0472d8b3dfcae6eb8229fd02307e7734c17dd02697192"
+  "446533772":
+    tag: "v26.11.3"
+    title: "AetherSDR v26.11.3 — A connection workspace with Locations and operator profiles"
+    url: "https://github.com/aethersdr/AetherSDR/releases/tag/v26.11.3"
+    created_at: "2026-11-16T02:13:44Z"
+    published_at: "2026-11-16T02:13:48Z"
+    updated_at: "2026-11-18T21:14:01Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/aethersdr/AetherSDR/zipball/v26.11.3"
+    source_tar_url: "https://api.github.com/repos/aethersdr/AetherSDR/tarball/v26.11.3"
+    download_base: "https://github.com/aethersdr/AetherSDR/releases/download/v26.11.3/"
+    assets:
+      "753111550":
+        name: "AetherSDR-Manual-v26.11.3.pdf"
+        url_suffix: "AetherSDR-Manual-v26.11.3.pdf"
+        size: 29647893
+        media_type: "application/pdf"
+        digest: "sha256:ce0311770f7620a23d8ef2e21986f689ae8466fc6de76e79fe3483a52e83d234"
+      "753207478":
+        name: "AetherSDR-v26.11.3-aarch64-symbols.tar.xz"
+        url_suffix: "AetherSDR-v26.11.3-aarch64-symbols.tar.xz"
+        size: 547510632
+        media_type: "application/x-xz"
+        digest: "sha256:444a859c3f57509468825ad3c6a4d1a1ab8c3635dc44e4c16b38d1582ebf26f2"
+      "753207479":
+        name: "AetherSDR-v26.11.3-aarch64.AppImage"
+        url_suffix: "AetherSDR-v26.11.3-aarch64.AppImage"
+        size: 204184072
+        digest: "sha256:4246e624d9ac67e08cee44b4cc6773b83004ceb751c44122728fb9578cddc1c1"
+      "753207480":
+        name: "AetherSDR-v26.11.3-aarch64.tar.zst"
+        url_suffix: "AetherSDR-v26.11.3-aarch64.tar.zst"
+        size: 190275133
+        digest: "sha256:89859ed97d1efe8f76b8819852be5ebfaa09cb6f65652f721e3985d1963e976f"
+      "753214841":
+        name: "AetherSDR-v26.11.3-x86_64.AppImage"
+        url_suffix: "AetherSDR-v26.11.3-x86_64.AppImage"
+        size: 155126264
+        digest: "sha256:93ec14fca3e33cfc7f7f0fcd3922549f81d4d2e47de2321c390ef6b447fa90e7"
+      "753214843":
+        name: "AetherSDR-v26.11.3-x86_64.tar.zst"
+        url_suffix: "AetherSDR-v26.11.3-x86_64.tar.zst"
+        size: 142317819
+        digest: "sha256:6b49893f5c3a0dcdba9cafb7e16cd52e3972305952c1130536bad6cd67f0cd00"
+      "753214845":
+        name: "AetherSDR-v26.11.3-x86_64-symbols.tar.xz"
+        url_suffix: "AetherSDR-v26.11.3-x86_64-symbols.tar.xz"
+        size: 379797344
+        media_type: "application/x-xz"
+        digest: "sha256:7ffa0a47258d31ea7f22f7d8a7cfc294d0ba50b7fa8a617198d761a6688fc3a6"
+      "753287238":
+        name: "AetherSDR-26.11.3.0-Windows-x64.msixupload"
+        url_suffix: "AetherSDR-26.11.3.0-Windows-x64.msixupload"
+        size: 412962452
+        digest: "sha256:40e4d3093e795a179d6969db72d2386c0172999b86bdbae0fc010c3463f4e86e"
+      "753287241":
+        name: "AetherSDR-v26.11.3-Windows-x64-setup.exe"
+        url_suffix: "AetherSDR-v26.11.3-Windows-x64-setup.exe"
+        size: 128558568
+        media_type: "application/x-msdos-program"
+        digest: "sha256:0766635e4ef6ecf5586d8af01970f872a6e6cc3fa60f950b5848b44973c5d14a"
+      "753287243":
+        name: "AetherSDR-v26.11.3-Windows-x64-symbols.tar.xz"
+        url_suffix: "AetherSDR-v26.11.3-Windows-x64-symbols.tar.xz"
+        size: 147721132
+        media_type: "application/x-xz"
+        digest: "sha256:6712e1fa0817ab83db93849dd2c75fccacd95f5e4a0d9ee238471209826606d7"
+      "753287244":
+        name: "AetherSDR-v26.11.3-Windows-x64-portable.zip"
+        url_suffix: "AetherSDR-v26.11.3-Windows-x64-portable.zip"
+        size: 167834481
+        media_type: "zip"
+        digest: "sha256:851633db20961e0200177091320792a95d7b500c9fc2e474368213ca23b7380d"
+      "753492406":
+        name: "AetherSDR-v26.11.3-macOS-intel.dmg"
+        url_suffix: "AetherSDR-v26.11.3-macOS-intel.dmg"
+        size: 124490345
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:1027e69c176541944fc572e5f55cffda2db6a2b5890b88ad70fe670af37c75d1"
+      "753492408":
+        name: "AetherSDR-v26.11.3-macOS-intel-symbols.tar.xz"
+        url_suffix: "AetherSDR-v26.11.3-macOS-intel-symbols.tar.xz"
+        size: 106794272
+        media_type: "application/x-xz"
+        digest: "sha256:5a7083f7fa340291c62269927ccc5fe361a29fd078e0dd8036dde1d5aa028e98"
+      "753492484":
+        name: "AetherSDR-v26.11.3-macOS-apple-silicon.dmg"
+        url_suffix: "AetherSDR-v26.11.3-macOS-apple-silicon.dmg"
+        size: 144489277
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:83e455efcbae4e9f0adf9f9c0ca98f9f6d84ff2ff906438f80131fdab148a742"
+      "753492485":
+        name: "AetherSDR-v26.11.3-macOS-apple-silicon-symbols.tar.xz"
+        url_suffix: "AetherSDR-v26.11.3-macOS-apple-silicon-symbols.tar.xz"
+        size: 106702440
+        media_type: "application/x-xz"
+        digest: "sha256:0a4e90e110a30c3a46795c26735e622c315968c8e8dcedf195ac511e91e1a014"
+      "753496285":
+        name: "AetherSDR-v26.11.3-macOS-apple-silicon.app.tar.zst"
+        url_suffix: "AetherSDR-v26.11.3-macOS-apple-silicon.app.tar.zst"
+        size: 119597226
+        digest: "sha256:9a809e1c0b6c3d64f58563f5b6f5d313ed88956e9ea872c9e075302fe96d579c"
+      "753497087":
+        name: "AetherSDR-v26.11.3-macOS-intel.app.tar.zst"
+        url_suffix: "AetherSDR-v26.11.3-macOS-intel.app.tar.zst"
+        size: 105441065
+        digest: "sha256:2c821fd2eae93f02ddd2725990ecdcda39f300bf9a7d8f081e4dc1438c9dd36e"
+      "753502183":
+        name: "AetherSDR-v26.11.3-macOS-apple-silicon.app.tar.zst.asc"
+        url_suffix: "AetherSDR-v26.11.3-macOS-apple-silicon.app.tar.zst.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:613da243a4cea5dba079e1825e0f41b3979c4e60f45cf11547e9e81b015a6381"
+      "753502184":
+        name: "AetherSDR-v26.11.3-aarch64.tar.zst.asc"
+        url_suffix: "AetherSDR-v26.11.3-aarch64.tar.zst.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:0ee412f0b980cbe17b470eaa7c17be0cc82833921fa8ba408542ebbc62a4365a"
+      "753502185":
+        name: "AetherSDR-v26.11.3-Windows-x64-portable.zip.asc"
+        url_suffix: "AetherSDR-v26.11.3-Windows-x64-portable.zip.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:e7fcc4e4173e52033fce8e56f4dd9f887e90acb359db254416c51c466f85fb9d"
+      "753502187":
+        name: "AetherSDR-v26.11.3-Windows-x64-setup.exe.asc"
+        url_suffix: "AetherSDR-v26.11.3-Windows-x64-setup.exe.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:06dc61e7e9fb665c278f13e80e07ca963db54e871fce19d1c230b1d4b8baeca7"
+      "753502195":
+        name: "AetherSDR-v26.11.3-aarch64.AppImage.asc"
+        url_suffix: "AetherSDR-v26.11.3-aarch64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:a7896fae0557548cccb4f70d3f806c230de2f49a0512438e8def25bc4e947093"
+      "753502202":
+        name: "AetherSDR-v26.11.3-macOS-intel.app.tar.zst.asc"
+        url_suffix: "AetherSDR-v26.11.3-macOS-intel.app.tar.zst.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:e6e26c8e0f8a9fc794f85d884fc1692ed0d1e08b32de1770824dfc87d3f763b2"
+      "753502204":
+        name: "AetherSDR-v26.11.3-source.tar.gz.asc"
+        url_suffix: "AetherSDR-v26.11.3-source.tar.gz.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:bec42430ae1e89d114f3c137d04e0f3128aa72999eb1f58476933af879506280"
+      "753502212":
+        name: "AetherSDR-v26.11.3-x86_64.AppImage.asc"
+        url_suffix: "AetherSDR-v26.11.3-x86_64.AppImage.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:e1e975bc0cd5a9155a41aef89a767b9a85c860a761eed146b81622f332c0e375"
+      "753502222":
+        name: "AetherSDR-v26.11.3-x86_64.tar.zst.asc"
+        url_suffix: "AetherSDR-v26.11.3-x86_64.tar.zst.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:77b03582956be0dfbbd0a8c68d153dedd4f48b9075e00693e7479fe15aac319f"
+      "753502233":
+        name: "SHA256SUMS.txt.asc"
+        url_suffix: "SHA256SUMS.txt.asc"
+        size: 228
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8372b80293905c0bab6b84fb3bf2c31299dda73893c0f3ef0b7321cb9efcd728"
+      "753502235":
+        name: "AetherSDR-v26.11.3-source.tar.gz"
+        url_suffix: "AetherSDR-v26.11.3-source.tar.gz"
+        size: 243828044
+        media_type: "application/x-gtar"
+        digest: "sha256:436c748031cdb542f51189bbd626a41dc4e0c8c2aa5105ac1aee8bbf2fcc1860"
+      "753502236":
+        name: "SHA256SUMS.txt"
+        url_suffix: "SHA256SUMS.txt"
+        size: 1042
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:0d2d4e303b64185d241e101d3078d62a66bfaade30c37a038e4429400f100e75"
+      "765029057":
+        name: "AetherSDR-v26.11.3-Windows-x64-from-v26.11.2.update.tar"
+        url_suffix: "AetherSDR-v26.11.3-Windows-x64-from-v26.11.2.update.tar"
+        size: 13813760
+        media_type: "application/x-tar"
+        digest: "sha256:e1a246903d09846011172f9738878aa16397044ca61e62d6499eb5efce879bf2"
+      "765029058":
+        name: "AetherSDR-v26.11.3-Windows-x64-from-v26.10.3.update.tar"
+        url_suffix: "AetherSDR-v26.11.3-Windows-x64-from-v26.10.3.update.tar"
+        size: 21975040
+        media_type: "application/x-tar"
+        digest: "sha256:c0856963f2b78946f92f8e1c8c5ce499996c1392ba321f18eb9e1d7eeebbe8e0"
+      "765029060":
+        name: "AetherSDR-v26.11.3-Windows-x64-from-v26.11.1.update.tar"
+        url_suffix: "AetherSDR-v26.11.3-Windows-x64-from-v26.11.1.update.tar"
+        size: 17479680
+        media_type: "application/x-tar"
+        digest: "sha256:ef11f4278aff65f2a45dbb18026b0154737b60687fd224fa842ccc0e0b0e1468"
+      "765029061":
+        name: "AetherSDR-v26.11.3-Windows-x64-from-v26.10.4.update.tar"
+        url_suffix: "AetherSDR-v26.11.3-Windows-x64-from-v26.10.4.update.tar"
+        size: 17756160
+        media_type: "application/x-tar"
+        digest: "sha256:a4f155f8920ae17571f39129f634eb166c804449864b116184ff9f6d19372f81"
+      "765029064":
+        name: "AetherSDR-v26.11.3-aarch64-from-v26.10.3.update.tar"
+        url_suffix: "AetherSDR-v26.11.3-aarch64-from-v26.10.3.update.tar"
+        size: 67655680
+        media_type: "application/x-tar"
+        digest: "sha256:8d9a0ca93418515cd4c25f479d9043ef349049f92af5f2671a759b8e6d1d1a35"
+      "765029116":
+        name: "AetherSDR-v26.11.3-aarch64-from-v26.10.4.update.tar"
+        url_suffix: "AetherSDR-v26.11.3-aarch64-from-v26.10.4.update.tar"
+        size: 67276800
+        media_type: "application/x-tar"
+        digest: "sha256:ec3a5004f4e2917ca05f1b75dd6bd2055a8fa7b77febeef11f848d9020bd4f8c"
+      "765029137":
+        name: "AetherSDR-v26.11.3-aarch64-from-v26.11.2.update.tar"
+        url_suffix: "AetherSDR-v26.11.3-aarch64-from-v26.11.2.update.tar"
+        size: 63252480
+        media_type: "application/x-tar"
+        digest: "sha256:90d4e78defc98cccaa234bdcffe4610b1524f791002b3b886d6fb7aedfa5bd81"
+      "765029139":
+        name: "AetherSDR-v26.11.3-aarch64-from-v26.11.1.update.tar"
+        url_suffix: "AetherSDR-v26.11.3-aarch64-from-v26.11.1.update.tar"
+        size: 66928640
+        media_type: "application/x-tar"
+        digest: "sha256:013fa92cd23832363112b9bf509d1a534b8931e81a18c1bf58e06ce6b771403f"
+      "765029188":
+        name: "AetherSDR-v26.11.3-macOS-apple-silicon-from-v26.11.1.update.tar"
+        url_suffix: "AetherSDR-v26.11.3-macOS-apple-silicon-from-v26.11.1.update.tar"
+        size: 13649920
+        media_type: "application/x-tar"
+        digest: "sha256:de2dcc974bc1cfb75b74e4ed4f53aa85096092d7261ea996fc9bdd3328f16835"
+      "765029196":
+        name: "AetherSDR-v26.11.3-macOS-apple-silicon-from-v26.11.2.update.tar"
+        url_suffix: "AetherSDR-v26.11.3-macOS-apple-silicon-from-v26.11.2.update.tar"
+        size: 10096640
+        media_type: "application/x-tar"
+        digest: "sha256:18f3ac1d8942897180d36fc762aae7cba43f1a453ad44b1a8334c5fb9108b550"
+      "765029236":
+        name: "AetherSDR-v26.11.3-macOS-intel-from-v26.11.1.update.tar"
+        url_suffix: "AetherSDR-v26.11.3-macOS-intel-from-v26.11.1.update.tar"
+        size: 13731840
+        media_type: "application/x-tar"
+        digest: "sha256:c2f19336af1b1b4d126f62e96b4d0d126e9169162581bb52e1aa37f9bfe3a917"
+      "765029255":
+        name: "AetherSDR-v26.11.3-macOS-intel-from-v26.11.2.update.tar"
+        url_suffix: "AetherSDR-v26.11.3-macOS-intel-from-v26.11.2.update.tar"
+        size: 10106880
+        media_type: "application/x-tar"
+        digest: "sha256:3bb6cb22eb215bc99d59fe40060da9d8d7a4f11f87785831fa20393ea03cbe0e"
+      "765029259":
+        name: "AetherSDR-v26.11.3-x86_64-from-v26.10.3.update.tar"
+        url_suffix: "AetherSDR-v26.11.3-x86_64-from-v26.10.3.update.tar"
+        size: 17418240
+        media_type: "application/x-tar"
+        digest: "sha256:e7d6c5a966663f1bec5fdbb5f9cbe87f8be72e0dc2a71873daf6644d9d7dbc76"
+      "765029278":
+        name: "AetherSDR-v26.11.3-x86_64-from-v26.10.4.update.tar"
+        url_suffix: "AetherSDR-v26.11.3-x86_64-from-v26.10.4.update.tar"
+        size: 16967680
+        media_type: "application/x-tar"
+        digest: "sha256:62348f5340257310c1e1b6a9b7ed1fd930adee0512dc91ec29ec02de11dfacc2"
+      "765029288":
+        name: "AetherSDR-v26.11.3-x86_64-from-v26.11.1.update.tar"
+        url_suffix: "AetherSDR-v26.11.3-x86_64-from-v26.11.1.update.tar"
+        size: 16599040
+        media_type: "application/x-tar"
+        digest: "sha256:311f4d2fb4deb5ff7ab3c1e2297065798c71cb86db6fced18fee992411a5b59b"
+      "765029295":
+        name: "AetherSDR-v26.11.3-x86_64-from-v26.11.2.update.tar"
+        url_suffix: "AetherSDR-v26.11.3-x86_64-from-v26.11.2.update.tar"
+        size: 13281280
+        media_type: "application/x-tar"
+        digest: "sha256:cfacdf82cb35e170d8bfbc784b6fbda30aa1627ad7c78ac668ae42577e0b7bdb"
