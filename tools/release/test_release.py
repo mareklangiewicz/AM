@@ -171,26 +171,52 @@ class Output(unittest.TestCase):
 
 
 class Watch(unittest.TestCase):
-    def watch(self, script, minutes=10):
+    def watch(self, script, minutes=10, out=lambda line: None):
         now = [0.0]
         run = Fake(script)
         def sleep(seconds): now[0] += seconds
-        good = release.watch(run, dict(fast=21, catalog=31), minutes, out=lambda line: None,
+        good = release.watch(run, dict(fast=21, catalog=31), minutes, out=out,
                              sleep=sleep, clock=lambda: now[0])
         self.assertEqual(run.script, [])
         return good
 
     def test_all_green(self):
-        self.assertTrue(self.watch([view(21, 'in_progress'), view(31, 'queued'),
-                                    view(21, 'completed', 'success'), view(31, 'completed', 'success')]))
+        self.assertEqual(self.watch([view(21, 'in_progress'), view(31, 'queued'),
+                                     view(21, 'completed', 'success'), view(31, 'completed', 'success')]), release.GREEN)
 
     def test_one_failure(self):
-        self.assertFalse(self.watch([view(21, 'completed', 'failure'), view(31, 'completed', 'success')]))
+        self.assertEqual(self.watch([view(21, 'completed', 'failure'), view(31, 'completed', 'success')]), release.RED)
 
-    def test_deadline(self):
+    def test_deadline_is_not_a_failure_and_says_how_to_continue(self):
         polls = int(60/release.POLL_SECONDS)
-        self.assertFalse(self.watch([view(21, 'completed', 'success')]+[view(31, 'in_progress')]*(polls+1),
-                                    minutes=1))
+        lines = []
+        state = self.watch([view(21, 'completed', 'success')]+[view(31, 'in_progress')]*(polls+1),
+                           minutes=1, out=lines.append)
+        self.assertEqual(state, release.RUNNING)
+        self.assertIn('release.py watch 31', lines[-1])
+        self.assertNotIn('21', lines[-1])
+
+    def test_a_failure_is_reported_even_if_another_run_is_still_going(self):
+        polls = int(60/release.POLL_SECONDS)
+        self.assertEqual(self.watch([view(21, 'completed', 'failure')]+[view(31, 'in_progress')]*(polls+1),
+                                    minutes=1), release.RED)
+
+
+class Resume(unittest.TestCase):
+    def test_without_ids_it_watches_every_run_on_the_pushed_commit(self):
+        run = Fake([
+            (['git', 'fetch', '--quiet', 'origin', 'main-marek'], ''),
+            (['git', 'rev-parse', 'origin/main-marek'], HEAD+'\n'),
+            (['gh', 'run', 'list', '--commit', HEAD, '--limit', '20', '--json', 'databaseId,workflowName', *R],
+             ok([dict(databaseId=21, workflowName='Fast tests'),
+                 dict(databaseId=31, workflowName='YAML release catalog'),
+                 dict(databaseId=12, workflowName='Fast tests')])),  # gh lists newest first
+        ])
+        self.assertEqual(release.pushed_runs(run), {'Fast tests': 21, 'YAML release catalog': 31})
+        self.assertEqual(run.script, [])
+
+    def test_given_ids_are_watched_as_they_are(self):
+        self.assertEqual(release.named(['44', '45']), {'44': 44, '45': 45})
 
 
 if __name__ == '__main__':

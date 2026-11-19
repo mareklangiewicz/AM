@@ -2,6 +2,10 @@
 
     python3 -B tools/release/release.py ship [--ci NAME] [--watch MINUTES]
     python3 -B tools/release/release.py plan [--ci NAME]     what ship would do; writes nothing
+    python3 -B tools/release/release.py watch [RUN_ID ...] [--minutes N]
+
+Exit codes of a watch: 0 all green, 1 a run failed, 3 still running at the
+deadline (it prints the watch command that continues).
 
 Run from a main-marek checkout whose HEAD is the commit to ship. A commit that
 changes anything outside docs/ needs `--ci NAME`: `ci/NAME` on origin must be
@@ -142,8 +146,14 @@ def ship(run, ci=None, out=say, sleep=time.sleep):
     return result
 
 
+GREEN, RED, RUNNING = 'green', 'red', 'running'
+EXIT = {GREEN: 0, RED: 1, RUNNING: 3}
+
+
 def watch(run, ids, minutes, out=say, sleep=time.sleep, clock=time.monotonic):
-    """True when every run completed successfully before the deadline."""
+    """GREEN when every run succeeded, RED as soon as one did not (once the
+    deadline or the others end), RUNNING when the deadline came first: then
+    the last line is the command that continues the watch (ticket 41)."""
     deadline = clock()+minutes*60
     pending = dict(ids)
     good = True
@@ -151,15 +161,38 @@ def watch(run, ids, minutes, out=say, sleep=time.sleep, clock=time.monotonic):
         for name, run_id in list(pending.items()):
             state = json.loads(gh(run, 'run', 'view', str(run_id), '--json', 'status,conclusion'))
             if state['status'] == 'completed':
-                out(name+' run '+str(run_id)+': '+state['conclusion'])
+                out(label(name, run_id)+': '+state['conclusion'])
                 good = good and state['conclusion'] == 'success'
                 del pending[name]
         if not pending:
-            return good
+            return GREEN if good else RED
         if clock() >= deadline:
-            out('still running at the deadline: '+', '.join(name+' '+str(i) for name, i in pending.items()))
-            return False
+            out('still running at the deadline: '+', '.join(label(name, i) for name, i in pending.items()))
+            if not good:
+                return RED
+            out('not failed; continue with: python3 -B tools/release/release.py watch '
+                + ' '.join(str(i) for i in pending.values())+' --minutes 30')
+            return RUNNING
         sleep(POLL_SECONDS)
+
+
+def pushed_runs(run):
+    """Every recent run on the commit origin/main-marek points at, by workflow name."""
+    output(run, ['git', 'fetch', '--quiet', 'origin', BRANCH])
+    head = output(run, ['git', 'rev-parse', 'origin/'+BRANCH]).strip()
+    found = {}
+    for row in runs(run, '--commit', head, '--limit', '20', '--json', 'databaseId,workflowName'):
+        found.setdefault(row['workflowName'], row['databaseId'])
+    return found
+
+
+def named(ids):
+    """Runs given by id; label() prints them as plain 'run ID'."""
+    return {i: int(i) for i in ids}
+
+
+def label(name, run_id):
+    return ('' if name == str(run_id) else name+' ')+'run '+str(run_id)
 
 
 def main(argv=None):
@@ -170,15 +203,23 @@ def main(argv=None):
     command.add_argument('--watch', type=float, metavar='MINUTES', help='then wait for the runs, at most this long')
     sub.add_parser('plan', help='print what ship would do; writes nothing').add_argument(
         '--ci', metavar='NAME', help='the tested branch ci/NAME')
+    resume = sub.add_parser('watch', help='watch runs (default: every run on origin/main-marek) until done')
+    resume.add_argument('ids', nargs='*', metavar='RUN_ID')
+    resume.add_argument('--minutes', type=float, default=30)
     args = parser.parse_args(argv)
+    if args.operation == 'watch':
+        ids = named(args.ids) if args.ids else pushed_runs(system)
+        if not ids:
+            raise SystemExit('no runs to watch')
+        raise SystemExit(EXIT[watch(system, ids, args.minutes)])
     if args.operation == 'plan':
         raise SystemExit(0 if plan(system, ci=args.ci) else 1)
     try:
         ids = ship(system, ci=args.ci)
     except Refused as refusal:
         raise SystemExit('refused: '+str(refusal))
-    if args.watch is not None and not watch(system, ids, args.watch):
-        raise SystemExit(1)
+    if args.watch is not None:
+        raise SystemExit(EXIT[watch(system, ids, args.watch)])
 
 
 if __name__ == '__main__':

@@ -134,6 +134,8 @@ no `--ci`), repins `CATALOG_SCHEDULE_REVISION` and dispatches a catalog run
 only when the collection inputs changed, and prints and watches the run ids.
 `release.py plan [--ci <name>]` prints what `ship` would do (the refusal, or
 the push and whether it repins, with the changed inputs) and writes nothing.
+`release.py watch [RUN_ID ...]` continues a watch (by default every run on
+`origin/main-marek`); exit 3 means still running at the deadline, not failed.
 A single file:
 
 ```sh
