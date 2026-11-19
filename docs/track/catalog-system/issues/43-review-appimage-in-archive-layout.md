@@ -64,3 +64,9 @@ Shipped with Marek's approval: Long tests 44534741934 green on
 pushed `4a0efa530` and repinned `CATALOG_SCHEDULE_REVISION` from
 `db00f2544` (4,631 inputs); Fast tests 44536081144 and dispatched catalog run
 44536085052 green. `ci/in-archive` deleted.
+
+November 19, 2026, review follow-up: the guard checked only that the include
+rule's text ends in `mage$`, so a top-level alternative
+(`https.*zip$|https.*AppImage$`, or BRE `\|`) passed while matching
+archives. `fd9a4c343`: that rule counts only when no `|` sits outside a
+group or bracket expression. No declaration in the tree has such a pattern.

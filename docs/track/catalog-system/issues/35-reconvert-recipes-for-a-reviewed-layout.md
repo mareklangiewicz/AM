@@ -113,10 +113,8 @@ replays check the exact set of derived files; `release.py watch` continues
 with the minutes it was given; `convert.py` reads `template.settings`.
 Not fixed: a declaration that is not UTF-8 still crashes `relayout`, as it
 crashes `merge.py` (108, 163, 236); declarations are generated as UTF-8.
-Open, for Marek to decide:
-- The ticket 43 guard (`bulk_recipes.py:86`) checks that the include rule's
-  text ends in `mage$`, so a top-level alternation such as
-  `https.*zip$|https.*AppImage$` passes. No recipe has that shape today.
+Open, for Marek to decide (the ticket 43 guard was fixed in `fd9a4c343`,
+see ticket 43):
 - `FIELDS` omits compiled fields (`tools`, `selection`, `tag_pattern`,
   `git_ref`, ...), and `selections()` compiles only the changed recipes, so
   "same selection" is narrower than this ticket's Outcome.
@@ -130,3 +128,8 @@ Open, for Marek to decide:
   `layouts.json`; `origins.py:13` hardcodes version ids.
 - `incremental.py` format-2 branches are still reached from
   `rehearse_pipeline.py`: leave them to ticket 25.
+
+Shipped with Marek's approval: Long tests 44564074865 green on
+`ci/review-fixes`; `release.py ship` pushed `e019f7ce1`, Fast tests
+44566930800 green. Collection inputs unchanged, so `CATALOG_SCHEDULE_REVISION`
+stays `4a0efa530`. `ci/review-fixes` deleted.
