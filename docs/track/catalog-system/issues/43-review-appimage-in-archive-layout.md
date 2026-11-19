@@ -70,3 +70,7 @@ rule's text ends in `mage$`, so a top-level alternative
 (`https.*zip$|https.*AppImage$`, or BRE `\|`) passed while matching
 archives. `fd9a4c343`: that rule counts only when no `|` sits outside a
 group or bracket expression. No declaration in the tree has such a pattern.
+Shipped with Marek's approval: Long tests 44580340125 green on `ci/guard`;
+`release.py ship` pushed `fa1c00518` and repinned `CATALOG_SCHEDULE_REVISION`
+from `4a0efa530` (2 inputs); Fast tests 44582074400 and dispatched catalog run
+44582080003 green. `ci/guard` deleted.
