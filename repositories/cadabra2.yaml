@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 45484302
 repository: "kpeeters/cadabra2"
-collected_at: "2026-11-15T23:02:25Z"
+collected_at: "2026-11-19T03:38:22Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-15T23:02:25Z"
+observed_at: "2026-11-19T03:38:22Z"
 releases:
   "35884435":
     tag: "2.3.6.2"
@@ -1489,47 +1489,107 @@ releases:
     tag: "devel"
     title: "Development build (devel)"
     url: "https://github.com/kpeeters/cadabra2/releases/tag/devel"
-    created_at: "2026-11-15T13:00:17Z"
+    created_at: "2026-11-18T21:33:11Z"
     published_at: "2026-11-15T13:22:20Z"
-    updated_at: "2026-11-15T13:22:26Z"
+    updated_at: "2026-11-18T22:07:19Z"
     prerelease: true
     source_zip_url: "https://api.github.com/repos/kpeeters/cadabra2/zipball/devel"
     source_tar_url: "https://api.github.com/repos/kpeeters/cadabra2/tarball/devel"
     download_base: "https://github.com/kpeeters/cadabra2/releases/download/devel/"
     assets:
-      "751077858":
-        name: "cadabra2-2.6.1-ubuntu-24.04-noble-x86_64.deb"
-        url_suffix: "cadabra2-2.6.1-ubuntu-24.04-noble-x86_64.deb"
-        size: 12831828
-        media_type: "application/x-debian-package"
-        digest: "sha256:2d9fa77e9f7569286c1df18fa14d5e0e29afed41959e4d6a124b9a735a2aafe1"
-      "751077859":
-        name: "cadabra2-2.6.1-debian-13-trixie-x86_64.deb"
-        url_suffix: "cadabra2-2.6.1-debian-13-trixie-x86_64.deb"
-        size: 12851000
-        media_type: "application/x-debian-package"
-        digest: "sha256:2b836dd6ceb7563749d1d1d4c62e3bd9bb346a860b700d2ab50be76f350e4a9d"
-      "751077860":
-        name: "cadabra2-2.6.1-ubuntu-26.04-resolute-arm64.deb"
-        url_suffix: "cadabra2-2.6.1-ubuntu-26.04-resolute-arm64.deb"
-        size: 12605834
-        media_type: "application/x-debian-package"
-        digest: "sha256:ef4b4dd63d4133a862267c6e5c62940093edb5c08423311d17a06b9579a4374a"
-      "751077862":
-        name: "cadabra2-2.6.1-ubuntu-24.04-noble-arm64.deb"
-        url_suffix: "cadabra2-2.6.1-ubuntu-24.04-noble-arm64.deb"
-        size: 12409208
-        media_type: "application/x-debian-package"
-        digest: "sha256:e31024e44093485c6b0aa12865caeb496c1820a53a001091928a2235abe1ac3e"
-      "751077863":
+      "765149723":
+        name: "Cadabra_2.6.1_x86_64.AppImage"
+        url_suffix: "Cadabra_2.6.1_x86_64.AppImage"
+        size: 224545272
+        media_type: "application/vnd.appimage"
+        digest: "sha256:bf14b414580d1813951977911311fc579ae886e4ab0c849d599d23c924d8ca84"
+      "765149726":
+        name: "Cadabra_2.6.1_arm64.AppImage"
+        url_suffix: "Cadabra_2.6.1_arm64.AppImage"
+        size: 214993416
+        media_type: "application/vnd.appimage"
+        digest: "sha256:b55154c85fa064a6209703dc05f01522fcf38e4168d1a8105a29f7f454cdf48b"
+      "765150609":
         name: "cadabra2-2.6.1-debian-13-trixie-arm64.deb"
         url_suffix: "cadabra2-2.6.1-debian-13-trixie-arm64.deb"
-        size: 12292316
+        size: 12298058
         media_type: "application/x-debian-package"
-        digest: "sha256:ab4f41bd6a1940c3eb6fd7268d06d32b031d0013ceb2ea3990d77eb047e9ddac"
-      "751077922":
+        digest: "sha256:318ef8648a53d428459e9e4a0d9abf5dcf492e670d8e745e9e8b2186c5c21aa7"
+      "765150612":
+        name: "cadabra2-2.6.1-debian-13-trixie-x86_64.deb"
+        url_suffix: "cadabra2-2.6.1-debian-13-trixie-x86_64.deb"
+        size: 12861118
+        media_type: "application/x-debian-package"
+        digest: "sha256:721aeba37317104650ef660748c5d7e7a84a4f64195e65990c182e17aaf85474"
+      "765150613":
+        name: "cadabra2-2.6.1-ubuntu-26.04-resolute-arm64.deb"
+        url_suffix: "cadabra2-2.6.1-ubuntu-26.04-resolute-arm64.deb"
+        size: 12612286
+        media_type: "application/x-debian-package"
+        digest: "sha256:23c5f5c51b2c804a2b88003528135df19a849691ddde05f4d706a27d5c04d1d4"
+      "765150619":
+        name: "cadabra2-2.6.1-ubuntu-24.04-noble-arm64.deb"
+        url_suffix: "cadabra2-2.6.1-ubuntu-24.04-noble-arm64.deb"
+        size: 12413120
+        media_type: "application/x-debian-package"
+        digest: "sha256:51d03ea52fa3f3715804d45180675976dace60cdb8c55becc84445576af2e265"
+      "765150622":
+        name: "cadabra2-2.6.1-ubuntu-24.04-noble-x86_64.deb"
+        url_suffix: "cadabra2-2.6.1-ubuntu-24.04-noble-x86_64.deb"
+        size: 12840440
+        media_type: "application/x-debian-package"
+        digest: "sha256:b749565d3bd3c14411c2c5e175c78a1dfb846ee9f17e14d587c6bbfe50f768d7"
+      "765150663":
         name: "cadabra2-2.6.1-ubuntu-26.04-resolute-x86_64.deb"
         url_suffix: "cadabra2-2.6.1-ubuntu-26.04-resolute-x86_64.deb"
-        size: 13022986
+        size: 13029924
         media_type: "application/x-debian-package"
-        digest: "sha256:2d4417acb4a59f1e449a956a9269d4cc08a460f784f1e1c8fc76b698af304b7f"
+        digest: "sha256:e2f013cd2c3e2f866f3b17c672fe5987b436a05fd015030399162f7ea406e45c"
+      "765170938":
+        name: "cadabra2-2.6.1-windows-arm64.msi"
+        url_suffix: "cadabra2-2.6.1-windows-arm64.msi"
+        size: 142716472
+        media_type: "application/x-msi"
+        digest: "sha256:29bb7720343c9455cc920c9dc928abd7153cf1a33f97a0b6417ed666dd3e0890"
+      "765170943":
+        name: "cadabra2-2.6.1-windows-x86_64.msi"
+        url_suffix: "cadabra2-2.6.1-windows-x86_64.msi"
+        size: 158833041
+        media_type: "application/x-msi"
+        digest: "sha256:002327ec8fd0d16ebbb302d8081af5f346c633baa44d2a23c71bc72655a5d26d"
+      "765180540":
+        name: "cadabra2-2.6.1-tumbleweed-arm64.rpm"
+        url_suffix: "cadabra2-2.6.1-tumbleweed-arm64.rpm"
+        size: 8111134
+        media_type: "application/x-rpm"
+        digest: "sha256:cc849686ab22e2ef3b4539f3114bb76cade016d6ee62caf592d2694de2538f6b"
+      "765180541":
+        name: "cadabra2-2.6.1-tumbleweed-x86_64.rpm"
+        url_suffix: "cadabra2-2.6.1-tumbleweed-x86_64.rpm"
+        size: 8456985
+        media_type: "application/x-rpm"
+        digest: "sha256:3b4a17f145c7e2409c84d8cca14dd4cc1da4a55bdbea6e2f5958eb0d082848fc"
+      "765184931":
+        name: "cadabra2-2.6.1-fedora43-arm64.rpm"
+        url_suffix: "cadabra2-2.6.1-fedora43-arm64.rpm"
+        size: 8115137
+        media_type: "application/x-rpm"
+        digest: "sha256:0fa4724dad556c428125fb9a9c111be82ad5e68a608f73f4be422ca26280027f"
+      "765184933":
+        name: "cadabra2-2.6.1-fedora44-x86_64.rpm"
+        url_suffix: "cadabra2-2.6.1-fedora44-x86_64.rpm"
+        size: 8433252
+        media_type: "application/x-rpm"
+        digest: "sha256:3fda905dd64389ee3c34b69f0019aa32466d411959809d69f6e8f037de5361e5"
+      "765184934":
+        name: "cadabra2-2.6.1-fedora44-arm64.rpm"
+        url_suffix: "cadabra2-2.6.1-fedora44-arm64.rpm"
+        size: 8092348
+        media_type: "application/x-rpm"
+        digest: "sha256:fda2ae59126b2d02ee9f070c57955d8c8db8a0d69b667e0af7c40d564d998014"
+      "765184935":
+        name: "cadabra2-2.6.1-fedora43-x86_64.rpm"
+        url_suffix: "cadabra2-2.6.1-fedora43-x86_64.rpm"
+        size: 8387402
+        media_type: "application/x-rpm"
+        digest: "sha256:57c301a3f224afacb890632a79946cd987468e34bd776b9a4a84cc2f657dfc75"
