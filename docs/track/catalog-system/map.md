@@ -193,7 +193,7 @@ approval boundaries.
 | [40 resolved](issues/40-release-plan-dry-run.md) | none | [`release.py plan`](issues/40-release-plan-dry-run.md#answer--november-19-2026) prints what `ship` would do from the same `decide` function, writing nothing. |
 | [41 resolved](issues/41-resumable-release-watch.md) | none | [`release.py watch`](issues/41-resumable-release-watch.md#answer--november-19-2026) continues a watch; exit 3 = still running at the deadline, 1 = failed. |
 | [42 resolved](issues/42-convert-reviewed-layout-long-recipes.md) | none | [1,575 long recipes of layouts 3.5 and 3.6 are declarations](issues/42-convert-reviewed-layout-long-recipes.md#answer--november-19-2026); catalog run 44519834411 green. |
-| [43 claimed](issues/43-review-appimage-in-archive-layout.md) | none | AppImage-in-archive `cf50304fc` as a layout for selections that name a direct AppImage (4,630 long recipes). |
+| [43 resolved](issues/43-review-appimage-in-archive-layout.md) | none | [AppImage-in-archive is a layout for direct-AppImage selections](issues/43-review-appimage-in-archive-layout.md#answer--november-19-2026); 4,630 long recipes are declarations, catalog run 44536085052 green. |
 
 Latest implementation evidence, November 8: Chromium desktop/narrow and Firefox
 checks pass; physical-device/comprehension limits remain with 13. Independent

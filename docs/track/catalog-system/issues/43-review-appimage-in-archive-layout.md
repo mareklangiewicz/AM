@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: claimed
+Status: resolved
 Blocked by: none
 
 ## Outcome
@@ -37,3 +37,30 @@ when the selection names a direct AppImage), not archive support in
   Long tests and a dispatched catalog run before it counts as done.
 
 ## Comments
+
+## Answer — November 19, 2026
+
+- `bbcd035d4`: `layouts.json` gains `cf50304fc:templates/AM-SAMPLE-AppImage-in-archive`
+  (setting `DESKTOP_STRIP_NO_SANDBOX=true`). Its lines shared with 3.6 keep
+  3.6's mappings; its 14 other lines (4 comments, 10 download-step lines in
+  installer and updater) are `neutral`, on the ground in Scope.
+  `relayout.py --layout` takes `COMMIT:PATH`, since `cf50304fc` now has two
+  reviewed templates.
+- Tests (`test_convert.py` `InArchive`): an anchored instance
+  (`aarch64/2ship2harkinian` at `ba061a639`) gives exactly the declaration of
+  the same parameters rendered into 3.6; an unanchored one
+  (`aarch64/6502-emulator`) refuses with "direct AppImage suffix". The
+  existing "declaration refuses, long converts" test moved from
+  `x86_64/1devtool` (now a legitimate declaration) to
+  `x86_64/actone-screenplay`. `test_relayout.py` `Layout`: a shared commit
+  needs the path.
+- `4a0efa530`: `relayout.py --from long --write` converted 4,630 recipes,
+  all with unchanged selection; 659 refuse ("selector does not establish a
+  direct AppImage suffix") and stay long. A fresh `generate()` gave the
+  written module.
+
+Shipped with Marek's approval: Long tests 44534741934 green on
+`ci/in-archive` (fast, tree, Debian and Fedora e2e); `release.py ship`
+pushed `4a0efa530` and repinned `CATALOG_SCHEDULE_REVISION` from
+`db00f2544` (4,631 inputs); Fast tests 44536081144 and dispatched catalog run
+44536085052 green. `ci/in-archive` deleted.

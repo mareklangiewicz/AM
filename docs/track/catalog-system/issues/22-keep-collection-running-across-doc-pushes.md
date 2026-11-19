@@ -84,3 +84,5 @@ the gate, either passing (inputs equal) or failing red (inputs changed).
 
 November 17, 2026: the gate ignores `README.md` files under its paths (ticket
 38 comment); other Markdown such as `docs/catalog-format-v3.md` still counts.
+
+November 19, 2026: first scheduled run on a commit other than the pin with the same collection inputs: run 44531484910 (13:14Z) on `f893d8e03`, pin `db00f2544`; the gate step "Collection inputs equal the reviewed pin" passed, acquire and publish green. The red path is still unobserved on a scheduled run.
