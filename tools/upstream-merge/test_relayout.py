@@ -58,6 +58,17 @@ class Equivalence(unittest.TestCase):
                 self.assertEqual(len(found),1,found)
                 self.assertIn('x86_64/zulip',found[0]);self.assertIn(field,found[0])
 
+    def test_compiled_fields_a_declaration_would_drop_are_named(self):
+        # Shapes long recipes' policy rows have (x86_64/cccp, watched, cursor).
+        mutants={'selection':dict(selection='release'),
+                 'tag_pattern':dict(selection='release',tag_pattern='[0-9]$'),
+                 'tag_exclude':dict(selection='git-tag',tag_pattern='^v[0-9]',tag_exclude='alpha|next'),
+                 'git_file':dict(selection='git-file',git_ref='refs/heads/main',git_file='VERSION')}
+        for field,extra in mutants.items():
+            with self.subTest(field):
+                found=r.differences(self.before,[dict(self.policies[0],**extra)],{PATH:self.after},[])
+                self.assertEqual(len(found),1,found);self.assertIn(field,found[0])
+
     def test_a_recipe_that_stops_selecting_is_named(self):
         found=r.differences(self.before,self.policies,{PATH:b'#!/bin/sh\necho plain\n'},[])
         self.assertEqual(len(found),1,found);self.assertIn('x86_64/zulip',found[0])

@@ -7,8 +7,8 @@
 Every converted recipe whose original at merge-base(HEAD, upstream) is an
 instance of that layout (convert.layouts) is converted again as a recipe
 declaration from its own identities. A recipe whose conversion would select
-differently (repository, channel, asset pattern, URL rules, catalog app,
-fresh-only) is refused and left as it is. The derived files come from the
+differently (any of FIELDS: repository, channel, asset pattern, URL rules,
+catalog app, fresh-only, release/tag/Git selection, tools) is refused and left as it is. The derived files come from the
 upstream merge tool (merge.derive, merge.stage). It never commits.
 """
 import argparse
@@ -21,8 +21,11 @@ import tempfile
 import merge
 from merge import ROOT,Problem,convert,recipe_rows,url_policy_rows
 
-# What a recipe selects: compared before and after a re-conversion.
-FIELDS=('recipe','repository_id','repository','channel','asset_pattern','url_rules','catalog_app','fresh_only')
+# What a recipe selects: compared before and after a re-conversion. A missing
+# field is its default, so an explicit default is not a change.
+FIELDS=('recipe','repository_id','repository','channel','asset_pattern','url_rules','catalog_app','fresh_only',
+        'selection','tag_pattern','tag_exclude','git_ref','git_file','tools','tool_asset_suffix')
+DEFAULTS={'url_rules':[],'selection':'asset'}
 
 
 def selections(recipes,policies):
@@ -37,7 +40,7 @@ def selections(recipes,policies):
         rows=url_policy_rows(tree)+(recipe_rows(tree) if declared else [])
     found={}
     for row in rows:
-        selection={field:row.get(field,[] if field=='url_rules' else None) for field in FIELDS}
+        selection={field:row.get(field,DEFAULTS.get(field)) for field in FIELDS}
         found.setdefault('programs/'+row.get('source_recipe',row['recipe']),[]).append(selection)
     return {path:sorted(found.get(path,[]),key=lambda row:json.dumps(row,sort_keys=True)) for path in recipes}
 
