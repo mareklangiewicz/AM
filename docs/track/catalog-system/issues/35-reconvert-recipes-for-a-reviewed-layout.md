@@ -100,3 +100,9 @@ Findings on HEAD `6292edaae` (dry runs, originals at `ba061a639`):
   does not produce (`EXTRA_APP_LAUNCHERS`, `DESKTOP_EXEC`). The 9 from
   `bb53f3180` and 3.6 do not set `DESKTOP_STRIP_NO_SANDBOX=true`, though
   their layout does; not decided whether they should.
+
+November 19, 2026: shipped with Marek's approval. Long tests 44509415534
+green on `ci/relayout` (the new "Relayout replays" step: 2 tests, 12 s);
+`release.py ship --ci relayout --watch 30` pushed `077b463f5`, Fast tests
+44510586158 green. Collection inputs unchanged, so `CATALOG_SCHEDULE_REVISION`
+stays `a506f3dd5` and nothing was dispatched. `ci/relayout` deleted.
