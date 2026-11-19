@@ -17,7 +17,7 @@ LIFECYCLE = ROOT/'modules/appimage.am'
 def setup_catalog(cls):
     import tempfile
     saved = fixtures()
-    cls.repositories = {str(k): v[2] for k, v in saved.items()}
+    cls.repositories = {str(k): v for k, v in saved.items()}
     cls.apps = {'obsidian':262342594, 'nvim':16408992, 'nvim-nightly':16408992}
     cls.tmp = tempfile.TemporaryDirectory(prefix='yaml-fixture-')
     cls.addClassCleanup(cls.tmp.cleanup)

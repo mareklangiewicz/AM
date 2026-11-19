@@ -13,7 +13,7 @@ import unittest
 import fixture_manager as harness
 from fixture_manager import ROOT, NOW
 from publication import git
-from fixture_v3 import publish_local
+from fixture_v3 import expanded, publish_local
 from test_yaml_reader import SCHEMA
 
 SOURCE='https://raw.githubusercontent.com/selected-owner/selected.repo/feature/catalog'
@@ -151,7 +151,7 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\napp=${0##
         self.assertEqual(len(self.calls()),5) # ref + descriptor + apps + two sources
         self.clock='2026-11-04T12:00:00Z'
         from reference_policies import select_cohort
-        selected=select_cohort('x86_64/obsidian',self.repositories['262342594'],self.pin,
+        selected=select_cohort('x86_64/obsidian',expanded(self.repositories['262342594']),self.pin,
             now=datetime.fromisoformat(NOW.replace('Z','+00:00')))
         waiver=['--commit',self.pin,'--accept-stale-release',self.pin,selected['repository_id'],
             selected['release_id'],selected['asset_id'],selected['observed_at']]
@@ -245,7 +245,7 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\napp=${0##
 
     def test_pinned_network_read_survives_tip_movement_and_same_repo_batch_reuse(self):
         other=copy.deepcopy(self.repositories)
-        other['262342594']['collection'].update(status='failed',reason='transport')
+        other['262342594']['collected_at']='2026-10-27T16:00:00Z'  # any change moves the tip
         after=publish_local(self.repo,self.apps,other,schema=SCHEMA,max_file_bytes=2097152,expected_parent=self.pin)
         (self.path/'move-to').write_text(after)
         helper=self.module_dir/'catalog-yaml.am'
@@ -268,7 +268,7 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\napp=${0##
         self.assertNotEqual(r.returncode,0);self.assertFalse(self.app.exists())
         self.assertIn(b'--accept-stale-release',r.stderr)
         from reference_policies import select_cohort
-        selected=select_cohort('x86_64/obsidian',self.repositories['262342594'],self.pin,
+        selected=select_cohort('x86_64/obsidian',expanded(self.repositories['262342594']),self.pin,
             now=datetime.fromisoformat(NOW.replace('Z','+00:00')))
         flags=' '.join(['--commit',self.pin,'--accept-stale-release',self.pin,selected['repository_id'],
             selected['release_id'],selected['asset_id'],selected['observed_at']])
