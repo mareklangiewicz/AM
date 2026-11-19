@@ -52,3 +52,9 @@ call.
 November 19, 2026: shipped with Marek's approval as part of `6ff1c94fa` (Long tests 44514966125 on `ci/release-watch`, Fast tests 44516166447 green; no repin). `release.py plan` and `watch` were used for real in that ship.
 
 November 19, 2026: `plan` lists at most `SHOWN` (20) changed inputs, then `... and N more`. Its first big ship (ticket 42) printed all 1,576, too long to paste. Test: 25 paths give 20 lines and "and 5 more"; it was red before the cap.
+
+November 19, 2026, review follow-up: the Outcome's "each refusal that
+applies" is one refusal. `decide()`'s checks form a chain (on `main-marek`,
+something to ship, a fast-forward, `ci/NAME` is HEAD, its Long tests green),
+and each one means something only once the earlier ones pass, so the first
+refusal is the only one to act on. `plan` stays as it is.

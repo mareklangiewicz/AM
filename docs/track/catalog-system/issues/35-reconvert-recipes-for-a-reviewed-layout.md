@@ -113,13 +113,8 @@ replays check the exact set of derived files; `release.py watch` continues
 with the minutes it was given; `convert.py` reads `template.settings`.
 Not fixed: a declaration that is not UTF-8 still crashes `relayout`, as it
 crashes `merge.py` (108, 163, 236); declarations are generated as UTF-8.
-Open, for Marek to decide (the ticket 43 guard was fixed in `fd9a4c343`,
-see ticket 43):
-- `FIELDS` omits compiled fields (`tools`, `selection`, `tag_pattern`,
-  `git_ref`, ...), and `selections()` compiles only the changed recipes, so
-  "same selection" is narrower than this ticket's Outcome.
-- Ticket 40 `plan` prints only the first refusal, not "each refusal that
-  applies".
+Left over (the ticket 43 guard was fixed in `fd9a4c343`, see ticket 43;
+the other findings are resolved below):
 - `incremental.py` format-2 branches are still reached from
   `rehearse_pipeline.py`: leave them to ticket 25.
 
@@ -140,3 +135,13 @@ the tree at `d85c3851b^` has 579 declarations from template 3.6, and ticket
 with `layouts.json` as of `539ccac8d`, `report.py` writes `table.json` beside
 its inputs, `origins.py` finds layout versions by body hash; a rerun matches
 the published numbers and the old `origins.py` output byte for byte.
+
+`FIELDS` now holds every compiled selection field (`03523af78`). It left out
+`selection`, `tag_pattern`, `tag_exclude`, `git_ref`, `git_file`, `tools` and
+`tool_asset_suffix`; conversion carries only repository identities, so a
+re-converted recipe could have dropped them unnoticed. 32 long recipes have
+such policy rows; dry runs of all four layouts re-convert none of them, and
+none of the shipped conversions (`082502f64`, `a2fad9fc8`, `db00f2544`,
+`4a0efa530`) had one. `selections()` still compiles only the changed recipes:
+no compiled row has needed another recipe, so the whole-tree compile is not
+worth its cost. Ticket 40's first-refusal question: see ticket 40.
