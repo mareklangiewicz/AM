@@ -37,6 +37,24 @@ def ere(bre):
     return result
 
 
+def alternates(pattern):
+    """Whether this ERE has a '|' outside any group or bracket expression:
+    then its end anchors only the last alternative, not every match."""
+    depth=0;i=0
+    while i<len(pattern):
+        char=pattern[i]
+        if char=='\\':i+=1
+        elif char=='[':
+            i+=2 if pattern[i+1:i+2]=='^' else 1
+            if pattern[i:i+1]==']':i+=1
+            while i<len(pattern) and pattern[i]!=']':i+=1
+        elif char=='(':depth+=1
+        elif char==')':depth-=1
+        elif char=='|' and depth==0:return True
+        i+=1
+    return False
+
+
 def literal_selector(selector,app):
     """The selector with its only allowed variable, a literal APP, written out.
 
@@ -83,7 +101,9 @@ def url_rules(selector,*,require_appimage=True):
         rules.append(dict(pattern=pattern,ignore_case='i' in flags,exclude='v' in flags))
     # This translator only claims raw AppImages. An archive selector needs a
     # separately established payload layout, not a guessed extension contract.
-    if require_appimage and (extractions!=1 or not any(not rule['exclude'] and rule['pattern'].lower().endswith('mage$') for rule in rules)):
+    if require_appimage and (extractions!=1 or not any(
+            not rule['exclude'] and rule['pattern'].lower().endswith('mage$') and not alternates(rule['pattern'])
+            for rule in rules)):
         raise ValueError('selector does not establish a direct AppImage suffix')
     if not any(not rule['exclude'] and
                (re.match(r'^\^?https?',rule['pattern'].lower()) or 'download' in rule['pattern'].lower())

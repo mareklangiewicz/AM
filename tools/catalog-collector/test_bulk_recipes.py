@@ -63,6 +63,16 @@ class BulkRecipes(unittest.TestCase):
                          "sed 's/[()\",{} ]/\\n/g' | grep -oi 'https.*\\1mage$' | head -1"):
             with self.assertRaises(ValueError):b.url_rules(selector)
 
+    def test_an_alternative_beside_the_appimage_suffix_does_not_establish_it(self):
+        split="sed 's/[()\",{} ]/\\n/g' | "
+        for predicate in ("grep -oiE 'https.*zip$|https.*AppImage$'","grep -oi 'https.*zip$\\|https.*AppImage$'",
+                          "grep -oiE 'https.*(x|y)zip$|.*mage$'"):
+            with self.subTest(predicate),self.assertRaisesRegex(ValueError,'direct AppImage suffix'):
+                b.url_rules(split+predicate+' | head -1')
+        for predicate in ("grep -oiE 'https.*(x86|amd)64.*mage$'","grep -oiE 'https.*[|].*mage$'",
+                          "grep -oiE 'https.*\\|.*mage$'","grep -oi 'https.*|.*mage$'"):
+            with self.subTest(predicate):self.assertTrue(b.url_rules(split+predicate+' | head -1'))
+
     def test_architecture_source_alias_does_not_rename_installed_app(self):
         translated,_=b.translate(self.source(),'x86_64/0xfx',self.identity())
         translated=translated.replace('APP=0xfx\n','APP=0xfx\nCATALOG_APP=0xfx.x86_64\n')
