@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: open
+Status: resolved
 Blocked by: none
 
 ## Outcome
@@ -32,3 +32,20 @@ recipe counts then had to be reconciled by hand (ticket 33 Comments).
   them with a tested command.
 
 ## Comments
+
+## Answer — November 19, 2026
+
+- Home: `docs/track/<effort>/scripts/NN/`, one folder per ticket. The rule
+  is a bullet in `docs/agents/issue-tracker.md`, which `AGENTS.md` already
+  sends agents to before tracker work.
+- Ticket 31: its scripts were not lost after all; the full text was in the
+  appendix of `template-instances-31.md`. They are now files in
+  `scripts/31/` (byte for byte from the appendix), with `run.sh OUT_DIR` for
+  the pinned commits (`ba061a639`, `36c087049`). Rerun on myxps: 392 template
+  versions, 11,782 upstream recipes, and the main table equal to the
+  published one in all 172 compared cells (one cell differs only in format,
+  `0` vs `0 / 0`); the per-version split adds up to the sub-rows (reviewed
+  3,658 / 2,675; `bb53f3180` 1,236 / 1,233; `8b53a7656` 10). The appendix now
+  points to the folder; the fifth-form `git show` snippet stays in the doc.
+- Ticket 33's scripts stay replaced by `relayout.py` (ticket 35). Its
+  `tree_relayout.py` replay reproduces the shipped result.

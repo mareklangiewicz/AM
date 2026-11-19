@@ -11,5 +11,6 @@ Issues, research, and specs live in `docs/track/`, intentionally tracked by Git.
 - The frontier consists of open, unblocked tickets; take the lowest number first.
 - Claim by setting Status to claimed before work. Resolve by appending an Answer, setting Status to resolved, and adding a result and relative link to the map.
 - Append discussion under Comments; preserve earlier evidence and identify superseded assumptions.
+- A ticket's numbers come from scripts committed under `docs/track/<effort>/scripts/NN/` (NN = the ticket); the ticket names the script and the commits it ran on, so anyone can rerun it.
 
 When a skill says publish to the issue tracker, create or update a file here. When it says fetch a ticket, read its referenced file. Use docs/track/ wherever a skill assumes .scratch/. GitHub Issues and PRs remain external references unless explicitly requested.

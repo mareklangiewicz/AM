@@ -189,7 +189,7 @@ approval boundaries.
 | [36 resolved](issues/36-check-layout-differences-are-mapped.md) | none | [`layouts()` refuses unmapped differences](issues/36-check-layout-differences-are-mapped.md#answer--november-17-2026): each differing line is a setting, neutral, or dropped with a ticket. |
 | [37 resolved](issues/37-review-template-3-6-multiple-launchers.md) | none | [Shared installer installs every launcher](issues/37-review-template-3-6-multiple-launchers.md#answer--november-17-2026), handlers apart; two top-level desktop files no longer fail the install. |
 | [38 resolved](issues/38-release-sequence-script.md) | none | [`tools/release/release.py ship`](issues/38-release-sequence-script.md#answer--november-17-2026) moves `main-marek`: refuses untested commits, repins and dispatches only when collection inputs changed, watches the runs. |
-| [39 open](issues/39-keep-research-scripts-in-the-repo.md) | none | Ticket numbers come from committed scripts; recreate ticket 31's layout coverage count. |
+| [39 resolved](issues/39-keep-research-scripts-in-the-repo.md) | none | [Ticket numbers come from `scripts/NN/`](issues/39-keep-research-scripts-in-the-repo.md#answer--november-19-2026); ticket 31's scripts moved there and rerun to the same table. |
 | [40 resolved](issues/40-release-plan-dry-run.md) | none | [`release.py plan`](issues/40-release-plan-dry-run.md#answer--november-19-2026) prints what `ship` would do from the same `decide` function, writing nothing. |
 | [41 resolved](issues/41-resumable-release-watch.md) | none | [`release.py watch`](issues/41-resumable-release-watch.md#answer--november-19-2026) continues a watch; exit 3 = still running at the deadline, 1 = failed. |
 
