@@ -157,12 +157,43 @@ class LayoutDifferences(unittest.TestCase):
         # 3.6's launcher lines were dropped until the shared installer took
         # them over for every declaration (ticket 37); now nothing is dropped.
         layouts={layout.identity:layout for layout in load(self.rows())}
-        self.assertEqual(len(layouts),3)
+        self.assertEqual(len(layouts),4)
         rows={row['commit'][:9]:row for row in self.rows()}
         self.assertEqual([entry['line'] for entry in rows['bb53f3180']['differences']],[SED_BASE,SED_STRIP])
         self.assertEqual([entry for row in rows.values() for entry in row.get('differences',[]) if 'dropped' in entry],[])
         handler=next(entry for entry in rows['cf50304fc']['differences'] if "if grep -qi '^NoDisplay=true$'" in entry['line'])
         self.assertIn('ticket 37',handler['neutral'])
+
+
+UPSTREAM='ba061a639a50260b6be405b15b22be10be328264'
+IN_ARCHIVE='cf50304fc627a0c4c60376fbcbfd31b31bb4736f:templates/AM-SAMPLE-AppImage-in-archive'
+V36='cf50304fc627a0c4c60376fbcbfd31b31bb4736f:templates/AM-SAMPLE-AppImage'
+
+
+class InArchive(unittest.TestCase):
+    """AppImage-in-archive is a layout for selections that name a direct AppImage (ticket 43)."""
+    layouts={layout.identity:layout for layout in TEMPLATES}
+
+    def test_an_appimage_selection_declares_as_the_same_36_instance_would(self):
+        source=show(UPSTREAM,'aarch64/2ship2harkinian')
+        ids=[dict(repository_id=1142444249,repository='pkgforge-dev/2ship2harkinian-AppImage-Enhanced',
+                  requested_repository='pkgforge-dev/2ship2harkinian-appimage-enhanced')]
+        archive,v36=self.layouts[IN_ARCHIVE],self.layouts[V36]
+        parameters=archive.match(source)['parameters']
+        as36=v36.render(parameters)
+        self.assertNotEqual(as36,source)
+        result=c.convert(source,'aarch64/2ship2harkinian','declaration',ids,[archive])
+        self.assertEqual(result['template'],IN_ARCHIVE)
+        self.assertEqual(result['text'],c.convert(as36,'aarch64/2ship2harkinian','declaration',ids,[v36])['text'])
+        self.assertIn(STRIP,result['text'])
+
+    def test_a_selection_that_takes_any_asset_refuses(self):
+        source=show(UPSTREAM,'aarch64/6502-emulator')
+        self.assertEqual(c.recognize(source,[self.layouts[IN_ARCHIVE]])['template'],IN_ARCHIVE)
+        with self.assertRaisesRegex(c.Refusal,'direct AppImage suffix'):
+            c.convert(source,'aarch64/6502-emulator','declaration',
+                      [dict(repository_id=1166443294,repository='acwright/6502-EMULATOR',
+                            requested_repository='acwright/6502-emulator')],TEMPLATES)
 
 
 class Long(unittest.TestCase):
@@ -195,10 +226,15 @@ class Long(unittest.TestCase):
             c.convert(source,'x86_64/mpv','long',found[:-1])
 
     def test_declaration_refusal_does_not_decide_the_long_form(self):
-        source=show(BASE,'x86_64/1devtool')
-        found=[dict(repository_id=1179864103,repository='stoicsoft/1devtool-releases')]
-        with self.assertRaises(c.Refusal):c.convert(source,'x86_64/1devtool','declaration',found,TEMPLATES)
-        self.assertEqual(c.convert(source,'x86_64/1devtool','long',found)['form'],'long')
+        # An AppImage-in-archive instance whose selector takes any asset: no
+        # declaration (ticket 43), but a long recipe. 1devtool served here
+        # until its layout was reviewed; its selection names an AppImage.
+        source=show(BASE,'x86_64/actone-screenplay')
+        found=[dict(repository_id=1329785051,repository='BeetleBot/ActOne-Screenplay',
+                    requested_repository='beetlebot/actone-screenplay')]
+        with self.assertRaisesRegex(c.Refusal,'direct AppImage suffix'):
+            c.convert(source,'x86_64/actone-screenplay','declaration',found,TEMPLATES)
+        self.assertEqual(c.convert(source,'x86_64/actone-screenplay','long',found)['form'],'long')
 
 
 class CommandLine(unittest.TestCase):

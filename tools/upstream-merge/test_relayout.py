@@ -58,4 +58,13 @@ class Equivalence(unittest.TestCase):
         self.assertEqual(len(found),1,found);self.assertIn('x86_64/zulip',found[0])
 
 
+class Layout(unittest.TestCase):
+    def test_a_commit_shared_by_two_layouts_needs_the_path(self):
+        with self.assertRaisesRegex(r.Problem,'AM-SAMPLE-AppImage-in-archive') as raised:
+            r.chosen(r.convert.layouts(),'cf50304fc')
+        self.assertIn('templates/AM-SAMPLE-AppImage,',str(raised.exception)+',')
+        for path in ('templates/AM-SAMPLE-AppImage','templates/AM-SAMPLE-AppImage-in-archive'):
+            self.assertEqual(r.chosen(r.convert.layouts(),'cf50304fc:'+path).path,path)
+
+
 if __name__=='__main__':unittest.main()

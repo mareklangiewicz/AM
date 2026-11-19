@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Re-convert the recipes a reviewed layout covers (ticket 35).
 
-    relayout.py --layout COMMIT [--from FORM] [--upstream REV]   dry run
-    relayout.py --layout COMMIT [--from FORM] --write            write recipes and derived files
+    relayout.py --layout COMMIT[:PATH] [--from FORM] [--upstream REV]   dry run
+    relayout.py --layout COMMIT[:PATH] [--from FORM] --write            write recipes and derived files
 
 Every converted recipe whose original at merge-base(HEAD, upstream) is an
 instance of that layout (convert.layouts) is converted again as a recipe
@@ -59,6 +59,16 @@ def differences(before,before_policies,after,after_policies):
             for path,reason in changes(before,before_policies,after,after_policies).items()]
 
 
+def chosen(layouts,name):
+    """The one reviewed layout named COMMIT (a prefix) or COMMIT:PATH."""
+    commit,_,path=name.partition(':')
+    found=[layout for layout in layouts if layout.commit.startswith(commit) and path in ('',layout.path)]
+    if len(found)!=1:
+        raise Problem(f'{len(found)} reviewed layouts match {name!r}'
+                      +(': '+', '.join(layout.identity for layout in found)+'; name one as COMMIT:PATH' if found else ''))
+    return found[0]
+
+
 def plan(root,layout,ours='HEAD',upstream='upstream/main',forms=convert.FORMS):
     """Re-convert, as declarations from this one layout, every converted recipe
     whose original at merge-base(ours, upstream) is an instance of it and
@@ -72,8 +82,7 @@ def plan(root,layout,ours='HEAD',upstream='upstream/main',forms=convert.FORMS):
     differently)."""
     ours=merge.git(root,'rev-parse','--verify',ours+'^{commit}').stdout.decode().strip()
     base=merge.git(root,'merge-base',ours,upstream).stdout.decode().strip()
-    chosen=[template for template in convert.layouts(root) if template.commit.startswith(layout)]
-    if len(chosen)!=1:raise Problem(f'{len(chosen)} reviewed layouts match {layout!r}')
+    layout=chosen(convert.layouts(root),layout)
     fork,originals=merge.recipes(root,ours),merge.recipes(root,base)
     registry=json.loads(merge.text(root,ours,merge.REGISTRY));by_recipe={}
     for policy in registry:by_recipe.setdefault(policy['source_recipe'],[]).append(policy)
@@ -84,12 +93,12 @@ def plan(root,layout,ours='HEAD',upstream='upstream/main',forms=convert.FORMS):
         if before not in forms or original is None:continue
         recipe=path.removeprefix('programs/')
         try:
-            source=original.decode('utf-8');convert.recognize(source,chosen)
+            source=original.decode('utf-8');convert.recognize(source,[layout])
         except (convert.Refusal,UnicodeDecodeError):continue
         try:
             identities=(convert.declaration_identities(data.decode()) if before=='declaration'
                         else convert.policy_identities(by_recipe.get(recipe,[])))
-            result=convert.convert(source,recipe,'declaration',identities,chosen)
+            result=convert.convert(source,recipe,'declaration',identities,[layout])
         except convert.Refusal as refusal:
             refused[path]=str(refusal);continue
         if result['text'].encode()!=data:
@@ -114,7 +123,7 @@ def plan(root,layout,ours='HEAD',upstream='upstream/main',forms=convert.FORMS):
     found=differences({path:fork[path] for path in converted},mine(registry,True),
                       {row['path']:row['data'] for row in rows if row['path'] in converted},mine(after,True))
     if mine(registry,False)!=mine(after,False):found.append('policy rows of recipes not re-converted changed')
-    return dict(ours=ours,base=base,layout=chosen[0].commit,rows=rows,files=files,refused=refused,
+    return dict(ours=ours,base=base,layout=layout.identity,rows=rows,files=files,refused=refused,
                 retire=retire,differences=found)
 
 
@@ -133,7 +142,7 @@ def write(root,result):
 
 def summary(result):
     converted=Counter(row['form_before'] for row in result['rows'] if row['outcome']=='re-converted')
-    lines=[f"layout {result['layout'][:9]}, originals at {result['base'][:9]}, fork at {result['ours'][:9]}",
+    lines=[f"layout {result['layout'][:9]}{result['layout'][40:]}, originals at {result['base'][:9]}, fork at {result['ours'][:9]}",
            're-converted: '+(', '.join(f'{count} from {form}' for form,count in sorted(converted.items())) or 'none'),
            f"refused: {len(result['refused'])}"]
     lines+=['  '+path.removeprefix('programs/')+': '+reason for path,reason in sorted(result['refused'].items())]
@@ -145,7 +154,7 @@ def summary(result):
 
 def main(argv=None):
     parser=argparse.ArgumentParser(description=__doc__,formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument('--layout',required=True,help='commit (prefix) of a reviewed layout in layouts.json')
+    parser.add_argument('--layout',required=True,help='a reviewed layout in layouts.json: COMMIT (prefix), or COMMIT:PATH when a commit has two')
     parser.add_argument('--from',dest='forms',action='append',choices=convert.FORMS,
                         help='only re-convert recipes now in this form (repeatable; default both)')
     parser.add_argument('--upstream',default='upstream/main')

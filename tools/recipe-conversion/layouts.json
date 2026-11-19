@@ -139,5 +139,177 @@
         "neutral": "Launcher handling the shared installer applies to every declaration since ticket 37: every top-level desktop file, NoDisplay handlers apart, copies of the main launcher skipped."
       }
     ]
+  },
+  {
+    "commit": "cf50304fc627a0c4c60376fbcbfd31b31bb4736f",
+    "path": "templates/AM-SAMPLE-AppImage-in-archive",
+    "sha256": "d1ae5ae71a055af61f174425bfcd84e370ece780bcc50536b7674c76336f5119",
+    "note": "AppImage-in-archive at cf50304fc: AppImage 3.6 with a download step that unpacks archives; a layout only for selections naming a direct AppImage (ticket 43)",
+    "settings": {
+      "DESKTOP_STRIP_NO_SANDBOX": "true"
+    },
+    "differences": [
+      {
+        "line": "-# AM INSTALL SCRIPT VERSION 3.5",
+        "neutral": "Version comment; no install step."
+      },
+      {
+        "line": "+# AM INSTALL SCRIPT VERSION 3.6",
+        "neutral": "Version comment; no install step."
+      },
+      {
+        "line": "-# Keep this space in sync with other installation scripts",
+        "neutral": "Comment; no install step."
+      },
+      {
+        "line": "-# Use tar fx ./*tar* here for example in this line in case a compressed file is downloaded.",
+        "neutral": "Comment; no install step."
+      },
+      {
+        "line": "+[ -e ./*7z ] && 7z x ./*7z && rm -f ./*7z",
+        "neutral": "Download step: with one downloaded file whose name ends in \"mage\", the only kind a declaration can select (bulk_recipes.url_rules refuses a selector without an include rule ending in mage$, \"selector does not establish a direct AppImage suffix\"), no ./*7z or ./*zip exists, ./tmp/* is not a directory, and the file is moved as in 3.5/3.6 `mv ./tmp/*mage`. A name containing \"tar.\" makes `tar fx` fail on the AppImage and stop its && list, leaving the file (ticket 43)."
+      },
+      {
+        "line": "+[ -e ./*tar.* ] && tar fx ./*tar.* && rm -f ./*tar.*",
+        "neutral": "Download step: with one downloaded file whose name ends in \"mage\", the only kind a declaration can select (bulk_recipes.url_rules refuses a selector without an include rule ending in mage$, \"selector does not establish a direct AppImage suffix\"), no ./*7z or ./*zip exists, ./tmp/* is not a directory, and the file is moved as in 3.5/3.6 `mv ./tmp/*mage`. A name containing \"tar.\" makes `tar fx` fail on the AppImage and stop its && list, leaving the file (ticket 43)."
+      },
+      {
+        "line": "+[ -e ./*zip ] && unzip -qq ./*zip 1>/dev/null && rm -f ./*zip",
+        "neutral": "Download step: with one downloaded file whose name ends in \"mage\", the only kind a declaration can select (bulk_recipes.url_rules refuses a selector without an include rule ending in mage$, \"selector does not establish a direct AppImage suffix\"), no ./*7z or ./*zip exists, ./tmp/* is not a directory, and the file is moved as in 3.5/3.6 `mv ./tmp/*mage`. A name containing \"tar.\" makes `tar fx` fail on the AppImage and stop its && list, leaving the file (ticket 43)."
+      },
+      {
+        "line": "-mv ./tmp/*mage ./\"$APP\"",
+        "neutral": "Download step: with one downloaded file whose name ends in \"mage\", the only kind a declaration can select (bulk_recipes.url_rules refuses a selector without an include rule ending in mage$, \"selector does not establish a direct AppImage suffix\"), no ./*7z or ./*zip exists, ./tmp/* is not a directory, and the file is moved as in 3.5/3.6 `mv ./tmp/*mage`. A name containing \"tar.\" makes `tar fx` fail on the AppImage and stop its && list, leaving the file (ticket 43)."
+      },
+      {
+        "line": "-# Keep this space in sync with other installation scripts",
+        "neutral": "Comment; no install step."
+      },
+      {
+        "line": "+if [ -d ./tmp/* ]; then mv --backup=t ./tmp/*/* ./\"$APP\"; else mv --backup=t ./tmp/* ./\"$APP\" 2>/dev/null || mv --backup=t ./tmp/* ./\"$APP\"; fi",
+        "neutral": "Download step: with one downloaded file whose name ends in \"mage\", the only kind a declaration can select (bulk_recipes.url_rules refuses a selector without an include rule ending in mage$, \"selector does not establish a direct AppImage suffix\"), no ./*7z or ./*zip exists, ./tmp/* is not a directory, and the file is moved as in 3.5/3.6 `mv ./tmp/*mage`. A name containing \"tar.\" makes `tar fx` fail on the AppImage and stop its && list, leaving the file (ticket 43)."
+      },
+      {
+        "line": "-\t# Use tar fx ./*tar* here for example in this line in case a compressed file is downloaded.",
+        "neutral": "Comment; no install step."
+      },
+      {
+        "line": "+\t[ -e ./*7z ] && 7z x ./*7z && rm -f ./*7z",
+        "neutral": "Download step: with one downloaded file whose name ends in \"mage\", the only kind a declaration can select (bulk_recipes.url_rules refuses a selector without an include rule ending in mage$, \"selector does not establish a direct AppImage suffix\"), no ./*7z or ./*zip exists, ./tmp/* is not a directory, and the file is moved as in 3.5/3.6 `mv ./tmp/*mage`. A name containing \"tar.\" makes `tar fx` fail on the AppImage and stop its && list, leaving the file (ticket 43)."
+      },
+      {
+        "line": "+\t[ -e ./*tar.* ] && tar fx ./*tar.* && rm -f ./*tar.*",
+        "neutral": "Download step: with one downloaded file whose name ends in \"mage\", the only kind a declaration can select (bulk_recipes.url_rules refuses a selector without an include rule ending in mage$, \"selector does not establish a direct AppImage suffix\"), no ./*7z or ./*zip exists, ./tmp/* is not a directory, and the file is moved as in 3.5/3.6 `mv ./tmp/*mage`. A name containing \"tar.\" makes `tar fx` fail on the AppImage and stop its && list, leaving the file (ticket 43)."
+      },
+      {
+        "line": "+\t[ -e ./*zip ] && unzip -qq ./*zip 1>/dev/null && rm -f ./*zip",
+        "neutral": "Download step: with one downloaded file whose name ends in \"mage\", the only kind a declaration can select (bulk_recipes.url_rules refuses a selector without an include rule ending in mage$, \"selector does not establish a direct AppImage suffix\"), no ./*7z or ./*zip exists, ./tmp/* is not a directory, and the file is moved as in 3.5/3.6 `mv ./tmp/*mage`. A name containing \"tar.\" makes `tar fx` fail on the AppImage and stop its && list, leaving the file (ticket 43)."
+      },
+      {
+        "line": "-\tmv --backup=t ./tmp/*mage ./\"$APP\"",
+        "neutral": "Download step: with one downloaded file whose name ends in \"mage\", the only kind a declaration can select (bulk_recipes.url_rules refuses a selector without an include rule ending in mage$, \"selector does not establish a direct AppImage suffix\"), no ./*7z or ./*zip exists, ./tmp/* is not a directory, and the file is moved as in 3.5/3.6 `mv ./tmp/*mage`. A name containing \"tar.\" makes `tar fx` fail on the AppImage and stop its && list, leaving the file (ticket 43)."
+      },
+      {
+        "line": "+\tif [ -d ./tmp/* ]; then mv --backup=t ./tmp/*/* ./\"$APP\"; else mv --backup=t ./tmp/* ./\"$APP\" 2>/dev/null || mv --backup=t ./tmp/* ./\"$APP\"; fi",
+        "neutral": "Download step: with one downloaded file whose name ends in \"mage\", the only kind a declaration can select (bulk_recipes.url_rules refuses a selector without an include rule ending in mage$, \"selector does not establish a direct AppImage suffix\"), no ./*7z or ./*zip exists, ./tmp/* is not a directory, and the file is moved as in 3.5/3.6 `mv ./tmp/*mage`. A name containing \"tar.\" makes `tar fx` fail on the AppImage and stop its && list, leaving the file (ticket 43)."
+      },
+      {
+        "line": "-./\"$APP\" --appimage-extract *.desktop 1>/dev/null && mv ./squashfs-root/*.desktop ./\"$APP\".desktop",
+        "neutral": "Launcher handling the shared installer applies to every declaration since ticket 37: every top-level desktop file, NoDisplay handlers apart, copies of the main launcher skipped."
+      },
+      {
+        "line": "+./\"$APP\" --appimage-extract *.desktop 1>/dev/null",
+        "neutral": "Launcher handling the shared installer applies to every declaration since ticket 37: every top-level desktop file, NoDisplay handlers apart, copies of the main launcher skipped."
+      },
+      {
+        "line": "-\tif [ -L ./\"$APP\".desktop ]; then",
+        "neutral": "Launcher handling the shared installer applies to every declaration since ticket 37: every top-level desktop file, NoDisplay handlers apart, copies of the main launcher skipped."
+      },
+      {
+        "line": "-\t\tLINKPATH=\"$(readlink ./\"$APP\".desktop | sed 's|^\\./||' 2>/dev/null)\"",
+        "neutral": "Launcher handling the shared installer applies to every declaration since ticket 37: every top-level desktop file, NoDisplay handlers apart, copies of the main launcher skipped."
+      },
+      {
+        "line": "-\t\t./\"$APP\" --appimage-extract \"$LINKPATH\" 1>/dev/null && mv ./squashfs-root/\"$LINKPATH\" ./\"$APP\".desktop",
+        "neutral": "Launcher handling the shared installer applies to every declaration since ticket 37: every top-level desktop file, NoDisplay handlers apart, copies of the main launcher skipped."
+      },
+      {
+        "line": "-\tfi",
+        "neutral": "Launcher handling the shared installer applies to every declaration since ticket 37: every top-level desktop file, NoDisplay handlers apart, copies of the main launcher skipped."
+      },
+      {
+        "line": "+\tfor f in squashfs-root/*.desktop; do",
+        "neutral": "Launcher handling the shared installer applies to every declaration since ticket 37: every top-level desktop file, NoDisplay handlers apart, copies of the main launcher skipped."
+      },
+      {
+        "line": "+\t\tFILE=\"$f\"",
+        "neutral": "Launcher handling the shared installer applies to every declaration since ticket 37: every top-level desktop file, NoDisplay handlers apart, copies of the main launcher skipped."
+      },
+      {
+        "line": "+\t\tif [ -L \"$f\" ]; then",
+        "neutral": "Launcher handling the shared installer applies to every declaration since ticket 37: every top-level desktop file, NoDisplay handlers apart, copies of the main launcher skipped."
+      },
+      {
+        "line": "+\t\t\tLINKPATH=\"$(readlink \"$f\" | sed 's|^\\./||' 2>/dev/null)\"",
+        "neutral": "Launcher handling the shared installer applies to every declaration since ticket 37: every top-level desktop file, NoDisplay handlers apart, copies of the main launcher skipped."
+      },
+      {
+        "line": "+\t\t\t./\"$APP\" --appimage-extract \"$LINKPATH\" 1>/dev/null",
+        "neutral": "Launcher handling the shared installer applies to every declaration since ticket 37: every top-level desktop file, NoDisplay handlers apart, copies of the main launcher skipped."
+      },
+      {
+        "line": "+\t\t\tFILE=\"./squashfs-root/$LINKPATH\"",
+        "neutral": "Launcher handling the shared installer applies to every declaration since ticket 37: every top-level desktop file, NoDisplay handlers apart, copies of the main launcher skipped."
+      },
+      {
+        "line": "+\t\tfi",
+        "neutral": "Launcher handling the shared installer applies to every declaration since ticket 37: every top-level desktop file, NoDisplay handlers apart, copies of the main launcher skipped."
+      },
+      {
+        "line": "+\t\tif grep -qi '^NoDisplay=true$' \"$FILE\" 2>/dev/null; then mv \"$FILE\" ./\"$APP\"-handler-AM.desktop && printf '\\n%s' \"rm -f /usr/local/share/applications/$APP-handler-AM.desktop\" >> ./remove",
+        "neutral": "Launcher handling the shared installer applies to every declaration since ticket 37: every top-level desktop file, NoDisplay handlers apart, copies of the main launcher skipped."
+      },
+      {
+        "line": "+\t\telse [ ! -f ./\"$APP\"-AM.desktop ] && mv \"$FILE\" ./\"$APP\"-AM.desktop || mv \"$FILE\" ./\"$APP\"-\"$COUNT\"-AM.desktop && printf '\\n%s' \"rm -f /usr/local/share/applications/$APP-$COUNT-AM.desktop\" >> ./remove",
+        "neutral": "Launcher handling the shared installer applies to every declaration since ticket 37: every top-level desktop file, NoDisplay handlers apart, copies of the main launcher skipped."
+      },
+      {
+        "line": "+\t\tfi",
+        "neutral": "Launcher handling the shared installer applies to every declaration since ticket 37: every top-level desktop file, NoDisplay handlers apart, copies of the main launcher skipped."
+      },
+      {
+        "line": "+\tdone",
+        "neutral": "Launcher handling the shared installer applies to every declaration since ticket 37: every top-level desktop file, NoDisplay handlers apart, copies of the main launcher skipped."
+      },
+      {
+        "line": "-\t[ ! -L ./\"$APP\".desktop ] && [ ! -L ./DirIcon ] && break",
+        "neutral": "Launcher handling the shared installer applies to every declaration since ticket 37: every top-level desktop file, NoDisplay handlers apart, copies of the main launcher skipped."
+      },
+      {
+        "line": "+\t[ ! -L ./\"$APP\"-AM.desktop ] && [ ! -L ./DirIcon ] && break",
+        "neutral": "Launcher handling the shared installer applies to every declaration since ticket 37: every top-level desktop file, NoDisplay handlers apart, copies of the main launcher skipped."
+      },
+      {
+        "line": "-sed -i \"s#Exec=[^ ]*#Exec=$APP#g; s#Icon=.*#Icon=/opt/$APP/icons/$APP#g\" ./\"$APP\".desktop",
+        "setting": "DESKTOP_STRIP_NO_SANDBOX"
+      },
+      {
+        "line": "-mv ./\"$APP\".desktop /usr/local/share/applications/\"$APP\"-AM.desktop && mv ./DirIcon ./icons/\"$APP\" 1>/dev/null",
+        "neutral": "Launcher handling the shared installer applies to every declaration since ticket 37: every top-level desktop file, NoDisplay handlers apart, copies of the main launcher skipped."
+      },
+      {
+        "line": "+for f in ./*-AM.desktop; do [ \"$f\" != ./\"$APP\"-AM.desktop ] && [ -f \"$f\" ] && [ \"$(sort ./\"$APP\"-AM.desktop)\" = \"$(sort \"$f\")\" ] && rm -f \"$f\"; done",
+        "neutral": "Launcher handling the shared installer applies to every declaration since ticket 37: every top-level desktop file, NoDisplay handlers apart, copies of the main launcher skipped."
+      },
+      {
+        "line": "+sed -i \"s#Exec=[^ ]*#Exec=$APP#g; s#Icon=.*#Icon=/opt/$APP/icons/$APP#g; s# --no-sandbox##g\" ./*-AM.desktop",
+        "setting": "DESKTOP_STRIP_NO_SANDBOX",
+        "note": "Also globs every launcher; the shared installer applies its settings to each one (ticket 37)."
+      },
+      {
+        "line": "+mv ./*-AM.desktop /usr/local/share/applications/ && mv ./DirIcon ./icons/\"$APP\" 1>/dev/null",
+        "neutral": "Launcher handling the shared installer applies to every declaration since ticket 37: every top-level desktop file, NoDisplay handlers apart, copies of the main launcher skipped."
+      }
+    ]
   }
 ]

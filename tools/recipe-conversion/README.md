@@ -61,6 +61,15 @@ for every declaration. Adding a layout: list its lines with
 `convert.differences(base, body)` and classify each one against
 `modules/appimage.am`.
 
+The AppImage-in-archive template at `cf50304fc` (ticket 43) is a layout for
+selections that name a direct AppImage only. Its download step unpacks a
+`7z`, `tar.*` or `zip` download; its lines are `neutral` because a
+declaration's selector always has an include rule ending in `mage$`
+(`bulk_recipes.url_rules` refuses any other: "selector does not establish a
+direct AppImage suffix"), so the one downloaded file is the AppImage itself.
+Its instances that select any asset refuse the declaration and stay long
+recipes.
+
 ## Tests
 
 ```sh

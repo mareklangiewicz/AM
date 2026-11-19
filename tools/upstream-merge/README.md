@@ -99,6 +99,9 @@ python3 tools/upstream-merge/relayout.py --layout bb53f3180 --from long   # dry 
 python3 tools/upstream-merge/relayout.py --layout bb53f3180 --from long --write
 ```
 
+- `--layout` takes a commit prefix, or `COMMIT:PATH` when one commit has
+  two reviewed templates (`cf50304fc` has AppImage 3.6 and
+  AppImage-in-archive).
 - A recipe is covered when it is a declaration or long recipe (`--from`
   narrows that to one form) and its original at `merge-base(HEAD,
   upstream/main)` is an instance of that layout alone. Using the merge base
@@ -134,6 +137,6 @@ python3 -B -m unittest discover -s tools/upstream-merge -p 'tree_*.py'   # repla
 `tree_relayout.py` replays the two re-conversions that shipped: on
 `cf6255fc3`, `--layout bb53f3180 --from long` must produce `082502f64`'s
 1,171 recipes, `recipe-url-policies.json` and `catalog-yaml-policy.am` byte
-for byte (ticket 33); on `d85c3851b^`, `--layout cf50304fc --from
+for byte (ticket 33); on `d85c3851b^`, `--layout cf50304fc:templates/AM-SAMPLE-AppImage --from
 declaration` must produce `d85c3851b`'s 579 declarations (ticket 32). The
 "Long tests" workflow runs them.

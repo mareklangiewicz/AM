@@ -40,7 +40,7 @@ class Replay(unittest.TestCase):
             self.assertEqual(result['files'][path].encode(),show('082502f64',path),path)
 
     def test_ticket_32_declarations_gain_the_layout_setting(self):
-        result=self.replay('cf50304fc','d85c3851b^','d85c3851b','declaration')
+        result=self.replay('cf50304fc:templates/AM-SAMPLE-AppImage','d85c3851b^','d85c3851b','declaration')
         # 579 in the tree (ticket 32 Answer); the pinned corpus has 586.
         self.assertEqual(len([row for row in result['rows'] if row['outcome']=='re-converted']),579)
         # Written by hand in the v3 migration (80122f46e), with their own asset
