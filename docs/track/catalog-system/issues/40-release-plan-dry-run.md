@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: open
+Status: resolved
 Blocked by: none
 
 ## Outcome
@@ -29,3 +29,22 @@ shows exactly what the approved command will do.
   `python3 -B tools/release/release.py ship`.
 
 ## Comments
+
+## Answer — November 19, 2026
+
+`tools/release/release.py plan [--ci NAME]` prints `ship`'s first refusal
+(`would refuse: ...`, exit 1), or the push and either `would repin ... and
+dispatch catalog.yml` with each changed collection input or `... stays PIN`
+(exit 0). Both commands call one function, `release.decide`, which holds every
+check `ship` made before its push and now also reads the pin and the gate diff.
+So `ship` reads the pin before pushing instead of after; nothing else changes.
+
+Tests: `tools/release/test_release.py` `Plan` (3), on the existing scripted
+`git`/`gh` replies, each also failing on any push, `gh variable set` or `gh
+workflow run`. Mutants that never report a repin, or raise a refusal instead
+of printing it, each fail them. Run for real on a pushed HEAD: `would refuse:
+nothing to ship`, exit 1. The `README.md` of `tools/catalog-collector` names
+it next to `ship`.
+
+The optional Claude Code allow rule for `ship` is not added; that is Marek's
+call.

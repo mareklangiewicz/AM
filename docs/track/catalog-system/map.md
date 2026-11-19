@@ -190,7 +190,7 @@ approval boundaries.
 | [37 resolved](issues/37-review-template-3-6-multiple-launchers.md) | none | [Shared installer installs every launcher](issues/37-review-template-3-6-multiple-launchers.md#answer--november-17-2026), handlers apart; two top-level desktop files no longer fail the install. |
 | [38 resolved](issues/38-release-sequence-script.md) | none | [`tools/release/release.py ship`](issues/38-release-sequence-script.md#answer--november-17-2026) moves `main-marek`: refuses untested commits, repins and dispatches only when collection inputs changed, watches the runs. |
 | [39 open](issues/39-keep-research-scripts-in-the-repo.md) | none | Ticket numbers come from committed scripts; recreate ticket 31's layout coverage count. |
-| [40 open](issues/40-release-plan-dry-run.md) | none | `release.py plan` prints what `ship` would do (refusals, push, repin and why) without doing it. |
+| [40 resolved](issues/40-release-plan-dry-run.md) | none | [`release.py plan`](issues/40-release-plan-dry-run.md#answer--november-19-2026) prints what `ship` would do from the same `decide` function, writing nothing. |
 | [41 open](issues/41-resumable-release-watch.md) | none | `release.py watch` continues a watch that hit its deadline; deadline exits differ from failed runs. |
 
 Latest implementation evidence, November 8: Chromium desktop/narrow and Firefox

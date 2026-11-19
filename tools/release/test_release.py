@@ -103,21 +103,54 @@ class Refusals(unittest.TestCase):
 
 class Ship(unittest.TestCase):
     def test_tested_change_to_collection_inputs_repins_and_dispatches(self):
-        run, result, lines = ship(START+GREEN_CI+PUSH+PIN_READ+[(GATE, 'programs/x86_64/a\n')]+REPIN+FAST, ci='x')
+        run, result, lines = ship(START+GREEN_CI+PIN_READ+[(GATE, 'programs/x86_64/a\n')]+PUSH+REPIN+FAST, ci='x')
         self.assertEqual(run.script, [])
         self.assertEqual(result, dict(fast=21, catalog=31))
         self.assertTrue(any('31' in line for line in lines) and any('21' in line for line in lines))
 
     def test_tested_change_outside_collection_inputs_keeps_the_pin(self):
-        run, result, _ = ship(START+GREEN_CI+PUSH+PIN_READ+[(GATE, '')]+FAST, ci='x')
+        run, result, _ = ship(START+GREEN_CI+PIN_READ+[(GATE, '')]+PUSH+FAST, ci='x')
         self.assertEqual(run.script, [])
         self.assertEqual(result, dict(fast=21))
 
     def test_documentation_only_needs_no_ci(self):
         run, result, _ = ship(START+[(['git', 'diff', '--name-only', BASE, HEAD], 'docs/a.md\ndocs/track/b.md\n')]
-                              + PUSH+PIN_READ+[(GATE, '')]+FAST)
+                              + PIN_READ+[(GATE, '')]+PUSH+FAST)
         self.assertEqual(run.script, [])
         self.assertEqual(result, dict(fast=21))
+
+
+WRITES = (['git', 'push'], ['gh', 'variable', 'set'], ['gh', 'workflow', 'run'])
+
+
+class Plan(unittest.TestCase):
+    """plan answers from the same decision as ship and never writes (ticket 40)."""
+    def plan(self, script, **options):
+        run = Fake(script)
+        lines = []
+        release.plan(run, out=lines.append, **options)
+        self.assertEqual(run.script, [])
+        self.assertFalse(any(call[:len(w)] == w for call in run.calls for w in WRITES))
+        return '\n'.join(lines)
+
+    def test_tested_change_to_collection_inputs_would_push_and_repin(self):
+        text = self.plan(START+GREEN_CI+PIN_READ+[(GATE, 'programs/x86_64/a\nmodules/b.am\n')], ci='x')
+        self.assertIn('Long tests 11 green on ci/x', text)
+        self.assertIn('would push '+HEAD, text)
+        self.assertIn('would repin', text)
+        self.assertIn('programs/x86_64/a', text)
+        self.assertIn('modules/b.am', text)
+
+    def test_documentation_only_would_keep_the_pin(self):
+        text = self.plan(START+[(['git', 'diff', '--name-only', BASE, HEAD], 'docs/a.md\n')]+PIN_READ+[(GATE, '')])
+        self.assertIn('would push '+HEAD, text)
+        self.assertIn('stays '+PIN, text)
+        self.assertNotIn('would repin', text)
+
+    def test_a_refusal_is_printed_not_raised(self):
+        text = self.plan(START+[(['git', 'diff', '--name-only', BASE, HEAD], 'modules/appimage.am\n')])
+        self.assertIn('would refuse: changes outside docs/', text)
+        self.assertNotIn('would push', text)
 
 
 def view(run_id, status, conclusion=''):

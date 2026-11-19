@@ -76,3 +76,6 @@ once). The gate drops `README.md` files only (`GATE_IGNORED`,
 is a `schemas` input, and the gate tests now say so. Replayed on
 `02c7495d4..9f9cfc17f`, the new paths find no change, so that push would not
 have repinned.
+
+November 19, 2026: first real documentation-only ship (no `--ci`): pushed
+`5a4ee43ec`, pin kept, Fast tests 44512967029 green, exit 0.

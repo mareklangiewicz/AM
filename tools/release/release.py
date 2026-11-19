@@ -1,6 +1,7 @@
 """Move main-marek: refuse an untested commit, push, repin and dispatch when needed, watch (ticket 38).
 
     python3 -B tools/release/release.py ship [--ci NAME] [--watch MINUTES]
+    python3 -B tools/release/release.py plan [--ci NAME]     what ship would do; writes nothing
 
 Run from a main-marek checkout whose HEAD is the commit to ship. A commit that
 changes anything outside docs/ needs `--ci NAME`: `ci/NAME` on origin must be
@@ -65,8 +66,9 @@ def appeared(run, find, sleep, what):
     raise RuntimeError(what+' did not appear within '+str(APPEAR_SECONDS)+' s')
 
 
-def ship(run, ci=None, out=say, sleep=time.sleep):
-    """Returns the run ids to watch: always 'fast', 'catalog' when dispatched."""
+def decide(run, ci=None, out=say):
+    """Everything ship checks before it writes: raises Refused, or returns the
+    commit to push, the current pin and the collection inputs changed since it."""
     if output(run, ['git', 'rev-parse', '--abbrev-ref', 'HEAD']).strip() != BRANCH:
         raise Refused('check out '+BRANCH+' first')
     output(run, ['git', 'fetch', '--quiet', 'origin', BRANCH])
@@ -91,11 +93,36 @@ def ship(run, ci=None, out=say, sleep=time.sleep):
                 if not path.startswith('docs/')]
         if code:
             raise Refused('changes outside docs/ need --ci NAME (a green Long tests run): '+', '.join(code[:10]))
+    pin = gh(run, 'variable', 'get', PIN).strip()
+    changed = output(run, ['git', 'diff', '--name-only', pin, head, '--', *schedule_gate_paths()]).splitlines()
+    return dict(head=head, pin=pin, changed=changed)
+
+
+def plan(run, ci=None, out=say):
+    """Print what ship would do now, writing nothing (ticket 40)."""
+    try:
+        found = decide(run, ci, out)
+    except Refused as refusal:
+        out('would refuse: '+str(refusal))
+        return False
+    out('would push '+found['head']+' to '+BRANCH)
+    if found['changed']:
+        out('would repin '+PIN+' '+found['pin']+' -> '+found['head']+' and dispatch catalog.yml; '
+            + str(len(found['changed']))+' collection inputs changed:')
+        for path in found['changed']:
+            out('  '+path)
+    else:
+        out(PIN+' stays '+found['pin']+': collection inputs unchanged')
+    return True
+
+
+def ship(run, ci=None, out=say, sleep=time.sleep):
+    """Returns the run ids to watch: always 'fast', 'catalog' when dispatched."""
+    found = decide(run, ci, out)
+    head, pin, changed = found['head'], found['pin'], found['changed']
     output(run, ['git', 'push', 'origin', 'HEAD:refs/heads/'+BRANCH])
     out('pushed '+head+' to '+BRANCH)
     result = {}
-    pin = gh(run, 'variable', 'get', PIN).strip()
-    changed = output(run, ['git', 'diff', '--name-only', pin, head, '--', *schedule_gate_paths()]).splitlines()
     if changed:
         gh(run, 'variable', 'set', PIN, '--body', head)
         out(PIN+' '+pin+' -> '+head+' ('+str(len(changed))+' collection inputs changed)')
@@ -141,7 +168,11 @@ def main(argv=None):
     command = sub.add_parser('ship')
     command.add_argument('--ci', metavar='NAME', help='the tested branch ci/NAME')
     command.add_argument('--watch', type=float, metavar='MINUTES', help='then wait for the runs, at most this long')
+    sub.add_parser('plan', help='print what ship would do; writes nothing').add_argument(
+        '--ci', metavar='NAME', help='the tested branch ci/NAME')
     args = parser.parse_args(argv)
+    if args.operation == 'plan':
+        raise SystemExit(0 if plan(system, ci=args.ci) else 1)
     try:
         ids = ship(system, ci=args.ci)
     except Refused as refusal:
