@@ -28,6 +28,7 @@ BRANCH = 'main-marek'
 PIN = 'CATALOG_SCHEDULE_REVISION'
 POLL_SECONDS = 20
 APPEAR_SECONDS = 120
+SHOWN = 20  # changed inputs plan lists before it only counts the rest
 
 
 class Refused(Exception):
@@ -113,8 +114,10 @@ def plan(run, ci=None, out=say):
     if found['changed']:
         out('would repin '+PIN+' '+found['pin']+' -> '+found['head']+' and dispatch catalog.yml; '
             + str(len(found['changed']))+' collection inputs changed:')
-        for path in found['changed']:
+        for path in found['changed'][:SHOWN]:
             out('  '+path)
+        if len(found['changed']) > SHOWN:
+            out('  ... and '+str(len(found['changed'])-SHOWN)+' more')
     else:
         out(PIN+' stays '+found['pin']+': collection inputs unchanged')
     return True

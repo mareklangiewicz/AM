@@ -141,6 +141,14 @@ class Plan(unittest.TestCase):
         self.assertIn('programs/x86_64/a', text)
         self.assertIn('modules/b.am', text)
 
+    def test_a_long_list_of_changed_inputs_is_cut_to_a_count(self):
+        paths = ['programs/x86_64/a%02d' % i for i in range(25)]
+        text = self.plan(START+GREEN_CI+PIN_READ+[(GATE, '\n'.join(paths)+'\n')], ci='x')
+        self.assertIn('25 collection inputs changed', text)
+        self.assertIn(paths[release.SHOWN-1], text)
+        self.assertNotIn(paths[release.SHOWN], text)
+        self.assertIn('and 5 more', text)
+
     def test_documentation_only_would_keep_the_pin(self):
         text = self.plan(START+[(['git', 'diff', '--name-only', BASE, HEAD], 'docs/a.md\n')]+PIN_READ+[(GATE, '')])
         self.assertIn('would push '+HEAD, text)
