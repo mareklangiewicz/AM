@@ -9,9 +9,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/aarch64/deepchat"
-        blob: "2d953377d6a9a1f13b3292043b6b8c214d9c07be"
+        blob: "b07cccbd01206fc5accbc40c05bfd351630fc7a5"
     "armv7l":
       repository_id: 932490533
       availability: "absent"
@@ -23,9 +23,20 @@ apps:
     "x86_64":
       repository_id: 932490533
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/deepchat"
-        blob: "37e9f11ccb50460c23f153793273fde82c2f8ec4"
+        blob: "afece642cf8d2191f4ad8ee44460ca5f1e3a805d"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "a2906da058e9c462eca37048acce40f594dd4be2a36d96c2cbe4bae643ae5fc0"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

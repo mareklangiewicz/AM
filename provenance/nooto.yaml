@@ -9,9 +9,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/aarch64/nooto"
-        blob: "718d0583fe73711668653c856a2f68b19ffc6afd"
+        blob: "1526eb163f9f221a8ee9e4e84d9fbbd0cf1574e3"
     "armv7l":
       repository_id: 1079027366
       availability: "absent"
@@ -23,9 +23,20 @@ apps:
     "x86_64":
       repository_id: 1079027366
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/nooto"
-        blob: "dcd8674b2e76f8bb92fbf371ab5e048f7ecfe873"
+        blob: "c53696e95a7e43bde3030f76b9e28dfdf108bdc5"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "6e3b94d4e7ad1209dee5c3c618ea73f35078be33d8c8364e0a69b4bb217d02ab"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

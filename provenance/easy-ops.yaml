@@ -9,9 +9,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/aarch64/easy-ops"
-        blob: "65bd51856582416e64eb8d700777e6c5e5230bcf"
+        blob: "2db13ffb0205fb5fe5857f4e33d86bdb121228af"
     "armv7l":
       repository_id: 1263564040
       availability: "absent"
@@ -23,9 +23,20 @@ apps:
     "x86_64":
       repository_id: 1263564040
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/easy-ops"
-        blob: "08fc812f79c354d9e9f65d7881e964676e9ce756"
+        blob: "10903283694bf8f4bc2ae3c21566635652f8a380"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "acd2c322532a51e1470e90a14cc74960f2cd18c0cbd598e98fd0a1421663dca1"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

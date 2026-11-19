@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1274778866
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/snow-devil"
-        blob: "cfc9ca3f3a9641c5a0cbeb5b87ca10dacebeb290"
+        blob: "a7d6da301f68c4c65a9d2a6e476f523607d28780"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "97e143d70e46a853b5e49c29c2bdcd8d956d5d795834028e6c454dcfde523cde"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

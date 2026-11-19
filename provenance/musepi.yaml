@@ -9,9 +9,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/aarch64/musepi"
-        blob: "a39c2dc716dd59bd15643daf3c41836ae81b27b4"
+        blob: "75ddbd6cf318c77e7b21d343c86fe8787c6a5f6e"
     "armv7l":
       repository_id: 1306983212
       availability: "absent"
@@ -23,9 +23,20 @@ apps:
     "x86_64":
       repository_id: 1306983212
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/musepi"
-        blob: "7bc84b1840b3f301574fdf9fa3d96058f861e973"
+        blob: "221e60297935b1522f09d57aec4ce543ab0b59c0"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "aea6528502b507cb3a2be76e1384112e9f3d3903a5589e26cf6f5692d9164633"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

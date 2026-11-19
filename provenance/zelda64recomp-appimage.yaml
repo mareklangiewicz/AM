@@ -9,7 +9,7 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/aarch64/zelda64-recompiled"
         blob: "37f5fe71512507b67ea5d6f7ff9b9e93446cb4f1"
     "armv7l":
@@ -26,20 +26,20 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/zelda64-recompiled"
         blob: "5957642bc2269b8bb1eac84caddf3f3e1e2eacef"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-19T13:27:06Z"
+        evaluated_at: "2026-11-19T13:53:10Z"
         recipe_sha256: "5db9e4a91238c710b0b2986e2d6a1bbf5747f31cfb3cf410231d83989187f2a6"
-        rules: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
             path: "modules/"
-            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"
   "zelda64recomp":
     "aarch64":
       repository_id: 1176358627
@@ -47,9 +47,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/aarch64/zelda64recomp"
-        blob: "873920b2e7c3a39fe9a0a219694634dba739635a"
+        blob: "1890a3c8ca462f66e12d30cf4710b05117193ecb"
     "armv7l":
       repository_id: 1176358627
       availability: "absent"
@@ -61,9 +61,20 @@ apps:
     "x86_64":
       repository_id: 1176358627
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/zelda64recomp"
-        blob: "b98cc92d5c10987bd5cac9721867c3e58e035186"
+        blob: "2b54c7908ebfdf9053b781db706de24e7371f25c"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "3ca8e6a5dccdcfe6e126b77bf3a9421531a2f1bd823949c652850e0527961de2"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

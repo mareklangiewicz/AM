@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 849406496
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/finceptterminal"
-        blob: "d6f12eb97507d37586c1461b84bfe06a2a8b6d91"
+        blob: "b1ab8b14af9fcf9c41d5d36139afd87ff9bfec40"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "65be8b5e1595e8be61118179efd49b87f50fee110570f492b4ce0cce05427a50"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

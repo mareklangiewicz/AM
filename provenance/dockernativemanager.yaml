@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1180458532
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/dockernativemanager"
-        blob: "4529d0bc6572eb7f0c632945e920d31d92fe4014"
+        blob: "169175e6674c0ed3fa6321472e2bcc82b6e17be1"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "52113faf42deb56d93a3fb5aeba2c498a17441c1402ace930af3dab6daeb4df5"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

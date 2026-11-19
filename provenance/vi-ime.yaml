@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1296032383
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/vi-ime"
-        blob: "0fdd5b33b6de6172c94aa4ef17b53f9906a369a2"
+        blob: "578a0eeb0377b015cfe5e68f7468e1565d0bd28a"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "b438b9326291f80a6c3e0b547b7fb8374a59abe7020411faca3157e08758a00c"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

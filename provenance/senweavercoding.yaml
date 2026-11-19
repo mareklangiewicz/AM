@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1203480055
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/senweavercoding"
-        blob: "24d2ed1d8e33b15b23b3091d3d1277e5e128c1f2"
+        blob: "c83afafaffcbb04056a7f2a1cf33deda3f1f2469"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "b5e8181e8eb79ec6a84b67031ceae1d75efa9e1996a19f9e7ef4ea5fbd9bf72b"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

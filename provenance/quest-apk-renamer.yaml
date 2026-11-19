@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1316408493
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/quest-apk-renamer"
-        blob: "c0dceb8f2948d2530f74efd4f3d473d126f8f202"
+        blob: "419782c70faaac8e4b2ac36e67608749244cd43a"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "c5941887fb5fdbdc5320f1a9c439161d4b7a7578000079020c94f1dcb9e49fcf"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

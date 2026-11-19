@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1141506351
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/slipstreamgui"
-        blob: "f8586854d6ba25f3a31c89307915b12dbd2ec3a0"
+        blob: "d4bb210f4b85b485296bba23a46f52dd86da463c"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "614dd24405a45679830336f2fde59821ce183ccd1c522aa8b336e4e756e7e7b8"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1339503128
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/zervo"
-        blob: "d2650e7f8fdff1fb50e42ad790a6769f80ff84ba"
+        blob: "b70270884c2fd6863b5ff73cfc3e15dc095d15b4"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "e3888c2e346a3988e6e36a37815c194f63a59396b4e471ed0d8ce08882d6ba02"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

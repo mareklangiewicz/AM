@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 857369811
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/enjoy-player"
-        blob: "4dc86bc8021c58506d5e5b0bc57d1d095ad5f561"
+        blob: "684b8df15cef5024800cd3936593d86aeed8255c"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "cb7d5d5ceca9fbc85e1d7eebd99419874f7641357ac3b10bb6f03006fc1c2371"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

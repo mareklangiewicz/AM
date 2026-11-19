@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1208004210
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/ie-r"
-        blob: "b882384af56fe811277238dfd77c0bfda5e345dd"
+        blob: "2d9c3e3139063eebaf0323f47baeb225d31d95eb"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "a5ca1bfd9d03bd98e04d9c4f838761d2792c9b342a5881cf186f427428f78b0c"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

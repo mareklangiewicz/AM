@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 857379025
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/js8call"
-        blob: "c6a7f9985f0f1682611e52dd251259024f12dda3"
+        blob: "c712e6e3137c250373236c506ca7c2b35cfcbb7c"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "5a9b8588f9b8ba90ab84fdf4d61a95ce60a1b9334ff1169f558b06551cfb2a8e"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

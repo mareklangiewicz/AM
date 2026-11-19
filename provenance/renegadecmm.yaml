@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1346636209
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/renegadecmm"
-        blob: "bc16390e29c119c62c07b65ab354649fb8725ddb"
+        blob: "086e17ea1befcf7fc932db96af8ee34b41ef3f3d"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "855145e3d4840bc33c58c7bcfd891e8e190f4313ee5810853fddb9ff758d3571"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

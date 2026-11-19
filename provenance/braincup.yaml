@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 189719690
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/braincup"
-        blob: "e1d2239b5ad1f482943e9b5ac0ec1618e9c623f8"
+        blob: "2dfe5167348c3763a6921404b99fcfbdacf8bc01"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "a134ef3db6b5cc25da6691b77d7e145e0efe88f56eb5bf660eb28efd6ab19c52"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

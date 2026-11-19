@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1184011029
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/kura"
-        blob: "69c9d7d035be543c6e8484f4a17f4c22b06ece93"
+        blob: "34952870a3a570e453bcf6ffe428862134b8bf99"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "8ab2448f1649945cddf97f5b2caaa2567ec49eed491f97e9f8f604a9d8f3d9ed"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

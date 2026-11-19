@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1328143507
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/pappustravelplanner"
-        blob: "e292292ab779f23324206c2f722fc4dd8af8b009"
+        blob: "9035a1f7fdaeea130e9f588ade75b479e1fcb0c1"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "9de9495dbc6de0d679dc47931961e48c5d08d59a77d62d655037adc8bbe51d69"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

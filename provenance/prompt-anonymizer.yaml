@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 648581491
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/prompt-anonymizer"
-        blob: "b4f26e84c0c127d8b43e6a53cb7b76f0cf195adc"
+        blob: "a884634ab56a1b220826b12c0f92e010274a5f3e"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "be77db2c7a8f7c9250f3f48761993de7462561618c0deb660191178830e7d4a4"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

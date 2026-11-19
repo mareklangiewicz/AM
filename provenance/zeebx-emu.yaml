@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1361393542
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/zeebx-emu"
-        blob: "d50053b02fcd616ba0bd106350ec1e0f0282f075"
+        blob: "6d4c01f25e85475519f5db25aec189ca4ff8b183"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "c72c3c5e86c81012bb7166e1f99342b05d5d9142450841399a27dde0bf0f4f0e"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

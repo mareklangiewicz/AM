@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1158516148
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/steam-manifest-downloader"
-        blob: "fecd213ba731f04dfb7290f0761b145ec24af66c"
+        blob: "271fb5f85c933b77d6a74d95e91fd49369922d56"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "a0b47b3d6b7c67902cbcd24282c0f891a02d504998ed5b03330a5d24fe74ae38"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

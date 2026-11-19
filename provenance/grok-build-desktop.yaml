@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1307153193
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/grok-build-desktop"
-        blob: "653b8b86b38bd549803b55cc0a680f0d34d2923e"
+        blob: "f5be6e4bbb27f92874e3fe6d87d6bc4d5f94b5cd"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "4e7e5df7c6c5d1251670539fdfcc1952eff66c38ed63f1bb2defc2bca68fcb4c"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

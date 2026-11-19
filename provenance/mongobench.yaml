@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1230205388
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/mongobench"
-        blob: "78f97e08ea35f2f0fa71dc32b2ea2217c7b4095f"
+        blob: "508e92166891280a3a0a85a0b0fbcfa6b9b6ff22"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "ca35ac2a9d2165abfb83c642d77ba3288b1ac03ea04830b973991d7ae670ebb0"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

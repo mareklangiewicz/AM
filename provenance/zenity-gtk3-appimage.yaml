@@ -26,9 +26,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/aarch64/zenity-gtk3"
-        blob: "5151d3d4f147a4b459eae6efea6af0ad1593a858"
+        blob: "84b872b7fa4d8477fd9b6969f0c79787cf34e972"
     "armv7l":
       repository_id: 789187664
       availability: "absent"
@@ -40,9 +40,20 @@ apps:
     "x86_64":
       repository_id: 789187664
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/zenity-gtk3"
-        blob: "e8ad38444d97581e26abbbd98189a0a273e9ab40"
+        blob: "3475838f4d538d9e7849f2365c265a98f1da8465"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "17eb38f9603519fa4e42ba088a9efc6e51b62a891a24b8ae32a9b125610cc06b"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

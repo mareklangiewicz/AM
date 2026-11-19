@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 900646101
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/shift"
-        blob: "cb63f9a267096c13aee7452bed34121ced1e88a4"
+        blob: "ff015d1d74fa3ae026a1524eaa5c2c2bd16b86a8"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "e7d5e43ecbf3088fbe062a11427db44d54b272e721bcc2bde1ce1af011d714bf"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

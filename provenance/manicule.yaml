@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1351979504
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/manicule"
-        blob: "8f0d0b4c078be1c6e0c9b64cd3cdf1924b626f8b"
+        blob: "da6c5143ea0eb21e2a771bad5d5f0b8565b0fbe4"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "99ae9d18a8410bed30eec47ab053f7a44634eb499c27ec9860d83a4b6c4ee5bf"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

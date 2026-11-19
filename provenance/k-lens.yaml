@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1209080075
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/k-lens"
-        blob: "1edc67bf331e7cb3684d4714c023fb251350a708"
+        blob: "3d3167e3c6d3b38d028b3d34cbf7390cbc988395"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "9ce8b6be455ea0fe5f21efd7b1f6011b80f7041f43113138cfa9c6281b0a56c9"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

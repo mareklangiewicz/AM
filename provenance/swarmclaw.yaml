@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1161242607
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/swarmclaw"
-        blob: "cc01913acc4dfeb208468be7cdc65e74353a552b"
+        blob: "04acd1178b7bff88cd7730cded71be658e61a16b"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "ba5a73c56ce5464a4a513b3e1b206a8de6dd99785f0a25488df01b70662c8ebe"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

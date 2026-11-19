@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 584471663
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/wowthing-sync"
-        blob: "f8b4fed90f5bb7927991e4ac9995c69a07a4ab15"
+        blob: "39cd8367dcdad5162259bcd551d0bfd4db69fa62"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "fe861bc31d686a9e5f25f67f6f4d0731a859d8888619399b044e9003a3c3bae1"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

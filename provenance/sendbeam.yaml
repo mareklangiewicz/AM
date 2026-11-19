@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1328116330
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/sendbeam"
-        blob: "3fde6be65231d398950dbcaf2505e868cc0bd0a3"
+        blob: "e5255dce84696527ab473fc42cf39b4bab9eb755"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "5c1e9ec0a4e5fb0e0c7fa6f912542430a23b2bf7251dcb1e4597ecfc832d9aba"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1291577791
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/unisic"
-        blob: "e314ca8e55d2910d087487d7f2b1d48cc668660d"
+        blob: "db4aa85f3a7cd0899c305fff8b3c06e241ed3b53"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "d6f7ffa8b85205611af3694c14aac675a81b6441361e6e0dece493d8547c7f3a"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

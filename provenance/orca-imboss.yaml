@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1403272416
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/orca-imboss"
-        blob: "438ca1105c081cc3d8e09db676cd8bd0a36c02c7"
+        blob: "cd36ff907bae13ec8de57fea31ab0ab81cb2bfee"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "64ab15ce3d63f766c58e01c598f666311ffd58c9674facfd695388dd45e462c3"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1351235469
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/pure-clash"
-        blob: "fd6f64824c4bd49ff7aff2f2ff6b938737209111"
+        blob: "b46946c17a6756e6d71bc6fa8d8ab80ccb0a29fd"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "d5ba3a0cadf075290789462aa32c9ab2d5cde786a18294ec98f8883a1ace53dc"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

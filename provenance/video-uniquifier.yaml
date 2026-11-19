@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1241762078
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/video-uniquifier"
-        blob: "be91db095daa608132986445959b9e4ae9787cec"
+        blob: "e11024c3d9cf46554fc3b16cd26af1b4c2484a2e"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "0304e73c5e22f79e8448fa288fbe1a6127fdc9a0608dfccb1b922b0a7ef12468"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

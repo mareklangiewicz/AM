@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1168199135
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/opencode-github-copilot-switcher"
-        blob: "c019483fef07d384a12775b2348883d8a5c81026"
+        blob: "3f2c9856692fefd00b901ae4c748e140aa1fae8d"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "707b35e11c7f5b633bc9485b40e746c36dab48c007f38852105cf9fc23979ee0"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1285488724
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/self-hosted-git-client"
-        blob: "57747d67e72ec367853d856e2a2d34a01bdd7075"
+        blob: "1d48f714ee4e3ae133e75abd7aa9566c93b228af"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "c4cac18ba22b8fe22062acd3ebb3f43ec99b55fdae1743692e2db0bad4ec2b67"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

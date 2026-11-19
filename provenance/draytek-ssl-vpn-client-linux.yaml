@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1152220972
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/draytek-vpn"
-        blob: "a54893c08b16a62961518a767f63cbab1d1cac16"
+        blob: "cc4635b1c833acf2b932ef4968e7d9ab79fbc08f"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "20beaddf24f97fabcc146c9466bb07063d9a4f3f79a541be403997144fa8f19b"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

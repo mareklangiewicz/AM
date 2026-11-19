@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1183851079
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/clin-rs"
-        blob: "dbaf1d9843629ac4fd77fb21a41df672eeb27322"
+        blob: "2b3ec48433f62e2d51e931650fa1b05d5d3203b4"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "ad0dfb6dd5699bacf68394f729ed5a06368b6e1bf3c038a297d06fb992721eab"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

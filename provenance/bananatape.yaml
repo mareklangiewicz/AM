@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1220029966
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/bananatape"
-        blob: "e353bcf670e3ff8f616bf7194a7ec8c366b84d57"
+        blob: "ed1c8a3fe11a5ceb7a8213ad8773b4b8ed62cee1"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "16c112401009edbc89bb7216be624f601a7d80ad98cea9d6e0444935e0ed2282"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

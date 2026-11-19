@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1268045342
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/cosmog"
-        blob: "17a3d8ab7b6e9f1a5c5fc14f472abd597f109cec"
+        blob: "f8e13f83388bebe5d493e3e2eeae6877dbfbe76d"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "ae2deb1aaaf3502d99fc9f6c3dff1a4b7c63588abdeb51a54ce890ae1431a89d"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

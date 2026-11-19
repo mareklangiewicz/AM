@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1301239655
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/timeseries-explorer"
-        blob: "73fdf12dac8047d117937b9f4befb0c49c77ab97"
+        blob: "8b62326c0798fe9d507f77e118344775ae40c5d9"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "536248bf965312e0f77d1de0a5757d4a860965c8e7861633f6dc6332d67cd5d0"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1119044920
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/geekfit"
-        blob: "3c84c99c21a7257cf2df071a3e39fbcf7e9b86dd"
+        blob: "c255bdb050ddee895c924e5ecab4ea30c04b45cb"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "8c16d3d07c18dc38dd0306a7feaa6f4772dcd157b52b1a5c8e45c116b24b58e3"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1304946356
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/ai-researcher-roadmap"
-        blob: "29c19f067d76e25bbbbb4f7c74ed80f9d52a8968"
+        blob: "aceda483b40c4d06d2a18f17c20ac17a40242be0"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "24fe8ed3678d02b99fe93f580a6ef59fca099f86e6c6c47d70b66914db80c7b9"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

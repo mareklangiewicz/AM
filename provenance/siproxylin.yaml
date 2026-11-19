@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1145492059
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/siproxylin"
-        blob: "57d48638cce784ca5bcda8fd0d9fe00695cfdf2b"
+        blob: "b10051b3bdf2b2e84b4de9ec4e1d52fcf5987973"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "1006dd8b9a244f2f16116f8ba9a7a6a5d3b3a697b64033d5a7167212edb9c924"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

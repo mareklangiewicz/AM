@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1241759847
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/lociant"
-        blob: "b3cad10c022bc0c59b8859baa5dced2ab91d9444"
+        blob: "4bf0aecbd105d8eef29265cf3d64679931e96a1b"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "b696e1023bca8bbb56779b6a56e78873bc4b80f704f3a13142b9df25f6b3bba8"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

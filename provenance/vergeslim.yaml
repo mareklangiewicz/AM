@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 218386016
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/vergeslim"
-        blob: "6efc0b0d8c36370fe31a4c9dee28f5090f0f5a09"
+        blob: "bb0c49a6c3dd5962b24f728028ff6be36b50037f"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "49dc7faf6a0e732fa4d4d7ee0fb7a327b293c8c5c978aa0f26b6255767edeb17"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

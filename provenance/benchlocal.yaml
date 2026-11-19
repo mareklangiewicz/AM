@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1199659547
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/benchlocal"
-        blob: "70e3dfd3e7ef89b13f8d9200b8d9f8da2bbeaf16"
+        blob: "04a4229b5d6ab100c4b560aa791f976829ec04ad"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "7b83000a703a5a6a96bcaedb6070d6e03dfb72fb73562dc56da93753caff01a6"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

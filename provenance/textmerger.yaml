@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 905957996
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/textmerger"
-        blob: "22d56f4bee4a199a32f435d795bab1ab8ab7596d"
+        blob: "8adf73a4dc8d1f1c3a97358e5a1c507806daaf86"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "c371abc0cae37e9481e355c6021d400d0c548f9fc16bec2d4c16884d0ce50f5c"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

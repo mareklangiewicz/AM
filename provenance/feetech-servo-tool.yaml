@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1016523062
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/feetech-servo-tool"
-        blob: "c95b4940bff707ba0f6ae54c4cedd55af415b281"
+        blob: "d40cd0f379eca9e5409a581b2a4e7047ccc31114"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "5decaead79062a1280a526b0a66b65e4048c2d4ca397b4ce8819b2c9c9706475"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

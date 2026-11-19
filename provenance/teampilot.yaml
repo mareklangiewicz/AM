@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1233610760
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/teampilot"
-        blob: "678bb69417896025e6ad70d3ffac8db6052d0bb1"
+        blob: "ffa3feef2fd032c85f1d1fb71a7f230acb6e9372"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "6a96fc70bcbe57af76d379026525fc70f3b647672fbc53d74c6abdf0cc9383c8"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

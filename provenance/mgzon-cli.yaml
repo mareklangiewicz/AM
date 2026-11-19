@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1116666152
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/mgzon-cli"
-        blob: "bc0540801d6e0c23443a46584c3f1783aa433dd3"
+        blob: "2bd486c1b7c232e81296a27af71d4b95c9e79077"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "1ff1e182b2978c44bae32ae7ce563fca2943ae89b2689d45cb3ca766178ad0e5"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 823440691
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/sample-client-for-amazon-bedrock"
-        blob: "0dbb70ece73cbd6d9b77961be258db1201233c57"
+        blob: "056f6b8fbfd9dfdc6f0094e976b6b974ace00faa"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "7b18632d98cd42c8f19d49a28002281623ba48efdbe8f98fd2d7856f56fd2975"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

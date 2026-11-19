@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 860030150
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/voxtulateclient"
-        blob: "20d4d94897465d797bbf418a92cc5e84a3f6764e"
+        blob: "922e0d9cf535bdf68a0fe2b563963567c7c0ef0b"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "7bc75237383dea1d7138beb5b89a1ada9ca2ed823d973d38a930d2198588eaff"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

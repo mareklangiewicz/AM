@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1409126035
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/consisterm"
-        blob: "4316cabbb8ea1d08553882f6482b66b07d8b65fa"
+        blob: "1b90e07f11ce9b6485e5fc18eb728046bab6c7e4"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "08a94cd33c6479fb90a8ce2b1368b4ed47183d0bfac30fd1f9d9525a5717d530"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

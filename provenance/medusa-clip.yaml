@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1273819492
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/medusa-clip"
-        blob: "1bbb71c5b580e1d843fa8724b5f58a8060720887"
+        blob: "8bfc2b61c33334c00d1bbc6ba9603ecaca66379d"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "9caecc9690de2be1e3a49b3c5a66dbd5f6d959a06f9ce6dd4987685454bbaaae"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

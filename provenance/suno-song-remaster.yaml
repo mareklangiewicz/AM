@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1133874047
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/suno-song-remaster"
-        blob: "3a61583b5232eb33aa82488733a9425d2dfe90b5"
+        blob: "6bb38119f0420509b615b09a122146992d2adf61"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "1d1bef73c0b7adaca46f53e5fa9f60f5ed61b73b7db7fc23e1aa93ab1f224575"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

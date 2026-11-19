@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1333036607
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/vivi-music-de"
-        blob: "8ec8c4ba7711f51e34cdcf49b7f5be1c0f50b4cb"
+        blob: "dd973a10eeac4f629d0eb34ebfada7f9ac2a52f6"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "2a83a37ddfc17dd0403fa1a19d7ac0eb40ce7e11fd7c8c222244aed099784638"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1322728556
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/codeinoven"
-        blob: "d81980d646baa21ffaa98a795e1ea976933fe7c6"
+        blob: "078dd15b7d3efd1a6e5d026ea3f88758761b3a25"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "7d8dbcf741ea9f7fa838e4623387a0ed93310b0742365adb788ebc039c1315cc"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

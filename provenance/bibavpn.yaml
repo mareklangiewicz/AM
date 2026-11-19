@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1202598212
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/bibavpn"
-        blob: "4e205a2a92985db12cbb0772d733322a56d11a2b"
+        blob: "9b2c63d82272ed782ac390c22ddc4779c3dc20c7"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "4ce42daa9c08c30da2e65fdd5c8a7678ff6bed25c06bc142e2ca7df0f3eeebd5"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

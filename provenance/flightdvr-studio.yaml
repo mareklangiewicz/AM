@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1314203980
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/flightdvr-studio"
-        blob: "3c9ab36b007884417703da3dae40d20d7c7cd17e"
+        blob: "0f1525e9579e9b3b8662704bd60c3ddcc8bc8675"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "07bd6266e7ef83ef7ef96065513f0bfae655c2c633cbdf5df30446d1b04c6d49"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 518622363
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/unreal-ng"
-        blob: "103c6af0fb0fdec5e705421f6f3b8a5e455151c7"
+        blob: "a6eba17920bb818b0814eb4bbe343e75ed2d6e97"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "8d77095195a6aad3cc4b90dc1a4b6fa8ac699fbc03b7d6cecde9cd569adde831"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

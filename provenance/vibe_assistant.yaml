@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1260411304
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/vibe-assistant"
-        blob: "07e9f49a599a4c743b37514c5d6c347e6296f231"
+        blob: "671fe3d25dc91328107c41455a69fb85e5784381"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "1af4259a3fdcbdd0da55ef928ed38f5e8cbe68a93998b6ec953f417dcc9c6d8e"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1307549377
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/omp-app"
-        blob: "5ab00c345fd9c10546e9ef957eb9b8edd29ba73e"
+        blob: "61ab33b22d274e62967d6a82d56cbb403867cedc"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "279c9dc71b11f958d40e9b1e8a2bf870539e462243e41a67595d66bad1d7bee7"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

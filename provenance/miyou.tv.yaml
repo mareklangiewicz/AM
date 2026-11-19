@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 73267443
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/miyou.tv"
-        blob: "c4de39352f29ff3123bdc1a2de00116b36ea19d1"
+        blob: "7bcc9d656b34626479b30d5957ae6b1af0db4715"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "e0437dd45c08e8bb93b5d31e2265768aa1cb4f46d3c1d106e1260dc5ac8f870b"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

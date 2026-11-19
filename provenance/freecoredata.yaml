@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1336151920
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/freecoredata"
-        blob: "0548fba39cd9eb1b5abd2a0f809b9d91b41cd51d"
+        blob: "d5750d90fa72effa37be797cf9ec4b92b9d49763"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "fd70b24ddbd41a11e626af31e8b144d037112a737afbfd82952371ea125a1474"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

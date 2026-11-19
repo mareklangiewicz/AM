@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1168716151
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/claude-powerterminal"
-        blob: "e21e1a8bbe730bf7e5fa8431c081c77ac61ce7a0"
+        blob: "281f7203058f9f83cb8a591f87ae8c0c084096c7"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "8df2c06c038f344bf3d513b929027edba68d081e7b5399bfd6499e357e5c6b4d"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

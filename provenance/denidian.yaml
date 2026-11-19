@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1271302801
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/denidian"
-        blob: "5b43a90bdc629e1269400c06d836a8e7f5f252d8"
+        blob: "abe3f1d8c127e2345895bd55197fb08122028bac"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "06a4a3ee04c527bf0398dc5dea21756ccd21656ddf5341b9f5f85ff018d3d5b1"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

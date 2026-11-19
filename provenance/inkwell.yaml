@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1269598664
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/inkwell"
-        blob: "77a5939791efb3cbbe9b2913bfc2402b6da39f81"
+        blob: "4ed9bf8dc21e3df49094450b18038409b8118a1f"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "88daa488e9e5a8ccfc5a35d4210cb05a1fb5af22bc2644c43521b4789db3dec1"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

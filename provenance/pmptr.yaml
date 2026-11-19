@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1268829393
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/pmptr"
-        blob: "c19c0ca83eeaee1b433129dc4b41fa7538bce396"
+        blob: "e9419b15f6f3e5d69ce86edd40d7d1e683a53991"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "47463c96305d434fd6fc4a7a53d0922d6484cc0e8b70687ebfc4f8f46f9a53bf"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

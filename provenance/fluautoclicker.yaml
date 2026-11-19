@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 970720605
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/fluautoclicker"
-        blob: "c9a22151e7fa5eff0de3c3b36d7417447af4b8f8"
+        blob: "cf4a6ab43431f733bb6aa7d557c38f4930a907c4"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "c77cc3dff05d3d7212184f250b133c31ffc6c30475c2566ba5437dc1732f5103"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

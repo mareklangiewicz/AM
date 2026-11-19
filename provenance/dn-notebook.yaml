@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1364487704
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/dn-notebook"
-        blob: "18d8bc747f8f493604c5b2b4a8f0670d0f2a5c33"
+        blob: "0a03fadedfcd3004938707233ccea5dde69dbefe"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "0a26ab0578e3a77449a5f0de3de68bb7ed2728267de76e47e6b9ef8d8c98c298"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

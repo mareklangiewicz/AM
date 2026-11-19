@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1287982437
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/marionette"
-        blob: "7fff2d1f77b1448cfe1a3a4182a96e2257df5c83"
+        blob: "14b792a163ea24a8ad6e7a0ec94cc9f1a44e4cbe"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "2f1c44cc499c3b0e2761c58aa3e962a5f3b142b9726987c962a17e6bc5c79ee2"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

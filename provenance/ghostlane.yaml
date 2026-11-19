@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1304312541
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/ghostlane"
-        blob: "0fafc1b925faef7ba47c4310eb8a4e89e47f2e00"
+        blob: "9193fb7577cd919c54911b4d7d0ce26164bcfe7a"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "5f43063473ac8299453b3d38d77b3d5e1399c2c7439c4b80e63477ee7cb26441"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

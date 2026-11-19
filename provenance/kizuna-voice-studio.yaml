@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1183894002
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/kizuna-voice-studio"
-        blob: "91ad84537c5809f90d5f698ce16594908a9ca74f"
+        blob: "c1280a03bcdaa8c0c37aae0206e6bca3933116b6"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "b6d5b454c67bafd04ed3d818090bc8030b86a70f8efbfbdea6e7c1e6f76fb1bb"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

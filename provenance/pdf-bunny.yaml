@@ -26,9 +26,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/aarch64/pdf-bunny"
-        blob: "83cd28cb9364b4f648ac5b14c6a9ff99d0b96e6b"
+        blob: "eb1e6654879d304b8324fe7307b991e7f01c6f96"
     "armv7l":
       repository_id: 89720952
       availability: "absent"
@@ -40,9 +40,20 @@ apps:
     "x86_64":
       repository_id: 89720952
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/pdf-bunny"
-        blob: "442143b616027619ddcc1dd9232762724e110212"
+        blob: "7d1429be7a12a342cea9f697e4ff3b8f4785f6fc"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "1af5ae5d7f2f14771457ac4b56e87963751ddb26ba70374368af224643fcff97"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

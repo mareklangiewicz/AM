@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1147484566
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/containerus"
-        blob: "905f1706ebf1c8d5e6a7fce0e452f9cb7f60245e"
+        blob: "387ddb0a0076f89b641e14f9fc0cefdefe2831e6"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "c8a4d9939c9096a9a49cbaabdd5872b0d97ff08757980df3be9a9c6cf7fa18d4"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1233726866
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/eden-cheats-manager"
-        blob: "6da0d541c795ab7613524b495f360b7ebaa7377d"
+        blob: "5585b122e47982cad42b51b1d256deec91cbab57"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "328895bfb462be44e1b2c9460a1b4a61dcaf75a443b3ddd4a7915b4584217956"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

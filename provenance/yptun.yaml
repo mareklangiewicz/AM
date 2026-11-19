@@ -26,9 +26,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/aarch64/yptun"
-        blob: "e5237fe272dd66f359b97467ea05d9cf20466565"
+        blob: "527b60cea55719f05b24cde84ce1f06e08813cb9"
     "armv7l":
       repository_id: 1235045841
       availability: "absent"
@@ -40,9 +40,20 @@ apps:
     "x86_64":
       repository_id: 1235045841
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/yptun"
-        blob: "d1eefb3d1a3deabea873453c2ae52620fb6e002a"
+        blob: "b74854f9a7c20b733740c8fa612ccf6aba453003"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "4f2e4d5dde1db01c45920ecb4190cbbdb9ee794fe68c83a0bbe535a4e074d929"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

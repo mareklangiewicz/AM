@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1341790860
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/lgl-papercutter"
-        blob: "f609ca739aa1cec4844bc4ef09bb7ba20eda19e5"
+        blob: "590436fad1c39f6fdf70e6f8f9796fe7b1f6fbdc"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "b8bb3b0b0ea93c970134fd823fe6370624e7a3123530bfb010505761ff47a572"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

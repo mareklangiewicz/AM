@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1279960221
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/ps2-servers"
-        blob: "c7f57fbc7e3cf00dfef416c9b7537f9aaeb115ed"
+        blob: "eda1f2f5b077d646d67cd64327d0a0fc1717ff4c"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "6790e2813e8633115184b3a5b1c953b5d9076dfa83e5db587f674c0b75db1b5d"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1131941256
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/desktop-browserbase"
-        blob: "61241d0b4c80a2d908df773d338b14d1e6a9f45a"
+        blob: "38fb50b1f8b734fc8327245be2b89d35ec6f1d78"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "6c50694d9d0573a69ee0778d586fa72e209f25a084020688a0e1ec4e780c8939"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

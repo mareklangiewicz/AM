@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1392620687
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/contrejour-dx"
-        blob: "a3bec7bce96a40ed3b58118783246b7ecaf3f170"
+        blob: "2d7845dccd87e0f44ff4b19585c51c4e816e5855"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "0dcc1ef0f8ae891fc8af8c29dbd50e6ed7c64a5b952adccf19830f93b194f6bc"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

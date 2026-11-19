@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1276421551
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/gitswitch"
-        blob: "2fea00a22309a48bf83cd324801f0132845c23d8"
+        blob: "7e4fdc1da874ce0f29aba6ed11614757932a862d"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "39b7170c7cc2ff05bf9239b5d9969b80f1074b3d6e530ebe400ee2ac9ad4ba76"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

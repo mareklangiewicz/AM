@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1152168870
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/varlens"
-        blob: "92e40fd7d8d94e67c7cbd69b54f62dd8afa36a9a"
+        blob: "ea5a3e46cf74af73c8e5231309f424fe2c21300e"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "daad2991f1157164dfc95096f1451125e6b99d76158f5ff79bebe64d6cb92f9c"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

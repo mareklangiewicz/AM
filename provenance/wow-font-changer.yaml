@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 857964089
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/wow-font-changer"
-        blob: "94d1eeac5d2052c3e63a98e30ca2d49948706259"
+        blob: "2d564a48b8d097540403333a0222fc135f1bdb1e"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "29baa4d3aea6dc9b9451e4cd9d33a36cab02f20b7cee93693e0859ec0860aea5"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

@@ -3,36 +3,13 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 485818631
 repository: "benjamimgois/goverlay"
-collected_at: "2026-11-17T04:37:33Z"
+collected_at: "2026-11-19T13:51:07Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-17T04:37:33Z"
+observed_at: "2026-11-19T13:51:07Z"
 releases:
-  "262825132":
-    tag: "1.6.1"
-    title: "1.6.1 (update fix)"
-    url: "https://github.com/benjamimgois/goverlay/releases/tag/1.6.1"
-    created_at: "2025-11-17T01:58:09Z"
-    published_at: "2025-11-17T02:03:41Z"
-    updated_at: "2025-11-17T02:13:58Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/benjamimgois/goverlay/zipball/1.6.1"
-    source_tar_url: "https://api.github.com/repos/benjamimgois/goverlay/tarball/1.6.1"
-    download_base: "https://github.com/benjamimgois/goverlay/releases/download/1.6.1/"
-    assets:
-      "317251084":
-        name: "goverlay_1_6_1.tar.xz"
-        url_suffix: "goverlay_1_6_1.tar.xz"
-        size: 6666284
-        media_type: "application/x-xz"
-        digest: "sha256:88d17ad984828751f2f6046bc8742e5c50ec2802c8fc79a71f69b2ec468e6268"
-      "317256420":
-        name: "Goverlay-1_6_1.AppImage"
-        url_suffix: "Goverlay-1_6_1.AppImage"
-        size: 59071883
-        digest: "sha256:8ce21193a7bad713bb87141001adcfab096228cbc29228e6e3ce02f201b41674"
   "269293159":
     tag: "1.6.2"
     title: "Goverlay 1.6.2 "
@@ -1014,53 +991,100 @@ releases:
         size: 162378360
         media_type: "application/vnd.flatpak"
         digest: "sha256:e009278b8f8d71b1295489de80b6f6413c29b1b96771b93c541aea600b39a726"
-  "447930987":
+  "449395503":
+    tag: "2.0.0-RC2"
+    title: "Goverlay 2.0.0 RC2"
+    url: "https://github.com/benjamimgois/goverlay/releases/tag/2.0.0-RC2"
+    created_at: "2026-11-18T01:11:41Z"
+    published_at: "2026-11-18T01:12:05Z"
+    updated_at: "2026-11-18T02:06:18Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/benjamimgois/goverlay/zipball/2.0.0-RC2"
+    source_tar_url: "https://api.github.com/repos/benjamimgois/goverlay/tarball/2.0.0-RC2"
+    download_base: "https://github.com/benjamimgois/goverlay/releases/download/2.0.0-RC2/"
+    assets:
+      "761482659":
+        name: "goverlay-2.0.0-RC2-x86_64.rpm"
+        url_suffix: "goverlay-2.0.0-RC2-x86_64.rpm"
+        size: 13632010
+        media_type: "application/x-rpm"
+        digest: "sha256:acd1f1eb6d70c464234f38359c990ec9ecc408eceb79694dc0e0da3e0f1af67c"
+      "761482660":
+        name: "goverlay-2.0.0-RC2-aarch64.flatpak"
+        url_suffix: "goverlay-2.0.0-RC2-aarch64.flatpak"
+        size: 147382408
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:eb50868362ed84d2c63493b594ca716d4b27301046a430549a3ecdf6c10689ce"
+      "761482661":
+        name: "goverlay-2.0.0-RC2-x86_64.deb"
+        url_suffix: "goverlay-2.0.0-RC2-x86_64.deb"
+        size: 20152124
+        media_type: "application/x-debian-package"
+        digest: "sha256:4cad0b8595c96c79924ec2899b4c4fb126a9370eaab3c9ceb6069d2f111eb440"
+      "761482662":
+        name: "goverlay-2.0.0-RC2-x86_64.AppImage"
+        url_suffix: "goverlay-2.0.0-RC2-x86_64.AppImage"
+        size: 68841394
+        media_type: "application/vnd.appimage"
+        digest: "sha256:d76fc4fbcaba5c71cc8337ac5af670f27b8273d0da823431c60861ccd80ff8d2"
+      "761482663":
+        name: "goverlay-2.0.0-RC2-x86_64.AppImage.zsync"
+        url_suffix: "goverlay-2.0.0-RC2-x86_64.AppImage.zsync"
+        size: 235498
+        digest: "sha256:1d02b2af0704ab92ebd527c383b11abf60fc59f1c2c312487a10c7231d1c3805"
+      "761482677":
+        name: "goverlay-2.0.0-RC2-x86_64.flatpak"
+        url_suffix: "goverlay-2.0.0-RC2-x86_64.flatpak"
+        size: 162418192
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:63333e3d743f279296fd953d81583833888d5aa3194e17a841cf16ae4a787f54"
+  "449432324":
     tag: "nightly"
     title: "Goverlay Nightly"
     url: "https://github.com/benjamimgois/goverlay/releases/tag/nightly"
-    created_at: "2026-11-17T01:10:12Z"
-    published_at: "2026-11-17T01:50:24Z"
-    updated_at: "2026-11-17T01:50:31Z"
+    created_at: "2026-11-18T01:11:41Z"
+    published_at: "2026-11-18T02:04:20Z"
+    updated_at: "2026-11-18T02:04:26Z"
     prerelease: true
     source_zip_url: "https://api.github.com/repos/benjamimgois/goverlay/zipball/nightly"
     source_tar_url: "https://api.github.com/repos/benjamimgois/goverlay/tarball/nightly"
     download_base: "https://github.com/benjamimgois/goverlay/releases/download/nightly/"
     assets:
-      "757202297":
-        name: "goverlay-b56bf5cc2-x86_64.AppImage.zsync"
-        url_suffix: "goverlay-b56bf5cc2-x86_64.AppImage.zsync"
-        size: 235547
-        digest: "sha256:84902352de648a913f18a9aadaedf56f7a748ccaf8db6fe07d793e296a78b8e4"
-      "757202298":
-        name: "goverlay-b56bf5cc2-x86_64.AppImage"
-        url_suffix: "goverlay-b56bf5cc2-x86_64.AppImage"
-        size: 68853796
-        digest: "sha256:1455bd5ddad9f9decf1fccadf6754646eb78fb8e1a1a0caad4afe2d9340da4a7"
-      "757202299":
-        name: "goverlay-0.0.0.b56bf5cc2-1.x86_64.rpm"
-        url_suffix: "goverlay-0.0.0.b56bf5cc2-1.x86_64.rpm"
-        size: 13634257
+      "761478575":
+        name: "goverlay-debuginfo-59e9f78a7-1.x86_64.rpm"
+        url_suffix: "goverlay-debuginfo-59e9f78a7-1.x86_64.rpm"
+        size: 7050511
         media_type: "application/x-redhat-package-manager"
-        digest: "sha256:a720e27e6ee960a91ced176e9188910524914663a254d8eb3b39d7ce2d00487c"
-      "757202300":
-        name: "goverlay-nightly-x86_64.flatpak"
-        url_suffix: "goverlay-nightly-x86_64.flatpak"
-        size: 164154496
-        digest: "sha256:c48fb54c74ee641f2f5a320527785c5edef46ef949c0dbe80d69aad031bfdaff"
-      "757202304":
-        name: "goverlay_0.0.0-b56bf5cc2_amd64.deb"
-        url_suffix: "goverlay_0.0.0-b56bf5cc2_amd64.deb"
-        size: 20150860
-        media_type: "application/x-debian-package"
-        digest: "sha256:5a8b37a0ced6959a50cf693e86e640f0ed634cf718fe6f2f32c6bd82ae623d63"
-      "757202307":
-        name: "goverlay-debuginfo-0.0.0.b56bf5cc2-1.x86_64.rpm"
-        url_suffix: "goverlay-debuginfo-0.0.0.b56bf5cc2-1.x86_64.rpm"
-        size: 7050557
+        digest: "sha256:f12a61c74ec6c6bbdcfd9f74b8b53fab7078ef03502a864d1c8989262b730cd1"
+      "761478576":
+        name: "goverlay-59e9f78a7-1.x86_64.rpm"
+        url_suffix: "goverlay-59e9f78a7-1.x86_64.rpm"
+        size: 13632095
         media_type: "application/x-redhat-package-manager"
-        digest: "sha256:5e154c87f03bf8c1033f9ee713cf626b2a2119ea7d103201c9658a7c31d5ed0d"
-      "757202311":
+        digest: "sha256:9295e581d436a2190f11d66bf48ff7f2ea30153a1a6d375a9c42ee7cb08c54ec"
+      "761478577":
         name: "goverlay-nightly-aarch64.flatpak"
         url_suffix: "goverlay-nightly-aarch64.flatpak"
-        size: 145843672
-        digest: "sha256:ebe3c256fc9414b8e6ad924064490e7cdbbd2a2d88d31e370043591ece52c012"
+        size: 147410696
+        digest: "sha256:e7232bceb4e2de54b6e265be3bb779d12fbae10b81e9094c4c89df358a56ca0a"
+      "761478579":
+        name: "goverlay-59e9f78a7-x86_64.AppImage.zsync"
+        url_suffix: "goverlay-59e9f78a7-x86_64.AppImage.zsync"
+        size: 235498
+        digest: "sha256:4777b4ac90b7ddf03d2869b4880dce7cb52c5b2cb9f194a817547fa0e5eccda1"
+      "761478580":
+        name: "goverlay_59e9f78a7_amd64.deb"
+        url_suffix: "goverlay_59e9f78a7_amd64.deb"
+        size: 20147328
+        media_type: "application/x-debian-package"
+        digest: "sha256:ad2b2db5accde6ae8d36891b5816773d96b16b74cced4e1facc39b5d7776cef4"
+      "761478581":
+        name: "goverlay-59e9f78a7-x86_64.AppImage"
+        url_suffix: "goverlay-59e9f78a7-x86_64.AppImage"
+        size: 68841258
+        digest: "sha256:776ea0f0152be477d2938579d3e0f57028eb16ed8d3090f353103c2ec17642aa"
+      "761478582":
+        name: "goverlay-nightly-x86_64.flatpak"
+        url_suffix: "goverlay-nightly-x86_64.flatpak"
+        size: 162404728
+        digest: "sha256:10ce8d998abd73a7427f1e8a16d73cef9d06ad948f65d5bde633c74f5e736264"

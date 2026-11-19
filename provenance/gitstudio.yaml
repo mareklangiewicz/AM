@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1277449968
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/gitstudio"
-        blob: "cff0e94fa5cc0fac4faa0e98a966949373c0cffe"
+        blob: "756c074a3d1352e6bcd0eaaed9ca4793b3cbf4d3"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "7fd0fc520c910f4e994e6fb4ee49575bc602b5e4436063f8ba5027e481e2df43"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

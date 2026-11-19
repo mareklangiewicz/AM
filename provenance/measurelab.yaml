@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 975835354
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/measurelab"
-        blob: "61e0ba183345623a7b8ad9d3469f8eef66129ab8"
+        blob: "93e0ce3f7aa10efdd9c26ace23d26d138d966c7d"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "2b8b534c01b3fbd4f02914e4b479cb190eedbae670320fb5c54e5ebbcd9cbea8"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 934230225
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/dataseteditor"
-        blob: "ef49a5b86e1c8cd4b7d596f6b78772a78e3d62d2"
+        blob: "84c9bcfee7bccd54dcf0e0bd0b5be70321df67d2"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "243ab802fabe0cae8353c74c1341f0f096336e0e2584aae85955716779bacd10"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

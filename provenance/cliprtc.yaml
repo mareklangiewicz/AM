@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1098939194
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/cliprtc"
-        blob: "58db9af6fb5c39852e84f7a68102b4ca55e69d9d"
+        blob: "9a2fa20adcdc874257c644fbe8d7ae5355e63b00"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "5c6d9adb3dc46090ea193dd241d56c24daae335997838b6787e1c6a452a45120"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

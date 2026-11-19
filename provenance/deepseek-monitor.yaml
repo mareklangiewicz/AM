@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1323624586
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/deepseek-monitor"
-        blob: "22f1abd392f85a06f90cc102157846c2382545bd"
+        blob: "2c9a33a0c8f8d81ce0db82c8919437fa8fd07eb0"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "cdcddbca52687c3c4c4d8755bdebe6e9deec9a0f24fd1cd047d0e7247fb7f585"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 887129113
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/chatspeed"
-        blob: "eb1c149ab5d1faaf99ee3c337a0c1fc1c25e0bb9"
+        blob: "91893d7c22448f16b2dbc9e586222672e86534f0"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "61c6c31899af45f596fe572de19f08ad209cdf54fa5fa6862ec203347149d9f6"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

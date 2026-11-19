@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1337578630
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/deepseekgui"
-        blob: "8fbda67eb5d4ab47b2592dcc7ae9dd7c0b00b5da"
+        blob: "28a9fe2af3b609969a815f0d18e06885ba3ff71d"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "3b250e00ea3f776683b5cee33479ffaf0bb183a3c4a55bbe451062b25d0badde"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

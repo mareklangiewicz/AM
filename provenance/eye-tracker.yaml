@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1399128338
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/eye-tracker"
-        blob: "bf8c0a300fe59ee39ade10c4db229de3e9eea2bc"
+        blob: "1e87b98f8c7c18a749837773a3e59ec51fa24008"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "b82c2d4ff94511edf806a42dd48accf54d6880f8bb784fe501d243d1c1d93c4e"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

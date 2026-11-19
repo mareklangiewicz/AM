@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1175065059
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/notebooklm-chunker"
-        blob: "1d24cf56ad93eb2a7c23d8b833c3e22a972b20b5"
+        blob: "162efe1fa42c6473da00b96cd4f4e33c14bb7b3f"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "c66780a1bc92ed414754c9c5eed56e8df77886137da5a77a6390170d8051f2df"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

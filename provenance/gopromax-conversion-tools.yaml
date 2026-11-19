@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 978205585
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/gopromax-conversion-tools"
-        blob: "56b8e0b3f78cbbcfe0e1c07688156cd86acf7008"
+        blob: "d0864c08aa4b55fe06de560204d1a17973214239"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "599de51595978a1d83b6327e30b6ca24c5435117a62ab629ade73c8042c1dd50"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

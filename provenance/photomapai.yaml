@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1040394906
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/photomapai"
-        blob: "45f4b6666af4f167a61ee46e104dcb4f5eaad4b7"
+        blob: "9f5e6a45e25ca2f828a9f297278cce6eb8e0560c"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "8fa32351b4349a025fd2dc1946c07bec6979fc62c304c6cc23ed29483e3bd78c"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

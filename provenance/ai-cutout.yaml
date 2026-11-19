@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1189315874
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/ai-cutout"
-        blob: "c4b9b68c3027f79b7ecd29e99d4bbf4ecb726b82"
+        blob: "7255303b8f2be7847164fc33ab738f936d7954cf"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "f6d035d5c9f0132197cb16e94d4825412bb01ee2fb029da0b881017c5b563ef1"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

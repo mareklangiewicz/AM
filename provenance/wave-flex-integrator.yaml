@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 867035452
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/wave-flex-integrator"
-        blob: "3143aa0e4b6c3637e96294a42e370ce41f513c82"
+        blob: "feb5ba91122eb48d7202ffb8d0c4a89d6903b218"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "0eab71b3741c176304a0d7ea0d6a457387aabf5810754403c5ca8f27c056b760"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

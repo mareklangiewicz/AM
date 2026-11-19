@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1305416838
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/hookecho"
-        blob: "843105f9d154648f2efd7bc932078a4140207f7d"
+        blob: "87a607171e2f04be1c7d3ec8e64939b311377a02"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "8401f7db2e7f723beb9d3741d8d9c1940f3c3d0fd86afa9f7c9cacf4bd83b2a0"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

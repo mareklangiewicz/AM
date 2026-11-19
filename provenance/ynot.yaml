@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 885153496
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/ynot"
-        blob: "1de5b399b2b167e35851d6f0c9bd2aada2794f11"
+        blob: "2a7b6df7abc06bf7c44f57bcc7ea70a9a4a765eb"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "b573b58ebacb2dd9f0eab958759355aa9f8096a1202b3b01907fb3b85e2578e1"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

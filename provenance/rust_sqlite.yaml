@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 330041868
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/rust-sqlite"
-        blob: "bf5556f6959efa0d2f1086897f64914f61ebccbc"
+        blob: "e38e09120c3c19d0e99fca69707d44c5280b31eb"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "693b392d95800dd2a4ea03d10ff1fcd9ff0d76cb2e32f3af6b16ce85c2290ece"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1076030229
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/powerplatformtoolbox"
-        blob: "2c98bfcb4f61a746e7a780a7b6613dea6a64b846"
+        blob: "24a98f6f02d2c77f45ec6b5377ed2b892690628d"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "1548fa4033fabc1b31a2ba0c6c12b4dd088c6a923c9eceaaf7e1ae300bc92e0d"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 479979541
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/ffxiv-best-craft"
-        blob: "17db8c89ecf06cb9af6694dd9753f5c732e89020"
+        blob: "f54fdbaa9ac4ef0b80d5156c0f2eb0b63be83524"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "ab66026aa57712f2d5da438a9117612be9c1af446bea83158ea0f5383ee48571"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

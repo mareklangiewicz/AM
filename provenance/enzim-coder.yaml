@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1179770832
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/enzim-coder"
-        blob: "ccaf8586885a9d73a6b371a4a82217e4d5515f5d"
+        blob: "01d54f46c22398ab2d6065cce681ba0e4147d83b"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "b74c7a3515e90ad757ab075ba0e4ee21b1d1cc5134c4da926ea1453c6cde8a69"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

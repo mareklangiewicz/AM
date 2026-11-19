@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1171787912
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/manent"
-        blob: "0cedc80b415cee0d1f0e3c4df7c11dc1dc5c6577"
+        blob: "a2dc723d43646d7a5a5571ce2b6cff2cc1aaa642"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "b4f774d80dcc7d8540082ae7c7bfe0b448106567d16225efddc987088cfd903b"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

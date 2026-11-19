@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1263797244
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/polygon-txt"
-        blob: "782f5fdb05a5b754e65fbee5547bdc352707aebd"
+        blob: "bbcc39c4d07ee87ea7f98e7abf095086217f5adf"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "c81465a031a6ded3fd8eb1347764b07970d356b8bb4ce4a31b11cca06d2b9196"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

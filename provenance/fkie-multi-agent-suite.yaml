@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 745042302
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/fkie-multi-agent-suite"
-        blob: "cb45079109e0f07ea1fc5e9b021776eafa069bab"
+        blob: "d5d36bfc0e294be5f0c516a1f15e5d8bdc034c70"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "eb91a2fc82e42b017193206118dc20f5338c5ceb67e3d22e5d471e07f69c8b90"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

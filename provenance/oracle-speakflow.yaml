@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1319986785
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/oracle-speakflow"
-        blob: "3afe6b5100194d212fe9d208274e40f77a20679b"
+        blob: "a3e9106f11d7de71c22024cfe010f1b9c8247f60"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "50a314d62397dbed21d4a515fbb64fb4b7f81271fe7a8f64eabe6021b7b0a09a"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1196691204
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/raven-nest"
-        blob: "0e1e5ce40dfa13ec0489065a005f1b848862cacd"
+        blob: "23a3ac4d8ad1c7e2fe56ef6d303c1a1a33c0f3ba"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "1096ee355c69d3990cc410fe941b0885783638a36deb934f95f7e787b5b77a61"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

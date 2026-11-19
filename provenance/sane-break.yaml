@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 815501356
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/sane-break"
-        blob: "bf01249772a5f95fb6fa045a0b3f8543cf7fa5e0"
+        blob: "afc4ef5c6cd82d2ee437a264bb0290935cac32e8"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "e6eb48c0ed3e05a78287ae7205831301d5c2b87daa0136b31689fb8a86b28868"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

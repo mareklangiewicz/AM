@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 190549270
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/dbptk-desktop"
-        blob: "bc8434a539a3669805562045f65979f55165fc89"
+        blob: "ba6c182ae26d5c65d98a7b3bacdb2a09c71a6401"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "761d2b6c112ee4d334e90f2b79cb3fd17d66a603b74e45c48f214886edb1c0b8"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

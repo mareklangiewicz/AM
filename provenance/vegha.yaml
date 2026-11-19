@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1241110014
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/vegha"
-        blob: "62a247a32d7ae6c3e4ec02942f553b6bfec63655"
+        blob: "c8d1d13e8b65bb22f35ac6f6ed8b09aec7a27555"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "b04a48c324b8d9072e5ba1b8dc401a41d51f054f3b4f48acfca5180205fce63f"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1176076641
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/medialyze"
-        blob: "60779487d31b0702acbf1d558b3242a3705ef0d7"
+        blob: "4deb470cc0b7c6d5d55ec2e5bf3468b3fbd1bd92"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "d558cbeea194e7f7374bbaa960f11132b1f8bd0660598e3dfec272cfe5714d5c"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

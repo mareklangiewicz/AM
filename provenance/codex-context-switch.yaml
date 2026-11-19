@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1337295547
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/codex-context-switch"
-        blob: "d491d714ee1f3155fcc2c6c84d8f1586ea44ae96"
+        blob: "87f291d3f06b9d8c970c0305ec1a0c3343c9ae9d"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "ad31fb6daa36e7ba907cb2625f25d4e1810390877e0ea68c29454c1a89538190"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

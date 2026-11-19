@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1141028175
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/algorithmic-filmmaking"
-        blob: "f66e149ab2c7fa4e476ab55c224d64dd81e6123b"
+        blob: "0e9d058cf2ca40e48c9bd1378e78b202191ad572"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "ccfa85a3356cce995b8d1765ec6744579e722308e67065fcf33bd87a0eb65d84"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

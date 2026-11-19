@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1275408975
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/hermes-ios-app"
-        blob: "5bd5580b7d7b202c61ee78c553df8a9e6324628c"
+        blob: "19c5b38a0ce1ff8479344e17e346491a84d6f7d4"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "74da2d8910aed28f0d4ec2cade14c555ce36d9f361fc3e39c8792da2e6160752"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

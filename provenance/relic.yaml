@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1322142533
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/relic"
-        blob: "14f3bf0c60aa7afd4d63baf55a19c3cae6db4a74"
+        blob: "bfd43a602df26f165ea14770e4ef8706ce633679"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "cd57abdc9ec4047f7d86b9a03de982dce6beb496b44ebd97df2f2df6ddd0522e"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

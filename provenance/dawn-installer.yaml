@@ -18,12 +18,23 @@ apps:
     "x86_64":
       repository_id: 1376139741
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/dawn"
-        blob: "4aee6753fc26a888145e8d689941c0cb5e679807"
+        blob: "f1770d802d54d0a8e21102b6ac04d6f0f14106c1"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "6904b7f7b55c40d59fd4ae745577ddbee2f39a0ee7a1be4f420b3b1e90ea36cd"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"
   "dawn-installer":
     "aarch64":
       repository_id: 1376139741

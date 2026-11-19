@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1410637011
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/muscle-march-recomp"
-        blob: "ed00b81f22819c03b66e038993adb59c4c0fc31d"
+        blob: "b500a4806c55b949fdf0ee5b0cdb105033774c2a"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "fd6a1d5de5d4ed2ac56043f23c847437574efd53c41442a1e84b717021fc8714"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1279679492
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/tronbrowser-dev"
-        blob: "5049696d1fc9e0d6edbc1c9776d6ab23ea14d1a9"
+        blob: "3260559a121d966cc2978e71f80e24b0c0481ed6"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "0044f3e7e029129c3063cd6797349763b495fd936d769c3f2f2af4c6b34df95e"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

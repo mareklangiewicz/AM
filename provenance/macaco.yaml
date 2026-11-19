@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 584855125
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/macaco"
-        blob: "951065e5bd6c0abb37cae866d78c7b74d7155fa9"
+        blob: "e391028b1ffec1eccbbc9ede1d81d8c8c45cb8a3"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "51c33d7b7ec33feb12794d9aa5a9e2186501b4921ece94f2d07818bbdb8b1d48"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

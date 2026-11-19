@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1122090063
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/flaxeoui"
-        blob: "c4f8b36e2edc00edcb62c2656e3754de67d5dfb5"
+        blob: "f53664ff3fc5f630e9e8dde8d80b690e7b0a9d7b"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "d5f2bac37ecc98388eb4810e78e0d87ee0ca4ce070a835ad67ceb2e3ce4ecf30"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

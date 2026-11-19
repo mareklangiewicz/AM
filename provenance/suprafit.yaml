@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 55421012
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/suprafit"
-        blob: "74143b1fddc3e71d3fc6b5248702104f4ae70038"
+        blob: "799d5b26b09a5909cc38da8a39141146a3ea2eff"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "082a4e47bf46f77cee1c80d98e2fe4a52c774b752f09159f4dad750f0f3b0d3f"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1273710886
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/edentext"
-        blob: "27960b0536fcc40272705fe0a0b21f516a20c014"
+        blob: "dfb2f9b0e6ae107914c2c20f6d781c0d64cb50bb"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "27197965ee54e4ccd8dc3e89fe7393c69a1d69bfaa69c54f973bbfa34fdf1bc5"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

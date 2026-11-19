@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1024552742
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/jsoninja"
-        blob: "4ded32ad8273204dfcd927f0442996c706966a7b"
+        blob: "388d1ae67c4ecf6b4fb99f3c3e8dc7f2f68917d7"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "0aeab08b36ec0c97b6005129f1caa80229526e0d2836c9ab4146d4508bf1de7c"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

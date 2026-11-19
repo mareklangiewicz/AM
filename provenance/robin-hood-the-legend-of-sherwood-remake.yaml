@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1202221356
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/robin-hood-the-legend-of-sherwood-remake"
-        blob: "043c91f457a77ad947b83f97af7f83499f71ce57"
+        blob: "091295c1386405791f3f6d6b99caed9ef79cd801"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "4cb4567bd0e5b46c5cd816f5634d02bee6250aba21c0b12da5fef58607553e42"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

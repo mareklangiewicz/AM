@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1282960350
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/agentdex"
-        blob: "e48cfbb83160bf7ed659f926fc9a3d379ae834cf"
+        blob: "380bd0ca4f2a7038ab1c3f216c1074736f94e187"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "76c856ba1187f52f4df45ef75c60aa3c6ac019427c867f3d8cda1058e115e118"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

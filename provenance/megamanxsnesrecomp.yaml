@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1246265970
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/megamanxsnesrecomp"
-        blob: "0d0a1a2bde6b6d9b44f1e092c9cb6b177cc38e4b"
+        blob: "f51579bef42184269efa18ac8dae2350f0de30bf"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "5b09649506071f474fe7b57fe364f3b92e182120493c609eb8b7906bdf8fc77c"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

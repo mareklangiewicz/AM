@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1200064848
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/aineer"
-        blob: "5a4f3d10262a61da703e6fda092798cedabdf89c"
+        blob: "d6a731ad2da5d9bf9934c2f299a9a5dd795e798e"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "c7c8e7eac9bfc726c08586425468b8ffdc59cbcc0901f1e9f0ea0411adc86c56"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

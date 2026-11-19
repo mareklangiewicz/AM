@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1111094935
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/flucto"
-        blob: "1594f421981ae246b44bf5cd340f47ec8d105a62"
+        blob: "f16bd9a5a067c94881d6d2a0e3e6b50e5ec9919c"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "dbf5c8f292d90f198d21ef28dabb543dfaf523df68130eef0b346746dbb1d527"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

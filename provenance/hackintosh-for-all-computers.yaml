@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 413518535
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/hackintosh-for-all-computers"
-        blob: "4af85b70c698e54f025abacdca91fac8cc7143d3"
+        blob: "1f90bceab6cc03fb47fd56a7b239923c6056093b"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "adb936a89bea325bfd2b50a7b3f4f521361ba707622b7a7904e60f386a3ca705"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

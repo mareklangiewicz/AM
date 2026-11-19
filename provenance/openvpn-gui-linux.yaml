@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1210545052
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/openvpn-gui-linux"
-        blob: "381c997f09819d0846790ff84d98791e89a69c5e"
+        blob: "5830f4b3fdc2f58c4de8d597a7edfc8e177dccb0"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "da1a873776d5a7e58ed423fbb406b9b401db89375315defd311f59ea40bcd9ce"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

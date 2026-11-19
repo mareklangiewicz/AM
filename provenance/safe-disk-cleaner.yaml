@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1421979542
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/safe-disk-cleaner"
-        blob: "672ad8c05befb4319afdaf6ce932ea38d6672c1d"
+        blob: "0891688cac4836ced1166ceab8ba6b1864eecede"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "649daaf19a26550750dac88b8e6dfc932a055b45c2931dd0bf866ddda99f18e5"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

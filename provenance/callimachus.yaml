@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1272770355
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/callimachus"
-        blob: "a3e6c0d77829b9e1e650bf34c1aec103b3900068"
+        blob: "bdc8cc3a3a2cb6273636b41be61201fde7acb4ef"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "5edfc840926ea11d35f94c5dbd6846d4dfb86e1ab7ca63e5b8db1338e46a6f2d"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

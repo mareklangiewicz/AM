@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1130925255
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/codexproxy"
-        blob: "f5e7420a44dbfb0009733beb8906ba5fb887dc34"
+        blob: "46ba72d142b5c3cdd0d65be02d722b0fc373fdbb"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "ae2d9045c565e1dfc230b1f8fc28c56f41b599053603e56ba937ce5023beb1b5"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

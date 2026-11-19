@@ -9,9 +9,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/aarch64/c-dogs-sdl"
-        blob: "5f3fee724cd4812c11f6fdb624b3c50ee3760ae0"
+        blob: "6ce842612db1f84274cee2b7f2140b83b3dafb56"
     "armv7l":
       repository_id: 1142427106
       availability: "absent"
@@ -23,12 +23,23 @@ apps:
     "x86_64":
       repository_id: 1142427106
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/c-dogs-sdl"
-        blob: "d631b89d6c0902302f7697b0bbd2e32dfc7ea12e"
+        blob: "04de48e9320354d009f0d13353f6328ff34fb7b5"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "906f0fdff1c821b6dc5cf4984ac21c9298e566d8fb00d83c8ce3809f44286d34"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"
   "cdogs-sdl":
     "aarch64":
       repository_id: 1142427106
@@ -36,7 +47,7 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/aarch64/cdogs-sdl"
         blob: "5b2444cb04f6c19425862a1b7a8726836abfafcd"
     "armv7l":
@@ -53,17 +64,17 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/cdogs-sdl"
         blob: "b2bcbc43202764fb9572744c909d4ee0f6ac50e6"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-19T13:27:06Z"
+        evaluated_at: "2026-11-19T13:53:10Z"
         recipe_sha256: "5e9c45629bc7afe569c6abe571554f21b40a33fbea2739d0ebad43fa0db8c626"
-        rules: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
             path: "modules/"
-            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

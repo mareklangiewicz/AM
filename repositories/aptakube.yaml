@@ -3,63 +3,13 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 512402898
 repository: "aptakube/aptakube"
-collected_at: "2026-11-17T04:38:10Z"
+collected_at: "2026-11-19T13:51:43Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: false
-observed_at: "2026-11-17T04:38:10Z"
+observed_at: "2026-11-19T13:51:43Z"
 releases:
-  "348094065":
-    tag: "1.18.2"
-    title: "1.18.2: Bug Fixes"
-    url: "https://github.com/aptakube/aptakube/releases/tag/1.18.2"
-    created_at: "2025-07-22T13:36:00Z"
-    published_at: "2026-07-02T14:23:34Z"
-    updated_at: "2026-07-02T16:57:21Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/aptakube/aptakube/zipball/1.18.2"
-    source_tar_url: "https://api.github.com/repos/aptakube/aptakube/tarball/1.18.2"
-    download_base: "https://github.com/aptakube/aptakube/releases/download/1.18.2/"
-    assets:
-      "464392491":
-        name: "aptakube_1.18.2_amd64.AppImage"
-        url_suffix: "aptakube_1.18.2_amd64.AppImage"
-        size: 87120376
-        digest: "sha256:58229069db88c95268918b7116a1dc2db14b07c47e0616d8c3d29647e834b54e"
-      "464392590":
-        name: "aptakube_1.18.2_amd64.deb"
-        url_suffix: "aptakube_1.18.2_amd64.deb"
-        size: 16147316
-        digest: "sha256:712531a519a90685046ddf590eaaec4fccbb74d83f2a4322f0c2272ad74ce092"
-      "464392618":
-        name: "Aptakube_1.18.2_universal.dmg"
-        url_suffix: "Aptakube_1.18.2_universal.dmg"
-        size: 29791049
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:9a00694fd3f6da73e5df6d9e3c2dbe0e9d033a53209df9369adaa61c26b5229e"
-      "464392742":
-        name: "Aptakube_1.18.2_x64.zip"
-        url_suffix: "Aptakube_1.18.2_x64.zip"
-        size: 13622023
-        media_type: "zip"
-        digest: "sha256:02ae0835670c467e30ac88b9cc21d106b8b19f2e2b1dcc9312164c05e9bcdead"
-      "464392794":
-        name: "aptakube_1.18.2.x86_64.rpm"
-        url_suffix: "aptakube_1.18.2.x86_64.rpm"
-        size: 16152514
-        digest: "sha256:95fec16c7739036ed89ba2765edebea91a6cc4733923f756c1b7ba23b3ae5b59"
-      "464392833":
-        name: "checksums.txt"
-        url_suffix: "checksums.txt"
-        size: 558
-        media_type: "text/plain"
-        digest: "sha256:5ef3a69af5bb370daf2466abeb7f356f5fe044e6212b93eb003b002862a129a5"
-      "464525352":
-        name: "Aptakube_1.18.2_x64_en-US.msi"
-        url_suffix: "Aptakube_1.18.2_x64_en-US.msi"
-        size: 15798272
-        digest: "sha256:f28ebfc1809e88c0baaad9481ae26cd0010e2108a64eadf3baa8939d7739893b"
   "348599981":
     tag: "1.18.3"
     title: "1.18.3: \"kubectl get all -n\" and Fixes"
@@ -1686,3 +1636,57 @@ releases:
         size: 558
         media_type: "text/plain; charset=utf-8"
         digest: "sha256:fb69351d658070f872490ab94bb357f284e8dab887884d8600771daf1ba621c8"
+  "449700116":
+    tag: "1.23.0"
+    title: "1.23.0: Files Tab and Workspaces"
+    url: "https://github.com/aptakube/aptakube/releases/tag/1.23.0"
+    created_at: "2026-09-02T09:13:15Z"
+    published_at: "2026-11-18T13:26:30Z"
+    updated_at: "2026-11-18T13:26:30Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/aptakube/aptakube/zipball/1.23.0"
+    source_tar_url: "https://api.github.com/repos/aptakube/aptakube/tarball/1.23.0"
+    download_base: "https://github.com/aptakube/aptakube/releases/download/1.23.0/"
+    assets:
+      "762569782":
+        name: "Aptakube_1.23.0_x64.zip"
+        url_suffix: "Aptakube_1.23.0_x64.zip"
+        size: 11082234
+        media_type: "zip"
+        digest: "sha256:d145c6434f46d7b0dfa29feb6e87329cc75b6a3c21b001f079a5b3d0a6d77e47"
+      "762569783":
+        name: "Aptakube_1.23.0_universal.dmg"
+        url_suffix: "Aptakube_1.23.0_universal.dmg"
+        size: 25115732
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:ae541e85def6da25c78870fb94acfee3e0685dba38df7fdd73136e55f2c1facc"
+      "762569784":
+        name: "aptakube_1.23.0.x86_64.rpm"
+        url_suffix: "aptakube_1.23.0.x86_64.rpm"
+        size: 12851787
+        media_type: "application/x-rpm"
+        digest: "sha256:f17290659c124a4c76548af6e249d02744773bb66dccc072a5c978fa5ffaaffa"
+      "762569785":
+        name: "Aptakube_1.23.0_x64_en-US.msi"
+        url_suffix: "Aptakube_1.23.0_x64_en-US.msi"
+        size: 12279808
+        media_type: "application/x-msi"
+        digest: "sha256:242de19827495e6ebb3b978091b3c4a94a54d5c1e0c6952ca3340799b8cf5b86"
+      "762569787":
+        name: "aptakube_1.23.0_amd64.AppImage"
+        url_suffix: "aptakube_1.23.0_amd64.AppImage"
+        size: 85768696
+        media_type: "application/vnd.appimage"
+        digest: "sha256:b043a864ed5e9851b7ed04344687b8bb21c55f90f573c71b948249995ee0e89e"
+      "762569879":
+        name: "aptakube_1.23.0_amd64.deb"
+        url_suffix: "aptakube_1.23.0_amd64.deb"
+        size: 12849250
+        media_type: "application/x-debian-package"
+        digest: "sha256:a7f5caf3d7fdeca50ceae6c8a44a075f0bfa99698aeab51c1aec4f349ed85917"
+      "762569900":
+        name: "checksums.txt"
+        url_suffix: "checksums.txt"
+        size: 558
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:639e400f1dfe644aa4b0699ec4eef7abe32b959af9e325b7e1d63b4fa3ca3544"

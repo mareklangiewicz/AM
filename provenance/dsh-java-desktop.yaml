@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1370961914
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/dsh-java-desktop"
-        blob: "c97a0671838b508c653008283af86d6a0c7541b8"
+        blob: "99fa979dd19e4f3340d8be69dd055d6ef1f5a6ed"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "005557e3fc6ea67f400cf974ba90a5fc4b9d86aa0aac7623026095e61bb5d0b2"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1183484404
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/rig-control-web"
-        blob: "b18bb8ee6201b3f3801472a0a3ff7defb361eefb"
+        blob: "76f7caf595303797e5e752f64286778d9aa7aa3f"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "bebb19fd0e13f562218cc1e06c074a3950e55d076e6a7d5950d5c1c13a7e5cff"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

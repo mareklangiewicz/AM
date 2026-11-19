@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1257599972
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/codexprofilepro"
-        blob: "09ea92450712036f9b0b63cd607e6642f3bd688d"
+        blob: "4f3dba86610611d381cb3d9bfa5a7a99d07ed3fe"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "0c392f751ccdb49afde7be13215c35d1b0cf53d89393157240a14fff9f40c10a"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1335350956
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
+        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
         path: "programs/x86_64/openbatteryinformation"
-        blob: "593c05d386546d3782d8a8ac62edda04f2dd765e"
+        blob: "b7d8cbe67b52c820c8e5dc2ff377cb4630c79c20"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T13:53:10Z"
+        recipe_sha256: "0c413b791968598be0729adbfb178d1aa7972482c38eb4748cbb4f9187f607ea"
+        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            path: "modules/"
+            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"
