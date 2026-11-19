@@ -217,17 +217,20 @@ none within 60: 18.
 ## How each number was produced
 
 Scripts were first run from a session scratchpad; since ticket 39 they are
-in [`scripts/31/`](scripts/31/), and `run.sh` there reruns the first three
-steps and `queries.py`. All read Git objects only; no checkout, no other worktree touched.
+in [`scripts/31/`](scripts/31/), and `run.sh OUT_DIR` there reruns every step
+below into `OUT_DIR`, with `layouts.json` as of `539ccac8d` (the two layouts
+this ticket reviewed against). All read Git objects only; no checkout, no
+other worktree touched. `origins.py` takes `layouts.json` and finds the layout
+versions by body hash, as `report.py` does (they were ids 7 and 10).
 
 ```sh
 R=/home/marek/code/shell/AM U=ba061a639a50260b6be405b15b22be10be328264 O=36c087049957734cd10b0aa4c509e5520b46d93b
 python3 -I versions.py $R $U versions.json          # 392 template versions
 python3 -I -B match.py $R $U $O versions.json matches.json   # 11,782 rows, ~50 s
 python3 -I table.py versions.json matches.json       # the main table
-python3 -I report.py versions.json matches.json $R/tools/recipe-conversion/layouts.json  # tree forms, layout sanity check
+python3 -I report.py versions.json matches.json layouts.json  # tree forms, layout sanity check; writes table.json
 git -C $R ls-tree -r --name-only 7b4f831e6 -- programs/x86_64 programs/aarch64 programs/i686 programs/armv7l > base_paths.txt
-python3 -I origins.py versions.json matches.json base_paths.txt $R $U   # originals added since the merge base
+python3 -I origins.py versions.json matches.json base_paths.txt $R $U layouts.json   # originals added since the merge base
 git -C $R grep -l -e 'Which version you choose' $U -- 'programs/x86_64/*' 'programs/aarch64/*' 'programs/i686/*' 'programs/armv7l/*' | sed "s|^$U:||" > choice.txt   # 85
 python3 -I loose.py versions.json matches.json choice.txt   # loose families, choice group, per-version counts, statuses
 ```

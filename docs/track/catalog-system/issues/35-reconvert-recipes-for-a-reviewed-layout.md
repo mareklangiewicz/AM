@@ -118,12 +118,8 @@ see ticket 43):
 - `FIELDS` omits compiled fields (`tools`, `selection`, `tag_pattern`,
   `git_ref`, ...), and `selections()` compiles only the changed recipes, so
   "same selection" is narrower than this ticket's Outcome.
-- The replay asserts 579 declarations where this ticket says 586 (the
-  pinned-corpus count); never agreed here.
 - Ticket 40 `plan` prints only the first refusal, not "each refusal that
   applies".
-- `scripts/31`: `run.sh` runs 4 of 7 scripts; `report.py` reads the current
-  `layouts.json`; `origins.py:13` hardcodes version ids.
 - `incremental.py` format-2 branches are still reached from
   `rehearse_pipeline.py`: leave them to ticket 25.
 
@@ -136,3 +132,11 @@ stays `4a0efa530`. `ci/review-fixes` deleted.
 compares sorted lines against the main launcher the same way, and a 3.6
 declaration must install what its long recipe does. The counters are renamed
 `staged_main` and `launchers`, and the comment says why the compare is 3.6's.
+
+579, not 586: the 586 in this ticket's Comments is the pinned corpus's count;
+the tree at `d85c3851b^` has 579 declarations from template 3.6, and ticket
+32 counts 579 (its line 27). The replay's 579 is the number to keep.
+`scripts/31` fixed (see ticket 31's how-to): `run.sh` runs all seven steps
+with `layouts.json` as of `539ccac8d`, `report.py` writes `table.json` beside
+its inputs, `origins.py` finds layout versions by body hash; a rerun matches
+the published numbers and the old `origins.py` output byte for byte.

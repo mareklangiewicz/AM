@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Summaries from matches.json + versions.json. Usage: report.py versions.json matches.json [layouts.json]"""
-import json, sys
+"""Summaries from matches.json + versions.json; writes table.json beside matches.json.
+Usage: report.py versions.json matches.json [layouts.json]"""
+import json, os, sys
 from collections import Counter, defaultdict
 V = json.load(open(sys.argv[1])); M = json.load(open(sys.argv[2]))
 layouts = json.load(open(sys.argv[3])) if len(sys.argv) > 3 else []
@@ -39,7 +40,7 @@ for r in rows:
     kind, f = primary(r)
     table[(f, kind)][(r['arch'], r['ours'])] += 1
 json.dump({f'{k[0]}|{k[1]}': {f'{a}|{o}': n for (a, o), n in v.items()} for k, v in table.items()},
-          open('table.json', 'w'), indent=1)
+          open(os.path.join(os.path.dirname(sys.argv[2]), 'table.json'), 'w'), indent=1)
 
 print('== layouts sanity')
 lay = {(l['commit'], l['path']) for l in layouts}
