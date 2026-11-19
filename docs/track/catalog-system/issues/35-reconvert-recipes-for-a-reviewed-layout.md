@@ -145,3 +145,8 @@ none of the shipped conversions (`082502f64`, `a2fad9fc8`, `db00f2544`,
 `4a0efa530`) had one. `selections()` still compiles only the changed recipes:
 no compiled row has needed another recipe, so the whole-tree compile is not
 worth its cost. Ticket 40's first-refusal question: see ticket 40.
+
+November 19, 2026: the 12 hand-written v3-migration declarations stay as
+written; relayout refuses them. Of the 9 from `bb53f3180` and 3.6, 8 have
+set `DESKTOP_STRIP_NO_SANDBOX=true` since `7eca1ca40`; `x86_64/obsidian`, whose
+original strips `--no-sandbox`, now does too (Marek agreed).

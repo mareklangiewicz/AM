@@ -79,3 +79,12 @@ have repinned.
 
 November 19, 2026: first real documentation-only ship (no `--ci`): pushed
 `5a4ee43ec`, pin kept, Fast tests 44512967029 green, exit 0.
+
+November 19, 2026, retro items of the ticket 22/38 session, decided by
+Marek: `ci/*` pushes (and deleting them after `ship`) are pre-approved in
+`AGENTS.md`; `main-marek` pushes and `ship` still ask, so no allow rule for
+`ship`. Skipped: one suite script for `tests.yml`/`long-tests.yml` (they share
+a few lines), `actionlint` in Fast tests (not installed; workflows rarely
+change), a `CODING_STANDARDS.md` count-citation rule (`docs/agents/
+issue-tracker.md` already requires numbers from committed scripts), and the
+collector fast-tier runtime line. `gh repo set-default`: ticket 34.

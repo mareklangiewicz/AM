@@ -32,3 +32,7 @@ November 17, 2026 (retro): in `~/code/shell/AM`, `gh` resolves to upstream
 `ivan-hc/AM` (`gh variable list` answered 403), so every call needs
 `-R mareklangiewicz/AM`. A one-time `gh repo set-default mareklangiewicz/AM`
 (local git config, nothing pushed) would remove that; not done.
+
+November 19, 2026: `gh repo set-default mareklangiewicz/AM` done on myxps
+(local git config; other checkouts still need it). `release.py` keeps its
+`-R`.

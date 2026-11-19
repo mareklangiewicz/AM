@@ -74,3 +74,8 @@ Shipped with Marek's approval: Long tests 44580340125 green on `ci/guard`;
 `release.py ship` pushed `fa1c00518` and repinned `CATALOG_SCHEDULE_REVISION`
 from `4a0efa530` (2 inputs); Fast tests 44582074400 and dispatched catalog run
 44582080003 green. `ci/guard` deleted.
+
+November 19, 2026: the 659 that refuse ("selector does not establish a
+direct AppImage suffix") stay long recipes, as Marek decided: covering them
+needs archive support in `modules/appimage.am`, which this ticket did not
+pick.
