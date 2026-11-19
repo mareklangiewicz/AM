@@ -3,14 +3,15 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 207245092
 repository: "stenzek/duckstation"
-collected_at: "2026-11-16T11:35:15Z"
+collected_at: "2026-11-19T13:21:37Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-16T11:35:15Z"
+observed_at: "2026-11-19T13:21:37Z"
 releases:
   "267926613":
+    observed_at: "2026-11-16T11:35:15Z"
     tag: "v0.1-10339"
     title: "v0.1-10339"
     url: "https://github.com/stenzek/duckstation/releases/tag/v0.1-10339"
@@ -78,6 +79,7 @@ releases:
         size: 85727241
         digest: "sha256:6b3b3d06a6dadb2980424183b4738715c095519004a3fd157271e7e86c7f297a"
   "270052705":
+    observed_at: "2026-11-16T11:35:15Z"
     tag: "v0.1-10365"
     title: "v0.1-10365"
     url: "https://github.com/stenzek/duckstation/releases/tag/v0.1-10365"
@@ -145,6 +147,7 @@ releases:
         size: 85757999
         digest: "sha256:931bed98d421d7b85aeb9aa02e83ddf91fbd97aae6f3126554ebc96ce96c7d85"
   "271910632":
+    observed_at: "2026-11-16T11:35:15Z"
     tag: "v0.1-10413"
     title: "v0.1-10413"
     url: "https://github.com/stenzek/duckstation/releases/tag/v0.1-10413"
@@ -2049,167 +2052,249 @@ releases:
         url_suffix: "duckstation-mac-release.zip"
         size: 96347390
         digest: "sha256:b9f6f0e747ee2617988de33e1fafdd17d02e918d042fed691355aed9a86c11cd"
-  "437286570":
+  "450821005":
+    tag: "v0.1-12640"
+    title: "v0.1-12640"
+    url: "https://github.com/stenzek/duckstation/releases/tag/v0.1-12640"
+    created_at: "2026-11-06T15:17:36Z"
+    published_at: "2026-11-19T02:54:55Z"
+    updated_at: "2026-11-19T03:08:40Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/stenzek/duckstation/zipball/v0.1-12640"
+    source_tar_url: "https://api.github.com/repos/stenzek/duckstation/tarball/v0.1-12640"
+    download_base: "https://github.com/stenzek/duckstation/releases/download/v0.1-12640/"
+    assets:
+      "765962889":
+        name: "duckstation-windows-x64-installer.exe"
+        url_suffix: "duckstation-windows-x64-installer.exe"
+        size: 46575994
+        digest: "sha256:85cf9c81b9317d15f22557e1780c54258e51ecc6909ba18f003a041ac5118180"
+      "765962983":
+        name: "duckstation-windows-x64-release.zip"
+        url_suffix: "duckstation-windows-x64-release.zip"
+        size: 75020283
+        digest: "sha256:0ed1db5f83f618de0d66be270aca90aa3121b09668ff8eaa9bbe78f4fd67c3c5"
+      "765963121":
+        name: "duckstation-windows-x64-release-symbols.7z"
+        url_suffix: "duckstation-windows-x64-release-symbols.7z"
+        size: 12383576
+        digest: "sha256:34f11a1d672f88ec80facd5e604401f3018b1529c9ee87f94b391faf74bbb4c4"
+      "765963172":
+        name: "duckstation-windows-x64-sse2-installer.exe"
+        url_suffix: "duckstation-windows-x64-sse2-installer.exe"
+        size: 46575939
+        digest: "sha256:3f215ccc3195ff1e9c3dd6c8e1ccbe6fda6368bd483739f4202e05b96a0ef731"
+      "765963289":
+        name: "duckstation-windows-x64-sse2-release.zip"
+        url_suffix: "duckstation-windows-x64-sse2-release.zip"
+        size: 75023651
+        digest: "sha256:ffa3ec9c88328c2b85151c70ba763202db48442a5672bf59c63f28f54f6cb13e"
+      "765963444":
+        name: "duckstation-windows-x64-sse2-release-symbols.7z"
+        url_suffix: "duckstation-windows-x64-sse2-release-symbols.7z"
+        size: 12391000
+        digest: "sha256:b08a61dc521a74cb5ed9998596cc51b78b330304d74c81eb7347714997e6bdee"
+      "765963498":
+        name: "duckstation-windows-arm64-installer.exe"
+        url_suffix: "duckstation-windows-arm64-installer.exe"
+        size: 43859688
+        digest: "sha256:3b811a268a3086b89ec193f6df0cc9e838d968f51a7ada671680dd20ddfba22e"
+      "765963591":
+        name: "duckstation-windows-arm64-release.zip"
+        url_suffix: "duckstation-windows-arm64-release.zip"
+        size: 73844176
+        digest: "sha256:4a7db456c510b48765889c0111d9abdc67cec4c0d07cdd6be43dfca7b0a20aaf"
+      "765963765":
+        name: "duckstation-windows-arm64-release-symbols.7z"
+        url_suffix: "duckstation-windows-arm64-release-symbols.7z"
+        size: 12029269
+        digest: "sha256:8fa8c649e732ff3358fdfbb7e13d58335aa3ebd9516ed2d706cdfc3b0521b32f"
+      "765963820":
+        name: "DuckStation-x64.AppImage"
+        url_suffix: "DuckStation-x64.AppImage"
+        size: 95629600
+        digest: "sha256:6a1be1dba27ad54f5278c4268dca53ee0cc99c94394be2bafc99138c54263314"
+      "765963964":
+        name: "DuckStation-x64-SSE2.AppImage"
+        url_suffix: "DuckStation-x64-SSE2.AppImage"
+        size: 95654176
+        digest: "sha256:65e20b101d5726ec2fa203d4a3734c6d794b5b720b20623ce1c28ab18e8da854"
+      "765964151":
+        name: "DuckStation-arm64.AppImage"
+        url_suffix: "DuckStation-arm64.AppImage"
+        size: 88973568
+        digest: "sha256:340a00596f03bd784a5ef37f85171668159576b23e48e3391c7a7f4a0befb5ab"
+      "765964423":
+        name: "DuckStation-armhf.AppImage"
+        url_suffix: "DuckStation-armhf.AppImage"
+        size: 85728924
+        digest: "sha256:82763c4e804f22019131995ab8414166a592136905605e461e817868bd48d1ce"
+      "765964579":
+        name: "duckstation-mac-release.zip"
+        url_suffix: "duckstation-mac-release.zip"
+        size: 97099658
+        digest: "sha256:ccffb8befadbe8052f468383f2ce9aa6d8f4a82f2e3a9aceebbad6e3f59dc0ce"
+  "450833092":
     tag: "latest"
     title: "Latest Rolling Release"
     url: "https://github.com/stenzek/duckstation/releases/tag/latest"
-    created_at: "2026-11-06T15:17:36Z"
-    published_at: "2026-11-07T03:09:11Z"
-    updated_at: "2026-11-07T03:11:20Z"
+    created_at: "2026-11-19T03:01:30Z"
+    published_at: "2026-11-19T03:13:53Z"
+    updated_at: "2026-11-19T03:15:01Z"
     prerelease: false
     source_zip_url: "https://api.github.com/repos/stenzek/duckstation/zipball/latest"
     source_tar_url: "https://api.github.com/repos/stenzek/duckstation/tarball/latest"
     download_base: "https://github.com/stenzek/duckstation/releases/download/latest/"
     assets:
-      "719432332":
+      "766013356":
         name: "duckstation-windows-x64-installer.exe"
         url_suffix: "duckstation-windows-x64-installer.exe"
-        size: 46568319
-        digest: "sha256:c8290dafa138a373cea4dd3c7d4469a74ee09c44a072b72bce0f48c79100dc47"
-      "719432465":
+        size: 46668517
+        digest: "sha256:be1851ff0342b6742fd6eaf3518abfc74fde5a1883c5d38c7f153b47d36abe09"
+      "766013513":
         name: "duckstation-windows-x64-release.zip"
         url_suffix: "duckstation-windows-x64-release.zip"
-        size: 75019319
-        digest: "sha256:ca02e8eac40c0c6de801638f6b16bec80b605b5df32e406fe2fba7f21016b14b"
-      "719432618":
+        size: 75137257
+        digest: "sha256:6e3d9840cff53593cf1b8fc8540be163449c3606b1d17ae31d5f8b4db4944278"
+      "766013683":
         name: "duckstation-windows-x64-release-symbols.7z"
         url_suffix: "duckstation-windows-x64-release-symbols.7z"
-        size: 12383576
-        digest: "sha256:3c84064838efcfcd0a37283a95a87e6b3a95e52c72d91226bdce8f0d2ac740c7"
-      "719432666":
+        size: 12556708
+        digest: "sha256:559ca8b194efcef27a82102a2eea9f3dccee98db2b36b4dc49fd263e7b3e6c23"
+      "766013746":
         name: "duckstation-windows-x64-sse2-installer.exe"
         url_suffix: "duckstation-windows-x64-sse2-installer.exe"
-        size: 46568328
-        digest: "sha256:529a301c76803992ccfa43440ab06b42f394d0ea67c92260f0511a177494dfc2"
-      "719432747":
+        size: 46671008
+        digest: "sha256:481b8cf15aec255a4ea53599da215223a7c8f8857becbfc4d5e632743222993f"
+      "766013866":
         name: "duckstation-windows-x64-sse2-release.zip"
         url_suffix: "duckstation-windows-x64-sse2-release.zip"
-        size: 75022687
-        digest: "sha256:fd99507ee4785480f2a17005565012648f408cc93b28f408a5af81bd1973769a"
-      "719432895":
+        size: 75143102
+        digest: "sha256:117cd9457633e9b4b1e6111d0788c989fc6b7e7635168d6cedf2d344bab6851d"
+      "766013985":
         name: "duckstation-windows-x64-sse2-release-symbols.7z"
         url_suffix: "duckstation-windows-x64-sse2-release-symbols.7z"
-        size: 12391000
-        digest: "sha256:acfa11473bb049613719b41d82f05fececc4e5f4ca9adb819af98f463c5da8b2"
-      "719432964":
+        size: 12564013
+        digest: "sha256:2debfa12b88df5e23e674c43626f132a3ccb6abaeb10ae2ca4929e33932fc4a9"
+      "766014069":
         name: "duckstation-windows-arm64-installer.exe"
         url_suffix: "duckstation-windows-arm64-installer.exe"
-        size: 43852052
-        digest: "sha256:9338264c74b27a96ffc86b47880c98a3335a5db5ddedd023a3ecfb3abafe3279"
-      "719433078":
+        size: 43865595
+        digest: "sha256:c85e2d5cceba360ae3576aff36f995dc404fa04974f8543113a7254b41c9ea6a"
+      "766014151":
         name: "duckstation-windows-arm64-release.zip"
         url_suffix: "duckstation-windows-arm64-release.zip"
-        size: 73843212
-        digest: "sha256:d6caa5fd775dac8506365408b3f794c0ecfb1dca0069c30763b466dc76a2a52f"
-      "719433241":
+        size: 73837712
+        digest: "sha256:f2ec48209c094e7cd884e32f261736feb7864a4aa1783aa379436d94b465d489"
+      "766014295":
         name: "duckstation-windows-arm64-release-symbols.7z"
         url_suffix: "duckstation-windows-arm64-release-symbols.7z"
-        size: 12029271
-        digest: "sha256:7b0d08592000d1492115d47bd3659e6030431de3a6058bd38b6a39ffce82b706"
-      "719433279":
+        size: 11755396
+        digest: "sha256:19a4bc827f164a16c79746c0d4a5a0e2f460390b9fe153d3ebcb81f50e059c23"
+      "766014347":
         name: "DuckStation-x64.AppImage"
         url_suffix: "DuckStation-x64.AppImage"
-        size: 95629600
-        digest: "sha256:eef887bacce0b3cd9a943fb6718e7e2b8970edcf7e88c7eb30cee750d71037d5"
-      "719433532":
+        size: 95973664
+        digest: "sha256:1d3f8b11e9f9f82cd131c49624e8cda37548f8f50cefeab9fa44b11e164aa1ef"
+      "766014563":
         name: "DuckStation-x64-SSE2.AppImage"
         url_suffix: "DuckStation-x64-SSE2.AppImage"
-        size: 95650080
-        digest: "sha256:0cad6634fcfe1e79961a6b97bd70f1d686c4691232e9300e0e504bde28eae0b3"
-      "719433671":
+        size: 95977760
+        digest: "sha256:ae0c91fbb904fdf7b1c26e8d42ac3c1c50bb8bf0069a37a9fa0119989f65bff7"
+      "766014817":
         name: "DuckStation-arm64.AppImage"
         url_suffix: "DuckStation-arm64.AppImage"
-        size: 88969472
-        digest: "sha256:d516a24918505a08f0335d4a36fc67c0b66641e85861e71d4638d5fcd319916b"
-      "719433802":
+        size: 89374976
+        digest: "sha256:f1383beba0865c38fdc2d98ce3871366532b4fe99c7d3c862bb156d347daaab5"
+      "766015020":
         name: "DuckStation-armhf.AppImage"
         url_suffix: "DuckStation-armhf.AppImage"
-        size: 85724828
-        digest: "sha256:e2a0c1a9a3c28a33ae4863521d60f8b5c4922d822314d5ac57950b2f0aeae7e6"
-      "719434027":
+        size: 86113948
+        digest: "sha256:60feb029824e3076427763b05cc5333597ea48eca145a7a083725e37a0b9376f"
+      "766015371":
         name: "duckstation-mac-release.zip"
         url_suffix: "duckstation-mac-release.zip"
-        size: 97099171
-        digest: "sha256:6918746eaa8baffc55c9d7d48fd72d3b51a4165a1b039b5c70183f15f4576346"
-  "446035567":
+        size: 97329806
+        digest: "sha256:841881242eacf78e4d168bb2ae46ebd18eb93fcd0674b96ebde935b9f5b00fc4"
+  "451276448":
     tag: "preview"
     title: "Latest Preview Build"
     url: "https://github.com/stenzek/duckstation/releases/tag/preview"
-    created_at: "2026-11-15T12:01:54Z"
-    published_at: "2026-11-15T12:11:27Z"
-    updated_at: "2026-11-15T12:12:15Z"
+    created_at: "2026-11-19T11:27:29Z"
+    published_at: "2026-11-19T11:52:22Z"
+    updated_at: "2026-11-19T11:53:03Z"
     prerelease: true
     source_zip_url: "https://api.github.com/repos/stenzek/duckstation/zipball/preview"
     source_tar_url: "https://api.github.com/repos/stenzek/duckstation/tarball/preview"
     download_base: "https://github.com/stenzek/duckstation/releases/download/preview/"
     assets:
-      "750887497":
+      "767497796":
         name: "duckstation-windows-x64-installer.exe"
         url_suffix: "duckstation-windows-x64-installer.exe"
-        size: 46650764
-        digest: "sha256:1cd9cce3e9eeb71bade5b30d67fe88624cb69c59f5722a1c2ca3a9e872cf2c29"
-      "750887622":
+        size: 46659377
+        digest: "sha256:a63738d97a70970b3e06af0340ce5bc1baac39e9fed6b61ab5625e37cde64c25"
+      "767497904":
         name: "duckstation-windows-x64-release.zip"
         url_suffix: "duckstation-windows-x64-release.zip"
-        size: 75136543
-        digest: "sha256:7f5d7de53068168872427245454fe80fc28b90ee50803600ff2793a8dcf9d874"
-      "750887784":
+        size: 75143227
+        digest: "sha256:f57b96bf7f3678b1f13186481de3cfad1f4e2d6d94d9427c0a046b18409012d4"
+      "767498174":
         name: "duckstation-windows-x64-release-symbols.7z"
         url_suffix: "duckstation-windows-x64-release-symbols.7z"
-        size: 12561776
-        digest: "sha256:05ecbd483afccf364d7ac5cf84f3c8d5c88d29df84b4c9d96a6707d9145b22f0"
-      "750887839":
+        size: 12623803
+        digest: "sha256:ec18f4ac6ab1f09ad17c93cc3bf55e6c94a0b0345a2fb75bb6fc701a55d44846"
+      "767498238":
         name: "duckstation-windows-x64-sse2-installer.exe"
         url_suffix: "duckstation-windows-x64-sse2-installer.exe"
-        size: 46651009
-        digest: "sha256:4144e0a94ffa3c388163df80ec3755b1c479d49a6c9360a3c41aab45b123259e"
-      "750887955":
+        size: 46653894
+        digest: "sha256:3c8854c2ca29eb621db336360baaafdde18cc63711bb2da1e7c50fadf42da9b0"
+      "767498326":
         name: "duckstation-windows-x64-sse2-release.zip"
         url_suffix: "duckstation-windows-x64-sse2-release.zip"
-        size: 75142085
-        digest: "sha256:78cd3e6cff8fe7e9b6253a1da69bfa4ea44f5d7bc7d8c188ddbb11ef180f382e"
-      "750888136":
+        size: 75149634
+        digest: "sha256:ccdcbc1af473f469256e0d1f1bc1e4fea534a45ef1dd54841e4ca726fb0700a5"
+      "767498405":
         name: "duckstation-windows-x64-sse2-release-symbols.7z"
         url_suffix: "duckstation-windows-x64-sse2-release-symbols.7z"
-        size: 12567889
-        digest: "sha256:83459114fdc7e1c0401f78126b444c31af43e090623d03cb44aa1110f596bc0f"
-      "750888249":
+        size: 12623491
+        digest: "sha256:80ec2c6c707c3205936ba4ea6112e1c5d20e687c4f5d73cbb41be0bd28a9b483"
+      "767498479":
         name: "duckstation-windows-arm64-installer.exe"
         url_suffix: "duckstation-windows-arm64-installer.exe"
-        size: 43909941
-        digest: "sha256:32992d4437c93efcd663a05dc3c43bb7cc79a80e528f73986be34c6004027d58"
-      "750888436":
+        size: 43860673
+        digest: "sha256:c4cc27572489fa28957fa804c483c280048174d2f53f3828ac8982effdc51f7d"
+      "767498594":
         name: "duckstation-windows-arm64-release.zip"
         url_suffix: "duckstation-windows-arm64-release.zip"
-        size: 73942708
-        digest: "sha256:65f4e23b2291ff6132ec10bc12a79985115c53f1b39a3b689aeefd67ab2cb0b8"
-      "750888608":
+        size: 73842391
+        digest: "sha256:30e91162cd16b2c7be31703324f21e548b5cc296f7cf6a14f6614091dfc2f19b"
+      "767498785":
         name: "duckstation-windows-arm64-release-symbols.7z"
         url_suffix: "duckstation-windows-arm64-release-symbols.7z"
-        size: 12194305
-        digest: "sha256:f976f40e095486ffecf05e596c28335ae2baef2228647a1f7fb4b143f157705c"
-      "750888678":
+        size: 11773577
+        digest: "sha256:7297f0e65d23328a69902c5447e4e5eb5825ee66f3072fd7a79c63ea09cc6112"
+      "767498848":
         name: "DuckStation-x64.AppImage"
         url_suffix: "DuckStation-x64.AppImage"
-        size: 95875360
-        digest: "sha256:3a7e3fd0b8a3abf6b7b79574c8fd2b42b875adc0b5118bf31a43f756b98540b1"
-      "750888824":
+        size: 95990048
+        digest: "sha256:345c058b4a13bfab444f42056f0fef84a6221cd090ef47910005d5044f706f2e"
+      "767499101":
         name: "DuckStation-x64-SSE2.AppImage"
         url_suffix: "DuckStation-x64-SSE2.AppImage"
-        size: 95887648
-        digest: "sha256:d90277676e95f821234a9e88d981874d45214e806cdaa1c56cbc3756739d5880"
-      "750889069":
+        size: 95998240
+        digest: "sha256:09ac23179f33e7f3e380607cf16d9a0b501287e826f42f3e1b54519ff2a8721f"
+      "767499333":
         name: "DuckStation-arm64.AppImage"
         url_suffix: "DuckStation-arm64.AppImage"
-        size: 89219328
-        digest: "sha256:1c7a7cfd88ca9e82d65c629af9aa970faa4a40720b4e75b19cd74a24ce11b4f0"
-      "750889230":
+        size: 89374976
+        digest: "sha256:fc5850dcccf995488a3965659d740c75dc064d262ccf1f8268b22c1bdf4f61aa"
+      "767499525":
         name: "DuckStation-armhf.AppImage"
         url_suffix: "DuckStation-armhf.AppImage"
-        size: 85995164
-        digest: "sha256:5d62a0823e3adcf06cbfdbc60c3093d7154ec96b2282d37adae350588cd9832d"
-      "750889384":
+        size: 86130332
+        digest: "sha256:18f77d23a840a889a1abf9a7bfc8925188f687dcf2c932b946f27084fc84576f"
+      "767499687":
         name: "duckstation-mac-release.zip"
         url_suffix: "duckstation-mac-release.zip"
-        size: 97297803
-        digest: "sha256:4c655fda12d5e34ee2465ea9ccbe316c070a793e9d7b708f40ba00d70ab0dcd4"
+        size: 97342399
+        digest: "sha256:a4fde6f314b6e05d24f4d4d846801cd16ce14f2fcba0d8b6f7d404e96b5f135c"

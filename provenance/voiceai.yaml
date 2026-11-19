@@ -9,7 +9,7 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
         path: "programs/aarch64/localflow"
         blob: "bdbc518420c1a9338d5fed7d2746f74b7dbf8b3e"
     "armv7l":
@@ -26,18 +26,18 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
         path: "programs/x86_64/localflow"
         blob: "4eb81f46541e8f8c16a66c4eefdaacd662fd1c4a"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-19T12:11:47Z"
+        evaluated_at: "2026-11-19T13:27:06Z"
         recipe_sha256: "b8006241120d6af66a6435fdb6bf6c58f3ffdf0882093408e495d047a06dd5da"
-        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        rules: "f893d8e03923d9c7643d73d9e20b3001306167e0"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
             path: "modules/"
             sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"
   "voiceai":
@@ -59,6 +59,6 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+        commit: "f893d8e03923d9c7643d73d9e20b3001306167e0"
         path: "programs/x86_64/voiceai"
         blob: "626a45712578bd2710691d53c21596c9263b3525"
