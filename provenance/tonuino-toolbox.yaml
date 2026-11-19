@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 267568367
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/tonuino-toolbox"
-        blob: "707fe4a969716e0a2dc3fa133fdf659fa6faa637"
+        blob: "af18d99b1a8b77df315bf9a72ee3c18591eeaff6"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "965527d70aa30d9379c20c872f287353c9bae52ed46ab1303d21539cf803fbaa"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

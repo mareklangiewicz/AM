@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 854244099
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/mangojuice"
-        blob: "64cebf26b50a41d3de081f16d5561a388e993cdf"
+        blob: "f883bad03124865a929d04c9ac2e7e1cc23b403b"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "44b6f546d0ab66b2a33c9949b12f78ab11c247f0e9c4e86b4be3ad0c14cbb1fc"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

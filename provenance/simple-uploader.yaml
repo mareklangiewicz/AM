@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 143448757
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/simple-s3-uploader"
-        blob: "e5ff08e9fdf75594d6d26419238db4be59f694f8"
+        blob: "d6ba23f5840564ac40fb6ae589d7f5e4ef96404d"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "bd69215044c16d099bf9da5303e01083fbd7625ddf15869e22c266466542179a"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

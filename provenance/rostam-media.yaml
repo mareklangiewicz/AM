@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1164174127
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/rostam-media"
-        blob: "900934e04b23f24df2c4540ee9915ebf96cdc3b1"
+        blob: "05da9138ad2c774d6734eedd07476dcd6f9641fe"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "ba462022ed1038a4fb022ab5abfdafc540f8ae4208a0512fc2780b552deba637"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

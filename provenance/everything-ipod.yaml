@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 977342606
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/everything-ipod"
-        blob: "c078565b89ec9e84b226bd466abcb4f8fc90aa4d"
+        blob: "c1e16e37b6516c4c1ea9d91c2793070d35b287ab"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "e3397c05d006c03b9c86976d53452124eaf8d6f004e31560e1912a78471c4011"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

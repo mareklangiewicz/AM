@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1182059149
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/offdesk"
-        blob: "f36c3adf92effd7d3717ae29dfe520bc1e87e33e"
+        blob: "633fedf4235a3b789feb7435f07f2271178984f6"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "842e8ecc5353a6df70d9e8f740775ccb04e04c17b2c77f60ad439e2665d7b105"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

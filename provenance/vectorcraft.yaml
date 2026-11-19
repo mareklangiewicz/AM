@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1398097510
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/vectorcraft"
-        blob: "59fdcb928afef9bf3e5d79dd2102b7e15a50db07"
+        blob: "3ccc0f9a590734663e98fab28a6607c7526dc20b"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "425e43f1e06bab33a321c0b3aaed74167157eb82a00aa2669a3735da0f46407f"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

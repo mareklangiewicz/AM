@@ -9,9 +9,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/aarch64/opengeni"
-        blob: "ec8f5c233a15a79bec45064ebfd3597ea689a31b"
+        blob: "280c6fb068c87df2adecf5d48d769419c2ce5c68"
     "armv7l":
       repository_id: 1212552738
       availability: "absent"
@@ -23,9 +23,20 @@ apps:
     "x86_64":
       repository_id: 1212552738
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/opengeni"
-        blob: "e6113ab4ea365a00c50dc0082de21ebd953597a2"
+        blob: "9c666430a02da364ed380b380429727630be5ce3"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "ad73a8cb9d025d03d6f3857a8e5a8247ba0aab954500163afda07631cfe5fc2a"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1247648766
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/speech-studio"
-        blob: "58cf6b2b236762b7efdfb8e294cc47bd3277c5b2"
+        blob: "b0786231856a9484fcb41fd2d8d69b935f67aeb3"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "0028a4b3e0e16649ea2b22bc160e11d98d6a2e6bb4954fb94943c34e48d5932c"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 89869072
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/gpupad"
-        blob: "75060b9703f155085a15c01b9f18f0a9c38ceca7"
+        blob: "ada5dac44bd051a1a9a343acde5380277421119f"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "729606bc2f3c6c0271fbf53f37cd5df0a05563fe384ea4add7dea7bed001e8ee"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

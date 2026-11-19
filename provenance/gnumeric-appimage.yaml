@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 661844521
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/gnumeric"
-        blob: "63768af47c9dcbf490bf917a2741abe4c3daef37"
+        blob: "6a9c7accaa00c0a7c8a98292d11225dc44e5487b"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "3214e775df91c517b77389634c5edfefef2eb4dc1b95025369cc1a39c97cf871"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

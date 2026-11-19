@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1136128424
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/x-addon-oxide"
-        blob: "6e0f9ba2065a29cb2df0aff520d57bc8c3c19c06"
+        blob: "d3c8186c9a23fbd3558db9ebec26e0906cbe5e61"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "e1f21c38232bdcdecf912c2b7148f6ad289949465d6fc0cb16e3899f0b8e2352"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

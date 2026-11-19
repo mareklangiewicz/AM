@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1273158972
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/freebuddy"
-        blob: "fd4e192980f1b0c9dec0039726168dad1d90ed17"
+        blob: "73b88787b8e0641b349cd525b509d304810cca17"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "d0b5f62efbeb94819a1b619ce6d1155df55c7789e1d86c8722d41591349e8ff7"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

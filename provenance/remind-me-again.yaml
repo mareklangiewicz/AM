@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 511245105
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/remind-me-again"
-        blob: "9253c704f66d7c6ede79737ec17674754710eba4"
+        blob: "29e221645d85e1a8e8c279b401ed3968a8d80c1d"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "64cdbcdcc958267e0dba4b2d9b175bd972d149b76dbd672ac480df3483e2a767"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

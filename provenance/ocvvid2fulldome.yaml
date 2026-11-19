@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 262512639
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/ocvvid2fulldome"
-        blob: "5d3bec339c36d0479292f37cf983241536d39d7a"
+        blob: "87184bc8038578724f9051c752a89ddada1a81b8"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "c71649e4666d1a217833ca98d2491b1daa07f9c5fb8fe90f490ee404535cee29"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 510780628
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/s3drive"
-        blob: "e00bf974d7231806e8d4b2f42c0fe10a2b042b4c"
+        blob: "56bd71933cedf9d2357a670520392a460e780e30"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "3f2b81f156c34258a787286cee2b21a47698ee4c7d85c151d68ab0bff7fba0aa"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

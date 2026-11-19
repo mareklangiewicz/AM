@@ -18,12 +18,23 @@ apps:
     "x86_64":
       repository_id: 1110222585
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/aperant"
-        blob: "65e58a669d10b86b8d0ed81fb1b707c7a3097a54"
+        blob: "cb9c9e9cfa3ddc0034029252cd10f927e7e154ac"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "5d2cbaa1a6f2ed31c0b55a6eb7cd1013da33438da162f235d4cf342a42ab9548"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"
   "auto-claude":
     "aarch64":
       repository_id: 1110222585
@@ -43,17 +54,17 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/auto-claude"
         blob: "2b2a6481bc1aa9bdf9502acff96ce7d158755a9d"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-17T23:25:13Z"
+        evaluated_at: "2026-11-19T12:11:47Z"
         recipe_sha256: "a3ecef5ac7a828039f7993c21b257415e1123801f9ffa1811e934e93856b6e5e"
-        rules: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
             path: "modules/"
-            sha256: "a5916b8e1c74a1817f99472a2e9ab749daeb82b7d419aa1ebe6c023a636fbd97"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1169634113
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/can-playground"
-        blob: "06bdba24f453c0a624518f71786a270d9af8ec0c"
+        blob: "df7f098008e461e9e2dcbcafb44a39ccc394e78b"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "f8f890a4421ee0e0d28099cd9ee3f7f69b115a6b3851aa069ad3e1e3c15c1b40"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 94967521
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/electron-xiami"
-        blob: "4a7195ace2e468670e02bf2ff4fe51e3e0f07884"
+        blob: "a22700fc3cd601da85cccbbae087c408aecd3f16"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "e2ab1a204f92567b9cdf8f21ef737a8fa03aff497a3b7f2b69358cef7a054e5f"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

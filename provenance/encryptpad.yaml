@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 52200408
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/encryptpad"
-        blob: "b050ce9dd1b7889a5c98f3d816f0ab81a17dd46a"
+        blob: "179a77f8b02207eca3d283170521cb27fec87a0f"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "2c4648d2a9aa51502bd78aa3187dd73d72f9c36e515c5a37cc474787133403b1"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 108034964
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/astroffers"
-        blob: "5ef81eb5fb0ae8ac193e6f2d96d3fd66a9d7fbd5"
+        blob: "f61c8f09bae2cf23c26853ced3f4993cb7538182"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "6f146adfbb598b01e7b0062b5957266f3ae57985357175c1732752b4ecde688e"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 429203834
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/spyglass"
-        blob: "0356c3f83b1040f376733fc3cfbfe7c0dcdff808"
+        blob: "add820b0a36ae3df2385139e756de28ce4ec5ee1"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "a6341798006355c054101e80b273e4d7ef688f0825d6f2373d7d64f6e22bd4c5"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1214076794
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/griffin-hub"
-        blob: "c3fbb70d67c40d1629e02a2d13ab2236cf172ae0"
+        blob: "40769fe71ca6af798e3ea18dcbdf437ccf703abd"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "ff0ff98af1e28c7c426ca0b86a57ff7a64bb97058db461fbf57711b476ca7706"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

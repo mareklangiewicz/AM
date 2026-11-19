@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1189632805
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/pdfapps"
-        blob: "e00198a52be6e85b4a533ad94a188529f86f5dad"
+        blob: "60750e3de41d6d893e35399f54d1bf442e093c25"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "b744c0f1d3ec85b70434f57f65a68f98c33fc7f1e80d1d8f5fed8cc8d19cd96b"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

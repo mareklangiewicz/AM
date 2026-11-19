@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 132017060
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/watchflower"
-        blob: "47e01756a6d73ec2f3ab1721728fd3e5e8fc8ccc"
+        blob: "1ea15db8361a79ae5a25c306b2329c0c37141c1a"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "f68ae34368816dd00ed2216e84c982dffaf8c5abf18289251225a92ec6243de1"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

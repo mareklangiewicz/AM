@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 30146702
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/opentodolist"
-        blob: "0d4f6f8324194e6ee03c4408af9301d4e32c981d"
+        blob: "d1c5b31cb5e1c4f24b42811aeb23fdbe284ac817"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "a26dd6de1421411643b8ce22c751b35b116a306a2d4ded5dbee10f14f290793e"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

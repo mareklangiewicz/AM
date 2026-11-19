@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 56376711
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/linedancer"
-        blob: "f0fb82da33d9b867049c2596670bc0a8f4443b82"
+        blob: "76dd3d517aaad6d7ba4ce29e35bfe45775a9df30"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "a7f0c7ff68f4d0a07d6a54a7e5b911245277526c8b3d7f85dfc17deba602a438"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 252672765
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/ovideo"
-        blob: "7db1cad7a9d1f83e7397e16c26317d3984221e0c"
+        blob: "7e1ddcc81e3096b6b502309226bc41d1b10b2cae"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "3d2bf23c4eb7b4ac33e4cfed9cf609e8fb3453cc4c7d49882f9b29b37c704217"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 80573513
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/stoplight"
-        blob: "a0ac941aef3dc8a05364c3571267ba992349f18c"
+        blob: "b19caa4ca2f2129fbd35a368a599ca9a610217c4"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "4c4a5ce08ad01a40a20efd86137cf50216ea23203f7a1f303b3da447d52c05eb"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

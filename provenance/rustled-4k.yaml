@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1368466597
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/rustled-4k"
-        blob: "3e0ae62bc6a7414e1478d681280e9709c220c001"
+        blob: "38c0d3ca2c130bca0c43dc7e6044a40821af9b8e"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "d3a594bba95b5f25910666a0fbd25c4ca9b0e90ad5b9ce0f6b3a3e0fac06cf82"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

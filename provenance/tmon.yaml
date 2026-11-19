@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 237050821
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/tmon"
-        blob: "ffaba0a291e9c4aaa18ecccc36d0398d88647895"
+        blob: "a30a5ba693adc261cae79b47a20ae161ed6f2b01"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "d019c9b03f9e4678c4af8a4392ac99e0d24c05329d6995eaa88f78bacaab5ac5"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

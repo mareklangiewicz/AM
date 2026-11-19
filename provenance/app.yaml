@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 73903475
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/socnetv"
-        blob: "d62db13b1b4e668ae20d7fb31ca4c468c18523b8"
+        blob: "5edc20044e818a73d6ce8bdc30dfcb9690cecf1a"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "046915a1e0b5c20aa3129aebe9e6a42758d1b99bebd487e803f6989cb89e48cc"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

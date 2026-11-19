@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 58785037
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/electrocrud"
-        blob: "13610d88e9010364730ad3bcd7d4f45a99a805dc"
+        blob: "d0fd6605650f5f19c81250604c9f3dd3133ddf1e"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "165f28fcca592d37c7133e407a52d5919da89a0510e268fffd5e7fffb862079f"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

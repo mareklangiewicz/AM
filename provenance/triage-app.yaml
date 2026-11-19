@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 13129780
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/triagem-touch"
-        blob: "3bf0641290cd540ac21e51fd92e70f1def6e2980"
+        blob: "768eb16f807633b0e3902517f4329dfd7df68729"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "2b7b5758d810404ab59eaf519d690d853c5b58b07d98d1e9be6be2dfae470ab7"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

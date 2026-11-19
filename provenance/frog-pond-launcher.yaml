@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1375875208
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/frog-pond-launcher"
-        blob: "18e31d16213d7403daa3a7738126c97dd752784b"
+        blob: "a35548dccfbbeaf76c99f22a4bb89282ca269340"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "9005f81447e3794912a5b5261cf704f9b8da0b83394bf644374fc46b0bc36adb"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

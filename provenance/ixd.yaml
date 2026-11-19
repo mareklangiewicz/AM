@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1334149915
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/ixd"
-        blob: "e3265b2b8f9480c4c8eba3c3f9e565e4a21e9ad3"
+        blob: "0d0a6853593e73d6118ac2b7ece46700252d9f0b"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "35cdbcb2ba66ca61e3f8707f123e5db992562537b2532a1695fafb300e50b1fa"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

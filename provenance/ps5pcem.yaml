@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1319729232
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/ps5pcem"
-        blob: "3f65e12709fc1b0d3d127cf71c48d16f7ec7e8d4"
+        blob: "fa627689ac6ac41f1eb42365e71573c6ddc3cc4e"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "970853063879f1caeb65e61b8927cc3b2f74b4449dd23c98e12b4a2994f9157e"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

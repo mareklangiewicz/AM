@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 789699650
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/telescope"
-        blob: "cf4a2dc6bbcf3bdcd349055d620222d8ee1b5b9f"
+        blob: "2705aac29268ce85f102cc28895262fe7bfa2193"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "b6c25a89b6eb1ede0a0d397629141e640d82f98acc2c425ceec8883bde2010c1"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

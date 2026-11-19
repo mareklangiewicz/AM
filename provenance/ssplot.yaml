@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 381098657
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/ssplot"
-        blob: "60b1c44081d1d7370957e3ebe302efb9a5c2d6b6"
+        blob: "317922ee3cc31a57d91e890791b4339e076b334d"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "142ec0cdb38e83e0e5d252126f1e97934a9c5103155fffdf5b86547f0902c12d"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

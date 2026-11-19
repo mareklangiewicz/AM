@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1301737318
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/catpasswd-hash-extract"
-        blob: "d673fbb360f7a1b9d1e8ceb053a3e165a002eff1"
+        blob: "671eff0a9deac91cd38779144d76ddc2902b1154"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "d2e6d8074bca30503a33e35f6a657e9d29b3b67455499c3ca4309bd5d24284f9"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

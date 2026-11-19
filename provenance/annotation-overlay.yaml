@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1161975123
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/annotation-overlay"
-        blob: "2368e5fdadedf5513ce1309cda85ef99ecc0e350"
+        blob: "2f11a29085888095c6cea2adbee79307a5fcf2a0"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "b4c0666c1065169039942b03531e7e2144f3aa1830ff7f17907b2fce7d4f5044"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

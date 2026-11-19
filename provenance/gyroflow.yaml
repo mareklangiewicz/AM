@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 427166323
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/gyroflow"
-        blob: "e29ed296aec98a60b6fef08081380fe0e2fe8ae4"
+        blob: "80c2cf4c677e68c723d815fa1eddb54d3424612b"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "b991d21cd91ec023635cfb466103cdeb7db7c3da572264d073c95be6ecded46e"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

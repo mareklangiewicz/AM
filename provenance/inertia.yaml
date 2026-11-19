@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1272954126
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/inertia"
-        blob: "1e577d52be74bd85ef7a7e033348ca93a64f9e5f"
+        blob: "ac05f60b4c076f6a6c17ec15556c8b84fb6e4b03"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "ff0ee11632b9454fbafa61e9ca47dd67b97f86f715e9f21636018369e3a81390"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

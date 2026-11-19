@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 168981092
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/record-compare"
-        blob: "3ed2313a8bf7473edb36ee9d3b17339f4ecbcb9f"
+        blob: "5b8e355aaa5ce4adc65554a6d76519135f5f085d"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "50143025a9f004821ce70ef4130bd9912a77e5d11d1aed4623f3e439679256ed"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1233105535
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/animo"
-        blob: "a4ab1f96dde7b7fb723b8f1b9233a81934b17b71"
+        blob: "46fb5386204731ef1ba36626674ed1c41792e745"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "2ddb3db1bb3a0fae4216d79c6f02691a813b00c528c210d268a0b2abc33378af"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 112774778
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/gingko"
-        blob: "5f182a3c5e63b581307baa4a849435ef1eddc4ae"
+        blob: "9d76fad838ccb455e11c13f5c90a57bede106aa3"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "727263b62bf6e5fcb0fc117cdd94f4d56475740544cd57fbc57c9e46e38a4194"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

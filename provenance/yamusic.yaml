@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1341026229
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/yamusic"
-        blob: "fb4218e4561b87a7382bee2b373d00e51cf3c7a3"
+        blob: "d7ccfef8d92ff77fccdb2b4f3cb2abdff4ea6acd"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "7aa5aabb60b2a0b5f4fa47e016224124e35c2f079604c4355bf58bf4d5c24f69"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

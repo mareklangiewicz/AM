@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1235912213
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/cannonade"
-        blob: "c8b90c1e49bc66c2dddade1b1cf7b567350487a9"
+        blob: "3f6644e695d69caa9e4696d5937c47152c370036"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "6484c3f8d389c2401fe11306b76052bcfd915af3e92d218f44e598228ec1b2a1"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

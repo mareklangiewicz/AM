@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 22874254
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/avidemux"
-        blob: "bf033dbbd5e7cc24c5ecee2b07303b7e86ec778a"
+        blob: "209ccfc17e70030e50d128de3b63566a19610ce9"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "b9eb8498cc72ab51ac833d9475c472a27153f53eb786f6ef9fc0cff54b8fc951"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

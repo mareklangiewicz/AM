@@ -17,18 +17,29 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/i686/vlc"
         blob: "2ba5b2aa78788e83f873b660c446afa9aca779d0"
     "x86_64":
       repository_id: 444634925
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/vlc"
-        blob: "518dda9fc74fe32409dce172c470699872e99caf"
+        blob: "90c1fb57db40c3e1493b683ec30c6e56c3b7defb"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "19a4321fa5bb0eb7070c9843b3de6d81e421f9a50c06a39bdc91de6e6d5d842f"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"
   "vlc-git":
     "aarch64":
       repository_id: 444634925
@@ -45,9 +56,20 @@ apps:
     "x86_64":
       repository_id: 444634925
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/vlc-git"
-        blob: "a1228eeac723d3ca0d64365c1a0f26199113d7e1"
+        blob: "ca5bc3e4b1164452aa0fbcf2242814de689a341a"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "ccd30117b1bdc25b9d26503d0b8380f7671c7e999ddf1cd45f151fe94cf49b68"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

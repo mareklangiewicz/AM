@@ -9,7 +9,7 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/aarch64/mootool"
         blob: "d479009b2c244b43c18197e503e90ea64c7b72de"
     "armv7l":
@@ -23,9 +23,20 @@ apps:
     "x86_64":
       repository_id: 214978063
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/mootool"
-        blob: "90341a22692f89a5c34535820b7701493a6da4f7"
+        blob: "f94aad25a8359616bcba7d58710c9497002a1d22"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "652b63fe26170935f27eee3ce62e8f125eab46c75af1a4c3becf227413bd24e5"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

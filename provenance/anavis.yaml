@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 20385237
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/anavis"
-        blob: "5e08d1c0b1c64e4698de55de21ce18de0e2bfefb"
+        blob: "bbbc466dd082390c0c757d384d8e08e485bb8180"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "0b36334236b85cc511541e95712c350f634e5ebe38ca588b9de266cbbb97b2bb"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

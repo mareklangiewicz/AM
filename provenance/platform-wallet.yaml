@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 144745623
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/dbet-wallet"
-        blob: "2a866867cd3fbd6fdbc9f655f5af05bbd0f2e7e4"
+        blob: "1db0a201833a009e31974259824a0e7deb4c18b1"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "be89203e5bb75d4a74049ecbb83c93268cc407fd1613ed2f2af7e54a14b1ce20"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

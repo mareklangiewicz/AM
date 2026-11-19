@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1332068659
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/aigc"
-        blob: "79957235b2c62f9c3218a875eaa4c8d2aef79a58"
+        blob: "3013c6aec8c39a9be8932447a316f7f0eec52155"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "7775397f84d2f53b625dcc5f950937864ed1cd821cc5862e70ef5ca6a38ac470"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

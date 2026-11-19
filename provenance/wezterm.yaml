@@ -18,12 +18,23 @@ apps:
     "x86_64":
       repository_id: 120568143
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/wezterm"
-        blob: "0b0f358249dfb8ffe01a09c3482bc29bb7f28023"
+        blob: "a542137df62918d6e7289c2c1d59736015b3d92d"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "27344d66cd54662ea33eac65202bdb457ad661d5e09cc8bf1f70a5a2707d18b4"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"
   "wezterm-nightly":
     "aarch64":
       repository_id: 120568143
@@ -43,6 +54,6 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/wezterm-nightly"
         blob: "b5c0fcc3f1b13ab1c2f7db7e531ca62a659a7255"

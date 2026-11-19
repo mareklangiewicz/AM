@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 185078553
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/smf-dsp"
-        blob: "4b3ec58a6c651718364eebd781198cc95439beed"
+        blob: "3bfc236c535ad793ab02771404f0cc2e6dc70254"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "86b591e261276ccbc8e4db939bcf20a4026b01bb377362ddb70e7eef2a3892d8"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

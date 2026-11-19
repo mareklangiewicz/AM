@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 158100185
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/mira-backup"
-        blob: "fcf0a9a8898e0dad07f0a536c25c0aaa07ea60e2"
+        blob: "2d3e0e8d890e912da651b35d4fa818fc6e25c720"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "1b1e095bc86e6cf0ca72965e32de9db5b14e02ccb2e430b8d9e7e86fd9a6df5e"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

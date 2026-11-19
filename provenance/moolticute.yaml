@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 43965851
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/moolticute"
-        blob: "eb08c6ae112ccc79a67e76b75a74d95414d9976f"
+        blob: "ac11662a9124d30fa9e4f6f552655eb1c471da06"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "e444da0274c28a100f2a0f29ec4e3e04c7dbcd3f9561c86049d146e2662f0ab6"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

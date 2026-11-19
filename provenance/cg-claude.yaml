@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1413464014
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/cg-claude"
-        blob: "9d41c17fa4afbc7eead5d4fa3a2e483397931120"
+        blob: "82517004da937bfb7ea30db70b9f35ca8757d4a9"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "c70158f8c26d1552bfbebaf0c8d48e0aa15b400a5d4eab90a111347c5a4f6a39"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

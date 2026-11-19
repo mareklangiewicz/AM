@@ -18,12 +18,23 @@ apps:
     "x86_64":
       repository_id: 78243781
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/super-productivity"
-        blob: "99e8339174b082265a3942f67173472985ca5fed"
+        blob: "5cd314b125ef6d1932f937fc2dcceb6aea96fd2e"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "c263c446476d8baee85653deb55629b3708f0bd42f1a21eaaf464d7a77173b7b"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"
   "superproductivity":
     "aarch64":
       repository_id: 78243781

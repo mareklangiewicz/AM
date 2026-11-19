@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 34586916
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/sabaki"
-        blob: "b301747c5b5bf83cabe57a1a628cbdddfc6b17d4"
+        blob: "2d459a69cba389fc86c8b1f81be65346575ca70d"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "e837a04856de260a27b47308ce5c9ac4b1c6529ab1dc3bc5c95f18bc8321e72d"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 225252888
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/vircadia"
-        blob: "29462ddc5255bf79f63b28720632a0e818e178d9"
+        blob: "b973686b60607a82d8b9bf62e3c20b4abeb5674f"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "254ca869b6dffa46130337e71344ca3ff603fd8e39f2f260a0759f3f1db92ebd"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 162215640
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/poe-ladder"
-        blob: "9e904f9884264a212499f0de5bf55e031d5c926c"
+        blob: "cdc30ac22b9bd6df90c17e7e6c5a7b7b0cec0a99"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "7bf8857a1ba02fe18196dace8fbda3547c49838946ff8b20228029bbcc1bceca"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 834232140
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/switchshuttle"
-        blob: "ef114f80b9a8bf5dbf1816dfdc71e123185dadf5"
+        blob: "98e9c6592d153cd17aa5aa52053bc815c72f64f9"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "053eb22ab3d64c5239a8d6442bee85134ed8f92e28f011a64fa22f57774c13d1"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

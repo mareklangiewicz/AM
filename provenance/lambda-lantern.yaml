@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 159983433
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/lambda-lantern"
-        blob: "88adaf98fe95a21b866190e8380f91fb2e4df266"
+        blob: "f4b6ca7689586326ee190f9b7b65e8337022d0ad"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "96bfba6453bbb62f29a67779e9681f471795acdedfeb8846b23508aeb34858d1"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

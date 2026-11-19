@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 836460535
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/alice"
-        blob: "2b7c5b0b894625fef5d755625b6f6d6120a7d287"
+        blob: "6ceeba8cbe8757ad2a0baa6f9d1ebd54fa806a4d"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "03ebd16c6de60f06a2bcdbcfeb7de62b902715a8a32298e756c7e388ed4a24e9"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

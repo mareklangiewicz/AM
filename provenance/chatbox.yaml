@@ -26,9 +26,9 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/aarch64/chatboxai"
-        blob: "cff8c9c5d8bd46afbdd3059e2cabd13f484dac97"
+        blob: "d8b1d662cb0119d894ea8f8e55e1b73432c30101"
     "armv7l":
       repository_id: 610260322
       availability: "absent"
@@ -40,9 +40,20 @@ apps:
     "x86_64":
       repository_id: 610260322
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/chatboxai"
-        blob: "daf122df9edaf5fd1ed8f6caf39e52aea7151ad7"
+        blob: "d9f32accdbf81cbad76eef61e49fff021425c003"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "475f15d09f4989ce2604adba9527109d1889d77d4986f17b31c0b95075e6e78b"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

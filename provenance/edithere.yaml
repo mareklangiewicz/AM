@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1365889199
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/edithere"
-        blob: "7b061f8665d633d449b4bb83811a07cf0b1975ed"
+        blob: "5540da27e996b216ff6582d46a1dfb7251d80623"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "10384e217938c34c31e73f9fd21bea62e89133dfe8ce9d1c40b117ed2d051fe0"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

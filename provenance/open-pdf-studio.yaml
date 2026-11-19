@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1139846739
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/openpdfstudio"
-        blob: "94e8d5206348e7e2b822f44d36f7c68ffc7ef04f"
+        blob: "9701cfcda49048f08922ad23d18586223e979a96"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "aa34f5879af5dce5b261296e5b834bef8147875461ac0ee34fbd5ca37b3fe9cc"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

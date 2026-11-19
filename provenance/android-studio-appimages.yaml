@@ -18,12 +18,23 @@ apps:
     "x86_64":
       repository_id: 701716484
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/android-studio"
-        blob: "b4a4129bd06cb1b447c3d26abdb854f57b4e5061"
+        blob: "f69cb4925539923be75cf3747becc7924ae1d618"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "bd9b5207cae801e7d8efdbcdf0640c7b7956b717d7af4192e3ff3922474ae2ed"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"
   "android-studio-latest":
     "aarch64":
       repository_id: 701716484
@@ -40,9 +51,20 @@ apps:
     "x86_64":
       repository_id: 701716484
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/android-studio-latest"
-        blob: "5cd279d783ec4936b81eeccb299efd2b1581e62c"
+        blob: "ee6689b7c5521304e97a7e9a831286a03a009e02"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "a8e10704599323bccbc3857e2a536f4386391041c8d2d25d0476e3f508b77616"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

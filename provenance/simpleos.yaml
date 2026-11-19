@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 137024633
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/simpleos"
-        blob: "9beb84569f56a73b0e170b34b4c7cc635dcb8d26"
+        blob: "9940a5e866b10daca6edf850468aa4c07586c571"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "d1e6ea5602f2fddcfb0e9a174b680b6abcf021faff704f17066dc2ef745727f9"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 734370700
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/openssh-gui"
-        blob: "9946f0e936b0c837aa0a8cdd4976e1b78e940452"
+        blob: "a46bfd2ee70696a3f5704eee1b24401047f3fa97"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "e46d23f1736d3d8ff51fc23fce3b8a351910990aa4900bc85421ccbd607185f4"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

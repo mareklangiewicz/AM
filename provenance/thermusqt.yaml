@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 74219350
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/thermusqt"
-        blob: "bbf6ae1644ff0f690f0192ea08f5b6065fe09c2e"
+        blob: "f3841d4f7f6222b1f7e3631775af2ab3141dc77b"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "6a9b2979cb6acfcf33c3ee4c3dc0ae014706dab4cd2144f4f68ebcb7c8429931"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

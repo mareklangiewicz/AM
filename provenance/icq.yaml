@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1230768535
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/icq"
-        blob: "8f8b69138912b54a52eee6844fc0452e17f5d2c6"
+        blob: "7bf74d228645f86c58a7e553cc6115ff3fefc66e"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "be39a95831e2cdfb8c03b2f1322293317ccb9871534fc75d5ed715722ce42f4d"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

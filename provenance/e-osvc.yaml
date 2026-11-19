@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 249010718
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/eosvc"
-        blob: "4e5de9336f9a7b2853967f59b49671b65e820cb0"
+        blob: "bd4c78bd169b6bf18213765f6731e3596787da30"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "8bc672c63116c0fa4253d8df0f95a6c2cefb9225c9908bd574d43c37ac78b678"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

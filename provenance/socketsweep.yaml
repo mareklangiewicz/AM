@@ -9,7 +9,7 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/aarch64/socketsweep"
         blob: "a0b0a5cd2e5fd3f285297c907ebf7c29e1cec9fa"
     "armv7l":
@@ -23,9 +23,20 @@ apps:
     "x86_64":
       repository_id: 1238028482
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/socketsweep"
-        blob: "6c118c79a8c1580fc6d8a9999fbd8f638f920716"
+        blob: "b0b0d9436f3c43ea5630b6917ccef90098e8c9e8"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "f00fefd865304f7927956f43c7f584500f9f1ed2a145074de6406fbb3c64e1db"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

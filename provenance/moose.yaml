@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 78660217
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/moose"
-        blob: "751bd917b233d9bc02e8b850d10dc2ade05365b1"
+        blob: "a67ecf75f718ecb976a69a5fc320a47602a9ff7b"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "1ff96f88d4c41a4be726c7a0db56bf12d0efb11b1fc0f479c1d421e8dae03f04"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

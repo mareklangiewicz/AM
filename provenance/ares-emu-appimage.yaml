@@ -18,12 +18,23 @@ apps:
     "x86_64":
       repository_id: 898150804
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/ares"
-        blob: "4e1dd97e7cd56df9f8605af73bbf08fc97807a45"
+        blob: "c77250bf4a32a964d32d7586466c753c3c8c82d4"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "c497665713734284804e8d22fca770ae88ebe447e3fe016f492c37b2e4311efb"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"
   "ares-emu":
     "aarch64":
       repository_id: 898150804

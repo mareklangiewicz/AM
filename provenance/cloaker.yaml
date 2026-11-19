@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 191083066
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/cloaker"
-        blob: "c30290a55c3a040905149eadba5dd08dc2456884"
+        blob: "dde7de4d88602baa0011e685c63b25417fa81ab9"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "e978ec8bcaf4b5ceb0c2649c1f7ea72440ff35ff82fc6d7d0d9db53f50d7ad44"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"

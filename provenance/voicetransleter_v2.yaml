@@ -18,9 +18,20 @@ apps:
     "x86_64":
       repository_id: 1285739048
       availability: "present"
-      classification: "unknown"
+      classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "a506f3dd5705a146aa01d46f2e5ddd75e1dd1cb4"
+        commit: "db00f2544f1505513782360aae4c5064c306b9f2"
         path: "programs/x86_64/voicetransleter-v2"
-        blob: "b74182e2c9ee0ec9ba3f0e19d6bc530cca84db68"
+        blob: "1f63d4adf18d30698fdb57ecf20bb62cfee58c17"
+      evidence:
+        method: "whole_wrapper"
+        evaluated_at: "2026-11-19T12:11:47Z"
+        recipe_sha256: "b5772ec6f31f0964ab686abfd8dcbfd6e098cc2933d6c5274cf090587543ce24"
+        rules: "db00f2544f1505513782360aae4c5064c306b9f2"
+        dependencies:
+          "modules":
+            repository: "mareklangiewicz/AM"
+            commit: "db00f2544f1505513782360aae4c5064c306b9f2"
+            path: "modules/"
+            sha256: "97dd69f63da17af1664a7cfe39f16e37c64d010595691da5c7f56ce42104ea94"
