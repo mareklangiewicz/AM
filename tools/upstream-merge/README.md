@@ -88,6 +88,33 @@ a scratch tree; a declaration or policy they do not support refuses there.
   merge leaves them enrolled: the collector refuses to drop a source the
   published catalog retains, so retiring them is separate collector work.
 
+## Re-convert a reviewed layout
+
+When a layout is added to `tools/recipe-conversion/layouts.json`, or a
+reviewed one gains a setting, `relayout.py` converts again every recipe it
+covers, outside any merge:
+
+```sh
+python3 tools/upstream-merge/relayout.py --layout bb53f3180 --from long   # dry run
+python3 tools/upstream-merge/relayout.py --layout bb53f3180 --from long --write
+```
+
+- A recipe is covered when it is a declaration or long recipe (`--from`
+  narrows that to one form) and its original at `merge-base(HEAD,
+  upstream/main)` is an instance of that layout alone. Using the merge base
+  means upstream edits not yet merged never come in.
+- Each one is converted as a recipe declaration from its own identities. The
+  derived files come from `derive` and `stage`, with `re-converted` rows for
+  the changed recipes and `untouched` for the rest, exactly as in a merge.
+- The selection-equivalence check compiles each changed recipe's selection
+  rows before (`url_policy_rows`, `recipe_rows`) and after. A recipe whose
+  repository, channel, asset pattern, URL rules, catalog app or fresh-only
+  would change is refused and left as it is; the declarations written by hand
+  in the v3 migration refuse this way. Other refusals come from `convert`.
+- The dry run prints the counts, every refusal with its reason, and the
+  derived files that change. `--write` needs those paths unmodified and the
+  same HEAD; it writes and never commits.
+
 ## What the gate does not cover
 
 Tool tests and `regress/` are run by hand after the gate, including the
@@ -100,5 +127,13 @@ need Marek's authorization.
 ## Tests
 
 ```sh
-python3 -B -m unittest discover -s tools/upstream-merge -p 'test_*.py'
+python3 -B -m unittest discover -s tools/upstream-merge -p 'test_*.py'   # fast
+python3 -B -m unittest discover -s tools/upstream-merge -p 'tree_*.py'   # replays, under a minute
 ```
+
+`tree_relayout.py` replays the two re-conversions that shipped: on
+`cf6255fc3`, `--layout bb53f3180 --from long` must produce `082502f64`'s
+1,171 recipes, `recipe-url-policies.json` and `catalog-yaml-policy.am` byte
+for byte (ticket 33); on `d85c3851b^`, `--layout cf50304fc --from
+declaration` must produce `d85c3851b`'s 579 declarations (ticket 32). The
+"Long tests" workflow runs them.

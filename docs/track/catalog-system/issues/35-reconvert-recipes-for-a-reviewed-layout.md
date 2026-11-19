@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: open
+Status: resolved
 Blocked by: none
 
 ## Outcome
@@ -50,3 +50,53 @@ November 19, 2026, Marek's answers:
   declarations, ticket 32), plus fast tests on pinned recipes where mutants
   (changed pattern, channel, repository) must be reported by the
   selection-equivalence check.
+
+November 19, 2026, two more answers from Marek, after the first replay runs
+found recipes the tickets 32/33 scripts never covered: a recipe whose
+re-conversion would select differently is refused and left as it is (the run
+goes on), and `--from declaration|long` narrows a run to one form.
+
+## Answer — November 19, 2026
+
+`tools/upstream-merge/relayout.py --layout COMMIT [--from FORM] [--write]`
+(usage in `tools/upstream-merge/README.md`). It re-converts each covered
+recipe as a declaration, refuses any whose selection rows (`url_policy_rows`,
+`recipe_rows`: repository id and name, channel, asset pattern, URL rules,
+catalog app, fresh-only) would change, then derives the files with
+`merge.derive`/`merge.stage`. A final check also requires every policy row
+of the recipes it did not touch to be unchanged. The dry run is the default.
+
+Tests:
+
+- `test_relayout.py` (fast, 3): pinned `x86_64/zulip` before
+  (`cf6255fc3`, long) and after (`082502f64`, declaration) selects the
+  same. Mutants of repository id, repository, channel, asset pattern, URL
+  rules, catalog app and fresh-only are each named, and so is a recipe that
+  stops selecting.
+- `tree_relayout.py` (replays, ~45 s on myxps, in Long tests): ticket 33
+  reproduced byte for byte (1,171 recipes, registry, compiled module; the
+  same 3 refusals). Ticket 32 reproduced (579 declarations; 586 is the
+  pinned corpus count). Both replays were red before the refusal rule and
+  `--from` were added.
+- Run for real: `--write` in a scratch worktree (`--layout cf50304fc --from
+  long`) wrote 784 recipes and 2 derived files; a fresh `generate()` gave
+  the same module; a second `--write` refused (paths modified).
+
+Findings on HEAD `6292edaae` (dry runs, originals at `ba061a639`):
+
+| Layout | Long → declaration, same selection | Refused: selection would change | Other refusals |
+|---|---|---|---|
+| `b7c72a974` (3.5) | 791 | 3: neovide, neovide-nightly, sunshine | 3 |
+| `bb53f3180` | 0 | 3: 5ire, actiona, obsidian | 3 |
+| `cf50304fc` (3.6) | 784 | 6: 0x808, 0xsynth, 3mf-katalog-manager, aeroftp, ag-repatch, agent-buddy | 0 |
+
+- 1,575 long recipes can become declarations with unchanged selection. 732
+  of the 784 at 3.6 were already instances at the bulk-conversion base
+  `7b4f831e6`; why the bulk run made them long is not checked (a guess:
+  conversion rules widened since). Not converted here: that is a separate
+  decision.
+- The 12 refused declarations were written by hand in the v3 migration
+  (`80122f46e`): their own asset patterns, and some settings conversion
+  does not produce (`EXTRA_APP_LAUNCHERS`, `DESKTOP_EXEC`). The 9 from
+  `bb53f3180` and 3.6 do not set `DESKTOP_STRIP_NO_SANDBOX=true`, though
+  their layout does; not decided whether they should.
