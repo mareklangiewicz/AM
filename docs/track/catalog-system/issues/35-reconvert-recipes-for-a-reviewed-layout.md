@@ -122,8 +122,6 @@ see ticket 43):
   pinned-corpus count); never agreed here.
 - Ticket 40 `plan` prints only the first refusal, not "each refusal that
   applies".
-- `modules/appimage.am:240` copy check (sorted lines lose sections) and the
-  `main`/`extras` names (226).
 - `scripts/31`: `run.sh` runs 4 of 7 scripts; `report.py` reads the current
   `layouts.json`; `origins.py:13` hardcodes version ids.
 - `incremental.py` format-2 branches are still reached from
@@ -133,3 +131,8 @@ Shipped with Marek's approval: Long tests 44564074865 green on
 `ci/review-fixes`; `release.py ship` pushed `e019f7ce1`, Fast tests
 44566930800 green. Collection inputs unchanged, so `CATALOG_SCHEDULE_REVISION`
 stays `4a0efa530`. `ci/review-fixes` deleted.
+
+`modules/appimage.am` copy check: kept. Template 3.6 (`cf50304fc`, line 82)
+compares sorted lines against the main launcher the same way, and a 3.6
+declaration must install what its long recipe does. The counters are renamed
+`staged_main` and `launchers`, and the comment says why the compare is 3.6's.
