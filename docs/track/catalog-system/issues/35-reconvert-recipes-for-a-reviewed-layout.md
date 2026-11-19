@@ -35,3 +35,18 @@ reboot; logic recorded only in prose on the tickets):
 - No new layout review in this ticket.
 
 ## Comments
+
+November 19, 2026, Marek's answers:
+
+- Command: `python3 tools/upstream-merge/relayout.py --layout COMMIT
+  [--write]`, dry run by default; it imports `merge` (`derive`/`stage`).
+- Originals come from `merge-base(HEAD, upstream/main)`, the originals the
+  fork's recipes were converted from, so unmerged upstream edits never leak
+  in.
+- Tests: whole-tree replays of the two past runs (on `cf6255fc3` with layout
+  `bb53f3180` it must produce `082502f64`'s recipes,
+  `recipe-url-policies.json` and `modules/catalog-yaml-policy.am` byte for
+  byte, ticket 33; on `d85c3851b^` it must produce `d85c3851b`'s 586
+  declarations, ticket 32), plus fast tests on pinned recipes where mutants
+  (changed pattern, channel, repository) must be reported by the
+  selection-equivalence check.
