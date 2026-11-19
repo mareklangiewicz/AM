@@ -49,3 +49,5 @@ recipe counts then had to be reconciled by hand (ticket 33 Comments).
   points to the folder; the fifth-form `git show` snippet stays in the doc.
 - Ticket 33's scripts stay replaced by `relayout.py` (ticket 35). Its
   `tree_relayout.py` replay reproduces the shipped result.
+
+November 19, 2026: shipped with Marek's approval as part of `6ff1c94fa` (Long tests 44514966125 on `ci/release-watch`, Fast tests 44516166447 green; no repin). `release.py plan` and `watch` were used for real in that ship.

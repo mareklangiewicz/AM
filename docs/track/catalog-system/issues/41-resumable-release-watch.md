@@ -45,3 +45,5 @@ in the continue command, or pick an older run of the same workflow each fail
 them (the last one survived at first; a test with two Fast tests runs on one
 commit was added). Run for real: `watch --minutes 1` found Fast tests
 44512967029 on `5a4ee43ec` (green, exit 0), and so did `watch 44512967029`.
+
+November 19, 2026: shipped with Marek's approval as part of `6ff1c94fa` (Long tests 44514966125 on `ci/release-watch`, Fast tests 44516166447 green; no repin). `release.py plan` and `watch` were used for real in that ship.

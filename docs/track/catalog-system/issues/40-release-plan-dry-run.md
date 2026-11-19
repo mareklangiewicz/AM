@@ -48,3 +48,5 @@ it next to `ship`.
 
 The optional Claude Code allow rule for `ship` is not added; that is Marek's
 call.
+
+November 19, 2026: shipped with Marek's approval as part of `6ff1c94fa` (Long tests 44514966125 on `ci/release-watch`, Fast tests 44516166447 green; no repin). `release.py plan` and `watch` were used for real in that ship.
