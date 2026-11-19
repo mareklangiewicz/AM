@@ -154,9 +154,10 @@ EXIT = {GREEN: 0, RED: 1, RUNNING: 3}
 
 
 def watch(run, ids, minutes, out=say, sleep=time.sleep, clock=time.monotonic):
-    """GREEN when every run succeeded, RED as soon as one did not (once the
-    deadline or the others end), RUNNING when the deadline came first: then
-    the last line is the command that continues the watch (ticket 41)."""
+    """GREEN when every run succeeded. RED when one did not, returned once the
+    others end or the deadline comes. RUNNING when the deadline came with
+    nothing failed: then the last line is the command that continues the
+    watch for the same number of minutes (ticket 41)."""
     deadline = clock()+minutes*60
     pending = dict(ids)
     good = True
@@ -174,7 +175,7 @@ def watch(run, ids, minutes, out=say, sleep=time.sleep, clock=time.monotonic):
             if not good:
                 return RED
             out('not failed; continue with: python3 -B tools/release/release.py watch '
-                + ' '.join(str(i) for i in pending.values())+' --minutes 30')
+                + ' '.join(str(i) for i in pending.values())+f' --minutes {minutes:g}')
             return RUNNING
         sleep(POLL_SECONDS)
 

@@ -118,7 +118,7 @@ def recognize(source,templates):
     if not selection:raise Refusal('release selection is not one GitHub releases read')
     if selection['site'].lower()!=site.lower():raise Refusal('SITE and the release selection name different repositories')
     return dict(app=app,site=site,alias=selection['url'],selector=selection['selector'],template=template.identity,
-                settings=getattr(template,'settings',{}))
+                settings=template.settings)
 
 
 def to_declaration(source,recipe,identities,templates):

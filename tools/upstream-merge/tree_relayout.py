@@ -22,25 +22,26 @@ def show(commit,path):
 
 
 class Replay(unittest.TestCase):
-    def replay(self,layout,ours,shipped,form):
+    def replay(self,layout,ours,shipped,form,derived):
         result=r.plan(r.ROOT,layout,ours,UPSTREAM,(form,))
         converted={row['path']:row['data'] for row in result['rows'] if row['outcome']=='re-converted'}
         self.assertEqual(set(converted),changed(ours,shipped))
         for path,data in converted.items():self.assertEqual(data,show(shipped,path),path)
         self.assertEqual(result['differences'],[])
         self.assertEqual(result['retire'],{})
+        # Exactly the derived files the shipped commit changed, byte for byte.
+        self.assertEqual(sorted(result['files']),derived)
+        for path,content in result['files'].items():self.assertEqual(content.encode(),show(shipped,path),path)
         return result
 
     def test_ticket_33_long_recipes_become_declarations(self):
-        result=self.replay('bb53f3180','cf6255fc3','082502f64','long')
+        result=self.replay('bb53f3180','cf6255fc3','082502f64','long',sorted((r.merge.REGISTRY,r.merge.POLICY)))
         self.assertEqual(len([row for row in result['rows'] if row['outcome']=='re-converted']),1171)
         self.assertEqual(sorted(result['refused']),['programs/aarch64/python','programs/x86_64/deadbeef-nightly',
                                                     'programs/x86_64/python'])
-        for path in (r.merge.REGISTRY,r.merge.POLICY):
-            self.assertEqual(result['files'][path].encode(),show('082502f64',path),path)
 
     def test_ticket_32_declarations_gain_the_layout_setting(self):
-        result=self.replay('cf50304fc:templates/AM-SAMPLE-AppImage','d85c3851b^','d85c3851b','declaration')
+        result=self.replay('cf50304fc:templates/AM-SAMPLE-AppImage','d85c3851b^','d85c3851b','declaration',[])
         # 579 in the tree (ticket 32 Answer); the pinned corpus has 586.
         self.assertEqual(len([row for row in result['rows'] if row['outcome']=='re-converted']),579)
         # Written by hand in the v3 migration (80122f46e), with their own asset
@@ -48,8 +49,6 @@ class Replay(unittest.TestCase):
         self.assertEqual(sorted(result['refused']),['programs/x86_64/'+app for app in
             ('0x808','0xsynth','3mf-katalog-manager','aeroftp','ag-repatch','agent-buddy')])
         for reason in result['refused'].values():self.assertRegex(reason,'^selection would change: .*asset_pattern')
-        for path,content in result['files'].items():
-            self.assertEqual(content.encode(),show('d85c3851b',path),path)
 
 
 if __name__=='__main__':unittest.main()

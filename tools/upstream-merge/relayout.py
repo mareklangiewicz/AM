@@ -105,9 +105,8 @@ def plan(root,layout,ours='HEAD',upstream='upstream/main',forms=convert.FORMS):
             row.update(outcome='re-converted',form_before=before,form_after='declaration',
                        data=result['text'].encode(),policies=[],identities=identities)
     candidates=[row for row in rows if row['outcome']=='re-converted']
-    owned=lambda path:[policy for policy in registry if 'programs/'+policy['source_recipe']==path]
     selecting=changes({row['path']:fork[row['path']] for row in candidates},
-                      [policy for row in candidates for policy in owned(row['path'])],
+                      [policy for row in candidates for policy in by_recipe.get(row['path'].removeprefix('programs/'),[])],
                       {row['path']:row['data'] for row in candidates},[])
     for row in candidates:
         if row['path'] in selecting:
@@ -137,12 +136,13 @@ def write(root,result):
         raise Problem('uncommitted changes in paths relayout writes; commit or stash them first')
     for row in result['rows']:
         if row['outcome']=='re-converted':(Path(root)/row['path']).write_bytes(row['data'])
-    for path,content in result['files'].items():(Path(root)/path).write_text(content)
+    for path,content in result['files'].items():(Path(root)/path).write_text(content,encoding='utf-8')
 
 
 def summary(result):
     converted=Counter(row['form_before'] for row in result['rows'] if row['outcome']=='re-converted')
-    lines=[f"layout {result['layout'][:9]}{result['layout'][40:]}, originals at {result['base'][:9]}, fork at {result['ours'][:9]}",
+    commit,_,path=result['layout'].partition(':')
+    lines=[f"layout {commit[:9]}:{path}, originals at {result['base'][:9]}, fork at {result['ours'][:9]}",
            're-converted: '+(', '.join(f'{count} from {form}' for form,count in sorted(converted.items())) or 'none'),
            f"refused: {len(result['refused'])}"]
     lines+=['  '+path.removeprefix('programs/')+': '+reason for path,reason in sorted(result['refused'].items())]

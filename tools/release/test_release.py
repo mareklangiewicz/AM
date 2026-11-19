@@ -204,6 +204,13 @@ class Watch(unittest.TestCase):
         self.assertIn('release.py watch 31', lines[-1])
         self.assertNotIn('21', lines[-1])
 
+    def test_the_continue_command_keeps_the_watch_length(self):
+        polls = -int(-90//release.POLL_SECONDS)
+        lines = []
+        self.watch([view(21, 'completed', 'success')]+[view(31, 'in_progress')]*(polls+1),
+                   minutes=1.5, out=lines.append)
+        self.assertTrue(lines[-1].endswith(' --minutes 1.5'), lines[-1])
+
     def test_a_failure_is_reported_even_if_another_run_is_still_going(self):
         polls = int(60/release.POLL_SECONDS)
         self.assertEqual(self.watch([view(21, 'completed', 'failure')]+[view(31, 'in_progress')]*(polls+1),

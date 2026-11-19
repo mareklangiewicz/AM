@@ -5,6 +5,11 @@ Pinned Git objects: x86_64/zulip as a long recipe with its policy row at
 cf6255fc3, and as the declaration ticket 33 converted it to at 082502f64.
 """
 import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+import tempfile
 import unittest
 
 import relayout as r
@@ -56,6 +61,21 @@ class Equivalence(unittest.TestCase):
     def test_a_recipe_that_stops_selecting_is_named(self):
         found=r.differences(self.before,self.policies,{PATH:b'#!/bin/sh\necho plain\n'},[])
         self.assertEqual(len(found),1,found);self.assertIn('x86_64/zulip',found[0])
+
+
+class Encoding(unittest.TestCase):
+    def test_written_files_are_utf8_whatever_the_locale(self):
+        with tempfile.TemporaryDirectory() as root:
+            for command in (['init','-q'],['-c','user.name=t','-c','user.email=t@t','commit','-q','--allow-empty','-m','t']):
+                subprocess.run(['git','-C',root,*command],check=True)
+            head=r.merge.git(root,'rev-parse','HEAD').stdout.decode().strip()
+            script=('import sys;sys.path.insert(0,sys.argv[1]);import relayout;'
+                    'relayout.write(sys.argv[2],dict(ours=sys.argv[3],rows=[],files={"f":"za\\u017c\\u00f3\\u0142\\u0107"}))')
+            env=dict(os.environ,LC_ALL='C',PYTHONUTF8='0',PYTHONCOERCECLOCALE='0')
+            done=subprocess.run([sys.executable,'-B','-c',script,str(Path(r.__file__).parent),root,head],env=env,
+                                capture_output=True,text=True,errors='replace')
+            self.assertEqual(done.returncode,0,done.stderr)
+            self.assertEqual((Path(root)/'f').read_bytes(),'zażółć'.encode())
 
 
 class Layout(unittest.TestCase):
