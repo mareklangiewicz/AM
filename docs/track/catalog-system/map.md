@@ -192,6 +192,7 @@ approval boundaries.
 | [39 resolved](issues/39-keep-research-scripts-in-the-repo.md) | none | [Ticket numbers come from `scripts/NN/`](issues/39-keep-research-scripts-in-the-repo.md#answer--november-19-2026); ticket 31's scripts moved there and rerun to the same table. |
 | [40 resolved](issues/40-release-plan-dry-run.md) | none | [`release.py plan`](issues/40-release-plan-dry-run.md#answer--november-19-2026) prints what `ship` would do from the same `decide` function, writing nothing. |
 | [41 resolved](issues/41-resumable-release-watch.md) | none | [`release.py watch`](issues/41-resumable-release-watch.md#answer--november-19-2026) continues a watch; exit 3 = still running at the deadline, 1 = failed. |
+| [42 claimed](issues/42-convert-reviewed-layout-long-recipes.md) | none | Long recipes that are instances of reviewed layouts 3.5 and 3.6 become declarations (791 + 784). |
 
 Latest implementation evidence, November 8: Chromium desktop/narrow and Firefox
 checks pass; physical-device/comprehension limits remain with 13. Independent
