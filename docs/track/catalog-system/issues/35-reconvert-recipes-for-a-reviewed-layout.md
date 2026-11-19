@@ -148,5 +148,9 @@ worth its cost. Ticket 40's first-refusal question: see ticket 40.
 
 November 19, 2026: the 12 hand-written v3-migration declarations stay as
 written; relayout refuses them. Of the 9 from `bb53f3180` and 3.6, 8 have
-set `DESKTOP_STRIP_NO_SANDBOX=true` since `7eca1ca40`; `x86_64/obsidian`, whose
-original strips `--no-sandbox`, now does too (Marek agreed).
+set `DESKTOP_STRIP_NO_SANDBOX=true` since `7eca1ca40`. `x86_64/obsidian` keeps
+`--no-sandbox` on purpose, though its original strips it: its launcher policy
+is declared in the recipe (`4e718e27f`) and `test_host_cutover`
+`test_obsidian_gui_alias_desktop_and_removal` asserts the flag stays. Adding
+the strip (`9d6681d4a`) failed that test in Long tests 44636487713 and was
+reverted.
