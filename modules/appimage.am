@@ -219,11 +219,13 @@ am_package() (
 	# Every top-level desktop file is a launcher (template 3.6, ticket 37): the
 	# first visible one is $APP-AM.desktop, further ones $APP-2-AM.desktop and
 	# on, NoDisplay=true ones (URL/MIME handlers) $APP-handler[-N]-AM.desktop.
-	# A copy of the main launcher is not installed twice. Symlinks resolve
-	# against the AppImage root, like the icon's. Byte order, in any locale.
+	# A copy of the main launcher is not installed twice: same sorted lines,
+	# template 3.6's compare, kept so declarations install what 3.6 recipes
+	# do. Symlinks resolve against the AppImage root, like the icon's. Byte
+	# order, in any locale.
 	LC_ALL=C; export LC_ALL
 	rm -R -f ./.am-desktops; mkdir ./.am-desktops
-	main='' extras=1 handlers=0
+	staged_main='' launchers=0 handlers=0
 	for found in ./squashfs-root/*.desktop; do
 		file=$found COUNT=0
 		while [ -L "$file" ] && [ "$COUNT" -lt 10 ]; do
@@ -235,12 +237,12 @@ am_package() (
 		if grep -qi '^NoDisplay=true$' "$file"; then
 			handlers=$((handlers + 1)) name=$APP-handler-AM.desktop
 			[ "$handlers" -eq 1 ] || name=$APP-handler-$handlers-AM.desktop
-		elif [ -z "$main" ]; then
-			name=$APP-AM.desktop main=./.am-desktops/$APP-AM.desktop
-		elif [ "$(sort "$main")" = "$(sort "$file")" ]; then
+		elif [ -z "$staged_main" ]; then
+			launchers=1 name=$APP-AM.desktop staged_main=./.am-desktops/$APP-AM.desktop
+		elif [ "$(sort "$staged_main")" = "$(sort "$file")" ]; then
 			continue
 		else
-			extras=$((extras + 1)) name=$APP-$extras-AM.desktop
+			launchers=$((launchers + 1)) name=$APP-$launchers-AM.desktop
 		fi
 		cp "$file" ./.am-desktops/"$name"
 	done
