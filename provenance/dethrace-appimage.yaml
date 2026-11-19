@@ -9,7 +9,7 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        commit: "fa1c005185e2d6d9e4bd1b6984d15afd5625a297"
         path: "programs/aarch64/dethrace"
         blob: "a085710ca1b09d7b62fe684a457405468e07ecbf"
     "armv7l":
@@ -26,17 +26,17 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        commit: "fa1c005185e2d6d9e4bd1b6984d15afd5625a297"
         path: "programs/x86_64/dethrace"
         blob: "cfbb69cdc5fb437b9dfb2c4b6e75c065aaa8697b"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-19T13:53:10Z"
+        evaluated_at: "2026-11-19T18:09:18Z"
         recipe_sha256: "73fc37c3b3c12b0e843dc8fa3393f41d0f35fccb9dc66345ce45d388bb17b45e"
-        rules: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+        rules: "fa1c005185e2d6d9e4bd1b6984d15afd5625a297"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "4a0efa5302f73d76b5bc1b9d84233d96225780e6"
+            commit: "fa1c005185e2d6d9e4bd1b6984d15afd5625a297"
             path: "modules/"
             sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"

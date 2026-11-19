@@ -3,24 +3,13 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 649170660
 repository: "Mintplex-Labs/anything-llm"
-collected_at: "2026-11-17T04:41:39Z"
+collected_at: "2026-11-19T18:05:07Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-17T04:41:39Z"
+observed_at: "2026-11-19T18:05:06Z"
 releases:
-  "181834184":
-    tag: "v1.2.4"
-    title: "AnythingLLM Docker v1.2.4"
-    url: "https://github.com/Mintplex-Labs/anything-llm/releases/tag/v1.2.4"
-    created_at: "2024-10-24T22:10:50Z"
-    published_at: "2024-10-25T00:02:57Z"
-    updated_at: "2024-10-25T00:03:22Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/Mintplex-Labs/anything-llm/zipball/v1.2.4"
-    source_tar_url: "https://api.github.com/repos/Mintplex-Labs/anything-llm/tarball/v1.2.4"
-    assets: {}
   "187632039":
     tag: "v1.3.0"
     title: "AnythingLLM v1.3.0 | UI overhaul + Community Hub is live"
@@ -772,6 +761,72 @@ releases:
         url_suffix: "AnythingLLMDesktop-Arm64.AppImage"
         size: 633799570
         digest: "sha256:4024f786e982f6cd87e0b3c836b1674bb5087faed335d0ef7a6cf32fd926bbb6"
+  "448972401":
+    tag: "v1.20.0"
+    title: "AnythingLLM v1.20.0"
+    url: "https://github.com/Mintplex-Labs/anything-llm/releases/tag/v1.20.0"
+    created_at: "2026-11-17T17:25:26Z"
+    published_at: "2026-11-17T20:38:19Z"
+    updated_at: "2026-11-18T19:05:45Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/Mintplex-Labs/anything-llm/zipball/v1.20.0"
+    source_tar_url: "https://api.github.com/repos/Mintplex-Labs/anything-llm/tarball/v1.20.0"
+    download_base: "https://github.com/Mintplex-Labs/anything-llm/releases/download/v1.20.0/"
+    assets:
+      "759985669":
+        name: "AnythingLLMDesktop-Arm64.AppImage"
+        url_suffix: "AnythingLLMDesktop-Arm64.AppImage"
+        size: 676318037
+        digest: "sha256:eb4c39cee6c406642e62a70a45a001ac8d2848d46a438398b904cdba8df2412e"
+      "759986815":
+        name: "AnythingLLMDesktop-Arm64.AppImage.sha256"
+        url_suffix: "AnythingLLMDesktop-Arm64.AppImage.sha256"
+        size: 100
+        digest: "sha256:1fa135712eef7646348019c7af843923d54ce2414908ee2595cdabe476e21f5a"
+      "759987548":
+        name: "installer.sh"
+        url_suffix: "installer.sh"
+        size: 26329
+        media_type: "text/x-sh"
+        digest: "sha256:6e0c491d37172de3e09126bff7ef52c3557011b71630759302bd6da5b352cd0e"
+      "759987570":
+        name: "version.txt"
+        url_suffix: "version.txt"
+        size: 6
+        media_type: "text/plain"
+        digest: "sha256:babb6a2b71ed088aa943e35bcc54c10671b049e45db7a8f9c46a6c06c5127303"
+      "759987584":
+        name: "AnythingLLMDesktop.AppImage"
+        url_suffix: "AnythingLLMDesktop.AppImage"
+        size: 951055817
+        digest: "sha256:bf101b602c590eae0a96e96c3fac609763565f4ad39f860434ed50ce2480daad"
+      "759989559":
+        name: "AnythingLLMDesktop.AppImage.sha256"
+        url_suffix: "AnythingLLMDesktop.AppImage.sha256"
+        size: 94
+        digest: "sha256:0ce863d8ec4ef49fa1c9f4e6ebdd33eba5b81b9a8a7e39ea21c97a921f19c621"
+      "760280059":
+        name: "AnythingLLMDesktop.dmg"
+        url_suffix: "AnythingLLMDesktop.dmg"
+        size: 551384444
+        digest: "sha256:5255b43221f56dbde3ec745636743910a3adebafc0f67e86aa573462fabf68a9"
+      "760280755":
+        name: "AnythingLLMDesktop-Silicon.dmg"
+        url_suffix: "AnythingLLMDesktop-Silicon.dmg"
+        size: 604481437
+        digest: "sha256:eb5d0702d86ba7452660efcb6482141e8da863e397e802498a3884f21404aade"
+      "760496744":
+        name: "AnythingLLMDesktop.exe"
+        url_suffix: "AnythingLLMDesktop.exe"
+        size: 396626360
+        media_type: "application/x-msdownload"
+        digest: "sha256:63dad00f576986d5403a3ff5f354192347ecafdbb885e10168e3d8b77c725f55"
+      "760497670":
+        name: "AnythingLLMDesktop-Arm64.exe"
+        url_suffix: "AnythingLLMDesktop-Arm64.exe"
+        size: 484456520
+        media_type: "application/x-msdownload"
+        digest: "sha256:347ace31a06a63c6982ec576361437374d10abd7d27c5cdcbfc0dfeca9bfe719"
 git_scope:
   tags: false
   tags_history_complete: false
@@ -781,10 +836,10 @@ git_refs:
   "33ba929fcb940f1ee5f683a2a217aaafe704a3c349ae0b7b0a607665001c8652":
     name: "refs/heads/desktop"
     commit: "d3a6334de2d91cb7a114987d3350fbb6ec50634d"
-    observed_at: "2026-11-17T04:41:39Z"
+    observed_at: "2026-11-19T18:05:06Z"
     files:
       "46f7a08045694dd0e2dca1f0cc2bd703cb3e038d956073b68b117aadd5ec1b62":
         path: "linux_installer.sh"
         blob: "a69aeb582e5d25731f440c6abffe0a775cab4991"
-        observed_at: "2026-11-17T04:41:39Z"
+        observed_at: "2026-11-19T18:05:07Z"
         content: "#!/bin/sh\n# This script installs AnythingLLMDesktop on Linux.\n# On systems with AppArmor enabled, the AppImage needs to also create a userspace\n# apparmor profile so that the AppImage can be run without SUID requirements due to root chromium ownership.\n#\n# Todo: Detect the current location of the AppImage so that we can update the application\n# in-place without the user needed to manually move the application to the new location.\n# This is also useful so that the apparmor location is always correct if the user edits it.\nset -eu\n\nstatus() { echo \"$*\" >&2; }\nerror() { echo \"ERROR $*\"; exit 1; }\nwarning() { echo \"WARNING: $*\"; }\n\n# Create an AppArmor profile for AnythingLLMDesktop for systems with AppArmor enabled\n# https://askubuntu.com/questions/1512287/obsidian-appimage-the-suid-sandbox-helper-binary-was-found-but-is-not-configu/1528215#1528215\ncreate_apparmor_profile() {\n    status \"Checking for sudo privileges...\"\n    sudo -v\n    if [ $? -ne 0 ]; then\n        error \"Failed to get sudo privileges! Aborting...\"\n        exit 1\n    fi\n    status \"Creating AppArmor profile for AnythingLLM...\"\n    APP_ARMOR_CONTENT=$(cat <<EOF\n# This profile is used specifically for AnythingLLMDesktop application\n# If you move the application to a different location, you will need to edit this profile.\nabi <abi/4.0>,\ninclude <tunables/global>\n\n# Use wildcard to allow the AppImage to be in any location on system across all users.\nprofile anythingllmdesktop /**/AnythingLLMDesktop.AppImage flags=(unconfined) {\n  userns,\n}\nEOF\n)\n    echo \"$APP_ARMOR_CONTENT\" | sudo tee /etc/apparmor.d/anythingllmdesktop > /dev/null\n    status \"Reloading AppArmor service...\"\n    sudo systemctl reload apparmor.service\n    status \"AppArmor profile created - you can now run AnythingLLMDesktop without SUID requirements.\"\n}\n\ncheck_to_create_apparmor_profile() {\n    # Check if the system has AppArmor enabled\n    if [ -f /sys/kernel/security/apparmor/profiles ]; then\n        if ! [ -f /etc/apparmor.d/anythingllmdesktop ]; then\n            status \"AppArmor is enabled on this system.\"\n            status \"\\e[31m[Warning]\\e[0m You will get an error about SUID permission issues when running the AppImage without creating an AppArmor profile.\"\n            status \"This requires sudo privileges. If you are unsure, you can create an AppArmor profile manually.\"\n            read -p \"Do you want to auto-create an AppArmor profile for AnythingLLM now? (y/n): \" create_apparmor\n            if [ \"$create_apparmor\" = \"y\" ]; then\n                create_apparmor_profile\n            else\n                status \"AppArmor is enabled on this system.\"\n                status \"AppArmor profile creation skipped. You may not be able to run AnythingLLMDesktop without it.\"\n            fi\n        else\n            status \"AppArmor profile already exists.\"\n            read -p \"Do you want to overwrite it with the latest version? (y/n): \" overwrite_apparmor\n            if [ \"$overwrite_apparmor\" = \"y\" ]; then\n                create_apparmor_profile\n            fi\n        fi\n    else\n        status \"AppArmor could not be automatically detected or does not exist. If you get an SUID error on startup, you may need to create an AppArmor profile for AnythingLLMDesktop.AppImage manually.\"\n    fi  \n}\n\ncheck_or_create_desktop_profile() {\n    if ! [ -f $HOME/.local/share/applications/anythingllmdesktop.desktop ]; then\n        status \"Desktop profile not found. Creating...\"\n\n        # Default Exec command\n        EXEC_CMD=\"$INSTALL_DIR/AnythingLLMDesktop.AppImage\"\n\n        # Check for Wayland + KDE specifically\n        # We check XDG_SESSION_TYPE for \"wayland\"\n        # We check XDG_CURRENT_DESKTOP for \"KDE\" (handles \"KDE\", \"KDE-Plasma\", etc)\n        # We use ':-' to safely handle unbound variables in 'set -u' mode\n        if [ \"${XDG_SESSION_TYPE:-}\" = \"wayland\" ]; then\n            case \"${XDG_CURRENT_DESKTOP:-}\" in\n                *\"KDE\"*)\n                    status \"Detected KDE Plasma on Wayland. Adding specific flags for IME support.\"\n                    EXEC_CMD=\"$INSTALL_DIR/AnythingLLMDesktop.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime\"\n                    ;;\n            esac\n        fi\n\n        DESKTOP_CONTENT=$(cat <<EOF\n[Desktop Entry]\nStartupWMClass=anythingllm-desktop\nType=Application\nName=AnythingLLM Desktop\nExec=$EXEC_CMD\nIcon=$HOME/.config/anythingllm-desktop/storage/icon.png\nCategories=Utility;\nEOF\n)\n        mkdir -p $HOME/.local/share/applications\n        echo \"$DESKTOP_CONTENT\" | tee $HOME/.local/share/applications/anythingllmdesktop.desktop > /dev/null\n        status \"Desktop profile created!\"\n    fi\n}\n\narch=$(uname -m)\n[ \"$(uname -s)\" = \"Linux\" ] || error 'This script is intended to run on Linux only.'\nif [ \"$(id -u)\" -eq 0 ]; then\n    status \"This script should not be run as root. Please run it as a regular user.\"\n    exit 1\nfi\n\n# Allow custom installation directory via ANYTHING_LLM_INSTALL_DIR environment variable\n# Defaults to $HOME if not set\nINSTALL_DIR=\"${ANYTHING_LLM_INSTALL_DIR:-$HOME}\"\n\nstatus \"#########################################################\"\nstatus \" Welcome to the AnythingLLM Desktop Installer\"\nstatus \" by Mintplex Labs Inc (team@mintplexlabs.com)\"\nstatus \" Architecture: $arch\"\nstatus \" Install Directory: $INSTALL_DIR\"\nstatus \"#########################################################\"\n\nif [ \"$arch\" = \"arm64\" ] || [ \"$arch\" = \"aarch64\" ]; then\n    APPIMAGE_URL=\"https://cdn.anythingllm.com/latest/AnythingLLMDesktop-Arm64.AppImage\"\nelse\n    APPIMAGE_URL=\"https://cdn.anythingllm.com/latest/AnythingLLMDesktop.AppImage\"\nfi\nAPPIMAGE_FILE=\"AnythingLLMDesktop.AppImage\"\n\nstatus \"Downloading latest AnythingLLM Desktop ($APPIMAGE_URL)\"\nmkdir -p \"$INSTALL_DIR\"\ncurl --fail --show-error --location --progress-bar -o \"$INSTALL_DIR/$APPIMAGE_FILE\" $APPIMAGE_URL\nchmod +x \"$INSTALL_DIR/$APPIMAGE_FILE\";\n\nstatus \"AnythingLLM Desktop is ready to run!\"\nstatus \"$INSTALL_DIR/$APPIMAGE_FILE to start AnythingLLMDesktop\"\nstatus \"\\e[36mHeads up!\\e[0m You can rerun this installer anytime to get the latest version of AnythingLLM without effecting your existing data.\"\nstatus \"Documentation: https://docs.anythingllm.com\"\nstatus \"Issues: https://github.com/Mintplex-Labs/anything-llm\"\nstatus \"\\e[36mThanks for using AnythingLLM!\\e[0m\\n\\n\"\n\nstatus \"Next, we will create a desktop profile and AppArmor profile for AnythingLLMDesktop.\"\nstatus \"This is required for the AppImage to be able to run without SUID requirements.\"\nstatus \"You can manually create these profiles if you prefer.\"\n\ncheck_or_create_desktop_profile\ncheck_to_create_apparmor_profile\n\nread -p \"Do you want to start AnythingLLMDesktop now? (y/n): \" start\nif [ \"$start\" = \"y\" ]; then\n    \"$INSTALL_DIR/$APPIMAGE_FILE\"\nfi"

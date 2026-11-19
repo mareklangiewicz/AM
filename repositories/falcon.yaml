@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc1
 kind: "repository"
 repository_id: 560863123
 repository: "cuihairu/falcon"
-collected_at: "2026-11-17T04:39:18Z"
+collected_at: "2026-11-19T18:02:33Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-17T04:39:18Z"
+observed_at: "2026-11-19T18:02:33Z"
 releases:
   "316253820":
     tag: "nightly"
@@ -16,54 +16,78 @@ releases:
     url: "https://github.com/cuihairu/falcon/releases/tag/nightly"
     created_at: "2026-05-01T03:05:44Z"
     published_at: "2026-05-01T03:07:57Z"
-    updated_at: "2026-11-16T04:40:25Z"
+    updated_at: "2026-11-19T06:29:35Z"
     prerelease: true
     source_zip_url: "https://api.github.com/repos/cuihairu/falcon/zipball/nightly"
     source_tar_url: "https://api.github.com/repos/cuihairu/falcon/tarball/nightly"
     download_base: "https://github.com/cuihairu/falcon/releases/download/nightly/"
     assets:
-      "753469872":
-        name: "SHA256SUMS"
-        url_suffix: "SHA256SUMS"
-        size: 717
-        digest: "sha256:9aee7c500abdec7cbb4fb210c09fc69112684fc8026412f00fecb03d2f7efff2"
-      "753469873":
+      "766532866":
+        name: "falcon-desktop-windows-nightly.zip"
+        url_suffix: "falcon-desktop-windows-nightly.zip"
+        size: 20752375
+        media_type: "zip"
+        digest: "sha256:cf739de9dba90c699f6f93b39703257f7977eb1875039613acfb33f239fcec89"
+      "766532867":
+        name: "falcon-desktop-macos-arm64-nightly.dmg"
+        url_suffix: "falcon-desktop-macos-arm64-nightly.dmg"
+        size: 11370362
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:e47993ee5ea294f076eb327924b8825c735097b8173248d1e34d9017afef849a"
+      "766532870":
         name: "falcon-desktop-setup-nightly.exe"
         url_suffix: "falcon-desktop-setup-nightly.exe"
-        size: 16203106
+        size: 16145290
         media_type: "application/x-msdos-program"
-        digest: "sha256:639bec37c4268539e4b2cb18f7c4d89f03c5bf42c57e394c93af215e4c761f71"
-      "753469875":
-        name: "falcon-desktop-linux-arm64-nightly.AppImage"
-        url_suffix: "falcon-desktop-linux-arm64-nightly.AppImage"
-        size: 54598152
-        digest: "sha256:84b851efcd05f3ff7ff7cef5d4247a44263db1cd1e83fe1d9e1c14776c7d9e6b"
-      "753469876":
+        digest: "sha256:b6f97a02c20c6aadec0eeef902643d06125e374516829abf45acc62801e328ca"
+      "766532871":
         name: "falcon-nightly-extension.zip"
         url_suffix: "falcon-nightly-extension.zip"
         size: 28097
         media_type: "zip"
-        digest: "sha256:a999699baa6da6790635005f21dc1f92ad65cc3f2f3e1db6ed828ede955f19e8"
-      "753469878":
-        name: "falcon-desktop-macos-arm64-nightly.dmg"
-        url_suffix: "falcon-desktop-macos-arm64-nightly.dmg"
-        size: 11370365
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:3a479e037ce5ec074e51d8cd8b1c703197ba81bfbe3ef1a8668300cef33d0db8"
-      "753469879":
-        name: "falcon-desktop-windows-nightly.zip"
-        url_suffix: "falcon-desktop-windows-nightly.zip"
-        size: 20793929
-        media_type: "zip"
-        digest: "sha256:9532dea1b060faec71e9d55f0a27fa6d15929b8b80d000969c8347bf05069540"
-      "753469880":
+        digest: "sha256:4f12270f224b56ea7456a13ec109a7df41635a3ac51db9cd5252f411e7d6d4f1"
+      "766532877":
+        name: "app-meta-falcon_0.2.0-1_all.ipk"
+        url_suffix: "app-meta-falcon_0.2.0-1_all.ipk"
+        size: 31504
+        media_type: "application/vnd.shana.informed.package"
+        digest: "sha256:f80fbd31656e29118e657a4ff5afecb19f2ce0b1f31f166876f250b5dbf93ebe"
+      "766532878":
+        name: "falcon-desktop-linux-arm64-nightly.AppImage"
+        url_suffix: "falcon-desktop-linux-arm64-nightly.AppImage"
+        size: 54598152
+        digest: "sha256:9613da5216dbbe8053a9e7b338a26668e62aaf265ded5af36fe1fdc2bba077a0"
+      "766532879":
+        name: "falcon-desktop-linux-nightly.AppImage"
+        url_suffix: "falcon-desktop-linux-nightly.AppImage"
+        size: 59034104
+        digest: "sha256:821cd5a3c1a36b0b3299edf2c97fe4ee169a0e4407a43988934068b2526c8ccb"
+      "766532883":
+        name: "falcon_0.2.0-1_x86_64.ipk"
+        url_suffix: "falcon_0.2.0-1_x86_64.ipk"
+        size: 9242644
+        media_type: "application/vnd.shana.informed.package"
+        digest: "sha256:3db61049c11ca39df8aeb4ca190eed44a0225d77ead76767ea873294993e80cc"
+      "766532884":
         name: "falcon-nightly-extension-firefox.zip"
         url_suffix: "falcon-nightly-extension-firefox.zip"
         size: 26695
         media_type: "zip"
-        digest: "sha256:7512a8c2b3f0da2ad420cf8dedcebd5bf61ed7ffbfad75cc6f842847f2df919d"
-      "753469882":
-        name: "falcon-desktop-linux-nightly.AppImage"
-        url_suffix: "falcon-desktop-linux-nightly.AppImage"
-        size: 59034104
-        digest: "sha256:4b616d30e057697f3cc53b924d876b23add85414c3665081624baaf4940fd756"
+        digest: "sha256:a20d9caa8eaea9d82f5e54eaa4886fdc5ebef000e4f2ca36694582d6bdde38d1"
+      "766532885":
+        name: "falcon_0.2.0-1_aarch64.ipk"
+        url_suffix: "falcon_0.2.0-1_aarch64.ipk"
+        size: 9621419
+        media_type: "application/vnd.shana.informed.package"
+        digest: "sha256:8ff7484a3968c5816a6f62a32300fa096c889a6e58be0696efa44d13140991a1"
+      "766532886":
+        name: "SHA256SUMS"
+        url_suffix: "SHA256SUMS"
+        size: 1106
+        digest: "sha256:dd68e9cc43ba43fb7c871965cb665c7d5ffce5b80f65806476b76c58438a4647"
+      "766532887":
+        name: "luci-app-falcon_0.2.0-1_all.ipk"
+        url_suffix: "luci-app-falcon_0.2.0-1_all.ipk"
+        size: 8436
+        media_type: "application/vnd.shana.informed.package"
+        digest: "sha256:b79a34cff864dd6f8a126c393a8b3a5e9ce2b932f7cbd5fee97cca295cc56671"
