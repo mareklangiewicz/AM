@@ -106,3 +106,27 @@ green on `ci/relayout` (the new "Relayout replays" step: 2 tests, 12 s);
 `release.py ship --ci relayout --watch 30` pushed `077b463f5`, Fast tests
 44510586158 green. Collection inputs unchanged, so `CATALOG_SCHEDULE_REVISION`
 stays `a506f3dd5` and nothing was dispatched. `ci/relayout` deleted.
+
+November 19, 2026: two-axis review of `a506f3dd5..a63693032` (tickets 35,
+39-43). Fixed in `c668d9948`: relayout writes derived files as UTF-8; both
+replays check the exact set of derived files; `release.py watch` continues
+with the minutes it was given; `convert.py` reads `template.settings`.
+Not fixed: a declaration that is not UTF-8 still crashes `relayout`, as it
+crashes `merge.py` (108, 163, 236); declarations are generated as UTF-8.
+Open, for Marek to decide:
+- The ticket 43 guard (`bulk_recipes.py:86`) checks that the include rule's
+  text ends in `mage$`, so a top-level alternation such as
+  `https.*zip$|https.*AppImage$` passes. No recipe has that shape today.
+- `FIELDS` omits compiled fields (`tools`, `selection`, `tag_pattern`,
+  `git_ref`, ...), and `selections()` compiles only the changed recipes, so
+  "same selection" is narrower than this ticket's Outcome.
+- The replay asserts 579 declarations where this ticket says 586 (the
+  pinned-corpus count); never agreed here.
+- Ticket 40 `plan` prints only the first refusal, not "each refusal that
+  applies".
+- `modules/appimage.am:240` copy check (sorted lines lose sections) and the
+  `main`/`extras` names (226).
+- `scripts/31`: `run.sh` runs 4 of 7 scripts; `report.py` reads the current
+  `layouts.json`; `origins.py:13` hardcodes version ids.
+- `incremental.py` format-2 branches are still reached from
+  `rehearse_pipeline.py`: leave them to ticket 25.
