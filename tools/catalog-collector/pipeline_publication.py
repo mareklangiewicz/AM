@@ -154,7 +154,7 @@ def summary(run,inputs,parent,report,outcomes,*,started_at,validation,reason,pub
         if 'largest_document_bytes' in values:measurements['largest_document_bytes']=known(values['largest_document_bytes'])
     result=dict(c.header('summary',inputs['schemas']),run=run,inputs=inputs,
                 input_catalog_state='known' if parent else 'absent',started_at=started_at,reported_at=utc(),
-                collection=collection,validation=validation,publication=outcomes['format-3'],compatibility_publication=dict(state='not_attempted'),
+                collection=collection,validation=validation,publication=outcomes['format-3'],
                 counts=counts,stop_reason=reason,metrics=measurements,budgets=budgets,
                 actions_url=f"https://github.com/mareklangiewicz/AM/actions/runs/{run['id']}",
                 recent_runs_url='https://github.com/mareklangiewicz/AM/actions/workflows/catalog.yml')

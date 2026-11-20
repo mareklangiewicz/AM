@@ -103,6 +103,8 @@ class Pipeline(unittest.TestCase):
         self.assertEqual(report['publication']['commit'],self.head('format-3'))
         self.assertEqual(report['metrics']['received_bytes'],dict(state='unknown'))
         self.assertEqual(report['counts']['successful']['value'],1)
+        # Retired with format 2 (ticket 25); retained older summaries may still carry it.
+        self.assertNotIn('compatibility_publication',report)
         self.assertEqual(root['last_confirmed_publication']['commit'],self.head('format-3'))
     def test_hash_schema_run_and_missing_artifact_refuse_but_finalize(self):
         mutations=[lambda:(self.output/'format-3/apps.yaml').write_text('invalid'),
