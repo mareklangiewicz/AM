@@ -9,7 +9,7 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "3b9b918622ea89711078865be4968aa983e5b91b"
+        commit: "4699d0381f897ee214a893252b4e4362c8dff528"
         path: "programs/aarch64/getssh"
         blob: "1aac686c9247bd4284ee0c2525fa5ea88f6efc14"
     "armv7l":
@@ -26,17 +26,17 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "3b9b918622ea89711078865be4968aa983e5b91b"
+        commit: "4699d0381f897ee214a893252b4e4362c8dff528"
         path: "programs/x86_64/getssh"
         blob: "5f3bdb7d0aab9af62f0d6cc63a8f0f6e3b70020e"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-20T03:31:22Z"
+        evaluated_at: "2026-11-20T13:31:14Z"
         recipe_sha256: "151e6db3bd3ac67fdcd23eda1487b0bb9e4e6572a4b0e93aa6dfd598234a114b"
-        rules: "3b9b918622ea89711078865be4968aa983e5b91b"
+        rules: "4699d0381f897ee214a893252b4e4362c8dff528"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "3b9b918622ea89711078865be4968aa983e5b91b"
+            commit: "4699d0381f897ee214a893252b4e4362c8dff528"
             path: "modules/"
             sha256: "f8ca2449992417976da15b7a99fdae213e02da6abc0ecbfc67cf318fd6160c1c"
