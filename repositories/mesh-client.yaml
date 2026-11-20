@@ -1,233 +1,15 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/cb854845b919dd38d98a806e7456ec53798c7564/docs/catalog-format-v3.md"
 kind: "repository"
 repository_id: 1169425049
 repository: "Colorado-Mesh/mesh-client"
-collected_at: "2026-11-17T18:33:04Z"
+collected_at: "2026-11-20T17:11:11Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-17T18:33:04Z"
+observed_at: "2026-11-20T17:11:11Z"
 releases:
-  "352516976":
-    tag: "v5.22.0"
-    title: "5.22.0"
-    url: "https://github.com/Colorado-Mesh/mesh-client/releases/tag/v5.22.0"
-    created_at: "2026-07-11T13:41:09Z"
-    published_at: "2026-07-11T15:01:25Z"
-    updated_at: "2026-07-11T15:01:25Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/Colorado-Mesh/mesh-client/zipball/v5.22.0"
-    source_tar_url: "https://api.github.com/repos/Colorado-Mesh/mesh-client/tarball/v5.22.0"
-    download_base: "https://github.com/Colorado-Mesh/mesh-client/releases/download/v5.22.0/"
-    assets:
-      "473511561":
-        name: "Mesh-client-5.22.0-arm64.dmg.blockmap"
-        url_suffix: "Mesh-client-5.22.0-arm64.dmg.blockmap"
-        size: 148559
-        digest: "sha256:703d25ed0f48c7c2bc787ca6ba6f19a7462ec70f5e31a8565cf618031e41f89d"
-      "473511562":
-        name: "Mesh-client-5.22.0-arm64.dmg"
-        url_suffix: "Mesh-client-5.22.0-arm64.dmg"
-        size: 141595060
-        digest: "sha256:48fb3034a77c174615c4aa0dc12a65aa3fd4d5179038d570b76e52154fa94b41"
-      "473511801":
-        name: "Mesh-client-5.22.0-arm64-mac.zip"
-        url_suffix: "Mesh-client-5.22.0-arm64-mac.zip"
-        size: 136514821
-        media_type: "zip"
-        digest: "sha256:224578e0334826231144e79cfeef5a87e3bc21f69bbca2f154fc24c2e39ce63c"
-      "473511802":
-        name: "Mesh-client-5.22.0-arm64-mac.zip.blockmap"
-        url_suffix: "Mesh-client-5.22.0-arm64-mac.zip.blockmap"
-        size: 137394
-        digest: "sha256:f5b701217638b7e6aef8bf1404068dfefc260ee1edc18bc88a314eeded177959"
-      "473511862":
-        name: "latest-mac.yml"
-        url_suffix: "latest-mac.yml"
-        size: 521
-        media_type: "text/yaml"
-        digest: "sha256:f486b47fe7245e68bd3d717fe7d2ea32cff5600d780cece9540fc67bdd608314"
-      "473511974":
-        name: "Mesh-client-5.22.0.AppImage"
-        url_suffix: "Mesh-client-5.22.0.AppImage"
-        size: 150243634
-        digest: "sha256:017bf2da995709a0662cce739b8009ec3fb60ab5238343819f1d22e7d11127ff"
-      "473512305":
-        name: "Mesh-client-5.22.0-arm64.AppImage"
-        url_suffix: "Mesh-client-5.22.0-arm64.AppImage"
-        size: 150618429
-        digest: "sha256:3ea51c3f8030618e875694d0536c1b329ed7e211912767bcc54a07d8c02263c4"
-      "473512894":
-        name: "mesh-client_5.22.0_amd64.deb"
-        url_suffix: "mesh-client_5.22.0_amd64.deb"
-        size: 117502228
-        digest: "sha256:d18175a5a144f0afd8fc89432057a9c1e97888da7a8e6f99aad75f207a076f91"
-      "473513302":
-        name: "mesh-client_5.22.0_arm64.deb"
-        url_suffix: "mesh-client_5.22.0_arm64.deb"
-        size: 111753404
-        digest: "sha256:b46dba53684b9726e80735657869aafae6c3ef368a3b1ae791c40fd21772f331"
-      "473514456":
-        name: "mesh-client-5.22.0.x86_64.rpm"
-        url_suffix: "mesh-client-5.22.0.x86_64.rpm"
-        size: 103456289
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:cd493706ff9e38b378bc159f4a21f7f108c184fc9b8575b0b9f043d721a27292"
-      "473514751":
-        name: "mesh-client-5.22.0.aarch64.rpm"
-        url_suffix: "mesh-client-5.22.0.aarch64.rpm"
-        size: 97291333
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:6349a17ee9c703b65e042aeabdd8617c9c26a05f60d4efb560232b3acec59298"
-      "473514785":
-        name: "latest-linux-arm64.yml"
-        url_suffix: "latest-linux-arm64.yml"
-        size: 708
-        media_type: "text/yaml"
-        digest: "sha256:161be0b8d5508a63ca3e9e8db83880a49a352eca3cb64c1fc3f751fc78f558dd"
-      "473514786":
-        name: "latest-linux.yml"
-        url_suffix: "latest-linux.yml"
-        size: 696
-        media_type: "text/yaml"
-        digest: "sha256:33a60f7811e14bdbc92f9a3b1753c6b4fe7021f94ba454fe59cac0dd3c7d3504"
-      "473534107":
-        name: "org.coloradomesh.MeshClient-x86_64.flatpak"
-        url_suffix: "org.coloradomesh.MeshClient-x86_64.flatpak"
-        size: 170557016
-        digest: "sha256:cf16dbc8ee0748f46879d820e61a969c44fe16faa3abb6000d3421b956901717"
-      "473534111":
-        name: "org.coloradomesh.MeshClient-aarch64.flatpak"
-        url_suffix: "org.coloradomesh.MeshClient-aarch64.flatpak"
-        size: 163184136
-        digest: "sha256:c884ba1d9ad06f1652ecc73506daedd0c3decd7e0f6e7f93daee218deee3d01b"
-      "473536042":
-        name: "Mesh-client-Setup-5.22.0.exe"
-        url_suffix: "Mesh-client-Setup-5.22.0.exe"
-        size: 168647654
-        digest: "sha256:1fa33b202546d3ef597dd689c195a3982a4e0f0a9c8f26ea69fdcdbe333a23df"
-      "473537186":
-        name: "Mesh-client-Setup-5.22.0-arm64.exe"
-        url_suffix: "Mesh-client-Setup-5.22.0-arm64.exe"
-        size: 173327861
-        digest: "sha256:b9285a74a191fe42786f492a35f7cb51ddcf41da2e5edee95f90dc11c2e8095c"
-      "473537242":
-        name: "latest.yml"
-        url_suffix: "latest.yml"
-        size: 479
-        media_type: "text/yaml"
-        digest: "sha256:02b38e4d8088aa3fc77c62ccecd27d1cd43d6e461a9d2519282f554cd8406c2b"
-  "353854467":
-    tag: "v5.23.0"
-    title: "5.23.0"
-    url: "https://github.com/Colorado-Mesh/mesh-client/releases/tag/v5.23.0"
-    created_at: "2026-07-14T14:26:48Z"
-    published_at: "2026-07-14T14:48:08Z"
-    updated_at: "2026-07-14T14:48:08Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/Colorado-Mesh/mesh-client/zipball/v5.23.0"
-    source_tar_url: "https://api.github.com/repos/Colorado-Mesh/mesh-client/tarball/v5.23.0"
-    download_base: "https://github.com/Colorado-Mesh/mesh-client/releases/download/v5.23.0/"
-    assets:
-      "476800578":
-        name: "Mesh-client-5.23.0.AppImage"
-        url_suffix: "Mesh-client-5.23.0.AppImage"
-        size: 150624600
-        digest: "sha256:ec386107a70b197e92f06defa8f4a4e9e4c1735bfe44636c9668869b172ed79c"
-      "476800988":
-        name: "Mesh-client-5.23.0-arm64.AppImage"
-        url_suffix: "Mesh-client-5.23.0-arm64.AppImage"
-        size: 150995274
-        digest: "sha256:932f39d43a7f8dd24209b435b0ac4d81a8fd89988530d40b06af8866845c8930"
-      "476802324":
-        name: "mesh-client_5.23.0_amd64.deb"
-        url_suffix: "mesh-client_5.23.0_amd64.deb"
-        size: 117763692
-        digest: "sha256:9a53ce0989723f681c179a7957b6acd52ea4e03279fc6e3ec389b4605537924c"
-      "476802761":
-        name: "mesh-client_5.23.0_arm64.deb"
-        url_suffix: "mesh-client_5.23.0_arm64.deb"
-        size: 112019640
-        digest: "sha256:a84ec07083924e010ecbf85bb701aa4e430a8f56b46955abb2bd495b2fddf73d"
-      "476803527":
-        name: "Mesh-client-5.23.0-arm64.dmg.blockmap"
-        url_suffix: "Mesh-client-5.23.0-arm64.dmg.blockmap"
-        size: 150136
-        digest: "sha256:f2b7f2d013d0f1945f48eb8d78a0c7394c358d7c0be617a3cab509dca6cc2f24"
-      "476803531":
-        name: "Mesh-client-5.23.0-arm64.dmg"
-        url_suffix: "Mesh-client-5.23.0-arm64.dmg"
-        size: 142782239
-        digest: "sha256:9a5b5a443f2aee497e4add1f4220d29d0d505ed5363d822c5925d0ee252151c5"
-      "476803653":
-        name: "Mesh-client-5.23.0-arm64-mac.zip.blockmap"
-        url_suffix: "Mesh-client-5.23.0-arm64-mac.zip.blockmap"
-        size: 137784
-        digest: "sha256:11713123aa07358fee9eac9e0b007da501bf5113e37b508cf181240b76dca55b"
-      "476803656":
-        name: "Mesh-client-5.23.0-arm64-mac.zip"
-        url_suffix: "Mesh-client-5.23.0-arm64-mac.zip"
-        size: 136963899
-        media_type: "zip"
-        digest: "sha256:2444556018fea082ab88bce219982f053881f7eb1ebbc6812a9cf5238f332965"
-      "476803724":
-        name: "latest-mac.yml"
-        url_suffix: "latest-mac.yml"
-        size: 521
-        media_type: "text/yaml"
-        digest: "sha256:c038a43827e3909bfc7e66b1269377c4c15dec951d8115bbd710acab8048ff57"
-      "476804513":
-        name: "mesh-client-5.23.0.x86_64.rpm"
-        url_suffix: "mesh-client-5.23.0.x86_64.rpm"
-        size: 103691985
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:0b09fc7af04b4ad3868c961b19736a657509a937e095b34ed7c3b151a857e407"
-      "476804932":
-        name: "org.coloradomesh.MeshClient-x86_64.flatpak"
-        url_suffix: "org.coloradomesh.MeshClient-x86_64.flatpak"
-        size: 170888728
-        digest: "sha256:2d0fd9cbeb06e4e3ae76a73a986c67a8991026b9c179caa5617943c277e0bce0"
-      "476804933":
-        name: "org.coloradomesh.MeshClient-aarch64.flatpak"
-        url_suffix: "org.coloradomesh.MeshClient-aarch64.flatpak"
-        size: 163488256
-        digest: "sha256:30ddeb8e7ded8cd166498b21e7c9550b9d0ba4fddf43189a3b3ebacb2d88e289"
-      "476804955":
-        name: "mesh-client-5.23.0.aarch64.rpm"
-        url_suffix: "mesh-client-5.23.0.aarch64.rpm"
-        size: 97734997
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:9e2b6f2d28de041f01c8d8b952ad3f91c660be49027e798d4647c4a5c8d216d5"
-      "476804988":
-        name: "latest-linux.yml"
-        url_suffix: "latest-linux.yml"
-        size: 696
-        media_type: "text/yaml"
-        digest: "sha256:f11c877acfa355786cf96e255846778fe1f6793e9c6501f70634e416188bde84"
-      "476804989":
-        name: "latest-linux-arm64.yml"
-        url_suffix: "latest-linux-arm64.yml"
-        size: 708
-        media_type: "text/yaml"
-        digest: "sha256:37256dadb874d960f7b7ea2b1d9627241247b4d698751d0e2cce547289208c56"
-      "476806702":
-        name: "Mesh-client-Setup-5.23.0.exe"
-        url_suffix: "Mesh-client-Setup-5.23.0.exe"
-        size: 169071756
-        digest: "sha256:e9708210567b17e4879815645ccf53e84990266c06ae106df09f7f71ce352ba9"
-      "476808423":
-        name: "Mesh-client-Setup-5.23.0-arm64.exe"
-        url_suffix: "Mesh-client-Setup-5.23.0-arm64.exe"
-        size: 173747702
-        digest: "sha256:87b11410305a4aa9aad2c79bf4fae8982eb60a0314b94d5d57371a965fecfd60"
-      "476808663":
-        name: "latest.yml"
-        url_suffix: "latest.yml"
-        size: 479
-        media_type: "text/yaml"
-        digest: "sha256:6a12872b7e1f8e7f470943605dc50f2188f4acca9e6d8a81a2a1b87608b87f74"
   "356220399":
     tag: "v5.24.0"
     title: "5.24.0"
@@ -3808,3 +3590,267 @@ releases:
         url_suffix: "Mesh-client-6.8.0.dmg.blockmap"
         size: 184048
         digest: "sha256:6dae6449466e0e48d1887d734c5076e62218445ab7153ddc19358941effc6c18"
+  "450733768":
+    tag: "v6.9.0"
+    title: "6.9.0"
+    url: "https://github.com/Colorado-Mesh/mesh-client/releases/tag/v6.9.0"
+    created_at: "2026-11-19T00:38:23Z"
+    published_at: "2026-11-19T01:21:46Z"
+    updated_at: "2026-11-19T14:55:26Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/Colorado-Mesh/mesh-client/zipball/v6.9.0"
+    source_tar_url: "https://api.github.com/repos/Colorado-Mesh/mesh-client/tarball/v6.9.0"
+    download_base: "https://github.com/Colorado-Mesh/mesh-client/releases/download/v6.9.0/"
+    assets:
+      "765650299":
+        name: "latest.yml"
+        url_suffix: "latest.yml"
+        size: 475
+        digest: "sha256:0fbbec00a1867ab757d82f18ea06265d708b241fd696eb1724e2cf48c21125ea"
+      "765650334":
+        name: "Mesh-client-Setup-6.9.0-arm64.exe"
+        url_suffix: "Mesh-client-Setup-6.9.0-arm64.exe"
+        size: 185980942
+        digest: "sha256:8b603bdaef2fbefad046a38fd3f9a02ac87e9aa885f37ecaa99ea7ab72ffd843"
+      "765650582":
+        name: "Mesh-client-Setup-6.9.0.exe"
+        url_suffix: "Mesh-client-Setup-6.9.0.exe"
+        size: 189298831
+        digest: "sha256:876c050ddf10164abc2eb1c0701e3d9633bdd0ae3c3c3ee3f0302fff7f19f353"
+      "765656156":
+        name: "latest-linux-arm64.yml"
+        url_suffix: "latest-linux-arm64.yml"
+        size: 704
+        digest: "sha256:3f3073442cd1804f34e7992adfa0e4f29e5c460f87b9e93b78d05099fd437d51"
+      "765656206":
+        name: "latest-linux.yml"
+        url_suffix: "latest-linux.yml"
+        size: 691
+        digest: "sha256:9797400e7927d13e2e6db90c733fbae850bc3782c22782a44138f7f27eced495"
+      "765656237":
+        name: "mesh-client_6.9.0_amd64.deb"
+        url_suffix: "mesh-client_6.9.0_amd64.deb"
+        size: 129737032
+        digest: "sha256:baff86c668662b6be3f21b0402b68fb2663cf8946f9c83dc3f6c7e06f8ae64ed"
+      "765656501":
+        name: "mesh-client_6.9.0_arm64.deb"
+        url_suffix: "mesh-client_6.9.0_arm64.deb"
+        size: 123816280
+        digest: "sha256:20e75396cd4a431040b2a8b0bbb553ad016abba00c35449791e4786b44e0b0e2"
+      "765656660":
+        name: "Mesh-client-6.9.0-arm64.AppImage"
+        url_suffix: "Mesh-client-6.9.0-arm64.AppImage"
+        size: 167765527
+        digest: "sha256:c728af62a17033b2c74e552fdd2975707ff718efefdc67063f0756b344d9f578"
+      "765656868":
+        name: "mesh-client-6.9.0.aarch64.rpm"
+        url_suffix: "mesh-client-6.9.0.aarch64.rpm"
+        size: 108154526
+        digest: "sha256:0fe8ba026b3ffaf9218f267921ee44993ea648ba80e335e48478c0887c11352b"
+      "765657014":
+        name: "Mesh-client-6.9.0.AppImage"
+        url_suffix: "Mesh-client-6.9.0.AppImage"
+        size: 166215576
+        digest: "sha256:4781001937e798f8a65321ebcce3a9261d75c9e82531b3feb22924dffea026ce"
+      "765657017":
+        name: "mesh-client-flatpak-attestation.sigstore.json"
+        url_suffix: "mesh-client-flatpak-attestation.sigstore.json"
+        size: 10926
+        digest: "sha256:b44be979bbcf5128e80ef4cfcab9ab5559a1f99b01aff7ef254b576161b63c04"
+      "765657060":
+        name: "org.coloradomesh.MeshClient.flatpak-aarch64.flatpak"
+        url_suffix: "org.coloradomesh.MeshClient.flatpak-aarch64.flatpak"
+        size: 191756896
+        digest: "sha256:fe38f6d70dbfc7cf2c013b2b64745ccb816fcec48c1ff72b8d93478cdb6c3992"
+      "765657263":
+        name: "mesh-client-6.9.0.x86_64.rpm"
+        url_suffix: "mesh-client-6.9.0.x86_64.rpm"
+        size: 113759950
+        digest: "sha256:5b3ce995b314a8041c49aa8035157c3041359a7656afba8ff41984bca515e60e"
+      "765657314":
+        name: "org.coloradomesh.MeshClient.flatpak-x86_64.flatpak"
+        url_suffix: "org.coloradomesh.MeshClient.flatpak-x86_64.flatpak"
+        size: 199440088
+        digest: "sha256:ac4cf46407574bb2b9c5dc0a67022a79c4d381ed241bae53cab10099253e2c32"
+      "765684103":
+        name: "00-READ-ME-BEFORE-EXTRACTING-macOS-ZIP.txt"
+        url_suffix: "00-READ-ME-BEFORE-EXTRACTING-macOS-ZIP.txt"
+        size: 1261
+        digest: "sha256:6f1b23f6f4ae6aa1508cf79c464746a86e362d74e6227d81749dd1e02e514367"
+      "765684125":
+        name: "latest-mac.yml"
+        url_suffix: "latest-mac.yml"
+        size: 819
+        digest: "sha256:ec3f2dc281c4b624d1fecc6b981432084bb115a0e77736973f219b9bd7318ea2"
+      "765684147":
+        name: "Mesh-client-6.9.0-arm64-mac.zip"
+        url_suffix: "Mesh-client-6.9.0-arm64-mac.zip"
+        size: 163012761
+        digest: "sha256:ba9b088fff5f2faad77b2e6599bceec8c4a46746051e73d2a1183b90bce41da2"
+      "765684383":
+        name: "Mesh-client-6.9.0-arm64-mac.zip.blockmap"
+        url_suffix: "Mesh-client-6.9.0-arm64-mac.zip.blockmap"
+        size: 173353
+        digest: "sha256:f4b8f765b8f01f1a972ceab5c359590724a248feb57a7c26c80296e48bb1986d"
+      "765684413":
+        name: "Mesh-client-6.9.0-arm64.dmg"
+        url_suffix: "Mesh-client-6.9.0-arm64.dmg"
+        size: 169491239
+        digest: "sha256:989bfcaad2536be457328707f32b8283f1579eee63be427e7a1553341b9d00af"
+      "765684703":
+        name: "Mesh-client-6.9.0-arm64.dmg.blockmap"
+        url_suffix: "Mesh-client-6.9.0-arm64.dmg.blockmap"
+        size: 178645
+        digest: "sha256:a173f7bab507fc8a57869d922b142fedb42d6a30b7ac8a3e23ff35550e0b6acb"
+      "765684721":
+        name: "Mesh-client-6.9.0-mac.zip"
+        url_suffix: "Mesh-client-6.9.0-mac.zip"
+        size: 171454037
+        digest: "sha256:cf2f9350b820cc09d4c80d271c5eae2e68d8a74c8fd8827300b3a7564e43732b"
+      "765684986":
+        name: "Mesh-client-6.9.0-mac.zip.blockmap"
+        url_suffix: "Mesh-client-6.9.0-mac.zip.blockmap"
+        size: 180861
+        digest: "sha256:222eaf2672ecabff07697a79e6ff6fae6e6a1b6c9fcccd69bd05813a541cef72"
+      "765685046":
+        name: "Mesh-client-6.9.0.dmg"
+        url_suffix: "Mesh-client-6.9.0.dmg"
+        size: 177979792
+        digest: "sha256:59016455f43535e02dd3603d5ab7603bac142ad85d3d8d685e95e647b5448ddb"
+      "765685324":
+        name: "Mesh-client-6.9.0.dmg.blockmap"
+        url_suffix: "Mesh-client-6.9.0.dmg.blockmap"
+        size: 188650
+        digest: "sha256:d2825badd49398ea0b2397c46991f25dc5d674305ff3225bf668d97b9dc0181e"
+  "452049645":
+    tag: "v6.10.0"
+    title: "6.10.0"
+    url: "https://github.com/Colorado-Mesh/mesh-client/releases/tag/v6.10.0"
+    created_at: "2026-11-19T23:14:45Z"
+    published_at: "2026-11-20T00:07:41Z"
+    updated_at: "2026-11-20T00:08:27Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/Colorado-Mesh/mesh-client/zipball/v6.10.0"
+    source_tar_url: "https://api.github.com/repos/Colorado-Mesh/mesh-client/tarball/v6.10.0"
+    download_base: "https://github.com/Colorado-Mesh/mesh-client/releases/download/v6.10.0/"
+    assets:
+      "769680067":
+        name: "latest.yml"
+        url_suffix: "latest.yml"
+        size: 479
+        digest: "sha256:b0dbf79df8129c76f5d56cfd034ca78394c84df7cdd8f76e7564406f8694dbf7"
+      "769680136":
+        name: "Mesh-client-Setup-6.10.0-arm64.exe"
+        url_suffix: "Mesh-client-Setup-6.10.0-arm64.exe"
+        size: 185995778
+        digest: "sha256:80debecf895d60daa9c4b13afa805179c5b93268e0880b0108a88ce2ac5a738a"
+      "769680469":
+        name: "Mesh-client-Setup-6.10.0.exe"
+        url_suffix: "Mesh-client-Setup-6.10.0.exe"
+        size: 189311817
+        digest: "sha256:edbdc93613a4a7a907d71ed5b3ec2bc9694a2a11d4434485a516f6eb2b128ba2"
+      "769683305":
+        name: "mesh-client-flatpak-attestation.sigstore.json"
+        url_suffix: "mesh-client-flatpak-attestation.sigstore.json"
+        size: 11240
+        digest: "sha256:ee8e5b3d6fff79e141f0eb09189217f6b1e267b4d5e16dcfa4af9ca437502458"
+      "769683350":
+        name: "org.coloradomesh.MeshClient.flatpak-aarch64.flatpak"
+        url_suffix: "org.coloradomesh.MeshClient.flatpak-aarch64.flatpak"
+        size: 191363296
+        digest: "sha256:7b409fc508cd676c1ceec2675e1e6ad692322536625b9bcac4b4bfdbedd16bae"
+      "769683711":
+        name: "org.coloradomesh.MeshClient.flatpak-x86_64.flatpak"
+        url_suffix: "org.coloradomesh.MeshClient.flatpak-x86_64.flatpak"
+        size: 199514168
+        digest: "sha256:6e5a43b4cb46b7b7f32c0a3dc7293a66297b29c28ee1985e91624f6ed1b3e2c4"
+      "769686149":
+        name: "latest-linux-arm64.yml"
+        url_suffix: "latest-linux-arm64.yml"
+        size: 709
+        digest: "sha256:049b981154cc8d5b267eb3a1d2cf668f27c18965f8b8d5d395a5a9e3aac1e90b"
+      "769686180":
+        name: "latest-linux.yml"
+        url_suffix: "latest-linux.yml"
+        size: 696
+        digest: "sha256:b281cbf7fc990f21462cc45158a6015f241df3065adeb840004cb273a8aa8c46"
+      "769686206":
+        name: "mesh-client_6.10.0_amd64.deb"
+        url_suffix: "mesh-client_6.10.0_amd64.deb"
+        size: 128372908
+        digest: "sha256:27c65aeefcb558020441298ec2d1df33a0c8e5dcd345565266307a80546e7902"
+      "769686428":
+        name: "mesh-client_6.10.0_arm64.deb"
+        url_suffix: "mesh-client_6.10.0_arm64.deb"
+        size: 122142624
+        digest: "sha256:59ee75ab8fa8c1a833292dad99c20196da14b1a9ef49c5b1092180aabf2feb89"
+      "769686630":
+        name: "Mesh-client-6.10.0-arm64.AppImage"
+        url_suffix: "Mesh-client-6.10.0-arm64.AppImage"
+        size: 164739065
+        digest: "sha256:44172063412a92c94732fd5742e6de204982699a57734a30c65e4b35e14bc175"
+      "769686899":
+        name: "mesh-client-6.10.0.aarch64.rpm"
+        url_suffix: "mesh-client-6.10.0.aarch64.rpm"
+        size: 106947839
+        digest: "sha256:34edb0ff53b3caafbedb222a8b72ec369b7522d2a605002eaf3c82c996eab543"
+      "769687086":
+        name: "Mesh-client-6.10.0.AppImage"
+        url_suffix: "Mesh-client-6.10.0.AppImage"
+        size: 164193711
+        digest: "sha256:6c1c13ff7f01d133032ca0e1776bccc7083cc87045a9af1e2748124460fac052"
+      "769687324":
+        name: "mesh-client-6.10.0.x86_64.rpm"
+        url_suffix: "mesh-client-6.10.0.x86_64.rpm"
+        size: 112529359
+        digest: "sha256:1b831fe97152603a7d78a82636dc535feb4604f2581519ca86be5210853c875c"
+      "769723285":
+        name: "00-READ-ME-BEFORE-EXTRACTING-macOS-ZIP.txt"
+        url_suffix: "00-READ-ME-BEFORE-EXTRACTING-macOS-ZIP.txt"
+        size: 1261
+        digest: "sha256:6f1b23f6f4ae6aa1508cf79c464746a86e362d74e6227d81749dd1e02e514367"
+      "769723352":
+        name: "latest-mac.yml"
+        url_suffix: "latest-mac.yml"
+        size: 825
+        digest: "sha256:cde524b09572df72c807c2616a12c1b232bf4d86d442f45a997e85dba845d4b5"
+      "769723383":
+        name: "Mesh-client-6.10.0-arm64-mac.zip"
+        url_suffix: "Mesh-client-6.10.0-arm64-mac.zip"
+        size: 163026935
+        digest: "sha256:27b4a6a201ff398736770f92d7712dc6e7df636bfb567727ac4dcea15850d7df"
+      "769723766":
+        name: "Mesh-client-6.10.0-arm64-mac.zip.blockmap"
+        url_suffix: "Mesh-client-6.10.0-arm64-mac.zip.blockmap"
+        size: 171036
+        digest: "sha256:8c630ca1da60b8a401d5f5a79740aae351bda7c287d95ac11ba90d0a78e192fd"
+      "769723815":
+        name: "Mesh-client-6.10.0-arm64.dmg"
+        url_suffix: "Mesh-client-6.10.0-arm64.dmg"
+        size: 169519270
+        digest: "sha256:37882c9f2bb8bc5b4bc25b0c913163c77e870045805d929e114d613b37c6810c"
+      "769724081":
+        name: "Mesh-client-6.10.0-arm64.dmg.blockmap"
+        url_suffix: "Mesh-client-6.10.0-arm64.dmg.blockmap"
+        size: 178426
+        digest: "sha256:3f33fb6ce977c9f3c42d6d12d18299714c7a5b9af10c6b9000b7aa99c0509404"
+      "769724119":
+        name: "Mesh-client-6.10.0-mac.zip"
+        url_suffix: "Mesh-client-6.10.0-mac.zip"
+        size: 171470522
+        digest: "sha256:fa29d05f47cc1f56a81fdb7f9af6c95ec997a047f5415f34741d0b1be1197dae"
+      "769724343":
+        name: "Mesh-client-6.10.0-mac.zip.blockmap"
+        url_suffix: "Mesh-client-6.10.0-mac.zip.blockmap"
+        size: 179589
+        digest: "sha256:43c0fcaafd157d1e75e1c2f159a1a87f07e03ec304c2b40b2b14cd9d7df6cbe4"
+      "769724385":
+        name: "Mesh-client-6.10.0.dmg"
+        url_suffix: "Mesh-client-6.10.0.dmg"
+        size: 177976515
+        digest: "sha256:33264e51abce409abb739d59c4c1c8d0d7c4b9037093273ecba2403ab59682cf"
+      "769724707":
+        name: "Mesh-client-6.10.0.dmg.blockmap"
+        url_suffix: "Mesh-client-6.10.0.dmg.blockmap"
+        size: 188396
+        digest: "sha256:559e118fb9761d89863b633093c0e2363a3a7bfb005c29b6ac3b053e5feba250"

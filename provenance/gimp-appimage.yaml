@@ -1,5 +1,5 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/cb854845b919dd38d98a806e7456ec53798c7564/docs/catalog-format-v3.md"
 kind: "provenance"
 apps:
   "gimp":
@@ -17,7 +17,7 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "4699d0381f897ee214a893252b4e4362c8dff528"
+        commit: "cb854845b919dd38d98a806e7456ec53798c7564"
         path: "programs/i686/gimp"
         blob: "eaf3a57702dc593bd50affc499305dc661828c28"
     "x86_64":
@@ -26,7 +26,7 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "4699d0381f897ee214a893252b4e4362c8dff528"
+        commit: "cb854845b919dd38d98a806e7456ec53798c7564"
         path: "programs/x86_64/gimp"
         blob: "fddd3b293dba7ebccea127e259090aa6f91cd3bb"
   "gimp-git":
@@ -48,20 +48,20 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "4699d0381f897ee214a893252b4e4362c8dff528"
+        commit: "cb854845b919dd38d98a806e7456ec53798c7564"
         path: "programs/x86_64/gimp-git"
         blob: "91abe2587e841bed2d7b41b921c93041551b4aca"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-20T13:31:14Z"
+        evaluated_at: "2026-11-20T17:15:32Z"
         recipe_sha256: "d0052784d213acac261952d4ea1a9bba9bc7ca7e263215394b1410c71e15b5fc"
-        rules: "4699d0381f897ee214a893252b4e4362c8dff528"
+        rules: "cb854845b919dd38d98a806e7456ec53798c7564"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "4699d0381f897ee214a893252b4e4362c8dff528"
+            commit: "cb854845b919dd38d98a806e7456ec53798c7564"
             path: "modules/"
-            sha256: "f8ca2449992417976da15b7a99fdae213e02da6abc0ecbfc67cf318fd6160c1c"
+            sha256: "49b86a24691f8cf5502fc49826dfdca4645ab02d49a5edeec860b9a4e42bf55c"
   "gimp-hybrid":
     "aarch64":
       repository_id: 450522288
@@ -81,6 +81,6 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "4699d0381f897ee214a893252b4e4362c8dff528"
+        commit: "cb854845b919dd38d98a806e7456ec53798c7564"
         path: "programs/x86_64/gimp-hybrid"
         blob: "e88028f31435e9fd811f47738c619208de3f8de7"

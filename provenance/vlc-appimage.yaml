@@ -1,5 +1,5 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/cb854845b919dd38d98a806e7456ec53798c7564/docs/catalog-format-v3.md"
 kind: "provenance"
 apps:
   "vlc":
@@ -17,7 +17,7 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "4699d0381f897ee214a893252b4e4362c8dff528"
+        commit: "cb854845b919dd38d98a806e7456ec53798c7564"
         path: "programs/i686/vlc"
         blob: "2ba5b2aa78788e83f873b660c446afa9aca779d0"
     "x86_64":
@@ -26,20 +26,20 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "4699d0381f897ee214a893252b4e4362c8dff528"
+        commit: "cb854845b919dd38d98a806e7456ec53798c7564"
         path: "programs/x86_64/vlc"
         blob: "90c1fb57db40c3e1493b683ec30c6e56c3b7defb"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-20T13:31:14Z"
+        evaluated_at: "2026-11-20T17:15:32Z"
         recipe_sha256: "19a4321fa5bb0eb7070c9843b3de6d81e421f9a50c06a39bdc91de6e6d5d842f"
-        rules: "4699d0381f897ee214a893252b4e4362c8dff528"
+        rules: "cb854845b919dd38d98a806e7456ec53798c7564"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "4699d0381f897ee214a893252b4e4362c8dff528"
+            commit: "cb854845b919dd38d98a806e7456ec53798c7564"
             path: "modules/"
-            sha256: "f8ca2449992417976da15b7a99fdae213e02da6abc0ecbfc67cf318fd6160c1c"
+            sha256: "49b86a24691f8cf5502fc49826dfdca4645ab02d49a5edeec860b9a4e42bf55c"
   "vlc-git":
     "aarch64":
       repository_id: 444634925
@@ -59,17 +59,17 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "4699d0381f897ee214a893252b4e4362c8dff528"
+        commit: "cb854845b919dd38d98a806e7456ec53798c7564"
         path: "programs/x86_64/vlc-git"
         blob: "ca5bc3e4b1164452aa0fbcf2242814de689a341a"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-20T13:31:14Z"
+        evaluated_at: "2026-11-20T17:15:32Z"
         recipe_sha256: "ccd30117b1bdc25b9d26503d0b8380f7671c7e999ddf1cd45f151fe94cf49b68"
-        rules: "4699d0381f897ee214a893252b4e4362c8dff528"
+        rules: "cb854845b919dd38d98a806e7456ec53798c7564"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "4699d0381f897ee214a893252b4e4362c8dff528"
+            commit: "cb854845b919dd38d98a806e7456ec53798c7564"
             path: "modules/"
-            sha256: "f8ca2449992417976da15b7a99fdae213e02da6abc0ecbfc67cf318fd6160c1c"
+            sha256: "49b86a24691f8cf5502fc49826dfdca4645ab02d49a5edeec860b9a4e42bf55c"

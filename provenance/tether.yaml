@@ -1,5 +1,5 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/cb854845b919dd38d98a806e7456ec53798c7564/docs/catalog-format-v3.md"
 kind: "provenance"
 apps:
   "tether":
@@ -9,7 +9,7 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "4699d0381f897ee214a893252b4e4362c8dff528"
+        commit: "cb854845b919dd38d98a806e7456ec53798c7564"
         path: "programs/aarch64/tether"
         blob: "8d75de11178e34bce60225b19df7b90145e2e4fc"
     "armv7l":
@@ -26,17 +26,17 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "4699d0381f897ee214a893252b4e4362c8dff528"
+        commit: "cb854845b919dd38d98a806e7456ec53798c7564"
         path: "programs/x86_64/tether"
         blob: "83eaa7528888c20635917e8a5d03fd735c098469"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-20T13:31:14Z"
+        evaluated_at: "2026-11-20T17:15:32Z"
         recipe_sha256: "f185bbdbed119bdee560f3107ded8393212058ae4196d06f65505d742524c52a"
-        rules: "4699d0381f897ee214a893252b4e4362c8dff528"
+        rules: "cb854845b919dd38d98a806e7456ec53798c7564"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "4699d0381f897ee214a893252b4e4362c8dff528"
+            commit: "cb854845b919dd38d98a806e7456ec53798c7564"
             path: "modules/"
-            sha256: "f8ca2449992417976da15b7a99fdae213e02da6abc0ecbfc67cf318fd6160c1c"
+            sha256: "49b86a24691f8cf5502fc49826dfdca4645ab02d49a5edeec860b9a4e42bf55c"

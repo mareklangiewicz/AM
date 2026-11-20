@@ -1,1905 +1,15 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/cb854845b919dd38d98a806e7456ec53798c7564/docs/catalog-format-v3.md"
 kind: "repository"
 repository_id: 1186957994
 repository: "Satont/twirchat"
-collected_at: "2026-11-17T20:52:24Z"
+collected_at: "2026-11-20T17:14:28Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-17T20:52:24Z"
+observed_at: "2026-11-20T17:14:28Z"
 releases:
-  "439720582":
-    tag: "v1.13.1"
-    title: "TwirChat v1.13.1"
-    url: "https://github.com/Satont/twirchat/releases/tag/v1.13.1"
-    created_at: "2026-11-09T22:22:42Z"
-    published_at: "2026-11-09T22:28:37Z"
-    updated_at: "2026-11-09T22:28:37Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/Satont/twirchat/zipball/v1.13.1"
-    source_tar_url: "https://api.github.com/repos/Satont/twirchat/tarball/v1.13.1"
-    download_base: "https://github.com/Satont/twirchat/releases/download/v1.13.1/"
-    assets:
-      "729214441":
-        name: "RELEASES-linux-x64"
-        url_suffix: "RELEASES-linux-x64"
-        size: 194
-        digest: "sha256:f7819a0d56be503b1fe018b8ebdaf8cf936a611f2a7eb55d74f26c98a86ecaf4"
-      "729214443":
-        name: "RELEASES-osx-arm64"
-        url_suffix: "RELEASES-osx-arm64"
-        size: 192
-        digest: "sha256:f0e386cf7d5682d4862b8b7b29a22189c7882de8b80363f7cc11c4c71afd9882"
-      "729214445":
-        name: "RELEASES-osx-x64"
-        url_suffix: "RELEASES-osx-x64"
-        size: 188
-        digest: "sha256:6cbb0cf75fa0be979ce77ab7f114ab18cd212e81e1f069a66f917b1d1067d239"
-      "729214446":
-        name: "RELEASES-win-x64"
-        url_suffix: "RELEASES-win-x64"
-        size: 190
-        digest: "sha256:cf9cf15498db6bc34320cbddad31908e83310f0089af335f59eef20d131ff162"
-      "729214456":
-        name: "SHA256SUMS"
-        url_suffix: "SHA256SUMS"
-        size: 3441
-        digest: "sha256:bc07ab040085c2aff1a493cd01a7bac0962cdf87d08be4485d760fa930c04418"
-      "729214470":
-        name: "assets.osx-arm64.json"
-        url_suffix: "assets.osx-arm64.json"
-        size: 327
-        media_type: "application/json"
-        digest: "sha256:8bd6b95efeb185354f015638bcea14cf4d3246a2a604384455a4d7a8c894544a"
-      "729214474":
-        name: "assets.win-x64.json"
-        url_suffix: "assets.win-x64.json"
-        size: 319
-        media_type: "application/json"
-        digest: "sha256:c61454ad208f6d7ef71ebc151540ca349e48a1bd635b637d2801641d55cf3849"
-      "729214475":
-        name: "assets.linux-x64.json"
-        url_suffix: "assets.linux-x64.json"
-        size: 244
-        media_type: "application/json"
-        digest: "sha256:18212454301d3133e2e834d6b9cc88b01bd9a182119a7a5fe2d2bca6c47b6c57"
-      "729214481":
-        name: "assets.osx-x64.json"
-        url_suffix: "assets.osx-x64.json"
-        size: 319
-        media_type: "application/json"
-        digest: "sha256:8e69213f75a317eea7a25ef0fbccdf99f493750750453a9ab9d9339db33ccfba"
-      "729214488":
-        name: "dev.twirchat.app-1.13.0-linux-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.13.0-linux-x64-full.nupkg"
-        size: 107603372
-        digest: "sha256:db8a284b5b7ad834d4cc04797668941dec810d4f9ef4f50f692851c23774b829"
-      "729214498":
-        name: "dev.twirchat.app-1.13.0-osx-arm64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.13.0-osx-arm64-full.nupkg"
-        size: 88276240
-        digest: "sha256:c1c96b09dfb59669393309a8fadb64fb6f11120be7171bb9749e52146241d05a"
-      "729214501":
-        name: "dev.twirchat.app-1.13.0-osx-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.13.0-osx-x64-full.nupkg"
-        size: 91119137
-        digest: "sha256:0903eb1865fc9aa770cde00c378c1ebce3aac480d7a48558399d33838e574185"
-      "729214502":
-        name: "dev.twirchat.app-1.13.0-win-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.13.0-win-x64-full.nupkg"
-        size: 101057094
-        digest: "sha256:c2ed8662c3f6c023417ee3c12b56deba17285696046395356aae6daeaabbf59f"
-      "729214511":
-        name: "dev.twirchat.app-1.13.1-linux-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.13.1-linux-x64-delta.nupkg"
-        size: 9799015
-        digest: "sha256:65997e592a38ca2fa0e45bdccaf574e3d176ff640f0f368854e7a87da80824e5"
-      "729214546":
-        name: "dev.twirchat.app-1.13.1-linux-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.13.1-linux-x64-full.nupkg"
-        size: 107603204
-        digest: "sha256:3fee3c77e952b1e5c8c6bab77790fbdde40599c64b814464f964ddbc0572c735"
-      "729214644":
-        name: "dev.twirchat.app-1.13.1-osx-arm64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.13.1-osx-arm64-delta.nupkg"
-        size: 457594
-        digest: "sha256:6f0afafe1e5b2a654acd7f487e40983b94cc0ff39b961933be319db572ba2997"
-      "729214657":
-        name: "dev.twirchat.app-1.13.1-osx-arm64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.13.1-osx-arm64-full.nupkg"
-        size: 88275938
-        digest: "sha256:24c3aa5ce90cf7808bea6de31a556312da65909fdbfeb37daaef601cb9146e47"
-      "729214668":
-        name: "dev.twirchat.app-1.13.1-osx-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.13.1-osx-x64-full.nupkg"
-        size: 91118759
-        digest: "sha256:4e77f2484dc460cdc373b42fcbb643f854df2fcd4e945a185adcb6edefb423f1"
-      "729214679":
-        name: "dev.twirchat.app-1.13.1-win-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.13.1-win-x64-full.nupkg"
-        size: 101060249
-        digest: "sha256:32ee5309cb5ae7c51146a3ebe1bde7de9ede19f23ebc59c49c55c21f5a01380a"
-      "729214681":
-        name: "dev.twirchat.app-1.13.1-osx-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.13.1-osx-x64-delta.nupkg"
-        size: 267884
-        digest: "sha256:4494940bf8819b3894809dc67a092a0ea6bf3fbf7e985322eba44351923c161b"
-      "729214685":
-        name: "dev.twirchat.app-1.13.1-win-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.13.1-win-x64-delta.nupkg"
-        size: 260658
-        digest: "sha256:c7d314b4a193afbbad6a0fe6a90b7153f404e3e0d258a17edc9475f26a8cf21f"
-      "729214706":
-        name: "dev.twirchat.app-linux-x64.AppImage"
-        url_suffix: "dev.twirchat.app-linux-x64.AppImage"
-        size: 108370424
-        media_type: "application/vnd.appimage"
-        digest: "sha256:ada8a24398fdc9a85d982c2920b149640b86063058eb25ddee052ee94fe465c5"
-      "729214707":
-        name: "dev.twirchat.app-osx-arm64-Portable.zip"
-        url_suffix: "dev.twirchat.app-osx-arm64-Portable.zip"
-        size: 85718283
-        media_type: "zip"
-        digest: "sha256:092b3e59eeb7ab2cfdc7db91c269e4fe208eb0e11d882e26bbf8d748282f58cd"
-      "729214866":
-        name: "dev.twirchat.app-osx-arm64-Setup.pkg"
-        url_suffix: "dev.twirchat.app-osx-arm64-Setup.pkg"
-        size: 85646259
-        media_type: "application/x-xar"
-        digest: "sha256:91876b634e73f08ca368291a92788af7ba1345226a3f813dd102f118d1a6abab"
-      "729214871":
-        name: "dev.twirchat.app-osx-x64-Portable.zip"
-        url_suffix: "dev.twirchat.app-osx-x64-Portable.zip"
-        size: 89346911
-        media_type: "zip"
-        digest: "sha256:69a291b2348f9945c0a4bb28f8cb9d9867e74aa1bb039e6dac102b29fe2ddaa4"
-      "729214874":
-        name: "dev.twirchat.app-win-x64-Portable.zip"
-        url_suffix: "dev.twirchat.app-win-x64-Portable.zip"
-        size: 101055529
-        media_type: "zip"
-        digest: "sha256:469a800d5d4e2d217beb91afe8dde3746e76e5d98201893e25168aa8931d228f"
-      "729214875":
-        name: "dev.twirchat.app-osx-x64-Setup.pkg"
-        url_suffix: "dev.twirchat.app-osx-x64-Setup.pkg"
-        size: 89270500
-        media_type: "application/x-xar"
-        digest: "sha256:17e7f3cf04ba4989d209a90549a38d9605e38c1507195e0e23367469fafdc9c7"
-      "729214901":
-        name: "dev.twirchat.app-win-x64-Setup.exe"
-        url_suffix: "dev.twirchat.app-win-x64-Setup.exe"
-        size: 109763225
-        digest: "sha256:d16277c3e83b5891fb8d192f65f186d28db3e8c2575bb6720efe3977b093d77c"
-      "729215023":
-        name: "releases.linux-x64.json"
-        url_suffix: "releases.linux-x64.json"
-        size: 1251
-        media_type: "application/json"
-        digest: "sha256:76145fd289238c05848635a4534d981c2dc8e6eed6ec47bfe6b11b514903d895"
-      "729215056":
-        name: "releases.osx-arm64.json"
-        url_suffix: "releases.osx-arm64.json"
-        size: 1248
-        media_type: "application/json"
-        digest: "sha256:f2b9d1a114ce77ba1480885c24c8d9efb24f478778c5f2f3a2e47c3784695a5d"
-      "729215080":
-        name: "signature-linux-x64.txt"
-        url_suffix: "signature-linux-x64.txt"
-        size: 54
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:85fe5255ecbf2c22041923053e0bdd17a5940d14a14563f3a8995ed089f5b053"
-      "729215082":
-        name: "releases.win-x64.json"
-        url_suffix: "releases.win-x64.json"
-        size: 1244
-        media_type: "application/json"
-        digest: "sha256:9e937a2e63eb90bb99fab8cfba6cb5e61551bf3d02871ab6297609e6e6e24807"
-      "729215085":
-        name: "releases.osx-x64.json"
-        url_suffix: "releases.osx-x64.json"
-        size: 1242
-        media_type: "application/json"
-        digest: "sha256:d591243854d621b6ce2659b3f778409af286ec00c2bdb11963fc2cbbf73cb173"
-      "729215088":
-        name: "signature-osx-arm64.txt"
-        url_suffix: "signature-osx-arm64.txt"
-        size: 54
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:6290ba5afbdfa79bde2cf22354407b4cf9c6278733e9113a11600e0364dcf238"
-      "729215108":
-        name: "signature-osx-x64.txt"
-        url_suffix: "signature-osx-x64.txt"
-        size: 52
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:019fe3dad36a2d81fa940129744d3db276ba1f37e4c3492aa8432325ae767548"
-      "729215110":
-        name: "signature-win-x64.txt"
-        url_suffix: "signature-win-x64.txt"
-        size: 52
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:263c7408f97fde19c1613118ea1d75451ade892de0e0eabda4e40a2740d5e422"
-  "439750991":
-    tag: "v1.14.0"
-    title: "TwirChat v1.14.0"
-    url: "https://github.com/Satont/twirchat/releases/tag/v1.14.0"
-    created_at: "2026-11-09T22:48:54Z"
-    published_at: "2026-11-09T23:07:46Z"
-    updated_at: "2026-11-09T23:07:46Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/Satont/twirchat/zipball/v1.14.0"
-    source_tar_url: "https://api.github.com/repos/Satont/twirchat/tarball/v1.14.0"
-    download_base: "https://github.com/Satont/twirchat/releases/download/v1.14.0/"
-    assets:
-      "729320140":
-        name: "RELEASES-linux-x64"
-        url_suffix: "RELEASES-linux-x64"
-        size: 194
-        digest: "sha256:03c14148caa5185380d2d9ce9613157db9ccca47730f34d81d87ebb65b62b1c0"
-      "729320141":
-        name: "RELEASES-osx-arm64"
-        url_suffix: "RELEASES-osx-arm64"
-        size: 192
-        digest: "sha256:3cd34031efc30dcf091a6549be91e034d8e4c9d727b07e9b15cf4d581d588eb4"
-      "729320143":
-        name: "SHA256SUMS"
-        url_suffix: "SHA256SUMS"
-        size: 3441
-        digest: "sha256:7b61ae99a363e74eaaa8102ce131abd32acfabfb161ca8c808a95fe9449eca78"
-      "729320144":
-        name: "RELEASES-win-x64"
-        url_suffix: "RELEASES-win-x64"
-        size: 190
-        digest: "sha256:84c6edb8344dd8301185f6cca38f06a4003478199d9bb9d8940c5e6262438bb5"
-      "729320145":
-        name: "RELEASES-osx-x64"
-        url_suffix: "RELEASES-osx-x64"
-        size: 188
-        digest: "sha256:123fdc9d38703971272bbafde35cb0d89a0cccb164a6dea8f4841c76b13d4ae7"
-      "729320155":
-        name: "assets.linux-x64.json"
-        url_suffix: "assets.linux-x64.json"
-        size: 244
-        media_type: "application/json"
-        digest: "sha256:f20d3dab44490d548aa4355b0b86c7c71f9b2be891c76a7d5c161823651a7e6d"
-      "729320156":
-        name: "assets.osx-arm64.json"
-        url_suffix: "assets.osx-arm64.json"
-        size: 327
-        media_type: "application/json"
-        digest: "sha256:f92e5950df099a5b50bbffb2c4eba4d5a18ada96813862dd278fe890319a8515"
-      "729320157":
-        name: "assets.osx-x64.json"
-        url_suffix: "assets.osx-x64.json"
-        size: 319
-        media_type: "application/json"
-        digest: "sha256:76272408422e32e6be71cafee16e6d62a047bf0b73063f6fbf5202f5613be54b"
-      "729320161":
-        name: "assets.win-x64.json"
-        url_suffix: "assets.win-x64.json"
-        size: 319
-        media_type: "application/json"
-        digest: "sha256:7976eed2d241ff1372e071e236f941b3076e2138d166ee4e4ce796f9bd1168b8"
-      "729320164":
-        name: "dev.twirchat.app-1.13.1-linux-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.13.1-linux-x64-full.nupkg"
-        size: 107603204
-        digest: "sha256:3fee3c77e952b1e5c8c6bab77790fbdde40599c64b814464f964ddbc0572c735"
-      "729320187":
-        name: "dev.twirchat.app-1.13.1-osx-arm64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.13.1-osx-arm64-full.nupkg"
-        size: 88275938
-        digest: "sha256:24c3aa5ce90cf7808bea6de31a556312da65909fdbfeb37daaef601cb9146e47"
-      "729320192":
-        name: "dev.twirchat.app-1.13.1-osx-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.13.1-osx-x64-full.nupkg"
-        size: 91118759
-        digest: "sha256:4e77f2484dc460cdc373b42fcbb643f854df2fcd4e945a185adcb6edefb423f1"
-      "729320200":
-        name: "dev.twirchat.app-1.14.0-linux-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.14.0-linux-x64-delta.nupkg"
-        size: 10046590
-        digest: "sha256:f4002940fb2cac6e53bac51764dfc2d90be791bf12ab630d813763ab15583c76"
-      "729320202":
-        name: "dev.twirchat.app-1.13.1-win-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.13.1-win-x64-full.nupkg"
-        size: 101060249
-        digest: "sha256:32ee5309cb5ae7c51146a3ebe1bde7de9ede19f23ebc59c49c55c21f5a01380a"
-      "729320262":
-        name: "dev.twirchat.app-1.14.0-linux-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.14.0-linux-x64-full.nupkg"
-        size: 107758611
-        digest: "sha256:3f5bcaf6da7bc9eed4563398fa7f27c56d3a44947fadbff5c66013eb21794898"
-      "729320371":
-        name: "dev.twirchat.app-1.14.0-osx-arm64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.14.0-osx-arm64-full.nupkg"
-        size: 88427390
-        digest: "sha256:2f63600a1dc503d58340470703d97a0582949c702a8f6f53fb9361e7ada96d4c"
-      "729320372":
-        name: "dev.twirchat.app-1.14.0-osx-arm64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.14.0-osx-arm64-delta.nupkg"
-        size: 826002
-        digest: "sha256:77408e7d867f9505bc614cc0fd2162263bc977f20c02cc1f052401007d4cf32e"
-      "729320385":
-        name: "dev.twirchat.app-1.14.0-osx-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.14.0-osx-x64-delta.nupkg"
-        size: 634434
-        digest: "sha256:99db396a69ba9dd8a73ce9c2fa7ac6f582db1d0b41428d3c3461c619c99662c1"
-      "729320414":
-        name: "dev.twirchat.app-1.14.0-osx-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.14.0-osx-x64-full.nupkg"
-        size: 91277217
-        digest: "sha256:ada2f03ba3183200f765081678a6a072d6666bd0a456e4d7c071050405b9a8f7"
-      "729320418":
-        name: "dev.twirchat.app-1.14.0-win-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.14.0-win-x64-delta.nupkg"
-        size: 624850
-        digest: "sha256:32b445a9dc30a0cf66ccb28144a3d3212db4eedc7cf8f0029ddb9630bf13facd"
-      "729320471":
-        name: "dev.twirchat.app-1.14.0-win-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.14.0-win-x64-full.nupkg"
-        size: 101217703
-        digest: "sha256:1d9d1c1a40273b7cf01c3bb8deb5ccc6a70b0c2b84afac0ace3509da72f6ec05"
-      "729320480":
-        name: "dev.twirchat.app-linux-x64.AppImage"
-        url_suffix: "dev.twirchat.app-linux-x64.AppImage"
-        size: 108526072
-        media_type: "application/vnd.appimage"
-        digest: "sha256:d27465e41ee6cde3abdc1f8fd66f23d8b7681371d7f60066e2d34eeba1a54abc"
-      "729320550":
-        name: "dev.twirchat.app-osx-arm64-Portable.zip"
-        url_suffix: "dev.twirchat.app-osx-arm64-Portable.zip"
-        size: 85881436
-        media_type: "zip"
-        digest: "sha256:d70fd6a63e447824466a57db1f84ecbf23d715070a71ab61c90c06a53fc1814b"
-      "729320588":
-        name: "dev.twirchat.app-osx-arm64-Setup.pkg"
-        url_suffix: "dev.twirchat.app-osx-arm64-Setup.pkg"
-        size: 85799050
-        media_type: "application/x-xar"
-        digest: "sha256:01155d33f3955e42fbf273121de740868c0229b7bf166871adc7044499183c9c"
-      "729320629":
-        name: "dev.twirchat.app-osx-x64-Portable.zip"
-        url_suffix: "dev.twirchat.app-osx-x64-Portable.zip"
-        size: 89497145
-        media_type: "zip"
-        digest: "sha256:99b12f41d37ab81f116fc7940fbd71cd299132fcb01be8c28ba80b75f59ed7d8"
-      "729320656":
-        name: "dev.twirchat.app-osx-x64-Setup.pkg"
-        url_suffix: "dev.twirchat.app-osx-x64-Setup.pkg"
-        size: 89431634
-        media_type: "application/x-xar"
-        digest: "sha256:362312d5fabb35d6e14d405b0c91ed268999e98dbe9620d719432447c9c058ca"
-      "729320671":
-        name: "dev.twirchat.app-win-x64-Portable.zip"
-        url_suffix: "dev.twirchat.app-win-x64-Portable.zip"
-        size: 101212984
-        media_type: "zip"
-        digest: "sha256:daff664a7ced251db5acecaa3495c705c46e09dca4ac662183f366f119853784"
-      "729320696":
-        name: "dev.twirchat.app-win-x64-Setup.exe"
-        url_suffix: "dev.twirchat.app-win-x64-Setup.exe"
-        size: 109920679
-        digest: "sha256:30edf140b5784d7d7019556fa521308f4232ba9f38e2c455c0ec6eba1cd1fc60"
-      "729320706":
-        name: "releases.linux-x64.json"
-        url_suffix: "releases.linux-x64.json"
-        size: 1252
-        media_type: "application/json"
-        digest: "sha256:edf6df622c0060e44c90627d3a3b859f7680caf51c11d2f84aaca517f38f38b3"
-      "729320726":
-        name: "releases.osx-arm64.json"
-        url_suffix: "releases.osx-arm64.json"
-        size: 1248
-        media_type: "application/json"
-        digest: "sha256:ad636edc394a9fe54c966c9afd1911d3cd1c873276c529ce9897c88424477177"
-      "729320756":
-        name: "releases.osx-x64.json"
-        url_suffix: "releases.osx-x64.json"
-        size: 1242
-        media_type: "application/json"
-        digest: "sha256:5973939188b42183973702380a4a3a6e8bfd8b25c81463ed5286ea45058f957b"
-      "729320779":
-        name: "releases.win-x64.json"
-        url_suffix: "releases.win-x64.json"
-        size: 1244
-        media_type: "application/json"
-        digest: "sha256:cda524c28f7b638e8923f5520e7ddd79972619249143d38f463ce736d239c63e"
-      "729320785":
-        name: "signature-linux-x64.txt"
-        url_suffix: "signature-linux-x64.txt"
-        size: 54
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:1ea917fdf5f3e778f51b258781b02b13b0bb4a2c4efad9afba80e2aa78e84d4f"
-      "729320795":
-        name: "signature-osx-arm64.txt"
-        url_suffix: "signature-osx-arm64.txt"
-        size: 54
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:30675292456cb2efcca91bb332747c0d1664255af4d18f7efd45abae384d444c"
-      "729320804":
-        name: "signature-osx-x64.txt"
-        url_suffix: "signature-osx-x64.txt"
-        size: 52
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:6e7829474d647e84af32b11613d38de6260ae3c784c3a054debf113cd20c91a3"
-      "729320811":
-        name: "signature-win-x64.txt"
-        url_suffix: "signature-win-x64.txt"
-        size: 52
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:8a7946b9eb57de64afae5d7618f87d17a026bcfd1a5bc8d4371e4bbb08b6d52d"
-  "439800621":
-    tag: "v1.15.0"
-    title: "TwirChat v1.15.0"
-    url: "https://github.com/Satont/twirchat/releases/tag/v1.15.0"
-    created_at: "2026-11-10T00:15:32Z"
-    published_at: "2026-11-10T00:23:12Z"
-    updated_at: "2026-11-10T00:23:12Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/Satont/twirchat/zipball/v1.15.0"
-    source_tar_url: "https://api.github.com/repos/Satont/twirchat/tarball/v1.15.0"
-    download_base: "https://github.com/Satont/twirchat/releases/download/v1.15.0/"
-    assets:
-      "729507399":
-        name: "SHA256SUMS"
-        url_suffix: "SHA256SUMS"
-        size: 3441
-        digest: "sha256:5cbd4f3ee5254f7f4bff85406530dbdbf01a40282addfc727882eec53b59a0a7"
-      "729507401":
-        name: "RELEASES-win-x64"
-        url_suffix: "RELEASES-win-x64"
-        size: 190
-        digest: "sha256:64dc5082d1911b2ba4f5de223a89047a5f87e00f257ad719b9d87a1b73d8cf0f"
-      "729507403":
-        name: "RELEASES-linux-x64"
-        url_suffix: "RELEASES-linux-x64"
-        size: 194
-        digest: "sha256:fe5d41aa63696ae4d45bae53aed3837acdb16ea949538d33a9b4ef03e897ae31"
-      "729507405":
-        name: "RELEASES-osx-x64"
-        url_suffix: "RELEASES-osx-x64"
-        size: 188
-        digest: "sha256:462a61b6e8235cba0b6c6b674e1deb729a61b68b8ec485e7f9c8dd349bd8024e"
-      "729507407":
-        name: "RELEASES-osx-arm64"
-        url_suffix: "RELEASES-osx-arm64"
-        size: 192
-        digest: "sha256:837a85061d841b8bfa21bb776dc42a8184f1fd081c3dec03197ed31c37cadb13"
-      "729507419":
-        name: "assets.linux-x64.json"
-        url_suffix: "assets.linux-x64.json"
-        size: 244
-        media_type: "application/json"
-        digest: "sha256:94208674eaffc810840b3821f0ddf872aff26b0451e5e90e9e82906ede7d2ef9"
-      "729507421":
-        name: "assets.osx-x64.json"
-        url_suffix: "assets.osx-x64.json"
-        size: 319
-        media_type: "application/json"
-        digest: "sha256:4b922b8272bbbc5d00fb817e1d5264033fbea0edf8f447caacb88a9cb9b5eb78"
-      "729507422":
-        name: "assets.osx-arm64.json"
-        url_suffix: "assets.osx-arm64.json"
-        size: 327
-        media_type: "application/json"
-        digest: "sha256:5f67e4b003703ac6d0d9abdc246bca7b5a78957d32e845c98cf0fdfbeb59deec"
-      "729507424":
-        name: "assets.win-x64.json"
-        url_suffix: "assets.win-x64.json"
-        size: 319
-        media_type: "application/json"
-        digest: "sha256:e84643fc5a7ae9433983f4318a415e84888d7ed3961e49331adf9dea24b171c7"
-      "729507425":
-        name: "dev.twirchat.app-1.14.0-linux-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.14.0-linux-x64-full.nupkg"
-        size: 107758611
-        digest: "sha256:3f5bcaf6da7bc9eed4563398fa7f27c56d3a44947fadbff5c66013eb21794898"
-      "729507441":
-        name: "dev.twirchat.app-1.14.0-osx-arm64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.14.0-osx-arm64-full.nupkg"
-        size: 88427390
-        digest: "sha256:2f63600a1dc503d58340470703d97a0582949c702a8f6f53fb9361e7ada96d4c"
-      "729507446":
-        name: "dev.twirchat.app-1.14.0-osx-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.14.0-osx-x64-full.nupkg"
-        size: 91277217
-        digest: "sha256:ada2f03ba3183200f765081678a6a072d6666bd0a456e4d7c071050405b9a8f7"
-      "729507449":
-        name: "dev.twirchat.app-1.15.0-linux-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.0-linux-x64-delta.nupkg"
-        size: 10166732
-        digest: "sha256:0f6f0d5af0ea03e90f4cf21d99ecfca444db23f881c17282fe15db9e71152939"
-      "729507450":
-        name: "dev.twirchat.app-1.14.0-win-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.14.0-win-x64-full.nupkg"
-        size: 101217703
-        digest: "sha256:1d9d1c1a40273b7cf01c3bb8deb5ccc6a70b0c2b84afac0ace3509da72f6ec05"
-      "729507499":
-        name: "dev.twirchat.app-1.15.0-linux-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.0-linux-x64-full.nupkg"
-        size: 107806009
-        digest: "sha256:14e777ccf1622ff2ca07d1d0cec8e37b316beffa38f2a26dcbf3e7ee2bc8dc9f"
-      "729507569":
-        name: "dev.twirchat.app-1.15.0-osx-arm64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.0-osx-arm64-delta.nupkg"
-        size: 743975
-        digest: "sha256:5871eb04db89debe10eec760c678715863535b61c0ecf127aef09094f78503a4"
-      "729507571":
-        name: "dev.twirchat.app-1.15.0-osx-arm64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.0-osx-arm64-full.nupkg"
-        size: 88478907
-        digest: "sha256:b33e2506355438156000d35c1d36e7ce5268c7c41ec55f318ac7aad8c3f3f9f3"
-      "729507596":
-        name: "dev.twirchat.app-1.15.0-osx-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.0-osx-x64-delta.nupkg"
-        size: 549915
-        digest: "sha256:fcdba4ae7ed3928804c05f622348d74450bc6939e4b4d84cf99af0d912215094"
-      "729507603":
-        name: "dev.twirchat.app-1.15.0-osx-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.0-osx-x64-full.nupkg"
-        size: 91325313
-        digest: "sha256:1697086ed1c5fbaab59618d551cafada0a6c51cd9044dbaaa89470a7eea628e0"
-      "729507627":
-        name: "dev.twirchat.app-1.15.0-win-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.0-win-x64-delta.nupkg"
-        size: 540275
-        digest: "sha256:8b8a8247f3b85fcbb4df390c958f9dc78b7803ca2510a16a901adef56ba7dccd"
-      "729507629":
-        name: "dev.twirchat.app-1.15.0-win-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.0-win-x64-full.nupkg"
-        size: 101259385
-        digest: "sha256:2d7e9c23b4177e79fe1978ea25e26b64252c64ea503538659d98091fab8841a9"
-      "729507646":
-        name: "dev.twirchat.app-linux-x64.AppImage"
-        url_suffix: "dev.twirchat.app-linux-x64.AppImage"
-        size: 108575224
-        media_type: "application/vnd.appimage"
-        digest: "sha256:a26296d863b1f66ad49441b3a0b9ded2d234905245fd927749b6818ac3048064"
-      "729507671":
-        name: "dev.twirchat.app-osx-arm64-Portable.zip"
-        url_suffix: "dev.twirchat.app-osx-arm64-Portable.zip"
-        size: 85926411
-        media_type: "zip"
-        digest: "sha256:4409446a72ca66945b42010dce2a5485386d2facf9fd872794d603a5c2a52149"
-      "729507797":
-        name: "dev.twirchat.app-osx-arm64-Setup.pkg"
-        url_suffix: "dev.twirchat.app-osx-arm64-Setup.pkg"
-        size: 85847157
-        media_type: "application/x-xar"
-        digest: "sha256:5f3b807327db08213d1804b2cf9bc3d4cacca262c0b68bd5265937933c24e33d"
-      "729507822":
-        name: "dev.twirchat.app-osx-x64-Portable.zip"
-        url_suffix: "dev.twirchat.app-osx-x64-Portable.zip"
-        size: 89544547
-        media_type: "zip"
-        digest: "sha256:b89ac3970383180c7ae5d45e5acf347697999a5a12a335e7b45c2bfeb126e026"
-      "729507839":
-        name: "dev.twirchat.app-osx-x64-Setup.pkg"
-        url_suffix: "dev.twirchat.app-osx-x64-Setup.pkg"
-        size: 89477541
-        media_type: "application/x-xar"
-        digest: "sha256:7279d04a196ccbcafdbeb2f94dbc15054beb508137c48c0d6dc3ef0a0c1dbae0"
-      "729507840":
-        name: "dev.twirchat.app-win-x64-Portable.zip"
-        url_suffix: "dev.twirchat.app-win-x64-Portable.zip"
-        size: 101254665
-        media_type: "zip"
-        digest: "sha256:7b1d5792a004e4ca0881a6fe033d782f191a95bf6117f858bb24ad44582bd0d9"
-      "729507872":
-        name: "dev.twirchat.app-win-x64-Setup.exe"
-        url_suffix: "dev.twirchat.app-win-x64-Setup.exe"
-        size: 109962361
-        digest: "sha256:34d69b77a17667605ddcbc9cf584ff976f61142b09581c836d5f450828d22b0a"
-      "729507928":
-        name: "releases.linux-x64.json"
-        url_suffix: "releases.linux-x64.json"
-        size: 1252
-        media_type: "application/json"
-        digest: "sha256:e28a663bf3699e7e6f3c93a1b4a2435d54f70a1313f1bcd7d43fd4d8699d13c3"
-      "729507954":
-        name: "releases.osx-arm64.json"
-        url_suffix: "releases.osx-arm64.json"
-        size: 1248
-        media_type: "application/json"
-        digest: "sha256:d35631b5942a1f8dc260bc46e18e71c05ef88c7ed2df56ac94027146ccb2e0b9"
-      "729507969":
-        name: "releases.osx-x64.json"
-        url_suffix: "releases.osx-x64.json"
-        size: 1242
-        media_type: "application/json"
-        digest: "sha256:a39bcebcbf7e66bb67f9e258e05a842005568ce58ad5431010856126e7c7d78c"
-      "729507975":
-        name: "releases.win-x64.json"
-        url_suffix: "releases.win-x64.json"
-        size: 1244
-        media_type: "application/json"
-        digest: "sha256:8d72197e7b62d989eec3a6c4c30d3c4b53fb32417b495351920319ebe27e4135"
-      "729507984":
-        name: "signature-linux-x64.txt"
-        url_suffix: "signature-linux-x64.txt"
-        size: 54
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:496f82db116a90b5c5bafe8c330489961498eb16c27bcfc38fc26c42a6c9af07"
-      "729507991":
-        name: "signature-osx-arm64.txt"
-        url_suffix: "signature-osx-arm64.txt"
-        size: 54
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:8fbec9fff66ab8d00c79ecb2d88361da90c55f9b61a1b17b2b4b447fc0b6928d"
-      "729507996":
-        name: "signature-osx-x64.txt"
-        url_suffix: "signature-osx-x64.txt"
-        size: 52
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:1b707ec7fd402f1445564b7cb9cdccd1df6d596f79f41509883d61d5503fb583"
-      "729508002":
-        name: "signature-win-x64.txt"
-        url_suffix: "signature-win-x64.txt"
-        size: 52
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:a9660640bfca6600b15cf00e1033ee72711b485713e3f052536b304a45e6e9f3"
-  "439818908":
-    tag: "v1.15.1"
-    title: "TwirChat v1.15.1"
-    url: "https://github.com/Satont/twirchat/releases/tag/v1.15.1"
-    created_at: "2026-11-10T00:45:57Z"
-    published_at: "2026-11-10T00:52:50Z"
-    updated_at: "2026-11-10T00:52:50Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/Satont/twirchat/zipball/v1.15.1"
-    source_tar_url: "https://api.github.com/repos/Satont/twirchat/tarball/v1.15.1"
-    download_base: "https://github.com/Satont/twirchat/releases/download/v1.15.1/"
-    assets:
-      "729578039":
-        name: "SHA256SUMS"
-        url_suffix: "SHA256SUMS"
-        size: 3441
-        digest: "sha256:841e39bc59da36f09f4a3450a22094d1581f12a77eb4781be9efaf35124d14b7"
-      "729578040":
-        name: "RELEASES-osx-x64"
-        url_suffix: "RELEASES-osx-x64"
-        size: 188
-        digest: "sha256:08e9ba5c87a85cc54b33c30054d913d56ffd946dd515e2418a343a21817ace20"
-      "729578041":
-        name: "RELEASES-linux-x64"
-        url_suffix: "RELEASES-linux-x64"
-        size: 194
-        digest: "sha256:7f81f1648f80be422b76e81afe1ab15a15c9f664c5ee5e74462c9f5b2e150267"
-      "729578042":
-        name: "RELEASES-win-x64"
-        url_suffix: "RELEASES-win-x64"
-        size: 190
-        digest: "sha256:39c300b84672ccaf60c4dcff1f5a5ea0f0c3ef8f5abce5dd52a8337a246da921"
-      "729578043":
-        name: "RELEASES-osx-arm64"
-        url_suffix: "RELEASES-osx-arm64"
-        size: 192
-        digest: "sha256:bf59feaad12ba307954ecc77d85ef5d2eef18d382717ad49167a953c217e836d"
-      "729578058":
-        name: "assets.linux-x64.json"
-        url_suffix: "assets.linux-x64.json"
-        size: 244
-        media_type: "application/json"
-        digest: "sha256:18b460870c2a72c47e4ba2c0b90c0e9ec12adcb7629facf4699444b7a96d4c4a"
-      "729578061":
-        name: "assets.osx-arm64.json"
-        url_suffix: "assets.osx-arm64.json"
-        size: 327
-        media_type: "application/json"
-        digest: "sha256:97961475a504ed0729dd92fd53dde61325454f88bdf8f9130cd5fc5405f90341"
-      "729578064":
-        name: "assets.osx-x64.json"
-        url_suffix: "assets.osx-x64.json"
-        size: 319
-        media_type: "application/json"
-        digest: "sha256:db9fb851915b7e386c8ecfbddac506b7a2732db8efb70491947b90eb566528f8"
-      "729578065":
-        name: "assets.win-x64.json"
-        url_suffix: "assets.win-x64.json"
-        size: 319
-        media_type: "application/json"
-        digest: "sha256:13dae6f3ffc9f1f66adce36bc18c95c20bfbab206a6dda553d9d7324970046b1"
-      "729578068":
-        name: "dev.twirchat.app-1.15.0-linux-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.0-linux-x64-full.nupkg"
-        size: 107806009
-        digest: "sha256:14e777ccf1622ff2ca07d1d0cec8e37b316beffa38f2a26dcbf3e7ee2bc8dc9f"
-      "729578080":
-        name: "dev.twirchat.app-1.15.0-osx-arm64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.0-osx-arm64-full.nupkg"
-        size: 88478907
-        digest: "sha256:b33e2506355438156000d35c1d36e7ce5268c7c41ec55f318ac7aad8c3f3f9f3"
-      "729578094":
-        name: "dev.twirchat.app-1.15.0-osx-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.0-osx-x64-full.nupkg"
-        size: 91325313
-        digest: "sha256:1697086ed1c5fbaab59618d551cafada0a6c51cd9044dbaaa89470a7eea628e0"
-      "729578102":
-        name: "dev.twirchat.app-1.15.0-win-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.0-win-x64-full.nupkg"
-        size: 101259385
-        digest: "sha256:2d7e9c23b4177e79fe1978ea25e26b64252c64ea503538659d98091fab8841a9"
-      "729578103":
-        name: "dev.twirchat.app-1.15.1-linux-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.1-linux-x64-delta.nupkg"
-        size: 9527263
-        digest: "sha256:cff5779a07d5a30a94faf3ae461ba3bae5583f76d68eb13a6a03eabb78211f71"
-      "729578170":
-        name: "dev.twirchat.app-1.15.1-linux-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.1-linux-x64-full.nupkg"
-        size: 107805894
-        digest: "sha256:85f54a15a23a4b4bf0420c5bf126b12794bb3b8b7337abc962344ad8de8a2554"
-      "729578239":
-        name: "dev.twirchat.app-1.15.1-osx-arm64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.1-osx-arm64-delta.nupkg"
-        size: 293580
-        digest: "sha256:01fb328fb206125574dab00ba6df80ec7c088faaa2695d72e3cad57c8e52777f"
-      "729578251":
-        name: "dev.twirchat.app-1.15.1-osx-arm64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.1-osx-arm64-full.nupkg"
-        size: 88478904
-        digest: "sha256:630366d29351783eaa13c2875758fe226d4fe501304ef962ae7ef0f2d467c8d3"
-      "729578257":
-        name: "dev.twirchat.app-1.15.1-osx-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.1-osx-x64-delta.nupkg"
-        size: 103554
-        digest: "sha256:76529a5f53bc90b366cbe38a1bd53b1e25cc4d1a41b4e4a444090e828905b062"
-      "729578261":
-        name: "dev.twirchat.app-1.15.1-osx-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.1-osx-x64-full.nupkg"
-        size: 91325321
-        digest: "sha256:0fefd25134994c54972d7782accff2f255367dca8dbf8d9f2fa19ec2a46bac8c"
-      "729578265":
-        name: "dev.twirchat.app-1.15.1-win-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.1-win-x64-delta.nupkg"
-        size: 94026
-        digest: "sha256:1adb5555b1b0043cd90a647a79b5fdf3eade8189c99a0f478b665dd8cd550f37"
-      "729578278":
-        name: "dev.twirchat.app-1.15.1-win-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.1-win-x64-full.nupkg"
-        size: 101259408
-        digest: "sha256:bc94f041e7a12a07f0d1f4fa02d84b63c373a3f2af15a420da9aae30afaee5d6"
-      "729578289":
-        name: "dev.twirchat.app-linux-x64.AppImage"
-        url_suffix: "dev.twirchat.app-linux-x64.AppImage"
-        size: 108575224
-        media_type: "application/vnd.appimage"
-        digest: "sha256:62243d455b2fac2da7381574cfca08ed830545d5dc9a429f9ec162eeab9bf077"
-      "729578299":
-        name: "dev.twirchat.app-osx-arm64-Portable.zip"
-        url_suffix: "dev.twirchat.app-osx-arm64-Portable.zip"
-        size: 85926451
-        media_type: "zip"
-        digest: "sha256:68d0455e52294cefc2a40f03bc5c712f0a0f0ee64c80f5d04b2f7c4af6f8f8db"
-      "729578401":
-        name: "dev.twirchat.app-osx-arm64-Setup.pkg"
-        url_suffix: "dev.twirchat.app-osx-arm64-Setup.pkg"
-        size: 85846989
-        media_type: "application/x-xar"
-        digest: "sha256:4ef6be8871b9468b859550848fca9fa82a547cfa8aa655d9938142345a4ee24d"
-      "729578422":
-        name: "dev.twirchat.app-osx-x64-Portable.zip"
-        url_suffix: "dev.twirchat.app-osx-x64-Portable.zip"
-        size: 89544557
-        media_type: "zip"
-        digest: "sha256:ab61e4ddc5fc53dcebabab3659b634dbfd3dc5fc4aa612c856bba963de650e3f"
-      "729578431":
-        name: "dev.twirchat.app-osx-x64-Setup.pkg"
-        url_suffix: "dev.twirchat.app-osx-x64-Setup.pkg"
-        size: 89477535
-        media_type: "application/x-xar"
-        digest: "sha256:dfbb674f196581dde133bacc41fce62f43689a072d54497151c89ca647961c48"
-      "729578440":
-        name: "dev.twirchat.app-win-x64-Portable.zip"
-        url_suffix: "dev.twirchat.app-win-x64-Portable.zip"
-        size: 101254688
-        media_type: "zip"
-        digest: "sha256:cce6a169c5f3b828537e1cb0e1755a188620f0596145de83c22e862545501131"
-      "729578450":
-        name: "dev.twirchat.app-win-x64-Setup.exe"
-        url_suffix: "dev.twirchat.app-win-x64-Setup.exe"
-        size: 109962384
-        digest: "sha256:a10cd8401665413c9d1cbb8e87c98c678e8c17dbb8f0c65f9bc9358d7b675ff6"
-      "729578533":
-        name: "releases.linux-x64.json"
-        url_suffix: "releases.linux-x64.json"
-        size: 1251
-        media_type: "application/json"
-        digest: "sha256:366274ef56f3200697ef95eff8abbb6d7d33b1e40a1582d1bb62a4f3a1755d95"
-      "729578560":
-        name: "releases.osx-arm64.json"
-        url_suffix: "releases.osx-arm64.json"
-        size: 1248
-        media_type: "application/json"
-        digest: "sha256:e1320e839450e7ece7a2b6f9e93d5c7fb057b831138e823d1dc7d44576607408"
-      "729578561":
-        name: "releases.osx-x64.json"
-        url_suffix: "releases.osx-x64.json"
-        size: 1242
-        media_type: "application/json"
-        digest: "sha256:ce350c6631ad433cb2968203dd43c4191a1730aa248968a7ee7a77acd9c74ead"
-      "729578563":
-        name: "releases.win-x64.json"
-        url_suffix: "releases.win-x64.json"
-        size: 1243
-        media_type: "application/json"
-        digest: "sha256:0ecb43c019e0245291f7a3681a30e91bd8e91cf175e21e5aa728e25300395376"
-      "729578575":
-        name: "signature-linux-x64.txt"
-        url_suffix: "signature-linux-x64.txt"
-        size: 54
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:7fb3b31659644656db698b49fe43186fe04ca649bbd795f53c4a8a70824aff52"
-      "729578576":
-        name: "signature-osx-arm64.txt"
-        url_suffix: "signature-osx-arm64.txt"
-        size: 54
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:c9b707324ab80400125a61a6aea7109c3fef8be939124915fdf22f218064b6b5"
-      "729578583":
-        name: "signature-osx-x64.txt"
-        url_suffix: "signature-osx-x64.txt"
-        size: 52
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:695be9c02caebd0fc9b2bb1c465d4688a5759c5619e1b4ceba8e17da036f3b7c"
-      "729578589":
-        name: "signature-win-x64.txt"
-        url_suffix: "signature-win-x64.txt"
-        size: 52
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:e9969dfa88bef4778e9374f0f385a745728ea7c1ac60e0084449f6ae786de3df"
-  "439849644":
-    tag: "v1.15.2"
-    title: "TwirChat v1.15.2"
-    url: "https://github.com/Satont/twirchat/releases/tag/v1.15.2"
-    created_at: "2026-11-10T01:36:36Z"
-    published_at: "2026-11-10T01:44:11Z"
-    updated_at: "2026-11-10T01:44:11Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/Satont/twirchat/zipball/v1.15.2"
-    source_tar_url: "https://api.github.com/repos/Satont/twirchat/tarball/v1.15.2"
-    download_base: "https://github.com/Satont/twirchat/releases/download/v1.15.2/"
-    assets:
-      "729696063":
-        name: "SHA256SUMS"
-        url_suffix: "SHA256SUMS"
-        size: 3441
-        digest: "sha256:5398e6ab5a513d0b81015593800f14dfc960865e13cd5f0a544cc5874f498cc4"
-      "729696065":
-        name: "RELEASES-linux-x64"
-        url_suffix: "RELEASES-linux-x64"
-        size: 194
-        digest: "sha256:c076afbc9fd4ee36dd86b87dc646b4e43b2b469ea3079b280cbd86ca0d0c5481"
-      "729696066":
-        name: "RELEASES-osx-arm64"
-        url_suffix: "RELEASES-osx-arm64"
-        size: 192
-        digest: "sha256:539c102e4ccc244697f8ddd3eb5f19e077ee09d10140d9eef03a1425bedff39b"
-      "729696067":
-        name: "RELEASES-osx-x64"
-        url_suffix: "RELEASES-osx-x64"
-        size: 188
-        digest: "sha256:afa6ba4e3a7c05c375373f5f1eb9c508ef2baccc75efb9b15577fd6339f1848f"
-      "729696072":
-        name: "RELEASES-win-x64"
-        url_suffix: "RELEASES-win-x64"
-        size: 190
-        digest: "sha256:d040b38fa7db9276e76fcbf5370483d80f96205348a882a56bc2b41271de2b66"
-      "729696091":
-        name: "assets.linux-x64.json"
-        url_suffix: "assets.linux-x64.json"
-        size: 244
-        media_type: "application/json"
-        digest: "sha256:efe5a988ca53e532ca943d89220bc1b9241a8537eece4f011c30c95cb141e4fd"
-      "729696092":
-        name: "assets.osx-x64.json"
-        url_suffix: "assets.osx-x64.json"
-        size: 319
-        media_type: "application/json"
-        digest: "sha256:5379547817147acb63d009328c88a3958dc45b6d78f5a0fa73f11d9a78b93f31"
-      "729696095":
-        name: "dev.twirchat.app-1.15.1-linux-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.1-linux-x64-full.nupkg"
-        size: 107805894
-        digest: "sha256:85f54a15a23a4b4bf0420c5bf126b12794bb3b8b7337abc962344ad8de8a2554"
-      "729696096":
-        name: "assets.osx-arm64.json"
-        url_suffix: "assets.osx-arm64.json"
-        size: 327
-        media_type: "application/json"
-        digest: "sha256:cff4f5fe27ddb9741935814ba245dbc4c536a731012b5a50e5c57794c616a0d7"
-      "729696097":
-        name: "assets.win-x64.json"
-        url_suffix: "assets.win-x64.json"
-        size: 319
-        media_type: "application/json"
-        digest: "sha256:6dffa7d2930fe9e1efcb6232c5a137704bcaa094493f1c6a3f7224aca952ab1e"
-      "729696123":
-        name: "dev.twirchat.app-1.15.1-osx-arm64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.1-osx-arm64-full.nupkg"
-        size: 88478904
-        digest: "sha256:630366d29351783eaa13c2875758fe226d4fe501304ef962ae7ef0f2d467c8d3"
-      "729696126":
-        name: "dev.twirchat.app-1.15.1-osx-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.1-osx-x64-full.nupkg"
-        size: 91325321
-        digest: "sha256:0fefd25134994c54972d7782accff2f255367dca8dbf8d9f2fa19ec2a46bac8c"
-      "729696127":
-        name: "dev.twirchat.app-1.15.1-win-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.1-win-x64-full.nupkg"
-        size: 101259408
-        digest: "sha256:bc94f041e7a12a07f0d1f4fa02d84b63c373a3f2af15a420da9aae30afaee5d6"
-      "729696130":
-        name: "dev.twirchat.app-1.15.2-linux-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.2-linux-x64-delta.nupkg"
-        size: 10037927
-        digest: "sha256:3d718c3d8c2eda3ba730d882978f7ede1608883091f07e8ee3c26f54f9ed19cf"
-      "729696172":
-        name: "dev.twirchat.app-1.15.2-linux-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.2-linux-x64-full.nupkg"
-        size: 107808119
-        digest: "sha256:6b6bebce160fab03eec8b9d766c5ba783d81a2e80aa0765223acfe1c3c99602d"
-      "729696279":
-        name: "dev.twirchat.app-1.15.2-osx-arm64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.2-osx-arm64-delta.nupkg"
-        size: 796274
-        digest: "sha256:01c60026bde6cf2d74cc8a7360fd0806cce71ad4480486e0b5fe9bef67edaf2d"
-      "729696307":
-        name: "dev.twirchat.app-1.15.2-osx-arm64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.2-osx-arm64-full.nupkg"
-        size: 88484651
-        digest: "sha256:b87d1d0acc0cc0468686918405188336e7f8ec79140bc29ef4d83295b5c6b8b6"
-      "729696322":
-        name: "dev.twirchat.app-1.15.2-osx-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.2-osx-x64-delta.nupkg"
-        size: 602312
-        digest: "sha256:8cf64d666c61b272b79a72bba2dde2e32b02956adc986b3abde860d29bff0a7a"
-      "729696328":
-        name: "dev.twirchat.app-1.15.2-osx-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.2-osx-x64-full.nupkg"
-        size: 91326758
-        digest: "sha256:fc4a86d5a0037696946ce1ff7ad527afef9d993aa459942656a47e3f3758df58"
-      "729696338":
-        name: "dev.twirchat.app-1.15.2-win-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.2-win-x64-delta.nupkg"
-        size: 592855
-        digest: "sha256:c3927834a6fd6816d875627e143592ccf4f8a07c2db5df75780a60d2c81628c4"
-      "729696363":
-        name: "dev.twirchat.app-1.15.2-win-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.2-win-x64-full.nupkg"
-        size: 101259999
-        digest: "sha256:2d8a2bc9f7302b420630baa5285f2d1f19dbf445cee19ce86970c139769a1aa6"
-      "729696364":
-        name: "dev.twirchat.app-linux-x64.AppImage"
-        url_suffix: "dev.twirchat.app-linux-x64.AppImage"
-        size: 108575224
-        media_type: "application/vnd.appimage"
-        digest: "sha256:214506186d23199c68b0c288da1253c27013d4e20f43e693a1e2be43e29833d3"
-      "729696371":
-        name: "dev.twirchat.app-osx-arm64-Portable.zip"
-        url_suffix: "dev.twirchat.app-osx-arm64-Portable.zip"
-        size: 85931959
-        media_type: "zip"
-        digest: "sha256:ff8ad8a28a78792eb66da99b28897506cb24250b3d90f9d0be2fc9d441cbe042"
-      "729696450":
-        name: "dev.twirchat.app-osx-arm64-Setup.pkg"
-        url_suffix: "dev.twirchat.app-osx-arm64-Setup.pkg"
-        size: 85849175
-        media_type: "application/x-xar"
-        digest: "sha256:0d64b9779a1741b972027eef1ce9b2e6811384485947bd052a0b0846ea34c4db"
-      "729696467":
-        name: "dev.twirchat.app-osx-x64-Portable.zip"
-        url_suffix: "dev.twirchat.app-osx-x64-Portable.zip"
-        size: 89549085
-        media_type: "zip"
-        digest: "sha256:85c4dbd7b9bade121d4ee10d29968af780c0ce89f6644f0302d65f1d4acc4527"
-      "729696482":
-        name: "dev.twirchat.app-osx-x64-Setup.pkg"
-        url_suffix: "dev.twirchat.app-osx-x64-Setup.pkg"
-        size: 89478306
-        media_type: "application/x-xar"
-        digest: "sha256:41e3a6035fed48dc512890f50c3a54609f19c71170bd32955b2b7f012d71a07b"
-      "729696491":
-        name: "dev.twirchat.app-win-x64-Portable.zip"
-        url_suffix: "dev.twirchat.app-win-x64-Portable.zip"
-        size: 101255280
-        media_type: "zip"
-        digest: "sha256:7c92f2f1b7070ff7c282aab2cda033383409832c5b1accfdead345855e6be2c4"
-      "729696496":
-        name: "dev.twirchat.app-win-x64-Setup.exe"
-        url_suffix: "dev.twirchat.app-win-x64-Setup.exe"
-        size: 109962975
-        digest: "sha256:dd2abc0ae398acb05a4d8fe8110fd36c3373300fbb33038af870a91a3060980c"
-      "729696546":
-        name: "releases.linux-x64.json"
-        url_suffix: "releases.linux-x64.json"
-        size: 1252
-        media_type: "application/json"
-        digest: "sha256:7857da1d4b508500027b75a6addbb167203969483726aae4bab03231e558ca57"
-      "729696560":
-        name: "releases.osx-arm64.json"
-        url_suffix: "releases.osx-arm64.json"
-        size: 1248
-        media_type: "application/json"
-        digest: "sha256:a5533158c9813f960dc6ad83757cd792127c289824a7047f8bc850c7311b3c36"
-      "729696561":
-        name: "releases.osx-x64.json"
-        url_suffix: "releases.osx-x64.json"
-        size: 1242
-        media_type: "application/json"
-        digest: "sha256:b28d452a881d930494e64cfc0f4cfd6da55fca53bb4edd4cf45333b98ce6bc7f"
-      "729696574":
-        name: "releases.win-x64.json"
-        url_suffix: "releases.win-x64.json"
-        size: 1244
-        media_type: "application/json"
-        digest: "sha256:95cbe8ec6d1f29608eaab4a3a81dec3ed1fb4da15438e290d651875de5353c01"
-      "729696579":
-        name: "signature-linux-x64.txt"
-        url_suffix: "signature-linux-x64.txt"
-        size: 54
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:b7469a7bbaedeb75a50da2d4b3d464b494f1db83c53ab76bcb7f52083d00126b"
-      "729696581":
-        name: "signature-osx-arm64.txt"
-        url_suffix: "signature-osx-arm64.txt"
-        size: 54
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:4eafbd979f5c27c567bc76b2036f4c4ee748818f6ae07fc3b61ff8842ced2f65"
-      "729696589":
-        name: "signature-osx-x64.txt"
-        url_suffix: "signature-osx-x64.txt"
-        size: 52
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:edf3700a6222bc70ae391e8a9e82e7ef1d9e1836cf08b149f06574ac6b7da812"
-      "729696592":
-        name: "signature-win-x64.txt"
-        url_suffix: "signature-win-x64.txt"
-        size: 52
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:2349f88ab8692b5f38fda11afce8dcf876de525ac6f8074a8bb670a424166d60"
-  "440108782":
-    tag: "v1.16.0"
-    title: "TwirChat v1.16.0"
-    url: "https://github.com/Satont/twirchat/releases/tag/v1.16.0"
-    created_at: "2026-11-10T08:25:44Z"
-    published_at: "2026-11-10T08:32:12Z"
-    updated_at: "2026-11-10T08:32:12Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/Satont/twirchat/zipball/v1.16.0"
-    source_tar_url: "https://api.github.com/repos/Satont/twirchat/tarball/v1.16.0"
-    download_base: "https://github.com/Satont/twirchat/releases/download/v1.16.0/"
-    assets:
-      "730694258":
-        name: "RELEASES-win-x64"
-        url_suffix: "RELEASES-win-x64"
-        size: 190
-        digest: "sha256:6e483da4f581ab7abc875ba3581cc0864b3221a797e2e3b814a9d18b3f6eb4e1"
-      "730694259":
-        name: "RELEASES-osx-x64"
-        url_suffix: "RELEASES-osx-x64"
-        size: 188
-        digest: "sha256:f00627e45b767691eff22b3ca4ad57a13e2ddb016aac06ab743453fbcb61d2cd"
-      "730694260":
-        name: "RELEASES-osx-arm64"
-        url_suffix: "RELEASES-osx-arm64"
-        size: 192
-        digest: "sha256:4b69450de49cc651b6a2936ef192f971fc3b401b78bec3560f1d12d0066bbc09"
-      "730694261":
-        name: "RELEASES-linux-x64"
-        url_suffix: "RELEASES-linux-x64"
-        size: 194
-        digest: "sha256:420681ab231787c263f3bb50786dd57b6a153f1e7e1bebba253ab340404dbdf4"
-      "730694264":
-        name: "SHA256SUMS"
-        url_suffix: "SHA256SUMS"
-        size: 3441
-        digest: "sha256:d0610b7928100d7a725e754e609c0450c3fef05f0c9b8544949b71c037862621"
-      "730694287":
-        name: "assets.osx-arm64.json"
-        url_suffix: "assets.osx-arm64.json"
-        size: 327
-        media_type: "application/json"
-        digest: "sha256:b989e986b0e31d55d0b2c034e2d6b4b806ee5e5fad2eea5b7638b9bc6c89cc16"
-      "730694288":
-        name: "assets.osx-x64.json"
-        url_suffix: "assets.osx-x64.json"
-        size: 319
-        media_type: "application/json"
-        digest: "sha256:91611d1b45a226883aea73ae87e906c335027a210d164365f4449b365bbf9090"
-      "730694296":
-        name: "assets.win-x64.json"
-        url_suffix: "assets.win-x64.json"
-        size: 319
-        media_type: "application/json"
-        digest: "sha256:b013367531995f69f5ffb6f5e8bfa0ecb8289113c85ee40e69cd4bb8e4c4ef26"
-      "730694298":
-        name: "assets.linux-x64.json"
-        url_suffix: "assets.linux-x64.json"
-        size: 244
-        media_type: "application/json"
-        digest: "sha256:6044bdb050ffd3737592b6c3fd5793d40b08ab9e5bec14461a535ce14fdb1675"
-      "730694319":
-        name: "dev.twirchat.app-1.15.2-linux-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.2-linux-x64-full.nupkg"
-        size: 107808119
-        digest: "sha256:6b6bebce160fab03eec8b9d766c5ba783d81a2e80aa0765223acfe1c3c99602d"
-      "730694340":
-        name: "dev.twirchat.app-1.15.2-osx-arm64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.2-osx-arm64-full.nupkg"
-        size: 88484651
-        digest: "sha256:b87d1d0acc0cc0468686918405188336e7f8ec79140bc29ef4d83295b5c6b8b6"
-      "730694347":
-        name: "dev.twirchat.app-1.15.2-osx-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.2-osx-x64-full.nupkg"
-        size: 91326758
-        digest: "sha256:fc4a86d5a0037696946ce1ff7ad527afef9d993aa459942656a47e3f3758df58"
-      "730694353":
-        name: "dev.twirchat.app-1.15.2-win-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.15.2-win-x64-full.nupkg"
-        size: 101259999
-        digest: "sha256:2d8a2bc9f7302b420630baa5285f2d1f19dbf445cee19ce86970c139769a1aa6"
-      "730694376":
-        name: "dev.twirchat.app-1.16.0-linux-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.16.0-linux-x64-delta.nupkg"
-        size: 10097518
-        digest: "sha256:3c2f3114a96a3a95cbd22ffdc3c8a4ba0aa8069f45d98e65c5bcb89412ec07da"
-      "730694438":
-        name: "dev.twirchat.app-1.16.0-linux-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.16.0-linux-x64-full.nupkg"
-        size: 107817786
-        digest: "sha256:4712976038fb46e80d0ea7d39eafe62266a12344caeff9ece9129dd723531951"
-      "730694674":
-        name: "dev.twirchat.app-1.16.0-osx-arm64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.16.0-osx-arm64-delta.nupkg"
-        size: 564271
-        digest: "sha256:f3a5c520e83f4455bfe2cc21ba6838bb80b67249d4a9f4308ff0ba3682f88bf4"
-      "730694719":
-        name: "dev.twirchat.app-1.16.0-osx-arm64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.16.0-osx-arm64-full.nupkg"
-        size: 88489445
-        digest: "sha256:ffc6ab879520a4ed14c08d73c1856530c47b21022243816879c62a30ea2389d2"
-      "730694754":
-        name: "dev.twirchat.app-1.16.0-osx-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.16.0-osx-x64-delta.nupkg"
-        size: 370344
-        digest: "sha256:cc21a56ab62a8dd4297fcf6954ba54b7ed906cc0f1ba3b8dc38a0b6c7060efba"
-      "730694836":
-        name: "dev.twirchat.app-1.16.0-osx-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.16.0-osx-x64-full.nupkg"
-        size: 91326290
-        digest: "sha256:622ed043603fe3be6c978c3e7be2f1786e7b8c75f973c2ef43a20f8f65a303a1"
-      "730694856":
-        name: "dev.twirchat.app-1.16.0-win-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.16.0-win-x64-delta.nupkg"
-        size: 361058
-        digest: "sha256:b3de61c53e9df2a2d0bcf73916621f43b96a2ddc71fa885dc75e87783efb29d8"
-      "730694871":
-        name: "dev.twirchat.app-1.16.0-win-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.16.0-win-x64-full.nupkg"
-        size: 101264223
-        digest: "sha256:d8391ac1f6e64ed639a6e75c6e063f5c7f186727978c0b8475cb5bebd2cf9e8c"
-      "730694887":
-        name: "dev.twirchat.app-linux-x64.AppImage"
-        url_suffix: "dev.twirchat.app-linux-x64.AppImage"
-        size: 108583416
-        media_type: "application/vnd.appimage"
-        digest: "sha256:cab92837e986835df0376e709d7a2b160bd79fcd4d3982784463f5c9781c57b9"
-      "730694890":
-        name: "dev.twirchat.app-osx-arm64-Portable.zip"
-        url_suffix: "dev.twirchat.app-osx-arm64-Portable.zip"
-        size: 85934521
-        media_type: "zip"
-        digest: "sha256:ae2e33cfb730cd3f8a3325118c369df1386dfedd6fbc6dd47a6d7443633bfe92"
-      "730694972":
-        name: "dev.twirchat.app-osx-arm64-Setup.pkg"
-        url_suffix: "dev.twirchat.app-osx-arm64-Setup.pkg"
-        size: 85857255
-        media_type: "application/x-xar"
-        digest: "sha256:1882728734e766fbcf6b5454aa31515a5df4ce422ddd9ffe367edc39cd04dd10"
-      "730695100":
-        name: "dev.twirchat.app-osx-x64-Portable.zip"
-        url_suffix: "dev.twirchat.app-osx-x64-Portable.zip"
-        size: 89557895
-        media_type: "zip"
-        digest: "sha256:726db9fcb2b02f95b0513ba155c290fa86d07bc177fedfd9659e976950601086"
-      "730695177":
-        name: "dev.twirchat.app-osx-x64-Setup.pkg"
-        url_suffix: "dev.twirchat.app-osx-x64-Setup.pkg"
-        size: 89479787
-        media_type: "application/x-xar"
-        digest: "sha256:6706ab16d32849564d22544b19e776802df8025292693e14aa47a8e0aa666ae3"
-      "730695183":
-        name: "dev.twirchat.app-win-x64-Portable.zip"
-        url_suffix: "dev.twirchat.app-win-x64-Portable.zip"
-        size: 101259504
-        media_type: "zip"
-        digest: "sha256:a213db9531ffa800d17a482474742ef42ca1598ceb768679dab2f3a1cb4ac3e1"
-      "730695191":
-        name: "dev.twirchat.app-win-x64-Setup.exe"
-        url_suffix: "dev.twirchat.app-win-x64-Setup.exe"
-        size: 109967199
-        digest: "sha256:15264fdcc9a650e41fa8b7c07c37e6386c557d41b60de287166bb73ec64297a1"
-      "730695231":
-        name: "releases.linux-x64.json"
-        url_suffix: "releases.linux-x64.json"
-        size: 1252
-        media_type: "application/json"
-        digest: "sha256:e68b25d1fe93cef2ed1c402958b49ece5ab4c3eed3df0f0ec64b288d4aa25217"
-      "730695250":
-        name: "releases.osx-arm64.json"
-        url_suffix: "releases.osx-arm64.json"
-        size: 1248
-        media_type: "application/json"
-        digest: "sha256:ce68755aed46fc2d0d13ac15d1360aabc305d07d9d8b2761329ee7905110233a"
-      "730695269":
-        name: "releases.osx-x64.json"
-        url_suffix: "releases.osx-x64.json"
-        size: 1242
-        media_type: "application/json"
-        digest: "sha256:5388203f143c26e6047c26ab406db97fd2b100edbe9468674a18501cc9b392d5"
-      "730695274":
-        name: "releases.win-x64.json"
-        url_suffix: "releases.win-x64.json"
-        size: 1244
-        media_type: "application/json"
-        digest: "sha256:d2a6997b4d19ec9a403922e2346c590d01066d471c4e6de61253671d7d041b1c"
-      "730695289":
-        name: "signature-linux-x64.txt"
-        url_suffix: "signature-linux-x64.txt"
-        size: 54
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:e51c83deca77c60c534e94be8877274da616ef41f65a8cb77ff97a162b740b0e"
-      "730695298":
-        name: "signature-osx-arm64.txt"
-        url_suffix: "signature-osx-arm64.txt"
-        size: 54
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:363d6c30897d02db804f22be31177141f26a2861605f01ea03e0102b38fac40a"
-      "730695320":
-        name: "signature-osx-x64.txt"
-        url_suffix: "signature-osx-x64.txt"
-        size: 52
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:83e7f8dd4ab8153c9634120b1e2c1a836a584f69d0803341c41b87a66a650df3"
-      "730695327":
-        name: "signature-win-x64.txt"
-        url_suffix: "signature-win-x64.txt"
-        size: 52
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:6b03beb4a1a70cc2178f1815ef33ce73031566c0950432ba0f65663b02e07736"
-  "440130950":
-    tag: "v1.16.1"
-    title: "TwirChat v1.16.1"
-    url: "https://github.com/Satont/twirchat/releases/tag/v1.16.1"
-    created_at: "2026-11-10T08:51:00Z"
-    published_at: "2026-11-10T08:57:36Z"
-    updated_at: "2026-11-10T08:57:36Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/Satont/twirchat/zipball/v1.16.1"
-    source_tar_url: "https://api.github.com/repos/Satont/twirchat/tarball/v1.16.1"
-    download_base: "https://github.com/Satont/twirchat/releases/download/v1.16.1/"
-    assets:
-      "730762990":
-        name: "RELEASES-osx-x64"
-        url_suffix: "RELEASES-osx-x64"
-        size: 188
-        digest: "sha256:ebfd1ff4ac2fc06372309cea0bbd5cb9484091e009361a7fd032bc919712a75c"
-      "730762993":
-        name: "SHA256SUMS"
-        url_suffix: "SHA256SUMS"
-        size: 3441
-        digest: "sha256:59d1a33271c6dcf7d6632c86542b3ad444d2cafb68d42339c6b6e463cf40e32c"
-      "730762994":
-        name: "RELEASES-win-x64"
-        url_suffix: "RELEASES-win-x64"
-        size: 190
-        digest: "sha256:b139878c5d6309ec0090f214612e32a1ae9d24b6bb7e6d13761327abc855908d"
-      "730762995":
-        name: "RELEASES-linux-x64"
-        url_suffix: "RELEASES-linux-x64"
-        size: 194
-        digest: "sha256:73b22e49c45666f80a8b2040f288e1583a8f758907b0e6bad348c9fd9b8f2ffd"
-      "730762997":
-        name: "RELEASES-osx-arm64"
-        url_suffix: "RELEASES-osx-arm64"
-        size: 192
-        digest: "sha256:42bb90d1c2bca4319d84213e1c9793d68bcabd1f4b3cb00bb74f7599804a06ae"
-      "730763027":
-        name: "assets.linux-x64.json"
-        url_suffix: "assets.linux-x64.json"
-        size: 244
-        media_type: "application/json"
-        digest: "sha256:aa74d4026eda9b69a1e6125a78a93c10edf79a126794cb216d88bf104df5ec15"
-      "730763028":
-        name: "assets.osx-arm64.json"
-        url_suffix: "assets.osx-arm64.json"
-        size: 327
-        media_type: "application/json"
-        digest: "sha256:19c3371ce16fc8bdd294dba882892201772050b91880bab46bbb2550ec2ebfd1"
-      "730763030":
-        name: "assets.osx-x64.json"
-        url_suffix: "assets.osx-x64.json"
-        size: 319
-        media_type: "application/json"
-        digest: "sha256:4d0ec5658c62f57163b1e2d938fa1e43119c0615c9fef8b4101c7d89861aa22c"
-      "730763031":
-        name: "assets.win-x64.json"
-        url_suffix: "assets.win-x64.json"
-        size: 319
-        media_type: "application/json"
-        digest: "sha256:92af635354d4a0b72e34749427eae373cadce6f44a14d42e625462551d7f01d9"
-      "730763042":
-        name: "dev.twirchat.app-1.16.0-linux-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.16.0-linux-x64-full.nupkg"
-        size: 107817786
-        digest: "sha256:4712976038fb46e80d0ea7d39eafe62266a12344caeff9ece9129dd723531951"
-      "730763050":
-        name: "dev.twirchat.app-1.16.0-osx-arm64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.16.0-osx-arm64-full.nupkg"
-        size: 88489445
-        digest: "sha256:ffc6ab879520a4ed14c08d73c1856530c47b21022243816879c62a30ea2389d2"
-      "730763054":
-        name: "dev.twirchat.app-1.16.0-osx-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.16.0-osx-x64-full.nupkg"
-        size: 91326290
-        digest: "sha256:622ed043603fe3be6c978c3e7be2f1786e7b8c75f973c2ef43a20f8f65a303a1"
-      "730763058":
-        name: "dev.twirchat.app-1.16.0-win-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.16.0-win-x64-full.nupkg"
-        size: 101264223
-        digest: "sha256:d8391ac1f6e64ed639a6e75c6e063f5c7f186727978c0b8475cb5bebd2cf9e8c"
-      "730763064":
-        name: "dev.twirchat.app-1.16.1-linux-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.16.1-linux-x64-delta.nupkg"
-        size: 8551324
-        digest: "sha256:f48690b9fd91131ca5ce9131ff2340cc14469386d61d482c478ba93cfea7b136"
-      "730763100":
-        name: "dev.twirchat.app-1.16.1-linux-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.16.1-linux-x64-full.nupkg"
-        size: 107817580
-        digest: "sha256:a44434eb0406825a150b0daaec98bffe56311ed88be6c045d37736b93b7e014e"
-      "730763354":
-        name: "dev.twirchat.app-1.16.1-osx-arm64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.16.1-osx-arm64-delta.nupkg"
-        size: 246146
-        digest: "sha256:3d41fd56e2ce31bf915f0550fa0004c0ee15143cade370aa07ac04c0c7b87241"
-      "730763368":
-        name: "dev.twirchat.app-1.16.1-osx-arm64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.16.1-osx-arm64-full.nupkg"
-        size: 88489414
-        digest: "sha256:7fe6950d850d4fdfc7a738e2b574914519ba3a3d20d6740c4b35333352be09ba"
-      "730763377":
-        name: "dev.twirchat.app-1.16.1-osx-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.16.1-osx-x64-delta.nupkg"
-        size: 78466
-        digest: "sha256:b1592306c91fb1e0f23821585526802662640cf9a3dd747fc4554c63ca1ba188"
-      "730763386":
-        name: "dev.twirchat.app-1.16.1-osx-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.16.1-osx-x64-full.nupkg"
-        size: 91326279
-        digest: "sha256:af3d6784e8c465eb2453d8405c7b85e283372965dfa5baa9689e63c67cd44cff"
-      "730763398":
-        name: "dev.twirchat.app-1.16.1-win-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.16.1-win-x64-delta.nupkg"
-        size: 69685
-        digest: "sha256:352c447f18195f9df3ab688caa0f6bf210af1e8d1d0023dfcc3ae28ddcb0fd22"
-      "730763403":
-        name: "dev.twirchat.app-1.16.1-win-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.16.1-win-x64-full.nupkg"
-        size: 101264224
-        digest: "sha256:d5a51fa6097ba79aec315d0c7fcae0c3154da7da9d16273990f70a51031e96ba"
-      "730763423":
-        name: "dev.twirchat.app-linux-x64.AppImage"
-        url_suffix: "dev.twirchat.app-linux-x64.AppImage"
-        size: 108583416
-        media_type: "application/vnd.appimage"
-        digest: "sha256:5a6cf9b883e70c50f6d25282b40f57cad3ce7ffaa67cda25d20f7071869365cc"
-      "730763427":
-        name: "dev.twirchat.app-osx-arm64-Portable.zip"
-        url_suffix: "dev.twirchat.app-osx-arm64-Portable.zip"
-        size: 85934531
-        media_type: "zip"
-        digest: "sha256:1ac2456e4a721d55bde357ad714cfc4ac4a86e70c1957c01e48ffe456a89b3cf"
-      "730763547":
-        name: "dev.twirchat.app-osx-arm64-Setup.pkg"
-        url_suffix: "dev.twirchat.app-osx-arm64-Setup.pkg"
-        size: 85857329
-        media_type: "application/x-xar"
-        digest: "sha256:1839605912eaf3f58152aa6e8b0a70bb46adac6d3f9abcdcc53855d02570b23b"
-      "730763640":
-        name: "dev.twirchat.app-osx-x64-Portable.zip"
-        url_suffix: "dev.twirchat.app-osx-x64-Portable.zip"
-        size: 89557908
-        media_type: "zip"
-        digest: "sha256:5bf0f728043b21260a5bd04b1aeefd46fcf10da14594bc6610072108ee273abd"
-      "730763662":
-        name: "dev.twirchat.app-osx-x64-Setup.pkg"
-        url_suffix: "dev.twirchat.app-osx-x64-Setup.pkg"
-        size: 89479645
-        media_type: "application/x-xar"
-        digest: "sha256:f28f2f99b737ac9de981ea84bee042a1240fc3f30ca2dd108dff598a774732bf"
-      "730763678":
-        name: "dev.twirchat.app-win-x64-Portable.zip"
-        url_suffix: "dev.twirchat.app-win-x64-Portable.zip"
-        size: 101259505
-        media_type: "zip"
-        digest: "sha256:32853498b3fe6fa4dbe98a1694bec39efb60ec3a828179a85f8c5f9a7598a644"
-      "730763689":
-        name: "dev.twirchat.app-win-x64-Setup.exe"
-        url_suffix: "dev.twirchat.app-win-x64-Setup.exe"
-        size: 109967200
-        digest: "sha256:bce78eb0cfc007c31f991efa803deb2eb4e157f181e0f1b676e565fad4793bea"
-      "730763768":
-        name: "releases.linux-x64.json"
-        url_suffix: "releases.linux-x64.json"
-        size: 1251
-        media_type: "application/json"
-        digest: "sha256:a09efd422ff10d0193134cc253c8fd7408ecfa8bd2e6c909ffe15d3bafc590d6"
-      "730763797":
-        name: "releases.osx-arm64.json"
-        url_suffix: "releases.osx-arm64.json"
-        size: 1248
-        media_type: "application/json"
-        digest: "sha256:54566cdbc7b7563925bd8352951fe3237b7bbcbc81b00b6d52d09931e05f37ab"
-      "730763840":
-        name: "releases.osx-x64.json"
-        url_suffix: "releases.osx-x64.json"
-        size: 1241
-        media_type: "application/json"
-        digest: "sha256:33fa35c95c129f0685a95686cbc577bd8fe9553de85eb21deaeb1361ee8d2f23"
-      "730763886":
-        name: "releases.win-x64.json"
-        url_suffix: "releases.win-x64.json"
-        size: 1243
-        media_type: "application/json"
-        digest: "sha256:7a0d965dd8b37e4258ddab820283cb05a1c87958a7c07d971985c2278d57c625"
-      "730763895":
-        name: "signature-linux-x64.txt"
-        url_suffix: "signature-linux-x64.txt"
-        size: 54
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:6b4149a6d27405f205d577296d30a7820c3d4cd427ce0d1db75c5af2cf558845"
-      "730763919":
-        name: "signature-osx-arm64.txt"
-        url_suffix: "signature-osx-arm64.txt"
-        size: 54
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:dd137d7e3955d735eab576a440d958223c03a2eac09ce7c7bf93d91a037cc115"
-      "730763931":
-        name: "signature-osx-x64.txt"
-        url_suffix: "signature-osx-x64.txt"
-        size: 52
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:947eba993cbba4551953b509a7c19934b820996466687978687abe4f71076f12"
-      "730763944":
-        name: "signature-win-x64.txt"
-        url_suffix: "signature-win-x64.txt"
-        size: 52
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:576248ae8267f25aa70791a482be97821c5aaa5b60ff9c7f1b65c990a13ca6f5"
-  "440226362":
-    tag: "v1.17.0"
-    title: "TwirChat v1.17.0"
-    url: "https://github.com/Satont/twirchat/releases/tag/v1.17.0"
-    created_at: "2026-11-10T10:29:00Z"
-    published_at: "2026-11-10T10:37:14Z"
-    updated_at: "2026-11-10T10:37:14Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/Satont/twirchat/zipball/v1.17.0"
-    source_tar_url: "https://api.github.com/repos/Satont/twirchat/tarball/v1.17.0"
-    download_base: "https://github.com/Satont/twirchat/releases/download/v1.17.0/"
-    assets:
-      "731037574":
-        name: "RELEASES-linux-x64"
-        url_suffix: "RELEASES-linux-x64"
-        size: 194
-        digest: "sha256:f0f770c1bded456a8c52eb085a8a1cd52ff5e20bbbd137963b3485253bc59279"
-      "731037575":
-        name: "RELEASES-osx-x64"
-        url_suffix: "RELEASES-osx-x64"
-        size: 188
-        digest: "sha256:1d9bf768e118b733e3cc87cf3278e7cdbb7daf094925a1c98819f7fbfae6abee"
-      "731037580":
-        name: "RELEASES-win-x64"
-        url_suffix: "RELEASES-win-x64"
-        size: 190
-        digest: "sha256:2eae24f7001489b8fc39c7e961493ba6297dfa6b474c085215957c1b74fca1f0"
-      "731037583":
-        name: "RELEASES-osx-arm64"
-        url_suffix: "RELEASES-osx-arm64"
-        size: 192
-        digest: "sha256:420fac7422c5d07e30d2d167bd419308092e5ade4f5438c80209ee31748cbecd"
-      "731037586":
-        name: "SHA256SUMS"
-        url_suffix: "SHA256SUMS"
-        size: 3441
-        digest: "sha256:f75e5a4a6686cb92d28f80fb96cb6d94d9ce1f0a3a776a068b209f8d3e76541f"
-      "731037613":
-        name: "assets.linux-x64.json"
-        url_suffix: "assets.linux-x64.json"
-        size: 244
-        media_type: "application/json"
-        digest: "sha256:9db48acaf2677ddce4d14c993b89479fd8eddd25f9da44592a8a6c670ad1b520"
-      "731037615":
-        name: "assets.osx-x64.json"
-        url_suffix: "assets.osx-x64.json"
-        size: 319
-        media_type: "application/json"
-        digest: "sha256:2ebe299aae9ee1476f49ba7d0497cad1387db07675906628cbc8e2e09871599a"
-      "731037616":
-        name: "assets.osx-arm64.json"
-        url_suffix: "assets.osx-arm64.json"
-        size: 327
-        media_type: "application/json"
-        digest: "sha256:693f0c9b4ba5c24e2adbaf268febcee439c09d6628e2540e91a9d03047e5082e"
-      "731037619":
-        name: "dev.twirchat.app-1.16.1-linux-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.16.1-linux-x64-full.nupkg"
-        size: 107817580
-        digest: "sha256:a44434eb0406825a150b0daaec98bffe56311ed88be6c045d37736b93b7e014e"
-      "731037620":
-        name: "assets.win-x64.json"
-        url_suffix: "assets.win-x64.json"
-        size: 319
-        media_type: "application/json"
-        digest: "sha256:fee48bf007de857a4f63d1d2bba50df40944639b87ab73b23dcf8c2138a042d8"
-      "731037638":
-        name: "dev.twirchat.app-1.16.1-osx-arm64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.16.1-osx-arm64-full.nupkg"
-        size: 88489414
-        digest: "sha256:7fe6950d850d4fdfc7a738e2b574914519ba3a3d20d6740c4b35333352be09ba"
-      "731037641":
-        name: "dev.twirchat.app-1.16.1-osx-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.16.1-osx-x64-full.nupkg"
-        size: 91326279
-        digest: "sha256:af3d6784e8c465eb2453d8405c7b85e283372965dfa5baa9689e63c67cd44cff"
-      "731037652":
-        name: "dev.twirchat.app-1.16.1-win-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.16.1-win-x64-full.nupkg"
-        size: 101264224
-        digest: "sha256:d5a51fa6097ba79aec315d0c7fcae0c3154da7da9d16273990f70a51031e96ba"
-      "731037653":
-        name: "dev.twirchat.app-1.17.0-linux-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.17.0-linux-x64-delta.nupkg"
-        size: 10037314
-        digest: "sha256:fb3d91993820d0556f61f2705cf3449477bba26d8052dbb48da5b2cef75c2cac"
-      "731037786":
-        name: "dev.twirchat.app-1.17.0-linux-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.17.0-linux-x64-full.nupkg"
-        size: 107826100
-        digest: "sha256:d473fdc1c2f0b9e66f664e82b9891f58332cb66687a438b3c4a3fe2a99dc4e41"
-      "731038047":
-        name: "dev.twirchat.app-1.17.0-osx-arm64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.17.0-osx-arm64-delta.nupkg"
-        size: 653992
-        digest: "sha256:5d7b26ba51faf008a618230a67b57daa48cc36b0b026f73bb1db93e54c15fd36"
-      "731038067":
-        name: "dev.twirchat.app-1.17.0-osx-arm64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.17.0-osx-arm64-full.nupkg"
-        size: 88489466
-        digest: "sha256:846a3c6f5f64a242382e991d4aad2d41bf92be9ca2442f0c11cc70384d1a2cb5"
-      "731038098":
-        name: "dev.twirchat.app-1.17.0-osx-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.17.0-osx-x64-delta.nupkg"
-        size: 459344
-        digest: "sha256:d40813306db04e0faf2806bc144faa5624c3199dd113dae0e6cd5d1c959f3b0c"
-      "731038104":
-        name: "dev.twirchat.app-1.17.0-osx-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.17.0-osx-x64-full.nupkg"
-        size: 91328607
-        digest: "sha256:b9c03329a4603b028bdfcb761befbd9ad2b5d16fa12603618be31129161c9d0a"
-      "731038121":
-        name: "dev.twirchat.app-1.17.0-win-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.17.0-win-x64-delta.nupkg"
-        size: 451356
-        digest: "sha256:150595edbc73f70b79e8c8875bbcd996a43169922c719c556d076288c70a1342"
-      "731038124":
-        name: "dev.twirchat.app-1.17.0-win-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.17.0-win-x64-full.nupkg"
-        size: 101273270
-        digest: "sha256:0508375242470411cf3673b8df87959bbd311e8cc7d0901b1e9b0f3def3b14e1"
-      "731038140":
-        name: "dev.twirchat.app-linux-x64.AppImage"
-        url_suffix: "dev.twirchat.app-linux-x64.AppImage"
-        size: 108591608
-        media_type: "application/vnd.appimage"
-        digest: "sha256:70b2409a39cf2d6f08480361ef523952cbf8d14ff48c0f39726f3905e811a5af"
-      "731038160":
-        name: "dev.twirchat.app-osx-arm64-Portable.zip"
-        url_suffix: "dev.twirchat.app-osx-arm64-Portable.zip"
-        size: 85936469
-        media_type: "zip"
-        digest: "sha256:e546fc1470c47742aecc5c6d6221fa953582a809526c76876535413a817c8ccf"
-      "731038360":
-        name: "dev.twirchat.app-osx-arm64-Setup.pkg"
-        url_suffix: "dev.twirchat.app-osx-arm64-Setup.pkg"
-        size: 85866698
-        media_type: "application/x-xar"
-        digest: "sha256:866fa5ad56b33f52b664b82810c9cb3a4a00bf05e5f4a64d04a4cb7a210ead32"
-      "731038407":
-        name: "dev.twirchat.app-osx-x64-Portable.zip"
-        url_suffix: "dev.twirchat.app-osx-x64-Portable.zip"
-        size: 89561718
-        media_type: "zip"
-        digest: "sha256:b0384863c7a5287e3457d433c89f361cb91ef78bf2d3215f821973ac2fc7b492"
-      "731038431":
-        name: "dev.twirchat.app-osx-x64-Setup.pkg"
-        url_suffix: "dev.twirchat.app-osx-x64-Setup.pkg"
-        size: 89483327
-        media_type: "application/x-xar"
-        digest: "sha256:c2c0d5a18f20c60d95ded0ce18becb244dc6cffd7ab11c4e660fb22d23cf510d"
-      "731038477":
-        name: "dev.twirchat.app-win-x64-Portable.zip"
-        url_suffix: "dev.twirchat.app-win-x64-Portable.zip"
-        size: 101268551
-        media_type: "zip"
-        digest: "sha256:73bc9ce44d765bea073e0b07c59daddeea32ed02523496029e0c54e7bc6d77d3"
-      "731038504":
-        name: "dev.twirchat.app-win-x64-Setup.exe"
-        url_suffix: "dev.twirchat.app-win-x64-Setup.exe"
-        size: 109976246
-        digest: "sha256:ce8490ffd48e57a5769eed580386430ce01f5f8e4dbfc906d8a3def6020aca3f"
-      "731038506":
-        name: "releases.linux-x64.json"
-        url_suffix: "releases.linux-x64.json"
-        size: 1252
-        media_type: "application/json"
-        digest: "sha256:9e686ab3efafeda086f83304d6fe72af07291c248da81b8b0ea56788c539daba"
-      "731038532":
-        name: "releases.osx-arm64.json"
-        url_suffix: "releases.osx-arm64.json"
-        size: 1248
-        media_type: "application/json"
-        digest: "sha256:99eeef36a4962ff0d6c0f1f89f1d7fd3c87dff2d4fc14c0e11350cbd834d9f6f"
-      "731038590":
-        name: "releases.osx-x64.json"
-        url_suffix: "releases.osx-x64.json"
-        size: 1242
-        media_type: "application/json"
-        digest: "sha256:01d2a30ca862620714cf1c64f6954389880a8c5e3d549b66f21d6f9cbe5dd777"
-      "731038612":
-        name: "releases.win-x64.json"
-        url_suffix: "releases.win-x64.json"
-        size: 1244
-        media_type: "application/json"
-        digest: "sha256:4b519d5944a1905db9fda7a9ae94cfa26d0571b0f276c6599a977d77ec6ce547"
-      "731038638":
-        name: "signature-linux-x64.txt"
-        url_suffix: "signature-linux-x64.txt"
-        size: 54
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:3c5febf6e31d6aa9a8d17c329344dc5be3462e37fdf2596b26bf540ce2958394"
-      "731038640":
-        name: "signature-osx-arm64.txt"
-        url_suffix: "signature-osx-arm64.txt"
-        size: 54
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:648a57cc55c6e1c04302ae32a8d749556509c70ac5a1b39d4732b91a4f48a587"
-      "731038644":
-        name: "signature-osx-x64.txt"
-        url_suffix: "signature-osx-x64.txt"
-        size: 52
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:76baba28cf56d1285800cdc9864512285f6fe8a9f40ef47b80ff78a1aabc77a8"
-      "731038651":
-        name: "signature-win-x64.txt"
-        url_suffix: "signature-win-x64.txt"
-        size: 52
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:ee6bdfb190dbb206031f7b5efbaa75d945e0c909bd4e6b85297001e476627bf3"
-  "440297955":
-    tag: "v1.18.0"
-    title: "TwirChat v1.18.0"
-    url: "https://github.com/Satont/twirchat/releases/tag/v1.18.0"
-    created_at: "2026-11-10T11:33:46Z"
-    published_at: "2026-11-10T11:52:37Z"
-    updated_at: "2026-11-10T11:52:37Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/Satont/twirchat/zipball/v1.18.0"
-    source_tar_url: "https://api.github.com/repos/Satont/twirchat/tarball/v1.18.0"
-    download_base: "https://github.com/Satont/twirchat/releases/download/v1.18.0/"
-    assets:
-      "731258965":
-        name: "RELEASES-win-x64"
-        url_suffix: "RELEASES-win-x64"
-        size: 190
-        digest: "sha256:f9d4360227a87af29b37edcd597c3df3323642ede47a2699522969dd2f0c7f2b"
-      "731258966":
-        name: "RELEASES-osx-x64"
-        url_suffix: "RELEASES-osx-x64"
-        size: 188
-        digest: "sha256:51a1e40807017365d2cc07e81d1f25b0eb3526767ea18bdbd1a3b2fbcf5600c0"
-      "731258967":
-        name: "RELEASES-linux-x64"
-        url_suffix: "RELEASES-linux-x64"
-        size: 194
-        digest: "sha256:8e8006a546c51ed2dfcfcac115c2a228afa2346f3046d7b7d285e1df8bfdce63"
-      "731258970":
-        name: "SHA256SUMS"
-        url_suffix: "SHA256SUMS"
-        size: 3441
-        digest: "sha256:642685d253f2dae703462ec27559c99ee4385c804d9f41321acfacf8bfef447b"
-      "731258972":
-        name: "RELEASES-osx-arm64"
-        url_suffix: "RELEASES-osx-arm64"
-        size: 192
-        digest: "sha256:d2fae402721c3566ce43b6731305c0909e03ac2076119eb656a702348b2ecec7"
-      "731259061":
-        name: "assets.linux-x64.json"
-        url_suffix: "assets.linux-x64.json"
-        size: 244
-        media_type: "application/json"
-        digest: "sha256:ab73ba25fecfd35538d87c66fe835e6f4ab1f5af7485656078921b9f379d6703"
-      "731259066":
-        name: "dev.twirchat.app-1.17.0-linux-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.17.0-linux-x64-full.nupkg"
-        size: 107826100
-        digest: "sha256:d473fdc1c2f0b9e66f664e82b9891f58332cb66687a438b3c4a3fe2a99dc4e41"
-      "731259067":
-        name: "assets.osx-arm64.json"
-        url_suffix: "assets.osx-arm64.json"
-        size: 327
-        media_type: "application/json"
-        digest: "sha256:bdf76fd11b6cf37744d10c7847ec64b4615b57b6e93410e38e4cad82a76e3e78"
-      "731259068":
-        name: "assets.osx-x64.json"
-        url_suffix: "assets.osx-x64.json"
-        size: 319
-        media_type: "application/json"
-        digest: "sha256:8b09a90673517e656f0933f66ad6668969e7c0877a5bbc618ee7d72c32b3ea6c"
-      "731259071":
-        name: "assets.win-x64.json"
-        url_suffix: "assets.win-x64.json"
-        size: 319
-        media_type: "application/json"
-        digest: "sha256:2056b029958c4abda5559a7c6db8d8f1f7292a47e2baea2d4e0bd1d9e058289c"
-      "731259094":
-        name: "dev.twirchat.app-1.17.0-osx-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.17.0-osx-x64-full.nupkg"
-        size: 91328607
-        digest: "sha256:b9c03329a4603b028bdfcb761befbd9ad2b5d16fa12603618be31129161c9d0a"
-      "731259095":
-        name: "dev.twirchat.app-1.17.0-win-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.17.0-win-x64-full.nupkg"
-        size: 101273270
-        digest: "sha256:0508375242470411cf3673b8df87959bbd311e8cc7d0901b1e9b0f3def3b14e1"
-      "731259096":
-        name: "dev.twirchat.app-1.17.0-osx-arm64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.17.0-osx-arm64-full.nupkg"
-        size: 88489466
-        digest: "sha256:846a3c6f5f64a242382e991d4aad2d41bf92be9ca2442f0c11cc70384d1a2cb5"
-      "731259114":
-        name: "dev.twirchat.app-1.18.0-linux-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.18.0-linux-x64-delta.nupkg"
-        size: 10055729
-        digest: "sha256:34194adf04b989d3efcfadb9ecd4b3b9ceeacaeafdbe45f491f913735d1d2016"
-      "731259162":
-        name: "dev.twirchat.app-1.18.0-linux-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.18.0-linux-x64-full.nupkg"
-        size: 107839610
-        digest: "sha256:d34200560f26909336d6b93bc1c2f97b4fc324ceea939ca50f577d8cd1cf9fe9"
-      "731259236":
-        name: "dev.twirchat.app-1.18.0-osx-arm64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.18.0-osx-arm64-delta.nupkg"
-        size: 688221
-        digest: "sha256:66aaa38728a56e199edd0c47aee1ecc59d6496e43581be19dd3999a2fb68fab9"
-      "731259237":
-        name: "dev.twirchat.app-1.18.0-osx-arm64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.18.0-osx-arm64-full.nupkg"
-        size: 88496502
-        digest: "sha256:f430a168efd531839478be568464f17c656c40b488eebc9a12dc444dbdf4d824"
-      "731259267":
-        name: "dev.twirchat.app-1.18.0-osx-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.18.0-osx-x64-delta.nupkg"
-        size: 494389
-        digest: "sha256:1c0494cef51130987e57a0311b5f556418eaf99f687d36db51b1063af4c46ef8"
-      "731259270":
-        name: "dev.twirchat.app-1.18.0-osx-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.18.0-osx-x64-full.nupkg"
-        size: 91345914
-        digest: "sha256:32076a7f0ed5dde7c7553abac0c74a6e9e5d4378136acf04a557f1389bf5d113"
-      "731259294":
-        name: "dev.twirchat.app-1.18.0-win-x64-delta.nupkg"
-        url_suffix: "dev.twirchat.app-1.18.0-win-x64-delta.nupkg"
-        size: 484592
-        digest: "sha256:f442e8d018cb5900b72e954dcc2d2edc7e6b3a4ba599efb40f7629bcfcf97b34"
-      "731259305":
-        name: "dev.twirchat.app-1.18.0-win-x64-full.nupkg"
-        url_suffix: "dev.twirchat.app-1.18.0-win-x64-full.nupkg"
-        size: 101287307
-        digest: "sha256:bb0aa3f71eb6f29f154f2e7b333324969d2d9882292a2c16dd400378154e9ec7"
-      "731259316":
-        name: "dev.twirchat.app-linux-x64.AppImage"
-        url_suffix: "dev.twirchat.app-linux-x64.AppImage"
-        size: 108607992
-        media_type: "application/vnd.appimage"
-        digest: "sha256:6e4db1f9ee303fc5e0477b44e74edcba8ba191236d973373f64e0301caefd5e0"
-      "731259346":
-        name: "dev.twirchat.app-osx-arm64-Portable.zip"
-        url_suffix: "dev.twirchat.app-osx-arm64-Portable.zip"
-        size: 85944340
-        media_type: "zip"
-        digest: "sha256:ce35210b3eda16888f3af9b59be3b127fcc9ee01979daa11bfdba2cff8ea112b"
-      "731259445":
-        name: "dev.twirchat.app-osx-arm64-Setup.pkg"
-        url_suffix: "dev.twirchat.app-osx-arm64-Setup.pkg"
-        size: 85877392
-        media_type: "application/x-xar"
-        digest: "sha256:210ff8884b9103a58ee7fbf03fe9abfa80a6d79e8fea12fdf9f2e3d15a1e2fa7"
-      "731259455":
-        name: "dev.twirchat.app-osx-x64-Portable.zip"
-        url_suffix: "dev.twirchat.app-osx-x64-Portable.zip"
-        size: 89563940
-        media_type: "zip"
-        digest: "sha256:dfee2e2ec984d5b6056be4f52d3a08fffd2c51d33336f5c63ca53823920149f7"
-      "731259510":
-        name: "dev.twirchat.app-osx-x64-Setup.pkg"
-        url_suffix: "dev.twirchat.app-osx-x64-Setup.pkg"
-        size: 89497248
-        media_type: "application/x-xar"
-        digest: "sha256:8996f1739593f64d978e67564d2f79c2b09458382557d57680c568760ee8ceba"
-      "731259531":
-        name: "dev.twirchat.app-win-x64-Portable.zip"
-        url_suffix: "dev.twirchat.app-win-x64-Portable.zip"
-        size: 101282588
-        media_type: "zip"
-        digest: "sha256:06c3f5a09ac79ea3721ac4a23ab2a9a8a5ecb8d21e48f3e94b322261684ffbed"
-      "731259611":
-        name: "dev.twirchat.app-win-x64-Setup.exe"
-        url_suffix: "dev.twirchat.app-win-x64-Setup.exe"
-        size: 109990283
-        digest: "sha256:b51a9bcb7067088f9ca58524975d60887de7b7bad6abd7d2c5796b9f937dd2fe"
-      "731259624":
-        name: "releases.linux-x64.json"
-        url_suffix: "releases.linux-x64.json"
-        size: 1252
-        media_type: "application/json"
-        digest: "sha256:6e87fa703f3d5896d38ea9d9fac553c7b240eb995231240b0b66f3e15f548eb5"
-      "731259626":
-        name: "releases.osx-arm64.json"
-        url_suffix: "releases.osx-arm64.json"
-        size: 1248
-        media_type: "application/json"
-        digest: "sha256:8a29bee203f722dcd74cfaa251c75ba5fa8f01744f559a72e7941f247effc005"
-      "731259643":
-        name: "releases.osx-x64.json"
-        url_suffix: "releases.osx-x64.json"
-        size: 1242
-        media_type: "application/json"
-        digest: "sha256:8b0fc8d446d280c8dbc3a08eeda3c98e055467a8f73062279c530fdd00e91278"
-      "731259644":
-        name: "releases.win-x64.json"
-        url_suffix: "releases.win-x64.json"
-        size: 1244
-        media_type: "application/json"
-        digest: "sha256:61b5c6e784dac81a6aab946151f4323e065b229589897cf4b6142c0eb83b031f"
-      "731259693":
-        name: "signature-linux-x64.txt"
-        url_suffix: "signature-linux-x64.txt"
-        size: 54
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:a1c922981d885ba0ed4eed77ebaab1602d6637d72e01bb78f310ba93747bc337"
-      "731259694":
-        name: "signature-osx-arm64.txt"
-        url_suffix: "signature-osx-arm64.txt"
-        size: 54
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:88058254a96ae71e8ffb641f9f254c7a03446220d256ee21bce055ea260d9293"
-      "731259705":
-        name: "signature-osx-x64.txt"
-        url_suffix: "signature-osx-x64.txt"
-        size: 52
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:ce831652fe596cb4a35218da3054b92789a73b07374dff24edb3569054f94b36"
-      "731259710":
-        name: "signature-win-x64.txt"
-        url_suffix: "signature-win-x64.txt"
-        size: 52
-        media_type: "text/plain; charset=utf-8"
-        digest: "sha256:8b5db698c57cbe17b2801a775d60a82202d7ae196e95b153c7e2539b36a5ff14"
   "440335989":
     tag: "v1.18.1"
     title: "TwirChat v1.18.1"
@@ -6730,3 +4840,1893 @@ releases:
         size: 52
         media_type: "text/plain; charset=utf-8"
         digest: "sha256:6ddb990f5637d125f02e1b7b21ede9a2684bce1e8da6e9c2e1ee6e733ecb90bc"
+  "449561508":
+    tag: "v1.21.4"
+    title: "TwirChat v1.21.4"
+    url: "https://github.com/Satont/twirchat/releases/tag/v1.21.4"
+    created_at: "2026-11-18T05:20:35Z"
+    published_at: "2026-11-18T05:28:31Z"
+    updated_at: "2026-11-18T05:28:31Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/Satont/twirchat/zipball/v1.21.4"
+    source_tar_url: "https://api.github.com/repos/Satont/twirchat/tarball/v1.21.4"
+    download_base: "https://github.com/Satont/twirchat/releases/download/v1.21.4/"
+    assets:
+      "762051597":
+        name: "RELEASES-osx-arm64"
+        url_suffix: "RELEASES-osx-arm64"
+        size: 192
+        digest: "sha256:5fd41fbdcf54848df80b51094829c6da1b2d03b8949bf7d8eacafe8751deb279"
+      "762051598":
+        name: "SHA256SUMS"
+        url_suffix: "SHA256SUMS"
+        size: 3441
+        digest: "sha256:7cd4df84b09e2f4873460cc3aa64002bf0da248d96cfd76e7241ab595121d214"
+      "762051599":
+        name: "RELEASES-linux-x64"
+        url_suffix: "RELEASES-linux-x64"
+        size: 194
+        digest: "sha256:7fb0122633c8de5a67c5f0f9223dcb9c5010f0ba16a81a8cd232b52c01457a98"
+      "762051600":
+        name: "RELEASES-osx-x64"
+        url_suffix: "RELEASES-osx-x64"
+        size: 188
+        digest: "sha256:535846c2c20854d35bd39ffcf3bfb7d94c5627460c0fdd5643331033df19017f"
+      "762051601":
+        name: "RELEASES-win-x64"
+        url_suffix: "RELEASES-win-x64"
+        size: 190
+        digest: "sha256:ebbdc4807492c7f9ad41445b3e73f335daa9c9da03a6f7920ee055800c22c882"
+      "762051629":
+        name: "assets.osx-arm64.json"
+        url_suffix: "assets.osx-arm64.json"
+        size: 327
+        media_type: "application/json"
+        digest: "sha256:cb19d612e1047fea0011a42600287f69a2eaf7c78e863149d0e404a93b58432a"
+      "762051630":
+        name: "assets.linux-x64.json"
+        url_suffix: "assets.linux-x64.json"
+        size: 244
+        media_type: "application/json"
+        digest: "sha256:93275614955c359c9ba84a13ca8a14578ed69c36af6b161e2b470ced34cb6647"
+      "762051631":
+        name: "assets.win-x64.json"
+        url_suffix: "assets.win-x64.json"
+        size: 319
+        media_type: "application/json"
+        digest: "sha256:a4bde2b79659c130ed1454e92da6010105652638705e922defdc0f60e5088a04"
+      "762051632":
+        name: "assets.osx-x64.json"
+        url_suffix: "assets.osx-x64.json"
+        size: 319
+        media_type: "application/json"
+        digest: "sha256:68d967f87992925915c452eb8634a8a0b16788314684f20f587ac3d23ed2adf4"
+      "762051635":
+        name: "dev.twirchat.app-1.21.3-linux-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.3-linux-x64-full.nupkg"
+        size: 107839804
+        digest: "sha256:52dd9ecaffd3850278fd5fb88021dcbd9d07e788fa686dd966765ff8794169f4"
+      "762051654":
+        name: "dev.twirchat.app-1.21.3-osx-arm64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.3-osx-arm64-full.nupkg"
+        size: 88552055
+        digest: "sha256:a5482ec2b2dd44567203833de55e9d66315d1f1a3020b381db124ae626c3af0e"
+      "762051655":
+        name: "dev.twirchat.app-1.21.3-win-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.3-win-x64-full.nupkg"
+        size: 101335049
+        digest: "sha256:f7316b644b4ffa9a1c6b6eb5ec755ddfd8865cc9f32b60c8a53dddf671c00690"
+      "762051657":
+        name: "dev.twirchat.app-1.21.3-osx-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.3-osx-x64-full.nupkg"
+        size: 91390816
+        digest: "sha256:dd230f3a46336185e504e805d7cb7ca5e719616905ef40d5bb462aed43a9a9e5"
+      "762051660":
+        name: "dev.twirchat.app-1.21.4-linux-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.4-linux-x64-delta.nupkg"
+        size: 9822819
+        digest: "sha256:f5ae618e33fef146e8de970dba9d2f14eb24faa69d1d24613aef3e59fd0b06a6"
+      "762051725":
+        name: "dev.twirchat.app-1.21.4-linux-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.4-linux-x64-full.nupkg"
+        size: 107840457
+        digest: "sha256:3c552b8a50e40064f2be5d43abe75fa259c3690324148b3cf280d8ba0118c1d6"
+      "762051876":
+        name: "dev.twirchat.app-1.21.4-osx-arm64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.4-osx-arm64-delta.nupkg"
+        size: 387671
+        digest: "sha256:b8cee196e3cd0d53a8c20f1b8f1de096182c126a58749d62a8929bee8bff60f8"
+      "762051881":
+        name: "dev.twirchat.app-1.21.4-osx-arm64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.4-osx-arm64-full.nupkg"
+        size: 88551854
+        digest: "sha256:7fc689254ddb7934fcd798120fabca78d8538d2eee2c40b2e7dcfcd25be1cc50"
+      "762051889":
+        name: "dev.twirchat.app-1.21.4-osx-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.4-osx-x64-delta.nupkg"
+        size: 193888
+        digest: "sha256:cac33c196e9e5b615e26c18a7538d30513c3e9ed3958d2fc14ac0f1f35a45690"
+      "762051898":
+        name: "dev.twirchat.app-1.21.4-osx-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.4-osx-x64-full.nupkg"
+        size: 91390684
+        digest: "sha256:9a554099b97a794f197f566166427e8609552be15d289bd4e8dd92f819d0ef55"
+      "762051908":
+        name: "dev.twirchat.app-1.21.4-win-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.4-win-x64-delta.nupkg"
+        size: 183536
+        digest: "sha256:1de366ad907b98c26623c9918854bb17afe14b951045231730057021a6a5ff82"
+      "762051918":
+        name: "dev.twirchat.app-1.21.4-win-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.4-win-x64-full.nupkg"
+        size: 101335623
+        digest: "sha256:13ba92d2687680ad37cd15e90911c17175ad54da6d90bf5240f502858f369997"
+      "762051924":
+        name: "dev.twirchat.app-linux-x64.AppImage"
+        url_suffix: "dev.twirchat.app-linux-x64.AppImage"
+        size: 108607992
+        media_type: "application/vnd.appimage"
+        digest: "sha256:8c5719865368ba5087ac8ba900edb92734a8b51e7081fabcbf72c92158b919a3"
+      "762051939":
+        name: "dev.twirchat.app-osx-arm64-Portable.zip"
+        url_suffix: "dev.twirchat.app-osx-arm64-Portable.zip"
+        size: 85997592
+        media_type: "zip"
+        digest: "sha256:d11eb8220ab831f8301474d56d86ff32a0633fff178544e685d535b38ef4c9d2"
+      "762052034":
+        name: "dev.twirchat.app-osx-arm64-Setup.pkg"
+        url_suffix: "dev.twirchat.app-osx-arm64-Setup.pkg"
+        size: 85925138
+        media_type: "application/x-xar"
+        digest: "sha256:0a7f9641e52899334317c932827605161779beba4e726317a3831687dba58321"
+      "762052132":
+        name: "dev.twirchat.app-osx-x64-Portable.zip"
+        url_suffix: "dev.twirchat.app-osx-x64-Portable.zip"
+        size: 89619053
+        media_type: "zip"
+        digest: "sha256:3124392f6e7809a7be9e1fe4534f69bc048cfabcd3fc0e63bd6414df706bba28"
+      "762052175":
+        name: "dev.twirchat.app-osx-x64-Setup.pkg"
+        url_suffix: "dev.twirchat.app-osx-x64-Setup.pkg"
+        size: 89543676
+        media_type: "application/x-xar"
+        digest: "sha256:40183a612fe4e64601e90f8b19008c76654ed78987c8ffed7570b6b60fd52eef"
+      "762052189":
+        name: "dev.twirchat.app-win-x64-Portable.zip"
+        url_suffix: "dev.twirchat.app-win-x64-Portable.zip"
+        size: 101330904
+        media_type: "zip"
+        digest: "sha256:fb729ecd8aeddf1c83f78c62e1df3589f27c632a48093b437c9d2d26788be6b9"
+      "762052221":
+        name: "dev.twirchat.app-win-x64-Setup.exe"
+        url_suffix: "dev.twirchat.app-win-x64-Setup.exe"
+        size: 110038599
+        digest: "sha256:43adcd23770ab69207f00f7c9001c67bda2e2405d3182aad46eae8ac07064f68"
+      "762052223":
+        name: "releases.linux-x64.json"
+        url_suffix: "releases.linux-x64.json"
+        size: 1251
+        media_type: "application/json"
+        digest: "sha256:dd653bf56aa2b0958b87c2eafe1479748d5b6212d1fdd45c6d04c57321bcc283"
+      "762052252":
+        name: "releases.osx-arm64.json"
+        url_suffix: "releases.osx-arm64.json"
+        size: 1248
+        media_type: "application/json"
+        digest: "sha256:33a702eb4f9894e763b0ca80e57933f0bfe2b00e164193d56629525cef537b83"
+      "762052279":
+        name: "releases.osx-x64.json"
+        url_suffix: "releases.osx-x64.json"
+        size: 1242
+        media_type: "application/json"
+        digest: "sha256:247dc2da086b1b786d9b95b2e296c90752d562b8867cd9916db476ac6b0ee9d1"
+      "762052307":
+        name: "releases.win-x64.json"
+        url_suffix: "releases.win-x64.json"
+        size: 1244
+        media_type: "application/json"
+        digest: "sha256:7e2c5b3f6ce26f0782ab840cb96c7e341343f6819c4508991e6315101819f7a6"
+      "762052310":
+        name: "signature-linux-x64.txt"
+        url_suffix: "signature-linux-x64.txt"
+        size: 54
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:34adbfcb31a3333877bfb15d17482e2b26f0cb96d1e52bc3f1f1bc018caee917"
+      "762052329":
+        name: "signature-osx-arm64.txt"
+        url_suffix: "signature-osx-arm64.txt"
+        size: 54
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:ebbc0b7af05776e8483305757fe0da2ca00a5f54cccc60c0e4c35705c4ae3b3a"
+      "762052340":
+        name: "signature-osx-x64.txt"
+        url_suffix: "signature-osx-x64.txt"
+        size: 52
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8bb0c3f233aba6aae7d12038b726279b27e5d0a4d2146e25dfdb5dc19b0c52e4"
+      "762052355":
+        name: "signature-win-x64.txt"
+        url_suffix: "signature-win-x64.txt"
+        size: 52
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:36a19465f91b58a9ac15afcfa8e53764a778d1d47de046d239784e2b106bcd08"
+  "449657295":
+    tag: "v1.21.5"
+    title: "TwirChat v1.21.5"
+    url: "https://github.com/Satont/twirchat/releases/tag/v1.21.5"
+    created_at: "2026-11-18T07:30:03Z"
+    published_at: "2026-11-18T07:38:09Z"
+    updated_at: "2026-11-18T07:38:09Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/Satont/twirchat/zipball/v1.21.5"
+    source_tar_url: "https://api.github.com/repos/Satont/twirchat/tarball/v1.21.5"
+    download_base: "https://github.com/Satont/twirchat/releases/download/v1.21.5/"
+    assets:
+      "762415011":
+        name: "RELEASES-linux-x64"
+        url_suffix: "RELEASES-linux-x64"
+        size: 194
+        digest: "sha256:26340c72bbdabe093df75b80103cc7077c6c9d5f0eed80a1a43fa6c48609fff1"
+      "762415012":
+        name: "RELEASES-win-x64"
+        url_suffix: "RELEASES-win-x64"
+        size: 190
+        digest: "sha256:278245079f7eef68837a52681a2873530fd45731b092fd84bd4c35cfcbe034a3"
+      "762415013":
+        name: "SHA256SUMS"
+        url_suffix: "SHA256SUMS"
+        size: 3441
+        digest: "sha256:d099b0135690604a551cf72df739bef60665c49fe996ffee15b4dabfa07e20e2"
+      "762415016":
+        name: "RELEASES-osx-x64"
+        url_suffix: "RELEASES-osx-x64"
+        size: 188
+        digest: "sha256:108900f5696e87d3d9522cd23f0e8a86caa191941afeaba4374497f91ca600d8"
+      "762415022":
+        name: "RELEASES-osx-arm64"
+        url_suffix: "RELEASES-osx-arm64"
+        size: 192
+        digest: "sha256:8babfbb82c780bbcd42a373bb7ea926fa80c367697f95cac4fe5e040d2820d4b"
+      "762415045":
+        name: "assets.linux-x64.json"
+        url_suffix: "assets.linux-x64.json"
+        size: 244
+        media_type: "application/json"
+        digest: "sha256:881dbbd910f5466a570ffb287f11fde6ac49f605b5b3b526dec7f6fd989a4c34"
+      "762415046":
+        name: "assets.osx-x64.json"
+        url_suffix: "assets.osx-x64.json"
+        size: 319
+        media_type: "application/json"
+        digest: "sha256:2b91736a0fb8f21ea17d7b5c75ca274c08a8fe0753773fda8d9a14e741f46b94"
+      "762415048":
+        name: "assets.osx-arm64.json"
+        url_suffix: "assets.osx-arm64.json"
+        size: 327
+        media_type: "application/json"
+        digest: "sha256:201082fe935c7e213fd8df98e5b218f160ecceb04b5f10016fff91320163e025"
+      "762415052":
+        name: "assets.win-x64.json"
+        url_suffix: "assets.win-x64.json"
+        size: 319
+        media_type: "application/json"
+        digest: "sha256:d6882f5910d03657e742cfe9ebfc10f1ef820514756d363b24feb54bb1e54af7"
+      "762415055":
+        name: "dev.twirchat.app-1.21.4-linux-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.4-linux-x64-full.nupkg"
+        size: 107840457
+        digest: "sha256:3c552b8a50e40064f2be5d43abe75fa259c3690324148b3cf280d8ba0118c1d6"
+      "762415083":
+        name: "dev.twirchat.app-1.21.4-osx-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.4-osx-x64-full.nupkg"
+        size: 91390684
+        digest: "sha256:9a554099b97a794f197f566166427e8609552be15d289bd4e8dd92f819d0ef55"
+      "762415084":
+        name: "dev.twirchat.app-1.21.4-win-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.4-win-x64-full.nupkg"
+        size: 101335623
+        digest: "sha256:13ba92d2687680ad37cd15e90911c17175ad54da6d90bf5240f502858f369997"
+      "762415088":
+        name: "dev.twirchat.app-1.21.5-linux-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.5-linux-x64-delta.nupkg"
+        size: 10133705
+        digest: "sha256:dae8addbc3064bb318ebe815291a1b46d9e351a4cf444e06a0416e335bee0dcd"
+      "762415089":
+        name: "dev.twirchat.app-1.21.4-osx-arm64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.4-osx-arm64-full.nupkg"
+        size: 88551854
+        digest: "sha256:7fc689254ddb7934fcd798120fabca78d8538d2eee2c40b2e7dcfcd25be1cc50"
+      "762415147":
+        name: "dev.twirchat.app-1.21.5-linux-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.5-linux-x64-full.nupkg"
+        size: 107855657
+        digest: "sha256:7efb6d853f8856deada650c95bf1fbad8cd6d0c23758caad49323eccb008a6ab"
+      "762415316":
+        name: "dev.twirchat.app-1.21.5-osx-arm64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.5-osx-arm64-delta.nupkg"
+        size: 568696
+        digest: "sha256:15d436b5a0d7f78433234dbfd2de04bbf7e9aecd3c1215ca73a6d3545c5c333a"
+      "762415341":
+        name: "dev.twirchat.app-1.21.5-osx-arm64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.5-osx-arm64-full.nupkg"
+        size: 88552898
+        digest: "sha256:a750aff9ec6be8f4423a1fd06b1e167bd305f4a5e4019b2dcf789e3270839379"
+      "762415343":
+        name: "dev.twirchat.app-1.21.5-osx-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.5-osx-x64-delta.nupkg"
+        size: 371659
+        digest: "sha256:f276114985e994334f75be1aa8a4489ab80693462bfb3a2765931edb96312968"
+      "762415348":
+        name: "dev.twirchat.app-1.21.5-osx-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.5-osx-x64-full.nupkg"
+        size: 91392989
+        digest: "sha256:61a1a722b411c6f8273fc388a43cacacbd7ae9d4920ffb02b2c502e15bd8f45b"
+      "762415369":
+        name: "dev.twirchat.app-1.21.5-win-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.5-win-x64-delta.nupkg"
+        size: 363278
+        digest: "sha256:04737ee6f2d3e4e1d4abaf7d934f6d96bb07080b7e57bc653d340ad672dcd568"
+      "762415373":
+        name: "dev.twirchat.app-1.21.5-win-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.5-win-x64-full.nupkg"
+        size: 101340138
+        digest: "sha256:324f3748748121b3db416e6178e0cbabad12dcea9ef24a45b4dec28698e93bf3"
+      "762415401":
+        name: "dev.twirchat.app-linux-x64.AppImage"
+        url_suffix: "dev.twirchat.app-linux-x64.AppImage"
+        size: 108620280
+        media_type: "application/vnd.appimage"
+        digest: "sha256:1b11db57ef179d8bcaaf183b5a5061b4a0173c1c4a90e7c3014b672e928ad03a"
+      "762415471":
+        name: "dev.twirchat.app-osx-arm64-Portable.zip"
+        url_suffix: "dev.twirchat.app-osx-arm64-Portable.zip"
+        size: 85999046
+        media_type: "zip"
+        digest: "sha256:ef20fffe38cdda9f54c2d68ab239f99c219b1d948098f40caa99590380538700"
+      "762415563":
+        name: "dev.twirchat.app-osx-arm64-Setup.pkg"
+        url_suffix: "dev.twirchat.app-osx-arm64-Setup.pkg"
+        size: 85929375
+        media_type: "application/x-xar"
+        digest: "sha256:9c4fd726d1d6e8d4da73dd23f6bbf1eb3ddae762e0236ff4680591bfe5aab50b"
+      "762415581":
+        name: "dev.twirchat.app-osx-x64-Portable.zip"
+        url_suffix: "dev.twirchat.app-osx-x64-Portable.zip"
+        size: 89624118
+        media_type: "zip"
+        digest: "sha256:b634d770754633c66ff2bb6e6e95992f88d2f930550d002b6d6177676e66d4d6"
+      "762415594":
+        name: "dev.twirchat.app-osx-x64-Setup.pkg"
+        url_suffix: "dev.twirchat.app-osx-x64-Setup.pkg"
+        size: 89546717
+        media_type: "application/x-xar"
+        digest: "sha256:9444b0d7ba9323a4f5227c60f991f84abe5ff83737fad0010493b176c9071fb7"
+      "762415694":
+        name: "dev.twirchat.app-win-x64-Portable.zip"
+        url_suffix: "dev.twirchat.app-win-x64-Portable.zip"
+        size: 101335419
+        media_type: "zip"
+        digest: "sha256:61012c0874a0237b61dd58a2bb37b58e38dbac8a20b664263b4ec38863217c57"
+      "762415715":
+        name: "dev.twirchat.app-win-x64-Setup.exe"
+        url_suffix: "dev.twirchat.app-win-x64-Setup.exe"
+        size: 110043114
+        digest: "sha256:bd14356d00215814055a06c7907aeff2b2d6911d42da4944f390bb4e837c8916"
+      "762415763":
+        name: "releases.linux-x64.json"
+        url_suffix: "releases.linux-x64.json"
+        size: 1252
+        media_type: "application/json"
+        digest: "sha256:db54847407962847570fcf6b07a18bd0cc56c44bb468824cd1aa94dc67de7dc9"
+      "762415798":
+        name: "releases.osx-arm64.json"
+        url_suffix: "releases.osx-arm64.json"
+        size: 1248
+        media_type: "application/json"
+        digest: "sha256:31df30637e9deba93d2f7f22c48f4b79d1db0aecda980d097bdae7a29080f2ab"
+      "762415807":
+        name: "releases.osx-x64.json"
+        url_suffix: "releases.osx-x64.json"
+        size: 1242
+        media_type: "application/json"
+        digest: "sha256:9a3db423b7ce03687cbdfc0527da62f7c6778b9dd3b2397962861f25d8aff041"
+      "762415834":
+        name: "releases.win-x64.json"
+        url_suffix: "releases.win-x64.json"
+        size: 1244
+        media_type: "application/json"
+        digest: "sha256:5309f30c056374b35df6b4a05d62de5746737077bcbaa2e6157b0fd706cfebc5"
+      "762415838":
+        name: "signature-linux-x64.txt"
+        url_suffix: "signature-linux-x64.txt"
+        size: 54
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:a044bc4e1ffdc4c0aadb92dc7426dff3ab645201990c1098456b6c8d1fe0ec37"
+      "762415860":
+        name: "signature-osx-arm64.txt"
+        url_suffix: "signature-osx-arm64.txt"
+        size: 54
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:18b6eefbb1dc0019ae0600e173429d6bda6977c6ec36846360f5c33f0b564dd2"
+      "762415867":
+        name: "signature-osx-x64.txt"
+        url_suffix: "signature-osx-x64.txt"
+        size: 52
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:99e93e64d13d175c16ae51cb213413991a97609592c57a8f65f516985991138b"
+      "762415868":
+        name: "signature-win-x64.txt"
+        url_suffix: "signature-win-x64.txt"
+        size: 52
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:0479755321cd2f29b8eb6207e8d2c6642bd59e629d9a855855bc3d4561efe13f"
+  "449678137":
+    tag: "v1.21.6"
+    title: "TwirChat v1.21.6"
+    url: "https://github.com/Satont/twirchat/releases/tag/v1.21.6"
+    created_at: "2026-11-18T07:56:12Z"
+    published_at: "2026-11-18T08:03:29Z"
+    updated_at: "2026-11-18T08:03:29Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/Satont/twirchat/zipball/v1.21.6"
+    source_tar_url: "https://api.github.com/repos/Satont/twirchat/tarball/v1.21.6"
+    download_base: "https://github.com/Satont/twirchat/releases/download/v1.21.6/"
+    assets:
+      "762494750":
+        name: "RELEASES-win-x64"
+        url_suffix: "RELEASES-win-x64"
+        size: 190
+        digest: "sha256:4ba8be471a6e75fc7f6d67b81323e9c923f8d0bffbf7abee8956266260fa87c3"
+      "762494754":
+        name: "SHA256SUMS"
+        url_suffix: "SHA256SUMS"
+        size: 3441
+        digest: "sha256:aa6caa5cf933466349c9b7a989e9c027b71124c1d424431a80605a42ecf422b7"
+      "762494756":
+        name: "RELEASES-linux-x64"
+        url_suffix: "RELEASES-linux-x64"
+        size: 194
+        digest: "sha256:8735d5d5af65ee5f84fc70985970f4a2e0b1e3a987b8e5b8be7152ab8d7744a1"
+      "762494757":
+        name: "RELEASES-osx-x64"
+        url_suffix: "RELEASES-osx-x64"
+        size: 188
+        digest: "sha256:0ea0d0eb4a727f0bdd119a789e0c11d0a566728cac68fda4e7afe268a87c2930"
+      "762494758":
+        name: "RELEASES-osx-arm64"
+        url_suffix: "RELEASES-osx-arm64"
+        size: 192
+        digest: "sha256:9d22619b985e6b887377e2d056369c6c51b7039eb2af11dbc3246e39c98291ca"
+      "762494785":
+        name: "assets.linux-x64.json"
+        url_suffix: "assets.linux-x64.json"
+        size: 244
+        media_type: "application/json"
+        digest: "sha256:40029cc564a56ea089d192fb4ff35b694e6c8cf051aac821a349db137416a8fe"
+      "762494792":
+        name: "assets.osx-arm64.json"
+        url_suffix: "assets.osx-arm64.json"
+        size: 327
+        media_type: "application/json"
+        digest: "sha256:dc706aeb4390af614e527af0ac3559d4ea8593f036fe12360f2eec3a9e82a2b7"
+      "762494796":
+        name: "assets.win-x64.json"
+        url_suffix: "assets.win-x64.json"
+        size: 319
+        media_type: "application/json"
+        digest: "sha256:5b65b8ea2ac91091d520656369e74bf5d2f7db174f0c025b4fa61a9894730d94"
+      "762494797":
+        name: "assets.osx-x64.json"
+        url_suffix: "assets.osx-x64.json"
+        size: 319
+        media_type: "application/json"
+        digest: "sha256:37d2b543bf9c84723e71286852012849c2d03e60ca075dd0c6b3dba9e407e1d5"
+      "762494800":
+        name: "dev.twirchat.app-1.21.5-linux-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.5-linux-x64-full.nupkg"
+        size: 107855657
+        digest: "sha256:7efb6d853f8856deada650c95bf1fbad8cd6d0c23758caad49323eccb008a6ab"
+      "762494840":
+        name: "dev.twirchat.app-1.21.5-osx-arm64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.5-osx-arm64-full.nupkg"
+        size: 88552898
+        digest: "sha256:a750aff9ec6be8f4423a1fd06b1e167bd305f4a5e4019b2dcf789e3270839379"
+      "762494841":
+        name: "dev.twirchat.app-1.21.5-win-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.5-win-x64-full.nupkg"
+        size: 101340138
+        digest: "sha256:324f3748748121b3db416e6178e0cbabad12dcea9ef24a45b4dec28698e93bf3"
+      "762494842":
+        name: "dev.twirchat.app-1.21.6-linux-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.6-linux-x64-delta.nupkg"
+        size: 9972679
+        digest: "sha256:f66d005649714ce40d9c7f1570b30abce9a4906c06840cb6b22608e9e2d31981"
+      "762494843":
+        name: "dev.twirchat.app-1.21.5-osx-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.5-osx-x64-full.nupkg"
+        size: 91392989
+        digest: "sha256:61a1a722b411c6f8273fc388a43cacacbd7ae9d4920ffb02b2c502e15bd8f45b"
+      "762494940":
+        name: "dev.twirchat.app-1.21.6-linux-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.6-linux-x64-full.nupkg"
+        size: 107856305
+        digest: "sha256:f33df63b08fa3881f6b83687d0d815c9b7cb168fe47cee993f6a6fe0244b704d"
+      "762495103":
+        name: "dev.twirchat.app-1.21.6-osx-arm64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.6-osx-arm64-delta.nupkg"
+        size: 352291
+        digest: "sha256:8e63997f2895bc3997f5d0b0aca3af7ba29ebd3eb37e72b96cfed1d5ee3fa3b4"
+      "762495107":
+        name: "dev.twirchat.app-1.21.6-osx-arm64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.6-osx-arm64-full.nupkg"
+        size: 88553093
+        digest: "sha256:41bfff0a2038bfef887c2af2501522477078cbacf22274f1dc81038a156e7ca0"
+      "762495111":
+        name: "dev.twirchat.app-1.21.6-osx-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.6-osx-x64-delta.nupkg"
+        size: 156911
+        digest: "sha256:39d0274c2fe7cbf2c8a97127a1942ac53cae5d3992724819466d181aae4e75c3"
+      "762495139":
+        name: "dev.twirchat.app-1.21.6-osx-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.6-osx-x64-full.nupkg"
+        size: 91394586
+        digest: "sha256:82e9156e027004be6d48275f44357990dbdeac2b95e5962a8a3612ca2ae0bf37"
+      "762495142":
+        name: "dev.twirchat.app-1.21.6-win-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.6-win-x64-delta.nupkg"
+        size: 147592
+        digest: "sha256:f23b9fee846a79357b935e9e7ee634f74945ce62f348e8edce799c93005f7898"
+      "762495148":
+        name: "dev.twirchat.app-1.21.6-win-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.6-win-x64-full.nupkg"
+        size: 101343307
+        digest: "sha256:1329d01a9cc290266214ef37139aa7c0532a85aebcc7987ab1c917cad92a8ff4"
+      "762495175":
+        name: "dev.twirchat.app-linux-x64.AppImage"
+        url_suffix: "dev.twirchat.app-linux-x64.AppImage"
+        size: 108624376
+        media_type: "application/vnd.appimage"
+        digest: "sha256:bacc3afcebbfc59fa0f0139007981b0080e5fa5b8cee9dc02b929c6abb47dfdf"
+      "762495182":
+        name: "dev.twirchat.app-osx-arm64-Portable.zip"
+        url_suffix: "dev.twirchat.app-osx-arm64-Portable.zip"
+        size: 85999609
+        media_type: "zip"
+        digest: "sha256:c66a914b0a74c40fe46e7d6021c9a41708b70fd83402b981b6d0a071f07c8fbc"
+      "762495599":
+        name: "dev.twirchat.app-osx-arm64-Setup.pkg"
+        url_suffix: "dev.twirchat.app-osx-arm64-Setup.pkg"
+        size: 85930725
+        media_type: "application/x-xar"
+        digest: "sha256:f60d1dfff678c2b1231a9c9f3e180d6ae9811e21b74fe40a17ef63749f3a2bec"
+      "762495627":
+        name: "dev.twirchat.app-osx-x64-Portable.zip"
+        url_suffix: "dev.twirchat.app-osx-x64-Portable.zip"
+        size: 89626900
+        media_type: "zip"
+        digest: "sha256:286bb6239698dcc1b3c3228b80c4cfc7957f54621c5402fc9d4928fb84cb4af8"
+      "762495661":
+        name: "dev.twirchat.app-osx-x64-Setup.pkg"
+        url_suffix: "dev.twirchat.app-osx-x64-Setup.pkg"
+        size: 89552026
+        media_type: "application/x-xar"
+        digest: "sha256:9fd89fdb25fb29ded14a5335b8ef203f406256881e20d35909c4963afb05e8a2"
+      "762495721":
+        name: "dev.twirchat.app-win-x64-Portable.zip"
+        url_suffix: "dev.twirchat.app-win-x64-Portable.zip"
+        size: 101338588
+        media_type: "zip"
+        digest: "sha256:b398daab482a6fcd12e97b12dd3325d666e582d179ae596e3ffa4898711979ce"
+      "762495743":
+        name: "dev.twirchat.app-win-x64-Setup.exe"
+        url_suffix: "dev.twirchat.app-win-x64-Setup.exe"
+        size: 110046283
+        digest: "sha256:fbd79871435f7868b16118cbadc09b8d4b83df2982bc1a31315dec52a6487660"
+      "762495911":
+        name: "releases.linux-x64.json"
+        url_suffix: "releases.linux-x64.json"
+        size: 1251
+        media_type: "application/json"
+        digest: "sha256:3e7c97b82263f0dc0ba41f213be90149bf329aaefaefe5234cce554283ec4ec4"
+      "762495928":
+        name: "releases.osx-arm64.json"
+        url_suffix: "releases.osx-arm64.json"
+        size: 1248
+        media_type: "application/json"
+        digest: "sha256:d07c4880d872f4ecdd2678f4f50fb956acabd7d292558ee065de31abeae66b83"
+      "762495944":
+        name: "releases.osx-x64.json"
+        url_suffix: "releases.osx-x64.json"
+        size: 1242
+        media_type: "application/json"
+        digest: "sha256:83ff2f93d109fbc20599b09c6198b540f67c6806819fde064da58a396fa7f88c"
+      "762495946":
+        name: "releases.win-x64.json"
+        url_suffix: "releases.win-x64.json"
+        size: 1244
+        media_type: "application/json"
+        digest: "sha256:9e83b41eada89db8f7db156720411202885b99e6b3e5af86ff12c1750524401b"
+      "762495957":
+        name: "signature-linux-x64.txt"
+        url_suffix: "signature-linux-x64.txt"
+        size: 54
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:f49af88fef53a0c933a8f59d420add06765508c63ff3f134b4956bcca838cdaf"
+      "762495969":
+        name: "signature-osx-arm64.txt"
+        url_suffix: "signature-osx-arm64.txt"
+        size: 54
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:715efcaabf261b427dab1417d7b74bf323ef6223f4313ee2d8c076dde853bd4e"
+      "762495971":
+        name: "signature-osx-x64.txt"
+        url_suffix: "signature-osx-x64.txt"
+        size: 52
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:740450b7e093a55f26fe7fa175e0a994aaf68ec6d5594a9e7a96efdf1f70513e"
+      "762495980":
+        name: "signature-win-x64.txt"
+        url_suffix: "signature-win-x64.txt"
+        size: 52
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:1fe61651fe13f0b7f91092cbe1b626628ad4340c71ead4de38e69801b527a3ad"
+  "449786209":
+    tag: "v1.21.7"
+    title: "TwirChat v1.21.7"
+    url: "https://github.com/Satont/twirchat/releases/tag/v1.21.7"
+    created_at: "2026-11-18T09:43:48Z"
+    published_at: "2026-11-18T09:53:46Z"
+    updated_at: "2026-11-18T09:53:46Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/Satont/twirchat/zipball/v1.21.7"
+    source_tar_url: "https://api.github.com/repos/Satont/twirchat/tarball/v1.21.7"
+    download_base: "https://github.com/Satont/twirchat/releases/download/v1.21.7/"
+    assets:
+      "762833109":
+        name: "RELEASES-osx-arm64"
+        url_suffix: "RELEASES-osx-arm64"
+        size: 192
+        digest: "sha256:d962373fb33b1759c4805b828bf9992633d4975b548aa98211d0a036325b4ac4"
+      "762833111":
+        name: "SHA256SUMS"
+        url_suffix: "SHA256SUMS"
+        size: 3441
+        digest: "sha256:660f67695fb7a567bfc5132d0864e18c49716c8c4e6992ab04099a271af3d0f6"
+      "762833114":
+        name: "RELEASES-win-x64"
+        url_suffix: "RELEASES-win-x64"
+        size: 190
+        digest: "sha256:32422bf4df9c2daa33fc99b0d8a103277db60ed53ee22ebf35500cbd0752c692"
+      "762833115":
+        name: "RELEASES-osx-x64"
+        url_suffix: "RELEASES-osx-x64"
+        size: 188
+        digest: "sha256:be8074ca05693d52b46e520c019e15c68ac5f5270a5d512100fa8c0dad7d79bd"
+      "762833117":
+        name: "RELEASES-linux-x64"
+        url_suffix: "RELEASES-linux-x64"
+        size: 194
+        digest: "sha256:1a805abae5ccc4d9c11161a8fc286a83b66b665ce4da7f257fff07a30a875bc6"
+      "762833142":
+        name: "assets.linux-x64.json"
+        url_suffix: "assets.linux-x64.json"
+        size: 244
+        media_type: "application/json"
+        digest: "sha256:d5db25b0ad9dee3b55dc0eacc551c5d1764860e1106c363c6c83c0a8ed66038f"
+      "762833144":
+        name: "assets.osx-arm64.json"
+        url_suffix: "assets.osx-arm64.json"
+        size: 327
+        media_type: "application/json"
+        digest: "sha256:8d0e1c30ae8bd0e54847689c6ee7d7e1216f5f887d4137da012003e9595ddd3c"
+      "762833145":
+        name: "assets.osx-x64.json"
+        url_suffix: "assets.osx-x64.json"
+        size: 319
+        media_type: "application/json"
+        digest: "sha256:6a39f81cb0d2a2d264021cedd4d3f35354bee1d57da6297f14c55dacc525cb7c"
+      "762833149":
+        name: "dev.twirchat.app-1.21.6-linux-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.6-linux-x64-full.nupkg"
+        size: 107856305
+        digest: "sha256:f33df63b08fa3881f6b83687d0d815c9b7cb168fe47cee993f6a6fe0244b704d"
+      "762833153":
+        name: "assets.win-x64.json"
+        url_suffix: "assets.win-x64.json"
+        size: 319
+        media_type: "application/json"
+        digest: "sha256:a39cb95a458f323fc4445eefd335eb3351cf9db9b4ad4d233103cbe129b32bd6"
+      "762833179":
+        name: "dev.twirchat.app-1.21.6-osx-arm64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.6-osx-arm64-full.nupkg"
+        size: 88553093
+        digest: "sha256:41bfff0a2038bfef887c2af2501522477078cbacf22274f1dc81038a156e7ca0"
+      "762833183":
+        name: "dev.twirchat.app-1.21.6-osx-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.6-osx-x64-full.nupkg"
+        size: 91394586
+        digest: "sha256:82e9156e027004be6d48275f44357990dbdeac2b95e5962a8a3612ca2ae0bf37"
+      "762833184":
+        name: "dev.twirchat.app-1.21.6-win-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.6-win-x64-full.nupkg"
+        size: 101343307
+        digest: "sha256:1329d01a9cc290266214ef37139aa7c0532a85aebcc7987ab1c917cad92a8ff4"
+      "762833185":
+        name: "dev.twirchat.app-1.21.7-linux-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.7-linux-x64-delta.nupkg"
+        size: 10082841
+        digest: "sha256:1e4489dbb3bb79bb5783371a8e604a9a20070aa3527218813ba019f5cc81f9f4"
+      "762833268":
+        name: "dev.twirchat.app-1.21.7-linux-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.7-linux-x64-full.nupkg"
+        size: 107859927
+        digest: "sha256:4b6a06bb4d6c766d5ab7bc2efe94645c9f757db8345674607fe30b33260f91b2"
+      "762833442":
+        name: "dev.twirchat.app-1.21.7-osx-arm64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.7-osx-arm64-delta.nupkg"
+        size: 586560
+        digest: "sha256:217492ff075264a23ebaad000f751075dd7f70a840dc713195809681398af7dc"
+      "762833493":
+        name: "dev.twirchat.app-1.21.7-osx-arm64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.7-osx-arm64-full.nupkg"
+        size: 88552688
+        digest: "sha256:96f0b4809d38c9a3adf704d9fd37d5c8208fe117100751edd31e289cafb34372"
+      "762833530":
+        name: "dev.twirchat.app-1.21.7-osx-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.7-osx-x64-delta.nupkg"
+        size: 391065
+        digest: "sha256:efca2f8718b63974e6bdb3c48c115011b8f8eebea35d2447d4bdcd67923761f1"
+      "762833532":
+        name: "dev.twirchat.app-1.21.7-osx-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.7-osx-x64-full.nupkg"
+        size: 91396310
+        digest: "sha256:15452e83acfdf46448ee7c4b7aab03f6f85d1b6410b5c352cc83323e622e74da"
+      "762833533":
+        name: "dev.twirchat.app-1.21.7-win-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.7-win-x64-delta.nupkg"
+        size: 381455
+        digest: "sha256:5cb364ec201b8e957b9feaf65658711047fc742da02314e89555cfd77125d583"
+      "762833571":
+        name: "dev.twirchat.app-1.21.7-win-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.7-win-x64-full.nupkg"
+        size: 101346239
+        digest: "sha256:afa7d9e06f83237e2abf5cbb04109a40f0e9ff9326a9f66c1168cb42fa67b71e"
+      "762833581":
+        name: "dev.twirchat.app-linux-x64.AppImage"
+        url_suffix: "dev.twirchat.app-linux-x64.AppImage"
+        size: 108628472
+        media_type: "application/vnd.appimage"
+        digest: "sha256:7878976f63cf1d4dca69cdc6810ce218e9cfdf946f0e93cff16f7f83844c8b63"
+      "762833656":
+        name: "dev.twirchat.app-osx-arm64-Portable.zip"
+        url_suffix: "dev.twirchat.app-osx-arm64-Portable.zip"
+        size: 85999733
+        media_type: "zip"
+        digest: "sha256:1659b69d22695c03ee21f3e80e0f80d0953632f3454ef0697e15a01df7d322aa"
+      "762833711":
+        name: "dev.twirchat.app-osx-arm64-Setup.pkg"
+        url_suffix: "dev.twirchat.app-osx-arm64-Setup.pkg"
+        size: 85932866
+        media_type: "application/x-xar"
+        digest: "sha256:59ad85d0d3abafb9de863378ff791399e16e085c65bbfd9ed816889689da2309"
+      "762833738":
+        name: "dev.twirchat.app-osx-x64-Portable.zip"
+        url_suffix: "dev.twirchat.app-osx-x64-Portable.zip"
+        size: 89629046
+        media_type: "zip"
+        digest: "sha256:4af0edce52e19b0b5c1c3ed5ba9bf47451fec9d4fb694a020755a6b921f0dcb5"
+      "762833820":
+        name: "dev.twirchat.app-osx-x64-Setup.pkg"
+        url_suffix: "dev.twirchat.app-osx-x64-Setup.pkg"
+        size: 89554997
+        media_type: "application/x-xar"
+        digest: "sha256:4125f768bb2a4d7456c12c4270de7b34e7398a82e70fde7c5a7dc9a09be7a52b"
+      "762833841":
+        name: "dev.twirchat.app-win-x64-Portable.zip"
+        url_suffix: "dev.twirchat.app-win-x64-Portable.zip"
+        size: 101341520
+        media_type: "zip"
+        digest: "sha256:5c6d44dd2d7574fd18bb2ecb14e786367789a039e3e7a0f127ca67a62eb3213a"
+      "762833850":
+        name: "dev.twirchat.app-win-x64-Setup.exe"
+        url_suffix: "dev.twirchat.app-win-x64-Setup.exe"
+        size: 110049215
+        digest: "sha256:201b51e9ac8579e870f80899dda4d0e0a2843caf326435cb865f4512c6e839b8"
+      "762833879":
+        name: "releases.linux-x64.json"
+        url_suffix: "releases.linux-x64.json"
+        size: 1252
+        media_type: "application/json"
+        digest: "sha256:b5607e58623c30628381ba81bc710d4611a22b16c2bed291e2a59aa481b335de"
+      "762833909":
+        name: "releases.osx-arm64.json"
+        url_suffix: "releases.osx-arm64.json"
+        size: 1248
+        media_type: "application/json"
+        digest: "sha256:01d0773748233e93b79f28248becd39469d8a66529afb1f83d03037c0db2ca76"
+      "762833911":
+        name: "releases.osx-x64.json"
+        url_suffix: "releases.osx-x64.json"
+        size: 1242
+        media_type: "application/json"
+        digest: "sha256:c5266ba3a3cb3bb5a6610505a313ff026a63df0935ddf1b75d2a8a6aacadda74"
+      "762833943":
+        name: "releases.win-x64.json"
+        url_suffix: "releases.win-x64.json"
+        size: 1244
+        media_type: "application/json"
+        digest: "sha256:3d42d5e42f293e73aeb015dae6525b0d852977719ea3d8b09bddfb8e0e525fea"
+      "762833947":
+        name: "signature-linux-x64.txt"
+        url_suffix: "signature-linux-x64.txt"
+        size: 54
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:bce9afbd60c21c2b798dfe96027a6b19f289e5ad10c32f6966d451a32efed9de"
+      "762833973":
+        name: "signature-osx-arm64.txt"
+        url_suffix: "signature-osx-arm64.txt"
+        size: 54
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:b6aedb26f1a65fb161085ed9a0cce2ca07c023ef40525cc150200b2b3539ba3e"
+      "762833981":
+        name: "signature-osx-x64.txt"
+        url_suffix: "signature-osx-x64.txt"
+        size: 52
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:7a4462ba8962e350b4939fd54c3c36122854257a3a121aed3fbf1856de8d314c"
+      "762834013":
+        name: "signature-win-x64.txt"
+        url_suffix: "signature-win-x64.txt"
+        size: 52
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:2a5de45781197cc5f70e51dabebec72445ed6dc589864e10218212c44eeabfe1"
+  "449810781":
+    tag: "v1.21.8"
+    title: "TwirChat v1.21.8"
+    url: "https://github.com/Satont/twirchat/releases/tag/v1.21.8"
+    created_at: "2026-11-18T10:09:57Z"
+    published_at: "2026-11-18T10:16:24Z"
+    updated_at: "2026-11-18T10:16:24Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/Satont/twirchat/zipball/v1.21.8"
+    source_tar_url: "https://api.github.com/repos/Satont/twirchat/tarball/v1.21.8"
+    download_base: "https://github.com/Satont/twirchat/releases/download/v1.21.8/"
+    assets:
+      "762907548":
+        name: "RELEASES-osx-arm64"
+        url_suffix: "RELEASES-osx-arm64"
+        size: 192
+        digest: "sha256:86e7f5f399d27f728ea3e1e810acded985eeebccd9d82997f7f0ac12f1be2bd7"
+      "762907549":
+        name: "SHA256SUMS"
+        url_suffix: "SHA256SUMS"
+        size: 3441
+        digest: "sha256:1177200bc922a7306236657335db4708741ed1a7f44ee12cf36a08b1839c1d7a"
+      "762907550":
+        name: "RELEASES-linux-x64"
+        url_suffix: "RELEASES-linux-x64"
+        size: 194
+        digest: "sha256:47653a083b7728bf4544e7e4783ad90f1a44e98e945a7ac6749a557cc922c4cd"
+      "762907553":
+        name: "RELEASES-osx-x64"
+        url_suffix: "RELEASES-osx-x64"
+        size: 188
+        digest: "sha256:8a2da175904bf3da8512af426f94fad1932a39f9f49edecc6449f6be9c6432e7"
+      "762907554":
+        name: "RELEASES-win-x64"
+        url_suffix: "RELEASES-win-x64"
+        size: 190
+        digest: "sha256:94f814491cc717dd88ba5897ed8a9d028155d02d1a26613144d452ce2deca424"
+      "762907585":
+        name: "assets.linux-x64.json"
+        url_suffix: "assets.linux-x64.json"
+        size: 244
+        media_type: "application/json"
+        digest: "sha256:fdb061b36feb66f5a1a5364fb8ed7fa9abc4ab83b639bcfccdb80df333f9d891"
+      "762907586":
+        name: "assets.osx-x64.json"
+        url_suffix: "assets.osx-x64.json"
+        size: 319
+        media_type: "application/json"
+        digest: "sha256:64b53cd4051f175baf42e68d4ce1f4ae4587a67e4e6bcec7c3edde0da77e8a61"
+      "762907590":
+        name: "assets.osx-arm64.json"
+        url_suffix: "assets.osx-arm64.json"
+        size: 327
+        media_type: "application/json"
+        digest: "sha256:9b1e37591bb0d7cf7824163b8f91f9403a0a4ceaea3aa970617be4bec22f0da2"
+      "762907593":
+        name: "dev.twirchat.app-1.21.7-linux-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.7-linux-x64-full.nupkg"
+        size: 107859927
+        digest: "sha256:4b6a06bb4d6c766d5ab7bc2efe94645c9f757db8345674607fe30b33260f91b2"
+      "762907595":
+        name: "assets.win-x64.json"
+        url_suffix: "assets.win-x64.json"
+        size: 319
+        media_type: "application/json"
+        digest: "sha256:63d5da4199ffa1d15958b4043edde3a5a4363fefeef2f0dda19b292fee76b156"
+      "762907634":
+        name: "dev.twirchat.app-1.21.7-osx-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.7-osx-x64-full.nupkg"
+        size: 91396310
+        digest: "sha256:15452e83acfdf46448ee7c4b7aab03f6f85d1b6410b5c352cc83323e622e74da"
+      "762907636":
+        name: "dev.twirchat.app-1.21.7-osx-arm64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.7-osx-arm64-full.nupkg"
+        size: 88552688
+        digest: "sha256:96f0b4809d38c9a3adf704d9fd37d5c8208fe117100751edd31e289cafb34372"
+      "762907642":
+        name: "dev.twirchat.app-1.21.7-win-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.7-win-x64-full.nupkg"
+        size: 101346239
+        digest: "sha256:afa7d9e06f83237e2abf5cbb04109a40f0e9ff9326a9f66c1168cb42fa67b71e"
+      "762907643":
+        name: "dev.twirchat.app-1.21.8-linux-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.8-linux-x64-delta.nupkg"
+        size: 9997168
+        digest: "sha256:18406919b4f76a19103bc4a7f0308a3d63b79a10c023df291f51b7eb7154e3e7"
+      "762907727":
+        name: "dev.twirchat.app-1.21.8-linux-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.8-linux-x64-full.nupkg"
+        size: 107871680
+        digest: "sha256:802cd92039a317fcfc575a03ad5659f6c437b574970a563768024005b0dc5b7a"
+      "762908115":
+        name: "dev.twirchat.app-1.21.8-osx-arm64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.8-osx-arm64-delta.nupkg"
+        size: 404926
+        digest: "sha256:e17854b14b40137dac57f5f339a295f89a295921ee85d0139ac0c0d4358680a7"
+      "762908121":
+        name: "dev.twirchat.app-1.21.8-osx-arm64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.8-osx-arm64-full.nupkg"
+        size: 88583592
+        digest: "sha256:691405e61ffe8e9b8637d5d85ef1fc65f262dcad4313786c313f688e4f160f99"
+      "762908149":
+        name: "dev.twirchat.app-1.21.8-osx-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.8-osx-x64-delta.nupkg"
+        size: 209589
+        digest: "sha256:df9197064cba68ce4da98cbb4d13d4f3ab4fba0694a56007a61840afd285abb9"
+      "762908173":
+        name: "dev.twirchat.app-1.21.8-osx-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.8-osx-x64-full.nupkg"
+        size: 91429708
+        digest: "sha256:0efa79460137e2e206c99fe091035abb31ee45d33b05b79ff8db64a6b1c55c14"
+      "762908175":
+        name: "dev.twirchat.app-1.21.8-win-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.8-win-x64-delta.nupkg"
+        size: 200469
+        digest: "sha256:38f51961223fceb90b40fafd922b8459fa7dbea9ecb587e52f2ee7e5c6432ff7"
+      "762908182":
+        name: "dev.twirchat.app-1.21.8-win-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.8-win-x64-full.nupkg"
+        size: 101368383
+        digest: "sha256:366896eb50b51e1c0230b2033b6b43bad3a0a78543982c0973908a3952d0320a"
+      "762908211":
+        name: "dev.twirchat.app-linux-x64.AppImage"
+        url_suffix: "dev.twirchat.app-linux-x64.AppImage"
+        size: 108640760
+        media_type: "application/vnd.appimage"
+        digest: "sha256:a77c69a97b677e0054627525107fbe9180f69949799afd8bb9455d1702e11794"
+      "762908222":
+        name: "dev.twirchat.app-osx-arm64-Portable.zip"
+        url_suffix: "dev.twirchat.app-osx-arm64-Portable.zip"
+        size: 86018932
+        media_type: "zip"
+        digest: "sha256:c0b11504422b76a4b20145927582c42dda2f9ff6ac84816c9f85f6711d0963ee"
+      "762908434":
+        name: "dev.twirchat.app-osx-arm64-Setup.pkg"
+        url_suffix: "dev.twirchat.app-osx-arm64-Setup.pkg"
+        size: 85955787
+        media_type: "application/x-xar"
+        digest: "sha256:4a11a385f4fb4583552b8c868a8fc2ce635ae6111ccd109bdffbe3c94fe86770"
+      "762908663":
+        name: "dev.twirchat.app-osx-x64-Portable.zip"
+        url_suffix: "dev.twirchat.app-osx-x64-Portable.zip"
+        size: 89646309
+        media_type: "zip"
+        digest: "sha256:31c26be084d1ece7c35f678cfe8a4a62c7307340c681c15fcd4e6cd005786ce2"
+      "762908720":
+        name: "dev.twirchat.app-osx-x64-Setup.pkg"
+        url_suffix: "dev.twirchat.app-osx-x64-Setup.pkg"
+        size: 89578885
+        media_type: "application/x-xar"
+        digest: "sha256:cfda1bd7b9e8bd6a4d10d36d87287f99ea06517dd4dcc3ac1c6342d53912dc7e"
+      "762908737":
+        name: "dev.twirchat.app-win-x64-Portable.zip"
+        url_suffix: "dev.twirchat.app-win-x64-Portable.zip"
+        size: 101363664
+        media_type: "zip"
+        digest: "sha256:3bb053fe3e7b3cc79af05d1af5a85f55fe0a123507779f316e45fafe7120f894"
+      "762908752":
+        name: "dev.twirchat.app-win-x64-Setup.exe"
+        url_suffix: "dev.twirchat.app-win-x64-Setup.exe"
+        size: 110071359
+        digest: "sha256:f8436c038d2e9acc9e82604c5eb224366626d1bfb81f68a988ee094365d18610"
+      "762908925":
+        name: "releases.linux-x64.json"
+        url_suffix: "releases.linux-x64.json"
+        size: 1251
+        media_type: "application/json"
+        digest: "sha256:005d35e145d8e84f5f3c1cc99a1d5206c8753cfdfe86ca375c16f61bd63142b1"
+      "762908971":
+        name: "releases.osx-arm64.json"
+        url_suffix: "releases.osx-arm64.json"
+        size: 1248
+        media_type: "application/json"
+        digest: "sha256:cdf13620ad13de2abd71f28959f1ac10ec99481033528c15101a1f9393e17b67"
+      "762908991":
+        name: "releases.win-x64.json"
+        url_suffix: "releases.win-x64.json"
+        size: 1244
+        media_type: "application/json"
+        digest: "sha256:87f3aca197d7c11e11cc1bbd962d276137051a941e310956d54047f317e40dca"
+      "762908992":
+        name: "releases.osx-x64.json"
+        url_suffix: "releases.osx-x64.json"
+        size: 1242
+        media_type: "application/json"
+        digest: "sha256:500a7236a43e0ce69f4b6e7012a763ea2d3a4b256b96beee02ce5ac527e63838"
+      "762909020":
+        name: "signature-linux-x64.txt"
+        url_suffix: "signature-linux-x64.txt"
+        size: 54
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:7d8d6b8ac6a620b0177ad67c1ce5b2e6b13ba7428270f85b4dd40fa244637c14"
+      "762909026":
+        name: "signature-osx-arm64.txt"
+        url_suffix: "signature-osx-arm64.txt"
+        size: 54
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:4032ee96ec27212bb716d23d7d6dd7d7fd4a1eed756143124286330ffc48719a"
+      "762909048":
+        name: "signature-osx-x64.txt"
+        url_suffix: "signature-osx-x64.txt"
+        size: 52
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:21abf06ce1abf76faaafc62af8d753c7c29c8ce6c2cc17f24e1cbc8f7576caff"
+      "762909049":
+        name: "signature-win-x64.txt"
+        url_suffix: "signature-win-x64.txt"
+        size: 52
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d7c5c435435f40db79f1d5281fdb4c03acc31dd029ea5f3469a0c6b8f0d10ea8"
+  "449829095":
+    tag: "v1.21.9"
+    title: "TwirChat v1.21.9"
+    url: "https://github.com/Satont/twirchat/releases/tag/v1.21.9"
+    created_at: "2026-11-18T10:27:27Z"
+    published_at: "2026-11-18T10:32:36Z"
+    updated_at: "2026-11-18T10:32:36Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/Satont/twirchat/zipball/v1.21.9"
+    source_tar_url: "https://api.github.com/repos/Satont/twirchat/tarball/v1.21.9"
+    download_base: "https://github.com/Satont/twirchat/releases/download/v1.21.9/"
+    assets:
+      "762959770":
+        name: "RELEASES-linux-x64"
+        url_suffix: "RELEASES-linux-x64"
+        size: 194
+        digest: "sha256:e6d2ef1630539e962d965d2c1f2f74edcf4e2c0ab1545e45d2ed241f4173fade"
+      "762959773":
+        name: "SHA256SUMS"
+        url_suffix: "SHA256SUMS"
+        size: 3441
+        digest: "sha256:6f9bcdbe7bab0942bcd6c30fad689d38c92d438d473eb918e3c8da539f31f88f"
+      "762959774":
+        name: "RELEASES-osx-x64"
+        url_suffix: "RELEASES-osx-x64"
+        size: 188
+        digest: "sha256:17760ef9c9100349fb5d219139aa838b9fe49e08ff494b0990b04dad2124c7b3"
+      "762959775":
+        name: "RELEASES-win-x64"
+        url_suffix: "RELEASES-win-x64"
+        size: 190
+        digest: "sha256:4da9e6539fafe26918e6c13f524d632098b2b0840e8cf69d2cdc71b21333d0fa"
+      "762959777":
+        name: "RELEASES-osx-arm64"
+        url_suffix: "RELEASES-osx-arm64"
+        size: 192
+        digest: "sha256:374d2f2b2cafb8c2a1f2b9ad5cb1ff8ca9d314ee2d5d4b82b059ab27eff5a8fa"
+      "762959792":
+        name: "assets.linux-x64.json"
+        url_suffix: "assets.linux-x64.json"
+        size: 244
+        media_type: "application/json"
+        digest: "sha256:1109573afe0b4d623d6dca86d954cf3a0f611b6ac8d6b39daf63ec45d654e030"
+      "762959794":
+        name: "assets.osx-arm64.json"
+        url_suffix: "assets.osx-arm64.json"
+        size: 327
+        media_type: "application/json"
+        digest: "sha256:4a232dd334defc280ed99d959aca69d56eaaa9998569da59bc479cfe3007a757"
+      "762959799":
+        name: "assets.osx-x64.json"
+        url_suffix: "assets.osx-x64.json"
+        size: 319
+        media_type: "application/json"
+        digest: "sha256:f34935d1e5911776c130143f45b1aa7327ad96981e814f624a37779ccf79d03d"
+      "762959805":
+        name: "assets.win-x64.json"
+        url_suffix: "assets.win-x64.json"
+        size: 319
+        media_type: "application/json"
+        digest: "sha256:d4f56bc05b3a73b1e4e58b46354e853199d9fa095dd7ab48343c2b78722879b1"
+      "762959809":
+        name: "dev.twirchat.app-1.21.8-linux-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.8-linux-x64-full.nupkg"
+        size: 107871680
+        digest: "sha256:802cd92039a317fcfc575a03ad5659f6c437b574970a563768024005b0dc5b7a"
+      "762959829":
+        name: "dev.twirchat.app-1.21.8-osx-arm64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.8-osx-arm64-full.nupkg"
+        size: 88583592
+        digest: "sha256:691405e61ffe8e9b8637d5d85ef1fc65f262dcad4313786c313f688e4f160f99"
+      "762959836":
+        name: "dev.twirchat.app-1.21.8-osx-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.8-osx-x64-full.nupkg"
+        size: 91429708
+        digest: "sha256:0efa79460137e2e206c99fe091035abb31ee45d33b05b79ff8db64a6b1c55c14"
+      "762959838":
+        name: "dev.twirchat.app-1.21.9-linux-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.9-linux-x64-delta.nupkg"
+        size: 9990991
+        digest: "sha256:4755ccb48d887359ba2da2b65db661447e33dacbe17e3c8a5e291245733181f5"
+      "762959841":
+        name: "dev.twirchat.app-1.21.8-win-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.8-win-x64-full.nupkg"
+        size: 101368383
+        digest: "sha256:366896eb50b51e1c0230b2033b6b43bad3a0a78543982c0973908a3952d0320a"
+      "762959884":
+        name: "dev.twirchat.app-1.21.9-linux-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.9-linux-x64-full.nupkg"
+        size: 107874837
+        digest: "sha256:23f5e7a9428a3b8bb285a18d80a6ea26cbd449d07d87df17b0053a5f1e98502c"
+      "762960060":
+        name: "dev.twirchat.app-1.21.9-osx-arm64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.9-osx-arm64-delta.nupkg"
+        size: 493306
+        digest: "sha256:80107dbec26b08487b2e9d43de2c7add21d63c0c6ad912c7d1451ff4eec2d8bd"
+      "762960062":
+        name: "dev.twirchat.app-1.21.9-osx-arm64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.9-osx-arm64-full.nupkg"
+        size: 88587286
+        digest: "sha256:a18272b7b73126726eba47eea68146eb33ff3d75c1b89efc422e10d976681fbb"
+      "762960074":
+        name: "dev.twirchat.app-1.21.9-osx-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.9-osx-x64-delta.nupkg"
+        size: 297524
+        digest: "sha256:91f28b7e4d56947ac58cce1c19c5b6afe13b12626f06b417d34d37079a097cb4"
+      "762960096":
+        name: "dev.twirchat.app-1.21.9-osx-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.9-osx-x64-full.nupkg"
+        size: 91430214
+        digest: "sha256:9a9e19598f37a86572a24f6beca91a0a53926a3cb2de423f90b6287443edaedd"
+      "762960108":
+        name: "dev.twirchat.app-1.21.9-win-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.9-win-x64-delta.nupkg"
+        size: 288817
+        digest: "sha256:fd6adf52d341817a0bdba731e91df3d6b415ea6f49a8db5dd1f3104b3db1fb01"
+      "762960131":
+        name: "dev.twirchat.app-1.21.9-win-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.9-win-x64-full.nupkg"
+        size: 101368675
+        digest: "sha256:70ecc85c1d96db967b6e51a57d9ee1318f858b75735700d778f6de1018b11b6f"
+      "762960163":
+        name: "dev.twirchat.app-linux-x64.AppImage"
+        url_suffix: "dev.twirchat.app-linux-x64.AppImage"
+        size: 108640760
+        media_type: "application/vnd.appimage"
+        digest: "sha256:6b2b3401768678ed87f79d0b9e3a44116f3183f2909e055e1cd0c206e54f75d6"
+      "762960166":
+        name: "dev.twirchat.app-osx-arm64-Portable.zip"
+        url_suffix: "dev.twirchat.app-osx-arm64-Portable.zip"
+        size: 86021978
+        media_type: "zip"
+        digest: "sha256:7f3efe59afb1b1f65f6a7eb056861737b33953175c593dfd3d41f8ad9f9eb0d8"
+      "762960185":
+        name: "dev.twirchat.app-osx-arm64-Setup.pkg"
+        url_suffix: "dev.twirchat.app-osx-arm64-Setup.pkg"
+        size: 85956115
+        media_type: "application/x-xar"
+        digest: "sha256:cc18ed35d7cdb3f3699157152af8005bf235de6772ea7e8e5d5dbd62c7e0e7f5"
+      "762960256":
+        name: "dev.twirchat.app-osx-x64-Portable.zip"
+        url_suffix: "dev.twirchat.app-osx-x64-Portable.zip"
+        size: 89647044
+        media_type: "zip"
+        digest: "sha256:c03d36780e95b369dba6a63b19cd7a16ef8b8d458887a69b10963933b4d61511"
+      "762960337":
+        name: "dev.twirchat.app-osx-x64-Setup.pkg"
+        url_suffix: "dev.twirchat.app-osx-x64-Setup.pkg"
+        size: 89579365
+        media_type: "application/x-xar"
+        digest: "sha256:44b316dc3b386691508b1e214b46613bd7cbb2a13fe61d51a7c0ce7e85f3d0d8"
+      "762960370":
+        name: "dev.twirchat.app-win-x64-Portable.zip"
+        url_suffix: "dev.twirchat.app-win-x64-Portable.zip"
+        size: 101363955
+        media_type: "zip"
+        digest: "sha256:2cb07e63def3482c919b0b7f7a22803a17f3f656442cd7684d101a4e1c9739a9"
+      "762960396":
+        name: "dev.twirchat.app-win-x64-Setup.exe"
+        url_suffix: "dev.twirchat.app-win-x64-Setup.exe"
+        size: 110071651
+        digest: "sha256:f61d0528d7b22185ceff3617610a285859bb2f8874169e79c3f9c605ccdc4d3e"
+      "762960425":
+        name: "releases.linux-x64.json"
+        url_suffix: "releases.linux-x64.json"
+        size: 1251
+        media_type: "application/json"
+        digest: "sha256:fac1fa27c1ed7f415426f1938092e92edc2d51d1528218cd9871c574da6c80ac"
+      "762960441":
+        name: "releases.osx-arm64.json"
+        url_suffix: "releases.osx-arm64.json"
+        size: 1248
+        media_type: "application/json"
+        digest: "sha256:945d8f19d9e7c01500e79d969910a34c81ca12950e17ef6949474516be63817e"
+      "762960464":
+        name: "releases.osx-x64.json"
+        url_suffix: "releases.osx-x64.json"
+        size: 1242
+        media_type: "application/json"
+        digest: "sha256:67f01943cd19d3a3e4c23efeace355d1e030f32d73f9178f0132d4148536e0e3"
+      "762960471":
+        name: "releases.win-x64.json"
+        url_suffix: "releases.win-x64.json"
+        size: 1244
+        media_type: "application/json"
+        digest: "sha256:4c95eaeec25073ccc7004c95c0e3cc2ca0826608630abd82882a026b51e539b0"
+      "762960510":
+        name: "signature-linux-x64.txt"
+        url_suffix: "signature-linux-x64.txt"
+        size: 54
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:e0a54e8126df56a733537701d25f025137fe6e0188b03068dfad3cddc3779d2b"
+      "762960522":
+        name: "signature-osx-arm64.txt"
+        url_suffix: "signature-osx-arm64.txt"
+        size: 54
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:09ef894f1da17c8ac8556d648086b4430cee736e2d29dc5ded203679e5253178"
+      "762960551":
+        name: "signature-osx-x64.txt"
+        url_suffix: "signature-osx-x64.txt"
+        size: 52
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:fe57986deadd79b6f8812b3712d83a9b15f94c1e61ffbc3e9a5e7b68dcfba3d3"
+      "762960558":
+        name: "signature-win-x64.txt"
+        url_suffix: "signature-win-x64.txt"
+        size: 52
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:ecde548eac9325cc6d8a9fb1b79f129dbc74a22cba3ce3fd2b427ee150e78736"
+  "450744063":
+    tag: "v1.21.10"
+    title: "TwirChat v1.21.10"
+    url: "https://github.com/Satont/twirchat/releases/tag/v1.21.10"
+    created_at: "2026-11-18T12:35:49Z"
+    published_at: "2026-11-19T00:57:33Z"
+    updated_at: "2026-11-19T00:57:33Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/Satont/twirchat/zipball/v1.21.10"
+    source_tar_url: "https://api.github.com/repos/Satont/twirchat/tarball/v1.21.10"
+    download_base: "https://github.com/Satont/twirchat/releases/download/v1.21.10/"
+    assets:
+      "765653976":
+        name: "RELEASES-osx-x64"
+        url_suffix: "RELEASES-osx-x64"
+        size: 189
+        digest: "sha256:6fa8a59827bcef2474585045b5f9698fc81910e6ebe8cc93f1e4867ba0ef34ce"
+      "765653978":
+        name: "SHA256SUMS"
+        url_suffix: "SHA256SUMS"
+        size: 3449
+        digest: "sha256:af5dfc7f680dc3621d13b280a4daae453581a6614de2f9dff5fdaecd72077e15"
+      "765653979":
+        name: "RELEASES-win-x64"
+        url_suffix: "RELEASES-win-x64"
+        size: 191
+        digest: "sha256:dcdf2348bc679ce0c374467dfea2f426fb2bf9113408a6dc649b4b281126243a"
+      "765653980":
+        name: "RELEASES-osx-arm64"
+        url_suffix: "RELEASES-osx-arm64"
+        size: 193
+        digest: "sha256:b3fca94b9157836fbfb4929ec4d0ef09a5451835175adf775caab3b1cc7829be"
+      "765653981":
+        name: "RELEASES-linux-x64"
+        url_suffix: "RELEASES-linux-x64"
+        size: 195
+        digest: "sha256:a2d890eec36f95492cc0950c2c15d4caf4ea6fea2b438938ac198558a691d48f"
+      "765654004":
+        name: "assets.linux-x64.json"
+        url_suffix: "assets.linux-x64.json"
+        size: 246
+        media_type: "application/json"
+        digest: "sha256:94ce053db6f3ddb9d764a882fc0e53c5b87407c91d5c05052dbbc947deb7be81"
+      "765654006":
+        name: "assets.osx-arm64.json"
+        url_suffix: "assets.osx-arm64.json"
+        size: 329
+        media_type: "application/json"
+        digest: "sha256:0ceffc06c16f78cff93d4da4b61a073d2f38504d7765dd5e029b9c9587990feb"
+      "765654008":
+        name: "assets.osx-x64.json"
+        url_suffix: "assets.osx-x64.json"
+        size: 321
+        media_type: "application/json"
+        digest: "sha256:e91e89afc9b001e7c4f0ed285728f4a28059c64eb36744fdcea9b4c725a0866a"
+      "765654009":
+        name: "assets.win-x64.json"
+        url_suffix: "assets.win-x64.json"
+        size: 321
+        media_type: "application/json"
+        digest: "sha256:a096a1e21ba301295ed5fb89a74778dd672f6b1bd45e11240da46fe4dffeea9d"
+      "765654011":
+        name: "dev.twirchat.app-1.21.10-linux-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.10-linux-x64-delta.nupkg"
+        size: 10094522
+        digest: "sha256:772b8d80abe96a6cd712e971041567a0725dcd4bdaf181f45b315942a1f35a62"
+      "765654026":
+        name: "dev.twirchat.app-1.21.10-linux-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.10-linux-x64-full.nupkg"
+        size: 107875098
+        digest: "sha256:f3b6957c55e5e23799743d84763a3c8de348713d692d17a31b250f643376e145"
+      "765654038":
+        name: "dev.twirchat.app-1.21.10-osx-arm64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.10-osx-arm64-delta.nupkg"
+        size: 467854
+        digest: "sha256:3e917f0d9906745ca4c442be6ed4885367e04f70c9c1b9c6754e309ef17e69e8"
+      "765654040":
+        name: "dev.twirchat.app-1.21.10-osx-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.10-osx-x64-delta.nupkg"
+        size: 272101
+        digest: "sha256:97448acb367f1cacfb469fdf00a633f45d1d009ebc8922a44ee620161c502be7"
+      "765654042":
+        name: "dev.twirchat.app-1.21.10-osx-arm64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.10-osx-arm64-full.nupkg"
+        size: 88587757
+        digest: "sha256:f618c09b3545c47b5e6e2012a5e3d7ddd47d5102a52fd0ee96f0dadab3a23272"
+      "765654055":
+        name: "dev.twirchat.app-1.21.10-osx-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.10-osx-x64-full.nupkg"
+        size: 91430445
+        digest: "sha256:bf17c7dc8c3581c2d11cf82c43f2361f89c12d18eaae363b69335351d6f4dc11"
+      "765654059":
+        name: "dev.twirchat.app-1.21.10-win-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.10-win-x64-delta.nupkg"
+        size: 261502
+        digest: "sha256:4847823c7461ecad24d88eff2be91a453a6219d12736dc85462c1d46fb19e5a4"
+      "765654061":
+        name: "dev.twirchat.app-1.21.10-win-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.10-win-x64-full.nupkg"
+        size: 101368635
+        digest: "sha256:caa2d7c141fb71d2161050d16b9b87c2723b264c1fdd1c6b1da607b83b8fefcd"
+      "765654080":
+        name: "dev.twirchat.app-1.21.9-linux-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.9-linux-x64-full.nupkg"
+        size: 107874837
+        digest: "sha256:23f5e7a9428a3b8bb285a18d80a6ea26cbd449d07d87df17b0053a5f1e98502c"
+      "765654205":
+        name: "dev.twirchat.app-1.21.9-osx-arm64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.9-osx-arm64-full.nupkg"
+        size: 88587286
+        digest: "sha256:a18272b7b73126726eba47eea68146eb33ff3d75c1b89efc422e10d976681fbb"
+      "765654213":
+        name: "dev.twirchat.app-1.21.9-osx-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.9-osx-x64-full.nupkg"
+        size: 91430214
+        digest: "sha256:9a9e19598f37a86572a24f6beca91a0a53926a3cb2de423f90b6287443edaedd"
+      "765654226":
+        name: "dev.twirchat.app-1.21.9-win-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.9-win-x64-full.nupkg"
+        size: 101368675
+        digest: "sha256:70ecc85c1d96db967b6e51a57d9ee1318f858b75735700d778f6de1018b11b6f"
+      "765654242":
+        name: "dev.twirchat.app-linux-x64.AppImage"
+        url_suffix: "dev.twirchat.app-linux-x64.AppImage"
+        size: 108640760
+        media_type: "application/vnd.appimage"
+        digest: "sha256:03c8dfce9c47ee0e0e6c38ace56f53c79ffd062d89cc8b36d04d9deb4901362e"
+      "765654299":
+        name: "dev.twirchat.app-osx-arm64-Portable.zip"
+        url_suffix: "dev.twirchat.app-osx-arm64-Portable.zip"
+        size: 86022622
+        media_type: "zip"
+        digest: "sha256:0ea6c8142966055e725d60c57c429f7e6501642f5fd569ce161b366e81a92f24"
+      "765654364":
+        name: "dev.twirchat.app-osx-arm64-Setup.pkg"
+        url_suffix: "dev.twirchat.app-osx-arm64-Setup.pkg"
+        size: 85956418
+        media_type: "application/x-xar"
+        digest: "sha256:04cbc8ace31444eeccfc2ae40ccf9c816228546fdb0d4137b41f23a2ea1f38ba"
+      "765654397":
+        name: "dev.twirchat.app-osx-x64-Portable.zip"
+        url_suffix: "dev.twirchat.app-osx-x64-Portable.zip"
+        size: 89647297
+        media_type: "zip"
+        digest: "sha256:8e74724e6c064492cc22a206d9ced93d7d0e2b28590a96ff75fae6a80d1c8df7"
+      "765654411":
+        name: "dev.twirchat.app-osx-x64-Setup.pkg"
+        url_suffix: "dev.twirchat.app-osx-x64-Setup.pkg"
+        size: 89579710
+        media_type: "application/x-xar"
+        digest: "sha256:11e3ece6a7bb057c52cdae09825547c4e607f74440282c5f532addd8fea505dd"
+      "765654432":
+        name: "dev.twirchat.app-win-x64-Portable.zip"
+        url_suffix: "dev.twirchat.app-win-x64-Portable.zip"
+        size: 101363915
+        media_type: "zip"
+        digest: "sha256:df89ef2e7b1417610728e9255478bed4f453da469a9aabac5d6f5412b752c27e"
+      "765654493":
+        name: "dev.twirchat.app-win-x64-Setup.exe"
+        url_suffix: "dev.twirchat.app-win-x64-Setup.exe"
+        size: 110071611
+        digest: "sha256:006a0c44281b707b7c635705e2002f22681617c2a437e5c970a0ca03d7250b9e"
+      "765654618":
+        name: "releases.linux-x64.json"
+        url_suffix: "releases.linux-x64.json"
+        size: 1260
+        media_type: "application/json"
+        digest: "sha256:a2abe5a8dcfb5bcefde6d14fc7e2d811983f16f773ddc7602fcfdf31d6a517a1"
+      "765654636":
+        name: "releases.osx-arm64.json"
+        url_suffix: "releases.osx-arm64.json"
+        size: 1256
+        media_type: "application/json"
+        digest: "sha256:0971f9297110297b0db9bf885adffb83a7d2a7cfb2b2b9b143703bedbd621644"
+      "765654655":
+        name: "releases.osx-x64.json"
+        url_suffix: "releases.osx-x64.json"
+        size: 1250
+        media_type: "application/json"
+        digest: "sha256:7ec2d9611aa4aae11bc84f68720a42be7b61d0c9a3664dfb2cb6ed78caf8bd16"
+      "765654661":
+        name: "releases.win-x64.json"
+        url_suffix: "releases.win-x64.json"
+        size: 1252
+        media_type: "application/json"
+        digest: "sha256:c5d1430394b66c27a9b9c80a21f842c8316a06f4e480910706749e45a2635011"
+      "765654662":
+        name: "signature-linux-x64.txt"
+        url_suffix: "signature-linux-x64.txt"
+        size: 55
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8a9d226c9ffc1d33d9c78e937fb2c721a1dec2d3c9334407c518e0203d22ace5"
+      "765654672":
+        name: "signature-osx-arm64.txt"
+        url_suffix: "signature-osx-arm64.txt"
+        size: 55
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:745a0b18f31114d6e52523e3a5b97cbe6c51a2e547a4f5e692b216107032cb60"
+      "765654680":
+        name: "signature-osx-x64.txt"
+        url_suffix: "signature-osx-x64.txt"
+        size: 53
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:69a12d9f4cea1b5a977b9d07f165f3e1cb6d1eb2c23c0d9a17ecfae3209fb53c"
+      "765654682":
+        name: "signature-win-x64.txt"
+        url_suffix: "signature-win-x64.txt"
+        size: 53
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:5f345182055e716fa44f28d3bb741dc85660ee02ae1c74cfa57db585cb66c7c4"
+  "450760216":
+    tag: "v1.21.11"
+    title: "TwirChat v1.21.11"
+    url: "https://github.com/Satont/twirchat/releases/tag/v1.21.11"
+    created_at: "2026-11-19T00:53:09Z"
+    published_at: "2026-11-19T01:23:08Z"
+    updated_at: "2026-11-19T01:23:08Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/Satont/twirchat/zipball/v1.21.11"
+    source_tar_url: "https://api.github.com/repos/Satont/twirchat/tarball/v1.21.11"
+    download_base: "https://github.com/Satont/twirchat/releases/download/v1.21.11/"
+    assets:
+      "765720205":
+        name: "RELEASES-osx-x64"
+        url_suffix: "RELEASES-osx-x64"
+        size: 190
+        digest: "sha256:0a1fd23598a50c4f27b37e657516ad6bb5a4aa3b083921634baffdb282a572a8"
+      "765720213":
+        name: "RELEASES-linux-x64"
+        url_suffix: "RELEASES-linux-x64"
+        size: 196
+        digest: "sha256:6b331b412395ae2dcaccf118afbcb3e7a0c80c1178755107f995c8e8d29e68d5"
+      "765720214":
+        name: "RELEASES-osx-arm64"
+        url_suffix: "RELEASES-osx-arm64"
+        size: 194
+        digest: "sha256:e57722369d882a93493df13d45e3f58cd78472cdb7fe745edae8697b4c539332"
+      "765720215":
+        name: "SHA256SUMS"
+        url_suffix: "SHA256SUMS"
+        size: 3453
+        digest: "sha256:cb87c535f296be3264cbd2ae3e6822fc319df8cbceefcfc850c064f2a44967b7"
+      "765720216":
+        name: "RELEASES-win-x64"
+        url_suffix: "RELEASES-win-x64"
+        size: 192
+        digest: "sha256:3bd4dc5f30dbc3f8bf2170a307ef97fa99c063a028ae9d3b251facf979ab1011"
+      "765720253":
+        name: "assets.linux-x64.json"
+        url_suffix: "assets.linux-x64.json"
+        size: 246
+        media_type: "application/json"
+        digest: "sha256:e2a9d368c59d323739f0e74dbc22f10eeafe3ad40e28bd3865b3783a66cbfcab"
+      "765720254":
+        name: "assets.osx-arm64.json"
+        url_suffix: "assets.osx-arm64.json"
+        size: 329
+        media_type: "application/json"
+        digest: "sha256:5e96342f421fd5a27bcbb265a592161d2cf03e30d7217e8a496fece97994384b"
+      "765720259":
+        name: "assets.win-x64.json"
+        url_suffix: "assets.win-x64.json"
+        size: 321
+        media_type: "application/json"
+        digest: "sha256:57d7fa673637bfad91a93a2cb57f2ee99b24fc95f87e2fe2a374991c0322bb12"
+      "765720264":
+        name: "dev.twirchat.app-1.21.10-linux-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.10-linux-x64-full.nupkg"
+        size: 107875098
+        digest: "sha256:f3b6957c55e5e23799743d84763a3c8de348713d692d17a31b250f643376e145"
+      "765720265":
+        name: "assets.osx-x64.json"
+        url_suffix: "assets.osx-x64.json"
+        size: 321
+        media_type: "application/json"
+        digest: "sha256:761b78079f5c5e094a08aa2f4c7b49ba9d49e178b8741cbe2ef293857601af39"
+      "765720294":
+        name: "dev.twirchat.app-1.21.10-osx-arm64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.10-osx-arm64-full.nupkg"
+        size: 88587757
+        digest: "sha256:f618c09b3545c47b5e6e2012a5e3d7ddd47d5102a52fd0ee96f0dadab3a23272"
+      "765720297":
+        name: "dev.twirchat.app-1.21.10-win-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.10-win-x64-full.nupkg"
+        size: 101368635
+        digest: "sha256:caa2d7c141fb71d2161050d16b9b87c2723b264c1fdd1c6b1da607b83b8fefcd"
+      "765720301":
+        name: "dev.twirchat.app-1.21.10-osx-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.10-osx-x64-full.nupkg"
+        size: 91430445
+        digest: "sha256:bf17c7dc8c3581c2d11cf82c43f2361f89c12d18eaae363b69335351d6f4dc11"
+      "765720314":
+        name: "dev.twirchat.app-1.21.11-linux-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.11-linux-x64-delta.nupkg"
+        size: 10082835
+        digest: "sha256:40c953fae29e28446c317a1bf666ee777ca1965b65fcc03a238b878beae3be2c"
+      "765720393":
+        name: "dev.twirchat.app-1.21.11-linux-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.11-linux-x64-full.nupkg"
+        size: 107874948
+        digest: "sha256:cc86a71ea57d901cf46d525ebbaef956d8f7053ba77d5fd98a71a5f8fa716faf"
+      "765720501":
+        name: "dev.twirchat.app-1.21.11-osx-arm64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.11-osx-arm64-full.nupkg"
+        size: 88590590
+        digest: "sha256:a5191d2152af011cd05770c599b308fb9f9ad55fe59e975841f9b1d23fd1bad6"
+      "765720506":
+        name: "dev.twirchat.app-1.21.11-osx-arm64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.11-osx-arm64-delta.nupkg"
+        size: 582142
+        digest: "sha256:4b0a36f66761a7628450814d819abf713288d9e6089ae70db73a24acf20cd594"
+      "765720536":
+        name: "dev.twirchat.app-1.21.11-osx-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.11-osx-x64-delta.nupkg"
+        size: 388275
+        digest: "sha256:0b332b09642abb353874cb11a276aac1c9fc0e71d9e51126d678186338caed79"
+      "765720537":
+        name: "dev.twirchat.app-1.21.11-osx-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.11-osx-x64-full.nupkg"
+        size: 91429642
+        digest: "sha256:fdc0ca0ded183fab045c72dcac30d0c99cbc59e481cc05769bf426b5ba4d6f21"
+      "765720543":
+        name: "dev.twirchat.app-1.21.11-win-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.11-win-x64-delta.nupkg"
+        size: 375828
+        digest: "sha256:4cd533e8bc9c157a95dcad0b9cd68d52fdbc3e017ce03dcede256b369a2e094c"
+      "765720544":
+        name: "dev.twirchat.app-1.21.11-win-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.11-win-x64-full.nupkg"
+        size: 101368863
+        digest: "sha256:f5e47acc293ae7f38ccdb5e77409cec4aa7d5df6e96d9dbef4d1da82bf44106f"
+      "765720554":
+        name: "dev.twirchat.app-linux-x64.AppImage"
+        url_suffix: "dev.twirchat.app-linux-x64.AppImage"
+        size: 108640760
+        media_type: "application/vnd.appimage"
+        digest: "sha256:ba3427bdd7445e01753b1156117744c9ee2812bf329f0ee96fc8e2f79ab902cf"
+      "765720654":
+        name: "dev.twirchat.app-osx-arm64-Portable.zip"
+        url_suffix: "dev.twirchat.app-osx-arm64-Portable.zip"
+        size: 86024692
+        media_type: "zip"
+        digest: "sha256:380cbca923d3e87d3731da6fcf350c40850d07c62e65be554ef18ae4f7b310f3"
+      "765720657":
+        name: "dev.twirchat.app-osx-arm64-Setup.pkg"
+        url_suffix: "dev.twirchat.app-osx-arm64-Setup.pkg"
+        size: 85957467
+        media_type: "application/x-xar"
+        digest: "sha256:dedbdbb6f6eda3857f295e490ab17bbc5b0366d00b448d6a5b3825c9b1146243"
+      "765720788":
+        name: "dev.twirchat.app-osx-x64-Portable.zip"
+        url_suffix: "dev.twirchat.app-osx-x64-Portable.zip"
+        size: 89647663
+        media_type: "zip"
+        digest: "sha256:8382f655e7357d42495d606ae9a9e0fc1913932338138864edb467218055e6e2"
+      "765720805":
+        name: "dev.twirchat.app-osx-x64-Setup.pkg"
+        url_suffix: "dev.twirchat.app-osx-x64-Setup.pkg"
+        size: 89580613
+        media_type: "application/x-xar"
+        digest: "sha256:f909410de9a7e747fc9c69017766583a1cb2dc4b632fb90e78cf2ee7880b78e1"
+      "765720814":
+        name: "dev.twirchat.app-win-x64-Portable.zip"
+        url_suffix: "dev.twirchat.app-win-x64-Portable.zip"
+        size: 101364143
+        media_type: "zip"
+        digest: "sha256:e47a642acc7c763debfbf9090f289278a403059c3946f47d201bdec0e3d571a5"
+      "765720817":
+        name: "dev.twirchat.app-win-x64-Setup.exe"
+        url_suffix: "dev.twirchat.app-win-x64-Setup.exe"
+        size: 110071839
+        digest: "sha256:fbb4a9bfce2ed07a260375fc1f54c80e3efbf8e3c4c0c308c2e6ba6f1361814a"
+      "765720837":
+        name: "releases.linux-x64.json"
+        url_suffix: "releases.linux-x64.json"
+        size: 1264
+        media_type: "application/json"
+        digest: "sha256:fbcba61e069bbd082a72f15f31684806d20c91ad75378be910752a0067cb10e7"
+      "765720865":
+        name: "releases.osx-arm64.json"
+        url_suffix: "releases.osx-arm64.json"
+        size: 1260
+        media_type: "application/json"
+        digest: "sha256:a064c9dbc096426f1786a3b9fd142771edc837bd6f76f3e6f50ed989237dd06e"
+      "765720904":
+        name: "releases.osx-x64.json"
+        url_suffix: "releases.osx-x64.json"
+        size: 1254
+        media_type: "application/json"
+        digest: "sha256:1b68d09078261feb229e45f586c4d15bedbd6997132bdd85e589e765d6e81e86"
+      "765720934":
+        name: "releases.win-x64.json"
+        url_suffix: "releases.win-x64.json"
+        size: 1256
+        media_type: "application/json"
+        digest: "sha256:10e2d03f8e49e8cbfda29edcda468913dfa930231ad1396c866cbe017f5df05d"
+      "765720950":
+        name: "signature-linux-x64.txt"
+        url_suffix: "signature-linux-x64.txt"
+        size: 55
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:4af23c46327a20eef0a5bf75ade9a735e6cdb8165252987e4adb4da9b5631d1a"
+      "765720969":
+        name: "signature-osx-arm64.txt"
+        url_suffix: "signature-osx-arm64.txt"
+        size: 55
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:d6c24660ec4ffdc276355c4019631fdc1deaeb21dc65f0ca69ca799a7708b890"
+      "765720973":
+        name: "signature-osx-x64.txt"
+        url_suffix: "signature-osx-x64.txt"
+        size: 53
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:c102a7158a898b9343a07bfd69e342a6803abd8e5bcaf0c448eb14a21602c7f8"
+      "765720979":
+        name: "signature-win-x64.txt"
+        url_suffix: "signature-win-x64.txt"
+        size: 53
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:474b85d6a6fa7af43723a4a60abb3c7fc15ebe8d57566a845dd858af16e03c3f"
+  "450803620":
+    tag: "v1.21.12"
+    title: "TwirChat v1.21.12"
+    url: "https://github.com/Satont/twirchat/releases/tag/v1.21.12"
+    created_at: "2026-11-19T02:23:04Z"
+    published_at: "2026-11-19T02:28:43Z"
+    updated_at: "2026-11-19T02:28:43Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/Satont/twirchat/zipball/v1.21.12"
+    source_tar_url: "https://api.github.com/repos/Satont/twirchat/tarball/v1.21.12"
+    download_base: "https://github.com/Satont/twirchat/releases/download/v1.21.12/"
+    assets:
+      "765891626":
+        name: "RELEASES-linux-x64"
+        url_suffix: "RELEASES-linux-x64"
+        size: 196
+        digest: "sha256:f2b22a5712a083d157fd00bc74f1fffd0574c881f43d562efae2b95390f7e4b1"
+      "765891627":
+        name: "RELEASES-win-x64"
+        url_suffix: "RELEASES-win-x64"
+        size: 192
+        digest: "sha256:3eaed243773e51ce03ba5d20226e4b341361ff277e18fa315f38f95ce4b46e40"
+      "765891628":
+        name: "RELEASES-osx-arm64"
+        url_suffix: "RELEASES-osx-arm64"
+        size: 194
+        digest: "sha256:e9e906dd0fb966d7e5c991ed30b38a5c369dfd9e7a5bec156760e7156fb38d98"
+      "765891630":
+        name: "SHA256SUMS"
+        url_suffix: "SHA256SUMS"
+        size: 3453
+        digest: "sha256:795c5c5107d39c7d3dff6a85cb069eeac949dad531609a1ab6af2a68feeda1de"
+      "765891632":
+        name: "RELEASES-osx-x64"
+        url_suffix: "RELEASES-osx-x64"
+        size: 190
+        digest: "sha256:ed682d20195acb54bb12ceba99140d291a8f551f4cadf14d6c99e2dd60da8d4e"
+      "765891652":
+        name: "assets.linux-x64.json"
+        url_suffix: "assets.linux-x64.json"
+        size: 246
+        media_type: "application/json"
+        digest: "sha256:eef885eca48dc4067416a3759d9c6bc8c45e47a56f46c125eb3b407281532643"
+      "765891655":
+        name: "assets.osx-arm64.json"
+        url_suffix: "assets.osx-arm64.json"
+        size: 329
+        media_type: "application/json"
+        digest: "sha256:ccfcc21e41ef7fa3206db51e0decb6312e3f71761f11cdb7f4566f14e613ae86"
+      "765891656":
+        name: "assets.osx-x64.json"
+        url_suffix: "assets.osx-x64.json"
+        size: 321
+        media_type: "application/json"
+        digest: "sha256:3e60969fd0af98a159b1ca8ea8d4d7cf56afe49f775a3adcfe994f2947668aef"
+      "765891658":
+        name: "assets.win-x64.json"
+        url_suffix: "assets.win-x64.json"
+        size: 321
+        media_type: "application/json"
+        digest: "sha256:00b3442a5944daacfabcbf2f5235ffb7a490dfed02cb6329c6ce07490cc55d3e"
+      "765891664":
+        name: "dev.twirchat.app-1.21.11-linux-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.11-linux-x64-full.nupkg"
+        size: 107874948
+        digest: "sha256:cc86a71ea57d901cf46d525ebbaef956d8f7053ba77d5fd98a71a5f8fa716faf"
+      "765891684":
+        name: "dev.twirchat.app-1.21.11-osx-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.11-osx-x64-full.nupkg"
+        size: 91429642
+        digest: "sha256:fdc0ca0ded183fab045c72dcac30d0c99cbc59e481cc05769bf426b5ba4d6f21"
+      "765891685":
+        name: "dev.twirchat.app-1.21.11-osx-arm64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.11-osx-arm64-full.nupkg"
+        size: 88590590
+        digest: "sha256:a5191d2152af011cd05770c599b308fb9f9ad55fe59e975841f9b1d23fd1bad6"
+      "765891694":
+        name: "dev.twirchat.app-1.21.11-win-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.11-win-x64-full.nupkg"
+        size: 101368863
+        digest: "sha256:f5e47acc293ae7f38ccdb5e77409cec4aa7d5df6e96d9dbef4d1da82bf44106f"
+      "765891696":
+        name: "dev.twirchat.app-1.21.12-linux-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.12-linux-x64-delta.nupkg"
+        size: 9550932
+        digest: "sha256:6b764d760ee3bc8bdd0c7dee494a9b4f1b973765815d4d3d83f587a07d476d1c"
+      "765891755":
+        name: "dev.twirchat.app-1.21.12-linux-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.12-linux-x64-full.nupkg"
+        size: 107875564
+        digest: "sha256:13c1b5fe5bd7b049e1dea048b8e9ad8c2533d82ce78c3b8ca69782e11d5fed41"
+      "765891835":
+        name: "dev.twirchat.app-1.21.12-osx-arm64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.12-osx-arm64-delta.nupkg"
+        size: 278559
+        digest: "sha256:1b76f58c9ca24cbfef511192961551e7f4b32b26f62368eba1a84f00dd10a742"
+      "765891865":
+        name: "dev.twirchat.app-1.21.12-osx-arm64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.12-osx-arm64-full.nupkg"
+        size: 88590623
+        digest: "sha256:8d31e8fef7465da3f723a1603f0349cd5af06a60d7f0e75edd3b6a360270a568"
+      "765891868":
+        name: "dev.twirchat.app-1.21.12-osx-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.12-osx-x64-delta.nupkg"
+        size: 90520
+        digest: "sha256:03fd242e72167ca381f66942334c0731ac382e860c919b65fe4ad3f8aad9653e"
+      "765891896":
+        name: "dev.twirchat.app-1.21.12-osx-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.12-osx-x64-full.nupkg"
+        size: 91429655
+        digest: "sha256:b9eb95b07e3b59ed43112d18f428d063bb5abd4af1ad6ccb04b982f44e0151fa"
+      "765891912":
+        name: "dev.twirchat.app-1.21.12-win-x64-delta.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.12-win-x64-delta.nupkg"
+        size: 79636
+        digest: "sha256:c61abcacca030b639abb1277f5896a84e0c289ea751e5dcc4fc23bcb4ab18490"
+      "765891929":
+        name: "dev.twirchat.app-1.21.12-win-x64-full.nupkg"
+        url_suffix: "dev.twirchat.app-1.21.12-win-x64-full.nupkg"
+        size: 101368862
+        digest: "sha256:c918f30caa5c0d66d5c1c57d0fb69a577e31f0797e07dfbb2d96b6b318177b65"
+      "765891967":
+        name: "dev.twirchat.app-linux-x64.AppImage"
+        url_suffix: "dev.twirchat.app-linux-x64.AppImage"
+        size: 108640760
+        media_type: "application/vnd.appimage"
+        digest: "sha256:a61794037e70d4bd75849ad23b0ba32b1efb387c4c6ac1b2505814f78396a16b"
+      "765892011":
+        name: "dev.twirchat.app-osx-arm64-Portable.zip"
+        url_suffix: "dev.twirchat.app-osx-arm64-Portable.zip"
+        size: 86024750
+        media_type: "zip"
+        digest: "sha256:6a61735840c59fb790193fbb8c9b8c60c0bf6cae94a37dabce77a954f735ebdf"
+      "765892058":
+        name: "dev.twirchat.app-osx-arm64-Setup.pkg"
+        url_suffix: "dev.twirchat.app-osx-arm64-Setup.pkg"
+        size: 85957528
+        media_type: "application/x-xar"
+        digest: "sha256:0cfcb51522a92a28d2a819fd9b2a08b6d51c441e922c12e14d8c5a66305baee1"
+      "765892114":
+        name: "dev.twirchat.app-osx-x64-Portable.zip"
+        url_suffix: "dev.twirchat.app-osx-x64-Portable.zip"
+        size: 89647744
+        media_type: "zip"
+        digest: "sha256:e779204c0f115109eb46dbf1241184e598738b60d0c60eab8a5fd58548b9aead"
+      "765892155":
+        name: "dev.twirchat.app-osx-x64-Setup.pkg"
+        url_suffix: "dev.twirchat.app-osx-x64-Setup.pkg"
+        size: 89580641
+        media_type: "application/x-xar"
+        digest: "sha256:21ba6d660818216f16915892228f07431977d6f9d7e3a2a69ecc641a53c65381"
+      "765892168":
+        name: "dev.twirchat.app-win-x64-Portable.zip"
+        url_suffix: "dev.twirchat.app-win-x64-Portable.zip"
+        size: 101364142
+        media_type: "zip"
+        digest: "sha256:400216619acba30372aeb191e97bf5cc56f57a9e4a62349d960e16203f6d8778"
+      "765892224":
+        name: "dev.twirchat.app-win-x64-Setup.exe"
+        url_suffix: "dev.twirchat.app-win-x64-Setup.exe"
+        size: 110071838
+        digest: "sha256:3c648060cd09e3b4d13031591aab8fe5380e9e5047d5126cbfb0b03819705243"
+      "765892238":
+        name: "releases.linux-x64.json"
+        url_suffix: "releases.linux-x64.json"
+        size: 1263
+        media_type: "application/json"
+        digest: "sha256:3d0e4d185e929c645537e4dadd90b761973f31b5698331b46d35fd25f52eece6"
+      "765892256":
+        name: "releases.osx-arm64.json"
+        url_suffix: "releases.osx-arm64.json"
+        size: 1260
+        media_type: "application/json"
+        digest: "sha256:2a57550b45bb68ac20416c46f69f6a91e167c44a555a63c90a54bae8f49b09b1"
+      "765892273":
+        name: "releases.osx-x64.json"
+        url_suffix: "releases.osx-x64.json"
+        size: 1253
+        media_type: "application/json"
+        digest: "sha256:28a3c2ec771baf4bcc06583e635eeb7ba6e7932621b00aa68b04bc0559668bc5"
+      "765892296":
+        name: "signature-linux-x64.txt"
+        url_suffix: "signature-linux-x64.txt"
+        size: 55
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8a9f045c830401452b96d81737ab2cc0ba7a2537e7612fa058f0a20e707b6d86"
+      "765892297":
+        name: "releases.win-x64.json"
+        url_suffix: "releases.win-x64.json"
+        size: 1255
+        media_type: "application/json"
+        digest: "sha256:cce4ccceb2fee391791d2c36dddecede6b16aa05ce13fd45a5fc6e1e7f0c1525"
+      "765892303":
+        name: "signature-osx-arm64.txt"
+        url_suffix: "signature-osx-arm64.txt"
+        size: 55
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:57f602e1a60e177ccbba29983e5db4b41a7d2c58a3106bcd753a2b5324c35cc7"
+      "765892321":
+        name: "signature-osx-x64.txt"
+        url_suffix: "signature-osx-x64.txt"
+        size: 53
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:0fe3bf91a7f93403a90df7418a697b241d91a790182d1a9538b8e7d0c1fe6e5e"
+      "765892325":
+        name: "signature-win-x64.txt"
+        url_suffix: "signature-win-x64.txt"
+        size: 53
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:808cc7a619f957b277708b9480ef6f622cddf41bc5ad0eec6990a138584a5ee6"

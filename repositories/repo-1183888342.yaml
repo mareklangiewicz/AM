@@ -1,668 +1,15 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/040614f86cbbf31fc19596c8d32225c82de77acf/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/cb854845b919dd38d98a806e7456ec53798c7564/docs/catalog-format-v3.md"
 kind: "repository"
 repository_id: 1183888342
 repository: "stablyai/orca"
-collected_at: "2026-11-17T20:51:38Z"
+collected_at: "2026-11-20T17:13:54Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: false
-observed_at: "2026-11-17T20:51:38Z"
+observed_at: "2026-11-20T17:13:54Z"
 releases:
-  "422320536":
-    tag: "v1.4.238"
-    title: "v1.4.238"
-    url: "https://github.com/stablyai/orca/releases/tag/v1.4.238"
-    created_at: "2026-10-23T20:57:35Z"
-    published_at: "2026-10-23T21:47:22Z"
-    updated_at: "2026-11-04T05:55:06Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/stablyai/orca/zipball/v1.4.238"
-    source_tar_url: "https://api.github.com/repos/stablyai/orca/tarball/v1.4.238"
-    download_base: "https://github.com/stablyai/orca/releases/download/v1.4.238/"
-    assets:
-      "670441434":
-        name: "orca-linux-arm64.AppImage"
-        url_suffix: "orca-linux-arm64.AppImage"
-        size: 245929365
-        digest: "sha256:4e5e9a408924871e71da7043cbf1e6c0873687c6ea012b9d342f10c3eab6693f"
-      "670441797":
-        name: "orca-sourcemaps-v1.4.238.zip"
-        url_suffix: "orca-sourcemaps-v1.4.238.zip"
-        size: 16853247
-        media_type: "zip"
-        digest: "sha256:6cddfcd82ecb49f04332721e34c28c527d7ca06e4f6f9305ebe0fd015ae7e5dc"
-      "670444230":
-        name: "orca-linux.AppImage"
-        url_suffix: "orca-linux.AppImage"
-        size: 244512499
-        digest: "sha256:7a9facb5c421cac45b11d2aefd4128f2ec6f6e9ade16ec8d7e4124d7ba4cd127"
-      "670446319":
-        name: "orca-ide_1.4.238_arm64.deb"
-        url_suffix: "orca-ide_1.4.238_arm64.deb"
-        size: 177185180
-        digest: "sha256:43860c53154691e8726e4647f440d0d56d40dac68e2a08690662d3dfd7592b6a"
-      "670448660":
-        name: "orca-ide_1.4.238_amd64.deb"
-        url_suffix: "orca-ide_1.4.238_amd64.deb"
-        size: 181541476
-        digest: "sha256:6c84a2e8b963ee430a17c7e148f6327929dd4e5b7bbd55fe0ab84bb918aa5bf9"
-      "670450883":
-        name: "orca-macos-arm64.dmg"
-        url_suffix: "orca-macos-arm64.dmg"
-        size: 270949896
-        digest: "sha256:9c1287641e5696943e30caf8cb714c1c30a0b66014f482e91e24d51f96158be0"
-      "670450884":
-        name: "orca-macos-arm64.dmg.blockmap"
-        url_suffix: "orca-macos-arm64.dmg.blockmap"
-        size: 286063
-        digest: "sha256:21d354556a552e9d5f5c85e98d0fe2407064c61213bc70e6f08b860c9321d374"
-      "670451318":
-        name: "Orca-1.4.238-arm64-mac.zip.blockmap"
-        url_suffix: "Orca-1.4.238-arm64-mac.zip.blockmap"
-        size: 280012
-        digest: "sha256:fce931b8f837c7420954245f950904187c5b63fbc054220fd5a30554ce933cf1"
-      "670451319":
-        name: "Orca-1.4.238-arm64-mac.zip"
-        url_suffix: "Orca-1.4.238-arm64-mac.zip"
-        size: 271642274
-        media_type: "zip"
-        digest: "sha256:0d1ba276c69eb739be86138c1914b56456f7492b1ec6d7287b346a3dcb50072d"
-      "670451451":
-        name: "Orca-1.4.238-mac.zip.blockmap"
-        url_suffix: "Orca-1.4.238-mac.zip.blockmap"
-        size: 287906
-        digest: "sha256:c851eff81fdda2a8e580903d7b3c7b76fa4de6c06b19750734c19ed10cbcb0dd"
-      "670451453":
-        name: "Orca-1.4.238-mac.zip"
-        url_suffix: "Orca-1.4.238-mac.zip"
-        size: 280913505
-        media_type: "zip"
-        digest: "sha256:14772249ef1de09bdd3b3c43e60026d6259615e73436a9dcfdc4b76f3afd10f2"
-      "670451687":
-        name: "orca-macos-x64.dmg.blockmap"
-        url_suffix: "orca-macos-x64.dmg.blockmap"
-        size: 294505
-        digest: "sha256:2bdb1d71264a167b30c73749959d6f492f1dc935a67a060ec58626eae9ac5610"
-      "670451688":
-        name: "orca-macos-x64.dmg"
-        url_suffix: "orca-macos-x64.dmg"
-        size: 280190779
-        digest: "sha256:348354dafed007cf57301fe94e79c35f0fa1178f09e3aa1b6383f8bc0b9f9c8f"
-      "670451716":
-        name: "orca-ide-1.4.238.aarch64.rpm"
-        url_suffix: "orca-ide-1.4.238.aarch64.rpm"
-        size: 149737181
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:a5e1d57cdfec7a09476b48f4703460ff3f0d5517fcd2662b5680a18b8f435bd5"
-      "670451963":
-        name: "latest-linux-arm64.yml"
-        url_suffix: "latest-linux-arm64.yml"
-        size: 690
-        media_type: "text/yaml"
-        digest: "sha256:9b78ea1faee6d0b35ed888be935d4f1bc2df6930e2e67acafc1ab0b346bffd25"
-      "670452005":
-        name: "latest-mac.yml"
-        url_suffix: "latest-mac.yml"
-        size: 796
-        media_type: "text/yaml"
-        digest: "sha256:95bf6fadd05be860660edc1dee6ecdc1b28fecc75ea7de0b8037ea600618ff40"
-      "670453704":
-        name: "orca-ide-1.4.238.x86_64.rpm"
-        url_suffix: "orca-ide-1.4.238.x86_64.rpm"
-        size: 153679733
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:017df27bea2bda5966e91b551e189cf47c8ce3dc7eb5d9f9f1058cc08dc9d402"
-      "670453961":
-        name: "latest-linux.yml"
-        url_suffix: "latest-linux.yml"
-        size: 677
-        media_type: "text/yaml"
-        digest: "sha256:8318497f608ef1813ba66aadef1826634153f32e01fec95d0ab3bb3cd4517acc"
-      "670499014":
-        name: "orca-windows-setup.exe.blockmap"
-        url_suffix: "orca-windows-setup.exe.blockmap"
-        size: 201800
-        digest: "sha256:8c39adfa3bb004a70beb0261bfd593eb81a82f600efbbf972ea9a443557a07a1"
-      "670499016":
-        name: "orca-windows-setup.exe"
-        url_suffix: "orca-windows-setup.exe"
-        size: 201790688
-        media_type: "application/x-msdownload"
-        digest: "sha256:b70765a986c44de3fe7ff5a446903c36b4bd35fc4682b5bd553b414507332eeb"
-      "670499020":
-        name: "latest.yml"
-        url_suffix: "latest.yml"
-        size: 343
-        digest: "sha256:b487dc975ad5b1267b7b4aad39eed55f0b06ac9117aa2c333fcca52d54c7cdd8"
-  "422562160":
-    tag: "v1.4.239"
-    title: "v1.4.239"
-    url: "https://github.com/stablyai/orca/releases/tag/v1.4.239"
-    created_at: "2026-10-24T06:33:23Z"
-    published_at: "2026-10-24T07:10:02Z"
-    updated_at: "2026-11-04T05:54:54Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/stablyai/orca/zipball/v1.4.239"
-    source_tar_url: "https://api.github.com/repos/stablyai/orca/tarball/v1.4.239"
-    download_base: "https://github.com/stablyai/orca/releases/download/v1.4.239/"
-    assets:
-      "671517455":
-        name: "orca-sourcemaps-v1.4.239.zip"
-        url_suffix: "orca-sourcemaps-v1.4.239.zip"
-        size: 16319683
-        media_type: "zip"
-        digest: "sha256:d9b13cb24c4ae0c0f9bf39fe942ca7273ff96a19fd199d6eb444e22b2782e6a4"
-      "671517618":
-        name: "orca-linux-arm64.AppImage"
-        url_suffix: "orca-linux-arm64.AppImage"
-        size: 246199482
-        digest: "sha256:f2ab231fef022a1be4bd77ff9da5647092fefcda9453f10a2050fbe5029305df"
-      "671519383":
-        name: "orca-linux.AppImage"
-        url_suffix: "orca-linux.AppImage"
-        size: 244782628
-        digest: "sha256:9c10b548b530e08fc123a46746aa3bfa66e15e349fa9014a75a2addc5c4f26cd"
-      "671522582":
-        name: "orca-ide_1.4.239_arm64.deb"
-        url_suffix: "orca-ide_1.4.239_arm64.deb"
-        size: 177505064
-        digest: "sha256:ecf5c891dd2a6275ec1e2a7d4ef60b4119f9a47c1dfa1ff3afd8f5c7bfab1965"
-      "671522663":
-        name: "orca-ide_1.4.239_amd64.deb"
-        url_suffix: "orca-ide_1.4.239_amd64.deb"
-        size: 181752756
-        digest: "sha256:f5ef5e3ee829fd1acd4d27a973438675a9d89271871e5de1d786ae8f3f9cc8c1"
-      "671525119":
-        name: "orca-macos-arm64.dmg"
-        url_suffix: "orca-macos-arm64.dmg"
-        size: 271371032
-        digest: "sha256:5a870f3be444abcef4c14fd53a0cb398744e7a4f4aa105376ee810d195e33780"
-      "671525121":
-        name: "orca-macos-arm64.dmg.blockmap"
-        url_suffix: "orca-macos-arm64.dmg.blockmap"
-        size: 283396
-        digest: "sha256:fc28ee6ce8691d7e80a428405fcaea0fa1687e1f7ca9b5f8fc8b5be939d8bdea"
-      "671525568":
-        name: "Orca-1.4.239-arm64-mac.zip.blockmap"
-        url_suffix: "Orca-1.4.239-arm64-mac.zip.blockmap"
-        size: 280064
-        digest: "sha256:de580e986cb38dd6d87995dd54e585e0ef2e5b6704eec6f524db03d7091d8cea"
-      "671525572":
-        name: "Orca-1.4.239-arm64-mac.zip"
-        url_suffix: "Orca-1.4.239-arm64-mac.zip"
-        size: 272056405
-        media_type: "zip"
-        digest: "sha256:08e92150f2fb375b2b65d35fcb6f361da2e4f3e522b2051ab2621e712fdec908"
-      "671525741":
-        name: "Orca-1.4.239-mac.zip.blockmap"
-        url_suffix: "Orca-1.4.239-mac.zip.blockmap"
-        size: 287769
-        digest: "sha256:3e8135ef2a27bcdd3e0c00934f1d932d64aac41d69236fc8f5f36c7acbd180b7"
-      "671525744":
-        name: "Orca-1.4.239-mac.zip"
-        url_suffix: "Orca-1.4.239-mac.zip"
-        size: 281327644
-        media_type: "zip"
-        digest: "sha256:7962c8a6efbef79d26b0a8b1f03065b8e86156cc2a7ac0ae8ca9b19d0a01fec4"
-      "671525977":
-        name: "orca-macos-x64.dmg.blockmap"
-        url_suffix: "orca-macos-x64.dmg.blockmap"
-        size: 291020
-        digest: "sha256:17d3ec39c319e63fd3b8910b79d2083949f532a8f6c8b233f6e952c0556f1aa2"
-      "671525979":
-        name: "orca-macos-x64.dmg"
-        url_suffix: "orca-macos-x64.dmg"
-        size: 280519429
-        digest: "sha256:e399f97a44b4e09626d8fb20020380b472945025cc1f71e1ac44559f0b5ae239"
-      "671526391":
-        name: "latest-mac.yml"
-        url_suffix: "latest-mac.yml"
-        size: 796
-        media_type: "text/yaml"
-        digest: "sha256:122c335cc1ba06096762a7ee1244f47c2512c1638ad7e341b3a07ded564b2091"
-      "671527181":
-        name: "orca-ide-1.4.239.x86_64.rpm"
-        url_suffix: "orca-ide-1.4.239.x86_64.rpm"
-        size: 153865077
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:41844a2cefdedd1f0a3f5952b559cd2a4599652709a850f2982e231b5b89f4af"
-      "671527378":
-        name: "orca-ide-1.4.239.aarch64.rpm"
-        url_suffix: "orca-ide-1.4.239.aarch64.rpm"
-        size: 149661505
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:4bd0ce2d3fb2c61138f90cb505bd50ebf58c5ec2d1414463d8a11103bcf972f0"
-      "671527460":
-        name: "latest-linux.yml"
-        url_suffix: "latest-linux.yml"
-        size: 677
-        media_type: "text/yaml"
-        digest: "sha256:12edb620f067fd621ae44e025eab8c191cc9ff9d1865457ddf61fc5b4f6fbe83"
-      "671527543":
-        name: "latest-linux-arm64.yml"
-        url_suffix: "latest-linux-arm64.yml"
-        size: 690
-        media_type: "text/yaml"
-        digest: "sha256:1ddb6d83a85c42273eb9a4f4b8aba6afa555c18573857ef2d9ccea79cb607060"
-      "671554382":
-        name: "orca-windows-setup.exe.blockmap"
-        url_suffix: "orca-windows-setup.exe.blockmap"
-        size: 202554
-        digest: "sha256:90b97fc892166e306c6c398f5ae7810108ebdfde5af92e465df8e062553bd478"
-      "671554383":
-        name: "orca-windows-setup.exe"
-        url_suffix: "orca-windows-setup.exe"
-        size: 202035560
-        media_type: "application/x-msdownload"
-        digest: "sha256:e4c7855da7e44deee3c518a7af8a4abeb47e4dd5f5dd558d7a1e802eb070281f"
-      "671554388":
-        name: "latest.yml"
-        url_suffix: "latest.yml"
-        size: 343
-        digest: "sha256:e14cf283e7927eb9f31f046790e81417272e989c26d26f7f1b639617119d46b4"
-  "423118952":
-    tag: "v1.4.240"
-    title: "v1.4.240"
-    url: "https://github.com/stablyai/orca/releases/tag/v1.4.240"
-    created_at: "2026-10-25T03:09:11Z"
-    published_at: "2026-10-25T04:02:08Z"
-    updated_at: "2026-10-25T04:36:46Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/stablyai/orca/zipball/v1.4.240"
-    source_tar_url: "https://api.github.com/repos/stablyai/orca/tarball/v1.4.240"
-    download_base: "https://github.com/stablyai/orca/releases/download/v1.4.240/"
-    assets:
-      "673975635":
-        name: "orca-sourcemaps-v1.4.240.zip"
-        url_suffix: "orca-sourcemaps-v1.4.240.zip"
-        size: 16552714
-        media_type: "zip"
-        digest: "sha256:c8590b3b28b0a33f889c9497ed4dd59494c2f22d6061e4253d2caf00bbaaa475"
-      "673976723":
-        name: "orca-linux.AppImage"
-        url_suffix: "orca-linux.AppImage"
-        size: 244929683
-        digest: "sha256:fa9c96016487020ee51b2f889ae8495fc4934a3666ee9767532ff0457013b4be"
-      "673978053":
-        name: "orca-linux-arm64.AppImage"
-        url_suffix: "orca-linux-arm64.AppImage"
-        size: 246350647
-        digest: "sha256:e93bfe0f0c8c18bfccd8b422f91baa174161e4f21194a035cc3c61a694a16371"
-      "673979711":
-        name: "orca-ide_1.4.240_amd64.deb"
-        url_suffix: "orca-ide_1.4.240_amd64.deb"
-        size: 181788848
-        digest: "sha256:4f8e293a1990d6d73c1e9b8fab5100d6a3383247ce09fb152f14ce5817526623"
-      "673982830":
-        name: "orca-ide_1.4.240_arm64.deb"
-        url_suffix: "orca-ide_1.4.240_arm64.deb"
-        size: 177831180
-        digest: "sha256:c0d1d666c426d243eef6d87e8f25aa7c37f6c30f17ebe821ab25311ca514b8de"
-      "673983634":
-        name: "orca-macos-arm64.dmg.blockmap"
-        url_suffix: "orca-macos-arm64.dmg.blockmap"
-        size: 284847
-        digest: "sha256:b9b93e22727597cb6cf97c298234eef5356afa6a2576234189be0a61a081d01e"
-      "673983642":
-        name: "orca-macos-arm64.dmg"
-        url_suffix: "orca-macos-arm64.dmg"
-        size: 271514091
-        digest: "sha256:6020a633e2f3775d77395f5a9703f9a11d31fbf0fe0afeab8dbed39e140fbe90"
-      "673983772":
-        name: "orca-ide-1.4.240.x86_64.rpm"
-        url_suffix: "orca-ide-1.4.240.x86_64.rpm"
-        size: 153948901
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:784fd1c37b0ddbe2dd880bdd0b70ec954fa6ae4e34573e3121967bbe3e528677"
-      "673983931":
-        name: "latest-linux.yml"
-        url_suffix: "latest-linux.yml"
-        size: 677
-        media_type: "text/yaml"
-        digest: "sha256:38d8d06bd655bc88fc3b86ed9438a704be17f5cca5416b99548edfd65d6db935"
-      "673984032":
-        name: "Orca-1.4.240-arm64-mac.zip"
-        url_suffix: "Orca-1.4.240-arm64-mac.zip"
-        size: 272257855
-        media_type: "zip"
-        digest: "sha256:a2c67f580e9823d3012436684b4275038174dc7963c6ed175c4285e72d944061"
-      "673984034":
-        name: "Orca-1.4.240-arm64-mac.zip.blockmap"
-        url_suffix: "Orca-1.4.240-arm64-mac.zip.blockmap"
-        size: 281034
-        digest: "sha256:b7924850b1734bf66a02e51bd8f4d3c1e7835ad05148bfb9d79e9dc6f0fd619b"
-      "673984106":
-        name: "Orca-1.4.240-mac.zip.blockmap"
-        url_suffix: "Orca-1.4.240-mac.zip.blockmap"
-        size: 288573
-        digest: "sha256:81e747f0f993db46e4e056bbba9727e15190939154365212ae1b2066c45d64d8"
-      "673984107":
-        name: "Orca-1.4.240-mac.zip"
-        url_suffix: "Orca-1.4.240-mac.zip"
-        size: 281529080
-        media_type: "zip"
-        digest: "sha256:f251cfbdaed5e86d700658d428693fc25cbc8d34def22d0c5838c9466711d136"
-      "673984151":
-        name: "orca-macos-x64.dmg.blockmap"
-        url_suffix: "orca-macos-x64.dmg.blockmap"
-        size: 291435
-        digest: "sha256:0f0335268ef698e9de094374e906a42e1165f6faf1b070e56fb5039f01fa3aec"
-      "673984155":
-        name: "orca-macos-x64.dmg"
-        url_suffix: "orca-macos-x64.dmg"
-        size: 280716724
-        digest: "sha256:24ae4ded325e058edde6819bfe80f80f96fd478316c8eec8ee6307df77d3221f"
-      "673984444":
-        name: "latest-mac.yml"
-        url_suffix: "latest-mac.yml"
-        size: 796
-        media_type: "text/yaml"
-        digest: "sha256:31e5c24e13b719aaedd09289c26352c3981d1bdf3639926226703fbc2c3764e8"
-      "673986794":
-        name: "orca-ide-1.4.240.aarch64.rpm"
-        url_suffix: "orca-ide-1.4.240.aarch64.rpm"
-        size: 149532509
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:f9e966b0d82b121f43631e94d4561b93bd6a7ac69ed1ecb3fb57f043af1bfb84"
-      "673986981":
-        name: "latest-linux-arm64.yml"
-        url_suffix: "latest-linux-arm64.yml"
-        size: 690
-        media_type: "text/yaml"
-        digest: "sha256:b319638efb54b6b49f39db67016b2add555d14e56d6f135d2a8d0b2c4f69270f"
-      "674036561":
-        name: "orca-windows-setup.exe.blockmap"
-        url_suffix: "orca-windows-setup.exe.blockmap"
-        size: 201605
-        digest: "sha256:91a64bce6d9303d5e294fcb3ad0a9f86b6c63ec0031d683367f3d6d8daf23c73"
-      "674036562":
-        name: "orca-windows-setup.exe"
-        url_suffix: "orca-windows-setup.exe"
-        size: 202163936
-        media_type: "application/x-msdownload"
-        digest: "sha256:868b7e54f412035f8e4ad73e842a8eda8919ee02b43a8b26a72aca44a5deefe6"
-      "674036563":
-        name: "latest.yml"
-        url_suffix: "latest.yml"
-        size: 343
-        digest: "sha256:1582a10ddf763b7144ba042bbf5f1e4bd8ab96039e70f05d9c2bdd85c59256b5"
-  "423823438":
-    tag: "v1.4.241"
-    title: "v1.4.241"
-    url: "https://github.com/stablyai/orca/releases/tag/v1.4.241"
-    created_at: "2026-10-26T03:11:37Z"
-    published_at: "2026-10-26T03:48:28Z"
-    updated_at: "2026-11-04T05:54:52Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/stablyai/orca/zipball/v1.4.241"
-    source_tar_url: "https://api.github.com/repos/stablyai/orca/tarball/v1.4.241"
-    download_base: "https://github.com/stablyai/orca/releases/download/v1.4.241/"
-    assets:
-      "676884743":
-        name: "orca-sourcemaps-v1.4.241.zip"
-        url_suffix: "orca-sourcemaps-v1.4.241.zip"
-        size: 16036149
-        media_type: "zip"
-        digest: "sha256:dc4ff7d055b46f8a4f23e51d59e36bb68a5b79011838a7dac5dff98e1f8b56d2"
-      "676885137":
-        name: "orca-linux-arm64.AppImage"
-        url_suffix: "orca-linux-arm64.AppImage"
-        size: 246256755
-        digest: "sha256:55d6c7a6f74159b2cd36a5052d986c7646b62fb05b72e5744658c1f4766c1536"
-      "676886441":
-        name: "orca-linux.AppImage"
-        url_suffix: "orca-linux.AppImage"
-        size: 244839916
-        digest: "sha256:c83b1af8e3fc6f8fad83c0c4d0fd97b9c235e92e3a1d63e90c986b018f609d4a"
-      "676888894":
-        name: "orca-ide_1.4.241_arm64.deb"
-        url_suffix: "orca-ide_1.4.241_arm64.deb"
-        size: 177792392
-        digest: "sha256:ba2cccc02f15cb8c10a43e17667842be7b9db48a200c0ae9c25784cfcf9c11b2"
-      "676889393":
-        name: "orca-ide_1.4.241_amd64.deb"
-        url_suffix: "orca-ide_1.4.241_amd64.deb"
-        size: 181800244
-        digest: "sha256:bd932eef4fceeb8a7cde044f2a5f7301c44be522557d8523dbfb3557134d051d"
-      "676891722":
-        name: "orca-macos-x64.dmg"
-        url_suffix: "orca-macos-x64.dmg"
-        size: 280700640
-        digest: "sha256:cde5cb6793b53b19faeb58bb968160571428d023d62bf4c5639b6ab79bc9c90b"
-      "676891723":
-        name: "orca-macos-x64.dmg.blockmap"
-        url_suffix: "orca-macos-x64.dmg.blockmap"
-        size: 291368
-        digest: "sha256:b453923412b94aed2333d4c72e2aae62b27e15005ca3f1a000a5f18fd227da4e"
-      "676892029":
-        name: "Orca-1.4.241-arm64-mac.zip"
-        url_suffix: "Orca-1.4.241-arm64-mac.zip"
-        size: 272247072
-        media_type: "zip"
-        digest: "sha256:edd8b09cd0510bed58d89391a62e2a433b7b2e4c720678c8ca7a63cb4c808d56"
-      "676892031":
-        name: "Orca-1.4.241-arm64-mac.zip.blockmap"
-        url_suffix: "Orca-1.4.241-arm64-mac.zip.blockmap"
-        size: 280868
-        digest: "sha256:07e3b3773e6abbaeb42ce4f6cb56f4efedbe948b41285f4a68794d658b0bafb8"
-      "676892055":
-        name: "Orca-1.4.241-mac.zip.blockmap"
-        url_suffix: "Orca-1.4.241-mac.zip.blockmap"
-        size: 288400
-        digest: "sha256:c732cd856eb09e4d905afc606c9a01537305bd46157f0453926c4d7e1ece19d1"
-      "676892059":
-        name: "Orca-1.4.241-mac.zip"
-        url_suffix: "Orca-1.4.241-mac.zip"
-        size: 281518279
-        media_type: "zip"
-        digest: "sha256:8d72a7e803454222938ad734fca7154e48c119830517b82ce41111b459c76811"
-      "676892285":
-        name: "orca-macos-arm64.dmg.blockmap"
-        url_suffix: "orca-macos-arm64.dmg.blockmap"
-        size: 285103
-        digest: "sha256:fd42961638e12900413c776267d3d2a7d8818c6e600d55da65064eeeb43b7dfd"
-      "676892287":
-        name: "orca-macos-arm64.dmg"
-        url_suffix: "orca-macos-arm64.dmg"
-        size: 271528987
-        digest: "sha256:be5000497b370e9727c2343de50720312b9882d59ec0ba2012c02fbddc8e305e"
-      "676892655":
-        name: "latest-mac.yml"
-        url_suffix: "latest-mac.yml"
-        size: 796
-        media_type: "text/yaml"
-        digest: "sha256:732cfdd0e7bbdaad99572364ec7dc19d6c36e27fa19312a32b3613011cc43ee1"
-      "676892934":
-        name: "orca-ide-1.4.241.aarch64.rpm"
-        url_suffix: "orca-ide-1.4.241.aarch64.rpm"
-        size: 149436849
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:dcf4e238c8738111a6f77a5fdc149dafeedd797b2baeced192dd06cbeae0dac6"
-      "676893045":
-        name: "orca-ide-1.4.241.x86_64.rpm"
-        url_suffix: "orca-ide-1.4.241.x86_64.rpm"
-        size: 153907217
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:072def733e1fc2ceb3991f6de84dbaa14605a1945145485e4c12047ffda1b9a1"
-      "676893150":
-        name: "latest-linux-arm64.yml"
-        url_suffix: "latest-linux-arm64.yml"
-        size: 690
-        media_type: "text/yaml"
-        digest: "sha256:3185a537a936a2e577ac84aa085c2e2ecb5126ce57befeff51ba792620b754d4"
-      "676893279":
-        name: "latest-linux.yml"
-        url_suffix: "latest-linux.yml"
-        size: 677
-        media_type: "text/yaml"
-        digest: "sha256:68a6afb9219c5892c90b02d5ea30d3077016724e3c5561937e975ba2ccddcc7d"
-      "676919008":
-        name: "orca-windows-setup.exe.blockmap"
-        url_suffix: "orca-windows-setup.exe.blockmap"
-        size: 202689
-        digest: "sha256:fb3dd0447448ce198daa4deba8dcebbfe7a0af419dbcf46b5b48d1583efd76d0"
-      "676919012":
-        name: "latest.yml"
-        url_suffix: "latest.yml"
-        size: 343
-        digest: "sha256:bfb7a0b84463bae62dee7856fec507d9a41650c81364f6455cace5b19deaa92b"
-      "676919013":
-        name: "orca-windows-setup.exe"
-        url_suffix: "orca-windows-setup.exe"
-        size: 202070480
-        media_type: "application/x-msdownload"
-        digest: "sha256:a63bbf18fa51d51805eb6581b766f8c0dd3a3418c62eb1f5094125173ab6b643"
-  "423855394":
-    tag: "mobile-android-v0.0.59"
-    title: "Orca Mobile Android mobile-android-v0.0.59"
-    url: "https://github.com/stablyai/orca/releases/tag/mobile-android-v0.0.59"
-    created_at: "2026-10-26T03:54:23Z"
-    published_at: "2026-10-26T04:21:00Z"
-    updated_at: "2026-10-26T04:24:10Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/stablyai/orca/zipball/mobile-android-v0.0.59"
-    source_tar_url: "https://api.github.com/repos/stablyai/orca/tarball/mobile-android-v0.0.59"
-    download_base: "https://github.com/stablyai/orca/releases/download/mobile-android-v0.0.59/"
-    assets:
-      "676990534":
-        name: "app-release.apk"
-        url_suffix: "app-release.apk"
-        size: 136281689
-        media_type: "application/vnd.android.package-archive"
-        digest: "sha256:f8a18086b04dc00966431edc4d484132d6fc8dc08a5d88009a3246317a12f343"
-      "676990537":
-        name: "app-release.apk.sha256"
-        url_suffix: "app-release.apk.sha256"
-        size: 82
-        digest: "sha256:d5ebf5cfdd53f6e9e0f3295e65f5ca47202607b12fb4b573635df8a0c102127d"
-  "424870266":
-    tag: "v1.4.242"
-    title: "v1.4.242"
-    url: "https://github.com/stablyai/orca/releases/tag/v1.4.242"
-    created_at: "2026-10-26T23:16:32Z"
-    published_at: "2026-10-27T00:09:03Z"
-    updated_at: "2026-11-04T05:54:50Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/stablyai/orca/zipball/v1.4.242"
-    source_tar_url: "https://api.github.com/repos/stablyai/orca/tarball/v1.4.242"
-    download_base: "https://github.com/stablyai/orca/releases/download/v1.4.242/"
-    assets:
-      "679823303":
-        name: "orca-sourcemaps-v1.4.242.zip"
-        url_suffix: "orca-sourcemaps-v1.4.242.zip"
-        size: 16148485
-        media_type: "zip"
-        digest: "sha256:d91e282ce174a81c2e2aa54a3cea002b9f9166222ad3e65e6b1829777fd65704"
-      "679825286":
-        name: "orca-linux-arm64.AppImage"
-        url_suffix: "orca-linux-arm64.AppImage"
-        size: 246535615
-        digest: "sha256:81c6d2adb16ac9e9c690966dc6ae82949c401a06b4ae5a6f38da1f37e619ef6b"
-      "679825384":
-        name: "orca-linux.AppImage"
-        url_suffix: "orca-linux.AppImage"
-        size: 245118746
-        digest: "sha256:56a4482fe3d23eda82162a09d835a40c824f77150052781d4b3d784b951ae411"
-      "679828602":
-        name: "orca-ide_1.4.242_amd64.deb"
-        url_suffix: "orca-ide_1.4.242_amd64.deb"
-        size: 182203244
-        digest: "sha256:e55b8a57f1662002365ca64a9595b3ab5113f213921cd925fda235f687ca45b3"
-      "679830038":
-        name: "orca-ide_1.4.242_arm64.deb"
-        url_suffix: "orca-ide_1.4.242_arm64.deb"
-        size: 178264076
-        digest: "sha256:964070397f3033eab4b6af66e9c7d14d9cbc9afacd5dae07c8f55893b8fcd363"
-      "679832440":
-        name: "orca-macos-arm64.dmg.blockmap"
-        url_suffix: "orca-macos-arm64.dmg.blockmap"
-        size: 283926
-        digest: "sha256:98ec3d503ca8868691b49b570bb25955e423f495ff4dbd8e392cd346b4b73a0b"
-      "679832441":
-        name: "orca-macos-arm64.dmg"
-        url_suffix: "orca-macos-arm64.dmg"
-        size: 272021938
-        digest: "sha256:d3245e8eefdb8fe76d485cd3750e6ae076aab7fdac57ccb9dccf04dd2076dbc2"
-      "679832546":
-        name: "orca-ide-1.4.242.x86_64.rpm"
-        url_suffix: "orca-ide-1.4.242.x86_64.rpm"
-        size: 154128317
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:f9c02c88b6491af578e9b348d9e42aa584a539be8220ca54c20577bee468c6e4"
-      "679832670":
-        name: "latest-linux.yml"
-        url_suffix: "latest-linux.yml"
-        size: 677
-        media_type: "text/yaml"
-        digest: "sha256:14361970d19f17f0843465a01b735e79af223b40803fb7a042dfe919bfaccf86"
-      "679832819":
-        name: "Orca-1.4.242-arm64-mac.zip.blockmap"
-        url_suffix: "Orca-1.4.242-arm64-mac.zip.blockmap"
-        size: 282389
-        digest: "sha256:4ea2e3b182047ee8079932d24480080a6bd09d363b61ebfe438a8a578bd3810b"
-      "679832820":
-        name: "Orca-1.4.242-arm64-mac.zip"
-        url_suffix: "Orca-1.4.242-arm64-mac.zip"
-        size: 272736620
-        media_type: "zip"
-        digest: "sha256:b2b1b0b2a7d955583cacb247154e8eb3844c026aba4fad07e6ee85a28b4e8ba1"
-      "679832914":
-        name: "Orca-1.4.242-mac.zip.blockmap"
-        url_suffix: "Orca-1.4.242-mac.zip.blockmap"
-        size: 289489
-        digest: "sha256:3bd6ecdea9ab52b6e9ef6a21562904e1d67ffd9b2a72d0fa8c8da238ee052780"
-      "679832917":
-        name: "Orca-1.4.242-mac.zip"
-        url_suffix: "Orca-1.4.242-mac.zip"
-        size: 282007860
-        media_type: "zip"
-        digest: "sha256:01b48d4c9bff8c36227a2a5362ee2d205afd37e602341ef95cc52415e96f6145"
-      "679833044":
-        name: "orca-macos-x64.dmg.blockmap"
-        url_suffix: "orca-macos-x64.dmg.blockmap"
-        size: 296069
-        digest: "sha256:2a5aaaac496d09a3715eb0b8d1958312e889738ca0ec013400017d52b5eb548b"
-      "679833046":
-        name: "orca-macos-x64.dmg"
-        url_suffix: "orca-macos-x64.dmg"
-        size: 281182020
-        digest: "sha256:3741d6f7f3868f75df41648fadd17f21ed225b24512c55dfb2fe61813417f974"
-      "679833389":
-        name: "latest-mac.yml"
-        url_suffix: "latest-mac.yml"
-        size: 796
-        media_type: "text/yaml"
-        digest: "sha256:018e372f5a8037807bb66187274068355d341be9a1d252907ec8cba212824427"
-      "679833925":
-        name: "orca-ide-1.4.242.aarch64.rpm"
-        url_suffix: "orca-ide-1.4.242.aarch64.rpm"
-        size: 149626465
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:8f408482a0ec925d519bd7e18f33d4566db690aa2d54a5bd937a6b75d33096ad"
-      "679834068":
-        name: "latest-linux-arm64.yml"
-        url_suffix: "latest-linux-arm64.yml"
-        size: 690
-        media_type: "text/yaml"
-        digest: "sha256:0cf7610e9406b032dd07b95da58807ba88176cbc1dbe86308a8852b540738493"
-      "679887292":
-        name: "orca-windows-setup.exe.blockmap"
-        url_suffix: "orca-windows-setup.exe.blockmap"
-        size: 202276
-        digest: "sha256:52f143dd0102d363580fe0fd375a814a02dd8e5f51644c6b8f2748d1c413b3c5"
-      "679887295":
-        name: "latest.yml"
-        url_suffix: "latest.yml"
-        size: 343
-        digest: "sha256:dc617a968492ef334fff130279426e0223adca6c4a48fd7273130cb74deb7fa3"
-      "679887297":
-        name: "orca-windows-setup.exe"
-        url_suffix: "orca-windows-setup.exe"
-        size: 202304800
-        media_type: "application/x-msdownload"
-        digest: "sha256:9d3e8639caacb61c3af2510a39069016e1a744d7425a146186a050e5978224ef"
   "426236085":
     tag: "v1.4.243"
     title: "v1.4.243"
@@ -3195,3 +2542,741 @@ releases:
         size: 146062113
         media_type: "application/vnd.android.package-archive"
         digest: "sha256:9e78f5f2e304bf1956c4b81394babdb1e265980dbbafc73319d0dfeeae88533d"
+  "449290226":
+    tag: "v1.4.262"
+    title: "v1.4.262"
+    url: "https://github.com/stablyai/orca/releases/tag/v1.4.262"
+    created_at: "2026-11-17T22:43:33Z"
+    published_at: "2026-11-17T23:20:49Z"
+    updated_at: "2026-11-17T23:39:50Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/stablyai/orca/zipball/v1.4.262"
+    source_tar_url: "https://api.github.com/repos/stablyai/orca/tarball/v1.4.262"
+    download_base: "https://github.com/stablyai/orca/releases/download/v1.4.262/"
+    assets:
+      "760975395":
+        name: "orca-sourcemaps-v1.4.262.zip"
+        url_suffix: "orca-sourcemaps-v1.4.262.zip"
+        size: 20161837
+        media_type: "zip"
+        digest: "sha256:074023f31a4dc0e92901a968966398595ca7114ac509f4d893538672a3055cec"
+      "760977838":
+        name: "orca-linux-arm64.AppImage"
+        url_suffix: "orca-linux-arm64.AppImage"
+        size: 267260170
+        digest: "sha256:d9ab071f951974c2a86d2efe5ce0d6e309f316b5959bdfffcae608e9b15387ac"
+      "760978761":
+        name: "orca-linux.AppImage"
+        url_suffix: "orca-linux.AppImage"
+        size: 272377994
+        digest: "sha256:8a02e7904dfc923c031e1e87e2b80bd59c27573319f158e212cb94a49f81af7e"
+      "760984761":
+        name: "orca-ide_1.4.262_amd64.deb"
+        url_suffix: "orca-ide_1.4.262_amd64.deb"
+        size: 205410244
+        digest: "sha256:f6fec35d3138b64b2151e9f6cfa5b6f17c7252060d104350d42dd945bd033b43"
+      "760987480":
+        name: "orca-ide_1.4.262_arm64.deb"
+        url_suffix: "orca-ide_1.4.262_arm64.deb"
+        size: 197211612
+        digest: "sha256:0fc6c57fae7ffd02afca4699ef0d78bb59dae181aed8d8a09baf82dd47a7d2b5"
+      "760992095":
+        name: "orca-ide-1.4.262.x86_64.rpm"
+        url_suffix: "orca-ide-1.4.262.x86_64.rpm"
+        size: 172576121
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:10b8f1458b2491b6716dfc35620c5f1d37a2ea2420e9a90915587bd9e1481995"
+      "760992414":
+        name: "latest-linux.yml"
+        url_suffix: "latest-linux.yml"
+        size: 677
+        media_type: "text/yaml"
+        digest: "sha256:cfd3c68ad9ba5d652051d0eec13f4fa8dabc2d205955bd4ca44a448bd4ff0899"
+      "760994050":
+        name: "orca-macos-x64.dmg.blockmap"
+        url_suffix: "orca-macos-x64.dmg.blockmap"
+        size: 305145
+        digest: "sha256:942c0b5fa10ac1ca06aa5be914c7f70c4ebbcbe5151400fc4295bbc2b2818bf9"
+      "760994053":
+        name: "orca-macos-x64.dmg"
+        url_suffix: "orca-macos-x64.dmg"
+        size: 293053216
+        digest: "sha256:4bcfb442a64970a385ce8897020d250c3a727a48542b97d13eedaac99e8973be"
+      "760994254":
+        name: "orca-ide-1.4.262.aarch64.rpm"
+        url_suffix: "orca-ide-1.4.262.aarch64.rpm"
+        size: 165903037
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:1513092f7f28042fca84363d38bcc7cb38e5aca5d342228ef69ad95e0e6cea4d"
+      "760994485":
+        name: "latest-linux-arm64.yml"
+        url_suffix: "latest-linux-arm64.yml"
+        size: 690
+        media_type: "text/yaml"
+        digest: "sha256:e32a94d13e0c3d8aacda46fc306a56189d4fce48defd3569b7cbb682fa6c0cab"
+      "760994690":
+        name: "Orca-1.4.262-arm64-mac.zip.blockmap"
+        url_suffix: "Orca-1.4.262-arm64-mac.zip.blockmap"
+        size: 296931
+        digest: "sha256:1e3751fbed0de0824b3234666eb4e91b14cce630f641749fc5471d19cf9e3768"
+      "760994694":
+        name: "Orca-1.4.262-arm64-mac.zip"
+        url_suffix: "Orca-1.4.262-arm64-mac.zip"
+        size: 287713629
+        media_type: "zip"
+        digest: "sha256:53f7dfdedf74ad0a6e2c0bce761cb89182007be5bb702419a841052f86b0f708"
+      "760994773":
+        name: "Orca-1.4.262-mac.zip.blockmap"
+        url_suffix: "Orca-1.4.262-mac.zip.blockmap"
+        size: 303629
+        digest: "sha256:93b747a317db544e2e32576ffc3d46058966b8866359d6873a917a7205c53134"
+      "760994774":
+        name: "Orca-1.4.262-mac.zip"
+        url_suffix: "Orca-1.4.262-mac.zip"
+        size: 294645976
+        media_type: "zip"
+        digest: "sha256:e276b3e3b9f20f836886a66745efa0b628a1cc7edf2b3a6f49e69562d51eb6ce"
+      "760995026":
+        name: "orca-macos-arm64.dmg"
+        url_suffix: "orca-macos-arm64.dmg"
+        size: 286199834
+        digest: "sha256:7673fee81db265afeb3f96ec954fa36483024adacf6a23f61e4405bcb3f439fd"
+      "760995029":
+        name: "orca-macos-arm64.dmg.blockmap"
+        url_suffix: "orca-macos-arm64.dmg.blockmap"
+        size: 298193
+        digest: "sha256:6770d395e928b992d61beb83494f56d6bdf3cfc1c937c0053a49920d9e38fd6e"
+      "760995583":
+        name: "latest-mac.yml"
+        url_suffix: "latest-mac.yml"
+        size: 825
+        digest: "sha256:2c988e6d599d58369d28d6cfd30ba27273173ff97f97649cf83a65c5ba958788"
+      "761034935":
+        name: "orca-windows-setup.exe"
+        url_suffix: "orca-windows-setup.exe"
+        size: 228511800
+        media_type: "application/x-msdownload"
+        digest: "sha256:0078552876d3f75be57d95b027118ffa70f64de6df7971a8f07c77d04774b8f6"
+      "761034937":
+        name: "latest.yml"
+        url_suffix: "latest.yml"
+        size: 343
+        digest: "sha256:cb7122b3bb30c39cc9265d244fbdcae23ebe1d5c9b393ff35e00c5c8236579c1"
+      "761034938":
+        name: "orca-windows-setup.exe.blockmap"
+        url_suffix: "orca-windows-setup.exe.blockmap"
+        size: 229203
+        digest: "sha256:a27add86904e6ae76ffa917dd76c908b326f3eb8e109491afb0af45879244796"
+      "761039580":
+        name: "orca-server-linux-arm64.tar.gz"
+        url_suffix: "orca-server-linux-arm64.tar.gz"
+        size: 65357732
+        media_type: "application/x-gtar"
+        digest: "sha256:4d9bb317f9929865c84be1014f692090c9e4b27258ca90726e1c8088fada741b"
+      "761039581":
+        name: "orca-server-sha256sums.txt"
+        url_suffix: "orca-server-sha256sums.txt"
+        size: 192
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:89c6890a7974a3fdd42d49be732ef7bcb891e8f49c308d52ae29825d4c228273"
+      "761039585":
+        name: "orca-server-linux-x64.tar.gz"
+        url_suffix: "orca-server-linux-x64.tar.gz"
+        size: 65692199
+        media_type: "application/x-gtar"
+        digest: "sha256:7211add8cb29830eeb6d0ba996be9e3e5aae390778c829b6f28d812f3881caab"
+  "449819043":
+    tag: "v1.4.263"
+    title: "v1.4.263"
+    url: "https://github.com/stablyai/orca/releases/tag/v1.4.263"
+    created_at: "2026-11-18T10:22:19Z"
+    published_at: "2026-11-18T11:02:11Z"
+    updated_at: "2026-11-18T11:07:06Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/stablyai/orca/zipball/v1.4.263"
+    source_tar_url: "https://api.github.com/repos/stablyai/orca/tarball/v1.4.263"
+    download_base: "https://github.com/stablyai/orca/releases/download/v1.4.263/"
+    assets:
+      "762975980":
+        name: "orca-sourcemaps-v1.4.263.zip"
+        url_suffix: "orca-sourcemaps-v1.4.263.zip"
+        size: 20417323
+        media_type: "zip"
+        digest: "sha256:f0a126ebfb717bfd442165461af1401afe4c4ad35c2d4a868c47c72786af82cb"
+      "762978357":
+        name: "orca-linux-arm64.AppImage"
+        url_suffix: "orca-linux-arm64.AppImage"
+        size: 267393175
+        digest: "sha256:d3549f87027ec44ea091672df2c50a5ea95cd9a06f2984ea62fd2a44ceab8b89"
+      "762978944":
+        name: "orca-linux.AppImage"
+        url_suffix: "orca-linux.AppImage"
+        size: 272479661
+        digest: "sha256:cf0ca1a0f6abfaa887f8738ad91e71740e6cf82ad6d00af0f2531a6a36096be5"
+      "762984548":
+        name: "orca-ide_1.4.263_arm64.deb"
+        url_suffix: "orca-ide_1.4.263_arm64.deb"
+        size: 197313600
+        digest: "sha256:928ee64481502c9e3ebae683bcad1d5d7527eab3eda76916d1569291dd842fa8"
+      "762985218":
+        name: "orca-ide_1.4.263_amd64.deb"
+        url_suffix: "orca-ide_1.4.263_amd64.deb"
+        size: 205470136
+        digest: "sha256:b9548d77fb36404daa6277ed42d8e0d87c4338e4fb4a2c4de918998c1dc57a5d"
+      "762991309":
+        name: "orca-ide-1.4.263.aarch64.rpm"
+        url_suffix: "orca-ide-1.4.263.aarch64.rpm"
+        size: 166023245
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:4d02c75ad20fd8a3426f2dde143c3a3acd4a5fe89edc5e0f48e4f7fb0cbf605b"
+      "762991732":
+        name: "latest-linux-arm64.yml"
+        url_suffix: "latest-linux-arm64.yml"
+        size: 690
+        media_type: "text/yaml"
+        digest: "sha256:ff99aa90e8d3fe91f9e4602ec996d27e94ed6de7fd0fb4f68bcff54fcca318a4"
+      "762992563":
+        name: "orca-ide-1.4.263.x86_64.rpm"
+        url_suffix: "orca-ide-1.4.263.x86_64.rpm"
+        size: 172258549
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:c25e4bcc800e39b935c44cd0234f21b63c7f7024b897d18eedc4b13bd9741f2b"
+      "762992830":
+        name: "latest-linux.yml"
+        url_suffix: "latest-linux.yml"
+        size: 677
+        media_type: "text/yaml"
+        digest: "sha256:155a9beb229c0596b649bb977b707675d38b95896f08625004f3b3033cd24f73"
+      "762997079":
+        name: "orca-macos-arm64.dmg.blockmap"
+        url_suffix: "orca-macos-arm64.dmg.blockmap"
+        size: 298666
+        digest: "sha256:558103793f2f35379a73d1c341fc8daa338dee47bb4352207e3eff4fab9a5b16"
+      "762997085":
+        name: "orca-macos-arm64.dmg"
+        url_suffix: "orca-macos-arm64.dmg"
+        size: 286117589
+        digest: "sha256:983b0f7470b162a836609983ca22483acf29a27ccbb5978960521b5947722b06"
+      "762997759":
+        name: "Orca-1.4.263-arm64-mac.zip.blockmap"
+        url_suffix: "Orca-1.4.263-arm64-mac.zip.blockmap"
+        size: 295364
+        digest: "sha256:7a8729f0ac85aada90e7fd7e2f1e98aad6f0484758d7647da5ee310bd73bb5b9"
+      "762997765":
+        name: "Orca-1.4.263-arm64-mac.zip"
+        url_suffix: "Orca-1.4.263-arm64-mac.zip"
+        size: 287652096
+        media_type: "zip"
+        digest: "sha256:621476c56bf335ac12e92ddfeff0a401b301a6d646c425e1b975eb9263d68827"
+      "762997906":
+        name: "Orca-1.4.263-mac.zip.blockmap"
+        url_suffix: "Orca-1.4.263-mac.zip.blockmap"
+        size: 303142
+        digest: "sha256:cd0c3c85c9162dd291327b338fed42aa171875a82ff88e1ccf55725ecff21747"
+      "762997912":
+        name: "Orca-1.4.263-mac.zip"
+        url_suffix: "Orca-1.4.263-mac.zip"
+        size: 294814774
+        media_type: "zip"
+        digest: "sha256:4041d816fb8d7417635ce84bc2bd34539e6793597a1d97c2166736dde192d9a0"
+      "762998045":
+        name: "orca-macos-x64.dmg.blockmap"
+        url_suffix: "orca-macos-x64.dmg.blockmap"
+        size: 304534
+        digest: "sha256:46ce242f0110c75b66bedbfd6f540a5918ad10ec0d6708f0c5d4010833847693"
+      "762998048":
+        name: "orca-macos-x64.dmg"
+        url_suffix: "orca-macos-x64.dmg"
+        size: 293195939
+        digest: "sha256:0b90adf3937ff9b1e230d46744273dd4b08dded8d507ad9e7dd520ffd1446634"
+      "762998771":
+        name: "latest-mac.yml"
+        url_suffix: "latest-mac.yml"
+        size: 825
+        digest: "sha256:f3e4d8b357a548820584487d84cdb1b519011af3d99ff1c5db9edb167b5ca39a"
+      "763046072":
+        name: "orca-windows-setup.exe"
+        url_suffix: "orca-windows-setup.exe"
+        size: 228267376
+        media_type: "application/x-msdownload"
+        digest: "sha256:da789cc1c5bae94009e04a44528e6128ce1901da5f121140a4e501dcb967ef6e"
+      "763046073":
+        name: "orca-windows-setup.exe.blockmap"
+        url_suffix: "orca-windows-setup.exe.blockmap"
+        size: 230009
+        digest: "sha256:ea891c3c13ced3e495960035eef3e13eefda547767cc2241876b91c871225d83"
+      "763046075":
+        name: "latest.yml"
+        url_suffix: "latest.yml"
+        size: 343
+        digest: "sha256:418702a1986f33d95ac07b8eb813257dc0019c84c6c6d1a68fd6423321a92736"
+      "763051006":
+        name: "orca-server-linux-arm64.tar.gz"
+        url_suffix: "orca-server-linux-arm64.tar.gz"
+        size: 65445088
+        media_type: "application/x-gtar"
+        digest: "sha256:3448a95631d7f73340e74296960ab08fe482202f7465cec9825208ff642416cd"
+      "763051008":
+        name: "orca-server-linux-x64.tar.gz"
+        url_suffix: "orca-server-linux-x64.tar.gz"
+        size: 65777236
+        media_type: "application/x-gtar"
+        digest: "sha256:6c0315728a656bcbe5b6232424cec1011d0f1e2e1f250e6197031e9cec95703a"
+      "763051009":
+        name: "orca-server-sha256sums.txt"
+        url_suffix: "orca-server-sha256sums.txt"
+        size: 192
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:877d43d0331d36e6b0bc61278cbaba27747d6f71cc1b6737919deefc34a293e4"
+  "451157541":
+    tag: "v1.4.264"
+    title: "v1.4.264"
+    url: "https://github.com/stablyai/orca/releases/tag/v1.4.264"
+    created_at: "2026-11-19T10:01:01Z"
+    published_at: "2026-11-19T10:35:30Z"
+    updated_at: "2026-11-19T10:37:33Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/stablyai/orca/zipball/v1.4.264"
+    source_tar_url: "https://api.github.com/repos/stablyai/orca/tarball/v1.4.264"
+    download_base: "https://github.com/stablyai/orca/releases/download/v1.4.264/"
+    assets:
+      "767198076":
+        name: "orca-linux-arm64.AppImage"
+        url_suffix: "orca-linux-arm64.AppImage"
+        size: 267384712
+        digest: "sha256:ae963496687bf25da3fdd4246bd05fad28a0c0b81bfac95f9a91ba165c236566"
+      "767204969":
+        name: "orca-ide_1.4.264_arm64.deb"
+        url_suffix: "orca-ide_1.4.264_arm64.deb"
+        size: 197253348
+        digest: "sha256:cb0e60b50bd2d79092930c99bac4cb34bddaca6c61f77785a658cead07a17150"
+      "767208040":
+        name: "orca-sourcemaps-v1.4.264.zip"
+        url_suffix: "orca-sourcemaps-v1.4.264.zip"
+        size: 20417371
+        media_type: "zip"
+        digest: "sha256:3a42c52e1492388e3f36543eb806b66bf763c0de0536e1fba389065c531091bd"
+      "767211506":
+        name: "orca-ide-1.4.264.aarch64.rpm"
+        url_suffix: "orca-ide-1.4.264.aarch64.rpm"
+        size: 166003845
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:e00a5ce21dece28a61c0c599e5c442d6a3b02301e58340e16702bd1c00b6944f"
+      "767211507":
+        name: "orca-linux.AppImage"
+        url_suffix: "orca-linux.AppImage"
+        size: 272471222
+        digest: "sha256:31170facdbd31ab7b26d68760e4820c6621b982f3b2d48e30b923adcbf13c50a"
+      "767211849":
+        name: "latest-linux-arm64.yml"
+        url_suffix: "latest-linux-arm64.yml"
+        size: 690
+        media_type: "text/yaml"
+        digest: "sha256:3f103bace8d8461cd3306cce35d7449ee351b3846b0ee04b99f266848a9f5329"
+      "767216966":
+        name: "orca-macos-arm64.dmg"
+        url_suffix: "orca-macos-arm64.dmg"
+        size: 286098342
+        digest: "sha256:1a1eb8039628094377f4194f866e918229d97c11c1918722a30ab5975d679546"
+      "767216968":
+        name: "orca-macos-arm64.dmg.blockmap"
+        url_suffix: "orca-macos-arm64.dmg.blockmap"
+        size: 299443
+        digest: "sha256:c1c3abced141d638a81c358d35b3ba67e7165751a0dac292a61f282926d131bd"
+      "767216969":
+        name: "orca-ide_1.4.264_amd64.deb"
+        url_suffix: "orca-ide_1.4.264_amd64.deb"
+        size: 205598724
+        digest: "sha256:9403b98a48b406287fbcc5ffdb9bec7c68022a3ef926c9b2f63e985353fbc957"
+      "767217834":
+        name: "Orca-1.4.264-arm64-mac.zip"
+        url_suffix: "Orca-1.4.264-arm64-mac.zip"
+        size: 287647140
+        media_type: "zip"
+        digest: "sha256:36dbcce1d3efd2afe9a2196dc3316a1861df3c17af17e8e43221790459e74463"
+      "767217839":
+        name: "Orca-1.4.264-arm64-mac.zip.blockmap"
+        url_suffix: "Orca-1.4.264-arm64-mac.zip.blockmap"
+        size: 295212
+        digest: "sha256:7cdc91f149d62197facfcc64fae5711b85bbb48cc309ebcf84298e7be3b55f40"
+      "767217964":
+        name: "Orca-1.4.264-mac.zip.blockmap"
+        url_suffix: "Orca-1.4.264-mac.zip.blockmap"
+        size: 302790
+        digest: "sha256:ef32ed7d46d1e947b97638bb906af90e921e4f75e2fdb64f6a6681bbf8c13e8a"
+      "767217967":
+        name: "Orca-1.4.264-mac.zip"
+        url_suffix: "Orca-1.4.264-mac.zip"
+        size: 294809875
+        media_type: "zip"
+        digest: "sha256:441a0f4ec5ab0b74c8b6fd8edb6d66eb743a19f4954108763303a9790ed3eaad"
+      "767218207":
+        name: "orca-macos-x64.dmg.blockmap"
+        url_suffix: "orca-macos-x64.dmg.blockmap"
+        size: 304624
+        digest: "sha256:ed638872e8c6bf6fa571f94a93bf13999cf44107b0b1ba09aadee1c2c184d919"
+      "767218230":
+        name: "orca-macos-x64.dmg"
+        url_suffix: "orca-macos-x64.dmg"
+        size: 293185906
+        digest: "sha256:c9752fcd27a5367607117c66d3a791b1f2afac311289936229160ce58748aaf8"
+      "767219086":
+        name: "latest-mac.yml"
+        url_suffix: "latest-mac.yml"
+        size: 825
+        digest: "sha256:6f5e4384fed0e8f31669ff8cbf275f3ca1fdfe5a655057933ec649a2e6482be9"
+      "767225220":
+        name: "orca-ide-1.4.264.x86_64.rpm"
+        url_suffix: "orca-ide-1.4.264.x86_64.rpm"
+        size: 172261937
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:46a1f1079235c9864f6bf2272282fa31b802ee71936b7a92c76b8198e5bf8ad5"
+      "767225537":
+        name: "latest-linux.yml"
+        url_suffix: "latest-linux.yml"
+        size: 677
+        media_type: "text/yaml"
+        digest: "sha256:918001cfb72a95c90b7bc2c308df3841526c66f897c2d34757b13aef8bbc7e79"
+      "767243787":
+        name: "latest.yml"
+        url_suffix: "latest.yml"
+        size: 343
+        digest: "sha256:2c8b39160f55f34733638e693e4dd5a0cdcd34234337305e68107ebbc8216525"
+      "767243790":
+        name: "orca-windows-setup.exe.blockmap"
+        url_suffix: "orca-windows-setup.exe.blockmap"
+        size: 229351
+        digest: "sha256:2d73390f7c56f703c902d6d351536d129ed7e1d4eec98f888a331b99c24a0921"
+      "767243792":
+        name: "orca-windows-setup.exe"
+        url_suffix: "orca-windows-setup.exe"
+        size: 228269752
+        media_type: "application/x-msdownload"
+        digest: "sha256:676c32d9eb955a314356a220ffd8afbefc214f0f348a324620628353ad4535f3"
+      "767260103":
+        name: "orca-server-linux-x64.tar.gz"
+        url_suffix: "orca-server-linux-x64.tar.gz"
+        size: 65777709
+        media_type: "application/x-gtar"
+        digest: "sha256:8f78b5acb5e57a53aa9058edc701af4d9e4b41a0caf3f77f8ce23c2e1bbecad6"
+      "767260105":
+        name: "orca-server-sha256sums.txt"
+        url_suffix: "orca-server-sha256sums.txt"
+        size: 192
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:cf222253456b02d9f2344de2fe0a681e864fd2d7d9a73068f0e321a28e0b3313"
+      "767260107":
+        name: "orca-server-linux-arm64.tar.gz"
+        url_suffix: "orca-server-linux-arm64.tar.gz"
+        size: 65445263
+        media_type: "application/x-gtar"
+        digest: "sha256:53b975417f285ff5526a63d6d90c1c37e8c1198a23ac5b5d613e1e7c216b8e4c"
+  "451938403":
+    tag: "android-v0.0.68"
+    title: "Orca Mobile Android android-v0.0.68"
+    url: "https://github.com/stablyai/orca/releases/tag/android-v0.0.68"
+    created_at: "2026-11-19T20:49:58Z"
+    published_at: "2026-11-19T21:15:39Z"
+    updated_at: "2026-11-19T21:21:05Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/stablyai/orca/zipball/android-v0.0.68"
+    source_tar_url: "https://api.github.com/repos/stablyai/orca/tarball/android-v0.0.68"
+    download_base: "https://github.com/stablyai/orca/releases/download/android-v0.0.68/"
+    assets:
+      "769298206":
+        name: "app-release.apk"
+        url_suffix: "app-release.apk"
+        size: 147880581
+        media_type: "application/vnd.android.package-archive"
+        digest: "sha256:5a2ce73f84d11776eac2e8d3cace2cf0666ef7a88cc88685c2f10d6afbfc94b7"
+      "769298207":
+        name: "app-release.apk.sha256"
+        url_suffix: "app-release.apk.sha256"
+        size: 82
+        digest: "sha256:43ef90bd629626cf686179e424f7a92564e72ea398f89d78bf168fbf5d4f606d"
+  "452038649":
+    tag: "v1.4.265"
+    title: "v1.4.265"
+    url: "https://github.com/stablyai/orca/releases/tag/v1.4.265"
+    created_at: "2026-11-19T23:01:20Z"
+    published_at: "2026-11-19T23:41:51Z"
+    updated_at: "2026-11-20T16:10:47Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/stablyai/orca/zipball/v1.4.265"
+    source_tar_url: "https://api.github.com/repos/stablyai/orca/tarball/v1.4.265"
+    download_base: "https://github.com/stablyai/orca/releases/download/v1.4.265/"
+    assets:
+      "769634547":
+        name: "orca-sourcemaps-v1.4.265.zip"
+        url_suffix: "orca-sourcemaps-v1.4.265.zip"
+        size: 23839572
+        media_type: "zip"
+        digest: "sha256:392374a2e328c101ff666a46607796d217db968093c86a6155e0765bf7644102"
+      "769637261":
+        name: "orca-linux.AppImage"
+        url_suffix: "orca-linux.AppImage"
+        size: 278485382
+        digest: "sha256:8a51a08e241899d86775ad33f3af3a9e114b9cb300b79de1e764c922a0337026"
+      "769641817":
+        name: "orca-ide_1.4.265_amd64.deb"
+        url_suffix: "orca-ide_1.4.265_amd64.deb"
+        size: 211542764
+        digest: "sha256:2cd80d1104b56485868957c9f23a636ea31ef309cf2abf833f71cded857a0398"
+      "769642709":
+        name: "orca-linux-arm64.AppImage"
+        url_suffix: "orca-linux-arm64.AppImage"
+        size: 273399284
+        digest: "sha256:744c6ed5960fb3055777b1fc39009c72a82fae3ad9895e28007a4c463a46073f"
+      "769647251":
+        name: "orca-ide-1.4.265.x86_64.rpm"
+        url_suffix: "orca-ide-1.4.265.x86_64.rpm"
+        size: 178484497
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:54263c6d33dfb84bdc8b1e4b8a7b025c0ed1372fe098784f6d5d562c5c591318"
+      "769647537":
+        name: "latest-linux.yml"
+        url_suffix: "latest-linux.yml"
+        size: 677
+        media_type: "text/yaml"
+        digest: "sha256:e55bbebb37fdf863a6f6444c32e1f54f7c76bc357773372a9cb5b6107e1024a3"
+      "769648132":
+        name: "orca-ide_1.4.265_arm64.deb"
+        url_suffix: "orca-ide_1.4.265_arm64.deb"
+        size: 203351408
+        digest: "sha256:d05a185bb6ab215246c0abf07c42de3dae4750ae48f94014b4955a23673cc323"
+      "769649330":
+        name: "orca-macos-arm64.dmg"
+        url_suffix: "orca-macos-arm64.dmg"
+        size: 294165249
+        digest: "sha256:3a4cdcedf4f2957816f9dee1e61ed2eea0727503d7e54ce97801e6ba7fee008f"
+      "769649331":
+        name: "orca-macos-arm64.dmg.blockmap"
+        url_suffix: "orca-macos-arm64.dmg.blockmap"
+        size: 305349
+        digest: "sha256:55c4773442e69995d76600d2a647a55d36a5870c42d1eb3bdcef0b2ec0e868aa"
+      "769649999":
+        name: "Orca-1.4.265-arm64-mac.zip.blockmap"
+        url_suffix: "Orca-1.4.265-arm64-mac.zip.blockmap"
+        size: 302770
+        digest: "sha256:b2f19d4fd3f8c9ad65f31efba34df62abe914fcb6711b536bc8121c1701c41aa"
+      "769650003":
+        name: "Orca-1.4.265-arm64-mac.zip"
+        url_suffix: "Orca-1.4.265-arm64-mac.zip"
+        size: 295848070
+        media_type: "zip"
+        digest: "sha256:312dee5340783110cfb2fd745a13527f8803add51c9d02dbf2f4ba890d9b61da"
+      "769650065":
+        name: "Orca-1.4.265-mac.zip.blockmap"
+        url_suffix: "Orca-1.4.265-mac.zip.blockmap"
+        size: 311902
+        digest: "sha256:21a4cd958506bb3d3553b5252ad8efb67cc7e1ae67ded63374defab87989a114"
+      "769650075":
+        name: "Orca-1.4.265-mac.zip"
+        url_suffix: "Orca-1.4.265-mac.zip"
+        size: 303010556
+        media_type: "zip"
+        digest: "sha256:06299f698b804d32caef902ef6b36c5195338a43ca6e6747e2e0450b6095bdd0"
+      "769650299":
+        name: "orca-macos-x64.dmg.blockmap"
+        url_suffix: "orca-macos-x64.dmg.blockmap"
+        size: 314397
+        digest: "sha256:f9683d1faae1a2e2063353114702866df758436cd2c14ec35cd698078073ca66"
+      "769650305":
+        name: "orca-macos-x64.dmg"
+        url_suffix: "orca-macos-x64.dmg"
+        size: 301251897
+        digest: "sha256:350c0ef2a9f793f52deeb91a97e9e8b998266342308fa016d3d7bb6507d0f0b0"
+      "769651036":
+        name: "latest-mac.yml"
+        url_suffix: "latest-mac.yml"
+        size: 825
+        digest: "sha256:6ef4934feb426415a1fe61c1692ecad5552911ff937072acd639e1bee9e8b493"
+      "769653955":
+        name: "orca-ide-1.4.265.aarch64.rpm"
+        url_suffix: "orca-ide-1.4.265.aarch64.rpm"
+        size: 171670345
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:ac464c4d32b338cb1e00a0a375200a7a90db5318b9f7286461a49580921cfa18"
+      "769654209":
+        name: "latest-linux-arm64.yml"
+        url_suffix: "latest-linux-arm64.yml"
+        size: 690
+        media_type: "text/yaml"
+        digest: "sha256:c7dce5ccbb238439b22b50ebaa42dcfb716ea4446c427054a83ed86f75c44900"
+      "769702318":
+        name: "latest.yml"
+        url_suffix: "latest.yml"
+        size: 343
+        digest: "sha256:bc7452d734bb84b38d41ed34baaf7f1bf65ece7dd33e3030b177ec46cc2cccfa"
+      "769702321":
+        name: "orca-windows-setup.exe"
+        url_suffix: "orca-windows-setup.exe"
+        size: 234738192
+        media_type: "application/x-msdownload"
+        digest: "sha256:d90437cc51bc40a8ff50c140d1ca6b3e5fe6bde8755fd5eafc01f85a2d3eab06"
+      "769702323":
+        name: "orca-windows-setup.exe.blockmap"
+        url_suffix: "orca-windows-setup.exe.blockmap"
+        size: 238496
+        digest: "sha256:a0f5903c27d01399237653bfa645f2b51ce1474e9590e159b44df43d9d60dbae"
+      "769706037":
+        name: "orca-server-sha256sums.txt"
+        url_suffix: "orca-server-sha256sums.txt"
+        size: 192
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:8a03e3e9a5ef6e2f44f7d8d174e5d10cdbdd5f7a0253c497e9fcc05d5cf4f00a"
+      "769706038":
+        name: "orca-server-linux-x64.tar.gz"
+        url_suffix: "orca-server-linux-x64.tar.gz"
+        size: 68042900
+        media_type: "application/x-gtar"
+        digest: "sha256:eaba2039f351d47e2ddc5d1c1f0335df3ae81b5830565adc1bcba23fc7004d0c"
+      "769706041":
+        name: "orca-server-linux-arm64.tar.gz"
+        url_suffix: "orca-server-linux-arm64.tar.gz"
+        size: 67706849
+        media_type: "application/x-gtar"
+        digest: "sha256:9ccf8e04491e102f5d349aa5eee4667f4e1cdcaaddcfca3daf6b872da962ae2c"
+  "452402981":
+    tag: "v1.4.266"
+    title: "v1.4.266"
+    url: "https://github.com/stablyai/orca/releases/tag/v1.4.266"
+    created_at: "2026-11-20T07:48:08Z"
+    published_at: "2026-11-20T08:25:00Z"
+    updated_at: "2026-11-20T16:10:44Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/stablyai/orca/zipball/v1.4.266"
+    source_tar_url: "https://api.github.com/repos/stablyai/orca/tarball/v1.4.266"
+    download_base: "https://github.com/stablyai/orca/releases/download/v1.4.266/"
+    assets:
+      "770987251":
+        name: "orca-sourcemaps-v1.4.266.zip"
+        url_suffix: "orca-sourcemaps-v1.4.266.zip"
+        size: 23942838
+        media_type: "zip"
+        digest: "sha256:10c08f2856d12866046732c3c71b87f3b6a98780c6386d39c5391998295961b9"
+      "770987849":
+        name: "orca-linux-arm64.AppImage"
+        url_suffix: "orca-linux-arm64.AppImage"
+        size: 274276060
+        digest: "sha256:b1355488700e075d16840af47d7b6a5323c4c89f28318a6f6f8dc5e6eb0e5f78"
+      "770990655":
+        name: "orca-linux.AppImage"
+        url_suffix: "orca-linux.AppImage"
+        size: 279419675
+        digest: "sha256:0bfc52bc3ca401ee8fd2c32cc3094afe2696aebdc486e10de7f517222c266145"
+      "770995995":
+        name: "orca-ide_1.4.266_arm64.deb"
+        url_suffix: "orca-ide_1.4.266_arm64.deb"
+        size: 204178228
+        digest: "sha256:b7eefa288b654a7e660896c0ff0ee7da830d314a19cb941e1100d7f5df97e6c3"
+      "770996683":
+        name: "orca-ide_1.4.266_amd64.deb"
+        url_suffix: "orca-ide_1.4.266_amd64.deb"
+        size: 212235804
+        digest: "sha256:3f2f051eec132eeec8c0027ce1c4d244fa4a3b6e77583fc90514823a98ed3fc9"
+      "770997485":
+        name: "orca-macos-arm64.dmg"
+        url_suffix: "orca-macos-arm64.dmg"
+        size: 295194943
+        digest: "sha256:533575b97673918c42c3949e2f83f08741e9dc69695b500cedb5982dc9e60cdf"
+      "770997487":
+        name: "orca-macos-arm64.dmg.blockmap"
+        url_suffix: "orca-macos-arm64.dmg.blockmap"
+        size: 307921
+        digest: "sha256:f33cfbe3c8dc06d61300708e7ba2b36a950f0ca35a85ce906132974073a6a156"
+      "770998099":
+        name: "Orca-1.4.266-arm64-mac.zip.blockmap"
+        url_suffix: "Orca-1.4.266-arm64-mac.zip.blockmap"
+        size: 303845
+        digest: "sha256:08f5a1703fd17e1c43844dfbff5e42e89a6c907ec7577df61ae98fa80e2d419e"
+      "770998100":
+        name: "Orca-1.4.266-arm64-mac.zip"
+        url_suffix: "Orca-1.4.266-arm64-mac.zip"
+        size: 296813188
+        media_type: "zip"
+        digest: "sha256:4c8604ef0967140de4dfcba34169dfe339c3fa59166f031a65aae6e3f70027d9"
+      "770998174":
+        name: "Orca-1.4.266-mac.zip.blockmap"
+        url_suffix: "Orca-1.4.266-mac.zip.blockmap"
+        size: 313478
+        digest: "sha256:fa2e5f2cec95812dab4b52ecc463021241069f29686ce0da3f1361576ce55d33"
+      "770998181":
+        name: "Orca-1.4.266-mac.zip"
+        url_suffix: "Orca-1.4.266-mac.zip"
+        size: 304010211
+        media_type: "zip"
+        digest: "sha256:a1c593999b7977fea94db1055e6814d65f7ca5e215849fe1c9f181feb0344acd"
+      "770998633":
+        name: "orca-macos-x64.dmg.blockmap"
+        url_suffix: "orca-macos-x64.dmg.blockmap"
+        size: 313443
+        digest: "sha256:806009ca1d39c4fb05ec4285fc9b27c1b173c1d6d891336b53ef1661bc4dcdef"
+      "770998635":
+        name: "orca-macos-x64.dmg"
+        url_suffix: "orca-macos-x64.dmg"
+        size: 302260920
+        digest: "sha256:0e48420fd5a74d591968aec6ab19e5e939170572ca8bc219d162e8a4965442d2"
+      "770999489":
+        name: "latest-mac.yml"
+        url_suffix: "latest-mac.yml"
+        size: 825
+        digest: "sha256:2369afdfe1cffd8de7aaf1c3f39f8ed0e3963cb4c1f0d7e23fa3724e58ed4fdb"
+      "771003422":
+        name: "orca-ide-1.4.266.aarch64.rpm"
+        url_suffix: "orca-ide-1.4.266.aarch64.rpm"
+        size: 172284421
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:4904db1a14c40d20258ce61efb915cf11cf0c0fc5ce466a13df7afb33a400098"
+      "771003603":
+        name: "latest-linux-arm64.yml"
+        url_suffix: "latest-linux-arm64.yml"
+        size: 690
+        media_type: "text/yaml"
+        digest: "sha256:e8ef5b48423c80dc0986d665fbce5d34efca81561b5644f93b5426d809a60fde"
+      "771003827":
+        name: "orca-ide-1.4.266.x86_64.rpm"
+        url_suffix: "orca-ide-1.4.266.x86_64.rpm"
+        size: 179101881
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:75f35725cc0fd4e70fe14bcf5fc620d581e95a068e70801bb5e3be194562d7bc"
+      "771004125":
+        name: "latest-linux.yml"
+        url_suffix: "latest-linux.yml"
+        size: 677
+        media_type: "text/yaml"
+        digest: "sha256:381502a371411c6fc9d3dd7ebb349dad945efca61b544544c8bb74f95720cfc6"
+      "771035323":
+        name: "orca-windows-setup.exe"
+        url_suffix: "orca-windows-setup.exe"
+        size: 235317448
+        media_type: "application/x-msdownload"
+        digest: "sha256:a5e2f21f3e839900624a828c53c3783d5c8d2ccf90ef94f404021d3951e57e18"
+      "771035324":
+        name: "orca-windows-setup.exe.blockmap"
+        url_suffix: "orca-windows-setup.exe.blockmap"
+        size: 238354
+        digest: "sha256:d77f9372580ac2f2ce7968793d72b9d7d91a10bc9cd2ca76eb87c66a10cad387"
+      "771035328":
+        name: "latest.yml"
+        url_suffix: "latest.yml"
+        size: 343
+        digest: "sha256:0b58694d08fefb18f08dae9dc838ba231bf3a990e20eb0d6017170a270db5200"
+      "771039388":
+        name: "orca-server-linux-arm64.tar.gz"
+        url_suffix: "orca-server-linux-arm64.tar.gz"
+        size: 67742374
+        media_type: "application/x-gtar"
+        digest: "sha256:ce9eb69dc26e0a0af0a11dfc135786681b8e6f7ba75ec69450159cf1c415f7e0"
+      "771039391":
+        name: "orca-server-sha256sums.txt"
+        url_suffix: "orca-server-sha256sums.txt"
+        size: 192
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:00a70f8c8e158ecece0c1843eee803f012c2f3faac8a081eedb7feea553761ac"
+      "771039400":
+        name: "orca-server-linux-x64.tar.gz"
+        url_suffix: "orca-server-linux-x64.tar.gz"
+        size: 68072793
+        media_type: "application/x-gtar"
+        digest: "sha256:a45ca96d3c781b78231d5af2cd534149607d05df9c5b9fdcd545fe6c87ee88b5"
