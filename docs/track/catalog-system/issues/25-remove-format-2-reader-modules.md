@@ -233,3 +233,9 @@ binds every input including `schemas` to `cb854845b`; all 64 summaries on
 plan` does not flag a change under the `schemas` input scope as needing a
 `CATALOG_SCHEMA_REVISION` transition, and Long tests cannot catch it (they
 never see the live pins). Next: Marek redeploys the browser, then step 2.
+
+November 20, 2026: browser redeployed (Marek asked). `catalog-pages.yml`
+dispatched with `deploy=true` at `cb854845b`, run 44800103764 green. The live
+mareklangiewicz.pl/AM/tools/catalog-contract/definitions.mjs is byte-equal
+to `cb854845b`'s and no `required` list names `compatibility_publication`.
+Step 2 is unblocked.
