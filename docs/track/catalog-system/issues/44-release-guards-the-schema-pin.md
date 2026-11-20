@@ -48,3 +48,5 @@ tests fail) or skip the dispatch for a gate-ignored schemas change (failed
 none at first; a README test was added, now 1 fails) are caught. Run for
 real on `22cffd611`: `plan` says both pins stay; `plan --repin-schemas`
 refuses with nothing to repin.
+
+November 20, 2026: shipped with Marek's approval as `a41a654ce` (Long tests 44814344503 on `ci/release-schema-pin`, Fast tests 44816128213 green; neither pin moved, no catalog run). The new `plan` was used for real in that ship; `ci/release-schema-pin` deleted.
