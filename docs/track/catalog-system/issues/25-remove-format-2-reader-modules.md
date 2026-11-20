@@ -153,3 +153,21 @@ with Marek's approval, `CATALOG_SCHEDULE_REVISION` repinned to it). Dispatched
 catalog run 44074650774 on it, the first collection through the format-3-only
 `collect`, passed both jobs (acquire, publish); Fast tests 44074645397 passed
 on the same commit. Steps C and D are unblocked.
+
+November 20, 2026: step C done, as option A (Marek chose it over saving
+generated format-3 files). `fixture_v3.repository` builds a source document
+from a saved or synthetic releases response through `contracts.source`, the
+projection collection uses; `fixture_v3.expanded` gives the Python oracle
+(`reference_policies.select_cohort`) the releases a reader sees. Every
+builder uses it: `fixture_recipes`, `fixture_appimages` (45 saved
+responses; `history_complete` false for a full 30-per-page response or a
+`/latest` singleton), `test_host_cutover` and the e2e `catalog_tree`, whose
+tree is byte for byte the one the format-2 route produced.
+`fixture_v3.publish_local` takes the documents as they are; `seed_source`
+and `fixture_facts.merge_attempts` left the test stack (`624f6d15d`,
+`3d8f153af`). Collector fast tier (236) and `tree_appimages` (105 subtests)
+green. Left for step D: `rehearse_pipeline.seed_source` and its test,
+`candidate_tree` as a format-2 parent in `test_contracts` and
+`test_pipeline_publication`, `catalog-browser/review_snapshot.py`,
+`schema_url`/`SCHEMA` (`yaml_publication`, `test_yaml_reader`) that
+`publish_local` callers still pass.
