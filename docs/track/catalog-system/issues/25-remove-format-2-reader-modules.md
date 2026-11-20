@@ -171,3 +171,12 @@ green. Left for step D: `rehearse_pipeline.seed_source` and its test,
 `test_pipeline_publication`, `catalog-browser/review_snapshot.py`,
 `schema_url`/`SCHEMA` (`yaml_publication`, `test_yaml_reader`) that
 `publish_local` callers still pass.
+
+November 20, 2026: step C shipped. `main-marek` moved to `4699d0381` (Marek
+approved), `CATALOG_SCHEDULE_REVISION` repinned `fa1c00518 -> 4699d0381`.
+Fast tests 44742679165 and dispatched catalog run 44742685442 passed on it;
+`ci/format2-c` deleted. Found for step D: `tools/catalog-browser/review_snapshot.py`
+(run by `catalog-pages.yml` on the `browser-review` branch only) decodes a
+format-2 baseline `cbda9fb78` through `decode(..., 'format-2')` and
+`rehearse_pipeline.seed_source`, so those cannot go until that step is
+retired or rebuilt on a format-3 baseline; Marek to choose.
