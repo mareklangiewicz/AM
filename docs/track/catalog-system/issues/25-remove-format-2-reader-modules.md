@@ -198,3 +198,19 @@ Collector fast tier 178 OK (58 fewer: 31 deleted tests, 27 duplicate runs of
 whole-tree tier and container e2e (Long tests on the `ci/` branch). Left:
 `docs/catalog-format-v2.md` (spec of the frozen ref; not in this ticket's
 list) and the status format's `format-2` outcome.
+
+November 20, 2026: Marek asked to retire format 2 fully. `0a36851a8`
+deletes `docs/catalog-format-v2.md` and makes the status summary's
+`compatibility_publication` optional (still written). It cannot simply go:
+all 64 retained summaries on `catalog-status-v1` (`e50cc8de1`) carry it,
+every run validates them through `Snapshot('status-1')`, and the deployed
+browser at mareklangiewicz.pl/AM requires it (its `definitions.mjs`, read
+November 20). Remaining, in order, each a ship:
+
+1. (done locally) optional, still written; test
+   `test_retiring_compatibility_publication_is_optional_in_summaries`.
+2. After Marek redeploys the browser from a `main-marek` that has step 1:
+   stop writing it in `pipeline_publication.summary`; drop the README note.
+3. When no summary on `catalog-status-v1` has it (64 hourly runs after
+   step 2's ship; check the live ref first): remove the property from
+   `build.py`, regenerate, flip the test to expect refusal, close this ticket.
