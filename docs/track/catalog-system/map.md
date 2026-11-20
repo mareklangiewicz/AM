@@ -195,6 +195,7 @@ approval boundaries.
 | [42 resolved](issues/42-convert-reviewed-layout-long-recipes.md) | none | [1,575 long recipes of layouts 3.5 and 3.6 are declarations](issues/42-convert-reviewed-layout-long-recipes.md#answer--november-19-2026); catalog run 44519834411 green. |
 | [43 resolved](issues/43-review-appimage-in-archive-layout.md) | none | [AppImage-in-archive is a layout for direct-AppImage selections](issues/43-review-appimage-in-archive-layout.md#answer--november-19-2026); 4,630 long recipes are declarations, catalog run 44536085052 green. |
 | [44 resolved](issues/44-release-guards-the-schema-pin.md) | none | [`release.py` refuses a `schemas` change unless `--repin-schemas`](issues/44-release-guards-the-schema-pin.md#answer--november-20-2026), then moves both pins. |
+| [45 resolved](issues/45-release-checks-live-refs-and-browser.md) | none | [`release.py` validates live refs before a schema repin and reports deployed browser drift](issues/45-release-checks-live-refs-and-browser.md#answer--november-20-2026). |
 
 Latest implementation evidence, November 8: Chromium desktop/narrow and Firefox
 checks pass; physical-device/comprehension limits remain with 13. Independent

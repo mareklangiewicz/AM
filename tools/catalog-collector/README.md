@@ -145,7 +145,9 @@ no `--ci`), repins `CATALOG_SCHEDULE_REVISION` and dispatches a catalog run
 only when the collection inputs changed, and prints and watches the run ids.
 A change in the `schemas` input scope since `CATALOG_SCHEMA_REVISION` is
 refused unless `--repin-schemas` says the contract transition was reviewed;
-then both pins move before the dispatch (ticket 44).
+then both pins move before the dispatch (ticket 44), once the live catalog and
+status refs validate under HEAD's contract (ticket 45). Every plan and ship
+also says whether the deployed browser's `definitions.mjs` matches HEAD's.
 `release.py plan [--ci <name>] [--repin-schemas]` prints what `ship` would do
 (the refusal, or the push and whether each pin moves, with the changed inputs)
 and writes nothing.

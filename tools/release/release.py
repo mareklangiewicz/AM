@@ -16,7 +16,10 @@ differ from the pin (the gate's own list, ticket 22).
 The schema pin is separate: a change in the collector's `schemas` input scope
 since CATALOG_SCHEMA_REVISION makes every catalog run refuse until that pin
 moves too. ship refuses such a change unless `--repin-schemas` says the
-contract transition was reviewed; then it moves both pins before the dispatch.
+contract transition was reviewed; then it moves both pins before the dispatch,
+and first validates the live catalog and status refs under HEAD's contract
+(a repin they fail would break every catalog run). Every plan and ship also
+compares the deployed browser's definitions with HEAD's.
 """
 import argparse
 import json
@@ -32,6 +35,10 @@ REPO = 'mareklangiewicz/AM'
 BRANCH = 'main-marek'
 PIN = 'CATALOG_SCHEDULE_REVISION'
 SCHEMA_PIN = 'CATALOG_SCHEMA_REVISION'
+LIVE_REFS = {'catalog-status-v1': 'status', 'release-catalog-v3': 'catalog'}
+DEFINITIONS = 'tools/catalog-contract/definitions.mjs'
+DEPLOYED_DEFINITIONS = 'https://mareklangiewicz.pl/AM/'+DEFINITIONS
+REDEPLOY = 'gh workflow run catalog-pages.yml --ref '+BRANCH+' -f deploy=true'
 POLL_SECONDS = 20
 APPEAR_SECONDS = 120
 SHOWN = 20  # changed inputs plan lists before it only counts the rest
@@ -77,7 +84,37 @@ def appeared(run, find, sleep, what):
     raise RuntimeError(what+' did not appear within '+str(APPEAR_SECONDS)+' s')
 
 
-def decide(run, ci=None, out=say, repin_schemas=False):
+def read_tree(sha, repo='.'):
+    """{path: bytes} of one commit, through a single cat-file --batch."""
+    rows = subprocess.check_output(['git', '-C', repo, 'ls-tree', '-r', '-z', '--format=%(objectname) %(path)', sha],
+                                   text=True, stdin=subprocess.DEVNULL).split('\0')
+    oids = [row.split(' ', 1) for row in rows if row]
+    data = subprocess.run(['git', '-C', repo, 'cat-file', '--batch'], input=''.join(oid+'\n' for oid, _ in oids).encode(),
+                          capture_output=True, check=True).stdout
+    tree, at = {}, 0
+    for oid, path in oids:
+        end = data.index(b'\n', at)
+        size = int(data[at:end].split()[2])
+        tree[path] = data[end+1:end+1+size]
+        at = end+2+size
+    return tree
+
+
+def validate_live_refs(run):
+    """Problems of the live refs under this checkout's contract; empty when valid."""
+    from contracts import validate_tree
+    problems = []
+    for ref, channel in LIVE_REFS.items():
+        output(run, ['git', 'fetch', '--quiet', 'origin', ref])
+        sha = output(run, ['git', 'rev-parse', 'FETCH_HEAD']).strip()
+        try:
+            validate_tree(read_tree(sha), channel)
+        except ValueError as error:
+            problems.append(ref+' '+sha+': '+str(error))
+    return problems
+
+
+def decide(run, ci=None, out=say, repin_schemas=False, validate=None):
     """Everything ship checks before it writes: raises Refused, or returns the
     commit to push, both pins and the inputs changed since each."""
     if output(run, ['git', 'rev-parse', '--abbrev-ref', 'HEAD']).strip() != BRANCH:
@@ -114,15 +151,29 @@ def decide(run, ci=None, out=say, repin_schemas=False):
                       + '); after reviewing the contract transition pass --repin-schemas')
     if repin_schemas and not schemas:
         raise Refused('--repin-schemas but nothing to repin: the schemas input equals '+SCHEMA_PIN+' '+schema_pin)
+    if schemas:
+        out('validating live refs under HEAD\'s contract (about 10 minutes): '+', '.join(LIVE_REFS))
+        problems = (validate or validate_live_refs)(run)
+        if problems:
+            raise Refused('live refs fail HEAD\'s contract, so a '+SCHEMA_PIN+' repin now would make every catalog'
+                          ' run refuse: '+'; '.join(problems))
+        out('live refs valid under HEAD\'s contract: '+', '.join(LIVE_REFS))
+    code, deployed = run(['curl', '-fsS', '--max-time', '20', DEPLOYED_DEFINITIONS])
+    if code:
+        out('deployed browser definitions unreadable (curl exit '+str(code)+')')
+    elif deployed == output(run, ['git', 'show', head+':'+DEFINITIONS]):
+        out('deployed browser definitions match HEAD')
+    else:
+        out('deployed browser definitions differ from HEAD; redeploy when ready: '+REDEPLOY)
     # A schema repin needs a run under it even when the gate ignores the file.
     changed = sorted(set(changed) | set(schemas))
     return dict(head=head, pin=pin, changed=changed, schema_pin=schema_pin, schemas=schemas)
 
 
-def plan(run, ci=None, out=say, repin_schemas=False):
+def plan(run, ci=None, out=say, repin_schemas=False, validate=None):
     """Print what ship would do now, writing nothing (ticket 40)."""
     try:
-        found = decide(run, ci, out, repin_schemas)
+        found = decide(run, ci, out, repin_schemas, validate)
     except Refused as refusal:
         out('would refuse: '+str(refusal))
         return False
@@ -144,9 +195,9 @@ def plan(run, ci=None, out=say, repin_schemas=False):
     return True
 
 
-def ship(run, ci=None, out=say, sleep=time.sleep, repin_schemas=False):
+def ship(run, ci=None, out=say, sleep=time.sleep, repin_schemas=False, validate=None):
     """Returns the run ids to watch: always 'fast', 'catalog' when dispatched."""
-    found = decide(run, ci, out, repin_schemas)
+    found = decide(run, ci, out, repin_schemas, validate)
     head, pin, changed = found['head'], found['pin'], found['changed']
     output(run, ['git', 'push', 'origin', 'HEAD:refs/heads/'+BRANCH])
     out('pushed '+head+' to '+BRANCH)

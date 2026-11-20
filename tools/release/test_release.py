@@ -51,11 +51,17 @@ PUSH = [(['git', 'push', 'origin', 'HEAD:refs/heads/main-marek'], '')]
 PIN_READ = [(['gh', 'variable', 'get', 'CATALOG_SCHEDULE_REVISION', *R], PIN+'\n')]
 
 
-def pins(gate='', schemas=''):
-    """Both pin reads and their diffs against HEAD, as decide makes them."""
+def pins(gate='', schemas='', deployed=(0, 'defs'), ours='defs'):
+    """Both pin reads and their diffs against HEAD, then the deployed browser
+    definitions against HEAD's, as decide makes them."""
     return PIN_READ+[(GATE, gate),
                      (['gh', 'variable', 'get', 'CATALOG_SCHEMA_REVISION', *R], SCHEMA_PIN+'\n'),
-                     (SCHEMA_GATE, schemas)]
+                     (SCHEMA_GATE, schemas),
+                     (DEPLOYED, deployed),
+                     (['git', 'show', HEAD+':'+release.DEFINITIONS], ours)]
+
+
+DEPLOYED = ['curl', '-fsS', '--max-time', '20', release.DEPLOYED_DEFINITIONS]
 
 
 SCHEMA_REPIN = [(['gh', 'variable', 'set', 'CATALOG_SCHEMA_REVISION', '--body', HEAD, *R], '')]
@@ -74,6 +80,7 @@ REPIN = [
 def ship(script, **options):
     run = Fake(script)
     lines = []
+    options.setdefault('validate', lambda run: [])
     result = release.ship(run, out=lines.append, sleep=lambda s: None, **options)
     return run, result, lines
 
@@ -81,6 +88,7 @@ def ship(script, **options):
 class Refusals(unittest.TestCase):
     def refused(self, script, pattern, **options):
         run = Fake(script)
+        options.setdefault('validate', lambda run: [])
         with self.assertRaisesRegex(release.Refused, pattern):
             release.ship(run, out=lambda line: None, sleep=lambda s: None, **options)
         self.assertFalse(any(call[:2] == ['git', 'push'] or call[:3] == ['gh', 'variable', 'set']
@@ -117,11 +125,17 @@ class Refusals(unittest.TestCase):
         # The collector compares the raw scope, so a README there counts too.
         for path in ('schemas/catalog/summary.schema.json', 'tools/catalog-contract/README.md'):
             with self.subTest(path=path):
-                self.refused(START+GREEN_CI+pins(path+'\n', path+'\n'), 'CATALOG_SCHEMA_REVISION.*--repin-schemas',
+                self.refused(START+GREEN_CI+pins(path+'\n', path+'\n')[:4], 'CATALOG_SCHEMA_REVISION.*--repin-schemas',
                              ci='x')
 
+    def test_a_schema_repin_refuses_while_live_refs_fail_heads_contract(self):
+        changed = 'schemas/catalog/summary.schema.json\n'
+        script = START+GREEN_CI+pins(changed, changed)[:4]
+        self.refused(script, 'catalog-status-v1 .*summary', ci='x', repin_schemas=True,
+                     validate=lambda run: ['catalog-status-v1 '+'c'*40+': summary property'])
+
     def test_repin_schemas_without_a_schemas_scope_change(self):
-        self.refused(START+GREEN_CI+pins('programs/x86_64/a\n', ''), 'nothing to repin', ci='x', repin_schemas=True)
+        self.refused(START+GREEN_CI+pins('programs/x86_64/a\n', '')[:4], 'nothing to repin', ci='x', repin_schemas=True)
 
 
 class Ship(unittest.TestCase):
@@ -167,6 +181,7 @@ class Plan(unittest.TestCase):
     def plan(self, script, **options):
         run = Fake(script)
         lines = []
+        options.setdefault('validate', lambda run: [])
         release.plan(run, out=lines.append, **options)
         self.assertEqual(run.script, [])
         self.assertFalse(any(call[:len(w)] == w for call in run.calls for w in WRITES))
@@ -196,7 +211,7 @@ class Plan(unittest.TestCase):
 
     def test_a_schemas_scope_change_would_refuse_and_name_the_files(self):
         changed = 'schemas/catalog/summary.schema.json\n'
-        text = self.plan(START+GREEN_CI+pins(changed, changed), ci='x')
+        text = self.plan(START+GREEN_CI+pins(changed, changed)[:4], ci='x')
         self.assertIn('would refuse:', text)
         self.assertIn('CATALOG_SCHEMA_REVISION', text)
         self.assertIn('schemas/catalog/summary.schema.json', text)
@@ -206,6 +221,32 @@ class Plan(unittest.TestCase):
         text = self.plan(START+GREEN_CI+pins(changed, changed), ci='x', repin_schemas=True)
         self.assertIn('would repin CATALOG_SCHEMA_REVISION '+SCHEMA_PIN+' -> '+HEAD, text)
         self.assertIn('would repin CATALOG_SCHEDULE_REVISION', text)
+
+    def test_a_reviewed_schemas_change_validates_live_refs_first(self):
+        changed = 'schemas/catalog/summary.schema.json\n'
+        seen = []
+        text = self.plan(START+GREEN_CI+pins(changed, changed), ci='x', repin_schemas=True,
+                         validate=lambda run: seen.append(run) or [])
+        self.assertEqual(len(seen), 1)
+        self.assertIn('live refs valid under HEAD', text)
+
+    def test_live_refs_are_not_validated_without_a_schemas_change(self):
+        self.plan(START+GREEN_CI+pins('programs/x86_64/a\n', ''), ci='x',
+                  validate=lambda run: self.fail('validated live refs'))
+
+    def test_a_drifted_browser_says_to_redeploy(self):
+        text = self.plan(START+GREEN_CI+pins('programs/x86_64/a\n', '', deployed=(0, 'old'), ours='new'), ci='x')
+        self.assertIn('deployed browser definitions differ from HEAD', text)
+        self.assertIn('catalog-pages.yml', text)
+
+    def test_a_matching_browser_says_so(self):
+        text = self.plan(START+GREEN_CI+pins('programs/x86_64/a\n', ''), ci='x')
+        self.assertIn('deployed browser definitions match HEAD', text)
+
+    def test_an_unreachable_browser_is_reported_not_fatal(self):
+        text = self.plan(START+GREEN_CI+pins('programs/x86_64/a\n', '', deployed=(22, ''))[:-1], ci='x')
+        self.assertIn('would push', text)
+        self.assertIn('deployed browser definitions unreadable (curl exit 22)', text)
 
     def test_an_unchanged_schemas_scope_says_its_pin_stays(self):
         text = self.plan(START+GREEN_CI+pins('programs/x86_64/a\n', ''), ci='x')
@@ -220,6 +261,25 @@ class Plan(unittest.TestCase):
 def view(run_id, status, conclusion=''):
     return (['gh', 'run', 'view', str(run_id), '--json', 'status,conclusion', *R],
             ok(dict(status=status, conclusion=conclusion)))
+
+
+class ReadTree(unittest.TestCase):
+    def test_every_blob_comes_back_byte_exact(self):
+        import subprocess
+        import tempfile
+        from pathlib import Path
+        with tempfile.TemporaryDirectory() as repo:
+            files = {'a.yaml': b'one\ntwo\n', 'runs/1-1/summary.yaml': b'', 'b c.bin': bytes(range(256))*3,
+                     'nl.yaml': b'\n\n'}
+            for path, data in files.items():
+                (Path(repo)/path).parent.mkdir(parents=True, exist_ok=True)
+                (Path(repo)/path).write_bytes(data)
+            git = ['git', '-C', repo, '-c', 'user.name=t', '-c', 'user.email=t@t', '-c', 'core.hooksPath=/dev/null']
+            subprocess.run(['git', 'init', '-q', repo], check=True)
+            subprocess.run(git+['add', '.'], check=True)
+            subprocess.run(git+['commit', '-qm', 'x'], check=True)
+            sha = subprocess.check_output(git+['rev-parse', 'HEAD'], text=True).strip()
+            self.assertEqual(release.read_tree(sha, repo), files)
 
 
 class Output(unittest.TestCase):
