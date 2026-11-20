@@ -180,3 +180,21 @@ Fast tests 44742679165 and dispatched catalog run 44742685442 passed on it;
 format-2 baseline `cbda9fb78` through `decode(..., 'format-2')` and
 `rehearse_pipeline.seed_source`, so those cannot go until that step is
 retired or rebuilt on a format-3 baseline; Marek to choose.
+
+November 20, 2026: step D done locally, not shipped. `review_snapshot.py`
+and its `browser-review` workflow step retired (Marek chose that over a
+format-3 port; `b20e26e85`). Format-2 one-off scripts and
+`rehearse_pipeline` deleted (`372885eee`); `qualify_status_scale` stays (it
+only names the status format's `format-2` outcome, out of scope here).
+Publication tests call `publish_tree` directly (`a75f594ea`). Then
+`198055bcd`: `yaml_publication.py`, `retention.py`, `collect_files`,
+the `format-2` channel, `select_local`, `test_yaml_reader.py`,
+`test_retention.py`, `test_observation_defaults.py`, the non-contract
+`validate_wire` branch and both modules are gone; `observation` moved to
+`retention_v3`; `test_reader_portability` runs its forbidden-code-point
+cases against `catalog-contract-reader.am` (a lax reader fails 36 subtests).
+Collector fast tier 178 OK (58 fewer: 31 deleted tests, 27 duplicate runs of
+`test_yaml_reader.Experiment` through imports); other suites OK. Not run:
+whole-tree tier and container e2e (Long tests on the `ci/` branch). Left:
+`docs/catalog-format-v2.md` (spec of the frozen ref; not in this ticket's
+list) and the status format's `format-2` outcome.
