@@ -1,4 +1,4 @@
-"""Canonical YAML emitter shared by format 2 and format 3."""
+"""Canonical YAML emitter for catalog documents."""
 import json
 
 

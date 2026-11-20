@@ -9,7 +9,6 @@ from installed_recipe import managed_updater
 from host_catalog import installation_configuration as configuration
 from publication import git
 from fixture_v3 import REVISION, publish_local, repository
-from yaml_publication import schema_url
 import test_yaml_manager_integration as integration
 from fixture_manager import ROOT
 
@@ -58,7 +57,7 @@ class HostCutoverCase(unittest.TestCase):
                     published_at='2026-11-0'+str(n)+'T00:00:00Z',created_at='2026-11-01T00:00:00Z',assets=list(assets.values())))
             repositories[rid]=repository(int(rid),source,releases,NOW,REVISION)
         cls.repositories=repositories
-        cls.pin=publish_local(cls.repo,{r['app']:r['repository_id'] for r in cls.rows},repositories,schema=schema_url('a'*40),max_file_bytes=2097152,expected_parent=None)
+        cls.pin=publish_local(cls.repo,{r['app']:r['repository_id'] for r in cls.rows},repositories,expected_parent=None)
 
     def setUp(self):
         integration.YAMLManager.setUp(self)

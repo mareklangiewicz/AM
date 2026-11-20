@@ -15,7 +15,7 @@ import jsonschema
 import contracts as c
 from contracts import header,encode,decode,source,expand_release
 from retention_v3 import merge
-from test_yaml_reader import repository
+from fixture_v3 import sample_release
 from publication import git,publish_tree,REF
 import collection_interface as interface
 import host_catalog as host
@@ -26,10 +26,12 @@ FIXTURES=ROOT/'tools/catalog-contract/fixtures'
 PIN='a'*40
 OLD='2026-11-03T01:00:00Z'
 NEW='2026-11-08T01:00:00Z'
+# A retired format-2 tree only has to stay frozen; nothing reads its bytes.
+LEGACY={'apps.yaml':b'format-2 apps\n','repositories/123.yaml':b'format-2 source\n'}
 
 
 def sample():
-    record=repository()['releases']['456'];record.pop('observed_at')
+    record=sample_release()
     record['title']+='\u0085\u2028\u2029\\N'
     record['assets']['790']=dict(name='base',url='https://github.com/example/app/releases/download/v2.0.0/',size=1,content_type='Text/Plain; charset=UTF-8')
     record['assets']['9007199254740993']=dict(name='中文 \\N?%2F',url='https://github.com/example/app/releases/download/v2.0.0/中文?x=%2F#y',size=9223372036854775807,content_type='application/octet-stream')
@@ -50,7 +52,7 @@ MIME_CASES=[
 
 
 def mime_document():
-    record=repository()['releases']['456'];record.pop('observed_at')
+    record=sample_release()
     record['assets']={str(index):dict(name='asset-'+str(index),url='https://example.org/download/'+str(index),size=0,content_type=value)
                       for index,(value,_) in enumerate(MIME_CASES,1)}
     return source(None,dict(received_at=OLD,releases={'456':record},history_complete=True),rid=123,repository='example/app',revision=PIN)
@@ -304,10 +306,7 @@ class Contracts(unittest.TestCase):
     def test_v3_bootstrap_and_failed_refresh_preserve_parent_no_ref_advance(self):
         with tempfile.TemporaryDirectory() as temp:
             root=Path(temp);repo=root/'repo';git(root,'init','--bare','--quiet','--template=',str(repo))
-            old=repository();old['repository_id']=123
-            from yaml_publication import candidate_tree,schema_url
-            legacy=candidate_tree({'example':123},{'123':old},schema=schema_url(PIN),max_file_bytes=host.FILE_CAP)
-            parent=publish_tree(repo,legacy,None)
+            parent=publish_tree(repo,LEGACY,None)
             evidence=root/'saved';evidence.mkdir()
             (evidence/'123-releases.json').write_text('[]');(evidence/'123-receipt.txt').write_text(NEW)
             registry=root/'names.json';registry.write_text(json.dumps(dict(active={'123':'example'},retired=[])))
@@ -343,11 +342,9 @@ class Contracts(unittest.TestCase):
 
 
     def test_collector_revision_change_keeps_retained_source_browsable(self):
-        from yaml_publication import candidate_tree,schema_url
         with tempfile.TemporaryDirectory() as temp:
-            root=Path(temp);repo=root/'legacy.git';v3=root/'v3.git'
-            for path in (repo,v3):git(root,'init','--bare','--quiet','--template=',str(path))
-            parent=publish_tree(repo,candidate_tree({'example':123},{'123':repository()},schema=schema_url(PIN),max_file_bytes=c.FILE_CAP),None)
+            root=Path(temp);v3=root/'v3.git'
+            git(root,'init','--bare','--quiet','--template=',str(v3))
             d=documents();d['repository']['repository_id']=123
             apps={'example':'repositories/example.yaml'}
             tree={'catalog.yaml':encode(d['catalog']),'apps.yaml':encode(dict(header('apps',PIN),apps=apps)),
@@ -444,7 +441,7 @@ class Contracts(unittest.TestCase):
         from bounded import normalize
         raw=[dict(id=1,draft=False,tag_name='v1',html_url='https://example.org/v1',published_at=None,created_at=OLD,prerelease=False,assets=[])]
         with self.assertRaises((TypeError,ValueError)):normalize(raw,100)
-        original=repository()['releases']['456']
+        original=dict(sample_release(),observed_at='2026-11-03T00:59:30Z')
         original['title']+='\u0085\u2028\u2029\\N'
         self.assertEqual(c.expand_release(c.compact_release(original),OLD),original)
         normalized=normalize(raw,100,allow_missing_published=True)

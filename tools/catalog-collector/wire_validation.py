@@ -10,13 +10,11 @@ import subprocess
 ROOT=Path(__file__).resolve().parents[2]
 
 
-def validate_wire(raw,max_file_bytes,*,contract=False):
-    if contract and not raw.endswith(b'\n'):
+def validate_wire(raw,max_file_bytes):
+    if not raw.endswith(b'\n'):
         raise ValueError('catalog YAML: final LF required')
-    command=['awk']
-    if contract:
-        command.extend(['-f',str(ROOT/'modules/catalog-contract-tables.am')])
-    command.extend(['-f',str(ROOT/'modules'/('catalog-contract-parser.am' if contract else 'catalog-yaml-parser.am'))])
+    command=['awk','-f',str(ROOT/'modules/catalog-contract-tables.am'),
+             '-f',str(ROOT/'modules/catalog-contract-parser.am')]
     result=subprocess.run(command,input=raw,capture_output=True,
         env={'PATH':'/usr/bin:/bin','LC_ALL':'C','AM_YAML_OPERATION':'validate',
              'AM_YAML_MAX_INPUT_BYTES':str(max_file_bytes)})

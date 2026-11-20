@@ -39,7 +39,7 @@ def main():
     result=dict(synthetic=True,live_acquisition=False,batch_size=args.batch_size,parent=args.parent,
         source_head=git(c.ROOT,'rev-parse','HEAD').decode().strip(),
         implementation_files_sha256={name:hashlib.sha256(Path(__file__).with_name(name).read_bytes()).hexdigest()
-            for name in ('publication.py','incremental.py','contracts.py','wire_validation.py','yaml_publication.py')},
+            for name in ('publication.py','incremental.py','contracts.py','wire_validation.py')},
         packing='git repack -ad --window=10 --depth=50; threads=1; compression=6',
         rss_scope='separate Python process high-water and largest child, not simultaneous aggregate')
     started=time.monotonic()

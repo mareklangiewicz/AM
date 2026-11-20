@@ -9,7 +9,6 @@ import re
 import string
 
 from bounded import require
-from yaml_publication import load_local
 
 POLICY_KEYS = {'release_order','stable_only','asset_suffix','include','exclude','ignore_case'}
 ASCII_LOWER = str.maketrans(string.ascii_uppercase,string.ascii_lowercase)
@@ -61,11 +60,6 @@ def select(apps, repositories, app, commit, rule, *, now, accept_stale=None):
             return accept_selection(app, rid, repository, release_id, release, asset_id,
                                     asset, commit, now=now, accept_stale=accept_stale)
     raise ValueError('no_matching_asset')
-
-
-def select_local(repo, commit, app, rule, *, now, accept_stale=None, max_file_bytes=2097152):
-    apps,repositories = load_local(repo,commit,max_file_bytes=max_file_bytes)
-    return select(apps,repositories,app,commit,rule,now=now,accept_stale=accept_stale)
 
 
 def accept_selection(app, rid, repository, release_id, release, asset_id, asset, commit, *, now, accept_stale=None):

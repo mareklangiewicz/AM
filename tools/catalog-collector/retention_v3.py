@@ -1,7 +1,13 @@
-"""Format-3 retention over normalized facts; format-2 retention stays independent."""
+"""Format-3 retention over normalized facts."""
 import copy
 from bounded import timestamp
-from retention import observation
+
+
+def observation(release, default=None):
+    value=release.get('observed_at',default)
+    if value is None:
+        raise ValueError('release observation needs a shared default')
+    return value
 
 
 def merge(previous, fetched, *, completed_at):

@@ -1,14 +1,10 @@
 """Selection is a client decision; collection/publication cannot refresh old facts."""
 import copy
 from datetime import datetime, timezone
-from pathlib import Path
-import tempfile
 import unittest
 
-from test_yaml_reader import repository
-from publication import git
-from yaml_publication import publish_local
-from reference_selection import select,select_local,StaleSelection
+from fixture_v3 import sample_release
+from reference_selection import select,StaleSelection
 
 PIN = 'a'*40
 NOW = datetime(2026,11,4,13,tzinfo=timezone.utc)
@@ -18,11 +14,9 @@ RULE = dict(release_order='published_desc',stable_only=False,asset_suffix='.AppI
 
 class Selection(unittest.TestCase):
     def setUp(self):
-        self.repo = repository()
-        self.repo['observed_at'] = '2026-11-04T12:00:00Z'
-        self.repo['last_success']['completed_at'] = '2026-11-04T12:00:00Z'
+        self.repo = dict(repository_id=123, repository='example/app',
+                         observed_at='2026-11-04T12:00:00Z', releases={'456':sample_release()})
         release = self.repo['releases']['456']
-        release.pop('observed_at',None)
         release['published_at'] = '2026-11-01T00:00:00Z'
         release['prerelease'] = False
         release['assets']['789'].update(name='app-x86_64.AppImage',url='https://example.com/stable')
@@ -74,31 +68,13 @@ class Selection(unittest.TestCase):
         self.repo['releases']['455'] = older
         with self.assertRaises(StaleSelection): self.choose()
 
-    def test_freshness_boundary_future_and_failed_collection(self):
+    def test_freshness_boundary_and_future_observation(self):
         self.repo['observed_at'] = '2026-10-28T13:00:00Z'
         self.assertFalse(self.choose()['stale'])
         self.repo['observed_at'] = '2026-10-28T12:59:59Z'
         with self.assertRaises(StaleSelection): self.choose()
         self.repo['observed_at'] = '2026-11-04T13:00:01Z'
         with self.assertRaisesRegex(ValueError,'future_release_observation'): self.choose()
-        self.repo['observed_at'] = '2026-11-04T12:00:00Z'
-        self.repo['collection'].update(status='failed',reason='transport')
-        self.assertFalse(self.choose()['stale'])
-
-    def test_exact_pinned_snapshot_survives_new_tip(self):
-        with tempfile.TemporaryDirectory() as directory:
-            repo = Path(directory)
-            git(repo,'init','--bare','--quiet','--template=')
-            pin = publish_local(repo,self.apps,self.repositories,schema=self.repo['schema'],
-                                max_file_bytes=2097152,expected_parent=None)
-            changed = copy.deepcopy(self.repositories)
-            changed[str(self.repo['repository_id'])]['releases']['456']['assets']['789']['url'] = 'https://example.com/new'
-            tip = publish_local(repo,self.apps,changed,schema=self.repo['schema'],
-                                max_file_bytes=2097152,expected_parent=pin)
-            self.assertNotEqual(pin,tip)
-            selected = select_local(repo,pin,'app',RULE,now=NOW)
-            self.assertEqual(selected['asset']['url'],'https://example.com/stable')
-            self.assertEqual(selected['commit'],pin)
 
     def test_policy_refuses_implicit_latest_and_missing_app_or_asset(self):
         for rule in (dict(RULE,release_order='github_latest'),dict(RULE,stable_only=1),

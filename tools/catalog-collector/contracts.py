@@ -5,8 +5,7 @@ from pathlib import Path
 import re
 import yaml
 from writer import document
-from retention import observation
-from retention_v3 import merge
+from retention_v3 import merge, observation
 from wire_validation import validate_wire
 
 # The distributed reader validates the grammar before either safe loader runs.
@@ -72,7 +71,7 @@ def encode(obj):
 def decode(raw, cap=FILE_CAP):
     if type(raw) is not bytes or len(raw)>cap:
         raise ValueError('document bound')
-    validate_wire(raw,cap,contract=True)
+    validate_wire(raw,cap)
     obj=yaml.load(raw,Loader=SAFE_LOADER)
     if encode(obj)!=raw:
         raise ValueError('noncanonical document')

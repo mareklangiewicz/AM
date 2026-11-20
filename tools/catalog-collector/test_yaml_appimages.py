@@ -16,7 +16,6 @@ from publication import git
 from fixture_v3 import publish_local
 from reference_policies import APPIMAGES, matches, select_cohort
 from fixture_facts import utc
-from test_yaml_reader import SCHEMA
 
 
 class AppImagesCase(unittest.TestCase):
@@ -30,8 +29,7 @@ class AppImagesCase(unittest.TestCase):
         cls.addClassCleanup(cls.tmp.cleanup)
         cls.repo = Path(cls.tmp.name)/'git'; cls.repo.mkdir()
         git(cls.repo,'init','--bare')
-        cls.pin = publish_local(cls.repo,cls.apps,cls.repositories,schema=SCHEMA,
-                               max_file_bytes=2097152,expected_parent=None)
+        cls.pin = publish_local(cls.repo,cls.apps,cls.repositories,expected_parent=None)
 
     script = integration.YAMLManager.script
     env = integration.YAMLManager.env
@@ -92,7 +90,7 @@ class AppImages(AppImagesCase):
         result=self.standalone(app/'AM-updater')
         self.assertNotEqual(result.returncode,0);self.assertEqual(self.snapshot(),before)
         apps=dict(self.apps,sqlitebrowser=next(r for r in self.saved if r!=19416551))
-        pin=publish_local(self.repo,apps,self.repositories,schema=SCHEMA,max_file_bytes=2097152,expected_parent=self.pin)
+        pin=publish_local(self.repo,apps,self.repositories,expected_parent=self.pin)
         result=self.standalone(app/'AM-updater','--commit',pin)
         self.assertNotEqual(result.returncode,0);self.assertEqual(self.snapshot(),before)
         self.assertIn(b'appimage_repository_mismatch',result.stderr)

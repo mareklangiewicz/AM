@@ -14,7 +14,6 @@ import fixture_manager as harness
 from fixture_manager import ROOT, NOW
 from publication import git
 from fixture_v3 import expanded, publish_local
-from test_yaml_reader import SCHEMA
 
 SOURCE='https://raw.githubusercontent.com/selected-owner/selected.repo/feature/catalog'
 RUNTIME=('catalog-yaml.am','catalog-contract-reader.am','catalog-contract-parser.am','catalog-contract-tables.am','catalog-yaml-policy.am')
@@ -246,7 +245,7 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\napp=${0##
     def test_pinned_network_read_survives_tip_movement_and_same_repo_batch_reuse(self):
         other=copy.deepcopy(self.repositories)
         other['262342594']['collected_at']='2026-10-27T16:00:00Z'  # any change moves the tip
-        after=publish_local(self.repo,self.apps,other,schema=SCHEMA,max_file_bytes=2097152,expected_parent=self.pin)
+        after=publish_local(self.repo,self.apps,other,expected_parent=self.pin)
         (self.path/'move-to').write_text(after)
         helper=self.module_dir/'catalog-yaml.am'
         r=subprocess.run(['/bin/sh',str(helper),'x86_64/obsidian'],env=self.env(),capture_output=True)

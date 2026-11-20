@@ -1,14 +1,6 @@
 #!/usr/bin/env python3
-"""Offline JSON-file adapter. No network I/O; elapsed checks are cooperative.
-
-Trial limits only. Feed lazy responses into the existing atomic retention model.
-Regular local files are trusted fixture inputs; this is not a hostile-file reader.
-"""
+"""Strict field checks and normalization of GitHub releases responses; no I/O."""
 import datetime
-import json
-import pathlib
-import time
-from retention import parameters, refresh
 
 def require(ok, code):
     if not ok:
@@ -102,80 +94,3 @@ def normalize(raw, page_size, *, allow_missing_published=False):
         facts['assets'] = {aid: assets[aid] for aid in sorted(assets, key=int)}
         releases[rid] = facts
     return releases
-
-
-class FixtureBudget:
-    def __init__(self, requests=64, response_bytes=16*1024*1024,
-                 total_bytes=96*1024*1024, seconds=120):
-        if any(type(v) is not int or v < 1 for v in (requests, response_bytes, total_bytes)) or seconds <= 0:
-            raise ValueError('budget')
-        self.requests, self.response_bytes, self.total_bytes, self.seconds = requests, response_bytes, total_bytes, seconds
-        self.started = time.monotonic()
-        self.used_requests = self.used_bytes = 0
-
-    def check(self):
-        if time.monotonic() - self.started > self.seconds:
-            raise TimeoutError('elapsed budget')
-
-    def read(self, path):
-        self.check()
-        if self.used_requests >= self.requests:
-            raise TimeoutError('request budget')
-        self.used_requests += 1  # Failed opens count too.
-        allowance = min(self.response_bytes, self.total_bytes - self.used_bytes)
-        if allowance < 0:
-            raise TimeoutError('byte budget')
-        body = bytearray()
-        with pathlib.Path(path).open('rb') as stream:
-            while True:
-                self.check()
-                chunk = stream.read(min(65536, allowance - len(body) + 1))
-                self.used_bytes += len(chunk)
-                if not chunk:
-                    break
-                body.extend(chunk)
-                if len(body) > allowance:
-                    raise TimeoutError('byte budget')
-        self.check()
-        return body
-
-
-def collect_files(previous, pages, *, attempted_at, page_size=100, page_limit=1,
-                  reconcile=False, budget=None, **limits):
-    """Pages contain path and explicit has_next; never infer EOF from list length.
-
-    Pagination metadata is fixture input, not a Link-header implementation.
-    One-byte overread detects overflow and is counted. JSON parse/normalization
-    and merge may temporarily allocate above input bytes; no RSS claim is made.
-    """
-    parameters(page_size, page_limit)
-    if reconcile and page_limit != 'all':
-        raise ValueError('reconciliation requires all')
-    budget = budget or FixtureBudget()
-    def responses():
-        for page in pages:
-            start = time.monotonic()
-            before = budget.used_bytes
-            try:
-                body = budget.read(page['path'])
-                received = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
-                raw = json.loads(body.decode('utf-8'), object_pairs_hook=unique_object,
-                                 parse_constant=lambda value: (_ for _ in ()).throw(ValueError(value)))
-                records = normalize(raw, page_size)
-                has_next = boolean(page['has_next'])
-                budget.check()
-                yield dict(received_at=received, releases=records, has_next=has_next,
-                           bytes=budget.used_bytes-before, seconds=time.monotonic()-start)
-            except (TimeoutError, OSError, ValueError, TypeError, KeyError, RecursionError) as exc:
-                reason = 'collection_limit' if isinstance(exc, TimeoutError) else 'transport' if isinstance(exc, OSError) else 'invalid_response'
-                yield dict(error=reason, bytes=budget.used_bytes-before, seconds=time.monotonic()-start)
-                return
-    result = refresh(previous, responses(), attempted_at=attempted_at, page_size=page_size,
-                     page_limit=page_limit, reconcile=reconcile, **limits)
-    # Include merge/serialization elapsed time in the cooperative scope check.
-    try:
-        budget.check()
-    except TimeoutError:
-        result = refresh(previous, [dict(error='collection_limit')], attempted_at=attempted_at,
-                         page_size=page_size, page_limit=page_limit, reconcile=reconcile)
-    return result

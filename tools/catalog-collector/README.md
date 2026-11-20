@@ -94,9 +94,8 @@ Installed runtime requires shell/awk/curl, with no Python, jq or Git dependency.
 The active runtime is `catalog-yaml.am`, `catalog-contract-reader.am`,
 `catalog-contract-parser.am`, `catalog-contract-tables.am`,
 `catalog-yaml-policy.am`, `appimage.am` and the manager's `install.am`.
-`APP-MANAGER` retains these files during module sync. Historical v2 shell readers
-and bounded offline validators remain for old snapshots and test evidence;
-they are not a producer or fallback in the operating path.
+`APP-MANAGER` retains these files during module sync and removes the rest,
+including the retired format-2 reader and parser (deleted in ticket 25 step D).
 
 Maintainer tools use Python/PyYAML. `Snapshot` validates the exact parent once per
 process; `Records` decodes selected sources and `Candidate` validates changed
@@ -146,8 +145,8 @@ python3 -B tools/catalog-collector/recipe_policy_source.py
 python3 -B tools/catalog-contract/build.py
 ```
 
-The tests use disposable installations/remotes and inert assets. Historical v2
-fixtures support comparisons, not active production. Completed unrelated browser,
+The tests use disposable installations/remotes and inert assets; their fixtures
+are format-3 documents built the way collection builds them. Completed unrelated browser,
 scale and manual recovery evidence is reused; do not rerun expanded dual-output
 qualification. Physical myxps delivery,
 real GitHub acquisition/publication and deployed-browser checks remain explicit

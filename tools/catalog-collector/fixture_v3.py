@@ -3,8 +3,18 @@ import contracts as c
 from bounded import normalize
 from publication import publish_tree
 
-# The schemas revision test snapshots use (test_yaml_reader.SCHEMA's).
+# The schemas revision test snapshots use.
 REVISION='a'*40
+
+
+def sample_release():
+    """One normalized release fact with awkward text, as normalize returns it."""
+    return dict(tag='v2.0.0', title='Quotes " and \\; caf\u00e9 \u4e2d\u6587 \U0001f427\n\r\t\n',
+                url='https://github.com/example/app/releases/tag/v2.0.0',
+                published_at='2026-11-02T12:00:00Z', prerelease=False,
+                assets={'789': dict(name="John's app #1.AppImage",
+                                    url='https://github.com/example/app/releases/download/v2.0.0/app?x=a:b#part',
+                                    size=0, content_type='')})
 
 
 def repository(rid, name, releases, received_at, revision, *, complete=None):
@@ -23,8 +33,7 @@ def expanded(document):
                                    for rid,release in document['releases'].items()})
 
 
-def publish_local(repo, apps, repositories, *, schema, max_file_bytes, expected_parent):
-    revision=schema.split('/')[-3]
+def publish_local(repo, apps, repositories, *, expected_parent, revision=REVISION):
     paths={app:'repositories/source-'+str(rid)+'.yaml' for app,rid in apps.items()}
     tree={'repositories/source-'+str(rid)+'.yaml':c.encode(repositories[str(rid)])
           for rid in sorted(set(apps.values()))}

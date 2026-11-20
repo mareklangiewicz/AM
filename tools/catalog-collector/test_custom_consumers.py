@@ -5,7 +5,7 @@ import unittest
 
 import contracts as c
 from publication import git,publish_tree
-from test_yaml_reader import repository
+from fixture_v3 import sample_release
 import test_git_consumers as integration
 
 AT=integration.AT
@@ -35,7 +35,7 @@ class CustomConsumers(unittest.TestCase):
         self.pin=publish_tree(self.repo,tree,None);self.clock=AT
 
     def release(self,tag='v1',published=AT,preview=False):
-        r=repository()['releases']['456'];r.pop('observed_at',None)
+        r=sample_release()
         r.update(tag=tag,published_at=published,prerelease=preview,assets={})
         r['url']='https://github.com/example/app/releases/tag/'+tag
         return r

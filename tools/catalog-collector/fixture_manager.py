@@ -5,7 +5,6 @@ import subprocess
 from fixture_recipes import fixtures
 from publication import git
 from fixture_v3 import publish_local
-from test_yaml_reader import SCHEMA
 
 ROOT = Path(__file__).resolve().parents[2]
 NOW = '2026-10-27T15:18:00Z'
@@ -24,8 +23,7 @@ def setup_catalog(cls):
     cls.shared = Path(cls.tmp.name)
     cls.repo = cls.shared/'git'; cls.repo.mkdir()
     git(cls.repo, 'init', '--bare')
-    cls.pin = publish_local(cls.repo, cls.apps, cls.repositories, schema=SCHEMA,
-                           max_file_bytes=2097152, expected_parent=None)
+    cls.pin = publish_local(cls.repo, cls.apps, cls.repositories, expected_parent=None)
 
 
 class ManagerHarness:

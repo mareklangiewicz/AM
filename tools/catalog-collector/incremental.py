@@ -11,8 +11,6 @@ import time
 
 import contracts
 from publication import bounded, environment
-from writer import document
-from yaml_publication import decode_document
 
 _TRUST=object()
 
@@ -22,7 +20,7 @@ def rules():
            'tools/catalog-collector/wire_validation.py',
            'tools/catalog-collector/writer.py','tools/catalog-contract/definitions.json',
            'modules/catalog-contract-parser.am','modules/catalog-contract-tables.am',
-           'modules/catalog-contract-reader.am','modules/catalog-yaml-reader.am','modules/catalog-yaml-parser.am']
+           'modules/catalog-contract-reader.am']
     digest=hashlib.sha256()
     for path in paths:
         digest.update(path.encode()+b'\0'+(contracts.ROOT/path).read_bytes()+b'\0')
@@ -34,8 +32,8 @@ def oid(raw):
 
 
 def allowed(path,channel):
+    if channel not in ('format-3','status-1'): raise ValueError('unknown catalog channel')
     if channel=='status-1': return path in ('status.yaml','statistics.yaml') or bool(re.fullmatch(r'runs/[1-9][0-9]*-[1-9][0-9]*/(?:summary\.yaml|sources/'+contracts.NAME+r'\.yaml)',path))
-    if channel=='format-2': return path=='apps.yaml' or bool(re.fullmatch(r'repositories/[1-9][0-9]*\.yaml',path))
     return path in ('catalog.yaml','apps.yaml') or bool(re.fullmatch('(repositories|provenance)/'+contracts.NAME+r'\.yaml',path))
 
 
@@ -47,21 +45,12 @@ def decode(path,raw,channel):
         if obj['kind']!=expected: raise ValueError('status kind/path')
         if expected!='source': return obj,dict(root=obj)
         return obj,dict(repository_id=obj['repository_id'],run=obj['run'])
-    if channel=='format-2':
-        obj=decode_document(raw,contracts.FILE_CAP)
-        if document(obj).encode()!=raw: raise ValueError('noncanonical format-2 document')
-        if path=='apps.yaml': return obj,dict(apps=obj['apps'])
-        if path!=f"repositories/{obj['repository_id']}.yaml": raise ValueError('source path identity')
-        meta=dict(repository_id=obj['repository_id'],repository=obj['repository'],
-                  attempted_at=obj['collection']['attempted_at'],
-                  completed_at=obj.get('last_success',{}).get('completed_at'))
-    else:
-        obj=contracts.decode(raw)
-        expected=path[:-5] if '/' not in path else 'provenance' if path.startswith('provenance/') else 'repository'
-        if obj['kind']!=expected: raise ValueError('catalog kind/path')
-        if expected!='repository': return obj,dict(root=obj)
-        meta=dict(repository_id=obj['repository_id'],repository=obj['repository'],
-                  attempted_at=obj['collected_at'],completed_at=obj['collected_at'],schema=obj['schema'])
+    obj=contracts.decode(raw)
+    expected=path[:-5] if '/' not in path else 'provenance' if path.startswith('provenance/') else 'repository'
+    if obj['kind']!=expected: raise ValueError('catalog kind/path')
+    if expected!='repository': return obj,dict(root=obj)
+    meta=dict(repository_id=obj['repository_id'],repository=obj['repository'],
+              attempted_at=obj['collected_at'],completed_at=obj['collected_at'],schema=obj['schema'])
     return obj,meta
 
 
@@ -87,10 +76,6 @@ def references(metadata,channel):
             if rid in ids: raise ValueError('duplicate numeric source')
             ids[rid]=path
     if 'apps.yaml' not in metadata: raise ValueError('missing apps')
-    if channel=='format-2':
-        apps=metadata['apps.yaml']['apps']
-        if any(type(rid) is not int or rid not in ids for rid in apps.values()): raise ValueError('app source identity')
-        return
     if 'catalog.yaml' not in metadata: raise ValueError('missing catalog roots')
     revision=metadata['catalog.yaml']['root']['inputs']['schemas']
     if any('/'+revision+'/' not in (meta['root']['schema'] if 'root' in meta else meta['schema'])

@@ -11,11 +11,9 @@ from unittest.mock import patch
 
 import contracts as c
 import pipeline_publication as p
-from incremental import Snapshot,Candidate,Records
+from incremental import Snapshot,Candidate
 from publication import git,publish_tree,REF
-from test_contracts import documents,PIN,OLD,NEW,known
-from test_yaml_reader import repository
-from yaml_publication import candidate_tree,schema_url
+from test_contracts import documents,LEGACY,PIN,OLD,NEW,known
 
 
 class Pipeline(unittest.TestCase):
@@ -23,7 +21,7 @@ class Pipeline(unittest.TestCase):
         self.temp=tempfile.TemporaryDirectory();self.root=Path(self.temp.name)
         self.remote=self.root/'remote.git';git(self.root,'init','--bare','--quiet','--template=',str(self.remote))
         self.stage=self.root/'seed.git';git(self.root,'init','--bare','--quiet','--template=',str(self.stage))
-        self.legacy=candidate_tree({'example':123},{'123':repository()},schema=schema_url(PIN),max_file_bytes=c.FILE_CAP)
+        self.legacy=LEGACY
         self.parent=publish_tree(self.stage,self.legacy,None)
         git(self.stage,'push',str(self.remote),self.parent+':'+'refs/heads/release-catalog')
         self.inputs={key:PIN for key in ('source','policy','recipes','rules','schemas')}
@@ -252,8 +250,6 @@ class Pipeline(unittest.TestCase):
             with self.assertRaises(ValueError):Candidate(snap,{})
         # A fresh process/session must validate; it never accepts serialized trust.
         self.assertEqual(Snapshot(self.stage,parent).validation['mode'],'full_parent_fallback')
-        records=Records(Snapshot(self.stage,self.parent,'format-2'))
-        self.assertEqual(records.metadata['123']['completed_at'],OLD)
 
     def test_incremental_publication_does_not_read_unchanged_source_blobs(self):
         parent=publish_tree(self.stage,self.target,self.parent)
