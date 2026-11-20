@@ -132,9 +132,10 @@ class Ship(unittest.TestCase):
         self.assertTrue(any('31' in line for line in lines) and any('21' in line for line in lines))
 
     def test_tested_change_outside_collection_inputs_keeps_the_pin(self):
-        run, result, _ = ship(START+GREEN_CI+pins('')+PUSH+FAST, ci='x')
+        run, result, lines = ship(START+GREEN_CI+pins('')+PUSH+FAST, ci='x')
         self.assertEqual(run.script, [])
         self.assertEqual(result, dict(fast=21))
+        self.assertIn('CATALOG_SCHEMA_REVISION stays '+SCHEMA_PIN, '\n'.join(lines))
 
     def test_reviewed_schemas_change_repins_both_pins_before_the_dispatch(self):
         changed = 'schemas/catalog/summary.schema.json\n'

@@ -165,6 +165,8 @@ def ship(run, ci=None, out=say, sleep=time.sleep, repin_schemas=False):
                                      sleep, 'dispatched catalog run')
     else:
         out(PIN+' stays '+pin+': collection inputs unchanged')
+    if not found['schemas']:
+        out(SCHEMA_PIN+' stays '+found['schema_pin']+': schemas input unchanged')
     result = dict(fast=appeared(run, lambda: next((row['databaseId'] for row in runs(
         run, '--workflow', 'tests.yml', '--event', 'push', '--commit', head, '--limit', '1', '--json', 'databaseId')), None),
         sleep, 'Fast tests run'), **result)
