@@ -21,20 +21,20 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "fa1c005185e2d6d9e4bd1b6984d15afd5625a297"
+        commit: "3b9b918622ea89711078865be4968aa983e5b91b"
         path: "programs/x86_64/blender"
         blob: "941c3accd4d4edf40a5ccd292ab2f22a86d2bd81"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-19T18:09:18Z"
+        evaluated_at: "2026-11-20T03:31:22Z"
         recipe_sha256: "02a8530dda2f82b3d072a57c1bc04587066953d2d1aaf7bef6b911384b243bc0"
-        rules: "fa1c005185e2d6d9e4bd1b6984d15afd5625a297"
+        rules: "3b9b918622ea89711078865be4968aa983e5b91b"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "fa1c005185e2d6d9e4bd1b6984d15afd5625a297"
+            commit: "3b9b918622ea89711078865be4968aa983e5b91b"
             path: "modules/"
-            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"
+            sha256: "f8ca2449992417976da15b7a99fdae213e02da6abc0ecbfc67cf318fd6160c1c"
   "blender-alpha":
     "aarch64":
       repository_id: 980873950
@@ -54,7 +54,7 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "fa1c005185e2d6d9e4bd1b6984d15afd5625a297"
+        commit: "3b9b918622ea89711078865be4968aa983e5b91b"
         path: "programs/x86_64/blender-alpha"
         blob: "d869779accc191f1cc3c5a0a964d017dcaea6de1"
   "blender-beta":
@@ -76,7 +76,7 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "fa1c005185e2d6d9e4bd1b6984d15afd5625a297"
+        commit: "3b9b918622ea89711078865be4968aa983e5b91b"
         path: "programs/x86_64/blender-beta"
         blob: "6c18b5174415cea405f071f5e861eb640bee423e"
   "blender-rc":
@@ -98,6 +98,6 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "fa1c005185e2d6d9e4bd1b6984d15afd5625a297"
+        commit: "3b9b918622ea89711078865be4968aa983e5b91b"
         path: "programs/x86_64/blender-rc"
         blob: "ecfe838237001089e41c24bf72712b2aa299b58b"

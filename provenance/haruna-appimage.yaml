@@ -9,7 +9,7 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "fa1c005185e2d6d9e4bd1b6984d15afd5625a297"
+        commit: "3b9b918622ea89711078865be4968aa983e5b91b"
         path: "programs/aarch64/haruna"
         blob: "43b61bdbdba43f570e616672103ad51baaed428d"
     "armv7l":
@@ -26,17 +26,17 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "fa1c005185e2d6d9e4bd1b6984d15afd5625a297"
+        commit: "3b9b918622ea89711078865be4968aa983e5b91b"
         path: "programs/x86_64/haruna"
         blob: "cb494559657d186fa3362687cee2429ac7f1fda5"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-19T18:09:18Z"
+        evaluated_at: "2026-11-20T03:31:22Z"
         recipe_sha256: "e45b01b233fe623897f92e2e084fc744d0b01e180ab65bc81e5210a52b792d7c"
-        rules: "fa1c005185e2d6d9e4bd1b6984d15afd5625a297"
+        rules: "3b9b918622ea89711078865be4968aa983e5b91b"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "fa1c005185e2d6d9e4bd1b6984d15afd5625a297"
+            commit: "3b9b918622ea89711078865be4968aa983e5b91b"
             path: "modules/"
-            sha256: "2146085508ea6609a61ceae1da0b6ecbcccbdb29a541df8e794d68734cc4e837"
+            sha256: "f8ca2449992417976da15b7a99fdae213e02da6abc0ecbfc67cf318fd6160c1c"
