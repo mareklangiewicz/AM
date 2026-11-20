@@ -114,6 +114,17 @@ capacity targets remain deferred, not silently accepted by this migration.
 
 ## Focused verification and maintenance
 
+Code outside this directory imports these modules by putting it on `sys.path`:
+`tools/release/release.py` (the input scopes and gate paths),
+`tools/recipe-conversion/convert.py` (and through it
+`tools/upstream-merge/merge.py`), `tools/recipe-reconstruction`'s
+`test_candidate_runtime.py`, `tools/catalog-browser`'s `prepare_boundaries.py`
+and `qualify_restore.py`, and `test/e2e/scenarios.py`. Run their suites too
+after renaming, moving or deleting anything here; find the current list with
+`git grep -n "catalog-collector" -- ':!tools/catalog-collector' ':!docs'`.
+Scripts under `docs/track/` that import it are frozen research records and are
+not kept working.
+
 Two tiers, named by file:
 
 ```sh
