@@ -47,12 +47,9 @@ default branch merely to publish a browser iteration.
 git push origin HEAD:refs/heads/browser-review
 ```
 
-The workflow builds a clearly labelled saved-observation review snapshot from
-public baseline `cbda9fb78ce4a6f29bdabd63d57f3c0085e8744f`, using the accepted
-converter and strict whole-tree validation. Tied tag evidence is refused per source.
-Recipe evidence and operational health are not fabricated. Static data lives only
-in the Pages artifact, not a new catalog branch or source index. Its content ID
-is explicitly a review snapshot identity, not a catalog Git commit.
+The workflow stages the live-channel browser on both branches. The saved-observation
+review snapshot it used to build from format-2 baseline `cbda9fb78` was retired with
+format 2 (ticket 25 step D).
 
 Artifact staging additionally accepts `--review-data <prepared-directory>` and
 copies only hash-checked canonical YAML paths. `delivery.mjs` is the one generated

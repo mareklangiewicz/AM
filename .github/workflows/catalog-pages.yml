@@ -48,22 +48,7 @@ jobs:
           name: catalog-browser-checks
           path: tools/catalog-browser/test-results/
           retention-days: 7
-      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
-        with:
-          python-version: '3.12'
-      - run: python3 -m pip install 'PyYAML==6.0.3'
-      - name: Prepare saved public observations for browser review
-        if: github.ref == 'refs/heads/browser-review'
-        shell: bash
-        run: |
-          set -euo pipefail
-          baseline=cbda9fb78ce4a6f29bdabd63d57f3c0085e8744f
-          git fetch --no-tags origin "$baseline"
-          python3 -B tools/catalog-browser/review_snapshot.py --repo . --baseline "$baseline" \
-            --source "$GITHUB_SHA" --destination "$RUNNER_TEMP/review-data"
-          python3 tools/catalog-browser/stage.py "$RUNNER_TEMP/catalog-pages" --review-data "$RUNNER_TEMP/review-data"
-      - name: Prepare the main-owned live-channel browser
-        if: github.ref == 'refs/heads/main-marek'
+      - name: Prepare the live-channel browser
         run: python3 tools/catalog-browser/stage.py "$RUNNER_TEMP/catalog-pages"
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
         with:
