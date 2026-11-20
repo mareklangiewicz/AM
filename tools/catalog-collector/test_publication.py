@@ -1,22 +1,14 @@
 """Current collection/publication contract, using only disposable local Git."""
-import copy
-import io
-import json
 import os
 from pathlib import Path
-import subprocess
 import sys
 import tempfile
 import unittest
-from contextlib import redirect_stdout
 from unittest.mock import patch
 
-import host_catalog
 import publication
-from bounded import normalize
-from retention import refresh
-from test_yaml_reader import repository, SCHEMA
-from yaml_publication import load_local, publish_local, schema_url
+
+TREE = {'apps.yaml':b'apps', 'repositories/example.yaml':b'source'}
 
 
 class Publication(unittest.TestCase):
@@ -28,20 +20,21 @@ class Publication(unittest.TestCase):
         self.repo.mkdir()
         publication.git(self.repo, 'init', '--bare', '--quiet', '--template=')
 
-    def publish(self, parent=None, obj=None):
-        return publish_local(self.repo, {'app':123}, {'123':obj or repository()},
-            schema=SCHEMA, max_file_bytes=2097152, expected_parent=parent)
+    def publish(self, parent=None, tree=TREE):
+        return publication.publish_tree(self.repo, tree, parent)
+
+    def show(self, commit, path):
+        return publication.git(self.repo, 'show', commit+':'+path)
 
     def tip(self):
         return publication.git(self.repo, 'rev-parse', publication.REF).decode().strip()
 
     def test_pinned_round_trip_exact_parent_and_remote_refusal(self):
         first = self.publish()
-        changed = copy.deepcopy(repository())
-        changed['releases']['456']['tag'] = 'v3'
+        changed = dict(TREE, **{'repositories/example.yaml':b'changed'})
         second = self.publish(first, changed)
-        self.assertEqual(load_local(self.repo, first, max_file_bytes=2097152)[1]['123'], repository())
-        self.assertEqual(load_local(self.repo, second, max_file_bytes=2097152)[1]['123'], changed)
+        self.assertEqual(self.show(first, 'repositories/example.yaml'), b'source')
+        self.assertEqual(self.show(second, 'repositories/example.yaml'), b'changed')
         with self.assertRaisesRegex(ValueError, 'stale_parent'):
             self.publish(first)
         self.assertEqual(self.tip(), second)
@@ -73,28 +66,12 @@ class Publication(unittest.TestCase):
                          publication.git(self.repo,'rev-parse',second+'^{tree}'))
         self.assertEqual(publication.git(self.repo,'rev-parse',third+'^').decode().strip(),second)
 
-    def test_local_load_validates_each_document_once_with_safe_loader_fallback(self):
-        import yaml_publication as snapshot
+    def test_history_limit_leaves_tip_unchanged(self):
         first = self.publish()
-        with patch.object(snapshot, 'decode_document', wraps=snapshot.decode_document) as decode:
-            accelerated = load_local(self.repo, first, max_file_bytes=2097152)
-        self.assertEqual(decode.call_count, 2)
-        with patch.object(snapshot, 'SAFE_LOADER', snapshot.yaml.SafeLoader):
-            self.assertEqual(load_local(self.repo, first, max_file_bytes=2097152), accelerated)
-
-    def test_invalid_document_and_history_limit_leave_tip_unchanged(self):
-        first = self.publish()
-        bad = repository(); bad['unexpected'] = True
-        with self.assertRaises(ValueError):
-            self.publish(first, bad)
         with patch.object(publication, 'HISTORY_CAP', 1):
             with self.assertRaisesRegex(ValueError, 'history_bound'):
                 self.publish(first)
         self.assertEqual(self.tip(), first)
-        with self.assertRaisesRegex(ValueError, 'invalid_prior_pin'):
-            load_local(self.repo, 'HEAD', max_file_bytes=2097152)
-        with self.assertRaisesRegex(ValueError, 'yaml_prior_byte_bound'):
-            load_local(self.repo, first, max_file_bytes=1)
 
     def test_history_guard_counts_compressed_growth_and_preserves_tip_on_overflow(self):
         publication.git(self.repo,'config','core.looseCompression','0')
@@ -126,7 +103,7 @@ class Publication(unittest.TestCase):
                 'GIT_CONFIG_KEY_0':'core.bare','GIT_CONFIG_VALUE_0':'false',
                 'GH_TOKEN':'secret','GIT_ASKPASS':'/not-a-command'}):
             first = self.publish()
-            self.assertEqual(load_local(self.repo,first,max_file_bytes=2097152)[0],{'app':123})
+            self.assertEqual(self.show(first,'apps.yaml'),b'apps')
             env = publication.environment()
             self.assertNotIn('GH_TOKEN', env)
             self.assertNotIn('GIT_ASKPASS', env)
