@@ -214,3 +214,22 @@ November 20). Remaining, in order, each a ship:
 3. When no summary on `catalog-status-v1` has it (64 hourly runs after
    step 2's ship; check the live ref first): remove the property from
    `build.py`, regenerate, flip the test to expect refusal, close this ticket.
+
+November 20, 2026: step D and retirement step 1 shipped. Long tests on
+`ci/format2-d` first failed in both e2e containers: the tested-source
+fingerprint lists in `test/e2e/scenarios.py` and `termux_scenarios.py` still
+named the deleted `retention.py` (fixed in `cb854845b`, now `retention_v3.py`;
+local Debian 21 and Termux 14 OK). Rerun 44774424436 green. `main-marek` moved
+to `cb854845b` (Marek approved), `CATALOG_SCHEDULE_REVISION` repinned
+`4699d0381 -> cb854845b`; Fast tests 44777663693 passed, but catalog run
+44777669942 refused with `checkout differs from schemas input pin`: step 1
+edits `schemas/catalog/*` (one `required` entry each), and
+`CATALOG_SCHEMA_REVISION` was still `040614f86`. `release.py` repins only the
+schedule pin. With Marek's approval `CATALOG_SCHEMA_REVISION` was set to
+`cb854845b` and dispatched run 44779574439 passed: `release-catalog-v3` now
+binds every input including `schemas` to `cb854845b`; all 64 summaries on
+`catalog-status-v1` (run 44779574439 among them) still carry
+`compatibility_publication`. `ci/format2-d` deleted. Gaps found: `release.py
+plan` does not flag a change under the `schemas` input scope as needing a
+`CATALOG_SCHEMA_REVISION` transition, and Long tests cannot catch it (they
+never see the live pins). Next: Marek redeploys the browser, then step 2.
