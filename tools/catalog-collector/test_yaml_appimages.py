@@ -1,9 +1,7 @@
 """Explicit remaining AppImage policies, real saved bytes and inert lifecycle."""
-import hashlib
 import json
 import os
 from pathlib import Path
-import shutil
 import subprocess
 import tempfile
 import unittest
@@ -11,11 +9,9 @@ import unittest
 import test_yaml_manager_integration as integration
 from fixture_manager import ROOT
 from fixture_appimages import fixtures
-from appimage_policy_source import compile_source, START, END, POLICIES
 from publication import git
 from fixture_v3 import publish_local
-from reference_policies import APPIMAGES, matches, select_cohort
-from fixture_facts import utc
+from reference_policies import APPIMAGES, matches
 
 
 class AppImagesCase(unittest.TestCase):

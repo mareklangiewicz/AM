@@ -3,7 +3,6 @@
 Only this module initiates remote writes. Tests use disposable local bare remotes.
 Artifacts supply inert bounded data, never code, targets, credentials or authority.
 """
-import argparse
 import base64
 import os
 from datetime import datetime,timezone
@@ -14,7 +13,6 @@ from pathlib import Path
 import re
 import subprocess
 import tempfile
-import time
 
 import contracts as c
 from bounded import unique_object

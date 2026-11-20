@@ -1,8 +1,6 @@
 """Actual shell reads of saved live file observations, without network or payloads."""
 import json
-import os
 import shutil
-import subprocess
 import tarfile
 import unittest
 

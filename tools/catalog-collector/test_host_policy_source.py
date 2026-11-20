@@ -1,9 +1,7 @@
 """Recipe selection policy and collector settings follow recipe declarations."""
 from pathlib import Path
-import shutil
 import tempfile
 import unittest
-from unittest.mock import patch
 
 import recipe_policy_source as compiler
 from recipe_declarations import recipe_rows

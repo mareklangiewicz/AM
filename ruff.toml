@@ -1,0 +1,12 @@
+# Lint for the fork's Python (tools/, test/), run by Fast tests and Long tests:
+#   uvx ruff@0.17.4 check tools test
+# Only rules that caught real dead weight here; widen deliberately.
+target-version = "py312"
+
+[lint]
+preview = true
+explicit-preview-rules = true
+select = [
+    "F401",     # unused import
+    "PLW1514",  # open/read_text/write_text without encoding (preview rule)
+]

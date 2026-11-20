@@ -4,7 +4,7 @@ Only the supplied disposable qualification repository is modified. Preserves the
 old pin, unchanged blobs and observations; no upstream transport or enrollment.
 """
 import argparse
-from datetime import datetime,timedelta,timezone
+from datetime import datetime,timedelta
 import json
 import hashlib
 from pathlib import Path

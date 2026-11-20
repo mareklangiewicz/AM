@@ -50,7 +50,7 @@ def verify_checkout_inputs(inputs, registry):
 
 
 def registry_names(rows, path):
-    registry=json.loads(Path(path).read_text(),object_pairs_hook=unique_object)
+    registry=json.loads(Path(path).read_text(encoding='utf-8'),object_pairs_hook=unique_object)
     if set(registry)!= {'active','retired'} or not isinstance(registry['retired'],list):
         raise ValueError('source registry')
     names=registry['active']

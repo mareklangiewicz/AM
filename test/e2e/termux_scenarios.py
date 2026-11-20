@@ -4,14 +4,13 @@ import json
 import os
 from pathlib import Path
 import shutil
-import subprocess
 import sys
 import unittest
 
 from filesystem import fingerprint_files, snapshot_tree
 
 import scenarios as shared
-from scenarios import OUT, USER, SOURCE, PIN, SQLITE, catalog_tree
+from scenarios import OUT, USER, PIN, SQLITE, catalog_tree
 
 
 class TermuxCLI(unittest.TestCase):

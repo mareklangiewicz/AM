@@ -74,7 +74,7 @@ class InstalledCLI(unittest.TestCase):
         cls.manager_hash = fingerprint_files(Path('/src'), ['APP-MANAGER'])['APP-MANAGER']
         # A real sync deletes every module APP-MANAGER does not name, so only
         # the named ones must survive.
-        named = set(re.findall(r'"([^"]*[a-z][.]am)"', Path('/src/APP-MANAGER').read_text()))
+        named = set(re.findall(r'"([^"]*[a-z][.]am)"', Path('/src/APP-MANAGER').read_text(encoding='utf-8')))
         cls.module_hashes = fingerprint_files(Path('/src/modules'),
             sorted(p.name for p in Path('/src/modules').glob('*.am') if p.name in named))
         inputs=['test/e2e/scenarios.py','test/e2e/external.py','test/e2e/run',
@@ -605,7 +605,7 @@ esac
         self.configure(bad_digest=True)
         result=self.command('-u','obsidian','--commit',PIN,success=False)
         self.assertIn('obsidian: failed',result.stderr)
-        self.assertEqual(Path('/opt/obsidian/AM-VERIFIED').read_text(),'Checksum failure')
+        self.assertEqual(Path('/opt/obsidian/AM-VERIFIED').read_text(encoding='utf-8'),'Checksum failure')
         self.configure(bad_digest=False,digest_missing=True)
         result=self.command('-u','obsidian','--commit',PIN)
         self.assertIn('obsidian: updated',result.stdout)
@@ -617,7 +617,7 @@ esac
         # Model an older installed module, not a rewritten test harness. The real
         # sync must repair this large payload despite pipefail and grep -q.
         module=Path('/opt/am/modules/install.am')
-        module.write_text('# obsolete installed module marker\n'+module.read_text())
+        module.write_text('# obsolete installed module marker\n'+module.read_text(encoding='utf-8'), encoding='utf-8')
         result=self.command('-u',success=False)
         self.assertEqual(module.read_bytes(),Path('/src/modules/install.am').read_bytes())
         self.assertIn('e2e-legacy: failed',result.stderr)
@@ -626,7 +626,7 @@ esac
         calls=read_transport_records(self.fixture/'calls')
         self.assertTrue(any(c['url']==SOURCE+'/APP-MANAGER' for c in calls))
         self.assertTrue(any(c['url']==SOURCE+'/modules/catalog-yaml.am' for c in calls))
-        self.assertEqual(Path('/opt/obsidian/version').read_text().strip(),OBSIDIAN)
+        self.assertEqual(Path('/opt/obsidian/version').read_text(encoding='utf-8').strip(),OBSIDIAN)
 
 
 

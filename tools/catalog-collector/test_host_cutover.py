@@ -5,7 +5,6 @@ import subprocess
 import tempfile
 import unittest
 
-from installed_recipe import managed_updater
 from host_catalog import installation_configuration as configuration
 from publication import git
 from fixture_v3 import REVISION, publish_local, repository

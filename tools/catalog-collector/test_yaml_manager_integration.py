@@ -1,6 +1,6 @@
 """Actual candidate install/batch/sync functions with local Git-backed fake HTTP."""
 import copy
-from datetime import datetime, timezone
+from datetime import datetime
 import json
 import os
 from pathlib import Path
@@ -12,7 +12,6 @@ import unittest
 
 import fixture_manager as harness
 from fixture_manager import ROOT, NOW
-from publication import git
 from fixture_v3 import expanded, publish_local
 
 SOURCE='https://raw.githubusercontent.com/selected-owner/selected.repo/feature/catalog'

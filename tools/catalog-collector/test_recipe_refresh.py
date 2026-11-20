@@ -1,5 +1,4 @@
 """Metadata refresh in disposable installations; no live applications touched."""
-import os
 from pathlib import Path
 import subprocess
 import tempfile

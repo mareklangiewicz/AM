@@ -1,6 +1,6 @@
 """Adversarial policy differences and selected-record acceptance, offline only."""
 import copy
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 import unittest
 
 from reference_policies import matches, select_cohort

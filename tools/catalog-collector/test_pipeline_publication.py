@@ -13,7 +13,7 @@ import contracts as c
 import pipeline_publication as p
 from incremental import Snapshot,Candidate
 from publication import git,publish_tree,REF
-from test_contracts import documents,LEGACY,PIN,OLD,NEW,known
+from test_contracts import documents,LEGACY,PIN,OLD,NEW
 
 
 class Pipeline(unittest.TestCase):

@@ -1,6 +1,5 @@
 """Real shell selection keeps metadata identities and validates version-sort winners."""
 import json
-import subprocess
 import unittest
 
 import contracts as c

@@ -5,19 +5,16 @@ One page of 100 releases per attempted source; clients enforce seven-day selecte
 record freshness. Batches preserve untouched facts and isolate source failures.
 No latest endpoint, consumer version choice or pruning.
 """
-import argparse
 from datetime import datetime, timezone
 import http.client
 import json
 import os
 import re
 from pathlib import Path
-import subprocess
 import time
 import urllib.error
 import urllib.request
 
-import yaml
 
 from bounded import normalize, unique_object
 

@@ -19,7 +19,8 @@ import sys
 import tempfile
 
 import merge
-from merge import ROOT,Problem,convert,recipe_rows,url_policy_rows
+from merge import ROOT,Problem,convert
+from recipe_declarations import recipe_rows,url_policy_rows
 
 # What a recipe selects: compared before and after a re-conversion. A missing
 # field is its default, so an explicit default is not a change.

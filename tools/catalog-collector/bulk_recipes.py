@@ -11,7 +11,7 @@ from pathlib import Path
 import re
 import shlex
 
-from catalog_sources import ROOT, literals
+from catalog_sources import ROOT
 from recipe_declarations import recipe_rows
 from recipe_policy_source import generate
 from host_catalog import utc

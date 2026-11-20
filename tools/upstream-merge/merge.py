@@ -31,7 +31,7 @@ sys.path[:0]=[str(ROOT/'tools/recipe-conversion')]
 import convert
 import host_catalog
 from collection_interface import registry_names
-from recipe_declarations import MARKER,recipe_rows,url_policy_rows
+from recipe_declarations import MARKER
 from recipe_policy_source import generate
 import appimage_policy_source
 
