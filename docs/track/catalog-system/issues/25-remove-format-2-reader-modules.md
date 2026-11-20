@@ -239,3 +239,11 @@ dispatched with `deploy=true` at `cb854845b`, run 44800103764 green. The live
 mareklangiewicz.pl/AM/tools/catalog-contract/definitions.mjs is byte-equal
 to `cb854845b`'s and no `required` list names `compatibility_publication`.
 Step 2 is unblocked.
+
+November 20, 2026: step 2 done locally, not shipped. `67303791f` stops writing
+`compatibility_publication` in `pipeline_publication.summary` and rewords
+the collector README note; `test_success_and_status_confirmation` asserts a
+new summary lacks it (fails against the old writer, checked via stash).
+Collector fast tier 179 OK, tool suites, e2e host tests 11 and
+`test_catalog.mjs` OK. No `schemas` scope change, so no
+`CATALOG_SCHEMA_REVISION` transition. Not run: Long tests.
