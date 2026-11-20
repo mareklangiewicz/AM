@@ -132,8 +132,12 @@ first, then move `main-marek` once it is green with
 unless Long tests passed on that exact commit (documentation-only commits need
 no `--ci`), repins `CATALOG_SCHEDULE_REVISION` and dispatches a catalog run
 only when the collection inputs changed, and prints and watches the run ids.
-`release.py plan [--ci <name>]` prints what `ship` would do (the refusal, or
-the push and whether it repins, with the changed inputs) and writes nothing.
+A change in the `schemas` input scope since `CATALOG_SCHEMA_REVISION` is
+refused unless `--repin-schemas` says the contract transition was reviewed;
+then both pins move before the dispatch (ticket 44).
+`release.py plan [--ci <name>] [--repin-schemas]` prints what `ship` would do
+(the refusal, or the push and whether each pin moves, with the changed inputs)
+and writes nothing.
 `release.py watch [RUN_ID ...]` continues a watch (by default every run on
 `origin/main-marek`); exit 3 means still running at the deadline, not failed.
 A single file:

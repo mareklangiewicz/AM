@@ -7,8 +7,11 @@ import release
 HEAD = 'h'*40
 BASE = 'b'*40
 PIN = 'p'*40
+SCHEMA_PIN = 's'*40
 R = ['-R', release.REPO]
 GATE = ['git', 'diff', '--name-only', PIN, HEAD, '--', *release.schedule_gate_paths()]
+# The collector refuses a checkout whose schemas scope differs from this pin.
+SCHEMA_GATE = ['git', 'diff', '--name-only', SCHEMA_PIN, HEAD, '--', *release.INPUT_SCOPES['schemas']]
 
 
 class Fake:
@@ -46,6 +49,16 @@ GREEN_CI = [
 ]
 PUSH = [(['git', 'push', 'origin', 'HEAD:refs/heads/main-marek'], '')]
 PIN_READ = [(['gh', 'variable', 'get', 'CATALOG_SCHEDULE_REVISION', *R], PIN+'\n')]
+
+
+def pins(gate='', schemas=''):
+    """Both pin reads and their diffs against HEAD, as decide makes them."""
+    return PIN_READ+[(GATE, gate),
+                     (['gh', 'variable', 'get', 'CATALOG_SCHEMA_REVISION', *R], SCHEMA_PIN+'\n'),
+                     (SCHEMA_GATE, schemas)]
+
+
+SCHEMA_REPIN = [(['gh', 'variable', 'set', 'CATALOG_SCHEMA_REVISION', '--body', HEAD, *R], '')]
 FAST = [(['gh', 'run', 'list', '--workflow', 'tests.yml', '--event', 'push', '--commit', HEAD,
           '--limit', '1', '--json', 'databaseId', *R], ok([dict(databaseId=21)]))]
 DISPATCHED = ['gh', 'run', 'list', '--workflow', 'catalog.yml', '--event', 'workflow_dispatch', '--commit', HEAD,
@@ -100,22 +113,47 @@ class Refusals(unittest.TestCase):
             with self.subTest(runs=runs):
                 self.refused(START+GREEN_CI[:1]+[(GREEN_CI[1][0], ok(runs))], 'Long tests', ci='x')
 
+    def test_a_schemas_scope_change_needs_a_reviewed_schema_repin(self):
+        # The collector compares the raw scope, so a README there counts too.
+        for path in ('schemas/catalog/summary.schema.json', 'tools/catalog-contract/README.md'):
+            with self.subTest(path=path):
+                self.refused(START+GREEN_CI+pins(path+'\n', path+'\n'), 'CATALOG_SCHEMA_REVISION.*--repin-schemas',
+                             ci='x')
+
+    def test_repin_schemas_without_a_schemas_scope_change(self):
+        self.refused(START+GREEN_CI+pins('programs/x86_64/a\n', ''), 'nothing to repin', ci='x', repin_schemas=True)
+
 
 class Ship(unittest.TestCase):
     def test_tested_change_to_collection_inputs_repins_and_dispatches(self):
-        run, result, lines = ship(START+GREEN_CI+PIN_READ+[(GATE, 'programs/x86_64/a\n')]+PUSH+REPIN+FAST, ci='x')
+        run, result, lines = ship(START+GREEN_CI+pins('programs/x86_64/a\n')+PUSH+REPIN+FAST, ci='x')
         self.assertEqual(run.script, [])
         self.assertEqual(result, dict(fast=21, catalog=31))
         self.assertTrue(any('31' in line for line in lines) and any('21' in line for line in lines))
 
     def test_tested_change_outside_collection_inputs_keeps_the_pin(self):
-        run, result, _ = ship(START+GREEN_CI+PIN_READ+[(GATE, '')]+PUSH+FAST, ci='x')
+        run, result, _ = ship(START+GREEN_CI+pins('')+PUSH+FAST, ci='x')
         self.assertEqual(run.script, [])
         self.assertEqual(result, dict(fast=21))
 
+    def test_reviewed_schemas_change_repins_both_pins_before_the_dispatch(self):
+        changed = 'schemas/catalog/summary.schema.json\n'
+        run, result, lines = ship(START+GREEN_CI+pins(changed, changed)+PUSH+REPIN[:1]+SCHEMA_REPIN+REPIN[1:]+FAST,
+                                  ci='x', repin_schemas=True)
+        self.assertEqual(run.script, [])
+        self.assertEqual(result, dict(fast=21, catalog=31))
+        self.assertIn('CATALOG_SCHEMA_REVISION '+SCHEMA_PIN+' -> '+HEAD, '\n'.join(lines))
+
+    def test_a_schema_repin_dispatches_even_when_the_gate_ignores_the_change(self):
+        # The gate skips READMEs, but the collector checks the raw schemas scope.
+        run, result, _ = ship(START+GREEN_CI+pins('', 'tools/catalog-contract/README.md\n')+PUSH+REPIN[:1]
+                              + SCHEMA_REPIN+REPIN[1:]+FAST, ci='x', repin_schemas=True)
+        self.assertEqual(run.script, [])
+        self.assertEqual(result, dict(fast=21, catalog=31))
+
     def test_documentation_only_needs_no_ci(self):
         run, result, _ = ship(START+[(['git', 'diff', '--name-only', BASE, HEAD], 'docs/a.md\ndocs/track/b.md\n')]
-                              + PIN_READ+[(GATE, '')]+PUSH+FAST)
+                              + pins('')+PUSH+FAST)
         self.assertEqual(run.script, [])
         self.assertEqual(result, dict(fast=21))
 
@@ -134,7 +172,7 @@ class Plan(unittest.TestCase):
         return '\n'.join(lines)
 
     def test_tested_change_to_collection_inputs_would_push_and_repin(self):
-        text = self.plan(START+GREEN_CI+PIN_READ+[(GATE, 'programs/x86_64/a\nmodules/b.am\n')], ci='x')
+        text = self.plan(START+GREEN_CI+pins('programs/x86_64/a\nmodules/b.am\n'), ci='x')
         self.assertIn('Long tests 11 green on ci/x', text)
         self.assertIn('would push '+HEAD, text)
         self.assertIn('would repin', text)
@@ -143,17 +181,34 @@ class Plan(unittest.TestCase):
 
     def test_a_long_list_of_changed_inputs_is_cut_to_a_count(self):
         paths = ['programs/x86_64/a%02d' % i for i in range(25)]
-        text = self.plan(START+GREEN_CI+PIN_READ+[(GATE, '\n'.join(paths)+'\n')], ci='x')
+        text = self.plan(START+GREEN_CI+pins('\n'.join(paths)+'\n'), ci='x')
         self.assertIn('25 collection inputs changed', text)
         self.assertIn(paths[release.SHOWN-1], text)
         self.assertNotIn(paths[release.SHOWN], text)
         self.assertIn('and 5 more', text)
 
     def test_documentation_only_would_keep_the_pin(self):
-        text = self.plan(START+[(['git', 'diff', '--name-only', BASE, HEAD], 'docs/a.md\n')]+PIN_READ+[(GATE, '')])
+        text = self.plan(START+[(['git', 'diff', '--name-only', BASE, HEAD], 'docs/a.md\n')]+pins(''))
         self.assertIn('would push '+HEAD, text)
         self.assertIn('stays '+PIN, text)
         self.assertNotIn('would repin', text)
+
+    def test_a_schemas_scope_change_would_refuse_and_name_the_files(self):
+        changed = 'schemas/catalog/summary.schema.json\n'
+        text = self.plan(START+GREEN_CI+pins(changed, changed), ci='x')
+        self.assertIn('would refuse:', text)
+        self.assertIn('CATALOG_SCHEMA_REVISION', text)
+        self.assertIn('schemas/catalog/summary.schema.json', text)
+
+    def test_a_reviewed_schemas_change_would_repin_both(self):
+        changed = 'schemas/catalog/summary.schema.json\n'
+        text = self.plan(START+GREEN_CI+pins(changed, changed), ci='x', repin_schemas=True)
+        self.assertIn('would repin CATALOG_SCHEMA_REVISION '+SCHEMA_PIN+' -> '+HEAD, text)
+        self.assertIn('would repin CATALOG_SCHEDULE_REVISION', text)
+
+    def test_an_unchanged_schemas_scope_says_its_pin_stays(self):
+        text = self.plan(START+GREEN_CI+pins('programs/x86_64/a\n', ''), ci='x')
+        self.assertIn('CATALOG_SCHEMA_REVISION stays '+SCHEMA_PIN, text)
 
     def test_a_refusal_is_printed_not_raised(self):
         text = self.plan(START+[(['git', 'diff', '--name-only', BASE, HEAD], 'modules/appimage.am\n')])

@@ -214,6 +214,7 @@ November 20). Remaining, in order, each a ship:
 3. When no summary on `catalog-status-v1` has it (64 hourly runs after
    step 2's ship; check the live ref first): remove the property from
    `build.py`, regenerate, flip the test to expect refusal, close this ticket.
+   This changes the `schemas` scope: ship with `--repin-schemas` (ticket 44).
 
 November 20, 2026: step D and retirement step 1 shipped. Long tests on
 `ci/format2-d` first failed in both e2e containers: the tested-source
