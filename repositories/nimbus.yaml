@@ -3,1630 +3,13 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/cb854845b919dd38d9
 kind: "repository"
 repository_id: 1203554064
 repository: "nimbus-agent/Nimbus"
-collected_at: "2026-11-17T20:55:43Z"
+collected_at: "2026-11-20T20:09:46Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: false
-observed_at: "2026-11-17T20:55:43Z"
+observed_at: "2026-11-20T20:09:46Z"
 releases:
-  "438113210":
-    tag: "v10.40.0"
-    title: "v10.40.0"
-    url: "https://github.com/nimbus-agent/Nimbus/releases/tag/v10.40.0"
-    created_at: "2026-11-08T07:32:08Z"
-    published_at: "2026-11-08T08:06:10Z"
-    updated_at: "2026-11-08T08:07:27Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/nimbus-agent/Nimbus/zipball/v10.40.0"
-    source_tar_url: "https://api.github.com/repos/nimbus-agent/Nimbus/tarball/v10.40.0"
-    download_base: "https://github.com/nimbus-agent/Nimbus/releases/download/v10.40.0/"
-    assets:
-      "723323450":
-        name: "uninstall.sh"
-        url_suffix: "uninstall.sh"
-        size: 1666
-        media_type: "application/x-sh"
-        digest: "sha256:0dbe93fd2d96c79b8bd509a4732da8c49abb1e460d3eb9aa0b2848c1f0943748"
-      "723323451":
-        name: "nimbus-headless-linux-amd64-v10.40.0.tar.gz.asc"
-        url_suffix: "nimbus-headless-linux-amd64-v10.40.0.tar.gz.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:10a2ba64b835b4538411b7c8806e3e487ce630534a105a213f288a75d909f36b"
-      "723323452":
-        name: "nimbus-headless-macos-x64.pkg"
-        url_suffix: "nimbus-headless-macos-x64.pkg"
-        size: 102988075
-        digest: "sha256:4aaa15077b49167ee0dcd10683d4dcad2b508108a67aeba3b4ddefd9f1fd2f61"
-      "723323453":
-        name: "nimbus-headless-windows-x64.msi"
-        url_suffix: "nimbus-headless-windows-x64.msi"
-        size: 101912576
-        media_type: "application/x-msdownload"
-        digest: "sha256:e1de1dde86994d98fe34a5c1332080b1bdeaf90832ccb979edf3c4a422a2f821"
-      "723323455":
-        name: "nimbus-verify.ps1"
-        url_suffix: "nimbus-verify.ps1"
-        size: 7256
-        digest: "sha256:89e0a850a33311d18ab59e9781698146493cb069efcc23af58291a64dc41cd14"
-      "723323456":
-        name: "nimbus_amd64.deb.asc"
-        url_suffix: "nimbus_amd64.deb.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:62c0916108d7f2f456cb9709c6f7358b36b04e5159e6381b936b9657b16e018e"
-      "723323457":
-        name: "nimbus-headless_10.40.0_amd64.deb.asc"
-        url_suffix: "nimbus-headless_10.40.0_amd64.deb.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:62c0916108d7f2f456cb9709c6f7358b36b04e5159e6381b936b9657b16e018e"
-      "723323458":
-        name: "nimbus-headless-windows-x64.zip"
-        url_suffix: "nimbus-headless-windows-x64.zip"
-        size: 120580188
-        media_type: "zip"
-        digest: "sha256:6329ec437bfa3ac6decb78fe4b8adf10a911536a4439681439f16a0a5f137912"
-      "723323459":
-        name: "nimbus-headless-10.40.0-x86_64.rpm.asc"
-        url_suffix: "nimbus-headless-10.40.0-x86_64.rpm.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:f866a3f95b48c7fae1a6b912f87abd3d859b3cc84c548ef43c79238fd3d8c233"
-      "723323460":
-        name: "nimbus-headless-macos-arm64.pkg"
-        url_suffix: "nimbus-headless-macos-arm64.pkg"
-        size: 97210462
-        digest: "sha256:5c3a2bf4e02086119de4d59af55c80b47ad7ef90f6e2ed14c29660f3f4663950"
-      "723323461":
-        name: "nimbus-headless-macos-x64.tar.gz"
-        url_suffix: "nimbus-headless-macos-x64.tar.gz"
-        size: 103025720
-        media_type: "application/gzip"
-        digest: "sha256:09b232ca02d1d9bf51f2cefec79ff36f77658fba7beb3718ef31d492a8723b2e"
-      "723323462":
-        name: "nimbus-cli-macos-arm64"
-        url_suffix: "nimbus-cli-macos-arm64"
-        size: 93552098
-        digest: "sha256:0e97e21112fd7c1ffbd59b67c0a1d1f746eb796e7b92141781e33b97727e8580"
-      "723323463":
-        name: "nimbus-headless-macos-arm64.tar.gz"
-        url_suffix: "nimbus-headless-macos-arm64.tar.gz"
-        size: 97242145
-        media_type: "application/gzip"
-        digest: "sha256:bfe4f3209e85228fdb780470cd7015b967d8a8a53ec7e827bc03fef1e294dd46"
-      "723323464":
-        name: "nimbus-v10.40.0-sbom.cdx.json"
-        url_suffix: "nimbus-v10.40.0-sbom.cdx.json"
-        size: 2073212
-        media_type: "application/json"
-        digest: "sha256:4ca1089b7f82b8aab002811dcbd02ccea2df2a5ce57b9b2833924c08973c2b58"
-      "723323465":
-        name: "SHA256SUMS"
-        url_suffix: "SHA256SUMS"
-        size: 3385
-        digest: "sha256:283c791bca2c063f8e68237892c84b3bbb706f2db00c196f20c844638abb257e"
-      "723323466":
-        name: "nimbus-headless-linux-amd64-v10.40.0.tar.gz"
-        url_suffix: "nimbus-headless-linux-amd64-v10.40.0.tar.gz"
-        size: 118352414
-        media_type: "application/gzip"
-        digest: "sha256:3f31aba94ad82715d2c0d9665fc6e560a38550a2d94124275e2b935d25edb1b5"
-      "723323467":
-        name: "nimbus-cli-macos-x64"
-        url_suffix: "nimbus-cli-macos-x64"
-        size: 102526432
-        digest: "sha256:c40c5128509440b36f151fd01fc6dcb79ba9b79bcd39fe89803236a77ef61c75"
-      "723323468":
-        name: "nimbus-gateway-linux-x64.asc"
-        url_suffix: "nimbus-gateway-linux-x64.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:b16b1f8660c218cb7bd5d43438164eb152af34583adf1a74a3b27126a4fffe59"
-      "723323469":
-        name: "nimbus-headless-10.40.0-x86_64.rpm"
-        url_suffix: "nimbus-headless-10.40.0-x86_64.rpm"
-        size: 51195516
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:8fd7b2ea8a17be6eb1a0c5e5873db8f9d828567cbe6d38fa1b9a2235a3c187f6"
-      "723323470":
-        name: "nimbus-cli-windows-x64.exe"
-        url_suffix: "nimbus-cli-windows-x64.exe"
-        size: 119641600
-        media_type: "application/x-msdos-program"
-        digest: "sha256:3d807adbedf52ac8fa3ec9251b3e4695fb3e52657cd76b521a70f3fc5f000cae"
-      "723323471":
-        name: "nimbus-gateway-linux-x64"
-        url_suffix: "nimbus-gateway-linux-x64"
-        size: 155756720
-        digest: "sha256:4ff54f7b870f067ac5fc79b3ad2f115bf3e9ee1417b44404dd6c7537ab583e5a"
-      "723323472":
-        name: "install.sh"
-        url_suffix: "install.sh"
-        size: 22979
-        media_type: "application/x-sh"
-        digest: "sha256:69a1c21c950bf7522b0dfc955eb35ed51b58d2ea6ea587692d68c3b4ffbdb7a7"
-      "723323473":
-        name: "uninstall.ps1"
-        url_suffix: "uninstall.ps1"
-        size: 7321
-        digest: "sha256:a419dcdb496e5521637a39fa1da2b8c72acb9e2e06e725511a9bce26b111e97c"
-      "723323474":
-        name: "nimbus-verify.sh"
-        url_suffix: "nimbus-verify.sh"
-        size: 8827
-        media_type: "application/x-sh"
-        digest: "sha256:747bbf9a63bacc8713978d4005c71a993fb9e5ffee58e94bc404a266ce6eed6c"
-      "723323475":
-        name: "nimbus-gateway-linux-x64.sig"
-        url_suffix: "nimbus-gateway-linux-x64.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:031de748b8231d552019d77ece498d35f687db81f9e6b117e34019498eb50cdd"
-      "723323476":
-        name: "nimbus-headless_10.40.0_amd64.deb"
-        url_suffix: "nimbus-headless_10.40.0_amd64.deb"
-        size: 93901492
-        media_type: "application/x-debian-package"
-        digest: "sha256:a97ef0cd6b6f3849169ad386a1047dc8a51b26d1a583c1a3f515408da8884b7a"
-      "723323477":
-        name: "SHA256SUMS.asc"
-        url_suffix: "SHA256SUMS.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:1e7fa7e0c0497580cc1c317775d1daa44944b25a502e3411cdd3cd673232bab0"
-      "723323478":
-        name: "nimbus_amd64.deb"
-        url_suffix: "nimbus_amd64.deb"
-        size: 93901492
-        media_type: "application/x-debian-package"
-        digest: "sha256:a97ef0cd6b6f3849169ad386a1047dc8a51b26d1a583c1a3f515408da8884b7a"
-      "723323479":
-        name: "install.ps1"
-        url_suffix: "install.ps1"
-        size: 32493
-        digest: "sha256:211bdd20aa62a655432f3b3ca35228812c55a2287f4cc214529583bf47ca2c63"
-      "723323480":
-        name: "nimbus-gateway-macos-x64"
-        url_suffix: "nimbus-gateway-macos-x64"
-        size: 154594784
-        digest: "sha256:bf088bfdf21dfd4e8669a669f97daf418f1e54133f2a2f9255ff1efd4979e8f8"
-      "723323481":
-        name: "nimbus-gateway-macos-arm64"
-        url_suffix: "nimbus-gateway-macos-arm64"
-        size: 142460642
-        digest: "sha256:5c7df2fbb1cad8e84e98a6442b2fe2ec38a13a3157bfb492ec302518cbe77720"
-      "723323482":
-        name: "nimbus-headless-10.40.0-x86_64.AppImage"
-        url_suffix: "nimbus-headless-10.40.0-x86_64.AppImage"
-        size: 119755968
-        digest: "sha256:33a7052478d788319beae7ed6d00a3379b58d110ae33d4c6a0b17cf758780fc3"
-      "723323483":
-        name: "Nimbus-x86_64.AppImage"
-        url_suffix: "Nimbus-x86_64.AppImage"
-        size: 119755968
-        digest: "sha256:33a7052478d788319beae7ed6d00a3379b58d110ae33d4c6a0b17cf758780fc3"
-      "723323485":
-        name: "nimbus-gateway-linux-x64.sha256"
-        url_suffix: "nimbus-gateway-linux-x64.sha256"
-        size: 64
-        digest: "sha256:06a6cdc301ba9548e87315ca543131da6821457cbd5a68d33c012b3cc2a37e04"
-      "723323486":
-        name: "nimbus-cli-linux-x64"
-        url_suffix: "nimbus-cli-linux-x64"
-        size: 113494192
-        digest: "sha256:513544dea010dfacf42b3e1de3eaa7c1ac63e910926f8652f3aa5c5de91210db"
-      "723323487":
-        name: "Nimbus-x86_64.AppImage.asc"
-        url_suffix: "Nimbus-x86_64.AppImage.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:a1a62253a46e87c3f33a502a9ed3b7368281579693921001f9f1cc81d47588f0"
-      "723323488":
-        name: "nimbus-headless-10.40.0-x86_64.AppImage.asc"
-        url_suffix: "nimbus-headless-10.40.0-x86_64.AppImage.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:a1a62253a46e87c3f33a502a9ed3b7368281579693921001f9f1cc81d47588f0"
-      "723323490":
-        name: "nimbus-gateway-windows-x64.exe"
-        url_suffix: "nimbus-gateway-windows-x64.exe"
-        size: 152401920
-        media_type: "application/x-msdos-program"
-        digest: "sha256:3c122a895fb2841717031f89068167701a855e05acd03729b716025ec4ddd2d5"
-      "723326549":
-        name: "latest.json"
-        url_suffix: "latest.json"
-        size: 1422
-        media_type: "application/json"
-        digest: "sha256:5d4d995b3577056e16a6552be55aeeb013f9feddac2a0983c49a6f2d319742bb"
-  "438436810":
-    tag: "v10.41.0"
-    title: "v10.41.0"
-    url: "https://github.com/nimbus-agent/Nimbus/releases/tag/v10.41.0"
-    created_at: "2026-11-08T18:00:27Z"
-    published_at: "2026-11-08T18:32:00Z"
-    updated_at: "2026-11-08T18:33:18Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/nimbus-agent/Nimbus/zipball/v10.41.0"
-    source_tar_url: "https://api.github.com/repos/nimbus-agent/Nimbus/tarball/v10.41.0"
-    download_base: "https://github.com/nimbus-agent/Nimbus/releases/download/v10.41.0/"
-    assets:
-      "724822267":
-        name: "uninstall.ps1"
-        url_suffix: "uninstall.ps1"
-        size: 7321
-        digest: "sha256:a419dcdb496e5521637a39fa1da2b8c72acb9e2e06e725511a9bce26b111e97c"
-      "724822268":
-        name: "nimbus-headless-linux-amd64-v10.41.0.tar.gz.asc"
-        url_suffix: "nimbus-headless-linux-amd64-v10.41.0.tar.gz.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:e83d8476b5c2506b5e6caa0d001945e059505f16c810408c1ae99b022bad23d8"
-      "724822269":
-        name: "nimbus-verify.sh"
-        url_suffix: "nimbus-verify.sh"
-        size: 8827
-        media_type: "application/x-sh"
-        digest: "sha256:747bbf9a63bacc8713978d4005c71a993fb9e5ffee58e94bc404a266ce6eed6c"
-      "724822270":
-        name: "SHA256SUMS.asc"
-        url_suffix: "SHA256SUMS.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:ce5d540aa4b9df2988255893c8911fc53b9a1485d80446e23b116fa2ec53db08"
-      "724822271":
-        name: "nimbus-headless_10.41.0_amd64.deb.asc"
-        url_suffix: "nimbus-headless_10.41.0_amd64.deb.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:cbb39547039871e47be06366e592f7be7fa96952e3f00b10cc431e1dfde4229b"
-      "724822272":
-        name: "nimbus-gateway-linux-x64.asc"
-        url_suffix: "nimbus-gateway-linux-x64.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:ae2b68f6fb470ad0623b871def9e296c89d277e0a235d5d9f8c64e7d35362eb8"
-      "724822273":
-        name: "nimbus-headless-10.41.0-x86_64.AppImage.asc"
-        url_suffix: "nimbus-headless-10.41.0-x86_64.AppImage.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:d2b58607b56629d4732c1450a8bc68d99527a2d8576a408e384ce14b6dfa7e56"
-      "724822274":
-        name: "nimbus-gateway-linux-x64.sha256"
-        url_suffix: "nimbus-gateway-linux-x64.sha256"
-        size: 64
-        digest: "sha256:373ba74936a87badef5e2bd7acffd73aad989e5435d591cb9bbb6827a035250d"
-      "724822275":
-        name: "nimbus_amd64.deb.asc"
-        url_suffix: "nimbus_amd64.deb.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:cbb39547039871e47be06366e592f7be7fa96952e3f00b10cc431e1dfde4229b"
-      "724822276":
-        name: "Nimbus-x86_64.AppImage.asc"
-        url_suffix: "Nimbus-x86_64.AppImage.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:d2b58607b56629d4732c1450a8bc68d99527a2d8576a408e384ce14b6dfa7e56"
-      "724822278":
-        name: "nimbus-headless-windows-x64.msi"
-        url_suffix: "nimbus-headless-windows-x64.msi"
-        size: 101916672
-        media_type: "application/x-msdownload"
-        digest: "sha256:4632f6ec2f7605307def1210b2c5c6fe5e230e9e8999858d59259654955b8fd6"
-      "724822279":
-        name: "uninstall.sh"
-        url_suffix: "uninstall.sh"
-        size: 1666
-        media_type: "application/x-sh"
-        digest: "sha256:0dbe93fd2d96c79b8bd509a4732da8c49abb1e460d3eb9aa0b2848c1f0943748"
-      "724822280":
-        name: "nimbus-headless-10.41.0-x86_64.rpm.asc"
-        url_suffix: "nimbus-headless-10.41.0-x86_64.rpm.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:454c02414fcec8a64b36108d840bbb1da164b371bb5d6f58f76e9426b81a11af"
-      "724822281":
-        name: "nimbus-cli-macos-x64"
-        url_suffix: "nimbus-cli-macos-x64"
-        size: 102526432
-        digest: "sha256:0f567069898b5943487467465eb9f9cbb43fbbca71744693f75a63717d3c64b9"
-      "724822282":
-        name: "nimbus-headless-macos-x64.tar.gz"
-        url_suffix: "nimbus-headless-macos-x64.tar.gz"
-        size: 103034503
-        media_type: "application/gzip"
-        digest: "sha256:8c359688a8674689f94dea88e07d02d512a5c0e2a2ea8ff66ea7637a115da031"
-      "724822283":
-        name: "nimbus-cli-linux-x64"
-        url_suffix: "nimbus-cli-linux-x64"
-        size: 113494192
-        digest: "sha256:241bf7eab6245ab9c12471be930a21aae0837d908b4bcb860bd0f18f7276163e"
-      "724822284":
-        name: "SHA256SUMS"
-        url_suffix: "SHA256SUMS"
-        size: 3385
-        digest: "sha256:965c30551638210f415183a851b977c9d14fb1f623ab4623004a2171c3d112dc"
-      "724822285":
-        name: "nimbus_amd64.deb"
-        url_suffix: "nimbus_amd64.deb"
-        size: 93913896
-        media_type: "application/x-debian-package"
-        digest: "sha256:e6c180af178a6d328a3fb168f1d0803fa3ca2c6ccf1f3480e1ec569aa2b2b9ac"
-      "724822286":
-        name: "nimbus-headless_10.41.0_amd64.deb"
-        url_suffix: "nimbus-headless_10.41.0_amd64.deb"
-        size: 93913896
-        media_type: "application/x-debian-package"
-        digest: "sha256:e6c180af178a6d328a3fb168f1d0803fa3ca2c6ccf1f3480e1ec569aa2b2b9ac"
-      "724822287":
-        name: "nimbus-verify.ps1"
-        url_suffix: "nimbus-verify.ps1"
-        size: 7256
-        digest: "sha256:89e0a850a33311d18ab59e9781698146493cb069efcc23af58291a64dc41cd14"
-      "724822288":
-        name: "nimbus-gateway-macos-x64"
-        url_suffix: "nimbus-gateway-macos-x64"
-        size: 154627552
-        digest: "sha256:44f791577f0667049ab4861bd1ab12c18531ec980c9f522c02e5f67e48450654"
-      "724822289":
-        name: "install.sh"
-        url_suffix: "install.sh"
-        size: 22979
-        media_type: "application/x-sh"
-        digest: "sha256:69a1c21c950bf7522b0dfc955eb35ed51b58d2ea6ea587692d68c3b4ffbdb7a7"
-      "724822290":
-        name: "nimbus-gateway-macos-arm64"
-        url_suffix: "nimbus-gateway-macos-arm64"
-        size: 142493666
-        digest: "sha256:de12f813476d197e642da3fa3a5d497bb4389e128792a666b03905ee0d597a06"
-      "724822291":
-        name: "nimbus-headless-macos-arm64.pkg"
-        url_suffix: "nimbus-headless-macos-arm64.pkg"
-        size: 97221037
-        digest: "sha256:bd89f17ece8f6111d92841a669fe66bcfb335248171ac7bab80ce34b85482bcf"
-      "724822292":
-        name: "nimbus-gateway-windows-x64.exe"
-        url_suffix: "nimbus-gateway-windows-x64.exe"
-        size: 152436224
-        media_type: "application/x-msdos-program"
-        digest: "sha256:a3a8ede3029ba54178a82754eaa9bbbe8e04df5c3a8184988066e56de92f8fc5"
-      "724822293":
-        name: "nimbus-headless-macos-arm64.tar.gz"
-        url_suffix: "nimbus-headless-macos-arm64.tar.gz"
-        size: 97251735
-        media_type: "application/gzip"
-        digest: "sha256:320d6a7655eb357cc5882da6fc86f01922307f1df7eaa62eb90c9892bf278ee9"
-      "724822294":
-        name: "nimbus-gateway-linux-x64.sig"
-        url_suffix: "nimbus-gateway-linux-x64.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:0d754d30e129476a6ee908651f3e61b0722a55d4ef1773523b7d069935151d6a"
-      "724822295":
-        name: "nimbus-gateway-linux-x64"
-        url_suffix: "nimbus-gateway-linux-x64"
-        size: 155793584
-        digest: "sha256:64c8ce9256e10b13d057c957642f2309299f7156e610871677d146035d1cc4d8"
-      "724822296":
-        name: "nimbus-v10.41.0-sbom.cdx.json"
-        url_suffix: "nimbus-v10.41.0-sbom.cdx.json"
-        size: 2071265
-        media_type: "application/json"
-        digest: "sha256:8460799b6319bcf3a27f75772e5a0419ac457e64f76f7ad4e3785c1f8d07bb99"
-      "724822297":
-        name: "nimbus-headless-linux-amd64-v10.41.0.tar.gz"
-        url_suffix: "nimbus-headless-linux-amd64-v10.41.0.tar.gz"
-        size: 118363490
-        media_type: "application/gzip"
-        digest: "sha256:9ce21852e4a4fa88acf474f12888943c3226fe74ca85fed9f290b63f30a28471"
-      "724822298":
-        name: "nimbus-headless-10.41.0-x86_64.AppImage"
-        url_suffix: "nimbus-headless-10.41.0-x86_64.AppImage"
-        size: 119772352
-        digest: "sha256:7b2a659eadcbc54ff03b02a8cc6e0b442d50f63df41042ee9a9e425cd5f037fd"
-      "724822299":
-        name: "install.ps1"
-        url_suffix: "install.ps1"
-        size: 32493
-        digest: "sha256:211bdd20aa62a655432f3b3ca35228812c55a2287f4cc214529583bf47ca2c63"
-      "724822300":
-        name: "nimbus-cli-macos-arm64"
-        url_suffix: "nimbus-cli-macos-arm64"
-        size: 93552098
-        digest: "sha256:d61e88d207bd21ca1746e2ed5bac802f1e95b5d64311b40b17be12c708b3613e"
-      "724822301":
-        name: "nimbus-headless-windows-x64.zip"
-        url_suffix: "nimbus-headless-windows-x64.zip"
-        size: 120589984
-        media_type: "zip"
-        digest: "sha256:02857c75e1f184f7ee2add3c2a50e45549a7aca5d67ff2c23557038882955655"
-      "724822302":
-        name: "nimbus-cli-windows-x64.exe"
-        url_suffix: "nimbus-cli-windows-x64.exe"
-        size: 119641600
-        media_type: "application/x-msdos-program"
-        digest: "sha256:60f862a388e1ccedb0c99cdf4fa86556446c4aaefec8a78335c6355fd2ffdd2a"
-      "724822303":
-        name: "nimbus-headless-10.41.0-x86_64.rpm"
-        url_suffix: "nimbus-headless-10.41.0-x86_64.rpm"
-        size: 51220274
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:5f2afeffe37008befdfb31e757ac8b7cb96746c21a5a3f0d1694d3b441692310"
-      "724822304":
-        name: "nimbus-headless-macos-x64.pkg"
-        url_suffix: "nimbus-headless-macos-x64.pkg"
-        size: 102997762
-        digest: "sha256:0f5a79f8e3e6021e7169728e91c110fd6b48edf796b7ac2251639ec670ecded8"
-      "724822306":
-        name: "Nimbus-x86_64.AppImage"
-        url_suffix: "Nimbus-x86_64.AppImage"
-        size: 119772352
-        digest: "sha256:7b2a659eadcbc54ff03b02a8cc6e0b442d50f63df41042ee9a9e425cd5f037fd"
-      "724830483":
-        name: "latest.json"
-        url_suffix: "latest.json"
-        size: 1422
-        media_type: "application/json"
-        digest: "sha256:1fcd19eb00bcf873a86a5e0a3ab14b79e9c3f5a089a2fc60996bf65d966a201e"
-  "438928956":
-    tag: "v10.42.0"
-    title: "v10.42.0"
-    url: "https://github.com/nimbus-agent/Nimbus/releases/tag/v10.42.0"
-    created_at: "2026-11-09T08:43:15Z"
-    published_at: "2026-11-09T09:19:30Z"
-    updated_at: "2026-11-09T09:20:45Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/nimbus-agent/Nimbus/zipball/v10.42.0"
-    source_tar_url: "https://api.github.com/repos/nimbus-agent/Nimbus/tarball/v10.42.0"
-    download_base: "https://github.com/nimbus-agent/Nimbus/releases/download/v10.42.0/"
-    assets:
-      "726890117":
-        name: "uninstall.ps1"
-        url_suffix: "uninstall.ps1"
-        size: 7321
-        digest: "sha256:a419dcdb496e5521637a39fa1da2b8c72acb9e2e06e725511a9bce26b111e97c"
-      "726890118":
-        name: "uninstall.sh"
-        url_suffix: "uninstall.sh"
-        size: 1666
-        media_type: "application/x-sh"
-        digest: "sha256:0dbe93fd2d96c79b8bd509a4732da8c49abb1e460d3eb9aa0b2848c1f0943748"
-      "726890119":
-        name: "nimbus-headless-linux-amd64-v10.42.0.tar.gz.asc"
-        url_suffix: "nimbus-headless-linux-amd64-v10.42.0.tar.gz.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:5ba5672963af905f99c9f29ac4b5fd27f6b2e04451520dc846cdd4ee8abed6ab"
-      "726890120":
-        name: "nimbus-verify.ps1"
-        url_suffix: "nimbus-verify.ps1"
-        size: 7256
-        digest: "sha256:89e0a850a33311d18ab59e9781698146493cb069efcc23af58291a64dc41cd14"
-      "726890121":
-        name: "nimbus-headless-10.42.0-x86_64.AppImage"
-        url_suffix: "nimbus-headless-10.42.0-x86_64.AppImage"
-        size: 119817408
-        digest: "sha256:91fcb2fa05ccc1db0d338ddca4403e8aa009ebacb84741c7d732f1ccc367d04f"
-      "726890122":
-        name: "nimbus-headless-macos-x64.tar.gz"
-        url_suffix: "nimbus-headless-macos-x64.tar.gz"
-        size: 103071207
-        media_type: "application/gzip"
-        digest: "sha256:07f287026b9e7cbb1b82e62a7334a7e6624b187b7946b6fcdfc13cca0947e109"
-      "726890123":
-        name: "nimbus-headless-windows-x64.zip"
-        url_suffix: "nimbus-headless-windows-x64.zip"
-        size: 120627459
-        media_type: "zip"
-        digest: "sha256:0af6549d21267918d87f700b51cc4fd82c418f21a3c1fb5e3b6a7635a3aa326d"
-      "726890124":
-        name: "nimbus-headless-10.42.0-x86_64.rpm.asc"
-        url_suffix: "nimbus-headless-10.42.0-x86_64.rpm.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:536455144507e611379b7076650e14774f74facc11c2882bd2e5f4e37591ac26"
-      "726890125":
-        name: "nimbus-cli-windows-x64.exe"
-        url_suffix: "nimbus-cli-windows-x64.exe"
-        size: 119643136
-        media_type: "application/x-msdos-program"
-        digest: "sha256:40636bb5fa1090bc1ac254261d24402b569baa77a7c6fb4ad26843b68ff935cf"
-      "726890126":
-        name: "nimbus-gateway-linux-x64.sha256"
-        url_suffix: "nimbus-gateway-linux-x64.sha256"
-        size: 64
-        digest: "sha256:08f847249d004b7a938e3fad1e3e07c41b93c9fb6f449857b602fa7e0b93faad"
-      "726890127":
-        name: "Nimbus-x86_64.AppImage"
-        url_suffix: "Nimbus-x86_64.AppImage"
-        size: 119817408
-        digest: "sha256:91fcb2fa05ccc1db0d338ddca4403e8aa009ebacb84741c7d732f1ccc367d04f"
-      "726890128":
-        name: "Nimbus-x86_64.AppImage.asc"
-        url_suffix: "Nimbus-x86_64.AppImage.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:e977dbc970b66724eb5d7f1c290c43c8a06f5a3d9d001d2bb9df8792d1b18f58"
-      "726890129":
-        name: "nimbus-headless_10.42.0_amd64.deb.asc"
-        url_suffix: "nimbus-headless_10.42.0_amd64.deb.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:0b156d07a2ff540457778826c7456bf5274b978cc8dde9655a8c8d9850b99a98"
-      "726890130":
-        name: "nimbus-v10.42.0-sbom.cdx.json"
-        url_suffix: "nimbus-v10.42.0-sbom.cdx.json"
-        size: 2072255
-        media_type: "application/json"
-        digest: "sha256:fa8339926f90f9d8881caecd13172cb3e53ed0ef22de6e430db61559ac9239a7"
-      "726890131":
-        name: "nimbus-cli-macos-x64"
-        url_suffix: "nimbus-cli-macos-x64"
-        size: 102526432
-        digest: "sha256:c1327a7e57df88ae80aafb2f441918aa5a32abd6304adced8ec11757961b24ec"
-      "726890132":
-        name: "nimbus-gateway-macos-x64"
-        url_suffix: "nimbus-gateway-macos-x64"
-        size: 154775008
-        digest: "sha256:35c1374dc6c9a335151cf063a996ac2b580faa504f769932fc1036c3b8692702"
-      "726890133":
-        name: "nimbus-headless-macos-x64.pkg"
-        url_suffix: "nimbus-headless-macos-x64.pkg"
-        size: 103036578
-        digest: "sha256:ed19ef75bb444e944b577e6014236a2545bea210828d7760fda49bcac01be257"
-      "726890134":
-        name: "nimbus-gateway-windows-x64.exe"
-        url_suffix: "nimbus-gateway-windows-x64.exe"
-        size: 152580608
-        media_type: "application/x-msdos-program"
-        digest: "sha256:f55e0969ecedc6d35e10d592c8200f683a2e1a55042a6a26b91224ff09be66f8"
-      "726890135":
-        name: "nimbus-gateway-linux-x64.sig"
-        url_suffix: "nimbus-gateway-linux-x64.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:97b13baccb51c8c3e5a27e45b26441ba68d5f0fa959b9c6ec382de21bca34c16"
-      "726890136":
-        name: "install.ps1"
-        url_suffix: "install.ps1"
-        size: 32493
-        digest: "sha256:211bdd20aa62a655432f3b3ca35228812c55a2287f4cc214529583bf47ca2c63"
-      "726890137":
-        name: "nimbus_amd64.deb"
-        url_suffix: "nimbus_amd64.deb"
-        size: 93918074
-        media_type: "application/x-debian-package"
-        digest: "sha256:7c89ffdfede26e1dcfd4ed51ef4552cf6f9d5c6c42be0caa8eb2bbd604e3999d"
-      "726890138":
-        name: "nimbus-headless-10.42.0-x86_64.rpm"
-        url_suffix: "nimbus-headless-10.42.0-x86_64.rpm"
-        size: 51249045
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:d8b8a8a5c7189f328381139fd876fc481af1b1eafe724245ce8a7617be213cdf"
-      "726890139":
-        name: "nimbus-headless-windows-x64.msi"
-        url_suffix: "nimbus-headless-windows-x64.msi"
-        size: 101945344
-        media_type: "application/x-msdownload"
-        digest: "sha256:172c717903c56914caaa1125e8108615fa781e5b6f65417cac42d482ba132c92"
-      "726890140":
-        name: "nimbus-headless_10.42.0_amd64.deb"
-        url_suffix: "nimbus-headless_10.42.0_amd64.deb"
-        size: 93918074
-        media_type: "application/x-debian-package"
-        digest: "sha256:7c89ffdfede26e1dcfd4ed51ef4552cf6f9d5c6c42be0caa8eb2bbd604e3999d"
-      "726890142":
-        name: "nimbus-headless-macos-arm64.pkg"
-        url_suffix: "nimbus-headless-macos-arm64.pkg"
-        size: 97260894
-        digest: "sha256:3f697bfa0d6f85e6d72b833fc185ed8d98e2f5619e0b4505de56ca92263f67eb"
-      "726890143":
-        name: "nimbus-verify.sh"
-        url_suffix: "nimbus-verify.sh"
-        size: 8827
-        media_type: "application/x-sh"
-        digest: "sha256:747bbf9a63bacc8713978d4005c71a993fb9e5ffee58e94bc404a266ce6eed6c"
-      "726890144":
-        name: "SHA256SUMS.asc"
-        url_suffix: "SHA256SUMS.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:00c7121c34b46101649f9872929cc4e41dc17fadd981fcc703d2ad3dc3686102"
-      "726890145":
-        name: "nimbus-gateway-linux-x64.asc"
-        url_suffix: "nimbus-gateway-linux-x64.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:25bdd9a2679b455c2dc1cd6dcd9f447dd7cc7c8bf5d166e20c38525e4199381e"
-      "726890146":
-        name: "nimbus-headless-linux-amd64-v10.42.0.tar.gz"
-        url_suffix: "nimbus-headless-linux-amd64-v10.42.0.tar.gz"
-        size: 118400270
-        media_type: "application/gzip"
-        digest: "sha256:410b8441b4a8b5f9a4b87103f60bc8bbf7901ce563f05b72a7c1fe1e9780118d"
-      "726890147":
-        name: "nimbus-headless-10.42.0-x86_64.AppImage.asc"
-        url_suffix: "nimbus-headless-10.42.0-x86_64.AppImage.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:e977dbc970b66724eb5d7f1c290c43c8a06f5a3d9d001d2bb9df8792d1b18f58"
-      "726890148":
-        name: "nimbus_amd64.deb.asc"
-        url_suffix: "nimbus_amd64.deb.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:0b156d07a2ff540457778826c7456bf5274b978cc8dde9655a8c8d9850b99a98"
-      "726890149":
-        name: "install.sh"
-        url_suffix: "install.sh"
-        size: 22979
-        media_type: "application/x-sh"
-        digest: "sha256:69a1c21c950bf7522b0dfc955eb35ed51b58d2ea6ea587692d68c3b4ffbdb7a7"
-      "726890150":
-        name: "nimbus-cli-macos-arm64"
-        url_suffix: "nimbus-cli-macos-arm64"
-        size: 93552098
-        digest: "sha256:8fefa2d3717c8b5f6e3db2837bf7acd76b442c4bff549ae955982e27bf6e52ea"
-      "726890151":
-        name: "nimbus-gateway-linux-x64"
-        url_suffix: "nimbus-gateway-linux-x64"
-        size: 155936944
-        digest: "sha256:5e92e7677fc0840a306b635813bd0a5e5218ee201280cfc1684cd4e4933ff2e2"
-      "726890152":
-        name: "SHA256SUMS"
-        url_suffix: "SHA256SUMS"
-        size: 3385
-        digest: "sha256:b4d5769b3ce500c02afec71bb4d7ef25c96f9145cf1bddc58220ba0cecad0164"
-      "726890153":
-        name: "nimbus-headless-macos-arm64.tar.gz"
-        url_suffix: "nimbus-headless-macos-arm64.tar.gz"
-        size: 97289693
-        media_type: "application/gzip"
-        digest: "sha256:80dbb702d8f469e15fa381ea63adbcacdaa4a8392ba98bb9986be0f4fd6a4e0b"
-      "726890156":
-        name: "nimbus-gateway-macos-arm64"
-        url_suffix: "nimbus-gateway-macos-arm64"
-        size: 142642274
-        digest: "sha256:6d16b04dcd39aec5aa3e10b4428e3068709564eb2bba5beae34d9b827f68baa0"
-      "726890169":
-        name: "nimbus-cli-linux-x64"
-        url_suffix: "nimbus-cli-linux-x64"
-        size: 113494192
-        digest: "sha256:3c7dd257334a6a830341044ad26b21f841972f53b005426133e04edeccc163b5"
-      "726894089":
-        name: "latest.json"
-        url_suffix: "latest.json"
-        size: 1422
-        media_type: "application/json"
-        digest: "sha256:b8e8b3cdf8a02251c15bc381c0ff7cc0e4cfa3955f61f0b5a6ec96cbc95b1cdb"
-  "440034794":
-    tag: "v10.43.0"
-    title: "v10.43.0"
-    url: "https://github.com/nimbus-agent/Nimbus/releases/tag/v10.43.0"
-    created_at: "2026-11-10T06:18:28Z"
-    published_at: "2026-11-10T06:56:56Z"
-    updated_at: "2026-11-10T06:58:04Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/nimbus-agent/Nimbus/zipball/v10.43.0"
-    source_tar_url: "https://api.github.com/repos/nimbus-agent/Nimbus/tarball/v10.43.0"
-    download_base: "https://github.com/nimbus-agent/Nimbus/releases/download/v10.43.0/"
-    assets:
-      "730439817":
-        name: "nimbus_amd64.deb"
-        url_suffix: "nimbus_amd64.deb"
-        size: 93947168
-        media_type: "application/x-debian-package"
-        digest: "sha256:aa35361756e062359dd41a5427af22464877ca414fb31654e3131f59bf77b524"
-      "730439818":
-        name: "nimbus-gateway-linux-x64.sig"
-        url_suffix: "nimbus-gateway-linux-x64.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:f26fd566272b8931eed85c547632fa270ae5222dbbf0c19b7dd6b1b66e1ecff8"
-      "730439819":
-        name: "nimbus-headless-linux-amd64-v10.43.0.tar.gz.asc"
-        url_suffix: "nimbus-headless-linux-amd64-v10.43.0.tar.gz.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:db8d4d8bf461c41a45fafe8a7b7176f4fded8705a8f119dcd3047b7701b8075e"
-      "730439820":
-        name: "nimbus-gateway-linux-x64.sha256"
-        url_suffix: "nimbus-gateway-linux-x64.sha256"
-        size: 64
-        digest: "sha256:924c39907142db1807ab84fb33f82a4a70b47caf6cbb16aaa5cdd159235bc5b4"
-      "730439821":
-        name: "nimbus-headless_10.43.0_amd64.deb.asc"
-        url_suffix: "nimbus-headless_10.43.0_amd64.deb.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:a18491e3b48fd0dfc634aae99e483fa875aad80802b9bfdbd3eb0fae080d8d2b"
-      "730439822":
-        name: "nimbus-verify.ps1"
-        url_suffix: "nimbus-verify.ps1"
-        size: 7256
-        digest: "sha256:89e0a850a33311d18ab59e9781698146493cb069efcc23af58291a64dc41cd14"
-      "730439823":
-        name: "nimbus-headless-windows-x64.msi"
-        url_suffix: "nimbus-headless-windows-x64.msi"
-        size: 101957632
-        media_type: "application/x-msdownload"
-        digest: "sha256:1541fafb6c904e227207b8f62319a2b4ceb6fb5d11017a8b3987ac0c2e081454"
-      "730439827":
-        name: "nimbus-headless-macos-x64.tar.gz"
-        url_suffix: "nimbus-headless-macos-x64.tar.gz"
-        size: 103083012
-        media_type: "application/gzip"
-        digest: "sha256:944e30e971c30cacd47ba333d483ff561330f6c62fad46a1bbf0fbfd65a2afcc"
-      "730439828":
-        name: "nimbus_amd64.deb.asc"
-        url_suffix: "nimbus_amd64.deb.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:a18491e3b48fd0dfc634aae99e483fa875aad80802b9bfdbd3eb0fae080d8d2b"
-      "730439829":
-        name: "nimbus-headless-linux-amd64-v10.43.0.tar.gz"
-        url_suffix: "nimbus-headless-linux-amd64-v10.43.0.tar.gz"
-        size: 118411904
-        media_type: "application/gzip"
-        digest: "sha256:8044be1f5246aa26b1c17cb91643b566564bedd7b59620bf35d1e12ca1c4cb37"
-      "730439830":
-        name: "nimbus-gateway-linux-x64.asc"
-        url_suffix: "nimbus-gateway-linux-x64.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:e255d1eec0d937ffb4214e1217f86c620749f5ccd2770eee47bce5b9ad7266c5"
-      "730439831":
-        name: "uninstall.ps1"
-        url_suffix: "uninstall.ps1"
-        size: 7321
-        digest: "sha256:a419dcdb496e5521637a39fa1da2b8c72acb9e2e06e725511a9bce26b111e97c"
-      "730439832":
-        name: "nimbus-headless-windows-x64.zip"
-        url_suffix: "nimbus-headless-windows-x64.zip"
-        size: 120638809
-        media_type: "zip"
-        digest: "sha256:c4a69e2a7f30064cfde896d517c2d099b49d7d16cfcfff3ed462f0f781a496d0"
-      "730439833":
-        name: "Nimbus-x86_64.AppImage.asc"
-        url_suffix: "Nimbus-x86_64.AppImage.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:0e5e7d214949ec1f90afd6e3629894f41bd5dffe123fda7cd35bb4d924374f01"
-      "730439834":
-        name: "nimbus-cli-macos-arm64"
-        url_suffix: "nimbus-cli-macos-arm64"
-        size: 93552098
-        digest: "sha256:6bc85f6e4d22df1584b2bf54e5d4d1ac89d468ea00ba6717e32640e59540fed6"
-      "730439836":
-        name: "nimbus-headless-10.43.0-x86_64.rpm.asc"
-        url_suffix: "nimbus-headless-10.43.0-x86_64.rpm.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:54db8fb6d754be9b0d40e032252802043b7b23a4edbca23407def713281190f3"
-      "730439837":
-        name: "nimbus-headless-macos-arm64.pkg"
-        url_suffix: "nimbus-headless-macos-arm64.pkg"
-        size: 97270900
-        digest: "sha256:8807b8f3a2d857feb26a1e28debbd009816d86bf79ec277fdb4745c90144708b"
-      "730439838":
-        name: "Nimbus-x86_64.AppImage"
-        url_suffix: "Nimbus-x86_64.AppImage"
-        size: 119829696
-        digest: "sha256:1e5d9da73e59e825970c284ca9773e32687da5562286a12c62248167ace8f7e1"
-      "730439839":
-        name: "nimbus-cli-macos-x64"
-        url_suffix: "nimbus-cli-macos-x64"
-        size: 102526432
-        digest: "sha256:61ab4db9e57fa50f82e35f3cf8859ccc78f1ce262a12ebc8867a4e9f424d8d1c"
-      "730439840":
-        name: "nimbus-gateway-macos-x64"
-        url_suffix: "nimbus-gateway-macos-x64"
-        size: 154824160
-        digest: "sha256:4640125d30f8c3e92505844cf0100e0362e109d62679d9a53011eefea2ede871"
-      "730439841":
-        name: "nimbus-verify.sh"
-        url_suffix: "nimbus-verify.sh"
-        size: 8827
-        media_type: "application/x-sh"
-        digest: "sha256:747bbf9a63bacc8713978d4005c71a993fb9e5ffee58e94bc404a266ce6eed6c"
-      "730439842":
-        name: "SHA256SUMS"
-        url_suffix: "SHA256SUMS"
-        size: 3385
-        digest: "sha256:0e457163b3ea582f75f8e0a672d720235d382fedb3dc5b94555826d6749543ea"
-      "730439843":
-        name: "nimbus-headless-10.43.0-x86_64.rpm"
-        url_suffix: "nimbus-headless-10.43.0-x86_64.rpm"
-        size: 51230914
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:7345f2e78057830d6bb6de419da0bed9e78a78439f8e454edea5dba426e46e1d"
-      "730439844":
-        name: "nimbus-headless-10.43.0-x86_64.AppImage"
-        url_suffix: "nimbus-headless-10.43.0-x86_64.AppImage"
-        size: 119829696
-        digest: "sha256:1e5d9da73e59e825970c284ca9773e32687da5562286a12c62248167ace8f7e1"
-      "730439845":
-        name: "uninstall.sh"
-        url_suffix: "uninstall.sh"
-        size: 1666
-        media_type: "application/x-sh"
-        digest: "sha256:0dbe93fd2d96c79b8bd509a4732da8c49abb1e460d3eb9aa0b2848c1f0943748"
-      "730439846":
-        name: "nimbus-gateway-macos-arm64"
-        url_suffix: "nimbus-gateway-macos-arm64"
-        size: 142691810
-        digest: "sha256:2cd397ca06cb8887e46b6fd9f9cddf90d1a3bd9d9c47a6f1fd10fff4f701cc96"
-      "730439847":
-        name: "install.ps1"
-        url_suffix: "install.ps1"
-        size: 32493
-        digest: "sha256:211bdd20aa62a655432f3b3ca35228812c55a2287f4cc214529583bf47ca2c63"
-      "730439848":
-        name: "nimbus-gateway-linux-x64"
-        url_suffix: "nimbus-gateway-linux-x64"
-        size: 155986096
-        digest: "sha256:9df903238b26d45b1a7810ec91af87440c563319156c7cab269e21d0e85255ea"
-      "730439849":
-        name: "nimbus-cli-linux-x64"
-        url_suffix: "nimbus-cli-linux-x64"
-        size: 113494192
-        digest: "sha256:d104ce458b23879e2283f5eaeb8b2b88691767dceb66d2f355e64d756e8b5075"
-      "730439850":
-        name: "nimbus-cli-windows-x64.exe"
-        url_suffix: "nimbus-cli-windows-x64.exe"
-        size: 119643136
-        media_type: "application/x-msdos-program"
-        digest: "sha256:cb6fbf81bdd4f27b899a6ae7ce007f8794e0ef1f4c0ff91536494c5beaaae5f4"
-      "730439851":
-        name: "nimbus-headless-10.43.0-x86_64.AppImage.asc"
-        url_suffix: "nimbus-headless-10.43.0-x86_64.AppImage.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:0e5e7d214949ec1f90afd6e3629894f41bd5dffe123fda7cd35bb4d924374f01"
-      "730439852":
-        name: "nimbus-v10.43.0-sbom.cdx.json"
-        url_suffix: "nimbus-v10.43.0-sbom.cdx.json"
-        size: 2076104
-        media_type: "application/json"
-        digest: "sha256:622a3df4da76d61ab550269cba443c7e08329403b959887f943b51eef037b939"
-      "730439853":
-        name: "nimbus-headless-macos-arm64.tar.gz"
-        url_suffix: "nimbus-headless-macos-arm64.tar.gz"
-        size: 97302747
-        media_type: "application/gzip"
-        digest: "sha256:871619cb59a0fa15109937f88170ac0a77dc253eb6a342e6eef0e81f06ead159"
-      "730439855":
-        name: "nimbus-gateway-windows-x64.exe"
-        url_suffix: "nimbus-gateway-windows-x64.exe"
-        size: 152629248
-        media_type: "application/x-msdos-program"
-        digest: "sha256:437dcba06234b321fe4a6ea843c2979864deea8374a46733ce145424c05cbdda"
-      "730439856":
-        name: "install.sh"
-        url_suffix: "install.sh"
-        size: 22979
-        media_type: "application/x-sh"
-        digest: "sha256:69a1c21c950bf7522b0dfc955eb35ed51b58d2ea6ea587692d68c3b4ffbdb7a7"
-      "730439860":
-        name: "nimbus-headless_10.43.0_amd64.deb"
-        url_suffix: "nimbus-headless_10.43.0_amd64.deb"
-        size: 93947168
-        media_type: "application/x-debian-package"
-        digest: "sha256:aa35361756e062359dd41a5427af22464877ca414fb31654e3131f59bf77b524"
-      "730439862":
-        name: "SHA256SUMS.asc"
-        url_suffix: "SHA256SUMS.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:5ad4ceabefb757f716b75fdadd55aa917a9c30702c60f94a5b225cbedf726407"
-      "730439863":
-        name: "nimbus-headless-macos-x64.pkg"
-        url_suffix: "nimbus-headless-macos-x64.pkg"
-        size: 103047114
-        digest: "sha256:e2880bd9ebc74098f3060a268debb35ccef12c6cc089d506b101202a42b9d114"
-      "730442871":
-        name: "latest.json"
-        url_suffix: "latest.json"
-        size: 1422
-        media_type: "application/json"
-        digest: "sha256:148818f3a3e42a0aad53b19acae3998c321b284e8a03870c4c26655a8b2f3e37"
-  "440843857":
-    tag: "v10.44.0"
-    title: "v10.44.0"
-    url: "https://github.com/nimbus-agent/Nimbus/releases/tag/v10.44.0"
-    created_at: "2026-11-10T19:19:02Z"
-    published_at: "2026-11-10T19:58:44Z"
-    updated_at: "2026-11-10T20:00:00Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/nimbus-agent/Nimbus/zipball/v10.44.0"
-    source_tar_url: "https://api.github.com/repos/nimbus-agent/Nimbus/tarball/v10.44.0"
-    download_base: "https://github.com/nimbus-agent/Nimbus/releases/download/v10.44.0/"
-    assets:
-      "732760556":
-        name: "nimbus_amd64.deb.asc"
-        url_suffix: "nimbus_amd64.deb.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:14f99e7abb78fe92fcb5f2fd2072a258e7ac00d111393fd7ec75a2358145f216"
-      "732760557":
-        name: "SHA256SUMS.asc"
-        url_suffix: "SHA256SUMS.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:04e121d5dec0b0df7ac0b302812944a4d3310f3bcc424cb94699cc21f6a70623"
-      "732760558":
-        name: "nimbus-headless-macos-x64.pkg"
-        url_suffix: "nimbus-headless-macos-x64.pkg"
-        size: 103069656
-        digest: "sha256:cb2a563758db6b3149ed8aae998af41e4d5a29f3996c0fb759eb7c4ff16417eb"
-      "732760559":
-        name: "nimbus-gateway-windows-x64.exe"
-        url_suffix: "nimbus-gateway-windows-x64.exe"
-        size: 152710144
-        media_type: "application/x-msdos-program"
-        digest: "sha256:3b1a3b4ec571c2b35478c4331d019268dd5a50291b96b8a0d5c4e7637e91c153"
-      "732760560":
-        name: "nimbus-headless-macos-arm64.pkg"
-        url_suffix: "nimbus-headless-macos-arm64.pkg"
-        size: 97295278
-        digest: "sha256:b48950371ea06ec203ca568f68507c769229d28510795bf5bca57f384f4c8e1d"
-      "732760561":
-        name: "nimbus-headless_10.44.0_amd64.deb.asc"
-        url_suffix: "nimbus-headless_10.44.0_amd64.deb.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:14f99e7abb78fe92fcb5f2fd2072a258e7ac00d111393fd7ec75a2358145f216"
-      "732760562":
-        name: "nimbus-gateway-linux-x64.sig"
-        url_suffix: "nimbus-gateway-linux-x64.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:cce74547f95d7551e431bf6b3a9dcef5a115059d93e93e7527a4aa846f299824"
-      "732760563":
-        name: "uninstall.ps1"
-        url_suffix: "uninstall.ps1"
-        size: 7321
-        digest: "sha256:a419dcdb496e5521637a39fa1da2b8c72acb9e2e06e725511a9bce26b111e97c"
-      "732760564":
-        name: "uninstall.sh"
-        url_suffix: "uninstall.sh"
-        size: 1666
-        media_type: "application/x-sh"
-        digest: "sha256:0dbe93fd2d96c79b8bd509a4732da8c49abb1e460d3eb9aa0b2848c1f0943748"
-      "732760565":
-        name: "Nimbus-x86_64.AppImage.asc"
-        url_suffix: "Nimbus-x86_64.AppImage.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:7fbf0ea8d6084927f1592cbd0f5fe9f07a9be1541a7cea31e54ae221dd1715dd"
-      "732760566":
-        name: "nimbus-verify.sh"
-        url_suffix: "nimbus-verify.sh"
-        size: 8827
-        media_type: "application/x-sh"
-        digest: "sha256:747bbf9a63bacc8713978d4005c71a993fb9e5ffee58e94bc404a266ce6eed6c"
-      "732760567":
-        name: "nimbus-gateway-linux-x64.asc"
-        url_suffix: "nimbus-gateway-linux-x64.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:0bb11b1e1536f370b7aa8cccdccba508abf64c4d6d7f194aba65887b50f26501"
-      "732760568":
-        name: "nimbus-headless-10.44.0-x86_64.rpm"
-        url_suffix: "nimbus-headless-10.44.0-x86_64.rpm"
-        size: 51276432
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:da1af8c8c512c6b0703039b81796ff37fe9ff387e3eb66d2481fe06753ef362d"
-      "732760569":
-        name: "nimbus-verify.ps1"
-        url_suffix: "nimbus-verify.ps1"
-        size: 7256
-        digest: "sha256:89e0a850a33311d18ab59e9781698146493cb069efcc23af58291a64dc41cd14"
-      "732760570":
-        name: "nimbus-headless-windows-x64.msi"
-        url_suffix: "nimbus-headless-windows-x64.msi"
-        size: 101974016
-        media_type: "application/x-msdownload"
-        digest: "sha256:67e433d75ddabd2f7456e20ca3a4ac025b080817f6acdebffac811344d8a23ee"
-      "732760571":
-        name: "nimbus-gateway-linux-x64.sha256"
-        url_suffix: "nimbus-gateway-linux-x64.sha256"
-        size: 64
-        digest: "sha256:579e66358d99c51defb65af15efa1120c95e79f7a32dfef740c89fb92134f6f8"
-      "732760572":
-        name: "SHA256SUMS"
-        url_suffix: "SHA256SUMS"
-        size: 3385
-        digest: "sha256:86e5f940ff468c6d3d9990db5e784bc95f7e4d6b757968adaa336eadbc3f9afa"
-      "732760573":
-        name: "nimbus-headless-macos-arm64.tar.gz"
-        url_suffix: "nimbus-headless-macos-arm64.tar.gz"
-        size: 97325234
-        media_type: "application/gzip"
-        digest: "sha256:69b44a42a7d0afe6378f45155d32f049820a7eb30dae0458c6e76544110c8bf0"
-      "732760574":
-        name: "nimbus-cli-macos-arm64"
-        url_suffix: "nimbus-cli-macos-arm64"
-        size: 93568610
-        digest: "sha256:b31a7782b670d93904178a46d084aac2659c9a780ee66715248cce14b5841bb3"
-      "732760575":
-        name: "nimbus-headless-10.44.0-x86_64.AppImage.asc"
-        url_suffix: "nimbus-headless-10.44.0-x86_64.AppImage.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:7fbf0ea8d6084927f1592cbd0f5fe9f07a9be1541a7cea31e54ae221dd1715dd"
-      "732760576":
-        name: "nimbus-gateway-linux-x64"
-        url_suffix: "nimbus-gateway-linux-x64"
-        size: 156068016
-        digest: "sha256:dbf018b4db52185dffa7ffa912bf6ec243f8d49ee3b0a9b94307b915b7ef4890"
-      "732760577":
-        name: "install.ps1"
-        url_suffix: "install.ps1"
-        size: 32493
-        digest: "sha256:211bdd20aa62a655432f3b3ca35228812c55a2287f4cc214529583bf47ca2c63"
-      "732760578":
-        name: "Nimbus-x86_64.AppImage"
-        url_suffix: "Nimbus-x86_64.AppImage"
-        size: 119841984
-        digest: "sha256:cad5b600aa461b475c2229c2774b1bf670f5009fa640239fb9151d0bce62895b"
-      "732760579":
-        name: "nimbus-headless-10.44.0-x86_64.rpm.asc"
-        url_suffix: "nimbus-headless-10.44.0-x86_64.rpm.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:74aa05a5620970fc8f4a3d36988f4280ab9f3d9ac801e01296246855ec16b025"
-      "732760580":
-        name: "nimbus-headless-macos-x64.tar.gz"
-        url_suffix: "nimbus-headless-macos-x64.tar.gz"
-        size: 103102449
-        media_type: "application/gzip"
-        digest: "sha256:ed898b8b87c6a36a3cbb167033745f5b6e25aba9e394b4db331353120d9d07c2"
-      "732760581":
-        name: "nimbus-v10.44.0-sbom.cdx.json"
-        url_suffix: "nimbus-v10.44.0-sbom.cdx.json"
-        size: 2076104
-        media_type: "application/json"
-        digest: "sha256:90577b5fa0825c3468392a86228135767df4ec5b4aa37de39ef95f367f82e624"
-      "732760582":
-        name: "nimbus-headless-windows-x64.zip"
-        url_suffix: "nimbus-headless-windows-x64.zip"
-        size: 120659596
-        media_type: "zip"
-        digest: "sha256:6528950d38d062a14f2dba46275ecd4b37f1bbfd465ed5897dfabc613cdaa97c"
-      "732760583":
-        name: "nimbus-headless-linux-amd64-v10.44.0.tar.gz.asc"
-        url_suffix: "nimbus-headless-linux-amd64-v10.44.0.tar.gz.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:35da3f455a625602851a56f8e2ae4628e4bb5d9cc9ce69d50793433722ffa360"
-      "732760584":
-        name: "nimbus-gateway-macos-arm64"
-        url_suffix: "nimbus-gateway-macos-arm64"
-        size: 142774370
-        digest: "sha256:30c633b3d94d0b6c68edfa040f60135ca473abec448bcb9667f222e5497e194e"
-      "732760585":
-        name: "install.sh"
-        url_suffix: "install.sh"
-        size: 22979
-        media_type: "application/x-sh"
-        digest: "sha256:69a1c21c950bf7522b0dfc955eb35ed51b58d2ea6ea587692d68c3b4ffbdb7a7"
-      "732760586":
-        name: "nimbus-cli-windows-x64.exe"
-        url_suffix: "nimbus-cli-windows-x64.exe"
-        size: 119645696
-        media_type: "application/x-msdos-program"
-        digest: "sha256:ae1e42f92421875595b1eb64e9a97a92e9de561ae50be37fb95acf17eda861d5"
-      "732760587":
-        name: "nimbus-headless-linux-amd64-v10.44.0.tar.gz"
-        url_suffix: "nimbus-headless-linux-amd64-v10.44.0.tar.gz"
-        size: 118434369
-        media_type: "application/gzip"
-        digest: "sha256:0f08f7844cca9ea6930eaf6d8822343e1ff72fe0fbaa12a3ea388f5778d9db61"
-      "732760588":
-        name: "nimbus_amd64.deb"
-        url_suffix: "nimbus_amd64.deb"
-        size: 93946372
-        media_type: "application/x-debian-package"
-        digest: "sha256:788c0d4d9c1644ea5a38e79e401f42c84254b5dc673c6a1dd489c67a315dc514"
-      "732760589":
-        name: "nimbus-headless_10.44.0_amd64.deb"
-        url_suffix: "nimbus-headless_10.44.0_amd64.deb"
-        size: 93946372
-        media_type: "application/x-debian-package"
-        digest: "sha256:788c0d4d9c1644ea5a38e79e401f42c84254b5dc673c6a1dd489c67a315dc514"
-      "732760590":
-        name: "nimbus-cli-linux-x64"
-        url_suffix: "nimbus-cli-linux-x64"
-        size: 113498288
-        digest: "sha256:ea4766d073836d5e36c149bb1d3cb340efd2ac14705b3f741a77002603dc63e3"
-      "732760591":
-        name: "nimbus-gateway-macos-x64"
-        url_suffix: "nimbus-gateway-macos-x64"
-        size: 154889696
-        digest: "sha256:a31f7d6803de83c8d916574f76c1d86ac68b39b3aea71ced46c755f7f07757c3"
-      "732760592":
-        name: "nimbus-cli-macos-x64"
-        url_suffix: "nimbus-cli-macos-x64"
-        size: 102542816
-        digest: "sha256:640b871e681a5d74029658f2ef0da8f430cafad312654421524b95f9fbb0c018"
-      "732760593":
-        name: "nimbus-headless-10.44.0-x86_64.AppImage"
-        url_suffix: "nimbus-headless-10.44.0-x86_64.AppImage"
-        size: 119841984
-        digest: "sha256:cad5b600aa461b475c2229c2774b1bf670f5009fa640239fb9151d0bce62895b"
-      "732764617":
-        name: "latest.json"
-        url_suffix: "latest.json"
-        size: 1422
-        media_type: "application/json"
-        digest: "sha256:67d59a7e58c08c564603513537d8d6a91570eafc0493a5e22cdae3a161ec96af"
-  "441089593":
-    tag: "v10.45.0"
-    title: "v10.45.0"
-    url: "https://github.com/nimbus-agent/Nimbus/releases/tag/v10.45.0"
-    created_at: "2026-11-10T23:47:00Z"
-    published_at: "2026-11-11T00:27:26Z"
-    updated_at: "2026-11-11T00:28:45Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/nimbus-agent/Nimbus/zipball/v10.45.0"
-    source_tar_url: "https://api.github.com/repos/nimbus-agent/Nimbus/tarball/v10.45.0"
-    download_base: "https://github.com/nimbus-agent/Nimbus/releases/download/v10.45.0/"
-    assets:
-      "733507031":
-        name: "nimbus-headless-windows-x64.zip"
-        url_suffix: "nimbus-headless-windows-x64.zip"
-        size: 120663461
-        media_type: "zip"
-        digest: "sha256:ca4f73a8319c7fd99018e9391b50593641ae71f4a6d7e95f4dc71007061c9b0f"
-      "733507032":
-        name: "nimbus-gateway-macos-x64"
-        url_suffix: "nimbus-gateway-macos-x64"
-        size: 154906080
-        digest: "sha256:b45f0c09386695c71fa343c9fbedafabb8c3e0c50e2f5cd729cf0d718c977544"
-      "733507033":
-        name: "nimbus-headless_10.45.0_amd64.deb.asc"
-        url_suffix: "nimbus-headless_10.45.0_amd64.deb.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:4bbab58865a87e082366741d6134cdb835710a2c45a8d101cd6852b60a7a6d66"
-      "733507035":
-        name: "nimbus-gateway-windows-x64.exe"
-        url_suffix: "nimbus-gateway-windows-x64.exe"
-        size: 152721920
-        media_type: "application/x-msdos-program"
-        digest: "sha256:b4680702045cdb7165d3f523f00d6f3eb4d259c0b6e4915b6511b5db82c9eab1"
-      "733507036":
-        name: "nimbus-headless-windows-x64.msi"
-        url_suffix: "nimbus-headless-windows-x64.msi"
-        size: 101974016
-        media_type: "application/x-msdownload"
-        digest: "sha256:544cecbdb67f8ab49e30046bece765280a58b8b4bb28624469790061d98bcb84"
-      "733507037":
-        name: "nimbus-headless-macos-arm64.pkg"
-        url_suffix: "nimbus-headless-macos-arm64.pkg"
-        size: 97298767
-        digest: "sha256:ac72530980fba3a8790724b5db425d54e982738cdaac281386f9959c1f346c12"
-      "733507038":
-        name: "nimbus-headless-10.45.0-x86_64.AppImage.asc"
-        url_suffix: "nimbus-headless-10.45.0-x86_64.AppImage.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:c6da5f4cf78e9675da3bc54474a261b1e2ea2e820bc22a06719dbde3d9d797d8"
-      "733507039":
-        name: "nimbus-verify.ps1"
-        url_suffix: "nimbus-verify.ps1"
-        size: 7256
-        digest: "sha256:89e0a850a33311d18ab59e9781698146493cb069efcc23af58291a64dc41cd14"
-      "733507040":
-        name: "nimbus-headless_10.45.0_amd64.deb"
-        url_suffix: "nimbus-headless_10.45.0_amd64.deb"
-        size: 93938836
-        media_type: "application/x-debian-package"
-        digest: "sha256:e7ef330190ff6730a842fb743ba0f39dfd26148daa14c6e8973fc5668d5a7bc2"
-      "733507041":
-        name: "uninstall.ps1"
-        url_suffix: "uninstall.ps1"
-        size: 7321
-        digest: "sha256:a419dcdb496e5521637a39fa1da2b8c72acb9e2e06e725511a9bce26b111e97c"
-      "733507042":
-        name: "nimbus-v10.45.0-sbom.cdx.json"
-        url_suffix: "nimbus-v10.45.0-sbom.cdx.json"
-        size: 2069723
-        media_type: "application/json"
-        digest: "sha256:6b3a1af3a64f262e5a93868152b74388bc015ac8be2ab0ee5a942654e3f1914a"
-      "733507043":
-        name: "nimbus-headless-10.45.0-x86_64.AppImage"
-        url_suffix: "nimbus-headless-10.45.0-x86_64.AppImage"
-        size: 119850176
-        digest: "sha256:52ad175a47a09d269d6366bdaf11e53ddfa5e34d26a92193055d8b8039367666"
-      "733507044":
-        name: "nimbus-headless-macos-arm64.tar.gz"
-        url_suffix: "nimbus-headless-macos-arm64.tar.gz"
-        size: 97328057
-        media_type: "application/gzip"
-        digest: "sha256:0a4c4fc0915b4737d29b48907a66224f9147aa259cdc58c955d5066afed637e3"
-      "733507045":
-        name: "nimbus-headless-10.45.0-x86_64.rpm.asc"
-        url_suffix: "nimbus-headless-10.45.0-x86_64.rpm.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:a1113cb951ce2b3d3ca29c09267cd8933ae11a0d72e820eee8a0d8127107216d"
-      "733507046":
-        name: "nimbus-headless-10.45.0-x86_64.rpm"
-        url_suffix: "nimbus-headless-10.45.0-x86_64.rpm"
-        size: 51248881
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:c0e1d20030f095765ea07bcfb0116f22e8928f1ab10a245ddc53c100775f5f82"
-      "733507047":
-        name: "SHA256SUMS.asc"
-        url_suffix: "SHA256SUMS.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:84ba1a035f023f4bf30d1100e7c640d2074f49e1df585ec0e27c67def0a04ef5"
-      "733507049":
-        name: "nimbus-gateway-linux-x64.sig"
-        url_suffix: "nimbus-gateway-linux-x64.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:df4843cafc64e665fd3311e92001adac7ed50bd88de15c318b60de12c8ed2690"
-      "733507050":
-        name: "uninstall.sh"
-        url_suffix: "uninstall.sh"
-        size: 1666
-        media_type: "application/x-sh"
-        digest: "sha256:0dbe93fd2d96c79b8bd509a4732da8c49abb1e460d3eb9aa0b2848c1f0943748"
-      "733507051":
-        name: "nimbus_amd64.deb.asc"
-        url_suffix: "nimbus_amd64.deb.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:4bbab58865a87e082366741d6134cdb835710a2c45a8d101cd6852b60a7a6d66"
-      "733507052":
-        name: "nimbus-gateway-linux-x64.sha256"
-        url_suffix: "nimbus-gateway-linux-x64.sha256"
-        size: 64
-        digest: "sha256:6dee519e70fd0042935296bce0c21907ad625a84ebf6c6b87adca90f51de2991"
-      "733507053":
-        name: "Nimbus-x86_64.AppImage"
-        url_suffix: "Nimbus-x86_64.AppImage"
-        size: 119850176
-        digest: "sha256:52ad175a47a09d269d6366bdaf11e53ddfa5e34d26a92193055d8b8039367666"
-      "733507054":
-        name: "nimbus-gateway-macos-arm64"
-        url_suffix: "nimbus-gateway-macos-arm64"
-        size: 142774370
-        digest: "sha256:e6caf8fc17d642f8f4848d0e355ba0e7fb512acd65defe3f0bce6730fe5f797a"
-      "733507055":
-        name: "nimbus-gateway-linux-x64"
-        url_suffix: "nimbus-gateway-linux-x64"
-        size: 156076208
-        digest: "sha256:88bbda39c5b11879f598777c5c566b9bf23ce3a439da39f06e56444b8b839451"
-      "733507056":
-        name: "SHA256SUMS"
-        url_suffix: "SHA256SUMS"
-        size: 3385
-        digest: "sha256:092ce494c9523a68732741897a06fce6d322629a50b8f8bb22245deca6afbb10"
-      "733507058":
-        name: "nimbus-headless-macos-x64.pkg"
-        url_suffix: "nimbus-headless-macos-x64.pkg"
-        size: 103073456
-        digest: "sha256:bdd0a327b5a37a82304b8dd8fdef89219336a5d39c57731d8c6da221a42dc4ae"
-      "733507059":
-        name: "nimbus-headless-linux-amd64-v10.45.0.tar.gz"
-        url_suffix: "nimbus-headless-linux-amd64-v10.45.0.tar.gz"
-        size: 118437978
-        media_type: "application/gzip"
-        digest: "sha256:f40aeb9312f24831127e7ad026c74f5e1b3a8d6ca69993ba761ed991aa9127fb"
-      "733507060":
-        name: "nimbus-cli-macos-arm64"
-        url_suffix: "nimbus-cli-macos-arm64"
-        size: 93568610
-        digest: "sha256:89bf8770a0b8643bb8d900c3abd2b47b91a6eb1fccb0a7266aefaf788f890dc6"
-      "733507061":
-        name: "nimbus-cli-linux-x64"
-        url_suffix: "nimbus-cli-linux-x64"
-        size: 113498288
-        digest: "sha256:02658fbc0dc83383edacdbd48701c9e1c2dcdbc6bf21c1eadac197871d344490"
-      "733507062":
-        name: "nimbus-cli-windows-x64.exe"
-        url_suffix: "nimbus-cli-windows-x64.exe"
-        size: 119646208
-        media_type: "application/x-msdos-program"
-        digest: "sha256:ae5fd67a373988e1e0f4e87fb6ddf4e9d53bf99553d0d198d94abe035ab650d9"
-      "733507063":
-        name: "nimbus-verify.sh"
-        url_suffix: "nimbus-verify.sh"
-        size: 8827
-        media_type: "application/x-sh"
-        digest: "sha256:747bbf9a63bacc8713978d4005c71a993fb9e5ffee58e94bc404a266ce6eed6c"
-      "733507064":
-        name: "nimbus_amd64.deb"
-        url_suffix: "nimbus_amd64.deb"
-        size: 93938836
-        media_type: "application/x-debian-package"
-        digest: "sha256:e7ef330190ff6730a842fb743ba0f39dfd26148daa14c6e8973fc5668d5a7bc2"
-      "733507065":
-        name: "install.sh"
-        url_suffix: "install.sh"
-        size: 22979
-        media_type: "application/x-sh"
-        digest: "sha256:69a1c21c950bf7522b0dfc955eb35ed51b58d2ea6ea587692d68c3b4ffbdb7a7"
-      "733507066":
-        name: "nimbus-cli-macos-x64"
-        url_suffix: "nimbus-cli-macos-x64"
-        size: 102542816
-        digest: "sha256:6b90a626ac8e53f2889a710687f5d6ec39e1ec6203bf11900f9a50e11e0a8d9e"
-      "733507068":
-        name: "nimbus-headless-linux-amd64-v10.45.0.tar.gz.asc"
-        url_suffix: "nimbus-headless-linux-amd64-v10.45.0.tar.gz.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:46dc617aad8945da623d5245609f9619794a8a985816e28fd4c05f51596c09a3"
-      "733507069":
-        name: "install.ps1"
-        url_suffix: "install.ps1"
-        size: 32493
-        digest: "sha256:211bdd20aa62a655432f3b3ca35228812c55a2287f4cc214529583bf47ca2c63"
-      "733507071":
-        name: "nimbus-gateway-linux-x64.asc"
-        url_suffix: "nimbus-gateway-linux-x64.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:c9cef045490e35989fc2a0c1fb4d7efc1d2ce59a661ce3584a44ed42a5455149"
-      "733507074":
-        name: "Nimbus-x86_64.AppImage.asc"
-        url_suffix: "Nimbus-x86_64.AppImage.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:c6da5f4cf78e9675da3bc54474a261b1e2ea2e820bc22a06719dbde3d9d797d8"
-      "733507075":
-        name: "nimbus-headless-macos-x64.tar.gz"
-        url_suffix: "nimbus-headless-macos-x64.tar.gz"
-        size: 103106743
-        media_type: "application/gzip"
-        digest: "sha256:882d685eb7bef24a17111eca65c2ad6746741a8ed4cc277ed46720ec07a9a9be"
-      "733511359":
-        name: "latest.json"
-        url_suffix: "latest.json"
-        size: 1422
-        media_type: "application/json"
-        digest: "sha256:e1eca486d927f3939b71bf329f238a2ef65d3a1ebf2b07f6f6297fd73daf33b3"
-  "441147946":
-    tag: "v10.46.0"
-    title: "v10.46.0"
-    url: "https://github.com/nimbus-agent/Nimbus/releases/tag/v10.46.0"
-    created_at: "2026-11-11T01:22:54Z"
-    published_at: "2026-11-11T01:57:13Z"
-    updated_at: "2026-11-11T01:58:19Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/nimbus-agent/Nimbus/zipball/v10.46.0"
-    source_tar_url: "https://api.github.com/repos/nimbus-agent/Nimbus/tarball/v10.46.0"
-    download_base: "https://github.com/nimbus-agent/Nimbus/releases/download/v10.46.0/"
-    assets:
-      "733734765":
-        name: "uninstall.ps1"
-        url_suffix: "uninstall.ps1"
-        size: 7321
-        digest: "sha256:a419dcdb496e5521637a39fa1da2b8c72acb9e2e06e725511a9bce26b111e97c"
-      "733734768":
-        name: "nimbus_amd64.deb.asc"
-        url_suffix: "nimbus_amd64.deb.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:b7f4a75ed419e776775396382a53bdfb0719695afc0fca70931e6e50332ccbd1"
-      "733734769":
-        name: "nimbus-verify.sh"
-        url_suffix: "nimbus-verify.sh"
-        size: 8827
-        media_type: "application/x-sh"
-        digest: "sha256:747bbf9a63bacc8713978d4005c71a993fb9e5ffee58e94bc404a266ce6eed6c"
-      "733734770":
-        name: "nimbus-headless_10.46.0_amd64.deb.asc"
-        url_suffix: "nimbus-headless_10.46.0_amd64.deb.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:b7f4a75ed419e776775396382a53bdfb0719695afc0fca70931e6e50332ccbd1"
-      "733734771":
-        name: "nimbus-headless-10.46.0-x86_64.AppImage.asc"
-        url_suffix: "nimbus-headless-10.46.0-x86_64.AppImage.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:a86472e60038a008bba34858072c6eaf3d31f828e6d23256b7cde6992baa695d"
-      "733734772":
-        name: "nimbus_amd64.deb"
-        url_suffix: "nimbus_amd64.deb"
-        size: 93970260
-        media_type: "application/x-debian-package"
-        digest: "sha256:94ceeeeafca8b2d3b329993acde5afcf145605ba0b05bbe08adc0ec5eb8c80fe"
-      "733734773":
-        name: "nimbus-headless-10.46.0-x86_64.rpm"
-        url_suffix: "nimbus-headless-10.46.0-x86_64.rpm"
-        size: 51253641
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:674326e02023a5df1229077c9c6cdeb34e4d58054441e5f917357df9c035f927"
-      "733734774":
-        name: "uninstall.sh"
-        url_suffix: "uninstall.sh"
-        size: 1666
-        media_type: "application/x-sh"
-        digest: "sha256:0dbe93fd2d96c79b8bd509a4732da8c49abb1e460d3eb9aa0b2848c1f0943748"
-      "733734775":
-        name: "nimbus-headless-linux-amd64-v10.46.0.tar.gz.asc"
-        url_suffix: "nimbus-headless-linux-amd64-v10.46.0.tar.gz.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:d1ed8ac650ad447a253b4c8a2f042729b4fffe1a15c32e27f4195697ee70eb49"
-      "733734776":
-        name: "nimbus-headless-macos-arm64.tar.gz"
-        url_suffix: "nimbus-headless-macos-arm64.tar.gz"
-        size: 97336283
-        media_type: "application/gzip"
-        digest: "sha256:0feaeda4b2ffaae8bc52a2bf1462a9fc321e6d0927b253e36b80a2a02121e1df"
-      "733734777":
-        name: "nimbus-headless-linux-amd64-v10.46.0.tar.gz"
-        url_suffix: "nimbus-headless-linux-amd64-v10.46.0.tar.gz"
-        size: 118445932
-        media_type: "application/gzip"
-        digest: "sha256:615af1dc01a5d48cecf694c3f1b50f213cc0be673d7e8b197288bb0266321520"
-      "733734778":
-        name: "nimbus-gateway-macos-arm64"
-        url_suffix: "nimbus-gateway-macos-arm64"
-        size: 142807394
-        digest: "sha256:a3589529211135acb6a6defdebe96f447d1806ca3786dc4f7d248d952e0fa580"
-      "733734779":
-        name: "nimbus-headless-10.46.0-x86_64.rpm.asc"
-        url_suffix: "nimbus-headless-10.46.0-x86_64.rpm.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:b99ac86f9e275f560c6ee3429d2f2d43d06a0733702bf6341da821b34db1e65e"
-      "733734780":
-        name: "nimbus-gateway-linux-x64.sha256"
-        url_suffix: "nimbus-gateway-linux-x64.sha256"
-        size: 64
-        digest: "sha256:b2c6a43460203e78a2925c43dcdb65c2971f3310141a83f139c8129188cf81ab"
-      "733734781":
-        name: "nimbus-verify.ps1"
-        url_suffix: "nimbus-verify.ps1"
-        size: 7256
-        digest: "sha256:89e0a850a33311d18ab59e9781698146493cb069efcc23af58291a64dc41cd14"
-      "733734782":
-        name: "nimbus-headless-10.46.0-x86_64.AppImage"
-        url_suffix: "nimbus-headless-10.46.0-x86_64.AppImage"
-        size: 119866560
-        digest: "sha256:e6e3cebab99754159a12e0d27f099c8371fbc3c0ae1d576a2da518aafaf97509"
-      "733734783":
-        name: "nimbus-headless-windows-x64.zip"
-        url_suffix: "nimbus-headless-windows-x64.zip"
-        size: 120671262
-        media_type: "zip"
-        digest: "sha256:c11e10f9e505ba094f65596aa2f55435e8c626468a5db105c3941c30f9582409"
-      "733734784":
-        name: "nimbus-headless-macos-x64.tar.gz"
-        url_suffix: "nimbus-headless-macos-x64.tar.gz"
-        size: 103114572
-        media_type: "application/gzip"
-        digest: "sha256:77c178afe9dc1b3438125e4a06dcb19e1fa8d1760e8ea37809295f779a8c15b4"
-      "733734785":
-        name: "nimbus-gateway-macos-x64"
-        url_suffix: "nimbus-gateway-macos-x64"
-        size: 154938848
-        digest: "sha256:ba33c0a0a11658f760ed44111f1eb7e9d44895b7138718613c798a36c3c30807"
-      "733734786":
-        name: "nimbus-gateway-linux-x64.sig"
-        url_suffix: "nimbus-gateway-linux-x64.sig"
-        size: 88
-        media_type: "application/pgp-signature"
-        digest: "sha256:0faec17ad09ee04e81025e1e47f55f4a2cf2cdec087b72d1785d2d25bccc7a69"
-      "733734787":
-        name: "nimbus-v10.46.0-sbom.cdx.json"
-        url_suffix: "nimbus-v10.46.0-sbom.cdx.json"
-        size: 2075613
-        media_type: "application/json"
-        digest: "sha256:f95c357c1bf14eecce6d1f2294e71884abe11cd7ff4520bace7bfdb5cd298c87"
-      "733734788":
-        name: "nimbus-gateway-linux-x64.asc"
-        url_suffix: "nimbus-gateway-linux-x64.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:a317448e67174cae46512e705e455ba92738eb23aa9e4edf849dc5646ac2c4c2"
-      "733734789":
-        name: "SHA256SUMS"
-        url_suffix: "SHA256SUMS"
-        size: 3385
-        digest: "sha256:6fb906f98d506a533ac05090635688f2300e1bb3cd85d74229131d956e0a0e4f"
-      "733734790":
-        name: "nimbus-headless_10.46.0_amd64.deb"
-        url_suffix: "nimbus-headless_10.46.0_amd64.deb"
-        size: 93970260
-        media_type: "application/x-debian-package"
-        digest: "sha256:94ceeeeafca8b2d3b329993acde5afcf145605ba0b05bbe08adc0ec5eb8c80fe"
-      "733734791":
-        name: "nimbus-cli-linux-x64"
-        url_suffix: "nimbus-cli-linux-x64"
-        size: 113498288
-        digest: "sha256:029f9848f6c3bd97d4856a037f0eb13b45419d861593470e82b4a1987bc5f4aa"
-      "733734792":
-        name: "nimbus-headless-macos-arm64.pkg"
-        url_suffix: "nimbus-headless-macos-arm64.pkg"
-        size: 97304378
-        digest: "sha256:b32da5d5ba17122afcc935d8224d590eb779f4ab1a4389aa3ec8544a5c157ffd"
-      "733734793":
-        name: "install.sh"
-        url_suffix: "install.sh"
-        size: 22979
-        media_type: "application/x-sh"
-        digest: "sha256:69a1c21c950bf7522b0dfc955eb35ed51b58d2ea6ea587692d68c3b4ffbdb7a7"
-      "733734794":
-        name: "nimbus-cli-macos-arm64"
-        url_suffix: "nimbus-cli-macos-arm64"
-        size: 93568610
-        digest: "sha256:c71c7420f671432843f8447d8d61306d07e6e7a8d2ef8be8948db15e1075e4cb"
-      "733734795":
-        name: "install.ps1"
-        url_suffix: "install.ps1"
-        size: 32493
-        digest: "sha256:211bdd20aa62a655432f3b3ca35228812c55a2287f4cc214529583bf47ca2c63"
-      "733734796":
-        name: "nimbus-headless-macos-x64.pkg"
-        url_suffix: "nimbus-headless-macos-x64.pkg"
-        size: 103079292
-        digest: "sha256:a6647a1a91d9133357d824bfb36cc2dabf93236214ec9988c9858bf2c3073440"
-      "733734797":
-        name: "nimbus-cli-windows-x64.exe"
-        url_suffix: "nimbus-cli-windows-x64.exe"
-        size: 119646208
-        media_type: "application/x-msdos-program"
-        digest: "sha256:159b8fd1965dc43b5bee29a14a7a30836515ee8f5d002537741abed285c7d651"
-      "733734798":
-        name: "SHA256SUMS.asc"
-        url_suffix: "SHA256SUMS.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:658c2b568f4b8b10eb362b7df37a9ea1e6066e0e608c24c9bf81089507900ef8"
-      "733734799":
-        name: "Nimbus-x86_64.AppImage.asc"
-        url_suffix: "Nimbus-x86_64.AppImage.asc"
-        size: 228
-        media_type: "application/pgp-keys"
-        digest: "sha256:a86472e60038a008bba34858072c6eaf3d31f828e6d23256b7cde6992baa695d"
-      "733734801":
-        name: "nimbus-gateway-windows-x64.exe"
-        url_suffix: "nimbus-gateway-windows-x64.exe"
-        size: 152752640
-        media_type: "application/x-msdos-program"
-        digest: "sha256:1b3eec7fb34bb5a9d7071f44ec032930c7b7a9ab0f1dc4aacc32b54104fc9ed3"
-      "733734802":
-        name: "Nimbus-x86_64.AppImage"
-        url_suffix: "Nimbus-x86_64.AppImage"
-        size: 119866560
-        digest: "sha256:e6e3cebab99754159a12e0d27f099c8371fbc3c0ae1d576a2da518aafaf97509"
-      "733734803":
-        name: "nimbus-headless-windows-x64.msi"
-        url_suffix: "nimbus-headless-windows-x64.msi"
-        size: 101982208
-        media_type: "application/x-msdownload"
-        digest: "sha256:e699bf13e0af985be9e31641b632f674f31181e7e1fb87c14887df69a3d51a50"
-      "733734805":
-        name: "nimbus-cli-macos-x64"
-        url_suffix: "nimbus-cli-macos-x64"
-        size: 102542816
-        digest: "sha256:d75189bc622098f73eb89a3e25f9da0485c2ae48b9f6b11483c116999422ba70"
-      "733734810":
-        name: "nimbus-gateway-linux-x64"
-        url_suffix: "nimbus-gateway-linux-x64"
-        size: 156108976
-        digest: "sha256:cf257d7fd2aa32afc5342f94c7ffd58817f204f8be7671a079a4042bf581924e"
-      "733738290":
-        name: "latest.json"
-        url_suffix: "latest.json"
-        size: 1422
-        media_type: "application/json"
-        digest: "sha256:de72a58ce85ed6bc58db6ab3230abf10df15b047dccae7300c7708dd391523ea"
   "441292484":
     tag: "v10.47.0"
     title: "v10.47.0"
@@ -7402,3 +5785,1620 @@ releases:
         size: 1417
         media_type: "application/json"
         digest: "sha256:26e4409e3f5ee0e147c360ebea5e4d917e75a9669d855bb43d5758ef8b3dc244"
+  "449202575":
+    tag: "v11.2.0"
+    title: "v11.2.0"
+    url: "https://github.com/nimbus-agent/Nimbus/releases/tag/v11.2.0"
+    created_at: "2026-11-17T20:32:56Z"
+    published_at: "2026-11-17T21:11:37Z"
+    updated_at: "2026-11-17T21:12:57Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/nimbus-agent/Nimbus/zipball/v11.2.0"
+    source_tar_url: "https://api.github.com/repos/nimbus-agent/Nimbus/tarball/v11.2.0"
+    download_base: "https://github.com/nimbus-agent/Nimbus/releases/download/v11.2.0/"
+    assets:
+      "760649462":
+        name: "nimbus_amd64.deb.asc"
+        url_suffix: "nimbus_amd64.deb.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:e9e0f190a79676fb95fcfab6520890864ce015c1395d43b2bdede1dfb69db718"
+      "760649463":
+        name: "nimbus-gateway-linux-x64.sig"
+        url_suffix: "nimbus-gateway-linux-x64.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:dc3cd1b83c421b5ba265e4b90544423fe5addf2bd57360d3f25e55da84aa2670"
+      "760649464":
+        name: "nimbus-headless-windows-x64.zip"
+        url_suffix: "nimbus-headless-windows-x64.zip"
+        size: 120863628
+        media_type: "zip"
+        digest: "sha256:eadbbdc20c0b58b33f0a19e926039255453b90da62263b8dc8c50b1125ecc114"
+      "760649465":
+        name: "nimbus-cli-windows-x64.exe"
+        url_suffix: "nimbus-cli-windows-x64.exe"
+        size: 119298048
+        media_type: "application/x-msdos-program"
+        digest: "sha256:f699d71d284c7097fe626b623f652a48f953d66a4017ac96f73693db631cb1f1"
+      "760649466":
+        name: "nimbus-headless-11.2.0-x86_64.rpm.asc"
+        url_suffix: "nimbus-headless-11.2.0-x86_64.rpm.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:7f10c2d6ae508303bf9bf84fec20daa7629236af3d0761af818771356ca74185"
+      "760649467":
+        name: "nimbus-gateway-linux-x64.asc"
+        url_suffix: "nimbus-gateway-linux-x64.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:9a22cb0d798e55dc8f9e43b111585dad7f61777eccf5ab7a00d44a37669e5057"
+      "760649468":
+        name: "nimbus-gateway-linux-x64.sha256"
+        url_suffix: "nimbus-gateway-linux-x64.sha256"
+        size: 64
+        digest: "sha256:70c1520d53ace3a45be2b64f25fc0eb1c884ba3f4516b08b4d662b91999d0f3d"
+      "760649469":
+        name: "nimbus-headless-macos-x64.tar.gz"
+        url_suffix: "nimbus-headless-macos-x64.tar.gz"
+        size: 103307811
+        media_type: "application/gzip"
+        digest: "sha256:b529ec0c0b43c338cf441cdeab22830d4f50b4f269a9ef8cb8348cea27b97bac"
+      "760649470":
+        name: "nimbus-headless-macos-x64.pkg"
+        url_suffix: "nimbus-headless-macos-x64.pkg"
+        size: 103269261
+        digest: "sha256:7737bb6afd69b179fae21c130f90bff55f69440affe2de9040f821c17e425d56"
+      "760649471":
+        name: "nimbus-verify.ps1"
+        url_suffix: "nimbus-verify.ps1"
+        size: 7256
+        digest: "sha256:89e0a850a33311d18ab59e9781698146493cb069efcc23af58291a64dc41cd14"
+      "760649472":
+        name: "nimbus-headless-11.2.0-x86_64.AppImage.asc"
+        url_suffix: "nimbus-headless-11.2.0-x86_64.AppImage.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:329f3809d3effac31ab367fee8aaed9bb47c34af550984d5b2da74cf53ac3db5"
+      "760649473":
+        name: "nimbus-headless-macos-arm64.pkg"
+        url_suffix: "nimbus-headless-macos-arm64.pkg"
+        size: 97498672
+        digest: "sha256:7dc94c9e32f8c933f8b2763c82f85442b5deda783340f07ff44e1394181fce06"
+      "760649475":
+        name: "nimbus-gateway-windows-x64.exe"
+        url_suffix: "nimbus-gateway-windows-x64.exe"
+        size: 153711104
+        media_type: "application/x-msdos-program"
+        digest: "sha256:1a30fea0bf1967d8b9f1259126245cf540468ead313b862a9f85274067684c04"
+      "760649476":
+        name: "uninstall.sh"
+        url_suffix: "uninstall.sh"
+        size: 1666
+        media_type: "application/x-sh"
+        digest: "sha256:0dbe93fd2d96c79b8bd509a4732da8c49abb1e460d3eb9aa0b2848c1f0943748"
+      "760649477":
+        name: "SHA256SUMS.asc"
+        url_suffix: "SHA256SUMS.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:4d8bf1093df922d9830456ecf40ca02e4fc9b1f894aa2a4d51161a3c68440aea"
+      "760649478":
+        name: "nimbus-headless-windows-x64.msi"
+        url_suffix: "nimbus-headless-windows-x64.msi"
+        size: 102141952
+        media_type: "application/x-msdownload"
+        digest: "sha256:33a941ad40c474dd03bc4e07163cf2c9ae06bd346415d1f2c7d074cfa0ef32b9"
+      "760649479":
+        name: "nimbus-cli-macos-arm64"
+        url_suffix: "nimbus-cli-macos-arm64"
+        size: 93205346
+        digest: "sha256:16fe7541bbbb8a64d29ae64c9dd875e4a83f9763dfae55445d414a7501244ce9"
+      "760649480":
+        name: "nimbus-headless-11.2.0-x86_64.AppImage"
+        url_suffix: "nimbus-headless-11.2.0-x86_64.AppImage"
+        size: 120054976
+        digest: "sha256:8bbfa15e9c28122504773a1eec7f1d0f9058c135b57840f936b4e253b092576f"
+      "760649481":
+        name: "nimbus_amd64.deb"
+        url_suffix: "nimbus_amd64.deb"
+        size: 94075602
+        media_type: "application/x-debian-package"
+        digest: "sha256:30c055848664f4ae29bdc875c5c20bbdcc3625495ba4c0da20647494d99f74fa"
+      "760649482":
+        name: "install.sh"
+        url_suffix: "install.sh"
+        size: 22979
+        media_type: "application/x-sh"
+        digest: "sha256:69a1c21c950bf7522b0dfc955eb35ed51b58d2ea6ea587692d68c3b4ffbdb7a7"
+      "760649484":
+        name: "nimbus-gateway-linux-x64"
+        url_suffix: "nimbus-gateway-linux-x64"
+        size: 157067440
+        digest: "sha256:54f1b0105f0febd319b9427788896e02900508ac4509c409ad90e862f103108c"
+      "760649487":
+        name: "SHA256SUMS"
+        url_suffix: "SHA256SUMS"
+        size: 3376
+        digest: "sha256:1b80487e51b24a35a84e94754f2fdb46bee1d341befa5d0bf258b649467b367a"
+      "760649488":
+        name: "nimbus-cli-macos-x64"
+        url_suffix: "nimbus-cli-macos-x64"
+        size: 102182368
+        digest: "sha256:14a2ada26b7a1d9d1c38b974f0934357ec2b2e4210f03a1eadc5515eaee3d834"
+      "760649490":
+        name: "nimbus-headless_11.2.0_amd64.deb.asc"
+        url_suffix: "nimbus-headless_11.2.0_amd64.deb.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:e9e0f190a79676fb95fcfab6520890864ce015c1395d43b2bdede1dfb69db718"
+      "760649491":
+        name: "nimbus-headless-linux-amd64-v11.2.0.tar.gz"
+        url_suffix: "nimbus-headless-linux-amd64-v11.2.0.tar.gz"
+        size: 118641696
+        media_type: "application/gzip"
+        digest: "sha256:37a5fa5e9944666276ba93c3b18d4df561615fae017f0384ba5e80924492dc59"
+      "760649492":
+        name: "uninstall.ps1"
+        url_suffix: "uninstall.ps1"
+        size: 7321
+        digest: "sha256:a419dcdb496e5521637a39fa1da2b8c72acb9e2e06e725511a9bce26b111e97c"
+      "760649493":
+        name: "nimbus-v11.2.0-sbom.cdx.json"
+        url_suffix: "nimbus-v11.2.0-sbom.cdx.json"
+        size: 2133998
+        media_type: "application/json"
+        digest: "sha256:6e6790a83333335d9109d8848b5aba1e051c8f6786fa54358b5cad3fb7f85a7a"
+      "760649494":
+        name: "nimbus-headless-macos-arm64.tar.gz"
+        url_suffix: "nimbus-headless-macos-arm64.tar.gz"
+        size: 97527989
+        media_type: "application/gzip"
+        digest: "sha256:9f4263a9fc39db11e0001bf17e8ff5ec1ed808bec81ee4bc7b61041e3dd89390"
+      "760649495":
+        name: "install.ps1"
+        url_suffix: "install.ps1"
+        size: 32493
+        digest: "sha256:211bdd20aa62a655432f3b3ca35228812c55a2287f4cc214529583bf47ca2c63"
+      "760649496":
+        name: "nimbus-cli-linux-x64"
+        url_suffix: "nimbus-cli-linux-x64"
+        size: 113150128
+        digest: "sha256:1585a1534e8d67d1bdd40ff6aaf66002b9d583e16be20ab9418962431b3632ba"
+      "760649497":
+        name: "nimbus-verify.sh"
+        url_suffix: "nimbus-verify.sh"
+        size: 8827
+        media_type: "application/x-sh"
+        digest: "sha256:747bbf9a63bacc8713978d4005c71a993fb9e5ffee58e94bc404a266ce6eed6c"
+      "760649498":
+        name: "nimbus-headless-11.2.0-x86_64.rpm"
+        url_suffix: "nimbus-headless-11.2.0-x86_64.rpm"
+        size: 51437632
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:c0e7bd881003a0d3bf350454a0a2c79b3ea3ac4a2d3d40476baebe376a90172e"
+      "760649500":
+        name: "nimbus-headless_11.2.0_amd64.deb"
+        url_suffix: "nimbus-headless_11.2.0_amd64.deb"
+        size: 94075602
+        media_type: "application/x-debian-package"
+        digest: "sha256:30c055848664f4ae29bdc875c5c20bbdcc3625495ba4c0da20647494d99f74fa"
+      "760649502":
+        name: "nimbus-headless-linux-amd64-v11.2.0.tar.gz.asc"
+        url_suffix: "nimbus-headless-linux-amd64-v11.2.0.tar.gz.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:9282cbf8bd210aacd2c0a8d757ae3d46f931c80c7a46daaf534cf9903731e9ba"
+      "760649505":
+        name: "nimbus-gateway-macos-arm64"
+        url_suffix: "nimbus-gateway-macos-arm64"
+        size: 143781602
+        digest: "sha256:77d17f64a31cfbffc57e37b0963179d749159fb0595168fced985d73c892de19"
+      "760649506":
+        name: "nimbus-gateway-macos-x64"
+        url_suffix: "nimbus-gateway-macos-x64"
+        size: 155905504
+        digest: "sha256:fffc533b35bd21d6c29175245856a4dc392674c5e7f2cb102c803d1e8f6e7edf"
+      "760649507":
+        name: "Nimbus-x86_64.AppImage.asc"
+        url_suffix: "Nimbus-x86_64.AppImage.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:329f3809d3effac31ab367fee8aaed9bb47c34af550984d5b2da74cf53ac3db5"
+      "760649508":
+        name: "Nimbus-x86_64.AppImage"
+        url_suffix: "Nimbus-x86_64.AppImage"
+        size: 120054976
+        digest: "sha256:8bbfa15e9c28122504773a1eec7f1d0f9058c135b57840f936b4e253b092576f"
+      "760654905":
+        name: "latest.json"
+        url_suffix: "latest.json"
+        size: 1417
+        media_type: "application/json"
+        digest: "sha256:b15d6b766746d6a5059f94903b2644ef16b07b8cada678f95173c644636660b5"
+  "449263910":
+    tag: "v11.3.0"
+    title: "v11.3.0"
+    url: "https://github.com/nimbus-agent/Nimbus/releases/tag/v11.3.0"
+    created_at: "2026-11-17T21:25:53Z"
+    published_at: "2026-11-17T22:14:58Z"
+    updated_at: "2026-11-17T22:16:26Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/nimbus-agent/Nimbus/zipball/v11.3.0"
+    source_tar_url: "https://api.github.com/repos/nimbus-agent/Nimbus/tarball/v11.3.0"
+    download_base: "https://github.com/nimbus-agent/Nimbus/releases/download/v11.3.0/"
+    assets:
+      "760844881":
+        name: "nimbus_amd64.deb.asc"
+        url_suffix: "nimbus_amd64.deb.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:bd30ee7961a0ea11e00772f92b48c813c5e52a391b1784428acc1b29aa35478d"
+      "760844883":
+        name: "uninstall.sh"
+        url_suffix: "uninstall.sh"
+        size: 1666
+        media_type: "application/x-sh"
+        digest: "sha256:0dbe93fd2d96c79b8bd509a4732da8c49abb1e460d3eb9aa0b2848c1f0943748"
+      "760844887":
+        name: "nimbus-headless-11.3.0-x86_64.AppImage.asc"
+        url_suffix: "nimbus-headless-11.3.0-x86_64.AppImage.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:5f3b2822c6de7b060f98ef81fb2c4404228338f14e5c6a69cedb8a55dc130d04"
+      "760844889":
+        name: "nimbus-headless-windows-x64.msi"
+        url_suffix: "nimbus-headless-windows-x64.msi"
+        size: 102166528
+        media_type: "application/x-msdownload"
+        digest: "sha256:a67ce36f0d1e93992be30d070d4d3e4b4a2300d9cb7e1ff83d1124f963e17200"
+      "760844890":
+        name: "nimbus_amd64.deb"
+        url_suffix: "nimbus_amd64.deb"
+        size: 94085644
+        media_type: "application/x-debian-package"
+        digest: "sha256:56509b0ae28eb6d6c64122c0dbedca2bd3c4703da6164eee9d2c63d3b8189350"
+      "760844891":
+        name: "nimbus-headless-linux-amd64-v11.3.0.tar.gz.asc"
+        url_suffix: "nimbus-headless-linux-amd64-v11.3.0.tar.gz.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:58d6c7fc8f864075448c2361236748c8fa71cf328596396591964f12f3d1ec27"
+      "760844892":
+        name: "nimbus-v11.3.0-sbom.cdx.json"
+        url_suffix: "nimbus-v11.3.0-sbom.cdx.json"
+        size: 2137031
+        media_type: "application/json"
+        digest: "sha256:e98e449599503f538a10bb4dc9ac2e969a3d69518c1c446f7b9e347e81d1783b"
+      "760844894":
+        name: "nimbus-gateway-macos-arm64"
+        url_suffix: "nimbus-gateway-macos-arm64"
+        size: 143847650
+        digest: "sha256:a04b49d059e2529b173ea9f316e83dcc0c2a3e33be2c5dc9f98f3648d9eb7d6d"
+      "760844895":
+        name: "nimbus-gateway-macos-x64"
+        url_suffix: "nimbus-gateway-macos-x64"
+        size: 155971040
+        digest: "sha256:69e60b447886616b19959731f0a3edbd7b15b26f921eabb00faaf925c5c96834"
+      "760844896":
+        name: "nimbus-cli-linux-x64"
+        url_suffix: "nimbus-cli-linux-x64"
+        size: 113162416
+        digest: "sha256:3ebeded315c819e214d0c520513158846eda3f4899cba79a38fea1de92306cef"
+      "760844897":
+        name: "nimbus-headless-macos-x64.tar.gz"
+        url_suffix: "nimbus-headless-macos-x64.tar.gz"
+        size: 103326413
+        media_type: "application/gzip"
+        digest: "sha256:19164d2d0b133e3220190055aef680ebbab09446733f8d455c4b494a20a0311f"
+      "760844899":
+        name: "nimbus-verify.sh"
+        url_suffix: "nimbus-verify.sh"
+        size: 8827
+        media_type: "application/x-sh"
+        digest: "sha256:747bbf9a63bacc8713978d4005c71a993fb9e5ffee58e94bc404a266ce6eed6c"
+      "760844900":
+        name: "nimbus-cli-macos-x64"
+        url_suffix: "nimbus-cli-macos-x64"
+        size: 102198752
+        digest: "sha256:ebb55193029fd8d3ec919228449403074e7000b00ee1ef7b7065371b28b133a0"
+      "760844901":
+        name: "uninstall.ps1"
+        url_suffix: "uninstall.ps1"
+        size: 7321
+        digest: "sha256:a419dcdb496e5521637a39fa1da2b8c72acb9e2e06e725511a9bce26b111e97c"
+      "760844902":
+        name: "nimbus-gateway-linux-x64.asc"
+        url_suffix: "nimbus-gateway-linux-x64.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:c1a136be0ff351d431bc8430d219b783ab956825bd36c0623c2337effc99812a"
+      "760844904":
+        name: "nimbus-headless_11.3.0_amd64.deb.asc"
+        url_suffix: "nimbus-headless_11.3.0_amd64.deb.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:bd30ee7961a0ea11e00772f92b48c813c5e52a391b1784428acc1b29aa35478d"
+      "760844905":
+        name: "nimbus-cli-windows-x64.exe"
+        url_suffix: "nimbus-cli-windows-x64.exe"
+        size: 119310336
+        media_type: "application/x-msdos-program"
+        digest: "sha256:9fa303c9508e642aa48b582893fefd3dfc641e05aa6cdf7f4565dd4ebf41bdb9"
+      "760844906":
+        name: "nimbus-gateway-linux-x64"
+        url_suffix: "nimbus-gateway-linux-x64"
+        size: 157137072
+        digest: "sha256:b9414bab0efcf446b3fa8789a3ca2b78a4a081f5917e45c24c43aa5b14bb8e18"
+      "760844907":
+        name: "nimbus-headless-macos-x64.pkg"
+        url_suffix: "nimbus-headless-macos-x64.pkg"
+        size: 103288085
+        digest: "sha256:bcc4d1063076181c76fabe1048690303ddc3726cbc72e9084f0249b868f4b9cb"
+      "760844908":
+        name: "nimbus-gateway-linux-x64.sha256"
+        url_suffix: "nimbus-gateway-linux-x64.sha256"
+        size: 64
+        digest: "sha256:bcff6d323d6b94d1c777e23a75f8b99fb31383a5a25dd685fedb0363ee68780e"
+      "760844909":
+        name: "nimbus-headless_11.3.0_amd64.deb"
+        url_suffix: "nimbus-headless_11.3.0_amd64.deb"
+        size: 94085644
+        media_type: "application/x-debian-package"
+        digest: "sha256:56509b0ae28eb6d6c64122c0dbedca2bd3c4703da6164eee9d2c63d3b8189350"
+      "760844910":
+        name: "Nimbus-x86_64.AppImage.asc"
+        url_suffix: "Nimbus-x86_64.AppImage.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:5f3b2822c6de7b060f98ef81fb2c4404228338f14e5c6a69cedb8a55dc130d04"
+      "760844911":
+        name: "nimbus-headless-macos-arm64.tar.gz"
+        url_suffix: "nimbus-headless-macos-arm64.tar.gz"
+        size: 97556245
+        media_type: "application/gzip"
+        digest: "sha256:62082312c20ec912f59732aa4045797dabda8e1a26cd0e19c09e5b93fd10fd36"
+      "760844912":
+        name: "nimbus-headless-linux-amd64-v11.3.0.tar.gz"
+        url_suffix: "nimbus-headless-linux-amd64-v11.3.0.tar.gz"
+        size: 118659434
+        media_type: "application/gzip"
+        digest: "sha256:2fcc2100d11fca00566e3f7e516dd8256c1f9459a4e6617fa08d7bb8fed05bb7"
+      "760844913":
+        name: "nimbus-gateway-windows-x64.exe"
+        url_suffix: "nimbus-gateway-windows-x64.exe"
+        size: 153782784
+        media_type: "application/x-msdos-program"
+        digest: "sha256:759acc9332722d7ca973f580a87bea299147a96e90591e61ea4dab61738ff2cd"
+      "760844914":
+        name: "nimbus-headless-11.3.0-x86_64.AppImage"
+        url_suffix: "nimbus-headless-11.3.0-x86_64.AppImage"
+        size: 120067264
+        digest: "sha256:416f155d1bdb01d05b54aea6ff3602bb0e68ff571b03651b0177bcb523b505cb"
+      "760844915":
+        name: "install.sh"
+        url_suffix: "install.sh"
+        size: 22979
+        media_type: "application/x-sh"
+        digest: "sha256:69a1c21c950bf7522b0dfc955eb35ed51b58d2ea6ea587692d68c3b4ffbdb7a7"
+      "760844916":
+        name: "nimbus-headless-11.3.0-x86_64.rpm.asc"
+        url_suffix: "nimbus-headless-11.3.0-x86_64.rpm.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:2aab9f295963c5cc6b5807ce8ec4a8799f99bfa295b46b6eb2a328f33e6104d6"
+      "760844918":
+        name: "SHA256SUMS"
+        url_suffix: "SHA256SUMS"
+        size: 3376
+        digest: "sha256:79d308c7515978b291344ac724002e2f5c5d3133fe87a936ff67d70a2f1ad8b4"
+      "760844921":
+        name: "nimbus-verify.ps1"
+        url_suffix: "nimbus-verify.ps1"
+        size: 7256
+        digest: "sha256:89e0a850a33311d18ab59e9781698146493cb069efcc23af58291a64dc41cd14"
+      "760844922":
+        name: "SHA256SUMS.asc"
+        url_suffix: "SHA256SUMS.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:86740c1040549b662e1ebebec462717f500ed82ec0dc50a5db779882ce09bfa6"
+      "760844925":
+        name: "Nimbus-x86_64.AppImage"
+        url_suffix: "Nimbus-x86_64.AppImage"
+        size: 120067264
+        digest: "sha256:416f155d1bdb01d05b54aea6ff3602bb0e68ff571b03651b0177bcb523b505cb"
+      "760844926":
+        name: "nimbus-headless-macos-arm64.pkg"
+        url_suffix: "nimbus-headless-macos-arm64.pkg"
+        size: 97524055
+        digest: "sha256:889a8b54ae7f9a8ccc85f6b42f73b5e5afcfc896ed561238d6442b04fb153c08"
+      "760844928":
+        name: "nimbus-headless-11.3.0-x86_64.rpm"
+        url_suffix: "nimbus-headless-11.3.0-x86_64.rpm"
+        size: 51468933
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:c66b998fbf0d88c18212e8980214dac28d47ca0e89a41255b9e942cf90050a96"
+      "760844929":
+        name: "install.ps1"
+        url_suffix: "install.ps1"
+        size: 32493
+        digest: "sha256:211bdd20aa62a655432f3b3ca35228812c55a2287f4cc214529583bf47ca2c63"
+      "760844931":
+        name: "nimbus-headless-windows-x64.zip"
+        url_suffix: "nimbus-headless-windows-x64.zip"
+        size: 120884152
+        media_type: "zip"
+        digest: "sha256:7f892fa97d8fad6f4077bdb10f02e96aabd722ea6e1877ae2e114304199c6b1d"
+      "760844933":
+        name: "nimbus-cli-macos-arm64"
+        url_suffix: "nimbus-cli-macos-arm64"
+        size: 93221858
+        digest: "sha256:de5b073501615dc2d5b478f043d2867f1bbd982c604829f458ab23bccad1bd58"
+      "760844934":
+        name: "nimbus-gateway-linux-x64.sig"
+        url_suffix: "nimbus-gateway-linux-x64.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:81985ab9c13263baa371c9ccea731d67e6fa35bdd78402a766d606db69f28e48"
+      "760850024":
+        name: "latest.json"
+        url_suffix: "latest.json"
+        size: 1417
+        media_type: "application/json"
+        digest: "sha256:45c5b28dcc06d421eb3e9fe959065dd49e5cd184bb1a39564c27a676a54639ad"
+  "449305408":
+    tag: "v11.4.0"
+    title: "v11.4.0"
+    url: "https://github.com/nimbus-agent/Nimbus/releases/tag/v11.4.0"
+    created_at: "2026-11-17T22:19:45Z"
+    published_at: "2026-11-17T23:04:06Z"
+    updated_at: "2026-11-17T23:05:41Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/nimbus-agent/Nimbus/zipball/v11.4.0"
+    source_tar_url: "https://api.github.com/repos/nimbus-agent/Nimbus/tarball/v11.4.0"
+    download_base: "https://github.com/nimbus-agent/Nimbus/releases/download/v11.4.0/"
+    assets:
+      "760991857":
+        name: "nimbus-headless-macos-arm64.pkg"
+        url_suffix: "nimbus-headless-macos-arm64.pkg"
+        size: 97535284
+        digest: "sha256:f06924a292d709cd723a2688f1c5e23e3f53938c28d399d0ff641a23a7eccf27"
+      "760991859":
+        name: "uninstall.sh"
+        url_suffix: "uninstall.sh"
+        size: 1666
+        media_type: "application/x-sh"
+        digest: "sha256:0dbe93fd2d96c79b8bd509a4732da8c49abb1e460d3eb9aa0b2848c1f0943748"
+      "760991861":
+        name: "nimbus-gateway-linux-x64.sha256"
+        url_suffix: "nimbus-gateway-linux-x64.sha256"
+        size: 64
+        digest: "sha256:fdc61b7e5c3324ca6dcaa2c4b8d43b32d5336019c7f20466507dae8a96f89104"
+      "760991862":
+        name: "nimbus-verify.ps1"
+        url_suffix: "nimbus-verify.ps1"
+        size: 7256
+        digest: "sha256:89e0a850a33311d18ab59e9781698146493cb069efcc23af58291a64dc41cd14"
+      "760991863":
+        name: "nimbus-headless-linux-amd64-v11.4.0.tar.gz.asc"
+        url_suffix: "nimbus-headless-linux-amd64-v11.4.0.tar.gz.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:760c05aea99ee27f021123e06521a50299fa3f62b4b486e6875bf3e368eee2cf"
+      "760991865":
+        name: "nimbus-headless-11.4.0-x86_64.rpm"
+        url_suffix: "nimbus-headless-11.4.0-x86_64.rpm"
+        size: 51448061
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:a67b0c64fecd67c5497688b5188f4a9508ca8a0fbc24f5c4987cf24db5ce322e"
+      "760991866":
+        name: "nimbus-headless-windows-x64.msi"
+        url_suffix: "nimbus-headless-windows-x64.msi"
+        size: 102166528
+        media_type: "application/x-msdownload"
+        digest: "sha256:d8c7fa6f876468132b61aea0904a4c5b9e0bf4192d5c7312fd14c4d3c80154b2"
+      "760991867":
+        name: "nimbus-gateway-linux-x64.sig"
+        url_suffix: "nimbus-gateway-linux-x64.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:69e616d943096ba3ce4d87994b9e60ba04b6e64fdee12f9819c1f1ca12f1a066"
+      "760991868":
+        name: "nimbus-headless-macos-x64.pkg"
+        url_suffix: "nimbus-headless-macos-x64.pkg"
+        size: 103304212
+        digest: "sha256:90920fcc1368a51e3aff904da5818773ec90eeb959b4f9f9beeb247c3c03c39b"
+      "760991869":
+        name: "nimbus-headless-11.4.0-x86_64.AppImage.asc"
+        url_suffix: "nimbus-headless-11.4.0-x86_64.AppImage.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:e9306a16555b2345aaa06b582ce01ba0a0a256ade71d98bd37c6590f8ef07940"
+      "760991870":
+        name: "nimbus-gateway-macos-x64"
+        url_suffix: "nimbus-gateway-macos-x64"
+        size: 156003808
+        digest: "sha256:096f0ae7c3f19fb5bafe7b7ddffc66c3ee4c35b6420bb0956f4031bde7089b41"
+      "760991872":
+        name: "nimbus-headless-11.4.0-x86_64.AppImage"
+        url_suffix: "nimbus-headless-11.4.0-x86_64.AppImage"
+        size: 120091840
+        digest: "sha256:4338ec29bf4774d6868da2b082a783fecf09b135ab3889e58fe2bc847b2a3f0a"
+      "760991873":
+        name: "nimbus-cli-linux-x64"
+        url_suffix: "nimbus-cli-linux-x64"
+        size: 113170608
+        digest: "sha256:bc7c61855592be1cc40fcc0e087047eb2473dab265169adeb56432da3355f695"
+      "760991874":
+        name: "SHA256SUMS.asc"
+        url_suffix: "SHA256SUMS.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:175d259d56e671a1bf2fb8e53a187e6f0f20d8c6450e06f2a869cb8b4dd685a5"
+      "760991876":
+        name: "nimbus-headless_11.4.0_amd64.deb"
+        url_suffix: "nimbus-headless_11.4.0_amd64.deb"
+        size: 94093116
+        media_type: "application/x-debian-package"
+        digest: "sha256:120620cc056b0e0b85cff7e98b3da15ec0f5e3e036013b7d23c4f61f83f94275"
+      "760991877":
+        name: "nimbus-headless-windows-x64.zip"
+        url_suffix: "nimbus-headless-windows-x64.zip"
+        size: 120896500
+        media_type: "zip"
+        digest: "sha256:f1dfaac38cc83cff6868a5f15aed085074ae8f82c9cfd550537259381c72d7e4"
+      "760991878":
+        name: "nimbus-gateway-macos-arm64"
+        url_suffix: "nimbus-gateway-macos-arm64"
+        size: 143880674
+        digest: "sha256:f6c5b8677104f96e88a4c038c9f98dd41e6cf3d272e66f52072a5aff0b3b6891"
+      "760991879":
+        name: "nimbus-gateway-windows-x64.exe"
+        url_suffix: "nimbus-gateway-windows-x64.exe"
+        size: 153818624
+        media_type: "application/x-msdos-program"
+        digest: "sha256:91f50fec832bfbabd2c4b8cdd86ed307539514aca1b62c6509ce2888c177021d"
+      "760991880":
+        name: "nimbus-headless-macos-x64.tar.gz"
+        url_suffix: "nimbus-headless-macos-x64.tar.gz"
+        size: 103340862
+        media_type: "application/gzip"
+        digest: "sha256:dd75842ce376bd9382da6f2ace292084ea3323d5c9b8afae3764da7ed9868380"
+      "760991881":
+        name: "nimbus-cli-windows-x64.exe"
+        url_suffix: "nimbus-cli-windows-x64.exe"
+        size: 119318528
+        media_type: "application/x-msdos-program"
+        digest: "sha256:ece18b50ac98181860047ed7fed28c57bfbb1a0ca3c5140eacd4f6afb2bb6dd2"
+      "760991882":
+        name: "nimbus_amd64.deb.asc"
+        url_suffix: "nimbus_amd64.deb.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:9aa3ae227e8ee99f4db3d165ee5a490c5bed9efca6ca658ce6978237f42a2021"
+      "760991883":
+        name: "nimbus-verify.sh"
+        url_suffix: "nimbus-verify.sh"
+        size: 8827
+        media_type: "application/x-sh"
+        digest: "sha256:747bbf9a63bacc8713978d4005c71a993fb9e5ffee58e94bc404a266ce6eed6c"
+      "760991884":
+        name: "nimbus-gateway-linux-x64.asc"
+        url_suffix: "nimbus-gateway-linux-x64.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:66dad3f8676581c76720f3affbd4b70e50d09a4aa52efe07033b004dbaba1f4f"
+      "760991885":
+        name: "nimbus_amd64.deb"
+        url_suffix: "nimbus_amd64.deb"
+        size: 94093116
+        media_type: "application/x-debian-package"
+        digest: "sha256:120620cc056b0e0b85cff7e98b3da15ec0f5e3e036013b7d23c4f61f83f94275"
+      "760991887":
+        name: "SHA256SUMS"
+        url_suffix: "SHA256SUMS"
+        size: 3376
+        digest: "sha256:09162c9711f65b9fae415ca1a1335cf24b10fb9a21e7419767218e432f3102aa"
+      "760991888":
+        name: "nimbus-gateway-linux-x64"
+        url_suffix: "nimbus-gateway-linux-x64"
+        size: 157173936
+        digest: "sha256:63caaf7a8991704576f2d8e4a053f62baa57b47994d665bf9589f70866edae77"
+      "760991889":
+        name: "nimbus-headless-macos-arm64.tar.gz"
+        url_suffix: "nimbus-headless-macos-arm64.tar.gz"
+        size: 97564924
+        media_type: "application/gzip"
+        digest: "sha256:e19ec29b12e1c63cb11a6a0ca5090fb409fc7c1356a9b3d9d91cd0959b639135"
+      "760991890":
+        name: "nimbus-headless-linux-amd64-v11.4.0.tar.gz"
+        url_suffix: "nimbus-headless-linux-amd64-v11.4.0.tar.gz"
+        size: 118672101
+        media_type: "application/gzip"
+        digest: "sha256:52ba22d0726ba364cdc78c96872b462a9a997efb9db123ba65706f0c172a9845"
+      "760991892":
+        name: "nimbus-headless_11.4.0_amd64.deb.asc"
+        url_suffix: "nimbus-headless_11.4.0_amd64.deb.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:9aa3ae227e8ee99f4db3d165ee5a490c5bed9efca6ca658ce6978237f42a2021"
+      "760991893":
+        name: "nimbus-cli-macos-arm64"
+        url_suffix: "nimbus-cli-macos-arm64"
+        size: 93238370
+        digest: "sha256:99c2299af2bc50532cbd82fa6a805b77363338a3f8539ff111d334f8ec39da07"
+      "760991894":
+        name: "nimbus-v11.4.0-sbom.cdx.json"
+        url_suffix: "nimbus-v11.4.0-sbom.cdx.json"
+        size: 2135997
+        media_type: "application/json"
+        digest: "sha256:0559f6185b94bcdf5e1a43856efd39e4bc3f3736b95548379e133051d27cbec9"
+      "760991895":
+        name: "Nimbus-x86_64.AppImage"
+        url_suffix: "Nimbus-x86_64.AppImage"
+        size: 120091840
+        digest: "sha256:4338ec29bf4774d6868da2b082a783fecf09b135ab3889e58fe2bc847b2a3f0a"
+      "760991896":
+        name: "install.sh"
+        url_suffix: "install.sh"
+        size: 22979
+        media_type: "application/x-sh"
+        digest: "sha256:69a1c21c950bf7522b0dfc955eb35ed51b58d2ea6ea587692d68c3b4ffbdb7a7"
+      "760991897":
+        name: "install.ps1"
+        url_suffix: "install.ps1"
+        size: 32493
+        digest: "sha256:211bdd20aa62a655432f3b3ca35228812c55a2287f4cc214529583bf47ca2c63"
+      "760991898":
+        name: "nimbus-headless-11.4.0-x86_64.rpm.asc"
+        url_suffix: "nimbus-headless-11.4.0-x86_64.rpm.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:c0d65113b8b53b4cb7d5f7dc9b69615b33580210122e8220d9aa9f27ccdd71d7"
+      "760991899":
+        name: "Nimbus-x86_64.AppImage.asc"
+        url_suffix: "Nimbus-x86_64.AppImage.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:e9306a16555b2345aaa06b582ce01ba0a0a256ade71d98bd37c6590f8ef07940"
+      "760991901":
+        name: "nimbus-cli-macos-x64"
+        url_suffix: "nimbus-cli-macos-x64"
+        size: 102215136
+        digest: "sha256:6fe4ac195a392832cbacbb396f6bae91e05963132c9709cb25266b0cc9ddfa4e"
+      "760991902":
+        name: "uninstall.ps1"
+        url_suffix: "uninstall.ps1"
+        size: 7321
+        digest: "sha256:a419dcdb496e5521637a39fa1da2b8c72acb9e2e06e725511a9bce26b111e97c"
+      "760997082":
+        name: "latest.json"
+        url_suffix: "latest.json"
+        size: 1417
+        media_type: "application/json"
+        digest: "sha256:a7c401a4cbbeed6e2107d3bb5b86cd2a745b5b7460788f89ebb4b1ef1b9c73a3"
+  "449652217":
+    tag: "v11.6.0"
+    title: "v11.6.0"
+    url: "https://github.com/nimbus-agent/Nimbus/releases/tag/v11.6.0"
+    created_at: "2026-11-18T06:52:22Z"
+    published_at: "2026-11-18T07:32:31Z"
+    updated_at: "2026-11-18T07:34:01Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/nimbus-agent/Nimbus/zipball/v11.6.0"
+    source_tar_url: "https://api.github.com/repos/nimbus-agent/Nimbus/tarball/v11.6.0"
+    download_base: "https://github.com/nimbus-agent/Nimbus/releases/download/v11.6.0/"
+    assets:
+      "762398726":
+        name: "nimbus-headless-11.6.0-x86_64.rpm"
+        url_suffix: "nimbus-headless-11.6.0-x86_64.rpm"
+        size: 51456650
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:e00b751968ac8555753f0ea13ed56ea420e6643ea2c0d8beb86fa2cb4361b99d"
+      "762398727":
+        name: "nimbus-headless-macos-arm64.pkg"
+        url_suffix: "nimbus-headless-macos-arm64.pkg"
+        size: 97552829
+        digest: "sha256:26697f8379eb7117e0b22d44695692512943b01ee4334d3dee87bb3f65e14373"
+      "762398729":
+        name: "nimbus-headless-macos-arm64.tar.gz"
+        url_suffix: "nimbus-headless-macos-arm64.tar.gz"
+        size: 97584054
+        media_type: "application/gzip"
+        digest: "sha256:c47ab80ac9e74ef5d6e916bfdd7a136711c253ba385c89d91d26402cc40f630f"
+      "762398730":
+        name: "nimbus-gateway-linux-x64.asc"
+        url_suffix: "nimbus-gateway-linux-x64.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:2307d3fef3700fd546efc2e695c997fbded1b860ac5b90588d9dbfac1e04f1dc"
+      "762398731":
+        name: "nimbus-verify.sh"
+        url_suffix: "nimbus-verify.sh"
+        size: 8827
+        media_type: "application/x-sh"
+        digest: "sha256:747bbf9a63bacc8713978d4005c71a993fb9e5ffee58e94bc404a266ce6eed6c"
+      "762398732":
+        name: "nimbus-gateway-macos-arm64"
+        url_suffix: "nimbus-gateway-macos-arm64"
+        size: 143930210
+        digest: "sha256:9512d7ad9c30e4efa6558d5ad47d30a59571ba3f3bb81d5445f1aed2eb9cd071"
+      "762398733":
+        name: "nimbus-cli-macos-x64"
+        url_suffix: "nimbus-cli-macos-x64"
+        size: 102215136
+        digest: "sha256:8eaf1cd98e281e5c07bd5f810fe81014a48d7a3f75a39bb4cdb70b97c734c717"
+      "762398734":
+        name: "nimbus-headless-linux-amd64-v11.6.0.tar.gz.asc"
+        url_suffix: "nimbus-headless-linux-amd64-v11.6.0.tar.gz.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:9abf7bdab1cc854b799948810b2b449d23d3395705a2aa17e09742ba2c2ff14a"
+      "762398737":
+        name: "Nimbus-x86_64.AppImage.asc"
+        url_suffix: "Nimbus-x86_64.AppImage.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:ac62ec618df1c272fc1f54f8bc9f078fd9480c8bcd7aa4f10588125e083d5cde"
+      "762398738":
+        name: "nimbus-headless-macos-x64.tar.gz"
+        url_suffix: "nimbus-headless-macos-x64.tar.gz"
+        size: 103354881
+        media_type: "application/gzip"
+        digest: "sha256:1c750c4d5f3e57f203a73969f76e3bfd7b75b0333873d79349d63f02da21da23"
+      "762398739":
+        name: "nimbus-gateway-windows-x64.exe"
+        url_suffix: "nimbus-gateway-windows-x64.exe"
+        size: 153869312
+        media_type: "application/x-msdos-program"
+        digest: "sha256:a60795d7631786a8e53d71dac3ae70db0621166bbd20b3ca380093c1c9257337"
+      "762398740":
+        name: "nimbus-headless-11.6.0-x86_64.rpm.asc"
+        url_suffix: "nimbus-headless-11.6.0-x86_64.rpm.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:daddf86ddf0d6277324ba86049761f071f61d420e2883d45b6053d36144f112f"
+      "762398743":
+        name: "nimbus-headless-linux-amd64-v11.6.0.tar.gz"
+        url_suffix: "nimbus-headless-linux-amd64-v11.6.0.tar.gz"
+        size: 118690130
+        media_type: "application/gzip"
+        digest: "sha256:c1a6e0003bd76b10c531d38a702200faf9c3b1dbfd689cb0820fae87ab7c5f83"
+      "762398744":
+        name: "uninstall.ps1"
+        url_suffix: "uninstall.ps1"
+        size: 7321
+        digest: "sha256:a419dcdb496e5521637a39fa1da2b8c72acb9e2e06e725511a9bce26b111e97c"
+      "762398745":
+        name: "nimbus-headless-windows-x64.zip"
+        url_suffix: "nimbus-headless-windows-x64.zip"
+        size: 120912742
+        media_type: "zip"
+        digest: "sha256:216d2a74f762c9491f8ace05a7825b7b38c89c7a19c6e1ed1b237f35f35b0e57"
+      "762398746":
+        name: "nimbus-cli-macos-arm64"
+        url_suffix: "nimbus-cli-macos-arm64"
+        size: 93238370
+        digest: "sha256:f9ea3bbdd0cdc39a062bf77ec8755891dcb83ef97d4cdbde7a5405eaeb040f71"
+      "762398747":
+        name: "nimbus-headless_11.6.0_amd64.deb.asc"
+        url_suffix: "nimbus-headless_11.6.0_amd64.deb.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:32c9e51ba8f82a3f9bf1f93b2e2714d6d6215d9cdd13f1bd4f6929145f115b81"
+      "762398748":
+        name: "SHA256SUMS"
+        url_suffix: "SHA256SUMS"
+        size: 3376
+        digest: "sha256:4c34966fb3031aa9d843400c2b6486da9d2f8af68607c006b305b8dcd862044e"
+      "762398749":
+        name: "nimbus-gateway-linux-x64.sha256"
+        url_suffix: "nimbus-gateway-linux-x64.sha256"
+        size: 64
+        digest: "sha256:66f64c0b037746efacec1a07d668a4b82b22cb9ba45bd99aedba788ecd15602f"
+      "762398750":
+        name: "nimbus-headless-11.6.0-x86_64.AppImage.asc"
+        url_suffix: "nimbus-headless-11.6.0-x86_64.AppImage.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:ac62ec618df1c272fc1f54f8bc9f078fd9480c8bcd7aa4f10588125e083d5cde"
+      "762398751":
+        name: "uninstall.sh"
+        url_suffix: "uninstall.sh"
+        size: 1666
+        media_type: "application/x-sh"
+        digest: "sha256:0dbe93fd2d96c79b8bd509a4732da8c49abb1e460d3eb9aa0b2848c1f0943748"
+      "762398752":
+        name: "nimbus-headless-11.6.0-x86_64.AppImage"
+        url_suffix: "nimbus-headless-11.6.0-x86_64.AppImage"
+        size: 120108224
+        digest: "sha256:86b5a96d242e2e227115eb0d993b4bd933a39b0f133ca173e7fa4031662b9779"
+      "762398753":
+        name: "SHA256SUMS.asc"
+        url_suffix: "SHA256SUMS.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:7a905647181a1f8d9be9a6fdda2effc7fcbfc59df3a186665fa1f04430005621"
+      "762398754":
+        name: "nimbus-gateway-macos-x64"
+        url_suffix: "nimbus-gateway-macos-x64"
+        size: 156052960
+        digest: "sha256:1ddf79b49a8c33c5f89a86fc3dadebb8bf7bb26bb433042b0a3ae36ce1cf3ff6"
+      "762398755":
+        name: "nimbus-v11.6.0-sbom.cdx.json"
+        url_suffix: "nimbus-v11.6.0-sbom.cdx.json"
+        size: 2134050
+        media_type: "application/json"
+        digest: "sha256:4cdd34fcaeefd8c813fd6e0b4fdb006644ab5d0555f8aa3f5423e92373c4c9af"
+      "762398756":
+        name: "nimbus-headless_11.6.0_amd64.deb"
+        url_suffix: "nimbus-headless_11.6.0_amd64.deb"
+        size: 94097158
+        media_type: "application/x-debian-package"
+        digest: "sha256:af3b0c09131f62a247f229aba33a488ed5cd44e3d4683bfa669ee2300aa50c2c"
+      "762398758":
+        name: "nimbus_amd64.deb"
+        url_suffix: "nimbus_amd64.deb"
+        size: 94097158
+        media_type: "application/x-debian-package"
+        digest: "sha256:af3b0c09131f62a247f229aba33a488ed5cd44e3d4683bfa669ee2300aa50c2c"
+      "762398759":
+        name: "nimbus-headless-macos-x64.pkg"
+        url_suffix: "nimbus-headless-macos-x64.pkg"
+        size: 103319161
+        digest: "sha256:8de935d310b29d124dbaa59e144227f0805bc15193271a80d1bb85ee3dd1e20d"
+      "762398760":
+        name: "install.ps1"
+        url_suffix: "install.ps1"
+        size: 32493
+        digest: "sha256:211bdd20aa62a655432f3b3ca35228812c55a2287f4cc214529583bf47ca2c63"
+      "762398761":
+        name: "nimbus_amd64.deb.asc"
+        url_suffix: "nimbus_amd64.deb.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:32c9e51ba8f82a3f9bf1f93b2e2714d6d6215d9cdd13f1bd4f6929145f115b81"
+      "762398762":
+        name: "nimbus-gateway-linux-x64.sig"
+        url_suffix: "nimbus-gateway-linux-x64.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:f4ced13ce4802e736e691f3f3ea19b10fe5ad0bb9618225496507a5e3809d07c"
+      "762398763":
+        name: "nimbus-verify.ps1"
+        url_suffix: "nimbus-verify.ps1"
+        size: 7256
+        digest: "sha256:89e0a850a33311d18ab59e9781698146493cb069efcc23af58291a64dc41cd14"
+      "762398764":
+        name: "nimbus-cli-windows-x64.exe"
+        url_suffix: "nimbus-cli-windows-x64.exe"
+        size: 119331328
+        media_type: "application/x-msdos-program"
+        digest: "sha256:e6278c9766319f35941fb9f7ca9f2f7884556f530fabe0156818ffed44df972e"
+      "762398766":
+        name: "nimbus-gateway-linux-x64"
+        url_suffix: "nimbus-gateway-linux-x64"
+        size: 157223088
+        digest: "sha256:c5f686b3448b7370192287b2f961e8871e6c6482f85d938be23714aaf98b2933"
+      "762398767":
+        name: "nimbus-headless-windows-x64.msi"
+        url_suffix: "nimbus-headless-windows-x64.msi"
+        size: 102182912
+        media_type: "application/x-msdownload"
+        digest: "sha256:d9ba929f521bc1c8ac28f8410c6fb5ae14d7a24c1d8b19790dfba8271b97e375"
+      "762398769":
+        name: "Nimbus-x86_64.AppImage"
+        url_suffix: "Nimbus-x86_64.AppImage"
+        size: 120108224
+        digest: "sha256:86b5a96d242e2e227115eb0d993b4bd933a39b0f133ca173e7fa4031662b9779"
+      "762398772":
+        name: "install.sh"
+        url_suffix: "install.sh"
+        size: 22979
+        media_type: "application/x-sh"
+        digest: "sha256:69a1c21c950bf7522b0dfc955eb35ed51b58d2ea6ea587692d68c3b4ffbdb7a7"
+      "762398776":
+        name: "nimbus-cli-linux-x64"
+        url_suffix: "nimbus-cli-linux-x64"
+        size: 113182896
+        digest: "sha256:67735b3efd93a65661001c5cf040301cbe7f6d974f1fdb276a66fdc13c30d8b0"
+      "762404259":
+        name: "latest.json"
+        url_suffix: "latest.json"
+        size: 1417
+        media_type: "application/json"
+        digest: "sha256:9922745789a0a3057a2a735a3172ef756edd53430bfed621c1cbee9dd9f3e735"
+  "449697041":
+    tag: "v11.7.0"
+    title: "v11.7.0"
+    url: "https://github.com/nimbus-agent/Nimbus/releases/tag/v11.7.0"
+    created_at: "2026-11-18T07:48:19Z"
+    published_at: "2026-11-18T08:24:34Z"
+    updated_at: "2026-11-18T08:25:52Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/nimbus-agent/Nimbus/zipball/v11.7.0"
+    source_tar_url: "https://api.github.com/repos/nimbus-agent/Nimbus/tarball/v11.7.0"
+    download_base: "https://github.com/nimbus-agent/Nimbus/releases/download/v11.7.0/"
+    assets:
+      "762559456":
+        name: "nimbus-verify.sh"
+        url_suffix: "nimbus-verify.sh"
+        size: 8827
+        media_type: "application/x-sh"
+        digest: "sha256:747bbf9a63bacc8713978d4005c71a993fb9e5ffee58e94bc404a266ce6eed6c"
+      "762559458":
+        name: "uninstall.sh"
+        url_suffix: "uninstall.sh"
+        size: 1666
+        media_type: "application/x-sh"
+        digest: "sha256:0dbe93fd2d96c79b8bd509a4732da8c49abb1e460d3eb9aa0b2848c1f0943748"
+      "762559460":
+        name: "nimbus-headless-macos-x64.pkg"
+        url_suffix: "nimbus-headless-macos-x64.pkg"
+        size: 103319151
+        digest: "sha256:4ca1e6c1bd81483f0438ce24df533d45b792547b8c677968822de9162d5a661d"
+      "762559461":
+        name: "nimbus-headless-windows-x64.zip"
+        url_suffix: "nimbus-headless-windows-x64.zip"
+        size: 120912707
+        media_type: "zip"
+        digest: "sha256:3c60e76d1b6d7aa5e1d672b2c3e1358a445133bdf07ed3364e75fa1c4ccea8c6"
+      "762559462":
+        name: "uninstall.ps1"
+        url_suffix: "uninstall.ps1"
+        size: 7321
+        digest: "sha256:a419dcdb496e5521637a39fa1da2b8c72acb9e2e06e725511a9bce26b111e97c"
+      "762559463":
+        name: "nimbus-cli-linux-x64"
+        url_suffix: "nimbus-cli-linux-x64"
+        size: 113182896
+        digest: "sha256:30b419a06e0d9aa20205efdf7eec8c7c2cdeedd9f5106e23457da24c3176c6fd"
+      "762559464":
+        name: "nimbus-headless-11.7.0-x86_64.rpm.asc"
+        url_suffix: "nimbus-headless-11.7.0-x86_64.rpm.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:3e13b5eef61c0cd7080aed88610fd74b5d19fcbd13e023ea387110ba2be2f0af"
+      "762559465":
+        name: "nimbus-headless-11.7.0-x86_64.AppImage"
+        url_suffix: "nimbus-headless-11.7.0-x86_64.AppImage"
+        size: 120108224
+        digest: "sha256:4cd02fbd5d5a34951551a06bb74e471f7d0f13024797690ff1de6936026d7b97"
+      "762559466":
+        name: "nimbus-headless-windows-x64.msi"
+        url_suffix: "nimbus-headless-windows-x64.msi"
+        size: 102178816
+        media_type: "application/x-msdownload"
+        digest: "sha256:70d87c2b99e0c9f94e9f684a605acdbe27151fe96afcc08fb7eb00ce58d4e48c"
+      "762559468":
+        name: "nimbus-headless_11.7.0_amd64.deb"
+        url_suffix: "nimbus-headless_11.7.0_amd64.deb"
+        size: 94098410
+        media_type: "application/x-debian-package"
+        digest: "sha256:255fc24b545638fffefb0e34499a6f5f69a179458b202655a44b4993274fd352"
+      "762559469":
+        name: "nimbus-headless_11.7.0_amd64.deb.asc"
+        url_suffix: "nimbus-headless_11.7.0_amd64.deb.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:453f9d912bb7237484151d5b5fbe0bc1d8774e8c0195385ddd49769fe4d4c805"
+      "762559470":
+        name: "nimbus-headless-macos-x64.tar.gz"
+        url_suffix: "nimbus-headless-macos-x64.tar.gz"
+        size: 103354718
+        media_type: "application/gzip"
+        digest: "sha256:926e8119ffcdc6495de50955843b5ead753bff80365fee5a9f23b9b58d0b42ef"
+      "762559471":
+        name: "nimbus-headless-11.7.0-x86_64.rpm"
+        url_suffix: "nimbus-headless-11.7.0-x86_64.rpm"
+        size: 51457933
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:98d4a82e485bf72c3fd7005417a60e072c75f2eba4676fb662bab1db6afd1bd5"
+      "762559472":
+        name: "install.sh"
+        url_suffix: "install.sh"
+        size: 22979
+        media_type: "application/x-sh"
+        digest: "sha256:69a1c21c950bf7522b0dfc955eb35ed51b58d2ea6ea587692d68c3b4ffbdb7a7"
+      "762559473":
+        name: "nimbus_amd64.deb.asc"
+        url_suffix: "nimbus_amd64.deb.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:453f9d912bb7237484151d5b5fbe0bc1d8774e8c0195385ddd49769fe4d4c805"
+      "762559474":
+        name: "nimbus-v11.7.0-sbom.cdx.json"
+        url_suffix: "nimbus-v11.7.0-sbom.cdx.json"
+        size: 2133998
+        media_type: "application/json"
+        digest: "sha256:e8a027aa1a6c77cec1ed89386bf829600edb8b8c491466f5e66073e109d4d2b6"
+      "762559477":
+        name: "nimbus-gateway-windows-x64.exe"
+        url_suffix: "nimbus-gateway-windows-x64.exe"
+        size: 153869312
+        media_type: "application/x-msdos-program"
+        digest: "sha256:5b948402a519ef747c0744b73c6771fadbce2a1c7cb4678a2ff7790d311d1391"
+      "762559478":
+        name: "nimbus-gateway-linux-x64.sha256"
+        url_suffix: "nimbus-gateway-linux-x64.sha256"
+        size: 64
+        digest: "sha256:138edcbb54b920e076411bbbc8db27ffa876aadcdd485bc39e9bac314a9239b9"
+      "762559479":
+        name: "nimbus-headless-macos-arm64.pkg"
+        url_suffix: "nimbus-headless-macos-arm64.pkg"
+        size: 97552873
+        digest: "sha256:568268d78bb010b8054215df9ca0637039c83dc411122fec199ed1fed94be38c"
+      "762559480":
+        name: "nimbus-headless-linux-amd64-v11.7.0.tar.gz.asc"
+        url_suffix: "nimbus-headless-linux-amd64-v11.7.0.tar.gz.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:223dc3976d556f186faaa61bb96e6f9a2fa6fb04b772b0a9d18fd06197c37fe3"
+      "762559481":
+        name: "nimbus_amd64.deb"
+        url_suffix: "nimbus_amd64.deb"
+        size: 94098410
+        media_type: "application/x-debian-package"
+        digest: "sha256:255fc24b545638fffefb0e34499a6f5f69a179458b202655a44b4993274fd352"
+      "762559482":
+        name: "nimbus-gateway-macos-arm64"
+        url_suffix: "nimbus-gateway-macos-arm64"
+        size: 143930210
+        digest: "sha256:1501fa07353da26a5e66cf5ba2577bdef32efd93623d991c02448bab1cd20a6e"
+      "762559483":
+        name: "SHA256SUMS"
+        url_suffix: "SHA256SUMS"
+        size: 3376
+        digest: "sha256:5a16e7449d6b907fc75f20831094178fd3d388e70a0f8856c78ba6d8a15fffc8"
+      "762559484":
+        name: "install.ps1"
+        url_suffix: "install.ps1"
+        size: 32493
+        digest: "sha256:211bdd20aa62a655432f3b3ca35228812c55a2287f4cc214529583bf47ca2c63"
+      "762559486":
+        name: "nimbus-cli-windows-x64.exe"
+        url_suffix: "nimbus-cli-windows-x64.exe"
+        size: 119331328
+        media_type: "application/x-msdos-program"
+        digest: "sha256:ad94a3f0045f8bf2570187bdb103f5ab4db9cb518a95a4f1fa5a053391ec8e7a"
+      "762559487":
+        name: "nimbus-gateway-linux-x64"
+        url_suffix: "nimbus-gateway-linux-x64"
+        size: 157227184
+        digest: "sha256:5639327fbe9ea57ecd64d504acd2c938b7a679c818b9d57c6608470791975b3b"
+      "762559488":
+        name: "nimbus-headless-11.7.0-x86_64.AppImage.asc"
+        url_suffix: "nimbus-headless-11.7.0-x86_64.AppImage.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:819012729d491bab6c68a9060b375d550680c0fe3ce2732a5a1b1aa8a59e2d99"
+      "762559489":
+        name: "nimbus-gateway-linux-x64.asc"
+        url_suffix: "nimbus-gateway-linux-x64.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:b6f1ec0928bb12a4603cb9c7944e8214e043f989b274b1d00ea9b8ce7dc58261"
+      "762559491":
+        name: "nimbus-headless-linux-amd64-v11.7.0.tar.gz"
+        url_suffix: "nimbus-headless-linux-amd64-v11.7.0.tar.gz"
+        size: 118689974
+        media_type: "application/gzip"
+        digest: "sha256:19bba73e0550fb0c905aac61bc8a51ffd14df9211910f210a79f81e1a932c28f"
+      "762559492":
+        name: "nimbus-cli-macos-arm64"
+        url_suffix: "nimbus-cli-macos-arm64"
+        size: 93238370
+        digest: "sha256:e62ee49110156efdf7efa5013e48fd0f3ea773321a7a6d9ad86aa1209b18e150"
+      "762559493":
+        name: "nimbus-verify.ps1"
+        url_suffix: "nimbus-verify.ps1"
+        size: 7256
+        digest: "sha256:89e0a850a33311d18ab59e9781698146493cb069efcc23af58291a64dc41cd14"
+      "762559494":
+        name: "SHA256SUMS.asc"
+        url_suffix: "SHA256SUMS.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:8c4eab7de85bdae175446069a4c955fb5b5fb56de537f424d7252b2c9abc9329"
+      "762559495":
+        name: "nimbus-gateway-linux-x64.sig"
+        url_suffix: "nimbus-gateway-linux-x64.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:2946a6374a49fecc0b1cb344b6c70a7c5816cd6f22aa80ede1862bcca4679229"
+      "762559496":
+        name: "nimbus-cli-macos-x64"
+        url_suffix: "nimbus-cli-macos-x64"
+        size: 102215136
+        digest: "sha256:182cb8616ea56366beffba4c46bd1df51b52d046d7489e72ed5934bbdd60696e"
+      "762559497":
+        name: "Nimbus-x86_64.AppImage"
+        url_suffix: "Nimbus-x86_64.AppImage"
+        size: 120108224
+        digest: "sha256:4cd02fbd5d5a34951551a06bb74e471f7d0f13024797690ff1de6936026d7b97"
+      "762559498":
+        name: "nimbus-gateway-macos-x64"
+        url_suffix: "nimbus-gateway-macos-x64"
+        size: 156052960
+        digest: "sha256:c84743455bd9c00df1a48c037b94e4787d44d884adffa1d804aba580a1b02037"
+      "762559499":
+        name: "nimbus-headless-macos-arm64.tar.gz"
+        url_suffix: "nimbus-headless-macos-arm64.tar.gz"
+        size: 97584012
+        media_type: "application/gzip"
+        digest: "sha256:c9f6851521cf50327acc93d6d5b5625a66d7cac7b5cb11d29eebce4773bf5b63"
+      "762559500":
+        name: "Nimbus-x86_64.AppImage.asc"
+        url_suffix: "Nimbus-x86_64.AppImage.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:819012729d491bab6c68a9060b375d550680c0fe3ce2732a5a1b1aa8a59e2d99"
+      "762564376":
+        name: "latest.json"
+        url_suffix: "latest.json"
+        size: 1417
+        media_type: "application/json"
+        digest: "sha256:b0068d4d8a4408b97216f67ced199def433106faebb879e99a94f1b748689d0b"
+  "450397945":
+    tag: "v11.8.0"
+    title: "v11.8.0"
+    url: "https://github.com/nimbus-agent/Nimbus/releases/tag/v11.8.0"
+    created_at: "2026-11-18T17:28:51Z"
+    published_at: "2026-11-18T18:34:33Z"
+    updated_at: "2026-11-18T18:36:08Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/nimbus-agent/Nimbus/zipball/v11.8.0"
+    source_tar_url: "https://api.github.com/repos/nimbus-agent/Nimbus/tarball/v11.8.0"
+    download_base: "https://github.com/nimbus-agent/Nimbus/releases/download/v11.8.0/"
+    assets:
+      "764522854":
+        name: "nimbus-headless_11.8.0_amd64.deb.asc"
+        url_suffix: "nimbus-headless_11.8.0_amd64.deb.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:8b89c92492f09b420e5889bfac677c50524e97c62f9aac237b2a130a1699d495"
+      "764522857":
+        name: "nimbus-gateway-linux-x64.sha256"
+        url_suffix: "nimbus-gateway-linux-x64.sha256"
+        size: 64
+        digest: "sha256:b4193caae301849aea565da365e115a740cb74c216685c6bbbddd340a3577ad4"
+      "764522858":
+        name: "nimbus-gateway-linux-x64.asc"
+        url_suffix: "nimbus-gateway-linux-x64.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:c198b5672ecdfca8004ec50f884c9cb459dc0b5d3372793a6a0813a907f35195"
+      "764522859":
+        name: "nimbus-headless-windows-x64.zip"
+        url_suffix: "nimbus-headless-windows-x64.zip"
+        size: 120964945
+        media_type: "zip"
+        digest: "sha256:a2484fd5660fd9001de51cfdbb08ba4151c1f07ec76491fbfcb6fe9d4eeb0825"
+      "764522860":
+        name: "nimbus-headless-macos-x64.tar.gz"
+        url_suffix: "nimbus-headless-macos-x64.tar.gz"
+        size: 103405690
+        media_type: "application/gzip"
+        digest: "sha256:3835838730e1aed02a14d8557ee56dc3bb7cf74d38143eb424593fe2098bf07a"
+      "764522861":
+        name: "uninstall.sh"
+        url_suffix: "uninstall.sh"
+        size: 1666
+        media_type: "application/x-sh"
+        digest: "sha256:0dbe93fd2d96c79b8bd509a4732da8c49abb1e460d3eb9aa0b2848c1f0943748"
+      "764522862":
+        name: "nimbus-headless-macos-x64.pkg"
+        url_suffix: "nimbus-headless-macos-x64.pkg"
+        size: 103371941
+        digest: "sha256:d76e656cbc55a5d73a72521cc2b6cbcf5330c9bb11c711f192604ff24dd6f802"
+      "764522863":
+        name: "nimbus-gateway-macos-arm64"
+        url_suffix: "nimbus-gateway-macos-arm64"
+        size: 144210914
+        digest: "sha256:e0a4ec28643d721faf118ff52c55667888564252bd90ae04000c6d0de859dac7"
+      "764522864":
+        name: "nimbus-headless-macos-arm64.tar.gz"
+        url_suffix: "nimbus-headless-macos-arm64.tar.gz"
+        size: 97631173
+        media_type: "application/gzip"
+        digest: "sha256:9f03777581b61de050e5e012f9d7fa86d2fe65082cddf5941b84838a55644210"
+      "764522865":
+        name: "uninstall.ps1"
+        url_suffix: "uninstall.ps1"
+        size: 7321
+        digest: "sha256:a419dcdb496e5521637a39fa1da2b8c72acb9e2e06e725511a9bce26b111e97c"
+      "764522866":
+        name: "nimbus-headless-11.8.0-x86_64.AppImage"
+        url_suffix: "nimbus-headless-11.8.0-x86_64.AppImage"
+        size: 120157376
+        digest: "sha256:d44560fe6264eb1d9718cb061101dbd1fea05b316e8728795fb895eb1b94cdd8"
+      "764522867":
+        name: "nimbus-cli-macos-arm64"
+        url_suffix: "nimbus-cli-macos-arm64"
+        size: 93254882
+        digest: "sha256:d426519923c6b1d5e0e6411e730779fc5158abe4ee605098eefbc2162bb2bb72"
+      "764522868":
+        name: "nimbus-headless-11.8.0-x86_64.AppImage.asc"
+        url_suffix: "nimbus-headless-11.8.0-x86_64.AppImage.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:e27473065a583de319e0334cd3019daedab4e3e4cb04dab2eae503165040e0e8"
+      "764522869":
+        name: "nimbus-gateway-macos-x64"
+        url_suffix: "nimbus-gateway-macos-x64"
+        size: 156331488
+        digest: "sha256:b41baf937761d089ca7b25e9200bc8e69464e762a6f92ff0f7f214eb03d66ba5"
+      "764522870":
+        name: "nimbus-headless-macos-arm64.pkg"
+        url_suffix: "nimbus-headless-macos-arm64.pkg"
+        size: 97607410
+        digest: "sha256:0f5b510e37b41a5f883b7a3dcd31a4bec2ad678356a4a5ccec92268e60381c09"
+      "764522871":
+        name: "nimbus-gateway-windows-x64.exe"
+        url_suffix: "nimbus-gateway-windows-x64.exe"
+        size: 154139136
+        media_type: "application/x-msdos-program"
+        digest: "sha256:c3b3585e72548b670d8c8575742246122500757a1bcc8cf78c29acf49f11b333"
+      "764522872":
+        name: "nimbus-cli-linux-x64"
+        url_suffix: "nimbus-cli-linux-x64"
+        size: 113186992
+        digest: "sha256:95941e2cd17c1e92a230b4b1ef8e5a8ad66de92ffac17f95dbedc0366f42296c"
+      "764522874":
+        name: "install.sh"
+        url_suffix: "install.sh"
+        size: 22979
+        media_type: "application/x-sh"
+        digest: "sha256:69a1c21c950bf7522b0dfc955eb35ed51b58d2ea6ea587692d68c3b4ffbdb7a7"
+      "764522875":
+        name: "nimbus-headless-linux-amd64-v11.8.0.tar.gz.asc"
+        url_suffix: "nimbus-headless-linux-amd64-v11.8.0.tar.gz.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:283952baff4f13a2d9f0970abd61b7638b8d6070b2dc9bd2e72d088f4386f6d9"
+      "764522879":
+        name: "SHA256SUMS.asc"
+        url_suffix: "SHA256SUMS.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:3e23d69d0e8e8f8fab4681ad9d3dca018224f1f6af3e6299073ea78e3f9ae44f"
+      "764522880":
+        name: "nimbus-headless-11.8.0-x86_64.rpm.asc"
+        url_suffix: "nimbus-headless-11.8.0-x86_64.rpm.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:c31e55a1415f4ccde872f94c667926d6ccfdee78023ed362b33992708f2aa24a"
+      "764522881":
+        name: "nimbus-v11.8.0-sbom.cdx.json"
+        url_suffix: "nimbus-v11.8.0-sbom.cdx.json"
+        size: 2139846
+        media_type: "application/json"
+        digest: "sha256:3276d02dc254ead323488372a8e8eb280e4ae8443e0f7765c45469eb4ca0afe7"
+      "764522882":
+        name: "nimbus-verify.sh"
+        url_suffix: "nimbus-verify.sh"
+        size: 8827
+        media_type: "application/x-sh"
+        digest: "sha256:747bbf9a63bacc8713978d4005c71a993fb9e5ffee58e94bc404a266ce6eed6c"
+      "764522883":
+        name: "nimbus_amd64.deb.asc"
+        url_suffix: "nimbus_amd64.deb.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:8b89c92492f09b420e5889bfac677c50524e97c62f9aac237b2a130a1699d495"
+      "764522884":
+        name: "nimbus-headless-windows-x64.msi"
+        url_suffix: "nimbus-headless-windows-x64.msi"
+        size: 102223872
+        media_type: "application/x-msdownload"
+        digest: "sha256:d3e91ed642dd228a61f27be3a08b285a06ca237bb95e6fa2cafb9b6c08d77bdf"
+      "764522885":
+        name: "nimbus-cli-macos-x64"
+        url_suffix: "nimbus-cli-macos-x64"
+        size: 102231520
+        digest: "sha256:f8d8cc51153f9362e2fd19146993ed7ec606df8705585af5b549a90d2b8011b3"
+      "764522886":
+        name: "nimbus-headless-linux-amd64-v11.8.0.tar.gz"
+        url_suffix: "nimbus-headless-linux-amd64-v11.8.0.tar.gz"
+        size: 118741218
+        media_type: "application/gzip"
+        digest: "sha256:fcb00952a92b2865c6d6ab5ccc887d6d9d592fd18bf4343cbcb7aafff2b3368d"
+      "764522887":
+        name: "nimbus-headless_11.8.0_amd64.deb"
+        url_suffix: "nimbus-headless_11.8.0_amd64.deb"
+        size: 94143226
+        media_type: "application/x-debian-package"
+        digest: "sha256:4f9b38132d5be733f8c5d5382ed9e204d109ef09ebc16e3b7dd7418ef041d785"
+      "764522888":
+        name: "SHA256SUMS"
+        url_suffix: "SHA256SUMS"
+        size: 3376
+        digest: "sha256:8fa3a2b34dce9ce227e6396a9af6a09ee2a840bac56171c1ece3f23e2ae52b21"
+      "764522889":
+        name: "install.ps1"
+        url_suffix: "install.ps1"
+        size: 32493
+        digest: "sha256:211bdd20aa62a655432f3b3ca35228812c55a2287f4cc214529583bf47ca2c63"
+      "764522890":
+        name: "nimbus-gateway-linux-x64"
+        url_suffix: "nimbus-gateway-linux-x64"
+        size: 157493424
+        digest: "sha256:99d778e80d3348809b354ecd3901da965703cc85698f02b0ffc08373b1cec55c"
+      "764522891":
+        name: "nimbus-verify.ps1"
+        url_suffix: "nimbus-verify.ps1"
+        size: 7256
+        digest: "sha256:89e0a850a33311d18ab59e9781698146493cb069efcc23af58291a64dc41cd14"
+      "764522893":
+        name: "Nimbus-x86_64.AppImage.asc"
+        url_suffix: "Nimbus-x86_64.AppImage.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:e27473065a583de319e0334cd3019daedab4e3e4cb04dab2eae503165040e0e8"
+      "764522894":
+        name: "nimbus-cli-windows-x64.exe"
+        url_suffix: "nimbus-cli-windows-x64.exe"
+        size: 119338496
+        media_type: "application/x-msdos-program"
+        digest: "sha256:ac4481e4478c3b5886ea120470de6fdbd8252f4635764133c5c260e4af20ddac"
+      "764522895":
+        name: "Nimbus-x86_64.AppImage"
+        url_suffix: "Nimbus-x86_64.AppImage"
+        size: 120157376
+        digest: "sha256:d44560fe6264eb1d9718cb061101dbd1fea05b316e8728795fb895eb1b94cdd8"
+      "764522898":
+        name: "nimbus-headless-11.8.0-x86_64.rpm"
+        url_suffix: "nimbus-headless-11.8.0-x86_64.rpm"
+        size: 51497827
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:83658a9e94b8ac9127a2ceaae678c03588d0769de69ce008baf156f8c8723996"
+      "764522899":
+        name: "nimbus-gateway-linux-x64.sig"
+        url_suffix: "nimbus-gateway-linux-x64.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:d1e7b5711a1f54b6973e9c6828e7714fa40caf61ca4579922b547afa70fed6ab"
+      "764522900":
+        name: "nimbus_amd64.deb"
+        url_suffix: "nimbus_amd64.deb"
+        size: 94143226
+        media_type: "application/x-debian-package"
+        digest: "sha256:4f9b38132d5be733f8c5d5382ed9e204d109ef09ebc16e3b7dd7418ef041d785"
+      "764529663":
+        name: "latest.json"
+        url_suffix: "latest.json"
+        size: 1417
+        media_type: "application/json"
+        digest: "sha256:6d4d87641f7723e8dca74f009059cdbbf9e9f37164d1c00f7499153759d73142"
+  "450430683":
+    tag: "v11.9.0"
+    title: "v11.9.0"
+    url: "https://github.com/nimbus-agent/Nimbus/releases/tag/v11.9.0"
+    created_at: "2026-11-18T18:23:51Z"
+    published_at: "2026-11-18T19:05:05Z"
+    updated_at: "2026-11-18T19:06:22Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/nimbus-agent/Nimbus/zipball/v11.9.0"
+    source_tar_url: "https://api.github.com/repos/nimbus-agent/Nimbus/tarball/v11.9.0"
+    download_base: "https://github.com/nimbus-agent/Nimbus/releases/download/v11.9.0/"
+    assets:
+      "764623206":
+        name: "nimbus-verify.ps1"
+        url_suffix: "nimbus-verify.ps1"
+        size: 7256
+        digest: "sha256:89e0a850a33311d18ab59e9781698146493cb069efcc23af58291a64dc41cd14"
+      "764623207":
+        name: "uninstall.ps1"
+        url_suffix: "uninstall.ps1"
+        size: 7321
+        digest: "sha256:a419dcdb496e5521637a39fa1da2b8c72acb9e2e06e725511a9bce26b111e97c"
+      "764623208":
+        name: "nimbus-headless-macos-x64.tar.gz"
+        url_suffix: "nimbus-headless-macos-x64.tar.gz"
+        size: 103414548
+        media_type: "application/gzip"
+        digest: "sha256:810ceb8cadf8852bd057b7b0710adfd223a42fd99f06d56c2f6d358cd50fa5ac"
+      "764623209":
+        name: "nimbus-headless-11.9.0-x86_64.AppImage.asc"
+        url_suffix: "nimbus-headless-11.9.0-x86_64.AppImage.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:fea0948da14832c1df311a1e7f9803b95687e31ced3c7b90735b8651a2346c12"
+      "764623210":
+        name: "uninstall.sh"
+        url_suffix: "uninstall.sh"
+        size: 1666
+        media_type: "application/x-sh"
+        digest: "sha256:0dbe93fd2d96c79b8bd509a4732da8c49abb1e460d3eb9aa0b2848c1f0943748"
+      "764623211":
+        name: "nimbus-headless-11.9.0-x86_64.AppImage"
+        url_suffix: "nimbus-headless-11.9.0-x86_64.AppImage"
+        size: 120153280
+        digest: "sha256:d7c58143969cd68aa200afca9cb7656fb39b6e34eb15f7d1ea28a25e3793b1bb"
+      "764623212":
+        name: "nimbus_amd64.deb.asc"
+        url_suffix: "nimbus_amd64.deb.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:87e82e82c2ccbee464bea174fc6ce76e8093455cd7f0fae3ceea82281978ec29"
+      "764623213":
+        name: "nimbus-verify.sh"
+        url_suffix: "nimbus-verify.sh"
+        size: 8827
+        media_type: "application/x-sh"
+        digest: "sha256:747bbf9a63bacc8713978d4005c71a993fb9e5ffee58e94bc404a266ce6eed6c"
+      "764623214":
+        name: "nimbus-gateway-windows-x64.exe"
+        url_suffix: "nimbus-gateway-windows-x64.exe"
+        size: 154163200
+        media_type: "application/x-msdos-program"
+        digest: "sha256:55f240603ac91bd30a2ce753063626c6225b1f0c76c8e07466b29aed0eb7a65d"
+      "764623215":
+        name: "SHA256SUMS.asc"
+        url_suffix: "SHA256SUMS.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:aa01c2e964c6d6f5b093a101896133b11cfa202c599d41983f8228d3a0fc7a31"
+      "764623217":
+        name: "nimbus-headless-windows-x64.zip"
+        url_suffix: "nimbus-headless-windows-x64.zip"
+        size: 120971252
+        media_type: "zip"
+        digest: "sha256:fc43575ec16f16b9caf794b4e2cf8215df55ab35d8e7cc2de54da5013e3f78ec"
+      "764623218":
+        name: "nimbus-headless_11.9.0_amd64.deb.asc"
+        url_suffix: "nimbus-headless_11.9.0_amd64.deb.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:87e82e82c2ccbee464bea174fc6ce76e8093455cd7f0fae3ceea82281978ec29"
+      "764623219":
+        name: "nimbus-gateway-linux-x64.sig"
+        url_suffix: "nimbus-gateway-linux-x64.sig"
+        size: 88
+        media_type: "application/pgp-signature"
+        digest: "sha256:1638c6d790dececbd365288b9bd505bc8b6c3933acbf1add52eacbd3c3053282"
+      "764623220":
+        name: "nimbus-cli-macos-x64"
+        url_suffix: "nimbus-cli-macos-x64"
+        size: 102231520
+        digest: "sha256:fd3235a6886257dfd71a49bf42e21e42a16f853967a456277b907a38c909b36f"
+      "764623221":
+        name: "nimbus-headless-linux-amd64-v11.9.0.tar.gz.asc"
+        url_suffix: "nimbus-headless-linux-amd64-v11.9.0.tar.gz.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:1a5715c3e634bfa4f2439c1d7c87b1001d2828a8e8348f8a31513b0b25e0226d"
+      "764623222":
+        name: "nimbus-cli-macos-arm64"
+        url_suffix: "nimbus-cli-macos-arm64"
+        size: 93254882
+        digest: "sha256:689c5fa9a4c18e2ee4cd6bc12f38c8fdc9359b0b5604b0b269cc338046a3e574"
+      "764623223":
+        name: "Nimbus-x86_64.AppImage.asc"
+        url_suffix: "Nimbus-x86_64.AppImage.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:fea0948da14832c1df311a1e7f9803b95687e31ced3c7b90735b8651a2346c12"
+      "764623225":
+        name: "nimbus-cli-windows-x64.exe"
+        url_suffix: "nimbus-cli-windows-x64.exe"
+        size: 119342592
+        media_type: "application/x-msdos-program"
+        digest: "sha256:cd9706460dd25429c243812bb27d21c4268b39d84d75a5b1318d447da20b1b37"
+      "764623226":
+        name: "SHA256SUMS"
+        url_suffix: "SHA256SUMS"
+        size: 3376
+        digest: "sha256:8da857ab60af33cc1bddbba8965f8bdba3234e31207160f68dbdce208e26dd74"
+      "764623227":
+        name: "nimbus-gateway-linux-x64.asc"
+        url_suffix: "nimbus-gateway-linux-x64.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:9cadf5746312a5eb0beaffd855c0944307316eb2028650056ac0f1b7694d4af7"
+      "764623228":
+        name: "nimbus-headless-linux-amd64-v11.9.0.tar.gz"
+        url_suffix: "nimbus-headless-linux-amd64-v11.9.0.tar.gz"
+        size: 118748942
+        media_type: "application/gzip"
+        digest: "sha256:e85dfd940b6b33d285ad1d559a564d94fbe88e32ff5dc6e282f72c6374b914c5"
+      "764623229":
+        name: "nimbus-headless-windows-x64.msi"
+        url_suffix: "nimbus-headless-windows-x64.msi"
+        size: 102240256
+        media_type: "application/x-msdownload"
+        digest: "sha256:ac416f532006052594fb4b7747d9af217a8629735ecba199b138abc7fe289be3"
+      "764623230":
+        name: "nimbus-headless-macos-arm64.pkg"
+        url_suffix: "nimbus-headless-macos-arm64.pkg"
+        size: 97612375
+        digest: "sha256:465cbc27d8506e9d10529344ba01f43cdac26eb7550491a9b303d868332be8c3"
+      "764623232":
+        name: "install.sh"
+        url_suffix: "install.sh"
+        size: 22979
+        media_type: "application/x-sh"
+        digest: "sha256:69a1c21c950bf7522b0dfc955eb35ed51b58d2ea6ea587692d68c3b4ffbdb7a7"
+      "764623233":
+        name: "nimbus-v11.9.0-sbom.cdx.json"
+        url_suffix: "nimbus-v11.9.0-sbom.cdx.json"
+        size: 2136498
+        media_type: "application/json"
+        digest: "sha256:bb17843533dbfd6becca147b0ff3460b52020921220756dab89c347d33b02672"
+      "764623234":
+        name: "Nimbus-x86_64.AppImage"
+        url_suffix: "Nimbus-x86_64.AppImage"
+        size: 120153280
+        digest: "sha256:d7c58143969cd68aa200afca9cb7656fb39b6e34eb15f7d1ea28a25e3793b1bb"
+      "764623235":
+        name: "nimbus-headless-macos-arm64.tar.gz"
+        url_suffix: "nimbus-headless-macos-arm64.tar.gz"
+        size: 97641980
+        media_type: "application/gzip"
+        digest: "sha256:ebe43558ccb41780feb1920c947ad6675a0f3fd228863bfd7bd40c062ad2cc44"
+      "764623237":
+        name: "nimbus-headless-macos-x64.pkg"
+        url_suffix: "nimbus-headless-macos-x64.pkg"
+        size: 103377657
+        digest: "sha256:a6f4652054eac0cc36135a743741a6f513cfb4aa4ff08199fca4346316a18ef8"
+      "764623238":
+        name: "install.ps1"
+        url_suffix: "install.ps1"
+        size: 32493
+        digest: "sha256:211bdd20aa62a655432f3b3ca35228812c55a2287f4cc214529583bf47ca2c63"
+      "764623241":
+        name: "nimbus-headless_11.9.0_amd64.deb"
+        url_suffix: "nimbus-headless_11.9.0_amd64.deb"
+        size: 94147028
+        media_type: "application/x-debian-package"
+        digest: "sha256:e2680b57b04e2ce8236853a363afa1c7e65772426d32a3fe5c416718838e55dc"
+      "764623242":
+        name: "nimbus-gateway-macos-x64"
+        url_suffix: "nimbus-gateway-macos-x64"
+        size: 156347872
+        digest: "sha256:b310975515d8a7c623579fea67ce5510c5993ce593cb087948f17f6a561aa6d7"
+      "764623243":
+        name: "nimbus_amd64.deb"
+        url_suffix: "nimbus_amd64.deb"
+        size: 94147028
+        media_type: "application/x-debian-package"
+        digest: "sha256:e2680b57b04e2ce8236853a363afa1c7e65772426d32a3fe5c416718838e55dc"
+      "764623244":
+        name: "nimbus-cli-linux-x64"
+        url_suffix: "nimbus-cli-linux-x64"
+        size: 113195184
+        digest: "sha256:e8eb21959be5b3c767736b17f8cf0e80d6d26a893d9eeb97d48aab4201a3c775"
+      "764623246":
+        name: "nimbus-gateway-linux-x64"
+        url_suffix: "nimbus-gateway-linux-x64"
+        size: 157518000
+        digest: "sha256:118a864c8535205652fca94fff18004ac6c21c21c9126dad5d5e60f2cbe10dc0"
+      "764623247":
+        name: "nimbus-gateway-linux-x64.sha256"
+        url_suffix: "nimbus-gateway-linux-x64.sha256"
+        size: 64
+        digest: "sha256:bb4725f3ed4673ead338cd60bba498966466d9c35bd0981963afc86ec2bfd910"
+      "764623249":
+        name: "nimbus-gateway-macos-arm64"
+        url_suffix: "nimbus-gateway-macos-arm64"
+        size: 144227426
+        digest: "sha256:96f2db367b72f36d1ca0f95f1879ba923537c734beb8fac82ea678647e1fd6d1"
+      "764623250":
+        name: "nimbus-headless-11.9.0-x86_64.rpm"
+        url_suffix: "nimbus-headless-11.9.0-x86_64.rpm"
+        size: 51532445
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:e2c860483953d266bbe226b3b923c1eb94002135cda8514532e695d437309da6"
+      "764623252":
+        name: "nimbus-headless-11.9.0-x86_64.rpm.asc"
+        url_suffix: "nimbus-headless-11.9.0-x86_64.rpm.asc"
+        size: 228
+        media_type: "application/pgp-keys"
+        digest: "sha256:def361ec17749afdae24b49f2b37f99744999c512ee9afbd990e4ba3d6583039"
+      "764628252":
+        name: "latest.json"
+        url_suffix: "latest.json"
+        size: 1417
+        media_type: "application/json"
+        digest: "sha256:eb5015cdcd8dbd399edd1ba3262e88228897154198e337bde7802cf73d6901c7"
