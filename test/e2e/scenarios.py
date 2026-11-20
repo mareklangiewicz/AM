@@ -83,7 +83,7 @@ class InstalledCLI(unittest.TestCase):
                 'test/e2e/Containerfile.debian','test/e2e/Containerfile.fedora',
                 'APP-MANAGER','programs/x86_64/nvim','programs/x86_64/nvim-nightly',
                 'programs/x86_64/obsidian','programs/x86_64/sqlitebrowser']
-        inputs += ['tools/catalog-collector/bounded.py','tools/catalog-collector/retention.py',
+        inputs += ['tools/catalog-collector/bounded.py','tools/catalog-collector/retention_v3.py',
                    'tools/catalog-collector/contracts.py','tools/catalog-collector/fixture_v3.py']
         (OUT/'tested-source.json').write_text(json.dumps({
             'inputs':fingerprint_files(Path('/src'), inputs),
