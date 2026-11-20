@@ -2,18 +2,12 @@
 import hashlib
 import json
 from pathlib import Path
-import subprocess
-import sys
 import tarfile
-import tempfile
 
 ROOT = Path(__file__).resolve().parents[2]
-from fixture_facts import merge_attempts, utc
-from bounded import normalize
-from retention import refresh
-from test_yaml_reader import SCHEMA
-from yaml_publication import candidate_tree
-from reference_policies import APPIMAGES, select_cohort
+from fixture_facts import utc
+from fixture_v3 import REVISION, repository
+from reference_policies import APPIMAGES
 
 RESEARCH = ROOT/'docs/track/release-catalog/research'
 
@@ -54,26 +48,17 @@ def fixtures():
     for rid, (source, raw, report, location) in found.items():
         if len(raw) != report['body_bytes'] or hashlib.sha256(raw).hexdigest() != report['body_sha256']:
             raise ValueError(('saved body identity', location))
-        started = report.get('request_started_at', report.get('started_at'))
+        if report['status'] != 200:
+            raise ValueError(('saved response status', location))
         completed = report.get('response_completed_at', report.get('completed_at'))
-        attempt = dict(repository_id=rid, descriptor=report['descriptor'], body=raw,
-                       outcome='response', status=report['status'], request_started_at=started,
-                       response_completed_at=completed)
-        alias = source['aliases'][0]
-        initial = dict(format=2, schema=SCHEMA, repository_id=rid,
-            repository=alias.split('/repos/',1)[1].split('/releases',1)[0])
-        attempted_at = utc(started).strftime('%Y-%m-%dT%H:%M:%SZ')
+        name = source['aliases'][0].split('/repos/',1)[1].split('/releases',1)[0]
+        received = utc(completed).strftime('%Y-%m-%dT%H:%M:%SZ')
         if source['url'].endswith('/latest'):
             # A saved latest object supplies ONE release's facts only. This is
             # not a fabricated list response or evidence of list acquisition.
-            response = dict(received_at=utc(completed).strftime('%Y-%m-%dT%H:%M:%SZ'),
-                releases=normalize([json.loads(raw)],100),has_next=True,bytes=len(raw),seconds=0)
-            repository = refresh(initial,[response],attempted_at=attempted_at,max_catalog_bytes=2097152)
+            result[rid] = repository(rid, name, [json.loads(raw)], received, REVISION, complete=False)
         else:
-            repository = merge_attempts(initial, [(attempt, True)], attempted_at=attempted_at,
-                page_size=100 if 'per_page=100' in source['url'] else 30, max_catalog_bytes=2097152)
-        if repository['collection']['status'] != 'ok':
-            raise ValueError(('normalization refused', location, repository['collection']))
-        tree = candidate_tree({'fixture':rid}, {str(rid):repository}, schema=SCHEMA, max_file_bytes=2097152)
-        result[rid] = dict(raw=raw, report=report, repository=repository, tree=tree, location=location,endpoint='latest_singleton' if source['url'].endswith('/latest') else 'list')
+            releases = json.loads(raw)
+            page = 100 if 'per_page=100' in source['url'] else 30
+            result[rid] = repository(rid, name, releases, received, REVISION, complete=len(releases) < page)
     return result

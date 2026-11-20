@@ -24,7 +24,7 @@ class AppImagesCase(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.saved = fixtures()
-        cls.repositories = {str(rid):f['repository'] for rid,f in cls.saved.items()}
+        cls.repositories = {str(rid):document for rid,document in cls.saved.items()}
         cls.apps = {recipe.split('/')[1]:row['repository_id'] for recipe,row in APPIMAGES.items()}
         cls.tmp = tempfile.TemporaryDirectory(prefix='yaml-appimages-')
         cls.addClassCleanup(cls.tmp.cleanup)

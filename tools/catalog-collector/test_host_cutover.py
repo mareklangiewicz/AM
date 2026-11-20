@@ -5,12 +5,10 @@ import subprocess
 import tempfile
 import unittest
 
-from bounded import normalize
-from retention import refresh
 from installed_recipe import managed_updater
 from host_catalog import installation_configuration as configuration
 from publication import git
-from fixture_v3 import publish_local
+from fixture_v3 import REVISION, publish_local, repository
 from yaml_publication import schema_url
 import test_yaml_manager_integration as integration
 from fixture_manager import ROOT
@@ -58,8 +56,7 @@ class HostCutoverCase(unittest.TestCase):
                         assets[name]=dict(id=len(assets)+1,name=name,browser_download_url='https://example.org/'+row['app']+'/'+name,size=1,content_type='application/octet-stream')
                 releases.append(dict(id=n,tag_name=tag,draft=False,prerelease=tag=='nightly',html_url='https://example.org/releases/'+tag,
                     published_at='2026-11-0'+str(n)+'T00:00:00Z',created_at='2026-11-01T00:00:00Z',assets=list(assets.values())))
-            base=dict(format=2,schema=schema_url('a'*40),repository_id=int(rid),repository=source)
-            repositories[rid]=refresh(base,[dict(received_at=NOW,releases=normalize(releases,100),has_next=False,bytes=100,seconds=0)],attempted_at=NOW,max_catalog_bytes=2097152)
+            repositories[rid]=repository(int(rid),source,releases,NOW,REVISION)
         cls.repositories=repositories
         cls.pin=publish_local(cls.repo,{r['app']:r['repository_id'] for r in cls.rows},repositories,schema=schema_url('a'*40),max_file_bytes=2097152,expected_parent=None)
 

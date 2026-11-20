@@ -14,6 +14,7 @@ from fixture_manager import ROOT
 from appimage_policy_source import compile_source, START, END, POLICIES
 from reference_policies import APPIMAGES, select_cohort
 from fixture_facts import utc
+from fixture_v3 import expanded
 import test_yaml_appimages
 
 
@@ -48,7 +49,7 @@ class TreeAppImages(test_yaml_appimages.AppImagesCase):
                 repository=self.repositories[str(row['repository_id'])]
                 self.clock=repository['observed_at']
                 try:
-                    selection=select_cohort(recipe,repository,self.pin,now=utc(self.clock))
+                    selection=select_cohort(recipe,expanded(repository),self.pin,now=utc(self.clock))
                 except ValueError as error:
                     self.assertEqual(str(error),'no_matching_asset')
                     before=self.snapshot();self.stage()

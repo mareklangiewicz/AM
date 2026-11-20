@@ -18,10 +18,8 @@ if not Path('/run/am-e2e-container').is_file() or not Path('/src/APP-MANAGER').i
     raise SystemExit('Run test/e2e/run; scenarios must never run on the host.')
 
 sys.path.insert(0, '/src/tools/catalog-collector')
-from bounded import normalize
-from retention import refresh
 import contracts
-from rehearse_pipeline import seed_source
+from fixture_v3 import repository as source_document
 from filesystem import fingerprint_files, snapshot_tree
 from transport_records import read_transport_records
 
@@ -33,10 +31,10 @@ OUT = Path('/out')
 USER = pwd.getpwnam('system' if os.environ.get('E2E_TARGET') == 'termux' else 'e2e')
 
 OBSERVED = '2026-10-27T15:20:00Z'
-SCHEMA = 'https://raw.githubusercontent.com/mareklangiewicz/AM/'+'a'*40+'/docs/catalog-format-v2.md'
 
 
 def catalog_tree():
+    revision = 'a'*40
     repositories = {}
     for rid, repository, urls in [
         (262342594, 'obsidianmd/obsidian-releases', [OBSIDIAN]),
@@ -49,17 +47,12 @@ def catalog_tree():
             published_at=OBSERVED, assets=[dict(id=1, name=url.rsplit('/',1)[1],
             browser_download_url=url, size=1, content_type='application/octet-stream')])
             for i,url in enumerate(urls,1)]
-        previous = dict(format=2, schema=SCHEMA, repository_id=rid, repository=repository)
-        repositories[str(rid)] = refresh(previous,[dict(received_at=OBSERVED,
-            releases=normalize(releases,100),has_next=False,bytes=100,seconds=0)],
-            attempted_at=OBSERVED,max_catalog_bytes=2097152)
-    # The client reads format 3; build it from the format-2 facts the same way
-    # tools/catalog-collector/fixture_v3.py does for the collector tests.
+        # Built the way collection builds a source document (contracts.source).
+        repositories[str(rid)] = source_document(rid, repository, releases, OBSERVED, revision)
     apps = {'nvim':16408992,'nvim-nightly':16408992,'obsidian':262342594,'sqlitebrowser':19416551}
-    revision = 'a'*40
     paths = {app:'repositories/source-'+str(rid)+'.yaml' for app,rid in apps.items()}
-    tree = {'repositories/source-'+rid+'.yaml':contracts.encode(seed_source(repo,revision))
-            for rid,repo in repositories.items()}
+    tree = {'repositories/source-'+rid+'.yaml':contracts.encode(document)
+            for rid,document in repositories.items()}
     tree['apps.yaml'] = contracts.encode(dict(contracts.header('apps',revision),apps=paths))
     tree['catalog.yaml'] = contracts.encode(dict(contracts.header('catalog',revision),
         inputs={key:revision for key in ('source','policy','recipes','rules','schemas')},
@@ -91,7 +84,7 @@ class InstalledCLI(unittest.TestCase):
                 'APP-MANAGER','programs/x86_64/nvim','programs/x86_64/nvim-nightly',
                 'programs/x86_64/obsidian','programs/x86_64/sqlitebrowser']
         inputs += ['tools/catalog-collector/bounded.py','tools/catalog-collector/retention.py',
-                   'tools/catalog-collector/contracts.py','tools/catalog-collector/rehearse_pipeline.py']
+                   'tools/catalog-collector/contracts.py','tools/catalog-collector/fixture_v3.py']
         (OUT/'tested-source.json').write_text(json.dumps({
             'inputs':fingerprint_files(Path('/src'), inputs),
             'modules':cls.module_hashes},indent=2)+'\n')
