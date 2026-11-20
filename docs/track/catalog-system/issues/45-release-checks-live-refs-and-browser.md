@@ -45,3 +45,5 @@ in a scratch worktree with step 3's contract (property removed, regenerated),
 line 22: unknown or out-of-order field`; under the current contract both refs
 passed (each about 11 minutes, run side by side). The deployed definitions
 matched HEAD (curl, 17,781 bytes).
+
+November 20, 2026: shipped with Marek's approval as `40701f957` together with the ticket 25 retro items (Long tests 44823591001 on `ci/retro-25`, Fast tests 44825152280 and catalog run 44825158010 green; `CATALOG_SCHEDULE_REVISION` repinned `1f42dfa0d -> 40701f957`, schema pin unchanged). Its first real `plan` and `ship` reported the deployed browser definitions matching HEAD. `ci/retro-25` deleted.
