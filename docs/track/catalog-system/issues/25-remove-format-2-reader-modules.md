@@ -247,3 +247,12 @@ new summary lacks it (fails against the old writer, checked via stash).
 Collector fast tier 179 OK, tool suites, e2e host tests 11 and
 `test_catalog.mjs` OK. No `schemas` scope change, so no
 `CATALOG_SCHEMA_REVISION` transition. Not run: Long tests.
+
+November 20, 2026: step 2 shipped. Long tests 44802668578 green on
+`ci/format2-step2`; `main-marek` moved to `1f42dfa0d` (Marek approved),
+`CATALOG_SCHEDULE_REVISION` repinned `cb854845b -> 1f42dfa0d`
+(`CATALOG_SCHEMA_REVISION` stays `cb854845b`). Fast tests 44807436988 and
+catalog run 44807442295 green. On `catalog-status-v1` the new
+`runs/44807442295-1/summary.yaml` lacks `compatibility_publication`; 63 of
+64 retained summaries still carry it. `ci/format2-step2` deleted. Step 3
+when that count reaches 0 (check the live ref; about 63 more hourly runs).
