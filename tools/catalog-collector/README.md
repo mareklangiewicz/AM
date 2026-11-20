@@ -149,8 +149,7 @@ python3 -B tools/catalog-contract/build.py
 The tests use disposable installations/remotes and inert assets. Historical v2
 fixtures support comparisons, not active production. Completed unrelated browser,
 scale and manual recovery evidence is reused; do not rerun expanded dual-output
-qualification. `qualify_selections.py --native-reader` checks the actual native v3
-shell fact projection against saved maintained selections. Physical myxps delivery,
+qualification. Physical myxps delivery,
 real GitHub acquisition/publication and deployed-browser checks remain explicit
 cutover actions, not claims made by offline tests.
 

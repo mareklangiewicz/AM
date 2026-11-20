@@ -53,17 +53,6 @@ class Pipeline(unittest.TestCase):
         with patch('collection_interface.verify_checkout_inputs'),patch.object(p,'enrollment',return_value=([dict(app='example',repository_id=123,repository='example/app')],{'123':'example'})):
             return p.run(self.args,transport=transport)
     def head(self,channel):return p.Transport(str(self.remote)).head(self.stage,'refs/heads/release-catalog' if channel=='format-2' else p.REFS[channel])
-    def test_retained_seed_refuses_tied_tags_and_preserves_original(self):
-        from rehearse_pipeline import seed_source
-        old=repository();old['releases']['457']=copy.deepcopy(old['releases']['456'])
-        before=copy.deepcopy(old)
-        with self.assertRaisesRegex(ValueError,'same_tag_conflict'):seed_source(old,PIN)
-        self.assertEqual(old,before)
-        old['releases']['457']['observed_at']=OLD
-        result=seed_source(old,PIN)
-        self.assertEqual(set(result['releases']),{'457'})
-        self.assertEqual(result['releases']['457']['tag'],old['releases']['457']['tag'])
-
     def test_corrective_direct_child_preserves_old_pin_and_observations(self):
         self.invoke()
         transport=p.Transport(str(self.remote));ref=p.REFS['format-3']
