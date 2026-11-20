@@ -21,18 +21,18 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "1f42dfa0dfb32d90e8e34d3fbb36eea75fdd88d8"
+        commit: "a41a654ce1d76334cd48caba065c44df4f61f8fd"
         path: "programs/x86_64/dolphin-emu"
         blob: "c8af621b131ba166b6865bb88e3af3d7c71d160c"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-20T20:12:46Z"
+        evaluated_at: "2026-11-20T21:19:50Z"
         recipe_sha256: "922d535fca60c7538b009dba839b4efefcd446325fb3e117fe36259a64c62c9b"
-        rules: "1f42dfa0dfb32d90e8e34d3fbb36eea75fdd88d8"
+        rules: "a41a654ce1d76334cd48caba065c44df4f61f8fd"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "1f42dfa0dfb32d90e8e34d3fbb36eea75fdd88d8"
+            commit: "a41a654ce1d76334cd48caba065c44df4f61f8fd"
             path: "modules/"
             sha256: "49b86a24691f8cf5502fc49826dfdca4645ab02d49a5edeec860b9a4e42bf55c"
   "dolphin-emu-nightly":
@@ -42,7 +42,7 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "1f42dfa0dfb32d90e8e34d3fbb36eea75fdd88d8"
+        commit: "a41a654ce1d76334cd48caba065c44df4f61f8fd"
         path: "programs/aarch64/dolphin-emu-nightly"
         blob: "9a760382c5698b5881688cc18d57dfa59f47f3e3"
     "armv7l":
@@ -59,17 +59,17 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "1f42dfa0dfb32d90e8e34d3fbb36eea75fdd88d8"
+        commit: "a41a654ce1d76334cd48caba065c44df4f61f8fd"
         path: "programs/x86_64/dolphin-emu-nightly"
         blob: "f44769553535ce60a548cb5d7c4bef06a17170d7"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-20T20:12:46Z"
+        evaluated_at: "2026-11-20T21:19:50Z"
         recipe_sha256: "89ba5331a2b0626a7be5cef49de2cb88be3e081c8a9f79e388c0e3a0d028c797"
-        rules: "1f42dfa0dfb32d90e8e34d3fbb36eea75fdd88d8"
+        rules: "a41a654ce1d76334cd48caba065c44df4f61f8fd"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "1f42dfa0dfb32d90e8e34d3fbb36eea75fdd88d8"
+            commit: "a41a654ce1d76334cd48caba065c44df4f61f8fd"
             path: "modules/"
             sha256: "49b86a24691f8cf5502fc49826dfdca4645ab02d49a5edeec860b9a4e42bf55c"

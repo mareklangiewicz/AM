@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/cb854845b919dd38d9
 kind: "repository"
 repository_id: 1246265970
 repository: "mstan/MegaManXSNESRecomp"
-collected_at: "2026-11-17T22:42:09Z"
+collected_at: "2026-11-20T21:18:41Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: false
-observed_at: "2026-11-17T22:42:09Z"
+observed_at: "2026-11-20T21:18:41Z"
 releases:
   "404383353":
     tag: "v2.1.7-alpha"
@@ -649,21 +649,43 @@ releases:
         digest: "sha256:0699c9a66e6ef0f3211c1ad045ddcc4c86bb922002c31f82e83d5ece30a0628c"
   "441896179":
     tag: "v2.3.13"
-    title: "Mega Man X 2.3.13"
+    title: "Mega Man X 2.3.13 ? Windows, Linux and Android"
     url: "https://github.com/mstan/MegaManXSNESRecomp/releases/tag/v2.3.13"
     created_at: "2026-11-11T15:37:13Z"
     published_at: "2026-11-11T15:50:19Z"
-    updated_at: "2026-11-11T15:50:19Z"
+    updated_at: "2026-11-18T05:18:12Z"
     prerelease: false
     source_zip_url: "https://api.github.com/repos/mstan/MegaManXSNESRecomp/zipball/v2.3.13"
     source_tar_url: "https://api.github.com/repos/mstan/MegaManXSNESRecomp/tarball/v2.3.13"
+    download_base: "https://github.com/mstan/MegaManXSNESRecomp/releases/download/v2.3.13/"
     assets:
       "736029676":
         name: "MegaManXSNESRecomp-windows-2.3.13.zip"
-        url: "https://github.com/mstan/MegaManXSNESRecomp/releases/download/v2.3.13/MegaManXSNESRecomp-windows-2.3.13.zip"
+        url_suffix: "MegaManXSNESRecomp-windows-2.3.13.zip"
         size: 16388077
         media_type: "zip"
         digest: "sha256:55e0c801c57e36c177eca0dc107d9db74a504ea84cdc828e350abce4dffa544d"
+      "761805458":
+        name: "MegaManXSNESRecomp-android-2.3.13.1.apk"
+        url_suffix: "MegaManXSNESRecomp-android-2.3.13.1.apk"
+        size: 45987607
+        media_type: "application/vnd.android.package-archive"
+        digest: "sha256:d0e2e85e82163be3c8cdd694a774f4560a86de7a41b8c5cd511702698b5e49d6"
+      "761805465":
+        name: "MegaManXSNESRecomp-android-2.3.13.1.apk.sha256"
+        url_suffix: "MegaManXSNESRecomp-android-2.3.13.1.apk.sha256"
+        size: 107
+        digest: "sha256:cffe718e41a653d90f300f2ad5aa1b800b5fa8e9480ebad58a278703163da55a"
+      "762025624":
+        name: "MegaManXSNESRecomp-linux-2.3.13-x86_64.AppImage.sha256"
+        url_suffix: "MegaManXSNESRecomp-linux-2.3.13-x86_64.AppImage.sha256"
+        size: 114
+        digest: "sha256:79a031ae6cb14c040fce5f62504eb5f489712209d4e9ed463388e3ed7b9be3ea"
+      "762025626":
+        name: "MegaManXSNESRecomp-linux-2.3.13-x86_64.AppImage"
+        url_suffix: "MegaManXSNESRecomp-linux-2.3.13-x86_64.AppImage"
+        size: 12356088
+        digest: "sha256:49d726a17e4f6fc03ccca1a235b18977c2962eb5a4efa772684a32227cff0553"
   "446461771":
     tag: "v2.3.14-complete.1"
     title: "Mega Man X 2.3.14 preview: Complete Edition mods"
