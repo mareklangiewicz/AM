@@ -48,7 +48,7 @@ def main():
             compatibility_metrics=dict(request_cap=750,response_byte_cap=536870912,acquisition_cap_seconds=900))
     def summary(run,at):
         value=p.summary(dict(id=run,attempt=1),inputs,pin,evidence(run),
-            {'format-2':dict(state='not_attempted'),'format-3':dict(state='confirmed',commit=pin)},
+            {'format-3':dict(state='confirmed',commit=pin)},
             started_at=stamp(at-timedelta(minutes=1)),validation='ok',reason='complete')
         value['reported_at']=stamp(at)
         return value

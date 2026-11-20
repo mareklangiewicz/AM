@@ -64,8 +64,9 @@ full v3 semantics before the sole catalog write. It uses exact-parent publicatio
 confirms remote acceptance and reports ambiguity honestly; there is no force
 rewind or automatic merge. Final status is attempted independently after normal
 outcomes, including invalid/missing artifacts and publication failure. The retained
-summary schema's `compatibility_publication` is always `not_attempted`; it records
-no active v2 write. Artifacts containing format-2 paths are rejected.
+summary field `compatibility_publication` (always `not_attempted`) is being retired
+with format 2 (ticket 25): optional now, then no longer written, then removed once no
+retained summary carries it. Artifacts containing format-2 paths are rejected.
 
 The prepared workflow separates read-only acquisition from its write-enabled
 publisher. `CATALOG_V3_ENABLED=true` enables only v3/status production; false

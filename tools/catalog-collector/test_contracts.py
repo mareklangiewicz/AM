@@ -77,6 +77,17 @@ def documents():
 
 
 class Contracts(unittest.TestCase):
+    def test_retiring_compatibility_publication_is_optional_in_summaries(self):
+        # Ticket 25: retained summaries still carry it; new ones may omit it.
+        summary=documents()['summary']
+        self.assertEqual(decode(encode(summary)),summary)
+        summary.pop('compatibility_publication')
+        self.assertEqual(decode(encode(summary)),summary)
+        node=subprocess.run(['node','--input-type=module','-e',
+            "import {parseDocument} from './tools/catalog-contract/reader.mjs';"
+            "parseDocument(process.argv[1],'summary');",encode(summary).decode()],cwd=ROOT,capture_output=True)
+        self.assertEqual(node.returncode,0,node.stderr)
+
     def test_v3_only_collection_accepts_created_time_without_legacy_publication_time(self):
         with tempfile.TemporaryDirectory() as temp:
             root=Path(temp);saved=root/'saved';saved.mkdir()

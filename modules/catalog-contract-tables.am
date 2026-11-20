@@ -341,7 +341,7 @@ BEGIN {
  child_type["status/summaries"]="run_references"
  child_type["status/details"]="detail_references"
  fields["summary"]="format schema kind run inputs input_catalog_state input_catalog started_at reported_at collection validation publication compatibility_publication counts stop_reason metrics budgets actions_url recent_runs_url"
- required_fields["summary"]="format schema kind run inputs input_catalog_state started_at reported_at collection validation publication compatibility_publication counts stop_reason metrics budgets actions_url recent_runs_url"
+ required_fields["summary"]="format schema kind run inputs input_catalog_state started_at reported_at collection validation publication counts stop_reason metrics budgets actions_url recent_runs_url"
  scalar_type["summary/format"]="integer"
  rule_const["summary/format"]="1"
  scalar_type["summary/schema"]="string"

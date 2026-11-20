@@ -72,8 +72,8 @@ class InstalledCLI(unittest.TestCase):
             os.chown(path, USER.pw_uid, USER.pw_gid)
         Path('/usr/local/bin/am').symlink_to(manager/'APP-MANAGER')
         cls.manager_hash = fingerprint_files(Path('/src'), ['APP-MANAGER'])['APP-MANAGER']
-        # A real sync deletes every module APP-MANAGER does not name (the
-        # format-2 reader and parser), so only the named ones must survive.
+        # A real sync deletes every module APP-MANAGER does not name, so only
+        # the named ones must survive.
         named = set(re.findall(r'"([^"]*[a-z][.]am)"', Path('/src/APP-MANAGER').read_text()))
         cls.module_hashes = fingerprint_files(Path('/src/modules'),
             sorted(p.name for p in Path('/src/modules').glob('*.am') if p.name in named))

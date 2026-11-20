@@ -30,7 +30,7 @@ detail coverage. Keep at most 64 summaries, complete available detail for the la
 retention, never ordinary source scope. Display actual retained ranges/gaps.
 
 Collection and candidate validation use `ok`, `partial`, `failed`, `unknown`, or
-`not_attempted`. Catalog and compatibility publication independently use
+`not_attempted`. Catalog publication uses
 `confirmed` plus exact confirmed commit, `conflict`, `failed`, `unknown`, or
 `not_attempted`. Other states forbid a confirmed commit. A local candidate is
 not publication. An ambiguous write stays unknown. On conflict preserve the newer

@@ -1,8 +1,7 @@
 # AM catalog format 3
 
-Intended sole production contract after the explicitly authorized myxps cutover.
-Format-2 commits/snapshots remain historical; active v2 production is retired in
-the prepared source. Deployment and installed-host changes are separately authorized.
+The sole catalog contract. Format 2 is retired: its reader, parser, collector path
+and specification were removed (ticket 25); old format-2 commits stay in Git history.
 Resolve the catalog ref once to a full SHA-1 commit C. Read every required document
 at C. Neither a descriptor nor a local candidate establishes remote publication.
 See [revision consistency](track/catalog-system/public-contract-decision.md) and
@@ -16,7 +15,7 @@ for untrusted bytes. The maintained [definitions](../tools/catalog-contract/buil
 fix every allowed field, its canonical order, type and required/optional status.
 The generated [closed editor schemas](../schemas/catalog/) use draft 2020-12.
 The repository's editor associations target candidate channels explicitly, avoiding
-accidental application of v3 schemas to format 2. A consumer can use these YAML
+accidental application of these schemas to other YAML. A consumer can use these YAML
 contracts from Lua without adopting a required library or Python/jq runtime.
 
 The grammar is mappings only, two ASCII spaces per level, LF-terminated nonempty
@@ -206,7 +205,7 @@ its selected URL back through `--selected-url ... --url` before download.
 `get FILE KEY...`, `apps FILE`, `releases FILE`, `assets FILE RELEASE` query it.
 `get` expands effective observations, full asset URLs and media types. Exit 0 means
 valid/result present, 3 means absent, 2 means refusal/error. Output is privately
-spooled until full validation succeeds. The format-2 reader is unchanged.
+spooled until full validation succeeds.
 
 The browser [reader](../tools/catalog-contract/reader.mjs) exports `parseDocument`,
 `releaseFacts` and `validateSnapshot`; integer values are BigInts, and query facts
@@ -214,7 +213,7 @@ expand the same compact fields. Callers must keep reads/caches bound to C. Real
 DOM/fetch/accessibility qualification belongs to tickets 13–14.
 
 `host_catalog.py collect` acquires once and prepares a format-3 candidate from its
-exact parent. The production workflow has no format-2 fallback. `validate` is credential/network free
+exact parent. `validate` is credential/network free
 and optionally checks expected input pins. Explicit `publish` validates transferred input/run/parent/hash bindings, confirms
 exact-parent remote outcomes and independently attempts final status publication.
 The prepared workflow now uses these explicit operations, with target channels

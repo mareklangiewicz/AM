@@ -208,7 +208,7 @@ class Pipeline(unittest.TestCase):
         self.assertEqual(c.decode(tree['runs/123-3/summary.yaml'])['input_catalog_state'],'unknown')
         self.assertEqual(result['validation'],'failed')
         current=p.summary(dict(id=999,attempt=1),self.inputs,PIN,None,
-            {'format-2':dict(state='not_attempted'),'format-3':dict(state='not_attempted')},started_at=OLD,validation='ok',reason='quota')
+            {'format-3':dict(state='not_attempted')},started_at=OLD,validation='ok',reason='quota')
         evidence=dict(sources=[],selected_sources=[123])
         status=p.status_tree({},current,evidence,{},identities={123:('example','example/app')})
         source=c.decode(status['runs/999-1/sources/example.yaml'])
@@ -280,7 +280,7 @@ class Pipeline(unittest.TestCase):
         with patch.object(c,'decode',side_effect=yaml.safe_load):
             for i in range(1,67):
                 current=p.summary(dict(id=i,attempt=1),self.inputs,PIN,None,
-                    {'format-2':dict(state='not_attempted'),'format-3':dict(state='not_attempted')},started_at=OLD,validation='failed',reason='candidate_validation')
+                    {'format-3':dict(state='not_attempted')},started_at=OLD,validation='failed',reason='candidate_validation')
                 current['reported_at']=NEW
                 previous=p.status_tree(previous,current,None,{},identities)
         parsed=c.validate_tree(previous,'status')
