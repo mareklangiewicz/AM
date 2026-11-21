@@ -35,6 +35,8 @@ class AppImagesCase(unittest.TestCase):
     run_manager_install = integration.YAMLManager.run_manager_install
     snapshot = integration.YAMLManager.snapshot
     install = integration.YAMLManager.install
+    live = integration.YAMLManager.live
+    recipe_file = integration.YAMLManager.recipe_file
     standalone = integration.YAMLManager.standalone
     manager = integration.YAMLManager.manager
 

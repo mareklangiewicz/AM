@@ -15,6 +15,22 @@ import pinned_recipes
 
 
 class Declarations(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        # Enrollment and recipes as one snapshot at the pinned commit: an upstream
+        # merge rewrites both together (ticket 28).
+        temporary = tempfile.TemporaryDirectory(prefix='pinned-configuration-')
+        cls.addClassCleanup(temporary.cleanup)
+        cls.configuration_root = pinned_recipes.configuration(temporary.name)
+        # The committed policy's generated section follows the live declarations;
+        # regenerate it from the snapshot's.
+        (cls.configuration_root/'modules').mkdir()
+        shutil.copy2(compiler.ROOT/'modules/catalog-yaml-policy.am', cls.configuration_root/'modules')
+        compiler.generate(cls.configuration_root)
+
+    def pinned(self):
+        return patch.object(host_catalog, 'ROOT', self.configuration_root)
+
     def test_enrolled_candidate_declarations_select_saved_assets(self):
         import hashlib
         import tarfile
@@ -22,8 +38,9 @@ class Declarations(unittest.TestCase):
         receipt = json.loads((research/'two-candidate-upstream-evidence.json').read_text())
         archive = research/receipt['evidence_archive']
         self.assertEqual(hashlib.sha256(archive.read_bytes()).hexdigest(), receipt['evidence_archive_sha256'])
-        rows = {r['app']:r for r in recipe_rows(compiler.ROOT)}
-        enrolled, _ = host_catalog.installation_configuration()
+        rows = {r['app']:r for r in recipe_rows(self.configuration_root)}
+        with self.pinned():
+            enrolled, _ = host_catalog.installation_configuration()
         self.assertIn('20x', [r['app'] for r in enrolled])
         self.assertIn('2fac', [r['app'] for r in enrolled])
         with tarfile.open(archive) as evidence:
@@ -42,7 +59,7 @@ class Declarations(unittest.TestCase):
                             asset['browser_download_url']]),json.dumps(release['prerelease'])])+'\n'
                 for command in (['mawk'], ['gawk'], ['busybox','awk']):
                     with self.subTest(app=app, command=command):
-                        result = subprocess.run([*command,'-f',str(compiler.ROOT/'modules/catalog-yaml-policy.am')],
+                        result = subprocess.run([*command,'-f',str(self.configuration_root/'modules/catalog-yaml-policy.am')],
                             input=facts,text=True,capture_output=True,timeout=10,
                             env={**os.environ,'LC_ALL':'C','AM_YAML_RECIPE':row['recipe'],
                                  'AM_YAML_REPOSITORY':str(row['repository_id']),
@@ -113,18 +130,19 @@ class Declarations(unittest.TestCase):
                                 self.assertIn('no_matching_asset', result.stderr)
 
     def test_unenrolled_architectures_select_through_common_registry(self):
-        baseline_rows, baseline_sources = host_catalog.installation_configuration()
+        with self.pinned():
+            baseline_rows, baseline_sources = host_catalog.installation_configuration()
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             (root/'modules').mkdir()
             shutil.copy2(compiler.ROOT/'modules/catalog-yaml-policy.am', root/'modules')
             enrollment = root/'tools/catalog-collector'
             enrollment.mkdir(parents=True)
-            shutil.copy2(compiler.ROOT/'tools/catalog-collector/collection-recipes.txt', enrollment)
-            for row in recipe_rows(compiler.ROOT):
+            shutil.copy2(self.configuration_root/'tools/catalog-collector/collection-recipes.txt', enrollment)
+            for row in recipe_rows(self.configuration_root):
                 path = root/'programs'/row['recipe']
                 path.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copy2(compiler.ROOT/'programs'/row['recipe'], path)
+                shutil.copy2(self.configuration_root/'programs'/row['recipe'], path)
             source = pinned_recipes.read_text('x86_64/nvim')
             for arch in ('x86_64', 'aarch64', 'i686', 'armv7l'):
                 path = root/'programs'/arch/'example'

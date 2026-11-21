@@ -19,6 +19,8 @@ import test_yaml_appimages
 
 
 class TreeAppImages(test_yaml_appimages.AppImagesCase):
+    live = True
+
     def test_generated_registry_source_identity_and_enrollment(self):
         source = (ROOT/'modules/catalog-yaml-policy.am').read_text()
         self.assertEqual(START+source.split(START,1)[1].split(END,1)[0]+END,compile_source())

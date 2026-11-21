@@ -6,12 +6,21 @@ recipes they use as material from here instead. Move COMMIT only on purpose,
 to a commit whose recipes the tests were written against, and keep it on
 main-marek so the checkout has it.
 """
+import io
 import subprocess
+import tarfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 COMMIT = '3b9b918622ea89711078865be4968aa983e5b91b'
 _cache = {}
+# What the collector's configuration reads: every recipe (recipe_rows globs
+# them) and the fork-side enrollment files an upstream merge rewrites.
+CONFIGURATION = ('programs/x86_64', 'programs/aarch64', 'programs/i686', 'programs/armv7l',
+                 'tools/catalog-collector/collection-recipes.txt',
+                 'tools/catalog-collector/collection-apps.json',
+                 'tools/catalog-collector/recipe-url-policies.json',
+                 'tools/catalog-collector/git-sources.json')
 
 
 def read_bytes(recipe):
@@ -48,3 +57,14 @@ def repository(root, recipes=()):
     for recipe in recipes:
         write(recipe, root)
     return root
+
+
+def configuration(root):
+    """Unpack CONFIGURATION at COMMIT under ROOT and return ROOT. Point a module's
+    ROOT at it (host_catalog, recipe_policy_source) to run on a consistent
+    snapshot of enrollment and recipes instead of the live ones."""
+    archive = subprocess.run(['git', '--no-replace-objects', '-C', str(ROOT), 'archive', COMMIT, '--', *CONFIGURATION],
+                             check=True, capture_output=True).stdout
+    with tarfile.open(fileobj=io.BytesIO(archive)) as tree:
+        tree.extractall(root, filter='data')
+    return Path(root)

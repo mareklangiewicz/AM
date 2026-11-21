@@ -1,11 +1,15 @@
 """YAML-only host recipes: actual manager install and standalone update, inert assets."""
 from pathlib import Path
 import json
+import shutil
 import subprocess
 import tempfile
 import unittest
+from unittest.mock import patch
 
+import host_catalog
 from host_catalog import installation_configuration as configuration
+import pinned_recipes
 from publication import git
 from fixture_v3 import REVISION, publish_local, repository
 import test_yaml_manager_integration as integration
@@ -33,12 +37,21 @@ class HostCutoverCase(unittest.TestCase):
     stage=integration.YAMLManager.stage
     calls=integration.YAMLManager.calls
     install=integration.YAMLManager.install
+    live=integration.YAMLManager.live
+    recipe_file=integration.YAMLManager.recipe_file
     standalone=integration.YAMLManager.standalone
     run_manager_install=integration.YAMLManager.run_manager_install
     snapshot=integration.YAMLManager.snapshot
     @classmethod
     def setUpClass(cls):
-        cls.rows,sources=configuration()
+        # The unit tests take enrollment and recipes from one pinned snapshot;
+        # tree_host_cutover.py (live) takes the tree's.
+        if cls.live:
+            cls.rows,sources=configuration()
+        else:
+            temporary=tempfile.TemporaryDirectory(prefix='pinned-configuration-');cls.addClassCleanup(temporary.cleanup)
+            with patch.object(host_catalog,'ROOT',pinned_recipes.configuration(temporary.name)):
+                cls.rows,sources=configuration()
         cls.tmp=tempfile.TemporaryDirectory(prefix='host-cutover-');cls.addClassCleanup(cls.tmp.cleanup)
         cls.repo=Path(cls.tmp.name)/'git';cls.repo.mkdir();git(cls.repo,'init','--bare')
         repositories={}
@@ -163,6 +176,7 @@ printf '%s\\n' '''+self.pin+''' 872860168 "$release" 1 '''+NOW+''' https://examp
         self.assertEqual(result.returncode,3);self.assertFalse((self.root/'opt/old').exists())
 
     def test_cutover_apply_preserves_data_launchers_and_metadata_snapshot(self):
+        import host_cutover
         from host_cutover import apply
         import json
         root=self.path/'apply-root';manager=root/'opt/am';(manager/'modules').mkdir(parents=True)
@@ -171,7 +185,12 @@ printf '%s\\n' '''+self.pin+''' 872860168 "$release" 1 '''+NOW+''' https://examp
         desktop=root/'usr/local/share/applications';desktop.mkdir(parents=True)
         prepared=self.path/'prepared';prepared.mkdir()
         selections={}
-        source=subprocess.check_output(['git','-C',str(ROOT),'rev-parse','HEAD'],text=True).strip()
+        # apply() reads recipes under its ROOT and refuses unless that checkout's
+        # HEAD is the manifest source: a pinned checkout, with the code under test.
+        checkout=pinned_recipes.configuration(pinned_recipes.repository(self.path/'pinned-checkout'))
+        (checkout/'.git/HEAD').write_text(pinned_recipes.COMMIT+'\n')
+        shutil.copy2(ROOT/'APP-MANAGER',checkout/'APP-MANAGER');shutil.copytree(ROOT/'modules',checkout/'modules')
+        source=pinned_recipes.COMMIT
         for row in self.rows:
             app=row['app'];path=root/'opt'/app;path.mkdir()
             (path/'my-settings').write_text('precious')
@@ -183,7 +202,7 @@ printf '%s\\n' '''+self.pin+''' 872860168 "$release" 1 '''+NOW+''' https://examp
             selections[app]={app:dict(url='https://example.org/'+app,published_at=NOW)}
         (prepared/'manifest.json').write_text(json.dumps(dict(source=source,catalog=self.pin,apps=self.rows,selections=selections)))
         custom=bins/'kitty';custom.symlink_to('/custom/kitty-wrapper')
-        apply(prepared,root)
+        with patch.object(host_cutover,'ROOT',checkout):apply(prepared,root)
         self.assertEqual(custom.readlink(),Path('/custom/kitty-wrapper'))
         self.assertEqual(json.loads((prepared/'before/launchers.json').read_text())[str(custom)]['target'],'/custom/kitty-wrapper')
         for row in self.rows:

@@ -10,6 +10,8 @@ import test_host_cutover
 
 
 class TreeHostCutover(test_host_cutover.HostCutoverCase):
+    live=True
+
     def test_all_host_recipes_manager_install_and_standalone_update(self):
         for row in self.rows:
             with self.subTest(app=row['app']):

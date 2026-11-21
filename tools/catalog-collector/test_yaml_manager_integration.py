@@ -100,8 +100,14 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\napp=${0##
     manager=harness.ManagerHarness.manager
     legacy=harness.ManagerHarness.legacy
 
+    # Unit tests install pinned recipes; tree_*.py set live and install the tree's (ticket 28).
+    live=False
+
+    def recipe_file(self,recipe):
+        return ROOT/'programs'/recipe if self.live else pinned_recipes.write(recipe,self.path/'pinned')
+
     def install(self,recipe='x86_64/obsidian',appman=False):
-        r=self.run_manager_install(amrepo=SOURCE,recipe=pinned_recipes.write(recipe,self.path/'pinned'),
+        r=self.run_manager_install(amrepo=SOURCE,recipe=self.recipe_file(recipe),
                                    app_name=recipe.split('/')[1],appman=appman)
         self.assertEqual(r.returncode,0,r.stderr)
         return self.root/'opt'/recipe.split('/')[1]
