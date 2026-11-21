@@ -6,6 +6,7 @@ import unittest
 
 from installed_recipe import bound_recipe, managed_updater
 import recipe_refresh as refresh
+import pinned_recipes
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -17,8 +18,9 @@ class RecipeRefresh(unittest.TestCase):
         self.root = Path(self.temp.name)/"owner's paths"
         self.installation = self.root/'apps/nvim'
         self.installation.mkdir(parents=True)
-        self.pin = subprocess.check_output(['git','-C',str(ROOT),'rev-parse','HEAD'],text=True).strip()
-        self.body = subprocess.check_output(['git','-C',str(ROOT),'show',self.pin+':programs/x86_64/nvim'])
+        # A pinned commit, not HEAD: an upstream merge rewrites the live nvim (ticket 28).
+        self.pin = pinned_recipes.COMMIT
+        self.body = pinned_recipes.read_bytes('x86_64/nvim')
         self.paths = {name:str(self.root/part) for name,part in
                       (('APPS_DIR','apps'), ('BIN_DIR','bin'), ('DESKTOP_DIR','desktop'))}
         self.modules = self.root/'manager/modules'

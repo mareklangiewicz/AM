@@ -5,11 +5,11 @@ import subprocess
 from fixture_recipes import fixtures
 from publication import git
 from fixture_v3 import publish_local
+import pinned_recipes
 
 ROOT = Path(__file__).resolve().parents[2]
 NOW = '2026-10-27T15:18:00Z'
 SOURCE = 'https://raw.githubusercontent.com/selected-owner/selected.repo/feature/catalog'
-APP = ROOT/'programs/x86_64/obsidian'
 LIFECYCLE = ROOT/'modules/appimage.am'
 
 
@@ -27,8 +27,9 @@ def setup_catalog(cls):
 
 
 class ManagerHarness:
-    def run_manager_install(self, *, local_script=False, source_unavailable=False, amrepo=SOURCE, recipe=APP, app_name="obsidian", appman=False, flags=""):
-        """Execute real install dispatch/functions with only external AM services stubbed."""
+    def run_manager_install(self, *, local_script=False, source_unavailable=False, amrepo=SOURCE, recipe=None, app_name="obsidian", appman=False, flags=""):
+        """Execute real install dispatch/functions with only external AM services stubbed.
+        RECIPE is a recipe file; None is the pinned x86_64/obsidian (ticket 28)."""
         module_dir=self.root/'opt/am/modules';module_dir.mkdir(parents=True,exist_ok=True)
         (module_dir/'appimage.am').write_bytes(LIFECYCLE.read_bytes())
         cache=self.path/'manager-cache';cache.mkdir(exist_ok=True)
@@ -36,7 +37,7 @@ class ManagerHarness:
         (data/'x86_64-apps').write_text('fixture inventory\n')
         recipe_source=self.path/'managed-recipe'
         # Redirect every absolute install location before any script can execute.
-        recipe_text = recipe.read_text()
+        recipe_text = recipe.read_text() if recipe else pinned_recipes.read_text('x86_64/obsidian')
         recipe_source.write_text(recipe_text.replace('/opt/',str(self.root)+'/opt/')
                                  .replace('/usr/local/',str(self.root)+'/usr/local/'))
         module=(ROOT/'modules/install.am').read_text()

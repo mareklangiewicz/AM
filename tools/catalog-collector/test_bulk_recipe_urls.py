@@ -13,6 +13,7 @@ import bulk_recipe_urls as b
 import recipe_policy_source as compiler
 import test_yaml_manager_integration as integration
 import fixture_manager as harness
+import pinned_recipes
 
 
 class BodyMigration(unittest.TestCase):
@@ -57,7 +58,7 @@ class BodyMigration(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             root=Path(temporary);(root/'modules').mkdir();(root/'tools/catalog-collector').mkdir(parents=True)
             path=root/'programs/x86_64/mpv';path.parent.mkdir(parents=True);path.write_text(changed)
-            dummy=root/'programs/x86_64/20x';dummy.write_bytes((b.host.ROOT/'programs/x86_64/20x').read_bytes())
+            pinned_recipes.write('x86_64/20x',root)
             registry=root/'tools/catalog-collector/recipe-url-policies.json';registry.write_text(json.dumps(rows))
             policy=root/'modules/catalog-yaml-policy.am';shutil.copy2(b.host.ROOT/'modules/catalog-yaml-policy.am',policy)
             with patch.object(compiler,'ROOT',root):compiler.generate()
@@ -74,7 +75,7 @@ class BodyMigration(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             root=Path(temporary);(root/'modules').mkdir();(root/'tools/catalog-collector').mkdir(parents=True)
             folder=root/'programs/x86_64';folder.mkdir(parents=True)
-            (folder/'20x').write_bytes((b.host.ROOT/'programs/x86_64/20x').read_bytes())
+            pinned_recipes.write('x86_64/20x',root)
             shutil.copy2(b.host.ROOT/'modules/catalog-yaml-policy.am',root/'modules/catalog-yaml-policy.am')
             registry=root/'tools/catalog-collector/recipe-url-policies.json'
             def proposal(app):
@@ -123,7 +124,7 @@ class BodyManager(unittest.TestCase):
         (root/'tools/catalog-collector').mkdir(parents=True)
         path=root/'programs/x86_64/obsidian';path.parent.mkdir(parents=True);path.write_text(changed)
         dummy=root/'programs/x86_64/dummy'
-        dummy.write_text((b.host.ROOT/'programs/x86_64/20x').read_text()
+        dummy.write_text(pinned_recipes.read_text('x86_64/20x')
             .replace('APP=20x','APP=dummy').replace('x86_64/20x','x86_64/dummy'))
         (root/'tools/catalog-collector/recipe-url-policies.json').write_text(json.dumps(rows))
         policy=root/'modules/catalog-yaml-policy.am'

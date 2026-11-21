@@ -33,3 +33,18 @@ def write(recipe, root):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_bytes(read_bytes(recipe))
     return path
+
+
+def repository(root, recipes=()):
+    """Make ROOT a Git repository that sees this checkout's objects, with RECIPES
+    written at COMMIT. Code that reads both `git show COMMIT:programs/R` and the
+    working-tree programs/R then agrees, without the live tree."""
+    root = Path(root)
+    subprocess.run(['git', 'init', '--quiet', '--template=', str(root)], check=True)
+    objects = subprocess.run(['git', '-C', str(ROOT), 'rev-parse', '--path-format=absolute', '--git-path', 'objects'],
+                             check=True, capture_output=True, text=True).stdout.strip()
+    (root/'.git/objects/info').mkdir(parents=True, exist_ok=True)
+    (root/'.git/objects/info/alternates').write_text(objects+'\n', encoding='utf-8')
+    for recipe in recipes:
+        write(recipe, root)
+    return root

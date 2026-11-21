@@ -5,17 +5,27 @@ import io
 import json
 import urllib.error
 from unittest.mock import MagicMock
-import subprocess
+import shutil
+import tempfile
 import unittest
 from unittest.mock import patch
 
 import catalog_sources as discovery
+import pinned_recipes
 
 
 class Sources(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.catalogue = discovery._catalogue(discovery.ROOT)
+        # verify() reads the recipe from Git and from the working tree; both are
+        # the pinned 0xfx here, never the live one (ticket 28).
+        temporary = tempfile.TemporaryDirectory(prefix='catalog-sources-')
+        cls.addClassCleanup(temporary.cleanup)
+        cls.root = pinned_recipes.repository(temporary.name, ['x86_64/0xfx'])
+        provenance = cls.root/'tools/recipe-reconstruction/provenance.json'
+        provenance.parent.mkdir(parents=True)
+        shutil.copy2(discovery.ROOT/'tools/recipe-reconstruction/provenance.json', provenance)
 
     def test_real_template_binding_refuses_custom_or_inconsistent_source(self):
         source = discovery.Originals(discovery.ROOT).read(
@@ -29,7 +39,7 @@ class Sources(unittest.TestCase):
             self.assertIsNone(discovery.binding(changed, 'agent-skills', self.catalogue))
 
     def test_literal_alias_is_binding_only_and_refuses_ambiguous_or_shell_values(self):
-        source = (discovery.ROOT/'programs/x86_64/0xfx').read_text()
+        source = pinned_recipes.read_text('x86_64/0xfx')
         self.assertEqual(discovery.binding(source, '0xfx', self.catalogue),
             dict(repository='averagenative/0xfx', proof='literal_catalog_alias'))
         for changed in (source+'\nCATALOG_ALIAS=https://api.github.com/repos/other/source/releases\n',
@@ -39,16 +49,15 @@ class Sources(unittest.TestCase):
 
     def queue(self):
         path = 'programs/x86_64/0xfx'
-        source = (discovery.ROOT/path).read_bytes()
-        return dict(source=subprocess.check_output(['git','-C',str(discovery.ROOT),'rev-parse','HEAD'],
-            text=True).strip(), candidates=[dict(app='0xfx', repository='averagenative/0xfx', bindings=[
+        source = pinned_recipes.read_bytes('x86_64/0xfx')
+        return dict(source=pinned_recipes.COMMIT, candidates=[dict(app='0xfx', repository='averagenative/0xfx', bindings=[
                 dict(recipe=path, sha256=hashlib.sha256(source).hexdigest())])])
 
     def verify(self, queue, replies, **kwargs):
         with patch.object(discovery, '_get', side_effect=replies) as get, \
                 patch.object(discovery, 'configuration', return_value=([], {})), \
                 contextlib.redirect_stdout(io.StringIO()):
-            result = discovery.verify(queue, max_sources=128, max_requests=kwargs.pop('max_requests',200), **kwargs)
+            result = discovery.verify(queue, max_sources=128, max_requests=kwargs.pop('max_requests',200), root=self.root, **kwargs)
             return result, get.call_count
 
     def test_verified_public_identity_and_release_probe_produce_proposal_and_checkpoint(self):
@@ -85,7 +94,7 @@ class Sources(unittest.TestCase):
         with patch.object(discovery,'configuration',return_value=([],{'1':'existing/project'})), \
                 contextlib.redirect_stdout(io.StringIO()):
             with patch.object(discovery,'_get',return_value=(dict(private=True),'h')):
-                result=discovery.verify(self.queue(),max_sources=224,max_requests=1)
+                result=discovery.verify(self.queue(),max_sources=224,max_requests=1,root=self.root)
         self.assertEqual(result['requests'],1)
         self.assertEqual(result['proposals'],[])
 
@@ -130,7 +139,7 @@ class Sources(unittest.TestCase):
                 patch.object(discovery, 'configuration', return_value=([], {})), \
                 patch.dict(discovery.os.environ, {'GH_TOKEN':'fixture-secret'}), \
                 contextlib.redirect_stdout(io.StringIO()):
-            result = discovery.verify(self.queue(), max_sources=500,
+            result = discovery.verify(self.queue(), max_sources=500, root=self.root,
                 max_requests=budget, review_redirects=review, checkpoint=checkpoints.append)
         self.assertEqual(result['requests'], len(requests))
         self.assertEqual(checkpoints[-1]['requests'],len(requests))

@@ -13,6 +13,7 @@ import unittest
 import fixture_manager as harness
 from fixture_manager import ROOT, NOW
 from fixture_v3 import expanded, publish_local
+import pinned_recipes
 
 SOURCE='https://raw.githubusercontent.com/selected-owner/selected.repo/feature/catalog'
 RUNTIME=('catalog-yaml.am','catalog-contract-reader.am','catalog-contract-parser.am','catalog-contract-tables.am','catalog-yaml-policy.am')
@@ -100,7 +101,7 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\napp=${0##
     legacy=harness.ManagerHarness.legacy
 
     def install(self,recipe='x86_64/obsidian',appman=False):
-        r=self.run_manager_install(amrepo=SOURCE,recipe=ROOT/'programs'/recipe,
+        r=self.run_manager_install(amrepo=SOURCE,recipe=pinned_recipes.write(recipe,self.path/'pinned'),
                                    app_name=recipe.split('/')[1],appman=appman)
         self.assertEqual(r.returncode,0,r.stderr)
         return self.root/'opt'/recipe.split('/')[1]

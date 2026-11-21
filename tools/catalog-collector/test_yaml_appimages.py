@@ -12,6 +12,7 @@ from fixture_appimages import fixtures
 from publication import git
 from fixture_v3 import publish_local
 from reference_policies import APPIMAGES, matches
+import pinned_recipes
 
 
 class AppImagesCase(unittest.TestCase):
@@ -118,7 +119,7 @@ class AdversarialPolicies(unittest.TestCase):
         # Batch candidate tests per policy in one awk process. A separate unique
         # release with ascending publication picks the last eligible URL.
         for recipe,row in APPIMAGES.items():
-            if '# AM-RECIPE-DECLARATION 1' in (ROOT/'programs'/recipe).read_text().splitlines():
+            if '# AM-RECIPE-DECLARATION 1' in pinned_recipes.read_text(recipe).splitlines():
                 # Complete declarations have their own compiler and lifecycle checks.
                 continue
             eligible=[]

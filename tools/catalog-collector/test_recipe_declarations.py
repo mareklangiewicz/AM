@@ -11,6 +11,7 @@ from unittest.mock import patch
 import host_catalog
 import recipe_policy_source as compiler
 from recipe_declarations import recipe_rows
+import pinned_recipes
 
 
 class Declarations(unittest.TestCase):
@@ -52,7 +53,7 @@ class Declarations(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             path = root/'programs/x86_64/20x';path.parent.mkdir(parents=True)
-            path.write_text((compiler.ROOT/'programs/x86_64/20x').read_text().replace(
+            path.write_text(pinned_recipes.read_text('x86_64/20x').replace(
                 'DESKTOP_STRIP_NO_SANDBOX=true','DESKTOP_STRIP_NO_SANDBOX=unknown'))
             with self.assertRaisesRegex(ValueError,'invalid recipe boolean'):
                 recipe_rows(root)
@@ -80,7 +81,7 @@ class Declarations(unittest.TestCase):
             (root/'modules').mkdir()
             policy = root/'modules/catalog-yaml-policy.am'
             shutil.copy2(compiler.ROOT/'modules/catalog-yaml-policy.am', policy)
-            source = (compiler.ROOT/'programs/x86_64/nvim').read_text()
+            source = pinned_recipes.read_text('x86_64/nvim')
             for arch in architectures:
                 path = root/'programs'/arch/'example'
                 path.parent.mkdir(parents=True)
@@ -124,7 +125,7 @@ class Declarations(unittest.TestCase):
                 path = root/'programs'/row['recipe']
                 path.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(compiler.ROOT/'programs'/row['recipe'], path)
-            source = (compiler.ROOT/'programs/x86_64/nvim').read_text()
+            source = pinned_recipes.read_text('x86_64/nvim')
             for arch in ('x86_64', 'aarch64', 'i686', 'armv7l'):
                 path = root/'programs'/arch/'example'
                 path.parent.mkdir(parents=True, exist_ok=True)
