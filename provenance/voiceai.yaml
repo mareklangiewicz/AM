@@ -9,7 +9,7 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "5dfe10e9b37cd6c31a85beec8a25dc5904559211"
+        commit: "a934cdc2df8998d679d99702f560a2074ee56752"
         path: "programs/aarch64/localflow"
         blob: "bdbc518420c1a9338d5fed7d2746f74b7dbf8b3e"
     "armv7l":
@@ -26,18 +26,18 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "5dfe10e9b37cd6c31a85beec8a25dc5904559211"
+        commit: "a934cdc2df8998d679d99702f560a2074ee56752"
         path: "programs/x86_64/localflow"
         blob: "4eb81f46541e8f8c16a66c4eefdaacd662fd1c4a"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-21T16:47:36Z"
+        evaluated_at: "2026-11-21T18:11:06Z"
         recipe_sha256: "b8006241120d6af66a6435fdb6bf6c58f3ffdf0882093408e495d047a06dd5da"
-        rules: "5dfe10e9b37cd6c31a85beec8a25dc5904559211"
+        rules: "a934cdc2df8998d679d99702f560a2074ee56752"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "5dfe10e9b37cd6c31a85beec8a25dc5904559211"
+            commit: "a934cdc2df8998d679d99702f560a2074ee56752"
             path: "modules/"
             sha256: "ec6a21c18fe69a42374260470b5bee2423670c1722dd6226687f753027d72232"
   "voiceai":
@@ -59,17 +59,17 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "5dfe10e9b37cd6c31a85beec8a25dc5904559211"
+        commit: "a934cdc2df8998d679d99702f560a2074ee56752"
         path: "programs/x86_64/voiceai"
         blob: "54a7a5d2fc44e9d2208d1b9d890ba292980588dc"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-21T16:47:36Z"
+        evaluated_at: "2026-11-21T18:11:06Z"
         recipe_sha256: "d6efe29d73eca28de88f25dc42faef23f6c3e98f35a8a5073afa0db04d8efa2e"
-        rules: "5dfe10e9b37cd6c31a85beec8a25dc5904559211"
+        rules: "a934cdc2df8998d679d99702f560a2074ee56752"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "5dfe10e9b37cd6c31a85beec8a25dc5904559211"
+            commit: "a934cdc2df8998d679d99702f560a2074ee56752"
             path: "modules/"
             sha256: "ec6a21c18fe69a42374260470b5bee2423670c1722dd6226687f753027d72232"

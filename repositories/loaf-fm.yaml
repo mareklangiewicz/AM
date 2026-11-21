@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/5dfe10e9b37cd6c31a
 kind: "repository"
 repository_id: 1422080829
 repository: "m-uvex/loaf-fm"
-collected_at: "2026-11-18T14:11:19Z"
+collected_at: "2026-11-21T18:05:58Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-18T14:11:19Z"
+observed_at: "2026-11-21T18:05:58Z"
 releases:
   "416186940":
     tag: "v0.1.0"
@@ -224,84 +224,161 @@ releases:
         digest: "sha256:e01cf7da8220a983c2c67d7e37b92280604673a97fc4de09f5c2f6022ad843ab"
   "440745270":
     tag: "nightly"
-    title: "Loaf Nightly (a66a1e7)"
+    title: "Loaf Nightly (2ddc51c)"
     url: "https://github.com/m-uvex/loaf-fm/releases/tag/nightly"
-    created_at: "2026-11-15T21:19:36Z"
+    created_at: "2026-11-21T16:30:56Z"
     published_at: "2026-11-10T18:25:33Z"
-    updated_at: "2026-11-15T21:23:00Z"
+    updated_at: "2026-11-21T16:35:29Z"
     prerelease: true
     source_zip_url: "https://api.github.com/repos/m-uvex/loaf-fm/zipball/nightly"
     source_tar_url: "https://api.github.com/repos/m-uvex/loaf-fm/tarball/nightly"
     download_base: "https://github.com/m-uvex/loaf-fm/releases/download/nightly/"
     assets:
-      "752397215":
+      "775385465":
+        name: "loaf-v0.3.0-linux-x86_64.tar.gz"
+        url_suffix: "loaf-v0.3.0-linux-x86_64.tar.gz"
+        size: 4140401
+        media_type: "application/gzip"
+        digest: "sha256:b9e386a01724125978e6826876c1415d441e8e832c438b25b2b087eff1f6c700"
+      "775385468":
+        name: "loaf-v0.3.0-linux-x86_64"
+        url_suffix: "loaf-v0.3.0-linux-x86_64"
+        size: 10864161
+        digest: "sha256:2a083385bb3b589c57a4448cbb3881ca6b976b197ba4473199822fddd9425c2f"
+      "775385469":
+        name: "Loaf-v0.3.0-x86_64.AppImage"
+        url_suffix: "Loaf-v0.3.0-x86_64.AppImage"
+        size: 43940344
+        digest: "sha256:541ece9e62933008c143dead3451d2a9e635023721617c77bff9b188e5e937ff"
+      "775385471":
+        name: "loaf_0.3.0_amd64.deb"
+        url_suffix: "loaf_0.3.0_amd64.deb"
+        size: 3117554
+        media_type: "application/x-debian-package"
+        digest: "sha256:4586dd64979913f528e2c3f9d5a786e582afca8920d3919f29d6e71ce72a0fd5"
+      "775385472":
+        name: "loaf-0.3.0-1-x86_64.pkg.tar.zst"
+        url_suffix: "loaf-0.3.0-1-x86_64.pkg.tar.zst"
+        size: 3801317
+        digest: "sha256:8a0c58d76471ce4d64498aca869b06680237c91f239a5c786b3822ad60e9dadc"
+      "776175984":
         name: "SHA256SUMS"
         url_suffix: "SHA256SUMS"
         size: 1121
-        digest: "sha256:de4000e10d53fa1bfc6e5c83bd43f66430c911b23cc0a2f5c78bc0300aab9b19"
-      "752397216":
-        name: "loaf_0.3.0_amd64.deb"
-        url_suffix: "loaf_0.3.0_amd64.deb"
-        size: 3131912
-        media_type: "application/x-debian-package"
-        digest: "sha256:a8928952ab810fde6e659915c40e50fa6dddfb79012557274b166cd5eca049e3"
-      "752397217":
-        name: "loaf-v0.3.0-linux-x86_64"
-        url_suffix: "loaf-v0.3.0-linux-x86_64"
-        size: 11222961
-        digest: "sha256:03faaa19ab21a38618749a788435e9c3125df0004e147ec8e941472f76878bd6"
-      "752397218":
-        name: "loaf-v0.3.0-linux-x86_64.tar.gz"
-        url_suffix: "loaf-v0.3.0-linux-x86_64.tar.gz"
-        size: 4150413
-        media_type: "application/gzip"
-        digest: "sha256:42e2580144e2626fc621cb3d8a3adf35423230e8600162e11029d8a89612121b"
-      "752397220":
-        name: "Loaf-nightly-x86_64.AppImage"
-        url_suffix: "Loaf-nightly-x86_64.AppImage"
-        size: 43936248
-        digest: "sha256:39f518e1080847a949fde474362873ee0be29024355d31e644011c7f8f0a6b15"
-      "752397221":
+        digest: "sha256:0d42b3b1de6e65beca28468fad8ebd712b6963c7b72addd8b89b4433d61aa6c9"
+      "776175985":
         name: "loaf-nightly.x86_64.rpm"
         url_suffix: "loaf-nightly.x86_64.rpm"
-        size: 4133436
+        size: 4138569
         media_type: "application/x-redhat-package-manager"
-        digest: "sha256:6871338a559b91b01f4544033c0e4a030da77a5bbbcc585e3629d01dbaf616bd"
-      "752397222":
-        name: "loaf-0.3.0-1-x86_64.pkg.tar.zst"
-        url_suffix: "loaf-0.3.0-1-x86_64.pkg.tar.zst"
-        size: 3810956
-        digest: "sha256:ff4fc059357c891ad3cefde36d13969b600e063c77416221c2b4a0838a8da012"
-      "752397226":
-        name: "loaf-nightly-linux-x86_64"
-        url_suffix: "loaf-nightly-linux-x86_64"
-        size: 11222961
-        digest: "sha256:03faaa19ab21a38618749a788435e9c3125df0004e147ec8e941472f76878bd6"
-      "752397227":
-        name: "Loaf-v0.3.0-x86_64.AppImage"
-        url_suffix: "Loaf-v0.3.0-x86_64.AppImage"
-        size: 43936248
-        digest: "sha256:39f518e1080847a949fde474362873ee0be29024355d31e644011c7f8f0a6b15"
-      "752397229":
+        digest: "sha256:1035c95de9bef844fd77bd645ce32d17c6bafd54f3ea0329e4580cff17b806f9"
+      "776175988":
         name: "loaf_nightly_amd64.deb"
         url_suffix: "loaf_nightly_amd64.deb"
-        size: 3131912
+        size: 3132374
         media_type: "application/x-debian-package"
-        digest: "sha256:a8928952ab810fde6e659915c40e50fa6dddfb79012557274b166cd5eca049e3"
-      "752397231":
-        name: "loaf-0.3.0-1.x86_64.rpm"
-        url_suffix: "loaf-0.3.0-1.x86_64.rpm"
-        size: 4133436
-        media_type: "application/x-redhat-package-manager"
-        digest: "sha256:6871338a559b91b01f4544033c0e4a030da77a5bbbcc585e3629d01dbaf616bd"
-      "752397232":
-        name: "loaf-nightly-linux-x86_64.tar.gz"
-        url_suffix: "loaf-nightly-linux-x86_64.tar.gz"
-        size: 4150413
-        media_type: "application/gzip"
-        digest: "sha256:42e2580144e2626fc621cb3d8a3adf35423230e8600162e11029d8a89612121b"
-      "752397234":
+        digest: "sha256:ffe0786dc81f877555928f9cf788fb61da6d629de9581df5588cb9adc5d41435"
+      "776175989":
+        name: "loaf-nightly-linux-x86_64"
+        url_suffix: "loaf-nightly-linux-x86_64"
+        size: 10905121
+        digest: "sha256:cef00b2f70a2bb4205986fdb7fe8f8176b1ba7c11fb2531e06c0cb8cb31837b0"
+      "776175991":
+        name: "loaf-0.4.0-1-x86_64.pkg.tar.zst"
+        url_suffix: "loaf-0.4.0-1-x86_64.pkg.tar.zst"
+        size: 3818562
+        digest: "sha256:9afa5f99c108102682e9b45e44568f2b384205335b9c16b2a69c76726fd91f84"
+      "776175992":
+        name: "loaf-v0.4.0-linux-x86_64"
+        url_suffix: "loaf-v0.4.0-linux-x86_64"
+        size: 10905121
+        digest: "sha256:cef00b2f70a2bb4205986fdb7fe8f8176b1ba7c11fb2531e06c0cb8cb31837b0"
+      "776175995":
         name: "loaf-nightly-x86_64.pkg.tar.zst"
         url_suffix: "loaf-nightly-x86_64.pkg.tar.zst"
-        size: 3810956
-        digest: "sha256:ff4fc059357c891ad3cefde36d13969b600e063c77416221c2b4a0838a8da012"
+        size: 3818562
+        digest: "sha256:9afa5f99c108102682e9b45e44568f2b384205335b9c16b2a69c76726fd91f84"
+      "776175996":
+        name: "loaf_0.4.0_amd64.deb"
+        url_suffix: "loaf_0.4.0_amd64.deb"
+        size: 3132374
+        media_type: "application/x-debian-package"
+        digest: "sha256:ffe0786dc81f877555928f9cf788fb61da6d629de9581df5588cb9adc5d41435"
+      "776175997":
+        name: "loaf-nightly-linux-x86_64.tar.gz"
+        url_suffix: "loaf-nightly-linux-x86_64.tar.gz"
+        size: 4157008
+        media_type: "application/gzip"
+        digest: "sha256:d80bb4459690e8b41516fe0dd61b9f1928268c580c5c438cb87982d0e90422ec"
+      "776175998":
+        name: "loaf-v0.4.0-linux-x86_64.tar.gz"
+        url_suffix: "loaf-v0.4.0-linux-x86_64.tar.gz"
+        size: 4157008
+        media_type: "application/gzip"
+        digest: "sha256:d80bb4459690e8b41516fe0dd61b9f1928268c580c5c438cb87982d0e90422ec"
+      "776175999":
+        name: "loaf-0.3.0-1.x86_64.rpm"
+        url_suffix: "loaf-0.3.0-1.x86_64.rpm"
+        size: 4138569
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:1035c95de9bef844fd77bd645ce32d17c6bafd54f3ea0329e4580cff17b806f9"
+      "776176000":
+        name: "Loaf-nightly-x86_64.AppImage"
+        url_suffix: "Loaf-nightly-x86_64.AppImage"
+        size: 43944440
+        digest: "sha256:3599b71bd071481df18a4b0965431749dc2118610bffce4678d2dc937136d7d2"
+      "776176002":
+        name: "Loaf-v0.4.0-x86_64.AppImage"
+        url_suffix: "Loaf-v0.4.0-x86_64.AppImage"
+        size: 43944440
+        digest: "sha256:3599b71bd071481df18a4b0965431749dc2118610bffce4678d2dc937136d7d2"
+  "453216915":
+    tag: "v0.4.0"
+    title: "Loaf v0.4.0"
+    url: "https://github.com/m-uvex/loaf-fm/releases/tag/v0.4.0"
+    created_at: "2026-11-21T12:32:49Z"
+    published_at: "2026-11-21T12:37:43Z"
+    updated_at: "2026-11-21T12:37:43Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/m-uvex/loaf-fm/zipball/v0.4.0"
+    source_tar_url: "https://api.github.com/repos/m-uvex/loaf-fm/tarball/v0.4.0"
+    download_base: "https://github.com/m-uvex/loaf-fm/releases/download/v0.4.0/"
+    assets:
+      "775538952":
+        name: "loaf-v0.4.0-linux-x86_64.tar.gz"
+        url_suffix: "loaf-v0.4.0-linux-x86_64.tar.gz"
+        size: 4102813
+        media_type: "application/gzip"
+        digest: "sha256:41e5573147dda974cc048af0c43f5fb416cdf2c0b96f939972e9ee63819bf644"
+      "775538953":
+        name: "loaf-0.4.0-1-x86_64.pkg.tar.zst"
+        url_suffix: "loaf-0.4.0-1-x86_64.pkg.tar.zst"
+        size: 3770572
+        digest: "sha256:4842de65bebc65a0a40b757bfe1ae75b2285c7357b8fc5254cf48c0087768b67"
+      "775538954":
+        name: "loaf-0.3.0-1.x86_64.rpm"
+        url_suffix: "loaf-0.3.0-1.x86_64.rpm"
+        size: 4084906
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:25bd13ba149a56289ef7e389a198c6a33f8f04c816d8819cc172ad889dad124c"
+      "775538956":
+        name: "loaf_0.4.0_amd64.deb"
+        url_suffix: "loaf_0.4.0_amd64.deb"
+        size: 3100762
+        media_type: "application/x-debian-package"
+        digest: "sha256:5240179850442bb508c52e311134b7f93619a8d27477901591bbdb2f7d61d201"
+      "775538958":
+        name: "SHA256SUMS"
+        url_suffix: "SHA256SUMS"
+        size: 558
+        digest: "sha256:d1f4ebac20c75b67faba4fdfb2797e475a7f5f3642a64593d50779ea33c63142"
+      "775538959":
+        name: "loaf-v0.4.0-linux-x86_64"
+        url_suffix: "loaf-v0.4.0-linux-x86_64"
+        size: 10696225
+        digest: "sha256:6d09665097d1f2c96c2e1da312c7a45ce95a6073a879d27b514f8a1306307af5"
+      "775538960":
+        name: "Loaf-v0.4.0-x86_64.AppImage"
+        url_suffix: "Loaf-v0.4.0-x86_64.AppImage"
+        size: 43362808
+        digest: "sha256:89c9092080b0435c2c4826d24415185688c23d19cadec721edeee878a5e17eec"
