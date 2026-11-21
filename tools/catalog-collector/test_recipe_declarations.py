@@ -29,17 +29,19 @@ class Declarations(unittest.TestCase):
     def setUpClass(cls):
         # Enrollment and recipes as one snapshot at the pinned commit: an upstream
         # merge rewrites both together (ticket 28).
-        temporary = tempfile.TemporaryDirectory(prefix='pinned-configuration-')
-        cls.addClassCleanup(temporary.cleanup)
-        cls.configuration_root = pinned_recipes.configuration(temporary.name)
+        cls.configuration_root = pinned_recipes.shared_configuration()
         # The committed policy's generated section follows the live declarations;
-        # regenerate it from the snapshot's.
-        (cls.configuration_root/'modules').mkdir()
-        shutil.copy2(compiler.ROOT/'modules/catalog-yaml-policy.am', cls.configuration_root/'modules')
-        compiler.generate(cls.configuration_root)
-
-    def pinned(self):
-        return patch.object(host_catalog, 'ROOT', self.configuration_root)
+        # regenerate it from the snapshot's, beside the read-only snapshot.
+        temporary = tempfile.TemporaryDirectory(prefix='pinned-policy-')
+        cls.addClassCleanup(temporary.cleanup)
+        cls.policy_root = Path(temporary.name)
+        (cls.policy_root/'programs').symlink_to(cls.configuration_root/'programs')
+        registry = 'tools/catalog-collector/recipe-url-policies.json'
+        (cls.policy_root/registry).parent.mkdir(parents=True)
+        (cls.policy_root/registry).symlink_to(cls.configuration_root/registry)
+        (cls.policy_root/'modules').mkdir()
+        shutil.copy2(compiler.ROOT/'modules/catalog-yaml-policy.am', cls.policy_root/'modules')
+        compiler.generate(cls.policy_root)
 
     def test_enrolled_candidate_declarations_select_saved_assets(self):
         import hashlib
@@ -49,8 +51,7 @@ class Declarations(unittest.TestCase):
         archive = research/receipt['evidence_archive']
         self.assertEqual(hashlib.sha256(archive.read_bytes()).hexdigest(), receipt['evidence_archive_sha256'])
         rows = {r['app']:r for r in recipe_rows(self.configuration_root)}
-        with self.pinned():
-            enrolled, _ = host_catalog.installation_configuration()
+        enrolled, _ = host_catalog.installation_configuration(root=self.configuration_root)
         self.assertIn('20x', [r['app'] for r in enrolled])
         self.assertIn('2fac', [r['app'] for r in enrolled])
         with tarfile.open(archive) as evidence:
@@ -69,7 +70,7 @@ class Declarations(unittest.TestCase):
                             asset['browser_download_url']]),json.dumps(release['prerelease'])])+'\n'
                 for command in (['mawk'], ['gawk'], ['busybox','awk']):
                     with self.subTest(app=app, command=command):
-                        result = subprocess.run([*command,'-f',str(self.configuration_root/'modules/catalog-yaml-policy.am')],
+                        result = subprocess.run([*command,'-f',str(self.policy_root/'modules/catalog-yaml-policy.am')],
                             input=facts,text=True,capture_output=True,timeout=10,
                             env={**os.environ,'LC_ALL':'C','AM_YAML_RECIPE':row['recipe'],
                                  'AM_YAML_REPOSITORY':str(row['repository_id']),
@@ -140,8 +141,7 @@ class Declarations(unittest.TestCase):
                                 self.assertIn('no_matching_asset', result.stderr)
 
     def test_unenrolled_architectures_select_through_common_registry(self):
-        with self.pinned():
-            baseline_rows, baseline_sources = host_catalog.installation_configuration()
+        baseline_rows, baseline_sources = host_catalog.installation_configuration(root=self.configuration_root)
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             (root/'modules').mkdir()

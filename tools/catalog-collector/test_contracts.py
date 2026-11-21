@@ -20,6 +20,7 @@ from publication import git,publish_tree,REF
 import collection_interface as interface
 import host_catalog as host
 from provenance import Evaluator,review_url
+import pinned_recipes
 
 ROOT=c.ROOT
 FIXTURES=ROOT/'tools/catalog-contract/fixtures'
@@ -86,7 +87,8 @@ class Contracts(unittest.TestCase):
                 "import {parseDocument} from './tools/catalog-contract/reader.mjs';"
                 "parseDocument(process.argv[1],'summary');",raw],cwd=ROOT,capture_output=True)
         accepted=encode(summary).decode()
-        self.assertEqual(node(accepted).returncode,0,node(accepted).stderr)
+        result=node(accepted)
+        self.assertEqual(result.returncode,0,result.stderr)
         retired=accepted.replace('counts:\n','compatibility_publication:\n  state: "not_attempted"\ncounts:\n',1)
         self.assertNotEqual(retired,accepted)
         with self.assertRaises(ValueError): decode(retired.encode())
@@ -471,7 +473,7 @@ class Contracts(unittest.TestCase):
         revision=git(ROOT,'rev-parse','HEAD').decode().strip()
         # Recipes are read at a pinned commit: an upstream merge rewrites the
         # live 20x, ageha-editor and am, and no test may depend on that (ticket 28).
-        recipes='3b9b918622ea89711078865be4968aa983e5b91b'
+        recipes=pinned_recipes.COMMIT
         inputs=dict({key:revision for key in ('source','policy','recipes','rules','schemas')},recipes=recipes)
         evaluator=Evaluator(ROOT,inputs,NEW)
         shared=evaluator.classify('20x','x86_64',1152028865)

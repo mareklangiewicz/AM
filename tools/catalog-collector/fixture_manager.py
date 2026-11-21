@@ -27,9 +27,15 @@ def setup_catalog(cls):
 
 
 class ManagerHarness:
+    # Unit tests install pinned recipes; tree_*.py set live and install the tree's (ticket 28).
+    live = False
+
+    def recipe_file(self, recipe):
+        return ROOT/'programs'/recipe if self.live else pinned_recipes.write(recipe, self.path/'pinned')
+
     def run_manager_install(self, *, local_script=False, source_unavailable=False, amrepo=SOURCE, recipe=None, app_name="obsidian", appman=False, flags=""):
         """Execute real install dispatch/functions with only external AM services stubbed.
-        RECIPE is a recipe file; None is the pinned x86_64/obsidian (ticket 28)."""
+        RECIPE is a recipe file; None is recipe_file('x86_64/obsidian')."""
         module_dir=self.root/'opt/am/modules';module_dir.mkdir(parents=True,exist_ok=True)
         (module_dir/'appimage.am').write_bytes(LIFECYCLE.read_bytes())
         cache=self.path/'manager-cache';cache.mkdir(exist_ok=True)
@@ -37,7 +43,7 @@ class ManagerHarness:
         (data/'x86_64-apps').write_text('fixture inventory\n')
         recipe_source=self.path/'managed-recipe'
         # Redirect every absolute install location before any script can execute.
-        recipe_text = recipe.read_text() if recipe else pinned_recipes.read_text('x86_64/obsidian')
+        recipe_text = (recipe or self.recipe_file('x86_64/obsidian')).read_text()
         recipe_source.write_text(recipe_text.replace('/opt/',str(self.root)+'/opt/')
                                  .replace('/usr/local/',str(self.root)+'/usr/local/'))
         module=(ROOT/'modules/install.am').read_text()

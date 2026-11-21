@@ -76,3 +76,8 @@ replaying `8f3bd0cf3` in that format shrinks its diffs 5,358 -> 1,115,
 15 -> 5 and 220 -> 10 lines; the tree tier keeps the layout. `merge.py
 apply` now rewrites five files: the policy, the two enrollment files and
 the two policy row files. Fast tier green at `fc27a4c68`.
+
+November 21, 2026, correction: the classification said no test checked that
+the committed policy equals a regeneration. `tree_host_policy_source.py`
+already asserted it for the recipe-declarations section; that assertion is
+dropped now that `tree_generated_policy.py` checks the whole file.

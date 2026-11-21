@@ -65,9 +65,9 @@ def git(root,*arguments,check=True):
 
 
 def text(root,revision,path):
-    found=git(root,'show',revision+':'+path,check=path not in MOVED)
-    if found.returncode:found=git(root,'show',revision+':'+MOVED[path])
-    return found.stdout.decode()
+    if path in MOVED and git(root,'cat-file','-e',revision+':'+path,check=False).returncode:
+        path=MOVED[path]
+    return git(root,'show',revision+':'+path).stdout.decode()
 
 
 def recipes(root,revision):

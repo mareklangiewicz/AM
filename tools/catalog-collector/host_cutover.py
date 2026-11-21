@@ -111,10 +111,11 @@ def overlay(source, target):
             if os.path.exists(name):os.unlink(name)
 
 
-def apply(prepared, root):
+def apply(prepared, root, *, checkout=ROOT):
+    """Install from CHECKOUT (default: this one), which must be at the manifest's source."""
     manifest=json.loads((prepared/'manifest.json').read_text())
     source=manifest['source']
-    if subprocess.check_output(['git','-C',str(ROOT),'rev-parse','HEAD'],text=True).strip()!=source:
+    if subprocess.check_output(['git','-C',str(checkout),'rev-parse','HEAD'],text=True).strip()!=source:
         raise ValueError('use the source revision that prepared this cutover')
     manager=root/'opt/am';apps=root/'opt';bins=root/'usr/local/bin'
     desktop=root/'usr/local/share/applications'
@@ -147,12 +148,12 @@ def apply(prepared, root):
         (backup/'launchers.json').write_text(json.dumps(launchers,indent=2)+'\n')
         (backup/'complete').write_text('Metadata snapshot complete\n')
     # This is deliberately a maintenance-window operation, not pair-atomic delivery.
-    shutil.copy2(ROOT/'APP-MANAGER',manager/'APP-MANAGER')
-    for module in (ROOT/'modules').glob('*.am'):shutil.copy2(module,manager/'modules'/module.name)
+    shutil.copy2(checkout/'APP-MANAGER',manager/'APP-MANAGER')
+    for module in (checkout/'modules').glob('*.am'):shutil.copy2(module,manager/'modules'/module.name)
     for row in manifest['apps']:
         app=row['app'];path=apps/app;layout=row['layout'];payload=prepared/app/'payload'
         overlay(payload,path)
-        body=(ROOT/'programs'/row['recipe']).read_bytes()
+        body=(checkout/'programs'/row['recipe']).read_bytes()
         paths=dict(APPS_DIR=str(apps), BIN_DIR=str(bins), DESKTOP_DIR=str(desktop))
         text=bound_recipe(body, 'https://raw.githubusercontent.com/mareklangiewicz/AM/'+source,
                           paths, manager/'modules')

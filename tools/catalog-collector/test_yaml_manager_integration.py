@@ -13,7 +13,6 @@ import unittest
 import fixture_manager as harness
 from fixture_manager import ROOT, NOW
 from fixture_v3 import expanded, publish_local
-import pinned_recipes
 
 SOURCE='https://raw.githubusercontent.com/selected-owner/selected.repo/feature/catalog'
 RUNTIME=('catalog-yaml.am','catalog-contract-reader.am','catalog-contract-parser.am','catalog-contract-tables.am','catalog-yaml-policy.am')
@@ -100,11 +99,8 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\napp=${0##
     manager=harness.ManagerHarness.manager
     legacy=harness.ManagerHarness.legacy
 
-    # Unit tests install pinned recipes; tree_*.py set live and install the tree's (ticket 28).
-    live=False
-
-    def recipe_file(self,recipe):
-        return ROOT/'programs'/recipe if self.live else pinned_recipes.write(recipe,self.path/'pinned')
+    live=harness.ManagerHarness.live
+    recipe_file=harness.ManagerHarness.recipe_file
 
     def install(self,recipe='x86_64/obsidian',appman=False):
         r=self.run_manager_install(amrepo=SOURCE,recipe=self.recipe_file(recipe),

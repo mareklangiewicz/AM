@@ -31,7 +31,6 @@ class TreeHostPolicySource(unittest.TestCase):
                 first=policy.read_bytes()
                 compiler.generate()
                 self.assertEqual(first,policy.read_bytes())
-                self.assertEqual(first,(Path(__file__).resolve().parents[2]/'modules/catalog-yaml-policy.am').read_bytes())
                 # A recipe edit survives regeneration and controls both consumers.
                 recipe=recipes/'emmylua'
                 recipe.write_text(recipe.read_text().replace(

@@ -21,17 +21,6 @@ class LargeBatchEnrollment(unittest.TestCase):
     baseline_revision = 'b61eb2733441d2dd5f998f350ce32a3da1ebc2f9'
     fell_back = {'x86_64/appimagetool','x86_64/appimageupdatetool','x86_64/satty'}
 
-    @classmethod
-    def setUpClass(cls):
-        # Enrollment and recipes as one snapshot at the pinned commit: an upstream
-        # merge rewrites both together (ticket 28).
-        temporary = tempfile.TemporaryDirectory(prefix='pinned-configuration-')
-        cls.addClassCleanup(temporary.cleanup)
-        cls.configuration_root = pinned_recipes.configuration(temporary.name)
-
-    def pinned(self):
-        return patch.object(host_catalog, 'ROOT', self.configuration_root)
-
     def test_configured_collection_preserves_baseline_and_publishes_saved_batch(self):
         research = host_catalog.ROOT/'docs/track/release-catalog/research'
         receipt = json.loads((research/self.receipt_name).read_text())
@@ -40,8 +29,8 @@ class LargeBatchEnrollment(unittest.TestCase):
                          receipt['evidence_archive_sha256'])
         candidates = {r['app']:r for r in receipt['candidates']
                       if r['app'] in receipt['converted']}
-        with self.pinned():
-            configured, _ = host_catalog.installation_configuration()
+        # Enrollment and recipes as one snapshot at the pinned commit (ticket 28).
+        configured, _ = host_catalog.installation_configuration(root=pinned_recipes.shared_configuration())
         old_list = subprocess.check_output(['git','-C',str(host_catalog.ROOT),'show',
             self.baseline_revision+':tools/catalog-collector/collection-recipes.txt'],text=True)
         old_names = {line for line in old_list.splitlines() if line and not line.startswith('#')}

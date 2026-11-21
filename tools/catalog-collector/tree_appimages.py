@@ -55,7 +55,7 @@ class TreeAppImages(test_yaml_appimages.AppImagesCase):
                 except ValueError as error:
                     self.assertEqual(str(error),'no_matching_asset')
                     before=self.snapshot();self.stage()
-                    result=self.run_manager_install(amrepo=integration.SOURCE,recipe=ROOT/'programs'/recipe,
+                    result=self.run_manager_install(amrepo=integration.SOURCE,recipe=self.recipe_file(recipe),
                         app_name=recipe.split('/')[1])
                     self.assertNotEqual(result.returncode,0);self.assertEqual(self.snapshot(),before)
                     continue

@@ -6,14 +6,21 @@ recipes they use as material from here instead. Move COMMIT only on purpose,
 to a commit whose recipes the tests were written against, and keep it on
 main-marek so the checkout has it.
 """
+import atexit
 import io
-import subprocess
+import sys
 import tarfile
+import tempfile
+from functools import cache
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT/'tools/recipe-reconstruction') not in sys.path:
+    sys.path.insert(0, str(ROOT/'tools/recipe-reconstruction'))
+from originals import Originals  # noqa: E402
+
 COMMIT = '3b9b918622ea89711078865be4968aa983e5b91b'
-_cache = {}
+_git = Originals(ROOT).git
 # What the collector's configuration reads: every recipe (recipe_rows globs
 # them) and the fork-side enrollment files an upstream merge rewrites.
 CONFIGURATION = ('programs/x86_64', 'programs/aarch64', 'programs/i686', 'programs/armv7l',
@@ -23,13 +30,10 @@ CONFIGURATION = ('programs/x86_64', 'programs/aarch64', 'programs/i686', 'progra
                  'tools/catalog-collector/git-sources.json')
 
 
+@cache
 def read_bytes(recipe):
     """The bytes of programs/RECIPE (for example 'x86_64/obsidian') at COMMIT."""
-    if recipe not in _cache:
-        _cache[recipe] = subprocess.run(
-            ['git', '--no-replace-objects', '-C', str(ROOT), 'show', f'{COMMIT}:programs/{recipe}'],
-            check=True, capture_output=True).stdout
-    return _cache[recipe]
+    return _git('show', f'{COMMIT}:programs/{recipe}')
 
 
 def read_text(recipe):
@@ -49,9 +53,8 @@ def repository(root, recipes=()):
     written at COMMIT. Code that reads both `git show COMMIT:programs/R` and the
     working-tree programs/R then agrees, without the live tree."""
     root = Path(root)
-    subprocess.run(['git', 'init', '--quiet', '--template=', str(root)], check=True)
-    objects = subprocess.run(['git', '-C', str(ROOT), 'rev-parse', '--path-format=absolute', '--git-path', 'objects'],
-                             check=True, capture_output=True, text=True).stdout.strip()
+    Originals(root.parent).git('init', '--quiet', '--template=', str(root))
+    objects = _git('rev-parse', '--path-format=absolute', '--git-path', 'objects').decode().strip()
     (root/'.git/objects/info').mkdir(parents=True, exist_ok=True)
     (root/'.git/objects/info/alternates').write_text(objects+'\n', encoding='utf-8')
     for recipe in recipes:
@@ -60,11 +63,17 @@ def repository(root, recipes=()):
 
 
 def configuration(root):
-    """Unpack CONFIGURATION at COMMIT under ROOT and return ROOT. Point a module's
-    ROOT at it (host_catalog, recipe_policy_source) to run on a consistent
-    snapshot of enrollment and recipes instead of the live ones."""
-    archive = subprocess.run(['git', '--no-replace-objects', '-C', str(ROOT), 'archive', COMMIT, '--', *CONFIGURATION],
-                             check=True, capture_output=True).stdout
-    with tarfile.open(fileobj=io.BytesIO(archive)) as tree:
+    """Unpack CONFIGURATION at COMMIT under ROOT and return ROOT: a consistent
+    snapshot of enrollment and recipes to pass as `root` (host_catalog,
+    recipe_rows, recipe_policy_source) instead of the live checkout."""
+    with tarfile.open(fileobj=io.BytesIO(_git('archive', COMMIT, '--', *CONFIGURATION))) as tree:
         tree.extractall(root, filter='data')
     return Path(root)
+
+
+@cache
+def shared_configuration():
+    """One read-only configuration snapshot per test process; never write into it."""
+    temporary = tempfile.TemporaryDirectory(prefix='pinned-configuration-')
+    atexit.register(temporary.cleanup)
+    return configuration(temporary.name)

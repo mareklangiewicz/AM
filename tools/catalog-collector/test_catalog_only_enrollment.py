@@ -14,21 +14,11 @@ import pinned_recipes
 
 
 class CatalogOnlyEnrollment(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        # Enrollment and recipes as one snapshot at the pinned commit: an upstream
-        # merge rewrites both together (ticket 28).
-        temporary = tempfile.TemporaryDirectory(prefix='pinned-configuration-')
-        cls.addClassCleanup(temporary.cleanup)
-        cls.configuration_root = pinned_recipes.configuration(temporary.name)
-
-    def pinned(self):
-        return patch.object(host_catalog, 'ROOT', self.configuration_root)
-
     def test_real_unmigrated_source_collects_but_is_excluded_from_installation(self):
-        with self.pinned():
-            rows, sources = host_catalog.configuration()
-            installed, _ = host_catalog.installation_configuration()
+        # One snapshot of enrollment and recipes at the pinned commit (ticket 28).
+        pinned = pinned_recipes.shared_configuration()
+        rows, sources = host_catalog.configuration(root=pinned)
+        installed, _ = host_catalog.installation_configuration(root=pinned)
         row = next(row for row in rows if row['app'] == 'ageha-editor')
         self.assertNotIn('recipe', row)
         self.assertNotIn(row, installed)
@@ -54,8 +44,7 @@ class CatalogOnlyEnrollment(unittest.TestCase):
             self.assertEqual(len(acquired[rid]['releases']), candidate['release_count'])
 
     def test_unmigrated_app_shares_source_and_publishes_without_policy(self):
-        with self.pinned():
-            baseline, sources = host_catalog.configuration()
+        baseline, sources = host_catalog.configuration(root=pinned_recipes.shared_configuration())
         sample = baseline[0]
         extra = dict(app='catalog-only-example', repository_id=sample['repository_id'],
                      repository=sample['repository'])

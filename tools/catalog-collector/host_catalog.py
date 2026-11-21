@@ -67,10 +67,12 @@ def utc():
     return datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
 
 
-def configuration(*, source_cap=None):
+def configuration(*, root=None, source_cap=None):
+    """Enrolled rows and their sources from the checkout at root (default: this one)."""
+    root=ROOT if root is None else Path(root)
     source_cap=SOURCE_CAP if source_cap is None else source_cap
-    declarations = {row['recipe']: row for row in recipe_rows(ROOT)}
-    enrolled = [line for line in (ROOT/'tools/catalog-collector/collection-recipes.txt').read_text().splitlines()
+    declarations = {row['recipe']: row for row in recipe_rows(root)}
+    enrolled = [line for line in (root/'tools/catalog-collector/collection-recipes.txt').read_text().splitlines()
                 if line and not line.startswith('#')]
     if not enrolled or len(set(enrolled)) != len(enrolled):
         raise ValueError('empty or duplicate collection enrollment')
@@ -79,7 +81,7 @@ def configuration(*, source_cap=None):
     rows = [declarations[recipe] for recipe in enrolled]
     # Catalog facts do not require an installer migration or selection policy.
     # Missing file supports older checkouts and isolated declaration fixtures.
-    catalog_only = ROOT/'tools/catalog-collector/collection-apps.json'
+    catalog_only = root/'tools/catalog-collector/collection-apps.json'
     extra = (json.loads(catalog_only.read_text(), object_pairs_hook=unique_object)
              if catalog_only.exists() else [])
     if not isinstance(extra, list):
@@ -104,9 +106,9 @@ def configuration(*, source_cap=None):
     return rows, sources
 
 
-def installation_configuration():
+def installation_configuration(*, root=None):
     """Only enrolled recipes with reviewed installation/selection declarations."""
-    rows, _ = configuration()
+    rows, _ = configuration(root=root)
     rows = [row for row in rows if 'recipe' in row]
     return rows, {str(row['repository_id']): row['repository'] for row in rows}
 

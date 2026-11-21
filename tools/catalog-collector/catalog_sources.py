@@ -152,7 +152,7 @@ def verify(queue, *, max_sources, max_requests, root=ROOT, checkpoint=None, revi
         raise ValueError('request scope')
     if not re.fullmatch(r'[0-9a-f]{40}', queue['source']):
         raise ValueError('source commit')
-    current, known = configuration()
+    current, known = configuration(root=root)
     enrolled = {row['app'] for row in current}
     source_names = {name.lower():int(rid) for rid,name in known.items()}
     proposals, deferred = [], []
