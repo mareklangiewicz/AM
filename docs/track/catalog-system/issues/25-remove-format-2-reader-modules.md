@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: open
+Status: resolved
 Blocked by: none
 
 ## Outcome
@@ -279,3 +279,14 @@ test now expects refusal from both readers (red before the contract change).
 Ruff, tool suites, browser 15/15, collector fast tier 181 OK. Not yet run:
 Long tests. Not yet pushed: the strip commit (must land before the ship, and
 while no catalog run is in flight, else that run's status publish conflicts).
+
+November 21, 2026: step 3 shipped, ticket resolved. Strip commit `1e05e4ca9`
+pushed to `catalog-status-v1` (Marek approved; lease on `8f2a04e51`, no run in
+flight). `release.py plan --ci format2-step3 --repin-schemas` took 7m47s alone
+and validated both live refs under HEAD's contract. `ship` moved `main-marek`
+to `5dfe10e9b`, repinned `CATALOG_SCHEDULE_REVISION 40701f957 -> 5dfe10e9b`
+and `CATALOG_SCHEMA_REVISION cb854845b -> 5dfe10e9b`; Fast tests 44925452639
+and catalog run 44925457385 green, its new summary at `ab97c6c75` and 0 of
+64 retained summaries carry the field. Browser redeployed (run 44928463116);
+the live `definitions.mjs` is byte-equal to HEAD's. `ci/format2-step3`
+deleted.
