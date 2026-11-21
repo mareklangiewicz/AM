@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: open
+Status: resolved
 Blocked by: none
 
 ## Outcome
@@ -62,3 +62,17 @@ list; move the AppImage policies out of `test-data/` and fix the docstring;
 check that the committed policy equals a regeneration (Fast tests or `gate`);
 and write the two JSON files one row per line, so a merge rewrites the rows
 it touches instead of reindented blocks (not measured yet).
+
+November 21, 2026: resolved with the four changes Marek chose; no file stops
+being committed, since the one derived file is fetched by hosts.
+`2951105ae`: `tree_generated_policy.py` regenerates `catalog-yaml-policy.am`
+in `merge.py`'s order and requires the committed file to equal it (2.8 s;
+fails on a one-line hand edit). `5ae627825`: `unavailable-github-recipes.json`
+and `tree_unavailable_recipes.py` deleted, `merge.py` no longer rewrites it.
+`12655b480`: `appimage-policies.json` moved out of `test-data/`, docstring
+corrected. `fc27a4c68`: `rows_json` writes the three row files one row per
+line (lossless; 38,439 + 43,082 + 2,132 lines become 1,466 + 8,618 + 107);
+replaying `8f3bd0cf3` in that format shrinks its diffs 5,358 -> 1,115,
+15 -> 5 and 220 -> 10 lines; the tree tier keeps the layout. `merge.py
+apply` now rewrites five files: the policy, the two enrollment files and
+the two policy row files. Fast tier green at `fc27a4c68`.
