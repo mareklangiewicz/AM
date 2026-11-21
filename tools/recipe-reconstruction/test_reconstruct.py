@@ -12,6 +12,8 @@ import reconstruct as tool
 
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parents[1]
+sys.path.insert(0, str(REPO/'tools/catalog-collector'))
+import pinned_recipes
 
 
 class Reconstruction(unittest.TestCase):
@@ -19,6 +21,7 @@ class Reconstruction(unittest.TestCase):
     def setUpClass(cls):
         cls.template, cls.metadata = tool.load_template(tool.TEMPLATE)
         cls.source = tool.ORIGINALS.read(cls.metadata['fixture_commit'], 'programs/x86_64/obsidian')
+        cls.short = pinned_recipes.read_text('x86_64/obsidian')
 
     def test_real_fixture_hashes_and_complete_round_trips(self):
         for fixture in self.metadata['fixtures']:
@@ -93,12 +96,12 @@ class Reconstruction(unittest.TestCase):
                 tool.render(self.template, value)
 
     def test_short_recipe_maps_current_literals(self):
-        short = (REPO/'programs/x86_64/obsidian').read_text()
+        short = self.short
         value = tool.from_short(short, tool.TEMPLATE)
         self.assertEqual(tool.render(self.template, value), self.source)
 
     def test_short_recipe_refuses_code_and_other_layouts(self):
-        short = (REPO/'programs/x86_64/obsidian').read_text()
+        short = self.short
         edits = [short.replace('APP=obsidian', 'APP=$(whoami)'),
                  short.replace('APP=obsidian', 'APP=obsidian\nAPP=obsidian'),
                  short.replace('APP=obsidian', 'APP=obsidian\nPATH=/tmp'),
@@ -162,8 +165,9 @@ class Reconstruction(unittest.TestCase):
             result = subprocess.run([sys.executable,str(ROOT/'reconstruct.py'),'check',str(path/'missing')],capture_output=True)
             self.assertEqual(result.returncode,3)
             self.assertEqual(json.loads(result.stdout)['status'],'error')
+            short = Path(directory)/'short'; short.write_text(self.short)
             rendered = subprocess.run([sys.executable,str(ROOT/'reconstruct.py'),'render','--template',tool.TEMPLATE,
-                                       '--short-recipe',str(REPO/'programs/x86_64/obsidian')],capture_output=True)
+                                       '--short-recipe',str(short)],capture_output=True)
             self.assertEqual(rendered.returncode,0,rendered.stderr)
             self.assertEqual(rendered.stdout,self.source.encode())
             self.assertEqual(rendered.stderr,b'')

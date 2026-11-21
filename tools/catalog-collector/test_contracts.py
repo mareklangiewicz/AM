@@ -469,10 +469,14 @@ class Contracts(unittest.TestCase):
 
     def test_provenance_positive_predicates_and_catalog_only_recipe(self):
         revision=git(ROOT,'rev-parse','HEAD').decode().strip()
-        evaluator=Evaluator(ROOT,{key:revision for key in ('source','policy','recipes','rules','schemas')},NEW)
+        # Recipes are read at a pinned commit: an upstream merge rewrites the
+        # live 20x, ageha-editor and am, and no test may depend on that (ticket 28).
+        recipes='3b9b918622ea89711078865be4968aa983e5b91b'
+        inputs=dict({key:revision for key in ('source','policy','recipes','rules','schemas')},recipes=recipes)
+        evaluator=Evaluator(ROOT,inputs,NEW)
         shared=evaluator.classify('20x','x86_64',1152028865)
         self.assertEqual(shared['classification'],'shared')
-        self.assertIn('/blob/'+revision+'/programs/x86_64/20x',review_url(shared))
+        self.assertIn('/blob/'+recipes+'/programs/x86_64/20x',review_url(shared))
         # The live recipe is migrated; keep the positive template fixture pinned.
         legacy=dict(evaluator.inputs,recipes='90a9f01b09f8262b38710d01f7d2b7ee510af525')
         template=Evaluator(ROOT,legacy,NEW).classify('actual','x86_64',0)

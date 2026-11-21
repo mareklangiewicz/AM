@@ -21,6 +21,7 @@ from originals import Catalogue, Originals
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT/'tools/catalog-collector'))
 import recipe_policy_source as compiler
+import pinned_recipes
 
 REVISION = 'bbffd15c19d01ef9124fbf99b5b9c41d2661ea22'
 CANDIDATES = {
@@ -272,7 +273,7 @@ cp "$ASSESS_PAYLOAD" "$2"
                         else:
                             target.write_bytes(archive.extractfile(member).read())
                 (self.bin/'dirname').symlink_to(shutil.which('dirname'))
-                source = (ROOT/'programs/x86_64'/app).read_text()
+                source = pinned_recipes.read_text('x86_64/'+app)
                 recipe.write_text(source.replace('/opt/am/modules/appimage.am',
                                                 str(ROOT/'modules/appimage.am')))
                 env['ASSESS_METADATA'] = str(metadata)

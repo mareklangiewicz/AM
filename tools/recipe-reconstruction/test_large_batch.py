@@ -10,6 +10,7 @@ from pathlib import Path, PurePosixPath
 import re
 import shutil
 import subprocess
+import sys
 import tarfile
 import tempfile
 import unittest
@@ -17,6 +18,8 @@ import unittest
 from originals import Catalogue, Originals
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / 'tools/catalog-collector'))
+import pinned_recipes  # noqa: E402
 RESEARCH = ROOT / 'docs/track/release-catalog/research'
 RECEIPT = RESEARCH / 'large-batch-evidence.json'
 
@@ -208,7 +211,7 @@ class LargeBatch(unittest.TestCase):
                 selection.write_text('a' * 40 + '\n1\n1\n1\n' +
                                      self.rows[app]['observed_at'][:19] + 'Z\n' + url + '\n')
                 recipe = home / 'candidate'
-                source = (ROOT / 'programs/x86_64' / app).read_text()
+                source = pinned_recipes.read_text('x86_64/' + app)
                 self.assertIn('# AM-RECIPE-DECLARATION 1', source)
                 self.assertIn('PACKAGE_LAYOUT=raw', source)
                 recipe.write_text(source.replace('/opt/am/modules/appimage.am',
