@@ -68,3 +68,36 @@ recipe edits uncommitted, 17 fast-tier tests errored with "recipe changed since
 discovery" (`catalog_sources.py` compares the working-tree file with the
 same path at a commit). They pass once the change is committed. Until this
 ticket lands, run either tier on a committed tree; CI always does.
+
+November 21, 2026: measured instead of grepped. Two throwaway worktrees, each
+with one commit over every recipe an upstream merge can touch (11,781 paths
+under `programs/{x86_64,aarch64,i686,armv7l}/`, minus `fork-owned.txt`): one
+appends a comment line to each, one deletes them all. The Fast tests suites
+were run in each. Before: the edit failed 3 tests (`test_reconstruct` x2 on
+the live obsidian short recipe, the provenance test in `test_contracts` on
+live 20x); the deletion failed 90 (with subtests) across about 15 files.
+`recipe-conversion`, `upstream-merge`, `release` and `test/e2e` read no live
+recipe.
+
+Fixed in `efb2449cd` and `5ff5fa709`: new `tools/catalog-collector/pinned_recipes.py`
+reads recipe text at one commit (`3b9b91862`, whose `programs/` equals HEAD's)
+and both suites use it for every named recipe used as material (obsidian,
+20x, nvim, 0xfx, ageha-editor, am, and the batch lifecycle recipes).
+`pinned_recipes.repository()` makes a temporary Git repo that borrows this
+checkout's objects, for code that reads a recipe from Git and from the working
+tree. `test_recipe_refresh` pinned HEAD, which was the live tree. After, at
+`5ff5fa709` with ruff clean: HEAD and the edit pass every suite; the deletion
+leaves 7 collector errors, all one class.
+
+Still open, the derived-file class: tests that read the live enrollment
+(`collection-recipes.txt`, `collection-apps.json`) together with the recipes
+it lists, through `host_catalog.configuration()` and `recipe_rows(ROOT)`:
+`test_catalog_only_enrollment` (2), `test_host_cutover` (setUpClass),
+`test_large_batch_enrollment` and `test_next_ten_enrollment`, and two in
+`test_recipe_declarations`. A real merge rewrites those files with the recipes
+(`merge.py` moves a deleted or no-longer-declared enrolled recipe to
+catalog-only), so they are coupled even where the deletion mutation
+overstates it; `test_large_batch_enrollment` still hard-codes the recipes the
+2026-11-16 merge reverted. Options put to Marek: run them on a pinned snapshot
+of the whole configuration, move the live-state statements to the tree tier,
+or wait for ticket 29.
