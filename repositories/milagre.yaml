@@ -1,537 +1,15 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/cb854845b919dd38d98a806e7456ec53798c7564/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/5dfe10e9b37cd6c31a85beec8a25dc5904559211/docs/catalog-format-v3.md"
 kind: "repository"
 repository_id: 1399962096
 repository: "the-ptf/milagre"
-collected_at: "2026-11-18T14:09:40Z"
+collected_at: "2026-11-21T16:46:05Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: false
-observed_at: "2026-11-18T14:09:40Z"
+observed_at: "2026-11-21T16:46:05Z"
 releases:
-  "429713351":
-    tag: "v0.232.0-beta.11"
-    title: "v0.232.0-beta.11"
-    url: "https://github.com/the-ptf/milagre/releases/tag/v0.232.0-beta.11"
-    created_at: "2026-10-31T03:32:06Z"
-    published_at: "2026-10-31T04:10:48Z"
-    updated_at: "2026-10-31T04:10:48Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/the-ptf/milagre/zipball/v0.232.0-beta.11"
-    source_tar_url: "https://api.github.com/repos/the-ptf/milagre/tarball/v0.232.0-beta.11"
-    download_base: "https://github.com/the-ptf/milagre/releases/download/v0.232.0-beta.11/"
-    assets:
-      "694319957":
-        name: "Milagre-0.232.0-beta.11-x64.zip"
-        url_suffix: "Milagre-0.232.0-beta.11-x64.zip"
-        size: 224298501
-        media_type: "zip"
-        digest: "sha256:0991d136f6dd7903bfb2abae5cf5b32f411888d86535997bbabe76d61c4b28ea"
-      "694319959":
-        name: "Milagre-0.232.0-beta.11-x86_64.AppImage"
-        url_suffix: "Milagre-0.232.0-beta.11-x86_64.AppImage"
-        size: 221474758
-        media_type: "application/vnd.appimage"
-        digest: "sha256:0bc686bf78987458cecb3bd777298f5e19a5b012b0e3ea135b11b145cc8c8f13"
-      "694319960":
-        name: "Milagre-0.232.0-beta.11-arm64.zip"
-        url_suffix: "Milagre-0.232.0-beta.11-arm64.zip"
-        size: 215232984
-        media_type: "zip"
-        digest: "sha256:2b409eb24919b21f8fd39405308ae0af8705b52382af41fb21a3d8aa59c923e5"
-      "694319961":
-        name: "Milagre-0.232.0-beta.11-arm64.dmg"
-        url_suffix: "Milagre-0.232.0-beta.11-arm64.dmg"
-        size: 224646576
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:e70ce76c2c13508d78650040db326635d8e3630243a5765f1dac75c7212c40fb"
-      "694319964":
-        name: "Milagre-0.232.0-beta.11-x64.dmg"
-        url_suffix: "Milagre-0.232.0-beta.11-x64.dmg"
-        size: 233698914
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:595e8f27a8149f908481f9de69b09ae7a5fc9bfc7d44c9b0aeb966d30957387d"
-      "694320394":
-        name: "Milagre-0.232.0-beta.11-amd64.deb"
-        url_suffix: "Milagre-0.232.0-beta.11-amd64.deb"
-        size: 177380484
-        media_type: "application/x-debian-package"
-        digest: "sha256:8c43e2dfdaa2fa7eeddf4cbb558df007d2b6b17d40f80f9b593b0f24d17acbe4"
-      "694320401":
-        name: "Milagre-0.232.0-beta.11-x86_64.rpm"
-        url_suffix: "Milagre-0.232.0-beta.11-x86_64.rpm"
-        size: 147222481
-        media_type: "application/x-rpm"
-        digest: "sha256:f550d8f94be329d1b577e4cb5ce4dc5940cda7bb004d7929abe598198e2d25a4"
-      "694320423":
-        name: "Milagre-0.232.0-beta.11-arm64.dmg.blockmap"
-        url_suffix: "Milagre-0.232.0-beta.11-arm64.dmg.blockmap"
-        size: 232082
-        digest: "sha256:28d1601f5763700f066b587143794fb01d84fb06ba66853ee94ce87876e0bdde"
-      "694320435":
-        name: "Milagre-0.232.0-beta.11-arm64.zip.blockmap"
-        url_suffix: "Milagre-0.232.0-beta.11-arm64.zip.blockmap"
-        size: 225063
-        digest: "sha256:b890f3a8883a419c873bb98036d815584a2ea8b1d36c4029f5ce23368e48cdc2"
-      "694320447":
-        name: "Milagre-0.232.0-beta.11-x64.dmg.blockmap"
-        url_suffix: "Milagre-0.232.0-beta.11-x64.dmg.blockmap"
-        size: 242740
-        digest: "sha256:546ed74aaef58275b462a49101ee0770ad2e10e5723891c12d2127199ba53dce"
-      "694320449":
-        name: "Milagre-0.232.0-beta.11-x64.zip.blockmap"
-        url_suffix: "Milagre-0.232.0-beta.11-x64.zip.blockmap"
-        size: 233492
-        digest: "sha256:01905ab1c0e38a8198f485f532bbc8450621b50d6f9242fa7d35fc529752bc2f"
-      "694320455":
-        name: "beta-linux.yml"
-        url_suffix: "beta-linux.yml"
-        size: 739
-        media_type: "application/yaml"
-        digest: "sha256:44b1fbb03ab6484b7e4fde20e9e7b700b4faec8db45a7ba00c4a3bd99e1375f8"
-      "694320466":
-        name: "beta-mac.yml"
-        url_suffix: "beta-mac.yml"
-        size: 857
-        media_type: "application/yaml"
-        digest: "sha256:df4d1959882e693005b83a6c650cfbe8048b09593026667c09bac8c75cf7edde"
-  "430141793":
-    tag: "v0.232.0-beta.12"
-    title: "v0.232.0-beta.12"
-    url: "https://github.com/the-ptf/milagre/releases/tag/v0.232.0-beta.12"
-    created_at: "2026-10-31T18:54:40Z"
-    published_at: "2026-10-31T19:33:30Z"
-    updated_at: "2026-10-31T19:33:30Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/the-ptf/milagre/zipball/v0.232.0-beta.12"
-    source_tar_url: "https://api.github.com/repos/the-ptf/milagre/tarball/v0.232.0-beta.12"
-    download_base: "https://github.com/the-ptf/milagre/releases/download/v0.232.0-beta.12/"
-    assets:
-      "696291437":
-        name: "Milagre-0.232.0-beta.12-arm64.dmg"
-        url_suffix: "Milagre-0.232.0-beta.12-arm64.dmg"
-        size: 224642387
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:c2f47458688d031f373710f6a658ebfe8bb5941442789530b175d4f7d9283295"
-      "696291439":
-        name: "Milagre-0.232.0-beta.12-x64.zip"
-        url_suffix: "Milagre-0.232.0-beta.12-x64.zip"
-        size: 224335559
-        media_type: "zip"
-        digest: "sha256:914aff256f2b57b39bb8bdf42b5e4b12eadab435e075b267d5c17aa6ca153c5b"
-      "696291440":
-        name: "Milagre-0.232.0-beta.12-x64.dmg"
-        url_suffix: "Milagre-0.232.0-beta.12-x64.dmg"
-        size: 233752336
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:a6a4dedfa96d23b4b37fee1de5ad2e2a556f62dc7351f06be036870e3c13be52"
-      "696291441":
-        name: "Milagre-0.232.0-beta.12-arm64.zip"
-        url_suffix: "Milagre-0.232.0-beta.12-arm64.zip"
-        size: 215270025
-        media_type: "zip"
-        digest: "sha256:28c3eb393c0435d32c87d0aa1b0dff00009450ae27262c0c5c30d8b2b372bd26"
-      "696291446":
-        name: "Milagre-0.232.0-beta.12-x86_64.AppImage"
-        url_suffix: "Milagre-0.232.0-beta.12-x86_64.AppImage"
-        size: 221537130
-        media_type: "application/vnd.appimage"
-        digest: "sha256:ec1fdc34a19ef98cdc3b5092f0af8836b57f7ecdbed9a7c4ed8965392d0fdd3e"
-      "696291762":
-        name: "Milagre-0.232.0-beta.12-amd64.deb"
-        url_suffix: "Milagre-0.232.0-beta.12-amd64.deb"
-        size: 176826016
-        media_type: "application/x-debian-package"
-        digest: "sha256:47c9c8a9f72ccbd2f22de35b8780db6ff06148e85466381ee7d6d7e730647f63"
-      "696291785":
-        name: "Milagre-0.232.0-beta.12-arm64.dmg.blockmap"
-        url_suffix: "Milagre-0.232.0-beta.12-arm64.dmg.blockmap"
-        size: 233840
-        digest: "sha256:968c4c53214d8cbf720ff79699f74299256bc77b5aab69fb1812859fbb6b1083"
-      "696291787":
-        name: "Milagre-0.232.0-beta.12-x86_64.rpm"
-        url_suffix: "Milagre-0.232.0-beta.12-x86_64.rpm"
-        size: 147235473
-        media_type: "application/x-rpm"
-        digest: "sha256:d89015c15cd08f071ed69dce2bb2e79705ca7ef0ada16d2a4b7bcf68c6463840"
-      "696291802":
-        name: "Milagre-0.232.0-beta.12-arm64.zip.blockmap"
-        url_suffix: "Milagre-0.232.0-beta.12-arm64.zip.blockmap"
-        size: 224574
-        digest: "sha256:8747297b6776a37b9fc46d2dd7bfb7e2cbc0b0854df1595131b82dbee84507f9"
-      "696291803":
-        name: "Milagre-0.232.0-beta.12-x64.dmg.blockmap"
-        url_suffix: "Milagre-0.232.0-beta.12-x64.dmg.blockmap"
-        size: 242227
-        digest: "sha256:9db52d66d91610c2c2a629e65d0b3c73768dc9909f41cd31884cef61398319e8"
-      "696291815":
-        name: "Milagre-0.232.0-beta.12-x64.zip.blockmap"
-        url_suffix: "Milagre-0.232.0-beta.12-x64.zip.blockmap"
-        size: 233195
-        digest: "sha256:2ee76e121e40aed2d26d4a089624f0cc014c3beaecb21467dff7cab25afb09a0"
-      "696291817":
-        name: "beta-linux.yml"
-        url_suffix: "beta-linux.yml"
-        size: 739
-        media_type: "application/yaml"
-        digest: "sha256:ccb6cddb0dd26768588689d27119b3f7c4a5519fa66a8b6494c65d3434613945"
-      "696291830":
-        name: "beta-mac.yml"
-        url_suffix: "beta-mac.yml"
-        size: 857
-        media_type: "application/yaml"
-        digest: "sha256:063d19a0031a34fc6478affd5ca2674d089d7d5a2be1fa9ed29cafcdcfb4cfb8"
-  "430297199":
-    tag: "v0.232.0-beta.13"
-    title: "v0.232.0-beta.13"
-    url: "https://github.com/the-ptf/milagre/releases/tag/v0.232.0-beta.13"
-    created_at: "2026-10-31T23:06:21Z"
-    published_at: "2026-11-01T01:33:17Z"
-    updated_at: "2026-11-01T02:08:31Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/the-ptf/milagre/zipball/v0.232.0-beta.13"
-    source_tar_url: "https://api.github.com/repos/the-ptf/milagre/tarball/v0.232.0-beta.13"
-    download_base: "https://github.com/the-ptf/milagre/releases/download/v0.232.0-beta.13/"
-    assets:
-      "696996976":
-        name: "Milagre-0.232.0-beta.13-x64.zip"
-        url_suffix: "Milagre-0.232.0-beta.13-x64.zip"
-        size: 224446096
-        media_type: "zip"
-        digest: "sha256:53aedae8b57e2f7dde12abdc5601f8e55ea481f0a3e7f74010654e76f72906fc"
-      "696996977":
-        name: "Milagre-0.232.0-beta.13-arm64.zip"
-        url_suffix: "Milagre-0.232.0-beta.13-arm64.zip"
-        size: 215380625
-        media_type: "zip"
-        digest: "sha256:b75c951ef98bd40fcbec0378a5e179efe32a3f2f12c6ade330e214b7fc1f8d0e"
-      "696996978":
-        name: "Milagre-0.232.0-beta.13-x64.dmg"
-        url_suffix: "Milagre-0.232.0-beta.13-x64.dmg"
-        size: 233860587
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:17931f38943c766b7a907d966b9fad9c4f2e35e053dac239997c05a8f21f020e"
-      "696996979":
-        name: "Milagre-0.232.0-beta.13-x86_64.AppImage"
-        url_suffix: "Milagre-0.232.0-beta.13-x86_64.AppImage"
-        size: 221651211
-        media_type: "application/vnd.appimage"
-        digest: "sha256:b367d74c8756268acfb13988dd92ae92eb60cc76eaf608522fba28a9c87a10f1"
-      "696996980":
-        name: "Milagre-0.232.0-beta.13-arm64.dmg"
-        url_suffix: "Milagre-0.232.0-beta.13-arm64.dmg"
-        size: 224771958
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:2eb3aea93302038ea695316a1d862a35a3c88206cd98fd3a176dc28f8123560f"
-      "696997195":
-        name: "Milagre-0.232.0-beta.13-amd64.deb"
-        url_suffix: "Milagre-0.232.0-beta.13-amd64.deb"
-        size: 176918460
-        media_type: "application/x-debian-package"
-        digest: "sha256:4298821a58da3ef4236910ce6df99d42310b32020f9ee8011ec7539cbc93ee02"
-      "696997232":
-        name: "Milagre-0.232.0-beta.13-x86_64.rpm"
-        url_suffix: "Milagre-0.232.0-beta.13-x86_64.rpm"
-        size: 147322365
-        media_type: "application/x-rpm"
-        digest: "sha256:14f3aec1040ac9be11d2078a6481cbb181a4bece84cb03551333a030b4569357"
-      "696997240":
-        name: "Milagre-0.232.0-beta.13-arm64.dmg.blockmap"
-        url_suffix: "Milagre-0.232.0-beta.13-arm64.dmg.blockmap"
-        size: 233603
-        digest: "sha256:11aa5e44fd2d551b79b683f2903fa3be26a254315e91ff6e392e2cd7847ff12c"
-      "696997245":
-        name: "Milagre-0.232.0-beta.13-arm64.zip.blockmap"
-        url_suffix: "Milagre-0.232.0-beta.13-arm64.zip.blockmap"
-        size: 225203
-        digest: "sha256:da6a84550e863d3f0e52ec173ccf52c0bf718b34905a977c7e9d7bd85f79b450"
-      "696997252":
-        name: "Milagre-0.232.0-beta.13-x64.dmg.blockmap"
-        url_suffix: "Milagre-0.232.0-beta.13-x64.dmg.blockmap"
-        size: 241124
-        digest: "sha256:5ef3098d82a957310f9b0627405bc7502274382015653604544f6fdb27891aca"
-      "696997264":
-        name: "Milagre-0.232.0-beta.13-x64.zip.blockmap"
-        url_suffix: "Milagre-0.232.0-beta.13-x64.zip.blockmap"
-        size: 233689
-        digest: "sha256:f0c658a3dd0fa7723effe89c0a400b3bca51e81de4029cad3d22c1ee3d8216a9"
-      "696997266":
-        name: "beta-linux.yml"
-        url_suffix: "beta-linux.yml"
-        size: 739
-        media_type: "application/yaml"
-        digest: "sha256:af6d086e9e480c948ecca21a0ae298aaeacc88627bd23f072b27fe38190b4a8c"
-      "696997272":
-        name: "beta-mac.yml"
-        url_suffix: "beta-mac.yml"
-        size: 857
-        media_type: "application/yaml"
-        digest: "sha256:5da9f19ef88e456205342472d13d608bcf335b8ad79deb162d26f8b4eab76cec"
-      "697063042":
-        name: "Milagre-0.232.0-beta.13-android-beta.apk"
-        url_suffix: "Milagre-0.232.0-beta.13-android-beta.apk"
-        size: 161029876
-        media_type: "application/vnd.android.package-archive"
-        digest: "sha256:8baa5c27b1001de0f6c582cea6c00827d571639de4a4ec7ad3e25817bec4e195"
-  "430745258":
-    tag: "v0.232.0-beta.14"
-    title: "v0.232.0-beta.14"
-    url: "https://github.com/the-ptf/milagre/releases/tag/v0.232.0-beta.14"
-    created_at: "2026-11-01T17:03:25Z"
-    published_at: "2026-11-01T17:38:33Z"
-    updated_at: "2026-11-01T17:38:33Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/the-ptf/milagre/zipball/v0.232.0-beta.14"
-    source_tar_url: "https://api.github.com/repos/the-ptf/milagre/tarball/v0.232.0-beta.14"
-    download_base: "https://github.com/the-ptf/milagre/releases/download/v0.232.0-beta.14/"
-    assets:
-      "699029542":
-        name: "Milagre-0.232.0-beta.14-x86_64.AppImage"
-        url_suffix: "Milagre-0.232.0-beta.14-x86_64.AppImage"
-        size: 221675887
-        media_type: "application/vnd.appimage"
-        digest: "sha256:c1e9ae33baab379fbd9c4bd4a2efcc24cda968da2b1f3099ece27c86e0751828"
-      "699029543":
-        name: "Milagre-0.232.0-beta.14-arm64.zip"
-        url_suffix: "Milagre-0.232.0-beta.14-arm64.zip"
-        size: 215418568
-        media_type: "zip"
-        digest: "sha256:0231f9bd3a0c1cb684e4aebdd1915c1a70a6a168e8c070bc305f4370aa052904"
-      "699029546":
-        name: "Milagre-0.232.0-beta.14-arm64.dmg"
-        url_suffix: "Milagre-0.232.0-beta.14-arm64.dmg"
-        size: 224860104
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:42a48093e37b7b29768404331cf84d308152fbd3af343664c77e189be004133f"
-      "699029547":
-        name: "Milagre-0.232.0-beta.14-x64.zip"
-        url_suffix: "Milagre-0.232.0-beta.14-x64.zip"
-        size: 224484068
-        media_type: "zip"
-        digest: "sha256:44e50d45f92c3a72433844e48b055018dfed71d561137b941ddccc86eb02ebdc"
-      "699029548":
-        name: "Milagre-0.232.0-beta.14-x64.dmg"
-        url_suffix: "Milagre-0.232.0-beta.14-x64.dmg"
-        size: 233897943
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:ea9380aee681fb1869fbccef6a012f873010e1ba97567f547e7cc6b0445410bb"
-      "699029945":
-        name: "Milagre-0.232.0-beta.14-amd64.deb"
-        url_suffix: "Milagre-0.232.0-beta.14-amd64.deb"
-        size: 176948944
-        media_type: "application/x-debian-package"
-        digest: "sha256:f7ea0af4b8bc1480767cb0ab7b35ab0f1a4e68fb815bb81e44f16b9fd04db477"
-      "699030007":
-        name: "Milagre-0.232.0-beta.14-x86_64.rpm"
-        url_suffix: "Milagre-0.232.0-beta.14-x86_64.rpm"
-        size: 147349121
-        media_type: "application/x-rpm"
-        digest: "sha256:8c0cb6360c98e1f919a7b907120bfc993e1e66ab0101f161182a1cb201a8516c"
-      "699030024":
-        name: "Milagre-0.232.0-beta.14-arm64.dmg.blockmap"
-        url_suffix: "Milagre-0.232.0-beta.14-arm64.dmg.blockmap"
-        size: 232449
-        digest: "sha256:c372609e4ae522c0ddddbaad87fde21b0fe05edbd7c57e8834adb17a95f66bb6"
-      "699030048":
-        name: "Milagre-0.232.0-beta.14-arm64.zip.blockmap"
-        url_suffix: "Milagre-0.232.0-beta.14-arm64.zip.blockmap"
-        size: 224801
-        digest: "sha256:87384bdd76feb3cf7779ecbca8cb1fb71db81dba35b51b1e955d2dc92e47ee89"
-      "699030074":
-        name: "Milagre-0.232.0-beta.14-x64.dmg.blockmap"
-        url_suffix: "Milagre-0.232.0-beta.14-x64.dmg.blockmap"
-        size: 241999
-        digest: "sha256:04adf55d8092fa6d22efec032e5029b8eb068d6619ea471b28ffe6be2eeda17f"
-      "699030090":
-        name: "Milagre-0.232.0-beta.14-x64.zip.blockmap"
-        url_suffix: "Milagre-0.232.0-beta.14-x64.zip.blockmap"
-        size: 233364
-        digest: "sha256:c4039d04b7794836d487dce7935da289a825e5e4e44fa27bf2c29eda9a8ee5db"
-      "699030107":
-        name: "beta-linux.yml"
-        url_suffix: "beta-linux.yml"
-        size: 739
-        media_type: "application/yaml"
-        digest: "sha256:1e30ffb0a18021401980846f82263efcab093b6b578bae3473036a70fd8e5b42"
-      "699030108":
-        name: "beta-mac.yml"
-        url_suffix: "beta-mac.yml"
-        size: 857
-        media_type: "application/yaml"
-        digest: "sha256:efb5f8413f0a581f37fddc4cc8998adea4a682d112b3e4795827be8b0f3d6da5"
-  "430989158":
-    tag: "v0.232.0-beta.15"
-    title: "v0.232.0-beta.15"
-    url: "https://github.com/the-ptf/milagre/releases/tag/v0.232.0-beta.15"
-    created_at: "2026-11-02T01:05:24Z"
-    published_at: "2026-11-02T01:43:00Z"
-    updated_at: "2026-11-02T01:43:00Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/the-ptf/milagre/zipball/v0.232.0-beta.15"
-    source_tar_url: "https://api.github.com/repos/the-ptf/milagre/tarball/v0.232.0-beta.15"
-    download_base: "https://github.com/the-ptf/milagre/releases/download/v0.232.0-beta.15/"
-    assets:
-      "700128969":
-        name: "Milagre-0.232.0-beta.15-x64.dmg"
-        url_suffix: "Milagre-0.232.0-beta.15-x64.dmg"
-        size: 233948841
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:efc9c135e5d6624672486ac7977078199f79ca07ae18b258a5f41739387cae20"
-      "700128971":
-        name: "Milagre-0.232.0-beta.15-arm64.dmg"
-        url_suffix: "Milagre-0.232.0-beta.15-arm64.dmg"
-        size: 224840393
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:90a2e53a61d0a110dbbc348d63fe1ae45ad3ce2318ff386bbdde7b60c2605aad"
-      "700128973":
-        name: "Milagre-0.232.0-beta.15-x86_64.AppImage"
-        url_suffix: "Milagre-0.232.0-beta.15-x86_64.AppImage"
-        size: 221716379
-        media_type: "application/vnd.appimage"
-        digest: "sha256:4c38577ab804e7b5ef26ffbdeebe59bda00a626b5c4f411cdedb17d9a0a48128"
-      "700128974":
-        name: "Milagre-0.232.0-beta.15-x64.zip"
-        url_suffix: "Milagre-0.232.0-beta.15-x64.zip"
-        size: 224502937
-        media_type: "zip"
-        digest: "sha256:bd6ef9223d8aacc7bf9bcbd227bba3278183fe8ee73058d5ff481922e400b1fd"
-      "700128982":
-        name: "Milagre-0.232.0-beta.15-arm64.zip"
-        url_suffix: "Milagre-0.232.0-beta.15-arm64.zip"
-        size: 215437403
-        media_type: "zip"
-        digest: "sha256:a0a5919db0116426cd61e439260f48f5e96732ca83077ec7540a187052885566"
-      "700129697":
-        name: "Milagre-0.232.0-beta.15-amd64.deb"
-        url_suffix: "Milagre-0.232.0-beta.15-amd64.deb"
-        size: 176968472
-        media_type: "application/x-debian-package"
-        digest: "sha256:bf178440ee6335448370e2748291cdaac821fdd809b25e6f775982e2269692f1"
-      "700129747":
-        name: "Milagre-0.232.0-beta.15-x86_64.rpm"
-        url_suffix: "Milagre-0.232.0-beta.15-x86_64.rpm"
-        size: 147377621
-        media_type: "application/x-rpm"
-        digest: "sha256:6d1ce0581e5d5276ce7585f82d6bbaee5b1324172ee1ed8eeb39fd0f68ff79a4"
-      "700129754":
-        name: "Milagre-0.232.0-beta.15-arm64.dmg.blockmap"
-        url_suffix: "Milagre-0.232.0-beta.15-arm64.dmg.blockmap"
-        size: 232333
-        digest: "sha256:46080c20b6f9f2c09f71908002566360743e66d906b694e77eda885b06c2db69"
-      "700129757":
-        name: "Milagre-0.232.0-beta.15-arm64.zip.blockmap"
-        url_suffix: "Milagre-0.232.0-beta.15-arm64.zip.blockmap"
-        size: 225343
-        digest: "sha256:2d0d26a13ef0cd5ac75590d182f83d86786598a036379e6f01cb2d6da92ee471"
-      "700129760":
-        name: "Milagre-0.232.0-beta.15-x64.dmg.blockmap"
-        url_suffix: "Milagre-0.232.0-beta.15-x64.dmg.blockmap"
-        size: 241989
-        digest: "sha256:3c6ecd51e244ba21e62fa525f6ea2ce194c9b069a3b2e82383acbb79e0c0c852"
-      "700129776":
-        name: "Milagre-0.232.0-beta.15-x64.zip.blockmap"
-        url_suffix: "Milagre-0.232.0-beta.15-x64.zip.blockmap"
-        size: 233876
-        digest: "sha256:86f85321e1e201aa0381603a3ebeb5fd613b9f77cd319c2bb7684ec96f3b3c0b"
-      "700129780":
-        name: "beta-linux.yml"
-        url_suffix: "beta-linux.yml"
-        size: 739
-        media_type: "application/yaml"
-        digest: "sha256:77a060817950f97252ba9af1f99eb8703d1de5cacf75f9c5d70f8f0d8db00946"
-      "700129781":
-        name: "beta-mac.yml"
-        url_suffix: "beta-mac.yml"
-        size: 857
-        media_type: "application/yaml"
-        digest: "sha256:b25b012aa35d02b4505642491cdc9eec141f4848f2f5d1f95b23016dbe3bf4af"
-  "431064709":
-    tag: "v0.232.0-beta.16"
-    title: "v0.232.0-beta.16"
-    url: "https://github.com/the-ptf/milagre/releases/tag/v0.232.0-beta.16"
-    created_at: "2026-11-02T03:41:15Z"
-    published_at: "2026-11-02T04:14:38Z"
-    updated_at: "2026-11-02T04:14:38Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/the-ptf/milagre/zipball/v0.232.0-beta.16"
-    source_tar_url: "https://api.github.com/repos/the-ptf/milagre/tarball/v0.232.0-beta.16"
-    download_base: "https://github.com/the-ptf/milagre/releases/download/v0.232.0-beta.16/"
-    assets:
-      "700475981":
-        name: "Milagre-0.232.0-beta.16-x64.zip"
-        url_suffix: "Milagre-0.232.0-beta.16-x64.zip"
-        size: 224639956
-        media_type: "zip"
-        digest: "sha256:6136a3a026c6bd09f1d57d91757813dd0e874fb13ec115ffcfb57ea5a1f7323c"
-      "700475983":
-        name: "Milagre-0.232.0-beta.16-arm64.dmg"
-        url_suffix: "Milagre-0.232.0-beta.16-arm64.dmg"
-        size: 225015268
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:2c92c7a4bb1d40fd3edf4ebb2bc116aa125e7ab1a07ab53ac88f97af6302f6e8"
-      "700475984":
-        name: "Milagre-0.232.0-beta.16-x64.dmg"
-        url_suffix: "Milagre-0.232.0-beta.16-x64.dmg"
-        size: 234062155
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:3860ce4674dc5d22e36c0a8be6ca3012661a9022ba55a72a97c13580186e76f7"
-      "700475987":
-        name: "Milagre-0.232.0-beta.16-arm64.zip"
-        url_suffix: "Milagre-0.232.0-beta.16-arm64.zip"
-        size: 215574665
-        media_type: "zip"
-        digest: "sha256:3c2d65ea176fbf547873ce5a73ef269ba1c4ce84a0f9c6a3568812327ec61f34"
-      "700475988":
-        name: "Milagre-0.232.0-beta.16-x86_64.AppImage"
-        url_suffix: "Milagre-0.232.0-beta.16-x86_64.AppImage"
-        size: 221860555
-        media_type: "application/vnd.appimage"
-        digest: "sha256:f97665d252d57874c54086cfd4d5f0793b03c68f41ed170544d5cf1c0fac84a4"
-      "700476352":
-        name: "Milagre-0.232.0-beta.16-amd64.deb"
-        url_suffix: "Milagre-0.232.0-beta.16-amd64.deb"
-        size: 177089716
-        media_type: "application/x-debian-package"
-        digest: "sha256:787788171bbe29bcd4b2d520f1a300577bef34d5954c7fa4814c1ef4a9280b95"
-      "700476372":
-        name: "Milagre-0.232.0-beta.16-x86_64.rpm"
-        url_suffix: "Milagre-0.232.0-beta.16-x86_64.rpm"
-        size: 147451265
-        media_type: "application/x-rpm"
-        digest: "sha256:2064c155c88244be45576ef8bf7365576b7d1676f11bf03a802fc04ea379f5c1"
-      "700476394":
-        name: "Milagre-0.232.0-beta.16-arm64.dmg.blockmap"
-        url_suffix: "Milagre-0.232.0-beta.16-arm64.dmg.blockmap"
-        size: 233110
-        digest: "sha256:89d1da1339083fb1fdc1e971b068c488c8a58e23fe9baa924d5acc48e828bab7"
-      "700476398":
-        name: "Milagre-0.232.0-beta.16-arm64.zip.blockmap"
-        url_suffix: "Milagre-0.232.0-beta.16-arm64.zip.blockmap"
-        size: 225269
-        digest: "sha256:5d62f90b6d4261f2c2d8035d8dad4886f2a7c3bac474d6261c670eb04e792e3c"
-      "700476407":
-        name: "Milagre-0.232.0-beta.16-x64.dmg.blockmap"
-        url_suffix: "Milagre-0.232.0-beta.16-x64.dmg.blockmap"
-        size: 241573
-        digest: "sha256:a816fdfcdfd7fc94d45283e4cc1788cccb8f693346f8186cfb94cd01b13b886f"
-      "700476412":
-        name: "Milagre-0.232.0-beta.16-x64.zip.blockmap"
-        url_suffix: "Milagre-0.232.0-beta.16-x64.zip.blockmap"
-        size: 233830
-        digest: "sha256:a0be1b3cc17983d8598e0da4aae3372fc80c09e6d3271e0dcbdd9aca27f08714"
-      "700476418":
-        name: "beta-linux.yml"
-        url_suffix: "beta-linux.yml"
-        size: 739
-        media_type: "application/yaml"
-        digest: "sha256:378daec50356249f860d096c9f10dba0897f51717970d3afbc76f6b21ec01b42"
-      "700476420":
-        name: "beta-mac.yml"
-        url_suffix: "beta-mac.yml"
-        size: 857
-        media_type: "application/yaml"
-        digest: "sha256:bf17724fb37a6f4dce4f787907109ea80ace1b8916c8a381474d427afe344fd7"
   "431875069":
     tag: "v0.232.0-beta.17"
     title: "v0.232.0-beta.17"
@@ -3069,3 +2547,615 @@ releases:
         size: 378
         media_type: "application/yaml"
         digest: "sha256:e99586756a37a52fef05a4d4583795026aac2de21355524ac28d82e959c24d5d"
+  "450573087":
+    tag: "v0.233.0-beta.4"
+    title: "v0.233.0-beta.4"
+    url: "https://github.com/the-ptf/milagre/releases/tag/v0.233.0-beta.4"
+    created_at: "2026-11-18T20:57:18Z"
+    published_at: "2026-11-18T21:21:45Z"
+    updated_at: "2026-11-18T21:21:45Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/the-ptf/milagre/zipball/v0.233.0-beta.4"
+    source_tar_url: "https://api.github.com/repos/the-ptf/milagre/tarball/v0.233.0-beta.4"
+    download_base: "https://github.com/the-ptf/milagre/releases/download/v0.233.0-beta.4/"
+    assets:
+      "765049782":
+        name: "Milagre-0.233.0-beta.4-x64.dmg"
+        url_suffix: "Milagre-0.233.0-beta.4-x64.dmg"
+        size: 215081517
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:eb057acc9133f879b6ac9aca74168a4a56bb0275ced5e79293d15af369500876"
+      "765049785":
+        name: "Milagre-0.233.0-beta.4-arm64.zip"
+        url_suffix: "Milagre-0.233.0-beta.4-arm64.zip"
+        size: 197798531
+        media_type: "zip"
+        digest: "sha256:dddab67f9714e3f718d7aaa0a9776a43654aac46950a5db0dfd929c16d59b72e"
+      "765049788":
+        name: "Milagre-0.233.0-beta.4-x64.zip"
+        url_suffix: "Milagre-0.233.0-beta.4-x64.zip"
+        size: 206863878
+        media_type: "zip"
+        digest: "sha256:7eb094cfb2859bb3d71484f91b607cece25da5211105a7f14622a2000e1858bf"
+      "765049789":
+        name: "Milagre-0.233.0-beta.4-arm64.dmg"
+        url_suffix: "Milagre-0.233.0-beta.4-arm64.dmg"
+        size: 206077797
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:9fcd0330a0e80d03727d9e41c6d36e97d8ac13bf24187ccce833709fb7288031"
+      "765049792":
+        name: "Milagre-0.233.0-beta.4-x86_64.AppImage"
+        url_suffix: "Milagre-0.233.0-beta.4-x86_64.AppImage"
+        size: 202339100
+        media_type: "application/vnd.appimage"
+        digest: "sha256:73d81c591fb92c8dee25591218d8ca2afbfcf5c92b787d43d86bb8ba27ae8e71"
+      "765050181":
+        name: "Milagre-0.233.0-beta.4-amd64.deb"
+        url_suffix: "Milagre-0.233.0-beta.4-amd64.deb"
+        size: 163648896
+        media_type: "application/x-debian-package"
+        digest: "sha256:38b178f614f625199eb84900f1df199204aafa443acf96beec7f64cdd308c7e5"
+      "765050220":
+        name: "Milagre-0.233.0-beta.4-x86_64.rpm"
+        url_suffix: "Milagre-0.233.0-beta.4-x86_64.rpm"
+        size: 141460209
+        media_type: "application/x-rpm"
+        digest: "sha256:83fe2a3fa27d30c9e9668d6b3524da172991218aa191d64a97f470d3e0ffa3a1"
+      "765050252":
+        name: "Milagre-Setup-0.233.0-beta.4-x64.exe"
+        url_suffix: "Milagre-Setup-0.233.0-beta.4-x64.exe"
+        size: 175150690
+        digest: "sha256:fca2219c01b7ac9780b75b1421a4d80fbbfd487d6a3447f5f1ae27a584b29a8e"
+      "765050288":
+        name: "Milagre-0.233.0-beta.4-arm64.dmg.blockmap"
+        url_suffix: "Milagre-0.233.0-beta.4-arm64.dmg.blockmap"
+        size: 213860
+        digest: "sha256:3cb903e2b41efa9222527f123cf55bd0becbc3e4a42a5532b464b3248137ca9a"
+      "765050329":
+        name: "Milagre-0.233.0-beta.4-arm64.zip.blockmap"
+        url_suffix: "Milagre-0.233.0-beta.4-arm64.zip.blockmap"
+        size: 206757
+        digest: "sha256:97acee9c17f33dd92fbbc89919aefc9fa073ba6db9747bae2a5c5663e5eb159c"
+      "765050365":
+        name: "Milagre-0.233.0-beta.4-x64.dmg.blockmap"
+        url_suffix: "Milagre-0.233.0-beta.4-x64.dmg.blockmap"
+        size: 223479
+        digest: "sha256:9cbfeb65503e43dce0c03af75da6d30229c37fddf7dd4bb0e3545df94d1c7b06"
+      "765050418":
+        name: "Milagre-0.233.0-beta.4-x64.zip.blockmap"
+        url_suffix: "Milagre-0.233.0-beta.4-x64.zip.blockmap"
+        size: 214132
+        digest: "sha256:b5ddf8d71e8bb50ddbb2ad76e20e00e52256643234cc796b3e0322bbe0f8dfd5"
+      "765050430":
+        name: "Milagre-Setup-0.233.0-beta.4-x64.exe.blockmap"
+        url_suffix: "Milagre-Setup-0.233.0-beta.4-x64.exe.blockmap"
+        size: 183041
+        digest: "sha256:6182e4c15e248b646926a2f7312e16c0cfff4d6ff8076da34f2d699c2f8de861"
+      "765050446":
+        name: "beta-linux.yml"
+        url_suffix: "beta-linux.yml"
+        size: 734
+        media_type: "application/yaml"
+        digest: "sha256:5eaaf976ae63dbc423c527cd67c5049abb34ec6f1095a35ff4f63ed7ceed3622"
+      "765050471":
+        name: "beta-mac.yml"
+        url_suffix: "beta-mac.yml"
+        size: 851
+        media_type: "application/yaml"
+        digest: "sha256:de7d19c22e074d5bec5a22080c051211445922ddd2c3af6b80c0abeb101f50df"
+      "765050476":
+        name: "beta.yml"
+        url_suffix: "beta.yml"
+        size: 378
+        media_type: "application/yaml"
+        digest: "sha256:272943c7558df24c56c104598364c2929337d74be9dda371a1ed612ff616a14f"
+  "452047585":
+    tag: "v0.233.0-beta.5"
+    title: "v0.233.0-beta.5"
+    url: "https://github.com/the-ptf/milagre/releases/tag/v0.233.0-beta.5"
+    created_at: "2026-11-19T22:41:02Z"
+    published_at: "2026-11-19T23:14:42Z"
+    updated_at: "2026-11-19T23:14:42Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/the-ptf/milagre/zipball/v0.233.0-beta.5"
+    source_tar_url: "https://api.github.com/repos/the-ptf/milagre/tarball/v0.233.0-beta.5"
+    download_base: "https://github.com/the-ptf/milagre/releases/download/v0.233.0-beta.5/"
+    assets:
+      "769633882":
+        name: "Milagre-0.233.0-beta.5-x64.zip"
+        url_suffix: "Milagre-0.233.0-beta.5-x64.zip"
+        size: 206865099
+        media_type: "zip"
+        digest: "sha256:ee74d5ce7999832a3370f66e102365f9bf1c7c5e47ae3219b3bf612bf4642a84"
+      "769633883":
+        name: "Milagre-0.233.0-beta.5-arm64.zip"
+        url_suffix: "Milagre-0.233.0-beta.5-arm64.zip"
+        size: 197799653
+        media_type: "zip"
+        digest: "sha256:0643b45667ce12b7305bb88114c769e3fe9d4b5cda44095883af592f4e980373"
+      "769633884":
+        name: "Milagre-0.233.0-beta.5-x64.dmg"
+        url_suffix: "Milagre-0.233.0-beta.5-x64.dmg"
+        size: 215091256
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:5bf991440e26999ccd250596441f9db2c52d20faedd7e9269b766a39bcc7d5db"
+      "769633887":
+        name: "Milagre-0.233.0-beta.5-x86_64.AppImage"
+        url_suffix: "Milagre-0.233.0-beta.5-x86_64.AppImage"
+        size: 202339569
+        media_type: "application/vnd.appimage"
+        digest: "sha256:f51bb7d38980d5413680482f8fc59b9257af4496efa14637920bb054c50ec53c"
+      "769633888":
+        name: "Milagre-0.233.0-beta.5-arm64.dmg"
+        url_suffix: "Milagre-0.233.0-beta.5-arm64.dmg"
+        size: 206058116
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:8b07605edf1e9830c87eb2d5ab48e44bbbb6503cb6d546d668743fc86823d001"
+      "769634201":
+        name: "Milagre-0.233.0-beta.5-amd64.deb"
+        url_suffix: "Milagre-0.233.0-beta.5-amd64.deb"
+        size: 163650744
+        media_type: "application/x-debian-package"
+        digest: "sha256:984a97ac87ec32e79bd937254d1bc865c397b1a62c676a31b9aa2247fb48b385"
+      "769634240":
+        name: "Milagre-0.233.0-beta.5-x86_64.rpm"
+        url_suffix: "Milagre-0.233.0-beta.5-x86_64.rpm"
+        size: 141479269
+        media_type: "application/x-rpm"
+        digest: "sha256:b88e1f29b491599b04556c853856af59250d8db1065bb3585c1c7fa2abe15ddb"
+      "769634283":
+        name: "Milagre-0.233.0-beta.5-arm64.dmg.blockmap"
+        url_suffix: "Milagre-0.233.0-beta.5-arm64.dmg.blockmap"
+        size: 213209
+        digest: "sha256:c7c372ffefbdf4506375d6e0d7527d493a56b6bfeffe03d5f23556acc582fec4"
+      "769634284":
+        name: "Milagre-Setup-0.233.0-beta.5-x64.exe"
+        url_suffix: "Milagre-Setup-0.233.0-beta.5-x64.exe"
+        size: 175151943
+        digest: "sha256:706b3ed4227e20cf842e4a1134f742001479016e1932c3364b00ea2d5b6369bb"
+      "769634306":
+        name: "Milagre-0.233.0-beta.5-arm64.zip.blockmap"
+        url_suffix: "Milagre-0.233.0-beta.5-arm64.zip.blockmap"
+        size: 207115
+        digest: "sha256:7545d205b13a97adf176b199ca478d97d62b4044f0693fefdbd44ed5e4668a0e"
+      "769634307":
+        name: "Milagre-0.233.0-beta.5-x64.dmg.blockmap"
+        url_suffix: "Milagre-0.233.0-beta.5-x64.dmg.blockmap"
+        size: 223737
+        digest: "sha256:69c4c95406bd7c0ad05eeafae98581b8dbb3aa7bc5a65d8e98f73db897c8a478"
+      "769634334":
+        name: "Milagre-0.233.0-beta.5-x64.zip.blockmap"
+        url_suffix: "Milagre-0.233.0-beta.5-x64.zip.blockmap"
+        size: 214137
+        digest: "sha256:86dd145c03713c59608cd5ea6717d7a3cbd92991f6615245914bfddc7f694183"
+      "769634342":
+        name: "Milagre-Setup-0.233.0-beta.5-x64.exe.blockmap"
+        url_suffix: "Milagre-Setup-0.233.0-beta.5-x64.exe.blockmap"
+        size: 182864
+        digest: "sha256:76c790465ed456bfbf6c703bba1669e616bd0961db9e1a47335131dcdeccde98"
+      "769634357":
+        name: "beta-linux.yml"
+        url_suffix: "beta-linux.yml"
+        size: 734
+        media_type: "application/yaml"
+        digest: "sha256:2f153201d4b18d81c170216cc647a8de57c8e524152f241f5032bf8068c3300a"
+      "769634363":
+        name: "beta-mac.yml"
+        url_suffix: "beta-mac.yml"
+        size: 851
+        media_type: "application/yaml"
+        digest: "sha256:59c68aafaa3cb796ccb1aada6f090d6582691274fabfa6e2daf8dd31b30d5014"
+      "769634377":
+        name: "beta.yml"
+        url_suffix: "beta.yml"
+        size: 378
+        media_type: "application/yaml"
+        digest: "sha256:2dc4d7a79f089c95cb21d31b9eb43e35c69062ab435e5735665202b9b1bc7541"
+  "452822470":
+    tag: "v0.233.0-beta.6"
+    title: "v0.233.0-beta.6"
+    url: "https://github.com/the-ptf/milagre/releases/tag/v0.233.0-beta.6"
+    created_at: "2026-11-20T14:15:13Z"
+    published_at: "2026-11-20T14:55:14Z"
+    updated_at: "2026-11-20T14:55:14Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/the-ptf/milagre/zipball/v0.233.0-beta.6"
+    source_tar_url: "https://api.github.com/repos/the-ptf/milagre/tarball/v0.233.0-beta.6"
+    download_base: "https://github.com/the-ptf/milagre/releases/download/v0.233.0-beta.6/"
+    assets:
+      "772213208":
+        name: "Milagre-0.233.0-beta.6-x64.zip"
+        url_suffix: "Milagre-0.233.0-beta.6-x64.zip"
+        size: 206915881
+        media_type: "zip"
+        digest: "sha256:369c32cc6e5fc3cdbeed7e285b509d6a32c4c1da5bb5890085362e8d9d367a22"
+      "772213209":
+        name: "Milagre-0.233.0-beta.6-arm64.dmg"
+        url_suffix: "Milagre-0.233.0-beta.6-arm64.dmg"
+        size: 206085118
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:4da5dd9f7d5da2e8308297f9ecf68f6d2b11d10e3f67aaf323d76883f760cdd5"
+      "772213210":
+        name: "Milagre-0.233.0-beta.6-arm64.zip"
+        url_suffix: "Milagre-0.233.0-beta.6-arm64.zip"
+        size: 197850286
+        media_type: "zip"
+        digest: "sha256:5d631bfbc0a67389a84857a62cbdcf5808eae5ae3be79e9871ca9f4914fa67f9"
+      "772213215":
+        name: "Milagre-0.233.0-beta.6-x86_64.AppImage"
+        url_suffix: "Milagre-0.233.0-beta.6-x86_64.AppImage"
+        size: 202384546
+        media_type: "application/vnd.appimage"
+        digest: "sha256:4bb56c2b3273c53d3ab2f672b992e86d3b8073e94a0a9e17c5400006832940a1"
+      "772213216":
+        name: "Milagre-0.233.0-beta.6-x64.dmg"
+        url_suffix: "Milagre-0.233.0-beta.6-x64.dmg"
+        size: 215185680
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:954df8b407b5bb500dd996a06040037a7c3cf1067a7b526d7782f20771f708dd"
+      "772213955":
+        name: "Milagre-0.233.0-beta.6-amd64.deb"
+        url_suffix: "Milagre-0.233.0-beta.6-amd64.deb"
+        size: 163443468
+        media_type: "application/x-debian-package"
+        digest: "sha256:40750f25fa919def76c477201b284e7ed37216553eef721ec0517919e3c7d387"
+      "772214014":
+        name: "Milagre-0.233.0-beta.6-x86_64.rpm"
+        url_suffix: "Milagre-0.233.0-beta.6-x86_64.rpm"
+        size: 141569057
+        media_type: "application/x-rpm"
+        digest: "sha256:c4a69be00119c5df91bc844b0f4b9ec772590dea4d43e6b61ab8bb313569fe6b"
+      "772214020":
+        name: "Milagre-Setup-0.233.0-beta.6-x64.exe"
+        url_suffix: "Milagre-Setup-0.233.0-beta.6-x64.exe"
+        size: 175218151
+        digest: "sha256:695c72691f58b99bdcab8456a30248bbd723f6bd13c89602ea9323c7453e39b1"
+      "772214022":
+        name: "Milagre-0.233.0-beta.6-arm64.dmg.blockmap"
+        url_suffix: "Milagre-0.233.0-beta.6-arm64.dmg.blockmap"
+        size: 211835
+        digest: "sha256:00ac5622bdd7653fe15d533a5b584bc7c2decc42bc1deedf4bbd386a261bd51f"
+      "772214057":
+        name: "Milagre-0.233.0-beta.6-arm64.zip.blockmap"
+        url_suffix: "Milagre-0.233.0-beta.6-arm64.zip.blockmap"
+        size: 207703
+        digest: "sha256:cb5e5822890f1cc922fe134e048176cc59979d5c1481c2903aff7a43e0320880"
+      "772214069":
+        name: "Milagre-0.233.0-beta.6-x64.dmg.blockmap"
+        url_suffix: "Milagre-0.233.0-beta.6-x64.dmg.blockmap"
+        size: 222429
+        digest: "sha256:ac2eb2f6410a0d54f256098c23a32b9ecc0a4259d7cdb37fdfe160bcdd3eb9ad"
+      "772214103":
+        name: "Milagre-0.233.0-beta.6-x64.zip.blockmap"
+        url_suffix: "Milagre-0.233.0-beta.6-x64.zip.blockmap"
+        size: 214652
+        digest: "sha256:73a92a7fe67cca74c672713bc39ac370304f6f47bb02d3298de8df0fe0da1cb1"
+      "772214113":
+        name: "Milagre-Setup-0.233.0-beta.6-x64.exe.blockmap"
+        url_suffix: "Milagre-Setup-0.233.0-beta.6-x64.exe.blockmap"
+        size: 183061
+        digest: "sha256:357d9b9ca631c4b671317b54c2d28a30ed8c037127d36e98e4b877241578f84f"
+      "772214149":
+        name: "beta-linux.yml"
+        url_suffix: "beta-linux.yml"
+        size: 734
+        media_type: "application/yaml"
+        digest: "sha256:8a0a96da3dc5c730feda9ba6888f0e2dff474e5b6ed69b0b7d7f0b4c0717a92f"
+      "772214162":
+        name: "beta-mac.yml"
+        url_suffix: "beta-mac.yml"
+        size: 851
+        media_type: "application/yaml"
+        digest: "sha256:c3b577a4afd0fd2e21b1ce36f97af7c093ccddaeb8e1f16a7cf03d854455262c"
+      "772214189":
+        name: "beta.yml"
+        url_suffix: "beta.yml"
+        size: 378
+        media_type: "application/yaml"
+        digest: "sha256:d71ba5a2a5bc91845a7c07258ff82f8a01f44d757eeb19621835d635d18917ee"
+  "452837645":
+    tag: "v0.233.0-beta.7"
+    title: "v0.233.0-beta.7"
+    url: "https://github.com/the-ptf/milagre/releases/tag/v0.233.0-beta.7"
+    created_at: "2026-11-20T14:30:52Z"
+    published_at: "2026-11-20T15:08:44Z"
+    updated_at: "2026-11-20T15:08:44Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/the-ptf/milagre/zipball/v0.233.0-beta.7"
+    source_tar_url: "https://api.github.com/repos/the-ptf/milagre/tarball/v0.233.0-beta.7"
+    download_base: "https://github.com/the-ptf/milagre/releases/download/v0.233.0-beta.7/"
+    assets:
+      "772254435":
+        name: "Milagre-0.233.0-beta.7-arm64.dmg"
+        url_suffix: "Milagre-0.233.0-beta.7-arm64.dmg"
+        size: 207383086
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:6ca6de355e9553309fb51a86c4a6c035f4f351f2b7f97f93fcee2b38c2a08774"
+      "772254436":
+        name: "Milagre-0.233.0-beta.7-x64.zip"
+        url_suffix: "Milagre-0.233.0-beta.7-x64.zip"
+        size: 208158010
+        media_type: "zip"
+        digest: "sha256:71b58066d562424aa9756c75b5d85a6cec54124c4d4def7981ac1bfd326a371e"
+      "772254437":
+        name: "Milagre-0.233.0-beta.7-x64.dmg"
+        url_suffix: "Milagre-0.233.0-beta.7-x64.dmg"
+        size: 216482189
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:0f82be16fa51330a2a467c88d07cfee07c383f0b719e2d616eab82f5d2ab053c"
+      "772254438":
+        name: "Milagre-0.233.0-beta.7-x86_64.AppImage"
+        url_suffix: "Milagre-0.233.0-beta.7-x86_64.AppImage"
+        size: 203700754
+        media_type: "application/vnd.appimage"
+        digest: "sha256:13e529bac632eb529a78104d869c50fc01043e5da1264c3e9dffe2d01f8b9ffa"
+      "772254439":
+        name: "Milagre-0.233.0-beta.7-arm64.zip"
+        url_suffix: "Milagre-0.233.0-beta.7-arm64.zip"
+        size: 199092113
+        media_type: "zip"
+        digest: "sha256:6535a7cb0a8712358b34f4555efbaffafbfd1111a685f500fb6fe47f7c451cf2"
+      "772254938":
+        name: "Milagre-0.233.0-beta.7-amd64.deb"
+        url_suffix: "Milagre-0.233.0-beta.7-amd64.deb"
+        size: 164331336
+        media_type: "application/x-debian-package"
+        digest: "sha256:69b48402babe8af76b206e9bd9e4be0980f1503a7bda677eee0db321495414bd"
+      "772254956":
+        name: "Milagre-0.233.0-beta.7-x86_64.rpm"
+        url_suffix: "Milagre-0.233.0-beta.7-x86_64.rpm"
+        size: 143228169
+        media_type: "application/x-rpm"
+        digest: "sha256:41b362a5622ee7d46fb87ecfd9f20c75cb07e6cf69147236c1fcdbb6ee652600"
+      "772255002":
+        name: "Milagre-Setup-0.233.0-beta.7-x64.exe"
+        url_suffix: "Milagre-Setup-0.233.0-beta.7-x64.exe"
+        size: 176109925
+        digest: "sha256:2878d9ff253d7f0e59094fba6ecd7f4bbbf27006c71a29eb8c5142268952bb72"
+      "772255046":
+        name: "Milagre-0.233.0-beta.7-arm64.dmg.blockmap"
+        url_suffix: "Milagre-0.233.0-beta.7-arm64.dmg.blockmap"
+        size: 213919
+        digest: "sha256:da967d9a7ec37b648beb8c5fbdfbf6562324792c5d5041ac8fa0b53a973e42fb"
+      "772255077":
+        name: "Milagre-0.233.0-beta.7-arm64.zip.blockmap"
+        url_suffix: "Milagre-0.233.0-beta.7-arm64.zip.blockmap"
+        size: 208726
+        digest: "sha256:7f4bbfefb9f49211ff398ef276ee42b3f778967de60b999cdaa7f0d74c1135c1"
+      "772255088":
+        name: "Milagre-0.233.0-beta.7-x64.dmg.blockmap"
+        url_suffix: "Milagre-0.233.0-beta.7-x64.dmg.blockmap"
+        size: 224838
+        digest: "sha256:9cfd3ff05c8aee854cb5dc39d932fad3606c5f234ffd7dc82af19219c7d4b85d"
+      "772255101":
+        name: "Milagre-0.233.0-beta.7-x64.zip.blockmap"
+        url_suffix: "Milagre-0.233.0-beta.7-x64.zip.blockmap"
+        size: 216414
+        digest: "sha256:6a5b5ec90a7f2e676c2ab23878cbe48023dab177800761dfbffad213860d3ee3"
+      "772255105":
+        name: "Milagre-Setup-0.233.0-beta.7-x64.exe.blockmap"
+        url_suffix: "Milagre-Setup-0.233.0-beta.7-x64.exe.blockmap"
+        size: 184557
+        digest: "sha256:12e2bf492aab394ccbe2c8ad0df5b41436d44e203d6e370b57f6fee331094407"
+      "772255130":
+        name: "beta-linux.yml"
+        url_suffix: "beta-linux.yml"
+        size: 734
+        media_type: "application/yaml"
+        digest: "sha256:db14a9d2b68914eea17516b76797a3fc334b965f982bdf7a8344ff7ce2b11e3f"
+      "772255163":
+        name: "beta-mac.yml"
+        url_suffix: "beta-mac.yml"
+        size: 851
+        media_type: "application/yaml"
+        digest: "sha256:0c02e6d5ae4ca0dbd1be5f046b98b9e817701adbf375cf638c546ff25df2f6e2"
+      "772255166":
+        name: "beta.yml"
+        url_suffix: "beta.yml"
+        size: 378
+        media_type: "application/yaml"
+        digest: "sha256:767816e1387e79bfb5fc2cf6af08dc79a86d78325f1016b9d0dcc564793a50d7"
+  "453240851":
+    tag: "v0.233.0-beta.8"
+    title: "v0.233.0-beta.8"
+    url: "https://github.com/the-ptf/milagre/releases/tag/v0.233.0-beta.8"
+    created_at: "2026-11-20T21:56:39Z"
+    published_at: "2026-11-20T22:28:26Z"
+    updated_at: "2026-11-20T22:28:26Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/the-ptf/milagre/zipball/v0.233.0-beta.8"
+    source_tar_url: "https://api.github.com/repos/the-ptf/milagre/tarball/v0.233.0-beta.8"
+    download_base: "https://github.com/the-ptf/milagre/releases/download/v0.233.0-beta.8/"
+    assets:
+      "773564879":
+        name: "Milagre-0.233.0-beta.8-x86_64.AppImage"
+        url_suffix: "Milagre-0.233.0-beta.8-x86_64.AppImage"
+        size: 203721343
+        media_type: "application/vnd.appimage"
+        digest: "sha256:47628ed1911e850db0e0b14eae2b64ec9f04e94e015a792192398c00041d9b4f"
+      "773564880":
+        name: "Milagre-0.233.0-beta.8-arm64.dmg"
+        url_suffix: "Milagre-0.233.0-beta.8-arm64.dmg"
+        size: 207409495
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:65ee77e134af983ca3ed23372e8c9fbac139e81100f973b50e9587779a490284"
+      "773564881":
+        name: "Milagre-0.233.0-beta.8-x64.dmg"
+        url_suffix: "Milagre-0.233.0-beta.8-x64.dmg"
+        size: 216468970
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:61620379f0142c148550ecb85528eb7fcb97f5cfec5fd00327850b619a7c60d0"
+      "773564885":
+        name: "Milagre-0.233.0-beta.8-arm64.zip"
+        url_suffix: "Milagre-0.233.0-beta.8-arm64.zip"
+        size: 199106773
+        media_type: "zip"
+        digest: "sha256:7afbec4d1dc638d6e6c8e748a70988c4a0319d710e8cd69c6b88e22ab6184e56"
+      "773564886":
+        name: "Milagre-0.233.0-beta.8-x64.zip"
+        url_suffix: "Milagre-0.233.0-beta.8-x64.zip"
+        size: 208172104
+        media_type: "zip"
+        digest: "sha256:479a62e98bfa79e39825bdc6c8d88fab08d7cca4590b161ef2b754e676ec1131"
+      "773565175":
+        name: "Milagre-0.233.0-beta.8-amd64.deb"
+        url_suffix: "Milagre-0.233.0-beta.8-amd64.deb"
+        size: 164342376
+        media_type: "application/x-debian-package"
+        digest: "sha256:bd168b4d9c6eff2a0da9c1b9030f7f8b3dd1b1d6ba1bc476eb67dd27a1aced96"
+      "773565204":
+        name: "Milagre-0.233.0-beta.8-x86_64.rpm"
+        url_suffix: "Milagre-0.233.0-beta.8-x86_64.rpm"
+        size: 143258621
+        media_type: "application/x-rpm"
+        digest: "sha256:5bee55a12f54497759551a41a3fc5b7250b48118b28db2cf7c1d302d36f069ab"
+      "773565211":
+        name: "Milagre-0.233.0-beta.8-arm64.dmg.blockmap"
+        url_suffix: "Milagre-0.233.0-beta.8-arm64.dmg.blockmap"
+        size: 213104
+        digest: "sha256:87f55f764dd508bd53f5ee830c0b07c4f702622f4b9dc6c8c98dc1eb32059eab"
+      "773565212":
+        name: "Milagre-Setup-0.233.0-beta.8-x64.exe"
+        url_suffix: "Milagre-Setup-0.233.0-beta.8-x64.exe"
+        size: 176148178
+        digest: "sha256:402a015e1f8a65f3769c83b0c68a984d4414f72ba5ba1fc6a9097a682a4e8c6f"
+      "773565231":
+        name: "Milagre-0.233.0-beta.8-arm64.zip.blockmap"
+        url_suffix: "Milagre-0.233.0-beta.8-arm64.zip.blockmap"
+        size: 208227
+        digest: "sha256:621aea4b97b71096cbb54516e76b028a14580f51ac537712d7f454f83443953c"
+      "773565234":
+        name: "Milagre-0.233.0-beta.8-x64.dmg.blockmap"
+        url_suffix: "Milagre-0.233.0-beta.8-x64.dmg.blockmap"
+        size: 225385
+        digest: "sha256:0dc1d8e3eb9fe8a9be5f309896b513757c93c3bdd2e92677c8441efb3c61636b"
+      "773565260":
+        name: "Milagre-0.233.0-beta.8-x64.zip.blockmap"
+        url_suffix: "Milagre-0.233.0-beta.8-x64.zip.blockmap"
+        size: 216270
+        digest: "sha256:6a055ffefdbdc43bccf1c8283392d2ced185d35669a365816b550abc8414e63e"
+      "773565261":
+        name: "Milagre-Setup-0.233.0-beta.8-x64.exe.blockmap"
+        url_suffix: "Milagre-Setup-0.233.0-beta.8-x64.exe.blockmap"
+        size: 183964
+        digest: "sha256:49220616cde8e78f41b14aa07c9885962fbb0891c619d031180cecd6556972a1"
+      "773565272":
+        name: "beta-linux.yml"
+        url_suffix: "beta-linux.yml"
+        size: 734
+        media_type: "application/yaml"
+        digest: "sha256:40675a5d5be436084d14a0329db105b8bf5b760e44e889b72c2ede8b9d96026c"
+      "773565283":
+        name: "beta-mac.yml"
+        url_suffix: "beta-mac.yml"
+        size: 851
+        media_type: "application/yaml"
+        digest: "sha256:86be44f47ca2c5a042d3ea82e2bd3a955b601ddaefc2e37c653ce7abe88887ef"
+      "773565305":
+        name: "beta.yml"
+        url_suffix: "beta.yml"
+        size: 378
+        media_type: "application/yaml"
+        digest: "sha256:3fc1afe1e016526fde4442f44bfedceaa2e80db71261b9083824673d72dbbed4"
+  "453287024":
+    tag: "v0.233.0-beta.9"
+    title: "v0.233.0-beta.9"
+    url: "https://github.com/the-ptf/milagre/releases/tag/v0.233.0-beta.9"
+    created_at: "2026-11-20T23:12:11Z"
+    published_at: "2026-11-20T23:36:01Z"
+    updated_at: "2026-11-20T23:36:01Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/the-ptf/milagre/zipball/v0.233.0-beta.9"
+    source_tar_url: "https://api.github.com/repos/the-ptf/milagre/tarball/v0.233.0-beta.9"
+    download_base: "https://github.com/the-ptf/milagre/releases/download/v0.233.0-beta.9/"
+    assets:
+      "773736904":
+        name: "Milagre-0.233.0-beta.9-x86_64.AppImage"
+        url_suffix: "Milagre-0.233.0-beta.9-x86_64.AppImage"
+        size: 203721411
+        media_type: "application/vnd.appimage"
+        digest: "sha256:cd7ba4824293f826c582db3640c20da8e85f478d6a3a56378ec07a893fba0361"
+      "773736905":
+        name: "Milagre-0.233.0-beta.9-arm64.dmg"
+        url_suffix: "Milagre-0.233.0-beta.9-arm64.dmg"
+        size: 207406219
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:3ddd0c6c680503e837be0821a3697e97783a596453dc517b9e3fefd525d47137"
+      "773736907":
+        name: "Milagre-0.233.0-beta.9-arm64.zip"
+        url_suffix: "Milagre-0.233.0-beta.9-arm64.zip"
+        size: 199110747
+        media_type: "zip"
+        digest: "sha256:691eeacc5e2a179b133a684015e5a0b6d4bdc8dd1faf1fe50215cdfbc95457e0"
+      "773736908":
+        name: "Milagre-0.233.0-beta.9-x64.dmg"
+        url_suffix: "Milagre-0.233.0-beta.9-x64.dmg"
+        size: 216481111
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:7bb8e44ec9232269a5f62734b3801f08bd3505f225672431de6c940f499d415b"
+      "773736911":
+        name: "Milagre-0.233.0-beta.9-x64.zip"
+        url_suffix: "Milagre-0.233.0-beta.9-x64.zip"
+        size: 208174299
+        media_type: "zip"
+        digest: "sha256:e190f66199b025e1a0a13e2e763675d9dc844be35d1fd489b03b69e096a0ac30"
+      "773737427":
+        name: "Milagre-0.233.0-beta.9-amd64.deb"
+        url_suffix: "Milagre-0.233.0-beta.9-amd64.deb"
+        size: 164342976
+        media_type: "application/x-debian-package"
+        digest: "sha256:55dfed38cbf9baa2596d0f3599ba8b15580770c908df04120022f7723580d8aa"
+      "773737433":
+        name: "Milagre-0.233.0-beta.9-x86_64.rpm"
+        url_suffix: "Milagre-0.233.0-beta.9-x86_64.rpm"
+        size: 143269741
+        media_type: "application/x-rpm"
+        digest: "sha256:9a7ef8f1bd2ca699564a2d4207a00b31be383deee7dc454bcca22a037a65174a"
+      "773737449":
+        name: "Milagre-Setup-0.233.0-beta.9-x64.exe"
+        url_suffix: "Milagre-Setup-0.233.0-beta.9-x64.exe"
+        size: 176148085
+        digest: "sha256:da427c80f70021322723878d64f551004ea5118c82ae21385ef24471506ef97f"
+      "773737472":
+        name: "Milagre-0.233.0-beta.9-arm64.dmg.blockmap"
+        url_suffix: "Milagre-0.233.0-beta.9-arm64.dmg.blockmap"
+        size: 213577
+        digest: "sha256:e4c1493e01a0cf04873c73b339f2dd34351ad3405b4442879b63d94e6f90370c"
+      "773737489":
+        name: "Milagre-0.233.0-beta.9-arm64.zip.blockmap"
+        url_suffix: "Milagre-0.233.0-beta.9-arm64.zip.blockmap"
+        size: 208496
+        digest: "sha256:e8476f60307114bec841cb0ca250ed8bfc51a609629561d672d5f8cef4bd4189"
+      "773737516":
+        name: "Milagre-0.233.0-beta.9-x64.dmg.blockmap"
+        url_suffix: "Milagre-0.233.0-beta.9-x64.dmg.blockmap"
+        size: 225288
+        digest: "sha256:c9000d83ceac5501576094c5d25423341f7937c0dfa879757b6092e0b94f947a"
+      "773737533":
+        name: "Milagre-0.233.0-beta.9-x64.zip.blockmap"
+        url_suffix: "Milagre-0.233.0-beta.9-x64.zip.blockmap"
+        size: 216681
+        digest: "sha256:ca1067d4a437bcf45e1876f65be935e35f61ca45b00b6520fb82e576fbbfe7f1"
+      "773737536":
+        name: "Milagre-Setup-0.233.0-beta.9-x64.exe.blockmap"
+        url_suffix: "Milagre-Setup-0.233.0-beta.9-x64.exe.blockmap"
+        size: 184310
+        digest: "sha256:e81892cc38c08f9c7ce50f614ce219d20885cabe6cbfca8b63da56540c547c45"
+      "773737554":
+        name: "beta-linux.yml"
+        url_suffix: "beta-linux.yml"
+        size: 734
+        media_type: "application/yaml"
+        digest: "sha256:2069d344935dfe34773a64934e8e292942b4cef05d12bf37c544f93331af8eed"
+      "773737557":
+        name: "beta-mac.yml"
+        url_suffix: "beta-mac.yml"
+        size: 851
+        media_type: "application/yaml"
+        digest: "sha256:b5036576f24371269a6cdb3b341f335a6e4c1f5cddeda95d9c8d89cb6717e14b"
+      "773737568":
+        name: "beta.yml"
+        url_suffix: "beta.yml"
+        size: 378
+        media_type: "application/yaml"
+        digest: "sha256:1a1c189a28e567669dd9dbd9e07828c473f25e3958c9ff6f3b47128e88919be9"

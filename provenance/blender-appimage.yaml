@@ -1,5 +1,5 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/cb854845b919dd38d98a806e7456ec53798c7564/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/5dfe10e9b37cd6c31a85beec8a25dc5904559211/docs/catalog-format-v3.md"
 kind: "provenance"
 apps:
   "blender":
@@ -21,20 +21,20 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "857a7e7bcd9928b7d2e22dd4dd4df078f81b68b5"
+        commit: "5dfe10e9b37cd6c31a85beec8a25dc5904559211"
         path: "programs/x86_64/blender"
         blob: "941c3accd4d4edf40a5ccd292ab2f22a86d2bd81"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-21T02:34:53Z"
+        evaluated_at: "2026-11-21T16:47:36Z"
         recipe_sha256: "02a8530dda2f82b3d072a57c1bc04587066953d2d1aaf7bef6b911384b243bc0"
-        rules: "857a7e7bcd9928b7d2e22dd4dd4df078f81b68b5"
+        rules: "5dfe10e9b37cd6c31a85beec8a25dc5904559211"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "857a7e7bcd9928b7d2e22dd4dd4df078f81b68b5"
+            commit: "5dfe10e9b37cd6c31a85beec8a25dc5904559211"
             path: "modules/"
-            sha256: "49b86a24691f8cf5502fc49826dfdca4645ab02d49a5edeec860b9a4e42bf55c"
+            sha256: "ec6a21c18fe69a42374260470b5bee2423670c1722dd6226687f753027d72232"
   "blender-alpha":
     "aarch64":
       repository_id: 980873950
@@ -54,7 +54,7 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "857a7e7bcd9928b7d2e22dd4dd4df078f81b68b5"
+        commit: "5dfe10e9b37cd6c31a85beec8a25dc5904559211"
         path: "programs/x86_64/blender-alpha"
         blob: "d869779accc191f1cc3c5a0a964d017dcaea6de1"
   "blender-beta":
@@ -76,7 +76,7 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "857a7e7bcd9928b7d2e22dd4dd4df078f81b68b5"
+        commit: "5dfe10e9b37cd6c31a85beec8a25dc5904559211"
         path: "programs/x86_64/blender-beta"
         blob: "6c18b5174415cea405f071f5e861eb640bee423e"
   "blender-rc":
@@ -98,6 +98,6 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "857a7e7bcd9928b7d2e22dd4dd4df078f81b68b5"
+        commit: "5dfe10e9b37cd6c31a85beec8a25dc5904559211"
         path: "programs/x86_64/blender-rc"
         blob: "ecfe838237001089e41c24bf72712b2aa299b58b"

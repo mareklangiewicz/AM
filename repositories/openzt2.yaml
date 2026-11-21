@@ -1,14 +1,14 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/cb854845b919dd38d98a806e7456ec53798c7564/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/5dfe10e9b37cd6c31a85beec8a25dc5904559211/docs/catalog-format-v3.md"
 kind: "repository"
 repository_id: 1378011070
 repository: "overyonder/openzt2"
-collected_at: "2026-11-18T04:39:02Z"
+collected_at: "2026-11-21T16:44:39Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-18T04:39:02Z"
+observed_at: "2026-11-21T16:44:39Z"
 releases:
   "396991172":
     tag: "pre-alpha"
@@ -1551,6 +1551,148 @@ releases:
         media_type: "application/vnd.ms-publisher"
         digest: "sha256:86797a914a0b456256a512b304087fe4e90afe8991b44a6ba650f3defb165678"
       "704961714":
+        name: "openzt2-windows.cer"
+        url_suffix: "openzt2-windows.cer"
+        size: 1323
+        media_type: "application/pkix-cert"
+        digest: "sha256:6f84ca9bb18569c78d09847c7324f222377958f876e0d4e9edeb287dfebee2c0"
+  "450573278":
+    tag: "v1.2.0-beta"
+    title: "v1.2.0-beta"
+    url: "https://github.com/overyonder/openzt2/releases/tag/v1.2.0-beta"
+    created_at: "2026-11-18T20:01:02Z"
+    published_at: "2026-11-18T21:22:00Z"
+    updated_at: "2026-11-18T21:22:34Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/overyonder/openzt2/zipball/v1.2.0-beta"
+    source_tar_url: "https://api.github.com/repos/overyonder/openzt2/tarball/v1.2.0-beta"
+    download_base: "https://github.com/overyonder/openzt2/releases/download/v1.2.0-beta/"
+    assets:
+      "765050440":
+        name: "OpenZT2-1.2.0-beta-linux-aarch64.flatpak"
+        url_suffix: "OpenZT2-1.2.0-beta-linux-aarch64.flatpak"
+        size: 34613888
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:6f974b847ed34200ac38e599a3871e1811a696dd849f92b73c71cffa13b44f9e"
+      "765050441":
+        name: "OpenZT2-1.2.0-beta-linux-aarch64.deb"
+        url_suffix: "OpenZT2-1.2.0-beta-linux-aarch64.deb"
+        size: 41700708
+        media_type: "application/x-debian-package"
+        digest: "sha256:45031245410bdce96693852bcf046f203d16e4071970de920bfb0d179f60d9ab"
+      "765050442":
+        name: "OpenZT2-1.2.0-beta-linux-aarch64.AppImage"
+        url_suffix: "OpenZT2-1.2.0-beta-linux-aarch64.AppImage"
+        size: 58821128
+        media_type: "application/vnd.appimage"
+        digest: "sha256:3580aceff22fb87d6d9f9ced1cd6d31ebba5ff40623f5db2385cddbf9e7852ed"
+      "765050443":
+        name: "OpenZT2-1.2.0-beta-darwin-x86_64.dmg"
+        url_suffix: "OpenZT2-1.2.0-beta-darwin-x86_64.dmg"
+        size: 63133748
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:c099963a9ee3a88192e26bf210185b018267e36cb2dd25a1fa371a09ca6ad8f3"
+      "765050445":
+        name: "OpenZT2-1.2.0-beta-darwin-arm64.dmg"
+        url_suffix: "OpenZT2-1.2.0-beta-darwin-arm64.dmg"
+        size: 57402378
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:e83ede3705c4ae35a5ebdc4b0a6f01e96a74769b26f053fba4e8a2e2c043bd9b"
+      "765050558":
+        name: "OpenZT2-1.2.0-beta-linux-aarch64.pkg.tar.zst"
+        url_suffix: "OpenZT2-1.2.0-beta-linux-aarch64.pkg.tar.zst"
+        size: 61354404
+        media_type: "application/zstd"
+        digest: "sha256:11b26bf2581e0ef6866e3de53a17019da586492dd0101ba9aac8f7d1fa517d4b"
+      "765050567":
+        name: "OpenZT2-1.2.0-beta-linux-aarch64.rpm"
+        url_suffix: "OpenZT2-1.2.0-beta-linux-aarch64.rpm"
+        size: 65596847
+        media_type: "application/x-rpm"
+        digest: "sha256:edcff4ae3b2865e59bcba8cdd7c787c2ebb0e07a8638ebeeac4c080a3ee07dbc"
+      "765050569":
+        name: "OpenZT2-1.2.0-beta-linux-x86_64-musl.apk"
+        url_suffix: "OpenZT2-1.2.0-beta-linux-x86_64-musl.apk"
+        size: 60724862
+        media_type: "application/vnd.android.package-archive"
+        digest: "sha256:b3eaa0d9a4c96bc044f1233fdef213e6afc0e54e5f2832aa8ea71a3d0db56f02"
+      "765050591":
+        name: "OpenZT2-1.2.0-beta-linux-x86_64.AppImage"
+        url_suffix: "OpenZT2-1.2.0-beta-linux-x86_64.AppImage"
+        size: 61270520
+        media_type: "application/vnd.appimage"
+        digest: "sha256:8f84717a977b5ec3f23d5ada281022ae45afbc1f23b35892380a63992d34aa57"
+      "765050599":
+        name: "OpenZT2-1.2.0-beta-linux-x86_64.deb"
+        url_suffix: "OpenZT2-1.2.0-beta-linux-x86_64.deb"
+        size: 43342876
+        media_type: "application/x-debian-package"
+        digest: "sha256:192bf7a6cb44fb6607ff5eb09ddb8cf47d7aa9adfbaac9df111911fd074101e1"
+      "765050689":
+        name: "OpenZT2-1.2.0-beta-linux-x86_64.flatpak"
+        url_suffix: "OpenZT2-1.2.0-beta-linux-x86_64.flatpak"
+        size: 37854216
+        media_type: "application/vnd.flatpak"
+        digest: "sha256:dbc2ba14ee65d946c70794aa22bec5fc53b4e07157bc48e70a12871da07d440e"
+      "765050705":
+        name: "OpenZT2-1.2.0-beta-linux-x86_64.pkg.tar.zst"
+        url_suffix: "OpenZT2-1.2.0-beta-linux-x86_64.pkg.tar.zst"
+        size: 63572402
+        media_type: "application/zstd"
+        digest: "sha256:55efc8d965707c31a177f5a910764a24546e15548c79b2fa8c94a22e797f634f"
+      "765050714":
+        name: "OpenZT2-1.2.0-beta-linux-x86_64.rpm"
+        url_suffix: "OpenZT2-1.2.0-beta-linux-x86_64.rpm"
+        size: 68395327
+        media_type: "application/x-rpm"
+        digest: "sha256:4def4c7e03be7cd8932ef8671398bba0e9e4ffe2ac1f28ad78e50832f2442d53"
+      "765050727":
+        name: "OpenZT2-1.2.0-beta-nix-x86_64.nar.zst"
+        url_suffix: "OpenZT2-1.2.0-beta-nix-x86_64.nar.zst"
+        size: 550423637
+        media_type: "application/zstd"
+        digest: "sha256:2e846828d58bfcfeb5010155a5aebf48971c6a2d19584bf7c42d9bebb5bb9255"
+      "765050746":
+        name: "OpenZT2-1.2.0-beta-nix-x86_64.store-path"
+        url_suffix: "OpenZT2-1.2.0-beta-nix-x86_64.store-path"
+        size: 63
+        digest: "sha256:b957c2106e24cfa3977da2c320c959e27275b7221ea32e168ff1b668d5f4d47e"
+      "765050782":
+        name: "OpenZT2-1.2.0-beta-windows-amd64.msi"
+        url_suffix: "OpenZT2-1.2.0-beta-windows-amd64.msi"
+        size: 50544640
+        media_type: "application/x-msi"
+        digest: "sha256:a85e421fcb551fc411ab80966772ced721506b134061402476a2f5fc6e1a05c4"
+      "765050796":
+        name: "OpenZT2-1.2.0-beta-windows-amd64.msix"
+        url_suffix: "OpenZT2-1.2.0-beta-windows-amd64.msix"
+        size: 67757970
+        media_type: "application/msix"
+        digest: "sha256:2f74ed11e8d88d5a9e40ea3c90d4766fd4bce9719d6dbfd07143cd793e6df24b"
+      "765050822":
+        name: "OpenZT2-1.2.0-beta-windows-amd64.zip"
+        url_suffix: "OpenZT2-1.2.0-beta-windows-amd64.zip"
+        size: 64906653
+        media_type: "zip"
+        digest: "sha256:f4a50b4f5bb06837958dd7db61d2fe1d95abdf5d64f495982ab86e4a13043ed3"
+      "765050863":
+        name: "OpenZT2-1.2.0-beta-windows-arm64.zip"
+        url_suffix: "OpenZT2-1.2.0-beta-windows-arm64.zip"
+        size: 58139696
+        media_type: "zip"
+        digest: "sha256:7701bd5b7119fd70933014bf5f703c00347f79eca5a2ef5bb6d050d058b02f98"
+      "765050919":
+        name: "SHA256SUMS"
+        url_suffix: "SHA256SUMS"
+        size: 2170
+        digest: "sha256:22b6868a372078ba79b32ce2aa79faac151e001c47d8174632703fdf9ea5eb97"
+      "765050953":
+        name: "openzt2-alpine.rsa.pub"
+        url_suffix: "openzt2-alpine.rsa.pub"
+        size: 800
+        media_type: "application/vnd.ms-publisher"
+        digest: "sha256:86797a914a0b456256a512b304087fe4e90afe8991b44a6ba650f3defb165678"
+      "765050960":
         name: "openzt2-windows.cer"
         url_suffix: "openzt2-windows.cer"
         size: 1323

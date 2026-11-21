@@ -1,5 +1,5 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/cb854845b919dd38d98a806e7456ec53798c7564/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/5dfe10e9b37cd6c31a85beec8a25dc5904559211/docs/catalog-format-v3.md"
 kind: "provenance"
 apps:
   "phantom-satellite":
@@ -9,7 +9,7 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "857a7e7bcd9928b7d2e22dd4dd4df078f81b68b5"
+        commit: "5dfe10e9b37cd6c31a85beec8a25dc5904559211"
         path: "programs/aarch64/phantom-satellite"
         blob: "a5fd0ffe35bfaa1d22c9eafdb0ea824ece9db3ae"
     "armv7l":
@@ -26,17 +26,17 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "857a7e7bcd9928b7d2e22dd4dd4df078f81b68b5"
+        commit: "5dfe10e9b37cd6c31a85beec8a25dc5904559211"
         path: "programs/x86_64/phantom-satellite"
         blob: "04765e8b73eea725a57c804064602bb75e77205a"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-21T02:34:53Z"
+        evaluated_at: "2026-11-21T16:47:36Z"
         recipe_sha256: "e939485738e320adf923f103b175a4ae8f4a4171cf6a6927e3bfa828df1b1066"
-        rules: "857a7e7bcd9928b7d2e22dd4dd4df078f81b68b5"
+        rules: "5dfe10e9b37cd6c31a85beec8a25dc5904559211"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "857a7e7bcd9928b7d2e22dd4dd4df078f81b68b5"
+            commit: "5dfe10e9b37cd6c31a85beec8a25dc5904559211"
             path: "modules/"
-            sha256: "49b86a24691f8cf5502fc49826dfdca4645ab02d49a5edeec860b9a4e42bf55c"
+            sha256: "ec6a21c18fe69a42374260470b5bee2423670c1722dd6226687f753027d72232"

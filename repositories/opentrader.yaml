@@ -1,895 +1,15 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/cb854845b919dd38d98a806e7456ec53798c7564/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/5dfe10e9b37cd6c31a85beec8a25dc5904559211/docs/catalog-format-v3.md"
 kind: "repository"
 repository_id: 1395081699
 repository: "deepentropy/opentrader"
-collected_at: "2026-11-18T14:09:18Z"
+collected_at: "2026-11-21T16:45:43Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-18T14:09:18Z"
+observed_at: "2026-11-21T16:45:43Z"
 releases:
-  "417202606":
-    tag: "v0.4.6"
-    title: "OpenTrader v0.4.6"
-    url: "https://github.com/deepentropy/opentrader/releases/tag/v0.4.6"
-    created_at: "2026-10-19T11:05:31Z"
-    published_at: "2026-10-19T11:24:04Z"
-    updated_at: "2026-10-19T11:24:04Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/deepentropy/opentrader/zipball/v0.4.6"
-    source_tar_url: "https://api.github.com/repos/deepentropy/opentrader/tarball/v0.4.6"
-    download_base: "https://github.com/deepentropy/opentrader/releases/download/v0.4.6/"
-    assets:
-      "656057659":
-        name: "OpenTrader_linux_amd64.deb"
-        url_suffix: "OpenTrader_linux_amd64.deb"
-        size: 17517568
-        media_type: "zip"
-        digest: "sha256:9cfc59cc720f8227aba2d257770fce5f5a48a68d63c5c671ae757d97200e415e"
-      "656057750":
-        name: "OpenTrader_linux_amd64.deb.sig"
-        url_suffix: "OpenTrader_linux_amd64.deb.sig"
-        size: 436
-        media_type: "zip"
-        digest: "sha256:189ed0793af86514a72cc590f54b545bf4d8fe6936c87afcd1d7a70910e15178"
-      "656057766":
-        name: "OpenTrader_linux_x86_64.rpm"
-        url_suffix: "OpenTrader_linux_x86_64.rpm"
-        size: 17522205
-        media_type: "zip"
-        digest: "sha256:996b2f95ceead7417ad90a143bca933b470b31db3a543ee7e88720d119973fe9"
-      "656057826":
-        name: "OpenTrader_linux_x86_64.rpm.sig"
-        url_suffix: "OpenTrader_linux_x86_64.rpm.sig"
-        size: 440
-        media_type: "zip"
-        digest: "sha256:15308f0cb8bc7bf5d535dab60c4d100e30c1ceeb244d309cb29a2e9f689e837e"
-      "656057852":
-        name: "OpenTrader_linux_amd64.AppImage"
-        url_suffix: "OpenTrader_linux_amd64.AppImage"
-        size: 97208824
-        media_type: "zip"
-        digest: "sha256:37959fe927b3df4a711796cfed0f59e46c3e9efd367a2bb332da5edb186a2644"
-      "656058025":
-        name: "OpenTrader_linux_amd64.AppImage.sig"
-        url_suffix: "OpenTrader_linux_amd64.AppImage.sig"
-        size: 440
-        media_type: "zip"
-        digest: "sha256:f6ec03936274a22ee18eb3bef864d90922a134bf23946d7b4dc92f429a0bca4a"
-      "656061779":
-        name: "OpenTrader_windows_x64.msi"
-        url_suffix: "OpenTrader_windows_x64.msi"
-        size: 16015360
-        media_type: "zip"
-        digest: "sha256:d7d15bdb6a2e859655f211cc1024fcbe40b10a50ae173564617b7e633e88a521"
-      "656061844":
-        name: "OpenTrader_windows_x64.msi.sig"
-        url_suffix: "OpenTrader_windows_x64.msi.sig"
-        size: 440
-        media_type: "zip"
-        digest: "sha256:cc4dbc7e2e48c1d998ddb56a8908fa809048b5ed32d0db3b41a2d7d71f6ec9a3"
-      "656061872":
-        name: "OpenTrader_windows_x64-setup.exe"
-        url_suffix: "OpenTrader_windows_x64-setup.exe"
-        size: 13841778
-        media_type: "zip"
-        digest: "sha256:bbcd63dcddfa9b6634ada6f814198ac70d0395aaf258f76f2e3d2376f364d44e"
-      "656061934":
-        name: "OpenTrader_windows_x64-setup.exe.sig"
-        url_suffix: "OpenTrader_windows_x64-setup.exe.sig"
-        size: 440
-        media_type: "zip"
-        digest: "sha256:8a5ab46c15b777ba5bcdae29d8d6ed2cff2687f8a3ec7be3e956c9b5b189ecc2"
-      "656071133":
-        name: "OpenTrader_darwin_universal.dmg"
-        url_suffix: "OpenTrader_darwin_universal.dmg"
-        size: 34283310
-        media_type: "zip"
-        digest: "sha256:3627d8aa4894f3a9d9b206151ceefd53b6679b464dd88452874fc665d131081f"
-      "656071263":
-        name: "OpenTrader_darwin_universal.app.tar.gz"
-        url_suffix: "OpenTrader_darwin_universal.app.tar.gz"
-        size: 33488590
-        media_type: "zip"
-        digest: "sha256:efa0a776cf957aecebc4aee0053dbaad486940fac8d5b4a1a9fe5cd0a0e84c2c"
-      "656071377":
-        name: "OpenTrader_darwin_universal.app.tar.gz.sig"
-        url_suffix: "OpenTrader_darwin_universal.app.tar.gz.sig"
-        size: 428
-        media_type: "zip"
-        digest: "sha256:e01260f7bace05be579fadf5045fe1a8d08847cbeefb2ee8789bdbdf82875a9d"
-      "656071495":
-        name: "latest.json"
-        url_suffix: "latest.json"
-        size: 6834
-        media_type: "zip"
-        digest: "sha256:49dd4a696e9315956901c8bdd556edcdc6f69b18ca3c8f87216c023f857b19d6"
-  "418015485":
-    tag: "v0.4.7"
-    title: "OpenTrader v0.4.7"
-    url: "https://github.com/deepentropy/opentrader/releases/tag/v0.4.7"
-    created_at: "2026-10-20T04:46:53Z"
-    published_at: "2026-10-20T05:02:53Z"
-    updated_at: "2026-10-20T05:02:53Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/deepentropy/opentrader/zipball/v0.4.7"
-    source_tar_url: "https://api.github.com/repos/deepentropy/opentrader/tarball/v0.4.7"
-    download_base: "https://github.com/deepentropy/opentrader/releases/download/v0.4.7/"
-    assets:
-      "658309842":
-        name: "OpenTrader_windows_x64.msi"
-        url_suffix: "OpenTrader_windows_x64.msi"
-        size: 16019456
-        media_type: "zip"
-        digest: "sha256:34c8101ccd2a961ef80afe71165773142a5158a9a7d05f0e5c09ed5a565c7365"
-      "658309913":
-        name: "OpenTrader_windows_x64.msi.sig"
-        url_suffix: "OpenTrader_windows_x64.msi.sig"
-        size: 440
-        media_type: "zip"
-        digest: "sha256:f5b174c519234d0d312d246b299d3f85dec9ba55bee6b3513af34eb17d68342a"
-      "658309938":
-        name: "OpenTrader_windows_x64-setup.exe"
-        url_suffix: "OpenTrader_windows_x64-setup.exe"
-        size: 13851778
-        media_type: "zip"
-        digest: "sha256:26bd533fd28a3cc0a3ba20000630f34cc09f1a97d025a27b677bb845deaff143"
-      "658309984":
-        name: "OpenTrader_windows_x64-setup.exe.sig"
-        url_suffix: "OpenTrader_windows_x64-setup.exe.sig"
-        size: 440
-        media_type: "zip"
-        digest: "sha256:246653f5f676cd74e10b4650eaa2117f786870b76240c420246633851a9135f0"
-      "658310228":
-        name: "OpenTrader_linux_amd64.deb"
-        url_suffix: "OpenTrader_linux_amd64.deb"
-        size: 17529172
-        media_type: "zip"
-        digest: "sha256:50130db6d28182b18e5ab06d01b49ae8dda0c9a0fde50445091215e1f8759b05"
-      "658310287":
-        name: "OpenTrader_linux_amd64.deb.sig"
-        url_suffix: "OpenTrader_linux_amd64.deb.sig"
-        size: 436
-        media_type: "zip"
-        digest: "sha256:c413052f87621925cc517f988716d9634b53635e6e7a25139d2240f6220e60d7"
-      "658310320":
-        name: "OpenTrader_linux_x86_64.rpm"
-        url_suffix: "OpenTrader_linux_x86_64.rpm"
-        size: 17534335
-        media_type: "zip"
-        digest: "sha256:c5da16f99cde6ecd27d798169e368bc90e87cefc6ec9651faefc8d7201c08ae6"
-      "658310369":
-        name: "OpenTrader_linux_x86_64.rpm.sig"
-        url_suffix: "OpenTrader_linux_x86_64.rpm.sig"
-        size: 440
-        media_type: "zip"
-        digest: "sha256:2a4ba728f4de6c19b981c38fbee8a01014357646e29206d8869b28cbe2c1c625"
-      "658310391":
-        name: "OpenTrader_linux_amd64.AppImage"
-        url_suffix: "OpenTrader_linux_amd64.AppImage"
-        size: 97200632
-        media_type: "zip"
-        digest: "sha256:1ba84caa6e8a53ff64bbc67176d8aa06f225714d9849ac876d2feb9f78321e10"
-      "658310530":
-        name: "OpenTrader_linux_amd64.AppImage.sig"
-        url_suffix: "OpenTrader_linux_amd64.AppImage.sig"
-        size: 440
-        media_type: "zip"
-        digest: "sha256:3c1d507e4331f5675ed94ead17bc972c0ff162727f01b75303558d227220cf02"
-      "658315962":
-        name: "OpenTrader_darwin_universal.dmg"
-        url_suffix: "OpenTrader_darwin_universal.dmg"
-        size: 34280615
-        media_type: "zip"
-        digest: "sha256:c9bbeafa0d54c8ff0e91534c69da972f51f4857210a71dca63f6de32048fc455"
-      "658316072":
-        name: "OpenTrader_darwin_universal.app.tar.gz"
-        url_suffix: "OpenTrader_darwin_universal.app.tar.gz"
-        size: 33488276
-        media_type: "zip"
-        digest: "sha256:0aae8e6994c2a940245d9b812a43a21f60d010436522f1ff70285fd835bd88d2"
-      "658316188":
-        name: "OpenTrader_darwin_universal.app.tar.gz.sig"
-        url_suffix: "OpenTrader_darwin_universal.app.tar.gz.sig"
-        size: 428
-        media_type: "zip"
-        digest: "sha256:23caba913ee7fdd697493c0494273185bff45f2af6765cb919d453c58041beed"
-      "658316290":
-        name: "latest.json"
-        url_suffix: "latest.json"
-        size: 6834
-        media_type: "zip"
-        digest: "sha256:15bae34579eb122b494b0c2a909fdd9db62bdbe3f82c7da866715386ed905f9a"
-  "418100334":
-    tag: "v0.4.8"
-    title: "OpenTrader v0.4.8"
-    url: "https://github.com/deepentropy/opentrader/releases/tag/v0.4.8"
-    created_at: "2026-10-20T07:08:17Z"
-    published_at: "2026-10-20T07:27:19Z"
-    updated_at: "2026-10-20T07:27:19Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/deepentropy/opentrader/zipball/v0.4.8"
-    source_tar_url: "https://api.github.com/repos/deepentropy/opentrader/tarball/v0.4.8"
-    download_base: "https://github.com/deepentropy/opentrader/releases/download/v0.4.8/"
-    assets:
-      "658578162":
-        name: "OpenTrader_linux_amd64.deb"
-        url_suffix: "OpenTrader_linux_amd64.deb"
-        size: 17528426
-        media_type: "zip"
-        digest: "sha256:2d154d82c06a63a42fc0955bbfe4504b1fc72b1ee2089bfad7cc950710dbf173"
-      "658578215":
-        name: "OpenTrader_linux_amd64.deb.sig"
-        url_suffix: "OpenTrader_linux_amd64.deb.sig"
-        size: 436
-        media_type: "zip"
-        digest: "sha256:5320fc8567651a5bbb7f9e54e184b2115877f8b2c4a8ecbf34ba51a319f635bf"
-      "658578228":
-        name: "OpenTrader_linux_x86_64.rpm"
-        url_suffix: "OpenTrader_linux_x86_64.rpm"
-        size: 17534327
-        media_type: "zip"
-        digest: "sha256:ca1210f9ed5c5dffd5d3ef4ccf2abd9d1536d32c177b6239467b468967330b0a"
-      "658578275":
-        name: "OpenTrader_linux_x86_64.rpm.sig"
-        url_suffix: "OpenTrader_linux_x86_64.rpm.sig"
-        size: 440
-        media_type: "zip"
-        digest: "sha256:fcbcec77e2fc313614367dc5701c464d778d7159de4539ab86db49d57aef259e"
-      "658578291":
-        name: "OpenTrader_linux_amd64.AppImage"
-        url_suffix: "OpenTrader_linux_amd64.AppImage"
-        size: 97204728
-        media_type: "zip"
-        digest: "sha256:cb9a8148e8f03c76febb98acd3a167e50ce4b227ced1e4cc9e1573f4daa56fa8"
-      "658578477":
-        name: "OpenTrader_linux_amd64.AppImage.sig"
-        url_suffix: "OpenTrader_linux_amd64.AppImage.sig"
-        size: 440
-        media_type: "zip"
-        digest: "sha256:0b97a96ce0a61b466884714671bc8dacfc8b5756b0f6e1a44f1e98e5555bcac6"
-      "658588949":
-        name: "OpenTrader_windows_x64.msi"
-        url_suffix: "OpenTrader_windows_x64.msi"
-        size: 16019456
-        media_type: "zip"
-        digest: "sha256:8822d6332d2693808b321870ad6cc9fd4bbe931218416fbadbedebbd7f96e46c"
-      "658589017":
-        name: "OpenTrader_windows_x64.msi.sig"
-        url_suffix: "OpenTrader_windows_x64.msi.sig"
-        size: 440
-        media_type: "zip"
-        digest: "sha256:b0e2ddde9a0dcb28df306a6efa62ad65010cf606f25c3f3e4331c4cf2f1fa65b"
-      "658589037":
-        name: "OpenTrader_windows_x64-setup.exe"
-        url_suffix: "OpenTrader_windows_x64-setup.exe"
-        size: 13852575
-        media_type: "zip"
-        digest: "sha256:8eee7993e57df727cd5bb0db4869ac009cd950f40092b31c3c0af650c900451a"
-      "658589072":
-        name: "OpenTrader_windows_x64-setup.exe.sig"
-        url_suffix: "OpenTrader_windows_x64-setup.exe.sig"
-        size: 440
-        media_type: "zip"
-        digest: "sha256:716284fd3b6b9cca714a99a3795e9ea12e54de42cae598d24bbf85fa28d38a9e"
-      "658596910":
-        name: "OpenTrader_darwin_universal.dmg"
-        url_suffix: "OpenTrader_darwin_universal.dmg"
-        size: 34281120
-        media_type: "zip"
-        digest: "sha256:c132ccd1ad14b9406a36d7e2290a186dd20e4a9b261fc7548e58388216b2bea2"
-      "658596973":
-        name: "OpenTrader_darwin_universal.app.tar.gz"
-        url_suffix: "OpenTrader_darwin_universal.app.tar.gz"
-        size: 33488634
-        media_type: "zip"
-        digest: "sha256:bffcb6e8cc3f63301f49bc1da9531e6f7dcd434a1f9c4b40dd1197f0acf895ba"
-      "658597021":
-        name: "OpenTrader_darwin_universal.app.tar.gz.sig"
-        url_suffix: "OpenTrader_darwin_universal.app.tar.gz.sig"
-        size: 428
-        media_type: "zip"
-        digest: "sha256:4e0f2a068cdab8314899587791e698cb8afaad98426e7218121fd7b1c6e478d8"
-      "658597062":
-        name: "latest.json"
-        url_suffix: "latest.json"
-        size: 6778
-        media_type: "zip"
-        digest: "sha256:6e4cbb9183e6234f6f83703ae6967cf0749314adfbd341407f4cc6cc50dd719e"
-  "427904649":
-    tag: "v0.4.9"
-    title: "OpenTrader v0.4.9"
-    url: "https://github.com/deepentropy/opentrader/releases/tag/v0.4.9"
-    created_at: "2026-10-29T13:29:44Z"
-    published_at: "2026-10-29T13:48:48Z"
-    updated_at: "2026-11-04T14:08:46Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/deepentropy/opentrader/zipball/v0.4.9"
-    source_tar_url: "https://api.github.com/repos/deepentropy/opentrader/tarball/v0.4.9"
-    download_base: "https://github.com/deepentropy/opentrader/releases/download/v0.4.9/"
-    assets:
-      "688686499":
-        name: "OpenTrader_windows_x64.msi"
-        url_suffix: "OpenTrader_windows_x64.msi"
-        size: 18706432
-        media_type: "zip"
-        digest: "sha256:44347e3db08518922fe0bea848be67ad0133b8bcef683ed9062ead06a6aef9ae"
-      "688686585":
-        name: "OpenTrader_windows_x64.msi.sig"
-        url_suffix: "OpenTrader_windows_x64.msi.sig"
-        size: 440
-        media_type: "zip"
-        digest: "sha256:580434ee7c62cf15f6bd4e737f39a7fce9c2469a14236fa92fa4e5c9251b6913"
-      "688686636":
-        name: "OpenTrader_windows_x64-setup.exe"
-        url_suffix: "OpenTrader_windows_x64-setup.exe"
-        size: 16468862
-        media_type: "zip"
-        digest: "sha256:837dc60831fbf3597ce29a956e2732f59e06fb3df3855bd3e7129d944a5b21a8"
-      "688686704":
-        name: "OpenTrader_windows_x64-setup.exe.sig"
-        url_suffix: "OpenTrader_windows_x64-setup.exe.sig"
-        size: 440
-        media_type: "zip"
-        digest: "sha256:1324b1564cbcbd5c552637f7e86f02c6333c4722a9cd60d5fadbc2d4d3dd4b6e"
-      "688690178":
-        name: "OpenTrader_linux_amd64.deb"
-        url_suffix: "OpenTrader_linux_amd64.deb"
-        size: 20272040
-        media_type: "zip"
-        digest: "sha256:e04bd17504962e1cb420cac800e5c6d2200ba9aeff47d52a3e1144458d582769"
-      "688690288":
-        name: "OpenTrader_linux_amd64.deb.sig"
-        url_suffix: "OpenTrader_linux_amd64.deb.sig"
-        size: 436
-        media_type: "zip"
-        digest: "sha256:db29e014cc13671599472ad789e8e63e0da0c1a4f2b0f70234398c02550b4fdf"
-      "688690326":
-        name: "OpenTrader_linux_x86_64.rpm"
-        url_suffix: "OpenTrader_linux_x86_64.rpm"
-        size: 20277459
-        media_type: "zip"
-        digest: "sha256:9b866b2951bd13cf01f87e37a6cc8d732ba44a204f35200154bd9bbc94ce72dc"
-      "688690396":
-        name: "OpenTrader_linux_x86_64.rpm.sig"
-        url_suffix: "OpenTrader_linux_x86_64.rpm.sig"
-        size: 440
-        media_type: "zip"
-        digest: "sha256:472ae6d63bfcbc47480b906380202351ddcaf7cc07ae5c70c9f557f448d5fd3d"
-      "688690435":
-        name: "OpenTrader_linux_amd64.AppImage"
-        url_suffix: "OpenTrader_linux_amd64.AppImage"
-        size: 99940856
-        media_type: "zip"
-        digest: "sha256:2acff377be2007cc94d72f8d8304f723e5958dff702029ef6b2d09c352910db1"
-      "688690739":
-        name: "OpenTrader_linux_amd64.AppImage.sig"
-        url_suffix: "OpenTrader_linux_amd64.AppImage.sig"
-        size: 440
-        media_type: "zip"
-        digest: "sha256:74182043dbd03a942eb1e0b73de7aace9ab3c5c446bdbc53995022abfd358dd4"
-      "688704408":
-        name: "OpenTrader_darwin_universal.dmg"
-        url_suffix: "OpenTrader_darwin_universal.dmg"
-        size: 39836047
-        media_type: "zip"
-        digest: "sha256:073a021b453f2d0977760687eb14e430714c73783dfede38f9478906de110ed4"
-      "688704510":
-        name: "OpenTrader_darwin_universal.app.tar.gz"
-        url_suffix: "OpenTrader_darwin_universal.app.tar.gz"
-        size: 39027108
-        media_type: "zip"
-        digest: "sha256:1cf4980df356d0656cf85b4cfd91c6e3b17af7d38f58ef4e8c7c5be8cab333c5"
-      "688704606":
-        name: "OpenTrader_darwin_universal.app.tar.gz.sig"
-        url_suffix: "OpenTrader_darwin_universal.app.tar.gz.sig"
-        size: 428
-        media_type: "zip"
-        digest: "sha256:38d33a5afce65d1f4366daec80b6df28e51774617f657d855ac0be293b73943a"
-      "688704815":
-        name: "latest.json"
-        url_suffix: "latest.json"
-        size: 6778
-        media_type: "zip"
-        digest: "sha256:523ec72404a0183f180449f1633404631827ce858b94b4c0e604111eff92d9a2"
-  "430682957":
-    tag: "v0.4.10"
-    title: "OpenTrader v0.4.10"
-    url: "https://github.com/deepentropy/opentrader/releases/tag/v0.4.10"
-    created_at: "2026-11-01T15:47:59Z"
-    published_at: "2026-11-01T15:58:06Z"
-    updated_at: "2026-11-04T14:08:49Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/deepentropy/opentrader/zipball/v0.4.10"
-    source_tar_url: "https://api.github.com/repos/deepentropy/opentrader/tarball/v0.4.10"
-    download_base: "https://github.com/deepentropy/opentrader/releases/download/v0.4.10/"
-    assets:
-      "698769865":
-        name: "OpenTrader_darwin_universal.dmg"
-        url_suffix: "OpenTrader_darwin_universal.dmg"
-        size: 40191933
-        media_type: "zip"
-        digest: "sha256:13cdffeb9523a8c051b0b3391149d8d5cad2696e24abf0b9f6891adc7cea5cae"
-      "698769908":
-        name: "OpenTrader_darwin_universal.app.tar.gz"
-        url_suffix: "OpenTrader_darwin_universal.app.tar.gz"
-        size: 39404396
-        media_type: "zip"
-        digest: "sha256:564c4f2c6d54c658b81fa9c7c196a65215343fc4a431eaec3d253b66009a1d54"
-      "698769995":
-        name: "OpenTrader_darwin_universal.app.tar.gz.sig"
-        url_suffix: "OpenTrader_darwin_universal.app.tar.gz.sig"
-        size: 428
-        media_type: "zip"
-        digest: "sha256:02be96f428f9b3accd3cbbba700977194aa306e23515ae7f8151d204d790e9e4"
-      "698778385":
-        name: "OpenTrader_windows_x64.msi"
-        url_suffix: "OpenTrader_windows_x64.msi"
-        size: 18915328
-        media_type: "zip"
-        digest: "sha256:012d6f87a357058ad1b64323f24d6b09410791473b37741ea071198ae0edda8d"
-      "698778430":
-        name: "OpenTrader_windows_x64.msi.sig"
-        url_suffix: "OpenTrader_windows_x64.msi.sig"
-        size: 444
-        media_type: "zip"
-        digest: "sha256:7e5f32aaa3dc4e4e80e9f3d2dbba82177e0337eb077acee5251abf0b47b71024"
-      "698778460":
-        name: "OpenTrader_windows_x64-setup.exe"
-        url_suffix: "OpenTrader_windows_x64-setup.exe"
-        size: 16616057
-        media_type: "zip"
-        digest: "sha256:49617184ed0b0eb1b518949fea2853eeab94c33515614b53482d3aee1f971093"
-      "698778509":
-        name: "OpenTrader_windows_x64-setup.exe.sig"
-        url_suffix: "OpenTrader_windows_x64-setup.exe.sig"
-        size: 444
-        media_type: "zip"
-        digest: "sha256:c974c86169a9136e6f5cc47ad3efd4c784faa3d75b028b11b4a6045768d87100"
-      "698780733":
-        name: "OpenTrader_linux_amd64.deb"
-        url_suffix: "OpenTrader_linux_amd64.deb"
-        size: 21935312
-        media_type: "zip"
-        digest: "sha256:20c89f0b78d4cb38250c0891e3116e771e1e76eea058b6de65b0dfdbb8798715"
-      "698780782":
-        name: "OpenTrader_linux_amd64.deb.sig"
-        url_suffix: "OpenTrader_linux_amd64.deb.sig"
-        size: 436
-        media_type: "zip"
-        digest: "sha256:89857b8399e06d15e165972a89aab03232115946cf52098edde96ad6affb5257"
-      "698780790":
-        name: "OpenTrader_linux_x86_64.rpm"
-        url_suffix: "OpenTrader_linux_x86_64.rpm"
-        size: 21940380
-        media_type: "zip"
-        digest: "sha256:7dbb1e9e49deb8c74ff6d5a6afef8684dc5c46e828f8e0e4ba4ed36f8db4d8e3"
-      "698780827":
-        name: "OpenTrader_linux_x86_64.rpm.sig"
-        url_suffix: "OpenTrader_linux_x86_64.rpm.sig"
-        size: 440
-        media_type: "zip"
-        digest: "sha256:28f873051eb0d9dfa47709c306cdacdb73570c8eb0ae0728cd360da2ce457242"
-      "698780842":
-        name: "OpenTrader_linux_amd64.AppImage"
-        url_suffix: "OpenTrader_linux_amd64.AppImage"
-        size: 101382648
-        media_type: "zip"
-        digest: "sha256:537d4093e6156e98ca40ab33aa364be3b437fca4e8e4eb808a545d0629173ddf"
-      "698780960":
-        name: "OpenTrader_linux_amd64.AppImage.sig"
-        url_suffix: "OpenTrader_linux_amd64.AppImage.sig"
-        size: 444
-        media_type: "zip"
-        digest: "sha256:ade0a61478161b3be03443c6f03889a0b5853f37061da42e761e9ca4496734b2"
-      "698781012":
-        name: "latest.json"
-        url_suffix: "latest.json"
-        size: 6799
-        media_type: "zip"
-        digest: "sha256:3e6d336ec68db674acdad141938f8d885d38ef312e8376eb24b3c788ba5b72c1"
-  "431947887":
-    tag: "v0.4.11"
-    title: "OpenTrader v0.4.11"
-    url: "https://github.com/deepentropy/opentrader/releases/tag/v0.4.11"
-    created_at: "2026-11-02T20:40:38Z"
-    published_at: "2026-11-02T20:54:45Z"
-    updated_at: "2026-11-04T14:08:51Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/deepentropy/opentrader/zipball/v0.4.11"
-    source_tar_url: "https://api.github.com/repos/deepentropy/opentrader/tarball/v0.4.11"
-    download_base: "https://github.com/deepentropy/opentrader/releases/download/v0.4.11/"
-    assets:
-      "703132130":
-        name: "OpenTrader_darwin_universal.dmg"
-        url_suffix: "OpenTrader_darwin_universal.dmg"
-        size: 41220578
-        media_type: "zip"
-        digest: "sha256:556636d742061b322908f7792d7410cbbd32d3f63f424e75f8c0399ce7cf9093"
-      "703132252":
-        name: "OpenTrader_darwin_universal.app.tar.gz"
-        url_suffix: "OpenTrader_darwin_universal.app.tar.gz"
-        size: 40456909
-        media_type: "zip"
-        digest: "sha256:0b7ce49ee58859639235ad2938f49592919d79164cc6755c046c5686a218bbe2"
-      "703132411":
-        name: "OpenTrader_darwin_universal.app.tar.gz.sig"
-        url_suffix: "OpenTrader_darwin_universal.app.tar.gz.sig"
-        size: 428
-        media_type: "zip"
-        digest: "sha256:3f9b04ba168b6b4598ab8bd52b20c09918db2f6606f711ebf51598f46a7d1d53"
-      "703142612":
-        name: "OpenTrader_linux_amd64.deb"
-        url_suffix: "OpenTrader_linux_amd64.deb"
-        size: 22556730
-        media_type: "zip"
-        digest: "sha256:c9872bae411bec66cd6af16a0d6ee8465d760d17b963a875c44e150f55ea86b8"
-      "703142719":
-        name: "OpenTrader_linux_amd64.deb.sig"
-        url_suffix: "OpenTrader_linux_amd64.deb.sig"
-        size: 436
-        media_type: "zip"
-        digest: "sha256:4f600fbb18c805d462b5082e12a04d1d1a0a54b1a28866ebc914c24a1fea3832"
-      "703142771":
-        name: "OpenTrader_linux_x86_64.rpm"
-        url_suffix: "OpenTrader_linux_x86_64.rpm"
-        size: 22562662
-        media_type: "zip"
-        digest: "sha256:0fa9dd1e1d6f57ea83da48b1a515a54e11b7bdb659a3f43cefe93d9f06d3df26"
-      "703142832":
-        name: "OpenTrader_linux_x86_64.rpm.sig"
-        url_suffix: "OpenTrader_linux_x86_64.rpm.sig"
-        size: 440
-        media_type: "zip"
-        digest: "sha256:573c8e1a96235da78ff814c19ad5121cbdd2758237cde6fa8ce1b86226dbc7a9"
-      "703142855":
-        name: "OpenTrader_linux_amd64.AppImage"
-        url_suffix: "OpenTrader_linux_amd64.AppImage"
-        size: 101927416
-        media_type: "zip"
-        digest: "sha256:f33eafa5d93a4df226895ffc5949b36c6b1e3f0a7e607be206c5455d1deaf180"
-      "703143078":
-        name: "OpenTrader_linux_amd64.AppImage.sig"
-        url_suffix: "OpenTrader_linux_amd64.AppImage.sig"
-        size: 444
-        media_type: "zip"
-        digest: "sha256:e02d4ae20a9a25421a9eae1fbbf0899d55a72db190f14c8cdbb4c9fc9e3a2061"
-      "703148142":
-        name: "OpenTrader_windows_x64.msi"
-        url_suffix: "OpenTrader_windows_x64.msi"
-        size: 19386368
-        media_type: "zip"
-        digest: "sha256:9a8c072999da734df090e58f83e538b20da3390f92acc58a798f36254e96ebe6"
-      "703148221":
-        name: "OpenTrader_windows_x64.msi.sig"
-        url_suffix: "OpenTrader_windows_x64.msi.sig"
-        size: 444
-        media_type: "zip"
-        digest: "sha256:0c18d8e6d93718c89ae462612d32fecd125261f1c4e72c766abe5528cbdcf692"
-      "703148234":
-        name: "OpenTrader_windows_x64-setup.exe"
-        url_suffix: "OpenTrader_windows_x64-setup.exe"
-        size: 16925729
-        media_type: "zip"
-        digest: "sha256:898496f58b873f5750daeea3c490323f72b346e6f7ab35a0094859da86cafe95"
-      "703148282":
-        name: "OpenTrader_windows_x64-setup.exe.sig"
-        url_suffix: "OpenTrader_windows_x64-setup.exe.sig"
-        size: 444
-        media_type: "zip"
-        digest: "sha256:69e26fbf771c11f59872959101daa17790993644b163e84d78d5401b316b725f"
-      "703148357":
-        name: "latest.json"
-        url_suffix: "latest.json"
-        size: 6799
-        media_type: "zip"
-        digest: "sha256:42c8f5a9d0e8c9202fabc2d20a265e29160ca96274b68c92048f4ac88e780bd8"
-  "433273206":
-    tag: "v0.4.12"
-    title: "OpenTrader v0.4.12"
-    url: "https://github.com/deepentropy/opentrader/releases/tag/v0.4.12"
-    created_at: "2026-11-03T22:11:01Z"
-    published_at: "2026-11-03T22:25:04Z"
-    updated_at: "2026-11-04T14:08:53Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/deepentropy/opentrader/zipball/v0.4.12"
-    source_tar_url: "https://api.github.com/repos/deepentropy/opentrader/tarball/v0.4.12"
-    download_base: "https://github.com/deepentropy/opentrader/releases/download/v0.4.12/"
-    assets:
-      "707294817":
-        name: "OpenTrader_linux_amd64.deb"
-        url_suffix: "OpenTrader_linux_amd64.deb"
-        size: 22983056
-        media_type: "zip"
-        digest: "sha256:2879d770f5153da2fea58854359e107adf0589d55bb42f7370b7beb7f9de6d29"
-      "707294877":
-        name: "OpenTrader_linux_amd64.deb.sig"
-        url_suffix: "OpenTrader_linux_amd64.deb.sig"
-        size: 436
-        media_type: "zip"
-        digest: "sha256:2f62c9f30add823196e79702090661518cad14a7931db2be9b71011ab579ac90"
-      "707294903":
-        name: "OpenTrader_linux_x86_64.rpm"
-        url_suffix: "OpenTrader_linux_x86_64.rpm"
-        size: 22989186
-        media_type: "zip"
-        digest: "sha256:d315abfca39f5c87b3a483f91b31c9eb8ea2468ab2e0467478041b027191e877"
-      "707295003":
-        name: "OpenTrader_linux_x86_64.rpm.sig"
-        url_suffix: "OpenTrader_linux_x86_64.rpm.sig"
-        size: 440
-        media_type: "zip"
-        digest: "sha256:407495d2e120edc3927546b7fe581ca2870aa3b4e2e0bf412dd5e79b99031ef0"
-      "707295034":
-        name: "OpenTrader_linux_amd64.AppImage"
-        url_suffix: "OpenTrader_linux_amd64.AppImage"
-        size: 102320632
-        media_type: "zip"
-        digest: "sha256:3aac0e38273fa05f1c84a265ac82b8951018a670c1cf2c19f3b8660cbcc7c9cf"
-      "707295244":
-        name: "OpenTrader_linux_amd64.AppImage.sig"
-        url_suffix: "OpenTrader_linux_amd64.AppImage.sig"
-        size: 444
-        media_type: "zip"
-        digest: "sha256:68c5d069122c38f60d3f1880795fc1d173383fea5a5daeb8e36b72b46e078c92"
-      "707299693":
-        name: "OpenTrader_windows_x64.msi"
-        url_suffix: "OpenTrader_windows_x64.msi"
-        size: 19664896
-        media_type: "zip"
-        digest: "sha256:a27c8965ff01055f47e149a4ba6ae68da13c69490cfceb4e8b145668494fc79c"
-      "707299750":
-        name: "OpenTrader_windows_x64.msi.sig"
-        url_suffix: "OpenTrader_windows_x64.msi.sig"
-        size: 444
-        media_type: "zip"
-        digest: "sha256:9b270b4ea40d207d4f0225296551cca428d1b0de4bec4cc0dddfdf3885c3fde5"
-      "707299761":
-        name: "OpenTrader_windows_x64-setup.exe"
-        url_suffix: "OpenTrader_windows_x64-setup.exe"
-        size: 17151598
-        media_type: "zip"
-        digest: "sha256:261f3c730bf0b7d230d8255e1a019bfa6a15cefc8ace9112d0d17b28a982c0be"
-      "707299821":
-        name: "OpenTrader_windows_x64-setup.exe.sig"
-        url_suffix: "OpenTrader_windows_x64-setup.exe.sig"
-        size: 444
-        media_type: "zip"
-        digest: "sha256:e2a05f5c8984a109bfa21f584588510af450a62dd4a688d2b5770554aaf38283"
-      "707307558":
-        name: "OpenTrader_darwin_universal.dmg"
-        url_suffix: "OpenTrader_darwin_universal.dmg"
-        size: 41792372
-        media_type: "zip"
-        digest: "sha256:1dda7b30cc99628c7bcb34a836e24dadd6a574d67b0189ddc232a6ee0e2b9b6b"
-      "707307654":
-        name: "OpenTrader_darwin_universal.app.tar.gz"
-        url_suffix: "OpenTrader_darwin_universal.app.tar.gz"
-        size: 41011743
-        media_type: "zip"
-        digest: "sha256:fc426b917ab2123871d86a53d1720541ffb5bf51f023a9346007db1f7f41268b"
-      "707307742":
-        name: "OpenTrader_darwin_universal.app.tar.gz.sig"
-        url_suffix: "OpenTrader_darwin_universal.app.tar.gz.sig"
-        size: 428
-        media_type: "zip"
-        digest: "sha256:14e1b3eb6975d19a535acb1cfa2728d641211b38012c97070a07792056bbea8a"
-      "707307805":
-        name: "latest.json"
-        url_suffix: "latest.json"
-        size: 6799
-        media_type: "zip"
-        digest: "sha256:08565d400c249e0c3ca2e6a69d3a9da09f863f8217248e59041beb43a9829538"
-  "433958506":
-    tag: "v0.4.13"
-    title: "OpenTrader v0.4.13"
-    url: "https://github.com/deepentropy/opentrader/releases/tag/v0.4.13"
-    created_at: "2026-11-04T13:25:58Z"
-    published_at: "2026-11-04T13:41:33Z"
-    updated_at: "2026-11-04T14:08:56Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/deepentropy/opentrader/zipball/v0.4.13"
-    source_tar_url: "https://api.github.com/repos/deepentropy/opentrader/tarball/v0.4.13"
-    download_base: "https://github.com/deepentropy/opentrader/releases/download/v0.4.13/"
-    assets:
-      "709632226":
-        name: "OpenTrader_linux_amd64.deb"
-        url_suffix: "OpenTrader_linux_amd64.deb"
-        size: 23786430
-        media_type: "zip"
-        digest: "sha256:73f60e8d0898c00994fe1b79f0f474405cbb2e74e4edf1a9a4fe9d227c6365ad"
-      "709632325":
-        name: "OpenTrader_linux_amd64.deb.sig"
-        url_suffix: "OpenTrader_linux_amd64.deb.sig"
-        size: 436
-        media_type: "zip"
-        digest: "sha256:4f331cd38c792845844c52387a86f24052ad45730e59989ad9764fee3af546bc"
-      "709632350":
-        name: "OpenTrader_linux_x86_64.rpm"
-        url_suffix: "OpenTrader_linux_x86_64.rpm"
-        size: 23792426
-        media_type: "zip"
-        digest: "sha256:fe5e44443f8d97907a4db70df9e52990645d226337c118b3f058a4622b2076c4"
-      "709632432":
-        name: "OpenTrader_linux_x86_64.rpm.sig"
-        url_suffix: "OpenTrader_linux_x86_64.rpm.sig"
-        size: 440
-        media_type: "zip"
-        digest: "sha256:62ac1d8a6bf268d627245ee706683b7c830bf8caba1b30d70e5ea06920088020"
-      "709632482":
-        name: "OpenTrader_linux_amd64.AppImage"
-        url_suffix: "OpenTrader_linux_amd64.AppImage"
-        size: 103098872
-        media_type: "zip"
-        digest: "sha256:e5a5ace413652584ec536db33a4a43649c97cabf9579d17cdf7688b8b43d1f80"
-      "709632657":
-        name: "OpenTrader_linux_amd64.AppImage.sig"
-        url_suffix: "OpenTrader_linux_amd64.AppImage.sig"
-        size: 444
-        media_type: "zip"
-        digest: "sha256:d69662874013ee472e4cff70a032958e143083dafb243d31e5528da623f9ab58"
-      "709635876":
-        name: "OpenTrader_windows_x64.msi"
-        url_suffix: "OpenTrader_windows_x64.msi"
-        size: 20471808
-        media_type: "zip"
-        digest: "sha256:b64f33468cbe292d1fdcdf62b1c28323eeb290cc2d75242435507e6058f2a259"
-      "709636016":
-        name: "OpenTrader_windows_x64.msi.sig"
-        url_suffix: "OpenTrader_windows_x64.msi.sig"
-        size: 444
-        media_type: "zip"
-        digest: "sha256:1b402490cebc84a0b79517e66e6e8c0edff6ef3cd4a2d430d19995247fbf462f"
-      "709636055":
-        name: "OpenTrader_windows_x64-setup.exe"
-        url_suffix: "OpenTrader_windows_x64-setup.exe"
-        size: 17972401
-        media_type: "zip"
-        digest: "sha256:f5a77f5779176318adaa2030c662a498f41958e772b91919764f23b2e5d46557"
-      "709636140":
-        name: "OpenTrader_windows_x64-setup.exe.sig"
-        url_suffix: "OpenTrader_windows_x64-setup.exe.sig"
-        size: 444
-        media_type: "zip"
-        digest: "sha256:cac1f3a8c9bcdf270ef298608e813efd9f07a67a31dafbec8434c03a880457de"
-      "709654787":
-        name: "OpenTrader_darwin_universal.dmg"
-        url_suffix: "OpenTrader_darwin_universal.dmg"
-        size: 43395925
-        media_type: "zip"
-        digest: "sha256:f5ed9db5df04b0e02d03e8c53af2d0dae8433216c2b08eee11213faaf80b0cd4"
-      "709654882":
-        name: "OpenTrader_darwin_universal.app.tar.gz"
-        url_suffix: "OpenTrader_darwin_universal.app.tar.gz"
-        size: 42642347
-        media_type: "zip"
-        digest: "sha256:bca0e48fe3ab6faab5d384ee3b0b7a14a104df5a44dc8af37f558b9a0023d0e6"
-      "709655011":
-        name: "OpenTrader_darwin_universal.app.tar.gz.sig"
-        url_suffix: "OpenTrader_darwin_universal.app.tar.gz.sig"
-        size: 428
-        media_type: "zip"
-        digest: "sha256:2f6b1cf9f7c4519c7dd7be0b1644d51abcf0684b209601fc1f263abe1782b5b7"
-      "709655075":
-        name: "latest.json"
-        url_suffix: "latest.json"
-        size: 6799
-        media_type: "zip"
-        digest: "sha256:2569cd762a2e23f7787e18dd6290f86d13b93abf36e7e1d65e203b99aceca9e1"
-  "434347041":
-    tag: "assistant-model-v2"
-    title: "AI assistant model v2 (fine-tune)"
-    url: "https://github.com/deepentropy/opentrader/releases/tag/assistant-model-v2"
-    created_at: "2026-11-04T17:51:11Z"
-    published_at: "2026-11-04T19:20:08Z"
-    updated_at: "2026-11-04T19:20:08Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/deepentropy/opentrader/zipball/assistant-model-v2"
-    source_tar_url: "https://api.github.com/repos/deepentropy/opentrader/tarball/assistant-model-v2"
-    assets:
-      "710629291":
-        name: "opentrader-assistant-v2-lora-f16.gguf"
-        url: "https://github.com/deepentropy/opentrader/releases/download/assistant-model-v2/opentrader-assistant-v2-lora-f16.gguf"
-        size: 66095232
-        digest: "sha256:22bb391e1c8cde89ad43a37887865eba1e9cd68f81da025beacd225cf53a6277"
-  "434973929":
-    tag: "v0.4.14"
-    title: "OpenTrader v0.4.14"
-    url: "https://github.com/deepentropy/opentrader/releases/tag/v0.4.14"
-    created_at: "2026-11-05T09:04:07Z"
-    published_at: "2026-11-05T09:23:47Z"
-    updated_at: "2026-11-05T09:23:47Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/deepentropy/opentrader/zipball/v0.4.14"
-    source_tar_url: "https://api.github.com/repos/deepentropy/opentrader/tarball/v0.4.14"
-    download_base: "https://github.com/deepentropy/opentrader/releases/download/v0.4.14/"
-    assets:
-      "712776106":
-        name: "OpenTrader_windows_x64.msi"
-        url_suffix: "OpenTrader_windows_x64.msi"
-        size: 20860928
-        media_type: "zip"
-        digest: "sha256:2661d6e842e8beffb656d071976f95b327753e44b350b567be889b21340f1fac"
-      "712776195":
-        name: "OpenTrader_windows_x64.msi.sig"
-        url_suffix: "OpenTrader_windows_x64.msi.sig"
-        size: 444
-        media_type: "zip"
-        digest: "sha256:89193f977234a1386df9214354c151c814329de332b6e55e05c6da928e7dd8ae"
-      "712776229":
-        name: "OpenTrader_windows_x64-setup.exe"
-        url_suffix: "OpenTrader_windows_x64-setup.exe"
-        size: 18267616
-        media_type: "zip"
-        digest: "sha256:0e098d9458c8bbee8ff6e65bf9934dc8ba8b0cbe77936fcc20cdac2c33827d62"
-      "712776293":
-        name: "OpenTrader_windows_x64-setup.exe.sig"
-        url_suffix: "OpenTrader_windows_x64-setup.exe.sig"
-        size: 444
-        media_type: "zip"
-        digest: "sha256:ca4db168e28d1d8c389cb02e223943269cb02de9df9e3be4c9bc236b3cdbeb45"
-      "712781276":
-        name: "OpenTrader_linux_amd64.deb"
-        url_suffix: "OpenTrader_linux_amd64.deb"
-        size: 24265438
-        media_type: "zip"
-        digest: "sha256:9cf98daf8f59d8c614e558f3c7878563d28809f6cc8d8767604e971f04842895"
-      "712781336":
-        name: "OpenTrader_linux_amd64.deb.sig"
-        url_suffix: "OpenTrader_linux_amd64.deb.sig"
-        size: 436
-        media_type: "zip"
-        digest: "sha256:7d2527ebf9db5b373a5697d9037d78182d67a64413e04205315643536fb1ff98"
-      "712781369":
-        name: "OpenTrader_linux_x86_64.rpm"
-        url_suffix: "OpenTrader_linux_x86_64.rpm"
-        size: 24270754
-        media_type: "zip"
-        digest: "sha256:331a3ce148d1634d38027fc326dba24a14b6fabcb3c551aff1ebd833d035615d"
-      "712781439":
-        name: "OpenTrader_linux_x86_64.rpm.sig"
-        url_suffix: "OpenTrader_linux_x86_64.rpm.sig"
-        size: 440
-        media_type: "zip"
-        digest: "sha256:ede9d1b227e2dd2c68f7e17101cb06606ffcd545547f3bdbc771157e6aa17c1b"
-      "712781457":
-        name: "OpenTrader_linux_amd64.AppImage"
-        url_suffix: "OpenTrader_linux_amd64.AppImage"
-        size: 103557624
-        media_type: "zip"
-        digest: "sha256:d5a04408fb522435055a6e11bf6f14fa040c99e55cb5dd069c2aac59340592a0"
-      "712781672":
-        name: "OpenTrader_linux_amd64.AppImage.sig"
-        url_suffix: "OpenTrader_linux_amd64.AppImage.sig"
-        size: 444
-        media_type: "zip"
-        digest: "sha256:2111a8f67975ff33b54fdf18c6c0952f937581cba44eaf637c040fce8229f006"
-      "712801204":
-        name: "OpenTrader_darwin_universal.dmg"
-        url_suffix: "OpenTrader_darwin_universal.dmg"
-        size: 44253207
-        media_type: "zip"
-        digest: "sha256:73f5b0cb9a299ffdf42cfe59dcef7e180fd7c2373be2290d3ef9926e8bad1377"
-      "712801454":
-        name: "OpenTrader_darwin_universal.app.tar.gz"
-        url_suffix: "OpenTrader_darwin_universal.app.tar.gz"
-        size: 43505569
-        media_type: "zip"
-        digest: "sha256:8b4c0d50a9338a213e894e666caca10c72919c62cbb7bc114b9d41e3266d5624"
-      "712801614":
-        name: "OpenTrader_darwin_universal.app.tar.gz.sig"
-        url_suffix: "OpenTrader_darwin_universal.app.tar.gz.sig"
-        size: 428
-        media_type: "zip"
-        digest: "sha256:eac664d769a4bbe7790c583684ff4fa934fa66885508c0380f2196568bf78cbf"
-      "712801718":
-        name: "latest.json"
-        url_suffix: "latest.json"
-        size: 6799
-        media_type: "zip"
-        digest: "sha256:212d72da47f497a31af7e9799e2f064c0e73bde7b0b627e6b9ac96eea19a0088"
   "436092008":
     tag: "v0.4.15"
     title: "OpenTrader v0.4.15"
@@ -2338,3 +1458,452 @@ releases:
         size: 6799
         media_type: "zip"
         digest: "sha256:ace393d4acd751ebefbffba6b7447cbc9b6dc0c73d2558831d1216169f883c79"
+  "450868382":
+    tag: "v0.4.28"
+    title: "OpenTrader v0.4.28"
+    url: "https://github.com/deepentropy/opentrader/releases/tag/v0.4.28"
+    created_at: "2026-11-19T04:10:37Z"
+    published_at: "2026-11-19T04:35:50Z"
+    updated_at: "2026-11-19T04:35:50Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/deepentropy/opentrader/zipball/v0.4.28"
+    source_tar_url: "https://api.github.com/repos/deepentropy/opentrader/tarball/v0.4.28"
+    download_base: "https://github.com/deepentropy/opentrader/releases/download/v0.4.28/"
+    assets:
+      "766188548":
+        name: "OpenTrader_linux_amd64.deb"
+        url_suffix: "OpenTrader_linux_amd64.deb"
+        size: 31229482
+        media_type: "zip"
+        digest: "sha256:db1b02e3d8dc3648bca6211526281aed3fe6f0654ea3430532f1c43b07aa3b55"
+      "766188660":
+        name: "OpenTrader_linux_amd64.deb.sig"
+        url_suffix: "OpenTrader_linux_amd64.deb.sig"
+        size: 436
+        media_type: "zip"
+        digest: "sha256:12269f2eca282f12a20dc5ee04c196d687331c6267db7d58c4efb2dc5ac74a7d"
+      "766188675":
+        name: "OpenTrader_linux_x86_64.rpm"
+        url_suffix: "OpenTrader_linux_x86_64.rpm"
+        size: 31234619
+        media_type: "zip"
+        digest: "sha256:fd855cbb90e1b4c3b9cebd151c39acde9f323e5ada77718cfe609b806c9e4cf0"
+      "766188728":
+        name: "OpenTrader_linux_x86_64.rpm.sig"
+        url_suffix: "OpenTrader_linux_x86_64.rpm.sig"
+        size: 440
+        media_type: "zip"
+        digest: "sha256:8a426a5fcb2bb4aba884c80c5480add7493e0199724a8ca0b87d1a48008483a2"
+      "766188748":
+        name: "OpenTrader_linux_amd64.AppImage"
+        url_suffix: "OpenTrader_linux_amd64.AppImage"
+        size: 110332408
+        media_type: "zip"
+        digest: "sha256:e5a02bc2fa9296dbc2d2d841b1a4800b6988c2a325f8ce2e277fb6fad18569fd"
+      "766189040":
+        name: "OpenTrader_linux_amd64.AppImage.sig"
+        url_suffix: "OpenTrader_linux_amd64.AppImage.sig"
+        size: 444
+        media_type: "zip"
+        digest: "sha256:d76d030f6dbd83a319ea3bc741d60d53c7270a8b47973436a056c984d71973e6"
+      "766193323":
+        name: "OpenTrader_windows_x64.msi"
+        url_suffix: "OpenTrader_windows_x64.msi"
+        size: 27688960
+        media_type: "zip"
+        digest: "sha256:f3129472c13345b6b8a08b5c36dffd3f18a455c7fce80db17d0c689b419ccbfe"
+      "766193412":
+        name: "OpenTrader_windows_x64.msi.sig"
+        url_suffix: "OpenTrader_windows_x64.msi.sig"
+        size: 444
+        media_type: "zip"
+        digest: "sha256:2f803184ad342a6d06bb94c74fc0162c2931bd95241ef55eea2f6ba61864edb4"
+      "766193444":
+        name: "OpenTrader_windows_x64-setup.exe"
+        url_suffix: "OpenTrader_windows_x64-setup.exe"
+        size: 24687619
+        media_type: "zip"
+        digest: "sha256:9eafd5514e2af956e7b994259d266a896c6728d9e332ba4e7657a279a8b86e95"
+      "766193515":
+        name: "OpenTrader_windows_x64-setup.exe.sig"
+        url_suffix: "OpenTrader_windows_x64-setup.exe.sig"
+        size: 444
+        media_type: "zip"
+        digest: "sha256:f4587fb3cabaffd77296d20015845061737125aebfc2416e09d5955c01b7b245"
+      "766230450":
+        name: "OpenTrader_darwin_universal.dmg"
+        url_suffix: "OpenTrader_darwin_universal.dmg"
+        size: 57920373
+        media_type: "zip"
+        digest: "sha256:bf073e3796621bd39f0cb1a6712f1978874f6487ae0369c5da1e62dd3349e5fc"
+      "766230559":
+        name: "OpenTrader_darwin_universal.app.tar.gz"
+        url_suffix: "OpenTrader_darwin_universal.app.tar.gz"
+        size: 57253457
+        media_type: "zip"
+        digest: "sha256:dd034e28f5ea4791ff2beabfe5ad4e9721a5616d4e652e3e9fcbdb2e1b76d941"
+      "766230666":
+        name: "OpenTrader_darwin_universal.app.tar.gz.sig"
+        url_suffix: "OpenTrader_darwin_universal.app.tar.gz.sig"
+        size: 428
+        media_type: "zip"
+        digest: "sha256:f527773bc229d7a705240459787c97fd30fab4bf6823babb3231a587e268caf8"
+      "766230726":
+        name: "latest.json"
+        url_suffix: "latest.json"
+        size: 6799
+        media_type: "zip"
+        digest: "sha256:b68a439b0fb074b5a98236f54fb0b810391812f65d1a91c66418cefa3e31d557"
+  "452257367":
+    tag: "v0.4.29"
+    title: "OpenTrader v0.4.29"
+    url: "https://github.com/deepentropy/opentrader/releases/tag/v0.4.29"
+    created_at: "2026-11-20T04:10:57Z"
+    published_at: "2026-11-20T04:36:41Z"
+    updated_at: "2026-11-20T04:36:41Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/deepentropy/opentrader/zipball/v0.4.29"
+    source_tar_url: "https://api.github.com/repos/deepentropy/opentrader/tarball/v0.4.29"
+    download_base: "https://github.com/deepentropy/opentrader/releases/download/v0.4.29/"
+    assets:
+      "770420735":
+        name: "OpenTrader_windows_x64.msi"
+        url_suffix: "OpenTrader_windows_x64.msi"
+        size: 27688960
+        media_type: "zip"
+        digest: "sha256:73c634a19b7253c4f5b2c0e1f45ac60339e88dcf225e49fa3bf5dd4b951bb75e"
+      "770420781":
+        name: "OpenTrader_windows_x64.msi.sig"
+        url_suffix: "OpenTrader_windows_x64.msi.sig"
+        size: 444
+        media_type: "zip"
+        digest: "sha256:cf89700a876ff21c6c8d50196e7db66157aa6b6e451f3ff76d8877aa4a4307e1"
+      "770420803":
+        name: "OpenTrader_windows_x64-setup.exe"
+        url_suffix: "OpenTrader_windows_x64-setup.exe"
+        size: 24676931
+        media_type: "zip"
+        digest: "sha256:10cb387b08d02aaf2d34982a0428b81aa7f51dfc5fe1778733d18f622658b402"
+      "770420845":
+        name: "OpenTrader_windows_x64-setup.exe.sig"
+        url_suffix: "OpenTrader_windows_x64-setup.exe.sig"
+        size: 444
+        media_type: "zip"
+        digest: "sha256:3a79d50412b91e371cc07c366864731e44b3bf3532c62890f963f83deaea7d9c"
+      "770422702":
+        name: "OpenTrader_linux_amd64.deb"
+        url_suffix: "OpenTrader_linux_amd64.deb"
+        size: 31232416
+        media_type: "zip"
+        digest: "sha256:f5df56441ffbd0b8d51c6294a4bee08dbb64dc5b9e360f4252838eb28eb9b1a4"
+      "770422786":
+        name: "OpenTrader_linux_amd64.deb.sig"
+        url_suffix: "OpenTrader_linux_amd64.deb.sig"
+        size: 436
+        media_type: "zip"
+        digest: "sha256:ad2f9759a09b6c6722273b421a80d0f3d4467502d210db9c4d7a044a7518ff02"
+      "770422812":
+        name: "OpenTrader_linux_x86_64.rpm"
+        url_suffix: "OpenTrader_linux_x86_64.rpm"
+        size: 31237280
+        media_type: "zip"
+        digest: "sha256:5f2610ee779d739d36ab0f418f7db702035ec63440db3f71a911e47bd6c36e13"
+      "770422921":
+        name: "OpenTrader_linux_x86_64.rpm.sig"
+        url_suffix: "OpenTrader_linux_x86_64.rpm.sig"
+        size: 440
+        media_type: "zip"
+        digest: "sha256:eda0c45839277150d7efa98e0d980c0092ff4e6b42aeb5de522f56b4bda73d40"
+      "770422948":
+        name: "OpenTrader_linux_amd64.AppImage"
+        url_suffix: "OpenTrader_linux_amd64.AppImage"
+        size: 110336504
+        media_type: "zip"
+        digest: "sha256:96fc81f061924d1b9aef6abcc300f9fa30e13339e1844f0f06d953d1bed6e8b3"
+      "770423088":
+        name: "OpenTrader_linux_amd64.AppImage.sig"
+        url_suffix: "OpenTrader_linux_amd64.AppImage.sig"
+        size: 444
+        media_type: "zip"
+        digest: "sha256:2e2532ffad40538eee33efbaf1e6886a0640fd7d827c111402ce2c81917206d3"
+      "770462487":
+        name: "OpenTrader_darwin_universal.dmg"
+        url_suffix: "OpenTrader_darwin_universal.dmg"
+        size: 57926972
+        media_type: "zip"
+        digest: "sha256:48b236da9e7462c78d9dfc689805217d22c11a3463213c4f8c808d0e9f7c18b4"
+      "770462624":
+        name: "OpenTrader_darwin_universal.app.tar.gz"
+        url_suffix: "OpenTrader_darwin_universal.app.tar.gz"
+        size: 57260266
+        media_type: "zip"
+        digest: "sha256:4d56065a0b6a91ac5fdb69d90d3cd5d63f21d64ae50b332e9e15a4168bb97940"
+      "770462793":
+        name: "OpenTrader_darwin_universal.app.tar.gz.sig"
+        url_suffix: "OpenTrader_darwin_universal.app.tar.gz.sig"
+        size: 428
+        media_type: "zip"
+        digest: "sha256:2f7381b7f6c5c75f1039edb4f90088f42020c7ced5d6766efef9d37bcdfcf574"
+      "770462886":
+        name: "latest.json"
+        url_suffix: "latest.json"
+        size: 6799
+        media_type: "zip"
+        digest: "sha256:389df229e54c3a417a90aa4962734503125a0548ac18e2dcd04ad7adc0d51062"
+  "452519271":
+    tag: "plugin-ibkr-v0.1.4"
+    title: "Interactive Brokers plugin 0.1.4"
+    url: "https://github.com/deepentropy/opentrader/releases/tag/plugin-ibkr-v0.1.4"
+    created_at: "2026-11-20T09:55:18Z"
+    published_at: "2026-11-20T09:55:32Z"
+    updated_at: "2026-11-20T09:55:32Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/deepentropy/opentrader/zipball/plugin-ibkr-v0.1.4"
+    source_tar_url: "https://api.github.com/repos/deepentropy/opentrader/tarball/plugin-ibkr-v0.1.4"
+    download_base: "https://github.com/deepentropy/opentrader/releases/download/plugin-ibkr-v0.1.4/"
+    assets:
+      "771293277":
+        name: "ibkr-0.1.4.zip"
+        url_suffix: "ibkr-0.1.4.zip"
+        size: 1657876
+        media_type: "zip"
+        digest: "sha256:0d2d4cf2ad4975f4a18643b7ba6632fb9d02184455a4b4039c472d2c4a33f157"
+      "771293278":
+        name: "ibkr-0.1.4.zip.sig"
+        url_suffix: "ibkr-0.1.4.zip.sig"
+        size: 400
+        digest: "sha256:aeb83661f9d67a600a4f6fcb020049cc05816f0e9d31d5fd02c6582ab162cfbe"
+  "452535111":
+    tag: "plugin-mt5-v0.1.4"
+    title: "MetaTrader 5 plugin 0.1.4"
+    url: "https://github.com/deepentropy/opentrader/releases/tag/plugin-mt5-v0.1.4"
+    created_at: "2026-11-20T10:10:47Z"
+    published_at: "2026-11-20T10:10:57Z"
+    updated_at: "2026-11-20T10:10:57Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/deepentropy/opentrader/zipball/plugin-mt5-v0.1.4"
+    source_tar_url: "https://api.github.com/repos/deepentropy/opentrader/tarball/plugin-mt5-v0.1.4"
+    download_base: "https://github.com/deepentropy/opentrader/releases/download/plugin-mt5-v0.1.4/"
+    assets:
+      "771341755":
+        name: "mt5-0.1.4.zip.sig"
+        url_suffix: "mt5-0.1.4.zip.sig"
+        size: 400
+        digest: "sha256:90ad1130c2655391b0955e1bcac72f57f641e203f5f3c493ab292a2d21dab356"
+      "771341759":
+        name: "mt5-0.1.4.zip"
+        url_suffix: "mt5-0.1.4.zip"
+        size: 151557
+        media_type: "zip"
+        digest: "sha256:0aede6752750ac12c767ba91bdf9f2720e04bcfac2b5875d9fbca0113befc177"
+  "452573854":
+    tag: "plugin-mt5-v0.1.5"
+    title: "MetaTrader 5 plugin 0.1.5"
+    url: "https://github.com/deepentropy/opentrader/releases/tag/plugin-mt5-v0.1.5"
+    created_at: "2026-11-20T10:50:18Z"
+    published_at: "2026-11-20T10:50:30Z"
+    updated_at: "2026-11-20T10:50:30Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/deepentropy/opentrader/zipball/plugin-mt5-v0.1.5"
+    source_tar_url: "https://api.github.com/repos/deepentropy/opentrader/tarball/plugin-mt5-v0.1.5"
+    download_base: "https://github.com/deepentropy/opentrader/releases/download/plugin-mt5-v0.1.5/"
+    assets:
+      "771462000":
+        name: "mt5-0.1.5.zip"
+        url_suffix: "mt5-0.1.5.zip"
+        size: 158599
+        media_type: "zip"
+        digest: "sha256:baca14fe708b14f9fa7eb5c8b92e5444a89e2966a2945a8f3932540857e00c92"
+      "771462001":
+        name: "mt5-0.1.5.zip.sig"
+        url_suffix: "mt5-0.1.5.zip.sig"
+        size: 400
+        digest: "sha256:4b79e54f9a4131fd0da521cfac462785fc6375a0c7763e3da527b6aee9412588"
+  "452586124":
+    tag: "plugin-mt5-v0.1.6"
+    title: "MetaTrader 5 plugin 0.1.6"
+    url: "https://github.com/deepentropy/opentrader/releases/tag/plugin-mt5-v0.1.6"
+    created_at: "2026-11-20T11:02:47Z"
+    published_at: "2026-11-20T11:02:58Z"
+    updated_at: "2026-11-20T11:02:58Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/deepentropy/opentrader/zipball/plugin-mt5-v0.1.6"
+    source_tar_url: "https://api.github.com/repos/deepentropy/opentrader/tarball/plugin-mt5-v0.1.6"
+    download_base: "https://github.com/deepentropy/opentrader/releases/download/plugin-mt5-v0.1.6/"
+    assets:
+      "771496056":
+        name: "mt5-0.1.6.zip.sig"
+        url_suffix: "mt5-0.1.6.zip.sig"
+        size: 400
+        digest: "sha256:ee10e9877127e928c74e4e8b68dd389299e6ec980df803162efdee438348fae2"
+      "771496065":
+        name: "mt5-0.1.6.zip"
+        url_suffix: "mt5-0.1.6.zip"
+        size: 160586
+        media_type: "zip"
+        digest: "sha256:b21192492e5017f2f40c47ee9e87d17d91cec394278cc7620a47e84020e06abb"
+  "452600655":
+    tag: "plugin-mt5-v0.1.7"
+    title: "MetaTrader 5 plugin 0.1.7"
+    url: "https://github.com/deepentropy/opentrader/releases/tag/plugin-mt5-v0.1.7"
+    created_at: "2026-11-20T11:18:23Z"
+    published_at: "2026-11-20T11:18:28Z"
+    updated_at: "2026-11-20T11:18:28Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/deepentropy/opentrader/zipball/plugin-mt5-v0.1.7"
+    source_tar_url: "https://api.github.com/repos/deepentropy/opentrader/tarball/plugin-mt5-v0.1.7"
+    download_base: "https://github.com/deepentropy/opentrader/releases/download/plugin-mt5-v0.1.7/"
+    assets:
+      "771538824":
+        name: "mt5-0.1.7.zip"
+        url_suffix: "mt5-0.1.7.zip"
+        size: 161887
+        media_type: "zip"
+        digest: "sha256:8e8828c9902eb41d47498f90124177cd3b43626e1aaf063f1326365c87ba4c33"
+      "771538826":
+        name: "mt5-0.1.7.zip.sig"
+        url_suffix: "mt5-0.1.7.zip.sig"
+        size: 400
+        digest: "sha256:2e59fdbcb19ba3e2328398978872ed213a9428e54ea7cc21497007f1a5753c97"
+  "453169873":
+    tag: "plugin-ibkr-v0.2.0"
+    title: "Interactive Brokers plugin 0.2.0"
+    url: "https://github.com/deepentropy/opentrader/releases/tag/plugin-ibkr-v0.2.0"
+    created_at: "2026-11-20T20:54:34Z"
+    published_at: "2026-11-20T20:55:10Z"
+    updated_at: "2026-11-20T20:55:10Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/deepentropy/opentrader/zipball/plugin-ibkr-v0.2.0"
+    source_tar_url: "https://api.github.com/repos/deepentropy/opentrader/tarball/plugin-ibkr-v0.2.0"
+    download_base: "https://github.com/deepentropy/opentrader/releases/download/plugin-ibkr-v0.2.0/"
+    assets:
+      "773313651":
+        name: "ibkr-0.2.0.zip.sig"
+        url_suffix: "ibkr-0.2.0.zip.sig"
+        size: 400
+        digest: "sha256:6ac2eec695057125a1f28238640a41da1dc6e0e74734bb9574ed4760412b3dd3"
+      "773313652":
+        name: "ibkr-0.2.0.zip"
+        url_suffix: "ibkr-0.2.0.zip"
+        size: 4948552
+        media_type: "zip"
+        digest: "sha256:26e1dc52c8fce080c4cf6ef508c5a1caef0c50d9e692c5eb1db00c9fe33645b5"
+  "453236584":
+    tag: "plugin-ibkr-v0.3.0"
+    title: "Interactive Brokers plugin 0.3.0"
+    url: "https://github.com/deepentropy/opentrader/releases/tag/plugin-ibkr-v0.3.0"
+    created_at: "2026-11-20T22:21:58Z"
+    published_at: "2026-11-20T22:22:13Z"
+    updated_at: "2026-11-20T22:22:13Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/deepentropy/opentrader/zipball/plugin-ibkr-v0.3.0"
+    source_tar_url: "https://api.github.com/repos/deepentropy/opentrader/tarball/plugin-ibkr-v0.3.0"
+    download_base: "https://github.com/deepentropy/opentrader/releases/download/plugin-ibkr-v0.3.0/"
+    assets:
+      "773548146":
+        name: "ibkr-0.3.0.zip"
+        url_suffix: "ibkr-0.3.0.zip"
+        size: 5318128
+        media_type: "zip"
+        digest: "sha256:5eb0615cf0b8558b99a5fc82b2cf7a757bb29524f06b05d0f334877c18942c5d"
+      "773548147":
+        name: "ibkr-0.3.0.zip.sig"
+        url_suffix: "ibkr-0.3.0.zip.sig"
+        size: 400
+        digest: "sha256:e4fe816fd9a25a8aa57496eb3b8e07f2de08acb676679bbce101e7f237286010"
+  "453429413":
+    tag: "v0.4.30"
+    title: "OpenTrader v0.4.30"
+    url: "https://github.com/deepentropy/opentrader/releases/tag/v0.4.30"
+    created_at: "2026-11-21T04:09:14Z"
+    published_at: "2026-11-21T04:30:52Z"
+    updated_at: "2026-11-21T04:30:52Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/deepentropy/opentrader/zipball/v0.4.30"
+    source_tar_url: "https://api.github.com/repos/deepentropy/opentrader/tarball/v0.4.30"
+    download_base: "https://github.com/deepentropy/opentrader/releases/download/v0.4.30/"
+    assets:
+      "774389115":
+        name: "OpenTrader_linux_amd64.deb"
+        url_suffix: "OpenTrader_linux_amd64.deb"
+        size: 31366560
+        media_type: "zip"
+        digest: "sha256:ccd27d3ac7dc0a4d1b3afc951ab07f0c777121b74d19bffc9b3981e44eaf3675"
+      "774389155":
+        name: "OpenTrader_linux_amd64.deb.sig"
+        url_suffix: "OpenTrader_linux_amd64.deb.sig"
+        size: 436
+        media_type: "zip"
+        digest: "sha256:eea74284a1746efaf64be853c7f1ac1ceaff75f944a25382f70f16d89705412b"
+      "774389167":
+        name: "OpenTrader_linux_x86_64.rpm"
+        url_suffix: "OpenTrader_linux_x86_64.rpm"
+        size: 31372208
+        media_type: "zip"
+        digest: "sha256:5af92b01c6d3d3eacc31a5f585587afffb25e07e6a087df422f29ad79310c1cb"
+      "774389223":
+        name: "OpenTrader_linux_x86_64.rpm.sig"
+        url_suffix: "OpenTrader_linux_x86_64.rpm.sig"
+        size: 440
+        media_type: "zip"
+        digest: "sha256:b74050d71795f22197da005c5972089cd4613f4ab6cbfb3ddd9055c302136396"
+      "774389234":
+        name: "OpenTrader_linux_amd64.AppImage"
+        url_suffix: "OpenTrader_linux_amd64.AppImage"
+        size: 110438904
+        media_type: "zip"
+        digest: "sha256:78464c1bb78885c086dc11592e54caaf5297563772365ca6422267b72c90b511"
+      "774389328":
+        name: "OpenTrader_linux_amd64.AppImage.sig"
+        url_suffix: "OpenTrader_linux_amd64.AppImage.sig"
+        size: 444
+        media_type: "zip"
+        digest: "sha256:2c0b48233eeca9f043acd58cc6175a7bca9039bc4b59f32ae8e1d122144bf0db"
+      "774391483":
+        name: "OpenTrader_windows_x64.msi"
+        url_suffix: "OpenTrader_windows_x64.msi"
+        size: 27811840
+        media_type: "zip"
+        digest: "sha256:fd9f1087a7da6bcb924c65893fe511343d1f55ae7f35861b1356e073f52d0c68"
+      "774391587":
+        name: "OpenTrader_windows_x64.msi.sig"
+        url_suffix: "OpenTrader_windows_x64.msi.sig"
+        size: 444
+        media_type: "zip"
+        digest: "sha256:78adfdeefd958c46c0950549fcbceca57c39160b321f4bcebbf0ec422d949913"
+      "774391615":
+        name: "OpenTrader_windows_x64-setup.exe"
+        url_suffix: "OpenTrader_windows_x64-setup.exe"
+        size: 24756540
+        media_type: "zip"
+        digest: "sha256:04c7d95c5f217765d38c5f78f0ba61475c504856c846dd8626fda53e7ada9463"
+      "774391711":
+        name: "OpenTrader_windows_x64-setup.exe.sig"
+        url_suffix: "OpenTrader_windows_x64-setup.exe.sig"
+        size: 444
+        media_type: "zip"
+        digest: "sha256:fbb6f1bf916563ca99b1372435bf74f034dc6bd442e194931808df09288a4c93"
+      "774416928":
+        name: "OpenTrader_darwin_universal.dmg"
+        url_suffix: "OpenTrader_darwin_universal.dmg"
+        size: 58124414
+        media_type: "zip"
+        digest: "sha256:43c05751d09797322f066e5d01205bdd8ce2fa072ec9318dd284c3aa867303aa"
+      "774417013":
+        name: "OpenTrader_darwin_universal.app.tar.gz"
+        url_suffix: "OpenTrader_darwin_universal.app.tar.gz"
+        size: 57465611
+        media_type: "zip"
+        digest: "sha256:844fca04b16db46056f9a39f776c5f097b0b5ccf0be326dc880dbc60d5631a27"
+      "774417217":
+        name: "OpenTrader_darwin_universal.app.tar.gz.sig"
+        url_suffix: "OpenTrader_darwin_universal.app.tar.gz.sig"
+        size: 428
+        media_type: "zip"
+        digest: "sha256:320d8f80bdefce286986da0517b27e5d91756e81e8e533740aed6527f3f30a6f"
+      "774417273":
+        name: "latest.json"
+        url_suffix: "latest.json"
+        size: 6799
+        media_type: "zip"
+        digest: "sha256:ed9ac22d9ac90c34e10b780375e9291b524d8ed9828213d25da67253bf94f622"

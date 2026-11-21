@@ -1,237 +1,15 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/cb854845b919dd38d98a806e7456ec53798c7564/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/5dfe10e9b37cd6c31a85beec8a25dc5904559211/docs/catalog-format-v3.md"
 kind: "repository"
 repository_id: 1354765829
 repository: "frogg-app/frogg"
-collected_at: "2026-11-18T04:37:10Z"
+collected_at: "2026-11-21T16:42:51Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: false
-observed_at: "2026-11-18T04:37:10Z"
+observed_at: "2026-11-21T16:42:51Z"
 releases:
-  "402564231":
-    tag: "v1.6.10-beta.9"
-    title: "frogg beta 1.6.10-beta.9"
-    url: "https://github.com/frogg-app/frogg/releases/tag/v1.6.10-beta.9"
-    created_at: "2026-10-03T15:07:41Z"
-    published_at: "2026-10-03T15:30:46Z"
-    updated_at: "2026-10-03T15:30:46Z"
-    prerelease: true
-    source_zip_url: "https://api.github.com/repos/frogg-app/frogg/zipball/v1.6.10-beta.9"
-    source_tar_url: "https://api.github.com/repos/frogg-app/frogg/tarball/v1.6.10-beta.9"
-    download_base: "https://github.com/frogg-app/frogg/releases/download/v1.6.10-beta.9/"
-    assets:
-      "608011812":
-        name: "install.sh"
-        url_suffix: "install.sh"
-        size: 30218
-        media_type: "application/x-shellscript"
-        digest: "sha256:e4d391c910021d4579418b7cc22be4543bb036154fbab673a2203b7233b919b6"
-      "608011845":
-        name: "uninstall.sh"
-        url_suffix: "uninstall.sh"
-        size: 4928
-        media_type: "application/x-shellscript"
-        digest: "sha256:0fe804dc7cce4c5318ed72ca21783177a2fc530742774b146da7e198bc504849"
-      "608011892":
-        name: "install-docker.sh"
-        url_suffix: "install-docker.sh"
-        size: 9403
-        media_type: "application/x-shellscript"
-        digest: "sha256:fa35eee91ec1344f7e9701d786b9721c8e0ba1a10ca450bca859c3ebff245aa0"
-      "608011943":
-        name: "uninstall-docker.sh"
-        url_suffix: "uninstall-docker.sh"
-        size: 1366
-        media_type: "application/x-shellscript"
-        digest: "sha256:140fd5e4fa5a4e2afa6caa0d69f7106181b66f45705356df8eb1d3e0acb645a2"
-      "608025212":
-        name: "frogg-beta-daemon-1.6.10-beta.9-linux-arm64.tar.gz.sha256"
-        url_suffix: "frogg-beta-daemon-1.6.10-beta.9-linux-arm64.tar.gz.sha256"
-        size: 117
-        digest: "sha256:0613d4a0713911e831bbe6b5acead9d7941c5ca4ce5103236b98f208f7bf406c"
-      "608025232":
-        name: "frogg-beta-daemon-1.6.10-beta.9-linux-arm64.tar.gz"
-        url_suffix: "frogg-beta-daemon-1.6.10-beta.9-linux-arm64.tar.gz"
-        size: 202376086
-        media_type: "application/x-gtar"
-        digest: "sha256:405dbdae4e81076bee8bcb7e6fc9190ba2541aa7e9b70a4889fbb374b2619d34"
-      "608025341":
-        name: "frogg-beta-daemon-1.6.10-beta.9-win-arm64.zip.sha256"
-        url_suffix: "frogg-beta-daemon-1.6.10-beta.9-win-arm64.zip.sha256"
-        size: 112
-        digest: "sha256:6d4865c08b51df0487aeefe14662d3fc04af18c91cc644fd564a52dccc2c677f"
-      "608025392":
-        name: "frogg-beta-daemon-1.6.10-beta.9-win-arm64.zip"
-        url_suffix: "frogg-beta-daemon-1.6.10-beta.9-win-arm64.zip"
-        size: 187547773
-        media_type: "zip"
-        digest: "sha256:093060d643b031f8ea974ac4471ab533306ab61f6ca4259c0710c7717040ab76"
-      "608025532":
-        name: "frogg-beta-1.6.10-beta.9-mac-arm64.dmg"
-        url_suffix: "frogg-beta-1.6.10-beta.9-mac-arm64.dmg"
-        size: 139909199
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:951a628b3435d74263fa3472584b4d3184260131260f03a5c8e04600b81a1e47"
-      "608025690":
-        name: "frogg-beta-1.6.10-beta.9-mac-arm64.dmg.blockmap"
-        url_suffix: "frogg-beta-1.6.10-beta.9-mac-arm64.dmg.blockmap"
-        size: 147829
-        digest: "sha256:29701ca367e207331016a72ddbd2b9467dfc187dd97129d458a165a52abcced5"
-      "608025714":
-        name: "frogg-beta-1.6.10-beta.9-mac-arm64.zip"
-        url_suffix: "frogg-beta-1.6.10-beta.9-mac-arm64.zip"
-        size: 134846872
-        media_type: "zip"
-        digest: "sha256:b6545992bace9430c7e69437af3f02326e5666234eac2c6574e89a88756aa8f9"
-      "608025852":
-        name: "frogg-beta-daemon-1.6.10-beta.9-linux-x64.tar.gz"
-        url_suffix: "frogg-beta-daemon-1.6.10-beta.9-linux-x64.tar.gz"
-        size: 201016957
-        media_type: "application/x-gtar"
-        digest: "sha256:7cf847f6f255df21183bfccebf5bb53daaf77a765c45e839a967173447b1b9ea"
-      "608025901":
-        name: "frogg-beta-1.6.10-beta.9-mac-arm64.zip.blockmap"
-        url_suffix: "frogg-beta-1.6.10-beta.9-mac-arm64.zip.blockmap"
-        size: 141823
-        digest: "sha256:52f8b8c5bc915fff4eaf5d8483e19d65d81c158fbf39313610b9680e7cb3ee15"
-      "608025981":
-        name: "frogg-beta-daemon-1.6.10-beta.9-win-x64.zip.sha256"
-        url_suffix: "frogg-beta-daemon-1.6.10-beta.9-win-x64.zip.sha256"
-        size: 110
-        digest: "sha256:7e478b8b4c573016dd262797b35656bbef774d58d55a21323d84a5d779377f8b"
-      "608025990":
-        name: "frogg-beta-daemon-1.6.10-beta.9-win-x64.zip"
-        url_suffix: "frogg-beta-daemon-1.6.10-beta.9-win-x64.zip"
-        size: 205949513
-        media_type: "zip"
-        digest: "sha256:6350835155e371e7654a2f3d11f0d64c2ae0c7d2451f7ee5adc7ed571a39edae"
-      "608026071":
-        name: "frogg-beta-daemon-1.6.10-beta.9-linux-x64.tar.gz.sha256"
-        url_suffix: "frogg-beta-daemon-1.6.10-beta.9-linux-x64.tar.gz.sha256"
-        size: 115
-        digest: "sha256:6e58b239e48f124893e4c80d9bb265b19c33267909dba0276714b346b78e9122"
-      "608027206":
-        name: "frogg-beta-1.6.10-beta.9-win-x64-installer.zip"
-        url_suffix: "frogg-beta-1.6.10-beta.9-win-x64-installer.zip"
-        size: 123531409
-        media_type: "zip"
-        digest: "sha256:126dba414596b2c8b274cc518a57ac97eb36987290c8f9504dd176373166abc3"
-      "608027359":
-        name: "frogg-beta-1.6.10-beta.9-win-x64.exe"
-        url_suffix: "frogg-beta-1.6.10-beta.9-win-x64.exe"
-        size: 123574536
-        media_type: "application/x-msdownload"
-        digest: "sha256:4b51534e772474e8f8f2f416c5e73bdc4746dfc74256a2aa3dfe07861d340f75"
-      "608027440":
-        name: "frogg-beta-daemon-1.6.10-beta.9-darwin-arm64.tar.gz"
-        url_suffix: "frogg-beta-daemon-1.6.10-beta.9-darwin-arm64.tar.gz"
-        size: 181794503
-        media_type: "application/x-gtar"
-        digest: "sha256:f02e49157f12240fc5cfb7498d5b85ad606ee43ffd9ead7bde0bccf7a7e64b1e"
-      "608027474":
-        name: "frogg-beta-1.6.10-beta.9-win-x64.exe.blockmap"
-        url_suffix: "frogg-beta-1.6.10-beta.9-win-x64.exe.blockmap"
-        size: 129077
-        digest: "sha256:95c5bedda0f4281d6b864c72c94a170ae0e957b24417e698195f116a809ccfb7"
-      "608027496":
-        name: "frogg-beta-1.6.10-beta.9-win-x64.zip"
-        url_suffix: "frogg-beta-1.6.10-beta.9-win-x64.zip"
-        size: 163728615
-        media_type: "zip"
-        digest: "sha256:45a88a5a0913a46d67ff83d6123625bfff78a4d04ed20e1782f3b4dfeccb7efc"
-      "608027647":
-        name: "frogg-beta-daemon-1.6.10-beta.9-darwin-arm64.tar.gz.sha256"
-        url_suffix: "frogg-beta-daemon-1.6.10-beta.9-darwin-arm64.tar.gz.sha256"
-        size: 118
-        digest: "sha256:f261c7670ba81b277a6cb379417a04972a5f67ae8894fa043da1918a62c29630"
-      "608028478":
-        name: "frogg-beta-1.6.10-beta.9-linux-amd64.deb"
-        url_suffix: "frogg-beta-1.6.10-beta.9-linux-amd64.deb"
-        size: 108887504
-        media_type: "application/x-debian-package"
-        digest: "sha256:e93faac8cfce8bacc3c323f94853c6502e6771f41886837a9f04ad6cfd556f20"
-      "608028565":
-        name: "frogg-beta-1.6.10-beta.9-linux-x64.tar.gz"
-        url_suffix: "frogg-beta-1.6.10-beta.9-linux-x64.tar.gz"
-        size: 129266373
-        media_type: "application/x-gtar"
-        digest: "sha256:e08c8360d3a6d02b70cb74111e071fa0fd15a80ac56343eba8df3b76874f2d87"
-      "608028672":
-        name: "frogg-beta-1.6.10-beta.9-linux-x86_64.AppImage"
-        url_suffix: "frogg-beta-1.6.10-beta.9-linux-x86_64.AppImage"
-        size: 135844002
-        media_type: "application/vnd.appimage"
-        digest: "sha256:5cf5f22c51b9e6c4e9af710d425f01a7246018b6c65acae7654f898f5323f964"
-      "608030304":
-        name: "frogg-beta-daemon-1.6.10-beta.9-darwin-x64.tar.gz.sha256"
-        url_suffix: "frogg-beta-daemon-1.6.10-beta.9-darwin-x64.tar.gz.sha256"
-        size: 116
-        digest: "sha256:90df0199daaa996a66d3d560d24347dfcf50b38f49bbdf358a481952d33d2f33"
-      "608030344":
-        name: "frogg-beta-daemon-1.6.10-beta.9-darwin-x64.tar.gz"
-        url_suffix: "frogg-beta-daemon-1.6.10-beta.9-darwin-x64.tar.gz"
-        size: 189694210
-        media_type: "application/x-gtar"
-        digest: "sha256:f4814817b9634db0ff32a4feb3a4fcbb49dd55adf9fe1868565cbe768969beca"
-      "608032840":
-        name: "frogg-beta-1.6.10-beta.9-mac-x64.dmg"
-        url_suffix: "frogg-beta-1.6.10-beta.9-mac-x64.dmg"
-        size: 144095963
-        media_type: "application/x-apple-diskimage"
-        digest: "sha256:9f660534c59546fa920973f5da85a682031a7b79b7dc707cff84a042e8cebcb9"
-      "608032980":
-        name: "frogg-beta-1.6.10-beta.9-mac-x64.dmg.blockmap"
-        url_suffix: "frogg-beta-1.6.10-beta.9-mac-x64.dmg.blockmap"
-        size: 151097
-        digest: "sha256:b9cd5a7769f62cc54eaf8fba692b7f70478a3bd158230c5f14e0355df518c483"
-      "608033016":
-        name: "frogg-beta-1.6.10-beta.9-mac-x64.zip"
-        url_suffix: "frogg-beta-1.6.10-beta.9-mac-x64.zip"
-        size: 139059069
-        media_type: "zip"
-        digest: "sha256:4ea7d7f362ca49ab1fc188fe73f11340bf9c6b58980cd911dd126dff7bc56ae9"
-      "608033206":
-        name: "frogg-beta-1.6.10-beta.9-mac-x64.zip.blockmap"
-        url_suffix: "frogg-beta-1.6.10-beta.9-mac-x64.zip.blockmap"
-        size: 146916
-        digest: "sha256:17eb69765caddc69aa39d3234c084f0b83b830ca30fe698eb91cc6f1fad88fad"
-      "608036610":
-        name: "electron-beta.yml"
-        url_suffix: "electron-beta.yml"
-        size: 531
-        media_type: "application/yaml"
-        digest: "sha256:617f400abb85c7b6f139f9a55521c3ea480a061f9651e4224ec7b18772569c78"
-      "608036611":
-        name: "electron-beta-mac.yml"
-        url_suffix: "electron-beta-mac.yml"
-        size: 817
-        media_type: "application/yaml"
-        digest: "sha256:d28c7ac128d3d853e665f338fead8cc226e439cac122728b66330695d09819e2"
-      "608036612":
-        name: "release.json"
-        url_suffix: "release.json"
-        size: 2092
-        media_type: "application/json"
-        digest: "sha256:cb0ae513cc0234cc191451f726c13b476def5689d86a1f526a7782cd18934f27"
-      "608036614":
-        name: "electron-beta-linux.yml"
-        url_suffix: "electron-beta-linux.yml"
-        size: 551
-        media_type: "application/yaml"
-        digest: "sha256:2d34ee3284c6e0f7bd6905868065810c92e6fbb69f834ffb75e8de4e55431fb7"
-      "608036616":
-        name: "SHA256SUMS-desktop"
-        url_suffix: "SHA256SUMS-desktop"
-        size: 1627
-        digest: "sha256:132b0d6f096963826cfb342ae5575245d95e4bf6d5e750313beb7b28e63f2fe7"
-      "608038639":
-        name: "frogg-beta-1.6.10-beta.9-android-arm64-v8a-unsigned.apk"
-        url_suffix: "frogg-beta-1.6.10-beta.9-android-arm64-v8a-unsigned.apk"
-        size: 133113143
-        media_type: "application/vnd.android.package-archive"
-        digest: "sha256:cfd016160070c1c0a0e4e6df613f01ba3e8ffb712c20bea5d92f436aec6ccc4c"
   "402772059":
     tag: "v1.6.10"
     title: "frogg 1.6.10"
@@ -8051,3 +7829,246 @@ releases:
         size: 761
         media_type: "application/json"
         digest: "sha256:9ecbc9fc50703d74efa8fd698ad883f70cd63b2c73f5e80bbe52cd2e7c383910"
+  "450273942":
+    tag: "v1.6.14-next.17"
+    title: "Frogg Next 1.6.14-next.17"
+    url: "https://github.com/frogg-app/frogg/releases/tag/v1.6.14-next.17"
+    created_at: "2026-11-18T16:42:21Z"
+    published_at: "2026-11-18T17:04:48Z"
+    updated_at: "2026-11-18T17:04:48Z"
+    prerelease: true
+    source_zip_url: "https://api.github.com/repos/frogg-app/frogg/zipball/v1.6.14-next.17"
+    source_tar_url: "https://api.github.com/repos/frogg-app/frogg/tarball/v1.6.14-next.17"
+    download_base: "https://github.com/frogg-app/frogg/releases/download/v1.6.14-next.17/"
+    assets:
+      "764172513":
+        name: "install.sh"
+        url_suffix: "install.sh"
+        size: 32183
+        media_type: "application/x-shellscript"
+        digest: "sha256:86ed205ce1a1d4c7f73967ddead20ac0e15ade53e05dabe1777acf45b11f2fc8"
+      "764172596":
+        name: "uninstall.sh"
+        url_suffix: "uninstall.sh"
+        size: 5138
+        media_type: "application/x-shellscript"
+        digest: "sha256:6e4c67fef770a00ab9fb37a4e1c1e51da95b1579d9eead004cb362276c64ad1b"
+      "764172665":
+        name: "install-docker.sh"
+        url_suffix: "install-docker.sh"
+        size: 9466
+        media_type: "application/x-shellscript"
+        digest: "sha256:e337d2991a04a92437c5fa006189dc982d0063fe143d0026c3850c27cdf3e39c"
+      "764172729":
+        name: "uninstall-docker.sh"
+        url_suffix: "uninstall-docker.sh"
+        size: 1429
+        media_type: "application/x-shellscript"
+        digest: "sha256:2fd261398ffe76ea68d661b66e85f009cbe1b7c60ae30b7c9d439e81affda549"
+      "764201889":
+        name: "frogg-next-daemon-1.6.14-next.17-win-x64.zip"
+        url_suffix: "frogg-next-daemon-1.6.14-next.17-win-x64.zip"
+        size: 205963245
+        media_type: "zip"
+        digest: "sha256:593e00f985f13d7bfcb95464093c70ecf5ccce3a8a36c83468a01191831e547f"
+      "764202535":
+        name: "frogg-next-daemon-1.6.14-next.17-win-x64.zip.sha256"
+        url_suffix: "frogg-next-daemon-1.6.14-next.17-win-x64.zip.sha256"
+        size: 111
+        digest: "sha256:45f9d822ba01eaf38bf04aca7857bc84470cece98377298d22fe09a6b5999f98"
+      "764206029":
+        name: "frogg-next-daemon-1.6.14-next.17-linux-arm64.tar.gz.sha256"
+        url_suffix: "frogg-next-daemon-1.6.14-next.17-linux-arm64.tar.gz.sha256"
+        size: 118
+        digest: "sha256:4d270a69b689bd0f511980aa5464835f475f4fb262b2b3f4451946f092498e63"
+      "764206118":
+        name: "frogg-next-daemon-1.6.14-next.17-linux-arm64.tar.gz"
+        url_suffix: "frogg-next-daemon-1.6.14-next.17-linux-arm64.tar.gz"
+        size: 204670272
+        media_type: "application/x-gtar"
+        digest: "sha256:4dc44f3e932d2873b454ac390dfdac85fcbad2975aadb5f0e61728dbcb785ccf"
+      "764209510":
+        name: "frogg-next-daemon-1.6.14-next.17-win-arm64.zip.sha256"
+        url_suffix: "frogg-next-daemon-1.6.14-next.17-win-arm64.zip.sha256"
+        size: 113
+        digest: "sha256:3c6f0943e6c2f4b114a18ce1dc77677539ccd0bbf0d5ff43b9f13f2be25d82d6"
+      "764209605":
+        name: "frogg-next-daemon-1.6.14-next.17-win-arm64.zip"
+        url_suffix: "frogg-next-daemon-1.6.14-next.17-win-arm64.zip"
+        size: 187561565
+        media_type: "zip"
+        digest: "sha256:24b8fc89346304a404af52eec3183c4c452f2f1ddfc01e6e672c36395eab8cd2"
+      "764210094":
+        name: "Frogg-Next-1.6.14-next.17-SHA256SUMS"
+        url_suffix: "Frogg-Next-1.6.14-next.17-SHA256SUMS"
+        size: 1817
+        digest: "sha256:298d4768a00eb2897c2055c2041ece1ea3607d41bafc8addb9499867b2529d89"
+      "764210297":
+        name: "Frogg-Next-1.6.14-next.17-linux-x86_64.AppImage"
+        url_suffix: "Frogg-Next-1.6.14-next.17-linux-x86_64.AppImage"
+        size: 128286708
+        media_type: "application/vnd.appimage"
+        digest: "sha256:c29a4c20c9cdaa7c0a803cd437463524803a1a8c135837dff93fea8f26656b6f"
+      "764210533":
+        name: "Frogg-Next-1.6.14-next.17-linux-x86_64.deb"
+        url_suffix: "Frogg-Next-1.6.14-next.17-linux-x86_64.deb"
+        size: 101473928
+        media_type: "application/x-debian-package"
+        digest: "sha256:71b3886ebcabfb22c4610f358b3fd3969b0ed5add7e32c920394884a213db84c"
+      "764210545":
+        name: "Frogg-Next-1.6.14-next.17-android-arm64-v8a-unsigned.apk"
+        url_suffix: "Frogg-Next-1.6.14-next.17-android-arm64-v8a-unsigned.apk"
+        size: 44924708
+        media_type: "application/vnd.android.package-archive"
+        digest: "sha256:37fe3a63395b3dfc69ed8c150bad666b669094692d086af8c89f61d615f71674"
+      "764210756":
+        name: "Frogg-Next-1.6.14-next.17-mac-arm64.dmg"
+        url_suffix: "Frogg-Next-1.6.14-next.17-mac-arm64.dmg"
+        size: 132028015
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:4d3c8b25894e304aa8628a5a203751edf752d85d893d1f5630c2930f35767f6d"
+      "764211117":
+        name: "Frogg-Next-1.6.14-next.17-mac-arm64.dmg.blockmap"
+        url_suffix: "Frogg-Next-1.6.14-next.17-mac-arm64.dmg.blockmap"
+        size: 140361
+        digest: "sha256:ff3e5487a276512d6d42573e0c553a6b631757c48c30236a34253329d2517420"
+      "764211189":
+        name: "Frogg-Next-1.6.14-next.17-mac-arm64.zip"
+        url_suffix: "Frogg-Next-1.6.14-next.17-mac-arm64.zip"
+        size: 126871270
+        media_type: "zip"
+        digest: "sha256:55741e66f62a27ae82cf537f05dec7030d04dcdd1e696a4965bc394a5c8903b7"
+      "764211309":
+        name: "frogg-next-daemon-1.6.14-next.17-darwin-arm64.tar.gz"
+        url_suffix: "frogg-next-daemon-1.6.14-next.17-darwin-arm64.tar.gz"
+        size: 184269796
+        media_type: "application/x-gtar"
+        digest: "sha256:a682f2651fbead702b85ba7a822e3a2c8303fab26aafcdb7dc8c6c8df2bd102f"
+      "764211492":
+        name: "Frogg-Next-1.6.14-next.17-mac-arm64.zip.blockmap"
+        url_suffix: "Frogg-Next-1.6.14-next.17-mac-arm64.zip.blockmap"
+        size: 133166
+        digest: "sha256:8c1ac04ed96c18ba637f52248fb62df76acdbe0c02d9e5106cdcbc5d74ccad34"
+      "764211553":
+        name: "Frogg-Next-1.6.14-next.17-mac-x64.dmg"
+        url_suffix: "Frogg-Next-1.6.14-next.17-mac-x64.dmg"
+        size: 138072243
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:1d46dfae4f9df083e1db896d2b539ad11b809b7615d01ed66dd395c7a4ea7678"
+      "764211764":
+        name: "frogg-next-daemon-1.6.14-next.17-darwin-arm64.tar.gz.sha256"
+        url_suffix: "frogg-next-daemon-1.6.14-next.17-darwin-arm64.tar.gz.sha256"
+        size: 119
+        digest: "sha256:094bf640e137c24f5ad017fe25dc551b65dd1a39212b8596a37faa7f3a514094"
+      "764211890":
+        name: "Frogg-Next-1.6.14-next.17-mac-x64.dmg.blockmap"
+        url_suffix: "Frogg-Next-1.6.14-next.17-mac-x64.dmg.blockmap"
+        size: 145391
+        digest: "sha256:8644d4e270c6b5f75fad4103e2992788d3d10bd9a07244c1098e2826a06e2d1e"
+      "764211939":
+        name: "Frogg-Next-1.6.14-next.17-mac-x64.zip"
+        url_suffix: "Frogg-Next-1.6.14-next.17-mac-x64.zip"
+        size: 132888255
+        media_type: "zip"
+        digest: "sha256:aa5cad32714970139157d4d1f8672e71fae1ec2c9ad1eb678c74dc429e20603b"
+      "764212218":
+        name: "Frogg-Next-1.6.14-next.17-mac-x64.zip.blockmap"
+        url_suffix: "Frogg-Next-1.6.14-next.17-mac-x64.zip.blockmap"
+        size: 141337
+        digest: "sha256:9a70d8c06baea72eebadadb192d35c2e8266ef83539621b277b5a5f784bab831"
+      "764212268":
+        name: "Frogg-Next-1.6.14-next.17-win-x64.exe"
+        url_suffix: "Frogg-Next-1.6.14-next.17-win-x64.exe"
+        size: 116400037
+        digest: "sha256:e667818f66a9a84611606655eb7489f7582ea5f6eb567ccee95e58a62d58a430"
+      "764212466":
+        name: "Frogg-Next-1.6.14-next.17-win-x64.exe.blockmap"
+        url_suffix: "Frogg-Next-1.6.14-next.17-win-x64.exe.blockmap"
+        size: 120912
+        digest: "sha256:6ba19554fb908047cb085853fb462d72eeb5c0e723cf3e3aa41fae9de9dfcb3e"
+      "764212531":
+        name: "Frogg-Next-1.6.14-next.17-win-x64.zip"
+        url_suffix: "Frogg-Next-1.6.14-next.17-win-x64.zip"
+        size: 155583156
+        media_type: "zip"
+        digest: "sha256:c7794b53cb3456740da176ee8eec5f6a75128158dd4f3d4d0c96288e79533184"
+      "764212887":
+        name: "frogg-next-latest-linux.yml"
+        url_suffix: "frogg-next-latest-linux.yml"
+        size: 606
+        media_type: "application/yaml"
+        digest: "sha256:527f1999916e92838b918352819bc0867ddac888e00b68a7e915a59f786448de"
+      "764212947":
+        name: "frogg-next-latest-mac.yml"
+        url_suffix: "frogg-next-latest-mac.yml"
+        size: 902
+        media_type: "application/yaml"
+        digest: "sha256:a8da1f0596b365089a5f234b8869b36ad40071481e110066352d93cea17fc0cf"
+      "764213012":
+        name: "frogg-next-latest.yml"
+        url_suffix: "frogg-next-latest.yml"
+        size: 386
+        media_type: "application/yaml"
+        digest: "sha256:67d64f45dcc403e1c65fc73072df4aabb310474bf83f0228f53df028ccace0bb"
+      "764215617":
+        name: "frogg-next-daemon-1.6.14-next.17-linux-x64.tar.gz.sha256"
+        url_suffix: "frogg-next-daemon-1.6.14-next.17-linux-x64.tar.gz.sha256"
+        size: 116
+        digest: "sha256:0074078d587102ab0b403072416a91720b45b31858cee96e34513067095626a1"
+      "764215679":
+        name: "frogg-next-daemon-1.6.14-next.17-linux-x64.tar.gz"
+        url_suffix: "frogg-next-daemon-1.6.14-next.17-linux-x64.tar.gz"
+        size: 203535783
+        media_type: "application/x-gtar"
+        digest: "sha256:ecf0268c2577f4b7381aa654152c5349121acd6cd9ac3c4c0ac73a02fee416f7"
+      "764226850":
+        name: "frogg-next-daemon-1.6.14-next.17-darwin-x64.tar.gz"
+        url_suffix: "frogg-next-daemon-1.6.14-next.17-darwin-x64.tar.gz"
+        size: 192327177
+        media_type: "application/x-gtar"
+        digest: "sha256:380ca6a9c215c1fd1d4b07678ebb6aa0f5e8c09d958c137f4764498389f30c72"
+      "764227416":
+        name: "frogg-next-daemon-1.6.14-next.17-darwin-x64.tar.gz.sha256"
+        url_suffix: "frogg-next-daemon-1.6.14-next.17-darwin-x64.tar.gz.sha256"
+        size: 117
+        digest: "sha256:17b2d0ff799a516f26d5913fb68c1b12b27cfc2c4b2fa4ea12b319876687edbd"
+      "764233211":
+        name: "Frogg-Next-RS-1.6.14-next.17-SHA256SUMS"
+        url_suffix: "Frogg-Next-RS-1.6.14-next.17-SHA256SUMS"
+        size: 562
+        digest: "sha256:ec4c7e3981b8f1b5f4ae9059364176fb16fa88f9083e100df229151dd34bab4c"
+      "764233271":
+        name: "Frogg-Next-RS-1.6.14-next.17-android-universal.apk"
+        url_suffix: "Frogg-Next-RS-1.6.14-next.17-android-universal.apk"
+        size: 66806632
+        media_type: "application/vnd.android.package-archive"
+        digest: "sha256:c6b00e3a852d99ce732706a7985b0316314b90ecd5d781c624b73a92e7d67c4a"
+      "764233521":
+        name: "Frogg-Next-RS-1.6.14-next.17-linux-x64.AppImage"
+        url_suffix: "Frogg-Next-RS-1.6.14-next.17-linux-x64.AppImage"
+        size: 86407672
+        media_type: "application/vnd.appimage"
+        digest: "sha256:39e2945c7fb591edc1dc6efe63c48dd61aad101dbabab8fcb7b5e1797029c6a9"
+      "764233715":
+        name: "Frogg-Next-RS-1.6.14-next.17-linux-x64.deb"
+        url_suffix: "Frogg-Next-RS-1.6.14-next.17-linux-x64.deb"
+        size: 8210062
+        media_type: "application/x-debian-package"
+        digest: "sha256:3c930accb14a1e635f41f47556a6c49638e805f81259e7f7c85e962bdf5fb776"
+      "764233862":
+        name: "Frogg-Next-RS-1.6.14-next.17-macos-arm64.dmg"
+        url_suffix: "Frogg-Next-RS-1.6.14-next.17-macos-arm64.dmg"
+        size: 8283961
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:61a38e277196f540e7e9a020f9baf06514364082da0c7f1078d2eec80a5bd2a4"
+      "764234000":
+        name: "Frogg-Next-RS-1.6.14-next.17-windows-x64.exe"
+        url_suffix: "Frogg-Next-RS-1.6.14-next.17-windows-x64.exe"
+        size: 6108280
+        digest: "sha256:7102bf43cfcc7eb023e4f6ad428eb7c13d03d0399995a3d56e73b93e63f94a14"
+      "764236490":
+        name: "release.json"
+        url_suffix: "release.json"
+        size: 761
+        media_type: "application/json"
+        digest: "sha256:6cffd0fbf776f5ffd1c2284c41bd8040cb2a845054c98311156ceaa6a472458e"

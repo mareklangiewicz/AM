@@ -1,14 +1,14 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/cb854845b919dd38d98a806e7456ec53798c7564/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/5dfe10e9b37cd6c31a85beec8a25dc5904559211/docs/catalog-format-v3.md"
 kind: "repository"
 repository_id: 1386503756
 repository: "rubymatrix/xi-on-anything"
-collected_at: "2026-11-18T04:39:38Z"
+collected_at: "2026-11-21T16:45:11Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-18T04:39:38Z"
+observed_at: "2026-11-21T16:45:11Z"
 releases:
   "400581520":
     tag: "alpha-0.1.0"
@@ -136,17 +136,17 @@ releases:
     url: "https://github.com/rubymatrix/xi-on-anything/releases/tag/kit-linux"
     created_at: "2026-10-03T05:31:15Z"
     published_at: "2026-10-03T05:36:12Z"
-    updated_at: "2026-11-14T04:26:23Z"
+    updated_at: "2026-11-21T09:34:48Z"
     prerelease: true
     source_zip_url: "https://api.github.com/repos/rubymatrix/xi-on-anything/zipball/kit-linux"
     source_tar_url: "https://api.github.com/repos/rubymatrix/xi-on-anything/tarball/kit-linux"
     assets:
-      "746280664":
+      "775075169":
         name: "xi-kit-linux-x86_64.tar.gz"
         url: "https://github.com/rubymatrix/xi-on-anything/releases/download/kit-linux/xi-kit-linux-x86_64.tar.gz"
-        size: 28257902
+        size: 28325463
         media_type: "application/x-gtar"
-        digest: "sha256:2303fb7c5ccf73e4b57bb05302397544b977b248b12621b93314d7142bff1097"
+        digest: "sha256:7d2cf274d1f93e74f301818d5f4d0eb43b8ce5dabbe46e3f4de645a834ebbcbd"
   "402373597":
     tag: "v0.2.0"
     title: "XI on Anything 0.2.0"
@@ -1040,3 +1040,195 @@ releases:
         url_suffix: "SHA256SUMS"
         size: 714
         digest: "sha256:26870598a559e63a9606d9fa22bbef7011a9143b6ad862589486f91ae1a319c9"
+  "452229642":
+    tag: "v0.2.14"
+    title: "XI on Anything 0.2.14"
+    url: "https://github.com/rubymatrix/xi-on-anything/releases/tag/v0.2.14"
+    created_at: "2026-11-20T02:00:32Z"
+    published_at: "2026-11-20T03:44:47Z"
+    updated_at: "2026-11-20T03:44:47Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/rubymatrix/xi-on-anything/zipball/v0.2.14"
+    source_tar_url: "https://api.github.com/repos/rubymatrix/xi-on-anything/tarball/v0.2.14"
+    download_base: "https://github.com/rubymatrix/xi-on-anything/releases/download/v0.2.14/"
+    assets:
+      "770289884":
+        name: "XI-on-Mac-macos-arm64.zip"
+        url_suffix: "XI-on-Mac-macos-arm64.zip"
+        size: 53639121
+        media_type: "zip"
+        digest: "sha256:1e06e30cfbcdc772b59d46f524b91a339f7becf1edc60dee201e977c87c39656"
+      "770289886":
+        name: "XI-on-Mac-macos-arm64.app.tar.gz"
+        url_suffix: "XI-on-Mac-macos-arm64.app.tar.gz"
+        size: 52703556
+        media_type: "application/x-gtar"
+        digest: "sha256:c9b85b21880b5eae12dec7b6b8f6c50191b8c9cf40850fccd74543588c8e0d9a"
+      "770289887":
+        name: "XI-on-Mac-macos-arm64.app.tar.gz.sig"
+        url_suffix: "XI-on-Mac-macos-arm64.app.tar.gz.sig"
+        size: 424
+        media_type: "application/pgp-signature"
+        digest: "sha256:704ec1657d418bd6f0ce9f8a805d27e5b0f67a4e79831f9fb034d64694bd0e2b"
+      "770321806":
+        name: "XI-on-Anything-windows-x64-setup.exe"
+        url_suffix: "XI-on-Anything-windows-x64-setup.exe"
+        size: 50532212
+        media_type: "application/x-msdownload"
+        digest: "sha256:7024045383ece3a5321ed8c9e8618039ea4ff63f7934700cd65b7581c474d3af"
+      "770321810":
+        name: "XI-on-Anything-windows-x64-setup.exe.sig"
+        url_suffix: "XI-on-Anything-windows-x64-setup.exe.sig"
+        size: 448
+        digest: "sha256:9ec39cf0b42ba216df3941b9a993e0be854512d3736e0945c146ffe126e3631e"
+      "770335287":
+        name: "XI-on-Anything-linux-x86_64.AppImage"
+        url_suffix: "XI-on-Anything-linux-x86_64.AppImage"
+        size: 133888504
+        media_type: "application/vnd.appimage"
+        digest: "sha256:ea28a0931b89de7188114cfadc44e5b41d0ce98eede17bf5f5f23857c0300000"
+      "770335291":
+        name: "XI-on-Anything-linux-x86_64.AppImage.sig"
+        url_suffix: "XI-on-Anything-linux-x86_64.AppImage.sig"
+        size: 428
+        media_type: "application/pgp-signature"
+        digest: "sha256:03011c18fcf190da2552b3512d19020d194ad51cdf53c786d7ee08142859dda5"
+      "770337105":
+        name: "latest.json"
+        url_suffix: "latest.json"
+        size: 1911
+        media_type: "application/json"
+        digest: "sha256:8952b74c69db75d9b851eea43793f4aec60ecf444c5d12536e6bd5eb252a57b7"
+      "770337108":
+        name: "SHA256SUMS"
+        url_suffix: "SHA256SUMS"
+        size: 714
+        digest: "sha256:2fe91b24820a446ab04771d7a04a1454819812115bef386608ab30fe0817b961"
+  "453510307":
+    tag: "v0.2.15"
+    title: "XI on Anything 0.2.15"
+    url: "https://github.com/rubymatrix/xi-on-anything/releases/tag/v0.2.15"
+    created_at: "2026-11-21T07:09:02Z"
+    published_at: "2026-11-21T07:31:36Z"
+    updated_at: "2026-11-21T07:31:36Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/rubymatrix/xi-on-anything/zipball/v0.2.15"
+    source_tar_url: "https://api.github.com/repos/rubymatrix/xi-on-anything/tarball/v0.2.15"
+    download_base: "https://github.com/rubymatrix/xi-on-anything/releases/download/v0.2.15/"
+    assets:
+      "774766789":
+        name: "XI-on-Mac-macos-arm64.app.tar.gz"
+        url_suffix: "XI-on-Mac-macos-arm64.app.tar.gz"
+        size: 52710009
+        media_type: "application/x-gtar"
+        digest: "sha256:8093adb2d0ccae4c3fbc520d60d9f988a41f246c6f363a5f8205e5f9e283ccd5"
+      "774766791":
+        name: "XI-on-Mac-macos-arm64.zip"
+        url_suffix: "XI-on-Mac-macos-arm64.zip"
+        size: 53652237
+        media_type: "zip"
+        digest: "sha256:9c3650f5eec372c2bf9ebb82eedec5232d89276f437f877cb235df872edd5660"
+      "774766794":
+        name: "XI-on-Mac-macos-arm64.app.tar.gz.sig"
+        url_suffix: "XI-on-Mac-macos-arm64.app.tar.gz.sig"
+        size: 424
+        media_type: "application/pgp-signature"
+        digest: "sha256:f5fb7b9fb6c2b7cff52fc306a532a3c598fc0be91128347bd7f6818709ff5cd0"
+      "774789765":
+        name: "XI-on-Anything-windows-x64-setup.exe.sig"
+        url_suffix: "XI-on-Anything-windows-x64-setup.exe.sig"
+        size: 448
+        digest: "sha256:d73d66f05fb047e6cfd60f6da348c9cf457f26f176408bc12c1128b24d52a9ea"
+      "774789766":
+        name: "XI-on-Anything-windows-x64-setup.exe"
+        url_suffix: "XI-on-Anything-windows-x64-setup.exe"
+        size: 50545649
+        media_type: "application/x-msdownload"
+        digest: "sha256:a594a270ec1abb1fb4653c172141d3396ec43c93cf0c81561d49af1626da96eb"
+      "774803764":
+        name: "XI-on-Anything-linux-x86_64.AppImage"
+        url_suffix: "XI-on-Anything-linux-x86_64.AppImage"
+        size: 133896696
+        media_type: "application/vnd.appimage"
+        digest: "sha256:29b7d73f0f5fe618b07790b4e5290f219c137ecd38a105503bd22f75826fc54e"
+      "774803766":
+        name: "XI-on-Anything-linux-x86_64.AppImage.sig"
+        url_suffix: "XI-on-Anything-linux-x86_64.AppImage.sig"
+        size: 428
+        media_type: "application/pgp-signature"
+        digest: "sha256:5566b0721c69f2c19b3aa94a928963e4a56612a3825bf0e5a507ebbdf7d259ab"
+      "774804701":
+        name: "latest.json"
+        url_suffix: "latest.json"
+        size: 1911
+        media_type: "application/json"
+        digest: "sha256:d4b743c0d512d0dbcbb493bb6bf90fc9d0023810d11fb18c60001f285f6c40f4"
+      "774804706":
+        name: "SHA256SUMS"
+        url_suffix: "SHA256SUMS"
+        size: 714
+        digest: "sha256:2d94cdab410dbcd8ffacd6caf652732102a8d3d26ffedda90383b0105cf1db0c"
+  "453568462":
+    tag: "v0.2.17"
+    title: "XI on Anything 0.2.17"
+    url: "https://github.com/rubymatrix/xi-on-anything/releases/tag/v0.2.17"
+    created_at: "2026-11-21T09:08:01Z"
+    published_at: "2026-11-21T09:30:34Z"
+    updated_at: "2026-11-21T09:30:34Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/rubymatrix/xi-on-anything/zipball/v0.2.17"
+    source_tar_url: "https://api.github.com/repos/rubymatrix/xi-on-anything/tarball/v0.2.17"
+    download_base: "https://github.com/rubymatrix/xi-on-anything/releases/download/v0.2.17/"
+    assets:
+      "775025353":
+        name: "XI-on-Mac-macos-arm64.app.tar.gz.sig"
+        url_suffix: "XI-on-Mac-macos-arm64.app.tar.gz.sig"
+        size: 424
+        media_type: "application/pgp-signature"
+        digest: "sha256:edc9ea62702debd5644712c7d11c8baf9394736dbbb3e2a6f38ce7fa8e7dde08"
+      "775025354":
+        name: "XI-on-Mac-macos-arm64.app.tar.gz"
+        url_suffix: "XI-on-Mac-macos-arm64.app.tar.gz"
+        size: 52717699
+        media_type: "application/x-gtar"
+        digest: "sha256:e163443c2d180577e77e6e474b8a1e4e2874787f5a1822b12f8ee589a15566d9"
+      "775025357":
+        name: "XI-on-Mac-macos-arm64.zip"
+        url_suffix: "XI-on-Mac-macos-arm64.zip"
+        size: 53660514
+        media_type: "zip"
+        digest: "sha256:a9c3f2e4782c54740b2195546c8f2e3e2b1f14f32c31922e667da00ef2835fcb"
+      "775042377":
+        name: "XI-on-Anything-windows-x64-setup.exe.sig"
+        url_suffix: "XI-on-Anything-windows-x64-setup.exe.sig"
+        size: 448
+        digest: "sha256:3f96680e84c3fb8c063924b370897fb5c4f46a916d03e19f78af6ce143c42a15"
+      "775042378":
+        name: "XI-on-Anything-windows-x64-setup.exe"
+        url_suffix: "XI-on-Anything-windows-x64-setup.exe"
+        size: 50550497
+        media_type: "application/x-msdownload"
+        digest: "sha256:81b61ef883502a3a04cbbaedf186243ff519e076ef905ca2601dabb321a00a45"
+      "775064409":
+        name: "XI-on-Anything-linux-x86_64.AppImage"
+        url_suffix: "XI-on-Anything-linux-x86_64.AppImage"
+        size: 133904888
+        media_type: "application/vnd.appimage"
+        digest: "sha256:c28bd3fe8e781523d44b28a7e5930dc51b2d2df9867420c54866e18c77ba7e23"
+      "775064413":
+        name: "XI-on-Anything-linux-x86_64.AppImage.sig"
+        url_suffix: "XI-on-Anything-linux-x86_64.AppImage.sig"
+        size: 428
+        media_type: "application/pgp-signature"
+        digest: "sha256:776df0d0a67937dd614e085fab9b9286eead3068619b589e18b800678e17245d"
+      "775065763":
+        name: "SHA256SUMS"
+        url_suffix: "SHA256SUMS"
+        size: 714
+        digest: "sha256:89790f8635555672524a682e2798a2404cd4916b26e1b013314caada66bef98e"
+      "775065772":
+        name: "latest.json"
+        url_suffix: "latest.json"
+        size: 1911
+        media_type: "application/json"
+        digest: "sha256:a1a7e10437d1e3d4996fb562b7efba75a5f0fb01dfa832ab815097ff49b72a66"

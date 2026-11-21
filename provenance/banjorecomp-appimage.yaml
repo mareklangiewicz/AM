@@ -1,5 +1,5 @@
 format: 3
-schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/cb854845b919dd38d98a806e7456ec53798c7564/docs/catalog-format-v3.md"
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/5dfe10e9b37cd6c31a85beec8a25dc5904559211/docs/catalog-format-v3.md"
 kind: "provenance"
 apps:
   "banjo-recompiled":
@@ -9,7 +9,7 @@ apps:
       classification: "unknown"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "857a7e7bcd9928b7d2e22dd4dd4df078f81b68b5"
+        commit: "5dfe10e9b37cd6c31a85beec8a25dc5904559211"
         path: "programs/aarch64/banjo-recompiled"
         blob: "12f2b5f58a59e276ca47eb6b195c19b7ff3ff61d"
     "armv7l":
@@ -26,20 +26,20 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "857a7e7bcd9928b7d2e22dd4dd4df078f81b68b5"
+        commit: "5dfe10e9b37cd6c31a85beec8a25dc5904559211"
         path: "programs/x86_64/banjo-recompiled"
         blob: "fd7fb54a4298ae2e7a2aa14c89970262df1cc3b2"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-21T02:34:53Z"
+        evaluated_at: "2026-11-21T16:47:36Z"
         recipe_sha256: "4323dbaf0bda5c243e15582c0eda7a1e5877a19c9f54c884e37eb091eee9f222"
-        rules: "857a7e7bcd9928b7d2e22dd4dd4df078f81b68b5"
+        rules: "5dfe10e9b37cd6c31a85beec8a25dc5904559211"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "857a7e7bcd9928b7d2e22dd4dd4df078f81b68b5"
+            commit: "5dfe10e9b37cd6c31a85beec8a25dc5904559211"
             path: "modules/"
-            sha256: "49b86a24691f8cf5502fc49826dfdca4645ab02d49a5edeec860b9a4e42bf55c"
+            sha256: "ec6a21c18fe69a42374260470b5bee2423670c1722dd6226687f753027d72232"
   "banjorecomp":
     "aarch64":
       repository_id: 1174072010
@@ -59,17 +59,17 @@ apps:
       classification: "shared"
       recipe:
         repository: "mareklangiewicz/AM"
-        commit: "857a7e7bcd9928b7d2e22dd4dd4df078f81b68b5"
+        commit: "5dfe10e9b37cd6c31a85beec8a25dc5904559211"
         path: "programs/x86_64/banjorecomp"
         blob: "7ea052a0e2cfa4210575106b676a0110827e9139"
       evidence:
         method: "whole_wrapper"
-        evaluated_at: "2026-11-21T02:34:53Z"
+        evaluated_at: "2026-11-21T16:47:36Z"
         recipe_sha256: "8490f5e84b3f2a8cc8716a8f8ab6698161c5291007dba0865c040d3127baccb4"
-        rules: "857a7e7bcd9928b7d2e22dd4dd4df078f81b68b5"
+        rules: "5dfe10e9b37cd6c31a85beec8a25dc5904559211"
         dependencies:
           "modules":
             repository: "mareklangiewicz/AM"
-            commit: "857a7e7bcd9928b7d2e22dd4dd4df078f81b68b5"
+            commit: "5dfe10e9b37cd6c31a85beec8a25dc5904559211"
             path: "modules/"
-            sha256: "49b86a24691f8cf5502fc49826dfdca4645ab02d49a5edeec860b9a4e42bf55c"
+            sha256: "ec6a21c18fe69a42374260470b5bee2423670c1722dd6226687f753027d72232"
