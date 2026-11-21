@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/cb854845b919dd38d9
 kind: "repository"
 repository_id: 1337691176
 repository: "jomvick/komet"
-collected_at: "2026-11-18T04:35:16Z"
+collected_at: "2026-11-21T11:18:12Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-18T04:35:16Z"
+observed_at: "2026-11-21T11:18:12Z"
 releases:
   "372645044":
     tag: "v1.0.0"
@@ -1631,6 +1631,100 @@ releases:
         size: 43125240
         digest: "sha256:edead8ed3170925f2868f1fb18d3bdfbd69b4a6a821e517c9b0134b3cc4ca236"
       "745139306":
+        name: "appimagetool-1.9.1.AppImage"
+        url_suffix: "appimagetool-1.9.1.AppImage"
+        size: 15092216
+        digest: "sha256:ed4ce84f0d9caff66f50bcca6ff6f35aae54ce8135408b3fa33abfc3cb384eb0"
+  "449962878":
+    tag: "v1.3.6"
+    title: "v1.3.6"
+    url: "https://github.com/jomvick/komet/releases/tag/v1.3.6"
+    created_at: "2026-11-18T12:14:48Z"
+    published_at: "2026-11-18T12:36:05Z"
+    updated_at: "2026-11-18T12:36:05Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/jomvick/komet/zipball/v1.3.6"
+    source_tar_url: "https://api.github.com/repos/jomvick/komet/tarball/v1.3.6"
+    download_base: "https://github.com/jomvick/komet/releases/download/v1.3.6/"
+    assets:
+      "763346304":
+        name: "komet-1.3.6-1.x86_64.rpm"
+        url_suffix: "komet-1.3.6-1.x86_64.rpm"
+        size: 33163574
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:9a115e1b15b5fcc7a35450545f79490aa88de60f1f6cc47c409d19aa3e68d877"
+      "763346306":
+        name: "komet-1.3.6-macos-arm64.dmg"
+        url_suffix: "komet-1.3.6-macos-arm64.dmg"
+        size: 26231808
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:ac4191ef294bdd7e5300da10a53acfdc972beb5fec0396288e78910a83888030"
+      "763346307":
+        name: "manifest.json.sig"
+        url_suffix: "manifest.json.sig"
+        size: 64
+        media_type: "application/pgp-signature"
+        digest: "sha256:9ef7c2072378ab52f80d29f61b34a9dfae16d8110d722d94a87281d94c8eecd0"
+      "763346308":
+        name: "komet_1.3.6_arm64.deb"
+        url_suffix: "komet_1.3.6_arm64.deb"
+        size: 23122330
+        media_type: "application/x-debian-package"
+        digest: "sha256:22f21b7506b93730c1d7f1b19ae27022c9046872154c3874eec7a2ea265ef277"
+      "763346309":
+        name: "komet-1.3.6-macos-arm64-app.tar.gz"
+        url_suffix: "komet-1.3.6-macos-arm64-app.tar.gz"
+        size: 23428277
+        media_type: "application/gzip"
+        digest: "sha256:b6777033e1d8e69151d1a50f0f36af254dae56584e978e7fadbf09c62f71b586"
+      "763346310":
+        name: "komet_1.3.6_amd64.deb"
+        url_suffix: "komet_1.3.6_amd64.deb"
+        size: 24822690
+        media_type: "application/x-debian-package"
+        digest: "sha256:c3ac6612d2013bb3d7ce29463e9f2da36070676a51ed72119cf025c3dd0e9c42"
+      "763346311":
+        name: "komet-1.3.6-windows-x86_64.exe"
+        url_suffix: "komet-1.3.6-windows-x86_64.exe"
+        size: 91814912
+        media_type: "application/x-msdos-program"
+        digest: "sha256:b9b45d51ccf4ab988d6b3a99eb8806d83074778d0cd9710e6ea37f66f39f27e0"
+      "763346312":
+        name: "komet-1.3.6-windows-x86_64.zip"
+        url_suffix: "komet-1.3.6-windows-x86_64.zip"
+        size: 24579503
+        media_type: "zip"
+        digest: "sha256:a8831af54e7dcf61e56726ba1098b7b7f13fd248614d703cb3f3419533290a48"
+      "763346313":
+        name: "komet-1.3.6-1.aarch64.rpm"
+        url_suffix: "komet-1.3.6-1.aarch64.rpm"
+        size: 31242646
+        media_type: "application/x-redhat-package-manager"
+        digest: "sha256:d517f9a7608b462e9d5bb370c7cec9280da8e857c59a6c343ed348a373aa8699"
+      "763346315":
+        name: "komet-1.3.6-linux-aarch64.tar.gz"
+        url_suffix: "komet-1.3.6-linux-aarch64.tar.gz"
+        size: 31362127
+        media_type: "application/gzip"
+        digest: "sha256:35b05196166642b147167331a2161427ff64b64f9a88d0f46e91264459fbcf3f"
+      "763346317":
+        name: "komet-1.3.6-linux-x86_64.tar.gz"
+        url_suffix: "komet-1.3.6-linux-x86_64.tar.gz"
+        size: 33389380
+        media_type: "application/gzip"
+        digest: "sha256:a920d7bcd0eaeb67adfcebf3d9d064daaa0ee877d987779b07961df3f4ec9753"
+      "763346318":
+        name: "komet-1.3.6-linux-x86_64.AppImage"
+        url_suffix: "komet-1.3.6-linux-x86_64.AppImage"
+        size: 30362104
+        digest: "sha256:f8ebbd3c19ffcbf8878679029897f41b852a243b96e5e052c0e2796653dcaa9d"
+      "763346320":
+        name: "manifest.json"
+        url_suffix: "manifest.json"
+        size: 1577
+        media_type: "application/json"
+        digest: "sha256:1991a1e572686916c137a2193d31ce283e7ba7c1a901673eedcf3e8028880b2c"
+      "763346323":
         name: "appimagetool-1.9.1.AppImage"
         url_suffix: "appimagetool-1.9.1.AppImage"
         size: 15092216

@@ -3,12 +3,12 @@ schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/cb854845b919dd38d9
 kind: "repository"
 repository_id: 1320208720
 repository: "getpasted/pasted"
-collected_at: "2026-11-17T23:22:02Z"
+collected_at: "2026-11-21T11:16:09Z"
 scope:
   page_size: 100
   pages_fetched: 1
   history_complete: true
-observed_at: "2026-11-17T23:22:02Z"
+observed_at: "2026-11-21T11:16:09Z"
 releases:
   "367268333":
     tag: "v1.0.0-rc.1"
@@ -508,17 +508,17 @@ releases:
     url: "https://github.com/getpasted/pasted/releases/tag/updater-prerelease"
     created_at: "2026-08-28T00:05:48Z"
     published_at: "2026-08-28T00:17:15Z"
-    updated_at: "2026-11-10T08:42:06Z"
+    updated_at: "2026-11-20T15:59:55Z"
     prerelease: true
     source_zip_url: "https://api.github.com/repos/getpasted/pasted/zipball/updater-prerelease"
     source_tar_url: "https://api.github.com/repos/getpasted/pasted/tarball/updater-prerelease"
     assets:
-      "730722480":
+      "772420977":
         name: "latest.json"
         url: "https://github.com/getpasted/pasted/releases/download/updater-prerelease/latest.json"
-        size: 4428
+        size: 4342
         media_type: "application/json"
-        digest: "sha256:6c123dc9ec7be48408eeea4e7e3ed5e3ce1c67b934a2eecaf123f6684a48a068"
+        digest: "sha256:1b32a6b46453ffa943e4f03049d9316ecf7eb9eee00b6e6e9079e4c5b5470d0b"
   "378223617":
     tag: "v1.0.0-rc.7"
     title: "Pasted 1.0.0 RC7"
@@ -891,17 +891,17 @@ releases:
     url: "https://github.com/getpasted/pasted/releases/tag/updater-stable"
     created_at: "2026-08-28T04:35:36Z"
     published_at: "2026-08-28T04:57:54Z"
-    updated_at: "2026-11-10T08:42:07Z"
+    updated_at: "2026-11-20T15:59:57Z"
     prerelease: true
     source_zip_url: "https://api.github.com/repos/getpasted/pasted/zipball/updater-stable"
     source_tar_url: "https://api.github.com/repos/getpasted/pasted/tarball/updater-stable"
     assets:
-      "730722570":
+      "772421082":
         name: "latest.json"
         url: "https://github.com/getpasted/pasted/releases/download/updater-stable/latest.json"
-        size: 4428
+        size: 4342
         media_type: "application/json"
-        digest: "sha256:6c123dc9ec7be48408eeea4e7e3ed5e3ce1c67b934a2eecaf123f6684a48a068"
+        digest: "sha256:1b32a6b46453ffa943e4f03049d9316ecf7eb9eee00b6e6e9079e4c5b5470d0b"
   "380856523":
     tag: "v1.0.1"
     title: "Pasted 1.0.1"
@@ -1633,3 +1633,125 @@ releases:
         url_suffix: "pasted-windows-x86_64.exe"
         size: 10336768
         digest: "sha256:92087e3b27429a180992f7670a21c08b2ff05cc6d3cdfb22c215b78dc012dbde"
+  "452883792":
+    tag: "v1.2.3"
+    title: "Pasted 1.2.3"
+    url: "https://github.com/getpasted/pasted/releases/tag/v1.2.3"
+    created_at: "2026-11-20T07:01:13Z"
+    published_at: "2026-11-20T15:59:32Z"
+    updated_at: "2026-11-20T15:59:32Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/getpasted/pasted/zipball/v1.2.3"
+    source_tar_url: "https://api.github.com/repos/getpasted/pasted/tarball/v1.2.3"
+    download_base: "https://github.com/getpasted/pasted/releases/download/v1.2.3/"
+    assets:
+      "772391535":
+        name: "Pasted.app.tar.gz"
+        url_suffix: "Pasted.app.tar.gz"
+        size: 22219349
+        media_type: "application/x-gtar"
+        digest: "sha256:158fdd979b23ae0062f65534ab39db63adbce071695c318111f809ce124e7e49"
+      "772391536":
+        name: "Pasted_1.2.3_linux.artifact.spdx.json"
+        url_suffix: "Pasted_1.2.3_linux.artifact.spdx.json"
+        size: 60844
+        media_type: "application/json"
+        digest: "sha256:2ed1244731013a077cd15575f88efba12473c45628cf7346d8f847b564f8aba3"
+      "772391537":
+        name: "Pasted_1.2.3_amd64.AppImage"
+        url_suffix: "Pasted_1.2.3_amd64.AppImage"
+        size: 89754104
+        media_type: "application/vnd.appimage"
+        digest: "sha256:a9ad2357e0b658331e9e75e9f73cc4cfd5750d256d6f6de1144f322a2e232fd7"
+      "772391538":
+        name: "Pasted_1.2.3_amd64.AppImage.sig"
+        url_suffix: "Pasted_1.2.3_amd64.AppImage.sig"
+        size: 436
+        media_type: "application/pgp-signature"
+        digest: "sha256:8a8db3da262a4f93298539cc87a1f293b078c71e4c5e14c489240c5a6b2b669b"
+      "772391539":
+        name: "Pasted.app.tar.gz.sig"
+        url_suffix: "Pasted.app.tar.gz.sig"
+        size: 424
+        media_type: "application/pgp-signature"
+        digest: "sha256:fccab2bfc2ae618d0f6da16476436be90693e0bf70e0d510f2753ebe82f9cd7c"
+      "772391564":
+        name: "Pasted_1.2.3_source.spdx.json"
+        url_suffix: "Pasted_1.2.3_source.spdx.json"
+        size: 385131
+        media_type: "application/json"
+        digest: "sha256:2587c797362cbffa48e3df63c55a75caaaefddc89357be975a3394075c31d8e7"
+      "772391566":
+        name: "Pasted_1.2.3_macos.artifact.spdx.json"
+        url_suffix: "Pasted_1.2.3_macos.artifact.spdx.json"
+        size: 3361
+        media_type: "application/json"
+        digest: "sha256:f08c3d16cbb3eb37621f8d6576e571b7f602adb95a1aeb7e3bffca6fe4c5bcc5"
+      "772391569":
+        name: "Pasted_1.2.3_universal.dmg"
+        url_suffix: "Pasted_1.2.3_universal.dmg"
+        size: 22846846
+        media_type: "application/x-apple-diskimage"
+        digest: "sha256:023ad7a0f02351ca2de6ab972c88437f6b5fd24606e15717c0dd99a97bf03723"
+      "772391586":
+        name: "Pasted_1.2.3_windows.artifact.spdx.json"
+        url_suffix: "Pasted_1.2.3_windows.artifact.spdx.json"
+        size: 11532
+        media_type: "application/json"
+        digest: "sha256:cc2e651b77d01a1207a1ff2713cd5214714bce92c2b92a200dcc431740cc70e5"
+      "772391593":
+        name: "Pasted_1.2.3_x64-setup.exe"
+        url_suffix: "Pasted_1.2.3_x64-setup.exe"
+        size: 7839825
+        digest: "sha256:c3dfdfb2a6de82e36c8ee1b467ae6e75e03e7761e55b4912b1401ad4ff45b231"
+      "772391606":
+        name: "Pasted_1.2.3_x64-setup.exe.sig"
+        url_suffix: "Pasted_1.2.3_x64-setup.exe.sig"
+        size: 436
+        media_type: "application/pgp-signature"
+        digest: "sha256:bb1c9bbf87b3414d6028a3ab07708ba1692e8da82a07db352929ce481b6f6ed8"
+      "772391607":
+        name: "SHA256SUMS-linux.txt"
+        url_suffix: "SHA256SUMS-linux.txt"
+        size: 482
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:0bf5dd9af6c7bb4a7ce7b3f8bc45d99e42b32f8431ba65a745c9e4fe3197f66f"
+      "772391638":
+        name: "SHA256SUMS-windows-x86_64.txt"
+        url_suffix: "SHA256SUMS-windows-x86_64.txt"
+        size: 478
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:7c75c657692426e0a86e11823d9883dfe212db68d24167f4477f80717b5ab8f4"
+      "772391641":
+        name: "SHA256SUMS-macos.txt"
+        url_suffix: "SHA256SUMS-macos.txt"
+        size: 658
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:0bd5a5543cc98dcfef454b2943228b1b6e3413c2049450083ee0a2d090c7e0a1"
+      "772391642":
+        name: "THIRD_PARTY_NOTICES.txt"
+        url_suffix: "THIRD_PARTY_NOTICES.txt"
+        size: 648446
+        media_type: "text/plain; charset=utf-8"
+        digest: "sha256:396a7ebaee6aa623a603a1c5790f683b05053818588281c915a47cc628ee57ec"
+      "772391646":
+        name: "pasted-linux-x86_64"
+        url_suffix: "pasted-linux-x86_64"
+        size: 11671160
+        digest: "sha256:64a9025303e113192a1fb07fcdddbfea21e6833bb0ed70f51cd6aa521598f494"
+      "772391671":
+        name: "pasted-macos-universal"
+        url_suffix: "pasted-macos-universal"
+        size: 19881056
+        digest: "sha256:014ac22644aab7e82a8e791678cba26477d13de801af1265ceba49d5e5e69476"
+      "772391679":
+        name: "pasted-windows-x86_64.exe"
+        url_suffix: "pasted-windows-x86_64.exe"
+        size: 10314240
+        digest: "sha256:889104dc74d635054f89624e30bb75b36bc860ae8d49bb97b6da65dff9bdb5d6"
+      "772391682":
+        name: "pasted.rb"
+        url_suffix: "pasted.rb"
+        size: 423
+        media_type: "application/x-ruby"
+        digest: "sha256:fb18474311d20703ee411c9a6781bf34274d7a681a599f89bf5621d610866c94"
