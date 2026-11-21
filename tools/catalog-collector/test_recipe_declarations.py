@@ -10,8 +10,18 @@ from unittest.mock import patch
 
 import host_catalog
 import recipe_policy_source as compiler
-from recipe_declarations import recipe_rows
+from recipe_declarations import recipe_rows, rows_json
 import pinned_recipes
+
+
+class RowsJson(unittest.TestCase):
+    def test_one_row_per_line_round_trips(self):
+        rows = [dict(app='a', repository_id=1, url_rules=[dict(pattern='x', exclude=False)]), dict(app='b\u00e9')]
+        text = rows_json(rows)
+        self.assertEqual(json.loads(text), rows)
+        self.assertEqual(text.splitlines(), ['[', json.dumps(rows[0])+',', json.dumps(rows[1]), ']'])
+        self.assertEqual(rows_json([]), '[]\n')
+        self.assertEqual(json.loads(rows_json([])), [])
 
 
 class Declarations(unittest.TestCase):

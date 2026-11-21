@@ -10,6 +10,7 @@ from pathlib import Path
 import re
 
 import host_catalog as host
+from recipe_declarations import rows_json
 
 
 def identities(directories):
@@ -125,7 +126,7 @@ def main():
     if result['source_count']>host.SOURCE_CAP:raise ValueError('enrollment exceeds configured source allowance')
     if args.apply:
         folder=host.ROOT/'tools/catalog-collector'
-        (folder/'collection-apps.json').write_text(json.dumps(result['enrollment'],indent=2)+'\n')
+        (folder/'collection-apps.json').write_text(rows_json(result['enrollment']))
         (folder/'source-names.json').write_text(json.dumps(result['registry'],indent=2)+'\n')
         host.configuration()
     args.out.write_text(json.dumps(result,indent=2)+'\n')

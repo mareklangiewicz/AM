@@ -17,6 +17,7 @@ import tempfile
 import host_catalog as host
 from bulk_recipes import literal_selector,url_rules
 from recipe_policy_source import generate
+from recipe_declarations import rows_json
 
 REPOSITORY=r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+'
 VERSION=re.compile(r'''version=(?P<outer>"?)\$\(curl -Ls\s+(?P<quote>["']?)(?P<url>https://api[.]github[.]com/repos/'''
@@ -142,7 +143,7 @@ def apply(result, *, append_sha256=None):
         (stage/'modules').mkdir();(stage/'tools/catalog-collector').mkdir(parents=True)
         shutil.copy2(host.ROOT/'modules/catalog-yaml-policy.am',stage/'modules/catalog-yaml-policy.am')
         for row in result['ready']:(stage/row['recipe']).write_text(row['after'])
-        merged=json.dumps(policies,indent=2)+'\n'
+        merged=rows_json(policies)
         (stage/'tools/catalog-collector/recipe-url-policies.json').write_text(merged)
         generate(stage)
         compiled=(stage/'modules/catalog-yaml-policy.am').read_bytes()

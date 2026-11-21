@@ -7,6 +7,14 @@ import shlex
 MARKER = '# AM-RECIPE-DECLARATION 1\n'
 
 
+def rows_json(rows):
+    """A committed list of rows, one row per line, so a rewrite touches only
+    the rows that changed (ticket 29). Readers just use json.loads."""
+    if not rows:
+        return '[]\n'
+    return '[\n'+',\n'.join(json.dumps(row) for row in rows)+'\n]\n'
+
+
 def validate_url_rules(rules):
     if (not isinstance(rules,list) or not 1<=len(rules)<=16 or any(
             not isinstance(rule,dict) or set(rule)!={'pattern','ignore_case','exclude'} or

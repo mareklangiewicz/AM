@@ -31,7 +31,7 @@ sys.path[:0]=[str(ROOT/'tools/recipe-conversion')]
 import convert
 import host_catalog
 from collection_interface import registry_names
-from recipe_declarations import MARKER
+from recipe_declarations import MARKER, rows_json
 from recipe_policy_source import generate
 import appimage_policy_source
 
@@ -236,9 +236,9 @@ def derive(root,ours_revision,rows):
         if row['outcome']!='deleted':continue
         for identity in row.get('identities',[]):
             if identity['repository_id'] not in bound:retire[identity['repository_id']]=identity['repository']
-    return {REGISTRY:json.dumps(registry,indent=2)+'\n',ENROLLED:'\n'.join(kept)+'\n',
-            CATALOG_ONLY:json.dumps(catalog_only,indent=2)+'\n',
-            APPIMAGES:json.dumps(appimages,indent=2)+'\n'},retire
+    return {REGISTRY:rows_json(registry),ENROLLED:'\n'.join(kept)+'\n',
+            CATALOG_ONLY:rows_json(catalog_only),
+            APPIMAGES:rows_json(appimages)},retire
 
 
 def stage(root,ours_revision,rows,files):
