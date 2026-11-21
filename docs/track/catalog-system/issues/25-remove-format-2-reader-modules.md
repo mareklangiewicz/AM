@@ -266,3 +266,16 @@ November 21, 2026: step 3 wait recounted. At 15:23Z `catalog-status-v1`
 the count reaches 0 in about 15 to 20 days. Dispatched runs are ungated and
 also publish a summary (21:59Z dispatch -> 22:19Z commit), at about 20 min each
 in one concurrency group, so dispatching would take about 20 h serially.
+
+November 21, 2026: Marek chose to strip the field from the retained summaries
+instead of waiting or dispatching. Nothing pins their bytes (`status.yaml`
+lists paths only; each run revalidates the parent tree under its contract), so
+one fast-forward commit on `catalog-status-v1` does it: `1e05e4ca9` on parent
+`8f2a04e51`, 59 summaries, 118 deleted lines and nothing else. Its tree
+validates under both `cb854845b` and step 3; the unstripped live tree is
+refused by step 3 (control). Step 3 itself is `3cf298e89`: property dropped
+from `build.py`, regenerated, both fixtures needed the edit, the transition
+test now expects refusal from both readers (red before the contract change).
+Ruff, tool suites, browser 15/15, collector fast tier 181 OK. Not yet run:
+Long tests. Not yet pushed: the strip commit (must land before the ship, and
+while no catalog run is in flight, else that run's status publish conflicts).
