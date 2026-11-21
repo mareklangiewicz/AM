@@ -1,0 +1,84 @@
+format: 1
+schema: "https://raw.githubusercontent.com/mareklangiewicz/AM/cb854845b919dd38d98a806e7456ec53798c7564/docs/catalog-status-v1.md"
+kind: "summary"
+run:
+  id: 44897634921
+  attempt: 1
+inputs:
+  source: "857a7e7bcd9928b7d2e22dd4dd4df078f81b68b5"
+  policy: "857a7e7bcd9928b7d2e22dd4dd4df078f81b68b5"
+  recipes: "857a7e7bcd9928b7d2e22dd4dd4df078f81b68b5"
+  rules: "857a7e7bcd9928b7d2e22dd4dd4df078f81b68b5"
+  schemas: "cb854845b919dd38d98a806e7456ec53798c7564"
+input_catalog_state: "known"
+input_catalog: "144bb1412d298e22b36abb4715f0b99ecfd5445b"
+started_at: "2026-11-21T11:08:43Z"
+reported_at: "2026-11-21T11:26:35Z"
+collection: "partial"
+validation: "ok"
+publication:
+  state: "confirmed"
+  commit: "fe17edd75ae525d28e692bc359241854e9b2ae7c"
+counts:
+  enrolled:
+    state: "known"
+    value: 8313
+  selected:
+    state: "known"
+    value: 500
+  attempted:
+    state: "known"
+    value: 500
+  successful:
+    state: "known"
+    value: 464
+  failed:
+    state: "known"
+    value: 36
+  unknown:
+    state: "known"
+    value: 0
+  unattempted:
+    state: "known"
+    value: 0
+  deferred:
+    state: "known"
+    value: 0
+stop_reason: "source_validation"
+metrics:
+  http_attempts:
+    state: "known"
+    value: 500
+  charged_bytes:
+    state: "known"
+    value: 306682823
+  received_bytes:
+    state: "unknown"
+  acquisition_milliseconds:
+    state: "known"
+    value: 278052
+  command_milliseconds:
+    state: "known"
+    value: 718135
+  tree_bytes:
+    state: "known"
+    value: 459074761
+  largest_document_bytes:
+    state: "known"
+    value: 922876
+  local_object_bytes:
+    state: "known"
+    value: 93987702
+  packed_history_bytes:
+    state: "unknown"
+  remote_storage_bytes:
+    state: "unknown"
+  peak_rss_bytes:
+    state: "unknown"
+budgets:
+  requests: 750
+  bytes: 536870912
+  acquisition_milliseconds: 900000
+  document_bytes: 2097152
+actions_url: "https://github.com/mareklangiewicz/AM/actions/runs/44897634921"
+recent_runs_url: "https://github.com/mareklangiewicz/AM/actions/workflows/catalog.yml"
