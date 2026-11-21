@@ -257,3 +257,12 @@ catalog run 44807442295 green. On `catalog-status-v1` the new
 `runs/44807442295-1/summary.yaml` lacks `compatibility_publication`; 63 of
 64 retained summaries still carry it. `ci/format2-step2` deleted. Step 3
 when that count reaches 0 (check the live ref; about 63 more hourly runs).
+
+November 21, 2026: step 3 wait recounted. At 15:23Z `catalog-status-v1`
+(head 2026-11-21 11:26Z) has 59 of 64 retained summaries carrying
+`compatibility_publication`. The "hourly" estimate was wrong: GitHub ran the
+`17 * * * *` schedule only 2 to 4 times a day (Nov 18 to 21: 04:25, 14:02,
+21:58, 03:31, 13:14, 21:38, 03:19, 12:56, 21:08, 02:19, 11:08). At that rate
+the count reaches 0 in about 15 to 20 days. Dispatched runs are ungated and
+also publish a summary (21:59Z dispatch -> 22:19Z commit), at about 20 min each
+in one concurrency group, so dispatching would take about 20 h serially.
