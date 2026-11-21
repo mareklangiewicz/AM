@@ -63,11 +63,9 @@ root('repository',3,dict(repository_id=ID,repository=scalar('string',pattern='^[
 D['repository']['required'].remove('git_scope');D['repository']['required'].remove('git_refs')
 root('provenance',3,dict(apps=PROVS))
 root('status',1,dict(schemas=PIN,last_report=scalar('string',pattern='^runs/[1-9][0-9]*-[1-9][0-9]*/summary\\.yaml$'),reported_at=TIME,last_confirmed_publication=PUB,summaries=RUNREFS,details=DETAILS))
-root('summary',1,dict(run=RUN,inputs=INPUTS,input_catalog_state=ENUM('known','absent','unknown'),input_catalog=PIN,started_at=TIME,reported_at=TIME,collection=STAGE,validation=STAGE,publication=PUB,compatibility_publication=PUB,counts=COUNTS,stop_reason=REASON,metrics=METRICS,budgets=BUDGETS,actions_url=URL,recent_runs_url=URL))
+root('summary',1,dict(run=RUN,inputs=INPUTS,input_catalog_state=ENUM('known','absent','unknown'),input_catalog=PIN,started_at=TIME,reported_at=TIME,collection=STAGE,validation=STAGE,publication=PUB,counts=COUNTS,stop_reason=REASON,metrics=METRICS,budgets=BUDGETS,actions_url=URL,recent_runs_url=URL))
 root('source',1,dict(run=RUN,input_catalog_state=ENUM('known','absent','unknown'),input_catalog=PIN,repository_id=ID,repository=scalar('string',pattern='^[A-Za-z0-9-]+/[A-Za-z0-9_.-]+$'),outcome=ENUM('ok','failed','unknown','unattempted'),reason=REASON,attempted_at=TIME,completed_at=TIME,output_catalog=PIN))
 D['summary']['required'].remove('input_catalog')
-# Retired with format 2 (ticket 25): optional while retained summaries still carry it.
-D['summary']['required'].remove('compatibility_publication')
 D['source']['required']=['format','schema','kind','run','input_catalog_state','repository_id','repository','outcome']
 root('statistics',1,dict(measured_at=TIME,freshness=FRESH,days=DAYS))
 KINDS=['catalog','apps','repository','provenance','status','summary','source','statistics']

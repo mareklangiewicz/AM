@@ -63,9 +63,9 @@ independently checks paths, sizes, exact run/input/parent hashes, enrollment and
 full v3 semantics before the sole catalog write. It uses exact-parent publication,
 confirms remote acceptance and reports ambiguity honestly; there is no force
 rewind or automatic merge. Final status is attempted independently after normal
-outcomes, including invalid/missing artifacts and publication failure. New
-summaries no longer write `compatibility_publication` (retired with format 2,
-ticket 25); it stays optional until no retained summary carries it. Artifacts
+outcomes, including invalid/missing artifacts and publication failure. Summaries
+no longer have `compatibility_publication` (retired with format 2, ticket 25);
+the contract refuses it. Artifacts
 containing format-2 paths are rejected.
 
 The prepared workflow separates read-only acquisition from its write-enabled

@@ -69,7 +69,7 @@ def documents():
       'apps':dict(header('apps',PIN),apps={'1':'repositories/example.yaml','10':'repositories/example.yaml','2':'repositories/example.yaml','example':'repositories/example.yaml','example-nightly':'repositories/example.yaml'}),
       'repository':sample(),
       'provenance':dict(header('provenance',PIN),apps={app:{'x86_64':dict(repository_id=9007199254740993,availability='unknown',classification='unknown')} for app in ('1','10','2','example','example-nightly')}),
-      'summary':dict(header('summary',PIN),run=dict(id=123,attempt=2),inputs=inputs,input_catalog_state='known',input_catalog=PIN,started_at=OLD,reported_at=NEW,collection='partial',validation='ok',publication=dict(state='not_attempted'),compatibility_publication=dict(state='not_attempted'),counts={k:known(v) for k,v in zip(('enrolled','selected','attempted','successful','failed','unknown','unattempted','deferred'),(5,4,3,2,1,0,1,1))},stop_reason='quota',metrics={k:unknown() for k in c.DEFINITIONS['metrics']['properties']},budgets=dict(requests=500,bytes=536870912,acquisition_milliseconds=900000,document_bytes=c.FILE_CAP),actions_url='https://github.com/mareklangiewicz/AM/actions/runs/123',recent_runs_url='https://github.com/mareklangiewicz/AM/actions/workflows/catalog.yml'),
+      'summary':dict(header('summary',PIN),run=dict(id=123,attempt=2),inputs=inputs,input_catalog_state='known',input_catalog=PIN,started_at=OLD,reported_at=NEW,collection='partial',validation='ok',publication=dict(state='not_attempted'),counts={k:known(v) for k,v in zip(('enrolled','selected','attempted','successful','failed','unknown','unattempted','deferred'),(5,4,3,2,1,0,1,1))},stop_reason='quota',metrics={k:unknown() for k in c.DEFINITIONS['metrics']['properties']},budgets=dict(requests=500,bytes=536870912,acquisition_milliseconds=900000,document_bytes=c.FILE_CAP),actions_url='https://github.com/mareklangiewicz/AM/actions/runs/123',recent_runs_url='https://github.com/mareklangiewicz/AM/actions/workflows/catalog.yml'),
       'status':dict(header('status',PIN),schemas=PIN,last_report='runs/123-2/summary.yaml',reported_at=NEW,last_confirmed_publication=dict(state='confirmed',commit=PIN),summaries={'123-2':'runs/123-2/summary.yaml'},details={'123-2':NEW}),
       'source':dict(header('source',PIN),run=dict(id=123,attempt=2),input_catalog_state='known',input_catalog=PIN,repository_id=9007199254740993,repository='example/app',outcome='failed',reason='source_validation',attempted_at=OLD),
       'statistics':dict(header('statistics',PIN),measured_at=NEW,freshness=dict(catalog=PIN,evaluated_at=NEW,**{k:unknown() for k in ('under_24h','from_24_to_48h','at_least_48h','no_success','unknown')}),days={'2026-11-08':dict(reported_attempts=1,unknown_source_count_attempts=0,successful_sources=2,failed_sources=1,first_report=NEW,last_report=NEW)})}
@@ -77,16 +77,20 @@ def documents():
 
 
 class Contracts(unittest.TestCase):
-    def test_retiring_compatibility_publication_is_optional_in_summaries(self):
-        # Ticket 25: retained summaries still carry it; new ones may omit it.
+    def test_retired_compatibility_publication_is_refused_in_summaries(self):
+        # Ticket 25 step 3: format 2 is gone, so neither reader accepts the field.
         summary=documents()['summary']
         self.assertEqual(decode(encode(summary)),summary)
-        summary.pop('compatibility_publication')
-        self.assertEqual(decode(encode(summary)),summary)
-        node=subprocess.run(['node','--input-type=module','-e',
-            "import {parseDocument} from './tools/catalog-contract/reader.mjs';"
-            "parseDocument(process.argv[1],'summary');",encode(summary).decode()],cwd=ROOT,capture_output=True)
-        self.assertEqual(node.returncode,0,node.stderr)
+        def node(raw):
+            return subprocess.run(['node','--input-type=module','-e',
+                "import {parseDocument} from './tools/catalog-contract/reader.mjs';"
+                "parseDocument(process.argv[1],'summary');",raw],cwd=ROOT,capture_output=True)
+        accepted=encode(summary).decode()
+        self.assertEqual(node(accepted).returncode,0,node(accepted).stderr)
+        retired=accepted.replace('counts:\n','compatibility_publication:\n  state: "not_attempted"\ncounts:\n',1)
+        self.assertNotEqual(retired,accepted)
+        with self.assertRaises(ValueError): decode(retired.encode())
+        self.assertNotEqual(node(retired).returncode,0)
 
     def test_v3_only_collection_accepts_created_time_without_legacy_publication_time(self):
         with tempfile.TemporaryDirectory() as temp:
