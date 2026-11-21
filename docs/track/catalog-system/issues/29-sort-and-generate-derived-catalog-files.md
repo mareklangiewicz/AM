@@ -3,7 +3,7 @@
 Type: task
 Label: implementation:task
 Status: open
-Blocked by: 28
+Blocked by: none
 
 ## Outcome
 

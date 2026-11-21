@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: open
+Status: resolved
 Blocked by: none
 
 ## Outcome
@@ -101,3 +101,19 @@ overstates it; `test_large_batch_enrollment` still hard-codes the recipes the
 2026-11-16 merge reverted. Options put to Marek: run them on a pinned snapshot
 of the whole configuration, move the live-state statements to the tree tier,
 or wait for ticket 29.
+
+November 21, 2026: resolved. `572bac279` closes the derived-file class:
+`pinned_recipes.configuration()` unpacks every recipe and the enrollment
+files at the pinned commit, and the seven enrollment-coupled tests run on it
+(the cutover `apply` test on a pinned checkout whose HEAD is that commit, so
+its source check still holds). None of the seven was a pure live-state check,
+so none moved to the tree tier. It also fixes a regression from `5ff5fa709`:
+the tree tier had started installing pinned recipes; a `live` flag on the
+manager harness now keeps `tree_host_cutover.py` and `tree_appimages.py` on
+the live tree (control: 107 errors there with every upstream recipe deleted).
+Final, at `572bac279`: ruff clean; every Fast suite passes on HEAD, with every
+upstream recipe edited, and with every upstream recipe deleted; Long tests
+44936940091 green on `ci/ticket28`. Not done: nothing was moved into `merge.py
+gate`; the live-tree statements stay in the tree tier (ticket 30). Not
+covered by the mutations: an upstream change to a fork-side derived file in
+`test-data/` (`appimage-policies.json`), which unit tests still read live.
