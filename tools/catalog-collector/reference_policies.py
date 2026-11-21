@@ -14,7 +14,7 @@ _INVENTORY = Path(__file__).with_name('test-data')/'consumer-inventory.json'
 AM_UTILS = tuple(row['path'].removeprefix('programs/')
                  for row in json.loads(_INVENTORY.read_text())['recipes']
                  if row['kind'] == 'executable')
-_POLICIES = _INVENTORY.with_name("appimage-policies.json")
+_POLICIES = Path(__file__).with_name("appimage-policies.json")
 APPIMAGES = {row["recipe"]: row for row in json.loads(_POLICIES.read_text())}
 SUPPORTED = COHORT + AM_UTILS + tuple(APPIMAGES)
 

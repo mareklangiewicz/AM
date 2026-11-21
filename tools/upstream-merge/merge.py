@@ -45,7 +45,7 @@ REGISTRY=COLLECTOR+'recipe-url-policies.json'
 ENROLLED=COLLECTOR+'collection-recipes.txt'
 CATALOG_ONLY=COLLECTOR+'collection-apps.json'
 NAMES=COLLECTOR+'source-names.json'
-APPIMAGES=COLLECTOR+'test-data/appimage-policies.json'
+APPIMAGES=COLLECTOR+'appimage-policies.json'
 POLICY='modules/catalog-yaml-policy.am'
 OUTCOMES=('taken from upstream','re-converted','fell back','deleted','fork-owned kept','untouched')
 

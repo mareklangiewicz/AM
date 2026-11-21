@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
 """Compile reviewed, trusted AppImage policies into the existing awk module.
 
-Development-only: this file and the JSON are never fetched or read by clients.
-No recipe parsing, shell execution, or catalog-controlled regular expressions.
+appimage-policies.json is a source of truth: the compiled section of
+modules/catalog-yaml-policy.am, which hosts fetch, is the only selection policy
+for most of its recipes (ticket 29). Clients never read this script or the
+JSON themselves. No recipe parsing, shell execution, or catalog-controlled
+regular expressions.
 """
 import json
 from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-POLICIES = Path(__file__).with_name('test-data')/'appimage-policies.json'
+POLICIES = Path(__file__).with_name('appimage-policies.json')
 START = '# BEGIN explicit AppImage policies (appimage_policy_source.py)\n'
 END = '# END explicit AppImage policies\n'
 
