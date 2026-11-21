@@ -71,8 +71,6 @@ recipe end at the next merge that touches it (the receipt lists them under
 - `tools/catalog-collector/collection-recipes.txt` and `collection-apps.json`:
   an enrolled recipe declaration that is no longer one keeps its source
   enrolled as catalog-only.
-- `tools/catalog-collector/unavailable-github-recipes.json`: entries for
-  recipes upstream changed or deleted are dropped.
 - `programs/<arch>-apps`: upstream's list plus the lines the fork added.
 
 Before anything is written, the merged recipes and these files are compiled in

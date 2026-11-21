@@ -44,7 +44,6 @@ COLLECTOR='tools/catalog-collector/'
 REGISTRY=COLLECTOR+'recipe-url-policies.json'
 ENROLLED=COLLECTOR+'collection-recipes.txt'
 CATALOG_ONLY=COLLECTOR+'collection-apps.json'
-UNAVAILABLE=COLLECTOR+'unavailable-github-recipes.json'
 NAMES=COLLECTOR+'source-names.json'
 APPIMAGES=COLLECTOR+'test-data/appimage-policies.json'
 POLICY='modules/catalog-yaml-policy.am'
@@ -220,9 +219,7 @@ def derive(root,ours_revision,rows):
             if app not in apps:
                 catalog_only.append(dict(app=app,repository_id=identity['repository_id'],repository=identity['repository']))
                 apps.add(app)
-    unavailable=json.loads(text(root,ours_revision,UNAVAILABLE))
     gone={row['path'] for row in rows if row['outcome'] not in ('untouched','fork-owned kept')}
-    unavailable['recipes']=[entry for entry in unavailable['recipes'] if entry['recipe'] not in gone]
     # The older explicit AppImage policies are bound to their recipe's text.
     appimages=[policy for policy in json.loads(text(root,ours_revision,APPIMAGES))
                if 'programs/'+policy['recipe'] not in gone]
@@ -241,7 +238,6 @@ def derive(root,ours_revision,rows):
             if identity['repository_id'] not in bound:retire[identity['repository_id']]=identity['repository']
     return {REGISTRY:json.dumps(registry,indent=2)+'\n',ENROLLED:'\n'.join(kept)+'\n',
             CATALOG_ONLY:json.dumps(catalog_only,indent=2)+'\n',
-            UNAVAILABLE:json.dumps(unavailable,indent=2)+'\n',
             APPIMAGES:json.dumps(appimages,indent=2)+'\n'},retire
 
 
