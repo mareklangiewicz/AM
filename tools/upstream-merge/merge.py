@@ -46,6 +46,9 @@ ENROLLED=COLLECTOR+'collection-recipes.txt'
 CATALOG_ONLY=COLLECTOR+'collection-apps.json'
 NAMES=COLLECTOR+'source-names.json'
 APPIMAGES=COLLECTOR+'appimage-policies.json'
+# Fork-side files that moved: a revision from before the move has them at the
+# old path (ticket 29). Replays of older merges read them there.
+MOVED={APPIMAGES:COLLECTOR+'test-data/appimage-policies.json'}
 POLICY='modules/catalog-yaml-policy.am'
 OUTCOMES=('taken from upstream','re-converted','fell back','deleted','fork-owned kept','untouched')
 
@@ -62,7 +65,9 @@ def git(root,*arguments,check=True):
 
 
 def text(root,revision,path):
-    return git(root,'show',revision+':'+path).stdout.decode()
+    found=git(root,'show',revision+':'+path,check=path not in MOVED)
+    if found.returncode:found=git(root,'show',revision+':'+MOVED[path])
+    return found.stdout.decode()
 
 
 def recipes(root,revision):

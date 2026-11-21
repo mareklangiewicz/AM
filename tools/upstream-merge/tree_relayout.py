@@ -4,12 +4,17 @@ Ticket 33 converted the long recipes that are instances of layout bb53f3180
 (082502f64, on cf6255fc3). Ticket 32 added DESKTOP_STRIP_NO_SANDBOX=true to
 the 579 declarations from layout cf50304fc, template 3.6 (d85c3851b). Both ran
 on the originals of upstream ba061a639, the merge base then and now.
+
+The derived row files are compared by their rows: since ticket 29 they are
+written one row per line, and these replays start from indented copies.
 """
+import json
 import unittest
 
 import relayout as r
 
 UPSTREAM='ba061a639a'
+ROWS={r.merge.REGISTRY,r.merge.CATALOG_ONLY,r.merge.APPIMAGES}
 
 
 def changed(old,new):
@@ -29,9 +34,14 @@ class Replay(unittest.TestCase):
         for path,data in converted.items():self.assertEqual(data,show(shipped,path),path)
         self.assertEqual(result['differences'],[])
         self.assertEqual(result['retire'],{})
-        # Exactly the derived files the shipped commit changed, byte for byte.
-        self.assertEqual(sorted(result['files']),derived)
-        for path,content in result['files'].items():self.assertEqual(content.encode(),show(shipped,path),path)
+        # Exactly the derived files the shipped commit changed: the policy byte
+        # for byte, the row files row for row; a reformat alone is no change.
+        files={path:content for path,content in result['files'].items()
+               if path not in ROWS or json.loads(content)!=json.loads(r.merge.text(r.ROOT,ours,path))}
+        self.assertEqual(sorted(files),derived)
+        for path,content in files.items():
+            if path in ROWS:self.assertEqual(json.loads(content),json.loads(show(shipped,path)),path)
+            else:self.assertEqual(content.encode(),show(shipped,path),path)
         return result
 
     def test_ticket_33_long_recipes_become_declarations(self):
