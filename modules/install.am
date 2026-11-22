@@ -248,6 +248,18 @@ _install_script_retry() {
 	fi
 }
 
+# The modules a catalog recipe sources: format 1, and format 3 (CATALOG_FORMAT=3).
+# The install guard below and reinstall's preflight read these lists.
+AM_CATALOG_MODULES="catalog.am appimage.am"
+AM_CATALOG_V3_MODULES="catalog-yaml.am catalog-contract-reader.am catalog-contract-parser.am catalog-contract-tables.am catalog-yaml-policy.am appimage.am"
+
+_missing_catalog_module() {
+	for managed_module in "$@"; do
+		[ -r "$MODULES_PATH/$managed_module" ] || { printf '%s\n' "$managed_module"; return 0; }
+	done
+	return 1
+}
+
 _install_arg() {
 	if grep -qx '# AM-CATALOG-RECIPE 1' ./"$arg" && ! grep -qx 'CATALOG_FORMAT=3' ./"$arg"; then
 		echo 'This catalog recipe is retired; convert it to YAML before installation.' >&2
@@ -314,12 +326,15 @@ CATALOG_HELPER="/opt/am/modules/catalog.am"' ./"$arg" || exit 1
 	fi
 	# Embed the AM/AppMan-owned module location in both recipe and updater.
 	if grep -qx '# AM-CATALOG-RECIPE 1' ./"$arg"; then
-		local managed_modules="catalog.am appimage.am"
+		local managed_modules=$AM_CATALOG_MODULES missing
 		if grep -qx 'CATALOG_FORMAT=3' ./"$arg"; then
-			managed_modules="catalog-yaml.am catalog-contract-reader.am catalog-contract-parser.am catalog-contract-tables.am catalog-yaml-policy.am appimage.am"
+			managed_modules=$AM_CATALOG_V3_MODULES
+		fi
+		# shellcheck disable=SC2086 # word lists
+		if missing=$(_missing_catalog_module $managed_modules); then
+			echo "Missing $missing; synchronize AM modules." >&2; exit 1
 		fi
 		for managed_module in $managed_modules; do
-			[ -r "$MODULES_PATH/$managed_module" ] || { echo "Missing $managed_module; synchronize AM modules." >&2; exit 1; }
 			if grep -q "/opt/am/modules/$managed_module" ./"$arg"; then
 				catalog_path=$(am_recipe_replacement "$MODULES_PATH/$managed_module")
 				sed -i "s|/opt/am/modules/$managed_module|$catalog_path|g" ./"$arg" || exit 1
@@ -384,7 +399,14 @@ CATALOG_HELPER="/opt/am/modules/catalog.am"' ./"$arg" || exit 1
 
 	# INSTALL SCRIPT
 	if grep -qx '# AM-CATALOG-RECIPE 1' ./"$arg"; then
-		_install_exec_installation_script || exit 1
+		# No retry and no remover (a catalog refusal must not touch an old app),
+		# but the next app in the batch still installs.
+		if ! _install_exec_installation_script; then
+			echo " 💀 ERROR: $APPNAME installation failed." >&2
+			$SUDOCMD rm -f "$AMCACHEDIR"/"$arg"
+			install_failed=1
+			return 1
+		fi
 	else
 		_install_exec_installation_script || _install_script_retry
 	fi
@@ -1452,6 +1474,7 @@ case "$1" in
 			sort "$AMCACHEDIR"/installed | grep -w -v "◆ am"
 		fi
 		printf "\n============================================================================\n"
+		[ -z "${install_failed-}" ] || exit 1
 		exit 0
 		;;
 
@@ -1506,6 +1529,14 @@ case "$1" in
 
 	'reinstall'|'--reinstall')
 		_online_check
+		# Reinstall removes each app before installing it again: a missing
+		# module would leave every catalog app removed (mylenovo, 2026-11-22).
+		# Every catalog recipe in the database is format 3.
+		# shellcheck disable=SC2086 # word list
+		if missing=$(_missing_catalog_module $AM_CATALOG_V3_MODULES); then
+			printf ' Missing %s; synchronize AM modules ("%s -s") first. Nothing was removed.\n' "$missing" "$AMCLI" >&2
+			exit 1
+		fi
 		_completion_lists
 		if [ "$2" = "--all" ]; then
 			# Reinstall all applications

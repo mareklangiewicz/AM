@@ -33,9 +33,11 @@ class ManagerHarness:
     def recipe_file(self, recipe):
         return ROOT/'programs'/recipe if self.live else pinned_recipes.write(recipe, self.path/'pinned')
 
-    def run_manager_install(self, *, local_script=False, source_unavailable=False, amrepo=SOURCE, recipe=None, app_name="obsidian", appman=False, flags=""):
+    def run_manager_install(self, *, local_script=False, source_unavailable=False, amrepo=SOURCE, recipe=None, app_name="obsidian", appman=False, flags="", recipes=None, argv=None):
         """Execute real install dispatch/functions with only external AM services stubbed.
-        RECIPE is a recipe file; None is recipe_file('x86_64/obsidian')."""
+        RECIPE is a recipe file; None is recipe_file('x86_64/obsidian'). RECIPES maps
+        further app names to recipe text, served instead of RECIPE for those names.
+        ARGV replaces the default `-i APP` command line."""
         module_dir=self.root/'opt/am/modules';module_dir.mkdir(parents=True,exist_ok=True)
         (module_dir/'appimage.am').write_bytes(LIFECYCLE.read_bytes())
         cache=self.path/'manager-cache';cache.mkdir(exist_ok=True)
@@ -51,7 +53,10 @@ class ManagerHarness:
         hooks='''
 _online_check() { :; }
 _clean_amcachedir() { :; }
-_use_online_reading_tool() { [ -n "$RECIPE_UNAVAILABLE" ] || cat "$RECIPE_SOURCE"; }
+_use_online_reading_tool() {
+	[ -z "$RECIPE_UNAVAILABLE" ] || return 0
+	if [ -f "$RECIPE_DIR/${1##*/}" ]; then cat "$RECIPE_DIR/${1##*/}"; else cat "$RECIPE_SOURCE"; fi
+}
 _not_an_appimage_message() { return 0; }
 _check_arg_variants() { return 1; }
 _use_verify() { :; }
@@ -62,6 +67,10 @@ _check_version() { : > "$AMCACHEDIR/version-args"; }
         module=module[:dispatch]+'\n'+hooks+module[dispatch:]
         harness=self.path/'install-module'
         harness.write_text(module)
+        recipe_dir=self.path/'managed-recipes';recipe_dir.mkdir(exist_ok=True)
+        for name,text in (recipes or {}).items():
+            (recipe_dir/name).write_text(text.replace('/opt/',str(self.root)+'/opt/')
+                                         .replace('/usr/local/',str(self.root)+'/usr/local/'))
         self.script('privilege-wrapper', '''import os,pathlib,subprocess,sys
 p=pathlib.Path(os.environ['FIXTURE'])
 with (p/'privileged-calls').open('a') as f: f.write(repr(sys.argv[1:])+'\\n')
@@ -75,13 +84,14 @@ sys.exit(subprocess.run(sys.argv[1:],env=env).returncode)
              'APPSPATH':str(self.root/'opt'),'APPSDB':'https://fixture.invalid/programs',
              'BINDIR':str(self.root/'usr/local/bin'),'XDG_BIN_HOME':str(self.root/'usr/local/bin'),'DATADIR':str(self.root/'usr/local/share'),
              'LAUNCHERS_DIR':'applications','MODULES_PATH':str(module_dir),'AMCACHEDIR':str(cache),
-             'CACHEDIR':str(cache),'AMDATADIR':str(data),'RECIPE_SOURCE':str(recipe_source),'RECIPE_UNAVAILABLE':'1' if source_unavailable else '',
+             'CACHEDIR':str(cache),'AMDATADIR':str(data),'RECIPE_SOURCE':str(recipe_source),'RECIPE_DIR':str(recipe_dir),'RECIPE_UNAVAILABLE':'1' if source_unavailable else '',
              'FLAGS':flags,'SUDOCMD':str(self.bin/'privilege-wrapper'),'WGETCMD':'wget','CURLCMD':'curl',
              'WGETV':'1','WGETPROGRESS':'wget','tp_flags':'--fixture-extra','tp_extensions':'.fixture-extra'}
         target=app_name
         if local_script:
             local=self.path/app_name;local.write_text(recipe_source.read_text());target=str(local)
-        return subprocess.run(['/bin/bash',str(harness),'-i',target,*flags.split()],cwd=self.path,env=env,capture_output=True)
+        argv=argv or ['-i',target,*flags.split()]
+        return subprocess.run(['/bin/bash',str(harness),*argv],cwd=self.path,env=env,capture_output=True)
 
     def snapshot(self):
         return {str(p.relative_to(self.root)):

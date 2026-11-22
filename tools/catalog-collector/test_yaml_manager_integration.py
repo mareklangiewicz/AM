@@ -144,6 +144,25 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\napp=${0##
         self.assertIn(str(self.module_dir/'catalog-yaml.am'),(app/'recipe.am').read_text())
         self.assertEqual(self.standalone(app/'AM-updater').returncode,0)
 
+    def test_a_failed_catalog_install_does_not_end_the_batch(self):
+        # mylenovo, 2026-11-22: one recipe failing ended `am -i a b c` for every later app.
+        broken=self.recipe_file('x86_64/obsidian').read_text().replace('am_appimage "$0" "$@"','exit 7')
+        self.assertIn('exit 7',broken)
+        r=self.run_manager_install(amrepo=SOURCE,recipes={'broken':broken},argv=['-i','broken','obsidian'])
+        self.assertNotEqual(r.returncode,0)
+        self.assertIn(b'"BROKEN" installation failed',r.stderr)
+        self.assertTrue((self.app/'AM-updater').exists(),r.stderr)
+
+    def test_reinstall_refuses_before_removing_anything_when_a_module_is_missing(self):
+        app=self.install()
+        (self.module_dir/'catalog-yaml-policy.am').unlink()
+        before=self.snapshot()
+        r=self.run_manager_install(amrepo=SOURCE,argv=['reinstall','obsidian'])
+        self.assertNotEqual(r.returncode,0)
+        self.assertIn(b'Missing catalog-yaml-policy.am',r.stderr)
+        self.assertEqual(self.snapshot(),before)
+        self.assertTrue((app/'AM-updater').exists())
+
     def test_batch_reuses_pin_and_documents_but_not_selected_acceptance(self):
         obsidian=self.install();nvim=self.install('x86_64/nvim');legacy=self.legacy()
         r=self.manager(['-u','obsidian','nvim','legacy'],source=SOURCE)
