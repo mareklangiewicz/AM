@@ -171,7 +171,7 @@ approval boundaries.
 | [18 resolved](issues/18-build-upstream-merge-tool-and-run-first-merge.md) | 16 | Upstream merge tool and [the first merge](issues/18-build-upstream-merge-tool-and-run-first-merge.md#answer--november-16-2026): `ba061a639` in commit `8f3bd0cf3`, unpushed; [receipt](upstream-merge-20261116.json). |
 | [19 resolved](issues/19-decide-freshness-rule-against-real-rotation.md) | none | Client freshness limit [raised to seven days](issues/19-decide-freshness-rule-against-real-rotation.md#answer--november-16-2026); not yet delivered to installed hosts. |
 | [20 open](issues/20-stop-reattempting-failing-sources-every-run.md) | none | 26 failing sources re-attempted every run; same-tag and 16 MiB refusals. |
-| [21 open](issues/21-retire-catalog-sources.md) | 18 | Collector support for retiring a source; retire the merge's list and am-utils. |
+| [21 claimed](issues/21-retire-catalog-sources.md) | none | Collector support for retiring a source (`retire_sources.py`); 25 sources and the am-utils policy retired locally, unpushed; 9 kept (ticket 46). |
 | [22 resolved](issues/22-keep-collection-running-across-doc-pushes.md) | none | [Scheduled runs compare collection inputs with the pin](issues/22-keep-collection-running-across-doc-pushes.md#answer--november-17-2026); a change there fails the run red until a repin; docs pushes need none. |
 | [23 resolved](issues/23-repair-offline-e2e-after-v3-cutover.md) | none | Offline e2e suite [ported to the format-3 client](issues/23-repair-offline-e2e-after-v3-cutover.md#answer--november-16-2026); debian, fedora and termux pass on the merged tree. |
 | [24 resolved](issues/24-simplify-and-unify-catalog-process.md) | none | Simplification [agreed](issues/24-simplify-and-unify-catalog-process.md#answer--november-16-2026): forms stay and the recipe declaration is preferred ([ADR 0006](../../adr/0006-recipe-declaration-is-the-preferred-form.md)); tickets 25 to 31 carry the changes. |
@@ -196,6 +196,7 @@ approval boundaries.
 | [43 resolved](issues/43-review-appimage-in-archive-layout.md) | none | [AppImage-in-archive is a layout for direct-AppImage selections](issues/43-review-appimage-in-archive-layout.md#answer--november-19-2026); 4,630 long recipes are declarations, catalog run 44536085052 green. |
 | [44 resolved](issues/44-release-guards-the-schema-pin.md) | none | [`release.py` refuses a `schemas` change unless `--repin-schemas`](issues/44-release-guards-the-schema-pin.md#answer--november-20-2026), then moves both pins. |
 | [45 resolved](issues/45-release-checks-live-refs-and-browser.md) | none | [`release.py` validates live refs before a schema repin and reports deployed browser drift](issues/45-release-checks-live-refs-and-browser.md#answer--november-20-2026). |
+| [46 open](issues/46-repoint-renamed-catalog-only-rows.md) | none | Nine catalog-only rows name apps upstream renamed; their sources stay in use (from ticket 21). |
 
 Latest implementation evidence, November 8: Chromium desktop/narrow and Firefox
 checks pass; physical-device/comprehension limits remain with 13. Independent

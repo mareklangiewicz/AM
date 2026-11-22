@@ -9,14 +9,9 @@ from reference_selection import ASCII_LOWER, accept_selection
 COHORT = ('x86_64/obsidian', 'x86_64/nvim', 'aarch64/nvim',
           'x86_64/nvim-nightly', 'aarch64/nvim-nightly')
 
-# Independent reference enrollment from the frozen, reviewed static inventory.
-_INVENTORY = Path(__file__).with_name('test-data')/'consumer-inventory.json'
-AM_UTILS = tuple(row['path'].removeprefix('programs/')
-                 for row in json.loads(_INVENTORY.read_text())['recipes']
-                 if row['kind'] == 'executable')
 _POLICIES = Path(__file__).with_name("appimage-policies.json")
 APPIMAGES = {row["recipe"]: row for row in json.loads(_POLICIES.read_text())}
-SUPPORTED = COHORT + AM_UTILS + tuple(APPIMAGES)
+SUPPORTED = COHORT + tuple(APPIMAGES)
 
 
 def matches(recipe, release, asset):
@@ -33,11 +28,6 @@ def matches(recipe, release, asset):
             if matched == rule['exclude']:
                 return False
         return True
-    if recipe in AM_UTILS:
-        component = 'c%2b%2bfilt' if app == 'c++filt' else app
-        return re.search(r'https.*download.*/'+arch+r'-[0-9]{8}/'+
-                         re.escape(component)+r'_.*-'+arch+r'-static$',
-                         url.translate(ASCII_LOWER)) is not None
     if app == 'obsidian':
         url = url.translate(ASCII_LOWER)  # ASCII URLs in saved evidence; proposals use ASCII folding.
         return (re.search(r'https.*mage$', url) is not None and
@@ -56,8 +46,6 @@ def select_cohort(recipe, repository, commit, *, now, accept_stale=None):
     require(recipe in SUPPORTED, 'unknown_cohort_recipe')
     require(re.fullmatch('[0-9a-f]{40}', commit) is not None, 'commit_pin_required')
     require(now.tzinfo is not None and now.utcoffset().total_seconds() == 0, 'utc_now_required')
-    if recipe in AM_UTILS:
-        require(str(repository['repository_id']) == '1225768109', 'am_utils_repository_mismatch')
     if recipe in APPIMAGES:
         require(str(repository['repository_id']) == str(APPIMAGES[recipe]['repository_id']),
                 'appimage_repository_mismatch')

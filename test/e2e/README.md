@@ -23,7 +23,7 @@ consent, freshness boundaries, mixed-batch continuation and real module sync.
 Native Termux retains AppMan, unprivileged/fallback and installed executable checks.
 The test log and `results.json` record the actual cases run.
 
-Detailed portable selector, transitional am-utils/AppImage, archive/toolset,
+Detailed portable selector, transitional AppImage, archive/toolset,
 reader/retention and metadata refresh checks live in `tools/catalog-collector`.
 Historical format-1 container cases were migrated or retired in ticket 118;
 this suite no longer depends on the former collector or migration evidence builder.
