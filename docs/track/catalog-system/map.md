@@ -196,7 +196,7 @@ approval boundaries.
 | [43 resolved](issues/43-review-appimage-in-archive-layout.md) | none | [AppImage-in-archive is a layout for direct-AppImage selections](issues/43-review-appimage-in-archive-layout.md#answer--november-19-2026); 4,630 long recipes are declarations, catalog run 44536085052 green. |
 | [44 resolved](issues/44-release-guards-the-schema-pin.md) | none | [`release.py` refuses a `schemas` change unless `--repin-schemas`](issues/44-release-guards-the-schema-pin.md#answer--november-20-2026), then moves both pins. |
 | [45 resolved](issues/45-release-checks-live-refs-and-browser.md) | none | [`release.py` validates live refs before a schema repin and reports deployed browser drift](issues/45-release-checks-live-refs-and-browser.md#answer--november-20-2026). |
-| [46 open](issues/46-repoint-renamed-catalog-only-rows.md) | none | Nine catalog-only rows name apps upstream renamed; their sources stay in use (from ticket 21). |
+| [46 resolved](issues/46-repoint-renamed-catalog-only-rows.md) | none | [Nine catalog-only rows renamed to their recipe names by hand; `dpro-agent`, `speak-to-ai` dropped](issues/46-repoint-renamed-catalog-only-rows.md#answer--november-22-2026). |
 
 Latest implementation evidence, November 8: Chromium desktop/narrow and Firefox
 checks pass; physical-device/comprehension limits remain with 13. Independent

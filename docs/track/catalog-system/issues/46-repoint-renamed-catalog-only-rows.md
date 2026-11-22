@@ -2,8 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: open
-Triage: needs-triage
+Status: resolved
 Blocked by: none
 
 ## Outcome
@@ -37,6 +36,20 @@ ticket 21 kept them (`retire_sources.py` refuses them):
 
 - Decide whether a renamed app's row is renamed or dropped, and whether
   `merge.py` should do that itself on the next merge.
+
+## Answer — November 22, 2026
+
+Renamed, by one hand edit of `collection-apps.json` (decided with Marek): each
+row's `app` is now the name its recipe uses (`container-desktop`, `girru`,
+`hushpen`, `paradev`, `piwi`, `android-webcam`, `miyo`, `shrewnut`,
+`agentshot`). Girru's second row `dpro-agent` and dabri's `speak-to-ai` row are
+gone; each source stays collected under one name. Dropping rows was not an
+option: a source no row names is neither active nor retired, which refuses
+collection, and `retire_sources.py` refuses these sources.
+
+`source-names.json` is unchanged (source names are identities, not app
+names). `merge.py` gets no rename detection: a future stale row is fixed the
+same way, by hand, to keep the catalog system lean.
 
 ## Comments
 
