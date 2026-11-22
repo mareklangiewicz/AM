@@ -36,7 +36,8 @@ class Desktops(unittest.TestCase):
 mkdir -p squashfs-root
 case "$2" in
  '*.desktop') for f in "$FIXTURE_MEMBERS"/*.desktop; do [ -e "$f" ] || [ -L "$f" ] || continue; cp -P "$f" squashfs-root/; done ;;
- *) mkdir -p "squashfs-root/$(dirname "$2")"; cp -P "$FIXTURE_MEMBERS/$2" "squashfs-root/$2" ;;
+ *) [ -e "$FIXTURE_MEMBERS/$2" ] || [ -L "$FIXTURE_MEMBERS/$2" ] || exit 0  # like the real tool: nothing, status 0
+    mkdir -p "squashfs-root/$(dirname "$2")"; cp -P "$FIXTURE_MEMBERS/$2" "squashfs-root/$2" ;;
 esac
 ''')
         script(home/'select','printf "%s\\n" '+'a'*40+' 1 1 1 '+NOW+' https://example.invalid/v1/App.AppImage\n')
@@ -58,6 +59,25 @@ esac
     def remove(self):
         result=subprocess.run(['sh',str(self.home/'apps/demo/remove')],env=self.env,capture_output=True,timeout=20)
         self.assertEqual(result.returncode,0,result.stderr)
+
+    def test_an_icon_link_to_the_build_machines_appdir_resolves_inside_the_appimage(self):
+        # rclone-ui: .DirIcon -> /home/runner/.../Rclone UI.AppDir/Rclone UI.png
+        (self.members/'.DirIcon').unlink()
+        (self.members/'.DirIcon').symlink_to('/home/runner/work/x/bundle/Demo UI.AppDir/Demo UI.png')
+        (self.members/'Demo UI.png').write_text('real-icon')
+        (self.members/'a-main.desktop').write_text(entry('main'))
+        result=self.install()
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertEqual((self.home/'apps/demo/icons/demo').read_text(),'real-icon')
+
+    def test_an_unresolvable_icon_link_installs_without_an_icon(self):
+        (self.members/'.DirIcon').unlink()
+        (self.members/'.DirIcon').symlink_to('/nowhere/missing.png')
+        (self.members/'a-main.desktop').write_text(entry('main'))
+        result=self.install()
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertFalse(os.path.lexists(self.home/'apps/demo/icons/demo'))
+        self.assertIn('demo-AM.desktop',self.installed())
 
     def test_every_launcher_is_installed_and_removed(self):
         # The first in byte order is the main launcher.

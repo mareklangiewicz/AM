@@ -208,14 +208,21 @@ am_package() (
 			fi
 		fi
 	}
+	# A member symlink's target, relative to the AppImage root. An absolute
+	# target names the build machine's AppDir (rclone-ui: /home/runner/...
+	# /Rclone UI.AppDir/Rclone UI.png): keep what follows ".AppDir/".
+	member_link() { readlink "$1" | sed 's|^\./||; s|^/.*\.AppDir/||'; }
 	extract '*.desktop' 1>/dev/null || :
-	extract .DirIcon 1>/dev/null && mv ./squashfs-root/.DirIcon ./DirIcon
+	# The icon is best effort, as in template 3.6 (which has no set -e): the
+	# manager falls back when icons/ stays empty.
+	{ extract .DirIcon 1>/dev/null && mv ./squashfs-root/.DirIcon ./DirIcon; } 2>/dev/null || :
 	COUNT=0
 	while [ -L ./DirIcon ] && [ "$COUNT" -lt 10 ]; do # Tries to get the actual icon if it is a symlink to another symlink
-		LINKPATH="$(readlink ./DirIcon | sed 's|^\./||' 2>/dev/null)"
-		extract "$LINKPATH" 1>/dev/null && mv ./squashfs-root/"$LINKPATH" ./DirIcon
+		LINKPATH=$(member_link ./DirIcon)
+		{ extract "$LINKPATH" 1>/dev/null && mv ./squashfs-root/"$LINKPATH" ./DirIcon; } 2>/dev/null || break
 		COUNT=$((COUNT + 1))
 	done
+	if [ -L ./DirIcon ]; then rm -f ./DirIcon; fi
 	# Every top-level desktop file is a launcher (template 3.6, ticket 37): the
 	# first visible one is $APP-AM.desktop, further ones $APP-2-AM.desktop and
 	# on, NoDisplay=true ones (URL/MIME handlers) $APP-handler[-N]-AM.desktop.
@@ -229,7 +236,7 @@ am_package() (
 	for found in ./squashfs-root/*.desktop; do
 		file=$found COUNT=0
 		while [ -L "$file" ] && [ "$COUNT" -lt 10 ]; do
-			LINKPATH="$(readlink "$file" | sed 's|^\./||' 2>/dev/null)"
+			LINKPATH=$(member_link "$file")
 			extract "$LINKPATH" 1>/dev/null || break
 			file=./squashfs-root/$LINKPATH COUNT=$((COUNT + 1))
 		done
@@ -273,6 +280,6 @@ am_package() (
 		mv ./"$APP".desktop "$target"
 	done
 	rm -R -f ./.am-desktops
-	mv ./DirIcon ./icons/"$APP" 1>/dev/null
+	if [ -e ./DirIcon ]; then mv ./DirIcon ./icons/"$APP"; fi
 	rm -R -f ./squashfs-root
 )
