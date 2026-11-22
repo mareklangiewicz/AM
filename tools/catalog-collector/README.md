@@ -152,11 +152,13 @@ The "Long tests" workflow (`.github/workflows/long-tests.yml`) runs them, the
 fast tier and the Debian and Fedora container e2e in parallel jobs on any push
 to a `ci/*` branch or on dispatch: push the commit to test as `ci/<name>`
 first, then move `main-marek` once it is green with
-`python3 -B tools/release/release.py ship --ci <name> --watch 30`. It refuses
+`python3 -B tools/release/release.py ship --ci <name>`. It refuses
 unless Long tests passed on that exact commit, or on an ancestor that HEAD
 changes only under `docs/` (documentation-only commits need no `--ci`),
 repins `CATALOG_SCHEDULE_REVISION` and dispatches a catalog run
-only when the collection inputs changed, and prints and watches the run ids.
+only when the collection inputs changed, and prints the run ids; follow them
+with `release.py watch RUN_ID ...` (`ship --watch MINUTES` watches in the same
+process, so a caller that kills it loses the ship's output too).
 A change in the `schemas` input scope since `CATALOG_SCHEMA_REVISION` is
 refused unless `--repin-schemas` says the contract transition was reviewed;
 then both pins move before the dispatch (ticket 44), once the live catalog and

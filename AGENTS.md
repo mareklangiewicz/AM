@@ -14,7 +14,7 @@ Single-context layout: `GLOSSARY.md` and `docs/adr/`. Read `docs/agents/domain.m
 
 ### Releases
 
-`tools/release/release.py` ships `main-marek` (see `tools/catalog-collector/README.md`, "Focused verification and maintenance"). Pushing a `ci/<name>` test branch, and deleting it after `ship`, need no approval. Pushing `main-marek` and running `release.py ship` always ask Marek first, with `release.py plan` pasted.
+`tools/release/release.py` ships `main-marek` (see `tools/catalog-collector/README.md`, "Focused verification and maintenance"). Pushing a `ci/<name>` test branch, and deleting it after `ship`, need no approval. Pushing `main-marek` and running `release.py ship` always ask Marek first, with `release.py plan` pasted. Run `ship` without `--watch`, then `release.py watch RUN_ID ...` with the printed ids in the background: a bounded caller that kills `ship --watch` loses the ship's output with it.
 
 ### Tests
 
