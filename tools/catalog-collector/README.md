@@ -80,7 +80,9 @@ new commit. A documentation-only push needs no repin. Dispatched runs are not
 gated. Status retains 64 summaries,
 available detail for eight reports and 90 daily aggregates. Failed reporting may
 leave an older timestamped last report. The workflow does not guarantee schedules,
-refresh coverage or remote history capacity.
+refresh coverage or remote history capacity: the hourly `17 * * * *` schedule
+fired only 2 to 4 times a day in November 2026 (ticket 25), so budget waits on
+retained summaries in days, not hours.
 
 ## Reader and consumer runtime
 
