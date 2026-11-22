@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: claimed
+Status: resolved
 Blocked by: none
 
 ## Outcome
@@ -36,6 +36,18 @@ its receipt.
 
 Pushing, the schedule pin and delivering the changed policy module to an
 installed host need Marek's authorization.
+
+## Answer — November 22, 2026
+
+Shipped as `f556fc7bc` (`release.py ship --ci retro`; Long tests 44969795643
+green, with the new upstream-recipes-deleted job). Catalog run 44972791676
+published `release-catalog-v3` `254786b32`: 16,546 documents, 42 fewer than
+`c269faf5d` and nothing added; the 42 are exactly the `repositories/` and
+`provenance/` documents of the 21 retired sources that had any, as the
+offline rehearsal predicted. 25 sources are retired (`retire_sources.py`), the
+am-utils policy is gone from `modules/catalog-yaml-policy.am`. Not done: the
+changed policy module is not yet delivered to installed hosts. Nine sources
+of the receipt stay, still used under new app names: ticket 46.
 
 ## Comments
 
