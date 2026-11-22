@@ -69,6 +69,12 @@ Built and run locally, not pushed:
   (checked `/opt/NAME/remove` for all 178 names). `APP-MANAGER`'s runtime
   download of am-utils static binaries is separate and unchanged.
 
+Rehearsed on `2bd635d70`'s tree (a throwaway worktree), offline:
+`host_catalog.py collect --parent c269faf5d --batch-size 1` with empty saved
+evidence, 761 s. The candidate validates and differs from the live catalog
+by exactly 42 removed paths, the 21 retired sources' `repositories/` and
+`provenance/` documents; nothing added, no app points at a retired source.
+
 Left for Marek: pushing (the `policy` and `source` inputs change, so the
 schedule pin moves) and delivering the changed policy module to installed
 hosts. Resolve once a catalog run under it drops the 21 documents.
