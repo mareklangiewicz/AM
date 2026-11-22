@@ -47,6 +47,10 @@ class TreeAppImages(test_yaml_appimages.AppImagesCase):
 
     def test_actual_manager_all_saved_matches_and_generated_updaters(self):
         for recipe,row in APPIMAGES.items():
+            # The manager selects a declared recipe by its declaration, never by
+            # this legacy row (catalog-yaml-policy.am checks `declared` first).
+            if '# AM-RECIPE-DECLARATION 1' in (ROOT/'programs'/recipe).read_text().splitlines():
+                continue
             with self.subTest(recipe=recipe):
                 repository=self.repositories[str(row['repository_id'])]
                 self.clock=repository['observed_at']
