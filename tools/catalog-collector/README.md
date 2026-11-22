@@ -55,9 +55,10 @@ moves to `retired` in `source-names.json`, never to be reused. The next
 collection drops its `repositories/` and `provenance/` documents; earlier
 snapshots keep them. A retained source that is neither active nor retired
 refuses the collection. `retire_sources.py` refuses a source that a
-declaration, a URL or AppImage policy, or any recipe's GitHub URL still names:
-upstream renames apps, so a catalog-only row can outlive its app name while
-the source is still in use.
+declaration or a URL or AppImage policy still selects from. A recipe that only
+names the source in a GitHub URL is a warning: upstream renames apps, so a
+catalog-only row may need its app renamed rather than its source retired
+(ticket 46).
 
 Publication against a disposable local test remote:
 

@@ -64,8 +64,12 @@ class Retire(unittest.TestCase):
                 r.retire(self.root, [rid])
         with self.assertRaisesRegex(r.Refused, 'still selected by x86_64/0xfx'):
             r.retire(self.root, [int(DECLARED)])
-        with self.assertRaisesRegex(r.Refused, 'o/plain is still named by programs/aarch64/new-name'):
-            r.retire(self.root, [2, 4])
+
+    def test_a_source_only_a_recipe_url_names_retires_with_a_warning(self):
+        # Upstream renamed the app; its plain recipe still downloads from o/plain.
+        self.assertEqual([row['app'] for row in json.loads(r.retire(self.root, [2, 4])[r.APPS])], ['keep', 'gone.src-3'])
+        self.assertEqual(r.still_named(self.root, [2, 4]), ['source 4 o/plain is still named by programs/aarch64/new-name'])
+        self.assertEqual(r.still_named(self.root, [2]), [])
 
     def test_an_unknown_or_repeated_source_refuses(self):
         with self.assertRaisesRegex(r.Refused, 'not an active source: 9'):

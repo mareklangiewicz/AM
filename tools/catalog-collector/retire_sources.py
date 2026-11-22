@@ -8,9 +8,10 @@ from `active` to `retired` in source-names.json, so it is never reused. The
 next collection drops its documents from the published catalog; earlier
 snapshots keep them. A source missing from enrollment without this step still
 refuses there. A source a recipe still selects from refuses here: a
-declaration, a recipe URL policy, an AppImage policy, or any recipe naming
-its repository in a GitHub URL (upstream renames apps, so a catalog-only row
-can outlive its app name while the source stays in use). The files change;
+declaration, a recipe URL policy or an AppImage policy. A recipe that only
+names its repository in a GitHub URL is a warning: the source retires, and
+the warning says which recipe to look at (upstream renames apps, so a
+catalog-only row may just need its app renamed instead). The files change;
 nothing is committed.
 """
 import argparse
@@ -55,19 +56,27 @@ def retire(root, rids):
         if str(row['repository_id']) in rids:
             raise Refused('source '+str(row['repository_id'])+' is still selected by '+row['recipe'])
     before = read(root, APPS)
-    repositories = {row['repository'].lower(): str(row['repository_id']) for row in before
-                    if str(row['repository_id']) in rids}
-    if repositories:
-        named = re.compile(r'github\.com/(?:repos/)?('+'|'.join(map(re.escape, repositories))+r')(?![A-Za-z0-9_.-])')
-        for path in sorted(path for arch in ARCHES for path in (root/'programs'/arch).glob('*') if path.is_file()):
-            found = named.search(path.read_text(encoding='utf-8', errors='replace').lower())
-            if found:
-                raise Refused('source '+repositories[found[1]]+' '+found[1]+' is still named by '
-                              + str(path.relative_to(root)))
     apps = [row for row in before if str(row['repository_id']) not in rids]
     retired = registry['retired']+[registry['active'][rid] for rid in rids]
     active = {rid: name for rid, name in registry['active'].items() if rid not in rids}
     return {APPS: rows_json(apps), NAMES: names_json(dict(active=active, retired=retired))}
+
+
+def still_named(root, rids):
+    """Warnings for retiring sources a recipe still names in a GitHub URL."""
+    rids = [str(rid) for rid in rids]
+    repositories = {row['repository'].lower(): str(row['repository_id']) for row in read(root, APPS)
+                    if str(row['repository_id']) in rids}
+    if not repositories:
+        return []
+    named = re.compile(r'github\.com/(?:repos/)?('+'|'.join(map(re.escape, repositories))+r')(?![A-Za-z0-9_.-])')
+    warnings = []
+    for path in sorted(path for arch in ARCHES for path in (root/'programs'/arch).glob('*') if path.is_file()):
+        found = named.search(path.read_text(encoding='utf-8', errors='replace').lower())
+        if found:
+            warnings.append('source '+repositories[found[1]]+' '+found[1]+' is still named by '
+                            + str(path.relative_to(root)))
+    return warnings
 
 
 def main(argv=None):
@@ -81,6 +90,8 @@ def main(argv=None):
     except Refused as refusal:
         print('refused: '+str(refusal), file=sys.stderr)
         return 2
+    for warning in still_named(args.root, args.rids):
+        print('warning: '+warning, file=sys.stderr)
     registry = read(args.root, NAMES)
     before = read(args.root, APPS)
     for rid in map(str, args.rids):
