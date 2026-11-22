@@ -49,6 +49,16 @@ allowance, 100-request primary reserve, 512 MiB charged-body budget, 16 MiB per
 response and 900-second cooperative time allowance. Actual quota/budgets and
 401/403/429 stops still apply; no redirects, retries or fabricated observations.
 
+A source leaves collection only through `retire_sources.py RID ... [--write]`
+(ticket 21): its catalog-only rows leave `collection-apps.json` and its name
+moves to `retired` in `source-names.json`, never to be reused. The next
+collection drops its `repositories/` and `provenance/` documents; earlier
+snapshots keep them. A retained source that is neither active nor retired
+refuses the collection. `retire_sources.py` refuses a source that a
+declaration, a URL or AppImage policy, or any recipe's GitHub URL still names:
+upstream renames apps, so a catalog-only row can outlive its app name while
+the source is still in use.
+
 Publication against a disposable local test remote:
 
 ```sh

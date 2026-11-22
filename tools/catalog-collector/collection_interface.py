@@ -49,8 +49,12 @@ def verify_checkout_inputs(inputs, registry):
         if changed or untracked: raise ValueError('checkout differs from '+key+' input pin')
 
 
+def read_registry(path):
+    return json.loads(Path(path).read_text(encoding='utf-8'),object_pairs_hook=unique_object)
+
+
 def registry_names(rows, path):
-    registry=json.loads(Path(path).read_text(encoding='utf-8'),object_pairs_hook=unique_object)
+    registry=read_registry(path)
     if set(registry)!= {'active','retired'} or not isinstance(registry['retired'],list):
         raise ValueError('source registry')
     names=registry['active']
@@ -70,7 +74,7 @@ def write_tree(directory, tree):
         path=directory/name; path.parent.mkdir(parents=True,exist_ok=True); path.write_bytes(body)
 
 
-def rebind_retained_sources(prior, changed, revision):
+def rebind_retained_sources(prior, changed, revision, removed=()):
     """An explicit schema transition preserves every retained fact and timestamp.
 
     Decode/re-encode under the checked-out contract: incompatible retained facts
@@ -80,7 +84,7 @@ def rebind_retained_sources(prior, changed, revision):
     if prior is None or prior.metadata['catalog.yaml']['root']['inputs']['schemas']==revision:
         return
     for path in prior:
-        if path.startswith('repositories/') and path not in changed:
+        if path.startswith('repositories/') and path not in changed and path not in removed:
             doc=contracts.decode(prior[path])
             doc['schema']=contracts.header('repository',revision)['schema']
             raw=contracts.encode(doc)
@@ -109,8 +113,17 @@ def collect(args):
     if any(type(value) is not int or value<1 for value in profile.values()): raise ValueError('collection profile')
     rows,sources=host.configuration(source_cap=args.source_cap)
     names=registry_names(rows,args.registry)
+    retired=set(read_registry(args.registry)['retired'])
+    # A retired source's documents leave this snapshot; earlier ones keep them
+    # (ticket 21). Any other retained source must still be active.
+    removed=set()
     for path,obj in (prior.metadata.items() if prior else ()):
-        if path.startswith('repositories/') and names.get(str(obj['repository_id']))+'.yaml'!=path.removeprefix('repositories/'):
+        if not path.startswith('repositories/'):continue
+        rid=str(obj['repository_id']);name=path.removeprefix('repositories/').removesuffix('.yaml')
+        if rid not in names:
+            if name not in retired: raise ValueError('retained source '+name+' is neither active nor retired')
+            removed.update((path,contracts.provenance_path(path)));del retained[rid]
+        elif names[rid]!=name:
             raise ValueError('source registry changed identity')
     acquired={}; metrics={}
     acquisition_report=host.collect(retained,args.evidence,batch_size=args.batch_size,
@@ -147,8 +160,8 @@ def collect(args):
                            review=reviews.get(row['app'],{}).get(arch))
                            for arch in ('x86_64','aarch64','i686','armv7l')} for row in rows if row['app'] in apps}
     tree.update(contracts.partition_provenance(apps,provenance,inputs['schemas']))
-    rebind_retained_sources(prior,tree,inputs['schemas'])
-    tree=Candidate(prior,tree)
+    rebind_retained_sources(prior,tree,inputs['schemas'],removed)
+    tree=Candidate(prior,tree,removed=removed)
     write_tree(args.output/'format-3',tree)
     evidence=dict(version=1,started_at=started_at,reported_at=host.utc(),run=dict(id=args.run_id,attempt=args.attempt),inputs=inputs,
                   parents=dict(format_3=args.parent),
