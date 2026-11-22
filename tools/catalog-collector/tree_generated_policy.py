@@ -3,8 +3,8 @@
 Hosts fetch the policy module from the branch, so it stays committed although
 it is derived (ticket 29): from the recipe declarations, the URL policies and
 the AppImage policies. A hand edit, or a source change without regeneration,
-fails here. The committed row files keep rows_json's layout. It reads the
-whole tree but takes seconds, so it runs in the Fast tier.
+fails here. The committed row files keep rows_json's layout. It follows
+whatever the tree holds: `-p 'tree_*.py'`.
 """
 import json
 from pathlib import Path
