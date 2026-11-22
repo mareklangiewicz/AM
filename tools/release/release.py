@@ -2,14 +2,15 @@
 
     python3 -B tools/release/release.py ship [--ci NAME] [--repin-schemas] [--watch MINUTES]
     python3 -B tools/release/release.py plan [--ci NAME] [--repin-schemas]     what ship would do; writes nothing
-    python3 -B tools/release/release.py watch [RUN_ID ...] [--minutes N]
+    python3 -B tools/release/release.py watch [RUN_ID ... | --ci NAME] [--minutes N]
 
 Exit codes of a watch: 0 all green, 1 a run failed, 3 still running at the
 deadline (it prints the watch command that continues).
 
 Run from a main-marek checkout whose HEAD is the commit to ship. A commit that
 changes anything outside docs/ needs `--ci NAME`: `ci/NAME` on origin must be
-HEAD and its latest Long tests run on HEAD must have succeeded. The schedule
+HEAD, or an ancestor that HEAD changes only under docs/, and its latest Long
+tests run on that commit must have succeeded. The schedule
 pin moves, and a catalog run is dispatched, only when the collection inputs
 differ from the pin (the gate's own list, ticket 22).
 
@@ -84,6 +85,27 @@ def appeared(run, find, sleep, what):
     raise RuntimeError(what+' did not appear within '+str(APPEAR_SECONDS)+' s')
 
 
+def outside_docs(run, old, new):
+    return [path for path in output(run, ['git', 'diff', '--name-only', old, new]).splitlines()
+            if not path.startswith('docs/')]
+
+
+def long_tests(run, branch, commit, fields):
+    """The latest Long tests run of `commit` on `branch` (by sha: the latest
+    on the branch can be the previous commit's), as a list of 0 or 1 rows."""
+    return runs(run, '--workflow', 'long-tests.yml', '--branch', branch, '--commit', commit,
+                '--limit', '1', '--json', fields)
+
+
+def long_tests_run(run, ci, sleep=time.sleep):
+    """{'Long tests': id} of HEAD on ci/NAME, waiting for a just-pushed run to appear."""
+    head = output(run, ['git', 'rev-parse', 'HEAD']).strip()
+    branch = 'ci/'+ci
+    found = appeared(run, lambda: next((row['databaseId'] for row in long_tests(run, branch, head, 'databaseId')), None),
+                     sleep, 'Long tests run on '+branch+' for '+head)
+    return {'Long tests': found}
+
+
 def read_tree(sha, repo='.'):
     """{path: bytes} of one commit, through a single cat-file --batch."""
     rows = subprocess.check_output(['git', '-C', repo, 'ls-tree', '-r', '-z', '--format=%(objectname) %(path)', sha],
@@ -128,17 +150,24 @@ def decide(run, ci=None, out=say, repin_schemas=False, validate=None):
         raise Refused('HEAD is not a fast-forward of origin/'+BRANCH)
     if ci:
         branch = 'ci/'+ci
-        remote = output(run, ['git', 'ls-remote', 'origin', 'refs/heads/'+branch]).split()
-        if remote[:1] != [head]:
-            raise Refused('origin '+branch+' is not HEAD; push HEAD there and wait for Long tests')
-        latest = runs(run, '--workflow', 'long-tests.yml', '--branch', branch, '--commit', head,
-                      '--limit', '1', '--json', 'databaseId,status,conclusion')
+        tip = output(run, ['git', 'ls-remote', 'origin', 'refs/heads/'+branch]).split()[:1]
+        if not tip:
+            raise Refused('origin has no '+branch+'; push HEAD there and wait for Long tests')
+        tip = tip[0]
+        if tip != head:
+            if run(['git', 'merge-base', '--is-ancestor', tip, head])[0]:
+                raise Refused('origin '+branch+' is not HEAD or an ancestor of it; push HEAD there and wait for'
+                              ' Long tests')
+            code = outside_docs(run, tip, head)
+            if code:
+                raise Refused('HEAD changes more than docs/ since '+branch+': '+', '.join(code[:10]))
+        latest = long_tests(run, branch, tip, 'databaseId,status,conclusion')
         if not latest or (latest[0]['status'], latest[0]['conclusion']) != ('completed', 'success'):
-            raise Refused('Long tests on '+branch+' are not green for HEAD: '+json.dumps(latest))
-        out('Long tests '+str(latest[0]['databaseId'])+' green on '+branch)
+            raise Refused('Long tests on '+branch+' are not green for '+tip+': '+json.dumps(latest))
+        out('Long tests '+str(latest[0]['databaseId'])+' green on '+branch
+            + ('' if tip == head else ' at '+tip+'; HEAD adds only docs/'))
     else:
-        code = [path for path in output(run, ['git', 'diff', '--name-only', base, head]).splitlines()
-                if not path.startswith('docs/')]
+        code = outside_docs(run, base, head)
         if code:
             raise Refused('changes outside docs/ need --ci NAME (a green Long tests run): '+', '.join(code[:10]))
     pin = gh(run, 'variable', 'get', PIN).strip()
@@ -288,10 +317,13 @@ def main(argv=None):
     command.add_argument('--watch', type=float, metavar='MINUTES', help='then wait for the runs, at most this long')
     resume = sub.add_parser('watch', help='watch runs (default: every run on origin/main-marek) until done')
     resume.add_argument('ids', nargs='*', metavar='RUN_ID')
+    resume.add_argument('--ci', metavar='NAME', help='watch the Long tests run of HEAD on ci/NAME')
     resume.add_argument('--minutes', type=float, default=30)
     args = parser.parse_args(argv)
     if args.operation == 'watch':
-        ids = named(args.ids) if args.ids else pushed_runs(system)
+        if args.ci and args.ids:
+            parser.error('watch takes RUN_IDs or --ci, not both')
+        ids = long_tests_run(system, args.ci) if args.ci else named(args.ids) if args.ids else pushed_runs(system)
         if not ids:
             raise SystemExit('no runs to watch')
         raise SystemExit(EXIT[watch(system, ids, args.minutes)])

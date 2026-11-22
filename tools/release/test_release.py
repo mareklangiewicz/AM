@@ -8,6 +8,7 @@ HEAD = 'h'*40
 BASE = 'b'*40
 PIN = 'p'*40
 SCHEMA_PIN = 's'*40
+TIP = 't'*40  # ci/x behind HEAD
 R = ['-R', release.REPO]
 GATE = ['git', 'diff', '--name-only', PIN, HEAD, '--', *release.schedule_gate_paths()]
 # The collector refuses a checkout whose schemas scope differs from this pin.
@@ -47,6 +48,23 @@ GREEN_CI = [
       '--limit', '1', '--json', 'databaseId,status,conclusion', *R],
      ok([dict(databaseId=11, status='completed', conclusion='success')])),
 ]
+
+
+def long_tests(commit, rows):
+    return (['gh', 'run', 'list', '--workflow', 'long-tests.yml', '--branch', 'ci/x', '--commit', commit,
+             '--limit', '1', '--json', 'databaseId,status,conclusion', *R], ok(rows))
+
+
+GREEN = [dict(databaseId=11, status='completed', conclusion='success')]
+
+
+def tip_behind(diff):
+    """ci/x at TIP, an ancestor of HEAD, and the paths HEAD changed since."""
+    return [(['git', 'ls-remote', 'origin', 'refs/heads/ci/x'], TIP+'\trefs/heads/ci/x\n'),
+            (['git', 'merge-base', '--is-ancestor', TIP, HEAD], ''),
+            (['git', 'diff', '--name-only', TIP, HEAD], diff)]
+
+
 PUSH = [(['git', 'push', 'origin', 'HEAD:refs/heads/main-marek'], '')]
 PIN_READ = [(['gh', 'variable', 'get', 'CATALOG_SCHEDULE_REVISION', *R], PIN+'\n')]
 
@@ -109,8 +127,14 @@ class Refusals(unittest.TestCase):
                      'modules/appimage.am')
 
     def test_ci_branch_elsewhere(self):
-        self.refused(START+[(['git', 'ls-remote', 'origin', 'refs/heads/ci/x'], BASE+'\trefs/heads/ci/x\n')],
-                     'ci/x', ci='x')
+        self.refused(START+tip_behind('')[:1]+[(['git', 'merge-base', '--is-ancestor', TIP, HEAD], (1, ''))],
+                     'ci/x is not HEAD or an ancestor', ci='x')
+
+    def test_ci_branch_behind_head_by_code(self):
+        self.refused(START+tip_behind('docs/a.md\nmodules/appimage.am\n'), 'since ci/x: modules/appimage.am$', ci='x')
+
+    def test_ci_branch_behind_head_by_docs_but_not_green(self):
+        self.refused(START+tip_behind('docs/a.md\n')+[long_tests(TIP, [])], 'Long tests', ci='x')
 
     def test_ci_branch_missing(self):
         self.refused(START+[(['git', 'ls-remote', 'origin', 'refs/heads/ci/x'], '')], 'ci/x', ci='x')
@@ -165,6 +189,12 @@ class Ship(unittest.TestCase):
                               + SCHEMA_REPIN+REPIN[1:]+FAST, ci='x', repin_schemas=True)
         self.assertEqual(run.script, [])
         self.assertEqual(result, dict(fast=21, catalog=31))
+
+    def test_documentation_after_the_tested_commit_ships_on_its_long_tests(self):
+        run, result, lines = ship(START+tip_behind('docs/a.md\n')+[long_tests(TIP, GREEN)]+pins('')+PUSH+FAST, ci='x')
+        self.assertEqual(run.script, [])
+        self.assertEqual(result, dict(fast=21))
+        self.assertIn('Long tests 11 green on ci/x at '+TIP+'; HEAD adds only docs/', lines)
 
     def test_documentation_only_needs_no_ci(self):
         run, result, _ = ship(START+[(['git', 'diff', '--name-only', BASE, HEAD], 'docs/a.md\ndocs/track/b.md\n')]
@@ -344,6 +374,13 @@ class Resume(unittest.TestCase):
                  dict(databaseId=12, workflowName='Fast tests')])),  # gh lists newest first
         ])
         self.assertEqual(release.pushed_runs(run), {'Fast tests': 21, 'YAML release catalog': 31})
+        self.assertEqual(run.script, [])
+
+    def test_ci_finds_the_long_tests_run_of_head_not_the_latest_on_the_branch(self):
+        listed = (['gh', 'run', 'list', '--workflow', 'long-tests.yml', '--branch', 'ci/x', '--commit', HEAD,
+                   '--limit', '1', '--json', 'databaseId', *R])
+        run = Fake([(['git', 'rev-parse', 'HEAD'], HEAD+'\n'), (listed, ok([])), (listed, ok([dict(databaseId=13)]))])
+        self.assertEqual(release.long_tests_run(run, 'x', sleep=lambda s: None), {'Long tests': 13})
         self.assertEqual(run.script, [])
 
     def test_given_ids_are_watched_as_they_are(self):

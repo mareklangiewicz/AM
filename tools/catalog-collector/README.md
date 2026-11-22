@@ -142,8 +142,9 @@ fast tier and the Debian and Fedora container e2e in parallel jobs on any push
 to a `ci/*` branch or on dispatch: push the commit to test as `ci/<name>`
 first, then move `main-marek` once it is green with
 `python3 -B tools/release/release.py ship --ci <name> --watch 30`. It refuses
-unless Long tests passed on that exact commit (documentation-only commits need
-no `--ci`), repins `CATALOG_SCHEDULE_REVISION` and dispatches a catalog run
+unless Long tests passed on that exact commit, or on an ancestor that HEAD
+changes only under `docs/` (documentation-only commits need no `--ci`),
+repins `CATALOG_SCHEDULE_REVISION` and dispatches a catalog run
 only when the collection inputs changed, and prints and watches the run ids.
 A change in the `schemas` input scope since `CATALOG_SCHEMA_REVISION` is
 refused unless `--repin-schemas` says the contract transition was reviewed;
@@ -154,7 +155,9 @@ also says whether the deployed browser's `definitions.mjs` matches HEAD's.
 (the refusal, or the push and whether each pin moves, with the changed inputs)
 and writes nothing.
 `release.py watch [RUN_ID ...]` continues a watch (by default every run on
-`origin/main-marek`); exit 3 means still running at the deadline, not failed.
+`origin/main-marek`); `release.py watch --ci <name>` watches the Long tests run
+of HEAD on `ci/<name>`, waiting for a just-pushed one to appear; exit 3 means
+still running at the deadline, not failed.
 A single file:
 
 ```sh
