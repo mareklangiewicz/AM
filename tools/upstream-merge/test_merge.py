@@ -140,6 +140,22 @@ class Lists(unittest.TestCase):
             with self.assertRaises(m.Problem):m.owned_paths(source)
 
 
+class UpstreamRecipes(unittest.TestCase):
+    def test_every_recipe_an_upstream_merge_can_touch_and_nothing_else(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root=Path(temporary)
+            files={'programs/x86_64/a':'a\n','programs/x86_64/with space':'s\n','programs/x86_64/zmx':'mine\n',
+                   'programs/aarch64/b':'b\n','programs/x86_64-apps':'list\n','programs/riscv64/c':'c\n',
+                   m.OWNED:'# note\nprograms/x86_64/zmx\n'}
+            for path,data in files.items():
+                (root/path).parent.mkdir(parents=True,exist_ok=True);(root/path).write_text(data,encoding='utf-8')
+            git=['git','-C',temporary,'-c','user.name=t','-c','user.email=t@example.org']
+            subprocess.run(['git','init','-q',temporary],check=True)
+            subprocess.run([*git,'add','.'],check=True);subprocess.run([*git,'commit','-qm','x'],check=True)
+            self.assertEqual(m.upstream_recipes(root,'HEAD'),
+                             ['programs/aarch64/b','programs/x86_64/a','programs/x86_64/with space'])
+
+
 class Gate(unittest.TestCase):
     """A small real Git merge, with the receipt its plan would write."""
 

@@ -139,3 +139,7 @@ declaration` must produce `d85c3851b`'s 579 declarations (ticket 32). They
 read pinned commits, not the live tree, so they sit in the Fast tier
 (`tools/fast-tests.sh`). Run them after touching anything `merge.py` reads: a
 moved fork-side file needs an entry in `merge.MOVED`.
+
+Long tests also run the whole Fast tier with every path `merge.py
+upstream-recipes` prints deleted and committed: no Fast test may read a recipe
+an upstream merge can change (ticket 28).

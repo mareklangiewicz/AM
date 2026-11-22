@@ -4,6 +4,7 @@
     merge.py plan  --upstream REV --receipt FILE   dry run; changes nothing
     merge.py apply --upstream REV --receipt FILE   start the merge, write programs/
     merge.py gate  --receipt FILE                  check the merge before committing
+    merge.py upstream-recipes [--revision REV]     every recipe a merge can touch, one per line
 
 Upstream decides which recipes exist and what each original says. A recipe the
 fork converted is never merged by hand: upstream's new text is converted again,
@@ -103,6 +104,15 @@ def owned_paths(source):
     if len(set(paths))!=len(paths) or any(not RECIPE.fullmatch(path) for path in paths):
         raise Problem('fork-owned list needs unique programs/ARCH/APP lines')
     return set(paths)
+
+
+def upstream_recipes(root,revision):
+    """Every recipe path at a revision that an upstream merge can touch: all of
+    programs/ARCH/ except the fork-owned list. Long tests delete them all to
+    show the Fast tier reads none of them (ticket 28)."""
+    listed=git(root,'ls-tree','-r','-z','--name-only',revision,'--',*('programs/'+arch for arch in ARCHES)).stdout
+    owned=owned_paths(text(root,revision,OWNED))
+    return sorted(path for path in listed.decode().split('\0') if RECIPE.fullmatch(path) and path not in owned)
 
 
 def reconvert(recipe,base,ours,theirs,rows,templates):
@@ -413,8 +423,14 @@ def main(argv=None):
         command.add_argument('--repo',type=Path,default=ROOT)
         command.add_argument('--recipes',type=Path,help='per-recipe listing; apply and gate default to a file inside the Git directory')
         if name!='gate':command.add_argument('--upstream',required=True)
+    listed=commands.add_parser('upstream-recipes',help='print every recipe path an upstream merge can touch')
+    listed.add_argument('--repo',type=Path,default=ROOT)
+    listed.add_argument('--revision',default='HEAD')
     args=parser.parse_args(argv)
     try:
+        if args.command=='upstream-recipes':
+            print(''.join(path+'\n' for path in upstream_recipes(args.repo,args.revision)),end='')
+            return 0
         if args.command=='gate':
             failures=gate(args.repo,with_listing(json.loads(args.receipt.read_text()),args.recipes or listing_path(args.repo)))
             print('\n'.join(failures) if failures else 'gate: recipes, fork files and fork marks agree with the receipt')
