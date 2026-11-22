@@ -4,6 +4,7 @@ from datetime import datetime
 import json
 import os
 from pathlib import Path
+import re
 import shutil
 import subprocess
 import sys
@@ -227,16 +228,22 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\napp=${0##
         cleanup=manager[manager.index('_clean_old_modules() {'):manager.index('\n_clean_amcachepath() {')]
         sync=manager[manager.index('_sync_modules() {'):manager.index('\n_sync_amcli() {')]
         harness=self.path/'sync-runtime'
-        harness.write_text(cleanup+'\n'+sync+'\n_use_online_downloader() { cp "$SOURCE_MODULES/${1##*/}" "$2"; }\n_use_online_reading_tool() { cat "$SOURCE_MODULES/${1##*/}"; }\nAMCLI_ONLINE_CONTENT=$(cat "$MANAGER_SOURCE")\n_sync_modules\n')
+        harness.write_text(cleanup+'\n'+sync+'\n_use_online_downloader() { cp "$SOURCE_MODULES/${1##*/}" "$2"; }\n_use_online_reading_tool_strict() { cat "$SOURCE_MODULES/${1##*/}" 2>/dev/null; }\nAMCLI_ONLINE_CONTENT=$(cat "$MANAGER_SOURCE")\n_sync_modules\n')
         obsolete=self.module_dir/'obsolete.am';obsolete.write_text('old')
         (self.module_dir/'catalog-contract-parser.am').unlink()
-        (self.module_dir/'catalog-yaml-policy.am').write_text('# AMCLI old\n')
-        (self.module_dir/'appimage.am').write_text('# AMCLI stale installer\n')
-        env={**self.env(),'SOURCE_MODULES':str(ROOT/'modules'),'MANAGER_SOURCE':str(ROOT/'APP-MANAGER'),
+        # Stale copies without the AMCLI marker: sync must refresh every shipped
+        # module by fetch success, not by a marker some modules never carry.
+        shipped=sorted(set(re.findall(r'"([a-z-]+\.am)"',manager)))
+        for name in shipped:
+            if name!='catalog-contract-parser.am': (self.module_dir/name).write_text('# stale\n')
+        source_modules=self.path/'source-modules';shutil.copytree(ROOT/'modules',source_modules)
+        (source_modules/'template.am').unlink() # its fetch fails: keep the installed copy
+        env={**self.env(),'SOURCE_MODULES':str(source_modules),'MANAGER_SOURCE':str(ROOT/'APP-MANAGER'),
             'MODULES_SOURCE':SOURCE+'/modules','MODULES_PATH':str(self.module_dir),'DIVIDING_LINE':''}
         r=subprocess.run(['/bin/bash',str(harness)],env=env,capture_output=True)
         self.assertEqual(r.returncode,0,r.stderr);self.assertFalse(obsolete.exists())
-        for name in (*RUNTIME, 'appimage.am'):
+        self.assertEqual((self.module_dir/'template.am').read_text(),'# stale\n')
+        for name in (n for n in shipped if n!='template.am'):
             self.assertEqual((self.module_dir/name).read_bytes(),(ROOT/'modules'/name).read_bytes())
         for tool in ('git','python','python3','jq'):
             self.script(tool,"raise RuntimeError('forbidden runtime dependency')\n")

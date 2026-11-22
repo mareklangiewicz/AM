@@ -195,6 +195,17 @@ _use_online_reading_tool() {
 	fi
 }
 
+# Print a URL's content; fail on HTTP errors, so an error page is never content
+_use_online_reading_tool_strict() {
+	if command -v curl >/dev/null 2>&1; then
+		curl -fLs "$1" 2>/dev/null
+	elif command -v wget >/dev/null 2>&1; then
+		wget -q -O - "$1" 2>/dev/null
+	else
+		return 1
+	fi
+}
+
 # Download files
 _use_online_downloader() {
 	if command -v curl >/dev/null 2>&1; then
@@ -1902,8 +1913,8 @@ _sync_modules() {
 			_use_online_downloader "$MODULES_SOURCE/$module_name" ./"$module_name" 2>/dev/null
 		fi
 		CURRENT=$(cat ./"$module_name" 2>/dev/null)
-		SOURCE=$(_use_online_reading_tool "$MODULES_SOURCE/$module_name")
-		if grep -q AMCLI <<< "$SOURCE"; then
+		# Fetch success, not a content marker: not every module carries "AMCLI"
+		if SOURCE=$(_use_online_reading_tool_strict "$MODULES_SOURCE/$module_name") && [ -n "$SOURCE" ]; then
 			if [ "$CURRENT" = "$SOURCE" ]; then
 				echo -ne "\r" 2>/dev/null
 			else
