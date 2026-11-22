@@ -47,3 +47,10 @@ authorization.
 ## Comments
 
 November 16, 2026: opened from the ticket 16 review.
+
+November 22, 2026: Marek decided. Failed attempts rotate: a failure's time
+counts for selection like a success, so a failing source is retried once per
+full cycle (no backoff, no auto-retire). Same-tag conflicts keep the newest
+release per tag (latest published time, ties to the higher id), no format
+change. The two oversized sources get smaller pages (fewer releases per
+request, named sources only); the 16 MiB bound stays.
