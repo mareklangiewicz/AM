@@ -128,13 +128,14 @@ need Marek's authorization.
 ## Tests
 
 ```sh
-python3 -B -m unittest discover -s tools/upstream-merge -p 'test_*.py'   # fast
-python3 -B -m unittest discover -s tools/upstream-merge -p 'tree_*.py'   # replays, under a minute
+python3 -B -m unittest discover -s tools/upstream-merge -p 'test_*.py'
 ```
 
-`tree_relayout.py` replays the two re-conversions that shipped: on
+`test_relayout_replays.py` (about 30 seconds) replays the two re-conversions that shipped: on
 `cf6255fc3`, `--layout bb53f3180 --from long` must produce `082502f64`'s
 1,171 recipes, `recipe-url-policies.json` and `catalog-yaml-policy.am` byte
 for byte (ticket 33); on `d85c3851b^`, `--layout cf50304fc:templates/AM-SAMPLE-AppImage --from
-declaration` must produce `d85c3851b`'s 579 declarations (ticket 32). The
-"Long tests" workflow runs them.
+declaration` must produce `d85c3851b`'s 579 declarations (ticket 32). They
+read pinned commits, not the live tree, so they sit in the Fast tier
+(`tools/fast-tests.sh`). Run them after touching anything `merge.py` reads: a
+moved fork-side file needs an entry in `merge.MOVED`.

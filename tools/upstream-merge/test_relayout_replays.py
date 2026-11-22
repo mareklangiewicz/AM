@@ -1,4 +1,4 @@
-"""Whole-tree replays: relayout reproduces the two re-conversions that shipped.
+"""Replays of pinned commits: relayout reproduces the two re-conversions that shipped.
 
 Ticket 33 converted the long recipes that are instances of layout bb53f3180
 (082502f64, on cf6255fc3). Ticket 32 added DESKTOP_STRIP_NO_SANDBOX=true to

@@ -1,6 +1,6 @@
-# Lint for the fork's Python (tools/, test/), run by Fast tests and Long tests:
-#   uvx ruff@0.17.4 check tools test
+# Lint for the fork's Python (tools/, test/), run by tools/fast-tests.sh.
 # Only rules that caught real dead weight here; widen deliberately.
+required-version = "==0.17.4"
 target-version = "py312"
 
 [lint]

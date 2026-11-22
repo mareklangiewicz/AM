@@ -28,16 +28,10 @@ jobs:
           python-version: '3.12'
       - run: python3 -m pip install 'PyYAML==6.0.3' 'jsonschema==4.19.2' 'ruff==0.17.4'
       - run: sudo apt-get install --yes --no-install-recommends mawk gawk busybox
-      - name: Lint (ruff.toml)
-        run: ruff check tools test
-      - name: Tool suites
-        run: |
-          set -euo pipefail
-          for suite in tools/recipe-conversion tools/recipe-reconstruction tools/upstream-merge tools/release test/e2e; do
-            python3 -B -m unittest discover -s "$suite" -p 'test_*.py'
-          done
-      - name: Collector fast tier
-        run: python3 -B -m unittest discover -s tools/catalog-collector -p 'test_*.py'
+      - name: Fast tier (tools/fast-tests.sh)
+        env:
+          RUFF: ruff
+        run: tools/fast-tests.sh
   tree:
     if: github.repository == 'mareklangiewicz/AM'
     runs-on: ubuntu-24.04
@@ -56,8 +50,6 @@ jobs:
       - run: sudo apt-get install --yes --no-install-recommends mawk gawk busybox
       - name: Collector whole-tree tier
         run: python3 -B -m unittest discover -s tools/catalog-collector -p 'tree_*.py'
-      - name: Relayout replays
-        run: python3 -B -m unittest discover -s tools/upstream-merge -p 'tree_*.py'
   e2e:
     if: github.repository == 'mareklangiewicz/AM'
     runs-on: ubuntu-24.04
