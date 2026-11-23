@@ -32,6 +32,10 @@ An observation time shared by releases that have no individual exception. Changi
 **Release selection rule**:
 A client's explicit rule for choosing among cataloged releases, such as publication time, version, prerelease status, or source-specific conventions.
 
+**Digest prefix**:
+The first 16 hexadecimal digits of an asset's SHA-256, recorded to notice that an artifact changed. It does not verify a download.
+_Avoid_: digest, checksum (for the prefix)
+
 **Collection time**:
 The time a repository's requested collection scope completed successfully. It does not establish the freshness of releases untouched by that collection.
 
