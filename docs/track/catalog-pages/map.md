@@ -1,5 +1,11 @@
 # Public catalog browser on GitHub Pages
 
+## Simplification — November 23, 2026
+
+[Simple, understandable catalog](../catalog-simplification/map.md) now owns
+simplifying the catalog's rules, layout, formats, schemas and the "How it works" text. Where its
+decisions differ from this map's, they supersede them.
+
 Label: wayfinder:map
 
 ## Current planning entry point

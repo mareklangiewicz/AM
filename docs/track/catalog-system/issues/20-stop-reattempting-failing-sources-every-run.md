@@ -54,3 +54,9 @@ full cycle (no backoff, no auto-retire). Same-tag conflicts keep the newest
 release per tag (latest published time, ties to the higher id), no format
 change. The two oversized sources get smaller pages (fewer releases per
 request, named sources only); the 16 MiB bound stays.
+
+November 23, 2026: the same-tag line above is withdrawn. "Keep newest" would
+have contradicted ADR 0002, and Marek then chose a facts-only catalog instead:
+the same-tag question moved to the simplification map's
+[Record same-tag and removed releases as facts](../../catalog-simplification/issues/07-same-tag-and-removed-releases-as-facts.md).
+Rotation and smaller pages for the two oversized sources stand.

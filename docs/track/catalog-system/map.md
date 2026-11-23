@@ -1,5 +1,11 @@
 # Understandable catalog system and educational browser
 
+## Simplification — November 23, 2026
+
+[Simple, understandable catalog](../catalog-simplification/map.md) now owns
+simplifying the catalog's rules, layout, formats and schemas. Where its
+decisions differ from this map's, they supersede them.
+
 ## Full GitHub migration — reopened November 9, 2026
 
 Marek now requests migration of all GitHub-backed apps into one consistent v3
