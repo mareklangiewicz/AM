@@ -49,8 +49,10 @@ def decode(path,raw,channel):
     expected=path[:-5] if '/' not in path else 'provenance' if path.startswith('provenance/') else 'repository'
     if obj['kind']!=expected: raise ValueError('catalog kind/path')
     if expected!='repository': return obj,dict(root=obj)
+    # The latest attempt, success or failure, orders collection (rotation).
     meta=dict(repository_id=obj['repository_id'],repository=obj['repository'],
-              attempted_at=obj['collected_at'],completed_at=obj['collected_at'],schema=obj['schema'])
+              attempted_at=max(obj.get('collected_at',''),obj.get('failed_at','')),schema=obj['schema'])
+    if 'collected_at' in obj: meta['completed_at']=obj['collected_at']
     return obj,meta
 
 

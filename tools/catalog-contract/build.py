@@ -59,8 +59,11 @@ def root(kind, version, fields):
     return obj(kind,dict(format=scalar('integer',const=version),schema=(SCHEMA(3) if version==3 else scalar('string',pattern='^https://raw\\.githubusercontent\\.com/mareklangiewicz/AM/[0-9a-f]{40}/docs/catalog-status-v1\\.md$')),kind=scalar('string',const=kind),**fields))
 root('catalog',3,dict(inputs=INPUTS,producer=RUN,retention=scalar('string',const='32-plus-stable-exact-tag-v1')))
 root('apps',3,dict(apps=table('app_paths','^'+NAME+'$',PATH)))
-root('repository',3,dict(repository_id=ID,repository=scalar('string',pattern='^[A-Za-z0-9-]+/[A-Za-z0-9_.-]+$'),collected_at=TIME,scope=SCOPE,observed_at=TIME,releases=RELEASES,git_scope=GIT_SCOPE,git_refs=GIT_REFS))
-D['repository']['required'].remove('git_scope');D['repository']['required'].remove('git_refs')
+FAILURE=ENUM('not_found','same_tag_conflict','too_large','invalid_response','transport')
+root('repository',3,dict(repository_id=ID,repository=scalar('string',pattern='^[A-Za-z0-9-]+/[A-Za-z0-9_.-]+$'),collected_at=TIME,failed_at=TIME,failed_with=FAILURE,scope=SCOPE,observed_at=TIME,releases=RELEASES,git_scope=GIT_SCOPE,git_refs=GIT_REFS))
+# A never-collected source has only its failure fields; readers enforce that
+# collected_at/scope/observed_at come together and failed_at/failed_with too.
+D['repository']['required']=['format','schema','kind','repository_id','repository','releases']
 root('provenance',3,dict(apps=PROVS))
 root('status',1,dict(schemas=PIN,last_report=scalar('string',pattern='^runs/[1-9][0-9]*-[1-9][0-9]*/summary\\.yaml$'),reported_at=TIME,last_confirmed_publication=PUB,summaries=RUNREFS,details=DETAILS))
 root('summary',1,dict(run=RUN,inputs=INPUTS,input_catalog_state=ENUM('known','absent','unknown'),input_catalog=PIN,started_at=TIME,reported_at=TIME,collection=STAGE,validation=STAGE,publication=PUB,counts=COUNTS,stop_reason=REASON,metrics=METRICS,budgets=BUDGETS,actions_url=URL,recent_runs_url=URL))

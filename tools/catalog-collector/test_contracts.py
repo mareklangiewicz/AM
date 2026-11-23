@@ -339,7 +339,7 @@ class Contracts(unittest.TestCase):
             # Empty successful bootstrap has no prior retained records.
             self.assertEqual(decode(current['repositories/example.yaml'])['releases'],{})
             self.assertFalse((root/'output/format-2').exists())
-            # Exceptional overflow preserves exact prior v3 bytes.
+            # Exceptional overflow preserves prior v3 facts; only the failure is added.
             v3repo=root/'v3.git';git(root,'init','--bare','--quiet','--template=',str(v3repo))
             schema_revision=decode(current['catalog.yaml'])['inputs']['schemas']
             previous_doc=sample();previous_doc['repository_id']=123;previous_doc['schema']=header('repository',schema_revision)['schema']
@@ -349,7 +349,9 @@ class Contracts(unittest.TestCase):
             with patch.object(interface,'verify_checkout_inputs'),patch.object(host,'configuration',return_value=(rows,{'123':'example/app'})),patch.object(host,'_open',side_effect=AssertionError('offline network')),patch.object(c,'source',side_effect=ValueError('document_overflow')):
                 interface.main(['collect','--repo',str(v3repo),'--parent',v3pin,'--evidence',str(evidence),'--output',str(root/'overflow'),'--registry',str(registry),'--run-id','123'])
             result=c.read_directory(root/'overflow/format-3')
-            self.assertEqual(result['repositories/example.yaml'],current['repositories/example.yaml'])
+            failed=decode(result['repositories/example.yaml'])
+            self.assertEqual((failed.pop('failed_at'),failed.pop('failed_with')),(NEW,'too_large'))
+            self.assertEqual(failed,decode(current['repositories/example.yaml']))
             outcome=json.loads((root/'overflow/report.json').read_text())
             self.assertEqual(outcome['sources'][0]['reason'],'document_overflow')
             self.assertEqual(outcome['target_counts']['successful'],0)
@@ -380,11 +382,13 @@ class Contracts(unittest.TestCase):
                 interface.main(command+['--output',str(root/'rebound'),'--schemas-revision','b'*40])
                 rebound=c.read_directory(root/'rebound/format-3')
                 expected=decode(tree['repositories/example.yaml'])
-                expected['schema']=header('repository','b'*40)['schema']
+                expected.update(schema=header('repository','b'*40)['schema'],failed_at=NEW,failed_with='too_large')
                 self.assertEqual(decode(rebound['repositories/example.yaml']),expected)
                 self.assertEqual(decode(rebound['catalog.yaml'])['inputs']['schemas'],'b'*40)
             result=c.read_directory(output/'format-3')
-            self.assertEqual(result['repositories/example.yaml'],tree['repositories/example.yaml'])
+            failed=decode(result['repositories/example.yaml'])
+            self.assertEqual((failed.pop('failed_at'),failed.pop('failed_with')),(NEW,'too_large'))
+            self.assertEqual(failed,decode(tree['repositories/example.yaml']))
             script="import {Catalog} from './web/catalog/catalog.mjs';import {readFile} from 'node:fs/promises';const dir=process.argv[1];const client=new Catalog(async url=>new Response(await readFile(dir+'/'+new URL(url).pathname.split('/').slice(4).join('/'))));const {root,apps}=await client.roots('"+PIN+"');await client.source('"+PIN+"',apps.example,root);"
             read=subprocess.run(['node','--input-type=module','-e',script,str(output/'format-3')],cwd=ROOT,capture_output=True)
             self.assertEqual(read.returncode,0,read.stderr)

@@ -41,9 +41,12 @@ Production enrollment remains 509 app identities / 500 sources, from
 `collection-recipes.txt` plus `collection-apps.json`. Declarations alone do not
 enroll recipes. Scope stays unchanged while the direct migration is completed;
 no expanded dual-output qualification or automatic enrollment is planned.
-Hourly batches request at most 500 sources, ordered by available prior successful
-collection times (missing first, numeric-ID ties). Failed attempts are reported in
-status rather than stored in repository facts. At the current 500-source scope,
+Hourly batches request at most 500 sources, ordered by each source's latest
+attempt, success or failure (missing first, numeric-ID ties), so a failing source
+rotates with the rest. A source's own failure adds `failed_at`/`failed_with` to
+its repository document (a never-collected source gets a document of only those)
+and leaves its facts untouched; run-wide stops record nothing there. Named
+oversized sources (`host_catalog.PAGE_SIZES`) request smaller pages. At the current 500-source scope,
 each complete batch attempts all sources. Acquisition uses a 750-request internal
 allowance, 100-request primary reserve, 512 MiB charged-body budget, 16 MiB per
 response and 900-second cooperative time allowance. Actual quota/budgets and

@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: open
+Status: claimed
 Blocked by: none
 
 ## Outcome
@@ -70,3 +70,16 @@ attempt failed and removed on the next success. Selection sorts by the newer of
 `collected_at` and `failed_at`. Build it now, on `release-catalog-v3`, as a
 repository-format change (`ship --repin-schemas`); the later move into
 `main-marek` carries it.
+
+November 23, 2026: implemented, not yet shipped. Repository documents get
+optional `failed_at`/`failed_with` (`not_found`, `same_tag_conflict`,
+`too_large`, `invalid_response`, `transport`); a never-collected source gets a
+document of identity, failure and `releases: {}` (Marek, same day), which host
+selection refuses as `no_matching_asset`. Run-wide stops (budgets, quota,
+authentication) record nothing. Selection sorts by the newer of `collected_at`
+and `failed_at` (`incremental.decode`). `VSCodium/vscodium` and `wekan/wekan`
+request 30 releases per page (`host_catalog.PAGE_SIZES`): a 10-release page
+measured about 3 MB for each (about 300 KB per release), so 100 is about 30 MB,
+30 about 9 MB. Both readers (awk, page) enforce the field pairs; the page shows
+"Never collected" and the failed attempt. Tests: `test_failed_attempts.py` and
+the page's navigation e2e. Ships with `--repin-schemas`.

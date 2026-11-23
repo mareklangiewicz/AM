@@ -133,6 +133,11 @@ function semantics(doc) {
    for(let i=0n;i<BigInt(tags);i++)if(!positions.has(i))bad('Git position gap');
   }
   if(doc.observed_at>doc.collected_at) bad('observation order');
+  const collected=own(doc,'collected_at'),failed=own(doc,'failed_at');
+  if(collected!==own(doc,'scope')||collected!==own(doc,'observed_at')) bad('collection fields');
+  if(failed!==own(doc,'failed_with')) bad('failure fields');
+  if(!collected&&(!failed||Object.keys(doc.releases).length||own(doc,'git_scope'))) bad('never-collected source');
+  if(collected&&failed&&doc.failed_at<=doc.collected_at) bad('failure before collection');
   const entries=Object.entries(doc.releases),tags=new Set(); let stable=0;
   for(const [,release] of entries) {
    if(!own(release,'published_at')&&!own(release,'created_at')) bad('ordering timestamp');

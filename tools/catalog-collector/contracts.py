@@ -146,13 +146,25 @@ def source(previous, acquired, *, rid, repository, revision):
     fetched={key:dict(value,observed_at=at) for key,value in acquired['releases'].items()}
     records=merge(previous,fetched,completed_at=at)
     result=dict(header('repository',revision),repository_id=int(rid),repository=repository,
-                collected_at=acquired.get('completed_at') or at,scope=dict(page_size=100,pages_fetched=1,history_complete=acquired['history_complete']),
+                collected_at=acquired.get('completed_at') or at,scope=dict(page_size=acquired.get('page_size',100),pages_fetched=1,history_complete=acquired['history_complete']),
                 observed_at=at,releases={key:compact_release(value) for key,value in records.items()})
     if 'git_refs' in acquired:
         result.update(git_scope=acquired['git_scope'],git_refs=acquired['git_refs'])
     raw=encode(result)
     if len(raw)>FILE_CAP: raise ValueError('document_overflow')
     return decode(raw)
+
+
+def failure(previous, *, rid, repository, revision, at, cause):
+    """A source's failed attempt: only failed_at/failed_with change; facts and times stay.
+
+    A source with no successful collection gets a document of identity and failure.
+    """
+    doc=copy.deepcopy(previous) if previous else dict(repository_id=int(rid),repository=repository,releases={})
+    doc.update(header('repository',revision),failed_at=at,failed_with=cause)
+    raw=encode(doc)
+    if len(raw)>FILE_CAP: raise ValueError('document_overflow')
+    return raw
 
 
 def provenance_path(source_path):

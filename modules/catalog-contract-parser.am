@@ -125,6 +125,11 @@ function semantics( p,r,a,b,k,t,n,seen,stable,count_names,stable_path,stable_tim
     if(values["/kind"]=="repository") {
         git_semantics()
         if(values["/observed_at"]>values["/collected_at"]) fail("observation after collection")
+        a=("/collected_at" in types); b=("/failed_at" in types)
+        if(a!=("/scope" in types) || a!=("/observed_at" in types)) fail("collection fields")
+        if(b!=("/failed_with" in types)) fail("failure fields")
+        if(!a && (!b || children["/releases"] || ("/git_scope" in types))) fail("never-collected source")
+        if(a && b && values["/failed_at"]<=values["/collected_at"]) fail("failure before collection")
         for(p in node_type) {
             t=node_type[p]
             if(t=="release") {

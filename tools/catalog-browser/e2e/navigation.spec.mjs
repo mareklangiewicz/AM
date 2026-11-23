@@ -101,3 +101,14 @@ test('recipe evidence, shared identities and independent health stay distinct',a
  await expect(page.locator('article .recipe-overview')).toContainText('Not yet classified');
  await expect(page.locator('article a[href*="/programs/"]')).toHaveCount(0);
 });
+
+test('a never-collected source shows its failed attempt instead of facts',async({page})=>{
+ const base=(await fixture('repository')).split('\n'),head=base.slice(0,base.findIndex(l=>l.startsWith('collected_at:')));
+ const body=[...head,'failed_at: "2026-11-08T01:00:00Z"','failed_with: "not_found"','releases: {}',''].join('\n');
+ await channels(page,{source:async r=>{await r.fulfill({contentType:'text/plain',body});return true;}});
+ await page.goto(`web/catalog/?pin=${oldPin}&app=example`);
+ await expect(page.locator('article')).toContainText('Never collected');
+ await expect(page.locator('article')).toContainText('Last attempt failed');
+ await expect(page.locator('article')).toContainText('not found');
+ await expect(page.locator('.asset')).toHaveCount(0);
+});

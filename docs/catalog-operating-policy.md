@@ -103,7 +103,8 @@ requires the measured scaling work in 138 rather than raising this cap alone.
 `.github/workflows/catalog.yml` collects one page of 100 releases per attempted
 source at 17 minutes past every hour UTC or on manual dispatch, retains
 previously observed releases and publishes validated YAML to `release-catalog`.
-Failed source attempts preserve their prior successful observations; failed
+Failed source attempts preserve their prior successful observations and record only
+the attempt's time and cause; failed
 whole-workflow validation/publication leaves the prior published pin in place. The first cutover explicitly replaces the old
 format-1 tree with a child commit; old commits remain available. The old collector,
 sharded dispatcher and schedule workflows are removed. There is one catalog

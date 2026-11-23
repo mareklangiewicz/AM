@@ -105,7 +105,8 @@ def artifact(directory,*,run,inputs,parents):
     # Revalidate in the trusted publisher; the artifact's validation receipts are ignored.
     checked=Candidate(None,trees['format-3'])
     docs={path:(meta['root'] if 'root' in meta else dict(kind='repository',repository_id=meta['repository_id'],
-              repository=meta['repository'],collected_at=meta['completed_at'])) for path,meta in checked.metadata.items()}
+              repository=meta['repository'],**({'collected_at':meta['completed_at']} if 'completed_at' in meta else {})))
+          for path,meta in checked.metadata.items()}
     if docs['catalog.yaml']['inputs']!=inputs or docs['catalog.yaml']['producer']!=run: raise ValueError('descriptor binding')
     # Do not allow public outcome evidence to smuggle arbitrary exception strings.
     allowed_reasons={'transport','authentication','quota','request_budget','byte_budget','time_budget','source_validation','document_overflow','candidate_validation','parent_conflict','publication_transport','internal','unknown'}
@@ -226,7 +227,8 @@ def status_tree(previous,current,report,docs,identities=None):
             buckets=dict(under_24h=0,from_24_to_48h=0,at_least_48h=0,no_success=0,unknown=0)
             now=datetime.fromisoformat(current['reported_at'].replace('Z','+00:00'))
             for obj in docs.values():
-                if obj['kind']!='repository':continue
+                # A never-collected source counts as no_success (enrolled minus buckets).
+                if obj['kind']!='repository' or 'collected_at' not in obj:continue
                 age=(now-datetime.fromisoformat(obj['collected_at'].replace('Z','+00:00'))).total_seconds()
                 bucket='unknown' if age<0 else 'under_24h' if age<86400 else 'from_24_to_48h' if age<172800 else 'at_least_48h'
                 buckets[bucket]+=1

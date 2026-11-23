@@ -857,6 +857,21 @@
           "format": "date-time",
           "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
         },
+        "failed_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+        },
+        "failed_with": {
+          "type": "string",
+          "enum": [
+            "not_found",
+            "same_tag_conflict",
+            "too_large",
+            "invalid_response",
+            "transport"
+          ]
+        },
         "scope": {
           "$ref": "#/$defs/scope"
         },
@@ -881,9 +896,6 @@
         "kind",
         "repository_id",
         "repository",
-        "collected_at",
-        "scope",
-        "observed_at",
         "releases"
       ],
       "additionalProperties": false

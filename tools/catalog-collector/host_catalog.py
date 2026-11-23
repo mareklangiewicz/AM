@@ -1,7 +1,7 @@
 """Single-user YAML catalog: bounded release-list collection and retained facts.
 
 Collection combines reviewed recipe declarations and catalog-only identities.
-One page of 100 releases per attempted source; clients enforce seven-day selected
+One page of 100 releases (fewer for PAGE_SIZES) per attempted source; clients enforce seven-day selected
 record freshness. Batches preserve untouched facts and isolate source failures.
 No latest endpoint, consumer version choice or pruning.
 """
@@ -35,6 +35,30 @@ RATE_RESERVE = 100
 REVIEWED_REPOSITORY_TRANSFERS = {
     '1369127769': ('alex-pokydin/arduloops', 'arduloops/arduloops'),
 }
+
+# Releases per page for sources whose 100-release page exceeds RESPONSE_CAP
+# (about 300 KB per release, measured 2026-11-23); every other source gets 100.
+PAGE_SIZES = {
+    '144590939': 30,  # VSCodium/vscodium
+    '16089035': 30,   # wekan/wekan
+}
+
+
+def page_size(rid):
+    return PAGE_SIZES.get(str(rid), 100)
+
+
+def failure_cause(error):
+    """The source's own failure, or None for a run-wide stop that visits nothing."""
+    if isinstance(error, CollectionStop):
+        return None
+    if isinstance(error, urllib.error.HTTPError):
+        return None if error.code in (401, 403, 429) else 'not_found' if error.code == 404 else 'transport'
+    if isinstance(error, ResponseLimit):
+        return 'too_large'
+    if isinstance(error, (OSError, http.client.HTTPException)):
+        return 'transport'
+    return 'invalid_response'
 
 
 class NoRedirect(urllib.request.HTTPRedirectHandler):
@@ -138,7 +162,7 @@ def _response(rid, evidence, allowance, *, rate=None, endpoint=None, kind='relea
         receipt=rid+('-receipt.txt' if kind=='releases' else '-'+kind+'-receipt.txt')
         received = (Path(evidence)/receipt).read_text().strip()
         return body, received
-    url = f'https://api.github.com/repositories/{rid}/'+(endpoint or 'releases?per_page=100&page=1')
+    url = f'https://api.github.com/repositories/{rid}/'+(endpoint or f'releases?per_page={page_size(rid)}&page=1')
     headers = {'Accept':'application/vnd.github+json', 'User-Agent':'AM-YAML-catalog',
                'X-GitHub-Api-Version':'2022-11-28'}
     token = os.environ.get('GH_TOKEN')
@@ -162,6 +186,9 @@ def _response(rid, evidence, allowance, *, rate=None, endpoint=None, kind='relea
 
 def collect(retained, evidence=None, *, batch_size=None, metrics=None, acquisitions, profile=None):
     """Acquire release facts for all (strict) or a bounded oldest-attempt-first batch.
+
+    An attempt is a success or a source's own failure (`failure_cause`), so a
+    failing source rotates with the rest instead of sorting first forever.
 
     `retained` maps each repository id of the parent snapshot to its metadata
     (repository_id, repository, attempted_at). Successful acquisitions go into
@@ -242,8 +269,9 @@ def collect(retained, evidence=None, *, batch_size=None, metrics=None, acquisiti
             body, received = fetch()
             reason = 'invalid_response'
             raw = json.loads(body, object_pairs_hook=unique_object)
-            records = normalize(raw, 100, allow_missing_published=True)
-            acquired = dict(received_at=received, releases=records,history_complete=len(raw)<100)
+            records = normalize(raw, page_size(rid), allow_missing_published=True)
+            acquired = dict(received_at=received, releases=records,page_size=page_size(rid),
+                            history_complete=len(raw)<page_size(rid))
             if rid in git_scopes:acquired.update(collect_git(git_scopes[rid],fetch))
             acquisitions[rid]=acquired
             report.append(dict(repository_id=int(rid), repository=name, status='ok', observed_at=received))
@@ -268,6 +296,8 @@ def collect(retained, evidence=None, *, batch_size=None, metrics=None, acquisiti
                 reason={'request_limit':'request_budget','byte_limit':'byte_budget',
                         'time_limit':'time_budget','primary_rate_reserve':'quota'}[error.reason]
             failure = dict(repository_id=int(rid), repository=name, status='failed', reason=reason)
+            if failure_cause(error):
+                failure.update(failed_at=utc(), failed_with=failure_cause(error))
             if isinstance(error, urllib.error.HTTPError):
                 failure['http_status'] = error.code
             if rate:

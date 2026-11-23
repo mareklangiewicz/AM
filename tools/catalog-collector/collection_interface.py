@@ -130,15 +130,24 @@ def collect(args):
                                     metrics=metrics,acquisitions=acquired,profile=profile)
     tree={}
     report=[]
+    def previous(path):
+        return contracts.decode(prior[path]) if prior and path in prior else None
+    def record_failure(rid,at,cause):
+        # Rotation needs the attempt; facts and their times stay untouched.
+        path='repositories/'+names[rid]+'.yaml'
+        try:tree[path]=contracts.failure(previous(path),rid=rid,repository=sources[rid],revision=inputs['schemas'],at=at,cause=cause)
+        except ValueError:pass  # an already-full document keeps its prior bytes
     for rid,acquisition in acquired.items():
         path='repositories/'+names[rid]+'.yaml'
         try:
-            obj=contracts.source(contracts.decode(prior[path]) if prior and path in prior else None,acquisition,rid=rid,repository=sources[rid],revision=inputs['schemas'])
+            obj=contracts.source(previous(path),acquisition,rid=rid,repository=sources[rid],revision=inputs['schemas'])
             tree[path]=contracts.encode(obj)
             report.append(dict(repository_id=int(rid),status='ok'))
         except (ValueError,KeyError,TypeError) as error:
             reason='document_overflow' if str(error)=='document_overflow' else 'source_validation'
             report.append(dict(repository_id=int(rid),status='failed',reason=reason))
+            cause={'document_overflow':'too_large','same_tag_conflict':'same_tag_conflict'}.get(str(error),'invalid_response')
+            record_failure(rid,acquisition['received_at'],cause)
     recorded={row['repository_id'] for row in report}
     for row in acquisition_report:
         if row['repository_id'] not in recorded:
@@ -147,6 +156,7 @@ def collect(args):
             if row.get('http_status')==401: reason='authentication'
             elif row.get('http_status') in (403,429): reason='quota'
             report.append(dict(repository_id=row['repository_id'],status='failed',reason=reason))
+            if 'failed_with' in row: record_failure(str(row['repository_id']),row['failed_at'],row['failed_with'])
     apps={row['app']:'repositories/'+names[str(row['repository_id'])]+'.yaml' for row in rows
           if 'repositories/'+names[str(row['repository_id'])]+'.yaml' in tree or prior and 'repositories/'+names[str(row['repository_id'])]+'.yaml' in prior}
     tree['catalog.yaml']=contracts.encode(dict(contracts.header('catalog',inputs['schemas']),inputs=inputs,

@@ -50,7 +50,7 @@ required. Shared fixtures deliberately include structurally valid semantic failu
 | --- | --- | --- |
 | `catalog.yaml` | `catalog` | Exact `inputs` revisions for source, policy, recipes, classification rules and schema set; producer run ID/attempt; fixed `32-plus-stable-exact-tag-v1` retention rule. No enclosing commit. |
 | `apps.yaml` | `apps` | AM app names directly to `repositories/<name>.yaml`; stable/nightly remain separate keys. |
-| `repositories/<name>.yaml` | `repository` | Numeric source ID, current verified readable GitHub name, successful scope completion, shared/individual observations and retained release facts. |
+| `repositories/<name>.yaml` | `repository` | Numeric source ID, current verified readable GitHub name, successful scope completion, shared/individual observations, retained release facts and the latest attempt's failure. |
 | `provenance/<name>.yaml` | `provenance` | Architecture-specific recipe bindings for exactly the app identities pointing to `repositories/<name>.yaml`. Required for each referenced source, including unknown classifications. |
 
 Only these paths are allowed; the former private global `provenance.yaml` layout
@@ -84,10 +84,18 @@ New allocations need a reviewed registry edit. Retired labels never become activ
 again. Verify numeric identity before updating an upstream owner/name; do not
 rename source files on an upstream rename or infer enrollment from a new name.
 
-A repository document describes successful facts only. Failed or unattempted
-sources keep the exact prior document; a new failed source has no app-map entry.
-Failures belong to run evidence/status, so a failed refresh never changes retained
-observation times. Scope currently names one page of 100 and whether its response
+A repository document holds the facts of successful collections plus, while
+the latest attempt failed, `failed_at` (that attempt's time, after
+`collected_at`) and `failed_with` (its cause: `not_found`, `same_tag_conflict`,
+`too_large`, `invalid_response` or `transport`). A failure adds or updates only
+those two fields, so retained facts and observation times never change; the
+next success drops them. A source that never succeeded has a document with only
+its identity, the failure fields and `releases: {}`: `collected_at`, `scope` and
+`observed_at` are present together or not at all, and the two failure fields
+likewise. Run-wide stops (budgets, quota, authentication) record no failure.
+Unattempted sources keep the exact prior document. Collection picks the
+sources whose latest attempt, success or failure, is oldest. Scope names one
+page (100 releases, fewer for named oversized sources) and whether its response
 ended pagination, without claiming complete upstream history or asset verification.
 
 `collected_at` is successful requested-scope completion, not publication time.
