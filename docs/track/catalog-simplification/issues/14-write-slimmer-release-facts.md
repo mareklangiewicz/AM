@@ -15,3 +15,8 @@ The collector writes release and asset facts as decided in
 plus newest with a Linux download), in the layout and encodings tickets 04 and
 09 choose; the host modules, the browser and their tests read it.
 
+## Comments
+
+November 23, 2026, from ticket 04: the layout keeps today's per-repository
+split, so this ticket writes on the existing `release-catalog-v3` branch; the
+move into `main-marek` is ticket 16, after this one and ticket 15.

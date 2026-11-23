@@ -60,3 +60,13 @@ have contradicted ADR 0002, and Marek then chose a facts-only catalog instead:
 the same-tag question moved to the simplification map's
 [Record same-tag and removed releases as facts](../../catalog-simplification/issues/07-same-tag-and-removed-releases-as-facts.md).
 Rotation and smaller pages for the two oversized sources stand.
+
+November 23, 2026: the rotation's storage is revised (simplification ticket
+[04](../../catalog-simplification/issues/04-choose-catalog-directory-layout.md)).
+Instead of a `failed_attempts` map in `status.yaml`, each repository file gets
+optional `failed_at` and `failed_with` (a cause code from a schema enum, the
+list settled in simplification ticket 11), present only while the latest
+attempt failed and removed on the next success. Selection sorts by the newer of
+`collected_at` and `failed_at`. Build it now, on `release-catalog-v3`, as a
+repository-format change (`ship --repin-schemas`); the later move into
+`main-marek` carries it.

@@ -50,19 +50,15 @@ here ([Record same-tag and removed releases as facts](issues/07-same-tag-and-rem
 
 ## Decisions so far
 
+- [Choose the catalog directory layout in main-marek](issues/04-choose-catalog-directory-layout.md): one `catalog/` (status in `catalog/status/`), one commit per run is the snapshot, readers pin `heads/main-marek`; bot commits skip code CI and rebase-retry; move after slimming, old branches archived locally; per-repository `failed_at`/`failed_with` replace ticket 20's status map.
 - [Inventory the catalog's rules](issues/01-inventory-catalog-rules.md): 62 rules, encodings and pins traced; selection sorts by last success, causes hidden as `source_validation`, the page misstates retention and history, digests/media types/most pins read by nothing.
 - [Choose what to catalog per release and asset](issues/08-choose-what-to-catalog-per-release.md): derive URLs, drop `media_type`/`updated_at`, `sha256pre` (16 hex), all assets stay; keep 8 newest + newest stable + newest with Linux; ≈80 MB estimated.
 - [Measure where the catalog's bytes go](issues/02-measure-catalog-size.md): 448 MB, 80% assets; URLs are 29% and 99% derivable from repository, tag and name; 8 newest releases would keep 38%.
 
 ## Not yet specified
 
-- How the collector commits into `main-marek` alongside code pushes, once the
-  layout ticket fixes the directory: CI pushes racing Marek's, and what hosts
-  fetch.
 - The installer side of facts-only same-tag records: how AM's updater reads
   them and where rolling tags are declared. Specify after ticket 07.
-- Migration from the two branches to the directory: whether old branch history
-  is kept, linked or dropped.
 - Run limits (16 MiB per response, request/byte/time budgets): probably never
   user-facing except through failures; revisit after ticket 11.
 

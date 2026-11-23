@@ -15,3 +15,10 @@ summary publication failure may leave no report. Retain the previous timestamped
 “last reported run” without implying latest-attempt coverage. Link to the specific
 Actions run and recent collection runs for investigation; the public summary
 requires no sign-in even when Actions does. No cross-run delivery service is required.
+
+**Note, November 23, 2026**: once the catalog moves into a `main-marek`
+directory ([layout decision](../track/catalog-simplification/issues/04-choose-catalog-directory-layout.md)),
+facts and status are written in one commit per run, so the separately pinned
+channel, its confirmed-publication binding and the labelled confirmation lag
+go. The decision's purpose stands: a run that fails validation still commits
+its status while the last good facts stay untouched.

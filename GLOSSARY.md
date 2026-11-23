@@ -39,6 +39,9 @@ _Avoid_: digest, checksum (for the prefix)
 **Collection time**:
 The time a repository's requested collection scope completed successfully. It does not establish the freshness of releases untouched by that collection.
 
+**Failed attempt**:
+A collection of a repository that did not complete, recorded with its time and cause until the next successful collection. For choosing which repositories to collect next, it counts as a visit like a success.
+
 **Publication time**:
 The time a catalog snapshot was published, distinct from collection times and release observation times.
 
