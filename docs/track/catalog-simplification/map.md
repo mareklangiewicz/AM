@@ -50,6 +50,7 @@ here ([Record same-tag and removed releases as facts](issues/07-same-tag-and-rem
 
 ## Decisions so far
 
+- [Inventory the catalog's rules](issues/01-inventory-catalog-rules.md): 62 rules, encodings and pins traced; selection sorts by last success, causes hidden as `source_validation`, the page misstates retention and history, digests/media types/most pins read by nothing.
 - [Measure where the catalog's bytes go](issues/02-measure-catalog-size.md): 448 MB, 80% assets; URLs are 29% and 99% derivable from repository, tag and name; 8 newest releases would keep 38%.
 
 ## Not yet specified
