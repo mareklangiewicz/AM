@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: claimed
+Status: resolved
 Blocked by: none
 
 ## Outcome
@@ -83,3 +83,9 @@ measured about 3 MB for each (about 300 KB per release), so 100 is about 30 MB,
 30 about 9 MB. Both readers (awk, page) enforce the field pairs; the page shows
 "Never collected" and the failed attempt. Tests: `test_failed_attempts.py` and
 the page's navigation e2e. Ships with `--repin-schemas`.
+
+November 23, 2026: shipped at `6dbb33736` (Long tests 45268579816, Fast run
+45274936247 and catalog run 45274946865 green, both pins moved). The first
+catalog under it (`a8922b396`) records 27 failing sources: 13 `not_found`,
+14 `same_tag_conflict` (16 of them new never-collected documents, 8,288 files).
+`VSCodium/vscodium` and `wekan/wekan` collected successfully with `page_size: 30`.
