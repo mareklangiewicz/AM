@@ -50,6 +50,7 @@ here ([Record same-tag and removed releases as facts](issues/07-same-tag-and-rem
 
 ## Decisions so far
 
+- [Simplify recipe labels and platform guesses](issues/12-simplify-recipe-labels-and-platform-guesses.md): two labels (Reviewed installer / Recipe script); provenance `recipe: declaration|script`, no template evaluation or evidence; Linux-only guess with AM's four architecture names, one tested rule for page and retention; implemented in 14.
 - [Simplify the format encodings](issues/09-simplify-format-encodings.md): whole `url:` only as exception, plain status integers, Git maps keyed by name/path, no absent provenance rows, no `retention`/`page_size`/`pages_fetched`; IDs stay keys; grammar unchanged plus `$schema`; implemented in 14 (now unblocked).
 - [Decide which commit pins are needed](issues/05-choose-needed-commit-pins.md): none — no commit hashes of ours in catalog or status data, `producer` keeps run id/attempt, provenance keeps content hashes; both `CATALOG_*_REVISION` variables go, `release.py` keeps the live-contract check for schema changes; implemented in 21 after 16.
 - [Choose the schemas' form and editor wiring](issues/10-choose-schema-form-and-wiring.md): one hand-written `schemas/catalog.schema.yaml` (kinds under `$defs`, no `$id`) is the source; documents name it with a first-key relative `$schema:` + `#/$defs/<kind>` (yamlls honors all three, probed); field prose moves into descriptions; JSON schemas and `.vscode` associations go; implemented in 20 and 16.

@@ -59,8 +59,12 @@ Upstream's full install script for one app and architecture, exactly as upstream
 _Avoid_: Upstream script, legacy recipe
 
 **Recipe declaration**:
-The fork's short form of a recipe: literal settings that name the app, its catalog source and its packaging, with no install steps of its own. The fork's preferred form: it can be trusted without reading install steps.
-_Avoid_: Short recipe, wrapper
+The fork's short form of a recipe: literal settings that name the app, its catalog source and its packaging, with no install steps of its own. The fork's preferred form: it can be trusted without reading install steps. The catalog page labels it "Reviewed installer".
+_Avoid_: Short recipe, wrapper, shared installer (the label before November 25, 2026)
+
+**Recipe script**:
+Any recipe that is not a recipe declaration (long, fork-owned or original), labelled "Recipe script, read it before installing" on the catalog page.
+_Avoid_: Not yet classified, template-based recipe, custom recipe (labels before November 25, 2026)
 
 **Long recipe**:
 An original recipe whose install steps are kept, with its release selection replaced by a catalog lookup. The fallback until a reviewed template lets the recipe become a recipe declaration.

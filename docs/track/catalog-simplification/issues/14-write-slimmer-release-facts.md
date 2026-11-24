@@ -44,3 +44,9 @@ exceptions instead of `download_base`/`url_suffix`, plain status integers
 without `state`/`value`, Git maps keyed by quoted name/path, no absent
 provenance rows or `availability`, and no `retention`, `page_size` or
 `pages_fetched` (which settles ticket 18's deferred rename: the constant goes).
+
+November 25, 2026, from ticket 12: provenance entries become `recipe:
+"declaration"|"script"` (no `classification`, `availability`, recipe binding,
+template evaluation, `custom` or `evidence`; measure one full classification),
+and the Linux/architecture guess is one tested rule shared by the page and the
+retention's "newest with a Linux download".
