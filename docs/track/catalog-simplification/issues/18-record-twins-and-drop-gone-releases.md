@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: open
+Status: claimed
 Triage: needs-triage
 Blocked by: none
 
