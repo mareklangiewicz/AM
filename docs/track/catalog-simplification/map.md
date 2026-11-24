@@ -50,6 +50,7 @@ here ([Record same-tag and removed releases as facts](issues/07-same-tag-and-rem
 
 ## Decisions so far
 
+- [Choose the schemas' form and editor wiring](issues/10-choose-schema-form-and-wiring.md): one hand-written `schemas/catalog.schema.yaml` (kinds under `$defs`, no `$id`) is the source; documents name it with a first-key relative `$schema:` + `#/$defs/<kind>` (yamlls honors all three, probed); field prose moves into descriptions; JSON schemas and `.vscode` associations go; implemented in 20 and 16.
 - [Record same-tag and removed releases as facts](issues/07-same-tag-and-removed-releases-as-facts.md): the 14 failures are same-second twins, recorded as two releases; no tag replacement; releases proven deleted upstream by a complete history (597 of 612 overrides) are removed; assets = latest list; no first-seen; retention counts tags; implemented in 18 (now) and 14.
 - [Simplify the catalog's times](issues/06-simplify-catalog-times.md): one repository `observed_at` (page receipt), no `collected_at`; releases keep `observed_at` only when older ("Last seen"); Git refs/files, `created_at` and provenance `evaluated_at` dropped; status times go to 11; implemented in 14.
 - [Probe YAML-authored JSON Schemas in Marek's Neovim](issues/03-probe-yaml-schemas-in-neovim.md): works as is — a first-line `$schema=` modeline to a `.yaml` schema (relative path or raw GitHub URL at a commit) validates, completes and hovers with yamlls 2.0.0; no editor config needed (the yaml extra and SchemaStore.nvim are not involved).
