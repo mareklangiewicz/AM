@@ -203,6 +203,7 @@ approval boundaries.
 | [44 resolved](issues/44-release-guards-the-schema-pin.md) | none | [`release.py` refuses a `schemas` change unless `--repin-schemas`](issues/44-release-guards-the-schema-pin.md#answer--november-20-2026), then moves both pins. |
 | [45 resolved](issues/45-release-checks-live-refs-and-browser.md) | none | [`release.py` validates live refs before a schema repin and reports deployed browser drift](issues/45-release-checks-live-refs-and-browser.md#answer--november-20-2026). |
 | [46 resolved](issues/46-repoint-renamed-catalog-only-rows.md) | none | [Nine catalog-only rows renamed to their recipe names by hand; `dpro-agent`, `speak-to-ai` dropped](issues/46-repoint-renamed-catalog-only-rows.md#answer--november-22-2026). |
+| [47 open](issues/47-release-compares-every-deployed-browser-file.md) | none | `release.py` reports drift in every deployed browser file, not only the definitions. |
 
 Latest implementation evidence, November 8: Chromium desktop/narrow and Firefox
 checks pass; physical-device/comprehension limits remain with 13. Independent
