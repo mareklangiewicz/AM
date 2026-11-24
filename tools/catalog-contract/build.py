@@ -59,7 +59,7 @@ def root(kind, version, fields):
     return obj(kind,dict(format=scalar('integer',const=version),schema=(SCHEMA(3) if version==3 else scalar('string',pattern='^https://raw\\.githubusercontent\\.com/mareklangiewicz/AM/[0-9a-f]{40}/docs/catalog-status-v1\\.md$')),kind=scalar('string',const=kind),**fields))
 root('catalog',3,dict(inputs=INPUTS,producer=RUN,retention=scalar('string',const='32-plus-stable-exact-tag-v1')))
 root('apps',3,dict(apps=table('app_paths','^'+NAME+'$',PATH)))
-FAILURE=ENUM('not_found','same_tag_conflict','too_large','invalid_response','transport')
+FAILURE=ENUM('not_found','same_tag_conflict','too_large','invalid_response','transport')  # same_tag_conflict: read only, never written since ticket 18
 root('repository',3,dict(repository_id=ID,repository=scalar('string',pattern='^[A-Za-z0-9-]+/[A-Za-z0-9_.-]+$'),collected_at=TIME,failed_at=TIME,failed_with=FAILURE,scope=SCOPE,observed_at=TIME,releases=RELEASES,git_scope=GIT_SCOPE,git_refs=GIT_REFS))
 # A never-collected source has only its failure fields; readers enforce that
 # collected_at/scope/observed_at come together and failed_at/failed_with too.

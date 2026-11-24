@@ -33,7 +33,7 @@ explicitly authorized live acquisition. Saved mode retains receipt times and
 makes no requests (`<numeric-id>-releases.json`, `<numeric-id>-receipt.txt`).
 The new output directory contains only `format-3/` and sanitized `report.json`.
 No v2 parent, tree, validation, artifact or publication is required. The v3 path
-normalizes facts directly, applies 32-plus-stable/exact-tag retention and preserves
+normalizes facts directly, applies 32-plus-stable retention (proven-gone releases removed) and preserves
 failed/unattempted sources exactly. Missing publication time can use creation time
 for retention; client policies requiring publication time refuse missing facts.
 

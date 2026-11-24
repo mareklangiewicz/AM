@@ -138,12 +138,11 @@ function semantics(doc) {
   if(failed!==own(doc,'failed_with')) bad('failure fields');
   if(!collected&&(!failed||Object.keys(doc.releases).length||own(doc,'git_scope'))) bad('never-collected source');
   if(collected&&failed&&doc.failed_at<=doc.collected_at) bad('failure before collection');
-  const entries=Object.entries(doc.releases),tags=new Set(); let stable=0;
+  const entries=Object.entries(doc.releases); let stable=0;
   for(const [,release] of entries) {
    if(!own(release,'published_at')&&!own(release,'created_at')) bad('ordering timestamp');
    const observed=release.observed_at??doc.observed_at;
    if(observed>doc.collected_at||own(release,'observed_at')&&observed===doc.observed_at) bad('release observation');
-   if(tags.has(release.tag)) bad('exact tag conflict'); tags.add(release.tag);
    if(!release.prerelease) stable++;
    if(own(release,'download_base')&&!release.download_base.endsWith('/')) bad('base');
    for(const asset of Object.values(release.assets)) {

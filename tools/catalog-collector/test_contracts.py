@@ -232,19 +232,16 @@ class Contracts(unittest.TestCase):
             schema=json.loads((ROOT/'schemas/catalog/repository.schema.json').read_text())
             self.assertFalse(jsonschema.Draft202012Validator(schema).is_valid(trial))
 
-    def test_retention_replacement_timestamp_fallback_and_failure_atomicity(self):
+    def test_retention_timestamp_fallback_and_failure_atomicity(self):
+        # Twins, recreated tags and proven-gone releases: test_release_facts.
         records={str(i):dict(tag='v'+str(i),url='https://example.org/release',created_at=f'2026-10-{i%28+1:02d}T00:00:00Z',prerelease=True,assets={},observed_at=OLD) for i in range(1,41)}
         records['1']['prerelease']=False
         before=dict(observed_at=OLD,releases=records);original=copy.deepcopy(before)
-        result=merge(before,{},completed_at=NEW)
+        result=merge(before,{},completed_at=NEW,history_complete=False)
         self.assertEqual(len(result),33);self.assertIn('1',result)
         self.assertEqual(before,original)
-        fetched={'99':dict(records['1'],observed_at=NEW)}
-        result=merge(before,fetched,completed_at=NEW)
-        self.assertNotIn('1',result);self.assertIn('99',result)
-        with self.assertRaises(ValueError):merge(before,dict(fetched,**{'100':fetched['99']}),completed_at=NEW)
         bad=copy.deepcopy(before);del bad['releases']['1']['created_at']
-        with self.assertRaises((ValueError,TypeError)):merge(bad,{},completed_at=NEW)
+        with self.assertRaises((ValueError,TypeError)):merge(bad,{},completed_at=NEW,history_complete=False)
         self.assertEqual(before,original)
 
     def test_custom_review_changed_inputs_and_no_recipe_execution(self):

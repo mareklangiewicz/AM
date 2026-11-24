@@ -10,18 +10,17 @@ def observation(release, default=None):
     return value
 
 
-def merge(previous, fetched, *, completed_at):
-    """Apply one successful source scope. Raise before mutating on any conflict."""
+def merge(previous, fetched, *, completed_at, history_complete):
+    """Apply one successful source scope. Raise before mutating on any conflict.
+
+    A retained release the fetch did not return stays, unless the fetch proves it gone by
+    reaching the end of the history. GitHub's list is not strictly ordered by any timestamp,
+    so a partial page proves nothing about a release it did not return."""
     timestamp(completed_at)
-    tags = {}
-    for rid, record in fetched.items():
-        if record['tag'] in tags and tags[record['tag']] != rid:
-            raise ValueError('same_tag_conflict')
-        tags[record['tag']] = rid
     retained = {
         rid: dict(copy.deepcopy(record), observed_at=observation(record, previous.get('observed_at')))
         for rid, record in previous.get('releases', {}).items()
-        if record['tag'] not in tags or tags[record['tag']] == rid
+        if rid in fetched or not history_complete
     }
     retained.update(copy.deepcopy(fetched))
     for record in retained.values():

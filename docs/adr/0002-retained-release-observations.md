@@ -52,5 +52,5 @@ Response-inclusion freshness per release stands.
 **Note, November 24, 2026**: same-tag invalidation and exact-tag replacement are
 revoked: each release ID is its own fact, twins included. "Partial absence never
 removes releases" narrows to: only proven absence removes, when the fetch reached
-the end of the history or returned an older release
+the end of the history
 ([same-tag and removed releases](../track/catalog-simplification/issues/07-same-tag-and-removed-releases-as-facts.md)).

@@ -86,8 +86,9 @@ rename source files on an upstream rename or infer enrollment from a new name.
 
 A repository document holds the facts of successful collections plus, while
 the latest attempt failed, `failed_at` (that attempt's time, after
-`collected_at`) and `failed_with` (its cause: `not_found`, `same_tag_conflict`,
-`too_large`, `invalid_response` or `transport`). A failure adds or updates only
+`collected_at`) and `failed_with` (its cause: `not_found`,
+`too_large`, `invalid_response` or `transport`; readers still accept
+`same_tag_conflict` in older documents, which collection no longer writes). A failure adds or updates only
 those two fields, so retained facts and observation times never change; the
 next success drops them. A source that never succeeded has a document with only
 its identity, the failure fields and `releases: {}`: `collected_at`, `scope` and
@@ -107,9 +108,11 @@ materialize old effective times for untouched retained records.
 Each release has exact tag, URL, prerelease flag and all its retained assets.
 Title, created/published/updated timestamps and source archive URLs are optional
 when upstream has no value. At least publication or creation time is required.
-A successful scope replaces older incarnations of the same exact tag before
-retention, even with a different release ID. Two IDs for one tag in a single
-scope invalidate that source. Retain the newest 32 by publication, falling back
+Releases are keyed by ID; several IDs may share one tag, in one scope or across
+scopes, and none replaces another. A successful scope removes a retained release
+it did not return only when it reached the end of the history: GitHub's list is
+not strictly ordered by any timestamp, so a partial page proves nothing.
+Retain the newest 32 by publication, falling back
 to creation, then numeric ID descending; also the newest non-prerelease when
 none of those 32 is stable. Keep all assets, at most 33 releases. Failed validation,
 missing timestamps or exceptional document overflow preserve the prior source.

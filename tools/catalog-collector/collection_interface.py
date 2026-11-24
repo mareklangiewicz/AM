@@ -146,7 +146,7 @@ def collect(args):
         except (ValueError,KeyError,TypeError) as error:
             reason='document_overflow' if str(error)=='document_overflow' else 'source_validation'
             report.append(dict(repository_id=int(rid),status='failed',reason=reason))
-            cause={'document_overflow':'too_large','same_tag_conflict':'same_tag_conflict'}.get(str(error),'invalid_response')
+            cause='too_large' if str(error)=='document_overflow' else 'invalid_response'
             record_failure(rid,acquisition['received_at'],cause)
     recorded={row['repository_id'] for row in report}
     for row in acquisition_report:

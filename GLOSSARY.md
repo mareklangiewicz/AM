@@ -50,7 +50,7 @@ The time a catalog snapshot was published, distinct from repository and release 
 A collection observation acquired by reaching the end of the source's published release pagination. It does not assert a transactional snapshot or independently verified completeness of embedded asset lists.
 
 **Reconciliation**:
-Removal of a retained release that a successful collection proves deleted upstream: the collection reached the end of the history, or returned an older release. A release the collection did not reach is kept. (Redefined November 24, 2026; formerly full-history collections only, never implemented.)
+Removal of a retained release that a successful collection proves deleted upstream by reaching the end of the history. A release the collection did not reach is kept. (Redefined November 24, 2026; formerly full-history collections only, never implemented.)
 
 ## Recipes
 

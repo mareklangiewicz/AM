@@ -33,3 +33,8 @@ November 24, 2026, from ticket 06: the times above, and 06's page sentences for
 November 24, 2026, from ticket 07: retention counts tags, keeping every release
 ID under a kept tag (twins stay together). Twins, no tag replacement and
 proven-gone removal ship earlier, in ticket 18, on today's format.
+
+November 24, 2026, from ticket 18: also drop `same_tag_conflict` from the
+`failed_with` enum (read-only since 18; check that no live document still holds
+it) and rename the `retention` constant to `32-plus-stable-v2` (or whatever the
+tag-counted retention is named).

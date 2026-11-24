@@ -144,7 +144,7 @@ def source(previous, acquired, *, rid, repository, revision):
                           for key,value in previous.get('releases',{}).items()}
     at=acquired['received_at']
     fetched={key:dict(value,observed_at=at) for key,value in acquired['releases'].items()}
-    records=merge(previous,fetched,completed_at=at)
+    records=merge(previous,fetched,completed_at=at,history_complete=acquired['history_complete'])
     result=dict(header('repository',revision),repository_id=int(rid),repository=repository,
                 collected_at=acquired.get('completed_at') or at,scope=dict(page_size=acquired.get('page_size',100),pages_fetched=1,history_complete=acquired['history_complete']),
                 observed_at=at,releases={key:compact_release(value) for key,value in records.items()})

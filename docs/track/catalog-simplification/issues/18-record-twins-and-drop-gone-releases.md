@@ -14,9 +14,8 @@ On today's format, as decided in
 - The collector records every returned release under its own ID even when tags
   repeat; `retention_v3.merge` no longer raises `same_tag_conflict` nor replaces
   an older release ID with the same tag.
-- A retained release that the fetch proves gone (the fetch reached the end of
-  the history, or returned an older release) is removed; one beyond the fetched
-  page keeps its `observed_at`.
+- A retained release missing from a fetch that reached the end of the history
+  is removed; otherwise it keeps its `observed_at` (corrected, see Comments).
 - The host parser drops its "duplicate exact tag" check; the page lists twins as
   separate entries.
 - `same_tag_conflict` leaves the `failed_with` enum (schemas, host tables);
@@ -27,3 +26,22 @@ On today's format, as decided in
 
 The 14 stuck repositories should collect on their next turn; confirm in the
 first catalog run after shipping.
+
+## Comments
+
+November 24, 2026, during implementation: two parts of the Outcome are deferred
+to [ticket 14](14-write-slimmer-release-facts.md), which already changes the
+format once. Dropping `same_tag_conflict` from the `failed_with` enum, and
+renaming the `retention` constant `32-plus-stable-exact-tag-v1` (agreed:
+`32-plus-stable-v2`), both narrow the contract. `release.py ship
+--repin-schemas` validates the live catalog under HEAD's contract first, and the
+live catalog fails both: `catalog.yaml` carries the old constant, and 14
+repository files carry `same_tag_conflict` until they are recollected, about 17
+runs away. So this ticket ships widening only: collection never writes
+`same_tag_conflict` (`build.py` marks it read-only), and the generated schemas
+and tables are unchanged, so no repin is needed.
+
+November 24, 2026, Marek's choice during implementation: removal needs a
+complete history only. GitHub's list is not strictly newest-first, so the
+"returned an older release" proof from ticket 07 was unsound (ticket 07's
+Comments have the numbers).

@@ -2,8 +2,9 @@
 """Ticket 07: are the per-release observed_at overrides releases GitHub deleted?
 
 A release carries its own observed_at only when the latest fetch did not return it. The fetch
-proves it gone when the source's history is complete (the fetch reached the end) or when the
-release is newer than one the fetch did return (GitHub lists newest first). Prints how many
+proves it gone when the source's history is complete (the fetch reached the end). Ticket 07
+also counted a release newer than one the fetch did return, assuming GitHub lists newest first;
+ticket 18 found that false, so the complete-history count is printed separately. Prints how many
 overrides are proven gone, how many may lie beyond the fetched page, in how many sources, and
 their ages relative to the source's observed_at.
 
@@ -44,6 +45,7 @@ while i < len(batch):
             continue
         gone = doc['scope']['history_complete'] or (seen and r['published_at'] > min(seen))
         counts['proven gone' if gone else 'maybe beyond the page'] += 1
+        counts['of which by complete history'] += bool(doc['scope']['history_complete'])
         sources.add(doc['repository'])
         ages.append((time(doc['observed_at']) - time(r['observed_at'])).total_seconds() / 86400)
 ages.sort()

@@ -140,9 +140,7 @@ function semantics( p,r,a,b,k,t,n,seen,stable,count_names,stable_path,stable_tim
                 } else r=values["/observed_at"]
                 if(r>values["/collected_at"]) fail("release observation after collection")
                 if(operation=="get" && query==p "/observed_at") { found=1; emit(r) }
-                k="tag:" values[p "/tag"]
-                if(k in tags) fail("duplicate exact tag")
-                tags[k]=1; releases++
+                releases++
                 if(values[p "/prerelease"]=="false") { stable++; stable_path=p }
                 if((p "/download_base") in types && values[p "/download_base"] !~ /\/$/) fail("download base")
             }
