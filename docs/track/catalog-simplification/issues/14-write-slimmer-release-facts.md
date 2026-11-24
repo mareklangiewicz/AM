@@ -38,3 +38,9 @@ November 24, 2026, from ticket 18: also drop `same_tag_conflict` from the
 `failed_with` enum (read-only since 18; check that no live document still holds
 it) and rename the `retention` constant to `32-plus-stable-v2` (or whatever the
 tag-counted retention is named).
+
+November 25, 2026, from ticket 09 (now unblocked): also whole-`url:`
+exceptions instead of `download_base`/`url_suffix`, plain status integers
+without `state`/`value`, Git maps keyed by quoted name/path, no absent
+provenance rows or `availability`, and no `retention`, `page_size` or
+`pages_fetched` (which settles ticket 18's deferred rename: the constant goes).

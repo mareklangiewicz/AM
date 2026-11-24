@@ -19,3 +19,8 @@ tests and docs. The field prose in `docs/catalog-format-v3.md` and
 `docs/catalog-status-v1.md` is removed as its descriptions land; the grammar and
 reader obligations stay until ticket 09. Published documents do not change (the
 `schema:` to `$schema:` switch is ticket 16's).
+
+## Comments
+
+November 25, 2026, from ticket 09: the grammar doc keeps E9 unchanged plus the
+`$schema` first key; write it from 09's Answer.
