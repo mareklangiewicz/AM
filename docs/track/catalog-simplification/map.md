@@ -50,6 +50,7 @@ here ([Record same-tag and removed releases as facts](issues/07-same-tag-and-rem
 
 ## Decisions so far
 
+- [Probe YAML-authored JSON Schemas in Marek's Neovim](issues/03-probe-yaml-schemas-in-neovim.md): works as is — a first-line `$schema=` modeline to a `.yaml` schema (relative path or raw GitHub URL at a commit) validates, completes and hovers with yamlls 2.0.0; no editor config needed (the yaml extra and SchemaStore.nvim are not involved).
 - [Choose the catalog directory layout in main-marek](issues/04-choose-catalog-directory-layout.md): one `catalog/` (status in `catalog/status/`), one commit per run is the snapshot, readers pin `heads/main-marek`; bot commits skip code CI and rebase-retry; move after slimming, old branches archived locally; per-repository `failed_at`/`failed_with` replace ticket 20's status map.
 - [Inventory the catalog's rules](issues/01-inventory-catalog-rules.md): 62 rules, encodings and pins traced; selection sorts by last success, causes hidden as `source_validation`, the page misstates retention and history, digests/media types/most pins read by nothing.
 - [Choose what to catalog per release and asset](issues/08-choose-what-to-catalog-per-release.md): derive URLs, drop `media_type`/`updated_at`, `sha256pre` (16 hex), all assets stay; keep 8 newest + newest stable + newest with Linux; ≈80 MB estimated.

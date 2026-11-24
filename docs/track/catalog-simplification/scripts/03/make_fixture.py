@@ -9,6 +9,7 @@ Writes, next to this script:
   local-invalid.yaml      the same with two planted errors (string size, unknown key)
   remote.yaml             the same file, modeline = raw GitHub URL of the schema at COMMIT
                           (only with --remote-commit COMMIT)
+  remote-invalid.yaml     local-invalid.yaml's errors under the remote modeline (same flag)
 
 Usage: make_fixture.py [--catalog-ref REF] [--remote-commit COMMIT]
 Run from anywhere inside the AM checkout.
@@ -58,6 +59,7 @@ def main() -> None:
         url = ("https://raw.githubusercontent.com/mareklangiewicz/AM/"
                f"{args.remote_commit}/{REPO_REL}/repository.schema.yaml")
         (HERE / "remote.yaml").write_text(f"# yaml-language-server: $schema={url}\n" + sample)
+        (HERE / "remote-invalid.yaml").write_text(f"# yaml-language-server: $schema={url}\n" + bad)
 
 
 if __name__ == "__main__":
