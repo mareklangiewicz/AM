@@ -61,3 +61,9 @@ Implementation: added to
 the published format changes once. Glossary: "Collection time" superseded,
 "Shared observation time" becomes "Repository observation time". ADR 0002 has a
 dated note.
+
+## Comments
+
+November 24, 2026, from ticket 07: the second "How it works" sentence is replaced
+by 07's text (deleted releases are removed; only releases kept on purpose show a
+last-seen time).

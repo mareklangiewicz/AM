@@ -50,6 +50,7 @@ here ([Record same-tag and removed releases as facts](issues/07-same-tag-and-rem
 
 ## Decisions so far
 
+- [Record same-tag and removed releases as facts](issues/07-same-tag-and-removed-releases-as-facts.md): the 14 failures are same-second twins, recorded as two releases; no tag replacement; releases proven deleted upstream (all 612 overrides) are removed; assets = latest list; no first-seen; retention counts tags; implemented in 18 (now) and 14.
 - [Simplify the catalog's times](issues/06-simplify-catalog-times.md): one repository `observed_at` (page receipt), no `collected_at`; releases keep `observed_at` only when older ("Last seen"); Git refs/files, `created_at` and provenance `evaluated_at` dropped; status times go to 11; implemented in 14.
 - [Probe YAML-authored JSON Schemas in Marek's Neovim](issues/03-probe-yaml-schemas-in-neovim.md): works as is — a first-line `$schema=` modeline to a `.yaml` schema (relative path or raw GitHub URL at a commit) validates, completes and hovers with yamlls 2.0.0; no editor config needed (the yaml extra and SchemaStore.nvim are not involved).
 - [Choose the catalog directory layout in main-marek](issues/04-choose-catalog-directory-layout.md): one `catalog/` (status in `catalog/status/`), one commit per run is the snapshot, readers pin `heads/main-marek`; bot commits skip code CI and rebase-retry; move after slimming, old branches archived locally; per-repository `failed_at`/`failed_with` replace ticket 20's status map.
@@ -60,7 +61,8 @@ here ([Record same-tag and removed releases as facts](issues/07-same-tag-and-rem
 ## Not yet specified
 
 - The installer side of facts-only same-tag records: how AM's updater reads
-  them and where rolling tags are declared. Specify after ticket 07.
+  them and where rolling tags are declared, charted as
+  [ticket 19](issues/19-how-am-updater-reads-release-facts.md).
 - Run limits (16 MiB per response, request/byte/time budgets): probably never
   user-facing except through failures; revisit after ticket 11.
 

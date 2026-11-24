@@ -48,3 +48,9 @@ its only time: `collected_at` is dropped, Git references and files inherit it,
 and releases keep `observed_at` overrides only when older
 ([times decision](../track/catalog-simplification/issues/06-simplify-catalog-times.md)).
 Response-inclusion freshness per release stands.
+
+**Note, November 24, 2026**: same-tag invalidation and exact-tag replacement are
+revoked: each release ID is its own fact, twins included. "Partial absence never
+removes releases" narrows to: only proven absence removes, when the fetch reached
+the end of the history or returned an older release
+([same-tag and removed releases](../track/catalog-simplification/issues/07-same-tag-and-removed-releases-as-facts.md)).

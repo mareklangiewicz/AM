@@ -62,3 +62,8 @@ Estimate, calculated not measured: about 80 MB instead of 448 MB.
 Implementation: [Write the slimmer release and asset facts](14-write-slimmer-release-facts.md)
 and [Measure the slimmed catalog](15-measure-slimmed-catalog.md), both blocked
 by the layout and encoding tickets so the published format changes once.
+
+## Comments
+
+November 24, 2026, from ticket 07: the 8 newest, newest stable and newest with
+Linux are counted as tags, with every release ID under a kept tag.
