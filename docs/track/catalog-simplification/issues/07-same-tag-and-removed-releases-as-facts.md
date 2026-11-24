@@ -13,3 +13,9 @@ a release no longer returned upstream, without invalidating, replacing or
 reconciling? Which first/last-seen facts does a client need to warn or to treat
 a rolling tag as expected, and how does retention bound the history kept? Revises
 ADR 0002; takes over the same-tag part of catalog-system ticket 20.
+
+## Comments
+
+November 24, 2026, from ticket 06: a release keeps its own `observed_at` ("last
+seen") only when a later read didn't return it; first-seen was left to this
+ticket, to add only if a client needs it.

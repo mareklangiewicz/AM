@@ -42,3 +42,9 @@ See the [accepted exact-tag replacement rule](../track/catalog-system/issues/05-
 Earlier catalog commits preserve metadata, without guaranteeing historical binary
 availability. This amends retention/supersession, not collection scope or freshness.
 Existing Git history stays intact; no runtime change or history rewrite is authorized.
+
+**Note, November 24, 2026**: the repository's shared observation time becomes
+its only time: `collected_at` is dropped, Git references and files inherit it,
+and releases keep `observed_at` overrides only when older
+([times decision](../track/catalog-simplification/issues/06-simplify-catalog-times.md)).
+Response-inclusion freshness per release stands.

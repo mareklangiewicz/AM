@@ -26,8 +26,9 @@ The requested sources, releases per page and number of pages (or all pages) for 
 **Release observation time**:
 The last time a successful collection received an upstream response including that release. It measures that release's freshness independently of collection or publication time.
 
-**Shared observation time**:
-An observation time shared by releases that have no individual exception. Changing it does not reobserve releases left untouched by a collection.
+**Repository observation time**:
+When a repository's release page was last received in a successful collection (`observed_at`). Releases, Git references and files without their own observation time share it. Changing it does not reobserve releases left untouched by a collection.
+_Avoid_: shared observation time (superseded November 24, 2026), collection time
 
 **Release selection rule**:
 A client's explicit rule for choosing among cataloged releases, such as publication time, version, prerelease status, or source-specific conventions.
@@ -36,14 +37,14 @@ A client's explicit rule for choosing among cataloged releases, such as publicat
 The first 16 hexadecimal digits of an asset's SHA-256, recorded to notice that an artifact changed. It does not verify a download.
 _Avoid_: digest, checksum (for the prefix)
 
-**Collection time**:
-The time a repository's requested collection scope completed successfully. It does not establish the freshness of releases untouched by that collection.
+**Collection time** (superseded November 24, 2026, by repository observation time):
+The time a repository's requested collection scope completed successfully. Dropped with `collected_at`: it equalled the repository observation time in all but 2 sources, 1 s apart.
 
 **Failed attempt**:
 A collection of a repository that did not complete, recorded with its time and cause until the next successful collection. For choosing which repositories to collect next, it counts as a visit like a success.
 
 **Publication time**:
-The time a catalog snapshot was published, distinct from collection times and release observation times.
+The time a catalog snapshot was published, distinct from repository and release observation times.
 
 **Complete release observation**:
 A collection observation acquired by reaching the end of the source's published release pagination. It does not assert a transactional snapshot or independently verified completeness of embedded asset lists.
