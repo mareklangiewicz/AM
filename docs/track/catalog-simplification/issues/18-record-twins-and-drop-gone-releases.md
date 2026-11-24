@@ -45,3 +45,19 @@ November 24, 2026, Marek's choice during implementation: removal needs a
 complete history only. GitHub's list is not strictly newest-first, so the
 "returned an older release" proof from ticket 07 was unsound (ticket 07's
 Comments have the numbers).
+
+November 24, 2026: shipped at `78e290935` (`release.py ship --ci twins-18
+--repin-schemas`; Long tests 45404830517, Fast run 45433403536, catalog run
+45433417508 and page deploy 45439666753 green). The page deploy was dispatched by
+hand: `release.py` compares only the deployed definitions
+([catalog-system ticket 47](../../catalog-system/issues/47-release-compares-every-deployed-browser-file.md)).
+The live `reader.mjs` now equals HEAD.
+
+First catalog under it, `3f309f260` (`scripts/18/removed.py 3fd57907b
+3f309f260`): of 500 collected repositories, every missing release is accounted
+for: 136 dropped by the 32-release cap, 105 removed by a complete history, none
+without proof. Per-release `observed_at` overrides fell from 612 to 522. The
+first twin is a recreated tag, `xLightsSequencer/xLights` `nightly`: new ID
+456350789 seen now, old ID 453465231 kept with its last-seen time. None of the
+14 twin repositories was in this batch (they failed on November 23, so rotation
+reaches them later); this ticket stays claimed until they collect.
