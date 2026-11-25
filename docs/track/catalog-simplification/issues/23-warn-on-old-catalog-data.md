@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: claimed
+Status: resolved
 Triage: ready-for-agent
 Blocked by: none
 
@@ -56,3 +56,8 @@ before installing; a batch warns once per app and each app rechecks the clock
 EmmyLua toolset selects old data and reports its age; no live recipe sets
 `CATALOG_FRESH_ONLY` (whole-tree tier). Long e2e: the exact 14-day CLI boundary, the
 warning beside interrupted work, and the removed option.
+
+Shipped November 25, 2026 as `d768ac8bd` with `--repin-schemas` (the wording
+in `docs/catalog-format-v3.md` is a schemas input): Long tests 45532192454,
+live refs validated under the new contract, fast run 45589965756 and catalog
+run 45589974749 green, catalog at `8b6d58033`.
