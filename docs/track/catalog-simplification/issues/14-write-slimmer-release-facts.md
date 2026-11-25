@@ -50,3 +50,6 @@ November 25, 2026, from ticket 12: provenance entries become `recipe:
 template evaluation, `custom` or `evidence`; measure one full classification),
 and the Linux/architecture guess is one tested rule shared by the page and the
 retention's "newest with a Linux download".
+
+November 25, 2026, from ticket 13: the page's "How it works" and `?` help become
+13's validated text.

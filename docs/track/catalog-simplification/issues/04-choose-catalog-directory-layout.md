@@ -62,3 +62,7 @@ validation failure writes no repository files and stays in the run summary.
 Implementation: [Move the catalog into `catalog/` in main-marek](16-move-catalog-into-main-marek.md)
 and [Retry the collector's push after a rejection](17-retry-collector-push.md);
 the failure fields are built in catalog-system ticket 20, now, on the branch.
+
+November 25, 2026, revised during ticket 13: readers no longer pin
+`heads/main-marek` to a commit; they read the branch directly (see
+[ticket 21](21-drop-commit-pins-and-pin-variables.md)).
