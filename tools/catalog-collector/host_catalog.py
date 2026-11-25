@@ -25,7 +25,7 @@ FILE_CAP = 2097152
 RESPONSE_CAP = 16 * 1024 * 1024
 TOTAL_CAP = 512 * 1024 * 1024
 SOURCE_CAP = 9000
-REQUEST_CAP = 500
+REQUEST_CAP = 750  # a 500-repository batch plus its Git reads, with room (the v3 workflow's allowance)
 ACQUISITION_SECONDS = 900
 RATE_RESERVE = 100
 

@@ -243,5 +243,15 @@ class Retirement(unittest.TestCase):
             self.assertIn('catalog/repositories/nvim.yaml', fixture.tip_files())
 
 
+class Budget(unittest.TestCase):
+    def test_a_full_batch_and_every_git_read_fit_the_request_allowance(self):
+        # Run 45658789307 read 498 of 500: the Git reads of git-sources.json
+        # took the last two repositories' requests (stop_reason request_budget).
+        scopes = json.loads((Path(__file__).resolve().parent/'git-sources.json').read_text())
+        git_requests = sum(scope['tags'] + sum(1 + len(files) for files in scope['branches'].values())
+                           for scope in scopes.values())
+        self.assertLessEqual(catalog_run.BATCH_SIZE + git_requests, host_catalog.REQUEST_CAP)
+
+
 if __name__ == '__main__':
     unittest.main()

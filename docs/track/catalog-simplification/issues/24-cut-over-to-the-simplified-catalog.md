@@ -156,3 +156,18 @@ November 25, 2026, parts 5 and 6 on `ci/cutover`:
   Tests ported for behaviour that stays; new run tests for failure fields, a
   run-wide stop and retirement (`removed.json` had none).
 - `a7ce93701`: part 6 docs.
+
+November 25, 2026, shipped with Marek's OK: `release.py ship --ci cutover`
+pushed `a5095cbc4` (the seed from v3 `3ba427e2a`; `catalog/` valid under
+both readers, about 2 minutes) after Long tests 45654975965; Fast tests
+45658635274 passed. The page was redeployed (45658736679; the deployed
+`schema.mjs` serves). `CATALOG_SCHEDULE_REVISION`, `CATALOG_SCHEMA_REVISION`
+and `CATALOG_V3_ENABLED` deleted; `ci/cutover` deleted. The first collector
+run, 45658789307, committed `0644037da` (only `catalog/`, 500 files, with the
+job's token): 500 selected, 498 read, 0 failed, 345 MB, 7 minutes, and
+`stop_reason: request_budget`: part 5 dropped the v3 workflow's 750-request
+allowance, so `host_catalog.REQUEST_CAP` (500) left no room for the Git reads
+of `git-sources.json` (8 requests). Fixed by `REQUEST_CAP = 750`, with a test
+that a full batch and every Git read fit. Left: Marek reinstalls his apps;
+then the old branches become local `archive/<name>` refs and leave origin
+with his OK.

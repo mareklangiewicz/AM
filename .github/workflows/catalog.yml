@@ -37,11 +37,12 @@ jobs:
       - name: Read GitHub, write a candidate
         env:
           GH_TOKEN: ${{ github.token }}
-          BATCH: ${{ vars.CATALOG_BATCH_SIZE || '500' }}
+          # Unset: catalog_run.BATCH_SIZE.
+          BATCH: ${{ vars.CATALOG_BATCH_SIZE }}
         run: |
           python3 -B tools/catalog-collector/catalog_run.py collect \
             --checkout "$GITHUB_WORKSPACE" --output "$RUNNER_TEMP/candidate" \
-            --run-id "$GITHUB_RUN_ID" --attempt "$GITHUB_RUN_ATTEMPT" --batch-size "$BATCH"
+            --run-id "$GITHUB_RUN_ID" --attempt "$GITHUB_RUN_ATTEMPT" ${BATCH:+--batch-size "$BATCH"}
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: catalog-${{ github.run_id }}-${{ github.run_attempt }}

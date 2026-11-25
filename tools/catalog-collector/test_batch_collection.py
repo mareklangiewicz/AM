@@ -73,7 +73,7 @@ class BatchCollection(unittest.TestCase):
         self.assertEqual(calls, list(map(str, range(1, 53))))
         self.assertEqual(len(acquired), 52)
         self.assertEqual(len(report), 52)
-        for size in (0, 501, True):
+        for size in (0, collector.REQUEST_CAP+1, True):
             with self.assertRaisesRegex(ValueError, 'batch size'):
                 self.collect({}, read, size=size)
         with self.assertRaisesRegex(ValueError, 'discard retained'):

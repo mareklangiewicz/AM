@@ -57,7 +57,8 @@ last-seen `observed_at`, unless the read reached the end of the release list.
   unique and never reuse a `retired` one, and an enrolled repository without a
   name refuses the run.
 - A batch reads at most 500 repositories (`CATALOG_BATCH_SIZE` repository
-  variable to change it) within 500 requests, a 100-request primary rate
+  variable to change it) within 750 requests (its Git reads take more than one
+  each), a 100-request primary rate
   reserve, 512 MiB of response bytes, 16 MiB per response and 900 seconds.
   401/403/429 and the budgets stop the run (`stop_reason`); no redirects or
   retries.
