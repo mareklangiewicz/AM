@@ -137,3 +137,22 @@ before part 5 (removal), to the traced list (imports from `catalog_run.py`,
   `contents: write` on the commit job only.
 - The agent deletes `CATALOG_SCHEDULE_REVISION`/`CATALOG_SCHEMA_REVISION`
   (`gh variable delete`) when the cutover ships.
+
+November 25, 2026, parts 5 and 6 on `ci/cutover`:
+
+- `60658389a`: `catalog_run.py`, `seed.py`, `merge.py` and `convert.py` import no
+  v3 module (`git_observations` returns the document's shape; `registry_names`
+  in `host_catalog`, so an unnamed enrolled repository refuses the run).
+- `043514fc7`: `release.py` without pins, repin or dispatch; `docs/` and
+  `catalog/` need no Long tests; a `catalog/`-only push waits for no Fast
+  tests run; a change to `catalog/` or the contract validates HEAD's
+  `catalog/` with HEAD's awk and node readers; the deployed `schema.mjs` is
+  compared.
+- `d6f44a570`: the agreed deletions; `catalog.yml` runs `catalog_run.py`
+  (collect read-only on `main-marek`'s tip, publish with the job's
+  `GITHUB_TOKEN` as an HTTP header); the composite action is inlined;
+  `tests.yml` ignores `catalog/`. `CATALOG_V3_ENABLED` gates nothing now
+  either: it joins the variables to delete at the ship, if Marek agrees.
+  Tests ported for behaviour that stays; new run tests for failure fields, a
+  run-wide stop and retirement (`removed.json` had none).
+- `a7ce93701`: part 6 docs.
