@@ -242,10 +242,10 @@ esac
         self.command('--commit',PIN,executable=str(nightly/'AM-updater'))
         calls=read_transport_records(self.fixture/'calls', excluding=previous)
         self.assertTrue(any(c['tool']=='wget' and c['url'].endswith('/nightly/nvim-linux-x86_64.appimage') for c in calls))
-        self.configure(clock='1793800000.000000')
-        before_app=snapshot_tree(nightly)
-        self.command('-u','nvim-nightly','--commit',PIN,success=False)
-        self.assertEqual(snapshot_tree(nightly),before_app)
+        self.configure(clock='1794410400.000000')  # OBSERVED + 15 days: warns, still refreshes
+        result=self.command('-u','nvim-nightly','--commit',PIN)
+        self.assertIn('nvim-nightly: updated',result.stdout)
+        self.assertEqual(result.stderr.count('catalog data last seen 15 days ago'),1,result.stderr)
         self.assertEqual(os.readlink(launcher),'/opt/nvim-nightly/nvim-nightly')
         self.assertEqual(snapshot_tree(self.home/'.config'),before)
 
@@ -372,25 +372,21 @@ esac
         self.assertTrue(any(url.startswith('https://raw.githubusercontent.com/e2e-selected/AM/'+PIN+'/') for url in calls))
         self.assertFalse(any('e2e-alternate' in url for url in calls))
 
-    def test_exact_seven_day_cli_freshness_boundary(self):
+    def test_exact_fourteen_day_cli_warning_boundary(self):
         self.command('-i','obsidian')
         app=Path('/opt/obsidian')
-        alias='https://api.github.com/repos/obsidianmd/obsidian-releases/releases'
-        rid='262342594'
-        checked=Decimal('1793114400')
-        boundary=checked+Decimal(604800)
+        checked=Decimal('1793114400')  # OBSERVED
+        boundary=checked+Decimal(14*86400)
         before=snapshot_tree(app)
-        self.configure(clock=f'{boundary:.6f}')
-        result=self.command('-u','obsidian','--commit',PIN)
-        self.assertIn('obsidian: unchanged',result.stdout)
-        after=snapshot_tree(app)
-        for name in ('obsidian','version'):
-            self.assertEqual(after[name],before[name])
-        before=after
-        self.configure(clock=f'{boundary+Decimal("1"):.6f}')
-        result=self.command('-u','obsidian','--commit',PIN,success=False)
-        self.assertIn('stale',result.stderr)
-        self.assertEqual(snapshot_tree(app),before)
+        for clock,warned in ((boundary,False),(boundary+Decimal('1'),True)):
+            with self.subTest(clock=clock):
+                self.configure(clock=f'{clock:.6f}')
+                result=self.command('-u','obsidian','--commit',PIN)
+                self.assertIn('obsidian: unchanged',result.stdout)
+                self.assertEqual('warning: obsidian catalog data last seen 14 days ago' in result.stderr,warned,result.stderr)
+                after=snapshot_tree(app)
+                for name in ('obsidian','version'):
+                    self.assertEqual(after[name],before[name])
 
     def test_named_reinstall_preserves_unrelated_changed_app(self):
         self.check_reinstall_selection(('obsidian',),('nvim',),('obsidian',))
@@ -499,7 +495,7 @@ esac
                 self.command('--commit',PIN,home=home,executable=str(app/'AM-updater'))
                 self.assertEqual(snapshot_tree(config),before)
 
-    def test_integrity_and_stale_refusal_preserve_app_and_interrupted_work(self):
+    def test_integrity_refusal_and_old_data_warning_preserve_app_and_interrupted_work(self):
         self.command('-i','obsidian')
         app=Path('/opt/obsidian')
         (app/'tmp').mkdir();(app/'tmp/retained').write_text('interrupted work\n')
@@ -512,18 +508,19 @@ esac
         self.assertIn('obsidian: refused',result.stderr)
         self.assertEqual(snapshot_tree(app),before)
         body.write_bytes(self.tree[f'repositories/source-{rid}.yaml'])
-        self.configure(clock='1793800000.000000')
-        result=self.command('-u','obsidian','--commit',PIN,success=False)
-        self.assertIn('stale',result.stderr)
-        self.assertEqual(snapshot_tree(app),before)
-        result=self.command('-u','obsidian','--commit',PIN,'--accept-stale-release',PIN,rid,'1','1',OBSERVED)
+        self.configure(clock=f'{Decimal("1793114400")+Decimal(15*86400):.6f}')
+        result=self.command('-u','obsidian','--commit',PIN)
         self.assertIn('obsidian: unchanged',result.stdout)
+        self.assertEqual(result.stderr.count('obsidian catalog data last seen 15 days ago'),1,result.stderr)
+        self.assertEqual((app/'tmp/retained').read_text(),'interrupted work\n')
+        result=self.command('-u','obsidian','--commit',PIN,'--accept-stale-release',PIN,rid,'1','1',OBSERVED,success=False)
+        self.assertIn('Unsupported update option: --accept-stale-release',result.stderr)
         self.assertEqual((app/'tmp/retained').read_text(),'interrupted work\n')
 
     def test_install_refusal_creates_no_app_or_launcher(self):
-        self.configure(clock='1793800000.000000')
+        (self.fixture/'tree/repositories/source-262342594.yaml').write_bytes(b'[]')
         result=self.command('-i','obsidian',success=False)
-        self.assertIn('stale',result.stderr)
+        self.assertIn('refused',result.stderr)
         self.assertFalse(Path('/opt/obsidian').exists())
         self.assertFalse(Path('/usr/local/bin/obsidian').exists())
 

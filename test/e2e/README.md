@@ -18,8 +18,8 @@ Nothing installs into host app directories. Never run scenarios directly on the 
 The suite uses current YAML publication fixtures, independent of historical
 collector/storage/migration code. Debian and Fedora cover system and AppMan install,
 standalone updater source ownership, nightly refresh, download failure/partial
-transfer/retry, interrupted AppMan work, removal/reinstall, selected-record stale
-consent, freshness boundaries, mixed-batch continuation and real module sync.
+transfer/retry, interrupted AppMan work, removal/reinstall, the old-data warning
+and its 14-day boundary, mixed-batch continuation and real module sync.
 Native Termux retains AppMan, unprivileged/fallback and installed executable checks.
 The test log and `results.json` record the actual cases run.
 

@@ -72,22 +72,19 @@ class AppImages(AppImagesCase):
                 self.assertEqual(result.returncode,0,result.stderr)
                 self.assertEqual(result.stdout.decode().splitlines()[2],
                     '2' if app=='vivaldi-snapshot' else '1')
-                selected=self.fact(url,release='4',published='2026-11-03T00:00:00Z',observed='2026-10-27T12:00:00Z')
-                refused=self.policy(recipe,old+selected,tool)
-                self.assertNotEqual(refused.returncode,0);self.assertEqual(refused.stdout,b'')
-                token=':'.join([self.pin,str(row['repository_id']),'4','1','2026-10-27T12:00:00Z'])
-                accepted=self.policy(recipe,old+selected,tool,AM_YAML_ACCEPT=token)
-                self.assertEqual(accepted.returncode,0,accepted.stderr)
-                self.assertEqual(accepted.stdout.decode().splitlines()[2],'4')
+                # An old winner stays the winner; the policy reports its age for one warning.
+                selected=self.fact(url,release='4',published='2026-11-03T00:00:00Z',observed='2026-10-20T11:59:59Z')
+                warning=self.path/'warning';warning.unlink(missing_ok=True)
+                chosen=self.policy(recipe,old+selected,tool,AM_YAML_WARNING=str(warning))
+                self.assertEqual(chosen.returncode,0,chosen.stderr)
+                self.assertEqual(chosen.stdout.decode().splitlines()[2],'4')
+                self.assertEqual(warning.read_text(),'15\t2026-10-20T11:59:59Z\n')
                 wrong=self.policy(recipe,old,tool,AM_YAML_REPOSITORY='1')
                 self.assertNotEqual(wrong.returncode,0);self.assertEqual(wrong.stdout,b'')
 
-    def test_reassignment_and_stale_refuse_before_mutation(self):
+    def test_reassignment_refuses_before_mutation(self):
         self.clock=self.repositories['19416551']['observed_at']
         app=self.install('x86_64/sqlitebrowser');before=self.snapshot()
-        self.clock='2026-11-04T12:00:00Z'
-        result=self.standalone(app/'AM-updater')
-        self.assertNotEqual(result.returncode,0);self.assertEqual(self.snapshot(),before)
         apps=dict(self.apps,sqlitebrowser=next(r for r in self.saved if r!=19416551))
         pin=publish_local(self.repo,apps,self.repositories,expected_parent=self.pin)
         result=self.standalone(app/'AM-updater','--commit',pin)

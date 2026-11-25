@@ -24,7 +24,7 @@ from recipe_declarations import recipe_rows,url_policy_rows
 
 # What a recipe selects: compared before and after a re-conversion. A missing
 # field is its default, so an explicit default is not a change.
-FIELDS=('recipe','repository_id','repository','channel','asset_pattern','url_rules','catalog_app','fresh_only',
+FIELDS=('recipe','repository_id','repository','channel','asset_pattern','url_rules','catalog_app',
         'selection','tag_pattern','tag_exclude','git_ref','git_file','tools','tool_asset_suffix')
 DEFAULTS={'url_rules':[],'selection':'asset'}
 

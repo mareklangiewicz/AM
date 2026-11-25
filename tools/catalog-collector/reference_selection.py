@@ -12,12 +12,9 @@ from bounded import require
 
 POLICY_KEYS = {'release_order','stable_only','asset_suffix','include','exclude','ignore_case'}
 ASCII_LOWER = str.maketrans(string.ascii_uppercase,string.ascii_lowercase)
+STALE_SECONDS = 14*86400  # older than this, the host warns (ticket 23)
 
 
-class StaleSelection(ValueError):
-    def __init__(self, acceptance):
-        super().__init__('stale_release_acceptance_required')
-        self.acceptance = acceptance
 
 
 def policy(value):
@@ -30,10 +27,11 @@ def policy(value):
     return value
 
 
-def select(apps, repositories, app, commit, rule, *, now, accept_stale=None):
+def select(apps, repositories, app, commit, rule, *, now):
     """Client policy chooses a release/asset before checking its observation age.
 
-    Never silently substitute a fresher release when the chosen record is stale.
+    Never silently substitute a fresher release when the chosen record is old:
+    it stays the winner, marked stale (the host warns, ticket 23).
     Include means all substrings, exclude means any substring, on asset name only.
     Asset order is UTF-8 byte name then numeric ID; release ties use numeric ID.
     """
@@ -58,21 +56,19 @@ def select(apps, repositories, app, commit, rule, *, now, accept_stale=None):
                     any(fold(s) in name for s in rule['exclude'])):
                 continue
             return accept_selection(app, rid, repository, release_id, release, asset_id,
-                                    asset, commit, now=now, accept_stale=accept_stale)
+                                    asset, commit, now=now)
     raise ValueError('no_matching_asset')
 
 
-def accept_selection(app, rid, repository, release_id, release, asset_id, asset, commit, *, now, accept_stale=None):
-    """Shared selected-record freshness check for offline policy rehearsals."""
+def accept_selection(app, rid, repository, release_id, release, asset_id, asset, commit, *, now):
+    """Shared selected-record age check for offline policy rehearsals."""
     observed = release.get('observed_at',repository.get('observed_at'))
     require(type(observed) is str, 'missing_release_observation')
     received = datetime.strptime(observed,'%Y-%m-%dT%H:%M:%SZ').replace(tzinfo=timezone.utc)
     age = (now-received).total_seconds()
     require(age >= 0, 'future_release_observation')
-    acceptance = dict(commit=commit,repository_id=rid,release_id=release_id,
+    identity = dict(commit=commit,repository_id=rid,release_id=release_id,
                       asset_id=asset_id,observed_at=observed)
-    stale = age > 7*86400
-    if stale and accept_stale != acceptance:
-        raise StaleSelection(acceptance)
-    return dict(app=app,**acceptance,tag=release['tag'],published_at=release['published_at'],
+    stale = age > STALE_SECONDS
+    return dict(app=app,**identity,tag=release['tag'],published_at=release['published_at'],
                 prerelease=release['prerelease'],stale=stale,asset=dict(asset))

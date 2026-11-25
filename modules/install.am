@@ -1339,12 +1339,8 @@ case "$1" in
 				--commit)
 					[ "$#" -ge 2 ] || { echo 'Missing catalog commit' >&2; exit 1; }
 					catalog_install_options+=("$1" "$2"); shift 2 ;;
-				--accept-stale)
-					[ "$#" -ge 4 ] || { echo 'Missing exact stale tuple' >&2; exit 1; }
-					catalog_install_options+=("$1" "$2" "$3" "$4"); shift 4 ;;
-				--accept-stale-release)
-					[ "$#" -ge 6 ] || { echo 'Missing exact selected-release tuple' >&2; exit 1; }
-					catalog_install_options+=("$1" "$2" "$3" "$4" "$5" "$6"); shift 6 ;;
+				--accept-stale|--accept-stale-release)
+					echo "Unsupported option: $1 (old catalog data now warns instead of refusing)" >&2; exit 1 ;;
 				*) install_arguments+=("$1"); shift ;;
 			esac
 		done

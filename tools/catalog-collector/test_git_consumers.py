@@ -71,12 +71,28 @@ class GitConsumers(unittest.TestCase):
         self.assertTrue(all('/'+self.pin+'/' in call[-1] for call in self.calls()
                             if 'raw.githubusercontent.com' in call[-1]))
 
-    def test_stale_git_observation_refuses_without_payload_or_output(self):
-        self.prepare();self.clock='2026-11-17T12:00:00Z'
-        for app,option in [('junest','--git-snapshot'),('trans','--tag'),('watched','--tag')]:
-            result=self.read(app,option);self.assertNotEqual(result.returncode,0)
-            self.assertEqual(result.stdout,'');self.assertIn('fresh_non_asset_observation_required',result.stderr)
-        self.assertFalse((self.path/'downloads').exists())
+    def test_old_git_observation_warns_once_and_still_selects(self):
+        self.prepare();self.clock='2026-11-24T12:00:01Z'  # 15 days after AT
+        for app,option,expected in [('junest','--git-snapshot','b'*40+'\n1.2\n'),('trans','--tag','v3alpha\n')]:
+            with self.subTest(app=app):
+                result=self.read(app,option);self.assertEqual(result.returncode,0,result.stderr)
+                self.assertEqual(result.stdout,expected)
+                self.assertEqual(result.stderr.count('last seen 15 days ago'),1,result.stderr)
+
+    def test_one_command_session_warns_about_an_app_once(self):
+        self.prepare();self.clock='2026-11-24T12:00:01Z'
+        session=self.path/'session';session.mkdir()
+        first,second=(self.read('junest',option,extra=dict(AM_CATALOG_SESSION=str(session)))
+                      for option in ('--git-commit','--git-file'))
+        for result in (first,second):self.assertEqual(result.returncode,0,result.stderr)
+        self.assertEqual((first.stderr+second.stderr).count('last seen 15 days ago'),1,first.stderr+second.stderr)
+        other=self.read('trans','--tag',extra=dict(AM_CATALOG_SESSION=str(session)))
+        self.assertEqual(other.stderr.count('last seen 15 days ago'),1,other.stderr)
+
+    def test_git_observation_under_two_weeks_old_selects_without_a_warning(self):
+        self.prepare();self.clock='2026-11-22T12:00:00Z'  # 13 days after AT
+        result=self.read('junest','--git-commit');self.assertEqual(result.returncode,0,result.stderr)
+        self.assertEqual(result.stdout,'b'*40+'\n');self.assertEqual(result.stderr,'')
 
     def test_future_file_time_refuses_even_if_its_branch_was_observed_in_the_past(self):
         self.prepare();tree=self.snapshot()

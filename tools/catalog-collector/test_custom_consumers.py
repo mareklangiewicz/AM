@@ -67,10 +67,11 @@ class CustomConsumers(unittest.TestCase):
         result=self.read('python','--version-url')
         self.assertEqual(result.returncode,0,result.stderr)
         self.assertEqual(result.stdout,highest['assets']['1']['url']+'\n')
-        self.clock='2026-11-17T12:00:00Z'
+        self.clock='2026-11-24T12:00:01Z'  # 15 days after it was seen: the same winner, warned once
         result=self.read('python','--version-url')
-        self.assertNotEqual(result.returncode,0);self.assertEqual(result.stdout,'')
-        self.assertIn('stale',result.stderr)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertEqual(result.stdout,highest['assets']['1']['url']+'\n')
+        self.assertEqual(result.stderr.count('last seen 15 days ago'),1,result.stderr)
 
     def test_source_archive_is_release_fact_without_synthetic_asset_identity(self):
         r=self.release();r['source_tar_url']='https://api.github.com/repos/b3nj5m1n/xdg-ninja/tarball/v1'
@@ -79,15 +80,18 @@ class CustomConsumers(unittest.TestCase):
         self.assertEqual(result.returncode,0,result.stderr)
         self.assertEqual(result.stdout,r['source_tar_url']+'\n')
 
-    def test_url_menu_lists_old_records_but_chosen_url_must_be_fresh(self):
+    def test_a_chosen_url_seen_over_two_weeks_ago_warns_and_one_seen_less_does_not(self):
         r=self.release()
-        r['assets']={'1':dict(name='wine-x86_64.AppImage',url='https://example.org/wine-x86_64.AppImage',size=1,content_type='application/octet-stream')}
-        self.prepare('wine',{'1':r});self.clock='2026-11-17T12:00:00Z'
-        result=self.read('wine','--urls');self.assertEqual(result.returncode,0,result.stderr)
-        self.assertEqual(result.stdout,r['assets']['1']['url']+'\n')
-        result=self.read('wine','--url','--selected-url',r['assets']['1']['url'])
-        self.assertNotEqual(result.returncode,0);self.assertEqual(result.stdout,'')
-        self.assertIn('stale',result.stderr)
+        url='https://example.org/wine-x86_64.AppImage'
+        r['assets']={'1':dict(name='wine-x86_64.AppImage',url=url,size=1,content_type='application/octet-stream')}
+        self.prepare('wine',{'1':r})
+        for clock,warnings in [('2026-11-22T12:00:00Z',0),('2026-11-24T12:00:01Z',1)]:  # 13 and 15 days
+            with self.subTest(clock=clock):
+                self.clock=clock
+                result=self.read('wine','--url','--selected-url',url)
+                self.assertEqual(result.returncode,0,result.stderr)
+                self.assertEqual(result.stdout,url+'\n')
+                self.assertEqual(result.stderr.count('last seen 15 days ago'),warnings,result.stderr)
 
 
 if __name__=='__main__':unittest.main()

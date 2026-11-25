@@ -1,13 +1,13 @@
 #!/bin/sh
 # AMCLI format-3 acquisition/selection. No Git/Python/jq on clients.
-# Named policies and --accept-stale-release are proposed, not rollout acceptance.
+# Named policies are proposed, not rollout acceptance. Old data warns, never refuses.
 set -eu
 export LC_ALL=C
 fail() { printf 'AM YAML catalog: %s\n' "$*" >&2; exit 1; }
 [ "$#" -gt 0 ] || fail 'missing recipe'
 AM_YAML_RECIPE=$1; shift
 app=${AM_YAML_RECIPE#*/}
-pin='' AM_YAML_ACCEPT='' AM_YAML_TOOL='' AM_YAML_INCLUDE_PUBLICATION='' AM_YAML_SOURCE_REPOSITORY='' url_only=false
+pin='' AM_YAML_TOOL='' AM_YAML_INCLUDE_PUBLICATION='' AM_YAML_SOURCE_REPOSITORY='' url_only=false
 AM_YAML_OUTPUT='' AM_YAML_LIST_URLS='' AM_YAML_URL_FILTER='' AM_YAML_URL_PATTERN='' AM_YAML_URL_CONTAINS='' AM_YAML_SELECTED_URL='' version_url=false
 hex() { [ "${#1}" -eq 40 ] && case $1 in *[!0-9a-f]*) return 1;; esac; }
 while [ "$#" -gt 0 ]; do
@@ -34,9 +34,6 @@ while [ "$#" -gt 0 ]; do
             [ "$#" -ge 2 ] && [ -z "$AM_YAML_SOURCE_REPOSITORY" ] || fail 'missing or repeated recipe source'
             AM_YAML_SOURCE_REPOSITORY=$2; shift 2 ;;
         --commit) [ "$#" -ge 2 ] && [ -z "$pin" ] || fail 'missing or repeated commit'; pin=$2; shift 2 ;;
-        --accept-stale-release)
-            [ "$#" -ge 6 ] && [ -z "$AM_YAML_ACCEPT" ] || fail 'missing or repeated selected-release tuple'
-            AM_YAML_ACCEPT=$2:$3:$4:$5:$6; shift 6 ;;
         *) fail 'unsupported option (format-1 consent does not apply)' ;;
     esac
 done
@@ -53,7 +50,7 @@ for module in catalog-contract-reader.am catalog-contract-parser.am catalog-cont
 done
 # Validate against trusted selection declarations/policies before HTTP.
 # Collection enrollment is a separate publication choice.
-policy_info=$(AM_YAML_RECIPE=$AM_YAML_RECIPE AM_YAML_ACCEPT=$AM_YAML_ACCEPT AM_YAML_SOURCE_REPOSITORY=$AM_YAML_SOURCE_REPOSITORY AM_YAML_CHECK_RECIPE=1 AM_YAML_APP_NAME=1 AM_YAML_POLICY_INFO=1 \
+policy_info=$(AM_YAML_RECIPE=$AM_YAML_RECIPE AM_YAML_SOURCE_REPOSITORY=$AM_YAML_SOURCE_REPOSITORY AM_YAML_CHECK_RECIPE=1 AM_YAML_APP_NAME=1 AM_YAML_POLICY_INFO=1 \
     awk -f "$here/catalog-yaml-policy.am" </dev/null) || fail 'unsupported recipe policy'
 app=$(printf '%s\n' "$policy_info" | sed -n '1p')
 selection=$(printf '%s\n' "$policy_info" | sed -n '2p')
@@ -129,8 +126,7 @@ root=https://raw.githubusercontent.com/$repository/$pin
 acquire() {
     name=$1 target=$cache/$1
     if [ ! -f "$target" ]; then
-        # Any transfer/validation failure latches the command; stale selection
-        # alone does not latch and cannot authorize a different record.
+        # Any transfer/validation failure latches the command.
         : > "$cache/failed"
         fetch "$root/$name" 2097152 "$scratch/document" 'application/octet-stream'
         sh "$reader" validate "$scratch/document" || fail 'invalid YAML document'
@@ -162,9 +158,8 @@ case $selection in asset) operation=asset_facts;; release) operation=release_fac
 sh "$reader" "$operation" "$file" > "$scratch/facts" || fail 'invalid repository facts'
 rm -f "$cache/failed"
 check_clock
-AM_YAML_PIN=$pin AM_YAML_STALE_OPTION=release
-export AM_YAML_STALE_OPTION
-export AM_YAML_RECIPE AM_YAML_ACCEPT AM_YAML_REPOSITORY AM_YAML_NOW AM_YAML_PIN AM_YAML_TOOL AM_YAML_INCLUDE_PUBLICATION AM_YAML_SOURCE_REPOSITORY
+AM_YAML_PIN=$pin
+export AM_YAML_RECIPE AM_YAML_REPOSITORY AM_YAML_NOW AM_YAML_PIN AM_YAML_TOOL AM_YAML_INCLUDE_PUBLICATION AM_YAML_SOURCE_REPOSITORY
 export AM_YAML_OUTPUT AM_YAML_LIST_URLS AM_YAML_URL_FILTER AM_YAML_URL_PATTERN AM_YAML_URL_CONTAINS AM_YAML_SELECTED_URL
 if [ "$version_url" = true ]; then
     [ -z "$AM_YAML_SELECTED_URL" ] || fail 'conflicting selected URL'
@@ -177,7 +172,13 @@ awk -f "$here/catalog-yaml-policy.am" "$scratch/facts" > "$scratch/result" || ex
 check_clock
 # Recheck the same selected facts at the final clock before output.
 export AM_YAML_NOW
-awk -f "$here/catalog-yaml-policy.am" "$scratch/facts" > "$scratch/result" || exit 1
+AM_YAML_WARNING=$scratch/warning awk -f "$here/catalog-yaml-policy.am" "$scratch/facts" > "$scratch/result" || exit 1
+# Once per app per command: the cache is the command session's when there is one.
+if [ -s "$scratch/warning" ] && [ ! -e "$cache/warned-$app" ]; then
+    : > "$cache/warned-$app"
+    IFS='	' read -r days observed < "$scratch/warning"
+    printf 'AM YAML catalog: warning: %s catalog data last seen %s days ago (%s); using it anyway\n' "$app" "$days" "$observed" >&2
+fi
 if [ "$AM_YAML_LIST_URLS" = 1 ]; then sort -u "$scratch/result"
 elif [ "$url_only" = true ]; then sed -n '6p' "$scratch/result"
 else cat "$scratch/result"

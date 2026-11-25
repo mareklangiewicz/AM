@@ -52,7 +52,6 @@ def policy_keys(policy):
 def reason(stderr):
     text=stderr.strip().splitlines()[-1] if stderr.strip() else 'no message'
     text=re.sub(r'^(catalog selection|AM YAML catalog): ','',text)
-    if text.startswith('stale; retry'):return 'stale'
     return text
 
 
@@ -98,7 +97,7 @@ def main():
     report=dict(catalog=pin,evaluated_at=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime(started)),
         policy_source=git('rev-parse','HEAD'),policy_keys=len(names),selection_kinds=kinds,
         outcomes=dict(sorted(counts.items(),key=lambda item:-item[1])),
-        refused={key:outcome for key,outcome in rows if outcome not in ('selected','stale')})
+        refused={key:outcome for key,outcome in rows if outcome!='selected'})
     args.out.write_text(json.dumps(report,indent=1)+'\n')
     print(json.dumps(dict(policy_keys=len(names),outcomes=report['outcomes'],seconds=round(time.time()-started))))
 

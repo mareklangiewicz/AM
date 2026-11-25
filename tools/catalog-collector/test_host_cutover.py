@@ -219,7 +219,7 @@ else:
         self.assertNotEqual(result.returncode,0)
         self.assertFalse((stage/'payload/fzf').exists())
 
-    def test_every_tool_requires_fresh_observations_without_consent(self):
+    def test_every_tool_selects_old_observations_and_reports_their_age(self):
         document=self.path/'tool-repository.yaml'
         document.write_bytes(subprocess.check_output(['git','-C',str(self.repo),'show',
             self.pin+':repositories/source-872860168.yaml']))
@@ -232,16 +232,16 @@ else:
                     input=facts,capture_output=True,env={**self.env(),
                         'AM_YAML_RECIPE':'x86_64/emmylua','AM_YAML_TOOL':tool,
                         'AM_YAML_REPOSITORY':'872860168','AM_YAML_PIN':self.pin,
-                        'AM_YAML_NOW':'2026-11-12T12:00:00Z','AM_YAML_ACCEPT':''})
-                self.assertNotEqual(result.returncode,0)
-                self.assertIn(b'stale_release_acceptance_required',result.stderr)
-                self.assertEqual(result.stdout,b'')
+                        'AM_YAML_NOW':'2026-11-27T12:00:00Z','AM_YAML_WARNING':str(self.path/tool)})
+                self.assertEqual(result.returncode,0,result.stderr)
+                self.assertTrue(result.stdout.strip())
+                self.assertGreater(int((self.path/tool).read_text().split('\t')[0]),14)
 
-    def test_emmylua_stale_consent_is_explicitly_fresh_only(self):
+    def test_the_removed_stale_consent_option_is_unsupported(self):
         result=subprocess.run(['sh',str(ROOT/'modules/catalog-yaml.am'),'x86_64/emmylua',
             '--accept-stale-release',self.pin,'872860168','1','1',NOW],env=self.env(),capture_output=True)
         self.assertNotEqual(result.returncode,0)
-        self.assertIn(b'requires fresh observations',result.stderr)
+        self.assertIn(b'unsupported option',result.stderr)
         self.assertEqual(self.calls(),[])
         self.assertFalse((self.path/'downloads').exists())
 

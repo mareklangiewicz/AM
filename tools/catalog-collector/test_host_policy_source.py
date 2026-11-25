@@ -14,7 +14,7 @@ class HostPolicySource(unittest.TestCase):
             recipes=root/'programs/x86_64';recipes.mkdir(parents=True)
             source=(compiler.ROOT/'programs/x86_64/emmylua').read_text()
             recipe=recipes/'emmylua'
-            for bad in (source.replace('CATALOG_FRESH_ONLY=true','CATALOG_FRESH_ONLY=typo'),
+            for bad in (source.replace('CATALOG_CHANNEL=stable\n','CATALOG_CHANNEL=stable\nREFRESH_ALWAYS=typo\n'),
                         source.replace('PACKAGE_LAYOUT=toolset','PACKAGE_LAYOUT=tar'),
                         source.replace('APP=emmylua','APP=$(touch /tmp/should-not-run)'),
                         source.replace('APP=emmylua','APP=emmylua; false'),

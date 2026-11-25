@@ -121,11 +121,14 @@ release publication timestamp as its version and retains the actual download URL
 separately. Other apps compare selected URLs. Changed bytes behind an unchanged
 URL otherwise require an explicit reinstall (or checksum-repair flag).
 
-The selected release observation must be no older than seven days (48 hours until November 16, 2026), independent of
-publication time. The helper prints an exact `--commit`/`--accept-stale-release`
-retry tuple when a single asset is stale. EmmyLua is deliberately fresh-only:
-all four musl tools must be fresh, distinct catalog assets of the same release
-and publication. Refresh the catalog instead of coordinating stale consents.
+Old catalog data warns, never refuses (ticket 23 of catalog-simplification):
+when the selected release or Git observation was last seen more than 14 days
+ago (its own `observed_at`, else the repository's), independent of publication
+time, AM prints `AM YAML catalog: warning: APP catalog data last seen N days ago
+(TIME); using it anyway` once per app per command and continues. The old
+`--accept-stale-release`/`--accept-stale` options are unsupported. EmmyLua's four
+musl tools must still be distinct catalog assets of the same release and
+publication.
 
 Every acquisition is an ordinary download of the catalog-selected URL. Embedded
 AppImage updaters no longer choose a different target. The old AppImageUpdate
@@ -259,9 +262,9 @@ Kitty declares both `bin/kitty` and `bin/kitten` here; shared code knows neither
 For `toolset`, `PACKAGE_TOOLS` lists tools in selection order, with the primary
 asset first. Each selected tar archive must contain its tool at the root.
 Executables and launcher mappings are derived from that one list. Asset selection
-uses `CATALOG_TOOL_ASSET_SUFFIX`; `CATALOG_FRESH_ONLY=true` refuses stale consent
-before HTTP. All selections must have the same repository/release at the pinned
-publication, and each selected observation must be fresh. EmmyLua declares these
+uses `CATALOG_TOOL_ASSET_SUFFIX`. All selections must have the same
+repository/release at the pinned publication; an old observation warns as for
+any other selection (`CATALOG_FRESH_ONLY` is removed and refused). EmmyLua declares these
 settings locally. No arbitrary installation hooks are introduced.
 
 ### Installed recipe refresh

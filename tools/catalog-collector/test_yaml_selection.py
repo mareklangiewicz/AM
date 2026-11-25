@@ -4,7 +4,7 @@ from datetime import datetime, timezone
 import unittest
 
 from fixture_v3 import sample_release
-from reference_selection import select,StaleSelection
+from reference_selection import select
 
 PIN = 'a'*40
 NOW = datetime(2026,11,4,13,tzinfo=timezone.utc)
@@ -51,28 +51,22 @@ class Selection(unittest.TestCase):
         self.repo['releases']['9007199254740993'] = copy.deepcopy(self.repo['releases']['456'])
         self.assertEqual(self.choose()['release_id'],'9007199254740993')
 
-    def test_stale_selected_record_is_not_rescued_by_recent_collection(self):
+    def test_an_old_selected_record_stays_the_winner_and_is_marked_stale(self):
         release = self.repo['releases']['456']
-        release['observed_at'] = '2026-10-26T00:00:00Z'
-        with self.assertRaises(StaleSelection) as caught:
-            self.choose()
-        acceptance = caught.exception.acceptance
-        self.assertTrue(self.choose(accept_stale=acceptance)['stale'])
-        for key in acceptance:
-            changed = dict(acceptance);changed[key] = 'different'
-            with self.subTest(key=key),self.assertRaises(StaleSelection):
-                self.choose(accept_stale=changed)
+        release['observed_at'] = '2026-10-20T00:00:00Z'
+        self.assertTrue(self.choose()['stale'])
         # Another fresher matching release cannot silently replace the policy's winner.
         older = copy.deepcopy(release);older.pop('observed_at')
         older['published_at'] = '2026-10-01T00:00:00Z'
         self.repo['releases']['455'] = older
-        with self.assertRaises(StaleSelection): self.choose()
+        selected = self.choose()
+        self.assertEqual(selected['release_id'],'456');self.assertTrue(selected['stale'])
 
     def test_freshness_boundary_and_future_observation(self):
-        self.repo['observed_at'] = '2026-10-28T13:00:00Z'
+        self.repo['observed_at'] = '2026-10-21T13:00:00Z'  # exactly 14 days before NOW
         self.assertFalse(self.choose()['stale'])
-        self.repo['observed_at'] = '2026-10-28T12:59:59Z'
-        with self.assertRaises(StaleSelection): self.choose()
+        self.repo['observed_at'] = '2026-10-21T12:59:59Z'
+        self.assertTrue(self.choose()['stale'])
         self.repo['observed_at'] = '2026-11-04T13:00:01Z'
         with self.assertRaisesRegex(ValueError,'future_release_observation'): self.choose()
 

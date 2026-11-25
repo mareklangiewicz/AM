@@ -39,7 +39,7 @@ def select(rows, repo, pin):
             for tool in tools:
                 env=dict(os.environ,LC_ALL='C',AM_YAML_RECIPE=row['recipe'],
                     AM_YAML_PIN=pin,AM_YAML_REPOSITORY=rid,AM_YAML_NOW=now,
-                    AM_YAML_TOOL=tool if row.get('tools') else '',AM_YAML_INCLUDE_PUBLICATION='1',AM_YAML_ACCEPT='')
+                    AM_YAML_TOOL=tool if row.get('tools') else '',AM_YAML_INCLUDE_PUBLICATION='1')
                 fields=subprocess.check_output(['awk','-f',str(ROOT/'modules/catalog-yaml-policy.am')],input=facts,env=env).decode().splitlines()
                 if len(fields)!=7:raise ValueError('selection protocol')
                 selections[tool]=dict(commit=fields[0],repository_id=fields[1],release_id=fields[2],

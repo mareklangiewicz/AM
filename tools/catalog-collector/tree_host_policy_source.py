@@ -14,6 +14,12 @@ from recipe_declarations import recipe_rows
 
 
 class TreeHostPolicySource(unittest.TestCase):
+    def test_no_live_recipe_sets_the_removed_fresh_only_flag(self):
+        # Old data warns, never refuses (catalog-simplification ticket 23); the
+        # parser ignores the flag only so historical trees still replay.
+        found=[row['recipe'] for row in recipe_rows(compiler.ROOT) if 'CATALOG_FRESH_ONLY' in row['settings']]
+        self.assertEqual(found,[])
+
     def test_recipes_are_authoritative_and_compilation_is_repeatable(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)

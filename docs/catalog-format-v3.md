@@ -197,7 +197,8 @@ commit, observation time, tag position and optional file path/blob/content/obser
 the reference key. `release_facts` emits release metadata even without assets.
 `catalog-yaml.am` policies declare asset, release, Git tag, branch or file
 selection. File selection validates both branch and file times, refusing a future
-file observation even when its branch was observed earlier. Non-asset selections require a fresh observation and explicit output
+file observation even when its branch was observed earlier. Like asset selections, an old
+observation warns once and is used. Non-asset selections require an explicit output
 such as `--tag`, `--published-at`, `--updated-at`, `--release-url`,
 `--release-id`, `--source-tar-url`, `--source-zip-url`, `--git-commit`, `--git-file`
 or `--git-snapshot`.
@@ -206,7 +207,7 @@ this once for both VERSION and the commit archive URL. Each command pins all
 catalog reads to one publication commit. Custom recipes establish a private
 command session for multi-step standalone updates too. Source archive URLs remain
 release facts, never synthetic assets. `--version-url` orders eligible URLs with
-`sort -V` and then freshness-checks that exact winner against the same facts.
+`sort -V` and then age-checks that exact winner against the same facts.
 `--urls` lists eligible records without hiding old choices; a URL menu must pass
 its selected URL back through `--selected-url ... --url` before download.
 

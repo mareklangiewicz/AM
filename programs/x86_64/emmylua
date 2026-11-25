@@ -16,7 +16,6 @@ CATALOG_CHANNEL=stable
 CATALOG_ASSET_PATTERN='^emmylua_ls-linux-musl[.]tar[.]gz$'
 PACKAGE_TOOLS='emmylua_ls emmylua_check emmylua_doc_cli luafmt'
 CATALOG_TOOL_ASSET_SUFFIX=-linux-musl.tar.gz
-CATALOG_FRESH_ONLY=true
 
 # shellcheck source=modules/appimage.am
 . "/opt/am/modules/appimage.am"

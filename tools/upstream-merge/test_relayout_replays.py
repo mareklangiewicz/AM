@@ -26,6 +26,15 @@ def show(commit,path):
     return r.merge.git(r.ROOT,'show',commit+':'+path).stdout
 
 
+# Policy table rows today's generator no longer writes; a historical policy
+# drops them before the byte comparison. Everything else must still match.
+RETIRED_POLICY_ROWS=(b'    recipes_fresh_only[',)  # catalog-simplification ticket 23
+
+
+def current_form(policy):
+    return b''.join(line for line in policy.splitlines(keepends=True) if not line.startswith(RETIRED_POLICY_ROWS))
+
+
 class Replay(unittest.TestCase):
     def replay(self,layout,ours,shipped,form,derived):
         result=r.plan(r.ROOT,layout,ours,UPSTREAM,(form,))
@@ -37,11 +46,12 @@ class Replay(unittest.TestCase):
         # Exactly the derived files the shipped commit changed: the policy byte
         # for byte, the row files row for row; a reformat alone is no change.
         files={path:content for path,content in result['files'].items()
-               if path not in ROWS or json.loads(content)!=json.loads(r.merge.text(r.ROOT,ours,path))}
+               if (json.loads(content)!=json.loads(r.merge.text(r.ROOT,ours,path)) if path in ROWS
+                   else content.encode()!=current_form(show(ours,path)))}
         self.assertEqual(sorted(files),derived)
         for path,content in files.items():
             if path in ROWS:self.assertEqual(json.loads(content),json.loads(show(shipped,path)),path)
-            else:self.assertEqual(content.encode(),show(shipped,path),path)
+            else:self.assertEqual(content.encode(),current_form(show(shipped,path)),path)
         return result
 
     def test_ticket_33_long_recipes_become_declarations(self):

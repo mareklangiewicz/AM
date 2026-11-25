@@ -185,12 +185,13 @@ cp "$ASSESS_PAYLOAD" "$2"
         script(self.bin/'appimageupdatetool', 'echo appimageupdatetool >> "$ASSESS_LOG"\nexit 0\n')
         return home,recipe,env
 
-    def test_selection_refuses_stale_and_wrong_repository(self):
+    def test_selection_uses_old_data_and_refuses_wrong_repository(self):
         releases = [self.release([self.asset()])]
         for app in CANDIDATES:
             with self.subTest(app=app):
-                self.assertIsNone(self.new_select(app, releases,
-                    AM_YAML_NOW='2026-11-14T12:00:00Z'))
+                # Old data warns, never refuses (catalog-simplification ticket 23).
+                self.assertIsNotNone(self.new_select(app, releases,
+                    AM_YAML_NOW='2026-12-14T12:00:00Z'))
                 self.assertIsNone(self.new_select(app, releases, AM_YAML_REPOSITORY='999'))
 
     def run_recipe(self, recipe, env, *args):

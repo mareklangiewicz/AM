@@ -105,7 +105,7 @@ All 529 maintained YAML recipe declarations now use `CATALOG_FORMAT=3`.
 app map and readable source path at that exact commit, checks kind/schema bindings
 and passes native `asset_facts` to the existing maintained selection policy.
 Command caching binds the source/pin and shared source documents; validation
-failure latches acquisition, while stale selection consent remains an exact tuple.
+failure latches acquisition; old selected data warns once per app per command.
 Installed runtime requires shell/awk/curl, with no Python, jq or Git dependency.
 
 The active runtime is `catalog-yaml.am`, `catalog-contract-reader.am`,
@@ -202,8 +202,8 @@ Marek reopened full GitHub-backed migration on November 9. The temporary
 500-source enrollment ceiling is replaced by a 9,000-source safety allowance;
 acquisition still uses quota-bounded batches into one v3 catalog. Broad enrollment
 does not imply that every source has already been successfully collected.
-Consistency takes priority over further freshness optimization; the selected-record
-48-hour rule remains unchanged unless actual operation requires adjustment.
+Consistency takes priority over further freshness optimization; selected data
+older than 14 days warns, never refuses (catalog-simplification ticket 23).
 
 `bulk_sources.py --inventory` extends the existing hash-bound source scan with
 literal primary sources and explicit variants, independently of installer shape.
@@ -266,6 +266,6 @@ python3 -B tools/catalog-collector/qualify_usable_selections.py --out /tmp/usabl
 
 Runs the real client once per policy key against a local copy of one published
 catalog commit (default `origin/release-catalog-v3`) at the current clock, and
-counts its outcomes: selected, stale, or the refusal text. No network. About
+counts its outcomes: selected or the refusal text. No network. About
 100 minutes for 10,000 keys on five jobs; `--limit N` gives a quick trial.
 Leave `modules/catalog-yaml-policy.am` alone while it runs.

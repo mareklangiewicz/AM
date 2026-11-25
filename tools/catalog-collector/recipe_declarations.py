@@ -62,7 +62,7 @@ def url_policy_rows(root):
                 not isinstance(alias,str) or not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+',alias)
                 for alias in row['source_aliases'])):
             raise ValueError('URL policy source aliases')
-        result.append(dict(row,app=row['recipe'].split('/')[1],asset_pattern='^.*$',fresh_only=False))
+        result.append(dict(row,app=row['recipe'].split('/')[1],asset_pattern='^.*$'))
     return result
 
 
@@ -119,7 +119,9 @@ def recipe_rows(root):
             raise ValueError('inconsistent package kind/tools: '+str(path))
         if settings['CATALOG_CHANNEL'] not in ('any','stable','nightly'):
             raise ValueError('unsupported channel: '+str(path))
-        for boolean in ('REFRESH_ALWAYS','CATALOG_FRESH_ONLY','DESKTOP_STRIP_NO_SANDBOX'):
+        # CATALOG_FRESH_ONLY (removed, ticket 23) is ignored so history replays;
+        # tree_host_policy_source refuses it in the live tree.
+        for boolean in ('REFRESH_ALWAYS','DESKTOP_STRIP_NO_SANDBOX'):
             if settings.get(boolean,'false') not in ('true','false'):
                 raise ValueError('invalid recipe boolean: '+boolean)
         if layout not in ('appimage', 'raw', 'tar', 'zip', 'toolset'):
@@ -129,7 +131,6 @@ def recipe_rows(root):
                    asset_pattern=settings['CATALOG_ASSET_PATTERN'], layout=layout,
                    version_identity=settings.get('VERSION_IDENTITY', 'url'),
                    refresh_always=settings.get('REFRESH_ALWAYS', 'false') == 'true',
-                   fresh_only=settings.get('CATALOG_FRESH_ONLY', 'false') == 'true',
                    settings=settings)
         row['catalog_app']=catalog_app
         if 'CATALOG_URL_RULES' in settings:

@@ -1,6 +1,5 @@
 """Actual candidate install/batch/sync functions with local Git-backed fake HTTP."""
 import copy
-from datetime import datetime
 import json
 import os
 from pathlib import Path
@@ -13,9 +12,10 @@ import unittest
 
 import fixture_manager as harness
 from fixture_manager import ROOT, NOW
-from fixture_v3 import expanded, publish_local
+from fixture_v3 import publish_local
 
 SOURCE='https://raw.githubusercontent.com/selected-owner/selected.repo/feature/catalog'
+OLD='2026-11-11T15:18:01Z'  # 15 days after NOW, when the fixture's releases were seen
 RUNTIME=('catalog-yaml.am','catalog-contract-reader.am','catalog-contract-parser.am','catalog-contract-tables.am','catalog-yaml-policy.am')
 
 
@@ -163,26 +163,23 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\napp=${0##
         self.assertEqual(self.snapshot(),before)
         self.assertTrue((app/'AM-updater').exists())
 
-    def test_batch_reuses_pin_and_documents_but_not_selected_acceptance(self):
-        obsidian=self.install();nvim=self.install('x86_64/nvim');legacy=self.legacy()
+    def test_batch_reuses_pin_and_documents(self):
+        self.install();self.install('x86_64/nvim');self.legacy()
         r=self.manager(['-u','obsidian','nvim','legacy'],source=SOURCE)
         self.assertEqual(r.returncode,0,r.stderr)
         self.assertIn(b'obsidian: unchanged',r.stdout);self.assertIn(b'nvim: unchanged',r.stdout)
         self.assertIn(b'legacy: updated',r.stdout)
         self.assertEqual(len(self.calls()),5) # ref + descriptor + apps + two sources
-        self.clock='2026-11-04T12:00:00Z'
-        from reference_policies import select_cohort
-        selected=select_cohort('x86_64/obsidian',expanded(self.repositories['262342594']),self.pin,
-            now=datetime.fromisoformat(NOW.replace('Z','+00:00')))
-        waiver=['--commit',self.pin,'--accept-stale-release',self.pin,selected['repository_id'],
-            selected['release_id'],selected['asset_id'],selected['observed_at']]
-        before={p.name:p.read_bytes() for p in nvim.iterdir() if p.is_file()}
-        r=self.manager(['-u','obsidian','nvim','legacy',*waiver],source=SOURCE)
-        self.assertNotEqual(r.returncode,0)
-        self.assertIn(b'obsidian: unchanged',r.stdout);self.assertIn(b'nvim: refused',r.stderr)
-        self.assertIn(b'legacy: unchanged',r.stdout)
-        self.assertEqual(len(self.calls()),4)
-        self.assertEqual({p.name:p.read_bytes() for p in nvim.iterdir() if p.is_file()},before)
+        self.assertNotIn(b'last seen',r.stderr)
+
+    def test_a_batch_on_old_data_updates_and_warns_once_per_app(self):
+        self.install();self.install('x86_64/nvim')
+        self.clock=OLD
+        r=self.manager(['-u','obsidian','nvim'],source=SOURCE)
+        self.assertEqual(r.returncode,0,r.stderr)
+        self.assertIn(b'obsidian: unchanged',r.stdout);self.assertIn(b'nvim: unchanged',r.stdout)
+        self.assertEqual(r.stderr.count(b'warning: obsidian catalog data last seen 15 days ago'),1,r.stderr)
+        self.assertEqual(r.stderr.count(b'warning: nvim catalog data last seen 15 days ago'),1,r.stderr)
 
     def test_bad_transport_latches_batch_and_preserves_incomplete_install(self):
         obsidian=self.install();self.install('x86_64/nvim');self.legacy()
@@ -217,7 +214,7 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\napp=${0##
             (self.path/'clock-sequence').write_text(json.dumps([NOW,later]))
             r=self.standalone(app/'AM-updater')
             self.assertNotEqual(r.returncode,0);self.assertEqual(self.snapshot(),before)
-        # Crossing the age boundary after the first policy pass must still refuse.
+        # A clock jump past the 90 s read window between policy passes refuses.
         (self.path/'clock-sequence').write_text(json.dumps([NOW]*5+['2026-11-04T12:00:00Z']))
         r=self.standalone(app/'AM-updater')
         self.assertNotEqual(r.returncode,0);self.assertEqual(self.snapshot(),before)
@@ -229,10 +226,12 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\napp=${0##
 
     def test_later_app_rechecks_clock_and_manager_current_source_overrides_binding(self):
         self.install();self.install('x86_64/nvim')
-        (self.path/'clock-sequence').write_text(json.dumps([NOW]*7+['2026-11-04T12:00:00Z']*20))
+        (self.path/'clock-sequence').write_text(json.dumps([NOW]*7+[OLD]*20))
         r=self.manager(['-u','obsidian','nvim'],source=SOURCE)
-        self.assertNotEqual(r.returncode,0)
-        self.assertIn(b'obsidian: unchanged',r.stdout);self.assertIn(b'nvim: refused',r.stderr)
+        self.assertEqual(r.returncode,0,r.stderr)
+        self.assertIn(b'obsidian: unchanged',r.stdout);self.assertIn(b'nvim: unchanged',r.stdout)
+        self.assertNotIn(b'warning: obsidian',r.stderr)
+        self.assertIn(b'warning: nvim catalog data last seen 15 days ago',r.stderr)
         (self.path/'clock-sequence').unlink()
         original_env=self.env
         self.env=lambda: {**original_env(),'EXPECTED_REPOSITORY':'another-owner/current-source'}
@@ -289,17 +288,19 @@ pathlib.Path(sys.argv[sys.argv.index('-O')+1]).write_text("#!/bin/sh\\napp=${0##
         self.assertIn(b'nvim: unchanged',r.stdout)
         self.assertIn(b'nvim-nightly: updated',r.stdout)
 
-    def test_stale_install_requires_new_exact_tuple_and_commit_operands_are_not_apps(self):
-        self.clock='2026-11-04T12:00:00Z'
+    def test_old_data_installs_with_one_warning_and_the_old_consent_flag_is_unsupported(self):
+        self.clock=OLD
         r=self.run_manager_install(amrepo=SOURCE)
+        self.assertEqual(r.returncode,0,r.stderr)
+        self.assertTrue((self.app/'version').exists())
+        self.assertEqual(r.stderr.count(b'last seen '),1,r.stderr)
+        self.assertIn(b'warning: obsidian catalog data last seen 15 days ago',r.stderr)
+        self.app.rename(self.path/'first')
+        r=self.run_manager_install(amrepo=SOURCE,flags=' '.join(['--accept-stale-release',self.pin,'1','1','1',NOW]))
         self.assertNotEqual(r.returncode,0);self.assertFalse(self.app.exists())
-        self.assertIn(b'--accept-stale-release',r.stderr)
-        from reference_policies import select_cohort
-        selected=select_cohort('x86_64/obsidian',expanded(self.repositories['262342594']),self.pin,
-            now=datetime.fromisoformat(NOW.replace('Z','+00:00')))
-        flags=' '.join(['--commit',self.pin,'--accept-stale-release',self.pin,selected['repository_id'],
-            selected['release_id'],selected['asset_id'],selected['observed_at']])
-        r=self.run_manager_install(amrepo=SOURCE,flags=flags)
+
+    def test_commit_operands_are_not_apps(self):
+        r=self.run_manager_install(amrepo=SOURCE,flags='--commit '+self.pin)
         self.assertEqual(r.returncode,0,r.stderr)
         self.assertTrue((self.app/'version').exists())
         self.assertEqual(len(self.calls()),3) # descriptor/map/source at explicit pin

@@ -49,7 +49,6 @@ class Equivalence(unittest.TestCase):
             'asset_pattern':(b"CATALOG_ASSET_PATTERN='^.*$'",b"CATALOG_ASSET_PATTERN='^.*AppImage$'"),
             'url_rules':(b'https.*mage$',b'https.*image$'),
             'catalog_app':(b'CATALOG_CHANNEL=any',b'CATALOG_CHANNEL=any\nCATALOG_APP=zulip-desktop'),
-            'fresh_only':(b'CATALOG_CHANNEL=any',b'CATALOG_CHANNEL=any\nCATALOG_FRESH_ONLY=true'),
         }
         for field,(old,new) in mutants.items():
             with self.subTest(field):

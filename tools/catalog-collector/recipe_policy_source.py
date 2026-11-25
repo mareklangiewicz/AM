@@ -20,8 +20,7 @@ def generate(root=None):
         key = json.dumps(row['recipe'])
         fields = dict(repository=str(row['repository_id']), channel=row['channel'],
                       pattern=row['asset_pattern'], tools=' '.join(row.get('tools', [])),
-                      tool_suffix=row.get('tool_asset_suffix', ''),
-                      fresh_only=int(row['fresh_only']))
+                      tool_suffix=row.get('tool_asset_suffix', ''))
         for name, value in fields.items():
             lines.append('    recipes_'+name+'['+key+']='+json.dumps(value))
         for name in ('selection','tag_pattern','tag_exclude','git_ref','git_file'):

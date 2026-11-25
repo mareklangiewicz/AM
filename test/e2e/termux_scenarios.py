@@ -124,8 +124,9 @@ class TermuxCLI(unittest.TestCase):
         self.command('-u','sqlitebrowser','--commit',PIN,executable=executable)
         self.assertEqual((app/'version').read_text().strip(),SQLITE)
         before=snapshot_tree(app)
-        self.configure(clock='1793800000.000000')
-        self.command('-u','sqlitebrowser','--commit',PIN,executable=executable,success=False)
+        self.configure(clock='1794410400.000000')  # OBSERVED + 15 days: warns, changes nothing
+        result=self.command('-u','sqlitebrowser','--commit',PIN,executable=executable)
+        self.assertIn('catalog data last seen 15 days ago',result.stderr)
         self.assertEqual(snapshot_tree(app),before)
 
     def test_read_only_am_falls_back_without_sudo(self):

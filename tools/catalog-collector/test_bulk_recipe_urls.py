@@ -147,9 +147,10 @@ pathlib.Path(name).write_text("#!/bin/sh\\nmkdir -p squashfs-root\\ncase $2 in\\
         self.assertTrue((app/'version').read_text().strip().startswith('https://github.com/obsidianmd/'))
         before={p.name:p.read_bytes() for p in app.iterdir() if p.is_file() and not p.is_symlink()}
         self.assertEqual(self.standalone(app/'AM-updater').returncode,0)
-        self.clock='2026-11-09T12:00:00Z'
-        refused=self.standalone(app/'AM-updater')
-        self.assertNotEqual(refused.returncode,0)
+        self.clock=integration.OLD  # old data warns once, updates nothing (ticket 23)
+        old=self.standalone(app/'AM-updater')
+        self.assertEqual(old.returncode,0,old.stderr)
+        self.assertEqual(old.stderr.count(b'last seen 15 days ago'),1,old.stderr)
         self.assertEqual(before,{p.name:p.read_bytes() for p in app.iterdir() if p.is_file() and not p.is_symlink()})
 
 
