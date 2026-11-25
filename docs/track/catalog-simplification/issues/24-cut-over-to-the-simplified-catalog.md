@@ -111,3 +111,29 @@ Page and schema text say so (ticket 13's rule 5 and "Kept releases" gain the
 clause). Also part 4: the 14 twin repositories (v3 `same_tag_conflict`, never
 collected) are left out of the seed, so the first collection reads them.
 Marek, earlier the same day: `host_cutover.py` and its tests deleted (part 3).
+
+November 25, 2026, part 4 Long tests 45649586477 passed. Marek's answers
+before part 5 (removal), to the traced list (imports from `catalog_run.py`,
+`seed.py`, `release.py`, `merge.py`, `convert.py`; every `.github/` and
+`fast-tests.sh` call):
+
+- Delete: the eight collector `qualify_*.py`; `bulk_enrollment`,
+  `bulk_sources`, `retire_sources`, `recipe_refresh`, `installed_recipe`; the
+  v3 write path (`incremental`, `pipeline_publication`, `publication`,
+  `contracts`, `retention_v3`, `writer`, `wire_validation`); `provenance` once
+  `documents` imports `reconstruct` directly; `collection_interface` once
+  `registry_names` moves to `host_catalog`; catalog-browser
+  `qualify_boundaries.mjs`, `qualify_restore.py`, `prepare_boundaries.py`,
+  `preview.py`; catalog-contract `build_v3.py`, `definitions.{json,mjs}`,
+  `reader.mjs`; `modules/catalog-contract-*.am`; `schemas/catalog/`; v3 docs;
+  their tests. `host_catalog` keeps `configuration()`/`collect()` only;
+  `.vscode/settings.json` points at `schemas/catalog.schema.yaml`.
+- Kept, not migration-era: `bulk_recipes`, `bulk_recipe_urls`,
+  `catalog_sources` (used by `recipe-conversion/convert.py`, which `merge.py`
+  uses), `pinned_recipes` (recipe-reconstruction tests). Tests on
+  `fixture_v3`/`reference_*` that cover the kept selection policy are ported,
+  not deleted.
+- The collector pushes to `main-marek` with the job's `GITHUB_TOKEN`,
+  `contents: write` on the commit job only.
+- The agent deletes `CATALOG_SCHEDULE_REVISION`/`CATALOG_SCHEMA_REVISION`
+  (`gh variable delete`) when the cutover ships.
