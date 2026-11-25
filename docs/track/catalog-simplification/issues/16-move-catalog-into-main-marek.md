@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: open
+Status: merged into 24
 Triage: needs-triage
 Blocked by: 14, 15, 17
 
@@ -24,3 +24,7 @@ After the switch the collector stops writing `release-catalog-v3` and
 `catalog-status-v1`; their tips become local-only `archive/<name>` refs and,
 after a week of clean directory runs and with Marek's approval, the branches are
 deleted from origin.
+
+Merged into [Cut over to the simplified catalog in one change](24-cut-over-to-the-simplified-catalog.md)
+(November 25, 2026): this Outcome is part of its spec; steps that only bridge v3
+and the new layout are dropped.

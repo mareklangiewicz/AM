@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: open
+Status: merged into 24
 Triage: needs-triage
 Blocked by: none
 
@@ -20,3 +20,7 @@ source's state from its repository file, with 11's sentences for each
 `failed_with` code, "Never collected" and data older than 14 days. Readers,
 schema and tests follow; the old branch's extra files are dropped by the next
 run.
+
+Merged into [Cut over to the simplified catalog in one change](24-cut-over-to-the-simplified-catalog.md)
+(November 25, 2026): this Outcome is part of its spec; steps that only bridge v3
+and the new layout are dropped.

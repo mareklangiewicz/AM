@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: open
+Status: merged into 24
 Triage: needs-triage
 Blocked by: 16
 
@@ -26,3 +26,7 @@ call to resolve the branch. The page drops `?pin=`, "Load latest", the
 per-command ref resolution and session pin (`modules/catalog-yaml.am`). Files
 read in one tab or command may come from neighbouring runs, which is harmless
 without cross-file pins; a transient 404 (a CDN lag) is retried.
+
+Merged into [Cut over to the simplified catalog in one change](24-cut-over-to-the-simplified-catalog.md)
+(November 25, 2026): this Outcome is part of its spec; steps that only bridge v3
+and the new layout are dropped.

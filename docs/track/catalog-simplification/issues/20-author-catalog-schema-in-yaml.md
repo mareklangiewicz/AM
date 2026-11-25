@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: open
+Status: merged into 24
 Triage: needs-triage
 Blocked by: none
 
@@ -24,3 +24,7 @@ reader obligations stay until ticket 09. Published documents do not change (the
 
 November 25, 2026, from ticket 09: the grammar doc keeps E9 unchanged plus the
 `$schema` first key; write it from 09's Answer.
+
+Merged into [Cut over to the simplified catalog in one change](24-cut-over-to-the-simplified-catalog.md)
+(November 25, 2026): this Outcome is part of its spec; steps that only bridge v3
+and the new layout are dropped.

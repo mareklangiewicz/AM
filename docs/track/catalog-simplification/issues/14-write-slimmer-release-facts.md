@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: open
+Status: merged into 24
 Triage: needs-triage
 Blocked by: 04, 09
 
@@ -53,3 +53,7 @@ retention's "newest with a Linux download".
 
 November 25, 2026, from ticket 13: the page's "How it works" and `?` help become
 13's validated text.
+
+Merged into [Cut over to the simplified catalog in one change](24-cut-over-to-the-simplified-catalog.md)
+(November 25, 2026): this Outcome is part of its spec; steps that only bridge v3
+and the new layout are dropped.

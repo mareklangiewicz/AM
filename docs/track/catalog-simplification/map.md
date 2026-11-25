@@ -48,6 +48,14 @@ In flight elsewhere: catalog-system ticket 20 proceeds with rotation of failing
 sources and smaller pages for the two oversized ones; its same-tag decision moved
 here ([Record same-tag and removed releases as facts](issues/07-same-tag-and-removed-releases-as-facts.md)).
 
+## Implementation
+
+Marek, November 25, 2026: switch to the simplified approach as soon as
+possible, no migration steps; he reinstalls his apps. One change,
+[Cut over to the simplified catalog in one change](issues/24-cut-over-to-the-simplified-catalog.md),
+merges 14, 16, 17, 20, 21 and 22 and seeds `catalog/` by a one-time conversion.
+Done: 18 (claimed, twins pending), 23 (warn on old data).
+
 ## Decisions so far
 
 - [Draft the "How it works" page](issues/13-draft-how-it-works.md): 12 rules with a "why" each plus 9 help entries, accepted; readers read `main-marek` directly, no pinned snapshots (revises 04; in 21).
