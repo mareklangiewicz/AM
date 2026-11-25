@@ -1,83 +1,9 @@
 $schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
 repository_id: 726938217
 repository: "rust-dd/rsql"
-observed_at: "2026-11-22T07:01:51Z"
+observed_at: "2026-11-25T16:58:32Z"
 history_complete: true
 releases:
-  "415756345":
-    tag: "v1.3.2"
-    title: "RSQL v1.3.2"
-    published_at: "2026-10-17T11:16:45Z"
-    prerelease: false
-    assets:
-      "650255640":
-        name: "rsql_1.3.2_aarch64.dmg"
-        size: 12560755
-        sha256pre: "a75fc2bad28e2e07"
-      "650255705":
-        name: "rsql_aarch64.app.tar.gz"
-        size: 12656801
-        sha256pre: "9c01472f17d1dbea"
-      "650255744":
-        name: "rsql_aarch64.app.tar.gz.sig"
-        size: 420
-        sha256pre: "a395a4174a6bc0be"
-      "650264178":
-        name: "rsql_1.3.2_x64.dmg"
-        size: 13143002
-        sha256pre: "845e0c8df3789e66"
-      "650264209":
-        name: "rsql_x64.app.tar.gz"
-        size: 13157254
-        sha256pre: "3a7036d37f2c89dd"
-      "650264337":
-        name: "rsql_x64.app.tar.gz.sig"
-        size: 420
-        sha256pre: "ef0f9cffec8acff4"
-      "650264452":
-        name: "rsql_1.3.2_amd64.deb"
-        size: 12890614
-        sha256pre: "a31d2a5706eaf1f4"
-      "650264471":
-        name: "rsql_1.3.2_amd64.deb.sig"
-        size: 428
-        sha256pre: "6d650fad613ea635"
-      "650264494":
-        name: "rsql-1.3.2-1.x86_64.rpm"
-        size: 12891687
-        sha256pre: "4ca70265d5e4fb62"
-      "650264602":
-        name: "rsql-1.3.2-1.x86_64.rpm.sig"
-        size: 432
-        sha256pre: "8dec71f53f5aa1f7"
-      "650264669":
-        name: "rsql_1.3.2_amd64.AppImage"
-        size: 92301816
-        sha256pre: "c4ad5889e78b1577"
-      "650264834":
-        name: "rsql_1.3.2_amd64.AppImage.sig"
-        size: 432
-        sha256pre: "d5993c9c089b447e"
-      "650272189":
-        name: "rsql_1.3.2_x64_en-US.msi"
-        size: 12288000
-        sha256pre: "41b3271cd2138d38"
-      "650272307":
-        name: "rsql_1.3.2_x64_en-US.msi.sig"
-        size: 432
-        sha256pre: "9ed01d79b1946c07"
-      "650272320":
-        name: "rsql_1.3.2_x64-setup.exe"
-        size: 9066400
-        sha256pre: "3f6a5bc0754ae0a7"
-      "650272351":
-        name: "rsql_1.3.2_x64-setup.exe.sig"
-        size: 432
-        sha256pre: "30f804262b3180d1"
-      "650272406":
-        name: "latest.json"
-        size: 6524
-        sha256pre: "10032b37951d2722"
   "415785715":
     tag: "v1.3.3"
     title: "RSQL v1.3.3"
@@ -580,3 +506,61 @@ releases:
         name: "native-latest.json"
         size: 4994
         sha256pre: "a0805fbc51438511"
+  "454301226":
+    tag: "v2.0.1"
+    title: "RSQL v2.0.1"
+    published_at: "2026-11-22T08:22:06Z"
+    prerelease: false
+    assets:
+      "778376267":
+        name: "rsql-2.0.1-1.x86_64.rpm"
+        size: 24862350
+        sha256pre: "33255d7b89c0d43d"
+      "778376270":
+        name: "rsql-2.0.1-1.x86_64.rpm.sig"
+        size: 424
+        sha256pre: "c727b5e9c98b56de"
+      "778376274":
+        name: "RSQL_2.0.1_aarch64.app.tar.gz.sig"
+        size: 432
+        sha256pre: "3ec0ed55dcefef8a"
+      "778376276":
+        name: "RSQL_2.0.1_aarch64.app.tar.gz"
+        size: 26058128
+        sha256pre: "2f00ce66fb251334"
+      "778376278":
+        name: "RSQL_2.0.1_aarch64.dmg"
+        size: 27503268
+        sha256pre: "4c7246ab03c5bbb6"
+      "778376305":
+        name: "rsql-desktop_2.0.1_amd64.deb"
+        size: 34890556
+        sha256pre: "136b9639374f4435"
+      "778376314":
+        name: "rsql-desktop_2.0.1_amd64.deb.sig"
+        size: 432
+        sha256pre: "4f234bdde73a0ddf"
+      "778376327":
+        name: "rsql-desktop_2.0.1_x64-setup.exe"
+        size: 18122904
+        sha256pre: "e67fc05c8a721b4c"
+      "778376347":
+        name: "rsql-desktop_2.0.1_x64-setup.exe.sig"
+        size: 436
+        sha256pre: "e9665c52827f2920"
+      "778376349":
+        name: "rsql-desktop_2.0.1_x86_64.AppImage"
+        size: 43145720
+        sha256pre: "a4ce88531ad3ce72"
+      "778376351":
+        name: "rsql-desktop_2.0.1_x86_64.AppImage.sig"
+        size: 440
+        sha256pre: "2195332f6ab90943"
+      "778376374":
+        name: "latest.json"
+        size: 3098
+        sha256pre: "a9f827dfe4157145"
+      "778376379":
+        name: "native-latest.json"
+        size: 4994
+        sha256pre: "d9894e1fcf97bc50"

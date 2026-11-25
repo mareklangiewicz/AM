@@ -1,360 +1,98 @@
 $schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
 repository_id: 617502359
 repository: "vastsa/PI-Desktop"
-observed_at: "2026-11-22T06:59:39Z"
+observed_at: "2026-11-25T16:55:27Z"
 history_complete: false
 releases:
-  "436481016":
-    tag: "v0.22.0-beta.6"
-    published_at: "2026-11-06T12:34:20Z"
+  "400384507":
+    tag: "v0.16.0-beta.1"
+    published_at: "2026-09-30T19:47:18Z"
     prerelease: true
     assets:
-      "717118042":
-        name: "pi-host-0.22.0-beta.6-linux-x64.tar.gz.sha256"
+      "601676432":
+        name: "latest-mac.yml"
+        size: 856
+        sha256pre: "1607b823b0481f31"
+      "601676433":
+        name: "pi-host-0.16.0-beta.1-linux-x64.tar.gz.sha256"
         size: 105
-        sha256pre: "0e0f49a48e5e666f"
-      "717118045":
-        name: "pi-host-0.22.0-beta.6-linux-arm64.tar.gz.sha256"
-        size: 107
-        sha256pre: "c90ee28080d25fac"
-      "717118046":
-        name: "pi-host-0.22.0-beta.6-linux-arm64.tar.gz"
-        size: 73228851
-        sha256pre: "2fe2d2b85a34c674"
-      "717118047":
-        name: "pi-host-0.22.0-beta.6-linux-x64.tar.gz"
-        size: 73685722
-        sha256pre: "16c781550d0b0df3"
-      "717118049":
+        sha256pre: "91ce6a94ee30b686"
+      "601676434":
+        name: "pi-host-0.16.0-beta.1-linux-x64.tar.gz"
+        size: 26845690
+        sha256pre: "627e15e801a07966"
+      "601676435":
+        name: "latest-linux.yml"
+        size: 727
+        sha256pre: "52764a8db6fe4767"
+      "601676437":
+        name: "PI-Desktop-Setup-0.16.0-beta.1.exe"
+        size: 119666080
+        sha256pre: "a79b11a41c6c9211"
+      "601676438":
+        name: "PI-Desktop-0.16.0-beta.1-arm64-mac.zip.blockmap"
+        size: 139194
+        sha256pre: "9266a4aca600365d"
+      "601676439":
+        name: "PI-Desktop-0.16.0-beta.1.AppImage"
+        size: 164080305
+        sha256pre: "61692a9189eace25"
+      "601676440":
+        name: "PI-Desktop-Portable-0.16.0-beta.1.zip"
+        size: 174301212
+        sha256pre: "45471281a47ffe33"
+      "601676441":
+        name: "PI-Desktop-0.16.0-beta.1-x64-mac.zip"
+        size: 139564528
+        sha256pre: "35f9cd4348803b61"
+      "601676442":
+        name: "PI-Desktop-0.16.0-beta.1-x64.dmg"
+        size: 142104443
+        sha256pre: "59097527a1e799d5"
+      "601676443":
+        name: "PI-Desktop-0.16.0-beta.1-arm64.dmg.blockmap"
+        size: 142273
+        sha256pre: "bb7491c080a7bfba"
+      "601676444":
+        name: "PI-Desktop-0.16.0-beta.1-x64-mac.zip.blockmap"
+        size: 147661
+        sha256pre: "5984c8412ccc59e6"
+      "601676445":
+        name: "pi-desktop-0.16.0-beta.1-x86_64.rpm"
+        size: 104547733
+        sha256pre: "fba1672bdcf6ddca"
+      "601676446":
+        name: "PI-Desktop-0.16.0-beta.1-x64.dmg.blockmap"
+        size: 149296
+        sha256pre: "a4743a9ff42e268f"
+      "601676447":
+        name: "pi-desktop_0.16.0-beta.1_amd64.deb"
+        size: 119644924
+        sha256pre: "0b90c38015e46cb6"
+      "601676448":
+        name: "PI-Desktop-0.16.0-beta.1-linux-x64.asar"
+        size: 99953150
+        sha256pre: "ab0693553a74b7be"
+      "601676449":
+        name: "PI-Desktop-Setup-0.16.0-beta.1.exe.blockmap"
+        size: 124466
+        sha256pre: "9f6aaaa4a821de56"
+      "601676450":
         name: "latest.yml"
         size: 373
-        sha256pre: "78017696db37fda8"
-      "717118051":
-        name: "latest-mac.yml"
-        size: 858
-        sha256pre: "8176b1891ef71b96"
-      "717118052":
-        name: "pi-desktop_0.22.0-beta.6_amd64.deb"
-        size: 123934604
-        sha256pre: "d7cdd662bff1d234"
-      "717118053":
-        name: "latest-linux-arm64.yml"
-        size: 752
-        sha256pre: "c1cfcc6c26e7454b"
-      "717118055":
-        name: "pi-desktop-0.22.0-beta.6-x86_64.rpm"
-        size: 108514373
-        sha256pre: "e609566f16fea2e2"
-      "717118057":
-        name: "PI-Desktop-0.22.0-beta.6-x64.dmg"
-        size: 148038424
-        sha256pre: "cc69939d1bb391d7"
-      "717118058":
-        name: "pi-desktop_0.22.0-beta.6_arm64.deb"
-        size: 116444288
-        sha256pre: "f0f516c76a830498"
-      "717118059":
-        name: "latest-linux.yml"
-        size: 753
-        sha256pre: "d4749fac1e789b61"
-      "717118060":
-        name: "pi-desktop-0.22.0-beta.6-aarch64.rpm"
-        size: 102172597
-        sha256pre: "9e368c7f4caa5b5f"
-      "717118061":
-        name: "PI-Desktop-Portable-0.22.0-beta.6.zip"
-        size: 180004739
-        sha256pre: "97f1ff30ddb9ce91"
-      "717118062":
-        name: "PI-Desktop-Portable-0.22.0-beta.6.exe"
-        size: 110617024
-        sha256pre: "88dee115c4405991"
-      "717118063":
-        name: "PI-Desktop-Setup-0.22.0-beta.6.exe.blockmap"
-        size: 128869
-        sha256pre: "15921b4cc82fdc99"
-      "717118064":
-        name: "PI-Desktop-0.22.0-beta.6-linux-x86_64.AppImage"
-        size: 170051303
-        sha256pre: "395d700922b7bb04"
-      "717118065":
-        name: "PI-Desktop-0.22.0-beta.6-x64-mac.zip.blockmap"
-        size: 153011
-        sha256pre: "0fba4f7e32195b66"
-      "717118066":
-        name: "PI-Desktop-0.22.0-beta.6-linux-x64.asar"
-        size: 102123114
-        sha256pre: "c0aaef413a746891"
-      "717118067":
-        name: "PI-Desktop-0.22.0-beta.6-linux-arm64.asar"
-        size: 93002800
-        sha256pre: "9ea2801516e654b5"
-      "717118069":
-        name: "PI-Desktop-Setup-0.22.0-beta.6.exe"
-        size: 123845115
-        sha256pre: "c2bdbbc45ad8547e"
-      "717118070":
-        name: "PI-Desktop-0.22.0-beta.6-linux-arm64.AppImage"
-        size: 167358733
-        sha256pre: "a8bc6a5ffad77e31"
-      "717118071":
-        name: "PI-Desktop-0.22.0-beta.6-arm64-mac.zip"
-        size: 139103660
-        sha256pre: "bafbb3eb7e0d5901"
-      "717118073":
-        name: "PI-Desktop-0.22.0-beta.6-x64-mac.zip"
-        size: 145512780
-        sha256pre: "14701e6c054dbbac"
-      "717118074":
-        name: "PI-Desktop-0.22.0-beta.6-arm64.dmg"
-        size: 141676974
-        sha256pre: "b8b761af3b928514"
-      "717118076":
-        name: "PI-Desktop-0.22.0-beta.6-arm64-mac.zip.blockmap"
-        size: 146402
-        sha256pre: "7d6c3393a0f1336d"
-      "717118080":
-        name: "PI-Desktop-0.22.0-beta.6-x64.dmg.blockmap"
-        size: 154947
-        sha256pre: "df54842e1435dd92"
-      "717118081":
-        name: "PI-Desktop-0.22.0-beta.6-arm64.dmg.blockmap"
-        size: 148751
-        sha256pre: "9fdfc8d80742d514"
-  "438301917":
-    tag: "v0.22.0-beta.7"
-    published_at: "2026-11-08T14:33:44Z"
-    prerelease: true
-    assets:
-      "724195377":
-        name: "pi-host-0.22.0-beta.7-linux-arm64.tar.gz.sha256"
-        size: 107
-        sha256pre: "0e2f38ad4ae07d55"
-      "724195379":
-        name: "pi-host-0.22.0-beta.7-linux-x64.tar.gz.sha256"
-        size: 105
-        sha256pre: "1bc525a1a4567d86"
-      "724195380":
-        name: "latest-mac.yml"
-        size: 858
-        sha256pre: "086f239ca3392390"
-      "724195381":
-        name: "pi-host-0.22.0-beta.7-linux-arm64.tar.gz"
-        size: 73433433
-        sha256pre: "3290a36e90acaaf3"
-      "724195382":
-        name: "pi-host-0.22.0-beta.7-linux-x64.tar.gz"
-        size: 73882918
-        sha256pre: "12908f3c356e1fe1"
-      "724195383":
-        name: "pi-desktop_0.22.0-beta.7_arm64.deb"
-        size: 116571976
-        sha256pre: "b1fc8e6efd40448e"
-      "724195385":
-        name: "latest.yml"
-        size: 373
-        sha256pre: "6ce2bf16793de582"
-      "724195387":
-        name: "pi-desktop-0.22.0-beta.7-x86_64.rpm"
-        size: 108575897
-        sha256pre: "938bfe6452bb62db"
-      "724195388":
-        name: "pi-desktop_0.22.0-beta.7_amd64.deb"
-        size: 124054312
-        sha256pre: "a79299b993447f3a"
-      "724195389":
-        name: "PI-Desktop-Portable-0.22.0-beta.7.zip"
-        size: 180193528
-        sha256pre: "8d8593b0ad883311"
-      "724195390":
-        name: "PI-Desktop-Setup-0.22.0-beta.7.exe"
-        size: 123983720
-        sha256pre: "c36e4eac0d0865ff"
-      "724195391":
-        name: "pi-desktop-0.22.0-beta.7-aarch64.rpm"
-        size: 102317529
-        sha256pre: "abc4ebf5240e5e55"
-      "724195392":
-        name: "latest-linux-arm64.yml"
-        size: 752
-        sha256pre: "6b64d84bb79285d2"
-      "724195393":
-        name: "latest-linux.yml"
-        size: 753
-        sha256pre: "59650ffc84f997e5"
-      "724195396":
-        name: "PI-Desktop-0.22.0-beta.7-x64.dmg"
-        size: 148206550
-        sha256pre: "05809e55b5d594f4"
-      "724195397":
-        name: "PI-Desktop-Portable-0.22.0-beta.7.exe"
-        size: 110736838
-        sha256pre: "c68ff87d59cd2d98"
-      "724195398":
-        name: "PI-Desktop-Setup-0.22.0-beta.7.exe.blockmap"
-        size: 129101
-        sha256pre: "cea8d0a67a23bc7b"
-      "724195399":
-        name: "PI-Desktop-0.22.0-beta.7-x64.dmg.blockmap"
-        size: 157055
-        sha256pre: "ab284d3272da63fd"
-      "724195400":
-        name: "PI-Desktop-0.22.0-beta.7-x64-mac.zip"
-        size: 145699468
-        sha256pre: "88c5e2599509d35a"
-      "724195401":
-        name: "PI-Desktop-0.22.0-beta.7-arm64-mac.zip.blockmap"
-        size: 145518
-        sha256pre: "76451a96768b7ddc"
-      "724195402":
-        name: "PI-Desktop-0.22.0-beta.7-linux-arm64.asar"
-        size: 93336591
-        sha256pre: "60451c0372fbfd7d"
-      "724195403":
-        name: "PI-Desktop-0.22.0-beta.7-x64-mac.zip.blockmap"
-        size: 152877
-        sha256pre: "12bdc66cbe698ca9"
-      "724195404":
-        name: "PI-Desktop-0.22.0-beta.7-arm64-mac.zip"
-        size: 139317810
-        sha256pre: "dd968370000b8adc"
-      "724195405":
-        name: "PI-Desktop-0.22.0-beta.7-linux-x86_64.AppImage"
-        size: 170247891
-        sha256pre: "0c45818beb4f54e3"
-      "724195406":
-        name: "PI-Desktop-0.22.0-beta.7-linux-arm64.AppImage"
-        size: 167561093
-        sha256pre: "08238a28053dcfd8"
-      "724195407":
-        name: "PI-Desktop-0.22.0-beta.7-arm64.dmg"
-        size: 141881525
-        sha256pre: "7b7bc29de329db53"
-      "724195408":
-        name: "PI-Desktop-0.22.0-beta.7-arm64.dmg.blockmap"
-        size: 149577
-        sha256pre: "7631ae4e80c193ba"
-      "724195410":
-        name: "PI-Desktop-0.22.0-beta.7-linux-x64.asar"
-        size: 102456905
-        sha256pre: "5130c195bc9094e7"
-  "438374752":
-    tag: "v0.22.0"
-    published_at: "2026-11-08T16:39:56Z"
-    prerelease: false
-    assets:
-      "724533349":
-        name: "pi-host-0.22.0-linux-x64.tar.gz.sha256"
-        size: 98
-        sha256pre: "63c2c2ed5d083672"
-      "724533351":
-        name: "pi-desktop_0.22.0_amd64.deb"
-        size: 124050340
-        sha256pre: "7721d0fd7b6b18cf"
-      "724533353":
-        name: "pi-host-0.22.0-linux-arm64.tar.gz"
-        size: 73430212
-        sha256pre: "7221289d4315d4e9"
-      "724533354":
-        name: "latest.yml"
-        size: 352
-        sha256pre: "9f2b541bd9d0e329"
-      "724533355":
-        name: "pi-desktop_0.22.0_arm64.deb"
-        size: 116572280
-        sha256pre: "2ea34ef9b40d5086"
-      "724533356":
-        name: "pi-host-0.22.0-linux-x64.tar.gz"
-        size: 73883218
-        sha256pre: "bd841667e273784d"
-      "724533357":
-        name: "PI-Desktop-0.22.0-linux-arm64.asar"
-        size: 93336948
-        sha256pre: "175f376bf0ae1eaa"
-      "724533358":
-        name: "PI-Desktop-Portable-0.22.0.zip"
-        size: 180189857
-        sha256pre: "1a15f304350cb61e"
-      "724533359":
-        name: "pi-host-0.22.0-linux-arm64.tar.gz.sha256"
-        size: 100
-        sha256pre: "ff9e28ac71fe730a"
-      "724533360":
-        name: "PI-Desktop-Portable-0.22.0.exe"
-        size: 110755217
-        sha256pre: "e29a6e6ba1f9c83d"
-      "724533361":
-        name: "PI-Desktop-0.22.0-x64-mac.zip"
-        size: 145691103
-        sha256pre: "af45c34ad273664f"
-      "724533362":
-        name: "latest-mac.yml"
-        size: 814
-        sha256pre: "499a94086f9700be"
-      "724533363":
-        name: "PI-Desktop-0.22.0-linux-arm64.AppImage"
-        size: 167556257
-        sha256pre: "fe8a4188a2475ae7"
-      "724533364":
-        name: "pi-desktop-0.22.0-x86_64.rpm"
-        size: 108562881
-        sha256pre: "8b9ff52407248294"
-      "724533365":
-        name: "latest-linux.yml"
-        size: 718
-        sha256pre: "5ece9862b6696b73"
-      "724533366":
-        name: "latest-linux-arm64.yml"
-        size: 717
-        sha256pre: "bcee1ddbce111a84"
-      "724533367":
-        name: "PI-Desktop-0.22.0-linux-x64.asar"
-        size: 102457262
-        sha256pre: "3957fb97c66f3d0d"
-      "724533368":
-        name: "PI-Desktop-0.22.0-x64.dmg"
-        size: 148215852
-        sha256pre: "b8b1cbc70f296f23"
-      "724533369":
-        name: "PI-Desktop-Setup-0.22.0.exe.blockmap"
-        size: 129618
-        sha256pre: "00ccededffe241ee"
-      "724533370":
-        name: "PI-Desktop-0.22.0-x64-mac.zip.blockmap"
-        size: 153040
-        sha256pre: "6a5aee8f4bbff7b8"
-      "724533371":
-        name: "PI-Desktop-0.22.0-arm64-mac.zip"
-        size: 139315644
-        sha256pre: "53ce10772993cb51"
-      "724533372":
-        name: "PI-Desktop-0.22.0-x64.dmg.blockmap"
-        size: 155820
-        sha256pre: "d6c09b35bdb34878"
-      "724533373":
-        name: "PI-Desktop-0.22.0-linux-x86_64.AppImage"
-        size: 170243759
-        sha256pre: "55292fc9a161dfff"
-      "724533374":
-        name: "PI-Desktop-Setup-0.22.0.exe"
-        size: 124004825
-        sha256pre: "8ccc8385b13b2bf4"
-      "724533375":
-        name: "PI-Desktop-0.22.0-arm64.dmg"
-        size: 141878824
-        sha256pre: "0c676610f83b6e38"
-      "724533376":
-        name: "PI-Desktop-0.22.0-arm64.dmg.blockmap"
-        size: 149585
-        sha256pre: "8ef5ecdfc5915cfe"
-      "724533381":
-        name: "pi-desktop-0.22.0-aarch64.rpm"
-        size: 102317277
-        sha256pre: "e7dd187fd7b7cbc0"
-      "724533389":
-        name: "PI-Desktop-0.22.0-arm64-mac.zip.blockmap"
-        size: 146084
-        sha256pre: "ea37f2daf3c5d0ea"
+        sha256pre: "5808c403c91ba868"
+      "601676451":
+        name: "PI-Desktop-0.16.0-beta.1-arm64.dmg"
+        size: 135889897
+        sha256pre: "29683f8c33c58ecf"
+      "601676452":
+        name: "PI-Desktop-Portable-0.16.0-beta.1.exe"
+        size: 106912773
+        sha256pre: "5d78a1b88712c599"
+      "601676453":
+        name: "PI-Desktop-0.16.0-beta.1-arm64-mac.zip"
+        size: 133279097
+        sha256pre: "8b100226e2020e2e"
   "445375779":
     tag: "v0.23.0-beta.1"
     published_at: "2026-11-14T15:02:14Z"
@@ -940,3 +678,354 @@ releases:
         name: "PI-Desktop-0.24.0-beta.1-arm64.dmg"
         size: 136727892
         sha256pre: "000d90dad4815d80"
+  "457572199":
+    tag: "v0.24.0-beta.2"
+    published_at: "2026-11-25T02:20:57Z"
+    prerelease: true
+    assets:
+      "789713524":
+        name: "pi-host-0.24.0-beta.2-linux-x64.tar.gz.sha256"
+        size: 105
+        sha256pre: "aad8f8751979a328"
+      "789713525":
+        name: "latest-linux.yml"
+        size: 753
+        sha256pre: "4cc9da23ae0dbe13"
+      "789713526":
+        name: "pi-host-0.24.0-beta.2-linux-arm64.tar.gz"
+        size: 71974457
+        sha256pre: "ce16d9ca5f5f65de"
+      "789713527":
+        name: "latest-linux-arm64.yml"
+        size: 752
+        sha256pre: "1c5d9d5fd95cc29c"
+      "789713529":
+        name: "pi-host-0.24.0-beta.2-linux-x64.tar.gz"
+        size: 72795055
+        sha256pre: "de986577f171708f"
+      "789713530":
+        name: "pi-desktop_0.24.0-beta.2_amd64.deb"
+        size: 123306180
+        sha256pre: "dd518845b95275a3"
+      "789713531":
+        name: "latest-mac.yml"
+        size: 856
+        sha256pre: "98a3d8ea8b1e04d2"
+      "789713532":
+        name: "PI-Desktop-0.24.0-beta.2-x64.dmg.blockmap"
+        size: 151407
+        sha256pre: "2dd92e99ee745a05"
+      "789713533":
+        name: "PI-Desktop-Portable-0.24.0-beta.2.exe"
+        size: 108807375
+        sha256pre: "574725511b6023b6"
+      "789713534":
+        name: "PI-Desktop-Setup-0.24.0-beta.2.exe.blockmap"
+        size: 127800
+        sha256pre: "4f9b5910bce53c74"
+      "789713535":
+        name: "PI-Desktop-Setup-0.24.0-beta.2.exe"
+        size: 122394914
+        sha256pre: "afc4698b4ddbcfa8"
+      "789713536":
+        name: "pi-host-0.24.0-beta.2-linux-arm64.tar.gz.sha256"
+        size: 107
+        sha256pre: "6f3c68e68bfb8bec"
+      "789713537":
+        name: "pi-desktop-0.24.0-beta.2-aarch64.rpm"
+        size: 100499449
+        sha256pre: "8569d8da039ce131"
+      "789713538":
+        name: "PI-Desktop-0.24.0-beta.2-x64.dmg"
+        size: 143569972
+        sha256pre: "c444e2b873861ddf"
+      "789713539":
+        name: "PI-Desktop-0.24.0-beta.2-x64-mac.zip"
+        size: 141106977
+        sha256pre: "877d662d714ede3f"
+      "789713540":
+        name: "PI-Desktop-0.24.0-beta.2-x64-mac.zip.blockmap"
+        size: 149515
+        sha256pre: "873a21e3407086d5"
+      "789713541":
+        name: "PI-Desktop-0.24.0-beta.2-arm64-mac.zip.blockmap"
+        size: 141176
+        sha256pre: "514a8f2762702528"
+      "789713542":
+        name: "PI-Desktop-Portable-0.24.0-beta.2.zip"
+        size: 176820619
+        sha256pre: "50832b5279b62047"
+      "789713543":
+        name: "PI-Desktop-0.24.0-beta.2-linux-x86_64.AppImage"
+        size: 167488328
+        sha256pre: "2a49e778b0fe9ba9"
+      "789713544":
+        name: "pi-desktop_0.24.0-beta.2_arm64.deb"
+        size: 115417012
+        sha256pre: "0ff9326b424eb090"
+      "789713545":
+        name: "PI-Desktop-0.24.0-beta.2-linux-arm64.AppImage"
+        size: 164397411
+        sha256pre: "3a18dd4cfe9eed91"
+      "789713546":
+        name: "PI-Desktop-0.24.0-beta.2-linux-arm64.asar"
+        size: 24321992
+        sha256pre: "b07d90982aa5633f"
+      "789713547":
+        name: "latest.yml"
+        size: 373
+        sha256pre: "617f3d59eb0e430f"
+      "789713548":
+        name: "PI-Desktop-0.24.0-beta.2-arm64-mac.zip"
+        size: 134666611
+        sha256pre: "9dc1d9abf82bd953"
+      "789713549":
+        name: "PI-Desktop-0.24.0-beta.2-linux-x64.asar"
+        size: 24323568
+        sha256pre: "e860664ab1c7b93b"
+      "789713550":
+        name: "PI-Desktop-0.24.0-beta.2-arm64.dmg.blockmap"
+        size: 144259
+        sha256pre: "8685f4acfc27d73f"
+      "789713551":
+        name: "PI-Desktop-0.24.0-beta.2-arm64.dmg"
+        size: 137189432
+        sha256pre: "64e727f46ab729a8"
+      "789713552":
+        name: "pi-desktop-0.24.0-beta.2-x86_64.rpm"
+        size: 106834497
+        sha256pre: "3cb3862a5e528634"
+  "457683334":
+    tag: "v0.24.0-beta.3"
+    published_at: "2026-11-25T05:17:46Z"
+    prerelease: true
+    assets:
+      "790174275":
+        name: "pi-desktop_0.24.0-beta.3_arm64.deb"
+        size: 115420648
+        sha256pre: "9270c6751590c3b7"
+      "790174276":
+        name: "pi-host-0.24.0-beta.3-linux-x64.tar.gz.sha256"
+        size: 105
+        sha256pre: "8736869393262f6e"
+      "790174277":
+        name: "pi-host-0.24.0-beta.3-linux-arm64.tar.gz.sha256"
+        size: 107
+        sha256pre: "4c96002f05c54a71"
+      "790174278":
+        name: "pi-desktop_0.24.0-beta.3_amd64.deb"
+        size: 123312336
+        sha256pre: "a19e717d44abe745"
+      "790174280":
+        name: "pi-host-0.24.0-beta.3-linux-arm64.tar.gz"
+        size: 71972308
+        sha256pre: "7b1a61b2f4fdb9fd"
+      "790174281":
+        name: "pi-desktop-0.24.0-beta.3-x86_64.rpm"
+        size: 106817965
+        sha256pre: "c8dc42ad840a5a36"
+      "790174282":
+        name: "pi-host-0.24.0-beta.3-linux-x64.tar.gz"
+        size: 72794791
+        sha256pre: "ab94c652dbee988c"
+      "790174283":
+        name: "pi-desktop-0.24.0-beta.3-aarch64.rpm"
+        size: 100483309
+        sha256pre: "18c0638197e55de2"
+      "790174285":
+        name: "latest.yml"
+        size: 373
+        sha256pre: "396afce14a2b11be"
+      "790174286":
+        name: "PI-Desktop-0.24.0-beta.3-x64.dmg.blockmap"
+        size: 149676
+        sha256pre: "cd7772937eb1d335"
+      "790174287":
+        name: "latest-linux.yml"
+        size: 753
+        sha256pre: "c18492972baa7250"
+      "790174288":
+        name: "latest-mac.yml"
+        size: 856
+        sha256pre: "1927eff38e68c80c"
+      "790174289":
+        name: "PI-Desktop-0.24.0-beta.3-linux-x64.asar"
+        size: 24327539
+        sha256pre: "741d110e76467cc4"
+      "790174290":
+        name: "PI-Desktop-0.24.0-beta.3-arm64.dmg"
+        size: 137194156
+        sha256pre: "158b6df9d9679b92"
+      "790174291":
+        name: "PI-Desktop-0.24.0-beta.3-arm64-mac.zip.blockmap"
+        size: 141234
+        sha256pre: "bb5d8beccba0d0d5"
+      "790174292":
+        name: "PI-Desktop-0.24.0-beta.3-linux-arm64.asar"
+        size: 24325963
+        sha256pre: "76b7ef2fa9ff9a55"
+      "790174294":
+        name: "PI-Desktop-0.24.0-beta.3-arm64.dmg.blockmap"
+        size: 144726
+        sha256pre: "c9a8810beaefe9a5"
+      "790174296":
+        name: "PI-Desktop-Portable-0.24.0-beta.3.zip"
+        size: 176821793
+        sha256pre: "1b1c162e3a392230"
+      "790174297":
+        name: "PI-Desktop-0.24.0-beta.3-x64-mac.zip.blockmap"
+        size: 149846
+        sha256pre: "824b16a00ad2f4df"
+      "790174298":
+        name: "latest-linux-arm64.yml"
+        size: 752
+        sha256pre: "e02b9c54b621f485"
+      "790174299":
+        name: "PI-Desktop-0.24.0-beta.3-x64.dmg"
+        size: 143568864
+        sha256pre: "65a2a8d4759ba2ed"
+      "790174300":
+        name: "PI-Desktop-0.24.0-beta.3-arm64-mac.zip"
+        size: 134662982
+        sha256pre: "9e5284d1c461c229"
+      "790174301":
+        name: "PI-Desktop-Setup-0.24.0-beta.3.exe"
+        size: 122411323
+        sha256pre: "61fe80e60b8c26d3"
+      "790174302":
+        name: "PI-Desktop-Setup-0.24.0-beta.3.exe.blockmap"
+        size: 127980
+        sha256pre: "bc443411157e2f08"
+      "790174303":
+        name: "PI-Desktop-0.24.0-beta.3-linux-x86_64.AppImage"
+        size: 167487959
+        sha256pre: "8d1c2bcfae4b069b"
+      "790174305":
+        name: "PI-Desktop-Portable-0.24.0-beta.3.exe"
+        size: 108817710
+        sha256pre: "3125b641a1d5f03c"
+      "790174311":
+        name: "PI-Desktop-0.24.0-beta.3-linux-arm64.AppImage"
+        size: 164397282
+        sha256pre: "2c48207c2406c02f"
+      "790174312":
+        name: "PI-Desktop-0.24.0-beta.3-x64-mac.zip"
+        size: 141103202
+        sha256pre: "6622a5811899935a"
+  "458117696":
+    tag: "v0.24.0-beta.5"
+    published_at: "2026-11-25T12:59:04Z"
+    prerelease: true
+    assets:
+      "791570811":
+        name: "pi-host-0.24.0-beta.5-linux-x64.tar.gz.sha256"
+        size: 105
+        sha256pre: "d44b006bf18fbda3"
+      "791570813":
+        name: "pi-host-0.24.0-beta.5-linux-arm64.tar.gz.sha256"
+        size: 107
+        sha256pre: "8c142d4f55be20a7"
+      "791570816":
+        name: "latest-linux-arm64.yml"
+        size: 752
+        sha256pre: "6e50793e556e4055"
+      "791570817":
+        name: "PI-Desktop-Setup-0.24.0-beta.5.exe"
+        size: 122407075
+        sha256pre: "b83730a474dd58a0"
+      "791570819":
+        name: "latest-linux.yml"
+        size: 753
+        sha256pre: "cb300292cfe34b57"
+      "791570821":
+        name: "latest-mac.yml"
+        size: 856
+        sha256pre: "d2ccc75769d3a1d9"
+      "791570822":
+        name: "PI-Desktop-Setup-0.24.0-beta.5.exe.blockmap"
+        size: 128371
+        sha256pre: "3e65134676b643ed"
+      "791570823":
+        name: "latest.yml"
+        size: 373
+        sha256pre: "7342f0bd1989a395"
+      "791570824":
+        name: "pi-host-0.24.0-beta.5-linux-arm64.tar.gz"
+        size: 71975644
+        sha256pre: "8fa12f60defac05e"
+      "791570825":
+        name: "pi-host-0.24.0-beta.5-linux-x64.tar.gz"
+        size: 72801053
+        sha256pre: "7afd2c92c38c4f32"
+      "791570826":
+        name: "PI-Desktop-Portable-0.24.0-beta.5.exe"
+        size: 108831401
+        sha256pre: "2ec846901ae50a77"
+      "791570829":
+        name: "pi-desktop_0.24.0-beta.5_arm64.deb"
+        size: 115422916
+        sha256pre: "422580be982dd946"
+      "791570830":
+        name: "PI-Desktop-Portable-0.24.0-beta.5.zip"
+        size: 176828323
+        sha256pre: "1d171643c6196596"
+      "791570833":
+        name: "PI-Desktop-0.24.0-beta.5-x64.dmg"
+        size: 143565858
+        sha256pre: "3a1974e3ef65e16d"
+      "791570834":
+        name: "PI-Desktop-0.24.0-beta.5-x64-mac.zip"
+        size: 141112995
+        sha256pre: "db7473d294b21010"
+      "791570835":
+        name: "PI-Desktop-0.24.0-beta.5-linux-x86_64.AppImage"
+        size: 167500470
+        sha256pre: "b998f08bbf46e322"
+      "791570836":
+        name: "PI-Desktop-0.24.0-beta.5-linux-arm64.AppImage"
+        size: 164405657
+        sha256pre: "3efbad73d641c42e"
+      "791570837":
+        name: "PI-Desktop-0.24.0-beta.5-x64.dmg.blockmap"
+        size: 149817
+        sha256pre: "48f4783488dafab2"
+      "791570838":
+        name: "PI-Desktop-0.24.0-beta.5-arm64.dmg.blockmap"
+        size: 145223
+        sha256pre: "7a8a9ca0478afa3b"
+      "791570839":
+        name: "PI-Desktop-0.24.0-beta.5-x64-mac.zip.blockmap"
+        size: 150067
+        sha256pre: "1f295de5689465a4"
+      "791570840":
+        name: "PI-Desktop-0.24.0-beta.5-arm64.dmg"
+        size: 137183219
+        sha256pre: "656bb430e581c482"
+      "791570841":
+        name: "pi-desktop_0.24.0-beta.5_amd64.deb"
+        size: 123311516
+        sha256pre: "579828001cc7ae4e"
+      "791570842":
+        name: "pi-desktop-0.24.0-beta.5-aarch64.rpm"
+        size: 100459445
+        sha256pre: "812aed25fd5a92ea"
+      "791570844":
+        name: "PI-Desktop-0.24.0-beta.5-arm64-mac.zip.blockmap"
+        size: 141125
+        sha256pre: "bd31335262ab0159"
+      "791570845":
+        name: "pi-desktop-0.24.0-beta.5-x86_64.rpm"
+        size: 106833685
+        sha256pre: "27552fa37c52b0cd"
+      "791570846":
+        name: "PI-Desktop-0.24.0-beta.5-linux-arm64.asar"
+        size: 24330190
+        sha256pre: "e03558f0ec7284c4"
+      "791570847":
+        name: "PI-Desktop-0.24.0-beta.5-arm64-mac.zip"
+        size: 134672830
+        sha256pre: "1c587575f465c50a"
+      "791570850":
+        name: "PI-Desktop-0.24.0-beta.5-linux-x64.asar"
+        size: 24331770
+        sha256pre: "3f8964e89f523721"

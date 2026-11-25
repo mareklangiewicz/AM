@@ -1,276 +1,9 @@
 $schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
 repository_id: 690440707
 repository: "xpipe-io/xpipe-ptb"
-observed_at: "2026-11-22T07:01:10Z"
+observed_at: "2026-11-25T16:57:34Z"
 history_complete: false
 releases:
-  "407515139":
-    tag: "24.6-4"
-    published_at: "2026-10-09T04:42:23Z"
-    prerelease: false
-    assets:
-      "623910429":
-        name: "xpipe-portable-windows-x86_64.zip.asc"
-        size: 195
-        sha256pre: "25ec003e1e421547"
-      "623910451":
-        name: "xpipe-portable-windows-x86_64.zip"
-        size: 163054528
-        sha256pre: "969f9b252272c991"
-      "623910630":
-        name: "xpipe-portable-macos-arm64.dmg.asc"
-        size: 195
-        sha256pre: "5eb310ed89d1a1f8"
-      "623910647":
-        name: "xpipe-portable-macos-arm64.dmg"
-        size: 163206707
-        sha256pre: "56d2845c0fc8ad04"
-      "623910846":
-        name: "xpipe-portable-linux-x86_64.tar.gz.asc"
-        size: 195
-        sha256pre: "11971b9dbb1bd26b"
-      "623910870":
-        name: "xpipe-portable-linux-x86_64.tar.gz"
-        size: 162278197
-        sha256pre: "74e966223d58326b"
-      "623911016":
-        name: "xpipe-portable-linux-x86_64.AppImage.asc"
-        size: 195
-        sha256pre: "ab9a82bd5e54d375"
-      "623911033":
-        name: "xpipe-portable-linux-x86_64.AppImage"
-        size: 146000376
-        sha256pre: "5d33a3f5ad4ec46b"
-      "623911198":
-        name: "xpipe-installer-windows-x86_64.msi.asc"
-        size: 195
-        sha256pre: "5cd8e8686ddf54cd"
-      "623911216":
-        name: "xpipe-installer-windows-x86_64.msi"
-        size: 135913472
-        sha256pre: "99cfc2b02f4d4051"
-      "623911352":
-        name: "xpipe-installer-macos-arm64.pkg.asc"
-        size: 195
-        sha256pre: "26d503e5eaf895ad"
-      "623911380":
-        name: "xpipe-installer-macos-arm64.pkg"
-        size: 164028885
-        sha256pre: "58a98013651e95c5"
-      "623911527":
-        name: "xpipe-installer-linux-x86_64.rpm.asc"
-        size: 195
-        sha256pre: "f9ef55b9819d26ad"
-      "623911557":
-        name: "xpipe-installer-linux-x86_64.rpm"
-        size: 164748631
-        sha256pre: "52cb3b5ada67c89b"
-      "623911743":
-        name: "xpipe-installer-linux-x86_64.deb.asc"
-        size: 195
-        sha256pre: "9fb49d6aed139935"
-      "623911752":
-        name: "xpipe-installer-linux-x86_64.deb"
-        size: 164758476
-        sha256pre: "23b10cc015b274df"
-      "623911954":
-        name: "sha256sums.txt.asc"
-        size: 195
-        sha256pre: "990c30674c6e13d4"
-      "623911984":
-        name: "sha256sums.txt"
-        size: 868
-        sha256pre: "2bc04617129e920f"
-      "623912025":
-        name: "get-xpipe.ps1.asc"
-        size: 195
-        sha256pre: "32ad9ac85489ee17"
-      "623912039":
-        name: "get-xpipe.ps1"
-        size: 25313
-        sha256pre: "104a794d45345a86"
-      "623912058":
-        name: "changelog_incremental.md"
-        size: 2177
-        sha256pre: "8ebbc608d7086337"
-  "407715890":
-    tag: "24.6-5"
-    published_at: "2026-10-09T08:36:12Z"
-    prerelease: false
-    assets:
-      "624384887":
-        name: "xpipe-portable-windows-x86_64.zip.asc"
-        size: 195
-        sha256pre: "846584cd565a1275"
-      "624384920":
-        name: "xpipe-portable-windows-x86_64.zip"
-        size: 163204540
-        sha256pre: "266bd623d132b073"
-      "624385096":
-        name: "xpipe-portable-macos-arm64.dmg.asc"
-        size: 195
-        sha256pre: "e6400bc83e9cecba"
-      "624385123":
-        name: "xpipe-portable-macos-arm64.dmg"
-        size: 163213377
-        sha256pre: "b9e4a23a1c7f5d4b"
-      "624385352":
-        name: "xpipe-portable-linux-x86_64.tar.gz.asc"
-        size: 195
-        sha256pre: "b4d1fe2fcec12d96"
-      "624385373":
-        name: "xpipe-portable-linux-x86_64.tar.gz"
-        size: 162297719
-        sha256pre: "6e9f36e8ead9019d"
-      "624385608":
-        name: "xpipe-portable-linux-x86_64.AppImage.asc"
-        size: 195
-        sha256pre: "7a9f8aca3176df4c"
-      "624385621":
-        name: "xpipe-portable-linux-x86_64.AppImage"
-        size: 146004472
-        sha256pre: "6325f59a762aa016"
-      "624385791":
-        name: "xpipe-installer-windows-x86_64.msi.asc"
-        size: 195
-        sha256pre: "fc8492bd7dce4c1c"
-      "624385824":
-        name: "xpipe-installer-windows-x86_64.msi"
-        size: 136015872
-        sha256pre: "eaa54a50845d22ba"
-      "624385961":
-        name: "xpipe-installer-macos-arm64.pkg.asc"
-        size: 195
-        sha256pre: "3c84e0b044594612"
-      "624385976":
-        name: "xpipe-installer-macos-arm64.pkg"
-        size: 163990195
-        sha256pre: "069b9bd5d98de054"
-      "624386145":
-        name: "xpipe-installer-linux-x86_64.rpm.asc"
-        size: 195
-        sha256pre: "27d692479a51f2a5"
-      "624386178":
-        name: "xpipe-installer-linux-x86_64.rpm"
-        size: 164760610
-        sha256pre: "5f397fb876a5335a"
-      "624386451":
-        name: "xpipe-installer-linux-x86_64.deb.asc"
-        size: 195
-        sha256pre: "9e532a65013dde07"
-      "624386464":
-        name: "xpipe-installer-linux-x86_64.deb"
-        size: 164756342
-        sha256pre: "7f5493a3aff5b8a7"
-      "624386706":
-        name: "sha256sums.txt.asc"
-        size: 195
-        sha256pre: "907bfadc62da3845"
-      "624386737":
-        name: "sha256sums.txt"
-        size: 868
-        sha256pre: "ecc3de60f5824fb1"
-      "624386757":
-        name: "get-xpipe.ps1.asc"
-        size: 195
-        sha256pre: "7ce5cfcc9bffe2b8"
-      "624386822":
-        name: "get-xpipe.ps1"
-        size: 25313
-        sha256pre: "4fd2c5e48464551b"
-      "624386844":
-        name: "changelog_incremental.md"
-        size: 2177
-        sha256pre: "8ebbc608d7086337"
-  "420329486":
-    tag: "24.8-1"
-    published_at: "2026-10-22T05:11:05Z"
-    prerelease: false
-    assets:
-      "664747450":
-        name: "xpipe-portable-windows-x86_64.zip.asc"
-        size: 195
-        sha256pre: "5aadfef7b1763638"
-      "664747490":
-        name: "xpipe-portable-windows-x86_64.zip"
-        size: 163139798
-        sha256pre: "72854dd8ab6973ae"
-      "664747700":
-        name: "xpipe-portable-macos-arm64.dmg.asc"
-        size: 195
-        sha256pre: "bd9e8a29979dc3d0"
-      "664747736":
-        name: "xpipe-portable-macos-arm64.dmg"
-        size: 163547609
-        sha256pre: "25e9c179a06ae4c9"
-      "664747905":
-        name: "xpipe-portable-linux-x86_64.tar.gz.asc"
-        size: 195
-        sha256pre: "cf1d620ec6bf0c29"
-      "664747919":
-        name: "xpipe-portable-linux-x86_64.tar.gz"
-        size: 162339878
-        sha256pre: "9faad1e66da7a5b6"
-      "664748141":
-        name: "xpipe-portable-linux-x86_64.AppImage.asc"
-        size: 195
-        sha256pre: "24d8afa5f0d54405"
-      "664748170":
-        name: "xpipe-portable-linux-x86_64.AppImage"
-        size: 146266616
-        sha256pre: "40d4da18b9e0035f"
-      "664748350":
-        name: "xpipe-installer-windows-x86_64.msi.asc"
-        size: 195
-        sha256pre: "ff93957d94569106"
-      "664748370":
-        name: "xpipe-installer-windows-x86_64.msi"
-        size: 136003584
-        sha256pre: "8ec240cc34faceef"
-      "664748570":
-        name: "xpipe-installer-macos-arm64.pkg.asc"
-        size: 195
-        sha256pre: "d0057ec9a158ca2d"
-      "664748624":
-        name: "xpipe-installer-macos-arm64.pkg"
-        size: 164358508
-        sha256pre: "a1dbd47247b1d2f7"
-      "664748934":
-        name: "xpipe-installer-linux-x86_64.rpm.asc"
-        size: 195
-        sha256pre: "989b2961dfa80af7"
-      "664748975":
-        name: "xpipe-installer-linux-x86_64.rpm"
-        size: 164814431
-        sha256pre: "4fad7ea7e73e9375"
-      "664749209":
-        name: "xpipe-installer-linux-x86_64.deb.asc"
-        size: 195
-        sha256pre: "1e1e07040e668968"
-      "664749245":
-        name: "xpipe-installer-linux-x86_64.deb"
-        size: 164802338
-        sha256pre: "6a3cc4b3db8770fd"
-      "664749466":
-        name: "sha256sums.txt.asc"
-        size: 195
-        sha256pre: "1ba84abef643dc42"
-      "664749501":
-        name: "sha256sums.txt"
-        size: 868
-        sha256pre: "ace313cae1b2c04a"
-      "664749539":
-        name: "get-xpipe.ps1.asc"
-        size: 195
-        sha256pre: "45d13e32f4c4b801"
-      "664749577":
-        name: "get-xpipe.ps1"
-        size: 25313
-        sha256pre: "d5e570bf57a40966"
-      "664749634":
-        name: "changelog_incremental.md"
-        size: 453
-        sha256pre: "2899493e5a4e2bdc"
   "421455610":
     tag: "24.8-2"
     published_at: "2026-10-23T04:39:23Z"
@@ -780,3 +513,270 @@ releases:
         name: "changelog_incremental.md"
         size: 8151
         sha256pre: "1bcd27e68598a8c4"
+  "454298004":
+    tag: "25.0-2"
+    published_at: "2026-11-22T08:15:11Z"
+    prerelease: false
+    assets:
+      "778360692":
+        name: "xpipe-portable-windows-x86_64.zip.asc"
+        size: 195
+        sha256pre: "841de82259464542"
+      "778360712":
+        name: "xpipe-portable-windows-x86_64.zip"
+        size: 175972697
+        sha256pre: "839f5544f19c613f"
+      "778360928":
+        name: "xpipe-portable-macos-arm64.dmg.asc"
+        size: 195
+        sha256pre: "40b803cd5bfd188b"
+      "778360978":
+        name: "xpipe-portable-macos-arm64.dmg"
+        size: 174995131
+        sha256pre: "954a1a2d56854be1"
+      "778361296":
+        name: "xpipe-portable-linux-x86_64.tar.gz.asc"
+        size: 195
+        sha256pre: "a1ee7cb1da463e4f"
+      "778361318":
+        name: "xpipe-portable-linux-x86_64.tar.gz"
+        size: 169316432
+        sha256pre: "a6d9bb42100ab454"
+      "778361572":
+        name: "xpipe-portable-linux-x86_64.AppImage.asc"
+        size: 195
+        sha256pre: "f036022df30db1bd"
+      "778361599":
+        name: "xpipe-portable-linux-x86_64.AppImage"
+        size: 160975352
+        sha256pre: "71a86c87128cd415"
+      "778361835":
+        name: "xpipe-installer-windows-x86_64.msi.asc"
+        size: 195
+        sha256pre: "660abf621d2fe075"
+      "778361872":
+        name: "xpipe-installer-windows-x86_64.msi"
+        size: 162865152
+        sha256pre: "7427694c8539a8d3"
+      "778362206":
+        name: "xpipe-installer-macos-arm64.pkg.asc"
+        size: 195
+        sha256pre: "59e15cffc443692a"
+      "778362230":
+        name: "xpipe-installer-macos-arm64.pkg"
+        size: 174743760
+        sha256pre: "2855188c39f05fd9"
+      "778362477":
+        name: "xpipe-installer-linux-x86_64.rpm.asc"
+        size: 195
+        sha256pre: "f9a68463ff9b3188"
+      "778362507":
+        name: "xpipe-installer-linux-x86_64.rpm"
+        size: 171782821
+        sha256pre: "5f74fbbcb9b0718f"
+      "778362789":
+        name: "xpipe-installer-linux-x86_64.deb.asc"
+        size: 195
+        sha256pre: "0746f06d3d0101e5"
+      "778362812":
+        name: "xpipe-installer-linux-x86_64.deb"
+        size: 171780226
+        sha256pre: "9ea6fcc52d50a8d4"
+      "778363099":
+        name: "sha256sums.txt.asc"
+        size: 195
+        sha256pre: "5463716845d3b15d"
+      "778363144":
+        name: "sha256sums.txt"
+        size: 878
+        sha256pre: "57a2875d12b39083"
+      "778363195":
+        name: "get-xpipe.ps1.asc"
+        size: 195
+        sha256pre: "ae07bba482648866"
+      "778363236":
+        name: "get-xpipe.ps1"
+        size: 25313
+        sha256pre: "4401ef1cb0f28f94"
+      "778363290":
+        name: "changelog_incremental.md"
+        size: 8239
+        sha256pre: "01fa075bef82bc40"
+  "454496438":
+    tag: "25.0-3"
+    published_at: "2026-11-22T14:16:22Z"
+    prerelease: false
+    assets:
+      "779290175":
+        name: "xpipe-portable-windows-x86_64.zip.asc"
+        size: 195
+        sha256pre: "5cd1059f14880d8b"
+      "779290231":
+        name: "xpipe-portable-windows-x86_64.zip"
+        size: 175991315
+        sha256pre: "68ca154addd8246b"
+      "779290566":
+        name: "xpipe-portable-macos-arm64.dmg.asc"
+        size: 195
+        sha256pre: "e78bbc9663c8980f"
+      "779290611":
+        name: "xpipe-portable-macos-arm64.dmg"
+        size: 174977870
+        sha256pre: "6ffbab24bdd5e927"
+      "779290984":
+        name: "xpipe-portable-linux-x86_64.tar.gz.asc"
+        size: 195
+        sha256pre: "835232040e71c87f"
+      "779291023":
+        name: "xpipe-portable-linux-x86_64.tar.gz"
+        size: 169322287
+        sha256pre: "ab2de7cd47f914a0"
+      "779291359":
+        name: "xpipe-portable-linux-x86_64.AppImage.asc"
+        size: 195
+        sha256pre: "c8f481e88b653617"
+      "779291479":
+        name: "xpipe-portable-linux-x86_64.AppImage"
+        size: 160979448
+        sha256pre: "ab507debab7844ea"
+      "779291737":
+        name: "xpipe-installer-windows-x86_64.msi.asc"
+        size: 195
+        sha256pre: "f2538977448c1278"
+      "779291789":
+        name: "xpipe-installer-windows-x86_64.msi"
+        size: 162885632
+        sha256pre: "c2bc9849b8373c62"
+      "779292069":
+        name: "xpipe-installer-macos-arm64.pkg.asc"
+        size: 195
+        sha256pre: "be198801b0b8627c"
+      "779292125":
+        name: "xpipe-installer-macos-arm64.pkg"
+        size: 174739969
+        sha256pre: "a79ff5289db2aaa3"
+      "779292595":
+        name: "xpipe-installer-linux-x86_64.rpm.asc"
+        size: 195
+        sha256pre: "37054b0e1d1f1ce3"
+      "779292661":
+        name: "xpipe-installer-linux-x86_64.rpm"
+        size: 171792621
+        sha256pre: "885ad5e9def50781"
+      "779292996":
+        name: "xpipe-installer-linux-x86_64.deb.asc"
+        size: 195
+        sha256pre: "c3318f6eb12b7587"
+      "779293027":
+        name: "xpipe-installer-linux-x86_64.deb"
+        size: 171796688
+        sha256pre: "e0f43a9f14efe4d3"
+      "779293455":
+        name: "sha256sums.txt.asc"
+        size: 195
+        sha256pre: "75984cba6e3ed25d"
+      "779293504":
+        name: "sha256sums.txt"
+        size: 878
+        sha256pre: "f4bd2f6298614f96"
+      "779293534":
+        name: "get-xpipe.ps1.asc"
+        size: 195
+        sha256pre: "bbd82c3b88c80732"
+      "779293574":
+        name: "get-xpipe.ps1"
+        size: 25313
+        sha256pre: "4eae87d881c373fc"
+      "779293625":
+        name: "changelog_incremental.md"
+        size: 8606
+        sha256pre: "fde9f3a3e278b9f3"
+  "455640754":
+    tag: "25.0-4"
+    published_at: "2026-11-23T15:53:09Z"
+    prerelease: false
+    assets:
+      "783545447":
+        name: "xpipe-portable-windows-x86_64.zip.asc"
+        size: 195
+        sha256pre: "698901d8851fdb3c"
+      "783545509":
+        name: "xpipe-portable-windows-x86_64.zip"
+        size: 174868334
+        sha256pre: "a57f05a576661d54"
+      "783546044":
+        name: "xpipe-portable-macos-arm64.dmg.asc"
+        size: 195
+        sha256pre: "a75dacee6f2aa228"
+      "783546115":
+        name: "xpipe-portable-macos-arm64.dmg"
+        size: 173917547
+        sha256pre: "b1e45127c10487d9"
+      "783547030":
+        name: "xpipe-portable-linux-x86_64.tar.gz.asc"
+        size: 195
+        sha256pre: "90bbecb39b66e699"
+      "783547090":
+        name: "xpipe-portable-linux-x86_64.tar.gz"
+        size: 168212162
+        sha256pre: "65f071ab1faee85c"
+      "783547566":
+        name: "xpipe-portable-linux-x86_64.AppImage.asc"
+        size: 195
+        sha256pre: "26eec02e5e8d18c2"
+      "783547632":
+        name: "xpipe-portable-linux-x86_64.AppImage"
+        size: 159939064
+        sha256pre: "687f6e3ae557e626"
+      "783548111":
+        name: "xpipe-installer-windows-x86_64.msi.asc"
+        size: 195
+        sha256pre: "83208e39a128cd96"
+      "783548193":
+        name: "xpipe-installer-windows-x86_64.msi"
+        size: 161767424
+        sha256pre: "2a5c457ea38429b0"
+      "783548800":
+        name: "xpipe-installer-macos-arm64.pkg.asc"
+        size: 195
+        sha256pre: "64a10e6309b7e23f"
+      "783548886":
+        name: "xpipe-installer-macos-arm64.pkg"
+        size: 173675698
+        sha256pre: "2a2bf1ffe5b00ac2"
+      "783549502":
+        name: "xpipe-installer-linux-x86_64.rpm.asc"
+        size: 195
+        sha256pre: "0c9b405d6a1d7b78"
+      "783549578":
+        name: "xpipe-installer-linux-x86_64.rpm"
+        size: 170689506
+        sha256pre: "a19297933656bef5"
+      "783550202":
+        name: "xpipe-installer-linux-x86_64.deb.asc"
+        size: 195
+        sha256pre: "3b856fcc236c2ee1"
+      "783550266":
+        name: "xpipe-installer-linux-x86_64.deb"
+        size: 170678986
+        sha256pre: "5fb53b045b1397a7"
+      "783550677":
+        name: "sha256sums.txt.asc"
+        size: 195
+        sha256pre: "9e7e637d73bd6ccc"
+      "783550750":
+        name: "sha256sums.txt"
+        size: 878
+        sha256pre: "e2433b4ae2fea6ef"
+      "783550822":
+        name: "get-xpipe.ps1.asc"
+        size: 195
+        sha256pre: "1262758b36d8c8b4"
+      "783550876":
+        name: "get-xpipe.ps1"
+        size: 25313
+        sha256pre: "959c4a97bba56262"
+      "783550943":
+        name: "changelog_incremental.md"
+        size: 9081
+        sha256pre: "b4a2460dd432db86"
