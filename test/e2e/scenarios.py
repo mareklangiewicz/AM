@@ -520,7 +520,7 @@ esac
     def test_install_refusal_creates_no_app_or_launcher(self):
         (self.fixture/'tree/repositories/source-262342594.yaml').write_bytes(b'[]')
         result=self.command('-i','obsidian',success=False)
-        self.assertIn('refused',result.stderr)
+        self.assertIn('invalid YAML document',result.stderr)
         self.assertFalse(Path('/opt/obsidian').exists())
         self.assertFalse(Path('/usr/local/bin/obsidian').exists())
 
