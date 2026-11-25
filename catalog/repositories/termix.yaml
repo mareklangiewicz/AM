@@ -1,0 +1,565 @@
+$schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
+repository_id: 893684207
+repository: "Termix-SSH/Termix"
+observed_at: "2026-11-22T10:01:39Z"
+history_complete: true
+releases:
+  "443616940":
+    tag: "v26.11.2-beta.2"
+    title: "Termix v26.11.2 Beta 2"
+    published_at: "2026-11-13T02:05:13Z"
+    prerelease: true
+    observed_at: "2026-11-17T11:36:58Z"
+    assets:
+      "741831119":
+        name: "termix_linux_arm64_appimage.AppImage"
+        size: 211582885
+        sha256pre: "239d88a39b8950c2"
+      "741831429":
+        name: "termix_linux_arm64_deb.deb"
+        size: 156256884
+        sha256pre: "193d92bcd3931895"
+      "741831728":
+        name: "termix_linux_arm64_portable.tar.gz"
+        size: 200591218
+        sha256pre: "7c9d96facb69834b"
+      "741832222":
+        name: "termix_linux_armv7l_appimage.AppImage"
+        size: 207906847
+        sha256pre: "2d61f2ec177698eb"
+      "741832679":
+        name: "termix_linux_armv7l_deb.deb"
+        size: 159387088
+        sha256pre: "4876feebb3563276"
+      "741833132":
+        name: "termix_linux_armv7l_portable.tar.gz"
+        size: 198899665
+        sha256pre: "20a1c72f0dc10177"
+      "741833560":
+        name: "termix_linux_x64_appimage.AppImage"
+        size: 210435003
+        sha256pre: "047f0a819ddbc5bb"
+      "741833872":
+        name: "termix_linux_x64_deb.deb"
+        size: 161325792
+        sha256pre: "6bb02dbff1be9e2a"
+      "741834199":
+        name: "termix_linux_x64_full_appimage.AppImage"
+        size: 232805631
+        sha256pre: "a52970ebb2f77903"
+      "741834671":
+        name: "termix_linux_x64_full_deb.deb"
+        size: 178874976
+        sha256pre: "fbb8e4229801445c"
+      "741835099":
+        name: "termix_linux_x64_portable.tar.gz"
+        size: 199735393
+        sha256pre: "25a31bc1690263a5"
+      "741835503":
+        name: "termix_macos_arm64_dmg.dmg"
+        size: 197496164
+        sha256pre: "aa24aa8d5aae7530"
+      "741835945":
+        name: "termix_macos_arm64_update.zip"
+        size: 202756412
+        sha256pre: "fb992f79aaf6d4bb"
+      "741836272":
+        name: "termix_macos_arm64_update.zip.blockmap"
+        size: 212563
+        sha256pre: "2baede91a964c18e"
+      "741836319":
+        name: "termix_macos_universal_dmg.dmg"
+        size: 378252599
+        sha256pre: "36111980f3a167cf"
+      "741836964":
+        name: "termix_macos_universal_full_dmg.dmg"
+        size: 431373884
+        sha256pre: "c52878eddd87a5e2"
+      "741837802":
+        name: "termix_macos_x64_dmg.dmg"
+        size: 204693872
+        sha256pre: "31567fbfcbee9235"
+      "741838115":
+        name: "termix_macos_x64_update.zip"
+        size: 210026762
+        sha256pre: "25a6180b6de180e5"
+      "741838471":
+        name: "termix_macos_x64_update.zip.blockmap"
+        size: 218902
+        sha256pre: "fcc0a882260c451f"
+      "741838497":
+        name: "termix_sbom.cdx.json"
+        size: 691296
+        sha256pre: "ac91d3ce48925faa"
+      "741838570":
+        name: "termix_windows_arm64_msi.msi"
+        size: 185487360
+        sha256pre: "9ab6be54e9171865"
+      "741838899":
+        name: "termix_windows_arm64_nsis.exe"
+        size: 173338104
+        sha256pre: "0fa3550984811cc3"
+      "741839226":
+        name: "termix_windows_arm64_portable.zip"
+        size: 251570477
+        sha256pre: "bfc4abd022058d49"
+      "741839574":
+        name: "termix_windows_ia32_msi.msi"
+        size: 175239168
+        sha256pre: "01b8d9b89eb8b073"
+      "741839912":
+        name: "termix_windows_ia32_nsis.exe"
+        size: 166574584
+        sha256pre: "919acd5157e12e56"
+      "741840252":
+        name: "termix_windows_ia32_portable.zip"
+        size: 230753098
+        sha256pre: "3dc71afe129059e1"
+      "741840703":
+        name: "termix_windows_x64_full_nsis.exe"
+        size: 205463344
+        sha256pre: "068c661f42759c27"
+      "741841098":
+        name: "termix_windows_x64_msi.msi"
+        size: 190029824
+        sha256pre: "29076b7400987426"
+      "741841305":
+        name: "termix_windows_x64_nsis.exe"
+        size: 179193432
+        sha256pre: "5379345443aa57ba"
+      "741841603":
+        name: "termix_windows_x64_nsis.exe.blockmap"
+        size: 183745
+        sha256pre: "3845614a8b534e57"
+      "741841649":
+        name: "termix_windows_x64_portable.zip"
+        size: 251682424
+        sha256pre: "6cc88d21edb844bf"
+      "741842146":
+        name: "beta-linux-arm.yml"
+        size: 586
+        sha256pre: "b0e011f19c126921"
+      "741842183":
+        name: "beta-linux-arm64.yml"
+        size: 583
+        sha256pre: "d8e96b1a6950fe22"
+      "741842230":
+        name: "beta-linux.yml"
+        size: 577
+        sha256pre: "ec0e7f84a80be14c"
+      "741842280":
+        name: "beta-mac.yml"
+        size: 873
+        sha256pre: "5e6ef35935a8dd7a"
+      "741842328":
+        name: "beta.yml"
+        size: 374
+        sha256pre: "158ce91787c1aaa4"
+      "741895009":
+        name: "com.karmaa.termix.flatpakref"
+        size: 1075
+        sha256pre: "de083fa345319682"
+      "741895068":
+        name: "termix_linux_aarch64_flatpak.flatpak"
+        size: 144202112
+        sha256pre: "2d1efd8195ad6109"
+      "741895301":
+        name: "termix_linux_flatpak.flatpak"
+        size: 149062520
+        sha256pre: "ab0845881fbdc552"
+      "741896414":
+        name: "SHA256SUMS"
+        size: 3724
+        sha256pre: "f5a403876d5b9f9f"
+      "741896429":
+        name: "SHA256SUMS.sigstore.json"
+        size: 10543
+        sha256pre: "8ad5cbc835d60f97"
+  "445782895":
+    tag: "sdk-v2.8.0"
+    title: "Plugin SDK v2.8.0"
+    published_at: "2026-11-15T03:25:15Z"
+    prerelease: false
+    assets: {}
+  "446504660":
+    tag: "sdk-v2.8.1"
+    title: "Plugin SDK v2.8.1"
+    published_at: "2026-11-16T01:19:43Z"
+    prerelease: false
+    assets: {}
+  "447413061":
+    tag: "sdk-v2.9.0"
+    title: "Plugin SDK v2.9.0"
+    published_at: "2026-11-16T18:15:17Z"
+    prerelease: false
+    assets:
+      "755913909":
+        name: "termix-ssh-plugin-sdk-2.9.0.tgz"
+        size: 1341494
+        sha256pre: "2a6559308aa35176"
+      "755913910":
+        name: "termix-ssh-plugin-sdk-2.9.0.tgz.intoto.jsonl"
+        size: 10878
+        sha256pre: "4eadce60b1cc976f"
+  "449602664":
+    tag: "sdk-v2.10.0"
+    title: "Plugin SDK v2.10.0"
+    published_at: "2026-11-18T06:27:03Z"
+    prerelease: false
+    assets:
+      "762206946":
+        name: "termix-ssh-plugin-sdk-2.10.0.tgz"
+        size: 1357075
+        sha256pre: "820d06c92bb3fa4e"
+      "762206950":
+        name: "termix-ssh-plugin-sdk-2.10.0.tgz.intoto.jsonl"
+        size: 11117
+        sha256pre: "a253c2f2bf215f2d"
+  "449712091":
+    tag: "sdk-v2.10.1"
+    title: "Plugin SDK v2.10.1"
+    published_at: "2026-11-18T08:39:47Z"
+    prerelease: false
+    assets:
+      "762609405":
+        name: "termix-ssh-plugin-sdk-2.10.1.tgz.intoto.jsonl"
+        size: 10925
+        sha256pre: "18954f3e03e61826"
+      "762609406":
+        name: "termix-ssh-plugin-sdk-2.10.1.tgz"
+        size: 1357250
+        sha256pre: "be015d47f11f7b01"
+  "450169667":
+    tag: "v26.11.2"
+    title: "Termix v26.11.2"
+    published_at: "2026-11-18T17:12:58Z"
+    prerelease: false
+    assets:
+      "764104762":
+        name: "termix_linux_arm64_appimage.AppImage"
+        size: 264103442
+        sha256pre: "0730715384e3266e"
+      "764105398":
+        name: "termix_linux_arm64_deb.deb"
+        size: 192346548
+        sha256pre: "dc52d34780f49e3a"
+      "764106031":
+        name: "termix_linux_arm64_portable.tar.gz"
+        size: 250833414
+        sha256pre: "8ae966d481bad20b"
+      "764106680":
+        name: "termix_linux_x64_appimage.AppImage"
+        size: 263185084
+        sha256pre: "a002a84337140c2a"
+      "764108021":
+        name: "termix_linux_x64_deb.deb"
+        size: 198485792
+        sha256pre: "aa5d54050cc55250"
+      "764109254":
+        name: "termix_linux_x64_full_appimage.AppImage"
+        size: 286053091
+        sha256pre: "002b2a1076f1afcc"
+      "764110686":
+        name: "termix_linux_x64_full_deb.deb"
+        size: 216415876
+        sha256pre: "be03de909313041c"
+      "764112237":
+        name: "termix_linux_x64_portable.tar.gz"
+        size: 250179421
+        sha256pre: "7c3cc3ca8956690c"
+      "764113362":
+        name: "termix_macos_arm64_dmg.dmg"
+        size: 254640116
+        sha256pre: "c9b8eda86bf88f85"
+      "764114190":
+        name: "termix_macos_arm64_update.zip"
+        size: 250677017
+        sha256pre: "450a5a63d38e5340"
+      "764115041":
+        name: "termix_macos_arm64_update.zip.blockmap"
+        size: 263583
+        sha256pre: "a6e1e5f4aadd3f1a"
+      "764115503":
+        name: "termix_macos_universal_dmg.dmg"
+        size: 497003985
+        sha256pre: "c4ce454521da2a70"
+      "764117712":
+        name: "termix_macos_universal_full_dmg.dmg"
+        size: 551686913
+        sha256pre: "3beec1f644c4fd22"
+      "764120745":
+        name: "termix_macos_universal_mas.pkg"
+        size: 495962903
+        sha256pre: "bc88c95f5c487485"
+      "764122163":
+        name: "termix_macos_x64_dmg.dmg"
+        size: 264210190
+        sha256pre: "651fc9f004547c7b"
+      "764122986":
+        name: "termix_macos_x64_update.zip"
+        size: 260219955
+        sha256pre: "8e6c3f23ead63d20"
+      "764123734":
+        name: "termix_macos_x64_update.zip.blockmap"
+        size: 271929
+        sha256pre: "bddc0dce72b6c639"
+      "764123833":
+        name: "termix_sbom.cdx.json"
+        size: 634461
+        sha256pre: "c3f158486e0934e8"
+      "764124001":
+        name: "termix_windows_arm64_msi.msi"
+        size: 222453760
+        sha256pre: "ea16251c5479d5cc"
+      "764124906":
+        name: "termix_windows_arm64_nsis.exe"
+        size: 220023344
+        sha256pre: "6e4f11e0fc0381de"
+      "764125557":
+        name: "termix_windows_arm64_portable.zip"
+        size: 297687110
+        sha256pre: "1f9429f00c196d99"
+      "764126532":
+        name: "termix_windows_x64_full_nsis.exe"
+        size: 256382392
+        sha256pre: "b08c8cafa88f4206"
+      "764127371":
+        name: "termix_windows_x64_msi.msi"
+        size: 231743488
+        sha256pre: "6dbf40f28ce4320a"
+      "764128400":
+        name: "termix_windows_x64_nsis.exe"
+        size: 229458424
+        sha256pre: "da1267ca379cfbf9"
+      "764128994":
+        name: "termix_windows_x64_nsis.exe.blockmap"
+        size: 236135
+        sha256pre: "74807d0c09fc9492"
+      "764129219":
+        name: "termix_windows_x64_portable.zip"
+        size: 303311594
+        sha256pre: "a8a707ce90495b33"
+      "764130010":
+        name: "termix.rb"
+        size: 722
+        sha256pre: "b166ac192f520300"
+      "764130058":
+        name: "latest-linux-arm64.yml"
+        size: 553
+        sha256pre: "a9d7a5efae152eed"
+      "764130106":
+        name: "latest-linux.yml"
+        size: 547
+        sha256pre: "fdf7c5622de42d0b"
+      "764130162":
+        name: "latest-mac.yml"
+        size: 825
+        sha256pre: "109e2e7cbccbb5d7"
+      "764130200":
+        name: "latest.yml"
+        size: 353
+        sha256pre: "a1f8c50ac26317e4"
+      "764247490":
+        name: "com.karmaa.termix.flatpakref"
+        size: 1075
+        sha256pre: "de083fa345319682"
+      "764247665":
+        name: "termix_linux_aarch64_flatpak.flatpak"
+        size: 180702720
+        sha256pre: "93e5d85715b0e30a"
+      "764248133":
+        name: "termix_linux_flatpak.flatpak"
+        size: 186128088
+        sha256pre: "8b608d004fd59831"
+      "764250926":
+        name: "SHA256SUMS"
+        size: 3232
+        sha256pre: "12f9fa2a7ab24dc1"
+      "764250966":
+        name: "SHA256SUMS.intoto.jsonl"
+        size: 16571
+        sha256pre: "a07a96cc9528084a"
+      "764250997":
+        name: "SHA256SUMS.sigstore.json"
+        size: 10587
+        sha256pre: "6bf856b172e3df2a"
+      "764253841":
+        name: "SHA256SUMS.sig"
+        size: 766
+        sha256pre: "755099286524fa43"
+      "764260838":
+        name: "latest-linux-arm.yml"
+        size: 579
+        sha256pre: "3c8f06886655a13c"
+  "453518482":
+    tag: "sdk-v2.11.0"
+    title: "Plugin SDK v2.11.0"
+    published_at: "2026-11-21T07:27:46Z"
+    prerelease: false
+    assets:
+      "774796018":
+        name: "termix-ssh-plugin-sdk-2.11.0.tgz"
+        size: 1377739
+        sha256pre: "1d85aa639bfdf94b"
+      "774796019":
+        name: "termix-ssh-plugin-sdk-2.11.0.tgz.intoto.jsonl"
+        size: 10921
+        sha256pre: "fdd037e03a9874ca"
+  "453651313":
+    tag: "v26.11.3"
+    title: "Termix v26.11.3"
+    published_at: "2026-11-21T13:12:37Z"
+    prerelease: false
+    assets:
+      "775561316":
+        name: "termix_linux_arm64_appimage.AppImage"
+        size: 270858191
+        sha256pre: "d42128ee217dead0"
+      "775561641":
+        name: "termix_linux_arm64_deb.deb"
+        size: 198570772
+        sha256pre: "cae1c5689b3684ea"
+      "775562001":
+        name: "termix_linux_arm64_portable.tar.gz"
+        size: 259492163
+        sha256pre: "2c9239ea460fcda2"
+      "775562366":
+        name: "termix_linux_x64_appimage.AppImage"
+        size: 269939874
+        sha256pre: "0d8066fe07cbc64f"
+      "775562808":
+        name: "termix_linux_x64_deb.deb"
+        size: 204707872
+        sha256pre: "ef88e1a5727b067e"
+      "775563084":
+        name: "termix_linux_x64_full_appimage.AppImage"
+        size: 294508006
+        sha256pre: "29a7712c548625bc"
+      "775563544":
+        name: "termix_linux_x64_full_deb.deb"
+        size: 223689240
+        sha256pre: "82c66894a7fff309"
+      "775563852":
+        name: "termix_linux_x64_portable.tar.gz"
+        size: 258836621
+        sha256pre: "289d1845d444917d"
+      "775564290":
+        name: "termix_macos_arm64_dmg.dmg"
+        size: 263900889
+        sha256pre: "a509ba2eebd74b75"
+      "775564720":
+        name: "termix_macos_arm64_update.zip"
+        size: 259757054
+        sha256pre: "a8401a25c58e00c5"
+      "775565135":
+        name: "termix_macos_arm64_update.zip.blockmap"
+        size: 272756
+        sha256pre: "7633f6db831350bb"
+      "775565185":
+        name: "termix_macos_universal_dmg.dmg"
+        size: 515529997
+        sha256pre: "57450830433a4c48"
+      "775566186":
+        name: "termix_macos_universal_full_dmg.dmg"
+        size: 573808363
+        sha256pre: "2dec8141d3165394"
+      "775567384":
+        name: "termix_macos_universal_mas.pkg"
+        size: 514666208
+        sha256pre: "8aee6f100181bcda"
+      "775568225":
+        name: "termix_macos_x64_dmg.dmg"
+        size: 273434919
+        sha256pre: "aa08746ae83e59d5"
+      "775568658":
+        name: "termix_macos_x64_update.zip"
+        size: 269300002
+        sha256pre: "ffe974280756956b"
+      "775569000":
+        name: "termix_macos_x64_update.zip.blockmap"
+        size: 281607
+        sha256pre: "42db7676d1315d1a"
+      "775569019":
+        name: "termix_sbom.cdx.json"
+        size: 634461
+        sha256pre: "4c00dc4357bf12bc"
+      "775569057":
+        name: "termix_windows_arm64_msi.msi"
+        size: 227815424
+        sha256pre: "4ee4bb51e70eb48e"
+      "775569442":
+        name: "termix_windows_arm64_nsis.exe"
+        size: 227874184
+        sha256pre: "3d0e8ee835e620d1"
+      "775569780":
+        name: "termix_windows_arm64_portable.zip"
+        size: 307206884
+        sha256pre: "5ea38d51092100d4"
+      "775570317":
+        name: "termix_windows_x64_full_nsis.exe"
+        size: 265840632
+        sha256pre: "e5d2097bef6c2729"
+      "775570762":
+        name: "termix_windows_x64_msi.msi"
+        size: 237563904
+        sha256pre: "b90174cae24c3936"
+      "775571108":
+        name: "termix_windows_x64_nsis.exe"
+        size: 237310320
+        sha256pre: "6ec30d81e3c79050"
+      "775571613":
+        name: "termix_windows_x64_nsis.exe.blockmap"
+        size: 242504
+        sha256pre: "b6111a26b7778f8d"
+      "775571684":
+        name: "termix_windows_x64_portable.zip"
+        size: 312831634
+        sha256pre: "649a5d38cfe6e0d8"
+      "775572279":
+        name: "termix.rb"
+        size: 722
+        sha256pre: "a97a30fdc8055898"
+      "775572322":
+        name: "latest-linux-arm64.yml"
+        size: 553
+        sha256pre: "78d676ab98f89a16"
+      "775572371":
+        name: "latest-linux.yml"
+        size: 547
+        sha256pre: "1550178817d9bd14"
+      "775572408":
+        name: "latest-mac.yml"
+        size: 825
+        sha256pre: "a205f7585bb650ef"
+      "775572433":
+        name: "latest.yml"
+        size: 353
+        sha256pre: "7388707e7e91f62c"
+      "775624855":
+        name: "com.karmaa.termix.flatpakref"
+        size: 1075
+        sha256pre: "de083fa345319682"
+      "775624960":
+        name: "termix_linux_aarch64_flatpak.flatpak"
+        size: 181522968
+        sha256pre: "d2f9f8f5f8a42965"
+      "775625293":
+        name: "termix_linux_flatpak.flatpak"
+        size: 187897104
+        sha256pre: "b8d4ffabb956a741"
+      "775627114":
+        name: "SHA256SUMS"
+        size: 3232
+        sha256pre: "bb447f5c1b8f2530"
+      "775627145":
+        name: "SHA256SUMS.intoto.jsonl"
+        size: 16399
+        sha256pre: "aa78bbd7d1754017"
+      "775627172":
+        name: "SHA256SUMS.sigstore.json"
+        size: 10255
+        sha256pre: "6dc282f8af9eff68"
+      "775630836":
+        name: "SHA256SUMS.sig"
+        size: 766
+        sha256pre: "06c25269a2c73373"

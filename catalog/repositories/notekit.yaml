@@ -1,0 +1,40 @@
+$schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
+repository_id: 204495016
+repository: "blackhole89/notekit"
+observed_at: "2026-11-25T10:01:38Z"
+history_complete: true
+releases:
+  "36199433":
+    tag: "v0.1-alpha"
+    title: "Alpha release 0.1"
+    published_at: "2021-01-10T18:23:44Z"
+    prerelease: true
+    assets: {}
+  "86413987":
+    tag: "v0.2.0"
+    title: "Version 0.2.0"
+    published_at: "2022-12-17T20:07:01Z"
+    prerelease: false
+    assets:
+      "88681336":
+        name: "notekit-0.2.0+git1.73c1a86-Build6.1.glibc2.14-x86_64.AppImage"
+        url: "https://github.com/blackhole89/notekit/releases/download/v0.2.0/notekit-0.2.0%2Bgit1.73c1a86-Build6.1.glibc2.14-x86_64.AppImage"
+        size: 13678536
+  "97041512":
+    tag: "latest"
+    title: "Development Build"
+    published_at: "2023-03-27T15:15:17Z"
+    prerelease: true
+    assets:
+      "101163428":
+        name: "linux-latest.zip"
+        size: 22513608
+  "97041975":
+    tag: "latest-deb"
+    title: "Ubuntu 18.04 package for development version"
+    published_at: "2023-03-27T15:18:12Z"
+    prerelease: true
+    assets:
+      "101163813":
+        name: "notekit_0.2_amd64.deb"
+        size: 1162272

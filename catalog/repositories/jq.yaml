@@ -1,0 +1,719 @@
+$schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
+repository_id: 5101141
+repository: "jqlang/jq"
+observed_at: "2026-11-24T16:18:20Z"
+history_complete: true
+releases:
+  "13660432":
+    tag: "jq-1.6"
+    title: "jq 1.6"
+    published_at: "2018-11-02T01:54:23Z"
+    prerelease: false
+    assets:
+      "9521004":
+        name: "jq-linux32"
+        size: 2779868
+      "9521005":
+        name: "jq-linux64"
+        size: 3953824
+      "9521006":
+        name: "jq-osx-amd64"
+        size: 864040
+      "9521007":
+        name: "jq-win32.exe"
+        size: 2711358
+      "9521008":
+        name: "jq-win64.exe"
+        size: 3525307
+      "9780532":
+        name: "jq-1.6.tar.gz"
+        size: 1750584
+      "9780533":
+        name: "jq-1.6.zip"
+        size: 1934055
+  "114428721":
+    tag: "jq-1.7rc1"
+    title: "jq 1.7rc1"
+    published_at: "2023-07-31T23:04:03Z"
+    prerelease: true
+    assets:
+      "119372740":
+        name: "jq-linux-amd64"
+        size: 2274408
+      "119372741":
+        name: "jq-1.7rc1.tar.gz"
+        size: 1906606
+      "119372742":
+        name: "jq-linux-armel"
+        size: 1639872
+      "119372743":
+        name: "jq-1.7rc1.zip"
+        size: 2073518
+      "119372744":
+        name: "jq-linux-arm64"
+        size: 1656368
+      "119372746":
+        name: "jq-linux-armhf"
+        size: 1279624
+      "119372747":
+        name: "jq-linux-i386"
+        size: 2078440
+      "119372748":
+        name: "jq-linux-mips"
+        size: 1932076
+      "119372749":
+        name: "jq-linux-mips64"
+        size: 1970256
+      "119372750":
+        name: "jq-linux-mips64el"
+        size: 1974352
+      "119372752":
+        name: "jq-linux-mips64r6"
+        size: 1904632
+      "119372753":
+        name: "jq-linux-mips64r6el"
+        size: 1904632
+      "119372754":
+        name: "jq-linux-mipsel"
+        size: 1936172
+      "119372755":
+        name: "jq-linux-mipsr6"
+        size: 1866356
+      "119372756":
+        name: "jq-linux-mipsr6el"
+        size: 1866356
+      "119372757":
+        name: "jq-linux-powerpc"
+        size: 2122932
+      "119372758":
+        name: "jq-linux-ppc64el"
+        size: 2324456
+      "119372759":
+        name: "jq-linux-riscv64"
+        size: 1342224
+      "119372760":
+        name: "jq-linux-s390x"
+        size: 1844840
+      "119372761":
+        name: "jq-macos-amd64"
+        size: 834504
+      "119372762":
+        name: "jq-macos-arm64"
+        size: 791024
+      "119372763":
+        name: "jq-windows-amd64.exe"
+        size: 863744
+      "119372764":
+        name: "jq-windows-i386.exe"
+        size: 1014272
+      "119372765":
+        name: "sha256sum.txt"
+        size: 1873
+  "118848514":
+    tag: "jq-1.7rc2"
+    title: "jq 1.7rc2"
+    published_at: "2023-08-27T18:10:22Z"
+    prerelease: true
+    assets:
+      "123349748":
+        name: "jq-1.7rc2.tar.gz"
+        size: 1905776
+      "123349749":
+        name: "jq-linux-armel"
+        size: 1684924
+      "123349750":
+        name: "jq-1.7rc2.zip"
+        size: 2081571
+      "123349751":
+        name: "jq-linux-amd64"
+        size: 2319456
+      "123349752":
+        name: "jq-linux-arm64"
+        size: 1717808
+      "123349754":
+        name: "jq-linux-i386"
+        size: 2115300
+      "123349755":
+        name: "jq-linux-armhf"
+        size: 1324680
+      "123349756":
+        name: "jq-linux-mips"
+        size: 1973428
+      "123349757":
+        name: "jq-linux-mips64"
+        size: 2011656
+      "123349758":
+        name: "jq-linux-mips64el"
+        size: 2015752
+      "123349759":
+        name: "jq-linux-mips64r6"
+        size: 1941936
+      "123349761":
+        name: "jq-linux-mips64r6el"
+        size: 1941936
+      "123349762":
+        name: "jq-linux-mipsel"
+        size: 1977524
+      "123349763":
+        name: "jq-linux-mipsr6"
+        size: 1907708
+      "123349764":
+        name: "jq-linux-mipsr6el"
+        size: 1907708
+      "123349765":
+        name: "jq-linux-powerpc"
+        size: 2188464
+      "123349767":
+        name: "jq-linux-ppc64el"
+        size: 2389992
+      "123349768":
+        name: "jq-linux-riscv64"
+        size: 1374992
+      "123349769":
+        name: "jq-linux-s390x"
+        size: 1877608
+      "123349770":
+        name: "jq-macos-arm64"
+        size: 824320
+      "123349771":
+        name: "jq-macos-amd64"
+        size: 867520
+      "123349773":
+        name: "jq-windows-amd64.exe"
+        size: 999936
+      "123349774":
+        name: "jq-windows-i386.exe"
+        size: 1027072
+      "123349775":
+        name: "sha256sum.txt"
+        size: 1873
+  "120201151":
+    tag: "jq-1.7"
+    title: "jq 1.7"
+    published_at: "2023-09-06T22:54:12Z"
+    prerelease: false
+    assets:
+      "124890209":
+        name: "jq-linux-arm64"
+        size: 1721904
+      "124890210":
+        name: "jq-1.7.zip"
+        size: 2080194
+      "124890211":
+        name: "jq-linux-amd64"
+        size: 2319424
+      "124890212":
+        name: "jq-linux-armel"
+        size: 1684920
+      "124890213":
+        name: "jq-1.7.tar.gz"
+        size: 1905863
+      "124890214":
+        name: "jq-linux-armhf"
+        size: 1324676
+      "124890215":
+        name: "jq-linux-i386"
+        size: 2115332
+      "124890216":
+        name: "jq-linux-mips"
+        size: 1973432
+      "124890217":
+        name: "jq-linux-mips64"
+        size: 2011664
+      "124890218":
+        name: "jq-linux-mips64el"
+        size: 2015760
+      "124890219":
+        name: "jq-linux-mips64r6"
+        size: 1941944
+      "124890221":
+        name: "jq-linux-mips64r6el"
+        size: 1941944
+      "124890222":
+        name: "jq-linux-mipsel"
+        size: 1977528
+      "124890223":
+        name: "jq-linux-mipsr6"
+        size: 1907712
+      "124890224":
+        name: "jq-linux-mipsr6el"
+        size: 1907712
+      "124890225":
+        name: "jq-linux-powerpc"
+        size: 2188468
+      "124890226":
+        name: "jq-linux-ppc64el"
+        size: 2389992
+      "124890227":
+        name: "jq-linux-riscv64"
+        size: 1374992
+      "124890228":
+        name: "jq-linux-s390x"
+        size: 1877608
+      "124890229":
+        name: "jq-macos-amd64"
+        size: 867712
+      "124890230":
+        name: "jq-macos-arm64"
+        size: 807968
+      "124890231":
+        name: "jq-windows-amd64.exe"
+        size: 999936
+      "124890232":
+        name: "jq-windows-i386.exe"
+        size: 1027584
+      "124922115":
+        name: "jq-linux64"
+        size: 2319424
+      "124922556":
+        name: "jq-osx-amd64"
+        size: 867712
+      "124922560":
+        name: "jq-win32.exe"
+        size: 1027584
+      "124922562":
+        name: "jq-win64.exe"
+        size: 999936
+      "124922566":
+        name: "jq-linux32"
+        size: 2115332
+      "126440447":
+        name: "sha256sum.txt"
+        size: 2281
+  "133804159":
+    tag: "jq-1.7.1"
+    title: "jq 1.7.1"
+    published_at: "2023-12-13T19:56:17Z"
+    prerelease: false
+    assets:
+      "140520981":
+        name: "jq-linux-armel"
+        size: 1680824
+      "140520982":
+        name: "jq-linux-arm64"
+        size: 1709616
+      "140520983":
+        name: "jq-1.7.1.tar.gz"
+        size: 1950645
+      "140520984":
+        name: "jq-linux-amd64"
+        size: 2319424
+      "140520985":
+        name: "jq-1.7.1.zip"
+        size: 2122908
+      "140520988":
+        name: "jq-linux-armhf"
+        size: 1324676
+      "140520989":
+        name: "jq-linux-i386"
+        size: 2111236
+      "140520990":
+        name: "jq-linux-mips"
+        size: 1973496
+      "140520991":
+        name: "jq-linux-mips64"
+        size: 2011736
+      "140520992":
+        name: "jq-linux-mips64el"
+        size: 2015832
+      "140520996":
+        name: "jq-linux-mips64r6"
+        size: 1942016
+      "140520997":
+        name: "jq-linux-mips64r6el"
+        size: 1942016
+      "140520999":
+        name: "jq-linux-mipsel"
+        size: 1977592
+      "140521000":
+        name: "jq-linux-mipsr6"
+        size: 1907776
+      "140521002":
+        name: "jq-linux-mipsr6el"
+        size: 1907776
+      "140521003":
+        name: "jq-linux-powerpc"
+        size: 2188468
+      "140521005":
+        name: "jq-linux-ppc64el"
+        size: 2389992
+      "140521006":
+        name: "jq-linux-riscv64"
+        size: 1374992
+      "140521007":
+        name: "jq-linux-s390x"
+        size: 1877608
+      "140521008":
+        name: "jq-linux64"
+        size: 2319424
+      "140521009":
+        name: "jq-macos-amd64"
+        size: 851328
+      "140521010":
+        name: "jq-macos-arm64"
+        size: 807984
+      "140521011":
+        name: "jq-osx-amd64"
+        size: 851328
+      "140521014":
+        name: "jq-win64.exe"
+        size: 985088
+      "140521015":
+        name: "jq-windows-amd64.exe"
+        size: 985088
+      "140521016":
+        name: "jq-windows-i386.exe"
+        size: 1027584
+      "140521017":
+        name: "sha256sum.txt"
+        size: 2129
+  "222262711":
+    tag: "jq-1.8.0"
+    title: "jq 1.8.0"
+    published_at: "2025-06-01T06:05:01Z"
+    prerelease: false
+    assets:
+      "259873641":
+        name: "jq-linux-arm64"
+        size: 1797872
+        sha256pre: "1084e6bf5060a463"
+      "259873642":
+        name: "jq-linux-amd64"
+        size: 2255816
+        sha256pre: "8926c33326111bcd"
+      "259873643":
+        name: "jq-linux-armel"
+        size: 1692212
+        sha256pre: "aa52ed2f930b46c2"
+      "259873644":
+        name: "jq-1.8.0.zip"
+        size: 2119845
+        sha256pre: "894744a9f69f18f8"
+      "259873645":
+        name: "jq-1.8.0.tar.gz"
+        size: 1908285
+        sha256pre: "91811577f91d9a61"
+      "259873648":
+        name: "jq-linux-armhf"
+        size: 1331968
+        sha256pre: "4bebc752981c879d"
+      "259873649":
+        name: "jq-linux-i386"
+        size: 2136100
+        sha256pre: "5cf3ad973411275d"
+      "259873650":
+        name: "jq-linux-mips"
+        size: 2007176
+        sha256pre: "34069dfcaee4168f"
+      "259873651":
+        name: "jq-linux-mips64"
+        size: 2081312
+        sha256pre: "8a966bf92aca0641"
+      "259873653":
+        name: "jq-linux-mips64el"
+        size: 2081312
+        sha256pre: "373d5c84bdb4ecec"
+      "259873654":
+        name: "jq-linux-mips64r6"
+        size: 1950136
+        sha256pre: "118ad1e0a4a9bfc5"
+      "259873655":
+        name: "jq-linux-mips64r6el"
+        size: 1950136
+        sha256pre: "cdd99b2b76dbc025"
+      "259873656":
+        name: "jq-linux-mipsel"
+        size: 2007180
+        sha256pre: "015fe63efe32802a"
+      "259873658":
+        name: "jq-linux-mipsr6"
+        size: 1941444
+        sha256pre: "cb003f147e53c7dc"
+      "259873659":
+        name: "jq-linux-mipsr6el"
+        size: 1941444
+        sha256pre: "4b6dd650a13f9ad1"
+      "259873660":
+        name: "jq-linux-powerpc"
+        size: 2187520
+        sha256pre: "76368bb2e54d8fe0"
+      "259873661":
+        name: "jq-linux-ppc64el"
+        size: 2453544
+        sha256pre: "55a70db3bc817a0a"
+      "259873663":
+        name: "jq-linux-riscv64"
+        size: 1601192
+        sha256pre: "c8410cf481a2129b"
+      "259873664":
+        name: "jq-linux-s390x"
+        size: 1977976
+        sha256pre: "1f377575f90fa323"
+      "259873665":
+        name: "jq-linux64"
+        size: 2255816
+        sha256pre: "8926c33326111bcd"
+      "259873667":
+        name: "jq-macos-amd64"
+        size: 855248
+        sha256pre: "a594f3740bf570f0"
+      "259873669":
+        name: "jq-macos-arm64"
+        size: 841376
+        sha256pre: "aaf1efbb376d6e3e"
+      "259873670":
+        name: "jq-osx-amd64"
+        size: 855248
+        sha256pre: "a594f3740bf570f0"
+      "259873671":
+        name: "jq-win64.exe"
+        size: 1026048
+        sha256pre: "b45fcbb27dcb9e98"
+      "259873673":
+        name: "jq-windows-amd64.exe"
+        size: 1026048
+        sha256pre: "b45fcbb27dcb9e98"
+      "259873674":
+        name: "jq-windows-i386.exe"
+        size: 1049600
+        sha256pre: "47e2bcc9c3526ec7"
+      "259873675":
+        name: "sha256sum.txt"
+        size: 2129
+        sha256pre: "3c63a037b51633e5"
+  "229086848":
+    tag: "jq-1.8.1"
+    title: "jq 1.8.1"
+    published_at: "2025-07-01T11:50:06Z"
+    prerelease: false
+    assets:
+      "268981480":
+        name: "jq-1.8.1.tar.gz"
+        size: 2026798
+        sha256pre: "2be64e7129cecb11"
+      "268981481":
+        name: "jq-linux-arm64"
+        size: 1797872
+        sha256pre: "6bc62f25981328ed"
+      "268981482":
+        name: "jq-1.8.1.zip"
+        size: 2242171
+        sha256pre: "ebf8ef4817fdc05b"
+      "268981483":
+        name: "jq-linux-armel"
+        size: 1692212
+        sha256pre: "b98e283ff26cd747"
+      "268981484":
+        name: "jq-linux-amd64"
+        size: 2255816
+        sha256pre: "020468de7539ce70"
+      "268981486":
+        name: "jq-linux-armhf"
+        size: 1331968
+        sha256pre: "ac304e50cf7cd249"
+      "268981488":
+        name: "jq-linux-i386"
+        size: 2136100
+        sha256pre: "ee8489cb8acfddf2"
+      "268981489":
+        name: "jq-linux-mips"
+        size: 2007180
+        sha256pre: "6ee8cc51b6abbced"
+      "268981490":
+        name: "jq-linux-mips64"
+        size: 2081320
+        sha256pre: "91815e1000be7765"
+      "268981491":
+        name: "jq-linux-mips64el"
+        size: 2081320
+        sha256pre: "abd7cda5556a4b8d"
+      "268981493":
+        name: "jq-linux-mips64r6"
+        size: 1950144
+        sha256pre: "99d16b9c05c7ff83"
+      "268981494":
+        name: "jq-linux-mips64r6el"
+        size: 1950144
+        sha256pre: "a1aa419dc2b99b35"
+      "268981495":
+        name: "jq-linux-mipsel"
+        size: 2007184
+        sha256pre: "e4c10ea6b02e07d0"
+      "268981496":
+        name: "jq-linux-mipsr6"
+        size: 1941448
+        sha256pre: "1171742caf571065"
+      "268981498":
+        name: "jq-linux-mipsr6el"
+        size: 1941448
+        sha256pre: "6bd590582a88ccb8"
+      "268981499":
+        name: "jq-linux-powerpc"
+        size: 2187520
+        sha256pre: "ed48a57845d0771e"
+      "268981500":
+        name: "jq-linux-ppc64el"
+        size: 2453544
+        sha256pre: "cb10b38f4e5ebb39"
+      "268981502":
+        name: "jq-linux-riscv64"
+        size: 1601192
+        sha256pre: "3d7274ea14254f02"
+      "268981503":
+        name: "jq-linux-s390x"
+        size: 1977976
+        sha256pre: "b792df2f5cced040"
+      "268981504":
+        name: "jq-linux64"
+        size: 2255816
+        sha256pre: "020468de7539ce70"
+      "268981505":
+        name: "jq-macos-amd64"
+        size: 855272
+        sha256pre: "e80dbe0d2a2597e3"
+      "268981506":
+        name: "jq-macos-arm64"
+        size: 841408
+        sha256pre: "a9fe3ea2f86dfc72"
+      "268981507":
+        name: "jq-osx-amd64"
+        size: 855272
+        sha256pre: "e80dbe0d2a2597e3"
+      "268981508":
+        name: "jq-win64.exe"
+        size: 1026560
+        sha256pre: "23cb60a1354eed6b"
+      "268981509":
+        name: "jq-windows-amd64.exe"
+        size: 1026560
+        sha256pre: "23cb60a1354eed6b"
+      "268981510":
+        name: "jq-windows-i386.exe"
+        size: 1050112
+        sha256pre: "414ec99417830178"
+      "268981511":
+        name: "sha256sum.txt"
+        size: 2129
+        sha256pre: "43580cdaf04c3ac6"
+  "342331441":
+    tag: "jq-1.8.2"
+    title: "jq 1.8.2"
+    published_at: "2026-06-20T14:11:27Z"
+    prerelease: false
+    assets:
+      "453012751":
+        name: "jq-1.8.2.zip"
+        size: 2173796
+        sha256pre: "332dd9ae07c19fb4"
+      "453012752":
+        name: "jq-linux-amd64"
+        size: 2267912
+        sha256pre: "b1c22172dd303f3b"
+      "453012753":
+        name: "jq-1.8.2.tar.gz"
+        size: 1959950
+        sha256pre: "71b8d6e8f5fe81f6"
+      "453012755":
+        name: "jq-attestation.json"
+        size: 14380
+        sha256pre: "01e9619236573939"
+      "453012756":
+        name: "jq-linux-arm64"
+        size: 1797688
+        sha256pre: "8b85c817833814dd"
+      "453012757":
+        name: "jq-linux-armel"
+        size: 1700244
+        sha256pre: "d88f6bd640ef8909"
+      "453012759":
+        name: "jq-linux-i386"
+        size: 2156424
+        sha256pre: "ba996e8ce436973e"
+      "453012760":
+        name: "jq-linux-armhf"
+        size: 1340000
+        sha256pre: "78458244fb546469"
+      "453012761":
+        name: "jq-linux-mips"
+        size: 2007040
+        sha256pre: "1e9930ef7c4e69a4"
+      "453012764":
+        name: "jq-linux-mips64"
+        size: 2081176
+        sha256pre: "34e53f8df8298fd6"
+      "453012766":
+        name: "jq-linux-mips64el"
+        size: 2081176
+        sha256pre: "eb382d2419aa99c8"
+      "453012767":
+        name: "jq-linux-mips64r6"
+        size: 2015472
+        sha256pre: "365c0bcda2e695ab"
+      "453012768":
+        name: "jq-linux-mips64r6el"
+        size: 2015472
+        sha256pre: "01bfe1a1579cfac7"
+      "453012769":
+        name: "jq-linux-mipsel"
+        size: 2072576
+        sha256pre: "9570c9dcbd7d0de8"
+      "453012771":
+        name: "jq-linux-mipsr6"
+        size: 1941296
+        sha256pre: "d2105ab249e66dc1"
+      "453012773":
+        name: "jq-linux-mipsr6el"
+        size: 1941296
+        sha256pre: "5e66dcad39eaa2d1"
+      "453012776":
+        name: "jq-linux-powerpc"
+        size: 2187392
+        sha256pre: "d60c33574fdeab53"
+      "453012777":
+        name: "jq-linux-ppc64el"
+        size: 2453424
+        sha256pre: "0dba61281e525ced"
+      "453012778":
+        name: "jq-linux-riscv64"
+        size: 1609208
+        sha256pre: "a96e5a78a7b2c5a0"
+      "453012780":
+        name: "jq-linux-s390x"
+        size: 1990096
+        sha256pre: "42b3306c786e3352"
+      "453012781":
+        name: "jq-linux64"
+        size: 2267912
+        sha256pre: "b1c22172dd303f3b"
+      "453012782":
+        name: "jq-macos-amd64"
+        size: 871768
+        sha256pre: "e94b266e3c266905"
+      "453012783":
+        name: "jq-macos-arm64"
+        size: 841504
+        sha256pre: "2d75340ba57a4b4b"
+      "453012784":
+        name: "jq-osx-amd64"
+        size: 871768
+        sha256pre: "e94b266e3c266905"
+      "453012786":
+        name: "jq-win64.exe"
+        size: 1035264
+        sha256pre: "a6fc67fedaf9128a"
+      "453012788":
+        name: "jq-windows-amd64.exe"
+        size: 1035264
+        sha256pre: "a6fc67fedaf9128a"
+      "453012789":
+        name: "jq-windows-arm64.exe"
+        size: 973312
+        sha256pre: "083b5377392bc57c"
+      "453012791":
+        name: "jq-windows-i386.exe"
+        size: 1082368
+        sha256pre: "a99cb668f95bdd78"
+      "453012792":
+        name: "sha256sum.txt"
+        size: 2302
+        sha256pre: "dc86824a41c165ec"

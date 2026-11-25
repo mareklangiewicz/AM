@@ -1,0 +1,1390 @@
+$schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
+repository_id: 699532645
+repository: "astral-sh/uv"
+observed_at: "2026-11-22T07:01:22Z"
+history_complete: false
+releases:
+  "417751044":
+    tag: "0.13.2"
+    published_at: "2026-10-19T21:02:37Z"
+    prerelease: false
+    assets:
+      "657429995":
+        name: "source.tar.gz"
+        size: 8909932
+        sha256pre: "a873a8703ef2deb3"
+      "657429997":
+        name: "dist-manifest.json"
+        size: 54432
+        sha256pre: "8697734ce127f569"
+      "657429998":
+        name: "uv-installer.ps1"
+        size: 23285
+        sha256pre: "1d718a29981f9118"
+      "657429999":
+        name: "uv-installer.sh"
+        size: 71300
+        sha256pre: "df92f96af079cd8b"
+      "657430001":
+        name: "source.tar.gz.sha256"
+        size: 81
+        sha256pre: "7b3d0bab34b3c03e"
+      "657430028":
+        name: "sha256.sum"
+        size: 1901
+        sha256pre: "c7e94990a732b896"
+      "657430030":
+        name: "uv-aarch64-apple-darwin.tar.gz"
+        size: 14195937
+        sha256pre: "4a5d878cd0db3a57"
+      "657430038":
+        name: "uv-aarch64-pc-windows-msvc.zip"
+        size: 15479612
+        sha256pre: "305d3a87a3c83ced"
+      "657430039":
+        name: "uv-aarch64-apple-darwin.tar.gz.sha256"
+        size: 97
+        sha256pre: "aa72aab243b52446"
+      "657430057":
+        name: "uv-aarch64-pc-windows-msvc.zip.sha256"
+        size: 97
+        sha256pre: "2e84616dbe792fab"
+      "657430060":
+        name: "uv-aarch64-unknown-linux-gnu.tar.gz"
+        size: 15862025
+        sha256pre: "3143e25fccac6f81"
+      "657430065":
+        name: "uv-aarch64-unknown-linux-gnu.tar.gz.sha256"
+        size: 102
+        sha256pre: "cbe8737e24cfb50e"
+      "657430086":
+        name: "uv-aarch64-unknown-linux-musl.tar.gz"
+        size: 17028959
+        sha256pre: "b7444ae484d951d8"
+      "657430096":
+        name: "uv-aarch64-unknown-linux-musl.tar.gz.sha256"
+        size: 103
+        sha256pre: "74643b26ce1c626d"
+      "657430101":
+        name: "uv-arm-unknown-linux-musleabihf.tar.gz"
+        size: 17552145
+        sha256pre: "e3c5eadb268ca042"
+      "657430102":
+        name: "uv-arm-unknown-linux-musleabihf.tar.gz.sha256"
+        size: 105
+        sha256pre: "d9c63bc894e7954a"
+      "657430119":
+        name: "uv-armv7-unknown-linux-gnueabihf.tar.gz"
+        size: 17295034
+        sha256pre: "239ad77579931c95"
+      "657430130":
+        name: "uv-armv7-unknown-linux-gnueabihf.tar.gz.sha256"
+        size: 106
+        sha256pre: "6d34cd2e126bbc5d"
+      "657430132":
+        name: "uv-armv7-unknown-linux-musleabihf.tar.gz"
+        size: 17255513
+        sha256pre: "c453906c4c80754e"
+      "657430158":
+        name: "uv-armv7-unknown-linux-musleabihf.tar.gz.sha256"
+        size: 107
+        sha256pre: "5597f4f8dcc11c4a"
+      "657430166":
+        name: "uv-i686-pc-windows-msvc.zip"
+        size: 16178951
+        sha256pre: "3790797c9597310c"
+      "657430172":
+        name: "uv-i686-pc-windows-msvc.zip.sha256"
+        size: 94
+        sha256pre: "031fee1a20509f49"
+      "657430177":
+        name: "uv-i686-unknown-linux-gnu.tar.gz"
+        size: 18153345
+        sha256pre: "f8fcad706f05c435"
+      "657430182":
+        name: "uv-i686-unknown-linux-gnu.tar.gz.sha256"
+        size: 99
+        sha256pre: "425d510de1faa4e1"
+      "657430197":
+        name: "uv-i686-unknown-linux-musl.tar.gz"
+        size: 17328566
+        sha256pre: "050646f5f9b75eb5"
+      "657430209":
+        name: "uv-i686-unknown-linux-musl.tar.gz.sha256"
+        size: 100
+        sha256pre: "bf654c8da2818ffa"
+      "657430218":
+        name: "uv-powerpc64le-unknown-linux-gnu.tar.gz"
+        size: 19349262
+        sha256pre: "2c1ea5b57b7a6a02"
+      "657430227":
+        name: "uv-powerpc64le-unknown-linux-gnu.tar.gz.sha256"
+        size: 106
+        sha256pre: "db5f800fdc6e9add"
+      "657430229":
+        name: "uv-riscv64gc-unknown-linux-gnu.tar.gz"
+        size: 17682672
+        sha256pre: "a28c0bd7156a06ed"
+      "657430240":
+        name: "uv-riscv64gc-unknown-linux-gnu.tar.gz.sha256"
+        size: 104
+        sha256pre: "6bf6c5c646bc48f8"
+      "657430244":
+        name: "uv-riscv64gc-unknown-linux-musl.tar.gz"
+        size: 17625311
+        sha256pre: "da6129b8acee2e96"
+      "657430270":
+        name: "uv-riscv64gc-unknown-linux-musl.tar.gz.sha256"
+        size: 105
+        sha256pre: "095c7586142dc634"
+      "657430281":
+        name: "uv-s390x-unknown-linux-gnu.tar.gz"
+        size: 19054134
+        sha256pre: "307987b9bbcfac0e"
+      "657430287":
+        name: "uv-s390x-unknown-linux-gnu.tar.gz.sha256"
+        size: 100
+        sha256pre: "b9e1edb1dbb96b1d"
+      "657430296":
+        name: "uv-x86_64-apple-darwin.tar.gz"
+        size: 17055733
+        sha256pre: "08f0cb0d63a012ff"
+      "657430310":
+        name: "uv-x86_64-pc-windows-msvc.zip"
+        size: 15321797
+        sha256pre: "9cfb447a4027550f"
+      "657430313":
+        name: "uv-x86_64-apple-darwin.tar.gz.sha256"
+        size: 96
+        sha256pre: "f16fd37ecfc40fb1"
+      "657430322":
+        name: "uv-x86_64-pc-windows-msvc.zip.sha256"
+        size: 96
+        sha256pre: "c9741aae897735fa"
+      "657430342":
+        name: "uv-x86_64-unknown-linux-gnu.tar.gz"
+        size: 16654381
+        sha256pre: "e14d48c117ec3360"
+      "657430361":
+        name: "uv-x86_64-unknown-linux-gnu.tar.gz.sha256"
+        size: 101
+        sha256pre: "633db0e5c0429a84"
+      "657430369":
+        name: "uv-x86_64-unknown-linux-musl.tar.gz"
+        size: 18417950
+        sha256pre: "aba5d9e0af3662ee"
+      "657430378":
+        name: "uv-x86_64-unknown-linux-musl.tar.gz.sha256"
+        size: 102
+        sha256pre: "6afa9c337bd0a4cc"
+  "417904289":
+    tag: "0.13.3"
+    published_at: "2026-10-20T01:15:17Z"
+    prerelease: false
+    assets:
+      "657907611":
+        name: "dist-manifest.json"
+        size: 44098
+        sha256pre: "bf1c4ce281c926bb"
+      "657907613":
+        name: "uv-installer.sh"
+        size: 71300
+        sha256pre: "320a286374f5306c"
+      "657907615":
+        name: "uv-installer.ps1"
+        size: 23285
+        sha256pre: "7c53185c4e77cb33"
+      "657907616":
+        name: "source.tar.gz.sha256"
+        size: 81
+        sha256pre: "876aa59b48899d90"
+      "657907621":
+        name: "source.tar.gz"
+        size: 8910082
+        sha256pre: "dbfc94d0c2696ff1"
+      "657907636":
+        name: "uv-aarch64-apple-darwin.tar.gz"
+        size: 14309841
+        sha256pre: "bf1e4fb6f5f5079a"
+      "657907637":
+        name: "sha256.sum"
+        size: 1901
+        sha256pre: "21cb21e70352c163"
+      "657907638":
+        name: "uv-aarch64-apple-darwin.tar.gz.sha256"
+        size: 97
+        sha256pre: "d6e2e7155f485c8a"
+      "657907647":
+        name: "uv-aarch64-pc-windows-msvc.zip"
+        size: 15479943
+        sha256pre: "aeaca1a1b721c168"
+      "657907662":
+        name: "uv-aarch64-pc-windows-msvc.zip.sha256"
+        size: 97
+        sha256pre: "1f1392cce2014647"
+      "657907667":
+        name: "uv-aarch64-unknown-linux-gnu.tar.gz"
+        size: 15857962
+        sha256pre: "611ff684f193a84d"
+      "657907676":
+        name: "uv-aarch64-unknown-linux-gnu.tar.gz.sha256"
+        size: 102
+        sha256pre: "71202ca905580ca8"
+      "657907682":
+        name: "uv-aarch64-unknown-linux-musl.tar.gz"
+        size: 16894403
+        sha256pre: "4a58785768ab0577"
+      "657907685":
+        name: "uv-aarch64-unknown-linux-musl.tar.gz.sha256"
+        size: 103
+        sha256pre: "e144bc9d6f8a893a"
+      "657907691":
+        name: "uv-arm-unknown-linux-musleabihf.tar.gz"
+        size: 17535777
+        sha256pre: "ad9f4041e97b723d"
+      "657907702":
+        name: "uv-armv7-unknown-linux-gnueabihf.tar.gz"
+        size: 17164266
+        sha256pre: "51a2ba864b76824f"
+      "657907704":
+        name: "uv-arm-unknown-linux-musleabihf.tar.gz.sha256"
+        size: 105
+        sha256pre: "fb3e14fd0e35b7d8"
+      "657907708":
+        name: "uv-armv7-unknown-linux-gnueabihf.tar.gz.sha256"
+        size: 106
+        sha256pre: "a81c4433857017f7"
+      "657907712":
+        name: "uv-armv7-unknown-linux-musleabihf.tar.gz"
+        size: 17258963
+        sha256pre: "3cd65b49fe3e163d"
+      "657907718":
+        name: "uv-armv7-unknown-linux-musleabihf.tar.gz.sha256"
+        size: 107
+        sha256pre: "0565530ad6150f75"
+      "657907720":
+        name: "uv-i686-pc-windows-msvc.zip"
+        size: 16073913
+        sha256pre: "887d05656858bb94"
+      "657907728":
+        name: "uv-i686-pc-windows-msvc.zip.sha256"
+        size: 94
+        sha256pre: "0e458aa1fbeb42df"
+      "657907734":
+        name: "uv-i686-unknown-linux-gnu.tar.gz.sha256"
+        size: 99
+        sha256pre: "159ecfb0d7798247"
+      "657907735":
+        name: "uv-i686-unknown-linux-gnu.tar.gz"
+        size: 18021810
+        sha256pre: "91565a548a4b8b9a"
+      "657907746":
+        name: "uv-i686-unknown-linux-musl.tar.gz"
+        size: 17336944
+        sha256pre: "3df2a0dc3f309156"
+      "657907752":
+        name: "uv-i686-unknown-linux-musl.tar.gz.sha256"
+        size: 100
+        sha256pre: "f79822f441b99419"
+      "657907755":
+        name: "uv-powerpc64le-unknown-linux-gnu.tar.gz"
+        size: 19345665
+        sha256pre: "fed4c6e245cce9ea"
+      "657907763":
+        name: "uv-powerpc64le-unknown-linux-gnu.tar.gz.sha256"
+        size: 106
+        sha256pre: "57017bda402b64c6"
+      "657907768":
+        name: "uv-riscv64gc-unknown-linux-gnu.tar.gz"
+        size: 17670172
+        sha256pre: "ef5cdc493ede8705"
+      "657907781":
+        name: "uv-riscv64gc-unknown-linux-gnu.tar.gz.sha256"
+        size: 104
+        sha256pre: "36c460f3038d3e19"
+      "657907793":
+        name: "uv-riscv64gc-unknown-linux-musl.tar.gz"
+        size: 17492713
+        sha256pre: "77961b8ba0fbb10f"
+      "657907808":
+        name: "uv-riscv64gc-unknown-linux-musl.tar.gz.sha256"
+        size: 105
+        sha256pre: "dd2a1ba95439c952"
+      "657907819":
+        name: "uv-s390x-unknown-linux-gnu.tar.gz"
+        size: 19065124
+        sha256pre: "ef70e576e895cd5c"
+      "657907825":
+        name: "uv-s390x-unknown-linux-gnu.tar.gz.sha256"
+        size: 100
+        sha256pre: "ac01336199a339d8"
+      "657907827":
+        name: "uv-x86_64-apple-darwin.tar.gz"
+        size: 17182824
+        sha256pre: "5c35634957db7ebd"
+      "657907851":
+        name: "uv-x86_64-apple-darwin.tar.gz.sha256"
+        size: 96
+        sha256pre: "ce31cb6b38a90d02"
+      "657907852":
+        name: "uv-x86_64-pc-windows-msvc.zip"
+        size: 15204998
+        sha256pre: "bb701bd35b586c45"
+      "657907858":
+        name: "uv-x86_64-pc-windows-msvc.zip.sha256"
+        size: 96
+        sha256pre: "94e2e90aee398150"
+      "657907872":
+        name: "uv-x86_64-unknown-linux-gnu.tar.gz"
+        size: 16767662
+        sha256pre: "e4f169ec380f1793"
+      "657907875":
+        name: "uv-x86_64-unknown-linux-gnu.tar.gz.sha256"
+        size: 101
+        sha256pre: "d728115dd15159f0"
+      "657907885":
+        name: "uv-x86_64-unknown-linux-musl.tar.gz"
+        size: 18417614
+        sha256pre: "a36fca4c151d1ac1"
+      "657907899":
+        name: "uv-x86_64-unknown-linux-musl.tar.gz.sha256"
+        size: 102
+        sha256pre: "a22264fd1ffe9480"
+  "418555132":
+    tag: "0.13.4"
+    published_at: "2026-10-20T15:24:59Z"
+    prerelease: false
+    assets:
+      "659693248":
+        name: "dist-manifest.json"
+        size: 44528
+        sha256pre: "23827f3966eec04b"
+      "659693249":
+        name: "source.tar.gz.sha256"
+        size: 81
+        sha256pre: "1cffffa82c0293d8"
+      "659693251":
+        name: "uv-installer.ps1"
+        size: 23285
+        sha256pre: "97b4489acafc6a9b"
+      "659693255":
+        name: "uv-installer.sh"
+        size: 71300
+        sha256pre: "1f5390d273b0158b"
+      "659693259":
+        name: "source.tar.gz"
+        size: 8913851
+        sha256pre: "e1d874361b540ca2"
+      "659693286":
+        name: "sha256.sum"
+        size: 1901
+        sha256pre: "c54de35e4a146869"
+      "659693291":
+        name: "uv-aarch64-apple-darwin.tar.gz"
+        size: 14326193
+        sha256pre: "e0b1d4743ce64c55"
+      "659693293":
+        name: "uv-aarch64-apple-darwin.tar.gz.sha256"
+        size: 97
+        sha256pre: "0dfca9951069896b"
+      "659693302":
+        name: "uv-aarch64-pc-windows-msvc.zip"
+        size: 15595599
+        sha256pre: "c4bc5a9534b2bb6a"
+      "659693319":
+        name: "uv-aarch64-pc-windows-msvc.zip.sha256"
+        size: 97
+        sha256pre: "f7173c14995765d3"
+      "659693320":
+        name: "uv-aarch64-unknown-linux-gnu.tar.gz"
+        size: 15769557
+        sha256pre: "1ae72b4718729e2c"
+      "659693330":
+        name: "uv-aarch64-unknown-linux-gnu.tar.gz.sha256"
+        size: 102
+        sha256pre: "b7f7bd79b6db5a5a"
+      "659693337":
+        name: "uv-aarch64-unknown-linux-musl.tar.gz"
+        size: 17045416
+        sha256pre: "253a17cadcb659ae"
+      "659693347":
+        name: "uv-aarch64-unknown-linux-musl.tar.gz.sha256"
+        size: 103
+        sha256pre: "23766353034835e6"
+      "659693371":
+        name: "uv-arm-unknown-linux-musleabihf.tar.gz"
+        size: 17569789
+        sha256pre: "86df14c4dc6d9882"
+      "659693382":
+        name: "uv-arm-unknown-linux-musleabihf.tar.gz.sha256"
+        size: 105
+        sha256pre: "34d1dc073c85aa3f"
+      "659693389":
+        name: "uv-armv7-unknown-linux-gnueabihf.tar.gz"
+        size: 17186486
+        sha256pre: "9e52201e4502e349"
+      "659693392":
+        name: "uv-armv7-unknown-linux-gnueabihf.tar.gz.sha256"
+        size: 106
+        sha256pre: "35a469a8b51b21b6"
+      "659693413":
+        name: "uv-armv7-unknown-linux-musleabihf.tar.gz"
+        size: 17155988
+        sha256pre: "d69261a33fbfabf3"
+      "659693427":
+        name: "uv-armv7-unknown-linux-musleabihf.tar.gz.sha256"
+        size: 107
+        sha256pre: "f6e23d7a29d2decc"
+      "659693433":
+        name: "uv-i686-pc-windows-msvc.zip"
+        size: 16095937
+        sha256pre: "b450f623b34bf853"
+      "659693441":
+        name: "uv-i686-pc-windows-msvc.zip.sha256"
+        size: 94
+        sha256pre: "7354ad9c8a05aab5"
+      "659693464":
+        name: "uv-i686-unknown-linux-gnu.tar.gz"
+        size: 18061841
+        sha256pre: "8c72700f22497988"
+      "659693473":
+        name: "uv-i686-unknown-linux-gnu.tar.gz.sha256"
+        size: 99
+        sha256pre: "1310db0942b35a90"
+      "659693474":
+        name: "uv-i686-unknown-linux-musl.tar.gz"
+        size: 17478327
+        sha256pre: "985ef009e3bb182c"
+      "659693502":
+        name: "uv-i686-unknown-linux-musl.tar.gz.sha256"
+        size: 100
+        sha256pre: "7ca11ef4d6eaa689"
+      "659693530":
+        name: "uv-powerpc64le-unknown-linux-gnu.tar.gz"
+        size: 19235276
+        sha256pre: "ae7320fcf963ed6c"
+      "659693534":
+        name: "uv-riscv64gc-unknown-linux-gnu.tar.gz"
+        size: 17698140
+        sha256pre: "0173f624fd99811a"
+      "659693535":
+        name: "uv-powerpc64le-unknown-linux-gnu.tar.gz.sha256"
+        size: 106
+        sha256pre: "dc70764a842cceb1"
+      "659693582":
+        name: "uv-riscv64gc-unknown-linux-gnu.tar.gz.sha256"
+        size: 104
+        sha256pre: "210878549553f7b0"
+      "659693587":
+        name: "uv-riscv64gc-unknown-linux-musl.tar.gz"
+        size: 17513016
+        sha256pre: "250aa02f66cf0806"
+      "659693599":
+        name: "uv-riscv64gc-unknown-linux-musl.tar.gz.sha256"
+        size: 105
+        sha256pre: "d9142a1d9acbfa99"
+      "659693600":
+        name: "uv-s390x-unknown-linux-gnu.tar.gz"
+        size: 19210819
+        sha256pre: "e2ccfa8c19d340cd"
+      "659693605":
+        name: "uv-s390x-unknown-linux-gnu.tar.gz.sha256"
+        size: 100
+        sha256pre: "780f5a436546e7af"
+      "659693620":
+        name: "uv-x86_64-apple-darwin.tar.gz"
+        size: 17217446
+        sha256pre: "7be2dcd316122f4b"
+      "659693632":
+        name: "uv-x86_64-apple-darwin.tar.gz.sha256"
+        size: 96
+        sha256pre: "ba6d8d1facf162d3"
+      "659693635":
+        name: "uv-x86_64-pc-windows-msvc.zip"
+        size: 15237259
+        sha256pre: "ccec7508a07d9933"
+      "659693654":
+        name: "uv-x86_64-pc-windows-msvc.zip.sha256"
+        size: 96
+        sha256pre: "98b6e2f025f01a8c"
+      "659693663":
+        name: "uv-x86_64-unknown-linux-gnu.tar.gz"
+        size: 16653835
+        sha256pre: "2b428396f12572d4"
+      "659693686":
+        name: "uv-x86_64-unknown-linux-gnu.tar.gz.sha256"
+        size: 101
+        sha256pre: "4504013b0a07f040"
+      "659693713":
+        name: "uv-x86_64-unknown-linux-musl.tar.gz"
+        size: 18450841
+        sha256pre: "28d4385f9f9d1d1c"
+      "659693722":
+        name: "uv-x86_64-unknown-linux-musl.tar.gz.sha256"
+        size: 102
+        sha256pre: "1d8aa1cb3973f17c"
+  "420219944":
+    tag: "0.13.5"
+    published_at: "2026-10-22T01:35:54Z"
+    prerelease: false
+    assets:
+      "664335752":
+        name: "source.tar.gz.sha256"
+        size: 81
+        sha256pre: "adad9d21f1ed4db6"
+      "664335753":
+        name: "source.tar.gz"
+        size: 8950290
+        sha256pre: "1af98369e94f8414"
+      "664335758":
+        name: "uv-installer.sh"
+        size: 71300
+        sha256pre: "1c6e7f0254996646"
+      "664335760":
+        name: "dist-manifest.json"
+        size: 50952
+        sha256pre: "138cb5269b045cb3"
+      "664335761":
+        name: "uv-installer.ps1"
+        size: 23285
+        sha256pre: "84b66aa3018e9d80"
+      "664335789":
+        name: "sha256.sum"
+        size: 1901
+        sha256pre: "a7084f69eaafe576"
+      "664335790":
+        name: "uv-aarch64-apple-darwin.tar.gz.sha256"
+        size: 97
+        sha256pre: "a2bf6e14f8a91fc7"
+      "664335803":
+        name: "uv-aarch64-apple-darwin.tar.gz"
+        size: 14365303
+        sha256pre: "743f85035a1996ec"
+      "664335806":
+        name: "uv-aarch64-pc-windows-msvc.zip"
+        size: 15439089
+        sha256pre: "09f47edf90726084"
+      "664335837":
+        name: "uv-aarch64-unknown-linux-gnu.tar.gz"
+        size: 15914298
+        sha256pre: "4bb69cf95ed13f23"
+      "664335838":
+        name: "uv-aarch64-pc-windows-msvc.zip.sha256"
+        size: 97
+        sha256pre: "a863294d79047e9e"
+      "664335855":
+        name: "uv-aarch64-unknown-linux-gnu.tar.gz.sha256"
+        size: 102
+        sha256pre: "c353eadb63e9bc63"
+      "664335857":
+        name: "uv-aarch64-unknown-linux-musl.tar.gz"
+        size: 17006090
+        sha256pre: "7906c79adb21c81a"
+      "664335859":
+        name: "uv-aarch64-unknown-linux-musl.tar.gz.sha256"
+        size: 103
+        sha256pre: "1b0a9ea3ee197f80"
+      "664335867":
+        name: "uv-arm-unknown-linux-musleabihf.tar.gz"
+        size: 17626573
+        sha256pre: "0ffc73aead06a19e"
+      "664335883":
+        name: "uv-arm-unknown-linux-musleabihf.tar.gz.sha256"
+        size: 105
+        sha256pre: "54e9a08be7a7c365"
+      "664335885":
+        name: "uv-armv7-unknown-linux-gnueabihf.tar.gz"
+        size: 17099028
+        sha256pre: "fe6b5b1d30b28b9d"
+      "664335895":
+        name: "uv-armv7-unknown-linux-gnueabihf.tar.gz.sha256"
+        size: 106
+        sha256pre: "828a6ce0a85204de"
+      "664335900":
+        name: "uv-armv7-unknown-linux-musleabihf.tar.gz"
+        size: 17195369
+        sha256pre: "980649d802ee0c41"
+      "664335913":
+        name: "uv-armv7-unknown-linux-musleabihf.tar.gz.sha256"
+        size: 107
+        sha256pre: "ce8468d8d96e989b"
+      "664335919":
+        name: "uv-i686-pc-windows-msvc.zip.sha256"
+        size: 94
+        sha256pre: "a6df32eaa63ab77a"
+      "664335920":
+        name: "uv-i686-pc-windows-msvc.zip"
+        size: 16146336
+        sha256pre: "96228420d0a89a64"
+      "664335933":
+        name: "uv-i686-unknown-linux-gnu.tar.gz"
+        size: 17987531
+        sha256pre: "f5713d6c05d77d01"
+      "664335938":
+        name: "uv-i686-unknown-linux-gnu.tar.gz.sha256"
+        size: 99
+        sha256pre: "bf04536e7b5564ab"
+      "664335940":
+        name: "uv-i686-unknown-linux-musl.tar.gz"
+        size: 17311638
+        sha256pre: "ef427365b5e84790"
+      "664335945":
+        name: "uv-i686-unknown-linux-musl.tar.gz.sha256"
+        size: 100
+        sha256pre: "4b73fd8bf22346f9"
+      "664335952":
+        name: "uv-powerpc64le-unknown-linux-gnu.tar.gz"
+        size: 19324940
+        sha256pre: "f891bc62de898327"
+      "664335958":
+        name: "uv-powerpc64le-unknown-linux-gnu.tar.gz.sha256"
+        size: 106
+        sha256pre: "ef4c0f1eabda8a60"
+      "664335959":
+        name: "uv-riscv64gc-unknown-linux-gnu.tar.gz"
+        size: 17620047
+        sha256pre: "5c2692ecbf3a9d2c"
+      "664335972":
+        name: "uv-riscv64gc-unknown-linux-gnu.tar.gz.sha256"
+        size: 104
+        sha256pre: "98a0cac717080a83"
+      "664335973":
+        name: "uv-riscv64gc-unknown-linux-musl.tar.gz"
+        size: 17438099
+        sha256pre: "485ffd2d7623fd98"
+      "664335974":
+        name: "uv-riscv64gc-unknown-linux-musl.tar.gz.sha256"
+        size: 105
+        sha256pre: "dce4c0d7f9e6bea7"
+      "664335987":
+        name: "uv-s390x-unknown-linux-gnu.tar.gz"
+        size: 19174658
+        sha256pre: "b383e82d562f269f"
+      "664335988":
+        name: "uv-s390x-unknown-linux-gnu.tar.gz.sha256"
+        size: 100
+        sha256pre: "b4f2b96f74a31345"
+      "664335993":
+        name: "uv-x86_64-apple-darwin.tar.gz"
+        size: 17167423
+        sha256pre: "b0f52b0e3945b410"
+      "664336005":
+        name: "uv-x86_64-apple-darwin.tar.gz.sha256"
+        size: 96
+        sha256pre: "af1c6bf821df66ae"
+      "664336006":
+        name: "uv-x86_64-pc-windows-msvc.zip"
+        size: 15264056
+        sha256pre: "a38b8d1902b7cfbc"
+      "664336019":
+        name: "uv-x86_64-pc-windows-msvc.zip.sha256"
+        size: 96
+        sha256pre: "ad8dba3463e43926"
+      "664336023":
+        name: "uv-x86_64-unknown-linux-gnu.tar.gz"
+        size: 16682639
+        sha256pre: "f68d291c75783122"
+      "664336025":
+        name: "uv-x86_64-unknown-linux-gnu.tar.gz.sha256"
+        size: 101
+        sha256pre: "a524832396815792"
+      "664336027":
+        name: "uv-x86_64-unknown-linux-musl.tar.gz"
+        size: 18409974
+        sha256pre: "57ef9d9ccb01fb1b"
+      "664336031":
+        name: "uv-x86_64-unknown-linux-musl.tar.gz.sha256"
+        size: 102
+        sha256pre: "df941a6604b4918e"
+  "424920657":
+    tag: "0.13.6"
+    published_at: "2026-10-27T00:47:49Z"
+    prerelease: false
+    assets:
+      "679980363":
+        name: "uv-installer.sh"
+        size: 71300
+        sha256pre: "f7a56e7afaec49a3"
+      "679980366":
+        name: "source.tar.gz"
+        size: 8983322
+        sha256pre: "37af57c31f780488"
+      "679980369":
+        name: "dist-manifest.json"
+        size: 50996
+        sha256pre: "c7e6d5f081605b34"
+      "679980371":
+        name: "uv-installer.ps1"
+        size: 23285
+        sha256pre: "d00580051699bee5"
+      "679980372":
+        name: "source.tar.gz.sha256"
+        size: 81
+        sha256pre: "0110885c46e5b0c4"
+      "679980392":
+        name: "sha256.sum"
+        size: 1901
+        sha256pre: "e62513e51d02ce96"
+      "679980393":
+        name: "uv-aarch64-apple-darwin.tar.gz"
+        size: 14235670
+        sha256pre: "60fbd5c8a1ed6818"
+      "679980394":
+        name: "uv-aarch64-apple-darwin.tar.gz.sha256"
+        size: 97
+        sha256pre: "b9a4221c795c94d9"
+      "679980406":
+        name: "uv-aarch64-pc-windows-msvc.zip"
+        size: 15439263
+        sha256pre: "c2426c0c8e28b53d"
+      "679980409":
+        name: "uv-aarch64-pc-windows-msvc.zip.sha256"
+        size: 97
+        sha256pre: "ab3e57e66280b499"
+      "679980412":
+        name: "uv-aarch64-unknown-linux-gnu.tar.gz"
+        size: 15794886
+        sha256pre: "229e194255c7958d"
+      "679980415":
+        name: "uv-aarch64-unknown-linux-gnu.tar.gz.sha256"
+        size: 102
+        sha256pre: "cef8689fecf605e7"
+      "679980430":
+        name: "uv-aarch64-unknown-linux-musl.tar.gz"
+        size: 16993447
+        sha256pre: "819692e404d23e5a"
+      "679980437":
+        name: "uv-aarch64-unknown-linux-musl.tar.gz.sha256"
+        size: 103
+        sha256pre: "2c17584c6f7e5d8c"
+      "679980446":
+        name: "uv-arm-unknown-linux-musleabihf.tar.gz"
+        size: 17428835
+        sha256pre: "57ac0f7c04deb42c"
+      "679980452":
+        name: "uv-armv7-unknown-linux-gnueabihf.tar.gz"
+        size: 17052527
+        sha256pre: "d00cd4949c4524c9"
+      "679980453":
+        name: "uv-armv7-unknown-linux-gnueabihf.tar.gz.sha256"
+        size: 106
+        sha256pre: "163851e2aa51e8ea"
+      "679980454":
+        name: "uv-arm-unknown-linux-musleabihf.tar.gz.sha256"
+        size: 105
+        sha256pre: "e2ee8b4335fb572e"
+      "679980484":
+        name: "uv-armv7-unknown-linux-musleabihf.tar.gz"
+        size: 17015196
+        sha256pre: "b215398c886e8cc2"
+      "679980514":
+        name: "uv-i686-pc-windows-msvc.zip"
+        size: 16120746
+        sha256pre: "32ceb64db231cbed"
+      "679980515":
+        name: "uv-armv7-unknown-linux-musleabihf.tar.gz.sha256"
+        size: 107
+        sha256pre: "3a19f11e5df0cceb"
+      "679980530":
+        name: "uv-i686-pc-windows-msvc.zip.sha256"
+        size: 94
+        sha256pre: "c6f3dbbbdc86aaed"
+      "679980534":
+        name: "uv-i686-unknown-linux-gnu.tar.gz"
+        size: 17955325
+        sha256pre: "665ea831c38d3429"
+      "679980538":
+        name: "uv-i686-unknown-linux-gnu.tar.gz.sha256"
+        size: 99
+        sha256pre: "da42a2eb92cc5f67"
+      "679980551":
+        name: "uv-i686-unknown-linux-musl.tar.gz"
+        size: 17295552
+        sha256pre: "de3a015c4b0fce63"
+      "679980553":
+        name: "uv-i686-unknown-linux-musl.tar.gz.sha256"
+        size: 100
+        sha256pre: "60ac48f06254efc1"
+      "679980554":
+        name: "uv-powerpc64le-unknown-linux-gnu.tar.gz"
+        size: 19175432
+        sha256pre: "3b2847185ec2946f"
+      "679980568":
+        name: "uv-powerpc64le-unknown-linux-gnu.tar.gz.sha256"
+        size: 106
+        sha256pre: "a0c3089b282eef50"
+      "679980575":
+        name: "uv-riscv64gc-unknown-linux-gnu.tar.gz"
+        size: 17426101
+        sha256pre: "517052603ed46483"
+      "679980580":
+        name: "uv-riscv64gc-unknown-linux-gnu.tar.gz.sha256"
+        size: 104
+        sha256pre: "9517bc44aa3300dd"
+      "679980581":
+        name: "uv-riscv64gc-unknown-linux-musl.tar.gz"
+        size: 17530724
+        sha256pre: "659a95dc6aee3ecf"
+      "679980592":
+        name: "uv-riscv64gc-unknown-linux-musl.tar.gz.sha256"
+        size: 105
+        sha256pre: "f6da206a11fbdc0a"
+      "679980600":
+        name: "uv-s390x-unknown-linux-gnu.tar.gz"
+        size: 19132306
+        sha256pre: "fb56d731308aa5c7"
+      "679980607":
+        name: "uv-s390x-unknown-linux-gnu.tar.gz.sha256"
+        size: 100
+        sha256pre: "46a2ad8eea2959d8"
+      "679980609":
+        name: "uv-x86_64-apple-darwin.tar.gz"
+        size: 17004934
+        sha256pre: "63ba17fdda55ad1a"
+      "679980612":
+        name: "uv-x86_64-apple-darwin.tar.gz.sha256"
+        size: 96
+        sha256pre: "478b1c01d725f11b"
+      "679980629":
+        name: "uv-x86_64-pc-windows-msvc.zip"
+        size: 15239500
+        sha256pre: "a2a8820d5eea32f0"
+      "679980634":
+        name: "uv-x86_64-pc-windows-msvc.zip.sha256"
+        size: 96
+        sha256pre: "2134775e8fde27f8"
+      "679980644":
+        name: "uv-x86_64-unknown-linux-gnu.tar.gz"
+        size: 16799024
+        sha256pre: "f29c3e94ffabd7e6"
+      "679980658":
+        name: "uv-x86_64-unknown-linux-gnu.tar.gz.sha256"
+        size: 101
+        sha256pre: "6bf0bf9bf50fd710"
+      "679980664":
+        name: "uv-x86_64-unknown-linux-musl.tar.gz"
+        size: 18383831
+        sha256pre: "5d61f26b6c721377"
+      "679980665":
+        name: "uv-x86_64-unknown-linux-musl.tar.gz.sha256"
+        size: 102
+        sha256pre: "9c8d26438d1ac4ef"
+  "432220693":
+    tag: "0.13.7"
+    published_at: "2026-11-03T02:45:04Z"
+    prerelease: false
+    assets:
+      "704009412":
+        name: "uv-installer.sh"
+        size: 71300
+        sha256pre: "d263ee68314cf5be"
+      "704009413":
+        name: "dist-manifest.json"
+        size: 46412
+        sha256pre: "690db6afbe5cfb6b"
+      "704009414":
+        name: "source.tar.gz"
+        size: 8994657
+        sha256pre: "6e44f545ee8e9037"
+      "704009415":
+        name: "source.tar.gz.sha256"
+        size: 81
+        sha256pre: "aad8dd62eca40502"
+      "704009416":
+        name: "uv-installer.ps1"
+        size: 23285
+        sha256pre: "d9e70de578ea2653"
+      "704009435":
+        name: "sha256.sum"
+        size: 1901
+        sha256pre: "3372371e521a7e17"
+      "704009439":
+        name: "uv-aarch64-pc-windows-msvc.zip"
+        size: 15538425
+        sha256pre: "505d9e65e7692bac"
+      "704009442":
+        name: "uv-aarch64-apple-darwin.tar.gz"
+        size: 14347867
+        sha256pre: "81b811b57e4624df"
+      "704009443":
+        name: "uv-aarch64-apple-darwin.tar.gz.sha256"
+        size: 97
+        sha256pre: "e91d03800128e4da"
+      "704009461":
+        name: "uv-aarch64-pc-windows-msvc.zip.sha256"
+        size: 97
+        sha256pre: "14ddc17918fd647e"
+      "704009469":
+        name: "uv-aarch64-unknown-linux-gnu.tar.gz"
+        size: 15896996
+        sha256pre: "71279f8d3c67241e"
+      "704009476":
+        name: "uv-aarch64-unknown-linux-gnu.tar.gz.sha256"
+        size: 102
+        sha256pre: "d09de50797f6dc0e"
+      "704009487":
+        name: "uv-aarch64-unknown-linux-musl.tar.gz"
+        size: 16888574
+        sha256pre: "2d3ec076a0c4c0e8"
+      "704009501":
+        name: "uv-aarch64-unknown-linux-musl.tar.gz.sha256"
+        size: 103
+        sha256pre: "f7b877b576fc0b09"
+      "704009534":
+        name: "uv-arm-unknown-linux-musleabihf.tar.gz"
+        size: 17429167
+        sha256pre: "2c029d1eda470c66"
+      "704009540":
+        name: "uv-arm-unknown-linux-musleabihf.tar.gz.sha256"
+        size: 105
+        sha256pre: "e6ae7959dbb24e97"
+      "704009545":
+        name: "uv-armv7-unknown-linux-gnueabihf.tar.gz.sha256"
+        size: 106
+        sha256pre: "4e2f09e93cf7483f"
+      "704009547":
+        name: "uv-armv7-unknown-linux-gnueabihf.tar.gz"
+        size: 17175031
+        sha256pre: "5e2a1315a1b8b4a2"
+      "704009567":
+        name: "uv-armv7-unknown-linux-musleabihf.tar.gz"
+        size: 17147471
+        sha256pre: "4a1a7dc0b1713bbe"
+      "704009570":
+        name: "uv-i686-pc-windows-msvc.zip"
+        size: 15999715
+        sha256pre: "fa2abbf16f7d12cb"
+      "704009574":
+        name: "uv-armv7-unknown-linux-musleabihf.tar.gz.sha256"
+        size: 107
+        sha256pre: "e31a7eb1422e46f6"
+      "704009593":
+        name: "uv-i686-pc-windows-msvc.zip.sha256"
+        size: 94
+        sha256pre: "c0bd4a21381dd8cf"
+      "704009597":
+        name: "uv-i686-unknown-linux-gnu.tar.gz"
+        size: 17955762
+        sha256pre: "cc4f86390f9c99e8"
+      "704009604":
+        name: "uv-i686-unknown-linux-gnu.tar.gz.sha256"
+        size: 99
+        sha256pre: "8fd52ac60d088b78"
+      "704009628":
+        name: "uv-i686-unknown-linux-musl.tar.gz"
+        size: 17414352
+        sha256pre: "c2d50f5c64eb81fd"
+      "704009638":
+        name: "uv-i686-unknown-linux-musl.tar.gz.sha256"
+        size: 100
+        sha256pre: "cec6f03ee07cadff"
+      "704009664":
+        name: "uv-powerpc64le-unknown-linux-gnu.tar.gz.sha256"
+        size: 106
+        sha256pre: "903b9c8e0049e3c9"
+      "704009666":
+        name: "uv-powerpc64le-unknown-linux-gnu.tar.gz"
+        size: 19190229
+        sha256pre: "e8b65412482f8487"
+      "704009699":
+        name: "uv-riscv64gc-unknown-linux-gnu.tar.gz"
+        size: 17433365
+        sha256pre: "48aff38af87c7c82"
+      "704009703":
+        name: "uv-riscv64gc-unknown-linux-gnu.tar.gz.sha256"
+        size: 104
+        sha256pre: "d629f351ea4cad0f"
+      "704009704":
+        name: "uv-riscv64gc-unknown-linux-musl.tar.gz"
+        size: 17545238
+        sha256pre: "6c2e67417dda9661"
+      "704009741":
+        name: "uv-riscv64gc-unknown-linux-musl.tar.gz.sha256"
+        size: 105
+        sha256pre: "edd6e9e5fb414a50"
+      "704009747":
+        name: "uv-s390x-unknown-linux-gnu.tar.gz"
+        size: 19013756
+        sha256pre: "2b64a479b905b9cd"
+      "704009773":
+        name: "uv-s390x-unknown-linux-gnu.tar.gz.sha256"
+        size: 100
+        sha256pre: "1892d903d5ddf248"
+      "704009775":
+        name: "uv-x86_64-apple-darwin.tar.gz"
+        size: 17026382
+        sha256pre: "20c47e4c1f630b8a"
+      "704009787":
+        name: "uv-x86_64-apple-darwin.tar.gz.sha256"
+        size: 96
+        sha256pre: "cb44fff4031a3e31"
+      "704009796":
+        name: "uv-x86_64-pc-windows-msvc.zip"
+        size: 15236317
+        sha256pre: "0cdc5b38fe5a8168"
+      "704009809":
+        name: "uv-x86_64-pc-windows-msvc.zip.sha256"
+        size: 96
+        sha256pre: "b706970932643830"
+      "704009823":
+        name: "uv-x86_64-unknown-linux-gnu.tar.gz"
+        size: 16671812
+        sha256pre: "c5221ff41b7892bf"
+      "704009831":
+        name: "uv-x86_64-unknown-linux-gnu.tar.gz.sha256"
+        size: 101
+        sha256pre: "0d2de511ca3b8ef4"
+      "704009859":
+        name: "uv-x86_64-unknown-linux-musl.tar.gz"
+        size: 18396915
+        sha256pre: "287491da03f2a785"
+      "704009871":
+        name: "uv-x86_64-unknown-linux-musl.tar.gz.sha256"
+        size: 102
+        sha256pre: "751487dcc5ef05cf"
+  "443258077":
+    tag: "0.13.8"
+    published_at: "2026-11-12T17:03:07Z"
+    prerelease: false
+    assets:
+      "740313571":
+        name: "source.tar.gz.sha256"
+        size: 81
+        sha256pre: "d7f5c4e369a4e222"
+      "740313572":
+        name: "dist-manifest.json"
+        size: 48354
+        sha256pre: "564baff02c43222c"
+      "740313573":
+        name: "uv-installer.ps1"
+        size: 23285
+        sha256pre: "200a377ed0f8e719"
+      "740313574":
+        name: "source.tar.gz"
+        size: 9023050
+        sha256pre: "d4c04b6e4ca197f0"
+      "740313575":
+        name: "uv-installer.sh"
+        size: 71300
+        sha256pre: "4d8fa56e00f16b66"
+      "740313603":
+        name: "uv-aarch64-apple-darwin.tar.gz"
+        size: 14375545
+        sha256pre: "6b71028a6b904f2a"
+      "740313605":
+        name: "sha256.sum"
+        size: 1901
+        sha256pre: "aafd732bbf1e3fc3"
+      "740313615":
+        name: "uv-aarch64-apple-darwin.tar.gz.sha256"
+        size: 97
+        sha256pre: "d26ca938b3b42f2f"
+      "740313617":
+        name: "uv-aarch64-pc-windows-msvc.zip"
+        size: 15590791
+        sha256pre: "59e6d919bed1f720"
+      "740313625":
+        name: "uv-aarch64-pc-windows-msvc.zip.sha256"
+        size: 97
+        sha256pre: "0e07d01dd26304c1"
+      "740313629":
+        name: "uv-aarch64-unknown-linux-gnu.tar.gz"
+        size: 16065638
+        sha256pre: "74f2f5c6024d3974"
+      "740313662":
+        name: "uv-aarch64-unknown-linux-gnu.tar.gz.sha256"
+        size: 102
+        sha256pre: "2327583c742a18e7"
+      "740313665":
+        name: "uv-aarch64-unknown-linux-musl.tar.gz"
+        size: 17171170
+        sha256pre: "0c6f8593fcf1eadf"
+      "740313678":
+        name: "uv-aarch64-unknown-linux-musl.tar.gz.sha256"
+        size: 103
+        sha256pre: "bed10eef746caae2"
+      "740313686":
+        name: "uv-arm-unknown-linux-musleabihf.tar.gz"
+        size: 17791350
+        sha256pre: "1ddb914171ea8534"
+      "740313705":
+        name: "uv-arm-unknown-linux-musleabihf.tar.gz.sha256"
+        size: 105
+        sha256pre: "2ce1e3c06d167b47"
+      "740313706":
+        name: "uv-armv7-unknown-linux-gnueabihf.tar.gz"
+        size: 17247287
+        sha256pre: "079618cfa7110f0b"
+      "740313713":
+        name: "uv-armv7-unknown-linux-gnueabihf.tar.gz.sha256"
+        size: 106
+        sha256pre: "adcb3db4f491a840"
+      "740313732":
+        name: "uv-armv7-unknown-linux-musleabihf.tar.gz"
+        size: 17219794
+        sha256pre: "8378d009ea93bea8"
+      "740313744":
+        name: "uv-armv7-unknown-linux-musleabihf.tar.gz.sha256"
+        size: 107
+        sha256pre: "5b0004690633b60c"
+      "740313746":
+        name: "uv-i686-pc-windows-msvc.zip"
+        size: 16160722
+        sha256pre: "4fbc1489e659e46a"
+      "740313767":
+        name: "uv-i686-pc-windows-msvc.zip.sha256"
+        size: 94
+        sha256pre: "7950ddb0b1897457"
+      "740313770":
+        name: "uv-i686-unknown-linux-gnu.tar.gz"
+        size: 18286781
+        sha256pre: "a02ef14274bdd62f"
+      "740313776":
+        name: "uv-i686-unknown-linux-gnu.tar.gz.sha256"
+        size: 99
+        sha256pre: "4def12d408052b53"
+      "740313782":
+        name: "uv-i686-unknown-linux-musl.tar.gz"
+        size: 17470428
+        sha256pre: "58d36909387012b6"
+      "740313806":
+        name: "uv-i686-unknown-linux-musl.tar.gz.sha256"
+        size: 100
+        sha256pre: "b8844e1e9548a6ad"
+      "740313810":
+        name: "uv-powerpc64le-unknown-linux-gnu.tar.gz"
+        size: 19503807
+        sha256pre: "4b7857be36535a31"
+      "740313819":
+        name: "uv-powerpc64le-unknown-linux-gnu.tar.gz.sha256"
+        size: 106
+        sha256pre: "81fa78df20d9b725"
+      "740313842":
+        name: "uv-riscv64gc-unknown-linux-gnu.tar.gz"
+        size: 17760469
+        sha256pre: "ac218efd4ecbc5f0"
+      "740313850":
+        name: "uv-riscv64gc-unknown-linux-musl.tar.gz"
+        size: 17568910
+        sha256pre: "4bcdf839b7bf234c"
+      "740313851":
+        name: "uv-riscv64gc-unknown-linux-gnu.tar.gz.sha256"
+        size: 104
+        sha256pre: "1e9b79d8b9337627"
+      "740313860":
+        name: "uv-riscv64gc-unknown-linux-musl.tar.gz.sha256"
+        size: 105
+        sha256pre: "7c50d0ec9bd64439"
+      "740313890":
+        name: "uv-s390x-unknown-linux-gnu.tar.gz"
+        size: 19319662
+        sha256pre: "0b4bb8c6003acb8a"
+      "740313903":
+        name: "uv-s390x-unknown-linux-gnu.tar.gz.sha256"
+        size: 100
+        sha256pre: "1c81baa77af6de32"
+      "740313917":
+        name: "uv-x86_64-apple-darwin.tar.gz"
+        size: 17208261
+        sha256pre: "a04c2ffeac28b200"
+      "740313927":
+        name: "uv-x86_64-pc-windows-msvc.zip"
+        size: 15529884
+        sha256pre: "529e78a9cec6cd7e"
+      "740313930":
+        name: "uv-x86_64-apple-darwin.tar.gz.sha256"
+        size: 96
+        sha256pre: "21cd6b15a3348d25"
+      "740313938":
+        name: "uv-x86_64-pc-windows-msvc.zip.sha256"
+        size: 96
+        sha256pre: "531d6daee2142f3a"
+      "740313966":
+        name: "uv-x86_64-unknown-linux-gnu.tar.gz"
+        size: 16855069
+        sha256pre: "5acfd9177cfecf0b"
+      "740313979":
+        name: "uv-x86_64-unknown-linux-gnu.tar.gz.sha256"
+        size: 101
+        sha256pre: "8c851ba7acac29dd"
+      "740313983":
+        name: "uv-x86_64-unknown-linux-musl.tar.gz"
+        size: 18577654
+        sha256pre: "61fb26dabc4f0cf1"
+      "740314002":
+        name: "uv-x86_64-unknown-linux-musl.tar.gz.sha256"
+        size: 102
+        sha256pre: "34cc1cfc1781704e"
+  "448430707":
+    tag: "0.13.9"
+    published_at: "2026-11-17T09:57:55Z"
+    prerelease: false
+    assets:
+      "758513597":
+        name: "uv-installer.sh"
+        size: 71300
+        sha256pre: "ccc888115ac831bd"
+      "758513601":
+        name: "dist-manifest.json"
+        size: 46150
+        sha256pre: "82814a2cc21dd3a8"
+      "758513603":
+        name: "source.tar.gz.sha256"
+        size: 81
+        sha256pre: "b1d615d038ef3cd1"
+      "758513604":
+        name: "uv-installer.ps1"
+        size: 23285
+        sha256pre: "43b64ed13b8abfcd"
+      "758513609":
+        name: "source.tar.gz"
+        size: 9033169
+        sha256pre: "9ff3b8467058929c"
+      "758513627":
+        name: "sha256.sum"
+        size: 1901
+        sha256pre: "5679a011d4663f7d"
+      "758513631":
+        name: "uv-aarch64-apple-darwin.tar.gz"
+        size: 14554974
+        sha256pre: "5aeca67f2283f752"
+      "758513633":
+        name: "uv-aarch64-apple-darwin.tar.gz.sha256"
+        size: 97
+        sha256pre: "25b4d3bd120019d3"
+      "758513635":
+        name: "uv-aarch64-pc-windows-msvc.zip"
+        size: 15747415
+        sha256pre: "72eed595983a4d7d"
+      "758513655":
+        name: "uv-aarch64-pc-windows-msvc.zip.sha256"
+        size: 97
+        sha256pre: "fc6edc21aa818a26"
+      "758513657":
+        name: "uv-aarch64-unknown-linux-gnu.tar.gz"
+        size: 16120245
+        sha256pre: "0797542018e541a9"
+      "758513670":
+        name: "uv-aarch64-unknown-linux-gnu.tar.gz.sha256"
+        size: 102
+        sha256pre: "1b912c993725cfd7"
+      "758513671":
+        name: "uv-aarch64-unknown-linux-musl.tar.gz"
+        size: 17243298
+        sha256pre: "37fbb7c5bc66cf99"
+      "758513682":
+        name: "uv-aarch64-unknown-linux-musl.tar.gz.sha256"
+        size: 103
+        sha256pre: "a1535281e21d058b"
+      "758513696":
+        name: "uv-arm-unknown-linux-musleabihf.tar.gz.sha256"
+        size: 105
+        sha256pre: "00fdd538e267fa61"
+      "758513699":
+        name: "uv-arm-unknown-linux-musleabihf.tar.gz"
+        size: 17680050
+        sha256pre: "b43b18e668c94f60"
+      "758513713":
+        name: "uv-armv7-unknown-linux-gnueabihf.tar.gz"
+        size: 17279830
+        sha256pre: "8bd2ce216e6d3fe8"
+      "758513720":
+        name: "uv-armv7-unknown-linux-gnueabihf.tar.gz.sha256"
+        size: 106
+        sha256pre: "865c137d437e1518"
+      "758513723":
+        name: "uv-armv7-unknown-linux-musleabihf.tar.gz"
+        size: 17242789
+        sha256pre: "477c4d3759aaf68d"
+      "758513737":
+        name: "uv-armv7-unknown-linux-musleabihf.tar.gz.sha256"
+        size: 107
+        sha256pre: "14e264c964f0448a"
+      "758513743":
+        name: "uv-i686-pc-windows-msvc.zip"
+        size: 16306728
+        sha256pre: "eb4bd7285a512ebc"
+      "758513771":
+        name: "uv-i686-pc-windows-msvc.zip.sha256"
+        size: 94
+        sha256pre: "16177bd8782bacb0"
+      "758513778":
+        name: "uv-i686-unknown-linux-gnu.tar.gz"
+        size: 18307489
+        sha256pre: "ef1d3f7464e650d6"
+      "758513787":
+        name: "uv-i686-unknown-linux-gnu.tar.gz.sha256"
+        size: 99
+        sha256pre: "bec2ce5a3d04193d"
+      "758513796":
+        name: "uv-i686-unknown-linux-musl.tar.gz"
+        size: 17502463
+        sha256pre: "0fc2dc2355d4d9c8"
+      "758513801":
+        name: "uv-i686-unknown-linux-musl.tar.gz.sha256"
+        size: 100
+        sha256pre: "a31415beb76d2069"
+      "758513806":
+        name: "uv-powerpc64le-unknown-linux-gnu.tar.gz"
+        size: 19454622
+        sha256pre: "5c074a4a00803778"
+      "758513816":
+        name: "uv-powerpc64le-unknown-linux-gnu.tar.gz.sha256"
+        size: 106
+        sha256pre: "7f7b1671cfd8c5d4"
+      "758513827":
+        name: "uv-riscv64gc-unknown-linux-gnu.tar.gz"
+        size: 17640198
+        sha256pre: "96543eb42d59426d"
+      "758513849":
+        name: "uv-riscv64gc-unknown-linux-gnu.tar.gz.sha256"
+        size: 104
+        sha256pre: "3dee8afd4cd868fa"
+      "758513858":
+        name: "uv-riscv64gc-unknown-linux-musl.tar.gz"
+        size: 17600032
+        sha256pre: "0cf8c79c766dcbbc"
+      "758513878":
+        name: "uv-riscv64gc-unknown-linux-musl.tar.gz.sha256"
+        size: 105
+        sha256pre: "677c331f75cc10f0"
+      "758513879":
+        name: "uv-s390x-unknown-linux-gnu.tar.gz"
+        size: 19218284
+        sha256pre: "7e15c75fbd907334"
+      "758513904":
+        name: "uv-s390x-unknown-linux-gnu.tar.gz.sha256"
+        size: 100
+        sha256pre: "42731473ad227634"
+      "758513912":
+        name: "uv-x86_64-apple-darwin.tar.gz"
+        size: 17362924
+        sha256pre: "617a3211261b0fc7"
+      "758513915":
+        name: "uv-x86_64-apple-darwin.tar.gz.sha256"
+        size: 96
+        sha256pre: "2f6dc56d7a1cd8c4"
+      "758513940":
+        name: "uv-x86_64-pc-windows-msvc.zip"
+        size: 15567875
+        sha256pre: "edd61f7f5728a56c"
+      "758513950":
+        name: "uv-x86_64-pc-windows-msvc.zip.sha256"
+        size: 96
+        sha256pre: "40cb998199cd87b5"
+      "758513954":
+        name: "uv-x86_64-unknown-linux-gnu.tar.gz"
+        size: 17068176
+        sha256pre: "a7fbaff2b9a271d8"
+      "758513973":
+        name: "uv-x86_64-unknown-linux-gnu.tar.gz.sha256"
+        size: 101
+        sha256pre: "dc9a51370b1a10ca"
+      "758513984":
+        name: "uv-x86_64-unknown-linux-musl.tar.gz"
+        size: 18735070
+        sha256pre: "58ccf5f1792b8a5a"
+      "758514017":
+        name: "uv-x86_64-unknown-linux-musl.tar.gz.sha256"
+        size: 102
+        sha256pre: "079214ae40c24849"

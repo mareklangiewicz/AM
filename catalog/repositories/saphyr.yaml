@@ -1,0 +1,32 @@
+$schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
+repository_id: 32502454
+repository: "jdm64/saphyr"
+observed_at: "2026-11-24T21:21:08Z"
+history_complete: true
+releases:
+  "48199061":
+    tag: "master"
+    title: "Frontend Tools"
+    published_at: "2021-08-20T18:35:35Z"
+    prerelease: false
+    assets:
+      "42918043":
+        name: "bisonc++-latest-x86_64.AppImage"
+        url: "https://github.com/jdm64/saphyr/releases/download/master/bisonc%2B%2B-latest-x86_64.AppImage"
+        size: 1361088
+      "42918047":
+        name: "flexc++-latest-x86_64.AppImage"
+        url: "https://github.com/jdm64/saphyr/releases/download/master/flexc%2B%2B-latest-x86_64.AppImage"
+        size: 1352896
+  "56332735":
+    tag: "continuous"
+    title: "Continuous Build"
+    published_at: "2022-04-08T05:30:05Z"
+    prerelease: true
+    assets:
+      "61911630":
+        name: "saphyr-x86_64.AppImage"
+        size: 19784896
+      "61911633":
+        name: "saphyr.deb"
+        size: 193836

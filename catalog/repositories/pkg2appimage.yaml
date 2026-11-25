@@ -1,0 +1,30 @@
+$schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
+repository_id: 40756369
+repository: "AppImageCommunity/pkg2appimage"
+observed_at: "2026-11-24T21:21:44Z"
+history_complete: true
+releases:
+  "1984531":
+    tag: "1"
+    title: "1   Test and Demo Release only!"
+    published_at: "2015-10-19T19:35:55Z"
+    prerelease: true
+    assets:
+      "1042323":
+        name: "Subsurface-4.5.1.251-i386.AppImage"
+        size: 51052544
+      "1123936":
+        name: "zsyncmake"
+        size: 95479
+  "197963487":
+    tag: "continuous"
+    title: "Continuous build"
+    published_at: "2025-02-02T08:42:37Z"
+    prerelease: false
+    assets:
+      "225593784":
+        name: "pkg2appimage-1eceb30-x86_64.AppImage"
+        size: 13915328
+      "225593798":
+        name: "pkg2appimage-1eceb30-aarch64.AppImage"
+        size: 11129216

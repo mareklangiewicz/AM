@@ -1,0 +1,828 @@
+$schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
+repository_id: 1326827569
+repository: "Paraxdev/FundaCAD"
+observed_at: "2026-11-24T01:00:16Z"
+history_complete: true
+releases:
+  "396457456":
+    tag: "beta"
+    title: "FundaCAD 1.0 beta, Rust engine (rolling)"
+    published_at: "2026-09-25T08:58:57Z"
+    prerelease: true
+    assets:
+      "757677278":
+        name: "FundaCAD-linux-x86_64.AppImage"
+        size: 62126584
+        sha256pre: "61b5f203fc41a3ce"
+      "757677281":
+        name: "FundaCAD-linux-x86_64.rpm"
+        size: 63098180
+        sha256pre: "22be7ff44166becf"
+      "757677282":
+        name: "FundaCAD-linux-x86_64.deb"
+        size: 66572384
+        sha256pre: "3daafd481d3fe792"
+      "757677297":
+        name: "FundaCAD-linux-x86_64.AppImage.sig"
+        size: 424
+        sha256pre: "98266f2b9b829a71"
+      "757677299":
+        name: "FundaCAD-linux-x86_64.flatpak"
+        size: 46588944
+        sha256pre: "6050030f5fae6e84"
+      "757677489":
+        name: "FundaCAD-macos-arm64.app.tar.gz"
+        size: 56605397
+        sha256pre: "360cb25f29a56bd5"
+      "757677618":
+        name: "FundaCAD-macos-arm64.app.tar.gz.sig"
+        size: 408
+        sha256pre: "c3a7a28f06c46cca"
+      "757677634":
+        name: "FundaCAD-macos-arm64.dmg"
+        size: 56598989
+        sha256pre: "e9d40e3f5ecd5fef"
+      "757677643":
+        name: "FundaCAD-windows-x64-portable.exe"
+        size: 131347456
+        sha256pre: "8c1b23b8f7bec1db"
+      "757677647":
+        name: "FundaCAD-windows-x64-setup.exe"
+        size: 55715394
+        sha256pre: "14a54040bd6bfa9e"
+      "757677687":
+        name: "FundaCAD-windows-x64-setup.exe.sig"
+        size: 420
+        sha256pre: "27c9dfd3c682a467"
+      "757677746":
+        name: "FundaCAD-windows-x64.msi"
+        size: 56049664
+        sha256pre: "10cd6335d65ceeab"
+      "757677761":
+        name: "FundaCAD-windows-x64.msi.sig"
+        size: 420
+        sha256pre: "0202e34637de34fe"
+      "757677803":
+        name: "plugin-FundaCAD.ExtraParameters.zip"
+        size: 14719
+        sha256pre: "ec2e933d08e2458a"
+      "757677849":
+        name: "plugin-FundaCAD.Gamepad.zip"
+        size: 7748
+        sha256pre: "f65420d373069d50"
+      "757677861":
+        name: "plugin-FundaCAD.MultiColor.zip"
+        size: 6206
+        sha256pre: "d44dd561aa851385"
+      "757677882":
+        name: "plugin-FundaCAD.Navigation.zip"
+        size: 8945
+        sha256pre: "21510240b02e017e"
+      "757677896":
+        name: "plugin-FundaCAD.Organic.zip"
+        size: 75316
+        sha256pre: "2de514bb0528a14f"
+      "757677905":
+        name: "plugin-FundaCAD.PrintLook.zip"
+        size: 6018
+        sha256pre: "009c9507c578724d"
+      "757677917":
+        name: "plugin-FundaCAD.Printing.zip"
+        size: 137411
+        sha256pre: "bb54021fa82e42f2"
+      "757677918":
+        name: "plugin-FundaCAD.Onshape.zip"
+        size: 10991
+        sha256pre: "5094a512e196889f"
+      "757677927":
+        name: "plugin-FundaCAD.PrintToolbox.zip"
+        size: 100080
+        sha256pre: "11e1a7bcd466bc06"
+      "757677939":
+        name: "plugin-FundaCAD.ReferenceImages.zip"
+        size: 13076
+        sha256pre: "926eeba16139c4d4"
+      "757677946":
+        name: "plugin-FundaCAD.Screws.zip"
+        size: 132674
+        sha256pre: "0ea16e8d89d8a702"
+      "757677955":
+        name: "plugin-FundaCAD.SpaceMouse.zip"
+        size: 10837
+        sha256pre: "ad279604d73a9792"
+      "757677966":
+        name: "plugin-FundaCAD.Texture.zip"
+        size: 330606
+        sha256pre: "4abb7f232f23a71e"
+      "757678043":
+        name: "latest.json"
+        size: 1817
+        sha256pre: "8ec861e60803cb5c"
+  "418448984":
+    tag: "development"
+    title: "FundaCAD 1.0 development build, bleeding edge (rolling)"
+    published_at: "2026-10-20T13:43:36Z"
+    prerelease: true
+    assets:
+      "759238202":
+        name: "FundaCAD-linux-x86_64.flatpak"
+        size: 46770760
+        sha256pre: "21a2f08346f84c70"
+      "759965809":
+        name: "FundaCAD-linux-x86_64.AppImage.sig"
+        size: 424
+        sha256pre: "f9700d4a6337bcac"
+      "759965814":
+        name: "FundaCAD-linux-x86_64.rpm"
+        size: 63266933
+        sha256pre: "6df29d4203ece01d"
+      "759965815":
+        name: "FundaCAD-linux-x86_64.deb"
+        size: 66758394
+        sha256pre: "80ceabadb597faac"
+      "759965818":
+        name: "FundaCAD-macos-arm64.app.tar.gz"
+        size: 56797685
+        sha256pre: "3fa0597d0fc416dc"
+      "759965819":
+        name: "FundaCAD-linux-x86_64.AppImage"
+        size: 62265848
+        sha256pre: "52ebc2490be3bb6a"
+      "759965901":
+        name: "FundaCAD-macos-arm64.app.tar.gz.sig"
+        size: 412
+        sha256pre: "dfd9d8490d501a88"
+      "759965975":
+        name: "FundaCAD-macos-arm64.dmg"
+        size: 56767544
+        sha256pre: "efc9e1a9fa218275"
+      "759966027":
+        name: "FundaCAD-windows-x64-portable.exe"
+        size: 131591168
+        sha256pre: "610fa3dfc06540c6"
+      "759966039":
+        name: "FundaCAD-windows-x64-setup.exe"
+        size: 55917121
+        sha256pre: "2ea0c7742e889e70"
+      "759966061":
+        name: "FundaCAD-windows-x64-setup.exe.sig"
+        size: 428
+        sha256pre: "071a8b7481f37159"
+      "759966119":
+        name: "FundaCAD-windows-x64.msi"
+        size: 56250368
+        sha256pre: "5f1f335f281acdeb"
+      "759966132":
+        name: "FundaCAD-windows-x64.msi.sig"
+        size: 428
+        sha256pre: "20126453c9c25725"
+      "759966134":
+        name: "plugin-FundaCAD.ExtraParameters.zip"
+        size: 29027
+        sha256pre: "cc1a7047dc36e333"
+      "759966197":
+        name: "plugin-FundaCAD.MultiColor.zip"
+        size: 10494
+        sha256pre: "44b933fd1c2cd07d"
+      "759966200":
+        name: "plugin-FundaCAD.Gamepad.zip"
+        size: 16844
+        sha256pre: "04a5d7d65374f2e6"
+      "759966204":
+        name: "plugin-FundaCAD.Navigation.zip"
+        size: 26952
+        sha256pre: "64c60c4e77d570ab"
+      "759966272":
+        name: "plugin-FundaCAD.Onshape.zip"
+        size: 23921
+        sha256pre: "6a07e286ce41e45c"
+      "759966278":
+        name: "plugin-FundaCAD.PrintLook.zip"
+        size: 9028
+        sha256pre: "534fd0e9c006ab37"
+      "759966287":
+        name: "plugin-FundaCAD.PrintToolbox.zip"
+        size: 132299
+        sha256pre: "78364f7e409678b8"
+      "759966305":
+        name: "plugin-FundaCAD.Organic.zip"
+        size: 83304
+        sha256pre: "79d8eee8135acd28"
+      "759966318":
+        name: "plugin-FundaCAD.Printing.zip"
+        size: 153527
+        sha256pre: "9bbc0465335fae87"
+      "759966335":
+        name: "plugin-FundaCAD.ReferenceImages.zip"
+        size: 22232
+        sha256pre: "8632906696d5a94d"
+      "759966361":
+        name: "plugin-FundaCAD.Screws.zip"
+        size: 176537
+        sha256pre: "add242eb77581844"
+      "759966384":
+        name: "plugin-FundaCAD.SpaceMouse.zip"
+        size: 20676
+        sha256pre: "545657d3d0d73a26"
+      "759966390":
+        name: "plugin-FundaCAD.Texture.zip"
+        size: 357455
+        sha256pre: "95ba6193b15194ac"
+      "759966439":
+        name: "latest.json"
+        size: 1850
+        sha256pre: "cf6889d9eb2f89e1"
+  "427588759":
+    tag: "v1.0.493"
+    title: "FundaCAD 1.0.493 beta"
+    published_at: "2026-10-29T07:56:19Z"
+    prerelease: false
+    assets:
+      "687797099":
+        name: "FundaCAD-linux-x86_64.AppImage"
+        size: 60029432
+        sha256pre: "41409b3d51b31aec"
+      "687797101":
+        name: "FundaCAD-linux-x86_64.deb.sig"
+        size: 416
+        sha256pre: "7c9b83249621c2a6"
+      "687797103":
+        name: "FundaCAD-linux-x86_64.AppImage.sig"
+        size: 424
+        sha256pre: "ce95da599d5c9c09"
+      "687797105":
+        name: "FundaCAD-linux-x86_64.deb"
+        size: 64228460
+        sha256pre: "d01c0a6482515125"
+      "687797107":
+        name: "FundaCAD-linux-x86_64.flatpak"
+        size: 44605888
+        sha256pre: "941496fce6bec15f"
+      "687797125":
+        name: "FundaCAD-linux-x86_64.rpm.sig"
+        size: 420
+        sha256pre: "5af93f6e185efb72"
+      "687797127":
+        name: "FundaCAD-linux-x86_64.rpm"
+        size: 60812733
+        sha256pre: "b235b3a242bb83dd"
+      "687797162":
+        name: "FundaCAD-macos-arm64.app.tar.gz"
+        size: 55584044
+        sha256pre: "05d53752e95af06c"
+      "687797249":
+        name: "FundaCAD-macos-arm64.app.tar.gz.sig"
+        size: 408
+        sha256pre: "370853ae11070045"
+      "687797257":
+        name: "FundaCAD-macos-arm64.dmg"
+        size: 54122160
+        sha256pre: "6751da507fdf6896"
+      "687797266":
+        name: "FundaCAD-windows-x64-portable.exe"
+        size: 129650688
+        sha256pre: "10f7868c0045a84d"
+      "687797300":
+        name: "FundaCAD-windows-x64-setup.exe.sig"
+        size: 420
+        sha256pre: "a26aebab541f2e9d"
+      "687797302":
+        name: "FundaCAD-windows-x64.msi"
+        size: 54407168
+        sha256pre: "11607b758f4d344a"
+      "687797304":
+        name: "FundaCAD-windows-x64-setup.exe"
+        size: 54083239
+        sha256pre: "be9ac3bf331a8e17"
+      "687797321":
+        name: "FundaCAD-windows-x64.msi.sig"
+        size: 420
+        sha256pre: "7f2a042040a47733"
+      "687797345":
+        name: "plugin-FundaCAD.ExtraParameters.zip"
+        size: 10442
+        sha256pre: "f2b2de3b88881f78"
+      "687797363":
+        name: "plugin-FundaCAD.Gamepad.zip"
+        size: 7018
+        sha256pre: "53aabf114dbc6784"
+      "687797383":
+        name: "plugin-FundaCAD.MultiColor.zip"
+        size: 5440
+        sha256pre: "d3b40614cd3053db"
+      "687797389":
+        name: "plugin-FundaCAD.Navigation.zip"
+        size: 7699
+        sha256pre: "eb2131f5ab052e94"
+      "687797411":
+        name: "plugin-FundaCAD.Onshape.zip"
+        size: 8965
+        sha256pre: "c131b8f45f9c4ccd"
+      "687797413":
+        name: "plugin-FundaCAD.Organic.zip"
+        size: 72455
+        sha256pre: "c338076dc2c8ebe8"
+      "687797415":
+        name: "plugin-FundaCAD.PrintLook.zip"
+        size: 4205
+        sha256pre: "ad8f9020ba2e6160"
+      "687797422":
+        name: "plugin-FundaCAD.PrintToolbox.zip"
+        size: 93630
+        sha256pre: "db16a152a0c770b3"
+      "687797425":
+        name: "plugin-FundaCAD.Printing.zip"
+        size: 131657
+        sha256pre: "d91a6e0fae4a9361"
+      "687797427":
+        name: "plugin-FundaCAD.ReferenceImages.zip"
+        size: 10954
+        sha256pre: "c0801e74d0688978"
+      "687797434":
+        name: "plugin-FundaCAD.Screws.zip"
+        size: 127886
+        sha256pre: "33f1092fda460755"
+      "687797440":
+        name: "plugin-FundaCAD.SpaceMouse.zip"
+        size: 8476
+        sha256pre: "986bc124649d9bfc"
+      "687797445":
+        name: "plugin-FundaCAD.Texture.zip"
+        size: 326873
+        sha256pre: "dc19697e0d5ee210"
+      "687797446":
+        name: "SHA256SUMS.txt"
+        size: 2699
+        sha256pre: "f3fd57a9e66df406"
+  "428688495":
+    tag: "v1.0.518"
+    title: "FundaCAD 1.0.518 beta"
+    published_at: "2026-10-30T05:38:18Z"
+    prerelease: false
+    assets:
+      "691068060":
+        name: "FundaCAD-linux-x86_64.flatpak"
+        size: 44522712
+        sha256pre: "a242d5351bf16990"
+      "691068061":
+        name: "FundaCAD-linux-x86_64.deb"
+        size: 64072604
+        sha256pre: "432c2ca3f0e3979e"
+      "691068062":
+        name: "FundaCAD-linux-x86_64.deb.sig"
+        size: 416
+        sha256pre: "ad705ffd12a56862"
+      "691068063":
+        name: "FundaCAD-linux-x86_64.AppImage.sig"
+        size: 424
+        sha256pre: "6efe41dc266a74fe"
+      "691068066":
+        name: "FundaCAD-linux-x86_64.AppImage"
+        size: 59894264
+        sha256pre: "72944a8b3a5c4ec6"
+      "691068090":
+        name: "FundaCAD-linux-x86_64.rpm"
+        size: 60651079
+        sha256pre: "0d478ee2460a6291"
+      "691068094":
+        name: "FundaCAD-linux-x86_64.rpm.sig"
+        size: 420
+        sha256pre: "f667469e46cea131"
+      "691068123":
+        name: "FundaCAD-macos-arm64.app.tar.gz"
+        size: 55472554
+        sha256pre: "e408f87bafabca40"
+      "691068201":
+        name: "FundaCAD-macos-arm64.app.tar.gz.sig"
+        size: 408
+        sha256pre: "0f38f082deebbaa2"
+      "691068214":
+        name: "FundaCAD-macos-arm64.dmg"
+        size: 54021298
+        sha256pre: "54766e096d2528f5"
+      "691068215":
+        name: "FundaCAD-windows-x64-portable.exe"
+        size: 127944192
+        sha256pre: "baf5c354d4f1d8e1"
+      "691068227":
+        name: "FundaCAD-windows-x64-setup.exe"
+        size: 53874071
+        sha256pre: "b12cc2b912178679"
+      "691068228":
+        name: "FundaCAD-windows-x64-setup.exe.sig"
+        size: 420
+        sha256pre: "c7c2da22d4bda3a5"
+      "691068238":
+        name: "FundaCAD-windows-x64.msi"
+        size: 54198272
+        sha256pre: "b004273689d67382"
+      "691068250":
+        name: "FundaCAD-windows-x64.msi.sig"
+        size: 420
+        sha256pre: "23cb97975912fafe"
+      "691068271":
+        name: "plugin-FundaCAD.ExtraParameters.zip"
+        size: 10483
+        sha256pre: "ce2d35ef944483ae"
+      "691068286":
+        name: "plugin-FundaCAD.Gamepad.zip"
+        size: 7018
+        sha256pre: "53aabf114dbc6784"
+      "691068305":
+        name: "plugin-FundaCAD.MultiColor.zip"
+        size: 5440
+        sha256pre: "d3b40614cd3053db"
+      "691068320":
+        name: "plugin-FundaCAD.Navigation.zip"
+        size: 7699
+        sha256pre: "eb2131f5ab052e94"
+      "691068329":
+        name: "plugin-FundaCAD.Onshape.zip"
+        size: 8965
+        sha256pre: "c131b8f45f9c4ccd"
+      "691068337":
+        name: "plugin-FundaCAD.Organic.zip"
+        size: 72455
+        sha256pre: "c338076dc2c8ebe8"
+      "691068342":
+        name: "plugin-FundaCAD.PrintLook.zip"
+        size: 4205
+        sha256pre: "ad8f9020ba2e6160"
+      "691068350":
+        name: "plugin-FundaCAD.PrintToolbox.zip"
+        size: 93630
+        sha256pre: "db16a152a0c770b3"
+      "691068352":
+        name: "plugin-FundaCAD.ReferenceImages.zip"
+        size: 10954
+        sha256pre: "c0801e74d0688978"
+      "691068353":
+        name: "plugin-FundaCAD.Printing.zip"
+        size: 131657
+        sha256pre: "d91a6e0fae4a9361"
+      "691068435":
+        name: "plugin-FundaCAD.Screws.zip"
+        size: 127965
+        sha256pre: "7135a5726fdd6707"
+      "691068447":
+        name: "plugin-FundaCAD.SpaceMouse.zip"
+        size: 8476
+        sha256pre: "986bc124649d9bfc"
+      "691068453":
+        name: "plugin-FundaCAD.Texture.zip"
+        size: 326873
+        sha256pre: "dc19697e0d5ee210"
+      "691068456":
+        name: "SHA256SUMS.txt"
+        size: 2699
+        sha256pre: "cb96da2df24a5b27"
+  "428871006":
+    tag: "v1.0.520"
+    title: "FundaCAD 1.0.520 beta"
+    published_at: "2026-10-30T09:55:27Z"
+    prerelease: false
+    assets:
+      "691664820":
+        name: "FundaCAD-linux-x86_64.deb.sig"
+        size: 416
+        sha256pre: "10f7dc2e42ff2a3c"
+      "691664821":
+        name: "FundaCAD-linux-x86_64.flatpak"
+        size: 45594624
+        sha256pre: "794311afeca6e82e"
+      "691664824":
+        name: "FundaCAD-linux-x86_64.AppImage.sig"
+        size: 424
+        sha256pre: "cb1052aa6214c3a0"
+      "691664825":
+        name: "FundaCAD-linux-x86_64.AppImage"
+        size: 61106680
+        sha256pre: "0e5aaa6b8c0171e8"
+      "691664829":
+        name: "FundaCAD-linux-x86_64.deb"
+        size: 65524704
+        sha256pre: "4e9dfff6728278aa"
+      "691664854":
+        name: "FundaCAD-linux-x86_64.rpm"
+        size: 62022771
+        sha256pre: "b209eb25ef12c94e"
+      "691664868":
+        name: "FundaCAD-linux-x86_64.rpm.sig"
+        size: 420
+        sha256pre: "344a0b39a6d90b62"
+      "691664886":
+        name: "FundaCAD-macos-arm64.app.tar.gz"
+        size: 56918406
+        sha256pre: "d601936502663067"
+      "691664944":
+        name: "FundaCAD-macos-arm64.app.tar.gz.sig"
+        size: 408
+        sha256pre: "fcc13050972c72e2"
+      "691664958":
+        name: "FundaCAD-macos-arm64.dmg"
+        size: 55399627
+        sha256pre: "863eb0e84351a442"
+      "691664974":
+        name: "FundaCAD-windows-x64-portable.exe"
+        size: 129390592
+        sha256pre: "8775bc42e5ba2f71"
+      "691664983":
+        name: "FundaCAD-windows-x64-setup.exe"
+        size: 54692537
+        sha256pre: "79c147150364af84"
+      "691664984":
+        name: "FundaCAD-windows-x64-setup.exe.sig"
+        size: 420
+        sha256pre: "f5ee44b9dd8fbb34"
+      "691665020":
+        name: "FundaCAD-windows-x64.msi"
+        size: 55009280
+        sha256pre: "ebcb948a50b62034"
+      "691665032":
+        name: "FundaCAD-windows-x64.msi.sig"
+        size: 420
+        sha256pre: "cbde92fd8b5a78c9"
+      "691665049":
+        name: "plugin-FundaCAD.ExtraParameters.zip"
+        size: 10506
+        sha256pre: "4a7c573430dcb33c"
+      "691665078":
+        name: "plugin-FundaCAD.Gamepad.zip"
+        size: 7018
+        sha256pre: "53aabf114dbc6784"
+      "691665084":
+        name: "plugin-FundaCAD.MultiColor.zip"
+        size: 5440
+        sha256pre: "d3b40614cd3053db"
+      "691665099":
+        name: "plugin-FundaCAD.Navigation.zip"
+        size: 7699
+        sha256pre: "eb2131f5ab052e94"
+      "691665101":
+        name: "plugin-FundaCAD.Onshape.zip"
+        size: 8965
+        sha256pre: "c131b8f45f9c4ccd"
+      "691665137":
+        name: "plugin-FundaCAD.Organic.zip"
+        size: 72455
+        sha256pre: "c338076dc2c8ebe8"
+      "691665138":
+        name: "plugin-FundaCAD.PrintLook.zip"
+        size: 4205
+        sha256pre: "ad8f9020ba2e6160"
+      "691665149":
+        name: "plugin-FundaCAD.PrintToolbox.zip"
+        size: 93660
+        sha256pre: "0b7a7ea7a18bc884"
+      "691665170":
+        name: "plugin-FundaCAD.Printing.zip"
+        size: 131702
+        sha256pre: "86b657d64cc56efa"
+      "691665174":
+        name: "plugin-FundaCAD.ReferenceImages.zip"
+        size: 10954
+        sha256pre: "c0801e74d0688978"
+      "691665177":
+        name: "plugin-FundaCAD.Screws.zip"
+        size: 128031
+        sha256pre: "1f102bd32d2812db"
+      "691665180":
+        name: "plugin-FundaCAD.SpaceMouse.zip"
+        size: 8476
+        sha256pre: "986bc124649d9bfc"
+      "691665190":
+        name: "plugin-FundaCAD.Texture.zip"
+        size: 326873
+        sha256pre: "dc19697e0d5ee210"
+      "691665199":
+        name: "SHA256SUMS.txt"
+        size: 2699
+        sha256pre: "d57025d8920d2c48"
+  "435637362":
+    tag: "v1.0.576"
+    title: "FundaCAD 1.0.576 beta"
+    published_at: "2026-11-05T19:31:41Z"
+    prerelease: false
+    assets:
+      "714555292":
+        name: "FundaCAD-linux-x86_64.deb"
+        size: 66153926
+        sha256pre: "d9007085daa9e3df"
+      "714555296":
+        name: "FundaCAD-linux-x86_64.rpm"
+        size: 62652399
+        sha256pre: "1fb7f750f9b959c3"
+      "714555297":
+        name: "FundaCAD-linux-x86_64.AppImage.sig"
+        size: 424
+        sha256pre: "f6441a9f19353432"
+      "714555298":
+        name: "FundaCAD-linux-x86_64.flatpak"
+        size: 46165104
+        sha256pre: "ca4740766205626b"
+      "714555300":
+        name: "FundaCAD-linux-x86_64.AppImage"
+        size: 61696504
+        sha256pre: "1ffc7bb63bb56721"
+      "714555339":
+        name: "FundaCAD-macos-arm64.app.tar.gz"
+        size: 56156112
+        sha256pre: "2dc6b28b6f59904f"
+      "714555443":
+        name: "FundaCAD-macos-arm64.app.tar.gz.sig"
+        size: 408
+        sha256pre: "793c75fc792c6111"
+      "714555466":
+        name: "FundaCAD-macos-arm64.dmg"
+        size: 56126246
+        sha256pre: "1e8fbb5d52874b95"
+      "714555474":
+        name: "FundaCAD-windows-x64-setup.exe"
+        size: 55245084
+        sha256pre: "8c49947911c1c689"
+      "714555479":
+        name: "FundaCAD-windows-x64-portable.exe"
+        size: 130433536
+        sha256pre: "d5b11b428062867f"
+      "714555502":
+        name: "FundaCAD-windows-x64-setup.exe.sig"
+        size: 420
+        sha256pre: "7f7311ac79848766"
+      "714555508":
+        name: "FundaCAD-windows-x64.msi"
+        size: 55570432
+        sha256pre: "84bf61b6370a41e3"
+      "714555526":
+        name: "FundaCAD-windows-x64.msi.sig"
+        size: 420
+        sha256pre: "f129f8cb2f638916"
+      "714555562":
+        name: "plugin-FundaCAD.ExtraParameters.zip"
+        size: 10676
+        sha256pre: "ffb4f947290a3dd6"
+      "714555617":
+        name: "plugin-FundaCAD.Gamepad.zip"
+        size: 7448
+        sha256pre: "611eaf84288fa24e"
+      "714555652":
+        name: "plugin-FundaCAD.MultiColor.zip"
+        size: 5460
+        sha256pre: "45fafd4c9e098e15"
+      "714555686":
+        name: "plugin-FundaCAD.Navigation.zip"
+        size: 7699
+        sha256pre: "eb2131f5ab052e94"
+      "714555690":
+        name: "plugin-FundaCAD.Onshape.zip"
+        size: 8965
+        sha256pre: "c131b8f45f9c4ccd"
+      "714555693":
+        name: "plugin-FundaCAD.Organic.zip"
+        size: 72479
+        sha256pre: "d2a3d496b945d5ef"
+      "714555723":
+        name: "plugin-FundaCAD.PrintLook.zip"
+        size: 4205
+        sha256pre: "ad8f9020ba2e6160"
+      "714555729":
+        name: "plugin-FundaCAD.PrintToolbox.zip"
+        size: 94768
+        sha256pre: "95541c03db719715"
+      "714555734":
+        name: "plugin-FundaCAD.Printing.zip"
+        size: 131722
+        sha256pre: "3ddb2a842fab7407"
+      "714555742":
+        name: "plugin-FundaCAD.ReferenceImages.zip"
+        size: 10970
+        sha256pre: "a317981b1f6b28d5"
+      "714555764":
+        name: "plugin-FundaCAD.Screws.zip"
+        size: 129481
+        sha256pre: "42654b6bdd743220"
+      "714555765":
+        name: "plugin-FundaCAD.SpaceMouse.zip"
+        size: 8620
+        sha256pre: "ddf6c66c2fb985dc"
+      "714555770":
+        name: "plugin-FundaCAD.Texture.zip"
+        size: 326882
+        sha256pre: "f0d79a7e7bd4dd3d"
+      "714555791":
+        name: "SHA256SUMS.txt"
+        size: 2507
+        sha256pre: "bd35027ca0ad37de"
+  "448152189":
+    tag: "v1.0.675"
+    title: "FundaCAD 1.0.675 beta"
+    published_at: "2026-11-17T04:50:56Z"
+    prerelease: false
+    assets:
+      "757678376":
+        name: "FundaCAD-linux-x86_64.flatpak"
+        size: 46588944
+        sha256pre: "6050030f5fae6e84"
+      "757678377":
+        name: "FundaCAD-linux-x86_64.AppImage"
+        size: 62126584
+        sha256pre: "61b5f203fc41a3ce"
+      "757678382":
+        name: "FundaCAD-linux-x86_64.rpm"
+        size: 63098180
+        sha256pre: "22be7ff44166becf"
+      "757678383":
+        name: "FundaCAD-linux-x86_64.AppImage.sig"
+        size: 424
+        sha256pre: "98266f2b9b829a71"
+      "757678389":
+        name: "FundaCAD-linux-x86_64.deb"
+        size: 66572384
+        sha256pre: "3daafd481d3fe792"
+      "757678425":
+        name: "FundaCAD-macos-arm64.app.tar.gz"
+        size: 56605397
+        sha256pre: "360cb25f29a56bd5"
+      "757678466":
+        name: "FundaCAD-macos-arm64.app.tar.gz.sig"
+        size: 408
+        sha256pre: "c3a7a28f06c46cca"
+      "757678492":
+        name: "FundaCAD-macos-arm64.dmg"
+        size: 56598989
+        sha256pre: "e9d40e3f5ecd5fef"
+      "757678505":
+        name: "FundaCAD-windows-x64-portable.exe"
+        size: 131347456
+        sha256pre: "8c1b23b8f7bec1db"
+      "757678519":
+        name: "FundaCAD-windows-x64-setup.exe"
+        size: 55715394
+        sha256pre: "14a54040bd6bfa9e"
+      "757678525":
+        name: "FundaCAD-windows-x64-setup.exe.sig"
+        size: 420
+        sha256pre: "27c9dfd3c682a467"
+      "757678534":
+        name: "FundaCAD-windows-x64.msi"
+        size: 56049664
+        sha256pre: "10cd6335d65ceeab"
+      "757678556":
+        name: "FundaCAD-windows-x64.msi.sig"
+        size: 420
+        sha256pre: "0202e34637de34fe"
+      "757678593":
+        name: "plugin-FundaCAD.ExtraParameters.zip"
+        size: 14719
+        sha256pre: "ec2e933d08e2458a"
+      "757678619":
+        name: "plugin-FundaCAD.Gamepad.zip"
+        size: 7748
+        sha256pre: "f65420d373069d50"
+      "757678624":
+        name: "plugin-FundaCAD.MultiColor.zip"
+        size: 6206
+        sha256pre: "d44dd561aa851385"
+      "757678654":
+        name: "plugin-FundaCAD.Navigation.zip"
+        size: 8945
+        sha256pre: "21510240b02e017e"
+      "757678694":
+        name: "plugin-FundaCAD.Onshape.zip"
+        size: 10991
+        sha256pre: "5094a512e196889f"
+      "757678704":
+        name: "plugin-FundaCAD.PrintLook.zip"
+        size: 6018
+        sha256pre: "009c9507c578724d"
+      "757678708":
+        name: "plugin-FundaCAD.Organic.zip"
+        size: 75316
+        sha256pre: "2de514bb0528a14f"
+      "757678716":
+        name: "plugin-FundaCAD.PrintToolbox.zip"
+        size: 100080
+        sha256pre: "11e1a7bcd466bc06"
+      "757678719":
+        name: "plugin-FundaCAD.Printing.zip"
+        size: 137411
+        sha256pre: "bb54021fa82e42f2"
+      "757678733":
+        name: "plugin-FundaCAD.Screws.zip"
+        size: 132674
+        sha256pre: "0ea16e8d89d8a702"
+      "757678741":
+        name: "plugin-FundaCAD.ReferenceImages.zip"
+        size: 13076
+        sha256pre: "926eeba16139c4d4"
+      "757678742":
+        name: "plugin-FundaCAD.SpaceMouse.zip"
+        size: 10837
+        sha256pre: "ad279604d73a9792"
+      "757678747":
+        name: "plugin-FundaCAD.Texture.zip"
+        size: 330606
+        sha256pre: "4abb7f232f23a71e"
+      "757678762":
+        name: "SHA256SUMS.txt"
+        size: 2507
+        sha256pre: "92cc0d1308ee4dd2"

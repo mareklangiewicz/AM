@@ -1,0 +1,664 @@
+$schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
+repository_id: 1304312541
+repository: "ghostlane-project/ghostlane"
+observed_at: "2026-11-23T22:06:26Z"
+history_complete: false
+releases:
+  "418851971":
+    tag: "v1.0.468"
+    title: "Ghostlane 1.0.468"
+    published_at: "2026-10-20T20:41:49Z"
+    prerelease: false
+    assets:
+      "660428400":
+        name: "Ghostlane-1.0.468-android-armeabi-v7a-release.apk"
+        size: 45226566
+        sha256pre: "f78d313dca4b1c71"
+      "660428498":
+        name: "Ghostlane-1.0.468-android-play.aab"
+        size: 196302255
+        sha256pre: "eaa27785b2885649"
+      "660428724":
+        name: "Ghostlane-1.0.468-android-release.apk"
+        size: 127315751
+        sha256pre: "896a134dbef42e1d"
+      "660429012":
+        name: "ghostlane-cli-1.0.468-SHA256SUMS"
+        size: 1588
+        sha256pre: "b17995391563349f"
+      "660429056":
+        name: "ghostlane-cli-1.0.468-SHA256SUMS.sig"
+        size: 64
+        sha256pre: "0799e2b5c9393d3d"
+      "660429099":
+        name: "ghostlane-cli-1.0.468-linux-amd64.apk"
+        size: 26775265
+        sha256pre: "998cc6d1fd7320c6"
+      "660429188":
+        name: "ghostlane-cli-1.0.468-linux-amd64.deb"
+        size: 25742412
+        sha256pre: "e31589ef997698b7"
+      "660429271":
+        name: "ghostlane-cli-1.0.468-linux-amd64.pkg.tar.zst"
+        size: 25290041
+        sha256pre: "843e5be69429a610"
+      "660429355":
+        name: "ghostlane-cli-1.0.468-linux-amd64.rpm"
+        size: 25683788
+        sha256pre: "8385aa12c744225d"
+      "660429432":
+        name: "ghostlane-cli-1.0.468-linux-amd64.tar.gz"
+        size: 25345338
+        sha256pre: "17997c329168c3cd"
+      "660429516":
+        name: "ghostlane-cli-1.0.468-linux-arm64.apk"
+        size: 24178811
+        sha256pre: "80693f2e37598fb5"
+      "660429645":
+        name: "ghostlane-cli-1.0.468-linux-arm64.deb"
+        size: 23359462
+        sha256pre: "f23974f45f0f7c9d"
+      "660429768":
+        name: "ghostlane-cli-1.0.468-linux-arm64.pkg.tar.zst"
+        size: 22719216
+        sha256pre: "29eadd40670aaa1c"
+      "660429909":
+        name: "ghostlane-cli-1.0.468-linux-arm64.rpm"
+        size: 23234107
+        sha256pre: "556de7c8117633d4"
+      "660430035":
+        name: "ghostlane-cli-1.0.468-linux-arm64.tar.gz"
+        size: 22788963
+        sha256pre: "82523c2859f8d726"
+      "660430111":
+        name: "ghostlane-cli-1.0.468-linux-arm7.apk"
+        size: 24812652
+        sha256pre: "7c9c20ec1fee9d27"
+      "660430168":
+        name: "ghostlane-cli-1.0.468-linux-arm7.deb"
+        size: 24011520
+        sha256pre: "a73e6d52e6583906"
+      "660430248":
+        name: "ghostlane-cli-1.0.468-linux-arm7.pkg.tar.zst"
+        size: 23204348
+        sha256pre: "be1fd2a06f32594b"
+      "660430341":
+        name: "ghostlane-cli-1.0.468-linux-arm7.rpm"
+        size: 23893568
+        sha256pre: "539a41ab7518505a"
+      "660430431":
+        name: "ghostlane-cli-1.0.468-linux-arm7.tar.gz"
+        size: 23470454
+        sha256pre: "7aec873503c48d94"
+      "660430537":
+        name: "install.sh"
+        size: 6674
+        sha256pre: "42203bf4c54de3a5"
+      "660430602":
+        name: "gate-report.json"
+        size: 31740
+        sha256pre: "ed07b8b2c2204b72"
+      "660430685":
+        name: "gate-report.md"
+        size: 6771
+        sha256pre: "92a2e2d9d1bf3b6f"
+      "660430747":
+        name: "Ghostlane-1.0.468-linux-amd64.AppImage"
+        size: 139977920
+        sha256pre: "b1ed2b1b17c7d94b"
+      "660430986":
+        name: "Ghostlane-1.0.468-macos-amd64.dmg"
+        size: 171207783
+        sha256pre: "2f52fd82bd6fee05"
+      "660431178":
+        name: "Ghostlane-1.0.468-macos-arm64.dmg"
+        size: 160437474
+        sha256pre: "a63a36fa4084cc5a"
+      "660431397":
+        name: "Ghostlane-1.0.468-windows-amd64-portable.zip"
+        size: 129611733
+        sha256pre: "83f75ad41ddb8a08"
+      "660431618":
+        name: "Ghostlane-1.0.468-windows-amd64.exe"
+        size: 131575808
+        sha256pre: "136c4c226d4a5b46"
+      "660431758":
+        name: "Ghostlane-1.0.468-windows-amd64.msi"
+        size: 130979811
+        sha256pre: "34ed3e57e52c1d89"
+      "660431904":
+        name: "SHA256SUMS.txt"
+        size: 2972
+        sha256pre: "dc5c697ea3c6d527"
+  "418853295":
+    tag: "nightly"
+    title: "Nightly Ghostlane builds"
+    published_at: "2026-10-20T20:43:27Z"
+    prerelease: true
+    observed_at: "2026-11-10T18:06:55Z"
+    assets:
+      "660432263":
+        name: "Ghostlane-1.0.468-android-armeabi-v7a-release.apk"
+        size: 45226566
+        sha256pre: "f78d313dca4b1c71"
+      "660432353":
+        name: "Ghostlane-1.0.468-android-play.aab"
+        size: 196302255
+        sha256pre: "eaa27785b2885649"
+      "660432595":
+        name: "Ghostlane-1.0.468-android-release.apk"
+        size: 127315751
+        sha256pre: "896a134dbef42e1d"
+      "660432789":
+        name: "ghostlane-cli-1.0.468-SHA256SUMS"
+        size: 1588
+        sha256pre: "b17995391563349f"
+      "660432834":
+        name: "ghostlane-cli-1.0.468-SHA256SUMS.sig"
+        size: 64
+        sha256pre: "0799e2b5c9393d3d"
+      "660432872":
+        name: "ghostlane-cli-1.0.468-linux-amd64.apk"
+        size: 26775265
+        sha256pre: "998cc6d1fd7320c6"
+      "660432970":
+        name: "ghostlane-cli-1.0.468-linux-amd64.deb"
+        size: 25742412
+        sha256pre: "e31589ef997698b7"
+      "660433078":
+        name: "ghostlane-cli-1.0.468-linux-amd64.pkg.tar.zst"
+        size: 25290041
+        sha256pre: "843e5be69429a610"
+      "660433181":
+        name: "ghostlane-cli-1.0.468-linux-amd64.rpm"
+        size: 25683788
+        sha256pre: "8385aa12c744225d"
+      "660433312":
+        name: "ghostlane-cli-1.0.468-linux-amd64.tar.gz"
+        size: 25345338
+        sha256pre: "17997c329168c3cd"
+      "660433398":
+        name: "ghostlane-cli-1.0.468-linux-arm64.apk"
+        size: 24178811
+        sha256pre: "80693f2e37598fb5"
+      "660433490":
+        name: "ghostlane-cli-1.0.468-linux-arm64.deb"
+        size: 23359462
+        sha256pre: "f23974f45f0f7c9d"
+      "660433647":
+        name: "ghostlane-cli-1.0.468-linux-arm64.pkg.tar.zst"
+        size: 22719216
+        sha256pre: "29eadd40670aaa1c"
+      "660433750":
+        name: "ghostlane-cli-1.0.468-linux-arm64.rpm"
+        size: 23234107
+        sha256pre: "556de7c8117633d4"
+      "660433896":
+        name: "ghostlane-cli-1.0.468-linux-arm64.tar.gz"
+        size: 22788963
+        sha256pre: "82523c2859f8d726"
+      "660433972":
+        name: "ghostlane-cli-1.0.468-linux-arm7.apk"
+        size: 24812652
+        sha256pre: "7c9c20ec1fee9d27"
+      "660434043":
+        name: "ghostlane-cli-1.0.468-linux-arm7.deb"
+        size: 24011520
+        sha256pre: "a73e6d52e6583906"
+      "660434113":
+        name: "ghostlane-cli-1.0.468-linux-arm7.pkg.tar.zst"
+        size: 23204348
+        sha256pre: "be1fd2a06f32594b"
+      "660434190":
+        name: "ghostlane-cli-1.0.468-linux-arm7.rpm"
+        size: 23893568
+        sha256pre: "539a41ab7518505a"
+      "660434292":
+        name: "ghostlane-cli-1.0.468-linux-arm7.tar.gz"
+        size: 23470454
+        sha256pre: "7aec873503c48d94"
+      "660434433":
+        name: "install.sh"
+        size: 6674
+        sha256pre: "42203bf4c54de3a5"
+      "660434480":
+        name: "gate-report.json"
+        size: 31740
+        sha256pre: "ed07b8b2c2204b72"
+      "660434509":
+        name: "gate-report.md"
+        size: 6771
+        sha256pre: "92a2e2d9d1bf3b6f"
+      "660434532":
+        name: "Ghostlane-1.0.468-linux-amd64.AppImage"
+        size: 139977920
+        sha256pre: "b1ed2b1b17c7d94b"
+      "660434686":
+        name: "Ghostlane-1.0.468-macos-amd64.dmg"
+        size: 171207783
+        sha256pre: "2f52fd82bd6fee05"
+      "660434950":
+        name: "Ghostlane-1.0.468-macos-arm64.dmg"
+        size: 160437474
+        sha256pre: "a63a36fa4084cc5a"
+      "660435106":
+        name: "Ghostlane-1.0.468-windows-amd64-portable.zip"
+        size: 129611733
+        sha256pre: "83f75ad41ddb8a08"
+      "660435302":
+        name: "Ghostlane-1.0.468-windows-amd64.exe"
+        size: 131575808
+        sha256pre: "136c4c226d4a5b46"
+      "660435501":
+        name: "Ghostlane-1.0.468-windows-amd64.msi"
+        size: 130979811
+        sha256pre: "34ed3e57e52c1d89"
+      "660435702":
+        name: "SHA256SUMS.txt"
+        size: 2972
+        sha256pre: "dc5c697ea3c6d527"
+  "441061812":
+    tag: "ios-cores-sb1.13.14-lxv1.260711.0-rtc2d4266af3947-b37"
+    published_at: "2026-11-10T23:44:19Z"
+    prerelease: true
+    assets:
+      "733400068":
+        name: "Cores-ios.zip"
+        size: 137558527
+        sha256pre: "fbf17e71bb5b1f84"
+  "441105695":
+    tag: "v1.0.469"
+    title: "Ghostlane 1.0.469"
+    published_at: "2026-11-11T00:53:56Z"
+    prerelease: false
+    assets:
+      "733568135":
+        name: "Ghostlane-1.0.469-android-armeabi-v7a-release.apk"
+        size: 45241205
+        sha256pre: "f373aae2a49afbc6"
+      "733568208":
+        name: "Ghostlane-1.0.469-android-play.aab"
+        size: 196399766
+        sha256pre: "1a95133800e003d7"
+      "733568485":
+        name: "Ghostlane-1.0.469-android-release.apk"
+        size: 127364567
+        sha256pre: "900ffd5b13b31fb1"
+      "733568647":
+        name: "ghostlane-cli-1.0.469-SHA256SUMS"
+        size: 1588
+        sha256pre: "bad4e3d0d7cfb82f"
+      "733568671":
+        name: "ghostlane-cli-1.0.469-SHA256SUMS.sig"
+        size: 64
+        sha256pre: "ab35b182edd6a871"
+      "733568701":
+        name: "ghostlane-cli-1.0.469-linux-amd64.apk"
+        size: 26741442
+        sha256pre: "947d241bc8e5f411"
+      "733568802":
+        name: "ghostlane-cli-1.0.469-linux-amd64.deb"
+        size: 25755396
+        sha256pre: "7a152b3ccaab520c"
+      "733568912":
+        name: "ghostlane-cli-1.0.469-linux-amd64.pkg.tar.zst"
+        size: 25318489
+        sha256pre: "c9523b708629d3ce"
+      "733569029":
+        name: "ghostlane-cli-1.0.469-linux-amd64.rpm"
+        size: 25699965
+        sha256pre: "71158dd0cf21d23e"
+      "733569100":
+        name: "ghostlane-cli-1.0.469-linux-amd64.tar.gz"
+        size: 25360704
+        sha256pre: "c27c268637788b69"
+      "733569251":
+        name: "ghostlane-cli-1.0.469-linux-arm64.apk"
+        size: 24171819
+        sha256pre: "5ce35735e6bc522a"
+      "733569315":
+        name: "ghostlane-cli-1.0.469-linux-arm64.deb"
+        size: 23372182
+        sha256pre: "57d32794e1b1c14c"
+      "733569387":
+        name: "ghostlane-cli-1.0.469-linux-arm64.pkg.tar.zst"
+        size: 22724916
+        sha256pre: "3703e734b75eaaee"
+      "733569467":
+        name: "ghostlane-cli-1.0.469-linux-arm64.rpm"
+        size: 23249708
+        sha256pre: "38a5d161b7b708d7"
+      "733569538":
+        name: "ghostlane-cli-1.0.469-linux-arm64.tar.gz"
+        size: 22802219
+        sha256pre: "cf14836aebd70c10"
+      "733569612":
+        name: "ghostlane-cli-1.0.469-linux-arm7.apk"
+        size: 24851448
+        sha256pre: "0b49fa927bb0c97f"
+      "733569702":
+        name: "ghostlane-cli-1.0.469-linux-arm7.deb"
+        size: 24031938
+        sha256pre: "799659f758f2d5c7"
+      "733569789":
+        name: "ghostlane-cli-1.0.469-linux-arm7.pkg.tar.zst"
+        size: 23214123
+        sha256pre: "b2c6abb9f4c6f43a"
+      "733569822":
+        name: "ghostlane-cli-1.0.469-linux-arm7.rpm"
+        size: 23909177
+        sha256pre: "c63c08afb601515c"
+      "733569880":
+        name: "ghostlane-cli-1.0.469-linux-arm7.tar.gz"
+        size: 23487462
+        sha256pre: "45da5a32362c3790"
+      "733569947":
+        name: "install.sh"
+        size: 6674
+        sha256pre: "df464193cc4e224e"
+      "733569995":
+        name: "gate-report.json"
+        size: 31713
+        sha256pre: "c8eed7966f0dc61b"
+      "733570041":
+        name: "gate-report.md"
+        size: 6627
+        sha256pre: "32a67a2d1c267dbb"
+      "733570075":
+        name: "Ghostlane-1.0.469-linux-amd64.AppImage"
+        size: 140141760
+        sha256pre: "d5194b1616ef5471"
+      "733570295":
+        name: "Ghostlane-1.0.469-macos-amd64.dmg"
+        size: 171275501
+        sha256pre: "a849a03679a19aef"
+      "733570472":
+        name: "Ghostlane-1.0.469-macos-arm64.dmg"
+        size: 160215507
+        sha256pre: "25cd160108464f1c"
+      "733570657":
+        name: "Ghostlane-1.0.469-windows-amd64-portable.zip"
+        size: 129757829
+        sha256pre: "5ebfc1acff0fce54"
+      "733570951":
+        name: "Ghostlane-1.0.469-windows-amd64.exe"
+        size: 131719168
+        sha256pre: "ec86ad523664a6ba"
+      "733571221":
+        name: "Ghostlane-1.0.469-windows-amd64.msi"
+        size: 131123169
+        sha256pre: "2482ee433a1d4add"
+      "733571558":
+        name: "SHA256SUMS.txt"
+        size: 2972
+        sha256pre: "b0e6ec0a43f14274"
+  "441829004":
+    tag: "v1.0.471"
+    title: "Ghostlane 1.0.471"
+    published_at: "2026-11-11T14:52:13Z"
+    prerelease: false
+    assets:
+      "735867138":
+        name: "Ghostlane-1.0.471-android-armeabi-v7a-release.apk"
+        size: 45242158
+        sha256pre: "6feafbc5293237c6"
+      "735867247":
+        name: "Ghostlane-1.0.471-android-play.aab"
+        size: 196406508
+        sha256pre: "30c471bae9f1e472"
+      "735867552":
+        name: "Ghostlane-1.0.471-android-release.apk"
+        size: 127367088
+        sha256pre: "0cf0a48e30f652da"
+      "735867772":
+        name: "ghostlane-cli-1.0.471-SHA256SUMS"
+        size: 1588
+        sha256pre: "e890b6621f790f36"
+      "735867799":
+        name: "ghostlane-cli-1.0.471-SHA256SUMS.sig"
+        size: 64
+        sha256pre: "a35108d991bfce68"
+      "735867846":
+        name: "ghostlane-cli-1.0.471-linux-amd64.apk"
+        size: 26741466
+        sha256pre: "1d2441cbfdef860d"
+      "735867919":
+        name: "ghostlane-cli-1.0.471-linux-amd64.deb"
+        size: 25755396
+        sha256pre: "310d35c0606c555d"
+      "735867992":
+        name: "ghostlane-cli-1.0.471-linux-amd64.pkg.tar.zst"
+        size: 25318494
+        sha256pre: "f5570b3d09aaad99"
+      "735868068":
+        name: "ghostlane-cli-1.0.471-linux-amd64.rpm"
+        size: 25699970
+        sha256pre: "1b8eb57ac3ece418"
+      "735868149":
+        name: "ghostlane-cli-1.0.471-linux-amd64.tar.gz"
+        size: 25360622
+        sha256pre: "e0af0b9b34f5f984"
+      "735868240":
+        name: "ghostlane-cli-1.0.471-linux-arm64.apk"
+        size: 24171838
+        sha256pre: "ef98dc7be0fde011"
+      "735868308":
+        name: "ghostlane-cli-1.0.471-linux-arm64.deb"
+        size: 23372174
+        sha256pre: "e821dc06f52739fe"
+      "735868401":
+        name: "ghostlane-cli-1.0.471-linux-arm64.pkg.tar.zst"
+        size: 22724914
+        sha256pre: "a5f8b71a51214939"
+      "735868487":
+        name: "ghostlane-cli-1.0.471-linux-arm64.rpm"
+        size: 23249703
+        sha256pre: "54020afd20582f27"
+      "735868561":
+        name: "ghostlane-cli-1.0.471-linux-arm64.tar.gz"
+        size: 22802092
+        sha256pre: "6610b78aaa18b88f"
+      "735868670":
+        name: "ghostlane-cli-1.0.471-linux-arm7.apk"
+        size: 24851465
+        sha256pre: "a932c6e56650cbbe"
+      "735868736":
+        name: "ghostlane-cli-1.0.471-linux-arm7.deb"
+        size: 24031938
+        sha256pre: "c865107700a56b8b"
+      "735868819":
+        name: "ghostlane-cli-1.0.471-linux-arm7.pkg.tar.zst"
+        size: 23214127
+        sha256pre: "27c3c8097a22a8a1"
+      "735868885":
+        name: "ghostlane-cli-1.0.471-linux-arm7.rpm"
+        size: 23909177
+        sha256pre: "ee2b892720920730"
+      "735868960":
+        name: "ghostlane-cli-1.0.471-linux-arm7.tar.gz"
+        size: 23487506
+        sha256pre: "b45745cc46b68fcd"
+      "735869034":
+        name: "install.sh"
+        size: 6674
+        sha256pre: "340c7dba518ec5ea"
+      "735869086":
+        name: "gate-report.json"
+        size: 664
+        sha256pre: "eb097c4ba6de6df0"
+      "735869127":
+        name: "gate-report.md"
+        size: 517
+        sha256pre: "f18068aed781448f"
+      "735869188":
+        name: "Ghostlane-1.0.471-linux-amd64.AppImage"
+        size: 140158144
+        sha256pre: "65b0e56800c58898"
+      "735869351":
+        name: "Ghostlane-1.0.471-macos-amd64.dmg"
+        size: 171271259
+        sha256pre: "8297915dced44670"
+      "735869633":
+        name: "Ghostlane-1.0.471-macos-arm64.dmg"
+        size: 160231752
+        sha256pre: "6aa91b97038e8132"
+      "735869829":
+        name: "Ghostlane-1.0.471-windows-amd64-portable.zip"
+        size: 129772383
+        sha256pre: "8e845090bb767e45"
+      "735870080":
+        name: "Ghostlane-1.0.471-windows-amd64.exe"
+        size: 131735552
+        sha256pre: "9ede5783a73f2596"
+      "735870268":
+        name: "Ghostlane-1.0.471-windows-amd64.msi"
+        size: 131139555
+        sha256pre: "e8aff98aebf9685c"
+      "735870465":
+        name: "SHA256SUMS.txt"
+        size: 2972
+        sha256pre: "4fb1ef87cf2b4411"
+  "442157162":
+    tag: "ios-cores-sb1.13.14-lxv1.260711.0-rtc2d4266af3947-b38"
+    published_at: "2026-11-11T20:04:47Z"
+    prerelease: true
+    assets:
+      "736800673":
+        name: "Cores-ios.zip"
+        size: 137553187
+        sha256pre: "eec7512d29da2263"
+  "442241505":
+    tag: "v1.0.472"
+    title: "Ghostlane 1.0.472"
+    published_at: "2026-11-11T22:09:34Z"
+    prerelease: false
+    assets:
+      "737072498":
+        name: "Ghostlane-1.0.472-android-armeabi-v7a-release.apk"
+        size: 46979902
+        sha256pre: "a30847651e6d65e9"
+      "737072642":
+        name: "Ghostlane-1.0.472-android-play.aab"
+        size: 203344691
+        sha256pre: "b1751c6295a1e1ea"
+      "737073008":
+        name: "Ghostlane-1.0.472-android-release.apk"
+        size: 132563575
+        sha256pre: "6f1059e47c4b80da"
+      "737073226":
+        name: "ghostlane-cli-1.0.472-SHA256SUMS"
+        size: 1588
+        sha256pre: "4731f76ff7d85f1d"
+      "737073292":
+        name: "ghostlane-cli-1.0.472-SHA256SUMS.sig"
+        size: 64
+        sha256pre: "c571948fcf3ba9f6"
+      "737073394":
+        name: "ghostlane-cli-1.0.472-linux-amd64.apk"
+        size: 26760594
+        sha256pre: "3ca3b8947f6cdf5a"
+      "737073493":
+        name: "ghostlane-cli-1.0.472-linux-amd64.deb"
+        size: 25753798
+        sha256pre: "27471513c13e7bc5"
+      "737073568":
+        name: "ghostlane-cli-1.0.472-linux-amd64.pkg.tar.zst"
+        size: 25344585
+        sha256pre: "91fb20874c910718"
+      "737073708":
+        name: "ghostlane-cli-1.0.472-linux-amd64.rpm"
+        size: 25698619
+        sha256pre: "b8df7f51495b2ba1"
+      "737073804":
+        name: "ghostlane-cli-1.0.472-linux-amd64.tar.gz"
+        size: 25356645
+        sha256pre: "d39460cb4a158fb0"
+      "737073928":
+        name: "ghostlane-cli-1.0.472-linux-arm64.apk"
+        size: 24189981
+        sha256pre: "5077498036fcca69"
+      "737074027":
+        name: "ghostlane-cli-1.0.472-linux-arm64.deb"
+        size: 23369438
+        sha256pre: "96b3595fd046a571"
+      "737074112":
+        name: "ghostlane-cli-1.0.472-linux-arm64.pkg.tar.zst"
+        size: 22728267
+        sha256pre: "000ffacf1931e3ff"
+      "737074214":
+        name: "ghostlane-cli-1.0.472-linux-arm64.rpm"
+        size: 23248242
+        sha256pre: "00a584759b2e4b10"
+      "737074304":
+        name: "ghostlane-cli-1.0.472-linux-arm64.tar.gz"
+        size: 22801017
+        sha256pre: "ba21d1a3dd66b933"
+      "737074376":
+        name: "ghostlane-cli-1.0.472-linux-arm7.apk"
+        size: 24866636
+        sha256pre: "2e88a41aa352146e"
+      "737074445":
+        name: "ghostlane-cli-1.0.472-linux-arm7.deb"
+        size: 24034120
+        sha256pre: "ed6ff9a206c987b0"
+      "737074541":
+        name: "ghostlane-cli-1.0.472-linux-arm7.pkg.tar.zst"
+        size: 23277921
+        sha256pre: "851aa6e0fe1c7865"
+      "737074615":
+        name: "ghostlane-cli-1.0.472-linux-arm7.rpm"
+        size: 23910442
+        sha256pre: "e0db160119dc6921"
+      "737074690":
+        name: "ghostlane-cli-1.0.472-linux-arm7.tar.gz"
+        size: 23485320
+        sha256pre: "fe0ad7c113295511"
+      "737074765":
+        name: "install.sh"
+        size: 6674
+        sha256pre: "833be1781f1e00a0"
+      "737074807":
+        name: "gate-report.json"
+        size: 532
+        sha256pre: "d5445f5044c30acd"
+      "737074866":
+        name: "gate-report.md"
+        size: 385
+        sha256pre: "089bf76743fbed9f"
+      "737074920":
+        name: "Ghostlane-1.0.472-linux-amd64.AppImage"
+        size: 143254720
+        sha256pre: "a67e9d36491e4a41"
+      "737075157":
+        name: "Ghostlane-1.0.472-macos-amd64.dmg"
+        size: 163517095
+        sha256pre: "7a00821a23315ca4"
+      "737075419":
+        name: "Ghostlane-1.0.472-macos-arm64.dmg"
+        size: 153447484
+        sha256pre: "0631764807087e8f"
+      "737075676":
+        name: "Ghostlane-1.0.472-windows-amd64-portable.zip"
+        size: 132820567
+        sha256pre: "5f4cc2b1e5981c30"
+      "737075900":
+        name: "Ghostlane-1.0.472-windows-amd64.exe"
+        size: 134778880
+        sha256pre: "cc8c01625d062d6d"
+      "737076150":
+        name: "Ghostlane-1.0.472-windows-amd64.msi"
+        size: 134186979
+        sha256pre: "37fb18cd3363705a"
+      "737076344":
+        name: "SHA256SUMS.txt"
+        size: 2972
+        sha256pre: "d6bc5988e3f7a5b1"
+  "453052267":
+    tag: "ios-cores-sb1.13.14-lxv1.260711.0-rtc42dd44d28883-b39"
+    published_at: "2026-11-20T18:37:51Z"
+    prerelease: true
+    assets:
+      "772917226":
+        name: "Cores-ios.zip"
+        size: 137563352
+        sha256pre: "b393c87b0bb29020"

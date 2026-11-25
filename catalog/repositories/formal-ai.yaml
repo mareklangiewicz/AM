@@ -1,0 +1,2358 @@
+$schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
+repository_id: 1236510803
+repository: "link-assistant/formal-ai"
+observed_at: "2026-11-23T02:57:25Z"
+history_complete: false
+releases:
+  "433442101":
+    tag: "v0.355.30"
+    title: "[Rust] 0.355.30"
+    published_at: "2026-11-04T02:26:03Z"
+    prerelease: false
+    assets:
+      "707932119":
+        name: "slim-image-release-receipt.json"
+        size: 480
+        sha256pre: "cba66e506dcbec79"
+      "707932120":
+        name: "slim-image-release-receipt.json.sha256"
+        size: 98
+        sha256pre: "3ee61c52c65978db"
+      "707932169":
+        name: "prepared-release-executable.json"
+        size: 1477
+        sha256pre: "03c650162f71081a"
+      "707932170":
+        name: "prepared-release-build.json"
+        size: 1930
+        sha256pre: "d6b0e4ac19b82fd5"
+      "707932171":
+        name: "prepared-release-full-image.json"
+        size: 3336
+        sha256pre: "3edd3829a8ded565"
+      "707932172":
+        name: "prepared-release-dockerhub-image.json"
+        size: 6062
+        sha256pre: "134f77ed1525f8ef"
+      "707932176":
+        name: "prepared-release-source.json"
+        size: 886
+        sha256pre: "f08a58f0e496ecef"
+      "707932190":
+        name: "prepared-release-SHA256SUMS.txt"
+        size: 491
+        sha256pre: "9037cc685add4e58"
+      "708006391":
+        name: "link-assistant-formal-ai-engine-0.355.30.tgz"
+        size: 5246591
+        sha256pre: "45a88c5c2eb888bc"
+      "708006479":
+        name: "browser-publication.json"
+        size: 1208
+        sha256pre: "3c5558e73dc77023"
+      "708006541":
+        name: "formal-ai-engine-worker-0.355.30.json"
+        size: 17581
+        sha256pre: "c1537b7909e2ff8a"
+      "708006543":
+        name: "formal-ai-engine-protocol-0.355.30.json"
+        size: 2523
+        sha256pre: "9bb448a607cd6365"
+      "708007544":
+        name: "formal-ai-source-networks-12.tar.gz"
+        size: 2209960
+        sha256pre: "b2e48d2ea747ad3f"
+      "708007545":
+        name: "formal-ai-source-networks-1.tar.gz"
+        size: 2122194
+        sha256pre: "af07aa3b8399ab1b"
+      "708007546":
+        name: "formal-ai-source-networks-10.tar.gz"
+        size: 2329278
+        sha256pre: "fd2da7fa56cd7624"
+      "708007548":
+        name: "formal-ai-source-networks-0.tar.gz"
+        size: 2164408
+        sha256pre: "44a0192ebc5c6e2a"
+      "708007549":
+        name: "formal-ai-source-networks-11.tar.gz"
+        size: 2285017
+        sha256pre: "1ad81b1504e3c0da"
+      "708007577":
+        name: "formal-ai-source-networks-13.tar.gz"
+        size: 2324388
+        sha256pre: "6099f979be82b564"
+      "708007582":
+        name: "formal-ai-source-networks-14.tar.gz"
+        size: 2343291
+        sha256pre: "9e3ce3531c8e8a49"
+      "708007583":
+        name: "formal-ai-source-networks-15.tar.gz"
+        size: 2312330
+        sha256pre: "3847a1bbc5547327"
+      "708007586":
+        name: "formal-ai-source-networks-2.tar.gz"
+        size: 2144433
+        sha256pre: "c8b0b6c9caae9775"
+      "708007590":
+        name: "formal-ai-source-networks-3.tar.gz"
+        size: 2300125
+        sha256pre: "59056d09396408b9"
+      "708007595":
+        name: "formal-ai-source-networks-4.tar.gz"
+        size: 2368816
+        sha256pre: "c9408224bea0705b"
+      "708007603":
+        name: "formal-ai-source-networks-5.tar.gz"
+        size: 2329493
+        sha256pre: "27070d88ea01e7e1"
+      "708007607":
+        name: "formal-ai-source-networks-7.tar.gz"
+        size: 2324707
+        sha256pre: "2ce39e786612fbf9"
+      "708007609":
+        name: "formal-ai-source-networks-6.tar.gz"
+        size: 2325503
+        sha256pre: "724ca1ae7cf86184"
+      "708007612":
+        name: "formal-ai-source-networks-8.tar.gz"
+        size: 2277258
+        sha256pre: "e2a798032b2a75fd"
+      "708007621":
+        name: "formal-ai-source-networks-9.tar.gz"
+        size: 2269276
+        sha256pre: "f06c4ee2a33b7b9b"
+      "708012027":
+        name: "formal-ai-vscode-0.355.30.vsix"
+        size: 201088520
+        sha256pre: "a3b54eef116cdeb7"
+      "708054592":
+        name: "formal-ai-cli-aarch64-unknown-linux-musl.tar.gz"
+        size: 67938657
+        sha256pre: "827de37c9e26e6b0"
+      "708054929":
+        name: "formal-ai-cli-x86_64-unknown-linux-musl.tar.gz"
+        size: 66741546
+        sha256pre: "7d06c3082e60b1fb"
+      "708055692":
+        name: "formal-ai-cli-aarch64-apple-darwin.tar.gz"
+        size: 69655506
+        sha256pre: "45423cb8a3bf1a75"
+      "708057009":
+        name: "formal-ai-cli-x86_64-pc-windows-msvc.zip"
+        size: 69365871
+        sha256pre: "032b6882948e4e43"
+      "708061974":
+        name: "formal-ai-cli-x86_64-apple-darwin.tar.gz"
+        size: 65950223
+        sha256pre: "82fac5c37d55c8c7"
+      "708066137":
+        name: "formal-ai-desktop-macos-arm64-0.355.30.dmg"
+        size: 429124698
+        sha256pre: "628bf722e6f0aaf3"
+      "708066139":
+        name: "formal-ai-desktop-macos-arm64-0.355.30.dmg.blockmap"
+        size: 449674
+        sha256pre: "086b22bb44ebd896"
+      "708066140":
+        name: "formal-ai-desktop-macos-arm64-0.355.30.zip"
+        size: 416838226
+        sha256pre: "23facd67f43d5796"
+      "708066141":
+        name: "formal-ai-desktop-macos-arm64-0.355.30.zip.blockmap"
+        size: 434036
+        sha256pre: "2d0704e62dec70bd"
+      "708074643":
+        name: "formal-ai-desktop-linux-arm64-0.355.30.AppImage"
+        size: 434084410
+        sha256pre: "41feb9fb7ae17263"
+      "708074646":
+        name: "formal-ai-desktop-linux-arm64-0.355.30.tar.gz"
+        size: 413836676
+        sha256pre: "93ae33a350c2c02a"
+      "708074647":
+        name: "formal-ai-desktop-linux-arm64-0.355.30.deb"
+        size: 326713584
+        sha256pre: "3521032dfc2b0c91"
+      "708076875":
+        name: "formal-ai-desktop-linux-x64-0.355.30.AppImage"
+        size: 430162085
+        sha256pre: "521922c7a3580353"
+      "708076879":
+        name: "formal-ai-desktop-linux-x64-0.355.30.deb"
+        size: 342904664
+        sha256pre: "056fe91e009db0b3"
+      "708076883":
+        name: "formal-ai-desktop-linux-x64-0.355.30.tar.gz"
+        size: 410899510
+        sha256pre: "32a5788a1bd0d0f9"
+      "708076886":
+        name: "latest-linux.yml"
+        size: 586
+        sha256pre: "0aba9ee3e8b04236"
+      "708080670":
+        name: "formal-ai-desktop-windows-installer-arm64-0.355.30.exe"
+        size: 363821394
+        sha256pre: "cfc8bc60971616f4"
+      "708080671":
+        name: "formal-ai-desktop-windows-installer-arm64-0.355.30.exe.blockmap"
+        size: 378729
+        sha256pre: "8a08996a1fbe033b"
+      "708080673":
+        name: "formal-ai-desktop-windows-portable-arm64-0.355.30.exe"
+        size: 363654407
+        sha256pre: "ada4c9ec8febed25"
+      "708086031":
+        name: "formal-ai-desktop-windows-portable-x64-0.355.30.exe"
+        size: 421374779
+        sha256pre: "ca89d74460774129"
+      "708086032":
+        name: "formal-ai-desktop-windows-installer-x64-0.355.30.exe.blockmap"
+        size: 437860
+        sha256pre: "a982c872005301e6"
+      "708086033":
+        name: "formal-ai-desktop-windows-installer-x64-0.355.30.exe"
+        size: 421542185
+        sha256pre: "f4393fba3c8ef553"
+      "708086047":
+        name: "latest.yml"
+        size: 404
+        sha256pre: "fd061c41897871c5"
+      "708086771":
+        name: "formal-ai-desktop-macos-x64-0.355.30.zip.blockmap"
+        size: 448204
+        sha256pre: "8a56ebdea2c6dbc9"
+      "708086773":
+        name: "formal-ai-desktop-macos-x64-0.355.30.zip"
+        size: 429322460
+        sha256pre: "59025ff44031bb32"
+      "708086774":
+        name: "formal-ai-desktop-macos-x64-0.355.30.dmg"
+        size: 441601331
+        sha256pre: "11bfbf51269d5683"
+      "708086775":
+        name: "formal-ai-desktop-macos-x64-0.355.30.dmg.blockmap"
+        size: 462795
+        sha256pre: "12ddcea548c488d8"
+      "708086780":
+        name: "latest-mac.yml"
+        size: 551
+        sha256pre: "66d20e563f474dbd"
+      "708091287":
+        name: "formal-ai-native-aarch64-pc-windows-msvc-0.355.30.json"
+        size: 1466
+        sha256pre: "74913112baa399f4"
+      "708091290":
+        name: "SHA256SUMS.txt"
+        size: 5200
+        sha256pre: "d92e9e8bfa84d9a3"
+      "708091292":
+        name: "formal-ai-native-aarch64-apple-darwin-0.355.30.json"
+        size: 1488
+        sha256pre: "083817c81947550f"
+      "708091293":
+        name: "formal-ai-advertisement-0.355.30.json"
+        size: 19481
+        sha256pre: "9639d294431e5491"
+      "708091296":
+        name: "BUILD-PROVENANCE.txt"
+        size: 6578
+        sha256pre: "a48868653b91441d"
+      "708091319":
+        name: "formal-ai-native-aarch64-unknown-linux-musl-0.355.30.json"
+        size: 1740
+        sha256pre: "7c0ca4b3e5374009"
+      "708091320":
+        name: "formal-ai-native-protocol-0.355.30.json"
+        size: 1113
+        sha256pre: "de7be2fb40646896"
+      "708091321":
+        name: "formal-ai-native-aarch64-unknown-linux-gnu-0.355.30.json"
+        size: 1502
+        sha256pre: "1d630d5d842af7a8"
+      "708091324":
+        name: "formal-ai-native-source-0.355.30.json"
+        size: 848
+        sha256pre: "2417b68c7decce24"
+      "708091330":
+        name: "formal-ai-native-x86_64-apple-darwin-0.355.30.json"
+        size: 1449
+        sha256pre: "ca78015489ef58b5"
+      "708091346":
+        name: "formal-ai-native-x86_64-pc-windows-msvc-0.355.30.json"
+        size: 1461
+        sha256pre: "bfff455315655c53"
+      "708091352":
+        name: "formal-ai-native-x86_64-unknown-linux-gnu-0.355.30.json"
+        size: 1497
+        sha256pre: "56f7f1db4b5246d0"
+      "708091355":
+        name: "formal-ai-signing-macos-arm64-0.355.30.json"
+        size: 19011
+        sha256pre: "64239f181d4568a0"
+      "708091358":
+        name: "formal-ai-signing-macos-x64-0.355.30.json"
+        size: 18937
+        sha256pre: "374977562accbb02"
+      "708091360":
+        name: "formal-ai-native-x86_64-unknown-linux-musl-0.355.30.json"
+        size: 1729
+        sha256pre: "e7a0e3ba251ebfd0"
+      "708091399":
+        name: "formal-ai-wasm-0.355.30.json"
+        size: 17587
+        sha256pre: "c1de92e2877aec67"
+      "708091401":
+        name: "formal-ai-worker-0.355.30.wasm"
+        size: 310265
+        sha256pre: "4d5d3fd068841699"
+  "433585922":
+    tag: "v0.355.31"
+    title: "[Rust] 0.355.31"
+    published_at: "2026-11-04T06:33:32Z"
+    prerelease: false
+    assets:
+      "708503980":
+        name: "slim-image-release-receipt.json"
+        size: 480
+        sha256pre: "79d144637b35e6e4"
+      "708503983":
+        name: "slim-image-release-receipt.json.sha256"
+        size: 98
+        sha256pre: "692fb7f7fd2f25cb"
+      "708504052":
+        name: "prepared-release-source.json"
+        size: 886
+        sha256pre: "5d1fd7c586ee5ff7"
+      "708504053":
+        name: "prepared-release-dockerhub-image.json"
+        size: 6062
+        sha256pre: "93ac824d5a3293e4"
+      "708504055":
+        name: "prepared-release-full-image.json"
+        size: 3336
+        sha256pre: "b92ecd2389c5df50"
+      "708504056":
+        name: "prepared-release-build.json"
+        size: 1930
+        sha256pre: "81c04efd0868707f"
+      "708504057":
+        name: "prepared-release-executable.json"
+        size: 1477
+        sha256pre: "b364fbec910851d7"
+      "708504084":
+        name: "prepared-release-SHA256SUMS.txt"
+        size: 491
+        sha256pre: "69472d4bb807192a"
+      "708601010":
+        name: "link-assistant-formal-ai-engine-0.355.31.tgz"
+        size: 5246592
+        sha256pre: "de126c77b14d278d"
+      "708601118":
+        name: "browser-publication.json"
+        size: 1208
+        sha256pre: "80dba0fc477b1fe5"
+      "708601153":
+        name: "formal-ai-engine-worker-0.355.31.json"
+        size: 17581
+        sha256pre: "25c9d82d0e5ad861"
+      "708601154":
+        name: "formal-ai-engine-protocol-0.355.31.json"
+        size: 2523
+        sha256pre: "ab7aadd3895da9ff"
+      "708604193":
+        name: "formal-ai-source-networks-11.tar.gz"
+        size: 2247698
+        sha256pre: "bd86e309166ff53b"
+      "708604195":
+        name: "formal-ai-source-networks-0.tar.gz"
+        size: 2197110
+        sha256pre: "53729f42257f1712"
+      "708604196":
+        name: "formal-ai-source-networks-12.tar.gz"
+        size: 2207547
+        sha256pre: "12195b67c4ad9c87"
+      "708604197":
+        name: "formal-ai-source-networks-10.tar.gz"
+        size: 2306732
+        sha256pre: "452e0ae44fd05d3e"
+      "708604199":
+        name: "formal-ai-source-networks-1.tar.gz"
+        size: 2116456
+        sha256pre: "4e9343afd9b73853"
+      "708604243":
+        name: "formal-ai-source-networks-14.tar.gz"
+        size: 2336873
+        sha256pre: "81d2e2cffbb4e91a"
+      "708604244":
+        name: "formal-ai-source-networks-15.tar.gz"
+        size: 2323103
+        sha256pre: "ecb3e9556564a046"
+      "708604245":
+        name: "formal-ai-source-networks-13.tar.gz"
+        size: 2337997
+        sha256pre: "0599a946eb19a1f2"
+      "708604247":
+        name: "formal-ai-source-networks-2.tar.gz"
+        size: 2102577
+        sha256pre: "d9bf2027fd194a38"
+      "708604251":
+        name: "formal-ai-source-networks-3.tar.gz"
+        size: 2317653
+        sha256pre: "6fe1dc9fc24c2a12"
+      "708604286":
+        name: "formal-ai-source-networks-4.tar.gz"
+        size: 2341626
+        sha256pre: "05a09d007a439be1"
+      "708604294":
+        name: "formal-ai-source-networks-5.tar.gz"
+        size: 2322953
+        sha256pre: "d941d0ce960cfc22"
+      "708604295":
+        name: "formal-ai-source-networks-6.tar.gz"
+        size: 2373446
+        sha256pre: "08f28952fd944fc8"
+      "708604301":
+        name: "formal-ai-source-networks-7.tar.gz"
+        size: 2349470
+        sha256pre: "a7078ce8a3350317"
+      "708604331":
+        name: "formal-ai-source-networks-8.tar.gz"
+        size: 2277672
+        sha256pre: "81dad18f5ac90ebf"
+      "708604333":
+        name: "formal-ai-source-networks-9.tar.gz"
+        size: 2278427
+        sha256pre: "58b5c7f603c561de"
+      "708608069":
+        name: "formal-ai-vscode-0.355.31.vsix"
+        size: 201088528
+        sha256pre: "1d7249852004df21"
+      "708650993":
+        name: "formal-ai-cli-aarch64-unknown-linux-musl.tar.gz"
+        size: 67936002
+        sha256pre: "ef2710301c36702c"
+      "708651730":
+        name: "formal-ai-cli-aarch64-apple-darwin.tar.gz"
+        size: 69649875
+        sha256pre: "e51ba4b582ed64f5"
+      "708652618":
+        name: "formal-ai-cli-x86_64-pc-windows-msvc.zip"
+        size: 69365666
+        sha256pre: "bd6267d9126928a2"
+      "708656760":
+        name: "formal-ai-cli-x86_64-unknown-linux-musl.tar.gz"
+        size: 66732776
+        sha256pre: "0a1a2cb6ee9c297d"
+      "708657861":
+        name: "formal-ai-cli-x86_64-apple-darwin.tar.gz"
+        size: 65949635
+        sha256pre: "9db988863b59a152"
+      "708663709":
+        name: "formal-ai-desktop-macos-arm64-0.355.31.zip.blockmap"
+        size: 435416
+        sha256pre: "d0528757d8a8668c"
+      "708663712":
+        name: "formal-ai-desktop-macos-arm64-0.355.31.zip"
+        size: 416832355
+        sha256pre: "dc861fcc947d0392"
+      "708663713":
+        name: "formal-ai-desktop-macos-arm64-0.355.31.dmg"
+        size: 429118815
+        sha256pre: "2c42f61f0327b017"
+      "708663716":
+        name: "formal-ai-desktop-macos-arm64-0.355.31.dmg.blockmap"
+        size: 448585
+        sha256pre: "b6e3d62f8082c601"
+      "708675867":
+        name: "formal-ai-desktop-linux-arm64-0.355.31.AppImage"
+        size: 434082051
+        sha256pre: "fb53da501175ff3d"
+      "708675869":
+        name: "formal-ai-desktop-linux-arm64-0.355.31.tar.gz"
+        size: 413846708
+        sha256pre: "301a50f2f581b2ac"
+      "708675876":
+        name: "formal-ai-desktop-linux-arm64-0.355.31.deb"
+        size: 326722424
+        sha256pre: "a1c7b85e15e5ee13"
+      "708683143":
+        name: "formal-ai-desktop-linux-x64-0.355.31.deb"
+        size: 343279692
+        sha256pre: "04a2e51a559290bc"
+      "708683144":
+        name: "latest-linux.yml"
+        size: 586
+        sha256pre: "98fb0867992d50ae"
+      "708683147":
+        name: "formal-ai-desktop-linux-x64-0.355.31.tar.gz"
+        size: 410900589
+        sha256pre: "9ed524bcd8f9dc60"
+      "708683148":
+        name: "formal-ai-desktop-linux-x64-0.355.31.AppImage"
+        size: 430172077
+        sha256pre: "8e9aecd95097de83"
+      "708684538":
+        name: "formal-ai-desktop-windows-installer-arm64-0.355.31.exe.blockmap"
+        size: 378466
+        sha256pre: "ff7db993d3eda014"
+      "708684539":
+        name: "formal-ai-desktop-windows-portable-arm64-0.355.31.exe"
+        size: 363655952
+        sha256pre: "ff85e696dcff686e"
+      "708684541":
+        name: "formal-ai-desktop-windows-installer-arm64-0.355.31.exe"
+        size: 363822941
+        sha256pre: "037bffe641956dfe"
+      "708684631":
+        name: "formal-ai-desktop-macos-x64-0.355.31.zip.blockmap"
+        size: 448710
+        sha256pre: "62e2469001eb79e5"
+      "708684632":
+        name: "formal-ai-desktop-macos-x64-0.355.31.zip"
+        size: 429323661
+        sha256pre: "9b836de4de784850"
+      "708684634":
+        name: "formal-ai-desktop-macos-x64-0.355.31.dmg.blockmap"
+        size: 461847
+        sha256pre: "a45a0fc24bbd26b0"
+      "708684635":
+        name: "formal-ai-desktop-macos-x64-0.355.31.dmg"
+        size: 441600700
+        sha256pre: "ab08ba009d78d2c9"
+      "708684650":
+        name: "latest-mac.yml"
+        size: 551
+        sha256pre: "9590dab5736fee8c"
+      "708685840":
+        name: "formal-ai-desktop-windows-portable-x64-0.355.31.exe"
+        size: 421363545
+        sha256pre: "c72714c94b360eea"
+      "708685841":
+        name: "formal-ai-desktop-windows-installer-x64-0.355.31.exe"
+        size: 421530952
+        sha256pre: "b5e12c58bffb1a75"
+      "708685845":
+        name: "formal-ai-desktop-windows-installer-x64-0.355.31.exe.blockmap"
+        size: 438742
+        sha256pre: "05f0d7a906209760"
+      "708685853":
+        name: "latest.yml"
+        size: 404
+        sha256pre: "e7ce0b627c8e02ed"
+      "708691374":
+        name: "formal-ai-native-aarch64-apple-darwin-0.355.31.json"
+        size: 1488
+        sha256pre: "96207d29927308ff"
+      "708691375":
+        name: "SHA256SUMS.txt"
+        size: 5200
+        sha256pre: "46883d88074442a3"
+      "708691376":
+        name: "BUILD-PROVENANCE.txt"
+        size: 6578
+        sha256pre: "8b4b48b380cf8be5"
+      "708691379":
+        name: "formal-ai-advertisement-0.355.31.json"
+        size: 19481
+        sha256pre: "503a1c9e25154ced"
+      "708691380":
+        name: "formal-ai-native-aarch64-pc-windows-msvc-0.355.31.json"
+        size: 1466
+        sha256pre: "f3070b142914a20b"
+      "708691408":
+        name: "formal-ai-native-protocol-0.355.31.json"
+        size: 1113
+        sha256pre: "26d0e4de6683427e"
+      "708691409":
+        name: "formal-ai-native-aarch64-unknown-linux-gnu-0.355.31.json"
+        size: 1502
+        sha256pre: "626aa4c2fb76b4de"
+      "708691410":
+        name: "formal-ai-native-aarch64-unknown-linux-musl-0.355.31.json"
+        size: 1740
+        sha256pre: "b521e0f9efd6384c"
+      "708691423":
+        name: "formal-ai-native-source-0.355.31.json"
+        size: 848
+        sha256pre: "07c64b59043736eb"
+      "708691425":
+        name: "formal-ai-native-x86_64-apple-darwin-0.355.31.json"
+        size: 1449
+        sha256pre: "ea3cdb2306a3c77d"
+      "708691441":
+        name: "formal-ai-native-x86_64-pc-windows-msvc-0.355.31.json"
+        size: 1461
+        sha256pre: "cb2169537b45183d"
+      "708691444":
+        name: "formal-ai-native-x86_64-unknown-linux-gnu-0.355.31.json"
+        size: 1497
+        sha256pre: "4484a404fd6b9b9e"
+      "708691450":
+        name: "formal-ai-native-x86_64-unknown-linux-musl-0.355.31.json"
+        size: 1729
+        sha256pre: "2d773acd0e3a24c1"
+      "708691455":
+        name: "formal-ai-signing-macos-arm64-0.355.31.json"
+        size: 19011
+        sha256pre: "27602de387186238"
+      "708691468":
+        name: "formal-ai-signing-macos-x64-0.355.31.json"
+        size: 18937
+        sha256pre: "96ffd26d016393f4"
+      "708691475":
+        name: "formal-ai-wasm-0.355.31.json"
+        size: 17587
+        sha256pre: "5e54c0ae57171aca"
+      "708691481":
+        name: "formal-ai-worker-0.355.31.wasm"
+        size: 310265
+        sha256pre: "4d5d3fd068841699"
+  "434035695":
+    tag: "v0.355.32"
+    title: "[Rust] 0.355.32"
+    published_at: "2026-11-04T14:30:20Z"
+    prerelease: false
+    assets:
+      "709801749":
+        name: "slim-image-release-receipt.json"
+        size: 480
+        sha256pre: "1b7291987c2dc1fb"
+      "709801750":
+        name: "slim-image-release-receipt.json.sha256"
+        size: 98
+        sha256pre: "8d4dfc33d50a331e"
+      "709801803":
+        name: "prepared-release-full-image.json"
+        size: 3336
+        sha256pre: "06a257357e121704"
+      "709801805":
+        name: "prepared-release-dockerhub-image.json"
+        size: 6028
+        sha256pre: "19284aabb7399de4"
+      "709801808":
+        name: "prepared-release-build.json"
+        size: 1930
+        sha256pre: "33a6200b2d7d3fce"
+      "709801809":
+        name: "prepared-release-source.json"
+        size: 886
+        sha256pre: "dff9efa32217a8ce"
+      "709801813":
+        name: "prepared-release-executable.json"
+        size: 1477
+        sha256pre: "76f41c170edabaa5"
+      "709801853":
+        name: "prepared-release-SHA256SUMS.txt"
+        size: 491
+        sha256pre: "bd7e928b42aaf5af"
+      "709897772":
+        name: "link-assistant-formal-ai-engine-0.355.32.tgz"
+        size: 5253745
+        sha256pre: "3b6c8605eb77ca4b"
+      "709897966":
+        name: "browser-publication.json"
+        size: 1208
+        sha256pre: "ef1f3b47ebeeb9fd"
+      "709898035":
+        name: "formal-ai-engine-protocol-0.355.32.json"
+        size: 2523
+        sha256pre: "11f64557dc78c1e5"
+      "709898038":
+        name: "formal-ai-engine-worker-0.355.32.json"
+        size: 17581
+        sha256pre: "67859d71c2d2b426"
+      "709901329":
+        name: "formal-ai-source-networks-10.tar.gz"
+        size: 2301803
+        sha256pre: "778509ff9976bf1c"
+      "709901335":
+        name: "formal-ai-source-networks-12.tar.gz"
+        size: 2248167
+        sha256pre: "f45242d1b4b4ceb0"
+      "709901336":
+        name: "formal-ai-source-networks-11.tar.gz"
+        size: 2268924
+        sha256pre: "e1624424bd4143b4"
+      "709901337":
+        name: "formal-ai-source-networks-0.tar.gz"
+        size: 2189759
+        sha256pre: "d828b294d299e477"
+      "709901338":
+        name: "formal-ai-source-networks-1.tar.gz"
+        size: 2136184
+        sha256pre: "99e136eeef3a951c"
+      "709901365":
+        name: "formal-ai-source-networks-13.tar.gz"
+        size: 2356915
+        sha256pre: "be4acf27e786e4c0"
+      "709901368":
+        name: "formal-ai-source-networks-14.tar.gz"
+        size: 2299587
+        sha256pre: "c7221fae42d267fc"
+      "709901372":
+        name: "formal-ai-source-networks-15.tar.gz"
+        size: 2365404
+        sha256pre: "88a2db83dc2b3bcc"
+      "709901379":
+        name: "formal-ai-source-networks-2.tar.gz"
+        size: 2168479
+        sha256pre: "0b155104210d2619"
+      "709901384":
+        name: "formal-ai-source-networks-3.tar.gz"
+        size: 2336190
+        sha256pre: "14f29f66ac086cc8"
+      "709901415":
+        name: "formal-ai-source-networks-4.tar.gz"
+        size: 2313515
+        sha256pre: "3219cb792ab41c1c"
+      "709901417":
+        name: "formal-ai-source-networks-5.tar.gz"
+        size: 2361951
+        sha256pre: "4189aa45a4ced9a8"
+      "709901422":
+        name: "formal-ai-source-networks-6.tar.gz"
+        size: 2328444
+        sha256pre: "899afe891d80da2b"
+      "709901424":
+        name: "formal-ai-source-networks-7.tar.gz"
+        size: 2293793
+        sha256pre: "668fc0b0d6adb064"
+      "709901445":
+        name: "formal-ai-source-networks-8.tar.gz"
+        size: 2333345
+        sha256pre: "29c6c18eac91b8be"
+      "709901453":
+        name: "formal-ai-source-networks-9.tar.gz"
+        size: 2255466
+        sha256pre: "51df7192043e3cf4"
+      "709906327":
+        name: "formal-ai-vscode-0.355.32.vsix"
+        size: 201095670
+        sha256pre: "feae20aca7be4739"
+      "709948045":
+        name: "formal-ai-cli-aarch64-unknown-linux-musl.tar.gz"
+        size: 65034780
+        sha256pre: "f7f1ee624bb3fba3"
+      "709949672":
+        name: "formal-ai-cli-x86_64-unknown-linux-musl.tar.gz"
+        size: 66745119
+        sha256pre: "4ddca645913c24e0"
+      "709951151":
+        name: "formal-ai-cli-x86_64-pc-windows-msvc.zip"
+        size: 69389972
+        sha256pre: "5eb09c23b570f3a3"
+      "709973452":
+        name: "formal-ai-desktop-linux-arm64-0.355.32.deb"
+        size: 324225580
+        sha256pre: "6f422ec0d7e04630"
+      "709973456":
+        name: "formal-ai-desktop-linux-arm64-0.355.32.AppImage"
+        size: 431099657
+        sha256pre: "72a721d77f32e9a2"
+      "709973458":
+        name: "formal-ai-desktop-linux-arm64-0.355.32.tar.gz"
+        size: 411074975
+        sha256pre: "132b4d8c8416d36e"
+      "709974353":
+        name: "formal-ai-desktop-windows-portable-x64-0.355.32.exe"
+        size: 421395176
+        sha256pre: "b3aa64e39e869c20"
+      "709974356":
+        name: "formal-ai-desktop-windows-installer-x64-0.355.32.exe"
+        size: 421562580
+        sha256pre: "2f90481c85862a7c"
+      "709974359":
+        name: "formal-ai-desktop-windows-installer-x64-0.355.32.exe.blockmap"
+        size: 439524
+        sha256pre: "7cd14f4301878a69"
+      "709976228":
+        name: "formal-ai-desktop-linux-x64-0.355.32.tar.gz"
+        size: 410917988
+        sha256pre: "a4fa7e801bdef578"
+      "709976233":
+        name: "formal-ai-desktop-linux-x64-0.355.32.deb"
+        size: 343329104
+        sha256pre: "567c155b91b2833a"
+      "709976239":
+        name: "formal-ai-desktop-linux-x64-0.355.32.AppImage"
+        size: 430229879
+        sha256pre: "a8ec2ab8f78431b0"
+      "709976243":
+        name: "latest-linux.yml"
+        size: 586
+        sha256pre: "f55e21f9a6e6e913"
+      "709980625":
+        name: "formal-ai-desktop-windows-installer-arm64-0.355.32.exe.blockmap"
+        size: 376897
+        sha256pre: "505777b52660774f"
+      "709980626":
+        name: "formal-ai-desktop-windows-installer-arm64-0.355.32.exe"
+        size: 361560444
+        sha256pre: "6349743fca120637"
+      "709980634":
+        name: "formal-ai-desktop-windows-portable-arm64-0.355.32.exe"
+        size: 361393455
+        sha256pre: "d76b24e2ca0fdf43"
+      "709980684":
+        name: "latest.yml"
+        size: 408
+        sha256pre: "23fcadb118d5b295"
+      "709992881":
+        name: "formal-ai-native-aarch64-pc-windows-msvc-0.355.32.json"
+        size: 1466
+        sha256pre: "e924ce34178a7af3"
+      "709992886":
+        name: "formal-ai-advertisement-0.355.32.json"
+        size: 19481
+        sha256pre: "02134270158384fc"
+      "709992888":
+        name: "SHA256SUMS.txt"
+        size: 3551
+        sha256pre: "8c4321a04dd4edc3"
+      "709992896":
+        name: "BUILD-PROVENANCE.txt"
+        size: 5049
+        sha256pre: "75f78590a82c5ce5"
+      "709992901":
+        name: "formal-ai-native-aarch64-unknown-linux-gnu-0.355.32.json"
+        size: 1502
+        sha256pre: "aa4601c8a5729e38"
+      "709992945":
+        name: "formal-ai-native-aarch64-unknown-linux-musl-0.355.32.json"
+        size: 1740
+        sha256pre: "7076ebed4fe092c0"
+      "709992947":
+        name: "formal-ai-native-protocol-0.355.32.json"
+        size: 1113
+        sha256pre: "f2803d0aa2d52ad2"
+      "709992950":
+        name: "formal-ai-native-source-0.355.32.json"
+        size: 848
+        sha256pre: "4d2aab2abf515d5e"
+      "709992953":
+        name: "formal-ai-native-x86_64-pc-windows-msvc-0.355.32.json"
+        size: 1461
+        sha256pre: "6bc13cdd4947779f"
+      "709992955":
+        name: "formal-ai-native-x86_64-unknown-linux-gnu-0.355.32.json"
+        size: 1497
+        sha256pre: "9bbe4d2e809606d1"
+      "709992984":
+        name: "formal-ai-native-x86_64-unknown-linux-musl-0.355.32.json"
+        size: 1729
+        sha256pre: "840fffc20c0adc1b"
+      "709992987":
+        name: "formal-ai-worker-0.355.32.wasm"
+        size: 310265
+        sha256pre: "4d5d3fd068841699"
+      "709992988":
+        name: "formal-ai-wasm-0.355.32.json"
+        size: 17587
+        sha256pre: "e6112ea3107b83c8"
+  "434357368":
+    tag: "v0.355.33"
+    title: "[Rust] 0.355.33"
+    published_at: "2026-11-04T19:30:15Z"
+    prerelease: false
+    assets:
+      "710656148":
+        name: "slim-image-release-receipt.json"
+        size: 480
+        sha256pre: "93c392eaa6b7c97d"
+      "710656149":
+        name: "slim-image-release-receipt.json.sha256"
+        size: 98
+        sha256pre: "3a97514ef3728e23"
+      "710656216":
+        name: "prepared-release-executable.json"
+        size: 1477
+        sha256pre: "58e8ab7f604d27a3"
+      "710656217":
+        name: "prepared-release-full-image.json"
+        size: 3302
+        sha256pre: "64903c6ecb137603"
+      "710656218":
+        name: "prepared-release-source.json"
+        size: 886
+        sha256pre: "c39afad6c055dcde"
+      "710656219":
+        name: "prepared-release-build.json"
+        size: 1930
+        sha256pre: "7c9b99f47bd5e5fc"
+      "710656220":
+        name: "prepared-release-dockerhub-image.json"
+        size: 6062
+        sha256pre: "944db8e97bd9e4a9"
+      "710656252":
+        name: "prepared-release-SHA256SUMS.txt"
+        size: 491
+        sha256pre: "0acd0066d03e0baf"
+      "710739762":
+        name: "link-assistant-formal-ai-engine-0.355.33.tgz"
+        size: 5253745
+        sha256pre: "e2eb58b178fecf00"
+      "710739883":
+        name: "browser-publication.json"
+        size: 1208
+        sha256pre: "cef51690eeca6dea"
+      "710739946":
+        name: "formal-ai-engine-protocol-0.355.33.json"
+        size: 2523
+        sha256pre: "2ec536ebf3e78c1d"
+      "710739949":
+        name: "formal-ai-engine-worker-0.355.33.json"
+        size: 17581
+        sha256pre: "1fac18f6796747d1"
+      "710743340":
+        name: "formal-ai-source-networks-11.tar.gz"
+        size: 2305856
+        sha256pre: "7c3e79b993188ec0"
+      "710743343":
+        name: "formal-ai-source-networks-12.tar.gz"
+        size: 2237679
+        sha256pre: "3350f11df2aeb909"
+      "710743344":
+        name: "formal-ai-source-networks-1.tar.gz"
+        size: 2122240
+        sha256pre: "5a0db2d125df2798"
+      "710743346":
+        name: "formal-ai-source-networks-10.tar.gz"
+        size: 2314383
+        sha256pre: "9e29a05f7306b824"
+      "710743348":
+        name: "formal-ai-source-networks-0.tar.gz"
+        size: 2212250
+        sha256pre: "049bdaad96528d3c"
+      "710743382":
+        name: "formal-ai-source-networks-13.tar.gz"
+        size: 2320869
+        sha256pre: "d872fa407e8734a4"
+      "710743400":
+        name: "formal-ai-source-networks-14.tar.gz"
+        size: 2319328
+        sha256pre: "6a0c1d33f26f61a6"
+      "710743416":
+        name: "formal-ai-source-networks-15.tar.gz"
+        size: 2375697
+        sha256pre: "88785791833d4d1a"
+      "710743433":
+        name: "formal-ai-source-networks-2.tar.gz"
+        size: 2126447
+        sha256pre: "b26a964b591d1d6b"
+      "710743434":
+        name: "formal-ai-source-networks-3.tar.gz"
+        size: 2343394
+        sha256pre: "94d6ff67c038d6cb"
+      "710743440":
+        name: "formal-ai-source-networks-4.tar.gz"
+        size: 2285305
+        sha256pre: "04065a0e4ad29982"
+      "710743457":
+        name: "formal-ai-source-networks-6.tar.gz"
+        size: 2313529
+        sha256pre: "ef1a9eb4d2361617"
+      "710743458":
+        name: "formal-ai-source-networks-5.tar.gz"
+        size: 2323053
+        sha256pre: "52e49c5c7a9fe927"
+      "710743481":
+        name: "formal-ai-source-networks-7.tar.gz"
+        size: 2325907
+        sha256pre: "e9b7aeb565387593"
+      "710743482":
+        name: "formal-ai-source-networks-8.tar.gz"
+        size: 2332380
+        sha256pre: "dc2cb13d1dff4153"
+      "710743493":
+        name: "formal-ai-source-networks-9.tar.gz"
+        size: 2297360
+        sha256pre: "f9a97b8680be0742"
+      "710751530":
+        name: "formal-ai-vscode-0.355.33.vsix"
+        size: 201095675
+        sha256pre: "0b670b3321bbca55"
+      "710852222":
+        name: "formal-ai-cli-aarch64-unknown-linux-musl.tar.gz"
+        size: 65033724
+        sha256pre: "8a992e914a51eb25"
+      "710852994":
+        name: "formal-ai-cli-x86_64-unknown-linux-musl.tar.gz"
+        size: 66750086
+        sha256pre: "b6924b674d8c0143"
+      "710854600":
+        name: "formal-ai-cli-x86_64-pc-windows-msvc.zip"
+        size: 69391413
+        sha256pre: "7581d8371cc25816"
+      "710861060":
+        name: "formal-ai-cli-x86_64-apple-darwin.tar.gz"
+        size: 66016277
+        sha256pre: "32f63bda2d82fdba"
+      "710868043":
+        name: "formal-ai-desktop-macos-arm64-0.355.33.dmg.blockmap"
+        size: 450493
+        sha256pre: "8d8610116c1b4580"
+      "710868044":
+        name: "formal-ai-desktop-macos-arm64-0.355.33.zip"
+        size: 416913256
+        sha256pre: "a1609572d92b5ac8"
+      "710868047":
+        name: "formal-ai-desktop-macos-arm64-0.355.33.zip.blockmap"
+        size: 435434
+        sha256pre: "7e272c33fa13b410"
+      "710868048":
+        name: "formal-ai-desktop-macos-arm64-0.355.33.dmg"
+        size: 429211382
+        sha256pre: "03b490d3ce773399"
+      "710877803":
+        name: "formal-ai-desktop-linux-arm64-0.355.33.deb"
+        size: 324008292
+        sha256pre: "9372fa362f33bad1"
+      "710877810":
+        name: "formal-ai-desktop-linux-arm64-0.355.33.tar.gz"
+        size: 411081787
+        sha256pre: "e5aa5fd8b5d7d03f"
+      "710877811":
+        name: "formal-ai-desktop-linux-arm64-0.355.33.AppImage"
+        size: 431096543
+        sha256pre: "c73348a7a7cf340a"
+      "710886390":
+        name: "formal-ai-desktop-linux-x64-0.355.33.AppImage"
+        size: 430229257
+        sha256pre: "51e2c1e0f7a7e3f9"
+      "710886392":
+        name: "formal-ai-desktop-linux-x64-0.355.33.deb"
+        size: 342972956
+        sha256pre: "d7e82c0c85ac1a26"
+      "710886393":
+        name: "latest-linux.yml"
+        size: 586
+        sha256pre: "d294bfc87cdffb12"
+      "710886396":
+        name: "formal-ai-desktop-linux-x64-0.355.33.tar.gz"
+        size: 410920162
+        sha256pre: "e7e50a91ed1d21ff"
+      "710889812":
+        name: "formal-ai-desktop-windows-installer-arm64-0.355.33.exe.blockmap"
+        size: 376916
+        sha256pre: "7d39ce63fcc56b5a"
+      "710889815":
+        name: "formal-ai-desktop-windows-portable-arm64-0.355.33.exe"
+        size: 361391587
+        sha256pre: "e8726a98c4d28c80"
+      "710889816":
+        name: "formal-ai-desktop-windows-installer-arm64-0.355.33.exe"
+        size: 361558578
+        sha256pre: "b7587cdeed838eff"
+      "710894743":
+        name: "formal-ai-desktop-windows-installer-x64-0.355.33.exe"
+        size: 421563532
+        sha256pre: "8e9f7c61f3eb550d"
+      "710894745":
+        name: "formal-ai-desktop-windows-installer-x64-0.355.33.exe.blockmap"
+        size: 439160
+        sha256pre: "8f4b9a1d24ac4906"
+      "710894746":
+        name: "formal-ai-desktop-windows-portable-x64-0.355.33.exe"
+        size: 421396126
+        sha256pre: "c2fa551483c8b6c2"
+      "710894753":
+        name: "latest.yml"
+        size: 404
+        sha256pre: "ede8e449b0273446"
+      "710899499":
+        name: "formal-ai-desktop-macos-x64-0.355.33.zip.blockmap"
+        size: 448823
+        sha256pre: "d235b6d9b62e5d00"
+      "710899500":
+        name: "latest-mac.yml"
+        size: 551
+        sha256pre: "1cb8a6c2d531a794"
+      "710899501":
+        name: "formal-ai-desktop-macos-x64-0.355.33.dmg.blockmap"
+        size: 463788
+        sha256pre: "1546a124dca07c52"
+      "710899503":
+        name: "formal-ai-desktop-macos-x64-0.355.33.dmg"
+        size: 441707062
+        sha256pre: "f360ddbedcc852a8"
+      "710899504":
+        name: "formal-ai-desktop-macos-x64-0.355.33.zip"
+        size: 429389711
+        sha256pre: "c0c779dc69c60507"
+      "710905576":
+        name: "formal-ai-native-aarch64-apple-darwin-0.355.33.json"
+        size: 1488
+        sha256pre: "7a51fde9409364e6"
+      "710905577":
+        name: "BUILD-PROVENANCE.txt"
+        size: 6601
+        sha256pre: "4dd5ecd47cbebac9"
+      "710905578":
+        name: "formal-ai-native-aarch64-pc-windows-msvc-0.355.33.json"
+        size: 1466
+        sha256pre: "7d97ca820582ed7f"
+      "710905582":
+        name: "SHA256SUMS.txt"
+        size: 5092
+        sha256pre: "c63b8e0b60927e0b"
+      "710905583":
+        name: "formal-ai-advertisement-0.355.33.json"
+        size: 19481
+        sha256pre: "1b27b1ce854680b7"
+      "710905612":
+        name: "formal-ai-native-aarch64-unknown-linux-gnu-0.355.33.json"
+        size: 1502
+        sha256pre: "997e5b0f456edd3e"
+      "710905615":
+        name: "formal-ai-native-protocol-0.355.33.json"
+        size: 1113
+        sha256pre: "204de8fe5a40d36b"
+      "710905619":
+        name: "formal-ai-native-aarch64-unknown-linux-musl-0.355.33.json"
+        size: 1740
+        sha256pre: "6d5f1f20dc19013d"
+      "710905621":
+        name: "formal-ai-native-x86_64-apple-darwin-0.355.33.json"
+        size: 1449
+        sha256pre: "192b5d54bb31e5a5"
+      "710905623":
+        name: "formal-ai-native-source-0.355.33.json"
+        size: 848
+        sha256pre: "d2bc526ec3da2ff1"
+      "710905648":
+        name: "formal-ai-native-x86_64-pc-windows-msvc-0.355.33.json"
+        size: 1461
+        sha256pre: "d67d2c3409b2acaa"
+      "710905649":
+        name: "formal-ai-native-x86_64-unknown-linux-gnu-0.355.33.json"
+        size: 1497
+        sha256pre: "981a0a4760f0dfa2"
+      "710905651":
+        name: "formal-ai-signing-macos-arm64-0.355.33.json"
+        size: 19011
+        sha256pre: "b8effa902d7eb810"
+      "710905654":
+        name: "formal-ai-native-x86_64-unknown-linux-musl-0.355.33.json"
+        size: 1729
+        sha256pre: "9777bac1d11ed9df"
+      "710905659":
+        name: "formal-ai-signing-macos-x64-0.355.33.json"
+        size: 18937
+        sha256pre: "d025b740c0be09df"
+      "710905684":
+        name: "formal-ai-wasm-0.355.33.json"
+        size: 17587
+        sha256pre: "33500bfa03380f08"
+      "710905685":
+        name: "formal-ai-worker-0.355.33.wasm"
+        size: 310265
+        sha256pre: "4d5d3fd068841699"
+  "435531966":
+    tag: "v0.355.34"
+    title: "[Rust] 0.355.34"
+    published_at: "2026-11-05T17:51:25Z"
+    prerelease: false
+    assets:
+      "714277733":
+        name: "slim-image-release-receipt.json"
+        size: 480
+        sha256pre: "23e4bd9154676536"
+      "714277734":
+        name: "slim-image-release-receipt.json.sha256"
+        size: 98
+        sha256pre: "6328ddd4f8a6c307"
+      "714277805":
+        name: "prepared-release-dockerhub-image.json"
+        size: 5994
+        sha256pre: "c9d56570e6ffe2f5"
+      "714277806":
+        name: "prepared-release-executable.json"
+        size: 1477
+        sha256pre: "87338e3b340abc79"
+      "714277809":
+        name: "prepared-release-build.json"
+        size: 1930
+        sha256pre: "e3df6f01a4485c9e"
+      "714277811":
+        name: "prepared-release-full-image.json"
+        size: 3336
+        sha256pre: "6691b08f8d4815d6"
+      "714277814":
+        name: "prepared-release-source.json"
+        size: 886
+        sha256pre: "ba489a86e5e10863"
+      "714277852":
+        name: "prepared-release-SHA256SUMS.txt"
+        size: 491
+        sha256pre: "25e7aef0acf4f8fd"
+      "714365016":
+        name: "link-assistant-formal-ai-engine-0.355.34.tgz"
+        size: 5253745
+        sha256pre: "bee7307cf34a282b"
+      "714365134":
+        name: "browser-publication.json"
+        size: 1208
+        sha256pre: "f13ae3527e8c0299"
+      "714365177":
+        name: "formal-ai-engine-worker-0.355.34.json"
+        size: 17581
+        sha256pre: "6b09786b88db6c7d"
+      "714365179":
+        name: "formal-ai-engine-protocol-0.355.34.json"
+        size: 2523
+        sha256pre: "2d3fdab0ecaac948"
+      "714367252":
+        name: "formal-ai-source-networks-0.tar.gz"
+        size: 2212328
+        sha256pre: "b7d0d048953f151c"
+      "714367254":
+        name: "formal-ai-source-networks-12.tar.gz"
+        size: 2237580
+        sha256pre: "92da1244538f9a24"
+      "714367256":
+        name: "formal-ai-source-networks-10.tar.gz"
+        size: 2313838
+        sha256pre: "195941c03c8dbf8d"
+      "714367260":
+        name: "formal-ai-source-networks-11.tar.gz"
+        size: 2304046
+        sha256pre: "b6e7017aba390a08"
+      "714367261":
+        name: "formal-ai-source-networks-1.tar.gz"
+        size: 2122241
+        sha256pre: "796639d34f3812f6"
+      "714367288":
+        name: "formal-ai-source-networks-13.tar.gz"
+        size: 2319716
+        sha256pre: "e124c2cbf7a3fd54"
+      "714367290":
+        name: "formal-ai-source-networks-14.tar.gz"
+        size: 2318683
+        sha256pre: "752e1ab4ccbd5379"
+      "714367292":
+        name: "formal-ai-source-networks-15.tar.gz"
+        size: 2375711
+        sha256pre: "9f7b137164700f29"
+      "714367300":
+        name: "formal-ai-source-networks-2.tar.gz"
+        size: 2125286
+        sha256pre: "cf3cd09f8f1056a3"
+      "714367306":
+        name: "formal-ai-source-networks-3.tar.gz"
+        size: 2341768
+        sha256pre: "92b4c20d204667df"
+      "714367315":
+        name: "formal-ai-source-networks-4.tar.gz"
+        size: 2285240
+        sha256pre: "e256c20b209af630"
+      "714367317":
+        name: "formal-ai-source-networks-5.tar.gz"
+        size: 2321952
+        sha256pre: "f6032f21530db155"
+      "714367324":
+        name: "formal-ai-source-networks-6.tar.gz"
+        size: 2313448
+        sha256pre: "f33485b8a94cc873"
+      "714367331":
+        name: "formal-ai-source-networks-7.tar.gz"
+        size: 2324461
+        sha256pre: "7fb64b702be127dc"
+      "714367341":
+        name: "formal-ai-source-networks-8.tar.gz"
+        size: 2330177
+        sha256pre: "b569b86b332fb764"
+      "714367345":
+        name: "formal-ai-source-networks-9.tar.gz"
+        size: 2295506
+        sha256pre: "2d088cb431fcc2f0"
+      "714380059":
+        name: "formal-ai-vscode-0.355.34.vsix"
+        size: 201095672
+        sha256pre: "e88d29e4c114dc50"
+      "714420373":
+        name: "formal-ai-cli-aarch64-unknown-linux-musl.tar.gz"
+        size: 65028169
+        sha256pre: "11aa4518f5224be9"
+      "714420456":
+        name: "formal-ai-cli-x86_64-unknown-linux-musl.tar.gz"
+        size: 66749676
+        sha256pre: "a7bda2ed91186b73"
+      "714422588":
+        name: "formal-ai-cli-x86_64-pc-windows-msvc.zip"
+        size: 69391225
+        sha256pre: "07236afb4d894703"
+      "714423408":
+        name: "formal-ai-cli-aarch64-apple-darwin.tar.gz"
+        size: 69728044
+        sha256pre: "7e3d6ab5b8fbc3bb"
+      "714428302":
+        name: "formal-ai-cli-x86_64-apple-darwin.tar.gz"
+        size: 66016445
+        sha256pre: "2d6a86129264da31"
+      "714434249":
+        name: "formal-ai-desktop-macos-arm64-0.355.34.dmg"
+        size: 429210651
+        sha256pre: "e5242e4b60b0ec5f"
+      "714434250":
+        name: "formal-ai-desktop-macos-arm64-0.355.34.zip"
+        size: 416912534
+        sha256pre: "63b0b6ca20946afd"
+      "714434251":
+        name: "formal-ai-desktop-macos-arm64-0.355.34.dmg.blockmap"
+        size: 450574
+        sha256pre: "589e698a8cc5324b"
+      "714434252":
+        name: "formal-ai-desktop-macos-arm64-0.355.34.zip.blockmap"
+        size: 435138
+        sha256pre: "81867db924090be6"
+      "714445407":
+        name: "formal-ai-desktop-linux-arm64-0.355.34.deb"
+        size: 324225536
+        sha256pre: "48823a6ea636d958"
+      "714445408":
+        name: "formal-ai-desktop-linux-arm64-0.355.34.AppImage"
+        size: 431121019
+        sha256pre: "78ea18ad591ee896"
+      "714445412":
+        name: "formal-ai-desktop-linux-arm64-0.355.34.tar.gz"
+        size: 411076801
+        sha256pre: "bc5ea1cb585b53f1"
+      "714452500":
+        name: "formal-ai-desktop-windows-installer-arm64-0.355.34.exe.blockmap"
+        size: 377841
+        sha256pre: "c52ef51ba06487bf"
+      "714452501":
+        name: "formal-ai-desktop-windows-portable-arm64-0.355.34.exe"
+        size: 361394346
+        sha256pre: "82fbcc8109748422"
+      "714452503":
+        name: "formal-ai-desktop-windows-installer-arm64-0.355.34.exe"
+        size: 361561336
+        sha256pre: "8c3e0e7fdacfa43d"
+      "714454606":
+        name: "formal-ai-desktop-linux-x64-0.355.34.tar.gz"
+        size: 410919512
+        sha256pre: "db51372a19224a04"
+      "714454609":
+        name: "formal-ai-desktop-linux-x64-0.355.34.AppImage"
+        size: 430229332
+        sha256pre: "ad4f8ad949eb729e"
+      "714454610":
+        name: "latest-linux.yml"
+        size: 586
+        sha256pre: "aa8701f07e922a67"
+      "714454612":
+        name: "formal-ai-desktop-linux-x64-0.355.34.deb"
+        size: 342972728
+        sha256pre: "91385ddcd0b614d2"
+      "714459752":
+        name: "formal-ai-desktop-windows-portable-x64-0.355.34.exe"
+        size: 421396385
+        sha256pre: "b17d50e66f5199bd"
+      "714459755":
+        name: "formal-ai-desktop-windows-installer-x64-0.355.34.exe"
+        size: 421563799
+        sha256pre: "b4b5c4742d1abbec"
+      "714459756":
+        name: "formal-ai-desktop-windows-installer-x64-0.355.34.exe.blockmap"
+        size: 438739
+        sha256pre: "6029e8144b338743"
+      "714459772":
+        name: "latest.yml"
+        size: 404
+        sha256pre: "6139268d0b442de7"
+      "714466966":
+        name: "formal-ai-desktop-macos-x64-0.355.34.zip.blockmap"
+        size: 448340
+        sha256pre: "4c57c13ca0671890"
+      "714466970":
+        name: "formal-ai-desktop-macos-x64-0.355.34.zip"
+        size: 429388504
+        sha256pre: "b4f481c048279036"
+      "714466971":
+        name: "formal-ai-desktop-macos-x64-0.355.34.dmg.blockmap"
+        size: 463180
+        sha256pre: "4acb85f0c42c57fd"
+      "714466978":
+        name: "formal-ai-desktop-macos-x64-0.355.34.dmg"
+        size: 441706627
+        sha256pre: "6e5740d73de37471"
+      "714466991":
+        name: "latest-mac.yml"
+        size: 551
+        sha256pre: "968ae246b66a831f"
+      "714474807":
+        name: "formal-ai-advertisement-0.355.34.json"
+        size: 19481
+        sha256pre: "66abeb71620b6858"
+      "714474812":
+        name: "formal-ai-native-aarch64-apple-darwin-0.355.34.json"
+        size: 1488
+        sha256pre: "9f30d497452494ff"
+      "714474813":
+        name: "formal-ai-native-aarch64-pc-windows-msvc-0.355.34.json"
+        size: 1466
+        sha256pre: "f941ab9ab6f1f856"
+      "714474817":
+        name: "SHA256SUMS.txt"
+        size: 5200
+        sha256pre: "e93d0ab4fe66e353"
+      "714474819":
+        name: "BUILD-PROVENANCE.txt"
+        size: 6578
+        sha256pre: "fc14d08902e44f83"
+      "714474863":
+        name: "formal-ai-native-aarch64-unknown-linux-musl-0.355.34.json"
+        size: 1740
+        sha256pre: "e55f808f29339d02"
+      "714474867":
+        name: "formal-ai-native-aarch64-unknown-linux-gnu-0.355.34.json"
+        size: 1502
+        sha256pre: "9b8df3006fd37fcc"
+      "714474872":
+        name: "formal-ai-native-x86_64-apple-darwin-0.355.34.json"
+        size: 1449
+        sha256pre: "5aa2356f69a0c5ee"
+      "714474873":
+        name: "formal-ai-native-protocol-0.355.34.json"
+        size: 1113
+        sha256pre: "05ec29197acd0889"
+      "714474875":
+        name: "formal-ai-native-source-0.355.34.json"
+        size: 848
+        sha256pre: "a9ea68a858607f68"
+      "714474912":
+        name: "formal-ai-native-x86_64-pc-windows-msvc-0.355.34.json"
+        size: 1461
+        sha256pre: "75a2782166b168d6"
+      "714474917":
+        name: "formal-ai-native-x86_64-unknown-linux-gnu-0.355.34.json"
+        size: 1497
+        sha256pre: "03b9b686bfba216b"
+      "714474925":
+        name: "formal-ai-signing-macos-arm64-0.355.34.json"
+        size: 19011
+        sha256pre: "cbb5b0d9df6a6da4"
+      "714474926":
+        name: "formal-ai-native-x86_64-unknown-linux-musl-0.355.34.json"
+        size: 1729
+        sha256pre: "63d4d5a9db96d8e4"
+      "714474931":
+        name: "formal-ai-signing-macos-x64-0.355.34.json"
+        size: 18937
+        sha256pre: "f18043e5ea86fb51"
+      "714474951":
+        name: "formal-ai-worker-0.355.34.wasm"
+        size: 310265
+        sha256pre: "4d5d3fd068841699"
+      "714474954":
+        name: "formal-ai-wasm-0.355.34.json"
+        size: 17587
+        sha256pre: "9ba90ff471be7796"
+  "453761144":
+    tag: "v0.356.0"
+    title: "[Rust] 0.356.0"
+    published_at: "2026-11-21T14:49:10Z"
+    prerelease: false
+    assets:
+      "775893901":
+        name: "slim-image-release-receipt.json"
+        size: 478
+        sha256pre: "44acb63c86b80d8e"
+      "775893904":
+        name: "slim-image-release-receipt.json.sha256"
+        size: 98
+        sha256pre: "937bf8b5183a0983"
+      "775893948":
+        name: "prepared-release-source.json"
+        size: 885
+        sha256pre: "4f50a0db707034d8"
+      "775893949":
+        name: "prepared-release-dockerhub-image.json"
+        size: 6055
+        sha256pre: "6a299d5a9609eb0c"
+      "775893950":
+        name: "prepared-release-executable.json"
+        size: 1480
+        sha256pre: "487cdc182bd8917d"
+      "775893951":
+        name: "prepared-release-full-image.json"
+        size: 3298
+        sha256pre: "911be3950f8143e7"
+      "775893955":
+        name: "prepared-release-build.json"
+        size: 1929
+        sha256pre: "9e84a6e33dd0e561"
+      "775893970":
+        name: "prepared-release-SHA256SUMS.txt"
+        size: 491
+        sha256pre: "0f796b62a6b61468"
+      "775980403":
+        name: "link-assistant-formal-ai-engine-0.356.0.tgz"
+        size: 5359867
+        sha256pre: "1e856e5b50c14b9b"
+      "775980610":
+        name: "browser-publication.json"
+        size: 1206
+        sha256pre: "d970ec1f0d765a92"
+      "775980652":
+        name: "formal-ai-engine-worker-0.356.0.json"
+        size: 17580
+        sha256pre: "773585c0ecdb62f6"
+      "775980656":
+        name: "formal-ai-engine-protocol-0.356.0.json"
+        size: 2523
+        sha256pre: "83874cb5e3ddb94f"
+      "775982494":
+        name: "formal-ai-source-networks-12.tar.gz"
+        size: 2466124
+        sha256pre: "74fe78f4851348a7"
+      "775982495":
+        name: "formal-ai-source-networks-10.tar.gz"
+        size: 2427133
+        sha256pre: "fb501cc4595f410b"
+      "775982496":
+        name: "formal-ai-source-networks-11.tar.gz"
+        size: 2444832
+        sha256pre: "c14a52d586d7e353"
+      "775982497":
+        name: "formal-ai-source-networks-1.tar.gz"
+        size: 2371242
+        sha256pre: "bb1ba8d8136630d6"
+      "775982498":
+        name: "formal-ai-source-networks-0.tar.gz"
+        size: 2316525
+        sha256pre: "1d3a3208360559f7"
+      "775982521":
+        name: "formal-ai-source-networks-13.tar.gz"
+        size: 2543371
+        sha256pre: "9d5710c056fad72b"
+      "775982522":
+        name: "formal-ai-source-networks-14.tar.gz"
+        size: 2396802
+        sha256pre: "fd527e01332006b3"
+      "775982527":
+        name: "formal-ai-source-networks-2.tar.gz"
+        size: 2428774
+        sha256pre: "1fd83a7208a94e14"
+      "775982528":
+        name: "formal-ai-source-networks-15.tar.gz"
+        size: 2464208
+        sha256pre: "f572d3b91a6f27cb"
+      "775982533":
+        name: "formal-ai-source-networks-3.tar.gz"
+        size: 2487041
+        sha256pre: "7e413983b19d1320"
+      "775982539":
+        name: "formal-ai-source-networks-4.tar.gz"
+        size: 2467203
+        sha256pre: "84fe16cdccb9444a"
+      "775982543":
+        name: "formal-ai-source-networks-5.tar.gz"
+        size: 2517937
+        sha256pre: "35727a2419eaad98"
+      "775982555":
+        name: "formal-ai-source-networks-7.tar.gz"
+        size: 2445025
+        sha256pre: "eb7d7f9623ed1b1d"
+      "775982557":
+        name: "formal-ai-source-networks-6.tar.gz"
+        size: 2493213
+        sha256pre: "321c472eac66ccb3"
+      "775982562":
+        name: "formal-ai-source-networks-8.tar.gz"
+        size: 2499874
+        sha256pre: "de66dc140aaba5e2"
+      "775982566":
+        name: "formal-ai-source-networks-9.tar.gz"
+        size: 2506849
+        sha256pre: "8ed2b81d653f64c6"
+      "775987137":
+        name: "formal-ai-vscode-0.356.0.vsix"
+        size: 201338101
+        sha256pre: "52fbc59188e495e1"
+      "776055176":
+        name: "formal-ai-cli-aarch64-unknown-linux-musl.tar.gz"
+        size: 69150615
+        sha256pre: "5d171d20b4c4078b"
+      "776057801":
+        name: "formal-ai-cli-aarch64-apple-darwin.tar.gz"
+        size: 70842068
+        sha256pre: "d1cbb1306b9fcfd7"
+      "776057979":
+        name: "formal-ai-cli-x86_64-pc-windows-msvc.zip"
+        size: 70650723
+        sha256pre: "0d89f0596e326391"
+      "776058548":
+        name: "formal-ai-cli-x86_64-unknown-linux-musl.tar.gz"
+        size: 67793777
+        sha256pre: "05305d18986ad303"
+      "776062165":
+        name: "formal-ai-cli-x86_64-apple-darwin.tar.gz"
+        size: 67070172
+        sha256pre: "b12b905a4a73eb97"
+      "776073390":
+        name: "formal-ai-desktop-macos-arm64-0.356.0.zip.blockmap"
+        size: 436197
+        sha256pre: "d57fd669f16d163a"
+      "776073392":
+        name: "formal-ai-desktop-macos-arm64-0.356.0.dmg.blockmap"
+        size: 450812
+        sha256pre: "c13294e4d9dab64e"
+      "776073398":
+        name: "formal-ai-desktop-macos-arm64-0.356.0.zip"
+        size: 418188530
+        sha256pre: "abc60800aafa88f5"
+      "776073401":
+        name: "formal-ai-desktop-macos-arm64-0.356.0.dmg"
+        size: 430599128
+        sha256pre: "06f5b06d5a8bf55a"
+      "776077823":
+        name: "formal-ai-desktop-macos-x64-0.356.0.zip.blockmap"
+        size: 450339
+        sha256pre: "3f4b164f1f6c6818"
+      "776077824":
+        name: "formal-ai-desktop-macos-x64-0.356.0.zip"
+        size: 430631256
+        sha256pre: "4b8aeeb603db4920"
+      "776077828":
+        name: "formal-ai-desktop-macos-x64-0.356.0.dmg.blockmap"
+        size: 463033
+        sha256pre: "2b2bf69c92ca4c77"
+      "776077829":
+        name: "formal-ai-desktop-macos-x64-0.356.0.dmg"
+        size: 442993747
+        sha256pre: "9a36d16b60d0ae81"
+      "776077847":
+        name: "latest-mac.yml"
+        size: 547
+        sha256pre: "1ec805080287cb48"
+      "776080038":
+        name: "formal-ai-desktop-linux-arm64-0.356.0.tar.gz"
+        size: 415229901
+        sha256pre: "abdbf422be082d21"
+      "776080040":
+        name: "formal-ai-desktop-linux-arm64-0.356.0.AppImage"
+        size: 435566463
+        sha256pre: "ed5ca297dcf78a83"
+      "776080044":
+        name: "formal-ai-desktop-linux-arm64-0.356.0.deb"
+        size: 326918096
+        sha256pre: "7334977d99217dce"
+      "776084277":
+        name: "formal-ai-desktop-windows-portable-arm64-0.356.0.exe"
+        size: 362306679
+        sha256pre: "c3566b6aa48eedfe"
+      "776084278":
+        name: "formal-ai-desktop-windows-installer-arm64-0.356.0.exe"
+        size: 362473690
+        sha256pre: "631f69d8041792fa"
+      "776084279":
+        name: "formal-ai-desktop-windows-installer-arm64-0.356.0.exe.blockmap"
+        size: 378141
+        sha256pre: "32f23b3b071d42b5"
+      "776085604":
+        name: "formal-ai-desktop-windows-portable-x64-0.356.0.exe"
+        size: 422853459
+        sha256pre: "f8ee2791896eeaa8"
+      "776085605":
+        name: "formal-ai-desktop-windows-installer-x64-0.356.0.exe"
+        size: 423020882
+        sha256pre: "2836c2832c72812f"
+      "776085607":
+        name: "formal-ai-desktop-windows-installer-x64-0.356.0.exe.blockmap"
+        size: 440366
+        sha256pre: "ea7d1ff9d8658098"
+      "776085624":
+        name: "latest.yml"
+        size: 401
+        sha256pre: "aa8f099411fa3b97"
+      "776086778":
+        name: "formal-ai-desktop-linux-x64-0.356.0.AppImage"
+        size: 431319753
+        sha256pre: "2cd198a28c6f1736"
+      "776086782":
+        name: "formal-ai-desktop-linux-x64-0.356.0.tar.gz"
+        size: 411980433
+        sha256pre: "954dc1d1aff5c17f"
+      "776086783":
+        name: "formal-ai-desktop-linux-x64-0.356.0.deb"
+        size: 341238236
+        sha256pre: "365cc16f7ddab6f5"
+      "776086784":
+        name: "latest-linux.yml"
+        size: 582
+        sha256pre: "4c995973df028767"
+      "776091017":
+        name: "formal-ai-advertisement-0.356.0.json"
+        size: 19481
+        sha256pre: "46767c2414847da6"
+      "776091019":
+        name: "formal-ai-native-aarch64-pc-windows-msvc-0.356.0.json"
+        size: 1469
+        sha256pre: "ed396a7aa8cc97ff"
+      "776091020":
+        name: "BUILD-PROVENANCE.txt"
+        size: 6532
+        sha256pre: "ad485d3c1b7a3e55"
+      "776091021":
+        name: "formal-ai-native-aarch64-apple-darwin-0.356.0.json"
+        size: 1491
+        sha256pre: "89ac96df6b9348fe"
+      "776091023":
+        name: "SHA256SUMS.txt"
+        size: 5161
+        sha256pre: "d4d951173ede6c33"
+      "776091044":
+        name: "formal-ai-native-aarch64-unknown-linux-gnu-0.356.0.json"
+        size: 1505
+        sha256pre: "d55d42de4b0326be"
+      "776091045":
+        name: "formal-ai-native-protocol-0.356.0.json"
+        size: 1113
+        sha256pre: "b3b1181011d93fa7"
+      "776091046":
+        name: "formal-ai-native-aarch64-unknown-linux-musl-0.356.0.json"
+        size: 1743
+        sha256pre: "4113744153a6353b"
+      "776091052":
+        name: "formal-ai-native-source-0.356.0.json"
+        size: 847
+        sha256pre: "7e93a385cf8a4232"
+      "776091056":
+        name: "formal-ai-native-x86_64-apple-darwin-0.356.0.json"
+        size: 1452
+        sha256pre: "c9207b894a5a121e"
+      "776091075":
+        name: "formal-ai-native-x86_64-pc-windows-msvc-0.356.0.json"
+        size: 1464
+        sha256pre: "9293ae017b3bb0d8"
+      "776091076":
+        name: "formal-ai-native-x86_64-unknown-linux-gnu-0.356.0.json"
+        size: 1500
+        sha256pre: "c10b1bc608a74b68"
+      "776091077":
+        name: "formal-ai-native-x86_64-unknown-linux-musl-0.356.0.json"
+        size: 1732
+        sha256pre: "05dfc95f03629587"
+      "776091080":
+        name: "formal-ai-signing-macos-arm64-0.356.0.json"
+        size: 19008
+        sha256pre: "82434b3daab0d905"
+      "776091083":
+        name: "formal-ai-signing-macos-x64-0.356.0.json"
+        size: 18934
+        sha256pre: "9806d7e06ef5477e"
+      "776091114":
+        name: "formal-ai-worker-0.356.0.wasm"
+        size: 311725
+        sha256pre: "856629870a9ce099"
+      "776091121":
+        name: "formal-ai-wasm-0.356.0.json"
+        size: 17588
+        sha256pre: "b2c7aeb286ff626b"
+  "454486606":
+    tag: "v0.356.5"
+    title: "[Rust] 0.356.5"
+    published_at: "2026-11-22T13:59:17Z"
+    prerelease: false
+    assets:
+      "779244623":
+        name: "slim-image-release-receipt.json"
+        size: 478
+        sha256pre: "06fe85c006f86c47"
+      "779244625":
+        name: "slim-image-release-receipt.json.sha256"
+        size: 98
+        sha256pre: "b3814a056ba4789f"
+      "779244666":
+        name: "prepared-release-executable.json"
+        size: 1480
+        sha256pre: "88f954ba2e775821"
+      "779244667":
+        name: "prepared-release-source.json"
+        size: 885
+        sha256pre: "f7b2c9ec6d9d3be0"
+      "779244668":
+        name: "prepared-release-dockerhub-image.json"
+        size: 6293
+        sha256pre: "e0b3b24e691b8d82"
+      "779244670":
+        name: "prepared-release-build.json"
+        size: 1929
+        sha256pre: "812018a39ed137c9"
+      "779244672":
+        name: "prepared-release-full-image.json"
+        size: 3451
+        sha256pre: "8bd75bd6429fdf43"
+      "779244684":
+        name: "prepared-release-SHA256SUMS.txt"
+        size: 491
+        sha256pre: "e1b2e47f26c47651"
+      "779328899":
+        name: "link-assistant-formal-ai-engine-0.356.5.tgz"
+        size: 5366475
+        sha256pre: "44d39ed3195133f8"
+      "779329090":
+        name: "browser-publication.json"
+        size: 1206
+        sha256pre: "1a882fd49c52dacc"
+      "779329142":
+        name: "formal-ai-engine-protocol-0.356.5.json"
+        size: 2523
+        sha256pre: "cc07f62f3c15c936"
+      "779329143":
+        name: "formal-ai-engine-worker-0.356.5.json"
+        size: 17580
+        sha256pre: "d7b4dbaf561e45c8"
+      "779337654":
+        name: "formal-ai-vscode-0.356.5.vsix"
+        size: 201352055
+        sha256pre: "7e46924edbb6510d"
+      "779345386":
+        name: "formal-ai-source-networks-12.tar.gz"
+        size: 2450714
+        sha256pre: "a7a03771fee91967"
+      "779345387":
+        name: "formal-ai-source-networks-1.tar.gz"
+        size: 2380295
+        sha256pre: "7a8ae774ba03fa09"
+      "779345388":
+        name: "formal-ai-source-networks-10.tar.gz"
+        size: 2453334
+        sha256pre: "0b3705b318efbddd"
+      "779345389":
+        name: "formal-ai-source-networks-0.tar.gz"
+        size: 2372924
+        sha256pre: "4ddf17652e8a7f97"
+      "779345391":
+        name: "formal-ai-source-networks-11.tar.gz"
+        size: 2445326
+        sha256pre: "aa17612cb4f07e72"
+      "779345437":
+        name: "formal-ai-source-networks-13.tar.gz"
+        size: 2557176
+        sha256pre: "fb6a121ecc1b40e2"
+      "779345441":
+        name: "formal-ai-source-networks-14.tar.gz"
+        size: 2483933
+        sha256pre: "a64188347c558627"
+      "779345443":
+        name: "formal-ai-source-networks-2.tar.gz"
+        size: 2417725
+        sha256pre: "10b63f5e99d325ce"
+      "779345445":
+        name: "formal-ai-source-networks-15.tar.gz"
+        size: 2522282
+        sha256pre: "788b45c39f72c1ef"
+      "779345446":
+        name: "formal-ai-source-networks-3.tar.gz"
+        size: 2521581
+        sha256pre: "bbcb6ecfec89f81f"
+      "779345475":
+        name: "formal-ai-source-networks-4.tar.gz"
+        size: 2506743
+        sha256pre: "7d9502a09fb96579"
+      "779345476":
+        name: "formal-ai-source-networks-5.tar.gz"
+        size: 2533817
+        sha256pre: "19effefaf91f718a"
+      "779345478":
+        name: "formal-ai-source-networks-6.tar.gz"
+        size: 2492460
+        sha256pre: "4a519a7bfb8292a7"
+      "779345482":
+        name: "formal-ai-source-networks-8.tar.gz"
+        size: 2457423
+        sha256pre: "bc342e215f3a6f93"
+      "779345483":
+        name: "formal-ai-source-networks-7.tar.gz"
+        size: 2442770
+        sha256pre: "590a0412b0631f1f"
+      "779345509":
+        name: "formal-ai-source-networks-9.tar.gz"
+        size: 2465429
+        sha256pre: "10073196d608d8e3"
+      "779402798":
+        name: "formal-ai-cli-aarch64-unknown-linux-musl.tar.gz"
+        size: 69346970
+        sha256pre: "c88cc9b262ec6665"
+      "779405201":
+        name: "formal-ai-cli-aarch64-apple-darwin.tar.gz"
+        size: 71032473
+        sha256pre: "de770ecf9e127128"
+      "779405772":
+        name: "formal-ai-cli-x86_64-pc-windows-msvc.zip"
+        size: 67382825
+        sha256pre: "30e13b8769a28364"
+      "779405998":
+        name: "formal-ai-cli-x86_64-unknown-linux-musl.tar.gz"
+        size: 67965373
+        sha256pre: "6b653e587b851dc2"
+      "779409893":
+        name: "formal-ai-cli-x86_64-apple-darwin.tar.gz"
+        size: 70035973
+        sha256pre: "1e3ed773f9967752"
+      "779417346":
+        name: "formal-ai-desktop-macos-arm64-0.356.5.zip"
+        size: 418379287
+        sha256pre: "541180c54177de1e"
+      "779417350":
+        name: "formal-ai-desktop-macos-arm64-0.356.5.dmg"
+        size: 430745019
+        sha256pre: "f6660b0d0ff6d48f"
+      "779417354":
+        name: "formal-ai-desktop-macos-arm64-0.356.5.zip.blockmap"
+        size: 436885
+        sha256pre: "39a9e8b0c4c169f4"
+      "779417358":
+        name: "formal-ai-desktop-macos-arm64-0.356.5.dmg.blockmap"
+        size: 451003
+        sha256pre: "b4ba56a4312c53ec"
+      "779433536":
+        name: "formal-ai-desktop-linux-arm64-0.356.5.AppImage"
+        size: 435762658
+        sha256pre: "9e6753d198744dde"
+      "779433538":
+        name: "formal-ai-desktop-linux-arm64-0.356.5.deb"
+        size: 327527932
+        sha256pre: "2c4edcd349589089"
+      "779433539":
+        name: "formal-ai-desktop-linux-arm64-0.356.5.tar.gz"
+        size: 415422790
+        sha256pre: "af7524a09e3fde66"
+      "779434354":
+        name: "formal-ai-desktop-macos-x64-0.356.5.zip.blockmap"
+        size: 453074
+        sha256pre: "80375e7b40e5f478"
+      "779434358":
+        name: "formal-ai-desktop-macos-x64-0.356.5.zip"
+        size: 433565208
+        sha256pre: "3e4f170f9b839a08"
+      "779434359":
+        name: "formal-ai-desktop-macos-x64-0.356.5.dmg.blockmap"
+        size: 466884
+        sha256pre: "0bb7ca9fe66ea268"
+      "779434361":
+        name: "formal-ai-desktop-macos-x64-0.356.5.dmg"
+        size: 446033665
+        sha256pre: "b74cb1503fe85bc8"
+      "779434383":
+        name: "latest-mac.yml"
+        size: 547
+        sha256pre: "6e34fb618372e8f0"
+      "779437670":
+        name: "formal-ai-desktop-linux-x64-0.356.5.tar.gz"
+        size: 412151518
+        sha256pre: "0dd56f690c6a3dec"
+      "779437675":
+        name: "formal-ai-desktop-linux-x64-0.356.5.AppImage"
+        size: 431516665
+        sha256pre: "fe2c7ebd1c5f6443"
+      "779437676":
+        name: "latest-linux.yml"
+        size: 582
+        sha256pre: "cb2a582bb4f81074"
+      "779437681":
+        name: "formal-ai-desktop-linux-x64-0.356.5.deb"
+        size: 341740520
+        sha256pre: "f4a2be5af1bfcf47"
+      "779441086":
+        name: "formal-ai-desktop-windows-installer-arm64-0.356.5.exe"
+        size: 364977135
+        sha256pre: "adeff9756b5f8fc7"
+      "779441087":
+        name: "formal-ai-desktop-windows-installer-arm64-0.356.5.exe.blockmap"
+        size: 381985
+        sha256pre: "aac2933e64b7d920"
+      "779441094":
+        name: "formal-ai-desktop-windows-portable-arm64-0.356.5.exe"
+        size: 364810124
+        sha256pre: "a803189b2cd5cbf1"
+      "779450781":
+        name: "formal-ai-desktop-windows-installer-x64-0.356.5.exe"
+        size: 420590589
+        sha256pre: "0906ba8daa5329b6"
+      "779450786":
+        name: "formal-ai-desktop-windows-portable-x64-0.356.5.exe"
+        size: 420423167
+        sha256pre: "2d897d7b44318385"
+      "779450794":
+        name: "formal-ai-desktop-windows-installer-x64-0.356.5.exe.blockmap"
+        size: 437863
+        sha256pre: "361e0f2cdea0d614"
+      "779450817":
+        name: "latest.yml"
+        size: 401
+        sha256pre: "c9f7024594a67ab8"
+      "779456761":
+        name: "formal-ai-native-aarch64-pc-windows-msvc-0.356.5.json"
+        size: 1469
+        sha256pre: "b75e8bf4aa693096"
+      "779456762":
+        name: "SHA256SUMS.txt"
+        size: 5161
+        sha256pre: "c2d69a13f00a8c8c"
+      "779456767":
+        name: "formal-ai-native-aarch64-apple-darwin-0.356.5.json"
+        size: 1491
+        sha256pre: "aa69a6c37d471d75"
+      "779456771":
+        name: "formal-ai-advertisement-0.356.5.json"
+        size: 19481
+        sha256pre: "6098a68e43c1bd1f"
+      "779456774":
+        name: "BUILD-PROVENANCE.txt"
+        size: 6532
+        sha256pre: "a7813151798fe479"
+      "779456785":
+        name: "formal-ai-native-aarch64-unknown-linux-gnu-0.356.5.json"
+        size: 1505
+        sha256pre: "aba4ce34e2939a4f"
+      "779456787":
+        name: "formal-ai-native-aarch64-unknown-linux-musl-0.356.5.json"
+        size: 1743
+        sha256pre: "0c7858403db422b0"
+      "779456793":
+        name: "formal-ai-native-protocol-0.356.5.json"
+        size: 1113
+        sha256pre: "e33b84d80cee7366"
+      "779456796":
+        name: "formal-ai-native-source-0.356.5.json"
+        size: 847
+        sha256pre: "17538d7341222b59"
+      "779456797":
+        name: "formal-ai-native-x86_64-apple-darwin-0.356.5.json"
+        size: 1452
+        sha256pre: "fbb395625e818af1"
+      "779456806":
+        name: "formal-ai-native-x86_64-unknown-linux-gnu-0.356.5.json"
+        size: 1500
+        sha256pre: "3d2ce7b0d4556b55"
+      "779456810":
+        name: "formal-ai-native-x86_64-pc-windows-msvc-0.356.5.json"
+        size: 1464
+        sha256pre: "c6cdbdd4027f84a3"
+      "779456811":
+        name: "formal-ai-signing-macos-arm64-0.356.5.json"
+        size: 19008
+        sha256pre: "3f46ca17db876979"
+      "779456812":
+        name: "formal-ai-signing-macos-x64-0.356.5.json"
+        size: 18934
+        sha256pre: "d46f7e1feb03224b"
+      "779456814":
+        name: "formal-ai-native-x86_64-unknown-linux-musl-0.356.5.json"
+        size: 1732
+        sha256pre: "d777ccd99409d735"
+      "779456818":
+        name: "formal-ai-wasm-0.356.5.json"
+        size: 17588
+        sha256pre: "3dae02b6569ca796"
+      "779456826":
+        name: "formal-ai-worker-0.356.5.wasm"
+        size: 311773
+        sha256pre: "ff9363091b22a403"
+  "454691685":
+    tag: "v0.356.9"
+    title: "[Rust] 0.356.9"
+    published_at: "2026-11-22T19:25:50Z"
+    prerelease: false
+    assets:
+      "780190924":
+        name: "slim-image-release-receipt.json.sha256"
+        size: 98
+        sha256pre: "cdce8eb07fa2d650"
+      "780190927":
+        name: "slim-image-release-receipt.json"
+        size: 478
+        sha256pre: "375604b467041cf7"
+      "780190959":
+        name: "prepared-release-dockerhub-image.json"
+        size: 6333
+        sha256pre: "b4ddec3e4fa7f83c"
+      "780190960":
+        name: "prepared-release-full-image.json"
+        size: 3471
+        sha256pre: "394bc9232aa64f0f"
+      "780190961":
+        name: "prepared-release-build.json"
+        size: 1929
+        sha256pre: "336df440b029d3ba"
+      "780190966":
+        name: "prepared-release-source.json"
+        size: 885
+        sha256pre: "9c0b394d403ec044"
+      "780190967":
+        name: "prepared-release-executable.json"
+        size: 1480
+        sha256pre: "f0bfdaac9fc2575f"
+      "780190979":
+        name: "prepared-release-SHA256SUMS.txt"
+        size: 491
+        sha256pre: "6a5d3e3b8b9512b3"
+      "780269184":
+        name: "link-assistant-formal-ai-engine-0.356.9.tgz"
+        size: 5348504
+        sha256pre: "085c40cf00fdd868"
+      "780269345":
+        name: "browser-publication.json"
+        size: 1206
+        sha256pre: "ea2e33122d259280"
+      "780269381":
+        name: "formal-ai-engine-worker-0.356.9.json"
+        size: 17580
+        sha256pre: "963edf152b9fa7fb"
+      "780269382":
+        name: "formal-ai-engine-protocol-0.356.9.json"
+        size: 2523
+        sha256pre: "60b68fe159baf4c5"
+      "780271743":
+        name: "formal-ai-source-networks-0.tar.gz"
+        size: 2370682
+        sha256pre: "4b4953bcbf0edc7c"
+      "780271744":
+        name: "formal-ai-source-networks-1.tar.gz"
+        size: 2336127
+        sha256pre: "f502408619f4b12a"
+      "780271745":
+        name: "formal-ai-source-networks-11.tar.gz"
+        size: 2560403
+        sha256pre: "9d583b8515740075"
+      "780271751":
+        name: "formal-ai-source-networks-10.tar.gz"
+        size: 2487373
+        sha256pre: "7ba2f7d116d72cf6"
+      "780271752":
+        name: "formal-ai-source-networks-12.tar.gz"
+        size: 2526343
+        sha256pre: "40e0961f59ad9ac4"
+      "780271784":
+        name: "formal-ai-source-networks-13.tar.gz"
+        size: 2501994
+        sha256pre: "92b1d1d491959ca6"
+      "780271786":
+        name: "formal-ai-source-networks-14.tar.gz"
+        size: 2444264
+        sha256pre: "536b6294e26104eb"
+      "780271797":
+        name: "formal-ai-source-networks-15.tar.gz"
+        size: 2476541
+        sha256pre: "c454934593db7ffa"
+      "780271802":
+        name: "formal-ai-source-networks-2.tar.gz"
+        size: 2499949
+        sha256pre: "46d183b27d0fd9e6"
+      "780271807":
+        name: "formal-ai-source-networks-3.tar.gz"
+        size: 2479034
+        sha256pre: "a8db10d3e6e1d8c4"
+      "780271818":
+        name: "formal-ai-source-networks-5.tar.gz"
+        size: 2512170
+        sha256pre: "1ab6a75f1f324188"
+      "780271819":
+        name: "formal-ai-source-networks-4.tar.gz"
+        size: 2587450
+        sha256pre: "290ef3aed7092b99"
+      "780271827":
+        name: "formal-ai-source-networks-6.tar.gz"
+        size: 2579674
+        sha256pre: "b0d8fad348233879"
+      "780271832":
+        name: "formal-ai-source-networks-7.tar.gz"
+        size: 2524896
+        sha256pre: "8d4d6fb33494ed82"
+      "780271855":
+        name: "formal-ai-source-networks-8.tar.gz"
+        size: 2504640
+        sha256pre: "f3ffc6d12aecee61"
+      "780271856":
+        name: "formal-ai-source-networks-9.tar.gz"
+        size: 2585716
+        sha256pre: "edabebc103daca6b"
+      "780277256":
+        name: "formal-ai-vscode-0.356.9.vsix"
+        size: 201344715
+        sha256pre: "fd89e5ef0e80114d"
+      "780347298":
+        name: "formal-ai-cli-x86_64-unknown-linux-musl.tar.gz"
+        size: 70977521
+        sha256pre: "bddda26f7d27314a"
+      "780347618":
+        name: "formal-ai-cli-aarch64-unknown-linux-musl.tar.gz"
+        size: 75439695
+        sha256pre: "b4b3144c3754bc81"
+      "780348677":
+        name: "formal-ai-cli-x86_64-pc-windows-msvc.zip"
+        size: 73824800
+        sha256pre: "26d53d057a37ac6a"
+      "780349630":
+        name: "formal-ai-cli-aarch64-apple-darwin.tar.gz"
+        size: 70887564
+        sha256pre: "f69c2af5378cc7a4"
+      "780356104":
+        name: "formal-ai-cli-x86_64-apple-darwin.tar.gz"
+        size: 76497541
+        sha256pre: "d7f679969c1d4772"
+      "780363435":
+        name: "formal-ai-desktop-macos-arm64-0.356.9.zip"
+        size: 418233645
+        sha256pre: "97b48898b23f60a9"
+      "780363437":
+        name: "formal-ai-desktop-macos-arm64-0.356.9.dmg"
+        size: 430587792
+        sha256pre: "fa592ddeb3e89267"
+      "780363439":
+        name: "formal-ai-desktop-macos-arm64-0.356.9.dmg.blockmap"
+        size: 452012
+        sha256pre: "ac4b04fb8c1b6794"
+      "780363445":
+        name: "formal-ai-desktop-macos-arm64-0.356.9.zip.blockmap"
+        size: 436066
+        sha256pre: "2fe86075546450aa"
+      "780373636":
+        name: "formal-ai-desktop-linux-arm64-0.356.9.deb"
+        size: 332647180
+        sha256pre: "57777cab6977b0b4"
+      "780373638":
+        name: "formal-ai-desktop-linux-arm64-0.356.9.tar.gz"
+        size: 421246595
+        sha256pre: "31e3a6c30172555a"
+      "780373642":
+        name: "formal-ai-desktop-linux-arm64-0.356.9.AppImage"
+        size: 442039542
+        sha256pre: "97ff40f7a791188b"
+      "780373718":
+        name: "latest-linux.yml"
+        size: 582
+        sha256pre: "b77f6138b6e5a00b"
+      "780373722":
+        name: "formal-ai-desktop-linux-x64-0.356.9.deb"
+        size: 344111976
+        sha256pre: "5d23a1918e6575ac"
+      "780373723":
+        name: "formal-ai-desktop-linux-x64-0.356.9.tar.gz"
+        size: 414997388
+        sha256pre: "458dc9b76f1a5db6"
+      "780373725":
+        name: "formal-ai-desktop-linux-x64-0.356.9.AppImage"
+        size: 434571002
+        sha256pre: "3d4fa1e5b9abfcfc"
+      "780374771":
+        name: "formal-ai-desktop-windows-installer-x64-0.356.9.exe.blockmap"
+        size: 442207
+        sha256pre: "44af471e74ee9ce1"
+      "780374773":
+        name: "formal-ai-desktop-windows-installer-x64-0.356.9.exe"
+        size: 425418132
+        sha256pre: "1dde7f3e932fdb70"
+      "780374774":
+        name: "formal-ai-desktop-windows-portable-x64-0.356.9.exe"
+        size: 425250710
+        sha256pre: "a7b72ce6a7dbe7bf"
+      "780379288":
+        name: "formal-ai-desktop-windows-portable-arm64-0.356.9.exe"
+        size: 369478428
+        sha256pre: "4b860aa8ca6b9405"
+      "780379291":
+        name: "formal-ai-desktop-windows-installer-arm64-0.356.9.exe.blockmap"
+        size: 385505
+        sha256pre: "8930cbcf75448fce"
+      "780379294":
+        name: "formal-ai-desktop-windows-installer-arm64-0.356.9.exe"
+        size: 369645442
+        sha256pre: "9244fae5be7e52c6"
+      "780379313":
+        name: "latest.yml"
+        size: 405
+        sha256pre: "0b6ebcc76c7e26ce"
+      "780380722":
+        name: "formal-ai-desktop-macos-x64-0.356.9.zip"
+        size: 439919696
+        sha256pre: "60e329e22e5656e9"
+      "780380725":
+        name: "formal-ai-desktop-macos-x64-0.356.9.zip.blockmap"
+        size: 458682
+        sha256pre: "8560cbeeab2521a2"
+      "780380728":
+        name: "formal-ai-desktop-macos-x64-0.356.9.dmg.blockmap"
+        size: 472755
+        sha256pre: "d5823588e94e9c86"
+      "780380730":
+        name: "latest-mac.yml"
+        size: 547
+        sha256pre: "894df15f8fc06416"
+      "780380732":
+        name: "formal-ai-desktop-macos-x64-0.356.9.dmg"
+        size: 452655583
+        sha256pre: "97e5b492a9deda90"
+      "780385427":
+        name: "formal-ai-native-aarch64-pc-windows-msvc-0.356.9.json"
+        size: 1469
+        sha256pre: "2802db6513048625"
+      "780385428":
+        name: "SHA256SUMS.txt"
+        size: 5161
+        sha256pre: "cef0378453cbac8d"
+      "780385429":
+        name: "formal-ai-native-aarch64-apple-darwin-0.356.9.json"
+        size: 1491
+        sha256pre: "dafdbfb1d97e7b91"
+      "780385430":
+        name: "BUILD-PROVENANCE.txt"
+        size: 6532
+        sha256pre: "f67d2729c7fe2dd7"
+      "780385435":
+        name: "formal-ai-advertisement-0.356.9.json"
+        size: 19481
+        sha256pre: "2c212a48402e5974"
+      "780385452":
+        name: "formal-ai-native-aarch64-unknown-linux-musl-0.356.9.json"
+        size: 1743
+        sha256pre: "62e0c068ef12a3f3"
+      "780385453":
+        name: "formal-ai-native-aarch64-unknown-linux-gnu-0.356.9.json"
+        size: 1505
+        sha256pre: "f539d40aaf5fc45e"
+      "780385456":
+        name: "formal-ai-native-x86_64-apple-darwin-0.356.9.json"
+        size: 1452
+        sha256pre: "03e8a394f2264dc2"
+      "780385458":
+        name: "formal-ai-native-protocol-0.356.9.json"
+        size: 1113
+        sha256pre: "99ead3e9175e3695"
+      "780385459":
+        name: "formal-ai-native-source-0.356.9.json"
+        size: 847
+        sha256pre: "51968df59dedf185"
+      "780385482":
+        name: "formal-ai-native-x86_64-pc-windows-msvc-0.356.9.json"
+        size: 1464
+        sha256pre: "06ac3e6a27af8acd"
+      "780385483":
+        name: "formal-ai-native-x86_64-unknown-linux-gnu-0.356.9.json"
+        size: 1500
+        sha256pre: "230251b79ceb73a7"
+      "780385493":
+        name: "formal-ai-native-x86_64-unknown-linux-musl-0.356.9.json"
+        size: 1732
+        sha256pre: "f9dea803ccbbad61"
+      "780385499":
+        name: "formal-ai-signing-macos-arm64-0.356.9.json"
+        size: 19008
+        sha256pre: "64ba46d9319c1aa4"
+      "780385503":
+        name: "formal-ai-signing-macos-x64-0.356.9.json"
+        size: 18934
+        sha256pre: "78e7b4d6c9c804c5"
+      "780385510":
+        name: "formal-ai-wasm-0.356.9.json"
+        size: 17588
+        sha256pre: "9e8293e70e654dac"
+      "780385511":
+        name: "formal-ai-worker-0.356.9.wasm"
+        size: 311773
+        sha256pre: "ff9363091b22a403"
