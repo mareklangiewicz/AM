@@ -79,3 +79,7 @@ of the fast-tests workflow (43982956903) failed
 `tools/recipe-reconstruction`: its stale clock was three days after the
 observation. Moved to eight days; recipe-conversion 15, recipe-reconstruction
 44, upstream-merge 16 and e2e helper 11 tests pass locally.
+
+November 25, 2026, from catalog-simplification ticket 11: superseded. Marek
+chose a warning at 14 days instead of a refusal at 7; implemented by
+catalog-simplification ticket 23.
