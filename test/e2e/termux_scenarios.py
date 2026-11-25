@@ -10,7 +10,7 @@ import unittest
 from filesystem import fingerprint_files, snapshot_tree
 
 import scenarios as shared
-from scenarios import OUT, USER, PIN, SQLITE, catalog_tree
+from scenarios import OUT, USER, SQLITE, catalog_tree
 
 
 class TermuxCLI(unittest.TestCase):
@@ -116,16 +116,16 @@ class TermuxCLI(unittest.TestCase):
         before=(app/'sqlitebrowser').read_bytes()
         (app/'version').write_text('old\n')
         self.configure(download_partial_fail=True)
-        self.command('-u','sqlitebrowser','--commit',PIN,executable=executable,success=False)
+        self.command('-u','sqlitebrowser',executable=executable,success=False)
         self.assertFalse(list(app.glob('.am-stage.*')))
         self.assertEqual((app/'sqlitebrowser').read_bytes(),before)
         self.assertEqual((app/'version').read_text(),'old\n')
         self.configure(download_partial_fail=False)
-        self.command('-u','sqlitebrowser','--commit',PIN,executable=executable)
+        self.command('-u','sqlitebrowser',executable=executable)
         self.assertEqual((app/'version').read_text().strip(),SQLITE)
         before=snapshot_tree(app)
         self.configure(clock='1794410400.000000')  # OBSERVED + 15 days: warns, changes nothing
-        result=self.command('-u','sqlitebrowser','--commit',PIN,executable=executable)
+        result=self.command('-u','sqlitebrowser',executable=executable)
         self.assertIn('catalog data last seen 15 days ago',result.stderr)
         self.assertEqual(snapshot_tree(app),before)
 
@@ -140,8 +140,8 @@ class TermuxCLI(unittest.TestCase):
         self.assertEqual((app/'version').read_text().strip(),SQLITE)
         self.assertFalse(Path('/opt/sqlitebrowser').exists())
         self.assertIn('/opt/am/modules/catalog-yaml.am',(app/'recipe.am').read_text())
-        self.command('--commit',PIN,executable=str(app/'AM-updater'))
-        self.command('-u','sqlitebrowser','--commit',PIN,executable=str(Path(os.environ['PREFIX'])/'bin/am'))
+        self.command(executable=str(app/'AM-updater'))
+        self.command('-u','sqlitebrowser',executable=str(Path(os.environ['PREFIX'])/'bin/am'))
 
 
 if __name__=='__main__':

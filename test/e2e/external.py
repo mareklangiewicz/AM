@@ -75,10 +75,8 @@ elif url.startswith(source+'/programs/x86_64/'):
         raw = (fixture/'legacy-recipe').read_bytes()
     elif app in ('obsidian', 'sqlitebrowser', 'nvim', 'nvim-nightly', '7z', 'arch', 'c++filt', 'ld.bfd', 'brave', 'brave-beta', 'brave-nightly') or app in settings.get('additional_recipes', []):
         raw = (Path('/src/programs/x86_64')/app).read_bytes()
-elif url == 'https://api.github.com/repos/'+settings['repository']+'/commits/heads/release-catalog-v3':
-    raw = (settings['pin']+'\n').encode()
-elif url.startswith('https://raw.githubusercontent.com/'+settings['repository']+'/'+settings['pin']+'/'):
-    name = url.split('/'+settings['pin']+'/', 1)[1]
+elif url.startswith('https://raw.githubusercontent.com/'+settings['repository']+'/main-marek/catalog/'):
+    name = 'catalog/'+url.split('/main-marek/catalog/', 1)[1]
     if name in settings['catalog_paths']:
         raw = (fixture/'tree'/name).read_bytes()
 elif url in settings['assets']:
