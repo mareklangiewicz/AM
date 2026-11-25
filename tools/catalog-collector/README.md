@@ -181,7 +181,7 @@ python3 -B -m unittest discover -s tools/catalog-collector -p test_contracts.py
 python3 -B -m unittest discover -s tools/catalog-collector -p test_pipeline_publication.py
 python3 -B -m unittest discover -s tools/catalog-collector -p test_yaml_manager_integration.py
 python3 -B tools/catalog-collector/recipe_policy_source.py
-python3 -B tools/catalog-contract/build.py
+python3 -B tools/catalog-contract/build_v3.py
 ```
 
 The tests use disposable installations/remotes and inert assets; their fixtures

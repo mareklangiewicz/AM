@@ -1,0 +1,48 @@
+$schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
+repository_id: 123
+repository: "example/app"
+observed_at: "2026-11-24T10:00:00Z"
+history_complete: false
+failed_at: "2026-11-25T09:00:00Z"
+failed_with: "transport"
+releases:
+  "9":
+    tag: "v1.0"
+    title: "First \"stable\" \\ release"
+    published_at: "2026-10-01T00:00:00Z"
+    prerelease: false
+    observed_at: "2026-11-20T10:00:00Z"
+    assets:
+      "90":
+        name: "app-x86_64.AppImage"
+        size: 1048576
+        sha256pre: "0123456789abcdef"
+  "10":
+    tag: "nightly"
+    published_at: "2026-11-23T00:00:00Z"
+    prerelease: true
+    assets: {}
+  "11":
+    tag: "nightly"
+    url: "https://github.com/example/app/releases/tag/nightly-elsewhere"
+    published_at: "2026-11-23T00:00:00Z"
+    prerelease: true
+    source_zip_url: "https://example.org/src.zip"
+    assets:
+      "110":
+        name: "中文 app.tar.gz"
+        url: "https://cdn.example.org/app?x=a:b#part"
+        size: 0
+git_scope:
+  tags: true
+  tags_history_complete: false
+git_refs:
+  "refs/heads/main":
+    commit: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    files:
+      "src/../version.txt":
+        blob: "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        content: "1.0\n"
+  "refs/tags/v1.0":
+    commit: "cccccccccccccccccccccccccccccccccccccccc"
+    position: 0

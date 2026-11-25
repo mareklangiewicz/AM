@@ -1,0 +1,9 @@
+$schema: "../schemas/catalog.schema.yaml#/$defs/apps"
+apps:
+  example:
+    repository: "repositories/example.yaml"
+    x86_64: "declaration"
+    aarch64: "script"
+  "example-nightly":
+    repository: "repositories/example.yaml"
+    x86_64: "script"

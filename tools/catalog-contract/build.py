@@ -1,119 +1,182 @@
-"""Generate closed editor schemas and reader field tables from one contract."""
+"""Generate the readers' tables from the hand-written catalog schema.
+
+schemas/catalog.schema.yaml is the contract. This writes:
+- tools/catalog-contract/schema.mjs, its $defs for the page's reader;
+- modules/catalog-tables.am, flat awk tables for the host's reader, which
+  loads no schema at run time.
+
+A document kind is a $defs entry with a $schema property. An object nested
+inline in a property is named <parent>.<property>. A $ref to a scalar
+definition is inlined, so awk sees only object types and scalar rules.
+"""
 import json
-import yaml
+import re
 from pathlib import Path
+
+import yaml
+
 ROOT = Path(__file__).resolve().parents[2]
-D = {}
-def scalar(type, **kw): return dict(type=type, **kw)
-def ref(name): return {'$ref':'#/$defs/'+name}
-def obj(name, fields, required=None):
-    D[name] = dict(type='object', properties=fields, required=list(fields) if required is None else required,
-                   additionalProperties=False)
-    return ref(name)
-def table(name, pattern, value):
-    D[name] = dict(type='object', patternProperties={pattern:value}, additionalProperties=False)
-    return ref(name)
-S=scalar('string'); B=scalar('boolean'); N=scalar('integer', minimum=0, maximum=9223372036854775807)
-ID=scalar('integer',minimum=1,maximum=9223372036854775807)
-PIN=scalar('string',pattern='^[0-9a-f]{40}$')
-HASH=scalar('string',pattern='^[0-9a-f]{64}$')
-TIME=scalar('string',format='date-time',pattern='^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$')
-URL=scalar('string',pattern='^https://[^/\\s][^\\s]*$')
-NAME='[a-z0-9][a-z0-9_.+-]{0,63}'
-PATH=scalar('string',pattern='^repositories/'+NAME+'\\.yaml$')
-SCHEMA=lambda version: scalar('string',pattern='^https://raw\\.githubusercontent\\.com/mareklangiewicz/AM/[0-9a-f]{40}/docs/catalog-format-v'+str(version)+'\\.md$')
-ENUM=lambda *values: scalar('string',enum=list(values))
-INPUTS=obj('inputs',dict(source=PIN,policy=PIN,recipes=PIN,rules=PIN,schemas=PIN))
-RUN=obj('run',dict(id=ID,attempt=ID))
-MEASUREMENT=obj('measurement',dict(state=ENUM('known','unknown'),value=N),['state'])
-COUNTS=obj('counts',{k:MEASUREMENT for k in ('enrolled','selected','attempted','successful','failed','unknown','unattempted','deferred')})
-STAGE=ENUM('ok','partial','failed','unknown','not_attempted')
-PUB=obj('publication',dict(state=ENUM('confirmed','conflict','failed','unknown','not_attempted'),commit=PIN),['state'])
-REASON=ENUM('complete','transport','authentication','quota','request_budget','byte_budget','time_budget','source_validation','document_overflow','candidate_validation','parent_conflict','publication_transport','internal','unknown')
-ASSET=obj('asset',dict(name=S,url_suffix=S,url=URL,size=N,media_type=scalar('string',examples=['zip','=zip','=raw','==raw','text/plain','','=','=application/zip'],pattern=r'^(=|$|zip$|[^\s/]+/[^\s/]+)',default='application/octet-stream',description='Omission is exactly application/octet-stream; zip expands to application/zip; an empty string stays empty. A leading = strips exactly one = and returns the rest literally before alias handling: =raw -> raw, =zip -> zip, ==raw -> =raw. Unescaped unknown bare aliases refuse.'),digest=S),['name','size'])
-ASSETS=table('assets','^[1-9][0-9]*$',ASSET)
-RELEASE=obj('release',dict(observed_at=TIME,tag=S,title=S,url=URL,created_at=TIME,published_at=TIME,updated_at=TIME,prerelease=B,source_zip_url=URL,source_tar_url=URL,download_base=URL,assets=ASSETS),['tag','url','prerelease','assets'])
-RELEASES=table('releases','^[1-9][0-9]*$',RELEASE)
-SCOPE=obj('scope',dict(page_size=scalar('integer',minimum=1,maximum=100),pages_fetched=ID,history_complete=B))
-GIT_FILE=obj('git_file',dict(path=S,blob=PIN,observed_at=TIME,content=S))
-GIT_FILES=table('git_files','^[0-9a-f]{64}$',GIT_FILE)
-GIT_REF=obj('git_ref',dict(name=S,commit=PIN,observed_at=TIME,position=N,files=GIT_FILES),['name','commit','observed_at'])
-GIT_REFS=table('git_refs','^[0-9a-f]{64}$',GIT_REF)
-GIT_BRANCHES=table('git_branches','^[0-9a-f]{64}$',S)
-GIT_SCOPE=obj('git_scope',dict(tags=B,tags_history_complete=B,branches=GIT_BRANCHES))
-BINDING=obj('binding',dict(repository=scalar('string',pattern='^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$'),commit=PIN,path=scalar('string',pattern='^programs/(x86_64|aarch64|i686|armv7l)/'+NAME+'$'),blob=PIN))
-DEPENDENCY=obj('dependency',dict(repository=S,commit=PIN,path=S,sha256=HASH))
-DEPENDENCIES=table('dependencies','^'+NAME+'$',DEPENDENCY)
-EVIDENCE=obj('evidence',dict(method=ENUM('whole_wrapper','whole_template','reviewed_custom'),evaluated_at=TIME,recipe_sha256=HASH,rules=PIN,dependencies=DEPENDENCIES,description=S),['method','evaluated_at','recipe_sha256','rules','dependencies'])
-PROV=obj('provenance_binding',dict(repository_id=ID,availability=ENUM('present','absent','unknown'),classification=ENUM('shared','template','custom','unknown'),recipe=BINDING,evidence=EVIDENCE),['repository_id','availability','classification'])
-ARCHES=table('architectures','^(x86_64|aarch64|i686|armv7l)$',PROV)
-PROVS=table('provenance_apps','^'+NAME+'$',ARCHES)
-RUNREFS=table('run_references','^[1-9][0-9]*-[1-9][0-9]*$',scalar('string',pattern='^runs/[1-9][0-9]*-[1-9][0-9]*/summary\\.yaml$'))
-DETAILS=table('detail_references','^[1-9][0-9]*-[1-9][0-9]*$',TIME)
-METRICS=obj('metrics',{k:MEASUREMENT for k in ('http_attempts','charged_bytes','received_bytes','acquisition_milliseconds','command_milliseconds','tree_bytes','largest_document_bytes','local_object_bytes','packed_history_bytes','remote_storage_bytes','peak_rss_bytes')})
-BUDGETS=obj('budgets',{k:N for k in ('requests','bytes','acquisition_milliseconds','document_bytes')})
-FRESH=obj('freshness',dict(catalog=PIN,evaluated_at=TIME,under_24h=MEASUREMENT,from_24_to_48h=MEASUREMENT,at_least_48h=MEASUREMENT,no_success=MEASUREMENT,unknown=MEASUREMENT))
-DAILY=obj('daily',dict(reported_attempts=N,unknown_source_count_attempts=N,successful_sources=N,failed_sources=N,first_report=TIME,last_report=TIME))
-DAYS=table('days','^[0-9]{4}-[0-9]{2}-[0-9]{2}$',DAILY)
-def root(kind, version, fields):
-    return obj(kind,dict(format=scalar('integer',const=version),schema=(SCHEMA(3) if version==3 else scalar('string',pattern='^https://raw\\.githubusercontent\\.com/mareklangiewicz/AM/[0-9a-f]{40}/docs/catalog-status-v1\\.md$')),kind=scalar('string',const=kind),**fields))
-root('catalog',3,dict(inputs=INPUTS,producer=RUN,retention=scalar('string',const='32-plus-stable-exact-tag-v1')))
-root('apps',3,dict(apps=table('app_paths','^'+NAME+'$',PATH)))
-FAILURE=ENUM('not_found','same_tag_conflict','too_large','invalid_response','transport')  # same_tag_conflict: read only, never written since ticket 18
-root('repository',3,dict(repository_id=ID,repository=scalar('string',pattern='^[A-Za-z0-9-]+/[A-Za-z0-9_.-]+$'),collected_at=TIME,failed_at=TIME,failed_with=FAILURE,scope=SCOPE,observed_at=TIME,releases=RELEASES,git_scope=GIT_SCOPE,git_refs=GIT_REFS))
-# A never-collected source has only its failure fields; readers enforce that
-# collected_at/scope/observed_at come together and failed_at/failed_with too.
-D['repository']['required']=['format','schema','kind','repository_id','repository','releases']
-root('provenance',3,dict(apps=PROVS))
-root('status',1,dict(schemas=PIN,last_report=scalar('string',pattern='^runs/[1-9][0-9]*-[1-9][0-9]*/summary\\.yaml$'),reported_at=TIME,last_confirmed_publication=PUB,summaries=RUNREFS,details=DETAILS))
-root('summary',1,dict(run=RUN,inputs=INPUTS,input_catalog_state=ENUM('known','absent','unknown'),input_catalog=PIN,started_at=TIME,reported_at=TIME,collection=STAGE,validation=STAGE,publication=PUB,counts=COUNTS,stop_reason=REASON,metrics=METRICS,budgets=BUDGETS,actions_url=URL,recent_runs_url=URL))
-root('source',1,dict(run=RUN,input_catalog_state=ENUM('known','absent','unknown'),input_catalog=PIN,repository_id=ID,repository=scalar('string',pattern='^[A-Za-z0-9-]+/[A-Za-z0-9_.-]+$'),outcome=ENUM('ok','failed','unknown','unattempted'),reason=REASON,attempted_at=TIME,completed_at=TIME,output_catalog=PIN))
-D['summary']['required'].remove('input_catalog')
-D['source']['required']=['format','schema','kind','run','input_catalog_state','repository_id','repository','outcome']
-root('statistics',1,dict(measured_at=TIME,freshness=FRESH,days=DAYS))
-KINDS=['catalog','apps','repository','provenance','status','summary','source','statistics']
-# Editor schemas supplement exact-byte/domain readers; conditional relationships
-# are enforced by those readers, including exact integer and timestamp checks.
-for kind in KINDS:
-    example=yaml.safe_load((ROOT/'tools/catalog-contract/fixtures'/f'{kind}.yaml').read_text())
-    schema={'$schema':'https://json-schema.org/draft/2020-12/schema',
-            'title':'AM '+kind,'description':'Closed mapping-only AM contract; canonical order and cross-document semantics require the maintained readers.',
-            '$ref':'#/$defs/'+kind,'$defs':D,'examples':[example]}
-    (ROOT/'schemas/catalog'/f'{kind}.schema.json').write_text(json.dumps(schema,indent=2)+'\n')
-(ROOT/'tools/catalog-contract/definitions.json').write_text(json.dumps(dict(kinds=KINDS,definitions=D),indent=2)+'\n')
-(ROOT/'tools/catalog-contract/definitions.mjs').write_text('// Generated by build.py. Do not edit.\nexport default '+json.dumps(dict(kinds=KINDS,definitions=D),separators=(',',':'))+';\n')
-# AWK loads no external schemas at runtime. Translate supported schema predicates
-# into POSIX ERE/table data, keeping exact decimal bounds as strings.
-def ere(s):
-    s=s.replace('\\s','[:space:]') # URL uses a negated bracket expression
-    import re
-    def expand(m):
-        char,count=m.group(1),int(m.group(2)); return char*count
-    s=re.sub(r'(\[[^\]]+\]|\\.|[A-Za-z0-9])\{(\d+)\}',expand,s)
-    s=s.replace('{0,63}','*') # length <=64 checked separately on table keys
-    return s
-lines=['# Generated by tools/catalog-contract/build.py.','BEGIN {']
-q=lambda x:json.dumps(str(x))
-for name,schema in D.items():
-    props=schema.get('properties',{})
-    lines.append(f' fields[{q(name)}]={q(" ".join(props))}')
-    lines.append(f' required_fields[{q(name)}]={q(" ".join(schema.get("required",[])))}')
-    rules=props or schema.get('patternProperties',{})
-    if not props:
-        pattern,value=next(iter(rules.items()))
-        lines.append(f' key_pattern[{q(name)}]={q(ere(pattern))}')
-        rules={'*':value}
-    for field,rule in rules.items():
-        key=name+'/'+field
-        if '$ref' in rule:
-            lines.append(f' child_type[{q(key)}]={q(rule["$ref"].split("/")[-1])}')
+SCHEMA = ROOT/'schemas/catalog.schema.yaml'
+TABLES = ROOT/'modules/catalog-tables.am'
+MODULE = ROOT/'tools/catalog-contract/schema.mjs'
+# The value a kind's first key carries names the schema and the kind.
+KINDS_HEADER = '$schema'
+
+ATOM = re.compile(r'\[(?:\\.|[^\]\\])+\]|\\.|[^\\\[\](){}*+?|^$]')
+QUANTIFIER = re.compile(r'\{(\d+)(?:,(\d+))?\}|[*+?]')
+
+
+def atoms(pattern):
+    """Split an anchored pattern of atoms and quantifiers; refuse anything else."""
+    if not (pattern.startswith('^') and pattern.endswith('$')):
+        raise SystemExit(f'pattern not anchored: {pattern}')
+    body, out, i = pattern[1:-1], [], 0
+    while i < len(body):
+        if body[i] == '(':
+            close = body.index(')', i)
+            atom, i = body[i:close+1], close+1
         else:
-            lines.append(f' scalar_type[{q(key)}]={q(rule["type"])}')
-            for predicate in ('pattern','minimum','maximum','const','format'):
-                if predicate in rule:
-                    val=ere(rule[predicate]) if predicate=='pattern' else rule[predicate]
-                    lines.append(f' rule_{predicate}[{q(key)}]={q(val)}')
-            if 'enum' in rule:
-                lines.append(f' rule_enum[{q(key)}]={q("|"+"|".join(rule["enum"])+"|")}')
-lines.append('}')
-(ROOT/'modules/catalog-contract-tables.am').write_text('\n'.join(lines)+'\n')
+            match = ATOM.match(body, i)
+            if not match:
+                raise SystemExit(f'unsupported pattern: {pattern}')
+            atom, i = match.group(), match.end()
+        quantifier = QUANTIFIER.match(body, i)
+        if quantifier:
+            i = quantifier.end()
+        out.append((atom, quantifier.group() if quantifier else ''))
+    return out
+
+
+def ere(pattern):
+    """POSIX ERE for every awk AM supports: no \\s, no interval expressions."""
+    def atom_ere(atom):
+        if atom.startswith('['):
+            return atom.replace('\\s', '[:space:]')
+        if atom == '\\s':
+            return '[[:space:]]'
+        return atom
+    out = []
+    for atom, quantifier in atoms(pattern):
+        text = atom_ere(atom)
+        if quantifier.startswith('{'):
+            low, high = re.fullmatch(r'\{(\d+)(?:,(\d+))?\}', quantifier).groups()
+            out.append(text*int(low) + ('' if high is None else text+'*' if int(high) > int(low) else ''))
+        else:
+            out.append(text+quantifier)
+    return '^'+''.join(out)+'$'
+
+
+def max_length(pattern):
+    """The longest string a pattern of bounded atoms matches; None if unbounded.
+
+    An atom is one character, except a parenthesised group, counted by its
+    longest alternative of literal characters.
+    """
+    total = 0
+    for atom, quantifier in atoms(pattern):
+        if atom.startswith('('):
+            width = max(len(re.sub(r'\\(.)', r'\1', alternative)) for alternative in atom[1:-1].split('|'))
+        else:
+            width = 1
+        if quantifier in ('*', '+'):
+            return None
+        if quantifier.startswith('{'):
+            low, high = re.fullmatch(r'\{(\d+)(?:,(\d+))?\}', quantifier).groups()
+            width *= int(high or low)
+        total += width
+    return total
+
+
+def load():
+    return yaml.safe_load(SCHEMA.read_text())['$defs']
+
+
+def kinds(defs):
+    return [name for name, rule in defs.items() if KINDS_HEADER in rule.get('properties', {})]
+
+
+def flatten(defs):
+    """Object types by name, each field resolved to a child type or a scalar rule."""
+    types = {}
+
+    def resolve(rule, name):
+        if '$ref' in rule:
+            target = rule['$ref'].removeprefix('#/$defs/')
+            return resolve(defs[target], target) if defs[target].get('type') != 'object' else ('child', target)
+        if rule.get('type') == 'object':
+            add(name, rule)
+            return ('child', name)
+        scalar = {key: rule[key] for key in ('type', 'pattern', 'minimum', 'maximum', 'const', 'enum', 'format') if key in rule}
+        scalar.setdefault('type', 'string')
+        return ('scalar', scalar)
+
+    def add(name, rule):
+        if name in types:
+            return
+        types[name] = entry = dict(fields={}, required=rule.get('required', []), key=None, most=rule.get('maxProperties'))
+        for field, sub in rule.get('properties', {}).items():
+            entry['fields'][field] = resolve(sub, f'{name}.{field}')
+        for pattern, sub in rule.get('patternProperties', {}).items():
+            entry['key'] = (pattern, resolve(sub, f'{name}.*'))
+
+    for name, rule in defs.items():
+        if rule.get('type') == 'object':
+            add(name, rule)
+    return types
+
+
+def tables(defs):
+    q = lambda value: json.dumps(str(value), ensure_ascii=False)
+    lines = ['# Generated by tools/catalog-contract/build.py from schemas/catalog.schema.yaml. Do not edit.', 'BEGIN {']
+    for kind in kinds(defs):
+        lines.append(f' kind_header[{q(defs[kind]["properties"][KINDS_HEADER]["const"])}]={q(kind)}')
+
+    def scalar(key, rule):
+        lines.append(f' scalar_type[{q(key)}]={q(rule["type"])}')
+        for predicate in ('minimum', 'maximum', 'const', 'format'):
+            if predicate in rule:
+                lines.append(f' rule_{predicate}[{q(key)}]={q(rule[predicate])}')
+        if 'pattern' in rule:
+            lines.append(f' rule_pattern[{q(key)}]={q(ere(rule["pattern"]))}')
+            longest = max_length(rule['pattern'])
+            if longest is not None:
+                lines.append(f' rule_max_length[{q(key)}]={q(longest)}')
+        if 'enum' in rule:
+            lines.append(f' rule_enum[{q(key)}]={q("|"+"|".join(rule["enum"])+"|")}')
+
+    for name, entry in flatten(defs).items():
+        lines.append(f' fields[{q(name)}]={q(" ".join(entry["fields"]))}')
+        lines.append(f' required_fields[{q(name)}]={q(" ".join(entry["required"]))}')
+        rules = dict(entry['fields'])
+        if entry['key']:
+            pattern, value = entry['key']
+            lines.append(f' key_pattern[{q(name)}]={q(ere(pattern))}')
+            longest = max_length(pattern)
+            if longest is not None:
+                lines.append(f' key_max_length[{q(name)}]={q(longest)}')
+            rules['*'] = value
+        if entry['most'] is not None:
+            lines.append(f' max_children[{q(name)}]={q(entry["most"])}')
+        for field, (shape, rule) in rules.items():
+            key = name+'/'+field
+            if shape == 'child':
+                lines.append(f' child_type[{q(key)}]={q(rule)}')
+            else:
+                scalar(key, rule)
+    lines.append('}')
+    return '\n'.join(lines)+'\n'
+
+
+def module(defs):
+    body = json.dumps(dict(kinds=kinds(defs), definitions=defs), separators=(',', ':'), ensure_ascii=False)
+    return '// Generated by tools/catalog-contract/build.py from schemas/catalog.schema.yaml. Do not edit.\nexport default '+body+';\n'
+
+
+def main():
+    defs = load()
+    TABLES.write_text(tables(defs))
+    MODULE.write_text(module(defs))
+
+
+if __name__ == '__main__':
+    main()

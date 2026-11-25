@@ -1,0 +1,213 @@
+# AM catalog reader for POSIX awk: the grammar of docs/catalog-format.md,
+# checked against catalog-tables.am (generated from schemas/catalog.schema.yaml)
+# and the cross-field rules below. Paths join keys with SUBSEP: Git ref names
+# and file paths contain "/".
+function fail(message) {
+    print "catalog YAML: line " NR ": " message > "/dev/stderr"
+    invalid=1; exit 2
+}
+function less(a,b) { return length(a)<length(b) || (length(a)==length(b) && "x" a < "x" b) }
+function uint(s) { return s ~ /^(0|[1-9][0-9]*)$/ && !less("9223372036854775807",s) }
+function timestamp(s, y,m,d,h,n,t,days) {
+    if (length(s)!=20 || s !~ /^[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]T[0-9][0-9]:[0-9][0-9]:[0-9][0-9]Z$/) return 0
+    y=substr(s,1,4)+0; m=substr(s,6,2)+0; d=substr(s,9,2)+0
+    h=substr(s,12,2)+0; n=substr(s,15,2)+0; t=substr(s,18,2)+0
+    days=(m==2 ? 28+(y%4==0 && (y%100!=0 || y%400==0)) : (m==4 || m==6 || m==9 || m==11 ? 30 : 31))
+    return y>=1970 && m>=1 && m<=12 && d>=1 && d<=days && h<24 && n<60 && t<60
+}
+# The index of the quote closing the string that starts at s's first byte; 0 if none.
+function string_end(s, i,n,c) {
+    n=length(s)
+    for(i=2;i<=n;i++) {
+        c=substr(s,i,1)
+        if(c=="\\") i++
+        else if(c=="\"") return i
+    }
+    return 0
+}
+function decode(s, out,i,c,e,start,width,part,size,piece,extra,total) {
+    total=length(s)
+    if(substr(s,1,1)!="\"" || substr(s,total,1)!="\"" || total<2) fail("quoted string required")
+    out=""
+    # BusyBox repeatedly scans long operands in substr/length. Decode small
+    # input chunks; an escape at a boundary consumes the next original byte.
+    for(start=2;start<total;start+=width+extra) {
+        width=(total-start>4096 ? 4096 : total-start)
+        part=substr(s,start,width);size=length(part);piece="";extra=0
+        for(i=1;i<=size;i++) {
+            c=substr(part,i,1)
+            if(c=="\"") fail("unescaped quote")
+            if(c=="\\") {
+                if(++i>size) {
+                    if(start+width>=total) fail("unfinished escape")
+                    e=substr(s,start+width,1);extra=1
+                } else e=substr(part,i,1)
+                if(e=="n") c="\n"
+                else if(e=="r") c="\r"
+                else if(e=="t") c="\t"
+                else if(e=="N") c="\302\205"
+                else if(e=="L") c="\342\200\250"
+                else if(e=="P") c="\342\200\251"
+                else if(e=="\"" || e=="\\") c=e
+                else fail("unsupported escape")
+            }
+            piece=piece c
+        }
+        out=out piece
+    }
+    return out
+}
+function add_decimal(a,b, out,carry,i,j,n) {
+    out=""; carry=0; i=length(a); j=length(b)
+    while(i>0 || j>0 || carry) {
+        n=(i>0 ? substr(a,i--,1)+0 : 0)+(j>0 ? substr(b,j--,1)+0 : 0)+carry
+        out=(n%10) out; carry=int(n/10)
+    }
+    return out=="" ? "0" : out
+}
+function enum_valid(choices,value) { return index(choices,"|" value "|")>0 && value !~ /\|/ }
+function has(p,field) { return (p SUBSEP field) in kind_of }
+function value(p,field) { return values[p SUBSEP field] }
+function check_node(p, a,n,i) {
+    n=split(required_fields[node_type[p]],a," ")
+    for(i=1;i<=n;i++) if(!has(p,a[i])) fail("missing field: " a[i])
+    if(kind_of[p]=="map" && !children[p]) fail("use {} for an empty mapping")
+    if((node_type[p] in max_children) && children[p]>max_children[node_type[p]]+0) fail("more than " max_children[node_type[p]] " entries")
+}
+# Keys made of digits are numbers; a run key is two numbers.
+function key_before(pattern,a,b, x,y) {
+    if(pattern=="^[1-9][0-9]*$") return less(a,b)
+    if(pattern=="^[1-9][0-9]*-[1-9][0-9]*$") {
+        split(a,x,"-"); split(b,y,"-")
+        return less(x[1],y[1]) || (x[1]==y[1] && less(x[2],y[2]))
+    }
+    return "x" a < "x" b
+}
+function valid_ref(s) {
+    return s !~ /[[:cntrl:]~^:?*\\\[]/ && index(s,"..")==0 && index(s,"@{")==0 && index(s,"//")==0 &&
+        s !~ /[\/.]$/ && s !~ /[.]lock$/ && length(s)<=1024
+}
+function valid_path(s) {
+    return length(s)<=1024 && s !~ /(^|\/)([.]|[.][.])(\/|$)/
+}
+function repository_rules( collected,failed,p,r,f,name,tags,branches,position,positions,files) {
+    collected=has("","observed_at"); failed=has("","failed_at")
+    if(collected!=has("","history_complete")) fail("observed_at and history_complete come together")
+    if(failed!=has("","failed_with")) fail("failed_at and failed_with come together")
+    if(!collected && (!failed || children[SUBSEP "releases"] || has("","git_scope"))) fail("a never-collected repository has only its failure")
+    if(collected && failed && "x" value("","failed_at")<="x" value("","observed_at")) fail("failure not after observation")
+    for(p in node_type) if(node_type[p]=="release" && has(p,"observed_at") && "x" value(p,"observed_at")>="x" value("","observed_at")) fail("release last seen not older than the repository")
+    if(has("","git_scope")!=has("","git_refs")) fail("git_scope and git_refs come together")
+    if(!has("","git_refs")) return
+    if(value(SUBSEP "git_scope","tags_history_complete")=="true" && value(SUBSEP "git_scope","tags")!="true") fail("tag history without tags")
+    for(r in node_type) if(node_type[r]=="git_ref") {
+        name=key_of[r]
+        if(!valid_ref(name)) fail("Git ref name")
+        if(name ~ /^refs\/tags\//) {
+            tags++
+            if(value(SUBSEP "git_scope","tags")!="true" || !has(r,"position") || has(r,"files")) fail("Git tag scope")
+            position=value(r,"position")
+            if(position in positions) fail("Git tag position repeated")
+            positions[position]=1
+        } else {
+            branches++
+            if(has(r,"position")) fail("Git branch scope")
+        }
+    }
+    if(branches>4) fail("more than 4 Git branches")
+    for(position=0;position<tags;position++) if(!(position in positions)) fail("Git tag position gap")
+    for(f in node_type) if(node_type[f]=="git_file") {
+        if(!valid_path(key_of[f])) fail("Git file path")
+        if(length(value(f,"content"))>1048576) fail("Git file content over 1 MiB")
+    }
+}
+function runs_rules( r) {
+    for(r in node_type) if(node_type[r]=="run") {
+        if(less(value(r,"enrolled"),value(r,"selected")) ||
+           less(value(r,"selected"),add_decimal(value(r,"succeeded"),value(r,"failed")))) fail("run counts")
+    }
+}
+BEGIN {
+    input_limit=ENVIRON["AM_YAML_MAX_INPUT_BYTES"]; if(input_limit=="") input_limit=2097152
+    if(!uint(input_limit) || input_limit+0<1 || input_limit+0>33554432) fail("reader budget")
+    previous=-1; kind_of[""]="map"
+}
+{
+    bytes+=length($0)+1
+    if(bytes>input_limit || length($0)>2097152) fail("size limit")
+    if ($0 ~ /[[:cntrl:]]/ || $0 ~ /\302\200|\302\201|\302\202|\302\203|\302\204|\302\205|\302\206|\302\207|\302\210|\302\211|\302\212|\302\213|\302\214|\302\215|\302\216|\302\217|\302\220|\302\221|\302\222|\302\223|\302\224|\302\225|\302\226|\302\227|\302\230|\302\231|\302\232|\302\233|\302\234|\302\235|\302\236|\302\237|\342\200\250|\342\200\251|\357\277\276|\357\277\277/ || $0 ~ / $/ || $0=="") fail("control, blank line or trailing space")
+    match($0,/^ */); depth=RLENGTH/2
+    if(RLENGTH%2 || depth>12 || depth>previous+1) fail("indentation")
+    for(d=previous;d>=depth;d--) if(stack[d] in node_type) check_node(stack[d])
+    line=substr($0,RLENGTH+1)
+    p=(depth ? stack[depth-1] : "")
+    if(depth && kind_of[p]!="map") fail("child of a scalar")
+    t=node_type[p]
+    if(substr(line,1,1)=="\"") {
+        end=string_end(line)
+        if(!end || substr(line,end+1,1)!=":") fail("key")
+        key=decode(substr(line,1,end)); raw=substr(line,end+2); quoted=1
+    } else {
+        colon=index(line,":")
+        if(!colon) fail("missing colon")
+        key=substr(line,1,colon-1); raw=substr(line,colon+1); quoted=0
+        if(key !~ /^[a-z][a-z0-9_]*$/ && !(NR==1 && key=="$schema")) fail("key")
+    }
+    path=p SUBSEP key
+    if(path in kind_of) fail("duplicate key")
+    if(length($0)>65536 && !(t=="git_file" && key=="content")) fail("size limit")
+    if(NR==1) {
+        if(key!="$schema") fail("$schema first")
+        root_kind=kind_header[decode(substr(raw,2))]
+        if(root_kind=="") fail("unknown $schema")
+        node_type[""]=t=root_kind
+    }
+    if(key_pattern[t]!="") {
+        if(!quoted || key !~ key_pattern[t] || (t in key_max_length && length(key)>key_max_length[t]+0)) fail("table key")
+        if(key_pattern[t]=="^[1-9][0-9]*$" && !uint(key)) fail("ID over 64 bits")
+        if((p in last_key) && !key_before(key_pattern[t],last_key[p],key)) fail("key order")
+        last_key[p]=key; rule=t "/*"
+    } else {
+        if(quoted) fail("quoted field name")
+        n=split(fields[t],a," "); order=0
+        for(i=1;i<=n;i++) if(a[i]==key) order=i
+        if(!order || order<=last_order[p]) fail("unknown or out-of-order field: " key)
+        last_order[p]=order; rule=t "/" key
+    }
+    if(raw=="") { kind="map"; v="" }
+    else {
+        if(substr(raw,1,1)!=" " || substr(raw,2,1)==" ") fail("scalar spacing")
+        raw=substr(raw,2)
+        if(raw=="{}") { kind="empty"; v="" }
+        else if(substr(raw,1,1)=="\"") {
+            if(string_end(raw)!=length(raw)) fail("text after string")
+            kind="string"; v=decode(raw)
+        }
+        else if(raw=="true" || raw=="false") { kind="boolean"; v=raw }
+        else if(raw ~ /^(0|[1-9][0-9]*)$/) { if(!uint(raw)) fail("integer over 64 bits"); kind="integer"; v=raw }
+        else fail("scalar")
+    }
+    if(rule in child_type) {
+        if(kind!="map" && kind!="empty") fail("mapping required")
+        node_type[path]=child_type[rule]
+    } else {
+        if(kind!=scalar_type[rule]) fail("scalar type")
+        if((rule in rule_const) && "x" v!="x" rule_const[rule]) fail("constant")
+        if((rule in rule_pattern) && v !~ rule_pattern[rule]) fail("pattern")
+        if((rule in rule_max_length) && length(v)>rule_max_length[rule]+0) fail("length")
+        if((rule in rule_enum) && !enum_valid(rule_enum[rule],v)) fail("enum")
+        if((rule in rule_minimum) && less(v,rule_minimum[rule])) fail("minimum")
+        if((rule in rule_maximum) && less(rule_maximum[rule],v)) fail("maximum")
+        if(rule_format[rule]=="date-time" && !timestamp(v)) fail("timestamp")
+    }
+    kind_of[path]=kind; values[path]=v; key_of[path]=key; children[p]++
+    stack[depth]=path; previous=depth
+}
+END {
+    if(invalid) exit 2
+    if(NR<1) fail("empty document")
+    for(p in node_type) check_node(p)
+    if(root_kind=="repository") repository_rules()
+    if(root_kind=="runs") runs_rules()
+    exit 0
+}

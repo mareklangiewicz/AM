@@ -1,0 +1,23 @@
+$schema: "../../schemas/catalog.schema.yaml#/$defs/runs"
+runs:
+  "9-1":
+    reported_at: "2026-11-24T10:00:00Z"
+    enrolled: 8288
+    selected: 500
+    succeeded: 498
+    failed: 2
+    http_attempts: 1210
+    tree_bytes: 83886080
+  "10-1":
+    reported_at: "2026-11-25T10:00:00Z"
+    enrolled: 8288
+    selected: 500
+    succeeded: 120
+    failed: 0
+    stop_reason: "quota"
+  "10-2":
+    reported_at: "2026-11-25T11:00:00Z"
+    enrolled: 8288
+    selected: 500
+    succeeded: 500
+    failed: 0

@@ -467,7 +467,7 @@ class Contracts(unittest.TestCase):
         self.assertEqual(source(None,dict(received_at=NEW,releases=normalized,history_complete=True),rid=1,repository='example/app',revision=PIN)['releases']['1']['created_at'],OLD)
         paths=[*sorted((ROOT/'schemas/catalog').glob('*.json')),ROOT/'modules/catalog-contract-tables.am',ROOT/'tools/catalog-contract/definitions.json',ROOT/'tools/catalog-contract/definitions.mjs']
         before={p:p.read_bytes() for p in paths}
-        subprocess.run(['python3',str(ROOT/'tools/catalog-contract/build.py')],check=True)
+        subprocess.run(['python3',str(ROOT/'tools/catalog-contract/build_v3.py')],check=True)
         self.assertEqual(before,{p:p.read_bytes() for p in paths})
 
     def test_provenance_positive_predicates_and_catalog_only_recipe(self):

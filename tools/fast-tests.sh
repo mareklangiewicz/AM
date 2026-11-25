@@ -7,7 +7,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 ${RUFF:-uvx ruff@0.17.4} check tools test
-for suite in tools/recipe-conversion tools/recipe-reconstruction tools/upstream-merge tools/release test/e2e tools/catalog-collector; do
+for suite in tools/recipe-conversion tools/recipe-reconstruction tools/upstream-merge tools/release test/e2e tools/catalog-contract tools/catalog-collector; do
   echo "== $suite" >&2
   python3 -B -m unittest discover -s "$suite" -p 'test_*.py'
 done
