@@ -6,6 +6,19 @@ function fail(message) {
     print "catalog YAML: line " NR ": " message > "/dev/stderr"
     invalid=1; exit 2
 }
+function emit(text) {
+    if(output_bytes+length(text)>output_limit) fail("output byte limit")
+    output_bytes+=length(text)
+    printf "%s", text
+}
+# A value as the grammar writes it: quoted, with the closed escape set.
+function encode(text, out) {
+    out=text
+    gsub(/\\/,"\\\\",out); gsub(/"/,"\\\"",out)
+    gsub(/\n/,"\\n",out); gsub(/\r/,"\\r",out); gsub(/\t/,"\\t",out)
+    gsub(/\302\205/,"\\N",out); gsub(/\342\200\250/,"\\L",out); gsub(/\342\200\251/,"\\P",out)
+    return "\"" out "\""
+}
 function less(a,b) { return length(a)<length(b) || (length(a)==length(b) && "x" a < "x" b) }
 function uint(s) { return s ~ /^(0|[1-9][0-9]*)$/ && !less("9223372036854775807",s) }
 function timestamp(s, y,m,d,h,n,t,days) {
@@ -129,7 +142,9 @@ function runs_rules( r) {
 }
 BEGIN {
     input_limit=ENVIRON["AM_YAML_MAX_INPUT_BYTES"]; if(input_limit=="") input_limit=2097152
-    if(!uint(input_limit) || input_limit+0<1 || input_limit+0>33554432) fail("reader budget")
+    output_limit=ENVIRON["AM_YAML_MAX_OUTPUT_BYTES"]; if(output_limit=="") output_limit=16777216
+    if(!uint(input_limit) || input_limit+0<1 || input_limit+0>33554432 || !uint(output_limit) || output_limit+0>33554432) fail("reader budget")
+    operation=ENVIRON["AM_YAML_OPERATION"]; query=ENVIRON["AM_YAML_QUERY"]; gsub(/\//,SUBSEP,query)
     previous=-1; kind_of[""]="map"
 }
 {
@@ -200,7 +215,8 @@ BEGIN {
         if((rule in rule_maximum) && less(rule_maximum[rule],v)) fail("maximum")
         if(rule_format[rule]=="date-time" && !timestamp(v)) fail("timestamp")
     }
-    kind_of[path]=kind; values[path]=v; key_of[path]=key; children[p]++
+    kind_of[path]=kind; values[path]=v; key_of[path]=key; encoded[path]=raw; children[p]++
+    if(node_type[path]!="") in_order[++nodes]=path
     stack[depth]=path; previous=depth
 }
 END {
@@ -209,5 +225,45 @@ END {
     for(p in node_type) check_node(p)
     if(root_kind=="repository") repository_rules()
     if(root_kind=="runs") runs_rules()
+    if(operation ~ /_facts$/) {
+        if(root_kind!="repository") fail("facts need a repository document")
+        facts(operation)
+    }
+    if(operation=="get") {
+        if(!(query in kind_of)) exit 3
+        if(kind_of[query]=="map" || kind_of[query]=="empty") fail("get needs a scalar")
+        emit(values[query])
+    }
     exit 0
 }
+# Rows for catalog-yaml-policy.am, in document order: quoted tokens, derived
+# values filled in (URLs joined as is; a release's own observed_at, else the
+# repository's).
+function facts(operation, i,n,r,a,f,repo,tag,observed,base,file_rows) {
+    repo=value("","repository")
+    for(i=1;i<=nodes;i++) {
+        n=in_order[i]
+        if(node_type[n]=="release") {
+            r=n; tag=value(r,"tag")
+            observed=(has(r,"observed_at") ? encoded[r SUBSEP "observed_at"] : encoded[SUBSEP "observed_at"])
+            if(operation=="release_facts")
+                emit(key_of[r] "\t\t" observed "\t" encoded[r SUBSEP "published_at"] "\t" encoded[r SUBSEP "tag"] "\t\"\"\t" \
+                    stored(r,"url","https://github.com/" repo "/releases/tag/" tag) "\t" encoded[r SUBSEP "prerelease"] "\t" \
+                    stored(r,"source_tar_url","https://api.github.com/repos/" repo "/tarball/" tag) "\t" \
+                    stored(r,"source_zip_url","https://api.github.com/repos/" repo "/zipball/" tag) "\n")
+        }
+        if(node_type[n]=="asset" && operation=="asset_facts") {
+            a=n
+            emit(key_of[r] "\t" key_of[a] "\t" observed "\t" encoded[r SUBSEP "published_at"] "\t" encoded[r SUBSEP "tag"] "\t" \
+                encoded[a SUBSEP "name"] "\t" stored(a,"url","https://github.com/" repo "/releases/download/" tag "/" value(a,"name")) "\t" \
+                encoded[r SUBSEP "prerelease"] "\n")
+        }
+        if(node_type[n]=="git_ref" && operation=="git_facts") {
+            r=n; base=encode(key_of[r]) "\t" encoded[r SUBSEP "commit"] "\t" encoded[SUBSEP "observed_at"] "\t" values[r SUBSEP "position"] "\t"
+            if(!children[r SUBSEP "files"]) emit(base "\"\"\t\"\"\t\"\"\n")
+        }
+        if(node_type[n]=="git_file" && operation=="git_facts")
+            emit(base encode(key_of[n]) "\t" encoded[n SUBSEP "blob"] "\t" encoded[n SUBSEP "content"] "\n")
+    }
+}
+function stored(p,field,derived) { return has(p,field) ? encoded[p SUBSEP field] : encode(derived) }
