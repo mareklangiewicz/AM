@@ -56,15 +56,15 @@ def scan(raw):
     return found
 
 
+def attempted_at(top):
+    """When this repository was last tried: the newer of its last read and its latest failure."""
+    return max(top.get('observed_at', ''), top.get('failed_at', ''))
+
+
 def load(path):
     document = yaml.load(path.read_text(encoding='utf-8'), Loader=LOADER)
     document.pop('$schema')
     return document
-
-
-def registry(checkout):
-    raw = json.loads((checkout/'tools/catalog-collector/source-names.json').read_text())
-    return raw['active']
 
 
 def collect(args):
@@ -72,11 +72,11 @@ def collect(args):
     checkout = Path(args.checkout)
     catalog = checkout/'catalog'
     rows, sources = host_catalog.configuration(root=checkout)
-    names = registry(checkout)
+    names = host_catalog.registry_names(rows, checkout/'tools/catalog-collector/source-names.json')
     paths = {rid: catalog/'repositories'/f'{names[rid]}.yaml' for rid in sources}
     tops = {rid: scan(path.read_bytes()) for rid, path in paths.items() if path.exists()}
     retained = {rid: dict(repository_id=top['repository_id'], repository=top['repository'],
-                          attempted_at=max(top.get('observed_at', ''), top.get('failed_at', '')))
+                          attempted_at=attempted_at(top))
                 for rid, top in tops.items()}
     metrics, acquisitions = {}, {}
     report = host_catalog.collect(retained, args.evidence, batch_size=min(args.batch_size, len(sources)),

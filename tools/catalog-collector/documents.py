@@ -9,10 +9,13 @@ from datetime import datetime
 import json
 from pathlib import Path
 import re
+import sys
 
 import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT/'tools/recipe-reconstruction') not in sys.path:
+    sys.path.insert(0, str(ROOT/'tools/recipe-reconstruction'))
 DEFS = yaml.safe_load((ROOT/'schemas/catalog.schema.yaml').read_text())['$defs']
 PLATFORMS = json.loads((ROOT/'tools/catalog-contract/platforms.json').read_text())
 NEWEST_TAGS = 8
@@ -114,23 +117,8 @@ def repository(previous, acquired, *, repository_id, repository):
                     observed_at=acquired['received_at'], history_complete=acquired['history_complete'],
                     releases=retained(releases))
     if 'git_refs' in acquired:
-        document.update(_git(acquired))
+        document.update(git_scope=acquired['git_scope'], git_refs=acquired['git_refs'])
     return document
-
-
-def _git(acquired):
-    """git_observations' result, keyed by ref name and file path; every Git
-    fact inherits the repository's observed_at."""
-    refs = {}
-    for ref in acquired['git_refs'].values():
-        fact = dict(commit=ref['commit'])
-        if 'position' in ref:
-            fact['position'] = ref['position']
-        if ref.get('files'):
-            fact['files'] = {f['path']: dict(blob=f['blob'], content=f['content']) for f in ref['files'].values()}
-        refs[ref['name']] = fact
-    scope = acquired['git_scope']
-    return dict(git_scope=dict(tags=scope['tags'], tags_history_complete=scope['tags_history_complete']), git_refs=refs)
 
 
 def failed(previous, *, failed_at, failed_with, repository_id, repository):
@@ -190,7 +178,7 @@ def recipe_label(text, app, repository_id):
     """declaration: the recipe is a short declaration of this app installing
     from this repository, which AM's reviewed installer runs. script: any
     other recipe, to read before installing. Never evaluates shell."""
-    from provenance import from_short, TEMPLATE  # brings in recipe-reconstruction
+    from reconstruct import from_short, TEMPLATE
     try:
         declaration = from_short(text, TEMPLATE)
     except (ValueError, KeyError):

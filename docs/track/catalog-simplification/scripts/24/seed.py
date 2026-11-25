@@ -57,6 +57,21 @@ def expanded_release(release):
     return record
 
 
+def git(v3):
+    """v3's git_scope/git_refs (keyed by hashes, each fact timed) in the new
+    shape: keyed by ref name and file path, timed by the repository's observed_at."""
+    refs = {}
+    for ref in v3['git_refs'].values():
+        fact = dict(commit=ref['commit'])
+        if 'position' in ref:
+            fact['position'] = ref['position']
+        if ref.get('files'):
+            fact['files'] = {f['path']: dict(blob=f['blob'], content=f['content']) for f in ref['files'].values()}
+        refs[ref['name']] = fact
+    scope = v3['git_scope']
+    return dict(git_scope=dict(tags=scope['tags'], tags_history_complete=scope['tags_history_complete']), git_refs=refs)
+
+
 def convert(v3):
     """The new repository document for one v3 repository document; None to leave it out."""
     if v3.get('failed_with') == RETIRED_FAILURE:
@@ -74,7 +89,7 @@ def convert(v3):
     document = dict(repository_id=rid, repository=repository, observed_at=v3['observed_at'],
                     history_complete=v3['scope']['history_complete'], releases=documents.retained(releases))
     if 'git_refs' in v3:
-        document.update(documents._git(v3))
+        document.update(git(v3))
     if 'failed_at' in v3:
         document.update(failed_at=v3['failed_at'], failed_with=v3['failed_with'])
     return document

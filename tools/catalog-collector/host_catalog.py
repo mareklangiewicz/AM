@@ -1,4 +1,4 @@
-"""Single-user YAML catalog: bounded release-list collection and retained facts.
+"""Single-user YAML catalog: enrollment and bounded release-list collection (a library; catalog_run.py runs it).
 
 Collection combines reviewed recipe declarations and catalog-only identities.
 One page of 100 releases (fewer for PAGE_SIZES) per attempted source; clients enforce seven-day selected
@@ -128,6 +128,28 @@ def configuration(*, root=None, source_cap=None):
     if len(sources) > source_cap or len({r['app'] for r in rows}) != len(rows):
         raise ValueError('manifest scope')
     return rows, sources
+
+
+NAME = r'[a-z0-9][a-z0-9_.+-]{0,63}'
+
+
+def registry_names(rows, path):
+    """source-names.json's active names (repository id -> catalog/repositories/<name>.yaml),
+    checked: unique, never a retired name, and one for every enrolled row."""
+    registry = json.loads(Path(path).read_text(encoding='utf-8'), object_pairs_hook=unique_object)
+    if set(registry) != {'active', 'retired'} or not isinstance(registry['retired'], list):
+        raise ValueError('source registry')
+    names = registry['active']
+    if len(set(names.values())) != len(names) or len(set(registry['retired'])) != len(registry['retired']):
+        raise ValueError('duplicate source name')
+    if set(names.values()) & set(registry['retired']):
+        raise ValueError('retired source name')
+    for rid, name in names.items():
+        if not re.fullmatch('[1-9][0-9]*', rid) or not re.fullmatch(NAME, name) or name in ('.', '..'):
+            raise ValueError('source name spelling')
+    if any(str(row['repository_id']) not in names for row in rows):
+        raise ValueError('unallocated source')
+    return names
 
 
 def installation_configuration(*, root=None):
@@ -323,14 +345,3 @@ def collect(retained, evidence=None, *, batch_size=None, metrics=None, acquisiti
         metrics.update(rate_first=rates[0], rate_last=rates[-1])
     return report
 
-
-def main():
-    import sys
-    if len(sys.argv)>1 and sys.argv[1] in ('collect','validate','publish','schema-revision','schedule-gate'):
-        from collection_interface import main as command
-        command(sys.argv[1:])
-    else:
-        raise SystemExit('Use collect, validate, publish, schema-revision or schedule-gate; active format-2 production is retired.')
-
-
-if __name__=='__main__': main()

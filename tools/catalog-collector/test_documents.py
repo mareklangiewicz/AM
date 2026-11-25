@@ -137,15 +137,11 @@ releases: {}
         self.assertNotIn('failed_with', again)
 
 
-    def test_git_refs_are_keyed_by_name_and_inherit_the_read_time(self):
-        import git_observations as g
+    def test_git_observations_are_copied_into_the_document(self):
         main, tag = 'refs/heads/main', 'refs/tags/v1'
-        observed = dict(git_scope=dict(tags=True, tags_history_complete=True, branches={g.key(main): main}),
-                        git_refs={g.key(tag): dict(name=tag, commit='c'*40, observed_at=NOW, position=0),
-                                  g.key(main): dict(name=main, commit='a'*40, observed_at=NOW,
-                                                    files={g.key('VERSION'): dict(path='VERSION', blob='b'*40,
-                                                                                  observed_at=NOW, content='1\n')})},
-                        completed_at=NOW)
+        observed = dict(git_scope=dict(tags=True, tags_history_complete=True),
+                        git_refs={tag: dict(commit='c'*40, position=0),
+                                  main: dict(commit='a'*40, files={'VERSION': dict(blob='b'*40, content='1\n')})})
         acquired = dict(received_at=NOW, releases={}, history_complete=True, **observed)
         document = d.repository(None, acquired, repository_id=123, repository='example/app')
         self.assertEqual(d.encode('repository', document).decode().split('releases: {}\n')[1], '''\

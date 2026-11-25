@@ -31,7 +31,6 @@ ROOT=Path(__file__).resolve().parents[2]
 sys.path[:0]=[str(ROOT/'tools/recipe-conversion')]
 import convert
 import host_catalog
-from collection_interface import registry_names
 from recipe_declarations import MARKER, rows_json
 from recipe_policy_source import generate
 import appimage_policy_source
@@ -275,7 +274,7 @@ def stage(root,ours_revision,rows,files):
         generate(tree)
         appimage_policy_source.generate(tree,tree/APPIMAGES)
         with patch.object(host_catalog,'ROOT',tree):enrollment,_=host_catalog.configuration()
-        registry_names(enrollment,tree/NAMES)
+        host_catalog.registry_names(enrollment,tree/NAMES)
         return (tree/POLICY).read_text()
 
 

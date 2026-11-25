@@ -40,30 +40,31 @@ def configuration(root):
 
 
 def collect(scope,fetch):
-    refs={};times=[];complete=False
+    """The repository document's git_scope and git_refs (schemas/catalog.schema.yaml):
+    refs keyed by name, tags in listing order, branch files keyed by path and
+    bound to the observed commit. Every Git fact inherits the repository's observed_at."""
+    refs={};complete=False
     def get(kind,endpoint):
-        raw,at=fetch(kind,endpoint);times.append(at)
-        return json.loads(raw,object_pairs_hook=unique_object),at
+        raw,_=fetch(kind,endpoint)
+        return json.loads(raw,object_pairs_hook=unique_object)
     if scope['tags']:
-        tags,at=get('tags','tags?per_page=100&page=1')
+        tags=get('tags','tags?per_page=100&page=1')
         if not isinstance(tags,list) or len(tags)>100:raise ValueError('Git tag response')
         complete=len(tags)<100
         for position,tag in enumerate(tags):
             name='refs/tags/'+tag['name'];commit=tag['commit']['sha']
-            if not valid_ref(name) or not re.fullmatch('[0-9a-f]{40}',commit) or key(name) in refs:
+            if not valid_ref(name) or not re.fullmatch('[0-9a-f]{40}',commit) or name in refs:
                 raise ValueError('Git tag identity')
-            refs[key(name)]=dict(name=name,commit=commit,observed_at=at,position=position)
-    branches={}
-    for branch,files in scope['branches'].items():
+            refs[name]=dict(commit=commit,position=position)
+    for branch,paths in scope['branches'].items():
         name='refs/heads/'+branch
-        obj,at=get('ref-'+key(name),'git/ref/heads/'+quote(branch,safe=''))
+        obj=get('ref-'+key(name),'git/ref/heads/'+quote(branch,safe=''))
         commit=obj['object']['sha']
         if obj.get('ref')!=name or obj['object'].get('type')!='commit' or not re.fullmatch('[0-9a-f]{40}',commit):
             raise ValueError('Git branch identity')
-        record=dict(name=name,commit=commit,observed_at=at)
-        observations={}
-        for path in files:
-            file,observed=get('file-'+key(name+'\0'+path),'contents/'+quote(path,safe='/')+'?ref='+commit)
+        files={}
+        for path in paths:
+            file=get('file-'+key(name+'\0'+path),'contents/'+quote(path,safe='/')+'?ref='+commit)
             if (file.get('type')!='file' or file.get('path')!=path or file.get('encoding')!='base64' or
                     type(file.get('size')) is not int or not 0<=file['size']<=1048576 or
                     not isinstance(file.get('content'),str) or len(file['content'])>1500000 or
@@ -73,8 +74,6 @@ def collect(scope,fetch):
             except (ValueError,UnicodeError):raise ValueError('Git file encoding') from None
             digest=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
             if len(raw)!=file['size'] or digest!=file['sha']:raise ValueError('Git file blob mismatch')
-            observations[key(path)]=dict(path=path,blob=digest,observed_at=observed,content=raw.decode('utf-8'))
-        if observations:record['files']=observations
-        refs[key(name)]=record;branches[key(name)]=name
-    return dict(git_scope=dict(tags=scope['tags'],tags_history_complete=complete,branches=branches),
-                git_refs=refs,completed_at=max(times) if times else None)
+            files[path]=dict(blob=digest,content=raw.decode('utf-8'))
+        refs[name]=dict(commit=commit,files=files) if files else dict(commit=commit)
+    return dict(git_scope=dict(tags=scope['tags'],tags_history_complete=complete),git_refs=refs)

@@ -165,6 +165,15 @@ cd "{racer}" && echo code > code.txt && git add code.txt &&
             self.assertIn('"46-1":', fixture.show('catalog/status/runs.yaml'))
             self.assertIn('stop_reason: "internal"', fixture.show('catalog/status/runs.yaml').split('"46-1":')[1])
 
+    def test_an_enrolled_source_without_a_registry_name_refuses_the_run(self):
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = Fixture(directory)
+            fixture.commit_code('tools/catalog-collector/source-names.json',
+                                json.dumps(dict(active={str(NVIM): 'nvim'}, retired=[])), 'drop obsidian\'s name')
+            with self.assertRaisesRegex(ValueError, 'unallocated source'):
+                fixture.run(47)
+            self.assertEqual([path for path in fixture.tip_files() if path.startswith('catalog/')], [])
+
 
 if __name__ == '__main__':
     unittest.main()
