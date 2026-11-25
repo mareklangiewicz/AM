@@ -1,271 +1,127 @@
-# Maintained YAML catalog tools
+# Catalog collector
 
-The intended production path is format 3 plus independent status format 1.
-Marek's November 9 direct-cutover decision supersedes temporary dual output:
-myxps is the only affected host, there are no external consumers, and format 2
-is no longer produced by the maintained CLI/workflow. Old refs, commits and
-snapshots remain available. Remote activation and installed-host writes require
-final authorization; preparing this source does not perform either.
+The catalog is the `catalog/` directory on `main-marek`
+([format](../../docs/catalog-format.md), [schema](../../schemas/catalog.schema.yaml)):
+`apps.yaml`, one `repositories/<name>.yaml` per GitHub repository, and
+`status/runs.yaml` and `status/statistics.yaml`. Hosts (`modules/catalog-yaml.am`)
+and the catalog page read those files raw from GitHub, with no pins, refs or
+snapshots between them and `main-marek`
+([ticket 24](../../docs/track/catalog-simplification/issues/24-cut-over-to-the-simplified-catalog.md)).
+The collector is the only writer of `catalog/`; Marek's commits never touch it.
 
-See the [cutover package](../../docs/track/catalog-system/myxps-cutover-15.md),
-[format 3](../../docs/catalog-format-v3.md),
-[status 1](../../docs/catalog-status-v1.md) and
-[tracker](../../docs/track/catalog-system/map.md).
+## A collector run
 
-## Collection and explicit publication
+`.github/workflows/catalog.yml` runs hourly (`17 * * * *`; GitHub fired it only
+2 to 4 times a day in November 2026) and on dispatch, never two at once. It is
+two commands of `catalog_run.py`:
 
-`host_catalog.py` provides `collect`, `validate`, `schema-revision` and `publish`.
-The former implicit v2 collect-and-publish entry point is removed. Collection
-never advances a ref. Bootstrap has no v3 parent; subsequent collection reads
-only the exact v3 parent:
+- `collect` (read-only job) on a checkout of `main-marek`'s tip: reads
+  `catalog/`, picks the repositories whose data is oldest (the newer of
+  `observed_at` and `failed_at`; never-read first), reads one page of releases
+  for each, and writes a candidate: the changed documents, `removed.json` and
+  `run.json`.
+- `publish` (write job, the same code): checks every candidate document with
+  the host's reader, commits `catalog/` on top of `main-marek`'s tip and pushes
+  with the job's `GITHUB_TOKEN`. A push rejected by a newer commit is redone on
+  the new tip, up to 5 times. A candidate that fails the reader commits only its
+  run summary, with `stop_reason: internal`.
 
-```sh
-python3 -B tools/catalog-collector/host_catalog.py collect \
-  --repo /tmp/local-v3.git --parent EXACT_V3_PARENT \
-  --evidence /path/to/saved-responses --run-id 123 --attempt 1 \
-  --output /tmp/new-candidate
-python3 -B tools/catalog-collector/host_catalog.py validate \
-  --candidate /tmp/new-candidate/format-3 --channel format-3
-```
-
-Omit `--parent` for an empty-channel bootstrap. Omit `--evidence` only for
-explicitly authorized live acquisition. Saved mode retains receipt times and
-makes no requests (`<numeric-id>-releases.json`, `<numeric-id>-receipt.txt`).
-The new output directory contains only `format-3/` and sanitized `report.json`.
-No v2 parent, tree, validation, artifact or publication is required. The v3 path
-normalizes facts directly, applies 32-plus-stable retention (proven-gone releases removed) and preserves
-failed/unattempted sources exactly. Missing publication time can use creation time
-for retention; client policies requiring publication time refuse missing facts.
-
-Production enrollment remains 509 app identities / 500 sources, from
-`collection-recipes.txt` plus `collection-apps.json`. Declarations alone do not
-enroll recipes. Scope stays unchanged while the direct migration is completed;
-no expanded dual-output qualification or automatic enrollment is planned.
-Hourly batches request at most 500 sources, ordered by each source's latest
-attempt, success or failure (missing first, numeric-ID ties), so a failing source
-rotates with the rest. A source's own failure adds `failed_at`/`failed_with` to
-its repository document (a never-collected source gets a document of only those)
-and leaves its facts untouched; run-wide stops record nothing there. Named
-oversized sources (`host_catalog.PAGE_SIZES`) request smaller pages. At the current 500-source scope,
-each complete batch attempts all sources. Acquisition uses a 750-request internal
-allowance, 100-request primary reserve, 512 MiB charged-body budget, 16 MiB per
-response and 900-second cooperative time allowance. Actual quota/budgets and
-401/403/429 stops still apply; no redirects, retries or fabricated observations.
-
-A source leaves collection only through `retire_sources.py RID ... [--write]`
-(ticket 21): its catalog-only rows leave `collection-apps.json` and its name
-moves to `retired` in `source-names.json`, never to be reused. The next
-collection drops its `repositories/` and `provenance/` documents; earlier
-snapshots keep them. A retained source that is neither active nor retired
-refuses the collection. `retire_sources.py` refuses a source that a
-declaration or a URL or AppImage policy still selects from. A recipe that only
-names the source in a GitHub URL is a warning: upstream renames apps, so a
-catalog-only row may need its app renamed rather than its source retired
-(ticket 46).
-
-Publication against a disposable local test remote:
+Locally, against saved GitHub answers and a scratch remote:
 
 ```sh
-python3 -B tools/catalog-collector/host_catalog.py publish \
-  --candidate /tmp/new-candidate --remote-url /tmp/test-remote.git \
-  --expected-v3-parent EXACT_V3_PARENT --source-revision EXACT_SOURCE_COMMIT \
-  --run-id 123 --attempt 1 --result /tmp/result.json
+python3 -B tools/catalog-collector/catalog_run.py collect --checkout . --output /tmp/candidate \
+  --evidence /path/to/saved-responses --run-id 1 --attempt 1
+python3 -B tools/catalog-collector/catalog_run.py publish --candidate /tmp/candidate \
+  --remote /tmp/test-remote.git --scratch /tmp/publish --run-id 1 --attempt 1
 ```
 
-Omit `--expected-v3-parent` only when the target ref is absent. The publisher
-independently checks paths, sizes, exact run/input/parent hashes, enrollment and
-full v3 semantics before the sole catalog write. It uses exact-parent publication,
-confirms remote acceptance and reports ambiguity honestly; there is no force
-rewind or automatic merge. Final status is attempted independently after normal
-outcomes, including invalid/missing artifacts and publication failure. Summaries
-no longer have `compatibility_publication` (retired with format 2, ticket 25);
-the contract refuses it. Artifacts
-containing format-2 paths are rejected.
+Saved answers are `<repository id>-releases.json` plus `<repository id>-receipt.txt`.
+Without `--evidence`, `collect` reads GitHub (`GH_TOKEN` if set).
 
-The prepared workflow separates read-only acquisition from its write-enabled
-publisher. `CATALOG_V3_ENABLED=true` enables only v3/status production; false
-skips collection rather than falling back to v2. A scheduled run first runs the
-`gate` job: `host_catalog.py schedule-gate`, taken from the commit
-`CATALOG_SCHEDULE_REVISION` names, compares that commit with the pushed one over
-the collection inputs (`collection_interface.INPUT_SCOPES` plus the workflow and
-the collect action, minus any `README.md`). Equal inputs collect; any difference fails the run, red, with
-the changed paths listed, until the change is reviewed and the variable set to the
-new commit. A documentation-only push needs no repin. Dispatched runs are not
-gated. Status retains 64 summaries,
-available detail for eight reports and 90 daily aggregates. Failed reporting may
-leave an older timestamped last report. The workflow does not guarantee schedules,
-refresh coverage or remote history capacity: the hourly `17 * * * *` schedule
-fired only 2 to 4 times a day in November 2026 (ticket 25), so budget waits on
-retained summaries in days, not hours.
+Pause collection with `gh workflow disable catalog.yml`.
 
-## Reader and consumer runtime
+## What a run reads and writes
 
-All 529 maintained YAML recipe declarations now use `CATALOG_FORMAT=3`.
-`catalog-yaml.am` resolves `release-catalog-v3` once, fetches the descriptor,
-app map and readable source path at that exact commit, checks kind/schema bindings
-and passes native `asset_facts` to the existing maintained selection policy.
-Command caching binds the source/pin and shared source documents; validation
-failure latches acquisition; old selected data warns once per app per command.
-Installed runtime requires shell/awk/curl, with no Python, jq or Git dependency.
+`documents.py` turns what was read into documents and their exact bytes, and
+applies retention: the kept releases are the 8 newest tags, the newest stable
+tag, the newest tag with a Linux download and the newest tag with an AppImage
+for each processor type (`tools/catalog-contract/platforms.json`), with every
+release under a kept tag. A release a read did not return stays with its
+last-seen `observed_at`, unless the read reached the end of the release list.
 
-The active runtime is `catalog-yaml.am`, `catalog-contract-reader.am`,
-`catalog-contract-parser.am`, `catalog-contract-tables.am`,
-`catalog-yaml-policy.am`, `appimage.am` and the manager's `install.am`.
-`APP-MANAGER` retains these files during module sync and removes the rest,
-including the retired format-2 reader and parser (deleted in ticket 25 step D).
+`host_catalog.py` holds enrollment and the bounded GitHub reads:
 
-Maintainer tools use Python/PyYAML. `Snapshot` validates the exact parent once per
-process; `Records` decodes selected sources and `Candidate` validates changed
-bytes plus snapshot references. Trust is in-memory and bound to the exact parent
-and validation rules, never imported from a receipt. Schema/contract transitions
-require all retained source bindings to match. Input pins must match checked-out
-source/policy/recipe/rule/schema bytes. The default schema pin comes from the exact
-parent descriptor; explicit transitions require `--schemas-revision` at collection
-and publication. Classification is evidence-bound and never executes recipes.
+- Enrollment is `collection-recipes.txt` (recipe declarations) plus
+  `collection-apps.json` (catalog-only apps), at most 9,000 repositories.
+  `source-names.json` gives each repository its file name; `active` names are
+  unique and never reuse a `retired` one, and an enrolled repository without a
+  name refuses the run.
+- A batch reads at most 500 repositories (`CATALOG_BATCH_SIZE` repository
+  variable to change it) within 500 requests, a 100-request primary rate
+  reserve, 512 MiB of response bytes, 16 MiB per response and 900 seconds.
+  401/403/429 and the budgets stop the run (`stop_reason`); no redirects or
+  retries.
+- Named oversized repositories (`PAGE_SIZES`) ask for smaller pages.
+- `git-sources.json` adds Git tags and branch files for a few recipes
+  (`git_observations.py`).
+- A repository's own failure (`not_found`, `too_large`, `invalid_response`,
+  `transport`) adds `failed_at`/`failed_with` to its document and leaves its
+  facts as they were; the next success removes them.
 
-The local 256 MiB object guard accounts for compressed changed blobs and fetched
-objects before ref advance. It is independent of the 2 MiB/document, 1 GiB/tree
-and 20,000-document limits, and does not bound remote reachable history. Expanded
-capacity targets remain deferred, not silently accepted by this migration.
+To retire a repository, take it out of enrollment and move its name from
+`active` to `retired` in `source-names.json`, by hand: the next run deletes its
+file (Git history keeps it). Nothing checks that no recipe still selects from
+it any more (`retire_sources.py` did, and went with the v3 tools).
 
-## Focused verification and maintenance
+## Host runtime
 
-Code outside this directory imports these modules by putting it on `sys.path`:
-`tools/release/release.py` (the input scopes and gate paths),
-`tools/recipe-conversion/convert.py` (and through it
-`tools/upstream-merge/merge.py`), `tools/recipe-reconstruction`'s
-`test_candidate_runtime.py`, `tools/catalog-browser`'s `prepare_boundaries.py`
-and `qualify_restore.py`, and `test/e2e/scenarios.py`. Run their suites too
-after renaming, moving or deleting anything here; find the current list with
-`git grep -n "catalog-collector" -- ':!tools/catalog-collector' ':!docs'`.
-Scripts under `docs/track/` that import it are frozen research records and are
-not kept working.
+`catalog-yaml.am` (with `catalog-reader.am`, `catalog-parser.am`,
+`catalog-tables.am` and `catalog-yaml-policy.am`) reads
+`https://raw.githubusercontent.com/<repo>/main-marek/catalog/…` once per file
+per command, validates it, and hands the policy the facts it selects from.
+Data older than 14 days warns and still selects (ticket 23). The installed
+runtime needs shell, awk and curl only.
 
-Two tiers, named by file:
+## Tests and shipping
 
 ```sh
 python3 -B -m unittest discover -s tools/catalog-collector -p 'test_*.py'   # fast tier
 python3 -B -m unittest discover -s tools/catalog-collector -p 'tree_*.py'   # whole-tree tier
 ```
 
-`test_*.py` is the fast tier. `tree_*.py` holds the checks that walk every
-live recipe or run the real manager for each one; they are slow and follow
-whatever the tree holds, so run them before an upstream merge and on demand.
-The "Long tests" workflow (`.github/workflows/long-tests.yml`) runs them, the
-fast tier and the Debian and Fedora container e2e in parallel jobs on any push
-to a `ci/*` branch or on dispatch: push the commit to test as `ci/<name>`
-first, then move `main-marek` once it is green with
-`python3 -B tools/release/release.py ship --ci <name>`. It refuses
-unless Long tests passed on that exact commit, or on an ancestor that HEAD
-changes only under `docs/` (documentation-only commits need no `--ci`),
-repins `CATALOG_SCHEDULE_REVISION` and dispatches a catalog run
-only when the collection inputs changed, and prints the run ids; follow them
-with `release.py watch RUN_ID ...` (`ship --watch MINUTES` watches in the same
-process, so a caller that kills it loses the ship's output too).
-A change in the `schemas` input scope since `CATALOG_SCHEMA_REVISION` is
-refused unless `--repin-schemas` says the contract transition was reviewed;
-then both pins move before the dispatch (ticket 44), once the live catalog and
-status refs validate under HEAD's contract (ticket 45). Every plan and ship
-also says whether the deployed browser's `definitions.mjs` matches HEAD's.
-`release.py plan [--ci <name>] [--repin-schemas]` prints what `ship` would do
-(the refusal, or the push and whether each pin moves, with the changed inputs)
-and writes nothing.
-`release.py watch [RUN_ID ...]` continues a watch (by default every run on
-`origin/main-marek`); `release.py watch --ci <name>` watches the Long tests run
-of HEAD on `ci/<name>`, waiting for a just-pushed one to appear; exit 3 means
-still running at the deadline, not failed.
-A single file:
+`test_*.py` never reads the live recipe tree; `tree_*.py` walks every live
+recipe or runs the real manager for each, so run it before an upstream merge
+and on demand. `test_catalog_run.py` is one run end to end (a fixture checkout,
+a bare origin, saved GitHub answers); `test_documents.py` is the writer's bytes.
+`tools/fast-tests.sh` runs lint and every fast suite; Long tests
+(`.github/workflows/long-tests.yml`) run both tiers and the container e2e on a
+`ci/<name>` push.
+
+`tools/release/release.py ship --ci <name>` moves `main-marek` once Long tests
+passed on that commit (or on an ancestor that HEAD changes only under `docs/`
+and `catalog/`). When HEAD changes `catalog/` or the contract, every `catalog/`
+file at HEAD must pass HEAD's awk and node readers first. `release.py plan`
+prints what `ship` would do and writes nothing; `release.py watch` follows the
+runs. A push that changes only `catalog/` starts no Fast tests run.
+
+Code outside this directory imports these modules:
+`tools/recipe-conversion/convert.py` and through it
+`tools/upstream-merge/merge.py`, `tools/recipe-reconstruction`'s tests,
+`test/e2e/scenarios.py` and the one-time seed under
+`docs/track/catalog-simplification/scripts/24/`. Find the current list with
+`git grep -n "catalog-collector" -- ':!tools/catalog-collector' ':!docs'`.
+Other scripts under `docs/track/` are frozen research records, not kept working.
+
+## Recipe conversion helpers
+
+`bulk_recipes.py` converts shared wrappers to recipe declarations with literal
+URL predicates; `bulk_recipe_urls.py` keeps long installers' bodies while
+replacing recognized release-selection pipelines (`recipe-url-policies.json`,
+compiled by `recipe_policy_source.py`). Both preview by default and write only
+with `--apply`. `tools/recipe-conversion/convert.py` uses them, and the
+[upstream template recognizer](../recipe-reconstruction/README.md) inventories
+a pinned upstream recipe tree:
 
 ```sh
-python3 -B -m unittest discover -s tools/catalog-collector -p test_contracts.py
-python3 -B -m unittest discover -s tools/catalog-collector -p test_pipeline_publication.py
-python3 -B -m unittest discover -s tools/catalog-collector -p test_yaml_manager_integration.py
-python3 -B tools/catalog-collector/recipe_policy_source.py
-python3 -B tools/catalog-contract/build_v3.py
+python3 tools/recipe-reconstruction/reconstruct.py inventory --recipes-revision COMMIT --summary
 ```
-
-The tests use disposable installations/remotes and inert assets; their fixtures
-are format-3 documents built the way collection builds them. Completed unrelated browser,
-scale and manual recovery evidence is reused; do not rerun expanded dual-output
-qualification. Physical myxps delivery,
-real GitHub acquisition/publication and deployed-browser checks remain explicit
-cutover actions, not claims made by offline tests.
-
-`recipe_refresh.py` previews a pinned declaration replacement without executing
-installed scripts or reinstalling app binaries. Use the cutover package's exact
-metadata scope for myxps. Git history and manual recovery suffice; no new rollback
-service, automated restoration or continued v2 publication is part of the plan.
-
-## Preparing recipe migrations
-
-Marek reopened full GitHub-backed migration on November 9. The temporary
-500-source enrollment ceiling is replaced by a 9,000-source safety allowance;
-acquisition still uses quota-bounded batches into one v3 catalog. Broad enrollment
-does not imply that every source has already been successfully collected.
-Consistency takes priority over further freshness optimization; selected data
-older than 14 days warns, never refuses (catalog-simplification ticket 23).
-
-`bulk_sources.py --inventory` extends the existing hash-bound source scan with
-literal primary sources and explicit variants, independently of installer shape.
-`--work` verifies public numeric identities in small GraphQL batches and retains
-checkpointed responses. NOT_FOUND, no-release and successful probes remain distinct.
-The [GitHub query limits](https://docs.github.com/en/graphql/overview/rate-limits-and-query-limits-for-the-graphql-api)
-apply; discovery never enrolls or executes recipes.
-
-`bulk_enrollment.py` prepares the unified enrollment and preserves allocated
-source paths. Different sources under one installed app name get catalog aliases;
-the recipe's installed APP name is preserved. `bulk_recipes.py` converts legacy
-shared wrappers to v3 declarations with literal URL predicates. `bulk_recipe_urls.py`
-preserves long installer bodies while replacing recognized release-selection
-pipelines and removing the exact native-update bypass. Unrecognized expressions
-stay in its explicit exceptions. Each tool previews by default and requires
-`--apply` for source writes; no tool performs a remote publication or host delivery.
-
-Native `catalog-yaml.am --url` returns only the URL after ordinary pinned validation
-and selected-record freshness checks. `--source-repository` accepts only source
-variants bound in trusted policy data. `CATALOG_APP` selects an architecture/source
-alias without renaming the installed application. Long recipe policies live in
-`recipe-url-policies.json`, bound to their exact recipe hashes and compiled by
-`recipe_policy_source.py`; catalog content never supplies executable selectors.
-All rules match structured asset URLs, retaining literal positive/negative URL
-filters while applying the established published-release/name ordering.
-
-Use the shared [upstream template recognizer](../recipe-reconstruction/README.md)
-to inventory a pinned upstream recipe tree before selecting conversion batches:
-
-```sh
-python3 tools/recipe-reconstruction/reconstruct.py inventory \
-  --recipes-revision COMMIT --summary
-```
-
-The same classifier drives the template-driven reconstruction tests and full
-JSONL inventories (`--summary` omitted). Standard instances still require runtime
-selection/installer review; matching layouts with custom parameters and unmatched
-recipes get explicit inspection actions. Recognition does not change these
-maintained declaration/selector policies or collection enrollment. Already-short
-fork declarations are not upstream-template instances; use the explicit `render`
-interface to compare their upstream meaning rather than treating a layout
-nonmatch as evidence of custom shell logic.
-
-
-Saved-batch enrollment tests use one replay implementation with a receipt name
-and the pinned former enrollment Git revision. They read the original collection
-list from `b61eb2733441d2dd5f998f350ce32a3da1ebc2f9` and
-`10a4c03eca229434a346fb3e3303f19621484a80`; those objects must be available for
-local tests. The normal current-workflow test follows the complete present
-configuration. [Ticket 135](../../docs/track/release-catalog/issues/135-prepare-next-ten-existing-recipes.md)
-prepares 53-recipe/51-source enrollment;
-[136](../../docs/track/release-catalog/issues/136-publish-next-ten-and-refresh-live-policy.md)
-records its authorized publication and protected compiled-policy deployment.
-
-## Usable selections
-
-```sh
-python3 -B tools/catalog-collector/qualify_usable_selections.py --out /tmp/usable.json
-```
-
-Runs the real client once per policy key against a local copy of one published
-catalog commit (default `origin/release-catalog-v3`) at the current clock, and
-counts its outcomes: selected or the refusal text. No network. About
-100 minutes for 10,000 keys on five jobs; `--limit N` gives a quick trial.
-Leave `modules/catalog-yaml-policy.am` alone while it runs.

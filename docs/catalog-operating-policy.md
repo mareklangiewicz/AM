@@ -1,6 +1,29 @@
 # Single-user YAML catalog operation
 
-## Direct v3 operating path — November 9, 2026
+## Operating path — November 25, 2026
+
+The catalog is the `catalog/` directory on `main-marek`
+([ticket 24](track/catalog-simplification/issues/24-cut-over-to-the-simplified-catalog.md),
+[format](catalog-format.md)). One collector run an hour reads the
+repositories whose data is oldest and commits what changed, with its own
+summary, to `catalog/`; nothing else writes there. Hosts and the catalog page
+read the files raw from GitHub, with no pins, refs, snapshots or repository
+variables between them and the branch. Marek is the only user, so the cutover
+is one change with no migration steps: the first `catalog/` is converted once
+from `release-catalog-v3`'s tip (`scripts/24/seed.py` in the ticket), and after
+it Marek removes and reinstalls his apps instead of refreshing installed
+recipes. The old branches' tips become local `archive/<name>` refs, deleted
+from origin with Marek's OK.
+
+Operating it: [collector README](../tools/catalog-collector/README.md) (a run,
+enrollment, budgets, failures, retiring a repository, tests and
+`release.py`). Pause collection with `gh workflow disable catalog.yml`. Code
+history without the hourly data commits: `git log -- . ':!catalog'`.
+
+Everything below is history: the v3 path it replaced and earlier checkpoints.
+Commands and file names there may no longer exist.
+
+## Direct v3 operating path — November 9, 2026 (superseded by the above)
 
 Marek authorized and completed direct v3 migration on myxps. He is the only user;
 there are no external consumers. Main source `f05e85926` is pushed. V3 and status
@@ -238,7 +261,7 @@ For `toolset`, `PACKAGE_TOOLS` lists tools in selection order, with the primary
 asset first. Each selected tar archive must contain its tool at the root.
 Executables and launcher mappings are derived from that one list. Asset selection
 uses `CATALOG_TOOL_ASSET_SUFFIX`. All selections must have the same
-repository/release at the pinned publication; an old observation warns as for
+repository/release in the catalog; an old observation warns as for
 any other selection (`CATALOG_FRESH_ONLY` is removed and refused). EmmyLua declares these
 settings locally. No arbitrary installation hooks are introduced.
 
@@ -323,7 +346,11 @@ snapshots now use the generic declaration marker; selection fields and behavior
 for those identities are unchanged.
 
 
-## Maintained metadata-only recipe refresh
+## Metadata-only recipe refresh (retired November 25, 2026)
+
+`recipe_refresh.py` and `installed_recipe.py` were deleted with the v3 tools
+(ticket 24): after the cutover Marek reinstalls apps rather than refreshing
+installed recipes in place. The section below records how it worked.
 
 Use `tools/catalog-collector/recipe_refresh.py` for one explicitly selected
 installation. This maintainer command requires Python; installed AM clients and

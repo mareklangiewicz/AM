@@ -54,3 +54,8 @@ revoked: each release ID is its own fact, twins included. "Partial absence never
 removes releases" narrows to: only proven absence removes, when the fetch reached
 the end of the history
 ([same-tag and removed releases](../track/catalog-simplification/issues/07-same-tag-and-removed-releases-as-facts.md)).
+
+**Note, November 25, 2026**: retention is bounded now. A repository keeps
+only its kept releases ([ticket 08](../track/catalog-simplification/issues/08-choose-what-to-catalog-per-release.md),
+plus the newest AppImage per processor type from ticket 24), and the
+writer applies it; readers do not check it.

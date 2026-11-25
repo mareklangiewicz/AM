@@ -9,7 +9,12 @@ An observation of the commit identified by a named branch or tag, with its own o
 The exact contents and blob identity of a repository file at a particular commit.
 
 **Catalog**:
-Published release, Git reference and repository file facts offered to clients, without making their selections.
+The release, Git reference and repository file facts offered to clients, without making their selections: the `catalog/` files on `main-marek`, which hosts and the catalog page read directly.
+_Avoid_: snapshot, channel, `release-catalog-v3` (superseded November 25, 2026)
+
+**Collector run**:
+One hourly read of the repositories whose data is oldest, and the single `catalog/` commit it makes: changed facts and the run's own summary together.
+_Avoid_: publication, collection and publication (as two steps)
 
 **Client selection**:
 A client's choice of catalog facts for installation, browsing, presentation, or another purpose.
@@ -17,11 +22,12 @@ A client's choice of catalog facts for installation, browsing, presentation, or 
 **Asset acquisition**:
 Obtaining the bytes of the release asset chosen by client selection, through a full transfer or reconstruction from existing bytes.
 
-**Retained release set**:
-The releases currently kept for a source, accumulated from successful collections. It can contain records observed at different times.
+**Kept releases**:
+The releases a repository's document holds: the 8 newest tags, the newest stable tag, the newest tag with a Linux download and the newest tag with an AppImage for each processor type, with every release under a kept tag. They can have been observed at different times.
+_Avoid_: retained release set (superseded November 25, 2026: it kept everything ever collected)
 
 **Collection scope**:
-The requested sources, releases per page and number of pages (or all pages) for a collection. Completing that scope differs from observing the source's entire history.
+The repositories a collector run reads, oldest data first, and the one page of releases it asks each for. Completing that scope differs from observing a repository's entire history.
 
 **Release observation time**:
 The last time a successful collection received an upstream response including that release. It measures that release's freshness independently of collection or publication time.
@@ -43,8 +49,8 @@ The time a repository's requested collection scope completed successfully. Dropp
 **Failed attempt**:
 A collection of a repository that did not complete, recorded with its time and cause until the next successful collection. For choosing which repositories to collect next, it counts as a visit like a success.
 
-**Publication time**:
-The time a catalog snapshot was published, distinct from repository and release observation times.
+**Publication time** (superseded November 25, 2026):
+When a catalog snapshot was published. Without snapshots, a collector run's commit time plays this part; it is distinct from repository and release observation times.
 
 **Complete release observation**:
 A collection observation acquired by reaching the end of the source's published release pagination. It does not assert a transactional snapshot or independently verified completeness of embedded asset lists.
