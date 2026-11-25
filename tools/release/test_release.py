@@ -1,18 +1,19 @@
 """The main-marek release sequence, against scripted git and gh replies (ticket 38)."""
 import json
+from pathlib import Path
+import shutil
+import subprocess
+import tempfile
 import unittest
 
 import release
 
 HEAD = 'h'*40
 BASE = 'b'*40
-PIN = 'p'*40
-SCHEMA_PIN = 's'*40
 TIP = 't'*40  # ci/x behind HEAD
 R = ['-R', release.REPO]
-GATE = ['git', 'diff', '--name-only', PIN, HEAD, '--', *release.schedule_gate_paths()]
-# The collector refuses a checkout whose schemas scope differs from this pin.
-SCHEMA_GATE = ['git', 'diff', '--name-only', SCHEMA_PIN, HEAD, '--', *release.INPUT_SCOPES['schemas']]
+ROOT = Path(__file__).resolve().parents[2]
+EXAMPLES = ROOT/'tools/catalog-contract/examples'
 
 
 class Fake:
@@ -42,6 +43,13 @@ START = [
     (['git', 'rev-parse', 'origin/main-marek'], BASE+'\n'),
     (['git', 'merge-base', '--is-ancestor', BASE, HEAD], ''),
 ]
+
+
+def changed(*paths):
+    """The paths HEAD changes since origin/main-marek."""
+    return [(['git', 'diff', '--name-only', BASE, HEAD], ''.join(path+'\n' for path in paths))]
+
+
 GREEN_CI = [
     (['git', 'ls-remote', 'origin', 'refs/heads/ci/x'], HEAD+'\trefs/heads/ci/x\n'),
     (['gh', 'run', 'list', '--workflow', 'long-tests.yml', '--branch', 'ci/x', '--commit', HEAD,
@@ -65,40 +73,27 @@ def tip_behind(diff):
             (['git', 'diff', '--name-only', TIP, HEAD], diff)]
 
 
+DEPLOYED = ['curl', '-fsS', '--max-time', '20', release.DEPLOYED_SCHEMA]
+
+
+def browser(deployed=(0, 'schema'), ours='schema'):
+    """The deployed page's schema.mjs against HEAD's."""
+    return [(DEPLOYED, deployed), (['git', 'show', HEAD+':'+release.SCHEMA], ours)]
+
+
 PUSH = [(['git', 'push', 'origin', 'HEAD:refs/heads/main-marek'], '')]
-PIN_READ = [(['gh', 'variable', 'get', 'CATALOG_SCHEDULE_REVISION', *R], PIN+'\n')]
-
-
-def pins(gate='', schemas='', deployed=(0, 'defs'), ours='defs'):
-    """Both pin reads and their diffs against HEAD, then the deployed browser
-    definitions against HEAD's, as decide makes them."""
-    return PIN_READ+[(GATE, gate),
-                     (['gh', 'variable', 'get', 'CATALOG_SCHEMA_REVISION', *R], SCHEMA_PIN+'\n'),
-                     (SCHEMA_GATE, schemas),
-                     (DEPLOYED, deployed),
-                     (['git', 'show', HEAD+':'+release.DEFINITIONS], ours)]
-
-
-DEPLOYED = ['curl', '-fsS', '--max-time', '20', release.DEPLOYED_DEFINITIONS]
-
-
-SCHEMA_REPIN = [(['gh', 'variable', 'set', 'CATALOG_SCHEMA_REVISION', '--body', HEAD, *R], '')]
 FAST = [(['gh', 'run', 'list', '--workflow', 'tests.yml', '--event', 'push', '--commit', HEAD,
           '--limit', '1', '--json', 'databaseId', *R], ok([dict(databaseId=21)]))]
-DISPATCHED = ['gh', 'run', 'list', '--workflow', 'catalog.yml', '--event', 'workflow_dispatch', '--commit', HEAD,
-              '--json', 'databaseId', *R]
-REPIN = [
-    (['gh', 'variable', 'set', 'CATALOG_SCHEDULE_REVISION', '--body', HEAD, *R], ''),
-    (DISPATCHED, ok([dict(databaseId=5)])),
-    (['gh', 'workflow', 'run', 'catalog.yml', '--ref', 'main-marek', *R], ''),
-    (DISPATCHED, ok([dict(databaseId=31), dict(databaseId=5)])),
-]
+
+
+def never(head):
+    raise AssertionError('validated catalog/ without a contract or catalog/ change')
 
 
 def ship(script, **options):
     run = Fake(script)
     lines = []
-    options.setdefault('validate', lambda run: [])
+    options.setdefault('validate', never)
     result = release.ship(run, out=lines.append, sleep=lambda s: None, **options)
     return run, result, lines
 
@@ -106,11 +101,10 @@ def ship(script, **options):
 class Refusals(unittest.TestCase):
     def refused(self, script, pattern, **options):
         run = Fake(script)
-        options.setdefault('validate', lambda run: [])
+        options.setdefault('validate', never)
         with self.assertRaisesRegex(release.Refused, pattern):
             release.ship(run, out=lambda line: None, sleep=lambda s: None, **options)
-        self.assertFalse(any(call[:2] == ['git', 'push'] or call[:3] == ['gh', 'variable', 'set']
-                             or call[:3] == ['gh', 'workflow', 'run'] for call in run.calls))
+        self.assertFalse(any(call[:2] == ['git', 'push'] for call in run.calls))
         self.assertEqual(run.script, [], 'refused before the scripted calls ran out')
 
     def test_other_branch(self):
@@ -123,87 +117,75 @@ class Refusals(unittest.TestCase):
         self.refused(START[:4]+[(['git', 'merge-base', '--is-ancestor', BASE, HEAD], (1, ''))], 'fast-forward')
 
     def test_code_change_without_ci(self):
-        self.refused(START+[(['git', 'diff', '--name-only', BASE, HEAD], 'docs/a.md\nmodules/appimage.am\n')],
-                     'modules/appimage.am')
+        self.refused(START+changed('docs/a.md', 'catalog/apps.yaml', 'modules/appimage.am'), 'modules/appimage.am$')
 
     def test_ci_branch_elsewhere(self):
-        self.refused(START+tip_behind('')[:1]+[(['git', 'merge-base', '--is-ancestor', TIP, HEAD], (1, ''))],
+        self.refused(START+changed('modules/a.am')+tip_behind('')[:1]
+                     + [(['git', 'merge-base', '--is-ancestor', TIP, HEAD], (1, ''))],
                      'ci/x is not HEAD or an ancestor', ci='x')
 
     def test_ci_branch_behind_head_by_code(self):
-        self.refused(START+tip_behind('docs/a.md\nmodules/appimage.am\n'), 'since ci/x: modules/appimage.am$', ci='x')
+        self.refused(START+changed('modules/appimage.am')+tip_behind('docs/a.md\nmodules/appimage.am\n'),
+                     'since ci/x: modules/appimage.am$', ci='x')
 
     def test_ci_branch_behind_head_by_docs_but_not_green(self):
-        self.refused(START+tip_behind('docs/a.md\n')+[long_tests(TIP, [])], 'Long tests', ci='x')
+        self.refused(START+changed('modules/a.am')+tip_behind('docs/a.md\n')+[long_tests(TIP, [])], 'Long tests', ci='x')
 
     def test_ci_branch_missing(self):
-        self.refused(START+[(['git', 'ls-remote', 'origin', 'refs/heads/ci/x'], '')], 'ci/x', ci='x')
+        self.refused(START+changed('modules/a.am')+[(['git', 'ls-remote', 'origin', 'refs/heads/ci/x'], '')], 'ci/x', ci='x')
 
     def test_long_tests_not_green(self):
         for runs in ([], [dict(databaseId=11, status='in_progress', conclusion='')],
                      [dict(databaseId=11, status='completed', conclusion='failure')]):
             with self.subTest(runs=runs):
-                self.refused(START+GREEN_CI[:1]+[(GREEN_CI[1][0], ok(runs))], 'Long tests', ci='x')
+                self.refused(START+changed('modules/a.am')+GREEN_CI[:1]+[(GREEN_CI[1][0], ok(runs))], 'Long tests', ci='x')
 
-    def test_a_schemas_scope_change_needs_a_reviewed_schema_repin(self):
-        # The collector compares the raw scope, so a README there counts too.
-        for path in ('schemas/catalog/summary.schema.json', 'tools/catalog-contract/README.md'):
+    def test_a_contract_change_refuses_while_catalog_fails_heads_readers(self):
+        for path in sorted(release.CONTRACT):
             with self.subTest(path=path):
-                self.refused(START+GREEN_CI+pins(path+'\n', path+'\n')[:4], 'CATALOG_SCHEMA_REVISION.*--repin-schemas',
-                             ci='x')
+                self.refused(START+changed(path)+GREEN_CI, 'catalog/ fails HEAD.*repositories/a.yaml: awk: bad', ci='x',
+                             validate=lambda head: ['catalog/repositories/a.yaml: awk: bad'])
 
-    def test_a_schema_repin_refuses_while_live_refs_fail_heads_contract(self):
-        changed = 'schemas/catalog/summary.schema.json\n'
-        script = START+GREEN_CI+pins(changed, changed)[:4]
-        self.refused(script, 'catalog-status-v1 .*summary', ci='x', repin_schemas=True,
-                     validate=lambda run: ['catalog-status-v1 '+'c'*40+': summary property'])
-
-    def test_repin_schemas_without_a_schemas_scope_change(self):
-        self.refused(START+GREEN_CI+pins('programs/x86_64/a\n', '')[:4], 'nothing to repin', ci='x', repin_schemas=True)
+    def test_a_catalog_change_is_validated_too(self):
+        self.refused(START+changed('catalog/apps.yaml'), 'catalog/ fails HEAD',
+                     validate=lambda head: ['catalog/apps.yaml: node: bad'])
 
 
 class Ship(unittest.TestCase):
-    def test_tested_change_to_collection_inputs_repins_and_dispatches(self):
-        run, result, lines = ship(START+GREEN_CI+pins('programs/x86_64/a\n')+PUSH+REPIN+FAST, ci='x')
-        self.assertEqual(run.script, [])
-        self.assertEqual(result, dict(fast=21, catalog=31))
-        self.assertTrue(any('31' in line for line in lines) and any('21' in line for line in lines))
-
-    def test_tested_change_outside_collection_inputs_keeps_the_pin(self):
-        run, result, lines = ship(START+GREEN_CI+pins('')+PUSH+FAST, ci='x')
+    def test_a_tested_change_pushes_and_names_its_fast_tests_run(self):
+        run, result, lines = ship(START+changed('programs/x86_64/a')+GREEN_CI+browser()+PUSH+FAST, ci='x')
         self.assertEqual(run.script, [])
         self.assertEqual(result, dict(fast=21))
-        self.assertIn('CATALOG_SCHEMA_REVISION stays '+SCHEMA_PIN, '\n'.join(lines))
-
-    def test_reviewed_schemas_change_repins_both_pins_before_the_dispatch(self):
-        changed = 'schemas/catalog/summary.schema.json\n'
-        run, result, lines = ship(START+GREEN_CI+pins(changed, changed)+PUSH+REPIN[:1]+SCHEMA_REPIN+REPIN[1:]+FAST,
-                                  ci='x', repin_schemas=True)
-        self.assertEqual(run.script, [])
-        self.assertEqual(result, dict(fast=21, catalog=31))
-        self.assertIn('CATALOG_SCHEMA_REVISION '+SCHEMA_PIN+' -> '+HEAD, '\n'.join(lines))
-
-    def test_a_schema_repin_dispatches_even_when_the_gate_ignores_the_change(self):
-        # The gate skips READMEs, but the collector checks the raw schemas scope.
-        run, result, _ = ship(START+GREEN_CI+pins('', 'tools/catalog-contract/README.md\n')+PUSH+REPIN[:1]
-                              + SCHEMA_REPIN+REPIN[1:]+FAST, ci='x', repin_schemas=True)
-        self.assertEqual(run.script, [])
-        self.assertEqual(result, dict(fast=21, catalog=31))
+        self.assertTrue(any('21' in line for line in lines))
 
     def test_documentation_after_the_tested_commit_ships_on_its_long_tests(self):
-        run, result, lines = ship(START+tip_behind('docs/a.md\n')+[long_tests(TIP, GREEN)]+pins('')+PUSH+FAST, ci='x')
+        run, result, lines = ship(START+changed('modules/a.am', 'docs/a.md')+tip_behind('docs/a.md\n')
+                                  + [long_tests(TIP, GREEN)]+browser()+PUSH+FAST, ci='x')
         self.assertEqual(run.script, [])
         self.assertEqual(result, dict(fast=21))
-        self.assertIn('Long tests 11 green on ci/x at '+TIP+'; HEAD adds only docs/', lines)
+        self.assertIn('Long tests 11 green on ci/x at '+TIP+'; HEAD adds only docs/ and catalog/', lines)
 
     def test_documentation_only_needs_no_ci(self):
-        run, result, _ = ship(START+[(['git', 'diff', '--name-only', BASE, HEAD], 'docs/a.md\ndocs/track/b.md\n')]
-                              + pins('')+PUSH+FAST)
+        run, result, _ = ship(START+changed('docs/a.md', 'docs/track/b.md')+browser()+PUSH+FAST)
         self.assertEqual(run.script, [])
         self.assertEqual(result, dict(fast=21))
 
+    def test_catalog_only_needs_no_ci_and_starts_no_fast_tests(self):
+        seen = []
+        run, result, lines = ship(START+changed('catalog/apps.yaml')+browser()+PUSH,
+                                  validate=lambda head: seen.append(head) or [])
+        self.assertEqual(run.script, [])
+        self.assertEqual(result, {})
+        self.assertEqual(seen, [HEAD])
+        self.assertIn('no Fast tests run: HEAD changes only catalog/', lines)
 
-WRITES = (['git', 'push'], ['gh', 'variable', 'set'], ['gh', 'workflow', 'run'])
+    def test_a_contract_change_validates_catalog_under_head_once(self):
+        seen = []
+        run, result, lines = ship(START+changed('modules/catalog-parser.am')+GREEN_CI+browser()+PUSH+FAST, ci='x',
+                                  validate=lambda head: seen.append(head) or [])
+        self.assertEqual(run.script, [])
+        self.assertEqual(seen, [HEAD])
+        self.assertIn("catalog/ valid under HEAD's readers", lines)
 
 
 class Plan(unittest.TestCase):
@@ -211,105 +193,87 @@ class Plan(unittest.TestCase):
     def plan(self, script, **options):
         run = Fake(script)
         lines = []
-        options.setdefault('validate', lambda run: [])
+        options.setdefault('validate', never)
         release.plan(run, out=lines.append, **options)
         self.assertEqual(run.script, [])
-        self.assertFalse(any(call[:len(w)] == w for call in run.calls for w in WRITES))
+        self.assertFalse(any(call[:2] == ['git', 'push'] for call in run.calls))
         return '\n'.join(lines)
 
-    def test_tested_change_to_collection_inputs_would_push_and_repin(self):
-        text = self.plan(START+GREEN_CI+pins('programs/x86_64/a\nmodules/b.am\n'), ci='x')
+    def test_a_tested_change_would_push_and_start_fast_tests(self):
+        text = self.plan(START+changed('programs/x86_64/a', 'modules/b.am')+GREEN_CI+browser(), ci='x')
         self.assertIn('Long tests 11 green on ci/x', text)
         self.assertIn('would push '+HEAD, text)
-        self.assertIn('would repin', text)
-        self.assertIn('programs/x86_64/a', text)
-        self.assertIn('modules/b.am', text)
+        self.assertIn('Fast tests would run', text)
 
-    def test_a_long_list_of_changed_inputs_is_cut_to_a_count(self):
-        paths = ['programs/x86_64/a%02d' % i for i in range(25)]
-        text = self.plan(START+GREEN_CI+pins('\n'.join(paths)+'\n'), ci='x')
-        self.assertIn('25 collection inputs changed', text)
-        self.assertIn(paths[release.SHOWN-1], text)
-        self.assertNotIn(paths[release.SHOWN], text)
-        self.assertIn('and 5 more', text)
-
-    def test_documentation_only_would_keep_the_pin(self):
-        text = self.plan(START+[(['git', 'diff', '--name-only', BASE, HEAD], 'docs/a.md\n')]+pins(''))
+    def test_catalog_only_would_start_no_fast_tests(self):
+        text = self.plan(START+changed('catalog/apps.yaml')+browser(), validate=lambda head: [])
         self.assertIn('would push '+HEAD, text)
-        self.assertIn('stays '+PIN, text)
-        self.assertNotIn('would repin', text)
+        self.assertIn('no Fast tests run: HEAD changes only catalog/', text)
 
-    def test_a_schemas_scope_change_would_refuse_and_name_the_files(self):
-        changed = 'schemas/catalog/summary.schema.json\n'
-        text = self.plan(START+GREEN_CI+pins(changed, changed)[:4], ci='x')
-        self.assertIn('would refuse:', text)
-        self.assertIn('CATALOG_SCHEMA_REVISION', text)
-        self.assertIn('schemas/catalog/summary.schema.json', text)
-
-    def test_a_reviewed_schemas_change_would_repin_both(self):
-        changed = 'schemas/catalog/summary.schema.json\n'
-        text = self.plan(START+GREEN_CI+pins(changed, changed), ci='x', repin_schemas=True)
-        self.assertIn('would repin CATALOG_SCHEMA_REVISION '+SCHEMA_PIN+' -> '+HEAD, text)
-        self.assertIn('would repin CATALOG_SCHEDULE_REVISION', text)
-
-    def test_a_reviewed_schemas_change_validates_live_refs_first(self):
-        changed = 'schemas/catalog/summary.schema.json\n'
-        seen = []
-        text = self.plan(START+GREEN_CI+pins(changed, changed), ci='x', repin_schemas=True,
-                         validate=lambda run: seen.append(run) or [])
-        self.assertEqual(len(seen), 1)
-        self.assertIn('live refs valid under HEAD', text)
-
-    def test_live_refs_are_not_validated_without_a_schemas_change(self):
-        self.plan(START+GREEN_CI+pins('programs/x86_64/a\n', ''), ci='x',
-                  validate=lambda run: self.fail('validated live refs'))
+    def test_a_contract_change_would_validate_catalog_first(self):
+        text = self.plan(START+changed('schemas/catalog.schema.yaml')+GREEN_CI+browser(), ci='x', validate=lambda head: [])
+        self.assertIn("catalog/ valid under HEAD's readers", text)
 
     def test_a_drifted_browser_says_to_redeploy(self):
-        text = self.plan(START+GREEN_CI+pins('programs/x86_64/a\n', '', deployed=(0, 'old'), ours='new'), ci='x')
-        self.assertIn('deployed browser definitions differ from HEAD', text)
+        text = self.plan(START+changed('programs/x86_64/a')+GREEN_CI+browser(deployed=(0, 'old'), ours='new'), ci='x')
+        self.assertIn('deployed page schema differs from HEAD', text)
         self.assertIn('catalog-pages.yml', text)
 
     def test_a_matching_browser_says_so(self):
-        text = self.plan(START+GREEN_CI+pins('programs/x86_64/a\n', ''), ci='x')
-        self.assertIn('deployed browser definitions match HEAD', text)
+        text = self.plan(START+changed('programs/x86_64/a')+GREEN_CI+browser(), ci='x')
+        self.assertIn('deployed page schema matches HEAD', text)
 
     def test_an_unreachable_browser_is_reported_not_fatal(self):
-        text = self.plan(START+GREEN_CI+pins('programs/x86_64/a\n', '', deployed=(22, ''))[:-1], ci='x')
+        text = self.plan(START+changed('programs/x86_64/a')+GREEN_CI+browser(deployed=(22, ''))[:-1], ci='x')
         self.assertIn('would push', text)
-        self.assertIn('deployed browser definitions unreadable (curl exit 22)', text)
-
-    def test_an_unchanged_schemas_scope_says_its_pin_stays(self):
-        text = self.plan(START+GREEN_CI+pins('programs/x86_64/a\n', ''), ci='x')
-        self.assertIn('CATALOG_SCHEMA_REVISION stays '+SCHEMA_PIN, text)
+        self.assertIn('deployed page schema unreadable (curl exit 22)', text)
 
     def test_a_refusal_is_printed_not_raised(self):
-        text = self.plan(START+[(['git', 'diff', '--name-only', BASE, HEAD], 'modules/appimage.am\n')])
-        self.assertIn('would refuse: changes outside docs/', text)
+        text = self.plan(START+changed('modules/appimage.am'))
+        self.assertIn('would refuse: changes outside docs/ and catalog/', text)
         self.assertNotIn('would push', text)
+
+
+class ValidateCatalog(unittest.TestCase):
+    """HEAD's catalog/ through HEAD's own awk and JS readers, in a real repository."""
+    def commit(self, repo, files):
+        for path in release.READERS:
+            (repo/path).parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy(ROOT/path, repo/path)
+        for path, source in files.items():
+            (repo/path).parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy(EXAMPLES/source, repo/path)
+        git = ['git', '-C', str(repo), '-c', 'user.name=t', '-c', 'user.email=t@t', '-c', 'core.hooksPath=/dev/null']
+        subprocess.run(['git', 'init', '-q', str(repo)], check=True)
+        subprocess.run(git+['add', '.'], check=True)
+        subprocess.run(git+['commit', '-qm', 'x'], check=True)
+        return subprocess.check_output(git+['rev-parse', 'HEAD'], text=True).strip()
+
+    def test_each_reader_names_the_file_it_refuses(self):
+        with tempfile.TemporaryDirectory() as directory:
+            repo = Path(directory)
+            head = self.commit(repo, {'catalog/apps.yaml': 'apps.yaml', 'catalog/repositories/a.yaml': 'repository.yaml',
+                                      'catalog/status/statistics.yaml': 'bad-null.yaml'})
+            problems = release.validate_catalog(head, repo=str(repo))
+        self.assertEqual([problem.split(':')[0] for problem in problems],
+                         ['catalog/status/statistics.yaml (awk)', 'catalog/status/statistics.yaml (node)'], problems)
+
+    def test_a_valid_catalog_has_no_problems(self):
+        with tempfile.TemporaryDirectory() as directory:
+            repo = Path(directory)
+            head = self.commit(repo, {'catalog/apps.yaml': 'apps.yaml', 'catalog/status/runs.yaml': 'runs.yaml'})
+            self.assertEqual(release.validate_catalog(head, repo=str(repo)), [])
+
+    def test_no_catalog_is_a_problem(self):
+        with tempfile.TemporaryDirectory() as directory:
+            repo = Path(directory)
+            head = self.commit(repo, {})
+            self.assertEqual(release.validate_catalog(head, repo=str(repo)), ['HEAD has no catalog/ files'])
 
 
 def view(run_id, status, conclusion=''):
     return (['gh', 'run', 'view', str(run_id), '--json', 'status,conclusion', *R],
             ok(dict(status=status, conclusion=conclusion)))
-
-
-class ReadTree(unittest.TestCase):
-    def test_every_blob_comes_back_byte_exact(self):
-        import subprocess
-        import tempfile
-        from pathlib import Path
-        with tempfile.TemporaryDirectory() as repo:
-            files = {'a.yaml': b'one\ntwo\n', 'runs/1-1/summary.yaml': b'', 'b c.bin': bytes(range(256))*3,
-                     'nl.yaml': b'\n\n'}
-            for path, data in files.items():
-                (Path(repo)/path).parent.mkdir(parents=True, exist_ok=True)
-                (Path(repo)/path).write_bytes(data)
-            git = ['git', '-C', repo, '-c', 'user.name=t', '-c', 'user.email=t@t', '-c', 'core.hooksPath=/dev/null']
-            subprocess.run(['git', 'init', '-q', repo], check=True)
-            subprocess.run(git+['add', '.'], check=True)
-            subprocess.run(git+['commit', '-qm', 'x'], check=True)
-            sha = subprocess.check_output(git+['rev-parse', 'HEAD'], text=True).strip()
-            self.assertEqual(release.read_tree(sha, repo), files)
 
 
 class Output(unittest.TestCase):
@@ -410,12 +374,6 @@ class Retrying(unittest.TestCase):
         self.assertEqual(len(pauses), 2)
         self.assertIn('after 3 attempts', str(raised.exception))
         self.assertIn('gh run view 7', str(raised.exception))
-
-    def test_a_dispatch_is_tried_once_since_a_failed_reply_can_hide_a_started_run(self):
-        dispatch = ['gh', 'workflow', 'run', 'catalog.yml', '--ref', 'main-marek', *R]
-        run = Fake([(dispatch, DENIED)])
-        self.assertEqual(release.retrying(run, sleep=self.fail)(dispatch), DENIED)
-        self.assertEqual(run.script, [])
 
     def test_git_is_tried_once_since_its_exit_codes_are_answers(self):
         ancestor = ['git', 'merge-base', '--is-ancestor', BASE, HEAD]

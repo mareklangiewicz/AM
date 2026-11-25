@@ -1,50 +1,56 @@
-"""Move main-marek: refuse an untested commit, push, repin and dispatch when needed, watch (ticket 38).
+"""Move main-marek: refuse an untested commit, push, watch (ticket 38).
 
-    python3 -B tools/release/release.py ship [--ci NAME] [--repin-schemas] [--watch MINUTES]
-    python3 -B tools/release/release.py plan [--ci NAME] [--repin-schemas]     what ship would do; writes nothing
+    python3 -B tools/release/release.py ship [--ci NAME] [--watch MINUTES]
+    python3 -B tools/release/release.py plan [--ci NAME]     what ship would do; writes nothing
     python3 -B tools/release/release.py watch [RUN_ID ... | --ci NAME] [--minutes N]
 
 Exit codes of a watch: 0 all green, 1 a run failed, 3 still running at the
 deadline (it prints the watch command that continues).
 
 Run from a main-marek checkout whose HEAD is the commit to ship. A commit that
-changes anything outside docs/ needs `--ci NAME`: `ci/NAME` on origin must be
-HEAD, or an ancestor that HEAD changes only under docs/, and its latest Long
-tests run on that commit must have succeeded. The schedule
-pin moves, and a catalog run is dispatched, only when the collection inputs
-differ from the pin (the gate's own list, ticket 22).
+changes anything outside docs/ and catalog/ needs `--ci NAME`: `ci/NAME` on
+origin must be HEAD, or an ancestor that HEAD changes only under docs/ and
+catalog/, and its latest Long tests run on that commit must have succeeded.
+A push that changes only catalog/ starts no Fast tests run (tests.yml ignores it).
 
-The schema pin is separate: a change in the collector's `schemas` input scope
-since CATALOG_SCHEMA_REVISION makes every catalog run refuse until that pin
-moves too. ship refuses such a change unless `--repin-schemas` says the
-contract transition was reviewed; then it moves both pins before the dispatch,
-and first validates the live catalog and status refs under HEAD's contract
-(a repin they fail would break every catalog run). Every plan and ship also
-compares the deployed browser's definitions with HEAD's.
+When HEAD changes catalog/ or the catalog contract (CONTRACT), every catalog/
+file at HEAD must pass HEAD's own readers, the host's awk and the page's JS,
+or ship refuses: hosts and the page read main-marek's catalog/ directly
+(ticket 24). Every plan and ship also compares the deployed page's schema.mjs
+with HEAD's.
 """
 import argparse
+import io
 import json
 from pathlib import Path
 import subprocess
 import sys
+import tarfile
+import tempfile
 import time
-
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'catalog-collector'))
-from collection_interface import INPUT_SCOPES, schedule_gate_paths  # noqa: E402  the collector's own lists
 
 REPO = 'mareklangiewicz/AM'
 BRANCH = 'main-marek'
-PIN = 'CATALOG_SCHEDULE_REVISION'
-SCHEMA_PIN = 'CATALOG_SCHEMA_REVISION'
-LIVE_REFS = {'catalog-status-v1': 'status', 'release-catalog-v3': 'catalog'}
-DEFINITIONS = 'tools/catalog-contract/definitions.mjs'
-DEPLOYED_DEFINITIONS = 'https://mareklangiewicz.pl/AM/'+DEFINITIONS
+UNTESTED = ('docs/', 'catalog/')  # changes that need no Long tests
+CONTRACT = {'schemas/catalog.schema.yaml', 'modules/catalog-tables.am', 'modules/catalog-parser.am',
+            'tools/catalog-contract/parse.mjs', 'tools/catalog-contract/schema.mjs'}
+READERS = ('modules/catalog-tables.am', 'modules/catalog-parser.am',
+           'tools/catalog-contract/parse.mjs', 'tools/catalog-contract/schema.mjs')
+SCHEMA = 'tools/catalog-contract/schema.mjs'
+DEPLOYED_SCHEMA = 'https://mareklangiewicz.pl/AM/'+SCHEMA
 REDEPLOY = 'gh workflow run catalog-pages.yml --ref '+BRANCH+' -f deploy=true'
 POLL_SECONDS = 20
 APPEAR_SECONDS = 120
 RETRY_SECONDS = 10
 ATTEMPTS = 3
-SHOWN = 20  # changed inputs plan lists before it only counts the rest
+SHOWN = 10  # problems a refusal lists before it only counts the rest
+# The page's reader, over every file named on stdin (one per line).
+NODE_VALIDATE = (
+    "import {parseDocument} from './tools/catalog-contract/parse.mjs';"
+    "import {readFileSync} from 'node:fs';"
+    "let s='';for await(const b of process.stdin)s+=b;"
+    "for(const path of s.split('\\n').filter(Boolean)){"
+    "try{parseDocument(readFileSync(path,'utf8'))}catch(e){console.log(path+': '+e.message)}}")
 
 
 class Refused(Exception):
@@ -65,10 +71,9 @@ def system(argv):
 
 def retrying(run, sleep=time.sleep):
     """`run`, with a failing gh call tried again (ticket 48). Not git, whose
-    exit codes are answers, and not a dispatch: a failed reply can hide a
-    started run, and a second try would start another."""
+    exit codes are answers."""
     def attempt(argv):
-        if argv[:1] != ['gh'] or argv[1:3] == ['workflow', 'run']:
+        if argv[:1] != ['gh']:
             return run(argv)
         for tried in range(1, ATTEMPTS+1):
             code, text = run(argv)
@@ -104,9 +109,8 @@ def appeared(run, find, sleep, what):
     raise RuntimeError(what+' did not appear within '+str(APPEAR_SECONDS)+' s')
 
 
-def outside_docs(run, old, new):
-    return [path for path in output(run, ['git', 'diff', '--name-only', old, new]).splitlines()
-            if not path.startswith('docs/')]
+def needing_tests(paths):
+    return [path for path in paths if not path.startswith(UNTESTED)]
 
 
 def long_tests(run, branch, commit, fields):
@@ -125,39 +129,37 @@ def long_tests_run(run, ci, sleep=time.sleep):
     return {'Long tests': found}
 
 
-def read_tree(sha, repo='.'):
-    """{path: bytes} of one commit, through a single cat-file --batch."""
-    rows = subprocess.check_output(['git', '-C', repo, 'ls-tree', '-r', '-z', '--format=%(objectname) %(path)', sha],
-                                   text=True, stdin=subprocess.DEVNULL).split('\0')
-    oids = [row.split(' ', 1) for row in rows if row]
-    data = subprocess.run(['git', '-C', repo, 'cat-file', '--batch'], input=''.join(oid+'\n' for oid, _ in oids).encode(),
-                          capture_output=True, check=True).stdout
-    tree, at = {}, 0
-    for oid, path in oids:
-        end = data.index(b'\n', at)
-        size = int(data[at:end].split()[2])
-        tree[path] = data[end+1:end+1+size]
-        at = end+2+size
-    return tree
-
-
-def validate_live_refs(run):
-    """Problems of the live refs under this checkout's contract; empty when valid."""
-    from contracts import validate_tree
+def validate_catalog(head, repo='.'):
+    """Problems of HEAD's catalog/ files under HEAD's own readers; empty when valid."""
+    if subprocess.run(['git', '-C', repo, 'cat-file', '-e', head+':catalog'], capture_output=True).returncode:
+        return ['HEAD has no catalog/ files']
+    archive = subprocess.run(['git', '-C', repo, 'archive', head, '--', 'catalog', *READERS],
+                             capture_output=True, check=True).stdout
     problems = []
-    for ref, channel in LIVE_REFS.items():
-        output(run, ['git', 'fetch', '--quiet', 'origin', ref])
-        sha = output(run, ['git', 'rev-parse', 'FETCH_HEAD']).strip()
-        try:
-            validate_tree(read_tree(sha), channel)
-        except ValueError as error:
-            problems.append(ref+' '+sha+': '+str(error))
-    return problems
+    with tempfile.TemporaryDirectory() as directory:
+        with tarfile.open(fileobj=io.BytesIO(archive)) as tar:
+            tar.extractall(directory, filter='data')
+        files = sorted(path.relative_to(directory).as_posix() for path in (Path(directory)/'catalog').rglob('*')
+                       if path.is_file())
+        awk = ['awk', '-f', 'modules/catalog-tables.am', '-f', 'modules/catalog-parser.am']
+        for path in files:
+            with open(Path(directory)/path, 'rb') as stream:
+                done = subprocess.run(awk, stdin=stream, capture_output=True, cwd=directory)
+            if done.returncode:
+                problems.append(path+' (awk): '+done.stderr.decode(errors='replace').strip())
+        node = subprocess.run(['node', '--input-type=module', '-e', NODE_VALIDATE], input=''.join(f+'\n' for f in files),
+                              capture_output=True, text=True, cwd=directory)
+        if node.returncode:
+            problems.append('node reader failed: '+node.stderr.strip())
+        for line in node.stdout.splitlines():
+            path, _, message = line.partition(': ')
+            problems.append(path+' (node): '+message)
+    return sorted(problems)
 
 
-def decide(run, ci=None, out=say, repin_schemas=False, validate=None):
+def decide(run, ci=None, out=say, validate=None):
     """Everything ship checks before it writes: raises Refused, or returns the
-    commit to push, both pins and the inputs changed since each."""
+    commit to push and whether its push starts a Fast tests run."""
     if output(run, ['git', 'rev-parse', '--abbrev-ref', 'HEAD']).strip() != BRANCH:
         raise Refused('check out '+BRANCH+' first')
     output(run, ['git', 'fetch', '--quiet', 'origin', BRANCH])
@@ -167,6 +169,7 @@ def decide(run, ci=None, out=say, repin_schemas=False, validate=None):
         raise Refused('nothing to ship: HEAD is origin/'+BRANCH)
     if run(['git', 'merge-base', '--is-ancestor', base, head])[0]:
         raise Refused('HEAD is not a fast-forward of origin/'+BRANCH)
+    changed = output(run, ['git', 'diff', '--name-only', base, head]).splitlines()
     if ci:
         branch = 'ci/'+ci
         tip = output(run, ['git', 'ls-remote', 'origin', 'refs/heads/'+branch]).split()[:1]
@@ -177,98 +180,60 @@ def decide(run, ci=None, out=say, repin_schemas=False, validate=None):
             if run(['git', 'merge-base', '--is-ancestor', tip, head])[0]:
                 raise Refused('origin '+branch+' is not HEAD or an ancestor of it; push HEAD there and wait for'
                               ' Long tests')
-            code = outside_docs(run, tip, head)
+            code = needing_tests(output(run, ['git', 'diff', '--name-only', tip, head]).splitlines())
             if code:
-                raise Refused('HEAD changes more than docs/ since '+branch+': '+', '.join(code[:10]))
+                raise Refused('HEAD changes more than docs/ and catalog/ since '+branch+': '+', '.join(code[:10]))
         latest = long_tests(run, branch, tip, 'databaseId,status,conclusion')
         if not latest or (latest[0]['status'], latest[0]['conclusion']) != ('completed', 'success'):
             raise Refused('Long tests on '+branch+' are not green for '+tip+': '+json.dumps(latest))
         out('Long tests '+str(latest[0]['databaseId'])+' green on '+branch
-            + ('' if tip == head else ' at '+tip+'; HEAD adds only docs/'))
+            + ('' if tip == head else ' at '+tip+'; HEAD adds only docs/ and catalog/'))
     else:
-        code = outside_docs(run, base, head)
+        code = needing_tests(changed)
         if code:
-            raise Refused('changes outside docs/ need --ci NAME (a green Long tests run): '+', '.join(code[:10]))
-    pin = gh(run, 'variable', 'get', PIN).strip()
-    changed = output(run, ['git', 'diff', '--name-only', pin, head, '--', *schedule_gate_paths()]).splitlines()
-    schema_pin = gh(run, 'variable', 'get', SCHEMA_PIN).strip()
-    # Raw scope, as the collector compares it: no README exclusion.
-    schemas = output(run, ['git', 'diff', '--name-only', schema_pin, head, '--', *INPUT_SCOPES['schemas']]).splitlines()
-    if schemas and not repin_schemas:
-        raise Refused(SCHEMA_PIN+' '+schema_pin+' no longer matches the schemas input ('+', '.join(schemas[:10])
-                      + '); after reviewing the contract transition pass --repin-schemas')
-    if repin_schemas and not schemas:
-        raise Refused('--repin-schemas but nothing to repin: the schemas input equals '+SCHEMA_PIN+' '+schema_pin)
-    if schemas:
-        out('validating live refs under HEAD\'s contract (about 10 minutes): '+', '.join(LIVE_REFS))
-        problems = (validate or validate_live_refs)(run)
+            raise Refused('changes outside docs/ and catalog/ need --ci NAME (a green Long tests run): '
+                          + ', '.join(code[:10]))
+    if any(path in CONTRACT or path.startswith('catalog/') for path in changed):
+        out("validating catalog/ under HEAD's readers (awk and node, one process per file for awk)")
+        problems = (validate or validate_catalog)(head)
         if problems:
-            raise Refused('live refs fail HEAD\'s contract, so a '+SCHEMA_PIN+' repin now would make every catalog'
-                          ' run refuse: '+'; '.join(problems))
-        out('live refs valid under HEAD\'s contract: '+', '.join(LIVE_REFS))
-    code, deployed = run(['curl', '-fsS', '--max-time', '20', DEPLOYED_DEFINITIONS])
+            more = ' and '+str(len(problems)-SHOWN)+' more' if len(problems) > SHOWN else ''
+            raise Refused("catalog/ fails HEAD's readers: "+'; '.join(problems[:SHOWN])+more)
+        out("catalog/ valid under HEAD's readers")
+    code, deployed = run(['curl', '-fsS', '--max-time', '20', DEPLOYED_SCHEMA])
     if code:
-        out('deployed browser definitions unreadable (curl exit '+str(code)+')')
-    elif deployed == output(run, ['git', 'show', head+':'+DEFINITIONS]):
-        out('deployed browser definitions match HEAD')
+        out('deployed page schema unreadable (curl exit '+str(code)+')')
+    elif deployed == output(run, ['git', 'show', head+':'+SCHEMA]):
+        out('deployed page schema matches HEAD')
     else:
-        out('deployed browser definitions differ from HEAD; redeploy when ready: '+REDEPLOY)
-    # A schema repin needs a run under it even when the gate ignores the file.
-    changed = sorted(set(changed) | set(schemas))
-    return dict(head=head, pin=pin, changed=changed, schema_pin=schema_pin, schemas=schemas)
+        out('deployed page schema differs from HEAD; redeploy when ready: '+REDEPLOY)
+    return dict(head=head, fast=not all(path.startswith('catalog/') for path in changed))
 
 
-def plan(run, ci=None, out=say, repin_schemas=False, validate=None):
+def plan(run, ci=None, out=say, validate=None):
     """Print what ship would do now, writing nothing (ticket 40)."""
     try:
-        found = decide(run, ci, out, repin_schemas, validate)
+        found = decide(run, ci, out, validate)
     except Refused as refusal:
         out('would refuse: '+str(refusal))
         return False
     out('would push '+found['head']+' to '+BRANCH)
-    if found['changed']:
-        out('would repin '+PIN+' '+found['pin']+' -> '+found['head']+' and dispatch catalog.yml; '
-            + str(len(found['changed']))+' collection inputs changed:')
-        for path in found['changed'][:SHOWN]:
-            out('  '+path)
-        if len(found['changed']) > SHOWN:
-            out('  ... and '+str(len(found['changed'])-SHOWN)+' more')
-    else:
-        out(PIN+' stays '+found['pin']+': collection inputs unchanged')
-    if found['schemas']:
-        out('would repin '+SCHEMA_PIN+' '+found['schema_pin']+' -> '+found['head']
-            + ' (reviewed contract transition)')
-    else:
-        out(SCHEMA_PIN+' stays '+found['schema_pin']+': schemas input unchanged')
+    out('Fast tests would run on it' if found['fast'] else 'no Fast tests run: HEAD changes only catalog/')
     return True
 
 
-def ship(run, ci=None, out=say, sleep=time.sleep, repin_schemas=False, validate=None):
-    """Returns the run ids to watch: always 'fast', 'catalog' when dispatched."""
-    found = decide(run, ci, out, repin_schemas, validate)
-    head, pin, changed = found['head'], found['pin'], found['changed']
+def ship(run, ci=None, out=say, sleep=time.sleep, validate=None):
+    """Returns the run ids to watch: 'fast' unless the push changes only catalog/."""
+    found = decide(run, ci, out, validate)
+    head = found['head']
     output(run, ['git', 'push', 'origin', 'HEAD:refs/heads/'+BRANCH])
     out('pushed '+head+' to '+BRANCH)
-    result = {}
-    if changed:
-        gh(run, 'variable', 'set', PIN, '--body', head)
-        out(PIN+' '+pin+' -> '+head+' ('+str(len(changed))+' collection inputs changed)')
-        if found['schemas']:
-            gh(run, 'variable', 'set', SCHEMA_PIN, '--body', head)
-            out(SCHEMA_PIN+' '+found['schema_pin']+' -> '+head+' ('+str(len(found['schemas']))+' schemas inputs changed)')
-        dispatched = ('--workflow', 'catalog.yml', '--event', 'workflow_dispatch', '--commit', head, '--json', 'databaseId')
-        before = {row['databaseId'] for row in runs(run, *dispatched)}
-        gh(run, 'workflow', 'run', 'catalog.yml', '--ref', BRANCH)
-        result['catalog'] = appeared(run, lambda: next((row['databaseId'] for row in runs(run, *dispatched)
-                                                        if row['databaseId'] not in before), None),
-                                     sleep, 'dispatched catalog run')
-    else:
-        out(PIN+' stays '+pin+': collection inputs unchanged')
-    if not found['schemas']:
-        out(SCHEMA_PIN+' stays '+found['schema_pin']+': schemas input unchanged')
+    if not found['fast']:
+        out('no Fast tests run: HEAD changes only catalog/')
+        return {}
     result = dict(fast=appeared(run, lambda: next((row['databaseId'] for row in runs(
         run, '--workflow', 'tests.yml', '--event', 'push', '--commit', head, '--limit', '1', '--json', 'databaseId')), None),
-        sleep, 'Fast tests run'), **result)
+        sleep, 'Fast tests run'))
     for name, run_id in result.items():
         out(name+' run '+str(run_id)+': https://github.com/'+REPO+'/actions/runs/'+str(run_id))
     return result
@@ -331,8 +296,6 @@ def main(argv=None):
     preview = sub.add_parser('plan', help='print what ship would do; writes nothing')
     for each in (command, preview):
         each.add_argument('--ci', metavar='NAME', help='the tested branch ci/NAME')
-        each.add_argument('--repin-schemas', action='store_true',
-                          help='also move '+SCHEMA_PIN+' to HEAD: the schemas input changed and the transition was reviewed')
     command.add_argument('--watch', type=float, metavar='MINUTES', help='then wait for the runs, at most this long')
     resume = sub.add_parser('watch', help='watch runs (default: every run on origin/main-marek) until done')
     resume.add_argument('ids', nargs='*', metavar='RUN_ID')
@@ -348,12 +311,12 @@ def main(argv=None):
             raise SystemExit('no runs to watch')
         raise SystemExit(EXIT[watch(run, ids, args.minutes)])
     if args.operation == 'plan':
-        raise SystemExit(0 if plan(run, ci=args.ci, repin_schemas=args.repin_schemas) else 1)
+        raise SystemExit(0 if plan(run, ci=args.ci) else 1)
     try:
-        ids = ship(run, ci=args.ci, repin_schemas=args.repin_schemas)
+        ids = ship(run, ci=args.ci)
     except Refused as refusal:
         raise SystemExit('refused: '+str(refusal))
-    if args.watch is not None:
+    if args.watch is not None and ids:
         raise SystemExit(EXIT[watch(run, ids, args.watch)])
 
 
