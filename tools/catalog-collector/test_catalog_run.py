@@ -10,7 +10,6 @@ import json
 import os
 import shutil
 import subprocess
-import tarfile
 import tempfile
 import unittest
 from pathlib import Path
@@ -32,14 +31,7 @@ def git(cwd, *args, env=None):
 
 def saved_bodies():
     """GitHub's release-list bodies for Neovim and Obsidian, saved by run 40529551070."""
-    bodies = {}
-    with tarfile.open(fixture_recipes.ARCHIVE) as archive:
-        report = json.load(archive.extractfile(fixture_recipes.PREFIX+'report.json'))
-        for record in report['attempts']:
-            if record['repository_id'] in (NVIM, OBSIDIAN) and record['descriptor']['url'].endswith('/releases'):
-                bodies[record['repository_id']] = archive.extractfile(fixture_recipes.PREFIX+record['request_id']+'.body').read()
-    assert set(bodies) == {NVIM, OBSIDIAN}
-    return bodies
+    return {rid: raw for rid, (raw, _) in fixture_recipes.saved_bodies().items()}
 
 
 class Fixture:

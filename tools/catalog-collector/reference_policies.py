@@ -42,9 +42,8 @@ def matches(recipe, release, asset):
     return release['tag'] != 'nightly' and 'nightly' not in url
 
 
-def select_cohort(recipe, repository, commit, *, now):
+def select_cohort(recipe, repository, *, now):
     require(recipe in SUPPORTED, 'unknown_cohort_recipe')
-    require(re.fullmatch('[0-9a-f]{40}', commit) is not None, 'commit_pin_required')
     require(now.tzinfo is not None and now.utcoffset().total_seconds() == 0, 'utc_now_required')
     if recipe in APPIMAGES:
         require(str(repository['repository_id']) == str(APPIMAGES[recipe]['repository_id']),
@@ -56,6 +55,6 @@ def select_cohort(recipe, repository, commit, *, now):
                 key=lambda item: (item[1]['name'].encode('utf-8'), int(item[0]))):
             if matches(recipe, release, asset):
                 return accept_selection(recipe.split('/')[1], str(repository['repository_id']),
-                    repository, release_id, release, asset_id, asset, commit,
+                    repository, release_id, release, asset_id, asset,
                     now=now)
     raise ValueError('no_matching_asset')

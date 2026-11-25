@@ -1,5 +1,6 @@
 #!/bin/sh
-# AMCLI format-3 acquisition/selection. No Git/Python/jq on clients.
+# AMCLI catalog acquisition and selection: raw main-marek/catalog/ files
+# (docs/catalog-format.md), no pins. No Git/Python/jq on clients.
 # Named policies are proposed, not rollout acceptance. Old data warns, never refuses.
 set -eu
 export LC_ALL=C
@@ -7,9 +8,8 @@ fail() { printf 'AM YAML catalog: %s\n' "$*" >&2; exit 1; }
 [ "$#" -gt 0 ] || fail 'missing recipe'
 AM_YAML_RECIPE=$1; shift
 app=${AM_YAML_RECIPE#*/}
-pin='' AM_YAML_TOOL='' AM_YAML_INCLUDE_PUBLICATION='' AM_YAML_SOURCE_REPOSITORY='' url_only=false
+AM_YAML_TOOL='' AM_YAML_INCLUDE_PUBLICATION='' AM_YAML_SOURCE_REPOSITORY='' url_only=false
 AM_YAML_OUTPUT='' AM_YAML_LIST_URLS='' AM_YAML_URL_FILTER='' AM_YAML_URL_PATTERN='' AM_YAML_URL_CONTAINS='' AM_YAML_SELECTED_URL='' version_url=false
-hex() { [ "${#1}" -eq 40 ] && case $1 in *[!0-9a-f]*) return 1;; esac; }
 while [ "$#" -gt 0 ]; do
     case $1 in
         --tool) [ "$#" -ge 2 ] && [ -z "$AM_YAML_TOOL" ] || fail 'missing or repeated tool'; AM_YAML_TOOL=$2; shift 2 ;;
@@ -17,7 +17,7 @@ while [ "$#" -gt 0 ]; do
         --url) [ "$url_only" = false ] || fail 'repeated URL option'; url_only=true; shift ;;
         --version-url) [ "$version_url" = false ] || fail 'repeated version URL option'; version_url=true; url_only=true; shift ;;
         --urls) [ -z "$AM_YAML_LIST_URLS" ] || fail 'repeated URL list'; AM_YAML_LIST_URLS=1; shift ;;
-        --tag|--published-at|--release-url|--release-id|--updated-at|--source-tar-url|--source-zip-url|--asset-id|--git-commit|--git-file|--git-snapshot)
+        --tag|--published-at|--release-url|--release-id|--source-tar-url|--source-zip-url|--asset-id|--git-commit|--git-file|--git-snapshot)
             [ -z "$AM_YAML_OUTPUT" ] || fail 'repeated output field'; AM_YAML_OUTPUT=${1#--}; shift ;;
         --url-filter)
             [ "$#" -ge 3 ] && [ -z "$AM_YAML_URL_FILTER" ] || fail 'missing or repeated URL filter'
@@ -33,19 +33,18 @@ while [ "$#" -gt 0 ]; do
         --source-repository)
             [ "$#" -ge 2 ] && [ -z "$AM_YAML_SOURCE_REPOSITORY" ] || fail 'missing or repeated recipe source'
             AM_YAML_SOURCE_REPOSITORY=$2; shift 2 ;;
-        --commit) [ "$#" -ge 2 ] && [ -z "$pin" ] || fail 'missing or repeated commit'; pin=$2; shift 2 ;;
+        --commit|--updated-at) fail "unsupported option: $1 (the catalog has no commit pins or update times)" ;;
         *) fail 'unsupported option (format-1 consent does not apply)' ;;
     esac
 done
-[ -z "$pin" ] || hex "$pin" || fail 'full commit required'
 source=${AMREPO-}
 case $source in *[!A-Za-z0-9_./:-]*) fail 'unsupported AMREPO characters';; esac
 printf '%s\n' "$source" | grep -Eq '^https://raw\.githubusercontent\.com/[A-Za-z0-9-]+/[A-Za-z0-9_.-]+/[A-Za-z0-9_./-]+$' || fail 'missing or unsupported AMREPO'
 repository=${source#https://raw.githubusercontent.com/}
 owner=${repository%%/*}; repository=${repository#*/}; repository=$owner/${repository%%/*}
 here=$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd)
-reader=$here/catalog-contract-reader.am
-for module in catalog-contract-reader.am catalog-contract-parser.am catalog-contract-tables.am catalog-yaml-policy.am; do
+reader=$here/catalog-reader.am
+for module in catalog-reader.am catalog-parser.am catalog-tables.am catalog-yaml-policy.am; do
     [ -r "$here/$module" ] || fail "missing module: $module"
 done
 # Validate against trusted selection declarations/policies before HTTP.
@@ -56,7 +55,7 @@ app=$(printf '%s\n' "$policy_info" | sed -n '1p')
 selection=$(printf '%s\n' "$policy_info" | sed -n '2p')
 printf '%s\n' "$app" | grep -Eq '^[a-z0-9][a-z0-9_.+-]{0,63}$' || fail 'invalid catalog app identity'
 case $selection:$AM_YAML_OUTPUT in
-    asset:|asset:tag|asset:published-at|asset:asset-id|release:tag|release:published-at|release:release-url|release:release-id|release:updated-at|release:source-tar-url|release:source-zip-url|git-tag:tag|git-branch:git-commit|git-file:git-commit|git-file:git-file|git-file:git-snapshot) ;;
+    asset:|asset:tag|asset:published-at|asset:asset-id|release:tag|release:published-at|release:release-url|release:release-id|release:source-tar-url|release:source-zip-url|git-tag:tag|git-branch:git-commit|git-file:git-commit|git-file:git-file|git-file:git-snapshot) ;;
     *) fail 'unsupported policy output field';;
 esac
 if [ "$selection" != asset ]; then
@@ -83,83 +82,67 @@ umask 077
 scratch=$(mktemp -d) || fail 'private staging unavailable'
 trap 'rm -rf -- "$scratch"' 0
 trap 'exit 1' HUP INT TERM
-# Same transport contract as format 1: no config, auth, proxy, redirects/retries.
-fetch() {
-    code=$(
-        ulimit -f "$(( ($2 + 511) / 512 ))" || exit 1
-        curl -q --silent --show-error --fail --noproxy '*' --proto '=https' \
-            --max-redirs 0 --connect-timeout 10 --max-time 30 --max-filesize "$2" \
-            -H 'Accept-Encoding: identity' -H "Accept: $4" \
-            -H 'X-GitHub-Api-Version: 2022-11-28' \
-            --output "$3" --write-out '%{http_code}' "$1"
-    ) || fail 'catalog transfer refused'
-    [ "$code" = 200 ] && [ "$(wc -c < "$3")" -le "$2" ] || fail 'catalog response refused'
-    check_clock
-}
-# Command cache binds all source reads to one exact format-3 pin.
+# A command session caches each catalog file once, so every selection in one
+# command reads the same bytes (a package's tools come from one release).
 session=${AM_CATALOG_SESSION-}
 if [ -n "$session" ]; then
     [ -d "$session" ] && [ -w "$session" ] && [ ! -L "$session" ] || fail 'invalid command session'
-    cache=$session/yaml-v3
+    cache=$session/yaml-catalog
     if [ -d "$cache" ]; then
         [ "$(cat "$cache/source")" = "$source" ] || fail 'command source changed'
         [ ! -f "$cache/failed" ] || fail 'command catalog acquisition already refused'
-        shared_pin=$(cat "$cache/pin") || fail 'missing command pin'
-        [ -z "$pin" ] || [ "$pin" = "$shared_pin" ] || fail 'command pin changed'
-        pin=$shared_pin
-        hex "$pin" || fail 'invalid command pin'
     else
         mkdir "$cache"
         printf '%s\n' "$source" > "$cache/source"
-        : > "$cache/failed"
     fi
 else
     cache=$scratch/cache
     mkdir "$cache"
 fi
-if [ -z "$pin" ]; then
-    fetch "https://api.github.com/repos/$repository/commits/heads/release-catalog-v3" 128 "$scratch/ref" 'application/vnd.github.sha'
-    pin=$(cat "$scratch/ref")
-    hex "$pin" || fail 'invalid publication ref'
-fi
-root=https://raw.githubusercontent.com/$repository/$pin
+root=https://raw.githubusercontent.com/$repository/main-marek/catalog
+# The transport contract: no config, auth, proxy or redirects. Raw files of
+# one branch can lag each other briefly behind GitHub's CDN, so a missing file
+# is retried a few times before the command gives up.
 acquire() {
     name=$1 target=$cache/$1
     if [ ! -f "$target" ]; then
         # Any transfer/validation failure latches the command.
         : > "$cache/failed"
-        fetch "$root/$name" 2097152 "$scratch/document" 'application/octet-stream'
+        tries=0
+        while :; do
+            tries=$((tries + 1))
+            code=$(
+                ulimit -f "$(( (2097152 + 511) / 512 ))" || exit 1
+                curl -q --silent --show-error --noproxy '*' --proto '=https' \
+                    --max-redirs 0 --connect-timeout 10 --max-time 30 --max-filesize 2097152 \
+                    -H 'Accept-Encoding: identity' -H 'Accept: application/octet-stream' \
+                    --output "$scratch/document" --write-out '%{http_code}' "$root/$name"
+            ) || fail 'catalog transfer refused'
+            [ "$code" = 404 ] && [ "$tries" -lt 3 ] || break
+            sleep 2
+        done
+        [ "$code" = 200 ] && [ "$(wc -c < "$scratch/document")" -le 2097152 ] || fail 'catalog response refused'
+        check_clock
         sh "$reader" validate "$scratch/document" || fail 'invalid YAML document'
+        mkdir -p "$(dirname "$target")"
         cp "$scratch/document" "$target"
+        rm -f "$cache/failed"
     fi
 }
-: > "$cache/failed"
-acquire catalog.yaml
-[ "$(sh "$reader" get "$cache/catalog.yaml" kind)" = catalog ] || fail 'invalid descriptor kind'
-schemas=$(sh "$reader" get "$cache/catalog.yaml" inputs schemas) || fail 'invalid schema binding'
 acquire apps.yaml
-[ "$(sh "$reader" get "$cache/apps.yaml" kind)" = apps ] || fail 'invalid map kind'
-expected_schema=$(sh "$reader" get "$cache/catalog.yaml" schema) || fail 'invalid descriptor schema'
-case $expected_schema in */"$schemas"/docs/catalog-format-v3.md) ;; *) fail 'descriptor schema mismatch';; esac
-[ "$(sh "$reader" get "$cache/apps.yaml" schema)" = "$expected_schema" ] || fail 'map schema mismatch'
-printf '%s\n' "$pin" > "$cache/pin"
+[ "$(sh "$reader" kind "$cache/apps.yaml")" = apps ] || fail 'apps.yaml is not an apps document'
 # Revalidate cached bytes before each selection; never cache acceptance.
-AM_YAML_REPOSITORY=$(sh "$reader" get "$cache/apps.yaml" apps "$app") || fail 'unknown app or invalid app map'
-source_path=$AM_YAML_REPOSITORY
+source_path=$(sh "$reader" get "$cache/apps.yaml" apps "$app" repository) || fail 'unknown app or invalid app map'
 printf '%s\n' "$source_path" | grep -Eq '^repositories/[a-z0-9][a-z0-9_.+-]{0,63}[.]yaml$' || fail 'invalid source path'
-mkdir -p "$cache/repositories"
 acquire "$source_path"
 file=$cache/$source_path
+[ "$(sh "$reader" kind "$file")" = repository ] || fail "$source_path is not a repository document"
 AM_YAML_REPOSITORY=$(sh "$reader" get "$file" repository_id) || fail 'invalid repository document'
 case $AM_YAML_REPOSITORY in ''|*[!0-9]*) fail 'invalid repository ID';; esac
-[ "$(sh "$reader" get "$file" kind)" = repository ] || fail 'invalid source kind'
-[ "$(sh "$reader" get "$file" schema)" = "$expected_schema" ] || fail 'source schema mismatch'
 case $selection in asset) operation=asset_facts;; release) operation=release_facts;; git-*) operation=git_facts;; esac
 sh "$reader" "$operation" "$file" > "$scratch/facts" || fail 'invalid repository facts'
-rm -f "$cache/failed"
 check_clock
-AM_YAML_PIN=$pin
-export AM_YAML_RECIPE AM_YAML_REPOSITORY AM_YAML_NOW AM_YAML_PIN AM_YAML_TOOL AM_YAML_INCLUDE_PUBLICATION AM_YAML_SOURCE_REPOSITORY
+export AM_YAML_RECIPE AM_YAML_REPOSITORY AM_YAML_NOW AM_YAML_TOOL AM_YAML_INCLUDE_PUBLICATION AM_YAML_SOURCE_REPOSITORY
 export AM_YAML_OUTPUT AM_YAML_LIST_URLS AM_YAML_URL_FILTER AM_YAML_URL_PATTERN AM_YAML_URL_CONTAINS AM_YAML_SELECTED_URL
 if [ "$version_url" = true ]; then
     [ -z "$AM_YAML_SELECTED_URL" ] || fail 'conflicting selected URL'
@@ -180,6 +163,6 @@ if [ -s "$scratch/warning" ] && [ ! -e "$cache/warned-$app" ]; then
     printf 'AM YAML catalog: warning: %s catalog data last seen %s days ago (%s); using it anyway\n' "$app" "$days" "$observed" >&2
 fi
 if [ "$AM_YAML_LIST_URLS" = 1 ]; then sort -u "$scratch/result"
-elif [ "$url_only" = true ]; then sed -n '6p' "$scratch/result"
+elif [ "$url_only" = true ]; then sed -n '5p' "$scratch/result"
 else cat "$scratch/result"
 fi

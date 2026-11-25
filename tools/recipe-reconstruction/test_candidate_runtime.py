@@ -117,7 +117,7 @@ class CandidateRuntime(unittest.TestCase):
         result = subprocess.run(['awk', '-f', str(self.policy_root/'modules/catalog-yaml-policy.am')],
             input=facts, text=True, capture_output=True, timeout=10, env={**self.env,
                 'AM_YAML_RECIPE': 'x86_64/'+app, 'AM_YAML_REPOSITORY': str(number),
-                'AM_YAML_PIN': 'a'*40, 'AM_YAML_NOW': NOW, **extra})
+                'AM_YAML_NOW': NOW, **extra})
         if result.returncode:
             self.assertEqual(result.stdout, '')
             return None
@@ -160,7 +160,7 @@ class CandidateRuntime(unittest.TestCase):
         script(helper, 'cat "$ASSESS_SELECTION"\n')
         selection = home/'selection'
         url = 'https://example.invalid/releases/download/v1/App.AppImage'
-        selection.write_text('a'*40+'\n1\n1\n1\n'+NOW+'\n'+url+'\n')
+        selection.write_text('1\n1\n1\n'+NOW+'\n'+url+'\n')
         recipe = home/'candidate'
         recipe.write_text(declaration(app, CANDIDATES[app][0], 1))
         env = {**self.env, 'APPS_DIR':str(home/'apps'), 'BIN_DIR':str(home/'links'),

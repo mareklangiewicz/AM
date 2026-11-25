@@ -83,7 +83,7 @@ class Readers(unittest.TestCase):
         selected = subprocess.run(['awk', '-f', str(ROOT/'modules/catalog-yaml-policy.am')], input=facts.stdout,
                                   text=True, capture_output=True,
                                   env=dict(os.environ, LC_ALL='C', AM_YAML_RECIPE='x86_64/vscodium',
-                                           AM_YAML_REPOSITORY='144590939', AM_YAML_NOW=NEW, AM_YAML_PIN=PIN))
+                                           AM_YAML_REPOSITORY='144590939', AM_YAML_NOW=NEW))
         self.assertNotEqual(selected.returncode, 0)
         self.assertEqual(selected.stdout, '')
         self.assertNotIn('repository_mismatch', selected.stderr)

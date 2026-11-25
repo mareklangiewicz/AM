@@ -65769,20 +65769,19 @@ BEGIN {
 
 {
     if(declaration_selection ~ /^git-/) {
-        git_name=decode($2);git_commit=decode($3);observed=decode($4)
+        git_name=decode($1);git_commit=decode($2);observed=decode($3)
         if(declaration_selection=="git-tag") {
             if(index(git_name,"refs/tags/")!=1) next
             git_tag=substr(git_name,11);if(!tag_eligible(git_tag)) next
-            better=(!chosen || $5+0<best_position)
+            better=(!chosen || $4+0<best_position)
         } else {
             if(git_name!=declaration_git_ref) next
-            if(declaration_selection=="git-file" && decode($6)!=declaration_git_file) next
+            if(declaration_selection=="git-file" && decode($5)!=declaration_git_file) next
             git_tag="";better=!chosen
         }
         if(better) {
-            chosen=1;best_position=$5+0;best_tag=git_tag;best_commit=git_commit
-            best_content=decode($8);best_observed=observed
-            if(declaration_selection=="git-file") best_file_observed=decode($9)
+            chosen=1;best_position=$4+0;best_tag=git_tag;best_commit=git_commit
+            best_content=decode($7);best_observed=observed
         }
         next
     }
@@ -65790,8 +65789,7 @@ BEGIN {
     tag=decode($5); name=decode($6); url=decode($7)
     if(declaration_selection=="release") {
         eligible=tag_eligible(tag)
-        if(ENVIRON["AM_YAML_OUTPUT"]=="source-tar-url" && decode($10)=="") eligible=0
-        if(ENVIRON["AM_YAML_OUTPUT"]=="source-zip-url" && decode($11)=="") eligible=0
+
         if(declaration_channel=="stable" && ($8!="false" || tag=="nightly")) eligible=0
         if(declaration_channel=="nightly" && tag!="nightly") eligible=0
     } else if(declared) {
@@ -65826,7 +65824,7 @@ BEGIN {
         better=("x" name<"x" best_name || ("x" name=="x" best_name && less(asset_id,best_asset)))
     if(better) {
         chosen=1; best_release=release_id; best_asset=asset_id; best_published=published
-        best_name=name; best_url=url; best_observed=observed;best_tag=tag;best_updated=($9!="" ? decode($9) : "");best_source_tar=($10!="" ? decode($10) : "");best_source_zip=($11!="" ? decode($11) : "")
+        best_name=name; best_url=url; best_observed=observed;best_tag=tag;best_source_tar=($9!="" ? decode($9) : "");best_source_zip=($10!="" ? decode($10) : "")
     }
 }
 END {
@@ -65836,7 +65834,6 @@ END {
     if(!chosen) refuse("no_matching_asset")
     age=seconds(ENVIRON["AM_YAML_NOW"])-seconds(best_observed)
     if(age<0) refuse("future_release_observation")
-    if(declaration_selection=="git-file" && seconds(best_file_observed)>seconds(ENVIRON["AM_YAML_NOW"])) refuse("future_file_observation")
     # Old data warns, never refuses (ticket 23): catalog-yaml.am prints it once.
     if(age>1209600 && ENVIRON["AM_YAML_WARNING"]!="") printf "%d\t%s\n", int(age/86400), best_observed > ENVIRON["AM_YAML_WARNING"]
     output=ENVIRON["AM_YAML_OUTPUT"]
@@ -65845,14 +65842,12 @@ END {
     if(output=="source-tar-url") { print best_source_tar;exit 0 }
     if(output=="source-zip-url") { print best_source_zip;exit 0 }
     if(output=="release-id") { print best_release;exit 0 }
-    if(output=="updated-at") { if(best_updated=="") refuse("update_time_required");print best_updated;exit 0 }
     if(output=="release-url") { print best_url;exit 0 }
     if(output=="asset-id") { print best_asset;exit 0 }
     if(output=="git-commit") { print best_commit;exit 0 }
     if(output=="git-file") { printf "%s",best_content;exit 0 }
     if(output=="git-snapshot") { print best_commit;printf "%s",best_content;exit 0 }
     # Fixed line protocol: no eval or shell interpretation; URL has no whitespace.
-    print ENVIRON["AM_YAML_PIN"]
     print ENVIRON["AM_YAML_REPOSITORY"]
     print best_release
     print best_asset

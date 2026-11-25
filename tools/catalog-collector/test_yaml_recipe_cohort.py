@@ -6,7 +6,6 @@ import unittest
 from reference_policies import matches, select_cohort
 
 NOW = datetime(2026, 11, 4, 12, tzinfo=timezone.utc)
-PIN = 'b'*40
 
 
 def release(tag='v1', published='2026-11-01T00:00:00Z', name='nvim-x86_64.AppImage', url=None):
@@ -20,7 +19,7 @@ class Cohort(unittest.TestCase):
                                releases={'1': release()})
 
     def choose(self, recipe='x86_64/nvim', **kw):
-        return select_cohort(recipe, self.repository, PIN, now=NOW, **kw)
+        return select_cohort(recipe, self.repository, now=NOW, **kw)
 
     def test_published_order_replaces_page_order_and_falls_through(self):
         self.repository['releases'] = {'1': release(published='2026-11-03T00:00:00Z'),

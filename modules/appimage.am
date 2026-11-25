@@ -90,28 +90,28 @@ am_package() (
 	[ -r "$CATALOG_YAML_HELPER" ] || { echo 'Missing catalog-yaml.am; synchronize AM modules.' >&2; exit 3; }
 	if [ "${VERSION_IDENTITY-url}" = published_at ]; then
 		selection=$(sh "$CATALOG_YAML_HELPER" "$catalog_recipe" --with-published-at "$@") || exit 3
-		[ "$(printf '%s\n' "$selection" | wc -l)" -eq 7 ] || exit 3
-		version=$(printf '%s\n' "$selection" | sed -n '7p')
-	else
-		selection=$(sh "$CATALOG_YAML_HELPER" "$catalog_recipe" "$@") || exit 3
 		[ "$(printf '%s\n' "$selection" | wc -l)" -eq 6 ] || exit 3
 		version=$(printf '%s\n' "$selection" | sed -n '6p')
+	else
+		selection=$(sh "$CATALOG_YAML_HELPER" "$catalog_recipe" "$@") || exit 3
+		[ "$(printf '%s\n' "$selection" | wc -l)" -eq 5 ] || exit 3
+		version=$(printf '%s\n' "$selection" | sed -n '5p')
 	fi
-	download=$(printf '%s\n' "$selection" | sed -n '6p')
+	download=$(printf '%s\n' "$selection" | sed -n '5p')
 	[ -n "$version" ] && [ -n "$download" ] || exit 3
 	if [ -n "$tools" ]; then
-		publication=$(printf '%s\n' "$selection" | sed -n '1p')
-		release=$(printf '%s\n' "$selection" | sed -n '2,3p')
+		release=$(printf '%s\n' "$selection" | sed -n '1,2p')
 		tool_urls=$download
 		first_tool=true
 		for tool in $tools; do
 			if [ "$first_tool" = true ]; then first_tool=false; continue; fi
-			extra=$(sh "$CATALOG_YAML_HELPER" "$catalog_recipe" --commit "$publication" --tool "$tool") || exit 3
-			[ "$(printf '%s\n' "$extra" | wc -l)" -eq 6 ] &&
-				[ "$(printf '%s\n' "$extra" | sed -n '2,3p')" = "$release" ] || {
+			# One command session reads one copy of the catalog files, so both calls see the same release.
+			extra=$(sh "$CATALOG_YAML_HELPER" "$catalog_recipe" --tool "$tool") || exit 3
+			[ "$(printf '%s\n' "$extra" | wc -l)" -eq 5 ] &&
+				[ "$(printf '%s\n' "$extra" | sed -n '1,2p')" = "$release" ] || {
 				echo 'Package tools must come from one release.' >&2; exit 3;
 			}
-			tool_urls=$(printf '%s\n%s' "$tool_urls" "$(printf '%s\n' "$extra" | sed -n '6p')")
+			tool_urls=$(printf '%s\n%s' "$tool_urls" "$(printf '%s\n' "$extra" | sed -n '5p')")
 		done
 	fi
 	dir=${APPS_DIR%/}/$APP

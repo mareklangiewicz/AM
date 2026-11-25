@@ -5,7 +5,6 @@ Uses the publisher's Python/YAML dependencies for rehearsal; portable shell
 integration and per-recipe selection review remain separate.
 """
 from datetime import datetime, timezone
-import re
 import string
 
 from bounded import require
@@ -27,7 +26,7 @@ def policy(value):
     return value
 
 
-def select(apps, repositories, app, commit, rule, *, now):
+def select(apps, repositories, app, rule, *, now):
     """Client policy chooses a release/asset before checking its observation age.
 
     Never silently substitute a fresher release when the chosen record is old:
@@ -36,7 +35,6 @@ def select(apps, repositories, app, commit, rule, *, now):
     Asset order is UTF-8 byte name then numeric ID; release ties use numeric ID.
     """
     rule = policy(rule)
-    require(type(commit) is str and re.fullmatch('[0-9a-f]{40}',commit), 'commit_pin_required')
     require(type(now) is datetime and now.tzinfo is not None and
             now.utcoffset().total_seconds() == 0, 'utc_now_required')
     require(app in apps, 'unknown_app')
@@ -56,18 +54,18 @@ def select(apps, repositories, app, commit, rule, *, now):
                     any(fold(s) in name for s in rule['exclude'])):
                 continue
             return accept_selection(app, rid, repository, release_id, release, asset_id,
-                                    asset, commit, now=now)
+                                    asset, now=now)
     raise ValueError('no_matching_asset')
 
 
-def accept_selection(app, rid, repository, release_id, release, asset_id, asset, commit, *, now):
+def accept_selection(app, rid, repository, release_id, release, asset_id, asset, *, now):
     """Shared selected-record age check for offline policy rehearsals."""
     observed = release.get('observed_at',repository.get('observed_at'))
     require(type(observed) is str, 'missing_release_observation')
     received = datetime.strptime(observed,'%Y-%m-%dT%H:%M:%SZ').replace(tzinfo=timezone.utc)
     age = (now-received).total_seconds()
     require(age >= 0, 'future_release_observation')
-    identity = dict(commit=commit,repository_id=rid,release_id=release_id,
+    identity = dict(repository_id=rid,release_id=release_id,
                       asset_id=asset_id,observed_at=observed)
     stale = age > STALE_SECONDS
     return dict(app=app,**identity,tag=release['tag'],published_at=release['published_at'],

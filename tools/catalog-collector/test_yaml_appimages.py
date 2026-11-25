@@ -10,7 +10,7 @@ import test_yaml_manager_integration as integration
 from fixture_manager import ROOT
 from fixture_appimages import fixtures
 from publication import git
-from fixture_v3 import publish_local
+import fixture_catalog
 from reference_policies import APPIMAGES, matches
 import pinned_recipes
 
@@ -20,13 +20,13 @@ class AppImagesCase(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.saved = fixtures()
-        cls.repositories = {str(rid):document for rid,document in cls.saved.items()}
+        cls.repositories = dict(cls.saved)
         cls.apps = {recipe.split('/')[1]:row['repository_id'] for recipe,row in APPIMAGES.items()}
         cls.tmp = tempfile.TemporaryDirectory(prefix='yaml-appimages-')
         cls.addClassCleanup(cls.tmp.cleanup)
         cls.repo = Path(cls.tmp.name)/'git'; cls.repo.mkdir()
         git(cls.repo,'init','--bare')
-        cls.pin = publish_local(cls.repo,cls.apps,cls.repositories,expected_parent=None)
+        fixture_catalog.publish(cls.repo,fixture_catalog.tree(cls.apps,cls.repositories))
 
     script = integration.YAMLManager.script
     env = integration.YAMLManager.env
@@ -47,7 +47,7 @@ class AppImagesCase(unittest.TestCase):
         return subprocess.run([*(['busybox','awk'] if tool=='busybox' else [tool]),
             '-f',str(ROOT/'modules/catalog-yaml-policy.am')],input=facts,capture_output=True,
             env={**self.env(),'LC_ALL':'C','AM_YAML_NOW':'2026-11-04T12:00:00Z',
-                 'AM_YAML_RECIPE':recipe,'AM_YAML_PIN':self.pin,
+                 'AM_YAML_RECIPE':recipe,
                  'AM_YAML_REPOSITORY':str(APPIMAGES[recipe]['repository_id']),**env})
 
     def fact(self, url, *, release='1', asset='1', observed='2026-11-04T12:00:00Z',
@@ -70,24 +70,25 @@ class AppImages(AppImagesCase):
             for tool in ('mawk','gawk','busybox'):
                 result=self.policy(recipe,old+preview+no_asset,tool)
                 self.assertEqual(result.returncode,0,result.stderr)
-                self.assertEqual(result.stdout.decode().splitlines()[2],
+                self.assertEqual(result.stdout.decode().splitlines()[1],
                     '2' if app=='vivaldi-snapshot' else '1')
                 # An old winner stays the winner; the policy reports its age for one warning.
                 selected=self.fact(url,release='4',published='2026-11-03T00:00:00Z',observed='2026-10-20T11:59:59Z')
                 warning=self.path/'warning';warning.unlink(missing_ok=True)
                 chosen=self.policy(recipe,old+selected,tool,AM_YAML_WARNING=str(warning))
                 self.assertEqual(chosen.returncode,0,chosen.stderr)
-                self.assertEqual(chosen.stdout.decode().splitlines()[2],'4')
+                self.assertEqual(chosen.stdout.decode().splitlines()[1],'4')
                 self.assertEqual(warning.read_text(),'15\t2026-10-20T11:59:59Z\n')
                 wrong=self.policy(recipe,old,tool,AM_YAML_REPOSITORY='1')
                 self.assertNotEqual(wrong.returncode,0);self.assertEqual(wrong.stdout,b'')
 
     def test_reassignment_refuses_before_mutation(self):
-        self.clock=self.repositories['19416551']['observed_at']
+        self.clock=self.repositories[19416551]['observed_at']
         app=self.install('x86_64/sqlitebrowser');before=self.snapshot()
         apps=dict(self.apps,sqlitebrowser=next(r for r in self.saved if r!=19416551))
-        pin=publish_local(self.repo,apps,self.repositories,expected_parent=self.pin)
-        result=self.standalone(app/'AM-updater','--commit',pin)
+        fixture_catalog.publish(self.repo,fixture_catalog.tree(apps,self.repositories))
+        self.addCleanup(fixture_catalog.publish,self.repo,fixture_catalog.tree(self.apps,self.repositories))
+        result=self.standalone(app/'AM-updater')
         self.assertNotEqual(result.returncode,0);self.assertEqual(self.snapshot(),before)
         self.assertIn(b'appimage_repository_mismatch',result.stderr)
 
@@ -97,7 +98,6 @@ if __name__ == '__main__': unittest.main()
 
 class AdversarialPolicies(unittest.TestCase):
     """Direct policy checks need no saved catalog, installer or Git fixture."""
-    pin = 'b'*40
     policy = AppImages.policy
     fact = AppImages.fact
 

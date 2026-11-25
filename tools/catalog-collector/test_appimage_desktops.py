@@ -40,7 +40,7 @@ case "$2" in
     mkdir -p "squashfs-root/$(dirname "$2")"; cp -P "$FIXTURE_MEMBERS/$2" "squashfs-root/$2" ;;
 esac
 ''')
-        script(home/'select','printf "%s\\n" '+'a'*40+' 1 1 1 '+NOW+' https://example.invalid/v1/App.AppImage\n')
+        script(home/'select','printf "%s\\n" 1 1 1 '+NOW+' https://example.invalid/v1/App.AppImage\n')
         self.desktops=home/'desktops'
         self.env=dict(PATH=str(tools)+os.pathsep+os.environ['PATH'],HOME=str(home),
             APPS_DIR=str(home/'apps'),BIN_DIR=str(home/'links'),DESKTOP_DIR=str(self.desktops),

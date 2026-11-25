@@ -52,8 +52,7 @@ class BulkRecipes(unittest.TestCase):
                 for command in (['mawk'],['gawk'],['busybox','awk']):
                     result=subprocess.run([*command,'-f',str(policy)],input=facts,text=True,capture_output=True,
                         env={**os.environ,'LC_ALL':'C','AM_YAML_RECIPE':'x86_64/0xfx',
-                             'AM_YAML_REPOSITORY':'123','AM_YAML_NOW':'2026-11-09T12:00:00Z',
-                             'AM_YAML_PIN':'a'*40})
+                             'AM_YAML_REPOSITORY':'123','AM_YAML_NOW':'2026-11-09T12:00:00Z'})
                     self.assertEqual(result.returncode,0 if allowed else 3,(command,tag,name,result.stderr))
                     if allowed:self.assertEqual(result.stdout.splitlines()[-1],url)
 

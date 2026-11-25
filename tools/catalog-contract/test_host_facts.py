@@ -78,6 +78,10 @@ class Facts(unittest.TestCase):
                 run = reader(*args)
                 self.assertEqual((run.returncode, run.stdout), (2, b''))
 
+    def test_kind_names_the_schema_fragment(self):
+        self.assertEqual(reader('kind', APPS).stdout, b'apps')
+        self.assertEqual(reader('kind', EXAMPLE).stdout, b'repository')
+
     def test_facts_need_a_repository_document(self):
         self.assertEqual(reader('asset_facts', APPS).returncode, 2)
 

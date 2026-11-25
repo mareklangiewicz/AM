@@ -136,31 +136,6 @@ actual-URL patch is preserved in
 `track/release-catalog/research/appimageupdatetool-before-yaml.sh.txt`. This does
 not claim that URL identity verifies a binary digest or publisher authenticity.
 
-## Maintenance-window reinstall
-
-`tools/catalog-collector/host_cutover.py prepare` stages every selected asset in
-a private directory and exercises the delivered archive extraction code. `apply`
-saves the previous manager/modules, installed recipe/updater/version/remover and
-launcher metadata, then overlays program files. It never executes an old remove
-script, deletes an app directory or edits home configuration. Existing desktop
-entries and custom executable launchers are preserved. Existing app data stays
-in place. Program files are replaced by rename so a running executable is not
-truncated. Multi-file replacement is not atomic.
-
-Local source, downloaded assets, staged payloads, selections, smoke output and
-catalog Git objects are under `/home/marek/Documents/Codex/am-yaml-cutover/`.
-The persistent development worktree is `source/`; `prepared/` contains the app
-payloads. `before/` inside the chosen prepared directory is created only on live
-application. This directory is local and is not shipped with source pushes.
-
-Recovery is to rerun the prepared apply or reinstall the affected app after fixing
-the cause. Restore `before/APP-MANAGER` and `before/modules/` if the manager itself
-needs reverting. Old updater/recipe/version metadata and launcher targets are
-also saved, but that does not restore old binaries. The previous format-1 catalog
-commit is retained in history and in `catalog-report.json` if an old managed
-recipe needs an explicitly pinned old catalog. No durable binary transaction,
-power-loss guarantee or automatic rollback service is provided.
-
 ## Checks
 
 The actual manager installation path and standalone updaters were exercised for

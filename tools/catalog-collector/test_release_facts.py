@@ -102,7 +102,7 @@ class HostSelection(unittest.TestCase):
         selected = subprocess.run(['awk', '-f', str(c.ROOT/'modules/catalog-yaml-policy.am')], input=facts.stdout,
                                   text=True, capture_output=True,
                                   env=dict(os.environ, LC_ALL='C', AM_YAML_RECIPE='x86_64/beacon',
-                                           AM_YAML_REPOSITORY='1380381406', AM_YAML_NOW=NEW, AM_YAML_PIN=PIN))
+                                           AM_YAML_REPOSITORY='1380381406', AM_YAML_NOW=NEW))
         self.assertEqual(selected.returncode, 0, selected.stderr)
         self.assertIn('Beacon-2.1.8.AppImage', selected.stdout)
 

@@ -229,6 +229,7 @@ END {
         if(root_kind!="repository") fail("facts need a repository document")
         facts(operation)
     }
+    if(operation=="kind") emit(root_kind)
     if(operation=="get") {
         if(!(query in kind_of)) exit 3
         if(kind_of[query]=="map" || kind_of[query]=="empty") fail("get needs a scalar")

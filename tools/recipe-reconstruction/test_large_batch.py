@@ -151,7 +151,7 @@ class LargeBatch(unittest.TestCase):
                             env={**os.environ, 'LC_ALL': 'C',
                                  'AM_YAML_RECIPE': 'x86_64/' + app,
                                  'AM_YAML_REPOSITORY': str(row['repository_id']),
-                                 'AM_YAML_NOW': now, 'AM_YAML_PIN': 'a' * 40})
+                                 'AM_YAML_NOW': now})
                         self.assertEqual(result.returncode, 0, result.stderr)
                         self.assertEqual(result.stdout.splitlines()[-1],
                                          row['selected_asset']['browser_download_url'])
@@ -208,7 +208,7 @@ class LargeBatch(unittest.TestCase):
                 script(helper, 'cat "$ASSESS_SELECTION"\n')
                 selection = home / 'selection'
                 url = self.rows[app]['selected_asset']['browser_download_url']
-                selection.write_text('a' * 40 + '\n1\n1\n1\n' +
+                selection.write_text('1\n1\n1\n' +
                                      self.rows[app]['observed_at'][:19] + 'Z\n' + url + '\n')
                 recipe = home / 'candidate'
                 source = pinned_recipes.read_text('x86_64/' + app)

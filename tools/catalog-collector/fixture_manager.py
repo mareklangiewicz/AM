@@ -2,9 +2,8 @@
 import os
 from pathlib import Path
 import subprocess
-from fixture_recipes import fixtures
+import fixture_catalog
 from publication import git
-from fixture_v3 import publish_local
 import pinned_recipes
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -15,15 +14,14 @@ LIFECYCLE = ROOT/'modules/appimage.am'
 
 def setup_catalog(cls):
     import tempfile
-    saved = fixtures()
-    cls.repositories = {str(k): v for k, v in saved.items()}
+    cls.repositories = fixture_catalog.saved_repositories()
     cls.apps = {'obsidian':262342594, 'nvim':16408992, 'nvim-nightly':16408992}
     cls.tmp = tempfile.TemporaryDirectory(prefix='yaml-fixture-')
     cls.addClassCleanup(cls.tmp.cleanup)
     cls.shared = Path(cls.tmp.name)
     cls.repo = cls.shared/'git'; cls.repo.mkdir()
     git(cls.repo, 'init', '--bare')
-    cls.pin = publish_local(cls.repo, cls.apps, cls.repositories, expected_parent=None)
+    cls.commit = fixture_catalog.publish(cls.repo, fixture_catalog.tree(cls.apps, cls.repositories))
 
 
 class ManagerHarness:

@@ -2,9 +2,9 @@
 import json
 import unittest
 
-import contracts as c
-from publication import git,publish_tree
-from fixture_v3 import sample_release
+import documents
+import fixture_catalog
+from publication import git
 import test_git_consumers as integration
 
 AT=integration.AT
@@ -18,26 +18,21 @@ class CustomConsumers(unittest.TestCase):
     read=integration.GitConsumers.read
 
     def prepare(self,app,releases,policy_name=None):
-        policies=json.loads((c.ROOT/'tools/catalog-collector/recipe-url-policies.json').read_text())
+        """releases: records as bounded.normalize returns them."""
+        policies=json.loads((integration.ROOT/'tools/catalog-collector/recipe-url-policies.json').read_text())
         policy=next(r for r in policies if r['recipe']==(policy_name or 'x86_64/'+app))
-        rid=policy['repository_id'];revision='a'*40
-        doc=c.source(None,dict(received_at=AT,releases=releases,history_complete=True),
-                     rid=rid,repository=policy['repository'],revision=revision)
-        path='repositories/'+app+'.yaml';apps={policy['catalog_app']:path}
-        tree={path:c.encode(doc),'apps.yaml':c.encode(dict(c.header('apps',revision),apps=apps)),
-            'catalog.yaml':c.encode(dict(c.header('catalog',revision),
-                inputs={k:revision for k in ('source','policy','recipes','rules','schemas')},
-                producer=dict(id=1,attempt=1),retention='32-plus-stable-exact-tag-v1'))}
-        tree.update(c.partition_provenance(apps,{policy['catalog_app']:{'x86_64':dict(repository_id=rid,
-            availability='unknown',classification='unknown')}},revision))
+        rid=policy['repository_id']
+        doc=documents.repository(None,dict(received_at=AT,releases=releases,history_complete=True),
+                                 repository_id=rid,repository=policy['repository'])
+        tree={'catalog/repositories/'+app+'.yaml':documents.encode('repository',doc),
+              'catalog/apps.yaml':documents.encode('apps',dict(apps={policy['catalog_app']:dict(
+                  repository='repositories/'+app+'.yaml',x86_64='declaration')}))}
         self.repo=self.path/'remote.git';self.repo.mkdir();git(self.repo,'init','--bare','--quiet','--template=')
-        self.pin=publish_tree(self.repo,tree,None);self.clock=AT
+        fixture_catalog.publish(self.repo,tree);self.clock=AT
 
     def release(self,tag='v1',published=AT,preview=False):
-        r=sample_release()
-        r.update(tag=tag,published_at=published,prerelease=preview,assets={})
-        r['url']='https://github.com/example/app/releases/tag/'+tag
-        return r
+        return dict(tag=tag,title=tag,url='https://github.com/example/app/releases/tag/'+tag,
+                    published_at=published,prerelease=preview,assets={})
 
     def test_release_only_metadata_does_not_require_assets(self):
         old=self.release('v1','2026-11-08T00:00:00Z');preview=self.release('v2',preview=True)
@@ -45,17 +40,19 @@ class CustomConsumers(unittest.TestCase):
         result=self.read('code','--tag');self.assertEqual(result.returncode,0,result.stderr)
         self.assertEqual(result.stdout,'v1\n')
 
-    def test_release_url_and_update_time_preserve_distinct_scalar_outputs(self):
+    def test_release_url_is_a_scalar_output(self):
         r=self.release('v1');self.prepare('doublecmd-gtk',{'1':r})
         result=self.read('doublecmd-gtk','--release-url')
         self.assertEqual(result.returncode,0,result.stderr)
         self.assertEqual(result.stdout,r['url']+'\n')
 
-    def test_mutable_release_update_time_is_observed_metadata(self):
-        r=self.release('continuous');r['updated_at']='2026-11-09T11:50:00Z'
-        self.prepare('vita3k',{'1':r});result=self.read('vita3k','--updated-at')
+    def test_a_rolling_release_recreated_per_build_is_versioned_by_its_publication_time(self):
+        # Vita3K recreates its continuous release per build (a new release ID; see the v3 history of
+        # repositories/vita3k.yaml), so published_at changes whenever the build does.
+        r=self.release('continuous','2026-11-09T11:50:00Z')
+        self.prepare('vita3k',{'1':r});result=self.read('vita3k','--published-at')
         self.assertEqual(result.returncode,0,result.stderr)
-        self.assertEqual(result.stdout,r['updated_at']+'\n')
+        self.assertEqual(result.stdout,r['published_at']+'\n')
 
     def test_version_sorted_url_then_freshness_checks_the_same_winner(self):
         highest=self.release('v10','2026-11-08T00:00:00Z')

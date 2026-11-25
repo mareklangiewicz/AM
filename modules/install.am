@@ -154,12 +154,6 @@ if [ "$(ls -A "$CACHEDIR"/AMCACHEPATH 2>/dev/null)" ]; then
 fi
 
 _install_exec_installation_script() {
-	local -a selection_options=()
-	if grep -qx '# AM-CATALOG-RECIPE 1' ./"$arg"; then
-		selection_options=("${catalog_install_options[@]}")
-	elif [ "${#catalog_install_options[@]}" -gt 0 ]; then
-		echo 'Catalog options require a catalog recipe' >&2; return 1
-	fi
 	if [ "$(ls -A "$CACHEDIR"/AMCACHEPATH 2>/dev/null)" ] && [ -n "$SUDOCMD" ]; then
 		$SUDOCMD chmod a-w "$CACHEDIR"/AMCACHEPATH
 		# Check allowed binaries
@@ -205,9 +199,9 @@ _install_exec_installation_script() {
 			done
 		fi
 		trap '$SUDOCMD chmod u+w "$CACHEDIR"/AMCACHEPATH' EXIT INT TERM
-		$SUDOCMD PATH="$PATH" ./"$arg" "${selection_options[@]}"
+		$SUDOCMD PATH="$PATH" ./"$arg"
 	else
-		$SUDOCMD ./"$arg" "${selection_options[@]}"
+		$SUDOCMD ./"$arg"
 	fi
 }
 
@@ -251,7 +245,7 @@ _install_script_retry() {
 # The modules a catalog recipe sources: format 1, and format 3 (CATALOG_FORMAT=3).
 # The install guard below and reinstall's preflight read these lists.
 AM_CATALOG_MODULES="catalog.am appimage.am"
-AM_CATALOG_V3_MODULES="catalog-yaml.am catalog-contract-reader.am catalog-contract-parser.am catalog-contract-tables.am catalog-yaml-policy.am appimage.am"
+AM_CATALOG_V3_MODULES="catalog-yaml.am catalog-reader.am catalog-parser.am catalog-tables.am catalog-yaml-policy.am appimage.am"
 
 _missing_catalog_module() {
 	for managed_module in "$@"; do
@@ -1331,14 +1325,12 @@ case "$1" in
 		;;
 
 	'install'|'-i'|'-ias'|'install-appimage'|'-ia')
-		# Keep catalog option operands out of the legacy app-name splitter.
-		catalog_install_options=()
+		# Removed catalog options are refused by name, never taken for app names.
 		install_arguments=("$1"); shift
 		while [ "$#" -gt 0 ]; do
 			case $1 in
 				--commit)
-					[ "$#" -ge 2 ] || { echo 'Missing catalog commit' >&2; exit 1; }
-					catalog_install_options+=("$1" "$2"); shift 2 ;;
+					echo 'Unsupported option: --commit (the catalog is read from main-marek; there are no catalog commits to choose)' >&2; exit 1 ;;
 				--accept-stale|--accept-stale-release)
 					echo "Unsupported option: $1 (old catalog data now warns instead of refusing)" >&2; exit 1 ;;
 				*) install_arguments+=("$1"); shift ;;

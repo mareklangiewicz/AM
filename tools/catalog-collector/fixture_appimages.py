@@ -6,7 +6,7 @@ import tarfile
 
 ROOT = Path(__file__).resolve().parents[2]
 from fixture_facts import utc
-from fixture_v3 import REVISION, repository
+from fixture_catalog import repository
 from reference_policies import APPIMAGES
 
 RESEARCH = ROOT/'docs/track/release-catalog/research'
@@ -56,9 +56,9 @@ def fixtures():
         if source['url'].endswith('/latest'):
             # A saved latest object supplies ONE release's facts only. This is
             # not a fabricated list response or evidence of list acquisition.
-            result[rid] = repository(rid, name, [json.loads(raw)], received, REVISION, complete=False)
+            result[rid] = repository(rid, name, [json.loads(raw)], received, complete=False)
         else:
             releases = json.loads(raw)
             page = 100 if 'per_page=100' in source['url'] else 30
-            result[rid] = repository(rid, name, releases, received, REVISION, complete=len(releases) < page)
+            result[rid] = repository(rid, name, releases, received, complete=len(releases) < page)
     return result

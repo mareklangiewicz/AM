@@ -45,15 +45,19 @@ class GitContract(unittest.TestCase):
     def test_tag_and_commit_pinned_file_observations(self):self.check(self.document())
 
     def test_chunk_boundaries_preserve_escaped_file_output_in_every_native_reader(self):
-        doc=self.document();content=('x'*4094+'\\"\n')*18
-        doc['git_refs'][key('refs/heads/master')]['files'][key('VERSION')]['content']=content
-        raw=c.encode(doc)
+        import documents
+        content=('x'*4094+'\\"\n')*18  # escapes straddle the reader's 4 KiB decode chunks
+        at='2026-11-09T12:00:00Z'
+        doc=dict(repository_id=25396290,repository='fsquillace/junest',observed_at=at,history_complete=True,releases={},
+                 git_scope=dict(tags=False,tags_history_complete=False),
+                 git_refs={'refs/heads/master':dict(commit='b'*40,files={'VERSION':dict(blob='c'*40,content=content)})})
+        raw=documents.encode('repository',doc)
         for command in (['mawk'],['gawk'],['busybox','awk']):
             env=dict(os.environ,LC_ALL='C',AM_YAML_OPERATION='git_facts',
                 AM_YAML_RECIPE='x86_64/junest',AM_YAML_REPOSITORY='25396290',
-                AM_YAML_OUTPUT='git-file',AM_YAML_NOW=doc['collected_at'],AM_YAML_PIN='a'*40)
-            facts=subprocess.run([*command,'-f',str(c.ROOT/'modules/catalog-contract-tables.am'),
-                '-f',str(c.ROOT/'modules/catalog-contract-parser.am')],input=raw,capture_output=True,env=env)
+                AM_YAML_OUTPUT='git-file',AM_YAML_NOW=at)
+            facts=subprocess.run([*command,'-f',str(c.ROOT/'modules/catalog-tables.am'),
+                '-f',str(c.ROOT/'modules/catalog-parser.am')],input=raw,capture_output=True,env=env)
             self.assertEqual(facts.returncode,0,facts.stderr)
             result=subprocess.run([*command,'-f',str(c.ROOT/'modules/catalog-yaml-policy.am')],input=facts.stdout,capture_output=True,env=env)
             self.assertEqual(result.returncode,0,result.stderr)

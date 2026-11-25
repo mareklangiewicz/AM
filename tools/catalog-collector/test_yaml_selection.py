@@ -6,7 +6,6 @@ import unittest
 from fixture_v3 import sample_release
 from reference_selection import select
 
-PIN = 'a'*40
 NOW = datetime(2026,11,4,13,tzinfo=timezone.utc)
 RULE = dict(release_order='published_desc',stable_only=False,asset_suffix='.AppImage',
             include=['x86_64'],exclude=['.zsync'],ignore_case=False)
@@ -24,7 +23,7 @@ class Selection(unittest.TestCase):
         self.repositories = {str(self.repo['repository_id']):self.repo}
 
     def choose(self,rule=None,**kwargs):
-        return select(self.apps,self.repositories,'app',PIN,rule or RULE,now=NOW,**kwargs)
+        return select(self.apps,self.repositories,'app',rule or RULE,now=NOW,**kwargs)
 
     def test_selects_structured_asset_and_preserves_digest_optionality(self):
         selected = self.choose()
@@ -75,7 +74,7 @@ class Selection(unittest.TestCase):
                      dict(RULE,include='x86_64')):
             with self.assertRaises(ValueError):self.choose(rule)
         with self.assertRaisesRegex(ValueError,'unknown_app'):
-            select(self.apps,self.repositories,'missing',PIN,RULE,now=NOW)
+            select(self.apps,self.repositories,'missing',RULE,now=NOW)
         with self.assertRaisesRegex(ValueError,'no_matching_asset'):
             self.choose(dict(RULE,include=['not-present']))
 

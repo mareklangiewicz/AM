@@ -22,7 +22,7 @@ printf '\n%s' "rm -f /usr/local/share/applications/$APP-AM.desktop" >> ../remove
 chmod a+x ../remove || exit 1
 
 # DOWNLOAD AND PREPARE THE APP, $version is also used for updates
-version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/vita3k --updated-at "$@") || exit 1
+version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/vita3k --published-at "$@") || exit 1
 download=$(curl -Ls https://vita3k.org/download | tr '">< ' '\n' | grep -Eoi "http.*download.*appimage" | grep -i "amd64\|x86-64\|x64\|x86_64" | head -1)
 wget "$download" || exit 1
 # Use tar fx ./*tar* here for example in this line in case a compressed file is downloaded.
@@ -53,7 +53,7 @@ set -u
 APP=vita3k
 SITE="https://vita3k.org"
 version0=$(cat "/opt/$APP/version")
-version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/vita3k --updated-at "$@") || exit 1
+version=$(sh "/opt/am/modules/catalog-yaml.am" x86_64/vita3k --published-at "$@") || exit 1
 [ -n "$version" ] || { echo "Error getting link"; exit 1; }
 if [ "$version" != "$version0" ]; then
 	mkdir "/opt/$APP/tmp" && cd "/opt/$APP/tmp" || exit 1

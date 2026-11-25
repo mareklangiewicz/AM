@@ -90,7 +90,7 @@ class LargeBatchEnrollment(unittest.TestCase):
                         selected = subprocess.run([*command,'-f',str(host_catalog.ROOT/'modules/catalog-yaml-policy.am')],
                             input=facts.stdout,text=True,capture_output=True,timeout=15,
                             env=dict(os.environ,LC_ALL='C',AM_YAML_RECIPE='x86_64/'+app,
-                                AM_YAML_REPOSITORY=rid,AM_YAML_NOW=source['observed_at'],AM_YAML_PIN=revision))
+                                AM_YAML_REPOSITORY=rid,AM_YAML_NOW=source['observed_at']))
                         self.assertEqual(selected.returncode,0,selected.stderr)
                         self.assertEqual(selected.stdout.splitlines()[-1],row['old_selected_url'])
             # Strict collection refuses as a whole when one saved page is malformed.

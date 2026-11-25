@@ -74,7 +74,7 @@ class Declarations(unittest.TestCase):
                             input=facts,text=True,capture_output=True,timeout=10,
                             env={**os.environ,'LC_ALL':'C','AM_YAML_RECIPE':row['recipe'],
                                  'AM_YAML_REPOSITORY':str(row['repository_id']),
-                                 'AM_YAML_NOW':now,'AM_YAML_PIN':'a'*40})
+                                 'AM_YAML_NOW':now})
                         self.assertEqual(result.returncode,0,result.stderr)
                         self.assertEqual(result.stdout.splitlines()[-1],expected)
         # Declaration compilation validates the opt-in boolean before registry generation.
@@ -131,7 +131,7 @@ class Declarations(unittest.TestCase):
                                 input=facts, text=True, capture_output=True, timeout=10,
                                 env={**os.environ, 'LC_ALL':'C',
                                     'AM_YAML_RECIPE':arch+'/example', 'AM_YAML_REPOSITORY':'16408992',
-                                    'AM_YAML_NOW':'2026-11-06T12:00:00Z', 'AM_YAML_PIN':'a'*40})
+                                    'AM_YAML_NOW':'2026-11-06T12:00:00Z'})
                             if arch in allowed:
                                 self.assertEqual(result.returncode, 0, result.stderr)
                                 self.assertEqual(result.stdout.splitlines()[-1], url)
@@ -182,9 +182,9 @@ class Declarations(unittest.TestCase):
                         result = subprocess.run([*command, '-f', str(policy)], input=facts,
                             text=True, capture_output=True, env={**os.environ, 'LC_ALL':'C',
                                 'AM_YAML_RECIPE':arch+'/example', 'AM_YAML_REPOSITORY':'16408992',
-                                'AM_YAML_NOW':'2026-11-05T12:00:00Z', 'AM_YAML_PIN':'a'*40})
+                                'AM_YAML_NOW':'2026-11-05T12:00:00Z'})
                         self.assertEqual(result.returncode, 0, result.stderr)
-                        self.assertEqual(result.stdout.splitlines()[3], '2')
+                        self.assertEqual(result.stdout.splitlines()[2], '2')  # repository, release, asset
                 # Maintained code is unchanged when declaration data changes.
                 path = root/'programs/aarch64/example'
                 path.write_text(path.read_text().replace('CATALOG_CHANNEL=stable','CATALOG_CHANNEL=any'))
