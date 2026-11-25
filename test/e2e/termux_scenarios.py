@@ -27,8 +27,8 @@ class TermuxCLI(unittest.TestCase):
                 'test/e2e/filesystem.py','test/e2e/transport_args.py','test/e2e/transport_records.py',
                 'test/e2e/run','test/e2e/fixtures/e2e-legacy',
                 'programs/x86_64/sqlitebrowser','programs/x86_64/obsidian']
-        inputs += ['tools/catalog-collector/bounded.py','tools/catalog-collector/retention_v3.py',
-                   'tools/catalog-collector/writer.py']
+        inputs += ['tools/catalog-collector/bounded.py','tools/catalog-collector/documents.py',
+                   'schemas/catalog.schema.yaml','tools/catalog-contract/platforms.json']
         (OUT/'tested-source.json').write_text(json.dumps({
             'inputs':fingerprint_files(Path('/src'), inputs),
             'modules':cls.module_hashes},indent=2)+'\n')

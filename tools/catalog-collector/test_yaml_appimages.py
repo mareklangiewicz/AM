@@ -9,7 +9,6 @@ import unittest
 import test_yaml_manager_integration as integration
 from fixture_manager import ROOT
 from fixture_appimages import fixtures
-from publication import git
 import fixture_catalog
 from reference_policies import APPIMAGES, matches
 import pinned_recipes
@@ -24,8 +23,7 @@ class AppImagesCase(unittest.TestCase):
         cls.apps = {recipe.split('/')[1]:row['repository_id'] for recipe,row in APPIMAGES.items()}
         cls.tmp = tempfile.TemporaryDirectory(prefix='yaml-appimages-')
         cls.addClassCleanup(cls.tmp.cleanup)
-        cls.repo = Path(cls.tmp.name)/'git'; cls.repo.mkdir()
-        git(cls.repo,'init','--bare')
+        cls.repo = fixture_catalog.bare(Path(cls.tmp.name)/'git')
         fixture_catalog.publish(cls.repo,fixture_catalog.tree(cls.apps,cls.repositories))
 
     script = integration.YAMLManager.script

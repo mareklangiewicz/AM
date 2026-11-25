@@ -4,7 +4,6 @@ import unittest
 
 import documents
 import fixture_catalog
-from publication import git
 import test_git_consumers as integration
 
 AT=integration.AT
@@ -27,7 +26,7 @@ class CustomConsumers(unittest.TestCase):
         tree={'catalog/repositories/'+app+'.yaml':documents.encode('repository',doc),
               'catalog/apps.yaml':documents.encode('apps',dict(apps={policy['catalog_app']:dict(
                   repository='repositories/'+app+'.yaml',x86_64='declaration')}))}
-        self.repo=self.path/'remote.git';self.repo.mkdir();git(self.repo,'init','--bare','--quiet','--template=')
+        self.repo=fixture_catalog.bare(self.path/'remote.git')
         fixture_catalog.publish(self.repo,tree);self.clock=AT
 
     def release(self,tag='v1',published=AT,preview=False):

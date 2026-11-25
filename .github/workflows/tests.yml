@@ -6,6 +6,8 @@ on:
   workflow_dispatch:
   push:
     branches: [main-marek]
+    # The collector's commits change only catalog/ (release.py counts them as needing no tests).
+    paths-ignore: ['catalog/**']
 permissions: {}
 concurrency:
   group: fast-tests-${{ github.ref }}

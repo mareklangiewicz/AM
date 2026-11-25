@@ -1,15 +1,15 @@
 """Release facts as GitHub lists them: twins under one tag, recreated tags and proven-gone
 releases (catalog-simplification ticket 18, decided in ticket 07)."""
 import os
+from pathlib import Path
 import subprocess
 import tempfile
 import unittest
 
 from bounded import normalize
-import contracts as c
-from fixture_v3 import repository
+import documents
 
-PIN = 'a'*40
+ROOT = Path(__file__).resolve().parents[2]
 OLD = '2026-11-03T01:00:00Z'
 NEW = '2026-11-08T01:00:00Z'
 
@@ -25,9 +25,16 @@ def github_release(rid, tag, published_at, *assets, prerelease=False):
 
 
 def recollect(previous, releases, received_at, *, complete):
-    """The next successful collection of the same repository, from GitHub's response list."""
+    """The next successful read of the same repository, from GitHub's response list."""
     acquired = dict(received_at=received_at, releases=normalize(releases, 100), history_complete=complete)
-    return c.source(previous, acquired, rid='123', repository='example/app', revision=PIN)
+    return documents.repository(previous, acquired, repository_id=123, repository='example/app')
+
+
+def repository(rid, name, releases, received_at, *, complete=None):
+    """The repository document a first read writes; complete defaults to collection's rule (fewer than 100)."""
+    acquired = dict(received_at=received_at, releases=normalize(releases, 100),
+                    history_complete=len(releases) < 100 if complete is None else complete)
+    return documents.repository(None, acquired, repository_id=int(rid), repository=name)
 
 
 class Twins(unittest.TestCase):
@@ -36,7 +43,7 @@ class Twins(unittest.TestCase):
         # same second under one tag, the Linux build on one twin and the rest on the other.
         twins = [github_release(397747229, 'v2.1.8', '2026-09-27T17:42:53Z', (1, 'app-setup.exe')),
                  github_release(397747228, 'v2.1.8', '2026-09-27T17:42:53Z', (2, 'app.AppImage'))]
-        doc = repository('123', 'example/app', twins, NEW, PIN)
+        doc = repository('123', 'example/app', twins, NEW)
         self.assertEqual(sorted(doc['releases']), ['397747228', '397747229'])
         self.assertEqual({r['tag'] for r in doc['releases'].values()}, {'v2.1.8'})
 
@@ -45,7 +52,7 @@ class RecreatedTags(unittest.TestCase):
     def test_a_new_release_id_under_an_old_tag_does_not_replace_the_old_one(self):
         before = repository('123', 'example/app',
                             [github_release(100, 'nightly', '2026-11-01T00:00:00Z', (1, 'a.AppImage'))],
-                            OLD, PIN, complete=False)
+                            OLD, complete=False)
         after = recollect(before, [github_release(200, 'nightly', '2026-11-07T00:00:00Z', (2, 'b.AppImage'))],
                           NEW, complete=False)
         self.assertEqual(sorted(after['releases']), ['100', '200'])
@@ -58,7 +65,7 @@ class ProvenGone(unittest.TestCase):
         self.before = repository('123', 'example/app', [
             github_release(300, 'v3', '2026-11-02T00:00:00Z', (3, 'c.AppImage')),
             github_release(200, 'v2', '2026-11-01T00:00:00Z', (2, 'b.AppImage')),
-            github_release(100, 'v1', '2026-10-31T00:00:00Z', (1, 'a.AppImage'))], OLD, PIN, complete=False)
+            github_release(100, 'v1', '2026-10-31T00:00:00Z', (1, 'a.AppImage'))], OLD, complete=False)
 
     def test_a_release_missing_from_a_complete_history_is_removed(self):
         after = recollect(self.before, [github_release(300, 'v3', '2026-11-02T00:00:00Z', (3, 'c.AppImage'))],
@@ -93,13 +100,13 @@ class HostSelection(unittest.TestCase):
                  github_release(397747228, 'v2.1.8', '2026-09-27T17:42:53Z',
                                 (593434108, 'Beacon-2.1.8.AppImage'), (593436508, 'Beacon-2.1.8.deb'),
                                 (593431904, 'Beacon-Setup-2.1.8.exe.blockmap'), (593436630, 'latest-linux.yml'))]
-        doc = repository('1380381406', 'kachakaran6/beacon', twins, NEW, PIN)
+        doc = repository('1380381406', 'kachakaran6/beacon', twins, NEW)
         with tempfile.NamedTemporaryFile() as f:
-            f.write(c.encode(doc)); f.flush()
-            facts = subprocess.run(['sh', str(c.ROOT/'modules/catalog-contract-reader.am'), 'asset_facts', f.name],
+            f.write(documents.encode('repository', doc)); f.flush()
+            facts = subprocess.run(['sh', str(ROOT/'modules/catalog-reader.am'), 'asset_facts', f.name],
                                    capture_output=True, text=True)
         self.assertEqual(facts.returncode, 0, facts.stderr)
-        selected = subprocess.run(['awk', '-f', str(c.ROOT/'modules/catalog-yaml-policy.am')], input=facts.stdout,
+        selected = subprocess.run(['awk', '-f', str(ROOT/'modules/catalog-yaml-policy.am')], input=facts.stdout,
                                   text=True, capture_output=True,
                                   env=dict(os.environ, LC_ALL='C', AM_YAML_RECIPE='x86_64/beacon',
                                            AM_YAML_REPOSITORY='1380381406', AM_YAML_NOW=NEW))

@@ -2,7 +2,7 @@ name: Long tests
 # Reports only, like "Fast tests". The whole-tree tier and the container e2e
 # take too long for every push; they run on demand and on ci/* branches, so a
 # change can be tested before main-marek moves (collection runs only from
-# main-marek, so a ci/* branch needs no schedule repin).
+# main-marek, so a ci/* branch never touches catalog/).
 on:
   workflow_dispatch:
   push:

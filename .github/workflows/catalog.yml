@@ -1,4 +1,9 @@
 name: YAML release catalog
+# One collector run (tools/catalog-collector/catalog_run.py): collect reads
+# GitHub without write access and writes a candidate; publish checks it with
+# the host's reader and commits catalog/ to main-marek. Runs never overlap, so
+# each reads the catalog/ the previous one committed. Pause it with
+# `gh workflow disable catalog.yml`.
 on:
   workflow_dispatch:
   schedule:
@@ -8,157 +13,73 @@ concurrency:
   group: yaml-release-catalog
   cancel-in-progress: false
 jobs:
-  # A scheduled run collects only when the collection inputs equal the reviewed
-  # CATALOG_SCHEDULE_REVISION; otherwise this job fails, so the run is red, not
-  # skipped. The gate code is the pinned commit's, so reviewed code judges the
-  # new commit. Dispatched runs are not gated.
-  gate:
-    if: github.repository == 'mareklangiewicz/AM' && github.ref == 'refs/heads/main-marek' && vars.CATALOG_V3_ENABLED == 'true' && github.event_name == 'schedule'
-    runs-on: ubuntu-24.04
-    timeout-minutes: 10
-    permissions:
-      contents: read
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-        with:
-          ref: ${{ vars.CATALOG_SCHEDULE_REVISION }}
-          persist-credentials: false
-      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
-        with:
-          python-version: '3.12'
-      - run: python3 -m pip install 'PyYAML==6.0.3'
-      - name: Collection inputs equal the reviewed pin
-        env:
-          PIN: ${{ vars.CATALOG_SCHEDULE_REVISION }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          git fetch --no-tags --depth=1 https://github.com/mareklangiewicz/AM.git "$GITHUB_SHA"
-          python3 -B tools/catalog-collector/host_catalog.py schedule-gate --pin "$PIN" --head "$GITHUB_SHA"
-  acquire:
-    needs: gate
-    if: ${{ !cancelled() && needs.gate.result != 'failure' && github.repository == 'mareklangiewicz/AM' && github.ref == 'refs/heads/main-marek' && vars.CATALOG_V3_ENABLED == 'true' }}
+  collect:
+    if: github.repository == 'mareklangiewicz/AM'
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     permissions:
       contents: read
     outputs:
-      parent: ${{ steps.parents.outputs.parent }}
-      resolved: ${{ steps.parents.outputs.resolved }}
-      schemas: ${{ steps.parents.outputs.schemas }}
+      code: ${{ steps.code.outputs.sha }}
     steps:
+      # main-marek's tip, not the triggering commit: a queued run must read
+      # the catalog/ its predecessor committed.
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
-          ref: ${{ github.sha }}
+          ref: main-marek
           persist-credentials: false
+      - id: code
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.12'
       - run: python3 -m pip install 'PyYAML==6.0.3'
-      - name: Read pinned original template inputs
-        run: git fetch --no-tags --depth=1 https://github.com/mareklangiewicz/AM.git bbffd15c19d01ef9124fbf99b5b9c41d2661ea22 bb53f3180ec92f862020f8bdccef0f6614015bae
-      - name: Read exact public parents
-        id: parents
-        shell: bash
-        env:
-          REVIEWED_SCHEMAS: ${{ vars.CATALOG_SCHEMA_REVISION }}
-        run: |
-          set -euo pipefail
-          schemas=''
-          mkdir -p "$RUNNER_TEMP/am-catalog"
-          git init --bare --template= "$RUNNER_TEMP/am-catalog/target.git"
-          target=$(git ls-remote --refs https://github.com/mareklangiewicz/AM.git refs/heads/release-catalog-v3 | cut -f1)
-          if [[ -n "$target" ]]; then
-            git -C "$RUNNER_TEMP/am-catalog/target.git" fetch --no-tags --depth=1 https://github.com/mareklangiewicz/AM.git "$target"
-            echo "parent=$target" >> "$GITHUB_OUTPUT"
-            schemas=$(python3 -B tools/catalog-collector/host_catalog.py schema-revision \
-              --repo "$RUNNER_TEMP/am-catalog/target.git" --parent "$target")
-          fi
-          if [[ -n "$REVIEWED_SCHEMAS" ]]; then schemas=$REVIEWED_SCHEMAS; fi
-          if [[ -n "$schemas" ]]; then
-            [[ "$schemas" =~ ^[0-9a-f]{40}$ ]]
-            git fetch --no-tags --depth=1 https://github.com/mareklangiewicz/AM.git "$schemas"
-            echo "schemas=$schemas" >> "$GITHUB_OUTPUT"
-          fi
-          echo 'resolved=true' >> "$GITHUB_OUTPUT"
-      - name: Collect candidates only
-        uses: ./.github/actions/catalog-collect
+      - name: Read GitHub, write a candidate
         env:
           GH_TOKEN: ${{ github.token }}
-        with:
-          repo: ${{ runner.temp }}/am-catalog/target.git
-          parent: ${{ steps.parents.outputs.parent }}
-          schemas-revision: ${{ steps.parents.outputs.schemas }}
-          output: ${{ runner.temp }}/am-catalog/candidate
-          batch-size: ${{ vars.CATALOG_BATCH_SIZE || '500' }}
-          request-cap: ${{ vars.CATALOG_REQUEST_CAP || '750' }}
-          total-bytes: ${{ vars.CATALOG_TOTAL_BYTES || '536870912' }}
-      - name: Transfer inert bounded candidates
-        if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+          BATCH: ${{ vars.CATALOG_BATCH_SIZE || '500' }}
+        run: |
+          python3 -B tools/catalog-collector/catalog_run.py collect \
+            --checkout "$GITHUB_WORKSPACE" --output "$RUNNER_TEMP/candidate" \
+            --run-id "$GITHUB_RUN_ID" --attempt "$GITHUB_RUN_ATTEMPT" --batch-size "$BATCH"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: catalog-${{ github.run_id }}-${{ github.run_attempt }}
-          path: ${{ runner.temp }}/am-catalog/candidate/
+          path: ${{ runner.temp }}/candidate/
           retention-days: 1
-          if-no-files-found: warn
-      - name: Clean run-local collection files
-        if: always()
-        shell: bash
-        run: rm -rf -- "$RUNNER_TEMP/am-catalog"
+          if-no-files-found: error
   publish:
-    needs: acquire
-    if: always() && github.repository == 'mareklangiewicz/AM' && github.ref == 'refs/heads/main-marek' && needs.acquire.result != 'skipped'
+    needs: collect
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 15
     permissions:
       contents: write
-      actions: read
     steps:
+      # The code that collected also validates and commits.
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
-          ref: ${{ github.sha }}
+          ref: ${{ needs.collect.outputs.code }}
           persist-credentials: false
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
           python-version: '3.12'
       - run: python3 -m pip install 'PyYAML==6.0.3'
-      - name: Read retained schema input without changing the checkout
-        if: needs.acquire.outputs.schemas != ''
-        continue-on-error: true
-        env:
-          SCHEMAS: ${{ needs.acquire.outputs.schemas }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          [[ "$SCHEMAS" =~ ^[0-9a-f]{40}$ ]]
-          git fetch --no-tags --depth=1 https://github.com/mareklangiewicz/AM.git "$SCHEMAS"
-      - name: Download this run and attempt's data
-        continue-on-error: true
-        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
           name: catalog-${{ github.run_id }}-${{ github.run_attempt }}
-          path: ${{ runner.temp }}/am-catalog-candidate
-      - name: Validate, explicitly publish, and attempt final report
+          path: ${{ runner.temp }}/candidate
+      - name: Commit catalog/ to main-marek
         env:
           GH_TOKEN: ${{ github.token }}
-          EXPECTED_PARENT: ${{ needs.acquire.outputs.parent }}
-          SCHEMAS: ${{ needs.acquire.outputs.schemas }}
-          PARENTS_RESOLVED: ${{ needs.acquire.outputs.resolved }}
         shell: bash
         run: |
           set -euo pipefail
-          extra=()
-          if [[ -n "$EXPECTED_PARENT" ]]; then extra+=(--expected-v3-parent "$EXPECTED_PARENT"); fi
-          if [[ -n "$SCHEMAS" ]]; then extra+=(--schemas-revision "$SCHEMAS"); fi
-          if [[ "$PARENTS_RESOLVED" != true ]]; then extra+=(--input-catalog-state unknown); fi
-          python3 -B tools/catalog-collector/host_catalog.py publish \
-            --candidate "$RUNNER_TEMP/am-catalog-candidate" \
-            --remote-url https://github.com/mareklangiewicz/AM.git \
-            --source-revision "$GITHUB_SHA" --run-id "$GITHUB_RUN_ID" --attempt "$GITHUB_RUN_ATTEMPT" \
-            --result "$RUNNER_TEMP/am-catalog-result.json" "${extra[@]}"
-      - name: Clean transferred data
-        if: always()
-        shell: bash
-        run: rm -rf -- "$RUNNER_TEMP/am-catalog-candidate"
-# CATALOG_V3_ENABLED gates only v3/status production; there is no v2 fallback.
-# Preparing this source file does not authorize dispatch or channel activation.
+          # The job's token as an HTTP header, as actions/checkout passes it:
+          # never in the remote URL, the scratch repository's config or a log.
+          auth=$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)
+          echo "::add-mask::$auth"
+          GIT_CONFIG_COUNT=1 GIT_CONFIG_KEY_0=http.https://github.com/.extraheader \
+          GIT_CONFIG_VALUE_0="AUTHORIZATION: basic $auth" \
+            python3 -B tools/catalog-collector/catalog_run.py publish \
+              --candidate "$RUNNER_TEMP/candidate" --remote https://github.com/mareklangiewicz/AM.git \
+              --scratch "$RUNNER_TEMP/publish" --run-id "$GITHUB_RUN_ID" --attempt "$GITHUB_RUN_ATTEMPT"

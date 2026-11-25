@@ -6,7 +6,6 @@ import unittest
 
 import documents
 import fixture_catalog
-from publication import git
 import test_yaml_manager_integration as integration
 
 ROOT=Path(__file__).resolve().parents[2]
@@ -39,7 +38,7 @@ class GitConsumers(unittest.TestCase):
         return tree
 
     def prepare(self):
-        self.repo=self.path/'remote.git';self.repo.mkdir();git(self.repo,'init','--bare','--quiet','--template=')
+        self.repo=fixture_catalog.bare(self.path/'remote.git')
         self.tree=self.snapshot();fixture_catalog.publish(self.repo,self.tree);self.clock=AT
 
     def read(self,app,*args,extra=None):

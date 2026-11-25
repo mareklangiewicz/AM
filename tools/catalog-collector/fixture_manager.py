@@ -3,7 +3,6 @@ import os
 from pathlib import Path
 import subprocess
 import fixture_catalog
-from publication import git
 import pinned_recipes
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -19,8 +18,7 @@ def setup_catalog(cls):
     cls.tmp = tempfile.TemporaryDirectory(prefix='yaml-fixture-')
     cls.addClassCleanup(cls.tmp.cleanup)
     cls.shared = Path(cls.tmp.name)
-    cls.repo = cls.shared/'git'; cls.repo.mkdir()
-    git(cls.repo, 'init', '--bare')
+    cls.repo = fixture_catalog.bare(cls.shared/'git')
     cls.commit = fixture_catalog.publish(cls.repo, fixture_catalog.tree(cls.apps, cls.repositories))
 
 

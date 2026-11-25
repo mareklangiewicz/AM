@@ -3,8 +3,18 @@ import copy
 from datetime import datetime, timezone
 import unittest
 
-from fixture_v3 import sample_release
 from reference_selection import select
+
+
+def sample_release():
+    """One normalized release fact with awkward text, as normalize returns it."""
+    return dict(tag='v2.0.0', title='Quotes " and \\; caf\u00e9 \u4e2d\u6587 \U0001f427\n\r\t\n',
+                url='https://github.com/example/app/releases/tag/v2.0.0',
+                published_at='2026-11-02T12:00:00Z', prerelease=False,
+                assets={'789': dict(name="John's app #1.AppImage",
+                                    url='https://github.com/example/app/releases/download/v2.0.0/app?x=a:b#part',
+                                    size=0, content_type='')})
+
 
 NOW = datetime(2026,11,4,13,tzinfo=timezone.utc)
 RULE = dict(release_order='published_desc',stable_only=False,asset_suffix='.AppImage',

@@ -13,9 +13,12 @@ import subprocess
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
+import urllib.error
 
 import catalog_run
 import fixture_recipes
+import host_catalog
 
 ROOT = Path(__file__).resolve().parents[2]
 NVIM, OBSIDIAN = 16408992, 262342594
@@ -60,6 +63,8 @@ class Fixture:
 
     def commit_code(self, path, text, message, clone=None):
         clone = clone or self.checkout
+        if git(clone, 'ls-remote', 'origin', 'main-marek'):
+            git(clone, 'pull', '-q', '--ff-only', 'origin', 'main-marek')  # take the runs' catalog/ commits
         (clone/path).write_text(text)
         git(clone, 'add', '-A')
         git(clone, '-c', 'user.name=Marek', '-c', 'user.email=marek@example.org', 'commit', '-q', '-m', message)
@@ -173,6 +178,69 @@ cd "{racer}" && echo code > code.txt && git add code.txt &&
             with self.assertRaisesRegex(ValueError, 'unallocated source'):
                 fixture.run(47)
             self.assertEqual([path for path in fixture.tip_files() if path.startswith('catalog/')], [])
+
+
+def answering(answers):
+    """host_catalog._response replaced: answers maps a repository id to a saved
+    body, or to an exception raised for it (a failed read)."""
+    def response(rid, evidence, allowance, **kwargs):
+        answer = answers[int(rid)]
+        if isinstance(answer, Exception):
+            raise answer
+        return answer, '2026-11-25T10:00:00Z'
+    return patch.object(host_catalog, '_response', side_effect=response)
+
+
+def http(code):
+    return urllib.error.HTTPError('https://api.github.com/', code, 'x', {}, None)
+
+
+class Failures(unittest.TestCase):
+    """A failing repository gets failure fields, keeps its facts, and loses the fields on success."""
+    def test_failure_fields_round_trip(self):
+        bodies = saved_bodies()
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = Fixture(directory)
+            with answering({NVIM: http(404), OBSIDIAN: bodies[OBSIDIAN]}), \
+                    patch.object(host_catalog, 'utc', return_value='2026-11-25T10:00:01Z'):
+                fixture.run(50)
+            gone = fixture.show('catalog/repositories/nvim.yaml')
+            self.assertIn('failed_at: "2026-11-25T10:00:01Z"\nfailed_with: "not_found"\nreleases: {}', gone)
+            self.assertNotIn('observed_at', gone)
+            obsidian = fixture.show('catalog/repositories/obsidian.yaml')
+            with answering({NVIM: bodies[NVIM], OBSIDIAN: OSError('reset')}), \
+                    patch.object(host_catalog, 'utc', return_value='2026-11-25T11:00:00Z'):
+                fixture.run(51)
+            fixed = fixture.show('catalog/repositories/nvim.yaml')
+            self.assertIn('observed_at: "2026-11-25T10:00:00Z"', fixed)
+            self.assertNotIn('failed_', fixed)
+            failing = fixture.show('catalog/repositories/obsidian.yaml')
+            self.assertIn('failed_at: "2026-11-25T11:00:00Z"\nfailed_with: "transport"\n', failing)
+            self.assertEqual(failing.replace('failed_at: "2026-11-25T11:00:00Z"\nfailed_with: "transport"\n', ''), obsidian)
+
+    def test_a_run_wide_stop_records_no_repository_and_says_why(self):
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = Fixture(directory)
+            with answering({NVIM: http(403), OBSIDIAN: http(403)}):
+                fixture.run(52)
+            self.assertFalse([path for path in fixture.tip_files() if path.startswith('catalog/repositories/')])
+            self.assertIn('stop_reason: "quota"', fixture.show('catalog/status/runs.yaml'))
+
+
+class Retirement(unittest.TestCase):
+    def test_a_repository_no_longer_enrolled_leaves_catalog(self):
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = Fixture(directory)
+            fixture.run(53)
+            self.assertIn('catalog/repositories/obsidian.yaml', fixture.tip_files())
+            fixture.commit_code('tools/catalog-collector/collection-recipes.txt', 'x86_64/nvim\nx86_64/nvim-nightly\n',
+                                'retire obsidian')
+            fixture.commit_code('tools/catalog-collector/source-names.json',
+                                json.dumps(dict(active={str(NVIM): 'nvim'}, retired=['obsidian'])), 'retire its name')
+            fixture.run(54)
+            self.assertNotIn('catalog/repositories/obsidian.yaml', fixture.tip_files())
+            self.assertNotIn('"obsidian":', fixture.show('catalog/apps.yaml'))
+            self.assertIn('catalog/repositories/nvim.yaml', fixture.tip_files())
 
 
 if __name__ == '__main__':

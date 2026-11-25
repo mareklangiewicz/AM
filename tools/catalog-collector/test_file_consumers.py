@@ -7,7 +7,6 @@ import yaml
 
 import documents
 import fixture_catalog
-from publication import git
 import test_git_consumers as integration
 
 SAVED=Path(__file__).resolve().parent/'test-catalog'
@@ -25,7 +24,7 @@ class FileConsumers(unittest.TestCase):
         tree={'catalog/repositories/'+app+'.yaml':(SAVED/(app+'.yaml')).read_bytes() for app in self.documents}
         tree['catalog/apps.yaml']=documents.encode('apps',dict(apps={app:dict(repository='repositories/'+app+'.yaml',x86_64='declaration')
                                                                     for app in self.documents}))
-        self.repo=self.path/'remote.git';self.repo.mkdir();git(self.repo,'init','--bare','--quiet','--template=')
+        self.repo=fixture_catalog.bare(self.path/'remote.git')
         fixture_catalog.publish(self.repo,tree)
         self.clock=max(doc['observed_at'] for doc in self.documents.values())
 

@@ -32,6 +32,13 @@ def tree(apps, repositories):
     return files
 
 
+def bare(path):
+    """A new, empty bare repository at path, standing in for GitHub's; returns path."""
+    Path(path).mkdir(parents=True, exist_ok=True)
+    subprocess.run(['git', 'init', '-q', '--bare', '--template=', str(path)], check=True)
+    return Path(path)
+
+
 def publish(repo, files):
     """Commit these catalog/ files as main-marek's new tip of the bare repository; return the commit."""
     with tempfile.TemporaryDirectory() as directory:
