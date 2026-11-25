@@ -40,7 +40,12 @@ function keyBefore(pattern,a,b) {
   const [x,y]=[a,b].map(k=>k.split('-').map(BigInt));
   return x[0]<y[0]||x[0]===y[0]&&x[1]<y[1];
  }
- return Buffer.compare(Buffer.from(a),Buffer.from(b))<0;
+ return byteLess(encoder.encode(a),encoder.encode(b));
+}
+// Byte order of UTF-8, as awk compares in the C locale; no Node-only Buffer (the page runs this).
+function byteLess(x,y) {
+ for(let i=0;i<Math.min(x.length,y.length);i++) if(x[i]!==y[i]) return x[i]<y[i];
+ return x.length<y.length;
 }
 function scalar(value,rule,path) {
  const type=rule.type??'string';

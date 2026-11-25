@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[2]
 FILES = (
     'web/catalog/index.html', 'web/catalog/style.css', 'web/catalog/app.mjs',
     'web/catalog/catalog.mjs', 'web/catalog/keyboard.mjs', 'web/catalog/delivery.mjs',
-    'tools/catalog-contract/reader.mjs', 'tools/catalog-contract/definitions.mjs',
+    'tools/catalog-contract/parse.mjs', 'tools/catalog-contract/schema.mjs', 'tools/catalog-contract/platforms.json',
 )
 
 def stage(destination, review_data=None):
@@ -25,22 +25,19 @@ def stage(destination, review_data=None):
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, target)
     if review_data:
+        # A review build carries saved catalog/ files; the page reads them instead of main-marek.
         review_data = Path(review_data)
         metadata = json.loads((review_data / 'review.json').read_text())
-        pin = metadata['pin']
-        if not re.fullmatch('[0-9a-f]{40}', pin):
-            raise ValueError('Invalid review identity')
         for name, digest in metadata['document_sha256'].items():
-            if not re.fullmatch(r'(?:catalog|apps)\.yaml|(?:repositories|provenance)/[a-z0-9][a-z0-9_.+-]{0,63}\.yaml', name):
+            if not re.fullmatch(r'apps\.yaml|repositories/[a-z0-9][a-z0-9_.+-]{0,63}\.yaml|status/(?:runs|statistics)\.yaml', name):
                 raise ValueError('Unexpected review path')
-            source = review_data / pin / name
+            source = review_data / 'catalog' / name
             if source.is_symlink() or hashlib.sha256(source.read_bytes()).hexdigest() != digest:
                 raise ValueError('Invalid review document')
-            target = destination / 'review-data' / pin / name
+            target = destination / 'review-data/catalog' / name
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(source, target)
-        public = {key: metadata[key] for key in ('pin', 'baseline', 'source', 'sources', 'apps', 'refused', 'label')}
-        (destination / 'web/catalog/delivery.mjs').write_text('export default ' + json.dumps(public) + ';\n')
+        (destination / 'web/catalog/delivery.mjs').write_text('export default ' + json.dumps(dict(label=metadata['label'])) + ';\n')
     (destination / '.nojekyll').touch()
     (destination / 'index.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AM catalog</title><script>location.replace("web/catalog/"+location.search+location.hash)</script><a href="web/catalog/">Open AM catalog</a></html>\n')
 

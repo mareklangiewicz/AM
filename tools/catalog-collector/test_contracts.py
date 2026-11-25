@@ -386,9 +386,6 @@ class Contracts(unittest.TestCase):
             failed=decode(result['repositories/example.yaml'])
             self.assertEqual((failed.pop('failed_at'),failed.pop('failed_with')),(NEW,'too_large'))
             self.assertEqual(failed,decode(tree['repositories/example.yaml']))
-            script="import {Catalog} from './web/catalog/catalog.mjs';import {readFile} from 'node:fs/promises';const dir=process.argv[1];const client=new Catalog(async url=>new Response(await readFile(dir+'/'+new URL(url).pathname.split('/').slice(4).join('/'))));const {root,apps}=await client.roots('"+PIN+"');await client.source('"+PIN+"',apps.example,root);"
-            read=subprocess.run(['node','--input-type=module','-e',script,str(output/'format-3')],cwd=ROOT,capture_output=True)
-            self.assertEqual(read.returncode,0,read.stderr)
             self.assertEqual(decode(result['catalog.yaml'])['inputs']['schemas'],PIN)
             self.assertEqual(git(v3,'rev-parse',REF).decode().strip(),prior)
 

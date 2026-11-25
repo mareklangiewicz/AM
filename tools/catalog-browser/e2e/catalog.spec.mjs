@@ -20,12 +20,12 @@ test('browse, search, releases, help and history in all three views',async({page
  await expect(page.locator('.asset')).toHaveCount(0);
  await page.locator('#source-search').fill('');
  await expect(page.locator('.asset').first()).toBeVisible();
- await page.locator('article [data-help="history"]').click();
+ await page.locator('article [data-help="kept"]').click();
  await expect(page.locator('#context-help')).toBeVisible();
  await page.screenshot({path:info.outputPath('help.png')});
  await page.keyboard.press('Escape');
  await expect(page.locator('#context-help')).not.toBeVisible();
- await expect(page.locator('article [data-help="history"]')).toBeFocused();
+ await expect(page.locator('article [data-help="kept"]')).toBeFocused();
  const release=page.locator('[data-release]').first();
  await release.click();
  await expect(release.locator('..')).not.toHaveAttribute('open','');
@@ -66,7 +66,7 @@ test('directory fits the viewport and hides source-only controls',async({page},i
  await page.screenshot({path:info.outputPath('directory.png'),fullPage:true});
 });
 
-test('source fetch failure keeps directory usable and retry stays at the same URL',async({page})=>{
+test('source fetch failure keeps directory usable and retry reads the same file',async({page})=>{
  test.skip(Boolean(process.env.CATALOG_BASE_URL),'Failure injection belongs to the local fixture run');
  let failedURL;
  await page.route('**/repositories/example.yaml',async route=>{
@@ -76,27 +76,24 @@ test('source fetch failure keeps directory usable and retry stays at the same UR
  await page.goto('web/catalog/?app=example');
  await expect(page.locator('#error')).not.toBeEmpty();
  await expect(page.locator('#content [data-app]').first()).toBeVisible();
- await page.getByRole('button',{name:'Retry same snapshot'}).click();
+ await page.getByRole('button',{name:'Retry'}).click();
  await expect(page.locator('.asset').first()).toBeVisible();
  await expect(page.locator('#error')).toBeEmpty();
 });
 
-test('source without releases shows pinned Git files safely',async({page})=>{
- const {createHash}=await import('node:crypto');
- const name='refs/heads/master',key=createHash('sha256').update(name).digest('hex');
- const fileKey=createHash('sha256').update('VERSION').digest('hex');
+test('Git refs and file contents show safely',async({page})=>{
  await page.route('**/repositories/example.yaml',async route=>{
   const response=await route.fetch(),raw=await response.text();
-  const at=raw.match(/collected_at: "([^"]+)"/)[1];
-  const body=raw.split('\nreleases:')[0]+'\nreleases: {}\ngit_scope:\n  tags: false\n  tags_history_complete: false\n  branches:\n    "'+key+'": "'+name+'"\ngit_refs:\n  "'+key+'":\n    name: "'+name+'"\n    commit: "'+'b'.repeat(40)+'"\n    observed_at: "'+at+'"\n    files:\n      "'+fileKey+'":\n        path: "VERSION"\n        blob: "'+'c'.repeat(40)+'"\n        observed_at: "'+at+'"\n        content: "<script>bad()</script>\\n1.2\\n"\n';
+  const body=raw.replace('content: "1.0\\n"','content: "<script>bad()</script>\\n1.2\\n"');
+  expect(body).not.toBe(raw);
   await route.fulfill({response,body});
  });
  await page.goto('web/catalog/?app=example');
- await expect(page.locator('.git-observations h3')).toHaveText('Git observations');
- await page.getByText('refs/heads/master',{exact:true}).click();
- await expect(page.locator('.git-observations a')).toHaveAttribute('href',/\/tree\/b{40}$/);
- await page.getByText('VERSION',{exact:true}).click();
- await expect(page.locator('.git-observations pre')).toHaveText('<script>bad()</script>\n1.2\n');
+ await expect(page.locator('.git-observations h3')).toHaveText('Git refs');
+ await page.getByText('refs/heads/main',{exact:true}).click();
+ await expect(page.locator('.git-observations a').first()).toHaveAttribute('href',/\/tree\/a{40}$/);
+ await page.getByText('src/version.txt',{exact:true}).click();
+ await expect(page.locator('.git-observations pre').first()).toHaveText('<script>bad()</script>\n1.2\n');
  await expect(page.locator('.git-observations script')).toHaveCount(0);
  await expect(page.locator('#error')).toBeEmpty();
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);

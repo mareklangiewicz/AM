@@ -14,18 +14,16 @@ args = parser.parse_args()
 with TemporaryDirectory(prefix='am-browser-e2e-') as tmp:
     tmp = Path(tmp)
     data = tmp / 'data'
-    pin = 'a' * 40
-    files = {'catalog.yaml': 'catalog', 'apps.yaml': 'apps', 'provenance/example.yaml': 'provenance',
-             'repositories/example.yaml': 'repository'}
+    files = {'apps.yaml': 'apps', 'repositories/example.yaml': 'repository',
+             'status/runs.yaml': 'runs', 'status/statistics.yaml': 'statistics'}
     hashes = {}
-    for path, fixture in files.items():
-        raw = (ROOT / f'tools/catalog-contract/fixtures/{fixture}.yaml').read_bytes()
-        target = data / pin / path
+    for path, example in files.items():
+        raw = (ROOT / f'tools/catalog-contract/examples/{example}.yaml').read_bytes()
+        target = data / 'catalog' / path
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_bytes(raw)
         hashes[path] = hashlib.sha256(raw).hexdigest()
-    (data / 'review.json').write_text(json.dumps(dict(pin=pin, baseline=pin, source=pin,
-        sources=1, apps=5, refused=[], label='Test snapshot', document_sha256=hashes)))
+    (data / 'review.json').write_text(json.dumps(dict(label='Test catalog', document_sha256=hashes)))
     output = tmp / 'public'
     stage(output, data)
     class QuietHandler(SimpleHTTPRequestHandler):

@@ -166,14 +166,6 @@ class Collect(unittest.TestCase):
             self.assertEqual(decode(tree['repositories/example.yaml']), never_collected(
                 schema=decode(tree['repositories/example.yaml'])['schema']))
             self.assertEqual(decode(tree['apps.yaml'])['apps']['example'], 'repositories/example.yaml')
-            # The page's reader accepts the snapshot and the never-collected source.
-            script = ("import {Catalog} from './web/catalog/catalog.mjs';import {readFile} from 'node:fs/promises';"
-                      "const dir=process.argv[1];const client=new Catalog(async url=>new Response(await readFile(dir+'/'+new URL(url).pathname.split('/').slice(4).join('/'))));"
-                      "const {root,apps}=await client.roots('"+PIN+"');const s=await client.source('"+PIN+"',apps.example,root);"
-                      "if(s.failed_with!=='not_found')throw Error(s.failed_with);")
-            read = subprocess.run(['node', '--input-type=module', '-e', script, str(root/'first/format-3')],
-                                  cwd=ROOT, capture_output=True)
-            self.assertEqual(read.returncode, 0, read.stderr)
 
             repo = root/'v3.git'
             subprocess.run(['git', 'init', '--bare', '--quiet', '--template=', str(repo)], check=True)
