@@ -107,7 +107,7 @@ $defs:
         description: The release's title, only when it differs from the tag.
         type: string
       url:
-        description: The release page, only when it differs from https://github.com/<repository>/releases/tag/<tag>.
+        description: The release page, only when it differs from https://github.com/<repository>/releases/tag/<tag> (joined as is, no percent-encoding).
         $ref: '#/$defs/url'
       published_at:
         description: When the release was published; releases are ordered by it, then by ID.
@@ -119,10 +119,10 @@ $defs:
         description: When a later read stopped returning this release (last seen); only when older than the repository's observed_at.
         $ref: '#/$defs/time'
       source_zip_url:
-        description: The source zip, only when it differs from https://github.com/<repository>/archive/refs/tags/<tag>.zip.
+        description: The source zip, only when it differs from https://api.github.com/repos/<repository>/zipball/<tag>.
         $ref: '#/$defs/url'
       source_tar_url:
-        description: The source tarball, only when it differs from https://github.com/<repository>/archive/refs/tags/<tag>.tar.gz.
+        description: The source tarball, only when it differs from https://api.github.com/repos/<repository>/tarball/<tag>.
         $ref: '#/$defs/url'
       assets:
         description: Every uploaded file of the latest read, by GitHub asset ID, in numeric order.
@@ -140,7 +140,7 @@ $defs:
         description: The file name.
         type: string
       url:
-        description: The download, only when it differs from https://github.com/<repository>/releases/download/<tag>/<name>.
+        description: The download, only when it differs from https://github.com/<repository>/releases/download/<tag>/<name> (joined as is, no percent-encoding).
         $ref: '#/$defs/url'
       size:
         description: Size in bytes.

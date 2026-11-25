@@ -184,7 +184,7 @@ def _response(rid, evidence, allowance, *, rate=None, endpoint=None, kind='relea
     return body, utc()
 
 
-def collect(retained, evidence=None, *, batch_size=None, metrics=None, acquisitions, profile=None):
+def collect(retained, evidence=None, *, batch_size=None, metrics=None, acquisitions, profile=None, root=None):
     """Acquire release facts for all (strict) or a bounded oldest-attempt-first batch.
 
     An attempt is a success or a source's own failure (`failure_cause`), so a
@@ -195,7 +195,7 @@ def collect(retained, evidence=None, *, batch_size=None, metrics=None, acquisiti
     `acquisitions`; documents are built by the caller. Strict mode raises on the
     first failure; batch mode reports failures and stops at a budget.
     """
-    rows,sources=configuration(source_cap=profile['source_cap']) if profile else configuration()
+    rows,sources=configuration(root=root,source_cap=profile['source_cap']) if profile else configuration(root=root)
     request_cap=profile['request_cap'] if profile else REQUEST_CAP
     total_cap=profile['total_cap'] if profile else TOTAL_CAP
     seconds_cap=profile['seconds_cap'] if profile else ACQUISITION_SECONDS
@@ -226,7 +226,7 @@ def collect(retained, evidence=None, *, batch_size=None, metrics=None, acquisiti
     latest_rate = {}
     used = 0;logical_requests=0
     from git_observations import configuration as git_configuration,collect as collect_git
-    git_scopes=git_configuration(ROOT)
+    git_scopes=git_configuration(ROOT if root is None else Path(root))
     report = []
     started = time.monotonic()
     for rid in selected:
