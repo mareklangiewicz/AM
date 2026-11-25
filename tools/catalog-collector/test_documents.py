@@ -168,14 +168,18 @@ git_refs:
 
 class Apps(unittest.TestCase):
     def test_each_app_names_its_repository_file_and_labels_each_recipe(self):
-        import host_catalog
-        root = ROOT
-        rows, _ = host_catalog.configuration(root=root)
-        declared = next(row for row in rows if 'recipe' in row)  # a short declaration recipe
-        app, rid = declared['app'], declared['repository_id']
-        names = {str(rid): 'example-source'}
-        document = d.apps([declared, dict(app='catalog-only', repository_id=rid, repository=declared['repository'])],
-                          names, root=root)
+        import shutil
+        import tempfile
+        from recipe_declarations import recipe_rows
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root/'programs/x86_64').mkdir(parents=True)
+            shutil.copy(Path(__file__).resolve().parent/'test-recipes/x86_64/obsidian', root/'programs/x86_64/obsidian')
+            declared, = recipe_rows(root)  # a short declaration recipe
+            app, rid = declared['app'], declared['repository_id']
+            names = {str(rid): 'example-source'}
+            document = d.apps([declared, dict(app='catalog-only', repository_id=rid, repository=declared['repository'])],
+                              names, root=root)
         self.assertEqual(document['apps'][app], dict(repository='repositories/example-source.yaml', x86_64='declaration'))
         self.assertEqual(document['apps']['catalog-only'], dict(repository='repositories/example-source.yaml'))
         self.assertEqual(readers_accept(d.encode('apps', document)), (0, b'', 0, b''))

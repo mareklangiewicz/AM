@@ -21,6 +21,8 @@ import fixture_recipes
 ROOT = Path(__file__).resolve().parents[2]
 NVIM, OBSIDIAN = 16408992, 262342594
 RECIPES = ['x86_64/nvim', 'x86_64/nvim-nightly', 'x86_64/obsidian']
+# Copies, not the live tree: the without-upstream-recipes job deletes programs/.
+RECIPES_COPY = Path(__file__).resolve().parent/'test-recipes'
 
 
 def git(cwd, *args, env=None):
@@ -51,7 +53,7 @@ class Fixture:
         for recipe in RECIPES:
             target = self.checkout/'programs'/recipe
             target.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy(ROOT/'programs'/recipe, target)
+            shutil.copy(RECIPES_COPY/recipe, target)
         collector = self.checkout/'tools/catalog-collector'
         collector.mkdir(parents=True)
         (collector/'collection-recipes.txt').write_text('\n'.join(RECIPES)+'\n')
