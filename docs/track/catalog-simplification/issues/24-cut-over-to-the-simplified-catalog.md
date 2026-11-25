@@ -83,3 +83,17 @@ November 25, 2026, Marek's answers before part 1 (contract):
   first holds only `producer` and the second nothing. The run that wrote a
   commit is in `status/runs.yaml` and the commit message. `catalog/` is
   `apps.yaml`, `repositories/`, `status/runs.yaml`, `status/statistics.yaml`.
+
+November 25, 2026, progress on `ci/cutover`:
+
+- Part 1 (contract) `36832f30d`, `e01b53758`: `schemas/catalog.schema.yaml`,
+  `docs/catalog-format.md`, `modules/catalog-parser.am`/`catalog-tables.am`,
+  `tools/catalog-contract/parse.mjs`/`schema.mjs`, worked examples (Long tests
+  45610783644 passed). Readers do not check retention; it is the writer's.
+  `git_scope.branches` goes (branches are the `refs/heads/*` keys).
+- Part 2 (collector) `fb073d5cd`: `tools/catalog-collector/documents.py` and
+  `catalog_run.py collect|publish`; `tools/catalog-contract/platforms.json` is
+  the one Linux/architecture guess. A full labelling run: 8,466 apps in 2.3 s,
+  7,163 `declaration`, 2,781 `script`. Left for part 5: `catalog.yml` and the
+  composite action call `catalog_run.py`; `git_observations` returns the new
+  shape directly (drop `documents._git`).
