@@ -387,5 +387,49 @@ class Resume(unittest.TestCase):
         self.assertEqual(release.named(['44', '45']), {'44': 44, '45': 45})
 
 
+
+VIEW = ['gh', 'run', 'view', '7', '--json', 'status,conclusion', *R]
+DENIED = (1, '')  # HTTP 401 "Bad credentials" with a valid login (ticket 48)
+
+
+class Retrying(unittest.TestCase):
+    """A transient gh failure is retried a bounded number of times (ticket 48)."""
+    def test_one_failure_then_success_completes_after_one_pause(self):
+        pauses = []
+        run = Fake([(VIEW, DENIED), (VIEW, 'done')])
+        self.assertEqual(release.retrying(run, sleep=pauses.append)(VIEW), (0, 'done'))
+        self.assertEqual(run.script, [])
+        self.assertEqual(pauses, [release.RETRY_SECONDS])
+
+    def test_repeated_failures_stop_after_three_attempts_and_name_the_command(self):
+        pauses = []
+        run = Fake([(VIEW, DENIED)]*3)
+        with self.assertRaises(RuntimeError) as raised:
+            release.gh(release.retrying(run, sleep=pauses.append), 'run', 'view', '7', '--json', 'status,conclusion')
+        self.assertEqual(run.script, [])
+        self.assertEqual(len(pauses), 2)
+        self.assertIn('after 3 attempts', str(raised.exception))
+        self.assertIn('gh run view 7', str(raised.exception))
+
+    def test_a_dispatch_is_tried_once_since_a_failed_reply_can_hide_a_started_run(self):
+        dispatch = ['gh', 'workflow', 'run', 'catalog.yml', '--ref', 'main-marek', *R]
+        run = Fake([(dispatch, DENIED)])
+        self.assertEqual(release.retrying(run, sleep=self.fail)(dispatch), DENIED)
+        self.assertEqual(run.script, [])
+
+    def test_git_is_tried_once_since_its_exit_codes_are_answers(self):
+        ancestor = ['git', 'merge-base', '--is-ancestor', BASE, HEAD]
+        run = Fake([(ancestor, (1, ''))])
+        self.assertEqual(release.retrying(run, sleep=self.fail)(ancestor), (1, ''))
+        self.assertEqual(run.script, [])
+
+    def test_watch_survives_a_failed_run_view_while_the_run_is_going(self):
+        from unittest.mock import patch
+        run = Fake([(VIEW, DENIED), (VIEW, ok(dict(status='completed', conclusion='success')))])
+        with patch.object(release, 'system', run), patch.object(release, 'RETRY_SECONDS', 0), self.assertRaises(SystemExit) as done:
+            release.main(['watch', '7'])
+        self.assertEqual(done.exception.code, 0)
+        self.assertEqual(run.script, [])
+
 if __name__ == '__main__':
     unittest.main()

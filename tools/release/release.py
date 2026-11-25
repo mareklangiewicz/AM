@@ -42,6 +42,8 @@ DEPLOYED_DEFINITIONS = 'https://mareklangiewicz.pl/AM/'+DEFINITIONS
 REDEPLOY = 'gh workflow run catalog-pages.yml --ref '+BRANCH+' -f deploy=true'
 POLL_SECONDS = 20
 APPEAR_SECONDS = 120
+RETRY_SECONDS = 10
+ATTEMPTS = 3
 SHOWN = 20  # changed inputs plan lists before it only counts the rest
 
 
@@ -59,6 +61,23 @@ def system(argv):
     if done.returncode and argv[:2] != ['git', 'merge-base']:
         sys.stderr.write(done.stderr)
     return done.returncode, done.stdout
+
+
+def retrying(run, sleep=time.sleep):
+    """`run`, with a failing gh call tried again (ticket 48). Not git, whose
+    exit codes are answers, and not a dispatch: a failed reply can hide a
+    started run, and a second try would start another."""
+    def attempt(argv):
+        if argv[:1] != ['gh'] or argv[1:3] == ['workflow', 'run']:
+            return run(argv)
+        for tried in range(1, ATTEMPTS+1):
+            code, text = run(argv)
+            if not code:
+                return code, text
+            if tried < ATTEMPTS:
+                sleep(RETRY_SECONDS)
+        raise RuntimeError('failed ('+str(code)+') after '+str(ATTEMPTS)+' attempts: '+' '.join(argv))
+    return attempt
 
 
 def output(run, argv):
@@ -320,21 +339,22 @@ def main(argv=None):
     resume.add_argument('--ci', metavar='NAME', help='watch the Long tests run of HEAD on ci/NAME')
     resume.add_argument('--minutes', type=float, default=30)
     args = parser.parse_args(argv)
+    run = retrying(system)  # every command's gh calls (ticket 48)
     if args.operation == 'watch':
         if args.ci and args.ids:
             parser.error('watch takes RUN_IDs or --ci, not both')
-        ids = long_tests_run(system, args.ci) if args.ci else named(args.ids) if args.ids else pushed_runs(system)
+        ids = long_tests_run(run, args.ci) if args.ci else named(args.ids) if args.ids else pushed_runs(run)
         if not ids:
             raise SystemExit('no runs to watch')
-        raise SystemExit(EXIT[watch(system, ids, args.minutes)])
+        raise SystemExit(EXIT[watch(run, ids, args.minutes)])
     if args.operation == 'plan':
-        raise SystemExit(0 if plan(system, ci=args.ci, repin_schemas=args.repin_schemas) else 1)
+        raise SystemExit(0 if plan(run, ci=args.ci, repin_schemas=args.repin_schemas) else 1)
     try:
-        ids = ship(system, ci=args.ci, repin_schemas=args.repin_schemas)
+        ids = ship(run, ci=args.ci, repin_schemas=args.repin_schemas)
     except Refused as refusal:
         raise SystemExit('refused: '+str(refusal))
     if args.watch is not None:
-        raise SystemExit(EXIT[watch(system, ids, args.watch)])
+        raise SystemExit(EXIT[watch(run, ids, args.watch)])
 
 
 if __name__ == '__main__':

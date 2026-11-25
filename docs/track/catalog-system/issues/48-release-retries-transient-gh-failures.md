@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: open
+Status: claimed
 Triage: ready-for-agent
 Blocked by: none
 
@@ -20,3 +20,19 @@ get CATALOG_SCHEDULE_REVISION` returned HTTP 401 "Bad credentials" with a valid
 keyring login (the retry succeeded), `ship` failed looking up the run of a push
 it had just made (the push had landed), and `watch` died on `gh run view` while
 the run was still in progress. Each needed a manual check and rerun.
+
+## Implementation
+
+`retrying(run)` in `tools/release/release.py` wraps the runner `main()` hands
+to `plan`, `ship` and `watch`: a failing `gh` call is tried up to `ATTEMPTS`
+(3) times, `RETRY_SECONDS` (10) apart, then raises `failed (CODE) after 3
+attempts: COMMAND`. Two calls are tried once. One is `git`, whose exit codes are
+answers (`merge-base --is-ancestor`). The other is `gh workflow run`: a failed
+reply can hide a run that already started, and a second try would dispatch
+another catalog run. Tests in `test_release.Retrying`: one failure then
+success, three failures raising with the command named, the two single-try
+calls, and `main(['watch', ID])` surviving a failed `gh run view` (the
+November 24 failure).
+
+Resolve once a real `plan`, `ship` or `watch` is seen recovering from a
+transient failure, or after a few ships with none seen.
