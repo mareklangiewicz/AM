@@ -54,8 +54,9 @@ def schema_accepts(raw):
     if kind not in SCHEMA['$defs']:
         return False
     schema = dict(SCHEMA, **{'$ref': '#/$defs/'+kind})
-    checker = jsonschema.Draft202012Validator.FORMAT_CHECKER
-    return jsonschema.Draft202012Validator(schema, format_checker=checker).is_valid(document)
+    # No format checker: jsonschema checks date-time only when an optional
+    # package is installed, so the calendar is the readers' rule alone.
+    return jsonschema.Draft202012Validator(schema).is_valid(document)
 
 
 BAD = json.loads((EXAMPLES/'bad.json').read_text())

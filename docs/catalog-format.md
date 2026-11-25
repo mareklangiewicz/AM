@@ -32,6 +32,8 @@ every byte:
 - Strings are UTF-8 in double quotes. The only escapes are `\"`, `\\`, `\n`,
   `\r`, `\t`, `\N` (U+0085), `\L` (U+2028) and `\P` (U+2029). Raw control
   characters, C1 controls, U+2028, U+2029, U+FFFE and U+FFFF are refused.
+- Times are real UTC calendar times (no February 30), which the schema's
+  pattern alone cannot say.
 - No comments, blank lines, trailing spaces or duplicate keys. The file ends
   with one newline. A line has at most 64 KiB, except a Git file's `content`.
 

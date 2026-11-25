@@ -47,7 +47,7 @@ BAD = {
     'retired-recipe-label': ('apps.yaml', [('"script"\n  "example-nightly"', '"custom"\n  "example-nightly"')], 'enum', SCHEMA),
     'sha256pre-short': (R, [('"0123456789abcdef"', '"0123456789abcde"')], 'pattern', SCHEMA),
     'sha256pre-uppercase': (R, [('"0123456789abcdef"', '"0123456789ABCDEF"')], 'pattern', SCHEMA),
-    'calendar-date': ('statistics.yaml', [('2026-11-25T11', '2026-02-30T11')], 'timestamp', SCHEMA),
+    'calendar-date': ('statistics.yaml', [('2026-11-25T11', '2026-02-30T11')], 'timestamp', CROSS),
     'url-not-https': (R, [('"https://example.org/src.zip"', '"http://example.org/src.zip"')], 'pattern', SCHEMA),
     'tag-position-over-99': (R, [('position: 0', 'position: 100')], 'maximum', SCHEMA),
     'repository-path': ('apps.yaml', [('"repositories/example.yaml"\n    x86_64: "declaration"',
