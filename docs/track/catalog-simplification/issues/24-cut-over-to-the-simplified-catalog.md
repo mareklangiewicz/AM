@@ -97,3 +97,17 @@ November 25, 2026, progress on `ci/cutover`:
   7,163 `declaration`, 2,781 `script`. Left for part 5: `catalog.yml` and the
   composite action call `catalog_run.py`; `git_observations` returns the new
   shape directly (drop `documents._git`).
+
+November 25, 2026, part 4 (seed), Marek's answer: retention also keeps, for
+each guessed processor type, the newest tag with an `.AppImage` file. Evidence
+(`scripts/24/compare.py`, v3 tip `8b6d58033` under main-marek `8335c92f6` vs
+the seed under HEAD, 9,869 recipes, one fixed clock): with ticket 08's rule
+alone, 9,780 selected the same file, 15 were the twins (refused by v3 too), and
+74 stopped resolving (47 x86_64, 27 aarch64; 64 AppImages), because their only
+matching file sat in an older release; e.g. `ai-security-scanner` ships only a
+`.deb` since v0.7.0 and its last AppImage was v0.1.7. "Newest with a Linux
+download" did not cover them: `.deb` files and Linux tarballs count as Linux.
+Page and schema text say so (ticket 13's rule 5 and "Kept releases" gain the
+clause). Also part 4: the 14 twin repositories (v3 `same_tag_conflict`, never
+collected) are left out of the seed, so the first collection reads them.
+Marek, earlier the same day: `host_cutover.py` and its tests deleted (part 3).

@@ -79,8 +79,9 @@ $defs:
       releases:
         description: >-
           Kept releases by GitHub release ID, in numeric order: the 8 newest tags,
-          the newest stable tag and the newest tag with a Linux download, with
-          every release under a kept tag. Empty if never read.
+          the newest stable tag, the newest tag with a Linux download and the
+          newest tag with an AppImage for each processor type, with every
+          release under a kept tag. Empty if never read.
         type: object
         additionalProperties: false
         patternProperties:

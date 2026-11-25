@@ -142,15 +142,25 @@ def failed(previous, *, failed_at, failed_with, repository_id, repository):
     return document
 
 
+def appimages(release):
+    """The processor types (architecture() guesses, None for none) of a release's .AppImage files."""
+    return {architecture(a['name']) for a in release['assets'].values() if a['name'].lower().endswith('.appimage')}
+
+
 def retained(releases):
     """The releases retention keeps, counted as tags: the 8 newest tags, the
-    newest stable tag and the newest tag with a Linux download, with every
-    release under a kept tag (twins stay together). Newest is by
-    published_at, then release ID."""
+    newest stable tag, the newest tag with a Linux download and, for each
+    guessed processor type, the newest tag with an AppImage of it (Marek,
+    November 25, 2026: AppImages are what AM installs), with every release
+    under a kept tag (twins stay together). Newest is by published_at, then
+    release ID."""
     newest = sorted(releases, key=lambda rid: (releases[rid]['published_at'], int(rid)), reverse=True)
     tags = list(dict.fromkeys(releases[rid]['tag'] for rid in newest))
     kept = set(tags[:NEWEST_TAGS])
-    for wanted in (lambda r: not r['prerelease'], lambda r: any(linux(a['name']) for a in r['assets'].values())):
+    arches = {arch for rid in newest for arch in appimages(releases[rid])}
+    wants = [lambda r: not r['prerelease'], lambda r: any(linux(a['name']) for a in r['assets'].values())]
+    wants += [lambda r, arch=arch: arch in appimages(r) for arch in arches]
+    for wanted in wants:
         first = next((releases[rid]['tag'] for rid in newest if wanted(releases[rid])), None)
         if first is not None:
             kept.add(first)

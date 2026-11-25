@@ -9,7 +9,7 @@ const ARCHES=['x86_64','aarch64','i686','armv7l'],OLD_DAYS=14;
 const helpTopics={
  search:['Search','App search looks at app names. Inside an app, the filter searches its release titles, tags and file names.'],
  seen:['Last seen','When this repository’s releases were last read from GitHub. A release with its own “last seen” wasn’t in the latest check: GitHub may have deleted it.'],
- kept:['Kept releases','The 8 newest releases, plus the newest stable one and the newest one with Linux downloads. Older ones are in the catalog’s history, not on this page.'],
+ kept:['Kept releases','The 8 newest releases, plus the newest stable one, the newest one with Linux downloads and the newest AppImage for each processor type. Older ones are in the catalog’s history, not on this page.'],
  failed:['Failed checks','The last good list stays. “Never collected” means no check has succeeded yet, so there’s nothing to install from.'],
  old:['Old data','Not seen for more than 14 days. AM warns before installing from it, then continues.'],
  recipes:['Recipes','“Reviewed installer” or “Recipe script, read it before installing”, per processor type. An app without a recipe for a processor type isn’t listed for it.'],
@@ -22,7 +22,7 @@ const HOW=[
  ['The catalog only records what GitHub lists; AM’s recipe for each app decides which release and file to install.','one list serves every recipe’s own rules, such as stable or nightly, and the processor type.'],
  ['Each check reads a few hundred repositories, so every repository is read again every few days.','GitHub limits how much one check may read.'],
  ['Each repository shows when its releases were last read from GitHub (“Last seen 3 h ago”).','so you can tell how current its list is.'],
- ['We keep each app’s 8 newest releases, plus its newest stable one and its newest one with Linux downloads.','enough to install and update any app, while the catalog stays small.'],
+ ['We keep each app’s 8 newest releases, plus its newest stable one, its newest one with Linux downloads and its newest AppImage for each processor type.','enough to install and update any app, while the catalog stays small.'],
  ['A release deleted on GitHub is removed once the catalog reads the repository’s whole release list; the catalog’s history keeps it. A release kept on purpose that GitHub no longer showed in the latest check shows when it was last seen.','the list matches GitHub without guessing that something is gone.'],
  ['Two releases can share one tag; both are listed.','some projects publish one version as two releases, each with part of the files.'],
  ['When a check fails, the repository keeps its last good list and says why: “last attempt failed 1 h ago: GitHub couldn’t be reached.”','a passing GitHub problem shouldn’t empty an app.'],

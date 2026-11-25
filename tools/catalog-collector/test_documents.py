@@ -218,6 +218,32 @@ class Status(unittest.TestCase):
         self.assertEqual(readers_accept(d.encode('statistics', document)), (0, b'', 0, b''))
 
 
+class Retention(unittest.TestCase):
+    def test_the_newest_appimage_of_each_processor_type_is_kept(self):
+        # Marek, November 25, 2026 (ticket 24 part 4): 74 recipes matched only an
+        # AppImage older than 8 tags; keep the newest per guessed processor type.
+        records = {}
+        records['1'] = release('t1', '2026-10-01T00:00:00Z', assets=[('10', 'app-aarch64.AppImage')])
+        records['2'] = release('t2', '2026-10-02T00:00:00Z', assets=[('20', 'app-x86_64.AppImage'), ('21', 'app-x86_64.AppImage.zsync')])
+        records['3'] = release('t3', '2026-10-03T00:00:00Z', assets=[('30', 'app.AppImage')])
+        for n in range(4, 14):  # ten newer tags with only a .deb and a Linux tarball
+            records[str(n)] = release(f't{n}', f'2026-10-{n:02}T00:00:00Z', assets=[(str(n*10), 'app_amd64.deb'), (str(n*10+1), 'app-linux.tar.gz')])
+        document = d.repository(None, dict(received_at=NOW, releases=records, history_complete=True),
+                                repository_id=123, repository='example/app')
+        tags = sorted((r['tag'] for r in document['releases'].values()), key=lambda t: int(t[1:]))
+        self.assertEqual(tags, ['t1', 't2', 't3', 't6', 't7', 't8', 't9', 't10', 't11', 't12', 't13'])
+
+    def test_a_zsync_or_signature_is_not_an_appimage(self):
+        # t1 is kept by no other rule: newer stable and Linux releases exist.
+        records = {'1': release('t1', '2026-10-01T00:00:00Z', prerelease=True,
+                                assets=[('10', 'app-x86_64.AppImage.zsync'), ('11', 'app.AppImage.sig')])}
+        for n in range(2, 11):
+            records[str(n)] = release(f't{n}', f'2026-10-{n:02}T00:00:00Z', assets=[(str(n*10), 'app-linux.tar.gz')])
+        document = d.repository(None, dict(received_at=NOW, releases=records, history_complete=True),
+                                repository_id=123, repository='example/app')
+        self.assertNotIn('1', document['releases'])
+
+
 class Platforms(unittest.TestCase):
     def test_guesses_over_real_asset_names(self):
         # Asset names from release-catalog-v3 (repositories/k*, n*, r*, o*), November 25, 2026.

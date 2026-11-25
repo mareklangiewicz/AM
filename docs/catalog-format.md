@@ -57,6 +57,7 @@ A repository document:
 A run has `succeeded + failed ≤ selected ≤ enrolled`.
 
 Writers also keep what readers don't check: retention (each repository's 8
-newest tags, its newest stable tag and its newest tag with a Linux download),
+newest tags, its newest stable tag, its newest tag with a Linux download and
+its newest tag with an AppImage for each processor type),
 URLs stored only when they differ from the derived ones, and a `title` only
 when it differs from the tag.
