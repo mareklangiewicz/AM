@@ -64,3 +64,22 @@ After the ship: Marek removes and reinstalls his apps; the old branches'
 tips become local `archive/<name>` refs, and are deleted from origin with his
 OK; ticket 15 measures the result; 18's twin check and 19 continue on
 `catalog/`.
+
+## Comments
+
+November 25, 2026, Marek's answers before part 1 (contract):
+
+- Seams confirmed: contract worked examples through the awk and JS
+  validators; one collector run plus a push-race retry; seed fixture
+  conversion plus a one-time real-tip selection comparison; host tests on raw
+  `catalog/`; page tests; `release.py` counting `catalog/`-only pushes as
+  needing no tests.
+- **No `format:` or `kind:`**: the `$schema:` fragment (`#/$defs/<kind>`) is
+  the kind; each kind's `$schema` value is one constant relative path.
+- **Recipe labels live in `apps.yaml`**: `apps: {<app>: {repository:
+  "repositories/<name>.yaml", x86_64: "declaration"|"script", ...}}`; no
+  `provenance/` files and no cross-file coverage checks.
+- **No `catalog.yaml` and no `status/status.yaml`**: once the pins go, the
+  first holds only `producer` and the second nothing. The run that wrote a
+  commit is in `status/runs.yaml` and the commit message. `catalog/` is
+  `apps.yaml`, `repositories/`, `status/runs.yaml`, `status/statistics.yaml`.
