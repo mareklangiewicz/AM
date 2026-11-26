@@ -1,8 +1,8 @@
 """The committed catalog-yaml-policy.am is exactly what its sources generate.
 
 Hosts fetch the policy module from the branch, so it stays committed although
-it is derived (ticket 29): from the recipe declarations, the URL policies and
-the AppImage policies. A hand edit, or a source change without regeneration,
+it is derived (ticket 29) from the recipes: their declarations and the URL and
+AppImage policy lines (ticket 26). A hand edit, or a source change without regeneration,
 fails here. The committed row files keep rows_json's layout. It follows
 whatever the tree holds: `-p 'tree_*.py'`.
 """
@@ -26,9 +26,6 @@ class GeneratedPolicy(unittest.TestCase):
             root = Path(temporary)
             # Read the live sources through links; write only the copy.
             (root/'programs').symlink_to(ROOT/'programs')
-            (root/'tools/catalog-collector').mkdir(parents=True)
-            registry = 'tools/catalog-collector/recipe-url-policies.json'
-            (root/registry).symlink_to(ROOT/registry)
             (root/'modules').mkdir()
             shutil.copy2(ROOT/POLICY, root/POLICY)
             # The order merge.py uses: declarations and URL policies, then AppImage policies.
@@ -40,7 +37,7 @@ class GeneratedPolicy(unittest.TestCase):
 
     def test_committed_row_files_are_one_row_per_line(self):
         # Writers use rows_json so a merge rewrites only the rows it touches.
-        for name in ('recipe-url-policies.json', 'collection-apps.json', 'appimage-policies.json'):
+        for name in ('collection-apps.json',):
             with self.subTest(name=name):
                 raw = (ROOT/'tools/catalog-collector'/name).read_text()
                 self.assertEqual(raw, rows_json(json.loads(raw)))

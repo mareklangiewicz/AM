@@ -12,9 +12,9 @@ python3 tools/recipe-conversion/convert.py ORIGINAL --recipe x86_64/0xfx \
 ```
 
 The converted recipe goes to stdout. A refusal prints `refused: <reason>` on
-stderr and exits 2 with nothing on stdout. `--form long` also needs
-`--policies FILE` for the selection policies that belong in
-`tools/catalog-collector/recipe-url-policies.json`. A recipe that selects from
+stderr and exits 2 with nothing on stdout. A long recipe carries
+its selection policies as its own `CATALOG_*` lines after `CATALOG_FORMAT=3`
+(catalog-simplification ticket 26). A recipe that selects from
 several repositories takes `--identities FILE` (a JSON list) instead of the
 single-source options.
 

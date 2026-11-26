@@ -17,7 +17,7 @@ import tempfile
 import host_catalog as host
 from bulk_recipes import literal_selector,url_rules
 from recipe_policy_source import generate
-from recipe_declarations import rows_json
+from recipe_declarations import policy_lines,with_policy
 
 REPOSITORY=r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+'
 VERSION=re.compile(r'''version=(?P<outer>"?)\$\(curl -Ls\s+(?P<quote>["']?)(?P<url>https://api[.]github[.]com/repos/'''
@@ -49,7 +49,7 @@ def translate(source,recipe,bindings):
         identity=json.dumps([binding['repository_id'],channel,rules],sort_keys=True)
         if identity not in policies:
             key=recipe if not policies else recipe+'.select-'+str(len(policies)+1)
-            policies[identity]=dict(recipe=key,source_recipe=recipe,source_sha256='',
+            policies[identity]=dict(recipe=key,source_recipe=recipe,
                 repository_id=binding['repository_id'],repository=binding['repository'],channel=channel,
                 url_rules=rules,catalog_app=binding['catalog_app'],dispatch_recipe=key,
                 source_aliases=sorted({binding['repository'],requested}))
@@ -86,8 +86,8 @@ def translate(source,recipe,bindings):
     result=subprocess.run(['bash' if source.startswith('#!/bin/bash') else 'sh','-n'],
         input=changed,text=True,capture_output=True)
     if result.returncode:raise ValueError('translated shell syntax')
-    digest=hashlib.sha256(changed.encode()).hexdigest()
-    for row in policies.values():row['source_sha256']=digest
+    # The selection policies become the recipe's own CATALOG_* lines (ticket 26).
+    changed=with_policy(changed,policy_lines(list(policies.values()),None))
     return changed,list(policies.values()),changes
 
 
@@ -109,19 +109,8 @@ def plan(enrollment):
     return dict(source=enrollment['source'],observed_at=host.utc(),ready=ready,exceptions=exceptions,policies=policies)
 
 
-def apply(result, *, append_sha256=None):
-    """Prevalidate a complete merged registry and exact before-images before writes."""
-    from recipe_declarations import url_policy_rows
-    policy_path=host.ROOT/'tools/catalog-collector/recipe-url-policies.json'
-    previous=policy_path.read_bytes() if policy_path.exists() else None
-    if previous is not None:
-        if append_sha256 is None:raise ValueError('existing URL policies need explicit merge')
-        if hashlib.sha256(previous).hexdigest()!=append_sha256:raise ValueError('URL registry changed')
-        url_policy_rows(host.ROOT)
-        policies=json.loads(previous)+result['policies']
-    else:
-        if append_sha256 is not None:raise ValueError('URL registry missing')
-        policies=result['policies']
+def apply(result):
+    """Prevalidate the exact before-images and the compiled policy before writes."""
     seen=set()
     for row in result['ready']:
         name=row['recipe']
@@ -135,25 +124,20 @@ def apply(result, *, append_sha256=None):
         shell='bash' if 'bash' in row['after'].splitlines()[0] else 'sh'
         if subprocess.run([shell,'-n'],input=row['after'],text=True,capture_output=True).returncode:
             raise ValueError('translated shell syntax')
-    # Compile against the proposed source bytes. A duplicate policy, hash drift,
+    # Compile against the proposed source bytes. A duplicate policy,
     # ambiguous dispatch or invalid literal refuses before touching the checkout.
     with tempfile.TemporaryDirectory(prefix='am-policy-append-') as temporary:
         stage=Path(temporary)
         shutil.copytree(host.ROOT/'programs',stage/'programs',symlinks=True)
-        (stage/'modules').mkdir();(stage/'tools/catalog-collector').mkdir(parents=True)
+        (stage/'modules').mkdir()
         shutil.copy2(host.ROOT/'modules/catalog-yaml-policy.am',stage/'modules/catalog-yaml-policy.am')
         for row in result['ready']:(stage/row['recipe']).write_text(row['after'])
-        merged=rows_json(policies)
-        (stage/'tools/catalog-collector/recipe-url-policies.json').write_text(merged)
         generate(stage)
         compiled=(stage/'modules/catalog-yaml-policy.am').read_bytes()
-    current=policy_path.read_bytes() if policy_path.exists() else None
-    if current!=previous:raise ValueError('URL registry changed during validation')
     for row in result['ready']:
         if hashlib.sha256((host.ROOT/row['recipe']).read_bytes()).hexdigest()!=row['before_sha256']:
             raise ValueError('recipe changed during validation')
     for row in result['ready']:(host.ROOT/row['recipe']).write_text(row['after'])
-    policy_path.write_text(merged)
     (host.ROOT/'modules/catalog-yaml-policy.am').write_bytes(compiled)
 
 
@@ -162,11 +146,10 @@ def main():
     parser.add_argument('--enrollment',type=Path,required=True)
     parser.add_argument('--out',type=Path,required=True)
     parser.add_argument('--apply',action='store_true')
-    parser.add_argument('--append-policies-sha256',help='Explicit expected hash of the registry to extend')
     args=parser.parse_args()
     result=plan(json.loads(args.enrollment.read_text()))
     if args.out.exists():raise ValueError('receipt already exists')
-    if args.apply:apply(result,append_sha256=args.append_policies_sha256)
+    if args.apply:apply(result)
     args.out.write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(dict(recipes=len(result['ready']),policies=len(result['policies']),exceptions=len(result['exceptions']))))
 

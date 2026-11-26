@@ -31,7 +31,7 @@ ROOT=Path(__file__).resolve().parents[2]
 sys.path[:0]=[str(ROOT/'tools/recipe-conversion')]
 import convert
 import host_catalog
-from recipe_declarations import MARKER, rows_json
+from recipe_declarations import MARKER, policy_rows, rows_json, with_policy
 from recipe_policy_source import generate
 import appimage_policy_source
 
@@ -41,14 +41,9 @@ LISTS=tuple('programs/'+arch+'-apps' for arch in ARCHES)
 HAND=('APP-MANAGER','modules/install.am','README.md')
 OWNED='tools/upstream-merge/fork-owned.txt'
 COLLECTOR='tools/catalog-collector/'
-REGISTRY=COLLECTOR+'recipe-url-policies.json'
 ENROLLED=COLLECTOR+'collection-recipes.txt'
 CATALOG_ONLY=COLLECTOR+'collection-apps.json'
 NAMES=COLLECTOR+'source-names.json'
-APPIMAGES=COLLECTOR+'appimage-policies.json'
-# Fork-side files that moved: a revision from before the move has them at the
-# old path (ticket 29). Replays of older merges read them there.
-MOVED={APPIMAGES:COLLECTOR+'test-data/appimage-policies.json'}
 POLICY='modules/catalog-yaml-policy.am'
 OUTCOMES=('taken from upstream','re-converted','fell back','deleted','fork-owned kept','untouched')
 
@@ -65,8 +60,6 @@ def git(root,*arguments,check=True):
 
 
 def text(root,revision,path):
-    if path in MOVED and git(root,'cat-file','-e',revision+':'+path,check=False).returncode:
-        path=MOVED[path]
     return git(root,'show',revision+':'+path).stdout.decode()
 
 
@@ -90,6 +83,11 @@ def form(data):
     source=data.decode('utf-8',errors='replace')
     if MARKER in source:return 'declaration'
     if source.partition('\n')[2].startswith(convert.bulk_recipe_urls.HEADER):return 'long'
+    # A long recipe's policy lines sit inside its header (ticket 26).
+    if '\nCATALOG_FORMAT=3\n' in source:
+        try:
+            if with_policy(source,[]).partition('\n')[2].startswith(convert.bulk_recipe_urls.HEADER):return 'long'
+        except ValueError:pass
     if '# AM-CATALOG-' in source:return 'other converted'
     return 'original'
 
@@ -114,12 +112,22 @@ def upstream_recipes(root,revision):
     return sorted(path for path in listed.decode().split('\0') if RECIPE.fullmatch(path) and path not in owned)
 
 
-def reconvert(recipe,base,ours,theirs,rows,templates):
+def declared_policies(recipe,data):
+    """The URL policy rows a recipe's own CATALOG_* lines declare (ticket 26)."""
+    try:
+        source=data.decode('utf-8')
+    except UnicodeDecodeError:
+        return []
+    if MARKER in source or 'CATALOG_FORMAT=3' not in source.split('\n'):return []
+    return policy_rows(recipe,source)[0]
+
+
+def reconvert(recipe,base,ours,theirs,templates):
     """Convert upstream's new original down the ladder; never keep the old form."""
     before=form(ours)
     try:
         identities=(convert.declaration_identities(ours.decode()) if before=='declaration'
-                    else convert.policy_identities(rows))
+                    else convert.policy_identities(declared_policies(recipe,ours)))
     except (convert.Refusal,UnicodeDecodeError):
         identities=[]
     ladder=[before] if before in convert.FORMS else []
@@ -146,17 +154,15 @@ def reconvert(recipe,base,ours,theirs,rows,templates):
     if before in convert.FORMS and base is not None:
         try:
             again=convert.convert(base.decode('utf-8'),recipe,before,identities,templates)
-            reproduced=again['text'].encode()==ours and again['policies']==rows
+            reproduced=again['text'].encode()==ours  # the text holds its policies
         except (convert.Refusal,UnicodeDecodeError):pass
     row['fork_form_reproduced']=reproduced
     row['identities']=identities
     return row
 
 
-def plan(base,ours,theirs,owned,registry,templates):
+def plan(base,ours,theirs,owned,templates):
     """One row per recipe path in either parent; raises Problem on an undecided case."""
-    by_recipe={}
-    for policy in registry:by_recipe.setdefault(policy['source_recipe'],[]).append(policy)
     rows=[];problems=[]
     for path in sorted(set(base)|set(ours)|set(theirs)):
         b,o,t=base.get(path),ours.get(path),theirs.get(path)
@@ -174,7 +180,7 @@ def plan(base,ours,theirs,owned,registry,templates):
             row.update(outcome='deleted',data=None,form_before=form(o) if o is not None else None)
             try:
                 row['identities']=(convert.declaration_identities(o.decode()) if row['form_before']=='declaration'
-                                   else convert.policy_identities(by_recipe.get(recipe,[])))
+                                   else convert.policy_identities(declared_policies(recipe,o)))
             except (convert.Refusal,UnicodeDecodeError):row['identities']=[]
         elif o is None or o==b or o==t:
             if b is not None and o is None:row['note']='the fork had deleted this recipe'
@@ -183,7 +189,7 @@ def plan(base,ours,theirs,owned,registry,templates):
             problems.append('fork and upstream both added a different '+path+'; list it as fork-owned or remove the fork copy')
             continue
         else:
-            row.update(reconvert(recipe,b,o,t,by_recipe.get(recipe,[]),templates))
+            row.update(reconvert(recipe,b,o,t,templates))
         row['sha256']=digest(row['data'])
         rows.append(row)
     for path in sorted(owned-set(ours)):problems.append('fork-owned list names a recipe the fork does not have: '+path)
@@ -205,18 +211,6 @@ def merge_list(base,ours,theirs):
 
 def derive(root,ours_revision,rows):
     """The fork-side files that follow from the recipe rows."""
-    registry=json.loads(text(root,ours_revision,REGISTRY))
-    changed={row['path'].removeprefix('programs/') for row in rows
-             if row['outcome'] in ('taken from upstream','re-converted','fell back','deleted')}
-    # New policies take their recipe's old place, so the registry and the
-    # compiled module change only where a recipe did.
-    replacement={row['path'].removeprefix('programs/'):row.get('policies',[]) for row in rows}
-    previous,registry=registry,[]
-    for policy in previous:
-        recipe=policy['source_recipe']
-        if recipe not in changed:registry.append(policy)
-        else:registry.extend(replacement.pop(recipe,[]))
-    for recipe in sorted(replacement):registry.extend(replacement[recipe])
     # An enrolled declaration that is no longer one keeps its source enrolled
     # as catalog-only: the collector refuses to drop a source it retains.
     enrolled=text(root,ours_revision,ENROLLED).splitlines()
@@ -233,14 +227,14 @@ def derive(root,ours_revision,rows):
             if app not in apps:
                 catalog_only.append(dict(app=app,repository_id=identity['repository_id'],repository=identity['repository']))
                 apps.add(app)
-    gone={row['path'] for row in rows if row['outcome'] not in ('untouched','fork-owned kept')}
-    # The older explicit AppImage policies are bound to their recipe's text.
-    appimages=[policy for policy in json.loads(text(root,ours_revision,APPIMAGES))
-               if 'programs/'+policy['recipe'] not in gone]
     # Sources no surviving recipe selects from. Retiring them is a separate
-    # collector step; this merge only names them.
-    bound={policy['repository_id'] for policy in registry}
+    # collector step; this merge only names them. A recipe's policies are its
+    # own lines (ticket 26): a recipe taken from upstream has none.
+    bound=set()
     for row in rows:
+        if row['data'] is not None:
+            bound.update(policy['repository_id'] for policy in
+                         declared_policies(row['path'].removeprefix('programs/'),row['data']))
         if row['outcome']=='fell back' and row['form_after']=='original':
             bound.update(identity['repository_id'] for identity in row['identities'])
         elif row['data'] is not None and form(row['data'])=='declaration':
@@ -250,9 +244,7 @@ def derive(root,ours_revision,rows):
         if row['outcome']!='deleted':continue
         for identity in row.get('identities',[]):
             if identity['repository_id'] not in bound:retire[identity['repository_id']]=identity['repository']
-    return {REGISTRY:rows_json(registry),ENROLLED:'\n'.join(kept)+'\n',
-            CATALOG_ONLY:rows_json(catalog_only),
-            APPIMAGES:rows_json(appimages)},retire
+    return {ENROLLED:'\n'.join(kept)+'\n',CATALOG_ONLY:rows_json(catalog_only)},retire
 
 
 def stage(root,ours_revision,rows,files):
@@ -272,7 +264,7 @@ def stage(root,ours_revision,rows,files):
         for path,content in files.items():
             (tree/path).parent.mkdir(parents=True,exist_ok=True);(tree/path).write_text(content)
         generate(tree)
-        appimage_policy_source.generate(tree,tree/APPIMAGES)
+        appimage_policy_source.generate(tree)
         with patch.object(host_catalog,'ROOT',tree):enrollment,_=host_catalog.configuration()
         host_catalog.registry_names(enrollment,tree/NAMES)
         return (tree/POLICY).read_text()
@@ -285,8 +277,7 @@ def prepare(root,upstream,ours_revision='HEAD'):
     base=git(root,'merge-base',ours_revision,upstream).stdout.decode().strip()
     if base==upstream:raise Problem('the fork already contains '+upstream)
     owned=owned_paths(text(root,ours_revision,OWNED))
-    registry=json.loads(text(root,ours_revision,REGISTRY))
-    rows=plan(recipes(root,base),recipes(root,ours_revision),recipes(root,upstream),owned,registry,convert.layouts(root))
+    rows=plan(recipes(root,base),recipes(root,ours_revision),recipes(root,upstream),owned,convert.layouts(root))
     files,retire=derive(root,ours_revision,rows)
     files[POLICY]=stage(root,ours_revision,rows,files)
     for path in LISTS:

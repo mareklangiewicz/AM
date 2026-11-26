@@ -19,14 +19,14 @@ if str(ROOT/'tools/recipe-reconstruction') not in sys.path:
     sys.path.insert(0, str(ROOT/'tools/recipe-reconstruction'))
 from originals import Originals  # noqa: E402
 
-COMMIT = '3b9b918622ea89711078865be4968aa983e5b91b'
+COMMIT = 'c29e863589bc0e932a17f0bf458d9e1ab02dab4e'  # ticket 26: policy rows in the recipes
 _git = Originals(ROOT).git
-# What the collector's configuration reads: every recipe (recipe_rows globs
-# them) and the fork-side enrollment files an upstream merge rewrites.
+# What the collector's configuration reads: every recipe (recipe_rows and the
+# policy readers glob them) and the fork-side enrollment files an upstream merge
+# rewrites.
 CONFIGURATION = ('programs/x86_64', 'programs/aarch64', 'programs/i686', 'programs/armv7l',
                  'tools/catalog-collector/collection-recipes.txt',
                  'tools/catalog-collector/collection-apps.json',
-                 'tools/catalog-collector/recipe-url-policies.json',
                  'tools/catalog-collector/git-sources.json')
 
 

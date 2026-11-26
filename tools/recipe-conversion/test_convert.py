@@ -4,7 +4,6 @@ Originals come from the upstream merge base and expected results from the
 fork commit that published the bulk conversion: pinned Git objects, so later
 recipe changes do not move these tests.
 """
-import hashlib
 import io
 import json
 from pathlib import Path
@@ -16,7 +15,7 @@ from unittest.mock import patch
 
 import convert as c
 from originals import Originals
-from recipe_declarations import MARKER
+from recipe_declarations import MARKER,policy_rows,with_policy
 
 BASE='7b4f831e66705ef7a0064fff25940ce972d331bf'
 FORK='6277377aeb91daff3bed22f98bea39ba67a4b2c3'
@@ -201,16 +200,18 @@ class Long(unittest.TestCase):
         source=show(BASE,'x86_64/1devtool')
         found=[dict(repository_id=1179864103,repository='stoicsoft/1devtool-releases',catalog_app='1devtool')]
         result=c.convert(source,'x86_64/1devtool','long',found)
-        self.assertEqual(result['text'],show(FORK,'x86_64/1devtool'))
+        # The published body, plus the policy as the recipe's own lines (ticket 26).
+        self.assertEqual(with_policy(result['text'],[]),show(FORK,'x86_64/1devtool'))
         self.assertEqual([row['recipe'] for row in result['policies']],['x86_64/1devtool'])
-        self.assertEqual(result['policies'][0]['source_sha256'],hashlib.sha256(result['text'].encode()).hexdigest())
+        self.assertEqual([r['url_rules'] for r in policy_rows('x86_64/1devtool',result['text'])[0]],
+                         [r['url_rules'] for r in result['policies']])
 
     def test_each_selected_repository_needs_its_own_identity(self):
         source=show(BASE,'aarch64/86box')
         main=dict(repository_id=61964127,repository='86Box/86Box',catalog_app='86box')
         other=dict(repository_id=1177491291,repository='pkgforge-dev/86box-AppImage-Enhanced',catalog_app='86box.src-1177491291')
         result=c.convert(source,'aarch64/86box','long',[main,other])
-        self.assertEqual(result['text'],show(FORK,'aarch64/86box'))
+        self.assertEqual(with_policy(result['text'],[]),show(FORK,'aarch64/86box'))
         self.assertEqual([row['recipe'] for row in result['policies']],['aarch64/86box','aarch64/86box.select-2'])
         with self.assertRaisesRegex(c.Refusal,'unverified selection source: pkgforge-dev/86box-AppImage-Enhanced'):
             c.convert(source,'aarch64/86box','long',[main])
@@ -255,17 +256,14 @@ class CommandLine(unittest.TestCase):
             self.assertEqual((code,out),(2,''))
             self.assertIn('refused: not an instance of a reviewed AppImage template',err)
 
-    def test_long_recipe_is_not_printed_without_a_place_for_its_policies(self):
+    def test_a_long_recipe_prints_with_its_policy_lines(self):
         with tempfile.TemporaryDirectory() as temporary:
             original=Path(temporary)/'original';original.write_text(show(BASE,'x86_64/1devtool'))
-            arguments=(original,'--recipe','x86_64/1devtool','--form','long','--repository-id',1179864103,
-                       '--repository','stoicsoft/1devtool-releases')
-            code,out,err=self.run_main(*arguments)
-            self.assertEqual((code,out),(2,''))
-            policies=Path(temporary)/'policies.json'
-            code,out,err=self.run_main(*arguments,'--policies',policies)
-            self.assertEqual((code,out),(0,show(FORK,'x86_64/1devtool')))
-            self.assertEqual(json.loads(policies.read_text())[0]['repository_id'],1179864103)
+            code,out,err=self.run_main(original,'--recipe','x86_64/1devtool','--form','long',
+                                       '--repository-id',1179864103,'--repository','stoicsoft/1devtool-releases')
+            self.assertEqual(code,0,err)
+            self.assertEqual(with_policy(out,[]),show(FORK,'x86_64/1devtool'))
+            self.assertEqual(policy_rows('x86_64/1devtool',out)[0][0]['repository_id'],1179864103)
 
 
 class Corpus(unittest.TestCase):
@@ -317,8 +315,8 @@ class Corpus(unittest.TestCase):
                 result=c.convert(self.base[path],recipe,'long',c.policy_identities(expected))
             except c.Refusal:
                 refused+=1;continue
-            self.assertEqual(result['text'],self.fork[path],path)
-            self.assertEqual(result['policies'],expected,path)
+            self.assertEqual(with_policy(result['text'],[]),self.fork[path],path)
+            self.assertEqual(result['policies'],[{k:v for k,v in r.items() if k!='source_sha256'} for r in expected],path)
             identical+=1
         # The refusals are the recipes adapted by hand after the bulk conversion.
         self.assertEqual((identical,refused),(8770,103))

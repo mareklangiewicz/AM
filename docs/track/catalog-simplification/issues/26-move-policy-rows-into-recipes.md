@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: claimed
+Status: resolved
 Triage: ready-for-agent
 Blocked by: none
 
@@ -22,6 +22,38 @@ recipe that carries them. Install bodies don't change.
 Before converting: measure how the rule lists fit shell assignments (counts,
 characters in patterns, ordering), with a script under `scripts/26/`, and
 settle the assignment form with Marek.
+
+## Answer
+
+Done in three commits. `df444d1ce` added `policy_lines`, `with_policy` and
+`policy_rows` (`recipe_declarations.py`, tests in `test_policy_lines.py`).
+`c29e86358` wrote 6,447 lines into 1,495 recipes with `scripts/26/move.py`
+(every row reads back exactly) and refreshed the JSON hashes, so that commit
+still passes the old code. The third commit switched every reader and writer
+and deleted both JSON files:
+- the URL and AppImage policy compilers, `reference_policies` and the tree
+  checks;
+- `bulk_recipe_urls`, which now writes the lines, with no registry merge or
+  `--append-policies-sha256`;
+- `recipe-conversion`, where a long recipe prints with its lines and there's
+  no `--policies`;
+- `upstream-merge`, where `plan` takes no registry, `derive` no longer
+  rebuilds one, and a long recipe is still recognized with lines inside its
+  header.
+
+`pinned_recipes.COMMIT` moved to `c29e86358`.
+
+Two departures from the Outcome above. First, the regenerated
+`catalog-yaml-policy.am` isn't byte-equal, because rows are now read in path
+order. `scripts/26/equivalent.py` shows it selects the same: 60,947 identical
+facts, ignoring order, duplicates and group numbering. The one difference is
+`x86_64/sunshine`'s AppImage row, which was dead (its declaration is checked
+first) and was dropped. The check fails on a changed rule or a changed stable
+flag. Second, the `test_relayout_replays.py` replays of tickets 33 and 32 were
+retired (Marek, Q14 a): they read the old JSON and compared bytes.
+
+Tests: the Fast tier (`tools/fast-tests.sh`) and the whole-tree tier
+(`tree_*.py`) pass.
 
 ## Comments
 

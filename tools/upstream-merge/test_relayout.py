@@ -2,7 +2,9 @@
 what a recipe selects.
 
 Pinned Git objects: x86_64/zulip as a long recipe with its policy row at
-cf6255fc3, and as the declaration ticket 33 converted it to at 082502f64.
+cf6255fc3, and as the declaration ticket 33 converted it to at 082502f64. The
+row was then in recipe-url-policies.json; it is written into the long
+recipe's own lines here, as ticket 26 moved every row.
 """
 import json
 import os
@@ -13,6 +15,7 @@ import tempfile
 import unittest
 
 import relayout as r
+from recipe_declarations import policy_lines,with_policy
 
 LONG_AT='cf6255fc399245395ad4fc7f247b778a12e0f201'
 DECLARED_AT='082502f64c'
@@ -24,19 +27,24 @@ def show(commit,path):
 
 
 def registry(commit):
-    return [row for row in json.loads(show(commit,r.merge.REGISTRY)) if row['source_recipe']=='x86_64/zulip']
+    rows=json.loads(show(commit,'tools/catalog-collector/recipe-url-policies.json'))
+    return [{k:v for k,v in row.items() if k!='source_sha256'} for row in rows if row['source_recipe']=='x86_64/zulip']
+
+
+def long_recipe(policies):
+    return with_policy(show(LONG_AT,PATH).decode(),policy_lines(policies,None)).encode()
 
 
 class Equivalence(unittest.TestCase):
     def setUp(self):
-        self.before={PATH:show(LONG_AT,PATH)}
         self.policies=registry(LONG_AT)
+        self.before={PATH:long_recipe(self.policies)}
         self.after=show(DECLARED_AT,PATH)
         self.assertEqual(len(self.policies),1)
         self.assertIn(b'# AM-RECIPE-DECLARATION 1\n',self.after)
 
     def check(self,after):
-        return r.differences(self.before,self.policies,{PATH:after},[])
+        return r.differences(self.before,{PATH:after})
 
     def test_ticket_33s_conversion_of_zulip_selects_the_same(self):
         self.assertEqual(self.check(self.after),[])
@@ -65,11 +73,11 @@ class Equivalence(unittest.TestCase):
                  'git_file':dict(selection='git-file',git_ref='refs/heads/main',git_file='VERSION')}
         for field,extra in mutants.items():
             with self.subTest(field):
-                found=r.differences(self.before,[dict(self.policies[0],**extra)],{PATH:self.after},[])
+                found=r.differences({PATH:long_recipe([dict(self.policies[0],**extra)])},{PATH:self.after})
                 self.assertEqual(len(found),1,found);self.assertIn(field,found[0])
 
     def test_a_recipe_that_stops_selecting_is_named(self):
-        found=r.differences(self.before,self.policies,{PATH:b'#!/bin/sh\necho plain\n'},[])
+        found=r.differences(self.before,{PATH:b'#!/bin/sh\necho plain\n'})
         self.assertEqual(len(found),1,found);self.assertIn('x86_64/zulip',found[0])
 
 

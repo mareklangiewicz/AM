@@ -18,7 +18,10 @@ def fixtures():
     sources.append(source)
     by_request = {s['request_id']:s for s in sources}
     needed = {row['repository_id'] for row in APPIMAGES.values()}
-    found = {RID: (source,raw,report,'docs/track/release-catalog/research/appimage-next-large-batch-20261102/evidence.tar.gz:release-0531')}
+    # sunshine's saved list, while it had an AppImage policy (its declaration
+    # superseded it in catalog-simplification ticket 26).
+    found = ({RID: (source,raw,report,'docs/track/release-catalog/research/appimage-next-large-batch-20261102/evidence.tar.gz:release-0531')}
+             if RID in needed else {})
     for report_path in sorted(RESEARCH.glob('*/release-*/report.json')) + [RESEARCH/'brave-release-20261031/report.json']:
         report = json.loads(report_path.read_text())
         request = report.get('descriptor', {}).get('request_id')

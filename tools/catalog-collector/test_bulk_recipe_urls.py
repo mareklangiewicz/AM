@@ -1,6 +1,5 @@
 """Source selection changes preserve package/desktop bodies and fail closed."""
 import hashlib
-import json
 import os
 from pathlib import Path
 import shutil
@@ -14,6 +13,7 @@ import recipe_policy_source as compiler
 import test_yaml_manager_integration as integration
 import fixture_manager as harness
 import pinned_recipes
+from recipe_declarations import policy_rows,url_policy_rows
 
 
 class BodyMigration(unittest.TestCase):
@@ -33,7 +33,11 @@ class BodyMigration(unittest.TestCase):
         self.assertEqual(changed.count('AMREPO=${AMREPO-}\n'),2)
         self.assertIn(' --url "$@") || exit 1',changed)
         self.assertEqual(source.split('# LAUNCHER & ICON')[1],changed.split('# LAUNCHER & ICON')[1])
-        self.assertEqual(rows[0]['source_sha256'],hashlib.sha256(changed.encode()).hexdigest())
+        # The policy is the recipe's own lines (ticket 26), read back as written.
+        declared,_=policy_rows('x86_64/1aivault',changed)
+        self.assertEqual([(r['repository_id'],r['url_rules']) for r in declared],
+                         [(r['repository_id'],r['url_rules']) for r in rows])
+        self.assertIn('\nCATALOG_FORMAT=3\nCATALOG_REPOSITORY_ID=123\n',changed)
         self.assertEqual(rows[0]['url_rules'][-1],dict(pattern='appimage$',ignore_case=True,exclude=False))
 
     def test_auxiliary_api_and_custom_bypass_are_not_silently_discarded(self):
@@ -56,10 +60,9 @@ class BodyMigration(unittest.TestCase):
         self.assertIn('--source-repository "$RELEASE"',changed)
         self.assertIn('--source-repository REPLACETHIS',changed)
         with tempfile.TemporaryDirectory() as temporary:
-            root=Path(temporary);(root/'modules').mkdir();(root/'tools/catalog-collector').mkdir(parents=True)
+            root=Path(temporary);(root/'modules').mkdir()
             path=root/'programs/x86_64/mpv';path.parent.mkdir(parents=True);path.write_text(changed)
             pinned_recipes.write('x86_64/20x',root)
-            registry=root/'tools/catalog-collector/recipe-url-policies.json';registry.write_text(json.dumps(rows))
             policy=root/'modules/catalog-yaml-policy.am';shutil.copy2(b.host.ROOT/'modules/catalog-yaml-policy.am',policy)
             with patch.object(compiler,'ROOT',root):compiler.generate()
             for requested,expected in (('pkgforge-dev/mpv-AppImage','mpv'),('ivan-hc/MPV-appimage','mpv.src-124'),('evil/project',None)):
@@ -68,16 +71,16 @@ class BodyMigration(unittest.TestCase):
                          'AM_YAML_CHECK_RECIPE':'1','AM_YAML_APP_NAME':'1'})
                 self.assertEqual(result.returncode,0 if expected else 3,result.stderr)
                 if expected:self.assertEqual(result.stdout,expected+'\n')
-            path.write_text(changed+'# drift\n')
+            path.write_text(changed.replace('CATALOG_CHANNEL=','CATALOG_CHANNEL=beta',1))
             with patch.object(compiler,'ROOT',root),self.assertRaises(ValueError):compiler.generate()
 
-    def test_explicit_registry_append_validates_before_any_write(self):
+    def test_apply_validates_every_proposal_before_any_write(self):
         with tempfile.TemporaryDirectory() as temporary:
-            root=Path(temporary);(root/'modules').mkdir();(root/'tools/catalog-collector').mkdir(parents=True)
+            root=Path(temporary);(root/'modules').mkdir()
             folder=root/'programs/x86_64';folder.mkdir(parents=True)
             pinned_recipes.write('x86_64/20x',root)
-            shutil.copy2(b.host.ROOT/'modules/catalog-yaml-policy.am',root/'modules/catalog-yaml-policy.am')
-            registry=root/'tools/catalog-collector/recipe-url-policies.json'
+            policy=root/'modules/catalog-yaml-policy.am'
+            shutil.copy2(b.host.ROOT/'modules/catalog-yaml-policy.am',policy)
             def proposal(app):
                 original=self.source().replace('APP=1aivault','APP='+app)
                 (folder/app).write_text(original)
@@ -88,19 +91,16 @@ class BodyMigration(unittest.TestCase):
             first=proposal('first');second=proposal('second')
             with patch.object(b.host,'ROOT',root):
                 b.apply(first)
-                before=registry.read_bytes();source=(folder/'second').read_bytes()
-                with self.assertRaisesRegex(ValueError,'explicit merge'):b.apply(second)
-                with self.assertRaisesRegex(ValueError,'registry changed'):b.apply(second,append_sha256='0'*64)
-                self.assertEqual(registry.read_bytes(),before)
-                self.assertEqual((folder/'second').read_bytes(),source)
-                digest=hashlib.sha256(before).hexdigest()
-                bad=dict(second,policies=second['policies']+first['policies'])
-                with self.assertRaises(ValueError):b.apply(bad,append_sha256=digest)
-                self.assertEqual(registry.read_bytes(),before)
-                self.assertEqual((folder/'second').read_bytes(),source)
-                b.apply(second,append_sha256=digest)
-                self.assertEqual([r['recipe'] for r in json.loads(registry.read_text())],
-                                 ['x86_64/first','x86_64/second'])
+                compiled=policy.read_bytes();source=(folder/'second').read_bytes()
+                for bad in (dict(second,ready=[dict(second['ready'][0],before_sha256='0'*64)]),
+                            dict(second,ready=[dict(second['ready'][0],after_sha256='0'*64)]),
+                            dict(second,ready=second['ready']+first['ready'])):
+                    with self.assertRaises(ValueError):b.apply(bad)
+                    self.assertEqual(policy.read_bytes(),compiled)
+                    self.assertEqual((folder/'second').read_bytes(),source)
+                b.apply(second)
+                self.assertEqual([r['recipe'] for r in url_policy_rows(root)],['x86_64/first','x86_64/second'])
+                self.assertNotEqual(policy.read_bytes(),compiled)
 
 
 class BodyManager(unittest.TestCase):
@@ -121,12 +121,10 @@ class BodyManager(unittest.TestCase):
         changed,rows,_=b.translate(source,'x86_64/obsidian',[
             dict(repository='obsidianmd/obsidian-releases',repository_id=262342594,catalog_app='obsidian')])
         root=self.path/'policy';(root/'modules').mkdir(parents=True)
-        (root/'tools/catalog-collector').mkdir(parents=True)
         path=root/'programs/x86_64/obsidian';path.parent.mkdir(parents=True);path.write_text(changed)
         dummy=root/'programs/x86_64/dummy'
         dummy.write_text(pinned_recipes.read_text('x86_64/20x')
             .replace('APP=20x','APP=dummy').replace('x86_64/20x','x86_64/dummy'))
-        (root/'tools/catalog-collector/recipe-url-policies.json').write_text(json.dumps(rows))
         policy=root/'modules/catalog-yaml-policy.am'
         shutil.copy2(b.host.ROOT/'modules/catalog-yaml-policy.am',policy)
         with patch.object(compiler,'ROOT',root):compiler.generate()

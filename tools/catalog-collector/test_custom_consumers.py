@@ -1,9 +1,10 @@
 """Real shell selection keeps metadata identities and validates version-sort winners."""
-import json
 import unittest
 
 import documents
 import fixture_catalog
+import pinned_recipes
+from recipe_declarations import url_policy_rows
 import test_git_consumers as integration
 
 AT=integration.AT
@@ -18,7 +19,7 @@ class CustomConsumers(unittest.TestCase):
 
     def prepare(self,app,releases,policy_name=None):
         """releases: records as bounded.normalize returns them."""
-        policies=json.loads((integration.ROOT/'tools/catalog-collector/recipe-url-policies.json').read_text())
+        policies=url_policy_rows(pinned_recipes.shared_configuration())
         policy=next(r for r in policies if r['recipe']==(policy_name or 'x86_64/'+app))
         rid=policy['repository_id']
         doc=documents.repository(None,dict(received_at=AT,releases=releases,history_complete=True),

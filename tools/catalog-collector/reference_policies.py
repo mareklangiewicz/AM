@@ -1,16 +1,17 @@
 """Test-only reference policies for maintained and transitional recipe selectors."""
-import json
 import re
-from pathlib import Path
 
 from bounded import require
+import pinned_recipes
+from recipe_declarations import appimage_policy_rows
 from reference_selection import ASCII_LOWER, accept_selection
 
 COHORT = ('x86_64/obsidian', 'x86_64/nvim', 'aarch64/nvim',
           'x86_64/nvim-nightly', 'aarch64/nvim-nightly')
 
-_POLICIES = Path(__file__).with_name("appimage-policies.json")
-APPIMAGES = {row["recipe"]: row for row in json.loads(_POLICIES.read_text())}
+# The AppImage policies the pinned recipes declare (ticket 26): fast tests
+# never read the live tree. tree_appimages checks the live ones.
+APPIMAGES = {row["recipe"]: row for row in appimage_policy_rows(pinned_recipes.shared_configuration())}
 SUPPORTED = COHORT + tuple(APPIMAGES)
 
 

@@ -11,6 +11,7 @@ import unittest
 
 import merge as m
 from originals import Originals
+from recipe_declarations import policy_lines,with_policy
 
 BASE='7b4f831e66705ef7a0064fff25940ce972d331bf'
 FORK='6277377aeb91daff3bed22f98bea39ba67a4b2c3'
@@ -18,18 +19,23 @@ ORIGINALS=Originals(m.ROOT)
 TEMPLATES=m.convert.layouts()
 DECLARED='programs/x86_64/0xfx'
 LONG='programs/x86_64/1devtool'
-POLICIES=[dict(recipe='x86_64/1devtool',source_recipe='x86_64/1devtool',
-    source_sha256='e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855',
-    repository_id=1179864103,repository='stoicsoft/1devtool-releases',channel='any',url_rules=[],
-    catalog_app='1devtool',dispatch_recipe='x86_64/1devtool',source_aliases=['stoicsoft/1devtool-releases'])]
 
 
 def show(commit,path):
     return ORIGINALS.read(commit,path).encode()
 
 
-def plan(base,ours,theirs,owned=(),registry=()):
-    return {row['path']:row for row in m.plan(base,ours,theirs,set(owned),list(registry),TEMPLATES)}
+def plan(base,ours,theirs,owned=()):
+    return {row['path']:row for row in m.plan(base,ours,theirs,set(owned),TEMPLATES)}
+
+
+def long_fork():
+    """1devtool as the fork has it: FORK's text with its policy row, then in
+    recipe-url-policies.json, as the recipe's own lines (ticket 26)."""
+    rows=[{k:v for k,v in row.items() if k!='source_sha256'}
+          for row in json.loads(m.git(m.ROOT,'show',FORK+':tools/catalog-collector/recipe-url-policies.json').stdout)
+          if row['source_recipe']=='x86_64/1devtool']
+    return with_policy(ORIGINALS.read(FORK,LONG),policy_lines(rows,None)).encode()
 
 
 class Plan(unittest.TestCase):
@@ -86,10 +92,11 @@ class Plan(unittest.TestCase):
 
     def test_long_recipe_is_converted_again_with_its_policies(self):
         original=show(BASE,LONG);changed=original.replace(b'notify-send "$APP is updated!"',b'notify-send "$APP updated"')
-        row=plan({LONG:original},{LONG:show(FORK,LONG)},{LONG:changed},registry=POLICIES)[LONG]
+        row=plan({LONG:original},{LONG:long_fork()},{LONG:changed})[LONG]
         self.assertEqual((row['outcome'],row['form_before'],row['form_after']),('re-converted','long','long'))
         self.assertIn(b'notify-send "$APP updated"',row['data'])
-        self.assertEqual(row['policies'][0]['source_sha256'],m.digest(row['data']))
+        self.assertTrue(row['fork_form_reproduced'])
+        self.assertEqual([r['repository_id'] for r in m.declared_policies('x86_64/1devtool',row['data'])],[1179864103])
 
     def test_upstream_deletion_additions_and_unconverted_changes(self):
         self.assertEqual(self.one(None)['outcome'],'deleted')

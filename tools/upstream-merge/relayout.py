@@ -29,14 +29,13 @@ FIELDS=('recipe','repository_id','repository','channel','asset_pattern','url_rul
 DEFAULTS={'url_rules':[],'selection':'asset'}
 
 
-def selections(recipes,policies):
-    """The compiled selection rows of these recipes, by recipe path."""
+def selections(recipes):
+    """The compiled selection rows of these recipes (their policies are their
+    own lines, ticket 26), by recipe path."""
     with tempfile.TemporaryDirectory(prefix='am-relayout-') as temporary:
         tree=Path(temporary)
         for path,data in recipes.items():
             (tree/path).parent.mkdir(parents=True,exist_ok=True);(tree/path).write_bytes(data)
-        (tree/merge.REGISTRY).parent.mkdir(parents=True,exist_ok=True)
-        (tree/merge.REGISTRY).write_text(json.dumps(policies))
         declared=any(merge.MARKER.encode() in data for data in recipes.values())
         rows=url_policy_rows(tree)+(recipe_rows(tree) if declared else [])
     found={}
@@ -46,9 +45,9 @@ def selections(recipes,policies):
     return {path:sorted(found.get(path,[]),key=lambda row:json.dumps(row,sort_keys=True)) for path in recipes}
 
 
-def changes(before,before_policies,after,after_policies):
+def changes(before,after):
     """What selects differently, by recipe path: the changed fields, or the row counts."""
-    old,new=selections(before,before_policies),selections(after,after_policies);found={}
+    old,new=selections(before),selections(after);found={}
     for path in sorted(set(old)|set(new)):
         a,b=old.get(path,[]),new.get(path,[])
         if a==b:continue
@@ -57,10 +56,9 @@ def changes(before,before_policies,after,after_policies):
     return found
 
 
-def differences(before,before_policies,after,after_policies):
+def differences(before,after):
     """One line per recipe whose selection rows differ between the two states."""
-    return [path.removeprefix('programs/')+': '+reason
-            for path,reason in changes(before,before_policies,after,after_policies).items()]
+    return [path.removeprefix('programs/')+': '+reason for path,reason in changes(before,after).items()]
 
 
 def chosen(layouts,name):
@@ -88,8 +86,6 @@ def plan(root,layout,ours='HEAD',upstream='upstream/main',forms=convert.FORMS):
     base=merge.git(root,'merge-base',ours,upstream).stdout.decode().strip()
     layout=chosen(convert.layouts(root),layout)
     fork,originals=merge.recipes(root,ours),merge.recipes(root,base)
-    registry=json.loads(merge.text(root,ours,merge.REGISTRY));by_recipe={}
-    for policy in registry:by_recipe.setdefault(policy['source_recipe'],[]).append(policy)
     rows,refused=[],{}
     for path,data in sorted(fork.items()):
         rows.append(row:=dict(path=path,outcome='untouched',data=data))
@@ -101,7 +97,7 @@ def plan(root,layout,ours='HEAD',upstream='upstream/main',forms=convert.FORMS):
         except (convert.Refusal,UnicodeDecodeError):continue
         try:
             identities=(convert.declaration_identities(data.decode()) if before=='declaration'
-                        else convert.policy_identities(by_recipe.get(recipe,[])))
+                        else convert.policy_identities(merge.declared_policies(recipe,data)))
             result=convert.convert(source,recipe,'declaration',identities,[layout])
         except convert.Refusal as refusal:
             refused[path]=str(refusal);continue
@@ -110,8 +106,7 @@ def plan(root,layout,ours='HEAD',upstream='upstream/main',forms=convert.FORMS):
                        data=result['text'].encode(),policies=[],identities=identities)
     candidates=[row for row in rows if row['outcome']=='re-converted']
     selecting=changes({row['path']:fork[row['path']] for row in candidates},
-                      [policy for row in candidates for policy in by_recipe.get(row['path'].removeprefix('programs/'),[])],
-                      {row['path']:row['data'] for row in candidates},[])
+                      {row['path']:row['data'] for row in candidates})
     for row in candidates:
         if row['path'] in selecting:
             refused[row['path']]='selection would change: '+selecting[row['path']]
@@ -121,11 +116,8 @@ def plan(root,layout,ours='HEAD',upstream='upstream/main',forms=convert.FORMS):
     files[merge.POLICY]=merge.stage(root,ours,rows,files)
     files={path:content for path,content in files.items() if content!=merge.text(root,ours,path)}
     converted={row['path'] for row in rows if row['outcome']=='re-converted'}
-    after=json.loads(files.get(merge.REGISTRY,json.dumps(registry)))
-    mine=lambda policies,inside:[p for p in policies if ('programs/'+p['source_recipe'] in converted)==inside]
-    found=differences({path:fork[path] for path in converted},mine(registry,True),
-                      {row['path']:row['data'] for row in rows if row['path'] in converted},mine(after,True))
-    if mine(registry,False)!=mine(after,False):found.append('policy rows of recipes not re-converted changed')
+    found=differences({path:fork[path] for path in converted},
+                      {row['path']:row['data'] for row in rows if row['path'] in converted})
     return dict(ours=ours,base=base,layout=layout.identity,rows=rows,files=files,refused=refused,
                 retire=retire,differences=found)
 

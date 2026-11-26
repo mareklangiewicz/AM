@@ -26,9 +26,6 @@ class TreeHostPolicySource(unittest.TestCase):
             (root/'modules').mkdir()
             recipes = root/'programs/x86_64'
             shutil.copytree(compiler.ROOT/'programs',root/'programs',symlinks=True)
-            registry=root/'tools/catalog-collector/recipe-url-policies.json'
-            registry.parent.mkdir(parents=True)
-            shutil.copy2(compiler.ROOT/'tools/catalog-collector/recipe-url-policies.json',registry)
             policy = root/'modules/catalog-yaml-policy.am'
             shutil.copy2(compiler.ROOT/'modules/catalog-yaml-policy.am', policy)
             before={p:p.read_bytes() for p in (root/'programs').rglob('*') if p.is_file()}

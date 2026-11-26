@@ -8,7 +8,8 @@ input. Whatever the conversion cannot account for is a Refusal, never a guess.
 A recipe declaration is only produced from an original that is, line for line,
 an instance of a reviewed upstream AppImage template (layouts.json) whose
 release selector is a literal filter pipeline. A long recipe keeps the
-original's install steps and replaces its release selection.
+original's install steps and replaces its release selection with the policy,
+written as the recipe's own CATALOG_* lines (ticket 26).
 """
 import argparse
 import difflib
@@ -218,7 +219,6 @@ def main(argv=None):
     parser.add_argument('--requested-repository',help='name the original uses, when it differs')
     parser.add_argument('--catalog-app',help='catalog app name, when it differs from APP')
     parser.add_argument('--identities',type=Path,help='JSON list of sources, for a recipe with several')
-    parser.add_argument('--policies',type=Path,help='write the long recipe selection policies here (JSON)')
     args=parser.parse_args(argv)
     if args.identities:
         if args.repository_id or args.repository:parser.error('--identities replaces the single-source options')
@@ -233,10 +233,6 @@ def main(argv=None):
     except Refusal as refusal:
         print('refused: '+str(refusal),file=sys.stderr)
         return 2
-    if result['policies'] and not args.policies:
-        print('refused: a long recipe needs --policies for its selection policies',file=sys.stderr)
-        return 2
-    if args.policies:args.policies.write_text(json.dumps(result['policies'],indent=2)+'\n')
     sys.stdout.write(result['text'])
     return 0
 

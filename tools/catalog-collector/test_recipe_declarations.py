@@ -36,9 +36,6 @@ class Declarations(unittest.TestCase):
         cls.addClassCleanup(temporary.cleanup)
         cls.policy_root = Path(temporary.name)
         (cls.policy_root/'programs').symlink_to(cls.configuration_root/'programs')
-        registry = 'tools/catalog-collector/recipe-url-policies.json'
-        (cls.policy_root/registry).parent.mkdir(parents=True)
-        (cls.policy_root/registry).symlink_to(cls.configuration_root/registry)
         (cls.policy_root/'modules').mkdir()
         shutil.copy2(compiler.ROOT/'modules/catalog-yaml-policy.am', cls.policy_root/'modules')
         compiler.generate(cls.policy_root)

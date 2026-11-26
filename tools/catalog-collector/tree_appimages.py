@@ -3,15 +3,14 @@
 Slow, and it follows whatever recipes the tree holds. Run before an upstream
 merge and on demand: `-p 'tree_*.py'`.
 """
-import hashlib
-import json
 import shutil
 import subprocess
 import unittest
 
 import test_yaml_manager_integration as integration
 from fixture_manager import ROOT
-from appimage_policy_source import compile_source, START, END, POLICIES
+from appimage_policy_source import compile_source, START, END
+from recipe_declarations import appimage_policy_rows
 from reference_policies import APPIMAGES, select_cohort
 from fixture_facts import utc
 from fixture_catalog import expanded
@@ -25,16 +24,14 @@ class TreeAppImages(test_yaml_appimages.AppImagesCase):
         source = (ROOT/'modules/catalog-yaml-policy.am').read_text()
         self.assertEqual(START+source.split(START,1)[1].split(END,1)[0]+END,compile_source())
         self.assertTrue(APPIMAGES)
-        for row in json.loads(POLICIES.read_text()):
+        # The recipes declare their own policies (ticket 26), and only recipes
+        # that are not declarations do: a declaration is selected by itself.
+        live = appimage_policy_rows(ROOT)
+        self.assertTrue(live)
+        for row in live:
             recipe = row['recipe']; text=(ROOT/'programs'/recipe).read_text()
             self.assertIn('CATALOG_FORMAT=3\nCATALOG_RECIPE="'+recipe+'"\n',text)
-            # Complete declarations supersede historical legacy-body hashes.
-            # Their current source/selection contract is covered by declaration
-            # compiler checks and the all-installed-recipes lifecycle tests.
-            if '# AM-RECIPE-DECLARATION 1' in text.splitlines():
-                continue
-            before='\n'.join(l for l in text.split('\n') if l!='CATALOG_FORMAT=3' and not l.startswith('CATALOG_RECIPE='))
-            self.assertEqual(hashlib.sha256(before.encode()).hexdigest(),row['source_sha256'])
+            self.assertNotIn('# AM-RECIPE-DECLARATION 1',text.splitlines())
         for recipe in (*APPIMAGES,'x86_64/unknown','x86_64/sqlitebrowser/extra','i686/sqlitebrowser'):
             r = subprocess.run(['awk','-f',str(ROOT/'modules/catalog-yaml-policy.am')],input=b'',
                 capture_output=True,env={**self.env(),'AM_YAML_RECIPE':recipe,'AM_YAML_CHECK_RECIPE':'1'})

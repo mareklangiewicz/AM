@@ -1,6 +1,6 @@
 """Read literal declarations from recipe declaration headers, without executing shell."""
 import json
-import hashlib
+from pathlib import Path
 import re
 import shlex
 
@@ -26,44 +26,43 @@ def validate_url_rules(rules):
     return rules
 
 
+def _policy_recipes(root):
+    """Each recipe that declares selection policy lines: (recipe, URL rows, AppImage row)."""
+    for arch in ('x86_64', 'aarch64', 'i686', 'armv7l'):
+        for path in sorted((Path(root)/'programs'/arch).glob('*')):
+            if not path.is_file() or path.is_symlink():
+                continue
+            text = path.read_text(errors='replace')
+            if 'CATALOG_URL_RULES' not in text or MARKER in text:
+                continue
+            urls, image = policy_rows(arch+'/'+path.name, text)
+            if urls or image:
+                yield urls, image
+
+
 def url_policy_rows(root):
-    path=root/'tools/catalog-collector/recipe-url-policies.json'
-    if not path.exists():return []
-    rows=json.loads(path.read_text());result=[];seen=set()
-    if not isinstance(rows,list):raise ValueError('URL policy registry')
-    for row in rows:
-        required={'recipe','source_recipe','source_sha256','repository_id','repository','channel','url_rules','catalog_app','dispatch_recipe','source_aliases'}
-        optional={'selection','tag_pattern','tag_exclude','git_ref','git_file'}
-        if not required<=set(row) or set(row)-required-optional:
-            raise ValueError('URL policy fields')
-        for key in ('recipe','source_recipe','dispatch_recipe'):
-            if not re.fullmatch(r'(x86_64|aarch64|i686|armv7l)/[a-z0-9][a-z0-9_.+-]*',row[key]):
-                raise ValueError('URL policy recipe')
-        source=root/'programs'/row['source_recipe']
-        if source.is_symlink() or hashlib.sha256(source.read_bytes()).hexdigest()!=row['source_sha256']:
-            raise ValueError('URL policy source changed: '+row['source_recipe'])
-        if (row['recipe'] in seen or type(row['repository_id']) is not int or row['repository_id']<1 or
-                not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+',row['repository']) or
-                row['channel'] not in ('any','stable','nightly') or
-                not re.fullmatch(r'[a-z0-9][a-z0-9_.+-]{0,63}',row['catalog_app'])):
-            raise ValueError('URL policy identity')
-        seen.add(row['recipe']);validate_url_rules(row['url_rules'])
-        if row.get('selection','asset') not in ('asset','release','git-tag','git-branch','git-file'):
-            raise ValueError('selection kind')
-        for field in ('tag_pattern','tag_exclude','git_ref','git_file'):
-            if field in row and (not isinstance(row[field],str) or len(row[field].encode())>1024 or
-                    any(ord(c)<32 for c in row[field])):raise ValueError('selection literal')
-        if row.get('selection') in ('git-branch','git-file'):
-            from git_observations import valid_ref,valid_path
-            if not valid_ref(row.get('git_ref','')) or not row['git_ref'].startswith('refs/heads/'):
-                raise ValueError('branch selection')
-            if row['selection']=='git-file' and not valid_path(row.get('git_file','')):raise ValueError('file selection')
-        if (not isinstance(row['source_aliases'],list) or not row['source_aliases'] or any(
-                not isinstance(alias,str) or not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+',alias)
-                for alias in row['source_aliases'])):
-            raise ValueError('URL policy source aliases')
-        result.append(dict(row,app=row['recipe'].split('/')[1],asset_pattern='^.*$'))
+    """The URL selection policies declared in the recipes under root (ticket 26)."""
+    result = []
+    for urls, _ in _policy_recipes(root):
+        for row in urls:
+            if row.get('selection', 'asset') not in ('asset', 'release', 'git-tag', 'git-branch', 'git-file'):
+                raise ValueError('selection kind')
+            for field in ('tag_pattern', 'tag_exclude', 'git_ref', 'git_file'):
+                if field in row and (len(row[field].encode()) > 1024 or any(ord(c) < 32 for c in row[field])):
+                    raise ValueError('selection literal')
+            if row.get('selection') in ('git-branch', 'git-file'):
+                from git_observations import valid_ref, valid_path
+                if not valid_ref(row.get('git_ref', '')) or not row['git_ref'].startswith('refs/heads/'):
+                    raise ValueError('branch selection')
+                if row['selection'] == 'git-file' and not valid_path(row.get('git_file', '')):
+                    raise ValueError('file selection')
+            result.append(dict(row, app=row['recipe'].split('/')[1], asset_pattern='^.*$'))
     return result
+
+
+def appimage_policy_rows(root):
+    """The explicit AppImage policies declared in the recipes under root (ticket 26)."""
+    return [image for _, image in _policy_recipes(root) if image]
 
 
 def recipe_rows(root):
@@ -84,14 +83,10 @@ def recipe_rows(root):
         for line in header.splitlines():
             if not line or line.startswith('#') or line == 'set -eu':
                 continue
-            name, equals, literal = line.partition('=')
-            tokens = shlex.split(literal)
-            value = tokens[0] if tokens else ''
-            quoted = literal == shlex.quote(value)
-            double_quoted = literal == '"'+value+'"' and not any(c in value for c in '$`\\"')
-            if (not equals or not re.fullmatch(r'[A-Z][A-Z0-9_]*', name) or len(tokens)>1
-                    or not (quoted or double_quoted or literal == '')):
-                raise ValueError('recipes require literal declarations: '+str(path))
+            try:
+                name, value = literal(line)
+            except ValueError:
+                raise ValueError('recipes require literal declarations: '+str(path)) from None
             if name in settings:
                 raise ValueError('duplicate recipe declaration: '+name)
             settings[name] = value

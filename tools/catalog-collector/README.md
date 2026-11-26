@@ -117,8 +117,9 @@ Other scripts under `docs/track/` are frozen research records, not kept working.
 
 `bulk_recipes.py` converts shared wrappers to recipe declarations with literal
 URL predicates; `bulk_recipe_urls.py` keeps long installers' bodies while
-replacing recognized release-selection pipelines (`recipe-url-policies.json`,
-compiled by `recipe_policy_source.py`). Both preview by default and write only
+replacing recognized release-selection pipelines with the recipe's own
+`CATALOG_*` policy lines (`recipe_declarations.policy_lines`, compiled by
+`recipe_policy_source.py`). Both preview by default and write only
 with `--apply`. `tools/recipe-conversion/convert.py` uses them, and the
 [upstream template recognizer](../recipe-reconstruction/README.md) inventories
 a pinned upstream recipe tree:
