@@ -188,3 +188,12 @@ A host still on the old modules (they read `release-catalog-v3`) needs
 `am -s` and its apps reinstalled; `git push origin
 refs/archive/release-catalog-v3:refs/heads/release-catalog-v3` restores the
 branch if one must keep working meanwhile.
+
+November 26, 2026, mylenovo (the second host on this fork): it had the old
+`catalog-contract-*` modules, but its 18 recipes were already the new ones
+(`CATALOG_FORMAT=3`, `AMREPO=…/main-marek`; kitty's byte-equal to myxps's),
+so no reinstall was needed. `am -s` added `catalog-reader.am`,
+`catalog-parser.am` and `catalog-tables.am` and removed the
+`catalog-contract-*` ones; `APP-MANAGER` and all 11 modules then matched
+`main-marek` (sha256). `am -u` exit 0 over all apps (9 updated, among them
+kitty to 0.51.1; zmx already 1.0.1), no errors, no sudo prompt.
