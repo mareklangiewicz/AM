@@ -103,3 +103,26 @@ fixture.
    cursor-ai-downloads) are `script` form, and a declaration is a set of
    `CATALOG_*` shell assignments, not YAML. That goes to round 2.
 5. `removed.json` and `run.json` become YAML.
+
+### November 26, 2026: grilling round 2 (Marek: yes to all)
+
+6. New enrollments: a third repository-file state, "enrolled, not yet read":
+   `$schema`, `repository_id`, `repository` and `releases: {}`, with no
+   `observed_at` and no `failed_at`. The schema, `modules/catalog-parser.am`
+   and `tools/catalog-contract/parse.mjs` each accept it, with a test in each.
+   This settles the stub question from round 1.
+7. Git facts: the 5 scripts get `CATALOG_GIT_*` assignments (for example
+   `CATALOG_GIT_TAGS=true`, `CATALOG_GIT_BRANCH_FILES='master:VERSION'`), and
+   the policy generator reads them. Install conversion waits for the
+   follow-up ticket. When recipes become yamx YAML, each assignment maps to a
+   key. This replaces round 1's "convert those 5 now".
+8. `tools/catalog-contract/platforms.json` becomes
+   `tools/catalog-contract/platforms.yaml`. It stays out of `catalog/`
+   because AM hosts don't need it. Its readers are the collector and the page;
+   no shell reads it (the e2e tests only copy it).
+9. Every new YAML file (`retired-names.yaml`, the run outputs,
+   `platforms.yaml`) uses the catalog grammar from `docs/catalog-format.md`,
+   each with a schema `$defs` entry. Lists become maps: in `platforms.yaml`,
+   `linux_words` maps each word to `true` and `architecture_words` maps each
+   word to its processor; each retired name maps to `true`. No new YAML file
+   is read by a shell.
