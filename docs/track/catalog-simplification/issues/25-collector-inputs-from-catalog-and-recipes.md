@@ -82,12 +82,12 @@ Comments). Enrollment is the app set in `catalog/apps.yaml`, and identities come
 from the repository files. A new app starts as a never-read repository file
 (`releases: {}`, nothing observed). File names are derived from the `apps.yaml`
 pointers, and the 25 retired names are kept in `retired-names.yaml`. Both
-policy files are generated in memory until the 1,072 inline-form scripts are
-converted. The 5 Git sources become `CATALOG_GIT_*` assignments in their
+policy files' rows move into their recipes as `CATALOG_*` assignments (the
+correction in Comments replaces "generated in memory"). The 5 Git sources become `CATALOG_GIT_*` assignments in their
 scripts. `platforms.json`, `removed.json` and `run.json` become YAML. Every new
 YAML file uses the catalog grammar, with lists written as maps; no shell reads
 any of them. `collection-recipes.txt` stays. Implemented in
-[26](26-generate-policy-files-in-memory.md),
+[26](26-move-policy-rows-into-recipes.md),
 [27](27-accept-a-never-read-repository-file.md),
 [28](28-enroll-from-apps-yaml.md) (after 27),
 [29](29-move-git-sources-into-recipes.md),
@@ -146,3 +146,22 @@ any of them. `collection-recipes.txt` stays. Implemented in
    `linux_words` maps each word to `true` and `architecture_words` maps each
    word to its processor; each retired name maps to `true`. No new YAML file
    is read by a shell.
+
+### November 26, 2026: correction, item 3 superseded (Marek: yes)
+
+The Evidence table is wrong about `recipe-url-policies.json` and
+`appimage-policies.json`. They are not generated from `programs/`; they are
+the only place the facts live. `bulk_recipe_urls.py` pulled each recipe's
+URL rules out of its `curl | grep` pipeline, then replaced the pipeline with a
+`catalog-yaml.am` call. `programs/aarch64/6502-emulator`, for example, keeps no
+repository or rules. `source_sha256` only detects that a recipe changed since
+its row was written. `scripts/25/measure.py` took it for proof of generation.
+`appimage_policy_source.py` says outright that its JSON "is a source of truth".
+Both compile into `modules/catalog-yaml-policy.am`, which hosts fetch.
+
+Item 3 is replaced: each of the 1,569 rows (1,464 + 105) moves into its own
+recipe as `CATALOG_*` assignments, kitty's identity lines plus the URL rules.
+The generator reads the recipes, and both JSON files go. Install bodies don't
+change. Until that lands, the JSON stays committed and unchanged, with no
+interim YAML. This is [ticket 26](26-move-policy-rows-into-recipes.md),
+rewritten.
