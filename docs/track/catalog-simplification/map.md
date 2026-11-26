@@ -77,6 +77,10 @@ Done: 18 (claimed, twins pending), 23 (warn on old data).
 - The installer side of facts-only same-tag records: how AM's updater reads
   them and where rolling tags are declared, charted as
   [ticket 19](issues/19-how-am-updater-reads-release-facts.md).
+- The collector's JSON inputs: which facts must be kept, derived from
+  `catalog/` and the recipes otherwise, and kept in shell-parseable YAML
+  (recipes themselves later become YAML; see yamx), charted as
+  [ticket 25](issues/25-collector-inputs-from-catalog-and-recipes.md).
 - Run limits (16 MiB per response, request/byte/time budgets): probably never
   user-facing except through failures; revisit after ticket 11.
 
