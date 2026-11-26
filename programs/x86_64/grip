@@ -1,6 +1,11 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=1378790157
+CATALOG_REPOSITORY=karimz1/open-file-lock-handle
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*download.*","ignore_case":true,"exclude":false},{"pattern":"i386|i686|armhf|aarch64|arm64|armv7l","ignore_case":true,"exclude":true},{"pattern":"linux","ignore_case":true,"exclude":false}]'
+CATALOG_SOURCE_ALIASES=karimz1/grip
 AMREPO=${AMREPO-}
 export AMREPO
 

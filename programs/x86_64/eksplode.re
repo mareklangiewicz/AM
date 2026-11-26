@@ -6,6 +6,10 @@ APP=eksplode.re
 CATALOG_FORMAT=3
 CATALOG_RECIPE="x86_64/eksplode.re"
 CATALOG_ALIAS="https://api.github.com/repos/AmarOk1412/Eksplode.re/releases"
+CATALOG_APPIMAGE_ENDPOINT=list
+CATALOG_REPOSITORY_ID=261333718
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"i386|i686|aarch64|arm64|armv7l","ignore_case":true,"exclude":true}]'
 
 select_asset() {
 	sed 's/[()",{} ]/\n/g' | grep -oi "https.*mage$" | grep -vi "i386\|i686\|aarch64\|arm64\|armv7l" | head -1

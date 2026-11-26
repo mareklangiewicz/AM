@@ -1,6 +1,13 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=25396290
+CATALOG_REPOSITORY=fsquillace/junest
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":".","ignore_case":false,"exclude":false}]'
+CATALOG_SELECTION=git-file
+CATALOG_GIT_REF=refs/heads/master
+CATALOG_GIT_FILE=VERSION
 AMREPO=${AMREPO-}
 export AMREPO
 

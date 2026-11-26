@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=423416653
+CATALOG_REPOSITORY=mgord9518/aisap
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*aisap.*x86_64.*mage$","ignore_case":true,"exclude":false}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

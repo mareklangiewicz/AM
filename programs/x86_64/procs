@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=167957539
+CATALOG_REPOSITORY=dalance/procs
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*x86_64.*linux.*zip$","ignore_case":true,"exclude":false}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

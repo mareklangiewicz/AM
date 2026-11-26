@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=594557278
+CATALOG_REPOSITORY=ssleert/zfxtop
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*zfxtop.*linux.*amd64.*gz$","ignore_case":true,"exclude":false}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

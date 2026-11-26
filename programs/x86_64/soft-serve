@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=391209033
+CATALOG_REPOSITORY=charmbracelet/soft-serve
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*soft-serve.*linux.*x86_64.*gz$","ignore_case":true,"exclude":false}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

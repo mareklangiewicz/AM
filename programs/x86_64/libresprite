@@ -1,6 +1,14 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=67058735
+CATALOG_REPOSITORY=LibreSprite/LibreSprite
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*linux.*zip$","ignore_case":true,"exclude":false},{"pattern":"i386|i686|aarch64|arm64|armv7l","ignore_case":true,"exclude":true}]'
+CATALOG_REPOSITORY_ID_2=67058735
+CATALOG_REPOSITORY_2=LibreSprite/LibreSprite
+CATALOG_CHANNEL_2=any
+CATALOG_URL_RULES_2='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"i386|i686|aarch64|arm64|armv7l","ignore_case":true,"exclude":true}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

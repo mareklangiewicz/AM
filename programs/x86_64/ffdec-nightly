@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=19647328
+CATALOG_REPOSITORY=jindrapetrik/jpexs-decompiler
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*nightly.*.zip$","ignore_case":true,"exclude":false},{"pattern":"macos","ignore_case":true,"exclude":true}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

@@ -6,6 +6,10 @@ APP=polymc
 CATALOG_FORMAT=3
 CATALOG_RECIPE="aarch64/polymc"
 CATALOG_ALIAS="https://api.github.com/repos/PolyMC/PolyMC/releases/latest"
+CATALOG_APPIMAGE_ENDPOINT=latest
+CATALOG_REPOSITORY_ID=439448087
+CATALOG_CHANNEL=stable
+CATALOG_URL_RULES='[{"pattern":"https.*download.*mage$","ignore_case":true,"exclude":false},{"pattern":"aarch64|arm64","ignore_case":true,"exclude":false}]'
 
 select_asset() {
 	sed 's/[()",{} ]/\n/g' | grep -oi "https.*download.*mage$" |  grep -i "aarch64\|arm64" | head -1

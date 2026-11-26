@@ -1,6 +1,14 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=338379949
+CATALOG_REPOSITORY=streamlink/streamlink-appimage
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"aarch64","ignore_case":true,"exclude":false}]'
+CATALOG_REPOSITORY_ID_2=338379949
+CATALOG_REPOSITORY_2=streamlink/streamlink-appimage
+CATALOG_CHANNEL_2=any
+CATALOG_URL_RULES_2='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"aarch64","ignore_case":true,"exclude":true}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

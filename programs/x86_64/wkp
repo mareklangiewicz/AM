@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=525236217
+CATALOG_REPOSITORY=Idontknow13/wkp
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*wkp.*wkp$","ignore_case":true,"exclude":false}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

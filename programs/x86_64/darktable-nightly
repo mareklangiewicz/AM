@@ -1,6 +1,14 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=3791835
+CATALOG_REPOSITORY=darktable-org/darktable
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*download.*mage$","ignore_case":true,"exclude":false},{"pattern":"i386|i686|armhf|aarch64|arm64|armv7l","ignore_case":true,"exclude":true},{"pattern":"nightly","ignore_case":true,"exclude":false}]'
+CATALOG_REPOSITORY_ID_2=3791835
+CATALOG_REPOSITORY_2=darktable-org/darktable
+CATALOG_CHANNEL_2=any
+CATALOG_URL_RULES_2='[{"pattern":"https.*download.*mage$","ignore_case":true,"exclude":false},{"pattern":"i386|i686|armhf|aarch64|arm64|armv7l","ignore_case":true,"exclude":true}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

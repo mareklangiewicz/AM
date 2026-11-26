@@ -1,6 +1,11 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=219839944
+CATALOG_REPOSITORY=minecraft-linux/appimage-builder
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*launcher-x86_64.*mage$","ignore_case":true,"exclude":false}]'
+CATALOG_SELECTION=asset
 AMREPO=${AMREPO-}
 export AMREPO
 if [ -z "${AM_CATALOG_SESSION-}" ]; then

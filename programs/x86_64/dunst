@@ -1,6 +1,11 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=804783544
+CATALOG_REPOSITORY=pkgforge-dev/dunst-AppImage
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*dunst.*x86_64.*mage$","ignore_case":true,"exclude":false}]'
+CATALOG_SOURCE_ALIASES=Samueru-sama/dunst-AppImage
 AMREPO=${AMREPO-}
 export AMREPO
 

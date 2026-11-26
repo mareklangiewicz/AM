@@ -1,6 +1,14 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=1101876205
+CATALOG_REPOSITORY=pkgforge-dev/Extension-Manager-AppImage
+CATALOG_CHANNEL=stable
+CATALOG_URL_RULES='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"aarch64","ignore_case":true,"exclude":false}]'
+CATALOG_REPOSITORY_ID_2=1101876205
+CATALOG_REPOSITORY_2=pkgforge-dev/Extension-Manager-AppImage
+CATALOG_CHANNEL_2=stable
+CATALOG_URL_RULES_2='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"i386|i686|aarch64|arm64|armv7l","ignore_case":true,"exclude":true}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

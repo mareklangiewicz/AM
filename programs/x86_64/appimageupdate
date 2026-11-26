@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=1188414238
+CATALOG_REPOSITORY=pkgforge-dev/AppImageUpdate
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*","ignore_case":true,"exclude":false},{"pattern":"x86_64|amd64","ignore_case":true,"exclude":false},{"pattern":"http.*releases.*download.*","ignore_case":true,"exclude":false}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

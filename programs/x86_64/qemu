@@ -1,6 +1,17 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=622639614
+CATALOG_REPOSITORY=lucasmz1/Qemu-AppImage
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*qemu.*86_64.*mage$","ignore_case":true,"exclude":false},{"pattern":"qemu|continuous","ignore_case":true,"exclude":false}]'
+CATALOG_SOURCE_ALIASES=lucasmz1/Qemu_Appimage
+CATALOG_REPOSITORY_ID_2=1191585558
+CATALOG_REPOSITORY_2=pkgforge-dev/QEMU-AppImage
+CATALOG_CHANNEL_2=any
+CATALOG_URL_RULES_2='[{"pattern":"https.*qemu.*86_64.*mage$","ignore_case":true,"exclude":false},{"pattern":"qemu|continuous","ignore_case":true,"exclude":false}]'
+CATALOG_APP_2=qemu.src-1191585558
+CATALOG_DISPATCH_RECIPE_2=x86_64/qemu
 AMREPO=${AMREPO-}
 export AMREPO
 

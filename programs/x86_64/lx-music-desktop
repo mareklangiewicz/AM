@@ -1,6 +1,15 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=202367615
+CATALOG_REPOSITORY=lyswhut/lx-music-desktop
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"i386|i686|aarch64|arm64|armv7l","ignore_case":true,"exclude":true}]'
+CATALOG_REPOSITORY_ID_2=1289983381
+CATALOG_REPOSITORY_2=xinzhihong-ship-it/lx-music-desktop-enhanced
+CATALOG_CHANNEL_2=any
+CATALOG_URL_RULES_2='[{"pattern":"https.*download.*","ignore_case":true,"exclude":false},{"pattern":"i386|i686|armhf|aarch64|arm64|armv7l","ignore_case":true,"exclude":true},{"pattern":"appimage$","ignore_case":true,"exclude":false}]'
+CATALOG_APP_2=lx-music-desktop.src-1289983381
 AMREPO=${AMREPO-}
 export AMREPO
 

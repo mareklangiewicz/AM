@@ -1,6 +1,11 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=702256725
+CATALOG_REPOSITORY=ivan-hc/32-bit-AppImage-packages-database
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*chromium.*mage$","ignore_case":true,"exclude":false}]'
+CATALOG_APP=chromium.src-702256725
 AMREPO=${AMREPO-}
 export AMREPO
 

@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=797626600
+CATALOG_REPOSITORY=pando85/i3-auto-layout
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*i3-auto-layout.*tar.gz$","ignore_case":false,"exclude":false}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

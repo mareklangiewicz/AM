@@ -1,6 +1,11 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=443892240
+CATALOG_REPOSITORY=felipebulcao/nazuna
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*","ignore_case":true,"exclude":false},{"pattern":"i386|i686|aarch64|arm64|armv7l","ignore_case":true,"exclude":true},{"pattern":"x86_64-unknown-linux","ignore_case":true,"exclude":false}]'
+CATALOG_SOURCE_ALIASES=Sazzo/nazuna
 AMREPO=${AMREPO-}
 export AMREPO
 

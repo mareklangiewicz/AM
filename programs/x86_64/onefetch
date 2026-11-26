@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=148829497
+CATALOG_REPOSITORY=o2sh/onefetch
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*onefetch.*linux.*gz$","ignore_case":true,"exclude":false}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

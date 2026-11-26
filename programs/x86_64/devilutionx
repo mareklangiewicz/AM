@@ -1,6 +1,15 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=143324737
+CATALOG_REPOSITORY=diasurgical/DevilutionX
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"amd64|x86_64|x64|x86-64","ignore_case":true,"exclude":false}]'
+CATALOG_REPOSITORY_ID_2=1138986887
+CATALOG_REPOSITORY_2=pkgforge-dev/DevilutionX-AppImage-Enhanced
+CATALOG_CHANNEL_2=stable
+CATALOG_URL_RULES_2='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"amd64|x86_64|x64|x86-64","ignore_case":true,"exclude":false}]'
+CATALOG_APP_2=devilutionx.src-1138986887
 AMREPO=${AMREPO-}
 export AMREPO
 

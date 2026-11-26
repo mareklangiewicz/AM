@@ -6,6 +6,10 @@ APP=slick
 CATALOG_FORMAT=3
 CATALOG_RECIPE="aarch64/slick"
 CATALOG_ALIAS="https://api.github.com/repos/3kh0/slick/releases"
+CATALOG_APPIMAGE_ENDPOINT=list
+CATALOG_REPOSITORY_ID=1260466044
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*download.*mage$","ignore_case":true,"exclude":false},{"pattern":"aarch64|arm64","ignore_case":true,"exclude":false}]'
 
 select_asset() {
 	sed 's/[()",{} ]/\n/g' | grep -oi "https.*download.*mage$" |  grep -i "aarch64\|arm64" | head -1

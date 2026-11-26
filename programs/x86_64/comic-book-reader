@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=267543469
+CATALOG_REPOSITORY=binarynonsense/comic-book-reader
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*mage.*zip$","ignore_case":true,"exclude":false},{"pattern":"i386|i686|aarch64|arm64|armv7l","ignore_case":true,"exclude":true}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

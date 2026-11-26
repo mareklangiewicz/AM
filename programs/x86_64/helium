@@ -1,6 +1,16 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=1043354934
+CATALOG_REPOSITORY=imputnet/helium-linux
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*x86_64.*mage$","ignore_case":true,"exclude":false}]'
+CATALOG_REPOSITORY_ID_2=1190966480
+CATALOG_REPOSITORY_2=pkgforge-dev/Helium-Browser-AppImage-Enhanced
+CATALOG_CHANNEL_2=any
+CATALOG_URL_RULES_2='[{"pattern":"https.*x86_64.*mage$","ignore_case":true,"exclude":false}]'
+CATALOG_APP_2=helium.src-1190966480
+CATALOG_DISPATCH_RECIPE_2=x86_64/helium
 AMREPO=${AMREPO-}
 export AMREPO
 

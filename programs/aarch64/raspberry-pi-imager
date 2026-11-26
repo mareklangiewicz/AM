@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=211858553
+CATALOG_REPOSITORY=raspberrypi/rpi-imager
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"aarch64|arm64","ignore_case":true,"exclude":false},{"pattern":"cli|embed","ignore_case":false,"exclude":true}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

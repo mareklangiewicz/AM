@@ -6,6 +6,10 @@ APP=brave-beta
 CATALOG_FORMAT=3
 CATALOG_RECIPE="x86_64/brave-beta"
 CATALOG_ALIAS="https://api.github.com/repos/ivan-hc/Brave-appimage/releases"
+CATALOG_APPIMAGE_ENDPOINT=list
+CATALOG_REPOSITORY_ID=947512058
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*x86_64.*mage$","ignore_case":true,"exclude":false},{"pattern":"beta","ignore_case":true,"exclude":false}]'
 
 select_asset() {
 	sed 's/[()",{} ]/\n/g' | grep -oi "https.*x86_64.*mage$"| grep -i "beta" | head -1

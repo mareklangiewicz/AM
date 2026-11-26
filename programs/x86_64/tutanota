@@ -1,6 +1,16 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=22344874
+CATALOG_REPOSITORY=tutao/tutanota
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"i386|i686|aarch64|arm64|armv7l","ignore_case":true,"exclude":true}]'
+CATALOG_REPOSITORY_ID_2=1118874414
+CATALOG_REPOSITORY_2=pkgforge-dev/Tutanota-Desktop-AppImage-Enhanced
+CATALOG_CHANNEL_2=any
+CATALOG_URL_RULES_2='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"amd64|x86_64|x64|x86-64","ignore_case":true,"exclude":false}]'
+CATALOG_APP_2=tutanota.src-1118874414
+CATALOG_SOURCE_ALIASES_2=pkgforge-dev/Tutanota-Desktop-AppImage
 AMREPO=${AMREPO-}
 export AMREPO
 

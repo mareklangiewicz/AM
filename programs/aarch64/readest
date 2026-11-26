@@ -1,6 +1,15 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=871781831
+CATALOG_REPOSITORY=readest/readest
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"aarch64|arm64","ignore_case":true,"exclude":false}]'
+CATALOG_REPOSITORY_ID_2=1193888767
+CATALOG_REPOSITORY_2=pkgforge-dev/Readest-AppImage-Enhanced
+CATALOG_CHANNEL_2=any
+CATALOG_URL_RULES_2='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"aarch64|arm64","ignore_case":true,"exclude":false}]'
+CATALOG_APP_2=readest.src-1193888767
 AMREPO=${AMREPO-}
 export AMREPO
 

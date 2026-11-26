@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=522965684
+CATALOG_REPOSITORY=Beastwick18/nyaa
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*nyaa.*(x|d|86_)64.*gnu$","ignore_case":true,"exclude":false},{"pattern":"apple|windows|darwin","ignore_case":true,"exclude":true}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

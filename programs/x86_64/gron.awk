@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=418089545
+CATALOG_REPOSITORY=xonixx/gron.awk
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*","ignore_case":true,"exclude":false},{"pattern":"i386|i686|aarch64|arm64|armv7l","ignore_case":true,"exclude":true},{"pattern":"https.*.gron.awk.*tarball","ignore_case":true,"exclude":false}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

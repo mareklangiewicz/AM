@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=706943442
+CATALOG_REPOSITORY=grafviktor/goto
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*goto.*(z$|ip$|goto$)","ignore_case":true,"exclude":false},{"pattern":"apple|windows|darwin|aarch64","ignore_case":true,"exclude":true}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

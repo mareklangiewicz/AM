@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=1073900202
+CATALOG_REPOSITORY=neurosnap/zmx
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*zmx.*(aarch64|arm64).*(z$|ip$|zmx$)","ignore_case":true,"exclude":false},{"pattern":"apple|windows|darwin|macos","ignore_case":true,"exclude":true}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

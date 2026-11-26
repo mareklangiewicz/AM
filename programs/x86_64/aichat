@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=608896930
+CATALOG_REPOSITORY=sigoden/aichat
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*aichat.*x86_64-unknown-linux-musl.tar.gz","ignore_case":true,"exclude":false}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

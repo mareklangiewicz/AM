@@ -1,6 +1,11 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=872860168
+CATALOG_REPOSITORY=EmmyLuaLs/emmylua-analyzer-rust
+CATALOG_CHANNEL=stable
+CATALOG_URL_RULES='[{"pattern":"https.*/emmylua_ls-linux-aarch64-glibc.2.17.tar.gz$","ignore_case":true,"exclude":false}]'
+CATALOG_SELECTION=asset
 AMREPO=${AMREPO-}
 export AMREPO
 if [ -z "${AM_CATALOG_SESSION-}" ]; then

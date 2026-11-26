@@ -1,6 +1,16 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=682095111
+CATALOG_REPOSITORY=lucasmz1/Lutris_AppImage
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*86_64.*mage$","ignore_case":true,"exclude":false},{"pattern":"lutris|continuous","ignore_case":true,"exclude":false}]'
+CATALOG_REPOSITORY_ID_2=957279362
+CATALOG_REPOSITORY_2=pkgforge-dev/Lutris-AppImage
+CATALOG_CHANNEL_2=any
+CATALOG_URL_RULES_2='[{"pattern":"https.*86_64.*mage$","ignore_case":true,"exclude":false},{"pattern":"lutris|continuous","ignore_case":true,"exclude":false}]'
+CATALOG_APP_2=lutris.src-957279362
+CATALOG_DISPATCH_RECIPE_2=x86_64/lutris
 AMREPO=${AMREPO-}
 export AMREPO
 

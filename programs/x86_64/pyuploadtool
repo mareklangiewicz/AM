@@ -1,6 +1,14 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=319480187
+CATALOG_REPOSITORY=TheAssassin/pyuploadtool
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*download.*","ignore_case":true,"exclude":false},{"pattern":"i386|i686|armhf|aarch64|arm64|armv7l|continuous","ignore_case":true,"exclude":true}]'
+CATALOG_REPOSITORY_ID_2=319480187
+CATALOG_REPOSITORY_2=TheAssassin/pyuploadtool
+CATALOG_CHANNEL_2=any
+CATALOG_URL_RULES_2='[{"pattern":"https.*download.*","ignore_case":true,"exclude":false},{"pattern":"i386|i686|armhf|aarch64|arm64|armv7l","ignore_case":true,"exclude":true}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

@@ -1,6 +1,16 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=122294881
+CATALOG_REPOSITORY=doublecmd/doublecmd
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":".","ignore_case":true,"exclude":false}]'
+CATALOG_SELECTION=release
+CATALOG_REPOSITORY_ID_2=122294881
+CATALOG_REPOSITORY_2=doublecmd/doublecmd
+CATALOG_CHANNEL_2=any
+CATALOG_URL_RULES_2='[{"pattern":"https.*qt.*x86_64.*appimage","ignore_case":true,"exclude":false}]'
+CATALOG_SELECTION_2=asset
 AMREPO=${AMREPO-}
 export AMREPO
 if [ -z "${AM_CATALOG_SESSION-}" ]; then

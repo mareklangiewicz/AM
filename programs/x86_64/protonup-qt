@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=401097946
+CATALOG_REPOSITORY=DavidoTek/ProtonUp-Qt
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*protonup-qt.*x86_64.*mage$","ignore_case":true,"exclude":false}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

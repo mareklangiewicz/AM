@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=796064162
+CATALOG_REPOSITORY=tycho-kirchner/fastcompmgr
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*fastcompmgr$","ignore_case":false,"exclude":false}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

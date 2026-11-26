@@ -1,6 +1,15 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=18452313
+CATALOG_REPOSITORY=nxengine/nxengine-evo
+CATALOG_CHANNEL=stable
+CATALOG_URL_RULES='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"amd64|x86_64|x64|x86-64","ignore_case":true,"exclude":false}]'
+CATALOG_REPOSITORY_ID_2=1138876687
+CATALOG_REPOSITORY_2=pkgforge-dev/NXEngine-evo-AppImage-Enhanced
+CATALOG_CHANNEL_2=stable
+CATALOG_URL_RULES_2='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"amd64|x86_64|x64|x86-64","ignore_case":true,"exclude":false}]'
+CATALOG_APP_2=nxengine-evo.src-1138876687
 AMREPO=${AMREPO-}
 export AMREPO
 

@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=1194820218
+CATALOG_REPOSITORY=DrSoma/PathSafe
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*download.*","ignore_case":true,"exclude":false},{"pattern":"aarch64|arm64","ignore_case":true,"exclude":false}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

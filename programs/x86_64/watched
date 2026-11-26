@@ -1,6 +1,13 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=372085438
+CATALOG_REPOSITORY=mediaurl/mediaurl-js
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":".","ignore_case":false,"exclude":false}]'
+CATALOG_SELECTION=git-tag
+CATALOG_TAG_PATTERN='^v[0-9]'
+CATALOG_TAG_EXCLUDE='alpha|next'
 AMREPO=${AMREPO-}
 export AMREPO
 

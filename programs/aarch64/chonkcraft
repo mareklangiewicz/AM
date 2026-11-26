@@ -1,6 +1,11 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=1330448062
+CATALOG_REPOSITORY=chriskearney/chonkcraft
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*download.*","ignore_case":true,"exclude":false},{"pattern":"aarch64|arm64","ignore_case":true,"exclude":false}]'
+CATALOG_SOURCE_ALIASES=iconidentify/chonkcraft
 AMREPO=${AMREPO-}
 export AMREPO
 

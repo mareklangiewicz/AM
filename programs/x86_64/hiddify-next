@@ -1,6 +1,11 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=643504282
+CATALOG_REPOSITORY=hiddify/hiddify-app
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"i386|i686|aarch64|arm64|armv7l","ignore_case":true,"exclude":true}]'
+CATALOG_SOURCE_ALIASES=hiddify/hiddify-next
 AMREPO=${AMREPO-}
 export AMREPO
 

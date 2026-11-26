@@ -6,6 +6,10 @@ APP=ghostty-glfw-nightly
 CATALOG_FORMAT=3
 CATALOG_RECIPE="x86_64/ghostty-glfw-nightly"
 CATALOG_ALIAS="https://api.github.com/repos/pkgforge-dev/ghostty-appimage/releases"
+CATALOG_APPIMAGE_ENDPOINT=list
+CATALOG_REPOSITORY_ID=912943674
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*glfw.*x86_64.*mage$","ignore_case":true,"exclude":false},{"pattern":"main","ignore_case":true,"exclude":false}]'
 
 select_asset() {
 	sed 's/[()",{} ]/\n/g' | grep -oi "https.*glfw.*x86_64.*mage$" | grep -i "main" | head -1

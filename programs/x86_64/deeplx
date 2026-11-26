@@ -1,6 +1,11 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=552635490
+CATALOG_REPOSITORY=OwO-Network/DLX
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*deeplx.*linux.*amd64$","ignore_case":true,"exclude":false}]'
+CATALOG_SOURCE_ALIASES=OwO-Network/DeepLX
 AMREPO=${AMREPO-}
 export AMREPO
 

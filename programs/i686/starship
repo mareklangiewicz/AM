@@ -1,6 +1,14 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=178991158
+CATALOG_REPOSITORY=starship/starship
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*","ignore_case":true,"exclude":false},{"pattern":"i386|i686","ignore_case":true,"exclude":false},{"pattern":"download.*linux.*musl","ignore_case":true,"exclude":false}]'
+CATALOG_REPOSITORY_ID_2=178991158
+CATALOG_REPOSITORY_2=starship/starship
+CATALOG_CHANNEL_2=any
+CATALOG_URL_RULES_2='[{"pattern":"https.*","ignore_case":true,"exclude":false},{"pattern":"i386|i686","ignore_case":true,"exclude":true},{"pattern":"download.*linux.*musl","ignore_case":true,"exclude":false}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

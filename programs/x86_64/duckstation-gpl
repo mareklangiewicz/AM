@@ -1,6 +1,15 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=1028948018
+CATALOG_REPOSITORY=Kyuyrii/Duckstation-GPL
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*download.*","ignore_case":true,"exclude":false},{"pattern":"amd64|x86_64|x64|x86-64","ignore_case":true,"exclude":false},{"pattern":"appimage$","ignore_case":true,"exclude":false}]'
+CATALOG_REPOSITORY_ID_2=1187034058
+CATALOG_REPOSITORY_2=pkgforge-dev/DuckStation-GPL-AppImage-Enhanced
+CATALOG_CHANNEL_2=stable
+CATALOG_URL_RULES_2='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"amd64|x86_64|x64|x86-64","ignore_case":true,"exclude":false}]'
+CATALOG_APP_2=duckstation-gpl.src-1187034058
 AMREPO=${AMREPO-}
 export AMREPO
 

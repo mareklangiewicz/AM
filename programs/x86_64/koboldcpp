@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=614637892
+CATALOG_REPOSITORY=LostRuins/koboldcpp
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*koboldcpp.*(x|d|86_)64.*nocuda$","ignore_case":true,"exclude":false},{"pattern":"apple|windows|darwin","ignore_case":true,"exclude":true}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

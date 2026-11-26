@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=813825047
+CATALOG_REPOSITORY=eugene-babichenko/fixit
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*fixit.*(x|d|86_)64.*(z$|ip$|fixit$)","ignore_case":true,"exclude":false},{"pattern":"apple|windows|darwin","ignore_case":true,"exclude":true}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

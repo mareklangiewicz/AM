@@ -1,6 +1,14 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=229959677
+CATALOG_REPOSITORY=dbgate/dbgate
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*dbgate-premium-[0-9]+.*mage$","ignore_case":true,"exclude":false},{"pattern":"i386|i686|aarch64|arm64|armv7l","ignore_case":true,"exclude":true}]'
+CATALOG_REPOSITORY_ID_2=229959677
+CATALOG_REPOSITORY_2=dbgate/dbgate
+CATALOG_CHANNEL_2=any
+CATALOG_URL_RULES_2='[{"pattern":"https.*dbgate-premium-[0-9]\\+.*mage$","ignore_case":true,"exclude":false},{"pattern":"i386|i686|aarch64|arm64|armv7l","ignore_case":true,"exclude":true}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

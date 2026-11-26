@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=1059206144
+CATALOG_REPOSITORY=shadps4-emu/shadps4-qtlauncher
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"^https.*download","ignore_case":true,"exclude":false},{"pattern":"linux|appimage","ignore_case":true,"exclude":false}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

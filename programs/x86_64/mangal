@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=494733737
+CATALOG_REPOSITORY=metafates/mangal
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*mangal.*(x|d|86_)64.*(z$|ip$|mangal$)","ignore_case":true,"exclude":false},{"pattern":"apple|windows|darwin","ignore_case":true,"exclude":true}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

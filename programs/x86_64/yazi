@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=663900193
+CATALOG_REPOSITORY=sxyazi/yazi
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*x86_64.*linux.*gnu.*zip$","ignore_case":false,"exclude":false}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

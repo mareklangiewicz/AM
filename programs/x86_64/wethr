@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=405544069
+CATALOG_REPOSITORY=risoflora/wethr
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*","ignore_case":true,"exclude":false},{"pattern":"i386|i686|aarch64|arm64|armv7l","ignore_case":true,"exclude":true},{"pattern":"x86_64-unknown-linux-gnu.zip","ignore_case":true,"exclude":false}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

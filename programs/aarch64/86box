@@ -1,6 +1,15 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=61964127
+CATALOG_REPOSITORY=86Box/86Box
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*arm64.*mage$","ignore_case":true,"exclude":false}]'
+CATALOG_REPOSITORY_ID_2=1177491291
+CATALOG_REPOSITORY_2=pkgforge-dev/86box-AppImage-Enhanced
+CATALOG_CHANNEL_2=stable
+CATALOG_URL_RULES_2='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"aarch64|arm64","ignore_case":true,"exclude":false}]'
+CATALOG_APP_2=86box.src-1177491291
 AMREPO=${AMREPO-}
 export AMREPO
 

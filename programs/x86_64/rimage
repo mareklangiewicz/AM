@@ -1,6 +1,11 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=616723436
+CATALOG_REPOSITORY=vlad-salone/rimage
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*","ignore_case":true,"exclude":false},{"pattern":"i386|i686|aarch64|arm64|armv7l","ignore_case":true,"exclude":true},{"pattern":"x86_64.*linux.*musl.*tar.gz$","ignore_case":true,"exclude":false}]'
+CATALOG_SOURCE_ALIASES=SalOne22/rimage
 AMREPO=${AMREPO-}
 export AMREPO
 

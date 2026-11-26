@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=477252993
+CATALOG_REPOSITORY=diamondburned/dissent
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*dissent.*amd64.tar.zst$","ignore_case":true,"exclude":false}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

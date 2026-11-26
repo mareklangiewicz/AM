@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=513472734
+CATALOG_REPOSITORY=sayanarijit/qrscan
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*qrscan.*unknown.*linux.*musl.*gz$","ignore_case":true,"exclude":false}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

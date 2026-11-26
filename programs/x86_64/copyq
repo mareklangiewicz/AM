@@ -1,6 +1,15 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=344809
+CATALOG_REPOSITORY=hluk/CopyQ
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*download.*mage$","ignore_case":true,"exclude":false},{"pattern":"amd64|x86_64|x64|x86-64","ignore_case":true,"exclude":false}]'
+CATALOG_REPOSITORY_ID_2=1199100446
+CATALOG_REPOSITORY_2=pkgforge-dev/CopyQ-AppImage
+CATALOG_CHANNEL_2=any
+CATALOG_URL_RULES_2='[{"pattern":"https.*download.*mage$","ignore_case":true,"exclude":false},{"pattern":"amd64|x86_64|x64|x86-64","ignore_case":true,"exclude":false}]'
+CATALOG_APP_2=copyq.src-1199100446
 AMREPO=${AMREPO-}
 export AMREPO
 

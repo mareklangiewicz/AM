@@ -6,6 +6,10 @@ APP=openra-tiberian-dawn
 CATALOG_FORMAT=3
 CATALOG_RECIPE="x86_64/openra-tiberian-dawn"
 CATALOG_ALIAS="https://api.github.com/repos/OpenRA/OpenRA/releases"
+CATALOG_APPIMAGE_ENDPOINT=list
+CATALOG_REPOSITORY_ID=959908
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*tiberian.*mage$","ignore_case":true,"exclude":false},{"pattern":"i386|i686|aarch64|arm64|armv7l","ignore_case":true,"exclude":true}]'
 
 select_asset() {
 	sed 's/[()",{} ]/\n/g' | grep -oi "https.*tiberian.*mage$" | grep -vi "i386\|i686\|aarch64\|arm64\|armv7l" | head -1

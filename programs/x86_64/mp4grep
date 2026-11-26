@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=390060017
+CATALOG_REPOSITORY=o-oconnell/mp4grep
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*mp4grep.*linux.*x86.zip$","ignore_case":true,"exclude":false}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

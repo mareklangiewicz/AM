@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=555376539
+CATALOG_REPOSITORY=ivan-hc/GNOME3-appimages
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*x86_64.*mage$","ignore_case":true,"exclude":false},{"pattern":"simple-scan","ignore_case":true,"exclude":false}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

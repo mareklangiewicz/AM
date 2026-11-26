@@ -1,6 +1,15 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=767183985
+CATALOG_REPOSITORY=azahar-emu/azahar
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*AppImage$","ignore_case":true,"exclude":false},{"pattern":"aarch64|arm64|armv7l|i386|i686|dockerimage","ignore_case":true,"exclude":true}]'
+CATALOG_REPOSITORY_ID_2=975323259
+CATALOG_REPOSITORY_2=pkgforge-dev/Azahar-AppImage-Enhanced
+CATALOG_CHANNEL_2=stable
+CATALOG_URL_RULES_2='[{"pattern":"https.*mage$","ignore_case":true,"exclude":false},{"pattern":"amd64|x86_64|x64|x86-64","ignore_case":true,"exclude":false}]'
+CATALOG_APP_2=azahar.src-975323259
 AMREPO=${AMREPO-}
 export AMREPO
 

@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=94530674
+CATALOG_REPOSITORY=Syllo/nvtop
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*nvtop.*x86_64.*mage$","ignore_case":true,"exclude":false}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=774468912
+CATALOG_REPOSITORY=yorukot/superfile
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*linux.*amd64.*tar.gz$","ignore_case":false,"exclude":false}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=656839452
+CATALOG_REPOSITORY=charmbracelet/pop
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*pop.*linux.*x86_64.*gz$","ignore_case":true,"exclude":false}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

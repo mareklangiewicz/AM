@@ -1,6 +1,11 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=298659447
+CATALOG_REPOSITORY=sammy-ette/bunnyfetch
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*bunnyfetch.*(x|d|86_)64.*(z$|ip$|bunnyfetch$)","ignore_case":true,"exclude":false},{"pattern":"apple|windows|darwin","ignore_case":true,"exclude":true}]'
+CATALOG_SOURCE_ALIASES=Rosettea/bunnyfetch
 AMREPO=${AMREPO-}
 export AMREPO
 

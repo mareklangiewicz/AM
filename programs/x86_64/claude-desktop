@@ -1,6 +1,16 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=908658171
+CATALOG_REPOSITORY=aaddrick/claude-desktop-debian
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*download.*mage$","ignore_case":true,"exclude":false},{"pattern":"x86_64|amd64","ignore_case":true,"exclude":false}]'
+CATALOG_REPOSITORY_ID_2=1317197065
+CATALOG_REPOSITORY_2=patrickjaja/claude-desktop-bin
+CATALOG_CHANNEL_2=any
+CATALOG_URL_RULES_2='[{"pattern":"https.*download.*mage$","ignore_case":true,"exclude":false},{"pattern":"x86_64|amd64","ignore_case":true,"exclude":false}]'
+CATALOG_APP_2=claude-desktop.src-1317197065
+CATALOG_DISPATCH_RECIPE_2=x86_64/claude-desktop
 AMREPO=${AMREPO-}
 export AMREPO
 

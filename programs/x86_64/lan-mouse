@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=536802516
+CATALOG_REPOSITORY=feschber/lan-mouse
+CATALOG_CHANNEL=stable
+CATALOG_URL_RULES='[{"pattern":"https.*releases.*lan-mouse","ignore_case":true,"exclude":false},{"pattern":"macos|windows","ignore_case":true,"exclude":true}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

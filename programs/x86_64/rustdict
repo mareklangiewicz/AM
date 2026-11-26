@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=483500815
+CATALOG_REPOSITORY=Idontknow13/rustdict
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*rustdict.*rdict$","ignore_case":true,"exclude":false}]'
 AMREPO=${AMREPO-}
 export AMREPO
 

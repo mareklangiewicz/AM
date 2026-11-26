@@ -1,6 +1,10 @@
 #!/bin/sh
 # AM-CATALOG-RECIPE 1
 CATALOG_FORMAT=3
+CATALOG_REPOSITORY_ID=372167647
+CATALOG_REPOSITORY=gennaro-tedesco/archimede
+CATALOG_CHANNEL=any
+CATALOG_URL_RULES='[{"pattern":"https.*archimede.*linux-amd64$","ignore_case":true,"exclude":false},{"pattern":"apple|windows|darwin","ignore_case":true,"exclude":true}]'
 AMREPO=${AMREPO-}
 export AMREPO
 
