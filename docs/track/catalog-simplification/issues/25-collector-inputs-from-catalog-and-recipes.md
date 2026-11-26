@@ -76,3 +76,30 @@ fixture.
    Collector-only inputs (read by Python) may need none.
 
 ## Comments
+
+### November 26, 2026: grilling round 1 (Marek: yes to all)
+
+1. Enrollment: `catalog/apps.yaml` becomes the enrollment list. Each app's
+   identity is `repository_id` and `repository` in its repository file, and
+   `collection-apps.json` goes. The collector still rewrites `apps.yaml`, but
+   only to refresh the per-architecture labels, never the set of apps.
+   `collection-recipes.txt` stays (it marks readiness to install, ticket 137).
+   Adding an app means an `apps.yaml` entry plus a stub repository file.
+   Checked afterwards: the stub breaks the current grammar. The schema requires
+   `releases`, and `modules/catalog-parser.am` rejects a never-collected
+   document without a failure. That goes to round 2.
+2. Repository file names come from the `apps.yaml` pointers. The 25 retired
+   names move to `tools/catalog-collector/retired-names.yaml`, and
+   `source-names.json` goes. Git history won't do as the guard, because CI
+   checkouts are shallow.
+3. The 1,072 inline-form scripts get converted to recipe declarations in a
+   follow-up ticket, which retires `recipe-url-policies.json`. Until then the
+   collector and the tests generate both policy files in memory from
+   `programs/`, and the committed copies and `tree_generated_policy` go. If
+   that measures too slow for an hourly run, the copies stay committed until
+   the conversion.
+4. The 5 `git-sources.json` entries move into their recipes. Checked
+   afterwards: all 5 (junest, translate-shell, mediaurl-js, anything-llm,
+   cursor-ai-downloads) are `script` form, and a declaration is a set of
+   `CATALOG_*` shell assignments, not YAML. That goes to round 2.
+5. `removed.json` and `run.json` become YAML.
