@@ -1,57 +1,51 @@
 $schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
 repository_id: 1163926653
 repository: "AandStep/ResultV"
-observed_at: "2026-11-22T15:31:46Z"
+observed_at: "2026-11-26T19:42:26Z"
 history_complete: true
 releases:
-  "413819745":
-    tag: "v3.5.5"
-    title: "ResultV v3.5.5 - Общие улучшения и фиксы / General improvements and fixes"
-    published_at: "2026-10-15T13:03:47Z"
+  "303996333":
+    tag: "v2.2.2"
+    title: "Result Proxy v2.2.2 - Hotfix environment variables"
+    published_at: "2026-04-01T03:30:28Z"
     prerelease: false
     assets:
-      "643890312":
-        name: "resultv_3.5.5_amd64.deb"
-        size: 28165204
-        sha256pre: "b7e86c56ddc68785"
-      "643890313":
-        name: "ResultV.dmg"
-        size: 65667054
-        sha256pre: "ae3a4dd32cf0f13d"
-      "643890314":
-        name: "ResultV-3.5.5-x86_64.AppImage"
-        size: 26421752
-        sha256pre: "4e19a6443dd55f45"
-      "643890315":
-        name: "ResultV.exe"
-        size: 62265856
-        sha256pre: "3e41ca71dfcce763"
-      "643890320":
-        name: "resultv-3.5.5-1.x86_64.rpm"
-        size: 28257830
-        sha256pre: "1488293903a22e85"
-      "643890324":
-        name: "ResultV-amd64-installer.exe"
-        size: 29168362
-        sha256pre: "ef20a9ca97be7288"
-  "416294027":
-    tag: "android-v1.3.0"
-    title: "ResultV Android android-v1.3.0"
-    published_at: "2026-10-18T07:05:56Z"
-    prerelease: false
-    assets:
-      "652757794":
-        name: "app-full-universal-release.apk"
-        size: 248391175
-        sha256pre: "785803c5db6b7245"
-      "652757798":
-        name: "app-full-armeabi-v7a-release.apk"
-        size: 123413864
-        sha256pre: "aeba19140ba43091"
-      "652757799":
-        name: "app-full-arm64-v8a-release.apk"
-        size: 130983536
-        sha256pre: "47a6af1f4751cbf4"
+      "385993824":
+        name: "latest-mac.yml"
+        size: 351
+        sha256pre: "b401441bfa84c3e3"
+      "385993825":
+        name: "latest.yml"
+        size: 351
+        sha256pre: "49d4787d2cebefd1"
+      "385993826":
+        name: "resultproxy-2.2.2.tar.gz"
+        size: 117249244
+        sha256pre: "60f9d53443aebdc6"
+      "385993827":
+        name: "ResultProxy-2.2.2-arm64.dmg.blockmap"
+        size: 126200
+        sha256pre: "651d449e4846628b"
+      "385993828":
+        name: "latest-linux.yml"
+        size: 374
+        sha256pre: "d02b895957ee8658"
+      "385993829":
+        name: "ResultProxy-2.2.2-arm64.dmg"
+        size: 120377424
+        sha256pre: "e1cd26e6cfdbe400"
+      "385993830":
+        name: "ResultProxy-2.2.2.AppImage"
+        size: 124505640
+        sha256pre: "a20f8e8f35987f87"
+      "385993831":
+        name: "ResultProxy.Setup.2.2.2.exe.blockmap"
+        size: 105339
+        sha256pre: "151500944a510821"
+      "385993832":
+        name: "ResultProxy.Setup.2.2.2.exe"
+        size: 100415930
+        sha256pre: "382eebf24f6fa281"
   "418286317":
     tag: "v3.5.6"
     title: "ResultV v3.5.6 - Общие улучшения и фиксы / General improvements and fixes"
@@ -208,3 +202,51 @@ releases:
         name: "ResultV-3.6.1-x86_64.AppImage"
         size: 27163128
         sha256pre: "72cfef90ac0908ea"
+  "455575245":
+    tag: "v3.6.2"
+    title: "ResultV v3.6.2 - Улучшен разбор конфигураций Xray / Improved Xray configuration parsing"
+    published_at: "2026-11-23T14:58:15Z"
+    prerelease: false
+    assets:
+      "783359051":
+        name: "ResultV-3.6.2-x86_64.AppImage"
+        size: 27175416
+        sha256pre: "bede55a58eb5363a"
+      "783359052":
+        name: "ResultV-amd64-installer.exe"
+        size: 29946965
+        sha256pre: "5e8aafdd5968051e"
+      "783359055":
+        name: "ResultV.dmg"
+        size: 67289185
+        sha256pre: "5058a152ff2c01b2"
+      "783359056":
+        name: "ResultV.exe"
+        size: 63465984
+        sha256pre: "c150fe30da51d294"
+      "783359057":
+        name: "resultv_3.6.2_amd64.deb"
+        size: 28837112
+        sha256pre: "5a7bd1628ea69fa3"
+      "783359062":
+        name: "resultv-3.6.2-1.x86_64.rpm"
+        size: 29634562
+        sha256pre: "38a7a60fdcb53391"
+  "458976325":
+    tag: "android-v1.4.1"
+    title: "ResultV Android android-v1.4.1"
+    published_at: "2026-11-26T04:59:12Z"
+    prerelease: false
+    assets:
+      "794389127":
+        name: "app-full-universal-release.apk"
+        size: 249251711
+        sha256pre: "458230b7c51c12bc"
+      "794389128":
+        name: "app-full-armeabi-v7a-release.apk"
+        size: 123815648
+        sha256pre: "848c5de37536b686"
+      "794389129":
+        name: "app-full-arm64-v8a-release.apk"
+        size: 131499864
+        sha256pre: "925446e3d21a71ac"

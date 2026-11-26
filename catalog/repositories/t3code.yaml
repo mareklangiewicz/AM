@@ -1,1060 +1,834 @@
 $schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
 repository_id: 1153130349
 repository: "pingdotgg/t3code"
-observed_at: "2026-11-22T15:29:48Z"
+observed_at: "2026-11-26T19:40:19Z"
 history_complete: false
 releases:
-  "452394265":
-    tag: "v0.1.11"
-    title: "T3 Code v0.1.11"
-    published_at: "2026-11-20T07:38:08Z"
+  "457613052":
+    tag: "v0.1.12-nightly.20261125.5222"
+    title: "T3 Code Nightly 0.1.12-nightly.20261125.5222 (4da8d19d08ed)"
+    published_at: "2026-11-25T03:25:54Z"
+    prerelease: true
+    assets:
+      "789883273":
+        name: "nightly.yml"
+        size: 439
+        sha256pre: "f75a994ddc12b840"
+      "789883274":
+        name: "T3-Code-0.1.12-nightly.20261125.5222-x64.exe.blockmap"
+        size: 416995
+        sha256pre: "e70c9ee8f68fa20e"
+      "789883278":
+        name: "T3-Code-Nightly-x86_64.AppImage"
+        size: 257639722
+        sha256pre: "94ab8d74984f168e"
+      "789883279":
+        name: "T3-Code-0.1.12-nightly.20261125.5222-arm64.deb"
+        size: 199776044
+        sha256pre: "112a8817449a7ce9"
+      "789883280":
+        name: "nightly-linux-arm64.yml"
+        size: 582
+        sha256pre: "53158f911ce1457d"
+      "789883281":
+        name: "T3-Code-0.1.12-nightly.20261125.5222-amd64.deb"
+        size: 211283492
+        sha256pre: "7530ee76399b0282"
+      "789883282":
+        name: "T3-Code-0.1.12-nightly.20261125.5222-arm64.zip.blockmap"
+        size: 244336
+        sha256pre: "8685c9de437d9c2d"
+      "789883283":
+        name: "T3-Code-0.1.12-nightly.20261125.5222-x64.zip"
+        size: 243103575
+        sha256pre: "051d0fc221eb2a73"
+      "789883284":
+        name: "t3-0.1.12-nightly.20261125.5222-win32-x64.zip"
+        size: 171489818
+        sha256pre: "20bd9ab103f9e468"
+      "789883285":
+        name: "T3-Code-0.1.12-nightly.20261125.5222-arm64.dmg.blockmap"
+        size: 254026
+        sha256pre: "ad976a8f00f9c3e6"
+      "789883286":
+        name: "builder-debug.yml"
+        size: 2879
+        sha256pre: "2ccb12b16e2c3197"
+      "789883287":
+        name: "t3-0.1.12-nightly.20261125.5222-win32-arm64.zip"
+        size: 142583446
+        sha256pre: "37fa918df50d6ebe"
+      "789883288":
+        name: "T3-Code-0.1.12-nightly.20261125.5222-arm64.exe"
+        size: 370964864
+        sha256pre: "b27789eca2467480"
+      "789883290":
+        name: "t3-0.1.12-nightly.20261125.5222-linux-x64.tar.gz"
+        size: 187275477
+        sha256pre: "35f59875ae090dcb"
+      "789883291":
+        name: "T3-Code-0.1.12-nightly.20261125.5222-arm64.exe.blockmap"
+        size: 386564
+        sha256pre: "5c520936d2346a03"
+      "789883292":
+        name: "t3-0.1.12-nightly.20261125.5222-darwin-arm64.tar.gz"
+        size: 152822616
+        sha256pre: "57a0c85d7129c8d0"
+      "789883293":
+        name: "T3-Code-Nightly-arm64.AppImage"
+        size: 249381238
+        sha256pre: "beda7a9063fb87ce"
+      "789883294":
+        name: "SHA256SUMS"
+        size: 576
+        sha256pre: "9f610a27c5b70398"
+      "789883295":
+        name: "T3-Code-0.1.12-nightly.20261125.5222-x64.dmg.blockmap"
+        size: 260937
+        sha256pre: "6145cf5cdf561f1e"
+      "789883296":
+        name: "T3-Code-0.1.12-nightly.20261125.5222-x64.zip.blockmap"
+        size: 256450
+        sha256pre: "66c23eb221fd8f79"
+      "789883297":
+        name: "t3code-android-internal-2.3.0-823.apk"
+        size: 134712547
+        sha256pre: "20ad5543e1edd287"
+      "789883298":
+        name: "T3-Code-0.1.12-nightly.20261125.5222-x64.exe"
+        size: 398556960
+        sha256pre: "00d1bc29b21f5c8c"
+      "789883299":
+        name: "T3-Code-0.1.12-nightly.20261125.5222-arm64.zip"
+        size: 234753319
+        sha256pre: "e7f3184656d0c57f"
+      "789883300":
+        name: "nightly-mac.yml"
+        size: 791
+        sha256pre: "e7aa21831f0e3075"
+      "789883301":
+        name: "T3-Code-0.1.12-nightly.20261125.5222-arm64.dmg"
+        size: 245941216
+        sha256pre: "d02ead9ddfc28352"
+      "789883302":
+        name: "nightly-linux.yml"
+        size: 584
+        sha256pre: "e5d0d4624b7c4d91"
+      "789883303":
+        name: "t3-0.1.12-nightly.20261125.5222-linux-arm64.tar.gz"
+        size: 178057028
+        sha256pre: "cb6fa54316f1effe"
+      "789883304":
+        name: "T3-Code-0.1.12-nightly.20261125.5222-x64.dmg"
+        size: 254281289
+        sha256pre: "d6b5eff3ee1ba484"
+  "457753286":
+    tag: "v0.1.12-nightly.20261125.5230"
+    title: "T3 Code Nightly 0.1.12-nightly.20261125.5230 (ca81b7b97a1c)"
+    published_at: "2026-11-25T06:59:09Z"
+    prerelease: true
+    assets:
+      "790448794":
+        name: "T3-Code-0.1.12-nightly.20261125.5230-arm64.zip.blockmap"
+        size: 244797
+        sha256pre: "489e477ce3a59edf"
+      "790448795":
+        name: "T3-Code-0.1.12-nightly.20261125.5230-arm64.exe"
+        size: 370952120
+        sha256pre: "afef55bca243b927"
+      "790448796":
+        name: "nightly-linux.yml"
+        size: 584
+        sha256pre: "9f84cf2598624e04"
+      "790448797":
+        name: "SHA256SUMS"
+        size: 576
+        sha256pre: "35ac56c0565b5b23"
+      "790448798":
+        name: "T3-Code-0.1.12-nightly.20261125.5230-amd64.deb"
+        size: 212314876
+        sha256pre: "45cd3ccef715c088"
+      "790448799":
+        name: "T3-Code-0.1.12-nightly.20261125.5230-arm64.dmg.blockmap"
+        size: 252535
+        sha256pre: "ef47d144dce727de"
+      "790448800":
+        name: "T3-Code-Nightly-arm64.AppImage"
+        size: 249405179
+        sha256pre: "d9271612d2ed32ca"
+      "790448801":
+        name: "T3-Code-0.1.12-nightly.20261125.5230-x64.dmg"
+        size: 254314894
+        sha256pre: "89777738608c28b0"
+      "790448802":
+        name: "T3-Code-0.1.12-nightly.20261125.5230-x64.exe"
+        size: 398636280
+        sha256pre: "3f3511b8c84357a5"
+      "790448803":
+        name: "t3-0.1.12-nightly.20261125.5230-win32-x64.zip"
+        size: 171512248
+        sha256pre: "6924038c9c9dc132"
+      "790448805":
+        name: "nightly.yml"
+        size: 439
+        sha256pre: "43d7ed15ca5d059b"
+      "790448806":
+        name: "builder-debug.yml"
+        size: 2885
+        sha256pre: "1364f025be6e4e14"
+      "790448807":
+        name: "T3-Code-0.1.12-nightly.20261125.5230-arm64.dmg"
+        size: 245970967
+        sha256pre: "ed812da44efa5125"
+      "790448808":
+        name: "T3-Code-0.1.12-nightly.20261125.5230-x64.zip"
+        size: 243150773
+        sha256pre: "f832c6adb17e66ca"
+      "790448809":
+        name: "T3-Code-0.1.12-nightly.20261125.5230-x64.exe.blockmap"
+        size: 413287
+        sha256pre: "aa633cec488dd760"
+      "790448810":
+        name: "nightly-linux-arm64.yml"
+        size: 582
+        sha256pre: "ab11b9b8b077735d"
+      "790448811":
+        name: "t3-0.1.12-nightly.20261125.5230-linux-arm64.tar.gz"
+        size: 178042458
+        sha256pre: "454b1ee8a132b0de"
+      "790448812":
+        name: "t3-0.1.12-nightly.20261125.5230-linux-x64.tar.gz"
+        size: 187282812
+        sha256pre: "a6795b4f70039126"
+      "790448813":
+        name: "t3-0.1.12-nightly.20261125.5230-darwin-arm64.tar.gz"
+        size: 152853512
+        sha256pre: "d62649881ccd86b4"
+      "790448815":
+        name: "T3-Code-Nightly-x86_64.AppImage"
+        size: 257651752
+        sha256pre: "4a13cf6ed9ba9516"
+      "790448816":
+        name: "T3-Code-0.1.12-nightly.20261125.5230-arm64.zip"
+        size: 234799960
+        sha256pre: "761318fe021191b4"
+      "790448817":
+        name: "T3-Code-0.1.12-nightly.20261125.5230-x64.dmg.blockmap"
+        size: 262868
+        sha256pre: "3711205cffe19372"
+      "790448818":
+        name: "T3-Code-0.1.12-nightly.20261125.5230-arm64.exe.blockmap"
+        size: 391585
+        sha256pre: "a42ab3806675da92"
+      "790448819":
+        name: "T3-Code-0.1.12-nightly.20261125.5230-arm64.deb"
+        size: 200142212
+        sha256pre: "e1c09e5bed9c6a27"
+      "790448820":
+        name: "T3-Code-0.1.12-nightly.20261125.5230-x64.zip.blockmap"
+        size: 255073
+        sha256pre: "eac44efc320524b1"
+      "790448821":
+        name: "t3code-android-internal-2.3.0-824.apk"
+        size: 134728931
+        sha256pre: "6fbed07653d64a65"
+      "790448823":
+        name: "t3-0.1.12-nightly.20261125.5230-win32-arm64.zip"
+        size: 142606612
+        sha256pre: "b9262edbe60a8fdc"
+      "790448824":
+        name: "nightly-mac.yml"
+        size: 791
+        sha256pre: "2608259a696ad371"
+  "457783970":
+    tag: "v0.1.12"
+    title: "T3 Code v0.1.12"
+    published_at: "2026-11-25T07:36:07Z"
     prerelease: false
     assets:
-      "770913486":
-        name: "t3-0.1.11-win32-arm64.zip"
-        size: 141292895
-        sha256pre: "777f3c52140a7591"
-      "770913487":
-        name: "latest.yml"
-        size: 373
-        sha256pre: "67aec8733178928e"
-      "770913488":
-        name: "T3-Code-0.1.11-arm64.deb"
-        size: 198032460
-        sha256pre: "3b02c131ec122f02"
-      "770913490":
-        name: "latest-linux.yml"
-        size: 524
-        sha256pre: "982354001d6b5eb4"
-      "770913491":
-        name: "T3-Code-0.1.11-arm64.dmg"
-        size: 235873353
-        sha256pre: "c4f4203c14c6f47f"
-      "770913492":
-        name: "T3-Code-0.1.11-x64.dmg.blockmap"
-        size: 258241
-        sha256pre: "6f9518a823e97b87"
-      "770913493":
-        name: "T3-Code-0.1.11-x64.exe"
-        size: 395556416
-        sha256pre: "e54516240a74dccc"
-      "770913494":
-        name: "T3-Code-x86_64.AppImage"
-        size: 254242063
-        sha256pre: "8baa06a7bbaa3f72"
-      "770913495":
-        name: "T3-Code-arm64.AppImage"
-        size: 246060813
-        sha256pre: "3daf88ccf17548bc"
-      "770913496":
-        name: "t3-0.1.11-linux-x64.tar.gz"
-        size: 185860354
-        sha256pre: "2b691c07f5bcb5ad"
-      "770913497":
-        name: "T3-Code-0.1.11-arm64.zip.blockmap"
-        size: 238086
-        sha256pre: "a755adf2c3604c54"
-      "770913498":
-        name: "t3-0.1.11-linux-arm64.tar.gz"
-        size: 176764278
-        sha256pre: "7d90a5af032fe098"
-      "770913500":
-        name: "latest-mac.yml"
-        size: 681
-        sha256pre: "37afd0288797fa04"
-      "770913501":
-        name: "T3-Code-0.1.11-arm64.dmg.blockmap"
-        size: 247812
-        sha256pre: "cc1c1f1f609997dd"
-      "770913502":
-        name: "T3-Code-0.1.11-x64.dmg"
-        size: 244187014
-        sha256pre: "816617a16575005f"
-      "770913503":
-        name: "T3-Code-0.1.11-x64.zip"
-        size: 235962363
-        sha256pre: "8a09dd0b017e359d"
-      "770913504":
-        name: "builder-debug.yml"
-        size: 2669
-        sha256pre: "202e429bc6e4d6b5"
-      "770913505":
-        name: "SHA256SUMS"
-        size: 466
-        sha256pre: "d5a8593b2fc4f81b"
-      "770913506":
-        name: "t3-0.1.11-win32-x64.zip"
-        size: 170186982
-        sha256pre: "02c92be05c400733"
-      "770913510":
-        name: "T3-Code-0.1.11-arm64.exe.blockmap"
-        size: 383591
-        sha256pre: "d2934f0493f7fe91"
-      "770913511":
-        name: "T3-Code-0.1.11-x64.zip.blockmap"
-        size: 247786
-        sha256pre: "c9fb30fe356b8ecc"
-      "770913512":
-        name: "T3-Code-0.1.11-arm64.zip"
-        size: 227610277
-        sha256pre: "2e92454031dbffac"
-      "770913516":
-        name: "T3-Code-0.1.11-arm64.exe"
-        size: 368043976
-        sha256pre: "74331c9b3c0ddce0"
-      "770913517":
-        name: "T3-Code-0.1.11-x64.exe.blockmap"
-        size: 413249
-        sha256pre: "37388b152e16cdff"
-      "770913518":
-        name: "t3-0.1.11-darwin-arm64.tar.gz"
-        size: 151780899
-        sha256pre: "4bc22e16a2e48d86"
-      "770913521":
-        name: "T3-Code-0.1.11-amd64.deb"
-        size: 208303884
-        sha256pre: "ccd43f67f95ff416"
-      "770913530":
+      "790558714":
+        name: "T3-Code-0.1.12-arm64.exe"
+        size: 369233456
+        sha256pre: "506c3c57311305f7"
+      "790558715":
         name: "latest-linux-arm64.yml"
         size: 522
-        sha256pre: "b954cb1bd8340bbd"
-  "453091049":
-    tag: "v0.1.12-nightly.20261120.5009"
-    title: "T3 Code Nightly 0.1.12-nightly.20261120.5009 (f0a2aa10f516)"
-    published_at: "2026-11-20T19:21:17Z"
-    prerelease: true
-    assets:
-      "773045158":
-        name: "T3-Code-0.1.12-nightly.20261120.5009-arm64.exe.blockmap"
-        size: 387513
-        sha256pre: "f5af5329a01f54c9"
-      "773045159":
-        name: "T3-Code-0.1.12-nightly.20261120.5009-x64.dmg"
-        size: 253220462
-        sha256pre: "6a0cda7ff3b953db"
-      "773045160":
-        name: "T3-Code-0.1.12-nightly.20261120.5009-x64.zip"
-        size: 242199300
-        sha256pre: "944f0e8c5bb2b3dd"
-      "773045161":
-        name: "nightly-linux-arm64.yml"
-        size: 582
-        sha256pre: "0a1a9f40712eddb4"
-      "773045162":
-        name: "T3-Code-0.1.12-nightly.20261120.5009-x64.zip.blockmap"
-        size: 254556
-        sha256pre: "986376ff3c5176ba"
-      "773045163":
-        name: "T3-Code-0.1.12-nightly.20261120.5009-arm64.exe"
-        size: 370429696
-        sha256pre: "3333f537933e6830"
-      "773045164":
-        name: "t3-0.1.12-nightly.20261120.5009-linux-x64.tar.gz"
-        size: 187084573
-        sha256pre: "a746c56e9bb7fa47"
-      "773045165":
-        name: "T3-Code-Nightly-x86_64.AppImage"
-        size: 256680589
-        sha256pre: "e243adc6acd3f2dd"
-      "773045166":
-        name: "nightly.yml"
-        size: 439
-        sha256pre: "b024c737a5b01dfd"
-      "773045167":
-        name: "T3-Code-0.1.12-nightly.20261120.5009-amd64.deb"
-        size: 210974908
-        sha256pre: "bf8a516ba9463484"
-      "773045169":
-        name: "T3-Code-0.1.12-nightly.20261120.5009-x64.dmg.blockmap"
-        size: 259615
-        sha256pre: "f9bb0087be6b2a87"
-      "773045170":
-        name: "T3-Code-0.1.12-nightly.20261120.5009-arm64.zip.blockmap"
-        size: 243803
-        sha256pre: "9ee47210f5dda0e4"
-      "773045171":
-        name: "nightly-mac.yml"
-        size: 791
-        sha256pre: "fb1ed501c8ab1e69"
-      "773045172":
-        name: "T3-Code-0.1.12-nightly.20261120.5009-arm64.dmg"
-        size: 244913012
-        sha256pre: "875ad41b1a25037e"
-      "773045173":
-        name: "T3-Code-Nightly-arm64.AppImage"
-        size: 248359755
-        sha256pre: "480f8ea21c28fcb0"
-      "773045174":
-        name: "t3-0.1.12-nightly.20261120.5009-win32-arm64.zip"
-        size: 142364322
-        sha256pre: "f75515d70a950d37"
-      "773045175":
-        name: "T3-Code-0.1.12-nightly.20261120.5009-arm64.deb"
-        size: 198557312
-        sha256pre: "3de295086aac4c2d"
-      "773045176":
-        name: "T3-Code-0.1.12-nightly.20261120.5009-arm64.dmg.blockmap"
-        size: 252908
-        sha256pre: "521cbe4686ca5cfb"
-      "773045177":
-        name: "t3-0.1.12-nightly.20261120.5009-darwin-arm64.tar.gz"
-        size: 152645559
-        sha256pre: "c8432ffdf48c8ede"
-      "773045178":
-        name: "t3-0.1.12-nightly.20261120.5009-win32-x64.zip"
-        size: 171269026
-        sha256pre: "a8327384bc818e65"
-      "773045179":
-        name: "builder-debug.yml"
-        size: 2671
-        sha256pre: "7ccb45348b16a8e9"
-      "773045180":
-        name: "t3-0.1.12-nightly.20261120.5009-linux-arm64.tar.gz"
-        size: 177874181
-        sha256pre: "f113bbfcd927e450"
-      "773045181":
-        name: "T3-Code-0.1.12-nightly.20261120.5009-arm64.zip"
-        size: 233845816
-        sha256pre: "6a3fe08744f28caf"
-      "773045182":
-        name: "nightly-linux.yml"
-        size: 584
-        sha256pre: "95292d3327df9427"
-      "773045183":
-        name: "T3-Code-0.1.12-nightly.20261120.5009-x64.exe.blockmap"
-        size: 413566
-        sha256pre: "2bf3ecc9590e8e22"
-      "773045185":
+        sha256pre: "338750d2b051e0d5"
+      "790558717":
+        name: "T3-Code-0.1.12-x64.zip.blockmap"
+        size: 247977
+        sha256pre: "b096a1f80564ea7b"
+      "790558718":
+        name: "T3-Code-0.1.12-x64.exe"
+        size: 396823760
+        sha256pre: "de16cc1dde8de5af"
+      "790558719":
+        name: "t3-0.1.12-win32-x64.zip"
+        size: 170591504
+        sha256pre: "78538f991f22dad4"
+      "790558720":
+        name: "T3-Code-0.1.12-amd64.deb"
+        size: 209475484
+        sha256pre: "c1ca3e656e12ba10"
+      "790558721":
+        name: "t3-0.1.12-win32-arm64.zip"
+        size: 141690066
+        sha256pre: "329524dc5e0f9ae3"
+      "790558722":
+        name: "latest-mac.yml"
+        size: 681
+        sha256pre: "7cd8301f130060f9"
+      "790558723":
+        name: "t3-0.1.12-linux-x64.tar.gz"
+        size: 186490371
+        sha256pre: "9ba3db46e3554fb9"
+      "790558724":
+        name: "t3-0.1.12-darwin-arm64.tar.gz"
+        size: 152107135
+        sha256pre: "1b78c97541606236"
+      "790558726":
+        name: "T3-Code-0.1.12-x64.dmg.blockmap"
+        size: 256126
+        sha256pre: "fa1fb168273a7539"
+      "790558727":
+        name: "T3-Code-0.1.12-x64.dmg"
+        size: 245571477
+        sha256pre: "f31c4a3fcbed88a1"
+      "790558728":
+        name: "T3-Code-0.1.12-arm64.deb"
+        size: 197429516
+        sha256pre: "3ca1a4e548794e39"
+      "790558729":
+        name: "T3-Code-0.1.12-arm64.zip"
+        size: 228843756
+        sha256pre: "6ccc52e10d9d4067"
+      "790558730":
+        name: "T3-Code-arm64.AppImage"
+        size: 247483203
+        sha256pre: "6a004d5da562ec25"
+      "790558731":
+        name: "T3-Code-0.1.12-arm64.zip.blockmap"
+        size: 238672
+        sha256pre: "d9ee6a6c191af84f"
+      "790558732":
+        name: "latest.yml"
+        size: 373
+        sha256pre: "085c9e61c5795b9d"
+      "790558733":
+        name: "T3-Code-x86_64.AppImage"
+        size: 255860306
+        sha256pre: "66b91551571df6d2"
+      "790558735":
+        name: "T3-Code-0.1.12-arm64.dmg.blockmap"
+        size: 248584
+        sha256pre: "45da6568634d111f"
+      "790558736":
+        name: "T3-Code-0.1.12-x64.exe.blockmap"
+        size: 412944
+        sha256pre: "7e925cacee0be6af"
+      "790558737":
+        name: "latest-linux.yml"
+        size: 524
+        sha256pre: "63b58f506d88a73c"
+      "790558738":
+        name: "T3-Code-0.1.12-arm64.exe.blockmap"
+        size: 384122
+        sha256pre: "0550a6f7ddfd397b"
+      "790558739":
+        name: "T3-Code-0.1.12-x64.zip"
+        size: 237195518
+        sha256pre: "d504b358a8d532d8"
+      "790558740":
         name: "SHA256SUMS"
-        size: 576
-        sha256pre: "505ecd242fe33992"
-      "773045186":
-        name: "t3code-android-internal-2.3.0-807.apk"
-        size: 148838750
-        sha256pre: "e4ece64cd7a1a0d9"
-      "773045187":
-        name: "T3-Code-0.1.12-nightly.20261120.5009-x64.exe"
-        size: 398101536
-        sha256pre: "0226251f447dee87"
-  "453364341":
-    tag: "v0.1.12-nightly.20261121.5024"
-    title: "T3 Code Nightly 0.1.12-nightly.20261121.5024 (6357d17a4963)"
-    published_at: "2026-11-21T01:49:16Z"
-    prerelease: true
-    assets:
-      "774058056":
-        name: "T3-Code-0.1.12-nightly.20261121.5024-arm64.exe"
-        size: 370976416
-        sha256pre: "3e977823c93f2e4a"
-      "774058057":
-        name: "t3-0.1.12-nightly.20261121.5024-win32-arm64.zip"
-        size: 142601532
-        sha256pre: "da47743e41aee7e1"
-      "774058058":
-        name: "T3-Code-0.1.12-nightly.20261121.5024-x64.zip"
-        size: 242537832
-        sha256pre: "f4fc4c96ac215479"
-      "774058059":
-        name: "T3-Code-0.1.12-nightly.20261121.5024-amd64.deb"
-        size: 210829444
-        sha256pre: "fd4b1826c1151360"
-      "774058060":
-        name: "T3-Code-0.1.12-nightly.20261121.5024-x64.dmg.blockmap"
-        size: 259262
-        sha256pre: "f464609cc2c8893f"
-      "774058061":
-        name: "T3-Code-0.1.12-nightly.20261121.5024-arm64.zip"
-        size: 234183802
-        sha256pre: "242b74adfa40b912"
-      "774058062":
-        name: "T3-Code-0.1.12-nightly.20261121.5024-x64.exe.blockmap"
-        size: 417109
-        sha256pre: "81ee747067444b0b"
-      "774058063":
-        name: "t3-0.1.12-nightly.20261121.5024-win32-x64.zip"
-        size: 171507197
-        sha256pre: "b03f2917cafd4b4f"
-      "774058064":
-        name: "T3-Code-0.1.12-nightly.20261121.5024-x64.zip.blockmap"
-        size: 254971
-        sha256pre: "b87e80b9cb39fa31"
-      "774058065":
-        name: "t3-0.1.12-nightly.20261121.5024-linux-arm64.tar.gz"
-        size: 178085153
-        sha256pre: "e641da28a98cae57"
-      "774058066":
-        name: "T3-Code-0.1.12-nightly.20261121.5024-arm64.dmg"
-        size: 245268464
-        sha256pre: "961e4c8bcf0a5a51"
-      "774058067":
-        name: "SHA256SUMS"
-        size: 576
-        sha256pre: "5b78399d6f72b509"
-      "774058068":
-        name: "T3-Code-Nightly-x86_64.AppImage"
-        size: 257049641
-        sha256pre: "523394fa3b93f0e8"
-      "774058069":
-        name: "T3-Code-Nightly-arm64.AppImage"
-        size: 248621910
-        sha256pre: "2bb1f24d95f4a818"
-      "774058070":
-        name: "T3-Code-0.1.12-nightly.20261121.5024-x64.dmg"
-        size: 253619016
-        sha256pre: "899b8de56d482d8a"
-      "774058071":
-        name: "nightly.yml"
-        size: 439
-        sha256pre: "0db08bd5a5f380b7"
-      "774058072":
-        name: "nightly-mac.yml"
-        size: 791
-        sha256pre: "37b017f72e021aff"
-      "774058073":
-        name: "T3-Code-0.1.12-nightly.20261121.5024-arm64.dmg.blockmap"
-        size: 254081
-        sha256pre: "0c3c3565f8ccae3e"
-      "774058074":
-        name: "T3-Code-0.1.12-nightly.20261121.5024-arm64.exe.blockmap"
-        size: 389906
-        sha256pre: "c4727b93db6d52a2"
-      "774058075":
-        name: "T3-Code-0.1.12-nightly.20261121.5024-arm64.zip.blockmap"
-        size: 243548
-        sha256pre: "8c5305107267a30d"
-      "774058076":
-        name: "T3-Code-0.1.12-nightly.20261121.5024-arm64.deb"
-        size: 198222068
-        sha256pre: "a9b71f66210e5ed8"
-      "774058077":
-        name: "T3-Code-0.1.12-nightly.20261121.5024-x64.exe"
-        size: 398568616
-        sha256pre: "0d234b357f4a38f9"
-      "774058078":
-        name: "nightly-linux-arm64.yml"
-        size: 582
-        sha256pre: "00f2ddd519ca7bb8"
-      "774058079":
-        name: "t3-0.1.12-nightly.20261121.5024-linux-x64.tar.gz"
-        size: 187308612
-        sha256pre: "44f2f1856d952a97"
-      "774058080":
-        name: "builder-debug.yml"
-        size: 2881
-        sha256pre: "9270bf596b18667d"
-      "774058083":
-        name: "t3-0.1.12-nightly.20261121.5024-darwin-arm64.tar.gz"
-        size: 152896614
-        sha256pre: "6dc6f34959ec90fb"
-      "774058084":
-        name: "nightly-linux.yml"
-        size: 584
-        sha256pre: "e49fee96a2a11edf"
-  "453546403":
-    tag: "v0.1.12-nightly.20261121.5038"
-    title: "T3 Code Nightly 0.1.12-nightly.20261121.5038 (9f9ebf61fbdb)"
-    published_at: "2026-11-21T08:25:12Z"
-    prerelease: true
-    assets:
-      "774922288":
-        name: "T3-Code-0.1.12-nightly.20261121.5038-x64.dmg"
-        size: 253757621
-        sha256pre: "1d66226f3793c37c"
-      "774922289":
-        name: "t3-0.1.12-nightly.20261121.5038-linux-arm64.tar.gz"
-        size: 178220275
-        sha256pre: "fe97ee54d520fef0"
-      "774922290":
-        name: "T3-Code-0.1.12-nightly.20261121.5038-amd64.deb"
-        size: 211285456
-        sha256pre: "e44f5e7c460c24df"
-      "774922291":
-        name: "T3-Code-0.1.12-nightly.20261121.5038-x64.dmg.blockmap"
-        size: 259636
-        sha256pre: "4c2ff88c32cf2081"
-      "774922292":
-        name: "T3-Code-0.1.12-nightly.20261121.5038-arm64.zip.blockmap"
-        size: 244511
-        sha256pre: "f9d33cfe47fbf21d"
-      "774922293":
-        name: "T3-Code-0.1.12-nightly.20261121.5038-x64.zip.blockmap"
-        size: 256024
-        sha256pre: "889991a09ec41b5f"
-      "774922295":
-        name: "T3-Code-Nightly-arm64.AppImage"
-        size: 248836418
-        sha256pre: "efc31ea5fbd55722"
-      "774922296":
-        name: "t3code-android-internal-2.3.0-809.apk"
-        size: 149117278
-        sha256pre: "55f1bcb1badf9a95"
-      "774922297":
-        name: "T3-Code-0.1.12-nightly.20261121.5038-arm64.dmg.blockmap"
-        size: 253513
-        sha256pre: "ce5d9b08bfe569e8"
-      "774922298":
-        name: "T3-Code-0.1.12-nightly.20261121.5038-arm64.exe.blockmap"
-        size: 388679
-        sha256pre: "23b25485af647ad8"
-      "774922299":
-        name: "T3-Code-0.1.12-nightly.20261121.5038-x64.zip"
-        size: 242682617
-        sha256pre: "104109d30f009c50"
-      "774922300":
-        name: "nightly-linux-arm64.yml"
-        size: 582
-        sha256pre: "bfd7b67e0e9c66de"
-      "774922301":
-        name: "nightly-mac.yml"
-        size: 791
-        sha256pre: "ec35666737402a32"
-      "774922302":
-        name: "SHA256SUMS"
-        size: 576
-        sha256pre: "86bbe39fd57f50c3"
-      "774922303":
-        name: "t3-0.1.12-nightly.20261121.5038-darwin-arm64.tar.gz"
-        size: 152994477
-        sha256pre: "5fe362b215c1eea4"
-      "774922304":
-        name: "t3-0.1.12-nightly.20261121.5038-linux-x64.tar.gz"
-        size: 187409983
-        sha256pre: "3a04231a33ecfae9"
-      "774922305":
-        name: "T3-Code-0.1.12-nightly.20261121.5038-x64.exe.blockmap"
-        size: 417852
-        sha256pre: "30edcdfde899f13a"
-      "774922306":
-        name: "T3-Code-0.1.12-nightly.20261121.5038-arm64.deb"
-        size: 199608380
-        sha256pre: "e918bd97512107c0"
-      "774922308":
-        name: "T3-Code-0.1.12-nightly.20261121.5038-x64.exe"
-        size: 398757592
-        sha256pre: "580d8cf7025dccb8"
-      "774922309":
-        name: "nightly.yml"
-        size: 439
-        sha256pre: "6052525602b19ad0"
-      "774922310":
-        name: "T3-Code-0.1.12-nightly.20261121.5038-arm64.dmg"
-        size: 245435652
-        sha256pre: "05f770af0aafece8"
-      "774922311":
-        name: "T3-Code-0.1.12-nightly.20261121.5038-arm64.exe"
-        size: 371205248
-        sha256pre: "78148da871502ada"
-      "774922312":
-        name: "T3-Code-Nightly-x86_64.AppImage"
-        size: 257131173
-        sha256pre: "5003fbcb36c93bf6"
-      "774922314":
-        name: "T3-Code-0.1.12-nightly.20261121.5038-arm64.zip"
-        size: 234327958
-        sha256pre: "121c7a01cd940d02"
-      "774922315":
-        name: "builder-debug.yml"
-        size: 9457
-        sha256pre: "6c67b4a01cf32312"
-      "774922317":
-        name: "nightly-linux.yml"
-        size: 584
-        sha256pre: "0bce1d11400680f2"
-      "774922326":
-        name: "t3-0.1.12-nightly.20261121.5038-win32-arm64.zip"
-        size: 142707008
-        sha256pre: "c968a04d98f1ea34"
-      "774922334":
-        name: "t3-0.1.12-nightly.20261121.5038-win32-x64.zip"
-        size: 171609169
-        sha256pre: "0ed387e8823df717"
-  "453759984":
-    tag: "v0.1.12-nightly.20261121.5051"
-    title: "T3 Code Nightly 0.1.12-nightly.20261121.5051 (dd941b9c3b58)"
-    published_at: "2026-11-21T14:47:31Z"
-    prerelease: true
-    assets:
-      "775888217":
-        name: "T3-Code-0.1.12-nightly.20261121.5051-arm64.zip"
-        size: 234363065
-        sha256pre: "edbbd80c71539924"
-      "775888219":
-        name: "t3-0.1.12-nightly.20261121.5051-win32-x64.zip"
-        size: 171645240
-        sha256pre: "0c81a4522f37e774"
-      "775888220":
-        name: "T3-Code-0.1.12-nightly.20261121.5051-arm64.zip.blockmap"
-        size: 244615
-        sha256pre: "25fce1eeff4beb73"
-      "775888222":
-        name: "nightly-linux-arm64.yml"
-        size: 582
-        sha256pre: "7d105280784035a2"
-      "775888223":
-        name: "T3-Code-0.1.12-nightly.20261121.5051-x64.exe.blockmap"
-        size: 417060
-        sha256pre: "e822d0fc49863afc"
-      "775888224":
-        name: "nightly-mac.yml"
-        size: 791
-        sha256pre: "4f59358913efcb0a"
-      "775888225":
-        name: "t3-0.1.12-nightly.20261121.5051-win32-arm64.zip"
-        size: 142738041
-        sha256pre: "882538cc263b94ae"
-      "775888226":
-        name: "T3-Code-0.1.12-nightly.20261121.5051-x64.zip.blockmap"
-        size: 255411
-        sha256pre: "6728882290c5eb6c"
-      "775888227":
-        name: "t3-0.1.12-nightly.20261121.5051-darwin-arm64.tar.gz"
-        size: 153029879
-        sha256pre: "a03e2c29a163317a"
-      "775888228":
-        name: "T3-Code-0.1.12-nightly.20261121.5051-x64.zip"
-        size: 242717772
-        sha256pre: "51a8b19de06ce16c"
-      "775888229":
-        name: "T3-Code-0.1.12-nightly.20261121.5051-arm64.exe.blockmap"
-        size: 389558
-        sha256pre: "671b56b874681fec"
-      "775888231":
-        name: "t3code-android-internal-2.3.0-811.apk"
-        size: 149231966
-        sha256pre: "5453c8d776ea6423"
-      "775888232":
-        name: "T3-Code-0.1.12-nightly.20261121.5051-amd64.deb"
-        size: 211814956
-        sha256pre: "cf2d22370dda5d39"
-      "775888233":
-        name: "SHA256SUMS"
-        size: 576
-        sha256pre: "3a1859cc35077d5d"
-      "775888234":
-        name: "t3-0.1.12-nightly.20261121.5051-linux-x64.tar.gz"
-        size: 187452493
-        sha256pre: "ba6a43e67beb1fb6"
-      "775888235":
-        name: "T3-Code-0.1.12-nightly.20261121.5051-x64.dmg.blockmap"
-        size: 260870
-        sha256pre: "56acfb2fc7bebb44"
-      "775888236":
-        name: "T3-Code-0.1.12-nightly.20261121.5051-x64.dmg"
-        size: 253774500
-        sha256pre: "ca3a9575d948128b"
-      "775888237":
-        name: "T3-Code-0.1.12-nightly.20261121.5051-arm64.dmg.blockmap"
-        size: 254650
-        sha256pre: "5917be0523318a5c"
-      "775888238":
-        name: "T3-Code-0.1.12-nightly.20261121.5051-arm64.exe"
-        size: 371182224
-        sha256pre: "ddc928619df03983"
-      "775888239":
-        name: "T3-Code-Nightly-arm64.AppImage"
-        size: 248860312
-        sha256pre: "e50152b92de82891"
-      "775888241":
-        name: "t3-0.1.12-nightly.20261121.5051-linux-arm64.tar.gz"
-        size: 178222962
-        sha256pre: "762d91b5d86cd924"
-      "775888243":
-        name: "nightly-linux.yml"
-        size: 584
-        sha256pre: "8bdae21299443d12"
-      "775888244":
-        name: "nightly.yml"
-        size: 439
-        sha256pre: "2e8f42dfc5e6b8f0"
-      "775888245":
-        name: "T3-Code-0.1.12-nightly.20261121.5051-arm64.dmg"
-        size: 245476858
-        sha256pre: "570adde6e21a3a75"
-      "775888246":
-        name: "builder-debug.yml"
-        size: 9457
-        sha256pre: "ef3963958ce58d50"
-      "775888247":
-        name: "T3-Code-0.1.12-nightly.20261121.5051-x64.exe"
-        size: 398802192
-        sha256pre: "020271df7b8e136b"
-      "775888249":
-        name: "T3-Code-0.1.12-nightly.20261121.5051-arm64.deb"
-        size: 199163916
-        sha256pre: "bca196a232312b21"
-      "775888250":
-        name: "T3-Code-Nightly-x86_64.AppImage"
-        size: 257193376
-        sha256pre: "0b24b2ae15492c25"
-  "453991570":
-    tag: "v0.1.12-nightly.20261121.5064"
-    title: "T3 Code Nightly 0.1.12-nightly.20261121.5064 (1a9a858d4573)"
-    published_at: "2026-11-21T21:19:23Z"
-    prerelease: true
-    assets:
-      "776902896":
-        name: "T3-Code-0.1.12-nightly.20261121.5064-arm64.dmg"
-        size: 245470522
-        sha256pre: "13d5bf78f624aa8e"
-      "776902897":
-        name: "T3-Code-0.1.12-nightly.20261121.5064-arm64.zip"
-        size: 234375919
-        sha256pre: "04dfdd77f2ee8a52"
-      "776902898":
-        name: "T3-Code-0.1.12-nightly.20261121.5064-arm64.dmg.blockmap"
-        size: 252733
-        sha256pre: "f267a047f444fca5"
-      "776902899":
-        name: "T3-Code-0.1.12-nightly.20261121.5064-amd64.deb"
-        size: 210843020
-        sha256pre: "59ef2a26dbb78703"
-      "776902900":
-        name: "nightly-mac.yml"
-        size: 791
-        sha256pre: "e7ed3b3bf04bf0ba"
-      "776902901":
-        name: "t3-0.1.12-nightly.20261121.5064-win32-arm64.zip"
-        size: 142747424
-        sha256pre: "0eff58dfc37ec23a"
-      "776902902":
-        name: "T3-Code-Nightly-x86_64.AppImage"
-        size: 257201573
-        sha256pre: "01ead620409e9fe7"
-      "776902904":
-        name: "T3-Code-0.1.12-nightly.20261121.5064-arm64.deb"
-        size: 199255348
-        sha256pre: "de2fc8a64a607b9e"
-      "776902905":
-        name: "T3-Code-Nightly-arm64.AppImage"
-        size: 248881229
-        sha256pre: "5a7e2454dd9c5138"
-      "776902906":
-        name: "t3-0.1.12-nightly.20261121.5064-linux-x64.tar.gz"
-        size: 187491214
-        sha256pre: "bd2ed8e0ba1e114e"
-      "776902907":
-        name: "T3-Code-0.1.12-nightly.20261121.5064-x64.exe"
-        size: 398862752
-        sha256pre: "88c1c86c2d5cb1b3"
-      "776902908":
-        name: "nightly-linux-arm64.yml"
-        size: 582
-        sha256pre: "2a258bc10ae21e73"
-      "776902909":
-        name: "T3-Code-0.1.12-nightly.20261121.5064-arm64.zip.blockmap"
-        size: 243816
-        sha256pre: "84a899232909f508"
-      "776902911":
-        name: "T3-Code-0.1.12-nightly.20261121.5064-x64.zip"
-        size: 242730041
-        sha256pre: "db8fedab0f0760b7"
-      "776902912":
-        name: "t3-0.1.12-nightly.20261121.5064-darwin-arm64.tar.gz"
-        size: 153037533
-        sha256pre: "4019e876b6e4324d"
-      "776902913":
-        name: "builder-debug.yml"
-        size: 2881
-        sha256pre: "9270bf596b18667d"
-      "776902914":
-        name: "T3-Code-0.1.12-nightly.20261121.5064-x64.exe.blockmap"
-        size: 416477
-        sha256pre: "b1d5a81f6307144e"
-      "776902916":
-        name: "T3-Code-0.1.12-nightly.20261121.5064-x64.dmg.blockmap"
-        size: 259959
-        sha256pre: "0d79643ee92d4a33"
-      "776902917":
-        name: "T3-Code-0.1.12-nightly.20261121.5064-x64.dmg"
-        size: 253788458
-        sha256pre: "1d80db9a48913c0d"
-      "776902919":
-        name: "t3-0.1.12-nightly.20261121.5064-linux-arm64.tar.gz"
-        size: 178235708
-        sha256pre: "2bd5d01e77ee50b7"
-      "776902920":
-        name: "nightly.yml"
-        size: 439
-        sha256pre: "3591c69c20682113"
-      "776902921":
-        name: "T3-Code-0.1.12-nightly.20261121.5064-arm64.exe.blockmap"
-        size: 390203
-        sha256pre: "fcea39f874da292e"
-      "776902922":
-        name: "SHA256SUMS"
-        size: 576
-        sha256pre: "fdf05c67e86b746d"
-      "776902923":
-        name: "T3-Code-0.1.12-nightly.20261121.5064-x64.zip.blockmap"
-        size: 255000
-        sha256pre: "f87fc1f5a16dcee3"
-      "776902924":
-        name: "t3code-android-internal-2.3.0-811.apk"
-        size: 149231966
-        sha256pre: "5453c8d776ea6423"
-      "776902925":
-        name: "t3-0.1.12-nightly.20261121.5064-win32-x64.zip"
-        size: 171651941
-        sha256pre: "e6e0d590714f0906"
-      "776902927":
-        name: "nightly-linux.yml"
-        size: 584
-        sha256pre: "93c445c90348c7fa"
-      "776902929":
-        name: "T3-Code-0.1.12-nightly.20261121.5064-arm64.exe"
-        size: 371220984
-        sha256pre: "b81fffe85fd07279"
-  "454099225":
-    tag: "v0.1.12-nightly.20261122.5071"
-    title: "T3 Code Nightly 0.1.12-nightly.20261122.5071 (047fb5b1627c)"
-    published_at: "2026-11-22T00:59:16Z"
-    prerelease: true
-    assets:
-      "777406521":
-        name: "T3-Code-0.1.12-nightly.20261122.5071-x64.zip.blockmap"
-        size: 255849
-        sha256pre: "2280ad209fa8c5ca"
-      "777406522":
-        name: "t3-0.1.12-nightly.20261122.5071-win32-x64.zip"
-        size: 171657088
-        sha256pre: "9bde051ac4b0af92"
-      "777406523":
-        name: "T3-Code-0.1.12-nightly.20261122.5071-amd64.deb"
-        size: 210637720
-        sha256pre: "b78807018296283b"
-      "777406524":
-        name: "T3-Code-0.1.12-nightly.20261122.5071-x64.dmg.blockmap"
-        size: 261147
-        sha256pre: "1a0eb3e3aec3ba2a"
-      "777406525":
-        name: "T3-Code-0.1.12-nightly.20261122.5071-arm64.exe"
-        size: 371245568
-        sha256pre: "b7650691311bcd93"
-      "777406527":
-        name: "T3-Code-0.1.12-nightly.20261122.5071-arm64.deb"
-        size: 198825300
-        sha256pre: "7a2046c9c7620498"
-      "777406528":
-        name: "t3-0.1.12-nightly.20261122.5071-win32-arm64.zip"
-        size: 142750356
-        sha256pre: "5735c84c68e60969"
-      "777406529":
-        name: "SHA256SUMS"
-        size: 576
-        sha256pre: "a4a37f9f3d5a5a49"
-      "777406530":
-        name: "T3-Code-0.1.12-nightly.20261122.5071-arm64.dmg"
-        size: 245474239
-        sha256pre: "dfdcb48284eb6339"
-      "777406531":
-        name: "T3-Code-0.1.12-nightly.20261122.5071-arm64.exe.blockmap"
-        size: 387249
-        sha256pre: "9f42abf56a4852b8"
-      "777406532":
-        name: "nightly-linux-arm64.yml"
-        size: 582
-        sha256pre: "a033b35d975db231"
-      "777406533":
-        name: "T3-Code-Nightly-arm64.AppImage"
-        size: 248893029
-        sha256pre: "4a4b5eba6c395b05"
-      "777406534":
-        name: "T3-Code-Nightly-x86_64.AppImage"
-        size: 257197154
-        sha256pre: "ae62ad01ea1c4c4c"
-      "777406535":
-        name: "nightly.yml"
-        size: 439
-        sha256pre: "d77faf038fbacd2a"
-      "777406536":
-        name: "builder-debug.yml"
-        size: 2881
-        sha256pre: "9270bf596b18667d"
-      "777406537":
-        name: "t3code-android-internal-2.3.0-813.apk"
-        size: 149199198
-        sha256pre: "4bb327ef90c22b45"
-      "777406538":
-        name: "T3-Code-0.1.12-nightly.20261122.5071-x64.exe"
-        size: 398882168
-        sha256pre: "1d50c816f1deeeab"
-      "777406539":
-        name: "T3-Code-0.1.12-nightly.20261122.5071-x64.exe.blockmap"
-        size: 417371
-        sha256pre: "c5d957660ec2b382"
-      "777406540":
-        name: "T3-Code-0.1.12-nightly.20261122.5071-arm64.dmg.blockmap"
-        size: 253054
-        sha256pre: "eb0d1622c69a95bf"
-      "777406541":
-        name: "t3-0.1.12-nightly.20261122.5071-darwin-arm64.tar.gz"
-        size: 153045303
-        sha256pre: "b7dd258ca1037dd6"
-      "777406542":
-        name: "nightly-linux.yml"
-        size: 584
-        sha256pre: "d3551805fb428673"
-      "777406543":
-        name: "t3-0.1.12-nightly.20261122.5071-linux-x64.tar.gz"
-        size: 187456315
-        sha256pre: "f52b4d5183a3f128"
-      "777406544":
-        name: "T3-Code-0.1.12-nightly.20261122.5071-x64.dmg"
-        size: 253778903
-        sha256pre: "c0081393500b4663"
-      "777406545":
-        name: "T3-Code-0.1.12-nightly.20261122.5071-arm64.zip"
-        size: 234386021
-        sha256pre: "15afee128acae099"
-      "777406546":
-        name: "T3-Code-0.1.12-nightly.20261122.5071-arm64.zip.blockmap"
-        size: 244646
-        sha256pre: "a0089b00516a452a"
-      "777406547":
-        name: "T3-Code-0.1.12-nightly.20261122.5071-x64.zip"
-        size: 242741152
-        sha256pre: "790efc48684dd991"
-      "777406548":
-        name: "t3-0.1.12-nightly.20261122.5071-linux-arm64.tar.gz"
-        size: 178230850
-        sha256pre: "bdf48e8cdcf29d20"
-      "777406549":
-        name: "nightly-mac.yml"
-        size: 791
-        sha256pre: "5019c59c05a65b83"
-  "454274051":
-    tag: "v0.1.12-nightly.20261122.5085"
-    title: "T3 Code Nightly 0.1.12-nightly.20261122.5085 (c9e9e7d36a91)"
-    published_at: "2026-11-22T07:21:54Z"
-    prerelease: true
-    assets:
-      "778249281":
-        name: "nightly-mac.yml"
-        size: 791
-        sha256pre: "e16000c826b78773"
-      "778249282":
-        name: "T3-Code-0.1.12-nightly.20261122.5085-x64.zip"
-        size: 241883576
-        sha256pre: "5b2a2f142417f430"
-      "778249283":
-        name: "T3-Code-0.1.12-nightly.20261122.5085-arm64.dmg"
-        size: 244624635
-        sha256pre: "14269d74aa397fda"
-      "778249284":
-        name: "T3-Code-0.1.12-nightly.20261122.5085-x64.exe"
-        size: 397292824
-        sha256pre: "6f6275a8331f3d1d"
-      "778249285":
-        name: "T3-Code-0.1.12-nightly.20261122.5085-arm64.zip"
-        size: 233527148
-        sha256pre: "57f5cdf493dc4e57"
-      "778249286":
-        name: "T3-Code-0.1.12-nightly.20261122.5085-x64.dmg"
-        size: 252966965
-        sha256pre: "c1ccd8cdc76c038c"
-      "778249287":
-        name: "nightly-linux.yml"
-        size: 584
-        sha256pre: "aff34b4a1fb73bd7"
-      "778249288":
+        size: 466
+        sha256pre: "f16e375e43389419"
+      "790558741":
+        name: "t3-0.1.12-linux-arm64.tar.gz"
+        size: 177253986
+        sha256pre: "29cfbab19117aa43"
+      "790558742":
         name: "builder-debug.yml"
         size: 2879
         sha256pre: "2ccb12b16e2c3197"
-      "778249289":
-        name: "T3-Code-0.1.12-nightly.20261122.5085-arm64.exe.blockmap"
-        size: 386701
-        sha256pre: "316cf6515d81db60"
-      "778249290":
-        name: "T3-Code-0.1.12-nightly.20261122.5085-amd64.deb"
-        size: 210765840
-        sha256pre: "8a12dfaa1699c70f"
-      "778249292":
-        name: "T3-Code-Nightly-x86_64.AppImage"
-        size: 256356856
-        sha256pre: "a32c7e3f2e67aeee"
-      "778249293":
-        name: "t3-0.1.12-nightly.20261122.5085-linux-arm64.tar.gz"
-        size: 177289027
-        sha256pre: "c42eebe25028772c"
-      "778249294":
-        name: "t3-0.1.12-nightly.20261122.5085-win32-x64.zip"
-        size: 170759340
-        sha256pre: "8a1704422c0f2044"
-      "778249295":
-        name: "T3-Code-0.1.12-nightly.20261122.5085-arm64.deb"
-        size: 198396928
-        sha256pre: "75f74fd1b8f553b6"
-      "778249296":
-        name: "t3-0.1.12-nightly.20261122.5085-darwin-arm64.tar.gz"
-        size: 152104747
-        sha256pre: "96412dc298f87a51"
-      "778249297":
-        name: "nightly.yml"
-        size: 439
-        sha256pre: "6a6ff8fe685be9ab"
-      "778249298":
-        name: "T3-Code-0.1.12-nightly.20261122.5085-arm64.exe"
-        size: 369584296
-        sha256pre: "ec8993a1c699fa04"
-      "778249299":
-        name: "T3-Code-0.1.12-nightly.20261122.5085-x64.dmg.blockmap"
-        size: 259478
-        sha256pre: "4de9fbd5f0dc8ef3"
-      "778249300":
-        name: "t3-0.1.12-nightly.20261122.5085-win32-arm64.zip"
-        size: 141852829
-        sha256pre: "5ca53ed77158bd33"
-      "778249301":
-        name: "T3-Code-0.1.12-nightly.20261122.5085-arm64.zip.blockmap"
-        size: 242643
-        sha256pre: "423598ff6656bc92"
-      "778249302":
-        name: "nightly-linux-arm64.yml"
-        size: 582
-        sha256pre: "dcdd6fa3620bf80b"
-      "778249303":
-        name: "T3-Code-0.1.12-nightly.20261122.5085-x64.zip.blockmap"
-        size: 253849
-        sha256pre: "86ef51148f2a6c5d"
-      "778249304":
-        name: "t3-0.1.12-nightly.20261122.5085-linux-x64.tar.gz"
-        size: 186531989
-        sha256pre: "821b3218ab046562"
-      "778249305":
-        name: "T3-Code-Nightly-arm64.AppImage"
-        size: 248097403
-        sha256pre: "1a08578eee942172"
-      "778249306":
-        name: "SHA256SUMS"
-        size: 576
-        sha256pre: "778a218a376d2b2f"
-      "778249311":
-        name: "T3-Code-0.1.12-nightly.20261122.5085-x64.exe.blockmap"
-        size: 413284
-        sha256pre: "1de149104eee16a6"
-      "778249312":
-        name: "T3-Code-0.1.12-nightly.20261122.5085-arm64.dmg.blockmap"
-        size: 253028
-        sha256pre: "3be3b735617e3642"
-      "778249313":
-        name: "t3code-android-internal-2.3.0-813.apk"
-        size: 149199198
-        sha256pre: "4bb327ef90c22b45"
-  "454479539":
-    tag: "v0.1.12-nightly.20261122.5098"
-    title: "T3 Code Nightly 0.1.12-nightly.20261122.5098 (620cf4770d99)"
-    published_at: "2026-11-22T13:48:26Z"
+      "790558744":
+        name: "T3-Code-0.1.12-arm64.dmg"
+        size: 237227036
+        sha256pre: "4613582f18d0c8ba"
+  "458148466":
+    tag: "v0.1.13-nightly.20261125.5245"
+    title: "T3 Code Nightly 0.1.13-nightly.20261125.5245 (1c3f0ee88fc7)"
+    published_at: "2026-11-25T13:24:43Z"
     prerelease: true
     assets:
-      "779212982":
-        name: "t3code-android-internal-2.3.0-813.apk"
-        size: 149199198
-        sha256pre: "4bb327ef90c22b45"
-      "779212984":
-        name: "nightly-linux-arm64.yml"
-        size: 582
-        sha256pre: "257d5ec9ed1df7fc"
-      "779212985":
-        name: "T3-Code-0.1.12-nightly.20261122.5098-x64.dmg"
-        size: 252977348
-        sha256pre: "4520f71f423ebf11"
-      "779212986":
-        name: "t3-0.1.12-nightly.20261122.5098-win32-arm64.zip"
-        size: 141859740
-        sha256pre: "df7c62da1099a861"
-      "779212987":
-        name: "T3-Code-0.1.12-nightly.20261122.5098-arm64.zip"
-        size: 233543232
-        sha256pre: "a4d4258c9027e093"
-      "779212988":
+      "791657685":
+        name: "T3-Code-0.1.13-nightly.20261125.5245-arm64.zip.blockmap"
+        size: 244584
+        sha256pre: "44c438cdab688b63"
+      "791657686":
+        name: "T3-Code-0.1.13-nightly.20261125.5245-arm64.exe.blockmap"
+        size: 388935
+        sha256pre: "eb5ced2daced36c0"
+      "791657687":
+        name: "T3-Code-0.1.13-nightly.20261125.5245-arm64.dmg"
+        size: 245941979
+        sha256pre: "1f0f19b883ce10a5"
+      "791657689":
+        name: "t3-0.1.13-nightly.20261125.5245-win32-arm64.zip"
+        size: 142617420
+        sha256pre: "86b02214b0d15fcf"
+      "791657690":
+        name: "t3-0.1.13-nightly.20261125.5245-win32-x64.zip"
+        size: 171520704
+        sha256pre: "2f9c884d4f800a16"
+      "791657691":
+        name: "nightly.yml"
+        size: 439
+        sha256pre: "a9be46fe79c15011"
+      "791657692":
+        name: "t3-0.1.13-nightly.20261125.5245-linux-x64.tar.gz"
+        size: 187301933
+        sha256pre: "de331775c0ef436e"
+      "791657694":
+        name: "T3-Code-0.1.13-nightly.20261125.5245-arm64.exe"
+        size: 370989264
+        sha256pre: "543c44b2c889e203"
+      "791657695":
         name: "nightly-linux.yml"
         size: 584
-        sha256pre: "41e1756efb6725e7"
-      "779212989":
-        name: "T3-Code-0.1.12-nightly.20261122.5098-x64.exe"
-        size: 397317744
-        sha256pre: "4a0f5b3fd07bc893"
-      "779212990":
+        sha256pre: "e441b9694f1e47e5"
+      "791657696":
+        name: "T3-Code-0.1.13-nightly.20261125.5245-arm64.zip"
+        size: 234800355
+        sha256pre: "f738c27a5cc280cc"
+      "791657697":
+        name: "t3-0.1.13-nightly.20261125.5245-darwin-arm64.tar.gz"
+        size: 152863870
+        sha256pre: "ab01a9f217352789"
+      "791657699":
+        name: "t3-0.1.13-nightly.20261125.5245-linux-arm64.tar.gz"
+        size: 178061205
+        sha256pre: "c5a67c84a3f04615"
+      "791657700":
+        name: "nightly-mac.yml"
+        size: 791
+        sha256pre: "e61663ff212a5c51"
+      "791657701":
+        name: "T3-Code-Nightly-x86_64.AppImage"
+        size: 257710559
+        sha256pre: "5d8a5a0027b943f9"
+      "791657702":
+        name: "T3-Code-0.1.13-nightly.20261125.5245-x64.dmg"
+        size: 254294205
+        sha256pre: "0b0178f94bad85ba"
+      "791657703":
+        name: "T3-Code-0.1.13-nightly.20261125.5245-x64.exe.blockmap"
+        size: 415522
+        sha256pre: "9eeb2caf7844495a"
+      "791657704":
+        name: "T3-Code-0.1.13-nightly.20261125.5245-x64.zip"
+        size: 243151052
+        sha256pre: "08154be1c30e9575"
+      "791657705":
+        name: "t3code-android-internal-2.3.0-825.apk"
+        size: 134745315
+        sha256pre: "fa8df0226749d470"
+      "791657706":
+        name: "nightly-linux-arm64.yml"
+        size: 582
+        sha256pre: "bb40c414c9e25f95"
+      "791657707":
+        name: "T3-Code-0.1.13-nightly.20261125.5245-x64.zip.blockmap"
+        size: 255980
+        sha256pre: "0b21b89b40cd2ea9"
+      "791657708":
+        name: "builder-debug.yml"
+        size: 2881
+        sha256pre: "9270bf596b18667d"
+      "791657709":
+        name: "T3-Code-0.1.13-nightly.20261125.5245-amd64.deb"
+        size: 211498840
+        sha256pre: "d5c9e3e489fb7dd0"
+      "791657710":
+        name: "T3-Code-0.1.13-nightly.20261125.5245-arm64.deb"
+        size: 198884048
+        sha256pre: "8112ae0bd0f711b9"
+      "791657711":
+        name: "T3-Code-0.1.13-nightly.20261125.5245-x64.exe"
+        size: 398688112
+        sha256pre: "2af19a94300cec55"
+      "791657712":
+        name: "T3-Code-Nightly-arm64.AppImage"
+        size: 249439704
+        sha256pre: "b228cca0fb1d315d"
+      "791657713":
+        name: "T3-Code-0.1.13-nightly.20261125.5245-arm64.dmg.blockmap"
+        size: 254011
+        sha256pre: "d86b5d081934e8fe"
+      "791657714":
+        name: "T3-Code-0.1.13-nightly.20261125.5245-x64.dmg.blockmap"
+        size: 261450
+        sha256pre: "a7e6e77bd2597939"
+      "791657715":
+        name: "SHA256SUMS"
+        size: 576
+        sha256pre: "c080ea1e246fac5d"
+  "458575479":
+    tag: "v0.1.13-nightly.20261125.5258"
+    title: "T3 Code Nightly 0.1.13-nightly.20261125.5258 (bf961f8121c6)"
+    published_at: "2026-11-25T19:49:34Z"
+    prerelease: true
+    assets:
+      "792908495":
+        name: "T3-Code-0.1.13-nightly.20261125.5258-arm64.deb"
+        size: 199688324
+        sha256pre: "b582bd82bc957015"
+      "792908496":
+        name: "T3-Code-0.1.13-nightly.20261125.5258-arm64.zip.blockmap"
+        size: 244572
+        sha256pre: "c868f63d71ca8b0e"
+      "792908499":
+        name: "T3-Code-Nightly-x86_64.AppImage"
+        size: 257697125
+        sha256pre: "49c57140651b236f"
+      "792908500":
+        name: "T3-Code-0.1.13-nightly.20261125.5258-x64.exe.blockmap"
+        size: 415558
+        sha256pre: "01e7380f5253203a"
+      "792908501":
+        name: "T3-Code-0.1.13-nightly.20261125.5258-x64.exe"
+        size: 397086920
+        sha256pre: "b8c347f80c4ee198"
+      "792908502":
+        name: "T3-Code-0.1.13-nightly.20261125.5258-arm64.dmg"
+        size: 246027624
+        sha256pre: "badabf0b6a445907"
+      "792908503":
+        name: "nightly.yml"
+        size: 439
+        sha256pre: "70bc0d2ff61f537d"
+      "792908504":
+        name: "SHA256SUMS"
+        size: 576
+        sha256pre: "e9225111b2dc5e64"
+      "792908505":
+        name: "nightly-linux.yml"
+        size: 584
+        sha256pre: "1bf9f921ac49b185"
+      "792908506":
+        name: "nightly-linux-arm64.yml"
+        size: 582
+        sha256pre: "693b924219d42598"
+      "792908507":
+        name: "t3-0.1.13-nightly.20261125.5258-linux-x64.tar.gz"
+        size: 186016174
+        sha256pre: "b59ad5d6a52cdcd6"
+      "792908508":
+        name: "nightly-mac.yml"
+        size: 791
+        sha256pre: "a0b6ebae8be28af9"
+      "792908509":
+        name: "T3-Code-0.1.13-nightly.20261125.5258-x64.dmg"
+        size: 254349503
+        sha256pre: "fee4a446cf3053df"
+      "792908510":
+        name: "t3-0.1.13-nightly.20261125.5258-linux-arm64.tar.gz"
+        size: 176899790
+        sha256pre: "08404bf34c4b594c"
+      "792908511":
+        name: "T3-Code-0.1.13-nightly.20261125.5258-arm64.exe.blockmap"
+        size: 386526
+        sha256pre: "8042c842fa6256ea"
+      "792908512":
+        name: "T3-Code-Nightly-arm64.AppImage"
+        size: 249516638
+        sha256pre: "78d03bfa38706641"
+      "792908513":
+        name: "T3-Code-0.1.13-nightly.20261125.5258-amd64.deb"
+        size: 211870100
+        sha256pre: "45104a9d35ed35f0"
+      "792908514":
+        name: "T3-Code-0.1.13-nightly.20261125.5258-arm64.zip"
+        size: 234872845
+        sha256pre: "aa382eb830050270"
+      "792908515":
+        name: "t3code-android-internal-2.3.0-825.apk"
+        size: 134745315
+        sha256pre: "fa8df0226749d470"
+      "792908516":
+        name: "t3-0.1.13-nightly.20261125.5258-darwin-arm64.tar.gz"
+        size: 152688279
+        sha256pre: "c6e8093b058c5579"
+      "792908517":
+        name: "T3-Code-0.1.13-nightly.20261125.5258-arm64.dmg.blockmap"
+        size: 253317
+        sha256pre: "0deb2e97a9e7f054"
+      "792908518":
+        name: "T3-Code-0.1.13-nightly.20261125.5258-x64.dmg.blockmap"
+        size: 260263
+        sha256pre: "bedc2ffe89c2a481"
+      "792908519":
+        name: "T3-Code-0.1.13-nightly.20261125.5258-x64.zip.blockmap"
+        size: 254923
+        sha256pre: "0e9f3114bc108a9a"
+      "792908520":
         name: "builder-debug.yml"
         size: 2879
         sha256pre: "2ccb12b16e2c3197"
-      "779212991":
-        name: "t3-0.1.12-nightly.20261122.5098-darwin-arm64.tar.gz"
-        size: 152109595
-        sha256pre: "3a0079a03aa47224"
-      "779212992":
-        name: "t3-0.1.12-nightly.20261122.5098-win32-x64.zip"
-        size: 170766686
-        sha256pre: "1f4eaff56ae9c3b8"
-      "779212993":
-        name: "T3-Code-0.1.12-nightly.20261122.5098-x64.zip.blockmap"
-        size: 255169
-        sha256pre: "bf4925546e5a4b3a"
-      "779212994":
+      "792908521":
+        name: "T3-Code-0.1.13-nightly.20261125.5258-arm64.exe"
+        size: 369588768
+        sha256pre: "3164984266a983de"
+      "792908522":
+        name: "t3-0.1.13-nightly.20261125.5258-win32-x64.zip"
+        size: 170867939
+        sha256pre: "2c61493b8563d558"
+      "792908524":
+        name: "t3-0.1.13-nightly.20261125.5258-win32-arm64.zip"
+        size: 142031471
+        sha256pre: "6da28e5c832fc51b"
+      "792908526":
+        name: "T3-Code-0.1.13-nightly.20261125.5258-x64.zip"
+        size: 243223458
+        sha256pre: "b36af806c0cff2ab"
+  "458954666":
+    tag: "android-beta-831"
+    title: "Android beta 2.4.0 (831)"
+    published_at: "2026-11-26T04:29:09Z"
+    prerelease: true
+    assets:
+      "794314272":
+        name: "t3code-android-beta-2.4.0-831.apk"
+        size: 151129315
+        sha256pre: "821e7e841349df4a"
+  "459817698":
+    tag: "v0.1.13-nightly.20261126.5305"
+    title: "T3 Code Nightly 0.1.13-nightly.20261126.5305 (bc0f04da94f6)"
+    published_at: "2026-11-26T19:20:46Z"
+    prerelease: true
+    assets:
+      "797362196":
+        name: "t3-0.1.13-nightly.20261126.5305-win32-arm64.zip"
+        size: 142098645
+        sha256pre: "37800b7f05c3baef"
+      "797362198":
+        name: "T3-Code-0.1.13-nightly.20261126.5305-arm64.deb"
+        size: 199587720
+        sha256pre: "fcce9a3361ff1e55"
+      "797362199":
+        name: "T3-Code-0.1.13-nightly.20261126.5305-arm64.dmg.blockmap"
+        size: 254742
+        sha256pre: "2413ee4fc9c7a868"
+      "797362200":
+        name: "T3-Code-0.1.13-nightly.20261126.5305-x64.dmg.blockmap"
+        size: 262851
+        sha256pre: "976a61fdf7b499c9"
+      "797362201":
         name: "nightly.yml"
         size: 439
-        sha256pre: "e993841f2becef1e"
-      "779212995":
-        name: "t3-0.1.12-nightly.20261122.5098-linux-arm64.tar.gz"
-        size: 177295495
-        sha256pre: "1f02b61ea92b82c7"
-      "779212996":
-        name: "nightly-mac.yml"
-        size: 791
-        sha256pre: "41e5a659cef33f30"
-      "779212999":
-        name: "T3-Code-Nightly-x86_64.AppImage"
-        size: 256365069
-        sha256pre: "3a733f3bef32dcac"
-      "779213000":
-        name: "T3-Code-0.1.12-nightly.20261122.5098-arm64.zip.blockmap"
-        size: 243333
-        sha256pre: "369486ede1424676"
-      "779213001":
-        name: "T3-Code-0.1.12-nightly.20261122.5098-amd64.deb"
-        size: 210469824
-        sha256pre: "651e1481df35bea2"
-      "779213002":
-        name: "T3-Code-0.1.12-nightly.20261122.5098-x64.dmg.blockmap"
-        size: 259569
-        sha256pre: "483bc646e3c7247a"
-      "779213003":
-        name: "T3-Code-0.1.12-nightly.20261122.5098-x64.zip"
-        size: 241898158
-        sha256pre: "a39becb22f9d24b2"
-      "779213004":
-        name: "T3-Code-0.1.12-nightly.20261122.5098-x64.exe.blockmap"
-        size: 414518
-        sha256pre: "33fd7d69eb22dd28"
-      "779213005":
-        name: "T3-Code-Nightly-arm64.AppImage"
-        size: 248069373
-        sha256pre: "a831e95db135933b"
-      "779213006":
-        name: "t3-0.1.12-nightly.20261122.5098-linux-x64.tar.gz"
-        size: 186540617
-        sha256pre: "9f30e970fca310d5"
-      "779213007":
-        name: "T3-Code-0.1.12-nightly.20261122.5098-arm64.exe"
-        size: 369579360
-        sha256pre: "7314af43e37e140f"
-      "779213008":
-        name: "T3-Code-0.1.12-nightly.20261122.5098-arm64.exe.blockmap"
-        size: 385202
-        sha256pre: "90f3e19a39f96eb0"
-      "779213009":
-        name: "T3-Code-0.1.12-nightly.20261122.5098-arm64.dmg.blockmap"
-        size: 253298
-        sha256pre: "2c002f7fcf16b649"
-      "779213011":
-        name: "T3-Code-0.1.12-nightly.20261122.5098-arm64.dmg"
-        size: 244651575
-        sha256pre: "1e87da7963d9b552"
-      "779213012":
+        sha256pre: "26cb80ab52265e7d"
+      "797362202":
         name: "SHA256SUMS"
         size: 576
-        sha256pre: "9658f2d89a29a886"
-      "779213016":
-        name: "T3-Code-0.1.12-nightly.20261122.5098-arm64.deb"
-        size: 198897000
-        sha256pre: "8c222c48203a2b6c"
+        sha256pre: "4650d3174a5a6922"
+      "797362203":
+        name: "t3code-android-internal-2.4.0-831.apk"
+        size: 151129315
+        sha256pre: "821e7e841349df4a"
+      "797362204":
+        name: "T3-Code-0.1.13-nightly.20261126.5305-x64.exe.blockmap"
+        size: 415806
+        sha256pre: "eb3667d62ab0272a"
+      "797362205":
+        name: "T3-Code-0.1.13-nightly.20261126.5305-arm64.exe.blockmap"
+        size: 384722
+        sha256pre: "9cce64c9ef069d31"
+      "797362206":
+        name: "T3-Code-Nightly-arm64.AppImage"
+        size: 249528635
+        sha256pre: "165f1f6d5c2ec98b"
+      "797362207":
+        name: "T3-Code-0.1.13-nightly.20261126.5305-amd64.deb"
+        size: 211766320
+        sha256pre: "6ba7d05f238c1f32"
+      "797362208":
+        name: "T3-Code-0.1.13-nightly.20261126.5305-x64.zip"
+        size: 243308496
+        sha256pre: "fd17beb2cf9ba725"
+      "797362209":
+        name: "T3-Code-0.1.13-nightly.20261126.5305-arm64.zip.blockmap"
+        size: 244193
+        sha256pre: "1a59088df62ae450"
+      "797362210":
+        name: "T3-Code-0.1.13-nightly.20261126.5305-arm64.zip"
+        size: 234956530
+        sha256pre: "17e6cfac4dbb70d9"
+      "797362211":
+        name: "t3-0.1.13-nightly.20261126.5305-darwin-arm64.tar.gz"
+        size: 152764228
+        sha256pre: "4cff9714f6fdc2c9"
+      "797362212":
+        name: "nightly-linux.yml"
+        size: 584
+        sha256pre: "c09fd8722e4b8d10"
+      "797362213":
+        name: "builder-debug.yml"
+        size: 2881
+        sha256pre: "9270bf596b18667d"
+      "797362214":
+        name: "T3-Code-0.1.13-nightly.20261126.5305-arm64.dmg"
+        size: 246162229
+        sha256pre: "7b39231e4a2b720f"
+      "797362215":
+        name: "T3-Code-Nightly-x86_64.AppImage"
+        size: 257841524
+        sha256pre: "48202d6294fc6aed"
+      "797362216":
+        name: "t3-0.1.13-nightly.20261126.5305-linux-arm64.tar.gz"
+        size: 176940700
+        sha256pre: "1bb1a489c9d242eb"
+      "797362217":
+        name: "T3-Code-0.1.13-nightly.20261126.5305-arm64.exe"
+        size: 369633480
+        sha256pre: "32fea70d71fb3082"
+      "797362218":
+        name: "nightly-linux-arm64.yml"
+        size: 582
+        sha256pre: "818117696434532e"
+      "797362219":
+        name: "T3-Code-0.1.13-nightly.20261126.5305-x64.exe"
+        size: 397184528
+        sha256pre: "ab960a1349139056"
+      "797362221":
+        name: "T3-Code-0.1.13-nightly.20261126.5305-x64.zip.blockmap"
+        size: 256068
+        sha256pre: "38052e40048b89a3"
+      "797362222":
+        name: "t3-0.1.13-nightly.20261126.5305-win32-x64.zip"
+        size: 170936947
+        sha256pre: "5a86f14bc480e5fb"
+      "797362223":
+        name: "t3-0.1.13-nightly.20261126.5305-linux-x64.tar.gz"
+        size: 186114809
+        sha256pre: "cf27b691e735396e"
+      "797362224":
+        name: "T3-Code-0.1.13-nightly.20261126.5305-x64.dmg"
+        size: 254447899
+        sha256pre: "7b0bd24042f46bf1"
+      "797362227":
+        name: "nightly-mac.yml"
+        size: 791
+        sha256pre: "14eebd15be26231b"
+  "459827811":
+    tag: "v0.1.13"
+    title: "T3 Code v0.1.13"
+    published_at: "2026-11-26T19:32:24Z"
+    prerelease: false
+    assets:
+      "797398555":
+        name: "T3-Code-arm64.AppImage"
+        size: 247680727
+        sha256pre: "47156eade4d3e8c6"
+      "797398556":
+        name: "T3-Code-0.1.13-arm64.exe"
+        size: 367843840
+        sha256pre: "76969a54c2b68e18"
+      "797398557":
+        name: "T3-Code-0.1.13-arm64.zip.blockmap"
+        size: 238514
+        sha256pre: "d48cdfb2ee39b81e"
+      "797398558":
+        name: "T3-Code-x86_64.AppImage"
+        size: 256003692
+        sha256pre: "dac1bbe9e93c1a5f"
+      "797398559":
+        name: "T3-Code-0.1.13-arm64.deb"
+        size: 198006584
+        sha256pre: "34ce948112c9d528"
+      "797398560":
+        name: "T3-Code-0.1.13-arm64.dmg"
+        size: 237415130
+        sha256pre: "dfdc4e87a7e56ac1"
+      "797398561":
+        name: "T3-Code-0.1.13-amd64.deb"
+        size: 208526808
+        sha256pre: "630dfe9d041b4262"
+      "797398565":
+        name: "T3-Code-0.1.13-x64.dmg.blockmap"
+        size: 257375
+        sha256pre: "f059c2afad81bbfb"
+      "797398566":
+        name: "T3-Code-0.1.13-arm64.exe.blockmap"
+        size: 383068
+        sha256pre: "72e87f9377f50c57"
+      "797398567":
+        name: "latest-mac.yml"
+        size: 681
+        sha256pre: "4ecd17294dabfe39"
+      "797398568":
+        name: "SHA256SUMS"
+        size: 466
+        sha256pre: "79b81212bfe6c19e"
+      "797398569":
+        name: "t3-0.1.13-win32-x64.zip"
+        size: 170018815
+        sha256pre: "691457b9fb0fec2d"
+      "797398570":
+        name: "latest.yml"
+        size: 373
+        sha256pre: "ddcd7cd331f2d308"
+      "797398571":
+        name: "t3-0.1.13-linux-x64.tar.gz"
+        size: 185312913
+        sha256pre: "64e0f8446d3f618b"
+      "797398572":
+        name: "T3-Code-0.1.13-x64.dmg"
+        size: 245734072
+        sha256pre: "cda3b96851cd2ece"
+      "797398573":
+        name: "latest-linux-arm64.yml"
+        size: 522
+        sha256pre: "00c82276b15b5827"
+      "797398575":
+        name: "T3-Code-0.1.13-x64.exe.blockmap"
+        size: 412065
+        sha256pre: "3fd257f2b04eb372"
+      "797398576":
+        name: "T3-Code-0.1.13-x64.zip"
+        size: 237350889
+        sha256pre: "b535e02351687eb1"
+      "797398577":
+        name: "T3-Code-0.1.13-arm64.zip"
+        size: 229000907
+        sha256pre: "7f46fd2b07c90e6f"
+      "797398578":
+        name: "T3-Code-0.1.13-arm64.dmg.blockmap"
+        size: 248797
+        sha256pre: "f57b5e80f214c10f"
+      "797398579":
+        name: "latest-linux.yml"
+        size: 524
+        sha256pre: "f02ce451eea5276c"
+      "797398580":
+        name: "T3-Code-0.1.13-x64.zip.blockmap"
+        size: 249196
+        sha256pre: "1cbe704e954c1829"
+      "797398582":
+        name: "T3-Code-0.1.13-x64.exe"
+        size: 395318896
+        sha256pre: "244f6992aade889b"
+      "797398583":
+        name: "builder-debug.yml"
+        size: 2879
+        sha256pre: "2ccb12b16e2c3197"
+      "797398585":
+        name: "t3-0.1.13-darwin-arm64.tar.gz"
+        size: 152008568
+        sha256pre: "d83b2e1ef9557e12"
+      "797398588":
+        name: "t3-0.1.13-linux-arm64.tar.gz"
+        size: 176167895
+        sha256pre: "c553c17db07030d0"
+      "797398590":
+        name: "t3-0.1.13-win32-arm64.zip"
+        size: 141182310
+        sha256pre: "209fc2194e4dff36"
