@@ -168,6 +168,11 @@ def decide(run, ci=None, out=say, validate=None):
     if head == base:
         raise Refused('nothing to ship: HEAD is origin/'+BRANCH)
     if run(['git', 'merge-base', '--is-ancestor', base, head])[0]:
+        theirs = output(run, ['git', 'diff', '--name-only', head+'...'+base]).splitlines()
+        if theirs and all(path.startswith('catalog/') for path in theirs):
+            # The hourly collector's commits (ticket 24): merging them needs no tests.
+            raise Refused('HEAD is not a fast-forward of origin/'+BRANCH+', whose new commits change only catalog/;'
+                          ' run `git merge origin/'+BRANCH+'` and ship again')
         raise Refused('HEAD is not a fast-forward of origin/'+BRANCH)
     changed = output(run, ['git', 'diff', '--name-only', base, head]).splitlines()
     if ci:

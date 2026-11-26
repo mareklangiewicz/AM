@@ -113,8 +113,24 @@ class Refusals(unittest.TestCase):
     def test_nothing_to_ship(self):
         self.refused(START[:3]+[(['git', 'rev-parse', 'origin/main-marek'], HEAD+'\n')], 'nothing')
 
+    def diverged(self, origin_changed):
+        """HEAD is not a fast-forward, and origin's commits HEAD lacks change `origin_changed`."""
+        return START[:4]+[(['git', 'merge-base', '--is-ancestor', BASE, HEAD], (1, '')),
+                          (['git', 'diff', '--name-only', HEAD+'...'+BASE], ''.join(p+'\n' for p in origin_changed))]
+
     def test_not_a_fast_forward(self):
-        self.refused(START[:4]+[(['git', 'merge-base', '--is-ancestor', BASE, HEAD], (1, ''))], 'fast-forward')
+        self.refused(self.diverged(['modules/a.am', 'catalog/apps.yaml']), 'fast-forward')
+
+    def test_not_a_fast_forward_by_collector_commits_says_to_merge(self):
+        self.refused(self.diverged(['catalog/apps.yaml', 'catalog/status/runs.yaml']),
+                     r'fast-forward.*only catalog/.*git merge origin/main-marek')
+
+    def test_not_a_fast_forward_by_code_does_not_suggest_a_merge(self):
+        run = Fake(self.diverged(['catalog/apps.yaml', 'modules/a.am']))
+        with self.assertRaises(release.Refused) as raised:
+            release.ship(run, out=lambda line: None, sleep=lambda s: None, validate=never)
+        self.assertNotIn('git merge', str(raised.exception))
+        self.assertEqual(run.script, [])
 
     def test_code_change_without_ci(self):
         self.refused(START+changed('docs/a.md', 'catalog/apps.yaml', 'modules/appimage.am'), 'modules/appimage.am$')
