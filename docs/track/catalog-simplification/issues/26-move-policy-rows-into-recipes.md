@@ -27,3 +27,24 @@ settle the assignment form with Marek.
 
 Was "Generate the policy files in memory, not commit them". The premise was
 false: the files are the facts' only home (see ticket 25's correction).
+
+### November 26, 2026: measurement (`scripts/26/measure.py` on `dda1aab36`)
+
+- URL policies: 1,464 rows from 1,391 recipes, the same 1,391 scripts that
+  call `catalog-yaml.am` across all architectures. 72 recipes have more than
+  one row (up to 3), keyed `<recipe>.select-N`, and the script picks one with a
+  `case` on the requested repository (`aarch64/86box`). Each row has 1–4
+  rules; a rule's fields are only `pattern`, `ignore_case` and `exclude`. No
+  pattern holds a single quote, newline, tab or non-ASCII character, and the
+  longest rule list is 274 characters as compact JSON. Channels: `any` 1,384,
+  `stable` 79, `nightly` 1. 78 rows have a `catalog_app` that isn't the
+  recipe's app. 58 have an alias besides the repository and its lowercase
+  form. A few rows use the optional fields `selection` (40), `tag_pattern`
+  (10), `tag_exclude` (1), `git_ref` (3) and `git_file` (3).
+- AppImage policies: 105 rows, no recipe overlapping with the URL policies.
+  Each row has the same three rule fields, an `endpoint` (`list` 96,
+  `latest` 9), a `release_rule` (`published_desc` 98,
+  `stable_published_desc` 7), and `selector`, the original pipeline text kept
+  as evidence.
+- Precedent: 8,351 recipes already declare `CATALOG_URL_RULES='[…]'` as
+  single-quoted compact JSON, read by `recipe_declarations.recipe_rows`.
