@@ -1,9 +1,31 @@
 $schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
 repository_id: 1092839234
 repository: "vicanso/zedis"
-observed_at: "2026-11-22T11:38:17Z"
+observed_at: "2026-11-26T09:37:36Z"
 history_complete: true
 releases:
+  "275705557":
+    tag: "v0.1.7"
+    title: "version 0.1.7"
+    published_at: "2026-01-10T11:06:24Z"
+    prerelease: false
+    assets:
+      "338725873":
+        name: "zedis-windows.exe.zip"
+        size: 6718471
+        sha256pre: "aec84f656b8b6a5e"
+      "338726027":
+        name: "Zedis-aarch64.dmg"
+        size: 6670661
+        sha256pre: "8f0c03e025c40c1b"
+      "338726545":
+        name: "zedis-linux-x86_64.tar.gz"
+        size: 10314142
+        sha256pre: "bdbb862f612b0ed8"
+      "338726548":
+        name: "zedis-x86_64.AppImage"
+        size: 10598904
+        sha256pre: "24798c671b62b277"
   "415588201":
     tag: "v0.14.0"
     title: "version 0.14.0"
@@ -680,116 +702,6 @@ releases:
         name: "latest.json"
         size: 8887
         sha256pre: "3be828bdebce7fda"
-  "454035418":
-    tag: "nightly"
-    title: "Development Build (Nightly)"
-    published_at: "2026-11-21T22:41:36Z"
-    prerelease: true
-    assets:
-      "777126655":
-        name: "zedis-linux-x86_64.deb"
-        size: 18316032
-        sha256pre: "e1d8443550cfe13b"
-      "777126656":
-        name: "zedis-linux-x86_64.rpm"
-        size: 19315605
-        sha256pre: "ec987cceedf67d58"
-      "777126657":
-        name: "zedis-linux-x86_64.tar.gz"
-        size: 26750185
-        sha256pre: "9e77319add049952"
-      "777126662":
-        name: "zedis-x86_64.AppImage.tar.gz"
-        size: 24921300
-        sha256pre: "92bcfc4d335db861"
-      "777137388":
-        name: "zedis-linux-aarch64.tar.gz"
-        size: 25855932
-        sha256pre: "de636e7ba69ad03e"
-      "777137389":
-        name: "zedis-linux-aarch64.deb"
-        size: 16600252
-        sha256pre: "1d0b705a49ad4d90"
-      "777137390":
-        name: "zedis-linux-aarch64.rpm"
-        size: 19045858
-        sha256pre: "8eda10ac6c5a8a9b"
-      "777137393":
-        name: "zedis-aarch64.AppImage.tar.gz"
-        size: 24305720
-        sha256pre: "131d1918520d5230"
-      "777138221":
-        name: "zedis-aarch64-fast.AppImage.tar.gz"
-        size: 26155630
-        sha256pre: "48b7773f15a2c736"
-      "777138224":
-        name: "zedis-linux-aarch64-fast.tar.gz"
-        size: 28043074
-        sha256pre: "b7468bbbe1f8ecd5"
-      "777144640":
-        name: "zedis-linux-x86_64-fast.tar.gz"
-        size: 29127053
-        sha256pre: "6dc91417c1e61727"
-      "777144647":
-        name: "zedis-x86_64-fast.AppImage.tar.gz"
-        size: 26891968
-        sha256pre: "ead24b2e22d8e90e"
-      "777149477":
-        name: "zedis-windows-x86_64-fast.msi"
-        size: 23306240
-        sha256pre: "98b0d675f7bd45ee"
-      "777149489":
-        name: "zedis-windows-x86_64-fast.zip"
-        size: 22701902
-        sha256pre: "f7393e31a5412709"
-      "777150859":
-        name: "Zedis-aarch64.dmg"
-        size: 19306504
-        sha256pre: "54e9cf8e8e419b85"
-      "777156371":
-        name: "zedis-windows-aarch64-fast.zip"
-        size: 21963334
-        sha256pre: "f7f08331f1ee4d27"
-      "777156372":
-        name: "zedis-windows-aarch64-fast.msi"
-        size: 22650880
-        sha256pre: "86edb9292548cc8d"
-      "777157454":
-        name: "zedis-windows-x86_64.msi.zip"
-        size: 20530294
-        sha256pre: "9a298b827cf716e5"
-      "777157456":
-        name: "zedis-windows-x86_64.msi"
-        size: 21061632
-        sha256pre: "6d98cbcf5caf0a44"
-      "777157458":
-        name: "zedis-windows-x86_64.zip"
-        size: 20432945
-        sha256pre: "6950fe5dec874539"
-      "777164879":
-        name: "zedis-windows-aarch64.zip"
-        size: 19865953
-        sha256pre: "98c1a50a6453d7d9"
-      "777164880":
-        name: "zedis-windows-aarch64.msi.zip"
-        size: 20020062
-        sha256pre: "68294c1146693253"
-      "777164881":
-        name: "zedis-windows-aarch64.msi"
-        size: 20549632
-        sha256pre: "558089c6962dc578"
-      "777166777":
-        name: "Zedis-aarch64-fast.dmg"
-        size: 21229444
-        sha256pre: "c710c86bcc9da41f"
-      "777185197":
-        name: "Zedis-x86_64.dmg"
-        size: 21257692
-        sha256pre: "d47f1029827ba196"
-      "777188562":
-        name: "Zedis-x86_64-fast.dmg"
-        size: 23231633
-        sha256pre: "60ac473b9425ad2b"
   "454107925":
     tag: "v0.18.0"
     title: "version 0.18.0"
@@ -908,3 +820,113 @@ releases:
         name: "latest.json"
         size: 8887
         sha256pre: "6ee7e8771f33be0b"
+  "457551163":
+    tag: "nightly"
+    title: "Development Build (Nightly)"
+    published_at: "2026-11-25T01:50:44Z"
+    prerelease: true
+    assets:
+      "789670652":
+        name: "Zedis-aarch64.dmg"
+        size: 19736465
+        sha256pre: "814a6ba0832d529a"
+      "789678529":
+        name: "zedis-linux-x86_64.deb"
+        size: 18521084
+        sha256pre: "71db6a7f4194cee4"
+      "789678530":
+        name: "zedis-x86_64.AppImage.tar.gz"
+        size: 25451279
+        sha256pre: "70eb17c28a812cb1"
+      "789678532":
+        name: "zedis-linux-x86_64.tar.gz"
+        size: 27365695
+        sha256pre: "9a22a98b2d7c3bb9"
+      "789678533":
+        name: "zedis-linux-x86_64.rpm"
+        size: 19604165
+        sha256pre: "3abcd1b34e3908d9"
+      "789687066":
+        name: "zedis-x86_64-fast.AppImage.tar.gz"
+        size: 27118089
+        sha256pre: "a107d59e2f287b58"
+      "789687068":
+        name: "zedis-linux-x86_64-fast.tar.gz"
+        size: 29335661
+        sha256pre: "edc91b204523eb72"
+      "789687451":
+        name: "zedis-linux-aarch64.rpm"
+        size: 19402498
+        sha256pre: "5921784916126778"
+      "789687453":
+        name: "zedis-aarch64.AppImage.tar.gz"
+        size: 24822704
+        sha256pre: "ffc7e106ad3a10ae"
+      "789687462":
+        name: "zedis-linux-aarch64.deb"
+        size: 16898964
+        sha256pre: "f8350cd4f5ef7d56"
+      "789687463":
+        name: "zedis-linux-aarch64.tar.gz"
+        size: 26409471
+        sha256pre: "216bccbbdd905fee"
+      "789688380":
+        name: "zedis-windows-x86_64-fast.zip"
+        size: 22888718
+        sha256pre: "00d888c273f9d041"
+      "789688382":
+        name: "zedis-windows-x86_64-fast.msi"
+        size: 23494656
+        sha256pre: "d19ad710445f3d6a"
+      "789689038":
+        name: "zedis-aarch64-fast.AppImage.tar.gz"
+        size: 26363951
+        sha256pre: "2da3f91692050449"
+      "789689045":
+        name: "zedis-linux-aarch64-fast.tar.gz"
+        size: 28231860
+        sha256pre: "657a07edf01d3448"
+      "789703846":
+        name: "zedis-windows-x86_64.msi"
+        size: 21602304
+        sha256pre: "d2e9a81b62cfee16"
+      "789703847":
+        name: "zedis-windows-x86_64.msi.zip"
+        size: 21070515
+        sha256pre: "c292d7e37d4516bd"
+      "789703850":
+        name: "zedis-windows-x86_64.zip"
+        size: 20980402
+        sha256pre: "1a58aa5bab402d26"
+      "789709928":
+        name: "zedis-windows-aarch64.msi.zip"
+        size: 20579490
+        sha256pre: "113ed4e0779ea950"
+      "789709930":
+        name: "zedis-windows-aarch64.zip"
+        size: 20423699
+        sha256pre: "84626cd00cd31f29"
+      "789709931":
+        name: "zedis-windows-aarch64.msi"
+        size: 21114880
+        sha256pre: "d5b7b4ada09daedc"
+      "789715983":
+        name: "Zedis-aarch64-fast.dmg"
+        size: 21416803
+        sha256pre: "27e5c57d916a61a7"
+      "789722997":
+        name: "Zedis-x86_64.dmg"
+        size: 21461637
+        sha256pre: "3048698f0ee29d07"
+      "789725000":
+        name: "zedis-windows-aarch64-fast.msi"
+        size: 22876160
+        sha256pre: "9ab8213ac4552372"
+      "789725001":
+        name: "zedis-windows-aarch64-fast.zip"
+        size: 22188128
+        sha256pre: "bdb703e3632d12bc"
+      "789769815":
+        name: "Zedis-x86_64-fast.dmg"
+        size: 23412406
+        sha256pre: "45ac7c41a2675337"
