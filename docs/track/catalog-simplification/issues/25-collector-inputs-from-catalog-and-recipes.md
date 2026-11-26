@@ -171,3 +171,11 @@ rewritten.
 The Git scopes are derived from the recipes' existing Git selection lines,
 with no new `CATALOG_GIT_*` assignments, and `git-sources.json` is deleted
 ([ticket 29](29-derive-git-sources-from-recipes.md)).
+
+### November 26, 2026: items 5, 8 and 9 replaced (Marek: Q16)
+
+`platforms.json` and the run outputs stay JSON
+([ticket 31](31-platforms-and-run-outputs-as-yaml.md)). The catalog grammar
+itself is to become a yamx profile (mareklangiewicz/yamx#22,
+[ticket 33](33-read-the-catalog-with-yamx.md)), and `platforms.json` moves to
+YAM(B) then. No new catalog-grammar files are added for collector inputs.

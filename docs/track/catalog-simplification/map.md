@@ -55,7 +55,7 @@ possible, no migration steps; he reinstalls his apps. One change,
 [Cut over to the simplified catalog in one change](issues/24-cut-over-to-the-simplified-catalog.md),
 merges 14, 16, 17, 20, 21 and 22 and seeds `catalog/` by a one-time conversion.
 Done: 18 (claimed, twins pending), 23 (warn on old data).
-Collector inputs (ticket 25): 28 (hosts on 27 first), 30, 31. Done: [32](issues/32-drop-vscode-schema-associations.md) (`.vscode` gone), [29](issues/29-derive-git-sources-from-recipes.md) (Git scopes derived from the recipes), [27](issues/27-accept-a-never-read-repository-file.md) (never-read repository files), [26](issues/26-move-policy-rows-into-recipes.md) (policy rows are recipe lines; both policy JSON files gone).
+Collector inputs (ticket 25): 28 (hosts on 27 first), 30, 33 (after yamx#22). Done: [31](issues/31-platforms-and-run-outputs-as-yaml.md) (not now: both stay JSON), [32](issues/32-drop-vscode-schema-associations.md) (`.vscode` gone), [29](issues/29-derive-git-sources-from-recipes.md) (Git scopes derived from the recipes), [27](issues/27-accept-a-never-read-repository-file.md) (never-read repository files), [26](issues/26-move-policy-rows-into-recipes.md) (policy rows are recipe lines; both policy JSON files gone).
 
 ## Decisions so far
 
