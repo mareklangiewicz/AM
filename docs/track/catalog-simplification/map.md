@@ -55,7 +55,7 @@ possible, no migration steps; he reinstalls his apps. One change,
 [Cut over to the simplified catalog in one change](issues/24-cut-over-to-the-simplified-catalog.md),
 merges 14, 16, 17, 20, 21 and 22 and seeds `catalog/` by a one-time conversion.
 Done: 18 (claimed, twins pending), 23 (warn on old data).
-Collector inputs (ticket 25): 27, 28 (after 27), 29, 30, 31, 32. Done: [26](issues/26-move-policy-rows-into-recipes.md) (policy rows are recipe lines; both policy JSON files gone).
+Collector inputs (ticket 25): 28 (hosts on 27 first), 29, 30, 31, 32. Done: [27](issues/27-accept-a-never-read-repository-file.md) (never-read repository files), [26](issues/26-move-policy-rows-into-recipes.md) (policy rows are recipe lines; both policy JSON files gone).
 
 ## Decisions so far
 

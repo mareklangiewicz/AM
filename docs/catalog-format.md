@@ -44,8 +44,10 @@ A repository document:
 - has `observed_at` and `history_complete` together, or neither (never
   collected);
 - has `failed_at` and `failed_with` together. A never-collected repository
-  has its failure and nothing else: no releases, no Git refs. When both
-  times are present, `failed_at` is later than `observed_at`;
+  has no releases and no Git refs: only its failure, or, when it was
+  enrolled and has not been read yet, nothing beyond its identity and
+  `releases: {}`. When both times are present, `failed_at` is later than
+  `observed_at`;
 - gives a release its own `observed_at` only when it is older than the
   repository's;
 - has `git_scope` and `git_refs` together. Every tag ref has a `position`, and

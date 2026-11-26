@@ -137,6 +137,33 @@ releases: {}
         self.assertNotIn('failed_with', again)
 
 
+    def test_an_enrolled_repository_not_yet_read_takes_its_first_failure_or_read(self):
+        # The hand-written file that enrolls a repository (ticket 27), as load() returns it.
+        new = dict(repository_id=9, repository='example/new', releases={})
+        self.assertDocument(new, '''\
+$schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
+repository_id: 9
+repository: "example/new"
+releases: {}
+''')
+        self.assertDocument(d.failed(new, failed_at=NOW, failed_with='transport', repository_id=9, repository='example/new'), '''\
+$schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
+repository_id: 9
+repository: "example/new"
+failed_at: "2026-11-25T10:00:00Z"
+failed_with: "transport"
+releases: {}
+''')
+        read = d.repository(new, dict(received_at=NOW, releases={}, history_complete=True), repository_id=9, repository='example/new')
+        self.assertDocument(read, '''\
+$schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
+repository_id: 9
+repository: "example/new"
+observed_at: "2026-11-25T10:00:00Z"
+history_complete: true
+releases: {}
+''')
+
     def test_git_observations_are_copied_into_the_document(self):
         main, tag = 'refs/heads/main', 'refs/tags/v1'
         observed = dict(git_scope=dict(tags=True, tags_history_complete=True),

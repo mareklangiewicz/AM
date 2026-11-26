@@ -107,7 +107,8 @@ function repository_rules( collected,failed,p,r,f,name,tags,branches,position,po
     collected=has("","observed_at"); failed=has("","failed_at")
     if(collected!=has("","history_complete")) fail("observed_at and history_complete come together")
     if(failed!=has("","failed_with")) fail("failed_at and failed_with come together")
-    if(!collected && (!failed || children[SUBSEP "releases"] || has("","git_scope"))) fail("a never-collected repository has only its failure")
+    # Never collected: failed every time, or enrolled and not yet read (ticket 27).
+    if(!collected && (children[SUBSEP "releases"] || has("","git_scope"))) fail("a never-collected repository has no releases or Git refs")
     if(collected && failed && "x" value("","failed_at")<="x" value("","observed_at")) fail("failure not after observation")
     for(p in node_type) if(node_type[p]=="release" && has(p,"observed_at") && "x" value(p,"observed_at")>="x" value("","observed_at")) fail("release last seen not older than the repository")
     if(has("","git_scope")!=has("","git_refs")) fail("git_scope and git_refs come together")

@@ -1,0 +1,11 @@
+$schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
+repository_id: 9223372036854775806
+repository: "example/new"
+releases: {}
+git_scope:
+  tags: true
+  tags_history_complete: false
+git_refs:
+  "refs/tags/v1":
+    commit: "cccccccccccccccccccccccccccccccccccccccc"
+    position: 0

@@ -76,7 +76,11 @@
   "schema_sees": true
  },
  "bad-never-collected-with-release.yaml": {
-  "refusal": "a never-collected repository has only its failure",
+  "refusal": "a never-collected repository has no releases or Git refs",
+  "schema_sees": false
+ },
+ "bad-never-read-with-git.yaml": {
+  "refusal": "a never-collected repository has no releases or Git refs",
   "schema_sees": false
  },
  "bad-null.yaml": {

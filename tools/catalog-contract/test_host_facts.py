@@ -12,6 +12,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[2]
 EXAMPLE = Path(__file__).resolve().parent/'examples/repository.yaml'
 NEVER = Path(__file__).resolve().parent/'examples/repository-never-collected.yaml'
+NEW = Path(__file__).resolve().parent/'examples/repository-never-read.yaml'
 APPS = Path(__file__).resolve().parent/'examples/apps.yaml'
 READER = ROOT/'modules/catalog-reader.am'
 
@@ -61,9 +62,11 @@ class Facts(unittest.TestCase):
         ]))
 
     def test_a_never_collected_repository_has_no_rows(self):
-        for operation in ('asset_facts', 'release_facts', 'git_facts'):
-            with self.subTest(operation=operation):
-                self.assertEqual((reader(operation, NEVER).returncode, reader(operation, NEVER).stdout), (0, b''))
+        # Failed every time, or enrolled and not yet read (ticket 27).
+        for path in (NEVER, NEW):
+            for operation in ('asset_facts', 'release_facts', 'git_facts'):
+                with self.subTest(path=path.name, operation=operation):
+                    self.assertEqual((reader(operation, path).returncode, reader(operation, path).stdout), (0, b''))
 
     def test_get_reads_one_scalar(self):
         self.assertEqual(reader('get', APPS, 'apps', 'example', 'repository').stdout, b'repositories/example.yaml')

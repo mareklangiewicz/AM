@@ -12,6 +12,7 @@ from pathlib import Path
 EXAMPLES = Path(__file__).resolve().parents[1]/'examples'
 R = 'repository.yaml'
 NEVER = 'repository-never-collected.yaml'
+NEW = 'repository-never-read.yaml'  # enrolled, not yet read (catalog-simplification ticket 27)
 TAG_REF = '  "refs/tags/v1.0":\n    commit: "cccccccccccccccccccccccccccccccccccccccc"\n    position: 0\n'
 GIT = 'git_scope:\n  tags: true\n  tags_history_complete: false\ngit_refs:\n'
 GRAMMAR, SCHEMA, CROSS = 'grammar', 'schema', 'cross-field'
@@ -56,7 +57,10 @@ BAD = {
     'history-without-observation': (NEVER, [('failed_at:', 'history_complete: true\nfailed_at:')], 'observed_at and history_complete come together', CROSS),
     'failure-half': (NEVER, [('failed_with: "not_found"\n', '')], 'failed_at and failed_with come together', CROSS),
     'never-collected-with-release': (NEVER, [('releases: {}', 'releases:\n  "1":\n    tag: "v1"\n    published_at: "2026-10-01T00:00:00Z"\n    prerelease: false\n    assets: {}')],
-                                     'a never-collected repository has only its failure', CROSS),
+                                     'a never-collected repository has no releases or Git refs', CROSS),
+    'never-read-with-git': (NEW, [('releases: {}', 'releases: {}\ngit_scope:\n  tags: true\n  tags_history_complete: false\n'
+                                   'git_refs:\n  "refs/tags/v1":\n    commit: "cccccccccccccccccccccccccccccccccccccccc"\n    position: 0')],
+                            'a never-collected repository has no releases or Git refs', CROSS),
     'failure-before-observation': (R, [('failed_at: "2026-11-25T09:00:00Z"', 'failed_at: "2026-11-24T10:00:00Z"')], 'failure not after observation', CROSS),
     'release-seen-not-older': (R, [('    observed_at: "2026-11-20T10:00:00Z"', '    observed_at: "2026-11-24T10:00:00Z"')], 'release last seen not older', CROSS),
     'git-scope-without-refs': (R, [(GIT, 'git_scope:\n  tags: true\n  tags_history_complete: false\n'), (TAG_REF, ''),

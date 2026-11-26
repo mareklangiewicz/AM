@@ -93,7 +93,8 @@ function repositoryRules(doc) {
  const collected=own(doc,'observed_at'),failed=own(doc,'failed_at');
  if(collected!==own(doc,'history_complete')) bad('observed_at and history_complete come together');
  if(failed!==own(doc,'failed_with')) bad('failed_at and failed_with come together');
- if(!collected&&(!failed||Object.keys(doc.releases).length||own(doc,'git_scope'))) bad('a never-collected repository has only its failure');
+ // Never collected: failed every time, or enrolled and not yet read (ticket 27).
+ if(!collected&&(Object.keys(doc.releases).length||own(doc,'git_scope'))) bad('a never-collected repository has no releases or Git refs');
  if(collected&&failed&&doc.failed_at<=doc.observed_at) bad('failure not after observation');
  for(const release of Object.values(doc.releases)) if(own(release,'observed_at')&&release.observed_at>=doc.observed_at) bad('release last seen not older than the repository');
  if(own(doc,'git_scope')!==own(doc,'git_refs')) bad('git_scope and git_refs come together');
