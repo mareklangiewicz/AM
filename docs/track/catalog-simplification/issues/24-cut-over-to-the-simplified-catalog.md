@@ -209,3 +209,11 @@ Then emmylua installed on mylenovo (exit 0) and myxps's leftover
 `am newrepo` entry (`~/code/shell/AM`, off) purged: both hosts' AM state
 (CLI, app versions and scripts, links, desktop files, data files) is now
 identical.
+
+November 26, 2026, mypi (aarch64, the third host on this fork): same state
+as mylenovo, old `catalog-contract-*` modules but its apps installed on
+November 22 in the current forms (nvim and nvim-nightly recipes with
+`CATALOG_FORMAT=3` and `AMREPO=…/main-marek`; fzf, zmx, appimageupdatetool
+inline). `am -s` (inside zmx on mypi) brought `APP-MANAGER` and all 11
+modules to `main-marek` (sha256); `am -u` exit 0 over its 5 apps, no errors,
+no sudo prompt. No reinstall needed.
