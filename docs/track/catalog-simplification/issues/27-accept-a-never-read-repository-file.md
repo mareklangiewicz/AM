@@ -2,7 +2,7 @@
 
 Type: task
 Label: implementation:task
-Status: open
+Status: claimed
 Triage: ready-for-agent
 Blocked by: none
 
