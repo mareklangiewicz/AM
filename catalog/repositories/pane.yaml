@@ -1,1014 +1,1629 @@
 $schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
 repository_id: 1168072728
 repository: "greenfield-inc/Pane"
-observed_at: "2026-11-22T15:32:27Z"
+observed_at: "2026-11-26T19:43:11Z"
 history_complete: false
 releases:
-  "450514677":
-    tag: "v2.4.242"
-    title: "2.4.242"
-    published_at: "2026-11-18T20:37:20Z"
+  "457869540":
+    tag: "v2.4.256"
+    title: "2.4.256"
+    published_at: "2026-11-25T09:19:54Z"
     prerelease: false
     assets:
-      "764870682":
-        name: "Pane-2.4.242-linux-x86_64.AppImage"
-        size: 180995182
-        sha256pre: "e39cb97a0606d7bc"
-      "764872710":
-        name: "Pane-2.4.242-linux-amd64.deb"
-        size: 143445192
-        sha256pre: "4f1fd3e3ff012908"
-      "764872946":
-        name: "Pane-2.4.242-linux-arm64.AppImage"
-        size: 181813442
-        sha256pre: "437badce4cc42732"
-      "764873279":
+      "790838224":
+        name: "Pane-2.4.256-linux-x86_64.AppImage"
+        size: 181368297
+        sha256pre: "7820be47cbfe0a40"
+      "790840006":
+        name: "Pane-2.4.256-linux-amd64.deb"
+        size: 144505832
+        sha256pre: "6e089cc08ba7d9d1"
+      "790840311":
         name: "latest-linux.yml"
         size: 551
-        sha256pre: "f0f623e3b86fad05"
-      "764879905":
-        name: "Pane-2.4.242-linux-arm64.deb"
-        size: 136645400
-        sha256pre: "0ebfa9724ef9b7b0"
-      "764880263":
+        sha256pre: "7f38863652f7bd83"
+      "790841344":
+        name: "Pane-2.4.256-linux-arm64.AppImage"
+        size: 182187170
+        sha256pre: "3c60e87327bc9078"
+      "790848373":
+        name: "Pane-2.4.256-linux-arm64.deb"
+        size: 137091756
+        sha256pre: "54f943d9ab548ff1"
+      "790848598":
         name: "latest-linux-arm64.yml"
         size: 549
-        sha256pre: "72ef196b55a1c10a"
-      "764912772":
-        name: "Pane-2.4.242-macOS-arm64.zip"
-        size: 167474447
-        sha256pre: "920d6bd3f4e05f2d"
-      "764912774":
-        name: "Pane-2.4.242-macOS-arm64.zip.blockmap"
-        size: 172169
-        sha256pre: "d6ebb024ef968147"
-      "764912775":
-        name: "Pane-2.4.242-macOS-arm64.dmg"
-        size: 173636844
-        sha256pre: "0e8663140acd2e06"
-      "764912776":
-        name: "Pane-2.4.242-macOS-arm64.dmg.blockmap"
-        size: 181598
-        sha256pre: "6b29b3296d7c4de7"
-      "764912777":
-        name: "Pane-2.4.242-macOS-x64.dmg"
-        size: 180887890
-        sha256pre: "92404dd08a86f4d0"
-      "764912807":
-        name: "Pane-2.4.242-macOS-x64.dmg.blockmap"
-        size: 190218
-        sha256pre: "ec772c495b33999e"
-      "764912816":
-        name: "Pane-2.4.242-macOS-x64.zip"
-        size: 174710044
-        sha256pre: "16949a45a95aaa06"
-      "764912827":
-        name: "Pane-2.4.242-macOS-x64.zip.blockmap"
-        size: 180321
-        sha256pre: "5f8614e7cf4b09ea"
-      "764912868":
+        sha256pre: "08fa4440e3c2a6b9"
+      "790873495":
+        name: "Pane-2.4.256-macOS-arm64.dmg"
+        size: 174067733
+        sha256pre: "1d1da2a94625bfbe"
+      "790873497":
+        name: "Pane-2.4.256-macOS-arm64.dmg.blockmap"
+        size: 181671
+        sha256pre: "ae0253eee5dbf6aa"
+      "790873498":
+        name: "Pane-2.4.256-macOS-x64.dmg"
+        size: 181293812
+        sha256pre: "3de53471a9c884a2"
+      "790873500":
+        name: "Pane-2.4.256-macOS-arm64.zip"
+        size: 167856448
+        sha256pre: "390717573cad1b7d"
+      "790873505":
+        name: "Pane-2.4.256-macOS-arm64.zip.blockmap"
+        size: 172971
+        sha256pre: "76794a5083b722ff"
+      "790873527":
+        name: "Pane-2.4.256-macOS-x64.dmg.blockmap"
+        size: 190581
+        sha256pre: "ab015f903df586f0"
+      "790873541":
+        name: "Pane-2.4.256-macOS-x64.zip"
+        size: 175091582
+        sha256pre: "f19e748ca698f3a1"
+      "790873562":
+        name: "Pane-2.4.256-macOS-x64.zip.blockmap"
+        size: 180446
+        sha256pre: "6c2573fe009ef550"
+      "790873588":
         name: "latest-mac.yml"
         size: 828
-        sha256pre: "97df64f73cde62a4"
-      "764912894":
-        name: "Pane-2.4.242-Windows-arm64.exe"
-        size: 156489710
-        sha256pre: "4e58075124e6755a"
-      "764913140":
-        name: "Pane-2.4.242-Windows-arm64.exe.blockmap"
-        size: 160039
-        sha256pre: "e160e49556e90b1e"
-      "764913173":
-        name: "Pane-2.4.242-Windows-x64.exe"
-        size: 156526226
-        sha256pre: "aa0e4fa39e811757"
-      "764913209":
+        sha256pre: "5a5c1c0f2c4b1ca2"
+      "790873634":
+        name: "Pane-2.4.256-Windows-arm64.exe"
+        size: 156368532
+        sha256pre: "cb76e3cfcbd192f1"
+      "790873847":
+        name: "Pane-2.4.256-Windows-arm64.exe.blockmap"
+        size: 160303
+        sha256pre: "8d2c83fae3497406"
+      "790873881":
+        name: "Pane-2.4.256-Windows-x64.exe"
+        size: 156407781
+        sha256pre: "26148034e6fc0cca"
+      "790873909":
+        name: "Pane-2.4.256-Windows-x64.exe.blockmap"
+        size: 159499
+        sha256pre: "c16b0994630e8118"
+      "790873938":
         name: "latest.yml"
         size: 516
-        sha256pre: "915a82b8e32bfa6c"
-      "764913210":
-        name: "Pane-2.4.242-Windows-x64.exe.blockmap"
-        size: 159182
-        sha256pre: "9fef9a63c3c8bf58"
-      "764913218":
+        sha256pre: "f39de27429f9d03e"
+      "790873960":
         name: "SHA256SUMS.txt"
         size: 959
-        sha256pre: "4db1d33d714f0ec9"
-      "764913231":
+        sha256pre: "926d05e63c08cc8f"
+      "790873966":
         name: "continuity.json"
         size: 1494
-        sha256pre: "1361ea9ffc2d1da0"
-      "764913267":
-        name: "pane-relay-darwin-arm64"
-        size: 11280144
-        sha256pre: "8dff7f2623b9855c"
-      "764913269":
+        sha256pre: "67458d8b1468793c"
+      "790873969":
         name: "compose.yaml"
         size: 979
-        sha256pre: "32f623844514b1a3"
-      "764913270":
-        name: "pane-relay-darwin-x64"
-        size: 11746656
-        sha256pre: "f34fa3ced8d416a6"
-      "764913272":
+        sha256pre: "950eeb6edd5b3732"
+      "790873988":
+        name: "pane-relay-darwin-arm64"
+        size: 11530640
+        sha256pre: "814fc2a246eee1c3"
+      "790873997":
         name: "pane-relay-linux-arm64"
-        size: 11189704
-        sha256pre: "a649934a750b2653"
-      "764913307":
+        size: 11452064
+        sha256pre: "22dbb1b8bbd5d6d5"
+      "790873998":
+        name: "pane-relay-darwin-x64"
+        size: 12011808
+        sha256pre: "da4ef76415761e1a"
+      "790874000":
         name: "pane-relay-linux-x64"
-        size: 12787720
-        sha256pre: "2167f6aeae3bbc85"
-      "764913331":
+        size: 13074664
+        sha256pre: "16ee0454a1f11701"
+      "790874053":
         name: "pane-relay-sha256.txt"
         size: 538
-        sha256pre: "c63bab3619e253bd"
-      "764913340":
+        sha256pre: "7e551f5795e900af"
+      "790874060":
         name: "pane-relay-win32-arm64.exe"
-        size: 11363328
-        sha256pre: "2f134c20f819a145"
-      "764913356":
+        size: 11635712
+        sha256pre: "e171a70ce7282fd3"
+      "790874063":
         name: "pane-relay-win32-x64.exe"
-        size: 13187072
-        sha256pre: "312748fae1261e8b"
-  "450652513":
-    tag: "v2.4.243"
-    title: "2.4.243"
-    published_at: "2026-11-18T23:02:48Z"
+        size: 13491712
+        sha256pre: "3c3e37805183e7b9"
+  "458696339":
+    tag: "pr-assets-4"
+    published_at: "2026-11-25T22:00:03Z"
+    prerelease: true
+    assets:
+      "793304198":
+        name: "pr-1712-d6d1993cf-a03a80a1b51f-app-phone-width.png"
+        size: 418162
+        sha256pre: "a03a80a1b51fac21"
+      "793304199":
+        name: "pr-1712-d6d1993cf-f6d586ed6bfe-visual-overview.png"
+        size: 213458
+        sha256pre: "f6d586ed6bfebc64"
+      "793304200":
+        name: "pr-1712-d6d1993cf-38368bdf4a52-relay-iphone.png"
+        size: 182110
+        sha256pre: "38368bdf4a52a6d6"
+      "793304201":
+        name: "pr-1712-d6d1993cf-30c8eee3b84c-app-desktop.png"
+        size: 503210
+        sha256pre: "30c8eee3b84c78ae"
+      "793304202":
+        name: "pr-1712-d6d1993cf-4bda9665176b-relay-other.png"
+        size: 172635
+        sha256pre: "4bda9665176bee47"
+      "793335914":
+        name: "pr-1717-4c4060d-47d53ee994fe-scroll.png"
+        size: 346734
+        sha256pre: "47d53ee994fe4a61"
+      "793335916":
+        name: "pr-1717-4c4060d-90d51595c4a1-fold.png"
+        size: 199625
+        sha256pre: "90d51595c4a14708"
+      "793335920":
+        name: "pr-1717-4c4060d-55d79b3adaab-android-light.png"
+        size: 197904
+        sha256pre: "55d79b3adaab690d"
+      "793335923":
+        name: "pr-1717-4c4060d-857a2cfb7461-android-dark.png"
+        size: 424265
+        sha256pre: "857a2cfb746148c3"
+      "793335951":
+        name: "pr-1717-4c4060d-f6bb95f1ef51-ios.png"
+        size: 274714
+        sha256pre: "f6bb95f1ef511a1b"
+      "793335952":
+        name: "pr-1717-4c4060d-aa983b2c1d62-visual-overview.png"
+        size: 266661
+        sha256pre: "aa983b2c1d629332"
+      "793336035":
+        name: "pr-1717-4c4060d-1f5d3293cbbb-before.png"
+        size: 202334
+        sha256pre: "1f5d3293cbbb2c77"
+      "793366870":
+        name: "pr-1718-63772ff86-cfcd5e86db99-visual-overview.png"
+        size: 255016
+        sha256pre: "cfcd5e86db99b019"
+      "793442661":
+        name: "pr-1716-1d01435-94d8726efe83-phone-ios.png"
+        size: 540564
+        sha256pre: "94d8726efe83205c"
+      "793442662":
+        name: "pr-1716-1d01435-b8616f85ffb2-web-360.png"
+        size: 280450
+        sha256pre: "b8616f85ffb230c6"
+      "793442666":
+        name: "pr-1716-1d01435-3f9ae48001f9-desktop-states.png"
+        size: 580692
+        sha256pre: "3f9ae48001f9c358"
+      "793442667":
+        name: "pr-1716-1d01435-8acb4879cf17-visual-overview.png"
+        size: 263813
+        sha256pre: "8acb4879cf17481b"
+      "793442670":
+        name: "pr-1716-1d01435-0bb5ef9e4271-phone-android.png"
+        size: 338348
+        sha256pre: "0bb5ef9e4271c388"
+      "793442695":
+        name: "pr-1716-1d01435-c1760a9eec1c-phone-ios-states.png"
+        size: 503965
+        sha256pre: "c1760a9eec1ce87f"
+      "793442697":
+        name: "pr-1716-1d01435-efd2ff8b2b8d-desktop.png"
+        size: 1246984
+        sha256pre: "efd2ff8b2b8d0c00"
+      "793501020":
+        name: "pr-1695-944076035-f7f5694c7e90-visual-overview.png"
+        size: 1062851
+        sha256pre: "f7f5694c7e90c1c6"
+      "793511187":
+        name: "pr-1720-pane-bar-ea08c729.png"
+        size: 139616
+        sha256pre: "ea08c729dc3d15bb"
+      "793511188":
+        name: "pr-1720-approval-bar-bff867a9.png"
+        size: 124011
+        sha256pre: "bff867a98bd35fac"
+      "793511193":
+        name: "pr-1721-all-needs-d935dbf4.png"
+        size: 585426
+        sha256pre: "d935dbf41b8aa361"
+      "793511194":
+        name: "pr-1720-link-after-back-19be49a4.png"
+        size: 221040
+        sha256pre: "19be49a483337b56"
+      "793511195":
+        name: "pr-1720-density-fold-1d1aa996.png"
+        size: 117447
+        sha256pre: "1d1aa9961feb6fa0"
+      "793511219":
+        name: "pr-1721-folded-unchanged-52b84cda.png"
+        size: 63146
+        sha256pre: "52b84cda387e23b5"
+      "793511221":
+        name: "pr-1721-light-be37aefd.png"
+        size: 697187
+        sha256pre: "be37aefdc37740e7"
+      "793511226":
+        name: "pr-1721-nothing-open-25bcbf4d.png"
+        size: 322961
+        sha256pre: "25bcbf4d1aae5497"
+      "793511233":
+        name: "pr-1721-rail-511567a7.png"
+        size: 398234
+        sha256pre: "511567a79b1b50ff"
+      "793511235":
+        name: "pr-1721-one-computer-dcab540f.png"
+        size: 483760
+        sha256pre: "dcab540f012d10fd"
+      "793511272":
+        name: "pr-1721-short-window-645f52b3.png"
+        size: 560104
+        sha256pre: "645f52b3c63f3086"
+      "793553296":
+        name: "pr-1716-qa-10-at-menu-empty-light-c6b5d0a5.png"
+        size: 83201
+        sha256pre: "c6b5d0a57221cda8"
+      "793553361":
+        name: "pr-1716-qa-18-at-menu-dark-b937f2c3.png"
+        size: 156678
+        sha256pre: "b937f2c3672bcb71"
+      "793553447":
+        name: "pr-1716-qa-22-dollar-picked-eefa1aef.png"
+        size: 186255
+        sha256pre: "eefa1aef4ca04193"
+      "793553506":
+        name: "pr-1716-qa-24-dollar-zebra-ran-e31a04f8.png"
+        size: 165242
+        sha256pre: "e31a04f8e67f59be"
+      "793553587":
+        name: "pr-1716-qa-30-slash-mid-menu-cd6385fb.png"
+        size: 187957
+        sha256pre: "cd6385fbcc92eb4d"
+      "793553630":
+        name: "pr-1716-qa-60-click-ref-opens-editor-eacc5d1d.png"
+        size: 76201
+        sha256pre: "eacc5d1dc7629fdf"
+      "793596086":
+        name: "pr-1721-fold-unfold-4390ced1.png"
+        size: 166110
+        sha256pre: "c4666597930cd286"
+      "793596087":
+        name: "pr-1721-phone-main-vs-pr-a2d8cff6.png"
+        size: 345450
+        sha256pre: "045b55cd6fdf73f7"
+      "793596088":
+        name: "pr-1721-pills-cut-a53e7917.png"
+        size: 361784
+        sha256pre: "657f0e5fac14855c"
+      "793596089":
+        name: "pr-1721-wide-states-5c92bf42.png"
+        size: 298718
+        sha256pre: "1d6e91106f4110e9"
+      "793596091":
+        name: "pr-1721-keyboards-efb11bba.png"
+        size: 174434
+        sha256pre: "7cd90f45a8453c58"
+      "793620895":
+        name: "pr-1721-f1-pills-043066eb.png"
+        size: 165243
+        sha256pre: "043066ebf87d365e"
+      "793632485":
+        name: "pr-1642-65bab96-C3-withdrawn-in-done-today.png"
+        size: 219534
+        sha256pre: "453ad3ae1188bf13"
+      "793632486":
+        name: "pr-1642-65bab96-D2-closed-with-its-tab.png"
+        size: 128164
+        sha256pre: "59dfc308871325f7"
+      "793632490":
+        name: "pr-1642-65bab96-A2-card-still-open-95s-after-kill.png"
+        size: 219843
+        sha256pre: "cc44b2b989d83060"
+      "793632491":
+        name: "pr-1642-65bab96-B2-asking-tab-got-answer-line.png"
+        size: 175266
+        sha256pre: "89283e3849b8e466"
+      "793708647":
+        name: "pr-1723-d7e55a345-35b56ebfe5ba-t88-06-session-all-caught-up.png"
+        size: 48675
+        sha256pre: "35b56ebfe5baf27c"
+      "793708648":
+        name: "pr-1723-d7e55a345-3a3b127ac38f-t88-02-page-next-after-send.png"
+        size: 111243
+        sha256pre: "3a3b127ac38f267b"
+      "793708649":
+        name: "pr-1723-d7e55a345-061c75d662df-t88-03-page-all-caught-up.png"
+        size: 59427
+        sha256pre: "061c75d662dfdbf6"
+      "793708650":
+        name: "pr-1723-d7e55a345-8f3cb9f44b9e-visual-overview.png"
+        size: 275657
+        sha256pre: "8f3cb9f44b9e5390"
+      "793708652":
+        name: "pr-1723-d7e55a345-5466a5cd3e60-t88-05-session-next-after-send.png"
+        size: 126619
+        sha256pre: "5466a5cd3e6056ae"
+      "793708683":
+        name: "pr-1723-d7e55a345-9283ee13e934-t88-00-chat-dock-newest-first.png"
+        size: 95478
+        sha256pre: "9283ee13e93472c5"
+      "793708684":
+        name: "pr-1723-d7e55a345-db982a9f88eb-t88-07-page-next-after-dismiss.png"
+        size: 114216
+        sha256pre: "db982a9f88ebea90"
+      "793708685":
+        name: "pr-1723-d7e55a345-ec2fa19b1860-t88-04-session-newest-first.png"
+        size: 87621
+        sha256pre: "ec2fa19b186077bf"
+      "793708689":
+        name: "pr-1723-d7e55a345-da506c1af1a7-t88-01-page-newest-first.png"
+        size: 119453
+        sha256pre: "da506c1af1a756bf"
+      "793709209":
+        name: "pr-1723-d7e55a345-9cbc17d3d1d6-mockup-p4.png"
+        size: 64644
+        sha256pre: "9cbc17d3d1d6b2a3"
+      "793709214":
+        name: "pr-1723-d7e55a345-3944d8bf2f97-mockup-p5.png"
+        size: 61654
+        sha256pre: "3944d8bf2f971b1e"
+      "793716690":
+        name: "pr-1642-2deaa15-G1-answer-between-resume-rounds-in-tab.png"
+        size: 234281
+        sha256pre: "1d51978f7cbfb3e3"
+      "793716693":
+        name: "pr-1642-2deaa15-H2-tab-idle-no-reply-line.png"
+        size: 185062
+        sha256pre: "3aef32576c3bd384"
+      "793716696":
+        name: "pr-1642-2deaa15-H1-reply-waiting-for-busy-tab.png"
+        size: 266375
+        sha256pre: "0489cf9114e1571a"
+      "793778113":
+        name: "pr-1723-8cd3ac213-b7c75b007951-real-03-approvals-newest-first.png"
+        size: 289003
+        sha256pre: "b7c75b0079512f93"
+      "793778114":
+        name: "pr-1723-8cd3ac213-dfeb6fbecfb3-real-06-tray-menu-newest.png"
+        size: 98581
+        sha256pre: "dfeb6fbecfb3319c"
+      "793778115":
+        name: "pr-1723-8cd3ac213-dd09bb0e7299-real-02-answer-all-newest.png"
+        size: 71220
+        sha256pre: "dd09bb0e7299cbfa"
+      "793778116":
+        name: "pr-1723-8cd3ac213-59bea25e523f-real-04-approvals-next-after-send.png"
+        size: 265492
+        sha256pre: "59bea25e523ff06e"
+      "793778117":
+        name: "pr-1723-8cd3ac213-c27bafe3f5d5-real-05-approvals-all-caught-up.png"
+        size: 187993
+        sha256pre: "c27bafe3f5d5d5e1"
+      "793778143":
+        name: "pr-1723-8cd3ac213-f412a90eee60-real-01-strip-newest.png"
+        size: 26271
+        sha256pre: "f412a90eee60d0b9"
+      "793822294":
+        name: "pr-1723-c5e34c8c1-b7c75b007951-real-03-approvals-newest-first.png"
+        size: 289003
+        sha256pre: "b7c75b0079512f93"
+      "793822295":
+        name: "pr-1723-c5e34c8c1-1aee9b96bec6-real-10-narrow-after-undo.png"
+        size: 234204
+        sha256pre: "1aee9b96bec6b5ea"
+      "793822296":
+        name: "pr-1723-c5e34c8c1-59bea25e523f-real-04-approvals-next-after-send.png"
+        size: 265492
+        sha256pre: "59bea25e523ff06e"
+      "793822297":
+        name: "pr-1723-c5e34c8c1-4c914abbe278-real-07-approvals-after-dismiss.png"
+        size: 228967
+        sha256pre: "4c914abbe2789dcc"
+      "793822298":
+        name: "pr-1723-c5e34c8c1-829002b3e409-real-09-narrow-all-caught-up.png"
+        size: 161547
+        sha256pre: "829002b3e4097d53"
+      "793822318":
+        name: "pr-1723-c5e34c8c1-c27bafe3f5d5-real-05-approvals-all-caught-up.png"
+        size: 187993
+        sha256pre: "c27bafe3f5d5d5e1"
+      "793822324":
+        name: "pr-1723-c5e34c8c1-dd09bb0e7299-real-02-answer-all-newest.png"
+        size: 71220
+        sha256pre: "dd09bb0e7299cbfa"
+      "793822325":
+        name: "pr-1723-c5e34c8c1-cd6db508cf9e-real-01-strip-newest.png"
+        size: 26276
+        sha256pre: "cd6db508cf9e0283"
+      "793822326":
+        name: "pr-1723-c5e34c8c1-dfeb6fbecfb3-real-06-tray-menu-newest.png"
+        size: 98581
+        sha256pre: "dfeb6fbecfb3319c"
+      "793822328":
+        name: "pr-1723-c5e34c8c1-e805dc3d76a3-real-08-approvals-dismiss-twice-caught-up.png"
+        size: 141415
+        sha256pre: "e805dc3d76a320d5"
+      "793867086":
+        name: "pr-1727-2f4439b3c-6a7579fda2cc-visual-overview.png"
+        size: 274941
+        sha256pre: "6a7579fda2cc4937"
+      "793886830":
+        name: "pr-1727-2f4439b3c-ad9a453fc8cf-inner-stream.png"
+        size: 1036630
+        sha256pre: "ad9a453fc8cff4ad"
+      "793886880":
+        name: "pr-1727-2f4439b3c-e36bb06fd5e5-cover-stream.png"
+        size: 625662
+        sha256pre: "e36bb06fd5e5ab12"
+      "793907060":
+        name: "pr-1728-d5b8d230-5ae7defd558a-21-inner-split.png"
+        size: 323768
+        sha256pre: "5ae7defd558a0846"
+      "793907062":
+        name: "pr-1728-d5b8d230-3f16cf996505-23-cover-focused.png"
+        size: 161747
+        sha256pre: "3f16cf996505a0a0"
+      "793907063":
+        name: "pr-1728-d5b8d230-347e0844d8b9-25-menu.png"
+        size: 267735
+        sha256pre: "347e0844d8b95c00"
+      "793907065":
+        name: "pr-1728-d5b8d230-49488a5dde6b-26-open-beside.png"
+        size: 286111
+        sha256pre: "49488a5dde6bba81"
+      "793907066":
+        name: "pr-1728-d5b8d230-1cec7be3a080-24-inner-restored.png"
+        size: 323739
+        sha256pre: "1cec7be3a080a38f"
+      "793907094":
+        name: "pr-1728-d5b8d230-f2e21d23aa56-visual-overview.png"
+        size: 249325
+        sha256pre: "f2e21d23aa569eb4"
+      "793975018":
+        name: "pr-1730-72118f584-12fbbd3c1d17-visual-overview.png"
+        size: 220872
+        sha256pre: "12fbbd3c1d171d6b"
+      "793975019":
+        name: "pr-1730-72118f584-4dcd645d3956-qa-04-typing.png"
+        size: 303944
+        sha256pre: "4dcd645d39560478"
+      "793975021":
+        name: "pr-1730-72118f584-02ff53b6263b-qa-01-chip.png"
+        size: 274528
+        sha256pre: "02ff53b6263bd3cb"
+      "793975022":
+        name: "pr-1730-72118f584-5f2afd7412e6-qa-02-next-card.png"
+        size: 313642
+        sha256pre: "5f2afd7412e61b2c"
+      "793975023":
+        name: "pr-1730-72118f584-ab5f0a627dab-qa-05-picked.png"
+        size: 286486
+        sha256pre: "ab5f0a627dab879f"
+      "793975046":
+        name: "pr-1730-72118f584-d5811e654742-qa-03-hint.png"
+        size: 314109
+        sha256pre: "d5811e65474282cb"
+      "793979388":
+        name: "pr-1728-review-04-session-65bbf661.jpg"
+        size: 63553
+        sha256pre: "65bbf6619754f6e1"
+      "793979443":
+        name: "pr-1728-review-12-session-reopen-a719d28d.jpg"
+        size: 60872
+        sha256pre: "a719d28dafe6dc24"
+      "794049366":
+        name: "pr-1732-b9db5f7e9-2550eb05e7e1-visual-overview.png"
+        size: 277786
+        sha256pre: "2550eb05e7e1a917"
+      "794081470":
+        name: "pr-1728-cd36b065-29a570ac25d4-36-new-tab-right.png"
+        size: 228989
+        sha256pre: "29a570ac25d48534"
+      "794081472":
+        name: "pr-1728-cd36b065-d4d878bad9e4-32-reopen.png"
+        size: 308612
+        sha256pre: "d4d878bad9e4bc5b"
+      "794278183":
+        name: "pr-1738-1c0b4c5c9-13507616b58a-visual-overview.png"
+        size: 334915
+        sha256pre: "13507616b58a82d1"
+      "794293483":
+        name: "pr-1740-91c963d4e-0e3cfb6663ea-visual-overview.png"
+        size: 324453
+        sha256pre: "0e3cfb6663eabb57"
+      "794296226":
+        name: "pr-1739-f301e0ebd-865bf21193f0-visual-overview.png"
+        size: 314997
+        sha256pre: "865bf21193f00c83"
+      "794296322":
+        name: "pr-1739-f301e0ebd-0fbf35617433-qa-receiver-answered-light.png"
+        size: 201015
+        sha256pre: "0fbf3561743383d0"
+      "794296405":
+        name: "pr-1739-f301e0ebd-4d8820add866-qa-sender-answered-dark.png"
+        size: 194273
+        sha256pre: "4d8820add866b2d9"
+      "794320830":
+        name: "pr-1742-09c6c574-2c714d36d206-ios-session-row.png"
+        size: 100962
+        sha256pre: "2c714d36d2067b75"
+      "794320832":
+        name: "pr-1742-09c6c574-63797c63fe27-visual-overview.png"
+        size: 263240
+        sha256pre: "63797c63fe278d48"
+      "794320833":
+        name: "pr-1742-09c6c574-6c909960a2cc-android-open-plus-one.png"
+        size: 219663
+        sha256pre: "6c909960a2cca7a2"
+      "794320834":
+        name: "pr-1742-09c6c574-238e9eceef01-android-pane-opened.png"
+        size: 310304
+        sha256pre: "238e9eceef014a31"
+      "794320836":
+        name: "pr-1742-09c6c574-64d28282aac0-ios-needs-plus-one.png"
+        size: 179593
+        sha256pre: "64d28282aac045bc"
+      "794320875":
+        name: "pr-1742-09c6c574-d13683bac392-ios-foreground-push.png"
+        size: 339423
+        sha256pre: "d13683bac3924370"
+      "794320876":
+        name: "pr-1742-09c6c574-d2567db65264-ios-needs-you-new.png"
+        size: 339320
+        sha256pre: "d2567db652646e45"
+      "794320879":
+        name: "pr-1742-09c6c574-f09728a51836-android-rail.png"
+        size: 301987
+        sha256pre: "f09728a51836b16c"
+      "794346429":
+        name: "pr-1743-8dfc24dbd-10c95209bee4-visual-overview.png"
+        size: 318729
+        sha256pre: "10c95209bee408a0"
+      "794363105":
+        name: "pr-1743-02-new-host-expanded-387a3070.png"
+        size: 195762
+        sha256pre: "387a3070c20e6330"
+      "794363169":
+        name: "pr-1743-05-older-host-fresh-dea08c82.png"
+        size: 163070
+        sha256pre: "dea08c8228941cc5"
+      "794363219":
+        name: "pr-1743-07-older-host-session-only-c1ce5175.png"
+        size: 182401
+        sha256pre: "c1ce5175a781a498"
+      "794378108":
+        name: "pr-1744-391f8b4a1-89759bb563f7-overview.png"
+        size: 332339
+        sha256pre: "89759bb563f72266"
+      "794378190":
+        name: "pr-1744-391f8b4a1-3e42171b445f-focus-before.png"
+        size: 14374
+        sha256pre: "3e42171b445f8658"
+      "794378289":
+        name: "pr-1744-391f8b4a1-55fab8ed1047-focus-after.png"
+        size: 14156
+        sha256pre: "55fab8ed10470076"
+      "794378385":
+        name: "pr-1744-391f8b4a1-e782fe13ccde-m02-at-mat.png"
+        size: 49679
+        sha256pre: "e782fe13ccdecbc9"
+      "794378438":
+        name: "pr-1744-391f8b4a1-bc882e60656c-m03-dollar.png"
+        size: 77679
+        sha256pre: "bc882e60656c0ec1"
+      "794378519":
+        name: "pr-1744-391f8b4a1-1fb06a46ad30-composed.png"
+        size: 45527
+        sha256pre: "1fb06a46ad308fac"
+      "794378604":
+        name: "pr-1744-391f8b4a1-fbdc3e030379-sent.png"
+        size: 50783
+        sha256pre: "fbdc3e030379c820"
+      "794378661":
+        name: "pr-1744-391f8b4a1-c18310916b43-m06-file.png"
+        size: 18379
+        sha256pre: "c18310916b43632a"
+      "794378728":
+        name: "pr-1744-391f8b4a1-de4d3d8a67aa-m07-file2.png"
+        size: 16969
+        sha256pre: "de4d3d8a67aa578d"
+      "794437718":
+        name: "pr-1746-b57811978-53de4806f907-visual-overview.png"
+        size: 350124
+        sha256pre: "53de4806f907503d"
+      "794440186":
+        name: "pr-1746-settings-3997ce5f.png"
+        size: 131812
+        sha256pre: "3997ce5fa237ed48"
+      "794441184":
+        name: "pr-1746-cheat-sheet-ebcbb1bf.png"
+        size: 121896
+        sha256pre: "ebcbb1bf09fd570d"
+      "794441273":
+        name: "pr-1746-key-pad-993576c0.png"
+        size: 75263
+        sha256pre: "993576c0e331d5b4"
+      "794441379":
+        name: "pr-1746-sidebar-ring-e5106adb.png"
+        size: 50910
+        sha256pre: "e5106adbb6b5f4fd"
+      "794441476":
+        name: "pr-1746-dictation-needs-key-4256630c.png"
+        size: 62733
+        sha256pre: "4256630c13400f1d"
+      "794445458":
+        name: "pr-1747-2f9fec8d-34302fe0efd7-cheat-sheet-xbox.png"
+        size: 106395
+        sha256pre: "34302fe0efd752c6"
+      "794445460":
+        name: "pr-1747-2f9fec8d-5c2f3405949c-key-pad.png"
+        size: 167894
+        sha256pre: "5c2f3405949c135a"
+      "794445464":
+        name: "pr-1747-2f9fec8d-1063882abaf1-l2-rail.png"
+        size: 94764
+        sha256pre: "1063882abaf1eb5f"
+      "794445467":
+        name: "pr-1747-2f9fec8d-29ec8c9dbfbd-welcome-ring.png"
+        size: 603411
+        sha256pre: "29ec8c9dbfbda508"
+      "794445469":
+        name: "pr-1747-2f9fec8d-28a0a40959ad-split.png"
+        size: 238228
+        sha256pre: "28a0a40959ad33e7"
+      "794445491":
+        name: "pr-1747-2f9fec8d-677976688245-visual-overview.png"
+        size: 293786
+        sha256pre: "67797668824555ee"
+      "794445501":
+        name: "pr-1747-2f9fec8d-693e4620bd13-cheat-sheet-nintendo.png"
+        size: 102838
+        sha256pre: "693e4620bd1375b5"
+      "794445515":
+        name: "pr-1747-2f9fec8d-6ec295f6e041-home-ring.png"
+        size: 109370
+        sha256pre: "6ec295f6e041af4e"
+      "794445524":
+        name: "pr-1747-2f9fec8d-7e6eeb8c5aa1-recent.png"
+        size: 106958
+        sha256pre: "7e6eeb8c5aa13e13"
+      "794445526":
+        name: "pr-1747-2f9fec8d-cef4bad2281d-plus-approval.png"
+        size: 131187
+        sha256pre: "cef4bad2281d9fd2"
+      "794445535":
+        name: "pr-1747-2f9fec8d-f9afa32fadcd-terminal-ring.png"
+        size: 123234
+        sha256pre: "f9afa32fadcdf26f"
+      "794521690":
+        name: "pr-1730-ed4f4db61-8bb5c4a85d7c-qa-r2-01-held.png"
+        size: 284431
+        sha256pre: "8bb5c4a85d7cf93e"
+      "794521691":
+        name: "pr-1730-ed4f4db61-28f9a1bef8bc-qa-r2-04-close-shift-enter.png"
+        size: 283112
+        sha256pre: "28f9a1bef8bc688a"
+      "794521692":
+        name: "pr-1730-ed4f4db61-1b308b77e266-qa-r2-03-close-form.png"
+        size: 279919
+        sha256pre: "1b308b77e266e4d2"
+      "794521693":
+        name: "pr-1730-ed4f4db61-627212b6137c-qa-r2-02-fresh.png"
+        size: 283402
+        sha256pre: "627212b6137cad20"
+      "794604329":
+        name: "pr-1748-0908b2e33-c54128a1d604-visual-overview.png"
+        size: 401894
+        sha256pre: "c54128a1d6049f14"
+      "794702843":
+        name: "pr-1750-9587f6b01-21581e88de46-visual-overview.png"
+        size: 378071
+        sha256pre: "21581e88de466268"
+      "794705370":
+        name: "pr-1751-30fdbb3-65219063e076-visual-overview.png"
+        size: 190225
+        sha256pre: "65219063e076fa7a"
+      "794826757":
+        name: "pr-1756-cb03fa6eb-abf44f3f52eb-visual-overview.png"
+        size: 265078
+        sha256pre: "abf44f3f52ebe86b"
+      "794864785":
+        name: "pr-1755-6bf717b-12941bb7a051-android-cover-terminal-10px.png"
+        size: 102274
+        sha256pre: "12941bb7a051cb69"
+      "794864787":
+        name: "pr-1755-6bf717b-03d28b61fa12-ios-terminal-18px.png"
+        size: 158782
+        sha256pre: "03d28b61fa12f222"
+      "794864789":
+        name: "pr-1755-6bf717b-11af2fe5d9b7-ios-home-0.8x.png"
+        size: 68572
+        sha256pre: "11af2fe5d9b75853"
+      "794864795":
+        name: "pr-1755-6bf717b-010901151847-android-inner-max-after-relaunch.png"
+        size: 235557
+        sha256pre: "0109011518476554"
+      "794864799":
+        name: "pr-1755-6bf717b-09e6e42174a3-visual-overview.png"
+        size: 320882
+        sha256pre: "09e6e42174a3f0e4"
+      "794864826":
+        name: "pr-1755-6bf717b-2156c6b9275a-android-cover-home-1.0x.png"
+        size: 88930
+        sha256pre: "2156c6b9275a4715"
+      "794864827":
+        name: "pr-1755-6bf717b-285f1813f9f6-android-cover-terminal-18px.png"
+        size: 187192
+        sha256pre: "285f1813f9f6fb17"
+      "794864828":
+        name: "pr-1755-6bf717b-41d4c0419c9e-android-inner-default-width.png"
+        size: 239816
+        sha256pre: "41d4c0419c9ef1b5"
+      "794864829":
+        name: "pr-1755-6bf717b-49952c5237aa-android-cover-home-1.3x.png"
+        size: 112422
+        sha256pre: "49952c5237aacc08"
+      "794864836":
+        name: "pr-1755-6bf717b-5772f0e54883-android-inner-dragged-to-min.png"
+        size: 237274
+        sha256pre: "5772f0e54883b3f3"
+      "794864879":
+        name: "pr-1755-6bf717b-7826d32bbf41-ios-home-1.3x.png"
+        size: 100914
+        sha256pre: "7826d32bbf4198ce"
+      "794864880":
+        name: "pr-1755-6bf717b-7c449dcddde8-android-cover-home-0.8x.png"
+        size: 74286
+        sha256pre: "7c449dcddde8c5db"
+      "794864885":
+        name: "pr-1755-6bf717b-8aea4d42c0b6-android-inner-rail-no-handle.png"
+        size: 166560
+        sha256pre: "8aea4d42c0b6e592"
+      "794864887":
+        name: "pr-1755-6bf717b-900d2ad7089f-android-inner-mid-drag.png"
+        size: 271541
+        sha256pre: "900d2ad7089f7dff"
+      "794864890":
+        name: "pr-1755-6bf717b-a648f1de885b-android-cover-settings-1.3x-18px.png"
+        size: 112430
+        sha256pre: "a648f1de885b6120"
+      "794864928":
+        name: "pr-1755-6bf717b-b77fa2a73e9b-android-inner-dragged-to-max.png"
+        size: 236062
+        sha256pre: "b77fa2a73e9b23ba"
+      "794864934":
+        name: "pr-1755-6bf717b-da6b7cf60f55-ios-home-1.0x.png"
+        size: 81612
+        sha256pre: "da6b7cf60f552be9"
+      "794864936":
+        name: "pr-1755-6bf717b-ed113ef7f52f-ios-settings-1.3x-18px.png"
+        size: 93979
+        sha256pre: "ed113ef7f52fbadc"
+      "794946577":
+        name: "pr-1755-b384f15-2e50ccf11e42-v360-file.png"
+        size: 127531
+        sha256pre: "2e50ccf11e42efef"
+      "794946579":
+        name: "pr-1755-b384f15-ce3ed312037d-w15-rail.png"
+        size: 182833
+        sha256pre: "ce3ed312037dc17a"
+      "794946587":
+        name: "pr-1755-b384f15-1139bf839ff1-u360-autopilot.png"
+        size: 112199
+        sha256pre: "1139bf839ff16e0a"
+      "794946588":
+        name: "pr-1755-b384f15-647755243e93-t360-settings.png"
+        size: 105934
+        sha256pre: "647755243e9309fb"
+      "794946589":
+        name: "pr-1755-b384f15-59a1d21cb9b5-s360-settings.png"
+        size: 106150
+        sha256pre: "59a1d21cb9b523fc"
+      "796947524":
+        name: "pr-1759-28f37f098-e166cfda7f2c-visual-overview.png"
+        size: 269802
+        sha256pre: "e166cfda7f2cbae1"
+      "796998223":
+        name: "pr-1760-c1f05e204-cf1d19a1471e-visual-overview.png"
+        size: 327181
+        sha256pre: "cf1d19a1471e96f5"
+      "797002360":
+        name: "pr-1762-076576f5b-45c482728fe8-visual-overview.png"
+        size: 223724
+        sha256pre: "45c482728fe88615"
+      "797002601":
+        name: "pr-1760-c1f05e204-8e890fd9dedf-qa-j2-menu-after-cli-add.png"
+        size: 97601
+        sha256pre: "8e890fd9dedf153c"
+      "797002759":
+        name: "pr-1760-c1f05e204-143dd34f057c-qa-j3-row-editor-refused.png"
+        size: 110589
+        sha256pre: "143dd34f057ca12e"
+      "797002902":
+        name: "pr-1760-c1f05e204-0440732332ba-qa-j4-legacy-row-renamed.png"
+        size: 75487
+        sha256pre: "0440732332bae74c"
+      "797003035":
+        name: "pr-1760-c1f05e204-fdd682d32e86-qa-j5-new-session-refreshed.png"
+        size: 117596
+        sha256pre: "fdd682d32e86cc19"
+      "797095245":
+        name: "pr-1763-ba197a18e-406ee900b7d2-visual-overview.png"
+        size: 345408
+        sha256pre: "406ee900b7d2facd"
+      "797104781":
+        name: "pr-1764-a18feb01e-3ec95103e13c-visual-overview.png"
+        size: 229928
+        sha256pre: "3ec95103e13cd9eb"
+      "797131929":
+        name: "pr-1762-5b2a3f5f6-baba3b5c0a2a-visual-overview.png"
+        size: 242967
+        sha256pre: "baba3b5c0a2ade37"
+      "797220855":
+        name: "pr-1764-0e79bbe84-3d5cd075b71b-visual-overview.png"
+        size: 232119
+        sha256pre: "3d5cd075b71bebaf"
+      "797361204":
+        name: "pr-1764-7996fa632-888292687550-visual-overview.png"
+        size: 239746
+        sha256pre: "88829268755004f5"
+  "458730734":
+    tag: "v2.4.257"
+    title: "2.4.257"
+    published_at: "2026-11-25T22:54:54Z"
     prerelease: false
     assets:
-      "765303623":
-        name: "Pane-2.4.243-linux-x86_64.AppImage"
-        size: 181016042
-        sha256pre: "ce710b6acc4a99f8"
-      "765304697":
-        name: "Pane-2.4.243-linux-amd64.deb"
-        size: 143484164
-        sha256pre: "5455974c2c78a33a"
-      "765304897":
+      "793434461":
+        name: "Pane-2.4.257-linux-x86_64.AppImage"
+        size: 181388861
+        sha256pre: "34fc094dcdd2dd70"
+      "793436056":
+        name: "Pane-2.4.257-linux-amd64.deb"
+        size: 144517876
+        sha256pre: "2fcefbd65ff0f212"
+      "793436334":
         name: "latest-linux.yml"
         size: 551
-        sha256pre: "d1f42c781ff9b08b"
-      "765305470":
-        name: "Pane-2.4.243-linux-arm64.AppImage"
-        size: 181830360
-        sha256pre: "623c18e7bcbf8aee"
-      "765309486":
-        name: "Pane-2.4.243-linux-arm64.deb"
-        size: 136671052
-        sha256pre: "a589ca1e89044c28"
-      "765309781":
+        sha256pre: "6efcfb138f2acff4"
+      "793436393":
+        name: "Pane-2.4.257-linux-arm64.AppImage"
+        size: 182203233
+        sha256pre: "888b94aee6befb27"
+      "793441711":
+        name: "Pane-2.4.257-linux-arm64.deb"
+        size: 137095848
+        sha256pre: "0efdae5b04bb4f62"
+      "793441927":
         name: "latest-linux-arm64.yml"
         size: 549
-        sha256pre: "6099342b57ed1edb"
-      "765339372":
-        name: "Pane-2.4.243-macOS-arm64.zip.blockmap"
-        size: 172202
-        sha256pre: "e082fc60e5a283a5"
-      "765339373":
-        name: "Pane-2.4.243-macOS-x64.dmg"
-        size: 180903143
-        sha256pre: "6452dca9657d1ec3"
-      "765339374":
-        name: "Pane-2.4.243-macOS-arm64.dmg"
-        size: 173655461
-        sha256pre: "32bd7681910730cf"
-      "765339375":
-        name: "Pane-2.4.243-macOS-arm64.zip"
-        size: 167497006
-        sha256pre: "ab847983f98fdae3"
-      "765339376":
-        name: "Pane-2.4.243-macOS-arm64.dmg.blockmap"
-        size: 181526
-        sha256pre: "c3709d56b309ea76"
-      "765339399":
-        name: "Pane-2.4.243-macOS-x64.dmg.blockmap"
-        size: 191839
-        sha256pre: "72f1844de4705ed3"
-      "765339429":
-        name: "Pane-2.4.243-macOS-x64.zip"
-        size: 174732615
-        sha256pre: "48482423a56bc144"
-      "765339448":
-        name: "Pane-2.4.243-macOS-x64.zip.blockmap"
-        size: 180350
-        sha256pre: "89063c605349797f"
-      "765339482":
+        sha256pre: "8b5a138e308a8f29"
+      "793460620":
+        name: "Pane-2.4.257-macOS-arm64.zip"
+        size: 167869953
+        sha256pre: "c6760af2f4df456d"
+      "793460621":
+        name: "Pane-2.4.257-macOS-arm64.zip.blockmap"
+        size: 172541
+        sha256pre: "451f88e081a93fb9"
+      "793460626":
+        name: "Pane-2.4.257-macOS-arm64.dmg"
+        size: 174047422
+        sha256pre: "78b36412847c0457"
+      "793460627":
+        name: "Pane-2.4.257-macOS-x64.dmg"
+        size: 181306750
+        sha256pre: "a54b06d92282f7f9"
+      "793460628":
+        name: "Pane-2.4.257-macOS-arm64.dmg.blockmap"
+        size: 181988
+        sha256pre: "f4419b12bb36b281"
+      "793460656":
+        name: "Pane-2.4.257-macOS-x64.dmg.blockmap"
+        size: 190435
+        sha256pre: "358fff8165725c7c"
+      "793460657":
+        name: "Pane-2.4.257-macOS-x64.zip"
+        size: 175105262
+        sha256pre: "6b9a257cc5ae5b0e"
+      "793460670":
+        name: "Pane-2.4.257-macOS-x64.zip.blockmap"
+        size: 180682
+        sha256pre: "453ed885fb5bcb92"
+      "793460691":
         name: "latest-mac.yml"
         size: 828
-        sha256pre: "2e551b453e9d2e7e"
-      "765339501":
-        name: "Pane-2.4.243-Windows-arm64.exe"
-        size: 156513855
-        sha256pre: "19a91e2223049f25"
-      "765339679":
-        name: "Pane-2.4.243-Windows-arm64.exe.blockmap"
-        size: 160339
-        sha256pre: "fe63aaaf51e54236"
-      "765339688":
-        name: "Pane-2.4.243-Windows-x64.exe"
-        size: 156549560
-        sha256pre: "e6d78d68ef2d46de"
-      "765339727":
-        name: "Pane-2.4.243-Windows-x64.exe.blockmap"
-        size: 159486
-        sha256pre: "55ff21eea3475d19"
-      "765339754":
+        sha256pre: "c07a0bef9e03f20c"
+      "793460724":
+        name: "Pane-2.4.257-Windows-arm64.exe"
+        size: 156376490
+        sha256pre: "9993e2513b71d9c4"
+      "793461018":
+        name: "Pane-2.4.257-Windows-arm64.exe.blockmap"
+        size: 160822
+        sha256pre: "2f6fad9995245f26"
+      "793461068":
+        name: "Pane-2.4.257-Windows-x64.exe"
+        size: 156414876
+        sha256pre: "da78016002566b32"
+      "793461127":
+        name: "Pane-2.4.257-Windows-x64.exe.blockmap"
+        size: 159355
+        sha256pre: "f370c2cfbc46aefa"
+      "793461141":
         name: "latest.yml"
         size: 516
-        sha256pre: "2cd3589004328349"
-      "765339757":
+        sha256pre: "5170da615e3bc7e7"
+      "793461163":
         name: "SHA256SUMS.txt"
         size: 959
-        sha256pre: "ee49f3522071357a"
-      "765339765":
+        sha256pre: "e2dbb15d06a29c6d"
+      "793461182":
         name: "continuity.json"
         size: 1494
-        sha256pre: "1b8f998079230430"
-      "765339772":
+        sha256pre: "f2cbc1282948bd08"
+      "793461210":
         name: "compose.yaml"
         size: 979
-        sha256pre: "1905cebe800a529c"
-      "765339777":
+        sha256pre: "48c73a24d32f872f"
+      "793461229":
         name: "pane-relay-darwin-arm64"
-        size: 11280144
-        sha256pre: "8dff7f2623b9855c"
-      "765339783":
+        size: 11547056
+        sha256pre: "b50395f754d8b6c9"
+      "793461253":
         name: "pane-relay-darwin-x64"
-        size: 11746656
-        sha256pre: "f34fa3ced8d416a6"
-      "765339792":
+        size: 12036240
+        sha256pre: "e5d6b3903e7afbde"
+      "793461265":
         name: "pane-relay-linux-arm64"
-        size: 11189704
-        sha256pre: "a649934a750b2653"
-      "765339811":
+        size: 11452064
+        sha256pre: "5d10b52e69d4dbe2"
+      "793461298":
         name: "pane-relay-linux-x64"
-        size: 12787720
-        sha256pre: "2167f6aeae3bbc85"
-      "765339839":
+        size: 13078760
+        sha256pre: "230051996ead0afe"
+      "793461301":
         name: "pane-relay-sha256.txt"
         size: 538
-        sha256pre: "22c9c5543544c777"
-      "765339842":
+        sha256pre: "f5b641a2b6f34d93"
+      "793461306":
         name: "pane-relay-win32-arm64.exe"
-        size: 11363328
-        sha256pre: "f5dbada1f2737fad"
-      "765339847":
+        size: 11623424
+        sha256pre: "09ae6f87159487f4"
+      "793461311":
         name: "pane-relay-win32-x64.exe"
-        size: 13187072
-        sha256pre: "329ecd8e5aaaef94"
-  "450753388":
-    tag: "v2.4.244"
-    title: "2.4.244"
-    published_at: "2026-11-19T01:20:50Z"
+        size: 13476864
+        sha256pre: "003a4ce397caeee2"
+  "458807112":
+    tag: "v2.4.258"
+    title: "2.4.258"
+    published_at: "2026-11-26T00:49:05Z"
     prerelease: false
     assets:
-      "765692475":
-        name: "Pane-2.4.244-linux-x86_64.AppImage"
-        size: 180999505
-        sha256pre: "7fbee65b029b5af6"
-      "765693787":
-        name: "Pane-2.4.244-linux-amd64.deb"
-        size: 143447372
-        sha256pre: "2bbff6ad58162914"
-      "765693987":
+      "793739299":
+        name: "Pane-2.4.258-linux-arm64.AppImage"
+        size: 182379162
+        sha256pre: "746a6e0a6a608f94"
+      "793740438":
+        name: "Pane-2.4.258-linux-x86_64.AppImage"
+        size: 181564762
+        sha256pre: "a7f749604fcd32ae"
+      "793742399":
+        name: "Pane-2.4.258-linux-amd64.deb"
+        size: 144665276
+        sha256pre: "37a858a6a125b90f"
+      "793742581":
         name: "latest-linux.yml"
         size: 551
-        sha256pre: "4354cb423edbfba0"
-      "765696811":
-        name: "Pane-2.4.244-linux-arm64.AppImage"
-        size: 181817889
-        sha256pre: "98708910a5101026"
-      "765701192":
-        name: "Pane-2.4.244-linux-arm64.deb"
-        size: 136687372
-        sha256pre: "5c816c455bbc4f82"
-      "765701342":
+        sha256pre: "0dc3c75d86b67651"
+      "793743407":
+        name: "Pane-2.4.258-linux-arm64.deb"
+        size: 137217368
+        sha256pre: "18b2922f85678895"
+      "793743787":
         name: "latest-linux-arm64.yml"
         size: 549
-        sha256pre: "c06da69af0568082"
-      "765714632":
-        name: "Pane-2.4.244-macOS-arm64.dmg.blockmap"
-        size: 182020
-        sha256pre: "f22eb8410e570e0e"
-      "765714633":
-        name: "Pane-2.4.244-macOS-arm64.zip.blockmap"
-        size: 172035
-        sha256pre: "ef0494f7116cdbb1"
-      "765714640":
-        name: "Pane-2.4.244-macOS-x64.dmg"
-        size: 180927812
-        sha256pre: "ec05dd98d27aa36e"
-      "765714641":
-        name: "Pane-2.4.244-macOS-arm64.dmg"
-        size: 173667923
-        sha256pre: "11a943347b0fa038"
-      "765714642":
-        name: "Pane-2.4.244-macOS-arm64.zip"
-        size: 167512794
-        sha256pre: "33da5ca40f94d9bf"
-      "765714661":
-        name: "Pane-2.4.244-macOS-x64.dmg.blockmap"
-        size: 190880
-        sha256pre: "39f69654da28d7a7"
-      "765714668":
-        name: "Pane-2.4.244-macOS-x64.zip"
-        size: 174748341
-        sha256pre: "a73864715847606a"
-      "765714693":
-        name: "Pane-2.4.244-macOS-x64.zip.blockmap"
-        size: 180100
-        sha256pre: "24ee1ac342570305"
-      "765714719":
+        sha256pre: "796c614e5c463353"
+      "793756287":
+        name: "Pane-2.4.258-macOS-x64.dmg"
+        size: 181466993
+        sha256pre: "e92647e9ef012549"
+      "793756288":
+        name: "Pane-2.4.258-macOS-arm64.dmg.blockmap"
+        size: 182357
+        sha256pre: "bcddeb59ba9d40ea"
+      "793756290":
+        name: "Pane-2.4.258-macOS-arm64.zip"
+        size: 168016594
+        sha256pre: "634ca9a1b3605e02"
+      "793756295":
+        name: "Pane-2.4.258-macOS-arm64.dmg"
+        size: 174181654
+        sha256pre: "3cbe9292a667835c"
+      "793756300":
+        name: "Pane-2.4.258-macOS-arm64.zip.blockmap"
+        size: 172735
+        sha256pre: "d44a7e74aefacc36"
+      "793756326":
+        name: "Pane-2.4.258-macOS-x64.dmg.blockmap"
+        size: 190923
+        sha256pre: "bde0e697f26b3479"
+      "793756328":
+        name: "Pane-2.4.258-macOS-x64.zip"
+        size: 175252173
+        sha256pre: "3ee28b0e47282844"
+      "793756341":
+        name: "Pane-2.4.258-macOS-x64.zip.blockmap"
+        size: 180592
+        sha256pre: "3afec798cb1e99a1"
+      "793756368":
         name: "latest-mac.yml"
         size: 828
-        sha256pre: "21102285d0681626"
-      "765714745":
-        name: "Pane-2.4.244-Windows-arm64.exe"
-        size: 156521439
-        sha256pre: "9409d787933195a4"
-      "765714973":
-        name: "Pane-2.4.244-Windows-arm64.exe.blockmap"
-        size: 160902
-        sha256pre: "f96ee4d7712e3cce"
-      "765715002":
-        name: "Pane-2.4.244-Windows-x64.exe"
-        size: 156557241
-        sha256pre: "984a03f08e8fa51b"
-      "765715004":
-        name: "Pane-2.4.244-Windows-x64.exe.blockmap"
-        size: 160263
-        sha256pre: "598b9e846e923b33"
-      "765715037":
+        sha256pre: "d2603ac54b2a8b64"
+      "793756385":
+        name: "Pane-2.4.258-Windows-arm64.exe"
+        size: 156489289
+        sha256pre: "3d2b30ff6a0d03ff"
+      "793756563":
+        name: "Pane-2.4.258-Windows-arm64.exe.blockmap"
+        size: 160400
+        sha256pre: "bcf91155dc7c97d6"
+      "793756574":
+        name: "Pane-2.4.258-Windows-x64.exe"
+        size: 156527449
+        sha256pre: "340680f2f5ae2cb7"
+      "793756577":
+        name: "Pane-2.4.258-Windows-x64.exe.blockmap"
+        size: 159666
+        sha256pre: "5a495fb87e936546"
+      "793756592":
         name: "latest.yml"
         size: 516
-        sha256pre: "5c726ec3d2f83434"
-      "765715055":
+        sha256pre: "ff8c3f5d15381d7c"
+      "793756597":
         name: "SHA256SUMS.txt"
         size: 959
-        sha256pre: "4342dbcf1bc3e20d"
-      "765715061":
+        sha256pre: "b920adb307300fa7"
+      "793756610":
         name: "continuity.json"
         size: 1494
-        sha256pre: "8b1179dbd5e9b980"
-      "765715093":
+        sha256pre: "55741ee5d8085783"
+      "793756616":
         name: "compose.yaml"
         size: 979
-        sha256pre: "278ceb7e1e5c2e91"
-      "765715103":
+        sha256pre: "d6bba8ad3a61953c"
+      "793756618":
         name: "pane-relay-darwin-arm64"
-        size: 11280144
-        sha256pre: "8dff7f2623b9855c"
-      "765715119":
+        size: 11547056
+        sha256pre: "b50395f754d8b6c9"
+      "793756622":
         name: "pane-relay-darwin-x64"
-        size: 11746656
-        sha256pre: "f34fa3ced8d416a6"
-      "765715128":
+        size: 12036240
+        sha256pre: "e5d6b3903e7afbde"
+      "793756628":
         name: "pane-relay-linux-arm64"
-        size: 11189704
-        sha256pre: "a649934a750b2653"
-      "765715165":
+        size: 11452064
+        sha256pre: "5d10b52e69d4dbe2"
+      "793756638":
         name: "pane-relay-linux-x64"
-        size: 12787720
-        sha256pre: "2167f6aeae3bbc85"
-      "765715184":
+        size: 13078760
+        sha256pre: "230051996ead0afe"
+      "793756653":
         name: "pane-relay-sha256.txt"
         size: 538
-        sha256pre: "489f1e6e744d14a7"
-      "765715191":
+        sha256pre: "fa8de280aabbd7b1"
+      "793756671":
         name: "pane-relay-win32-arm64.exe"
-        size: 11363328
-        sha256pre: "cda3587d00b107dd"
-      "765715207":
+        size: 11623424
+        sha256pre: "9677f1c77e6bcccd"
+      "793756679":
         name: "pane-relay-win32-x64.exe"
-        size: 13187072
-        sha256pre: "86949004b59e5adf"
-  "450912999":
-    tag: "v2.4.245"
-    title: "2.4.245"
-    published_at: "2026-11-19T05:32:05Z"
+        size: 13476864
+        sha256pre: "8728e14832b23988"
+  "458912438":
+    tag: "v2.4.259"
+    title: "2.4.259"
+    published_at: "2026-11-26T03:34:50Z"
     prerelease: false
     assets:
-      "766353076":
-        name: "Pane-2.4.245-linux-arm64.AppImage"
-        size: 182067066
-        sha256pre: "fa2eb66a3c7f8925"
-      "766354341":
-        name: "Pane-2.4.245-linux-x86_64.AppImage"
-        size: 181253076
-        sha256pre: "6778048514909ac3"
-      "766355660":
-        name: "Pane-2.4.245-linux-amd64.deb"
-        size: 143995488
-        sha256pre: "85cebfa4dffbd1e4"
-      "766355830":
+      "794148131":
+        name: "Pane-2.4.259-linux-x86_64.AppImage"
+        size: 181573717
+        sha256pre: "2944525c61376a9d"
+      "794149526":
+        name: "Pane-2.4.259-linux-amd64.deb"
+        size: 144690516
+        sha256pre: "620b6ae940177e26"
+      "794149719":
         name: "latest-linux.yml"
         size: 551
-        sha256pre: "f2887f406294d7c7"
-      "766357624":
-        name: "Pane-2.4.245-linux-arm64.deb"
-        size: 136853580
-        sha256pre: "b14590860bee7c73"
-      "766357754":
+        sha256pre: "0621829db5c544e9"
+      "794151760":
+        name: "Pane-2.4.259-linux-arm64.AppImage"
+        size: 182388038
+        sha256pre: "94688e62d99fbb31"
+      "794156039":
+        name: "Pane-2.4.259-linux-arm64.deb"
+        size: 137229044
+        sha256pre: "b4f29bf5b7b1f7b3"
+      "794156188":
         name: "latest-linux-arm64.yml"
         size: 549
-        sha256pre: "b82fa894a8b53d23"
-      "766378122":
-        name: "Pane-2.4.245-macOS-arm64.dmg"
-        size: 173958151
-        sha256pre: "e21b1684e3ea4dbf"
-      "766378123":
-        name: "Pane-2.4.245-macOS-x64.dmg"
-        size: 181165676
-        sha256pre: "816179d525c25e88"
-      "766378125":
-        name: "Pane-2.4.245-macOS-arm64.zip.blockmap"
-        size: 172960
-        sha256pre: "bdd28f10c6a47772"
-      "766378126":
-        name: "Pane-2.4.245-macOS-arm64.zip"
-        size: 167749950
-        sha256pre: "a7e27149b4f3c8e6"
-      "766378127":
-        name: "Pane-2.4.245-macOS-arm64.dmg.blockmap"
-        size: 182516
-        sha256pre: "1831b3b451816717"
-      "766378149":
-        name: "Pane-2.4.245-macOS-x64.dmg.blockmap"
-        size: 189407
-        sha256pre: "c8312802c9a0adc2"
-      "766378162":
-        name: "Pane-2.4.245-macOS-x64.zip"
-        size: 174985322
-        sha256pre: "6c437f82a354d0c2"
-      "766378203":
-        name: "Pane-2.4.245-macOS-x64.zip.blockmap"
-        size: 180657
-        sha256pre: "5ddb60e0dc4811a1"
-      "766378232":
+        sha256pre: "bcb97d1409f7d7c0"
+      "794173493":
+        name: "Pane-2.4.259-macOS-arm64.zip.blockmap"
+        size: 172261
+        sha256pre: "4342538f3cf17b0d"
+      "794173497":
+        name: "Pane-2.4.259-macOS-arm64.dmg"
+        size: 174203644
+        sha256pre: "72a59c055e01da8d"
+      "794173498":
+        name: "Pane-2.4.259-macOS-arm64.zip"
+        size: 168031308
+        sha256pre: "a6521efdc50bde94"
+      "794173499":
+        name: "Pane-2.4.259-macOS-x64.dmg"
+        size: 181483005
+        sha256pre: "7f1ed21ad241491f"
+      "794173500":
+        name: "Pane-2.4.259-macOS-arm64.dmg.blockmap"
+        size: 181956
+        sha256pre: "360a9a818b4a6aad"
+      "794173520":
+        name: "Pane-2.4.259-macOS-x64.dmg.blockmap"
+        size: 191048
+        sha256pre: "11b27035b5e0150f"
+      "794173534":
+        name: "Pane-2.4.259-macOS-x64.zip"
+        size: 175266747
+        sha256pre: "d61f07a4375c5f16"
+      "794173548":
+        name: "Pane-2.4.259-macOS-x64.zip.blockmap"
+        size: 179918
+        sha256pre: "051f94c5bc6e0fcf"
+      "794173557":
         name: "latest-mac.yml"
         size: 828
-        sha256pre: "16b4a144e6847cc8"
-      "766378265":
-        name: "Pane-2.4.245-Windows-arm64.exe"
-        size: 156712828
-        sha256pre: "ab63b3929be20515"
-      "766378739":
-        name: "Pane-2.4.245-Windows-arm64.exe.blockmap"
-        size: 160749
-        sha256pre: "913f6a02616c7e07"
-      "766378770":
-        name: "Pane-2.4.245-Windows-x64.exe"
-        size: 156748561
-        sha256pre: "33213903112c4d4d"
-      "766378789":
-        name: "Pane-2.4.245-Windows-x64.exe.blockmap"
-        size: 160274
-        sha256pre: "1fc7acad50c3200e"
-      "766378821":
+        sha256pre: "94a42aadfabef0e6"
+      "794173585":
+        name: "Pane-2.4.259-Windows-arm64.exe"
+        size: 156500194
+        sha256pre: "7700e4b7961f3b9a"
+      "794173848":
+        name: "Pane-2.4.259-Windows-arm64.exe.blockmap"
+        size: 160637
+        sha256pre: "58c21e59248d4a5b"
+      "794173888":
+        name: "Pane-2.4.259-Windows-x64.exe"
+        size: 156538962
+        sha256pre: "e7ab794840b00ab6"
+      "794173962":
+        name: "Pane-2.4.259-Windows-x64.exe.blockmap"
+        size: 159909
+        sha256pre: "8348778362288d6b"
+      "794173993":
         name: "latest.yml"
         size: 516
-        sha256pre: "b7eb36d504e2d339"
-      "766378867":
+        sha256pre: "91b54124c4a3edf5"
+      "794174040":
         name: "SHA256SUMS.txt"
         size: 959
-        sha256pre: "69f1e934f9d829f6"
-      "766378912":
+        sha256pre: "9e91854d3256c070"
+      "794174092":
         name: "continuity.json"
         size: 1494
-        sha256pre: "1d69513d49190b3c"
-      "766378955":
+        sha256pre: "5955a6bdf8f19b89"
+      "794174146":
         name: "compose.yaml"
         size: 979
-        sha256pre: "83d6f0f3a5842708"
-      "766378958":
+        sha256pre: "1043670b466043d8"
+      "794174222":
         name: "pane-relay-darwin-arm64"
-        size: 11280144
-        sha256pre: "8dff7f2623b9855c"
-      "766378975":
+        size: 11547056
+        sha256pre: "b50395f754d8b6c9"
+      "794174444":
         name: "pane-relay-darwin-x64"
-        size: 11746656
-        sha256pre: "f34fa3ced8d416a6"
-      "766379026":
+        size: 12036240
+        sha256pre: "e5d6b3903e7afbde"
+      "794174570":
         name: "pane-relay-linux-arm64"
-        size: 11189704
-        sha256pre: "a649934a750b2653"
-      "766379028":
+        size: 11452064
+        sha256pre: "5d10b52e69d4dbe2"
+      "794174685":
         name: "pane-relay-linux-x64"
-        size: 12787720
-        sha256pre: "2167f6aeae3bbc85"
-      "766379049":
+        size: 13078760
+        sha256pre: "230051996ead0afe"
+      "794174830":
         name: "pane-relay-sha256.txt"
         size: 538
-        sha256pre: "e8e73d1215e06310"
-      "766379059":
+        sha256pre: "0689de1fe3841fec"
+      "794174871":
         name: "pane-relay-win32-arm64.exe"
-        size: 11363328
-        sha256pre: "72a6b73cfeca4a6a"
-      "766379068":
+        size: 11623424
+        sha256pre: "c3b157e96250b2b1"
+      "794175020":
         name: "pane-relay-win32-x64.exe"
-        size: 13187072
-        sha256pre: "5c25abf8221c00ec"
-  "452158134":
-    tag: "v2.4.246"
-    title: "2.4.246"
-    published_at: "2026-11-20T01:39:41Z"
+        size: 13476864
+        sha256pre: "937258fbf1873332"
+  "458962036":
+    tag: "v2.4.260"
+    title: "2.4.260"
+    published_at: "2026-11-26T04:51:31Z"
     prerelease: false
     assets:
-      "769988203":
-        name: "Pane-2.4.246-linux-x86_64.AppImage"
-        size: 181680029
-        sha256pre: "f2a572b5d3b51d65"
-      "769988610":
-        name: "Pane-2.4.246-linux-arm64.AppImage"
-        size: 182494744
-        sha256pre: "68ec316b902c74b6"
-      "769989707":
-        name: "Pane-2.4.246-linux-amd64.deb"
-        size: 144705264
-        sha256pre: "113ce1abab9111e5"
-      "769989920":
+      "794345753":
+        name: "Pane-2.4.260-linux-x86_64.AppImage"
+        size: 181573603
+        sha256pre: "d83563b40546c076"
+      "794346303":
+        name: "Pane-2.4.260-linux-arm64.AppImage"
+        size: 182391834
+        sha256pre: "350e3327d0a6dc7b"
+      "794346831":
+        name: "Pane-2.4.260-linux-amd64.deb"
+        size: 144690556
+        sha256pre: "929af0a563791ae8"
+      "794347013":
         name: "latest-linux.yml"
         size: 551
-        sha256pre: "055cac3f9cdc01aa"
-      "769992702":
-        name: "Pane-2.4.246-linux-arm64.deb"
-        size: 137161236
-        sha256pre: "37af5e7a600759f6"
-      "769992896":
+        sha256pre: "21d6befd5907bef8"
+      "794350382":
+        name: "Pane-2.4.260-linux-arm64.deb"
+        size: 137330056
+        sha256pre: "80bccfabb6f5f1bb"
+      "794350538":
         name: "latest-linux-arm64.yml"
         size: 549
-        sha256pre: "134c65d8c6df7b83"
-      "770008056":
-        name: "Pane-2.4.246-macOS-x64.dmg"
-        size: 181608486
-        sha256pre: "5eaf20601985a264"
-      "770008058":
-        name: "Pane-2.4.246-macOS-arm64.zip.blockmap"
-        size: 173593
-        sha256pre: "cf7cac467a8df35e"
-      "770008059":
-        name: "Pane-2.4.246-macOS-arm64.zip"
-        size: 168148706
-        sha256pre: "e767a3efbde917fb"
-      "770008062":
-        name: "Pane-2.4.246-macOS-arm64.dmg.blockmap"
-        size: 182455
-        sha256pre: "f8e29442fd0949ee"
-      "770008063":
-        name: "Pane-2.4.246-macOS-arm64.dmg"
-        size: 174324546
-        sha256pre: "e77886b92d768869"
-      "770008096":
-        name: "Pane-2.4.246-macOS-x64.dmg.blockmap"
-        size: 191011
-        sha256pre: "6241a39f5c792438"
-      "770008114":
-        name: "Pane-2.4.246-macOS-x64.zip"
-        size: 175384247
-        sha256pre: "509d6df0dfa6fa2c"
-      "770008122":
-        name: "Pane-2.4.246-macOS-x64.zip.blockmap"
-        size: 180883
-        sha256pre: "9cec44e42e3451c8"
-      "770008142":
+        sha256pre: "d0dd9bc67219e28e"
+      "794370262":
+        name: "Pane-2.4.260-macOS-arm64.zip.blockmap"
+        size: 172529
+        sha256pre: "436573146b55dc6c"
+      "794370264":
+        name: "Pane-2.4.260-macOS-arm64.dmg"
+        size: 174204467
+        sha256pre: "fe42eadfb8fc6adc"
+      "794370265":
+        name: "Pane-2.4.260-macOS-arm64.dmg.blockmap"
+        size: 181566
+        sha256pre: "45652b838381ebfc"
+      "794370267":
+        name: "Pane-2.4.260-macOS-arm64.zip"
+        size: 168032001
+        sha256pre: "a965b06dafc46332"
+      "794370270":
+        name: "Pane-2.4.260-macOS-x64.dmg"
+        size: 181486835
+        sha256pre: "4f68a0632c04cce3"
+      "794370305":
+        name: "Pane-2.4.260-macOS-x64.dmg.blockmap"
+        size: 190573
+        sha256pre: "0010e77958e38bed"
+      "794370308":
+        name: "Pane-2.4.260-macOS-x64.zip"
+        size: 175267588
+        sha256pre: "032a263fc7e64e04"
+      "794370323":
+        name: "Pane-2.4.260-macOS-x64.zip.blockmap"
+        size: 180765
+        sha256pre: "ef6bd5f20f40ccf8"
+      "794370344":
         name: "latest-mac.yml"
         size: 828
-        sha256pre: "fb0e5020c41ac9b5"
-      "770008162":
-        name: "Pane-2.4.246-Windows-arm64.exe"
-        size: 157049647
-        sha256pre: "5770c1db2d5db5d9"
-      "770008361":
-        name: "Pane-2.4.246-Windows-arm64.exe.blockmap"
-        size: 161578
-        sha256pre: "bcd1ab207483ab2a"
-      "770008377":
-        name: "Pane-2.4.246-Windows-x64.exe"
-        size: 157089062
-        sha256pre: "5a79a3d01f3b4cf5"
-      "770008386":
-        name: "Pane-2.4.246-Windows-x64.exe.blockmap"
-        size: 160477
-        sha256pre: "52be5aac178cc2c3"
-      "770008405":
+        sha256pre: "22cc1233ff3185f1"
+      "794370372":
+        name: "Pane-2.4.260-Windows-arm64.exe"
+        size: 156500642
+        sha256pre: "047c077e8e679871"
+      "794370582":
+        name: "Pane-2.4.260-Windows-arm64.exe.blockmap"
+        size: 160630
+        sha256pre: "6458227b2e9ee55d"
+      "794370638":
+        name: "Pane-2.4.260-Windows-x64.exe"
+        size: 156539747
+        sha256pre: "10d9474157236325"
+      "794370641":
+        name: "Pane-2.4.260-Windows-x64.exe.blockmap"
+        size: 159579
+        sha256pre: "93206fb84bc629aa"
+      "794370665":
         name: "latest.yml"
         size: 516
-        sha256pre: "6c9ba9ea71531a4d"
-      "770008413":
+        sha256pre: "53f91c87a233d94f"
+      "794370688":
         name: "SHA256SUMS.txt"
         size: 959
-        sha256pre: "a40e0d270bf7f5cb"
-      "770008436":
+        sha256pre: "29081fa4f4d41d32"
+      "794370714":
         name: "continuity.json"
         size: 1494
-        sha256pre: "570a6c681c80c24e"
-      "770008454":
+        sha256pre: "7649ecceb1a38355"
+      "794370715":
         name: "compose.yaml"
         size: 979
-        sha256pre: "8462df91c9a3723f"
-      "770008486":
+        sha256pre: "95cfac0d0f1980cf"
+      "794370727":
         name: "pane-relay-darwin-arm64"
-        size: 11280144
-        sha256pre: "8dff7f2623b9855c"
-      "770008493":
+        size: 11547056
+        sha256pre: "b50395f754d8b6c9"
+      "794370729":
         name: "pane-relay-darwin-x64"
-        size: 11746656
-        sha256pre: "f34fa3ced8d416a6"
-      "770008496":
+        size: 12036240
+        sha256pre: "e5d6b3903e7afbde"
+      "794370739":
         name: "pane-relay-linux-arm64"
-        size: 11189704
-        sha256pre: "a649934a750b2653"
-      "770008512":
+        size: 11452064
+        sha256pre: "5d10b52e69d4dbe2"
+      "794370774":
         name: "pane-relay-linux-x64"
-        size: 12787720
-        sha256pre: "2167f6aeae3bbc85"
-      "770008540":
+        size: 13078760
+        sha256pre: "230051996ead0afe"
+      "794370776":
         name: "pane-relay-sha256.txt"
         size: 538
-        sha256pre: "5a287716997f3988"
-      "770008551":
+        sha256pre: "1d774a628d1097bc"
+      "794370778":
         name: "pane-relay-win32-arm64.exe"
-        size: 11363328
-        sha256pre: "086e2abd6e4068c1"
-      "770008561":
+        size: 11623424
+        sha256pre: "33ddeb4ac07030be"
+      "794370792":
         name: "pane-relay-win32-x64.exe"
-        size: 13187072
-        sha256pre: "1ba9f157bab712f9"
-  "453239372":
-    tag: "v2.4.247"
-    title: "2.4.247"
-    published_at: "2026-11-20T22:35:07Z"
+        size: 13476864
+        sha256pre: "46cd8a33652ed148"
+  "458991115":
+    tag: "v2.4.261"
+    title: "2.4.261"
+    published_at: "2026-11-26T05:28:11Z"
     prerelease: false
     assets:
-      "773559138":
-        name: "Pane-2.4.247-linux-arm64.AppImage"
-        size: 182240640
-        sha256pre: "df4e36202de198d2"
-      "773561686":
-        name: "Pane-2.4.247-linux-x86_64.AppImage"
-        size: 181426358
-        sha256pre: "91c58ac9f25e1700"
-      "773563025":
-        name: "Pane-2.4.247-linux-amd64.deb"
-        size: 144588384
-        sha256pre: "c44c13ea4461e332"
-      "773563246":
+      "794435343":
+        name: "Pane-2.4.261-linux-x86_64.AppImage"
+        size: 181573623
+        sha256pre: "6e8956d6fd70ed42"
+      "794436276":
+        name: "Pane-2.4.261-linux-amd64.deb"
+        size: 144691236
+        sha256pre: "f8d4877923606852"
+      "794436389":
         name: "latest-linux.yml"
         size: 551
-        sha256pre: "d2376e9adfacec61"
-      "773563829":
-        name: "Pane-2.4.247-linux-arm64.deb"
-        size: 137112944
-        sha256pre: "1552533b236f0a6f"
-      "773564056":
+        sha256pre: "2b3ea7b23aa5123f"
+      "794436537":
+        name: "Pane-2.4.261-linux-arm64.AppImage"
+        size: 182392030
+        sha256pre: "325d37b4f4a48980"
+      "794440257":
+        name: "Pane-2.4.261-linux-arm64.deb"
+        size: 137228840
+        sha256pre: "d168be7633029fc7"
+      "794440433":
         name: "latest-linux-arm64.yml"
         size: 549
-        sha256pre: "dda3cde8bc5fbb5c"
-      "773582151":
-        name: "Pane-2.4.247-macOS-arm64.zip.blockmap"
-        size: 172633
-        sha256pre: "80ece1f0f79052a6"
-      "773582153":
-        name: "Pane-2.4.247-macOS-arm64.zip"
-        size: 167890259
-        sha256pre: "c0457ff96152ab64"
-      "773582154":
-        name: "Pane-2.4.247-macOS-x64.dmg"
-        size: 181327450
-        sha256pre: "68ec3101634e1265"
-      "773582156":
-        name: "Pane-2.4.247-macOS-arm64.dmg"
-        size: 174099369
-        sha256pre: "3ef607360818c2ea"
-      "773582157":
-        name: "Pane-2.4.247-macOS-arm64.dmg.blockmap"
-        size: 181903
-        sha256pre: "a9be2a00ab49ac07"
-      "773582185":
-        name: "Pane-2.4.247-macOS-x64.dmg.blockmap"
-        size: 191622
-        sha256pre: "f03f2fa46d59bc60"
-      "773582187":
-        name: "Pane-2.4.247-macOS-x64.zip"
-        size: 175125730
-        sha256pre: "c5909aa1ed7333ec"
-      "773582208":
-        name: "Pane-2.4.247-macOS-x64.zip.blockmap"
-        size: 180742
-        sha256pre: "c882f8d636041d77"
-      "773582242":
+        sha256pre: "1ad28cb59bbd872e"
+      "794458788":
+        name: "Pane-2.4.261-macOS-x64.dmg"
+        size: 181488008
+        sha256pre: "02db85acd354891d"
+      "794458790":
+        name: "Pane-2.4.261-macOS-arm64.dmg.blockmap"
+        size: 181876
+        sha256pre: "542d2592972f7ce2"
+      "794458795":
+        name: "Pane-2.4.261-macOS-arm64.dmg"
+        size: 174208215
+        sha256pre: "4c956a59a2202560"
+      "794458797":
+        name: "Pane-2.4.261-macOS-arm64.zip"
+        size: 168031783
+        sha256pre: "4151dcf8b324b633"
+      "794458799":
+        name: "Pane-2.4.261-macOS-arm64.zip.blockmap"
+        size: 172510
+        sha256pre: "cfec84bda2c50a71"
+      "794458820":
+        name: "Pane-2.4.261-macOS-x64.zip"
+        size: 175267295
+        sha256pre: "f07a059e9976eccf"
+      "794458821":
+        name: "Pane-2.4.261-macOS-x64.dmg.blockmap"
+        size: 190832
+        sha256pre: "aa51d35138baa5ee"
+      "794458837":
+        name: "Pane-2.4.261-macOS-x64.zip.blockmap"
+        size: 180333
+        sha256pre: "698eacd1550ea7ef"
+      "794458856":
         name: "latest-mac.yml"
         size: 828
-        sha256pre: "b1d251aadf255b9c"
-      "773582268":
-        name: "Pane-2.4.247-Windows-arm64.exe"
-        size: 156388117
-        sha256pre: "6a4ca1b5e4984a98"
-      "773582516":
-        name: "Pane-2.4.247-Windows-arm64.exe.blockmap"
-        size: 159883
-        sha256pre: "1765e785aeb90900"
-      "773582531":
-        name: "Pane-2.4.247-Windows-x64.exe"
-        size: 156427705
-        sha256pre: "1d2226bc24dcce7a"
-      "773582537":
+        sha256pre: "34dbc15a73d9ec35"
+      "794458881":
+        name: "Pane-2.4.261-Windows-arm64.exe"
+        size: 156499527
+        sha256pre: "5bb757c8ebcf2b28"
+      "794459046":
+        name: "Pane-2.4.261-Windows-arm64.exe.blockmap"
+        size: 160215
+        sha256pre: "1b9a4a7e7179bfed"
+      "794459065":
+        name: "Pane-2.4.261-Windows-x64.exe"
+        size: 156539954
+        sha256pre: "8ddd69519f5ed38f"
+      "794459105":
+        name: "Pane-2.4.261-Windows-x64.exe.blockmap"
+        size: 159556
+        sha256pre: "aa88404a493c10ec"
+      "794459118":
         name: "latest.yml"
         size: 516
-        sha256pre: "e0eb7623a3fcf241"
-      "773582539":
-        name: "Pane-2.4.247-Windows-x64.exe.blockmap"
-        size: 159369
-        sha256pre: "54eca651c9d227b6"
-      "773582563":
+        sha256pre: "905a1cff1fb7fdc2"
+      "794459145":
         name: "SHA256SUMS.txt"
         size: 959
-        sha256pre: "029b35b2a101de0c"
-      "773582569":
+        sha256pre: "fc8fdb185ddb2f6e"
+      "794459148":
         name: "continuity.json"
         size: 1494
-        sha256pre: "644270bd9e74af60"
-      "773582572":
+        sha256pre: "998e05a7bfad89a3"
+      "794459151":
         name: "compose.yaml"
         size: 979
-        sha256pre: "f89dace3aa3f54b9"
-      "773582576":
+        sha256pre: "04ff130913995e33"
+      "794459170":
         name: "pane-relay-darwin-arm64"
-        size: 11280144
-        sha256pre: "29e2ea294d2f7ad6"
-      "773582584":
+        size: 11547056
+        sha256pre: "b50395f754d8b6c9"
+      "794459174":
         name: "pane-relay-darwin-x64"
-        size: 11746656
-        sha256pre: "bbc2ccd7691e3980"
-      "773582599":
+        size: 12036240
+        sha256pre: "e5d6b3903e7afbde"
+      "794459176":
         name: "pane-relay-linux-arm64"
-        size: 11189704
-        sha256pre: "8a08932f2c1aab6f"
-      "773582610":
+        size: 11452064
+        sha256pre: "5d10b52e69d4dbe2"
+      "794459190":
         name: "pane-relay-linux-x64"
-        size: 12787720
-        sha256pre: "010139fb16809d35"
-      "773582640":
+        size: 13078760
+        sha256pre: "230051996ead0afe"
+      "794459278":
         name: "pane-relay-sha256.txt"
         size: 538
-        sha256pre: "eedc4f604a96ff32"
-      "773582651":
+        sha256pre: "4cb6304e0cb23fad"
+      "794459284":
         name: "pane-relay-win32-arm64.exe"
-        size: 11363840
-        sha256pre: "8fd152993d437671"
-      "773582669":
+        size: 11623424
+        sha256pre: "f760b093703bb758"
+      "794459295":
         name: "pane-relay-win32-x64.exe"
-        size: 13187072
-        sha256pre: "1049b6842e9de6af"
-  "453265787":
-    tag: "v2.4.248"
-    title: "2.4.248"
-    published_at: "2026-11-20T23:14:47Z"
+        size: 13476864
+        sha256pre: "28fd1dd1ae684dc7"
+  "459079846":
+    tag: "v2.4.262"
+    title: "2.4.262"
+    published_at: "2026-11-26T07:35:55Z"
     prerelease: false
     assets:
-      "773655391":
-        name: "Pane-2.4.248-linux-x86_64.AppImage"
-        size: 181463275
-        sha256pre: "dcacdff5eb86c8ee"
-      "773655937":
-        name: "Pane-2.4.248-linux-arm64.AppImage"
-        size: 182277622
-        sha256pre: "895d02fa6d90d125"
-      "773656619":
-        name: "Pane-2.4.248-linux-amd64.deb"
-        size: 144553628
-        sha256pre: "6095feca43494f02"
-      "773656905":
+      "794762596":
+        name: "Pane-2.4.262-linux-x86_64.AppImage"
+        size: 181626298
+        sha256pre: "cabac66ea929eb56"
+      "794762888":
+        name: "Pane-2.4.262-linux-arm64.AppImage"
+        size: 182440610
+        sha256pre: "edd0993c670916a9"
+      "794764345":
+        name: "Pane-2.4.262-linux-amd64.deb"
+        size: 144723592
+        sha256pre: "fa330c414bce2633"
+      "794764644":
         name: "latest-linux.yml"
         size: 551
-        sha256pre: "752c3b62814c668c"
-      "773660655":
-        name: "Pane-2.4.248-linux-arm64.deb"
-        size: 137136560
-        sha256pre: "2a488ef8f4775481"
-      "773660808":
+        sha256pre: "c9e5f5b12c6f59c7"
+      "794767950":
+        name: "Pane-2.4.262-linux-arm64.deb"
+        size: 137244220
+        sha256pre: "749cfad95cd2c4d9"
+      "794768283":
         name: "latest-linux-arm64.yml"
         size: 549
-        sha256pre: "2867d8530c6c8144"
-      "773684611":
-        name: "Pane-2.4.248-macOS-arm64.zip"
-        size: 167920448
-        sha256pre: "f3dce5538a7c70c3"
-      "773684612":
-        name: "Pane-2.4.248-macOS-arm64.zip.blockmap"
-        size: 173437
-        sha256pre: "3efaa023d31eff93"
-      "773684616":
-        name: "Pane-2.4.248-macOS-arm64.dmg.blockmap"
-        size: 181562
-        sha256pre: "95d2378e89293817"
-      "773684618":
-        name: "Pane-2.4.248-macOS-x64.dmg"
-        size: 181352710
-        sha256pre: "67e480b0349d13b7"
-      "773684624":
-        name: "Pane-2.4.248-macOS-arm64.dmg"
-        size: 174127457
-        sha256pre: "f9fd938aabeb5319"
-      "773684635":
-        name: "Pane-2.4.248-macOS-x64.dmg.blockmap"
-        size: 190671
-        sha256pre: "c9bafc2ed63e3de2"
-      "773684639":
-        name: "Pane-2.4.248-macOS-x64.zip"
-        size: 175155907
-        sha256pre: "f8cb2fa6663b66bb"
-      "773684660":
-        name: "Pane-2.4.248-macOS-x64.zip.blockmap"
-        size: 180968
-        sha256pre: "4d33f646f80e6cfc"
-      "773684698":
+        sha256pre: "7eb6a700c924012f"
+      "794790475":
+        name: "Pane-2.4.262-macOS-arm64.dmg.blockmap"
+        size: 182372
+        sha256pre: "abc2842c9c42a6a8"
+      "794790476":
+        name: "Pane-2.4.262-macOS-arm64.zip.blockmap"
+        size: 172809
+        sha256pre: "02bc5960017e1965"
+      "794790478":
+        name: "Pane-2.4.262-macOS-x64.dmg"
+        size: 181503885
+        sha256pre: "8752f4c5ee1b0523"
+      "794790479":
+        name: "Pane-2.4.262-macOS-arm64.dmg"
+        size: 174260889
+        sha256pre: "07551ff09b17b1f0"
+      "794790483":
+        name: "Pane-2.4.262-macOS-arm64.zip"
+        size: 168062515
+        sha256pre: "b5a0c5a7869441ef"
+      "794790519":
+        name: "Pane-2.4.262-macOS-x64.dmg.blockmap"
+        size: 189915
+        sha256pre: "ad191b4d9fb66503"
+      "794790529":
+        name: "Pane-2.4.262-macOS-x64.zip"
+        size: 175298173
+        sha256pre: "ac248974b14c983c"
+      "794790568":
+        name: "Pane-2.4.262-macOS-x64.zip.blockmap"
+        size: 180591
+        sha256pre: "915337e65970835f"
+      "794790612":
         name: "latest-mac.yml"
         size: 828
-        sha256pre: "b0cbb0a1c9f358a8"
-      "773684723":
-        name: "Pane-2.4.248-Windows-arm64.exe"
-        size: 156412256
-        sha256pre: "83969089667dd3c9"
-      "773685031":
-        name: "Pane-2.4.248-Windows-arm64.exe.blockmap"
-        size: 160163
-        sha256pre: "d0a43791eacab0dd"
-      "773685040":
-        name: "Pane-2.4.248-Windows-x64.exe"
-        size: 156448431
-        sha256pre: "61239375ff2e79af"
-      "773685074":
-        name: "Pane-2.4.248-Windows-x64.exe.blockmap"
-        size: 159639
-        sha256pre: "011d7f1af62a64ce"
-      "773685107":
+        sha256pre: "6677cce5ffb037e3"
+      "794790666":
+        name: "Pane-2.4.262-Windows-arm64.exe"
+        size: 156535315
+        sha256pre: "3aac71f0c13d9188"
+      "794790960":
+        name: "Pane-2.4.262-Windows-arm64.exe.blockmap"
+        size: 160502
+        sha256pre: "9217d8b3eb83ebbb"
+      "794790979":
+        name: "Pane-2.4.262-Windows-x64.exe"
+        size: 156570887
+        sha256pre: "b959cdad43e7f2c0"
+      "794791011":
+        name: "Pane-2.4.262-Windows-x64.exe.blockmap"
+        size: 159968
+        sha256pre: "0310ab04087016b2"
+      "794791031":
         name: "latest.yml"
         size: 516
-        sha256pre: "138a09227adfcf88"
-      "773685124":
+        sha256pre: "395264c8b9a3be24"
+      "794791054":
         name: "SHA256SUMS.txt"
         size: 959
-        sha256pre: "61cbe32a24f1b41d"
-      "773685154":
+        sha256pre: "788e7be910b7653d"
+      "794791059":
         name: "continuity.json"
         size: 1494
-        sha256pre: "883accb1b9dc3f7c"
-      "773685167":
+        sha256pre: "d2fcee7030089746"
+      "794791065":
         name: "compose.yaml"
         size: 979
-        sha256pre: "5a5e94af09ed0a26"
-      "773685179":
+        sha256pre: "734222fc272b3cbe"
+      "794791068":
         name: "pane-relay-darwin-arm64"
-        size: 11280144
-        sha256pre: "29e2ea294d2f7ad6"
-      "773685200":
+        size: 11547056
+        sha256pre: "b50395f754d8b6c9"
+      "794791083":
         name: "pane-relay-darwin-x64"
-        size: 11746656
-        sha256pre: "bbc2ccd7691e3980"
-      "773685218":
+        size: 12036240
+        sha256pre: "e5d6b3903e7afbde"
+      "794791085":
         name: "pane-relay-linux-arm64"
-        size: 11189704
-        sha256pre: "8a08932f2c1aab6f"
-      "773685223":
+        size: 11452064
+        sha256pre: "5d10b52e69d4dbe2"
+      "794791086":
         name: "pane-relay-linux-x64"
-        size: 12787720
-        sha256pre: "010139fb16809d35"
-      "773685250":
+        size: 13078760
+        sha256pre: "230051996ead0afe"
+      "794791103":
         name: "pane-relay-sha256.txt"
         size: 538
-        sha256pre: "31fd957983e4b1ee"
-      "773685290":
+        sha256pre: "70e1b9ae507232f3"
+      "794791138":
         name: "pane-relay-win32-arm64.exe"
-        size: 11363840
-        sha256pre: "aa2977dc69bbbf78"
-      "773685300":
+        size: 11623424
+        sha256pre: "a09ec2d191bd97df"
+      "794791144":
         name: "pane-relay-win32-x64.exe"
-        size: 13187072
-        sha256pre: "9b14ff77da957692"
-  "454020980":
-    tag: "v2.4.249"
-    title: "2.4.249"
-    published_at: "2026-11-21T22:23:04Z"
-    prerelease: false
-    assets:
-      "777031209":
-        name: "Pane-2.4.249-linux-x86_64.AppImage"
-        size: 181487526
-        sha256pre: "79d4b3ec9e11c5c5"
-      "777031848":
-        name: "Pane-2.4.249-linux-arm64.AppImage"
-        size: 182305904
-        sha256pre: "77ab993894fcc4a3"
-      "777032324":
-        name: "Pane-2.4.249-linux-amd64.deb"
-        size: 144563464
-        sha256pre: "e7aadde128b2cc85"
-      "777032547":
-        name: "latest-linux.yml"
-        size: 551
-        sha256pre: "35b24470a0a7781e"
-      "777034966":
-        name: "Pane-2.4.249-linux-arm64.deb"
-        size: 137150960
-        sha256pre: "f3357a0b63406c08"
-      "777035142":
-        name: "latest-linux-arm64.yml"
-        size: 549
-        sha256pre: "ecc92436058265f6"
-      "777051343":
-        name: "Pane-2.4.249-macOS-arm64.zip.blockmap"
-        size: 172720
-        sha256pre: "6910c21eb97839f9"
-      "777051344":
-        name: "Pane-2.4.249-macOS-arm64.dmg"
-        size: 174136505
-        sha256pre: "77baf226122039f4"
-      "777051345":
-        name: "Pane-2.4.249-macOS-arm64.zip"
-        size: 167943193
-        sha256pre: "d49945f30fe694c3"
-      "777051350":
-        name: "Pane-2.4.249-macOS-x64.dmg"
-        size: 181370658
-        sha256pre: "20e1f0d1f7c923e0"
-      "777051352":
-        name: "Pane-2.4.249-macOS-arm64.dmg.blockmap"
-        size: 183711
-        sha256pre: "22d74d05e3cd9915"
-      "777051381":
-        name: "Pane-2.4.249-macOS-x64.dmg.blockmap"
-        size: 190647
-        sha256pre: "119d24f5bf559796"
-      "777051391":
-        name: "Pane-2.4.249-macOS-x64.zip"
-        size: 175178708
-        sha256pre: "3e80cfc3c4ce3742"
-      "777051411":
-        name: "Pane-2.4.249-macOS-x64.zip.blockmap"
-        size: 180678
-        sha256pre: "f76f43bb560eb5b3"
-      "777051449":
-        name: "latest-mac.yml"
-        size: 828
-        sha256pre: "77b1b859476e031f"
-      "777051480":
-        name: "Pane-2.4.249-Windows-arm64.exe"
-        size: 156432741
-        sha256pre: "10592c28488e33c0"
-      "777051661":
-        name: "Pane-2.4.249-Windows-arm64.exe.blockmap"
-        size: 159913
-        sha256pre: "0dd766a8757ebd5d"
-      "777051696":
-        name: "Pane-2.4.249-Windows-x64.exe"
-        size: 156468802
-        sha256pre: "6736fbb90f1804fd"
-      "777051755":
-        name: "Pane-2.4.249-Windows-x64.exe.blockmap"
-        size: 159648
-        sha256pre: "7ff78114e5aa3d1d"
-      "777051760":
-        name: "latest.yml"
-        size: 516
-        sha256pre: "f4fbc4a37fffc8ef"
-      "777051761":
-        name: "SHA256SUMS.txt"
-        size: 959
-        sha256pre: "8d950f91f400c387"
-      "777051782":
-        name: "continuity.json"
-        size: 1494
-        sha256pre: "067deba8b2051e97"
-      "777051783":
-        name: "compose.yaml"
-        size: 979
-        sha256pre: "84a6e0809a22809b"
-      "777051785":
-        name: "pane-relay-darwin-arm64"
-        size: 11363616
-        sha256pre: "aef6c7d180d8dd26"
-      "777051789":
-        name: "pane-relay-darwin-x64"
-        size: 11833488
-        sha256pre: "50062be64770ab30"
-      "777051810":
-        name: "pane-relay-linux-arm64"
-        size: 11320912
-        sha256pre: "dceb53cde32e2cba"
-      "777051811":
-        name: "pane-relay-linux-x64"
-        size: 12857480
-        sha256pre: "99cef0ad78ec2035"
-      "777051828":
-        name: "pane-relay-sha256.txt"
-        size: 538
-        sha256pre: "db652a441ce2665a"
-      "777051833":
-        name: "pane-relay-win32-arm64.exe"
-        size: 11464192
-        sha256pre: "8a2e0efc149f7d40"
-      "777051845":
-        name: "pane-relay-win32-x64.exe"
-        size: 13286400
-        sha256pre: "0857a72c47d32126"
+        size: 13476864
+        sha256pre: "1d7aec26f03919b8"
