@@ -205,3 +205,7 @@ has no `recipe.am`: `programs/x86_64/fastfetch` is one of 1,072 x86_64 scripts
 in the inline form (its own `AM-updater` calling `catalog-yaml.am`) against
 8,308 with `CATALOG_FORMAT=3`, so a fresh install gives the same files on
 both hosts (sha256-equal). That form reads the new catalog too.
+Then emmylua installed on mylenovo (exit 0) and myxps's leftover
+`am newrepo` entry (`~/code/shell/AM`, off) purged: both hosts' AM state
+(CLI, app versions and scripts, links, desktop files, data files) is now
+identical.
