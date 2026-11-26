@@ -1,7 +1,7 @@
 $schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
 repository_id: 805307556
 repository: "pkgforge-dev/mpv-AppImage"
-observed_at: "2026-11-22T07:03:26Z"
+observed_at: "2026-11-26T00:24:00Z"
 history_complete: false
 releases:
   "375514252":
@@ -198,6 +198,7 @@ releases:
     title: "Nightly Build (2026-11-21_1795267134)"
     published_at: "2026-11-21T13:19:05Z"
     prerelease: true
+    observed_at: "2026-11-22T07:03:26Z"
     assets:
       "775650294":
         name: "mpv-v0.42.0-191-gd11ffba25-anylinux-x86_64.AppImage.zsync"
@@ -215,3 +216,25 @@ releases:
         name: "mpv-v0.42.0-191-gd11ffba25-anylinux-x86_64.AppImage"
         size: 31436584
         sha256pre: "0a543dd443c3cab6"
+  "458288855":
+    tag: "nightly"
+    title: "Nightly Build (2026-11-25_1795619748)"
+    published_at: "2026-11-25T15:15:59Z"
+    prerelease: true
+    assets:
+      "792038595":
+        name: "mpv-v0.42.0-230-g04b1afc49-anylinux-x86_64.AppImage"
+        size: 31495413
+        sha256pre: "8ae06ae8f68b0f86"
+      "792038596":
+        name: "mpv-v0.42.0-230-g04b1afc49-anylinux-aarch64.AppImage"
+        size: 30683101
+        sha256pre: "ab7d3259b93b4e14"
+      "792038599":
+        name: "mpv-v0.42.0-230-g04b1afc49-anylinux-aarch64.AppImage.zsync"
+        size: 105110
+        sha256pre: "c9f007713022bc33"
+      "792038600":
+        name: "mpv-v0.42.0-230-g04b1afc49-anylinux-x86_64.AppImage.zsync"
+        size: 107887
+        sha256pre: "64ea0c74f6e12447"

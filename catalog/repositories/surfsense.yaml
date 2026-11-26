@@ -1,7 +1,7 @@
 $schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
 repository_id: 835975784
 repository: "MODSetter/SurfSense"
-observed_at: "2026-11-22T10:00:40Z"
+observed_at: "2026-11-26T00:24:33Z"
 history_complete: true
 releases:
   "387685018":
@@ -73,67 +73,6 @@ releases:
         name: "latest-mac.yml"
         size: 815
         sha256pre: "a608efbb212bac79"
-  "408367471":
-    tag: "v2.2.0"
-    published_at: "2026-10-09T22:26:45Z"
-    prerelease: false
-    assets:
-      "626295799":
-        name: "SurfSense.AppImage"
-        size: 1453533766
-        sha256pre: "88797d5ea919e7a2"
-      "626315158":
-        name: "SurfSense-Setup.exe.blockmap"
-        size: 1261396
-        sha256pre: "f3505b3fa4d2f8e2"
-      "626315161":
-        name: "SurfSense-Setup.exe"
-        size: 1209002840
-        sha256pre: "2927944873efd625"
-      "626316500":
-        name: "stable.yml"
-        size: 336
-        sha256pre: "dd1ce54edf215d54"
-      "626318184":
-        name: "SurfSense.deb"
-        size: 1335815512
-        sha256pre: "2a81fd7f4bebf8e7"
-      "626319617":
-        name: "stable-linux.yml"
-        size: 505
-        sha256pre: "924c2bbf0e723c63"
-      "626323685":
-        name: "SurfSense-arm64.dmg.blockmap"
-        size: 1398903
-        sha256pre: "4330ecdfb7d9d848"
-      "626323688":
-        name: "SurfSense-arm64.dmg"
-        size: 1346413612
-        sha256pre: "406e481c3d939519"
-      "626328312":
-        name: "SurfSense-arm64.zip"
-        size: 1327395136
-        sha256pre: "f29cb7db05a66963"
-      "626328315":
-        name: "SurfSense-arm64.zip.blockmap"
-        size: 1380997
-        sha256pre: "8ccbb64fd6f1fa38"
-      "626331011":
-        name: "stable-mac.yml"
-        size: 487
-        sha256pre: "3d91505b175699f2"
-      "626335023":
-        name: "latest.yml"
-        size: 363
-        sha256pre: "aaab2f42c6a3d2f0"
-      "626335025":
-        name: "latest-mac.yml"
-        size: 828
-        sha256pre: "4b5c31af4ee9146b"
-      "626335026":
-        name: "latest-linux.yml"
-        size: 715
-        sha256pre: "6c4c460242fea7e0"
   "412386736":
     tag: "v2.2.1"
     published_at: "2026-10-14T07:29:03Z"
@@ -625,3 +564,92 @@ releases:
         name: "SHA256SUMS"
         size: 1425
         sha256pre: "0d8735ec65c60da6"
+  "456278464":
+    tag: "v2.4.0"
+    published_at: "2026-11-24T05:17:28Z"
+    prerelease: false
+    assets:
+      "785729160":
+        name: "SurfSense.AppImage"
+        size: 1230341005
+        sha256pre: "c630b6273079ed29"
+      "785749713":
+        name: "SurfSense.deb"
+        size: 1117661760
+        sha256pre: "afb148ef55d3e69e"
+      "785758561":
+        name: "SurfSense-Setup.exe"
+        size: 1082421112
+        sha256pre: "d216373491ed2ba5"
+      "785758565":
+        name: "SurfSense-Setup.exe.blockmap"
+        size: 1128903
+        sha256pre: "aa6336224f61957d"
+      "785759970":
+        name: "stable.yml"
+        size: 336
+        sha256pre: "13cbbcb4026f9bc2"
+      "785763840":
+        name: "SurfSense-arm64.dmg"
+        size: 1132261282
+        sha256pre: "dc51483148ae0789"
+      "785763845":
+        name: "SurfSense-arm64.dmg.blockmap"
+        size: 1177552
+        sha256pre: "71d470d24ee6809f"
+      "785765857":
+        name: "SurfSense.rpm"
+        size: 1047998109
+        sha256pre: "04368bb123d45ffd"
+      "785766778":
+        name: "stable-linux.yml"
+        size: 650
+        sha256pre: "2316913efae0d1e0"
+      "785769068":
+        name: "SurfSense-arm64.zip"
+        size: 1144452776
+        sha256pre: "1e5a7e4e55ccecd5"
+      "785769069":
+        name: "SurfSense-arm64.zip.blockmap"
+        size: 1191501
+        sha256pre: "32496365b9c539aa"
+      "785770432":
+        name: "stable-mac.yml"
+        size: 487
+        sha256pre: "496e518eb08833ca"
+      "785780002":
+        name: "latest-linux.yml"
+        size: 715
+        sha256pre: "6c4c460242fea7e0"
+      "785780003":
+        name: "latest-mac.yml"
+        size: 828
+        sha256pre: "4b5c31af4ee9146b"
+      "785780004":
+        name: "latest.yml"
+        size: 363
+        sha256pre: "aaab2f42c6a3d2f0"
+      "785780628":
+        name: "release.yml"
+        size: 445
+        sha256pre: "99e4fc25d7bd1335"
+      "785780631":
+        name: "release-mac.yml"
+        size: 596
+        sha256pre: "b13324002c17c18f"
+      "785780632":
+        name: "release-linux.yml"
+        size: 759
+        sha256pre: "5cc2b16a6d19c47b"
+      "785781181":
+        name: "install.ps1"
+        size: 11549
+        sha256pre: "2a6677fe828d6a67"
+      "785781187":
+        name: "install.sh"
+        size: 16429
+        sha256pre: "e1ac607236b33b62"
+      "785781327":
+        name: "SHA256SUMS"
+        size: 1669
+        sha256pre: "20326857d08bec81"
