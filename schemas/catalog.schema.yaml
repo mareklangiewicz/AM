@@ -1,7 +1,8 @@
 $schema: https://json-schema.org/draft/2020-12/schema
 title: AM catalog
 description: >-
-  Every document under main-marek's catalog/ names one of these kinds in its
+  Every document under main-marek's catalog/, and the collector's
+  tools/catalog-collector/retired-names.yaml, names one of these kinds in its
   first key, $schema. Field order here is the canonical order. What JSON Schema
   cannot say (the byte grammar, cross-field rules) is in docs/catalog-format.md.
 $defs:
@@ -290,6 +291,21 @@ $defs:
       never_collected:
         description: Repositories never read successfully.
         $ref: '#/$defs/count'
+  retired_names:
+    description: tools/catalog-collector/retired-names.yaml, repository file names the collector never gives out again. Not under catalog/; only the collector reads it.
+    type: object
+    additionalProperties: false
+    required: [$schema, retired]
+    properties:
+      $schema:
+        description: Names this schema and kind.
+        const: ../../schemas/catalog.schema.yaml#/$defs/retired_names
+      retired:
+        description: Retired names (catalog/repositories/<name>.yaml), in byte order, each true.
+        type: object
+        additionalProperties: false
+        patternProperties:
+          ^[a-z0-9][a-z0-9_.+-]{0,63}$: {type: boolean, const: true}
 
   time:
     description: A UTC time to the second.

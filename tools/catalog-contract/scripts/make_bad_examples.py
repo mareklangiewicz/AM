@@ -45,6 +45,8 @@ BAD = {
     'missing-field': (R, [('    tag: "nightly"\n    published_at: "2026-11-23T00:00:00Z"\n    prerelease: true\n    assets: {}',
                            '    tag: "nightly"\n    prerelease: true\n    assets: {}')], 'missing field', SCHEMA),
     'retired-failure-code': (R, [('"transport"', '"same_tag_conflict"')], 'enum', SCHEMA),
+    'retired-name-false': ('retired-names.yaml', [('"7z": true', '"7z": false')], 'constant', SCHEMA),
+    'retired-name-spelling': ('retired-names.yaml', [('"7z": true', '"7Z": true')], 'table key', SCHEMA),
     'retired-recipe-label': ('apps.yaml', [('"script"\n  "example-nightly"', '"custom"\n  "example-nightly"')], 'enum', SCHEMA),
     'sha256pre-short': (R, [('"0123456789abcdef"', '"0123456789abcde"')], 'pattern', SCHEMA),
     'sha256pre-uppercase': (R, [('"0123456789abcdef"', '"0123456789ABCDEF"')], 'pattern', SCHEMA),

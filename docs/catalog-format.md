@@ -7,6 +7,10 @@ The catalog lives in `catalog/` on `main-marek`:
 - `status/runs.yaml`: the last 64 collector runs;
 - `status/statistics.yaml`: how old the data is.
 
+One collector input uses the same grammar outside `catalog/`:
+`tools/catalog-collector/retired-names.yaml`, the repository file names never
+given out again.
+
 [`schemas/catalog.schema.yaml`](../schemas/catalog.schema.yaml) defines every
 kind and field and describes each one; editors show those descriptions on hover.
 This page covers what the schema cannot say. The host's reader
