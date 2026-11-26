@@ -155,3 +155,180 @@ def recipe_rows(root):
     if not rows:
         raise ValueError('no recipe declaration headers')
     return rows
+
+
+# A recipe's selection policies as CATALOG_* lines in its own header (ticket
+# 26): the contiguous CATALOG_* lines right after its first CATALOG_FORMAT=3.
+# A URL policy recipe has one to three selections; the 2nd and 3rd carry _2 and
+# _3, and their key is <recipe>.select-N. An AppImage policy recipe has one,
+# marked by CATALOG_APPIMAGE_ENDPOINT. Only a field that differs from its
+# default is written.
+FORMAT_LINE = 'CATALOG_FORMAT=3'
+KEPT = ('CATALOG_RECIPE', 'CATALOG_ALIAS')
+SELECTIONS = 3
+URL_FIELDS = ('REPOSITORY_ID', 'REPOSITORY', 'CHANNEL', 'URL_RULES', 'APP', 'DISPATCH_RECIPE',
+              'SOURCE_ALIASES', 'SELECTION', 'TAG_PATTERN', 'TAG_EXCLUDE', 'GIT_REF', 'GIT_FILE')
+OPTIONAL = {'SELECTION': 'selection', 'TAG_PATTERN': 'tag_pattern', 'TAG_EXCLUDE': 'tag_exclude',
+            'GIT_REF': 'git_ref', 'GIT_FILE': 'git_file'}
+APPIMAGE_FIELDS = ('APPIMAGE_ENDPOINT', 'REPOSITORY_ID', 'CHANNEL', 'URL_RULES')
+RELEASE_RULES = {'any': 'published_desc', 'stable': 'stable_published_desc'}
+RECIPE = r'(x86_64|aarch64|i686|armv7l)/[a-z0-9][a-z0-9_.+-]*'
+POLICY_NAME = re.compile(r'CATALOG_(?P<field>[A-Z][A-Z_]*[A-Z])(?:_(?P<n>[2-9]))?')
+
+
+def literal(line):
+    """NAME and value of one literal shell assignment, or ValueError."""
+    name, equals, text = line.partition('=')
+    tokens = shlex.split(text)
+    value = tokens[0] if tokens else ''
+    quoted = text == shlex.quote(value)
+    double_quoted = text == '"'+value+'"' and not any(c in value for c in '$`\\"')
+    if (not equals or not re.fullmatch(r'[A-Z][A-Z0-9_]*', name) or len(tokens) > 1
+            or not (quoted or double_quoted or text == '')):
+        raise ValueError('not a literal declaration: '+line)
+    return name, value
+
+
+def _block(text):
+    lines = text.split('\n')
+    if FORMAT_LINE not in lines:
+        raise ValueError('no '+FORMAT_LINE+' line')
+    start = end = lines.index(FORMAT_LINE)+1
+    while end < len(lines) and re.match(r'CATALOG_[A-Z0-9_]*=', lines[end]):
+        end += 1
+    return lines, start, end
+
+
+def _policy_name(name):
+    match = POLICY_NAME.fullmatch(name)
+    if not match or (match['field'] not in URL_FIELDS and match['field'] != 'APPIMAGE_ENDPOINT'):
+        return None
+    if match['n'] and (match['field'] not in URL_FIELDS or int(match['n']) > SELECTIONS):
+        return None
+    return match['field'], int(match['n'] or 1)
+
+
+def _assign(name, value):
+    return name+'='+shlex.quote(value)
+
+
+def _rules(rules):
+    return json.dumps(validate_url_rules(rules), separators=(',', ':'))
+
+
+def policy_lines(urls, image):
+    """The CATALOG_* lines for one recipe's URL selections (rows in order) or AppImage row."""
+    if urls and image:
+        raise ValueError('a recipe has URL or AppImage policies, not both')
+    if image:
+        channel = {rule: channel for channel, rule in RELEASE_RULES.items()}[image['release_rule']]
+        if image['endpoint'] not in ('list', 'latest'):
+            raise ValueError('AppImage endpoint')
+        return [_assign('CATALOG_APPIMAGE_ENDPOINT', image['endpoint']),
+                _assign('CATALOG_REPOSITORY_ID', str(image['repository_id'])),
+                _assign('CATALOG_CHANNEL', channel), _assign('CATALOG_URL_RULES', _rules(image['rules']))]
+    if len(urls) > SELECTIONS:
+        raise ValueError('more than %d selections' % SELECTIONS)
+    lines = []
+    for n, row in enumerate(urls, 1):
+        suffix = '' if n == 1 else '_%d' % n
+        source = row['source_recipe']
+        if row['recipe'] != (source if n == 1 else '%s.select-%d' % (source, n)):
+            raise ValueError('selection key: '+row['recipe'])
+        repository = row['repository']
+        if repository not in row['source_aliases']:
+            raise ValueError('aliases omit the repository: '+row['recipe'])
+        fields = dict(REPOSITORY_ID=str(row['repository_id']), REPOSITORY=repository,
+                      CHANNEL=row['channel'], URL_RULES=_rules(row['url_rules']))
+        if row['catalog_app'] != source.split('/')[1]:
+            fields['APP'] = row['catalog_app']
+        if row['dispatch_recipe'] != row['recipe']:
+            fields['DISPATCH_RECIPE'] = row['dispatch_recipe']
+        extra = [alias for alias in row['source_aliases'] if alias.lower() != repository.lower()]
+        if extra:
+            fields['SOURCE_ALIASES'] = ' '.join(extra)
+        for field, key in OPTIONAL.items():
+            if key in row:
+                fields[field] = row[key]
+        lines += [_assign('CATALOG_'+field+suffix, value) for field, value in fields.items()]
+    return lines
+
+
+def with_policy(text, lines):
+    """TEXT with its policy lines replaced by LINES; every other line unchanged."""
+    all_lines, start, end = _block(text)
+    kept = []
+    for line in all_lines[start:end]:
+        name = line.partition('=')[0]
+        if name in KEPT:
+            kept.append(line)
+        elif _policy_name(name) is None:
+            raise ValueError('unknown catalog declaration: '+name)
+    return '\n'.join(all_lines[:start]+kept+list(lines)+all_lines[end:])
+
+
+def policy_rows(recipe, text):
+    """(URL policy rows in selection order, AppImage row or None) declared in TEXT."""
+    if not re.fullmatch(RECIPE, recipe):
+        raise ValueError('policy recipe: '+recipe)
+    lines, start, end = _block(text)
+    fields = {}
+    for line in lines[start:end]:
+        name, value = literal(line)
+        if name in KEPT:
+            continue
+        key = _policy_name(name)
+        if key is None:
+            raise ValueError('unknown catalog declaration: '+name)
+        if key in fields:
+            raise ValueError('duplicate catalog declaration: '+name)
+        fields[key] = value
+    if not fields:
+        return [], None
+    app = recipe.split('/')[1]
+
+    def identity(n):
+        value = fields.get(('REPOSITORY_ID', n), '')
+        if not re.fullmatch(r'[1-9][0-9]*', value):
+            raise ValueError('policy repository id: '+recipe)
+        return int(value)
+
+    def rules(n):
+        try:
+            return validate_url_rules(json.loads(fields[('URL_RULES', n)]))
+        except (KeyError, json.JSONDecodeError):
+            raise ValueError('policy URL rules: '+recipe) from None
+
+    if ('APPIMAGE_ENDPOINT', 1) in fields:
+        if set(fields) != {(field, 1) for field in APPIMAGE_FIELDS}:
+            raise ValueError('AppImage policy fields: '+recipe)
+        if fields[('APPIMAGE_ENDPOINT', 1)] not in ('list', 'latest') or fields[('CHANNEL', 1)] not in RELEASE_RULES:
+            raise ValueError('AppImage policy: '+recipe)
+        return [], dict(recipe=recipe, repository_id=identity(1), endpoint=fields[('APPIMAGE_ENDPOINT', 1)],
+                        release_rule=RELEASE_RULES[fields[('CHANNEL', 1)]], rules=rules(1))
+    count = max(n for _, n in fields)
+    if {n for _, n in fields} != set(range(1, count+1)):
+        raise ValueError('policy selections out of order: '+recipe)
+    urls = []
+    for n in range(1, count+1):
+        key = recipe if n == 1 else '%s.select-%d' % (recipe, n)
+        repository = fields.get(('REPOSITORY', n), '')
+        if not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', repository):
+            raise ValueError('policy repository: '+recipe)
+        channel = fields.get(('CHANNEL', n))
+        if channel not in ('any', 'stable', 'nightly'):
+            raise ValueError('policy channel: '+recipe)
+        catalog_app = fields.get(('APP', n), app)
+        dispatch = fields.get(('DISPATCH_RECIPE', n), key)
+        if not re.fullmatch(r'[a-z0-9][a-z0-9_.+-]{0,63}', catalog_app) or not re.fullmatch(
+                RECIPE+r'(\.select-[2-9])?', dispatch):
+            raise ValueError('policy identity: '+recipe)
+        aliases = sorted({repository, *fields.get(('SOURCE_ALIASES', n), '').split()})
+        row = dict(recipe=key, source_recipe=recipe, repository_id=identity(n), repository=repository,
+                   channel=channel, url_rules=rules(n), catalog_app=catalog_app, dispatch_recipe=dispatch,
+                   source_aliases=aliases)
+        for field, name in OPTIONAL.items():
+            if (field, n) in fields:
+                row[name] = fields[(field, n)]
+        urls.append(row)
+    return urls, None
