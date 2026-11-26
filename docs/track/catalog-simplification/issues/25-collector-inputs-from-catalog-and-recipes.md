@@ -2,7 +2,7 @@
 
 Type: grilling
 Label: wayfinder:grilling
-Status: open
+Status: resolved
 Triage: needs-triage
 Blocked by: none
 
@@ -74,6 +74,26 @@ fixture.
 6. **The shell-parseable form.** For each YAML file that a shell reads: the
    catalog's existing grammar, a yamx profile, or a new constraint set?
    Collector-only inputs (read by Python) may need none.
+
+## Answer
+
+Decided with Marek in two grilling rounds (November 26, 2026; the details are in
+Comments). Enrollment is the app set in `catalog/apps.yaml`, and identities come
+from the repository files. A new app starts as a never-read repository file
+(`releases: {}`, nothing observed). File names are derived from the `apps.yaml`
+pointers, and the 25 retired names are kept in `retired-names.yaml`. Both
+policy files are generated in memory until the 1,072 inline-form scripts are
+converted. The 5 Git sources become `CATALOG_GIT_*` assignments in their
+scripts. `platforms.json`, `removed.json` and `run.json` become YAML. Every new
+YAML file uses the catalog grammar, with lists written as maps; no shell reads
+any of them. `collection-recipes.txt` stays. Implemented in
+[26](26-generate-policy-files-in-memory.md),
+[27](27-accept-a-never-read-repository-file.md),
+[28](28-enroll-from-apps-yaml.md) (after 27),
+[29](29-move-git-sources-into-recipes.md),
+[30](30-convert-inline-form-scripts-to-declarations.md),
+[31](31-platforms-and-run-outputs-as-yaml.md) and
+[32](32-drop-vscode-schema-associations.md).
 
 ## Comments
 
