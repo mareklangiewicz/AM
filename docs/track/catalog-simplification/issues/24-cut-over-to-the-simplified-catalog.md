@@ -217,3 +217,7 @@ November 22 in the current forms (nvim and nvim-nightly recipes with
 inline). `am -s` (inside zmx on mypi) brought `APP-MANAGER` and all 11
 modules to `main-marek` (sha256); `am -u` exit 0 over its 5 apps, no errors,
 no sudo prompt. No reinstall needed.
+Then, Marek's call, on all three hosts: appimagetool and appimageupdatetool
+removed (no installed app's updater or recipe calls either; AM downloads
+appimagetool to its cache on demand, and appimageupdatetool serves only
+`am -u --launcher`); fastfetch installed on mypi by Marek.
