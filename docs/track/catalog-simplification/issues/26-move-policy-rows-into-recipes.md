@@ -48,3 +48,17 @@ false: the files are the facts' only home (see ticket 25's correction).
   as evidence.
 - Precedent: 8,351 recipes already declare `CATALOG_URL_RULES='[…]'` as
   single-quoted compact JSON, read by `recipe_declarations.recipe_rows`.
+
+### November 26, 2026: line format (Marek: yes to all)
+
+- URL rules reuse `CATALOG_URL_RULES='[…]'`, the single-quoted compact JSON
+  that 8,351 recipes already declare, until recipes become yamx YAML.
+- A recipe's 2nd and 3rd selections get numbered variables
+  (`CATALOG_REPOSITORY_ID_2`, `CATALOG_URL_RULES_2`, and so on). The
+  `.select-N` calls and install bodies stay as they are.
+- The AppImage rows' `selector` text is dropped; Git history keeps it. The
+  rest of each row moves in, with names matching existing declarations where
+  they mean the same thing.
+- `CATALOG_APP` is written only where it differs from the app, and aliases
+  only beyond the repository and its lowercase form. The gate is that
+  `modules/catalog-yaml-policy.am` regenerates byte-equal.
