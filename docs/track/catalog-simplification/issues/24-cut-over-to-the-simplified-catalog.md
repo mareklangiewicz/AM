@@ -171,3 +171,12 @@ of `git-sources.json` (8 requests). Fixed by `REQUEST_CAP = 750`, with a test
 that a full batch and every Git read fit. Left: Marek reinstalls his apps;
 then the old branches become local `archive/<name>` refs and leave origin
 with his OK.
+
+November 26, 2026, myxps: `am -s` installed the new reader modules and removed
+the `catalog-contract-*.am` ones (all modules and `APP-MANAGER` byte-equal to
+`main-marek`); Marek removed and installed his 19 catalog apps from his
+terminal (`am -R`/`am -i`, `am reinstall kitty zmx`); every `recipe.am` now has
+`AMREPO=…/main-marek` instead of the `5429e09d` pin. `am -u` exit 0 over all
+apps through the new reader, no warnings. `fastfetch` (an old-style updater
+calling `catalog-yaml.am`) and `firefox`, `appimagetool`,
+`appimageupdatetool` (no catalog) were left as they were.
