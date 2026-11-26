@@ -180,3 +180,11 @@ terminal (`am -R`/`am -i`, `am reinstall kitty zmx`); every `recipe.am` now has
 apps through the new reader, no warnings. `fastfetch` (an old-style updater
 calling `catalog-yaml.am`) and `firefox`, `appimagetool`,
 `appimageupdatetool` (no catalog) were left as they were.
+
+November 26, 2026, with Marek's OK: `release-catalog-v3` (`3ba427e2a`, the seed's
+source, unchanged since) and `catalog-status-v1` (`f09881956`) deleted from
+origin; their tips are kept in the myxps checkout as `refs/archive/<name>`.
+A host still on the old modules (they read `release-catalog-v3`) needs
+`am -s` and its apps reinstalled; `git push origin
+refs/archive/release-catalog-v3:refs/heads/release-catalog-v3` restores the
+branch if one must keep working meanwhile.
