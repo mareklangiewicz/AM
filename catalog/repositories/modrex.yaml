@@ -1,7 +1,7 @@
 $schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
 repository_id: 1130565915
 repository: "modrexio/modrex"
-observed_at: "2026-11-22T13:05:45Z"
+observed_at: "2026-11-26T10:58:44Z"
 history_complete: true
 releases:
   "328705750":
@@ -37,47 +37,6 @@ releases:
         name: "pd3-mod-manager.rpm"
         size: 83865077
         sha256pre: "fd5c09c308ad8c16"
-  "364936550":
-    tag: "v0.13.0"
-    published_at: "2026-08-04T14:34:14Z"
-    prerelease: false
-    assets:
-      "501448907":
-        name: "modrex_x86_64.deb"
-        size: 6893664
-        sha256pre: "5d4a17a0ce595de1"
-      "501448908":
-        name: "modrex_x86_64.exe"
-        size: 4825940
-        sha256pre: "5468aec1d12373d2"
-      "501448909":
-        name: "latest-linux.yml"
-        size: 341
-        sha256pre: "744cd282ce0bef2b"
-      "501448910":
-        name: "modrex_x86_64.rpm"
-        size: 6892877
-        sha256pre: "e942e30162cd9114"
-      "501448912":
-        name: "pd3-mod-manager.deb"
-        size: 6893664
-        sha256pre: "5d4a17a0ce595de1"
-      "501448913":
-        name: "latest.yml"
-        size: 330
-        sha256pre: "b958b21d1e6194ca"
-      "501448914":
-        name: "modrex_x86_64.AppImage"
-        size: 81242616
-        sha256pre: "b223babde3526b9f"
-      "501448915":
-        name: "pd3-mod-manager.rpm"
-        size: 6892877
-        sha256pre: "e942e30162cd9114"
-      "501450660":
-        name: "latest.json"
-        size: 9592
-        sha256pre: "e80e612520088977"
   "375399197":
     tag: "v0.14.0"
     published_at: "2026-08-24T02:18:16Z"
@@ -246,27 +205,52 @@ releases:
         sha256pre: "5b67d1e8bf64b686"
   "438563170":
     tag: "nightly"
-    title: "v0.17.0-nightly.20261122.1"
+    title: "v0.18.0-nightly.20261126.1"
     published_at: "2026-11-08T23:05:47Z"
     prerelease: true
     assets:
-      "777710514":
-        name: "modrex_0.17.0-nightly.20261122.1_x86_64.exe"
-        size: 6348448
-        sha256pre: "92b4ac1cb865ccb3"
-      "777710533":
-        name: "modrex_0.17.0-nightly.20261122.1_x86_64.AppImage"
-        size: 87214584
-        sha256pre: "e903f2de79ebc84a"
-      "777710534":
-        name: "modrex_0.17.0-nightly.20261122.1_x86_64.rpm"
-        size: 9000552
-        sha256pre: "167a6eff5bb57746"
-      "777710537":
-        name: "modrex_0.17.0-nightly.20261122.1_x86_64.deb"
-        size: 8996256
-        sha256pre: "74db5634ce0fc65d"
-      "777710865":
+      "794126908":
+        name: "modrex_0.18.0-nightly.20261126.1_x86_64.rpm"
+        size: 9004638
+        sha256pre: "09eab8a38ced8e78"
+      "794126909":
+        name: "modrex_0.18.0-nightly.20261126.1_x86_64.exe"
+        size: 6349752
+        sha256pre: "8decc5827464a7a7"
+      "794126911":
+        name: "modrex_0.18.0-nightly.20261126.1_x86_64.deb"
+        size: 9000772
+        sha256pre: "b8b87e185dbe572b"
+      "794126912":
+        name: "modrex_0.18.0-nightly.20261126.1_x86_64.AppImage"
+        size: 87226872
+        sha256pre: "f3a108d545dc8ca7"
+      "794127058":
         name: "latest.json"
-        size: 8916
-        sha256pre: "d2db8306d85e5b70"
+        size: 3363
+        sha256pre: "78a304def527692a"
+  "457523332":
+    tag: "v0.17.0"
+    published_at: "2026-11-25T01:11:46Z"
+    prerelease: false
+    assets:
+      "789527738":
+        name: "modrex_x86_64.exe"
+        size: 6351040
+        sha256pre: "c3b0c56f0de6b153"
+      "789527739":
+        name: "modrex_x86_64.rpm"
+        size: 9002781
+        sha256pre: "a657087d3ca790c1"
+      "789527742":
+        name: "modrex_x86_64.deb"
+        size: 8999138
+        sha256pre: "ecd71e3328db6fd6"
+      "789527743":
+        name: "modrex_x86_64.AppImage"
+        size: 87218680
+        sha256pre: "4b2260686b4fa254"
+      "789539756":
+        name: "latest.json"
+        size: 5549
+        sha256pre: "c302f123fb8e6a53"
