@@ -55,7 +55,7 @@ class Rotation(unittest.TestCase):
                                    repository='example/app')
         for document, attempted in ((collected(), OLD), (never_collected(), NEW), (failing, NEW)):
             with self.subTest(document.get('failed_with')):
-                top = catalog_run.scan(documents.encode('repository', document))
+                top = documents.top(documents.encode('repository', document))
                 self.assertEqual(catalog_run.attempted_at(top), attempted)
 
     def test_failure_causes_and_run_wide_stops(self):
