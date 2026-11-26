@@ -1,6 +1,6 @@
 """Single-user YAML catalog: enrollment and bounded release-list collection (a library; catalog_run.py runs it).
 
-Collection combines reviewed recipe declarations and catalog-only identities.
+Enrollment is catalog/apps.yaml: each app's identity is in the repository file it points to.
 One page of 100 releases (fewer for PAGE_SIZES) per attempted source; clients enforce seven-day selected
 record freshness. Batches preserve untouched facts and isolate source failures.
 No latest endpoint, consumer version choice or pruning.
@@ -15,8 +15,10 @@ import time
 import urllib.error
 import urllib.request
 
+import yaml
 
 from bounded import normalize, unique_object
+import documents
 
 from recipe_declarations import recipe_rows
 
@@ -91,65 +93,89 @@ def utc():
     return datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
 
 
-def configuration(*, root=None, source_cap=None):
-    """Enrolled rows and their sources from the checkout at root (default: this one)."""
+NAME = r'[a-z0-9][a-z0-9_.+-]{0,63}'
+RETIRED = 'tools/catalog-collector/retired-names.yaml'
+LOADER = getattr(yaml, 'CSafeLoader', yaml.SafeLoader)
+
+
+def retired_names(root):
+    """retired-names.yaml: repository file names never given out again."""
+    document = yaml.load((Path(root)/RETIRED).read_text(encoding='utf-8'), Loader=LOADER)
+    if (not isinstance(document, dict) or set(document) != {'$schema', 'retired'}
+            or document['$schema'] != documents.DEFS['retired_names']['properties']['$schema']['const']
+            or not isinstance(document['retired'], dict)
+            or any(value is not True or not re.fullmatch(NAME, name) for name, value in document['retired'].items())):
+        raise ValueError('retired names')
+    return set(document['retired'])
+
+
+def enrollment(*, root=None, source_cap=None):
+    """Every app in catalog/apps.yaml: (rows, sources, names).
+
+    An app's identity is repository_id and repository in the repository file
+    its entry points to; that file's name is its source's name. A recipe in
+    collection-recipes.txt is ready to install: its row carries its
+    declaration, and its app's entry and file must agree with it. Enrolling an
+    app is an apps.yaml entry and a never-read repository file.
+    """
     root=ROOT if root is None else Path(root)
     source_cap=SOURCE_CAP if source_cap is None else source_cap
+    catalog = root/'catalog'
+    entries = yaml.load((catalog/'apps.yaml').read_text(encoding='utf-8'), Loader=LOADER)['apps']
+    if not entries:
+        raise ValueError('empty enrollment')
+    retired = retired_names(root)
     declarations = {row['recipe']: row for row in recipe_rows(root)}
     enrolled = [line for line in (root/'tools/catalog-collector/collection-recipes.txt').read_text().splitlines()
                 if line and not line.startswith('#')]
-    if not enrolled or len(set(enrolled)) != len(enrolled):
-        raise ValueError('empty or duplicate collection enrollment')
+    if len(set(enrolled)) != len(enrolled):
+        raise ValueError('duplicate collection recipe')
     if any(recipe not in declarations for recipe in enrolled):
         raise ValueError('unknown collection recipe')
-    rows = [declarations[recipe] for recipe in enrolled]
-    # Catalog facts do not require an installer migration or selection policy.
-    # Missing file supports older checkouts and isolated declaration fixtures.
-    catalog_only = root/'tools/catalog-collector/collection-apps.json'
-    extra = (json.loads(catalog_only.read_text(), object_pairs_hook=unique_object)
-             if catalog_only.exists() else [])
-    if not isinstance(extra, list):
-        raise ValueError('catalog-only enrollment must be a list')
-    for row in extra:
-        if (not isinstance(row, dict) or set(row) != {'app', 'repository_id', 'repository'}
-                or not isinstance(row['app'], str)
-                or not re.fullmatch(r'[a-z0-9][a-z0-9_.+-]*', row['app'])
-                or type(row['repository_id']) is not int or row['repository_id'] <= 0
-                or not isinstance(row['repository'], str)
-                or not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', row['repository'])):
-            raise ValueError('invalid catalog-only enrollment')
-    rows = rows + extra
-    sources = {}
-    for row in rows:
-        rid = str(row['repository_id'])
-        if rid in sources and sources[rid] != row['repository']:
-            raise ValueError('conflicting repository identity')
-        sources[rid] = row['repository']
-    if len(sources) > source_cap or len({r['app'] for r in rows}) != len(rows):
+    recipes = {}
+    for recipe in enrolled:
+        row = declarations[recipe]
+        if row['app'] in recipes:
+            raise ValueError('manifest scope')
+        if row['app'] not in entries:
+            raise ValueError('unknown collection app: '+row['app'])
+        recipes[row['app']] = row
+    rows, sources, names, files = [], {}, {}, {}
+    for app, entry in entries.items():
+        pointer = re.fullmatch('repositories/('+NAME+r')\.yaml', entry.get('repository', ''))
+        if not pointer:
+            raise ValueError('repository pointer: '+app)
+        name = pointer.group(1)
+        if name in retired:
+            raise ValueError('retired source name: '+name)
+        if name not in files:
+            path = catalog/'repositories'/f'{name}.yaml'
+            if not path.is_file():
+                raise ValueError('missing repository file: '+name)
+            files[name] = documents.read_top(path)
+        top = files[name]
+        rid = str(top.get('repository_id', ''))
+        if (not re.fullmatch('[1-9][0-9]*', rid) or not isinstance(top.get('repository'), str)
+                or not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', top['repository'])):
+            raise ValueError('repository identity: '+name)
+        if names.setdefault(rid, name) != name:
+            raise ValueError('conflicting repository identity: '+names[rid]+', '+name)
+        sources[rid] = top['repository']
+        row = dict(app=app, repository_id=int(rid), repository=top['repository'])
+        if app in recipes:
+            if (recipes[app]['repository_id'], recipes[app]['repository']) != (row['repository_id'], row['repository']):
+                raise ValueError('recipe identity: '+recipes[app]['recipe'])
+            row = recipes[app]
+        rows.append(row)
+    if len(sources) > source_cap:
         raise ValueError('manifest scope')
+    return rows, sources, names
+
+
+def configuration(*, root=None, source_cap=None):
+    """enrollment()'s rows and sources."""
+    rows, sources, _ = enrollment(root=root, source_cap=source_cap)
     return rows, sources
-
-
-NAME = r'[a-z0-9][a-z0-9_.+-]{0,63}'
-
-
-def registry_names(rows, path):
-    """source-names.json's active names (repository id -> catalog/repositories/<name>.yaml),
-    checked: unique, never a retired name, and one for every enrolled row."""
-    registry = json.loads(Path(path).read_text(encoding='utf-8'), object_pairs_hook=unique_object)
-    if set(registry) != {'active', 'retired'} or not isinstance(registry['retired'], list):
-        raise ValueError('source registry')
-    names = registry['active']
-    if len(set(names.values())) != len(names) or len(set(registry['retired'])) != len(registry['retired']):
-        raise ValueError('duplicate source name')
-    if set(names.values()) & set(registry['retired']):
-        raise ValueError('retired source name')
-    for rid, name in names.items():
-        if not re.fullmatch('[1-9][0-9]*', rid) or not re.fullmatch(NAME, name) or name in ('.', '..'):
-            raise ValueError('source name spelling')
-    if any(str(row['repository_id']) not in names for row in rows):
-        raise ValueError('unallocated source')
-    return names
 
 
 def installation_configuration(*, root=None):

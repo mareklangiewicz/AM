@@ -119,8 +119,11 @@ The deployed source ceiling is 500; actual enrollment is 500. Per-repository YAM
 remains capped at 2 MiB.
 
 [137](track/release-catalog/issues/137-separate-catalog-enrollment-from-recipe-migration.md)
-adds independent catalog-only identities through `collection-apps.json`.
-Installation preparation excludes catalog-only rows. Further source enrollment
+separated catalog enrollment from recipe migration. Since
+catalog-simplification ticket 28, enrollment is the app set in
+`catalog/apps.yaml`: enrolling an app is an entry there plus a never-read
+repository file, committed by hand. `collection-recipes.txt` marks the recipes
+ready to install; installation preparation excludes every other app. Further source enrollment
 requires the measured scaling work in 138 rather than raising this cap alone.
 
 `.github/workflows/catalog.yml` collects one page of 100 releases per attempted

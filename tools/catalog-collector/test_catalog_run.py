@@ -1,14 +1,13 @@
 """One collector run, end to end: GitHub's answers in, a catalog/ commit on main-marek out.
 
-The fixture is a small AM checkout (three real recipes, their registry names)
-with a bare origin standing in for GitHub's repository, and saved GitHub
+The fixture is a small AM checkout (three real recipes, enrolled in
+catalog/apps.yaml through never-read repository files) with a bare origin
+standing in for GitHub's repository, and saved GitHub
 release bodies standing in for the API. The run is the same two commands CI
 runs: collect (read-only) writes a candidate; publish validates it with the
 host's reader and commits it to main-marek, retrying after a rejected push.
 """
-import json
 import os
-import shutil
 import subprocess
 import tempfile
 import unittest
@@ -19,14 +18,13 @@ import urllib.error
 import catalog_run
 import pinned_recipes
 import git_observations
+import fixture_enrollment
+from fixture_enrollment import NVIM, OBSIDIAN
 import fixture_recipes
 import host_catalog
 
 ROOT = Path(__file__).resolve().parents[2]
-NVIM, OBSIDIAN = 16408992, 262342594
 RECIPES = ['x86_64/nvim', 'x86_64/nvim-nightly', 'x86_64/obsidian']
-# Copies, not the live tree: the without-upstream-recipes job deletes programs/.
-RECIPES_COPY = Path(__file__).resolve().parent/'test-recipes'
 
 
 def git(cwd, *args, env=None):
@@ -47,16 +45,8 @@ class Fixture:
         self.evidence = self.base/'github'
         git(self.base, 'init', '-q', '--bare', '-b', 'main-marek', str(self.origin))
         git(self.base, 'clone', '-q', str(self.origin), str(self.checkout))
-        for recipe in RECIPES:
-            target = self.checkout/'programs'/recipe
-            target.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy(RECIPES_COPY/recipe, target)
-        collector = self.checkout/'tools/catalog-collector'
-        collector.mkdir(parents=True)
-        (collector/'collection-recipes.txt').write_text('\n'.join(RECIPES)+'\n')
-        (collector/'collection-apps.json').write_text('[]\n')
-        (collector/'source-names.json').write_text(json.dumps(
-            dict(active={str(NVIM): 'nvim', str(OBSIDIAN): 'obsidian'}, retired=[])))
+        # Copies, not the live tree: the without-upstream-recipes job deletes programs/.
+        fixture_enrollment.write(self.checkout, apps=fixture_enrollment.RECIPE_APPS, recipes=RECIPES)
         self.commit_code('README.md', 'fixture\n', 'fixture checkout')
         self.evidence.mkdir()
         for rid, body in saved_bodies().items():
@@ -172,14 +162,16 @@ cd "{racer}" && echo code > code.txt && git add code.txt &&
             self.assertIn('"46-1":', fixture.show('catalog/status/runs.yaml'))
             self.assertIn('stop_reason: "internal"', fixture.show('catalog/status/runs.yaml').split('"46-1":')[1])
 
-    def test_an_enrolled_source_without_a_registry_name_refuses_the_run(self):
+    def test_an_app_pointing_at_a_retired_name_refuses_the_run(self):
         with tempfile.TemporaryDirectory() as directory:
             fixture = Fixture(directory)
-            fixture.commit_code('tools/catalog-collector/source-names.json',
-                                json.dumps(dict(active={str(NVIM): 'nvim'}, retired=[])), 'drop obsidian\'s name')
-            with self.assertRaisesRegex(ValueError, 'unallocated source'):
+            before = fixture.tip_files()
+            fixture.commit_code('tools/catalog-collector/retired-names.yaml',
+                                fixture_enrollment.retired_names(['obsidian']).decode(), 'retire obsidian\'s name')
+            with self.assertRaisesRegex(ValueError, 'retired source name: obsidian'):
                 fixture.run(47)
-            self.assertEqual([path for path in fixture.tip_files() if path.startswith('catalog/')], [])
+            self.assertEqual(fixture.tip_files(), before)
+            self.assertNotIn('catalog/status/runs.yaml', fixture.tip_files())
 
 
 def answering(answers):
@@ -225,20 +217,69 @@ class Failures(unittest.TestCase):
             fixture = Fixture(directory)
             with answering({NVIM: http(403), OBSIDIAN: http(403)}):
                 fixture.run(52)
-            self.assertFalse([path for path in fixture.tip_files() if path.startswith('catalog/repositories/')])
+            # Each repository file is still as enrollment wrote it: never read.
+            for name, rid, repository in fixture_enrollment.RECIPE_APPS.values():
+                self.assertEqual(fixture.show(f'catalog/repositories/{name}.yaml')+'\n',
+                                 fixture_enrollment.never_read(rid, repository).decode())
             self.assertIn('stop_reason: "quota"', fixture.show('catalog/status/runs.yaml'))
 
 
-class Retirement(unittest.TestCase):
-    def test_a_repository_no_longer_enrolled_leaves_catalog(self):
+OBSIDIAN_ENTRY = '  "obsidian":\n    repository: "repositories/obsidian.yaml"\n    x86_64: "declaration"\n'
+EXAMPLE_ENTRY = '  "example":\n    repository: "repositories/example.yaml"\n'
+
+
+def enroll_example(fixture, clone=None):
+    """Marek's hand enrollment: a never-read repository file, then an apps.yaml entry."""
+    fixture.commit_code('catalog/repositories/example.yaml', fixture_enrollment.never_read(42, 'owner/example').decode(),
+                        'enroll example: its repository file', clone=clone)
+    apps = fixture.show('catalog/apps.yaml')+'\n'
+    fixture.commit_code('catalog/apps.yaml', apps.replace('  "nvim":\n', EXAMPLE_ENTRY+'  "nvim":\n'), 'enroll example',
+                        clone=clone)
+
+
+class Enrollment(unittest.TestCase):
+    """Marek enrolls and drops apps by hand in catalog/apps.yaml; runs only refresh its labels."""
+    def answers(self):
+        bodies = saved_bodies()
+        return answering({42: b'[]', NVIM: bodies[NVIM], OBSIDIAN: bodies[OBSIDIAN]})
+
+    def test_a_hand_added_entry_is_collected_on_the_next_run(self):
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = Fixture(directory)
+            fixture.run(55)
+            enroll_example(fixture)
+            with self.answers():
+                fixture.run(56)
+            self.assertIn('repository: "owner/example"\nobserved_at: "2026-11-25T10:00:00Z"',
+                          fixture.show('catalog/repositories/example.yaml'))
+            self.assertIn(EXAMPLE_ENTRY, fixture.show('catalog/apps.yaml')+'\n')
+            self.assertIn('enrolled: 3', fixture.show('catalog/status/runs.yaml').split('"56-1":')[1])
+
+    def test_an_entry_added_during_a_run_is_kept_and_collected_next(self):
+        # The run read apps.yaml before Marek's entry landed: its publish keeps
+        # the tip's apps.yaml and removes nothing.
+        with tempfile.TemporaryDirectory() as directory:
+            fixture = Fixture(directory)
+            fixture.run(57)
+            marek = fixture.base/'marek'
+            git(fixture.base, 'clone', '-q', '-b', 'main-marek', str(fixture.origin), str(marek))
+            fixture.run(58, tamper=lambda candidate: enroll_example(fixture, clone=marek))
+            self.assertIn('"58-1":', fixture.show('catalog/status/runs.yaml'))
+            self.assertIn(EXAMPLE_ENTRY, fixture.show('catalog/apps.yaml')+'\n')
+            self.assertIn('catalog/repositories/example.yaml', fixture.tip_files())
+            with self.answers():
+                fixture.run(59)
+            self.assertIn('observed_at', fixture.show('catalog/repositories/example.yaml'))
+
+    def test_a_removed_entrys_file_leaves_catalog(self):
         with tempfile.TemporaryDirectory() as directory:
             fixture = Fixture(directory)
             fixture.run(53)
             self.assertIn('catalog/repositories/obsidian.yaml', fixture.tip_files())
             fixture.commit_code('tools/catalog-collector/collection-recipes.txt', 'x86_64/nvim\nx86_64/nvim-nightly\n',
-                                'retire obsidian')
-            fixture.commit_code('tools/catalog-collector/source-names.json',
-                                json.dumps(dict(active={str(NVIM): 'nvim'}, retired=['obsidian'])), 'retire its name')
+                                'obsidian is not installable')
+            fixture.commit_code('catalog/apps.yaml', (fixture.show('catalog/apps.yaml')+'\n').replace(OBSIDIAN_ENTRY, ''),
+                                'drop obsidian')
             fixture.run(54)
             self.assertNotIn('catalog/repositories/obsidian.yaml', fixture.tip_files())
             self.assertNotIn('"obsidian":', fixture.show('catalog/apps.yaml'))

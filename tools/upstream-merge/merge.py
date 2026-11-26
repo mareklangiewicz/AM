@@ -25,13 +25,12 @@ import subprocess
 import sys
 import tarfile
 import tempfile
-from unittest.mock import patch
 
 ROOT=Path(__file__).resolve().parents[2]
 sys.path[:0]=[str(ROOT/'tools/recipe-conversion')]
 import convert
 import host_catalog
-from recipe_declarations import MARKER, policy_rows, rows_json, with_policy
+from recipe_declarations import MARKER, policy_rows, with_policy
 from recipe_policy_source import generate
 import appimage_policy_source
 
@@ -42,8 +41,8 @@ HAND=('APP-MANAGER','modules/install.am','README.md')
 OWNED='tools/upstream-merge/fork-owned.txt'
 COLLECTOR='tools/catalog-collector/'
 ENROLLED=COLLECTOR+'collection-recipes.txt'
-CATALOG_ONLY=COLLECTOR+'collection-apps.json'
-NAMES=COLLECTOR+'source-names.json'
+# The enrollment stage() checks the merged recipes against (host_catalog.enrollment).
+ENROLLMENT=('catalog/apps.yaml','catalog/repositories',host_catalog.RETIRED)
 POLICY='modules/catalog-yaml-policy.am'
 OUTCOMES=('taken from upstream','re-converted','fell back','deleted','fork-owned kept','untouched')
 
@@ -211,22 +210,13 @@ def merge_list(base,ours,theirs):
 
 def derive(root,ours_revision,rows):
     """The fork-side files that follow from the recipe rows."""
-    # An enrolled declaration that is no longer one keeps its source enrolled
-    # as catalog-only: the collector refuses to drop a source it retains.
+    # An enrolled declaration that is no longer one leaves collection-recipes.txt
+    # (not installable from the catalog any more); its app stays in
+    # catalog/apps.yaml, so the collector keeps its source.
     enrolled=text(root,ours_revision,ENROLLED).splitlines()
-    catalog_only=json.loads(text(root,ours_revision,CATALOG_ONLY))
     declared={row['path'].removeprefix('programs/') for row in rows
               if row['data'] is not None and form(row['data'])=='declaration'}
-    apps={entry['app'] for entry in catalog_only}
-    kept=[]
-    for line in enrolled:
-        if not line or line.startswith('#') or line in declared:kept.append(line);continue
-        row=next(row for row in rows if row['path']=='programs/'+line)
-        for identity in row.get('identities',[]):
-            app=identity.get('catalog_app',line.split('/')[1])
-            if app not in apps:
-                catalog_only.append(dict(app=app,repository_id=identity['repository_id'],repository=identity['repository']))
-                apps.add(app)
+    kept=[line for line in enrolled if not line or line.startswith('#') or line in declared]
     # Sources no surviving recipe selects from. Retiring them is a separate
     # collector step; this merge only names them. A recipe's policies are its
     # own lines (ticket 26): a recipe taken from upstream has none.
@@ -244,7 +234,7 @@ def derive(root,ours_revision,rows):
         if row['outcome']!='deleted':continue
         for identity in row.get('identities',[]):
             if identity['repository_id'] not in bound:retire[identity['repository_id']]=identity['repository']
-    return {ENROLLED:'\n'.join(kept)+'\n',CATALOG_ONLY:rows_json(catalog_only)},retire
+    return {ENROLLED:'\n'.join(kept)+'\n'},retire
 
 
 def stage(root,ours_revision,rows,files):
@@ -258,15 +248,15 @@ def stage(root,ours_revision,rows,files):
         for row in rows:
             if row['data'] is None:continue
             target=tree/row['path'];target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(row['data'])
-        for path in (POLICY,NAMES):
-            (tree/path).parent.mkdir(parents=True,exist_ok=True)
-            (tree/path).write_text(text(root,ours_revision,path))
+        (tree/POLICY).parent.mkdir(parents=True,exist_ok=True)
+        (tree/POLICY).write_text(text(root,ours_revision,POLICY))
+        with tarfile.open(fileobj=io.BytesIO(git(root,'archive',ours_revision,'--',*ENROLLMENT).stdout)) as enrollment:
+            enrollment.extractall(tree,filter='data')
         for path,content in files.items():
             (tree/path).parent.mkdir(parents=True,exist_ok=True);(tree/path).write_text(content)
         generate(tree)
         appimage_policy_source.generate(tree)
-        with patch.object(host_catalog,'ROOT',tree):enrollment,_=host_catalog.configuration()
-        host_catalog.registry_names(enrollment,tree/NAMES)
+        host_catalog.enrollment(root=tree)
         return (tree/POLICY).read_text()
 
 

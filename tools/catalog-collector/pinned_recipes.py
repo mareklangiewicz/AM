@@ -19,14 +19,15 @@ if str(ROOT/'tools/recipe-reconstruction') not in sys.path:
     sys.path.insert(0, str(ROOT/'tools/recipe-reconstruction'))
 from originals import Originals  # noqa: E402
 
-COMMIT = 'c29e863589bc0e932a17f0bf458d9e1ab02dab4e'  # ticket 26: policy rows in the recipes
+COMMIT = '125dd7632f670348b06c6ffe705f627f52bbc0a9'  # catalog-simplification 28: retired-names.yaml
 _git = Originals(ROOT).git
 # What the collector's configuration reads: every recipe (recipe_rows and the
-# policy readers glob them) and the fork-side enrollment files an upstream merge
-# rewrites.
+# policy readers glob them), the enrollment (catalog/apps.yaml and the
+# repository files it points to) and the fork-side lists beside it.
 CONFIGURATION = ('programs/x86_64', 'programs/aarch64', 'programs/i686', 'programs/armv7l',
+                 'catalog/apps.yaml', 'catalog/repositories',
                  'tools/catalog-collector/collection-recipes.txt',
-                 'tools/catalog-collector/collection-apps.json')
+                 'tools/catalog-collector/retired-names.yaml')
 
 
 @cache

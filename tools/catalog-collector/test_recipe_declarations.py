@@ -145,7 +145,9 @@ class Declarations(unittest.TestCase):
             shutil.copy2(compiler.ROOT/'modules/catalog-yaml-policy.am', root/'modules')
             enrollment = root/'tools/catalog-collector'
             enrollment.mkdir(parents=True)
-            shutil.copy2(self.configuration_root/'tools/catalog-collector/collection-recipes.txt', enrollment)
+            for name in ('collection-recipes.txt', 'retired-names.yaml'):
+                shutil.copy2(self.configuration_root/'tools/catalog-collector'/name, enrollment)
+            (root/'catalog').symlink_to(self.configuration_root/'catalog')
             for row in recipe_rows(self.configuration_root):
                 path = root/'programs'/row['recipe']
                 path.parent.mkdir(parents=True, exist_ok=True)
@@ -159,7 +161,7 @@ class Declarations(unittest.TestCase):
                     .replace('^nvim-linux-x86_64[.]appimage$', '^example-.*[.]AppImage$'))
             with patch.object(compiler, 'ROOT', root), patch.object(host_catalog, 'ROOT', root):
                 compiler.generate()
-                rows, sources = host_catalog.configuration()
+                rows, sources = host_catalog.installation_configuration()
                 self.assertEqual(rows, baseline_rows)
                 self.assertEqual(sources, baseline_sources)
                 policy = root/'modules/catalog-yaml-policy.am'

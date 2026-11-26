@@ -51,11 +51,15 @@ last-seen `observed_at`, unless the read reached the end of the release list.
 
 `host_catalog.py` holds enrollment and the bounded GitHub reads:
 
-- Enrollment is `collection-recipes.txt` (recipe declarations) plus
-  `collection-apps.json` (catalog-only apps), at most 9,000 repositories.
-  `source-names.json` gives each repository its file name; `active` names are
-  unique and never reuse a `retired` one, and an enrolled repository without a
-  name refuses the run.
+- Enrollment is the app set in `catalog/apps.yaml`, at most 9,000
+  repositories. Each app's `repository_id` and `repository` come from the
+  repository file its entry points to, and that file's name is its
+  repository's. Two names for one repository, a missing file, or a pointer to
+  a name in `retired-names.yaml` refuses the run. A run rewrites `apps.yaml`
+  for its labels only, never adding or dropping an app.
+- `collection-recipes.txt` lists the recipe declarations ready to install from
+  the catalog. Each one's app must be in `apps.yaml`, with the identity its
+  repository file holds.
 - A batch reads at most 500 repositories (`CATALOG_BATCH_SIZE` repository
   variable to change it) within 750 requests (its Git reads take more than one
   each), a 100-request primary rate
@@ -70,9 +74,13 @@ last-seen `observed_at`, unless the read reached the end of the release list.
   `transport`) adds `failed_at`/`failed_with` to its document and leaves its
   facts as they were; the next success removes them.
 
-To retire a repository, take it out of enrollment and move its name from
-`active` to `retired` in `source-names.json`, by hand: the next run deletes its
-file (Git history keeps it). Nothing checks that no recipe still selects from
+To enroll an app, commit its `apps.yaml` entry and a never-read repository
+file (`$schema`, `repository_id`, `repository`, `releases: {}`), by hand: the
+next run reads it first. To retire a repository, remove the entries that point
+to its file (and its recipes from `collection-recipes.txt`); the next run
+deletes the file (Git history keeps it). Add the name to `retired-names.yaml`
+so no new repository gets it. An edit to `apps.yaml` that lands during a run
+wins: that run's publish keeps the tip's `apps.yaml` and removes nothing. Nothing checks that no recipe still selects from
 it any more (`retire_sources.py` did, and went with the v3 tools).
 
 ## Host runtime

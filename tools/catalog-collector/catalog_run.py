@@ -4,16 +4,20 @@
     catalog_run.py publish --candidate CANDIDATE --remote URL --scratch DIR --run-id N --attempt N
 
 collect runs without write access. It reads catalog/ from a checkout of
-main-marek, reads the repositories whose data is oldest (never-read and
-newest-failure counted by the newer of observed_at and failed_at), and writes
-a candidate: the documents it changed under catalog/, removed.json (repository
-files no longer enrolled) and run.json (this run's summary).
+main-marek: the apps in apps.yaml are enrolled, each through the repository
+file it points to. It reads the repositories whose data is oldest (never-read
+and newest-failure counted by the newer of observed_at and failed_at), and
+writes a candidate: the documents it changed under catalog/ (apps.yaml with
+fresh labels, never another set of apps), removed.json (repository files no
+app points to) and run.json (this run's summary).
 
 publish checks every candidate document with the host's reader
 (modules/catalog-parser.am), then commits catalog/ on top of main-marek's tip
-and pushes. The collector owns catalog/ alone, so a push rejected by a newer
-commit (Marek's code, which never touches catalog/) is redone on the new tip,
-at most PUSH_ATTEMPTS times. A candidate that fails validation commits only
+and pushes. A push rejected by a newer commit is redone on the new tip, at
+most PUSH_ATTEMPTS times. Marek's commits touch catalog/ only to enroll or
+drop apps (an apps.yaml entry, a never-read repository file): when the tip's
+apps differ from those collect read, the tip's apps.yaml stays and nothing is
+removed. A candidate that fails validation commits only
 its run summary, with stop_reason internal, and leaves the facts as they were.
 """
 import argparse
@@ -33,7 +37,6 @@ ROOT = Path(__file__).resolve().parents[2]
 BRANCH = 'main-marek'
 PUSH_ATTEMPTS = 5
 BATCH_SIZE = 500
-TOP_FIELDS = ('repository_id', 'repository', 'observed_at', 'failed_at')
 LOADER = getattr(yaml, 'CSafeLoader', yaml.SafeLoader)
 # host_catalog's stop reasons, when they stopped a run before every selected repository was read.
 STOPS = {'request_limit': 'request_budget', 'byte_limit': 'byte_budget', 'time_limit': 'time_budget',
@@ -42,18 +45,6 @@ STOPS = {'request_limit': 'request_budget', 'byte_limit': 'byte_budget', 'time_l
 
 def utc():
     return datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
-
-
-def scan(raw):
-    """A repository document's top-level scalars, read without parsing its releases."""
-    found = {}
-    for line in raw.decode('utf-8').split('\n'):
-        if line.startswith('releases:'):
-            break
-        key, _, value = line.partition(': ')
-        if key in TOP_FIELDS:
-            found[key] = int(value) if key == 'repository_id' else json.loads(value)
-    return found
 
 
 def attempted_at(top):
@@ -71,10 +62,9 @@ def collect(args):
     started = time.monotonic()
     checkout = Path(args.checkout)
     catalog = checkout/'catalog'
-    rows, sources = host_catalog.configuration(root=checkout)
-    names = host_catalog.registry_names(rows, checkout/'tools/catalog-collector/source-names.json')
+    rows, sources, names = host_catalog.enrollment(root=checkout)
     paths = {rid: catalog/'repositories'/f'{names[rid]}.yaml' for rid in sources}
-    tops = {rid: scan(path.read_bytes()) for rid, path in paths.items() if path.exists()}
+    tops = {rid: documents.top(path.read_bytes()) for rid, path in paths.items() if path.exists()}
     retained = {rid: dict(repository_id=top['repository_id'], repository=top['repository'],
                           attempted_at=attempted_at(top))
                 for rid, top in tops.items()}
@@ -97,7 +87,7 @@ def collect(args):
     changed['apps.yaml'] = documents.encode('apps', documents.apps(rows, names, root=checkout))
     for rid in sources:
         if f'repositories/{names[rid]}.yaml' in changed:
-            tops[rid] = scan(changed[f'repositories/{names[rid]}.yaml'])
+            tops[rid] = documents.top(changed[f'repositories/{names[rid]}.yaml'])
     now = args.now or utc()
     observed = [tops.get(rid, {}) for rid in sources]
     changed['status/statistics.yaml'] = documents.encode('statistics', documents.statistics(observed, measured_at=now))
@@ -135,6 +125,11 @@ def git(repo, *args):
     return subprocess.run(['git', '-C', str(repo), *args], check=True, capture_output=True, text=True).stdout.strip()
 
 
+def enrolled(path):
+    """Each app's repository file in an apps.yaml: the enrollment, without its labels."""
+    return {app: entry['repository'] for app, entry in load(path)['apps'].items()} if path.exists() else None
+
+
 def publish(args):
     candidate = Path(args.candidate)
     summary = json.loads((candidate/'run.json').read_text())
@@ -150,12 +145,19 @@ def publish(args):
         git(scratch, 'fetch', '-q', '--depth=1', 'origin', BRANCH)
         git(scratch, 'checkout', '-q', '--force', '-B', BRANCH, 'FETCH_HEAD')
         catalog = scratch/'catalog'
+        # Marek's enrollment edit landed after collect read apps.yaml: the tip's
+        # enrollment stands, unpointed files stay, and the next run catches up.
+        raced = ok and enrolled(catalog/'apps.yaml') != enrolled(candidate/'catalog/apps.yaml')
+        if raced:
+            print('apps.yaml changed since collect; keeping the tip\'s and removing nothing', flush=True)
         if ok:
             for path in files:
+                if raced and path == candidate/'catalog/apps.yaml':
+                    continue
                 target = catalog/path.relative_to(candidate/'catalog')
                 target.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(path, target)
-            for relative in removed:
+            for relative in [] if raced else removed:
                 (catalog/relative).unlink(missing_ok=True)
         runs_path = catalog/'status/runs.yaml'
         previous = load(runs_path) if runs_path.exists() else None

@@ -69,9 +69,13 @@ recipe end at the next merge that touches it (the receipt lists them under
   upstream has none, a re-converted long recipe gets new ones. The copy under
   `/opt/am/modules/` on an installed host is not touched; delivering it is a
   separate authorized step.
-- `tools/catalog-collector/collection-recipes.txt` and `collection-apps.json`:
-  an enrolled recipe declaration that is no longer one keeps its source
-  enrolled as catalog-only.
+- `tools/catalog-collector/collection-recipes.txt`: an enrolled recipe
+  declaration that is no longer one leaves it. Its app stays in
+  `catalog/apps.yaml`, so the collector keeps reading its source.
+
+The scratch tree also holds `catalog/apps.yaml`, the repository files and
+`retired-names.yaml` at the fork's revision: every recipe left in
+`collection-recipes.txt` must agree with its app's repository file.
 - `programs/<arch>-apps`: upstream's list plus the lines the fork added.
 
 Before anything is written, the merged recipes and these files are compiled in

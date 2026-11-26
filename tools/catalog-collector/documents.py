@@ -76,6 +76,32 @@ def encode(kind, document):
     return ('\n'.join(out)+'\n').encode('utf-8')
 
 
+TOP_FIELDS = ('repository_id', 'repository', 'observed_at', 'failed_at')
+
+
+def top(raw):
+    """A repository document's top-level scalars, read without parsing its releases."""
+    found = {}
+    for line in raw.decode('utf-8').split('\n'):
+        if line.startswith('releases:'):
+            break
+        key, _, value = line.partition(': ')
+        if key in TOP_FIELDS:
+            found[key] = int(value) if key == 'repository_id' else json.loads(value)
+    return found
+
+
+def read_top(path):
+    """top() of the repository file at path, reading only the lines before its releases."""
+    head = []
+    with Path(path).open('rb') as stream:
+        for line in stream:
+            if line.startswith(b'releases:'):
+                break
+            head.append(line)
+    return top(b''.join(head))
+
+
 def _release(record, repository):
     tag = record['tag']
     fact = dict(tag=tag)
@@ -190,8 +216,8 @@ def recipe_label(text, app, repository_id):
 
 
 def apps(rows, names, *, root=ROOT):
-    """apps.yaml: each enrolled app's repository file, by the source name the
-    registry allocated, and a label for each architecture AM has a recipe for."""
+    """apps.yaml: each enrolled app's repository file (names maps a repository
+    id to its file name) and a label for each architecture AM has a recipe for."""
     entries = {}
     for row in rows:
         app = row['app']
