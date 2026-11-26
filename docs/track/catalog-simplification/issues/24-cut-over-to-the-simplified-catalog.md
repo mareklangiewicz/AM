@@ -197,3 +197,11 @@ so no reinstall was needed. `am -s` added `catalog-reader.am`,
 `catalog-contract-*` ones; `APP-MANAGER` and all 11 modules then matched
 `main-marek` (sha256). `am -u` exit 0 over all apps (9 updated, among them
 kitty to 0.51.1; zmx already 1.0.1), no errors, no sudo prompt.
+
+November 26, 2026, both hosts, Marek's call: firefox removed (`am -R`, and
+Ubuntu's `firefox` snap-stub package purged), zellij removed, fastfetch
+installed on mylenovo and reinstalled on myxps; all exit 0. fastfetch still
+has no `recipe.am`: `programs/x86_64/fastfetch` is one of 1,072 x86_64 scripts
+in the inline form (its own `AM-updater` calling `catalog-yaml.am`) against
+8,308 with `CATALOG_FORMAT=3`, so a fresh install gives the same files on
+both hosts (sha256-equal). That form reads the new catalog too.
