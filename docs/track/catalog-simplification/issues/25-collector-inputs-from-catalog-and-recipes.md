@@ -90,7 +90,7 @@ any of them. `collection-recipes.txt` stays. Implemented in
 [26](26-move-policy-rows-into-recipes.md),
 [27](27-accept-a-never-read-repository-file.md),
 [28](28-enroll-from-apps-yaml.md) (after 27),
-[29](29-move-git-sources-into-recipes.md),
+[29](29-derive-git-sources-from-recipes.md),
 [30](30-convert-inline-form-scripts-to-declarations.md),
 [31](31-platforms-and-run-outputs-as-yaml.md) and
 [32](32-drop-vscode-schema-associations.md).
@@ -165,3 +165,9 @@ The generator reads the recipes, and both JSON files go. Install bodies don't
 change. Until that lands, the JSON stays committed and unchanged, with no
 interim YAML. This is [ticket 26](26-move-policy-rows-into-recipes.md),
 rewritten.
+
+### November 26, 2026: item 7 replaced (Marek: yes)
+
+The Git scopes are derived from the recipes' existing Git selection lines,
+with no new `CATALOG_GIT_*` assignments, and `git-sources.json` is deleted
+([ticket 29](29-derive-git-sources-from-recipes.md)).

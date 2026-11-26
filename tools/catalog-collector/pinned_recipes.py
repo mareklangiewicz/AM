@@ -26,8 +26,7 @@ _git = Originals(ROOT).git
 # rewrites.
 CONFIGURATION = ('programs/x86_64', 'programs/aarch64', 'programs/i686', 'programs/armv7l',
                  'tools/catalog-collector/collection-recipes.txt',
-                 'tools/catalog-collector/collection-apps.json',
-                 'tools/catalog-collector/git-sources.json')
+                 'tools/catalog-collector/collection-apps.json')
 
 
 @cache

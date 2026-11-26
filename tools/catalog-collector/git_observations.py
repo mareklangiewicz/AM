@@ -23,18 +23,23 @@ def valid_path(path):
 
 
 def configuration(root):
-    path=root/'tools/catalog-collector/git-sources.json'
-    if not path.exists():return {}
-    result=json.loads(path.read_text(),object_pairs_hook=unique_object)
-    if not isinstance(result,dict):raise ValueError('Git source configuration')
-    for rid,scope in result.items():
-        if (not re.fullmatch('[1-9][0-9]*',rid) or not isinstance(scope,dict) or
-                set(scope)!={'tags','branches'} or type(scope['tags']) is not bool or
-                not isinstance(scope['branches'],dict) or len(scope['branches'])>4):
-            raise ValueError('Git source scope')
+    """What to read from Git for each repository (id -> {tags, branches}), derived
+    from the recipes' Git selections (ticket 29): tags for a git-tag selection,
+    a branch for git-branch, and that branch's file for git-file."""
+    from recipe_declarations import recipe_rows, url_policy_rows
+    result={}
+    for row in url_policy_rows(root)+recipe_rows(root):
+        selection=row.get('selection','asset')
+        if not selection.startswith('git-'):continue
+        scope=result.setdefault(str(row['repository_id']),dict(tags=False,branches={}))
+        if selection=='git-tag':
+            scope['tags']=True;continue
+        files=scope['branches'].setdefault(row['git_ref'].removeprefix('refs/heads/'),[])
+        if selection=='git-file' and row['git_file'] not in files:files.append(row['git_file'])
+    for scope in result.values():
+        if len(scope['branches'])>4:raise ValueError('Git source scope')
         for branch,files in scope['branches'].items():
-            if (not valid_ref('refs/heads/'+branch) or not isinstance(files,list) or
-                    len(files)>4 or len(set(files))!=len(files) or not all(valid_path(path) for path in files)):
+            if not valid_ref('refs/heads/'+branch) or len(files)>4 or not all(valid_path(path) for path in files):
                 raise ValueError('Git branch/file scope')
     return result
 

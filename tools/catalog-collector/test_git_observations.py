@@ -4,13 +4,14 @@ import hashlib
 import json
 import os
 import subprocess
-import unittest
 import tempfile
+import unittest
 from pathlib import Path
 from unittest.mock import patch
 
 import git_observations as g
 import host_catalog as host
+import pinned_recipes
 
 
 ROOT=Path(__file__).resolve().parents[2]
@@ -56,19 +57,45 @@ class GitAcquisition(unittest.TestCase):
     def test_extra_requests_share_budget_and_failed_source_has_no_acquisition(self):
         with tempfile.TemporaryDirectory() as temporary:
             root=Path(temporary);folder=root/'tools/catalog-collector';folder.mkdir(parents=True)
-            (folder/'git-sources.json').write_text(json.dumps({'123':dict(tags=False,branches={'master':['VERSION']})}))
             calls=[];replies=iter([[],*self.replies()])
             def response(rid,evidence,allowance,**kwargs):
                 calls.append(kwargs.get('endpoint','releases'));return json.dumps(next(replies)).encode(),'2026-11-09T12:00:00Z'
             acquisitions={};metrics={}
             profile=dict(source_cap=1,request_cap=2,total_cap=100000,seconds_cap=900,reserve=100,response_cap=100000)
-            with patch.object(host,'ROOT',root),patch.object(host,'configuration',return_value=([dict(app='example')],{'123':'owner/project'})),patch.object(host,'_response',side_effect=response):
+            with patch.object(host,'ROOT',root),patch.object(host,'configuration',return_value=([dict(app='example')],{'123':'owner/project'})),patch.object(host,'_response',side_effect=response),\
+                    patch.object(g,'configuration',return_value={'123':dict(tags=False,branches={'master':['VERSION']})}):
                 report=host.collect({},batch_size=1,metrics=metrics,acquisitions=acquisitions,profile=profile)
             self.assertEqual(len(calls),2)
             self.assertEqual(acquisitions,{})
             self.assertEqual(report[0]['reason'],'request_budget')
             self.assertEqual(metrics['requests'],2)
             self.assertEqual(metrics['stop_reason'],'request_limit')
+
+    def test_scopes_come_from_the_recipes_git_selections(self):
+        # Ticket 29: what to read from Git is what the recipes select by.
+        def row(recipe,rid,**selection):
+            return dict(recipe=recipe,repository_id=rid,**selection)
+        rows=[row('x86_64/a',1,selection='git-tag',tag_pattern='^v'),
+              row('x86_64/b',2,selection='git-file',git_ref='refs/heads/main',git_file='VERSION'),
+              row('x86_64/b.select-2',2,selection='git-file',git_ref='refs/heads/main',git_file='other.json'),
+              row('x86_64/c',3,selection='git-branch',git_ref='refs/heads/dev'),
+              row('x86_64/d',4,selection='release'),row('x86_64/e',5)]
+        with patch('recipe_declarations.url_policy_rows',return_value=rows[:3]),\
+                patch('recipe_declarations.recipe_rows',return_value=rows[3:]):
+            self.assertEqual(g.configuration(Path('unused')),{
+                '1':dict(tags=True,branches={}),'2':dict(tags=False,branches={'main':['VERSION','other.json']}),
+                '3':dict(tags=False,branches={'dev':[]})})
+        with patch('recipe_declarations.url_policy_rows',return_value=[
+                row('x86_64/f',6,selection='git-file',git_ref='refs/heads/b%d'%n,git_file='F') for n in range(5)]),\
+                patch('recipe_declarations.recipe_rows',return_value=[]),self.assertRaises(ValueError):
+            g.configuration(Path('unused'))
+
+    def test_the_pinned_recipes_select_from_five_git_sources(self):
+        scopes=g.configuration(pinned_recipes.shared_configuration())
+        self.assertEqual(scopes,{
+            '25396290':dict(tags=False,branches={'master':['VERSION']}),'7997994':dict(tags=True,branches={}),
+            '372085438':dict(tags=True,branches={}),'649170660':dict(tags=False,branches={'desktop':['linux_installer.sh']}),
+            '903233225':dict(tags=False,branches={'main':['version-history.json']})})
 
     def test_tags_are_keyed_by_name_in_listing_order(self):
         raw=json.dumps([dict(name=name,commit=dict(sha=char*40)) for name,char in (('v2','a'),('v1','b'))]).encode()

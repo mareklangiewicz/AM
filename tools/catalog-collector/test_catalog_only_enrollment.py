@@ -55,8 +55,10 @@ class CatalogOnlyEnrollment(unittest.TestCase):
             (config/'collection-recipes.txt').write_text(sample['recipe']+'\n')
             manifest = config/'collection-apps.json'
             manifest.write_text(json.dumps([extra]))
+            # No recipes in this tree: its Git scopes (derived from them) are none.
             with patch.object(host_catalog, 'ROOT', root), \
-                    patch.object(host_catalog, 'recipe_rows', return_value=[sample]):
+                    patch.object(host_catalog, 'recipe_rows', return_value=[sample]), \
+                    patch('git_observations.configuration', return_value={}):
                 rows, configured = host_catalog.configuration()
                 self.assertEqual(rows, [sample, extra])
                 self.assertEqual(configured, {str(sample['repository_id']): sample['repository']})

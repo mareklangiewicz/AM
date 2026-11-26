@@ -63,8 +63,9 @@ last-seen `observed_at`, unless the read reached the end of the release list.
   401/403/429 and the budgets stop the run (`stop_reason`); no redirects or
   retries.
 - Named oversized repositories (`PAGE_SIZES`) ask for smaller pages.
-- `git-sources.json` adds Git tags and branch files for a few recipes
-  (`git_observations.py`).
+- A recipe that selects by Git (`CATALOG_SELECTION=git-tag`, `git-branch` or
+  `git-file`) makes its repository's read include those tags or branch files
+  (`git_observations.configuration`, derived from the recipes).
 - A repository's own failure (`not_found`, `too_large`, `invalid_response`,
   `transport`) adds `failed_at`/`failed_with` to its document and leaves its
   facts as they were; the next success removes them.

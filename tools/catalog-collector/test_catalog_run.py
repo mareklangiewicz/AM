@@ -17,6 +17,8 @@ from unittest.mock import patch
 import urllib.error
 
 import catalog_run
+import pinned_recipes
+import git_observations
 import fixture_recipes
 import host_catalog
 
@@ -245,9 +247,11 @@ class Retirement(unittest.TestCase):
 
 class Budget(unittest.TestCase):
     def test_a_full_batch_and_every_git_read_fit_the_request_allowance(self):
-        # Run 45658789307 read 498 of 500: the Git reads of git-sources.json
-        # took the last two repositories' requests (stop_reason request_budget).
-        scopes = json.loads((Path(__file__).resolve().parent/'git-sources.json').read_text())
+        # Run 45658789307 read 498 of 500: the Git reads took the last two
+        # repositories' requests (stop_reason request_budget). The scopes are the
+        # pinned recipes' Git selections (ticket 29).
+        scopes = git_observations.configuration(pinned_recipes.shared_configuration())
+        self.assertEqual(len(scopes), 5)
         git_requests = sum(scope['tags'] + sum(1 + len(files) for files in scope['branches'].values())
                            for scope in scopes.values())
         self.assertLessEqual(catalog_run.BATCH_SIZE + git_requests, host_catalog.REQUEST_CAP)
