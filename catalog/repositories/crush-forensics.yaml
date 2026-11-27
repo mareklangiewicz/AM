@@ -1,30 +1,9 @@
 $schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
 repository_id: 1182396283
 repository: "kalink0/crush-forensics"
-observed_at: "2026-11-22T19:12:08Z"
+observed_at: "2026-11-27T02:54:14Z"
 history_complete: true
 releases:
-  "387863254":
-    tag: "v0.19.0"
-    published_at: "2026-09-13T10:25:01Z"
-    prerelease: false
-    assets:
-      "561013909":
-        name: "crush-linux-v0.19.0.AppImage"
-        size: 386008256
-        sha256pre: "9d374ced758d3ca8"
-      "561014941":
-        name: "crush-windows-v0.19.0.zip"
-        size: 148818290
-        sha256pre: "d61bd3468bcc40b3"
-      "561015457":
-        name: "crush-macos-arm-v0.19.0.zip"
-        size: 293631838
-        sha256pre: "cb3eda4d3d617fb8"
-      "561020273":
-        name: "crush-macos-intel-v0.19.0.zip"
-        size: 325676016
-        sha256pre: "0fab218374318a22"
   "391556344":
     tag: "v0.20.0"
     published_at: "2026-09-18T14:50:03Z"
@@ -191,25 +170,54 @@ releases:
         name: "crush-macos-intel-v0.25.0.zip"
         size: 144663114
         sha256pre: "c42a6344d7f479fc"
-  "454322411":
+  "455926551":
+    tag: "v0.26.0"
+    published_at: "2026-11-23T19:59:22Z"
+    prerelease: false
+    assets:
+      "784353357":
+        name: "crush-forensic-audit.json"
+        size: 604459
+        sha256pre: "3fb29d9496c7bf7b"
+      "784353361":
+        name: "crush-forensic-audit.html"
+        size: 206674
+        sha256pre: "17f5917312dbcb3c"
+      "784353930":
+        name: "crush-linux-v0.26.0.AppImage"
+        size: 359156216
+        sha256pre: "4b018f61a7a5060a"
+      "784355539":
+        name: "crush-windows-v0.26.0.zip"
+        size: 156877841
+        sha256pre: "08d55e45e9a8ffb9"
+      "784355922":
+        name: "crush-macos-arm-v0.26.0.zip"
+        size: 132388582
+        sha256pre: "8b0fcbdcc36871d0"
+      "784363804":
+        name: "crush-macos-intel-v0.26.0.zip"
+        size: 145595673
+        sha256pre: "650519ccf6a1398e"
+  "459241904":
     tag: "nightly"
-    title: "Nightly Build (2026-11-22)"
-    published_at: "2026-11-22T09:04:30Z"
+    title: "Nightly Build (2026-11-26)"
+    published_at: "2026-11-26T10:14:15Z"
     prerelease: true
     assets:
-      "778477293":
-        name: "crush-linux-20261122-nightly-e22fa5d.AppImage"
-        size: 358570488
-        sha256pre: "7d3c4d58351921e6"
-      "778477294":
-        name: "crush-macos-20261122-nightly-e22fa5d.zip"
-        size: 131933097
-        sha256pre: "4ecb871dbf788b17"
-      "778477295":
-        name: "crush-macos-intel-20261122-nightly-e22fa5d.zip"
-        size: 143251919
-        sha256pre: "f5101357086aa274"
-      "778477296":
-        name: "crush-windows-20261122-nightly-e22fa5d.zip"
-        size: 156582658
-        sha256pre: "860f716b84ce912b"
+      "795318027":
+        name: "crush-macos-intel-20261126-nightly-ad42097.zip"
+        size: 144346139
+        sha256pre: "f685a711aa982519"
+      "795318031":
+        name: "crush-linux-20261126-nightly-ad42097.AppImage"
+        size: 359926264
+        sha256pre: "ac4112fcffec5541"
+      "795318032":
+        name: "crush-windows-20261126-nightly-ad42097.zip"
+        size: 157630844
+        sha256pre: "d01b2e68e3c02692"
+      "795318035":
+        name: "crush-macos-20261126-nightly-ad42097.zip"
+        size: 133012941
+        sha256pre: "c0966b272b9c8e7e"

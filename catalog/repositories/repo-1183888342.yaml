@@ -1,727 +1,561 @@
 $schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
 repository_id: 1183888342
 repository: "stablyai/orca"
-observed_at: "2026-11-22T19:12:27Z"
+observed_at: "2026-11-27T02:54:36Z"
 history_complete: false
 releases:
-  "449819043":
-    tag: "v1.4.263"
-    published_at: "2026-11-18T11:02:11Z"
+  "455367266":
+    tag: "v1.4.272"
+    published_at: "2026-11-23T12:35:31Z"
     prerelease: false
     assets:
-      "762975980":
-        name: "orca-sourcemaps-v1.4.263.zip"
-        size: 20417323
-        sha256pre: "f0a126ebfb717bfd"
-      "762978357":
-        name: "orca-linux-arm64.AppImage"
-        size: 267393175
-        sha256pre: "d3549f87027ec44e"
-      "762978944":
+      "782831606":
+        name: "orca-sourcemaps-v1.4.272.zip"
+        size: 25324327
+        sha256pre: "7f8a0245fcd9b5fa"
+      "782836598":
         name: "orca-linux.AppImage"
-        size: 272479661
-        sha256pre: "cf0ca1a0f6abfaa8"
-      "762984548":
-        name: "orca-ide_1.4.263_arm64.deb"
-        size: 197313600
-        sha256pre: "928ee64481502c9e"
-      "762985218":
-        name: "orca-ide_1.4.263_amd64.deb"
-        size: 205470136
-        sha256pre: "b9548d77fb36404d"
-      "762991309":
-        name: "orca-ide-1.4.263.aarch64.rpm"
-        size: 166023245
-        sha256pre: "4d02c75ad20fd8a3"
-      "762991732":
-        name: "latest-linux-arm64.yml"
-        size: 690
-        sha256pre: "ff99aa90e8d3fe91"
-      "762992563":
-        name: "orca-ide-1.4.263.x86_64.rpm"
-        size: 172258549
-        sha256pre: "c25e4bcc800e39b9"
-      "762992830":
-        name: "latest-linux.yml"
-        size: 677
-        sha256pre: "155a9beb229c0596"
-      "762997079":
+        size: 285526655
+        sha256pre: "39f889dbd1b11182"
+      "782836760":
+        name: "orca-linux-arm64.AppImage"
+        size: 280382205
+        sha256pre: "3c08f7e83f6ddca4"
+      "782840844":
         name: "orca-macos-arm64.dmg.blockmap"
-        size: 298666
-        sha256pre: "558103793f2f3537"
-      "762997085":
+        size: 315997
+        sha256pre: "ca56257142bb4269"
+      "782840871":
         name: "orca-macos-arm64.dmg"
-        size: 286117589
-        sha256pre: "983b0f7470b162a8"
-      "762997759":
-        name: "Orca-1.4.263-arm64-mac.zip.blockmap"
-        size: 295364
-        sha256pre: "7a8729f0ac85aada"
-      "762997765":
-        name: "Orca-1.4.263-arm64-mac.zip"
-        size: 287652096
-        sha256pre: "621476c56bf335ac"
-      "762997906":
-        name: "Orca-1.4.263-mac.zip.blockmap"
-        size: 303142
-        sha256pre: "cd0c3c85c9162dd2"
-      "762997912":
-        name: "Orca-1.4.263-mac.zip"
-        size: 294814774
-        sha256pre: "4041d816fb8d7417"
-      "762998045":
+        size: 303322638
+        sha256pre: "74cafbc7d6b3c15d"
+      "782841918":
+        name: "Orca-1.4.272-arm64-mac.zip.blockmap"
+        size: 313700
+        sha256pre: "2d20fd52938c8794"
+      "782841921":
+        name: "Orca-1.4.272-arm64-mac.zip"
+        size: 304684646
+        sha256pre: "fb33c4d0a248a0d9"
+      "782842023":
+        name: "Orca-1.4.272-mac.zip.blockmap"
+        size: 321785
+        sha256pre: "7b1982327ef7043d"
+      "782842027":
+        name: "Orca-1.4.272-mac.zip"
+        size: 311882739
+        sha256pre: "49652f39c78608d6"
+      "782842374":
         name: "orca-macos-x64.dmg.blockmap"
-        size: 304534
-        sha256pre: "46ce242f0110c75b"
-      "762998048":
+        size: 323313
+        sha256pre: "017945541354eac6"
+      "782842387":
         name: "orca-macos-x64.dmg"
-        size: 293195939
-        sha256pre: "0b90adf3937ff9b1"
-      "762998771":
+        size: 310359179
+        sha256pre: "ed5e3193d868924b"
+      "782843248":
         name: "latest-mac.yml"
         size: 825
-        sha256pre: "f3e4d8b357a54882"
-      "763046072":
-        name: "orca-windows-setup.exe"
-        size: 228267376
-        sha256pre: "da789cc1c5bae940"
-      "763046073":
-        name: "orca-windows-setup.exe.blockmap"
-        size: 230009
-        sha256pre: "ea891c3c13ced3e4"
-      "763046075":
-        name: "latest.yml"
-        size: 343
-        sha256pre: "418702a1986f33d9"
-      "763051006":
-        name: "orca-server-linux-arm64.tar.gz"
-        size: 65445088
-        sha256pre: "3448a95631d7f733"
-      "763051008":
-        name: "orca-server-linux-x64.tar.gz"
-        size: 65777236
-        sha256pre: "6c0315728a656bcb"
-      "763051009":
-        name: "orca-server-sha256sums.txt"
-        size: 192
-        sha256pre: "877d43d0331d36e6"
-  "451157541":
-    tag: "v1.4.264"
-    published_at: "2026-11-19T10:35:30Z"
-    prerelease: false
-    assets:
-      "767198076":
-        name: "orca-linux-arm64.AppImage"
-        size: 267384712
-        sha256pre: "ae963496687bf25d"
-      "767204969":
-        name: "orca-ide_1.4.264_arm64.deb"
-        size: 197253348
-        sha256pre: "cb0e60b50bd2d790"
-      "767208040":
-        name: "orca-sourcemaps-v1.4.264.zip"
-        size: 20417371
-        sha256pre: "3a42c52e1492388e"
-      "767211506":
-        name: "orca-ide-1.4.264.aarch64.rpm"
-        size: 166003845
-        sha256pre: "e00a5ce21dece28a"
-      "767211507":
-        name: "orca-linux.AppImage"
-        size: 272471222
-        sha256pre: "31170facdbd31ab7"
-      "767211849":
+        sha256pre: "9332ab2fe5c637cd"
+      "782844704":
+        name: "orca-ide_1.4.272_arm64.deb"
+        size: 211535440
+        sha256pre: "39e97588e6307c50"
+      "782846953":
+        name: "orca-ide_1.4.272_amd64.deb"
+        size: 219597232
+        sha256pre: "1ad48841b67d25f7"
+      "782851567":
+        name: "orca-ide-1.4.272.aarch64.rpm"
+        size: 179738137
+        sha256pre: "3278493500067695"
+      "782851807":
         name: "latest-linux-arm64.yml"
         size: 690
-        sha256pre: "3f103bace8d8461c"
-      "767216966":
-        name: "orca-macos-arm64.dmg"
-        size: 286098342
-        sha256pre: "1a1eb80396280943"
-      "767216968":
-        name: "orca-macos-arm64.dmg.blockmap"
-        size: 299443
-        sha256pre: "c1c3abced141d638"
-      "767216969":
-        name: "orca-ide_1.4.264_amd64.deb"
-        size: 205598724
-        sha256pre: "9403b98a48b40628"
-      "767217834":
-        name: "Orca-1.4.264-arm64-mac.zip"
-        size: 287647140
-        sha256pre: "36dbcce1d3efd2af"
-      "767217839":
-        name: "Orca-1.4.264-arm64-mac.zip.blockmap"
-        size: 295212
-        sha256pre: "7cdc91f149d62197"
-      "767217964":
-        name: "Orca-1.4.264-mac.zip.blockmap"
-        size: 302790
-        sha256pre: "ef32ed7d46d1e947"
-      "767217967":
-        name: "Orca-1.4.264-mac.zip"
-        size: 294809875
-        sha256pre: "441a0f4ec5ab0b74"
-      "767218207":
-        name: "orca-macos-x64.dmg.blockmap"
-        size: 304624
-        sha256pre: "ed638872e8c6bf6f"
-      "767218230":
-        name: "orca-macos-x64.dmg"
-        size: 293185906
-        sha256pre: "c9752fcd27a53676"
-      "767219086":
-        name: "latest-mac.yml"
-        size: 825
-        sha256pre: "6f5e4384fed0e8f3"
-      "767225220":
-        name: "orca-ide-1.4.264.x86_64.rpm"
-        size: 172261937
-        sha256pre: "46a1f1079235c986"
-      "767225537":
+        sha256pre: "d525a86b265629d7"
+      "782855254":
+        name: "orca-ide-1.4.272.x86_64.rpm"
+        size: 186432777
+        sha256pre: "4e06f85ac553f270"
+      "782855510":
         name: "latest-linux.yml"
         size: 677
-        sha256pre: "918001cfb72a95c9"
-      "767243787":
+        sha256pre: "60ba89bfd1cdd69d"
+      "782879568":
+        name: "orca-windows-setup.exe.blockmap"
+        size: 245431
+        sha256pre: "b533e58459d20d92"
+      "782879570":
         name: "latest.yml"
         size: 343
-        sha256pre: "2c8b39160f55f347"
-      "767243790":
-        name: "orca-windows-setup.exe.blockmap"
-        size: 229351
-        sha256pre: "2d73390f7c56f703"
-      "767243792":
+        sha256pre: "1bbb3476679ea98a"
+      "782879571":
         name: "orca-windows-setup.exe"
-        size: 228269752
-        sha256pre: "676c32d9eb955a31"
-      "767260103":
-        name: "orca-server-linux-x64.tar.gz"
-        size: 65777709
-        sha256pre: "8f78b5acb5e57a53"
-      "767260105":
+        size: 242558304
+        sha256pre: "fc1d2e86ee943d1a"
+      "782884180":
         name: "orca-server-sha256sums.txt"
         size: 192
-        sha256pre: "cf222253456b02d9"
-      "767260107":
+        sha256pre: "2f409005321cb109"
+      "782884181":
+        name: "orca-server-linux-x64.tar.gz"
+        size: 69799498
+        sha256pre: "7d6186b5ece0bf7c"
+      "782884183":
         name: "orca-server-linux-arm64.tar.gz"
-        size: 65445263
-        sha256pre: "53b975417f285ff5"
-  "451938403":
-    tag: "android-v0.0.68"
-    title: "Orca Mobile Android android-v0.0.68"
-    published_at: "2026-11-19T21:15:39Z"
+        size: 69464527
+        sha256pre: "fb0cec993d7427db"
+  "456130644":
+    tag: "android-v0.0.69"
+    title: "Orca Mobile Android android-v0.0.69"
+    published_at: "2026-11-23T23:42:09Z"
     prerelease: true
     assets:
-      "769298206":
-        name: "app-release.apk"
-        size: 147880581
-        sha256pre: "5a2ce73f84d11776"
-      "769298207":
+      "784974503":
         name: "app-release.apk.sha256"
         size: 82
-        sha256pre: "43ef90bd629626cf"
-  "452038649":
-    tag: "v1.4.265"
-    published_at: "2026-11-19T23:41:51Z"
+        sha256pre: "a9a3c6680b91e0d0"
+      "784974505":
+        name: "app-release.apk"
+        size: 148986401
+        sha256pre: "f550d52cfe06f8e8"
+      "785026203":
+        name: "orca-android-v0.0.69-complete-changelog.md"
+        size: 151307
+        sha256pre: "4269682d93931e37"
+  "456186809":
+    tag: "android-v0.0.70"
+    title: "Orca Mobile Android android-v0.0.70"
+    published_at: "2026-11-24T01:09:26Z"
+    prerelease: true
+    assets:
+      "785191932":
+        name: "app-release.apk.sha256"
+        size: 82
+        sha256pre: "60c74eda5541afe7"
+      "785191934":
+        name: "app-release.apk"
+        size: 149962241
+        sha256pre: "d7fa210d01063d29"
+  "456558765":
+    tag: "v1.4.273"
+    published_at: "2026-11-24T10:20:48Z"
     prerelease: false
     assets:
-      "769634547":
-        name: "orca-sourcemaps-v1.4.265.zip"
-        size: 23839572
-        sha256pre: "392374a2e328c101"
-      "769637261":
+      "786637005":
+        name: "orca-sourcemaps-v1.4.273.zip"
+        size: 25476097
+        sha256pre: "f1d954d83354ba65"
+      "786640742":
         name: "orca-linux.AppImage"
-        size: 278485382
-        sha256pre: "8a51a08e241899d8"
-      "769641817":
-        name: "orca-ide_1.4.265_amd64.deb"
-        size: 211542764
-        sha256pre: "2cd80d1104b56485"
-      "769642709":
+        size: 285747562
+        sha256pre: "47dd54e4b34a637a"
+      "786642780":
         name: "orca-linux-arm64.AppImage"
-        size: 273399284
-        sha256pre: "744c6ed5960fb305"
-      "769647251":
-        name: "orca-ide-1.4.265.x86_64.rpm"
-        size: 178484497
-        sha256pre: "54263c6d33dfb84b"
-      "769647537":
-        name: "latest-linux.yml"
-        size: 677
-        sha256pre: "e55bbebb37fdf863"
-      "769648132":
-        name: "orca-ide_1.4.265_arm64.deb"
-        size: 203351408
-        sha256pre: "d05a185bb6ab2152"
-      "769649330":
-        name: "orca-macos-arm64.dmg"
-        size: 294165249
-        sha256pre: "3a4cdcedf4f29578"
-      "769649331":
+        size: 280599071
+        sha256pre: "e861db2c78cfb13a"
+      "786644590":
         name: "orca-macos-arm64.dmg.blockmap"
-        size: 305349
-        sha256pre: "55c4773442e69995"
-      "769649999":
-        name: "Orca-1.4.265-arm64-mac.zip.blockmap"
-        size: 302770
-        sha256pre: "b2f19d4fd3f8c9ad"
-      "769650003":
-        name: "Orca-1.4.265-arm64-mac.zip"
-        size: 295848070
-        sha256pre: "312dee5340783110"
-      "769650065":
-        name: "Orca-1.4.265-mac.zip.blockmap"
-        size: 311902
-        sha256pre: "21a4cd958506bb3d"
-      "769650075":
-        name: "Orca-1.4.265-mac.zip"
-        size: 303010556
-        sha256pre: "06299f698b804d32"
-      "769650299":
+        size: 316381
+        sha256pre: "40a0d3634fc1d1f4"
+      "786644592":
+        name: "orca-macos-arm64.dmg"
+        size: 303526347
+        sha256pre: "bb79fa9b8387dce4"
+      "786645286":
+        name: "Orca-1.4.273-arm64-mac.zip"
+        size: 304987094
+        sha256pre: "dddcdfbb23a2b9f7"
+      "786645287":
+        name: "Orca-1.4.273-arm64-mac.zip.blockmap"
+        size: 315069
+        sha256pre: "b7fd7f5dc1288ee6"
+      "786645366":
+        name: "Orca-1.4.273-mac.zip.blockmap"
+        size: 324398
+        sha256pre: "ee0f7c7f19b635d0"
+      "786645371":
+        name: "Orca-1.4.273-mac.zip"
+        size: 312185091
+        sha256pre: "1e894a6fe42284b5"
+      "786645742":
         name: "orca-macos-x64.dmg.blockmap"
-        size: 314397
-        sha256pre: "f9683d1faae1a2e2"
-      "769650305":
+        size: 323855
+        sha256pre: "ab9743b8da9e00f5"
+      "786645745":
         name: "orca-macos-x64.dmg"
-        size: 301251897
-        sha256pre: "350c0ef2a9f793f5"
-      "769651036":
+        size: 310648808
+        sha256pre: "d6057c217aadf33c"
+      "786646351":
         name: "latest-mac.yml"
         size: 825
-        sha256pre: "6ef4934feb426415"
-      "769653955":
-        name: "orca-ide-1.4.265.aarch64.rpm"
-        size: 171670345
-        sha256pre: "ac464c4d32b338cb"
-      "769654209":
+        sha256pre: "a2cfaaad64777df7"
+      "786647742":
+        name: "orca-ide_1.4.273_amd64.deb"
+        size: 219871864
+        sha256pre: "8e3a3497c208bc0d"
+      "786654245":
+        name: "orca-ide_1.4.273_arm64.deb"
+        size: 211630288
+        sha256pre: "94bbc410a7f28701"
+      "786656923":
+        name: "orca-ide-1.4.273.x86_64.rpm"
+        size: 186624673
+        sha256pre: "f8bdf59e1d22b178"
+      "786657304":
+        name: "latest-linux.yml"
+        size: 677
+        sha256pre: "21af8b3a1940db60"
+      "786663459":
+        name: "orca-ide-1.4.273.aarch64.rpm"
+        size: 179839009
+        sha256pre: "4441201c461f7090"
+      "786663737":
         name: "latest-linux-arm64.yml"
         size: 690
-        sha256pre: "c7dce5ccbb238439"
-      "769702318":
+        sha256pre: "9d1e8b67d25ffeaf"
+      "786688389":
+        name: "orca-windows-setup.exe"
+        size: 243494544
+        sha256pre: "de338e713d914abe"
+      "786688393":
+        name: "orca-windows-setup.exe.blockmap"
+        size: 247846
+        sha256pre: "0d74830f3c94e201"
+      "786688394":
         name: "latest.yml"
         size: 343
-        sha256pre: "bc7452d734bb84b3"
-      "769702321":
-        name: "orca-windows-setup.exe"
-        size: 234738192
-        sha256pre: "d90437cc51bc40a8"
-      "769702323":
-        name: "orca-windows-setup.exe.blockmap"
-        size: 238496
-        sha256pre: "a0f5903c27d01399"
-      "769706037":
+        sha256pre: "d18c24a2fde45e24"
+      "786693641":
         name: "orca-server-sha256sums.txt"
         size: 192
-        sha256pre: "8a03e3e9a5ef6e2f"
-      "769706038":
+        sha256pre: "9eb860d14d40a7d2"
+      "786693642":
         name: "orca-server-linux-x64.tar.gz"
-        size: 68042900
-        sha256pre: "eaba2039f351d47e"
-      "769706041":
+        size: 69869154
+        sha256pre: "be4e205696d03876"
+      "786693644":
         name: "orca-server-linux-arm64.tar.gz"
-        size: 67706849
-        sha256pre: "9ccf8e04491e102f"
-  "452402981":
-    tag: "v1.4.266"
-    published_at: "2026-11-20T08:25:00Z"
+        size: 69539615
+        sha256pre: "5b2b10da6851db7f"
+  "457403223":
+    tag: "v1.4.274"
+    published_at: "2026-11-24T22:52:16Z"
     prerelease: false
     assets:
-      "770987251":
-        name: "orca-sourcemaps-v1.4.266.zip"
-        size: 23942838
-        sha256pre: "10c08f2856d12866"
-      "770987849":
+      "789119300":
+        name: "orca-sourcemaps-v1.4.274.zip"
+        size: 25476536
+        sha256pre: "e761b6e30f56a057"
+      "789121889":
         name: "orca-linux-arm64.AppImage"
-        size: 274276060
-        sha256pre: "b1355488700e075d"
-      "770990655":
+        size: 280599071
+        sha256pre: "f4ed62d133b14eb5"
+      "789123388":
         name: "orca-linux.AppImage"
-        size: 279419675
-        sha256pre: "0bfc52bc3ca401ee"
-      "770995995":
-        name: "orca-ide_1.4.266_arm64.deb"
-        size: 204178228
-        sha256pre: "b7eefa288b654a7e"
-      "770996683":
-        name: "orca-ide_1.4.266_amd64.deb"
-        size: 212235804
-        sha256pre: "3f2f051eec132eee"
-      "770997485":
-        name: "orca-macos-arm64.dmg"
-        size: 295194943
-        sha256pre: "533575b97673918c"
-      "770997487":
-        name: "orca-macos-arm64.dmg.blockmap"
-        size: 307921
-        sha256pre: "f33cfbe3c8dc06d6"
-      "770998099":
-        name: "Orca-1.4.266-arm64-mac.zip.blockmap"
-        size: 303845
-        sha256pre: "08f5a1703fd17e1c"
-      "770998100":
-        name: "Orca-1.4.266-arm64-mac.zip"
-        size: 296813188
-        sha256pre: "4c8604ef0967140d"
-      "770998174":
-        name: "Orca-1.4.266-mac.zip.blockmap"
-        size: 313478
-        sha256pre: "fa2e5f2cec95812d"
-      "770998181":
-        name: "Orca-1.4.266-mac.zip"
-        size: 304010211
-        sha256pre: "a1c593999b7977fe"
-      "770998633":
-        name: "orca-macos-x64.dmg.blockmap"
-        size: 313443
-        sha256pre: "806009ca1d39c4fb"
-      "770998635":
+        size: 285743504
+        sha256pre: "4c79c1fdc5f3dd45"
+      "789128042":
         name: "orca-macos-x64.dmg"
-        size: 302260920
-        sha256pre: "0e48420fd5a74d59"
-      "770999489":
+        size: 310624283
+        sha256pre: "55e2efa0168cee4b"
+      "789128048":
+        name: "orca-macos-x64.dmg.blockmap"
+        size: 325394
+        sha256pre: "ec5ac8c8c511efcb"
+      "789128869":
+        name: "Orca-1.4.274-arm64-mac.zip.blockmap"
+        size: 314720
+        sha256pre: "7ce4bf1fde1760a2"
+      "789128870":
+        name: "Orca-1.4.274-arm64-mac.zip"
+        size: 304985139
+        sha256pre: "7977c66dd8938961"
+      "789128987":
+        name: "Orca-1.4.274-mac.zip"
+        size: 312183198
+        sha256pre: "3dedf47d2aabf317"
+      "789128990":
+        name: "Orca-1.4.274-mac.zip.blockmap"
+        size: 323115
+        sha256pre: "1ba67a6af08d8821"
+      "789129358":
+        name: "orca-macos-arm64.dmg.blockmap"
+        size: 314967
+        sha256pre: "7490ddf1fc5a9c39"
+      "789129359":
+        name: "orca-macos-arm64.dmg"
+        size: 303534222
+        sha256pre: "e23f16d42b383eed"
+      "789130059":
+        name: "orca-ide_1.4.274_arm64.deb"
+        size: 211759148
+        sha256pre: "85e4aedd9e1a684c"
+      "789130134":
         name: "latest-mac.yml"
         size: 825
-        sha256pre: "2369afdfe1cffd8d"
-      "771003422":
-        name: "orca-ide-1.4.266.aarch64.rpm"
-        size: 172284421
-        sha256pre: "4904db1a14c40d20"
-      "771003603":
+        sha256pre: "f2a4077e379986d4"
+      "789131178":
+        name: "orca-ide_1.4.274_amd64.deb"
+        size: 219629984
+        sha256pre: "96a2abd7172ac813"
+      "789136658":
+        name: "orca-ide-1.4.274.aarch64.rpm"
+        size: 179842161
+        sha256pre: "88e3fdd5b5c836e9"
+      "789137008":
         name: "latest-linux-arm64.yml"
         size: 690
-        sha256pre: "e8ef5b48423c80dc"
-      "771003827":
-        name: "orca-ide-1.4.266.x86_64.rpm"
-        size: 179101881
-        sha256pre: "75f35725cc0fd4e7"
-      "771004125":
+        sha256pre: "811d14bfa3999ce3"
+      "789138466":
+        name: "orca-ide-1.4.274.x86_64.rpm"
+        size: 186575073
+        sha256pre: "41948b041a409319"
+      "789138742":
         name: "latest-linux.yml"
         size: 677
-        sha256pre: "381502a371411c6f"
-      "771035323":
-        name: "orca-windows-setup.exe"
-        size: 235317448
-        sha256pre: "a5e2f21f3e839900"
-      "771035324":
+        sha256pre: "f8b29b2281145331"
+      "789170228":
         name: "orca-windows-setup.exe.blockmap"
-        size: 238354
-        sha256pre: "d77f9372580ac2f2"
-      "771035328":
+        size: 248159
+        sha256pre: "83e6035f59b30174"
+      "789170229":
+        name: "orca-windows-setup.exe"
+        size: 243494424
+        sha256pre: "a568616184c78618"
+      "789170230":
         name: "latest.yml"
         size: 343
-        sha256pre: "0b58694d08fefb18"
-      "771039388":
-        name: "orca-server-linux-arm64.tar.gz"
-        size: 67742374
-        sha256pre: "ce9eb69dc26e0a0a"
-      "771039391":
+        sha256pre: "d118eb3105cb9d13"
+      "789175971":
+        name: "orca-server-linux-x64.tar.gz"
+        size: 69869848
+        sha256pre: "b2f34c5a80e5b00f"
+      "789175974":
         name: "orca-server-sha256sums.txt"
         size: 192
-        sha256pre: "00a70f8c8e158ece"
-      "771039400":
-        name: "orca-server-linux-x64.tar.gz"
-        size: 68072793
-        sha256pre: "a45ca96d3c781b78"
-  "453162117":
-    tag: "v1.4.267"
-    published_at: "2026-11-20T21:31:37Z"
+        sha256pre: "0e8b2574dcaa7fd4"
+      "789175978":
+        name: "orca-server-linux-arm64.tar.gz"
+        size: 69535259
+        sha256pre: "5e1f3d9ee3709574"
+      "789192598":
+        name: "app-rail.png"
+        size: 4419
+        sha256pre: "4c512d945b697ea6"
+  "458404585":
+    tag: "android-v0.0.71"
+    title: "Orca Mobile Android android-v0.0.71"
+    published_at: "2026-11-25T17:10:55Z"
+    prerelease: true
+    assets:
+      "792400738":
+        name: "app-release.apk"
+        size: 150535581
+        sha256pre: "d0ee3ab9aa39c2fb"
+      "792400740":
+        name: "app-release.apk.sha256"
+        size: 82
+        sha256pre: "82d2f146cebe3c2e"
+  "458780675":
+    tag: "v1.4.277"
+    published_at: "2026-11-26T00:27:38Z"
     prerelease: false
     assets:
-      "773335080":
-        name: "orca-sourcemaps-v1.4.267.zip"
-        size: 23942838
-        sha256pre: "1df4628bf80b9655"
-      "773337874":
+      "793667308":
+        name: "orca-sourcemaps-v1.4.277.zip"
+        size: 25636669
+        sha256pre: "96a63c7fa698bb5f"
+      "793670858":
         name: "orca-linux.AppImage"
-        size: 279423460
-        sha256pre: "e5043fee688d9e66"
-      "773338861":
+        size: 286096046
+        sha256pre: "3220df22ad2984e7"
+      "793672561":
         name: "orca-linux-arm64.AppImage"
-        size: 274284036
-        sha256pre: "8a8a3e6857cdbc35"
-      "773341862":
-        name: "orca-ide_1.4.267_amd64.deb"
-        size: 212347116
-        sha256pre: "7e7c455fe6fab97e"
-      "773346988":
-        name: "orca-ide_1.4.267_arm64.deb"
-        size: 204156928
-        sha256pre: "4cb4974ad6794905"
-      "773347695":
-        name: "orca-ide-1.4.267.x86_64.rpm"
-        size: 179114641
-        sha256pre: "f4332c82c5dff0a7"
-      "773347898":
-        name: "latest-linux.yml"
-        size: 677
-        sha256pre: "1b9a0051e91e5ff5"
-      "773350439":
-        name: "orca-macos-x64.dmg"
-        size: 302258774
-        sha256pre: "9a6e9076b1241106"
-      "773350441":
-        name: "orca-macos-x64.dmg.blockmap"
-        size: 316426
-        sha256pre: "fa5d92558447f7c8"
-      "773351075":
-        name: "Orca-1.4.267-arm64-mac.zip"
-        size: 296822953
-        sha256pre: "32e7ded58fba5667"
-      "773351077":
-        name: "Orca-1.4.267-arm64-mac.zip.blockmap"
-        size: 303331
-        sha256pre: "5a18576f98c0cb2e"
-      "773351155":
-        name: "Orca-1.4.267-mac.zip.blockmap"
-        size: 312457
-        sha256pre: "ee280ef1d314f521"
-      "773351156":
-        name: "Orca-1.4.267-mac.zip"
-        size: 304020075
-        sha256pre: "50ee70e718ac69e6"
-      "773351333":
+        size: 280951721
+        sha256pre: "d727179277066e41"
+      "793674950":
+        name: "orca-ide_1.4.277_amd64.deb"
+        size: 220242640
+        sha256pre: "46fb018af43fa9e4"
+      "793676186":
         name: "orca-macos-arm64.dmg.blockmap"
-        size: 309906
-        sha256pre: "1428064f522b0701"
-      "773351341":
+        size: 318228
+        sha256pre: "d5ec8485f27d6dcc"
+      "793676190":
         name: "orca-macos-arm64.dmg"
-        size: 295180403
-        sha256pre: "3882c79691445289"
-      "773351699":
+        size: 303865112
+        sha256pre: "9fb9639e76984a01"
+      "793676730":
+        name: "Orca-1.4.277-arm64-mac.zip.blockmap"
+        size: 314183
+        sha256pre: "c0ba5f144dc362e2"
+      "793676731":
+        name: "Orca-1.4.277-arm64-mac.zip"
+        size: 305372840
+        sha256pre: "dbef9b0776ae016d"
+      "793676775":
+        name: "Orca-1.4.277-mac.zip.blockmap"
+        size: 322171
+        sha256pre: "0f887e39ece5820a"
+      "793676779":
+        name: "Orca-1.4.277-mac.zip"
+        size: 312570893
+        sha256pre: "714f32fac8a55893"
+      "793677088":
+        name: "orca-macos-x64.dmg.blockmap"
+        size: 326093
+        sha256pre: "0f45f226a1ef5294"
+      "793677089":
+        name: "orca-macos-x64.dmg"
+        size: 310983579
+        sha256pre: "b75a2eb851bcf439"
+      "793677705":
         name: "latest-mac.yml"
         size: 825
-        sha256pre: "fedd39fc31f6fa4d"
-      "773353398":
-        name: "orca-ide-1.4.267.aarch64.rpm"
-        size: 172302129
-        sha256pre: "1d791a6dd20dc3a9"
-      "773353706":
+        sha256pre: "f854bcad5e8ff939"
+      "793678588":
+        name: "orca-ide_1.4.277_arm64.deb"
+        size: 211887948
+        sha256pre: "abc65fe8f7f3f7b7"
+      "793680168":
+        name: "orca-ide-1.4.277.x86_64.rpm"
+        size: 186774845
+        sha256pre: "b6b09760bf80f195"
+      "793680344":
+        name: "latest-linux.yml"
+        size: 677
+        sha256pre: "64f9576103abb44e"
+      "793683861":
+        name: "orca-ide-1.4.277.aarch64.rpm"
+        size: 179880201
+        sha256pre: "33c5afc859644dba"
+      "793684042":
         name: "latest-linux-arm64.yml"
         size: 690
-        sha256pre: "1b56349188acf217"
-      "773407817":
-        name: "orca-windows-setup.exe.blockmap"
-        size: 239084
-        sha256pre: "2de037ee40d1e50c"
-      "773407819":
+        sha256pre: "4319b05a0160ad9f"
+      "793697189":
         name: "latest.yml"
         size: 343
-        sha256pre: "0494599c953f7266"
-      "773407820":
+        sha256pre: "6e59e1eceab5035a"
+      "793697193":
+        name: "orca-windows-setup.exe.blockmap"
+        size: 248682
+        sha256pre: "a61a31f04d61da96"
+      "793697194":
         name: "orca-windows-setup.exe"
-        size: 235346776
-        sha256pre: "1c3714c7e66703e7"
-      "773414400":
-        name: "orca-server-linux-arm64.tar.gz"
-        size: 67742598
-        sha256pre: "6f5c711d9b6bac95"
-      "773414401":
+        size: 244451344
+        sha256pre: "b049b7029d648a04"
+      "793701266":
+        name: "orca-server-linux-x64.tar.gz"
+        size: 69965088
+        sha256pre: "cc0be421b6dc995e"
+      "793701267":
         name: "orca-server-sha256sums.txt"
         size: 192
-        sha256pre: "c7bf3935f198deb1"
-      "773414402":
-        name: "orca-server-linux-x64.tar.gz"
-        size: 68072831
-        sha256pre: "83451859396bec9c"
-  "453399356":
-    tag: "v1.4.268"
-    published_at: "2026-11-21T03:50:43Z"
+        sha256pre: "2aa5a18f896bb8f3"
+      "793701268":
+        name: "orca-server-linux-arm64.tar.gz"
+        size: 69633405
+        sha256pre: "0bfec055a280381a"
+  "459226785":
+    tag: "v1.4.278"
+    published_at: "2026-11-26T10:47:17Z"
     prerelease: false
     assets:
-      "774259151":
-        name: "orca-sourcemaps-v1.4.268.zip"
-        size: 24237563
-        sha256pre: "13c66791be59a7e1"
-      "774262194":
+      "795325483":
+        name: "orca-sourcemaps-v1.4.278.zip"
+        size: 26121018
+        sha256pre: "56728d810e41e1ea"
+      "795330223":
         name: "orca-linux.AppImage"
-        size: 279768715
-        sha256pre: "2133ba4684578b2e"
-      "774263137":
+        size: 287042649
+        sha256pre: "3e2d25bb9768398e"
+      "795330912":
         name: "orca-linux-arm64.AppImage"
-        size: 274624765
-        sha256pre: "90391d5aecb0b22d"
-      "774266963":
-        name: "orca-ide_1.4.268_amd64.deb"
-        size: 212799488
-        sha256pre: "ce08aa4bb05972ee"
-      "774268523":
-        name: "orca-ide_1.4.268_arm64.deb"
-        size: 204705400
-        sha256pre: "6e10763ab40a0e0b"
-      "774270067":
-        name: "orca-macos-x64.dmg.blockmap"
-        size: 316605
-        sha256pre: "a41dcf27543c74d3"
-      "774270070":
-        name: "orca-macos-x64.dmg"
-        size: 303278200
-        sha256pre: "0b4770d26ced9a52"
-      "774270750":
-        name: "Orca-1.4.268-arm64-mac.zip"
-        size: 297621167
-        sha256pre: "2b1af4bf3871033c"
-      "774270751":
-        name: "Orca-1.4.268-arm64-mac.zip.blockmap"
-        size: 304703
-        sha256pre: "6cc02ab4bd1cf8bc"
-      "774270822":
-        name: "Orca-1.4.268-mac.zip.blockmap"
-        size: 314278
-        sha256pre: "67c300cd97159583"
-      "774270827":
-        name: "Orca-1.4.268-mac.zip"
-        size: 304818283
-        sha256pre: "d541faa72caebe12"
-      "774271080":
-        name: "orca-macos-arm64.dmg.blockmap"
-        size: 311962
-        sha256pre: "6875cfd594e4e992"
-      "774271085":
+        size: 281898365
+        sha256pre: "401723b82e463d81"
+      "795336052":
+        name: "orca-ide_1.4.278_amd64.deb"
+        size: 221340444
+        sha256pre: "d2503e0cfcf32a0d"
+      "795336067":
         name: "orca-macos-arm64.dmg"
-        size: 296139516
-        sha256pre: "567e400555cdc3cf"
-      "774271648":
+        size: 305319336
+        sha256pre: "7066b56424281791"
+      "795336072":
+        name: "orca-macos-arm64.dmg.blockmap"
+        size: 319108
+        sha256pre: "77613a0e18f10270"
+      "795336848":
+        name: "Orca-1.4.278-arm64-mac.zip"
+        size: 306825248
+        sha256pre: "d832885a97a7f58b"
+      "795336850":
+        name: "Orca-1.4.278-arm64-mac.zip.blockmap"
+        size: 316635
+        sha256pre: "43653fc190a71b51"
+      "795337009":
+        name: "Orca-1.4.278-mac.zip.blockmap"
+        size: 325112
+        sha256pre: "f3ab6972cfe4f318"
+      "795337014":
+        name: "Orca-1.4.278-mac.zip"
+        size: 314023835
+        sha256pre: "d184d070f86af861"
+      "795337297":
+        name: "orca-macos-x64.dmg.blockmap"
+        size: 328198
+        sha256pre: "5dd644b0ba76c92b"
+      "795337306":
+        name: "orca-macos-x64.dmg"
+        size: 312423766
+        sha256pre: "0913ffd9f0ac18d8"
+      "795337973":
         name: "latest-mac.yml"
         size: 825
-        sha256pre: "c7e8ca059ad1d5d4"
-      "774273140":
-        name: "orca-ide-1.4.268.x86_64.rpm"
-        size: 179561013
-        sha256pre: "8a7a300de1f787b9"
-      "774273370":
+        sha256pre: "0028ca91a5460328"
+      "795339167":
+        name: "orca-ide_1.4.278_arm64.deb"
+        size: 212895960
+        sha256pre: "4dfe1c93819194c0"
+      "795343790":
+        name: "orca-ide-1.4.278.x86_64.rpm"
+        size: 187648945
+        sha256pre: "30ff3d727c85c209"
+      "795344092":
         name: "latest-linux.yml"
         size: 677
-        sha256pre: "43e4ddff98cd0b9e"
-      "774274629":
-        name: "orca-ide-1.4.268.aarch64.rpm"
-        size: 172794805
-        sha256pre: "497e5df670cf7ace"
-      "774275033":
+        sha256pre: "201c116ab27ff7a4"
+      "795347455":
+        name: "orca-ide-1.4.278.aarch64.rpm"
+        size: 180765401
+        sha256pre: "edb809ddb562c6b5"
+      "795347762":
         name: "latest-linux-arm64.yml"
         size: 690
-        sha256pre: "63c4393dbbac4488"
-      "774328131":
-        name: "orca-windows-setup.exe"
-        size: 235971376
-        sha256pre: "7182d3ffd6b286ba"
-      "774328132":
-        name: "orca-windows-setup.exe.blockmap"
-        size: 239322
-        sha256pre: "6beddf67d5cd30d3"
-      "774328134":
+        sha256pre: "e4e46856fcfa6512"
+      "795363804":
         name: "latest.yml"
         size: 343
-        sha256pre: "e13cc8d478ecad5b"
-      "774330987":
-        name: "orca-server-sha256sums.txt"
-        size: 192
-        sha256pre: "50ea837877b6566c"
-      "774330989":
-        name: "orca-server-linux-arm64.tar.gz"
-        size: 67841845
-        sha256pre: "881da3c1953870c9"
-      "774330990":
-        name: "orca-server-linux-x64.tar.gz"
-        size: 68172901
-        sha256pre: "7e84701fb7e034de"
-  "453857529":
-    tag: "v1.4.269"
-    published_at: "2026-11-21T17:57:28Z"
-    prerelease: false
-    assets:
-      "776355336":
-        name: "orca-sourcemaps-v1.4.269.zip"
-        size: 24349271
-        sha256pre: "5f5193ffe34880dd"
-      "776358316":
-        name: "orca-linux-arm64.AppImage"
-        size: 274846083
-        sha256pre: "4c3392476fd0974b"
-      "776358408":
-        name: "orca-linux.AppImage"
-        size: 279986174
-        sha256pre: "f7ff5a9cd201c230"
-      "776362856":
-        name: "orca-ide_1.4.269_amd64.deb"
-        size: 213401732
-        sha256pre: "c3ed00c4320ce618"
-      "776364942":
-        name: "orca-ide_1.4.269_arm64.deb"
-        size: 205040572
-        sha256pre: "3675a822c4e2b47c"
-      "776367804":
-        name: "orca-macos-arm64.dmg.blockmap"
-        size: 310359
-        sha256pre: "6bce2f058285883d"
-      "776367805":
-        name: "orca-macos-arm64.dmg"
-        size: 296460661
-        sha256pre: "16f70947b511d911"
-      "776368355":
-        name: "orca-ide-1.4.269.x86_64.rpm"
-        size: 179754785
-        sha256pre: "f9d5e4fb4ff2374b"
-      "776368405":
-        name: "Orca-1.4.269-arm64-mac.zip"
-        size: 297974337
-        sha256pre: "a6d49b13fb315c55"
-      "776368407":
-        name: "Orca-1.4.269-arm64-mac.zip.blockmap"
-        size: 305204
-        sha256pre: "ae4253e02520cf9b"
-      "776368541":
-        name: "Orca-1.4.269-mac.zip.blockmap"
-        size: 315182
-        sha256pre: "256e08eb9bffd384"
-      "776368542":
-        name: "Orca-1.4.269-mac.zip"
-        size: 305171428
-        sha256pre: "2b2bec219b1b21c0"
-      "776368692":
-        name: "latest-linux.yml"
-        size: 677
-        sha256pre: "1fd6e846aecdc28d"
-      "776368712":
-        name: "orca-macos-x64.dmg.blockmap"
-        size: 316671
-        sha256pre: "64aef5e6bb611c8d"
-      "776368718":
-        name: "orca-macos-x64.dmg"
-        size: 303537101
-        sha256pre: "089e61f1836592f8"
-      "776369331":
-        name: "latest-mac.yml"
-        size: 825
-        sha256pre: "c8260bc9d1a298af"
-      "776370727":
-        name: "orca-ide-1.4.269.aarch64.rpm"
-        size: 173096237
-        sha256pre: "291d24f69ec2e281"
-      "776371035":
-        name: "latest-linux-arm64.yml"
-        size: 690
-        sha256pre: "c3f32b427109b763"
-      "776396042":
-        name: "orca-windows-setup.exe.blockmap"
-        size: 240091
-        sha256pre: "8586c8d217e37437"
-      "776396043":
+        sha256pre: "b0f0270201144ce2"
+      "795363816":
         name: "orca-windows-setup.exe"
-        size: 236261696
-        sha256pre: "20fdbd6ffaceb0a5"
-      "776396046":
-        name: "latest.yml"
-        size: 343
-        sha256pre: "ac921dcde00c1e35"
-      "776399516":
+        size: 245511040
+        sha256pre: "a901ec9ab4bad1b6"
+      "795363820":
+        name: "orca-windows-setup.exe.blockmap"
+        size: 249779
+        sha256pre: "4772d96f87375351"
+      "795437007":
         name: "orca-server-linux-arm64.tar.gz"
-        size: 67998405
-        sha256pre: "d88676ffe758f169"
-      "776399517":
-        name: "orca-server-linux-x64.tar.gz"
-        size: 68328192
-        sha256pre: "f28156c0ceda9d03"
-      "776399518":
+        size: 70065018
+        sha256pre: "3b2480eb6ed7aa1e"
+      "795437009":
         name: "orca-server-sha256sums.txt"
         size: 192
-        sha256pre: "8d9be29442bac05f"
+        sha256pre: "d1992beb9ad4ba15"
+      "795437012":
+        name: "orca-server-linux-x64.tar.gz"
+        size: 70396405
+        sha256pre: "de38855fb18c7d64"
