@@ -1,155 +1,9 @@
 $schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
 repository_id: 1255609001
 repository: "flythenimbus/bramble"
-observed_at: "2026-11-23T03:01:37Z"
+observed_at: "2026-11-27T22:02:49Z"
 history_complete: false
 releases:
-  "452191136":
-    tag: "1.41.0-chromium"
-    title: "Chromium Extension 1.41.0"
-    url: "https://github.com/bramble-sh/bramble/releases/tag/1.41.0-chromium"
-    published_at: "2026-11-20T02:23:19Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/bramble-sh/bramble/zipball/1.41.0-chromium"
-    source_tar_url: "https://api.github.com/repos/bramble-sh/bramble/tarball/1.41.0-chromium"
-    assets:
-      "770117541":
-        name: "bramble_chromium_1.41.0.zip"
-        url: "https://github.com/bramble-sh/bramble/releases/download/1.41.0-chromium/bramble_chromium_1.41.0.zip"
-        size: 1542875
-        sha256pre: "bef1be29596e4ad9"
-      "770117546":
-        name: "SHA256SUMS"
-        url: "https://github.com/bramble-sh/bramble/releases/download/1.41.0-chromium/SHA256SUMS"
-        size: 188
-        sha256pre: "06fa1fb4bf0d800b"
-      "770117550":
-        name: "bramble_chromium_1.41.0.crx"
-        url: "https://github.com/bramble-sh/bramble/releases/download/1.41.0-chromium/bramble_chromium_1.41.0.crx"
-        size: 1535952
-        sha256pre: "279f4d97cb51c569"
-  "452192485":
-    tag: "1.38.0-firefox"
-    title: "Firefox Extension 1.38.0"
-    url: "https://github.com/bramble-sh/bramble/releases/tag/1.38.0-firefox"
-    published_at: "2026-11-20T02:25:26Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/bramble-sh/bramble/zipball/1.38.0-firefox"
-    source_tar_url: "https://api.github.com/repos/bramble-sh/bramble/tarball/1.38.0-firefox"
-    assets:
-      "770122714":
-        name: "SHA256SUMS"
-        url: "https://github.com/bramble-sh/bramble/releases/download/1.38.0-firefox/SHA256SUMS"
-        size: 93
-        sha256pre: "fbd078cd40d28949"
-      "770122715":
-        name: "bramble_firefox_1.38.0.zip"
-        url: "https://github.com/bramble-sh/bramble/releases/download/1.38.0-firefox/bramble_firefox_1.38.0.zip"
-        size: 1547909
-        sha256pre: "9b9b2b65114acfa6"
-  "452200077":
-    tag: "0.32.0-android"
-    title: "Android 0.32.0"
-    url: "https://github.com/bramble-sh/bramble/releases/tag/0.32.0-android"
-    published_at: "2026-11-20T02:37:41Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/bramble-sh/bramble/zipball/0.32.0-android"
-    source_tar_url: "https://api.github.com/repos/bramble-sh/bramble/tarball/0.32.0-android"
-    assets:
-      "770153605":
-        name: "bramble_android_0.32.0.apk"
-        url: "https://github.com/bramble-sh/bramble/releases/download/0.32.0-android/bramble_android_0.32.0.apk"
-        size: 12020949
-        sha256pre: "4ce0678593791892"
-      "770153607":
-        name: "SHA256SUMS"
-        url: "https://github.com/bramble-sh/bramble/releases/download/0.32.0-android/SHA256SUMS"
-        size: 93
-        sha256pre: "9a64f96dc654676f"
-  "452207134":
-    tag: "0.20.0-desktop"
-    title: "Desktop 0.20.0"
-    url: "https://github.com/bramble-sh/bramble/releases/tag/0.20.0-desktop"
-    published_at: "2026-11-20T02:50:35Z"
-    prerelease: false
-    source_zip_url: "https://api.github.com/repos/bramble-sh/bramble/zipball/0.20.0-desktop"
-    source_tar_url: "https://api.github.com/repos/bramble-sh/bramble/tarball/0.20.0-desktop"
-    assets:
-      "770179829":
-        name: "Bramble-0.20.0-1.x86_64.rpm"
-        url: "https://github.com/bramble-sh/bramble/releases/download/0.20.0-desktop/Bramble-0.20.0-1.x86_64.rpm"
-        size: 14724467
-        sha256pre: "2fcf201001befd89"
-      "770179831":
-        name: "Bramble_0.20.0_amd64.deb"
-        url: "https://github.com/bramble-sh/bramble/releases/download/0.20.0-desktop/Bramble_0.20.0_amd64.deb"
-        size: 14326524
-        sha256pre: "9bc0d3948b74902c"
-      "770179837":
-        name: "Bramble_0.20.0_arm64.deb"
-        url: "https://github.com/bramble-sh/bramble/releases/download/0.20.0-desktop/Bramble_0.20.0_arm64.deb"
-        size: 14166208
-        sha256pre: "3713341b1e254f51"
-      "770179838":
-        name: "Bramble-0.20.0-1.aarch64.rpm"
-        url: "https://github.com/bramble-sh/bramble/releases/download/0.20.0-desktop/Bramble-0.20.0-1.aarch64.rpm"
-        size: 14633389
-        sha256pre: "f6f097837b171d3c"
-      "770179898":
-        name: "Bramble_0.20.0_aarch64.AppImage"
-        url: "https://github.com/bramble-sh/bramble/releases/download/0.20.0-desktop/Bramble_0.20.0_aarch64.AppImage"
-        size: 115485192
-        sha256pre: "f1fa547dc89cf581"
-      "770179910":
-        name: "Bramble_0.20.0_aarch64.AppImage.sig"
-        url: "https://github.com/bramble-sh/bramble/releases/download/0.20.0-desktop/Bramble_0.20.0_aarch64.AppImage.sig"
-        size: 424
-        sha256pre: "0abe4c467c1734ef"
-      "770179918":
-        name: "Bramble_0.20.0_amd64.AppImage"
-        url: "https://github.com/bramble-sh/bramble/releases/download/0.20.0-desktop/Bramble_0.20.0_amd64.AppImage"
-        size: 119974392
-        sha256pre: "2ffd78cbe8f87517"
-      "770179920":
-        name: "Bramble_0.20.0_amd64.AppImage.sig"
-        url: "https://github.com/bramble-sh/bramble/releases/download/0.20.0-desktop/Bramble_0.20.0_amd64.AppImage.sig"
-        size: 420
-        sha256pre: "906963216809c555"
-      "770179936":
-        name: "Bramble.app.tar.gz"
-        url: "https://github.com/bramble-sh/bramble/releases/download/0.20.0-desktop/Bramble.app.tar.gz"
-        size: 23207009
-        sha256pre: "0e24b07a24de7b14"
-      "770179944":
-        name: "Bramble.app.tar.gz.sig"
-        url: "https://github.com/bramble-sh/bramble/releases/download/0.20.0-desktop/Bramble.app.tar.gz.sig"
-        size: 424
-        sha256pre: "00f82140aab66cbb"
-      "770179961":
-        name: "Bramble.app.tar.gz.proof"
-        url: "https://github.com/bramble-sh/bramble/releases/download/0.20.0-desktop/Bramble.app.tar.gz.proof"
-        size: 1696
-        sha256pre: "fee7427dd155e26e"
-      "770179975":
-        name: "Bramble_0.20.0_aarch64.AppImage.proof"
-        url: "https://github.com/bramble-sh/bramble/releases/download/0.20.0-desktop/Bramble_0.20.0_aarch64.AppImage.proof"
-        size: 1696
-        sha256pre: "d02467473a02cb66"
-      "770179994":
-        name: "SHA256SUMS"
-        url: "https://github.com/bramble-sh/bramble/releases/download/0.20.0-desktop/SHA256SUMS"
-        size: 745
-        sha256pre: "c1e6ebcae37e5be7"
-      "770179995":
-        name: "Bramble_0.20.0_amd64.AppImage.proof"
-        url: "https://github.com/bramble-sh/bramble/releases/download/0.20.0-desktop/Bramble_0.20.0_amd64.AppImage.proof"
-        size: 1621
-        sha256pre: "3ad7cab0f3901f31"
-      "770184006":
-        name: "Bramble_0.20.0_universal.dmg"
-        url: "https://github.com/bramble-sh/bramble/releases/download/0.20.0-desktop/Bramble_0.20.0_universal.dmg"
-        size: 22873119
-        sha256pre: "ec2b62355446633e"
   "453883608":
     tag: "1.42.0-chromium"
     title: "Chromium Extension 1.42.0"
@@ -296,3 +150,149 @@ releases:
         url: "https://github.com/bramble-sh/bramble/releases/download/0.21.0-desktop/SHA256SUMS"
         size: 745
         sha256pre: "b70754df5112e8ab"
+  "456330588":
+    tag: "1.43.0-chromium"
+    title: "Chromium Extension 1.43.0"
+    url: "https://github.com/bramble-sh/bramble/releases/tag/1.43.0-chromium"
+    published_at: "2026-11-24T05:07:42Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/bramble-sh/bramble/zipball/1.43.0-chromium"
+    source_tar_url: "https://api.github.com/repos/bramble-sh/bramble/tarball/1.43.0-chromium"
+    assets:
+      "785784710":
+        name: "bramble_chromium_1.43.0.zip"
+        url: "https://github.com/bramble-sh/bramble/releases/download/1.43.0-chromium/bramble_chromium_1.43.0.zip"
+        size: 1600073
+        sha256pre: "d079eb802b35568f"
+      "785784711":
+        name: "bramble_chromium_1.43.0.crx"
+        url: "https://github.com/bramble-sh/bramble/releases/download/1.43.0-chromium/bramble_chromium_1.43.0.crx"
+        size: 1592295
+        sha256pre: "379c76232638015b"
+      "785784713":
+        name: "SHA256SUMS"
+        url: "https://github.com/bramble-sh/bramble/releases/download/1.43.0-chromium/SHA256SUMS"
+        size: 188
+        sha256pre: "6d72bcd2a9234b6b"
+  "456331248":
+    tag: "1.40.0-firefox"
+    title: "Firefox Extension 1.40.0"
+    url: "https://github.com/bramble-sh/bramble/releases/tag/1.40.0-firefox"
+    published_at: "2026-11-24T05:08:40Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/bramble-sh/bramble/zipball/1.40.0-firefox"
+    source_tar_url: "https://api.github.com/repos/bramble-sh/bramble/tarball/1.40.0-firefox"
+    assets:
+      "785786948":
+        name: "bramble_firefox_1.40.0.zip"
+        url: "https://github.com/bramble-sh/bramble/releases/download/1.40.0-firefox/bramble_firefox_1.40.0.zip"
+        size: 1605109
+        sha256pre: "386c4632774e5ad8"
+      "785786952":
+        name: "SHA256SUMS"
+        url: "https://github.com/bramble-sh/bramble/releases/download/1.40.0-firefox/SHA256SUMS"
+        size: 93
+        sha256pre: "cf3f04210b7c7096"
+  "456335907":
+    tag: "0.34.0-android"
+    title: "Android 0.34.0"
+    url: "https://github.com/bramble-sh/bramble/releases/tag/0.34.0-android"
+    published_at: "2026-11-24T05:16:25Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/bramble-sh/bramble/zipball/0.34.0-android"
+    source_tar_url: "https://api.github.com/repos/bramble-sh/bramble/tarball/0.34.0-android"
+    assets:
+      "785806540":
+        name: "SHA256SUMS"
+        url: "https://github.com/bramble-sh/bramble/releases/download/0.34.0-android/SHA256SUMS"
+        size: 93
+        sha256pre: "ddcb74064ee37a83"
+      "785806541":
+        name: "bramble_android_0.34.0.apk"
+        url: "https://github.com/bramble-sh/bramble/releases/download/0.34.0-android/bramble_android_0.34.0.apk"
+        size: 12122405
+        sha256pre: "1da2dee685656e26"
+  "456348236":
+    tag: "0.22.0-desktop"
+    title: "Desktop 0.22.0"
+    url: "https://github.com/bramble-sh/bramble/releases/tag/0.22.0-desktop"
+    published_at: "2026-11-24T05:36:37Z"
+    prerelease: false
+    source_zip_url: "https://api.github.com/repos/bramble-sh/bramble/zipball/0.22.0-desktop"
+    source_tar_url: "https://api.github.com/repos/bramble-sh/bramble/tarball/0.22.0-desktop"
+    assets:
+      "785853191":
+        name: "Bramble_0.22.0_amd64.deb"
+        url: "https://github.com/bramble-sh/bramble/releases/download/0.22.0-desktop/Bramble_0.22.0_amd64.deb"
+        size: 14646022
+        sha256pre: "322c9e6f93c38621"
+      "785853195":
+        name: "Bramble_0.22.0_universal.dmg"
+        url: "https://github.com/bramble-sh/bramble/releases/download/0.22.0-desktop/Bramble_0.22.0_universal.dmg"
+        size: 23402822
+        sha256pre: "fc3ac5b9f4874b44"
+      "785853199":
+        name: "Bramble-0.22.0-1.aarch64.rpm"
+        url: "https://github.com/bramble-sh/bramble/releases/download/0.22.0-desktop/Bramble-0.22.0-1.aarch64.rpm"
+        size: 14987004
+        sha256pre: "8516c4a46bc7ec1f"
+      "785853200":
+        name: "Bramble_0.22.0_arm64.deb"
+        url: "https://github.com/bramble-sh/bramble/releases/download/0.22.0-desktop/Bramble_0.22.0_arm64.deb"
+        size: 14509692
+        sha256pre: "c71112edfe236ca1"
+      "785853204":
+        name: "Bramble-0.22.0-1.x86_64.rpm"
+        url: "https://github.com/bramble-sh/bramble/releases/download/0.22.0-desktop/Bramble-0.22.0-1.x86_64.rpm"
+        size: 15052704
+        sha256pre: "5f87fd5cdc9c6b27"
+      "785853291":
+        name: "Bramble_0.22.0_aarch64.AppImage"
+        url: "https://github.com/bramble-sh/bramble/releases/download/0.22.0-desktop/Bramble_0.22.0_aarch64.AppImage"
+        size: 115763720
+        sha256pre: "493d10776344748b"
+      "785853295":
+        name: "Bramble_0.22.0_aarch64.AppImage.sig"
+        url: "https://github.com/bramble-sh/bramble/releases/download/0.22.0-desktop/Bramble_0.22.0_aarch64.AppImage.sig"
+        size: 424
+        sha256pre: "1e86ce128bf1b34f"
+      "785853296":
+        name: "Bramble_0.22.0_amd64.AppImage"
+        url: "https://github.com/bramble-sh/bramble/releases/download/0.22.0-desktop/Bramble_0.22.0_amd64.AppImage"
+        size: 120285688
+        sha256pre: "37c2c0313dc0d4d7"
+      "785853298":
+        name: "Bramble_0.22.0_amd64.AppImage.sig"
+        url: "https://github.com/bramble-sh/bramble/releases/download/0.22.0-desktop/Bramble_0.22.0_amd64.AppImage.sig"
+        size: 420
+        sha256pre: "4f8b1e98a1c34bb2"
+      "785853304":
+        name: "Bramble.app.tar.gz"
+        url: "https://github.com/bramble-sh/bramble/releases/download/0.22.0-desktop/Bramble.app.tar.gz"
+        size: 23742682
+        sha256pre: "eea7a05c5a4eb6c4"
+      "785853319":
+        name: "Bramble.app.tar.gz.sig"
+        url: "https://github.com/bramble-sh/bramble/releases/download/0.22.0-desktop/Bramble.app.tar.gz.sig"
+        size: 424
+        sha256pre: "9a4283190044a2c7"
+      "785853324":
+        name: "Bramble.app.tar.gz.proof"
+        url: "https://github.com/bramble-sh/bramble/releases/download/0.22.0-desktop/Bramble.app.tar.gz.proof"
+        size: 1771
+        sha256pre: "203ce652686821f0"
+      "785853334":
+        name: "Bramble_0.22.0_aarch64.AppImage.proof"
+        url: "https://github.com/bramble-sh/bramble/releases/download/0.22.0-desktop/Bramble_0.22.0_aarch64.AppImage.proof"
+        size: 1771
+        sha256pre: "9856a93ba9571dbd"
+      "785853341":
+        name: "Bramble_0.22.0_amd64.AppImage.proof"
+        url: "https://github.com/bramble-sh/bramble/releases/download/0.22.0-desktop/Bramble_0.22.0_amd64.AppImage.proof"
+        size: 1771
+        sha256pre: "a815d481e19dd8f7"
+      "785853356":
+        name: "SHA256SUMS"
+        url: "https://github.com/bramble-sh/bramble/releases/download/0.22.0-desktop/SHA256SUMS"
+        size: 745
+        sha256pre: "7d7c0004cb7455be"
