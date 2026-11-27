@@ -1,130 +1,643 @@
 $schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
 repository_id: 1226957387
 repository: "jswysnemc/mark-shot"
-observed_at: "2026-11-23T02:55:24Z"
+observed_at: "2026-11-27T12:31:09Z"
 history_complete: true
 releases:
-  "433412979":
-    tag: "native-v0.2.0-preview.5"
-    title: "Mark Shot native-v0.2.0-preview.5"
-    published_at: "2026-11-04T01:35:53Z"
-    prerelease: true
-    observed_at: "2026-11-10T17:10:33Z"
+  "423369154":
+    tag: "v0.1.61"
+    published_at: "2026-10-25T11:52:40Z"
+    prerelease: false
     assets:
-      "707803006":
-        name: "mark-shot-native-linux-x86_64.tar.gz.sha256"
+      "674916284":
+        name: "mark-shot-plugin-translate-youdao-v0.1.61-linux-arm64.so.sha256"
+        size: 123
+        sha256pre: "18a2dc2f2fb24f05"
+      "674916285":
+        name: "mark-shot-v0.1.61-linux-arm64.tar.gz.sha256"
         size: 103
-        sha256pre: "d465b1aef0471e47"
-      "707803007":
-        name: "mark-shot-native-linux-x86_64.tar.gz"
-        size: 17314795
-        sha256pre: "f376ae5bbd55397d"
-      "707803009":
-        name: "native-preview-verification.json"
-        size: 20393
-        sha256pre: "9d103fd3a07a00dd"
-  "433456287":
-    tag: "native-v0.2.0-preview.6"
-    title: "Mark Shot native-v0.2.0-preview.6"
-    published_at: "2026-11-04T02:50:38Z"
-    prerelease: true
-    observed_at: "2026-11-10T17:10:33Z"
-    assets:
-      "707989837":
-        name: "mark-shot-native-linux-x86_64.tar.gz"
-        size: 17315777
-        sha256pre: "c20d903eb0bd5fab"
-      "707989838":
-        name: "native-preview-verification.json"
-        size: 23235
-        sha256pre: "e413bce2e87877dd"
-      "707989839":
-        name: "mark-shot-native-linux-x86_64.tar.gz.sha256"
+        sha256pre: "c93afd607ca54dd3"
+      "674916286":
+        name: "mark-shot-plugin-translate-baidu-v0.1.61-linux-arm64.so.sha256"
+        size: 122
+        sha256pre: "a8364a4758b6c47d"
+      "674916287":
+        name: "mark-shot-v0.1.61-linux-arm64.tar.gz"
+        size: 2881430
+        sha256pre: "5321e30c71467876"
+      "674916288":
+        name: "mark-shot-plugin-translate-youdao-v0.1.61-linux-arm64.so"
+        size: 156032
+        sha256pre: "dafc8dabc63a0255"
+      "674916289":
+        name: "mark-shot-plugin-translate-gemini-v0.1.61-linux-arm64.so"
+        size: 153800
+        sha256pre: "edf112b84c516a88"
+      "674916290":
+        name: "mark-shot-plugin-translate-anthropic-v0.1.61-linux-arm64.so.sha256"
+        size: 126
+        sha256pre: "aa469e67c11322ea"
+      "674916291":
+        name: "mark-shot-plugin-translate-tencent-v0.1.61-linux-arm64.so"
+        size: 159856
+        sha256pre: "dc4ca6c37711d065"
+      "674916292":
+        name: "mark-shot-plugin-translate-tencent-v0.1.61-linux-arm64.so.sha256"
+        size: 124
+        sha256pre: "c57325cdee772681"
+      "674916293":
+        name: "mark-shot-plugin-translate-openai-v0.1.61-linux-arm64.so"
+        size: 153264
+        sha256pre: "46388c088a451197"
+      "674916294":
+        name: "mark-shot-plugin-translate-baidu-v0.1.61-linux-arm64.so"
+        size: 156040
+        sha256pre: "dd4355f5158a1d56"
+      "674916295":
+        name: "mark-shot-plugin-translate-openai-v0.1.61-linux-arm64.so.sha256"
+        size: 123
+        sha256pre: "9fff643939b2800a"
+      "674916296":
+        name: "mark-shot-plugin-translate-anthropic-v0.1.61-linux-arm64.so"
+        size: 154080
+        sha256pre: "c21d5424fb639615"
+      "674916298":
+        name: "mark-shot-plugin-translate-gemini-v0.1.61-linux-arm64.so.sha256"
+        size: 123
+        sha256pre: "028d25b122eab211"
+      "674916668":
+        name: "mark-shot-bin-0.1.61-1-aarch64.pkg.tar.zst.sha256"
+        size: 109
+        sha256pre: "97d1c7473e7c7a86"
+      "674916670":
+        name: "mark-shot-bin-0.1.61-1-aarch64.pkg.tar.zst"
+        size: 2782598
+        sha256pre: "99356f8f8d8ae7cb"
+      "674916801":
+        name: "mark-shot_0.1.61_arm64.ubuntu24.04.deb.sha256"
+        size: 105
+        sha256pre: "47283acb172e88f5"
+      "674916803":
+        name: "mark-shot_0.1.61_arm64.ubuntu24.04.deb"
+        size: 2280820
+        sha256pre: "d815b8ed26c14c76"
+      "674919716":
+        name: "mark-shot_0.1.61_arm64.ubuntu26.04.deb.sha256"
+        size: 105
+        sha256pre: "ff2ef9121b3e46e0"
+      "674919718":
+        name: "mark-shot_0.1.61_arm64.ubuntu26.04.deb"
+        size: 2361282
+        sha256pre: "05332a93ec0b00d3"
+      "674921164":
+        name: "mark-shot_0.1.61_arm64.debian13.deb.sha256"
+        size: 102
+        sha256pre: "7ce08702a9a906b2"
+      "674921165":
+        name: "mark-shot_0.1.61_arm64.debian13.deb"
+        size: 2052584
+        sha256pre: "958c8a4b020a77c8"
+      "674921862":
+        name: "mark-shot_0.1.61_arm64.deb"
+        size: 1979064
+        sha256pre: "7c6991f3e93beff7"
+      "674921864":
+        name: "mark-shot_0.1.61_arm64.deb.sha256"
+        size: 93
+        sha256pre: "371dc76298b9ebae"
+      "674929369":
+        name: "mark-shot_0.1.61_amd64.ubuntu24.04.deb.sha256"
+        size: 105
+        sha256pre: "9a330594a83f4dae"
+      "674929370":
+        name: "mark-shot_0.1.61_amd64.ubuntu24.04.deb"
+        size: 2406700
+        sha256pre: "6c36628a0f9d52c2"
+      "674929386":
+        name: "mark-shot_0.1.61_amd64.deb.sha256"
+        size: 93
+        sha256pre: "8ae54f91a6a15057"
+      "674929387":
+        name: "mark-shot_0.1.61_amd64.deb"
+        size: 2209140
+        sha256pre: "92efe36ba00d781b"
+      "674931708":
+        name: "mark-shot_0.1.61_amd64.ubuntu26.04.deb"
+        size: 2497664
+        sha256pre: "80f01f8ce3fcac87"
+      "674931709":
+        name: "mark-shot_0.1.61_amd64.ubuntu26.04.deb.sha256"
+        size: 105
+        sha256pre: "041b91e9d815977b"
+      "674932410":
+        name: "mark-shot-bin-0.1.61-1-x86_64.pkg.tar.zst.sha256"
+        size: 108
+        sha256pre: "045e81659b71b87f"
+      "674932415":
+        name: "mark-shot-bin-0.1.61-1-x86_64.pkg.tar.zst"
+        size: 3022835
+        sha256pre: "50f41e893102aad7"
+      "674935996":
+        name: "mark-shot-v0.1.61-linux-x86_64.AppImage.sha256"
+        size: 106
+        sha256pre: "3eeb63b3e5a22655"
+      "674935998":
+        name: "mark-shot-v0.1.61-linux-x86_64.AppImage"
+        size: 100153848
+        sha256pre: "adfe9ea367144b1d"
+      "674936003":
+        name: "mark-shot-v0.1.61-linux-x86_64.flatpak.sha256"
+        size: 105
+        sha256pre: "eaf2d897655c642c"
+      "674936005":
+        name: "mark-shot-v0.1.61-linux-x86_64.flatpak"
+        size: 2174784
+        sha256pre: "7dd736b1a995edb3"
+      "674936073":
+        name: "mark-shot_0.1.61_fedora_aarch64.rpm.sha256"
+        size: 102
+        sha256pre: "eb4d89eefdc6cfff"
+      "674936074":
+        name: "mark-shot_0.1.61_fedora_aarch64.rpm"
+        size: 2516704
+        sha256pre: "b31b3a58ee71e5e8"
+      "674937080":
+        name: "mark-shot_0.1.61_amd64.debian13.deb.sha256"
+        size: 102
+        sha256pre: "5907ea98746e2d0a"
+      "674937081":
+        name: "mark-shot_0.1.61_amd64.debian13.deb"
+        size: 2268068
+        sha256pre: "31705d66dd3e28e0"
+      "674946011":
+        name: "mark-shot-plugin-ocr-rapid-v0.1.61-windows-x86_64.dll.sha256"
+        size: 120
+        sha256pre: "6cc3d364ee3741c8"
+      "674946013":
+        name: "mark-shot-v0.1.61-windows-x86_64.zip.sha256"
         size: 103
-        sha256pre: "fc971b5b3d93c063"
-  "444794874":
-    tag: "native-v0.2.0-preview.7"
-    title: "Mark Shot 0.2.0-preview.7"
-    published_at: "2026-11-13T22:29:54Z"
-    prerelease: true
-    observed_at: "2026-11-14T11:40:56Z"
+        sha256pre: "fd597505d8f8a1d4"
+      "674946014":
+        name: "mark-shot-plugin-translate-tencent-v0.1.61-windows-x86_64.dll.sha256"
+        size: 128
+        sha256pre: "55dfa50e93ea6167"
+      "674946016":
+        name: "mark-shot-plugin-translate-openai-v0.1.61-windows-x86_64.dll.sha256"
+        size: 127
+        sha256pre: "0124e930ea807ae1"
+      "674946018":
+        name: "mark-shot-plugin-code-scan-zxing-v0.1.61-windows-x86_64.dll.sha256"
+        size: 126
+        sha256pre: "2d3cbd7f1cb16cf5"
+      "674946019":
+        name: "mark-shot-plugin-translate-youdao-v0.1.61-windows-x86_64.dll.sha256"
+        size: 127
+        sha256pre: "d6631913aff17bff"
+      "674946020":
+        name: "mark-shot-plugin-translate-gemini-v0.1.61-windows-x86_64.dll.sha256"
+        size: 127
+        sha256pre: "9a7adac490ca5925"
+      "674946021":
+        name: "mark-shot-plugin-translate-baidu-v0.1.61-windows-x86_64.dll.sha256"
+        size: 126
+        sha256pre: "678ec1942fb9b9b7"
+      "674946022":
+        name: "mark-shot-plugin-translate-youdao-v0.1.61-windows-x86_64.dll"
+        size: 235844
+        sha256pre: "90da9c56ef13e974"
+      "674946023":
+        name: "mark-shot-plugin-translate-tencent-v0.1.61-windows-x86_64.dll"
+        size: 257100
+        sha256pre: "f5951046a652339f"
+      "674946024":
+        name: "mark-shot-plugin-translate-openai-v0.1.61-windows-x86_64.dll"
+        size: 138891
+        sha256pre: "51b7c080ddfa75eb"
+      "674946025":
+        name: "mark-shot-plugin-translate-anthropic-v0.1.61-windows-x86_64.dll.sha256"
+        size: 130
+        sha256pre: "d2cb7fb4fefa46ab"
+      "674946026":
+        name: "mark-shot-plugin-code-scan-zxing-v0.1.61-windows-x86_64.dll"
+        size: 104090
+        sha256pre: "ae2d9b36a3be7030"
+      "674946027":
+        name: "mark-shot-plugin-translate-baidu-v0.1.61-windows-x86_64.dll"
+        size: 236414
+        sha256pre: "bb055bf54600bad5"
+      "674946028":
+        name: "mark-shot-v0.1.61-windows-x86_64.zip"
+        size: 110141490
+        sha256pre: "0a22bf24f3aa8feb"
+      "674946029":
+        name: "mark-shot-plugin-translate-gemini-v0.1.61-windows-x86_64.dll"
+        size: 148181
+        sha256pre: "dbfdfdde00e3ca16"
+      "674946031":
+        name: "mark-shot-plugin-ocr-rapid-v0.1.61-windows-x86_64.dll"
+        size: 183453
+        sha256pre: "ed931956501f4041"
+      "674946033":
+        name: "mark-shot-plugin-translate-anthropic-v0.1.61-windows-x86_64.dll"
+        size: 144519
+        sha256pre: "77a36b12e7336160"
+      "674947227":
+        name: "mark-shot-plugin-translate-openai-v0.1.61-linux-x86_64.so.sha256"
+        size: 124
+        sha256pre: "de27efb1a3ec3833"
+      "674947228":
+        name: "mark-shot-v0.1.61-linux-x86_64.tar.gz.sha256"
+        size: 104
+        sha256pre: "28d14fee17aa84f7"
+      "674947229":
+        name: "mark-shot-plugin-translate-tencent-v0.1.61-linux-x86_64.so.sha256"
+        size: 125
+        sha256pre: "82c354e9b232ecf9"
+      "674947230":
+        name: "mark-shot-plugin-translate-anthropic-v0.1.61-linux-x86_64.so.sha256"
+        size: 127
+        sha256pre: "b830a813efdf26d8"
+      "674947231":
+        name: "mark-shot-plugin-code-scan-zxing-v0.1.61-linux-x86_64.so.sha256"
+        size: 123
+        sha256pre: "753e730cb23308e1"
+      "674947232":
+        name: "mark-shot-plugin-translate-gemini-v0.1.61-linux-x86_64.so.sha256"
+        size: 124
+        sha256pre: "e20d8c08dc188504"
+      "674947233":
+        name: "mark-shot-plugin-translate-openai-v0.1.61-linux-x86_64.so"
+        size: 104464
+        sha256pre: "615663349fafb6f4"
+      "674947234":
+        name: "mark-shot-plugin-translate-baidu-v0.1.61-linux-x86_64.so.sha256"
+        size: 123
+        sha256pre: "4fbda1595e51f921"
+      "674947235":
+        name: "mark-shot-plugin-ocr-rapid-v0.1.61-linux-x86_64.so.sha256"
+        size: 117
+        sha256pre: "998f99e77672673a"
+      "674947236":
+        name: "mark-shot-plugin-translate-baidu-v0.1.61-linux-x86_64.so"
+        size: 170192
+        sha256pre: "7fb7984bbb8f9a57"
+      "674947237":
+        name: "mark-shot-plugin-translate-youdao-v0.1.61-linux-x86_64.so.sha256"
+        size: 124
+        sha256pre: "054ee0473cc49350"
+      "674947238":
+        name: "mark-shot-plugin-translate-gemini-v0.1.61-linux-x86_64.so"
+        size: 109256
+        sha256pre: "27030582d8bf8934"
+      "674947239":
+        name: "mark-shot-plugin-code-scan-zxing-v0.1.61-linux-x86_64.so"
+        size: 45224
+        sha256pre: "dd5131d98372f70d"
+      "674947240":
+        name: "mark-shot-plugin-translate-youdao-v0.1.61-linux-x86_64.so"
+        size: 170152
+        sha256pre: "edf3be3bea81ceed"
+      "674947242":
+        name: "mark-shot-plugin-ocr-rapid-v0.1.61-linux-x86_64.so"
+        size: 148536
+        sha256pre: "c29a800b254166a7"
+      "674947243":
+        name: "mark-shot-v0.1.61-linux-x86_64.tar.gz"
+        size: 3250947
+        sha256pre: "86035024b8a3e0ec"
+      "674947245":
+        name: "mark-shot-plugin-translate-anthropic-v0.1.61-linux-x86_64.so"
+        size: 105544
+        sha256pre: "9ab267e42bb0dad3"
+      "674947246":
+        name: "mark-shot-plugin-translate-tencent-v0.1.61-linux-x86_64.so"
+        size: 183472
+        sha256pre: "dbf048d77af5de64"
+      "674959974":
+        name: "mark-shot_0.1.61_fedora_x86_64.rpm"
+        size: 2725546
+        sha256pre: "793dddbf9868cc88"
+      "674959975":
+        name: "mark-shot_0.1.61_fedora_x86_64.rpm.sha256"
+        size: 101
+        sha256pre: "292a996e8482e990"
+  "430263815":
+    tag: "v0.1.62"
+    published_at: "2026-11-01T00:08:19Z"
+    prerelease: false
     assets:
-      "745381041":
-        name: "mark-shot-0.2.0.preview.7-1.fc45.aarch64.rpm"
-        size: 26879218
-        sha256pre: "8baf14ebe752ddd8"
-      "745381103":
-        name: "mark-shot-0.2.0.preview.7-1.fc45.x86_64.rpm"
-        size: 27315537
-        sha256pre: "6eafd5427fc7c892"
-      "745381177":
-        name: "mark-shot-bin-0.2.0_preview.7-1-aarch64.pkg.tar.zst"
-        size: 25812716
-        sha256pre: "f19f5d3a0d735682"
-      "745381289":
-        name: "mark-shot-bin-0.2.0_preview.7-1-x86_64.pkg.tar.zst"
-        size: 26765380
-        sha256pre: "5cfabe25509ff019"
-      "745381409":
-        name: "mark-shot-native-0.2.0-preview.7-linux-aarch64.tar.gz"
-        size: 28761545
-        sha256pre: "84ba84e59d980577"
-      "745381512":
-        name: "mark-shot-native-0.2.0-preview.7-linux-x86_64.AppImage"
-        size: 31848952
-        sha256pre: "80d98aff6d613b97"
-      "745381629":
-        name: "mark-shot-native-0.2.0-preview.7-linux-x86_64.flatpak"
-        size: 25463440
-        sha256pre: "b3655ff8b7e7361b"
-      "745381738":
-        name: "mark-shot-native-0.2.0-preview.7-linux-x86_64.tar.gz"
-        size: 29638773
-        sha256pre: "c9d7e790e6f46d81"
-      "745381836":
-        name: "mark-shot-native-0.2.0-preview.7-windows-x86_64-msvc.zip"
-        size: 26847475
-        sha256pre: "e6fa08162bc05799"
-      "745381971":
-        name: "mark-shot_0.2.0-preview.7_fedora_aarch64.src.rpm"
-        size: 162974130
-        sha256pre: "f5474d462e7d640b"
-      "745382260":
-        name: "mark-shot_0.2.0-preview.7_fedora_x86_64.src.rpm"
-        size: 162974187
-        sha256pre: "a6a4c6624b2532ae"
-      "745382528":
-        name: "mark-shot_0.2.0.preview.7-1_amd64.deb"
-        size: 25274260
-        sha256pre: "80f5faf526719010"
-      "745382632":
-        name: "mark-shot_0.2.0.preview.7-1_amd64.debian13.deb"
-        size: 25750976
-        sha256pre: "0027e5bc18e8636c"
-      "745382732":
-        name: "mark-shot_0.2.0.preview.7-1_amd64.ubuntu24.04.deb"
-        size: 25665100
-        sha256pre: "af9e5e08ea05efa8"
-      "745382808":
-        name: "mark-shot_0.2.0.preview.7-1_amd64.ubuntu26.04.deb"
-        size: 25810304
-        sha256pre: "e949d60525d5e2a8"
-      "745382900":
-        name: "mark-shot_0.2.0.preview.7-1_arm64.deb"
-        size: 23758440
-        sha256pre: "af404d1325bd5ade"
-      "745382984":
-        name: "mark-shot_0.2.0.preview.7-1_arm64.debian13.deb"
-        size: 24237356
-        sha256pre: "3358134b4283e73b"
-      "745383058":
-        name: "mark-shot_0.2.0.preview.7-1_arm64.ubuntu24.04.deb"
-        size: 24052684
-        sha256pre: "c4b20e8aa1897306"
-      "745383148":
-        name: "mark-shot_0.2.0.preview.7-1_arm64.ubuntu26.04.deb"
-        size: 24314496
-        sha256pre: "b3904d8479938892"
+      "696874438":
+        name: "mark-shot-v0.1.62-linux-arm64.tar.gz.sha256"
+        size: 103
+        sha256pre: "60687939081159ab"
+      "696874439":
+        name: "mark-shot-v0.1.62-linux-arm64.tar.gz"
+        size: 3031119
+        sha256pre: "1831c3d7acc14ed5"
+      "696874441":
+        name: "mark-shot-plugin-translate-tencent-v0.1.62-linux-arm64.so.sha256"
+        size: 124
+        sha256pre: "69b6eace08848da6"
+      "696874443":
+        name: "mark-shot-plugin-translate-tencent-v0.1.62-linux-arm64.so"
+        size: 159856
+        sha256pre: "dc4ca6c37711d065"
+      "696874447":
+        name: "mark-shot-plugin-translate-youdao-v0.1.62-linux-arm64.so"
+        size: 156032
+        sha256pre: "dafc8dabc63a0255"
+      "696874449":
+        name: "mark-shot-plugin-translate-baidu-v0.1.62-linux-arm64.so.sha256"
+        size: 122
+        sha256pre: "e2c18031715cc58b"
+      "696874451":
+        name: "mark-shot-plugin-translate-openai-v0.1.62-linux-arm64.so"
+        size: 153264
+        sha256pre: "46388c088a451197"
+      "696874453":
+        name: "mark-shot-plugin-translate-openai-v0.1.62-linux-arm64.so.sha256"
+        size: 123
+        sha256pre: "26b681374482651d"
+      "696874454":
+        name: "mark-shot-plugin-translate-anthropic-v0.1.62-linux-arm64.so.sha256"
+        size: 126
+        sha256pre: "03d0f1fb48ef38ce"
+      "696874457":
+        name: "mark-shot-plugin-translate-youdao-v0.1.62-linux-arm64.so.sha256"
+        size: 123
+        sha256pre: "9e5ceff328939fde"
+      "696874458":
+        name: "mark-shot-plugin-translate-baidu-v0.1.62-linux-arm64.so"
+        size: 156040
+        sha256pre: "dd4355f5158a1d56"
+      "696874462":
+        name: "mark-shot-plugin-translate-gemini-v0.1.62-linux-arm64.so.sha256"
+        size: 123
+        sha256pre: "352b15e121842719"
+      "696874464":
+        name: "mark-shot-plugin-translate-gemini-v0.1.62-linux-arm64.so"
+        size: 153800
+        sha256pre: "edf112b84c516a88"
+      "696874472":
+        name: "mark-shot-plugin-translate-anthropic-v0.1.62-linux-arm64.so"
+        size: 154080
+        sha256pre: "c21d5424fb639615"
+      "696878073":
+        name: "mark-shot_0.1.62_fedora_aarch64.rpm"
+        size: 2666634
+        sha256pre: "25f543af5314242b"
+      "696878089":
+        name: "mark-shot_0.1.62_fedora_aarch64.rpm.sha256"
+        size: 102
+        sha256pre: "784156f85252212e"
+      "696882082":
+        name: "mark-shot-bin-0.1.62-1-aarch64.pkg.tar.zst"
+        size: 2936124
+        sha256pre: "6f3b17ab6df66a3a"
+      "696882083":
+        name: "mark-shot-bin-0.1.62-1-aarch64.pkg.tar.zst.sha256"
+        size: 109
+        sha256pre: "8e1f0ef3ae582a23"
+      "696887733":
+        name: "mark-shot_0.1.62_arm64.ubuntu26.04.deb"
+        size: 2483478
+        sha256pre: "5888a54602bc5c8c"
+      "696887738":
+        name: "mark-shot_0.1.62_arm64.ubuntu26.04.deb.sha256"
+        size: 105
+        sha256pre: "abd0468cddc479b2"
+      "696887779":
+        name: "mark-shot_0.1.62_arm64.ubuntu24.04.deb.sha256"
+        size: 105
+        sha256pre: "2013ad33ef1c494c"
+      "696887780":
+        name: "mark-shot_0.1.62_arm64.ubuntu24.04.deb"
+        size: 2395534
+        sha256pre: "7936c396c97c18e8"
+      "696890960":
+        name: "mark-shot_0.1.62_amd64.debian13.deb.sha256"
+        size: 102
+        sha256pre: "c0986ec3fddc264f"
+      "696890961":
+        name: "mark-shot_0.1.62_amd64.debian13.deb"
+        size: 2380344
+        sha256pre: "96a9fabeaaa7372f"
+      "696892320":
+        name: "mark-shot_0.1.62_arm64.debian13.deb.sha256"
+        size: 102
+        sha256pre: "b83afa43ec728c7a"
+      "696892322":
+        name: "mark-shot_0.1.62_arm64.debian13.deb"
+        size: 2150972
+        sha256pre: "61106c8881731620"
+      "696894483":
+        name: "mark-shot-bin-0.1.62-1-x86_64.pkg.tar.zst"
+        size: 3180846
+        sha256pre: "f7f1dfd27002cacc"
+      "696894486":
+        name: "mark-shot-bin-0.1.62-1-x86_64.pkg.tar.zst.sha256"
+        size: 108
+        sha256pre: "b3515cb453770b4e"
+      "696894618":
+        name: "mark-shot_0.1.62_arm64.deb.sha256"
+        size: 93
+        sha256pre: "a66698824c57db0c"
+      "696894621":
+        name: "mark-shot_0.1.62_arm64.deb"
+        size: 2073288
+        sha256pre: "07943c034748ab01"
+      "696895408":
+        name: "mark-shot_0.1.62_amd64.ubuntu24.04.deb.sha256"
+        size: 105
+        sha256pre: "e28fa03fa901ca75"
+      "696895409":
+        name: "mark-shot_0.1.62_amd64.ubuntu24.04.deb"
+        size: 2531896
+        sha256pre: "d24927e3838956cc"
+      "696904981":
+        name: "mark-shot-plugin-translate-anthropic-v0.1.62-windows-x86_64.dll.sha256"
+        size: 130
+        sha256pre: "9f36498667e28d20"
+      "696904982":
+        name: "mark-shot-plugin-translate-tencent-v0.1.62-windows-x86_64.dll.sha256"
+        size: 128
+        sha256pre: "523039a408f82a9a"
+      "696904983":
+        name: "mark-shot-plugin-code-scan-zxing-v0.1.62-windows-x86_64.dll.sha256"
+        size: 126
+        sha256pre: "5ba24ba516428d11"
+      "696904984":
+        name: "mark-shot-plugin-ocr-rapid-v0.1.62-windows-x86_64.dll.sha256"
+        size: 120
+        sha256pre: "71b098c6acdcf2c0"
+      "696904985":
+        name: "mark-shot-v0.1.62-windows-x86_64.zip"
+        size: 111250860
+        sha256pre: "9605817328ad6a23"
+      "696904986":
+        name: "mark-shot-v0.1.62-windows-x86_64.zip.sha256"
+        size: 103
+        sha256pre: "969bd6b3e79588bd"
+      "696904987":
+        name: "mark-shot-plugin-code-scan-zxing-v0.1.62-windows-x86_64.dll"
+        size: 69855
+        sha256pre: "38466dadf75a194e"
+      "696904988":
+        name: "mark-shot-plugin-translate-openai-v0.1.62-windows-x86_64.dll"
+        size: 138891
+        sha256pre: "8fab7e682ee6993e"
+      "696904989":
+        name: "mark-shot-plugin-translate-gemini-v0.1.62-windows-x86_64.dll.sha256"
+        size: 127
+        sha256pre: "047831c603fa2396"
+      "696904991":
+        name: "mark-shot-plugin-translate-openai-v0.1.62-windows-x86_64.dll.sha256"
+        size: 127
+        sha256pre: "883bcd86076745d8"
+      "696904992":
+        name: "mark-shot-plugin-translate-anthropic-v0.1.62-windows-x86_64.dll"
+        size: 144519
+        sha256pre: "e072c3987a3fa365"
+      "696904993":
+        name: "mark-shot-plugin-translate-tencent-v0.1.62-windows-x86_64.dll"
+        size: 257100
+        sha256pre: "3ab455c66881adde"
+      "696904995":
+        name: "mark-shot-plugin-translate-gemini-v0.1.62-windows-x86_64.dll"
+        size: 148181
+        sha256pre: "70d5fa52616e0fba"
+      "696904996":
+        name: "mark-shot-plugin-translate-baidu-v0.1.62-windows-x86_64.dll"
+        size: 236414
+        sha256pre: "b9e42ddc1f12fda3"
+      "696904998":
+        name: "mark-shot-plugin-translate-youdao-v0.1.62-windows-x86_64.dll.sha256"
+        size: 127
+        sha256pre: "308263d999a109bf"
+      "696904999":
+        name: "mark-shot-plugin-translate-baidu-v0.1.62-windows-x86_64.dll.sha256"
+        size: 126
+        sha256pre: "549534c891056bbd"
+      "696905000":
+        name: "mark-shot-plugin-translate-youdao-v0.1.62-windows-x86_64.dll"
+        size: 235844
+        sha256pre: "8861e70cd48c210f"
+      "696905004":
+        name: "mark-shot-plugin-ocr-rapid-v0.1.62-windows-x86_64.dll"
+        size: 183453
+        sha256pre: "b748ab951dbd3828"
+      "696907529":
+        name: "mark-shot_0.1.62_amd64.ubuntu26.04.deb.sha256"
+        size: 105
+        sha256pre: "acb56dccc6e8916b"
+      "696907530":
+        name: "mark-shot_0.1.62_amd64.ubuntu26.04.deb"
+        size: 2624406
+        sha256pre: "e06dbb035d8efadd"
+      "696907533":
+        name: "mark-shot-plugin-translate-openai-v0.1.62-linux-x86_64.so.sha256"
+        size: 124
+        sha256pre: "60289470bb235e06"
+      "696907534":
+        name: "mark-shot-plugin-translate-tencent-v0.1.62-linux-x86_64.so"
+        size: 183472
+        sha256pre: "dbf048d77af5de64"
+      "696907535":
+        name: "mark-shot-plugin-code-scan-zxing-v0.1.62-linux-x86_64.so.sha256"
+        size: 123
+        sha256pre: "c567d8f2010a4cb9"
+      "696907536":
+        name: "mark-shot-plugin-translate-youdao-v0.1.62-linux-x86_64.so"
+        size: 170152
+        sha256pre: "edf3be3bea81ceed"
+      "696907537":
+        name: "mark-shot-plugin-translate-baidu-v0.1.62-linux-x86_64.so.sha256"
+        size: 123
+        sha256pre: "8aed83c11da3928b"
+      "696907538":
+        name: "mark-shot-plugin-ocr-rapid-v0.1.62-linux-x86_64.so.sha256"
+        size: 117
+        sha256pre: "f2501667c08a9782"
+      "696907539":
+        name: "mark-shot-v0.1.62-linux-x86_64.tar.gz"
+        size: 3412485
+        sha256pre: "3ceb17e373a020f0"
+      "696907540":
+        name: "mark-shot-plugin-translate-anthropic-v0.1.62-linux-x86_64.so"
+        size: 105544
+        sha256pre: "9ab267e42bb0dad3"
+      "696907541":
+        name: "mark-shot-v0.1.62-linux-x86_64.tar.gz.sha256"
+        size: 104
+        sha256pre: "13896155db89362a"
+      "696907542":
+        name: "mark-shot-plugin-translate-youdao-v0.1.62-linux-x86_64.so.sha256"
+        size: 124
+        sha256pre: "8481c583406caef9"
+      "696907543":
+        name: "mark-shot-plugin-translate-tencent-v0.1.62-linux-x86_64.so.sha256"
+        size: 125
+        sha256pre: "6cffdd0303a55b5a"
+      "696907544":
+        name: "mark-shot-plugin-translate-gemini-v0.1.62-linux-x86_64.so.sha256"
+        size: 124
+        sha256pre: "160b08fb537ee7a8"
+      "696907545":
+        name: "mark-shot-plugin-translate-openai-v0.1.62-linux-x86_64.so"
+        size: 104464
+        sha256pre: "615663349fafb6f4"
+      "696907547":
+        name: "mark-shot-plugin-code-scan-zxing-v0.1.62-linux-x86_64.so"
+        size: 45224
+        sha256pre: "dd5131d98372f70d"
+      "696907548":
+        name: "mark-shot-plugin-translate-anthropic-v0.1.62-linux-x86_64.so.sha256"
+        size: 127
+        sha256pre: "ba29a0840fbdd89b"
+      "696907550":
+        name: "mark-shot-plugin-ocr-rapid-v0.1.62-linux-x86_64.so"
+        size: 148536
+        sha256pre: "c29a800b254166a7"
+      "696907551":
+        name: "mark-shot-plugin-translate-gemini-v0.1.62-linux-x86_64.so"
+        size: 109256
+        sha256pre: "27030582d8bf8934"
+      "696907553":
+        name: "mark-shot-plugin-translate-baidu-v0.1.62-linux-x86_64.so"
+        size: 170192
+        sha256pre: "7fb7984bbb8f9a57"
+      "696912460":
+        name: "mark-shot-v0.1.62-linux-x86_64.AppImage.sha256"
+        size: 106
+        sha256pre: "8b97a5b5bf8c343f"
+      "696912468":
+        name: "mark-shot-v0.1.62-linux-x86_64.AppImage"
+        size: 100305400
+        sha256pre: "4e38a860c1ca5df3"
+      "696922348":
+        name: "mark-shot-v0.1.62-linux-x86_64.flatpak"
+        size: 2290408
+        sha256pre: "4c569385d6dddb27"
+      "696922349":
+        name: "mark-shot-v0.1.62-linux-x86_64.flatpak.sha256"
+        size: 105
+        sha256pre: "1a993fe23c4c5997"
+      "696923610":
+        name: "mark-shot_0.1.62_amd64.deb"
+        size: 2320084
+        sha256pre: "d962815707e81462"
+      "696923612":
+        name: "mark-shot_0.1.62_amd64.deb.sha256"
+        size: 93
+        sha256pre: "657a2f00546d109e"
+      "696934289":
+        name: "mark-shot_0.1.62_fedora_x86_64.rpm.sha256"
+        size: 101
+        sha256pre: "5fc7c84270d2e026"
+      "696934290":
+        name: "mark-shot_0.1.62_fedora_x86_64.rpm"
+        size: 2889920
+        sha256pre: "47084be26e901a9b"
   "445884377":
     tag: "v0.2.0"
     title: "Mark Shot 0.2.0"
@@ -551,3 +1064,89 @@ releases:
         name: "mark-shot_0.2.4_fedora_x86_64.src.rpm"
         size: 175591399
         sha256pre: "a725d245dde1d66c"
+  "457228422":
+    tag: "v0.2.5"
+    title: "Mark Shot 0.2.5"
+    published_at: "2026-11-24T19:23:34Z"
+    prerelease: false
+    assets:
+      "788528229":
+        name: "mark-shot-0.2.5-1.fc43.aarch64.rpm"
+        size: 27424585
+        sha256pre: "7ebb7c3695acc301"
+      "788528367":
+        name: "mark-shot-0.2.5-1.fc43.x86_64.rpm"
+        size: 27853256
+        sha256pre: "c6eee921a79e7a44"
+      "788528481":
+        name: "mark-shot-bin-0.2.5-1-aarch64.pkg.tar.zst"
+        size: 26327100
+        sha256pre: "0c93a122816c32a3"
+      "788528555":
+        name: "mark-shot-bin-0.2.5-1-x86_64.pkg.tar.zst"
+        size: 27306744
+        sha256pre: "b3bbcb7a49936051"
+      "788528641":
+        name: "mark-shot-native-0.2.5-linux-aarch64.tar.gz"
+        size: 29482726
+        sha256pre: "41383fcd17c5dd97"
+      "788528742":
+        name: "mark-shot-native-0.2.5-linux-x86_64.AppImage"
+        size: 32545272
+        sha256pre: "4d9606f5f1becc12"
+      "788528843":
+        name: "mark-shot-native-0.2.5-linux-x86_64.flatpak"
+        size: 25926360
+        sha256pre: "b54beb4e7fb76482"
+      "788528941":
+        name: "mark-shot-native-0.2.5-linux-x86_64.tar.gz"
+        size: 30397237
+        sha256pre: "1898410dd9b00158"
+      "788529048":
+        name: "mark-shot-native-0.2.5-windows-x86_64-msvc-setup.exe"
+        size: 24608541
+        sha256pre: "5dcd8444b0f4031d"
+      "788529137":
+        name: "mark-shot-native-0.2.5-windows-x86_64-msvc.zip"
+        size: 27356700
+        sha256pre: "35ae2d26311835ec"
+      "788529233":
+        name: "mark-shot_0.2.5-1_amd64.deb"
+        size: 25806492
+        sha256pre: "544be98c1966641f"
+      "788529356":
+        name: "mark-shot_0.2.5-1_amd64.debian13.deb"
+        size: 26276156
+        sha256pre: "c7977ec63a623864"
+      "788529451":
+        name: "mark-shot_0.2.5-1_amd64.ubuntu24.04.deb"
+        size: 26176544
+        sha256pre: "0aba2503281d9533"
+      "788529574":
+        name: "mark-shot_0.2.5-1_amd64.ubuntu26.04.deb"
+        size: 26343376
+        sha256pre: "cc2fa1f8a7389c1b"
+      "788529666":
+        name: "mark-shot_0.2.5-1_arm64.deb"
+        size: 24207500
+        sha256pre: "b4051b0456d78047"
+      "788529727":
+        name: "mark-shot_0.2.5-1_arm64.debian13.deb"
+        size: 24706032
+        sha256pre: "e74df388c2140fca"
+      "788529793":
+        name: "mark-shot_0.2.5-1_arm64.ubuntu24.04.deb"
+        size: 24515884
+        sha256pre: "2ee13c19a945f988"
+      "788529876":
+        name: "mark-shot_0.2.5-1_arm64.ubuntu26.04.deb"
+        size: 24777044
+        sha256pre: "4b827ca1a525d210"
+      "788529974":
+        name: "mark-shot_0.2.5_fedora_aarch64.src.rpm"
+        size: 175606060
+        sha256pre: "3c9f22f9e7a8dd15"
+      "788530263":
+        name: "mark-shot_0.2.5_fedora_x86_64.src.rpm"
+        size: 175605991
+        sha256pre: "51cfbada1cbcdc0a"

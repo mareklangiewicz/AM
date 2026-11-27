@@ -1,1878 +1,1441 @@
 $schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
 repository_id: 1213693437
 repository: "VoltiusApp/voltius"
-observed_at: "2026-11-22T21:58:06Z"
+observed_at: "2026-11-27T12:29:14Z"
 history_complete: false
 releases:
-  "446045138":
-    tag: "v0.75.0"
-    title: "Voltius v0.75.0"
-    published_at: "2026-11-15T12:49:36Z"
+  "457195081":
+    tag: "v0.84.0"
+    title: "Voltius v0.84.0"
+    published_at: "2026-11-24T19:17:45Z"
     prerelease: false
     assets:
-      "750964965":
-        name: "Voltius_0.75.0_x64_en-US.msi"
-        size: 19103744
-        sha256pre: "f5aa7da1622810f2"
-      "750965020":
-        name: "Voltius_0.75.0_x64_en-US.msi.sig"
-        size: 440
-        sha256pre: "9ae2f49a7773b271"
-      "750965034":
-        name: "Voltius_0.75.0_x64-setup.exe"
-        size: 14065300
-        sha256pre: "2559292a2c867c64"
-      "750965080":
-        name: "Voltius_0.75.0_x64-setup.exe.sig"
-        size: 440
-        sha256pre: "87fa77129a441569"
-      "750965091":
-        name: "voltius_windows_x64.exe"
-        size: 46095872
-        sha256pre: "28d41ef75f41a1e0"
-      "750965235":
-        name: "Voltius_0.75.0_amd64.deb"
-        size: 18921110
-        sha256pre: "89c15c852ea4467f"
-      "750965272":
-        name: "Voltius_0.75.0_amd64.deb.sig"
+      "788467177":
+        name: "Voltius_0.84.0_amd64.deb"
+        size: 19378828
+        sha256pre: "e843ac0691bdfd15"
+      "788467240":
+        name: "Voltius_0.84.0_amd64.deb.sig"
         size: 432
-        sha256pre: "7066e5fe6dcc30e3"
-      "750965311":
-        name: "Voltius-0.75.0-1.x86_64.rpm"
-        size: 18925939
-        sha256pre: "81e049053793ac50"
-      "750965336":
-        name: "Voltius-0.75.0-1.x86_64.rpm.sig"
+        sha256pre: "0644d8681e5372a3"
+      "788467260":
+        name: "Voltius-0.84.0-1.x86_64.rpm"
+        size: 19383449
+        sha256pre: "52660cf81b2a38ac"
+      "788467310":
+        name: "Voltius-0.84.0-1.x86_64.rpm.sig"
         size: 436
-        sha256pre: "83fa4f030d29d228"
-      "750965369":
-        name: "Voltius_0.75.0_amd64.AppImage"
-        size: 96205304
-        sha256pre: "27759786e4b44a1c"
-      "750965427":
-        name: "Voltius_0.75.0_aarch64.apk"
-        size: 31957669
-        sha256pre: "2ea9cf71b1a73a8c"
-      "750965604":
-        name: "Voltius_0.75.0_amd64.AppImage.sig"
+        sha256pre: "31a851299c4b006d"
+      "788467344":
+        name: "Voltius_0.84.0_amd64.AppImage"
+        size: 96602616
+        sha256pre: "bb940cc3cae5944e"
+      "788467506":
+        name: "Voltius_0.84.0_amd64.AppImage.sig"
         size: 440
-        sha256pre: "ea07fc4b51556d3d"
-      "750965631":
+        sha256pre: "087098476b2b40a5"
+      "788467523":
         name: "voltius_linux_x64"
-        size: 39121848
-        sha256pre: "bb55a79189988aa8"
-      "750968014":
-        name: "Voltius_0.75.0_x64.dmg"
-        size: 18070497
-        sha256pre: "d64bf4ef5ce82a53"
-      "750968057":
-        name: "Voltius_0.75.0_x64.app.tar.gz"
-        size: 17976852
-        sha256pre: "250419b355418c57"
-      "750968106":
-        name: "Voltius_0.75.0_x64.app.tar.gz.sig"
-        size: 424
-        sha256pre: "6e3edb1d22d415cf"
-      "750968122":
-        name: "voltius_darwin_x64"
-        size: 34013712
-        sha256pre: "a95e43f23ce05b32"
-      "750968506":
-        name: "Voltius_0.75.0_arm64.deb"
-        size: 18244332
-        sha256pre: "b96c13fa5bb185e0"
-      "750968554":
-        name: "Voltius_0.75.0_arm64.deb.sig"
+        size: 40056440
+        sha256pre: "1a790d283c169489"
+      "788474643":
+        name: "Voltius_0.84.0_arm64.deb"
+        size: 18695994
+        sha256pre: "82f38decf1de7443"
+      "788474713":
+        name: "Voltius_0.84.0_arm64.deb.sig"
         size: 432
-        sha256pre: "73aa7ccb0a93022b"
-      "750968577":
-        name: "Voltius-0.75.0-1.aarch64.rpm"
-        size: 18248705
-        sha256pre: "8e14a2fc906532f9"
-      "750968604":
-        name: "Voltius-0.75.0-1.aarch64.rpm.sig"
+        sha256pre: "890a07263fc1e31c"
+      "788474744":
+        name: "Voltius-0.84.0-1.aarch64.rpm"
+        size: 18702942
+        sha256pre: "2932f851dd6d1c22"
+      "788474803":
+        name: "Voltius-0.84.0-1.aarch64.rpm.sig"
         size: 440
-        sha256pre: "d36e35b39727ba9b"
-      "750968622":
-        name: "Voltius_0.75.0_aarch64.AppImage"
-        size: 93420040
-        sha256pre: "7793c39310c58653"
-      "750968732":
-        name: "Voltius_0.75.0_aarch64.AppImage.sig"
+        sha256pre: "6b122ae4e8fb5f45"
+      "788474826":
+        name: "Voltius_0.84.0_aarch64.AppImage"
+        size: 93850120
+        sha256pre: "4126df8a066aa01b"
+      "788475069":
+        name: "Voltius_0.84.0_aarch64.AppImage.sig"
         size: 444
-        sha256pre: "40115ce388c74cf8"
-      "750968758":
+        sha256pre: "1e63d81272e865ce"
+      "788475113":
         name: "voltius_linux_arm64"
-        size: 34955408
-        sha256pre: "2bfae3451d9746fd"
-      "750978034":
-        name: "Voltius_0.75.0_aarch64.dmg"
-        size: 16703175
-        sha256pre: "de660a73442b21b6"
-      "750978108":
-        name: "Voltius_0.75.0_aarch64.app.tar.gz"
-        size: 16765545
-        sha256pre: "970be2a2434f115d"
-      "750978200":
-        name: "Voltius_0.75.0_aarch64.app.tar.gz.sig"
+        size: 35807376
+        sha256pre: "7d3d8ea573b760a2"
+      "788480247":
+        name: "Voltius_0.84.0_aarch64.apk"
+        size: 32417013
+        sha256pre: "1990fdcb57f75a54"
+      "788488274":
+        name: "Voltius_0.84.0_x64_en-US.msi"
+        size: 19652608
+        sha256pre: "958f32b87b12997d"
+      "788488414":
+        name: "Voltius_0.84.0_x64_en-US.msi.sig"
+        size: 440
+        sha256pre: "87c6f9d2119e1e44"
+      "788488459":
+        name: "Voltius_0.84.0_x64-setup.exe"
+        size: 14409569
+        sha256pre: "3c283208422ba789"
+      "788488513":
+        name: "Voltius_0.84.0_x64-setup.exe.sig"
+        size: 440
+        sha256pre: "64de7c11267f0b72"
+      "788488534":
+        name: "voltius_windows_x64.exe"
+        size: 47490560
+        sha256pre: "314914dd9fa90acb"
+      "788492600":
+        name: "Voltius_0.84.0_x64.dmg"
+        size: 18515742
+        sha256pre: "d157c2c68742f5c5"
+      "788492663":
+        name: "Voltius_0.84.0_x64.app.tar.gz"
+        size: 18433820
+        sha256pre: "5595f5b649e16806"
+      "788492733":
+        name: "Voltius_0.84.0_x64.app.tar.gz.sig"
         size: 424
-        sha256pre: "52e5ad5c77b4f527"
-      "750978219":
-        name: "voltius_darwin_aarch64"
-        size: 31396784
-        sha256pre: "fc76c76ef7c54d70"
-      "750984208":
-        name: "Voltius_0.75.0_arm64_en-US.msi"
-        size: 17960960
-        sha256pre: "b38b1fa8482eb089"
-      "750984251":
-        name: "Voltius_0.75.0_arm64_en-US.msi.sig"
+        sha256pre: "856573c615a4de99"
+      "788492762":
+        name: "voltius_darwin_x64"
+        size: 34888544
+        sha256pre: "ac0a152837d343e3"
+      "788493062":
+        name: "Voltius_0.84.0_arm64_en-US.msi"
+        size: 18472960
+        sha256pre: "1a5db8f76428bb66"
+      "788493130":
+        name: "Voltius_0.84.0_arm64_en-US.msi.sig"
         size: 440
-        sha256pre: "b62f0e49adf44325"
-      "750984294":
-        name: "Voltius_0.75.0_arm64-setup.exe"
-        size: 12585440
-        sha256pre: "ae2c4359a3fd4adb"
-      "750984345":
-        name: "Voltius_0.75.0_arm64-setup.exe.sig"
+        sha256pre: "8afd5899218fe99d"
+      "788493162":
+        name: "Voltius_0.84.0_arm64-setup.exe"
+        size: 12885117
+        sha256pre: "3f2eef40a1569fc2"
+      "788493199":
+        name: "Voltius_0.84.0_arm64-setup.exe.sig"
         size: 440
-        sha256pre: "7a91b1fc98cbef20"
-      "750984380":
+        sha256pre: "919a89de6936e1b0"
+      "788493241":
         name: "voltius_windows_arm64.exe"
-        size: 39876096
-        sha256pre: "e0679d0d4aec2f79"
-      "750985002":
+        size: 41062912
+        sha256pre: "3d5a6174a2cb6d2f"
+      "788509882":
+        name: "Voltius_0.84.0_aarch64.dmg"
+        size: 17127136
+        sha256pre: "87b601437a39feb8"
+      "788509971":
+        name: "Voltius_0.84.0_aarch64.app.tar.gz"
+        size: 17204400
+        sha256pre: "0395e51db80c82df"
+      "788510057":
+        name: "Voltius_0.84.0_aarch64.app.tar.gz.sig"
+        size: 424
+        sha256pre: "2f7c15f030fa2103"
+      "788510088":
+        name: "voltius_darwin_aarch64"
+        size: 32207472
+        sha256pre: "31b02bc0c6da3d11"
+      "788511427":
         name: "latest.json"
-        size: 11756
-        sha256pre: "185b88d20e4207b5"
-      "750987241":
+        size: 11197
+        sha256pre: "1058db61c197d845"
+      "788513012":
         name: "plugin-catalog.json"
         size: 2555
         sha256pre: "fed349a065390d52"
-      "750987844":
-        name: "Voltius-0.75.0-1.x86_64.rpm.sha256"
-        size: 94
-        sha256pre: "7a26d9ee75044873"
-      "750987845":
-        name: "Voltius_0.75.0_aarch64.apk.sha256"
-        size: 93
-        sha256pre: "717cbd006ec70879"
-      "750987846":
-        name: "Voltius_0.75.0_aarch64.AppImage.sha256"
+      "788513730":
+        name: "Voltius_0.84.0_aarch64.AppImage.sha256"
         size: 98
-        sha256pre: "cc56729497d3d0af"
-      "750987847":
-        name: "Voltius-0.75.0-1.aarch64.rpm.sha256"
-        size: 95
-        sha256pre: "a981b4cdc2756573"
-      "750987848":
-        name: "Voltius_0.75.0_aarch64.app.tar.gz.sha256"
+        sha256pre: "dd8d6cc15026f3ea"
+      "788513732":
+        name: "Voltius-0.84.0-1.x86_64.rpm.sha256"
+        size: 94
+        sha256pre: "660a079f9197484e"
+      "788513733":
+        name: "Voltius_0.84.0_aarch64.app.tar.gz.sha256"
         size: 100
-        sha256pre: "c2b403c66470f7ba"
-      "750987873":
-        name: "Voltius_0.75.0_aarch64.dmg.sha256"
+        sha256pre: "49ae057ad5ed702c"
+      "788513734":
+        name: "Voltius_0.84.0_aarch64.apk.sha256"
         size: 93
-        sha256pre: "9b3e8dba4d47dc41"
-      "750987875":
-        name: "Voltius_0.75.0_amd64.AppImage.sha256"
-        size: 96
-        sha256pre: "3c9e4c5d8369093d"
-      "750987877":
-        name: "Voltius_0.75.0_arm64-setup.exe.sha256"
-        size: 97
-        sha256pre: "97f66e38b64c83bc"
-      "750987878":
-        name: "Voltius_0.75.0_amd64.deb.sha256"
-        size: 91
-        sha256pre: "7a45b620f6d22500"
-      "750987880":
-        name: "Voltius_0.75.0_arm64.deb.sha256"
-        size: 91
-        sha256pre: "11634d8f6cba754b"
-      "750987898":
-        name: "Voltius_0.75.0_arm64_en-US.msi.sha256"
-        size: 97
-        sha256pre: "84f2187a2b1c52db"
-      "750987899":
-        name: "Voltius_0.75.0_x64-setup.exe.sha256"
+        sha256pre: "6edd4ee9d59a9da8"
+      "788513735":
+        name: "Voltius-0.84.0-1.aarch64.rpm.sha256"
         size: 95
-        sha256pre: "0f6cde96602b4126"
-      "750987900":
-        name: "Voltius_0.75.0_x64.app.tar.gz.sha256"
+        sha256pre: "250e699a4f196754"
+      "788513763":
+        name: "Voltius_0.84.0_aarch64.dmg.sha256"
+        size: 93
+        sha256pre: "01baaa822c18f41c"
+      "788513764":
+        name: "Voltius_0.84.0_amd64.deb.sha256"
+        size: 91
+        sha256pre: "53c603953480eb8d"
+      "788513765":
+        name: "Voltius_0.84.0_amd64.AppImage.sha256"
         size: 96
-        sha256pre: "16d9095285531642"
-      "750987902":
-        name: "Voltius_0.75.0_x64_en-US.msi.sha256"
+        sha256pre: "3def411354c18ff4"
+      "788513771":
+        name: "Voltius_0.84.0_arm64-setup.exe.sha256"
+        size: 97
+        sha256pre: "caafa721790be763"
+      "788513773":
+        name: "Voltius_0.84.0_arm64.deb.sha256"
+        size: 91
+        sha256pre: "da0003faaad0858e"
+      "788513788":
+        name: "Voltius_0.84.0_arm64_en-US.msi.sha256"
+        size: 97
+        sha256pre: "d8837153f9cc2641"
+      "788513789":
+        name: "Voltius_0.84.0_x64-setup.exe.sha256"
         size: 95
-        sha256pre: "30670b394620a546"
-      "750987903":
-        name: "Voltius_0.75.0_x64.dmg.sha256"
+        sha256pre: "661c27b6e86bfc43"
+      "788513790":
+        name: "Voltius_0.84.0_x64.app.tar.gz.sha256"
+        size: 96
+        sha256pre: "26548bc5e42de244"
+      "788513791":
+        name: "Voltius_0.84.0_x64_en-US.msi.sha256"
+        size: 95
+        sha256pre: "3a3c2ef5c3f113d2"
+      "788513793":
+        name: "Voltius_0.84.0_x64.dmg.sha256"
         size: 89
-        sha256pre: "f504a92a308b4cfc"
-      "750987915":
+        sha256pre: "4c50ba7f0cb324dc"
+      "788513831":
+        name: "voltius_darwin_aarch64.sha256"
+        size: 89
+        sha256pre: "0f1ca92f1a675f53"
+      "788513833":
         name: "plugin-catalog.json.sha256"
         size: 86
         sha256pre: "49da2572e70fb4c4"
-      "750987921":
+      "788513835":
         name: "voltius_darwin_x64.sha256"
         size: 85
-        sha256pre: "693b4d755cd7a07b"
-      "750987922":
-        name: "voltius_darwin_aarch64.sha256"
-        size: 89
-        sha256pre: "da7b95b3a0cce007"
-      "750987927":
-        name: "voltius_linux_x64.sha256"
-        size: 84
-        sha256pre: "cc3011948203d5e7"
-      "750987932":
+        sha256pre: "4fe18763256e9d46"
+      "788513836":
         name: "voltius_linux_arm64.sha256"
         size: 86
-        sha256pre: "4ab564f6bfd89af6"
-      "750987945":
-        name: "voltius_windows_x64.exe.sha256"
-        size: 90
-        sha256pre: "38c8716ff5a1f589"
-      "750987949":
+        sha256pre: "0bed1c4bd3bbed1e"
+      "788513837":
+        name: "voltius_linux_x64.sha256"
+        size: 84
+        sha256pre: "abd3e349cba28e49"
+      "788513871":
         name: "voltius_windows_arm64.exe.sha256"
         size: 92
-        sha256pre: "0439609531d7ff82"
-  "446074896":
-    tag: "v0.75.1"
-    title: "Voltius v0.75.1"
-    published_at: "2026-11-15T13:39:06Z"
+        sha256pre: "4475e62561dd60f9"
+      "788513872":
+        name: "voltius_windows_x64.exe.sha256"
+        size: 90
+        sha256pre: "cf197c4a4866c9c4"
+  "457241503":
+    tag: "v0.84.1"
+    title: "Voltius v0.84.1"
+    published_at: "2026-11-24T19:58:06Z"
     prerelease: false
     assets:
-      "751098197":
-        name: "Voltius_0.75.1_aarch64.apk"
-        size: 31957669
-        sha256pre: "b7e7653d84f4171a"
-      "751098470":
-        name: "Voltius_0.75.1_amd64.deb"
-        size: 18918198
-        sha256pre: "59fcf7ad2d7f03da"
-      "751098668":
-        name: "Voltius_0.75.1_amd64.deb.sig"
+      "788603877":
+        name: "Voltius_0.84.1_amd64.deb"
+        size: 19381510
+        sha256pre: "7414095a223b81ed"
+      "788604012":
+        name: "Voltius_0.84.1_amd64.deb.sig"
         size: 432
-        sha256pre: "570d347602df04ff"
-      "751098697":
-        name: "Voltius-0.75.1-1.x86_64.rpm"
-        size: 18921969
-        sha256pre: "b165142c1da8f5e1"
-      "751098767":
-        name: "Voltius-0.75.1-1.x86_64.rpm.sig"
+        sha256pre: "1fe2f7fe0620c2cf"
+      "788604059":
+        name: "Voltius-0.84.1-1.x86_64.rpm"
+        size: 19386504
+        sha256pre: "f416347df3296b53"
+      "788604133":
+        name: "Voltius-0.84.1-1.x86_64.rpm.sig"
         size: 436
-        sha256pre: "011becfb72166fc2"
-      "751098796":
-        name: "Voltius_0.75.1_amd64.AppImage"
-        size: 96188920
-        sha256pre: "bef1caf6ec0d4ff6"
-      "751099111":
-        name: "Voltius_0.75.1_amd64.AppImage.sig"
+        sha256pre: "58e8635973aa83f9"
+      "788604165":
+        name: "Voltius_0.84.1_amd64.AppImage"
+        size: 96602616
+        sha256pre: "4b1c5a75b3788f63"
+      "788604550":
+        name: "Voltius_0.84.1_amd64.AppImage.sig"
         size: 440
-        sha256pre: "8e6daddfe5da7056"
-      "751099138":
+        sha256pre: "ebdd79aa57a67632"
+      "788604602":
         name: "voltius_linux_x64"
-        size: 39121848
-        sha256pre: "2c1f93b45fcc7ab8"
-      "751103605":
-        name: "Voltius_0.75.1_arm64.deb"
-        size: 18248212
-        sha256pre: "aaf33057b20c7d3b"
-      "751103673":
-        name: "Voltius_0.75.1_arm64.deb.sig"
+        size: 40056440
+        sha256pre: "7d96c7ae2a884fb2"
+      "788611174":
+        name: "Voltius_0.84.1_arm64.deb"
+        size: 18696862
+        sha256pre: "4e028806bae4c933"
+      "788611256":
+        name: "Voltius_0.84.1_arm64.deb.sig"
         size: 432
-        sha256pre: "cf097ce3e3c6f771"
-      "751103700":
-        name: "Voltius-0.75.1-1.aarch64.rpm"
-        size: 18254655
-        sha256pre: "bd25d39e4da4733c"
-      "751103755":
-        name: "Voltius-0.75.1-1.aarch64.rpm.sig"
+        sha256pre: "e8c12c4785f4bcbf"
+      "788611294":
+        name: "Voltius-0.84.1-1.aarch64.rpm"
+        size: 18704662
+        sha256pre: "70dd9eabe2f379a5"
+      "788611359":
+        name: "Voltius-0.84.1-1.aarch64.rpm.sig"
         size: 440
-        sha256pre: "465b9e2e424836c9"
-      "751103785":
-        name: "Voltius_0.75.1_aarch64.AppImage"
-        size: 93428232
-        sha256pre: "d46fa03751fb444c"
-      "751103969":
-        name: "Voltius_0.75.1_aarch64.AppImage.sig"
+        sha256pre: "b83294c54ca5402e"
+      "788611381":
+        name: "Voltius_0.84.1_aarch64.AppImage"
+        size: 93850120
+        sha256pre: "9b98b550aaa4002d"
+      "788611596":
+        name: "Voltius_0.84.1_aarch64.AppImage.sig"
         size: 444
-        sha256pre: "a4329c56106d07a9"
-      "751103992":
+        sha256pre: "d64adf0b338c48a8"
+      "788611622":
         name: "voltius_linux_arm64"
-        size: 34955408
-        sha256pre: "80b8fb1d209a5ddc"
-      "751108429":
-        name: "Voltius_0.75.1_x64_en-US.msi"
-        size: 19107840
-        sha256pre: "b460259a588c8d5c"
-      "751108474":
-        name: "Voltius_0.75.1_x64_en-US.msi.sig"
+        size: 35807376
+        sha256pre: "891858000e7deeb6"
+      "788619562":
+        name: "Voltius_0.84.1_aarch64.apk"
+        size: 32417013
+        sha256pre: "ee2ba5ee634eec1c"
+      "788629828":
+        name: "Voltius_0.84.1_x64_en-US.msi"
+        size: 19652608
+        sha256pre: "4a3bf3c0239ec1a8"
+      "788629929":
+        name: "Voltius_0.84.1_x64_en-US.msi.sig"
         size: 440
-        sha256pre: "54396ac0c06e6677"
-      "751108501":
-        name: "Voltius_0.75.1_x64-setup.exe"
-        size: 14071438
-        sha256pre: "beedc93666f26002"
-      "751108551":
-        name: "Voltius_0.75.1_x64-setup.exe.sig"
+        sha256pre: "9776edfb47e937b8"
+      "788629963":
+        name: "Voltius_0.84.1_x64-setup.exe"
+        size: 14412187
+        sha256pre: "9c0b62612c394bef"
+      "788630043":
+        name: "Voltius_0.84.1_x64-setup.exe.sig"
         size: 440
-        sha256pre: "87d1174be25f5100"
-      "751108567":
+        sha256pre: "ffc550404a01b89e"
+      "788630076":
         name: "voltius_windows_x64.exe"
-        size: 46095872
-        sha256pre: "d8ea355482c79557"
-      "751109882":
-        name: "Voltius_0.75.1_x64.dmg"
-        size: 18068429
-        sha256pre: "2af6052750d7c685"
-      "751109947":
-        name: "Voltius_0.75.1_x64.app.tar.gz"
-        size: 17972717
-        sha256pre: "859b4b7d318e33f8"
-      "751110004":
-        name: "Voltius_0.75.1_x64.app.tar.gz.sig"
+        size: 47490048
+        sha256pre: "ef5175df8cf0b3de"
+      "788630743":
+        name: "Voltius_0.84.1_x64.dmg"
+        size: 18514113
+        sha256pre: "c73c988a2851401e"
+      "788630866":
+        name: "Voltius_0.84.1_x64.app.tar.gz"
+        size: 18434027
+        sha256pre: "4b68ae7df6a38e55"
+      "788630931":
+        name: "Voltius_0.84.1_x64.app.tar.gz.sig"
         size: 424
-        sha256pre: "ba3944f7e1d60ed2"
-      "751110038":
+        sha256pre: "c3264dcd5d18f7ba"
+      "788630970":
         name: "voltius_darwin_x64"
-        size: 34009608
-        sha256pre: "75070db706169e5a"
-      "751112325":
-        name: "Voltius_0.75.1_arm64_en-US.msi"
-        size: 17965056
-        sha256pre: "4f4c7d0f26cde62a"
-      "751112355":
-        name: "Voltius_0.75.1_arm64_en-US.msi.sig"
-        size: 440
-        sha256pre: "bd23bb62c421dc75"
-      "751112374":
-        name: "Voltius_0.75.1_arm64-setup.exe"
-        size: 12583981
-        sha256pre: "61b4c852726bc6e3"
-      "751112406":
-        name: "Voltius_0.75.1_arm64-setup.exe.sig"
-        size: 440
-        sha256pre: "7c1acb79c1703417"
-      "751112415":
-        name: "voltius_windows_arm64.exe"
-        size: 39876096
-        sha256pre: "6fdd961004152a55"
-      "751117586":
-        name: "Voltius_0.75.1_aarch64.dmg"
-        size: 16704661
-        sha256pre: "9abfd65dd8a6be3e"
-      "751117629":
-        name: "Voltius_0.75.1_aarch64.app.tar.gz"
-        size: 16769713
-        sha256pre: "0e6abe50d081fbb2"
-      "751117734":
-        name: "Voltius_0.75.1_aarch64.app.tar.gz.sig"
+        size: 34888552
+        sha256pre: "317726471924ce9d"
+      "788634026":
+        name: "Voltius_0.84.1_aarch64.dmg"
+        size: 17124200
+        sha256pre: "eb679bc931a4c988"
+      "788634142":
+        name: "Voltius_0.84.1_aarch64.app.tar.gz"
+        size: 17205207
+        sha256pre: "9b8e414836ab1b7e"
+      "788634311":
+        name: "Voltius_0.84.1_aarch64.app.tar.gz.sig"
         size: 424
-        sha256pre: "71dac80d9e91a35a"
-      "751117768":
+        sha256pre: "6adebca63dbe2563"
+      "788634340":
         name: "voltius_darwin_aarch64"
-        size: 31396784
-        sha256pre: "6c8b6659bbd217d7"
-      "751118870":
+        size: 32207456
+        sha256pre: "66dc925b1b96ea57"
+      "788635384":
+        name: "Voltius_0.84.1_arm64_en-US.msi"
+        size: 18468864
+        sha256pre: "4f55ec4aef643b1d"
+      "788635635":
+        name: "Voltius_0.84.1_arm64_en-US.msi.sig"
+        size: 440
+        sha256pre: "877ec5b3b25dc52f"
+      "788635667":
+        name: "Voltius_0.84.1_arm64-setup.exe"
+        size: 12885443
+        sha256pre: "96b5bc190197bdf7"
+      "788635722":
+        name: "Voltius_0.84.1_arm64-setup.exe.sig"
+        size: 440
+        sha256pre: "4cadd7eae3fb5caa"
+      "788635747":
+        name: "voltius_windows_arm64.exe"
+        size: 41062400
+        sha256pre: "1ca9257ebb2a6784"
+      "788636762":
         name: "latest.json"
-        size: 11077
-        sha256pre: "ba11e4a3141c305e"
-      "751120829":
+        size: 11107
+        sha256pre: "0db70730142f3ffa"
+      "788638647":
         name: "plugin-catalog.json"
         size: 2555
         sha256pre: "fed349a065390d52"
-      "751121584":
-        name: "Voltius_0.75.1_aarch64.apk.sha256"
+      "788639397":
+        name: "Voltius_0.84.1_aarch64.apk.sha256"
         size: 93
-        sha256pre: "4ccc292581235653"
-      "751121585":
-        name: "Voltius_0.75.1_aarch64.AppImage.sha256"
+        sha256pre: "ea6f80998cef96dc"
+      "788639399":
+        name: "Voltius-0.84.1-1.aarch64.rpm.sha256"
+        size: 95
+        sha256pre: "96a900277553e8c7"
+      "788639409":
+        name: "Voltius_0.84.1_aarch64.AppImage.sha256"
         size: 98
-        sha256pre: "83f5e9f36c86746d"
-      "751121587":
-        name: "Voltius_0.75.1_aarch64.app.tar.gz.sha256"
-        size: 100
-        sha256pre: "5f12450de4ad1135"
-      "751121592":
-        name: "Voltius-0.75.1-1.aarch64.rpm.sha256"
-        size: 95
-        sha256pre: "4017a32a3d041089"
-      "751121594":
-        name: "Voltius-0.75.1-1.x86_64.rpm.sha256"
+        sha256pre: "c0e06d843e6e527d"
+      "788639415":
+        name: "Voltius-0.84.1-1.x86_64.rpm.sha256"
         size: 94
-        sha256pre: "8cc124a4684324a9"
-      "751121639":
-        name: "Voltius_0.75.1_aarch64.dmg.sha256"
+        sha256pre: "b4dae0187241798f"
+      "788639416":
+        name: "Voltius_0.84.1_aarch64.app.tar.gz.sha256"
+        size: 100
+        sha256pre: "8a8e296feefe89f5"
+      "788639449":
+        name: "Voltius_0.84.1_aarch64.dmg.sha256"
         size: 93
-        sha256pre: "25cde1358ce354e8"
-      "751121640":
-        name: "Voltius_0.75.1_amd64.deb.sha256"
-        size: 91
-        sha256pre: "a1a68d59c76ecf4c"
-      "751121642":
-        name: "Voltius_0.75.1_arm64-setup.exe.sha256"
+        sha256pre: "194e8815f764e74e"
+      "788639452":
+        name: "Voltius_0.84.1_amd64.AppImage.sha256"
+        size: 96
+        sha256pre: "8184678e56061a58"
+      "788639459":
+        name: "Voltius_0.84.1_arm64-setup.exe.sha256"
         size: 97
-        sha256pre: "d961d36f5791c8d9"
-      "751121643":
-        name: "Voltius_0.75.1_arm64.deb.sha256"
+        sha256pre: "1aeacf14f8c5bc5f"
+      "788639460":
+        name: "Voltius_0.84.1_amd64.deb.sha256"
         size: 91
-        sha256pre: "5d4bd33cc348e855"
-      "751121648":
-        name: "Voltius_0.75.1_amd64.AppImage.sha256"
+        sha256pre: "7966d7a70a42b222"
+      "788639472":
+        name: "Voltius_0.84.1_arm64.deb.sha256"
+        size: 91
+        sha256pre: "a929f7f4c1305db0"
+      "788639483":
+        name: "Voltius_0.84.1_arm64_en-US.msi.sha256"
+        size: 97
+        sha256pre: "78183af74c9865a4"
+      "788639492":
+        name: "Voltius_0.84.1_x64-setup.exe.sha256"
+        size: 95
+        sha256pre: "2b6a9b30f9cb99f6"
+      "788639503":
+        name: "Voltius_0.84.1_x64.app.tar.gz.sha256"
         size: 96
-        sha256pre: "73259f782eb7fef5"
-      "751121680":
-        name: "Voltius_0.75.1_x64.app.tar.gz.sha256"
-        size: 96
-        sha256pre: "baf742e717b5db02"
-      "751121681":
-        name: "Voltius_0.75.1_x64.dmg.sha256"
+        sha256pre: "962d9b4847f9397d"
+      "788639509":
+        name: "Voltius_0.84.1_x64.dmg.sha256"
         size: 89
-        sha256pre: "e3d91d91c0e9618a"
-      "751121682":
-        name: "Voltius_0.75.1_x64-setup.exe.sha256"
+        sha256pre: "07d8b2a9cfbd974b"
+      "788639511":
+        name: "Voltius_0.84.1_x64_en-US.msi.sha256"
         size: 95
-        sha256pre: "b11e030c135b21f6"
-      "751121683":
-        name: "Voltius_0.75.1_arm64_en-US.msi.sha256"
-        size: 97
-        sha256pre: "7fdd4191a71489af"
-      "751121684":
-        name: "Voltius_0.75.1_x64_en-US.msi.sha256"
-        size: 95
-        sha256pre: "7556aa914032c975"
-      "751121698":
+        sha256pre: "c5fa9026a2c986e3"
+      "788639522":
         name: "plugin-catalog.json.sha256"
         size: 86
         sha256pre: "49da2572e70fb4c4"
-      "751121700":
+      "788639525":
         name: "voltius_darwin_aarch64.sha256"
         size: 89
-        sha256pre: "4d142741cae6a315"
-      "751121705":
+        sha256pre: "6f90c06158f63d92"
+      "788639548":
         name: "voltius_darwin_x64.sha256"
         size: 85
-        sha256pre: "1448ede0922689b8"
-      "751121708":
+        sha256pre: "d9e2fa78f09d43f9"
+      "788639550":
         name: "voltius_linux_arm64.sha256"
         size: 86
-        sha256pre: "e6195606c0d95f53"
-      "751121710":
-        name: "voltius_linux_x64.sha256"
-        size: 84
-        sha256pre: "166983a72c1ec075"
-      "751121716":
-        name: "voltius_windows_x64.exe.sha256"
-        size: 90
-        sha256pre: "b3be8a2bdd02271e"
-      "751121717":
+        sha256pre: "2dfc73dbc8b425a1"
+      "788639557":
         name: "voltius_windows_arm64.exe.sha256"
         size: 92
-        sha256pre: "705e465c061c508b"
-  "447498300":
-    tag: "v0.76.0"
-    title: "Voltius v0.76.0"
-    published_at: "2026-11-16T20:03:22Z"
+        sha256pre: "3ea02e4850091a38"
+      "788639562":
+        name: "voltius_linux_x64.sha256"
+        size: 84
+        sha256pre: "32d972b806d9f063"
+      "788639565":
+        name: "voltius_windows_x64.exe.sha256"
+        size: 90
+        sha256pre: "9cc6f2a480b5d06e"
+  "459667680":
+    tag: "v0.85.0"
+    title: "Voltius v0.85.0"
+    published_at: "2026-11-26T16:58:25Z"
     prerelease: false
     assets:
-      "756187536":
-        name: "Voltius_0.76.0_amd64.deb"
-        size: 19004756
-        sha256pre: "b8f73d347ba65cc9"
-      "756187619":
-        name: "Voltius_0.76.0_amd64.deb.sig"
+      "796827586":
+        name: "Voltius_0.85.0_arm64.deb"
+        size: 18696760
+        sha256pre: "f998fc3da28b50a2"
+      "796827701":
+        name: "Voltius_0.85.0_arm64.deb.sig"
         size: 432
-        sha256pre: "ea510f602d7d6eda"
-      "756187655":
-        name: "Voltius-0.76.0-1.x86_64.rpm"
-        size: 19010614
-        sha256pre: "87754b8be77ef969"
-      "756187719":
-        name: "Voltius-0.76.0-1.x86_64.rpm.sig"
-        size: 436
-        sha256pre: "61081c6694ea039a"
-      "756187741":
-        name: "Voltius_0.76.0_amd64.AppImage"
-        size: 96299512
-        sha256pre: "de11f5d0a9121ee8"
-      "756187904":
-        name: "Voltius_0.76.0_amd64.AppImage.sig"
+        sha256pre: "63e80c076c8db0db"
+      "796827728":
+        name: "Voltius-0.85.0-1.aarch64.rpm"
+        size: 18703821
+        sha256pre: "a189aaf7060a4b30"
+      "796827832":
+        name: "Voltius-0.85.0-1.aarch64.rpm.sig"
         size: 440
-        sha256pre: "4eaf6656a0d4a452"
-      "756187924":
-        name: "voltius_linux_x64"
-        size: 39276728
-        sha256pre: "0784f860399d7c32"
-      "756193481":
-        name: "Voltius_0.76.0_aarch64.apk"
-        size: 32087877
-        sha256pre: "6c5fa4b11889034c"
-      "756209831":
-        name: "Voltius_0.76.0_arm64.deb"
-        size: 18331492
-        sha256pre: "76fc09fe6c87b2dd"
-      "756209885":
-        name: "Voltius_0.76.0_arm64.deb.sig"
+        sha256pre: "e1467fdddc901a2e"
+      "796827864":
+        name: "Voltius_0.85.0_aarch64.AppImage"
+        size: 93846024
+        sha256pre: "7aebd5f57f58294e"
+      "796827978":
+        name: "Voltius_0.85.0_amd64.deb"
+        size: 19381344
+        sha256pre: "7c742c0248f7c025"
+      "796828057":
+        name: "Voltius_0.85.0_amd64.deb.sig"
         size: 432
-        sha256pre: "d7a7046090ddbdec"
-      "756209905":
-        name: "Voltius-0.76.0-1.aarch64.rpm"
-        size: 18337803
-        sha256pre: "20f86853c4c86d73"
-      "756209980":
-        name: "Voltius-0.76.0-1.aarch64.rpm.sig"
-        size: 440
-        sha256pre: "051b7a4ba7365b4a"
-      "756209998":
-        name: "Voltius_0.76.0_aarch64.AppImage"
-        size: 93534728
-        sha256pre: "8acd3518120f3fff"
-      "756210141":
-        name: "Voltius_0.76.0_aarch64.AppImage.sig"
+        sha256pre: "8b8a46c310bbd4ee"
+      "796828087":
+        name: "Voltius-0.85.0-1.x86_64.rpm"
+        size: 19386163
+        sha256pre: "1816ef423f6d6c97"
+      "796828090":
+        name: "Voltius_0.85.0_aarch64.AppImage.sig"
         size: 444
-        sha256pre: "b09847945681344a"
-      "756210177":
+        sha256pre: "f090b61019780e92"
+      "796828131":
         name: "voltius_linux_arm64"
-        size: 35086480
-        sha256pre: "1d8a3d74b5f7c3f1"
-      "756212164":
-        name: "Voltius_0.76.0_x64_en-US.msi"
-        size: 19214336
-        sha256pre: "f6b072b3585dbb5e"
-      "756212260":
-        name: "Voltius_0.76.0_x64_en-US.msi.sig"
+        size: 35807376
+        sha256pre: "d0598c4ab5b20b04"
+      "796828172":
+        name: "Voltius-0.85.0-1.x86_64.rpm.sig"
+        size: 436
+        sha256pre: "8976d2e29586741a"
+      "796828199":
+        name: "Voltius_0.85.0_amd64.AppImage"
+        size: 96606712
+        sha256pre: "715903f6f01a6d29"
+      "796828401":
+        name: "Voltius_0.85.0_amd64.AppImage.sig"
         size: 440
-        sha256pre: "cb96948a983b3fb0"
-      "756212296":
-        name: "Voltius_0.76.0_x64-setup.exe"
-        size: 14148512
-        sha256pre: "3c01b83c0b4c7927"
-      "756212369":
-        name: "Voltius_0.76.0_x64-setup.exe.sig"
+        sha256pre: "ed7c278aea85ad43"
+      "796828457":
+        name: "voltius_linux_x64"
+        size: 40056440
+        sha256pre: "ee3bb5ba78b3b524"
+      "796839574":
+        name: "Voltius_0.85.0_aarch64.apk"
+        size: 32417013
+        sha256pre: "5e7b9ab87b94ea4b"
+      "796840112":
+        name: "Voltius_0.85.0_arm64_en-US.msi"
+        size: 18472960
+        sha256pre: "ae598e4d5f46e414"
+      "796840263":
+        name: "Voltius_0.85.0_arm64_en-US.msi.sig"
         size: 440
-        sha256pre: "d2db5d4181d7c14b"
-      "756212412":
-        name: "voltius_windows_x64.exe"
-        size: 46338560
-        sha256pre: "561f5a624877cbe5"
-      "756215317":
-        name: "Voltius_0.76.0_arm64_en-US.msi"
-        size: 18059264
-        sha256pre: "3da38f312b7c7c55"
-      "756215413":
-        name: "Voltius_0.76.0_arm64_en-US.msi.sig"
+        sha256pre: "24a4c2de6d35c559"
+      "796840325":
+        name: "Voltius_0.85.0_arm64-setup.exe"
+        size: 12884518
+        sha256pre: "ef05434f66b26b68"
+      "796840399":
+        name: "Voltius_0.85.0_arm64-setup.exe.sig"
         size: 440
-        sha256pre: "49f2334fcceb9a59"
-      "756215434":
-        name: "Voltius_0.76.0_arm64-setup.exe"
-        size: 12658059
-        sha256pre: "0fa9e88feb250782"
-      "756215477":
-        name: "Voltius_0.76.0_arm64-setup.exe.sig"
-        size: 440
-        sha256pre: "efd4cbc94b1f887c"
-      "756215508":
+        sha256pre: "c83be562ee0330b1"
+      "796840449":
         name: "voltius_windows_arm64.exe"
-        size: 40094720
-        sha256pre: "a664ebb52aadb8a4"
-      "756237337":
-        name: "Voltius_0.76.0_aarch64.dmg"
-        size: 16784581
-        sha256pre: "3b11fa2efd0d57a3"
-      "756237408":
-        name: "Voltius_0.76.0_aarch64.app.tar.gz"
-        size: 16852568
-        sha256pre: "c9b2d636ec344e19"
-      "756237472":
-        name: "Voltius_0.76.0_aarch64.app.tar.gz.sig"
+        size: 41062400
+        sha256pre: "10e228b798918c50"
+      "796851659":
+        name: "Voltius_0.85.0_aarch64.dmg"
+        size: 17125489
+        sha256pre: "e231d9204e2b85f1"
+      "796851785":
+        name: "Voltius_0.85.0_aarch64.app.tar.gz"
+        size: 17205515
+        sha256pre: "dafc6bdcecb7561d"
+      "796851868":
+        name: "Voltius_0.85.0_aarch64.app.tar.gz.sig"
         size: 424
-        sha256pre: "6543a6a2ee2d676e"
-      "756237495":
+        sha256pre: "d5e29c60e5cfb39d"
+      "796851900":
         name: "voltius_darwin_aarch64"
-        size: 31545680
-        sha256pre: "b8392be2182e8ab3"
-      "756248186":
-        name: "Voltius_0.76.0_x64.dmg"
-        size: 18155884
-        sha256pre: "d4d38339131fa73b"
-      "756248297":
-        name: "Voltius_0.76.0_x64.app.tar.gz"
-        size: 18061160
-        sha256pre: "a7814259ece2c17d"
-      "756248404":
-        name: "Voltius_0.76.0_x64.app.tar.gz.sig"
+        size: 32207456
+        sha256pre: "dd8c0fb2f850d133"
+      "796853220":
+        name: "Voltius_0.85.0_x64.dmg"
+        size: 18513746
+        sha256pre: "5f0977e1aa05daeb"
+      "796853358":
+        name: "Voltius_0.85.0_x64.app.tar.gz"
+        size: 18433504
+        sha256pre: "5da630c706189fbe"
+      "796853505":
+        name: "Voltius_0.85.0_x64.app.tar.gz.sig"
         size: 424
-        sha256pre: "7e6d510915a2b8b6"
-      "756248455":
+        sha256pre: "cd7b752ffb60ab3a"
+      "796853535":
         name: "voltius_darwin_x64"
-        size: 34153424
-        sha256pre: "6e4473b2f9a60a07"
-      "756252095":
+        size: 34892640
+        sha256pre: "ecfffdde5dc43183"
+      "796854811":
+        name: "Voltius_0.85.0_x64_en-US.msi"
+        size: 19652608
+        sha256pre: "af391b6eb3f1574b"
+      "796854861":
+        name: "Voltius_0.85.0_x64_en-US.msi.sig"
+        size: 440
+        sha256pre: "f76a848213375d0b"
+      "796854889":
+        name: "Voltius_0.85.0_x64-setup.exe"
+        size: 14417251
+        sha256pre: "9436b848f31a300d"
+      "796854955":
+        name: "Voltius_0.85.0_x64-setup.exe.sig"
+        size: 440
+        sha256pre: "32c8f0209c64a9b5"
+      "796854988":
+        name: "voltius_windows_x64.exe"
+        size: 47494144
+        sha256pre: "aabea96bb57216e9"
+      "796856046":
         name: "latest.json"
-        size: 12700
-        sha256pre: "1e6a9fd0729d52c9"
-      "756253523":
+        size: 11408
+        sha256pre: "e9b070ce11c71940"
+      "796857893":
         name: "plugin-catalog.json"
         size: 2555
         sha256pre: "fed349a065390d52"
-      "756254165":
-        name: "Voltius_0.76.0_aarch64.AppImage.sha256"
-        size: 98
-        sha256pre: "fd98ee0a388ee65a"
-      "756254170":
-        name: "Voltius-0.76.0-1.x86_64.rpm.sha256"
-        size: 94
-        sha256pre: "31716363e1729e0a"
-      "756254171":
-        name: "Voltius_0.76.0_aarch64.apk.sha256"
-        size: 93
-        sha256pre: "b4030217c6ab76b9"
-      "756254173":
-        name: "Voltius-0.76.0-1.aarch64.rpm.sha256"
-        size: 95
-        sha256pre: "fa88ca21a8cca43a"
-      "756254176":
-        name: "Voltius_0.76.0_aarch64.app.tar.gz.sha256"
+      "796858750":
+        name: "Voltius_0.85.0_aarch64.app.tar.gz.sha256"
         size: 100
-        sha256pre: "7703093c7760403e"
-      "756254199":
-        name: "Voltius_0.76.0_aarch64.dmg.sha256"
+        sha256pre: "d6fcee97c12f6083"
+      "796858751":
+        name: "Voltius-0.85.0-1.aarch64.rpm.sha256"
+        size: 95
+        sha256pre: "e00244a76710bd0f"
+      "796858752":
+        name: "Voltius-0.85.0-1.x86_64.rpm.sha256"
+        size: 94
+        sha256pre: "ba01d6b4f2522884"
+      "796858753":
+        name: "Voltius_0.85.0_aarch64.AppImage.sha256"
+        size: 98
+        sha256pre: "2707fc97f39edfc5"
+      "796858756":
+        name: "Voltius_0.85.0_aarch64.apk.sha256"
         size: 93
-        sha256pre: "aeaf5c827aaf9ab7"
-      "756254206":
-        name: "Voltius_0.76.0_arm64-setup.exe.sha256"
-        size: 97
-        sha256pre: "f574a7633bcbfcb5"
-      "756254208":
-        name: "Voltius_0.76.0_arm64.deb.sha256"
-        size: 91
-        sha256pre: "e99d9af45dc84666"
-      "756254210":
-        name: "Voltius_0.76.0_amd64.deb.sha256"
-        size: 91
-        sha256pre: "35e197eaeaec8c5f"
-      "756254211":
-        name: "Voltius_0.76.0_amd64.AppImage.sha256"
+        sha256pre: "447e934ec454e83e"
+      "796858774":
+        name: "Voltius_0.85.0_aarch64.dmg.sha256"
+        size: 93
+        sha256pre: "5f099cae7d664b13"
+      "796858776":
+        name: "Voltius_0.85.0_amd64.AppImage.sha256"
         size: 96
-        sha256pre: "7428a76b37bf1b16"
-      "756254243":
-        name: "Voltius_0.76.0_arm64_en-US.msi.sha256"
+        sha256pre: "04527a3d152c8c86"
+      "796858784":
+        name: "Voltius_0.85.0_arm64-setup.exe.sha256"
         size: 97
-        sha256pre: "6a97ec3b31777762"
-      "756254244":
-        name: "Voltius_0.76.0_x64-setup.exe.sha256"
+        sha256pre: "14b05cfc2a776428"
+      "796858788":
+        name: "Voltius_0.85.0_amd64.deb.sha256"
+        size: 91
+        sha256pre: "656fd941bbd8792b"
+      "796858790":
+        name: "Voltius_0.85.0_arm64.deb.sha256"
+        size: 91
+        sha256pre: "f51d77e08dc21dd2"
+      "796858815":
+        name: "Voltius_0.85.0_arm64_en-US.msi.sha256"
+        size: 97
+        sha256pre: "59aeefdbafbb03ae"
+      "796858819":
+        name: "Voltius_0.85.0_x64-setup.exe.sha256"
         size: 95
-        sha256pre: "5f4ff3c23f00a390"
-      "756254252":
-        name: "Voltius_0.76.0_x64.app.tar.gz.sha256"
+        sha256pre: "788cdc6b96c22bc1"
+      "796858820":
+        name: "Voltius_0.85.0_x64.app.tar.gz.sha256"
         size: 96
-        sha256pre: "be8de3b3c85364aa"
-      "756254253":
-        name: "Voltius_0.76.0_x64.dmg.sha256"
+        sha256pre: "b15216d9d4c3e8d3"
+      "796858821":
+        name: "Voltius_0.85.0_x64.dmg.sha256"
         size: 89
-        sha256pre: "f72afff6bd46e032"
-      "756254256":
-        name: "Voltius_0.76.0_x64_en-US.msi.sha256"
+        sha256pre: "55df63947d186a6e"
+      "796858824":
+        name: "Voltius_0.85.0_x64_en-US.msi.sha256"
         size: 95
-        sha256pre: "4be4f24e5145981d"
-      "756254282":
+        sha256pre: "4b90b11500da0573"
+      "796858851":
         name: "plugin-catalog.json.sha256"
         size: 86
         sha256pre: "49da2572e70fb4c4"
-      "756254285":
+      "796858856":
         name: "voltius_darwin_x64.sha256"
         size: 85
-        sha256pre: "2bdcdefc9118e93c"
-      "756254287":
-        name: "voltius_linux_x64.sha256"
-        size: 84
-        sha256pre: "a033120ca83d6d41"
-      "756254289":
+        sha256pre: "dfe882f8e3ea6d48"
+      "796858857":
         name: "voltius_linux_arm64.sha256"
         size: 86
-        sha256pre: "c6df7e6de66c289b"
-      "756254292":
+        sha256pre: "26d0396f095b0507"
+      "796858862":
+        name: "voltius_linux_x64.sha256"
+        size: 84
+        sha256pre: "391969fbd933d33a"
+      "796858866":
         name: "voltius_darwin_aarch64.sha256"
         size: 89
-        sha256pre: "ea592d78b5d2559a"
-      "756254301":
-        name: "voltius_windows_arm64.exe.sha256"
-        size: 92
-        sha256pre: "a80288f20b9d49b0"
-      "756254315":
+        sha256pre: "2ab23c5312c7ec2b"
+      "796858887":
         name: "voltius_windows_x64.exe.sha256"
         size: 90
-        sha256pre: "b9c6e26b951c5f59"
-  "448392530":
-    tag: "v0.76.1"
-    title: "Voltius v0.76.1"
-    published_at: "2026-11-17T10:09:58Z"
+        sha256pre: "e2e90bea7a7feadd"
+      "796858895":
+        name: "voltius_windows_arm64.exe.sha256"
+        size: 92
+        sha256pre: "03783462b24e6bc5"
+  "459691050":
+    tag: "plugin-gist-sync-v1.3.7"
+    published_at: "2026-11-26T16:59:24Z"
     prerelease: false
     assets:
-      "758445502":
-        name: "Voltius_0.76.1_arm64.deb"
-        size: 18333242
-        sha256pre: "ec1e821e3562758b"
-      "758445561":
-        name: "Voltius_0.76.1_arm64.deb.sig"
-        size: 432
-        sha256pre: "c4e94b87931ff442"
-      "758445596":
-        name: "Voltius-0.76.1-1.aarch64.rpm"
-        size: 18338815
-        sha256pre: "6098e954bce807f1"
-      "758445656":
-        name: "Voltius-0.76.1-1.aarch64.rpm.sig"
-        size: 440
-        sha256pre: "858a6e035a393897"
-      "758445702":
-        name: "Voltius_0.76.1_aarch64.AppImage"
-        size: 93514248
-        sha256pre: "1348b13d6626df75"
-      "758445872":
-        name: "Voltius_0.76.1_aarch64.AppImage.sig"
-        size: 444
-        sha256pre: "fc8363453839e396"
-      "758445904":
-        name: "voltius_linux_arm64"
-        size: 35086480
-        sha256pre: "ad3f5dada4f899ee"
-      "758447417":
-        name: "Voltius_0.76.1_x64.dmg"
-        size: 18155588
-        sha256pre: "a64e299286fb9b49"
-      "758447503":
-        name: "Voltius_0.76.1_x64.app.tar.gz"
-        size: 18062390
-        sha256pre: "cbfef9a10c7927bc"
-      "758447603":
-        name: "Voltius_0.76.1_x64.app.tar.gz.sig"
-        size: 424
-        sha256pre: "52eb5e658782bc79"
-      "758447655":
-        name: "voltius_darwin_x64"
-        size: 34153432
-        sha256pre: "b2b310b06d739e54"
-      "758455884":
-        name: "Voltius_0.76.1_amd64.deb"
-        size: 19004534
-        sha256pre: "49b67deae20e9129"
-      "758455965":
-        name: "Voltius_0.76.1_amd64.deb.sig"
-        size: 432
-        sha256pre: "d2e84a15ae8342ee"
-      "758455997":
-        name: "Voltius-0.76.1-1.x86_64.rpm"
-        size: 19009553
-        sha256pre: "cb9f0fb4f37d2e02"
-      "758456098":
-        name: "Voltius-0.76.1-1.x86_64.rpm.sig"
-        size: 436
-        sha256pre: "b3009d1b16a610ec"
-      "758456127":
-        name: "Voltius_0.76.1_amd64.AppImage"
-        size: 96299512
-        sha256pre: "66f4c1f17cfb661a"
-      "758456405":
-        name: "Voltius_0.76.1_amd64.AppImage.sig"
-        size: 440
-        sha256pre: "0c215b6b725a3783"
-      "758456419":
-        name: "voltius_linux_x64"
-        size: 39276728
-        sha256pre: "3df7bf47b95b343a"
-      "758468666":
-        name: "Voltius_0.76.1_aarch64.dmg"
-        size: 16785428
-        sha256pre: "8fc6bd60c04cf01c"
-      "758468741":
-        name: "Voltius_0.76.1_aarch64.app.tar.gz"
-        size: 16851610
-        sha256pre: "fa3a88982973cdd5"
-      "758468822":
-        name: "Voltius_0.76.1_aarch64.app.tar.gz.sig"
-        size: 424
-        sha256pre: "19f9fe80760bc037"
-      "758468868":
-        name: "voltius_darwin_aarch64"
-        size: 31545680
-        sha256pre: "7d99ae7bd9ffac8b"
-      "758488049":
-        name: "Voltius_0.76.1_x64_en-US.msi"
-        size: 19210240
-        sha256pre: "ccb82d1758c666d3"
-      "758488170":
-        name: "Voltius_0.76.1_x64_en-US.msi.sig"
-        size: 440
-        sha256pre: "22eaaabd4d808a68"
-      "758488197":
-        name: "Voltius_0.76.1_x64-setup.exe"
-        size: 14145918
-        sha256pre: "980f804bc7d8b7d2"
-      "758488253":
-        name: "Voltius_0.76.1_x64-setup.exe.sig"
-        size: 440
-        sha256pre: "aa79e33c0bfdf6bd"
-      "758488282":
-        name: "voltius_windows_x64.exe"
-        size: 46338048
-        sha256pre: "68e7504aeb5e95b6"
-      "758492349":
-        name: "Voltius_0.76.1_arm64_en-US.msi"
-        size: 18063360
-        sha256pre: "a0ff4735fda26689"
-      "758492581":
-        name: "Voltius_0.76.1_arm64_en-US.msi.sig"
-        size: 440
-        sha256pre: "005e86bdbadfd7ce"
-      "758492613":
-        name: "Voltius_0.76.1_arm64-setup.exe"
-        size: 12662985
-        sha256pre: "fea790fc4f7f7123"
-      "758492690":
-        name: "Voltius_0.76.1_arm64-setup.exe.sig"
-        size: 440
-        sha256pre: "4826bffb9a3492c5"
-      "758492729":
-        name: "voltius_windows_arm64.exe"
-        size: 40096256
-        sha256pre: "56764355e6e4093d"
-      "758497137":
-        name: "latest.json"
-        size: 11537
-        sha256pre: "76b3e1e8eecd820a"
-      "758498779":
-        name: "plugin-catalog.json"
-        size: 2555
-        sha256pre: "fed349a065390d52"
-      "758548584":
-        name: "Voltius_0.76.1_aarch64.apk"
-        size: 32087845
-        sha256pre: "711b313b4916ce38"
-      "758550086":
-        name: "Voltius-0.76.1-1.aarch64.rpm.sha256"
-        size: 95
-        sha256pre: "59be343daa8e02b2"
-      "758550087":
-        name: "Voltius-0.76.1-1.x86_64.rpm.sha256"
-        size: 94
-        sha256pre: "22efb29fc188b5c6"
-      "758550089":
-        name: "Voltius_0.76.1_aarch64.AppImage.sha256"
-        size: 98
-        sha256pre: "d82c9283ef7ae38d"
-      "758550091":
-        name: "Voltius_0.76.1_aarch64.app.tar.gz.sha256"
-        size: 100
-        sha256pre: "7ca123a43bab8821"
-      "758550097":
-        name: "Voltius_0.76.1_aarch64.apk.sha256"
-        size: 93
-        sha256pre: "107eefd90095b69a"
-      "758550113":
-        name: "Voltius_0.76.1_aarch64.dmg.sha256"
-        size: 93
-        sha256pre: "eeb1c9dff9a0aeae"
-      "758550121":
-        name: "Voltius_0.76.1_amd64.AppImage.sha256"
-        size: 96
-        sha256pre: "ef99813924b9ecef"
-      "758550124":
-        name: "Voltius_0.76.1_arm64-setup.exe.sha256"
-        size: 97
-        sha256pre: "474c927e7a8dc26d"
-      "758550125":
-        name: "Voltius_0.76.1_amd64.deb.sha256"
-        size: 91
-        sha256pre: "4440e504bfa9d83e"
-      "758550137":
-        name: "Voltius_0.76.1_arm64.deb.sha256"
-        size: 91
-        sha256pre: "048234a7d9235dc4"
-      "758550157":
-        name: "Voltius_0.76.1_arm64_en-US.msi.sha256"
-        size: 97
-        sha256pre: "a5f0ff01669f3e66"
-      "758550162":
-        name: "Voltius_0.76.1_x64.app.tar.gz.sha256"
-        size: 96
-        sha256pre: "72934e7731f6b12b"
-      "758550164":
-        name: "Voltius_0.76.1_x64.dmg.sha256"
-        size: 89
-        sha256pre: "035157febdad69cc"
-      "758550165":
-        name: "Voltius_0.76.1_x64-setup.exe.sha256"
-        size: 95
-        sha256pre: "24afd92e322d864d"
-      "758550172":
-        name: "Voltius_0.76.1_x64_en-US.msi.sha256"
-        size: 95
-        sha256pre: "30d7b8e09fe46423"
-      "758550189":
-        name: "plugin-catalog.json.sha256"
-        size: 86
-        sha256pre: "49da2572e70fb4c4"
-      "758550196":
-        name: "voltius_darwin_aarch64.sha256"
-        size: 89
-        sha256pre: "0d4ad6d39fd4053c"
-      "758550197":
-        name: "voltius_darwin_x64.sha256"
-        size: 85
-        sha256pre: "8822a88fca577507"
-      "758550198":
-        name: "voltius_linux_arm64.sha256"
-        size: 86
-        sha256pre: "436cf1f4b6781289"
-      "758550204":
-        name: "voltius_linux_x64.sha256"
-        size: 84
-        sha256pre: "2f9cc3918f81605f"
-      "758550220":
-        name: "voltius_windows_arm64.exe.sha256"
-        size: 92
-        sha256pre: "e4beaeb5b784520d"
-      "758550226":
-        name: "voltius_windows_x64.exe.sha256"
-        size: 90
-        sha256pre: "aea6e37609430394"
-  "448702867":
-    tag: "v0.77.0"
-    title: "Voltius v0.77.0"
-    published_at: "2026-11-17T14:27:31Z"
+      "796863115":
+        name: "index.js"
+        size: 62973
+        sha256pre: "79f4a2d8115ab890"
+      "796863116":
+        name: "manifest.json"
+        size: 470
+        sha256pre: "22b725c51727ca63"
+  "459859292":
+    tag: "tmux-3.8-2"
+    title: "tmux 3.8 (static)"
+    published_at: "2026-11-26T20:11:08Z"
+    prerelease: true
+    assets:
+      "797526853":
+        name: "tmux-3.8-x86_64"
+        size: 1715600
+        sha256pre: "212c66888ba6f05b"
+      "797526858":
+        name: "tmux-3.8-aarch64"
+        size: 1761888
+        sha256pre: "d1e0e54ab877b9c5"
+      "797526861":
+        name: "SHA256SUMS"
+        size: 165
+        sha256pre: "8998cfd677b115b2"
+  "459876886":
+    tag: "v0.85.1"
+    title: "Voltius v0.85.1"
+    published_at: "2026-11-26T20:55:33Z"
     prerelease: false
     assets:
-      "759316044":
-        name: "Voltius_0.77.0_aarch64.apk"
-        size: 32106821
-        sha256pre: "1ef2dd39b7a756fd"
-      "759317511":
-        name: "Voltius_0.77.0_x64_en-US.msi"
-        size: 19234816
-        sha256pre: "f4729dbcbd8b8754"
-      "759317608":
-        name: "Voltius_0.77.0_x64_en-US.msi.sig"
-        size: 440
-        sha256pre: "cd4465b827d17f98"
-      "759317644":
-        name: "Voltius_0.77.0_x64-setup.exe"
-        size: 14165107
-        sha256pre: "02ceef065c6732c1"
-      "759317714":
-        name: "Voltius_0.77.0_x64-setup.exe.sig"
-        size: 440
-        sha256pre: "d195a763fbc583bd"
-      "759317743":
-        name: "voltius_windows_x64.exe"
-        size: 46362112
-        sha256pre: "4e6fab222e756a50"
-      "759318870":
-        name: "Voltius_0.77.0_amd64.deb"
-        size: 19021096
-        sha256pre: "5e4d39a863ba3a5e"
-      "759318929":
-        name: "Voltius_0.77.0_amd64.deb.sig"
-        size: 432
-        sha256pre: "66ce8063a7158776"
-      "759318973":
-        name: "Voltius-0.77.0-1.x86_64.rpm"
-        size: 19026948
-        sha256pre: "e282c1fc9e53873c"
-      "759319059":
-        name: "Voltius-0.77.0-1.x86_64.rpm.sig"
-        size: 436
-        sha256pre: "4e1615c9b2443a82"
-      "759319086":
-        name: "Voltius_0.77.0_amd64.AppImage"
-        size: 96328184
-        sha256pre: "c1d8e4964a4a022e"
-      "759319480":
-        name: "Voltius_0.77.0_amd64.AppImage.sig"
-        size: 440
-        sha256pre: "6f4ea7ef7557f47f"
-      "759319514":
-        name: "voltius_linux_x64"
-        size: 39294392
-        sha256pre: "c021e25143c4dc94"
-      "759327439":
-        name: "Voltius_0.77.0_arm64.deb"
-        size: 18347706
-        sha256pre: "559ccb3a434f73ce"
-      "759327597":
-        name: "Voltius_0.77.0_arm64.deb.sig"
-        size: 432
-        sha256pre: "f825787db40f87db"
-      "759327638":
-        name: "Voltius-0.77.0-1.aarch64.rpm"
-        size: 18354383
-        sha256pre: "fc4671e5675fc007"
-      "759327766":
-        name: "Voltius-0.77.0-1.aarch64.rpm.sig"
-        size: 440
-        sha256pre: "c07b32ec88ecaddf"
-      "759327807":
-        name: "Voltius_0.77.0_aarch64.AppImage"
-        size: 93547016
-        sha256pre: "52021433cf15dc25"
-      "759328092":
-        name: "Voltius_0.77.0_aarch64.AppImage.sig"
-        size: 444
-        sha256pre: "7087d6ad067dad28"
-      "759328130":
-        name: "voltius_linux_arm64"
-        size: 35086480
-        sha256pre: "d272bb488f6eeb91"
-      "759332019":
-        name: "Voltius_0.77.0_arm64_en-US.msi"
-        size: 18079744
-        sha256pre: "8a4cd2ac38ef9132"
-      "759332126":
-        name: "Voltius_0.77.0_arm64_en-US.msi.sig"
-        size: 440
-        sha256pre: "288fcad0184f731f"
-      "759332170":
-        name: "Voltius_0.77.0_arm64-setup.exe"
-        size: 12675319
-        sha256pre: "4a5107b615cb8cfb"
-      "759332242":
-        name: "Voltius_0.77.0_arm64-setup.exe.sig"
-        size: 440
-        sha256pre: "1daf46b887313758"
-      "759332314":
-        name: "voltius_windows_arm64.exe"
-        size: 40114688
-        sha256pre: "cd1563536d9901fa"
-      "759343363":
-        name: "Voltius_0.77.0_aarch64.dmg"
-        size: 16803307
-        sha256pre: "6ee58aea22a00a5a"
-      "759343472":
-        name: "Voltius_0.77.0_aarch64.app.tar.gz"
-        size: 16868588
-        sha256pre: "e06de3a035e39b3f"
-      "759343550":
-        name: "Voltius_0.77.0_aarch64.app.tar.gz.sig"
+      "797624855":
+        name: "Voltius_0.85.1_x64.dmg"
+        size: 18514999
+        sha256pre: "85f47a7955c64833"
+      "797625198":
+        name: "Voltius_0.85.1_x64.app.tar.gz"
+        size: 18433057
+        sha256pre: "d23810a5b906a600"
+      "797625294":
+        name: "Voltius_0.85.1_x64.app.tar.gz.sig"
         size: 424
-        sha256pre: "1fda7d676e636b1f"
-      "759343570":
-        name: "voltius_darwin_aarch64"
-        size: 31562192
-        sha256pre: "a9799038e6e371c4"
-      "759361985":
-        name: "Voltius_0.77.0_x64.dmg"
-        size: 18179660
-        sha256pre: "7729fcedd2a1ca56"
-      "759362061":
-        name: "Voltius_0.77.0_x64.app.tar.gz"
-        size: 18078995
-        sha256pre: "282c00f613b76f80"
-      "759362134":
-        name: "Voltius_0.77.0_x64.app.tar.gz.sig"
-        size: 424
-        sha256pre: "fae078a1f7ba152d"
-      "759362180":
+        sha256pre: "2e1ebb29150a9953"
+      "797625321":
         name: "voltius_darwin_x64"
-        size: 34178000
-        sha256pre: "2e59d853d3e0e0ad"
-      "759365619":
+        size: 34892648
+        sha256pre: "d897757d39112519"
+      "797635281":
+        name: "Voltius_0.85.1_amd64.deb"
+        size: 19380514
+        sha256pre: "aaab79bf01bf4760"
+      "797635317":
+        name: "Voltius_0.85.1_amd64.deb.sig"
+        size: 432
+        sha256pre: "29ab208e8a18e4e5"
+      "797635335":
+        name: "Voltius-0.85.1-1.x86_64.rpm"
+        size: 19384463
+        sha256pre: "e6b5839479a2cf92"
+      "797635402":
+        name: "Voltius-0.85.1-1.x86_64.rpm.sig"
+        size: 436
+        sha256pre: "fea64eacafbb7ba6"
+      "797635418":
+        name: "Voltius_0.85.1_amd64.AppImage"
+        size: 96606712
+        sha256pre: "cca9779793fe618e"
+      "797635573":
+        name: "Voltius_0.85.1_amd64.AppImage.sig"
+        size: 440
+        sha256pre: "8faea116408a4083"
+      "797635586":
+        name: "voltius_linux_x64"
+        size: 40057336
+        sha256pre: "fb7c7fc25a087378"
+      "797638566":
+        name: "Voltius_0.85.1_arm64.deb"
+        size: 18699056
+        sha256pre: "f86b0aede24be239"
+      "797638627":
+        name: "Voltius_0.85.1_arm64.deb.sig"
+        size: 432
+        sha256pre: "2fdd7383666448b2"
+      "797638654":
+        name: "Voltius-0.85.1-1.aarch64.rpm"
+        size: 18704000
+        sha256pre: "f5827e6ec175770b"
+      "797638724":
+        name: "Voltius-0.85.1-1.aarch64.rpm.sig"
+        size: 440
+        sha256pre: "ae38c18c0331d100"
+      "797638746":
+        name: "Voltius_0.85.1_aarch64.AppImage"
+        size: 93841928
+        sha256pre: "a7321d66167dc471"
+      "797638925":
+        name: "Voltius_0.85.1_aarch64.AppImage.sig"
+        size: 444
+        sha256pre: "8973065bfb40d47e"
+      "797638959":
+        name: "voltius_linux_arm64"
+        size: 35807376
+        sha256pre: "f02c90d67cc4040b"
+      "797639905":
+        name: "Voltius_0.85.1_aarch64.apk"
+        size: 32417333
+        sha256pre: "a253eb481a23b685"
+      "797656124":
+        name: "Voltius_0.85.1_x64_en-US.msi"
+        size: 19656704
+        sha256pre: "cc926f1433ceb65b"
+      "797656200":
+        name: "Voltius_0.85.1_x64_en-US.msi.sig"
+        size: 440
+        sha256pre: "b625a11b86df8aeb"
+      "797656218":
+        name: "Voltius_0.85.1_x64-setup.exe"
+        size: 14417416
+        sha256pre: "b6862b6f67609912"
+      "797656268":
+        name: "Voltius_0.85.1_x64-setup.exe.sig"
+        size: 440
+        sha256pre: "1a883214dedac8bb"
+      "797656281":
+        name: "voltius_windows_x64.exe"
+        size: 47495680
+        sha256pre: "7a2a6e4d1c0b02d9"
+      "797658082":
+        name: "Voltius_0.85.1_aarch64.dmg"
+        size: 17125824
+        sha256pre: "de21ccff29a9bc13"
+      "797658188":
+        name: "Voltius_0.85.1_aarch64.app.tar.gz"
+        size: 17204624
+        sha256pre: "660cadb096c55e8d"
+      "797658703":
+        name: "Voltius_0.85.1_aarch64.app.tar.gz.sig"
+        size: 424
+        sha256pre: "fcca999e744ebc24"
+      "797658723":
+        name: "voltius_darwin_aarch64"
+        size: 32207456
+        sha256pre: "ff290162b2f16d14"
+      "797660988":
+        name: "Voltius_0.85.1_arm64_en-US.msi"
+        size: 18468864
+        sha256pre: "0a86455b1bdf2ba3"
+      "797661041":
+        name: "Voltius_0.85.1_arm64_en-US.msi.sig"
+        size: 440
+        sha256pre: "81b27b7f92de58ab"
+      "797661068":
+        name: "Voltius_0.85.1_arm64-setup.exe"
+        size: 12883871
+        sha256pre: "e2ba0fb40e12f27e"
+      "797661115":
+        name: "Voltius_0.85.1_arm64-setup.exe.sig"
+        size: 440
+        sha256pre: "410d353f6a3f3d22"
+      "797661147":
+        name: "voltius_windows_arm64.exe"
+        size: 41063424
+        sha256pre: "f746f08607992628"
+      "797662004":
         name: "latest.json"
-        size: 11912
-        sha256pre: "763c2e565083f14d"
-      "759367999":
+        size: 11328
+        sha256pre: "6021446e64040bec"
+      "797663849":
         name: "plugin-catalog.json"
         size: 2555
-        sha256pre: "fed349a065390d52"
-      "759368765":
-        name: "Voltius_0.77.0_aarch64.AppImage.sha256"
-        size: 98
-        sha256pre: "4c3941728ac44a88"
-      "759368766":
-        name: "Voltius_0.77.0_aarch64.app.tar.gz.sha256"
-        size: 100
-        sha256pre: "8a66dae9361a233a"
-      "759368767":
-        name: "Voltius-0.77.0-1.x86_64.rpm.sha256"
+        sha256pre: "a8ebaf24b7142b68"
+      "797664567":
+        name: "Voltius-0.85.1-1.x86_64.rpm.sha256"
         size: 94
-        sha256pre: "89c43723541078ef"
-      "759368769":
-        name: "Voltius-0.77.0-1.aarch64.rpm.sha256"
+        sha256pre: "8cf8f0a4805d0c9b"
+      "797664568":
+        name: "Voltius_0.85.1_aarch64.AppImage.sha256"
+        size: 98
+        sha256pre: "e93d55f67b1e250a"
+      "797664570":
+        name: "Voltius-0.85.1-1.aarch64.rpm.sha256"
         size: 95
-        sha256pre: "006d4f9a87b8d3aa"
-      "759368771":
-        name: "Voltius_0.77.0_aarch64.apk.sha256"
+        sha256pre: "9c32d62ca861fb99"
+      "797664571":
+        name: "Voltius_0.85.1_aarch64.app.tar.gz.sha256"
+        size: 100
+        sha256pre: "045d3228374688a0"
+      "797664572":
+        name: "Voltius_0.85.1_aarch64.apk.sha256"
         size: 93
-        sha256pre: "70196fcc05bdd0f4"
-      "759368817":
-        name: "Voltius_0.77.0_aarch64.dmg.sha256"
+        sha256pre: "275ffbd9ae54ffc1"
+      "797664674":
+        name: "Voltius_0.85.1_aarch64.dmg.sha256"
         size: 93
-        sha256pre: "32c4a53ef15f48c7"
-      "759368819":
-        name: "Voltius_0.77.0_amd64.AppImage.sha256"
-        size: 96
-        sha256pre: "c816d650de1237c5"
-      "759368821":
-        name: "Voltius_0.77.0_amd64.deb.sha256"
+        sha256pre: "356db282d76700d5"
+      "797664692":
+        name: "Voltius_0.85.1_amd64.deb.sha256"
         size: 91
-        sha256pre: "8c286c65b98074b7"
-      "759368825":
-        name: "Voltius_0.77.0_arm64-setup.exe.sha256"
-        size: 97
-        sha256pre: "4a72dc12fca013a7"
-      "759368830":
-        name: "Voltius_0.77.0_arm64.deb.sha256"
-        size: 91
-        sha256pre: "1d3fe4a70dc6aebd"
-      "759368870":
-        name: "Voltius_0.77.0_arm64_en-US.msi.sha256"
-        size: 97
-        sha256pre: "ded85fa1a78bf41e"
-      "759368874":
-        name: "Voltius_0.77.0_x64.app.tar.gz.sha256"
+        sha256pre: "cae7512199696f1e"
+      "797664695":
+        name: "Voltius_0.85.1_amd64.AppImage.sha256"
         size: 96
-        sha256pre: "28c21f29b7a46a0b"
-      "759368875":
-        name: "Voltius_0.77.0_x64-setup.exe.sha256"
+        sha256pre: "e4717ca211d628b1"
+      "797664703":
+        name: "Voltius_0.85.1_arm64-setup.exe.sha256"
+        size: 97
+        sha256pre: "4c8f6f4c0ac8f195"
+      "797664706":
+        name: "Voltius_0.85.1_arm64.deb.sha256"
+        size: 91
+        sha256pre: "9d387ca092d33b7d"
+      "797664721":
+        name: "Voltius_0.85.1_arm64_en-US.msi.sha256"
+        size: 97
+        sha256pre: "d9028e17ca8d3c95"
+      "797664724":
+        name: "Voltius_0.85.1_x64-setup.exe.sha256"
         size: 95
-        sha256pre: "5c90099bc3bcf927"
-      "759368877":
-        name: "Voltius_0.77.0_x64_en-US.msi.sha256"
-        size: 95
-        sha256pre: "243dac6bb2755330"
-      "759368879":
-        name: "Voltius_0.77.0_x64.dmg.sha256"
+        sha256pre: "c9645d43bb9d8c16"
+      "797664725":
+        name: "Voltius_0.85.1_x64.app.tar.gz.sha256"
+        size: 96
+        sha256pre: "d4a7f1938363146f"
+      "797664728":
+        name: "Voltius_0.85.1_x64.dmg.sha256"
         size: 89
-        sha256pre: "ed91297f6badff9d"
-      "759368900":
+        sha256pre: "bc15a9fd6d081557"
+      "797664735":
+        name: "Voltius_0.85.1_x64_en-US.msi.sha256"
+        size: 95
+        sha256pre: "b73ce36c664bf2ae"
+      "797664742":
         name: "plugin-catalog.json.sha256"
         size: 86
-        sha256pre: "49da2572e70fb4c4"
-      "759368902":
-        name: "voltius_linux_arm64.sha256"
-        size: 86
-        sha256pre: "2333850b3753e30a"
-      "759368905":
+        sha256pre: "5d844d64e29ab6a8"
+      "797664743":
         name: "voltius_darwin_aarch64.sha256"
         size: 89
-        sha256pre: "08ed5cf8418e16ab"
-      "759368906":
+        sha256pre: "940dcde2583f086e"
+      "797664753":
         name: "voltius_darwin_x64.sha256"
         size: 85
-        sha256pre: "9ca4426328911cbe"
-      "759368925":
+        sha256pre: "5c2d090af52cac6c"
+      "797664755":
+        name: "voltius_linux_arm64.sha256"
+        size: 86
+        sha256pre: "c46a0cd1f5568325"
+      "797664765":
         name: "voltius_linux_x64.sha256"
         size: 84
-        sha256pre: "df5caa50dc489067"
-      "759368941":
+        sha256pre: "0f7d08a019a8af12"
+      "797664780":
         name: "voltius_windows_arm64.exe.sha256"
         size: 92
-        sha256pre: "401ff5cd6ebf1620"
-      "759368943":
+        sha256pre: "614220ccb7047520"
+      "797664786":
         name: "voltius_windows_x64.exe.sha256"
         size: 90
-        sha256pre: "cd0f124437b899fd"
-  "449926456":
-    tag: "v0.78.0"
-    title: "Voltius v0.78.0"
-    published_at: "2026-11-18T12:28:01Z"
+        sha256pre: "f09a934e3077e3dd"
+  "459993806":
+    tag: "v0.86.0"
+    title: "Voltius v0.86.0"
+    published_at: "2026-11-26T23:46:14Z"
     prerelease: false
     assets:
-      "763279260":
-        name: "Voltius_0.78.0_amd64.deb"
-        size: 19026874
-        sha256pre: "acf2af054cb82e2f"
-      "763279338":
-        name: "Voltius_0.78.0_amd64.deb.sig"
+      "798143720":
+        name: "Voltius_0.86.0_amd64.deb"
+        size: 19382852
+        sha256pre: "e9edb1029a1e3989"
+      "798143818":
+        name: "Voltius_0.86.0_amd64.deb.sig"
         size: 432
-        sha256pre: "d64be8410fb97d71"
-      "763279366":
-        name: "Voltius-0.78.0-1.x86_64.rpm"
-        size: 19032282
-        sha256pre: "1fb599ddd9c1aa35"
-      "763279428":
-        name: "Voltius-0.78.0-1.x86_64.rpm.sig"
+        sha256pre: "e05289721c4e9ab6"
+      "798143835":
+        name: "Voltius-0.86.0-1.x86_64.rpm"
+        size: 19387735
+        sha256pre: "a3838572614f88c4"
+      "798143881":
+        name: "Voltius-0.86.0-1.x86_64.rpm.sig"
         size: 436
-        sha256pre: "30714b55f14db799"
-      "763279457":
-        name: "Voltius_0.78.0_amd64.AppImage"
-        size: 96332280
-        sha256pre: "18092b6cc96a2793"
-      "763279661":
-        name: "Voltius_0.78.0_amd64.AppImage.sig"
+        sha256pre: "8a0c0e9e0f5ac059"
+      "798143900":
+        name: "Voltius_0.86.0_amd64.AppImage"
+        size: 96610808
+        sha256pre: "049ea239a8408099"
+      "798144199":
+        name: "Voltius_0.86.0_amd64.AppImage.sig"
         size: 440
-        sha256pre: "9538ed91fcf558f3"
-      "763279698":
+        sha256pre: "fba295ca659344b9"
+      "798144231":
         name: "voltius_linux_x64"
-        size: 39299640
-        sha256pre: "6f6173c312df13a7"
-      "763288237":
-        name: "Voltius_0.78.0_arm64.deb"
-        size: 18350634
-        sha256pre: "36ee45daea683e44"
-      "763288364":
-        name: "Voltius_0.78.0_arm64.deb.sig"
-        size: 432
-        sha256pre: "16aa3c043262b204"
-      "763288428":
-        name: "Voltius-0.78.0-1.aarch64.rpm"
-        size: 18355787
-        sha256pre: "884a3e50d10aa2c9"
-      "763288522":
-        name: "Voltius-0.78.0-1.aarch64.rpm.sig"
-        size: 440
-        sha256pre: "7de425d2379e75de"
-      "763288583":
-        name: "Voltius_0.78.0_aarch64.AppImage"
-        size: 93547016
-        sha256pre: "4273f015a54ebb1f"
-      "763288814":
-        name: "Voltius_0.78.0_aarch64.AppImage.sig"
-        size: 444
-        sha256pre: "854111b5be7ed5e3"
-      "763288852":
-        name: "voltius_linux_arm64"
-        size: 35152016
-        sha256pre: "d914df5b5f47f65e"
-      "763289076":
-        name: "Voltius_0.78.0_aarch64.dmg"
-        size: 16805424
-        sha256pre: "efecb29889868153"
-      "763289144":
-        name: "Voltius_0.78.0_aarch64.app.tar.gz"
-        size: 16870441
-        sha256pre: "b2f19331f74a577e"
-      "763289212":
-        name: "Voltius_0.78.0_aarch64.app.tar.gz.sig"
+        size: 40061432
+        sha256pre: "75497ef335a3e8fa"
+      "798153453":
+        name: "Voltius_0.86.0_aarch64.apk"
+        size: 32417365
+        sha256pre: "44fca0e0af39a5d1"
+      "798154301":
+        name: "Voltius_0.86.0_x64.dmg"
+        size: 18515622
+        sha256pre: "b8ee262db2b12c1b"
+      "798154359":
+        name: "Voltius_0.86.0_x64.app.tar.gz"
+        size: 18434638
+        sha256pre: "fb9e8a65c9024cee"
+      "798154429":
+        name: "Voltius_0.86.0_x64.app.tar.gz.sig"
         size: 424
-        sha256pre: "987393d22919b00a"
-      "763289251":
-        name: "voltius_darwin_aarch64"
-        size: 31562192
-        sha256pre: "e60b9bddfa77c31b"
-      "763304534":
-        name: "Voltius_0.78.0_aarch64.apk"
-        size: 32111109
-        sha256pre: "eb2555e8e2bb32ef"
-      "763307206":
-        name: "Voltius_0.78.0_arm64_en-US.msi"
-        size: 18087936
-        sha256pre: "836941451ec15762"
-      "763307315":
-        name: "Voltius_0.78.0_arm64_en-US.msi.sig"
-        size: 440
-        sha256pre: "cb8a43281100912e"
-      "763307355":
-        name: "Voltius_0.78.0_arm64-setup.exe"
-        size: 12679869
-        sha256pre: "e55aa10245846202"
-      "763307430":
-        name: "Voltius_0.78.0_arm64-setup.exe.sig"
-        size: 440
-        sha256pre: "0547b2094a56a459"
-      "763307456":
-        name: "voltius_windows_arm64.exe"
-        size: 40121856
-        sha256pre: "06f47a6148c8f4f5"
-      "763307888":
-        name: "Voltius_0.78.0_x64.dmg"
-        size: 18179242
-        sha256pre: "d427caac85ca3a8d"
-      "763307969":
-        name: "Voltius_0.78.0_x64.app.tar.gz"
-        size: 18081556
-        sha256pre: "aa054f325c93ad29"
-      "763308084":
-        name: "Voltius_0.78.0_x64.app.tar.gz.sig"
-        size: 424
-        sha256pre: "eb3e77ad5ff72adf"
-      "763308121":
+        sha256pre: "4aa0cdcbe6b357cc"
+      "798154456":
         name: "voltius_darwin_x64"
-        size: 34182096
-        sha256pre: "aee1486b3c855fbb"
-      "763314516":
-        name: "Voltius_0.78.0_x64_en-US.msi"
-        size: 19234816
-        sha256pre: "c20c91ddc230f55d"
-      "763314618":
-        name: "Voltius_0.78.0_x64_en-US.msi.sig"
+        size: 34892648
+        sha256pre: "be102afccf909183"
+      "798154528":
+        name: "Voltius_0.86.0_arm64.deb"
+        size: 18698598
+        sha256pre: "ac6934f1567e57c7"
+      "798154648":
+        name: "Voltius_0.86.0_arm64.deb.sig"
+        size: 432
+        sha256pre: "a88e0dd47c3001b4"
+      "798154682":
+        name: "Voltius-0.86.0-1.aarch64.rpm"
+        size: 18703513
+        sha256pre: "a46adeff9ece6c07"
+      "798154750":
+        name: "Voltius-0.86.0-1.aarch64.rpm.sig"
         size: 440
-        sha256pre: "8ce40282e50676ef"
-      "763314656":
-        name: "Voltius_0.78.0_x64-setup.exe"
-        size: 14163485
-        sha256pre: "6b7fb720f8af44d6"
-      "763314748":
-        name: "Voltius_0.78.0_x64-setup.exe.sig"
+        sha256pre: "fbe5468fd100ac5f"
+      "798154777":
+        name: "Voltius_0.86.0_aarch64.AppImage"
+        size: 93854216
+        sha256pre: "dfc2b1052ec4e3f5"
+      "798154963":
+        name: "Voltius_0.86.0_aarch64.AppImage.sig"
+        size: 444
+        sha256pre: "d3b2f6e8f5cafc86"
+      "798154985":
+        name: "voltius_linux_arm64"
+        size: 35807376
+        sha256pre: "0cd29ffbe12cc38f"
+      "798161759":
+        name: "Voltius_0.86.0_x64_en-US.msi"
+        size: 19652608
+        sha256pre: "edf71da191ae867a"
+      "798161807":
+        name: "Voltius_0.86.0_x64_en-US.msi.sig"
         size: 440
-        sha256pre: "48d13453adc31a3d"
-      "763314788":
+        sha256pre: "3ba511137720f704"
+      "798161834":
+        name: "Voltius_0.86.0_x64-setup.exe"
+        size: 14420215
+        sha256pre: "1985072bbf7dd86c"
+      "798161870":
+        name: "Voltius_0.86.0_x64-setup.exe.sig"
+        size: 440
+        sha256pre: "eccf42455f0d1b41"
+      "798161889":
         name: "voltius_windows_x64.exe"
-        size: 46370816
-        sha256pre: "4f8af4be4929326c"
-      "763317972":
+        size: 47494656
+        sha256pre: "7e89de4f6a5da8ab"
+      "798167588":
+        name: "Voltius_0.86.0_aarch64.dmg"
+        size: 17127447
+        sha256pre: "f0fce6b77099dffc"
+      "798167684":
+        name: "Voltius_0.86.0_aarch64.app.tar.gz"
+        size: 17207332
+        sha256pre: "5acd0aae109d6aac"
+      "798167727":
+        name: "Voltius_0.86.0_aarch64.app.tar.gz.sig"
+        size: 424
+        sha256pre: "36c5744a6c8bdf7d"
+      "798167766":
+        name: "voltius_darwin_aarch64"
+        size: 32207472
+        sha256pre: "1cfbe7500daf41c0"
+      "798172325":
+        name: "Voltius_0.86.0_arm64_en-US.msi"
+        size: 18468864
+        sha256pre: "34979d50e7b6ba16"
+      "798172374":
+        name: "Voltius_0.86.0_arm64_en-US.msi.sig"
+        size: 440
+        sha256pre: "7bac70b4ed034652"
+      "798172400":
+        name: "Voltius_0.86.0_arm64-setup.exe"
+        size: 12885722
+        sha256pre: "a5da4130b49b0ae6"
+      "798172450":
+        name: "Voltius_0.86.0_arm64-setup.exe.sig"
+        size: 440
+        sha256pre: "3ca01073cb7ae95d"
+      "798172477":
+        name: "voltius_windows_arm64.exe"
+        size: 41063424
+        sha256pre: "f1b1a7bb6f69ecc5"
+      "798173283":
         name: "latest.json"
-        size: 11756
-        sha256pre: "f3f9540f11229b6a"
-      "763319937":
+        size: 11226
+        sha256pre: "37077155c855dc9b"
+      "798175725":
         name: "plugin-catalog.json"
         size: 2555
-        sha256pre: "fed349a065390d52"
-      "763320973":
-        name: "Voltius_0.78.0_aarch64.apk.sha256"
-        size: 93
-        sha256pre: "6e2137a9bcc50f94"
-      "763320976":
-        name: "Voltius-0.78.0-1.aarch64.rpm.sha256"
-        size: 95
-        sha256pre: "605a0e525c19d99a"
-      "763320977":
-        name: "Voltius-0.78.0-1.x86_64.rpm.sha256"
-        size: 94
-        sha256pre: "2b955e6d1e52506f"
-      "763320984":
-        name: "Voltius_0.78.0_aarch64.AppImage.sha256"
+        sha256pre: "a8ebaf24b7142b68"
+      "798176080":
+        name: "Voltius_0.86.0_aarch64.AppImage.sha256"
         size: 98
-        sha256pre: "0bc677295c171c82"
-      "763320986":
-        name: "Voltius_0.78.0_aarch64.app.tar.gz.sha256"
+        sha256pre: "038e3b8e13e9734b"
+      "798176081":
+        name: "Voltius_0.86.0_aarch64.app.tar.gz.sha256"
         size: 100
-        sha256pre: "86132234125f6b2c"
-      "763321010":
-        name: "Voltius_0.78.0_aarch64.dmg.sha256"
+        sha256pre: "d4b471dc4543c620"
+      "798176082":
+        name: "Voltius_0.86.0_aarch64.apk.sha256"
         size: 93
-        sha256pre: "a92a437f4f83428b"
-      "763321014":
-        name: "Voltius_0.78.0_amd64.deb.sha256"
-        size: 91
-        sha256pre: "cec958d39fbc6401"
-      "763321021":
-        name: "Voltius_0.78.0_arm64-setup.exe.sha256"
-        size: 97
-        sha256pre: "5f0106a3c9cef3f5"
-      "763321025":
-        name: "Voltius_0.78.0_arm64.deb.sha256"
-        size: 91
-        sha256pre: "b94a5f1be6a5c95c"
-      "763321032":
-        name: "Voltius_0.78.0_amd64.AppImage.sha256"
-        size: 96
-        sha256pre: "c8056347ffdf3ad1"
-      "763321076":
-        name: "Voltius_0.78.0_x64-setup.exe.sha256"
+        sha256pre: "302d514fc253f0e8"
+      "798176083":
+        name: "Voltius-0.86.0-1.x86_64.rpm.sha256"
+        size: 94
+        sha256pre: "d78a796559918fb8"
+      "798176084":
+        name: "Voltius-0.86.0-1.aarch64.rpm.sha256"
         size: 95
-        sha256pre: "2bb7cba8c1a9f4ca"
-      "763321077":
-        name: "Voltius_0.78.0_arm64_en-US.msi.sha256"
-        size: 97
-        sha256pre: "75d6d35080d4b713"
-      "763321094":
-        name: "Voltius_0.78.0_x64.app.tar.gz.sha256"
+        sha256pre: "bd5e92ae0a70c734"
+      "798176104":
+        name: "Voltius_0.86.0_aarch64.dmg.sha256"
+        size: 93
+        sha256pre: "4b9a9d6ebde5cff1"
+      "798176105":
+        name: "Voltius_0.86.0_amd64.AppImage.sha256"
         size: 96
-        sha256pre: "1a7344083b8d5cd5"
-      "763321095":
-        name: "Voltius_0.78.0_x64.dmg.sha256"
+        sha256pre: "37b58ff0682c4643"
+      "798176106":
+        name: "Voltius_0.86.0_amd64.deb.sha256"
+        size: 91
+        sha256pre: "3c6b144b1a5a003c"
+      "798176108":
+        name: "Voltius_0.86.0_arm64-setup.exe.sha256"
+        size: 97
+        sha256pre: "77dd6b0c8ec3e0c0"
+      "798176114":
+        name: "Voltius_0.86.0_arm64.deb.sha256"
+        size: 91
+        sha256pre: "68419f074e3392e8"
+      "798176117":
+        name: "Voltius_0.86.0_arm64_en-US.msi.sha256"
+        size: 97
+        sha256pre: "6a0182f65295996b"
+      "798176118":
+        name: "Voltius_0.86.0_x64-setup.exe.sha256"
+        size: 95
+        sha256pre: "89c1aced5a6d81bf"
+      "798176123":
+        name: "Voltius_0.86.0_x64.app.tar.gz.sha256"
+        size: 96
+        sha256pre: "54dc21808f4d9e67"
+      "798176131":
+        name: "Voltius_0.86.0_x64.dmg.sha256"
         size: 89
-        sha256pre: "35f03e3ad356d1fa"
-      "763321096":
-        name: "Voltius_0.78.0_x64_en-US.msi.sha256"
+        sha256pre: "e0593923cd091dec"
+      "798176133":
+        name: "Voltius_0.86.0_x64_en-US.msi.sha256"
         size: 95
-        sha256pre: "7f781370adde87f2"
-      "763321115":
+        sha256pre: "8a3316ab9d0675c6"
+      "798176147":
         name: "plugin-catalog.json.sha256"
         size: 86
-        sha256pre: "49da2572e70fb4c4"
-      "763321119":
+        sha256pre: "5d844d64e29ab6a8"
+      "798176148":
         name: "voltius_darwin_aarch64.sha256"
         size: 89
-        sha256pre: "9dae63ae6962563b"
-      "763321130":
+        sha256pre: "b15b29ad5cbb902b"
+      "798176150":
         name: "voltius_darwin_x64.sha256"
         size: 85
-        sha256pre: "ef6cee495d610728"
-      "763321131":
-        name: "voltius_linux_arm64.sha256"
-        size: 86
-        sha256pre: "8c8497e3854de006"
-      "763321134":
+        sha256pre: "22c10f17edc14c62"
+      "798176152":
         name: "voltius_linux_x64.sha256"
         size: 84
-        sha256pre: "daf6c07a227b9c79"
-      "763321141":
+        sha256pre: "88261c71203e8c7c"
+      "798176154":
+        name: "voltius_linux_arm64.sha256"
+        size: 86
+        sha256pre: "b0b90e195f98e442"
+      "798176168":
         name: "voltius_windows_arm64.exe.sha256"
         size: 92
-        sha256pre: "d6c2c4f2af88e26f"
-      "763321144":
+        sha256pre: "95f9cd6305e5855d"
+      "798176172":
         name: "voltius_windows_x64.exe.sha256"
         size: 90
-        sha256pre: "a7038a3e59a4a512"
-  "450375348":
-    tag: "v0.79.0"
-    title: "Voltius v0.79.0"
-    published_at: "2026-11-18T18:44:02Z"
+        sha256pre: "7e2b856c9826f859"
+  "460530389":
+    tag: "v0.87.0"
+    title: "Voltius v0.87.0"
+    published_at: "2026-11-27T12:18:24Z"
     prerelease: false
     assets:
-      "764508427":
-        name: "Voltius_0.79.0_aarch64.apk"
-        size: 32122597
-        sha256pre: "a5d6541dc249d928"
-      "764509508":
-        name: "Voltius_0.79.0_x64_en-US.msi"
-        size: 19234816
-        sha256pre: "b47d8546795d3944"
-      "764509610":
-        name: "Voltius_0.79.0_x64_en-US.msi.sig"
-        size: 440
-        sha256pre: "fd712fadd851207c"
-      "764509655":
-        name: "Voltius_0.79.0_x64-setup.exe"
-        size: 14175693
-        sha256pre: "9198084d7c4e8dbc"
-      "764509753":
-        name: "Voltius_0.79.0_x64-setup.exe.sig"
-        size: 440
-        sha256pre: "6f84ea55dca1cbdd"
-      "764509811":
-        name: "voltius_windows_x64.exe"
-        size: 46387712
-        sha256pre: "68faec471ad01001"
-      "764510974":
-        name: "Voltius_0.79.0_amd64.deb"
-        size: 19029908
-        sha256pre: "ae649750bba1d28b"
-      "764511090":
-        name: "Voltius_0.79.0_amd64.deb.sig"
+      "800308052":
+        name: "Voltius_0.87.0_aarch64.apk"
+        size: 32553685
+        sha256pre: "c49093f442776230"
+      "800312892":
+        name: "Voltius_0.87.0_amd64.deb"
+        size: 19519028
+        sha256pre: "54f7930291e5e8dc"
+      "800312993":
+        name: "Voltius_0.87.0_amd64.deb.sig"
         size: 432
-        sha256pre: "4c2d4e139cec5d80"
-      "764511161":
-        name: "Voltius-0.79.0-1.x86_64.rpm"
-        size: 19034619
-        sha256pre: "70bd2c28c8d81d75"
-      "764511264":
-        name: "Voltius-0.79.0-1.x86_64.rpm.sig"
+        sha256pre: "e28fe625e6b63374"
+      "800313016":
+        name: "Voltius-0.87.0-1.x86_64.rpm"
+        size: 19525639
+        sha256pre: "61eb5a6b3a3cb6e7"
+      "800313081":
+        name: "Voltius-0.87.0-1.x86_64.rpm.sig"
         size: 436
-        sha256pre: "e8d584718206ccb3"
-      "764511300":
-        name: "Voltius_0.79.0_amd64.AppImage"
-        size: 96336376
-        sha256pre: "08b80914dd80f69f"
-      "764511504":
-        name: "Voltius_0.79.0_amd64.AppImage.sig"
+        sha256pre: "b3644ac123eb954f"
+      "800313118":
+        name: "Voltius_0.87.0_amd64.AppImage"
+        size: 96733688
+        sha256pre: "03e5f61b2ed599b4"
+      "800313236":
+        name: "Voltius_0.87.0_amd64.AppImage.sig"
         size: 440
-        sha256pre: "9df39a3c79b45499"
-      "764511539":
+        sha256pre: "bc19a543cfa9a1e3"
+      "800313253":
         name: "voltius_linux_x64"
-        size: 39315768
-        sha256pre: "3f688e9411b4f629"
-      "764513360":
-        name: "Voltius_0.79.0_arm64.deb"
-        size: 18356088
-        sha256pre: "f9122a34468353c5"
-      "764513446":
-        name: "Voltius_0.79.0_arm64.deb.sig"
+        size: 40326648
+        sha256pre: "9907536e50c32194"
+      "800319416":
+        name: "Voltius_0.87.0_arm64.deb"
+        size: 18829632
+        sha256pre: "862755d25509c8ce"
+      "800319521":
+        name: "Voltius_0.87.0_arm64.deb.sig"
         size: 432
-        sha256pre: "85a82b75a51bffff"
-      "764513499":
-        name: "Voltius-0.79.0-1.aarch64.rpm"
-        size: 18362368
-        sha256pre: "c15fbdfacfc0879f"
-      "764513572":
-        name: "Voltius-0.79.0-1.aarch64.rpm.sig"
+        sha256pre: "70de6032233d9f8c"
+      "800319550":
+        name: "Voltius-0.87.0-1.aarch64.rpm"
+        size: 18834666
+        sha256pre: "4b0d7f56e693f56b"
+      "800319603":
+        name: "Voltius-0.87.0-1.aarch64.rpm.sig"
         size: 440
-        sha256pre: "9f4ebebccd6b9ad6"
-      "764513604":
-        name: "Voltius_0.79.0_aarch64.AppImage"
-        size: 93551112
-        sha256pre: "5eb3c7b207e0205e"
-      "764513779":
-        name: "Voltius_0.79.0_aarch64.AppImage.sig"
+        sha256pre: "9d0c1f035a1a678f"
+      "800319643":
+        name: "Voltius_0.87.0_aarch64.AppImage"
+        size: 93956616
+        sha256pre: "b400bc0a145a1dfb"
+      "800319838":
+        name: "Voltius_0.87.0_aarch64.AppImage.sig"
         size: 444
-        sha256pre: "38fb5de64e0f8b0d"
-      "764513802":
+        sha256pre: "23b79251a3344671"
+      "800319859":
         name: "voltius_linux_arm64"
-        size: 35152016
-        sha256pre: "efb1fb940002990a"
-      "764526026":
-        name: "Voltius_0.79.0_arm64_en-US.msi"
-        size: 18092032
-        sha256pre: "8f3a36012505e252"
-      "764526123":
-        name: "Voltius_0.79.0_arm64_en-US.msi.sig"
+        size: 36003984
+        sha256pre: "0376d44a68f407cf"
+      "800333777":
+        name: "Voltius_0.87.0_x64_en-US.msi"
+        size: 19779584
+        sha256pre: "8f16a7c82ab8a1ec"
+      "800333835":
+        name: "Voltius_0.87.0_x64_en-US.msi.sig"
         size: 440
-        sha256pre: "091dac43ae338d8f"
-      "764526150":
-        name: "Voltius_0.79.0_arm64-setup.exe"
-        size: 12682688
-        sha256pre: "648cdb03bf697b75"
-      "764526190":
-        name: "Voltius_0.79.0_arm64-setup.exe.sig"
+        sha256pre: "13585b4a472d0f4c"
+      "800333878":
+        name: "Voltius_0.87.0_x64-setup.exe"
+        size: 14505713
+        sha256pre: "93575d0174ca8160"
+      "800333924":
+        name: "Voltius_0.87.0_x64-setup.exe.sig"
         size: 440
-        sha256pre: "151b641ab0506849"
-      "764526221":
-        name: "voltius_windows_arm64.exe"
-        size: 40137216
-        sha256pre: "da5e45713fda40a1"
-      "764540184":
-        name: "Voltius_0.79.0_x64.dmg"
-        size: 18185665
-        sha256pre: "542f44fe533a1472"
-      "764540248":
-        name: "Voltius_0.79.0_x64.app.tar.gz"
-        size: 18088784
-        sha256pre: "7415e11fb2faeab7"
-      "764540308":
-        name: "Voltius_0.79.0_x64.app.tar.gz.sig"
+        sha256pre: "a2772b9c6c783c15"
+      "800333973":
+        name: "voltius_windows_x64.exe"
+        size: 47800832
+        sha256pre: "a5d8994f30b1b07d"
+      "800342602":
+        name: "Voltius_0.87.0_x64.dmg"
+        size: 18651781
+        sha256pre: "9d39f467ffde6134"
+      "800342722":
+        name: "Voltius_0.87.0_x64.app.tar.gz"
+        size: 18569691
+        sha256pre: "cabfe2060c4dd8a6"
+      "800342790":
+        name: "Voltius_0.87.0_x64.app.tar.gz.sig"
         size: 424
-        sha256pre: "129c7d81c9922a73"
-      "764540344":
+        sha256pre: "a18cc69fe25d1959"
+      "800342830":
         name: "voltius_darwin_x64"
-        size: 34190328
-        sha256pre: "ef528f549bff4a68"
-      "764546852":
-        name: "Voltius_0.79.0_aarch64.dmg"
-        size: 16814764
-        sha256pre: "9420647a8d30d979"
-      "764546914":
-        name: "Voltius_0.79.0_aarch64.app.tar.gz"
-        size: 16879419
-        sha256pre: "e1923734a9ad81e3"
-      "764546954":
-        name: "Voltius_0.79.0_aarch64.app.tar.gz.sig"
+        size: 35147168
+        sha256pre: "4c61340ef85d7b86"
+      "800358431":
+        name: "Voltius_0.87.0_arm64_en-US.msi"
+        size: 18595840
+        sha256pre: "59b33f12b0dce162"
+      "800358546":
+        name: "Voltius_0.87.0_arm64_en-US.msi.sig"
+        size: 440
+        sha256pre: "3f54c6fb20de2d29"
+      "800358602":
+        name: "Voltius_0.87.0_arm64-setup.exe"
+        size: 12968240
+        sha256pre: "d4523368bc7647c7"
+      "800358691":
+        name: "Voltius_0.87.0_arm64-setup.exe.sig"
+        size: 440
+        sha256pre: "3c5bf4462c0142d8"
+      "800358726":
+        name: "voltius_windows_arm64.exe"
+        size: 41345024
+        sha256pre: "6b1f867e40601405"
+      "800367701":
+        name: "Voltius_0.87.0_aarch64.dmg"
+        size: 17250411
+        sha256pre: "e3a5f171275bd177"
+      "800367845":
+        name: "Voltius_0.87.0_aarch64.app.tar.gz"
+        size: 17329827
+        sha256pre: "043c49f910ff201d"
+      "800367914":
+        name: "Voltius_0.87.0_aarch64.app.tar.gz.sig"
         size: 424
-        sha256pre: "ef4b2cdd2ca5e7d1"
-      "764546998":
+        sha256pre: "c022d971464a4d28"
+      "800367939":
         name: "voltius_darwin_aarch64"
-        size: 31562208
-        sha256pre: "804ce7e11c6f0cee"
-      "764550175":
+        size: 32455536
+        sha256pre: "25c52eb7fa504586"
+      "800371574":
         name: "latest.json"
-        size: 11541
-        sha256pre: "d80963fcdf9d3131"
-      "764552725":
+        size: 12050
+        sha256pre: "bf88318ab6971df4"
+      "800373734":
         name: "plugin-catalog.json"
         size: 2555
-        sha256pre: "fed349a065390d52"
-      "764553412":
-        name: "Voltius-0.79.0-1.x86_64.rpm.sha256"
-        size: 94
-        sha256pre: "65dca05964efb389"
-      "764553415":
-        name: "Voltius_0.79.0_aarch64.apk.sha256"
-        size: 93
-        sha256pre: "cdfd9f5a92f6652a"
-      "764553419":
-        name: "Voltius_0.79.0_aarch64.app.tar.gz.sha256"
+        sha256pre: "a8ebaf24b7142b68"
+      "800374372":
+        name: "Voltius_0.87.0_aarch64.app.tar.gz.sha256"
         size: 100
-        sha256pre: "7702ad8b155ba74d"
-      "764553422":
-        name: "Voltius_0.79.0_aarch64.AppImage.sha256"
-        size: 98
-        sha256pre: "1b45d95f77ec7b4d"
-      "764553423":
-        name: "Voltius-0.79.0-1.aarch64.rpm.sha256"
+        sha256pre: "dc7dc4a031750e42"
+      "800374373":
+        name: "Voltius-0.87.0-1.aarch64.rpm.sha256"
         size: 95
-        sha256pre: "e30e4af7f76aa3cd"
-      "764553479":
-        name: "Voltius_0.79.0_amd64.AppImage.sha256"
-        size: 96
-        sha256pre: "3d7d426b60cc5740"
-      "764553482":
-        name: "Voltius_0.79.0_aarch64.dmg.sha256"
+        sha256pre: "7c2db5542fc5499d"
+      "800374375":
+        name: "Voltius-0.87.0-1.x86_64.rpm.sha256"
+        size: 94
+        sha256pre: "a23797197e35749d"
+      "800374376":
+        name: "Voltius_0.87.0_aarch64.apk.sha256"
         size: 93
-        sha256pre: "cf11d65e197fd8ae"
-      "764553488":
-        name: "Voltius_0.79.0_amd64.deb.sha256"
-        size: 91
-        sha256pre: "3f8e7d9434cb5bad"
-      "764553490":
-        name: "Voltius_0.79.0_arm64-setup.exe.sha256"
-        size: 97
-        sha256pre: "b530b6761c78e05a"
-      "764553501":
-        name: "Voltius_0.79.0_arm64.deb.sha256"
-        size: 91
-        sha256pre: "a9352fc5e29a8540"
-      "764553537":
-        name: "Voltius_0.79.0_arm64_en-US.msi.sha256"
-        size: 97
-        sha256pre: "d3f5471ff762789e"
-      "764553540":
-        name: "Voltius_0.79.0_x64-setup.exe.sha256"
-        size: 95
-        sha256pre: "200b6885945fee48"
-      "764553541":
-        name: "Voltius_0.79.0_x64.dmg.sha256"
-        size: 89
-        sha256pre: "c6be734f049e1489"
-      "764553549":
-        name: "Voltius_0.79.0_x64.app.tar.gz.sha256"
+        sha256pre: "2e937be1831067e0"
+      "800374378":
+        name: "Voltius_0.87.0_aarch64.AppImage.sha256"
+        size: 98
+        sha256pre: "2848fd8cf24f430f"
+      "800374407":
+        name: "Voltius_0.87.0_aarch64.dmg.sha256"
+        size: 93
+        sha256pre: "2f78157f566b41f9"
+      "800374408":
+        name: "Voltius_0.87.0_amd64.AppImage.sha256"
         size: 96
-        sha256pre: "e057cb6fe17cc09b"
-      "764553555":
-        name: "Voltius_0.79.0_x64_en-US.msi.sha256"
+        sha256pre: "9f7472f621727125"
+      "800374410":
+        name: "Voltius_0.87.0_amd64.deb.sha256"
+        size: 91
+        sha256pre: "513d5a430fa98644"
+      "800374411":
+        name: "Voltius_0.87.0_arm64-setup.exe.sha256"
+        size: 97
+        sha256pre: "fdbd4a8f33d4d3ef"
+      "800374414":
+        name: "Voltius_0.87.0_arm64.deb.sha256"
+        size: 91
+        sha256pre: "4e0767975afcc5c3"
+      "800374444":
+        name: "Voltius_0.87.0_arm64_en-US.msi.sha256"
+        size: 97
+        sha256pre: "f6c93ddc69a0b6dc"
+      "800374446":
+        name: "Voltius_0.87.0_x64-setup.exe.sha256"
         size: 95
-        sha256pre: "f1e316650401d05c"
-      "764553576":
-        name: "voltius_darwin_x64.sha256"
-        size: 85
-        sha256pre: "0a56def8527db9f1"
-      "764553577":
-        name: "voltius_darwin_aarch64.sha256"
+        sha256pre: "3b99f899d11a5064"
+      "800374450":
+        name: "Voltius_0.87.0_x64.app.tar.gz.sha256"
+        size: 96
+        sha256pre: "8090f3d800bdd434"
+      "800374452":
+        name: "Voltius_0.87.0_x64.dmg.sha256"
         size: 89
-        sha256pre: "670dc7122d5254e3"
-      "764553578":
+        sha256pre: "0cd0fd3d07a7eb5f"
+      "800374453":
+        name: "Voltius_0.87.0_x64_en-US.msi.sha256"
+        size: 95
+        sha256pre: "77aa81e38d85c3c0"
+      "800374463":
         name: "plugin-catalog.json.sha256"
         size: 86
-        sha256pre: "49da2572e70fb4c4"
-      "764553579":
-        name: "voltius_linux_arm64.sha256"
-        size: 86
-        sha256pre: "97081e18f22dcedb"
-      "764553580":
-        name: "voltius_linux_x64.sha256"
-        size: 84
-        sha256pre: "5b8c85be623906ab"
-      "764553605":
-        name: "voltius_windows_x64.exe.sha256"
-        size: 90
-        sha256pre: "5dfa971d340ee611"
-      "764553608":
-        name: "voltius_windows_arm64.exe.sha256"
-        size: 92
-        sha256pre: "9525d0b1fda8dc21"
-  "454049528":
-    tag: "v0.80.0"
-    title: "Voltius v0.80.0"
-    published_at: "2026-11-21T23:42:02Z"
-    prerelease: false
-    assets:
-      "777191136":
-        name: "Voltius_0.80.0_aarch64.apk"
-        size: 32289761
-        sha256pre: "6b4cab77e8e0ba83"
-      "777192115":
-        name: "Voltius_0.80.0_amd64.deb"
-        size: 19311188
-        sha256pre: "d3c6f94cb258ed4c"
-      "777192180":
-        name: "Voltius_0.80.0_amd64.deb.sig"
-        size: 432
-        sha256pre: "52c2098ea4fd1a1c"
-      "777192197":
-        name: "Voltius-0.80.0-1.x86_64.rpm"
-        size: 19316569
-        sha256pre: "d832410269e184ef"
-      "777192255":
-        name: "Voltius-0.80.0-1.x86_64.rpm.sig"
-        size: 436
-        sha256pre: "20fa69a22dfedddc"
-      "777192309":
-        name: "Voltius_0.80.0_amd64.AppImage"
-        size: 96553464
-        sha256pre: "57b0d16714ca42c3"
-      "777192479":
-        name: "Voltius_0.80.0_amd64.AppImage.sig"
-        size: 440
-        sha256pre: "453807f72dc515e5"
-      "777192507":
-        name: "voltius_linux_x64"
-        size: 39903416
-        sha256pre: "92f4ab22173dc027"
-      "777203076":
-        name: "Voltius_0.80.0_arm64.deb"
-        size: 18628350
-        sha256pre: "2168e8a549a0a192"
-      "777203131":
-        name: "Voltius_0.80.0_arm64.deb.sig"
-        size: 432
-        sha256pre: "2c0d52e858010259"
-      "777203147":
-        name: "Voltius-0.80.0-1.aarch64.rpm"
-        size: 18633460
-        sha256pre: "dec54d3b16e2dcd7"
-      "777203206":
-        name: "Voltius-0.80.0-1.aarch64.rpm.sig"
-        size: 440
-        sha256pre: "a7a4843f0d51c708"
-      "777203222":
-        name: "Voltius_0.80.0_aarch64.AppImage"
-        size: 93751816
-        sha256pre: "1abe108e2a5ab089"
-      "777203379":
-        name: "Voltius_0.80.0_aarch64.AppImage.sig"
-        size: 444
-        sha256pre: "86ceea1c706fa910"
-      "777203392":
-        name: "voltius_linux_arm64"
-        size: 35676304
-        sha256pre: "235c6e18adc1fd6b"
-      "777204874":
-        name: "Voltius_0.80.0_x64.dmg"
-        size: 18446305
-        sha256pre: "aa85242dabe236d7"
-      "777204917":
-        name: "Voltius_0.80.0_x64.app.tar.gz"
-        size: 18359603
-        sha256pre: "5d246e6885d8d5bf"
-      "777204969":
-        name: "Voltius_0.80.0_x64.app.tar.gz.sig"
-        size: 424
-        sha256pre: "c063e8d8dbfc6ebd"
-      "777204989":
-        name: "voltius_darwin_x64"
-        size: 34748768
-        sha256pre: "2b2c801dfbcc68cf"
-      "777215015":
-        name: "Voltius_0.80.0_aarch64.dmg"
-        size: 17058036
-        sha256pre: "9c10043b096dbf1d"
-      "777215079":
-        name: "Voltius_0.80.0_aarch64.app.tar.gz"
-        size: 17137694
-        sha256pre: "704f0e0647e7a46c"
-      "777215136":
-        name: "Voltius_0.80.0_aarch64.app.tar.gz.sig"
-        size: 424
-        sha256pre: "010526f73e735fe2"
-      "777215157":
-        name: "voltius_darwin_aarch64"
-        size: 32075040
-        sha256pre: "849a626864c0d876"
-      "777217068":
-        name: "Voltius_0.80.0_x64_en-US.msi"
-        size: 19566592
-        sha256pre: "8dbf6ac66d488ed9"
-      "777217117":
-        name: "Voltius_0.80.0_x64_en-US.msi.sig"
-        size: 440
-        sha256pre: "276c3226735a74fa"
-      "777217126":
-        name: "Voltius_0.80.0_x64-setup.exe"
-        size: 14358406
-        sha256pre: "bb2f1ba5d6658bb7"
-      "777217168":
-        name: "Voltius_0.80.0_x64-setup.exe.sig"
-        size: 440
-        sha256pre: "901b0164e1c8c501"
-      "777217179":
-        name: "voltius_windows_x64.exe"
-        size: 47270912
-        sha256pre: "f48d8c8031a5aea1"
-      "777226703":
-        name: "Voltius_0.80.0_arm64_en-US.msi"
-        size: 18391040
-        sha256pre: "e3174620c8bb3131"
-      "777226724":
-        name: "Voltius_0.80.0_arm64_en-US.msi.sig"
-        size: 440
-        sha256pre: "5730ebd68b317067"
-      "777226744":
-        name: "Voltius_0.80.0_arm64-setup.exe"
-        size: 12832633
-        sha256pre: "66258d9789c7d200"
-      "777226771":
-        name: "Voltius_0.80.0_arm64-setup.exe.sig"
-        size: 440
-        sha256pre: "9acced9167233520"
-      "777226783":
-        name: "voltius_windows_arm64.exe"
-        size: 40862720
-        sha256pre: "bb36e25b7a6cf355"
-      "777229344":
-        name: "latest.json"
-        size: 11762
-        sha256pre: "63c8c7fa57d39596"
-      "777231030":
-        name: "plugin-catalog.json"
-        size: 2555
-        sha256pre: "fed349a065390d52"
-      "777231446":
-        name: "Voltius_0.80.0_aarch64.apk.sha256"
-        size: 93
-        sha256pre: "e08af12c25f4a23b"
-      "777231447":
-        name: "Voltius_0.80.0_aarch64.AppImage.sha256"
-        size: 98
-        sha256pre: "5a7ea8a01cf2cc47"
-      "777231448":
-        name: "Voltius-0.80.0-1.x86_64.rpm.sha256"
-        size: 94
-        sha256pre: "c09d6dc84bc5e312"
-      "777231449":
-        name: "Voltius-0.80.0-1.aarch64.rpm.sha256"
-        size: 95
-        sha256pre: "cac6006e64cd1156"
-      "777231453":
-        name: "Voltius_0.80.0_aarch64.app.tar.gz.sha256"
-        size: 100
-        sha256pre: "645892338a88973b"
-      "777231460":
-        name: "Voltius_0.80.0_amd64.AppImage.sha256"
-        size: 96
-        sha256pre: "66061aa53013617e"
-      "777231461":
-        name: "Voltius_0.80.0_aarch64.dmg.sha256"
-        size: 93
-        sha256pre: "599ef681b26f8fa7"
-      "777231467":
-        name: "Voltius_0.80.0_arm64-setup.exe.sha256"
-        size: 97
-        sha256pre: "2feaccea8eb03f4b"
-      "777231468":
-        name: "Voltius_0.80.0_amd64.deb.sha256"
-        size: 91
-        sha256pre: "958373780c254aae"
-      "777231475":
-        name: "Voltius_0.80.0_arm64.deb.sha256"
-        size: 91
-        sha256pre: "e6f047bd9e9de383"
-      "777231482":
-        name: "Voltius_0.80.0_arm64_en-US.msi.sha256"
-        size: 97
-        sha256pre: "a455f4223dec0a3e"
-      "777231485":
-        name: "Voltius_0.80.0_x64-setup.exe.sha256"
-        size: 95
-        sha256pre: "f3e2f3d9232ed827"
-      "777231489":
-        name: "Voltius_0.80.0_x64.app.tar.gz.sha256"
-        size: 96
-        sha256pre: "3afafb25e459d104"
-      "777231491":
-        name: "Voltius_0.80.0_x64.dmg.sha256"
-        size: 89
-        sha256pre: "6fe8e8e41f53ec27"
-      "777231499":
-        name: "Voltius_0.80.0_x64_en-US.msi.sha256"
-        size: 95
-        sha256pre: "aa7dfc128feeee18"
-      "777231501":
-        name: "plugin-catalog.json.sha256"
-        size: 86
-        sha256pre: "49da2572e70fb4c4"
-      "777231506":
-        name: "voltius_darwin_aarch64.sha256"
-        size: 89
-        sha256pre: "ec5a8c36aab313cc"
-      "777231510":
+        sha256pre: "5d844d64e29ab6a8"
+      "800374466":
         name: "voltius_darwin_x64.sha256"
         size: 85
-        sha256pre: "78f8f6f4621a1661"
-      "777231511":
+        sha256pre: "78d591d3f5fb04dc"
+      "800374469":
+        name: "voltius_darwin_aarch64.sha256"
+        size: 89
+        sha256pre: "d6460992506a6639"
+      "800374470":
         name: "voltius_linux_arm64.sha256"
         size: 86
-        sha256pre: "4f4a931e22040911"
-      "777231519":
-        name: "voltius_windows_arm64.exe.sha256"
-        size: 92
-        sha256pre: "fdd60b732195f620"
-      "777231522":
-        name: "voltius_windows_x64.exe.sha256"
-        size: 90
-        sha256pre: "4b88213b62d355b6"
-      "777231528":
+        sha256pre: "b98ab5c955529a65"
+      "800374474":
         name: "voltius_linux_x64.sha256"
         size: 84
-        sha256pre: "10b096810532748f"
+        sha256pre: "4ab402585bb2413d"
+      "800374489":
+        name: "voltius_windows_arm64.exe.sha256"
+        size: 92
+        sha256pre: "cb80e65eafbc5270"
+      "800374492":
+        name: "voltius_windows_x64.exe.sha256"
+        size: 90
+        sha256pre: "42d9db7d62e6d744"

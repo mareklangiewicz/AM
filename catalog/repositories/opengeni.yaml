@@ -1,204 +1,230 @@
 $schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
 repository_id: 1212552738
 repository: "Cloudgeni-ai/opengeni"
-observed_at: "2026-11-22T21:57:56Z"
+observed_at: "2026-11-27T12:29:05Z"
 history_complete: false
 releases:
-  "453634807":
-    tag: "opengeni-candidate-8630d39ab106462b65851c3f0b30fd129320a05c"
-    title: "Opengeni release candidate 0.23.25 (8630d39ab106)"
-    published_at: "2026-11-21T11:14:28Z"
+  "460166062":
+    tag: "opengeni-artifact-runtime-a28280a426f3909f6860eba6b991b0527da0e630"
+    title: "Opengeni native artifact runtime a28280a426f3909f6860eba6b991b0527da0e630"
+    published_at: "2026-11-27T04:26:34Z"
+    prerelease: true
+    assets:
+      "798956195":
+        name: "artifact-runtime-provenance.json"
+        size: 3147
+        sha256pre: "1f20eefc043416b6"
+      "798956212":
+        name: "artifact-runtime-target-a28280a426f3909f6860eba6b991b0527da0e630-darwin-x64.zip"
+        size: 1488333
+        sha256pre: "9e8518048ff47d39"
+      "798956256":
+        name: "artifact-runtime-target-a28280a426f3909f6860eba6b991b0527da0e630-darwin-arm64.zip"
+        size: 1339538
+        sha256pre: "40e0a142f1f18fc8"
+      "798956294":
+        name: "artifact-runtime-target-a28280a426f3909f6860eba6b991b0527da0e630-linux-x64-gnu.zip"
+        size: 1550160
+        sha256pre: "9c5433905e1753f0"
+      "798956330":
+        name: "artifact-runtime-target-a28280a426f3909f6860eba6b991b0527da0e630-linux-arm64-gnu.zip"
+        size: 1463591
+        sha256pre: "7dadbbf4ee9f30f1"
+      "798956349":
+        name: "artifact-runtime-target-a28280a426f3909f6860eba6b991b0527da0e630-linux-x64-musl.zip"
+        size: 1562102
+        sha256pre: "c5cb6368ac35762d"
+      "798956369":
+        name: "artifact-runtime-target-a28280a426f3909f6860eba6b991b0527da0e630-linux-arm64-musl.zip"
+        size: 1461788
+        sha256pre: "e3f5a86f44df3420"
+      "798956411":
+        name: "artifact-runtime-target-a28280a426f3909f6860eba6b991b0527da0e630-win32-x64-msvc.zip"
+        size: 1310322
+        sha256pre: "aed633637a3128a0"
+  "460205163":
+    tag: "opengeni-release-head-f573e86c91427f422433c0266d475b155aea4c13"
+    title: "Retained OpenGeni release head f573e86c91427f422433c0266d475b155aea4c13"
+    published_at: "2026-11-27T05:33:57Z"
+    prerelease: true
+    assets: {}
+  "460205198":
+    tag: "opengeni-release-head-10fcbced7185c5589d15013d82be7b374fa90962"
+    title: "Retained OpenGeni release head 10fcbced7185c5589d15013d82be7b374fa90962"
+    published_at: "2026-11-27T05:34:01Z"
+    prerelease: true
+    assets: {}
+  "460214415":
+    tag: "opengeni-artifact-runtime-7508c74c7197270af5b443d55d54cef911950fe8"
+    title: "Opengeni native artifact runtime 7508c74c7197270af5b443d55d54cef911950fe8"
+    published_at: "2026-11-27T05:49:21Z"
+    prerelease: true
+    assets:
+      "799165567":
+        name: "artifact-runtime-provenance.json"
+        size: 3147
+        sha256pre: "6417d81b0ec7e219"
+      "799165595":
+        name: "artifact-runtime-target-7508c74c7197270af5b443d55d54cef911950fe8-darwin-x64.zip"
+        size: 1488333
+        sha256pre: "e1e527617bd28853"
+      "799165611":
+        name: "artifact-runtime-target-7508c74c7197270af5b443d55d54cef911950fe8-darwin-arm64.zip"
+        size: 1339538
+        sha256pre: "4150c8f01490509a"
+      "799165637":
+        name: "artifact-runtime-target-7508c74c7197270af5b443d55d54cef911950fe8-linux-x64-gnu.zip"
+        size: 1550160
+        sha256pre: "b3ff3bc4e8761451"
+      "799165664":
+        name: "artifact-runtime-target-7508c74c7197270af5b443d55d54cef911950fe8-linux-arm64-gnu.zip"
+        size: 1463591
+        sha256pre: "ca50a8913604bf0b"
+      "799165694":
+        name: "artifact-runtime-target-7508c74c7197270af5b443d55d54cef911950fe8-linux-x64-musl.zip"
+        size: 1562102
+        sha256pre: "6dc591e620f17c20"
+      "799165748":
+        name: "artifact-runtime-target-7508c74c7197270af5b443d55d54cef911950fe8-linux-arm64-musl.zip"
+        size: 1461788
+        sha256pre: "17684c67ce9ba04a"
+      "799165784":
+        name: "artifact-runtime-target-7508c74c7197270af5b443d55d54cef911950fe8-win32-x64-msvc.zip"
+        size: 1310321
+        sha256pre: "646f248f45ef2238"
+  "460252439":
+    tag: "opengeni-artifact-runtime-d303238e10a1ce11e131f400bdbc5043a34cd461"
+    title: "Opengeni native artifact runtime d303238e10a1ce11e131f400bdbc5043a34cd461"
+    published_at: "2026-11-27T06:48:27Z"
+    prerelease: true
+    assets:
+      "799326397":
+        name: "artifact-runtime-provenance.json"
+        size: 3147
+        sha256pre: "a465bfa2ec0de725"
+      "799326428":
+        name: "artifact-runtime-target-d303238e10a1ce11e131f400bdbc5043a34cd461-darwin-x64.zip"
+        size: 1488333
+        sha256pre: "b7d60eb601788aba"
+      "799326438":
+        name: "artifact-runtime-target-d303238e10a1ce11e131f400bdbc5043a34cd461-darwin-arm64.zip"
+        size: 1339538
+        sha256pre: "f509e6ce1d9c3b44"
+      "799326452":
+        name: "artifact-runtime-target-d303238e10a1ce11e131f400bdbc5043a34cd461-linux-x64-gnu.zip"
+        size: 1550160
+        sha256pre: "d3644310d58df9da"
+      "799326474":
+        name: "artifact-runtime-target-d303238e10a1ce11e131f400bdbc5043a34cd461-linux-arm64-gnu.zip"
+        size: 1463591
+        sha256pre: "824209893c0eac29"
+      "799326513":
+        name: "artifact-runtime-target-d303238e10a1ce11e131f400bdbc5043a34cd461-linux-x64-musl.zip"
+        size: 1562102
+        sha256pre: "b52c34101fb6571e"
+      "799326549":
+        name: "artifact-runtime-target-d303238e10a1ce11e131f400bdbc5043a34cd461-linux-arm64-musl.zip"
+        size: 1461788
+        sha256pre: "6d973b72b0417d04"
+      "799326584":
+        name: "artifact-runtime-target-d303238e10a1ce11e131f400bdbc5043a34cd461-win32-x64-msvc.zip"
+        size: 1310321
+        sha256pre: "d498aa371e6d703a"
+  "460285839":
+    tag: "opengeni-artifact-runtime-62bc6f0e15d0806023f4c714c4414968d73715c7"
+    title: "Opengeni native artifact runtime 62bc6f0e15d0806023f4c714c4414968d73715c7"
+    published_at: "2026-11-27T07:34:31Z"
+    prerelease: true
+    assets:
+      "799463398":
+        name: "artifact-runtime-provenance.json"
+        size: 3147
+        sha256pre: "d33dbf096f2410af"
+      "799463429":
+        name: "artifact-runtime-target-62bc6f0e15d0806023f4c714c4414968d73715c7-darwin-x64.zip"
+        size: 1488333
+        sha256pre: "27a9295d39f48032"
+      "799463477":
+        name: "artifact-runtime-target-62bc6f0e15d0806023f4c714c4414968d73715c7-darwin-arm64.zip"
+        size: 1339538
+        sha256pre: "51ade396261d4193"
+      "799463496":
+        name: "artifact-runtime-target-62bc6f0e15d0806023f4c714c4414968d73715c7-linux-x64-gnu.zip"
+        size: 1550160
+        sha256pre: "fe64feac33c3299b"
+      "799463526":
+        name: "artifact-runtime-target-62bc6f0e15d0806023f4c714c4414968d73715c7-linux-arm64-gnu.zip"
+        size: 1463591
+        sha256pre: "8b7adb86cbd83b48"
+      "799463573":
+        name: "artifact-runtime-target-62bc6f0e15d0806023f4c714c4414968d73715c7-linux-x64-musl.zip"
+        size: 1562102
+        sha256pre: "5bb8e6c0cad74221"
+      "799463596":
+        name: "artifact-runtime-target-62bc6f0e15d0806023f4c714c4414968d73715c7-linux-arm64-musl.zip"
+        size: 1461788
+        sha256pre: "946d38e0c6253ff7"
+      "799463633":
+        name: "artifact-runtime-target-62bc6f0e15d0806023f4c714c4414968d73715c7-win32-x64-msvc.zip"
+        size: 1310322
+        sha256pre: "89c84014ebe3e6b1"
+  "460336276":
+    tag: "opengeni-artifact-runtime-70c6343136c6f1479c5c982e5ac184c19c1b38d5"
+    title: "Opengeni native artifact runtime 70c6343136c6f1479c5c982e5ac184c19c1b38d5"
+    published_at: "2026-11-27T08:33:54Z"
+    prerelease: true
+    assets:
+      "799648771":
+        name: "artifact-runtime-provenance.json"
+        size: 3147
+        sha256pre: "96422b5280e006f6"
+      "799648810":
+        name: "artifact-runtime-target-70c6343136c6f1479c5c982e5ac184c19c1b38d5-darwin-x64.zip"
+        size: 1488333
+        sha256pre: "5cd3e90213ca3432"
+      "799648881":
+        name: "artifact-runtime-target-70c6343136c6f1479c5c982e5ac184c19c1b38d5-darwin-arm64.zip"
+        size: 1339538
+        sha256pre: "2e943d7649169353"
+      "799648931":
+        name: "artifact-runtime-target-70c6343136c6f1479c5c982e5ac184c19c1b38d5-linux-x64-gnu.zip"
+        size: 1550160
+        sha256pre: "8cb925d603a9bcc3"
+      "799648989":
+        name: "artifact-runtime-target-70c6343136c6f1479c5c982e5ac184c19c1b38d5-linux-arm64-gnu.zip"
+        size: 1463591
+        sha256pre: "124f2a8302cc588c"
+      "799649051":
+        name: "artifact-runtime-target-70c6343136c6f1479c5c982e5ac184c19c1b38d5-linux-x64-musl.zip"
+        size: 1562102
+        sha256pre: "dde12db3eedd1b2d"
+      "799649104":
+        name: "artifact-runtime-target-70c6343136c6f1479c5c982e5ac184c19c1b38d5-linux-arm64-musl.zip"
+        size: 1461788
+        sha256pre: "d79782b52b14f2cb"
+      "799649160":
+        name: "artifact-runtime-target-70c6343136c6f1479c5c982e5ac184c19c1b38d5-win32-x64-msvc.zip"
+        size: 1310321
+        sha256pre: "d1ff94920bc95b8e"
+  "460346497":
+    tag: "opengeni-candidate-d303238e10a1ce11e131f400bdbc5043a34cd461"
+    title: "Opengeni release candidate 0.23.25 (d303238e10a1)"
+    published_at: "2026-11-27T08:45:21Z"
     prerelease: false
     assets:
-      "775321461":
+      "799689561":
         name: "release-candidate.json"
         size: 5140
-        sha256pre: "fb4d114e196ec031"
-      "775321472":
-        name: "opengeni-0.23.25.tgz"
-        size: 238023
-        sha256pre: "78f71a94fd8ba2fe"
-      "775321475":
+        sha256pre: "ed5d5571fc63d3b5"
+      "799689562":
         name: "release-chart.sha256"
         size: 103
-        sha256pre: "b293585f9fa7d0d5"
-      "775321476":
+        sha256pre: "3354e1baca0b71de"
+      "799689564":
+        name: "opengeni-0.23.25.tgz"
+        size: 242102
+        sha256pre: "b80796d99ca86182"
+      "799689566":
         name: "release-candidate.sha256"
         size: 98
-        sha256pre: "aaa8c594c8c8f331"
-  "454655704":
-    tag: "opengeni-release-head-0cb5b7db42a44da5604cf1cca201e284b2939dbc"
-    title: "Retained OpenGeni release head 0cb5b7db42a44da5604cf1cca201e284b2939dbc"
-    published_at: "2026-11-22T18:26:26Z"
-    prerelease: true
-    assets: {}
-  "454655740":
-    tag: "opengeni-release-head-e765d117a944f9db15a6c6fad39afdd7c486136c"
-    title: "Retained OpenGeni release head e765d117a944f9db15a6c6fad39afdd7c486136c"
-    published_at: "2026-11-22T18:26:30Z"
-    prerelease: true
-    assets: {}
-  "454675169":
-    tag: "opengeni-artifact-runtime-e765d117a944f9db15a6c6fad39afdd7c486136c"
-    title: "Opengeni native artifact runtime e765d117a944f9db15a6c6fad39afdd7c486136c"
-    published_at: "2026-11-22T18:58:49Z"
-    prerelease: true
-    assets:
-      "780115785":
-        name: "artifact-runtime-provenance.json"
-        size: 3147
-        sha256pre: "937b64f61f567fdb"
-      "780115817":
-        name: "artifact-runtime-target-e765d117a944f9db15a6c6fad39afdd7c486136c-darwin-x64.zip"
-        size: 1488333
-        sha256pre: "f5744c0d689068b5"
-      "780115870":
-        name: "artifact-runtime-target-e765d117a944f9db15a6c6fad39afdd7c486136c-darwin-arm64.zip"
-        size: 1339538
-        sha256pre: "0533f07f778c9de8"
-      "780115892":
-        name: "artifact-runtime-target-e765d117a944f9db15a6c6fad39afdd7c486136c-linux-x64-gnu.zip"
-        size: 1550160
-        sha256pre: "c5245f69deae7248"
-      "780115922":
-        name: "artifact-runtime-target-e765d117a944f9db15a6c6fad39afdd7c486136c-linux-arm64-gnu.zip"
-        size: 1463591
-        sha256pre: "40d394de5a8ea601"
-      "780115958":
-        name: "artifact-runtime-target-e765d117a944f9db15a6c6fad39afdd7c486136c-linux-x64-musl.zip"
-        size: 1562102
-        sha256pre: "98d03e49fad9207e"
-      "780116023":
-        name: "artifact-runtime-target-e765d117a944f9db15a6c6fad39afdd7c486136c-linux-arm64-musl.zip"
-        size: 1461788
-        sha256pre: "cf6c711bee77d37c"
-      "780116082":
-        name: "artifact-runtime-target-e765d117a944f9db15a6c6fad39afdd7c486136c-win32-x64-msvc.zip"
-        size: 1310322
-        sha256pre: "d95fd95aa9f5f7a5"
-  "454685937":
-    tag: "opengeni-artifact-runtime-837e58fe634ff04e70fafd7c826035b7109718e1"
-    title: "Opengeni native artifact runtime 837e58fe634ff04e70fafd7c826035b7109718e1"
-    published_at: "2026-11-22T19:16:44Z"
-    prerelease: true
-    assets:
-      "780167268":
-        name: "artifact-runtime-provenance.json"
-        size: 3147
-        sha256pre: "ad8d524fdf2ca0e6"
-      "780167288":
-        name: "artifact-runtime-target-837e58fe634ff04e70fafd7c826035b7109718e1-darwin-x64.zip"
-        size: 1488333
-        sha256pre: "09833c2b3bda5dce"
-      "780167323":
-        name: "artifact-runtime-target-837e58fe634ff04e70fafd7c826035b7109718e1-darwin-arm64.zip"
-        size: 1339538
-        sha256pre: "ca81ca191142f60d"
-      "780167358":
-        name: "artifact-runtime-target-837e58fe634ff04e70fafd7c826035b7109718e1-linux-x64-gnu.zip"
-        size: 1550160
-        sha256pre: "5dc4b933413b72c9"
-      "780167397":
-        name: "artifact-runtime-target-837e58fe634ff04e70fafd7c826035b7109718e1-linux-arm64-gnu.zip"
-        size: 1463591
-        sha256pre: "4bb0a8cd487b7061"
-      "780167421":
-        name: "artifact-runtime-target-837e58fe634ff04e70fafd7c826035b7109718e1-linux-x64-musl.zip"
-        size: 1562102
-        sha256pre: "cb65d1d626cd1d7d"
-      "780167445":
-        name: "artifact-runtime-target-837e58fe634ff04e70fafd7c826035b7109718e1-linux-arm64-musl.zip"
-        size: 1461788
-        sha256pre: "72296839c2c94a5f"
-      "780167460":
-        name: "artifact-runtime-target-837e58fe634ff04e70fafd7c826035b7109718e1-win32-x64-msvc.zip"
-        size: 1310320
-        sha256pre: "48e32f5aaf7c44dc"
-  "454710848":
-    tag: "opengeni-release-head-3cb67842978ee7db4748e386c20649c4c70134fc"
-    title: "Retained OpenGeni release head 3cb67842978ee7db4748e386c20649c4c70134fc"
-    published_at: "2026-11-22T19:58:09Z"
-    prerelease: true
-    assets: {}
-  "454759907":
-    tag: "opengeni-artifact-runtime-cf218c33c3a39cf36b81264f6094dce1ea8da326"
-    title: "Opengeni native artifact runtime cf218c33c3a39cf36b81264f6094dce1ea8da326"
-    published_at: "2026-11-22T21:22:54Z"
-    prerelease: true
-    assets:
-      "780503423":
-        name: "artifact-runtime-provenance.json"
-        size: 3147
-        sha256pre: "d67aee6e85eb117e"
-      "780503448":
-        name: "artifact-runtime-target-cf218c33c3a39cf36b81264f6094dce1ea8da326-darwin-x64.zip"
-        size: 1488333
-        sha256pre: "7e91aa2b905f6175"
-      "780503495":
-        name: "artifact-runtime-target-cf218c33c3a39cf36b81264f6094dce1ea8da326-darwin-arm64.zip"
-        size: 1339538
-        sha256pre: "235d4d1e29bfa056"
-      "780503530":
-        name: "artifact-runtime-target-cf218c33c3a39cf36b81264f6094dce1ea8da326-linux-x64-gnu.zip"
-        size: 1550160
-        sha256pre: "91a6bf209faed5c0"
-      "780503554":
-        name: "artifact-runtime-target-cf218c33c3a39cf36b81264f6094dce1ea8da326-linux-arm64-gnu.zip"
-        size: 1463591
-        sha256pre: "8f1be5c54644dcbf"
-      "780503574":
-        name: "artifact-runtime-target-cf218c33c3a39cf36b81264f6094dce1ea8da326-linux-x64-musl.zip"
-        size: 1562102
-        sha256pre: "c5cad5261d388234"
-      "780503595":
-        name: "artifact-runtime-target-cf218c33c3a39cf36b81264f6094dce1ea8da326-linux-arm64-musl.zip"
-        size: 1461788
-        sha256pre: "0990771b02fe89fb"
-      "780503614":
-        name: "artifact-runtime-target-cf218c33c3a39cf36b81264f6094dce1ea8da326-win32-x64-msvc.zip"
-        size: 1310320
-        sha256pre: "1a29e46333313890"
-  "454762362":
-    tag: "opengeni-artifact-runtime-df9bd25bc671721060b20b1c54732156d46e437c"
-    title: "Opengeni native artifact runtime df9bd25bc671721060b20b1c54732156d46e437c"
-    published_at: "2026-11-22T21:27:15Z"
-    prerelease: true
-    assets:
-      "780515452":
-        name: "artifact-runtime-provenance.json"
-        size: 3147
-        sha256pre: "07381a24c5cbdd72"
-      "780515492":
-        name: "artifact-runtime-target-df9bd25bc671721060b20b1c54732156d46e437c-darwin-x64.zip"
-        size: 1488333
-        sha256pre: "69d3fe4d1f72724f"
-      "780515540":
-        name: "artifact-runtime-target-df9bd25bc671721060b20b1c54732156d46e437c-darwin-arm64.zip"
-        size: 1339538
-        sha256pre: "3bbf9675b3f4d946"
-      "780515581":
-        name: "artifact-runtime-target-df9bd25bc671721060b20b1c54732156d46e437c-linux-x64-gnu.zip"
-        size: 1550160
-        sha256pre: "32d592655cb56a52"
-      "780515593":
-        name: "artifact-runtime-target-df9bd25bc671721060b20b1c54732156d46e437c-linux-arm64-gnu.zip"
-        size: 1463591
-        sha256pre: "b2d7a2f1d99fba4c"
-      "780515622":
-        name: "artifact-runtime-target-df9bd25bc671721060b20b1c54732156d46e437c-linux-x64-musl.zip"
-        size: 1562102
-        sha256pre: "6971ff2617a8fe3f"
-      "780515646":
-        name: "artifact-runtime-target-df9bd25bc671721060b20b1c54732156d46e437c-linux-arm64-musl.zip"
-        size: 1461788
-        sha256pre: "281c39decacb1a4a"
-      "780515689":
-        name: "artifact-runtime-target-df9bd25bc671721060b20b1c54732156d46e437c-win32-x64-msvc.zip"
-        size: 1310320
-        sha256pre: "27ec625d32740913"
-  "454768882":
-    tag: "opengeni-release-head-9eee30cd5a1f39a05c90aa27e5b3b6ea1fd47d25"
-    title: "Retained OpenGeni release head 9eee30cd5a1f39a05c90aa27e5b3b6ea1fd47d25"
-    published_at: "2026-11-22T21:38:40Z"
-    prerelease: true
-    assets: {}
+        sha256pre: "4bdca5700cae908b"

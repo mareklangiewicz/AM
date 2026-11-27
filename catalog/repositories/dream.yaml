@@ -1,179 +1,9 @@
 $schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
 repository_id: 1235192304
 repository: "dreamide/dream"
-observed_at: "2026-11-23T02:57:09Z"
+observed_at: "2026-11-27T12:32:21Z"
 history_complete: true
 releases:
-  "411371201":
-    tag: "v0.27.0"
-    published_at: "2026-10-13T06:49:25Z"
-    prerelease: false
-    assets:
-      "636165614":
-        name: "Dream-mac-arm64.dmg"
-        size: 387375781
-        sha256pre: "0f46d62c2cae0c2e"
-      "636165617":
-        name: "Dream-linux-x86_64.rpm"
-        size: 436497297
-        sha256pre: "5a95a17d7269b6e3"
-      "636165618":
-        name: "Dream-linux-amd64.deb"
-        size: 494080692
-        sha256pre: "07b27429a7024fe6"
-      "636165619":
-        name: "Dream-linux-x86_64.AppImage"
-        size: 628717744
-        sha256pre: "552dee723c0b9432"
-      "636165622":
-        name: "Dream-mac-arm64.dmg.blockmap"
-        size: 404483
-        sha256pre: "11ada23b528fb68d"
-      "636165642":
-        name: "Dream-mac-arm64.zip"
-        size: 387594049
-        sha256pre: "ff0b69ca287fdb5d"
-      "636166701":
-        name: "Dream-mac-arm64.zip.blockmap"
-        size: 404429
-        sha256pre: "13d388afbf79e6ec"
-      "636166712":
-        name: "Dream-mac-x64.dmg"
-        size: 392973902
-        sha256pre: "df24c3da1b7e1eb8"
-      "636166780":
-        name: "Dream-mac-x64.dmg.blockmap"
-        size: 409676
-        sha256pre: "61878871bca8e5ec"
-      "636166795":
-        name: "Dream-mac-x64.zip"
-        size: 393219020
-        sha256pre: "4ede75597fc2b8e0"
-      "636167040":
-        name: "Dream-mac-x64.zip.blockmap"
-        size: 408938
-        sha256pre: "25987681bab516d5"
-      "636167061":
-        name: "Dream-windows-x64.exe"
-        size: 483332088
-        sha256pre: "fad23527bf8d3de4"
-      "636167183":
-        name: "Dream-windows-x64.exe.blockmap"
-        size: 501567
-        sha256pre: "f8b4ccfdfa3bde7d"
-      "636167210":
-        name: "SHA256SUMS"
-        size: 308
-        sha256pre: "e5698a16a2e55893"
-      "636167225":
-        name: "dream-host-0.27.0-darwin-arm64.tar.gz"
-        size: 41685684
-        sha256pre: "3f32a4d34b2d87d8"
-      "636167374":
-        name: "dream-host-0.27.0-linux-arm64.tar.gz"
-        size: 47179444
-        sha256pre: "2bb7ef7aa98d0327"
-      "636167451":
-        name: "dream-host-0.27.0-linux-x64.tar.gz"
-        size: 47199837
-        sha256pre: "604f390cd4069ad3"
-      "636167517":
-        name: "latest-linux.yml"
-        size: 682
-        sha256pre: "0d183ce486f473fc"
-      "636167541":
-        name: "latest-mac.yml"
-        size: 782
-        sha256pre: "e7fcf9b74d493615"
-      "636167565":
-        name: "latest.yml"
-        size: 340
-        sha256pre: "de89f7128dd56929"
-  "415378566":
-    tag: "v0.28.0"
-    published_at: "2026-10-16T21:33:58Z"
-    prerelease: false
-    assets:
-      "648680860":
-        name: "Dream-mac-arm64.dmg.blockmap"
-        size: 405200
-        sha256pre: "51273c4e57b75b08"
-      "648680866":
-        name: "Dream-linux-x86_64.rpm"
-        size: 436503125
-        sha256pre: "3da16ab7f0207913"
-      "648680867":
-        name: "Dream-linux-x86_64.AppImage"
-        size: 628721613
-        sha256pre: "6360f242a8cd75fb"
-      "648680868":
-        name: "Dream-linux-amd64.deb"
-        size: 494057708
-        sha256pre: "a132291827b0b55c"
-      "648680869":
-        name: "Dream-mac-arm64.dmg"
-        size: 387451206
-        sha256pre: "07f0a6b957435521"
-      "648680892":
-        name: "Dream-mac-arm64.zip"
-        size: 387606188
-        sha256pre: "e46d1a06b5b6493e"
-      "648682686":
-        name: "Dream-mac-arm64.zip.blockmap"
-        size: 404780
-        sha256pre: "49ec9a7ca082911d"
-      "648682700":
-        name: "Dream-mac-x64.dmg"
-        size: 392971657
-        sha256pre: "5d312701c5664f55"
-      "648682708":
-        name: "Dream-mac-x64.dmg.blockmap"
-        size: 409986
-        sha256pre: "4704fdb88af2b4f5"
-      "648682733":
-        name: "Dream-mac-x64.zip"
-        size: 393231074
-        sha256pre: "c5a7b21569cc017a"
-      "648682823":
-        name: "Dream-mac-x64.zip.blockmap"
-        size: 409316
-        sha256pre: "2c90528c5eb857c2"
-      "648682857":
-        name: "Dream-windows-x64.exe"
-        size: 483342952
-        sha256pre: "d026d968b783dfc3"
-      "648682920":
-        name: "Dream-windows-x64.exe.blockmap"
-        size: 501503
-        sha256pre: "bfc9b812deed9fea"
-      "648682950":
-        name: "SHA256SUMS"
-        size: 308
-        sha256pre: "1551bea2ab6145f6"
-      "648682965":
-        name: "dream-host-0.28.0-darwin-arm64.tar.gz"
-        size: 41688919
-        sha256pre: "0202e691515dfd60"
-      "648683173":
-        name: "dream-host-0.28.0-linux-arm64.tar.gz"
-        size: 47325637
-        sha256pre: "5a82bdfd69758509"
-      "648683174":
-        name: "dream-host-0.28.0-linux-x64.tar.gz"
-        size: 47207274
-        sha256pre: "373ea32adc3978af"
-      "648683428":
-        name: "latest-linux.yml"
-        size: 682
-        sha256pre: "962122bb33f87953"
-      "648683440":
-        name: "latest-mac.yml"
-        size: 782
-        sha256pre: "13bafdde9c629f9a"
-      "648683454":
-        name: "latest.yml"
-        size: 340
-        sha256pre: "d62b0ef428066d00"
   "417121154":
     tag: "v0.29.0"
     published_at: "2026-10-19T14:45:52Z"
@@ -724,3 +554,197 @@ releases:
         name: "latest.yml"
         size: 340
         sha256pre: "19b03e5468cdc3b3"
+  "456258091":
+    tag: "v0.35.0"
+    published_at: "2026-11-24T03:08:48Z"
+    prerelease: false
+    assets:
+      "785487958":
+        name: "Dream-mac-arm64.dmg"
+        size: 390763871
+        sha256pre: "1419e04d7bb27881"
+      "785487966":
+        name: "Dream-linux-amd64.deb"
+        size: 496819068
+        sha256pre: "70ea54f5997d04ed"
+      "785487967":
+        name: "Dream-mac-arm64.dmg.blockmap"
+        size: 409556
+        sha256pre: "48d275cca81e2077"
+      "785487968":
+        name: "Dream-linux-x86_64.rpm"
+        size: 437890481
+        sha256pre: "f87b79dca0c9cabc"
+      "785487974":
+        name: "Dream-linux-x86_64.AppImage"
+        size: 632186087
+        sha256pre: "f002764b9f99ff47"
+      "785488022":
+        name: "Dream-mac-arm64.zip"
+        size: 390961788
+        sha256pre: "f758280402e73adb"
+      "785488775":
+        name: "Dream-mac-arm64.zip.blockmap"
+        size: 407571
+        sha256pre: "c9fd2e2dffbacac9"
+      "785488804":
+        name: "Dream-mac-x64.dmg"
+        size: 396340908
+        sha256pre: "400535ced61fb56a"
+      "785489440":
+        name: "Dream-mac-x64.dmg.blockmap"
+        size: 415176
+        sha256pre: "d2a563f0113eb2d5"
+      "785489466":
+        name: "Dream-mac-x64.zip"
+        size: 396586718
+        sha256pre: "bfd09f11a46ec144"
+      "785489522":
+        name: "Dream-mac-x64.zip.blockmap"
+        size: 411856
+        sha256pre: "e67008773e3fa780"
+      "785489554":
+        name: "Dream-windows-x64.exe"
+        size: 486013104
+        sha256pre: "3f3d145039dd9935"
+      "785489565":
+        name: "Dream-windows-x64.exe.blockmap"
+        size: 503628
+        sha256pre: "f31046fa63ca1bcb"
+      "785489573":
+        name: "SHA256SUMS"
+        size: 411
+        sha256pre: "0d578391c663aba4"
+      "785489602":
+        name: "dream-host-0.35.0-darwin-arm64.tar.gz"
+        size: 67551025
+        sha256pre: "ccf80d7e271de90b"
+      "785489619":
+        name: "dream-host-0.35.0-linux-arm64.tar.gz"
+        size: 72668048
+        sha256pre: "1b38c268c73bb953"
+      "785489902":
+        name: "dream-host-0.35.0-linux-x64.tar.gz"
+        size: 72960311
+        sha256pre: "8450216d52f400db"
+      "785489908":
+        name: "dream-host-0.35.0-windows-x64.tar.gz"
+        size: 70538022
+        sha256pre: "c9e2f005a4cda9c3"
+      "785489948":
+        name: "install-host.ps1"
+        size: 3877
+        sha256pre: "a601635cc5e021bb"
+      "785489997":
+        name: "install-host.sh"
+        size: 3630
+        sha256pre: "09bc81b56736b247"
+      "785490044":
+        name: "latest-linux.yml"
+        size: 682
+        sha256pre: "70bcb4c897c567f6"
+      "785490120":
+        name: "latest-mac.yml"
+        size: 782
+        sha256pre: "f14fc1fee3e5df79"
+      "785490162":
+        name: "latest.yml"
+        size: 340
+        sha256pre: "42852d2223996e93"
+  "460365268":
+    tag: "v0.36.0"
+    published_at: "2026-11-27T09:05:34Z"
+    prerelease: false
+    assets:
+      "799750777":
+        name: "Dream-mac-arm64.dmg.blockmap"
+        size: 405460
+        sha256pre: "56a9134b2ea81134"
+      "799750786":
+        name: "Dream-linux-amd64.deb"
+        size: 496910756
+        sha256pre: "13b18a49c1c723a6"
+      "799750788":
+        name: "Dream-linux-x86_64.rpm"
+        size: 437901657
+        sha256pre: "01cfc2a119e12bb2"
+      "799750789":
+        name: "Dream-linux-x86_64.AppImage"
+        size: 632189846
+        sha256pre: "16b91942ddf13c33"
+      "799750795":
+        name: "Dream-mac-arm64.dmg"
+        size: 390803604
+        sha256pre: "18274b12f0775c59"
+      "799750859":
+        name: "Dream-mac-arm64.zip"
+        size: 390967285
+        sha256pre: "a5107684778c0d6c"
+      "799753317":
+        name: "Dream-mac-arm64.zip.blockmap"
+        size: 407750
+        sha256pre: "248e23ff41f880df"
+      "799753358":
+        name: "Dream-mac-x64.dmg"
+        size: 396336791
+        sha256pre: "94f0ae222b0a17b7"
+      "799753582":
+        name: "Dream-mac-x64.dmg.blockmap"
+        size: 412499
+        sha256pre: "30671eaec403d274"
+      "799753643":
+        name: "Dream-mac-x64.zip"
+        size: 396592222
+        sha256pre: "206099ef5e5f9d3b"
+      "799753723":
+        name: "Dream-mac-x64.zip.blockmap"
+        size: 412002
+        sha256pre: "faf23019eb1c3022"
+      "799753778":
+        name: "Dream-windows-x64.exe"
+        size: 486015264
+        sha256pre: "9905d3e227f2ebe1"
+      "799753824":
+        name: "Dream-windows-x64.exe.blockmap"
+        size: 503488
+        sha256pre: "28c54581715d0c58"
+      "799753896":
+        name: "SHA256SUMS"
+        size: 411
+        sha256pre: "9cbacca7b9fd6157"
+      "799753944":
+        name: "dream-host-0.36.0-darwin-arm64.tar.gz"
+        size: 67553765
+        sha256pre: "3b8f2a5281c5927b"
+      "799753989":
+        name: "dream-host-0.36.0-linux-arm64.tar.gz"
+        size: 72637824
+        sha256pre: "d62108e201346a39"
+      "799754406":
+        name: "dream-host-0.36.0-linux-x64.tar.gz"
+        size: 72959153
+        sha256pre: "e0edffe28f0c55db"
+      "799754453":
+        name: "dream-host-0.36.0-windows-x64.tar.gz"
+        size: 70539805
+        sha256pre: "e5b1a1f63efc050c"
+      "799754546":
+        name: "install-host.ps1"
+        size: 3877
+        sha256pre: "5a2917477611f6a1"
+      "799754623":
+        name: "install-host.sh"
+        size: 3630
+        sha256pre: "b5f2782f05504865"
+      "799754693":
+        name: "latest-linux.yml"
+        size: 682
+        sha256pre: "bd8edf03b4805468"
+      "799754772":
+        name: "latest-mac.yml"
+        size: 782
+        sha256pre: "4e2cd94555dd5246"
+      "799754846":
+        name: "latest.yml"
+        size: 340
+        sha256pre: "9e1f15e806033c75"
