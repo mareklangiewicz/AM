@@ -1,481 +1,517 @@
 $schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
 repository_id: 1321823266
 repository: "agustinsacco/phosphor"
-observed_at: "2026-11-23T22:09:38Z"
+observed_at: "2026-11-28T13:05:17Z"
 history_complete: false
 releases:
-  "453014838":
-    tag: "host-v0.2.87"
-    title: "Phosphor Host 0.2.87"
-    published_at: "2026-11-20T17:56:51Z"
+  "460761661":
+    tag: "v0.1.747"
+    published_at: "2026-11-27T15:28:33Z"
     prerelease: false
     assets:
-      "772787181":
-        name: "phosphor-host-0.2.87-darwin-arm64.tar.gz"
-        size: 40012057
-        sha256pre: "4a3a9e0da0d1b9c5"
-      "772787303":
-        name: "phosphor-host-0.2.87-linux-arm64.tar.gz"
-        size: 45162838
-        sha256pre: "72fb6a27fe3b045a"
-      "772787435":
-        name: "phosphor-host-0.2.87-linux-x64.tar.gz"
-        size: 45178551
-        sha256pre: "b49611b6ef54d01b"
-      "772787594":
-        name: "phosphor-host-0.2.87.manifest.json"
-        size: 798
-        sha256pre: "9c67a1c96498d165"
-      "772787616":
-        name: "phosphor-host-0.2.87.manifest.json.sig"
+      "800977413":
+        name: "Phosphor-0.1.747-x86_64.AppImage"
+        size: 231538475
+        sha256pre: "b50d68d6f0475018"
+      "800979385":
+        name: "Phosphor-0.1.747-arm64.AppImage"
+        size: 225079081
+        sha256pre: "3e4a4da5daf6228d"
+      "800984273":
+        name: "Phosphor-0.1.747-amd64.deb"
+        size: 179259972
+        sha256pre: "49e301cca0df0436"
+      "800985883":
+        name: "Phosphor-0.1.747-arm64.deb"
+        size: 167958800
+        sha256pre: "44c74dca334d9d1a"
+      "800986198":
+        name: "latest-linux.yml"
+        size: 545
+        sha256pre: "b473aed36b1b942b"
+      "800986202":
+        name: "latest-linux-arm64.yml"
+        size: 543
+        sha256pre: "4fe63c601a0c6fac"
+      "801003808":
+        name: "Phosphor-0.1.747-arm64.dmg"
+        size: 221651280
+        sha256pre: "88592b6a4a764a36"
+      "801003813":
+        name: "Phosphor-0.1.747-arm64.dmg.blockmap"
+        size: 234940
+        sha256pre: "1756c961b96b1d50"
+      "801004611":
+        name: "Phosphor-0.1.747-arm64-mac.zip.blockmap"
+        size: 221229
+        sha256pre: "58fbf9b6b557fa7a"
+      "801004613":
+        name: "Phosphor-0.1.747-arm64-mac.zip"
+        size: 221528525
+        sha256pre: "fcfb8e4cf7d5858c"
+      "801005876":
+        name: "Phosphor-0.1.747-x64.dmg.blockmap"
+        size: 212036
+        sha256pre: "322f5265847bb07c"
+      "801005877":
+        name: "Phosphor-0.1.747-x64.dmg"
+        size: 201750401
+        sha256pre: "fc2b0eddf604ce82"
+      "801005913":
+        name: "Phosphor-0.1.747-mac.zip.blockmap"
+        size: 210217
+        sha256pre: "5c9b8dab2442ae96"
+      "801005914":
+        name: "Phosphor-0.1.747-mac.zip"
+        size: 201629937
+        sha256pre: "abc3294280132571"
+      "801006814":
+        name: "latest-mac.yml"
+        size: 820
+        sha256pre: "83fac98ceb550c00"
+      "801009204":
+        name: "checksums.txt"
+        size: 755
+        sha256pre: "bb5a84b65c2174c0"
+      "801009341":
+        name: "icon.png"
+        size: 213783
+        sha256pre: "1444ffe86af6009b"
+      "801009348":
+        name: "install.sh"
+        size: 7426
+        sha256pre: "acf28b66348cdca7"
+  "460781161":
+    tag: "host-v0.2.115"
+    title: "Phosphor Host 0.2.115"
+    published_at: "2026-11-27T15:32:57Z"
+    prerelease: false
+    assets:
+      "801023131":
+        name: "phosphor-host-0.2.115-darwin-arm64.tar.gz"
+        size: 40323200
+        sha256pre: "440c1421544bd470"
+      "801023285":
+        name: "phosphor-host-0.2.115-darwin-x64.tar.gz"
+        size: 41306051
+        sha256pre: "1aa25ab446a3fb3e"
+      "801023457":
+        name: "phosphor-host-0.2.115-linux-arm64.tar.gz"
+        size: 45478343
+        sha256pre: "9196ea26d50f1ff5"
+      "801023591":
+        name: "phosphor-host-0.2.115-linux-x64.tar.gz"
+        size: 45496430
+        sha256pre: "9a21499ab19b1e2a"
+      "801023771":
+        name: "phosphor-host-0.2.115.manifest.json"
+        size: 802
+        sha256pre: "bbfbcce0c89445e0"
+      "801023822":
+        name: "phosphor-host-0.2.115.manifest.json.sig"
         size: 318
-        sha256pre: "2bc05e9efb935aea"
-      "772787696":
-        name: "install.sh"
-        size: 15244
-        sha256pre: "5922f2498f3775ef"
-  "454502291":
-    tag: "v0.1.683"
-    published_at: "2026-11-22T14:33:26Z"
-    prerelease: false
-    assets:
-      "779325559":
-        name: "Phosphor-0.1.683-x86_64.AppImage"
-        size: 231047654
-        sha256pre: "cf5fa5f83083fc9c"
-      "779327162":
-        name: "Phosphor-0.1.683-arm64.AppImage"
-        size: 224587869
-        sha256pre: "6153eb2588b6ffbe"
-      "779329625":
-        name: "Phosphor-0.1.683-arm64.dmg"
-        size: 221170246
-        sha256pre: "769d9a6bf4938bd3"
-      "779329629":
-        name: "Phosphor-0.1.683-arm64.dmg.blockmap"
-        size: 232375
-        sha256pre: "a7a3f3acd50f27a7"
-      "779330135":
-        name: "Phosphor-0.1.683-arm64-mac.zip.blockmap"
-        size: 220719
-        sha256pre: "b3982d6c4748b854"
-      "779330136":
-        name: "Phosphor-0.1.683-arm64-mac.zip"
-        size: 221036707
-        sha256pre: "2ea0f26fe3fdecfb"
-      "779330846":
-        name: "Phosphor-0.1.683-mac.zip.blockmap"
-        size: 210497
-        sha256pre: "9e032d1fd098c5e3"
-      "779330848":
-        name: "Phosphor-0.1.683-mac.zip"
-        size: 201143545
-        sha256pre: "85fc2388f755d704"
-      "779330925":
-        name: "Phosphor-0.1.683-x64.dmg.blockmap"
-        size: 210859
-        sha256pre: "c11d013593b1cbb0"
-      "779330927":
-        name: "Phosphor-0.1.683-x64.dmg"
-        size: 201239550
-        sha256pre: "463e18415662fef6"
-      "779331395":
-        name: "latest-mac.yml"
-        size: 820
-        sha256pre: "2aac8fae58d822bb"
-      "779331536":
-        name: "Phosphor-0.1.683-amd64.deb"
-        size: 178883960
-        sha256pre: "dd124e0de90acccc"
-      "779332258":
-        name: "Phosphor-0.1.683-arm64.deb"
-        size: 167559148
-        sha256pre: "cae84c4f77b7ab26"
-      "779332554":
-        name: "latest-linux-arm64.yml"
-        size: 543
-        sha256pre: "8dd2c3c2b645659a"
-      "779332559":
-        name: "latest-linux.yml"
-        size: 545
-        sha256pre: "78b60c1a70bce024"
-      "779341108":
-        name: "checksums.txt"
-        size: 755
-        sha256pre: "88a6251ca7982342"
-      "779341198":
-        name: "icon.png"
-        size: 213783
-        sha256pre: "1444ffe86af6009b"
-      "779341201":
-        name: "install.sh"
-        size: 7426
-        sha256pre: "acf28b66348cdca7"
-  "454510362":
-    tag: "host-v0.2.88"
-    title: "Phosphor Host 0.2.88"
-    published_at: "2026-11-22T14:36:41Z"
-    prerelease: false
-    assets:
-      "779350666":
-        name: "phosphor-host-0.2.88-darwin-arm64.tar.gz"
-        size: 40011931
-        sha256pre: "e4a1e7adeb6535d5"
-      "779350756":
-        name: "phosphor-host-0.2.88-linux-arm64.tar.gz"
-        size: 45163631
-        sha256pre: "f97c1be17a7461fa"
-      "779350863":
-        name: "phosphor-host-0.2.88-linux-x64.tar.gz"
-        size: 45178253
-        sha256pre: "7a2387c5890921bb"
-      "779351000":
-        name: "phosphor-host-0.2.88.manifest.json"
-        size: 798
-        sha256pre: "df847ccb5e760235"
-      "779351019":
-        name: "phosphor-host-0.2.88.manifest.json.sig"
+        sha256pre: "ac76342f5f2e20b2"
+      "801023869":
+        name: "phosphor-host-0.2.115.manifest.v2.json"
+        size: 1194
+        sha256pre: "84db98c676846c54"
+      "801023939":
+        name: "phosphor-host-0.2.115.manifest.v2.json.sig"
         size: 318
-        sha256pre: "39e26ad94476fb27"
-      "779351047":
+        sha256pre: "255881ae6eab2141"
+      "801024011":
         name: "install.sh"
-        size: 15244
-        sha256pre: "5922f2498f3775ef"
-  "454907851":
-    tag: "host-v0.2.89"
-    title: "Phosphor Host 0.2.89"
-    published_at: "2026-11-23T02:03:18Z"
+        size: 16342
+        sha256pre: "1352729fe2fbf828"
+  "460805540":
+    tag: "v0.1.748"
+    published_at: "2026-11-27T16:14:46Z"
     prerelease: false
     assets:
-      "781171546":
-        name: "phosphor-host-0.2.89-darwin-arm64.tar.gz"
-        size: 40061237
-        sha256pre: "88245a7f19bd09de"
-      "781171633":
-        name: "phosphor-host-0.2.89-linux-arm64.tar.gz"
-        size: 45205186
-        sha256pre: "4cba10694fd5cd58"
-      "781171701":
-        name: "phosphor-host-0.2.89-linux-x64.tar.gz"
-        size: 45229504
-        sha256pre: "efe5e19a82de1994"
-      "781171832":
-        name: "phosphor-host-0.2.89.manifest.json"
-        size: 798
-        sha256pre: "d3cb7e0de5137e73"
-      "781171878":
-        name: "phosphor-host-0.2.89.manifest.json.sig"
+      "801109789":
+        name: "Phosphor-0.1.748-x86_64.AppImage"
+        size: 231542421
+        sha256pre: "468bb86b33177f6b"
+      "801112130":
+        name: "Phosphor-0.1.748-arm64.AppImage"
+        size: 225079520
+        sha256pre: "95360878f4db248c"
+      "801116367":
+        name: "Phosphor-0.1.748-amd64.deb"
+        size: 179259976
+        sha256pre: "b148764070fdae26"
+      "801117502":
+        name: "Phosphor-0.1.748-arm64.deb"
+        size: 167954248
+        sha256pre: "a2e63830f4f16633"
+      "801117767":
+        name: "latest-linux.yml"
+        size: 545
+        sha256pre: "1f1e017cd61b57f4"
+      "801117771":
+        name: "latest-linux-arm64.yml"
+        size: 543
+        sha256pre: "ea05cf84d277069c"
+      "801119812":
+        name: "Phosphor-0.1.748-arm64-mac.zip"
+        size: 221530556
+        sha256pre: "bd643436217fd26a"
+      "801119813":
+        name: "Phosphor-0.1.748-arm64.dmg"
+        size: 221655001
+        sha256pre: "42a58f8930d0b90e"
+      "801119814":
+        name: "Phosphor-0.1.748-arm64-mac.zip.blockmap"
+        size: 221735
+        sha256pre: "ea3e932e1aece4c0"
+      "801119817":
+        name: "Phosphor-0.1.748-arm64.dmg.blockmap"
+        size: 233854
+        sha256pre: "5171d003f0036ea8"
+      "801120776":
+        name: "Phosphor-0.1.748-mac.zip.blockmap"
+        size: 210012
+        sha256pre: "bfe91b7f7f7344e8"
+      "801120778":
+        name: "Phosphor-0.1.748-mac.zip"
+        size: 201637509
+        sha256pre: "b7eb0e16ff2c0bfe"
+      "801120802":
+        name: "Phosphor-0.1.748-x64.dmg.blockmap"
+        size: 211311
+        sha256pre: "b17b8b6e2fb84e34"
+      "801120808":
+        name: "Phosphor-0.1.748-x64.dmg"
+        size: 201748670
+        sha256pre: "b873866fbb181693"
+      "801122375":
+        name: "latest-mac.yml"
+        size: 820
+        sha256pre: "70f0ac14fb1be961"
+      "801160762":
+        name: "checksums.txt"
+        size: 755
+        sha256pre: "483f02991226c909"
+      "801160838":
+        name: "icon.png"
+        size: 213783
+        sha256pre: "1444ffe86af6009b"
+      "801160843":
+        name: "install.sh"
+        size: 7426
+        sha256pre: "acf28b66348cdca7"
+  "460830387":
+    tag: "v0.1.749"
+    published_at: "2026-11-27T16:31:15Z"
+    prerelease: false
+    assets:
+      "801195357":
+        name: "Phosphor-0.1.749-x86_64.AppImage"
+        size: 231567576
+        sha256pre: "cab6b9035a28790a"
+      "801198019":
+        name: "Phosphor-0.1.749-arm64.AppImage"
+        size: 225107984
+        sha256pre: "8fee078202fef29d"
+      "801202748":
+        name: "Phosphor-0.1.749-amd64.deb"
+        size: 179261884
+        sha256pre: "9131d7fc6d1fec8f"
+      "801204276":
+        name: "Phosphor-0.1.749-arm64-mac.zip"
+        size: 221531133
+        sha256pre: "ed6174234dc3d7e2"
+      "801204281":
+        name: "Phosphor-0.1.749-arm64-mac.zip.blockmap"
+        size: 221284
+        sha256pre: "3940767e4610f1ee"
+      "801204503":
+        name: "Phosphor-0.1.749-arm64.deb"
+        size: 167959468
+        sha256pre: "276b9d3f65d97d0a"
+      "801204688":
+        name: "Phosphor-0.1.749-arm64.dmg"
+        size: 221670261
+        sha256pre: "5b6b16510bb259ef"
+      "801204691":
+        name: "Phosphor-0.1.749-arm64.dmg.blockmap"
+        size: 233617
+        sha256pre: "3bd40b5c9ee19194"
+      "801204863":
+        name: "latest-linux.yml"
+        size: 545
+        sha256pre: "91e7043b3b7a9b01"
+      "801204872":
+        name: "latest-linux-arm64.yml"
+        size: 543
+        sha256pre: "25f4645dea5cb6f9"
+      "801206406":
+        name: "Phosphor-0.1.749-x64.dmg.blockmap"
+        size: 209342
+        sha256pre: "042d2dcc216f1f91"
+      "801206409":
+        name: "Phosphor-0.1.749-x64.dmg"
+        size: 201719365
+        sha256pre: "38fae58f2f179fe6"
+      "801206411":
+        name: "Phosphor-0.1.749-mac.zip"
+        size: 201639775
+        sha256pre: "2c329d35e1e58972"
+      "801206413":
+        name: "Phosphor-0.1.749-mac.zip.blockmap"
+        size: 211002
+        sha256pre: "5ab55dc03fe1aab1"
+      "801207075":
+        name: "latest-mac.yml"
+        size: 820
+        sha256pre: "96db99d79b65a0b2"
+      "801216262":
+        name: "checksums.txt"
+        size: 755
+        sha256pre: "128f2417fd63e7be"
+      "801216380":
+        name: "icon.png"
+        size: 213783
+        sha256pre: "1444ffe86af6009b"
+      "801216383":
+        name: "install.sh"
+        size: 7426
+        sha256pre: "acf28b66348cdca7"
+  "460875303":
+    tag: "v0.1.750"
+    published_at: "2026-11-27T17:20:31Z"
+    prerelease: false
+    assets:
+      "801356895":
+        name: "Phosphor-0.1.750-x86_64.AppImage"
+        size: 231570474
+        sha256pre: "d113049abd970038"
+      "801358996":
+        name: "Phosphor-0.1.750-arm64.AppImage"
+        size: 225111627
+        sha256pre: "37540b0889410897"
+      "801362587":
+        name: "Phosphor-0.1.750-arm64.dmg.blockmap"
+        size: 231355
+        sha256pre: "c143cd6183d96ad9"
+      "801362592":
+        name: "Phosphor-0.1.750-arm64.dmg"
+        size: 221681595
+        sha256pre: "7a1b0ba6cf6dbdeb"
+      "801363148":
+        name: "Phosphor-0.1.750-arm64-mac.zip.blockmap"
+        size: 220869
+        sha256pre: "cb7ca45abee65c9c"
+      "801363152":
+        name: "Phosphor-0.1.750-arm64-mac.zip"
+        size: 221540929
+        sha256pre: "ba99865de10e1a4d"
+      "801364736":
+        name: "Phosphor-0.1.750-x64.dmg.blockmap"
+        size: 211265
+        sha256pre: "ea096cb57488ddeb"
+      "801364738":
+        name: "Phosphor-0.1.750-x64.dmg"
+        size: 201711115
+        sha256pre: "f804f49c6a4a7423"
+      "801364787":
+        name: "Phosphor-0.1.750-mac.zip.blockmap"
+        size: 210844
+        sha256pre: "07614fcc86e7b9dc"
+      "801364796":
+        name: "Phosphor-0.1.750-mac.zip"
+        size: 201643852
+        sha256pre: "c5b7c6293443be25"
+      "801365387":
+        name: "Phosphor-0.1.750-amd64.deb"
+        size: 179268680
+        sha256pre: "e65752105292ce4f"
+      "801365802":
+        name: "latest-mac.yml"
+        size: 820
+        sha256pre: "becf77f7f5180dfd"
+      "801366769":
+        name: "Phosphor-0.1.750-arm64.deb"
+        size: 167966768
+        sha256pre: "05f8519c97e98d99"
+      "801367163":
+        name: "latest-linux-arm64.yml"
+        size: 543
+        sha256pre: "d2e9ff1bd494f303"
+      "801367167":
+        name: "latest-linux.yml"
+        size: 545
+        sha256pre: "26182fc59a3ad6a4"
+      "801379803":
+        name: "checksums.txt"
+        size: 755
+        sha256pre: "1a2a9ad6eb35b7c5"
+      "801379948":
+        name: "icon.png"
+        size: 213783
+        sha256pre: "1444ffe86af6009b"
+      "801379949":
+        name: "install.sh"
+        size: 7426
+        sha256pre: "acf28b66348cdca7"
+  "460889920":
+    tag: "host-v0.2.116"
+    title: "Phosphor Host 0.2.116"
+    published_at: "2026-11-27T17:25:28Z"
+    prerelease: false
+    assets:
+      "801396296":
+        name: "phosphor-host-0.2.116-darwin-arm64.tar.gz"
+        size: 40366310
+        sha256pre: "f3f3703ce5a2983e"
+      "801396417":
+        name: "phosphor-host-0.2.116-darwin-x64.tar.gz"
+        size: 41334676
+        sha256pre: "21d2eeac98d136ba"
+      "801396551":
+        name: "phosphor-host-0.2.116-linux-arm64.tar.gz"
+        size: 45507835
+        sha256pre: "a438cf1794761552"
+      "801396648":
+        name: "phosphor-host-0.2.116-linux-x64.tar.gz"
+        size: 45536751
+        sha256pre: "41b84a27ee5c33a6"
+      "801396769":
+        name: "phosphor-host-0.2.116.manifest.json"
+        size: 802
+        sha256pre: "4c9e0df7830ff526"
+      "801396812":
+        name: "phosphor-host-0.2.116.manifest.json.sig"
         size: 318
-        sha256pre: "bacf02ab5f1d6c87"
-      "781171933":
+        sha256pre: "270abb39359232dd"
+      "801396862":
+        name: "phosphor-host-0.2.116.manifest.v2.json"
+        size: 1194
+        sha256pre: "06921d34471e7cc9"
+      "801396927":
+        name: "phosphor-host-0.2.116.manifest.v2.json.sig"
+        size: 318
+        sha256pre: "0abbbf48f5b137a3"
+      "801396981":
         name: "install.sh"
-        size: 15244
-        sha256pre: "5922f2498f3775ef"
-  "454908179":
-    tag: "v0.1.684"
-    published_at: "2026-11-23T02:10:02Z"
+        size: 16342
+        sha256pre: "1352729fe2fbf828"
+  "461024203":
+    tag: "v0.1.751"
+    published_at: "2026-11-27T20:32:34Z"
     prerelease: false
     assets:
-      "781179414":
-        name: "Phosphor-0.1.684-x86_64.AppImage"
-        size: 231096391
-        sha256pre: "55a134aad7ddabe2"
-      "781180295":
-        name: "Phosphor-0.1.684-arm64.AppImage"
-        size: 224636616
-        sha256pre: "7761a402d51356d7"
-      "781183262":
-        name: "Phosphor-0.1.684-arm64-mac.zip.blockmap"
-        size: 220516
-        sha256pre: "7d80b0ef0ce54934"
-      "781183269":
-        name: "Phosphor-0.1.684-arm64-mac.zip"
-        size: 221097977
-        sha256pre: "170b64aa987dc15c"
-      "781183320":
-        name: "Phosphor-0.1.684-amd64.deb"
-        size: 178906492
-        sha256pre: "eebd34767f49271d"
-      "781183765":
-        name: "Phosphor-0.1.684-arm64.deb"
-        size: 167581036
-        sha256pre: "7c59a84e1a65f61a"
-      "781184083":
-        name: "latest-linux.yml"
-        size: 545
-        sha256pre: "fe078581aa821f17"
-      "781184088":
+      "801911110":
+        name: "Phosphor-0.1.751-x86_64.AppImage"
+        size: 231575604
+        sha256pre: "39e5f9b69008c780"
+      "801914793":
+        name: "Phosphor-0.1.751-arm64.AppImage"
+        size: 225116403
+        sha256pre: "ec491c2bafb63527"
+      "801919553":
+        name: "Phosphor-0.1.751-amd64.deb"
+        size: 179270452
+        sha256pre: "4c1946a63070bc15"
+      "801921016":
+        name: "Phosphor-0.1.751-arm64.deb"
+        size: 167966852
+        sha256pre: "d9ebdc319bb88f10"
+      "801921034":
+        name: "Phosphor-0.1.751-arm64-mac.zip.blockmap"
+        size: 220500
+        sha256pre: "31698a71cca4471b"
+      "801921035":
+        name: "Phosphor-0.1.751-arm64-mac.zip"
+        size: 221538619
+        sha256pre: "5b8d999c59e1f17c"
+      "801921041":
+        name: "Phosphor-0.1.751-arm64.dmg.blockmap"
+        size: 231105
+        sha256pre: "27dedaa911771bb0"
+      "801921043":
+        name: "Phosphor-0.1.751-arm64.dmg"
+        size: 221666061
+        sha256pre: "394d8e7a254937cc"
+      "801921173":
         name: "latest-linux-arm64.yml"
         size: 543
-        sha256pre: "251d939602a73b89"
-      "781184217":
-        name: "Phosphor-0.1.684-arm64.dmg.blockmap"
-        size: 230761
-        sha256pre: "635fcee29e067bf3"
-      "781184218":
-        name: "Phosphor-0.1.684-arm64.dmg"
-        size: 221225610
-        sha256pre: "4e70f0fec4c294be"
-      "781184798":
-        name: "Phosphor-0.1.684-mac.zip"
-        size: 201204522
-        sha256pre: "276bedd199ba25ae"
-      "781184802":
-        name: "Phosphor-0.1.684-mac.zip.blockmap"
-        size: 211016
-        sha256pre: "ca9e41369d8c7d6d"
-      "781185119":
-        name: "Phosphor-0.1.684-x64.dmg"
-        size: 201293091
-        sha256pre: "0e97409244dc7317"
-      "781185121":
-        name: "Phosphor-0.1.684-x64.dmg.blockmap"
-        size: 211614
-        sha256pre: "4b67144437ae2966"
-      "781185576":
+        sha256pre: "4616f3756373aac9"
+      "801921178":
+        name: "latest-linux.yml"
+        size: 545
+        sha256pre: "a846155c94d78d15"
+      "801921868":
+        name: "Phosphor-0.1.751-x64.dmg"
+        size: 201732247
+        sha256pre: "b550c0895418b4f8"
+      "801921869":
+        name: "Phosphor-0.1.751-x64.dmg.blockmap"
+        size: 211865
+        sha256pre: "f45c7067b57ddc4b"
+      "801921932":
+        name: "Phosphor-0.1.751-mac.zip.blockmap"
+        size: 211131
+        sha256pre: "89f007ef7b511635"
+      "801921942":
+        name: "Phosphor-0.1.751-mac.zip"
+        size: 201644269
+        sha256pre: "5a1cf98c3a783300"
+      "801922605":
         name: "latest-mac.yml"
         size: 820
-        sha256pre: "eaea72212050e218"
-      "781186820":
+        sha256pre: "5963ecdbe8dc5cb5"
+      "801963492":
         name: "checksums.txt"
         size: 755
-        sha256pre: "aae612d7c84ec9d4"
-      "781186877":
+        sha256pre: "b2662f3bad67b1b8"
+      "801963563":
         name: "icon.png"
         size: 213783
         sha256pre: "1444ffe86af6009b"
-      "781186879":
+      "801963567":
         name: "install.sh"
         size: 7426
         sha256pre: "acf28b66348cdca7"
-  "454933049":
-    tag: "v0.1.685"
-    published_at: "2026-11-23T03:01:23Z"
+  "461043752":
+    tag: "host-v0.2.117"
+    title: "Phosphor Host 0.2.117"
+    published_at: "2026-11-27T20:38:05Z"
     prerelease: false
     assets:
-      "781283737":
-        name: "Phosphor-0.1.685-x86_64.AppImage"
-        size: 231096298
-        sha256pre: "bebe04ddcb8f7046"
-      "781284804":
-        name: "Phosphor-0.1.685-arm64.AppImage"
-        size: 224636982
-        sha256pre: "a160a736546b1ca3"
-      "781288519":
-        name: "Phosphor-0.1.685-amd64.deb"
-        size: 178906752
-        sha256pre: "fdfb2cd178dc9c35"
-      "781288790":
-        name: "Phosphor-0.1.685-arm64.deb"
-        size: 167580284
-        sha256pre: "977a328f3c01dd00"
-      "781289085":
-        name: "latest-linux.yml"
-        size: 545
-        sha256pre: "97090eae6594f712"
-      "781289086":
-        name: "latest-linux-arm64.yml"
-        size: 543
-        sha256pre: "f901ad2de2de0661"
-      "781289675":
-        name: "Phosphor-0.1.685-arm64.dmg"
-        size: 221226481
-        sha256pre: "a951b84769b30cb5"
-      "781289677":
-        name: "Phosphor-0.1.685-arm64.dmg.blockmap"
-        size: 231320
-        sha256pre: "6a9dcc045321bf99"
-      "781290142":
-        name: "Phosphor-0.1.685-arm64-mac.zip"
-        size: 221099907
-        sha256pre: "7877168635f0f474"
-      "781290146":
-        name: "Phosphor-0.1.685-arm64-mac.zip.blockmap"
-        size: 221375
-        sha256pre: "877ee0c82087af08"
-      "781291004":
-        name: "Phosphor-0.1.685-mac.zip"
-        size: 201201867
-        sha256pre: "2e39bef395859a1d"
-      "781291014":
-        name: "Phosphor-0.1.685-mac.zip.blockmap"
-        size: 209925
-        sha256pre: "2cd04a730c316817"
-      "781291024":
-        name: "Phosphor-0.1.685-x64.dmg.blockmap"
-        size: 212053
-        sha256pre: "9a92edef0bbe1ab6"
-      "781291027":
-        name: "Phosphor-0.1.685-x64.dmg"
-        size: 201291643
-        sha256pre: "167a0aa1e0fd6b65"
-      "781291419":
-        name: "latest-mac.yml"
-        size: 820
-        sha256pre: "0233659e7d624ce4"
-      "781303920":
-        name: "checksums.txt"
-        size: 755
-        sha256pre: "ba886d31fd6eed86"
-      "781303969":
+      "801979749":
+        name: "phosphor-host-0.2.117-darwin-arm64.tar.gz"
+        size: 40369810
+        sha256pre: "a4f156d8622828ab"
+      "801979850":
+        name: "phosphor-host-0.2.117-darwin-x64.tar.gz"
+        size: 41337530
+        sha256pre: "d70d279b4d77d15b"
+      "801979995":
+        name: "phosphor-host-0.2.117-linux-arm64.tar.gz"
+        size: 45512743
+        sha256pre: "27b54d0a8f5a8e86"
+      "801980196":
+        name: "phosphor-host-0.2.117-linux-x64.tar.gz"
+        size: 45537964
+        sha256pre: "84396f8aafdcbb0b"
+      "801980303":
+        name: "phosphor-host-0.2.117.manifest.json"
+        size: 802
+        sha256pre: "c5e0fa358933bc44"
+      "801980341":
+        name: "phosphor-host-0.2.117.manifest.json.sig"
+        size: 318
+        sha256pre: "077ef66f72c2f9de"
+      "801980377":
+        name: "phosphor-host-0.2.117.manifest.v2.json"
+        size: 1194
+        sha256pre: "6eb4dacf1e7a542a"
+      "801980423":
+        name: "phosphor-host-0.2.117.manifest.v2.json.sig"
+        size: 318
+        sha256pre: "20e641970b87a2cf"
+      "801980446":
         name: "install.sh"
-        size: 7426
-        sha256pre: "acf28b66348cdca7"
-      "781303970":
-        name: "icon.png"
-        size: 213783
-        sha256pre: "1444ffe86af6009b"
-  "454975151":
-    tag: "v0.1.686"
-    published_at: "2026-11-23T04:19:02Z"
-    prerelease: false
-    assets:
-      "781479708":
-        name: "Phosphor-0.1.686-x86_64.AppImage"
-        size: 231103628
-        sha256pre: "52e5b1e11e3c1bda"
-      "781481894":
-        name: "Phosphor-0.1.686-arm64.AppImage"
-        size: 224640391
-        sha256pre: "d6b50b52883d0386"
-      "781482323":
-        name: "Phosphor-0.1.686-arm64.dmg"
-        size: 221227774
-        sha256pre: "816eb76569f1c70a"
-      "781482327":
-        name: "Phosphor-0.1.686-arm64.dmg.blockmap"
-        size: 229873
-        sha256pre: "1b0466f27fd6ffc8"
-      "781482733":
-        name: "Phosphor-0.1.686-arm64-mac.zip"
-        size: 221095199
-        sha256pre: "08bc8d8efda23116"
-      "781482734":
-        name: "Phosphor-0.1.686-arm64-mac.zip.blockmap"
-        size: 220953
-        sha256pre: "d5e5c5ae6e993394"
-      "781483459":
-        name: "Phosphor-0.1.686-mac.zip.blockmap"
-        size: 210906
-        sha256pre: "6002537da8d3cf4e"
-      "781483466":
-        name: "Phosphor-0.1.686-mac.zip"
-        size: 201206001
-        sha256pre: "f1084299ecb8a137"
-      "781483502":
-        name: "Phosphor-0.1.686-x64.dmg.blockmap"
-        size: 212335
-        sha256pre: "54dd84dfb13d8e65"
-      "781483504":
-        name: "Phosphor-0.1.686-x64.dmg"
-        size: 201290748
-        sha256pre: "30033f277ac00058"
-      "781483965":
-        name: "latest-mac.yml"
-        size: 820
-        sha256pre: "aa36efffc4ce1cf5"
-      "781485163":
-        name: "Phosphor-0.1.686-amd64.deb"
-        size: 178907500
-        sha256pre: "26eebd67d697fd1e"
-      "781486372":
-        name: "Phosphor-0.1.686-arm64.deb"
-        size: 167582156
-        sha256pre: "ee9fd5cb545aebf4"
-      "781486661":
-        name: "latest-linux.yml"
-        size: 545
-        sha256pre: "04cb5ec95543a771"
-      "781486662":
-        name: "latest-linux-arm64.yml"
-        size: 543
-        sha256pre: "8f29a1c5f7248fd7"
-      "781496202":
-        name: "checksums.txt"
-        size: 755
-        sha256pre: "4cffab5b0fa6dafe"
-      "781496230":
-        name: "install.sh"
-        size: 7426
-        sha256pre: "acf28b66348cdca7"
-      "781496231":
-        name: "icon.png"
-        size: 213783
-        sha256pre: "1444ffe86af6009b"
-  "455932792":
-    tag: "v0.1.687"
-    published_at: "2026-11-23T20:16:41Z"
-    prerelease: false
-    assets:
-      "784374655":
-        name: "Phosphor-0.1.687-x86_64.AppImage"
-        size: 231128135
-        sha256pre: "aa577b26f37e399a"
-      "784377255":
-        name: "Phosphor-0.1.687-arm64.AppImage"
-        size: 224668916
-        sha256pre: "05eae493eb109ee2"
-      "784382502":
-        name: "Phosphor-0.1.687-amd64.deb"
-        size: 178909392
-        sha256pre: "e1af312b75be1645"
-      "784383896":
-        name: "Phosphor-0.1.687-arm64.deb"
-        size: 167584880
-        sha256pre: "eda70caf04e6c64c"
-      "784384347":
-        name: "latest-linux.yml"
-        size: 545
-        sha256pre: "3a0288201994bd40"
-      "784384351":
-        name: "latest-linux-arm64.yml"
-        size: 543
-        sha256pre: "b6058b0444b2f77e"
-      "784387618":
-        name: "Phosphor-0.1.687-arm64-mac.zip.blockmap"
-        size: 220816
-        sha256pre: "47f7aea182408ce7"
-      "784387624":
-        name: "Phosphor-0.1.687-arm64.dmg"
-        size: 221209935
-        sha256pre: "a9186ea0204c3c5d"
-      "784387627":
-        name: "Phosphor-0.1.687-arm64.dmg.blockmap"
-        size: 231632
-        sha256pre: "ab5cf6aae8907632"
-      "784387628":
-        name: "Phosphor-0.1.687-arm64-mac.zip"
-        size: 221101627
-        sha256pre: "9575fe0246b40a51"
-      "784388518":
-        name: "Phosphor-0.1.687-x64.dmg"
-        size: 201286939
-        sha256pre: "6792386bf4d385bf"
-      "784388519":
-        name: "Phosphor-0.1.687-x64.dmg.blockmap"
-        size: 211119
-        sha256pre: "e8fb0620fa356000"
-      "784388648":
-        name: "Phosphor-0.1.687-mac.zip.blockmap"
-        size: 211062
-        sha256pre: "82d44c5013876139"
-      "784388656":
-        name: "Phosphor-0.1.687-mac.zip"
-        size: 201204419
-        sha256pre: "1fa35f1712a23baa"
-      "784389693":
-        name: "latest-mac.yml"
-        size: 820
-        sha256pre: "91c75dba45e03dc4"
-      "784396823":
-        name: "checksums.txt"
-        size: 755
-        sha256pre: "7c17bddafc02bac2"
-      "784396892":
-        name: "install.sh"
-        size: 7426
-        sha256pre: "acf28b66348cdca7"
-      "784396894":
-        name: "icon.png"
-        size: 213783
-        sha256pre: "1444ffe86af6009b"
+        size: 16342
+        sha256pre: "1352729fe2fbf828"

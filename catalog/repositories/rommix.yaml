@@ -1,27 +1,9 @@
 $schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
 repository_id: 1337601788
 repository: "leclercb/rommix"
-observed_at: "2026-11-24T01:02:03Z"
+observed_at: "2026-11-28T13:07:31Z"
 history_complete: true
 releases:
-  "392519086":
-    tag: "canary"
-    title: "RomMix canary"
-    published_at: "2026-09-20T17:48:41Z"
-    prerelease: true
-    assets:
-      "782533661":
-        name: "rommix-steam.sh"
-        size: 1340
-        sha256pre: "544e25c0e1b1bc09"
-      "782533666":
-        name: "RomMix-arm64.AppImage"
-        size: 121442030
-        sha256pre: "5bb446814772a52f"
-      "782533675":
-        name: "RomMix-x86_64.AppImage"
-        size: 121278681
-        sha256pre: "1b5f2d7867720657"
   "396971177":
     tag: "v0.19.0"
     title: "RomMix v0.19.0"
@@ -148,3 +130,21 @@ releases:
         name: "RomMix-x86_64.AppImage"
         size: 121278680
         sha256pre: "f3e5b08650cc9753"
+  "456661255":
+    tag: "v0.26.0"
+    title: "RomMix v0.26.0"
+    published_at: "2026-11-24T11:21:11Z"
+    prerelease: false
+    assets:
+      "786894596":
+        name: "RomMix-arm64.AppImage"
+        size: 121631496
+        sha256pre: "5fc3acc5d31e5dc9"
+      "786894598":
+        name: "rommix-steam.sh"
+        size: 1340
+        sha256pre: "544e25c0e1b1bc09"
+      "786894601":
+        name: "RomMix-x86_64.AppImage"
+        size: 121451915
+        sha256pre: "f4fc3f572fb668c3"
