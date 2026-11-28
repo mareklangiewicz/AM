@@ -1,208 +1,200 @@
 $schema: "../../schemas/catalog.schema.yaml#/$defs/repository"
 repository_id: 1302612528
 repository: "sandbox-quantum/switch"
-observed_at: "2026-11-23T22:06:06Z"
+observed_at: "2026-11-28T04:00:49Z"
 history_complete: false
 releases:
-  "450003860":
-    tag: "switch-console-v0.41.1"
-    title: "Switch Console 0.41.1"
-    published_at: "2026-11-18T13:36:39Z"
+  "457748395":
+    tag: "switch-v0.32.2"
+    title: "switch-core 0.32.2"
+    published_at: "2026-11-25T06:52:07Z"
     prerelease: false
-    assets:
-      "763475458":
-        name: "switch-console-x86_64.rpm"
-        size: 240487653
-        sha256pre: "3a319a740860e73a"
-      "763475461":
-        name: "latest-linux.yml"
-        size: 694
-        sha256pre: "3026d1b6cebe780b"
-      "763475463":
-        name: "switch-console-amd64.deb"
-        size: 275470820
-        sha256pre: "696d97848bb0240c"
-      "763475465":
-        name: "switch-console-x86_64.AppImage"
-        size: 349843802
-        sha256pre: "774cc3d5a0ceac15"
-      "763485000":
-        name: "switch-console-aarch64.rpm"
-        size: 227462949
-        sha256pre: "817072c85c5aee2b"
-      "763485004":
-        name: "switch-console-arm64.deb"
-        size: 259472780
-        sha256pre: "726a19a75e63ed26"
-      "763485006":
-        name: "switch-console-arm64.AppImage"
-        size: 344111947
-        sha256pre: "a948afaf3d73244b"
-      "763485009":
-        name: "latest-linux-arm64.yml"
-        size: 693
-        sha256pre: "bed2a06761a58a97"
-      "763489697":
-        name: "switch-console-arm64.zip.blockmap"
-        size: 358955
-        sha256pre: "08745cb84aa2d2ef"
-      "763489700":
-        name: "switch-console-arm64.dmg"
-        size: 340363141
-        sha256pre: "b0bc5e31ab4d6451"
-      "763489701":
-        name: "switch-console-arm64.zip"
-        size: 344197076
-        sha256pre: "748eaf87499b8925"
-      "763489706":
-        name: "switch-console-arm64.dmg.blockmap"
-        size: 355357
-        sha256pre: "b55bbd88c317e7d5"
-      "763511578":
-        name: "switch-console-x64.exe"
-        size: 276189464
-        sha256pre: "6665e48a1f559108"
-      "763511582":
-        name: "switch-console-x64.exe.blockmap"
-        size: 288479
-        sha256pre: "14853a43fca92562"
-      "763511583":
-        name: "switch-console-x64.msi"
-        size: 298979328
-        sha256pre: "ae552ba0dc945d10"
-      "763511587":
-        name: "latest.yml"
-        size: 342
-        sha256pre: "dfa013f245190c8b"
-      "763534830":
-        name: "switch-console-x64.zip.blockmap"
-        size: 374128
-        sha256pre: "ec57f92e5aa21947"
-      "763534831":
-        name: "switch-console-x64.dmg.blockmap"
-        size: 368687
-        sha256pre: "a6dbd7a1378f9452"
-      "763534865":
-        name: "switch-console-x64.zip"
-        size: 358323745
-        sha256pre: "90c3571c8070e857"
-      "763534867":
-        name: "switch-console-x64.dmg"
-        size: 354422247
-        sha256pre: "4d9174efbb31e9aa"
-      "763539007":
-        name: "latest-mac.yml"
-        size: 807
-        sha256pre: "714051e51d71f668"
-  "452919416":
-    tag: "switch-agent-controller-v0.32.2-dev.641.gfe6ac80"
-    title: "switch-agent-controller 0.32.2-dev.641.gfe6ac80 (dev build of main)"
-    published_at: "2026-11-20T16:22:50Z"
+    assets: {}
+  "460643255":
+    tag: "switch-agent-controller-v0.32.3-dev.686.gbd3f3d6"
+    title: "switch-agent-controller 0.32.3-dev.686.gbd3f3d6 (dev build of main)"
+    published_at: "2026-11-27T13:34:54Z"
     prerelease: true
     assets:
-      "772499701":
-        name: "switch-agent-controller-0.32.2-dev.641.gfe6ac80.tgz"
-        size: 1963666
-        sha256pre: "08f36f09f6d3d65b"
-      "772499705":
-        name: "switch-agent-controller-0.32.2-dev.641.gfe6ac80.tgz.sig"
+      "800628664":
+        name: "switch-agent-controller-0.32.3-dev.686.gbd3f3d6.tgz.sig"
         size: 89
-        sha256pre: "33478d3b9293d0b1"
-  "453551024":
-    tag: "switch-agent-controller-v0.32.2-dev.642.g7bbe10a"
-    title: "switch-agent-controller 0.32.2-dev.642.g7bbe10a (dev build of main)"
-    published_at: "2026-11-21T08:34:21Z"
+        sha256pre: "2044ec3fd0deb86f"
+      "800628667":
+        name: "switch-agent-controller-0.32.3-dev.686.gbd3f3d6.tgz"
+        size: 2227195
+        sha256pre: "0a1364702b637b0a"
+  "460652267":
+    tag: "v0.42.0-canary.4"
+    title: "Switch Console Canary 0.42.0-canary.4"
+    published_at: "2026-11-27T16:33:28Z"
     prerelease: true
     assets:
-      "774942738":
-        name: "switch-agent-controller-0.32.2-dev.642.g7bbe10a.tgz.sig"
-        size: 89
-        sha256pre: "f238d19ba01d4ec4"
-      "774942742":
-        name: "switch-agent-controller-0.32.2-dev.642.g7bbe10a.tgz"
-        size: 1963666
-        sha256pre: "86962e23f7838ebe"
-  "455190476":
-    tag: "switch-agent-controller-v0.32.2-dev.647.g301b777"
-    title: "switch-agent-controller 0.32.2-dev.647.g301b777 (dev build of main)"
-    published_at: "2026-11-23T09:09:07Z"
+      "800685974":
+        name: "switch-console-canary-x86_64.rpm"
+        size: 271067173
+        sha256pre: "cd8d06b5bd943c18"
+      "800685981":
+        name: "switch-console-canary-x86_64.AppImage"
+        size: 408788122
+        sha256pre: "6c12d078ecffd384"
+      "800685985":
+        name: "canary-linux.yml"
+        size: 731
+        sha256pre: "be17b7dd1281f149"
+      "800685989":
+        name: "switch-console-canary-amd64.deb"
+        size: 320494744
+        sha256pre: "83fa23d2302a642d"
+      "800692724":
+        name: "canary-linux-arm64.yml"
+        size: 730
+        sha256pre: "abe7c06e883461a9"
+      "800692726":
+        name: "switch-console-canary-aarch64.rpm"
+        size: 258995061
+        sha256pre: "079607e4c642ea9a"
+      "800692733":
+        name: "switch-console-canary-arm64.deb"
+        size: 304024276
+        sha256pre: "d0f3df77db1dc6d8"
+      "800692735":
+        name: "switch-console-canary-arm64.AppImage"
+        size: 404169907
+        sha256pre: "a8943556e405a693"
+      "801178028":
+        name: "switch-console-canary-arm64.dmg"
+        size: 393460365
+        sha256pre: "3c15fda5626c5eaa"
+      "801178030":
+        name: "switch-console-canary-arm64.zip"
+        size: 398572425
+        sha256pre: "47328f8894b3789d"
+      "801178033":
+        name: "switch-console-canary-arm64.dmg.blockmap"
+        size: 409468
+        sha256pre: "956592675f90b438"
+      "801178034":
+        name: "switch-console-canary-arm64.zip.blockmap"
+        size: 414763
+        sha256pre: "ed9355ee1ef121dc"
+      "801219072":
+        name: "switch-console-canary-x64.zip"
+        size: 411416646
+        sha256pre: "2aa67ce90d745ae1"
+      "801219076":
+        name: "switch-console-canary-x64.dmg.blockmap"
+        size: 423685
+        sha256pre: "728686db671cff49"
+      "801219077":
+        name: "switch-console-canary-x64.dmg"
+        size: 406184710
+        sha256pre: "d0b7051aa33d801e"
+      "801219078":
+        name: "switch-console-canary-x64.zip.blockmap"
+        size: 427783
+        sha256pre: "ad34341392386605"
+      "801222044":
+        name: "canary.yml"
+        size: 365
+        sha256pre: "71ebab96bf453f99"
+      "801222045":
+        name: "switch-console-canary-x64.exe"
+        size: 319289008
+        sha256pre: "14d2838727f47823"
+      "801222046":
+        name: "switch-console-canary-x64.exe.blockmap"
+        size: 334380
+        sha256pre: "a99ea5703ec398d6"
+      "801222047":
+        name: "switch-console-canary-x64.msi"
+        size: 340480000
+        sha256pre: "579727ba09934216"
+      "801222454":
+        name: "canary-mac.yml"
+        size: 851
+        sha256pre: "8bb0ecaafd0d222c"
+  "460653544":
+    tag: "switch-agent-controller-v0.32.3-dev.687.g90c2bfe"
+    title: "switch-agent-controller 0.32.3-dev.687.g90c2bfe (dev build of main)"
+    published_at: "2026-11-27T13:44:37Z"
     prerelease: true
     assets:
-      "782268595":
-        name: "switch-agent-controller-0.32.2-dev.647.g301b777.tgz"
-        size: 1965107
-        sha256pre: "9a694fbeaadb55b0"
-      "782268596":
-        name: "switch-agent-controller-0.32.2-dev.647.g301b777.tgz.sig"
+      "800659938":
+        name: "switch-agent-controller-0.32.3-dev.687.g90c2bfe.tgz"
+        size: 2227195
+        sha256pre: "618acc773c92c8be"
+      "800659942":
+        name: "switch-agent-controller-0.32.3-dev.687.g90c2bfe.tgz.sig"
         size: 89
-        sha256pre: "8047fe61a42b826b"
-  "455193210":
-    tag: "switch-agent-controller-v0.32.2-dev.648.g252a711"
-    title: "switch-agent-controller 0.32.2-dev.648.g252a711 (dev build of main)"
-    published_at: "2026-11-23T09:11:59Z"
+        sha256pre: "96d997646fae9cbd"
+  "460720965":
+    tag: "switch-agent-controller-v0.32.3-dev.688.g48d799c"
+    title: "switch-agent-controller 0.32.3-dev.688.g48d799c (dev build of main)"
+    published_at: "2026-11-27T14:44:11Z"
     prerelease: true
     assets:
-      "782277202":
-        name: "switch-agent-controller-0.32.2-dev.648.g252a711.tgz.sig"
+      "800860840":
+        name: "switch-agent-controller-0.32.3-dev.688.g48d799c.tgz.sig"
         size: 89
-        sha256pre: "30543d86828a6086"
-      "782277203":
-        name: "switch-agent-controller-0.32.2-dev.648.g252a711.tgz"
-        size: 1965109
-        sha256pre: "1c94f937e5e8c8b2"
-  "455292836":
-    tag: "switch-agent-controller-v0.32.2-dev.649.g3b503b5"
-    title: "switch-agent-controller 0.32.2-dev.649.g3b503b5 (dev build of main)"
-    published_at: "2026-11-23T10:51:34Z"
+        sha256pre: "48cda96bdbdf613c"
+      "800860843":
+        name: "switch-agent-controller-0.32.3-dev.688.g48d799c.tgz"
+        size: 2227197
+        sha256pre: "037ba36d7d4bc680"
+  "460811482":
+    tag: "switch-agent-controller-v0.32.3-dev.689.g158abe7"
+    title: "switch-agent-controller 0.32.3-dev.689.g158abe7 (dev build of main)"
+    published_at: "2026-11-27T16:01:44Z"
     prerelease: true
     assets:
-      "782570118":
-        name: "switch-agent-controller-0.32.2-dev.649.g3b503b5.tgz"
-        size: 1965148
-        sha256pre: "79509864d3f37ee4"
-      "782570120":
-        name: "switch-agent-controller-0.32.2-dev.649.g3b503b5.tgz.sig"
+      "801117490":
+        name: "switch-agent-controller-0.32.3-dev.689.g158abe7.tgz"
+        size: 2227195
+        sha256pre: "f3613a9a3a6b4477"
+      "801117491":
+        name: "switch-agent-controller-0.32.3-dev.689.g158abe7.tgz.sig"
         size: 89
-        sha256pre: "ff311dd1d2ef78fe"
-  "455670716":
-    tag: "switch-agent-controller-v0.32.2-dev.650.g346f06f"
-    title: "switch-agent-controller 0.32.2-dev.650.g346f06f (dev build of main)"
-    published_at: "2026-11-23T16:16:22Z"
+        sha256pre: "06d223fe1f260402"
+  "460873548":
+    tag: "switch-agent-controller-v0.32.3-dev.690.g4361eb1"
+    title: "switch-agent-controller 0.32.3-dev.690.g4361eb1 (dev build of main)"
+    published_at: "2026-11-27T17:07:05Z"
     prerelease: true
     assets:
-      "783631735":
-        name: "switch-agent-controller-0.32.2-dev.650.g346f06f.tgz"
-        size: 1965145
-        sha256pre: "f7887eab34d1af83"
-      "783631736":
-        name: "switch-agent-controller-0.32.2-dev.650.g346f06f.tgz.sig"
+      "801338073":
+        name: "switch-agent-controller-0.32.3-dev.690.g4361eb1.tgz.sig"
         size: 89
-        sha256pre: "514d39a35ae4f600"
-  "455910229":
-    tag: "switch-agent-controller-v0.32.2-dev.651.g0c1f675"
-    title: "switch-agent-controller 0.32.2-dev.651.g0c1f675 (dev build of main)"
-    published_at: "2026-11-23T19:45:38Z"
+        sha256pre: "f56ee81672ee80c8"
+      "801338081":
+        name: "switch-agent-controller-0.32.3-dev.690.g4361eb1.tgz"
+        size: 2228156
+        sha256pre: "99a244f2661aaf4d"
+  "460890531":
+    tag: "switch-agent-controller-v0.32.3-dev.691.g1da66e1"
+    title: "switch-agent-controller 0.32.3-dev.691.g1da66e1 (dev build of main)"
+    published_at: "2026-11-27T17:26:12Z"
     prerelease: true
     assets:
-      "784305341":
-        name: "switch-agent-controller-0.32.2-dev.651.g0c1f675.tgz"
-        size: 1965144
-        sha256pre: "256b158546bbea9b"
-      "784305343":
-        name: "switch-agent-controller-0.32.2-dev.651.g0c1f675.tgz.sig"
+      "801398541":
+        name: "switch-agent-controller-0.32.3-dev.691.g1da66e1.tgz"
+        size: 2230770
+        sha256pre: "bfef76283172bc57"
+      "801398546":
+        name: "switch-agent-controller-0.32.3-dev.691.g1da66e1.tgz.sig"
         size: 89
-        sha256pre: "d251911fbb72c9b6"
-  "456049761":
-    tag: "switch-agent-controller-v0.32.2-dev.652.g908a23b"
-    title: "switch-agent-controller 0.32.2-dev.652.g908a23b (dev build of main)"
-    published_at: "2026-11-23T22:02:02Z"
+        sha256pre: "fcf7c60d577177d3"
+  "460991898":
+    tag: "switch-agent-controller-v0.32.3-dev.692.g4ff75b7"
+    title: "switch-agent-controller 0.32.3-dev.692.g4ff75b7 (dev build of main)"
+    published_at: "2026-11-27T19:29:45Z"
     prerelease: true
     assets:
-      "784704937":
-        name: "switch-agent-controller-0.32.2-dev.652.g908a23b.tgz"
-        size: 1965145
-        sha256pre: "4cd2bef341ee4024"
-      "784704939":
-        name: "switch-agent-controller-0.32.2-dev.652.g908a23b.tgz.sig"
+      "801777516":
+        name: "switch-agent-controller-0.32.3-dev.692.g4ff75b7.tgz.sig"
         size: 89
-        sha256pre: "a9af4d569d4b7548"
+        sha256pre: "b0cf9d375f9458b2"
+      "801777522":
+        name: "switch-agent-controller-0.32.3-dev.692.g4ff75b7.tgz"
+        size: 2230773
+        sha256pre: "f2e69f61a84107fa"
